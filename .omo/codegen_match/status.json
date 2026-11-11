@@ -1549,12 +1549,84 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x41bf20": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::StubReturnFalse4",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TacticalClass::StubReturnFalse4",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x41bf30": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::vt_entry_1FC",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MissionClass::vt_entry_1FC",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x41bf80": {
   "attempts": 1,
   "first_diff": null,
   "name": "TacticalClass::StubReturnFalse5",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x41bf90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 4",
+  "name": "TechnoClass::StubReturnFalse6",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TacticalClass::StubReturnFalse6",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x41bfb0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::StubReturnFalse7",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TacticalClass::StubReturnFalse7",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x41bfc0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::StubReturnFalse8",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TacticalClass::StubReturnFalse8",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x41bfd0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::StubReturnFalse9",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TacticalClass::StubReturnFalse9",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x41bfe0": {
   "attempts": 1,
@@ -1601,6 +1673,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x41c040": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::StubReturnFalse10",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TacticalClass::StubReturnFalse10",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x41c060": {
   "attempts": 1,
   "clean": true,
@@ -1619,6 +1703,18 @@
   "name": "AircraftClass::CheckDockState",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x41c080": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "FootClass::vt_entry_4F8",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "FootClass::vt_entry_4F8",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x41c0f0": {
   "attempts": 1,
@@ -1652,6 +1748,30 @@
   "name": "FootClass::StubReturnVoid",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "FootClass::StubReturnVoid",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x41c120": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "FootClass::Stub",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "FootClass::Stub",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x41c130": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "FootClass::vt_entry_534",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "FootClass::vt_entry_534",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -1748,6 +1868,30 @@
   "name": "sub_41C850",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x41cb50": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AircraftTypeClass::vt_entry_A0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TechnoTypeClass::vt_entry_A0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x41cb60": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AircraftTypeClass::StubReturnFalse",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AircraftTypeClass::StubReturnFalse",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x41cbd0": {
   "attempts": 1,
@@ -1943,6 +2087,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x420120": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::_0Iostream_init_QAE_XZ_0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "??0Iostream_init_QAE_XZ_0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x420130": {
   "attempts": 1,
   "clean": false,
@@ -2120,12 +2276,36 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x426390": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::COMStub_Return0_25",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::COMStub_Return0_25",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4263a0": {
   "attempts": 1,
   "first_diff": "+2 ret 8",
   "name": "AbstractClass::COMStub_26",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x4263b0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::COMStub_Return0_32",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::COMStub_Return0_32",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4263c0": {
   "attempts": 1,
@@ -2139,6 +2319,30 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x426410": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "IUnknown::getCoordCenter",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::getCoordCenter",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x426420": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::COMStub_Return0_49",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::COMStub_Return0_49",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x426430": {
   "attempts": 1,
   "first_diff": "+0 xor al, al",
@@ -2146,12 +2350,36 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x426440": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 8",
+  "name": "ObjectClass::COMStub_Return0_67",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_67",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x426450": {
   "attempts": 1,
   "first_diff": "+0 ret 8",
   "name": "AbstractClass::COMStub_Return0_68",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x426460": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 0xc",
+  "name": "ObjectClass::COMStub_Return0_85",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_85",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x426470": {
   "attempts": 1,
@@ -2161,6 +2389,18 @@
   "name": "ObjectClass::COMStub_Return0_86",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AbstractClass::COMStub_Return0_86",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x426480": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 4",
+  "name": "ObjectClass::COMStub_Return0_87",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_87",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

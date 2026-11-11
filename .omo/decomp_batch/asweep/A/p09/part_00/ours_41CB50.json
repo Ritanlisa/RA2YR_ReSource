@@ -1,0 +1,8 @@
+{
+ "symbol": "?vt_entry_A0@AircraftTypeClass@@QAEDXZ",
+ "sym_key": "AircraftTypeClass::vt_entry_A0",
+ "size": 3,
+ "link_base": 0,
+ "bytes_hex": "32c0c3",
+ "relocs": []
+}

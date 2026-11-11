@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x41bf20 TechnoClass::StubReturnFalse4 -> TechnoClass
+[conv] 0x41bf30 TechnoClass::vt_entry_1FC -> TechnoClass
+[conv] 0x41bf90 TechnoClass::StubReturnFalse6 -> TechnoClass
+[conv] 0x41bfb0 TechnoClass::StubReturnFalse7 -> TechnoClass
+[conv] 0x41bfc0 TechnoClass::StubReturnFalse8 -> TechnoClass
+[conv] 0x41bfd0 TechnoClass::StubReturnFalse9 -> TechnoClass
+[conv] 0x41c040 TechnoClass::StubReturnFalse10 -> TechnoClass
+[conv] 0x41c080 FootClass::vt_entry_4F8 -> FootClass
+[conv] 0x41c120 FootClass::Stub -> FootClass
+[conv] 0x41c130 FootClass::vt_entry_534 -> FootClass
+[conv] 0x41cb50 AircraftTypeClass::vt_entry_A0 -> AircraftTypeClass
+[conv] 0x41cb60 AircraftTypeClass::StubReturnFalse -> AircraftTypeClass
+[conv] 0x420120 ObjectClass::_0Iostream_init_QAE_XZ_0 -> ObjectClass
+[conv] 0x426390 ObjectClass::COMStub_Return0_25 -> ObjectClass
+[conv] 0x4263b0 ObjectClass::COMStub_Return0_32 -> ObjectClass
+[conv] 0x426410 IUnknown::getCoordCenter -> IUnknown
+[conv] 0x426420 ObjectClass::COMStub_Return0_49 -> ObjectClass
+[conv] 0x426440 ObjectClass::COMStub_Return0_67 -> ObjectClass
+[conv] 0x426460 ObjectClass::COMStub_Return0_85 -> ObjectClass
+[conv] 0x426480 ObjectClass::COMStub_Return0_87 -> ObjectClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] FootClass                rc=0
+[era] AircraftTypeClass        rc=0
+[era] ObjectClass              rc=0
+[era] IUnknown                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x41bf20   MATCH            TechnoClass::StubReturnFalse4
+[diff] 0x41bf30   MATCH            TechnoClass::vt_entry_1FC
+[diff] 0x41bf90   MISMATCH         TechnoClass::StubReturnFalse6
+[diff] 0x41bfb0   MATCH            TechnoClass::StubReturnFalse7
+[diff] 0x41bfc0   MATCH            TechnoClass::StubReturnFalse8
+[diff] 0x41bfd0   MATCH            TechnoClass::StubReturnFalse9
+[diff] 0x41c040   MATCH            TechnoClass::StubReturnFalse10
+[diff] 0x41c080   MATCH            FootClass::vt_entry_4F8
+[diff] 0x41c120   MATCH            FootClass::Stub
+[diff] 0x41c130   MATCH            FootClass::vt_entry_534
+[diff] 0x41cb50   MATCH            AircraftTypeClass::vt_entry_A0
+[diff] 0x41cb60   MATCH            AircraftTypeClass::StubReturnFalse
+[diff] 0x420120   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_0
+[diff] 0x426390   MATCH            ObjectClass::COMStub_Return0_25
+[diff] 0x4263b0   MATCH            ObjectClass::COMStub_Return0_32
+[diff] 0x426420   MATCH            ObjectClass::COMStub_Return0_49
+[diff] 0x426440   MISMATCH         ObjectClass::COMStub_Return0_67
+[diff] 0x426460   MISMATCH         ObjectClass::COMStub_Return0_85
+[diff] 0x426480   MISMATCH         ObjectClass::COMStub_Return0_87
+[diff] 0x426410   MATCH            IUnknown::getCoordCenter
+[ledger] 0x41bf20 TechnoClass::StubReturnFalse4 -> OK (attempt 1)
+[ledger] 0x41bf30 TechnoClass::vt_entry_1FC -> OK (attempt 1)
+[ledger] 0x41bf90 TechnoClass::StubReturnFalse6 -> NG (attempt 1)
+[ledger] 0x41bfb0 TechnoClass::StubReturnFalse7 -> OK (attempt 1)
+[ledger] 0x41bfc0 TechnoClass::StubReturnFalse8 -> OK (attempt 1)
+[ledger] 0x41bfd0 TechnoClass::StubReturnFalse9 -> OK (attempt 1)
+[ledger] 0x41c040 TechnoClass::StubReturnFalse10 -> OK (attempt 1)
+[ledger] 0x41c080 FootClass::vt_entry_4F8 -> OK (attempt 1)
+[ledger] 0x41c120 FootClass::Stub -> OK (attempt 1)
+[ledger] 0x41c130 FootClass::vt_entry_534 -> OK (attempt 1)
+[ledger] 0x41cb50 AircraftTypeClass::vt_entry_A0 -> OK (attempt 1)
+[ledger] 0x41cb60 AircraftTypeClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x420120 ObjectClass::_0Iostream_init_QAE_XZ_0 -> OK (attempt 1)
+[ledger] 0x426390 ObjectClass::COMStub_Return0_25 -> OK (attempt 1)
+[ledger] 0x4263b0 ObjectClass::COMStub_Return0_32 -> OK (attempt 1)
+[ledger] 0x426410 IUnknown::getCoordCenter -> OK (attempt 1)
+[ledger] 0x426420 ObjectClass::COMStub_Return0_49 -> OK (attempt 1)
+[ledger] 0x426440 ObjectClass::COMStub_Return0_67 -> NG (attempt 1)
+[ledger] 0x426460 ObjectClass::COMStub_Return0_85 -> NG (attempt 1)
+[ledger] 0x426480 ObjectClass::COMStub_Return0_87 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 80.0,
+ "match_rate_of_total_pct": 80.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p09\batch_report.json
