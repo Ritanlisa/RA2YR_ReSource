@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsActive@AudioChannel@@QAEHXZ",
+ "sym_key": "AudioChannel::IsActive",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "8a11b00284d0750d8441287508844150750333c0c3b801000000c3",
+ "relocs": []
+}

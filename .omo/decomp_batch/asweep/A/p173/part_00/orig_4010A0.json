@@ -1,0 +1,11 @@
+{
+ "addr": "0x4010A0",
+ "name": "AudioChannel::IsActive",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4010A0",
+ "bytes_hex": "8a11b00284d0750d8441287508844150750333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

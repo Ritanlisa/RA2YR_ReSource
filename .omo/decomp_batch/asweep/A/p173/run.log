@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p173\part_00
+=== convert (20 addrs) ===
+[conv] 0x4010a0 AudioChannel::IsActive -> AudioChannel
+[conv] 0x40b2e0 VectorClass::GetCapacity -> VectorClass
+[conv] 0x40b670 _DynamicVectorClass_PAVBombClass::PointerToIndex -> _DynamicVectorClass_PAVBombClass
+[conv] 0x40b6d0 _DynamicVectorClass_PAVTechnoClass::Update -> _DynamicVectorClass_PAVTechnoClass
+[conv] 0x40b860 _VectorClass_PAVBombClass::GetCapacity -> _VectorClass_PAVBombClass
+[conv] 0x40be80 _DynamicVectorClass_PBVCommandClass::GetIndex2 -> _DynamicVectorClass_PBVCommandClass
+[conv] 0x40c010 _VectorClass_PBVCommandClass::GetCapacity -> _VectorClass_PBVCommandClass
+[conv] 0x40c260 _DynamicVectorClass_PAVLightConvertClass::dequeueEvent -> _DynamicVectorClass_PAVLightConvertClass
+[conv] 0x40c3f0 _VectorClass_PAVLightConvertClass::GetCapacity -> _VectorClass_PAVLightConvertClass
+[conv] 0x40c850 _DynamicVectorClass_PAVIsometricTileClass::GetItemIndex -> _DynamicVectorClass_PAVIsometricTileClass
+[conv] 0x40c9e0 _VectorClass_PAVIsometricTileClass::GetCapacity -> _VectorClass_PAVIsometricTileClass
+[conv] 0x40ce30 _VectorClass_PAVObjectClass::Remove -> _VectorClass_PAVObjectClass
+[conv] 0x40d570 _DynamicVectorClass_PAVMixFileClass::updateCursorState -> _DynamicVectorClass_PAVMixFileClass
+[conv] 0x40d8a0 sub_40D8A0 -> _addr_40
+[conv] 0x40d8c0 sub_40D8C0 -> _addr_40
+[conv] 0x40d8e0 sub_40D8E0 -> _addr_40
+[conv] 0x40d940 sub_40D940 -> _addr_40
+[conv] 0x40d960 sub_40D960 -> _addr_40
+[conv] 0x40d980 sub_40D980 -> _addr_40
+[conv] 0x40d9a0 sub_40D9A0 -> _addr_40
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioChannel             rc=0
+[era] VectorClass              rc=0
+[era] _DynamicVectorClass_PAVBombClass rc=0
+[era] _DynamicVectorClass_PAVTechnoClass rc=0
+[era] _VectorClass_PAVBombClass rc=0
+[era] _DynamicVectorClass_PBVCommandClass rc=0
+[era] _VectorClass_PBVCommandClass rc=0
+[era] _DynamicVectorClass_PAVLightConvertClass rc=0
+[era] _VectorClass_PAVLightConvertClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileClass rc=0
+[era] _VectorClass_PAVIsometricTileClass rc=0
+[era] _VectorClass_PAVObjectClass rc=0
+[era] _DynamicVectorClass_PAVMixFileClass rc=0
+[era] _addr_40                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4010a0   MATCH            AudioChannel::IsActive
+[diff] 0x40b2e0   MISMATCH         VectorClass::GetCapacity
+[diff] 0x40b670   MISMATCH         _DynamicVectorClass_PAVBombClass::PointerToIndex
+[diff] 0x40b6d0   MISMATCH         _DynamicVectorClass_PAVTechnoClass::Update
+[diff] 0x40b860   MISMATCH         _VectorClass_PAVBombClass::GetCapacity
+[diff] 0x40be80   MISMATCH         _DynamicVectorClass_PBVCommandClass::GetIndex2
+[diff] 0x40c010   MISMATCH         _VectorClass_PBVCommandClass::GetCapacity
+[diff] 0x40c260   MISMATCH         _DynamicVectorClass_PAVLightConvertClass::dequeueEvent
+[diff] 0x40c3f0   MISMATCH         _VectorClass_PAVLightConvertClass::GetCapacity
+[diff] 0x40c850   MISMATCH         _DynamicVectorClass_PAVIsometricTileClass::GetItemIndex
+[diff] 0x40c9e0   MISMATCH         _VectorClass_PAVIsometricTileClass::GetCapacity
+[diff] 0x40ce30   MISMATCH         _VectorClass_PAVObjectClass::Remove
+[diff] 0x40d570   MISMATCH         _DynamicVectorClass_PAVMixFileClass::updateCursorState
+[diff] 0x40d8c0   MISMATCH         sub_40D8C0
+[diff] 0x40d960   MATCH            sub_40D960
+[diff] 0x40d980   MATCH            sub_40D980
+[diff] 0x40d9a0   MISMATCH         sub_40D9A0
+[ledger] 0x4010a0 AudioChannel::IsActive -> OK (attempt 1)
+[ledger] 0x40b2e0 VectorClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x40b670 _DynamicVectorClass_PAVBombClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x40b6d0 _DynamicVectorClass_PAVTechnoClass::Update -> NG (attempt 1)
+[ledger] 0x40b860 _VectorClass_PAVBombClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x40be80 _DynamicVectorClass_PBVCommandClass::GetIndex2 -> NG (attempt 1)
+[ledger] 0x40c010 _VectorClass_PBVCommandClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x40c260 _DynamicVectorClass_PAVLightConvertClass::dequeueEvent -> NG (attempt 1)
+[ledger] 0x40c3f0 _VectorClass_PAVLightConvertClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x40c850 _DynamicVectorClass_PAVIsometricTileClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x40c9e0 _VectorClass_PAVIsometricTileClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x40ce30 _VectorClass_PAVObjectClass::Remove -> NG (attempt 1)
+[ledger] 0x40d570 _DynamicVectorClass_PAVMixFileClass::updateCursorState -> NG (attempt 1)
+[ledger] 0x40d8a0 sub_40D8A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40d8c0 sub_40D8C0 -> NG (attempt 1)
+[ledger] 0x40d8e0 sub_40D8E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40d940 sub_40D940 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40d960 sub_40D960 -> OK (attempt 1)
+[ledger] 0x40d980 sub_40D980 -> OK (attempt 1)
+[ledger] 0x40d9a0 sub_40D9A0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 3,
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "branch_order": 12,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 17.6,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p173\batch_report.json
