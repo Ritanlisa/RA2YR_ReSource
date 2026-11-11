@@ -972,6 +972,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x41a5c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftClass::GetMissionTimer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x41a9e0": {
   "attempts": 6,
   "first_diff": "+20 mov ecx, esi",
@@ -1539,6 +1546,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x42b420": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GeneratePathWaypoints",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x42bca0": {
   "attempts": 1,
   "first_diff": null,
@@ -2068,6 +2082,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingClass::TraverseBridgeSegments",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x453e20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::LoadFromStream",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -3212,6 +3233,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x48c8b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MainGameFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x48d1d0": {
   "attempts": 6,
   "first_diff": null,
@@ -4000,6 +4028,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "MPCooperative::ReadCoopSaveINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x49d680": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SerializeCampaignOptions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -8763,6 +8798,13 @@
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
+ "0x56fc80": {
+  "attempts": 1,
+  "first_diff": "+3 push ebx",
+  "name": "CellClass::UpdateTileVariant2",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x574600": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -9943,6 +9985,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "ShiftBigIntAndScan",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5c8500": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ModBigIntExp",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11605,6 +11654,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x62f9a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UpdateBuildingDamageParticles",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x62fe80": {
   "attempts": 5,
   "first_diff": null,
@@ -12305,6 +12361,13 @@
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
  },
+ "0x649ca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildNetworkEventPacket",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x64a630": {
   "attempts": 1,
   "first_diff": null,
@@ -12893,6 +12956,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x671ea0": {
+  "attempts": 1,
+  "first_diff": "+0 mov eax, dword ptr [0x7f0ca0]",
+  "name": "Dialog::ReadMultiplayerDialogSettings",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x6725f0": {
   "attempts": 1,
   "first_diff": "+0 mov eax, dword ptr [0x7f0cbc]",
@@ -13324,6 +13394,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "SessionClass::IsValidHouse",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6990a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SaveConfigWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -14538,6 +14615,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x6cb920": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SuperClass::ClickFire",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6ce0b0": {
   "attempts": 9,
   "first_diff": null,
@@ -14717,6 +14801,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "TacticalClass::RenderIsometric",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6d7840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::DrawMap",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -15553,6 +15644,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x70e920": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UpdateTimedStateMachine",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x70ed80": {
   "attempts": 7,
   "first_diff": "+0 push ebx",
@@ -15627,6 +15725,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "TechnoTypeClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x711ae0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoTypeClass::DTOR",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -15741,6 +15846,13 @@
   "name": "0x71a3d0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x71a760": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TemporalClass::ProcessTimeWarp",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x71ab60": {
   "attempts": 1,
@@ -16077,6 +16189,13 @@
   "name": "BuildingClass::FreeUpgradeQueue2",
   "note": "decomp_batch r2: MISMATCH/signedness",
   "status": "NG"
+ },
+ "0x722f00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RebuildBuildingOccupancy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7236d0": {
   "attempts": 1,
@@ -17527,6 +17646,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x764b90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CampaignConstructorWDT",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x765000": {
   "attempts": 1,
   "first_diff": null,
@@ -18395,6 +18521,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x78f200": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildWOLPlayerTooltip",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x792cf0": {
   "attempts": 1,
   "first_diff": null,
@@ -19149,6 +19282,13 @@
   "first_diff": "+15 je 0x7c37c5",
   "name": "Audio_Process_7C3750",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
+ "0x7c39c0": {
+  "attempts": 1,
+  "first_diff": "+3 mov eax, dword ptr [esp + 0x24]",
+  "name": "IsoTile::Decode16BitV2",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x7c3d60": {

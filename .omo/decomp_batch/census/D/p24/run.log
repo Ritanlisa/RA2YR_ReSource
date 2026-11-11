@@ -1,0 +1,96 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x722f00 ObjectClass::RebuildBuildingOccupancy -> ObjectClass
+[conv] 0x649ca0 unknown::BuildNetworkEventPacket -> unknown
+[conv] 0x49d680 ObjectClass::SerializeCampaignOptions -> ObjectClass
+[conv] 0x453e20 BuildingClass::LoadFromStream -> BuildingClass
+[conv] 0x5c8500 unknown::ModBigIntExp -> unknown
+[conv] 0x41a5c0 AircraftClass::GetMissionTimer -> AircraftClass
+[conv] 0x6cb920 SuperClass::ClickFire -> SuperClass
+[conv] 0x671ea0 Dialog::ReadMultiplayerDialogSettings -> Dialog
+[conv] 0x70e920 unknown::UpdateTimedStateMachine -> unknown
+[conv] 0x711ae0 TechnoTypeClass::DTOR -> TechnoTypeClass
+[conv] 0x7c39c0 IsoTile::Decode16BitV2 -> IsoTile
+[conv] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> ReferenceCounted
+[conv] 0x6990a0 TechnoClass::SaveConfigWOL -> TechnoClass
+[conv] 0x71a760 TemporalClass::ProcessTimeWarp -> TemporalClass
+[conv] 0x62f9a0 ObjectClass::UpdateBuildingDamageParticles -> ObjectClass
+[conv] 0x6d7840 TacticalClass::DrawMap -> TacticalClass
+[conv] 0x78f200 ObjectClass::BuildWOLPlayerTooltip -> ObjectClass
+[conv] 0x56fc80 unknown::UpdateTileVariant2 -> unknown
+[conv] 0x42b420 unknown::GeneratePathWaypoints -> unknown
+[conv] 0x48c8b0 ObjectClass::MainGameFrame -> ObjectClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] unknown                  rc=2
+[era] BuildingClass            rc=2
+[era] AircraftClass            rc=2
+[era] SuperClass               rc=2
+[era] Dialog                   rc=0
+[era] TechnoTypeClass          rc=2
+[era] IsoTile                  rc=0
+[era] ReferenceCounted         rc=2
+[era] TechnoClass              rc=2
+[era] TemporalClass            rc=2
+[era] TacticalClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x56fc80   MISMATCH         unknown::UpdateTileVariant2
+[diff] 0x671ea0   MISMATCH         Dialog::ReadMultiplayerDialogSettings
+[diff] 0x7c39c0   MISMATCH         IsoTile::Decode16BitV2
+[ledger] 0x722f00 RebuildBuildingOccupancy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x649ca0 BuildNetworkEventPacket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49d680 SerializeCampaignOptions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x453e20 BuildingClass::LoadFromStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c8500 ModBigIntExp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41a5c0 AircraftClass::GetMissionTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cb920 SuperClass::ClickFire -> COMPILE_FAIL (attempt 1)
+[ledger] 0x671ea0 Dialog::ReadMultiplayerDialogSettings -> NG (attempt 1)
+[ledger] 0x70e920 UpdateTimedStateMachine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x711ae0 TechnoTypeClass::DTOR -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c39c0 IsoTile::Decode16BitV2 -> NG (attempt 1)
+[ledger] 0x764b90 CampaignConstructorWDT -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6990a0 SaveConfigWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71a760 TemporalClass::ProcessTimeWarp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62f9a0 UpdateBuildingDamageParticles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d7840 TacticalClass::DrawMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78f200 BuildWOLPlayerTooltip -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56fc80 CellClass::UpdateTileVariant2 -> NG (attempt 1)
+[ledger] 0x42b420 GeneratePathWaypoints -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48c8b0 MainGameFrame -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2854,
+ "verdicts": {
+  "MISMATCH": 722,
+  "MATCH": 521,
+  "COMPILE_FAIL": 1058,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 534,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 249,
+  "ret_norm": 8,
+  "frame_sched": 77,
+  "const_fold": 71,
+  "branch_polarity": 52,
+  "regalloc": 119,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 41.9,
+ "match_rate_of_total_pct": 18.3,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p24\batch_report.json
