@@ -1,0 +1,11 @@
+{
+ "addr": "0x70E140",
+ "name": "TechnoClass::SelectWeaponSlot",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70E140",
+ "bytes_hex": "56578b7c240c8bf183ffff75075f33c05ec204008d8e50010000e8b11e040084c0741b8b06578bceff90840000008bc8e86b96000085c0740583380075128b16578bceff92840000008bc8e8309600005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

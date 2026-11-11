@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x5295a0",
+  "name": "INIClass::ReadBool3",
+  "cls": null,
+  "size": 70,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'SetString' : cannot convert parameter 3 from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x767fb0",
+  "name": "ConstructWDTSelection_Create_767FB0",
+  "cls": null,
+  "size": 75,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2275",
+  "first_msg": "'rc_ptr' : illegal use of this type as an expression"
+ },
+ {
+  "addr": "0x413800",
+  "name": "LoadGame::ClearAllSlots",
+  "cls": null,
+  "size": 77,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'void (class LoadGame *)' : cannot convert parameter 1 from 'char *' to 'class LoadGame *'"
+ },
+ {
+  "addr": "0x4dbda0",
+  "name": "FootClass::CanBeHunted",
+  "cls": null,
+  "size": 79,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2660",
+  "first_msg": "'COMStub_Return0_32' : function does not take 1 parameters"
+ },
+ {
+  "addr": "0x473c00",
+  "name": "CCFileClass::GetSize",
+  "cls": null,
+  "size": 80,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'LookupFileInfoCache' : cannot convert parameter 1 from 'const char *' to 'void *'"
+ },
+ {
+  "addr": "0x632ff0",
+  "name": "GameClass::validateGameFile",
+  "cls": null,
+  "size": 82,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2653",
+  "first_msg": "'BlowPipe' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x603f60",
+  "name": "WOLobby_Setup",
+  "cls": null,
+  "size": 84,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p0'"
+ },
+ {
+  "addr": "0x70e140",
+  "name": "TechnoClass::SelectWeaponSlot",
+  "cls": null,
+  "size": 85,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Audio__IsLoud' : cannot convert parameter 1 from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x60b740",
+  "name": "sub_60B740",
+  "cls": null,
+  "size": 87,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "NONE",
+  "first_msg": "orig 87B ours 85B"
+ },
+ {
+  "addr": "0x4cb8b0",
+  "name": "sub_4CB8B0",
+  "cls": null,
+  "size": 90,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x49f5c0",
+  "name": "CopyProtection::CheckLauncher",
+  "cls": null,
+  "size": 91,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2660",
+  "first_msg": "'Log' : function does not take 0 parameters"
+ },
+ {
+  "addr": "0x7b7600",
+  "name": "WideString::Reassign",
+  "cls": null,
+  "size": 93,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'wcscpy' : none of the 2 overloads can convert parameter 2 from type 'int *'"
+ },
+ {
+  "addr": "0x7d9d7f",
+  "name": "_mbtowc",
+  "cls": null,
+  "size": 93,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p0'"
+ },
+ {
+  "addr": "0x7d96a8",
+  "name": "__lock_fhandle",
+  "cls": null,
+  "size": 95,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7740a0",
+  "name": "WebBrowser::GoForward",
+  "cls": null,
+  "size": 96,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x766880",
+  "name": "System_Init_766880",
+  "cls": null,
+  "size": 98,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.m_3' must have class/struct/union type"
+ },
+ {
+  "addr": "0x7d73f9",
+  "name": "_TestDefaultLanguage",
+  "cls": null,
+  "size": 98,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p0'"
+ },
+ {
+  "addr": "0x7b0220",
+  "name": "ComStreamClass::seekToPosition",
+  "cls": null,
+  "size": 99,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.lineTrailer' must have class/struct/union type"
+ },
+ {
+  "addr": "0x5ce330",
+  "name": "sub_5CE330",
+  "cls": null,
+  "size": 100,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->vfptr' must point to class/struct/union"
+ },
+ {
+  "addr": "0x479a40",
+  "name": "sub_479A40",
+  "cls": null,
+  "size": 101,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p0'"
+ }
+]

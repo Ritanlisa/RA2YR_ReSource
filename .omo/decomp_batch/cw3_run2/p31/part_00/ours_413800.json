@@ -1,0 +1,8 @@
+{
+ "symbol": "?ClearAllSlots@LoadGame@@QAEHXZ",
+ "sym_key": "LoadGame::ClearAllSlots",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "53558bd956578bf3bd900100008b068b7e08568b08ff510c8b166a0057568b02ff500883c6184d75e48b8b802500008bbb882500008db32003000056ff510c8b93802500006a005756ff52085f5e5d5bc3",
+ "relocs": []
+}

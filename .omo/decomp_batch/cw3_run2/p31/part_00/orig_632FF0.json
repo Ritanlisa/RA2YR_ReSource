@@ -1,0 +1,11 @@
+{
+ "addr": "0x632FF0",
+ "name": "GameClass::validateGameFile",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x632FF0",
+ "bytes_hex": "5356578bf98b5f208d771485dbc706c8fd7e0074108bcbe8b44fe0ff53e82b5b190083c4048bcec7460c00000000e85decffff8bcfe856ecfffff644241001740957e8065b190083c4048bc75f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

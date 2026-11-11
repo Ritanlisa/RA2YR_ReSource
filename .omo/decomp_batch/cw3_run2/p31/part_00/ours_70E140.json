@@ -1,0 +1,27 @@
+{
+ "symbol": "?SelectWeaponSlot@TechnoClass@@QAEPAIH@Z",
+ "sym_key": "TechnoClass::SelectWeaponSlot",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf183ffff75075f33c05ec204008d865001000050e80000000083c40485c0741c0fbe8e0d02000056ff1157e80000000083c40485c0740583380075130fbe960d02000056ff1257e80000000083c4045f5ec20400",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?TechnoClass__processSpyAction@@YAHH@Z",
+   "sym_key": "TechnoClass__processSpyAction"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?TechnoClass__GetAudioEntry@@YAHH@Z",
+   "sym_key": "TechnoClass__GetAudioEntry"
+  }
+ ]
+}

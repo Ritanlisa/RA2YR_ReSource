@@ -1,0 +1,11 @@
+{
+ "addr": "0x413800",
+ "name": "LoadGame::ClearAllSlots",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x413800",
+ "bytes_hex": "53558be956578bf5bb900100008b068b7e088bceff500c8b166a00578bceff520883c6184b75e68b85802500008bbd882500008db5802500008bceff500c8b166a00578bceff52085f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D96A8",
+ "name": "__lock_fhandle",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D96A8",
+ "bytes_hex": "8b442404538bc883e01fc1f90556578b348d808ab7008d1c8d808ab7008d3cc0c1e70203f7837e080075236a11e81b43ffff837e080059750d8d460c50ff15f4117e00ff46086a11e86143ffff598b038d44380c50ff15e8117e005f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

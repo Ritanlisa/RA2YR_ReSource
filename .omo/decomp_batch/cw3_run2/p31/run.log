@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x5295a0 INIClass::ReadBool3 -> INIClass
+[conv] 0x767fb0 rc_ptr::ConstructWDTSelection_Create_767FB0 -> rc_ptr
+[conv] 0x413800 LoadGame::ClearAllSlots -> LoadGame
+[conv] 0x4dbda0 FootClass::CanBeHunted -> FootClass
+[conv] 0x473c00 CCFileClass::GetSize -> CCFileClass
+[conv] 0x632ff0 PKPipe::validateGameFile -> PKPipe
+[conv] 0x603f60 WOLobby_Setup -> WOLobby
+[conv] 0x70e140 TechnoClass::SelectWeaponSlot -> TechnoClass
+[conv] 0x60b740 ObjectClass::sub_60B740 -> ObjectClass
+[conv] 0x4cb8b0 ObjectClass::sub_4CB8B0 -> ObjectClass
+[conv] 0x49f5c0 CopyProtection::CheckLauncher -> CopyProtection
+[conv] 0x7b7600 WideString::Reassign -> WideString
+[conv] 0x7d9d7f _mbtowc -> _addr_7D
+[conv] 0x7d96a8 ObjectClass::__lock_fhandle -> ObjectClass
+[conv] 0x7740a0 WebBrowser::GoForward -> WebBrowser
+[conv] 0x766880 rc_ptr::System_Init_766880 -> rc_ptr
+[conv] 0x7d73f9 _TestDefaultLanguage -> _addr_7D
+[conv] 0x7b0220 ComStreamClass::seekToPosition -> ComStreamClass
+[conv] 0x5ce330 ObjectClass::sub_5CE330 -> ObjectClass
+[conv] 0x479a40 sub_479A40 -> _addr_47
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] rc_ptr                   rc=2
+[era] LoadGame                 rc=0
+[era] FootClass                rc=2
+[era] CCFileClass              rc=2
+[era] PKPipe                   rc=0
+[era] WOLobby                  rc=2
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=2
+[era] CopyProtection           rc=2
+[era] WideString               rc=2
+[era] _addr_7D                 rc=2
+[era] WebBrowser               rc=2
+[era] ComStreamClass           rc=2
+[era] _addr_47                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x767fb0   MISMATCH         rc_ptr::ConstructWDTSelection_Create_767FB0
+[diff] 0x413800   MISMATCH         LoadGame::ClearAllSlots
+[diff] 0x632ff0   MISMATCH         PKPipe::validateGameFile
+[diff] 0x70e140   MISMATCH         TechnoClass::SelectWeaponSlot
+[diff] 0x60b740   MISMATCH         ObjectClass::sub_60B740
+[diff] 0x4cb8b0   MISMATCH         ObjectClass::sub_4CB8B0
+[diff] 0x7d96a8   MISMATCH         ObjectClass::__lock_fhandle
+[ledger] 0x5295a0 INIClass::ReadBool3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x767fb0 rc_ptr::ConstructWDTSelection_Create_767FB0 -> NG (attempt 3)
+[ledger] 0x413800 LoadGame::ClearAllSlots -> NG (attempt 3)
+[ledger] 0x4dbda0 FootClass::CanBeHunted -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473c00 CCFileClass::GetSize -> COMPILE_FAIL (attempt 3)
+[ledger] 0x632ff0 PKPipe::validateGameFile -> NG (attempt 3)
+[ledger] 0x603f60 WOLobby_Setup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70e140 TechnoClass::SelectWeaponSlot -> NG (attempt 3)
+[ledger] 0x60b740 ObjectClass::sub_60B740 -> NG (attempt 7)
+[ledger] 0x4cb8b0 ObjectClass::sub_4CB8B0 -> NG (attempt 3)
+[ledger] 0x49f5c0 CopyProtection::CheckLauncher -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b7600 WideString::Reassign -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d9d7f _mbtowc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d96a8 ObjectClass::__lock_fhandle -> NG (attempt 3)
+[ledger] 0x7740a0 WebBrowser::GoForward -> COMPILE_FAIL (attempt 3)
+[ledger] 0x766880 rc_ptr::System_Init_766880 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d73f9 _TestDefaultLanguage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b0220 ComStreamClass::seekToPosition -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ce330 ObjectClass::sub_5CE330 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x479a40 sub_479A40 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "regalloc": 4,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p31\batch_report.json

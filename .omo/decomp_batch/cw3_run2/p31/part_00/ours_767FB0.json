@@ -1,0 +1,33 @@
+{
+ "symbol": "?ConstructWDTSelection_Create_767FB0@rc_ptr@@QAIPAVrc_ptr_base@@PAHHH@Z",
+ "sym_key": "rc_ptr::ConstructWDTSelection_Create_767FB0",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "56578bfa8bf168d4000000e80000000083c40485c074188b4c24108b54240c51525750e80000000083c4108bf8eb0233ff8bcee8000000008bcec7060000000057e8000000008bc65f5ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?ConstructWDTSelection_Create_767FB0_Create@@YAPAXPAX0HH@Z",
+   "sym_key": "ConstructWDTSelection_Create_767FB0_Create"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}
