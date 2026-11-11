@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p55\part_00
+=== convert (20 addrs) ===
+[conv] 0x47b2f0 sub_47B2F0 -> _addr_47
+[conv] 0x487170 BuildingClass::processGarrison -> BuildingClass
+[conv] 0x489130 sub_489130 -> _addr_48
+[conv] 0x48be10 sub_48BE10 -> _addr_48
+[conv] 0x48c850 sub_48C850 -> _addr_48
+[conv] 0x48e430 sub_48E430 -> _addr_48
+[conv] 0x49b320 sub_49B320 -> _addr_49
+[conv] 0x49f280 sub_49F280 -> _addr_49
+[conv] 0x49fef0 sub_49FEF0 -> _addr_49
+[conv] 0x4a1700 sub_4A1700 -> _addr_4A
+[conv] 0x4a5040 sub_4A5040 -> _addr_4A
+[conv] 0x4a6c00 sub_4A6C00 -> _addr_4A
+[conv] 0x4a85e0 sub_4A85E0 -> _addr_4A
+[conv] 0x4af4d0 sub_4AF4D0 -> _addr_4A
+[conv] 0x4b5a40 sub_4B5A40 -> _addr_4B
+[conv] 0x4b6940 sub_4B6940 -> _addr_4B
+[conv] 0x4ba550 sub_4BA550 -> _addr_4B
+[conv] 0x4c1d20 sub_4C1D20 -> _addr_4C
+[conv] 0x4c3740 sub_4C3740 -> _addr_4C
+[conv] 0x4c51a0 sub_4C51A0 -> _addr_4C
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_47                 rc=0
+[era] BuildingClass            rc=0
+[era] _addr_48                 rc=0
+[era] _addr_49                 rc=0
+[era] _addr_4A                 rc=0
+[era] _addr_4B                 rc=0
+[era] _addr_4C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x47b2f0   MISMATCH         sub_47B2F0
+[diff] 0x487170   MISMATCH         BuildingClass::processGarrison
+[diff] 0x489130   MATCH            sub_489130
+[diff] 0x48be10   MATCH            sub_48BE10
+[diff] 0x48c850   MATCH            sub_48C850
+[diff] 0x48e430   MATCH            sub_48E430
+[diff] 0x49b320   MATCH            sub_49B320
+[diff] 0x49f280   MATCH            sub_49F280
+[diff] 0x49fef0   MATCH            sub_49FEF0
+[diff] 0x4a1700   MISMATCH         sub_4A1700
+[diff] 0x4a5040   MATCH            sub_4A5040
+[diff] 0x4a6c00   MATCH            sub_4A6C00
+[diff] 0x4a85e0   MISMATCH         sub_4A85E0
+[diff] 0x4af4d0   MATCH            sub_4AF4D0
+[diff] 0x4b5a40   MATCH            sub_4B5A40
+[diff] 0x4b6940   MATCH            sub_4B6940
+[diff] 0x4ba550   MATCH            sub_4BA550
+[diff] 0x4c1d20   MATCH            sub_4C1D20
+[diff] 0x4c3740   MATCH            sub_4C3740
+[diff] 0x4c51a0   MISMATCH         sub_4C51A0
+[ledger] 0x47b2f0 sub_47B2F0 -> NG (attempt 1)
+[ledger] 0x487170 BuildingClass::processGarrison -> NG (attempt 1)
+[ledger] 0x489130 sub_489130 -> OK (attempt 1)
+[ledger] 0x48be10 sub_48BE10 -> OK (attempt 1)
+[ledger] 0x48c850 sub_48C850 -> OK (attempt 1)
+[ledger] 0x48e430 sub_48E430 -> OK (attempt 1)
+[ledger] 0x49b320 sub_49B320 -> OK (attempt 1)
+[ledger] 0x49f280 sub_49F280 -> OK (attempt 1)
+[ledger] 0x49fef0 sub_49FEF0 -> OK (attempt 1)
+[ledger] 0x4a1700 sub_4A1700 -> NG (attempt 1)
+[ledger] 0x4a5040 sub_4A5040 -> OK (attempt 1)
+[ledger] 0x4a6c00 sub_4A6C00 -> OK (attempt 1)
+[ledger] 0x4a85e0 sub_4A85E0 -> NG (attempt 1)
+[ledger] 0x4af4d0 sub_4AF4D0 -> OK (attempt 1)
+[ledger] 0x4b5a40 sub_4B5A40 -> OK (attempt 1)
+[ledger] 0x4b6940 sub_4B6940 -> OK (attempt 1)
+[ledger] 0x4ba550 sub_4BA550 -> OK (attempt 1)
+[ledger] 0x4c1d20 sub_4C1D20 -> OK (attempt 1)
+[ledger] 0x4c3740 sub_4C3740 -> OK (attempt 1)
+[ledger] 0x4c51a0 sub_4C51A0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "MATCH": 15
+ },
+ "pathologies": {
+  "extern_reloc": 4,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 75.0,
+ "match_rate_of_total_pct": 75.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p55\batch_report.json
