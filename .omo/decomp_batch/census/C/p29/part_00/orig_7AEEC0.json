@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AEEC0",
+ "name": "Vector::Grow",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AEEC0",
+ "bytes_hex": "51538bd98b038b4b043bc17d0532c05b59c355568d34005783fe0a897424107d0cc74424100a0000008b7424108d3cb50000000057e81d9f01008bcf8be88bd133c08bfd83c404c1e902f3ab8bca83e103f3aa8b430885c0741b8b0b8bf0c1e1028bc18bfdc1e902f3a58bc883e103f3a48b7424108b4b0851e8ff9b010083c404897304896b08b0015f5e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

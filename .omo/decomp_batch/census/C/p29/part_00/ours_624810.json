@@ -1,0 +1,21 @@
+{
+ "symbol": "?GrowCapacity@DynamicVector@@QAEDXZ",
+ "sym_key": "DynamicVector::GrowCapacity",
+ "size": 143,
+ "link_base": 0,
+ "bytes_hex": "51538bd98b038b4b043bc1730532c05b59c3558d2c005683fd0a577d05bd0a0000008d746d00c1e60356e8000000008bce8bd0c1e902c1e1028bf133c08bfa83c404c1e902f3ab8bce8954241083e103f3aa8b730885f674188b038bfa8d0c40c1e1038bc1c1e902f3a58bc883e103f3a48b4b0851e8000000008b54241483c404896b048953085f5e5db0015b59c3",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

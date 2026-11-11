@@ -1,0 +1,15 @@
+{
+ "symbol": "?Copy@DynamicVector@@QAEPAIPAH@Z",
+ "sym_key": "DynamicVector::Copy",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf13bf774638b06ff500c8b470885c089460875198946048946108b57108956108b47148946148b065f5ec204008d0c850000000051e80000000083c40489460485c074248b4e0833c085c9c74610010000007e148b4f048b56048b0c81890c828b4e08403bc17cec8b57108956108b47148946148b065f5ec20400",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x537530 View3CommandClass::performAction_158 -> View3CommandClass
+[conv] 0x662240 ObjectClass::sub_662240 -> ObjectClass
+[conv] 0x7ca4b0 unknown::_strstr -> unknown
+[conv] 0x4df040 TechnoClass::FindBestMatch -> TechnoClass
+[conv] 0x663cd0 ObjectClass::sub_663CD0 -> ObjectClass
+[conv] 0x75ae30 WalkLocomotionClass::DispatchVirtualCall_9 -> WalkLocomotionClass
+[conv] 0x5ac430 DynamicVector::Copy -> DynamicVector
+[conv] 0x6525a0 ObjectClass::Network_Process_6525A0 -> ObjectClass
+[conv] 0x624810 DynamicVector::GrowCapacity -> DynamicVector
+[conv] 0x4c68e0 ObjectClass::sub_4C68E0 -> ObjectClass
+[conv] 0x5137d0 HouseTypeClass::readParaDropTypes -> HouseTypeClass
+[conv] 0x71ff20 TextButtonClass::sub_71FF20 -> TextButtonClass
+[conv] 0x47bb60 CellClass::DTOR -> CellClass
+[conv] 0x6551c0 BuildingClass::AddUpgrade -> BuildingClass
+[conv] 0x7c8e25 unknown::_bsearch -> unknown
+[conv] 0x7ada70 WOLGameList::EnsureCapacity -> WOLGameList
+[conv] 0x7aeec0 Vector::Grow -> Vector
+[conv] 0x635e90 ObjectClass::sub_635E90 -> ObjectClass
+[conv] 0x4a7a30 DiskLaserClass::DiskLaserClass -> DiskLaserClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] View3CommandClass        rc=2
+[era] ObjectClass              rc=2
+[era] unknown                  rc=2
+[era] TechnoClass              rc=0
+[era] WalkLocomotionClass      rc=2
+[era] DynamicVector            rc=0
+[era] HouseTypeClass           rc=2
+[era] TextButtonClass          rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] WOLGameList              rc=0
+[era] Vector                   rc=0
+[era] DiskLaserClass           rc=2
+=== diffasm byte-compare ===
+[diff] 0x663cd0   MISMATCH         ObjectClass::sub_663CD0
+[diff] 0x6525a0   MISMATCH         ObjectClass::Network_Process_6525A0
+[diff] 0x7ca4b0   MISMATCH         unknown::_strstr
+[diff] 0x4df040   MISMATCH         TechnoClass::FindBestMatch
+[diff] 0x5ac430   MISMATCH         DynamicVector::Copy
+[diff] 0x624810   MISMATCH         DynamicVector::GrowCapacity
+[diff] 0x7ada70   MISMATCH         WOLGameList::EnsureCapacity
+[diff] 0x7aeec0   MISMATCH         Vector::Grow
+[ledger] 0x537530 CreateTeamCommand::performAction_158 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x662240 sub_662240 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ca4b0 _strstr -> NG (attempt 1)
+[ledger] 0x4df040 TechnoClass::FindBestMatch -> NG (attempt 1)
+[ledger] 0x663cd0 sub_663CD0 -> NG (attempt 1)
+[ledger] 0x75ae30 JumpjetLocomotionClass::DispatchVirtualCall_9 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ac430 DynamicVector::Copy -> NG (attempt 1)
+[ledger] 0x40a7c0 0x40a7c0 -> PENDING (attempt 1)
+[ledger] 0x6525a0 Network_Process_6525A0 -> NG (attempt 1)
+[ledger] 0x624810 DynamicVector::GrowCapacity -> NG (attempt 1)
+[ledger] 0x4c68e0 sub_4C68E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5137d0 HouseTypeClass::readParaDropTypes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71ff20 sub_71FF20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47bb60 CellClass::DTOR -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6551c0 BuildingClass::AddUpgrade -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8e25 _bsearch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ada70 WOLGameList::EnsureCapacity -> NG (attempt 1)
+[ledger] 0x7aeec0 Vector::Grow -> NG (attempt 1)
+[ledger] 0x635e90 sub_635E90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a7a30 DiskLaserClass::DiskLaserClass -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2279,
+ "verdicts": {
+  "MISMATCH": 626,
+  "MATCH": 521,
+  "COMPILE_FAIL": 622,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 496,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 10,
+  "codegen_shape": 198,
+  "ret_norm": 7,
+  "frame_sched": 67,
+  "const_fold": 66,
+  "branch_polarity": 46,
+  "regalloc": 101,
+  "branch_order": 77,
+  "width_mismatch": 8,
+  "extern_reloc": 18,
+  "cc_mismatch": 25,
+  "signedness": 3
+ },
+ "match_rate_of_decided_pct": 45.4,
+ "match_rate_of_total_pct": 22.9,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p29\batch_report.json

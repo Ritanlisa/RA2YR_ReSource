@@ -1,0 +1,15 @@
+{
+ "symbol": "?_strstr@unknown@@QAEPADPBD0@Z",
+ "sym_key": "unknown::_strstr",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "8b44240453558b6c241056578a5d008bf884db746f8a550184d28854241875116836af7c00e80000000083c4048a5424188a0f8d47013acb740b84c974448a08403acb75398a08403aca75f58d78ff8d75038a4eff84c9741b8a1083c0023ad175cb8a0e84c9740c8a50ff83c6023aca75bbebde8d47ff5f5e5d5bc2080084c975bc33c05f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?JUMPOUT@@YAHHZZ",
+   "sym_key": "JUMPOUT"
+  }
+ ]
+}

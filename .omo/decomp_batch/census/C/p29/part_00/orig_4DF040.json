@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DF040",
+ "name": "TechnoClass::FindBestMatch",
+ "size": 129,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DF040",
+ "bytes_hex": "51538b5c240c55568b43105733ed33ff85c08bf1c7442410ffffffff7e598b5424208d4c24188b06518b4c2420528b5304c7442420ffffffff518b0cba518bceff902c05000085c074258b4c241885ed74178b5424103bca7c0f83faff740a8a90d303000084d274068be8894c24108b4310473bf87ca75f8bc55e5d5b59c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

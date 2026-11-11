@@ -1,0 +1,21 @@
+{
+ "symbol": "?Network_Process_6525A0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::Network_Process_6525A0",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408565785db8bf17d085f5e32c05bc2040033c08a460803c3c1e00350e8000000008bf883c40485ff75085f5e32c05bc204008a460433d284c07625558b2e8d0cd5000000008bc103c5428b28892c398b400489440f0433c98a4e043bd17cdd5d8b1652e80000000033c083c4048a4608893e03c3c64610000f95c1884e085f5eb0015bc20400",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_663CD0@ObjectClass@@QAEDHH@Z",
+ "sym_key": "ObjectClass::sub_663CD0",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "5153568bf18b4c24105785c98bf975095f5e0cff5b59c20800e80000000085c074095f5e0cff5b59c208008d44240c8d4c241450518bcfe80000000033d233c98a561085d27e2d8b76048b7c240c8bc68b1e3b7b217410413bca7d188b580483c0043b7b2175f08b148e5f5e8a42285b59c208005f5e32c05b59c20800",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?IsBroadcastAddr@Network@@QAEHXZ",
+   "sym_key": "Network::IsBroadcastAddr"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?CopyAddress@Network@@QAEPADPAXH@Z",
+   "sym_key": "Network::CopyAddress"
+  }
+ ]
+}

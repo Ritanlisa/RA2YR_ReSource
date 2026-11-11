@@ -1,0 +1,11 @@
+{
+ "addr": "0x6525A0",
+ "name": "Network_Process_6525A0",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6525A0",
+ "bytes_hex": "53558b6c240c5685ed578bf17c6f8b5e0803dd8d04dd0000000050e8576817008bf883c40485ff74548b46044b33c9895c241485c07e218b1e8d04cd000000008bd003d3418b1a891c388b5204895438048b46043bc87cdf8b0650e83d6517008b460883c40403c5893e894608c74610000000005f5e5db0015bc204005f5e5d32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
