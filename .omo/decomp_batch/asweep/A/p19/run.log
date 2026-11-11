@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e0030 sub_6E0030 -> _addr_6E
+[conv] 0x6e21d0 sub_6E21D0 -> _addr_6E
+[conv] 0x767310 Network_Connect_767310 -> Network_Connect
+[conv] 0x767600 sub_767600 -> _addr_76
+[conv] 0x773b00 WebBrowser::COMStub_Return0 -> WebBrowser
+[conv] 0x775b40 sub_775B40 -> _addr_77
+[conv] 0x7ab330 CChatEventSink::COMStub_Return0 -> CChatEventSink
+[conv] 0x7b2750 WinsockInterfaceClass::Destru_vt14 -> WinsockInterfaceClass
+[conv] 0x7b2760 WinsockInterfaceClass::Destru_vt15 -> WinsockInterfaceClass
+[conv] 0x7cf429 expspecial -> _addr_7C
+[conv] 0x403460 sub_403460 -> _addr_40
+[conv] 0x403810 ObjectClass::sub_403810 -> ObjectClass
+[conv] 0x406750 sub_406750 -> _addr_40
+[conv] 0x408eb0 sub_408EB0 -> _addr_40
+[conv] 0x40a770 sub_40A770 -> _addr_40
+[conv] 0x40a7b0 sub_40A7B0 -> _addr_40
+[conv] 0x4125f0 sub_4125F0 -> _addr_41
+[conv] 0x412600 sub_412600 -> _addr_41
+[conv] 0x420d80 AlphaShapeClass::SD_vt11 -> AlphaShapeClass
+[conv] 0x420d90 AlphaShapeClass::SD_vt12 -> AlphaShapeClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6E                 rc=0
+[era] Network_Connect          rc=0
+[era] _addr_76                 rc=0
+[era] WebBrowser               rc=0
+[era] _addr_77                 rc=0
+[era] CChatEventSink           rc=0
+[era] WinsockInterfaceClass    rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_40                 rc=2
+[era] ObjectClass              rc=0
+[era] _addr_41                 rc=0
+[era] AlphaShapeClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x6e0030   MATCH            sub_6E0030
+[diff] 0x6e21d0   MATCH            sub_6E21D0
+[diff] 0x767310   MATCH            Network_Connect_767310
+[diff] 0x767600   MATCH            sub_767600
+[diff] 0x773b00   MATCH            WebBrowser::COMStub_Return0
+[diff] 0x775b40   MATCH            sub_775B40
+[diff] 0x7ab330   MATCH            CChatEventSink::COMStub_Return0
+[diff] 0x7b2750   MATCH            WinsockInterfaceClass::Destru_vt14
+[diff] 0x7b2760   MATCH            WinsockInterfaceClass::Destru_vt15
+[diff] 0x7cf429   MATCH            expspecial
+[diff] 0x403460   MATCH            sub_403460
+[diff] 0x406750   MATCH            sub_406750
+[diff] 0x40a770   MATCH            sub_40A770
+[diff] 0x40a7b0   MATCH            sub_40A7B0
+[diff] 0x403810   MATCH            ObjectClass::sub_403810
+[diff] 0x4125f0   MATCH            sub_4125F0
+[diff] 0x412600   MATCH            sub_412600
+[diff] 0x420d80   MATCH            AlphaShapeClass::SD_vt11
+[diff] 0x420d90   MATCH            AlphaShapeClass::SD_vt12
+[ledger] 0x6e0030 sub_6E0030 -> OK (attempt 1)
+[ledger] 0x6e21d0 sub_6E21D0 -> OK (attempt 1)
+[ledger] 0x767310 Network_Connect_767310 -> OK (attempt 1)
+[ledger] 0x767600 sub_767600 -> OK (attempt 1)
+[ledger] 0x773b00 WebBrowser::COMStub_Return0 -> OK (attempt 1)
+[ledger] 0x775b40 sub_775B40 -> OK (attempt 1)
+[ledger] 0x7ab330 CChatEventSink::COMStub_Return0 -> OK (attempt 1)
+[ledger] 0x7b2750 WinsockInterfaceClass::Destru_vt14 -> OK (attempt 1)
+[ledger] 0x7b2760 WinsockInterfaceClass::Destru_vt15 -> OK (attempt 1)
+[ledger] 0x7cf429 expspecial -> OK (attempt 1)
+[ledger] 0x403460 sub_403460 -> OK (attempt 1)
+[ledger] 0x403810 ObjectClass::sub_403810 -> OK (attempt 1)
+[ledger] 0x406750 sub_406750 -> OK (attempt 1)
+[ledger] 0x408eb0 sub_408EB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40a770 sub_40A770 -> OK (attempt 1)
+[ledger] 0x40a7b0 sub_40A7B0 -> OK (attempt 1)
+[ledger] 0x4125f0 sub_4125F0 -> OK (attempt 1)
+[ledger] 0x412600 sub_412600 -> OK (attempt 1)
+[ledger] 0x420d80 AlphaShapeClass::SD_vt11 -> OK (attempt 1)
+[ledger] 0x420d90 AlphaShapeClass::SD_vt12 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p19\batch_report.json

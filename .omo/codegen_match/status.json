@@ -103,6 +103,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x403460": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_403460",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_403460",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x403490": {
   "attempts": 5,
   "first_diff": null,
@@ -116,6 +127,18 @@
   "name": "AudioQueue::FindBestChannel",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x403810": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_403810",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_403810",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x403920": {
   "attempts": 1,
@@ -299,6 +322,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x406750": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_406750",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_406750",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x406920": {
   "attempts": 2,
   "first_diff": null,
@@ -463,6 +497,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x408eb0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "sub_408EB0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_408EB0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x408ec0": {
   "attempts": 8,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x18]",
@@ -526,12 +571,34 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x40a770": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40A770",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40A770",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x40a7a0": {
   "attempts": 5,
   "first_diff": null,
   "name": "Audio::GetDirectSound",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x40a7b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40A7B0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40A7B0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x40a7c0": {
   "attempts": 2,
@@ -1346,6 +1413,28 @@
   "name": "InitializeSoundBufferPlayback",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4125f0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_4125F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4125F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x412600": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_412600",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_412600",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4129c0": {
   "attempts": 1,
@@ -2180,6 +2269,30 @@
   "name": "sub_4208C0",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x420d80": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "AlphaShapeClass::SD_vt11",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AlphaShapeClass::SD_vt11",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x420d90": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "AlphaShapeClass::SD_vt12",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AlphaShapeClass::SD_vt12",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x420da0": {
   "attempts": 1,
@@ -21578,6 +21691,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6e0030": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_6E0030",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_6E0030",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x6e0040": {
   "attempts": 1,
   "first_diff": null,
@@ -21626,6 +21750,17 @@
   "name": "TActionClass::executeGuardAreaAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6e21d0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_6E21D0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_6E21D0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x6e2970": {
   "attempts": 12,
@@ -25452,6 +25587,28 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x767310": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "Network_Connect_767310",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Network_Connect_767310",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x767600": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_767600",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_767600",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x767ca0": {
   "attempts": 2,
   "clean": false,
@@ -25974,6 +26131,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x773b00": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WebBrowser::COMStub_Return0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "WebBrowser::COMStub_Return0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x773b10": {
   "attempts": 1,
   "first_diff": null,
@@ -26092,6 +26261,17 @@
   "name": "Dialog::GetCurrentType",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "Dialog::GetCurrentType",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x775b40": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_775B40",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_775B40",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -26772,6 +26952,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7ab330": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CChatEventSink::COMStub_Return0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CComObject_CChatEventSink___ATL::COMStub_Return0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x7ab340": {
   "attempts": 8,
   "clean": true,
@@ -27169,6 +27361,30 @@
   "name": "WinsockInterfaceClass::Destru_vt13",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "WinsockInterfaceClass::Destru_vt13",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7b2750": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WinsockInterfaceClass::Destru_vt14",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "WinsockInterfaceClass::Destru_vt14",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7b2760": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WinsockInterfaceClass::Destru_vt15",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "WinsockInterfaceClass::Destru_vt15",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -28341,6 +28557,17 @@
   "orig_name": "__load_CW",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7cf429": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "expspecial",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "expspecial",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x7cf762": {

@@ -1,0 +1,11 @@
+{
+ "addr": "0x773B00",
+ "name": "WebBrowser::COMStub_Return0",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x773B00",
+ "bytes_hex": "33c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

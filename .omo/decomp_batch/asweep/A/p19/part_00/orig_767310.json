@@ -1,0 +1,11 @@
+{
+ "addr": "0x767310",
+ "name": "Network_Connect_767310",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x767310",
+ "bytes_hex": "32c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

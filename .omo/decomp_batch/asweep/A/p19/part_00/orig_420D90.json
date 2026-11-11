@@ -1,0 +1,11 @@
+{
+ "addr": "0x420D90",
+ "name": "AlphaShapeClass::SD_vt12",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x420D90",
+ "bytes_hex": "b840000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
