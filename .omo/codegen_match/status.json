@@ -1813,32 +1813,32 @@
   "status": "COMPILE_FAIL"
  },
  "0x4a2cd0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "CStreamClass::CopyStreamToBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a3220": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "CStreamClass::IStreamQueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4a3230": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "CStreamClass::IStreamAddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4a3240": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "CStreamClass::IStreamRelease",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4a3c00": {
   "attempts": 7,
@@ -1848,7 +1848,7 @@
   "status": "NG"
  },
  "0x4a4780": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Surface::CreateSurfacePalette",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1869,14 +1869,14 @@
   "status": "NG"
  },
  "0x4a61c0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TextRenderer::DrawText",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a7900": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "DiskLaserClass::PointerGotInvalid",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1897,14 +1897,14 @@
   "status": "OK"
  },
  "0x4a8bf0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Mouse::SetBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a8d50": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "MIXClass::CopyHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1918,70 +1918,70 @@
   "status": "NG"
  },
  "0x4a95a0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MapClass::SetCellFlagsAlongPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a9650": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BuildingClass::MarkExitPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4ac660": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::TogglePower",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4ac820": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TacticalClass::SetObserverMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4ac8c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::TogglePower2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4ac960": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MapClass::ToggleZoom",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4adba0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ScenarioClass::ProcessGame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4af540": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "LocomotionClass::Initialize",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4afb80": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4b0c40": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1995,7 +1995,7 @@
   "status": "OK"
  },
  "0x4b4b00": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_2",
   "note": "decomp_batch r2: COMPILE_FAIL",

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A3220",
+ "name": "CStreamClass::IStreamQueryInterface",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A3220",
+ "bytes_hex": "836c240404e966f7ffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?IStreamAddRef@CStreamClass@@QAGJXZ",
+ "sym_key": "CStreamClass::IStreamAddRef",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b44240483c0fc50e800000000c20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?CStreamClass__AddRef@@YGJPAX@Z",
+   "sym_key": "?CStreamClass__AddRef@@YGJPAX@Z"
+  }
+ ]
+}
