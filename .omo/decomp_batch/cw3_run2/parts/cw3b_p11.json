@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x725f00",
+  "name": "sub_725F00",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x74ace0",
+  "name": "sub_74ACE0",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x767280",
+  "name": "sub_767280",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x777340",
+  "name": "sub_777340",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x406920",
+  "name": "sub_406920",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x410610",
+  "name": "sub_410610",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x42e430",
+  "name": "sub_42E430",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x46d120",
+  "name": "sub_46D120",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x49b180",
+  "name": "sub_49B180",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x4ba3b0",
+  "name": "sub_4BA3B0",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x4cc790",
+  "name": "sub_4CC790",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x511200",
+  "name": "sub_511200",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x543c60",
+  "name": "sub_543C60",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x55a4d0",
+  "name": "sub_55A4D0",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x5b1f00",
+  "name": "sub_5B1F00",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x5c91f0",
+  "name": "sub_5C91F0",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x5e2430",
+  "name": "sub_5E2430",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x62b3d0",
+  "name": "sub_62B3D0",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x658e80",
+  "name": "sub_658E80",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x6911b0",
+  "name": "sub_6911B0",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ }
+]
