@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6ea3e0",
+  "name": "TeamClass::UpdateReadinessState",
+  "cls": null,
+  "size": 264,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.TeamTypeClass_field_70' must have class/struct/union type"
+ },
+ {
+  "addr": "0x4d2bc0",
+  "name": "FoggedObjectClass::ResizeArray",
+  "cls": null,
+  "size": 269,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__tail_10' : is not a member of '_DynamicVectorClass_UDrawRecord_Fo"
+ },
+ {
+  "addr": "0x656cb0",
+  "name": "RadarClass::SetViewMode",
+  "cls": null,
+  "size": 269,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.Height' must have class/struct/union type"
+ },
+ {
+  "addr": "0x58c6f0",
+  "name": "Memory_Helper_58C6F0",
+  "cls": null,
+  "size": 271,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x4c9ea0",
+  "name": "ProductionClass::StartTimer",
+  "cls": null,
+  "size": 272,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned short *'"
+ },
+ {
+  "addr": "0x586780",
+  "name": "MapClass::IsAreaFree",
+  "cls": null,
+  "size": 278,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6da230",
+  "name": "DisplayClass::GetCoordDelta",
+  "cls": null,
+  "size": 284,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x57c870",
+  "name": "globalHelper_07C870",
+  "cls": null,
+  "size": 287,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x5bd0d0",
+  "name": "Debug::ScrollText",
+  "cls": null,
+  "size": 287,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x588ac0",
+  "name": "LayerClass::ClearFactoryCellAssignments",
+  "cls": null,
+  "size": 289,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x485460",
+  "name": "BuildingClass::CheckAdjacentCells",
+  "cls": null,
+  "size": 296,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2446",
+  "first_msg": "'<=' : no conversion from 'const unsigned int' to 'class AbstractClass *'"
+ },
+ {
+  "addr": "0x455c20",
+  "name": "ObjectClass::GetScreenCoords",
+  "cls": null,
+  "size": 302,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x733cd0",
+  "name": "sub_733CD0",
+  "cls": null,
+  "size": 307,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'fstp' : undeclared identifier"
+ },
+ {
+  "addr": "0x586360",
+  "name": "Cell::IsPassable",
+  "cls": null,
+  "size": 309,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'unsigned int *'"
+ },
+ {
+  "addr": "0x547230",
+  "name": "TacticalClass::DrawCellOverlay",
+  "cls": null,
+  "size": 315,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2446",
+  "first_msg": "'==' : no conversion from 'unsigned int *' to 'int *'"
+ },
+ {
+  "addr": "0x56d460",
+  "name": "Cell::SetRadar",
+  "cls": null,
+  "size": 315,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x578710",
+  "name": "MapClass::SpiralSearch",
+  "cls": null,
+  "size": 317,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6ac5f0",
+  "name": "TActionClass::executeHarvestAction",
+  "cls": null,
+  "size": 323,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x54fe60",
+  "name": "TimerClass::Construct",
+  "cls": null,
+  "size": 331,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'unsigned short *'"
+ },
+ {
+  "addr": "0x68c710",
+  "name": "FontClass::InitMetrics",
+  "cls": null,
+  "size": 335,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'char *' to 'unsigned int'"
+ }
+]

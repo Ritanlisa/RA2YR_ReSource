@@ -1,0 +1,87 @@
+{
+ "symbol": "?Memory_Helper_58C6F0@@YGNPAF0N@Z",
+ "sym_key": "Unnamed::Memory_Helper_58C6F0",
+ "size": 253,
+ "link_base": 0,
+ "bytes_hex": "83ec108b4424148b4c2418560fbf100fbf312bf283ec080fbf50020fbf41022bc28bd68bc80fafd60fafc803ca8974240c894c242089442424db442420dd1c24e800000000dd5c241483c40885f67424db44241c83ec08da74240cd9e0dd1c24e80000000083c40885f67d0edc0500000000eb06dd0500000000dc6424208a4424185e84c0d9e1dd54241c7517dc2500000000dc1500000000dfe0f6c40174eddd54241cdc1500000000dfe0f6c441750cdd0500000000d8e1dd5c241cb900000000ddd8e80000000089442400c744240400000000df6c2400dc0d00000000dd442408dc0d00000000dec1dd44241cdc0d00000000dec183c410c21000",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?Math__ArcTan@@YANN@Z",
+   "sym_key": "Math__ArcTan"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "__real@8@4000c90fdaa22168c000",
+   "sym_key": "_real@8@4000c90fdaa22168c000"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "__real@8@3fffc90fdaa22168d000",
+   "sym_key": "_real@8@3fffc90fdaa22168d000"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "__real@8@4001c90fdaa22168c000",
+   "sym_key": "_real@8@4001c90fdaa22168c000"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "__real@8@4001c90fdaa22168c000",
+   "sym_key": "_real@8@4001c90fdaa22168c000"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "__real@8@4000c90fdaa22168c000",
+   "sym_key": "_real@8@4000c90fdaa22168c000"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "__real@8@4001c90fdaa22168c000",
+   "sym_key": "_real@8@4001c90fdaa22168c000"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "__real@8@3fe0a00000009ffff800",
+   "sym_key": "_real@8@3fe0a00000009ffff800"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "__real@8@3ffc9999999999999800",
+   "sym_key": "_real@8@3ffc9999999999999800"
+  },
+  {
+   "off": 241,
+   "type": "DIR32",
+   "sym": "__real@8@3fffc000000000000000",
+   "sym_key": "_real@8@3fffc000000000000000"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?ClearFactoryCellAssignments@LayerClass@@QAEHXZ",
+ "sym_key": "LayerClass::ClearFactoryCellAssignments",
+ "size": 337,
+ "link_base": 0,
+ "bytes_hex": "83ec0c578bf9897c240c8b87f40000008b973c010000898710010000c7870c010000010000008d48ffc1e00b898f140100008bcf8d441004898718010000e80000000085c00f84010100005355568b7424188b484883f9ff0f84dc0000000fbe1538000000c7442410000000008b148a8b4824895424148bd98bba9802000033d28a901f0100008bea8bc599f7ff8bc5c1f9102bda99f7ff2bc88b4424148be98b889c02000085c90f8e880000008b54241033c985ff7e698d042a0fbff8c1e709897c2410eb048b7c24108d04190fbfc003c73d00000400730e0fbe3d340300008b048785c075238d040b33c625ff00000033f08d042a33c625ff00000033f0b85816000089357c160000c74048ffffffff8b442414418bb8980200003bcf7ca68b4c241442895424103b919c0200000f8278ffffff8b7c24188bcfe80000000085c00f8509ffffff5e5d5b5f83c40cc3",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 317,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?ScrollText@Debug@@QAEDPBD@Z",
+ "sym_key": "Debug::ScrollText",
+ "size": 293,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18b0d402c00008bc1c1f810f7c10000ff000f84010100008b8e282700008b96202700008b862427000053558bae1c27000003ca8b962c270000578b7c242403e8894c241803d083c9ff33c0c6863427000000f2aef7d1498bf903fd3bfa7e028bfa3bef8bdd0f8d980000008b5424188d44ad008d0c8203c18b4c242403c62bcd894424108d44ad64894c241c8d148203c28d0486894424248a0c19884c24148b54241452e8000000008b4c241088018b4424248b961027000089108a4424143c0a75198b8620270000c7861c2700000000000040898620270000eb06ff861c2700008b5424248b4c24104383c26483c1193bdf89542424894c24107d068b4c241ceb958b4c24182bfd6a015751558bcee8000000005f5d5b5e83c410c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?Debug_Helper@@YGDD@Z",
+   "sym_key": "Debug_Helper"
+  },
+  {
+   "off": 279,
+   "type": "REL32",
+   "sym": "?DrawRepeated@Text@@QAEDHHHH@Z",
+   "sym_key": "Text::DrawRepeated"
+  }
+ ]
+}
