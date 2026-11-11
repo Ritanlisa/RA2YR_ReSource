@@ -13,7 +13,7 @@ bool Network::processPacket(int p0)
         unsigned short * v9;
         unsigned short * v10;
         bool v11;
-        if ( ((char *)this ->m000 || (char *)this ->u32_1 || (char *)this ->u32_2 || (char *)this ->u32_3)
+        if ( (this->m000 || this->u32_1 || this->u32_2 || this->u32_3)
         && (*(unsigned char *)p0 || *(unsigned char *)(p0 + 1) || *(unsigned char *)(p0 + 2) || *(unsigned char *)(p0 + 3)) )
         {
             v8 = 3;

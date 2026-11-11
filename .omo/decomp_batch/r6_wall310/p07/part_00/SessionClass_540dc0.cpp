@@ -4,11 +4,11 @@
 
 int SessionClass::initLAN(int p0, int * p1, int * p2)
 {
-        if ( !(char *)this ->MPGameMode )
+        if ( !this->MPGameMode )
         {
             return (int)(0);
         }
-        if ( (char *)this ->ptr_44 == 7 )
+        if ( this->ptr_44 == 7 )
         {
             return (int)(0);
         }
@@ -16,22 +16,22 @@ int SessionClass::initLAN(int p0, int * p1, int * p2)
         void * v7;
         if ( v6 )
         {
-            v7 = ((IPXConnClass *)(v6))->constructor((char *)this ->SessionClass_field_14, (char *)this ->SessionClass_field_14, (char *)this ->SessionClass_field_10, (char *)this ->u32_20, p1, p0, p0, 0);
+            v7 = ((IPXConnClass *)(v6))->constructor(this->SessionClass_field_14, this->SessionClass_field_14, this->SessionClass_field_10, this->u32_20, p1, p0, p0, 0);
         }
         else
         {
             v7 = (void *)(0);
         }
-        *(unsigned int *)((char *)this + 4 * (char *)this ->ptr_44 + 40) = (unsigned int)(v7);
-        int v8 = *(unsigned int *)((char *)this + 4 * (char *)this ->ptr_44 + 40);
+        *(unsigned int *)((char *)this + 4 * this->ptr_44 + 40) = (unsigned int)(v7);
+        int v8 = *(unsigned int *)((char *)this + 4 * this->ptr_44 + 40);
         if ( v8 == 0 )
         {
             return (int)(0);
         }
         (*(void (__stdcall **)(int))(*(unsigned int *)v8 + 4))(v8);
-        *(unsigned int *)(*(unsigned int *)((char *)this + 4 * (char *)this ->ptr_44 + 40) + 40) = (unsigned int)((char *)this ->q058);
-        *(unsigned int *)(*(unsigned int *)((char *)this + 4 * (char *)this ->ptr_44 + 40) + 44) = (unsigned int)((char *)this ->q05C);
-        *(unsigned int *)(*(unsigned int *)((char *)this + 4 * ((char *)this ->ptr_44)++ + 40) + 48) = (unsigned int)((char *)this ->q060);
+        *(unsigned int *)(*(unsigned int *)((char *)this + 4 * this->ptr_44 + 40) + 40) = (unsigned int)(this->q058);
+        *(unsigned int *)(*(unsigned int *)((char *)this + 4 * this->ptr_44 + 40) + 44) = (unsigned int)(this->q05C);
+        *(unsigned int *)(*(unsigned int *)((char *)this + 4 * (this->ptr_44)++ + 40) + 48) = (unsigned int)(this->q060);
         return (int)(1);
 }
 

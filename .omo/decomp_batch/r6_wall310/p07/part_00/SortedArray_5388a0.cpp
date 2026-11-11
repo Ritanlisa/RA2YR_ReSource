@@ -5,19 +5,19 @@
 char SortedArray::RemoveByKey(int * p0)
 {
         size_t v3;
-        v3 = (char *)this ->u32_4;
+        v3 = this->u32_4;
         if ( v3 == 0 )
         {
             return (char)(0);
         }
-        if ( !(char *)this ->u32_C )
+        if ( !this->u32_C )
         {
             qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt);
-            (char *)this ->u32_10 = 0;
-            (char *)this ->u32_C = 1;
+            this->u32_10 = 0;
+            this->u32_C = 1;
         }
-        char * v4;
-        v4 = (char *)this ->u32_4;
+        int v4;
+        v4 = (unsigned int)(this->u32_4);
         unsigned int * v5;
         v5 = (unsigned int *)(*(unsigned int **)this);
         int v15;
@@ -60,7 +60,7 @@ char SortedArray::RemoveByKey(int * p0)
         int i;
         int v11;
         int v12;
-        for ( i = v9 + 1; i < (char *)this ->u32_4; *(unsigned int *)(v12 - 4) = *(unsigned int *)(v12 + 4) )
+        for ( i = v9 + 1; i < this->u32_4; *(unsigned int *)(v12 - 4) = *(unsigned int *)(v12 + 4) )
         {
             v11 = *(unsigned int *)(*(unsigned int *)this + 8 * i);
             v12 = *(unsigned int *)this + 8 * i++;
@@ -68,12 +68,12 @@ char SortedArray::RemoveByKey(int * p0)
         }
         unsigned int * v13;
         v13 = (unsigned int *)(*(unsigned int **)this);
-        char * v14;
-        v14 = (char *)this ->u32_4 - 1;
-        (char *)this ->u32_4 = (unsigned int)(v14);
+        int v14;
+        v14 = (unsigned int)(this->u32_4 - 1);
+        this->u32_4 = v14;
         v13[2 * v14] = 0;
         v13[2 * v14 + 1] = 0;
-        (char *)this ->u32_10 = 0;
+        this->u32_10 = 0;
         return (char)(1);
 }
 

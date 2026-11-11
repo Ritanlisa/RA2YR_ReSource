@@ -111,7 +111,7 @@
    "addr": "0x52b2b0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\INIClass_52b2b0.cpp(8) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p0",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\INIClass_52b2b0.cpp(15) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_ba",
    "first_diff": null,
    "pathology": null,
    "name": "INIClass::deleteSection",
@@ -119,14 +119,14 @@
    "unit": "INIClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "13/14",
+   "sites": "11/12",
    "rule_violations": 11
   },
   {
    "addr": "0x5388a0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\SortedArray.cpp(9) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\pa",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\SortedArray.cpp(16) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\",
    "first_diff": null,
    "pathology": null,
    "name": "SortedArray::RemoveByKey",
@@ -134,7 +134,7 @@
    "unit": "SortedArray",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "13/14",
+   "sites": "11/12",
    "rule_violations": 11
   },
   {
@@ -226,7 +226,7 @@
    "addr": "0x540dc0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\SessionClass.cpp(12) : error C2446: '==' : no conversion from 'const int' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\par",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\SessionClass.cpp(20) : error C2664: 'constructor' : cannot convert parameter 7 from 'int' to 'void *'",
    "first_diff": null,
    "pathology": null,
    "name": "SessionClass::initLAN",
@@ -235,7 +235,7 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "18/18",
-   "rule_violations": 14
+   "rule_violations": 10
   },
   {
    "addr": "0x542520",
@@ -256,7 +256,7 @@
    "addr": "0x547230",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\TacticalClass.cpp(19) : error C2446: '<' : no conversion from 'unsigned int' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\TacticalClass.cpp(33) : error C2446: '==' : no conversion from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p0",
    "first_diff": null,
    "pathology": null,
    "name": "TacticalClass::DrawCellOverlay",
@@ -264,7 +264,7 @@
    "unit": "TacticalClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "21/26",
+   "sites": "19/24",
    "rule_violations": 0
   },
   {
@@ -301,7 +301,7 @@
    "addr": "0x54fe60",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\TimerClass.cpp(9) : error C2629: unexpected 'char ('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\TimerClass.cpp(27) : error C",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\TimerClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\TimerCl",
    "first_diff": null,
    "pathology": null,
    "name": "TimerClass::Construct",
@@ -331,7 +331,7 @@
    "addr": "0x556a20",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\ObjectClass.cpp(8) : error C2440: '=' : cannot convert from 'void *' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\ObjectClass.cpp(34) : error C2664: 'unsigned char (int *,int,unsigned int)' : cannot convert parameter 1 from 'unsigned int *' to 'int *'",
    "first_diff": null,
    "pathology": null,
    "name": "ObjectClass::checkLimbo",
@@ -339,7 +339,7 @@
    "unit": "ObjectClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "14/14",
+   "sites": "15/15",
    "rule_violations": 8
   }
  ]

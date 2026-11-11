@@ -5,9 +5,9 @@
 
 char * ObjectClass::checkLimbo()
 {
-        (char *)this ->vtable1 = (void *)(0x80);
-        (char *)this ->ptr_1 = 0x80;
-        (char *)this ->ptr_2 = 0x80;
+        this->vtable1 = (void *)(0x80);
+        this->ptr_1 = 0x80;
+        this->ptr_2 = 0x80;
         *((unsigned int *)this + 1) = 0;
         *((unsigned int *)this + 2) = 16;
         *((unsigned int *)this + 3) = 0;

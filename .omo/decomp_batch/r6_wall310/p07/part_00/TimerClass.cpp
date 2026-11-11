@@ -6,7 +6,7 @@
 char * TimerClass::Construct(int p0, int p1, int p2, int p3, int p4, int p5, int p6, char p7, int p8, int p9, int p10, int p11, char p12, char p13, int p14, int p15)
 {
         char *__stdcall TimerClass_Constructor(
-            char (char *)this ->m000,
+            char this->m000,
             int p0,
             int p1,
             int p2,
@@ -24,7 +24,7 @@ char * TimerClass::Construct(int p0, int p1, int p2, int p3, int p4, int p5, int
             int p14,
             int p15);
         *(unsigned int *)this = 0;
-        (char *)this ->u32_4 = 0;
+        this->u32_4 = 0;
         *((unsigned int *)this + 2) = (unsigned int)(g_CurrentFrame);
         unsigned int * v18 = (unsigned int *)((char *)this + 36);
         *((unsigned int *)this + 4) = 0;
@@ -33,27 +33,27 @@ char * TimerClass::Construct(int p0, int p1, int p2, int p3, int p4, int p5, int
         *((unsigned int *)this + 6) = 1;
         v18[1] = p1;
         *((unsigned int *)this + 7) = 1;
-        (char *)this ->q020 = 0;
+        this->q020 = 0;
         v18[2] = p2;
-        (char *)this ->q021 = 0;
+        this->q021 = 0;
         *((unsigned int *)this + 12) = p3;
         *((unsigned int *)this + 13) = p4;
         *((unsigned int *)this + 14) = p5;
         *((unsigned int *)this + 15) = p6;
-        (char *)this ->q040 = p7;
-        (char *)this ->u32_41 = 0;
-        (char *)this ->q042 = 0;
-        (char *)this ->q043 = 0;
-        (char *)this ->u32_44 = 0;
-        (char *)this ->q045 = 0;
-        (char *)this ->q046 = 0;
-        (char *)this ->u32_47 = 0;
-        (char *)this ->q048 = 0;
-        (char *)this ->q049 = 0;
+        this->q040 = p7;
+        this->u32_41 = 0;
+        this->q042 = 0;
+        this->q043 = 0;
+        this->u32_44 = 0;
+        this->q045 = 0;
+        this->q046 = 0;
+        this->u32_47 = 0;
+        this->q048 = 0;
+        this->q049 = 0;
         *((unsigned int *)this + 19) = p11;
-        (char *)this ->q051 = 0;
-        (char *)this ->q050 = p12;
-        (char *)this ->q052 = p13;
+        this->q051 = 0;
+        this->q050 = p12;
+        this->q052 = p13;
         *((unsigned int *)this + 21) = p14;
         *((unsigned int *)this + 22) = p15;
         *(unsigned int *)this = 0;
@@ -62,12 +62,12 @@ char * TimerClass::Construct(int p0, int p1, int p2, int p3, int p4, int p5, int
         *((unsigned int *)this + 2) = (unsigned int)(v19);
         *((unsigned int *)this + 3) = p1;
         *((unsigned int *)this + 4) = 1;
-        (char *)this ->u32_41 = p8;
-        (char *)this ->q043 = ((p8 >> 16) & 0xFF);
+        this->u32_41 = p8;
+        this->q043 = ((p8 >> 16) & 0xFF);
         *((unsigned short *)this + 34) = p9;
-        (char *)this ->q046 = ((p9 >> 16) & 0xFF);
-        (char *)this ->u32_47 = p10;
-        (char *)this ->q049 = ((p10 >> 16) & 0xFF);
+        this->q046 = ((p9 >> 16) & 0xFF);
+        this->u32_47 = p10;
+        this->q049 = ((p10 >> 16) & 0xFF);
         int v20;
         if ( g_TimerPool < DataGlobal_ABC880
         || (DataGlobal_ABC885 || DataGlobal_ABC880 == 0)

@@ -4,8 +4,8 @@
 
 void TacticalClass::DrawCellOverlay(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)
 {
-        char * v10;
-        v10 = (char *)this ->u32_294;
+        int v10;
+        v10 = (unsigned int)(this->u32_294);
         int v11;
         v11 = g_TerrainTypeTable2;
         int v12;
@@ -19,12 +19,12 @@ void TacticalClass::DrawCellOverlay(int p0, int p1, int p2, int p3, int p4, int 
         && ((v11 = dword_AA1098, v10 < dword_AA1098) || v10 >= dword_AA1098 + 10)
         || v10 - v11 == -1 )
         {
-            if ( (char *)this ->u32_2E1 )
+            if ( this->u32_2E1 )
             {
                 v16 = (int *)(DataGlobal_AA102C);
                 do
                 {
-                    v17 = (unsigned int)(v10 - *v16);
+                    v17 = v10 - *v16;
                     if ( v17 < 0x28 )
                     {
                         break;

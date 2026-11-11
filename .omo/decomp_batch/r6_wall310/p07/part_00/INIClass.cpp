@@ -197,19 +197,19 @@ int INIClass::GetStringByIndex(unsigned char * p0, int p1)
 char INIClass::deleteSection(int * p0)
 {
         size_t v3;
-        v3 = (char *)this ->headNode;
+        v3 = this->headNode;
         if ( v3 == 0 )
         {
             return (char)(0);
         }
-        if ( !(char *)this ->q00C )
+        if ( !this->q00C )
         {
             qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int);
-            (char *)this ->sectionHead = 0;
-            (char *)this ->q00C = 1;
+            this->sectionHead = 0;
+            this->q00C = 1;
         }
-        char * v4;
-        v4 = (char *)this ->headNode;
+        int v4;
+        v4 = (unsigned int)(this->headNode);
         unsigned int * v5;
         v5 = (unsigned int *)(*(unsigned int **)this);
         int v15;
@@ -252,7 +252,7 @@ char INIClass::deleteSection(int * p0)
         int i;
         int v11;
         int v12;
-        for ( i = v9 + 1; i < (char *)this ->headNode; *(unsigned int *)(v12 - 4) = *(unsigned int *)(v12 + 4) )
+        for ( i = v9 + 1; i < this->headNode; *(unsigned int *)(v12 - 4) = *(unsigned int *)(v12 + 4) )
         {
             v11 = *(unsigned int *)(*(unsigned int *)this + 8 * i);
             v12 = *(unsigned int *)this + 8 * i++;
@@ -260,11 +260,11 @@ char INIClass::deleteSection(int * p0)
         }
         unsigned int * v13;
         v13 = (unsigned int *)(*(unsigned int **)this);
-        char * v14;
-        v14 = (char *)this ->headNode - 1;
-        (char *)this ->headNode = (unsigned int)(v14);
+        int v14;
+        v14 = (unsigned int)(this->headNode - 1);
+        this->headNode = v14;
         v13[2 * v14] = 0;
         v13[2 * v14 + 1] = 0;
-        (char *)this ->sectionHead = 0;
+        this->sectionHead = 0;
         return (char)(1);
 }

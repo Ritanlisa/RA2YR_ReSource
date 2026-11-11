@@ -2,7 +2,6 @@
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
-class CampaignClass;
 class IPXConnClass;
 
 #ifndef DECOMP_PILOT_SESSIONCLASS_HPP
@@ -24,7 +23,7 @@ public:
     char __pad_018[8];  // 0x018
     short u32_20;  // 0x020
     char __pad_022[34];  // 0x022
-    CampaignClass * ptr_44;  // 0x044
+    unsigned int ptr_44;  // 0x044
     char __pad_048[16];  // 0x048
     int q058;  // 0x058
     int q05C;  // 0x05C
