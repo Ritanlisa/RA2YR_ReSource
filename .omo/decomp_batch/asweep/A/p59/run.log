@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p59\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b7790 sub_5B7790 -> _addr_5B
+[conv] 0x5bc130 sub_5BC130 -> _addr_5B
+[conv] 0x5bd980 sub_5BD980 -> _addr_5B
+[conv] 0x5bec70 sub_5BEC70 -> _addr_5B
+[conv] 0x5bf780 sub_5BF780 -> _addr_5B
+[conv] 0x5c5c90 sub_5C5C90 -> _addr_5C
+[conv] 0x5c6030 sub_5C6030 -> _addr_5C
+[conv] 0x5c9390 sub_5C9390 -> _addr_5C
+[conv] 0x5c96b0 sub_5C96B0 -> _addr_5C
+[conv] 0x5ca5c0 sub_5CA5C0 -> _addr_5C
+[conv] 0x5cadc0 MPBattleClass::stopGame -> MPBattleClass
+[conv] 0x5cb330 sub_5CB330 -> _addr_5C
+[conv] 0x5d3980 MPBattleClass::isDefaultAI -> MPBattleClass
+[conv] 0x5d6790 MultiplayerGameMode::ClearFlag -> MultiplayerGameMode
+[conv] 0x5d8c00 sub_5D8C00 -> _addr_5D
+[conv] 0x5d8f20 sub_5D8F20 -> _addr_5D
+[conv] 0x5da670 sub_5DA670 -> _addr_5D
+[conv] 0x5dae90 sub_5DAE90 -> _addr_5D
+[conv] 0x5e25d0 sub_5E25D0 -> _addr_5E
+[conv] 0x5ef490 sub_5EF490 -> _addr_5E
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=0
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+[era] MultiplayerGameMode      rc=2
+[era] _addr_5D                 rc=0
+[era] _addr_5E                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5b7790   MATCH            sub_5B7790
+[diff] 0x5bc130   MATCH            sub_5BC130
+[diff] 0x5bd980   MATCH            sub_5BD980
+[diff] 0x5bec70   MATCH            sub_5BEC70
+[diff] 0x5bf780   MATCH            sub_5BF780
+[diff] 0x5c5c90   MATCH            sub_5C5C90
+[diff] 0x5c6030   MATCH            sub_5C6030
+[diff] 0x5c9390   MATCH            sub_5C9390
+[diff] 0x5c96b0   MATCH            sub_5C96B0
+[diff] 0x5ca5c0   MATCH            sub_5CA5C0
+[diff] 0x5cb330   MATCH            sub_5CB330
+[diff] 0x5cadc0   MATCH            MPBattleClass::stopGame
+[diff] 0x5d3980   MATCH            MPBattleClass::isDefaultAI
+[diff] 0x5d8c00   MATCH            sub_5D8C00
+[diff] 0x5d8f20   MATCH            sub_5D8F20
+[diff] 0x5da670   MATCH            sub_5DA670
+[diff] 0x5dae90   MATCH            sub_5DAE90
+[diff] 0x5e25d0   MISMATCH         sub_5E25D0
+[diff] 0x5ef490   MATCH            sub_5EF490
+[ledger] 0x5b7790 sub_5B7790 -> OK (attempt 1)
+[ledger] 0x5bc130 sub_5BC130 -> OK (attempt 1)
+[ledger] 0x5bd980 sub_5BD980 -> OK (attempt 1)
+[ledger] 0x5bec70 sub_5BEC70 -> OK (attempt 1)
+[ledger] 0x5bf780 sub_5BF780 -> OK (attempt 1)
+[ledger] 0x5c5c90 sub_5C5C90 -> OK (attempt 1)
+[ledger] 0x5c6030 sub_5C6030 -> OK (attempt 1)
+[ledger] 0x5c9390 sub_5C9390 -> OK (attempt 1)
+[ledger] 0x5c96b0 sub_5C96B0 -> OK (attempt 1)
+[ledger] 0x5ca5c0 sub_5CA5C0 -> OK (attempt 1)
+[ledger] 0x5cadc0 MPBattleClass::stopGame -> OK (attempt 1)
+[ledger] 0x5cb330 sub_5CB330 -> OK (attempt 1)
+[ledger] 0x5d3980 MPBattleClass::isDefaultAI -> OK (attempt 1)
+[ledger] 0x5d6790 MultiplayerGameMode::ClearFlag -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8c00 sub_5D8C00 -> OK (attempt 1)
+[ledger] 0x5d8f20 sub_5D8F20 -> OK (attempt 1)
+[ledger] 0x5da670 sub_5DA670 -> OK (attempt 1)
+[ledger] 0x5dae90 sub_5DAE90 -> OK (attempt 1)
+[ledger] 0x5e25d0 sub_5E25D0 -> NG (attempt 1)
+[ledger] 0x5ef490 sub_5EF490 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 18,
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 94.7,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p59\batch_report.json

@@ -1,0 +1,21 @@
+{
+ "symbol": "?stopGame@MPBattleClass@@QAEHXZ",
+ "sym_key": "MPBattleClass::stopGame",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "33c066a30000000066a300000000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFA98@@3GA",
+   "sym_key": "DataGlobal_ABFA98"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFA9A@@3GA",
+   "sym_key": "DataGlobal_ABFA9A"
+  }
+ ]
+}

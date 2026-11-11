@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_5EF490@@YAHXZ",
+ "sym_key": "Unnamed::sub_5EF490",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "33c066a30000000066a300000000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC120C@@3GA",
+   "sym_key": "DataGlobal_AC120C"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC120E@@3GA",
+   "sym_key": "DataGlobal_AC120E"
+  }
+ ]
+}

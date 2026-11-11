@@ -18707,6 +18707,17 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5b7790": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5B7790",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5B7790",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5b9550": {
   "attempts": 1,
   "first_diff": null,
@@ -18741,6 +18752,17 @@
   "name": "FileFind::Close",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5bc130": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5BC130",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5BC130",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5bc440": {
   "attempts": 1,
@@ -18829,6 +18851,17 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5bd980": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5BD980",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5BD980",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5be990": {
   "attempts": 1,
   "clean": false,
@@ -18857,6 +18890,17 @@
   "name": "sub_5BEBA0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5bec70": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5BEC70",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5BEC70",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5bec80": {
   "attempts": 2,
@@ -18896,6 +18940,17 @@
   "name": "sub_5BF630",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x5bf780": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5BF780",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5BF780",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5bf8b0": {
   "attempts": 1,
@@ -19474,6 +19529,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5c5c90": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5C5C90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5C5C90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5c5d30": {
   "attempts": 14,
   "clean": true,
@@ -19494,6 +19560,17 @@
   "name": "FreeForAll::processTriggerEvents",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "ScenarioClass::processTriggerEvents",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c6030": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5C6030",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5C6030",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -19576,6 +19653,17 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x5c9390": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5C9390",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5C9390",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5c94d0": {
   "attempts": 1,
   "first_diff": "+16 call 0x7c8b3d",
@@ -19589,6 +19677,17 @@
   "name": "sub_5C9560",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x5c96b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5C96B0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5C96B0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5c96e0": {
   "attempts": 1,
@@ -19607,6 +19706,17 @@
   "name": "sub_5C9AE0",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x5ca5c0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5CA5C0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5CA5C0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5ca680": {
   "attempts": 1,
@@ -19672,12 +19782,35 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5cadc0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPBattleClass::stopGame",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPBattleClass::stopGame",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5cae70": {
   "attempts": 1,
   "first_diff": null,
   "name": "MultiplayerSiegeDefenderTeam::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5cb330": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5CB330",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5CB330",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5cb340": {
   "attempts": 2,
@@ -20249,6 +20382,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5d3980": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPBattleClass::isDefaultAI",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPBattleClass::isDefaultAI",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5d3990": {
   "attempts": 1,
   "clean": true,
@@ -20514,6 +20659,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5d6790": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::ClearFlag",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ScenarioClass::ClearFlag",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5d67a0": {
   "attempts": 8,
   "clean": true,
@@ -20630,6 +20787,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5d8c00": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5D8C00",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5D8C00",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5d8c50": {
   "attempts": 1,
   "first_diff": null,
@@ -20643,6 +20811,17 @@
   "name": "sub_5D8EF0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5d8f20": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5D8F20",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5D8F20",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5d8fc0": {
   "attempts": 1,
@@ -20670,6 +20849,17 @@
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
+ "0x5da670": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5DA670",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5DA670",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5dacd0": {
   "attempts": 2,
   "first_diff": null,
@@ -20683,6 +20873,17 @@
   "name": "sub_5DAD60",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x5dae90": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5DAE90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5DAE90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5daf10": {
   "attempts": 1,
@@ -20741,6 +20942,17 @@
   "name": "sub_5E2460",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x5e25d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 xor eax, eax",
+  "name": "sub_5E25D0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5E25D0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5e2790": {
   "attempts": 1,
@@ -20931,6 +21143,17 @@
   "orig_name": "sub_5EF320",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5ef490": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5EF490",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5EF490",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x5f03b0": {

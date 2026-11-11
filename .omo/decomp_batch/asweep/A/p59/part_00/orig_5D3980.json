@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D3980",
+ "name": "MPBattleClass::isDefaultAI",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D3980",
+ "bytes_hex": "33c066a328fcab0066a32afcab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
