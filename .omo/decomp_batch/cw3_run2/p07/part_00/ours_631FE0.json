@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_631FE0@ObjectClass@@QAEHPAE@Z",
+ "sym_key": "ObjectClass::sub_631FE0",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b54240485d274106a4081c100040000e800000000c2040033c0c20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?EncodeVarInt@@YIHHPAXH@Z",
+   "sym_key": "EncodeVarInt"
+  }
+ ]
+}

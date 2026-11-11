@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x536ce0",
+  "name": "CreateTeamCommand::performAction_88",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x536ee0",
+  "name": "CreateTeamCommand::performAction_107",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'unsigned short' to 'int *'"
+ },
+ {
+  "addr": "0x5370d0",
+  "name": "CreateTeamCommand::performAction_125",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x5372b0",
+  "name": "CreateTeamCommand::performAction_142",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x537600",
+  "name": "CreateTeamCommand::performAction_162",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x537910",
+  "name": "CreateTeamCommand::performAction_180",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'unsigned short' to 'int *'"
+ },
+ {
+  "addr": "0x537e90",
+  "name": "CreateTeamCommand::performAction_194",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x597fa0",
+  "name": "MapSeedClass::GetCell",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.VoxelCaches' must have class/struct/union type"
+ },
+ {
+  "addr": "0x69adf0",
+  "name": "IsRandMap::Sed",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'const void *'"
+ },
+ {
+  "addr": "0x775d90",
+  "name": "sub_775D90",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'__3_YAXPAX_Z' : cannot convert parameter 1 from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x7cac34",
+  "name": "sub_7CAC34",
+  "cls": null,
+  "size": 24,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x410e50",
+  "name": "StreamObj::Release",
+  "cls": null,
+  "size": 25,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int,int)' : cannot convert parameter 1 from 'int (__stdcall ***  )(unsigned int,int)' to 'unsig"
+ },
+ {
+  "addr": "0x631e30",
+  "name": "TacticalClass::saveConfig",
+  "cls": null,
+  "size": 25,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'PixelFXClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x7b6760",
+  "name": "DeleteAndZero::Alt",
+  "cls": null,
+  "size": 26,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2562",
+  "first_msg": "'Alt' : 'void' function returning a value"
+ },
+ {
+  "addr": "0x40f270",
+  "name": "sub_40F270",
+  "cls": null,
+  "size": 27,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2665",
+  "first_msg": "'atexit' : none of the 2 overloads can convert parameter 1 from type 'int (__cdecl *)(const void *,const voi"
+ },
+ {
+  "addr": "0x7cca19",
+  "name": "String::Wrapper5to4",
+  "cls": null,
+  "size": 27,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'String_Helper_7CCA34' : cannot convert parameter 1 from 'int' to 'unsigned char *'"
+ },
+ {
+  "addr": "0x653f50",
+  "name": "CellClass::DrawWrapper",
+  "cls": null,
+  "size": 28,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'jj' : undeclared identifier"
+ },
+ {
+  "addr": "0x799d10",
+  "name": "Dialog::CloseAll",
+  "cls": null,
+  "size": 28,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'CloseDialog' : cannot convert parameter 1 from 'void *' to 'int'"
+ },
+ {
+  "addr": "0x631fe0",
+  "name": "sub_631FE0",
+  "cls": null,
+  "size": 29,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'EncodeVarInt' : cannot convert parameter 2 from 'int' to 'unsigned char *'"
+ },
+ {
+  "addr": "0x77c580",
+  "name": "sub_77C580",
+  "cls": null,
+  "size": 29,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'atexit' : cannot convert parameter 1 from 'int (const void *,const void *)' to 'void (__cdecl *)(void)'"
+ }
+]

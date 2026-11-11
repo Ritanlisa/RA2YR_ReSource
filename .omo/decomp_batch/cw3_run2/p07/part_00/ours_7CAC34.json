@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_7CAC34@bad_cast@@QAEPAVexception@@PAV2@@Z",
+ "sym_key": "bad_cast::sub_7CAC34",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf15056e80000000083c408c706000000008bc65ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?__0exception_QAE_ABV0__Z@@YAPAVexception@@PAX0@Z",
+   "sym_key": "__0exception_QAE_ABV0__Z"
+  }
+ ]
+}
