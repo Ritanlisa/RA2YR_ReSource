@@ -2114,11 +2114,11 @@
   "status": "NG"
  },
  "0x4b6760": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "JumpjetLocomotionClass::SmallStub_4B6760",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4b6770": {
   "attempts": 4,
@@ -2135,14 +2135,14 @@
   "status": "NG"
  },
  "0x4b6790": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
   "name": "JumpjetLocomotionClass::SmallStub_4B6790",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4ba5a0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "DSurface::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2191,7 +2191,7 @@
   "status": "NG"
  },
  "0x4c58c0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "EMPulseClass::IterateCellsInRadius",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2219,7 +2219,7 @@
   "status": "NG"
  },
  "0x4c93d0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ProgressTimer::GetValue",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2233,7 +2233,7 @@
   "status": "NG"
  },
  "0x4c9b20": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "FactoryClass::UpdateProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2254,7 +2254,7 @@
   "status": "NG"
  },
  "0x4c9ea0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ProductionClass::StartTimer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2310,14 +2310,14 @@
   "status": "NG"
  },
  "0x4caf20": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "VoxelAnimClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4cbba0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "FootClass::FindPathWithRetry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2345,11 +2345,11 @@
   "status": "NG"
  },
  "0x4d0530": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "JumpjetLocomotionClass::Stub2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4d27b0": {
   "attempts": 5,
@@ -2373,21 +2373,21 @@
   "status": "NG"
  },
  "0x4d2bc0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "FoggedObjectClass::ResizeArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4da030": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "InfantryClass::ProcessExitQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4daf10": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "FootClass::UpdateState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2443,7 +2443,7 @@
   "status": "OK"
  },
  "0x4e1960": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "VectorClass_ptr_ConvertClass::MarkDirty",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2457,21 +2457,21 @@
   "status": "OK"
  },
  "0x4e4820": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Lobby::FillPlayerFactions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4e5310": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Lobby::InvalidateFactionCombos",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4e5d60": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "Lobby::InvalidatePlayerSlots",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2513,14 +2513,14 @@
   "status": "OK"
  },
  "0x4f3ff0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorCursor_uint_DynamicVectorClass_uint::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4f4000": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorCursor_uint_DynamicVectorClass_uint::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2534,7 +2534,7 @@
   "status": "NG"
  },
  "0x4fae50": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SuperWeapon::FireSuperWeaponHouseClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
