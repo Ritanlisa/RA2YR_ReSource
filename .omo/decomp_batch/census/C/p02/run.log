@@ -1,0 +1,94 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x75cc30 unknown::SmallStub_75CC30 -> unknown
+[conv] 0x556510 LightConvertClass::sub_556510 -> LightConvertClass
+[conv] 0x766900 rc_ptr::System_Init_766900 -> rc_ptr
+[conv] 0x7c8b3d unknown::OperatorDelete -> unknown
+[conv] 0x4a7b80 DiskLaserClass::Stat -> DiskLaserClass
+[conv] 0x597d50 MapSeedClass::ddtor -> MapSeedClass
+[conv] 0x71a0f0 TeleportLocomotionClass::IUnknownRelease -> TeleportLocomotionClass
+[conv] 0x4b4d50 ComPtr::Release_Alt -> ComPtr
+[conv] 0x67fde0 Game::readIniSettings -> Game
+[conv] 0x7c8e17 unknown::??2_YAPAXI_Z -> unknown
+[conv] 0x5d5870 Timer::EnableHighPrecision -> Timer
+[conv] 0x4093b0 unknown::Callback -> unknown
+[conv] 0x4b4c50 IUnknown::Vt32Thunk -> IUnknown
+[conv] 0x7cb8e6 unknown::_iswgraph -> unknown
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] LightConvertClass        rc=2
+[era] rc_ptr                   rc=2
+[era] DiskLaserClass           rc=0
+[era] MapSeedClass             rc=0
+[era] TeleportLocomotionClass  rc=0
+[era] ComPtr                   rc=0
+[era] Game                     rc=0
+[era] Timer                    rc=2
+[era] IUnknown                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x75cc30   MISMATCH         unknown::SmallStub_75CC30
+[diff] 0x7c8b3d   MISMATCH         unknown::OperatorDelete
+[diff] 0x7cb8e6   MISMATCH         unknown::_iswgraph
+[diff] 0x4a7b80   MISMATCH         DiskLaserClass::Stat
+[diff] 0x597d50   MISMATCH         MapSeedClass::ddtor
+[diff] 0x71a0f0   MISMATCH         TeleportLocomotionClass::IUnknownRelease
+[diff] 0x4b4d50   MATCH            ComPtr::Release_Alt
+[diff] 0x67fde0   MATCH            Game::readIniSettings
+[diff] 0x4b4c50   MISMATCH         IUnknown::Vt32Thunk
+[ledger] 0x679ec0 0x679ec0 -> PENDING (attempt 1)
+[ledger] 0x75cc30 JumpjetLocomotionClass::SmallStub_75CC30 -> NG (attempt 1)
+[ledger] 0x77cf90 0x77cf90 -> PENDING (attempt 1)
+[ledger] 0x77d8d0 0x77d8d0 -> PENDING (attempt 1)
+[ledger] 0x7af4d0 0x7af4d0 -> PENDING (attempt 1)
+[ledger] 0x556510 sub_556510 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x766900 System_Init_766900 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8b3d OperatorDelete -> NG (attempt 1)
+[ledger] 0x40d9f0 0x40d9f0 -> PENDING (attempt 1)
+[ledger] 0x4a7b80 DiskLaserClass::Stat -> NG (attempt 1)
+[ledger] 0x597d50 MapSeedClass::ddtor -> NG (attempt 1)
+[ledger] 0x71a0f0 JumpjetLocomotionClass::IUnknownRelease -> NG (attempt 1)
+[ledger] 0x4b4d50 ComPtr::Release_Alt -> OK (attempt 1)
+[ledger] 0x67fde0 Game::readIniSettings -> OK (attempt 1)
+[ledger] 0x7c8e17 ??2_YAPAXI_Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f3b10 0x4f3b10 -> PENDING (attempt 1)
+[ledger] 0x5d5870 Timer::EnableHighPrecision -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4093b0 Audio::Callback -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b4c50 StreamClass::Vt32Thunk -> NG (attempt 1)
+[ledger] 0x7cb8e6 _iswgraph -> NG (attempt 1)
+======================================================================
+{
+ "total": 1739,
+ "verdicts": {
+  "MISMATCH": 492,
+  "MATCH": 506,
+  "COMPILE_FAIL": 405,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 324,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 175,
+  "ret_norm": 5,
+  "frame_sched": 63,
+  "const_fold": 51,
+  "branch_polarity": 33,
+  "regalloc": 57,
+  "branch_order": 67,
+  "width_mismatch": 5,
+  "extern_reloc": 16,
+  "cc_mismatch": 9,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 50.7,
+ "match_rate_of_total_pct": 29.1,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p02\batch_report.json

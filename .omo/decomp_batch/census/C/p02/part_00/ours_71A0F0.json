@@ -1,0 +1,15 @@
+{
+ "symbol": "?IUnknownRelease@TeleportLocomotionClass@@QAGJXZ",
+ "sym_key": "TeleportLocomotionClass::IUnknownRelease",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e800000000c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?COM__ReleaseRef@@YGJPAX@Z",
+   "sym_key": "COM__ReleaseRef"
+  }
+ ]
+}

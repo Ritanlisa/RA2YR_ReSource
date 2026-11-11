@@ -1,0 +1,319 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_CLS": 5,
+   "MISMATCH": 7,
+   "COMPILE_FAIL": 5,
+   "MATCH": 2,
+   "NO_PSEUDO": 1
+  },
+  "pathologies": {
+   "frame_sched": 2,
+   "codegen_shape": 3,
+   "const_fold": 1,
+   "cc_mismatch": 1
+  },
+  "match_rate_of_decided_pct": 22.2,
+  "match_rate_of_total_pct": 10.0
+ },
+ "results": [
+  {
+   "addr": "0x679ec0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x679ec0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x75cc30",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 10B ours 26B",
+   "first_diff": {
+    "orig": "+0 sub dword ptr [esp + 4], 4",
+    "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+   },
+   "pathology": "frame_sched",
+   "name": "JumpjetLocomotionClass::SmallStub_75CC30",
+   "emitted": "unknown::SmallStub_75CC30",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 10,
+   "ours_size": 26
+  },
+  {
+   "addr": "0x77cf90",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x77cf90",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x77d8d0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x77d8d0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7af4d0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7af4d0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x556510",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p02\\part_00\\LightConvertClass.cpp(8) : error C2018: unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p02\\part_00\\LightConvertClass.cp",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_556510",
+   "emitted": "LightConvertClass::sub_556510",
+   "unit": "LightConvertClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x766900",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p02\\part_00\\rc_ptr.cpp(8) : error C2275: 'rc_ptr' : illegal use of this type as an expression; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p02\\part_00\\rc_",
+   "first_diff": null,
+   "pathology": null,
+   "name": "System_Init_766900",
+   "emitted": "rc_ptr::System_Init_766900",
+   "unit": "rc_ptr",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x7c8b3d",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 11B ours 14B",
+   "first_diff": {
+    "orig": "+0 push dword ptr [esp + 4]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "frame_sched",
+   "name": "OperatorDelete",
+   "emitted": "unknown::OperatorDelete",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 11,
+   "ours_size": 14
+  },
+  {
+   "addr": "0x40d9f0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40d9f0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4a7b80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 13B ours 8B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 call 5"
+   },
+   "pathology": "codegen_shape",
+   "name": "DiskLaserClass::Stat",
+   "emitted": "DiskLaserClass::Stat",
+   "unit": "DiskLaserClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 13,
+   "ours_size": 8
+  },
+  {
+   "addr": "0x597d50",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 13B ours 15B",
+   "first_diff": {
+    "orig": "+4 push eax",
+    "ours": "+4 mov ecx, dword ptr [eax]"
+   },
+   "pathology": "codegen_shape",
+   "name": "MapSeedClass::ddtor",
+   "emitted": "MapSeedClass::ddtor",
+   "unit": "MapSeedClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 13,
+   "ours_size": 15
+  },
+  {
+   "addr": "0x71a0f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 13B ours 13B",
+   "first_diff": {
+    "orig": "+5 call 0x55a970",
+    "ours": "+5 call 0xa"
+   },
+   "pathology": "const_fold",
+   "name": "JumpjetLocomotionClass::IUnknownRelease",
+   "emitted": "TeleportLocomotionClass::IUnknownRelease",
+   "unit": "TeleportLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 13,
+   "ours_size": 13
+  },
+  {
+   "addr": "0x4b4d50",
+   "batch": "censusC",
+   "verdict": "MATCH",
+   "note": "13B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "ComPtr::Release_Alt",
+   "emitted": "ComPtr::Release_Alt",
+   "unit": "ComPtr",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 13,
+   "ours_size": 13
+  },
+  {
+   "addr": "0x67fde0",
+   "batch": "censusC",
+   "verdict": "MATCH",
+   "note": "13B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Game::readIniSettings",
+   "emitted": "Game::readIniSettings",
+   "unit": "Game",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 13,
+   "ours_size": 13
+  },
+  {
+   "addr": "0x7c8e17",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p02\\part_00\\include\\unknown_7c8e17.hpp(20) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p02\\part_00\\include\\unknown_7c8e",
+   "first_diff": null,
+   "pathology": null,
+   "name": "??2_YAPAXI_Z",
+   "emitted": "unknown::??2_YAPAXI_Z",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x4f3b10",
+   "batch": "censusC",
+   "verdict": "NO_PSEUDO",
+   "note": "empty Hex-Rays body (15B disasm)",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5d5870",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p02\\part_00\\include\\Timer.hpp(21) : error C2143: syntax error : missing ';' before '__stdcall'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Timer::EnableHighPrecision",
+   "emitted": "Timer::EnableHighPrecision",
+   "unit": "Timer",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x4093b0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p02\\part_00\\unknown_4093b0.cpp(9) : error C2064: term does not evaluate to a function",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Audio::Callback",
+   "emitted": "unknown::Callback",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x4b4c50",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+13 ret 4",
+    "ours": "+13 ret 8"
+   },
+   "pathology": "cc_mismatch",
+   "name": "StreamClass::Vt32Thunk",
+   "emitted": "IUnknown::Vt32Thunk",
+   "unit": "IUnknown",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 16,
+   "ours_size": 16
+  },
+  {
+   "addr": "0x7cb8e6",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 17B ours 26B",
+   "first_diff": {
+    "orig": "+0 push 0x117",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "_iswgraph",
+   "emitted": "unknown::_iswgraph",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0,
+   "orig_size": 17,
+   "ours_size": 26
+  }
+ ]
+}

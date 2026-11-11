@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B4D50",
+ "name": "ComPtr::Release_Alt",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B4D50",
+ "bytes_hex": "8b0185c074068b0850ff5108c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

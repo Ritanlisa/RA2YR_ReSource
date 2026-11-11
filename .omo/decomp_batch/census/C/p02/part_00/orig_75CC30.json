@@ -1,0 +1,11 @@
+{
+ "addr": "0x75CC30",
+ "name": "JumpjetLocomotionClass::SmallStub_75CC30",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75CC30",
+ "bytes_hex": "836c240404e9b6fbffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8B3D",
+ "name": "OperatorDelete",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8B3D",
+ "bytes_hex": "ff742404e8a208000059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

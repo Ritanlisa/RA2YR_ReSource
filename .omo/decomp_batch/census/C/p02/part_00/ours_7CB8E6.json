@@ -1,0 +1,15 @@
+{
+ "symbol": "?_iswgraph@unknown@@QAEHG@Z",
+ "sym_key": "unknown::_iswgraph",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b442404681701000025ffff000050e80000000083c408c20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?iswctype@@YAHHHZZ",
+   "sym_key": "iswctype"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Vt32Thunk@IUnknown@@QAGHH@Z",
+ "sym_key": "IUnknown::Vt32Thunk",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b442404508b08ff9180000000c20800",
+ "relocs": []
+}

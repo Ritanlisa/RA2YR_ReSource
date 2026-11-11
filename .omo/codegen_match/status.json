@@ -342,6 +342,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4093b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio::Callback",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x40a7a0": {
   "attempts": 5,
   "first_diff": null,
@@ -439,6 +446,13 @@
   "name": "VectorClass_ptr_MixFileClass::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x40d9f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40d9f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x40dc50": {
   "attempts": 1,
@@ -2960,6 +2974,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x4a7b80": {
+  "attempts": 1,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "DiskLaserClass::Stat",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4a7c70": {
   "attempts": 5,
   "first_diff": null,
@@ -3114,6 +3135,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4b4c50": {
+  "attempts": 1,
+  "first_diff": "+13 ret 4",
+  "name": "StreamClass::Vt32Thunk",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
+ },
  "0x4b4c60": {
   "attempts": 1,
   "first_diff": null,
@@ -3139,6 +3167,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "DriveLocomotionClass::StubReturn112",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4b4d50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ComPtr::Release_Alt",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -4128,6 +4163,13 @@
   "name": "GraphicMenuAnimItem::AddRef",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4f3b10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4f3b10",
+  "note": "decomp_batch r2: NO_PSEUDO",
+  "status": "PENDING"
  },
  "0x4f3ff0": {
   "attempts": 5,
@@ -5466,6 +5508,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x556510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_556510",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x556620": {
   "attempts": 10,
   "first_diff": null,
@@ -6003,6 +6052,13 @@
   "first_diff": "+15 jl 0x5975f6",
   "name": "SettingsClass::ClampValues",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x597d50": {
+  "attempts": 1,
+  "first_diff": "+4 push eax",
+  "name": "MapSeedClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x59bab0": {
@@ -6772,6 +6828,13 @@
   "attempts": 11,
   "first_diff": null,
   "name": "WideString::WordWrap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5d5870": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Timer::EnableHighPrecision",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -8196,6 +8259,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x679ec0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x679ec0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x67a460": {
   "attempts": 1,
   "first_diff": null,
@@ -8244,6 +8314,13 @@
   "name": "0x67c650",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x67fde0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Game::readIniSettings",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x681090": {
   "attempts": 1,
@@ -9729,6 +9806,13 @@
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
+ "0x71a0f0": {
+  "attempts": 1,
+  "first_diff": "+5 call 0x55a970",
+  "name": "JumpjetLocomotionClass::IUnknownRelease",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x71a210": {
   "attempts": 1,
   "first_diff": null,
@@ -10786,6 +10870,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x75cc30": {
+  "attempts": 1,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_75CC30",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
  "0x75ce30": {
   "attempts": 1,
   "first_diff": null,
@@ -10946,6 +11037,13 @@
   "name": "sub_7667E0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x766900": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "System_Init_766900",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x766fa0": {
   "attempts": 6,
@@ -11297,12 +11395,26 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x77cf90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x77cf90",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x77d710": {
   "attempts": 9,
   "first_diff": null,
   "name": "GameLoop::Thunk",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x77d8d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x77d8d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x77e780": {
   "attempts": 1,
@@ -11441,6 +11553,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7af280",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7af4d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7af4d0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -12025,6 +12144,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x7c8b3d": {
+  "attempts": 1,
+  "first_diff": "+0 push dword ptr [esp + 4]",
+  "name": "OperatorDelete",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
+ "0x7c8e17": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "??2_YAPAXI_Z",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7c8f5e": {
   "attempts": 1,
   "first_diff": null,
@@ -12094,6 +12227,13 @@
   "name": "0x7cb847",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7cb8e6": {
+  "attempts": 1,
+  "first_diff": "+0 push 0x117",
+  "name": "_iswgraph",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7cd790": {
   "attempts": 1,

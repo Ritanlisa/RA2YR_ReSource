@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B4C50",
+ "name": "StreamClass::Vt32Thunk",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B4C50",
+ "bytes_hex": "8b442404508b08ff9180000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

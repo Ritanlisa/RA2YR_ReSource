@@ -1,0 +1,8 @@
+{
+ "symbol": "?Release_Alt@ComPtr@@QAEHXZ",
+ "sym_key": "ComPtr::Release_Alt",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b0185c074068b0850ff5108c3",
+ "relocs": []
+}
