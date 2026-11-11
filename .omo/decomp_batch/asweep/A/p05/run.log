@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x62d760 nullsub_214 -> _addr_62
+[conv] 0x6339a0 Camera::StubReturn -> Camera
+[conv] 0x646db0 nullsub_216 -> _addr_64
+[conv] 0x648340 nullsub_32 -> _addr_64
+[conv] 0x652100 nullsub_217 -> _addr_65
+[conv] 0x6528c0 ScreenEffect::StubReturnFalse -> ScreenEffect
+[conv] 0x652910 ScreenEffect::StubReturnVoid -> ScreenEffect
+[conv] 0x67fdc0 nullsub_225 -> _addr_67
+[conv] 0x6832b0 nullsub_226 -> _addr_68
+[conv] 0x690150 nullsub_227 -> _addr_69
+[conv] 0x691b30 nullsub_34 -> _addr_69
+[conv] 0x692f20 nullsub_175 -> _addr_69
+[conv] 0x697b60 nullsub_228 -> _addr_69
+[conv] 0x69a300 ObjectClass::nullsub_35 -> ObjectClass
+[conv] 0x6a3da0 nullsub_230 -> _addr_6A
+[conv] 0x6b8b20 ObjectClass::nullsub_38 -> ObjectClass
+[conv] 0x6ba220 nullsub_39 -> _addr_6B
+[conv] 0x6c6af0 nullsub_234 -> _addr_6C
+[conv] 0x6c9f00 ObjectClass::nullsub_40 -> ObjectClass
+[conv] 0x6cc070 ObjectClass::nullsub_231 -> ObjectClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_62                 rc=0
+[era] Camera                   rc=0
+[era] _addr_64                 rc=0
+[era] _addr_65                 rc=0
+[era] ScreenEffect             rc=0
+[era] _addr_67                 rc=0
+[era] _addr_68                 rc=0
+[era] _addr_69                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_6A                 rc=0
+[era] _addr_6B                 rc=0
+[era] _addr_6C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x62d760   MATCH            nullsub_214
+[diff] 0x6339a0   MATCH            Camera::StubReturn
+[diff] 0x646db0   MATCH            nullsub_216
+[diff] 0x648340   MATCH            nullsub_32
+[diff] 0x652100   MATCH            nullsub_217
+[diff] 0x6528c0   MATCH            ScreenEffect::StubReturnFalse
+[diff] 0x652910   MATCH            ScreenEffect::StubReturnVoid
+[diff] 0x67fdc0   MATCH            nullsub_225
+[diff] 0x6832b0   MATCH            nullsub_226
+[diff] 0x690150   MATCH            nullsub_227
+[diff] 0x692f20   MATCH            nullsub_175
+[diff] 0x697b60   MATCH            nullsub_228
+[diff] 0x69a300   MATCH            ObjectClass::nullsub_35
+[diff] 0x6a3da0   MATCH            nullsub_230
+[diff] 0x6ba220   MATCH            nullsub_39
+[diff] 0x6c6af0   MATCH            nullsub_234
+[ledger] 0x62d760 nullsub_214 -> OK (attempt 1)
+[ledger] 0x6339a0 Camera::StubReturn -> OK (attempt 1)
+[ledger] 0x646db0 nullsub_216 -> OK (attempt 1)
+[ledger] 0x648340 nullsub_32 -> OK (attempt 1)
+[ledger] 0x652100 nullsub_217 -> OK (attempt 1)
+[ledger] 0x6528c0 ScreenEffect::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x652910 ScreenEffect::StubReturnVoid -> OK (attempt 1)
+[ledger] 0x67fdc0 nullsub_225 -> OK (attempt 1)
+[ledger] 0x6832b0 nullsub_226 -> OK (attempt 1)
+[ledger] 0x690150 nullsub_227 -> OK (attempt 1)
+[ledger] 0x691b30 nullsub_34 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x692f20 nullsub_175 -> OK (attempt 1)
+[ledger] 0x697b60 nullsub_228 -> OK (attempt 1)
+[ledger] 0x69a300 ObjectClass::nullsub_35 -> OK (attempt 1)
+[ledger] 0x6a3da0 nullsub_230 -> OK (attempt 1)
+[ledger] 0x6b8b20 ObjectClass::nullsub_38 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ba220 nullsub_39 -> OK (attempt 1)
+[ledger] 0x6c6af0 nullsub_234 -> OK (attempt 1)
+[ledger] 0x6c9f00 ObjectClass::nullsub_40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cc070 ObjectClass::nullsub_231 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 80.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p05\batch_report.json
