@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p244\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c5390 _VectorClass_PAUNodeNameType::AddRef -> _VectorClass_PAUNodeNameType
+[conv] 0x5c55f0 _VectorClass_PAVCoopCampaignClass::AddRef -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5d0ae0 _VectorClass_PAVMSTextEntry::Add -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d0fa0 _VectorClass_PAVMapStage::AddRef -> _VectorClass_PAVMapStage
+[conv] 0x5d1200 _VectorClass_PAVMSAnimEntry::AddRef -> _VectorClass_PAVMSAnimEntry
+[conv] 0x5d1460 _VectorClass_PAVMSSfxEntry::Add -> _VectorClass_PAVMSSfxEntry
+[conv] 0x5d2a40 _VectorClass_PAVMSSfx::Add -> _VectorClass_PAVMSSfx
+[conv] 0x5d5150 _VectorClass_PAUHWND::AddRef -> _VectorClass_PAUHWND
+[conv] 0x5d82f0 _VectorClass_PAVMultiplayerTeam::Add -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x5d8550 _VectorClass_PAVMultiplayerGameMode::assignHouses -> _VectorClass_PAVMultiplayerGameMode
+[conv] 0x5eec10 _VectorClass_PBVMultiMission::AddRef -> _VectorClass_PBVMultiMission
+[conv] 0x5f9b80 _VectorClass_PAVObjectTypeClass::Add -> _VectorClass_PAVObjectTypeClass
+[conv] 0x600020 _VectorClass_PAVSpotLightClass::Add -> _VectorClass_PAVSpotLightClass
+[conv] 0x627e10 _VectorClass_PAVColorScheme::Add -> _VectorClass_PAVColorScheme
+[conv] 0x62b0d0 _VectorClass_PAVParasiteClass::Add -> _VectorClass_PAVParasiteClass
+[conv] 0x63dd40 _VectorClass_PAVPlanningMemberClass::Add -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63e050 _VectorClass_PAVPlanningBranchClass::Add -> _VectorClass_PAVPlanningBranchClass
+[conv] 0x63e310 _VectorClass_PAVPlanningNodeClass::AddRef -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63e650 _VectorClass_PAVEventClass::AddRef -> _VectorClass_PAVEventClass
+[conv] 0x65a240 _VectorClass_PAVRadBeam::Add -> _VectorClass_PAVRadBeam
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAUNodeNameType rc=2
+[era] _VectorClass_PAVCoopCampaignClass rc=2
+[era] _VectorClass_PAVMSTextEntry rc=2
+[era] _VectorClass_PAVMapStage rc=2
+[era] _VectorClass_PAVMSAnimEntry rc=2
+[era] _VectorClass_PAVMSSfxEntry rc=2
+[era] _VectorClass_PAVMSSfx    rc=2
+[era] _VectorClass_PAUHWND     rc=2
+[era] _VectorClass_PAVMultiplayerTeam rc=2
+[era] _VectorClass_PAVMultiplayerGameMode rc=2
+[era] _VectorClass_PBVMultiMission rc=2
+[era] _VectorClass_PAVObjectTypeClass rc=2
+[era] _VectorClass_PAVSpotLightClass rc=2
+[era] _VectorClass_PAVColorScheme rc=2
+[era] _VectorClass_PAVParasiteClass rc=2
+[era] _VectorClass_PAVPlanningMemberClass rc=2
+[era] _VectorClass_PAVPlanningBranchClass rc=2
+[era] _VectorClass_PAVPlanningNodeClass rc=2
+[era] _VectorClass_PAVEventClass rc=2
+[era] _VectorClass_PAVRadBeam  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5c5390 _VectorClass_PAUNodeNameType::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c55f0 _VectorClass_PAVCoopCampaignClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0ae0 _VectorClass_PAVMSTextEntry::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0fa0 _VectorClass_PAVMapStage::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1200 _VectorClass_PAVMSAnimEntry::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1460 _VectorClass_PAVMSSfxEntry::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2a40 _VectorClass_PAVMSSfx::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d5150 _VectorClass_PAUHWND::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d82f0 _VectorClass_PAVMultiplayerTeam::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8550 _VectorClass_PAVMultiplayerGameMode::assignHouses -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eec10 _VectorClass_PBVMultiMission::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f9b80 _VectorClass_PAVObjectTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x600020 _VectorClass_PAVSpotLightClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x627e10 _VectorClass_PAVColorScheme::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62b0d0 _VectorClass_PAVParasiteClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63dd40 _VectorClass_PAVPlanningMemberClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e050 _VectorClass_PAVPlanningBranchClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e310 _VectorClass_PAVPlanningNodeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e650 _VectorClass_PAVEventClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65a240 _VectorClass_PAVRadBeam::Add -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p244\batch_report.json
