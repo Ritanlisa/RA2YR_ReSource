@@ -1,0 +1,11 @@
+{
+ "addr": "0x485010",
+ "name": "BuildingClass::FindByCellHash",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x485010",
+ "bytes_hex": "8b4944e9088d1700",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

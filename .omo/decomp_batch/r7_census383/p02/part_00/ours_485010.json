@@ -1,0 +1,15 @@
+{
+ "symbol": "?FindByCellHash@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::FindByCellHash",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b414450e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?FindBuildingByTiberiumType@@YAHZZ",
+   "sym_key": "FindBuildingByTiberiumType"
+  }
+ ]
+}
