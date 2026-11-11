@@ -1,0 +1,11 @@
+{
+ "addr": "0x456F80",
+ "name": "TechnoClass::ProcessMissionDeploy",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x456F80",
+ "bytes_hex": "8b81f000000083e0023c028b44240475143ddc0500007e08050cfeffffc2040005f4010000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

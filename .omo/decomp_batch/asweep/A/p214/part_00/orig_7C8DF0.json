@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8DF0",
+ "name": "_strrchr",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8DF0",
+ "bytes_hex": "558bec578b7d0833c083c9fff2ae41f7d94f8a450cfdf2ae473807740433c0eb028bc7fc5fc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

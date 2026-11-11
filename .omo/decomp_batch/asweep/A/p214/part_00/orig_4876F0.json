@@ -1,0 +1,11 @@
+{
+ "addr": "0x4876F0",
+ "name": "CellClass::Unshroud",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4876F0",
+ "bytes_hex": "8b812c0100000c1889812c0100008b813001000085c07e0e8b81400100000c20898140010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

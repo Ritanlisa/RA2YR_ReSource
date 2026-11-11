@@ -1,0 +1,21 @@
+{
+ "symbol": "?ResetDetonationTimer@BulletClass@@QAEPAV1@XZ",
+ "sym_key": "BulletClass::ResetDetonationTimer",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "a100000000890133c08941088b150000000089411489411c8941208941248941288b0189510cc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

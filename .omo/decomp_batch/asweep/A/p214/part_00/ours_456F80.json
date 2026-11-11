@@ -1,0 +1,8 @@
+{
+ "symbol": "?ProcessMissionDeploy@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ProcessMissionDeploy",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "518b81f000000083e0023c028b44240075133ddc0500007f0705f401000059c3050cfeffff59c3",
+ "relocs": []
+}

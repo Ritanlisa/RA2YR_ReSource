@@ -1,0 +1,11 @@
+{
+ "addr": "0x58D070",
+ "name": "SetLayerDataMap",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58D070",
+ "bytes_hex": "568b3510edab0085f6741a0fbf41020faf05dcc289000fbf0903c18d0480c1e004895430385ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

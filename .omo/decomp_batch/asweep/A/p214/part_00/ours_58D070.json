@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetLayerDataMap@@YIHPAFH@Z",
+ "sym_key": "Unnamed::SetLayerDataMap",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "51568b350000000085f6741d0fbf41020faf05000000000fbf0903c18d0480c1e004895406385e59c38b4424045e59c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  }
+ ]
+}

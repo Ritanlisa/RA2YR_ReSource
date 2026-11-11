@@ -1,0 +1,8 @@
+{
+ "symbol": "?CopyNeighborData@CellClass@@QAEPAV1@H@Z",
+ "sym_key": "CellClass::CopyNeighborData",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "8bc18b4c24048b51108950108a51148850148b51188950188b511c89501c8a4920884820c20400",
+ "relocs": []
+}

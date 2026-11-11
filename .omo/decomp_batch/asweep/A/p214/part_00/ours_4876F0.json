@@ -1,0 +1,8 @@
+{
+ "symbol": "?Unshroud@CellClass@@QAEEXZ",
+ "sym_key": "CellClass::Unshroud",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "8b812c0100000c1889812c0100008b813001000085c07e0e8b81400100000c20898140010000c3",
+ "relocs": []
+}

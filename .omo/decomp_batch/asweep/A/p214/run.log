@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p214\part_00
+=== convert (20 addrs) ===
+[conv] 0x426dd0 AnimFile::Check -> AnimFile
+[conv] 0x4876f0 CellClass::Unshroud -> CellClass
+[conv] 0x4e0080 TeamClass::HasAnyMemberFlagged -> TeamClass
+[conv] 0x4e7ea0 sub_4E7EA0 -> _addr_4E
+[conv] 0x4e7ed0 sub_4E7ED0 -> _addr_4E
+[conv] 0x4e7f00 sub_4E7F00 -> _addr_4E
+[conv] 0x588c10 CellClass::CopyNeighborData -> CellClass
+[conv] 0x58d070 SetLayerDataMap -> _addr_58
+[conv] 0x69a310 SessionClass::GetPlayerColorScheme -> SessionClass
+[conv] 0x69bbf0 ObjectClass::Network_Disconnect_69BBF0 -> ObjectClass
+[conv] 0x7c8df0 _strrchr -> _addr_7C
+[conv] 0x7ccf1d ObjectClass::__store_str -> ObjectClass
+[conv] 0x552c90 Map::Load -> Map
+[conv] 0x6433d0 Progress::GetAverage -> Progress
+[conv] 0x74ffc0 Crate::IsRookie -> Crate
+[conv] 0x42dae0 _DynamicVectorClass_G::FindItemIndex -> _DynamicVectorClass_G
+[conv] 0x456f80 TechnoClass::ProcessMissionDeploy -> TechnoClass
+[conv] 0x465de0 _VectorClass_V_TPoint3D_H::Clear -> _VectorClass_V_TPoint3D_H
+[conv] 0x4e1100 BulletClass::ResetDetonationTimer -> BulletClass
+[conv] 0x53ec40 Memory_Helper -> Memory
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AnimFile                 rc=2
+[era] CellClass                rc=0
+[era] TeamClass                rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_58                 rc=0
+[era] SessionClass             rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=0
+[era] Map                      rc=2
+[era] Progress                 rc=0
+[era] Crate                    rc=2
+[era] _DynamicVectorClass_G    rc=2
+[era] TechnoClass              rc=0
+[era] _VectorClass_V_TPoint3D_H rc=0
+[era] BulletClass              rc=0
+[era] Memory                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x4876f0   MATCH            CellClass::Unshroud
+[diff] 0x588c10   MATCH            CellClass::CopyNeighborData
+[diff] 0x4e0080   MATCH            TeamClass::HasAnyMemberFlagged
+[diff] 0x4e7ea0   MISMATCH         sub_4E7EA0
+[diff] 0x4e7ed0   MISMATCH         sub_4E7ED0
+[diff] 0x4e7f00   MATCH            sub_4E7F00
+[diff] 0x58d070   MISMATCH         SetLayerDataMap
+[diff] 0x7c8df0   MISMATCH         _strrchr
+[diff] 0x6433d0   MISMATCH         Progress::GetAverage
+[diff] 0x456f80   MISMATCH         TechnoClass::ProcessMissionDeploy
+[diff] 0x465de0   MISMATCH         _VectorClass_V_TPoint3D_H::Clear
+[diff] 0x4e1100   MISMATCH         BulletClass::ResetDetonationTimer
+[ledger] 0x426dd0 AnimFile::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4876f0 CellClass::Unshroud -> OK (attempt 1)
+[ledger] 0x4e0080 TeamClass::HasAnyMemberFlagged -> OK (attempt 1)
+[ledger] 0x4e7ea0 sub_4E7EA0 -> NG (attempt 1)
+[ledger] 0x4e7ed0 sub_4E7ED0 -> NG (attempt 1)
+[ledger] 0x4e7f00 sub_4E7F00 -> OK (attempt 1)
+[ledger] 0x588c10 CellClass::CopyNeighborData -> OK (attempt 1)
+[ledger] 0x58d070 SetLayerDataMap -> NG (attempt 1)
+[ledger] 0x69a310 SessionClass::GetPlayerColorScheme -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69bbf0 ObjectClass::Network_Disconnect_69BBF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8df0 _strrchr -> NG (attempt 1)
+[ledger] 0x7ccf1d ObjectClass::__store_str -> COMPILE_FAIL (attempt 1)
+[ledger] 0x552c90 Map::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6433d0 Progress::GetAverage -> NG (attempt 1)
+[ledger] 0x74ffc0 Crate::IsRookie -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42dae0 _DynamicVectorClass_G::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x456f80 TechnoClass::ProcessMissionDeploy -> NG (attempt 1)
+[ledger] 0x465de0 _VectorClass_V_TPoint3D_H::Clear -> NG (attempt 1)
+[ledger] 0x4e1100 BulletClass::ResetDetonationTimer -> NG (attempt 1)
+[ledger] 0x53ec40 Memory_Helper -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MATCH": 4,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "regalloc": 1,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 33.3,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p214\batch_report.json

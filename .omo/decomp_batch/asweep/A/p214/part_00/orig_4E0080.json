@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E0080",
+ "name": "TeamClass::HasAnyMemberFlagged",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E0080",
+ "bytes_hex": "8a818f06000084c075178a819006000084c0750d8a819106000084c0750333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

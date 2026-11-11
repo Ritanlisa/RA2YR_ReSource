@@ -1,0 +1,11 @@
+{
+ "addr": "0x465DE0",
+ "name": "VectorClass_TPoint3D_int::Clear",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x465DE0",
+ "bytes_hex": "8b4424088b4904568d04408d14818b4424088bc88b3289318b72048971045e8b5208895108c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

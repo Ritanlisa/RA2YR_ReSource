@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetAverage@Progress@@QAENXZ",
+ "sym_key": "Progress::GetAverage",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "51dd050000000033d28a516185d27e0f8d4108dc0083c0084a8944240075f4ddd8db44240059c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

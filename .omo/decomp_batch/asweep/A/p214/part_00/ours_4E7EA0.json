@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4E7EA0@@YAPADXZ",
+ "sym_key": "Unnamed::sub_4E7EA0",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "33c0b980000000a00000000033d2881083c06f4975f8891500000000891500000000891500000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_NetworkPacketIndex@@3EA",
+   "sym_key": "g_NetworkPacketIndex"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_NetworkEventIndex@@3IA",
+   "sym_key": "g_NetworkEventIndex"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  }
+ ]
+}

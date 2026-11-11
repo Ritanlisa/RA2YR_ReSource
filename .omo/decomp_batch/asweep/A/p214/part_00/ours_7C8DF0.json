@@ -1,0 +1,8 @@
+{
+ "symbol": "?_strrchr@@YAPADPBDH@Z",
+ "sym_key": "Unnamed::_strrchr",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "8b54240456578bfa83c9ff33c0f2ae8b742410f7d149418d5411ff741f8bfe81e7ff0000000fbe024a3bc77504b001eb0232c04984c0750485c975e90fbe42018d4a0181e6ff0000002bc65ff7d81bc05ef7d023c1c3",
+ "relocs": []
+}
