@@ -1,0 +1,21 @@
+{
+ "symbol": "?PumpMessages@Timer@@QAEPAXXZ",
+ "sym_key": "Timer::PumpMessages",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86180300008b8e140300004025ff0000003bc17405e8000000008b86180300008986140300008d480181e1ff00008079084981c900ffffff413bc875088986140300005ec3e8000000008b96180300008996140300005ec3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAPAXXZ",
+   "sym_key": "MessageLoop"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAPAXXZ",
+   "sym_key": "MessageLoop"
+  }
+ ]
+}

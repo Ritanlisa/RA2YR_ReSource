@@ -1,0 +1,11 @@
+{
+ "addr": "0x486890",
+ "name": "CellClass::CheckProperty",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x486890",
+ "bytes_hex": "8b814001000083ec0cf6c4015674338b018b35b4e789008d5424045752ff50488b088b50048b400803c68b7424188bfe890f8957048947088bc65f5e83c40cc204008b018d54240452ff50488bc88b4424148bd08b3189328b71048972045e8b4908894a0883c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

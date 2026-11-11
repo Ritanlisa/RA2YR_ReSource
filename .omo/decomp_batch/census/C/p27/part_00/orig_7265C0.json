@@ -1,0 +1,11 @@
+{
+ "addr": "0x7265C0",
+ "name": "BuildingClass::ExecuteTriggers",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7265C0",
+ "bytes_hex": "578bf98a474484c074568a473084c0754f8b4724535632db8bb0b000000085f67436558b6c24148b57248d4c241851578b82a4000000558b88b4000000e82ec7ddff508bcee8a672fbff84c07402b3018b762885f675d05d8ac35e5b5fc2080032c05fc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

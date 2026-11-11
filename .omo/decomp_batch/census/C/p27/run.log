@@ -1,0 +1,107 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d1c20 PriorityQueue::Add -> PriorityQueue
+[conv] 0x4265b0 Cell::GetHeight -> Cell
+[conv] 0x49fa00 RefCount::Increment -> RefCount
+[conv] 0x6bf5d0 _TClassFactory_VSuperClass::QueryInterface -> _TClassFactory_VSuperClass
+[conv] 0x6c0650 _TClassFactory_VTemporalClass::CreateTClassFactory_TemporalClass -> _TClassFactory_VTemporalClass
+[conv] 0x6c16d0 _TClassFactory_VVoxelAnimClass::CreateTClassFactory_VoxelAnimClass -> _TClassFactory_VVoxelAnimClass
+[conv] 0x6c2750 _TClassFactory_VUnitTypeClass::CreateTClassFactory_UnitTypeClass -> _TClassFactory_VUnitTypeClass
+[conv] 0x6c37d0 _TClassFactory_VInfantryClass::CreateTClassFactory_InfantryClass -> _TClassFactory_VInfantryClass
+[conv] 0x6c4850 _TClassFactory_VDropPodLocomotionClass::CreateTClassFactory_DropPodLocomotionClass -> _TClassFactory_VDropPodLocomotionClass
+[conv] 0x6c5a50 _TClassFactory_VParticleSystemTypeClass::CreateTClassFactory_ParticleSystemTypeClass -> _TClassFactory_VParticleSystemTypeClass
+[conv] 0x65d240 RawFileClass::SetTime -> RawFileClass
+[conv] 0x7265c0 BuildingClass::ExecuteTriggers -> BuildingClass
+[conv] 0x624930 Dialog::UpdateControlState -> Dialog
+[conv] 0x5b2da0 MissionClass::Constructor -> MissionClass
+[conv] 0x54f720 Timer::PumpMessages -> Timer
+[conv] 0x624760 HashTable::Get -> HashTable
+[conv] 0x769330 Surface::PixelToIndex -> Surface
+[conv] 0x486890 CellClass::CheckProperty -> CellClass
+[conv] 0x4787e0 INIClass::writeSection -> INIClass
+[conv] 0x717c00 ObjectTypeClass::loadTypeMember_5717C00 -> ObjectTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] PriorityQueue            rc=0
+[era] Cell                     rc=2
+[era] RefCount                 rc=0
+[era] _TClassFactory_VSuperClass rc=2
+[era] _TClassFactory_VTemporalClass rc=2
+[era] _TClassFactory_VVoxelAnimClass rc=2
+[era] _TClassFactory_VUnitTypeClass rc=2
+[era] _TClassFactory_VInfantryClass rc=2
+[era] _TClassFactory_VDropPodLocomotionClass rc=2
+[era] _TClassFactory_VParticleSystemTypeClass rc=2
+[era] RawFileClass             rc=2
+[era] BuildingClass            rc=0
+[era] Dialog                   rc=2
+[era] MissionClass             rc=2
+[era] Timer                    rc=0
+[era] HashTable                rc=2
+[era] Surface                  rc=2
+[era] CellClass                rc=0
+[era] INIClass                 rc=2
+[era] ObjectTypeClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d1c20   MISMATCH         PriorityQueue::Add
+[diff] 0x49fa00   MISMATCH         RefCount::Increment
+[diff] 0x7265c0   MISMATCH         BuildingClass::ExecuteTriggers
+[diff] 0x54f720   MISMATCH         Timer::PumpMessages
+[diff] 0x486890   MISMATCH         CellClass::CheckProperty
+[diff] 0x717c00   MISMATCH         ObjectTypeClass::loadTypeMember_5717C00
+[ledger] 0x5d1c20 PriorityQueue::Add -> NG (attempt 1)
+[ledger] 0x4265b0 Cell::GetHeight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49fa00 RefCount::Increment -> NG (attempt 1)
+[ledger] 0x6bf5d0 VectorClass_K_38::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c0650 CreateTClassFactory_TemporalClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c16d0 CreateTClassFactory_VoxelAnimClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2750 CreateTClassFactory_UnitTypeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c37d0 CreateTClassFactory_InfantryClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4850 CreateTClassFactory_DropPodLocomotionClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5a50 CreateTClassFactory_ParticleSystemTypeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65d240 FileClass::SetTime -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7265c0 BuildingClass::ExecuteTriggers -> NG (attempt 1)
+[ledger] 0x624930 Dialog::UpdateControlState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b2da0 RadioClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54f720 Timer::PumpMessages -> NG (attempt 1)
+[ledger] 0x624760 HashTable_flat::Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x769330 Surface::PixelToIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x486890 CellClass::CheckProperty -> NG (attempt 1)
+[ledger] 0x4787e0 INIClass::writeSection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x717c00 ObjectTypeClass::loadTypeMember_5717C00 -> NG (attempt 1)
+======================================================================
+{
+ "total": 2239,
+ "verdicts": {
+  "MISMATCH": 611,
+  "MATCH": 521,
+  "COMPILE_FAIL": 598,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 495,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 192,
+  "ret_norm": 7,
+  "frame_sched": 67,
+  "const_fold": 66,
+  "branch_polarity": 44,
+  "regalloc": 99,
+  "branch_order": 75,
+  "width_mismatch": 8,
+  "extern_reloc": 18,
+  "cc_mismatch": 24,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 46.0,
+ "match_rate_of_total_pct": 23.3,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p27\batch_report.json

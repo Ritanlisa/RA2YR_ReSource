@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckProperty@CellClass@@QAEHXZ",
+ "sym_key": "CellClass::CheckProperty",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "8b814001000083ec10f6c401742d8b018d542404568b35000000005251ff50488b48088b500403ce8b308b44240489308950048948085e83c410c38b018d5424045251ff50488b4c24008b1089118b50048951048b40088941088bc183c410c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E7B4@@3IA",
+   "sym_key": "DataGlobal_89E7B4"
+  }
+ ]
+}

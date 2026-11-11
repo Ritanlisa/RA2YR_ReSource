@@ -1,0 +1,21 @@
+{
+ "symbol": "?ExecuteTriggers@BuildingClass@@QAEDHD@Z",
+ "sym_key": "BuildingClass::ExecuteTriggers",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "51568bf18a464484c0746f8a463084c07568558b6e2457c644240c008bbdb000000085ff743a538b5c24188b46248b88a40000008b89b4000000e8000000008d54241c8bcf5256535056e80000000084c07405c6442410018b7f2885ff75cc5b8b44240c81e500ffffff25ff0000005f0be88bc55d5e59c208008b4424105e240059c20800",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?FindOwner@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::FindOwner"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?ProcessUpdate@TerrainClass@@QAEDPAXHH0H@Z",
+   "sym_key": "TerrainClass::ProcessUpdate"
+  }
+ ]
+}

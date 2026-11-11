@@ -1,0 +1,15 @@
+{
+ "symbol": "?loadTypeMember_5717C00@ObjectTypeClass@@QAEPAIPAH@Z",
+ "sym_key": "ObjectTypeClass::loadTypeMember_5717C00",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf13bf774558b0656ff500c8b470885c0894608750d89460488460d8bc65f5ec204008d0c850000000051e80000000083c40489460485c074218b4e0833c085c9c6460d017e148b57048b4e048b14828914818b4e08403bc17cec8bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1231,6 +1231,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4265b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Cell::GetHeight",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4270d0": {
   "attempts": 1,
   "first_diff": null,
@@ -2316,6 +2323,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4787e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIClass::writeSection",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4788e0": {
   "attempts": 6,
   "first_diff": "+12 je 0x47897a",
@@ -2440,6 +2454,13 @@
   "first_diff": "+11 jl 0x4867f7",
   "name": "CellClass::GetCellType",
   "note": "decomp_batch r2: MISMATCH/signedness",
+  "status": "NG"
+ },
+ "0x486890": {
+  "attempts": 1,
+  "first_diff": "+6 sub esp, 0xc",
+  "name": "CellClass::CheckProperty",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x486900": {
@@ -3463,6 +3484,13 @@
   "name": "0x49f2b0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x49fa00": {
+  "attempts": 1,
+  "first_diff": "+14 jl 0x49fa3d",
+  "name": "RefCount::Increment",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x49fae0": {
   "attempts": 1,
@@ -6866,6 +6894,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x54f720": {
+  "attempts": 1,
+  "first_diff": "+9 inc eax",
+  "name": "Timer::PumpMessages",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x54fc60": {
   "attempts": 1,
   "first_diff": null,
@@ -7860,6 +7895,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5b2da0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadioClass::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5b2e10": {
   "attempts": 5,
   "first_diff": null,
@@ -8567,6 +8609,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5d1c20": {
+  "attempts": 1,
+  "first_diff": "+7 je 0x5d1c7b",
+  "name": "PriorityQueue::Add",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x5d2750": {
   "attempts": 1,
   "first_diff": "+5 jne 0x5d275c",
@@ -9245,6 +9294,20 @@
   "name": "StreamWrapper::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x624760": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HashTable_flat::Get",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x624930": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Dialog::UpdateControlState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x624be0": {
   "attempts": 10,
@@ -10289,6 +10352,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x65d240": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FileClass::SetTime",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x65d420": {
   "attempts": 1,
   "first_diff": null,
@@ -11318,6 +11388,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6bf5d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_K_38::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6bf960": {
   "attempts": 1,
   "first_diff": null,
@@ -11343,6 +11420,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "TClassFactory_CampaignClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c0650": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTClassFactory_TemporalClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11374,6 +11458,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c16d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTClassFactory_VoxelAnimClass",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c1a60": {
   "attempts": 1,
   "first_diff": null,
@@ -11402,6 +11493,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c2750": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTClassFactory_UnitTypeClass",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c2ae0": {
   "attempts": 1,
   "first_diff": null,
@@ -11427,6 +11525,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "TClassFactory_UnitClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c37d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTClassFactory_InfantryClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11465,6 +11570,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x6c4850": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTClassFactory_DropPodLocomotionClass",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c49c0": {
   "attempts": 1,
   "first_diff": null,
@@ -11497,6 +11609,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "WinMain_Helper_6C58C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c5a50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTClassFactory_ParticleSystemTypeClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -12445,6 +12564,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x717c00": {
+  "attempts": 1,
+  "first_diff": "+10 je 0x717c65",
+  "name": "ObjectTypeClass::loadTypeMember_5717C00",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x717e60": {
   "attempts": 1,
   "first_diff": null,
@@ -12871,6 +12997,13 @@
   "name": "0x725f30",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7265c0": {
+  "attempts": 1,
+  "first_diff": "+0 push edi",
+  "name": "BuildingClass::ExecuteTriggers",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x726720": {
   "attempts": 1,
@@ -14059,6 +14192,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_767E90",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x769330": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Surface::PixelToIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },

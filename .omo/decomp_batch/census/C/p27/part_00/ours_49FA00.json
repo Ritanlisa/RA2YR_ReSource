@@ -1,0 +1,8 @@
+{
+ "symbol": "?Increment@RefCount@@QAEHH@Z",
+ "sym_key": "RefCount::Increment",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf1578b7e083bdf7c2c8b068d4b0a6a005156ff500884c0743b8b4e088bc73bf973138b560440c74482fc000000008b4e083bc172ed8b46045f8b0c988d04984189088b46108b4e04408946105e8b04995bc204005f5e33c05bc20400",
+ "relocs": []
+}

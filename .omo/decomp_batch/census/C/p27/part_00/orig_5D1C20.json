@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D1C20",
+ "name": "PriorityQueue::Add",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D1C20",
+ "bytes_hex": "8b4424045685c074528b41288d71188b49203bc17c228a460d84c0750485c9753a8b461485c07e338b1603c16a00508bceff520884c074238b46108b56048d4801894e108b4c2408890c828b168d4424088bce50ff52105ec2040083c8ff5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

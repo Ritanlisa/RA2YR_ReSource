@@ -1,0 +1,11 @@
+{
+ "addr": "0x49FA00",
+ "name": "RefCount::Increment",
+ "size": 100,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49FA00",
+ "bytes_hex": "538b5c2408568bf1578b7e083bdf7c2d8b068d4b0a6a00518bceff500884c0743b8b4e088bc73bf97d138b560440c74482fc000000008b4e083bc17ced8b46045f8b0c988d04984189088b46108b4e04408946105e8b04995bc204005f5e33c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
