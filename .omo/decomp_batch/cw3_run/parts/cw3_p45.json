@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x4456d0",
+  "name": "FootClass::UpdateSidebar",
+  "cls": null,
+  "size": 368,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2027",
+  "first_msg": "use of undefined type 'BuildingTypeClass'"
+ },
+ {
+  "addr": "0x4a2600",
+  "name": "CountdownTimer::UpdateDisplay",
+  "cls": null,
+  "size": 369,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x751ea0",
+  "name": "sub_751EA0",
+  "cls": null,
+  "size": 369,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ',' before '*'"
+ },
+ {
+  "addr": "0x56bd40",
+  "name": "CrateClass::FindPlacement",
+  "cls": null,
+  "size": 370,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x60b1d0",
+  "name": "UI_Get_60B1D0",
+  "cls": null,
+  "size": 370,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2079",
+  "first_msg": "'Rect' uses undefined struct 'tagRECT'"
+ },
+ {
+  "addr": "0x40a090",
+  "name": "sub_40A090",
+  "cls": null,
+  "size": 372,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2059",
+  "first_msg": "syntax error : ')'"
+ },
+ {
+  "addr": "0x6dbb60",
+  "name": "Tactical::DrawOverlay",
+  "cls": null,
+  "size": 374,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'IsoCoord_field_0x04' : is not a member of 'IsoCoord'"
+ },
+ {
+  "addr": "0x6fda00",
+  "name": "TechnoClass::GetFiringAngle",
+  "cls": null,
+  "size": 376,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2059",
+  "first_msg": "syntax error : ')'"
+ },
+ {
+  "addr": "0x559ed0",
+  "name": "LoadOptions::Read",
+  "cls": null,
+  "size": 379,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'LoadOptions_Load' : cannot convert parameter 1 from 'const class CHAR *' to 'void *'"
+ },
+ {
+  "addr": "0x64a630",
+  "name": "ProcessNetworkMessage",
+  "cls": null,
+  "size": 381,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x7937b0",
+  "name": "CComObject_CChatEventSink___ATL::DispatchConnectionPairs",
+  "cls": null,
+  "size": 383,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'IsKnownPointer' : cannot convert parameter 1 from 'unsigned short *' to 'int'"
+ },
+ {
+  "addr": "0x703e70",
+  "name": "TechnoClass::ScanNeighborCells",
+  "cls": null,
+  "size": 385,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2059",
+  "first_msg": "syntax error : ')'"
+ },
+ {
+  "addr": "0x4a3e40",
+  "name": "DDraw::CapabilityCheck",
+  "cls": null,
+  "size": 387,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2660",
+  "first_msg": "'Log_0' : function does not take 1 parameters"
+ },
+ {
+  "addr": "0x41cc20",
+  "name": "AircraftTypeClass::LoadTypeData",
+  "cls": null,
+  "size": 388,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'LoadExtras' : cannot convert parameter 2 from 'unsigned char ***  ' to 'int'"
+ },
+ {
+  "addr": "0x5b57d0",
+  "name": "sub_5B57D0",
+  "cls": null,
+  "size": 390,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x583ad0",
+  "name": "sub_583AD0",
+  "cls": null,
+  "size": 392,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x6b3cd0",
+  "name": "sub_6B3CD0",
+  "cls": null,
+  "size": 393,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'__3_YAXPAX_Z' : cannot convert parameter 1 from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x6b0300",
+  "name": "BuildingClass::FindPlacementCells2",
+  "cls": null,
+  "size": 394,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x4de7b0",
+  "name": "FootClass::IsTargetInRange",
+  "cls": null,
+  "size": 396,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x465960",
+  "name": "AbstractClass::LoadTheaterSHP",
+  "cls": null,
+  "size": 397,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'_makepath' : none of the 2 overloads can convert parameter 5 from type 'int (__cdecl *)(const void *,cons"
+ }
+]

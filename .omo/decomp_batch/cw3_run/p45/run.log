@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p45\part_00
+=== convert (20 addrs) ===
+[conv] 0x4456d0 BuildingClass::UpdateSidebar -> BuildingClass
+[conv] 0x4a2600 CountdownTimer::UpdateDisplay -> CountdownTimer
+[conv] 0x751ea0 sub_751EA0 -> _addr_75
+[conv] 0x56bd40 CrateClass::FindPlacement -> CrateClass
+[conv] 0x60b1d0 UI_Get_60B1D0 -> UI_Get
+[conv] 0x40a090 TechnoClass::sub_40A090 -> TechnoClass
+[conv] 0x6dbb60 Tactical::DrawOverlay -> Tactical
+[conv] 0x6fda00 TechnoClass::GetFiringAngle -> TechnoClass
+[conv] 0x559ed0 LoadOptions::Read -> LoadOptions
+[conv] 0x64a630 ProcessNetworkMessage -> _addr_64
+[conv] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> CComObject_CChatEventSink___ATL
+[conv] 0x703e70 TechnoClass::ScanNeighborCells -> TechnoClass
+[conv] 0x4a3e40 DDraw::CapabilityCheck -> DDraw
+[conv] 0x41cc20 AircraftTypeClass::LoadTypeData -> AircraftTypeClass
+[conv] 0x5b57d0 ObjectClass::sub_5B57D0 -> ObjectClass
+[conv] 0x583ad0 ObjectClass::sub_583AD0 -> ObjectClass
+[conv] 0x6b3cd0 sub_6B3CD0 -> _addr_6B
+[conv] 0x6b0300 BuildingClass::FindPlacementCells2 -> BuildingClass
+[conv] 0x4de7b0 FootClass::IsTargetInRange -> FootClass
+[conv] 0x465960 AbstractClass::LoadTheaterSHP -> AbstractClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] CountdownTimer           rc=2
+[era] _addr_75                 rc=2
+[era] CrateClass               rc=2
+[era] UI_Get                   rc=2
+[era] TechnoClass              rc=2
+[era] Tactical                 rc=2
+[era] LoadOptions              rc=2
+[era] _addr_64                 rc=2
+[era] CComObject_CChatEventSink___ATL rc=2
+[era] DDraw                    rc=2
+[era] AircraftTypeClass        rc=2
+[era] ObjectClass              rc=2
+[era] _addr_6B                 rc=2
+[era] FootClass                rc=2
+[era] AbstractClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4456d0 BuildingClass::UpdateSidebar -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a2600 CountdownTimer::UpdateDisplay -> COMPILE_FAIL (attempt 10)
+[ledger] 0x751ea0 sub_751EA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56bd40 CrateClass::FindPlacement -> COMPILE_FAIL (attempt 10)
+[ledger] 0x60b1d0 UI_Get_60B1D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40a090 TechnoClass::sub_40A090 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6dbb60 Tactical::DrawOverlay -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6fda00 TechnoClass::GetFiringAngle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x559ed0 LoadOptions::Read -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64a630 ProcessNetworkMessage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> COMPILE_FAIL (attempt 2)
+[ledger] 0x703e70 TechnoClass::ScanNeighborCells -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a3e40 DDraw::CapabilityCheck -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41cc20 AircraftTypeClass::LoadTypeData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b57d0 ObjectClass::sub_5B57D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x583ad0 ObjectClass::sub_583AD0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b3cd0 sub_6B3CD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b0300 BuildingClass::FindPlacementCells2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4de7b0 FootClass::IsTargetInRange -> COMPILE_FAIL (attempt 2)
+[ledger] 0x465960 AbstractClass::LoadTheaterSHP -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p45\batch_report.json
