@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x4a0af0",
+  "name": "EnumConnectionPointsClass::Next",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 21,
+  "part": "p141",
+  "unit": "EnumConnectionPointsClass",
+  "emitted": "EnumConnectionPointsClass::Next",
+  "first_diff": {
+   "orig": "+18 ret 8",
+   "ours": "+18 ret 0xc"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x556b50",
+  "name": "ObjectClass::updateMissionState",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 21,
+  "part": "p141",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::updateMissionState",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0xa8eb78]",
+   "ours": "+0 mov edx, dword ptr [0]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5a9940",
+  "name": "Cell::Clear",
+  "family": "ONE_INSN",
+  "path": "width_mismatch",
+  "size": 21,
+  "part": "p141",
+  "unit": "Cell",
+  "emitted": "Cell::Clear",
+  "first_diff": {
+   "orig": "+7 mov word ptr [eax + 2], 0",
+   "ours": "+7 mov dword ptr [eax + 4], 0xffffffff"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x6558b0",
+  "name": "Radar::PixelIndex",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 21,
+  "part": "p142",
+  "unit": "Radar",
+  "emitted": "Radar::PixelIndex",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 8]",
+   "ours": "+0 mov ecx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 14
+ },
+ {
+  "addr": "0x6c0010",
+  "name": "TClassFactory_TiberiumClass::GetSize",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 21,
+  "part": "p142",
+  "unit": "_TClassFactory_VTiberiumClass",
+  "emitted": "_TClassFactory_VTiberiumClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 45
+ },
+ {
+  "addr": "0x70de20",
+  "name": "sub_70DE20",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 21,
+  "part": "p142",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_70DE20",
+  "first_diff": {
+   "orig": "+18 ret 4",
+   "ours": "+18 ret 8"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x77a780",
+  "name": "MainLobbyDlgProcWOL_Helper_77A780",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 21,
+  "part": "p142",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::MainLobbyDlgProcWOL_Helper_77A780",
+  "first_diff": {
+   "orig": "+4 mov edx, dword ptr [ecx + 0x1c]",
+   "ours": "+4 xor edx, edx"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x77a7a0",
+  "name": "MainLobbyDlgProcWOL_Helper_77A7A0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 21,
+  "part": "p142",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::MainLobbyDlgProcWOL_Helper_77A7A0",
+  "first_diff": {
+   "orig": "+4 mov edx, dword ptr [ecx + 0x20]",
+   "ours": "+4 xor edx, edx"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x42d470",
+  "name": "CellStruct::Set",
+  "family": "STRUCTURAL",
+  "path": "cc_mismatch",
+  "size": 22,
+  "part": "p143",
+  "unit": "CellStruct",
+  "emitted": "CellStruct::Set",
+  "first_diff": {
+   "orig": "+0 mov dx, word ptr [esp + 8]",
+   "ours": "+0 mov edx, dword ptr [esp + 4]"
+  },
+  "ours_size": 29
+ },
+ {
+  "addr": "0x4305e0",
+  "name": "sub_4305E0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 22,
+  "part": "p143",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4305E0",
+  "first_diff": {
+   "orig": "+16 mov byte ptr [ecx + 0xc], al",
+   "ours": "+16 setne dl"
+  },
+  "ours_size": 25
+ },
+ {
+  "addr": "0x468b90",
+  "name": "BulletClass::UpdateFlightPath",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 22,
+  "part": "p143",
+  "unit": "BulletClass",
+  "emitted": "BulletClass::UpdateFlightPath",
+  "first_diff": {
+   "orig": "+6 mov al, byte ptr [eax + 0x2f7]",
+   "ours": "+6 xor ecx, ecx"
+  },
+  "ours_size": 30
+ },
+ {
+  "addr": "0x4722a0",
+  "name": "CaptureManagerClass::CannotControlAnyMore",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 22,
+  "part": "p143",
+  "unit": "CaptureManagerClass",
+  "emitted": "CaptureManagerClass::CannotControlAnyMore",
+  "first_diff": {
+   "orig": "+5 je 0x4722aa",
+   "ours": "+5 jne 0x17"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x536710",
+  "name": "CreateTeamCommand::performAction_35",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 22,
+  "part": "p143",
+  "unit": "PlanningModeCommandClass",
+  "emitted": "PlanningModeCommandClass::performAction_35",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x53edc0",
+  "name": "Network::CopyAddress_Small",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 22,
+  "part": "p143",
+  "unit": "Network",
+  "emitted": "Network::CopyAddress_Small",
+  "first_diff": {
+   "orig": "+4 add ecx, 4",
+   "ours": "+4 mov edx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 20
+ },
+ {
+  "addr": "0x5980a0",
+  "name": "sub_5980A0",
+  "family": "STRUCTURAL",
+  "path": "eval_order",
+  "size": 22,
+  "part": "p143",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_5980A0",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 mov edx, dword ptr [esp + 4]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x652540",
+  "name": "Network_Process_652540",
+  "family": "WIDTH",
+  "path": "width_mismatch",
+  "size": 22,
+  "part": "p143",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Network_Process_652540",
+  "first_diff": {
+   "orig": "+6 mov edx, dword ptr [ecx + 4]",
+   "ours": "+6 mov dl, byte ptr [ecx + 4]"
+  },
+  "ours_size": 22
+ },
+ {
+  "addr": "0x659470",
+  "name": "RadBeam::drawSelectionBox",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 22,
+  "part": "p143",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::drawSelectionBox",
+  "first_diff": {
+   "orig": "+4 add ecx, 0x20",
+   "ours": "+4 mov dx, word ptr [eax]"
+  },
+  "ours_size": 20
+ },
+ {
+  "addr": "0x696f70",
+  "name": "SessionClass::GetOption2",
+  "family": "MEMBER_OFFSET",
+  "path": "const_fold",
+  "size": 22,
+  "part": "p143",
+  "unit": "SessionClass",
+  "emitted": "SessionClass::GetOption2",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x67]",
+   "ours": "+0 mov edx, dword ptr [ecx + 0x68]"
+  },
+  "ours_size": 22
+ },
+ {
+  "addr": "0x72a8e0",
+  "name": "sub_72A8E0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 22,
+  "part": "p144",
+  "unit": "_addr_72",
+  "emitted": "sub_72A8E0",
+  "first_diff": {
+   "orig": "+0 mov byte ptr [0xb0f9fc], 0",
+   "ours": "+0 mov byte ptr [0], 0"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x72a940",
+  "name": "sub_72A940",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 22,
+  "part": "p144",
+  "unit": "_addr_72",
+  "emitted": "sub_72A940",
+  "first_diff": {
+   "orig": "+0 mov byte ptr [0xb0f9d8], 0xa4",
+   "ours": "+0 mov word ptr [0], 0xd2a4"
+  },
+  "ours_size": 17
+ }
+]
