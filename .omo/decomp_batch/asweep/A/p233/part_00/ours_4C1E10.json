@@ -1,0 +1,8 @@
+{
+ "symbol": "?ResetDamageAccumulator@TechnoClass@@QAEPAV1@XZ",
+ "sym_key": "TechnoClass::ResetDamageAccumulator",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8bc133c98908884818c740280000010089480488482c88481c89482089480889483889480c894810884814c3",
+ "relocs": []
+}

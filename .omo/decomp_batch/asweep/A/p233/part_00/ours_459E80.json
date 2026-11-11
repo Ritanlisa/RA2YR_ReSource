@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destroyed@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::Destroyed",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "518b44240085c07507b80340008059c333c9c700c62d270ec740040f9cd111c74008b70900a08a0d0000000089480c33c059c3",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?unk_7E96AC@@3EA",
+   "sym_key": "unk_7E96AC"
+  }
+ ]
+}

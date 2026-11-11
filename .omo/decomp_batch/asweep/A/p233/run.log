@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p233\part_00
+=== convert (20 addrs) ===
+[conv] 0x408930 AudioSample::SetField -> AudioSample
+[conv] 0x4c1e10 TechnoClass::ResetDamageAccumulator -> TechnoClass
+[conv] 0x5657a0 CellCoord::To_CellObj -> CellCoord
+[conv] 0x65ad50 Array::Contains -> Array
+[conv] 0x65adf0 Array::ContainsValue -> Array
+[conv] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> JumpjetLocomotionClass
+[conv] 0x6dc540 _VectorClass_UDirtyAreaStruct::Clear -> _VectorClass_UDirtyAreaStruct
+[conv] 0x7ca610 _strncmp -> _addr_7C
+[conv] 0x7cb4cc _wcsncmp -> _addr_7C
+[conv] 0x487ea0 NeighborCoord -> _addr_48
+[conv] 0x41c190 AircraftClass::PowerDrainProcess -> AircraftClass
+[conv] 0x41ceb0 AircraftTypeClass::GetClassIdentifier -> AircraftTypeClass
+[conv] 0x41e500 AITriggerTypeClass::GetClassIdentifier -> AITriggerTypeClass
+[conv] 0x420d40 AlphaShapeClass::SD_vt03 -> AlphaShapeClass
+[conv] 0x426540 AnimClass::MissionStubReturnZero2 -> AnimClass
+[conv] 0x436910 BuildingLightClass::SD_vt03 -> BuildingLightClass
+[conv] 0x438b00 BombClass::ddtor -> BombClass
+[conv] 0x43a500 NeuronClass::GetClassID -> NeuronClass
+[conv] 0x459e80 BuildingClass::Destroyed -> BuildingClass
+[conv] 0x465380 BuildingTypeClass::GetClassIdentifier -> BuildingTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioSample              rc=0
+[era] TechnoClass              rc=0
+[era] CellCoord                rc=2
+[era] Array                    rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] _VectorClass_UDirtyAreaStruct rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_48                 rc=2
+[era] AircraftClass            rc=2
+[era] AircraftTypeClass        rc=2
+[era] AITriggerTypeClass       rc=2
+[era] AlphaShapeClass          rc=2
+[era] AnimClass                rc=2
+[era] BuildingLightClass       rc=2
+[era] BombClass                rc=2
+[era] NeuronClass              rc=2
+[era] BuildingClass            rc=0
+[era] BuildingTypeClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x408930   MISMATCH         AudioSample::SetField
+[diff] 0x4c1e10   MISMATCH         TechnoClass::ResetDamageAccumulator
+[diff] 0x6dc540   MISMATCH         _VectorClass_UDirtyAreaStruct::Clear
+[diff] 0x7ca610   MISMATCH         _strncmp
+[diff] 0x7cb4cc   MISMATCH         _wcsncmp
+[diff] 0x459e80   MISMATCH         BuildingClass::Destroyed
+[diff] 0x465380   MISMATCH         BuildingTypeClass::GetClassIdentifier
+[ledger] 0x408930 AudioSample::SetField -> NG (attempt 1)
+[ledger] 0x4c1e10 TechnoClass::ResetDamageAccumulator -> NG (attempt 1)
+[ledger] 0x5657a0 CellCoord::To_CellObj -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65ad50 Array::Contains -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65adf0 Array::ContainsValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dc540 _VectorClass_UDirtyAreaStruct::Clear -> NG (attempt 1)
+[ledger] 0x7ca610 _strncmp -> NG (attempt 1)
+[ledger] 0x7cb4cc _wcsncmp -> NG (attempt 1)
+[ledger] 0x487ea0 NeighborCoord -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41c190 AircraftClass::PowerDrainProcess -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41ceb0 AircraftTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41e500 AITriggerTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x420d40 AlphaShapeClass::SD_vt03 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x426540 AnimClass::MissionStubReturnZero2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x436910 BuildingLightClass::SD_vt03 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x438b00 BombClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43a500 NeuronClass::GetClassID -> COMPILE_FAIL (attempt 1)
+[ledger] 0x459e80 BuildingClass::Destroyed -> NG (attempt 1)
+[ledger] 0x465380 BuildingTypeClass::GetClassIdentifier -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "codegen_shape": 7
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p233\batch_report.json

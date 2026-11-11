@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetField@AudioSample@@QAEHXZ",
+ "sym_key": "AudioSample::SetField",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b412833d23bc289512c89410c7419568b71148b44f0208951088b511089410483e2fe5e895110c3895104895108836110fec3",
+ "relocs": []
+}

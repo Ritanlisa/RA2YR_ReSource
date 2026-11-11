@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CA610",
+ "name": "_strncmp",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CA610",
+ "bytes_hex": "558bec5756538b4d10e3268bd98b7d088bf733c0f2aef7d903cb8bfe8b750cf3a68a46ff33c93a47ff770474044949f7d18bc15b5e5fc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

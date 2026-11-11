@@ -1,0 +1,8 @@
+{
+ "symbol": "?_strncmp@@YAHPBD0I@Z",
+ "sym_key": "Unnamed::_strncmp",
+ "size": 118,
+ "link_base": 0,
+ "bytes_hex": "8b54240c85d28bc2746b56578b7c240c8bf78a0e4684c97504b101eb0232c94884c9750485c075ea2bd08bcf8b7c24108bf274198a018a1741473ad07504b001eb0232c04e84c0740485f675e78a57ff33c0885424105f0fbe51ff8b4c240c5e81e1ff0000003bca760483c8ffc37405b801000000c3",
+ "relocs": []
+}

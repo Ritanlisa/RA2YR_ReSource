@@ -1,0 +1,11 @@
+{
+ "addr": "0x408930",
+ "name": "AudioSample::SetField",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408930",
+ "bytes_hex": "8b412833d23bc289512c89410c7419568b71148b44f0205e8941048951088b511083e2fe895110c38951048951088b511083e2fe895110c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

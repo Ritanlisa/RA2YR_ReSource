@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C1E10",
+ "name": "TechnoClass::ResetDamageAccumulator",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C1E10",
+ "bytes_hex": "568bc1578bf833c933d2890f33f6894818c740280000010089570488482c89481c8948208977088d780c894824890f8957048977085f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

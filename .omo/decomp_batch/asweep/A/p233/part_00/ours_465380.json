@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetClassIdentifier@BuildingTypeClass@@QAEHXZ",
+ "sym_key": "BuildingTypeClass::GetClassIdentifier",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "518b44240085c07507b80340008059c333c9c700db338baec740041c06d211c74008aca400608a0d0000000089480c33c059c3",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?unk_7E95CC@@3EA",
+   "sym_key": "unk_7E95CC"
+  }
+ ]
+}
