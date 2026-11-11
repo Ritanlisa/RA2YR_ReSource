@@ -1,0 +1,102 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x717b70 _TypeList_PBVParticleSystemTypeClass::QueryInterface -> _TypeList_PBVParticleSystemTypeClass
+[conv] 0x74bfa0 _VectorClass_E::QueryInterface -> _VectorClass_E
+[conv] 0x76a720 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::setScale -> _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x402650 AudioChannel::ActivatePlay -> AudioChannel
+[conv] 0x477be0 VectorClass::Construct -> VectorClass
+[conv] 0x4f2c00 VectorClass::sub_4F2C00 -> VectorClass
+[conv] 0x538b30 RulesClass::InitINIChain -> RulesClass
+[conv] 0x69d770 MapFile::Constructor -> MapFile
+[conv] 0x774120 WinModemClass::Construct -> WinModemClass
+[conv] 0x765b60 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::QueryInterface -> _VectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x63a230 PlanManager::Notify -> PlanManager
+[conv] 0x625f60 HashTable::FindString -> HashTable
+[conv] 0x5285b0 INIClass::SetDouble -> INIClass
+[conv] 0x717b20 TechnoTypeClass::SaveLoadDataArray -> TechnoTypeClass
+[conv] 0x487e00 MovementAI::IsPathMovementAllowed -> MovementAI
+[conv] 0x43a6b0 ObjectClass::sub_43A6B0 -> ObjectClass
+[conv] 0x65c250 RAMFileClass::WinMain_Helper_65C250 -> RAMFileClass
+[conv] 0x513cb0 HoverLocomotionClass::WriteObject -> HoverLocomotionClass
+[conv] 0x7cbb8d unknown::__mbsnccnt -> unknown
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TypeList_PBVParticleSystemTypeClass rc=2
+[era] _VectorClass_E           rc=2
+[era] _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=2
+[era] AudioChannel             rc=0
+[era] VectorClass              rc=2
+[era] RulesClass               rc=2
+[era] MapFile                  rc=2
+[era] WinModemClass            rc=2
+[era] _VectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=2
+[era] PlanManager              rc=2
+[era] HashTable                rc=2
+[era] INIClass                 rc=0
+[era] TechnoTypeClass          rc=0
+[era] MovementAI               rc=0
+[era] ObjectClass              rc=2
+[era] RAMFileClass             rc=2
+[era] HoverLocomotionClass     rc=2
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x402650   MISMATCH         AudioChannel::ActivatePlay
+[diff] 0x5285b0   MISMATCH         INIClass::SetDouble
+[diff] 0x717b20   MATCH            TechnoTypeClass::SaveLoadDataArray
+[diff] 0x487e00   MISMATCH         MovementAI::IsPathMovementAllowed
+[ledger] 0x717b70 TypeList_cptr_ParticleSystemTypeClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74bfa0 VectorClass_E::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76a720 MSFrameAnim::setScale -> COMPILE_FAIL (attempt 1)
+[ledger] 0x402650 AudioChannel::ActivatePlay -> NG (attempt 1)
+[ledger] 0x477be0 VectorClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f2c00 sub_4F2C00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538b30 RulesClass::InitINIChain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c8930 0x5c8930 -> PENDING (attempt 1)
+[ledger] 0x69d770 MapFile::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x774120 WinModemClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765b60 Campaign_WorldDominationTour_16::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63a230 PlanManager::Notify -> COMPILE_FAIL (attempt 1)
+[ledger] 0x625f60 HashTable_flat::FindString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5285b0 INIClass::SetDouble -> NG (attempt 1)
+[ledger] 0x717b20 TechnoTypeClass::SaveLoadDataArray -> OK (attempt 1)
+[ledger] 0x487e00 MovementAI::IsPathMovementAllowed -> NG (attempt 1)
+[ledger] 0x43a6b0 sub_43A6B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65c250 WinMain_Helper_65C250 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513cb0 SaveGame::WriteObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cbb8d __mbsnccnt -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2179,
+ "verdicts": {
+  "MISMATCH": 595,
+  "MATCH": 521,
+  "COMPILE_FAIL": 565,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 485,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 3
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 189,
+  "ret_norm": 7,
+  "frame_sched": 66,
+  "const_fold": 66,
+  "branch_polarity": 42,
+  "regalloc": 97,
+  "branch_order": 70,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 22,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 46.7,
+ "match_rate_of_total_pct": 23.9,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p24\batch_report.json

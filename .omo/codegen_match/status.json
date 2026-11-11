@@ -48,6 +48,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x402650": {
+  "attempts": 1,
+  "first_diff": "+19 je 0x40268d",
+  "name": "AudioChannel::ActivatePlay",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x403490": {
   "attempts": 1,
   "first_diff": null,
@@ -1581,6 +1588,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x43a6b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_43A6B0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x43a9a0": {
   "attempts": 5,
   "first_diff": null,
@@ -2239,6 +2253,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x477be0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4780e0": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -2434,6 +2455,13 @@
   "name": "BuildingClass::evaulateDefense",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x487e00": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [0xa8e9a0]",
+  "name": "MovementAI::IsPathMovementAllowed",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "status": "NG"
  },
  "0x487e50": {
   "attempts": 5,
@@ -5165,6 +5193,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4f2c00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_4F2C00",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4f3640": {
   "attempts": 1,
   "first_diff": "+12 mov edx, dword ptr [ecx + 0x14]",
@@ -5711,6 +5746,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x513cb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SaveGame::WriteObject",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x516370": {
   "attempts": 1,
   "first_diff": null,
@@ -5912,6 +5954,13 @@
   "first_diff": "+9 push esi",
   "name": "INIClass::GetStringByIndex",
   "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
+ "0x5285b0": {
+  "attempts": 1,
+  "first_diff": "+0 fld qword ptr [esp + 0xc]",
+  "name": "INIClass::SetDouble",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x52ace0": {
@@ -6324,6 +6373,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "SortedArray::FindPair",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x538b30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RulesClass::InitINIChain",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -8140,6 +8196,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5c8930": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5c8930",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5c91f0": {
   "attempts": 1,
   "first_diff": null,
@@ -9092,6 +9155,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x625f60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HashTable_flat::FindString",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x626020": {
   "attempts": 1,
   "first_diff": "+1 mov eax, ecx",
@@ -9518,6 +9588,13 @@
   "name": "Object_Read",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x63a230": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PlanManager::Notify",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x63d0f0": {
   "attempts": 1,
@@ -9966,6 +10043,13 @@
   "name": "VectorClass_ptr_RadSiteClass::GetItemIndex",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x65c250": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinMain_Helper_65C250",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x65c320": {
   "attempts": 5,
@@ -10505,6 +10589,13 @@
   "name": "VectorClass_ptr_MultiMission::Add",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x69d770": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapFile::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x69db30": {
   "attempts": 10,
@@ -12116,6 +12207,20 @@
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
  },
+ "0x717b20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoTypeClass::SaveLoadDataArray",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x717b70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TypeList_cptr_ParticleSystemTypeClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x717e60": {
   "attempts": 1,
   "first_diff": null,
@@ -13089,6 +13194,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x74bfa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_E::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x74c030": {
   "attempts": 6,
   "first_diff": "+0 push ebx",
@@ -13607,6 +13719,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x765b60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Campaign_WorldDominationTour_16::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7667e0": {
   "attempts": 1,
   "first_diff": null,
@@ -13730,6 +13849,13 @@
   "attempts": 6,
   "first_diff": null,
   "name": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x76a720": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSFrameAnim::setScale",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -13998,6 +14124,13 @@
   "name": "WebBrowser::Stat",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x774120": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinModemClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7754c0": {
   "attempts": 1,
@@ -15090,6 +15223,13 @@
   "name": "_iswgraph",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7cbb8d": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "__mbsnccnt",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7cbdaf": {
   "attempts": 1,

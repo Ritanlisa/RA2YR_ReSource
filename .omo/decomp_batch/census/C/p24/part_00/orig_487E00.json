@@ -1,0 +1,11 @@
+{
+ "addr": "0x487E00",
+ "name": "MovementAI::IsPathMovementAllowed",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487E00",
+ "bytes_hex": "a0a0e9a80056578bf984c0741d8bb7e400000085f674138b068bceff502c83f80674178b763085f675ed8b8f0001000033c085c95f5e0f95c0c385f674ec83bf000100000175e35f32c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

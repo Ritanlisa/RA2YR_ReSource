@@ -1,0 +1,8 @@
+{
+ "symbol": "?SaveLoadDataArray@TechnoTypeClass@@QAEHPAH@Z",
+ "sym_key": "TechnoTypeClass::SaveLoadDataArray",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "515356578b7c24148bd96a008b0f8d5424108b43106a0452578944241cff51108b44240c33f685c07e1a8b4b048b076a006a048d14b15257ff50108b44240c463bf07ce65f5e5b59c20400",
+ "relocs": []
+}

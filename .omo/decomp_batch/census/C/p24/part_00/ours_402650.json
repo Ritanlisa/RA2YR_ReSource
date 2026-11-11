@@ -1,0 +1,8 @@
+{
+ "symbol": "?ActivatePlay@AudioChannel@@QAEHXZ",
+ "sym_key": "AudioChannel::ActivatePlay",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86d4000000ff5028f686a400000004741c8b8ed400000056ff51188b96a400000083e2fb83ca018996a40000008b86d400000056ff502c5ec3",
+ "relocs": []
+}

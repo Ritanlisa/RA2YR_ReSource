@@ -1,0 +1,11 @@
+{
+ "addr": "0x402650",
+ "name": "AudioChannel::ActivatePlay",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x402650",
+ "bytes_hex": "568bf18b86d4000000ff5028f686a40000000474288b96d40000008bceff52188b86a400000024fb8986a40000008b8ea400000083c901898ea40000008b96d40000008bce5eff622c",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

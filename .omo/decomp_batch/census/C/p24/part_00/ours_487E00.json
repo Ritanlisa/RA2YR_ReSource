@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsPathMovementAllowed@MovementAI@@QAE_NXZ",
+ "sym_key": "MovementAI::IsPathMovementAllowed",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "51a10000000056578bf985c075118b8f0001000033c085c95f5e0f95c059c38bb7e400000085f675118b8f0001000033c085c95f5e0f95c059c38b0656ff502c83f80674128b763085f674dd8b0e56ff512c83f80675ee8bbf0001000083ff0175108b4424085f24005ef7d81bc0f7d859c333c085ff5f5e0f95c059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetDouble@INIClass@@QAEDPAEPADN@Z",
+ "sym_key": "INIClass::SetDouble",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "8b44241081ec000200008d542400568bf18b8c24100200005051680000000052e8000000008b8c241c0200008b94241802000083c4108d4424045051528bcee8000000005e81c400020000c21000",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "??_C@_02JBAA@?$CFf?$AA@",
+   "sym_key": "??_C@_02JBAA@?$CFf?$AA@"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}
