@@ -1,0 +1,8 @@
+{
+ "symbol": "?UI_Move@@YGPAIPAH0H@Z",
+ "sym_key": "Unnamed::UI_Move",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b088b4424048908c20c00",
+ "relocs": []
+}

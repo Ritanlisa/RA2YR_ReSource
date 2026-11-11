@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p62\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b5210 sub_6B5210 -> _addr_6B
+[conv] 0x6b6ba0 sub_6B6BA0 -> _addr_6B
+[conv] 0x6b8a90 sub_6B8A90 -> _addr_6B
+[conv] 0x6bb210 sub_6BB210 -> _addr_6B
+[conv] 0x6c6a60 sub_6C6A60 -> _addr_6C
+[conv] 0x6c8e20 sub_6C8E20 -> _addr_6C
+[conv] 0x6c9590 sub_6C9590 -> _addr_6C
+[conv] 0x6cadb0 sub_6CADB0 -> _addr_6C
+[conv] 0x6ce520 sub_6CE520 -> _addr_6C
+[conv] 0x6cfb50 sub_6CFB50 -> _addr_6C
+[conv] 0x6d19d0 sub_6D19D0 -> _addr_6D
+[conv] 0x6da360 UI_Move -> UI
+[conv] 0x6e4cf0 sub_6E4CF0 -> _addr_6E
+[conv] 0x6e5a70 sub_6E5A70 -> _addr_6E
+[conv] 0x6e69e0 sub_6E69E0 -> _addr_6E
+[conv] 0x6e8a20 sub_6E8A20 -> _addr_6E
+[conv] 0x6f0610 sub_6F0610 -> _addr_6F
+[conv] 0x6f2a40 sub_6F2A40 -> _addr_6F
+[conv] 0x70dce0 TechnoClass::checkEMPState -> TechnoClass
+[conv] 0x717f90 sub_717F90 -> _addr_71
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6B                 rc=0
+[era] _addr_6C                 rc=0
+[era] _addr_6D                 rc=0
+[era] UI                       rc=0
+[era] _addr_6E                 rc=0
+[era] _addr_6F                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_71                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b5210   MISMATCH         sub_6B5210
+[diff] 0x6b6ba0   MATCH            sub_6B6BA0
+[diff] 0x6b8a90   MATCH            sub_6B8A90
+[diff] 0x6bb210   MATCH            sub_6BB210
+[diff] 0x6c6a60   MATCH            sub_6C6A60
+[diff] 0x6c8e20   MATCH            sub_6C8E20
+[diff] 0x6c9590   MATCH            sub_6C9590
+[diff] 0x6cadb0   MISMATCH         sub_6CADB0
+[diff] 0x6ce520   MATCH            sub_6CE520
+[diff] 0x6cfb50   MATCH            sub_6CFB50
+[diff] 0x6d19d0   MATCH            sub_6D19D0
+[diff] 0x6da360   MATCH            UI_Move
+[diff] 0x6e4cf0   MISMATCH         sub_6E4CF0
+[diff] 0x6e5a70   MATCH            sub_6E5A70
+[diff] 0x6e69e0   MATCH            sub_6E69E0
+[diff] 0x6e8a20   MISMATCH         sub_6E8A20
+[diff] 0x6f0610   MISMATCH         sub_6F0610
+[diff] 0x6f2a40   MISMATCH         sub_6F2A40
+[diff] 0x70dce0   MATCH            TechnoClass::checkEMPState
+[diff] 0x717f90   MISMATCH         sub_717F90
+[ledger] 0x6b5210 sub_6B5210 -> NG (attempt 1)
+[ledger] 0x6b6ba0 sub_6B6BA0 -> OK (attempt 1)
+[ledger] 0x6b8a90 sub_6B8A90 -> OK (attempt 1)
+[ledger] 0x6bb210 sub_6BB210 -> OK (attempt 1)
+[ledger] 0x6c6a60 sub_6C6A60 -> OK (attempt 1)
+[ledger] 0x6c8e20 sub_6C8E20 -> OK (attempt 1)
+[ledger] 0x6c9590 sub_6C9590 -> OK (attempt 1)
+[ledger] 0x6cadb0 sub_6CADB0 -> NG (attempt 1)
+[ledger] 0x6ce520 sub_6CE520 -> OK (attempt 1)
+[ledger] 0x6cfb50 sub_6CFB50 -> OK (attempt 1)
+[ledger] 0x6d19d0 sub_6D19D0 -> OK (attempt 1)
+[ledger] 0x6da360 UI_Move -> OK (attempt 1)
+[ledger] 0x6e4cf0 sub_6E4CF0 -> NG (attempt 1)
+[ledger] 0x6e5a70 sub_6E5A70 -> OK (attempt 1)
+[ledger] 0x6e69e0 sub_6E69E0 -> OK (attempt 1)
+[ledger] 0x6e8a20 sub_6E8A20 -> NG (attempt 1)
+[ledger] 0x6f0610 sub_6F0610 -> NG (attempt 1)
+[ledger] 0x6f2a40 sub_6F2A40 -> NG (attempt 1)
+[ledger] 0x70dce0 TechnoClass::checkEMPState -> OK (attempt 1)
+[ledger] 0x717f90 sub_717F90 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "MATCH": 13
+ },
+ "pathologies": {
+  "extern_reloc": 7
+ },
+ "match_rate_of_decided_pct": 65.0,
+ "match_rate_of_total_pct": 65.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p62\batch_report.json
