@@ -4660,7 +4660,7 @@
   "status": "OK"
  },
  "0x4157c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -17265,7 +17265,7 @@
   "this_as_id": false
  },
  "0x4a0190": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": "+4 push ebx",
@@ -22045,7 +22045,7 @@
   "this_as_id": false
  },
  "0x4c9b20": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24530,7 +24530,7 @@
   "this_as_id": false
  },
  "0x4e43c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29176,7 +29176,7 @@
   "status": "NG"
  },
  "0x4fbe40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -41287,7 +41287,7 @@
   "this_as_id": false
  },
  "0x595bc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43656,7 +43656,7 @@
   "this_as_id": false
  },
  "0x5b9f30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0xfc",
@@ -52994,7 +52994,7 @@
   "this_as_id": false
  },
  "0x62e4c0": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -53668,7 +53668,7 @@
   "status": "OK"
  },
  "0x633d30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -56062,7 +56062,7 @@
   "this_as_id": false
  },
  "0x64ad10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "Network_Process_64AD10",
@@ -58165,7 +58165,7 @@
   "this_as_id": false
  },
  "0x660840": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -60038,7 +60038,7 @@
   "this_as_id": false
  },
  "0x684060": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": "+0 sub esp, 0xc",
   "name": "SetScenarioClassTimer",
@@ -62921,7 +62921,7 @@
   "this_as_id": false
  },
  "0x6acd60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -63852,7 +63852,7 @@
   "this_as_id": false
  },
  "0x6b56d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70616,7 +70616,7 @@
   "this_as_id": false
  },
  "0x6edb50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71272,15 +71272,15 @@
   "this_as_id": false
  },
  "0x6fd460": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x20",
   "name": "TechnoClass::CreateRadarBlip",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TechnoClass::CreateRadarBlip",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6fda00": {
@@ -71331,7 +71331,7 @@
   "this_as_id": false
  },
  "0x7011a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 sub esp, 0x1c",
@@ -82051,7 +82051,7 @@
   "this_as_id": false
  },
  "0x766c10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82526,7 +82526,7 @@
   "this_as_id": false
  },
  "0x7680c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87501,7 +87501,7 @@
   "this_as_id": false
  },
  "0x7b71d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 push esi",

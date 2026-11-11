@@ -1,0 +1,129 @@
+{
+ "symbol": "?SetScenarioClassTimer@@YIPAXH@Z",
+ "sym_key": "Unnamed::SetScenarioClassTimer",
+ "size": 269,
+ "link_base": 0,
+ "bytes_hex": "51568bf185f67440e8000000008b0d000000008b54240481c12006000089018d04768951048d0480c1e002894108a1000000008a883006000084c90f85c9000000c6803006000001a1000000008b882c06000085c90f85a9000000e800000000a10000000085c0740583f805752da1000000008b88140600008db01406000083f9ff741ce8000000008b168b4e082bc2c706ffffffff03c8894e08a1000000008a88a235000084c9880d000000007554b900000000e800000000a100000000508b08ff512885c0750ba100000000508b10ff520ca100000000c680a2350000018b0d00000000c7050000000001000000e800000000a100000000c7050000000000000000ff802c0600005e59c3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?sub_406F00@@YAHXZ",
+   "sym_key": "sub_406F00"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B054CC@@3EA",
+   "sym_key": "DataGlobal_B054CC"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?ReleaseCapture@Mouse@@QAEPAXXZ",
+   "sym_key": "Mouse::ReleaseCapture"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?g_BinkMoviePlayer@@3IA",
+   "sym_key": "g_BinkMoviePlayer"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?g_GameActive@@3IA",
+   "sym_key": "g_GameActive"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?PumpMessages@Timer@@QAEPAXXZ",
+   "sym_key": "Timer::PumpMessages"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07784@@3IA",
+   "sym_key": "DataGlobal_B07784"
+  }
+ ]
+}

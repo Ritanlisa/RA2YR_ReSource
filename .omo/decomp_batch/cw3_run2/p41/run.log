@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p41\part_00
+=== convert (20 addrs) ===
+[conv] 0x6fd460 TechnoClass::CreateRadarBlip -> TechnoClass
+[conv] 0x62e4c0 ParticleClass::CreateInstance -> ParticleClass
+[conv] 0x660840 LoadGame::LoadTriggerEvents -> LoadGame
+[conv] 0x4157c0 TechnoClass::ReturnToBase -> TechnoClass
+[conv] 0x595bc0 CCFileClass::Load -> CCFileClass
+[conv] 0x7011a0 ObjectClass::sub_7011A0 -> ObjectClass
+[conv] 0x7680c0 WorldDomination::SetupTerritoryNodes -> WorldDomination
+[conv] 0x4a0190 EnumConnectionsClass::_vt06 -> EnumConnectionsClass
+[conv] 0x4e43c0 ObjectClass::InitGameDropdownColors -> ObjectClass
+[conv] 0x6b56d0 SmudgeTypeClass::GetSize -> SmudgeTypeClass
+[conv] 0x633d30 TechnoClass::ClearScriptPlanningData -> TechnoClass
+[conv] 0x4fbe40 HouseClass::IsCellOccupied -> HouseClass
+[conv] 0x766c10 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release -> _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x6acd60 Skirmish::EnableSpawnButtons -> Skirmish
+[conv] 0x64ad10 Network_Process_64AD10 -> Network_Process
+[conv] 0x6edb50 TeamClass::AssignAttackTarget -> TeamClass
+[conv] 0x684060 SetScenarioClassTimer -> _addr_68
+[conv] 0x7b71d0 ObjectClass::Render_Helper_7B71D0 -> ObjectClass
+[conv] 0x5b9f30 CellClass::SetOccupancy -> CellClass
+[conv] 0x4c9b20 FactoryClass::UpdateProduction -> FactoryClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ParticleClass            rc=2
+[era] LoadGame                 rc=2
+[era] CCFileClass              rc=2
+[era] ObjectClass              rc=2
+[era] WorldDomination          rc=2
+[era] EnumConnectionsClass     rc=0
+[era] SmudgeTypeClass          rc=2
+[era] HouseClass               rc=2
+[era] _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] Skirmish                 rc=2
+[era] Network_Process          rc=2
+[era] TeamClass                rc=2
+[era] _addr_68                 rc=0
+[era] CellClass                rc=0
+[era] FactoryClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x6fd460   MISMATCH         TechnoClass::CreateRadarBlip
+[diff] 0x7011a0   MISMATCH         ObjectClass::sub_7011A0
+[diff] 0x7b71d0   MISMATCH         ObjectClass::Render_Helper_7B71D0
+[diff] 0x4a0190   MISMATCH         EnumConnectionsClass::_vt06
+[diff] 0x684060   MISMATCH         SetScenarioClassTimer
+[diff] 0x5b9f30   MISMATCH         CellClass::SetOccupancy
+[ledger] 0x6fd460 TechnoClass::CreateRadarBlip -> NG (attempt 3)
+[ledger] 0x62e4c0 ParticleClass::CreateInstance -> COMPILE_FAIL (attempt 11)
+[ledger] 0x660840 LoadGame::LoadTriggerEvents -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4157c0 TechnoClass::ReturnToBase -> COMPILE_FAIL (attempt 3)
+[ledger] 0x595bc0 CCFileClass::Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7011a0 ObjectClass::sub_7011A0 -> NG (attempt 3)
+[ledger] 0x7680c0 WorldDomination::SetupTerritoryNodes -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a0190 EnumConnectionsClass::_vt06 -> NG (attempt 3)
+[ledger] 0x4e43c0 ObjectClass::InitGameDropdownColors -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b56d0 SmudgeTypeClass::GetSize -> COMPILE_FAIL (attempt 3)
+[ledger] 0x633d30 TechnoClass::ClearScriptPlanningData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4fbe40 HouseClass::IsCellOccupied -> COMPILE_FAIL (attempt 3)
+[ledger] 0x766c10 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6acd60 Skirmish::EnableSpawnButtons -> COMPILE_FAIL (attempt 3)
+[ledger] 0x64ad10 Network_Process_64AD10 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6edb50 TeamClass::AssignAttackTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x684060 SetScenarioClassTimer -> NG (attempt 4)
+[ledger] 0x7b71d0 ObjectClass::Render_Helper_7B71D0 -> NG (attempt 3)
+[ledger] 0x5b9f30 CellClass::SetOccupancy -> NG (attempt 3)
+[ledger] 0x4c9b20 FactoryClass::UpdateProduction -> COMPILE_FAIL (attempt 13)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "regalloc": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p41\batch_report.json

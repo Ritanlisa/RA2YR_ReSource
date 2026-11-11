@@ -1,0 +1,39 @@
+{
+ "symbol": "?CreateRadarBlip@TechnoClass@@QAEHPAEHPAH@Z",
+ "sym_key": "TechnoClass::CreateRadarBlip",
+ "size": 239,
+ "link_base": 0,
+ "bytes_hex": "83ec1856578bf96a3033f6e80000000083c40485c075085f5e83c418c20c008bc8e80000000085c08944240875085f5e83c418c20c008b07535557ff502c8b5c243483f806753e8d4c24185351e8000000008b70048b108b0f8d44241c50578954241cff91ac0000008d4c24145051e8000000008b10895424188b48042bf185f67e0233f68b44242c85c07415f6401402740f8b008d4c241c51ff90a4000000eb0a8b108d44241c50ff52588b088b78048b68088b44243085c0740d8a90530100008b44241088502c8b53048b03565557518b4b08518b4c24245250e8000000008b4424105d5b5f5e83c418c20c00",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?ResetDamageAccumulator@TechnoClass@@QAEPAV1@XZ",
+   "sym_key": "TechnoClass::ResetDamageAccumulator"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAXPAH@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?CreateTrailParticle@TechnoClass@@QAEPAXHHHHHHH@Z",
+   "sym_key": "TechnoClass::CreateTrailParticle"
+  }
+ ]
+}
