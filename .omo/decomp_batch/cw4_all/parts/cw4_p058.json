@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x41de10",
+  "name": "VectorClass_ptr_AirstrikeClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_DynamicVectorClass_PAVAirstrikeClass",
+  "emitted": "_DynamicVectorClass_PAVAirstrikeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x41de1c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x41dfa0",
+  "name": "VectorClass_ptr_AirstrikeClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_VectorClass_PAVAirstrikeClass",
+  "emitted": "_VectorClass_PAVAirstrikeClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x41dfac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x421830",
+  "name": "VectorClass_ptr_AlphaShapeClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "VectorClass_ptr_AlphaShapeClass",
+  "emitted": "VectorClass_ptr_AlphaShapeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x42183c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x42d570",
+  "name": "SortedArray::GetIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_DynamicVectorClass_I",
+  "emitted": "_DynamicVectorClass_I::GetIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x42d57c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x42d760",
+  "name": "DynamicVectorClass_uint::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_VectorClass_I",
+  "emitted": "_VectorClass_I::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x42d76c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x42f3d0",
+  "name": "BaseClass::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_DynamicVectorClass_VBaseNodeClass",
+  "emitted": "_DynamicVectorClass_VBaseNodeClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x42f3dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x42f450",
+  "name": "RandomMap::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_DynamicVectorClass_VCell",
+  "emitted": "_DynamicVectorClass_VCell::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x42f45c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x42f840",
+  "name": "VectorClass_Cell::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_VectorClass_VCell",
+  "emitted": "_VectorClass_VCell::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x42f84c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x45a100",
+  "name": "VectorClass_ptr_Reestablish::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_DynamicVectorClass_PAVReestablish",
+  "emitted": "_DynamicVectorClass_PAVReestablish::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x45a10c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x45a540",
+  "name": "FootClass::GetCapacity",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x45a54c",
+   "ours": "+5 je 0x17"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x45ac70",
+  "name": "VectorClass_ptr_FoggedObjectClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_VectorClass_PAVFoggedObjectClass",
+  "emitted": "_VectorClass_PAVFoggedObjectClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x45ac7c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x472ab0",
+  "name": "CaptureManagerClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_DynamicVectorClass_PAUControlNode",
+  "emitted": "_DynamicVectorClass_PAUControlNode::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x472abc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x472b10",
+  "name": "VectorClass_ptr_CaptureManagerClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_DynamicVectorClass_PAVCaptureManagerClass",
+  "emitted": "_DynamicVectorClass_PAVCaptureManagerClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x472b1c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x472ca0",
+  "name": "CaptureManagerClass::PointerToIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_VectorClass_PAUControlNode",
+  "emitted": "_VectorClass_PAUControlNode::PointerToIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x472cac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x472f00",
+  "name": "VectorClass_ptr_CaptureManagerClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_VectorClass_PAVCaptureManagerClass",
+  "emitted": "_VectorClass_PAVCaptureManagerClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x472f0c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4778d0",
+  "name": "FilePipe_30::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_DynamicVectorClass_PAVTechnoTypeClass",
+  "emitted": "_DynamicVectorClass_PAVTechnoTypeClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x4778dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4870b0",
+  "name": "Cell::HasOccupierBit",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 27,
+  "part": "p175",
+  "unit": "Cell",
+  "emitted": "Cell::HasOccupierBit",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 mov edx, ecx"
+  },
+  "ours_size": 25
+ },
+ {
+  "addr": "0x48ad40",
+  "name": "VectorClass_ptr_DamageGroup::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_DynamicVectorClass_PAUDamageGroup",
+  "emitted": "_DynamicVectorClass_PAUDamageGroup::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x48ad4c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x48aed0",
+  "name": "VectorClass_ptr_DamageGroup::Get",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_VectorClass_PAUDamageGroup",
+  "emitted": "_VectorClass_PAUDamageGroup::Get",
+  "first_diff": {
+   "orig": "+5 jne 0x48aedc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4913c0",
+  "name": "VectorClass_ptr_ConvertClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_DynamicVectorClass_PAVConvertClass",
+  "emitted": "_DynamicVectorClass_PAVConvertClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4913cc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ }
+]
