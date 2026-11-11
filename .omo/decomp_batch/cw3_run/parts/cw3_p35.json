@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x748010",
+  "name": "UnitTypeClass::LoadFromINI2",
+  "cls": null,
+  "size": 154,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x65cb50",
+  "name": "FileClass::Open2",
+  "cls": null,
+  "size": 155,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2660",
+  "first_msg": "'StubReturnFalse' : function does not take 3 parameters"
+ },
+ {
+  "addr": "0x476d80",
+  "name": "Hash::ComputeHashSHA1",
+  "cls": null,
+  "size": 157,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C4716",
+  "first_msg": "'Hash::ComputeHashSHA1' : must return a value"
+ },
+ {
+  "addr": "0x62a8e0",
+  "name": "ParasiteClass::CanInfect",
+  "cls": null,
+  "size": 157,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int *)' : cannot convert parameter 1 from 'int *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x6e8510",
+  "name": "TaskForceClass::GetUnitType",
+  "cls": null,
+  "size": 158,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'SetInt' : cannot convert parameter 2 from 'unsigned char' to 'void *'"
+ },
+ {
+  "addr": "0x770d70",
+  "name": "sub_770D70",
+  "cls": null,
+  "size": 159,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'__1_Timevec_std__QAE_XZ' : cannot convert parameter 1 from 'const char ** ' to 'int'"
+ },
+ {
+  "addr": "0x736d50",
+  "name": "TechnoClass::IsC4AnimationActive",
+  "cls": null,
+  "size": 160,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'class CellClass *'"
+ },
+ {
+  "addr": "0x7b8610",
+  "name": "sub_7B8610",
+  "cls": null,
+  "size": 160,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p0'"
+ },
+ {
+  "addr": "0x44d7d0",
+  "name": "BuildingClass::GetTargetFacing",
+  "cls": null,
+  "size": 161,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x644630",
+  "name": "WarheadTypeClass::applyDamage",
+  "cls": null,
+  "size": 161,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'"
+ },
+ {
+  "addr": "0x4756f0",
+  "name": "HouseTypeClass::loadCountryData",
+  "cls": null,
+  "size": 162,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.barrelFacing' must have class/struct/union type"
+ },
+ {
+  "addr": "0x6234b0",
+  "name": "SymbolTable::Rebuild",
+  "cls": null,
+  "size": 162,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x58a630",
+  "name": "VectorClass_W4PassabilityType::Constructor",
+  "cls": null,
+  "size": 163,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_U_HashObject_II'"
+ },
+ {
+  "addr": "0x5d0190",
+  "name": "sub_5D0190",
+  "cls": null,
+  "size": 163,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Assign' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x786dc0",
+  "name": "sub_786DC0",
+  "cls": null,
+  "size": 164,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Assign' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x5cf760",
+  "name": "CampaignClass::DeleteAndZero",
+  "cls": null,
+  "size": 165,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'char ** ' to 'const char ** '"
+ },
+ {
+  "addr": "0x4fae50",
+  "name": "SuperWeapon::FireSuperWeaponHouseClass",
+  "cls": null,
+  "size": 166,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.nextArrayIndex' must have class/struct/union type"
+ },
+ {
+  "addr": "0x6c6740",
+  "name": "StaticButtonClass::HitTest",
+  "cls": null,
+  "size": 166,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ')' before '"
+ },
+ {
+  "addr": "0x4a2ab0",
+  "name": "CStreamClass::StreamRead",
+  "cls": null,
+  "size": 167,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'IStream__Read' : cannot convert parameter 1 from 'class IStream *' to 'int'"
+ },
+ {
+  "addr": "0x4ac960",
+  "name": "MapClass::ToggleZoom",
+  "cls": null,
+  "size": 167,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.bombVisible' must have class/struct/union type"
+ }
+]

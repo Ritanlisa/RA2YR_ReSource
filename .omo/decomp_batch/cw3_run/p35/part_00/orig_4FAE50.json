@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FAE50",
+ "name": "SuperWeapon::FireSuperWeaponHouseClass",
+ "size": 166,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FAE50",
+ "bytes_hex": "538bd98b4c2408558b8358020000565733f68b3c888b4f288a91ee00000084d274138b91f00000008b349085f674068b4662894762a14c3da8008b6c24183bd8550f94c1518bcfe8840a1d008b57288a82ee00000084c0742085f6741c6a008bcee86a091d008b154c3da8008bce3bda0f94c050e867091d008b0d3802a8008d71ff85f67c178b152c02a8008b0cb285c974075557e8160000004e79e95f5e5db0015bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

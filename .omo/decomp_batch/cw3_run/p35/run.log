@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p35\part_00
+=== convert (20 addrs) ===
+[conv] 0x748010 UnitTypeClass::LoadFromINI2 -> UnitTypeClass
+[conv] 0x65cb50 RawFileClass::Open2 -> RawFileClass
+[conv] 0x476d80 Hash::ComputeHashSHA1 -> Hash
+[conv] 0x62a8e0 ParasiteClass::CanInfect -> ParasiteClass
+[conv] 0x6e8510 TaskForceClass::GetUnitType -> TaskForceClass
+[conv] 0x770d70 sub_770D70 -> _addr_77
+[conv] 0x736d50 TechnoClass::IsC4AnimationActive -> TechnoClass
+[conv] 0x7b8610 sub_7B8610 -> _addr_7B
+[conv] 0x44d7d0 BuildingClass::GetTargetFacing -> BuildingClass
+[conv] 0x644630 WarheadTypeClass::applyDamage -> WarheadTypeClass
+[conv] 0x4756f0 HouseTypeClass::loadCountryData -> HouseTypeClass
+[conv] 0x6234b0 SymbolTable::Rebuild -> SymbolTable
+[conv] 0x58a630 _DynamicVectorClass_U_HashObject_II::Constructor -> _DynamicVectorClass_U_HashObject_II
+[conv] 0x5d0190 ObjectClass::sub_5D0190 -> ObjectClass
+[conv] 0x786dc0 ObjectClass::sub_786DC0 -> ObjectClass
+[conv] 0x5cf760 CampaignClass::DeleteAndZero -> CampaignClass
+[conv] 0x4fae50 SuperWeapon::FireSuperWeaponHouseClass -> SuperWeapon
+[conv] 0x6c6740 StaticButtonClass::HitTest -> StaticButtonClass
+[conv] 0x4a2ab0 CStreamClass::StreamRead -> CStreamClass
+[conv] 0x4ac960 MapClass::ToggleZoom -> MapClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitTypeClass            rc=2
+[era] RawFileClass             rc=2
+[era] Hash                     rc=2
+[era] ParasiteClass            rc=2
+[era] TaskForceClass           rc=2
+[era] _addr_77                 rc=2
+[era] TechnoClass              rc=2
+[era] _addr_7B                 rc=2
+[era] BuildingClass            rc=2
+[era] WarheadTypeClass         rc=2
+[era] HouseTypeClass           rc=0
+[era] SymbolTable              rc=2
+[era] _DynamicVectorClass_U_HashObject_II rc=2
+[era] ObjectClass              rc=2
+[era] CampaignClass            rc=2
+[era] SuperWeapon              rc=0
+[era] StaticButtonClass        rc=2
+[era] CStreamClass             rc=2
+[era] MapClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4756f0   MISMATCH         HouseTypeClass::loadCountryData
+[diff] 0x4fae50   MISMATCH         SuperWeapon::FireSuperWeaponHouseClass
+[ledger] 0x748010 UnitTypeClass::LoadFromINI2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65cb50 RawFileClass::Open2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x476d80 Hash::ComputeHashSHA1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62a8e0 ParasiteClass::CanInfect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e8510 TaskForceClass::GetUnitType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x770d70 sub_770D70 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x736d50 TechnoClass::IsC4AnimationActive -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7b8610 sub_7B8610 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44d7d0 BuildingClass::GetTargetFacing -> COMPILE_FAIL (attempt 10)
+[ledger] 0x644630 WarheadTypeClass::applyDamage -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4756f0 HouseTypeClass::loadCountryData -> NG (attempt 10)
+[ledger] 0x6234b0 SymbolTable::Rebuild -> COMPILE_FAIL (attempt 10)
+[ledger] 0x58a630 _DynamicVectorClass_U_HashObject_II::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d0190 ObjectClass::sub_5D0190 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x786dc0 ObjectClass::sub_786DC0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cf760 CampaignClass::DeleteAndZero -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fae50 SuperWeapon::FireSuperWeaponHouseClass -> NG (attempt 10)
+[ledger] 0x6c6740 StaticButtonClass::HitTest -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4a2ab0 CStreamClass::StreamRead -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ac960 MapClass::ToggleZoom -> COMPILE_FAIL (attempt 10)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p35\batch_report.json
