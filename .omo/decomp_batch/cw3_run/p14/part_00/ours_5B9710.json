@@ -1,0 +1,27 @@
+{
+ "symbol": "?ReadRulesEngineerCount@NetworkGameSetup@@QAEPAXXZ",
+ "sym_key": "NetworkGameSetup::ReadRulesEngineerCount",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "568bf168290500008b0650e80000000085c074256a006a00680004000050e800000000b1062ac8880d180000008b560880e60180ce018956085ec3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  }
+ ]
+}

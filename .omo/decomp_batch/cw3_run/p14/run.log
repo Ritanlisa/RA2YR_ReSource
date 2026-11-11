@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e8950 sub_6E8950 -> _addr_6E
+[conv] 0x723b60 sub_723B60 -> _addr_72
+[conv] 0x746fb0 sub_746FB0 -> _addr_74
+[conv] 0x763450 sub_763450 -> _addr_76
+[conv] 0x770150 sub_770150 -> _addr_77
+[conv] 0x628860 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Clear -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x631c80 Pipe::Dtor -> Pipe
+[conv] 0x65d4d0 AbstractClass::checkAICondition -> AbstractClass
+[conv] 0x777e00 Render_Draw_777E00 -> Render_Draw
+[conv] 0x7bbab0 XSurface::Fill -> XSurface
+[conv] 0x4114b0 StreamClass::ReadAndSeek -> StreamClass
+[conv] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> SkirmishDialog
+[conv] 0x55a970 LocomotionClass::ReleaseRef -> LocomotionClass
+[conv] 0x6f1f30 TeamTypeClass::FlashAllInstances -> TeamTypeClass
+[conv] 0x5b9710 NetworkGameSetup::ReadRulesEngineerCount -> NetworkGameSetup
+[conv] 0x71ffe0 TextButtonClass::checkWeaponCooldown -> TextButtonClass
+[conv] 0x75f610 WaveClass::UpdateWave -> WaveClass
+[conv] 0x4112d0 MapClass::isLocationShrouded -> MapClass
+[conv] 0x7d5ef8 __FF_MSGBANNER -> _addr_7D
+[conv] 0x5b4310 WinMainSetup_Setup_5B4310 -> WinMainSetup_Setup
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6E                 rc=0
+[era] _addr_72                 rc=2
+[era] _addr_74                 rc=0
+[era] _addr_76                 rc=0
+[era] _addr_77                 rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] Pipe                     rc=2
+[era] AbstractClass            rc=0
+[era] Render_Draw              rc=0
+[era] XSurface                 rc=2
+[era] StreamClass              rc=2
+[era] SkirmishDialog           rc=2
+[era] LocomotionClass          rc=2
+[era] TeamTypeClass            rc=2
+[era] NetworkGameSetup         rc=0
+[era] TextButtonClass          rc=2
+[era] WaveClass                rc=2
+[era] MapClass                 rc=2
+[era] _addr_7D                 rc=2
+[era] WinMainSetup_Setup       rc=2
+=== diffasm byte-compare ===
+[diff] 0x6e8950   MISMATCH         sub_6E8950
+[diff] 0x746fb0   MISMATCH         sub_746FB0
+[diff] 0x763450   MISMATCH         sub_763450
+[diff] 0x770150   MISMATCH         sub_770150
+[diff] 0x65d4d0   MISMATCH         AbstractClass::checkAICondition
+[diff] 0x777e00   MISMATCH         Render_Draw_777E00
+[diff] 0x5b9710   MISMATCH         NetworkGameSetup::ReadRulesEngineerCount
+[ledger] 0x6e8950 sub_6E8950 -> NG (attempt 3)
+[ledger] 0x723b60 sub_723B60 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x746fb0 sub_746FB0 -> NG (attempt 3)
+[ledger] 0x763450 sub_763450 -> NG (attempt 3)
+[ledger] 0x770150 sub_770150 -> NG (attempt 3)
+[ledger] 0x628860 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Clear -> COMPILE_FAIL (attempt 2)
+[ledger] 0x631c80 Pipe::Dtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65d4d0 AbstractClass::checkAICondition -> NG (attempt 2)
+[ledger] 0x777e00 Render_Draw_777E00 -> NG (attempt 3)
+[ledger] 0x7bbab0 XSurface::Fill -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4114b0 StreamClass::ReadAndSeek -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55a970 LocomotionClass::ReleaseRef -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f1f30 TeamTypeClass::FlashAllInstances -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b9710 NetworkGameSetup::ReadRulesEngineerCount -> NG (attempt 2)
+[ledger] 0x71ffe0 TextButtonClass::checkWeaponCooldown -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75f610 WaveClass::UpdateWave -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4112d0 MapClass::isLocationShrouded -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d5ef8 __FF_MSGBANNER -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b4310 WinMainSetup_Setup_5B4310 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "const_fold": 4,
+  "regalloc": 2,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p14\batch_report.json

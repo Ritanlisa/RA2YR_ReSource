@@ -1,0 +1,11 @@
+{
+ "addr": "0x65D4D0",
+ "name": "AbstractClass::checkAICondition",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65D4D0",
+ "bytes_hex": "568bf18b4e04c7064c097f0085c9740cc74604000000008b01ff5008f644240801740956e844b6160083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
