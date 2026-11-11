@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x769c40 ObjectClass::_0Iostream_init_QAE_XZ_9 -> ObjectClass
+[conv] 0x7b0430 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_23 -> ObjectClass
+[conv] 0x7b1720 WinsockInterfaceClass::StubReturnFalse -> WinsockInterfaceClass
+[conv] 0x7b1740 WinsockInterfaceClass::COMStub_Return0 -> WinsockInterfaceClass
+[conv] 0x7b2740 WinsockInterfaceClass::Destru_vt13 -> WinsockInterfaceClass
+[conv] 0x7ce046 ReturnNull3 -> _addr_7C
+[conv] 0x7d6ce7 ReturnNull4 -> _addr_7D
+[conv] 0x401fb0 ObjectClass::sub_401FB0 -> ObjectClass
+[conv] 0x402020 ObjectClass::sub_402020 -> ObjectClass
+[conv] 0x633ab0 ObjectClass::sub_633AB0 -> ObjectClass
+[conv] 0x681070 ObjectClass::sub_681070 -> ObjectClass
+[conv] 0x6810c0 ObjectClass::raw_name_type_info__QBEPBDXZ -> ObjectClass
+[conv] 0x69e060 ObjectClass::sub_69E060 -> ObjectClass
+[conv] 0x6e5290 ObjectClass::sub_6E5290 -> ObjectClass
+[conv] 0x726780 ObjectClass::sub_726780 -> ObjectClass
+[conv] 0x7bf230 underflow___basic_streambuf_DU__char_traits_D_std___std__MAEHXZ_7 -> _addr_7B
+[conv] 0x7c8b29 ObjectClass::sub_7C8B29 -> ObjectClass
+[conv] 0x7dc278 sub_7DC278 -> _addr_7D
+[conv] 0x426620 _4type_info_AAEAAV0_ABV0__Z -> _addr_42
+[conv] 0x4294a0 ApplicationClass::sub_4294A0 -> ApplicationClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] WinsockInterfaceClass    rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+[era] _addr_7B                 rc=0
+[era] _addr_42                 rc=2
+[era] ApplicationClass         rc=0
+=== diffasm byte-compare ===
+[diff] 0x769c40   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_9
+[diff] 0x7b0430   MATCH            ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_23
+[diff] 0x401fb0   MATCH            ObjectClass::sub_401FB0
+[diff] 0x402020   MATCH            ObjectClass::sub_402020
+[diff] 0x633ab0   MATCH            ObjectClass::sub_633AB0
+[diff] 0x681070   MATCH            ObjectClass::sub_681070
+[diff] 0x6810c0   MATCH            ObjectClass::raw_name_type_info__QBEPBDXZ
+[diff] 0x69e060   MATCH            ObjectClass::sub_69E060
+[diff] 0x6e5290   MATCH            ObjectClass::sub_6E5290
+[diff] 0x726780   MATCH            ObjectClass::sub_726780
+[diff] 0x7c8b29   MATCH            ObjectClass::sub_7C8B29
+[diff] 0x7b1720   MISMATCH         WinsockInterfaceClass::StubReturnFalse
+[diff] 0x7b1740   MATCH            WinsockInterfaceClass::COMStub_Return0
+[diff] 0x7b2740   MATCH            WinsockInterfaceClass::Destru_vt13
+[diff] 0x7ce046   MATCH            ReturnNull3
+[diff] 0x7d6ce7   MATCH            ReturnNull4
+[diff] 0x7dc278   MISMATCH         sub_7DC278
+[diff] 0x7bf230   MATCH            underflow___basic_streambuf_DU__char_traits_D_std___std__MAEHXZ_7
+[diff] 0x4294a0   MATCH            ApplicationClass::sub_4294A0
+[ledger] 0x769c40 ObjectClass::_0Iostream_init_QAE_XZ_9 -> OK (attempt 1)
+[ledger] 0x7b0430 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_23 -> OK (attempt 1)
+[ledger] 0x7b1720 WinsockInterfaceClass::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x7b1740 WinsockInterfaceClass::COMStub_Return0 -> OK (attempt 1)
+[ledger] 0x7b2740 WinsockInterfaceClass::Destru_vt13 -> OK (attempt 1)
+[ledger] 0x7ce046 ReturnNull3 -> OK (attempt 1)
+[ledger] 0x7d6ce7 ReturnNull4 -> OK (attempt 1)
+[ledger] 0x401fb0 ObjectClass::sub_401FB0 -> OK (attempt 1)
+[ledger] 0x402020 ObjectClass::sub_402020 -> OK (attempt 1)
+[ledger] 0x633ab0 ObjectClass::sub_633AB0 -> OK (attempt 1)
+[ledger] 0x681070 ObjectClass::sub_681070 -> OK (attempt 1)
+[ledger] 0x6810c0 ObjectClass::raw_name_type_info__QBEPBDXZ -> OK (attempt 1)
+[ledger] 0x69e060 ObjectClass::sub_69E060 -> OK (attempt 1)
+[ledger] 0x6e5290 ObjectClass::sub_6E5290 -> OK (attempt 1)
+[ledger] 0x726780 ObjectClass::sub_726780 -> OK (attempt 1)
+[ledger] 0x7bf230 underflow___basic_streambuf_DU__char_traits_D_std___std__MAEHXZ_7 -> OK (attempt 1)
+[ledger] 0x7c8b29 ObjectClass::sub_7C8B29 -> OK (attempt 1)
+[ledger] 0x7dc278 sub_7DC278 -> NG (attempt 1)
+[ledger] 0x426620 _4type_info_AAEAAV0_ABV0__Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4294a0 ApplicationClass::sub_4294A0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 89.5,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p17\batch_report.json
