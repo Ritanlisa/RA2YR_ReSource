@@ -1,0 +1,11 @@
+{
+ "addr": "0x50D9F0",
+ "name": "HouseClass::GetUnitSelfHealStep",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50D9F0",
+ "bytes_hex": "a1e07188008b403c0faf8168010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

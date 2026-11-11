@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p65\part_00
+=== convert (20 addrs) ===
+[conv] 0x778690 sub_778690 -> _addr_77
+[conv] 0x77b830 sub_77B830 -> _addr_77
+[conv] 0x7af250 sub_7AF250 -> _addr_7A
+[conv] 0x7b0d40 sub_7B0D40 -> _addr_7B
+[conv] 0x7b1970 sub_7B1970 -> _addr_7B
+[conv] 0x7b2d40 sub_7B2D40 -> _addr_7B
+[conv] 0x7dbc68 __clrfp -> _addr_7D
+[conv] 0x7500e0 FootClass::SetField -> FootClass
+[conv] 0x405160 ObjectClass::sub_405160 -> ObjectClass
+[conv] 0x4073b0 SaveGame::CountLinkedList -> SaveGame
+[conv] 0x430f60 sub_430F60 -> _addr_43
+[conv] 0x433c70 Property::Set -> Property
+[conv] 0x433c80 ObjectClass::sub_433C80 -> ObjectClass
+[conv] 0x4a0180 EnumConnectionsClass::Skip -> EnumConnectionsClass
+[conv] 0x4a0b10 EnumConnectionPointsClass::Skip -> EnumConnectionPointsClass
+[conv] 0x4cf940 FlyLocomotionClass::ShortFunc_4CF940 -> FlyLocomotionClass
+[conv] 0x4d28c0 TechnoClass::recalcThreat -> TechnoClass
+[conv] 0x50d9f0 HouseClass::GetUnitSelfHealStep -> HouseClass
+[conv] 0x50e1b0 HouseClass::GainedPoweredCenter -> HouseClass
+[conv] 0x55abd0 IUnknown::ReturnZeroPos -> IUnknown
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=0
+[era] _addr_7A                 rc=0
+[era] _addr_7B                 rc=0
+[era] _addr_7D                 rc=2
+[era] FootClass                rc=2
+[era] ObjectClass              rc=0
+[era] SaveGame                 rc=2
+[era] _addr_43                 rc=2
+[era] Property                 rc=0
+[era] EnumConnectionsClass     rc=0
+[era] EnumConnectionPointsClass rc=0
+[era] FlyLocomotionClass       rc=2
+[era] TechnoClass              rc=0
+[era] HouseClass               rc=0
+[era] IUnknown                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x778690   MATCH            sub_778690
+[diff] 0x77b830   MATCH            sub_77B830
+[diff] 0x7af250   MATCH            sub_7AF250
+[diff] 0x7b0d40   MATCH            sub_7B0D40
+[diff] 0x7b1970   MATCH            sub_7B1970
+[diff] 0x7b2d40   MATCH            sub_7B2D40
+[diff] 0x405160   MISMATCH         ObjectClass::sub_405160
+[diff] 0x433c80   MISMATCH         ObjectClass::sub_433C80
+[diff] 0x433c70   MATCH            Property::Set
+[diff] 0x4a0180   MISMATCH         EnumConnectionsClass::Skip
+[diff] 0x4a0b10   MISMATCH         EnumConnectionPointsClass::Skip
+[diff] 0x4d28c0   MISMATCH         TechnoClass::recalcThreat
+[diff] 0x50d9f0   MISMATCH         HouseClass::GetUnitSelfHealStep
+[diff] 0x50e1b0   MATCH            HouseClass::GainedPoweredCenter
+[ledger] 0x778690 sub_778690 -> OK (attempt 1)
+[ledger] 0x77b830 sub_77B830 -> OK (attempt 1)
+[ledger] 0x7af250 sub_7AF250 -> OK (attempt 1)
+[ledger] 0x7b0d40 sub_7B0D40 -> OK (attempt 1)
+[ledger] 0x7b1970 sub_7B1970 -> OK (attempt 1)
+[ledger] 0x7b2d40 sub_7B2D40 -> OK (attempt 1)
+[ledger] 0x7dbc68 __clrfp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7500e0 FootClass::SetField -> COMPILE_FAIL (attempt 1)
+[ledger] 0x405160 ObjectClass::sub_405160 -> NG (attempt 1)
+[ledger] 0x4073b0 SaveGame::CountLinkedList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x430f60 sub_430F60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x433c70 Property::Set -> OK (attempt 1)
+[ledger] 0x433c80 ObjectClass::sub_433C80 -> NG (attempt 1)
+[ledger] 0x4a0180 EnumConnectionsClass::Skip -> NG (attempt 1)
+[ledger] 0x4a0b10 EnumConnectionPointsClass::Skip -> NG (attempt 1)
+[ledger] 0x4cf940 FlyLocomotionClass::ShortFunc_4CF940 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d28c0 TechnoClass::recalcThreat -> NG (attempt 1)
+[ledger] 0x50d9f0 HouseClass::GetUnitSelfHealStep -> NG (attempt 1)
+[ledger] 0x50e1b0 HouseClass::GainedPoweredCenter -> OK (attempt 1)
+[ledger] 0x55abd0 IUnknown::ReturnZeroPos -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 8,
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "regalloc": 1,
+  "cc_mismatch": 2,
+  "signedness": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 57.1,
+ "match_rate_of_total_pct": 40.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p65\batch_report.json

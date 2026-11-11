@@ -1,0 +1,8 @@
+{
+ "symbol": "?GainedPoweredCenter@HouseClass@@QAEEH@Z",
+ "sym_key": "HouseClass::GainedPoweredCenter",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b91d802000033c085d20f9fc0c20400",
+ "relocs": []
+}

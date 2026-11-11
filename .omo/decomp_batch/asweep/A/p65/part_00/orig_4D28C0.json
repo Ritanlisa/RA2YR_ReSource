@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D28C0",
+ "name": "TechnoClass::recalcThreat",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D28C0",
+ "bytes_hex": "8b416c85c07e068b41608b00c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

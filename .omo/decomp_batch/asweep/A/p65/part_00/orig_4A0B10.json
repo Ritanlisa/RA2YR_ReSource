@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A0B10",
+ "name": "EnumConnectionPointsClass::Skip",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A0B10",
+ "bytes_hex": "8b442404c740040000000033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x50E1B0",
+ "name": "HouseClass::GainedPoweredCenter",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50E1B0",
+ "bytes_hex": "8b91d802000033c085d20f9fc0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

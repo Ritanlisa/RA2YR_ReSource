@@ -1,0 +1,8 @@
+{
+ "symbol": "?Skip@EnumConnectionsClass@@QAGHH@Z",
+ "sym_key": "EnumConnectionsClass::Skip",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b442404c7401c0000000033c0c20800",
+ "relocs": []
+}
