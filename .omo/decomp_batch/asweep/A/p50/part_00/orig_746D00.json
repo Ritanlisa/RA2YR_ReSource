@@ -1,0 +1,11 @@
+{
+ "addr": "0x746D00",
+ "name": "TechnoClass::updateSpawnManager",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746D00",
+ "bytes_hex": "8b81c40600008a80ac060000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

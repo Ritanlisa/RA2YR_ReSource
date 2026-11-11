@@ -1,0 +1,11 @@
+{
+ "addr": "0x7342C0",
+ "name": "SelectAllOfType_Helper",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7342C0",
+ "bytes_hex": "85c9750332c0c38a41142401c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

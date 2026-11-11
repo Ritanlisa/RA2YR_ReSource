@@ -1,0 +1,8 @@
+{
+ "symbol": "?seek@_VectorClass_PBVToolTip@@QAEHH@Z",
+ "sym_key": "_VectorClass_PBVToolTip::seek",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b41048b4c24048b0488c20400",
+ "relocs": []
+}

@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p50\part_00
+=== convert (20 addrs) ===
+[conv] 0x723780 _VectorClass_PAVTiberiumClass::Get -> _VectorClass_PAVTiberiumClass
+[conv] 0x724520 SidebarClass::initializeStrip -> SidebarClass
+[conv] 0x724530 SidebarClass::updateStripVisibility -> SidebarClass
+[conv] 0x724560 ObjectClass::sub_724560 -> ObjectClass
+[conv] 0x724c80 _VectorClass_PBVToolTip::seek -> _VectorClass_PBVToolTip
+[conv] 0x72a9c0 Copy8Bytes -> _addr_72
+[conv] 0x7342c0 ObjectClass::SelectAllOfType_Helper -> ObjectClass
+[conv] 0x746d00 TechnoClass::updateSpawnManager -> TechnoClass
+[conv] 0x74bf90 _VectorClass_E::Clear -> _VectorClass_E
+[conv] 0x74f3b0 _VectorClass_PAVVeinholeMonsterClass::Seek -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x751920 _VectorClass_PAVVocClass::Get -> _VectorClass_PAVVocClass
+[conv] 0x759f20 TechnoClass::Render_Load_759F20 -> TechnoClass
+[conv] 0x75a480 _VectorClass_PAVMovieHandle::Get -> _VectorClass_PAVMovieHandle
+[conv] 0x7636f0 ObjectClass::unknown_libname_36 -> ObjectClass
+[conv] 0x763fe0 _VectorClass_PAVWaypointPathClass::Get -> _VectorClass_PAVWaypointPathClass
+[conv] 0x769d20 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Seek -> _VectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x7ac9c0 _VectorClass_PAUtConnInfoStruct::Seek -> _VectorClass_PAUtConnInfoStruct
+[conv] 0x7b1760 WinsockInterfaceClass::GetLocalAddress -> WinsockInterfaceClass
+[conv] 0x7b2890 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Get -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7c9ae3 ___isascii -> _addr_7C
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVTiberiumClass rc=0
+[era] SidebarClass             rc=2
+[era] ObjectClass              rc=0
+[era] _VectorClass_PBVToolTip  rc=0
+[era] _addr_72                 rc=0
+[era] TechnoClass              rc=0
+[era] _VectorClass_E           rc=0
+[era] _VectorClass_PAVVeinholeMonsterClass rc=0
+[era] _VectorClass_PAVVocClass rc=0
+[era] _VectorClass_PAVMovieHandle rc=0
+[era] _VectorClass_PAVWaypointPathClass rc=0
+[era] _VectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _VectorClass_PAUtConnInfoStruct rc=0
+[era] WinsockInterfaceClass    rc=0
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x723780   MATCH            _VectorClass_PAVTiberiumClass::Get
+[diff] 0x724520   MATCH            SidebarClass::initializeStrip
+[diff] 0x724530   MATCH            SidebarClass::updateStripVisibility
+[diff] 0x724560   MISMATCH         ObjectClass::sub_724560
+[diff] 0x7342c0   MISMATCH         ObjectClass::SelectAllOfType_Helper
+[diff] 0x7636f0   MATCH            ObjectClass::unknown_libname_36
+[diff] 0x724c80   MATCH            _VectorClass_PBVToolTip::seek
+[diff] 0x72a9c0   MISMATCH         Copy8Bytes
+[diff] 0x746d00   MATCH            TechnoClass::updateSpawnManager
+[diff] 0x759f20   MATCH            TechnoClass::Render_Load_759F20
+[diff] 0x74bf90   MATCH            _VectorClass_E::Clear
+[diff] 0x74f3b0   MISMATCH         _VectorClass_PAVVeinholeMonsterClass::Seek
+[diff] 0x751920   MATCH            _VectorClass_PAVVocClass::Get
+[diff] 0x75a480   MATCH            _VectorClass_PAVMovieHandle::Get
+[diff] 0x763fe0   MATCH            _VectorClass_PAVWaypointPathClass::Get
+[diff] 0x769d20   MATCH            _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Seek
+[diff] 0x7ac9c0   MATCH            _VectorClass_PAUtConnInfoStruct::Seek
+[diff] 0x7b1760   MATCH            WinsockInterfaceClass::GetLocalAddress
+[diff] 0x7b2890   MATCH            _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Get
+[diff] 0x7c9ae3   MATCH            ___isascii
+[ledger] 0x723780 _VectorClass_PAVTiberiumClass::Get -> OK (attempt 1)
+[ledger] 0x724520 SidebarClass::initializeStrip -> OK (attempt 1)
+[ledger] 0x724530 SidebarClass::updateStripVisibility -> OK (attempt 1)
+[ledger] 0x724560 ObjectClass::sub_724560 -> NG (attempt 1)
+[ledger] 0x724c80 _VectorClass_PBVToolTip::seek -> OK (attempt 1)
+[ledger] 0x72a9c0 Copy8Bytes -> NG (attempt 1)
+[ledger] 0x7342c0 ObjectClass::SelectAllOfType_Helper -> NG (attempt 1)
+[ledger] 0x746d00 TechnoClass::updateSpawnManager -> OK (attempt 1)
+[ledger] 0x74bf90 _VectorClass_E::Clear -> OK (attempt 1)
+[ledger] 0x74f3b0 _VectorClass_PAVVeinholeMonsterClass::Seek -> NG (attempt 1)
+[ledger] 0x751920 _VectorClass_PAVVocClass::Get -> OK (attempt 1)
+[ledger] 0x759f20 TechnoClass::Render_Load_759F20 -> OK (attempt 1)
+[ledger] 0x75a480 _VectorClass_PAVMovieHandle::Get -> OK (attempt 1)
+[ledger] 0x7636f0 ObjectClass::unknown_libname_36 -> OK (attempt 1)
+[ledger] 0x763fe0 _VectorClass_PAVWaypointPathClass::Get -> OK (attempt 1)
+[ledger] 0x769d20 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Seek -> OK (attempt 1)
+[ledger] 0x7ac9c0 _VectorClass_PAUtConnInfoStruct::Seek -> OK (attempt 1)
+[ledger] 0x7b1760 WinsockInterfaceClass::GetLocalAddress -> OK (attempt 1)
+[ledger] 0x7b2890 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Get -> OK (attempt 1)
+[ledger] 0x7c9ae3 ___isascii -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "regalloc": 1,
+  "branch_order": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 80.0,
+ "match_rate_of_total_pct": 80.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p50\batch_report.json

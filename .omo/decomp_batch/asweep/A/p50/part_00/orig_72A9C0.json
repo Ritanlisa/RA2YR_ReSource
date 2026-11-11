@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A9C0",
+ "name": "Copy8Bytes",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A9C0",
+ "bytes_hex": "8bc18b0a8b52048908895004c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

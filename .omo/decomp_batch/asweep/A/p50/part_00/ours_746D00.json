@@ -1,0 +1,8 @@
+{
+ "symbol": "?updateSpawnManager@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::updateSpawnManager",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b81c40600008a80ac060000c3",
+ "relocs": []
+}

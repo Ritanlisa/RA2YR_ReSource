@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetLocalAddress@WinsockInterfaceClass@@QAEHH@Z",
+ "sym_key": "WinsockInterfaceClass::GetLocalAddress",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b4424048981f8f20300c20400",
+ "relocs": []
+}

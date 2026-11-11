@@ -1,0 +1,11 @@
+{
+ "addr": "0x724530",
+ "name": "SidebarClass::updateStripVisibility",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x724530",
+ "bytes_hex": "8b812802000089812c020000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

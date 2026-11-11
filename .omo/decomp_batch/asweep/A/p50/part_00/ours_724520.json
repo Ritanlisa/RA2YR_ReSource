@@ -1,0 +1,8 @@
+{
+ "symbol": "?initializeStrip@SidebarClass@@QAEHH@Z",
+ "sym_key": "SidebarClass::initializeStrip",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b442404898128020000c20400",
+ "relocs": []
+}

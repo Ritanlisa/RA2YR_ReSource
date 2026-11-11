@@ -28686,6 +28686,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x723780": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTiberiumClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_TiberiumClass::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x723b60": {
   "attempts": 2,
   "first_diff": null,
@@ -28754,6 +28766,30 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x724520": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SidebarClass::initializeStrip",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SidebarClass::initializeStrip",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x724530": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SidebarClass::updateStripVisibility",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SidebarClass::updateStripVisibility",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x724540": {
   "attempts": 1,
   "first_diff": null,
@@ -28771,6 +28807,18 @@
   "orig_name": "sub_724550",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x724560": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+10 ret 4",
+  "name": "ObjectClass::sub_724560",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "sub_724560",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x724570": {
@@ -28815,6 +28863,18 @@
   "note": "decomp_batch r2: MATCH",
   "orig_name": "Frame::Init",
   "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x724c80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_VectorClass_PBVToolTip::seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ToolTipClass::seek",
+  "rule_violations": 1,
   "status": "OK",
   "this_as_id": false
  },
@@ -29184,6 +29244,17 @@
   "name": "sub_72A880",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x72a9c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 mov ecx, dword ptr [edx]",
+  "name": "Copy8Bytes",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Copy8Bytes",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x72a9d0": {
   "attempts": 2,
@@ -30374,6 +30445,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x7342c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 jne 0x7342c7",
+  "name": "ObjectClass::SelectAllOfType_Helper",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "SelectAllOfType_Helper",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7344a0": {
   "attempts": 2,
   "first_diff": "+0 fld qword ptr [0x7f5c20]",
@@ -30590,6 +30673,18 @@
   "name": "UnitClass::CheckForNearbyEnemies",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x746d00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TechnoClass::updateSpawnManager",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TechnoClass::updateSpawnManager",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x746d80": {
   "attempts": 8,
@@ -30845,6 +30940,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x74bf90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_E::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_E::Clear",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x74bfa0": {
   "attempts": 1,
   "first_diff": null,
@@ -30944,6 +31051,18 @@
   "name": "AbstractClass::checkBuildingPlacement",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x74f3b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
+  "name": "_VectorClass_PAVVeinholeMonsterClass::Seek",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "orig_name": "?::Seek",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x74f5f0": {
   "attempts": 1,
@@ -31123,6 +31242,18 @@
   "note": "decomp_batch r2: MATCH",
   "orig_name": "SetVocClassEnabled",
   "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x751920": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVVocClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_VocClass::Get",
+  "rule_violations": 1,
   "status": "OK",
   "this_as_id": false
  },
@@ -31494,6 +31625,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x759f20": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::Render_Load_759F20",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Render_Load_759F20",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x759f70": {
   "attempts": 8,
   "clean": true,
@@ -31559,6 +31702,18 @@
   "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_258",
   "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x75a480": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVMovieHandle::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_MovieHandle::Get",
+  "rule_violations": 1,
   "status": "OK",
   "this_as_id": false
  },
@@ -31880,6 +32035,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7636f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::unknown_libname_36",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "unknown_libname_36",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x763700": {
   "attempts": 1,
   "first_diff": null,
@@ -31919,6 +32086,18 @@
   "name": "WaypointPathClass::StubReturn51",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x763fe0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVWaypointPathClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_WaypointPathClass::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x7645c0": {
   "attempts": 1,
@@ -32246,6 +32425,18 @@
   "name": "Map_WorldDominationTour_20::Seek",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x769d20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Map_WorldDominationTour_28::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x769dc0": {
   "attempts": 1,
@@ -33710,6 +33901,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x7ac9c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUtConnInfoStruct::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "WonlineStringDialogControl_12::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x7acbd0": {
   "attempts": 1,
   "clean": false,
@@ -34037,6 +34240,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x7b1760": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "WinsockInterfaceClass::GetLocalAddress",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "IPXInterfaceClass::GetLocalAddress",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x7b1770": {
   "attempts": 1,
   "clean": true,
@@ -34165,6 +34380,18 @@
   "name": "IPXInterfaceClass::getSocketCount",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x7b2890": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x7b2ff0": {
   "attempts": 9,
@@ -35212,6 +35439,17 @@
   "name": "__toupper",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "__toupper",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7c9ae3": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "___isascii",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "___isascii",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
