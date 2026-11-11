@@ -1035,6 +1035,26 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-11-12 (CW4)**: 形态层自动试错引擎 + if/else 方向规则回填（A 层 2,608 NG 普查）
+  - **引擎**：`tools/decomp_sys/cw4_variants.py`（变体库）+ `run_cw4.py`（选择/试错/逐 part 提交/报告）。
+    变体 = 等价源形候选（if/else 4 路、语句/短路交换、常量表达式、微形态、循环、signed 比较），
+    每个先过 checker 六规则门（只允许不新增违规），再按"原始 part 目录复制 + 只换目标函数体"
+    的忠实上下文编译+对拍。基线读 asweep 存盘 ours json，不重编译。
+  - **结果**：试点 200 = **105（52.5%）** → 扩量全层 2,608 = **317 命中（12.2%）**；
+    其中 **313 件是 if/else 负化 guard 规则**（JCC_INVERT 96.8%、PLUS 34.5%，族合计 313/342=91.5%）；
+    其余族（语句交换/常量形态/循环/窄 cast/短路交换）**全部证伪 0 命中**。可试面 = 805 件（30.9%），
+    命中率 39.4%；1,803 件无变体（属 W1/W2/W4 确定性族）。
+  - **回填（两个真实生成器缺陷）**：①旧 `pass_branch_polarity` 的变换 `if(c){A} B` 与 if/else
+    同 jcc（codegen no-op）——改为**负化 guard** `if(!(c)){B} A`；②`pass_scope_shrink` 设
+    `ctx.stmts` 后 `pass_era_normalize` 重渲染覆盖 `ctx.lines`，**旧 pass 改写从未生效**——
+    在 scope_shrink 后立即物化 `ctx.lines=render(ctx.stmts); ctx.stmts=None`。触发改为 jcc 极性
+    模型（比较符→guard 期望 jcc，jz/jnz 别名归一，前缀语句支持，两分支必 return 的语义前提；
+    brace 扫描替代正则，无回溯）。验证：**313/313 回填重放 MATCH**（真实 batch/账本通道）+
+    **历史 OK 随机 100 回归 100/100**。账本 **NG 4,059 → 3,746**（OK 2,340→2,653）。
+  - **未回填挂账**：3 件 signed 比较 cast（根因是 unsigned 成员/全局类型，归 W4 类型层）、
+    1 件 guard→if/else 反方向（证据 1/38，避免过拟合）。报告 = `.omo/agents/decomp_batch/report_cw4.md`。
+  - **勿重跑**：同 population 下语句交换/常量形态/循环改写/窄返回 cast 的试错（0 命中，证据已入库）。
+
 - **2026-11-11 用户裁决（反编译产线优先级，最高约束）**：
   1. **占位名搁置**——当前不追命名质量；后续编写 MCP 工具做**批量逆向重命名**（一次性收口全部 sub_XXX/GetMemberNN 占位名）。
   2. **当前使命 = 机械性反编译做扎实**——产线考核指标 = 全池 19,067 函数的机械反编译覆盖与正确性（编译通过 / 六规则合规 / 字节匹配 三层），不是单点匹配率。命名/可读性维度不阻塞产线推进。
