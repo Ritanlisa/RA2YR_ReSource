@@ -21,7 +21,7 @@ public:
     int m_8;  // 0x008
 
     // ---- pilot methods (registry signatures)
-    int sub_4966D0(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10);  // 0x4966D0
+    int sub_4966D0(int p1, unsigned char * p2, int p3, int p4, int p5, unsigned int p6, int p7, int p8, int p9, char * p10);  // 0x4966D0
 };
 
 // ---- globals used by this unit (registry names)

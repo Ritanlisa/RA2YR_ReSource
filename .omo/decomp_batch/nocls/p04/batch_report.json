@@ -2,16 +2,18 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "MISMATCH": 6,
-   "COMPILE_FAIL": 10,
+   "MISMATCH": 13,
+   "COMPILE_FAIL": 3,
    "MATCH": 4
   },
   "pathologies": {
    "extern_reloc": 4,
-   "width_mismatch": 1,
-   "codegen_shape": 1
+   "codegen_shape": 3,
+   "const_fold": 2,
+   "eval_order": 3,
+   "width_mismatch": 1
   },
-  "match_rate_of_decided_pct": 40.0,
+  "match_rate_of_decided_pct": 23.5,
   "match_rate_of_total_pct": 20.0,
   "rule_violation_fns": 7,
   "parts": 1
@@ -32,10 +34,12 @@
    "unit": "_addr_48",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "1/1",
    "rule_violations": 0,
    "orig_size": 19,
-   "ours_size": 21
+   "ours_size": 21,
+   "clean": false
   },
   {
    "addr": "0x48e480",
@@ -49,8 +53,10 @@
    "unit": "_addr_48",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "15/15",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "clean": false
   },
   {
    "addr": "0x48e680",
@@ -64,115 +70,166 @@
    "unit": "_addr_48",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "4/4",
    "rule_violations": 0,
    "orig_size": 23,
-   "ours_size": 23
+   "ours_size": 23,
+   "clean": true
   },
   {
    "addr": "0x491b40",
    "batch": "nocls",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\RLEBlitTransXlatZRead.cpp(21) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\RLEBlitTransXlatZRead.cpp(",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 207B ours 227B",
+   "first_diff": {
+    "orig": "+6 mov ebx, dword ptr [esp + 0x10]",
+    "ours": "+6 push ebp"
+   },
+   "pathology": "codegen_shape",
    "name": "sub_491B40",
    "emitted": "RLEBlitTransXlatZRead::sub_491B40",
    "unit": "RLEBlitTransXlatZRead",
    "name_placeholder": true,
    "cls_src": "resolve:vsa_slot",
-   "sites": "5/5",
-   "rule_violations": 1
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 207,
+   "ours_size": 227,
+   "clean": false
   },
   {
    "addr": "0x491c50",
    "batch": "nocls",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTransZRemapXlatZRead_E.cpp(24) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTransZR",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 246B ours 303B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [esp + 0x2c]",
+    "ours": "+1 mov eax, dword ptr [esp + 0x14]"
+   },
+   "pathology": "const_fold",
    "name": "sub_491C50",
    "emitted": "__RLEBlitTransZRemapXlatZRead_E::sub_491C50",
    "unit": "__RLEBlitTransZRemapXlatZRead_E",
    "name_placeholder": true,
    "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
    "sites": "6/6",
-   "rule_violations": 1
+   "rule_violations": 1,
+   "orig_size": 246,
+   "ours_size": 303,
+   "clean": false
   },
   {
    "addr": "0x491ea0",
    "batch": "nocls",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTransRemapXlatZRead_E.cpp(21) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTransRem",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 233B ours 266B",
+   "first_diff": {
+    "orig": "+6 mov ebx, dword ptr [esp + 0x10]",
+    "ours": "+6 mov ebx, dword ptr [esp + 0xc]"
+   },
+   "pathology": "const_fold",
    "name": "sub_491EA0",
    "emitted": "__RLEBlitTransRemapXlatZRead_E::sub_491EA0",
    "unit": "__RLEBlitTransRemapXlatZRead_E",
    "name_placeholder": true,
    "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
    "sites": "4/5",
-   "rule_violations": 1
+   "rule_violations": 1,
+   "orig_size": 233,
+   "ours_size": 266,
+   "clean": false
   },
   {
    "addr": "0x492100",
    "batch": "nocls",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTransZRemapXlatZReadWrite_E.cpp(22) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTr",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 264B ours 292B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [ecx + 4]",
+    "ours": "+1 mov dword ptr [esp], ecx"
+   },
+   "pathology": "eval_order",
    "name": "sub_492100",
    "emitted": "__RLEBlitTransZRemapXlatZReadWrite_E::sub_492100",
    "unit": "__RLEBlitTransZRemapXlatZReadWrite_E",
    "name_placeholder": true,
    "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
    "sites": "4/4",
-   "rule_violations": 2
+   "rule_violations": 2,
+   "orig_size": 264,
+   "ours_size": 292,
+   "clean": false
   },
   {
    "addr": "0x4965b0",
    "batch": "nocls",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\RLEBlitTransXlatZRead.cpp(21) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\RLEBlitTransXlatZRead.cpp(",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 213B ours 252B",
+   "first_diff": {
+    "orig": "+5 mov edx, dword ptr [esp + 0x1c]",
+    "ours": "+5 push ebx"
+   },
+   "pathology": "codegen_shape",
    "name": "sub_4965B0",
    "emitted": "RLEBlitTransXlatZRead::sub_4965B0",
    "unit": "RLEBlitTransXlatZRead",
    "name_placeholder": true,
    "cls_src": "resolve:vsa_slot",
-   "sites": "5/5",
-   "rule_violations": 1
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 213,
+   "ours_size": 252,
+   "clean": false
   },
   {
    "addr": "0x4966d0",
    "batch": "nocls",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTransZRemapXlatZRead_G.cpp(22) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTransZR",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 257B ours 278B",
+   "first_diff": {
+    "orig": "+1 mov eax, ecx",
+    "ours": "+1 mov eax, dword ptr [esp + 0x14]"
+   },
+   "pathology": "eval_order",
    "name": "sub_4966D0",
    "emitted": "__RLEBlitTransZRemapXlatZRead_G::sub_4966D0",
    "unit": "__RLEBlitTransZRemapXlatZRead_G",
    "name_placeholder": true,
    "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
    "sites": "4/4",
-   "rule_violations": 2
+   "rule_violations": 2,
+   "orig_size": 257,
+   "ours_size": 278,
+   "clean": false
   },
   {
    "addr": "0x497230",
    "batch": "nocls",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTransZRemapXlatZReadWrite_G.cpp(22) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p04\\part_00\\__RLEBlitTr",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 273B ours 298B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [ecx + 4]",
+    "ours": "+1 mov dword ptr [esp], ecx"
+   },
+   "pathology": "eval_order",
    "name": "sub_497230",
    "emitted": "__RLEBlitTransZRemapXlatZReadWrite_G::sub_497230",
    "unit": "__RLEBlitTransZRemapXlatZReadWrite_G",
    "name_placeholder": true,
    "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
    "sites": "4/4",
-   "rule_violations": 2
+   "rule_violations": 2,
+   "orig_size": 273,
+   "ours_size": 298,
+   "clean": false
   },
   {
    "addr": "0x49b180",
@@ -186,8 +243,10 @@
    "unit": "_addr_49",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "2/2",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "clean": false
   },
   {
    "addr": "0x49f190",
@@ -204,10 +263,12 @@
    "unit": "_addr_49",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "1/1",
    "rule_violations": 0,
    "orig_size": 19,
-   "ours_size": 21
+   "ours_size": 21,
+   "clean": false
   },
   {
    "addr": "0x49f2b0",
@@ -224,10 +285,12 @@
    "unit": "_addr_49",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "3/3",
    "rule_violations": 0,
    "orig_size": 26,
-   "ours_size": 26
+   "ours_size": 26,
+   "clean": false
   },
   {
    "addr": "0x49fda0",
@@ -244,10 +307,12 @@
    "unit": "_addr_49",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "2/2",
    "rule_violations": 0,
    "orig_size": 19,
-   "ours_size": 19
+   "ours_size": 19,
+   "clean": false
   },
   {
    "addr": "0x4a1670",
@@ -264,10 +329,12 @@
    "unit": "_addr_4A",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "3/3",
    "rule_violations": 0,
    "orig_size": 33,
-   "ours_size": 51
+   "ours_size": 51,
+   "clean": false
   },
   {
    "addr": "0x4a2210",
@@ -284,10 +351,12 @@
    "unit": "_addr_4A",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "1/1",
    "rule_violations": 0,
    "orig_size": 19,
-   "ours_size": 21
+   "ours_size": 21,
+   "clean": false
   },
   {
    "addr": "0x4a2300",
@@ -301,10 +370,12 @@
    "unit": "_addr_4A",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "2/2",
    "rule_violations": 0,
    "orig_size": 15,
-   "ours_size": 15
+   "ours_size": 15,
+   "clean": true
   },
   {
    "addr": "0x4a5050",
@@ -318,10 +389,12 @@
    "unit": "_addr_4A",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "3/3",
    "rule_violations": 0,
    "orig_size": 18,
-   "ours_size": 18
+   "ours_size": 18,
+   "clean": true
   },
   {
    "addr": "0x4a59c0",
@@ -335,10 +408,12 @@
    "unit": "_addr_4A",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "4/4",
    "rule_violations": 0,
    "orig_size": 23,
-   "ours_size": 23
+   "ours_size": 23,
+   "clean": true
   },
   {
    "addr": "0x4a6b30",
@@ -352,8 +427,10 @@
    "unit": "_addr_4A",
    "name_placeholder": true,
    "cls_src": null,
+   "this_as_id": false,
    "sites": "6/6",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "clean": false
   }
  ]
 }

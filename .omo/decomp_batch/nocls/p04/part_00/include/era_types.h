@@ -129,6 +129,31 @@ struct tagMSG {
 };
 typedef struct tagMSG MSG;
 typedef MSG *          LPMSG;
+// NOTE: the exact tag names matter -- emitted locals spell
+// `struct tagTEXTMETRICA tm;` / `struct _BY_HANDLE_FILE_INFORMATION fi;`.
+struct tagTEXTMETRICA { unsigned char __pad[56]; };
+typedef struct tagTEXTMETRICA TEXTMETRICA;
+typedef struct tagTEXTMETRICA * LPTEXTMETRICA;
+struct _BY_HANDLE_FILE_INFORMATION {
+    unsigned long dwFileAttributes;
+    FILETIME      ftCreationTime;
+    FILETIME      ftLastAccessTime;
+    FILETIME      ftLastWriteTime;
+    unsigned long dwVolumeSerialNumber;
+    unsigned long nFileSizeHigh;
+    unsigned long nFileSizeLow;
+    unsigned long nNumberOfLinks;
+    unsigned long nFileIndexHigh;
+    unsigned long nFileIndexLow;
+};
+typedef int (__stdcall * DLGPROC)();
+struct tagPAINTSTRUCT { unsigned char __pad[64]; };
+typedef struct tagPAINTSTRUCT PAINTSTRUCT;
+struct tagLOGFONTA { unsigned char __pad[60]; };
+typedef struct tagLOGFONTA LOGFONTA;
+typedef struct tagLOGFONTA * LPLOGFONTA;
+struct _OSVERSIONINFOA { unsigned char __pad[148]; };
+typedef struct _OSVERSIONINFOA OSVERSIONINFOA;
 struct _RTL_CRITICAL_SECTION_era {
     void *         DebugInfo;
     long           LockCount;
@@ -140,9 +165,6 @@ struct _RTL_CRITICAL_SECTION_era {
 typedef struct _RTL_CRITICAL_SECTION_era CRITICAL_SECTION;
 typedef CRITICAL_SECTION *               LPCRITICAL_SECTION;
 typedef void *                           LPSECURITY_ATTRIBUTES;
-struct tagTEXTMETRICA_era { unsigned char __pad[56]; };
-typedef struct tagTEXTMETRICA_era TEXTMETRICA;
-typedef struct tagTEXTMETRICA_era *LPTEXTMETRICA;
 struct DLGTEMPLATE_era {
     unsigned int   style;
     unsigned int   dwExtendedStyle;

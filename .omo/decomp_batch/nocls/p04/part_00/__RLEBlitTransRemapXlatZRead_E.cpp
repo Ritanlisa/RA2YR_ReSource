@@ -3,34 +3,34 @@
 // source: decompile-results/full_export  fn 0x491EA0 (sub_491EA0)
 #include "__RLEBlitTransRemapXlatZRead_E.hpp"
 
-int __RLEBlitTransRemapXlatZRead_E::sub_491EA0(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)
+int __RLEBlitTransRemapXlatZRead_E::sub_491EA0(int p1, unsigned char * p2, int p3, int p4, int p5, unsigned int p6, int p7, int p8, int p9, char * p10)
 {
-        int result = p3;
-        int v14 = p0;
-        unsigned int v15 = p5;
+        int result = p4;
+        int v14 = p1;
+        unsigned int v15 = p6;
         int v17;
         int v18;
-        if ( p3 <= 0 )
+        if ( p4 <= 0 )
         {
-            v18 = p2;
+            v18 = p3;
         }
         else
         {
             do
             {
-                if ( *p1++ )
+                if ( *p2++ )
                 {
                     --result;
                 }
                 else
                 {
-                    result -= *p1++;
+                    result -= *p2++;
                 }
             } while ( result > 0 );
             v17 = -result;
-            v14 = v17 + p0;
-            v18 = p2 - v17;
-            result = p5 + 2 * v17;
+            v14 = v17 + p1;
+            v18 = p3 - v17;
+            result = p6 + 2 * v17;
             if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )
             {
                 result -= g_ZBufferDescriptor[1].Stream_field_0C;
@@ -42,11 +42,11 @@ int __RLEBlitTransRemapXlatZRead_E::sub_491EA0(int p0, int p1, int p2, int p3, i
         int v21;
         while ( v18 > 0 )
         {
-            v19 = *p1++;
+            v19 = *p2++;
             if ( v19 )
             {
                 v15 += 2;
-                v21 = p4 - *p9++;
+                v21 = p5 - *p10++;
                 ++v14;
                 --v18;
                 if ( v21 < *(unsigned short *)(v15 - 2) )
@@ -56,10 +56,10 @@ int __RLEBlitTransRemapXlatZRead_E::sub_491EA0(int p0, int p1, int p2, int p3, i
             }
             else
             {
-                v20 = *p1++;
+                v20 = *p2++;
                 v18 -= v20;
                 v14 += v20;
-                p9 += v20;
+                p10 += v20;
                 v15 += 2 * v20;
             }
             result = (int)g_ZBufferDescriptor;

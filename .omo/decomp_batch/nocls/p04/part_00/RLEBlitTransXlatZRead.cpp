@@ -3,34 +3,34 @@
 // source: decompile-results/full_export  fn 0x491B40 (sub_491B40)
 #include "RLEBlitTransXlatZRead.hpp"
 
-int RLEBlitTransXlatZRead::sub_491B40(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)
+int RLEBlitTransXlatZRead::sub_491B40(unsigned char * p1, unsigned char * p2, int p3, int p4, int p5, unsigned int p6, int p7, int p8, int p9, char * p10)
 {
-        int result = p3;
-        unsigned char * v14 = (unsigned char *)(p0);
-        unsigned int v15 = p5;
+        int result = p4;
+        unsigned char * v14 = p1;
+        unsigned int v15 = p6;
         int v17;
         int v18;
-        if ( p3 <= 0 )
+        if ( p4 <= 0 )
         {
-            v18 = p2;
+            v18 = p3;
         }
         else
         {
             do
             {
-                if ( *p1++ )
+                if ( *p2++ )
                 {
                     --result;
                 }
                 else
                 {
-                    result -= *p1++;
+                    result -= *p2++;
                 }
             } while ( result > 0 );
             v17 = -result;
-            v14 = (unsigned char *)(&p0[v17]);
-            v18 = p2 - v17;
-            result = p5 + 2 * v17;
+            v14 = &p1[v17];
+            v18 = p3 - v17;
+            result = p6 + 2 * v17;
             if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )
             {
                 result -= g_ZBufferDescriptor[1].Stream_field_0C;
@@ -42,11 +42,11 @@ int RLEBlitTransXlatZRead::sub_491B40(int p0, int p1, int p2, int p3, int p4, in
         int v21;
         while ( v18 > 0 )
         {
-            v19 = *p1++;
+            v19 = *p2++;
             if ( v19 )
             {
                 v15 += 2;
-                v21 = p4 - *p9++;
+                v21 = p5 - *p10++;
                 if ( v21 < *(unsigned short *)(v15 - 2) )
                 {
                     *v14 = *(unsigned char *)(v19 + this->__pad_004[0]);
@@ -56,11 +56,11 @@ int RLEBlitTransXlatZRead::sub_491B40(int p0, int p1, int p2, int p3, int p4, in
             }
             else
             {
-                v20 = *p1++;
+                v20 = *p2++;
                 v18 -= v20;
                 v14 += v20;
                 v15 += 2 * v20;
-                p9 += v20;
+                p10 += v20;
             }
             result = (int)g_ZBufferDescriptor;
             if ( v15 >= g_ZBufferDescriptor[1].Stream_field_08 )
@@ -75,34 +75,34 @@ int RLEBlitTransXlatZRead::sub_491B40(int p0, int p1, int p2, int p3, int p4, in
 // source: decompile-results/full_export  fn 0x4965B0 (sub_4965B0)
 #include "RLEBlitTransXlatZRead.hpp"
 
-int RLEBlitTransXlatZRead::sub_4965B0(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)
+int RLEBlitTransXlatZRead::sub_4965B0(unsigned short * p1, unsigned char * p2, int p3, int p4, int p5, unsigned int p6, int p7, int p8, int p9, char * p10)
 {
-        int result = p3;
-        unsigned int v12 = p5;
-        unsigned short * v15 = (unsigned short *)(p0);
+        int result = p4;
+        unsigned int v12 = p6;
+        unsigned short * v15 = p1;
         int v17;
         int v18;
-        if ( p3 <= 0 )
+        if ( p4 <= 0 )
         {
-            v18 = p2;
+            v18 = p3;
         }
         else
         {
             do
             {
-                if ( *p1++ )
+                if ( *p2++ )
                 {
                     --result;
                 }
                 else
                 {
-                    result -= *p1++;
+                    result -= *p2++;
                 }
             } while ( result > 0 );
             v17 = -result;
-            v18 = p2 - v17;
-            v15 = (unsigned short *)(&p0[v17]);
-            result = p5 + 2 * v17;
+            v18 = p3 - v17;
+            v15 = &p1[v17];
+            result = p6 + 2 * v17;
             if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )
             {
                 result -= g_ZBufferDescriptor[1].Stream_field_0C;
@@ -114,11 +114,11 @@ int RLEBlitTransXlatZRead::sub_4965B0(int p0, int p1, int p2, int p3, int p4, in
         int v21;
         while ( v18 > 0 )
         {
-            v19 = *p1++;
+            v19 = *p2++;
             if ( v19 )
             {
                 v12 += 2;
-                v21 = p4 - *p9++;
+                v21 = p5 - *p10++;
                 if ( v21 < *(unsigned short *)(v12 - 2) )
                 {
                     *v15 = *(unsigned short *)(this->__pad_004[0] + 2 * v19);
@@ -128,11 +128,11 @@ int RLEBlitTransXlatZRead::sub_4965B0(int p0, int p1, int p2, int p3, int p4, in
             }
             else
             {
-                v20 = *p1++;
+                v20 = *p2++;
                 v18 -= v20;
                 v15 += v20;
                 v12 += 2 * v20;
-                p9 += v20;
+                p10 += v20;
             }
             result = (int)g_ZBufferDescriptor;
             if ( v12 >= g_ZBufferDescriptor[1].Stream_field_08 )

@@ -25,17 +25,24 @@ PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p04\part_00
 === rule self-check ===
 === era compile ===
 [era] _addr_48                 rc=2
-[era] RLEBlitTransXlatZRead    rc=2
-[era] __RLEBlitTransZRemapXlatZRead_E rc=2
-[era] __RLEBlitTransRemapXlatZRead_E rc=2
-[era] __RLEBlitTransZRemapXlatZReadWrite_E rc=2
-[era] __RLEBlitTransZRemapXlatZRead_G rc=2
-[era] __RLEBlitTransZRemapXlatZReadWrite_G rc=2
+[era] RLEBlitTransXlatZRead    rc=0
+[era] __RLEBlitTransZRemapXlatZRead_E rc=0
+[era] __RLEBlitTransRemapXlatZRead_E rc=0
+[era] __RLEBlitTransZRemapXlatZReadWrite_E rc=0
+[era] __RLEBlitTransZRemapXlatZRead_G rc=0
+[era] __RLEBlitTransZRemapXlatZReadWrite_G rc=0
 [era] _addr_49                 rc=2
 [era] _addr_4A                 rc=2
 === diffasm byte-compare ===
 [diff] 0x48c740   MISMATCH         sub_48C740
 [diff] 0x48e680   MATCH            sub_48E680
+[diff] 0x491b40   MISMATCH         RLEBlitTransXlatZRead::sub_491B40
+[diff] 0x4965b0   MISMATCH         RLEBlitTransXlatZRead::sub_4965B0
+[diff] 0x491c50   MISMATCH         __RLEBlitTransZRemapXlatZRead_E::sub_491C50
+[diff] 0x491ea0   MISMATCH         __RLEBlitTransRemapXlatZRead_E::sub_491EA0
+[diff] 0x492100   MISMATCH         __RLEBlitTransZRemapXlatZReadWrite_E::sub_492100
+[diff] 0x4966d0   MISMATCH         __RLEBlitTransZRemapXlatZRead_G::sub_4966D0
+[diff] 0x497230   MISMATCH         __RLEBlitTransZRemapXlatZReadWrite_G::sub_497230
 [diff] 0x49f190   MISMATCH         sub_49F190
 [diff] 0x49f2b0   MISMATCH         sub_49F2B0
 [diff] 0x49fda0   MISMATCH         sub_49FDA0
@@ -44,40 +51,42 @@ PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p04\part_00
 [diff] 0x4a2300   MATCH            sub_4A2300
 [diff] 0x4a5050   MATCH            sub_4A5050
 [diff] 0x4a59c0   MATCH            sub_4A59C0
-[ledger] 0x48c740 sub_48C740 -> NG (attempt 2)
-[ledger] 0x48e480 sub_48E480 -> COMPILE_FAIL (attempt 2)
-[ledger] 0x48e680 sub_48E680 -> OK (attempt 2)
-[ledger] 0x491b40 sub_491B40 -> COMPILE_FAIL (attempt 2)
-[ledger] 0x491c50 sub_491C50 -> COMPILE_FAIL (attempt 2)
-[ledger] 0x491ea0 sub_491EA0 -> COMPILE_FAIL (attempt 2)
-[ledger] 0x492100 sub_492100 -> COMPILE_FAIL (attempt 2)
-[ledger] 0x4965b0 sub_4965B0 -> COMPILE_FAIL (attempt 2)
-[ledger] 0x4966d0 sub_4966D0 -> COMPILE_FAIL (attempt 2)
-[ledger] 0x497230 sub_497230 -> COMPILE_FAIL (attempt 2)
-[ledger] 0x49b180 sub_49B180 -> COMPILE_FAIL (attempt 2)
-[ledger] 0x49f190 sub_49F190 -> NG (attempt 2)
-[ledger] 0x49f2b0 sub_49F2B0 -> NG (attempt 2)
-[ledger] 0x49fda0 sub_49FDA0 -> NG (attempt 2)
-[ledger] 0x4a1670 sub_4A1670 -> NG (attempt 2)
-[ledger] 0x4a2210 sub_4A2210 -> NG (attempt 2)
-[ledger] 0x4a2300 sub_4A2300 -> OK (attempt 2)
-[ledger] 0x4a5050 sub_4A5050 -> OK (attempt 2)
-[ledger] 0x4a59c0 sub_4A59C0 -> OK (attempt 2)
-[ledger] 0x4a6b30 sub_4A6B30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48c740 sub_48C740 -> NG (attempt 3)
+[ledger] 0x48e480 sub_48E480 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48e680 sub_48E680 -> OK (attempt 3)
+[ledger] 0x491b40 RLEBlitTransXlatZRead::sub_491B40 -> NG (attempt 3)
+[ledger] 0x491c50 __RLEBlitTransZRemapXlatZRead_E::sub_491C50 -> NG (attempt 3)
+[ledger] 0x491ea0 __RLEBlitTransRemapXlatZRead_E::sub_491EA0 -> NG (attempt 3)
+[ledger] 0x492100 __RLEBlitTransZRemapXlatZReadWrite_E::sub_492100 -> NG (attempt 3)
+[ledger] 0x4965b0 RLEBlitTransXlatZRead::sub_4965B0 -> NG (attempt 3)
+[ledger] 0x4966d0 __RLEBlitTransZRemapXlatZRead_G::sub_4966D0 -> NG (attempt 3)
+[ledger] 0x497230 __RLEBlitTransZRemapXlatZReadWrite_G::sub_497230 -> NG (attempt 3)
+[ledger] 0x49b180 sub_49B180 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49f190 sub_49F190 -> NG (attempt 3)
+[ledger] 0x49f2b0 sub_49F2B0 -> NG (attempt 3)
+[ledger] 0x49fda0 sub_49FDA0 -> NG (attempt 3)
+[ledger] 0x4a1670 sub_4A1670 -> NG (attempt 3)
+[ledger] 0x4a2210 sub_4A2210 -> NG (attempt 3)
+[ledger] 0x4a2300 sub_4A2300 -> OK (attempt 3)
+[ledger] 0x4a5050 sub_4A5050 -> OK (attempt 3)
+[ledger] 0x4a59c0 sub_4A59C0 -> OK (attempt 3)
+[ledger] 0x4a6b30 sub_4A6B30 -> COMPILE_FAIL (attempt 3)
 ======================================================================
 {
  "total": 20,
  "verdicts": {
-  "MISMATCH": 6,
-  "COMPILE_FAIL": 10,
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 3,
   "MATCH": 4
  },
  "pathologies": {
   "extern_reloc": 4,
-  "width_mismatch": 1,
-  "codegen_shape": 1
+  "codegen_shape": 3,
+  "const_fold": 2,
+  "eval_order": 3,
+  "width_mismatch": 1
  },
- "match_rate_of_decided_pct": 40.0,
+ "match_rate_of_decided_pct": 23.5,
  "match_rate_of_total_pct": 20.0,
  "rule_violation_fns": 7,
  "parts": 1

@@ -3,37 +3,37 @@
 // source: decompile-results/full_export  fn 0x491C50 (sub_491C50)
 #include "__RLEBlitTransZRemapXlatZRead_E.hpp"
 
-int __RLEBlitTransZRemapXlatZRead_E::sub_491C50(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)
+int __RLEBlitTransZRemapXlatZRead_E::sub_491C50(unsigned char * p1, unsigned char * p2, int p3, int p4, int p5, unsigned int p6, int p7, int p8, int p9, char * p10)
 {
         char * v12 = (char *)(*(char **)this->m_4);
-        int result = p3;
+        int result = p4;
         Stream * v14 = g_ZBufferDescriptor;
-        unsigned char * v15 = (unsigned char *)(p0);
+        unsigned char * v15 = p1;
         char * v26 = v12;
-        unsigned int v16 = p5;
+        unsigned int v16 = p6;
         int v18;
         int v19;
-        if ( p3 <= 0 )
+        if ( p4 <= 0 )
         {
-            v19 = p2;
+            v19 = p3;
         }
         else
         {
             do
             {
-                if ( *p1++ )
+                if ( *p2++ )
                 {
                     --result;
                 }
                 else
                 {
-                    result -= *p1++;
+                    result -= *p2++;
                 }
             } while ( result > 0 );
             v18 = -result;
-            v15 = (unsigned char *)(&p0[v18]);
-            v19 = p2 - v18;
-            result = p5 + 2 * v18;
+            v15 = &p1[v18];
+            v19 = p3 - v18;
+            result = p6 + 2 * v18;
             if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )
             {
                 result -= g_ZBufferDescriptor[1].Stream_field_0C;
@@ -46,13 +46,13 @@ int __RLEBlitTransZRemapXlatZRead_E::sub_491C50(int p0, int p1, int p2, int p3, 
         unsigned char v25;
         while ( v19 > 0 )
         {
-            v20 = *p1++;
+            v20 = *p2++;
             v24 = v20;
             if ( v20 )
             {
                 v16 += 2;
-                v21 = p4 - *p9;
-                result = (int)++p9;
+                v21 = p5 - *p10;
+                result = (int)++p10;
                 if ( v21 < *(unsigned short *)(v16 - 2) )
                 {
                     result = (unsigned int)(this->m_8);
@@ -64,12 +64,12 @@ int __RLEBlitTransZRemapXlatZRead_E::sub_491C50(int p0, int p1, int p2, int p3, 
             }
             else
             {
-                v25 = *p1++;
+                v25 = *p2++;
                 result = v25;
                 v19 -= v25;
                 v15 += v25;
                 v16 += 2 * v25;
-                p9 += v25;
+                p10 += v25;
             }
             if ( v16 >= v14[1].Stream_field_08 )
             {

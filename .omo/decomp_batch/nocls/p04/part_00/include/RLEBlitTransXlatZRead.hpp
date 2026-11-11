@@ -20,8 +20,8 @@ public:
     unsigned int __pad_004[1];  // 0x004
 
     // ---- pilot methods (registry signatures)
-    int sub_491B40(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10);  // 0x491B40
-    int sub_4965B0(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10);  // 0x4965B0
+    int sub_491B40(unsigned char * p1, unsigned char * p2, int p3, int p4, int p5, unsigned int p6, int p7, int p8, int p9, char * p10);  // 0x491B40
+    int sub_4965B0(unsigned short * p1, unsigned char * p2, int p3, int p4, int p5, unsigned int p6, int p7, int p8, int p9, char * p10);  // 0x4965B0
 };
 
 // ---- globals used by this unit (registry names)
