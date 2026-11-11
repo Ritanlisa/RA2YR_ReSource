@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p57\part_00
+=== convert (20 addrs) ===
+[conv] 0x5113a0 sub_5113A0 -> _addr_51
+[conv] 0x513bb0 sub_513BB0 -> _addr_51
+[conv] 0x5179e0 sub_5179E0 -> _addr_51
+[conv] 0x523630 sub_523630 -> _addr_52
+[conv] 0x535be0 CommandClass::IsCellFlag -> CommandClass
+[conv] 0x536740 PlanningModeCommandClass::performAction_37 -> PlanningModeCommandClass
+[conv] 0x5368a0 TypeSelectCommandClass::performAction_51 -> TypeSelectCommandClass
+[conv] 0x5392b0 sub_5392B0 -> _addr_53
+[conv] 0x53a110 NukeFlash::IsActive -> NukeFlash
+[conv] 0x53a120 NukeFlash::ProcessEffect -> NukeFlash
+[conv] 0x53c9c0 sub_53C9C0 -> _addr_53
+[conv] 0x53fa40 sub_53FA40 -> _addr_53
+[conv] 0x540880 sub_540880 -> _addr_54
+[conv] 0x543080 Network::Disconnect -> Network
+[conv] 0x543090 Connection::Close -> Connection
+[conv] 0x5432c0 sub_5432C0 -> _addr_54
+[conv] 0x543e00 sub_543E00 -> _addr_54
+[conv] 0x54abd0 sub_54ABD0 -> _addr_54
+[conv] 0x54e1f0 sub_54E1F0 -> _addr_54
+[conv] 0x54ee00 sub_54EE00 -> _addr_54
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_51                 rc=0
+[era] _addr_52                 rc=0
+[era] CommandClass             rc=0
+[era] PlanningModeCommandClass rc=0
+[era] TypeSelectCommandClass   rc=0
+[era] _addr_53                 rc=0
+[era] NukeFlash                rc=0
+[era] _addr_54                 rc=2
+[era] Network                  rc=0
+[era] Connection               rc=0
+=== diffasm byte-compare ===
+[diff] 0x5113a0   MATCH            sub_5113A0
+[diff] 0x513bb0   MISMATCH         sub_513BB0
+[diff] 0x5179e0   MISMATCH         sub_5179E0
+[diff] 0x523630   MATCH            sub_523630
+[diff] 0x535be0   MISMATCH         CommandClass::IsCellFlag
+[diff] 0x536740   MISMATCH         PlanningModeCommandClass::performAction_37
+[diff] 0x5368a0   MISMATCH         TypeSelectCommandClass::performAction_51
+[diff] 0x5392b0   MATCH            sub_5392B0
+[diff] 0x53c9c0   MATCH            sub_53C9C0
+[diff] 0x53fa40   MATCH            sub_53FA40
+[diff] 0x53a110   MATCH            NukeFlash::IsActive
+[diff] 0x53a120   MATCH            NukeFlash::ProcessEffect
+[diff] 0x540880   MATCH            sub_540880
+[diff] 0x5432c0   MATCH            sub_5432C0
+[diff] 0x54e1f0   MISMATCH         sub_54E1F0
+[diff] 0x54ee00   MISMATCH         sub_54EE00
+[diff] 0x543080   MATCH            Network::Disconnect
+[diff] 0x543090   MATCH            Connection::Close
+[ledger] 0x5113a0 sub_5113A0 -> OK (attempt 1)
+[ledger] 0x513bb0 sub_513BB0 -> NG (attempt 1)
+[ledger] 0x5179e0 sub_5179E0 -> NG (attempt 1)
+[ledger] 0x523630 sub_523630 -> OK (attempt 1)
+[ledger] 0x535be0 CommandClass::IsCellFlag -> NG (attempt 1)
+[ledger] 0x536740 PlanningModeCommandClass::performAction_37 -> NG (attempt 1)
+[ledger] 0x5368a0 TypeSelectCommandClass::performAction_51 -> NG (attempt 1)
+[ledger] 0x5392b0 sub_5392B0 -> OK (attempt 1)
+[ledger] 0x53a110 NukeFlash::IsActive -> OK (attempt 1)
+[ledger] 0x53a120 NukeFlash::ProcessEffect -> OK (attempt 1)
+[ledger] 0x53c9c0 sub_53C9C0 -> OK (attempt 1)
+[ledger] 0x53fa40 sub_53FA40 -> OK (attempt 1)
+[ledger] 0x540880 sub_540880 -> OK (attempt 1)
+[ledger] 0x543080 Network::Disconnect -> OK (attempt 1)
+[ledger] 0x543090 Connection::Close -> OK (attempt 1)
+[ledger] 0x5432c0 sub_5432C0 -> OK (attempt 1)
+[ledger] 0x543e00 sub_543E00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54abd0 sub_54ABD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54e1f0 sub_54E1F0 -> NG (attempt 1)
+[ledger] 0x54ee00 sub_54EE00 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 11,
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "extern_reloc": 2,
+  "cc_mismatch": 1,
+  "codegen_shape": 2,
+  "ret_norm": 2
+ },
+ "match_rate_of_decided_pct": 61.1,
+ "match_rate_of_total_pct": 55.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p57\batch_report.json

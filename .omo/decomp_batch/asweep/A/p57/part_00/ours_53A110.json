@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsActive@NukeFlash@@QAEEXZ",
+ "sym_key": "NukeFlash::IsActive",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000033c083f9010f94c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?NukeFlash_Status@@3IA",
+   "sym_key": "NukeFlash_Status"
+  }
+ ]
+}

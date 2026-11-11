@@ -1,0 +1,8 @@
+{
+ "symbol": "?Disconnect@Network@@QAEHXZ",
+ "sym_key": "Network::Disconnect",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b414885c07407c680c800000000c3",
+ "relocs": []
+}

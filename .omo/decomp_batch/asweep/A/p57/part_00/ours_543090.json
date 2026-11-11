@@ -1,0 +1,8 @@
+{
+ "symbol": "?Close@Connection@@QAEHXZ",
+ "sym_key": "Connection::Close",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b414885c07407c680c800000001c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x53A110",
+ "name": "NukeFlash::IsActive",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53A110",
+ "bytes_hex": "8b0dbcfaa90033c083f9010f94c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

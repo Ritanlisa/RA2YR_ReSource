@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_54EE00@@YAHXZ",
+ "sym_key": "Unnamed::sub_54EE00",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "32c0a200000000a20000000033c0c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC6B0@@3EA",
+   "sym_key": "DataGlobal_ABC6B0"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC6B2@@3EA",
+   "sym_key": "DataGlobal_ABC6B2"
+  }
+ ]
+}

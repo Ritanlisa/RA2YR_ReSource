@@ -1,0 +1,11 @@
+{
+ "addr": "0x543090",
+ "name": "Connection::Close",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x543090",
+ "bytes_hex": "8b414885c07407c680c800000001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
