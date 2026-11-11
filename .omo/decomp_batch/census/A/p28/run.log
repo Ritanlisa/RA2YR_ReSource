@@ -1,0 +1,101 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x4d28d0 FoggedObjectClass::CheckVisibility -> FoggedObjectClass
+[conv] 0x7d6a1d ObjectClass::_fix_grouping_0 -> ObjectClass
+[conv] 0x428990 AnimTypeClass::GetClassIdentifier -> AnimTypeClass
+[conv] 0x472960 CaptureManagerClass::GetClassIdentifier -> CaptureManagerClass
+[conv] 0x517070 HoverLocomotionClass::ddtor -> HoverLocomotionClass
+[conv] 0x6296d0 ParasiteClass::ddtor -> ParasiteClass
+[conv] 0x6a3e60 ShipLocomotionClass::ddtor -> ShipLocomotionClass
+[conv] 0x6e56a0 TagClass::ddtor -> TagClass
+[conv] 0x71f880 TEventClass::ddtor -> TEventClass
+[conv] 0x74f2d0 VeinholeMonsterClass::ddtor -> VeinholeMonsterClass
+[conv] 0x5da040 unknown::Network_Connect -> unknown
+[conv] 0x69f210 ObjectClass::sub_69F210 -> ObjectClass
+[conv] 0x4349b0 FontClass::GetPixelData -> FontClass
+[conv] 0x6e6b70 ObjectClass::sub_6E6B70 -> ObjectClass
+[conv] 0x720440 TechnoClass::sub_720440 -> TechnoClass
+[conv] 0x40c290 _VectorClass_PAVLightConvertClass::Add -> _VectorClass_PAVLightConvertClass
+[conv] 0x4203d0 _VectorClass_PAVAlphaLightingRemapClass::AddRef -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x472b40 _VectorClass_PAUControlNode::AddRef -> _VectorClass_PAUControlNode
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FoggedObjectClass        rc=0
+[era] ObjectClass              rc=2
+[era] AnimTypeClass            rc=2
+[era] CaptureManagerClass      rc=2
+[era] HoverLocomotionClass     rc=2
+[era] ParasiteClass            rc=2
+[era] ShipLocomotionClass      rc=2
+[era] TagClass                 rc=2
+[era] TEventClass              rc=2
+[era] VeinholeMonsterClass     rc=2
+[era] unknown                  rc=0
+[era] FontClass                rc=0
+[era] TechnoClass              rc=2
+[era] _VectorClass_PAVLightConvertClass rc=0
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=0
+[era] _VectorClass_PAUControlNode rc=0
+=== diffasm byte-compare ===
+[diff] 0x4d28d0   MISMATCH         FoggedObjectClass::CheckVisibility
+[diff] 0x69f210   MISMATCH         ObjectClass::sub_69F210
+[diff] 0x5da040   MISMATCH         unknown::Network_Connect
+[diff] 0x4349b0   MISMATCH         FontClass::GetPixelData
+[diff] 0x40c290   MISMATCH         _VectorClass_PAVLightConvertClass::Add
+[diff] 0x4203d0   MISMATCH         _VectorClass_PAVAlphaLightingRemapClass::AddRef
+[diff] 0x472b40   MISMATCH         _VectorClass_PAUControlNode::AddRef
+[ledger] 0x5f1350 0x5f1350 -> PENDING (attempt 1)
+[ledger] 0x4d28d0 FoggedObjectClass::CheckVisibility -> NG (attempt 1)
+[ledger] 0x7d6a1d _fix_grouping_0 -> PENDING (attempt 1)
+[ledger] 0x7c8f5e 0x7c8f5e -> PENDING (attempt 1)
+[ledger] 0x428990 AnimTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x472960 CaptureManagerClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x517070 HoverLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6296d0 ParasiteClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a3e60 ShipLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e56a0 TagClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71f880 TEventClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74f2d0 VeinholeMonsterClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5da040 Network_Connect -> NG (attempt 1)
+[ledger] 0x69f210 sub_69F210 -> NG (attempt 1)
+[ledger] 0x4349b0 FontClass::GetPixelData -> NG (attempt 1)
+[ledger] 0x6e6b70 sub_6E6B70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x720440 sub_720440 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40c290 VectorClass_ptr_LightConvertClass::Add -> NG (attempt 1)
+[ledger] 0x4203d0 AITriggerTypeClass_40::AddRef -> NG (attempt 1)
+[ledger] 0x472b40 CaptureManagerClass::AddRef -> NG (attempt 1)
+======================================================================
+{
+ "total": 1617,
+ "verdicts": {
+  "MISMATCH": 438,
+  "MATCH": 502,
+  "COMPILE_FAIL": 359,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 310,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 8,
+  "codegen_shape": 151,
+  "ret_norm": 5,
+  "frame_sched": 60,
+  "const_fold": 35,
+  "branch_polarity": 31,
+  "regalloc": 52,
+  "branch_order": 67,
+  "width_mismatch": 4,
+  "extern_reloc": 16,
+  "cc_mismatch": 7,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 53.4,
+ "match_rate_of_total_pct": 31.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p28\batch_report.json

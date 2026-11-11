@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckVisibility@FoggedObjectClass@@QAEPAIPAH@Z",
+ "sym_key": "FoggedObjectClass::CheckVisibility",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8b44240433d28a513924000bd08b4424048910c20400",
+ "relocs": []
+}

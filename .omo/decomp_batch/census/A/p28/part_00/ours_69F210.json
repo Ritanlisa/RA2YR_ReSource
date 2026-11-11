@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_69F210@ObjectClass@@QAEHHH@Z",
+ "sym_key": "ObjectClass::sub_69F210",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "8b54240433c08a411c3bd0742a85c00f95c085d20f95c288412088511ca100000000ba030000008941248b44240489412889512c895130c20800",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

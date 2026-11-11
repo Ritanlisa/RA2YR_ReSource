@@ -31,3 +31,4 @@
 {"layer": "A", "part": 25, "n": 20, "seconds": 17.2, "ok": true, "verdicts": {"MISMATCH": 16, "COMPILE_FAIL": 3, "NO_CLS": 1}}
 {"layer": "A", "part": 26, "n": 20, "seconds": 16.2, "ok": true, "verdicts": {"COMPILE_FAIL": 8, "MISMATCH": 9, "MATCH": 1, "NO_CLS": 2}}
 {"layer": "A", "part": 27, "n": 20, "seconds": 17.2, "ok": true, "verdicts": {"MISMATCH": 19, "MATCH": 1}}
+{"layer": "A", "part": 28, "n": 20, "seconds": 20.3, "ok": true, "verdicts": {"NO_CLS": 2, "MISMATCH": 7, "OBJ_EXTRACT_FAIL": 1, "COMPILE_FAIL": 10}}

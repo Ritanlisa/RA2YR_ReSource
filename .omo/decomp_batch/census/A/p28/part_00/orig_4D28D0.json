@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D28D0",
+ "name": "FoggedObjectClass::CheckVisibility",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D28D0",
+ "bytes_hex": "518b41349981e2ff00000003c2c1f80866894424008b41389981e2ff00000003c2c1f80866894424028b4424088b4c2400890859c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

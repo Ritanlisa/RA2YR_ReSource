@@ -1,0 +1,8 @@
+{
+ "symbol": "?Network_Connect@unknown@@QAGHD@Z",
+ "sym_key": "unknown::Network_Connect",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8a4c24088ac183e001f6c102740383c002f6c104740383c003f6c108740383c00af6c110740140f6c120740383c002c20800",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4349B0",
+ "name": "FontClass::GetPixelData",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4349B0",
+ "bytes_hex": "8b490485c974308b542404568b711881e2ffff000033c0668b04565e85c074178d50ff8b41140fafc203411c740933c98a088bc1c2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPixelData@FontClass@@QAEHG@Z",
+ "sym_key": "FontClass::GetPixelData",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b490485c974318b542404568b711881e2ffff000033c0668b04565e6685c074178d50ff8b41140fafc203411c740933c98a088bc1c2040033c0c20400",
+ "relocs": []
+}
