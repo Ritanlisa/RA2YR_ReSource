@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_53@HealthNavCommandClass@@QAEPADXZ",
+ "sym_key": "HealthNavCommandClass::performAction_53",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aHealthnav@@3PADA",
+   "sym_key": "aHealthnav"
+  }
+ ]
+}

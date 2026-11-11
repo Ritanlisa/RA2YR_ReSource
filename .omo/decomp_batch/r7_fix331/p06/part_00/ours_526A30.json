@@ -1,0 +1,39 @@
+{
+ "symbol": "?FindKey@INIClass@@QAEHPAPAD@Z",
+ "sym_key": "INIClass::FindKey",
+ "size": 188,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18b4c241857e8000000008bd085d20f849800000033c08bfa8944240c83c9ff8944241083c62889442414f2aef7d14951528d4c2414e8000000008bf88b460485c0897c241c74658b461085c07404393874138d4c241c518bcee80000000085c0744a8946108b4604897c240885c074268b461085c07404393874138d5424088bce52e80000000085c0740b8946108b761083c604eb05be000000008b3685f6740b8b46305f5e83c410c204005f33c05e83c410c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIPAX@Z",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIPAX@Z",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  }
+ ]
+}

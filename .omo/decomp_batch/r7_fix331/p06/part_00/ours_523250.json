@@ -1,0 +1,21 @@
+{
+ "symbol": "?ComputeTransform@InfantryClass@@QAEPAIPAHHHHH@Z",
+ "sym_key": "InfantryClass::ComputeTransform",
+ "size": 127,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf18a868200000084c0743b8b861c01000085c0743133c9568a88f4000000e80000000085c0741f8bb61c0100006a006a006a008b0e8d542410f7d8505256ff91b0000000eb178b4424186a006a006a008d4c241050518bcee8000000008b4c24148b105e89118b50048951048b40088941088bc183c40cc21400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?IndexOf@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::IndexOf"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?ComputeTransform@TechnoClass@@QAEPAIPAXHHHH@Z",
+   "sym_key": "TechnoClass::ComputeTransform"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_12@SetInfantryTabCommandClass@@QAEPADXZ",
+ "sym_key": "SetInfantryTabCommandClass::performAction_12",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aInfantrytab@@3PADA",
+   "sym_key": "aInfantrytab"
+  }
+ ]
+}
