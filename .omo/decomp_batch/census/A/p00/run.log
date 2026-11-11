@@ -1,0 +1,73 @@
+[resume] 4/20 already decided, 16 to run
+======================================================================
+PART 1/1  (16 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p00\part_00
+=== convert (16 addrs) ===
+[conv] 0x4dba40 FootClass::vt_entry_54C -> FootClass
+[conv] 0x58b7c0 Camera::StubReturnVoid -> Camera
+[conv] 0x5f43c0 IUnknown::StubReturnTrue -> IUnknown
+[conv] 0x60d430 Init::StubPlaceholder -> Init
+[conv] 0x6b8b10 ObjectClass::nullsub_37 -> ObjectClass
+[conv] 0x754bb0 ScreenEffect::Stub6 -> ScreenEffect
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=0
+[era] Camera                   rc=0
+[era] IUnknown                 rc=0
+[era] Init                     rc=0
+[era] ObjectClass              rc=2
+[era] ScreenEffect             rc=0
+=== diffasm byte-compare ===
+[diff] 0x4dba40   MATCH            FootClass::vt_entry_54C
+[diff] 0x58b7c0   MATCH            Camera::StubReturnVoid
+[diff] 0x5f43c0   MISMATCH         IUnknown::StubReturnTrue
+[diff] 0x60d430   MATCH            Init::StubPlaceholder
+[diff] 0x754bb0   MATCH            ScreenEffect::Stub6
+[ledger] 0x479730 0x479730 -> PENDING (attempt 1)
+[ledger] 0x4b4770 0x4b4770 -> PENDING (attempt 1)
+[ledger] 0x4dba40 FootClass::vt_entry_54C -> OK (attempt 1)
+[ledger] 0x506b80 0x506b80 -> PENDING (attempt 1)
+[ledger] 0x544df0 0x544df0 -> PENDING (attempt 1)
+[ledger] 0x58b7c0 Camera::StubReturnVoid -> OK (attempt 1)
+[ledger] 0x5cd310 0x5cd310 -> PENDING (attempt 1)
+[ledger] 0x5f43c0 AircraftClass::StubReturnTrue -> NG (attempt 1)
+[ledger] 0x60d430 Init::StubPlaceholder -> OK (attempt 1)
+[ledger] 0x664380 0x664380 -> PENDING (attempt 1)
+[ledger] 0x6b8b10 nullsub_37 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dc400 0x6dc400 -> PENDING (attempt 1)
+[ledger] 0x7236d0 0x7236d0 -> PENDING (attempt 1)
+[ledger] 0x754bb0 ScreenEffect::Stub6 -> OK (attempt 1)
+[ledger] 0x776ea0 0x776ea0 -> PENDING (attempt 1)
+[ledger] 0x7cd95f 0x7cd95f -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1057,
+ "verdicts": {
+  "MISMATCH": 284,
+  "MATCH": 415,
+  "COMPILE_FAIL": 316,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 35,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 4,
+  "codegen_shape": 110,
+  "ret_norm": 2,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 23,
+  "regalloc": 43,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 2,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 59.4,
+ "match_rate_of_total_pct": 39.3,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p00\batch_report.json

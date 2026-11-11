@@ -1252,6 +1252,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x479730": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x479730",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x47d210": {
   "attempts": 15,
   "first_diff": null,
@@ -2162,6 +2169,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4b4770": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4b4770",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4b4870": {
   "attempts": 1,
   "first_diff": null,
@@ -2575,6 +2589,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4dba40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::vt_entry_54C",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4dc810": {
   "attempts": 4,
   "first_diff": "+4 push ebx",
@@ -2770,6 +2791,13 @@
   "name": "UpdateHouseClassAnger",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x506b80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x506b80",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x509610": {
   "attempts": 9,
@@ -3492,6 +3520,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x544df0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x544df0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x547230": {
   "attempts": 9,
   "first_diff": null,
@@ -3940,6 +3975,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x58b7c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Camera::StubReturnVoid",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x58b7d0": {
   "attempts": 5,
   "first_diff": null,
@@ -4360,6 +4402,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5cd310": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5cd310",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5cd320": {
   "attempts": 1,
   "first_diff": null,
@@ -4514,6 +4563,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5f43c0": {
+  "attempts": 1,
+  "first_diff": "+0 ret ",
+  "name": "AircraftClass::StubReturnTrue",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x5f43e0": {
   "attempts": 7,
   "first_diff": null,
@@ -4644,6 +4700,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "Dialog::IsSpecialTemplate",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x60d430": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Init::StubPlaceholder",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -5256,6 +5319,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x664380": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x664380",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x664440": {
   "attempts": 9,
   "first_diff": null,
@@ -5641,6 +5711,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6b8b10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "nullsub_37",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6baef0": {
   "attempts": 4,
   "first_diff": "+13 jbe 0x6baf9a",
@@ -5766,6 +5843,13 @@
   "name": "Tactical::AddCellToDrawList",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6dc400": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6dc400",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x6dc450": {
   "attempts": 5,
@@ -6250,6 +6334,13 @@
   "note": "decomp_batch r2: MISMATCH/signedness",
   "status": "NG"
  },
+ "0x7236d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7236d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7236e0": {
   "attempts": 5,
   "first_diff": null,
@@ -6649,6 +6740,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x754bb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScreenEffect::Stub6",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x756dd0": {
   "attempts": 9,
   "first_diff": null,
@@ -7019,6 +7117,13 @@
   "name": "Dialog::GetCurrentType",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x776ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x776ea0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x777b50": {
   "attempts": 5,
@@ -7551,6 +7656,13 @@
   "name": "_strncat",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7cd95f": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7cd95f",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7d1512": {
   "attempts": 6,

@@ -1,0 +1,201 @@
+{
+ "summary": {
+  "total": 16,
+  "verdicts": {
+   "NO_CLS": 10,
+   "MATCH": 4,
+   "MISMATCH": 1,
+   "COMPILE_FAIL": 1
+  },
+  "pathologies": {
+   "codegen_shape": 1
+  },
+  "match_rate_of_decided_pct": 80.0,
+  "match_rate_of_total_pct": 25.0
+ },
+ "results": [
+  {
+   "addr": "0x479730",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x479730",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4b4770",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4b4770",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4dba40",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "1B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "FootClass::vt_entry_54C",
+   "emitted": "FootClass::vt_entry_54C",
+   "unit": "FootClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 1,
+   "ours_size": 1
+  },
+  {
+   "addr": "0x506b80",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x506b80",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x544df0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x544df0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x58b7c0",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "1B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Camera::StubReturnVoid",
+   "emitted": "Camera::StubReturnVoid",
+   "unit": "Camera",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 1,
+   "ours_size": 1
+  },
+  {
+   "addr": "0x5cd310",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5cd310",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5f43c0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 1B ours 7B",
+   "first_diff": {
+    "orig": "+0 ret ",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "AircraftClass::StubReturnTrue",
+   "emitted": "IUnknown::StubReturnTrue",
+   "unit": "IUnknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 1,
+   "ours_size": 7
+  },
+  {
+   "addr": "0x60d430",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "1B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Init::StubPlaceholder",
+   "emitted": "Init::StubPlaceholder",
+   "unit": "Init",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 1,
+   "ours_size": 1
+  },
+  {
+   "addr": "0x664380",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x664380",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6b8b10",
+   "batch": "censusA",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p00\\part_00\\ObjectClass.cpp(8) : error C4716: 'ObjectClass::nullsub_37' : must return a value",
+   "first_diff": null,
+   "pathology": null,
+   "name": "nullsub_37",
+   "emitted": "ObjectClass::nullsub_37",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x6dc400",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6dc400",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7236d0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7236d0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x754bb0",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "1B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "ScreenEffect::Stub6",
+   "emitted": "ScreenEffect::Stub6",
+   "unit": "ScreenEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 1,
+   "ours_size": 1
+  },
+  {
+   "addr": "0x776ea0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x776ea0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7cd95f",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7cd95f",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}

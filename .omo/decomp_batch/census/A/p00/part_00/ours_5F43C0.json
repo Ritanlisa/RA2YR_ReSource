@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturnTrue@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::StubReturnTrue",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "518b44240059c3",
+ "relocs": []
+}
