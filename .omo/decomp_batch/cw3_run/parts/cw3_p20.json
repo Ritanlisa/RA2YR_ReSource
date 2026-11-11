@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6235b0",
+  "name": "sub_6235B0",
+  "cls": null,
+  "size": 87,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'"
+ },
+ {
+  "addr": "0x4a5e50",
+  "name": "sub_4A5E50",
+  "cls": null,
+  "size": 88,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x5d5ac0",
+  "name": "System_Init",
+  "cls": null,
+  "size": 88,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C4716",
+  "first_msg": "'System_Init' : must return a value"
+ },
+ {
+  "addr": "0x68ca50",
+  "name": "FindBuildingAnimByName",
+  "cls": null,
+  "size": 90,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x69bd00",
+  "name": "sub_69BD00",
+  "cls": null,
+  "size": 90,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x7781b0",
+  "name": "EditControl_Helper",
+  "cls": null,
+  "size": 91,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'WCHAR' : undeclared identifier"
+ },
+ {
+  "addr": "0x477db0",
+  "name": "DynamicVectorClass::Construct",
+  "cls": null,
+  "size": 93,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '?'"
+ },
+ {
+  "addr": "0x4af720",
+  "name": "DriveLocomotionClass::QueryInterface",
+  "cls": null,
+  "size": 93,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'IID_IPiggyback' : undeclared identifier"
+ },
+ {
+  "addr": "0x626290",
+  "name": "sub_626290",
+  "cls": null,
+  "size": 93,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x63e1d0",
+  "name": "ExecuteActionPlanManager_Helper_63E1D0",
+  "cls": null,
+  "size": 93,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2275",
+  "first_msg": "'VectorClass' : illegal use of this type as an expression"
+ },
+ {
+  "addr": "0x606740",
+  "name": "SetDialogActiveFlag",
+  "cls": null,
+  "size": 96,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2064",
+  "first_msg": "term does not evaluate to a function"
+ },
+ {
+  "addr": "0x598030",
+  "name": "Range_RandomInt",
+  "cls": null,
+  "size": 97,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x7dc468",
+  "name": "__setmode_lk",
+  "cls": null,
+  "size": 97,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x4265b0",
+  "name": "Cell::GetHeight",
+  "cls": null,
+  "size": 99,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'fstp' : undeclared identifier"
+ },
+ {
+  "addr": "0x6bf5d0",
+  "name": "VectorClass_K_38::QueryInterface",
+  "cls": null,
+  "size": 101,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'IID_IUnknown' : undeclared identifier"
+ },
+ {
+  "addr": "0x6c0650",
+  "name": "CreateTClassFactory_TemporalClass",
+  "cls": null,
+  "size": 101,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'IID_IUnknown' : undeclared identifier"
+ },
+ {
+  "addr": "0x6c16d0",
+  "name": "CreateTClassFactory_VoxelAnimClass",
+  "cls": null,
+  "size": 101,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'IID_IUnknown' : undeclared identifier"
+ },
+ {
+  "addr": "0x6c2750",
+  "name": "CreateTClassFactory_UnitTypeClass",
+  "cls": null,
+  "size": 101,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'IID_IUnknown' : undeclared identifier"
+ },
+ {
+  "addr": "0x6c37d0",
+  "name": "CreateTClassFactory_InfantryClass",
+  "cls": null,
+  "size": 101,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'IID_IUnknown' : undeclared identifier"
+ },
+ {
+  "addr": "0x6c4850",
+  "name": "CreateTClassFactory_DropPodLocomotionClass",
+  "cls": null,
+  "size": 101,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'IID_IUnknown' : undeclared identifier"
+ }
+]
