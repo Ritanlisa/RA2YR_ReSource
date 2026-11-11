@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x487d00",
+  "name": "CellClass::RadLevel_Decrease",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 65,
+  "part": "p248",
+  "unit": "CellClass",
+  "emitted": "CellClass::RadLevel_Decrease",
+  "first_diff": {
+   "orig": "+10 fst qword ptr [ecx + 0xf0]",
+   "ours": "+10 fcom qword ptr [0]"
+  },
+  "ours_size": 63
+ },
+ {
+  "addr": "0x403820",
+  "name": "AudioStream::Reset",
+  "family": "MEMBER_OFFSET",
+  "path": "regalloc",
+  "size": 66,
+  "part": "p248",
+  "unit": "AudioStream",
+  "emitted": "AudioStream::Reset",
+  "first_diff": {
+   "orig": "+2 mov dword ptr [ecx], eax",
+   "ours": "+2 mov dword ptr [ecx + 0x40], 0x1388"
+  },
+  "ours_size": 66
+ },
+ {
+  "addr": "0x634360",
+  "name": "sub_634360",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 66,
+  "part": "p248",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_634360",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 66
+ },
+ {
+  "addr": "0x7cf3d5",
+  "name": "__fload_withFB",
+  "family": "FRAME",
+  "path": "eval_order",
+  "size": 67,
+  "part": "p248",
+  "unit": "_addr_7C",
+  "emitted": "__fload_withFB",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [edx + 4]",
+   "ours": "+0 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 59
+ },
+ {
+  "addr": "0x4d2f00",
+  "name": "sub_4D2F00",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 68,
+  "part": "p248",
+  "unit": "_addr_4D",
+  "emitted": "sub_4D2F00",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 78
+ },
+ {
+  "addr": "0x523440",
+  "name": "BinaryArraySearch",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 68,
+  "part": "p248",
+  "unit": "_addr_52",
+  "emitted": "BinaryArraySearch",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 78
+ },
+ {
+  "addr": "0x52b6d0",
+  "name": "UI_Find",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 68,
+  "part": "p248",
+  "unit": "UI",
+  "emitted": "UI_Find",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 78
+ },
+ {
+  "addr": "0x52b750",
+  "name": "System_Search",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 68,
+  "part": "p248",
+  "unit": "System",
+  "emitted": "System_Search",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 78
+ },
+ {
+  "addr": "0x5fc120",
+  "name": "HotkeyOptions_Helper",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 68,
+  "part": "p248",
+  "unit": "HotkeyOptions",
+  "emitted": "HotkeyOptions_Helper",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 78
+ },
+ {
+  "addr": "0x710890",
+  "name": "Object_Helper_710890",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 68,
+  "part": "p249",
+  "unit": "Object_Helper",
+  "emitted": "Object_Helper_710890",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 78
+ },
+ {
+  "addr": "0x5c6500",
+  "name": "sub_5C6500",
+  "family": "STRUCTURAL",
+  "path": "ret_norm",
+  "size": 68,
+  "part": "p249",
+  "unit": "_addr_5C",
+  "emitted": "sub_5C6500",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [edx]",
+   "ours": "+0 mov eax, dword ptr [esp + 8]"
+  },
+  "ours_size": 68
+ },
+ {
+  "addr": "0x6460c0",
+  "name": "sub_6460C0",
+  "family": "FRAME",
+  "path": "frame_sched",
+  "size": 69,
+  "part": "p249",
+  "unit": "_addr_64",
+  "emitted": "sub_6460C0",
+  "first_diff": {
+   "orig": "+0 sub esp, 0x10",
+   "ours": "+0 sub esp, 8"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x646110",
+  "name": "sub_646110",
+  "family": "FRAME",
+  "path": "frame_sched",
+  "size": 69,
+  "part": "p249",
+  "unit": "_addr_64",
+  "emitted": "sub_646110",
+  "first_diff": {
+   "orig": "+0 sub esp, 0x10",
+   "ours": "+0 sub esp, 8"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x5c69e0",
+  "name": "CompareBigIntLE",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 70,
+  "part": "p249",
+  "unit": "_addr_5C",
+  "emitted": "CompareBigIntLE",
+  "first_diff": {
+   "orig": "+0 push esi",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 86
+ },
+ {
+  "addr": "0x661350",
+  "name": "Palette::CalcColorDistance",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 70,
+  "part": "p249",
+  "unit": "Palette",
+  "emitted": "Palette::CalcColorDistance",
+  "first_diff": {
+   "orig": "+0 push esi",
+   "ours": "+0 mov eax, dword ptr [ecx]"
+  },
+  "ours_size": 96
+ },
+ {
+  "addr": "0x6da980",
+  "name": "Map_Setup_6DA980",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 70,
+  "part": "p249",
+  "unit": "Map_Setup",
+  "emitted": "Map_Setup_6DA980",
+  "first_diff": {
+   "orig": "+6 test ecx, ecx",
+   "ours": "+6 push esi"
+  },
+  "ours_size": 70
+ },
+ {
+  "addr": "0x71c8e0",
+  "name": "sub_71C8E0",
+  "family": "FRAME",
+  "path": "ret_norm",
+  "size": 70,
+  "part": "p250",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_71C8E0",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xcd]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 70
+ },
+ {
+  "addr": "0x7657f0",
+  "name": "Campaign_WorldDominationTour_16::AddRef",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 70,
+  "part": "p250",
+  "unit": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour",
+  "emitted": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour::AddRef",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 77
+ },
+ {
+  "addr": "0x766bc0",
+  "name": "Conflict_WorldDominationTour_12::AddRef",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 70,
+  "part": "p250",
+  "unit": "_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour",
+  "emitted": "_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::AddRef",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 77
+ },
+ {
+  "addr": "0x769de0",
+  "name": "Map_WorldDominationTour_20::AddRef",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 70,
+  "part": "p250",
+  "unit": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+  "emitted": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::AddRef",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 77
+ }
+]
