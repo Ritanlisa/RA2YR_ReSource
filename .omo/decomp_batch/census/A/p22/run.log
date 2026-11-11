@@ -1,0 +1,119 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x5384f0 DynamicVector::performAction_240 -> DynamicVector
+[conv] 0x54a1c0 _DynamicVectorClass_PAG::PointerToIndex -> _DynamicVectorClass_PAG
+[conv] 0x555290 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::GetItemIndex_0 -> _DynamicVectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x588cc0 _DynamicVectorClass_USubzoneConnectionStruct::Remove -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x5ac550 _DynamicVectorClass_V_TRect_H::PointerToIndex -> _DynamicVectorClass_V_TRect_H
+[conv] 0x5c0c30 VectorClass::checkDamageThreshold -> VectorClass
+[conv] 0x5d0700 _DynamicVectorClass_PAVMapStage::Draw -> _DynamicVectorClass_PAVMapStage
+[conv] 0x5d2750 _DynamicVectorClass_PAVMSAnim::GetItemIndex -> _DynamicVectorClass_PAVMSAnim
+[conv] 0x5d8450 _VectorClass_PAVMultiplayerTeam::GetCapacity -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x627f70 _VectorClass_PAVColorScheme::GetCapacity -> _VectorClass_PAVColorScheme
+[conv] 0x63e1b0 _VectorClass_PAVPlanningBranchClass::Remove -> _VectorClass_PAVPlanningBranchClass
+[conv] 0x65bf20 _DynamicVectorClass_PAVRadSiteClass::GetItemIndex -> _DynamicVectorClass_PAVRadSiteClass
+[conv] 0x67a960 _DynamicVectorClass_PBVTerrainTypeClass::GetIndex -> _DynamicVectorClass_PBVTerrainTypeClass
+[conv] 0x69cba0 _VectorClass_VWstring::GetCapacity -> _VectorClass_VWstring
+[conv] 0x6b8380 VectorClass::resetPathMemory -> VectorClass
+[conv] 0x6cf700 _VectorClass_VSwizzlePointerClass::Add -> _VectorClass_VSwizzlePointerClass
+[conv] 0x71b400 _VectorClass_PAVTemporalClass::GetCapacity -> _VectorClass_PAVTemporalClass
+[conv] 0x746ea0 TechnoClass::processIronCurtainExpiry -> TechnoClass
+[conv] 0x7645c0 _VectorClass_PAVWaypointPathClass::GetCapacity -> _VectorClass_PAVWaypointPathClass
+[conv] 0x76ba50 _VectorClass_V_rc_ptr_VWDTTerritory::GetCapacity -> _VectorClass_V_rc_ptr_VWDTTerritory
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PAG  rc=0
+[era] _DynamicVectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=0
+[era] _DynamicVectorClass_V_TRect_H rc=0
+[era] VectorClass              rc=0
+[era] _DynamicVectorClass_PAVMapStage rc=0
+[era] _DynamicVectorClass_PAVMSAnim rc=0
+[era] _VectorClass_PAVMultiplayerTeam rc=0
+[era] _VectorClass_PAVColorScheme rc=0
+[era] _VectorClass_PAVPlanningBranchClass rc=0
+[era] _DynamicVectorClass_PAVRadSiteClass rc=0
+[era] _DynamicVectorClass_PBVTerrainTypeClass rc=0
+[era] _VectorClass_VWstring    rc=0
+[era] _VectorClass_VSwizzlePointerClass rc=0
+[era] _VectorClass_PAVTemporalClass rc=0
+[era] TechnoClass              rc=0
+[era] _VectorClass_PAVWaypointPathClass rc=0
+[era] _VectorClass_V_rc_ptr_VWDTTerritory rc=0
+=== diffasm byte-compare ===
+[diff] 0x5384f0   MISMATCH         DynamicVector::performAction_240
+[diff] 0x54a1c0   MISMATCH         _DynamicVectorClass_PAG::PointerToIndex
+[diff] 0x555290   MISMATCH         _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::GetItemIndex_0
+[diff] 0x588cc0   MISMATCH         _DynamicVectorClass_USubzoneConnectionStruct::Remove
+[diff] 0x5ac550   MISMATCH         _DynamicVectorClass_V_TRect_H::PointerToIndex
+[diff] 0x5c0c30   MISMATCH         VectorClass::checkDamageThreshold
+[diff] 0x6b8380   MISMATCH         VectorClass::resetPathMemory
+[diff] 0x5d0700   MISMATCH         _DynamicVectorClass_PAVMapStage::Draw
+[diff] 0x5d2750   MISMATCH         _DynamicVectorClass_PAVMSAnim::GetItemIndex
+[diff] 0x5d8450   MISMATCH         _VectorClass_PAVMultiplayerTeam::GetCapacity
+[diff] 0x627f70   MISMATCH         _VectorClass_PAVColorScheme::GetCapacity
+[diff] 0x63e1b0   MISMATCH         _VectorClass_PAVPlanningBranchClass::Remove
+[diff] 0x65bf20   MISMATCH         _DynamicVectorClass_PAVRadSiteClass::GetItemIndex
+[diff] 0x67a960   MISMATCH         _DynamicVectorClass_PBVTerrainTypeClass::GetIndex
+[diff] 0x69cba0   MISMATCH         _VectorClass_VWstring::GetCapacity
+[diff] 0x6cf700   MISMATCH         _VectorClass_VSwizzlePointerClass::Add
+[diff] 0x71b400   MISMATCH         _VectorClass_PAVTemporalClass::GetCapacity
+[diff] 0x746ea0   MISMATCH         TechnoClass::processIronCurtainExpiry
+[diff] 0x7645c0   MISMATCH         _VectorClass_PAVWaypointPathClass::GetCapacity
+[diff] 0x76ba50   MISMATCH         _VectorClass_V_rc_ptr_VWDTTerritory::GetCapacity
+[ledger] 0x5384f0 CreateTeamCommand::performAction_240 -> NG (attempt 1)
+[ledger] 0x54a1c0 IsometricTileTypeClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x555290 VectorClass_ptr_LightSourceClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x588cc0 DynamicVectorClass_SubzoneConn::Remove -> NG (attempt 1)
+[ledger] 0x5ac550 MSEngine::PointerToIndex -> NG (attempt 1)
+[ledger] 0x5c0c30 AbstractClass::checkDamageThreshold -> NG (attempt 1)
+[ledger] 0x5d0700 MSPCXAnim_26::Draw -> NG (attempt 1)
+[ledger] 0x5d2750 VectorClass_ptr_MSSfx::GetItemIndex -> NG (attempt 1)
+[ledger] 0x5d8450 VectorClass_ptr_MultiplayerTeam::GetCapacity -> NG (attempt 1)
+[ledger] 0x627f70 VectorClass_ptr_ColorScheme::GetCapacity -> NG (attempt 1)
+[ledger] 0x63e1b0 VectorClass_ptr_PlanningBranchClass::Remove -> NG (attempt 1)
+[ledger] 0x65bf20 VectorClass_ptr_RadSiteClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x67a960 TypeList_cptr_TerrainTypeClass::GetIndex -> NG (attempt 1)
+[ledger] 0x69cba0 VectorClass_Wstring::GetCapacity -> NG (attempt 1)
+[ledger] 0x6b8380 AbstractClass::resetPathMemory -> NG (attempt 1)
+[ledger] 0x6cf700 SwizzleManagerClass_19::Add -> NG (attempt 1)
+[ledger] 0x71b400 VectorClass_ptr_TemporalClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x746ea0 TechnoClass::processIronCurtainExpiry -> NG (attempt 1)
+[ledger] 0x7645c0 VectorClass_ptr_WaypointPathClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x76ba50 VectorClass_rc_ptr_WDTTerritory::GetCapacity -> NG (attempt 1)
+======================================================================
+{
+ "total": 1497,
+ "verdicts": {
+  "MISMATCH": 364,
+  "MATCH": 495,
+  "COMPILE_FAIL": 330,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 301,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 123,
+  "ret_norm": 5,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 27,
+  "regalloc": 48,
+  "branch_order": 59,
+  "width_mismatch": 3,
+  "extern_reloc": 15,
+  "cc_mismatch": 6,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 57.6,
+ "match_rate_of_total_pct": 33.1,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p22\batch_report.json

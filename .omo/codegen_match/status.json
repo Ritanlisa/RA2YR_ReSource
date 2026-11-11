@@ -4542,6 +4542,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5384f0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "CreateTeamCommand::performAction_240",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "status": "NG"
+ },
  "0x5388a0": {
   "attempts": 9,
   "first_diff": null,
@@ -4787,6 +4794,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x54a1c0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x54a1cc",
+  "name": "IsometricTileTypeClass::PointerToIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x54aa60": {
   "attempts": 1,
   "first_diff": null,
@@ -4919,6 +4933,13 @@
   "name": "LightSourceClass::StubReturn54",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x555290": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x55529c",
+  "name": "VectorClass_ptr_LightSourceClass::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x5558c0": {
   "attempts": 1,
@@ -5326,6 +5347,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x588cc0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x588ccc",
+  "name": "DynamicVectorClass_SubzoneConn::Remove",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x589370": {
   "attempts": 4,
   "first_diff": "+12 push edi",
@@ -5401,6 +5429,13 @@
   "first_diff": "+0 sub esp, 0x20",
   "name": "Map_Check",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
+ "0x5ac550": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x5ac55c",
+  "name": "MSEngine::PointerToIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
  "0x5ac960": {
@@ -5767,6 +5802,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5c0c30": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x5c0c3c",
+  "name": "AbstractClass::checkDamageThreshold",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x5c0e50": {
   "attempts": 5,
   "first_diff": null,
@@ -6005,12 +6047,26 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5d0700": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x5d070c",
+  "name": "MSPCXAnim_26::Draw",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x5d1a80": {
   "attempts": 1,
   "first_diff": null,
   "name": "MPBattleClass::populateTeamDropdown",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5d2750": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x5d275c",
+  "name": "VectorClass_ptr_MSSfx::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x5d39b0": {
   "attempts": 1,
@@ -6102,6 +6158,13 @@
   "name": "ScenarioClass::loadTheater",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5d8450": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x5d845c",
+  "name": "VectorClass_ptr_MultiplayerTeam::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x5d87e0": {
   "attempts": 5,
@@ -6516,6 +6579,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x627f70": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x627f7c",
+  "name": "VectorClass_ptr_ColorScheme::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x62af50": {
   "attempts": 5,
   "first_diff": null,
@@ -6802,6 +6872,13 @@
   "name": "VectorClass_ptr_PlanningBranchClass::Clear",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x63e1b0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x63e1bc",
+  "name": "VectorClass_ptr_PlanningBranchClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x63f2e0": {
   "attempts": 1,
@@ -7104,6 +7181,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x65bf20": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x65bf2c",
+  "name": "VectorClass_ptr_RadSiteClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x65c320": {
   "attempts": 5,
   "first_diff": null,
@@ -7279,6 +7363,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x67a960": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x67a96c",
+  "name": "TypeList_cptr_TerrainTypeClass::GetIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x67c510": {
   "attempts": 1,
   "first_diff": null,
@@ -7453,6 +7544,13 @@
   "name": "VectorClass_ptr_GlobalPacketType::Get",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x69cba0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x69cbac",
+  "name": "VectorClass_Wstring::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x69db30": {
   "attempts": 10,
@@ -7783,6 +7881,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6b8380": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x6b838c",
+  "name": "AbstractClass::resetPathMemory",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x6b8920": {
   "attempts": 1,
   "first_diff": null,
@@ -7971,6 +8076,13 @@
   "name": "SwizzleManagerClass::ConvertNodes",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6cf700": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x6cf70c",
+  "name": "SwizzleManagerClass_19::Add",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x6d0260": {
   "attempts": 8,
@@ -8581,6 +8693,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x71b400": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x71b40c",
+  "name": "VectorClass_ptr_TemporalClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x71c4d0": {
   "attempts": 4,
   "first_diff": "+3 push ebx",
@@ -9134,6 +9253,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x746ea0": {
+  "attempts": 1,
+  "first_diff": "+5 je 0x746eb6",
+  "name": "TechnoClass::processIronCurtainExpiry",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x7474b0": {
   "attempts": 9,
   "first_diff": null,
@@ -9603,6 +9729,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x7645c0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x7645cc",
+  "name": "VectorClass_ptr_WaypointPathClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x764810": {
   "attempts": 1,
   "first_diff": null,
@@ -9713,6 +9846,13 @@
   "first_diff": "+0 push esi",
   "name": "File::LoadWDTDecompress",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x76ba50": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x76ba5c",
+  "name": "VectorClass_rc_ptr_WDTTerritory::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
  "0x76bfa0": {

@@ -1,0 +1,417 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "ret_norm": 1,
+   "branch_order": 18,
+   "branch_polarity": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x5384f0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+    "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+   },
+   "pathology": "ret_norm",
+   "name": "CreateTeamCommand::performAction_240",
+   "emitted": "DynamicVector::performAction_240",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x54a1c0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x54a1cc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "IsometricTileTypeClass::PointerToIndex",
+   "emitted": "_DynamicVectorClass_PAG::PointerToIndex",
+   "unit": "_DynamicVectorClass_PAG",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x555290",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x55529c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_LightSourceClass::GetItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAVPendingCellClass_LightSourceClass::GetItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVPendingCellClass_LightSourceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x588cc0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x588ccc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "DynamicVectorClass_SubzoneConn::Remove",
+   "emitted": "_DynamicVectorClass_USubzoneConnectionStruct::Remove",
+   "unit": "_DynamicVectorClass_USubzoneConnectionStruct",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x5ac550",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x5ac55c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "MSEngine::PointerToIndex",
+   "emitted": "_DynamicVectorClass_V_TRect_H::PointerToIndex",
+   "unit": "_DynamicVectorClass_V_TRect_H",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x5c0c30",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 28B",
+   "first_diff": {
+    "orig": "+5 jne 0x5c0c3c",
+    "ours": "+5 je 0x17"
+   },
+   "pathology": "branch_order",
+   "name": "AbstractClass::checkDamageThreshold",
+   "emitted": "VectorClass::checkDamageThreshold",
+   "unit": "VectorClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 28
+  },
+  {
+   "addr": "0x5d0700",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x5d070c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "MSPCXAnim_26::Draw",
+   "emitted": "_DynamicVectorClass_PAVMapStage::Draw",
+   "unit": "_DynamicVectorClass_PAVMapStage",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x5d2750",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x5d275c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_MSSfx::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVMSAnim::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVMSAnim",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x5d8450",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x5d845c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_MultiplayerTeam::GetCapacity",
+   "emitted": "_VectorClass_PAVMultiplayerTeam::GetCapacity",
+   "unit": "_VectorClass_PAVMultiplayerTeam",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x627f70",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x627f7c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_ColorScheme::GetCapacity",
+   "emitted": "_VectorClass_PAVColorScheme::GetCapacity",
+   "unit": "_VectorClass_PAVColorScheme",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x63e1b0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x63e1bc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_PlanningBranchClass::Remove",
+   "emitted": "_VectorClass_PAVPlanningBranchClass::Remove",
+   "unit": "_VectorClass_PAVPlanningBranchClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x65bf20",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x65bf2c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_RadSiteClass::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVRadSiteClass::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVRadSiteClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x67a960",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x67a96c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "TypeList_cptr_TerrainTypeClass::GetIndex",
+   "emitted": "_DynamicVectorClass_PBVTerrainTypeClass::GetIndex",
+   "unit": "_DynamicVectorClass_PBVTerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x69cba0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69cbac",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_Wstring::GetCapacity",
+   "emitted": "_VectorClass_VWstring::GetCapacity",
+   "unit": "_VectorClass_VWstring",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x6b8380",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 28B",
+   "first_diff": {
+    "orig": "+5 jne 0x6b838c",
+    "ours": "+5 je 0x17"
+   },
+   "pathology": "branch_order",
+   "name": "AbstractClass::resetPathMemory",
+   "emitted": "VectorClass::resetPathMemory",
+   "unit": "VectorClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 28
+  },
+  {
+   "addr": "0x6cf700",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6cf70c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "SwizzleManagerClass_19::Add",
+   "emitted": "_VectorClass_VSwizzlePointerClass::Add",
+   "unit": "_VectorClass_VSwizzlePointerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x71b400",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x71b40c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_TemporalClass::GetCapacity",
+   "emitted": "_VectorClass_PAVTemporalClass::GetCapacity",
+   "unit": "_VectorClass_PAVTemporalClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x746ea0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 30B",
+   "first_diff": {
+    "orig": "+5 je 0x746eb6",
+    "ours": "+5 je 0x19"
+   },
+   "pathology": "branch_polarity",
+   "name": "TechnoClass::processIronCurtainExpiry",
+   "emitted": "TechnoClass::processIronCurtainExpiry",
+   "unit": "TechnoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 30
+  },
+  {
+   "addr": "0x7645c0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x7645cc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_WaypointPathClass::GetCapacity",
+   "emitted": "_VectorClass_PAVWaypointPathClass::GetCapacity",
+   "unit": "_VectorClass_PAVWaypointPathClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x76ba50",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x76ba5c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_rc_ptr_WDTTerritory::GetCapacity",
+   "emitted": "_VectorClass_V_rc_ptr_VWDTTerritory::GetCapacity",
+   "unit": "_VectorClass_V_rc_ptr_VWDTTerritory",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  }
+ ]
+}
