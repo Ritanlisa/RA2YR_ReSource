@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p123\part_00
+=== convert (20 addrs) ===
+[conv] 0x5bf690 sub_5BF690 -> _addr_5B
+[conv] 0x5c1180 sub_5C1180 -> _addr_5C
+[conv] 0x5c11a0 sub_5C11A0 -> _addr_5C
+[conv] 0x5c5b60 sub_5C5B60 -> _addr_5C
+[conv] 0x5c5b80 sub_5C5B80 -> _addr_5C
+[conv] 0x5c5ba0 sub_5C5BA0 -> _addr_5C
+[conv] 0x5c5f00 sub_5C5F00 -> _addr_5C
+[conv] 0x5c5f20 sub_5C5F20 -> _addr_5C
+[conv] 0x5c5f40 sub_5C5F40 -> _addr_5C
+[conv] 0x5c9260 sub_5C9260 -> _addr_5C
+[conv] 0x5c92a0 sub_5C92A0 -> _addr_5C
+[conv] 0x5c9580 sub_5C9580 -> _addr_5C
+[conv] 0x5c95a0 sub_5C95A0 -> _addr_5C
+[conv] 0x5c95c0 sub_5C95C0 -> _addr_5C
+[conv] 0x5ca490 sub_5CA490 -> _addr_5C
+[conv] 0x5ca4b0 sub_5CA4B0 -> _addr_5C
+[conv] 0x5ca4d0 sub_5CA4D0 -> _addr_5C
+[conv] 0x5cac90 sub_5CAC90 -> _addr_5C
+[conv] 0x5cacb0 sub_5CACB0 -> _addr_5C
+[conv] 0x5cb200 MPBattleClass::getMinimumPlayers -> MPBattleClass
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=0
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x5bf690   MISMATCH         sub_5BF690
+[diff] 0x5c1180   MISMATCH         sub_5C1180
+[diff] 0x5c11a0   MISMATCH         sub_5C11A0
+[diff] 0x5c5b60   MISMATCH         sub_5C5B60
+[diff] 0x5c5b80   MISMATCH         sub_5C5B80
+[diff] 0x5c5ba0   MISMATCH         sub_5C5BA0
+[diff] 0x5c5f00   MISMATCH         sub_5C5F00
+[diff] 0x5c5f20   MISMATCH         sub_5C5F20
+[diff] 0x5c5f40   MISMATCH         sub_5C5F40
+[diff] 0x5c9260   MISMATCH         sub_5C9260
+[diff] 0x5c92a0   MISMATCH         sub_5C92A0
+[diff] 0x5c9580   MISMATCH         sub_5C9580
+[diff] 0x5c95a0   MISMATCH         sub_5C95A0
+[diff] 0x5c95c0   MISMATCH         sub_5C95C0
+[diff] 0x5ca490   MISMATCH         sub_5CA490
+[diff] 0x5ca4b0   MISMATCH         sub_5CA4B0
+[diff] 0x5ca4d0   MISMATCH         sub_5CA4D0
+[diff] 0x5cac90   MISMATCH         sub_5CAC90
+[diff] 0x5cacb0   MISMATCH         sub_5CACB0
+[diff] 0x5cb200   MISMATCH         MPBattleClass::getMinimumPlayers
+[ledger] 0x5bf690 sub_5BF690 -> NG (attempt 1)
+[ledger] 0x5c1180 sub_5C1180 -> NG (attempt 1)
+[ledger] 0x5c11a0 sub_5C11A0 -> NG (attempt 1)
+[ledger] 0x5c5b60 sub_5C5B60 -> NG (attempt 1)
+[ledger] 0x5c5b80 sub_5C5B80 -> NG (attempt 1)
+[ledger] 0x5c5ba0 sub_5C5BA0 -> NG (attempt 1)
+[ledger] 0x5c5f00 sub_5C5F00 -> NG (attempt 1)
+[ledger] 0x5c5f20 sub_5C5F20 -> NG (attempt 1)
+[ledger] 0x5c5f40 sub_5C5F40 -> NG (attempt 1)
+[ledger] 0x5c9260 sub_5C9260 -> NG (attempt 1)
+[ledger] 0x5c92a0 sub_5C92A0 -> NG (attempt 1)
+[ledger] 0x5c9580 sub_5C9580 -> NG (attempt 1)
+[ledger] 0x5c95a0 sub_5C95A0 -> NG (attempt 1)
+[ledger] 0x5c95c0 sub_5C95C0 -> NG (attempt 1)
+[ledger] 0x5ca490 sub_5CA490 -> NG (attempt 1)
+[ledger] 0x5ca4b0 sub_5CA4B0 -> NG (attempt 1)
+[ledger] 0x5ca4d0 sub_5CA4D0 -> NG (attempt 1)
+[ledger] 0x5cac90 sub_5CAC90 -> NG (attempt 1)
+[ledger] 0x5cacb0 sub_5CACB0 -> NG (attempt 1)
+[ledger] 0x5cb200 MPBattleClass::getMinimumPlayers -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p123\batch_report.json
