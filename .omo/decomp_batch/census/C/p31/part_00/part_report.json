@@ -1,0 +1,396 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 16,
+   "COMPILE_FAIL": 4
+  },
+  "pathologies": {
+   "codegen_shape": 16
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x53dae0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_IonBlastClass::Release",
+   "emitted": "_VectorClass_PAVIonBlastClass::Release",
+   "unit": "_VectorClass_PAVIonBlastClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x589ef0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_W4PassabilityType::Release",
+   "emitted": "_VectorClass_W4PassabilityType::Release",
+   "unit": "_VectorClass_W4PassabilityType",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x5d14a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_MSSfxEntry::Release",
+   "emitted": "_VectorClass_PAVMSSfxEntry::Release",
+   "unit": "_VectorClass_PAVMSSfxEntry",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x63e090",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_PlanningBranchClass::Release",
+   "emitted": "_VectorClass_PAVPlanningBranchClass::Release",
+   "unit": "_VectorClass_PAVPlanningBranchClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x69c750",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "_VectorClass_W4DiskID::addPlayer",
+   "emitted": "_VectorClass_W4DiskID::addPlayer",
+   "unit": "_VectorClass_W4DiskID",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x6e4890",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "Tactical_42::Release",
+   "emitted": "_VectorClass_PAVTActionClass::Release",
+   "unit": "_VectorClass_PAVTActionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x76a170",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "Map_WorldDominationTour_28::Release",
+   "emitted": "_VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Release",
+   "unit": "_VectorClass_PAUAnimationPalette_Map_WorldDominationTour",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x40c030",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "MoveFeedback::SetCapacity",
+   "emitted": "_DynamicVectorClass_PBVCommandClass::SetCapacity",
+   "unit": "_DynamicVectorClass_PBVCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 176,
+   "ours_size": 193
+  },
+  {
+   "addr": "0x4219e0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p31\\part_00\\VectorClass_ptr_AlphaShapeClass.cpp(40) : error C2664: '__3_YAXPAX_Z' : cannot convert parameter 1 from 'unsigned int' to 'void *'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "VectorClass_ptr_AlphaShapeClass::SetCapacity",
+   "emitted": "VectorClass_ptr_AlphaShapeClass::SetCapacity",
+   "unit": "VectorClass_ptr_AlphaShapeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "5/5",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x48aef0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_DamageGroup::SetCapacity",
+   "emitted": "_DynamicVectorClass_PAUDamageGroup::SetCapacity",
+   "unit": "_DynamicVectorClass_PAUDamageGroup",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 176,
+   "ours_size": 193
+  },
+  {
+   "addr": "0x4caa70",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p31\\part_00\\DynamicVector.cpp(20) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p31\\p",
+   "first_diff": null,
+   "pathology": null,
+   "name": "AbstractClass::executeScriptAction",
+   "emitted": "DynamicVector::executeScriptAction",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 31
+  },
+  {
+   "addr": "0x4ea800",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AITriggerTypeClass::SetCapacity_1",
+   "emitted": "_DynamicVectorClass_PAVTriggerTypeClass::SetCapacity_1",
+   "unit": "_DynamicVectorClass_PAVTriggerTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 176,
+   "ours_size": 193
+  },
+  {
+   "addr": "0x4ec220",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TeamClass::SetCapacity_1",
+   "emitted": "_DynamicVectorClass_PAVFactoryClass::SetCapacity_1",
+   "unit": "_DynamicVectorClass_PAVFactoryClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 176,
+   "ours_size": 193
+  },
+  {
+   "addr": "0x4edc40",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AircraftTypeClass::SetCapacity",
+   "emitted": "_DynamicVectorClass_PAVAircraftTypeClass::SetCapacity",
+   "unit": "_DynamicVectorClass_PAVAircraftTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 176,
+   "ours_size": 193
+  },
+  {
+   "addr": "0x4f2a60",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p31\\part_00\\DynamicVector.cpp(20) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p31\\p",
+   "first_diff": null,
+   "pathology": null,
+   "name": "HouseClass::processWaypointPlanning",
+   "emitted": "DynamicVector::processWaypointPlanning",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 31
+  },
+  {
+   "addr": "0x53dc20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_IonBlastClass::SetCapacity",
+   "emitted": "_DynamicVectorClass_PAVIonBlastClass::SetCapacity",
+   "unit": "_DynamicVectorClass_PAVIonBlastClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 176,
+   "ours_size": 193
+  },
+  {
+   "addr": "0x5ac820",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p31\\part_00\\VectorClass_ptr_MapRegionClass.cpp(40) : error C2664: '__3_YAXPAX_Z' : cannot convert parameter 1 from 'unsigned int' to 'void *'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "VectorClass_ptr_MapRegionClass::SetCapacity",
+   "emitted": "VectorClass_ptr_MapRegionClass::SetCapacity",
+   "unit": "VectorClass_ptr_MapRegionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "5/5",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x5d2960",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_MSSfx::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVMSAnim::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVMSAnim",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 176,
+   "ours_size": 193
+  },
+  {
+   "addr": "0x63e230",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_PlanningMemberClass::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVPlanningBranchClass::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVPlanningBranchClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 176,
+   "ours_size": 193
+  },
+  {
+   "addr": "0x67b3d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TypeList_cptr_TerrainTypeClass::Remove",
+   "emitted": "_DynamicVectorClass_PBVTerrainTypeClass::Remove",
+   "unit": "_DynamicVectorClass_PBVTerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 176,
+   "ours_size": 193
+  }
+ ]
+}

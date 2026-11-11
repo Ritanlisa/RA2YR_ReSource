@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetCapacity_1@_DynamicVectorClass_PAVFactoryClass@@QAEDHPAH@Z",
+ "sym_key": "_DynamicVectorClass_PAVFactoryClass::SetCapacity_1",
+ "size": 193,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db578bf10f84920000008b6c2418c7460c0000000085ed74048bfdeb128d049d0000000050e80000000083c4048bf885ffc7460c0100000075095f5e5d32c05bc20800833e0074378b4e083bd97d028bcb85c97e13b8fcffffff8b1683c004498b141089143875f28b460cf6c4ff740f50e80000000083c404c706000000008b560c33c085ed0f94c033c980e6008ae8893e0bca895e08894e0ceb078b068bceff500c8b46088b4e103bc17d038946105f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

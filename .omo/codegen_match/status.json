@@ -433,6 +433,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x40c030": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "MoveFeedback::SetCapacity",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x40c0e0": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -1181,6 +1188,13 @@
   "name": "VectorClass_ptr_AlphaShapeClass::Remove",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x4219e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_AlphaShapeClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x421b60": {
   "attempts": 1,
@@ -2693,6 +2707,13 @@
   "name": "VectorClass_ptr_DamageGroup::Clear",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x48aef0": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_DamageGroup::SetCapacity",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x48b2a0": {
   "attempts": 6,
@@ -4563,6 +4584,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x4caa70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::executeScriptAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4cad00": {
   "attempts": 1,
   "first_diff": null,
@@ -5228,6 +5256,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4ea800": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_AITriggerTypeClass::SetCapacity_1",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4ea8b0": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -5284,6 +5319,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4ec220": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_TeamClass::SetCapacity_1",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4ec680": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -5331,6 +5373,13 @@
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
   "name": "VectorClass_ptr_AircraftTypeClass::GetSize",
   "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
+ "0x4edc40": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_AircraftTypeClass::SetCapacity",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4ee340": {
@@ -5430,6 +5479,13 @@
   "name": "HouseClass_24::Write",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x4f2a60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::processWaypointPlanning",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4f2b40": {
   "attempts": 4,
@@ -6768,6 +6824,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x53dae0": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_IonBlastClass::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x53dc20": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_IonBlastClass::SetCapacity",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x53ec70": {
   "attempts": 1,
   "first_diff": null,
@@ -7790,6 +7860,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x589ef0": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_W4PassabilityType::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x58a110": {
   "attempts": 1,
   "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
@@ -7957,6 +8034,13 @@
   "name": "VectorClass_ptr_MapRegionClass::GetSize",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x5ac820": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_MapRegionClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5ac960": {
   "attempts": 4,
@@ -8833,6 +8917,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x5d14a0": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_MSSfxEntry::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x5d1710": {
   "attempts": 1,
   "first_diff": null,
@@ -8859,6 +8950,13 @@
   "first_diff": "+5 jne 0x5d275c",
   "name": "VectorClass_ptr_MSSfx::GetItemIndex",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x5d2960": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_MSSfx::SetCapacity_0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x5d2c70": {
@@ -10128,6 +10226,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x63e090": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_PlanningBranchClass::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x63e1b0": {
   "attempts": 1,
   "first_diff": "+5 jne 0x63e1bc",
@@ -10141,6 +10246,13 @@
   "name": "ExecuteActionPlanManager_Helper_63E1D0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x63e230": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_PlanningMemberClass::SetCapacity_0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x63e2e0": {
   "attempts": 1,
@@ -10884,6 +10996,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x67b3d0": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "TypeList_cptr_TerrainTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x67c0b0": {
   "attempts": 1,
   "first_diff": null,
@@ -11149,6 +11268,13 @@
   "name": "VectorClass_ptr_GlobalPacketType::Get",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x69c750": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "_VectorClass_W4DiskID::addPlayer",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x69cba0": {
   "attempts": 1,
@@ -12374,6 +12500,13 @@
   "name": "Tactical_42::UpdateView",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6e4890": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "Tactical_42::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x6e56a0": {
   "attempts": 1,
@@ -14572,6 +14705,13 @@
   "name": "Map_WorldDominationTour_20::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x76a170": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "Map_WorldDominationTour_28::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x76a390": {
   "attempts": 1,

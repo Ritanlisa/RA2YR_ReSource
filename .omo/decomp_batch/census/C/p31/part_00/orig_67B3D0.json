@@ -1,0 +1,11 @@
+{
+ "addr": "0x67B3D0",
+ "name": "TypeList_cptr_TerrainTypeClass::Remove",
+ "size": 176,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x67B3D0",
+ "bytes_hex": "53558b6c240c5685ed578bf1747c8b5c2418c6460c0085db75148d04ad0000000050e820da140083c4048bf8eb028bfb85ffc6460c01746f8b460485c074398b4e083be97d028bcd33c085c97e108b5604403bc18b5482fc895487fc7cf08a460d84c074138b460450e8ffd6140083c404c746040000000033c0897e0485db0f94c0896e0888460deb078b168bceff520c8b46088b4e103bc17d038946105f5e5db0015bc208005f5e5d32c05bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

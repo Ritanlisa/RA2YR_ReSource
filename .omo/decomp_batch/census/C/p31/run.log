@@ -1,0 +1,116 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x53dae0 _VectorClass_PAVIonBlastClass::Release -> _VectorClass_PAVIonBlastClass
+[conv] 0x589ef0 _VectorClass_W4PassabilityType::Release -> _VectorClass_W4PassabilityType
+[conv] 0x5d14a0 _VectorClass_PAVMSSfxEntry::Release -> _VectorClass_PAVMSSfxEntry
+[conv] 0x63e090 _VectorClass_PAVPlanningBranchClass::Release -> _VectorClass_PAVPlanningBranchClass
+[conv] 0x69c750 _VectorClass_W4DiskID::addPlayer -> _VectorClass_W4DiskID
+[conv] 0x6e4890 _VectorClass_PAVTActionClass::Release -> _VectorClass_PAVTActionClass
+[conv] 0x76a170 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Release -> _VectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x40c030 _DynamicVectorClass_PBVCommandClass::SetCapacity -> _DynamicVectorClass_PBVCommandClass
+[conv] 0x4219e0 VectorClass_ptr_AlphaShapeClass::SetCapacity -> VectorClass_ptr_AlphaShapeClass
+[conv] 0x48aef0 _DynamicVectorClass_PAUDamageGroup::SetCapacity -> _DynamicVectorClass_PAUDamageGroup
+[conv] 0x4caa70 DynamicVector::executeScriptAction -> DynamicVector
+[conv] 0x4ea800 _DynamicVectorClass_PAVTriggerTypeClass::SetCapacity_1 -> _DynamicVectorClass_PAVTriggerTypeClass
+[conv] 0x4ec220 _DynamicVectorClass_PAVFactoryClass::SetCapacity_1 -> _DynamicVectorClass_PAVFactoryClass
+[conv] 0x4edc40 _DynamicVectorClass_PAVAircraftTypeClass::SetCapacity -> _DynamicVectorClass_PAVAircraftTypeClass
+[conv] 0x4f2a60 DynamicVector::processWaypointPlanning -> DynamicVector
+[conv] 0x53dc20 _DynamicVectorClass_PAVIonBlastClass::SetCapacity -> _DynamicVectorClass_PAVIonBlastClass
+[conv] 0x5ac820 VectorClass_ptr_MapRegionClass::SetCapacity -> VectorClass_ptr_MapRegionClass
+[conv] 0x5d2960 _DynamicVectorClass_PAVMSAnim::SetCapacity_0 -> _DynamicVectorClass_PAVMSAnim
+[conv] 0x63e230 _DynamicVectorClass_PAVPlanningBranchClass::SetCapacity_0 -> _DynamicVectorClass_PAVPlanningBranchClass
+[conv] 0x67b3d0 _DynamicVectorClass_PBVTerrainTypeClass::Remove -> _DynamicVectorClass_PBVTerrainTypeClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVIonBlastClass rc=0
+[era] _VectorClass_W4PassabilityType rc=0
+[era] _VectorClass_PAVMSSfxEntry rc=0
+[era] _VectorClass_PAVPlanningBranchClass rc=0
+[era] _VectorClass_W4DiskID    rc=0
+[era] _VectorClass_PAVTActionClass rc=0
+[era] _VectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _DynamicVectorClass_PBVCommandClass rc=0
+[era] VectorClass_ptr_AlphaShapeClass rc=2
+[era] _DynamicVectorClass_PAUDamageGroup rc=0
+[era] DynamicVector            rc=2
+[era] _DynamicVectorClass_PAVTriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVFactoryClass rc=0
+[era] _DynamicVectorClass_PAVAircraftTypeClass rc=0
+[era] _DynamicVectorClass_PAVIonBlastClass rc=0
+[era] VectorClass_ptr_MapRegionClass rc=2
+[era] _DynamicVectorClass_PAVMSAnim rc=0
+[era] _DynamicVectorClass_PAVPlanningBranchClass rc=0
+[era] _DynamicVectorClass_PBVTerrainTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x53dae0   MISMATCH         _VectorClass_PAVIonBlastClass::Release
+[diff] 0x589ef0   MISMATCH         _VectorClass_W4PassabilityType::Release
+[diff] 0x5d14a0   MISMATCH         _VectorClass_PAVMSSfxEntry::Release
+[diff] 0x63e090   MISMATCH         _VectorClass_PAVPlanningBranchClass::Release
+[diff] 0x69c750   MISMATCH         _VectorClass_W4DiskID::addPlayer
+[diff] 0x6e4890   MISMATCH         _VectorClass_PAVTActionClass::Release
+[diff] 0x76a170   MISMATCH         _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Release
+[diff] 0x40c030   MISMATCH         _DynamicVectorClass_PBVCommandClass::SetCapacity
+[diff] 0x48aef0   MISMATCH         _DynamicVectorClass_PAUDamageGroup::SetCapacity
+[diff] 0x4ea800   MISMATCH         _DynamicVectorClass_PAVTriggerTypeClass::SetCapacity_1
+[diff] 0x4ec220   MISMATCH         _DynamicVectorClass_PAVFactoryClass::SetCapacity_1
+[diff] 0x4edc40   MISMATCH         _DynamicVectorClass_PAVAircraftTypeClass::SetCapacity
+[diff] 0x53dc20   MISMATCH         _DynamicVectorClass_PAVIonBlastClass::SetCapacity
+[diff] 0x5d2960   MISMATCH         _DynamicVectorClass_PAVMSAnim::SetCapacity_0
+[diff] 0x63e230   MISMATCH         _DynamicVectorClass_PAVPlanningBranchClass::SetCapacity_0
+[diff] 0x67b3d0   MISMATCH         _DynamicVectorClass_PBVTerrainTypeClass::Remove
+[ledger] 0x53dae0 VectorClass_ptr_IonBlastClass::Release -> NG (attempt 1)
+[ledger] 0x589ef0 VectorClass_W4PassabilityType::Release -> NG (attempt 1)
+[ledger] 0x5d14a0 VectorClass_ptr_MSSfxEntry::Release -> NG (attempt 1)
+[ledger] 0x63e090 VectorClass_ptr_PlanningBranchClass::Release -> NG (attempt 1)
+[ledger] 0x69c750 _VectorClass_W4DiskID::addPlayer -> NG (attempt 1)
+[ledger] 0x6e4890 Tactical_42::Release -> NG (attempt 1)
+[ledger] 0x76a170 Map_WorldDominationTour_28::Release -> NG (attempt 1)
+[ledger] 0x40c030 MoveFeedback::SetCapacity -> NG (attempt 1)
+[ledger] 0x4219e0 VectorClass_ptr_AlphaShapeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48aef0 VectorClass_ptr_DamageGroup::SetCapacity -> NG (attempt 1)
+[ledger] 0x4caa70 AbstractClass::executeScriptAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea800 VectorClass_ptr_AITriggerTypeClass::SetCapacity_1 -> NG (attempt 1)
+[ledger] 0x4ec220 VectorClass_ptr_TeamClass::SetCapacity_1 -> NG (attempt 1)
+[ledger] 0x4edc40 VectorClass_ptr_AircraftTypeClass::SetCapacity -> NG (attempt 1)
+[ledger] 0x4f2a60 HouseClass::processWaypointPlanning -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53dc20 VectorClass_ptr_IonBlastClass::SetCapacity -> NG (attempt 1)
+[ledger] 0x5ac820 VectorClass_ptr_MapRegionClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2960 VectorClass_ptr_MSSfx::SetCapacity_0 -> NG (attempt 1)
+[ledger] 0x63e230 VectorClass_ptr_PlanningMemberClass::SetCapacity_0 -> NG (attempt 1)
+[ledger] 0x67b3d0 TypeList_cptr_TerrainTypeClass::Remove -> NG (attempt 1)
+======================================================================
+{
+ "total": 2319,
+ "verdicts": {
+  "MISMATCH": 651,
+  "MATCH": 521,
+  "COMPILE_FAIL": 634,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 499,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 10,
+  "codegen_shape": 222,
+  "ret_norm": 7,
+  "frame_sched": 67,
+  "const_fold": 66,
+  "branch_polarity": 46,
+  "regalloc": 102,
+  "branch_order": 77,
+  "width_mismatch": 8,
+  "extern_reloc": 18,
+  "cc_mismatch": 25,
+  "signedness": 3
+ },
+ "match_rate_of_decided_pct": 44.5,
+ "match_rate_of_total_pct": 22.5,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p31\batch_report.json
