@@ -1,0 +1,11 @@
+{
+ "addr": "0x54E8E0",
+ "name": "JumpjetLocomotionClass_26::Seek",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54E8E0",
+ "bytes_hex": "8b41048b4c24048b0488c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

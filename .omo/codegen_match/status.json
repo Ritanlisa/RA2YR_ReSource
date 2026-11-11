@@ -12128,12 +12128,72 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x50e4f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVBuildingTypeClass::Count",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_BuildingType::Count",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x50e550": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUStartingTechnoStruct_HouseClass::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_UAngerStruct___16::Clear",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x50e560": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
   "name": "VectorClass_UAngerStruct::Destroy_0",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x50e690": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUBuildChoiceClass_HouseClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x50e6f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVTeamTypeClass::GetElement",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_BuildingType::GetElement",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x50e750": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass__N::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass__N::Clear",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x50e7e0": {
   "attempts": 1,
@@ -12443,6 +12503,42 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5128f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVInfantryTypeClass::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TypeList_Infantry::Clear",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x512950": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVUnitTypeClass::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "HouseTypeClass_36::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5129e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVAircraftTypeClass::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "HouseTypeClass_28::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x512c40": {
   "attempts": 1,
   "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
@@ -12685,6 +12781,30 @@
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "status": "NG"
  },
+ "0x5224e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::GetTypeFlag",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TechnoClass::GetTypeFlag",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x522540": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::sub_522540",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_522540",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x522a50": {
   "attempts": 1,
   "first_diff": null,
@@ -12845,6 +12965,18 @@
   "note": "decomp_batch r2: MATCH",
   "orig_name": "??0Iostream_init_QAE_XZ_4",
   "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x524fb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVAnimTypeClass::SaveToINI",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "_VectorClass_PBVAnimTypeClass::SaveToINI",
+  "rule_violations": 1,
   "status": "OK",
   "this_as_id": false
  },
@@ -13198,6 +13330,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x5367e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "CombatantSelectCommandClass::performAction_43",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_43",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x536810": {
   "attempts": 4,
   "first_diff": "+0 mov eax, 0x827304",
@@ -13211,6 +13355,18 @@
   "name": "CreateTeamCommand::performAction_47",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x536880": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "TypeSelectCommandClass::performAction_49",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_49",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x536890": {
   "attempts": 4,
@@ -13230,6 +13386,18 @@
   "name": "CreateTeamCommand::performAction_53",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x536940": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "HealthNavCommandClass::performAction_57",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_57",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x536950": {
   "attempts": 1,
@@ -13810,6 +13978,18 @@
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "status": "NG"
  },
+ "0x538510": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVCCINIClass::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_CCINIClass::Clear",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5388a0": {
   "attempts": 9,
   "first_diff": null,
@@ -13987,6 +14167,18 @@
   "name": "UI_Helper",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x53c510": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVAnimClass::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "DeleteCommandClass_28::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x53c890": {
   "attempts": 2,
@@ -14438,6 +14630,30 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x54a1e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAG::Count",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_PAG::Count",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x54a240": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUTileInsertType_IsometricTileTypeClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x54a5d0": {
   "attempts": 1,
   "clean": false,
@@ -14579,6 +14795,18 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x54e8e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUKamikazeControl::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "JumpjetLocomotionClass_26::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x54ee50": {
   "attempts": 1,
   "clean": true,
@@ -14670,6 +14898,18 @@
   "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_22",
   "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x551320": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVLaserDrawClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_LaserDrawClass::Get",
+  "rule_violations": 1,
   "status": "OK",
   "this_as_id": false
  },

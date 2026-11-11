@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p46\part_00
+=== convert (20 addrs) ===
+[conv] 0x50e4f0 _VectorClass_PBVBuildingTypeClass::Count -> _VectorClass_PBVBuildingTypeClass
+[conv] 0x50e550 _VectorClass_PAUStartingTechnoStruct_HouseClass::Clear -> _VectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50e690 _VectorClass_PAUBuildChoiceClass_HouseClass::Get -> _VectorClass_PAUBuildChoiceClass_HouseClass
+[conv] 0x50e6f0 _VectorClass_PBVTeamTypeClass::GetElement -> _VectorClass_PBVTeamTypeClass
+[conv] 0x50e750 _VectorClass__N::Clear -> _VectorClass__N
+[conv] 0x5128f0 _VectorClass_PBVInfantryTypeClass::Clear -> _VectorClass_PBVInfantryTypeClass
+[conv] 0x512950 _VectorClass_PBVUnitTypeClass::Seek -> _VectorClass_PBVUnitTypeClass
+[conv] 0x5129e0 _VectorClass_PBVAircraftTypeClass::Seek -> _VectorClass_PBVAircraftTypeClass
+[conv] 0x5224e0 TechnoClass::GetTypeFlag -> TechnoClass
+[conv] 0x522540 TechnoClass::sub_522540 -> TechnoClass
+[conv] 0x524fb0 _VectorClass_PBVAnimTypeClass::SaveToINI -> _VectorClass_PBVAnimTypeClass
+[conv] 0x5367e0 CombatantSelectCommandClass::performAction_43 -> CombatantSelectCommandClass
+[conv] 0x536880 TypeSelectCommandClass::performAction_49 -> TypeSelectCommandClass
+[conv] 0x536940 HealthNavCommandClass::performAction_57 -> HealthNavCommandClass
+[conv] 0x538510 _VectorClass_PAVCCINIClass::Clear -> _VectorClass_PAVCCINIClass
+[conv] 0x53c510 _VectorClass_PBVAnimClass::Seek -> _VectorClass_PBVAnimClass
+[conv] 0x54a1e0 _VectorClass_PAG::Count -> _VectorClass_PAG
+[conv] 0x54a240 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Get -> _VectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54e8e0 _VectorClass_PAUKamikazeControl::Seek -> _VectorClass_PAUKamikazeControl
+[conv] 0x551320 _VectorClass_PAVLaserDrawClass::Get -> _VectorClass_PAVLaserDrawClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVBuildingTypeClass rc=0
+[era] _VectorClass_PAUStartingTechnoStruct_HouseClass rc=0
+[era] _VectorClass_PAUBuildChoiceClass_HouseClass rc=0
+[era] _VectorClass_PBVTeamTypeClass rc=0
+[era] _VectorClass__N          rc=0
+[era] _VectorClass_PBVInfantryTypeClass rc=0
+[era] _VectorClass_PBVUnitTypeClass rc=0
+[era] _VectorClass_PBVAircraftTypeClass rc=0
+[era] TechnoClass              rc=0
+[era] _VectorClass_PBVAnimTypeClass rc=0
+[era] CombatantSelectCommandClass rc=0
+[era] TypeSelectCommandClass   rc=0
+[era] HealthNavCommandClass    rc=0
+[era] _VectorClass_PAVCCINIClass rc=0
+[era] _VectorClass_PBVAnimClass rc=0
+[era] _VectorClass_PAG         rc=0
+[era] _VectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] _VectorClass_PAUKamikazeControl rc=0
+[era] _VectorClass_PAVLaserDrawClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x50e4f0   MATCH            _VectorClass_PBVBuildingTypeClass::Count
+[diff] 0x50e550   MATCH            _VectorClass_PAUStartingTechnoStruct_HouseClass::Clear
+[diff] 0x50e690   MATCH            _VectorClass_PAUBuildChoiceClass_HouseClass::Get
+[diff] 0x50e6f0   MATCH            _VectorClass_PBVTeamTypeClass::GetElement
+[diff] 0x50e750   MATCH            _VectorClass__N::Clear
+[diff] 0x5128f0   MATCH            _VectorClass_PBVInfantryTypeClass::Clear
+[diff] 0x512950   MATCH            _VectorClass_PBVUnitTypeClass::Seek
+[diff] 0x5129e0   MATCH            _VectorClass_PBVAircraftTypeClass::Seek
+[diff] 0x5224e0   MATCH            TechnoClass::GetTypeFlag
+[diff] 0x522540   MATCH            TechnoClass::sub_522540
+[diff] 0x524fb0   MATCH            _VectorClass_PBVAnimTypeClass::SaveToINI
+[diff] 0x5367e0   MISMATCH         CombatantSelectCommandClass::performAction_43
+[diff] 0x536880   MISMATCH         TypeSelectCommandClass::performAction_49
+[diff] 0x536940   MISMATCH         HealthNavCommandClass::performAction_57
+[diff] 0x538510   MATCH            _VectorClass_PAVCCINIClass::Clear
+[diff] 0x53c510   MATCH            _VectorClass_PBVAnimClass::Seek
+[diff] 0x54a1e0   MATCH            _VectorClass_PAG::Count
+[diff] 0x54a240   MATCH            _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Get
+[diff] 0x54e8e0   MATCH            _VectorClass_PAUKamikazeControl::Seek
+[diff] 0x551320   MATCH            _VectorClass_PAVLaserDrawClass::Get
+[ledger] 0x50e4f0 _VectorClass_PBVBuildingTypeClass::Count -> OK (attempt 1)
+[ledger] 0x50e550 _VectorClass_PAUStartingTechnoStruct_HouseClass::Clear -> OK (attempt 1)
+[ledger] 0x50e690 _VectorClass_PAUBuildChoiceClass_HouseClass::Get -> OK (attempt 1)
+[ledger] 0x50e6f0 _VectorClass_PBVTeamTypeClass::GetElement -> OK (attempt 1)
+[ledger] 0x50e750 _VectorClass__N::Clear -> OK (attempt 1)
+[ledger] 0x5128f0 _VectorClass_PBVInfantryTypeClass::Clear -> OK (attempt 1)
+[ledger] 0x512950 _VectorClass_PBVUnitTypeClass::Seek -> OK (attempt 1)
+[ledger] 0x5129e0 _VectorClass_PBVAircraftTypeClass::Seek -> OK (attempt 1)
+[ledger] 0x5224e0 TechnoClass::GetTypeFlag -> OK (attempt 1)
+[ledger] 0x522540 TechnoClass::sub_522540 -> OK (attempt 1)
+[ledger] 0x524fb0 _VectorClass_PBVAnimTypeClass::SaveToINI -> OK (attempt 1)
+[ledger] 0x5367e0 CombatantSelectCommandClass::performAction_43 -> NG (attempt 1)
+[ledger] 0x536880 TypeSelectCommandClass::performAction_49 -> NG (attempt 1)
+[ledger] 0x536940 HealthNavCommandClass::performAction_57 -> NG (attempt 1)
+[ledger] 0x538510 _VectorClass_PAVCCINIClass::Clear -> OK (attempt 1)
+[ledger] 0x53c510 _VectorClass_PBVAnimClass::Seek -> OK (attempt 1)
+[ledger] 0x54a1e0 _VectorClass_PAG::Count -> OK (attempt 1)
+[ledger] 0x54a240 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Get -> OK (attempt 1)
+[ledger] 0x54e8e0 _VectorClass_PAUKamikazeControl::Seek -> OK (attempt 1)
+[ledger] 0x551320 _VectorClass_PAVLaserDrawClass::Get -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 85.0,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p46\batch_report.json
