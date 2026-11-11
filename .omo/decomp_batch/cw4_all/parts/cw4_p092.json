@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x63ab00",
+  "name": "UI_Handle_63AB00",
+  "family": "STRUCTURAL",
+  "path": "ret_norm",
+  "size": 86,
+  "part": "p254",
+  "unit": "UI_Handle",
+  "emitted": "UI_Handle_63AB00",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [0xac4cf4]",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 114
+ },
+ {
+  "addr": "0x72f440",
+  "name": "Game::InitializeToolTipColor",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 86,
+  "part": "p254",
+  "unit": "Game",
+  "emitted": "Game::InitializeToolTipColor",
+  "first_diff": {
+   "orig": "+0 test ecx, ecx",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 92
+ },
+ {
+  "addr": "0x7dbc9a",
+  "name": "__set_statfp",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 86,
+  "part": "p254",
+  "unit": "_addr_7D",
+  "emitted": "__set_statfp",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ },
+ {
+  "addr": "0x4fc980",
+  "name": "Network::SendOffer",
+  "family": "FRAME",
+  "path": "ret_norm",
+  "size": 87,
+  "part": "p254",
+  "unit": "Network",
+  "emitted": "Network::SendOffer",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0x1f7]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 94
+ },
+ {
+  "addr": "0x5fdcc0",
+  "name": "globalHelper_0FDCC0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 87,
+  "part": "p254",
+  "unit": "_addr_5F",
+  "emitted": "globalHelper_0FDCC0",
+  "first_diff": {
+   "orig": "+10 push edi",
+   "ours": "+10 mov esi, dword ptr [ecx + edx*4]"
+  },
+  "ours_size": 89
+ },
+ {
+  "addr": "0x7350c0",
+  "name": "ToWideStringChar",
+  "family": "TOKEN_MISMATCH",
+  "path": "regalloc",
+  "size": 88,
+  "part": "p254",
+  "unit": "_addr_73",
+  "emitted": "ToWideStringChar",
+  "first_diff": {
+   "orig": "+12 push esi",
+   "ours": "+12 push ebx"
+  },
+  "ours_size": 88
+ },
+ {
+  "addr": "0x5894d0",
+  "name": "VectorClass::FindSubzoneConnectionIndex",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 89,
+  "part": "p255",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::FindSubzoneConnectionIndex",
+  "first_diff": {
+   "orig": "+25 jle 0x589520",
+   "ours": "+25 jle 0x52"
+  },
+  "ours_size": 91
+ },
+ {
+  "addr": "0x6d1eb0",
+  "name": "IsoCoord::ToPixel",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 89,
+  "part": "p255",
+  "unit": "IsoCoord",
+  "emitted": "IsoCoord::ToPixel",
+  "first_diff": {
+   "orig": "+25 lea eax, [edi + edi*2]",
+   "ours": "+25 lea eax, [ebx + ebx*2]"
+  },
+  "ours_size": 86
+ },
+ {
+  "addr": "0x492740",
+  "name": "sub_492740",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 90,
+  "part": "p255",
+  "unit": "_BlitTransLucent75_G",
+  "emitted": "_BlitTransLucent75_G::sub_492740",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 push ebp"
+  },
+  "ours_size": 159
+ },
+ {
+  "addr": "0x7d8dc8",
+  "name": "__sptype",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 90,
+  "part": "p255",
+  "unit": "_addr_7D",
+  "emitted": "__sptype",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 mov ecx, dword ptr [esp + 8]"
+  },
+  "ours_size": 74
+ },
+ {
+  "addr": "0x5aea10",
+  "name": "TacticalMap::MultiplyByScalar",
+  "family": "FRAME",
+  "path": "frame_sched",
+  "size": 91,
+  "part": "p255",
+  "unit": "TacticalMap",
+  "emitted": "TacticalMap::MultiplyByScalar",
+  "first_diff": {
+   "orig": "+0 fld dword ptr [esp + 4]",
+   "ours": "+0 sub esp, 8"
+  },
+  "ours_size": 157
+ },
+ {
+  "addr": "0x4afaa0",
+  "name": "sub_4AFAA0",
+  "family": "FRAME",
+  "path": "frame_sched",
+  "size": 91,
+  "part": "p255",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4AFAA0",
+  "first_diff": {
+   "orig": "+0 sub esp, 8",
+   "ours": "+0 sub esp, 0xc"
+  },
+  "ours_size": 110
+ },
+ {
+  "addr": "0x42f490",
+  "name": "BaseClass::AddRef",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 92,
+  "part": "p255",
+  "unit": "_VectorClass_VBaseNodeClass",
+  "emitted": "_VectorClass_VBaseNodeClass::AddRef",
+  "first_diff": {
+   "orig": "+16 jne 0x42f4e3",
+   "ours": "+16 jne 0x5b"
+  },
+  "ours_size": 100
+ },
+ {
+  "addr": "0x5c6aa0",
+  "name": "sub_5C6AA0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 92,
+  "part": "p255",
+  "unit": "_addr_5C",
+  "emitted": "sub_5C6AA0",
+  "first_diff": {
+   "orig": "+4 push esi",
+   "ours": "+4 test eax, eax"
+  },
+  "ours_size": 88
+ },
+ {
+  "addr": "0x5e9580",
+  "name": "Hash_Check_5E9580",
+  "family": "WIDTH",
+  "path": "extern_reloc",
+  "size": 92,
+  "part": "p255",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Hash_Check_5E9580",
+  "first_diff": {
+   "orig": "+1 mov ebx, dword ptr [0xac11a0]",
+   "ours": "+1 mov ebx, dword ptr [0]"
+  },
+  "ours_size": 92
+ },
+ {
+  "addr": "0x7d46b9",
+  "name": "_xtoa",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 92,
+  "part": "p256",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::_xtoa",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+  },
+  "ours_size": 118
+ },
+ {
+  "addr": "0x588990",
+  "name": "ScenarioClass::CalcMinShroudLevel",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 93,
+  "part": "p256",
+  "unit": "ScenarioClass",
+  "emitted": "ScenarioClass::CalcMinShroudLevel",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 0x148]",
+   "ours": "+0 cmp dword ptr [ecx + 0x148], 0xd"
+  },
+  "ours_size": 92
+ },
+ {
+  "addr": "0x689820",
+  "name": "sub_689820",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 93,
+  "part": "p256",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_689820",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 140
+ },
+ {
+  "addr": "0x689ac0",
+  "name": "sub_689AC0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 93,
+  "part": "p256",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_689AC0",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 140
+ },
+ {
+  "addr": "0x4a0700",
+  "name": "ConnectionPointClass::EnumConnections",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 95,
+  "part": "p256",
+  "unit": "ConnectionPointClass",
+  "emitted": "ConnectionPointClass::EnumConnections",
+  "first_diff": {
+   "orig": "+4 push esi",
+   "ours": "+4 push ebx"
+  },
+  "ours_size": 104
+ }
+]
