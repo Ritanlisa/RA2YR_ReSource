@@ -1,0 +1,842 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_HIT": 17,
+   "NO_VARIANT": 3
+  },
+  "by_family_total": {
+   "STRUCTURAL": 17,
+   "FRAME": 3
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x7b4100",
+   "name": "UDPInterfaceClass::GetStatistics",
+   "family": "STRUCTURAL",
+   "path": "branch_polarity",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+12 je 0x7b412e",
+      "ours": "+12 je 0x2a"
+     },
+     "ours_size": 50
+    },
+    {
+     "vid": "V_IF_GUARD_EQ",
+     "kind": "if_else",
+     "desc": "guard with (C)==0 spelling",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+12 je 0x7b412e",
+      "ours": "+12 je 0x2a"
+     },
+     "ours_size": 50
+    },
+    {
+     "vid": "V_IF_SWAPNEG",
+     "kind": "if_else",
+     "desc": "if(!C){B} else {A} (block swap + negated cond)",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+12 je 0x7b412e",
+      "ours": "+12 je 0x2a"
+     },
+     "ours_size": 50
+    },
+    {
+     "vid": "V_IF_CMPFLIP",
+     "kind": "if_else",
+     "desc": "guard with complement operator (p0 != this->u32_3F06C || p0 == -1)",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+12 je 0x7b412e",
+      "ours": "+12 jne 0x1b"
+     },
+     "ours_size": 50
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "UDPInterfaceClass",
+   "method": "GetStatistics",
+   "unit": "UDPInterfaceClass",
+   "head": "int UDPInterfaceClass::GetStatistics(int p0)",
+   "baseline_first_diff": {
+    "orig": "+12 je 0x7b412e",
+    "ours": "+12 je 0x2a"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG",
+    "V_IF_CMPFLIP"
+   ]
+  },
+  {
+   "addr": "0x5c6550",
+   "name": "sub_5C6550",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (v5 > 0)",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+5 push edi",
+      "ours": "+5 mov esi, dword ptr [esp + 8]"
+     },
+     "ours_size": 52
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5C6550",
+   "unit": "_addr_5C",
+   "head": "char __fastcall sub_5C6550(int p0, unsigned char * p1, int p2, int p3)",
+   "baseline_first_diff": {
+    "orig": "+5 push edi",
+    "ours": "+5 mov esi, dword ptr [esp + 8]"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x4a48c0",
+   "name": "sub_4A48C0",
+   "family": "STRUCTURAL",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_ELSE_FROM_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(C){A}else{return B}",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+4 mov edx, dword ptr [esp + 8]",
+      "ours": "+4 mov eax, dword ptr [esp + 8]"
+     },
+     "ours_size": 46
+    },
+    {
+     "vid": "V_IF_GUARD_FROM_TAIL",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(!C){return B} A",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+4 mov edx, dword ptr [esp + 8]",
+      "ours": "+4 mov eax, dword ptr [esp + 8]"
+     },
+     "ours_size": 50
+    },
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (v2 >= v3)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+4 mov edx, dword ptr [esp + 8]",
+      "ours": "+4 mov eax, dword ptr [esp + 8]"
+     },
+     "ours_size": 46
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4A48C0",
+   "unit": "_addr_4A",
+   "head": "unsigned char __cdecl sub_4A48C0(unsigned int * p0, unsigned int * p1)",
+   "baseline_first_diff": {
+    "orig": "+4 mov edx, dword ptr [esp + 8]",
+    "ours": "+4 mov eax, dword ptr [esp + 8]"
+   },
+   "variants_generated": [
+    "V_IF_ELSE_FROM_GUARD",
+    "V_IF_GUARD_FROM_TAIL",
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x53ed60",
+   "name": "Network::GetAddress",
+   "family": "STRUCTURAL",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.06,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p086\\t_53ED60\\Network.cpp(29) : error C2440: 'initializing' : cannot convert from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p0"
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "Network",
+   "method": "GetAddress",
+   "unit": "Network",
+   "head": "short Network::GetAddress(int * p0, int p1, unsigned short * p2)",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, dword ptr [esp + 8]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0"
+   ]
+  },
+  {
+   "addr": "0x691500",
+   "name": "SessionClass::GetEntry",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+6 jne 0x691518",
+      "ours": "+6 je 0x27"
+     },
+     "ours_size": 59
+    },
+    {
+     "vid": "V_IF_GUARD_EQ",
+     "kind": "if_else",
+     "desc": "guard with (C)==0 spelling",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+6 jne 0x691518",
+      "ours": "+6 je 0x27"
+     },
+     "ours_size": 59
+    },
+    {
+     "vid": "V_IF_SWAPNEG",
+     "kind": "if_else",
+     "desc": "if(!C){B} else {A} (block swap + negated cond)",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+6 jne 0x691518",
+      "ours": "+6 je 0x27"
+     },
+     "ours_size": 59
+    },
+    {
+     "vid": "V_IF_CMPFLIP",
+     "kind": "if_else",
+     "desc": "guard with complement operator (v2 != -1)",
+     "checker": "clean",
+     "seconds": 0.06,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+6 jne 0x691518",
+      "ours": "+6 je 0x27"
+     },
+     "ours_size": 59
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "SessionClass",
+   "method": "GetEntry",
+   "unit": "SessionClass",
+   "head": "unsigned int * SessionClass::GetEntry(int * p0)",
+   "baseline_first_diff": {
+    "orig": "+12 or ecx, edx",
+    "ours": "+12 mov dword ptr [eax], edx"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG",
+    "V_IF_CMPFLIP"
+   ]
+  },
+  {
+   "addr": "0x765990",
+   "name": "Campaign_WorldDominationTour_16::Read",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (m_8 <= 0)",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+6 jne 0x76599e",
+      "ours": "+6 push edi"
+     },
+     "ours_size": 70
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour",
+   "method": "Read",
+   "unit": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour",
+   "head": "int _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Read(int p0)",
+   "baseline_first_diff": {
+    "orig": "+6 jne 0x76599e",
+    "ours": "+6 push edi"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x766d60",
+   "name": "Conflict_WorldDominationTour_12::Read",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (m_8 <= 0)",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+6 jne 0x766d6e",
+      "ours": "+6 push edi"
+     },
+     "ours_size": 70
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour",
+   "method": "Read",
+   "unit": "_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour",
+   "head": "int _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Read(int p0)",
+   "baseline_first_diff": {
+    "orig": "+6 jne 0x766d6e",
+    "ours": "+6 push edi"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x769f80",
+   "name": "Map_WorldDominationTour_20::Read",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (m_8 <= 0)",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+6 jne 0x769f8e",
+      "ours": "+6 push edi"
+     },
+     "ours_size": 70
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+   "method": "Read",
+   "unit": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+   "head": "int _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Read(int p0)",
+   "baseline_first_diff": {
+    "orig": "+6 jne 0x769f8e",
+    "ours": "+6 push edi"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x76ba10",
+   "name": "VectorClass_rc_ptr_WDTTerritory::GetSize",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (m_8 <= 0)",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+6 jne 0x76ba1e",
+      "ours": "+6 push edi"
+     },
+     "ours_size": 70
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_V_rc_ptr_VWDTTerritory",
+   "method": "GetSize",
+   "unit": "_VectorClass_V_rc_ptr_VWDTTerritory",
+   "head": "int _VectorClass_V_rc_ptr_VWDTTerritory::GetSize(int p0)",
+   "baseline_first_diff": {
+    "orig": "+6 jne 0x76ba1e",
+    "ours": "+6 push edi"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x4e4fc0",
+   "name": "ResetLobbyFactionTable",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (p0 > 0)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+4 mov eax, 0x8b3f38",
+      "ours": "+4 mov eax, dword ptr [0]"
+     },
+     "ours_size": 55
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "ResetLobbyFactionTable",
+   "unit": "_addr_4E",
+   "head": "void __fastcall ResetLobbyFactionTable(int p0)",
+   "baseline_first_diff": {
+    "orig": "+4 mov eax, 0x8b3f38",
+    "ours": "+4 mov eax, dword ptr [0]"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x408930",
+   "name": "AudioSample::SetField",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+7 mov dword ptr [ecx + 0x2c], edx",
+      "ours": "+7 mov dword ptr [ecx + 0xc], eax"
+     },
+     "ours_size": 51
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.04,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+7 mov dword ptr [ecx + 0x2c], edx",
+      "ours": "+7 push esi"
+     },
+     "ours_size": 57
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "AudioSample",
+   "method": "SetField",
+   "unit": "AudioSample",
+   "head": "int AudioSample::SetField()",
+   "baseline_first_diff": {
+    "orig": "+23 pop esi",
+    "ours": "+23 mov dword ptr [ecx + 8], edx"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x4c1e10",
+   "name": "TechnoClass::ResetDamageAccumulator",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push esi",
+      "ours": "+0 mov eax, ecx"
+     },
+     "ours_size": 44
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push esi",
+      "ours": "+0 mov eax, ecx"
+     },
+     "ours_size": 44
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "TechnoClass",
+   "method": "ResetDamageAccumulator",
+   "unit": "TechnoClass",
+   "head": "TechnoClass * TechnoClass::ResetDamageAccumulator()",
+   "baseline_first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 mov eax, ecx"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x6dc540",
+   "name": "VectorClass_UDirtyAreaStruct::Clear",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+7 push esi",
+      "ours": "+7 lea eax, [eax + eax*4]"
+     },
+     "ours_size": 49
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+7 push esi",
+      "ours": "+7 lea eax, [eax + eax*4]"
+     },
+     "ours_size": 49
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_UDirtyAreaStruct",
+   "method": "Clear",
+   "unit": "_VectorClass_UDirtyAreaStruct",
+   "head": "int _VectorClass_UDirtyAreaStruct::Clear(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+7 push esi",
+    "ours": "+7 lea eax, [eax + eax*4]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x7ca610",
+   "name": "_strncmp",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "_strncmp",
+   "unit": "_addr_7C",
+   "head": "int __cdecl _strncmp(const char * p0, const char * p1, size_t p2)",
+   "baseline_first_diff": {
+    "orig": "+0 push ebp",
+    "ours": "+0 mov edx, dword ptr [esp + 0xc]"
+   }
+  },
+  {
+   "addr": "0x7cb4cc",
+   "name": "_wcsncmp",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "_wcsncmp",
+   "unit": "_addr_7C",
+   "head": "short __cdecl _wcsncmp(const wchar_t * p0, const wchar_t * p1, size_t p2)",
+   "baseline_first_diff": {
+    "orig": "+0 push ebp",
+    "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+   }
+  },
+  {
+   "addr": "0x459e80",
+   "name": "BuildingClass::Destroyed",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [esp + 8]",
+      "ours": "+0 push ecx"
+     },
+     "ours_size": 51
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.04,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [esp + 8]",
+      "ours": "+0 push ecx"
+     },
+     "ours_size": 51
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "BuildingClass",
+   "method": "Destroyed",
+   "unit": "BuildingClass",
+   "head": "int BuildingClass::Destroyed()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 8]",
+    "ours": "+0 push ecx"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x465380",
+   "name": "BuildingTypeClass::GetClassIdentifier",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [esp + 8]",
+      "ours": "+0 push ecx"
+     },
+     "ours_size": 51
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [esp + 8]",
+      "ours": "+0 push ecx"
+     },
+     "ours_size": 51
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "BuildingTypeClass",
+   "method": "GetClassIdentifier",
+   "unit": "BuildingTypeClass",
+   "head": "int BuildingTypeClass::GetClassIdentifier()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 8]",
+    "ours": "+0 push ecx"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x4913f0",
+   "name": "ConvertClass::AddRef",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (p2 > 0)",
+     "checker": "clean",
+     "seconds": 0.13,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push esi",
+      "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+     },
+     "ours_size": 61
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_BlitPlainXlat_E",
+   "method": "AddRef",
+   "unit": "_BlitPlainXlat_E",
+   "head": "void _BlitPlainXlat_E::AddRef(int p0, unsigned char * p1, int p2, int p3, int p4, int p5, int p6, int p7)",
+   "baseline_first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x544e30",
+   "name": "AccumulateMIXFileIndex",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "AccumulateMIXFileIndex",
+   "unit": "_addr_54",
+   "head": "int __fastcall AccumulateMIXFileIndex(int p0)",
+   "baseline_first_diff": {
+    "orig": "+0 cmp ecx, 0xffff",
+    "ours": "+0 push ebx"
+   }
+  },
+  {
+   "addr": "0x589290",
+   "name": "Vector8::EraseAt",
+   "family": "STRUCTURAL",
+   "path": "branch_order",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (p0 >= v2)",
+     "checker": "clean",
+     "seconds": 0.15,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+9 jge 0x5892c4",
+      "ours": "+9 jl 0x10"
+     },
+     "ours_size": 59
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "Vector8",
+   "method": "EraseAt",
+   "unit": "Vector8",
+   "head": "char Vector8::EraseAt(int p0)",
+   "baseline_first_diff": {
+    "orig": "+9 jge 0x5892c4",
+    "ours": "+9 jl 0x10"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  }
+ ]
+}
