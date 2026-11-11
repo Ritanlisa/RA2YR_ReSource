@@ -1,0 +1,11 @@
+{
+ "addr": "0x477960",
+ "name": "FilePipe_38::Seek",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x477960",
+ "bytes_hex": "8b4424088b5104568d044003c28bc88b4424088bd0668b316689325e8a4902884a02c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

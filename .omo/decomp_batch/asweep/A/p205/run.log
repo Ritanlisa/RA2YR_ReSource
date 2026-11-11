@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p205\part_00
+=== convert (20 addrs) ===
+[conv] 0x763f30 DynamicVector::updateSuperWeaponTimer -> DynamicVector
+[conv] 0x7642b0 VectorClass::updateSpecialTimer -> VectorClass
+[conv] 0x76a570 _VectorClass_VCentroid_WorldDominationTour::Write -> _VectorClass_VCentroid_WorldDominationTour
+[conv] 0x7bc7f0 _BlitPlain_G::sub_7BC7F0 -> _BlitPlain_G
+[conv] 0x7bc840 _BlitPlain_G::sub_7BC840 -> _BlitPlain_G
+[conv] 0x7d8da4 __set_bexp -> _addr_7D
+[conv] 0x40ffff Math::InitDegToRad -> Math
+[conv] 0x42b1c0 Cell::PosToIndex -> Cell
+[conv] 0x477960 _VectorClass_VRGBClass::Seek -> _VectorClass_VRGBClass
+[conv] 0x4c6140 Menu::Reset -> Menu
+[conv] 0x4ca130 ObjectClass::IsCliffWall -> ObjectClass
+[conv] 0x517310 Int64::Equal -> Int64
+[conv] 0x5a99f0 ObjectClass::sub_5A99F0 -> ObjectClass
+[conv] 0x5e9440 Player::IsObserver -> Player
+[conv] 0x5ef240 Audio_Read -> Audio
+[conv] 0x627de0 _VectorClass_VHSVClass::GetItem -> _VectorClass_VHSVClass
+[conv] 0x65adc0 RadioClass::HasFreeLink -> RadioClass
+[conv] 0x65ae30 Team::AllMembersValid -> Team
+[conv] 0x70d150 FrameTimer::Init25 -> FrameTimer
+[conv] 0x70de40 TechnoClass::GattlingValueRateDown_GattlingRateDownDelay -> TechnoClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DynamicVector            rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_VCentroid_WorldDominationTour rc=0
+[era] _BlitPlain_G             rc=0
+[era] _addr_7D                 rc=2
+[era] Math                     rc=2
+[era] Cell                     rc=0
+[era] _VectorClass_VRGBClass   rc=0
+[era] Menu                     rc=0
+[era] ObjectClass              rc=2
+[era] Int64                    rc=0
+[era] Player                   rc=0
+[era] Audio                    rc=0
+[era] _VectorClass_VHSVClass   rc=0
+[era] RadioClass               rc=0
+[era] Team                     rc=2
+[era] FrameTimer               rc=0
+[era] TechnoClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x763f30   MISMATCH         DynamicVector::updateSuperWeaponTimer
+[diff] 0x7642b0   MISMATCH         VectorClass::updateSpecialTimer
+[diff] 0x76a570   MISMATCH         _VectorClass_VCentroid_WorldDominationTour::Write
+[diff] 0x7bc7f0   MISMATCH         _BlitPlain_G::sub_7BC7F0
+[diff] 0x7bc840   MISMATCH         _BlitPlain_G::sub_7BC840
+[diff] 0x42b1c0   MISMATCH         Cell::PosToIndex
+[diff] 0x477960   MISMATCH         _VectorClass_VRGBClass::Seek
+[diff] 0x4c6140   MISMATCH         Menu::Reset
+[diff] 0x517310   MATCH            Int64::Equal
+[diff] 0x5e9440   MATCH            Player::IsObserver
+[diff] 0x5ef240   MISMATCH         Audio_Read
+[diff] 0x627de0   MISMATCH         _VectorClass_VHSVClass::GetItem
+[diff] 0x65adc0   MISMATCH         RadioClass::HasFreeLink
+[diff] 0x70d150   MISMATCH         FrameTimer::Init25
+[diff] 0x70de40   MISMATCH         TechnoClass::GattlingValueRateDown_GattlingRateDownDelay
+[ledger] 0x763f30 DynamicVector::updateSuperWeaponTimer -> NG (attempt 1)
+[ledger] 0x7642b0 VectorClass::updateSpecialTimer -> NG (attempt 1)
+[ledger] 0x76a570 _VectorClass_VCentroid_WorldDominationTour::Write -> NG (attempt 1)
+[ledger] 0x7bc7f0 _BlitPlain_G::sub_7BC7F0 -> NG (attempt 1)
+[ledger] 0x7bc840 _BlitPlain_G::sub_7BC840 -> NG (attempt 1)
+[ledger] 0x7d8da4 __set_bexp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40ffff Math::InitDegToRad -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42b1c0 Cell::PosToIndex -> NG (attempt 1)
+[ledger] 0x477960 _VectorClass_VRGBClass::Seek -> NG (attempt 1)
+[ledger] 0x4c6140 Menu::Reset -> NG (attempt 1)
+[ledger] 0x4ca130 ObjectClass::IsCliffWall -> COMPILE_FAIL (attempt 1)
+[ledger] 0x517310 Int64::Equal -> OK (attempt 1)
+[ledger] 0x5a99f0 ObjectClass::sub_5A99F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9440 Player::IsObserver -> OK (attempt 1)
+[ledger] 0x5ef240 Audio_Read -> NG (attempt 1)
+[ledger] 0x627de0 _VectorClass_VHSVClass::GetItem -> NG (attempt 1)
+[ledger] 0x65adc0 RadioClass::HasFreeLink -> NG (attempt 1)
+[ledger] 0x65ae30 Team::AllMembersValid -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70d150 FrameTimer::Init25 -> NG (attempt 1)
+[ledger] 0x70de40 TechnoClass::GattlingValueRateDown_GattlingRateDownDelay -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 5,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "branch_order": 3,
+  "cc_mismatch": 2,
+  "codegen_shape": 6,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 13.3,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p205\batch_report.json

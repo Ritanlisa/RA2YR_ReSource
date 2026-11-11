@@ -1,0 +1,11 @@
+{
+ "addr": "0x70DE40",
+ "name": "TechnoClass::GattlingValueRateDown_GattlingRateDownDelay",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70DE40",
+ "bytes_hex": "8b4424048b91440100002bd0899144010000780485c0750ac7814401000000000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

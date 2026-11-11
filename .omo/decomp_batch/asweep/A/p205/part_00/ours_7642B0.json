@@ -1,0 +1,8 @@
+{
+ "symbol": "?updateSpecialTimer@VectorClass@@QAEIH@Z",
+ "sym_key": "VectorClass::updateSpecialTimer",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8a410c84c074190fbf41048b4c24042bc8b8abaaaaaaf7e18bc2c1e803c2040033c0c20400",
+ "relocs": []
+}

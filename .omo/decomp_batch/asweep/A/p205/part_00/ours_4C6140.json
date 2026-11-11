@@ -1,0 +1,8 @@
+{
+ "symbol": "?Reset@Menu@@QAEHXZ",
+ "sym_key": "Menu::Reset",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "568bd15733f6b90c00000033c08bfa897234897238c7423c0100000066897240f3ab668972305f8bc25ec3",
+ "relocs": []
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?PosToIndex@Cell@@QAEHXZ",
+ "sym_key": "Cell::PosToIndex",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "668b01568bc88b350000000066c1f9100fbfd10fbfc88bc12bca2bc68d4c31ff8d4410ff0fafc6d1e903c15ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_Cell_PositionLUT@@3PADA",
+   "sym_key": "g_Cell_PositionLUT"
+  }
+ ]
+}

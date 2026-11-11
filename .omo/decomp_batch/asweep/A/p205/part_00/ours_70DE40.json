@@ -1,0 +1,8 @@
+{
+ "symbol": "?GattlingValueRateDown_GattlingRateDownDelay@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::GattlingValueRateDown_GattlingRateDownDelay",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b91440100008b4424042bd0899144010000780485c0750ac7814401000000000000c20400",
+ "relocs": []
+}

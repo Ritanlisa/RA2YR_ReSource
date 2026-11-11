@@ -1,0 +1,33 @@
+{
+ "symbol": "?Init25@FrameTimer@@QAEHXZ",
+ "sym_key": "FrameTimer::Init25",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "51a100000000c7050000000019000000a3000000008b442400a30000000059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA88@@3IA",
+   "sym_key": "DataGlobal_B0EA88"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA80@@3IA",
+   "sym_key": "DataGlobal_B0EA80"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?dword_B0EA84@@3IA",
+   "sym_key": "dword_B0EA84"
+  }
+ ]
+}

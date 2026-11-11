@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C6140",
+ "name": "Menu::Reset",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C6140",
+ "bytes_hex": "8bd15733c0b90c0000008bfa894234894238c7423c0100000066894240f3ab66ab8bc25fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

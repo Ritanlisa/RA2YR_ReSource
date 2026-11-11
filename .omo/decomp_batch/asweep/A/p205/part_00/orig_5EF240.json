@@ -1,0 +1,11 @@
+{
+ "addr": "0x5EF240",
+ "name": "Audio_Read",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5EF240",
+ "bytes_hex": "555733c033ff85d28be97e16568bf033c98a0c2fc1ee1f03f1473bfa8d04467cec5e5f5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

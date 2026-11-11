@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasFreeLink@RadioClass@@QAEDXZ",
+ "sym_key": "RadioClass::HasFreeLink",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "568bb1e800000033d285f67f0432c05ec38b81e4000000833800740f423bd67dec8b480483c00485c975f1b0015ec3",
+ "relocs": []
+}
