@@ -1,0 +1,11 @@
+{
+ "addr": "0x547110",
+ "name": "ResetAllTechnoField776",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x547110",
+ "bytes_hex": "a138eda80033d233c93bc27e26a12ceda8008b04883bc274108990080300008b80bc0200003bc275f0a138eda800413bc87cdac3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

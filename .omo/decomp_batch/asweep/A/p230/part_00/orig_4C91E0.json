@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C91E0",
+ "name": "FrameSnapshot::InitMax",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C91E0",
+ "bytes_hex": "8bc133c9668908668948048b1584eda800894810895008668948148b4c240483f97f7c05b97f00000033d28af166895014c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

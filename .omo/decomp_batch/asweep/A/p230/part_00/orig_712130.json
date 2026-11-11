@@ -1,0 +1,11 @@
+{
+ "addr": "0x712130",
+ "name": "BuildingClass::processCapture",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x712130",
+ "bytes_hex": "8b919808000085d274278b89b4080000b8010000003bd1741a568bb29c0000003bf05e7f0e85c9740839819c0000007f0232c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

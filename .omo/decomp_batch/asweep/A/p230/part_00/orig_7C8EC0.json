@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8EC0",
+ "name": "__allmul",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8EC0",
+ "bytes_hex": "8b4424088b4c24100bc88b4c240c75098b442404f7e1c2100053f7e18bd88b442408f764241403d88b442408f7e103d35bc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p230\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b29c0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::GetSize -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b4440 _VectorClass_PAE::GetSize -> _VectorClass_PAE
+[conv] 0x7d3679 _CPtoLCID -> _addr_7D
+[conv] 0x4038e0 ObjectClass::sub_4038E0 -> ObjectClass
+[conv] 0x4060f0 SetAudioSource -> _addr_40
+[conv] 0x487ee0 Bounds::Subtract -> Bounds
+[conv] 0x4a67e0 sub_4A67E0 -> _addr_4A
+[conv] 0x4c91e0 FrameSnapshot::InitMax -> FrameSnapshot
+[conv] 0x547110 ResetAllTechnoField776 -> _addr_54
+[conv] 0x6dd2c0 TActionClass::ExecuteAction -> TActionClass
+[conv] 0x70e300 TechnoClass::ResetTimer -> TechnoClass
+[conv] 0x712130 BuildingClass::processCapture -> BuildingClass
+[conv] 0x727010 HouseClass::FindType2728 -> HouseClass
+[conv] 0x727050 TriggerTypeClass::HasLocalSetOrClearedEvent -> TriggerTypeClass
+[conv] 0x7c8ec0 __allmul -> _addr_7C
+[conv] 0x40a900 sub_40A900 -> _addr_40
+[conv] 0x41bf40 TechnoClass::HasRemaining -> TechnoClass
+[conv] 0x42d9d0 _VectorClass_G::GetSize -> _VectorClass_G
+[conv] 0x4afb40 DriveLocomotionClass::InitMovementState -> DriveLocomotionClass
+[conv] 0x5ac230 MapSeed::IsCellInBounds -> MapSeed
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=2
+[era] _VectorClass_PAE         rc=2
+[era] _addr_7D                 rc=0
+[era] ObjectClass              rc=0
+[era] _addr_40                 rc=2
+[era] Bounds                   rc=0
+[era] _addr_4A                 rc=0
+[era] FrameSnapshot            rc=0
+[era] _addr_54                 rc=0
+[era] TActionClass             rc=0
+[era] TechnoClass              rc=0
+[era] BuildingClass            rc=0
+[era] HouseClass               rc=0
+[era] TriggerTypeClass         rc=0
+[era] _addr_7C                 rc=0
+[era] _VectorClass_G           rc=2
+[era] DriveLocomotionClass     rc=0
+[era] MapSeed                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x7d3679   MISMATCH         _CPtoLCID
+[diff] 0x4038e0   MISMATCH         ObjectClass::sub_4038E0
+[diff] 0x487ee0   MISMATCH         Bounds::Subtract
+[diff] 0x4a67e0   MISMATCH         sub_4A67E0
+[diff] 0x4c91e0   MISMATCH         FrameSnapshot::InitMax
+[diff] 0x547110   MISMATCH         ResetAllTechnoField776
+[diff] 0x6dd2c0   MISMATCH         TActionClass::ExecuteAction
+[diff] 0x70e300   MISMATCH         TechnoClass::ResetTimer
+[diff] 0x41bf40   MISMATCH         TechnoClass::HasRemaining
+[diff] 0x712130   MATCH            BuildingClass::processCapture
+[diff] 0x727010   MISMATCH         HouseClass::FindType2728
+[diff] 0x727050   MISMATCH         TriggerTypeClass::HasLocalSetOrClearedEvent
+[diff] 0x7c8ec0   MISMATCH         __allmul
+[diff] 0x4afb40   MISMATCH         DriveLocomotionClass::InitMovementState
+[ledger] 0x7b29c0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4440 _VectorClass_PAE::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d3679 _CPtoLCID -> NG (attempt 1)
+[ledger] 0x4038e0 ObjectClass::sub_4038E0 -> NG (attempt 1)
+[ledger] 0x4060f0 SetAudioSource -> COMPILE_FAIL (attempt 1)
+[ledger] 0x487ee0 Bounds::Subtract -> NG (attempt 1)
+[ledger] 0x4a67e0 sub_4A67E0 -> NG (attempt 1)
+[ledger] 0x4c91e0 FrameSnapshot::InitMax -> NG (attempt 1)
+[ledger] 0x547110 ResetAllTechnoField776 -> NG (attempt 1)
+[ledger] 0x6dd2c0 TActionClass::ExecuteAction -> NG (attempt 1)
+[ledger] 0x70e300 TechnoClass::ResetTimer -> NG (attempt 1)
+[ledger] 0x712130 BuildingClass::processCapture -> OK (attempt 1)
+[ledger] 0x727010 HouseClass::FindType2728 -> NG (attempt 1)
+[ledger] 0x727050 TriggerTypeClass::HasLocalSetOrClearedEvent -> NG (attempt 1)
+[ledger] 0x7c8ec0 __allmul -> NG (attempt 1)
+[ledger] 0x40a900 sub_40A900 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41bf40 TechnoClass::HasRemaining -> NG (attempt 1)
+[ledger] 0x42d9d0 _VectorClass_G::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4afb40 DriveLocomotionClass::InitMovementState -> NG (attempt 1)
+[ledger] 0x5ac230 MapSeed::IsCellInBounds -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 13,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "eval_order": 1,
+  "regalloc": 4,
+  "cc_mismatch": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p230\batch_report.json

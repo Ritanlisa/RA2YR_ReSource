@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindType2728@HouseClass@@QAEDH@Z",
+ "sym_key": "HouseClass::FindType2728",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "8b81ac00000085c0741d8b5424048b482c83f91b740583f91c7505395034740c8b402885c075e732c0c20400b001c20400",
+ "relocs": []
+}

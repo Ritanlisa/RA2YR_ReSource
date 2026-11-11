@@ -1,0 +1,21 @@
+{
+ "symbol": "?_CPtoLCID@@YAHH@Z",
+ "sym_key": "Unnamed::_CPtoLCID",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "8b442404055cfcffff83f812772733c98a8800000000ff248d00000000b811040000c3b804080000c3b812040000c3b804040000c333c0c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "$L1800",
+   "sym_key": "$L1800"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "$L1801",
+   "sym_key": "$L1801"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x487EE0",
+ "name": "Bounds::Subtract",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487EE0",
+ "bytes_hex": "8b51048b0153568b742410578b7e048b1e8b71088b490c2bd78b7c24102bc38bdf89038bc75f8953048973085e894b0c5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

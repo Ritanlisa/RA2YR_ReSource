@@ -1,0 +1,15 @@
+{
+ "symbol": "?__allmul@@YA_K_J0@Z",
+ "sym_key": "Unnamed::__allmul",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c24088bd00bd17412508b44241050518b4c241051e800000000c38b442404f764240cc3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  }
+ ]
+}

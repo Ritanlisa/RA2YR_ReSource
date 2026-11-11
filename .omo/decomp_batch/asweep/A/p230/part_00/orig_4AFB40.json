@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AFB40",
+ "name": "JumpjetLocomotionClass::InitMovementState",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AFB40",
+ "bytes_hex": "8b4424048b4c240883ec1033d289481c8948188b0d84eda8005633f683c02089088b4c240889480489500889700c5e83c410c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

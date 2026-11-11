@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D3679",
+ "name": "_CPtoLCID",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D3679",
+ "bytes_hex": "8b4424042da4030000742283e804741783e80d740c48740333c0c3b804040000c3b812040000c3b804080000c3b811040000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

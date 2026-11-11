@@ -1,0 +1,15 @@
+{
+ "symbol": "?HasRemaining@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::HasRemaining",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8b918c0100008b819801000083faff741a8b0d00000000568bf12bf23bf05e73112bc103c285c00f9fc0c385c07e03b001c332c0c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

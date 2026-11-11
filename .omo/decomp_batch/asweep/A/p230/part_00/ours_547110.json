@@ -1,0 +1,27 @@
+{
+ "symbol": "?ResetAllTechnoField776@@YAHXZ",
+ "sym_key": "Unnamed::ResetAllTechnoField776",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "a1000000005633f633d23bc676278b0d000000008b0c913bce741589b1080300008b89bc0200003bce75f0a100000000423bd072d95ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_TechnoClassCount@@3IA",
+   "sym_key": "g_TechnoClassCount"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_TechnoClassCount@@3IA",
+   "sym_key": "g_TechnoClassCount"
+  }
+ ]
+}

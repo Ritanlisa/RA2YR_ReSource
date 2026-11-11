@@ -1,0 +1,15 @@
+{
+ "symbol": "?ResetTimer@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ResetTimer",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "51a1000000008b5424008981a80100008b442400c781c0010000000000008981b00100008991b401000059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}
