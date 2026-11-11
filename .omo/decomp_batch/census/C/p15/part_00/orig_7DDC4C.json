@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DDC4C",
+ "name": "_write_multi_char_1",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DDC4C",
+ "bytes_hex": "56578b7c24108bc74f85c07e1c8b74241456ff742410e8cbffffff833eff595974078bc74f85c07fe85f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,86 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d3920 MPBattleClass::validateStartPosition -> MPBattleClass
+[conv] 0x7ddc4c unknown::_write_multi_char_1 -> unknown
+[conv] 0x5c21a0 MPCooperative::CheckReady -> MPCooperative
+[conv] 0x679f70 VectorClass::Dtor -> VectorClass
+[conv] 0x491330 _BlitTransXlat_G::sub_491330 -> _BlitTransXlat_G
+[conv] 0x4916b0 _BlitTransRemapDest_E::sub_4916B0 -> _BlitTransRemapDest_E
+[conv] 0x4926b0 _BlitTransDarken_G::sub_4926B0 -> _BlitTransDarken_G
+[conv] 0x4929e0 _BlitTransLucent25_G::sub_4929E0 -> _BlitTransLucent25_G
+[conv] 0x492db0 _BlitTransDarkenZRead_G::sub_492DB0 -> _BlitTransDarkenZRead_G
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPBattleClass            rc=0
+[era] unknown                  rc=0
+[era] MPCooperative            rc=2
+[era] VectorClass              rc=2
+[era] _BlitTransXlat_G         rc=0
+[era] _BlitTransRemapDest_E    rc=0
+[era] _BlitTransDarken_G       rc=0
+[era] _BlitTransLucent25_G     rc=0
+[era] _BlitTransDarkenZRead_G  rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d3920   MISMATCH         MPBattleClass::validateStartPosition
+[diff] 0x7ddc4c   MISMATCH         unknown::_write_multi_char_1
+[diff] 0x491330   MISMATCH         _BlitTransXlat_G::sub_491330
+[diff] 0x4916b0   MISMATCH         _BlitTransRemapDest_E::sub_4916B0
+[diff] 0x4926b0   MISMATCH         _BlitTransDarken_G::sub_4926B0
+[diff] 0x4929e0   MISMATCH         _BlitTransLucent25_G::sub_4929E0
+[diff] 0x492db0   MISMATCH         _BlitTransDarkenZRead_G::sub_492DB0
+[ledger] 0x5d3920 MPBattleClass::validateStartPosition -> NG (attempt 1)
+[ledger] 0x5fa210 0x5fa210 -> PENDING (attempt 1)
+[ledger] 0x640630 0x640630 -> PENDING (attempt 1)
+[ledger] 0x661df0 0x661df0 -> PENDING (attempt 1)
+[ledger] 0x69eb80 0x69eb80 -> PENDING (attempt 1)
+[ledger] 0x6c6a00 0x6c6a00 -> PENDING (attempt 1)
+[ledger] 0x6e7db0 0x6e7db0 -> PENDING (attempt 1)
+[ledger] 0x721570 0x721570 -> PENDING (attempt 1)
+[ledger] 0x7352c0 0x7352c0 -> PENDING (attempt 1)
+[ledger] 0x75e880 0x75e880 -> PENDING (attempt 1)
+[ledger] 0x7701c0 0x7701c0 -> PENDING (attempt 1)
+[ledger] 0x7ddc4c _write_multi_char_1 -> NG (attempt 1)
+[ledger] 0x5c21a0 MPCooperative::CheckReady -> COMPILE_FAIL (attempt 1)
+[ledger] 0x679f70 VectorClass::Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x781cf0 0x781cf0 -> PENDING (attempt 1)
+[ledger] 0x491330 sub_491330 -> NG (attempt 1)
+[ledger] 0x4916b0 sub_4916B0 -> NG (attempt 1)
+[ledger] 0x4926b0 sub_4926B0 -> NG (attempt 1)
+[ledger] 0x4929e0 sub_4929E0 -> NG (attempt 1)
+[ledger] 0x492db0 sub_492DB0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 1999,
+ "verdicts": {
+  "MISMATCH": 561,
+  "MATCH": 512,
+  "COMPILE_FAIL": 481,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 433,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 186,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 64,
+  "branch_polarity": 34,
+  "regalloc": 92,
+  "branch_order": 67,
+  "width_mismatch": 7,
+  "extern_reloc": 16,
+  "cc_mismatch": 15,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 47.7,
+ "match_rate_of_total_pct": 25.6,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p15\batch_report.json
