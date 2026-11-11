@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p184\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ac4f0 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::PointerToIndex -> _DynamicVectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ac5d0 DynamicVector::validateCellCoord -> DynamicVector
+[conv] 0x5ac620 _DynamicVectorClass_N::GetItemIndex -> _DynamicVectorClass_N
+[conv] 0x5ac800 _VectorClass_PAVMapRegionClass::GetCapacity -> _VectorClass_PAVMapRegionClass
+[conv] 0x5aceb0 _VectorClass_V_TRect_H::Run -> _VectorClass_V_TRect_H
+[conv] 0x5ad270 _VectorClass_N::GetCapacity -> _VectorClass_N
+[conv] 0x5c0980 MainWindowProc_Helper -> MainWindowProc
+[conv] 0x5c0aa0 DynamicVector::ProbeCalling -> DynamicVector
+[conv] 0x5c5040 DynamicVector::syncPlayers -> DynamicVector
+[conv] 0x5c50a0 _DynamicVectorClass_PAUNodeNameType::Get -> _DynamicVectorClass_PAUNodeNameType
+[conv] 0x5c5100 DynamicVector::updateGameClock -> DynamicVector
+[conv] 0x5c5290 VectorClass::handleDisconnect -> VectorClass
+[conv] 0x5c54f0 VectorClass::evaluateAIStrategy -> VectorClass
+[conv] 0x5c5750 _VectorClass_PAVCoopCampaignClass::Write -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5d05d0 _DynamicVectorClass_VPoint2D::GetCount_8B -> _DynamicVectorClass_VPoint2D
+[conv] 0x5d0640 _DynamicVectorClass_PAVMSTextEntry::GetCount -> _DynamicVectorClass_PAVMSTextEntry
+[conv] 0x5d06a0 _DynamicVectorClass_PAVMapSelection::GetCount_0 -> _DynamicVectorClass_PAVMapSelection
+[conv] 0x5d0760 _DynamicVectorClass_PAVMSAnimEntry::GetCount -> _DynamicVectorClass_PAVMSAnimEntry
+[conv] 0x5d07c0 _DynamicVectorClass_PAVMSSfxEntry::GetCount_0 -> _DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x5d09a0 _VectorClass_VPoint2D::GetCapacity -> _VectorClass_VPoint2D
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_N    rc=0
+[era] _VectorClass_PAVMapRegionClass rc=0
+[era] _VectorClass_V_TRect_H   rc=0
+[era] _VectorClass_N           rc=0
+[era] MainWindowProc           rc=0
+[era] _DynamicVectorClass_PAUNodeNameType rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVCoopCampaignClass rc=0
+[era] _DynamicVectorClass_VPoint2D rc=0
+[era] _DynamicVectorClass_PAVMSTextEntry rc=0
+[era] _DynamicVectorClass_PAVMapSelection rc=0
+[era] _DynamicVectorClass_PAVMSAnimEntry rc=0
+[era] _DynamicVectorClass_PAVMSSfxEntry rc=0
+[era] _VectorClass_VPoint2D    rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ac4f0   MISMATCH         _DynamicVectorClass_PAU_WIN32_FIND_DATAA::PointerToIndex
+[diff] 0x5ac5d0   MISMATCH         DynamicVector::validateCellCoord
+[diff] 0x5c0aa0   MISMATCH         DynamicVector::ProbeCalling
+[diff] 0x5c5040   MISMATCH         DynamicVector::syncPlayers
+[diff] 0x5c5100   MISMATCH         DynamicVector::updateGameClock
+[diff] 0x5ac620   MISMATCH         _DynamicVectorClass_N::GetItemIndex
+[diff] 0x5ac800   MISMATCH         _VectorClass_PAVMapRegionClass::GetCapacity
+[diff] 0x5aceb0   MISMATCH         _VectorClass_V_TRect_H::Run
+[diff] 0x5ad270   MISMATCH         _VectorClass_N::GetCapacity
+[diff] 0x5c0980   MATCH            MainWindowProc_Helper
+[diff] 0x5c50a0   MISMATCH         _DynamicVectorClass_PAUNodeNameType::Get
+[diff] 0x5c5290   MISMATCH         VectorClass::handleDisconnect
+[diff] 0x5c54f0   MISMATCH         VectorClass::evaluateAIStrategy
+[diff] 0x5c5750   MISMATCH         _VectorClass_PAVCoopCampaignClass::Write
+[diff] 0x5d05d0   MISMATCH         _DynamicVectorClass_VPoint2D::GetCount_8B
+[diff] 0x5d0640   MISMATCH         _DynamicVectorClass_PAVMSTextEntry::GetCount
+[diff] 0x5d06a0   MISMATCH         _DynamicVectorClass_PAVMapSelection::GetCount_0
+[diff] 0x5d0760   MISMATCH         _DynamicVectorClass_PAVMSAnimEntry::GetCount
+[diff] 0x5d07c0   MISMATCH         _DynamicVectorClass_PAVMSSfxEntry::GetCount_0
+[diff] 0x5d09a0   MISMATCH         _VectorClass_VPoint2D::GetCapacity
+[ledger] 0x5ac4f0 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::PointerToIndex -> NG (attempt 1)
+[ledger] 0x5ac5d0 DynamicVector::validateCellCoord -> NG (attempt 1)
+[ledger] 0x5ac620 _DynamicVectorClass_N::GetItemIndex -> NG (attempt 1)
+[ledger] 0x5ac800 _VectorClass_PAVMapRegionClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x5aceb0 _VectorClass_V_TRect_H::Run -> NG (attempt 1)
+[ledger] 0x5ad270 _VectorClass_N::GetCapacity -> NG (attempt 1)
+[ledger] 0x5c0980 MainWindowProc_Helper -> OK (attempt 1)
+[ledger] 0x5c0aa0 DynamicVector::ProbeCalling -> NG (attempt 1)
+[ledger] 0x5c5040 DynamicVector::syncPlayers -> NG (attempt 1)
+[ledger] 0x5c50a0 _DynamicVectorClass_PAUNodeNameType::Get -> NG (attempt 1)
+[ledger] 0x5c5100 DynamicVector::updateGameClock -> NG (attempt 1)
+[ledger] 0x5c5290 VectorClass::handleDisconnect -> NG (attempt 1)
+[ledger] 0x5c54f0 VectorClass::evaluateAIStrategy -> NG (attempt 1)
+[ledger] 0x5c5750 _VectorClass_PAVCoopCampaignClass::Write -> NG (attempt 1)
+[ledger] 0x5d05d0 _DynamicVectorClass_VPoint2D::GetCount_8B -> NG (attempt 1)
+[ledger] 0x5d0640 _DynamicVectorClass_PAVMSTextEntry::GetCount -> NG (attempt 1)
+[ledger] 0x5d06a0 _DynamicVectorClass_PAVMapSelection::GetCount_0 -> NG (attempt 1)
+[ledger] 0x5d0760 _DynamicVectorClass_PAVMSAnimEntry::GetCount -> NG (attempt 1)
+[ledger] 0x5d07c0 _DynamicVectorClass_PAVMSSfxEntry::GetCount_0 -> NG (attempt 1)
+[ledger] 0x5d09a0 _VectorClass_VPoint2D::GetCapacity -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_order": 15,
+  "ret_norm": 4
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p184\batch_report.json

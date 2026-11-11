@@ -1,0 +1,21 @@
+{
+ "symbol": "?MainWindowProc_Helper@@YAHXZ",
+ "sym_key": "Unnamed::MainWindowProc_Helper",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0750ca10000000085c0750333c0c3b801000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_BigIntPool@@3IA",
+   "sym_key": "g_BigIntPool"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF3F8@@3IA",
+   "sym_key": "DataGlobal_ABF3F8"
+  }
+ ]
+}
