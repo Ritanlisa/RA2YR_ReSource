@@ -1,0 +1,11 @@
+{
+ "addr": "0x600680",
+ "name": "ComboBoxOwnerDraw::MatchDimensions",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x600680",
+ "bytes_hex": "8b442404568b71048b50043bd65e750d8b008b113bc27505b001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

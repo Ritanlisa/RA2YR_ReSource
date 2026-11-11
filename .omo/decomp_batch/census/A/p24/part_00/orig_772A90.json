@@ -1,0 +1,11 @@
+{
+ "addr": "0x772A90",
+ "name": "Building::GetRenderType",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x772A90",
+ "bytes_hex": "8b89a000000033c08a91a402000084d27405b8040000008a91a502000084d274020cb8c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

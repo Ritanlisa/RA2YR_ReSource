@@ -1,0 +1,371 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 13,
+   "COMPILE_FAIL": 1,
+   "NO_CLS": 3,
+   "MATCH": 3
+  },
+  "pathologies": {
+   "codegen_shape": 5,
+   "const_fold": 1,
+   "branch_polarity": 1,
+   "branch_order": 6
+  },
+  "match_rate_of_decided_pct": 18.8,
+  "match_rate_of_total_pct": 15.0
+ },
+ "results": [
+  {
+   "addr": "0x6c3910",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_InfantryClass::GetSize",
+   "emitted": "_TClassFactory_VInfantryClass::GetSize",
+   "unit": "_TClassFactory_VInfantryClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33
+  },
+  {
+   "addr": "0x6c4810",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_WalkLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VWalkLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VWalkLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33
+  },
+  {
+   "addr": "0x6c5710",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_ParticleClass::GetSize",
+   "emitted": "_TClassFactory_VParticleClass::GetSize",
+   "unit": "_TClassFactory_VParticleClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33
+  },
+  {
+   "addr": "0x6f1870",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 28B",
+   "first_diff": {
+    "orig": "+6 cmp eax, -2",
+    "ours": "+6 cmp eax, -1"
+   },
+   "pathology": "const_fold",
+   "name": "TeamTypeClass::GetGroup",
+   "emitted": "TeamTypeClass::GetGroup",
+   "unit": "TeamTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/0",
+   "rule_violations": 5,
+   "orig_size": 33,
+   "ours_size": 28
+  },
+  {
+   "addr": "0x7d8ef5",
+   "batch": "censusA",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p24\\part_00\\unknown.cpp(9) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p24\\part_00\\unknown.cpp(10) : er",
+   "first_diff": null,
+   "pathology": null,
+   "name": "__copysign",
+   "emitted": "unknown::__copysign",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/2",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x4d2ed0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4d2ed0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x600680",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 34B ours 37B",
+   "first_diff": {
+    "orig": "+14 jne 0x60069d",
+    "ours": "+14 jne 0x20"
+   },
+   "pathology": "branch_polarity",
+   "name": "ComboBoxOwnerDraw::MatchDimensions",
+   "emitted": "ComboBoxOwnerDraw::MatchDimensions",
+   "unit": "ComboBoxOwnerDraw",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 34,
+   "ours_size": 37
+  },
+  {
+   "addr": "0x710860",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x710860",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4598a0",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "35B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "BuildingClass::CanAbsorbUnits",
+   "emitted": "InfantryClass::CanAbsorbUnits",
+   "unit": "InfantryClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 2,
+   "orig_size": 35,
+   "ours_size": 35
+  },
+  {
+   "addr": "0x627db0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 35B ours 35B",
+   "first_diff": {
+    "orig": "+5 jne 0x627dbc",
+    "ours": "+5 je 0x1e"
+   },
+   "pathology": "branch_order",
+   "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItemIndex",
+   "emitted": "_DynamicVectorClass_VHSVClass::GetItemIndex",
+   "unit": "_DynamicVectorClass_VHSVClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 35,
+   "ours_size": 35
+  },
+  {
+   "addr": "0x7813b0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7813b0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x465fd0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 36B ours 36B",
+   "first_diff": {
+    "orig": "+5 jne 0x465fdc",
+    "ours": "+5 je 0x1f"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_TPoint3D_int::GetCapacity",
+   "emitted": "_VectorClass_V_TPoint3D_H::GetCapacity",
+   "unit": "_VectorClass_V_TPoint3D_H",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 36,
+   "ours_size": 36
+  },
+  {
+   "addr": "0x589a30",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 36B ours 36B",
+   "first_diff": {
+    "orig": "+5 jne 0x589a3c",
+    "ours": "+5 je 0x1f"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_USubzoneTrackingStruct::GetCapacity",
+   "emitted": "_VectorClass_USubzoneTrackingStruct::GetCapacity",
+   "unit": "_VectorClass_USubzoneTrackingStruct",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 36,
+   "ours_size": 36
+  },
+  {
+   "addr": "0x628ad0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 36B ours 36B",
+   "first_diff": {
+    "orig": "+5 jne 0x628adc",
+    "ours": "+5 je 0x1f"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_ColorScheme::GetItemIndex_0",
+   "emitted": "_VectorClass_U_HashObject_VHashString_PAVSchemeNode::GetItemIndex_0",
+   "unit": "_VectorClass_U_HashObject_VHashString_PAVSchemeNode",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 36,
+   "ours_size": 36
+  },
+  {
+   "addr": "0x6dc510",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 36B ours 36B",
+   "first_diff": {
+    "orig": "+5 jne 0x6dc51c",
+    "ours": "+5 je 0x1f"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_UDirtyAreaStruct::GetItemIndex",
+   "emitted": "VectorClass_UDirtyAreaStruct::GetItemIndex",
+   "unit": "VectorClass_UDirtyAreaStruct",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 36,
+   "ours_size": 36
+  },
+  {
+   "addr": "0x772a90",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "36B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Building::GetRenderType",
+   "emitted": "Building::GetRenderType",
+   "unit": "Building",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 36,
+   "ours_size": 36
+  },
+  {
+   "addr": "0x540d10",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "37B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "TacticalClass::SetCameraPosition",
+   "emitted": "IPXManagerClass::SetCameraPosition",
+   "unit": "IPXManagerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 8,
+   "orig_size": 37,
+   "ours_size": 37
+  },
+  {
+   "addr": "0x7490d0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 37B ours 39B",
+   "first_diff": {
+    "orig": "+10 jle 0x7490f4",
+    "ours": "+10 jle 0x26"
+   },
+   "pathology": "branch_order",
+   "name": "Array::Zero",
+   "emitted": "Array::Zero",
+   "unit": "Array",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 37,
+   "ours_size": 39
+  },
+  {
+   "addr": "0x40c0e0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "MoveFeedback::FindMoveItem",
+   "emitted": "_DynamicVectorClass_PBVCommandClass::FindMoveItem",
+   "unit": "_DynamicVectorClass_PBVCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 1,
+   "orig_size": 38,
+   "ours_size": 54
+  },
+  {
+   "addr": "0x420600",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "AITriggerTypeClass_40::FindItem",
+   "emitted": "_DynamicVectorClass_PAVAlphaLightingRemapClass::FindItem",
+   "unit": "_DynamicVectorClass_PAVAlphaLightingRemapClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 1,
+   "orig_size": 38,
+   "ours_size": 54
+  }
+ ]
+}

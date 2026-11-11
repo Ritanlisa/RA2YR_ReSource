@@ -335,6 +335,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x40c0e0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "MoveFeedback::FindMoveItem",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x40cc00": {
   "attempts": 9,
   "first_diff": "+2 jmp dword ptr [eax + 0xc]",
@@ -816,6 +823,13 @@
   "first_diff": "+5 jne 0x42053c",
   "name": "AITriggerTypeClass_40::Write",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x420600": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "AITriggerTypeClass_40::FindItem",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4208c0": {
@@ -1336,6 +1350,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4598a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::CanAbsorbUnits",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x459d90": {
   "attempts": 1,
   "first_diff": "+0 mov al, 1",
@@ -1425,6 +1446,13 @@
   "first_diff": "+0 push ecx",
   "name": "VectorClass_TPoint3D_int::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
+ "0x465fd0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x465fdc",
+  "name": "VectorClass_TPoint3D_int::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
  "0x466280": {
@@ -3394,6 +3422,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4d2ed0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4d2ed0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4d2fc0": {
   "attempts": 1,
   "first_diff": null,
@@ -4745,6 +4780,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x540d10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::SetCameraPosition",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x540dc0": {
   "attempts": 9,
   "first_diff": null,
@@ -5394,6 +5436,13 @@
   "first_diff": "+12 push edi",
   "name": "VectorClass::AllocateCellDataBuffer",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x589a30": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x589a3c",
+  "name": "VectorClass_USubzoneTrackingStruct::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
  "0x58a2a0": {
@@ -6544,6 +6593,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x600680": {
+  "attempts": 1,
+  "first_diff": "+14 jne 0x60069d",
+  "name": "ComboBoxOwnerDraw::MatchDimensions",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x602ae0": {
   "attempts": 5,
   "first_diff": null,
@@ -6642,10 +6698,24 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x627db0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x627dbc",
+  "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x627f70": {
   "attempts": 1,
   "first_diff": "+5 jne 0x627f7c",
   "name": "VectorClass_ptr_ColorScheme::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x628ad0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x628adc",
+  "name": "VectorClass_ptr_ColorScheme::GetItemIndex_0",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
@@ -8063,6 +8133,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c3910": {
+  "attempts": 1,
+  "first_diff": "+4 test eax, eax",
+  "name": "TClassFactory_InfantryClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x6c3c40": {
   "attempts": 1,
   "first_diff": null,
@@ -8070,12 +8147,26 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c4810": {
+  "attempts": 1,
+  "first_diff": "+4 test eax, eax",
+  "name": "TClassFactory_WalkLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x6c49c0": {
   "attempts": 1,
   "first_diff": null,
   "name": "WinMain_Helper_6C49C0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c5710": {
+  "attempts": 1,
+  "first_diff": "+4 test eax, eax",
+  "name": "TClassFactory_ParticleClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x6c58c0": {
   "attempts": 1,
@@ -8307,6 +8398,13 @@
   "name": "Tactical::StubReturn3608",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6dc510": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x6dc51c",
+  "name": "VectorClass_UDirtyAreaStruct::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x6dc660": {
   "attempts": 6,
@@ -8581,6 +8679,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6f1870": {
+  "attempts": 1,
+  "first_diff": "+6 cmp eax, -2",
+  "name": "TeamTypeClass::GetGroup",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x6f20a0": {
   "attempts": 5,
   "first_diff": null,
@@ -8734,6 +8839,13 @@
   "name": "TechnoClass::ExitedOpenTopped",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
+ },
+ "0x710860": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x710860",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x710a80": {
   "attempts": 1,
@@ -9413,6 +9525,13 @@
   "name": "0x748af0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7490d0": {
+  "attempts": 1,
+  "first_diff": "+10 jle 0x7490f4",
+  "name": "Array::Zero",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x749230": {
   "attempts": 1,
@@ -10100,6 +10219,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x772a90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Building::GetRenderType",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x7730d0": {
   "attempts": 6,
   "first_diff": null,
@@ -10244,6 +10370,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x77e780",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7813b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7813b0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -10902,6 +11035,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "unknown_libname_76",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7d8ef5": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "__copysign",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },

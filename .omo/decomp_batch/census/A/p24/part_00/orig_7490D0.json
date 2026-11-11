@@ -1,0 +1,11 @@
+{
+ "addr": "0x7490D0",
+ "name": "Array::Zero",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7490D0",
+ "bytes_hex": "8b910008000033c085d27e18568bd1c702000000008bb1000800004083c2043bc67cec5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,110 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c3910 _TClassFactory_VInfantryClass::GetSize -> _TClassFactory_VInfantryClass
+[conv] 0x6c4810 _TClassFactory_VWalkLocomotionClass::GetSize -> _TClassFactory_VWalkLocomotionClass
+[conv] 0x6c5710 _TClassFactory_VParticleClass::GetSize -> _TClassFactory_VParticleClass
+[conv] 0x6f1870 TeamTypeClass::GetGroup -> TeamTypeClass
+[conv] 0x7d8ef5 unknown::__copysign -> unknown
+[conv] 0x600680 ComboBoxOwnerDraw::MatchDimensions -> ComboBoxOwnerDraw
+[conv] 0x4598a0 InfantryClass::CanAbsorbUnits -> InfantryClass
+[conv] 0x627db0 _DynamicVectorClass_VHSVClass::GetItemIndex -> _DynamicVectorClass_VHSVClass
+[conv] 0x465fd0 _VectorClass_V_TPoint3D_H::GetCapacity -> _VectorClass_V_TPoint3D_H
+[conv] 0x589a30 _VectorClass_USubzoneTrackingStruct::GetCapacity -> _VectorClass_USubzoneTrackingStruct
+[conv] 0x628ad0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::GetItemIndex_0 -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x6dc510 VectorClass_UDirtyAreaStruct::GetItemIndex -> VectorClass_UDirtyAreaStruct
+[conv] 0x772a90 Building::GetRenderType -> Building
+[conv] 0x540d10 IPXManagerClass::SetCameraPosition -> IPXManagerClass
+[conv] 0x7490d0 Array::Zero -> Array
+[conv] 0x40c0e0 _DynamicVectorClass_PBVCommandClass::FindMoveItem -> _DynamicVectorClass_PBVCommandClass
+[conv] 0x420600 _DynamicVectorClass_PAVAlphaLightingRemapClass::FindItem -> _DynamicVectorClass_PAVAlphaLightingRemapClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VInfantryClass rc=0
+[era] _TClassFactory_VWalkLocomotionClass rc=0
+[era] _TClassFactory_VParticleClass rc=0
+[era] TeamTypeClass            rc=0
+[era] unknown                  rc=2
+[era] ComboBoxOwnerDraw        rc=0
+[era] InfantryClass            rc=0
+[era] _DynamicVectorClass_VHSVClass rc=0
+[era] _VectorClass_V_TPoint3D_H rc=0
+[era] _VectorClass_USubzoneTrackingStruct rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] VectorClass_UDirtyAreaStruct rc=0
+[era] Building                 rc=0
+[era] IPXManagerClass          rc=0
+[era] Array                    rc=0
+[era] _DynamicVectorClass_PBVCommandClass rc=0
+[era] _DynamicVectorClass_PAVAlphaLightingRemapClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c3910   MISMATCH         _TClassFactory_VInfantryClass::GetSize
+[diff] 0x6c4810   MISMATCH         _TClassFactory_VWalkLocomotionClass::GetSize
+[diff] 0x6c5710   MISMATCH         _TClassFactory_VParticleClass::GetSize
+[diff] 0x6f1870   MISMATCH         TeamTypeClass::GetGroup
+[diff] 0x600680   MISMATCH         ComboBoxOwnerDraw::MatchDimensions
+[diff] 0x4598a0   MATCH            InfantryClass::CanAbsorbUnits
+[diff] 0x627db0   MISMATCH         _DynamicVectorClass_VHSVClass::GetItemIndex
+[diff] 0x465fd0   MISMATCH         _VectorClass_V_TPoint3D_H::GetCapacity
+[diff] 0x589a30   MISMATCH         _VectorClass_USubzoneTrackingStruct::GetCapacity
+[diff] 0x628ad0   MISMATCH         _VectorClass_U_HashObject_VHashString_PAVSchemeNode::GetItemIndex_0
+[diff] 0x6dc510   MISMATCH         VectorClass_UDirtyAreaStruct::GetItemIndex
+[diff] 0x772a90   MATCH            Building::GetRenderType
+[diff] 0x540d10   MATCH            IPXManagerClass::SetCameraPosition
+[diff] 0x7490d0   MISMATCH         Array::Zero
+[diff] 0x40c0e0   MISMATCH         _DynamicVectorClass_PBVCommandClass::FindMoveItem
+[diff] 0x420600   MISMATCH         _DynamicVectorClass_PAVAlphaLightingRemapClass::FindItem
+[ledger] 0x6c3910 TClassFactory_InfantryClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4810 TClassFactory_WalkLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c5710 TClassFactory_ParticleClass::GetSize -> NG (attempt 1)
+[ledger] 0x6f1870 TeamTypeClass::GetGroup -> NG (attempt 1)
+[ledger] 0x7d8ef5 __copysign -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d2ed0 0x4d2ed0 -> PENDING (attempt 1)
+[ledger] 0x600680 ComboBoxOwnerDraw::MatchDimensions -> NG (attempt 1)
+[ledger] 0x710860 0x710860 -> PENDING (attempt 1)
+[ledger] 0x4598a0 BuildingClass::CanAbsorbUnits -> OK (attempt 1)
+[ledger] 0x627db0 DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItemIndex -> NG (attempt 1)
+[ledger] 0x7813b0 0x7813b0 -> PENDING (attempt 1)
+[ledger] 0x465fd0 VectorClass_TPoint3D_int::GetCapacity -> NG (attempt 1)
+[ledger] 0x589a30 VectorClass_USubzoneTrackingStruct::GetCapacity -> NG (attempt 1)
+[ledger] 0x628ad0 VectorClass_ptr_ColorScheme::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x6dc510 VectorClass_UDirtyAreaStruct::GetItemIndex -> NG (attempt 1)
+[ledger] 0x772a90 Building::GetRenderType -> OK (attempt 1)
+[ledger] 0x540d10 TacticalClass::SetCameraPosition -> OK (attempt 1)
+[ledger] 0x7490d0 Array::Zero -> NG (attempt 1)
+[ledger] 0x40c0e0 MoveFeedback::FindMoveItem -> NG (attempt 1)
+[ledger] 0x420600 AITriggerTypeClass_40::FindItem -> NG (attempt 1)
+======================================================================
+{
+ "total": 1537,
+ "verdicts": {
+  "MISMATCH": 387,
+  "MATCH": 500,
+  "COMPILE_FAIL": 338,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 305,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 6,
+  "codegen_shape": 134,
+  "ret_norm": 5,
+  "frame_sched": 60,
+  "const_fold": 12,
+  "branch_polarity": 28,
+  "regalloc": 51,
+  "branch_order": 65,
+  "width_mismatch": 3,
+  "extern_reloc": 15,
+  "cc_mismatch": 6,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 56.4,
+ "match_rate_of_total_pct": 32.5,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p24\batch_report.json

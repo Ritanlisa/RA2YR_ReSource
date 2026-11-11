@@ -1,0 +1,8 @@
+{
+ "symbol": "?MatchDimensions@ComboBoxOwnerDraw@@QAE_NPAH@Z",
+ "sym_key": "ComboBoxOwnerDraw::MatchDimensions",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b442404568b71048b50043bd65e75108b008b113bc27508b801000000c2040033c0c20400",
+ "relocs": []
+}

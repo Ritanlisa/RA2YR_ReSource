@@ -1,0 +1,11 @@
+{
+ "addr": "0x540D10",
+ "name": "TacticalClass::SetCameraPosition",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x540D10",
+ "bytes_hex": "8b414885c0741b8b5424048950288b41488b54240889502c8b41488b4c240c894830c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
