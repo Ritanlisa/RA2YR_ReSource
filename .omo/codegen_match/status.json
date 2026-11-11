@@ -23150,6 +23150,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x543c40": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_543C40",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_543C40",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x543c60": {
   "attempts": 2,
   "first_diff": null,
@@ -23386,6 +23397,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x54a8a0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_54A8A0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_54A8A0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x54a990": {
   "attempts": 1,
   "clean": false,
@@ -23463,6 +23485,17 @@
   "name": "sub_54ABE0",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_54ABE0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x54ac20": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_54AC20",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_54AC20",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -23622,6 +23655,17 @@
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "status": "NG"
  },
+ "0x54e240": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 xor eax, eax",
+  "name": "sub_54E240",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "sub_54E240",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x54e590": {
   "attempts": 1,
   "first_diff": "+0 sub esp, 0x10",
@@ -23639,6 +23683,17 @@
   "orig_name": "JumpjetLocomotionClass_26::Seek",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x54ec40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 xor eax, eax",
+  "name": "sub_54EC40",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "sub_54EC40",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x54ec90": {
@@ -23843,6 +23898,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x54fda0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_54FDA0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_54FDA0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x54fe60": {
   "attempts": 11,
   "first_diff": null,
@@ -23996,6 +24062,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x551990": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_551990",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_551990",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x551b90": {
   "attempts": 1,
   "first_diff": "+1 push ebx",
@@ -24023,6 +24100,17 @@
   "name": "sub_552640",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x552830": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_552830",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_552830",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x552880": {
   "attempts": 1,
@@ -24195,6 +24283,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x554620": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_554620",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_554620",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5550c0": {
   "attempts": 1,
   "first_diff": null,
@@ -24267,6 +24366,17 @@
   "name": "sub_5558C0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x555b90": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_555B90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_555B90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x555be0": {
   "attempts": 1,
@@ -24469,6 +24579,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x556980": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_556980",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_556980",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x556a20": {
   "attempts": 9,
   "first_diff": null,
@@ -24538,6 +24659,29 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x557210": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_557210",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_557210",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x557ae0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+11 jg 0x557af0",
+  "name": "ListClass::SetColor",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "ColorListClass::SetColor",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x557b00": {
   "attempts": 11,
   "clean": true,
@@ -24604,6 +24748,17 @@
   "note": "decomp_batch r2: MATCH",
   "orig_name": "VectorClass_PBG::Count",
   "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x558530": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_558530",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_558530",
+  "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
  },
@@ -24717,6 +24872,17 @@
   "name": "LoadOptions::vt04",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x55a4b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_55A4B0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_55A4B0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x55a4d0": {
   "attempts": 2,
@@ -25092,6 +25258,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x55ad30": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_55AD30",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_55AD30",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x55ad80": {
   "attempts": 1,
   "clean": false,
@@ -25208,6 +25385,17 @@
   "name": "DecodeBlockLCW",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x55c9e0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_55C9E0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_55C9E0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x55ca30": {
   "attempts": 1,
@@ -25868,6 +26056,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x588c40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CellClass::initCellData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CellClass::initCellData",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x588cc0": {
   "attempts": 1,
   "first_diff": "+5 jne 0x588ccc",
@@ -25974,6 +26174,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x58b110": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_58B110",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_58B110",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x58b160": {
   "attempts": 1,
   "clean": false,
@@ -26054,6 +26265,17 @@
   "name": "sub_58B2E0",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_58B2E0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x58b320": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_58B320",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_58B320",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false

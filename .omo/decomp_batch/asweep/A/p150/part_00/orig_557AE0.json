@@ -1,0 +1,11 @@
+{
+ "addr": "0x557AE0",
+ "name": "ColorListClass::SetColor",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x557AE0",
+ "bytes_hex": "8b816c0100008b51443bd07f0333c0c38b49388b0481c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

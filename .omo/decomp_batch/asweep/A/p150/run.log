@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p150\part_00
+=== convert (20 addrs) ===
+[conv] 0x543c40 sub_543C40 -> _addr_54
+[conv] 0x54a8a0 sub_54A8A0 -> _addr_54
+[conv] 0x54ac20 sub_54AC20 -> _addr_54
+[conv] 0x54e240 sub_54E240 -> _addr_54
+[conv] 0x54ec40 sub_54EC40 -> _addr_54
+[conv] 0x54fda0 sub_54FDA0 -> _addr_54
+[conv] 0x551990 sub_551990 -> _addr_55
+[conv] 0x552830 sub_552830 -> _addr_55
+[conv] 0x554620 sub_554620 -> _addr_55
+[conv] 0x555b90 sub_555B90 -> _addr_55
+[conv] 0x556980 sub_556980 -> _addr_55
+[conv] 0x557210 sub_557210 -> _addr_55
+[conv] 0x557ae0 ListClass::SetColor -> ListClass
+[conv] 0x558530 sub_558530 -> _addr_55
+[conv] 0x55a4b0 sub_55A4B0 -> _addr_55
+[conv] 0x55ad30 sub_55AD30 -> _addr_55
+[conv] 0x55c9e0 sub_55C9E0 -> _addr_55
+[conv] 0x588c40 CellClass::initCellData -> CellClass
+[conv] 0x58b110 sub_58B110 -> _addr_58
+[conv] 0x58b320 sub_58B320 -> _addr_58
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_54                 rc=0
+[era] _addr_55                 rc=0
+[era] ListClass                rc=0
+[era] CellClass                rc=2
+[era] _addr_58                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x543c40   MATCH            sub_543C40
+[diff] 0x54a8a0   MATCH            sub_54A8A0
+[diff] 0x54ac20   MATCH            sub_54AC20
+[diff] 0x54e240   MISMATCH         sub_54E240
+[diff] 0x54ec40   MISMATCH         sub_54EC40
+[diff] 0x54fda0   MATCH            sub_54FDA0
+[diff] 0x551990   MATCH            sub_551990
+[diff] 0x552830   MATCH            sub_552830
+[diff] 0x554620   MATCH            sub_554620
+[diff] 0x555b90   MATCH            sub_555B90
+[diff] 0x556980   MATCH            sub_556980
+[diff] 0x557210   MATCH            sub_557210
+[diff] 0x558530   MATCH            sub_558530
+[diff] 0x55a4b0   MATCH            sub_55A4B0
+[diff] 0x55ad30   MATCH            sub_55AD30
+[diff] 0x55c9e0   MATCH            sub_55C9E0
+[diff] 0x557ae0   MISMATCH         ListClass::SetColor
+[diff] 0x58b110   MATCH            sub_58B110
+[diff] 0x58b320   MATCH            sub_58B320
+[ledger] 0x543c40 sub_543C40 -> OK (attempt 1)
+[ledger] 0x54a8a0 sub_54A8A0 -> OK (attempt 1)
+[ledger] 0x54ac20 sub_54AC20 -> OK (attempt 1)
+[ledger] 0x54e240 sub_54E240 -> NG (attempt 1)
+[ledger] 0x54ec40 sub_54EC40 -> NG (attempt 1)
+[ledger] 0x54fda0 sub_54FDA0 -> OK (attempt 1)
+[ledger] 0x551990 sub_551990 -> OK (attempt 1)
+[ledger] 0x552830 sub_552830 -> OK (attempt 1)
+[ledger] 0x554620 sub_554620 -> OK (attempt 1)
+[ledger] 0x555b90 sub_555B90 -> OK (attempt 1)
+[ledger] 0x556980 sub_556980 -> OK (attempt 1)
+[ledger] 0x557210 sub_557210 -> OK (attempt 1)
+[ledger] 0x557ae0 ListClass::SetColor -> NG (attempt 1)
+[ledger] 0x558530 sub_558530 -> OK (attempt 1)
+[ledger] 0x55a4b0 sub_55A4B0 -> OK (attempt 1)
+[ledger] 0x55ad30 sub_55AD30 -> OK (attempt 1)
+[ledger] 0x55c9e0 sub_55C9E0 -> OK (attempt 1)
+[ledger] 0x588c40 CellClass::initCellData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58b110 sub_58B110 -> OK (attempt 1)
+[ledger] 0x58b320 sub_58B320 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 16,
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "ret_norm": 2,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 84.2,
+ "match_rate_of_total_pct": 80.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p150\batch_report.json
