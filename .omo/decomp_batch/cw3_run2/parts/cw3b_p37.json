@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x4fc6d0",
+  "name": "HouseClass::ClearLowPowerTargets",
+  "cls": null,
+  "size": 181,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x5c2040",
+  "name": "MPCooperative::StartGame",
+  "cls": null,
+  "size": 182,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'IsInitialized' : is not a member of 'DynamicVectorClass'"
+ },
+ {
+  "addr": "0x7b5d70",
+  "name": "String::CopyTruncated",
+  "cls": null,
+  "size": 183,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'strncpy' : cannot convert parameter 3 from 'char *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x4adff0",
+  "name": "HouseClass::RevealShroudForAllies",
+  "cls": null,
+  "size": 184,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_UNKNOWN' : undeclared identifier"
+ },
+ {
+  "addr": "0x7cde75",
+  "name": "__setlocale_get_all",
+  "cls": null,
+  "size": 185,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'char ** ' to 'const char ** '"
+ },
+ {
+  "addr": "0x7d5ac0",
+  "name": "__setenvp",
+  "cls": null,
+  "size": 185,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'free' : cannot convert parameter 1 from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x409030",
+  "name": "WriteAudioStreamToFile",
+  "cls": null,
+  "size": 187,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_UNKNOWN' : undeclared identifier"
+ },
+ {
+  "addr": "0x7afad0",
+  "name": "Team_Start_7AFAD0",
+  "cls": null,
+  "size": 187,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_UNKNOWN' : undeclared identifier"
+ },
+ {
+  "addr": "0x746420",
+  "name": "TechnoClass::CaptureTurret",
+  "cls": null,
+  "size": 188,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'class CellClass *'"
+ },
+ {
+  "addr": "0x4f3b80",
+  "name": "sub_4F3B80",
+  "cls": null,
+  "size": 189,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_UNKNOWN' : undeclared identifier"
+ },
+ {
+  "addr": "0x5bf390",
+  "name": "EnqueueAsyncIOMovie",
+  "cls": null,
+  "size": 189,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'void (unsigned char *,int (__cdecl *)(void))' : cannot convert parameter 2 from '' to 'int (__cdecl *)(voi"
+ },
+ {
+  "addr": "0x6e1980",
+  "name": "TActionClass::executeGuardAreaAction",
+  "cls": null,
+  "size": 191,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6ef610",
+  "name": "TeamClass::PlayMemberAnimation",
+  "cls": null,
+  "size": 192,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.TeamTypeClass_field_70' must have class/struct/union type"
+ },
+ {
+  "addr": "0x79da90",
+  "name": "ExtractChatCommand",
+  "cls": null,
+  "size": 192,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_UNKNOWN' : undeclared identifier"
+ },
+ {
+  "addr": "0x690a10",
+  "name": "ScoreScreen::LoadScoreFont",
+  "cls": null,
+  "size": 194,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2653",
+  "first_msg": "'ScoreFontClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x4acda0",
+  "name": "MapClass::RevealCell",
+  "cls": null,
+  "size": 196,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'unsigned int *'"
+ },
+ {
+  "addr": "0x6b6230",
+  "name": "ShowAudioSettingsDialog",
+  "cls": null,
+  "size": 197,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2673",
+  "first_msg": "'ShowAudioSettingsDialog' : global functions do not have 'this' pointers"
+ },
+ {
+  "addr": "0x770f10",
+  "name": "sub_770F10",
+  "cls": null,
+  "size": 199,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'unsigned int *' to 'void ** '"
+ },
+ {
+  "addr": "0x475540",
+  "name": "SuperWeaponTypeClass::FindOrCreate",
+  "cls": null,
+  "size": 201,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x635490",
+  "name": "Render_Render_635490",
+  "cls": null,
+  "size": 202,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ }
+]

@@ -1,0 +1,51 @@
+{
+ "symbol": "?ClearLowPowerTargets@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::ClearLowPowerTargets",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "83ec0c0fbe05a4000000535533ed33db85c0894c240c0f8ea500000056570fbe05980000008b34a88bcee8000000008bf88b861c0200003bf8742c3b7c2414756e8b86c002000085c08944241074188b88bc02000056e8000000008844241084c08b44241075483b7c241475423bf3743e8b4e6c894c24188b8e7802000085c97405e800000000a1400200008b166a006a018b88a80f00006a016a00518d44242c6a005056ff926c0100008bdeeb01450fbe0da40000003be90f8c5fffffff5f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?GetPriorityTarget@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetPriorityTarget"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?AssignCivilianToLowPowerTargets@HouseClass@@QAEDH@Z",
+   "sym_key": "HouseClass::AssignCivilianToLowPowerTargets"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?UnlinkTags@TriggerClass@@QAEHXZ",
+   "sym_key": "TriggerClass::UnlinkTags"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

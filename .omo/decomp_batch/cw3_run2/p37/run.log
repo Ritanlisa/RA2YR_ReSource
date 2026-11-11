@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x4fc6d0 HouseClass::ClearLowPowerTargets -> HouseClass
+[conv] 0x5c2040 MPCooperative::StartGame -> MPCooperative
+[conv] 0x7b5d70 String::CopyTruncated -> String
+[conv] 0x4adff0 HouseClass::RevealShroudForAllies -> HouseClass
+[conv] 0x7cde75 __setlocale_get_all -> _addr_7C
+[conv] 0x7d5ac0 __setenvp -> _addr_7D
+[conv] 0x409030 WriteAudioStreamToFile -> _addr_40
+[conv] 0x7afad0 Team_Start_7AFAD0 -> Team_Start
+[conv] 0x746420 TechnoClass::CaptureTurret -> TechnoClass
+[conv] 0x4f3b80 sub_4F3B80 -> _addr_4F
+[conv] 0x5bf390 EnqueueAsyncIOMovie -> _addr_5B
+[conv] 0x6e1980 TActionClass::executeGuardAreaAction -> TActionClass
+[conv] 0x6ef610 TeamClass::PlayMemberAnimation -> TeamClass
+[conv] 0x79da90 ExtractChatCommand -> _addr_79
+[conv] 0x690a10 ScoreScreen::LoadScoreFont -> ScoreScreen
+[conv] 0x4acda0 MapClass::RevealCell -> MapClass
+[conv] 0x6b6230 ShowAudioSettingsDialog -> _addr_6B
+[conv] 0x770f10 ObjectClass::sub_770F10 -> ObjectClass
+[conv] 0x475540 SuperWeaponTypeClass::FindOrCreate -> SuperWeaponTypeClass
+[conv] 0x635490 ObjectClass::Render_Render_635490 -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] MPCooperative            rc=2
+[era] String                   rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_40                 rc=2
+[era] Team_Start               rc=2
+[era] TechnoClass              rc=2
+[era] _addr_4F                 rc=2
+[era] _addr_5B                 rc=2
+[era] TActionClass             rc=2
+[era] TeamClass                rc=2
+[era] _addr_79                 rc=2
+[era] ScoreScreen              rc=2
+[era] MapClass                 rc=2
+[era] _addr_6B                 rc=2
+[era] ObjectClass              rc=2
+[era] SuperWeaponTypeClass     rc=2
+=== diffasm byte-compare ===
+[diff] 0x4fc6d0   MISMATCH         HouseClass::ClearLowPowerTargets
+[ledger] 0x4fc6d0 HouseClass::ClearLowPowerTargets -> NG (attempt 11)
+[ledger] 0x5c2040 MPCooperative::StartGame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b5d70 String::CopyTruncated -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4adff0 HouseClass::RevealShroudForAllies -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cde75 __setlocale_get_all -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d5ac0 __setenvp -> COMPILE_FAIL (attempt 4)
+[ledger] 0x409030 WriteAudioStreamToFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7afad0 Team_Start_7AFAD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x746420 TechnoClass::CaptureTurret -> COMPILE_FAIL (attempt 11)
+[ledger] 0x4f3b80 sub_4F3B80 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5bf390 EnqueueAsyncIOMovie -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e1980 TActionClass::executeGuardAreaAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ef610 TeamClass::PlayMemberAnimation -> COMPILE_FAIL (attempt 11)
+[ledger] 0x79da90 ExtractChatCommand -> COMPILE_FAIL (attempt 3)
+[ledger] 0x690a10 ScoreScreen::LoadScoreFont -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4acda0 MapClass::RevealCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b6230 ShowAudioSettingsDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x770f10 ObjectClass::sub_770F10 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x475540 SuperWeaponTypeClass::FindOrCreate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x635490 ObjectClass::Render_Render_635490 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 1,
+  "COMPILE_FAIL": 19
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p37\batch_report.json
