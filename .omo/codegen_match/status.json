@@ -5026,7 +5026,7 @@
   "status": "OK"
  },
  "0x6a4130": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_15",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5054,7 +5054,7 @@
   "status": "OK"
  },
  "0x6a5090": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SidebarClass::InitPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5068,7 +5068,7 @@
   "status": "NG"
  },
  "0x6a6a00": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_245",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5082,28 +5082,28 @@
   "status": "NG"
  },
  "0x6a8220": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SidebarClass::InitCameoGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6a8710": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "TabCameoListClass::AddCameo_ReplaceItAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6ac5f0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "TActionClass::executeHarvestAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b1020": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SlaveManagerClass::ShouldWakeUpNow",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5159,21 +5159,21 @@
   "status": "OK"
  },
  "0x6b55f0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SmudgeTypeClass::vt_entry_A0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b5f80": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "Cell::IsWalkable",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b6080": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "UnitClass::CreateUnloadPlacementCraters",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5208,7 +5208,7 @@
   "status": "NG"
  },
  "0x6b7c60": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "UnitClass::ClearTargetRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5236,28 +5236,28 @@
   "status": "NG"
  },
  "0x6c6740": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "StaticButtonClass::HitTest",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6c9c60": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BinkMovie::CheckKeyframeTransition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6cb830": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SuperClass::StopPreclickAnim",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6ce0b0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SuperClass::Reset",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5278,7 +5278,7 @@
   "status": "OK"
  },
  "0x6cf350": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SwizzleManagerClass::ConvertNodes",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5292,7 +5292,7 @@
   "status": "OK"
  },
  "0x6d02b0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SidebarClass::LoadButtonSHPs",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5313,14 +5313,14 @@
   "status": "NG"
  },
  "0x6d6410": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Terrain::ClimbCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6d8530": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "DisplayClass::ScrollTacticalView",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5334,7 +5334,7 @@
   "status": "NG"
  },
  "0x6da180": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TacticalMap::DrawOccupiedRegion",
   "note": "decomp_batch r2: COMPILE_FAIL",
