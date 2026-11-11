@@ -1,0 +1,15 @@
+{
+ "symbol": "?ClearAllWaypoints@ScenarioClass@@QAEPAIXZ",
+ "sym_key": "ScenarioClass::ClearAllWaypoints",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8d8132060000b9be0200008b1500000000891083c0044975f2c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B05458@@3IA",
+   "sym_key": "DataGlobal_B05458"
+  }
+ ]
+}

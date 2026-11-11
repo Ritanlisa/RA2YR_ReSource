@@ -1,0 +1,8 @@
+{
+ "symbol": "?drawSpawnPips@TechnoClass@@QAEHPAH@Z",
+ "sym_key": "TechnoClass::drawSpawnPips",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b108951308b50048951348b4008894138c20400",
+ "relocs": []
+}

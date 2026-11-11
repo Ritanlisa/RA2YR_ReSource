@@ -1,0 +1,8 @@
+{
+ "symbol": "?drawPipScale@TechnoClass@@QAEHPAH@Z",
+ "sym_key": "TechnoClass::drawPipScale",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b108951388b500489513c8b4008894140c20400",
+ "relocs": []
+}

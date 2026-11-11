@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p168\part_00
+=== convert (20 addrs) ===
+[conv] 0x63f690 sub_63F690 -> _addr_63
+[conv] 0x6406c0 sub_6406C0 -> _addr_64
+[conv] 0x642960 sub_642960 -> _addr_64
+[conv] 0x644080 sub_644080 -> _addr_64
+[conv] 0x646c50 sub_646C50 -> _addr_64
+[conv] 0x652850 sub_652850 -> _addr_65
+[conv] 0x659050 sub_659050 -> _addr_65
+[conv] 0x6594a0 TechnoClass::drawPipScale -> TechnoClass
+[conv] 0x6594c0 TechnoClass::drawSpawnPips -> TechnoClass
+[conv] 0x65a710 sub_65A710 -> _addr_65
+[conv] 0x65b120 sub_65B120 -> _addr_65
+[conv] 0x65d890 sub_65D890 -> _addr_65
+[conv] 0x65f500 sub_65F500 -> _addr_65
+[conv] 0x661e80 sub_661E80 -> _addr_66
+[conv] 0x6637c0 sub_6637C0 -> _addr_66
+[conv] 0x6643e0 Network::checkTimeout -> Network
+[conv] 0x664ce0 sub_664CE0 -> _addr_66
+[conv] 0x67c670 sub_67C670 -> _addr_67
+[conv] 0x683240 sub_683240 -> _addr_68
+[conv] 0x68bd60 ScenarioClass::ClearAllWaypoints -> ScenarioClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_63                 rc=0
+[era] _addr_64                 rc=0
+[era] _addr_65                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_66                 rc=0
+[era] Network                  rc=0
+[era] _addr_67                 rc=0
+[era] _addr_68                 rc=0
+[era] ScenarioClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x63f690   MISMATCH         sub_63F690
+[diff] 0x6406c0   MISMATCH         sub_6406C0
+[diff] 0x642960   MISMATCH         sub_642960
+[diff] 0x644080   MISMATCH         sub_644080
+[diff] 0x646c50   MISMATCH         sub_646C50
+[diff] 0x652850   MISMATCH         sub_652850
+[diff] 0x659050   MISMATCH         sub_659050
+[diff] 0x65a710   MISMATCH         sub_65A710
+[diff] 0x65b120   MISMATCH         sub_65B120
+[diff] 0x65d890   MISMATCH         sub_65D890
+[diff] 0x65f500   MISMATCH         sub_65F500
+[diff] 0x6594a0   MISMATCH         TechnoClass::drawPipScale
+[diff] 0x6594c0   MISMATCH         TechnoClass::drawSpawnPips
+[diff] 0x661e80   MISMATCH         sub_661E80
+[diff] 0x6637c0   MISMATCH         sub_6637C0
+[diff] 0x664ce0   MISMATCH         sub_664CE0
+[diff] 0x6643e0   MISMATCH         Network::checkTimeout
+[diff] 0x67c670   MISMATCH         sub_67C670
+[diff] 0x683240   MISMATCH         sub_683240
+[diff] 0x68bd60   MATCH            ScenarioClass::ClearAllWaypoints
+[ledger] 0x63f690 sub_63F690 -> NG (attempt 1)
+[ledger] 0x6406c0 sub_6406C0 -> NG (attempt 1)
+[ledger] 0x642960 sub_642960 -> NG (attempt 1)
+[ledger] 0x644080 sub_644080 -> NG (attempt 1)
+[ledger] 0x646c50 sub_646C50 -> NG (attempt 1)
+[ledger] 0x652850 sub_652850 -> NG (attempt 1)
+[ledger] 0x659050 sub_659050 -> NG (attempt 1)
+[ledger] 0x6594a0 TechnoClass::drawPipScale -> NG (attempt 1)
+[ledger] 0x6594c0 TechnoClass::drawSpawnPips -> NG (attempt 1)
+[ledger] 0x65a710 sub_65A710 -> NG (attempt 1)
+[ledger] 0x65b120 sub_65B120 -> NG (attempt 1)
+[ledger] 0x65d890 sub_65D890 -> NG (attempt 1)
+[ledger] 0x65f500 sub_65F500 -> NG (attempt 1)
+[ledger] 0x661e80 sub_661E80 -> NG (attempt 1)
+[ledger] 0x6637c0 sub_6637C0 -> NG (attempt 1)
+[ledger] 0x6643e0 Network::checkTimeout -> NG (attempt 1)
+[ledger] 0x664ce0 sub_664CE0 -> NG (attempt 1)
+[ledger] 0x67c670 sub_67C670 -> NG (attempt 1)
+[ledger] 0x683240 sub_683240 -> NG (attempt 1)
+[ledger] 0x68bd60 ScenarioClass::ClearAllWaypoints -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 16,
+  "codegen_shape": 2,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p168\batch_report.json
