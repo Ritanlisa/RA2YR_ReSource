@@ -1,0 +1,8 @@
+{
+ "symbol": "?Reset@MSAnim@@QAEHH@Z",
+ "sym_key": "MSAnim::Reset",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8b442404c7414000000000894128c20400",
+ "relocs": []
+}

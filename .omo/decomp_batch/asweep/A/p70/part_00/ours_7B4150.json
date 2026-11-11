@@ -1,0 +1,8 @@
+{
+ "symbol": "?Connect@UDPInterfaceClass@@QAEHH@Z",
+ "sym_key": "UDPInterfaceClass::Connect",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b8154f503008b4c24048b0488c20400",
+ "relocs": []
+}

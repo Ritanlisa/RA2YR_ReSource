@@ -1,0 +1,21 @@
+{
+ "symbol": "?__getmbcp@@YAHXZ",
+ "sym_key": "Unnamed::__getmbcp",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b0d00000000f7d81bc023c1c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B7885C@@3IA",
+   "sym_key": "CRTGlobal_B7885C"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78840@@3IA",
+   "sym_key": "CRTGlobal_B78840"
+  }
+ ]
+}

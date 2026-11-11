@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1A20",
+ "name": "Rect_Point::Set",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1A20",
+ "bytes_hex": "8b4424048b54240889410c895110c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetCurrentInstance@CD@@QAEHXZ",
+ "sym_key": "CD::SetCurrentInstance",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "a100000000890d00000000a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E414@@3IA",
+   "sym_key": "DataGlobal_89E414"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E414@@3IA",
+   "sym_key": "DataGlobal_89E414"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E418@@3IA",
+   "sym_key": "DataGlobal_89E418"
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p70\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b4150 UDPInterfaceClass::Connect -> UDPInterfaceClass
+[conv] 0x7cea91 ObjectClass::_get_int64_arg -> ObjectClass
+[conv] 0x7d29a2 ObjectClass::_get_int64_arg_0 -> ObjectClass
+[conv] 0x7d385a __getmbcp -> _addr_7D
+[conv] 0x7ddcb8 ObjectClass::_get_int64_arg_1 -> ObjectClass
+[conv] 0x4038a0 AudioStream::ResetChannel -> AudioStream
+[conv] 0x4038c0 AudioStream::ResetChannel2 -> AudioStream
+[conv] 0x407420 InsertAfterDListNode -> _addr_40
+[conv] 0x40e320 MixFileClass::Constructor -> MixFileClass
+[conv] 0x41dd10 ObjectClass::sub_41DD10 -> ObjectClass
+[conv] 0x42e800 ObjectClass::sub_42E800 -> ObjectClass
+[conv] 0x437f30 CellStruct::Copy -> CellStruct
+[conv] 0x47ada0 CD::SetCurrentInstance -> CD
+[conv] 0x4b4c30 IUnknown::IsInactive -> IUnknown
+[conv] 0x4b4cd0 JumpjetLocomotionClass::GetLinkedLocomotorPointer -> JumpjetLocomotionClass
+[conv] 0x4b66c0 JumpjetLocomotionClass::ShortFunc_4B66C0 -> JumpjetLocomotionClass
+[conv] 0x4e1a20 GadgetClass::Set -> GadgetClass
+[conv] 0x53a090 LightningStorm::End -> LightningStorm
+[conv] 0x54df70 JumpjetLocomotionClass::ShortFunc_54DF70 -> JumpjetLocomotionClass
+[conv] 0x5cc6a0 MSAnim::Reset -> MSAnim
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UDPInterfaceClass        rc=0
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=0
+[era] AudioStream              rc=0
+[era] _addr_40                 rc=2
+[era] MixFileClass             rc=2
+[era] CellStruct               rc=0
+[era] CD                       rc=0
+[era] IUnknown                 rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] GadgetClass              rc=0
+[era] LightningStorm           rc=0
+[era] MSAnim                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x7b4150   MATCH            UDPInterfaceClass::Connect
+[diff] 0x7cea91   MISMATCH         ObjectClass::_get_int64_arg
+[diff] 0x7d29a2   MISMATCH         ObjectClass::_get_int64_arg_0
+[diff] 0x7ddcb8   MISMATCH         ObjectClass::_get_int64_arg_1
+[diff] 0x42e800   MISMATCH         ObjectClass::sub_42E800
+[diff] 0x7d385a   MISMATCH         __getmbcp
+[diff] 0x4038a0   MISMATCH         AudioStream::ResetChannel
+[diff] 0x4038c0   MISMATCH         AudioStream::ResetChannel2
+[diff] 0x437f30   MISMATCH         CellStruct::Copy
+[diff] 0x47ada0   MATCH            CD::SetCurrentInstance
+[diff] 0x4b4c30   MISMATCH         IUnknown::IsInactive
+[diff] 0x4b4cd0   MISMATCH         JumpjetLocomotionClass::GetLinkedLocomotorPointer
+[diff] 0x4b66c0   MISMATCH         JumpjetLocomotionClass::ShortFunc_4B66C0
+[diff] 0x54df70   MISMATCH         JumpjetLocomotionClass::ShortFunc_54DF70
+[diff] 0x4e1a20   MATCH            GadgetClass::Set
+[diff] 0x53a090   MISMATCH         LightningStorm::End
+[diff] 0x5cc6a0   MATCH            MSAnim::Reset
+[ledger] 0x7b4150 UDPInterfaceClass::Connect -> OK (attempt 1)
+[ledger] 0x7cea91 ObjectClass::_get_int64_arg -> NG (attempt 1)
+[ledger] 0x7d29a2 ObjectClass::_get_int64_arg_0 -> NG (attempt 1)
+[ledger] 0x7d385a __getmbcp -> NG (attempt 1)
+[ledger] 0x7ddcb8 ObjectClass::_get_int64_arg_1 -> NG (attempt 1)
+[ledger] 0x4038a0 AudioStream::ResetChannel -> NG (attempt 1)
+[ledger] 0x4038c0 AudioStream::ResetChannel2 -> NG (attempt 1)
+[ledger] 0x407420 InsertAfterDListNode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40e320 MixFileClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41dd10 ObjectClass::sub_41DD10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42e800 ObjectClass::sub_42E800 -> NG (attempt 1)
+[ledger] 0x437f30 CellStruct::Copy -> NG (attempt 1)
+[ledger] 0x47ada0 CD::SetCurrentInstance -> OK (attempt 1)
+[ledger] 0x4b4c30 IUnknown::IsInactive -> NG (attempt 1)
+[ledger] 0x4b4cd0 JumpjetLocomotionClass::GetLinkedLocomotorPointer -> NG (attempt 1)
+[ledger] 0x4b66c0 JumpjetLocomotionClass::ShortFunc_4B66C0 -> NG (attempt 1)
+[ledger] 0x4e1a20 GadgetClass::Set -> OK (attempt 1)
+[ledger] 0x53a090 LightningStorm::End -> NG (attempt 1)
+[ledger] 0x54df70 JumpjetLocomotionClass::ShortFunc_54DF70 -> NG (attempt 1)
+[ledger] 0x5cc6a0 MSAnim::Reset -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 4,
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "extern_reloc": 2,
+  "eval_order": 3,
+  "cc_mismatch": 4,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 23.5,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p70\batch_report.json

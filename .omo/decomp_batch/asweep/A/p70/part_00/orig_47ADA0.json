@@ -1,0 +1,11 @@
+{
+ "addr": "0x47ADA0",
+ "name": "CD::SetCurrentInstance",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47ADA0",
+ "bytes_hex": "a114e48900890d14e48900a318e48900c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

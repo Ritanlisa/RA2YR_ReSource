@@ -1,0 +1,11 @@
+{
+ "addr": "0x4038C0",
+ "name": "AudioStream::ResetChannel2",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4038C0",
+ "bytes_hex": "8b4424048941208b542408895124c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?_get_int64_arg@ObjectClass@@QAE_JPAI@Z",
+ "sym_key": "ObjectClass::_get_int64_arg",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b0883c10889088b41f88b51fcc20400",
+ "relocs": []
+}
