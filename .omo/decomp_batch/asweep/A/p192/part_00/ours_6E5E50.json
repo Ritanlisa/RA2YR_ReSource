@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetEvent@TagTypeClass@@QAEHHH@Z",
+ "sym_key": "TagTypeClass::GetEvent",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b81a00000008b5424043bc2750c8b80a80000008981a0000000c20800",
+ "relocs": []
+}

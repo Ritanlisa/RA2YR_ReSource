@@ -1,0 +1,11 @@
+{
+ "addr": "0x485060",
+ "name": "Cell::IsValidHeight",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x485060",
+ "bytes_hex": "8b41388b0d3807aa003bc17c0d83c10e3bc17d06b801000000c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Check@EventQueue@@QAEFXZ",
+ "sym_key": "EventQueue::Check",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b81140300008b91180300003bc275046633c0c3668b844114010000c3",
+ "relocs": []
+}

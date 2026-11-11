@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsAtEnd@BinkMovieHandle@@QAEHXZ",
+ "sym_key": "BinkMovieHandle::IsAtEnd",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b4104568b500c8b70083bd65e73083b5130720333c0c3b801000000c3",
+ "relocs": []
+}

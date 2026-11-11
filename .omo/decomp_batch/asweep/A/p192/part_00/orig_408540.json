@@ -1,0 +1,11 @@
+{
+ "addr": "0x408540",
+ "name": "Audio::CalcRate",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408540",
+ "bytes_hex": "8b4914b8d34d62100faf4c2404f7e98bc2c1f8068bc8c1e91f03c1c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

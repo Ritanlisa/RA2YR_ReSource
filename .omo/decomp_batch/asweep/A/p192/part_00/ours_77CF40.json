@@ -1,0 +1,15 @@
+{
+ "symbol": "?UI_Setup_77CF40@@YAHXZ",
+ "sym_key": "Unnamed::UI_Setup_77CF40",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "a10000000083f803740d83f801740883f802740333c0c3b801000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  }
+ ]
+}

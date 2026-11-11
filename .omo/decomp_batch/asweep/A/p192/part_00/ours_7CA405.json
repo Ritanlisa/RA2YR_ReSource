@@ -1,0 +1,8 @@
+{
+ "symbol": "?_wcslen@@YAIPBG@Z",
+ "sym_key": "Unnamed::_wcslen",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8b4c2404668339008d41027416668b1083c0026685d2740b668b1083c0026685d275f52bc1d1f848c3",
+ "relocs": []
+}

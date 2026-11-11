@@ -1,0 +1,11 @@
+{
+ "addr": "0x746DB0",
+ "name": "TechnoClass::HasDeployFlags",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746DB0",
+ "bytes_hex": "8a81e106000084c0750d8a81e206000084c0750333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

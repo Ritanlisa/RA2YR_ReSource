@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CA405",
+ "name": "_wcslen",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CA405",
+ "bytes_hex": "8b4c2404668339008d4102740a668b1040406685d275f62bc1d1f848c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x540FA0",
+ "name": "Network::GetConnectionSpeed",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x540FA0",
+ "bytes_hex": "8b44240485c07c0f3b41447d0a8b4481288b4064c2040083c8ffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

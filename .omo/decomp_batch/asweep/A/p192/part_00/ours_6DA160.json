@@ -1,0 +1,8 @@
+{
+ "symbol": "?ResetScrollBounds@TacticalClass@@QAEHXZ",
+ "sym_key": "TacticalClass::ResetScrollBounds",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "33c08981900d00008981980d00008981940d000089819c0d0000c3",
+ "relocs": []
+}

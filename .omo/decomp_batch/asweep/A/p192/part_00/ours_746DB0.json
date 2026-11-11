@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasDeployFlags@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::HasDeployFlags",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8a81e106000084c0750d8a81e206000084c0750333c0c3b801000000c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7105E0",
+ "name": "BuildingClass::IsBeingRepairedOrCaptured",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7105E0",
+ "bytes_hex": "8b81c002000085c0750d8a81c402000084c0750333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

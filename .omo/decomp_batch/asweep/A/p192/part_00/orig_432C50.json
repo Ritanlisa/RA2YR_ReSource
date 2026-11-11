@@ -1,0 +1,11 @@
+{
+ "addr": "0x432C50",
+ "name": "BinkMovie::IsAtEnd",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x432C50",
+ "bytes_hex": "8b4104568b500c8b70083bd65e73083b5130720333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

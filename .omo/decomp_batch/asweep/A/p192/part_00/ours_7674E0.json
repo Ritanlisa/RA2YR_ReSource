@@ -1,0 +1,8 @@
+{
+ "symbol": "?unlockServer@FlagGameOption_WorldDominationTour@@QAEHH@Z",
+ "sym_key": "FlagGameOption_WorldDominationTour::unlockServer",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b50048b42388b510885c274068b4110c204008b410cc20400",
+ "relocs": []
+}

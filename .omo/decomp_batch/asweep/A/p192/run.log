@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p192\part_00
+=== convert (20 addrs) ===
+[conv] 0x432c50 BinkMovieHandle::IsAtEnd -> BinkMovieHandle
+[conv] 0x485060 Cell::IsValidHeight -> Cell
+[conv] 0x4b69b0 HouseClass::initDropshipData -> HouseClass
+[conv] 0x540fa0 IPXManagerClass::GetConnectionSpeed -> IPXManagerClass
+[conv] 0x54f650 EventQueue::Check -> EventQueue
+[conv] 0x62fe60 ParticleSystemClass::Draw -> ParticleSystemClass
+[conv] 0x6d0fb0 sub_6D0FB0 -> _addr_6D
+[conv] 0x6da160 TacticalClass::ResetScrollBounds -> TacticalClass
+[conv] 0x6e5e50 TagTypeClass::GetEvent -> TagTypeClass
+[conv] 0x7105e0 BuildingClass::IsBeingRepairedOrCaptured -> BuildingClass
+[conv] 0x734250 SidebarClass::registerBuildingType -> SidebarClass
+[conv] 0x746d90 TechnoClass::Event_Process_746D90 -> TechnoClass
+[conv] 0x746db0 TechnoClass::HasDeployFlags -> TechnoClass
+[conv] 0x756570 ObjectClass::sub_756570 -> ObjectClass
+[conv] 0x7674e0 FlagGameOption_WorldDominationTour::unlockServer -> FlagGameOption_WorldDominationTour
+[conv] 0x77cf40 UI_Setup_77CF40 -> UI_Setup
+[conv] 0x7ca405 _wcslen -> _addr_7C
+[conv] 0x408540 Audio::CalcRate -> Audio
+[conv] 0x46d330 MPCooperative::initGame -> MPCooperative
+[conv] 0x4f3a50 GraphicMenuItem::Constructor -> GraphicMenuItem
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BinkMovieHandle          rc=0
+[era] Cell                     rc=0
+[era] HouseClass               rc=0
+[era] IPXManagerClass          rc=0
+[era] EventQueue               rc=0
+[era] ParticleSystemClass      rc=0
+[era] _addr_6D                 rc=2
+[era] TacticalClass            rc=0
+[era] TagTypeClass             rc=0
+[era] BuildingClass            rc=0
+[era] SidebarClass             rc=2
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=0
+[era] FlagGameOption_WorldDominationTour rc=0
+[era] UI_Setup                 rc=0
+[era] _addr_7C                 rc=0
+[era] Audio                    rc=0
+[era] MPCooperative            rc=2
+[era] GraphicMenuItem          rc=2
+=== diffasm byte-compare ===
+[diff] 0x432c50   MATCH            BinkMovieHandle::IsAtEnd
+[diff] 0x485060   MISMATCH         Cell::IsValidHeight
+[diff] 0x4b69b0   MISMATCH         HouseClass::initDropshipData
+[diff] 0x540fa0   MISMATCH         IPXManagerClass::GetConnectionSpeed
+[diff] 0x54f650   MISMATCH         EventQueue::Check
+[diff] 0x62fe60   MATCH            ParticleSystemClass::Draw
+[diff] 0x6da160   MISMATCH         TacticalClass::ResetScrollBounds
+[diff] 0x6e5e50   MATCH            TagTypeClass::GetEvent
+[diff] 0x7105e0   MATCH            BuildingClass::IsBeingRepairedOrCaptured
+[diff] 0x746d90   MATCH            TechnoClass::Event_Process_746D90
+[diff] 0x746db0   MATCH            TechnoClass::HasDeployFlags
+[diff] 0x756570   MATCH            ObjectClass::sub_756570
+[diff] 0x7674e0   MATCH            FlagGameOption_WorldDominationTour::unlockServer
+[diff] 0x77cf40   MATCH            UI_Setup_77CF40
+[diff] 0x7ca405   MISMATCH         _wcslen
+[diff] 0x408540   MATCH            Audio::CalcRate
+[ledger] 0x432c50 BinkMovieHandle::IsAtEnd -> OK (attempt 1)
+[ledger] 0x485060 Cell::IsValidHeight -> NG (attempt 1)
+[ledger] 0x4b69b0 HouseClass::initDropshipData -> NG (attempt 1)
+[ledger] 0x540fa0 IPXManagerClass::GetConnectionSpeed -> NG (attempt 1)
+[ledger] 0x54f650 EventQueue::Check -> NG (attempt 1)
+[ledger] 0x62fe60 ParticleSystemClass::Draw -> OK (attempt 1)
+[ledger] 0x6d0fb0 sub_6D0FB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6da160 TacticalClass::ResetScrollBounds -> NG (attempt 1)
+[ledger] 0x6e5e50 TagTypeClass::GetEvent -> OK (attempt 1)
+[ledger] 0x7105e0 BuildingClass::IsBeingRepairedOrCaptured -> OK (attempt 1)
+[ledger] 0x734250 SidebarClass::registerBuildingType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x746d90 TechnoClass::Event_Process_746D90 -> OK (attempt 1)
+[ledger] 0x746db0 TechnoClass::HasDeployFlags -> OK (attempt 1)
+[ledger] 0x756570 ObjectClass::sub_756570 -> OK (attempt 1)
+[ledger] 0x7674e0 FlagGameOption_WorldDominationTour::unlockServer -> OK (attempt 1)
+[ledger] 0x77cf40 UI_Setup_77CF40 -> OK (attempt 1)
+[ledger] 0x7ca405 _wcslen -> NG (attempt 1)
+[ledger] 0x408540 Audio::CalcRate -> OK (attempt 1)
+[ledger] 0x46d330 MPCooperative::initGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f3a50 GraphicMenuItem::Constructor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "signedness": 2,
+  "extern_reloc": 1,
+  "branch_order": 1,
+  "codegen_shape": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 62.5,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p192\batch_report.json

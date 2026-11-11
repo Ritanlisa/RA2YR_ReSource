@@ -1,0 +1,11 @@
+{
+ "addr": "0x7674E0",
+ "name": "COMClass::unlockServer",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7674E0",
+ "bytes_hex": "8b4424048b50048b42388b510885c274068b4110c204008b410cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

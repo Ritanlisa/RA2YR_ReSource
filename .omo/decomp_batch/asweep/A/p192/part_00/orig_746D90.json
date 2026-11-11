@@ -1,0 +1,11 @@
+{
+ "addr": "0x746D90",
+ "name": "Event_Process_746D90",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746D90",
+ "bytes_hex": "8a81e006000084c0750d8a81e106000084c0750333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
