@@ -40,3 +40,4 @@
 {"part": 39, "n": 20, "seconds": 16.3, "ok": true, "verdicts": {"COMPILE_FAIL": 16, "MISMATCH": 4}}
 {"part": 40, "n": 20, "seconds": 10.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 41, "n": 20, "seconds": 17.1, "ok": true, "verdicts": {"COMPILE_FAIL": 15, "MISMATCH": 5}}
+{"part": 42, "n": 20, "seconds": 17.3, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}

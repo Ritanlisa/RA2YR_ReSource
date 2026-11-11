@@ -1,0 +1,105 @@
+{
+ "symbol": "?SelectScriptNode@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::SelectScriptNode",
+ "size": 301,
+ "link_base": 0,
+ "bytes_hex": "a08001000083ec2884c0530f8517010000a1a80000005556578b0850ff512c89442414a1a8000000508b10ff523089442418a0f80000000fbec833f6894c242084c07e7b0fbe15ec0000008d4c24248b02518b1cb08bcbe8000000008b50048b005250ba080000008d4c2430e8000000008b08894c24108b500c8b78048b68088954241cba040000008d4c2410e8000000008b4424108b4c24143bc87c1803e83bcd7d128b4424183bc77c0a8b4c241c03cf3bc17c0b8b442420463bf07c8533db0fbe159c0100005f5e3bda5d745985dbc6050c01000000743b8b43048b088b118b0d000000008b821c0200003bc1751ca00801000084c074070fbec83bcb750c8bcbe80000000083f8ff7408881d0c01000033db85db881d9c010000740953e80000000083c4045b83c428c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?GetScreenPos@ScriptAction@@QAEPAIPAX@Z",
+   "sym_key": "ScriptAction::GetScreenPos"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?ComputeBounds@@YIPAIPAXHHH@Z",
+   "sym_key": "ComputeBounds"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?ShrinkRect@@YIHPAXH@Z",
+   "sym_key": "ShrinkRect"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?CheckBuildability@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::CheckBuildability"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 289,
+   "type": "REL32",
+   "sym": "?Team_Get@@YAXPAX@Z",
+   "sym_key": "Team_Get"
+  }
+ ]
+}
