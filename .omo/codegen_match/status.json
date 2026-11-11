@@ -44024,6 +44024,28 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x767cd0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f70f0]",
+  "name": "sub_767CD0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_767CD0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x767cf0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_767CF0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_767CF0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x767e40": {
   "attempts": 1,
   "clean": true,
@@ -44218,6 +44240,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x76a8f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_76A8F0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_76A8F0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x76a930": {
   "attempts": 2,
   "clean": false,
@@ -44303,6 +44336,28 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x76bcd0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f7280]",
+  "name": "sub_76BCD0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_76BCD0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x76bcf0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_76BCF0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_76BCF0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x76be40": {
   "attempts": 1,
   "clean": true,
@@ -44349,6 +44404,28 @@
   "name": "Conflict::GetOwnerHouse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x76c0d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f72a0]",
+  "name": "sub_76C0D0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_76C0D0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x76c0f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_76C0F0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_76C0F0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x76c1b0": {
   "attempts": 2,
@@ -44501,6 +44578,28 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x76f2b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f7300]",
+  "name": "sub_76F2B0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_76F2B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x76f2d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_76F2D0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_76F2D0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x76f330": {
   "attempts": 2,
   "clean": false,
@@ -44532,6 +44631,17 @@
   "orig_name": "sub_76F430",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x76f750": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f7320]",
+  "name": "sub_76F750",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_76F750",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x76f770": {
@@ -44618,6 +44728,28 @@
   "orig_name": "sub_770060",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x7700b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f7340]",
+  "name": "sub_7700B0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_7700B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7700d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_7700D0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_7700D0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x770150": {
@@ -44725,6 +44857,28 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x771a90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f7378]",
+  "name": "sub_771A90",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_771A90",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x771ab0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_771AB0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_771AB0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x771b10": {
   "attempts": 2,
   "clean": false,
@@ -44799,6 +44953,28 @@
   "name": "WeaponTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x773290": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f7428]",
+  "name": "sub_773290",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_773290",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7732b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_7732B0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_7732B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7732d0": {
   "attempts": 1,
@@ -45096,6 +45272,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x777220": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_777220",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_777220",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x777340": {
   "attempts": 2,
   "clean": false,
@@ -45214,6 +45401,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x778520": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f74e0]",
+  "name": "sub_778520",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_778520",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x778540": {
   "attempts": 2,
   "clean": false,
@@ -45300,6 +45498,28 @@
   "name": "WOLGameList::UpdatePlayerStats",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x77b0c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7f7500]",
+  "name": "sub_77B0C0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_77B0C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77b0e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_77B0E0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_77B0E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x77b100": {
   "attempts": 2,
