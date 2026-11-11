@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x72dad0 UI_Helper_72DAD0 -> UI_Helper
+[conv] 0x72daf0 sub_72DAF0 -> _addr_72
+[conv] 0x72e270 sub_72E270 -> _addr_72
+[conv] 0x72e280 VtableStub_72E280 -> VtableStub
+[conv] 0x72e290 sub_72E290 -> _addr_72
+[conv] 0x72e2a0 UI_Helper_72E2A0 -> UI_Helper
+[conv] 0x72e2b0 sub_72E2B0 -> _addr_72
+[conv] 0x72e2c0 UI_Helper_72E2C0 -> UI_Helper
+[conv] 0x72f430 UI_Init_72F430 -> UI_Init
+[conv] 0x72f4a0 UI_Load_72F4A0 -> UI_Load
+[conv] 0x72f4c0 sub_72F4C0 -> _addr_72
+[conv] 0x72f4d0 UI_Update_72F4D0 -> UI_Update
+[conv] 0x72f4e0 UI_Load_72F4E0 -> UI_Load
+[conv] 0x72f4f0 sub_72F4F0 -> _addr_72
+[conv] 0x72f520 sub_72F520 -> _addr_72
+[conv] 0x72f530 sub_72F530 -> _addr_72
+[conv] 0x730740 sub_730740 -> _addr_73
+[conv] 0x730750 sub_730750 -> _addr_73
+[conv] 0x730ae0 sub_730AE0 -> _addr_73
+[conv] 0x731cb0 Map_Handle_731CB0 -> Map_Handle
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UI_Helper                rc=0
+[era] _addr_72                 rc=0
+[era] VtableStub               rc=0
+[era] UI_Init                  rc=0
+[era] UI_Load                  rc=0
+[era] UI_Update                rc=0
+[era] _addr_73                 rc=0
+[era] Map_Handle               rc=0
+=== diffasm byte-compare ===
+[diff] 0x72dad0   MATCH            UI_Helper_72DAD0
+[diff] 0x72e2a0   MATCH            UI_Helper_72E2A0
+[diff] 0x72e2c0   MATCH            UI_Helper_72E2C0
+[diff] 0x72daf0   MATCH            sub_72DAF0
+[diff] 0x72e270   MATCH            sub_72E270
+[diff] 0x72e290   MATCH            sub_72E290
+[diff] 0x72e2b0   MATCH            sub_72E2B0
+[diff] 0x72f4c0   MATCH            sub_72F4C0
+[diff] 0x72f4f0   MATCH            sub_72F4F0
+[diff] 0x72f520   MATCH            sub_72F520
+[diff] 0x72f530   MATCH            sub_72F530
+[diff] 0x72e280   MATCH            VtableStub_72E280
+[diff] 0x72f430   MATCH            UI_Init_72F430
+[diff] 0x72f4a0   MATCH            UI_Load_72F4A0
+[diff] 0x72f4e0   MATCH            UI_Load_72F4E0
+[diff] 0x72f4d0   MATCH            UI_Update_72F4D0
+[diff] 0x730740   MATCH            sub_730740
+[diff] 0x730750   MATCH            sub_730750
+[diff] 0x730ae0   MATCH            sub_730AE0
+[diff] 0x731cb0   MATCH            Map_Handle_731CB0
+[ledger] 0x72dad0 UI_Helper_72DAD0 -> OK (attempt 1)
+[ledger] 0x72daf0 sub_72DAF0 -> OK (attempt 1)
+[ledger] 0x72e270 sub_72E270 -> OK (attempt 1)
+[ledger] 0x72e280 VtableStub_72E280 -> OK (attempt 1)
+[ledger] 0x72e290 sub_72E290 -> OK (attempt 1)
+[ledger] 0x72e2a0 UI_Helper_72E2A0 -> OK (attempt 1)
+[ledger] 0x72e2b0 sub_72E2B0 -> OK (attempt 1)
+[ledger] 0x72e2c0 UI_Helper_72E2C0 -> OK (attempt 1)
+[ledger] 0x72f430 UI_Init_72F430 -> OK (attempt 1)
+[ledger] 0x72f4a0 UI_Load_72F4A0 -> OK (attempt 1)
+[ledger] 0x72f4c0 sub_72F4C0 -> OK (attempt 1)
+[ledger] 0x72f4d0 UI_Update_72F4D0 -> OK (attempt 1)
+[ledger] 0x72f4e0 UI_Load_72F4E0 -> OK (attempt 1)
+[ledger] 0x72f4f0 sub_72F4F0 -> OK (attempt 1)
+[ledger] 0x72f520 sub_72F520 -> OK (attempt 1)
+[ledger] 0x72f530 sub_72F530 -> OK (attempt 1)
+[ledger] 0x730740 sub_730740 -> OK (attempt 1)
+[ledger] 0x730750 sub_730750 -> OK (attempt 1)
+[ledger] 0x730ae0 sub_730AE0 -> OK (attempt 1)
+[ledger] 0x731cb0 Map_Handle_731CB0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p26\batch_report.json

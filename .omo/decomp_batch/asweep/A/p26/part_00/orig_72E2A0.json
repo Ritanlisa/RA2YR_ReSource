@@ -1,0 +1,11 @@
+{
+ "addr": "0x72E2A0",
+ "name": "UI_Helper_72E2A0",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72E2A0",
+ "bytes_hex": "a1d4fbb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

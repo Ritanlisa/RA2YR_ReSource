@@ -1,0 +1,11 @@
+{
+ "addr": "0x731CB0",
+ "name": "Map_Handle_731CB0",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x731CB0",
+ "bytes_hex": "b847000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

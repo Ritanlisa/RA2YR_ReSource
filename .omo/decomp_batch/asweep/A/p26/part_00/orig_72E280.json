@@ -1,0 +1,11 @@
+{
+ "addr": "0x72E280",
+ "name": "VtableStub_72E280",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72E280",
+ "bytes_hex": "a1ccfbb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
