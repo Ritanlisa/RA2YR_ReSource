@@ -1,0 +1,27 @@
+{
+ "symbol": "?_TestDefaultCountry@@YAHF@Z",
+ "sym_key": "Unnamed::_TestDefaultCountry",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "0fbf4c240433d2b800000000668b15000000003bca741383c0023d000000007d0c33d2668b103bca75ed33c0c3b801000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D0E4@@3EA",
+   "sym_key": "DataGlobal_87D0E4"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D0E4@@3EA",
+   "sym_key": "DataGlobal_87D0E4"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D0F8@@3IA",
+   "sym_key": "DataGlobal_87D0F8"
+  }
+ ]
+}

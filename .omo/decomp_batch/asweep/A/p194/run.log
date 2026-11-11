@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p194\part_00
+=== convert (20 addrs) ===
+[conv] 0x483460 HouseClass::checkAutoProduction -> HouseClass
+[conv] 0x486750 Cell::IsInRange -> Cell
+[conv] 0x486770 Cell::IsInRange2 -> Cell
+[conv] 0x4df1a0 TechnoClass::vt_entry_4A8 -> TechnoClass
+[conv] 0x542310 IPXManagerClass::GetUpgradeValue -> IPXManagerClass
+[conv] 0x542330 IPXManagerClass::GetConnectionCount -> IPXManagerClass
+[conv] 0x549b50 IsometricTileTypeClass::vt_entry_6C -> IsometricTileTypeClass
+[conv] 0x54f6b0 EventQueue::CheckPosition -> EventQueue
+[conv] 0x5aead0 BuildingClass::processBaseExpansion -> BuildingClass
+[conv] 0x5c9700 Scenario::ResetDisplayArrays -> Scenario
+[conv] 0x5e9560 GameOption::CheckDuplicate -> GameOption
+[conv] 0x5fea30 OverlayTypeClass::vt_entry_6C -> OverlayTypeClass
+[conv] 0x636570 ScriptAction::Check -> ScriptAction
+[conv] 0x6b8af0 ObjectClass::ApplyGameOptions_Helper -> ObjectClass
+[conv] 0x6c9940 ObjectClass::sub_6C9940 -> ObjectClass
+[conv] 0x6c9ac0 ObjectClass::sub_6C9AC0 -> ObjectClass
+[conv] 0x6cfd40 GetFontClassEntry -> _addr_6C
+[conv] 0x6e8160 TeamClass::SumMemberCounts -> TeamClass
+[conv] 0x7d73da _TestDefaultCountry -> _addr_7D
+[conv] 0x7d9eb0 __allshl -> _addr_7D
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] Cell                     rc=2
+[era] TechnoClass              rc=0
+[era] IPXManagerClass          rc=0
+[era] IsometricTileTypeClass   rc=0
+[era] EventQueue               rc=0
+[era] BuildingClass            rc=2
+[era] Scenario                 rc=2
+[era] GameOption               rc=0
+[era] OverlayTypeClass         rc=0
+[era] ScriptAction             rc=2
+[era] ObjectClass              rc=2
+[era] _addr_6C                 rc=2
+[era] TeamClass                rc=0
+[era] _addr_7D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x483460   MISMATCH         HouseClass::checkAutoProduction
+[diff] 0x4df1a0   MATCH            TechnoClass::vt_entry_4A8
+[diff] 0x542310   MATCH            IPXManagerClass::GetUpgradeValue
+[diff] 0x542330   MATCH            IPXManagerClass::GetConnectionCount
+[diff] 0x549b50   MISMATCH         IsometricTileTypeClass::vt_entry_6C
+[diff] 0x54f6b0   MATCH            EventQueue::CheckPosition
+[diff] 0x5e9560   MISMATCH         GameOption::CheckDuplicate
+[diff] 0x5fea30   MISMATCH         OverlayTypeClass::vt_entry_6C
+[diff] 0x6b8af0   MISMATCH         ObjectClass::ApplyGameOptions_Helper
+[diff] 0x6c9ac0   MISMATCH         ObjectClass::sub_6C9AC0
+[diff] 0x6e8160   MISMATCH         TeamClass::SumMemberCounts
+[diff] 0x7d73da   MISMATCH         _TestDefaultCountry
+[diff] 0x7d9eb0   MISMATCH         __allshl
+[ledger] 0x483460 HouseClass::checkAutoProduction -> NG (attempt 1)
+[ledger] 0x486750 Cell::IsInRange -> COMPILE_FAIL (attempt 1)
+[ledger] 0x486770 Cell::IsInRange2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4df1a0 TechnoClass::vt_entry_4A8 -> OK (attempt 1)
+[ledger] 0x542310 IPXManagerClass::GetUpgradeValue -> OK (attempt 1)
+[ledger] 0x542330 IPXManagerClass::GetConnectionCount -> OK (attempt 1)
+[ledger] 0x549b50 IsometricTileTypeClass::vt_entry_6C -> NG (attempt 1)
+[ledger] 0x54f6b0 EventQueue::CheckPosition -> OK (attempt 1)
+[ledger] 0x5aead0 BuildingClass::processBaseExpansion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c9700 Scenario::ResetDisplayArrays -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9560 GameOption::CheckDuplicate -> NG (attempt 1)
+[ledger] 0x5fea30 OverlayTypeClass::vt_entry_6C -> NG (attempt 1)
+[ledger] 0x636570 ScriptAction::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8af0 ObjectClass::ApplyGameOptions_Helper -> NG (attempt 1)
+[ledger] 0x6c9940 ObjectClass::sub_6C9940 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c9ac0 ObjectClass::sub_6C9AC0 -> NG (attempt 1)
+[ledger] 0x6cfd40 GetFontClassEntry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e8160 TeamClass::SumMemberCounts -> NG (attempt 1)
+[ledger] 0x7d73da _TestDefaultCountry -> NG (attempt 1)
+[ledger] 0x7d9eb0 __allshl -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 7,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "codegen_shape": 5,
+  "extern_reloc": 1,
+  "regalloc": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 30.8,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p194\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x483460",
+ "name": "HouseClass::checkAutoProduction",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x483460",
+ "bytes_hex": "8b8140010000a810741224efc74150ffffffff898140010000b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

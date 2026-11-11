@@ -1,0 +1,11 @@
+{
+ "addr": "0x549B50",
+ "name": "IsometricTileTypeClass::vt_entry_6C",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x549B50",
+ "bytes_hex": "8b4c24088b442404568bd08b3189328b71048972045e8b4908894a08c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

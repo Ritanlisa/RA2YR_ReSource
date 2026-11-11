@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B8AF0",
+ "name": "ApplyGameOptions_Helper",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B8AF0",
+ "bytes_hex": "8b4424048b118b0033c2a8ff750ca900ff07007505b001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

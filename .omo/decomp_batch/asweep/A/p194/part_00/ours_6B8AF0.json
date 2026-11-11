@@ -1,0 +1,8 @@
+{
+ "symbol": "?ApplyGameOptions_Helper@ObjectClass@@QAE_NPAH@Z",
+ "sym_key": "ObjectClass::ApplyGameOptions_Helper",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b118b0033c284c0750fa900ff07007508b801000000c2040033c0c20400",
+ "relocs": []
+}

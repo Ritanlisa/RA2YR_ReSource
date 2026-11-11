@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E9560",
+ "name": "GameOption::CheckDuplicate",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E9560",
+ "bytes_hex": "8b0db411ac00b890daa8003908740d83c0043db0daa8007cf2b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

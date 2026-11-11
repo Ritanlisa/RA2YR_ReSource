@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetConnectionCount@IPXManagerClass@@QAEHXZ",
+ "sym_key": "IPXManagerClass::GetConnectionCount",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8a410484c074158a410584c0740e8b494c85c974078b41048b4038c333c0c3",
+ "relocs": []
+}

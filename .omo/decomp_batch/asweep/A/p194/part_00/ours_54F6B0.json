@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckPosition@EventQueue@@QAE_NXZ",
+ "sym_key": "EventQueue::CheckPosition",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8b81180300004025ff0000807907480d00ffffff403b81140300000f94c0c3",
+ "relocs": []
+}

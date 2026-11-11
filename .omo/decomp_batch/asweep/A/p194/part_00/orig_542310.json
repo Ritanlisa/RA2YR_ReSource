@@ -1,0 +1,11 @@
+{
+ "addr": "0x542310",
+ "name": "HouseClass::GetUpgradeValue",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x542310",
+ "bytes_hex": "8a410484c074158a410584c0740e8b494c85c974078b41048b4028c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

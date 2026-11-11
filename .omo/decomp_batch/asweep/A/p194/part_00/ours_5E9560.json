@@ -1,0 +1,33 @@
+{
+ "symbol": "?CheckDuplicate@GameOption@@QAEDXZ",
+ "sym_key": "GameOption::CheckDuplicate",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8b0d000000008b15000000003bd1b800000000740e83c0043d000000007d07390875f232c0c3b001c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  }
+ ]
+}
