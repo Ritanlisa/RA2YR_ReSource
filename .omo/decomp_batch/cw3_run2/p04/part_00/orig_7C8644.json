@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8644",
+ "name": "PeekMessageA",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8644",
+ "bytes_hex": "ff2584147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

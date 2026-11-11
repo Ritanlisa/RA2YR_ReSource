@@ -37218,7 +37218,7 @@
   "status": "NG"
  },
  "0x551c60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "BitStreamIOLCW",
@@ -80208,7 +80208,7 @@
   "this_as_id": false
  },
  "0x7575a0": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -88386,7 +88386,7 @@
   "status": "NG"
  },
  "0x7c83ec": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e125c]",
   "name": "GetDriveTypeA",
@@ -88397,7 +88397,7 @@
   "this_as_id": false
  },
  "0x7c842e": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e1230]",
   "name": "LoadResource",
@@ -88408,7 +88408,7 @@
   "this_as_id": false
  },
  "0x7c8470": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e11ac]",
   "name": "lstrlenA",
@@ -88419,7 +88419,7 @@
   "this_as_id": false
  },
  "0x7c84b2": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e10e0]",
   "name": "DeleteFileA",
@@ -88444,7 +88444,7 @@
   "status": "NG"
  },
  "0x7c857e": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e1168]",
   "name": "CreateEventA",
@@ -88469,7 +88469,7 @@
   "status": "NG"
  },
  "0x7c8644": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e1484]",
   "name": "PeekMessageA",
@@ -88480,7 +88480,7 @@
   "this_as_id": false
  },
  "0x7c8686": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e13d8]",
   "name": "DialogBoxIndirectParamA",
@@ -88491,7 +88491,7 @@
   "this_as_id": false
  },
  "0x7c86c8": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e13a8]",
   "name": "GetKeyState",
@@ -88502,7 +88502,7 @@
   "this_as_id": false
  },
  "0x7c870a": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e1504]",
   "name": "EndPaint",
@@ -88520,7 +88520,7 @@
   "status": "NG"
  },
  "0x7c8794": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e1458]",
   "name": "ScreenToClient",
@@ -88531,7 +88531,7 @@
   "this_as_id": false
  },
  "0x7c87d6": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e142c]",
   "name": "RedrawWindow",
@@ -88542,7 +88542,7 @@
   "this_as_id": false
  },
  "0x7c8818": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e1064]",
   "name": "GetTextMetricsA",
@@ -88560,7 +88560,7 @@
   "status": "NG"
  },
  "0x7c889c": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e100c]",
   "name": "RegOpenKeyExA",
@@ -88571,7 +88571,7 @@
   "this_as_id": false
  },
  "0x7c88e4": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e15f0]",
   "name": "CLSIDFromString",
@@ -88582,7 +88582,7 @@
   "this_as_id": false
  },
  "0x7c891a": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 jmp dword ptr [0x7e15d0]",
@@ -88594,7 +88594,7 @@
   "this_as_id": false
  },
  "0x7c892c": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e1364]",
   "name": "SysFreeString",
@@ -88605,7 +88605,7 @@
   "this_as_id": false
  },
  "0x7c896e": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e1544]",
   "name": "ntohl",
@@ -88616,7 +88616,7 @@
   "this_as_id": false
  },
  "0x7c89b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": "+0 jmp dword ptr [0x7e1558]",
   "name": "sendto",

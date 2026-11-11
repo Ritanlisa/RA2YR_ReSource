@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C86C8",
+ "name": "GetKeyState",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C86C8",
+ "bytes_hex": "ff25a8137e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

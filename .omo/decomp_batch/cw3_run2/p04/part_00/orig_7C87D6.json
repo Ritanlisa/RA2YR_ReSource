@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C87D6",
+ "name": "RedrawWindow",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C87D6",
+ "bytes_hex": "ff252c147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

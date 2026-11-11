@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x551c60",
+  "name": "BitStreamIOLCW",
+  "cls": null,
+  "size": 484,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x7575a0",
+  "name": "VoxelRenderer::DrawSection",
+  "cls": null,
+  "size": 491,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7c83ec",
+  "name": "GetDriveTypeA",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'__imp_GetDriveTypeA' : cannot convert parameter 1 from 'const char *' to 'void *'"
+ },
+ {
+  "addr": "0x7c842e",
+  "name": "LoadResource",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 6B ours 18B"
+ },
+ {
+  "addr": "0x7c8470",
+  "name": "lstrlenA",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'__imp_lstrlenA' : cannot convert parameter 1 from 'const char *' to 'void *'"
+ },
+ {
+  "addr": "0x7c84b2",
+  "name": "DeleteFileA",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'__imp_DeleteFileA' : cannot convert parameter 1 from 'const char *' to 'void *'"
+ },
+ {
+  "addr": "0x7c857e",
+  "name": "CreateEventA",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 6B ours 28B"
+ },
+ {
+  "addr": "0x7c8644",
+  "name": "PeekMessageA",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 6B ours 33B"
+ },
+ {
+  "addr": "0x7c8686",
+  "name": "DialogBoxIndirectParamA",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 6B ours 33B"
+ },
+ {
+  "addr": "0x7c86c8",
+  "name": "GetKeyState",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 6B ours 13B"
+ },
+ {
+  "addr": "0x7c870a",
+  "name": "EndPaint",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ',' before '*'"
+ },
+ {
+  "addr": "0x7c8794",
+  "name": "ScreenToClient",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 6B ours 18B"
+ },
+ {
+  "addr": "0x7c87d6",
+  "name": "RedrawWindow",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ',' before '*'"
+ },
+ {
+  "addr": "0x7c8818",
+  "name": "GetTextMetricsA",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 6B ours 18B"
+ },
+ {
+  "addr": "0x7c889c",
+  "name": "RegOpenKeyExA",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 6B ours 33B"
+ },
+ {
+  "addr": "0x7c88e4",
+  "name": "CLSIDFromString",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPCOLESTR'"
+ },
+ {
+  "addr": "0x7c891a",
+  "name": "OleUninitialize::0",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : 'constant'"
+ },
+ {
+  "addr": "0x7c892c",
+  "name": "SysFreeString",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'BSTR'"
+ },
+ {
+  "addr": "0x7c896e",
+  "name": "ntohl",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 6B ours 13B"
+ },
+ {
+  "addr": "0x7c89b0",
+  "name": "sendto",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'SOCKET'"
+ }
+]

@@ -1,0 +1,15 @@
+{
+ "symbol": "?CreateEventA@@YGPAXPAXHHPBD@Z",
+ "sym_key": "Unnamed::CreateEventA",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c240c8b542408508b442408515250e800000000c21000",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?__imp_CreateEventA@@YGPAXPBXHH0@Z",
+   "sym_key": "__imp_CreateEventA"
+  }
+ ]
+}

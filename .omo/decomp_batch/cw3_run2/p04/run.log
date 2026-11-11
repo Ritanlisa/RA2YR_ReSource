@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x551c60 BitStreamIOLCW -> _addr_55
+[conv] 0x7575a0 VoxelRenderer::DrawSection -> VoxelRenderer
+[conv] 0x7c83ec GetDriveTypeA -> _addr_7C
+[conv] 0x7c842e LoadResource -> _addr_7C
+[conv] 0x7c8470 lstrlenA -> _addr_7C
+[conv] 0x7c84b2 DeleteFileA -> _addr_7C
+[conv] 0x7c857e CreateEventA -> _addr_7C
+[conv] 0x7c8644 PeekMessageA -> _addr_7C
+[conv] 0x7c8686 DialogBoxIndirectParamA -> _addr_7C
+[conv] 0x7c86c8 GetKeyState -> _addr_7C
+[conv] 0x7c870a EndPaint -> _addr_7C
+[conv] 0x7c8794 ScreenToClient -> _addr_7C
+[conv] 0x7c87d6 RedrawWindow -> _addr_7C
+[conv] 0x7c8818 GetTextMetricsA -> _addr_7C
+[conv] 0x7c889c RegOpenKeyExA -> _addr_7C
+[conv] 0x7c88e4 CLSIDFromString -> _addr_7C
+[conv] 0x7c891a OleUninitialize::_0 -> OleUninitialize
+[conv] 0x7c892c SysFreeString -> _addr_7C
+[conv] 0x7c896e ntohl -> _addr_7C
+[conv] 0x7c89b0 sendto -> _addr_7C
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_55                 rc=2
+[era] VoxelRenderer            rc=2
+[era] _addr_7C                 rc=0
+[era] OleUninitialize          rc=0
+=== diffasm byte-compare ===
+[diff] 0x7c83ec   MISMATCH         GetDriveTypeA
+[diff] 0x7c842e   MISMATCH         LoadResource
+[diff] 0x7c8470   MISMATCH         lstrlenA
+[diff] 0x7c84b2   MISMATCH         DeleteFileA
+[diff] 0x7c857e   MISMATCH         CreateEventA
+[diff] 0x7c8644   MISMATCH         PeekMessageA
+[diff] 0x7c8686   MISMATCH         DialogBoxIndirectParamA
+[diff] 0x7c86c8   MISMATCH         GetKeyState
+[diff] 0x7c870a   MISMATCH         EndPaint
+[diff] 0x7c8794   MISMATCH         ScreenToClient
+[diff] 0x7c87d6   MISMATCH         RedrawWindow
+[diff] 0x7c8818   MISMATCH         GetTextMetricsA
+[diff] 0x7c889c   MISMATCH         RegOpenKeyExA
+[diff] 0x7c88e4   MISMATCH         CLSIDFromString
+[diff] 0x7c892c   MISMATCH         SysFreeString
+[diff] 0x7c896e   MISMATCH         ntohl
+[diff] 0x7c89b0   MISMATCH         sendto
+[diff] 0x7c891a   MISMATCH         OleUninitialize::_0
+[ledger] 0x551c60 BitStreamIOLCW -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7575a0 VoxelRenderer::DrawSection -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7c83ec GetDriveTypeA -> NG (attempt 3)
+[ledger] 0x7c842e LoadResource -> NG (attempt 7)
+[ledger] 0x7c8470 lstrlenA -> NG (attempt 3)
+[ledger] 0x7c84b2 DeleteFileA -> NG (attempt 3)
+[ledger] 0x7c857e CreateEventA -> NG (attempt 7)
+[ledger] 0x7c8644 PeekMessageA -> NG (attempt 7)
+[ledger] 0x7c8686 DialogBoxIndirectParamA -> NG (attempt 7)
+[ledger] 0x7c86c8 GetKeyState -> NG (attempt 7)
+[ledger] 0x7c870a EndPaint -> NG (attempt 3)
+[ledger] 0x7c8794 ScreenToClient -> NG (attempt 7)
+[ledger] 0x7c87d6 RedrawWindow -> NG (attempt 4)
+[ledger] 0x7c8818 GetTextMetricsA -> NG (attempt 8)
+[ledger] 0x7c889c RegOpenKeyExA -> NG (attempt 8)
+[ledger] 0x7c88e4 CLSIDFromString -> NG (attempt 4)
+[ledger] 0x7c891a OleUninitialize::_0 -> NG (attempt 10)
+[ledger] 0x7c892c SysFreeString -> NG (attempt 4)
+[ledger] 0x7c896e ntohl -> NG (attempt 8)
+[ledger] 0x7c89b0 sendto -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 18
+ },
+ "pathologies": {
+  "codegen_shape": 18
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p04\batch_report.json
