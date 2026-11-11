@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x4e91d0",
+  "name": "VectorClass_ptr_SuperClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p179",
+  "unit": "_DynamicVectorClass_PAVAbstractTypeClass",
+  "emitted": "_DynamicVectorClass_PAVAbstractTypeClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e91dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x6ca7f0",
+  "name": "VectorClass_ptr_SubTitle::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p188",
+  "unit": "_DynamicVectorClass_PAVSubTitle",
+  "emitted": "_DynamicVectorClass_PAVSubTitle::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x6ca7fc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e9110",
+  "name": "VectorClass_ptr_ParticleTypeClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p179",
+  "unit": "_DynamicVectorClass_PAVParticleSystemTypeClass",
+  "emitted": "_DynamicVectorClass_PAVParticleSystemTypeClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e911c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5d0640",
+  "name": "MSPCXAnim_42::GetCount",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_DynamicVectorClass_PAVMSTextEntry",
+  "emitted": "_DynamicVectorClass_PAVMSTextEntry::GetCount",
+  "first_diff": {
+   "orig": "+5 jne 0x5d064c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ecde0",
+  "name": "VectorClass_ptr_TeamTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVTeamTypeClass",
+  "emitted": "_VectorClass_PAVTeamTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4ecdec",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4a7d50",
+  "name": "Dial8Class_48::PointerToIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p176",
+  "unit": "_DynamicVectorClass_PAVDiskLaserClass",
+  "emitted": "_DynamicVectorClass_PAVDiskLaserClass::PointerToIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4a7d5c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ec200",
+  "name": "VectorClass_ptr_FactoryClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVFactoryClass",
+  "emitted": "_VectorClass_PAVFactoryClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x4ec20c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x63dc50",
+  "name": "BlowPipe_31::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p186",
+  "unit": "_DynamicVectorClass_PAVPlanningNodeClass",
+  "emitted": "_DynamicVectorClass_PAVPlanningNodeClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x63dc5c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x588d10",
+  "name": "_DynamicVectorClass_UZoneConnectionClass::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "_DynamicVectorClass_UZoneConnectionClass",
+  "emitted": "_DynamicVectorClass_UZoneConnectionClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x588d1c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8a50",
+  "name": "VectorClass_ptr_CampaignClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVCampaignClass",
+  "emitted": "_DynamicVectorClass_PAVCampaignClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8a5c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x69c4d0",
+  "name": "_TypeList_W4DiskID::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p187",
+  "unit": "_TypeList_W4DiskID",
+  "emitted": "_TypeList_W4DiskID::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x69c4dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x74f390",
+  "name": "IRTTITypeInfo::PointerToIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p189",
+  "unit": "IRTTITypeInfo",
+  "emitted": "IRTTITypeInfo::PointerToIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x74f39c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e9170",
+  "name": "VectorClass_ptr_ParticleTypeClass::GetItemIndex_1",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p179",
+  "unit": "_DynamicVectorClass_PAVSuperWeaponTypeClass",
+  "emitted": "_DynamicVectorClass_PAVSuperWeaponTypeClass::GetItemIndex_1",
+  "first_diff": {
+   "orig": "+5 jne 0x4e917c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4eaf00",
+  "name": "VectorClass_ptr_WaveClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p179",
+  "unit": "_VectorClass_PAVWaveClass",
+  "emitted": "_VectorClass_PAVWaveClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x4eaf0c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x6b1440",
+  "name": "VectorClass_ptr_SlaveManagerClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p187",
+  "unit": "_DynamicVectorClass_PAVSlaveManagerClass",
+  "emitted": "_DynamicVectorClass_PAVSlaveManagerClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x6b144c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x63db90",
+  "name": "VectorClass_ptr_PlanningMemberClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p186",
+  "unit": "_DynamicVectorClass_PAVPlanningMemberClass",
+  "emitted": "_DynamicVectorClass_PAVPlanningMemberClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x63db9c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x63dcb0",
+  "name": "BlowPipe_23::GetCount",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p186",
+  "unit": "_DynamicVectorClass_PAVEventClass",
+  "emitted": "_DynamicVectorClass_PAVEventClass::GetCount",
+  "first_diff": {
+   "orig": "+5 jne 0x63dcbc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40c850",
+  "name": "VectorClass_ptr_IsometricTileClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_DynamicVectorClass_PAVIsometricTileClass",
+  "emitted": "_DynamicVectorClass_PAVIsometricTileClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x40c85c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x6e66a0",
+  "name": "VectorClass_ptr_TagTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p188",
+  "unit": "_VectorClass_PAVTagTypeClass",
+  "emitted": "_VectorClass_PAVTagTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x6e66ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x512930",
+  "name": "HouseTypeClass_36::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_DynamicVectorClass_PBVUnitTypeClass",
+  "emitted": "_DynamicVectorClass_PBVUnitTypeClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x51293c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ }
+]
