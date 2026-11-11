@@ -1,0 +1,27 @@
+{
+ "symbol": "?Reassign@String@@QAEPAPADPAPBD@Z",
+ "sym_key": "String::Reassign",
+ "size": 200,
+ "link_base": 0,
+ "bytes_hex": "8b542404558be956578b450085c08b387509833a000f84a500000085ff74378b3285f67431538bc78a188acb3a1e751c84c974148a58018acb3a5e01750e83c00283c60284c975e033c0eb051bc083d8ff85c05b746a8b3285f67505be0000000085ff740957e80000000083c40485f6c7450000000000740d8bfe83c9ff33c0f2aef7d1eb05b90100000051e80000000083c40489450085f6c6000074228bfe83c9ff33c08b5500f2aef7d12bf98bc18bf78b3ac1e902f3a58bc883e103f3a45f8bc55e5dc20400",
+ "relocs": [
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -6734,14 +6734,14 @@
   "status": "OK"
  },
  "0x7b2ff0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "UDPInterfaceClass_Destru::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b3310": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "UDPInterfaceClass::CheckStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6755,11 +6755,11 @@
   "status": "NG"
  },
  "0x7b4940": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+9 mov edi, dword ptr [ebp]",
   "name": "String::Reassign",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x7b4c20": {
   "attempts": 4,
@@ -6769,18 +6769,18 @@
   "status": "NG"
  },
  "0x7b4cd0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+7 mov eax, dword ptr [eax]",
   "name": "String::Append2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x7b5020": {
-  "attempts": 6,
-  "first_diff": null,
+  "attempts": 7,
+  "first_diff": "+0 push ebx",
   "name": "String::Erase",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x7b5b80": {
   "attempts": 2,
@@ -6881,7 +6881,7 @@
   "status": "OK"
  },
  "0x7bcfb0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TacticalMap::FillScanlinesOpaque",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6902,11 +6902,11 @@
   "status": "NG"
  },
  "0x7c81db": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 push ebp",
   "name": "AudioCodec::Decode",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x7c891a": {
   "attempts": 5,
@@ -6979,21 +6979,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x7df9c0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfae0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Voxel::FacePixelBufferEx",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfc00": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer3",
   "note": "decomp_batch r2: COMPILE_FAIL",

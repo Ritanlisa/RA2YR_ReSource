@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C81DB",
+ "name": "AudioCodec::Decode",
+ "size": 391,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C81DB",
+ "bytes_hex": "558bec83c4ec53515257568b7d0c8b75088b55108a060ac00f84b6000000897dfc03d78955f4fc8bde8b45f42bc7744c78498945f88bf32bc0ac0ac078228ae080e40f2bc98ac8c0e90483c1033b4df876038b4df8ac8bde8bf72bf0f3a4ebc9a840751f3c8074148ac883e13f3b4df876038b4df8f3a48bdeebae908bc72b45fceb458ac883e13f83c1033cfe75172bc066ad8bc82bc0ac8bde3b4df876038b4df8f3aaeb833cff75062bc066ad8bc866ad8bde0345fc8bf03b4df876038b4df8f3a4e961ffffff8bc78b5d0c2bc3e9ac000000ac897dfc03d78955f4fc8bde8b45f42bc774498945f88bf32bc0ac0ac078228ae080e40f2bc98ac8c0e90483c1033b4df876038b4df8ac8bde8bf72bf0f3a4ebcba840751e3c8074138ac883e13f3b4df876038b4df8f3a48bdeebb08bc72b45fceb918ac883e13f83c1033cfe75172bc066ad8bc82bc0ac8bde3b4df876038b4df8f3aaeb863cff75062bc066ad8bc866ad8bde8bf72bf03b4df876038b4df8f3a4e965ffffffe948ffffff5e5f5a595bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

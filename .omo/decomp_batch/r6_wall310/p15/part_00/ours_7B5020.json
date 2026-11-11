@@ -1,0 +1,21 @@
+{
+ "symbol": "?Erase@String@@QAEDHH@Z",
+ "sym_key": "String::Erase",
+ "size": 230,
+ "link_base": 0,
+ "bytes_hex": "5153558be956578b5c24188b450083c9ff8b74241c8bd38b3833c0f2aef7d18d04328d51ff894424103bc27e058bd92bde4b85db7d0803f333db8974241c85f60f8e960000002bce51e8000000008bd08b45008954241cc60418008b4d0003cec64419ff008b450083c9ff8b3833c0f2aef7d12bf98bc18bf78bfac1e902f3a58bc88b44242083e103f3a48b7d0083c9ff03fb03f833c0f2aef7d12bf98bf78bd98bfa83c9fff2ae8bcb4fc1e902f3a58bcb83e103f3a48b4d008b1152e8000000008b44242083c4088945008b4424105f24015e5d0c015b59c208005f5e5d24005b59c20800",
+ "relocs": [
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
