@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6e0ef0",
+  "name": "HouseClass::UpdateTechBuildings",
+  "cls": null,
+  "size": 159,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'class HouseClass *'"
+ },
+ {
+  "addr": "0x6e2970",
+  "name": "BuildingLightClass::FindAllTargets",
+  "cls": null,
+  "size": 159,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'LinkedList__Contains' : cannot convert parameter 1 from 'class LinkedList *' to 'int'"
+ },
+ {
+  "addr": "0x652cf0",
+  "name": "RadarClass::Destru_vt05",
+  "cls": null,
+  "size": 160,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.Height' must have class/struct/union type"
+ },
+ {
+  "addr": "0x697e70",
+  "name": "SessionClass::IsValidHouse",
+  "cls": null,
+  "size": 160,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'int *'"
+ },
+ {
+  "addr": "0x6403a0",
+  "name": "PowerClass::getDrain",
+  "cls": null,
+  "size": 161,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x510970",
+  "name": "DistributionVector_BuildingType::Construct",
+  "cls": null,
+  "size": 162,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x54da50",
+  "name": "JumpjetLocomotionClass::StubReturnZero_10",
+  "cls": null,
+  "size": 162,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2227",
+  "first_msg": "left of '->vfptr' must point to class/struct/union"
+ },
+ {
+  "addr": "0x468430",
+  "name": "BulletClass::LoseTarget",
+  "cls": null,
+  "size": 164,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2660",
+  "first_msg": "'GetCoords' : function does not take 2 parameters"
+ },
+ {
+  "addr": "0x556a20",
+  "name": "ObjectClass::checkLimbo",
+  "cls": null,
+  "size": 164,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'unsigned char (int *,int,unsigned int)' : cannot convert parameter 1 from 'unsigned int *' to 'int *'"
+ },
+ {
+  "addr": "0x55a9b0",
+  "name": "LocomotionClass::QueryInterface",
+  "cls": null,
+  "size": 164,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x5cb790",
+  "name": "TerritoryUpdateDisplayWOL",
+  "cls": null,
+  "size": 164,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x5e9290",
+  "name": "NetworkLobby::CheckLobbyConditions",
+  "cls": null,
+  "size": 164,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4024a0",
+  "name": "AudioSample::ResetState",
+  "cls": null,
+  "size": 165,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'AudioController' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x70b1d0",
+  "name": "TechnoClass::RevealAreaConditional",
+  "cls": null,
+  "size": 165,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x4a00b0",
+  "name": "EnumConnectionsClass::ddtor",
+  "cls": null,
+  "size": 166,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2446",
+  "first_msg": "'>' : no conversion from 'const int' to 'int *'"
+ },
+ {
+  "addr": "0x4a4780",
+  "name": "Surface::CreateSurfacePalette",
+  "cls": null,
+  "size": 166,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x4a95a0",
+  "name": "MapClass::SetCellFlagsAlongPath",
+  "cls": null,
+  "size": 166,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.bombVisible' must have class/struct/union type"
+ },
+ {
+  "addr": "0x4a9650",
+  "name": "BuildingClass::MarkExitPath",
+  "cls": null,
+  "size": 166,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.bombVisible' must have class/struct/union type"
+ },
+ {
+  "addr": "0x6b6080",
+  "name": "UnitClass::CreateUnloadPlacementCraters",
+  "cls": null,
+  "size": 167,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'unsigned short *'"
+ },
+ {
+  "addr": "0x7adf70",
+  "name": "HashMap::Shrink2",
+  "cls": null,
+  "size": 168,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2562",
+  "first_msg": "'Shrink2' : 'void' function returning a value"
+ }
+]

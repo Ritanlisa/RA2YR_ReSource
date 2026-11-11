@@ -1,0 +1,21 @@
+{
+ "symbol": "?UpdateTechBuildings@HouseClass@@QAEDHHHH@Z",
+ "sym_key": "HouseClass::UpdateTechBuildings",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "8a81900000005684c0745e8b7424088b4660c686f30100000185c07e358b4654578b008b889c0000008b90a0000000c1e908c1ea0866894c240c668954240e8b7c240c8bce57e80000000089be505700005f8b861457000085c075188bcee800000000b0015ec210008b442408c680f301000000b0015ec21000",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?SetMapSeed@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::SetMapSeed"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?SetPrimaryTechBuilding@HouseClass@@QAEXXZ",
+   "sym_key": "HouseClass::SetPrimaryTechBuilding"
+  }
+ ]
+}
