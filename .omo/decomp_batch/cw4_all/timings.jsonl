@@ -10,3 +10,4 @@
 {"part": 9, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
 {"part": 10, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 17, "RET_VOID_STUB": 3}, "by_family_hits": {}}}
 {"part": 11, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
+{"part": 12, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
