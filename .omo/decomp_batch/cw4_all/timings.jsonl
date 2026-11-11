@@ -89,3 +89,4 @@
 {"part": 88, "n": 20, "seconds": 2.7, "summary": {"verdicts": {"NO_HIT": 14, "NO_VARIANT": 6}, "by_family_total": {"STRUCTURAL": 16, "FRAME": 3, "JCC_INVERT": 1}, "by_family_hits": {}}}
 {"part": 89, "n": 20, "seconds": 1.9, "summary": {"verdicts": {"NO_HIT": 16, "NO_VARIANT": 4}, "by_family_total": {"STRUCTURAL": 14, "MEMBER_OFFSET": 1, "FRAME": 5}, "by_family_hits": {}}}
 {"part": 90, "n": 20, "seconds": 1.9, "summary": {"verdicts": {"NO_HIT": 11, "NO_VARIANT": 9}, "by_family_total": {"STRUCTURAL": 13, "REG_ALLOC": 1, "FRAME": 1, "RET_ARITY": 2, "RELOC_KEY": 1, "MEMBER_OFFSET": 1, "IMM": 1}, "by_family_hits": {}}}
+{"part": 91, "n": 20, "seconds": 2.1, "summary": {"verdicts": {"NO_HIT": 12, "NO_VARIANT": 8}, "by_family_total": {"STRUCTURAL": 16, "FRAME": 2, "RET_ARITY": 2}, "by_family_hits": {}}}

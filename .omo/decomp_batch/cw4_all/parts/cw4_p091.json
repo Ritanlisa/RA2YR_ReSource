@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x634310",
+  "name": "BuildingClass::CopyTypeDataForRender",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 76,
+  "part": "p252",
+  "unit": "BuildingClass",
+  "emitted": "BuildingClass::CopyTypeDataForRender",
+  "first_diff": {
+   "orig": "+10 jle 0x63433c",
+   "ours": "+10 jle 0x2e"
+  },
+  "ours_size": 93
+ },
+ {
+  "addr": "0x42fae0",
+  "name": "BaseNodeClass_Vector::Read",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 77,
+  "part": "p252",
+  "unit": "_VectorClass_VBaseNodeClass",
+  "emitted": "_VectorClass_VBaseNodeClass::Read",
+  "first_diff": {
+   "orig": "+18 mov edx, dword ptr [ecx + 8]",
+   "ours": "+18 mov esi, dword ptr [ecx + 8]"
+  },
+  "ours_size": 79
+ },
+ {
+  "addr": "0x4527d0",
+  "name": "BuildingClass::HasOccupantAudio",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 77,
+  "part": "p252",
+  "unit": "BuildingClass",
+  "emitted": "BuildingClass::HasOccupantAudio",
+  "first_diff": {
+   "orig": "+16 je 0x4527e7",
+   "ours": "+16 jne 0x45"
+  },
+  "ours_size": 79
+ },
+ {
+  "addr": "0x5f5230",
+  "name": "Object::Unlink",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 77,
+  "part": "p252",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Unlink",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 0x34]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 93
+ },
+ {
+  "addr": "0x710700",
+  "name": "Coord::Divide",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 77,
+  "part": "p252",
+  "unit": "Coord",
+  "emitted": "Coord::Divide",
+  "first_diff": {
+   "orig": "+5 test esi, esi",
+   "ours": "+5 xor edx, edx"
+  },
+  "ours_size": 70
+ },
+ {
+  "addr": "0x76f600",
+  "name": "WDTClass::GetCellType",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 77,
+  "part": "p252",
+  "unit": "WDTClass",
+  "emitted": "WDTClass::GetCellType",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 0xc]",
+   "ours": "+0 mov edx, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 77
+ },
+ {
+  "addr": "0x430590",
+  "name": "sub_430590",
+  "family": "STRUCTURAL",
+  "path": "const_fold",
+  "size": 78,
+  "part": "p252",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_430590",
+  "first_diff": {
+   "orig": "+11 mov esi, dword ptr [esp + 0x10]",
+   "ours": "+11 mov esi, dword ptr [esp + 0xc]"
+  },
+  "ours_size": 87
+ },
+ {
+  "addr": "0x5173f0",
+  "name": "sub_5173F0",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 78,
+  "part": "p252",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_5173F0",
+  "first_diff": {
+   "orig": "+0 push esi",
+   "ours": "+0 mov eax, dword ptr [ecx]"
+  },
+  "ours_size": 111
+ },
+ {
+  "addr": "0x54a900",
+  "name": "SetBitfieldBit",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 78,
+  "part": "p252",
+  "unit": "_addr_54",
+  "emitted": "SetBitfieldBit",
+  "first_diff": {
+   "orig": "+21 mov bl, 1",
+   "ours": "+21 cdq "
+  },
+  "ours_size": 68
+ },
+ {
+  "addr": "0x4f4ce0",
+  "name": "String::Equals",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 79,
+  "part": "p253",
+  "unit": "String",
+  "emitted": "String::Equals",
+  "first_diff": {
+   "orig": "+16 jne 0x4f4d1c",
+   "ours": "+16 jne 0x38"
+  },
+  "ours_size": 71
+ },
+ {
+  "addr": "0x4f4d30",
+  "name": "sub_4F4D30",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 79,
+  "part": "p253",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4F4D30",
+  "first_diff": {
+   "orig": "+57 ret 4",
+   "ours": "+57 ret 8"
+  },
+  "ours_size": 79
+ },
+ {
+  "addr": "0x481130",
+  "name": "BuildingPlacement::IsPlacementFlagSet",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 80,
+  "part": "p253",
+  "unit": "BuildingPlacement",
+  "emitted": "BuildingPlacement::IsPlacementFlagSet",
+  "first_diff": {
+   "orig": "+5 test esi, esi",
+   "ours": "+5 cmp esi, 2"
+  },
+  "ours_size": 76
+ },
+ {
+  "addr": "0x5896f0",
+  "name": "VectorClass_USubzoneTrackingStruct::AddRef",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 80,
+  "part": "p253",
+  "unit": "_VectorClass_USubzoneTrackingStruct",
+  "emitted": "_VectorClass_USubzoneTrackingStruct::AddRef",
+  "first_diff": {
+   "orig": "+15 jne 0x589738",
+   "ours": "+15 jne 0x52"
+  },
+  "ours_size": 90
+ },
+ {
+  "addr": "0x70e2b0",
+  "name": "TechnoClass::IronCurtain",
+  "family": "FRAME",
+  "path": "eval_order",
+  "size": 80,
+  "part": "p253",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::IronCurtain",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0xa8ed84]",
+   "ours": "+0 mov edx, dword ptr [esp + 0xc]"
+  },
+  "ours_size": 71
+ },
+ {
+  "addr": "0x764260",
+  "name": "AbstractClass::checkSpecialCooldown",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 80,
+  "part": "p253",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::checkSpecialCooldown",
+  "first_diff": {
+   "orig": "+20 mov edx, dword ptr [ecx + 8]",
+   "ours": "+20 mov esi, dword ptr [ecx + 8]"
+  },
+  "ours_size": 82
+ },
+ {
+  "addr": "0x7179d0",
+  "name": "ObjectTypeClass::loadTypeMember_57179D0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 81,
+  "part": "p253",
+  "unit": "ObjectTypeClass",
+  "emitted": "ObjectTypeClass::loadTypeMember_57179D0",
+  "first_diff": {
+   "orig": "+4 push esi",
+   "ours": "+4 cmp ecx, eax"
+  },
+  "ours_size": 75
+ },
+ {
+  "addr": "0x5b3650",
+  "name": "AbstractClass::COMStub_125",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 83,
+  "part": "p254",
+  "unit": "MissionClass",
+  "emitted": "MissionClass::COMStub_125",
+  "first_diff": {
+   "orig": "+14 jne 0x5b3665",
+   "ours": "+14 jne 0x17"
+  },
+  "ours_size": 85
+ },
+ {
+  "addr": "0x50f1b0",
+  "name": "VectorClass_UScoutStruct::AddRef",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 84,
+  "part": "p254",
+  "unit": "_VectorClass_UScoutStruct",
+  "emitted": "_VectorClass_UScoutStruct::AddRef",
+  "first_diff": {
+   "orig": "+5 push ebp",
+   "ours": "+5 mov ebx, dword ptr [ecx + 8]"
+  },
+  "ours_size": 97
+ },
+ {
+  "addr": "0x5becc0",
+  "name": "sub_5BECC0",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 84,
+  "part": "p254",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_5BECC0",
+  "first_diff": {
+   "orig": "+2 push ebp",
+   "ours": "+2 mov eax, 0x100"
+  },
+  "ours_size": 90
+ },
+ {
+  "addr": "0x5c6b60",
+  "name": "DecodeAudioSampleWord",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 84,
+  "part": "p254",
+  "unit": "_addr_5C",
+  "emitted": "DecodeAudioSampleWord",
+  "first_diff": {
+   "orig": "+4 push esi",
+   "ours": "+4 push edi"
+  },
+  "ours_size": 84
+ }
+]
