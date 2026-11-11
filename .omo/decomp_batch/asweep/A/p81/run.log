@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p81\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b2350 sub_6B2350 -> _addr_6B
+[conv] 0x6b49f0 sub_6B49F0 -> _addr_6B
+[conv] 0x6b5220 sub_6B5220 -> _addr_6B
+[conv] 0x6b6bb0 sub_6B6BB0 -> _addr_6B
+[conv] 0x6b8aa0 sub_6B8AA0 -> _addr_6B
+[conv] 0x6c6a70 sub_6C6A70 -> _addr_6C
+[conv] 0x6c8e30 sub_6C8E30 -> _addr_6C
+[conv] 0x6c95a0 sub_6C95A0 -> _addr_6C
+[conv] 0x6c95e0 Delegate::GetField -> Delegate
+[conv] 0x6cc260 Super::GetDefaultTimer -> Super
+[conv] 0x6ce530 sub_6CE530 -> _addr_6C
+[conv] 0x6cfb60 sub_6CFB60 -> _addr_6C
+[conv] 0x6dcf20 sub_6DCF20 -> _addr_6D
+[conv] 0x6e4d00 sub_6E4D00 -> _addr_6E
+[conv] 0x6e5a80 sub_6E5A80 -> _addr_6E
+[conv] 0x6e69f0 sub_6E69F0 -> _addr_6E
+[conv] 0x6e7e20 sub_6E7E20 -> _addr_6E
+[conv] 0x6e8a30 sub_6E8A30 -> _addr_6E
+[conv] 0x6f0620 sub_6F0620 -> _addr_6F
+[conv] 0x6f2a50 sub_6F2A50 -> _addr_6F
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6B                 rc=0
+[era] _addr_6C                 rc=0
+[era] Delegate                 rc=0
+[era] Super                    rc=0
+[era] _addr_6D                 rc=0
+[era] _addr_6E                 rc=0
+[era] _addr_6F                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b2350   MATCH            sub_6B2350
+[diff] 0x6b49f0   MATCH            sub_6B49F0
+[diff] 0x6b5220   MATCH            sub_6B5220
+[diff] 0x6b6bb0   MATCH            sub_6B6BB0
+[diff] 0x6b8aa0   MATCH            sub_6B8AA0
+[diff] 0x6c6a70   MATCH            sub_6C6A70
+[diff] 0x6c8e30   MATCH            sub_6C8E30
+[diff] 0x6c95a0   MATCH            sub_6C95A0
+[diff] 0x6ce530   MATCH            sub_6CE530
+[diff] 0x6cfb60   MATCH            sub_6CFB60
+[diff] 0x6c95e0   MISMATCH         Delegate::GetField
+[diff] 0x6cc260   MATCH            Super::GetDefaultTimer
+[diff] 0x6dcf20   MATCH            sub_6DCF20
+[diff] 0x6e4d00   MATCH            sub_6E4D00
+[diff] 0x6e5a80   MATCH            sub_6E5A80
+[diff] 0x6e69f0   MATCH            sub_6E69F0
+[diff] 0x6e7e20   MATCH            sub_6E7E20
+[diff] 0x6e8a30   MATCH            sub_6E8A30
+[diff] 0x6f0620   MATCH            sub_6F0620
+[diff] 0x6f2a50   MATCH            sub_6F2A50
+[ledger] 0x6b2350 sub_6B2350 -> OK (attempt 1)
+[ledger] 0x6b49f0 sub_6B49F0 -> OK (attempt 1)
+[ledger] 0x6b5220 sub_6B5220 -> OK (attempt 1)
+[ledger] 0x6b6bb0 sub_6B6BB0 -> OK (attempt 1)
+[ledger] 0x6b8aa0 sub_6B8AA0 -> OK (attempt 1)
+[ledger] 0x6c6a70 sub_6C6A70 -> OK (attempt 1)
+[ledger] 0x6c8e30 sub_6C8E30 -> OK (attempt 1)
+[ledger] 0x6c95a0 sub_6C95A0 -> OK (attempt 1)
+[ledger] 0x6c95e0 Delegate::GetField -> NG (attempt 1)
+[ledger] 0x6cc260 Super::GetDefaultTimer -> OK (attempt 1)
+[ledger] 0x6ce530 sub_6CE530 -> OK (attempt 1)
+[ledger] 0x6cfb60 sub_6CFB60 -> OK (attempt 1)
+[ledger] 0x6dcf20 sub_6DCF20 -> OK (attempt 1)
+[ledger] 0x6e4d00 sub_6E4D00 -> OK (attempt 1)
+[ledger] 0x6e5a80 sub_6E5A80 -> OK (attempt 1)
+[ledger] 0x6e69f0 sub_6E69F0 -> OK (attempt 1)
+[ledger] 0x6e7e20 sub_6E7E20 -> OK (attempt 1)
+[ledger] 0x6e8a30 sub_6E8A30 -> OK (attempt 1)
+[ledger] 0x6f0620 sub_6F0620 -> OK (attempt 1)
+[ledger] 0x6f2a50 sub_6F2A50 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 95.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p81\batch_report.json

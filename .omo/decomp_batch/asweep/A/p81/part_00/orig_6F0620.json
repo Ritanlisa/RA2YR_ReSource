@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F0620",
+ "name": "sub_6F0620",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F0620",
+ "bytes_hex": "33c0a3e8e9b000a3ece9b000a3f0e9b000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetDefaultTimer@Super@@QAEHXZ",
+ "sym_key": "Super::GetDefaultTimer",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8b412483f8ff75098b41288b80b0000000c3",
+ "relocs": []
+}

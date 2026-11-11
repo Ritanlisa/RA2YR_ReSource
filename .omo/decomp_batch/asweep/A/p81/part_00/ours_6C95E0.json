@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetField@Delegate@@QAEPAV1@XZ",
+ "sym_key": "Delegate::GetField",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8bc133c9890889480489480889480cc3",
+ "relocs": []
+}
