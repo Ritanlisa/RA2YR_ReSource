@@ -1,0 +1,11 @@
+{
+ "addr": "0x659490",
+ "name": "RadBeam::drawHealthBar",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x659490",
+ "bytes_hex": "8b44240489410cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

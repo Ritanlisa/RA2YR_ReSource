@@ -1,0 +1,11 @@
+{
+ "addr": "0x659530",
+ "name": "SpreadRadiationAreaEffect_Helper_659530",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x659530",
+ "bytes_hex": "8b442404894150c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

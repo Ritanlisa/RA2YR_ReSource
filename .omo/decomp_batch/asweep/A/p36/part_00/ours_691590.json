@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetLandTypeMap@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::SetLandTypeMap",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "c7412cffffffffb001c3",
+ "relocs": []
+}

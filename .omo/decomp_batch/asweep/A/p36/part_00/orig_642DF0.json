@@ -1,0 +1,11 @@
+{
+ "addr": "0x642DF0",
+ "name": "Scenario::SetDword30",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x642DF0",
+ "bytes_hex": "8b442404894178c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

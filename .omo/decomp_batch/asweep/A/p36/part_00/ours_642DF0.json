@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetDword30@Scenario@@QAEHH@Z",
+ "sym_key": "Scenario::SetDword30",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b442404894178c20400",
+ "relocs": []
+}

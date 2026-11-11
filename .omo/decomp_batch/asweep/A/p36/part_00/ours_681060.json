@@ -1,0 +1,8 @@
+{
+ "symbol": "?Map_Save@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::Map_Save",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b442404894104c20400",
+ "relocs": []
+}

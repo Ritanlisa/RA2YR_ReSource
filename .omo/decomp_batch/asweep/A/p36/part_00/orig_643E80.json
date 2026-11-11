@@ -1,0 +1,11 @@
+{
+ "addr": "0x643E80",
+ "name": "Function::643E80",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x643E80",
+ "bytes_hex": "8b442404894104c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

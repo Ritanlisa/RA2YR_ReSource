@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p36\part_00
+=== convert (20 addrs) ===
+[conv] 0x633a50 sub_633A50 -> _addr_63
+[conv] 0x633b00 ObjectClass::sub_633B00 -> ObjectClass
+[conv] 0x633b10 ObjectClass::sub_633B10 -> ObjectClass
+[conv] 0x642df0 Scenario::SetDword30 -> Scenario
+[conv] 0x643e80 Function::_643E80 -> Function
+[conv] 0x645d00 Function::_645D00 -> Function
+[conv] 0x659490 TechnoClass::drawHealthBar -> TechnoClass
+[conv] 0x6594e0 TechnoClass::drawAmmoPips -> TechnoClass
+[conv] 0x659530 ObjectClass::SpreadRadiationAreaEffect_Helper_659530 -> ObjectClass
+[conv] 0x659550 TechnoClass::drawPassengerPips -> TechnoClass
+[conv] 0x681060 ObjectClass::Map_Save -> ObjectClass
+[conv] 0x691590 ObjectClass::SetLandTypeMap -> ObjectClass
+[conv] 0x69dea0 ButtonClass::SetState -> ButtonClass
+[conv] 0x6a4230 ShipLocomotionClass::SmallStub_6A4230 -> ShipLocomotionClass
+[conv] 0x6a4240 ShipLocomotionClass::SmallStub_6A4240 -> ShipLocomotionClass
+[conv] 0x6a4250 ShipLocomotionClass::SmallStub_6A4250 -> ShipLocomotionClass
+[conv] 0x6c9680 FloatArray::Get -> FloatArray
+[conv] 0x6cb820 SuperClass::SetReadiness -> SuperClass
+[conv] 0x6cc280 SuperClass::SetRechargeTime -> SuperClass
+[conv] 0x6cc2a0 SuperWeapon::GetField10 -> SuperWeapon
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_63                 rc=2
+[era] ObjectClass              rc=0
+[era] Scenario                 rc=0
+[era] Function                 rc=2
+[era] TechnoClass              rc=2
+[era] ButtonClass              rc=0
+[era] ShipLocomotionClass      rc=0
+[era] FloatArray               rc=0
+[era] SuperClass               rc=0
+[era] SuperWeapon              rc=0
+=== diffasm byte-compare ===
+[diff] 0x633b00   MISMATCH         ObjectClass::sub_633B00
+[diff] 0x633b10   MISMATCH         ObjectClass::sub_633B10
+[diff] 0x659530   MATCH            ObjectClass::SpreadRadiationAreaEffect_Helper_659530
+[diff] 0x681060   MATCH            ObjectClass::Map_Save
+[diff] 0x691590   MATCH            ObjectClass::SetLandTypeMap
+[diff] 0x642df0   MATCH            Scenario::SetDword30
+[diff] 0x643e80   MATCH            Function::_643E80
+[diff] 0x659490   MATCH            TechnoClass::drawHealthBar
+[diff] 0x6594e0   MATCH            TechnoClass::drawAmmoPips
+[diff] 0x69dea0   MATCH            ButtonClass::SetState
+[diff] 0x6a4230   MISMATCH         ShipLocomotionClass::SmallStub_6A4230
+[diff] 0x6a4240   MISMATCH         ShipLocomotionClass::SmallStub_6A4240
+[diff] 0x6a4250   MISMATCH         ShipLocomotionClass::SmallStub_6A4250
+[diff] 0x6c9680   MISMATCH         FloatArray::Get
+[diff] 0x6cb820   MISMATCH         SuperClass::SetReadiness
+[diff] 0x6cc280   MATCH            SuperClass::SetRechargeTime
+[diff] 0x6cc2a0   MATCH            SuperWeapon::GetField10
+[ledger] 0x633a50 sub_633A50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x633b00 ObjectClass::sub_633B00 -> NG (attempt 1)
+[ledger] 0x633b10 ObjectClass::sub_633B10 -> NG (attempt 1)
+[ledger] 0x642df0 Scenario::SetDword30 -> OK (attempt 1)
+[ledger] 0x643e80 Function::_643E80 -> OK (attempt 1)
+[ledger] 0x645d00 Function::_645D00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x659490 TechnoClass::drawHealthBar -> OK (attempt 1)
+[ledger] 0x6594e0 TechnoClass::drawAmmoPips -> OK (attempt 1)
+[ledger] 0x659530 ObjectClass::SpreadRadiationAreaEffect_Helper_659530 -> OK (attempt 1)
+[ledger] 0x659550 TechnoClass::drawPassengerPips -> COMPILE_FAIL (attempt 1)
+[ledger] 0x681060 ObjectClass::Map_Save -> OK (attempt 1)
+[ledger] 0x691590 ObjectClass::SetLandTypeMap -> OK (attempt 1)
+[ledger] 0x69dea0 ButtonClass::SetState -> OK (attempt 1)
+[ledger] 0x6a4230 ShipLocomotionClass::SmallStub_6A4230 -> NG (attempt 1)
+[ledger] 0x6a4240 ShipLocomotionClass::SmallStub_6A4240 -> NG (attempt 1)
+[ledger] 0x6a4250 ShipLocomotionClass::SmallStub_6A4250 -> NG (attempt 1)
+[ledger] 0x6c9680 FloatArray::Get -> NG (attempt 1)
+[ledger] 0x6cb820 SuperClass::SetReadiness -> NG (attempt 1)
+[ledger] 0x6cc280 SuperClass::SetRechargeTime -> OK (attempt 1)
+[ledger] 0x6cc2a0 SuperWeapon::GetField10 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 7,
+  "MATCH": 10
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "codegen_shape": 1,
+  "cc_mismatch": 3,
+  "frame_sched": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 58.8,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p36\batch_report.json

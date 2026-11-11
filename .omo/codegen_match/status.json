@@ -19099,6 +19099,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x633a50": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "sub_633A50",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_633A50",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x633a60": {
   "attempts": 1,
   "first_diff": "+4 mov dword ptr [ecx + 8], eax",
@@ -19154,6 +19165,30 @@
   "orig_name": "sub_633AB0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x633b00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+4 mov dword ptr [ecx + 0x70], eax",
+  "name": "ObjectClass::sub_633B00",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "sub_633B00",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x633b10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+4 mov dword ptr [ecx + 0x74], eax",
+  "name": "ObjectClass::sub_633B10",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_633B10",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x633b20": {
@@ -19891,6 +19926,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x642df0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Scenario::SetDword30",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Scenario::SetDword30",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x6430c0": {
   "attempts": 1,
   "first_diff": null,
@@ -19906,6 +19953,18 @@
   "name": "VtableStub::_643E70",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "VtableStub::643E70",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x643e80": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Function::_643E80",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Function::643E80",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -20029,6 +20088,18 @@
   "name": "GetSuperWeaponTypeFlag",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x645d00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Function::_645D00",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Function::645D00",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x645ed0": {
   "attempts": 1,
@@ -20359,12 +20430,60 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x659490": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::drawHealthBar",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RadBeam::drawHealthBar",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x6594e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::drawAmmoPips",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RadBeam::drawAmmoPips",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x659530": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::SpreadRadiationAreaEffect_Helper_659530",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SpreadRadiationAreaEffect_Helper_659530",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x659540": {
   "attempts": 1,
   "first_diff": null,
   "name": "RadBeam::drawMindControlPips",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x659550": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TechnoClass::drawPassengerPips",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RadBeam::drawPassengerPips",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x659560": {
   "attempts": 1,
@@ -21183,6 +21302,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x681060": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::Map_Save",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Map_Save",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x681070": {
   "attempts": 1,
   "clean": true,
@@ -21475,6 +21606,18 @@
   "name": "ScriptClass::GetNextAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x691590": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::SetLandTypeMap",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SetLandTypeMap",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x691970": {
   "attempts": 1,
@@ -21798,6 +21941,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x69dea0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ButtonClass::SetState",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ButtonClass::SetState",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x69deb0": {
   "attempts": 12,
   "first_diff": null,
@@ -21956,6 +22111,42 @@
   "name": "JumpjetLocomotionClass::SetByteField_1",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x6a4230": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+7 ret 4",
+  "name": "ShipLocomotionClass::SmallStub_6A4230",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_6A4230",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a4240": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+7 ret 4",
+  "name": "ShipLocomotionClass::SmallStub_6A4240",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_6A4240",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a4250": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+7 ret 4",
+  "name": "ShipLocomotionClass::SmallStub_6A4250",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_6A4250",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6a42a0": {
   "attempts": 5,
@@ -23178,6 +23369,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c9680": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "FloatArray::Get",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "FloatArray::Get",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c98e0": {
   "attempts": 1,
   "first_diff": "+0 mov ecx, dword ptr [ecx + 4]",
@@ -23257,6 +23460,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x6cb820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+4 mov byte ptr [ecx + 0x6f], al",
+  "name": "SuperClass::SetReadiness",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "SuperClass::SetReadiness",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6cb830": {
   "attempts": 8,
   "first_diff": "+14 je 0x6cb870",
@@ -23283,6 +23498,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6cc280": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SuperClass::SetRechargeTime",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SuperClass::SetRechargeTime",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x6cc290": {
   "attempts": 1,
   "clean": true,
@@ -23292,6 +23519,18 @@
   "note": "decomp_batch r2: MATCH",
   "orig_name": "SuperClass::ResetRechargeTime",
   "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x6cc2a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "SuperWeapon::GetField10",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SuperWeapon::GetField10",
+  "rule_violations": 1,
   "status": "OK",
   "this_as_id": false
  },
