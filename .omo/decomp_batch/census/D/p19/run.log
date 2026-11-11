@@ -1,0 +1,91 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> ScenarioClass
+[conv] 0x5cca20 MSVQAnim::Construct -> MSVQAnim
+[conv] 0x738680 TechnoClass::CreateDeathAnim -> TechnoClass
+[conv] 0x5f4520 ObjectClass::HandleSelection -> ObjectClass
+[conv] 0x754510 Voxel::RenderFrame -> Voxel
+[conv] 0x5f5940 IUnknown::ParachuteDrop -> IUnknown
+[conv] 0x411df0 unknown::InitializeSoundBufferPlayback -> unknown
+[conv] 0x513d20 BuildingLightClass::UpdateOscillation -> BuildingLightClass
+[conv] 0x6ea870 TeamClass::LiberateMember_Start -> TeamClass
+[conv] 0x4da2c0 FootClass::ProcessMovement -> FootClass
+[conv] 0x79ba60 unknown::ValidateGameJoinWOL -> unknown
+[conv] 0x76f970 ReferenceCounted::Constructor -> ReferenceCounted
+[conv] 0x49e510 INIClass::ClearContents -> INIClass
+[conv] 0x406b10 ObjectClass::InitializeAudioSubsystem -> ObjectClass
+[conv] 0x603870 unknown::GetDialogControlSHP -> unknown
+[conv] 0x788800 unknown::LeaveChannelExWOL -> unknown
+[conv] 0x480a80 CellClass::ReduceTiberium -> CellClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScenarioClass            rc=2
+[era] MSVQAnim                 rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] Voxel                    rc=2
+[era] IUnknown                 rc=2
+[era] unknown                  rc=2
+[era] BuildingLightClass       rc=2
+[era] TeamClass                rc=2
+[era] FootClass                rc=2
+[era] ReferenceCounted         rc=2
+[era] INIClass                 rc=2
+[era] CellClass                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7cf125 0x7cf125 -> PENDING (attempt 1)
+[ledger] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cca20 MSVQAnim::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x738680 TechnoClass::CreateDeathAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f4520 ObjectClass::HandleSelection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c6dd0 0x5c6dd0 -> PENDING (attempt 1)
+[ledger] 0x754510 Voxel::RenderFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f5940 ObjectClass::ParachuteDrop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53b560 0x53b560 -> PENDING (attempt 1)
+[ledger] 0x411df0 InitializeSoundBufferPlayback -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513d20 BuildingLightClass::UpdateOscillation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ea870 TeamClass::LiberateMember_Start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4da2c0 FootClass::ProcessMovement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79ba60 ValidateGameJoinWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76f970 WorldDominationTour::Territory::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49e510 INIClass::ClearContents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x406b10 InitializeAudioSubsystem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x603870 GetDialogControlSHP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x788800 LeaveChannelExWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x480a80 CellClass::ReduceTiberium -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2754,
+ "verdicts": {
+  "MISMATCH": 716,
+  "MATCH": 521,
+  "COMPILE_FAIL": 967,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 531,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 247,
+  "ret_norm": 8,
+  "frame_sched": 76,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 117,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.1,
+ "match_rate_of_total_pct": 18.9,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p19\batch_report.json

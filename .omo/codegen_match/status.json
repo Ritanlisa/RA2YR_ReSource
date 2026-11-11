@@ -237,6 +237,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x406b10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InitializeAudioSubsystem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x406ee0": {
   "attempts": 1,
   "first_diff": null,
@@ -880,6 +887,13 @@
   "name": "BSurface::GetBytesPerPixel",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x411df0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InitializeSoundBufferPlayback",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4129c0": {
   "attempts": 1,
@@ -2848,6 +2862,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x480a80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CellClass::ReduceTiberium",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x484050": {
   "attempts": 9,
   "first_diff": null,
@@ -3944,6 +3965,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "CampaignClass::FindMission",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x49e510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIClass::ClearContents",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -5358,6 +5386,13 @@
   "attempts": 11,
   "first_diff": null,
   "name": "InfantryClass::ProcessExitQueue",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4da2c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::ProcessMovement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6831,6 +6866,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x513d20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingLightClass::UpdateOscillation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x516370": {
   "attempts": 1,
   "first_diff": null,
@@ -7607,6 +7649,13 @@
   "name": "UpdateSurfaceAnimations",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x53b560": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x53b560",
+  "note": "decomp_batch r2: NO_PSEUDO",
+  "status": "PENDING"
  },
  "0x53bae0": {
   "attempts": 1,
@@ -9729,6 +9778,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5c6dd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5c6dd0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5c71e0": {
   "attempts": 1,
   "first_diff": null,
@@ -9882,6 +9938,13 @@
   "name": "nullsub_189",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
+ },
+ "0x5cca20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSVQAnim::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5cd0e0": {
   "attempts": 9,
@@ -10590,6 +10653,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5f4520": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::HandleSelection",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5f4730": {
   "attempts": 9,
   "first_diff": null,
@@ -10603,6 +10673,13 @@
   "name": "ObjectClass::Undeploy",
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "status": "NG"
+ },
+ "0x5f5940": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::ParachuteDrop",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5f5f30": {
   "attempts": 7,
@@ -10841,6 +10918,13 @@
   "name": "Dialog::IsSpecialTemplate",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x603870": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetDialogControlSHP",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x603f60": {
   "attempts": 1,
@@ -12759,6 +12843,13 @@
   "name": "0x684060",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x689470": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScenarioClass::SaveLoad_Prefix_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6896c0": {
   "attempts": 4,
@@ -14734,6 +14825,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6ea870": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamClass::LiberateMember_Start",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6edb50": {
   "attempts": 1,
   "first_diff": null,
@@ -16169,6 +16267,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x738680": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::CreateDeathAnim",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x740a90": {
   "attempts": 1,
   "first_diff": "+40 push edi",
@@ -16628,6 +16733,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "Viewport::Clear",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x754510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::RenderFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -17345,6 +17457,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x76f970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WorldDominationTour::Territory::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x770060": {
   "attempts": 1,
   "first_diff": null,
@@ -17765,6 +17884,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x788800": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LeaveChannelExWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x792cf0": {
   "attempts": 1,
   "first_diff": null,
@@ -17804,6 +17930,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Dialog::CloseAll",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x79ba60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ValidateGameJoinWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -19017,6 +19150,13 @@
   "name": "__cftof2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7cf125": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7cf125",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7cf3a5": {
   "attempts": 1,
