@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x40ec60",
+  "name": "sub_40EC60",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_40",
+  "emitted": "sub_40EC60",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7e1e18]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x40ec80",
+  "name": "sub_40EC80",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_40",
+  "emitted": "sub_40EC80",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x40f2d0",
+  "name": "sub_40F2D0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_40",
+  "emitted": "sub_40F2D0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7e1e70]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x40f970",
+  "name": "sub_40F970",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_40",
+  "emitted": "sub_40F970",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7e1ec0]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x40f990",
+  "name": "sub_40F990",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_40",
+  "emitted": "sub_40F990",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x40ffb0",
+  "name": "sub_40FFB0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_40",
+  "emitted": "sub_40FFB0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x410640",
+  "name": "sub_410640",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_41",
+  "emitted": "sub_410640",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7e1fc0]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x410660",
+  "name": "sub_410660",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_41",
+  "emitted": "sub_410660",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x412690",
+  "name": "sub_412690",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_41",
+  "emitted": "sub_412690",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7e2228]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x4126b0",
+  "name": "sub_4126B0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p86",
+  "unit": "_addr_41",
+  "emitted": "sub_4126B0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x413b10",
+  "name": "sub_413B10",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_41",
+  "emitted": "sub_413B10",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x41c6d0",
+  "name": "sub_41C6D0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_41",
+  "emitted": "sub_41C6D0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7e2828]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x41c6f0",
+  "name": "sub_41C6F0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_41",
+  "emitted": "sub_41C6F0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x41d0a0",
+  "name": "sub_41D0A0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_41",
+  "emitted": "sub_41D0A0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7e2928]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x41d0c0",
+  "name": "sub_41D0C0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_41",
+  "emitted": "sub_41D0C0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x41e190",
+  "name": "sub_41E190",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_41",
+  "emitted": "sub_41E190",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7e2a08]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x41e1b0",
+  "name": "sub_41E1B0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_41",
+  "emitted": "sub_41E1B0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x420720",
+  "name": "sub_420720",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_42",
+  "emitted": "sub_420720",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7e2b10]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x420740",
+  "name": "sub_420740",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_42",
+  "emitted": "sub_420740",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x421d00",
+  "name": "sub_421D00",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p87",
+  "unit": "_addr_42",
+  "emitted": "sub_421D00",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ }
+]
