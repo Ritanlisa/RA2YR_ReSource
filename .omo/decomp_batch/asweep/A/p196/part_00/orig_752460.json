@@ -1,0 +1,11 @@
+{
+ "addr": "0x752460",
+ "name": "Team_Helper_752460",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x752460",
+ "bytes_hex": "83f9ff741585c97c113b0db0d4b1007d09a1a4d4b1008b0488c3b894768100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

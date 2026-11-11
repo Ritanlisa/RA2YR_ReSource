@@ -1,0 +1,45 @@
+{
+ "symbol": "?Map_Reset_660C50@@YAHXZ",
+ "sym_key": "Unnamed::Map_Reset_660C50",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000083c8ffa300000000a300000000a1000000006a085051e800000000a10000000083c40cc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04D48@@3IA",
+   "sym_key": "DataGlobal_B04D48"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04D88@@3IA",
+   "sym_key": "DataGlobal_B04D88"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DD8@@3IA",
+   "sym_key": "DataGlobal_B04DD8"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04D68@@3IA",
+   "sym_key": "DataGlobal_B04D68"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?memset32@@YAHHHHZZ",
+   "sym_key": "memset32"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04D68@@3IA",
+   "sym_key": "DataGlobal_B04D68"
+  }
+ ]
+}

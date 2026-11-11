@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p196\part_00
+=== convert (20 addrs) ===
+[conv] 0x752460 Team_Helper_752460 -> Team_Helper
+[conv] 0x7c3840 sub_7C3840 -> _addr_7C
+[conv] 0x40da20 sub_40DA20 -> _addr_40
+[conv] 0x40da50 sub_40DA50 -> _addr_40
+[conv] 0x43a0d0 Coord::Scale -> Coord
+[conv] 0x45a130 Rect::Construct -> Rect
+[conv] 0x46b960 BulletClass::AddVector3 -> BulletClass
+[conv] 0x470c00 MPCooperative::startGame -> MPCooperative
+[conv] 0x543050 Network::SetPlayerCoords -> Network
+[conv] 0x556670 LinkClass::FindNext -> LinkClass
+[conv] 0x5ae5e0 Matrix::Copy12Float -> Matrix
+[conv] 0x5aeaf0 BuildingClass::updateFoundation -> BuildingClass
+[conv] 0x5aeb20 BuildingClass::recalcAdjacency -> BuildingClass
+[conv] 0x5f65a0 ObjectClass::GetCoords -> ObjectClass
+[conv] 0x660c50 Map_Reset_660C50 -> Map_Reset
+[conv] 0x683000 ScenarioClass::LookupMethod -> ScenarioClass
+[conv] 0x6ac7c0 TabClass::drawTabBackground -> TabClass
+[conv] 0x6bf110 _TClassFactory_VWaveClass::GetSize -> _TClassFactory_VWaveClass
+[conv] 0x6bf290 _TClassFactory_VTerrainTypeClass::GetSize -> _TClassFactory_VTerrainTypeClass
+[conv] 0x6bf410 _TClassFactory_VTerrainClass::GetSize -> _TClassFactory_VTerrainClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Team_Helper              rc=0
+[era] _addr_7C                 rc=2
+[era] _addr_40                 rc=0
+[era] Coord                    rc=2
+[era] Rect                     rc=0
+[era] BulletClass              rc=2
+[era] MPCooperative            rc=2
+[era] Network                  rc=0
+[era] LinkClass                rc=2
+[era] Matrix                   rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=0
+[era] Map_Reset                rc=0
+[era] ScenarioClass            rc=0
+[era] TabClass                 rc=0
+[era] _TClassFactory_VWaveClass rc=0
+[era] _TClassFactory_VTerrainTypeClass rc=0
+[era] _TClassFactory_VTerrainClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x752460   MISMATCH         Team_Helper_752460
+[diff] 0x40da20   MISMATCH         sub_40DA20
+[diff] 0x40da50   MISMATCH         sub_40DA50
+[diff] 0x45a130   MATCH            Rect::Construct
+[diff] 0x543050   MATCH            Network::SetPlayerCoords
+[diff] 0x5f65a0   MISMATCH         ObjectClass::GetCoords
+[diff] 0x660c50   MISMATCH         Map_Reset_660C50
+[diff] 0x683000   MISMATCH         ScenarioClass::LookupMethod
+[diff] 0x6ac7c0   MISMATCH         TabClass::drawTabBackground
+[diff] 0x6bf110   MISMATCH         _TClassFactory_VWaveClass::GetSize
+[diff] 0x6bf290   MISMATCH         _TClassFactory_VTerrainTypeClass::GetSize
+[diff] 0x6bf410   MISMATCH         _TClassFactory_VTerrainClass::GetSize
+[ledger] 0x752460 Team_Helper_752460 -> NG (attempt 1)
+[ledger] 0x7c3840 sub_7C3840 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40da20 sub_40DA20 -> NG (attempt 1)
+[ledger] 0x40da50 sub_40DA50 -> NG (attempt 1)
+[ledger] 0x43a0d0 Coord::Scale -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a130 Rect::Construct -> OK (attempt 1)
+[ledger] 0x46b960 BulletClass::AddVector3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x470c00 MPCooperative::startGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x543050 Network::SetPlayerCoords -> OK (attempt 1)
+[ledger] 0x556670 LinkClass::FindNext -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ae5e0 Matrix::Copy12Float -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5aeaf0 BuildingClass::updateFoundation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5aeb20 BuildingClass::recalcAdjacency -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f65a0 ObjectClass::GetCoords -> NG (attempt 1)
+[ledger] 0x660c50 Map_Reset_660C50 -> NG (attempt 1)
+[ledger] 0x683000 ScenarioClass::LookupMethod -> NG (attempt 1)
+[ledger] 0x6ac7c0 TabClass::drawTabBackground -> NG (attempt 1)
+[ledger] 0x6bf110 _TClassFactory_VWaveClass::GetSize -> NG (attempt 1)
+[ledger] 0x6bf290 _TClassFactory_VTerrainTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6bf410 _TClassFactory_VTerrainClass::GetSize -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 8,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "extern_reloc": 3,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 16.7,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p196\batch_report.json

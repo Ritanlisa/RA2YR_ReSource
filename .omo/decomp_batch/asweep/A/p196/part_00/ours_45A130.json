@@ -1,0 +1,8 @@
+{
+ "symbol": "?Construct@Rect@@QAEPAV1@PAHHH@Z",
+ "sym_key": "Rect::Construct",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8bc18b4c24048b1189108b49048b5424088948048b4c240c89500889480cc20c00",
+ "relocs": []
+}

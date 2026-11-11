@@ -1,0 +1,11 @@
+{
+ "addr": "0x45A130",
+ "name": "Rect::Construct",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45A130",
+ "bytes_hex": "8bc18b4c24048b1189108b49048b5424088948048b4c240c89500889480cc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_40DA20@@YAHXZ",
+ "sym_key": "Unnamed::sub_40DA20",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "33c0c7050000000080020000a300000000a200000000c7050000000090010000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_DSurface_WindowOffset@@3IA",
+   "sym_key": "g_DSurface_WindowOffset"
+  }
+ ]
+}

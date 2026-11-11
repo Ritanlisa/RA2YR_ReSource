@@ -1,0 +1,15 @@
+{
+ "symbol": "?drawTabBackground@TabClass@@QAEHXZ",
+ "sym_key": "TabClass::drawTabBackground",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8bc133d28950148950188b0d0000000089502489481c895028c7402c01000000c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

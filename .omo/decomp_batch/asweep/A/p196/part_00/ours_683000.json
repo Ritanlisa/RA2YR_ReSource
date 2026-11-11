@@ -1,0 +1,33 @@
+{
+ "symbol": "?LookupMethod@ScenarioClass@@QAEPAPAXXZ",
+ "sym_key": "ScenarioClass::LookupMethod",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "56578bf933d28b0d00000000b8000000003bcf741633c98a0d000000008bf183c008423bc67d0e393875f48b04d5000000005f5ec35f33c05ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83D658@@3EA",
+   "sym_key": "DataGlobal_83D658"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83D658@@3EA",
+   "sym_key": "DataGlobal_83D658"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_GameType@@3EA",
+   "sym_key": "g_INI_Key_GameType"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83D65C@@3IA",
+   "sym_key": "DataGlobal_83D65C"
+  }
+ ]
+}

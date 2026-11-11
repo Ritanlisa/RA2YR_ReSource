@@ -1,0 +1,11 @@
+{
+ "addr": "0x683000",
+ "name": "ScenarioClass::LookupMethod",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x683000",
+ "bytes_hex": "33d2b858d683003908740e83c008423dc0d683007cf133c0c38b04d55cd68300c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F65A0",
+ "name": "ObjectClass::GetCoords",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F65A0",
+ "bytes_hex": "8b44240481c19c000000568bd08b3189328b71048972045e8b4908894a08c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
