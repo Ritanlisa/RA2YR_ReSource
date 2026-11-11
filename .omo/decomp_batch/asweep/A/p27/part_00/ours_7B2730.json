@@ -1,0 +1,15 @@
+{
+ "symbol": "?Network_Process_7B2730@@YAHXZ",
+ "sym_key": "Unnamed::Network_Process_7B2730",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B780A0@@3IA",
+   "sym_key": "DataGlobal_B780A0"
+  }
+ ]
+}

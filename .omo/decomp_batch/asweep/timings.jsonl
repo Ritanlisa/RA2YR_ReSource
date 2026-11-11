@@ -25,3 +25,4 @@
 {"layer": "A", "part": 24, "n": 20, "seconds": 10.6, "ok": true, "verdicts": {"MATCH": 20}}
 {"layer": "A", "part": 25, "n": 20, "seconds": 9.7, "ok": true, "verdicts": {"MATCH": 20}}
 {"layer": "A", "part": 26, "n": 20, "seconds": 11.9, "ok": true, "verdicts": {"MATCH": 20}}
+{"layer": "A", "part": 27, "n": 20, "seconds": 15.6, "ok": true, "verdicts": {"MATCH": 18, "MISMATCH": 2}}

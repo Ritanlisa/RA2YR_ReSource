@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x731cc0 Map_Handle_731CC0 -> Map_Handle
+[conv] 0x7342a0 UI_Create_7342A0 -> UI_Create
+[conv] 0x7342b0 UI_Create_7342B0 -> UI_Create
+[conv] 0x734fb0 sub_734FB0 -> _addr_73
+[conv] 0x734fc0 sub_734FC0 -> _addr_73
+[conv] 0x734fd0 Map_Create_734FD0 -> Map_Create
+[conv] 0x753c60 sub_753C60 -> _addr_75
+[conv] 0x7667f0 ObjectClass::sub_7667F0 -> ObjectClass
+[conv] 0x76bfb0 ConstructWDTSelection_Create_76BFB0 -> ConstructWDTSelection_Create
+[conv] 0x775b30 sub_775B30 -> _addr_77
+[conv] 0x778120 Render_Draw_778120 -> Render_Draw
+[conv] 0x7b0210 FindLobbyIDWOL_Find -> FindLobbyIDWOL
+[conv] 0x7b0290 sub_7B0290 -> _addr_7B
+[conv] 0x7b0310 sub_7B0310 -> _addr_7B
+[conv] 0x7b0340 sub_7B0340 -> _addr_7B
+[conv] 0x7b0380 sub_7B0380 -> _addr_7B
+[conv] 0x7b1770 IPXInterfaceClass::COMStub_Return1 -> IPXInterfaceClass
+[conv] 0x7b2730 Network_Process_7B2730 -> Network_Process
+[conv] 0x7b40f0 UDPInterfaceClass::COMStub_Ret2 -> UDPInterfaceClass
+[conv] 0x7c36c0 sub_7C36C0 -> _addr_7C
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Map_Handle               rc=0
+[era] UI_Create                rc=0
+[era] _addr_73                 rc=0
+[era] Map_Create               rc=0
+[era] _addr_75                 rc=0
+[era] ObjectClass              rc=0
+[era] ConstructWDTSelection_Create rc=0
+[era] _addr_77                 rc=0
+[era] Render_Draw              rc=0
+[era] FindLobbyIDWOL           rc=0
+[era] _addr_7B                 rc=0
+[era] IPXInterfaceClass        rc=0
+[era] Network_Process          rc=0
+[era] UDPInterfaceClass        rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x731cc0   MATCH            Map_Handle_731CC0
+[diff] 0x7342a0   MATCH            UI_Create_7342A0
+[diff] 0x7342b0   MATCH            UI_Create_7342B0
+[diff] 0x734fb0   MATCH            sub_734FB0
+[diff] 0x734fc0   MATCH            sub_734FC0
+[diff] 0x734fd0   MATCH            Map_Create_734FD0
+[diff] 0x753c60   MISMATCH         sub_753C60
+[diff] 0x7667f0   MISMATCH         ObjectClass::sub_7667F0
+[diff] 0x76bfb0   MATCH            ConstructWDTSelection_Create_76BFB0
+[diff] 0x775b30   MATCH            sub_775B30
+[diff] 0x778120   MATCH            Render_Draw_778120
+[diff] 0x7b0210   MATCH            FindLobbyIDWOL_Find
+[diff] 0x7b0290   MATCH            sub_7B0290
+[diff] 0x7b0310   MATCH            sub_7B0310
+[diff] 0x7b0340   MATCH            sub_7B0340
+[diff] 0x7b0380   MATCH            sub_7B0380
+[diff] 0x7b1770   MATCH            IPXInterfaceClass::COMStub_Return1
+[diff] 0x7b2730   MATCH            Network_Process_7B2730
+[diff] 0x7b40f0   MATCH            UDPInterfaceClass::COMStub_Ret2
+[diff] 0x7c36c0   MATCH            sub_7C36C0
+[ledger] 0x731cc0 Map_Handle_731CC0 -> OK (attempt 1)
+[ledger] 0x7342a0 UI_Create_7342A0 -> OK (attempt 1)
+[ledger] 0x7342b0 UI_Create_7342B0 -> OK (attempt 1)
+[ledger] 0x734fb0 sub_734FB0 -> OK (attempt 1)
+[ledger] 0x734fc0 sub_734FC0 -> OK (attempt 1)
+[ledger] 0x734fd0 Map_Create_734FD0 -> OK (attempt 1)
+[ledger] 0x753c60 sub_753C60 -> NG (attempt 1)
+[ledger] 0x7667f0 ObjectClass::sub_7667F0 -> NG (attempt 1)
+[ledger] 0x76bfb0 ConstructWDTSelection_Create_76BFB0 -> OK (attempt 1)
+[ledger] 0x775b30 sub_775B30 -> OK (attempt 1)
+[ledger] 0x778120 Render_Draw_778120 -> OK (attempt 1)
+[ledger] 0x7b0210 FindLobbyIDWOL_Find -> OK (attempt 1)
+[ledger] 0x7b0290 sub_7B0290 -> OK (attempt 1)
+[ledger] 0x7b0310 sub_7B0310 -> OK (attempt 1)
+[ledger] 0x7b0340 sub_7B0340 -> OK (attempt 1)
+[ledger] 0x7b0380 sub_7B0380 -> OK (attempt 1)
+[ledger] 0x7b1770 IPXInterfaceClass::COMStub_Return1 -> OK (attempt 1)
+[ledger] 0x7b2730 Network_Process_7B2730 -> OK (attempt 1)
+[ledger] 0x7b40f0 UDPInterfaceClass::COMStub_Ret2 -> OK (attempt 1)
+[ledger] 0x7c36c0 sub_7C36C0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 90.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p27\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B2730",
+ "name": "Network_Process_7B2730",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B2730",
+ "bytes_hex": "a1a080b700c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

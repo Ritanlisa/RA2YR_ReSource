@@ -1,0 +1,8 @@
+{
+ "symbol": "?COMStub_Return1@IPXInterfaceClass@@QAEHXZ",
+ "sym_key": "IPXInterfaceClass::COMStub_Return1",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b801000000c3",
+ "relocs": []
+}

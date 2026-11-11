@@ -1,0 +1,11 @@
+{
+ "addr": "0x734FD0",
+ "name": "Map_Create_734FD0",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x734FD0",
+ "bytes_hex": "a180cfb100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
