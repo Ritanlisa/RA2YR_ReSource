@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x7df640 Object_Calc_7DF640 -> Object_Calc
+[conv] 0x7df280 Object_Calc_7DF280 -> Object_Calc
+[conv] 0x760190 Voxel::BlendColor -> Voxel
+[conv] 0x6b4240 Map_Helper_6B4240 -> Map_Helper
+[conv] 0x42bca0 sub_42BCA0 -> _addr_42
+[conv] 0x753e00 Viewport::Clear -> Viewport
+[conv] 0x69db30 SHA1::Transform -> SHA1
+[conv] 0x551e50 DecompressCoreLCW -> _addr_55
+[conv] 0x4270d0 sub_4270D0 -> _addr_42
+[conv] 0x756f80 VoxelModel::ParseSectionData -> VoxelModel
+[conv] 0x756dd0 VoxelModel::LoadVXLHeader -> VoxelModel
+[conv] 0x4986d0 _RLEBlitTransLucent50AlphaZRead_G::AddRef -> _RLEBlitTransLucent50AlphaZRead_G
+[conv] 0x7d5c12 ObjectClass::_parse_cmdline -> ObjectClass
+[conv] 0x757e70 VoxelRenderer::ProcessVoxelData -> VoxelRenderer
+[conv] 0x63f2e0 Audio_Process -> Audio
+[conv] 0x758030 VoxelRenderer::RenderFrame -> VoxelRenderer
+[conv] 0x7be670 UnitClass::Audio_Render_7BE670 -> UnitClass
+[conv] 0x55c0e0 DecodeBlockLCW -> _addr_55
+[conv] 0x7c7f20 Audio_Helper_7C7F20 -> Audio_Helper
+[conv] 0x757790 VoxelRenderer::DrawSectionLines -> VoxelRenderer
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Object_Calc              rc=2
+[era] Voxel                    rc=0
+[era] Map_Helper               rc=2
+[era] _addr_42                 rc=0
+[era] Viewport                 rc=2
+[era] SHA1                     rc=2
+[era] _addr_55                 rc=2
+[era] VoxelModel               rc=2
+[era] _RLEBlitTransLucent50AlphaZRead_G rc=2
+[era] ObjectClass              rc=0
+[era] VoxelRenderer            rc=2
+[era] Audio                    rc=2
+[era] UnitClass                rc=2
+[era] Audio_Helper             rc=0
+=== diffasm byte-compare ===
+[diff] 0x760190   MISMATCH         Voxel::BlendColor
+[diff] 0x42bca0   MISMATCH         sub_42BCA0
+[diff] 0x4270d0   MISMATCH         sub_4270D0
+[diff] 0x7d5c12   MISMATCH         ObjectClass::_parse_cmdline
+[diff] 0x7c7f20   MISMATCH         Audio_Helper_7C7F20
+[ledger] 0x7df640 Object_Calc_7DF640 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7df280 Object_Calc_7DF280 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x760190 Voxel::BlendColor -> NG (attempt 10)
+[ledger] 0x6b4240 Map_Helper_6B4240 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42bca0 sub_42BCA0 -> NG (attempt 2)
+[ledger] 0x753e00 Viewport::Clear -> COMPILE_FAIL (attempt 10)
+[ledger] 0x69db30 SHA1::Transform -> COMPILE_FAIL (attempt 11)
+[ledger] 0x551e50 DecompressCoreLCW -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4270d0 sub_4270D0 -> NG (attempt 2)
+[ledger] 0x756f80 VoxelModel::ParseSectionData -> COMPILE_FAIL (attempt 10)
+[ledger] 0x756dd0 VoxelModel::LoadVXLHeader -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4986d0 _RLEBlitTransLucent50AlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7d5c12 ObjectClass::_parse_cmdline -> NG (attempt 2)
+[ledger] 0x757e70 VoxelRenderer::ProcessVoxelData -> COMPILE_FAIL (attempt 10)
+[ledger] 0x63f2e0 Audio_Process -> COMPILE_FAIL (attempt 2)
+[ledger] 0x758030 VoxelRenderer::RenderFrame -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7be670 UnitClass::Audio_Render_7BE670 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55c0e0 DecodeBlockLCW -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c7f20 Audio_Helper_7C7F20 -> NG (attempt 2)
+[ledger] 0x757790 VoxelRenderer::DrawSectionLines -> COMPILE_FAIL (attempt 12)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p03\batch_report.json

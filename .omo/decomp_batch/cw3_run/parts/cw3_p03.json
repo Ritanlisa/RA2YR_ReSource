@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7df640",
+  "name": "Object_Calc_7DF640",
+  "cls": null,
+  "size": 321,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2065",
+  "first_msg": "'__m64' : undeclared identifier"
+ },
+ {
+  "addr": "0x7df280",
+  "name": "Object_Calc_7DF280",
+  "cls": null,
+  "size": 322,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2065",
+  "first_msg": "'__m64' : undeclared identifier"
+ },
+ {
+  "addr": "0x760190",
+  "name": "Voxel::BlendColor",
+  "cls": null,
+  "size": 332,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6b4240",
+  "name": "Map_Helper_6B4240",
+  "cls": null,
+  "size": 365,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2673",
+  "first_msg": "'Map_Helper_6B4240' : global functions do not have 'this' pointers"
+ },
+ {
+  "addr": "0x42bca0",
+  "name": "sub_42BCA0",
+  "cls": null,
+  "size": 371,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x753e00",
+  "name": "Viewport::Clear",
+  "cls": null,
+  "size": 387,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2228",
+  "first_msg": "left of '.Buffer_field_1C' must have class/struct/union type"
+ },
+ {
+  "addr": "0x69db30",
+  "name": "SHA1::Transform",
+  "cls": null,
+  "size": 405,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2110",
+  "first_msg": "cannot add two pointers"
+ },
+ {
+  "addr": "0x551e50",
+  "name": "DecompressCoreLCW",
+  "cls": null,
+  "size": 407,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'unsigned char *' to 'char *'"
+ },
+ {
+  "addr": "0x4270d0",
+  "name": "sub_4270D0",
+  "cls": null,
+  "size": 408,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'void *'"
+ },
+ {
+  "addr": "0x756f80",
+  "name": "VoxelModel::ParseSectionData",
+  "cls": null,
+  "size": 411,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x756dd0",
+  "name": "VoxelModel::LoadVXLHeader",
+  "cls": null,
+  "size": 417,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4986d0",
+  "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
+  "cls": null,
+  "size": 428,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x7d5c12",
+  "name": "_parse_cmdline",
+  "cls": null,
+  "size": 436,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x757e70",
+  "name": "VoxelRenderer::ProcessVoxelData",
+  "cls": null,
+  "size": 438,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x63f2e0",
+  "name": "Audio_Process",
+  "cls": null,
+  "size": 439,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x758030",
+  "name": "VoxelRenderer::RenderFrame",
+  "cls": null,
+  "size": 446,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7be670",
+  "name": "Audio_Render_7BE670",
+  "cls": null,
+  "size": 447,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int' to 'class UnitTypeClass *'"
+ },
+ {
+  "addr": "0x55c0e0",
+  "name": "DecodeBlockLCW",
+  "cls": null,
+  "size": 457,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x7c7f20",
+  "name": "Audio_Helper_7C7F20",
+  "cls": null,
+  "size": 466,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x757790",
+  "name": "VoxelRenderer::DrawSectionLines",
+  "cls": null,
+  "size": 483,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ }
+]

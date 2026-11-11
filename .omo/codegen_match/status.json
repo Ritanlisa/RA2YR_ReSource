@@ -6784,11 +6784,15 @@
   "this_as_id": false
  },
  "0x4270d0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+9 push edi",
   "name": "sub_4270D0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4270D0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x427290": {
   "attempts": 8,
@@ -7280,11 +7284,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x42bca0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0x18",
   "name": "sub_42BCA0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "sub_42BCA0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x42d470": {
   "attempts": 1,
@@ -15534,11 +15542,16 @@
   "status": "NG"
  },
  "0x4986d0": {
-  "attempts": 11,
+  "attempts": 12,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
+  "name": "_RLEBlitTransLucent50AlphaZRead_G::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4988c0": {
   "attempts": 10,
@@ -35420,11 +35433,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x551e50": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "DecompressCoreLCW",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DecompressCoreLCW",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x552640": {
   "attempts": 2,
@@ -37173,11 +37190,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x55c0e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "DecodeBlockLCW",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DecodeBlockLCW",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x55c9e0": {
   "attempts": 1,
@@ -52036,11 +52057,15 @@
   "this_as_id": false
  },
  "0x63f2e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "Audio_Process",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Audio_Process",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x63f4a0": {
   "attempts": 2,
@@ -58544,11 +58569,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x69db30": {
-  "attempts": 10,
+  "attempts": 11,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "SHA1::Transform",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SHA1::Transform",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x69dcd0": {
   "attempts": 1,
@@ -60033,11 +60063,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x6b4240": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "Map_Helper_6B4240",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Map_Helper_6B4240",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6b43e0": {
   "attempts": 1,
@@ -75458,11 +75492,16 @@
   "this_as_id": false
  },
  "0x753e00": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Viewport::Clear",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Viewport::Clear",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x754510": {
   "attempts": 1,
@@ -75802,18 +75841,28 @@
   "this_as_id": false
  },
  "0x756dd0": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelModel::LoadVXLHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelModel::LoadVXLHeader",
+  "rule_violations": 24,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x756f80": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelModel::ParseSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelModel::ParseSectionData",
+  "rule_violations": 25,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x757360": {
   "attempts": 1,
@@ -75830,25 +75879,40 @@
   "status": "COMPILE_FAIL"
  },
  "0x757790": {
-  "attempts": 11,
+  "attempts": 12,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelRenderer::DrawSectionLines",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelRenderer::DrawSectionLines",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x757e70": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelRenderer::ProcessVoxelData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelRenderer::ProcessVoxelData",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x758030": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelRenderer::RenderFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelRenderer::RenderFrame",
+  "rule_violations": 26,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x758e10": {
   "attempts": 1,
@@ -76771,11 +76835,16 @@
   "status": "OK"
  },
  "0x760190": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 mov edx, dword ptr [esp + 8]",
   "name": "Voxel::BlendColor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Voxel::BlendColor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7609e0": {
   "attempts": 1,
@@ -83064,11 +83133,16 @@
   "this_as_id": false
  },
  "0x7be670": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "proto_this",
   "first_diff": null,
-  "name": "Audio_Render_7BE670",
+  "name": "UnitClass::Audio_Render_7BE670",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Audio_Render_7BE670",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7bf220": {
   "attempts": 1,
@@ -83434,11 +83508,15 @@
   "this_as_id": false
  },
  "0x7c7f20": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+0 push ebp",
   "name": "Audio_Helper_7C7F20",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Audio_Helper_7C7F20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c81db": {
   "attempts": 6,
@@ -84968,11 +85046,16 @@
   "this_as_id": false
  },
  "0x7d5c12": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "_parse_cmdline",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ebp",
+  "name": "ObjectClass::_parse_cmdline",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_parse_cmdline",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7d5ef8": {
   "attempts": 2,
@@ -85760,11 +85843,15 @@
   "status": "NG"
  },
  "0x7df280": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF280",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Object_Calc_7DF280",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7df3c2": {
   "attempts": 2,
@@ -85789,11 +85876,15 @@
   "this_as_id": false
  },
  "0x7df640": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF640",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Object_Calc_7DF640",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7df7c0": {
   "attempts": 3,
