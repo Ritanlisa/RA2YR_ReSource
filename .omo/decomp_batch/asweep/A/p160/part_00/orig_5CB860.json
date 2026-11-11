@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CB860",
+ "name": "MSAnim::SetField",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CB860",
+ "bytes_hex": "8b5424048b411c8951300fbf40063bd0720448894130c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

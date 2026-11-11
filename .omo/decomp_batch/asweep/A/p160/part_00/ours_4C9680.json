@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPowerOutput@BuildingTypeClass@@QAEHH@Z",
+ "sym_key": "BuildingTypeClass::GetPowerOutput",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b4424045683f87f8bf17c05b87f0000008b5424088ac880e20032ca81e1ff00000033ca66894e145ec20400",
+ "relocs": []
+}

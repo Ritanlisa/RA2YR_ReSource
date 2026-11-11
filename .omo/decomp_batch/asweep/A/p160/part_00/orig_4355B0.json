@@ -1,0 +1,11 @@
+{
+ "addr": "0x4355B0",
+ "name": "Palette::SixBitTo16Bit",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4355B0",
+ "bytes_hex": "8a5424088bc18a4c240488088a4c240c885001884802c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

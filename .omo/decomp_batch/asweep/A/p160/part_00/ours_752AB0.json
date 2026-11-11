@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetField@ThemeClass@@QAIXH@Z",
+ "sym_key": "ThemeClass::GetField",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "81faff0000008915000000007c0ac70500000000ff000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_846614@@3IA",
+   "sym_key": "DataGlobal_846614"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_846614@@3IA",
+   "sym_key": "DataGlobal_846614"
+  }
+ ]
+}

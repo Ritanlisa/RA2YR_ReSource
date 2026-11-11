@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p160\part_00
+=== convert (20 addrs) ===
+[conv] 0x406170 VocClass::Check -> VocClass
+[conv] 0x41c230 Coord::Subtract -> Coord
+[conv] 0x4355b0 Palette::SixBitTo16Bit -> Palette
+[conv] 0x437090 Coord3D::Set -> Coord3D
+[conv] 0x49b430 EncodeDigitHex -> _addr_49
+[conv] 0x4aec60 Surface::Construct -> Surface
+[conv] 0x4c9680 BuildingTypeClass::GetPowerOutput -> BuildingTypeClass
+[conv] 0x5cb840 MSAnim::GetField -> MSAnim
+[conv] 0x5cb860 MSAnim::SetField -> MSAnim
+[conv] 0x6d1810 Struct::Zero25 -> Struct
+[conv] 0x7490a0 SumArray -> _addr_74
+[conv] 0x752ab0 ThemeClass::GetField -> ThemeClass
+[conv] 0x755cb0 ObjectClass::sub_755CB0 -> ObjectClass
+[conv] 0x76f090 Trigger::processTrigger -> Trigger
+[conv] 0x76f0c0 VectorCursor::Construct -> VectorCursor
+[conv] 0x7b54b0 String::Length -> String
+[conv] 0x406af0 sub_406AF0 -> _addr_40
+[conv] 0x40af60 sub_40AF60 -> _addr_40
+[conv] 0x40b520 sub_40B520 -> _addr_40
+[conv] 0x40c760 sub_40C760 -> _addr_40
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VocClass                 rc=2
+[era] Coord                    rc=0
+[era] Palette                  rc=0
+[era] Coord3D                  rc=0
+[era] _addr_49                 rc=0
+[era] Surface                  rc=2
+[era] BuildingTypeClass        rc=0
+[era] MSAnim                   rc=0
+[era] Struct                   rc=0
+[era] _addr_74                 rc=0
+[era] ThemeClass               rc=0
+[era] ObjectClass              rc=0
+[era] Trigger                  rc=2
+[era] VectorCursor             rc=2
+[era] String                   rc=0
+[era] _addr_40                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x41c230   MISMATCH         Coord::Subtract
+[diff] 0x4355b0   MISMATCH         Palette::SixBitTo16Bit
+[diff] 0x437090   MISMATCH         Coord3D::Set
+[diff] 0x49b430   MISMATCH         EncodeDigitHex
+[diff] 0x4c9680   MISMATCH         BuildingTypeClass::GetPowerOutput
+[diff] 0x5cb840   MATCH            MSAnim::GetField
+[diff] 0x5cb860   MATCH            MSAnim::SetField
+[diff] 0x6d1810   MATCH            Struct::Zero25
+[diff] 0x7490a0   MISMATCH         SumArray
+[diff] 0x752ab0   MISMATCH         ThemeClass::GetField
+[diff] 0x755cb0   MISMATCH         ObjectClass::sub_755CB0
+[diff] 0x7b54b0   MISMATCH         String::Length
+[diff] 0x406af0   MISMATCH         sub_406AF0
+[diff] 0x40af60   MISMATCH         sub_40AF60
+[diff] 0x40b520   MISMATCH         sub_40B520
+[diff] 0x40c760   MISMATCH         sub_40C760
+[ledger] 0x406170 VocClass::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41c230 Coord::Subtract -> NG (attempt 1)
+[ledger] 0x4355b0 Palette::SixBitTo16Bit -> NG (attempt 1)
+[ledger] 0x437090 Coord3D::Set -> NG (attempt 1)
+[ledger] 0x49b430 EncodeDigitHex -> NG (attempt 1)
+[ledger] 0x4aec60 Surface::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c9680 BuildingTypeClass::GetPowerOutput -> NG (attempt 1)
+[ledger] 0x5cb840 MSAnim::GetField -> OK (attempt 1)
+[ledger] 0x5cb860 MSAnim::SetField -> OK (attempt 1)
+[ledger] 0x6d1810 Struct::Zero25 -> OK (attempt 1)
+[ledger] 0x7490a0 SumArray -> NG (attempt 1)
+[ledger] 0x752ab0 ThemeClass::GetField -> NG (attempt 1)
+[ledger] 0x755cb0 ObjectClass::sub_755CB0 -> NG (attempt 1)
+[ledger] 0x76f090 Trigger::processTrigger -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76f0c0 VectorCursor::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b54b0 String::Length -> NG (attempt 1)
+[ledger] 0x406af0 sub_406AF0 -> NG (attempt 1)
+[ledger] 0x40af60 sub_40AF60 -> NG (attempt 1)
+[ledger] 0x40b520 sub_40B520 -> NG (attempt 1)
+[ledger] 0x40c760 sub_40C760 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 4,
+  "MISMATCH": 13,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "eval_order": 2,
+  "frame_sched": 1,
+  "codegen_shape": 5,
+  "regalloc": 1,
+  "extern_reloc": 4
+ },
+ "match_rate_of_decided_pct": 18.8,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p160\batch_report.json

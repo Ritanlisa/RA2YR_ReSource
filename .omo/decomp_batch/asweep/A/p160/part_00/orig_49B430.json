@@ -1,0 +1,11 @@
+{
+ "addr": "0x49B430",
+ "name": "EncodeDigitHex",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49B430",
+ "bytes_hex": "85c97c1283f90f7f0d83f90a7d048d4130c38d4137c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

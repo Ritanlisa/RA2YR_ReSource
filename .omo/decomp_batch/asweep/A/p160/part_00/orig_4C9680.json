@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C9680",
+ "name": "BuildingTypeClass::GetPowerOutput",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C9680",
+ "bytes_hex": "8b44240483f87f7c05b87f00000033d28af066895114c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

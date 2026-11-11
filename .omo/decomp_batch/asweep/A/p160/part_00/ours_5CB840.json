@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetField@MSAnim@@QAEII@Z",
+ "sym_key": "MSAnim::GetField",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b411c89512c0fbf40063bd072044889412cc20400",
+ "relocs": []
+}
