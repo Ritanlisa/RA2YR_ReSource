@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x661530",
+  "name": "Map_Append_661530",
+  "family": "STRUCTURAL",
+  "path": "cc_mismatch",
+  "size": 95,
+  "part": "p256",
+  "unit": "Map_Append",
+  "emitted": "Map_Append_661530",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [esp + 4]",
+   "ours": "+0 mov edx, dword ptr [esp + 0xc]"
+  },
+  "ours_size": 101
+ },
+ {
+  "addr": "0x6dc970",
+  "name": "VectorClass_UDirtyAreaStruct::FindItemIndex",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 95,
+  "part": "p256",
+  "unit": "VectorClass_UDirtyAreaStruct",
+  "emitted": "VectorClass_UDirtyAreaStruct::FindItemIndex",
+  "first_diff": {
+   "orig": "+11 jle 0x6dc9c5",
+   "ours": "+11 jle 0x5a"
+  },
+  "ours_size": 100
+ },
+ {
+  "addr": "0x438a00",
+  "name": "BombClass::GetCurrentFrame",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 96,
+  "part": "p256",
+  "unit": "BombClass",
+  "emitted": "BombClass::GetCurrentFrame",
+  "first_diff": {
+   "orig": "+12 mov eax, dword ptr [0x8871e0]",
+   "ours": "+12 mov edx, dword ptr [ecx + 0x34]"
+  },
+  "ours_size": 109
+ },
+ {
+  "addr": "0x735120",
+  "name": "CharToWideString",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 96,
+  "part": "p257",
+  "unit": "_addr_73",
+  "emitted": "CharToWideString",
+  "first_diff": {
+   "orig": "+12 push ebx",
+   "ours": "+12 mov dl, byte ptr [ecx]"
+  },
+  "ours_size": 95
+ },
+ {
+  "addr": "0x77a700",
+  "name": "GadgetClass::TrackState",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 96,
+  "part": "p257",
+  "unit": "GadgetClass",
+  "emitted": "GadgetClass::TrackState",
+  "first_diff": {
+   "orig": "+4 push edi",
+   "ours": "+4 mov esi, dword ptr [esp + 8]"
+  },
+  "ours_size": 92
+ },
+ {
+  "addr": "0x655050",
+  "name": "sub_655050",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 97,
+  "part": "p257",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_655050",
+  "first_diff": {
+   "orig": "+10 push ebx",
+   "ours": "+10 push esi"
+  },
+  "ours_size": 92
+ },
+ {
+  "addr": "0x48ba10",
+  "name": "ConnectionClass::initQueue",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 98,
+  "part": "p257",
+  "unit": "ConnectionClass",
+  "emitted": "ConnectionClass::initQueue",
+  "first_diff": {
+   "orig": "+3 xor edx, edx",
+   "ours": "+3 push esi"
+  },
+  "ours_size": 84
+ },
+ {
+  "addr": "0x72ad20",
+  "name": "Display::GetViewport",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 98,
+  "part": "p257",
+  "unit": "Display",
+  "emitted": "Display::GetViewport",
+  "first_diff": {
+   "orig": "+0 sub esp, 0x10",
+   "ours": "+0 mov eax, ecx"
+  },
+  "ours_size": 68
+ },
+ {
+  "addr": "0x5b2fd0",
+  "name": "MissionClass::ForceMission",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 99,
+  "part": "p257",
+  "unit": "MissionClass",
+  "emitted": "MissionClass::ForceMission",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 0xac]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 95
+ },
+ {
+  "addr": "0x7b4710",
+  "name": "String::Equals_Alt",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 99,
+  "part": "p258",
+  "unit": "String",
+  "emitted": "String::Equals_Alt",
+  "first_diff": {
+   "orig": "+9 jne 0x7b4725",
+   "ours": "+9 jne 0x20"
+  },
+  "ours_size": 112
+ },
+ {
+  "addr": "0x7b47f0",
+  "name": "String::NotEquals",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 99,
+  "part": "p258",
+  "unit": "String",
+  "emitted": "String::NotEquals",
+  "first_diff": {
+   "orig": "+9 jne 0x7b4805",
+   "ours": "+9 jne 0x1e"
+  },
+  "ours_size": 106
+ },
+ {
+  "addr": "0x5bd360",
+  "name": "Debug_Helper",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 101,
+  "part": "p258",
+  "unit": "Debug",
+  "emitted": "Debug_Helper",
+  "first_diff": {
+   "orig": "+4 cmp al, 0xa",
+   "ours": "+4 movsx ecx, al"
+  },
+  "ours_size": 55
+ },
+ {
+  "addr": "0x6a81b0",
+  "name": "HouseClass::ClearProductionQueue",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 101,
+  "part": "p258",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::ClearProductionQueue",
+  "first_diff": {
+   "orig": "+0 sub esp, 0xc",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 99
+ },
+ {
+  "addr": "0x6b93e0",
+  "name": "sub_6B93E0",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 101,
+  "part": "p258",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_6B93E0",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 113
+ },
+ {
+  "addr": "0x7b4780",
+  "name": "String::Compare",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 102,
+  "part": "p258",
+  "unit": "String",
+  "emitted": "String::Compare",
+  "first_diff": {
+   "orig": "+9 jne 0x7b4796",
+   "ours": "+9 jne 0x21"
+  },
+  "ours_size": 115
+ },
+ {
+  "addr": "0x7b4860",
+  "name": "VectorClass_Wstring::SetCapacity",
+  "family": "STRUCTURAL",
+  "path": "width_mismatch",
+  "size": 102,
+  "part": "p258",
+  "unit": "VectorClass_Wstring",
+  "emitted": "VectorClass_Wstring::SetCapacity",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx]",
+   "ours": "+0 mov cl, byte ptr [ecx]"
+  },
+  "ours_size": 143
+ },
+ {
+  "addr": "0x69b600",
+  "name": "NetworkSession::IsPlayerInGame",
+  "family": "FRAME",
+  "path": "regalloc",
+  "size": 103,
+  "part": "p258",
+  "unit": "NetworkSession",
+  "emitted": "NetworkSession::IsPlayerInGame",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 110
+ },
+ {
+  "addr": "0x4d3710",
+  "name": "FootClass::Destru_vt337",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 103,
+  "part": "p258",
+  "unit": "FootClass",
+  "emitted": "FootClass::Destru_vt337",
+  "first_diff": {
+   "orig": "+4 fcomp qword ptr [0x7e1718]",
+   "ours": "+4 fcomp qword ptr [0]"
+  },
+  "ours_size": 97
+ },
+ {
+  "addr": "0x70ed10",
+  "name": "TechnoClass::Update2",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 104,
+  "part": "p258",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::Update2",
+  "first_diff": {
+   "orig": "+3 xor edx, edx",
+   "ours": "+3 test eax, eax"
+  },
+  "ours_size": 110
+ },
+ {
+  "addr": "0x7c9380",
+  "name": "__aulldiv",
+  "family": "FRAME",
+  "path": "regalloc",
+  "size": 104,
+  "part": "p258",
+  "unit": "_addr_7C",
+  "emitted": "__aulldiv",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push ebp"
+  },
+  "ours_size": 176
+ }
+]
