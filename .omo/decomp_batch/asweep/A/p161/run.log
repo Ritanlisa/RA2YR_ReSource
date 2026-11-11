@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p161\part_00
+=== convert (20 addrs) ===
+[conv] 0x40d170 sub_40D170 -> _addr_40
+[conv] 0x40dc70 sub_40DC70 -> _addr_40
+[conv] 0x40df90 sub_40DF90 -> _addr_40
+[conv] 0x40e750 sub_40E750 -> _addr_40
+[conv] 0x40ee00 sub_40EE00 -> _addr_40
+[conv] 0x40fb10 sub_40FB10 -> _addr_40
+[conv] 0x410130 sub_410130 -> _addr_41
+[conv] 0x4107e0 sub_4107E0 -> _addr_41
+[conv] 0x412830 sub_412830 -> _addr_41
+[conv] 0x413c90 sub_413C90 -> _addr_41
+[conv] 0x41c870 sub_41C870 -> _addr_41
+[conv] 0x41e330 sub_41E330 -> _addr_41
+[conv] 0x421e80 sub_421E80 -> _addr_42
+[conv] 0x4274f0 sub_4274F0 -> _addr_42
+[conv] 0x4291e0 sub_4291E0 -> _addr_42
+[conv] 0x429760 sub_429760 -> _addr_42
+[conv] 0x42d5d0 _DynamicVectorClass_G::GetItemIndex -> _DynamicVectorClass_G
+[conv] 0x42da10 _VectorClass_G::Get -> _VectorClass_G
+[conv] 0x42e600 sub_42E600 -> _addr_42
+[conv] 0x430170 sub_430170 -> _addr_43
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] _addr_41                 rc=0
+[era] _addr_42                 rc=0
+[era] _DynamicVectorClass_G    rc=0
+[era] _VectorClass_G           rc=0
+[era] _addr_43                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x40d170   MISMATCH         sub_40D170
+[diff] 0x40dc70   MISMATCH         sub_40DC70
+[diff] 0x40df90   MISMATCH         sub_40DF90
+[diff] 0x40e750   MISMATCH         sub_40E750
+[diff] 0x40ee00   MISMATCH         sub_40EE00
+[diff] 0x40fb10   MISMATCH         sub_40FB10
+[diff] 0x410130   MISMATCH         sub_410130
+[diff] 0x4107e0   MISMATCH         sub_4107E0
+[diff] 0x412830   MISMATCH         sub_412830
+[diff] 0x413c90   MISMATCH         sub_413C90
+[diff] 0x41c870   MISMATCH         sub_41C870
+[diff] 0x41e330   MISMATCH         sub_41E330
+[diff] 0x421e80   MISMATCH         sub_421E80
+[diff] 0x4274f0   MISMATCH         sub_4274F0
+[diff] 0x4291e0   MISMATCH         sub_4291E0
+[diff] 0x429760   MISMATCH         sub_429760
+[diff] 0x42e600   MISMATCH         sub_42E600
+[diff] 0x42d5d0   MISMATCH         _DynamicVectorClass_G::GetItemIndex
+[diff] 0x42da10   MISMATCH         _VectorClass_G::Get
+[diff] 0x430170   MISMATCH         sub_430170
+[ledger] 0x40d170 sub_40D170 -> NG (attempt 1)
+[ledger] 0x40dc70 sub_40DC70 -> NG (attempt 1)
+[ledger] 0x40df90 sub_40DF90 -> NG (attempt 1)
+[ledger] 0x40e750 sub_40E750 -> NG (attempt 1)
+[ledger] 0x40ee00 sub_40EE00 -> NG (attempt 1)
+[ledger] 0x40fb10 sub_40FB10 -> NG (attempt 1)
+[ledger] 0x410130 sub_410130 -> NG (attempt 1)
+[ledger] 0x4107e0 sub_4107E0 -> NG (attempt 1)
+[ledger] 0x412830 sub_412830 -> NG (attempt 1)
+[ledger] 0x413c90 sub_413C90 -> NG (attempt 1)
+[ledger] 0x41c870 sub_41C870 -> NG (attempt 1)
+[ledger] 0x41e330 sub_41E330 -> NG (attempt 1)
+[ledger] 0x421e80 sub_421E80 -> NG (attempt 1)
+[ledger] 0x4274f0 sub_4274F0 -> NG (attempt 1)
+[ledger] 0x4291e0 sub_4291E0 -> NG (attempt 1)
+[ledger] 0x429760 sub_429760 -> NG (attempt 1)
+[ledger] 0x42d5d0 _DynamicVectorClass_G::GetItemIndex -> NG (attempt 1)
+[ledger] 0x42da10 _VectorClass_G::Get -> NG (attempt 1)
+[ledger] 0x42e600 sub_42E600 -> NG (attempt 1)
+[ledger] 0x430170 sub_430170 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 18,
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p161\batch_report.json
