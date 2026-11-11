@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x7cc01c",
+  "name": "__hw_cw",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 137,
+  "part": "p262",
+  "unit": "_addr_7C",
+  "emitted": "__hw_cw",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 mov ecx, dword ptr [esp + 4]"
+  },
+  "ours_size": 50
+ },
+ {
+  "addr": "0x4afed0",
+  "name": "sub_4AFED0",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 142,
+  "part": "p263",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4AFED0",
+  "first_diff": {
+   "orig": "+3 push edi",
+   "ours": "+3 push esi"
+  },
+  "ours_size": 145
+ },
+ {
+  "addr": "0x69f5e0",
+  "name": "sub_69F5E0",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 142,
+  "part": "p263",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_69F5E0",
+  "first_diff": {
+   "orig": "+3 push edi",
+   "ours": "+3 push esi"
+  },
+  "ours_size": 145
+ },
+ {
+  "addr": "0x5862c0",
+  "name": "VeinholeMonsterClass_Update",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 145,
+  "part": "p263",
+  "unit": "VeinholeMonsterClass",
+  "emitted": "VeinholeMonsterClass_Update",
+  "first_diff": {
+   "orig": "+2 push esi",
+   "ours": "+2 mov ebp, dword ptr [esp + 0xc]"
+  },
+  "ours_size": 170
+ },
+ {
+  "addr": "0x76aaf0",
+  "name": "ParseWDTTerritories_Parse",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 145,
+  "part": "p263",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::ParseWDTTerritories_Parse",
+  "first_diff": {
+   "orig": "+2 mov dl, 0xa",
+   "ours": "+2 xor ecx, ecx"
+  },
+  "ours_size": 105
+ },
+ {
+  "addr": "0x7cbf8a",
+  "name": "__abstract_cw",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 146,
+  "part": "p263",
+  "unit": "_addr_7C",
+  "emitted": "__abstract_cw",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 mov cl, byte ptr [esp + 4]"
+  },
+  "ours_size": 42
+ },
+ {
+  "addr": "0x5c63f0",
+  "name": "sub_5C63F0",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 147,
+  "part": "p263",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_5C63F0",
+  "first_diff": {
+   "orig": "+0 sub esp, 8",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 172
+ },
+ {
+  "addr": "0x5a7640",
+  "name": "globalHelper_0A7640",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 149,
+  "part": "p264",
+  "unit": "_addr_5A",
+  "emitted": "globalHelper_0A7640",
+  "first_diff": {
+   "orig": "+3 xor ax, ax",
+   "ours": "+3 push ebp"
+  },
+  "ours_size": 157
+ },
+ {
+  "addr": "0x7b0b00",
+  "name": "EncodeScreenshotRLE",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 149,
+  "part": "p264",
+  "unit": "_addr_7B",
+  "emitted": "EncodeScreenshotRLE",
+  "first_diff": {
+   "orig": "+18 jle 0x7b0b7a",
+   "ours": "+18 jle 0x80"
+  },
+  "ours_size": 138
+ },
+ {
+  "addr": "0x7c6d40",
+  "name": "sub_7C6D40",
+  "family": "FRAME",
+  "path": "regalloc",
+  "size": 150,
+  "part": "p264",
+  "unit": "_addr_7C",
+  "emitted": "sub_7C6D40",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 247
+ },
+ {
+  "addr": "0x50c170",
+  "name": "HouseClass::FindByName",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 157,
+  "part": "p264",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::FindByName",
+  "first_diff": {
+   "orig": "+10 xor edx, edx",
+   "ours": "+10 push esi"
+  },
+  "ours_size": 267
+ },
+ {
+  "addr": "0x496310",
+  "name": "sub_496310",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 159,
+  "part": "p264",
+  "unit": "_RLEBlitTransLucent75_G",
+  "emitted": "_RLEBlitTransLucent75_G::sub_496310",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 0x10]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 206
+ },
+ {
+  "addr": "0x4964d0",
+  "name": "sub_4964D0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 159,
+  "part": "p264",
+  "unit": "_RLEBlitTransLucent25_G",
+  "emitted": "_RLEBlitTransLucent25_G::sub_4964D0",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 0x10]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 226
+ },
+ {
+  "addr": "0x52a9e0",
+  "name": "System_Load",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 161,
+  "part": "p264",
+  "unit": "System",
+  "emitted": "System_Load",
+  "first_diff": {
+   "orig": "+39 je 0x52aa4e",
+   "ours": "+39 je 0x5f"
+  },
+  "ours_size": 140
+ },
+ {
+  "addr": "0x5c7e00",
+  "name": "sub_5C7E00",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 177,
+  "part": "p264",
+  "unit": "_addr_5C",
+  "emitted": "sub_5C7E00",
+  "first_diff": {
+   "orig": "+4 push ebp",
+   "ours": "+4 mov ebx, dword ptr [esp + 0x18]"
+  },
+  "ours_size": 188
+ },
+ {
+  "addr": "0x5746c0",
+  "name": "globalHelper_0746C0",
+  "family": "REG_ALLOC",
+  "path": "branch_polarity",
+  "size": 179,
+  "part": "p265",
+  "unit": "_addr_57",
+  "emitted": "globalHelper_0746C0",
+  "first_diff": {
+   "orig": "+160 jne 0x57476f",
+   "ours": "+160 jne 0xb2"
+  },
+  "ours_size": 182
+ },
+ {
+  "addr": "0x510e10",
+  "name": "FormatHouseClassPlayerName",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 180,
+  "part": "p265",
+  "unit": "_addr_51",
+  "emitted": "FormatHouseClassPlayerName",
+  "first_diff": {
+   "orig": "+4 push esi",
+   "ours": "+4 cmp eax, 0x10"
+  },
+  "ours_size": 168
+ },
+ {
+  "addr": "0x7d7e1c",
+  "name": "___dtold",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 182,
+  "part": "p265",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::___dtold",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 205
+ },
+ {
+  "addr": "0x7c6dd6",
+  "name": "sub_7C6DD6",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 190,
+  "part": "p265",
+  "unit": "_addr_7C",
+  "emitted": "sub_7C6DD6",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 sub esp, 8"
+  },
+  "ours_size": 233
+ },
+ {
+  "addr": "0x6cae00",
+  "name": "sub_6CAE00",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 191,
+  "part": "p265",
+  "unit": "_addr_6C",
+  "emitted": "sub_6CAE00",
+  "first_diff": {
+   "orig": "+0 push ecx",
+   "ours": "+0 mov eax, 0x10001"
+  },
+  "ours_size": 91
+ }
+]
