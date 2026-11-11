@@ -1,0 +1,57 @@
+{
+ "symbol": "?Destru_vt50@ListClass@@QAEPAIHHHHH@Z",
+ "sym_key": "ListClass::Destru_vt50",
+ "size": 247,
+ "link_base": 0,
+ "bytes_hex": "83ec285355568bf1578b7e2ce8000000008b5c24448be88b44244c85c07478a10d00000081e720ffffff83cf208b0ca80fbe05d40000008b891c030000837804018b9074010000750733c08a040aeb0633c0668b044a8b5424408b4e4c895424188b542448894c24248b0d00000000895c241c895424200fbe11508d44241c8b125051ff5214f7c700400000750981e710ffffff83cf108b56388b44243c8b4c2440895c24148d1c82a100000000894c24108b0d0d0000000fbe108b2ca98b76308b0a8d5424285250ff51788b4c24485651576a008d54242055528b1350a1000000008d4c243450e8000000005f5e5d5b83c428c21400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetType@BuildingAnim@@QAEHXZ",
+   "sym_key": "BuildingAnim::GetType"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?FillRectangle@@YIPAVIUnknown@@PAXHHHHHHHHH@Z",
+   "sym_key": "FillRectangle"
+  }
+ ]
+}

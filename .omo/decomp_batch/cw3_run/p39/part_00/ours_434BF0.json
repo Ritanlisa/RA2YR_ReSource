@@ -1,0 +1,81 @@
+{
+ "symbol": "?sub_434BF0@@YGHHPAHPAGHHH@Z",
+ "sym_key": "Unnamed::sub_434BF0",
+ "size": 206,
+ "link_base": 0,
+ "bytes_hex": "568b74240885f60f84bb0000008a46405384c05774778b7c241455578bcec7462c02000000e800000000568bcee8000000006a008bce8b6c242c8b44242055575650e800000000578bcee800000000578bcee8000000008d5e018bce53e8000000006a00558b4c24245753518bcee800000000578bce8bd8e8000000005d8bc35fc7462c010000005b5ec218008b7c24148bce57e800000000568bcee8000000006a008bce8b5424288b44241c52575650e800000000578bce8bd8e8000000008bc35f5b5ec2180033c05ec21800",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?InitContext@FontRenderer@@QAEHPAX@Z",
+   "sym_key": "FontRenderer::InitContext"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Int_Set@Field@@QAEHH@Z",
+   "sym_key": "Field::Int_Set"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?RenderText@FontClass@@QAEHPAXH0HH@Z",
+   "sym_key": "FontClass::RenderText"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Cleanup@BufferIO@@QAEHH@Z",
+   "sym_key": "BufferIO::Cleanup"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?InitContext@FontRenderer@@QAEHPAX@Z",
+   "sym_key": "FontRenderer::InitContext"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?Int_Set@Field@@QAEHH@Z",
+   "sym_key": "Field::Int_Set"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?RenderText@FontClass@@QAEHPAXH0HH@Z",
+   "sym_key": "FontClass::RenderText"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?Cleanup@BufferIO@@QAEHH@Z",
+   "sym_key": "BufferIO::Cleanup"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?InitContext@FontRenderer@@QAEHPAX@Z",
+   "sym_key": "FontRenderer::InitContext"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?Int_Set@Field@@QAEHH@Z",
+   "sym_key": "Field::Int_Set"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?RenderText@FontClass@@QAEHPAXH0HH@Z",
+   "sym_key": "FontClass::RenderText"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?Cleanup@BufferIO@@QAEHH@Z",
+   "sym_key": "BufferIO::Cleanup"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p39\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d67b0 GameConfig::Constructor -> GameConfig
+[conv] 0x4fb840 BuildingPlacement::Activate -> BuildingPlacement
+[conv] 0x434bf0 sub_434BF0 -> _addr_43
+[conv] 0x772eb0 WeaponTypeClass::SaveLoad_Prefix_0 -> WeaponTypeClass
+[conv] 0x557d20 ListClass::Destru_vt50 -> ListClass
+[conv] 0x5d2260 GameClass::loadScenarioFiles -> GameClass
+[conv] 0x438210 BlowStraw::Get -> BlowStraw
+[conv] 0x6e35f0 ObjectClass::sub_6E35F0 -> ObjectClass
+[conv] 0x436f40 BuildingLightClass::SD_vt13 -> BuildingLightClass
+[conv] 0x731af0 ObjectClass::BlowStraw_29_Get -> ObjectClass
+[conv] 0x796de0 Game::CreateAIPlayer -> Game
+[conv] 0x7af3d0 ObjectClass::GetRegionStringWOL -> ObjectClass
+[conv] 0x682150 Map_Read -> Map
+[conv] 0x6b4a50 UnitClass::Create -> UnitClass
+[conv] 0x5ce7d0 MSPCXAnim::Load -> MSPCXAnim
+[conv] 0x5d1b30 MSEngine::Destruct -> MSEngine
+[conv] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> JumpjetLocomotionClass
+[conv] 0x6bec60 GameClass::Shutdown -> GameClass
+[conv] 0x6ce0b0 SuperClass::Reset -> SuperClass
+[conv] 0x7b7f90 ToWideStringCharAlt -> _addr_7B
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GameConfig               rc=2
+[era] BuildingPlacement        rc=2
+[era] _addr_43                 rc=0
+[era] WeaponTypeClass          rc=2
+[era] ListClass                rc=0
+[era] GameClass                rc=2
+[era] BlowStraw                rc=2
+[era] ObjectClass              rc=2
+[era] BuildingLightClass       rc=2
+[era] Game                     rc=2
+[era] Map                      rc=2
+[era] UnitClass                rc=0
+[era] MSPCXAnim                rc=2
+[era] MSEngine                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] SuperClass               rc=2
+[era] _addr_7B                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x434bf0   MISMATCH         sub_434BF0
+[diff] 0x557d20   MISMATCH         ListClass::Destru_vt50
+[diff] 0x6e35f0   MISMATCH         ObjectClass::sub_6E35F0
+[diff] 0x6b4a50   MISMATCH         UnitClass::Create
+[ledger] 0x5d67b0 GameConfig::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fb840 BuildingPlacement::Activate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x434bf0 sub_434BF0 -> NG (attempt 2)
+[ledger] 0x772eb0 WeaponTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x557d20 ListClass::Destru_vt50 -> NG (attempt 12)
+[ledger] 0x5d2260 GameClass::loadScenarioFiles -> COMPILE_FAIL (attempt 6)
+[ledger] 0x438210 BlowStraw::Get -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6e35f0 ObjectClass::sub_6E35F0 -> NG (attempt 2)
+[ledger] 0x436f40 BuildingLightClass::SD_vt13 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x731af0 ObjectClass::BlowStraw_29_Get -> COMPILE_FAIL (attempt 2)
+[ledger] 0x796de0 Game::CreateAIPlayer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7af3d0 ObjectClass::GetRegionStringWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x682150 Map_Read -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b4a50 UnitClass::Create -> NG (attempt 2)
+[ledger] 0x5ce7d0 MSPCXAnim::Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d1b30 MSEngine::Destruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6bec60 GameClass::Shutdown -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ce0b0 SuperClass::Reset -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7b7f90 ToWideStringCharAlt -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "frame_sched": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p39\batch_report.json

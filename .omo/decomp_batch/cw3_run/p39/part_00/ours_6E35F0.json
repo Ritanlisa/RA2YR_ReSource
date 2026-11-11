@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_6E35F0@ObjectClass@@QAEDPAXHHH@Z",
+ "sym_key": "ObjectClass::sub_6E35F0",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b4144568d4c240450518b0d00000000e8000000008b000fbfd0894424088d44240c0fbf74240ac1e208c1e60881c2800000005081c68000000089542410e8000000008d4c240851b9f8010000e8000000008b44240c8b4c24049981e2ff00000003c2c1f80833c125ff00000033c88bc69981e2ff00000003c2c1f80833c125ff00000033c8894c2404e80000000084c05e740832c083c40cc210008b5424108b4424005250a1400200008b90941700008b889c170000e800000000b00183c40cc21000",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAH@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?LightningStorm__IsActive@@YADXZ",
+   "sym_key": "LightningStorm__IsActive"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?LightningStorm__Start@@YIHHHHPAH@Z",
+   "sym_key": "LightningStorm__Start"
+  }
+ ]
+}
