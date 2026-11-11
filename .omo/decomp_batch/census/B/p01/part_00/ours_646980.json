@@ -1,0 +1,27 @@
+{
+ "symbol": "?ToQuaternionMatrix@unknown@@QAIPAMPAM0@Z",
+ "sym_key": "unknown::ToQuaternionMatrix",
+ "size": 265,
+ "link_base": 0,
+ "bytes_hex": "83ec3c8b4c244056578bc2d94108d9c0dec9d94104d9c0d8c9c744244000000000c744243000000000c744242000000000d95c2410ddd8d9442410d8c1dcc0dc2d00000000d95c2414d94104d809d9410cd84908d9c1d8e1d8c2d8e1d95c2418d9410cd84904d95c2448d901d84908d9542408d9442448d8c1dcc0d95c241cddd8d8c1dcc0d95c2424ddd8d901d9c0d8c9d95c240cddd8d944240cd8c1dcc0dc2d00000000d95c2428ddd8d94104d84908d9410cd809d9c1d8e1d8c2d8e1d95c242cd9442408d8642448d8442408d8642448d95c2434d8c1dcc0d95c2438ddd8d944240cd8442410dcc0dc2d00000000d95c243cb90c0000008d7424148bf8f3a55f5e83c43cc20400",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  }
+ ]
+}

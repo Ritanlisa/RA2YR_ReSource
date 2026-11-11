@@ -1,0 +1,82 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x65c910 ObjectClass::sub_65C910 -> ObjectClass
+[conv] 0x497100 _RLEBlitTransXlatZReadWrite_G::sub_497100 -> _RLEBlitTransXlatZReadWrite_G
+[conv] 0x50bf60 HouseClass::CalculateCostMultipliers -> HouseClass
+[conv] 0x6e8000 ObjectClass::sub_6E8000 -> ObjectClass
+[conv] 0x75ef30 unknown::sub_75EF30 -> unknown
+[conv] 0x646980 unknown::ToQuaternionMatrix -> unknown
+[conv] 0x7c91d0 unknown::_strncpy -> unknown
+[conv] 0x496a80 _RLEBlitTransLucent50ZRead_G::sub_496A80 -> _RLEBlitTransLucent50ZRead_G
+[conv] 0x496e60 _RLEBlitTransLucent50ZReadWarp_G::sub_496E60 -> _RLEBlitTransLucent50ZReadWarp_G
+[conv] 0x578c50 ObjectClass::sub_578C50 -> ObjectClass
+[conv] 0x496930 _RLEBlitTransLucent75ZRead_G::sub_496930 -> _RLEBlitTransLucent75ZRead_G
+[conv] 0x496bc0 _RLEBlitTransLucent25ZRead_G::sub_496BC0 -> _RLEBlitTransLucent25ZRead_G
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _RLEBlitTransXlatZReadWrite_G rc=2
+[era] HouseClass               rc=0
+[era] unknown                  rc=2
+[era] _RLEBlitTransLucent50ZRead_G rc=2
+[era] _RLEBlitTransLucent50ZReadWarp_G rc=2
+[era] _RLEBlitTransLucent75ZRead_G rc=2
+[era] _RLEBlitTransLucent25ZRead_G rc=2
+=== diffasm byte-compare ===
+[diff] 0x50bf60   MISMATCH         HouseClass::CalculateCostMultipliers
+[diff] 0x646980   MISMATCH         unknown::ToQuaternionMatrix
+[ledger] 0x65c910 sub_65C910 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x497100 sub_497100 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x491ea0 0x491ea0 -> PENDING (attempt 1)
+[ledger] 0x50bf60 HouseClass::CalculateCostMultipliers -> NG (attempt 1)
+[ledger] 0x5b3b10 0x5b3b10 -> PENDING (attempt 1)
+[ledger] 0x6e8000 sub_6E8000 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75ef30 sub_75EF30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x646980 ToQuaternionMatrix -> NG (attempt 1)
+[ledger] 0x491c50 0x491c50 -> PENDING (attempt 1)
+[ledger] 0x7dfd00 0x7dfd00 -> PENDING (attempt 1)
+[ledger] 0x7df8c0 0x7df8c0 -> PENDING (attempt 1)
+[ledger] 0x7df7c0 0x7df7c0 -> PENDING (attempt 1)
+[ledger] 0x7c6fc8 0x7c6fc8 -> PENDING (attempt 1)
+[ledger] 0x7c91d0 _strncpy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x496a80 sub_496A80 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4966d0 0x4966d0 -> PENDING (attempt 1)
+[ledger] 0x496e60 sub_496E60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x578c50 sub_578C50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x496930 sub_496930 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x496bc0 sub_496BC0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 997,
+ "verdicts": {
+  "MISMATCH": 275,
+  "MATCH": 411,
+  "COMPILE_FAIL": 288,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 16,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 3,
+  "codegen_shape": 106,
+  "ret_norm": 2,
+  "frame_sched": 58,
+  "const_fold": 10,
+  "branch_polarity": 23,
+  "regalloc": 42,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 59.9,
+ "match_rate_of_total_pct": 41.2,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p01\batch_report.json

@@ -1,1 +1,2 @@
 {"layer": "B", "part": 0, "n": 20, "seconds": 16.7, "ok": true, "verdicts": {"COMPILE_FAIL": 9, "NO_CLS": 5, "MISMATCH": 6}}
+{"layer": "B", "part": 1, "n": 20, "seconds": 16.8, "ok": true, "verdicts": {"COMPILE_FAIL": 10, "NO_CLS": 8, "MISMATCH": 2}}

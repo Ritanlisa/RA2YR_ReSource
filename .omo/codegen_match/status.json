@@ -1455,12 +1455,26 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x491c50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x491c50",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x491d90": {
   "attempts": 1,
   "first_diff": null,
   "name": "sub_491D90",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x491ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x491ea0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x491fd0": {
   "attempts": 1,
@@ -1644,10 +1658,52 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4966d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4966d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x496820": {
   "attempts": 1,
   "first_diff": null,
   "name": "sub_496820",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x496930": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_496930",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x496a80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_496A80",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x496bc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_496BC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x496e60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_496E60",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x497100": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_497100",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -2687,6 +2743,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x50bf60": {
+  "attempts": 1,
+  "first_diff": "+5 mov dword ptr [ecx + 0x5390], eax",
+  "name": "HouseClass::CalculateCostMultipliers",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x50df30": {
   "attempts": 6,
   "first_diff": "+0 mov eax, dword ptr [0xa8ef98]",
@@ -3674,6 +3737,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x578c50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_578C50",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x578d80": {
   "attempts": 1,
   "first_diff": null,
@@ -3988,6 +4058,13 @@
   "name": "MissionClass::Return450N",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5b3b10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5b3b10",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x5b4270": {
   "attempts": 10,
@@ -4794,6 +4871,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x646980": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x40",
+  "name": "ToQuaternionMatrix",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
  "0x652cf0": {
   "attempts": 9,
   "first_diff": null,
@@ -4940,6 +5024,13 @@
   "name": "Random::Range",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x65c910": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_65C910",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x65d660": {
   "attempts": 5,
@@ -5624,6 +5715,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindBuilding",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6e8000": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_6E8000",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6439,6 +6537,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x75ef30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_75EF30",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x75f140": {
   "attempts": 8,
   "first_diff": "+0 push esi",
@@ -7027,6 +7132,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7c6fc8": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7c6fc8",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7c81db": {
   "attempts": 6,
   "first_diff": "+0 push ebp",
@@ -7160,6 +7272,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x7c91d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "_strncpy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7caacb": {
   "attempts": 1,
   "first_diff": null,
@@ -7279,6 +7398,20 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7df7c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7df7c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7df8c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7df8c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7df9c0": {
   "attempts": 9,
   "first_diff": null,
@@ -7299,6 +7432,13 @@
   "name": "Voxel::FacePixelBuffer3",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7dfd00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7dfd00",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7e00a6": {
   "attempts": 1,
