@@ -160,6 +160,22 @@ MATCH=10  pathology={}  rule_violation_fns=0
 - 实测：537/537 无 `::`；530/530 proto 无类类型 `*this`；VSA 0 命中；
   430/530 cc=unknown。✅
 
+### 4.5 提交态（HEAD）独立复验
+
+在 `git worktree`（HEAD = `97baaf860`，**不含并行会话的 CW2 改动**）中重放
+3 件代表样本，补齐仓库既有未跟踪夹具（`decompile-results/full_export`、
+`tools/member_lookup.json`、`tools/class_layouts.json`、`.vc6-8447`）：
+
+```text
+0x40ff30  MATCH      nullsub_64                            （自由函数壳）
+0x491b40  MISMATCH   RLEBlitTransXlatZRead::sub_491B40     （vsa 归属 + 编译通过）
+0x7dfd00  COMPILE_FAIL (C2109)  Audio_Process_7DFD00       （自由函数壳在；body 类型墙）
+→ 0 CONV_FAIL / 0 NO_CLS
+```
+
+证明：**提交的代码本身**即可复现修复，不依赖并行会话尚未提交的改动；
+验证所需的数据夹具均为仓库既有（gitignored/untracked）输入。
+
 ---
 
 ## 5. 剩余登记（诚实账）
