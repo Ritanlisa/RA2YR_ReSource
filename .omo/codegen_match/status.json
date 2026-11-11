@@ -6229,6 +6229,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x65af80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x65af80",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x65b3a0": {
   "attempts": 5,
   "first_diff": null,
@@ -6355,6 +6362,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x663620": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x663620",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x664380": {
   "attempts": 1,
   "first_diff": null,
@@ -6460,6 +6474,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x68cb80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x68cb80",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x691ec0": {
   "attempts": 5,
   "first_diff": null,
@@ -6494,6 +6515,13 @@
   "name": "ScriptTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x696d70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x696d70",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x697e70": {
   "attempts": 9,
@@ -6670,6 +6698,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6aef60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6aef60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x6b1020": {
   "attempts": 10,
   "first_diff": null,
@@ -6803,6 +6838,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6b8920": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6b8920",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x6b8ae0": {
   "attempts": 1,
   "first_diff": null,
@@ -6907,6 +6949,13 @@
   "name": "AbstractClass::getTotalValue",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6cac40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6cac40",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x6cb830": {
   "attempts": 8,
@@ -7061,6 +7110,13 @@
   "name": "VectorClass_UDirtyAreaStruct::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x6dcdc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6dcdc0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x6dcf10": {
   "attempts": 1,
@@ -7236,6 +7292,13 @@
   "name": "TaskForceClass::StubReturn212",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6e88d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6e88d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x6ea3e0": {
   "attempts": 9,
@@ -7461,6 +7524,13 @@
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
  },
+ "0x71a210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x71a210",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x71abc0": {
   "attempts": 9,
   "first_diff": null,
@@ -7593,6 +7663,13 @@
   "name": "Movie::SelectNextBuildableType",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x721460": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x721460",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x722390": {
   "attempts": 6,
@@ -7741,6 +7818,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x727df0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x727df0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7286b0": {
   "attempts": 5,
   "first_diff": null,
@@ -7845,6 +7929,13 @@
   "name": "VtableStub::72F510",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7307d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7307d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x730930": {
   "attempts": 1,
@@ -8013,6 +8104,13 @@
   "name": "VoxelAnimClass::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x74abc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x74abc0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x74b9f0": {
   "attempts": 5,
@@ -8196,6 +8294,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x758fe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x758fe0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x759140": {
   "attempts": 1,
   "first_diff": null,
@@ -8336,6 +8441,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x764860": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x764860",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x765b40": {
   "attempts": 6,
   "first_diff": null,
@@ -8398,6 +8510,13 @@
   "name": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x76a8d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x76a8d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x76b090": {
   "attempts": 1,
@@ -8489,6 +8608,13 @@
   "name": "CampaignProperties_WorldDominationTour_22::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x76f770": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x76f770",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7730d0": {
   "attempts": 6,
@@ -8587,6 +8713,13 @@
   "name": "GameOptions::GetEntry",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x778540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x778540",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7786a0": {
   "attempts": 1,
@@ -8734,6 +8867,13 @@
   "name": "IPXInterfaceClass::Send",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7b1820": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7b1820",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7b1d10": {
   "attempts": 2,
