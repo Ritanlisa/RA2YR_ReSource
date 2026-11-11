@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x5ff190",
+  "name": "sub_5FF190",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p167",
+  "unit": "_addr_5F",
+  "emitted": "sub_5FF190",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac1820], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x600510",
+  "name": "sub_600510",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p167",
+  "unit": "_addr_60",
+  "emitted": "sub_600510",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac4890], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x629150",
+  "name": "sub_629150",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p167",
+  "unit": "_addr_62",
+  "emitted": "sub_629150",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac4978], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x62dc10",
+  "name": "sub_62DC10",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p167",
+  "unit": "_addr_62",
+  "emitted": "sub_62DC10",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac4a88], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x630b70",
+  "name": "sub_630B70",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p167",
+  "unit": "_addr_63",
+  "emitted": "sub_630B70",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac4b18], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6335a0",
+  "name": "sub_6335A0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p167",
+  "unit": "_addr_63",
+  "emitted": "sub_6335A0",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac4ce0], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x63f690",
+  "name": "sub_63F690",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_63",
+  "emitted": "sub_63F690",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac4e60], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6406c0",
+  "name": "sub_6406C0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_64",
+  "emitted": "sub_6406C0",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac4ef8], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x642960",
+  "name": "sub_642960",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_64",
+  "emitted": "sub_642960",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac5000], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x644080",
+  "name": "sub_644080",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_64",
+  "emitted": "sub_644080",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xac5070], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x646c50",
+  "name": "sub_646C50",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_64",
+  "emitted": "sub_646C50",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xafa428], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x652850",
+  "name": "sub_652850",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_65",
+  "emitted": "sub_652850",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb049f0], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x659050",
+  "name": "sub_659050",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_65",
+  "emitted": "sub_659050",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb04ac0], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6594a0",
+  "name": "RadBeam::drawPipScale",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 26,
+  "part": "p168",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::drawPipScale",
+  "first_diff": {
+   "orig": "+4 add ecx, 0x24",
+   "ours": "+4 mov edx, dword ptr [eax]"
+  },
+  "ours_size": 24
+ },
+ {
+  "addr": "0x6594c0",
+  "name": "RadBeam::drawSpawnPips",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 26,
+  "part": "p168",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::drawSpawnPips",
+  "first_diff": {
+   "orig": "+4 add ecx, 0x30",
+   "ours": "+4 mov edx, dword ptr [eax]"
+  },
+  "ours_size": 24
+ },
+ {
+  "addr": "0x65a710",
+  "name": "sub_65A710",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_65",
+  "emitted": "sub_65A710",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb04b40], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x65b120",
+  "name": "sub_65B120",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_65",
+  "emitted": "sub_65B120",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb04bc0], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x65d890",
+  "name": "sub_65D890",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_65",
+  "emitted": "sub_65D890",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb04c88], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x65f500",
+  "name": "sub_65F500",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_65",
+  "emitted": "sub_65F500",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb04d10], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x661e80",
+  "name": "sub_661E80",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p168",
+  "unit": "_addr_66",
+  "emitted": "sub_661E80",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb04e68], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ }
+]
