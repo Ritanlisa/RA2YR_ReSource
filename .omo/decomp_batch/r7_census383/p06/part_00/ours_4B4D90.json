@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetField_0x78@unknown@@QAGHHPBXPAH@Z",
+ "sym_key": "unknown::GetField_0x78",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b5424088b4c240c5083c2fc5152e800000000c21000",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?DriveLocomotionClass__QueryInterface@@YGHHPBXPAH@Z",
+   "sym_key": "?DriveLocomotionClass__QueryInterface@@YGHHPBXPAH@Z"
+  }
+ ]
+}

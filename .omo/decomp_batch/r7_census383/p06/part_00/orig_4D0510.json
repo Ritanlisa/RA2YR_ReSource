@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D0510",
+ "name": "JumpjetLocomotionClass::GetInterface",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D0510",
+ "bytes_hex": "836c240404e996a40800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

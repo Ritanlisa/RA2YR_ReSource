@@ -2023,11 +2023,11 @@
   "status": "OK"
  },
  "0x4b4d90": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "JumpjetLocomotionClass::GetField_0x78",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4b4da0": {
   "attempts": 3,
@@ -2037,7 +2037,7 @@
   "status": "NG"
  },
  "0x4b4db0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::GetField_0x80",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2100,11 +2100,11 @@
   "status": "OK"
  },
  "0x4b6740": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "JumpjetLocomotionClass::SmallStub_4B6740",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4b6750": {
   "attempts": 3,
@@ -2114,18 +2114,18 @@
   "status": "NG"
  },
  "0x4b6760": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SmallStub_4B6760",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4b6770": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
   "name": "JumpjetLocomotionClass::SmallStub_4B6770",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4b6780": {
   "attempts": 3,
@@ -2135,14 +2135,14 @@
   "status": "NG"
  },
  "0x4b6790": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SmallStub_4B6790",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4ba5a0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "DSurface::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2170,14 +2170,14 @@
   "status": "NG"
  },
  "0x4bbc90": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+0 mov eax, dword ptr [0x8205d0]",
   "name": "DDraw::GetStatus",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x4c3d00": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "CreditsPower::DrawCreditsTextLine",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2191,7 +2191,7 @@
   "status": "NG"
  },
  "0x4c58c0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "EMPulseClass::IterateCellsInRadius",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2219,7 +2219,7 @@
   "status": "NG"
  },
  "0x4c93d0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "ProgressTimer::GetValue",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2233,7 +2233,7 @@
   "status": "NG"
  },
  "0x4c9b20": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "FactoryClass::UpdateProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2254,7 +2254,7 @@
   "status": "NG"
  },
  "0x4c9ea0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "ProductionClass::StartTimer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2310,14 +2310,14 @@
   "status": "NG"
  },
  "0x4caf20": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "VoxelAnimClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4cbba0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "FootClass::FindPathWithRetry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2331,11 +2331,11 @@
   "status": "OK"
  },
  "0x4d0510": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "JumpjetLocomotionClass::GetInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4d0520": {
   "attempts": 3,
@@ -2345,7 +2345,7 @@
   "status": "NG"
  },
  "0x4d0530": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::Stub2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2373,21 +2373,21 @@
   "status": "NG"
  },
  "0x4d2bc0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "FoggedObjectClass::ResizeArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4da030": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "InfantryClass::ProcessExitQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4daf10": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "FootClass::UpdateState",
   "note": "decomp_batch r2: COMPILE_FAIL",
