@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x578640 ObjectClass::Math_Helper -> ObjectClass
+[conv] 0x491d90 _RLEBlitTransRemapDestZRead_E::sub_491D90 -> _RLEBlitTransRemapDestZRead_E
+[conv] 0x7e00a6 sub_7E00A6 -> _addr_7E
+[conv] 0x496820 _RLEBlitTransDarkenZRead_G::sub_496820 -> _RLEBlitTransDarkenZRead_G
+[conv] 0x5889f0 globalHelper_0889F0 -> _addr_58
+[conv] 0x504790 UpdateHouseClassAnger -> _addr_50
+[conv] 0x578460 LayerClass::IsWithinUsableArea -> LayerClass
+[conv] 0x578b70 ObjectClass::sub_578B70 -> ObjectClass
+[conv] 0x4b4b00 DriveLocomotionClass::StubReturnZero_2 -> DriveLocomotionClass
+[conv] 0x6a4130 ShipLocomotionClass::StubReturnZero_15 -> ShipLocomotionClass
+[conv] 0x6632e0 RocketLocomotionClass::ComputeFloatExpression_3 -> RocketLocomotionClass
+[conv] 0x492250 _RLEBlitTransRemapDestZReadWrite_E::sub_492250 -> _RLEBlitTransRemapDestZReadWrite_E
+[conv] 0x497390 _RLEBlitTransDarkenZReadWrite_G::sub_497390 -> _RLEBlitTransDarkenZReadWrite_G
+[conv] 0x491fd0 _RLEBlitTransXlatZReadWrite_E::sub_491FD0 -> _RLEBlitTransXlatZReadWrite_E
+[conv] 0x4958d0 _BlitTransXlatAlphaZReadWrite_G::AddRef -> _BlitTransXlatAlphaZReadWrite_G
+[conv] 0x65c910 ObjectClass::sub_65C910 -> ObjectClass
+[conv] 0x58bb30 ScenarioClass::CopyStartPositions -> ScenarioClass
+[conv] 0x497100 _RLEBlitTransXlatZReadWrite_G::sub_497100 -> _RLEBlitTransXlatZReadWrite_G
+[conv] 0x5b3b10 sub_5B3B10 -> _addr_5B
+[conv] 0x487f40 Rect::Union -> Rect
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _RLEBlitTransRemapDestZRead_E rc=0
+[era] _addr_7E                 rc=0
+[era] _RLEBlitTransDarkenZRead_G rc=2
+[era] _addr_58                 rc=2
+[era] _addr_50                 rc=0
+[era] LayerClass               rc=2
+[era] DriveLocomotionClass     rc=2
+[era] ShipLocomotionClass      rc=2
+[era] RocketLocomotionClass    rc=2
+[era] _RLEBlitTransRemapDestZReadWrite_E rc=0
+[era] _RLEBlitTransDarkenZReadWrite_G rc=2
+[era] _RLEBlitTransXlatZReadWrite_E rc=0
+[era] _BlitTransXlatAlphaZReadWrite_G rc=2
+[era] ScenarioClass            rc=2
+[era] _RLEBlitTransXlatZReadWrite_G rc=0
+[era] _addr_5B                 rc=0
+[era] Rect                     rc=0
+=== diffasm byte-compare ===
+[diff] 0x578640   MISMATCH         ObjectClass::Math_Helper
+[diff] 0x578b70   MISMATCH         ObjectClass::sub_578B70
+[diff] 0x491d90   MISMATCH         _RLEBlitTransRemapDestZRead_E::sub_491D90
+[diff] 0x7e00a6   MISMATCH         sub_7E00A6
+[diff] 0x504790   MISMATCH         UpdateHouseClassAnger
+[diff] 0x492250   MISMATCH         _RLEBlitTransRemapDestZReadWrite_E::sub_492250
+[diff] 0x491fd0   MISMATCH         _RLEBlitTransXlatZReadWrite_E::sub_491FD0
+[diff] 0x497100   MISMATCH         _RLEBlitTransXlatZReadWrite_G::sub_497100
+[diff] 0x5b3b10   MISMATCH         sub_5B3B10
+[diff] 0x487f40   MISMATCH         Rect::Union
+[ledger] 0x578640 ObjectClass::Math_Helper -> NG (attempt 4)
+[ledger] 0x491d90 _RLEBlitTransRemapDestZRead_E::sub_491D90 -> NG (attempt 4)
+[ledger] 0x7e00a6 sub_7E00A6 -> NG (attempt 4)
+[ledger] 0x496820 _RLEBlitTransDarkenZRead_G::sub_496820 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5889f0 globalHelper_0889F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x504790 UpdateHouseClassAnger -> NG (attempt 4)
+[ledger] 0x578460 LayerClass::IsWithinUsableArea -> COMPILE_FAIL (attempt 12)
+[ledger] 0x578b70 ObjectClass::sub_578B70 -> NG (attempt 4)
+[ledger] 0x4b4b00 DriveLocomotionClass::StubReturnZero_2 -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6a4130 ShipLocomotionClass::StubReturnZero_15 -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6632e0 RocketLocomotionClass::ComputeFloatExpression_3 -> COMPILE_FAIL (attempt 12)
+[ledger] 0x492250 _RLEBlitTransRemapDestZReadWrite_E::sub_492250 -> NG (attempt 4)
+[ledger] 0x497390 _RLEBlitTransDarkenZReadWrite_G::sub_497390 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x491fd0 _RLEBlitTransXlatZReadWrite_E::sub_491FD0 -> NG (attempt 4)
+[ledger] 0x4958d0 _BlitTransXlatAlphaZReadWrite_G::AddRef -> COMPILE_FAIL (attempt 12)
+[ledger] 0x65c910 ObjectClass::sub_65C910 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58bb30 ScenarioClass::CopyStartPositions -> COMPILE_FAIL (attempt 12)
+[ledger] 0x497100 _RLEBlitTransXlatZReadWrite_G::sub_497100 -> NG (attempt 4)
+[ledger] 0x5b3b10 sub_5B3B10 -> NG (attempt 5)
+[ledger] 0x487f40 Rect::Union -> NG (attempt 12)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 10
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 5,
+  "regalloc": 2,
+  "branch_polarity": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p00\batch_report.json

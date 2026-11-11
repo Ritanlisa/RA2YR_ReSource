@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x578640",
+  "name": "Math_Helper",
+  "cls": null,
+  "size": 201,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x491d90",
+  "name": "sub_491D90",
+  "cls": null,
+  "size": 202,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x7e00a6",
+  "name": "sub_7E00A6",
+  "cls": null,
+  "size": 202,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x496820",
+  "name": "sub_496820",
+  "cls": null,
+  "size": 203,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x5889f0",
+  "name": "globalHelper_0889F0",
+  "cls": null,
+  "size": 203,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x504790",
+  "name": "UpdateHouseClassAnger",
+  "cls": null,
+  "size": 205,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2105",
+  "first_msg": "'++' needs l-value"
+ },
+ {
+  "addr": "0x578460",
+  "name": "LayerClass::IsWithinUsableArea",
+  "cls": null,
+  "size": 215,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x578b70",
+  "name": "sub_578B70",
+  "cls": null,
+  "size": 216,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4b4b00",
+  "name": "JumpjetLocomotionClass::StubReturnZero_2",
+  "cls": null,
+  "size": 217,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2227",
+  "first_msg": "left of '->pathDirections' must point to class/struct/union"
+ },
+ {
+  "addr": "0x6a4130",
+  "name": "JumpjetLocomotionClass::StubReturnZero_15",
+  "cls": null,
+  "size": 217,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x6632e0",
+  "name": "JumpjetLocomotionClass::ComputeFloatExpression_3",
+  "cls": null,
+  "size": 218,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2228",
+  "first_msg": "left of '.vfptr1' must have class/struct/union type"
+ },
+ {
+  "addr": "0x492250",
+  "name": "sub_492250",
+  "cls": null,
+  "size": 221,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x497390",
+  "name": "sub_497390",
+  "cls": null,
+  "size": 221,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x491fd0",
+  "name": "sub_491FD0",
+  "cls": null,
+  "size": 225,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x4958d0",
+  "name": "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
+  "cls": null,
+  "size": 225,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2027",
+  "first_msg": "use of undefined type 'Stream'"
+ },
+ {
+  "addr": "0x65c910",
+  "name": "sub_65C910",
+  "cls": null,
+  "size": 230,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x58bb30",
+  "name": "ScenarioClass::CopyStartPositions",
+  "cls": null,
+  "size": 231,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x497100",
+  "name": "sub_497100",
+  "cls": null,
+  "size": 232,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x5b3b10",
+  "name": "sub_5B3B10",
+  "cls": null,
+  "size": 236,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2653",
+  "first_msg": "'GenericList' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x487f40",
+  "name": "Rect::Union",
+  "cls": null,
+  "size": 240,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPRECT'"
+ }
+]

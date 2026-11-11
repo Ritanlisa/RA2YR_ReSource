@@ -1,0 +1,27 @@
+{
+ "symbol": "?Math_Helper@ObjectClass@@QAE_NPAHPAFD@Z",
+ "sym_key": "ObjectClass::Math_Helper",
+ "size": 202,
+ "link_base": 0,
+ "bytes_hex": "8a44240c538b5c2408558b6c24105633f6570fbf55020fbf7d0084c074508bc2c1e00903c73d00000400730e0fbe35340300008b048685c0750d8b4500a37c160000b85816000080b81c010000000fbeb01b01000074178b43048ba9f40000008d4445048d2c1703c63be87d01468b6b048b81f40000008d0c178d2c6803ee3bcd7e3e8b4b0c8b6b0403cd8d6c48028d0c1703ee3bcd7f298b0b8b730803f18bdfd1e62bf02bda3bde7d1603c92bd72bc13bd07d0c5f5e5db8010000005bc20c005f5e5d33c05bc20c00",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}
