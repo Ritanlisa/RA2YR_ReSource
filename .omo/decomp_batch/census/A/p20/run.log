@@ -1,0 +1,75 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d39b0 MPBattleClass::randomAICountryIndex -> MPBattleClass
+[conv] 0x646d00 ObjectClass::sub_646D00 -> ObjectClass
+[conv] 0x750090 Power::ChangedHouse -> Power
+[conv] 0x40bac0 _VectorClass_PAVTechnoClass::GetCapacity -> _VectorClass_PAVTechnoClass
+[conv] 0x40d700 _VectorClass_PAVMixFileClass::GetCapacity -> _VectorClass_PAVMixFileClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPBattleClass            rc=0
+[era] ObjectClass              rc=0
+[era] Power                    rc=0
+[era] _VectorClass_PAVTechnoClass rc=0
+[era] _VectorClass_PAVMixFileClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d39b0   MISMATCH         MPBattleClass::randomAICountryIndex
+[diff] 0x646d00   MISMATCH         ObjectClass::sub_646D00
+[diff] 0x750090   MISMATCH         Power::ChangedHouse
+[diff] 0x40bac0   MISMATCH         _VectorClass_PAVTechnoClass::GetCapacity
+[diff] 0x40d700   MISMATCH         _VectorClass_PAVMixFileClass::GetCapacity
+[ledger] 0x558720 0x558720 -> PENDING (attempt 1)
+[ledger] 0x5afeb0 0x5afeb0 -> PENDING (attempt 1)
+[ledger] 0x5beca0 0x5beca0 -> PENDING (attempt 1)
+[ledger] 0x5d39b0 MPBattleClass::randomAICountryIndex -> NG (attempt 1)
+[ledger] 0x5f38c0 0x5f38c0 -> PENDING (attempt 1)
+[ledger] 0x62b5a0 0x62b5a0 -> PENDING (attempt 1)
+[ledger] 0x646d00 sub_646D00 -> NG (attempt 1)
+[ledger] 0x65f970 0x65f970 -> PENDING (attempt 1)
+[ledger] 0x692220 0x692220 -> PENDING (attempt 1)
+[ledger] 0x6b4a10 0x6b4a10 -> PENDING (attempt 1)
+[ledger] 0x6ce550 0x6ce550 -> PENDING (attempt 1)
+[ledger] 0x6f2a70 0x6f2a70 -> PENDING (attempt 1)
+[ledger] 0x71e5e0 0x71e5e0 -> PENDING (attempt 1)
+[ledger] 0x72a880 0x72a880 -> PENDING (attempt 1)
+[ledger] 0x750090 Power::ChangedHouse -> NG (attempt 1)
+[ledger] 0x763550 0x763550 -> PENDING (attempt 1)
+[ledger] 0x76f8f0 0x76f8f0 -> PENDING (attempt 1)
+[ledger] 0x7af280 0x7af280 -> PENDING (attempt 1)
+[ledger] 0x40bac0 VectorClass_Techno::GetCapacity -> NG (attempt 1)
+[ledger] 0x40d700 VectorClass_ptr_MixFileClass::GetCapacity -> NG (attempt 1)
+======================================================================
+{
+ "total": 1457,
+ "verdicts": {
+  "MISMATCH": 324,
+  "MATCH": 495,
+  "COMPILE_FAIL": 330,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 301,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 123,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 26,
+  "regalloc": 48,
+  "branch_order": 21,
+  "width_mismatch": 3,
+  "extern_reloc": 15,
+  "cc_mismatch": 6,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 60.4,
+ "match_rate_of_total_pct": 34.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p20\batch_report.json

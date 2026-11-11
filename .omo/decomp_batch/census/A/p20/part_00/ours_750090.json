@@ -1,0 +1,8 @@
+{
+ "symbol": "?ChangedHouse@Power@@QAEDD@Z",
+ "sym_key": "Power::ChangedHouse",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b442404568bf2240081e6ff0000000bc65ef6da1bd281e20000803f8911c20400",
+ "relocs": []
+}

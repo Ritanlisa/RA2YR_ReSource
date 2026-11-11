@@ -1,0 +1,239 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_CLS": 15,
+   "MISMATCH": 5
+  },
+  "pathologies": {
+   "extern_reloc": 1,
+   "width_mismatch": 1,
+   "regalloc": 1,
+   "branch_order": 2
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x558720",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x558720",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5afeb0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5afeb0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5beca0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5beca0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5d39b0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xabfc78], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "MPBattleClass::randomAICountryIndex",
+   "emitted": "MPBattleClass::randomAICountryIndex",
+   "unit": "MPBattleClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26
+  },
+  {
+   "addr": "0x5f38c0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5f38c0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x62b5a0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x62b5a0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x646d00",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+19 mov dword ptr [eax + 0x10], ecx",
+    "ours": "+19 mov byte ptr [eax + 0x10], cl"
+   },
+   "pathology": "width_mismatch",
+   "name": "sub_646D00",
+   "emitted": "ObjectClass::sub_646D00",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26
+  },
+  {
+   "addr": "0x65f970",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x65f970",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x692220",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x692220",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6b4a10",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6b4a10",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6ce550",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6ce550",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6f2a70",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6f2a70",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x71e5e0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x71e5e0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x72a880",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x72a880",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x750090",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 37B",
+   "first_diff": {
+    "orig": "+0 mov al, byte ptr [esp + 4]",
+    "ours": "+0 mov edx, dword ptr [esp + 4]"
+   },
+   "pathology": "regalloc",
+   "name": "Power::ChangedHouse",
+   "emitted": "Power::ChangedHouse",
+   "unit": "Power",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 37
+  },
+  {
+   "addr": "0x763550",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x763550",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x76f8f0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x76f8f0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7af280",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7af280",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x40bac0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x40bacc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_Techno::GetCapacity",
+   "emitted": "_VectorClass_PAVTechnoClass::GetCapacity",
+   "unit": "_VectorClass_PAVTechnoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  },
+  {
+   "addr": "0x40d700",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x40d70c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_MixFileClass::GetCapacity",
+   "emitted": "_VectorClass_PAVMixFileClass::GetCapacity",
+   "unit": "_VectorClass_PAVMixFileClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27
+  }
+ ]
+}

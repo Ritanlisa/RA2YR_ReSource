@@ -1,0 +1,11 @@
+{
+ "addr": "0x750090",
+ "name": "Power::ChangedHouse",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750090",
+ "bytes_hex": "8a44240484c07409c7010000803fc20400c70100000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
