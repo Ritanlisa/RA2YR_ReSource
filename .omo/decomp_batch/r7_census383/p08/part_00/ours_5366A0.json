@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_31@PlanningModeCommandClass@@QAEPADXZ",
+ "sym_key": "PlanningModeCommandClass::performAction_31",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "33c0a000000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_PlanningMode@@3EA",
+   "sym_key": "g_INI_Key_PlanningMode"
+  }
+ ]
+}

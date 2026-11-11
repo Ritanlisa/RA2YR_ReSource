@@ -1,0 +1,15 @@
+{
+ "symbol": "?readBaseDefenses@unknown@@QAGHHPBXPAH@Z",
+ "sym_key": "unknown::readBaseDefenses",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b5424088b4c240c5083c2fc5152e800000000c21000",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?HouseTypeClass__QueryInterface@@YGHHPBXPAH@Z",
+   "sym_key": "?HouseTypeClass__QueryInterface@@YGHHPBXPAH@Z"
+  }
+ ]
+}

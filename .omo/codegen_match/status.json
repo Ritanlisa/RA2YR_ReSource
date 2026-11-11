@@ -2744,18 +2744,18 @@
   "status": "NG"
  },
  "0x510ac0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x510ad0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x2c",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x510ae0": {
   "attempts": 3,
@@ -2779,7 +2779,7 @@
   "status": "OK"
  },
  "0x5125a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseTypeClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2807,11 +2807,11 @@
   "status": "OK"
  },
  "0x5139e0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "HouseTypeClass::readBaseDefenses",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x5139f0": {
   "attempts": 3,
@@ -2828,7 +2828,7 @@
   "status": "NG"
  },
  "0x517210": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::IsPositionWithinThreshold",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2877,7 +2877,7 @@
   "status": "OK"
  },
  "0x523250": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "InfantryClass::ComputeTransform",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2940,7 +2940,7 @@
   "status": "NG"
  },
  "0x526a30": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "INIClass::FindKey",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2954,21 +2954,21 @@
   "status": "NG"
  },
  "0x52b170": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "SortedArray::Find",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x52b2b0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "INIClass::deleteSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x52b390": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HashTable::BinarySearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2989,46 +2989,46 @@
   "status": "OK"
  },
  "0x535d20": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x535de0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_7",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x535ea0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_12",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x535f30": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_17",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5365a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_26",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5366a0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 mov eax, 0x827278",
   "name": "CreateTeamCommand::performAction_31",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x536730": {
   "attempts": 1,
@@ -3038,18 +3038,18 @@
   "status": "OK"
  },
  "0x536770": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_39",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x536810": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 mov eax, 0x827304",
   "name": "CreateTeamCommand::performAction_45",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x536890": {
   "attempts": 1,
@@ -3059,14 +3059,14 @@
   "status": "OK"
  },
  "0x5368d0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_53",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x536970": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_59",
   "note": "decomp_batch r2: COMPILE_FAIL",
