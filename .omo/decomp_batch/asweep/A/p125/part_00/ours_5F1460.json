@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_5F1460@@YAXXZ",
+ "sym_key": "Unnamed::sub_5F1460",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "c7050000000066732d38c7050400000052c1f03fc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC12F0@@3NA",
+   "sym_key": "DataGlobal_AC12F0"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC12F0@@3NA",
+   "sym_key": "DataGlobal_AC12F0"
+  }
+ ]
+}
