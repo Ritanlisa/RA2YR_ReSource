@@ -1,0 +1,8 @@
+{
+ "symbol": "?getCurrentMission@MissionClass@@QAEDXZ",
+ "sym_key": "MissionClass::getCurrentMission",
+ "size": 3,
+ "link_base": 0,
+ "bytes_hex": "b001c3",
+ "relocs": []
+}

@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x4de750 FootClass::vt_entry_4D4 -> FootClass
+[conv] 0x4de760 FootClass::vt_entry_4D8 -> FootClass
+[conv] 0x4e0130 ObjectClass::COMStub_Return0_34 -> ObjectClass
+[conv] 0x4e0140 MissionClass::getCurrentMission -> MissionClass
+[conv] 0x4f3ad0 GraphicMenuItem::StubReturnFalse -> GraphicMenuItem
+[conv] 0x4f3ae0 GraphicMenuItem::Stub -> GraphicMenuItem
+[conv] 0x4ff540 nullsub_100 -> _addr_4F
+[conv] 0x509cc0 nullsub_144 -> _addr_50
+[conv] 0x5247a0 InfantryTypeClass::StubReturnFalse -> InfantryTypeClass
+[conv] 0x524ec0 ObjectClass::_0Iostream_init_QAE_XZ_4 -> ObjectClass
+[conv] 0x53a130 HouseClass::IonSensitivesShouldBeOffline -> HouseClass
+[conv] 0x543040 IPXManagerClass::StubReturnFalse -> IPXManagerClass
+[conv] 0x543b00 IsometricTileClass::nullsub_154 -> IsometricTileClass
+[conv] 0x544ff0 ReturnFalse2 -> _addr_54
+[conv] 0x55ab90 IUnknown::Stub10 -> IUnknown
+[conv] 0x55ac00 IUnknown::Stub11 -> IUnknown
+[conv] 0x55ac10 LocomotionClass::Stub12 -> LocomotionClass
+[conv] 0x55ac30 LocomotionClass::Stub14 -> LocomotionClass
+[conv] 0x55ac40 LocomotionClass::nullsub_164 -> LocomotionClass
+[conv] 0x55ac50 JumpjetLocomotionClass::Stub15 -> JumpjetLocomotionClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=0
+[era] ObjectClass              rc=0
+[era] MissionClass             rc=0
+[era] GraphicMenuItem          rc=0
+[era] _addr_4F                 rc=0
+[era] _addr_50                 rc=0
+[era] InfantryTypeClass        rc=0
+[era] HouseClass               rc=0
+[era] IPXManagerClass          rc=0
+[era] IsometricTileClass       rc=0
+[era] _addr_54                 rc=0
+[era] IUnknown                 rc=0
+[era] LocomotionClass          rc=0
+[era] JumpjetLocomotionClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x4de750   MISMATCH         FootClass::vt_entry_4D4
+[diff] 0x4de760   MISMATCH         FootClass::vt_entry_4D8
+[diff] 0x4e0130   MATCH            ObjectClass::COMStub_Return0_34
+[diff] 0x524ec0   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_4
+[diff] 0x4e0140   MATCH            MissionClass::getCurrentMission
+[diff] 0x4f3ad0   MATCH            GraphicMenuItem::StubReturnFalse
+[diff] 0x4f3ae0   MATCH            GraphicMenuItem::Stub
+[diff] 0x4ff540   MISMATCH         nullsub_100
+[diff] 0x509cc0   MISMATCH         nullsub_144
+[diff] 0x5247a0   MATCH            InfantryTypeClass::StubReturnFalse
+[diff] 0x53a130   MATCH            HouseClass::IonSensitivesShouldBeOffline
+[diff] 0x543040   MISMATCH         IPXManagerClass::StubReturnFalse
+[diff] 0x543b00   MISMATCH         IsometricTileClass::nullsub_154
+[diff] 0x544ff0   MATCH            ReturnFalse2
+[diff] 0x55ab90   MATCH            IUnknown::Stub10
+[diff] 0x55ac00   MATCH            IUnknown::Stub11
+[diff] 0x55ac10   MATCH            LocomotionClass::Stub12
+[diff] 0x55ac30   MATCH            LocomotionClass::Stub14
+[diff] 0x55ac40   MISMATCH         LocomotionClass::nullsub_164
+[diff] 0x55ac50   MATCH            JumpjetLocomotionClass::Stub15
+[ledger] 0x4de750 FootClass::vt_entry_4D4 -> NG (attempt 1)
+[ledger] 0x4de760 FootClass::vt_entry_4D8 -> NG (attempt 1)
+[ledger] 0x4e0130 ObjectClass::COMStub_Return0_34 -> OK (attempt 1)
+[ledger] 0x4e0140 MissionClass::getCurrentMission -> OK (attempt 1)
+[ledger] 0x4f3ad0 GraphicMenuItem::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x4f3ae0 GraphicMenuItem::Stub -> OK (attempt 1)
+[ledger] 0x4ff540 nullsub_100 -> NG (attempt 1)
+[ledger] 0x509cc0 nullsub_144 -> NG (attempt 1)
+[ledger] 0x5247a0 InfantryTypeClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x524ec0 ObjectClass::_0Iostream_init_QAE_XZ_4 -> OK (attempt 1)
+[ledger] 0x53a130 HouseClass::IonSensitivesShouldBeOffline -> OK (attempt 1)
+[ledger] 0x543040 IPXManagerClass::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x543b00 IsometricTileClass::nullsub_154 -> NG (attempt 1)
+[ledger] 0x544ff0 ReturnFalse2 -> OK (attempt 1)
+[ledger] 0x55ab90 IUnknown::Stub10 -> OK (attempt 1)
+[ledger] 0x55ac00 IUnknown::Stub11 -> OK (attempt 1)
+[ledger] 0x55ac10 LocomotionClass::Stub12 -> OK (attempt 1)
+[ledger] 0x55ac30 LocomotionClass::Stub14 -> OK (attempt 1)
+[ledger] 0x55ac40 LocomotionClass::nullsub_164 -> NG (attempt 1)
+[ledger] 0x55ac50 JumpjetLocomotionClass::Stub15 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "MATCH": 13
+ },
+ "pathologies": {
+  "cc_mismatch": 7
+ },
+ "match_rate_of_decided_pct": 65.0,
+ "match_rate_of_total_pct": 65.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p12\batch_report.json

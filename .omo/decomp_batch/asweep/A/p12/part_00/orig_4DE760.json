@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DE760",
+ "name": "BuildingClass::vt_entry_4D8",
+ "size": 3,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DE760",
+ "bytes_hex": "c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
