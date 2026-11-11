@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetGameSpeedFromSession@FootClass@@QAEHXZ",
+ "sym_key": "FootClass::GetGameSpeedFromSession",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "518b49288d44240050e8000000008b0083f836741383f835740e8b0d400200008b811c17000059c38b15400200008b822017000059c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?GetEntry@SessionClass@@QAEPAIPAX@Z",
+   "sym_key": "SessionClass::GetEntry"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

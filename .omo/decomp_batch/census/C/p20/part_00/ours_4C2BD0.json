@@ -1,0 +1,8 @@
+{
+ "symbol": "?updateSightRange@TechnoClass@@QAEXPAEH@Z",
+ "sym_key": "TechnoClass::updateSightRange",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "568b742408578bf985f674298b0656ff502c83f801751e8a869000000084c074148a868100000084c0750a8b4c2410897720894f385f5ec20800",
+ "relocs": []
+}

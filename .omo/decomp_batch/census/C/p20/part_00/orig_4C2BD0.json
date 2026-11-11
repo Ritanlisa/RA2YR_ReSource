@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C2BD0",
+ "name": "TechnoClass::updateSightRange",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C2BD0",
+ "bytes_hex": "568b742408578bf985f6742a8b068bceff502c83f801751e8a869000000084c074148a868100000084c0750a8b4c2410897720894f245f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

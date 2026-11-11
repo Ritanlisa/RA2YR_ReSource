@@ -1,0 +1,80 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c2bd0 TechnoClass::updateSightRange -> TechnoClass
+[conv] 0x49a4e0 _BlitTransLucent50AlphaZRead_G::Blit -> _BlitTransLucent50AlphaZRead_G
+[conv] 0x49aa40 _RLEBlitTransZRemapXlatAlpha_G::QueryInterface -> _RLEBlitTransZRemapXlatAlpha_G
+[conv] 0x49ad00 _RLEBlitTransLucent25AlphaZReadWarp_G::QueryInterface -> _RLEBlitTransLucent25AlphaZReadWarp_G
+[conv] 0x5d8270 unknown::applyRevealToCell -> unknown
+[conv] 0x6f03b0 FootClass::GetGameSpeedFromSession -> FootClass
+[conv] 0x5f6060 ObjectClass::SetAnim -> ObjectClass
+[conv] 0x6a46d0 HouseTypeClass::Find -> HouseTypeClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] _BlitTransLucent50AlphaZRead_G rc=2
+[era] _RLEBlitTransZRemapXlatAlpha_G rc=2
+[era] _RLEBlitTransLucent25AlphaZReadWarp_G rc=2
+[era] unknown                  rc=2
+[era] FootClass                rc=0
+[era] ObjectClass              rc=0
+[era] HouseTypeClass           rc=2
+=== diffasm byte-compare ===
+[diff] 0x4c2bd0   MISMATCH         TechnoClass::updateSightRange
+[diff] 0x6f03b0   MISMATCH         FootClass::GetGameSpeedFromSession
+[diff] 0x5f6060   MISMATCH         ObjectClass::SetAnim
+[ledger] 0x4c2bd0 TechnoClass::updateSightRange -> NG (attempt 1)
+[ledger] 0x49a4e0 BlitTransLucent50AlphaZRead_ushort::Blit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49aa40 RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ad00 RLEBlitTransLucent25AlphaZReadWarp_ushort::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8270 AbstractClass::applyRevealToCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f03b0 FootClass::GetGameSpeedFromSession -> NG (attempt 1)
+[ledger] 0x5f6060 ObjectClass::SetAnim -> NG (attempt 1)
+[ledger] 0x40d3c0 0x40d3c0 -> PENDING (attempt 1)
+[ledger] 0x4662e0 0x4662e0 -> PENDING (attempt 1)
+[ledger] 0x4e6560 0x4e6560 -> PENDING (attempt 1)
+[ledger] 0x4e6ae0 0x4e6ae0 -> PENDING (attempt 1)
+[ledger] 0x4e7060 0x4e7060 -> PENDING (attempt 1)
+[ledger] 0x4e7660 0x4e7660 -> PENDING (attempt 1)
+[ledger] 0x4e7be0 0x4e7be0 -> PENDING (attempt 1)
+[ledger] 0x543e70 0x543e70 -> PENDING (attempt 1)
+[ledger] 0x629190 0x629190 -> PENDING (attempt 1)
+[ledger] 0x6a46d0 HouseTypeClass::Find -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71a3d0 0x71a3d0 -> PENDING (attempt 1)
+[ledger] 0x7256d0 0x7256d0 -> PENDING (attempt 1)
+[ledger] 0x7c9af8 0x7c9af8 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 2099,
+ "verdicts": {
+  "MISMATCH": 580,
+  "MATCH": 520,
+  "COMPILE_FAIL": 506,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 480,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 3
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 188,
+  "ret_norm": 5,
+  "frame_sched": 65,
+  "const_fold": 65,
+  "branch_polarity": 38,
+  "regalloc": 94,
+  "branch_order": 68,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 21,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 47.3,
+ "match_rate_of_total_pct": 24.8,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p20\batch_report.json

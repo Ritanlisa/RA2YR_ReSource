@@ -482,6 +482,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x40d3c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40d3c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x40d400": {
   "attempts": 1,
   "first_diff": null,
@@ -1795,6 +1802,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x466280",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4662e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4662e0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -3240,10 +3254,31 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x49a4e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent50AlphaZRead_ushort::Blit",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x49a880": {
   "attempts": 1,
   "first_diff": null,
   "name": "??_Gfacet_locale_std__UAEPAXI_Z_61",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x49aa40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x49ad00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -3968,6 +4003,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4c2bd0": {
+  "attempts": 1,
+  "first_diff": "+10 je 0x4c2c06",
+  "name": "TechnoClass::updateSightRange",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x4c3570": {
   "attempts": 1,
   "first_diff": "+18 call 0x7ca405",
@@ -4591,10 +4633,24 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4e6560": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e6560",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4e6820": {
   "attempts": 1,
   "first_diff": null,
   "name": "0x4e6820",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4e6ae0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e6ae0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -4605,6 +4661,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4e7060": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e7060",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4e7320": {
   "attempts": 1,
   "first_diff": null,
@@ -4612,10 +4675,24 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4e7660": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e7660",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4e78a0": {
   "attempts": 1,
   "first_diff": null,
   "name": "0x4e78a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4e7be0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e7be0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -6310,6 +6387,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x543c60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x543e70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x543e70",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -8189,6 +8273,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5d8270": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::applyRevealToCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5d8450": {
   "attempts": 1,
   "first_diff": "+5 jne 0x5d845c",
@@ -8432,6 +8523,13 @@
   "first_diff": "+7 mov edi, dword ptr [esp + 0x18]",
   "name": "ObjectClass::SetZ",
   "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
+ "0x5f6060": {
+  "attempts": 1,
+  "first_diff": "+14 call dword ptr [eax + 0x124]",
+  "name": "ObjectClass::SetAnim",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x5f6560": {
@@ -8783,6 +8881,13 @@
   "name": "VectorClass_ptr_ColorScheme::GetItemIndex_0",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x629190": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x629190",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x6296d0": {
   "attempts": 1,
@@ -10205,6 +10310,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6a46d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseTypeClass::Find",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6a4910": {
   "attempts": 5,
   "first_diff": null,
@@ -11339,6 +11451,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6f03b0": {
+  "attempts": 1,
+  "first_diff": "+0 mov ecx, dword ptr [ecx + 0x28]",
+  "name": "FootClass::GetGameSpeedFromSession",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x6f0430": {
   "attempts": 5,
   "first_diff": null,
@@ -11672,6 +11791,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x71a210",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x71a3d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x71a3d0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -12017,6 +12143,13 @@
   "name": "UI_Remove",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7256d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7256d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x725710": {
   "attempts": 1,
@@ -14486,6 +14619,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7c97cb",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7c9af8": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7c9af8",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },

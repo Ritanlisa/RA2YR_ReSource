@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F03B0",
+ "name": "FootClass::GetGameSpeedFromSession",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F03B0",
+ "bytes_hex": "8b492883ec088d44240050e84011faff8b0083f836741583f83574108b0de07188008b811c17000083c408c38b15e07188008b822017000083c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

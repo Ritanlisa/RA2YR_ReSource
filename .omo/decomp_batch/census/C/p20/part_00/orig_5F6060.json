@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6060",
+ "name": "ObjectClass::SetAnim",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6060",
+ "bytes_hex": "568bf18a467484c074248b066a00ff90240100008b4c24088b16898ea40000006a018bceff92240100005ec204008b4424088986a40000005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

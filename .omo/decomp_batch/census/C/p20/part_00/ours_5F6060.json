@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetAnim@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::SetAnim",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "568bf18a467484c074248b066a0056ff90240100008b068b4c24086a0156898ea4000000ff90240100005ec204008b4424088986a40000005ec20400",
+ "relocs": []
+}
