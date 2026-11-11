@@ -1,0 +1,15 @@
+{
+ "symbol": "?GlobalHelper_0E4440_Helper@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GlobalHelper_0E4440_Helper",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "a1000000008981f0540000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EEB4@@3PADA",
+   "sym_key": "DataGlobal_A8EEB4"
+  }
+ ]
+}

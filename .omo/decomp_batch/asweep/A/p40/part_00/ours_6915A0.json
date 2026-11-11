@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetField11@TeamClass@@QAEDH@Z",
+ "sym_key": "TeamClass::SetField11",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "8b44240489412cb001c20400",
+ "relocs": []
+}

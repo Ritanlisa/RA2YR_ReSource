@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetOrEmpty@String@@QAEPADXZ",
+ "sym_key": "String::GetOrEmpty",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b0185c07506b800000000c38b00c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  }
+ ]
+}

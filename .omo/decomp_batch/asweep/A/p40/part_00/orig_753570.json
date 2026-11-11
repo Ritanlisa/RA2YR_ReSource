@@ -1,0 +1,11 @@
+{
+ "addr": "0x753570",
+ "name": "Map_Process_753570",
+ "size": 12,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x753570",
+ "bytes_hex": "a1d8d3b10040a3d8d3b100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

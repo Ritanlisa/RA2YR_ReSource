@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D79FB",
+ "name": "__FillZeroMan",
+ "size": 12,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D79FB",
+ "bytes_hex": "578b7c240833c0ababab5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

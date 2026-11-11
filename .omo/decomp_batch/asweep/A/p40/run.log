@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p40\part_00
+=== convert (20 addrs) ===
+[conv] 0x50da10 ObjectClass::GlobalHelper_0E4440_Helper -> ObjectClass
+[conv] 0x524790 InfantryTypeClass::GetGameplayValue -> InfantryTypeClass
+[conv] 0x65b4c0 RadSiteClass::SetBaseCell -> RadSiteClass
+[conv] 0x6915a0 TeamClass::SetField11 -> TeamClass
+[conv] 0x6e52f0 FootClass::processScriptAction -> FootClass
+[conv] 0x70c5a0 TechnoClass::CheckCellPassability -> TechnoClass
+[conv] 0x712120 TechnoTypeClass::GetGameplayValue -> TechnoTypeClass
+[conv] 0x747f20 UnitTypeClass::GetGameplayValue -> UnitTypeClass
+[conv] 0x74ef00 VeinholeMonsterClass::CheckStatus -> VeinholeMonsterClass
+[conv] 0x74fd50 NetworkBuffer::GetField -> NetworkBuffer
+[conv] 0x753570 Map_Process_753570 -> Map_Process
+[conv] 0x7b5400 String::GetOrEmpty -> String
+[conv] 0x7b7100 WideString::GetOrEmpty -> WideString
+[conv] 0x7b7140 WideString::GetOrEmpty_Alt -> WideString
+[conv] 0x7cb905 _iswascii -> _addr_7C
+[conv] 0x7d79fb __FillZeroMan -> _addr_7D
+[conv] 0x660ad0 ObjectClass::sub_660AD0 -> ObjectClass
+[conv] 0x660ae0 ObjectClass::sub_660AE0 -> ObjectClass
+[conv] 0x660af0 ObjectClass::sub_660AF0 -> ObjectClass
+[conv] 0x406600 AbstractTypeClass::sub_406600 -> AbstractTypeClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] InfantryTypeClass        rc=0
+[era] RadSiteClass             rc=0
+[era] TeamClass                rc=0
+[era] FootClass                rc=0
+[era] TechnoClass              rc=0
+[era] TechnoTypeClass          rc=0
+[era] UnitTypeClass            rc=0
+[era] VeinholeMonsterClass     rc=0
+[era] NetworkBuffer            rc=0
+[era] Map_Process              rc=0
+[era] String                   rc=0
+[era] WideString               rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+[era] AbstractTypeClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x50da10   MISMATCH         ObjectClass::GlobalHelper_0E4440_Helper
+[diff] 0x524790   MISMATCH         InfantryTypeClass::GetGameplayValue
+[diff] 0x65b4c0   MATCH            RadSiteClass::SetBaseCell
+[diff] 0x6915a0   MATCH            TeamClass::SetField11
+[diff] 0x6e52f0   MATCH            FootClass::processScriptAction
+[diff] 0x70c5a0   MATCH            TechnoClass::CheckCellPassability
+[diff] 0x712120   MISMATCH         TechnoTypeClass::GetGameplayValue
+[diff] 0x747f20   MISMATCH         UnitTypeClass::GetGameplayValue
+[diff] 0x74ef00   MISMATCH         VeinholeMonsterClass::CheckStatus
+[diff] 0x74fd50   MATCH            NetworkBuffer::GetField
+[diff] 0x753570   MATCH            Map_Process_753570
+[diff] 0x7b5400   MISMATCH         String::GetOrEmpty
+[diff] 0x7b7100   MATCH            WideString::GetOrEmpty
+[diff] 0x7b7140   MATCH            WideString::GetOrEmpty_Alt
+[diff] 0x7cb905   MATCH            _iswascii
+[diff] 0x7d79fb   MISMATCH         __FillZeroMan
+[diff] 0x406600   MATCH            AbstractTypeClass::sub_406600
+[ledger] 0x50da10 ObjectClass::GlobalHelper_0E4440_Helper -> NG (attempt 1)
+[ledger] 0x524790 InfantryTypeClass::GetGameplayValue -> NG (attempt 1)
+[ledger] 0x65b4c0 RadSiteClass::SetBaseCell -> OK (attempt 1)
+[ledger] 0x6915a0 TeamClass::SetField11 -> OK (attempt 1)
+[ledger] 0x6e52f0 FootClass::processScriptAction -> OK (attempt 1)
+[ledger] 0x70c5a0 TechnoClass::CheckCellPassability -> OK (attempt 1)
+[ledger] 0x712120 TechnoTypeClass::GetGameplayValue -> NG (attempt 1)
+[ledger] 0x747f20 UnitTypeClass::GetGameplayValue -> NG (attempt 1)
+[ledger] 0x74ef00 VeinholeMonsterClass::CheckStatus -> NG (attempt 1)
+[ledger] 0x74fd50 NetworkBuffer::GetField -> OK (attempt 1)
+[ledger] 0x753570 Map_Process_753570 -> OK (attempt 1)
+[ledger] 0x7b5400 String::GetOrEmpty -> NG (attempt 1)
+[ledger] 0x7b7100 WideString::GetOrEmpty -> OK (attempt 1)
+[ledger] 0x7b7140 WideString::GetOrEmpty_Alt -> OK (attempt 1)
+[ledger] 0x7cb905 _iswascii -> OK (attempt 1)
+[ledger] 0x7d79fb __FillZeroMan -> NG (attempt 1)
+[ledger] 0x660ad0 ObjectClass::sub_660AD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660ae0 ObjectClass::sub_660AE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660af0 ObjectClass::sub_660AF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x406600 AbstractTypeClass::sub_406600 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "MATCH": 10,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "const_fold": 4,
+  "branch_polarity": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 58.8,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p40\batch_report.json

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Map_Process_753570@@YAHXZ",
+ "sym_key": "Unnamed::Map_Process_753570",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "a10000000040a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3D8@@3IA",
+   "sym_key": "DataGlobal_B1D3D8"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3D8@@3IA",
+   "sym_key": "DataGlobal_B1D3D8"
+  }
+ ]
+}

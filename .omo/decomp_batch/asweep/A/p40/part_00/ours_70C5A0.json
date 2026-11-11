@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckCellPassability@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::CheckCellPassability",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "8a81d203000084c00f95c0c3",
+ "relocs": []
+}

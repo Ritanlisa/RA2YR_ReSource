@@ -1,0 +1,11 @@
+{
+ "addr": "0x74EF00",
+ "name": "VeinholeMonsterClass::CheckStatus",
+ "size": 12,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74EF00",
+ "bytes_hex": "a1e07188008b80f40f0000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

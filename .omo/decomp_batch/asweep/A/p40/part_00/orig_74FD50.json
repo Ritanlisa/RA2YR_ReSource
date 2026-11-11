@@ -1,0 +1,11 @@
+{
+ "addr": "0x74FD50",
+ "name": "NetworkBuffer::GetField",
+ "size": 12,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74FD50",
+ "bytes_hex": "b80000020089413c894140c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
