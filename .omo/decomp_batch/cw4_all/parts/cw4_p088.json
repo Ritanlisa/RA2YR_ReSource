@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x40ccd0",
+  "name": "Buffer::CompareEqual",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 62,
+  "part": "p239",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::CompareEqual",
+  "first_diff": {
+   "orig": "+13 jne 0x40cd06",
+   "ours": "+13 jne 0x3e"
+  },
+  "ours_size": 70
+ },
+ {
+  "addr": "0x42f5e0",
+  "name": "BaseClass::Read",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 62,
+  "part": "p239",
+  "unit": "_DynamicVectorClass_VBaseNodeClass",
+  "emitted": "_DynamicVectorClass_VBaseNodeClass::Read",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 64
+ },
+ {
+  "addr": "0x50def0",
+  "name": "HouseClass::GetCurrentOption",
+  "family": "STRUCTURAL",
+  "path": "width_mismatch",
+  "size": 62,
+  "part": "p242",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::GetCurrentOption",
+  "first_diff": {
+   "orig": "+0 mov ax, word ptr [ecx + 0x5494]",
+   "ours": "+0 mov edx, dword ptr [ecx + 0x5494]"
+  },
+  "ours_size": 53
+ },
+ {
+  "addr": "0x5ad0f0",
+  "name": "VectorClass_N::AddRef",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 62,
+  "part": "p243",
+  "unit": "_VectorClass_N",
+  "emitted": "_VectorClass_N::AddRef",
+  "first_diff": {
+   "orig": "+12 jne 0x5ad127",
+   "ours": "+12 jne 0x43"
+  },
+  "ours_size": 74
+ },
+ {
+  "addr": "0x664400",
+  "name": "Network::reconnect",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 62,
+  "part": "p245",
+  "unit": "Network",
+  "emitted": "Network::reconnect",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 66
+ },
+ {
+  "addr": "0x7cc409",
+  "name": "_wcspbrk",
+  "family": "STRUCTURAL",
+  "path": "width_mismatch",
+  "size": 62,
+  "part": "p246",
+  "unit": "_addr_7C",
+  "emitted": "_wcspbrk",
+  "first_diff": {
+   "orig": "+7 mov dx, word ptr [eax]",
+   "ours": "+7 mov edx, dword ptr [eax]"
+  },
+  "ours_size": 76
+ },
+ {
+  "addr": "0x7ceac1",
+  "name": "__ms_p5_test_fdiv",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 62,
+  "part": "p246",
+  "unit": "_addr_7C",
+  "emitted": "__ms_p5_test_fdiv",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 xor eax, eax"
+  },
+  "ours_size": 3
+ },
+ {
+  "addr": "0x425630",
+  "name": "AnimClass::CheckDamageFlags",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 63,
+  "part": "p246",
+  "unit": "AnimClass",
+  "emitted": "AnimClass::CheckDamageFlags",
+  "first_diff": {
+   "orig": "+0 sub esp, 0xc",
+   "ours": "+0 mov edx, dword ptr [ecx + 0xcc]"
+  },
+  "ours_size": 23
+ },
+ {
+  "addr": "0x4f9a50",
+  "name": "HouseClass::IsAlliedWith",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 63,
+  "part": "p246",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::IsAlliedWith",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 77
+ },
+ {
+  "addr": "0x54f670",
+  "name": "InputManager::PushInputEvent",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 63,
+  "part": "p246",
+  "unit": "InputManager",
+  "emitted": "InputManager::PushInputEvent",
+  "first_diff": {
+   "orig": "+30 je 0x54f6a9",
+   "ours": "+30 jne 0x26"
+  },
+  "ours_size": 63
+ },
+ {
+  "addr": "0x517590",
+  "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 64,
+  "part": "p247",
+  "unit": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode",
+  "emitted": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare",
+  "first_diff": {
+   "orig": "+9 jne 0x5175c1",
+   "ours": "+9 jne 0x25"
+  },
+  "ours_size": 46
+ },
+ {
+  "addr": "0x5c6d90",
+  "name": "sub_5C6D90",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 64,
+  "part": "p247",
+  "unit": "_addr_5C",
+  "emitted": "sub_5C6D90",
+  "first_diff": {
+   "orig": "+5 add eax, eax",
+   "ours": "+5 push edi"
+  },
+  "ours_size": 71
+ },
+ {
+  "addr": "0x63aac0",
+  "name": "UI_Handle",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 64,
+  "part": "p247",
+  "unit": "UI",
+  "emitted": "UI_Handle",
+  "first_diff": {
+   "orig": "+0 or eax, 0xffffffff",
+   "ours": "+0 mov al, byte ptr [0]"
+  },
+  "ours_size": 62
+ },
+ {
+  "addr": "0x764420",
+  "name": "AbstractClass::processSpecialEffect",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 64,
+  "part": "p247",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::processSpecialEffect",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 66
+ },
+ {
+  "addr": "0x7ca3c5",
+  "name": "_wcsrchr",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 64,
+  "part": "p247",
+  "unit": "_addr_7C",
+  "emitted": "_wcsrchr",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 mov edx, dword ptr [esp + 4]"
+  },
+  "ours_size": 61
+ },
+ {
+  "addr": "0x7cb504",
+  "name": "_wcsncat",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 64,
+  "part": "p247",
+  "unit": "_addr_7C",
+  "emitted": "_wcsncat",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [esp + 4]",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 91
+ },
+ {
+  "addr": "0x4a35a0",
+  "name": "ColorStruct::SetRGB",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 65,
+  "part": "p247",
+  "unit": "ColorStruct",
+  "emitted": "ColorStruct::SetRGB",
+  "first_diff": {
+   "orig": "+8 or eax, 0xffffff00",
+   "ours": "+8 and eax, 0xff"
+  },
+  "ours_size": 70
+ },
+ {
+  "addr": "0x6346b0",
+  "name": "ScriptAction::FindItemByValue",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 65,
+  "part": "p247",
+  "unit": "ScriptAction",
+  "emitted": "ScriptAction::FindItemByValue",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 72
+ },
+ {
+  "addr": "0x75cb30",
+  "name": "JumpjetLocomotionClass::InitMultiFieldArray_1",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 65,
+  "part": "p247",
+  "unit": "WalkLocomotionClass",
+  "emitted": "WalkLocomotionClass::InitMultiFieldArray_1",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 mov ecx, dword ptr [esp + 4]"
+  },
+  "ours_size": 61
+ },
+ {
+  "addr": "0x7cd7ce",
+  "name": "_wcscspn",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 65,
+  "part": "p248",
+  "unit": "_addr_7C",
+  "emitted": "_wcscspn",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 71
+ }
+]
