@@ -1,0 +1,57 @@
+{
+ "symbol": "?ReadSidesList@RulesClass@@QAEEXZ",
+ "sym_key": "RulesClass::ReadSidesList",
+ "size": 100,
+ "link_base": 0,
+ "bytes_hex": "83ec2453568b7424085768000000008b0ee8000000008bd833ff85db7e388b0e576800000000e8000000008d4c24106a205168000000005068000000008bcee80000000085c074098d4c2410e800000000473bfb7cc833c05f85db5e5b0f9fc083c424c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DEC@@3PADA",
+   "sym_key": "DataGlobal_839DEC"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DEC@@3PADA",
+   "sym_key": "DataGlobal_839DEC"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DEC@@3PADA",
+   "sym_key": "DataGlobal_839DEC"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Process@WeaponTypeClass@@QAEHXZ",
+   "sym_key": "WeaponTypeClass::Process"
+  }
+ ]
+}

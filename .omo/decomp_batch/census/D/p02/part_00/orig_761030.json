@@ -1,0 +1,11 @@
+{
+ "addr": "0x761030",
+ "name": "AnimClass::ProcessFrame",
+ "size": 106,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x761030",
+ "bytes_hex": "83ec0c56578bf1e8b41a00008b860002000033ff85c07e268b8ef40100008d442408508b0cb9e8d5f9d1ff508bcee8cde2ffff8b8600020000473bf87cda8b86300100004889863001000079108b168bceff92f80000005f5e83c40cc38bcee8dc2de9ff5f5e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

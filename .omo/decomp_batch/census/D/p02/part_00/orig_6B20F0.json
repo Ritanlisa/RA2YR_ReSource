@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B20F0",
+ "name": "SliderClass::GetRange",
+ "size": 108,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B20F0",
+ "bytes_hex": "83ec10568bf1578b7c241c8a464484c0744a57e818c5ddff85c074408b460c8b4e108b5614894424088b4618894c240c895424106a0133d28d4c240c89442418e81b39dfff8b168bceff929c0000005fb8010000005e83c410c20400578bcee83c05e3ff5f5e83c410c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

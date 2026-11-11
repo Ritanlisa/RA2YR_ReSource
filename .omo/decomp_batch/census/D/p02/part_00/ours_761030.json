@@ -1,0 +1,33 @@
+{
+ "symbol": "?ProcessFrame@AnimClass@@QAEHXZ",
+ "sym_key": "AnimClass::ProcessFrame",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "83ec0c56578bf1e8000000008b860002000033ff85c076268b8ef40100008d442408508b0cb9e800000000508bcee8000000008b8600020000473bf872da8b863001000048898630010000780d8bcee8000000005f5e83c40cc38b1656ff92f80000005f5e83c40cc3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?TransformMatrix@Voxel@@QAEHXZ",
+   "sym_key": "Voxel::TransformMatrix"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?GetCoords@CellClass@@QAEPAHPAX@Z",
+   "sym_key": "CellClass::GetCoords"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?DamageArea@WaveClass@@QAEDPAX@Z",
+   "sym_key": "WaveClass::DamageArea"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?DetectCloaked@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::DetectCloaked"
+  }
+ ]
+}

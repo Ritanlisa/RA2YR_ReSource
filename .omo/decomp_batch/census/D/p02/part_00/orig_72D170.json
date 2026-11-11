@@ -1,0 +1,11 @@
+{
+ "addr": "0x72D170",
+ "name": "AudioController::GetVolume",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72D170",
+ "bytes_hex": "a0cefcb0005333db3ac3745e381dcdfcb0007422568b35b8fab0003bf374108bcee86a13f7ff56e8a1b9090083c404881dcdfcb0005ea1d0fcb000891db8fab0003bc3740f50e882b9090083c404891dd0fcb0008b0dd4fcb0003bcb740c8b016a01ff10891dd4fcb000881dcefcb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

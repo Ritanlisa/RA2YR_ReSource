@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetCostMultiplier@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetCostMultiplier",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "568bf157568b06ff90840000008bf885ff75035f5ec38b0e56ff512c83f80675438b1656ff920804000085c07e1aa1400200008b0e568bb8f40d0000ff91080400000fafc75f5ec38bb6e402000085f674128b1656ff92840000008b80700600005f5ec38b87700600005f5ec3",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

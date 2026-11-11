@@ -1,0 +1,11 @@
+{
+ "addr": "0x708B40",
+ "name": "TechnoClass::GetCostMultiplier",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x708B40",
+ "bytes_hex": "568bf1578b06ff90840000008bf885ff745a8b168bceff522c83f80675458b068bceff900804000085c07e1c8b0de07188008b168bb9f40d00008bceff92080400000fafc75f5ec38b8ee402000085c974118b01ff90840000008b80700600005f5ec38b87700600005f5ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

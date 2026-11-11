@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetRange@SliderClass@@QAEHH@Z",
+ "sym_key": "SliderClass::GetRange",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf1578b7c241c8a464484c0744657e80000000085c0743c8b46108b4e148b5618894424088b461c894c240c895424106a0133d28d4c240c89442418e8000000008b168bceff125fb8010000005e83c410c20400578bcee8000000005f5e83c410c20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?DispatchClick@Control@@QAEHH@Z",
+   "sym_key": "Control::DispatchClick"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?DrawBuildingTilesSHP@@YIHPAXHD@Z",
+   "sym_key": "DrawBuildingTilesSHP"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?HandleClick@BuildingPlacement@@QAEHH@Z",
+   "sym_key": "BuildingPlacement::HandleClick"
+  }
+ ]
+}
