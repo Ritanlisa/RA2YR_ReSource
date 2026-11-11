@@ -1,0 +1,57 @@
+{
+ "symbol": "?FireSuperWeaponHouseClass@SuperWeapon@@QAEDHH@Z",
+ "sym_key": "SuperWeapon::FireSuperWeaponHouseClass",
+ "size": 193,
+ "link_base": 0,
+ "bytes_hex": "8b442404538bd95556578b8b5802000033f68b3c818b47288a90ee00000084d274138b90f00000008b349185f674068b4e62894f628b0d000000008b6c241833d23bd90f94c233d05581e2ff0000008bcf33d052e8000000008b47288a88ee00000084c9742f85f6742b6a008bcee800000000a10000000033c93bd88b4424140f94c133c881e1ff00000033c8518bcee8000000008b15180000008d72ff85f67c16a10c0000008b0cb085c974075557e8000000004e79ea5f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?ClickFire@SuperClass@@QAEDHPAX@Z",
+   "sym_key": "SuperClass::ClickFire"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?SetReadiness@SuperClass@@QAEDD@Z",
+   "sym_key": "SuperClass::SetReadiness"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?StopPreclickAnim@SuperClass@@QAEDH@Z",
+   "sym_key": "SuperClass::StopPreclickAnim"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?EvaluateAITarget@SuperWeapon@@QAEDHPAX@Z",
+   "sym_key": "SuperWeapon::EvaluateAITarget"
+  }
+ ]
+}

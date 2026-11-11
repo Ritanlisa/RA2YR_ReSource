@@ -1,0 +1,51 @@
+{
+ "symbol": "?loadCountryData@HouseTypeClass@@QAEHPAE0H@Z",
+ "sym_key": "HouseTypeClass::loadCountryData",
+ "size": 180,
+ "link_base": 0,
+ "bytes_hex": "8b54240881ec800000008d44240056576880000000508b84249400000068000000005250e80000000085c075128b8424940000005f5e81c480000000c20c008d4c2408e80000000083f8ff755c68b4000000e80000000083c40485c0740e8d4c2408518bc8e800000000eb0233c08b357003000033d285f67f0e5f83c8ff5e81c480000000c20c008b0d6403000081e1ff0000003901740f423bd67ddd8b790483c1043bf875f18bc25f5e81c480000000c20c00",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Find@HouseTypeClass@@QAEHXZ",
+   "sym_key": "HouseTypeClass::Find"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?Construct@SideClass@@QAEPAIPAX@Z",
+   "sym_key": "SideClass::Construct"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}
