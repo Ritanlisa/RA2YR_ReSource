@@ -81,6 +81,15 @@ class Probe(gdb.Breakpoint):
                 log("%s %s" % (self.pname, cstr(u32(esp + 8))))
             elif self.kind == "ret_only":
                 log("%s hit esp=%08x" % (self.pname, esp))
+            elif self.kind == "secrec":
+                esi = reg("esi")
+                if esi:
+                    nm = cstr(esi, 8)
+                    f10 = u32(esi + 0x10)
+                    f14 = u32(esi + 0x14)
+                    f18 = u32(esi + 0x18)
+                    log("%s rec=%08x name=%-10s +10=%s +14=%s +18=%s" %
+                        (self.pname, esi, nm, f10, f14, f18))
             elif self.kind == "fwritechk":
                 buf = u32(esp + 4)
                 sz = u32(esp + 8)
