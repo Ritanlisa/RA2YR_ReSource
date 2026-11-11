@@ -1,0 +1,3299 @@
+[
+ {
+  "addr": "0x401f90",
+  "name": "RefCount::Decrement",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x402330",
+  "name": "AudioController::UpdatePlayback",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4035f0",
+  "name": "AudioQueue::FindBestChannel",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x404700",
+  "name": "AudioStream::SetupPlayback",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4047b0",
+  "name": "AudioStream::SelectRandom",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x405170",
+  "name": "VocClass::GetSampleName",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4052f0",
+  "name": "VocClass::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x405c00",
+  "name": "AudioFileClass::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x405d40",
+  "name": "AudioController::Stop",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x407070",
+  "name": "Audio::GetFlag",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_probeA\\part_00\\Audio.cpp",
+  "body": "{\n        return (int)(RequestBufferMixer((unsigned int *)this, 0));\n}",
+  "inner": "return (int)(RequestBufferMixer((unsigned int *)this, 0));",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x4071c0",
+  "name": "AudioMixer::PlaySample",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x407440",
+  "name": "InsertBeforeLinkedList",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x408140",
+  "name": "ThemeClass::GetValue",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x409320",
+  "name": "Audio::GetSampleSize",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x40bac0",
+  "name": "VectorClass_Techno::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x40cc00",
+  "name": "VectorClass_ptr_IsometricTileClass::GetItem",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x40d700",
+  "name": "VectorClass_ptr_MixFileClass::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x40e9b0",
+  "name": "VectorClass_ptr_ScriptClass::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x410450",
+  "name": "AbstractClass::IsClean",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x410480",
+  "name": "AbstractClass::COMStub_Return0_10",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4105f0",
+  "name": "INoticeSource::Dispatch",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x410600",
+  "name": "XSurface::vt_entry_40",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x41a9e0",
+  "name": "TechnoClass::CanFireAtTarget",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x41b910",
+  "name": "AircraftClass::MissionStubReturnZero",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x41be60",
+  "name": "AircraftClass::LandingCheckStub",
+  "path": "regalloc",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_02\\IUnknown.cpp",
+  "body": "{\n        return 0;\n}",
+  "inner": "return 0;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x41be70",
+  "name": "AircraftClass::StubReturnFalse2",
+  "path": "regalloc",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_02\\IUnknown.cpp",
+  "body": "{\n        return 0;\n}",
+  "inner": "return 0;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x41bff0",
+  "name": "TechnoClass::vt_entry_434",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_02\\TechnoClass.cpp",
+  "body": "{\n        int result;\n        return (result & ~0xFF) | ((0) & 0xFF);\n}",
+  "inner": "int result;\n        return (result & ~0xFF) | ((0) & 0xFF);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 2,
+  "semicolons": 2,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x41c030",
+  "name": "TacticalClass::CheckAction",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x41c070",
+  "name": "AircraftClass::CheckDockState",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p00\\part_00\\FootClass.cpp",
+  "body": "{\n        return (char)(this->frozenStill);\n}",
+  "inner": "return (char)(this->frozenStill);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x41c640",
+  "name": "TechnoClass::processIdleState",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x41c650",
+  "name": "TechnoClass::processGuardState",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x41c660",
+  "name": "TechnoClass::processAttackState",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x41cfa0",
+  "name": "ObjectClass::GetMember41_2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x41fd60",
+  "name": "AITriggerTypeClass::RegisterSuccess",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x41fe20",
+  "name": "AITriggerTypeClass::RegisterFailure",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x420530",
+  "name": "AITriggerTypeClass_40::Write",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x421b60",
+  "name": "ClipRectIntersection",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4263a0",
+  "name": "AbstractClass::COMStub_26",
+  "path": "regalloc",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_02\\ObjectClass.cpp",
+  "body": "{\n        return 0;\n}",
+  "inner": "return 0;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x426430",
+  "name": "AbstractClass::COMStub_50",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_02\\ObjectClass.cpp",
+  "body": "{\n        int result;\n        return (result & ~0xFF) | ((0) & 0xFF);\n}",
+  "inner": "int result;\n        return (result & ~0xFF) | ((0) & 0xFF);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 2,
+  "semicolons": 2,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x426450",
+  "name": "AbstractClass::COMStub_Return0_68",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4264c0",
+  "name": "AbstractClass::COMStub_107",
+  "path": "regalloc",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_02\\ObjectClass.cpp",
+  "body": "{\n        return 0;\n}",
+  "inner": "return 0;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x4264d0",
+  "name": "ObjectClass::COMStub_108",
+  "path": "regalloc",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_02\\IUnknown.cpp",
+  "body": "{\n        return 0;\n}",
+  "inner": "return 0;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x42a5b0",
+  "name": "CellClass::ClearOccupancyGrid",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x42d8f0",
+  "name": "VectorClass_ushort::Remove",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_USubzoneConnectionStruct.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x42da30",
+  "name": "VectorClass_ushort::SetCapacity",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x42dca0",
+  "name": "Pathfinding::SiftDown",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x42e820",
+  "name": "BridgeClass::GetCellData",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x42f4f0",
+  "name": "BaseClass::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x42f9c0",
+  "name": "BaseNodeClass_Vector::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x42fb30",
+  "name": "BaseNodeClass_Vector::Write",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4324b0",
+  "name": "BufferIOFileClass::SeekInternal",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x432ab0",
+  "name": "BinkMovieHandle::RenderFrameClipped",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\BinkMovieHandle.cpp",
+  "body": "{\n        int * v3;\n        v3 = *(int **)(this + 4);\n        int v4;\n        v4 = v3[1];\n        int v5;\n        v5 = *v3;\n        int * v6;\n        unsigned char v19[16];\n        v6 = (int *)(*(int (__stdcall **)(unsigned int, unsigned char *))(**(unsigned int **)(this + 12) + 120))(this->width, v19);\n        int result;\n        result = 0;\n        int v8;\n        v8 = v6[2];\n        int v9;\n        v9 = 0;\n        int v16;\n        v16 = p0;\n        int v18;\n        v18 = v4;\n        if ( v8 <= 0 )\n        {\n            goto LABEL_18;\n        }\n        int v20;\n        v20 = v6[3];\n        if ( v20 <= 0 || v5 <= 0 || v4 <= 0 )\n        {\n            goto LABEL_18;\n        }\n        int v10;\n        v10 = *v6;\n        if ( p0 < *v6 )\n        {\n            v16 = *v6;\n            v5 = p0 + v5 - v10;\n        }\n        if ( v5 < 1 )\n        {\n            goto LABEL_18;\n        }\n        int v11;\n        v11 = v6[1];\n        if ( p1 < v11 )\n        {\n            v18 += p1 - v11;\n            p1 = v11;\n        }\n        if ( v18 < 1 )\n        {\n            goto LABEL_18;\n        }\n        if ( v5 + v16 > v8 + v10 )\n        {\n            v5 = v8 + v10 - v16;\n        }\n        if ( v5 < 1 )\n        {\n            goto LABEL_18;\n        }\n        int v12;\n        v12 = v18;\n        if ( v18 + p1 > v20 + v11 )\n        {\n            v12 = v20 + v11 - p1;\n        }\n        int v13;\n        int v14;\n        if ( v12 < 1 )\n        {\n            LABEL_18:\n        v13 = 0;\n            v14 = 0;\n        }\n        else\n        {\n            result = v16;\n            v9 = p1;\n            v13 = v5;\n            v14 = v12;\n        }\n        this->height = result;\n        this->currentFrame = v9;\n        this->totalFrames = v13;\n        this->throttleCounter = v14;\n        return (int)(result);\n}",
+  "inner": "int * v3;\n        v3 = *(int **)(this + 4);\n        int v4;\n        v4 = v3[1];\n        int v5;\n        v5 = *v3;\n        int * v6;\n        unsigned char v19[16];\n        v6 = (int *)(*(int (__stdcall **)(unsigned int, unsigned char *))(**(unsigned int **)(this + 12) + 120))(this->width, v19);\n        int result;\n        result = 0;\n        int v8;\n        v8 = v6[2];\n        int v9;\n        v9 = 0;\n        int v16;\n        v16 = p0;\n        int v18;\n        v18 = v4;\n        if ( v8 <= 0 )\n        {\n            goto LABEL_18;\n        }\n        int v20;\n        v20 = v6[3];\n        if ( v20 <= 0 || v5 <= 0 || v4 <= 0 )\n        {\n            goto LABEL_18;\n        }\n        int v10;\n        v10 = *v6;\n        if ( p0 < *v6 )\n        {\n            v16 = *v6;\n            v5 = p0 + v5 - v10;\n        }\n        if ( v5 < 1 )\n        {\n            goto LABEL_18;\n        }\n        int v11;\n        v11 = v6[1];\n        if ( p1 < v11 )\n        {\n            v18 += p1 - v11;\n            p1 = v11;\n        }\n        if ( v18 < 1 )\n        {\n            goto LABEL_18;\n        }\n        if ( v5 + v16 > v8 + v10 )\n        {\n            v5 = v8 + v10 - v16;\n        }\n        if ( v5 < 1 )\n        {\n            goto LABEL_18;\n        }\n        int v12;\n        v12 = v18;\n        if ( v18 + p1 > v20 + v11 )\n        {\n            v12 = v20 + v11 - p1;\n        }\n        int v13;\n        int v14;\n        if ( v12 < 1 )\n        {\n            LABEL_18:\n        v13 = 0;\n            v14 = 0;\n        }\n        else\n        {\n            result = v16;\n            v9 = p1;\n            v13 = v5;\n            v14 = v12;\n        }\n        this->height = result;\n        this->currentFrame = v9;\n        this->totalFrames = v13;\n        this->throttleCounter = v14;\n        return (int)(result);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 85,
+  "semicolons": 51,
+  "ifs": 10,
+  "loops": 0
+ },
+ {
+  "addr": "0x433270",
+  "name": "BinkMovie::BlitToTarget",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x433330",
+  "name": "BinkMovie::AdjustSurfaceFormat",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4335e0",
+  "name": "BinkMovieClass::AllocateRenderSurface",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4336c0",
+  "name": "BinkMovieClass::ReleaseRenderSurface",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x433770",
+  "name": "BinkMovieClass::OpenFile",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x433f50",
+  "name": "MessageListClass::CountCharsInWidth",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x43af10",
+  "name": "sub_43AF10",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x448070",
+  "name": "AnimClass::updateAnimation",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x44e3a0",
+  "name": "BuildingClass::CheckOverlapWithOthers",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x451f60",
+  "name": "BuildingClass::SyncCrateVisuals",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4566b0",
+  "name": "BuildingClass::GetPowerFrame",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x459d90",
+  "name": "TechnoClass::MissionStubReturnZero4",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_02\\TechnoClass.cpp",
+  "body": "{\n        int result;\n        return (result & ~0xFF) | ((1) & 0xFF);\n}",
+  "inner": "int result;\n        return (result & ~0xFF) | ((1) & 0xFF);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 2,
+  "semicolons": 2,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x459e50",
+  "name": "BuildingClass::StubReturnFalse14",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_03\\TechnoClass.cpp",
+  "body": "{\n        int result;\n        return (result & ~0xFF) | ((0) & 0xFF);\n}",
+  "inner": "int result;\n        return (result & ~0xFF) | ((0) & 0xFF);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 2,
+  "semicolons": 2,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x465e70",
+  "name": "VectorClass_TPoint3D_int::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4664c0",
+  "name": "Particle::Init",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x46b610",
+  "name": "VectorClass_ptr_BulletClass::GetItemIndex",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAVMSAnim.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x46b990",
+  "name": "VectorClass_ptr_BulletClass::GetItem",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x46b9a0",
+  "name": "VectorClass_ptr_BulletClass::GetItem_0",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x46d490",
+  "name": "sub_46D490",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x472160",
+  "name": "CaptureManagerClass::DrawLinks",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x474b50",
+  "name": "INIClass::GetCoord",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x474c70",
+  "name": "INIEntry::ReadColor",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x475150",
+  "name": "BulletTypeClass::ReadTrajectoryFlags",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x475610",
+  "name": "INIClass::SetHouseName",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x475b70",
+  "name": "WeaponTypeClass::ReadTrajectoryData",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x475c70",
+  "name": "WeaponTypeClass::ReadVeteranData",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x475f30",
+  "name": "ScenarioClass::SaveIntListToINI",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x476240",
+  "name": "ObjectTypeClass::ReadTypeListINI",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4766f0",
+  "name": "ScenarioClass::SaveTypeNameListToINI",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x476a20",
+  "name": "INIClass::WriteSuperWeaponList",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x477640",
+  "name": "INIEntry::ReadAbilities",
+  "path": "frame_sched",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIEntry.cpp",
+  "body": "{\n        short v5;\n        INIEntry * i;\n        int v7;\n        int v9;\n        int v10;\n        int v11;\n        int v12;\n        short v13;\n        char String[128];\n        if ( ((INIClass *)(this))->GetString(p1, p2, &g_INI_DefaultBuffer, String, 128) )\n        {\n            v5 = 0;\n            v13 = 0;\n            v9 = 0;\n            v10 = 0;\n            v11 = 0;\n            v12 = 0;\n            for ( i = (INIEntry *)strtok(String, Str); i; i = (INIEntry *)strtok(0, Str) )\n            {\n                if ( !((i->Key) & 0xFF) )\n                {\n                    break;\n                }\n                v7 = ((INIEntry *)(i))->LookupByName();\n                if ( v7 != -1 )\n                {\n                    *((unsigned char *)&v9 + v7) = 1;\n                    v5 = v13;\n                }\n            }\n            *(unsigned int *)p0 = v9;\n            *(unsigned int *)(p0 + 4) = v10;\n            *(unsigned int *)(p0 + 8) = v11;\n            *(unsigned int *)(p0 + 12) = v12;\n            *(unsigned short *)(p0 + 16) = v5;\n            return (int)(p0);\n        }\n        else\n        {\n            *(unsigned int *)p0 = *(unsigned int *)p3;\n            *(unsigned int *)(p0 + 4) = *(unsigned int *)(p3 + 4);\n            *(unsigned int *)(p0 + 8) = *(unsigned int *)(p3 + 8);\n            *(unsigned int *)(p0 + 12) = *(unsigned int *)(p3 + 12);\n            *(unsigned short *)(p0 + 16) = *(unsigned short *)(p3 + 16);\n            return (int)(p0);\n        }\n}",
+  "inner": "short v5;\n        INIEntry * i;\n        int v7;\n        int v9;\n        int v10;\n        int v11;\n        int v12;\n        short v13;\n        char String[128];\n        if ( ((INIClass *)(this))->GetString(p1, p2, &g_INI_DefaultBuffer, String, 128) )\n        {\n            v5 = 0;\n            v13 = 0;\n            v9 = 0;\n            v10 = 0;\n            v11 = 0;\n            v12 = 0;\n            for ( i = (INIEntry *)strtok(String, Str); i; i = (INIEntry *)strtok(0, Str) )\n            {\n                if ( !((i->Key) & 0xFF) )\n                {\n                    break;\n                }\n                v7 = ((INIEntry *)(i))->LookupByName();\n                if ( v7 != -1 )\n                {\n                    *((unsigned char *)&v9 + v7) = 1;\n                    v5 = v13;\n                }\n            }\n            *(unsigned int *)p0 = v9;\n            *(unsigned int *)(p0 + 4) = v10;\n            *(unsigned int *)(p0 + 8) = v11;\n            *(unsigned int *)(p0 + 12) = v12;\n            *(unsigned short *)(p0 + 16) = v5;\n            return (int)(p0);\n        }\n        else\n        {\n            *(unsigned int *)p0 = *(unsigned int *)p3;\n            *(unsigned int *)(p0 + 4) = *(unsigned int *)(p3 + 4);\n            *(unsigned int *)(p0 + 8) = *(unsigned int *)(p3 + 8);\n            *(unsigned int *)(p0 + 12) = *(unsigned int *)(p3 + 12);\n            *(unsigned short *)(p0 + 16) = *(unsigned short *)(p3 + 16);\n            return (int)(p0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 46,
+  "semicolons": 33,
+  "ifs": 3,
+  "loops": 1
+ },
+ {
+  "addr": "0x478120",
+  "name": "TypeList_TechnoType::GetIndex",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PBVTerrainTypeClass.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x478340",
+  "name": "FilePipe_38::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4784f0",
+  "name": "ParticleTypeClass::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4788e0",
+  "name": "ParticleTypeClass::EnsureCapacity",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4802a0",
+  "name": "TacticalClass::DrawCellTerrainOverlay",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x480510",
+  "name": "BuildingPlacement::ValidateType",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x485010",
+  "name": "BuildingClass::FindByCellHash",
+  "path": "regalloc",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p03\\part_00\\BuildingClass.cpp",
+  "body": "{\n        return (int)(FindBuildingByTiberiumType(this->ambientSoundController[2]));\n}",
+  "inner": "return (int)(FindBuildingByTiberiumType(this->ambientSoundController[2]));",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x485080",
+  "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4863d0",
+  "name": "CellLand::IsBuildable",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4865b0",
+  "name": "CellClass::IsTerrainType",
+  "path": "signedness",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census4\\p03\\part_00\\CellClass.cpp",
+  "body": "{\n        int result = (unsigned int)(this->__pad_038[0]);\n        if (result >= DataGlobal_ABAD28 && result < DataGlobal_ABAD28 + 42)\n        {\n            return (bool)(1);\n        }\n        return (bool)(0);\n}",
+  "inner": "int result = (unsigned int)(this->__pad_038[0]);\n        if (result >= DataGlobal_ABAD28 && result < DataGlobal_ABAD28 + 42)\n        {\n            return (bool)(1);\n        }\n        return (bool)(0);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 6,
+  "semicolons": 3,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x486650",
+  "name": "CellClass::InMapDataRange",
+  "path": "signedness",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_probeE2\\part_00\\CellClass.cpp",
+  "body": "{\n        int result = (unsigned int)(this->__pad_038[0]);\n        if (result >= DataGlobal_AA10A4 && result < DataGlobal_AA10A4 + 14)\n        {\n            return (bool)(1);\n        }\n        return (bool)(0);\n}",
+  "inner": "int result = (unsigned int)(this->__pad_038[0]);\n        if (result >= DataGlobal_AA10A4 && result < DataGlobal_AA10A4 + 14)\n        {\n            return (bool)(1);\n        }\n        return (bool)(0);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 6,
+  "semicolons": 3,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x486670",
+  "name": "CellClass::InBounds",
+  "path": "signedness",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_probeE2\\part_00\\CellClass.cpp",
+  "body": "{\n        int result = (unsigned int)(this->__pad_038[0]);\n        if (result >= DataGlobal_ABC2B0 && result < DataGlobal_ABC2B0 + 16)\n        {\n            return (bool)(1);\n        }\n        return (bool)(0);\n}",
+  "inner": "int result = (unsigned int)(this->__pad_038[0]);\n        if (result >= DataGlobal_ABC2B0 && result < DataGlobal_ABC2B0 + 16)\n        {\n            return (bool)(1);\n        }\n        return (bool)(0);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 6,
+  "semicolons": 3,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x4867e0",
+  "name": "CellClass::GetCellType",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x486900",
+  "name": "CellClass::IsActiveOrNext",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4870f0",
+  "name": "HouseClass::HasType",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x48b2a0",
+  "name": "Struct::ClearAllMemberFlags",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x48b570",
+  "name": "PacketQueue::ExtractEntry",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x48b750",
+  "name": "ConnectionClass::allocPacketSlot",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x48b890",
+  "name": "PacketQueue::ReleaseEntry",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x48e650",
+  "name": "CheckListClass::StubReturnFalse",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x493930",
+  "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x493a60",
+  "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x493b90",
+  "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x493cc0",
+  "name": "BlitPlainXlatAlpha_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x493df0",
+  "name": "BlitTransXlatAlpha_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x493f30",
+  "name": "BlitTransZRemapXlatAlpha_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x494080",
+  "name": "BlitTransLucent75Alpha_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4941e0",
+  "name": "BlitTransLucent50Alpha_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x494330",
+  "name": "BlitTransLucent25Alpha_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x494b60",
+  "name": "BlitTransXlatAlphaZRead_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x494c40",
+  "name": "BlitTransXlatAlphaZRead_ushort::BlitRect",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4953f0",
+  "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x495730",
+  "name": "BlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x495a50",
+  "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x495bc0",
+  "name": "BlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x495d60",
+  "name": "BlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x495f00",
+  "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4974b0",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x497610",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
+  "path": "extern_reloc",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_sample6\\part_00\\_RLEBlitTransLucent50ZReadWrite_G.cpp",
+  "body": "{\n        unsigned short * result = p5;\n        int v12 = p3;\n        unsigned short * v15 = p0;\n        int v17;\n        int v18;\n        if ( p3 <= 0 )\n        {\n            v18 = p2;\n        }\n        else\n        {\n            do\n            {\n                if ( *p1++ )\n                {\n                    --v12;\n                }\n                else\n                {\n                    v12 -= *p1++;\n                }\n            } while ( v12 > 0 );\n            v17 = -v12;\n            v15 = &p0[v17];\n            v18 = p2 - v17;\n            result = &p5[v17];\n            if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )\n            {\n                result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C);\n            }\n        }\n        unsigned char v19;\n        unsigned char v20;\n        int v21;\n        while ( v18 > 0 )\n        {\n            v19 = *p1++;\n            if ( v19 )\n            {\n                if ( p4 - *p9 >= *result )\n                {\n                    ++p9;\n                    ++v15;\n                    ++result;\n                    --v18;\n                }\n                else\n                {\n                    ++result;\n                    *v15 = (this->m_8 & (*v15 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 1));\n                    *(result - 1) = p4 - *p9++;\n                    --v18;\n                    ++v15;\n                }\n            }\n            else\n            {\n                v20 = *p1++;\n                v18 -= v20;\n                p9 += v20;\n                v21 = 2 * v20;\n                v15 = (unsigned short *)((char *)v15 + v21);\n                result = (unsigned short *)((char *)result + v21);\n            }\n            if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )\n            {\n                result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C);\n            }\n        }\n        return (unsigned short *)(result);\n}",
+  "inner": "unsigned short * result = p5;\n        int v12 = p3;\n        unsigned short * v15 = p0;\n        int v17;\n        int v18;\n        if ( p3 <= 0 )\n        {\n            v18 = p2;\n        }\n        else\n        {\n            do\n            {\n                if ( *p1++ )\n                {\n                    --v12;\n                }\n                else\n                {\n                    v12 -= *p1++;\n                }\n            } while ( v12 > 0 );\n            v17 = -v12;\n            v15 = &p0[v17];\n            v18 = p2 - v17;\n            result = &p5[v17];\n            if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )\n            {\n                result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C);\n            }\n        }\n        unsigned char v19;\n        unsigned char v20;\n        int v21;\n        while ( v18 > 0 )\n        {\n            v19 = *p1++;\n            if ( v19 )\n            {\n                if ( p4 - *p9 >= *result )\n                {\n                    ++p9;\n                    ++v15;\n                    ++result;\n                    --v18;\n                }\n                else\n                {\n                    ++result;\n                    *v15 = (this->m_8 & (*v15 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 1));\n                    *(result - 1) = p4 - *p9++;\n                    --v18;\n                    ++v15;\n                }\n            }\n            else\n            {\n                v20 = *p1++;\n                v18 -= v20;\n                p9 += v20;\n                v21 = 2 * v20;\n                v15 = (unsigned short *)((char *)v15 + v21);\n                result = (unsigned short *)((char *)result + v21);\n            }\n            if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )\n            {\n                result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C);\n            }\n        }\n        return (unsigned short *)(result);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 70,
+  "semicolons": 35,
+  "ifs": 6,
+  "loops": 3
+ },
+ {
+  "addr": "0x497760",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4978c0",
+  "name": "RLEBlitTransXlatAlpha_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x497a10",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x497fd0",
+  "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x498150",
+  "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4982e0",
+  "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4984d0",
+  "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4988c0",
+  "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x498ac0",
+  "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x498cd0",
+  "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x498ed0",
+  "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4990e0",
+  "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x499280",
+  "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x499430",
+  "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x499650",
+  "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x499860",
+  "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x499a90",
+  "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x49b660",
+  "name": "MPCooperative::processTurn",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x49ef80",
+  "name": "StringVector::Remove",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_USubzoneConnectionStruct.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x4a3220",
+  "name": "CStreamClass::IStreamQueryInterface",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4a3230",
+  "name": "CStreamClass::IStreamAddRef",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4a3240",
+  "name": "CStreamClass::IStreamRelease",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4a3c00",
+  "name": "CreditsScreen::Init",
+  "path": "width_mismatch",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_probeA\\part_00\\CreditsScreen.cpp",
+  "body": "{\n        this->m000 = 0;\n}",
+  "inner": "this->m000 = 0;",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x4a60e0",
+  "name": "TextRenderer::Printf",
+  "path": "frame_sched",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\unknown.cpp",
+  "body": "{\n        unsigned int * v9;\n        unsigned int * v11;\n        va_list v12;\n        wchar_t Buffer[512];\n        if ( p0 )\n        {\n            vswprintf(Buffer, p0, &p1, v12);\n            v9 = (unsigned int *)RenderTextLabel(p1, p2, p3, p4, p5, p6, 1);\n            *p0 = *v9;\n            p0[1] = v9[1];\n            return (unsigned int *)(p0);\n        }\n        else\n        {\n            v11 = (unsigned int *)RenderTextLabel(p1, p2, p3, p4, p5, p6, 1);\n            *p0 = *v11;\n            p0[1] = v11[1];\n            return (unsigned int *)(p0);\n        }\n}",
+  "inner": "unsigned int * v9;\n        unsigned int * v11;\n        va_list v12;\n        wchar_t Buffer[512];\n        if ( p0 )\n        {\n            vswprintf(Buffer, p0, &p1, v12);\n            v9 = (unsigned int *)RenderTextLabel(p1, p2, p3, p4, p5, p6, 1);\n            *p0 = *v9;\n            p0[1] = v9[1];\n            return (unsigned int *)(p0);\n        }\n        else\n        {\n            v11 = (unsigned int *)RenderTextLabel(p1, p2, p3, p4, p5, p6, 1);\n            *p0 = *v11;\n            p0[1] = v11[1];\n            return (unsigned int *)(p0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 19,
+  "semicolons": 13,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x4a7900",
+  "name": "DiskLaserClass::PointerGotInvalid",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4a94f0",
+  "name": "CoordList::GetBounds",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b4d90",
+  "name": "JumpjetLocomotionClass::GetField_0x78",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b4da0",
+  "name": "JumpjetLocomotionClass::GetField_0x7C",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b4db0",
+  "name": "JumpjetLocomotionClass::GetField_0x80",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b5630",
+  "name": "BlitterList::CopyEntry",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b6740",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6740",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b6750",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6750",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b6760",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6760",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b6770",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6770",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b6780",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6780",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b6790",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6790",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4b9c10",
+  "name": "FilePipe_30::GetCount",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4bbb00",
+  "name": "DSurface::BlitStretch",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4bbc90",
+  "name": "DDraw::GetStatus",
+  "path": "extern_reloc",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_probeA\\part_00\\DDraw.cpp",
+  "body": "{\n        return (int)(dword_8205D0);\n}",
+  "inner": "return (int)(dword_8205D0);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x4be9d0",
+  "name": "BlendColorPack",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4c3d00",
+  "name": "CreditsPower::DrawCreditsTextLine",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4c4ef0",
+  "name": "TaskForceClass::ParseUnitCountAndType",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4c5d20",
+  "name": "VectorClass_ptr_EMPulseClass::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x4c9220",
+  "name": "FacingClass::Update",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4c9530",
+  "name": "MovementClass::CompareAbsCoords",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4c9c60",
+  "name": "FactoryClass::HasProgressChanged",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p07\\part_00\\FactoryClass.cpp",
+  "body": "{\n        char result = (unsigned int)(this->m042[27]);\n        this->m042[27] = 0;\n        return (char)(result);\n}",
+  "inner": "char result = (unsigned int)(this->m042[27]);\n        this->m042[27] = 0;\n        return (char)(result);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 3,
+  "semicolons": 3,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x4d0510",
+  "name": "JumpjetLocomotionClass::GetInterface",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4d0520",
+  "name": "JumpjetLocomotionClass::GetInterface2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4d0530",
+  "name": "JumpjetLocomotionClass::Stub2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4d2a10",
+  "name": "FoggedObject_DrawVector::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4dc810",
+  "name": "FootClass::SetBuildingType",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4ddb90",
+  "name": "FootClass::MoveToWeed",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4e09e0",
+  "name": "VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x4e85d0",
+  "name": "VectorClass_ptr_AITriggerTypeClass::GetItemIndex_1",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4e8930",
+  "name": "VectorClass_ptr_UnitClass::GetItemIndex_0",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAVPendingCellClass_LightSourceClass.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x4e8cf0",
+  "name": "VectorClass_ptr_SmudgeTypeClass::GetItemIndex",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAVMSAnim.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x4e9050",
+  "name": "VectorClass_ptr_VoxelAnimTypeClass::GetItemIndex_0",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAVPendingCellClass_LightSourceClass.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x4e9f40",
+  "name": "ParticleSystemClass::vt_05",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4eb620",
+  "name": "ParticleSystemClass_32::Read",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4ecb80",
+  "name": "VectorClass_ptr_TaskForceClass::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x4ee340",
+  "name": "VectorClass_ptr_InfantryTypeClass::LoadTypeData",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4f2a40",
+  "name": "HouseClass_24::Write",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x4f4c20",
+  "name": "Byte::Zero",
+  "path": "width_mismatch",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p07\\part_00\\Byte.cpp",
+  "body": "{\n        this->Byte_field_00 = (this->Byte_field_00 & ~0xFF) | (0);\n        return (unsigned char *)(this);\n}",
+  "inner": "this->Byte_field_00 = (this->Byte_field_00 & ~0xFF) | (0);\n        return (unsigned char *)(this);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 2,
+  "semicolons": 2,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x5022f0",
+  "name": "WaypointClass::IsCoordinateUsed",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5023b0",
+  "name": "Waypoint::FindByCell",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x509b20",
+  "name": "HouseClass::Find",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x509c10",
+  "name": "HouseClass::FireStoredSW",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50a490",
+  "name": "HouseClass::RecordCratePlacement",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50b6f0",
+  "name": "House::IsHumanPlayer",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50bf60",
+  "name": "HouseClass::CalculateCostMultipliers",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50d9e0",
+  "name": "HouseClass::GetInfSelfHealStep",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50da20",
+  "name": "TActionClass::executeHuntAction",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50df30",
+  "name": "HouseClass::GetStartCoords",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50e1c0",
+  "name": "TechnoClass::Process",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50e280",
+  "name": "HouseClass::ReactivateTechnos",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50ea70",
+  "name": "VectorClass_BuildingType::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x50eb70",
+  "name": "VectorClass::InsertAt",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50f9e0",
+  "name": "VectorClass__N::Remove",
+  "path": "branch_polarity",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_USubzoneConnectionStruct.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x50fb00",
+  "name": "VectorClass__N::Get",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x50fb20",
+  "name": "VectorClass__N::SetCapacity",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510a20",
+  "name": "AbstractClass::saveToStream",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510a30",
+  "name": "AbstractClass::loadFromStream",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510a40",
+  "name": "AbstractClass::computeSize",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510a50",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510a60",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510a70",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510a80",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510a90",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510aa0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510ab0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510ad0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510ae0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x510af0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x512da0",
+  "name": "InfantryTypeVector::Remove",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_USubzoneConnectionStruct.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x5139e0",
+  "name": "HouseTypeClass::readBaseDefenses",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5139f0",
+  "name": "HouseTypeClass::readAiBuildLists",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x513a00",
+  "name": "HouseTypeClass::readLoadoutData",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x517210",
+  "name": "JumpjetLocomotionClass::IsPositionWithinThreshold",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x517440",
+  "name": "Color::ConvertToRGB",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5176a0",
+  "name": "InfantryClass::SetField6",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5176c0",
+  "name": "WinMain_Helper",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x517cc0",
+  "name": "InfantryClass::PerFrameUpdate",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5224d0",
+  "name": "InfantryClass::IsBridgeRepairEnabled",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x523250",
+  "name": "InfantryClass::ComputeTransform",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x526810",
+  "name": "INIClass::BinarySearchSection",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x526960",
+  "name": "INIClass::GetKeyCount",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x526a30",
+  "name": "INIClass::FindKey",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x526cc0",
+  "name": "INIClass::GetStringByIndex",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x535d20",
+  "name": "CreateTeamCommand::performAction_2",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p09\\part_00\\SetStructureTabCommandClass.cpp",
+  "body": "{\n        return (char *)(aStructuretab);\n}",
+  "inner": "return (char *)(aStructuretab);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x535de0",
+  "name": "CreateTeamCommand::performAction_7",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p09\\part_00\\SetDefenseTabCommandClass.cpp",
+  "body": "{\n        return (char *)(aDefensetab);\n}",
+  "inner": "return (char *)(aDefensetab);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x535ea0",
+  "name": "CreateTeamCommand::performAction_12",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p09\\part_00\\SetInfantryTabCommandClass.cpp",
+  "body": "{\n        return (char *)(aInfantrytab);\n}",
+  "inner": "return (char *)(aInfantrytab);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x535f30",
+  "name": "CreateTeamCommand::performAction_17",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p09\\part_00\\SetUnitTabCommandClass.cpp",
+  "body": "{\n        return (char *)(aUnittab);\n}",
+  "inner": "return (char *)(aUnittab);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x5365a0",
+  "name": "CreateTeamCommand::performAction_26",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p09\\part_00\\NextObjectCommandClass.cpp",
+  "body": "{\n        return (char *)(aNextobject);\n}",
+  "inner": "return (char *)(aNextobject);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x5366a0",
+  "name": "CreateTeamCommand::performAction_31",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x536770",
+  "name": "CreateTeamCommand::performAction_39",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p09\\part_00\\CombatantSelectCommandClass.cpp",
+  "body": "{\n        return (char *)(aCombatantselec);\n}",
+  "inner": "return (char *)(aCombatantselec);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x536810",
+  "name": "CreateTeamCommand::performAction_45",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5368d0",
+  "name": "CreateTeamCommand::performAction_53",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p09\\part_00\\HealthNavCommandClass.cpp",
+  "body": "{\n        return (char *)(aHealthnav);\n}",
+  "inner": "return (char *)(aHealthnav);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x536970",
+  "name": "CreateTeamCommand::performAction_59",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p09\\part_00\\VeterancyNavCommandClass.cpp",
+  "body": "{\n        return (char *)(aVeterancynav);\n}",
+  "inner": "return (char *)(aVeterancynav);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x536a10",
+  "name": "CreateTeamCommand::performAction_65",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p09\\part_00\\PrevObjectCommandClass.cpp",
+  "body": "{\n        return (char *)(aPreviousobject);\n}",
+  "inner": "return (char *)(aPreviousobject);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x536b10",
+  "name": "CreateTeamCommand::performAction_70",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p10\\part_00\\StopCommandClass.cpp",
+  "body": "{\n        return (char *)(aStopobject);\n}",
+  "inner": "return (char *)(aStopobject);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x536b90",
+  "name": "CreateTeamCommand::performAction_75",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p10\\part_00\\AllToCheerCommandClass.cpp",
+  "body": "{\n        return (char *)(aAlltocheer);\n}",
+  "inner": "return (char *)(aAlltocheer);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x537130",
+  "name": "CreateTeamCommand::performAction_128",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x537a50",
+  "name": "Commands::AddRef",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p10\\part_00\\DeleteCommandClass.cpp",
+  "body": "{\n        return (char *)(aDelete);\n}",
+  "inner": "return (char *)(aDelete);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x537a70",
+  "name": "Commands::Release",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p10\\part_00\\MultiplayerDebugCommandClass.cpp",
+  "body": "{\n        return (char **)(&off_8278C0);\n}",
+  "inner": "return (char **)(&off_8278C0);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x537a80",
+  "name": "Commands::StubReturn8550640",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p10\\part_00\\MultiplayerDebugCommandClass.cpp",
+  "body": "{\n        return (_UNKNOWN **)(&off_8278F0);\n}",
+  "inner": "return (_UNKNOWN **)(&off_8278F0);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x537b50",
+  "name": "ScreenCaptureCommandClass::AddRef",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p10\\part_00\\DeleteCommandClass.cpp",
+  "body": "{\n        return (char *)(aDelete);\n}",
+  "inner": "return (char *)(aDelete);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x537de0",
+  "name": "PageUserCommandClass::AddRef",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p10\\part_00\\DeleteCommandClass.cpp",
+  "body": "{\n        return (char *)(aDelete);\n}",
+  "inner": "return (char *)(aDelete);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x537f20",
+  "name": "DeleteCommandClass::AddRef",
+  "path": "const_fold",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census2\\p10\\part_00\\DeleteCommandClass.cpp",
+  "body": "{\n        return (char *)(aDelete);\n}",
+  "inner": "return (char *)(aDelete);",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x5384f0",
+  "name": "CreateTeamCommand::performAction_240",
+  "path": "ret_norm",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\DynamicVector.cpp",
+  "body": "{\n        if ( this->IsInitialized )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->Items) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( this->IsInitialized )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->Items) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x538d40",
+  "name": "sub_538D40",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x53ede0",
+  "name": "Struct::Copy6Bytes",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x53ee70",
+  "name": "GUID::Compare",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x53ef60",
+  "name": "Network::processPacket",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x53f0e0",
+  "name": "Network::FormatAddress",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x53f200",
+  "name": "Network::SetPort",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x540340",
+  "name": "IPXGlobalConnClass::SendPacket",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x540c60",
+  "name": "Network::SetConnectionParams",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x54a1c0",
+  "name": "IsometricTileTypeClass::PointerToIndex",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAG.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x54d0d0",
+  "name": "JumpjetLocomotionClass::CheckCompositeState",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x54f050",
+  "name": "EventQueue::Read",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x54f2f0",
+  "name": "InputManager::EnqueueInputEvent",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x555290",
+  "name": "VectorClass_ptr_LightSourceClass::GetItemIndex_0",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAVPendingCellClass_LightSourceClass.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x565b00",
+  "name": "MapClass::FreeAllCells",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x56d100",
+  "name": "MapSeed::CheckTileMatch",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x56d5a0",
+  "name": "CellClass::DetermineTileConnectivity",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x56e7c0",
+  "name": "MapClass::CheckCellsBuildable",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x578290",
+  "name": "LayerClass::CellIteratorNext",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x578ac0",
+  "name": "MapClass::IncrementRedrawCounter",
+  "path": "width_mismatch",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p11\\part_00\\MapClass.cpp",
+  "body": "{\n        ++this->mD80[984];\n}",
+  "inner": "++this->mD80[984];",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x5855a0",
+  "name": "LayerClass::AssignCellOwnership",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5865f0",
+  "name": "CellClass::SpiralFindClosest",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x586ac0",
+  "name": "JumpjetLocomotionClass::ClampToCellBounds",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x588cc0",
+  "name": "DynamicVectorClass_SubzoneConn::Remove",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_USubzoneConnectionStruct.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x589370",
+  "name": "VectorClass::AllocateCellDataBuffer",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x58a2a0",
+  "name": "VectorClass_W4PassabilityType::SetCapacity_1",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x58a8f0",
+  "name": "VectorClass_UHashObject_uint_SubzoneConn::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5975e0",
+  "name": "SettingsClass::ClampValues",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x59bab0",
+  "name": "Map_Helper_59BAB0",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x59c580",
+  "name": "RandomMap::GrowTiberium",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5a1e50",
+  "name": "Map_Check",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5ac550",
+  "name": "MSEngine::PointerToIndex",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAG.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x5ac960",
+  "name": "PriorityQueue::Pop",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5acd30",
+  "name": "MSEngine::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5aced0",
+  "name": "MSEngine::SetCapacity",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5ad870",
+  "name": "Heap::SiftDown",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5b2990",
+  "name": "Math::Abs16Cmp",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5c0c30",
+  "name": "AbstractClass::checkDamageThreshold",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\VectorClass.cpp",
+  "body": "{\n        if ( this->IsInitialized )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->Items) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( this->IsInitialized )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->Items) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x5c1fa0",
+  "name": "MPCooperative::Revert",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5cbb80",
+  "name": "MSOverlayAnim::Draw",
+  "path": "frame_sched",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAVMapStage.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x5cca10",
+  "name": "nullsub_189",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5d0700",
+  "name": "MSPCXAnim_26::Draw",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAVMapStage.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x5d2750",
+  "name": "VectorClass_ptr_MSSfx::GetItemIndex",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAVMSAnim.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x5d39b0",
+  "name": "MPBattleClass::randomAICountryIndex",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5d5900",
+  "name": "MPBattleClass::isMegawealthAllowed",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5d8450",
+  "name": "VectorClass_ptr_MultiplayerTeam::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x5d87e0",
+  "name": "ScenarioClass::distributeStartingUnits",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5e84d0",
+  "name": "GameConfig::ComputeCRC",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5f43c0",
+  "name": "AircraftClass::StubReturnTrue",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5f43f0",
+  "name": "AircraftClass::StubReturnFalse4",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5f5fa0",
+  "name": "ObjectClass::SetZ",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5f6560",
+  "name": "Math::DistSq2D",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x5fed00",
+  "name": "OverlayTypeClass::GetRadarColor",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x624fc0",
+  "name": "HashTable_flat::Grow2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6252f0",
+  "name": "ComboBoxOwnerDraw::SortItems",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x625780",
+  "name": "HashTable_flat::Shrink2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x625830",
+  "name": "HashTable_flat::Rebuild2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6258e0",
+  "name": "ComboBoxOwnerDraw::SetCapacity",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x627f70",
+  "name": "VectorClass_ptr_ColorScheme::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x62d830",
+  "name": "ParticleClass::vt_entry_1E8",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x631d30",
+  "name": "GameClass::GetRelatedObject",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x633a60",
+  "name": "sub_633A60",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x633e50",
+  "name": "sub_633E50",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cleanup9\\part_00\\ObjectClass.cpp",
+  "body": "{\n        return this->nextArrayIndex;\n}",
+  "inner": "return this->nextArrayIndex;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x633e60",
+  "name": "sub_633E60",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cleanup9\\part_00\\ObjectClass.cpp",
+  "body": "{\n        return this->uniqueId;\n}",
+  "inner": "return this->uniqueId;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x634700",
+  "name": "sub_634700",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cleanup9\\part_00\\ObjectClass.cpp",
+  "body": "{\n        return (int)this->nextObject;\n}",
+  "inner": "return (int)this->nextObject;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x635060",
+  "name": "FactoryClass::FinishProduction",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x636eb0",
+  "name": "ExecuteActionPlanManager_Helper_636EB0",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x638ce0",
+  "name": "ScriptAction::ClassifyAction",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x639e30",
+  "name": "Object_Read",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x63e1b0",
+  "name": "VectorClass_ptr_PlanningBranchClass::Remove",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_USubzoneConnectionStruct.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x63f7b0",
+  "name": "PowerClass::Stub",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x645ed0",
+  "name": "QuaternionMathMultiply",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x646980",
+  "name": "ToQuaternionMatrix",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x646d00",
+  "name": "sub_646D00",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x64de80",
+  "name": "ComputeHash",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x653760",
+  "name": "TacticalClass::PixelToCellCheck",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x655740",
+  "name": "BuildingClass::RemoveGapCellCoverage",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x658970",
+  "name": "RadarHashVector::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x658b10",
+  "name": "RadarHashVector::ComputeHashIndex",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x659570",
+  "name": "sub_659570",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x65a820",
+  "name": "ObjectClass::ProcessGroupInput",
+  "path": "cc_mismatch",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p18\\part_00\\ObjectClass.cpp",
+  "body": "{\n        unsigned int * v13;\n        int v12;\n        int v11;\n        unsigned int * i;\n        int v8;\n        int v7;\n        int v6;\n        int v5 = this->m0D4;\n        if ( p1 != v5 )\n        {\n            v6 = this->m0D8;\n            this->m0D8 = v5;\n            this->m0DC = v6;\n            this->m0D4 = p1;\n        }\n        if ( p1 == 3 )\n        {\n            v7 = this->m0E8;\n            v8 = 0;\n            if ( v7 > 0 )\n            {\n                for ( i = *(unsigned int **)(this + 228); p0 != *i; ++i )\n                {\n                    if ( ++v8 >= v7 )\n                    {\n                        return ((ObjectClass *)(this))->ProcessInputKey();\n                    }\n                }\n            }\n            ((ObjectClass *)(this))->ProcessInputKey();\n            *(unsigned int *)(this->m0E4 + 4 * v8) = 0;\n            return 1;\n            return ((ObjectClass *)(this))->ProcessInputKey();\n        }\n        if ( p1 != 2 || !this->health )\n        {\n            return ((ObjectClass *)(this))->ProcessInputKey();\n        }\n        if ( !(unsigned char)((Object *)(*(Object **)(p0 + 540))->IsAlliedWithObjectHouse(), this) )\n        {\n            return 10;\n        }\n        if ( this\n        && (this->abstractFlags & 1) != 0\n        && !(unsigned char)((Object *)(*(Object **)(this + 540))->IsAlliedWithObjectHouse(), p0) )\n        {\n            return 10;\n        }\n        if ( p0 )\n        {\n            v11 = this->m0E8;\n            v12 = 0;\n            if ( v11 > 0 )\n            {\n                v13 = *(unsigned int **)(this + 228);\n            }\n            while ( *v13 != p0 )\n            {\n                ++v12;\n            }\n            ++v13;\n            if ( v12 >= v11 )\n            {\n                goto LABEL_23;\n            }\n            if ( v12 != -1 )\n            {\n                return 1;\n            }\n        }\n        int v14;\n        LABEL_23:\n      v14 = this->m0E8;\n        int v15 = 0;\n        if ( v14 <= 0 )\n        {\n            return 10;\n        }\n        unsigned int * v16 = *(unsigned int **)(this + 228);\n        unsigned int * j;\n        for ( j = v16; *j; ++j )\n        {\n            if ( ++v15 >= v14 )\n            {\n                return 10;\n            }\n        }\n        v16[v15] = p0;\n        return 1;\n}",
+  "inner": "unsigned int * v13;\n        int v12;\n        int v11;\n        unsigned int * i;\n        int v8;\n        int v7;\n        int v6;\n        int v5 = this->m0D4;\n        if ( p1 != v5 )\n        {\n            v6 = this->m0D8;\n            this->m0D8 = v5;\n            this->m0DC = v6;\n            this->m0D4 = p1;\n        }\n        if ( p1 == 3 )\n        {\n            v7 = this->m0E8;\n            v8 = 0;\n            if ( v7 > 0 )\n            {\n                for ( i = *(unsigned int **)(this + 228); p0 != *i; ++i )\n                {\n                    if ( ++v8 >= v7 )\n                    {\n                        return ((ObjectClass *)(this))->ProcessInputKey();\n                    }\n                }\n            }\n            ((ObjectClass *)(this))->ProcessInputKey();\n            *(unsigned int *)(this->m0E4 + 4 * v8) = 0;\n            return 1;\n            return ((ObjectClass *)(this))->ProcessInputKey();\n        }\n        if ( p1 != 2 || !this->health )\n        {\n            return ((ObjectClass *)(this))->ProcessInputKey();\n        }\n        if ( !(unsigned char)((Object *)(*(Object **)(p0 + 540))->IsAlliedWithObjectHouse(), this) )\n        {\n            return 10;\n        }\n        if ( this\n        && (this->abstractFlags & 1) != 0\n        && !(unsigned char)((Object *)(*(Object **)(this + 540))->IsAlliedWithObjectHouse(), p0) )\n        {\n            return 10;\n        }\n        if ( p0 )\n        {\n            v11 = this->m0E8;\n            v12 = 0;\n            if ( v11 > 0 )\n            {\n                v13 = *(unsigned int **)(this + 228);\n            }\n            while ( *v13 != p0 )\n            {\n                ++v12;\n            }\n            ++v13;\n            if ( v12 >= v11 )\n            {\n                goto LABEL_23;\n            }\n            if ( v12 != -1 )\n            {\n                return 1;\n            }\n        }\n        int v14;\n        LABEL_23:\n      v14 = this->m0E8;\n        int v15 = 0;\n        if ( v14 <= 0 )\n        {\n            return 10;\n        }\n        unsigned int * v16 = *(unsigned int **)(this + 228);\n        unsigned int * j;\n        for ( j = v16; *j; ++j )\n        {\n            if ( ++v15 >= v14 )\n            {\n                return 10;\n            }\n        }\n        v16[v15] = p0;\n        return 1;",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 89,
+  "semicolons": 42,
+  "ifs": 13,
+  "loops": 3
+ },
+ {
+  "addr": "0x65b800",
+  "name": "RadSiteClass::Tick",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x65bf20",
+  "name": "VectorClass_ptr_RadSiteClass::GetItemIndex",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PAVMSAnim.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x65c7e0",
+  "name": "Random::Range",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x67a960",
+  "name": "TypeList_cptr_TerrainTypeClass::GetIndex",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_DynamicVectorClass_PBVTerrainTypeClass.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x69cba0",
+  "name": "VectorClass_Wstring::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x69dff0",
+  "name": "SHA1::Reset",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6a4210",
+  "name": "JumpjetLocomotionClass::SetByteField_1",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6a6140",
+  "name": "Sidebar::FindProductionType",
+  "path": "regalloc",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\Sidebar.cpp",
+  "body": "{\n        int v5;\n        switch ( p1 )\n        {\n            case 15:\n        case 16:\n          v5 = 2;\n            break;\n            case 1:\n        case 40:\n        case 2:\n        case 3:\n          v5 = 3;\n            break;\n            case 6:\n        case 7:\n          v5 = GetHouseTechLevel(p1, p2) == 5;\n            break;\n            case 57:\n        case 32:\n        case 31:\n          v5 = 1;\n            break;\n            default:\n          v5 = -1;\n            break;\n        }\n        int v6 = 997 * v5;\n        int v7 = 0;\n        char * v8 = (char *)this + 4 * v6 + 5444;\n        int v9 = *((unsigned int *)this + v6 + 1382);\n        if ( v9 <= 0 )\n        {\n            return (char)(0);\n        }\n        unsigned int * i;\n        for ( i = (unsigned int *)(v8 + 88); i[1] != p1 || *i != p2; i += 13 )\n        {\n            if ( ++v7 >= v9 )\n            {\n                return (char)(0);\n            }\n        }\n        *(unsigned int *)&v8[52 * v7 + 100] = p0;\n        v8[61] = 1;\n        v8[60] = 1;\n        MapClass__MarkForRedraw((GScreenClass *)&((char *)stru_87F5F0)[0x58 + (416)], 0);\n        return (char)(1);\n}",
+  "inner": "int v5;\n        switch ( p1 )\n        {\n            case 15:\n        case 16:\n          v5 = 2;\n            break;\n            case 1:\n        case 40:\n        case 2:\n        case 3:\n          v5 = 3;\n            break;\n            case 6:\n        case 7:\n          v5 = GetHouseTechLevel(p1, p2) == 5;\n            break;\n            case 57:\n        case 32:\n        case 31:\n          v5 = 1;\n            break;\n            default:\n          v5 = -1;\n            break;\n        }\n        int v6 = 997 * v5;\n        int v7 = 0;\n        char * v8 = (char *)this + 4 * v6 + 5444;\n        int v9 = *((unsigned int *)this + v6 + 1382);\n        if ( v9 <= 0 )\n        {\n            return (char)(0);\n        }\n        unsigned int * i;\n        for ( i = (unsigned int *)(v8 + 88); i[1] != p1 || *i != p2; i += 13 )\n        {\n            if ( ++v7 >= v9 )\n            {\n                return (char)(0);\n            }\n        }\n        *(unsigned int *)&v8[52 * v7 + 100] = p0;\n        v8[61] = 1;\n        v8[60] = 1;\n        MapClass__MarkForRedraw((GScreenClass *)&((char *)stru_87F5F0)[0x58 + (416)], 0);\n        return (char)(1);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 47,
+  "semicolons": 25,
+  "ifs": 2,
+  "loops": 1
+ },
+ {
+  "addr": "0x6a80a0",
+  "name": "TabClass::updateTabProduction",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6b44a0",
+  "name": "VectorClass_UUndoInfoStruct::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6b4650",
+  "name": "VectorClass_UUndoInfoStruct::SetCapacity",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6b7100",
+  "name": "TaskManager::Update",
+  "path": "codegen_shape",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\TaskManager.cpp",
+  "body": "{\n        int result = *((unsigned int *)this + 9);\n        int v3;\n        if ( *(int *)(result + 108) > 0 && *(unsigned char *)(result + 144) )\n        {\n            v3 = 0;\n        }\n        else\n        {\n            v3 = *((unsigned int *)this + 12);\n        }\n        int i;\n        int v5;\n        unsigned int * v6;\n        unsigned int * v7;\n        unsigned int * v8;\n        int v9;\n        for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i )\n        {\n            result = *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i);\n            v5 = *(unsigned int *)(result + 4);\n            if ( v5 != 7 )\n            {\n                if ( v5 == 0 || v5 == 6 )\n                {\n                    *(unsigned int *)(result + 4) = 7;\n                    v8 = *(unsigned int **)(*((unsigned int *)this + 15) + 4 * i);\n                    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v8 + 248))(*v8);\n                    **(unsigned int **)(*((unsigned int *)this + 15) + 4 * i) = 0;\n                    v7 = (unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 8);\n                    *v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];\n                    result = v9;\n                }\n                else\n                {\n                    if ( v5 == 1 )\n                    {\n                        ((AbstractClass *)(&g_MissionQueueFrame))->processStateTransition(*(unsigned int *)result);\n                        *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 4) = 7;\n                        v6 = *(unsigned int **)(*((unsigned int *)this + 15) + 4 * i);\n                        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v6 + 248))(*v6);\n                    }\n                    else\n                    {\n                        *(unsigned int *)(result + 4) = 7;\n                        ((UnitClass *)((int)&g_MissionQueueFrame))->GetExitCell(**(unsigned int ***)(*((unsigned int *)this + 15) + 4 * i), *((unsigned int **)this + 26));\n                    }\n                    **(unsigned int **)(*((unsigned int *)this + 15) + 4 * i) = 0;\n                    v7 = (unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 8);\n                    *v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];\n                    result = v9;\n                }\n                v7[1] = result;\n                v7[2] = v3;\n            }\n        }\n        return (int)(result);\n}",
+  "inner": "int result = *((unsigned int *)this + 9);\n        int v3;\n        if ( *(int *)(result + 108) > 0 && *(unsigned char *)(result + 144) )\n        {\n            v3 = 0;\n        }\n        else\n        {\n            v3 = *((unsigned int *)this + 12);\n        }\n        int i;\n        int v5;\n        unsigned int * v6;\n        unsigned int * v7;\n        unsigned int * v8;\n        int v9;\n        for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i )\n        {\n            result = *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i);\n            v5 = *(unsigned int *)(result + 4);\n            if ( v5 != 7 )\n            {\n                if ( v5 == 0 || v5 == 6 )\n                {\n                    *(unsigned int *)(result + 4) = 7;\n                    v8 = *(unsigned int **)(*((unsigned int *)this + 15) + 4 * i);\n                    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v8 + 248))(*v8);\n                    **(unsigned int **)(*((unsigned int *)this + 15) + 4 * i) = 0;\n                    v7 = (unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 8);\n                    *v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];\n                    result = v9;\n                }\n                else\n                {\n                    if ( v5 == 1 )\n                    {\n                        ((AbstractClass *)(&g_MissionQueueFrame))->processStateTransition(*(unsigned int *)result);\n                        *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 4) = 7;\n                        v6 = *(unsigned int **)(*((unsigned int *)this + 15) + 4 * i);\n                        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v6 + 248))(*v6);\n                    }\n                    else\n                    {\n                        *(unsigned int *)(result + 4) = 7;\n                        ((UnitClass *)((int)&g_MissionQueueFrame))->GetExitCell(**(unsigned int ***)(*((unsigned int *)this + 15) + 4 * i), *((unsigned int **)this + 26));\n                    }\n                    **(unsigned int **)(*((unsigned int *)this + 15) + 4 * i) = 0;\n                    v7 = (unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 8);\n                    *v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];\n                    result = v9;\n                }\n                v7[1] = result;\n                v7[2] = v3;\n            }\n        }\n        return (int)(result);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 56,
+  "semicolons": 34,
+  "ifs": 4,
+  "loops": 1
+ },
+ {
+  "addr": "0x6b8380",
+  "name": "AbstractClass::resetPathMemory",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\VectorClass.cpp",
+  "body": "{\n        if ( this->IsInitialized )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->Items) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( this->IsInitialized )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->Items) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x6baef0",
+  "name": "HashTable_flat::RebuildEx",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6cb830",
+  "name": "SuperClass::StopPreclickAnim",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6cf700",
+  "name": "SwizzleManagerClass_19::Add",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_VSwizzlePointerClass.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x6d5f60",
+  "name": "TacticalClass::SetViewportPosition",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6d6070",
+  "name": "Tactical::SetTacticalPosition",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6da080",
+  "name": "PlayerClass::HasOccupiedCell",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6da180",
+  "name": "TacticalMap::DrawOccupiedRegion",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6dc660",
+  "name": "VectorClass_UDirtyAreaStruct::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6e0110",
+  "name": "ScenarioClass::Create",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x6e4150",
+  "name": "TActionClass::executeGeneticMutatorAction",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7036c0",
+  "name": "TechnoClass::TransitionEffectState",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x70c5c0",
+  "name": "ObjectClass::GetFogByte",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x70ed80",
+  "name": "TechnoClass::GetAnimationFlags",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7104a0",
+  "name": "TechnoClass::ExitedOpenTopped",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x717ad0",
+  "name": "ObjectTypeClass::loadTypeMember_5717AD0",
+  "path": "width_mismatch",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_01\\ObjectTypeClass.cpp",
+  "body": "{\n        return (int)this->vfptr3;\n}",
+  "inner": "return (int)this->vfptr3;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x71b400",
+  "name": "VectorClass_ptr_TemporalClass::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x71c4d0",
+  "name": "TerrainClass::IsPlacementValid",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x720a80",
+  "name": "Movie::SelectNextBuildableType",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x722390",
+  "name": "BuildingClass::FreeUpgradeQueue",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x722e50",
+  "name": "BuildingClass::FreeUpgradeQueue2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7268f0",
+  "name": "TActionClass::executeAirstrikeAction",
+  "path": "width_mismatch",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p14\\part_00\\TActionClass.cpp",
+  "body": "{\n        this->TActionClass_field_44 = (AbstractClass *)(1);\n        return (int)(((BuildingClass *)(this))->ProcessUpgradeEffects());\n}",
+  "inner": "this->TActionClass_field_44 = (AbstractClass *)(1);\n        return (int)(((BuildingClass *)(this))->ProcessUpgradeEffects());",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 2,
+  "semicolons": 2,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x726900",
+  "name": "TActionClass::executeDetonateAction",
+  "path": "width_mismatch",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r8_ng_census\\p14\\part_00\\TActionClass.cpp",
+  "body": "{\n        this->TActionClass_field_44 = (AbstractClass *)(0);\n}",
+  "inner": "this->TActionClass_field_44 = (AbstractClass *)(0);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x736ca0",
+  "name": "TechnoClass::UpdateUnitAnimation",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7447a0",
+  "name": "InfantryClass::ScanTarget_0",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x746810",
+  "name": "UnitClass::PerFrameUpdate",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x746ea0",
+  "name": "TechnoClass::processIronCurtainExpiry",
+  "path": "branch_polarity",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\TechnoClass.cpp",
+  "body": "{\n        unsigned int * uniqueId = (unsigned int *)this->uniqueId;\n        return (bool)(uniqueId && *uniqueId == *p0);\n}",
+  "inner": "unsigned int * uniqueId = (unsigned int *)this->uniqueId;\n        return (bool)(uniqueId && *uniqueId == *p0);",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 2,
+  "semicolons": 2,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x74c030",
+  "name": "VectorClass_E::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x74fa20",
+  "name": "GameClass::ReadVersionFile2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x750010",
+  "name": "VeterancyStruct::IsElite",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x750090",
+  "name": "Power::ChangedHouse",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7534e0",
+  "name": "VoxClass::SetEVAIndex",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x758ea0",
+  "name": "VoxelRenderer::ProjectVertex",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x75ca80",
+  "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_1",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x75f140",
+  "name": "Voxel::loadSectionData",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7645c0",
+  "name": "VectorClass_ptr_WaypointPathClass::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x76a3f0",
+  "name": "Map_WorldDominationTour_43::Release",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x76b0a0",
+  "name": "File::LoadWDTDecompress",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x76ba50",
+  "name": "VectorClass_rc_ptr_WDTTerritory::GetCapacity",
+  "path": "branch_order",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p22\\part_00\\_VectorClass_PAVColorScheme.cpp",
+  "body": "{\n        if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }\n}",
+  "inner": "if ( (this->m_C & 0xFF) )\n        {\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);\n        }\n        else\n        {\n            return (unsigned int)(0);\n        }",
+  "empty": false,
+  "constret": false,
+  "todo": false,
+  "lines": 8,
+  "semicolons": 2,
+  "ifs": 1,
+  "loops": 0
+ },
+ {
+  "addr": "0x76f020",
+  "name": "FileClass::GetState",
+  "path": "width_mismatch",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_01\\RawFileClass.cpp",
+  "body": "{\n        return this->FilePointer;\n}",
+  "inner": "return this->FilePointer;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x76f070",
+  "name": "FileClass::SetState",
+  "path": "width_mismatch",
+  "cpp": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\run2\\part_01\\RawFileClass.cpp",
+  "body": "{\n        return this->FilePointer;\n}",
+  "inner": "return this->FilePointer;",
+  "empty": false,
+  "constret": true,
+  "todo": false,
+  "lines": 1,
+  "semicolons": 1,
+  "ifs": 0,
+  "loops": 0
+ },
+ {
+  "addr": "0x7ad930",
+  "name": "CChatEventSink::GrowBuffer",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7ae020",
+  "name": "WOLGameList::GrowBuffer",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7ae0e0",
+  "name": "ComStreamClass::readData",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7ae510",
+  "name": "HashTable_flat::Grow",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7aef50",
+  "name": "ComStreamClass::flushStream",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b0f50",
+  "name": "NetworkOptions::ApplySettings",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b1d10",
+  "name": "AudioQueue::Cleanup",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b22e0",
+  "name": "AudioQueue::ReadBuffer",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b3920",
+  "name": "UDPInterfaceClass::Reset",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b4940",
+  "name": "String::Reassign",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b4c20",
+  "name": "String::Append",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b4cd0",
+  "name": "String::Append2",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b5020",
+  "name": "String::Erase",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b5440",
+  "name": "String::GetOrEmpty_Alt",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7b5b80",
+  "name": "String::ToLowerCopy",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7bd2d0",
+  "name": "AudioStream::CalcReadPos",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c3270",
+  "name": "Audio_Process_7C3270",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c35b0",
+  "name": "sub_7C35B0",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c35c0",
+  "name": "AbstractClass::finalizeDestruction",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c81db",
+  "name": "AudioCodec::Decode",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c89f2",
+  "name": "ImageList::DragEnter",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c89f8",
+  "name": "ImageList::BeginDrag",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c89fe",
+  "name": "ImageList::Destroy",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c8a04",
+  "name": "ImageList::EndDrag",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c8a0a",
+  "name": "ImageList::DragMove",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c8a10",
+  "name": "ImageList::DragShowNolock",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7c8f96",
+  "name": "sub_7C8F96",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7d4c00",
+  "name": "_strcat",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7deefa",
+  "name": "Object_Calc",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7defd7",
+  "name": "Object_Calc_7DEFD7",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7df0b4",
+  "name": "Object_Calc_7DF0B4",
+  "body": null,
+  "stub": null
+ },
+ {
+  "addr": "0x7df191",
+  "name": "Object_Calc_7DF191",
+  "body": null,
+  "stub": null
+ }
+]
