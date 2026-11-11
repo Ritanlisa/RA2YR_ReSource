@@ -1,0 +1,11 @@
+{
+ "addr": "0x774070",
+ "name": "Render_Draw_774070",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x774070",
+ "bytes_hex": "a10c2db70085c074178b480885c974108a880c04000084c97406b801000000c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

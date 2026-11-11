@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CC0FC",
+ "name": "__unwind_handler",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CC0FC",
+ "bytes_hex": "8b4c2404f7410406000000b801000000740f8b4424088b5424108902b803000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

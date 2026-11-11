@@ -1,0 +1,8 @@
+{
+ "symbol": "?Equals@CellStruct@@QAEHPAG@Z",
+ "sym_key": "CellStruct::Equals",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b018b4c2404663b017511c1f810663b41027508b801000000c2040033c0c20400",
+ "relocs": []
+}

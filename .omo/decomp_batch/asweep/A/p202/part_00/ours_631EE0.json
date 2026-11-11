@@ -1,0 +1,8 @@
+{
+ "symbol": "?DecrementCounter@TacticalClass@@QAEDH@Z",
+ "sym_key": "TacticalClass::DecrementCounter",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b41388b5424042bc285c08941387e052400c204002401c74138000000000c01c20400",
+ "relocs": []
+}

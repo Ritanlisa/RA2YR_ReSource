@@ -1,0 +1,15 @@
+{
+ "symbol": "?Render_Draw_774070@@YAHXZ",
+ "sym_key": "Unnamed::Render_Draw_774070",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c074178b480885c974108a880c04000084c97406b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B72D0C@@3IA",
+   "sym_key": "DataGlobal_B72D0C"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x631EE0",
+ "name": "TacticalClass::DecrementCounter",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x631EE0",
+ "bytes_hex": "8b4424048b51382bd08bc289513885c07f0cc7413800000000b001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

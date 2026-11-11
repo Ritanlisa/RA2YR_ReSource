@@ -1,0 +1,11 @@
+{
+ "addr": "0x522510",
+ "name": "TechnoClass::IsMission27to30",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x522510",
+ "bytes_hex": "8b81c406000083f81b741283f81c740d83f81d740883f81e740333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

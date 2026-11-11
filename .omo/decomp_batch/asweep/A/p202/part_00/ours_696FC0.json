@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetPlayerColor@SessionClass@@QAEHH@Z",
+ "sym_key": "SessionClass::SetPlayerColor",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f8fe750dc7414dffffffff89414ec2040089414dc7414effffffffc20400",
+ "relocs": []
+}

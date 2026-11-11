@@ -1,0 +1,8 @@
+{
+ "symbol": "?Check@CChatEventSink@@QAEDPAHH@Z",
+ "sym_key": "CChatEventSink::Check",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07c153b0173118b49088b14818b4424048910b001c2080032c0c20800",
+ "relocs": []
+}

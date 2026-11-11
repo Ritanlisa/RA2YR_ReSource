@@ -1,0 +1,8 @@
+{
+ "symbol": "?__unwind_handler@ObjectClass@@QAEHHHHPAI@Z",
+ "sym_key": "ObjectClass::__unwind_handler",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "8b442404f640040674128b4c24108b542408b8030000008911c21000b801000000c21000",
+ "relocs": []
+}

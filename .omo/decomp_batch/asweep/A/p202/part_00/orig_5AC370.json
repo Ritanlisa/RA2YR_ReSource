@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AC370",
+ "name": "Coord::Compare2D",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AC370",
+ "bytes_hex": "8b442404668b11663b10750f668b4902663b4802750533c0c20400b801000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

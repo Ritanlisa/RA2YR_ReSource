@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetInvalidCoord@AbstractClass@@QAEHXZ",
+ "sym_key": "AbstractClass::GetInvalidCoord",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "518b4424008b0d0000000089088b15000000008950048b0d0000000089480859c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887680@@3IA",
+   "sym_key": "DataGlobal_887680"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887684@@3IA",
+   "sym_key": "DataGlobal_887684"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887688@@3IA",
+   "sym_key": "DataGlobal_887688"
+  }
+ ]
+}

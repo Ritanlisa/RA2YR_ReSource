@@ -1,0 +1,105 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p202\part_00
+=== convert (20 addrs) ===
+[conv] 0x748380 sub_748380 -> _addr_74
+[conv] 0x7564b0 VoxelSection::GetInfo -> VoxelSection
+[conv] 0x7aee90 CChatEventSink::Check -> CChatEventSink
+[conv] 0x7cc0fc ObjectClass::__unwind_handler -> ObjectClass
+[conv] 0x4104c0 AbstractClass::GetInvalidCoord -> AbstractClass
+[conv] 0x477930 _DynamicVectorClass_VRGBClass::LoadTypeData -> _DynamicVectorClass_VRGBClass
+[conv] 0x4784c0 _VectorClass_VRGBClass::Write -> _VectorClass_VRGBClass
+[conv] 0x4fd120 sub_4FD120 -> _addr_4F
+[conv] 0x50b730 House::IsCurrentPlayer -> House
+[conv] 0x50e470 CellStruct::Equals -> CellStruct
+[conv] 0x522510 TechnoClass::IsMission27to30 -> TechnoClass
+[conv] 0x55a6c0 LocomotionClass::Init -> LocomotionClass
+[conv] 0x56d430 Cell::CoordToIndex -> Cell
+[conv] 0x5ac370 Coord::Compare2D -> Coord
+[conv] 0x628470 _VectorClass_VHSVClass::GetItemIndex -> _VectorClass_VHSVClass
+[conv] 0x631ee0 TacticalClass::DecrementCounter -> TacticalClass
+[conv] 0x696f90 SessionClass::SetPlayerOption -> SessionClass
+[conv] 0x696fc0 SessionClass::SetPlayerColor -> SessionClass
+[conv] 0x697020 SessionClass::SetOption2 -> SessionClass
+[conv] 0x774070 Render_Draw_774070 -> Render_Draw
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_74                 rc=0
+[era] VoxelSection             rc=0
+[era] CChatEventSink           rc=0
+[era] ObjectClass              rc=0
+[era] AbstractClass            rc=0
+[era] _DynamicVectorClass_VRGBClass rc=0
+[era] _VectorClass_VRGBClass   rc=0
+[era] _addr_4F                 rc=2
+[era] House                    rc=0
+[era] CellStruct               rc=0
+[era] TechnoClass              rc=0
+[era] LocomotionClass          rc=2
+[era] Cell                     rc=0
+[era] Coord                    rc=0
+[era] _VectorClass_VHSVClass   rc=0
+[era] TacticalClass            rc=0
+[era] SessionClass             rc=0
+[era] Render_Draw              rc=0
+=== diffasm byte-compare ===
+[diff] 0x748380   MISMATCH         sub_748380
+[diff] 0x7564b0   MATCH            VoxelSection::GetInfo
+[diff] 0x7aee90   MISMATCH         CChatEventSink::Check
+[diff] 0x7cc0fc   MISMATCH         ObjectClass::__unwind_handler
+[diff] 0x4104c0   MISMATCH         AbstractClass::GetInvalidCoord
+[diff] 0x477930   MISMATCH         _DynamicVectorClass_VRGBClass::LoadTypeData
+[diff] 0x4784c0   MISMATCH         _VectorClass_VRGBClass::Write
+[diff] 0x50b730   MISMATCH         House::IsCurrentPlayer
+[diff] 0x50e470   MISMATCH         CellStruct::Equals
+[diff] 0x522510   MATCH            TechnoClass::IsMission27to30
+[diff] 0x56d430   MATCH            Cell::CoordToIndex
+[diff] 0x5ac370   MATCH            Coord::Compare2D
+[diff] 0x628470   MISMATCH         _VectorClass_VHSVClass::GetItemIndex
+[diff] 0x631ee0   MISMATCH         TacticalClass::DecrementCounter
+[diff] 0x696f90   MISMATCH         SessionClass::SetPlayerOption
+[diff] 0x696fc0   MISMATCH         SessionClass::SetPlayerColor
+[diff] 0x697020   MISMATCH         SessionClass::SetOption2
+[diff] 0x774070   MATCH            Render_Draw_774070
+[ledger] 0x748380 sub_748380 -> NG (attempt 1)
+[ledger] 0x7564b0 VoxelSection::GetInfo -> OK (attempt 1)
+[ledger] 0x7aee90 CChatEventSink::Check -> NG (attempt 1)
+[ledger] 0x7cc0fc ObjectClass::__unwind_handler -> NG (attempt 1)
+[ledger] 0x4104c0 AbstractClass::GetInvalidCoord -> NG (attempt 1)
+[ledger] 0x477930 _DynamicVectorClass_VRGBClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4784c0 _VectorClass_VRGBClass::Write -> NG (attempt 1)
+[ledger] 0x4fd120 sub_4FD120 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50b730 House::IsCurrentPlayer -> NG (attempt 1)
+[ledger] 0x50e470 CellStruct::Equals -> NG (attempt 1)
+[ledger] 0x522510 TechnoClass::IsMission27to30 -> OK (attempt 1)
+[ledger] 0x55a6c0 LocomotionClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56d430 Cell::CoordToIndex -> OK (attempt 1)
+[ledger] 0x5ac370 Coord::Compare2D -> OK (attempt 1)
+[ledger] 0x628470 _VectorClass_VHSVClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x631ee0 TacticalClass::DecrementCounter -> NG (attempt 1)
+[ledger] 0x696f90 SessionClass::SetPlayerOption -> NG (attempt 1)
+[ledger] 0x696fc0 SessionClass::SetPlayerColor -> NG (attempt 1)
+[ledger] 0x697020 SessionClass::SetOption2 -> NG (attempt 1)
+[ledger] 0x774070 Render_Draw_774070 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "MATCH": 5,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "branch_order": 4,
+  "signedness": 1,
+  "regalloc": 1,
+  "codegen_shape": 2,
+  "eval_order": 2,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 27.8,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p202\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7564B0",
+ "name": "VoxelSection::GetInfo",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7564B0",
+ "bytes_hex": "8b4424048b51108b49148d04408b04828b54240803c28d14808d04d08d0481c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

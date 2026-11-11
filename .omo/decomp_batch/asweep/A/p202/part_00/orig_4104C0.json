@@ -1,0 +1,11 @@
+{
+ "addr": "0x4104C0",
+ "name": "Map::GetInvalidCoord",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4104C0",
+ "bytes_hex": "8b4424048b15807688008bc889118b15847688008951048b1588768800895108c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

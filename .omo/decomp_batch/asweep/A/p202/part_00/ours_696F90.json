@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetPlayerOption@SessionClass@@QAEHH@Z",
+ "sym_key": "SessionClass::SetPlayerOption",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f8fe750dc7414b0000000089414cc2040089414bc7414cffffffffc20400",
+ "relocs": []
+}

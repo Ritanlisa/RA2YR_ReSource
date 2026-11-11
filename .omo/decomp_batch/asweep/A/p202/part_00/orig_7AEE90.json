@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AEE90",
+ "name": "CChatEventSink::Check",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AEE90",
+ "bytes_hex": "8b44240885c07c153b017d118b49088b14818b4424048910b001c2080032c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

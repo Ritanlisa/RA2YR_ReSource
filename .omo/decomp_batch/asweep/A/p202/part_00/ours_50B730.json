@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsCurrentPlayer@House@@QAEEXZ",
+ "sym_key": "House::IsCurrentPlayer",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c075178a81ec01000084c0750a8a81ed01000084c07403b001c332c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  }
+ ]
+}

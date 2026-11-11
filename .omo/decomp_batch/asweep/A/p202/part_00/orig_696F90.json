@@ -1,0 +1,11 @@
+{
+ "addr": "0x696F90",
+ "name": "SessionClass::SetPlayerOption",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x696F90",
+ "bytes_hex": "8b44240483f8fe750dc7414b0000000089414fc2040089414bc7414fffffffffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

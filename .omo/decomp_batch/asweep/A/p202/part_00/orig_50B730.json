@@ -1,0 +1,11 @@
+{
+ "addr": "0x50B730",
+ "name": "House::IsCurrentPlayer",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50B730",
+ "bytes_hex": "a138b2a80085c08a81ec010000751384c0750d8a81ed01000084c0750332c0c3b001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
