@@ -1,0 +1,11 @@
+{
+ "addr": "0x69DFF0",
+ "name": "SHA1::Reset",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69DFF0",
+ "bytes_hex": "8b513833c03bd0740c88413489413c894138b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

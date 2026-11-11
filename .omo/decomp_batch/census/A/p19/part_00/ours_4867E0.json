@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetCellType@CellClass@@QAEEXZ",
+ "sym_key": "CellClass::GetCellType",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b41388b0d000000003bc1720a83c10e3bc1730332c0c3b001c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_CellPassabilityLUT@@3IA",
+   "sym_key": "g_CellPassabilityLUT"
+  }
+ ]
+}

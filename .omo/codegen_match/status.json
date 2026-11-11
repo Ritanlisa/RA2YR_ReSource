@@ -55,6 +55,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x403eb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x403eb0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x404700": {
   "attempts": 9,
   "first_diff": "+7 xor eax, eax",
@@ -402,6 +409,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x40f2f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x40f470": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40f470",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -762,6 +776,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4208c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4208c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x420e90": {
   "attempts": 11,
   "first_diff": null,
@@ -1118,6 +1139,13 @@
   "name": "Helper::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x438510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x438510",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4389f0": {
   "attempts": 7,
@@ -1490,6 +1518,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x471710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x471710",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x472160": {
   "attempts": 17,
   "first_diff": "+0 sub esp, 0x20",
@@ -1760,6 +1795,13 @@
   "attempts": 8,
   "first_diff": "+11 jl 0x486687",
   "name": "CellClass::InBounds",
+  "note": "decomp_batch r2: MISMATCH/signedness",
+  "status": "NG"
+ },
+ "0x4867e0": {
+  "attempts": 1,
+  "first_diff": "+11 jl 0x4867f7",
+  "name": "CellClass::GetCellType",
   "note": "decomp_batch r2: MISMATCH/signedness",
   "status": "NG"
  },
@@ -2449,6 +2491,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x49f2b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x49f2b0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x49fb60": {
   "attempts": 7,
   "first_diff": null,
@@ -2820,6 +2869,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4b5a70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4b5a70",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4b5b30": {
   "attempts": 1,
   "first_diff": null,
@@ -3071,6 +3127,13 @@
   "name": "MovementClass::CompareAbsCoords",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x4c9870": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4c9870",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4c9b20": {
   "attempts": 11,
@@ -3401,6 +3464,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4e64a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e64a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4e8110": {
   "attempts": 1,
   "first_diff": null,
@@ -3653,6 +3723,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x50da20": {
+  "attempts": 1,
+  "first_diff": "+10 mov edx, dword ptr [0xa8ed84]",
+  "name": "TActionClass::executeHuntAction",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
+ },
  "0x50df30": {
   "attempts": 6,
   "first_diff": "+0 mov eax, dword ptr [0xa8ef98]",
@@ -3714,6 +3791,13 @@
   "first_diff": "+12 je 0x50fa77",
   "name": "VectorClass__N::Remove",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
+ "0x50fb00": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x50fb0c",
+  "name": "VectorClass__N::Get",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
  "0x50fb20": {
@@ -4339,6 +4423,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5392e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5392e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x539560": {
   "attempts": 1,
   "first_diff": null,
@@ -4562,6 +4653,13 @@
   "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x54d0d0": {
+  "attempts": 1,
+  "first_diff": "+9 je 0x54d0e5",
+  "name": "JumpjetLocomotionClass::CheckCompositeState",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x54da50": {
   "attempts": 9,
@@ -7153,6 +7251,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x69dff0": {
+  "attempts": 1,
+  "first_diff": "+7 je 0x69e005",
+  "name": "SHA1::Reset",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x69ebe0": {
   "attempts": 1,
   "first_diff": null,
@@ -8966,6 +9071,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x750010": {
+  "attempts": 1,
+  "first_diff": "+2 fcomp dword ptr [0x7e37b4]",
+  "name": "VeterancyStruct::IsElite",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
+ },
  "0x750041": {
   "attempts": 1,
   "first_diff": null,
@@ -9225,6 +9337,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x764810": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x764810",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x764860": {
   "attempts": 1,
   "first_diff": null,
@@ -9421,6 +9540,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x770060": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x770060",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x771b10": {
   "attempts": 1,
   "first_diff": null,
@@ -9551,6 +9677,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x77b230",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x77b880": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x77b880",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -10167,6 +10300,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7cd95f",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7cf3a5": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7cf3a5",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },

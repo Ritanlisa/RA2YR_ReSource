@@ -1,0 +1,15 @@
+{
+ "symbol": "?executeHuntAction@TActionClass@@QAEHH@Z",
+ "sym_key": "TActionClass::executeHuntAction",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b4424048981f45400008b15000000008991fc540000c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

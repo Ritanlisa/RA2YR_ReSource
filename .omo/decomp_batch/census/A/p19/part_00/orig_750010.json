@@ -1,0 +1,11 @@
+{
+ "addr": "0x750010",
+ "name": "VeterancyStruct::IsElite",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750010",
+ "bytes_hex": "d901d81db4377e00dfe0f6c4017506b801000000c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

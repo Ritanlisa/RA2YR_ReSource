@@ -1,0 +1,78 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x50fb00 _VectorClass__N::Get -> _VectorClass__N
+[conv] 0x69dff0 SHA1::Reset -> SHA1
+[conv] 0x750010 Audio::IsElite -> Audio
+[conv] 0x50da20 TActionClass::executeHuntAction -> TActionClass
+[conv] 0x4867e0 CellClass::GetCellType -> CellClass
+[conv] 0x54d0d0 JumpjetLocomotionClass::CheckCompositeState -> JumpjetLocomotionClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass__N          rc=0
+[era] SHA1                     rc=0
+[era] Audio                    rc=0
+[era] TActionClass             rc=0
+[era] CellClass                rc=0
+[era] JumpjetLocomotionClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x50fb00   MISMATCH         _VectorClass__N::Get
+[diff] 0x69dff0   MISMATCH         SHA1::Reset
+[diff] 0x750010   MISMATCH         Audio::IsElite
+[diff] 0x50da20   MISMATCH         TActionClass::executeHuntAction
+[diff] 0x4867e0   MISMATCH         CellClass::GetCellType
+[diff] 0x54d0d0   MISMATCH         JumpjetLocomotionClass::CheckCompositeState
+[ledger] 0x764810 0x764810 -> PENDING (attempt 1)
+[ledger] 0x770060 0x770060 -> PENDING (attempt 1)
+[ledger] 0x77b880 0x77b880 -> PENDING (attempt 1)
+[ledger] 0x7cf3a5 0x7cf3a5 -> PENDING (attempt 1)
+[ledger] 0x50fb00 VectorClass__N::Get -> NG (attempt 1)
+[ledger] 0x69dff0 SHA1::Reset -> NG (attempt 1)
+[ledger] 0x750010 VeterancyStruct::IsElite -> NG (attempt 1)
+[ledger] 0x50da20 TActionClass::executeHuntAction -> NG (attempt 1)
+[ledger] 0x403eb0 0x403eb0 -> PENDING (attempt 1)
+[ledger] 0x40f470 0x40f470 -> PENDING (attempt 1)
+[ledger] 0x4208c0 0x4208c0 -> PENDING (attempt 1)
+[ledger] 0x438510 0x438510 -> PENDING (attempt 1)
+[ledger] 0x471710 0x471710 -> PENDING (attempt 1)
+[ledger] 0x4867e0 CellClass::GetCellType -> NG (attempt 1)
+[ledger] 0x49f2b0 0x49f2b0 -> PENDING (attempt 1)
+[ledger] 0x4b5a70 0x4b5a70 -> PENDING (attempt 1)
+[ledger] 0x4c9870 0x4c9870 -> PENDING (attempt 1)
+[ledger] 0x4e64a0 0x4e64a0 -> PENDING (attempt 1)
+[ledger] 0x5392e0 0x5392e0 -> PENDING (attempt 1)
+[ledger] 0x54d0d0 JumpjetLocomotionClass::CheckCompositeState -> NG (attempt 1)
+======================================================================
+{
+ "total": 1437,
+ "verdicts": {
+  "MISMATCH": 319,
+  "MATCH": 495,
+  "COMPILE_FAIL": 330,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 286,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 123,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 26,
+  "regalloc": 47,
+  "branch_order": 19,
+  "width_mismatch": 2,
+  "extern_reloc": 14,
+  "cc_mismatch": 6,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 60.8,
+ "match_rate_of_total_pct": 34.4,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p19\batch_report.json
