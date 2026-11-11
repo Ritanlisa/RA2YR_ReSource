@@ -3715,6 +3715,10 @@ def _arg_is_pointerish(s, ptr_names=None):
         return _arg_is_pointerish(s2, names)
     if _SCALAR_CAST.match(s):
         return False
+    # address-of is pointer evidence even when its operand ends with a
+    # subscript (`&this->m134[4]` -- MapClass::FreeAllCells fncast slot)
+    if s.startswith("&") and not s.startswith("&&"):
+        return True
     m = re.match(r"^\*\s*\(\s*((?:unsigned\s+|signed\s+)?[A-Za-z_]\w*)"
                  r"\s*\*\s*\)", s)
     if m:
@@ -3771,6 +3775,38 @@ def pass_callees(ctx):
         ctx.used_callees = {}
         ctx.used_callee_exts = []
     text = "\n".join(ctx.lines)
+
+    # R7.1: registry-backed member classification for `this->NAME` args.
+    # A bare member chain is NOT pointer evidence by itself: HouseClass::
+    # Find's `this->preferredTargetType` is an int32_t member and the
+    # R7 relax flipped FindSWTarget's int slot to void* (C2664).
+    _this_cls = ctx.sig.get("cls")
+
+    def _this_member_scalar(mem):
+        """True/False when the registry knows this->MEM's pointer-ness;
+        None when unknown (then the generic text heuristic decides)."""
+        if not _this_cls:
+            return None
+        r = ctx.reg.member_offset_by_ida_name(_this_cls, mem)
+        if r is None or r[0] is None:
+            inh = getattr(ctx.reg, "member_offset_inherited", None)
+            if inh is not None:
+                r = inh(_this_cls, mem)
+        if r is None or r[0] is None:
+            return None
+        ty = (r[1] or {}).get("type")
+        if not ty:
+            return None
+        return not spell_type(ty).endswith("*")
+
+    def _arg_ptrish_ctx(a, names):
+        s = (a or "").strip()
+        m = re.match(r"^this->([A-Za-z_]\w*)$", s)
+        if m:
+            sc = _this_member_scalar(m.group(1))
+            if sc is not None:
+                return not sc
+        return _arg_is_pointerish(s, names)
     # R5: the old lazy-regex args capture stopped at the FIRST `)` --
     # nested-paren arguments were truncated and the replacement left the
     # stray closer glued after the call (`(T *)(recv)->M()` mis-parse
@@ -3842,8 +3878,9 @@ def pass_callees(ctx):
             def _arg_ptrish(a):
                 # R7.1: scalar-form expressions (`(int)x`, `x - 1`,
                 # `(x >> 16) & 0xFF`) never force a void* slot --
-                # see _arg_is_pointerish.
-                return _arg_is_pointerish(a, ptr_params_)
+                # see _arg_is_pointerish; bare `this->NAME` consults the
+                # registry member table first.
+                return _arg_ptrish_ctx(a, ptr_params_)
 
             rparams = [("void *" if "(" in t else t, n)
                        for t, n in rparams]
@@ -3931,7 +3968,7 @@ def pass_callees(ctx):
                     pt = sig_ptys[a0s]
                 elif a0s in arr_locals:
                     pt = "void *"
-                elif _arg_is_pointerish(a0s, ptr_names_):
+                elif _arg_ptrish_ctx(a0s, ptr_names_):
                     pt = "void *"
                     # R7: a `volatile T *` argument needs a
                     # qualification-compatible slot (plain void* drops
