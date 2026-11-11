@@ -1,0 +1,114 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x472fd0 _DynamicVectorClass_PAVCaptureManagerClass::FindItemIndex -> _DynamicVectorClass_PAVCaptureManagerClass
+[conv] 0x4a4d60 _DynamicVectorClass_PAU_DDSURFACEDESC::FindItem -> _DynamicVectorClass_PAU_DDSURFACEDESC
+[conv] 0x4e07b0 FoggedObjectClass::FindItem -> FoggedObjectClass
+[conv] 0x4ea8b0 _DynamicVectorClass_PAVTriggerTypeClass::FindItemIndex_1 -> _DynamicVectorClass_PAVTriggerTypeClass
+[conv] 0x4ec070 _DynamicVectorClass_PAVAnimClass::FindItemIndex_0 -> _DynamicVectorClass_PAVAnimClass
+[conv] 0x4ed5d0 _DynamicVectorClass_PAVSmudgeTypeClass::FindItemIndex -> _DynamicVectorClass_PAVSmudgeTypeClass
+[conv] 0x4eed90 _DynamicVectorClass_PAVParticleTypeClass::FindItemIndex -> _DynamicVectorClass_PAVParticleTypeClass
+[conv] 0x512f70 _DynamicVectorClass_PBVInfantryTypeClass::GetSize -> _DynamicVectorClass_PBVInfantryTypeClass
+[conv] 0x53f080 ObjectClass::sub_53F080 -> ObjectClass
+[conv] 0x55a3e0 _DynamicVectorClass_PAVFileEntryClass::vt04 -> _DynamicVectorClass_PAVFileEntryClass
+[conv] 0x5c0d00 DynamicVector::FindInVector -> DynamicVector
+[conv] 0x5d2c70 _DynamicVectorClass_PAVMSSfx::FindItemIndex -> _DynamicVectorClass_PAVMSSfx
+[conv] 0x63e2e0 _DynamicVectorClass_PAVPlanningBranchClass::FindItemIndex_0 -> _DynamicVectorClass_PAVPlanningBranchClass
+[conv] 0x664a40 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::Launch -> _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x6b84b0 _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::Spawn -> _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass
+[conv] 0x71fe30 _DynamicVectorClass_PAVTEventClass::FindItemIndex -> _DynamicVectorClass_PAVTEventClass
+[conv] 0x7ad2c0 _DynamicVectorClass_PAUtConnInfoStruct::FindItem -> _DynamicVectorClass_PAUtConnInfoStruct
+[conv] 0x55ac70 JumpjetLocomotionClass::GetGlobalCoordinate -> JumpjetLocomotionClass
+[conv] 0x74ff90 Audio::IsVeteran -> Audio
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVCaptureManagerClass rc=0
+[era] _DynamicVectorClass_PAU_DDSURFACEDESC rc=0
+[era] FoggedObjectClass        rc=2
+[era] _DynamicVectorClass_PAVTriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVAnimClass rc=0
+[era] _DynamicVectorClass_PAVSmudgeTypeClass rc=0
+[era] _DynamicVectorClass_PAVParticleTypeClass rc=0
+[era] _DynamicVectorClass_PBVInfantryTypeClass rc=0
+[era] ObjectClass              rc=2
+[era] _DynamicVectorClass_PAVFileEntryClass rc=0
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PAVMSSfx rc=0
+[era] _DynamicVectorClass_PAVPlanningBranchClass rc=0
+[era] _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass rc=0
+[era] _DynamicVectorClass_PAVTEventClass rc=0
+[era] _DynamicVectorClass_PAUtConnInfoStruct rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] Audio                    rc=0
+=== diffasm byte-compare ===
+[diff] 0x472fd0   MISMATCH         _DynamicVectorClass_PAVCaptureManagerClass::FindItemIndex
+[diff] 0x4a4d60   MISMATCH         _DynamicVectorClass_PAU_DDSURFACEDESC::FindItem
+[diff] 0x4ea8b0   MISMATCH         _DynamicVectorClass_PAVTriggerTypeClass::FindItemIndex_1
+[diff] 0x4ec070   MISMATCH         _DynamicVectorClass_PAVAnimClass::FindItemIndex_0
+[diff] 0x4ed5d0   MISMATCH         _DynamicVectorClass_PAVSmudgeTypeClass::FindItemIndex
+[diff] 0x4eed90   MISMATCH         _DynamicVectorClass_PAVParticleTypeClass::FindItemIndex
+[diff] 0x512f70   MISMATCH         _DynamicVectorClass_PBVInfantryTypeClass::GetSize
+[diff] 0x55a3e0   MISMATCH         _DynamicVectorClass_PAVFileEntryClass::vt04
+[diff] 0x5c0d00   MISMATCH         DynamicVector::FindInVector
+[diff] 0x5d2c70   MISMATCH         _DynamicVectorClass_PAVMSSfx::FindItemIndex
+[diff] 0x63e2e0   MISMATCH         _DynamicVectorClass_PAVPlanningBranchClass::FindItemIndex_0
+[diff] 0x664a40   MISMATCH         _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::Launch
+[diff] 0x6b84b0   MISMATCH         _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::Spawn
+[diff] 0x71fe30   MISMATCH         _DynamicVectorClass_PAVTEventClass::FindItemIndex
+[diff] 0x7ad2c0   MISMATCH         _DynamicVectorClass_PAUtConnInfoStruct::FindItem
+[diff] 0x74ff90   MISMATCH         Audio::IsVeteran
+[ledger] 0x472fd0 VectorClass_ptr_CaptureManagerClass::FindItemIndex -> NG (attempt 1)
+[ledger] 0x4a4d60 CStreamClass::FindItem -> NG (attempt 1)
+[ledger] 0x4e07b0 FoggedObjectClass_42::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea8b0 VectorClass_ptr_AITriggerTypeClass::FindItemIndex_1 -> NG (attempt 1)
+[ledger] 0x4ec070 VectorClass_ptr_TeamClass::FindItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4ed5d0 VectorClass_ptr_SmudgeTypeClass::FindItemIndex -> NG (attempt 1)
+[ledger] 0x4eed90 VectorClass_ptr_ParticleTypeClass::FindItemIndex -> NG (attempt 1)
+[ledger] 0x512f70 TypeList_Infantry::GetSize -> NG (attempt 1)
+[ledger] 0x53f080 sub_53F080 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55a3e0 LoadOptions::vt04 -> NG (attempt 1)
+[ledger] 0x5c0d00 TacticalClass::FindInVector -> NG (attempt 1)
+[ledger] 0x5d2c70 VectorClass_Point2D::FindItemIndex -> NG (attempt 1)
+[ledger] 0x63e2e0 VectorClass_ptr_PlanningMemberClass::FindItemIndex_0 -> NG (attempt 1)
+[ledger] 0x664a40 RocketLocomotionClass_17::Launch -> NG (attempt 1)
+[ledger] 0x6b84b0 SpawnManagerClass_25::Spawn -> NG (attempt 1)
+[ledger] 0x71fe30 VectorClass_ptr_TEventClass::FindItemIndex -> NG (attempt 1)
+[ledger] 0x7ad2c0 WonlineStringDialogControl_12::FindItem -> NG (attempt 1)
+[ledger] 0x55ac70 JumpjetLocomotionClass::GetGlobalCoordinate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74ff90 VeterancyStruct::IsVeteran -> NG (attempt 1)
+[ledger] 0x5c9ae0 0x5c9ae0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1557,
+ "verdicts": {
+  "MISMATCH": 403,
+  "MATCH": 500,
+  "COMPILE_FAIL": 341,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 306,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 6,
+  "codegen_shape": 149,
+  "ret_norm": 5,
+  "frame_sched": 60,
+  "const_fold": 12,
+  "branch_polarity": 28,
+  "regalloc": 51,
+  "branch_order": 65,
+  "width_mismatch": 3,
+  "extern_reloc": 16,
+  "cc_mismatch": 6,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 55.4,
+ "match_rate_of_total_pct": 32.1,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p25\batch_report.json

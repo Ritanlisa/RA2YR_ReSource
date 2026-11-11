@@ -1644,6 +1644,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x472fd0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_ptr_CaptureManagerClass::FindItemIndex",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x473380": {
   "attempts": 1,
   "first_diff": null,
@@ -2708,6 +2715,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4a4d60": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "CStreamClass::FindItem",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4a5050": {
   "attempts": 1,
   "first_diff": null,
@@ -3513,6 +3527,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x4e07b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FoggedObjectClass_42::FindItem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4e09e0": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4e09ec",
@@ -3702,11 +3723,25 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x4ea8b0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_ptr_AITriggerTypeClass::FindItemIndex_1",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4eb620": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4eb62c",
   "name": "ParticleSystemClass_32::Read",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x4ec070": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_ptr_TeamClass::FindItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4ecb80": {
@@ -3716,11 +3751,25 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x4ed5d0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_ptr_SmudgeTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4ee340": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4ee34c",
   "name": "VectorClass_ptr_InfantryTypeClass::LoadTypeData",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x4eed90": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_ptr_ParticleTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4f2a40": {
@@ -4162,6 +4211,13 @@
   "first_diff": "+5 jne 0x512dac",
   "name": "InfantryTypeVector::Remove",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x512f70": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "TypeList_Infantry::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x5139e0": {
@@ -4710,6 +4766,13 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x53f080": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_53F080",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x53f0e0": {
   "attempts": 8,
   "first_diff": "+0 mov edx, dword ptr [esp + 4]",
@@ -5095,6 +5158,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x55a3e0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "LoadOptions::vt04",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x55a540": {
   "attempts": 1,
   "first_diff": null,
@@ -5171,6 +5241,13 @@
   "name": "JumpjetLocomotionClass::StubReturnTrue_3",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x55ac70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::GetGlobalCoordinate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x55acd0": {
   "attempts": 5,
@@ -5900,6 +5977,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x5c0d00": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "TacticalClass::FindInVector",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x5c0e50": {
   "attempts": 5,
   "first_diff": null,
@@ -6009,6 +6093,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x5c9560",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x5c9ae0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5c9ae0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -6171,6 +6262,13 @@
   "first_diff": "+5 jne 0x5d275c",
   "name": "VectorClass_ptr_MSSfx::GetItemIndex",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x5d2c70": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_Point2D::FindItemIndex",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x5d39b0": {
@@ -7013,6 +7111,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x63e2e0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_ptr_PlanningMemberClass::FindItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x63f2e0": {
   "attempts": 1,
   "first_diff": null,
@@ -7460,6 +7565,13 @@
   "name": "EventClass::validateEventType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x664a40": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "RocketLocomotionClass_17::Launch",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x664cb0": {
   "attempts": 1,
@@ -8026,6 +8138,13 @@
   "first_diff": "+5 jne 0x6b838c",
   "name": "AbstractClass::resetPathMemory",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x6b84b0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "SpawnManagerClass_25::Spawn",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x6b8920": {
@@ -9036,6 +9155,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x71fe30": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_ptr_TEventClass::FindItemIndex",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x720070": {
   "attempts": 11,
   "first_diff": null,
@@ -9686,6 +9812,13 @@
   "name": "NetworkBuffer::GetField3",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x74ff90": {
+  "attempts": 1,
+  "first_diff": "+2 fcomp dword ptr [0x7e2ac8]",
+  "name": "VeterancyStruct::IsVeteran",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x750010": {
   "attempts": 1,
@@ -10421,6 +10554,13 @@
   "name": "CComObject_CChatEventSink___ATL::DispatchStub_47",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7ad2c0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "WonlineStringDialogControl_12::FindItem",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7ad610": {
   "attempts": 5,
