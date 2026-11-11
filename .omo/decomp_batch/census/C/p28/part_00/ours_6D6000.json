@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetCameraPosition@TacticalClass@@QAEIPAH@Z",
+ "sym_key": "TacticalClass::SetCameraPosition",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bf18b078b5f048d4c24108944241051e80000000084c07411a08701000084c075088b4424108bcbeb058b078b4f04898e680d0000898e780d00008bce8986640d00008986740d0000e800000000c6867d0d0000015f5e5bc20400",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?ClampCoordMap@@YGDPAX@Z",
+   "sym_key": "ClampCoordMap"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3PADA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?CalcViewportCells@TacticalClass@@QAEIXZ",
+   "sym_key": "TacticalClass::CalcViewportCells"
+  }
+ ]
+}

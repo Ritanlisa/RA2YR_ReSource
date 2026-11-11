@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D6000",
+ "name": "TacticalMapClass::SetCameraPosition",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D6000",
+ "bytes_hex": "83ec0856578b7c24148bf18d5424088b4f048b07894c240c528bce8944240ce81c26000084c07413a06beda80084c0750a8b4424088b4c240ceb058b078b4f048986640d00008986740d0000898e680d0000898e780d00008bcee8d12a0000c6867d0d0000015f5e83c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

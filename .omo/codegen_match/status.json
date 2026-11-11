@@ -139,6 +139,13 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x4061d0": {
+  "attempts": 1,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x1c]",
+  "name": "AudioMixer::PlayBuffer",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "status": "NG"
+ },
  "0x406310": {
   "attempts": 7,
   "first_diff": null,
@@ -789,6 +796,13 @@
   "name": "BSurface::GetBytesPerPixel",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4129c0": {
+  "attempts": 1,
+  "first_diff": "+24 jle 0x412a32",
+  "name": "DynamicArray::AddFromList",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x413590": {
   "attempts": 1,
@@ -2176,6 +2190,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x474940": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectTypeClass::loadTypeMember_5474940",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x474b20": {
   "attempts": 1,
   "first_diff": null,
@@ -2285,6 +2306,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "DynamicVectorClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x477f40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIClass::parseSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -5403,6 +5431,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4fbd80": {
+  "attempts": 1,
+  "first_diff": "+12 mov dl, byte ptr [eax + 0x4fbe0c]",
+  "name": "sub_4FBD80",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4fc6d0": {
   "attempts": 9,
   "first_diff": null,
@@ -5429,6 +5464,13 @@
   "first_diff": "+0 sub esp, 0xc",
   "name": "sub_4FFD50",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
+ "0x5007a0": {
+  "attempts": 1,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "Sidebar::Dispatch",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x501160": {
@@ -6922,6 +6964,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x550000": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Game::loadCampaignData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x551330": {
   "attempts": 1,
   "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
@@ -7370,6 +7419,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x56bbe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CrateClass::Update",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x56bd40": {
   "attempts": 9,
   "first_diff": null,
@@ -7418,6 +7474,13 @@
   "name": "globalHelper_074600",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x578080": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Cell::GetGroundHeight",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x578290": {
   "attempts": 8,
@@ -7712,6 +7775,13 @@
   "name": "Map_Check",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x5a4fa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_5A4FA0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5ac550": {
   "attempts": 1,
@@ -9680,6 +9750,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x633f20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamClass::GetNextScriptAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x634290": {
   "attempts": 1,
   "first_diff": null,
@@ -9831,6 +9908,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_63D2D0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x63d400": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DSurface::DrawMarker",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10870,6 +10954,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x69d960": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SHA1::Process",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x69db30": {
   "attempts": 10,
   "first_diff": null,
@@ -10890,6 +10981,13 @@
   "name": "SHA1::Reset",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
+ },
+ "0x69e930": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MixFileClass::CacheNode_Dtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x69eb10": {
   "attempts": 1,
@@ -11161,6 +11259,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "AbstractClass::checkAIResources",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6b1d40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SliderClass::GetValue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11848,6 +11953,13 @@
   "first_diff": "+0 sub esp, 8",
   "name": "TacticalClass::SetViewportPosition",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
+ "0x6d6000": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 8",
+  "name": "TacticalMapClass::SetCameraPosition",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x6d6070": {
@@ -13299,6 +13411,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x730990": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SidebarHasAvailableUnit",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x730ad0": {
   "attempts": 1,
   "first_diff": null,
@@ -14608,6 +14727,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x77a7c0": {
+  "attempts": 1,
+  "first_diff": "+91 je 0x77a82e",
+  "name": "WOLGameList::UpdatePlayerStats",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x77b100": {
   "attempts": 1,
   "first_diff": null,
@@ -14985,6 +15111,13 @@
   "name": "VectorClass_PAE::Count",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7b48d0": {
+  "attempts": 1,
+  "first_diff": "+9 je 0x7b48e4",
+  "name": "String::Assign_Alt",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x7b4940": {
   "attempts": 6,
@@ -15685,6 +15818,13 @@
   "name": "0x7cf3a5",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7d1311": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "__isctype",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7d1512": {
   "attempts": 6,

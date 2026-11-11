@@ -1,0 +1,11 @@
+{
+ "addr": "0x4061D0",
+ "name": "AudioMixer::PlayBuffer",
+ "size": 115,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4061D0",
+ "bytes_hex": "8b411c83f8038bc2752f81fa004000007607b800400000eb0685d27d0233c08b51248b521cc1ea100fafd0c1ea0e81c1b8000000e9670f000081fa004000007607b800400000eb0685d27d0233c0568db1b80000008b49248b511c8bcec1ea100fafd0c1ea0ee8150f00008bce5ee97d0f0000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

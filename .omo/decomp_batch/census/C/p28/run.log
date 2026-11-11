@@ -1,0 +1,104 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b48d0 String::Assign_Alt -> String
+[conv] 0x6d6000 TacticalClass::SetCameraPosition -> TacticalClass
+[conv] 0x56bbe0 MapClass::Update -> MapClass
+[conv] 0x474940 ObjectTypeClass::loadTypeMember_5474940 -> ObjectTypeClass
+[conv] 0x5007a0 Sidebar::Dispatch -> Sidebar
+[conv] 0x730990 ObjectClass::SidebarHasAvailableUnit -> ObjectClass
+[conv] 0x63d400 DSurface::DrawMarker -> DSurface
+[conv] 0x4061d0 unknown::PlayBuffer -> unknown
+[conv] 0x550000 Game::loadCampaignData -> Game
+[conv] 0x7d1311 unknown::__isctype -> unknown
+[conv] 0x5a4fa0 unknown::sub_5A4FA0 -> unknown
+[conv] 0x6b1d40 SliderClass::GetValue -> SliderClass
+[conv] 0x4129c0 DynamicArray::AddFromList -> DynamicArray
+[conv] 0x4fbd80 ObjectClass::sub_4FBD80 -> ObjectClass
+[conv] 0x578080 unknown::GetGroundHeight -> unknown
+[conv] 0x69d960 SHA1::Process -> SHA1
+[conv] 0x69e930 MixFileClass::CacheNode_Dtor -> MixFileClass
+[conv] 0x633f20 TeamClass::GetNextScriptAction -> TeamClass
+[conv] 0x477f40 INIClass::parseSection -> INIClass
+[conv] 0x77a7c0 WOLGameList::UpdatePlayerStats -> WOLGameList
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] String                   rc=0
+[era] TacticalClass            rc=0
+[era] MapClass                 rc=2
+[era] ObjectTypeClass          rc=2
+[era] Sidebar                  rc=0
+[era] ObjectClass              rc=2
+[era] DSurface                 rc=2
+[era] unknown                  rc=2
+[era] Game                     rc=2
+[era] SliderClass              rc=2
+[era] DynamicArray             rc=0
+[era] SHA1                     rc=2
+[era] MixFileClass             rc=2
+[era] TeamClass                rc=2
+[era] INIClass                 rc=2
+[era] WOLGameList              rc=0
+=== diffasm byte-compare ===
+[diff] 0x7b48d0   MISMATCH         String::Assign_Alt
+[diff] 0x6d6000   MISMATCH         TacticalClass::SetCameraPosition
+[diff] 0x5007a0   MISMATCH         Sidebar::Dispatch
+[diff] 0x4fbd80   MISMATCH         ObjectClass::sub_4FBD80
+[diff] 0x4061d0   MISMATCH         unknown::PlayBuffer
+[diff] 0x4129c0   MISMATCH         DynamicArray::AddFromList
+[diff] 0x77a7c0   MISMATCH         WOLGameList::UpdatePlayerStats
+[ledger] 0x7b48d0 String::Assign_Alt -> NG (attempt 1)
+[ledger] 0x6d6000 TacticalMapClass::SetCameraPosition -> NG (attempt 1)
+[ledger] 0x56bbe0 CrateClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x474940 ObjectTypeClass::loadTypeMember_5474940 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5007a0 Sidebar::Dispatch -> NG (attempt 1)
+[ledger] 0x730990 SidebarHasAvailableUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63d400 DSurface::DrawMarker -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4061d0 AudioMixer::PlayBuffer -> NG (attempt 1)
+[ledger] 0x550000 Game::loadCampaignData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d1311 __isctype -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a4fa0 sub_5A4FA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1d40 SliderClass::GetValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4129c0 DynamicArray::AddFromList -> NG (attempt 1)
+[ledger] 0x4fbd80 sub_4FBD80 -> NG (attempt 1)
+[ledger] 0x578080 Cell::GetGroundHeight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d960 SHA1::Process -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69e930 MixFileClass::CacheNode_Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x633f20 TeamClass::GetNextScriptAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x477f40 INIClass::parseSection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77a7c0 WOLGameList::UpdatePlayerStats -> NG (attempt 1)
+======================================================================
+{
+ "total": 2259,
+ "verdicts": {
+  "MISMATCH": 618,
+  "MATCH": 521,
+  "COMPILE_FAIL": 611,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 495,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 10,
+  "codegen_shape": 193,
+  "ret_norm": 7,
+  "frame_sched": 67,
+  "const_fold": 66,
+  "branch_polarity": 45,
+  "regalloc": 101,
+  "branch_order": 77,
+  "width_mismatch": 8,
+  "extern_reloc": 18,
+  "cc_mismatch": 24,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 45.7,
+ "match_rate_of_total_pct": 23.1,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p28\batch_report.json

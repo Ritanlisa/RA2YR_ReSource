@@ -1,0 +1,11 @@
+{
+ "addr": "0x77A7C0",
+ "name": "WOLGameList::UpdatePlayerStats",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77A7C0",
+ "bytes_hex": "53568b74240c578b792432c08b561cb3013bd774088951248859088ac38b56108b79283bd774088951288859088ac38b56088b792c3bd7740889512c8859088ac38b560c8b79303bd774088951308859088ac38b76208b51343bf27411897134885908e8a8fcffff5f5e5bc2040084c07405e899fcffff5f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

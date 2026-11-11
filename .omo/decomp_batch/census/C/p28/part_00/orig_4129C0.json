@@ -1,0 +1,11 @@
+{
+ "addr": "0x4129C0",
+ "name": "DynamicArray::AddFromList",
+ "size": 119,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4129C0",
+ "bytes_hex": "8b442404535733db8d04408d3cc18b44c11085c08944240c7e5855568db1802500008b17538bcfff52188b4e108be88b46083bc87c228a4e0d84c9750485c075268b4e1485c97e1f8b1603c86a00518bceff520884c0740f8b46108b56048d4801894e10892c828b442414433bd87cb25e5d5f5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

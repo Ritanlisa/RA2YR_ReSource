@@ -1,0 +1,21 @@
+{
+ "symbol": "?Dispatch@Sidebar@@QAEDHDHD@Z",
+ "sym_key": "Sidebar::Dispatch",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "8b54240453568ac28d72fffec883fe2777568a54241833db8a9e00000000ff249d000000008a5424185e8891d05300005bc210008a4424185e8881d85300008881d45300005bc210008891d15300008a44241084c0740b5e8891d35300005bc210008891d25300005e5bc21000",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "$L1160",
+   "sym_key": "$L1160"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "$L1161",
+   "sym_key": "$L1161"
+  }
+ ]
+}

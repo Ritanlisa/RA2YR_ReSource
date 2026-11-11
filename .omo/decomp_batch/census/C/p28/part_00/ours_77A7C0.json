@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdatePlayerStats@WOLGameList@@QAEDPAH@Z",
+ "sym_key": "WOLGameList::UpdatePlayerStats",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c578b792432c08b561cb3013bd774088951248859088ac38b56108b79283bd774088951288859088ac38b56088b792c3bd7740889512c8859088ac38b560c8b79303bd774088951308859088ac38b76208b51343bf2750a84c0750c5f5e5bc20400897134885908e8000000005f5e5bc20400",
+ "relocs": [
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?FormatDateTime@WOLPersona@@QAEFXZ",
+   "sym_key": "WOLPersona::FormatDateTime"
+  }
+ ]
+}

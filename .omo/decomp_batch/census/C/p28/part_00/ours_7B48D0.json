@@ -1,0 +1,21 @@
+{
+ "symbol": "?Assign_Alt@String@@QAEPAPAXPBD@Z",
+ "sym_key": "String::Assign_Alt",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "538bd956578b0385c0740b8b0050e80000000083c4048b742410c7030000000085f6740d8bfe83c9ff33c0f2aef7d1eb05b90100000051e80000000083c404890385f6c6000074218bfe83c9ff33c08b13f2aef7d12bf98bc18bf78b3ac1e902f3a58bc883e103f3a45f8bc35e5bc20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?PlayBuffer@unknown@@QAIHPAHI@Z",
+ "sym_key": "unknown::PlayBuffer",
+ "size": 107,
+ "link_base": 0,
+ "bytes_hex": "8b4c24048bc283781c03752a81f9004000007605b9004000008b50248b521cc1ea100fafd1c1ea0e8d88b8000000e800000000c2040081f9004000007605b900400000568db0b80000008b40248b501cc1ea100fafd1c1ea0e8bcee8000000008bcee8000000005ec20400",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?EndBufferMixer@@YIHPAXH@Z",
+   "sym_key": "EndBufferMixer"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?PlaySample@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::PlaySample"
+  }
+ ]
+}
