@@ -34806,6 +34806,28 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x65afc0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0798]",
+  "name": "sub_65AFC0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_65AFC0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x65afe0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0798]",
+  "name": "sub_65AFE0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_65AFE0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x65b000": {
   "attempts": 2,
   "first_diff": "+0 fld qword ptr [0x7f0798]",
@@ -35175,6 +35197,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x65d730": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0968]",
+  "name": "sub_65D730",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_65D730",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x65d750": {
   "attempts": 1,
   "clean": false,
@@ -35182,6 +35215,17 @@
   "name": "sub_65D750",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_65D750",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x65d770": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0968]",
+  "name": "sub_65D770",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_65D770",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -35266,6 +35310,39 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x65f3a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0978]",
+  "name": "sub_65F3A0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_65F3A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x65f3c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0978]",
+  "name": "sub_65F3C0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_65F3C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x65f3e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0978]",
+  "name": "sub_65F3E0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_65F3E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x65f4d0": {
   "attempts": 1,
   "clean": true,
@@ -35306,6 +35383,28 @@
   "name": "sub_65F7F0",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_65F7F0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x65f810": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0988]",
+  "name": "sub_65F810",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_65F810",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x65f830": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0988]",
+  "name": "sub_65F830",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_65F830",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -35524,6 +35623,39 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x661d20": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0b10]",
+  "name": "sub_661D20",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_661D20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x661d40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0b10]",
+  "name": "sub_661D40",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_661D40",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x661d60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0b10]",
+  "name": "sub_661D60",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_661D60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x661d80": {
   "attempts": 1,
   "first_diff": null,
@@ -35623,6 +35755,39 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x663660": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0c20]",
+  "name": "sub_663660",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_663660",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x663680": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0c20]",
+  "name": "sub_663680",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_663680",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6636a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0c20]",
+  "name": "sub_6636A0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_6636A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x663790": {
   "attempts": 1,
   "clean": true,
@@ -35717,6 +35882,39 @@
   "name": "sub_664B60",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_664B60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x664b80": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0c70]",
+  "name": "sub_664B80",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_664B80",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x664ba0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0c70]",
+  "name": "sub_664BA0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_664BA0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x664bc0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0c70]",
+  "name": "sub_664BC0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_664BC0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -35922,6 +36120,28 @@
   "name": "sub_67C510",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x67c530": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0e30]",
+  "name": "sub_67C530",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_67C530",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x67c550": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7f0e30]",
+  "name": "sub_67C550",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_67C550",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x67c610": {
   "attempts": 2,
