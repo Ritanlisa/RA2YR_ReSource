@@ -1,0 +1,455 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "branch_order": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x4e90b0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4e90bc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_ParticleTypeClass::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVParticleTypeClass::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVParticleTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4e9110",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4e911c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_ParticleTypeClass::GetItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAVParticleSystemTypeClass::GetItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVParticleSystemTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4e9170",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4e917c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_ParticleTypeClass::GetItemIndex_1",
+   "emitted": "_DynamicVectorClass_PAVSuperWeaponTypeClass::GetItemIndex_1",
+   "unit": "_DynamicVectorClass_PAVSuperWeaponTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4e91d0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4e91dc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_SuperClass::GetItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAVAbstractTypeClass::GetItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVAbstractTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4e9360",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 28B",
+   "first_diff": {
+    "orig": "+5 jne 0x4e936c",
+    "ours": "+5 je 0x17"
+   },
+   "pathology": "branch_order",
+   "name": "HouseClass::vt_05",
+   "emitted": "VectorClass::vt_05",
+   "unit": "VectorClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 28,
+   "clean": false
+  },
+  {
+   "addr": "0x4e95c0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4e95cc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_Building::GetCapacity",
+   "emitted": "_VectorClass_PAVBuildingClass::GetCapacity",
+   "unit": "_VectorClass_PAVBuildingClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4e9820",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4e982c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_SuperClass::GetCapacity",
+   "emitted": "_VectorClass_PAVSuperClass::GetCapacity",
+   "unit": "_VectorClass_PAVSuperClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4e9a80",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4e9a8c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_AITriggerTypeClass::LoadTypeData",
+   "emitted": "_VectorClass_PAVAITriggerTypeClass::LoadTypeData",
+   "unit": "_VectorClass_PAVAITriggerTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4e9ce0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4e9cec",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_BuildingLightClass::GetCapacity",
+   "emitted": "_VectorClass_PAVBuildingLightClass::GetCapacity",
+   "unit": "_VectorClass_PAVBuildingLightClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4ea1a0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4ea1ac",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_TeamClass::GetCapacity",
+   "emitted": "_VectorClass_PAVTeamClass::GetCapacity",
+   "unit": "_VectorClass_PAVTeamClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4ea400",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4ea40c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_ThemeControl::Get",
+   "emitted": "_VectorClass_PAUThemeControl::Get",
+   "unit": "_VectorClass_PAUThemeControl",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4ea580",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4ea58c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_TriggerClass::GetCapacity",
+   "emitted": "_VectorClass_PAVTriggerClass::GetCapacity",
+   "unit": "_VectorClass_PAVTriggerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4ea7e0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4ea7ec",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_TriggerTypeClass::LoadTypeData",
+   "emitted": "_VectorClass_PAVTriggerTypeClass::LoadTypeData",
+   "unit": "_VectorClass_PAVTriggerTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4eaa40",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4eaa4c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_TubeClass::GetCapacity",
+   "emitted": "_VectorClass_PAVTubeClass::GetCapacity",
+   "unit": "_VectorClass_PAVTubeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4eaca0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4eacac",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_ParticleSystemClass::GetCapacity",
+   "emitted": "_VectorClass_PAVParticleSystemClass::GetCapacity",
+   "unit": "_VectorClass_PAVParticleSystemClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4eaf00",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4eaf0c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_WaveClass::GetCapacity",
+   "emitted": "_VectorClass_PAVWaveClass::GetCapacity",
+   "unit": "_VectorClass_PAVWaveClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb160",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4eb16c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_OverlayClass::GetCapacity",
+   "emitted": "_VectorClass_PAVOverlayClass::GetCapacity",
+   "unit": "_VectorClass_PAVOverlayClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb3c0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4eb3cc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "ParticleSystemClass_16::Read",
+   "emitted": "_VectorClass_PAVSmudgeClass::Read",
+   "unit": "_VectorClass_PAVSmudgeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb880",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4eb88c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_AircraftClass::GetCapacity",
+   "emitted": "_VectorClass_PAVAircraftClass::GetCapacity",
+   "unit": "_VectorClass_PAVAircraftClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4ebae0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4ebaec",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_UnitClass::GetCapacity",
+   "emitted": "_VectorClass_PAVUnitClass::GetCapacity",
+   "unit": "_VectorClass_PAVUnitClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  }
+ ]
+}

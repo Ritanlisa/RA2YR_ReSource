@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p179\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e90b0 _DynamicVectorClass_PAVParticleTypeClass::GetItemIndex -> _DynamicVectorClass_PAVParticleTypeClass
+[conv] 0x4e9110 _DynamicVectorClass_PAVParticleSystemTypeClass::GetItemIndex_0 -> _DynamicVectorClass_PAVParticleSystemTypeClass
+[conv] 0x4e9170 _DynamicVectorClass_PAVSuperWeaponTypeClass::GetItemIndex_1 -> _DynamicVectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4e91d0 _DynamicVectorClass_PAVAbstractTypeClass::GetItemIndex_0 -> _DynamicVectorClass_PAVAbstractTypeClass
+[conv] 0x4e9360 VectorClass::vt_05 -> VectorClass
+[conv] 0x4e95c0 _VectorClass_PAVBuildingClass::GetCapacity -> _VectorClass_PAVBuildingClass
+[conv] 0x4e9820 _VectorClass_PAVSuperClass::GetCapacity -> _VectorClass_PAVSuperClass
+[conv] 0x4e9a80 _VectorClass_PAVAITriggerTypeClass::LoadTypeData -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4e9ce0 _VectorClass_PAVBuildingLightClass::GetCapacity -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4ea1a0 _VectorClass_PAVTeamClass::GetCapacity -> _VectorClass_PAVTeamClass
+[conv] 0x4ea400 _VectorClass_PAUThemeControl::Get -> _VectorClass_PAUThemeControl
+[conv] 0x4ea580 _VectorClass_PAVTriggerClass::GetCapacity -> _VectorClass_PAVTriggerClass
+[conv] 0x4ea7e0 _VectorClass_PAVTriggerTypeClass::LoadTypeData -> _VectorClass_PAVTriggerTypeClass
+[conv] 0x4eaa40 _VectorClass_PAVTubeClass::GetCapacity -> _VectorClass_PAVTubeClass
+[conv] 0x4eaca0 _VectorClass_PAVParticleSystemClass::GetCapacity -> _VectorClass_PAVParticleSystemClass
+[conv] 0x4eaf00 _VectorClass_PAVWaveClass::GetCapacity -> _VectorClass_PAVWaveClass
+[conv] 0x4eb160 _VectorClass_PAVOverlayClass::GetCapacity -> _VectorClass_PAVOverlayClass
+[conv] 0x4eb3c0 _VectorClass_PAVSmudgeClass::Read -> _VectorClass_PAVSmudgeClass
+[conv] 0x4eb880 _VectorClass_PAVAircraftClass::GetCapacity -> _VectorClass_PAVAircraftClass
+[conv] 0x4ebae0 _VectorClass_PAVUnitClass::GetCapacity -> _VectorClass_PAVUnitClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVParticleTypeClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemTypeClass rc=0
+[era] _DynamicVectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _DynamicVectorClass_PAVAbstractTypeClass rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVBuildingClass rc=0
+[era] _VectorClass_PAVSuperClass rc=0
+[era] _VectorClass_PAVAITriggerTypeClass rc=0
+[era] _VectorClass_PAVBuildingLightClass rc=0
+[era] _VectorClass_PAVTeamClass rc=0
+[era] _VectorClass_PAUThemeControl rc=0
+[era] _VectorClass_PAVTriggerClass rc=0
+[era] _VectorClass_PAVTriggerTypeClass rc=0
+[era] _VectorClass_PAVTubeClass rc=0
+[era] _VectorClass_PAVParticleSystemClass rc=0
+[era] _VectorClass_PAVWaveClass rc=0
+[era] _VectorClass_PAVOverlayClass rc=0
+[era] _VectorClass_PAVSmudgeClass rc=0
+[era] _VectorClass_PAVAircraftClass rc=0
+[era] _VectorClass_PAVUnitClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e90b0   MISMATCH         _DynamicVectorClass_PAVParticleTypeClass::GetItemIndex
+[diff] 0x4e9110   MISMATCH         _DynamicVectorClass_PAVParticleSystemTypeClass::GetItemIndex_0
+[diff] 0x4e9170   MISMATCH         _DynamicVectorClass_PAVSuperWeaponTypeClass::GetItemIndex_1
+[diff] 0x4e91d0   MISMATCH         _DynamicVectorClass_PAVAbstractTypeClass::GetItemIndex_0
+[diff] 0x4e9360   MISMATCH         VectorClass::vt_05
+[diff] 0x4e95c0   MISMATCH         _VectorClass_PAVBuildingClass::GetCapacity
+[diff] 0x4e9820   MISMATCH         _VectorClass_PAVSuperClass::GetCapacity
+[diff] 0x4e9a80   MISMATCH         _VectorClass_PAVAITriggerTypeClass::LoadTypeData
+[diff] 0x4e9ce0   MISMATCH         _VectorClass_PAVBuildingLightClass::GetCapacity
+[diff] 0x4ea1a0   MISMATCH         _VectorClass_PAVTeamClass::GetCapacity
+[diff] 0x4ea400   MISMATCH         _VectorClass_PAUThemeControl::Get
+[diff] 0x4ea580   MISMATCH         _VectorClass_PAVTriggerClass::GetCapacity
+[diff] 0x4ea7e0   MISMATCH         _VectorClass_PAVTriggerTypeClass::LoadTypeData
+[diff] 0x4eaa40   MISMATCH         _VectorClass_PAVTubeClass::GetCapacity
+[diff] 0x4eaca0   MISMATCH         _VectorClass_PAVParticleSystemClass::GetCapacity
+[diff] 0x4eaf00   MISMATCH         _VectorClass_PAVWaveClass::GetCapacity
+[diff] 0x4eb160   MISMATCH         _VectorClass_PAVOverlayClass::GetCapacity
+[diff] 0x4eb3c0   MISMATCH         _VectorClass_PAVSmudgeClass::Read
+[diff] 0x4eb880   MISMATCH         _VectorClass_PAVAircraftClass::GetCapacity
+[diff] 0x4ebae0   MISMATCH         _VectorClass_PAVUnitClass::GetCapacity
+[ledger] 0x4e90b0 _DynamicVectorClass_PAVParticleTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e9110 _DynamicVectorClass_PAVParticleSystemTypeClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e9170 _DynamicVectorClass_PAVSuperWeaponTypeClass::GetItemIndex_1 -> NG (attempt 1)
+[ledger] 0x4e91d0 _DynamicVectorClass_PAVAbstractTypeClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e9360 VectorClass::vt_05 -> NG (attempt 1)
+[ledger] 0x4e95c0 _VectorClass_PAVBuildingClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4e9820 _VectorClass_PAVSuperClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4e9a80 _VectorClass_PAVAITriggerTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4e9ce0 _VectorClass_PAVBuildingLightClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4ea1a0 _VectorClass_PAVTeamClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4ea400 _VectorClass_PAUThemeControl::Get -> NG (attempt 1)
+[ledger] 0x4ea580 _VectorClass_PAVTriggerClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4ea7e0 _VectorClass_PAVTriggerTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4eaa40 _VectorClass_PAVTubeClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4eaca0 _VectorClass_PAVParticleSystemClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4eaf00 _VectorClass_PAVWaveClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4eb160 _VectorClass_PAVOverlayClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4eb3c0 _VectorClass_PAVSmudgeClass::Read -> NG (attempt 1)
+[ledger] 0x4eb880 _VectorClass_PAVAircraftClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4ebae0 _VectorClass_PAVUnitClass::GetCapacity -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_order": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p179\batch_report.json
