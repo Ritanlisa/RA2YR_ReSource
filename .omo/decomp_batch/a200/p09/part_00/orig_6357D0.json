@@ -1,0 +1,11 @@
+{
+ "addr": "0x6357D0",
+ "name": "ShrinkRect",
+ "size": 81,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6357D0",
+ "bytes_hex": "8d04125785c07d273b41087d053b410c7c1dc70100000000c7410400000000c7410800000000c7410c000000005fc38b39568b71042bfa89398b79082bf28b510c03f889710403d08979085e89510c5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x49eb50 _VectorClass_PAV_DynamicVectorClass_PAD::Add -> _VectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x4ebbe0 _VectorClass_PAVHouseClass::Add -> _VectorClass_PAVHouseClass
+[conv] 0x5133e0 _VectorClass_PBVAircraftTypeClass::AddRef -> _VectorClass_PBVAircraftTypeClass
+[conv] 0x5d27e0 _VectorClass_PAVMSAnim::FindItemIndex -> _VectorClass_PAVMSAnim
+[conv] 0x6b84e0 _VectorClass_PAVSpawnManagerClass::Add -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x54f1c0 EventBuffer::Enqueue -> EventBuffer
+[conv] 0x4f4bb0 GScreenClass::Count -> GScreenClass
+[conv] 0x50f330 _VectorClass_UScoutStruct::GetSize -> _VectorClass_UScoutStruct
+[conv] 0x54a990 ObjectClass::sub_54A990 -> ObjectClass
+[conv] 0x6347b0 BuildingClass::GetTypeEntry -> BuildingClass
+[conv] 0x6357d0 ShrinkRect -> _addr_63
+[conv] 0x7d75e0 _memset -> _addr_7D
+[conv] 0x4a5150 MovementAI::IsProgressAtEnd -> MovementAI
+[conv] 0x5b3570 MissionClass::NextMission -> MissionClass
+[conv] 0x4e59a0 Dialog::OptionIDToIndex -> Dialog
+[conv] 0x6593f0 RadBeam::InitState -> RadBeam
+[conv] 0x621150 sub_621150 -> _addr_62
+[conv] 0x6d9ef0 TacticalClass::AddToDrawQueue -> TacticalClass
+[conv] 0x4933d0 _BlitTransLucent25ZReadWarp_G::sub_4933D0 -> _BlitTransLucent25ZReadWarp_G
+[conv] 0x7bd5c0 sub_7BD5C0 -> _addr_7B
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=2
+[era] _VectorClass_PAVHouseClass rc=2
+[era] _VectorClass_PBVAircraftTypeClass rc=2
+[era] _VectorClass_PAVMSAnim   rc=2
+[era] _VectorClass_PAVSpawnManagerClass rc=2
+[era] EventBuffer              rc=0
+[era] GScreenClass             rc=0
+[era] _VectorClass_UScoutStruct rc=0
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=0
+[era] _addr_63                 rc=0
+[era] _addr_7D                 rc=2
+[era] MovementAI               rc=0
+[era] MissionClass             rc=0
+[era] Dialog                   rc=0
+[era] RadBeam                  rc=2
+[era] _addr_62                 rc=0
+[era] TacticalClass            rc=2
+[era] _BlitTransLucent25ZReadWarp_G rc=2
+[era] _addr_7B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x54f1c0   MISMATCH         EventBuffer::Enqueue
+[diff] 0x4f4bb0   MISMATCH         GScreenClass::Count
+[diff] 0x50f330   MISMATCH         _VectorClass_UScoutStruct::GetSize
+[diff] 0x6347b0   MISMATCH         BuildingClass::GetTypeEntry
+[diff] 0x6357d0   MISMATCH         ShrinkRect
+[diff] 0x4a5150   MISMATCH         MovementAI::IsProgressAtEnd
+[diff] 0x5b3570   MISMATCH         MissionClass::NextMission
+[diff] 0x4e59a0   MISMATCH         Dialog::OptionIDToIndex
+[diff] 0x621150   MISMATCH         sub_621150
+[diff] 0x7bd5c0   MISMATCH         sub_7BD5C0
+[ledger] 0x49eb50 _VectorClass_PAV_DynamicVectorClass_PAD::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebbe0 _VectorClass_PAVHouseClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5133e0 _VectorClass_PBVAircraftTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d27e0 _VectorClass_PAVMSAnim::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b84e0 _VectorClass_PAVSpawnManagerClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54f1c0 EventBuffer::Enqueue -> NG (attempt 1)
+[ledger] 0x4f4bb0 GScreenClass::Count -> NG (attempt 1)
+[ledger] 0x50f330 _VectorClass_UScoutStruct::GetSize -> NG (attempt 1)
+[ledger] 0x54a990 ObjectClass::sub_54A990 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6347b0 BuildingClass::GetTypeEntry -> NG (attempt 1)
+[ledger] 0x6357d0 ShrinkRect -> NG (attempt 1)
+[ledger] 0x7d75e0 _memset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a5150 MovementAI::IsProgressAtEnd -> NG (attempt 1)
+[ledger] 0x5b3570 MissionClass::NextMission -> NG (attempt 1)
+[ledger] 0x4e59a0 Dialog::OptionIDToIndex -> NG (attempt 1)
+[ledger] 0x6593f0 RadBeam::InitState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x621150 sub_621150 -> NG (attempt 1)
+[ledger] 0x6d9ef0 TacticalClass::AddToDrawQueue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4933d0 _BlitTransLucent25ZReadWarp_G::sub_4933D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bd5c0 sub_7BD5C0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "branch_order": 3,
+  "extern_reloc": 2,
+  "codegen_shape": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p09\batch_report.json

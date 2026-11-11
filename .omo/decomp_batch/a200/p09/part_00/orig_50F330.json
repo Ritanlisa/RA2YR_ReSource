@@ -1,0 +1,11 @@
+{
+ "addr": "0x50F330",
+ "name": "VectorClass_UScoutStruct::GetSize",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50F330",
+ "bytes_hex": "8a410c53555684c05775095f5e5d33c05bc204008b710833c085f67e1f8b7c24148b49048b2f3929750a8a51048a5f043ad3740b4083c1083bc67cea83c8ff5f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

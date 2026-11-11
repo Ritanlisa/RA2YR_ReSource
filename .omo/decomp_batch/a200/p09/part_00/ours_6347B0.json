@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeEntry@BuildingClass@@QAEHH@Z",
+ "sym_key": "BuildingClass::GetTypeEntry",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "5355568b711033c05785f67e248b79048b5c24148bd78b2a395d0074184083c2043bc67d0c8b2a395d0075f183f8ff750433c0eb038b04878b40085f5e5d83f8ff5b74098b49388b0481c2040033c0c20400",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6347B0",
+ "name": "BuildingClass::GetTypeEntry",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6347B0",
+ "bytes_hex": "5355568b711033c05785f67e218b79048b5c24148bd78b2a395d00740c4083c2043bc67cf133c0eb0c83f8ff750433c0eb038b04878b50085f33c05e5d83faff5b74068b41248b0490c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

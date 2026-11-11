@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B3570",
+ "name": "MissionClass::NextMission",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B3570",
+ "bytes_hex": "8b81b400000083ec0c83f8ff744e568981ac000000c781b4000000ffffffffa184eda8008db1c800000033d28991bc00000089068b442408894604895608a184eda8008981c00000008991c40000008891b8000000b0015e83c40cc332c083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

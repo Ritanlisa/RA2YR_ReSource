@@ -1,0 +1,15 @@
+{
+ "symbol": "?Count@GScreenClass@@QAEXHH@Z",
+ "sym_key": "GScreenClass::Count",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "f605000000000175368b510485d27c097e0fb801000000eb0383c8ff2bc28941048b410885c07c0f7e15ba010000002bd0895108c2080083caff2bd0895108c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

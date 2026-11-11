@@ -1,0 +1,21 @@
+{
+ "symbol": "?NextMission@MissionClass@@QAEEXZ",
+ "sym_key": "MissionClass::NextMission",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "518b81b400000083f8ff7507b800ffffff59c38981ac000000c781b4000000ffffffffa10000000033d28981c80000008b4424008991bc0000008981cc0000008991d0000000a1000000008981c000000024018991c40000008891b80000000c0159c3",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

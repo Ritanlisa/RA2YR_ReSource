@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A5150",
+ "name": "MovementAI::IsProgressAtEnd",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A5150",
+ "bytes_hex": "8a411883ec0884c056744a8b711485f689742408743f8b51088b411083faff74128b0d84eda8002bca3bc87d042bc1eb0233c02bf089742404db442404da742408dc1d18177e00dfe0f6c440750732c05e83c408c3b0015e83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

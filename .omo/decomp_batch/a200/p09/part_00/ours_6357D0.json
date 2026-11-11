@@ -1,0 +1,8 @@
+{
+ "symbol": "?ShrinkRect@@YIHPAHH@Z",
+ "sym_key": "Unnamed::ShrinkRect",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "f7c200000040568d041274193b41087d053b410c7c0f33d25e891189510489510889510cc38b312bf289318b71042bf28b510c8971048b710803f003d089710889510c5ec3",
+ "relocs": []
+}

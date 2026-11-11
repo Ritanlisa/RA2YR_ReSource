@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E59A0",
+ "name": "Dialog::OptionIDToIndex",
+ "size": 105,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E59A0",
+ "bytes_hex": "8bc13d6d070000750333c0c33d6e0700007506b801000000c33d6f0700007506b802000000c33d700700007506b803000000c33d710700007506b804000000c33d720700007506b805000000c33d730700007506b806000000c32d74070000f7d81bc024f883c007c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

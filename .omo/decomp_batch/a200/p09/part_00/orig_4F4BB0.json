@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F4BB0",
+ "name": "VectorCursor_uint_DynamicVectorClass_uint____13::Count",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F4BB0",
+ "bytes_hex": "f60584eda8000175368b410485c07d0583caffeb077e0aba010000002bd08951048b410885c07d0b83caff2bd0895108c208007e0aba010000002bd0895108c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

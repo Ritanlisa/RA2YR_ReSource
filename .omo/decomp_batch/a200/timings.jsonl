@@ -7,3 +7,4 @@
 {"part": 6, "n": 20, "seconds": 14.0, "ok": true, "verdicts": {"MATCH": 1, "MISMATCH": 19}}
 {"part": 7, "n": 20, "seconds": 11.6, "ok": true, "verdicts": {"MISMATCH": 11, "COMPILE_FAIL": 8, "MATCH": 1}}
 {"part": 8, "n": 20, "seconds": 14.2, "ok": true, "verdicts": {"MISMATCH": 6, "COMPILE_FAIL": 14}}
+{"part": 9, "n": 20, "seconds": 11.9, "ok": true, "verdicts": {"COMPILE_FAIL": 10, "MISMATCH": 10}}

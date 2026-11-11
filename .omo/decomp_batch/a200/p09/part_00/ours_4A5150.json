@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsProgressAtEnd@MovementAI@@QAE_NXZ",
+ "sym_key": "MovementAI::IsProgressAtEnd",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "8a411883ec0884c07506b00183c408c38b511485d2895424047506b00183c408c38b41088b491083f8ff5674188b3500000000578bfe2bf83bf95f720433c9eb042bc603c82bd15e89542400db442400da742404dc1d00000000dfe0f6c4407409b80100000083c408c333c083c408c3",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  }
+ ]
+}
