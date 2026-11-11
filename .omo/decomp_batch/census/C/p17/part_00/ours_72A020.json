@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckStateWithOverride@TunnelLocomotionClass@@QAGHH@Z",
+ "sym_key": "TunnelLocomotionClass::CheckStateWithOverride",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "8b4c24048b411483f803741d83f802741883f807741383f806740e83f805740951e800000000c20800b802000000c20800",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?JumpjetLocomotionClass__CheckState@@YGHPAX@Z",
+   "sym_key": "JumpjetLocomotionClass__CheckState"
+  }
+ ]
+}

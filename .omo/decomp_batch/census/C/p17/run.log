@@ -1,0 +1,68 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x72a020 TunnelLocomotionClass::CheckStateWithOverride -> TunnelLocomotionClass
+[conv] 0x41c380 Coord::Length -> Coord
+[conv] 0x661d80 Animation::UpdateBobOffset -> Animation
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TunnelLocomotionClass    rc=0
+[era] Coord                    rc=2
+[era] Animation                rc=2
+=== diffasm byte-compare ===
+[diff] 0x72a020   MISMATCH         TunnelLocomotionClass::CheckStateWithOverride
+[ledger] 0x72a020 JumpjetLocomotionClass::CheckStateWithOverride -> NG (attempt 1)
+[ledger] 0x41c380 Coord::Length -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40db70 0x40db70 -> PENDING (attempt 1)
+[ledger] 0x41e230 0x41e230 -> PENDING (attempt 1)
+[ledger] 0x43b010 0x43b010 -> PENDING (attempt 1)
+[ledger] 0x47b220 0x47b220 -> PENDING (attempt 1)
+[ledger] 0x4a6b30 0x4a6b30 -> PENDING (attempt 1)
+[ledger] 0x4c6430 0x4c6430 -> PENDING (attempt 1)
+[ledger] 0x4e63a0 0x4e63a0 -> PENDING (attempt 1)
+[ledger] 0x539420 0x539420 -> PENDING (attempt 1)
+[ledger] 0x551870 0x551870 -> PENDING (attempt 1)
+[ledger] 0x58b410 0x58b410 -> PENDING (attempt 1)
+[ledger] 0x5beba0 0x5beba0 -> PENDING (attempt 1)
+[ledger] 0x5d5980 0x5d5980 -> PENDING (attempt 1)
+[ledger] 0x5fc240 0x5fc240 -> PENDING (attempt 1)
+[ledger] 0x642860 0x642860 -> PENDING (attempt 1)
+[ledger] 0x661d80 Animation::UpdateBobOffset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69eb10 0x69eb10 -> PENDING (attempt 1)
+[ledger] 0x6c8d50 0x6c8d50 -> PENDING (attempt 1)
+[ledger] 0x6e8950 0x6e8950 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 2039,
+ "verdicts": {
+  "MISMATCH": 567,
+  "MATCH": 519,
+  "COMPILE_FAIL": 489,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 451,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 3
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 186,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 65,
+  "branch_polarity": 35,
+  "regalloc": 92,
+  "branch_order": 67,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 17,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 47.8,
+ "match_rate_of_total_pct": 25.5,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p17\batch_report.json

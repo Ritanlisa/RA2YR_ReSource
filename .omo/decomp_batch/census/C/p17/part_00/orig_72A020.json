@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A020",
+ "name": "JumpjetLocomotionClass::CheckStateWithOverride",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A020",
+ "bytes_hex": "8b4c24048b411483f803741d83f802741883f807741383f806740e83f805740951e86a0be3ffc20400b802000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
