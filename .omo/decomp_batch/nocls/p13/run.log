@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f1350 AppendStringBuilderChar -> _addr_5F
+[conv] 0x5f1440 sub_5F1440 -> _addr_5F
+[conv] 0x5f3800 sub_5F3800 -> _addr_5F
+[conv] 0x5f38a0 sub_5F38A0 -> _addr_5F
+[conv] 0x5f38c0 sub_5F38C0 -> _addr_5F
+[conv] 0x5f66a0 sub_5F66A0 -> _addr_5F
+[conv] 0x5f6f80 sub_5F6F80 -> _addr_5F
+[conv] 0x5fa100 sub_5FA100 -> _addr_5F
+[conv] 0x5fa160 sub_5FA160 -> _addr_5F
+[conv] 0x5fa210 sub_5FA210 -> _addr_5F
+[conv] 0x5fc240 sub_5FC240 -> _addr_5F
+[conv] 0x5ff070 sub_5FF070 -> _addr_5F
+[conv] 0x5ff130 sub_5FF130 -> _addr_5F
+[conv] 0x5ff1b0 sub_5FF1B0 -> _addr_5F
+[conv] 0x600390 sub_600390 -> _addr_60
+[conv] 0x600530 sub_600530 -> _addr_60
+[conv] 0x606740 SetDialogActiveFlag -> _addr_60
+[conv] 0x609cf0 sub_609CF0 -> _addr_60
+[conv] 0x629190 sub_629190 -> _addr_62
+[conv] 0x62b3d0 sub_62B3D0 -> _addr_62
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5F                 rc=2
+[era] _addr_60                 rc=2
+[era] _addr_62                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5f1350   MISMATCH         AppendStringBuilderChar
+[diff] 0x5f1440   MISMATCH         sub_5F1440
+[diff] 0x5f3800   MISMATCH         sub_5F3800
+[diff] 0x5f38a0   MATCH            sub_5F38A0
+[diff] 0x5f38c0   MISMATCH         sub_5F38C0
+[diff] 0x5f66a0   MISMATCH         sub_5F66A0
+[diff] 0x5f6f80   MATCH            sub_5F6F80
+[diff] 0x5fa100   MISMATCH         sub_5FA100
+[diff] 0x5fa160   MISMATCH         sub_5FA160
+[diff] 0x5fa210   MISMATCH         sub_5FA210
+[diff] 0x5ff070   MISMATCH         sub_5FF070
+[diff] 0x5ff1b0   MATCH            sub_5FF1B0
+[diff] 0x600390   MISMATCH         sub_600390
+[ledger] 0x5f1350 AppendStringBuilderChar -> NG (attempt 2)
+[ledger] 0x5f1440 sub_5F1440 -> NG (attempt 2)
+[ledger] 0x5f3800 sub_5F3800 -> NG (attempt 2)
+[ledger] 0x5f38a0 sub_5F38A0 -> OK (attempt 2)
+[ledger] 0x5f38c0 sub_5F38C0 -> NG (attempt 2)
+[ledger] 0x5f66a0 sub_5F66A0 -> NG (attempt 2)
+[ledger] 0x5f6f80 sub_5F6F80 -> OK (attempt 2)
+[ledger] 0x5fa100 sub_5FA100 -> NG (attempt 2)
+[ledger] 0x5fa160 sub_5FA160 -> NG (attempt 2)
+[ledger] 0x5fa210 sub_5FA210 -> NG (attempt 2)
+[ledger] 0x5fc240 sub_5FC240 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ff070 sub_5FF070 -> NG (attempt 2)
+[ledger] 0x5ff130 sub_5FF130 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ff1b0 sub_5FF1B0 -> OK (attempt 2)
+[ledger] 0x600390 sub_600390 -> NG (attempt 2)
+[ledger] 0x600530 sub_600530 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x606740 SetDialogActiveFlag -> COMPILE_FAIL (attempt 2)
+[ledger] 0x609cf0 sub_609CF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x629190 sub_629190 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62b3d0 sub_62B3D0 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "MATCH": 3,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "extern_reloc": 7,
+  "codegen_shape": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 23.1,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p13\batch_report.json

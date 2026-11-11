@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F1350",
+ "name": "AppendStringBuilderChar",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F1350",
+ "bytes_hex": "a180eaa8008d50ffa184eaa8003bc27d248b157ceaa800880c02a184eaa8008b0d7ceaa800c644010100a184eaa80040a384eaa800c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

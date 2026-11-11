@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x5f1350",
+  "batch": "nocls",
+  "name": "AppendStringBuilderChar",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x5f1440",
+  "batch": "nocls",
+  "name": "sub_5F1440",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5f3800",
+  "batch": "nocls",
+  "name": "sub_5F3800",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5f38a0",
+  "batch": "nocls",
+  "name": "sub_5F38A0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5f38c0",
+  "batch": "nocls",
+  "name": "sub_5F38C0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5f66a0",
+  "batch": "nocls",
+  "name": "sub_5F66A0",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x5f6f80",
+  "batch": "nocls",
+  "name": "sub_5F6F80",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5fa100",
+  "batch": "nocls",
+  "name": "sub_5FA100",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5fa160",
+  "batch": "nocls",
+  "name": "sub_5FA160",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5fa210",
+  "batch": "nocls",
+  "name": "sub_5FA210",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5fc240",
+  "batch": "nocls",
+  "name": "sub_5FC240",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5ff070",
+  "batch": "nocls",
+  "name": "sub_5FF070",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5ff130",
+  "batch": "nocls",
+  "name": "sub_5FF130",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5ff1b0",
+  "batch": "nocls",
+  "name": "sub_5FF1B0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x600390",
+  "batch": "nocls",
+  "name": "sub_600390",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x600530",
+  "batch": "nocls",
+  "name": "sub_600530",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x606740",
+  "batch": "nocls",
+  "name": "SetDialogActiveFlag",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x609cf0",
+  "batch": "nocls",
+  "name": "sub_609CF0",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x629190",
+  "batch": "nocls",
+  "name": "sub_629190",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x62b3d0",
+  "batch": "nocls",
+  "name": "sub_62B3D0",
+  "cc": "unknown"
+ }
+]
