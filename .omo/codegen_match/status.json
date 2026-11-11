@@ -3325,7 +3325,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x552b10": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Scenario::ComputeDisplayPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3346,21 +3346,21 @@
   "status": "OK"
  },
  "0x556620": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "ObjectClass::GetWidth",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x556630": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "ObjectClass::GetHeight",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x556a20": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ObjectClass::checkLimbo",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3374,7 +3374,7 @@
   "status": "OK"
  },
  "0x557d20": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "ListClass::Destru_vt50",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3395,7 +3395,7 @@
   "status": "OK"
  },
  "0x55a9b0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "LocomotionClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3472,7 +3472,7 @@
   "status": "OK"
  },
  "0x55af40": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "RadarClass::SetGlobal",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3493,7 +3493,7 @@
   "status": "NG"
  },
  "0x56bd40": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "CrateClass::FindPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3507,14 +3507,14 @@
   "status": "NG"
  },
  "0x56d230": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "MapClass::GetTileIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x56d460": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Cell::SetRadar",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3542,28 +3542,28 @@
   "status": "NG"
  },
  "0x578390": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "MapClass::IsRectInBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578460": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "LayerClass::IsWithinUsableArea",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578540": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Type::CheckAmbiguity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578710": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "MapClass::SpiralSearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3584,7 +3584,7 @@
   "status": "NG"
  },
  "0x586360": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Cell::IsPassable",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3605,7 +3605,7 @@
   "status": "NG"
  },
  "0x586780": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "MapClass::IsAreaFree",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3619,7 +3619,7 @@
   "status": "NG"
  },
  "0x588ac0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "LayerClass::ClearFactoryCellAssignments",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3654,7 +3654,7 @@
   "status": "OK"
  },
  "0x58bb30": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ScenarioClass::CopyStartPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3703,7 +3703,7 @@
   "status": "NG"
  },
  "0x5b1aa0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3717,7 +3717,7 @@
   "status": "OK"
  },
  "0x5b2950": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+0 mov ax, word ptr [ecx]",
   "name": "Math::Sub16",
   "note": "decomp_batch r2: COMPILE_FAIL",
