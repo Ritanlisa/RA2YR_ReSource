@@ -173,7 +173,13 @@ def pass_param_rename(ctx):
     pnames = ctx.sig.get("param_names") or []
     if pnames or not ctx.sig.get("free"):
         n_par = len(pnames)
-        base = 2 if not ctx.sig.get("free") else 1
+        # R7.1: a1 is `this` only when the binary actually carries a
+        # receiver (thiscall ECX / proto names `this`).  A __stdcall
+        # leaf with args on the stack has NO this at a1 -- starting the
+        # map at 2 there shifted every param one slot
+        # (MapClass::CheckCellsBuildable: a2(loop bound) -> p0 declared
+        # `unsigned short *` -> C2446 '>=').
+        base = 2 if ctx.sig.get("this_at_a1") else 1
 
         def _amap(m):
             k = int(m.group(1))
@@ -185,7 +191,7 @@ def pass_param_rename(ctx):
             # map it to `this`, never leave it dangling (C2065).  A
             # WRITTEN a1 is a spilled ECX local, not this (this is
             # const) -- leave it (honest fail).
-            if k == 1 and not ctx.sig.get("free") and \
+            if k == 1 and ctx.sig.get("this_at_a1") and \
                     not re.search(r"\ba1\s*=[^=]", body) and re.search(
                         r"\(\s*a1\s*\+|a1\s*->|\*\([^)]*\)\s*\(?\s*a1\b"
                         r"|\ba1\s*\)",
@@ -2277,9 +2283,8 @@ def pass_unknown_symbols(ctx):
                 s0 = a0.strip()
                 while len(plist) <= i:
                     plist.append("int")
-                if s0 == "this" or "->" in s0 or "&" in s0 or \
-                        s0 in arr_locals_ or s0 in ptr_locals_ or \
-                        re.match(r"^\(\s*[\w\s]+\s*\*\s*\)", s0):
+                if _arg_is_pointerish(
+                        s0, arr_locals_ | ptr_locals_):
                     plist[i] = "void *"
         if not max_args:
             proto = "()"
@@ -2407,16 +2412,9 @@ def pass_fncast_harmonize(ctx):
         locals_.add(m.group(1))
 
     def _arg_ptrish(s):
-        s = s.strip()
-        if s == "this":
-            return True
-        if "->" in s or "&" in s:
-            return True
-        if re.match(r"^\(\s*[\w\s]+\s*\*\s*\)", s):
-            return True
-        if s in ptr_globals:
-            return True
-        return False
+        # R7.1: scalar results (`*(unsigned int *)(...)` deref, arithmetic)
+        # must not force a void* slot -- C2664 TechnoClass::Process.
+        return _arg_is_pointerish(s, ptr_globals)
 
     out = []
     pos = 0
@@ -3656,6 +3654,110 @@ def _split_args(argstr):
     return out
 
 
+def _strip_outer_parens(s):
+    """`((a + b))` -> `a + b` (only balanced outermost pairs)."""
+    s = s.strip()
+    while len(s) > 2 and s.startswith("(") and s.endswith(")"):
+        depth = 0
+        closed_early = False
+        for i, ch in enumerate(s):
+            if ch == "(":
+                depth += 1
+            elif ch == ")":
+                depth -= 1
+                if depth == 0 and i != len(s) - 1:
+                    closed_early = True
+                    break
+        if closed_early or depth != 0:
+            break
+        s = s[1:-1].strip()
+    return s
+
+
+_SCALAR_CAST = re.compile(
+    r"^\(\s*(?:unsigned\s+|signed\s+)?"
+    r"(?:int|long|short|char|_DWORD|_WORD|_BYTE|float|double|bool|"
+    r"__int(?:8|16|32|64))\s*\)")
+
+_SCALAR_TYS = {
+    "int", "unsigned", "unsigned int", "signed int", "char",
+    "unsigned char", "signed char", "short", "unsigned short",
+    "long", "unsigned long", "float", "double", "bool",
+    "_DWORD", "_WORD", "_BYTE", "__int8", "__int16", "__int32",
+    "__int64", "unsigned __int8", "unsigned __int16",
+    "unsigned __int32", "unsigned __int64",
+}
+
+
+def _arg_is_pointerish(s, ptr_names=None):
+    """R7.1: does this call ARGUMENT carry a pointer form?
+
+    The R7 relax marked every `->`/`&`-containing expression as pointer
+    and flipped the callee param slot to `void *` -- but `this->m - 1`,
+    `(int)this->m` and `(x >> 16) & 0xFF` are SCALARS, and the slot then
+    rejects them (C2664 'cannot convert from int/unsigned int to
+    void *': MPCooperative::Revert / Movie::SelectNextBuildableType /
+    TacticalClass::DrawCellTerrainOverlay).  Rules:
+      * explicit scalar cast head is authoritative -- scalar;
+      * top-level arithmetic (`+ - * / % & | ^ << >>`) yields a scalar
+        unless its left operand is a known pointer name (`p + 1`);
+      * a leading deref of a scalar-typed pointer (`*(unsigned int *)x`)
+        yields that scalar; a class-typed pointee stays a pointer.
+    """
+    s = (s or "").strip()
+    names = ptr_names or set()
+    if not s:
+        return False
+    if s in names or s == "this":
+        return True
+    s2 = _strip_outer_parens(s)
+    if s2 != s:
+        return _arg_is_pointerish(s2, names)
+    if _SCALAR_CAST.match(s):
+        return False
+    m = re.match(r"^\*\s*\(\s*((?:unsigned\s+|signed\s+)?[A-Za-z_]\w*)"
+                 r"\s*\*\s*\)", s)
+    if m:
+        return m.group(1).strip() not in _SCALAR_TYS
+    # R7.1: a top-level SUBSCRIPT yields an ELEMENT, not array decay
+    # (`SHIBYTE(this->visibleCells[13])` -- the member is an int array;
+    # marking it void* made the macro-ish callee reject an int arg,
+    # C2664 TacticalClass::DrawCellTerrainOverlay).  The element's own
+    # pointer-ness is unknowable at text level -- do not claim pointer.
+    if s.endswith("]"):
+        return False
+    depth = 0
+    i = 0
+    while i < len(s):
+        c = s[i]
+        if c in "([":
+            depth += 1
+        elif c in ")]":
+            depth -= 1
+        elif depth == 0:
+            two = s[i:i + 2]
+            if two in ("<<", ">>"):
+                return False          # shift result is scalar
+            if two == "->":
+                i += 2
+                continue              # member arrow: not subtraction
+            if c in "+-*/%&|^":
+                if c in "+-" and i > 0:
+                    lm = re.search(r"([A-Za-z_]\w*)\s*$", s[:i])
+                    if lm and lm.group(1) in names:
+                        return True   # known pointer arithmetic stays ptr
+                if c in "&*" and i == 0:
+                    pass              # address-of / deref head
+                else:
+                    return False      # top-level arithmetic: scalar
+        i += 1
+    if "->" in s or "&" in s:
+        return True
+    if re.match(r"^\(\s*[\w\s]+\s*\*\s*\)", s):
+        return True                   # cast-form receiver `(T *)...`
+    return False
+
+
 def pass_callees(ctx):
     """Declare + rewrite qualified call sites (R3 non-leaf support).
 
@@ -3731,22 +3833,17 @@ def pass_callees(ctx):
             # base (int* -> char* family).  The stub is decl-only, so a
             # void* slot is codegen-neutral at this probe stage.
             sig_ptys_ = {}
+            ptr_params_ = set()
             for t, n in ctx.sig.get("params_spelled") or []:
                 sig_ptys_[n] = t
+                if t.endswith("*"):
+                    ptr_params_.add(n)
 
             def _arg_ptrish(a):
-                s = a.strip()
-                if s in sig_ptys_:
-                    return sig_ptys_[s].endswith("*")
-                if s == "this":
-                    return True
-                if "->" in s or "&" in s:
-                    return True
-                # NOTE: bare `x[i]` is the ELEMENT (scalar), not decay;
-                # `p * 2` is multiplication.  Neither is pointer evidence.
-                if re.match(r"^\(\s*[\w\s]+\s*\*\s*\)", s):
-                    return True       # cast-form receiver `(T *)...`
-                return False
+                # R7.1: scalar-form expressions (`(int)x`, `x - 1`,
+                # `(x >> 16) & 0xFF`) never force a void* slot --
+                # see _arg_is_pointerish.
+                return _arg_is_pointerish(a, ptr_params_)
 
             rparams = [("void *" if "(" in t else t, n)
                        for t, n in rparams]
@@ -3824,14 +3921,17 @@ def pass_callees(ctx):
             arr_locals = set(m.group(1) for m in re.finditer(
                 r"\b([A-Za-z_]\w*)\s*\[\s*\d+\s*\]\s*;", text))
             plist = []
+            ptr_names_ = set(arr_locals)
+            for t, n in ctx.sig.get("params_spelled") or []:
+                if t.endswith("*"):
+                    ptr_names_.add(n)
             for i, a0 in enumerate(args):
                 a0s = a0.strip()
                 if a0s in sig_ptys:
                     pt = sig_ptys[a0s]
                 elif a0s in arr_locals:
                     pt = "void *"
-                elif a0s == "this" or "->" in a0s or "&" in a0s or \
-                        re.match(r"^\(\s*[\w\s]+\s*\*\s*\)", a0s):
+                elif _arg_is_pointerish(a0s, ptr_names_):
                     pt = "void *"
                     # R7: a `volatile T *` argument needs a
                     # qualification-compatible slot (plain void* drops

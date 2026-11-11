@@ -521,6 +521,15 @@ def derive_signature(reg, ex):
         "ret": ret,
         "cc": cc,
         "free": free_fn,
+        # R7.1: whether IDA's a1 is the RECEIVER.  True only for real
+        # receiver-carrying conventions (thiscall ECX / fastcall ECX) or
+        # when the export proto names a `this` parameter.  A __stdcall
+        # leaf whose args live on the stack has NO this at a1 -- the
+        # positional aN->pN map must start at 1 there (MapClass::
+        # CheckCellsBuildable was shifted a slot -> C2446).
+        "this_at_a1": (not free_fn) and (
+            cc in ("thiscall", "__thiscall", "__fastcall") or
+            bool(re.search(r"\bthis\b", ex.proto or ""))),
         "params": params,                      # [(era_type, name)]
         "arity_dropped": ["%s %s" % (t, n) for t, n in dropped],
         "sig_notes": ret_notes,
