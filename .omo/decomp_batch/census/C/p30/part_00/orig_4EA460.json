@@ -1,0 +1,11 @@
+{
+ "addr": "0x4EA460",
+ "name": "VectorClass_ptr_TriggerClass::Release",
+ "size": 174,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4EA460",
+ "bytes_hex": "53558b6c240c5685ed578bf10f848c0000008b5c2418c6460c0085db75148d04ad0000000050e88ce92d0083c4048bf8eb028bfb85ffc6460c0175095f5e5d32c05bc208008b460485c074398b4e083be97d028bcd33c085c97e108b5604403bc18b5482fc895487fc7cf08a460d84c074138b460450e862e62d0083c404c746040000000033c0897e0485db0f94c0896e0888460d5f5e5db0015bc208008b168bceff520c5f5e5db0015bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

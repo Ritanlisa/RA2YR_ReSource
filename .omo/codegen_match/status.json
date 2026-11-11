@@ -454,6 +454,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x40c8c0": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_IsometricTileClass::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x40cc00": {
   "attempts": 9,
   "first_diff": "+2 jmp dword ptr [eax + 0xc]",
@@ -584,6 +591,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x40df60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x40e060": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40e060",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -1077,6 +1091,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x41f0d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AITriggerTypeClass::IronCurtainCharged",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x41fd60": {
   "attempts": 11,
   "first_diff": "+7 fld qword ptr [0x7e2800]",
@@ -1406,6 +1427,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x42e990": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_42E990",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x42f4f0": {
   "attempts": 6,
   "first_diff": "+0 push ecx",
@@ -1643,6 +1671,13 @@
   "name": "NeuronClass::StubReturn56",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x43ab70": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "NeuronClass_25::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x43ac50": {
   "attempts": 1,
@@ -2511,6 +2546,13 @@
   "name": "CellClass::IsActiveOrNext",
   "note": "via=mirror MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x486d90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_486D90",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x486ff0": {
   "attempts": 9,
@@ -3477,6 +3519,13 @@
   "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x49aec0": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_ConvertClass::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x49b180": {
   "attempts": 1,
@@ -4500,6 +4549,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4ca930": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "FactoryClass_33::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4ca9e0": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -5165,6 +5221,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x4ea460": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_TriggerClass::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4ea8b0": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -5214,6 +5277,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4ec0e0": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_FactoryClass::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4ec680": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -5247,6 +5317,13 @@
   "first_diff": "+0 push ebx",
   "name": "VectorClass_ptr_TerrainTypeClass::Remove",
   "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
+ "0x4edb00": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_AircraftTypeClass::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4edbe0": {
@@ -5339,6 +5416,13 @@
   "name": "VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_IsometricTileTypeClass___",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4f2920": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "HouseClass_24::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4f2a40": {
   "attempts": 1,
@@ -5729,6 +5813,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "VectorClass_BuildingType::Constructor_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x510780": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScoutVector::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x510970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DistributionVector_BuildingType::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -7804,6 +7902,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5980c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Random::Gaussian",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x59bab0": {
   "attempts": 1,
   "first_diff": "+0 mov ecx, dword ptr [esp + 8]",
@@ -8571,6 +8676,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "VtableStub::5CB6C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5cb790": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TerritoryUpdateDisplayWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -9371,6 +9483,13 @@
   "name": "Init::StubPlaceholder",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x610bf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_610BF0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6234b0": {
   "attempts": 9,
@@ -14902,6 +15021,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x77ca60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x77ca60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x77cf90": {
   "attempts": 1,
   "first_diff": null,
@@ -14964,6 +15090,13 @@
   "name": "Dialog::CloseAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x79f0a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x79f0a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7a2730": {
   "attempts": 1,
@@ -15908,6 +16041,13 @@
   "first_diff": "+0 push 0x117",
   "name": "_iswgraph",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7cb911": {
+  "attempts": 1,
+  "first_diff": "+0 push ebp",
+  "name": "_wcstok",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x7cbb8d": {

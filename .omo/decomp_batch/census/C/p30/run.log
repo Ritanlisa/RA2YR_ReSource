@@ -1,0 +1,100 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x510780 ScoutVector::Construct -> ScoutVector
+[conv] 0x42e990 ObjectClass::sub_42E990 -> ObjectClass
+[conv] 0x5980c0 Random::Gaussian -> Random
+[conv] 0x486d90 ObjectClass::sub_486D90 -> ObjectClass
+[conv] 0x510970 DistributionVector_BuildingType::Construct -> DistributionVector_BuildingType
+[conv] 0x5cb790 ObjectClass::TerritoryUpdateDisplayWOL -> ObjectClass
+[conv] 0x7cb911 unknown::_wcstok -> unknown
+[conv] 0x41f0d0 unknown::IronCurtainCharged -> unknown
+[conv] 0x610bf0 ObjectClass::sub_610BF0 -> ObjectClass
+[conv] 0x40c8c0 _VectorClass_PAVIsometricTileClass::Release -> _VectorClass_PAVIsometricTileClass
+[conv] 0x43ab70 _VectorClass_PAVNeuronClass::Release -> _VectorClass_PAVNeuronClass
+[conv] 0x49aec0 _VectorClass_PAVConvertClass::Release -> _VectorClass_PAVConvertClass
+[conv] 0x4ca930 _VectorClass_PBVTechnoTypeClass::Release -> _VectorClass_PBVTechnoTypeClass
+[conv] 0x4ea460 _VectorClass_PAVTriggerClass::Release -> _VectorClass_PAVTriggerClass
+[conv] 0x4ec0e0 _VectorClass_PAVFactoryClass::Release -> _VectorClass_PAVFactoryClass
+[conv] 0x4edb00 _VectorClass_PAVAircraftTypeClass::Release -> _VectorClass_PAVAircraftTypeClass
+[conv] 0x4f2920 _VectorClass_PAVGraphicMenuItem::Release -> _VectorClass_PAVGraphicMenuItem
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScoutVector              rc=2
+[era] ObjectClass              rc=2
+[era] Random                   rc=2
+[era] DistributionVector_BuildingType rc=2
+[era] unknown                  rc=2
+[era] _VectorClass_PAVIsometricTileClass rc=0
+[era] _VectorClass_PAVNeuronClass rc=0
+[era] _VectorClass_PAVConvertClass rc=0
+[era] _VectorClass_PBVTechnoTypeClass rc=0
+[era] _VectorClass_PAVTriggerClass rc=0
+[era] _VectorClass_PAVFactoryClass rc=0
+[era] _VectorClass_PAVAircraftTypeClass rc=0
+[era] _VectorClass_PAVGraphicMenuItem rc=0
+=== diffasm byte-compare ===
+[diff] 0x7cb911   MISMATCH         unknown::_wcstok
+[diff] 0x40c8c0   MISMATCH         _VectorClass_PAVIsometricTileClass::Release
+[diff] 0x43ab70   MISMATCH         _VectorClass_PAVNeuronClass::Release
+[diff] 0x49aec0   MISMATCH         _VectorClass_PAVConvertClass::Release
+[diff] 0x4ca930   MISMATCH         _VectorClass_PBVTechnoTypeClass::Release
+[diff] 0x4ea460   MISMATCH         _VectorClass_PAVTriggerClass::Release
+[diff] 0x4ec0e0   MISMATCH         _VectorClass_PAVFactoryClass::Release
+[diff] 0x4edb00   MISMATCH         _VectorClass_PAVAircraftTypeClass::Release
+[diff] 0x4f2920   MISMATCH         _VectorClass_PAVGraphicMenuItem::Release
+[ledger] 0x510780 ScoutVector::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42e990 sub_42E990 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77ca60 0x77ca60 -> PENDING (attempt 1)
+[ledger] 0x40e060 0x40e060 -> PENDING (attempt 1)
+[ledger] 0x79f0a0 0x79f0a0 -> PENDING (attempt 1)
+[ledger] 0x5980c0 Random::Gaussian -> COMPILE_FAIL (attempt 1)
+[ledger] 0x486d90 sub_486D90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x510970 DistributionVector_BuildingType::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cb790 TerritoryUpdateDisplayWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cb911 _wcstok -> NG (attempt 1)
+[ledger] 0x41f0d0 AITriggerTypeClass::IronCurtainCharged -> COMPILE_FAIL (attempt 1)
+[ledger] 0x610bf0 sub_610BF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40c8c0 VectorClass_ptr_IsometricTileClass::Release -> NG (attempt 1)
+[ledger] 0x43ab70 NeuronClass_25::Release -> NG (attempt 1)
+[ledger] 0x49aec0 VectorClass_ptr_ConvertClass::Release -> NG (attempt 1)
+[ledger] 0x4ca930 FactoryClass_33::Release -> NG (attempt 1)
+[ledger] 0x4ea460 VectorClass_ptr_TriggerClass::Release -> NG (attempt 1)
+[ledger] 0x4ec0e0 VectorClass_ptr_FactoryClass::Release -> NG (attempt 1)
+[ledger] 0x4edb00 VectorClass_ptr_AircraftTypeClass::Release -> NG (attempt 1)
+[ledger] 0x4f2920 HouseClass_24::Release -> NG (attempt 1)
+======================================================================
+{
+ "total": 2299,
+ "verdicts": {
+  "MISMATCH": 635,
+  "MATCH": 521,
+  "COMPILE_FAIL": 630,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 499,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 10,
+  "codegen_shape": 206,
+  "ret_norm": 7,
+  "frame_sched": 67,
+  "const_fold": 66,
+  "branch_polarity": 46,
+  "regalloc": 102,
+  "branch_order": 77,
+  "width_mismatch": 8,
+  "extern_reloc": 18,
+  "cc_mismatch": 25,
+  "signedness": 3
+ },
+ "match_rate_of_decided_pct": 45.1,
+ "match_rate_of_total_pct": 22.7,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p30\batch_report.json

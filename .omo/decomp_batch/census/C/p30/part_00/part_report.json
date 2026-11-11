@@ -1,0 +1,342 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "COMPILE_FAIL": 8,
+   "NO_CLS": 3,
+   "MISMATCH": 9
+  },
+  "pathologies": {
+   "regalloc": 1,
+   "codegen_shape": 8
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x510780",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ScoutVector.cpp(17) : error C2065: 'VectorClass' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ScoutVector.",
+   "first_diff": null,
+   "pathology": null,
+   "name": "ScoutVector::Construct",
+   "emitted": "ScoutVector::Construct",
+   "unit": "ScoutVector",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "3/3",
+   "rule_violations": 20
+  },
+  {
+   "addr": "0x42e990",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ObjectClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ObjectClas",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_42E990",
+   "emitted": "ObjectClass::sub_42E990",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "4/4",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x77ca60",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x77ca60",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x40e060",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40e060",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x79f0a0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x79f0a0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5980c0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\Random.cpp(20) : error C2065: '_ESI' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\Random.cpp(20) : error C",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Random::Gaussian",
+   "emitted": "Random::Gaussian",
+   "unit": "Random",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/5",
+   "rule_violations": 2
+  },
+  {
+   "addr": "0x486d90",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ObjectClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ObjectClas",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_486D90",
+   "emitted": "ObjectClass::sub_486D90",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "7/11",
+   "rule_violations": 2
+  },
+  {
+   "addr": "0x510970",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\DistributionVector_BuildingType.cpp(18) : error C2065: 'VectorClass' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "DistributionVector_BuildingType::Construct",
+   "emitted": "DistributionVector_BuildingType::Construct",
+   "unit": "DistributionVector_BuildingType",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 18
+  },
+  {
+   "addr": "0x5cb790",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ObjectClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ObjectClas",
+   "first_diff": null,
+   "pathology": null,
+   "name": "TerritoryUpdateDisplayWOL",
+   "emitted": "ObjectClass::TerritoryUpdateDisplayWOL",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x7cb911",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 167B ours 220B",
+   "first_diff": {
+    "orig": "+0 push ebp",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "_wcstok",
+   "emitted": "unknown::_wcstok",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 167,
+   "ours_size": 220
+  },
+  {
+   "addr": "0x41f0d0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\unknown_41f0d0.cpp(47) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\unknown_41f0d0.cpp(49) : err",
+   "first_diff": null,
+   "pathology": null,
+   "name": "AITriggerTypeClass::IronCurtainCharged",
+   "emitted": "unknown::IronCurtainCharged",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "6/6",
+   "rule_violations": 6
+  },
+  {
+   "addr": "0x610bf0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ObjectClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p30\\part_00\\ObjectClas",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_610BF0",
+   "emitted": "ObjectClass::sub_610BF0",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "proto_this",
+   "sites": "4/4",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x40c8c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_IsometricTileClass::Release",
+   "emitted": "_VectorClass_PAVIsometricTileClass::Release",
+   "unit": "_VectorClass_PAVIsometricTileClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x43ab70",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "NeuronClass_25::Release",
+   "emitted": "_VectorClass_PAVNeuronClass::Release",
+   "unit": "_VectorClass_PAVNeuronClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x49aec0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_ConvertClass::Release",
+   "emitted": "_VectorClass_PAVConvertClass::Release",
+   "unit": "_VectorClass_PAVConvertClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x4ca930",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "FactoryClass_33::Release",
+   "emitted": "_VectorClass_PBVTechnoTypeClass::Release",
+   "unit": "_VectorClass_PBVTechnoTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x4ea460",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TriggerClass::Release",
+   "emitted": "_VectorClass_PAVTriggerClass::Release",
+   "unit": "_VectorClass_PAVTriggerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x4ec0e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_FactoryClass::Release",
+   "emitted": "_VectorClass_PAVFactoryClass::Release",
+   "unit": "_VectorClass_PAVFactoryClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x4edb00",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AircraftTypeClass::Release",
+   "emitted": "_VectorClass_PAVAircraftTypeClass::Release",
+   "unit": "_VectorClass_PAVAircraftTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x4f2920",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 187B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "HouseClass_24::Release",
+   "emitted": "_VectorClass_PAVGraphicMenuItem::Release",
+   "unit": "_VectorClass_PAVGraphicMenuItem",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/12",
+   "rule_violations": 2,
+   "orig_size": 174,
+   "ours_size": 187
+  }
+ ]
+}
