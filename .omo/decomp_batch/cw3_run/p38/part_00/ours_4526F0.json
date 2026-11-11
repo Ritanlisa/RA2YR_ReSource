@@ -1,0 +1,27 @@
+{
+ "symbol": "?SelectWeaponSlot@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::SelectWeaponSlot",
+ "size": 210,
+ "link_base": 0,
+ "bytes_hex": "5153558b6c2408568bf1578a860207000084c0743633db84c07e308bbeec0500008b0785c074145550e8000000008b0883c40885c90f859100000033c0438a860207000083c7043bd87cd68b0e56ff91000400008b869c0600008b8e940600003bc17d5e8b96880600008b34828d865001000050e8000000008b8ec006000083c40484c00f94c084c074168d81040e00008b89040e000085c974165f5e5d5b59c38d81200e00008b89200e000085c9751b8b0e6a0056ff91f80300005f5e5d5b59c35556e80000000083c4085f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?TechnoClass__GetAudioEntry@@YAHPAXH@Z",
+   "sym_key": "TechnoClass__GetAudioEntry"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?TechnoClass__SelectVocOrSfx@@YAHPAXH@Z",
+   "sym_key": "TechnoClass__SelectVocOrSfx"
+  }
+ ]
+}

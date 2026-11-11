@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p38\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d6830 ___init_monetary -> _addr_7D
+[conv] 0x679cc0 sub_679CC0 -> _addr_67
+[conv] 0x578390 MapClass::IsRectInBounds -> MapClass
+[conv] 0x6964c0 NetworkDialog::Dispatch -> NetworkDialog
+[conv] 0x476420 INIClass::GetCoord2 -> INIClass
+[conv] 0x6a4930 SideClass::Init -> SideClass
+[conv] 0x559d60 LoadOptions::AddRef -> LoadOptions
+[conv] 0x6ee310 TeamClass::SelectAreaAttackTarget -> TeamClass
+[conv] 0x6b55f0 SmudgeTypeClass::vt_entry_A0 -> SmudgeTypeClass
+[conv] 0x72f350 House_Load -> House
+[conv] 0x4526f0 BuildingClass::SelectWeaponSlot -> BuildingClass
+[conv] 0x5e9c00 AssignPlayerColor -> _addr_5E
+[conv] 0x5e8dc0 Player::BuildListString -> Player
+[conv] 0x728710 TubeClass::ProcessEvent -> TubeClass
+[conv] 0x4d02b0 VoxelAnimClass::UpdateMatrix -> VoxelAnimClass
+[conv] 0x6e15f0 ObjectClass::ReadINIEntry -> ObjectClass
+[conv] 0x6af4a0 SlaveManagerClass::Constructor_SlaveManagerClass -> SlaveManagerClass
+[conv] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> DropPodLocomotionClass
+[conv] 0x674650 SidebarClass::ReadButtonList -> SidebarClass
+[conv] 0x6abb60 HouseClass::RemoveFromProductionQueue -> HouseClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] _addr_67                 rc=2
+[era] MapClass                 rc=2
+[era] NetworkDialog            rc=2
+[era] INIClass                 rc=2
+[era] SideClass                rc=2
+[era] LoadOptions              rc=2
+[era] TeamClass                rc=2
+[era] SmudgeTypeClass          rc=2
+[era] House                    rc=2
+[era] BuildingClass            rc=0
+[era] _addr_5E                 rc=2
+[era] Player                   rc=2
+[era] TubeClass                rc=2
+[era] VoxelAnimClass           rc=2
+[era] ObjectClass              rc=2
+[era] SlaveManagerClass        rc=2
+[era] DropPodLocomotionClass   rc=2
+[era] SidebarClass             rc=2
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x4526f0   MISMATCH         BuildingClass::SelectWeaponSlot
+[ledger] 0x7d6830 ___init_monetary -> COMPILE_FAIL (attempt 3)
+[ledger] 0x679cc0 sub_679CC0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x578390 MapClass::IsRectInBounds -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6964c0 NetworkDialog::Dispatch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x476420 INIClass::GetCoord2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6a4930 SideClass::Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x559d60 LoadOptions::AddRef -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ee310 TeamClass::SelectAreaAttackTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b55f0 SmudgeTypeClass::vt_entry_A0 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x72f350 House_Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4526f0 BuildingClass::SelectWeaponSlot -> NG (attempt 2)
+[ledger] 0x5e9c00 AssignPlayerColor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e8dc0 Player::BuildListString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x728710 TubeClass::ProcessEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d02b0 VoxelAnimClass::UpdateMatrix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e15f0 ObjectClass::ReadINIEntry -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6af4a0 SlaveManagerClass::Constructor_SlaveManagerClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x674650 SidebarClass::ReadButtonList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6abb60 HouseClass::RemoveFromProductionQueue -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p38\batch_report.json
