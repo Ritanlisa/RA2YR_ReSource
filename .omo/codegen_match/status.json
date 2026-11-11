@@ -300,6 +300,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x40ae00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40ae00",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x40cc00": {
   "attempts": 9,
   "first_diff": "+2 jmp dword ptr [eax + 0xc]",
@@ -311,6 +318,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x40cff0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x40d030": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40d030",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -363,6 +377,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x40e610": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40e610",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x40e840": {
   "attempts": 1,
   "first_diff": null,
@@ -374,6 +395,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x40f2f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x40f9f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40f9f0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -486,6 +514,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x413af0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x413b70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x413b70",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -678,6 +713,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x41e210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x41e210",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x41fd60": {
   "attempts": 11,
   "first_diff": "+7 fld qword ptr [0x7e2800]",
@@ -853,6 +895,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x429080": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x429080",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x429740": {
   "attempts": 1,
   "first_diff": null,
@@ -936,6 +985,13 @@
   "name": "EncodeBitmapRGB",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x430010": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x430010",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x430580": {
   "attempts": 1,
@@ -1062,6 +1118,13 @@
   "name": "BombClass::StubReturn68",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x439530": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x439530",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x43a1b0": {
   "attempts": 1,
@@ -1217,6 +1280,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x45b050": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x45b050",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x465d70": {
   "attempts": 5,
   "first_diff": null,
@@ -1364,6 +1434,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x46ca20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x46ca20",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x46d070": {
   "attempts": 5,
   "first_diff": null,
@@ -1426,6 +1503,13 @@
   "name": "CCINIClass::GetDB",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4735b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4735b0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x474010": {
   "attempts": 1,
@@ -1550,6 +1634,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x479730",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x47b1c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x47b1c0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -1788,6 +1879,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x48c6e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x48c740": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x48c740",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -2288,6 +2386,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x49f190": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x49f190",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x49fb60": {
   "attempts": 7,
   "first_diff": null,
@@ -2322,6 +2427,13 @@
   "name": "EnumConnectionPointsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4a2210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4a2210",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4a2300": {
   "attempts": 1,
@@ -2533,6 +2645,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4af3a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4af3a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4af540": {
   "attempts": 4,
   "first_diff": null,
@@ -2729,6 +2848,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4ba420": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4ba420",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4ba5a0": {
   "attempts": 9,
   "first_diff": null,
@@ -2792,6 +2918,13 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x4c4d90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4c4d90",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4c4ea0": {
   "attempts": 1,
   "first_diff": null,
@@ -2831,6 +2964,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x4c6390",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4c6410": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4c6410",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },

@@ -1,0 +1,173 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_CLS": 20
+  },
+  "pathologies": {},
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x40ae00",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40ae00",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x40d030",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40d030",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x40e610",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40e610",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x40f9f0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40f9f0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x413b70",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x413b70",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x41e210",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x41e210",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x429080",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x429080",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x430010",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x430010",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x439530",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x439530",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x45b050",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x45b050",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x46ca20",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x46ca20",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4735b0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4735b0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x47b1c0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x47b1c0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x48c740",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x48c740",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x49f190",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x49f190",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4a2210",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4a2210",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4af3a0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4af3a0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4ba420",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4ba420",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4c4d90",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4c4d90",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4c6410",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4c6410",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}
