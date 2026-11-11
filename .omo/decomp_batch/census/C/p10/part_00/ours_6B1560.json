@@ -1,0 +1,15 @@
+{
+ "symbol": "?setAIPriority@VectorClass@@QAEXXZ",
+ "sym_key": "VectorClass::setAIPriority",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db66395e047415385e0d74108b460450e80000000083c40466895e04885e0d895e085e5bc3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

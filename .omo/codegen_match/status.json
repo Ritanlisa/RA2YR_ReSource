@@ -552,6 +552,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x40f410": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40f410",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x40f470": {
   "attempts": 1,
   "first_diff": null,
@@ -1098,6 +1105,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x427490": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x427490",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x428990": {
   "attempts": 1,
   "first_diff": null,
@@ -1643,6 +1657,13 @@
   "name": "VectorClass_TPoint3D_int::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x466240": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x466240",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x466280": {
   "attempts": 1,
@@ -2322,6 +2343,13 @@
   "name": "IPXManagerClass::init",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x48bde0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x48bde0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x48bf40": {
   "attempts": 11,
@@ -3296,6 +3324,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4af4a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4af4a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4af540": {
   "attempts": 4,
   "first_diff": null,
@@ -3793,6 +3828,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4ca9e0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "FactoryClass_33::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4cadb0": {
   "attempts": 4,
   "first_diff": "+4 fadd dword ptr [0x7e2ac8]",
@@ -4262,6 +4304,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x4ea390": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_ThemeControl::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4ea8b0": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -4288,6 +4337,13 @@
   "first_diff": "+5 jne 0x4eb62c",
   "name": "ParticleSystemClass_32::Read",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x4ebcd0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_HouseClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x4ebe40": {
@@ -4332,6 +4388,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x4ed6f0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_TerrainTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4edbe0": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -4358,6 +4421,13 @@
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "VectorClass_ptr_ParticleTypeClass::FindItemIndex",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x4ef110": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_SuperWeaponTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x4ef3a0": {
@@ -4596,6 +4666,13 @@
   "first_diff": "+10 mov edx, dword ptr [0xa8ed84]",
   "name": "TActionClass::executeHuntAction",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
+ },
+ "0x50dac0": {
+  "attempts": 1,
+  "first_diff": "+6 cmp eax, 3",
+  "name": "TechnoClass::MapHouseRelationIndex",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x50df30": {
@@ -4842,6 +4919,13 @@
   "name": "TypeList_Infantry::GetSize",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x513100": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Vector::Destructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5139e0": {
   "attempts": 4,
@@ -5893,6 +5977,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x555610": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_PendingCellClass_LightSourceClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x555640": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -6521,6 +6612,13 @@
   "first_diff": "+0 push ecx",
   "name": "PriorityQueue::Pop",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x5acb50": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "MapSeedClass_18::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x5acd30": {
@@ -7251,6 +7349,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x5d12f0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "MSPCXAnim_42::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x5d1320": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -7885,6 +7990,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_626070",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6260f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_6260F0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -8565,6 +8677,13 @@
   "first_diff": "+0 mov al, byte ptr [ecx + 9]",
   "name": "sub_659570",
   "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "status": "NG"
+ },
+ "0x65a330": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_RadBeam::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x65a820": {
@@ -9322,6 +9441,13 @@
   "name": "SlaveManagerClass::StubReturn72",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6b1560": {
+  "attempts": 1,
+  "first_diff": "+6 mov eax, dword ptr [esi + 4]",
+  "name": "AbstractClass::setAIPriority",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "status": "NG"
  },
  "0x6b17f0": {
   "attempts": 1,
@@ -10162,6 +10288,13 @@
   "name": "TagTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6e6630": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_TagTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x6e6b70": {
   "attempts": 1,
@@ -11534,6 +11667,13 @@
   "name": "Viewport::Clear",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x754b40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x754b40",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x754bb0": {
   "attempts": 1,

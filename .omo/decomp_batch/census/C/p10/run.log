@@ -1,0 +1,101 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ca9e0 _VectorClass_PBVTechnoTypeClass::ddtor -> _VectorClass_PBVTechnoTypeClass
+[conv] 0x4ea390 _VectorClass_PAUThemeControl::ddtor -> _VectorClass_PAUThemeControl
+[conv] 0x4ebcd0 _VectorClass_PAVHouseClass::Remove -> _VectorClass_PAVHouseClass
+[conv] 0x4ed6f0 _VectorClass_PAVTerrainTypeClass::Remove -> _VectorClass_PAVTerrainTypeClass
+[conv] 0x4ef110 _VectorClass_PAVSuperWeaponTypeClass::Remove -> _VectorClass_PAVSuperWeaponTypeClass
+[conv] 0x513100 _VectorClass_PBVUnitTypeClass::Destructor -> _VectorClass_PBVUnitTypeClass
+[conv] 0x555610 _VectorClass_PAVPendingCellClass_LightSourceClass::Remove -> _VectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x5acb50 _VectorClass_PAU_WIN32_FIND_DATAA::ddtor -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5d12f0 _VectorClass_PAVMSAnimEntry::ddtor -> _VectorClass_PAVMSAnimEntry
+[conv] 0x6260f0 ObjectClass::sub_6260F0 -> ObjectClass
+[conv] 0x65a330 _VectorClass_PAVRadBeam::Remove -> _VectorClass_PAVRadBeam
+[conv] 0x6b1560 VectorClass::setAIPriority -> VectorClass
+[conv] 0x6e6630 _VectorClass_PAVTagTypeClass::Remove -> _VectorClass_PAVTagTypeClass
+[conv] 0x50dac0 TechnoClass::MapHouseRelationIndex -> TechnoClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVTechnoTypeClass rc=0
+[era] _VectorClass_PAUThemeControl rc=0
+[era] _VectorClass_PAVHouseClass rc=0
+[era] _VectorClass_PAVTerrainTypeClass rc=0
+[era] _VectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _VectorClass_PBVUnitTypeClass rc=2
+[era] _VectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _VectorClass_PAVMSAnimEntry rc=0
+[era] ObjectClass              rc=2
+[era] _VectorClass_PAVRadBeam  rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVTagTypeClass rc=0
+[era] TechnoClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x4ca9e0   MISMATCH         _VectorClass_PBVTechnoTypeClass::ddtor
+[diff] 0x4ea390   MISMATCH         _VectorClass_PAUThemeControl::ddtor
+[diff] 0x4ebcd0   MISMATCH         _VectorClass_PAVHouseClass::Remove
+[diff] 0x4ed6f0   MISMATCH         _VectorClass_PAVTerrainTypeClass::Remove
+[diff] 0x4ef110   MISMATCH         _VectorClass_PAVSuperWeaponTypeClass::Remove
+[diff] 0x555610   MISMATCH         _VectorClass_PAVPendingCellClass_LightSourceClass::Remove
+[diff] 0x5acb50   MISMATCH         _VectorClass_PAU_WIN32_FIND_DATAA::ddtor
+[diff] 0x5d12f0   MISMATCH         _VectorClass_PAVMSAnimEntry::ddtor
+[diff] 0x65a330   MISMATCH         _VectorClass_PAVRadBeam::Remove
+[diff] 0x6b1560   MISMATCH         VectorClass::setAIPriority
+[diff] 0x6e6630   MISMATCH         _VectorClass_PAVTagTypeClass::Remove
+[diff] 0x50dac0   MISMATCH         TechnoClass::MapHouseRelationIndex
+[ledger] 0x4ca9e0 FactoryClass_33::ddtor -> NG (attempt 1)
+[ledger] 0x4ea390 VectorClass_ptr_ThemeControl::ddtor -> NG (attempt 1)
+[ledger] 0x4ebcd0 VectorClass_ptr_HouseClass::Remove -> NG (attempt 1)
+[ledger] 0x4ed6f0 VectorClass_ptr_TerrainTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x4ef110 VectorClass_ptr_SuperWeaponTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x513100 Vector::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x555610 VectorClass_ptr_PendingCellClass_LightSourceClass::Remove -> NG (attempt 1)
+[ledger] 0x5acb50 MapSeedClass_18::ddtor -> NG (attempt 1)
+[ledger] 0x5d12f0 MSPCXAnim_42::ddtor -> NG (attempt 1)
+[ledger] 0x6260f0 sub_6260F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65a330 VectorClass_ptr_RadBeam::Remove -> NG (attempt 1)
+[ledger] 0x6b1560 AbstractClass::setAIPriority -> NG (attempt 1)
+[ledger] 0x6e6630 VectorClass_ptr_TagTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x754b40 0x754b40 -> PENDING (attempt 1)
+[ledger] 0x50dac0 TechnoClass::MapHouseRelationIndex -> NG (attempt 1)
+[ledger] 0x40f410 0x40f410 -> PENDING (attempt 1)
+[ledger] 0x427490 0x427490 -> PENDING (attempt 1)
+[ledger] 0x466240 0x466240 -> PENDING (attempt 1)
+[ledger] 0x48bde0 0x48bde0 -> PENDING (attempt 1)
+[ledger] 0x4af4a0 0x4af4a0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1899,
+ "verdicts": {
+  "MISMATCH": 534,
+  "MATCH": 512,
+  "COMPILE_FAIL": 472,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 369,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 183,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 61,
+  "branch_polarity": 34,
+  "regalloc": 76,
+  "branch_order": 67,
+  "width_mismatch": 7,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 48.9,
+ "match_rate_of_total_pct": 27.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p10\batch_report.json

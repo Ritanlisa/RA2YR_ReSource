@@ -1,0 +1,11 @@
+{
+ "addr": "0x50DAC0",
+ "name": "TechnoClass::MapHouseRelationIndex",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50DAC0",
+ "bytes_hex": "8b817c57000083f8037719ff2485e8da5000b802000000c3b803000000c3b801000000c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

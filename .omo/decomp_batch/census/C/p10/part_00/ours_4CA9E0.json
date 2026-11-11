@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@_VectorClass_PBVTechnoTypeClass@@QAEXXZ",
+ "sym_key": "_VectorClass_PBVTechnoTypeClass::ddtor",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "568bf18b460485c074188b4610f6c4ff741050e80000000083c404c74604000000008b4610c7460c0000000080e4008946105ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?MapHouseRelationIndex@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::MapHouseRelationIndex",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b817c57000083e800741748740e83e802740333c0c3b801000000c3b803000000c3b802000000c3",
+ "relocs": []
+}

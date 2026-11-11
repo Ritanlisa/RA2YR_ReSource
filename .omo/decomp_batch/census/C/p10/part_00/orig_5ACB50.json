@@ -1,0 +1,11 @@
+{
+ "addr": "0x5ACB50",
+ "name": "MapSeedClass_18::ddtor",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5ACB50",
+ "bytes_hex": "53568bf133db8b46043bc37411385e0d740c50e8d5bf210083c404895e04885e0d895e085e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
