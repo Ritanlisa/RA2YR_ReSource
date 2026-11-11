@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a8ea0 nullsub_11 -> _addr_4A
+[conv] 0x4b69d0 ObjectClass::nullsub_126 -> ObjectClass
+[conv] 0x4c5ec0 nullsub_127 -> _addr_4C
+[conv] 0x4c5ed0 nullsub_128 -> _addr_4C
+[conv] 0x4c6130 nullsub_129 -> _addr_4C
+[conv] 0x4c6170 nullsub_130 -> _addr_4C
+[conv] 0x4caef0 nullsub_131 -> _addr_4C
+[conv] 0x4caf00 nullsub_132 -> _addr_4C
+[conv] 0x4caf10 nullsub_133 -> _addr_4C
+[conv] 0x4dba30 FootClass::vt_entry_548 -> FootClass
+[conv] 0x4e0c30 nullsub_138 -> _addr_4E
+[conv] 0x4e1510 GadgetClass::StubReturnVoid -> GadgetClass
+[conv] 0x4e1520 GadgetClass::StubReturn -> GadgetClass
+[conv] 0x4f1700 nullsub_13 -> _addr_4F
+[conv] 0x4f1710 nullsub_14 -> _addr_4F
+[conv] 0x4f6eb0 nullsub_15 -> _addr_4F
+[conv] 0x506b70 nullsub_16 -> _addr_50
+[conv] 0x50ff40 nullsub_145 -> _addr_50
+[conv] 0x523c80 nullsub_147 -> _addr_52
+[conv] 0x52cb80 nullsub_18 -> _addr_52
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4A                 rc=0
+[era] ObjectClass              rc=2
+[era] _addr_4C                 rc=0
+[era] FootClass                rc=0
+[era] _addr_4E                 rc=0
+[era] GadgetClass              rc=0
+[era] _addr_4F                 rc=2
+[era] _addr_50                 rc=0
+[era] _addr_52                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a8ea0   MATCH            nullsub_11
+[diff] 0x4c5ec0   MATCH            nullsub_127
+[diff] 0x4c5ed0   MATCH            nullsub_128
+[diff] 0x4c6130   MATCH            nullsub_129
+[diff] 0x4c6170   MATCH            nullsub_130
+[diff] 0x4caef0   MATCH            nullsub_131
+[diff] 0x4caf00   MATCH            nullsub_132
+[diff] 0x4caf10   MATCH            nullsub_133
+[diff] 0x4dba30   MATCH            FootClass::vt_entry_548
+[diff] 0x4e0c30   MATCH            nullsub_138
+[diff] 0x4e1510   MATCH            GadgetClass::StubReturnVoid
+[diff] 0x4e1520   MATCH            GadgetClass::StubReturn
+[diff] 0x4f1700   MATCH            nullsub_13
+[diff] 0x4f1710   MATCH            nullsub_14
+[diff] 0x506b70   MATCH            nullsub_16
+[diff] 0x50ff40   MATCH            nullsub_145
+[diff] 0x523c80   MATCH            nullsub_147
+[ledger] 0x4a8ea0 nullsub_11 -> OK (attempt 1)
+[ledger] 0x4b69d0 ObjectClass::nullsub_126 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c5ec0 nullsub_127 -> OK (attempt 1)
+[ledger] 0x4c5ed0 nullsub_128 -> OK (attempt 1)
+[ledger] 0x4c6130 nullsub_129 -> OK (attempt 1)
+[ledger] 0x4c6170 nullsub_130 -> OK (attempt 1)
+[ledger] 0x4caef0 nullsub_131 -> OK (attempt 1)
+[ledger] 0x4caf00 nullsub_132 -> OK (attempt 1)
+[ledger] 0x4caf10 nullsub_133 -> OK (attempt 1)
+[ledger] 0x4dba30 FootClass::vt_entry_548 -> OK (attempt 1)
+[ledger] 0x4e0c30 nullsub_138 -> OK (attempt 1)
+[ledger] 0x4e1510 GadgetClass::StubReturnVoid -> OK (attempt 1)
+[ledger] 0x4e1520 GadgetClass::StubReturn -> OK (attempt 1)
+[ledger] 0x4f1700 nullsub_13 -> OK (attempt 1)
+[ledger] 0x4f1710 nullsub_14 -> OK (attempt 1)
+[ledger] 0x4f6eb0 nullsub_15 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x506b70 nullsub_16 -> OK (attempt 1)
+[ledger] 0x50ff40 nullsub_145 -> OK (attempt 1)
+[ledger] 0x523c80 nullsub_147 -> OK (attempt 1)
+[ledger] 0x52cb80 nullsub_18 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p02\batch_report.json
