@@ -1,0 +1,8 @@
+{
+ "symbol": "?_wcspbrk@@YAPAGPBH0@Z",
+ "sym_key": "Unnamed::_wcspbrk",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "8b4424045356578b1085d274398b7c24148b1f85db8bf77419668b0f81e1ffff00003bca7422668b4e0283c6026685c975ea668b480283c0028bd181e2ffff00006685c975cd33c05f5e5bc3",
+ "relocs": []
+}

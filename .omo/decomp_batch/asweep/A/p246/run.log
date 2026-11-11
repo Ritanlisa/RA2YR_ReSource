@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p246\part_00
+=== convert (20 addrs) ===
+[conv] 0x723790 _VectorClass_PAVTiberiumClass::Add -> _VectorClass_PAVTiberiumClass
+[conv] 0x724c90 _VectorClass_PBVToolTip::addRef -> _VectorClass_PBVToolTip
+[conv] 0x74f3c0 _VectorClass_PAVVeinholeMonsterClass::AddRef -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x751930 _VectorClass_PAVVocClass::Add -> _VectorClass_PAVVocClass
+[conv] 0x75a490 _VectorClass_PAVMovieHandle::Add -> _VectorClass_PAVMovieHandle
+[conv] 0x764460 _VectorClass_PAVWaypointPathClass::Add -> _VectorClass_PAVWaypointPathClass
+[conv] 0x76a130 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::AddRef -> _VectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x799cd0 RunWOLMainLoop_Helper -> RunWOLMainLoop
+[conv] 0x7ad090 _VectorClass_PAUtConnInfoStruct::AddRef -> _VectorClass_PAUtConnInfoStruct
+[conv] 0x7b28a0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Add -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b4320 _VectorClass_PAE::Get -> _VectorClass_PAE
+[conv] 0x7cc409 _wcspbrk -> _addr_7C
+[conv] 0x7ceac1 __ms_p5_test_fdiv -> _addr_7C
+[conv] 0x425630 AnimClass::CheckDamageFlags -> AnimClass
+[conv] 0x4355d0 PackRGB565 -> _addr_43
+[conv] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> BuildingTypeClass
+[conv] 0x4f9a50 HouseClass::IsAlliedWith -> HouseClass
+[conv] 0x53ece0 NetworkAddress::Assign -> NetworkAddress
+[conv] 0x540d80 IPXManagerClass::sendPacket -> IPXManagerClass
+[conv] 0x54f670 InputManager::PushInputEvent -> InputManager
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVTiberiumClass rc=2
+[era] _VectorClass_PBVToolTip  rc=2
+[era] _VectorClass_PAVVeinholeMonsterClass rc=2
+[era] _VectorClass_PAVVocClass rc=2
+[era] _VectorClass_PAVMovieHandle rc=2
+[era] _VectorClass_PAVWaypointPathClass rc=2
+[era] _VectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=2
+[era] RunWOLMainLoop           rc=2
+[era] _VectorClass_PAUtConnInfoStruct rc=2
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=2
+[era] _VectorClass_PAE         rc=2
+[era] _addr_7C                 rc=0
+[era] AnimClass                rc=0
+[era] _addr_43                 rc=0
+[era] BuildingTypeClass        rc=2
+[era] HouseClass               rc=0
+[era] NetworkAddress           rc=2
+[era] IPXManagerClass          rc=0
+[era] InputManager             rc=0
+=== diffasm byte-compare ===
+[diff] 0x7cc409   MISMATCH         _wcspbrk
+[diff] 0x7ceac1   MISMATCH         __ms_p5_test_fdiv
+[diff] 0x425630   MISMATCH         AnimClass::CheckDamageFlags
+[diff] 0x4355d0   MATCH            PackRGB565
+[diff] 0x4f9a50   MISMATCH         HouseClass::IsAlliedWith
+[diff] 0x540d80   MATCH            IPXManagerClass::sendPacket
+[diff] 0x54f670   MISMATCH         InputManager::PushInputEvent
+[ledger] 0x723790 _VectorClass_PAVTiberiumClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x724c90 _VectorClass_PBVToolTip::addRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74f3c0 _VectorClass_PAVVeinholeMonsterClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x751930 _VectorClass_PAVVocClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75a490 _VectorClass_PAVMovieHandle::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x764460 _VectorClass_PAVWaypointPathClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76a130 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x799cd0 RunWOLMainLoop_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ad090 _VectorClass_PAUtConnInfoStruct::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b28a0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4320 _VectorClass_PAE::Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cc409 _wcspbrk -> NG (attempt 1)
+[ledger] 0x7ceac1 __ms_p5_test_fdiv -> NG (attempt 1)
+[ledger] 0x425630 AnimClass::CheckDamageFlags -> NG (attempt 1)
+[ledger] 0x4355d0 PackRGB565 -> OK (attempt 1)
+[ledger] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f9a50 HouseClass::IsAlliedWith -> NG (attempt 1)
+[ledger] 0x53ece0 NetworkAddress::Assign -> COMPILE_FAIL (attempt 1)
+[ledger] 0x540d80 IPXManagerClass::sendPacket -> OK (attempt 1)
+[ledger] 0x54f670 InputManager::PushInputEvent -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 5,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "width_mismatch": 1,
+  "codegen_shape": 3,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 28.6,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p246\batch_report.json

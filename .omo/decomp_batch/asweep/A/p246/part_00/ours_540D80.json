@@ -1,0 +1,8 @@
+{
+ "symbol": "?sendPacket@IPXManagerClass@@QAEHHHH@Z",
+ "sym_key": "IPXManagerClass::sendPacket",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "8b414c8b54240c568b74240c578b7c240c85c0740f8978288b414c89702c8b414c8950308b415085c0740f8978288b415089702c8b49508951305f5ec20c00",
+ "relocs": []
+}

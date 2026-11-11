@@ -1,0 +1,11 @@
+{
+ "addr": "0x425630",
+ "name": "AnimClass::CheckDamageFlags",
+ "size": 63,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x425630",
+ "bytes_hex": "83ec0c8d819c0000008b89cc00000085c98b10895424008b5004895424048b4008741881c19c0000008b11895424008b5104895424048b490803c183c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

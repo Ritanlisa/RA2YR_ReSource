@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsAlliedWith@HouseClass@@QAEEPAH@Z",
+ "sym_key": "HouseClass::IsAlliedWith",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "518bc18b4c240085c974213bc87506b00159c204008b49308b50303bca7506b00159c2040083f9ff751deb048b4c2400ba010000002400d3e28590885700007406b00159c2040032c059c20400",
+ "relocs": []
+}
