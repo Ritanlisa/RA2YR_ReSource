@@ -7,24 +7,24 @@ char ProductionClass::StartTimer(char p0)
 {
         unsigned int * v4;
         v4 = (unsigned int *)(*(unsigned int **)((char *)this + 88));
-        char * result;
+        int result;
         if ( v4 == 0 )
         {
-            result = (char *)this ->m068;
+            result = (unsigned int)(this->m068);
             if ( result == 0 )
             {
                 goto LABEL_24;
             }
         }
-        if ( !(char *)this ->m070
-        || v4 && (char *)this ->m024 == 54
-        || (char *)this ->m068 != -1 && (char *)this ->m024 == 54 )
+        if ( !this->m070
+        || v4 && this->m024 == 54
+        || this->m068 != -1 && this->m024 == 54 )
         {
             goto LABEL_24;
         }
         int v5;
         v5 = 0;
-        (char *)this ->m070 = 0;
+        this->m070 = 0;
         if ( v4 )
         {
             v5 = ((HouseClass *)(v4))->CalcProductionSpeed();
@@ -44,37 +44,37 @@ char ProductionClass::StartTimer(char p0)
         }
         wchar_t * v7;
         v7 = g_CurrentFrame;
-        (char *)this ->m038 = v6;
-        (char *)this ->m02C = (unsigned int)(v7);
+        this->m038 = v6;
+        this->m02C = (unsigned int)(v7);
         int v10;
-        (char *)this ->m030 = v10;
-        (char *)this ->m034 = v6;
-        char * v8;
+        this->m030 = v10;
+        this->m034 = v6;
+        int v8;
         int v9;
-        if ( (char *)this ->m058 )
+        if ( this->m058 )
         {
-            v8 = (char *)this ->m024;
-            v9 = v8 == 54 ? (char *)this ->m060 : (char *)this ->m060 / (54 - v8);
+            v8 = (unsigned int)(this->m024);
+            v9 = v8 == 54 ? this->m060 : this->m060 / (54 - v8);
         }
         else
         {
             v9 = 0;
         }
-        result = (*(int (__stdcall **)(int))(*(unsigned int *)((char *)this ->m06C + 36) + 24))((char *)this ->m06C + 36);
+        result = (*(int (__stdcall **)(int))(*(unsigned int *)(this->m06C + 36) + 24))(this->m06C + 36);
         if ( result >= v9 )
         {
-            (char *)this ->m071 = 1;
+            this->m071 = 1;
             if ( p0 )
             {
-                if ( !(char *)this ->m070 )
+                if ( !this->m070 )
                 {
-                    (char *)this ->m071 = 1;
-                    (char *)this ->m070 = 1;
-                    (char *)this ->m02C = (unsigned int)(g_CurrentFrame);
-                    result = (char *)(v10);
-                    (char *)this ->m038 = 0;
-                    (char *)this ->m030 = v10;
-                    (char *)this ->m034 = 0;
+                    this->m071 = 1;
+                    this->m070 = 1;
+                    this->m02C = (unsigned int)(g_CurrentFrame);
+                    result = v10;
+                    this->m038 = 0;
+                    this->m030 = v10;
+                    this->m034 = 0;
                 }
             }
             result = (result & ~0xFF) | ((1) & 0xFF);

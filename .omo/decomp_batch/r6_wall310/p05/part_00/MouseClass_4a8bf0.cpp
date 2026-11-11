@@ -4,24 +4,24 @@
 
 short MouseClass::SetBounds(const void * p0)
 {
-        char * result = (char *)this ->u32_117C;
+        int result = (unsigned int)(this->u32_117C);
         short v4;
         unsigned short v9[4];
         if ( result )
         {
-            v4 = (unsigned int)((char *)this ->u16_1176 + (char *)this ->u32_117A);
-            v9[0] = (unsigned int)((char *)this ->u32_1174 + (char *)this ->u32_1178);
+            v4 = (unsigned int)(this->u16_1176 + this->u32_117A);
+            v9[0] = (unsigned int)(this->u32_1174 + this->u32_1178);
             v9[1] = v4;
-            result = (char *)(((MapClass *)(this))->SetCellFlagsAlongPath(v9, 0));
+            result = ((MapClass *)(this))->SetCellFlagsAlongPath(v9, 0);
         }
         const void * v5 = p0;
         bool v6 = p0 == 0;
-        (char *)this ->u32_1178 = DataGlobal_8A03F8;
+        this->u32_1178 = DataGlobal_8A03F8;
         int v7;
         short v8;
         if ( v6 )
         {
-            (char *)this ->u32_117C = 0;
+            this->u32_117C = 0;
         }
         else
         {
@@ -31,16 +31,16 @@ short MouseClass::SetBounds(const void * p0)
                 atexit(nullsub_10);
             }
             memcpy(word_8A041C, v5, 0x1E0u);
-            (char *)this ->u32_117C = word_8A041C;
+            this->u32_117C = word_8A041C;
             v7 = *CoordList__GetBounds(&p0, word_8A041C);
             v9[0] = v7 - 1;
             v9[1] = ((v7 >> 16) & 0xFFFF) - 1;
             p0 = (p0 & ~0xFF) | (((short)(1 - v7) / 2) & 0xFF);
             p0 = (p0 & ~0xFF) | (((short)(1 - ((v7 >> 16) & 0xFFFF)) / 2) & 0xFF);
             v8 = (short)p0;
-            (char *)this ->u32_1178 = (unsigned int)(p0);
-            v7 = (v7 & ~0xFF) | (((char *)this ->u32_117A + (char *)this ->u16_1176) & 0xFF);
-            p0 = (p0 & ~0xFF) | ((v8 + (char *)this ->u32_1174) & 0xFF);
+            this->u32_1178 = (unsigned int)(p0);
+            v7 = (v7 & ~0xFF) | ((this->u32_117A + this->u16_1176) & 0xFF);
+            p0 = (p0 & ~0xFF) | ((v8 + this->u32_1174) & 0xFF);
             p0 = (p0 & ~0xFF) | ((v7) & 0xFF);
             return (short)(((MapClass *)(this))->SetCellFlagsAlongPath(&p0, (unsigned short *)1));
         }

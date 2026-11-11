@@ -62,7 +62,7 @@
    "addr": "0x4a8bf0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\MouseClass.cpp(13) : error C2110: cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\MouseClass.cpp(14) : er",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\MouseClass.cpp(34) : error C2664: 'memcpy' : cannot convert parameter 1 from 'unsigned short' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
    "first_diff": null,
    "pathology": null,
    "name": "Mouse::SetBounds",
@@ -70,7 +70,7 @@
    "unit": "MouseClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "19/32",
+   "sites": "17/30",
    "rule_violations": 0
   },
   {
@@ -197,7 +197,7 @@
    "addr": "0x4ba5a0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\DSurface.cpp(14) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\DSurface.cpp(1",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\DSurface.cpp(18) : error C2065: 'DSurface_Vtable' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\DSurfac",
    "first_diff": null,
    "pathology": null,
    "name": "DSurface::Construct",
@@ -220,7 +220,7 @@
    "unit": "CreditsPower",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "6/13",
+   "sites": "4/11",
    "rule_violations": 2
   },
   {
@@ -312,7 +312,7 @@
    "addr": "0x4c9ea0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\ProductionClass.cpp(21) : error C2446: '==' : no conversion from 'const int' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\ProductionClass.cpp(46) : error C2440: '=' : cannot convert from 'void *' to 'unsigned short *'",
    "first_diff": null,
    "pathology": null,
    "name": "ProductionClass::StartTimer",
@@ -320,8 +320,8 @@
    "unit": "ProductionClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/31",
-   "rule_violations": 2
+   "sites": "4/30",
+   "rule_violations": 3
   }
  ]
 }

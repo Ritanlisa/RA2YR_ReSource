@@ -10,8 +10,8 @@ char * DSurface::Construct(int p0, int p1, char p2, char p3)
         *((unsigned int *)this + 3) = 0;
         *((unsigned int *)this + 4) = 0;
         *((unsigned int *)this + 5) = 0;
-        (char *)this ->u32_18 = 0;
-        (char *)this ->u32_19 = 0;
+        this->u32_18 = 0;
+        this->u32_19 = 0;
         *((unsigned int *)this + 7) = 0;
         *((unsigned int *)this + 8) = 0;
         *(unsigned int *)this = (unsigned int)(&DSurface_Vtable);
@@ -45,7 +45,7 @@ char * DSurface::Construct(int p0, int p1, char p2, char p3)
                 (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)*v6 + 88))(*v6, *((unsigned int *)this + 8));
                 v8 = *((unsigned int *)this + 8);
                 *((unsigned int *)this + 4) = (unsigned int)(*(unsigned int *)(v8 + 84) + 7) >> 3;
-                (char *)this ->u32_19 = (*(unsigned int *)(v8 + 104) & 0x4000) != 0;
+                this->u32_19 = (*(unsigned int *)(v8 + 104) & 0x4000) != 0;
             }
         }
         return (char *)(this);

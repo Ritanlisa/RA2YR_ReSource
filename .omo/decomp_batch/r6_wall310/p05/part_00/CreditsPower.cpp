@@ -5,15 +5,15 @@
 
 char CreditsPower::DrawCreditsTextLine(char p0)
 {
-        char * v3 = (char *)this ->m008;
+        int v3 = (unsigned int)(this->m008);
         char result;
         int v5;
-        char * v6;
+        int v6;
         size_t v7;
         int v8;
         int v9[4];
         if ( v3 < (*(int (__stdcall **)(int))(*(unsigned int *)g_DSurface_Hidden_2 + 128))(g_DSurface_Hidden_2)
-        && (v3 = (char *)this ->m008,
+        && (v3 = this->m008,
             v3 > (*(int (__stdcall **)(int))(*(unsigned int *)g_DSurface_Hidden_2 + 128))(g_DSurface_Hidden_2) - 52)
         || v3 >= -16 && v3 <= 32
         || (result = p0) != 0 )
@@ -21,9 +21,9 @@ char CreditsPower::DrawCreditsTextLine(char p0)
             v9[3] = *(&g_DisplayWidth + 1);
             v5 = 0;
             v9[0] = (g_DisplayWidth - 520) / 2;
-            v6 = (char *)this ->m00C;
+            v6 = (unsigned int)(this->m00C);
             v9[2] = 520;
-            v9[1] = (unsigned int)(v3);
+            v9[1] = v3;
             if ( (v6 & 0x100) != 0 )
             {
                 v5 = 1;

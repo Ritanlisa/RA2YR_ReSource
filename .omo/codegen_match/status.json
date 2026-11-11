@@ -1848,7 +1848,7 @@
   "status": "NG"
  },
  "0x4a4780": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Surface::CreateSurfacePalette",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1869,14 +1869,14 @@
   "status": "NG"
  },
  "0x4a61c0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "TextRenderer::DrawText",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a7900": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "DiskLaserClass::PointerGotInvalid",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1897,14 +1897,14 @@
   "status": "OK"
  },
  "0x4a8bf0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Mouse::SetBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a8d50": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "MIXClass::CopyHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1918,14 +1918,14 @@
   "status": "NG"
  },
  "0x4a95a0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MapClass::SetCellFlagsAlongPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a9650": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BuildingClass::MarkExitPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1953,14 +1953,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x4ac960": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MapClass::ToggleZoom",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4adba0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ScenarioClass::ProcessGame",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1974,14 +1974,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x4afb80": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4b0c40": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1995,7 +1995,7 @@
   "status": "OK"
  },
  "0x4b4b00": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2142,7 +2142,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4ba5a0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "DSurface::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2177,21 +2177,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x4c3d00": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CreditsPower::DrawCreditsTextLine",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4c4ef0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": "+0 sub esp, 0x40",
   "name": "TaskForceClass::ParseUnitCountAndType",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4c58c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "EMPulseClass::IterateCellsInRadius",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2212,14 +2212,14 @@
   "status": "OK"
  },
  "0x4c9220": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 mov edx, dword ptr [esp + 4]",
   "name": "FacingClass::Update",
   "note": "decomp_batch r2: MISMATCH/eval_order",
   "status": "NG"
  },
  "0x4c93d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ProgressTimer::GetValue",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2233,7 +2233,7 @@
   "status": "NG"
  },
  "0x4c9b20": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "FactoryClass::UpdateProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2254,7 +2254,7 @@
   "status": "NG"
  },
  "0x4c9ea0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ProductionClass::StartTimer",
   "note": "decomp_batch r2: COMPILE_FAIL",
