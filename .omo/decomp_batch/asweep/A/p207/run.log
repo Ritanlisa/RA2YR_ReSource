@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p207\part_00
+=== convert (20 addrs) ===
+[conv] 0x45a730 _DynamicVectorClass_PAVFoggedObjectClass::FindItemIndex -> _DynamicVectorClass_PAVFoggedObjectClass
+[conv] 0x45a990 _DynamicVectorClass_PAVReestablish::FindItemIndex -> _DynamicVectorClass_PAVReestablish
+[conv] 0x46b890 VectorClass_ptr_BulletClass::FindItemIndex -> VectorClass_ptr_BulletClass
+[conv] 0x472d70 _DynamicVectorClass_PAUControlNode::Capture -> _DynamicVectorClass_PAUControlNode
+[conv] 0x477f10 _DynamicVectorClass_H::GetSize -> _DynamicVectorClass_H
+[conv] 0x4781f0 _DynamicVectorClass_PAVTechnoTypeClass::Read -> _DynamicVectorClass_PAVTechnoTypeClass
+[conv] 0x484f20 InfantryClass::GetType -> InfantryClass
+[conv] 0x48afa0 _DynamicVectorClass_PAUDamageGroup::FindItemIndex -> _DynamicVectorClass_PAUDamageGroup
+[conv] 0x48bad0 EventClass::SetData -> EventClass
+[conv] 0x49b0b0 _DynamicVectorClass_PAVConvertClass::FindItemIndex -> _DynamicVectorClass_PAVConvertClass
+[conv] 0x49eb20 _DynamicVectorClass_PAD::GetSize -> _DynamicVectorClass_PAD
+[conv] 0x49ede0 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::FindItemIndex -> _DynamicVectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x4a1470 _DynamicVectorClass_PAUIConnectionPoint::FindItem -> _DynamicVectorClass_PAUIConnectionPoint
+[conv] 0x4a5360 MovementAI::Check -> MovementAI
+[conv] 0x4a7fb0 _DynamicVectorClass_PAVDiskLaserClass::FindItem -> _DynamicVectorClass_PAVDiskLaserClass
+[conv] 0x4b9ed0 _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex -> _DynamicVectorClass_PAUButtonFadeEffect
+[conv] 0x4ba130 _DynamicVectorClass_PAUCrossDissolveEffect::FindItemIndex_0 -> _DynamicVectorClass_PAUCrossDissolveEffect
+[conv] 0x4c2ed0 _DynamicVectorClass_PAVEBolt::FindItemIndex -> _DynamicVectorClass_PAVEBolt
+[conv] 0x4c4c30 _DynamicVectorClass_PAVEgoClass::FindItemIndex -> _DynamicVectorClass_PAVEgoClass
+[conv] 0x4c5df0 _DynamicVectorClass_PAVEMPulseClass::FindItemIndex -> _DynamicVectorClass_PAVEMPulseClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVFoggedObjectClass rc=2
+[era] _DynamicVectorClass_PAVReestablish rc=2
+[era] VectorClass_ptr_BulletClass rc=0
+[era] _DynamicVectorClass_PAUControlNode rc=2
+[era] _DynamicVectorClass_H    rc=2
+[era] _DynamicVectorClass_PAVTechnoTypeClass rc=2
+[era] InfantryClass            rc=2
+[era] _DynamicVectorClass_PAUDamageGroup rc=2
+[era] EventClass               rc=0
+[era] _DynamicVectorClass_PAVConvertClass rc=2
+[era] _DynamicVectorClass_PAD  rc=2
+[era] _DynamicVectorClass_PAV_DynamicVectorClass_PAD rc=2
+[era] _DynamicVectorClass_PAUIConnectionPoint rc=2
+[era] MovementAI               rc=0
+[era] _DynamicVectorClass_PAVDiskLaserClass rc=2
+[era] _DynamicVectorClass_PAUButtonFadeEffect rc=2
+[era] _DynamicVectorClass_PAUCrossDissolveEffect rc=2
+[era] _DynamicVectorClass_PAVEBolt rc=2
+[era] _DynamicVectorClass_PAVEgoClass rc=2
+[era] _DynamicVectorClass_PAVEMPulseClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x46b890   MISMATCH         VectorClass_ptr_BulletClass::FindItemIndex
+[diff] 0x48bad0   MATCH            EventClass::SetData
+[diff] 0x4a5360   MISMATCH         MovementAI::Check
+[ledger] 0x45a730 _DynamicVectorClass_PAVFoggedObjectClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a990 _DynamicVectorClass_PAVReestablish::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46b890 VectorClass_ptr_BulletClass::FindItemIndex -> NG (attempt 1)
+[ledger] 0x472d70 _DynamicVectorClass_PAUControlNode::Capture -> COMPILE_FAIL (attempt 1)
+[ledger] 0x477f10 _DynamicVectorClass_H::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4781f0 _DynamicVectorClass_PAVTechnoTypeClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x484f20 InfantryClass::GetType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48afa0 _DynamicVectorClass_PAUDamageGroup::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48bad0 EventClass::SetData -> OK (attempt 1)
+[ledger] 0x49b0b0 _DynamicVectorClass_PAVConvertClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49eb20 _DynamicVectorClass_PAD::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ede0 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a1470 _DynamicVectorClass_PAUIConnectionPoint::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a5360 MovementAI::Check -> NG (attempt 1)
+[ledger] 0x4a7fb0 _DynamicVectorClass_PAVDiskLaserClass::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b9ed0 _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ba130 _DynamicVectorClass_PAUCrossDissolveEffect::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c2ed0 _DynamicVectorClass_PAVEBolt::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c4c30 _DynamicVectorClass_PAVEgoClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c5df0 _DynamicVectorClass_PAVEMPulseClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 2,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 33.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p207\batch_report.json

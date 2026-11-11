@@ -1,0 +1,11 @@
+{
+ "addr": "0x48BAD0",
+ "name": "EventClass::SetData",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48BAD0",
+ "bytes_hex": "8b4424048b5424088941448b44240c8951488b54241089414c8b442414895150894154c21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

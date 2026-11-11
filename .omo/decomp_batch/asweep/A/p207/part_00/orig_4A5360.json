@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A5360",
+ "name": "MovementAI::Check",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A5360",
+ "bytes_hex": "8a511832c03ad0741c3841197407884118c6411901384118740b3841197506884118884119c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetData@EventClass@@QAEHHHHHH@Z",
+ "sym_key": "EventClass::SetData",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b5424088941448b44240c8951488b54241089414c8b442414895150894154c21400",
+ "relocs": []
+}
