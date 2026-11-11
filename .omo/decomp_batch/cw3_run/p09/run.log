@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H
+[conv] 0x7b0cb0 sub_7B0CB0 -> _addr_7B
+[conv] 0x516370 HoverLocomotionClass::UpdateFacingDirection_0 -> HoverLocomotionClass
+[conv] 0x559d30 sub_559D30 -> _addr_55
+[conv] 0x5d8c50 MultiplayerTeam::Constructor -> MultiplayerTeam
+[conv] 0x7cb47a __unlock_file2 -> _addr_7C
+[conv] 0x5cabd0 MultiplayerSiege::QueryInterface -> MultiplayerSiege
+[conv] 0x765790 COMClass::invokeMethod -> COMClass
+[conv] 0x7a2800 Map_Handle_7A2800 -> Map_Handle
+[conv] 0x773b10 WebBrowser::Write -> WebBrowser
+[conv] 0x77d160 sub_77D160 -> _addr_77
+[conv] 0x6bf960 _TClassFactory_VCellClass::GetClassName -> _TClassFactory_VCellClass
+[conv] 0x6c09e0 _TClassFactory_VSpawnManagerClass::GetClassName -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c1a60 _TClassFactory_VTriggerClass::GetClassName -> _TClassFactory_VTriggerClass
+[conv] 0x6c2ae0 _TClassFactory_VAircraftTypeClass::GetClassName -> _TClassFactory_VAircraftTypeClass
+[conv] 0x6c3b60 _TClassFactory_VAnimTypeClass::GetClassName -> _TClassFactory_VAnimTypeClass
+[conv] 0x6c4be0 _TClassFactory_VTeleportLocomotionClass::GetClassName -> _TClassFactory_VTeleportLocomotionClass
+[conv] 0x6c5de0 _TClassFactory_VNeuronClass::GetClassName -> _TClassFactory_VNeuronClass
+[conv] 0x40d9c0 sub_40D9C0 -> _addr_40
+[conv] 0x40f410 sub_40F410 -> _addr_40
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H rc=2
+[era] _addr_7B                 rc=2
+[era] HoverLocomotionClass     rc=2
+[era] _addr_55                 rc=2
+[era] MultiplayerTeam          rc=0
+[era] _addr_7C                 rc=0
+[era] MultiplayerSiege         rc=0
+[era] COMClass                 rc=0
+[era] Map_Handle               rc=2
+[era] WebBrowser               rc=2
+[era] _addr_77                 rc=2
+[era] _TClassFactory_VCellClass rc=0
+[era] _TClassFactory_VSpawnManagerClass rc=0
+[era] _TClassFactory_VTriggerClass rc=0
+[era] _TClassFactory_VAircraftTypeClass rc=0
+[era] _TClassFactory_VAnimTypeClass rc=0
+[era] _TClassFactory_VTeleportLocomotionClass rc=0
+[era] _TClassFactory_VNeuronClass rc=0
+[era] _addr_40                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5d8c50   MISMATCH         MultiplayerTeam::Constructor
+[diff] 0x7cb47a   MISMATCH         __unlock_file2
+[diff] 0x5cabd0   MISMATCH         MultiplayerSiege::QueryInterface
+[diff] 0x765790   MISMATCH         COMClass::invokeMethod
+[diff] 0x6bf960   MISMATCH         _TClassFactory_VCellClass::GetClassName
+[diff] 0x6c09e0   MISMATCH         _TClassFactory_VSpawnManagerClass::GetClassName
+[diff] 0x6c1a60   MISMATCH         _TClassFactory_VTriggerClass::GetClassName
+[diff] 0x6c2ae0   MISMATCH         _TClassFactory_VAircraftTypeClass::GetClassName
+[diff] 0x6c3b60   MISMATCH         _TClassFactory_VAnimTypeClass::GetClassName
+[diff] 0x6c4be0   MISMATCH         _TClassFactory_VTeleportLocomotionClass::GetClassName
+[diff] 0x6c5de0   MISMATCH         _TClassFactory_VNeuronClass::GetClassName
+[diff] 0x40f410   MISMATCH         sub_40F410
+[ledger] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b0cb0 sub_7B0CB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x516370 HoverLocomotionClass::UpdateFacingDirection_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x559d30 sub_559D30 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d8c50 MultiplayerTeam::Constructor -> NG (attempt 2)
+[ledger] 0x7cb47a __unlock_file2 -> NG (attempt 2)
+[ledger] 0x5cabd0 MultiplayerSiege::QueryInterface -> NG (attempt 2)
+[ledger] 0x765790 COMClass::invokeMethod -> NG (attempt 2)
+[ledger] 0x7a2800 Map_Handle_7A2800 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x773b10 WebBrowser::Write -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77d160 sub_77D160 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6bf960 _TClassFactory_VCellClass::GetClassName -> NG (attempt 2)
+[ledger] 0x6c09e0 _TClassFactory_VSpawnManagerClass::GetClassName -> NG (attempt 2)
+[ledger] 0x6c1a60 _TClassFactory_VTriggerClass::GetClassName -> NG (attempt 2)
+[ledger] 0x6c2ae0 _TClassFactory_VAircraftTypeClass::GetClassName -> NG (attempt 2)
+[ledger] 0x6c3b60 _TClassFactory_VAnimTypeClass::GetClassName -> NG (attempt 2)
+[ledger] 0x6c4be0 _TClassFactory_VTeleportLocomotionClass::GetClassName -> NG (attempt 2)
+[ledger] 0x6c5de0 _TClassFactory_VNeuronClass::GetClassName -> NG (attempt 2)
+[ledger] 0x40d9c0 sub_40D9C0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x40f410 sub_40F410 -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "const_fold": 3,
+  "branch_order": 1,
+  "regalloc": 7,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p09\batch_report.json

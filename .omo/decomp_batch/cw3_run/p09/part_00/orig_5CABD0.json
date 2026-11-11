@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CABD0",
+ "name": "MultiplayerSiege::QueryInterface",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CABD0",
+ "bytes_hex": "568bf1c706fce67e00e842b10000f644240801740956e852df1f0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

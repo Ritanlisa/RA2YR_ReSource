@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D8C50",
+ "name": "MultiplayerTeam::Constructor",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D8C50",
+ "bytes_hex": "8b442404568bf1508d4e04e8c0da1d008b4c240cc706dcee7e00894e088bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

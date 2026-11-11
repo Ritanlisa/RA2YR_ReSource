@@ -1,0 +1,11 @@
+{
+ "addr": "0x6C4BE0",
+ "name": "TClassFactory_TeleportLocomotionClass::GetClassName",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6C4BE0",
+ "bytes_hex": "56578b7c240c8d470450ff15cc117e008bf085f6750957e8413f100083c4048bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
