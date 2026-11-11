@@ -1,0 +1,8 @@
+{
+ "symbol": "?CountCellType@WDTClass@@QAEHH@Z",
+ "sym_key": "WDTClass::CountCellType",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "568b710c85f6743b8b511085d274348b4e2033c085c9742b8b742408578bf933c98a0a424985c9750783fe02750deb0a83f901750683fe037501404f75e15f5ec2040033c05ec20400",
+ "relocs": []
+}

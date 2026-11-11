@@ -1,0 +1,45 @@
+{
+ "symbol": "?PackRGBFromBytes@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::PackRGBFromBytes",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "518b018b0d000000008944240033d28a54240253d3ea8b0d0000000033db8adc25ff000000d3e28b0d00000000d3eb8b0d00000000d3e38b0d00000000d3e88b0d000000000bd35bd3e00bc259c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  }
+ ]
+}

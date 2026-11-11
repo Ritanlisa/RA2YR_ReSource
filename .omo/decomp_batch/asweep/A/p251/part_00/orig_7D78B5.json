@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D78B5",
+ "name": "__ZeroTail",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D78B5",
+ "bytes_hex": "8b442408566a209959f7f96a1f8bf08b44241099f7f9598b4424082bca83caffd3e2f7d28514b0751c4683fe037d118d04b0833800750e4683c00483fe037cf26a01585ec333c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

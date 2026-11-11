@@ -1,0 +1,11 @@
+{
+ "addr": "0x49D070",
+ "name": "Array::GetElementAt",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49D070",
+ "bytes_hex": "8b542408568b74240832c083faffc7060000000075038b513885d27c09578b79403bd75f7c0383caff538a596c84db5b741483faff74088b493c8b14918916833e007402b0015ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

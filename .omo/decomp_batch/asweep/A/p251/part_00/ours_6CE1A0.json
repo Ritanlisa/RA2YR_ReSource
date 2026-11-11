@@ -1,0 +1,15 @@
+{
+ "symbol": "?ShouldFlashTab@SuperClass@@QAE_NXZ",
+ "sym_key": "SuperClass::ShouldFlashTab",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "8a417084c0740332c0c38b41288a90e500000084d274148b517c85d2750332c0c38a516d84d2750332c0c38b80e800000083f8ff7503b001c385c074148b497403c8a1000000003bc87e06b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

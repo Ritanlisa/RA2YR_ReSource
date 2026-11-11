@@ -1,0 +1,8 @@
+{
+ "symbol": "?Prepend@LinkedList@@QAEHH@Z",
+ "sym_key": "LinkedList::Prepend",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "8b4424045685c074288b700485f674218b500885d2741a8972048b50048b7008897208c7400800000000c74004000000008b51088948088950048b510885d25e7403894208894108c20400",
+ "relocs": []
+}

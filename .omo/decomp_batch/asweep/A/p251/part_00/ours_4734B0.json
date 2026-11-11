@@ -1,0 +1,8 @@
+{
+ "symbol": "?updateMovementAnimation@FootClass@@QAEXH@Z",
+ "sym_key": "FootClass::updateMovementAnimation",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "568b74240885f6743b8b510485d274348b42303bd6752d578b394f89410489395f85c0741f3bf0740d8bd08b403085c074123bf075f38b42308b40308942308b014889015ec20400",
+ "relocs": []
+}

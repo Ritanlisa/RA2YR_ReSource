@@ -1,0 +1,8 @@
+{
+ "symbol": "?__store_number@ObjectClass@@QAEPADHPAPADPAI@Z",
+ "sym_key": "ObjectClass::__store_number",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "53558b6c2410568b742418578b7d00833e0176378b4c24148bc1bb0a00000099f7fbb86766666680c23088178b16474a89168bdaf7e9c1fa028bc2c1e81f03d08bca85c97e0583fb0177cd8b4500897d008d4fff8a188a118819498810403bc172f25f5e5d5bc20c00",
+ "relocs": []
+}

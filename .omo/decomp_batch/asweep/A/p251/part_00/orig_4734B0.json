@@ -1,0 +1,11 @@
+{
+ "addr": "0x4734B0",
+ "name": "FootClass::updateMovementAnimation",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4734B0",
+ "bytes_hex": "568b74240885f6743d8b510485d274368b42303bd6750c8941048b01485e8901c2040085c0741f3bf0740d8bd08b423085c075f35ec204008b42308b40308942308b014889015ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,63 @@
+{
+ "symbol": "?GetWriteOffset@PingPongBuffer@@QAEHXZ",
+ "sym_key": "PingPongBuffer::GetWriteOffset",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c074218b0d00000000a1000000008b150000000003c13bd07228c60500000000008bc1c3a1000000008b0d000000003bc8730f8b0d00000000c605000000000103c1c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?byte_ABCD50@@3EA",
+   "sym_key": "byte_ABCD50"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_829FF4@@3IA",
+   "sym_key": "DataGlobal_829FF4"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_829FF8@@3IA",
+   "sym_key": "DataGlobal_829FF8"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCD44@@3IA",
+   "sym_key": "DataGlobal_ABCD44"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?byte_ABCD50@@3EA",
+   "sym_key": "byte_ABCD50"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_829FF4@@3IA",
+   "sym_key": "DataGlobal_829FF4"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCD44@@3IA",
+   "sym_key": "DataGlobal_ABCD44"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_829FF8@@3IA",
+   "sym_key": "DataGlobal_829FF8"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?byte_ABCD50@@3EA",
+   "sym_key": "byte_ABCD50"
+  }
+ ]
+}

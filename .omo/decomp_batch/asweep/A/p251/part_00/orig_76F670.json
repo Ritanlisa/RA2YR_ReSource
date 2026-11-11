@@ -1,0 +1,11 @@
+{
+ "addr": "0x76F670",
+ "name": "WDTClass::CountCellType",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76F670",
+ "bytes_hex": "8b410c85c0743f8b511085d274388b490c5633c08b49208bf14985f674248b742408578d790133c98a0a4249740a49750d83fe037508eb0583fe027501404f75e55f5ec2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

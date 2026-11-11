@@ -1,0 +1,11 @@
+{
+ "addr": "0x40E340",
+ "name": "LinkedList_flat::Prepend",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40E340",
+ "bytes_hex": "8b4424045685c074288b700485f674218b500885d2741a8972048b50048b7008897208c7400800000000c74004000000008b51048948088950048b510485d25e7403894208894104c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
