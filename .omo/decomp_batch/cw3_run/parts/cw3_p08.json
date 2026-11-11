@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x77c9a0",
+  "name": "sub_77C9A0",
+  "cls": null,
+  "size": 29,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'atexit' : cannot convert parameter 1 from 'int (const void *,const void *)' to 'void (__cdecl *)(void)'"
+ },
+ {
+  "addr": "0x7ad460",
+  "name": "WonlineStringDialogControl_28::Read",
+  "cls": null,
+  "size": 29,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x406ee0",
+  "name": "sub_406EE0",
+  "cls": null,
+  "size": 30,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'g_Audio_Enabled' : undeclared identifier"
+ },
+ {
+  "addr": "0x49fff0",
+  "name": "EnumConnectionsClass::AddRef",
+  "cls": null,
+  "size": 30,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.waypoints' must have class/struct/union type"
+ },
+ {
+  "addr": "0x53f5b0",
+  "name": "Network_Helper",
+  "cls": null,
+  "size": 31,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.isAliveFlag' must have class/struct/union type"
+ },
+ {
+  "addr": "0x731a10",
+  "name": "UI_Delete",
+  "cls": null,
+  "size": 31,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'UI_Delete_Delete' : cannot convert parameter 1 from 'unsigned int ** ' to 'int'"
+ },
+ {
+  "addr": "0x499ce0",
+  "name": "AbstractClass::setTileIndex",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ')' before '"
+ },
+ {
+  "addr": "0x499e40",
+  "name": "??_Gfacet_locale_std__UAEPAXI_Z_17",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '?'"
+ },
+ {
+  "addr": "0x499fa0",
+  "name": "??_Gfacet_locale_std__UAEPAXI_Z_28",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '?'"
+ },
+ {
+  "addr": "0x49a100",
+  "name": "??_Gfacet_locale_std__UAEPAXI_Z_39",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '?'"
+ },
+ {
+  "addr": "0x49a3e0",
+  "name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'std' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x49a880",
+  "name": "??_Gfacet_locale_std__UAEPAXI_Z_61",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '?'"
+ },
+ {
+  "addr": "0x4e8270",
+  "name": "HouseClass::initAngerStruct",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'std' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x537fc0",
+  "name": "CreateTeamCommand::performAction_199",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'CommandClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x538120",
+  "name": "CreateTeamCommand::performAction_210",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'CommandClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x538280",
+  "name": "CreateTeamCommand::performAction_221",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'CommandClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x5383e0",
+  "name": "CreateTeamCommand::performAction_232",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'CommandClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x53ec70",
+  "name": "EventClass::GetKeyStateSafe",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x5d7fd0",
+  "name": "AbstractClass::checkVisibility",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'MultiplayerGameMode' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x5e2f60",
+  "name": "Dialog::ShowPlayerName",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ }
+]

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Network_Helper@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Network_Helper",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "a19000000084c0740b8b0825ff00000050ff5120c7050000000000000000b801000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA05AC@@3IA",
+   "sym_key": "DataGlobal_AA05AC"
+  }
+ ]
+}

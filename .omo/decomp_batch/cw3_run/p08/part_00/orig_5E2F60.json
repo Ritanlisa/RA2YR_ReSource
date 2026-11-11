@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E2F60",
+ "name": "Dialog::ShowPlayerName",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E2F60",
+ "bytes_hex": "68a805000051ff15a8147e006822b3a8006a0068b204000050ff15a4147e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

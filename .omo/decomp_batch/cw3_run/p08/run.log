@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x77c9a0 sub_77C9A0 -> _addr_77
+[conv] 0x7ad460 _CComObject_VCDownloadEventSink_ATL::Read -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x406ee0 sub_406EE0 -> _addr_40
+[conv] 0x49fff0 EnumConnectionsClass::AddRef -> EnumConnectionsClass
+[conv] 0x53f5b0 ObjectClass::Network_Helper -> ObjectClass
+[conv] 0x731a10 UI_Delete -> UI
+[conv] 0x499ce0 BlitPlainXlat::setTileIndex -> BlitPlainXlat
+[conv] 0x499e40 _RLEBlitTransZRemapXlatZRead_E::_Gfacet_locale_std__UAEPAXI_Z_17 -> _RLEBlitTransZRemapXlatZRead_E
+[conv] 0x499fa0 _BlitTransLucent50_G::_Gfacet_locale_std__UAEPAXI_Z_28 -> _BlitTransLucent50_G
+[conv] 0x49a100 _BlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_39 -> _BlitTransLucent25ZReadWarp_G
+[conv] 0x49a3e0 _BlitTranslucent50NonzeroAlpha_G::Constructor_Blitter_1 -> _BlitTranslucent50NonzeroAlpha_G
+[conv] 0x49a880 _RLEBlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_61 -> _RLEBlitTransLucent75ZRead_G
+[conv] 0x4e8270 HouseClass::initAngerStruct -> HouseClass
+[conv] 0x537fc0 MultiplayerSyncCommandClass::performAction_199 -> MultiplayerSyncCommandClass
+[conv] 0x538120 SidebarUpCommandClass::performAction_210 -> SidebarUpCommandClass
+[conv] 0x538280 StopCommandClass::performAction_221 -> StopCommandClass
+[conv] 0x5383e0 SetDefenseTabCommandClass::performAction_232 -> SetDefenseTabCommandClass
+[conv] 0x53ec70 EventClass::GetKeyStateSafe -> EventClass
+[conv] 0x5d7fd0 AbstractClass::checkVisibility -> AbstractClass
+[conv] 0x5e2f60 Dialog::ShowPlayerName -> Dialog
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=0
+[era] _addr_40                 rc=2
+[era] EnumConnectionsClass     rc=2
+[era] ObjectClass              rc=0
+[era] UI                       rc=2
+[era] BlitPlainXlat            rc=0
+[era] _RLEBlitTransZRemapXlatZRead_E rc=0
+[era] _BlitTransLucent50_G     rc=0
+[era] _BlitTransLucent25ZReadWarp_G rc=0
+[era] _BlitTranslucent50NonzeroAlpha_G rc=2
+[era] _RLEBlitTransLucent75ZRead_G rc=0
+[era] HouseClass               rc=2
+[era] MultiplayerSyncCommandClass rc=2
+[era] SidebarUpCommandClass    rc=2
+[era] StopCommandClass         rc=2
+[era] SetDefenseTabCommandClass rc=0
+[era] EventClass               rc=2
+[era] AbstractClass            rc=0
+[era] Dialog                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x7ad460   MISMATCH         _CComObject_VCDownloadEventSink_ATL::Read
+[diff] 0x53f5b0   MISMATCH         ObjectClass::Network_Helper
+[diff] 0x499ce0   MISMATCH         BlitPlainXlat::setTileIndex
+[diff] 0x499e40   MISMATCH         _RLEBlitTransZRemapXlatZRead_E::_Gfacet_locale_std__UAEPAXI_Z_17
+[diff] 0x499fa0   MISMATCH         _BlitTransLucent50_G::_Gfacet_locale_std__UAEPAXI_Z_28
+[diff] 0x49a100   MISMATCH         _BlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_39
+[diff] 0x49a880   MISMATCH         _RLEBlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_61
+[diff] 0x5383e0   MISMATCH         SetDefenseTabCommandClass::performAction_232
+[diff] 0x5d7fd0   MISMATCH         AbstractClass::checkVisibility
+[diff] 0x5e2f60   MISMATCH         Dialog::ShowPlayerName
+[ledger] 0x77c9a0 sub_77C9A0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ad460 _CComObject_VCDownloadEventSink_ATL::Read -> NG (attempt 2)
+[ledger] 0x406ee0 sub_406EE0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49fff0 EnumConnectionsClass::AddRef -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53f5b0 ObjectClass::Network_Helper -> NG (attempt 2)
+[ledger] 0x731a10 UI_Delete -> COMPILE_FAIL (attempt 3)
+[ledger] 0x499ce0 BlitPlainXlat::setTileIndex -> NG (attempt 6)
+[ledger] 0x499e40 _RLEBlitTransZRemapXlatZRead_E::_Gfacet_locale_std__UAEPAXI_Z_17 -> NG (attempt 2)
+[ledger] 0x499fa0 _BlitTransLucent50_G::_Gfacet_locale_std__UAEPAXI_Z_28 -> NG (attempt 2)
+[ledger] 0x49a100 _BlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_39 -> NG (attempt 2)
+[ledger] 0x49a3e0 _BlitTranslucent50NonzeroAlpha_G::Constructor_Blitter_1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a880 _RLEBlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_61 -> NG (attempt 2)
+[ledger] 0x4e8270 HouseClass::initAngerStruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537fc0 MultiplayerSyncCommandClass::performAction_199 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538120 SidebarUpCommandClass::performAction_210 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538280 StopCommandClass::performAction_221 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5383e0 SetDefenseTabCommandClass::performAction_232 -> NG (attempt 2)
+[ledger] 0x53ec70 EventClass::GetKeyStateSafe -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d7fd0 AbstractClass::checkVisibility -> NG (attempt 2)
+[ledger] 0x5e2f60 Dialog::ShowPlayerName -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "regalloc": 2,
+  "const_fold": 7
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p08\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?_Gfacet_locale_std__UAEPAXI_Z_39@_BlitTransLucent25ZReadWarp_G@@QAEPAXD@Z",
+ "sym_key": "_BlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_39",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8a442404568bf1a801c70600000000740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
