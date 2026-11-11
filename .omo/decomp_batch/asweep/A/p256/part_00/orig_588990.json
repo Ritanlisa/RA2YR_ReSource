@@ -1,0 +1,11 @@
+{
+ "addr": "0x588990",
+ "name": "ScenarioClass::CalcMinShroudLevel",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x588990",
+ "bytes_hex": "8b81480100005683f80d577c478bb94001000033f685ff7e3b8b813c0100008b04b085c074290fbe801b0100008b91480100003bd07d028bc233d289814801000085c00f9ec24a23c2898148010000463bf77cc58b81480100005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

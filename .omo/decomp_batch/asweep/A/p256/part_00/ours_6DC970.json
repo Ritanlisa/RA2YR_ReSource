@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindItemIndex@VectorClass_UDirtyAreaStruct@@QAEHH@Z",
+ "sym_key": "VectorClass_UDirtyAreaStruct::FindItemIndex",
+ "size": 100,
+ "link_base": 0,
+ "bytes_hex": "535556578b791033f685ff7e4d8b5424148b490433c08a42100fbe59103bd875268b198b2a3bdd751e8b59048b6a043bdd75148b59088b6a083bdd750a8b590c8b6a0c3bdd740a463bf77d0e83c114ebc88bc65f5e5d5bc204005f5e5d83c8ff5bc20400",
+ "relocs": []
+}

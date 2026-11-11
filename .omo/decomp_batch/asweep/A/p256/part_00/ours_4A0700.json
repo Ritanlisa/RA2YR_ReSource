@@ -1,0 +1,8 @@
+{
+ "symbol": "?EnumConnections@ConnectionPointClass@@QAGHHH@Z",
+ "sym_key": "ConnectionPointClass::EnumConnections",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "8b542404535633c08b722c5785f67f0b5f5eb8000204805bc20c008b4a208b7c241483c1043939740f403bc67de28b590883c1083bdf75f13bc67d248d4eff3bc1894a2c7d1a8b4a20408b34c18974c1f88b74c1048974c1fc8b4a2c3bc17ce65f5e33c05bc20c00",
+ "relocs": []
+}

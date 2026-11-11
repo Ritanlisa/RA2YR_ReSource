@@ -1,0 +1,11 @@
+{
+ "addr": "0x438A00",
+ "name": "BombClass::GetCurrentFrame",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x438A00",
+ "bytes_hex": "837930017506b80c000000c3a1e07188008b513453568bb0d80f00008b88d00f0000578b3d84eda8008bdfb8abaaaa2a2bdaf7e98bca8bc1c1e81f03c88bc399f7f98d1c368bc88bc799f7fbd1e15f3bd65e5b7c014183f90c7c05b90b000000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

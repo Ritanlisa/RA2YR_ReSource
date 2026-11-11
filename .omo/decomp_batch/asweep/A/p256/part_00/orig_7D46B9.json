@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D46B9",
+ "name": "_xtoa",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D46B9",
+ "bytes_hex": "558bec837d14008b4d0c535657740b8b7508c6012d41f7deeb038b75088bf98bc633d2f775108bc68bda33d2f7751083fb098bf0760580c357eb0380c33088194185f677da802100498a178a018811880749473bf972f25f5e5b5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

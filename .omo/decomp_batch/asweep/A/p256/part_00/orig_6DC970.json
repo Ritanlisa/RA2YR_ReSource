@@ -1,0 +1,11 @@
+{
+ "addr": "0x6DC970",
+ "name": "VectorClass_UDirtyAreaStruct::FindItemIndex",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6DC970",
+ "bytes_hex": "535556578b791033f685ff7e488b5424148b49048a421038411075268b198b2a3bdd751e8b59048b6a043bdd75148b59088b6a083bdd750a8b590c8b6a0c3bdd740a4683c1143bf77d0bebcb8bc65f5e5d5bc204005f5e5d83c8ff5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

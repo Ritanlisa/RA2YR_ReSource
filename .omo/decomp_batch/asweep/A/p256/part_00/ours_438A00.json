@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetCurrentFrame@BombClass@@QAEPAVIostream_init@@XZ",
+ "sym_key": "BombClass::GetCurrentFrame",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "837930017506b80c000000c38b513453568b3540020000578b3d000000008bdfb8abaaaaaa2bdaf7a6d00f00008bca8bc3c1e90233d28bb6d80f0000f7f18d1c3633d28bc88bc7f7f3d1e15f3bd65e5b72014183f90c7d0a51e80000000083c404c36a0be80000000083c404c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?__0Iostream_init_QAE_XZ_1@@YAPAVIostream_init@@PAX@Z",
+   "sym_key": "__0Iostream_init_QAE_XZ_1"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?__0Iostream_init_QAE_XZ_1@@YAPAVIostream_init@@PAX@Z",
+   "sym_key": "__0Iostream_init_QAE_XZ_1"
+  }
+ ]
+}

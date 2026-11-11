@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A0700",
+ "name": "ConnectionPointClass::EnumConnections",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A0700",
+ "bytes_hex": "8b5424045633c08b722c5785f67e168b4a208b7c241083c104393974124083c1083bc67cf45f5eb800020480c208008b4a2c3bc17d22493bc1894a2c7d1a8b4a20408b34c18974c1f88b74c1048974c1fc8b4a2c3bc17ce65f5e33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

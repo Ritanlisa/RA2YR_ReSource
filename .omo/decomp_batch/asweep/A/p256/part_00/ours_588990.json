@@ -1,0 +1,8 @@
+{
+ "symbol": "?CalcMinShroudLevel@ScenarioClass@@QAEHXZ",
+ "sym_key": "ScenarioClass::CalcMinShroudLevel",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "83b9480100000d7c4c8b814001000085c07e42568bb13c010000578bf88b0685c074230fbe801b0100008b91480100003bd07d028bc233d285c00f9ec24a23d089914801000083c6044f75d18b81480100005f5ec38b8148010000c3",
+ "relocs": []
+}

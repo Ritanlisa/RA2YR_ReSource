@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p256\part_00
+=== convert (20 addrs) ===
+[conv] 0x658910 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::AddRef -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x6b4440 _VectorClass_UUndoInfoStruct::AddRef -> _VectorClass_UUndoInfoStruct
+[conv] 0x7640b0 _VectorClass_VWaypointClass::setSWCharge -> _VectorClass_VWaypointClass
+[conv] 0x7b33d0 UDPInterfaceClass::GetStatistics -> UDPInterfaceClass
+[conv] 0x7b9d90 WWMouseClass::processFrame -> WWMouseClass
+[conv] 0x7d46b9 ObjectClass::_xtoa -> ObjectClass
+[conv] 0x588990 ScenarioClass::CalcMinShroudLevel -> ScenarioClass
+[conv] 0x689820 ObjectClass::sub_689820 -> ObjectClass
+[conv] 0x689ac0 ObjectClass::sub_689AC0 -> ObjectClass
+[conv] 0x4782e0 _VectorClass_VRGBClass::AddRef -> _VectorClass_VRGBClass
+[conv] 0x492d20 _BlitTransDarkenZRead_G::sub_492D20 -> _BlitTransDarkenZRead_G
+[conv] 0x65c8b0 RandomStraw::AdvanceState -> RandomStraw
+[conv] 0x6c9780 ObjectClass::sub_6C9780 -> ObjectClass
+[conv] 0x431b20 CCFileClass::Constructor -> CCFileClass
+[conv] 0x4a0700 ConnectionPointClass::EnumConnections -> ConnectionPointClass
+[conv] 0x5ae890 Vector::MatrixMulVectorMath -> Vector
+[conv] 0x661530 Map_Append_661530 -> Map_Append
+[conv] 0x6dc970 VectorClass_UDirtyAreaStruct::FindItemIndex -> VectorClass_UDirtyAreaStruct
+[conv] 0x438a00 BombClass::GetCurrentFrame -> BombClass
+[conv] 0x4e37d0 ObjectClass::GetResourceID2CSF -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=2
+[era] _VectorClass_UUndoInfoStruct rc=2
+[era] _VectorClass_VWaypointClass rc=2
+[era] UDPInterfaceClass        rc=2
+[era] WWMouseClass             rc=2
+[era] ObjectClass              rc=2
+[era] ScenarioClass            rc=0
+[era] _VectorClass_VRGBClass   rc=2
+[era] _BlitTransDarkenZRead_G  rc=2
+[era] RandomStraw              rc=2
+[era] CCFileClass              rc=2
+[era] ConnectionPointClass     rc=0
+[era] Vector                   rc=2
+[era] Map_Append               rc=0
+[era] VectorClass_UDirtyAreaStruct rc=0
+[era] BombClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x7d46b9   MISMATCH         ObjectClass::_xtoa
+[diff] 0x689820   MISMATCH         ObjectClass::sub_689820
+[diff] 0x689ac0   MISMATCH         ObjectClass::sub_689AC0
+[diff] 0x4e37d0   MATCH            ObjectClass::GetResourceID2CSF
+[diff] 0x588990   MISMATCH         ScenarioClass::CalcMinShroudLevel
+[diff] 0x4a0700   MISMATCH         ConnectionPointClass::EnumConnections
+[diff] 0x661530   MISMATCH         Map_Append_661530
+[diff] 0x6dc970   MISMATCH         VectorClass_UDirtyAreaStruct::FindItemIndex
+[diff] 0x438a00   MISMATCH         BombClass::GetCurrentFrame
+[ledger] 0x658910 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b4440 _VectorClass_UUndoInfoStruct::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7640b0 _VectorClass_VWaypointClass::setSWCharge -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b33d0 UDPInterfaceClass::GetStatistics -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b9d90 WWMouseClass::processFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d46b9 ObjectClass::_xtoa -> NG (attempt 1)
+[ledger] 0x588990 ScenarioClass::CalcMinShroudLevel -> NG (attempt 1)
+[ledger] 0x689820 ObjectClass::sub_689820 -> NG (attempt 1)
+[ledger] 0x689ac0 ObjectClass::sub_689AC0 -> NG (attempt 1)
+[ledger] 0x4782e0 _VectorClass_VRGBClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x492d20 _BlitTransDarkenZRead_G::sub_492D20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65c8b0 RandomStraw::AdvanceState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c9780 ObjectClass::sub_6C9780 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x431b20 CCFileClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a0700 ConnectionPointClass::EnumConnections -> NG (attempt 1)
+[ledger] 0x5ae890 Vector::MatrixMulVectorMath -> COMPILE_FAIL (attempt 1)
+[ledger] 0x661530 Map_Append_661530 -> NG (attempt 1)
+[ledger] 0x6dc970 VectorClass_UDirtyAreaStruct::FindItemIndex -> NG (attempt 1)
+[ledger] 0x438a00 BombClass::GetCurrentFrame -> NG (attempt 1)
+[ledger] 0x4e37d0 ObjectClass::GetResourceID2CSF -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 8,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "regalloc": 2,
+  "cc_mismatch": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p256\batch_report.json
