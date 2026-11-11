@@ -1,0 +1,80 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x7667e0 ObjectClass::sub_7667E0 -> ObjectClass
+[conv] 0x403490 ObjectClass::?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ -> ObjectClass
+[conv] 0x46d490 ObjectClass::sub_46D490 -> ObjectClass
+[conv] 0x5bcce0 ObjectClass::sub_5BCCE0 -> ObjectClass
+[conv] 0x637030 ObjectClass::sub_637030 -> ObjectClass
+[conv] 0x759ea0 TechnoClass::Render_Load_759EA0 -> TechnoClass
+[conv] 0x401f80 ObjectClass::?EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ -> ObjectClass
+[conv] 0x4f42d0 GScreenClass::Remove -> GScreenClass
+[conv] 0x6ce1f0 AbstractClass::updateTargetTracking -> AbstractClass
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=0
+[era] GScreenClass             rc=0
+[era] AbstractClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x7667e0   MATCH            ObjectClass::sub_7667E0
+[diff] 0x46d490   MISMATCH         ObjectClass::sub_46D490
+[diff] 0x5bcce0   MATCH            ObjectClass::sub_5BCCE0
+[diff] 0x637030   MATCH            ObjectClass::sub_637030
+[diff] 0x759ea0   MATCH            TechnoClass::Render_Load_759EA0
+[diff] 0x4f42d0   MATCH            GScreenClass::Remove
+[diff] 0x6ce1f0   MATCH            AbstractClass::updateTargetTracking
+[ledger] 0x72c6f0 0x72c6f0 -> PENDING (attempt 1)
+[ledger] 0x72ce30 0x72ce30 -> PENDING (attempt 1)
+[ledger] 0x72d430 0x72d430 -> PENDING (attempt 1)
+[ledger] 0x72e260 0x72e260 -> PENDING (attempt 1)
+[ledger] 0x72f4b0 0x72f4b0 -> PENDING (attempt 1)
+[ledger] 0x730ad0 0x730ad0 -> PENDING (attempt 1)
+[ledger] 0x7667e0 sub_7667E0 -> OK (attempt 1)
+[ledger] 0x7b0370 0x7b0370 -> PENDING (attempt 1)
+[ledger] 0x403490 ?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46d490 sub_46D490 -> NG (attempt 1)
+[ledger] 0x5bcce0 sub_5BCCE0 -> OK (attempt 1)
+[ledger] 0x637030 sub_637030 -> OK (attempt 1)
+[ledger] 0x70d180 0x70d180 -> PENDING (attempt 1)
+[ledger] 0x759ea0 Render_Load_759EA0 -> OK (attempt 1)
+[ledger] 0x401f80 ?EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f42d0 VectorCursor_uint_DynamicVectorClass_uint____13::Remove -> OK (attempt 1)
+[ledger] 0x55cc10 0x55cc10 -> PENDING (attempt 1)
+[ledger] 0x5e8d90 0x5e8d90 -> PENDING (attempt 1)
+[ledger] 0x6ce1f0 AbstractClass::updateTargetTracking -> OK (attempt 1)
+[ledger] 0x7271d0 0x7271d0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1117,
+ "verdicts": {
+  "MISMATCH": 290,
+  "MATCH": 448,
+  "COMPILE_FAIL": 319,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 53,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 4,
+  "codegen_shape": 113,
+  "ret_norm": 2,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 23,
+  "regalloc": 44,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 4,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 60.7,
+ "match_rate_of_total_pct": 40.1,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p03\batch_report.json

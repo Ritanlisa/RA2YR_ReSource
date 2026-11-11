@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F42D0",
+ "name": "VectorCursor_uint_DynamicVectorClass_uint____13::Remove",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F42D0",
+ "bytes_hex": "c7410c02000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
