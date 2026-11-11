@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p124\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cb220 MPBattleClass::getAlliesLimit -> MPBattleClass
+[conv] 0x5cb240 sub_5CB240 -> _addr_5C
+[conv] 0x5d3850 sub_5D3850 -> _addr_5D
+[conv] 0x5d3890 sub_5D3890 -> _addr_5D
+[conv] 0x5d5920 MPBattleClass::onAIJoined -> MPBattleClass
+[conv] 0x5d5940 sub_5D5940 -> _addr_5D
+[conv] 0x5d8ad0 sub_5D8AD0 -> _addr_5D
+[conv] 0x5d8af0 sub_5D8AF0 -> _addr_5D
+[conv] 0x5d8b10 sub_5D8B10 -> _addr_5D
+[conv] 0x5d8df0 sub_5D8DF0 -> _addr_5D
+[conv] 0x5d8e10 sub_5D8E10 -> _addr_5D
+[conv] 0x5d8e30 sub_5D8E30 -> _addr_5D
+[conv] 0x5da540 sub_5DA540 -> _addr_5D
+[conv] 0x5da560 sub_5DA560 -> _addr_5D
+[conv] 0x5da580 sub_5DA580 -> _addr_5D
+[conv] 0x5dad80 sub_5DAD80 -> _addr_5D
+[conv] 0x5dada0 sub_5DADA0 -> _addr_5D
+[conv] 0x5e24a0 sub_5E24A0 -> _addr_5E
+[conv] 0x5e24c0 sub_5E24C0 -> _addr_5E
+[conv] 0x5e24e0 sub_5E24E0 -> _addr_5E
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPBattleClass            rc=0
+[era] _addr_5C                 rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_5E                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5cb220   MISMATCH         MPBattleClass::getAlliesLimit
+[diff] 0x5d5920   MISMATCH         MPBattleClass::onAIJoined
+[diff] 0x5cb240   MISMATCH         sub_5CB240
+[diff] 0x5d3850   MISMATCH         sub_5D3850
+[diff] 0x5d3890   MISMATCH         sub_5D3890
+[diff] 0x5d5940   MISMATCH         sub_5D5940
+[diff] 0x5d8ad0   MISMATCH         sub_5D8AD0
+[diff] 0x5d8af0   MISMATCH         sub_5D8AF0
+[diff] 0x5d8b10   MISMATCH         sub_5D8B10
+[diff] 0x5d8df0   MISMATCH         sub_5D8DF0
+[diff] 0x5d8e10   MISMATCH         sub_5D8E10
+[diff] 0x5d8e30   MISMATCH         sub_5D8E30
+[diff] 0x5da540   MISMATCH         sub_5DA540
+[diff] 0x5da560   MISMATCH         sub_5DA560
+[diff] 0x5da580   MISMATCH         sub_5DA580
+[diff] 0x5dad80   MISMATCH         sub_5DAD80
+[diff] 0x5dada0   MISMATCH         sub_5DADA0
+[diff] 0x5e24a0   MISMATCH         sub_5E24A0
+[diff] 0x5e24c0   MISMATCH         sub_5E24C0
+[diff] 0x5e24e0   MISMATCH         sub_5E24E0
+[ledger] 0x5cb220 MPBattleClass::getAlliesLimit -> NG (attempt 1)
+[ledger] 0x5cb240 sub_5CB240 -> NG (attempt 1)
+[ledger] 0x5d3850 sub_5D3850 -> NG (attempt 1)
+[ledger] 0x5d3890 sub_5D3890 -> NG (attempt 1)
+[ledger] 0x5d5920 MPBattleClass::onAIJoined -> NG (attempt 1)
+[ledger] 0x5d5940 sub_5D5940 -> NG (attempt 1)
+[ledger] 0x5d8ad0 sub_5D8AD0 -> NG (attempt 1)
+[ledger] 0x5d8af0 sub_5D8AF0 -> NG (attempt 1)
+[ledger] 0x5d8b10 sub_5D8B10 -> NG (attempt 1)
+[ledger] 0x5d8df0 sub_5D8DF0 -> NG (attempt 1)
+[ledger] 0x5d8e10 sub_5D8E10 -> NG (attempt 1)
+[ledger] 0x5d8e30 sub_5D8E30 -> NG (attempt 1)
+[ledger] 0x5da540 sub_5DA540 -> NG (attempt 1)
+[ledger] 0x5da560 sub_5DA560 -> NG (attempt 1)
+[ledger] 0x5da580 sub_5DA580 -> NG (attempt 1)
+[ledger] 0x5dad80 sub_5DAD80 -> NG (attempt 1)
+[ledger] 0x5dada0 sub_5DADA0 -> NG (attempt 1)
+[ledger] 0x5e24a0 sub_5E24A0 -> NG (attempt 1)
+[ledger] 0x5e24c0 sub_5E24C0 -> NG (attempt 1)
+[ledger] 0x5e24e0 sub_5E24E0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p124\batch_report.json
