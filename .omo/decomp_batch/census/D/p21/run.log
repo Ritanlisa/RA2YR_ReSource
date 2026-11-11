@@ -1,0 +1,93 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b0db0 BuildingClass::ProcessEnterUnit -> BuildingClass
+[conv] 0x583180 unknown::CrossBridge -> unknown
+[conv] 0x49d120 MPCooperative::ReadCoopSaveINI -> MPCooperative
+[conv] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> TeamClass
+[conv] 0x774cd0 WinModemClass::LoadTypeData -> WinModemClass
+[conv] 0x740810 UnitClass::ProcessAIDecision -> UnitClass
+[conv] 0x6d59d0 RadarClass::DrawBlip -> RadarClass
+[conv] 0x736990 UnitClass::UpdateRotation_TurretFacing_EMP -> UnitClass
+[conv] 0x4a8960 DisplayClass::SetViewDimensions -> DisplayClass
+[conv] 0x778210 ScoreScreen::DrawSHPBackground -> ScoreScreen
+[conv] 0x5d9db0 unknown::DetectPortAllocationPattern -> unknown
+[conv] 0x5d1fd0 BSurface::CopyRect -> BSurface
+[conv] 0x502a80 HouseClass::RegisterGain_0 -> HouseClass
+[conv] 0x49be40 MPCooperative::WriteCoopSaveINI -> MPCooperative
+[conv] 0x7db207 ObjectClass::_$I10_OUTPUT -> ObjectClass
+[conv] 0x711840 TechnoTypeClass::Construct -> TechnoTypeClass
+[conv] 0x77e900 unknown::AssignWOLPlayerSide -> unknown
+[conv] 0x52fc20 TechnoClass::InitRandomSeed -> TechnoClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] unknown                  rc=2
+[era] MPCooperative            rc=2
+[era] TeamClass                rc=2
+[era] WinModemClass            rc=2
+[era] UnitClass                rc=2
+[era] RadarClass               rc=2
+[era] DisplayClass             rc=2
+[era] ScoreScreen              rc=2
+[era] BSurface                 rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] TechnoTypeClass          rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6b0db0 BuildingClass::ProcessEnterUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74de90 0x74de90 -> PENDING (attempt 1)
+[ledger] 0x583180 Pathfinding::CrossBridge -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49d120 MPCooperative::ReadCoopSaveINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> COMPILE_FAIL (attempt 1)
+[ledger] 0x774cd0 WinModemClass::LoadTypeData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x740810 TechnoClass::ProcessAIDecision -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d59d0 RadarClass::DrawBlip -> COMPILE_FAIL (attempt 1)
+[ledger] 0x736990 UnitClass::UpdateRotation_TurretFacing_EMP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a8960 TacticalClass::SetViewDimensions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x778210 ScoreScreen::DrawSHPBackground -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d9db0 DetectPortAllocationPattern -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1fd0 Surface::CopyRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x502a80 HouseClass::RegisterGain_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49be40 MPCooperative::WriteCoopSaveINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7db207 _$I10_OUTPUT -> COMPILE_FAIL (attempt 1)
+[ledger] 0x711840 TechnoTypeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77e900 AssignWOLPlayerSide -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52fc20 InitRandomSeed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x783270 0x783270 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 2794,
+ "verdicts": {
+  "MISMATCH": 716,
+  "MATCH": 521,
+  "COMPILE_FAIL": 1004,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 534,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 247,
+  "ret_norm": 8,
+  "frame_sched": 76,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 117,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.1,
+ "match_rate_of_total_pct": 18.6,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p21\batch_report.json

@@ -3968,6 +3968,20 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x49be40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MPCooperative::WriteCoopSaveINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x49d120": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MPCooperative::ReadCoopSaveINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x49e400": {
   "attempts": 9,
   "first_diff": null,
@@ -4387,6 +4401,13 @@
   "name": "0x4a8490",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x4a8960": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::SetViewDimensions",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4a8bf0": {
   "attempts": 9,
@@ -6425,6 +6446,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x502a80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::RegisterGain_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x504740": {
   "attempts": 1,
   "first_diff": "+1 mov esi, dword ptr [esp + 8]",
@@ -7227,6 +7255,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CampaignMenu::DlgProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x52fc20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InitRandomSeed",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -8812,6 +8847,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x583180": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Pathfinding::CrossBridge",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x583ad0": {
   "attempts": 1,
   "first_diff": null,
@@ -10205,6 +10247,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5d1fd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Surface::CopyRect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5d2260": {
   "attempts": 1,
   "first_diff": null,
@@ -10449,6 +10498,13 @@
   "name": "0x5d8ef0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x5d9db0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DetectPortAllocationPattern",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5da040": {
   "attempts": 1,
@@ -13544,6 +13600,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x6b0db0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::ProcessEnterUnit",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6b1020": {
   "attempts": 10,
   "first_diff": null,
@@ -14468,6 +14531,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6d59d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadarClass::DrawBlip",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6d5f60": {
   "attempts": 5,
   "first_diff": "+0 sub esp, 8",
@@ -14986,6 +15056,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6f0130": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamClass::CheckMemberSuperWeapon",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6f03b0": {
   "attempts": 1,
   "first_diff": "+0 mov ecx, dword ptr [ecx + 0x28]",
@@ -15342,6 +15419,13 @@
   "name": "0x710a80",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x711840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoTypeClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x716150": {
   "attempts": 1,
@@ -16358,6 +16442,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x736990": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitClass::UpdateRotation_TurretFacing_EMP",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x736ca0": {
   "attempts": 4,
   "first_diff": "+0 sub esp, 0xc",
@@ -16376,6 +16467,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "TechnoClass::CreateDeathAnim",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x740810": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::ProcessAIDecision",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -16665,6 +16763,13 @@
   "name": "ObjectClass::IsCellSuitableForPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x74de90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x74de90",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x74e8a0": {
   "attempts": 1,
@@ -17765,6 +17870,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x774cd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinModemClass::LoadTypeData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7754c0": {
   "attempts": 1,
   "first_diff": null,
@@ -17841,6 +17953,13 @@
   "name": "0x7781b0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x778210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScoreScreen::DrawSHPBackground",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x778540": {
   "attempts": 1,
@@ -17989,6 +18108,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x77e900": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AssignWOLPlayerSide",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7813b0": {
   "attempts": 1,
   "first_diff": null,
@@ -18000,6 +18126,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x781cf0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x783270": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x783270",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -19512,6 +19645,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "___getlocaleinfo",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7db207": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "_$I10_OUTPUT",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
