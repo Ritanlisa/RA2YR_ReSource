@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_5A4FA0@@YGNPAF0@Z",
+ "sym_key": "Unnamed::sub_5A4FA0",
+ "size": 111,
+ "link_base": 0,
+ "bytes_hex": "83ec108b4c24148b542418560fbf010fbf320fbf49020fbf52022bca2bc68bd183ec080fafd18bc80fafc803d189542420db442420dd1c24e800000000dd5c241483c408b900000000e80000000089442404c744240800000000df6c24045edc0d00000000dc44240883c410c20800",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "__real@8@3fe1a00000009ffff800",
+   "sym_key": "_real@8@3fe1a00000009ffff800"
+  }
+ ]
+}

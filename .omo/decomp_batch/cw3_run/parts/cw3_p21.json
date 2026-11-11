@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6c5a50",
+  "name": "CreateTClassFactory_ParticleSystemTypeClass",
+  "cls": null,
+  "size": 101,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'IID_IUnknown' : undeclared identifier"
+ },
+ {
+  "addr": "0x624930",
+  "name": "Dialog::UpdateControlState",
+  "cls": null,
+  "size": 103,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int *)' : cannot convert parameter 1 from 'int *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x5b2da0",
+  "name": "RadioClass::Constructor",
+  "cls": null,
+  "size": 104,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'unsigned short *'"
+ },
+ {
+  "addr": "0x624760",
+  "name": "HashTable_flat::Get",
+  "cls": null,
+  "size": 106,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int *)' : cannot convert parameter 1 from 'int *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x769330",
+  "name": "Surface::PixelToIndex",
+  "cls": null,
+  "size": 106,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2660",
+  "first_msg": "'GetWidth' : function does not take 1 parameters"
+ },
+ {
+  "addr": "0x4787e0",
+  "name": "INIClass::writeSection",
+  "cls": null,
+  "size": 108,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x56bbe0",
+  "name": "CrateClass::Update",
+  "cls": null,
+  "size": 111,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.waypoints' must have class/struct/union type"
+ },
+ {
+  "addr": "0x474940",
+  "name": "ObjectTypeClass::loadTypeMember_5474940",
+  "cls": null,
+  "size": 112,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x63d400",
+  "name": "DSurface::DrawMarker",
+  "cls": null,
+  "size": 114,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'int (class AudioStream *,unsigned int *,unsigned int *,void *)' : cannot convert parameter 1 from 'int' to 'cl"
+ },
+ {
+  "addr": "0x730990",
+  "name": "SidebarHasAvailableUnit",
+  "cls": null,
+  "size": 114,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x550000",
+  "name": "Game::loadCampaignData",
+  "cls": null,
+  "size": 116,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x5a4fa0",
+  "name": "sub_5A4FA0",
+  "cls": null,
+  "size": 117,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x7d1311",
+  "name": "__isctype",
+  "cls": null,
+  "size": 117,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'LPCSTR' : undeclared identifier"
+ },
+ {
+  "addr": "0x6b1d40",
+  "name": "SliderClass::GetValue",
+  "cls": null,
+  "size": 118,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x578080",
+  "name": "Cell::GetGroundHeight",
+  "cls": null,
+  "size": 121,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x69d960",
+  "name": "SHA1::Process",
+  "cls": null,
+  "size": 121,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'SHA1__Transform' : cannot convert parameter 1 from 'int *' to 'int'"
+ },
+ {
+  "addr": "0x69e930",
+  "name": "MixFileClass::CacheNode_Dtor",
+  "cls": null,
+  "size": 122,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'Node' : is not a member of 'MixFileClass'"
+ },
+ {
+  "addr": "0x633f20",
+  "name": "TeamClass::GetNextScriptAction",
+  "cls": null,
+  "size": 123,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'p_vtable0' : undeclared identifier"
+ },
+ {
+  "addr": "0x477f40",
+  "name": "INIClass::parseSection",
+  "cls": null,
+  "size": 124,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x537530",
+  "name": "CreateTeamCommand::performAction_158",
+  "cls": null,
+  "size": 126,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ }
+]

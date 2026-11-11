@@ -1,0 +1,21 @@
+{
+ "symbol": "?parseSection@INIClass@@QAEPAV1@PAH@Z",
+ "sym_key": "INIClass::parseSection",
+ "size": 129,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bf133db3bf7895e04895e08c6460c01885e0d891e75085f5e33c05bc204008bcee8000000008b47083bc3894608750e8b06895e04885e0d5f5e5bc20400c1e00250e80000000083c4043bc389460474218b4e0833c03bcbc6460d017e148b4f048b56048b0c81890c828b4e08403bc17cec8b065f5e5bc20400",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?ddtor@TypeList_TechnoType@@QAEXXZ",
+   "sym_key": "TypeList_TechnoType::ddtor"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

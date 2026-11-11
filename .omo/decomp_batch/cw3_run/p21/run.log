@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c5a50 _TClassFactory_VParticleSystemTypeClass::CreateTClassFactory_ParticleSystemTypeClass -> _TClassFactory_VParticleSystemTypeClass
+[conv] 0x624930 Dialog::UpdateControlState -> Dialog
+[conv] 0x5b2da0 MissionClass::Constructor -> MissionClass
+[conv] 0x624760 HashTable::Get -> HashTable
+[conv] 0x769330 Surface::PixelToIndex -> Surface
+[conv] 0x4787e0 INIClass::writeSection -> INIClass
+[conv] 0x56bbe0 MapClass::Update -> MapClass
+[conv] 0x474940 ObjectTypeClass::loadTypeMember_5474940 -> ObjectTypeClass
+[conv] 0x63d400 DSurface::DrawMarker -> DSurface
+[conv] 0x730990 ObjectClass::SidebarHasAvailableUnit -> ObjectClass
+[conv] 0x550000 Game::loadCampaignData -> Game
+[conv] 0x5a4fa0 sub_5A4FA0 -> _addr_5A
+[conv] 0x7d1311 __isctype -> _addr_7D
+[conv] 0x6b1d40 SliderClass::GetValue -> SliderClass
+[conv] 0x578080 Cell::GetGroundHeight -> Cell
+[conv] 0x69d960 SHA1::Process -> SHA1
+[conv] 0x69e930 MixFileClass::CacheNode_Dtor -> MixFileClass
+[conv] 0x633f20 TeamClass::GetNextScriptAction -> TeamClass
+[conv] 0x477f40 INIClass::parseSection -> INIClass
+[conv] 0x537530 View3CommandClass::performAction_158 -> View3CommandClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VParticleSystemTypeClass rc=2
+[era] Dialog                   rc=2
+[era] MissionClass             rc=2
+[era] HashTable                rc=2
+[era] Surface                  rc=2
+[era] INIClass                 rc=0
+[era] MapClass                 rc=0
+[era] ObjectTypeClass          rc=2
+[era] DSurface                 rc=2
+[era] ObjectClass              rc=0
+[era] Game                     rc=0
+[era] _addr_5A                 rc=0
+[era] _addr_7D                 rc=2
+[era] SliderClass              rc=0
+[era] Cell                     rc=0
+[era] SHA1                     rc=2
+[era] MixFileClass             rc=2
+[era] TeamClass                rc=2
+[era] View3CommandClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x4787e0   MISMATCH         INIClass::writeSection
+[diff] 0x477f40   MISMATCH         INIClass::parseSection
+[diff] 0x56bbe0   MISMATCH         MapClass::Update
+[diff] 0x730990   MISMATCH         ObjectClass::SidebarHasAvailableUnit
+[diff] 0x550000   MISMATCH         Game::loadCampaignData
+[diff] 0x5a4fa0   MISMATCH         sub_5A4FA0
+[diff] 0x6b1d40   MISMATCH         SliderClass::GetValue
+[diff] 0x578080   MISMATCH         Cell::GetGroundHeight
+[ledger] 0x6c5a50 _TClassFactory_VParticleSystemTypeClass::CreateTClassFactory_ParticleSystemTypeClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x624930 Dialog::UpdateControlState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b2da0 MissionClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x624760 HashTable::Get -> COMPILE_FAIL (attempt 2)
+[ledger] 0x769330 Surface::PixelToIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4787e0 INIClass::writeSection -> NG (attempt 2)
+[ledger] 0x56bbe0 MapClass::Update -> NG (attempt 2)
+[ledger] 0x474940 ObjectTypeClass::loadTypeMember_5474940 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63d400 DSurface::DrawMarker -> COMPILE_FAIL (attempt 2)
+[ledger] 0x730990 ObjectClass::SidebarHasAvailableUnit -> NG (attempt 2)
+[ledger] 0x550000 Game::loadCampaignData -> NG (attempt 2)
+[ledger] 0x5a4fa0 sub_5A4FA0 -> NG (attempt 2)
+[ledger] 0x7d1311 __isctype -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b1d40 SliderClass::GetValue -> NG (attempt 2)
+[ledger] 0x578080 Cell::GetGroundHeight -> NG (attempt 2)
+[ledger] 0x69d960 SHA1::Process -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69e930 MixFileClass::CacheNode_Dtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x633f20 TeamClass::GetNextScriptAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x477f40 INIClass::parseSection -> NG (attempt 2)
+[ledger] 0x537530 View3CommandClass::performAction_158 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "extern_reloc": 1,
+  "const_fold": 2,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p21\batch_report.json

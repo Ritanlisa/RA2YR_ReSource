@@ -1,0 +1,11 @@
+{
+ "addr": "0x730990",
+ "name": "SidebarHasAvailableUnit",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x730990",
+ "bytes_hex": "538b1d88eca80055565733ff85db8be97e52a17ceca8008b34b885f674418a868100000084c07537a138b2a8008b8e1c02000085c075088a81ed010000eb05e81cadddff84c074178a868300000084c0750d8b86140200008d55ff3bc2740c473bfb7cae5f5e5db0015bc35f5e5d32c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

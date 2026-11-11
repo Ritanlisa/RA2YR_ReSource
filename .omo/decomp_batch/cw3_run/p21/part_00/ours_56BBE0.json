@@ -1,0 +1,51 @@
+{
+ "symbol": "?Update@MapClass@@QAEDXZ",
+ "sym_key": "MapClass::Update",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "518b44240053578bf98b0d000000008bd133d081e2ff00000033c285c90f84890000008a0d1100000033d224008ad10bc284c98bd8747355568db794010000bd000100008a460c80e30025ff0000000bd8663b1d8a270000750d668b4e0e663b0d9227000074358b0e8b460883f9ff740f0fbe1da00100002bd93bd87d062bc385c075188bcee8000000008bcfe80000000025ff00000080e3000bd883c6104d75a25e5d8ac35f5b59c38ac35f5b59c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?Cleanup@CellClass@@QAEDXZ",
+   "sym_key": "CellClass::Cleanup"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?FindPlacement@CrateClass@@QAEDXZ",
+   "sym_key": "CrateClass::FindPlacement"
+  }
+ ]
+}

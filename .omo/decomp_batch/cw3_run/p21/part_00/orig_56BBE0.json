@@ -1,0 +1,11 @@
+{
+ "addr": "0x56BBE0",
+ "name": "CrateClass::Update",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x56BBE0",
+ "bytes_hex": "a138b2a8005785c08bf97461a061b2a80084c0745853568db758010000bb00010000668b460c663b0580d4ab00750d668b4e0e663b0d82d4ab0074298b168b4e0883faff740da184eda8002bc23bc17d062bc885c9750e8bcee8125bf3ff8bcfe8fb00000083c6104b75b75e5b5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
