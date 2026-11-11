@@ -1,0 +1,76 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cad30 MPBattleClass::needsHouseSelection -> MPBattleClass
+[conv] 0x48e620 ControlClass::DispatchClick -> ControlClass
+[conv] 0x516370 HoverLocomotionClass::UpdateFacingDirection_0 -> HoverLocomotionClass
+[conv] 0x41d830 AirstrikeClass::StartMission -> AirstrikeClass
+[conv] 0x5d8c50 MultiplayerTeam::Constructor -> MultiplayerTeam
+[conv] 0x7cb47a unknown::__unlock_file2 -> unknown
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPBattleClass            rc=0
+[era] ControlClass             rc=0
+[era] HoverLocomotionClass     rc=2
+[era] AirstrikeClass           rc=0
+[era] MultiplayerTeam          rc=2
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x5cad30   MISMATCH         MPBattleClass::needsHouseSelection
+[diff] 0x48e620   MISMATCH         ControlClass::DispatchClick
+[diff] 0x41d830   MATCH            AirstrikeClass::StartMission
+[ledger] 0x55f890 0x55f890 -> PENDING (attempt 1)
+[ledger] 0x5b7700 0x5b7700 -> PENDING (attempt 1)
+[ledger] 0x5cad30 MPBattleClass::needsHouseSelection -> NG (attempt 1)
+[ledger] 0x5f3800 0x5f3800 -> PENDING (attempt 1)
+[ledger] 0x6334e0 0x6334e0 -> PENDING (attempt 1)
+[ledger] 0x65d7d0 0x65d7d0 -> PENDING (attempt 1)
+[ledger] 0x693a70 0x693a70 -> PENDING (attempt 1)
+[ledger] 0x6b8a00 0x6b8a00 -> PENDING (attempt 1)
+[ledger] 0x6e59e0 0x6e59e0 -> PENDING (attempt 1)
+[ledger] 0x71e520 0x71e520 -> PENDING (attempt 1)
+[ledger] 0x730890 0x730890 -> PENDING (attempt 1)
+[ledger] 0x75a9b0 0x75a9b0 -> PENDING (attempt 1)
+[ledger] 0x76c1b0 0x76c1b0 -> PENDING (attempt 1)
+[ledger] 0x7b0cb0 0x7b0cb0 -> PENDING (attempt 1)
+[ledger] 0x48e620 Control::DispatchClick -> NG (attempt 1)
+[ledger] 0x516370 JumpjetLocomotionClass::UpdateFacingDirection_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x559d30 0x559d30 -> PENDING (attempt 1)
+[ledger] 0x41d830 AirstrikeClass::StartMission -> OK (attempt 1)
+[ledger] 0x5d8c50 MultiplayerTeam::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cb47a __unlock_file2 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 1859,
+ "verdicts": {
+  "MISMATCH": 516,
+  "MATCH": 511,
+  "COMPILE_FAIL": 459,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 361,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 182,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 60,
+  "branch_polarity": 34,
+  "regalloc": 61,
+  "branch_order": 67,
+  "width_mismatch": 6,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 49.8,
+ "match_rate_of_total_pct": 27.5,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p08\batch_report.json

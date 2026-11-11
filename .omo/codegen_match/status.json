@@ -888,6 +888,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x41d830": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AirstrikeClass::StartMission",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x41dd30": {
   "attempts": 5,
   "first_diff": null,
@@ -2336,6 +2343,13 @@
   "name": "COMObject::GetMember09",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x48e620": {
+  "attempts": 1,
+  "first_diff": "+3 mov ecx, dword ptr [esi + 0x28]",
+  "name": "Control::DispatchClick",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x48e650": {
   "attempts": 1,
@@ -4808,6 +4822,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x516370": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::UpdateFacingDirection_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x517070": {
   "attempts": 1,
   "first_diff": null,
@@ -5921,6 +5942,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x559d30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x559d30",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x55a1a0": {
   "attempts": 1,
   "first_diff": null,
@@ -6072,6 +6100,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x55f7f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x55f890": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x55f890",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -6768,6 +6803,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5b7700": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5b7700",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5bbed0": {
   "attempts": 10,
   "first_diff": null,
@@ -7012,6 +7054,13 @@
   "name": "0x5cacd0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x5cad30": {
+  "attempts": 1,
+  "first_diff": "+0 fild dword ptr [0xabfaf8]",
+  "name": "MPBattleClass::needsHouseSelection",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x5cae70": {
   "attempts": 1,
@@ -7300,6 +7349,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5d8c50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MultiplayerTeam::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5da040": {
   "attempts": 1,
   "first_diff": "+0 mov cl, byte ptr [esp + 4]",
@@ -7425,6 +7481,13 @@
   "name": "NullModemClass::SetAddress",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5f3800": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5f3800",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x5f38a0": {
   "attempts": 1,
@@ -7962,6 +8025,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x633420",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x6334e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6334e0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -8595,6 +8665,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x65d7d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x65d7d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x65f850": {
   "attempts": 1,
   "first_diff": null,
@@ -8893,6 +8970,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x693940",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x693a70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x693a70",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -9348,6 +9432,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x6b8920",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x6b8a00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6b8a00",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -9939,6 +10030,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6e59e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6e59e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x6e6470": {
   "attempts": 1,
   "first_diff": "+15 call 0x410320",
@@ -10443,6 +10541,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x71e520": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x71e520",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x71e5e0": {
   "attempts": 1,
   "first_diff": null,
@@ -10874,6 +10979,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7307d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x730890": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x730890",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -11416,6 +11528,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x75a9b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x75a9b0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x75ca80": {
   "attempts": 3,
   "first_diff": "+13 push ebx",
@@ -11730,6 +11849,13 @@
   "name": "Conflict::GetOwnerHouse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x76c1b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x76c1b0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x76f020": {
   "attempts": 1,
@@ -12211,6 +12337,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7b0c10",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7b0cb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7b0cb0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -12869,6 +13002,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_7CAC34",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7cb47a": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "__unlock_file2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CAD30",
+ "name": "MPBattleClass::needsHouseSelection",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CAD30",
+ "bytes_hex": "db05f8faab0083ec08dc0d40177e00dd1c24e89900f0ffdd1db0faab0083c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

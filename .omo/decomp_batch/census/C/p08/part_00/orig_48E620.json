@@ -1,0 +1,11 @@
+{
+ "addr": "0x48E620",
+ "name": "Control::DispatchClick",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48E620",
+ "bytes_hex": "568bf18b4e2885c974078b016a00ff506c8b4c2408518bcee8132f05005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

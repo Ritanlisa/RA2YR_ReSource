@@ -1,0 +1,21 @@
+{
+ "symbol": "?StartMission@AirstrikeClass@@QAEDPAH@Z",
+ "sym_key": "AirstrikeClass::StartMission",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8a413c84c08b442404750950e800000000c204003b4150740650e800000000c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?SpawnAircraft@AirstrikeClass@@QAEHPAX@Z",
+   "sym_key": "AirstrikeClass::SpawnAircraft"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?ReassignTarget@AirstrikeClass@@QAEDH@Z",
+   "sym_key": "AirstrikeClass::ReassignTarget"
+  }
+ ]
+}

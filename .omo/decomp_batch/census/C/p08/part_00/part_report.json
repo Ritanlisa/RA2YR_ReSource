@@ -1,0 +1,233 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_CLS": 14,
+   "MISMATCH": 2,
+   "COMPILE_FAIL": 3,
+   "MATCH": 1
+  },
+  "pathologies": {
+   "codegen_shape": 1,
+   "regalloc": 1
+  },
+  "match_rate_of_decided_pct": 33.3,
+  "match_rate_of_total_pct": 5.0
+ },
+ "results": [
+  {
+   "addr": "0x55f890",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x55f890",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5b7700",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5b7700",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5cad30",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0xabfaf8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "MPBattleClass::needsHouseSelection",
+   "emitted": "MPBattleClass::needsHouseSelection",
+   "unit": "MPBattleClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51
+  },
+  {
+   "addr": "0x5f3800",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5f3800",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6334e0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6334e0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x65d7d0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x65d7d0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x693a70",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x693a70",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6b8a00",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6b8a00",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6e59e0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6e59e0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x71e520",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x71e520",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x730890",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x730890",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x75a9b0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x75a9b0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x76c1b0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x76c1b0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7b0cb0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7b0cb0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x48e620",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 34B",
+   "first_diff": {
+    "orig": "+3 mov ecx, dword ptr [esi + 0x28]",
+    "ours": "+3 mov eax, dword ptr [esi + 0x28]"
+   },
+   "pathology": "regalloc",
+   "name": "Control::DispatchClick",
+   "emitted": "ControlClass::DispatchClick",
+   "unit": "ControlClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/1",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 34
+  },
+  {
+   "addr": "0x516370",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p08\\part_00\\HoverLocomotionClass.cpp(8) : error C2227: left of '->primaryFacing' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cens",
+   "first_diff": null,
+   "pathology": null,
+   "name": "JumpjetLocomotionClass::UpdateFacingDirection_0",
+   "emitted": "HoverLocomotionClass::UpdateFacingDirection_0",
+   "unit": "HoverLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x559d30",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x559d30",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x41d830",
+   "batch": "censusC",
+   "verdict": "MATCH",
+   "note": "34B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "AirstrikeClass::StartMission",
+   "emitted": "AirstrikeClass::StartMission",
+   "unit": "AirstrikeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "4/4",
+   "rule_violations": 2,
+   "orig_size": 34,
+   "ours_size": 34
+  },
+  {
+   "addr": "0x5d8c50",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p08\\part_00\\MultiplayerTeam.cpp(9) : error C2018: unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p08\\part_00\\MultiplayerTeam.cpp(9)",
+   "first_diff": null,
+   "pathology": null,
+   "name": "MultiplayerTeam::Constructor",
+   "emitted": "MultiplayerTeam::Constructor",
+   "unit": "MultiplayerTeam",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 3
+  },
+  {
+   "addr": "0x7cb47a",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p08\\part_00\\unknown.cpp(10) : error C2065: 'LPCRITICAL_SECTION' : undeclared identifier",
+   "first_diff": null,
+   "pathology": null,
+   "name": "__unlock_file2",
+   "emitted": "unknown::__unlock_file2",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?DispatchClick@ControlClass@@QAEHH@Z",
+ "sym_key": "ControlClass::DispatchClick",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "568bf18b462885c074088b086a0050ff516c8b5424088bce52e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?ClearState@GadgetClass@@QAEHH@Z",
+   "sym_key": "GadgetClass::ClearState"
+  }
+ ]
+}
