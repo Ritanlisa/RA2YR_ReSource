@@ -1,0 +1,117 @@
+{
+ "symbol": "?Construct@SuperWeaponTypeClass@@QAEPAV1@PAD@Z",
+ "sym_key": "SuperWeaponTypeClass::Construct",
+ "size": 564,
+ "link_base": 0,
+ "bytes_hex": "8b4424045356578bf150e80000000033db83c8ff889e9c0000008986b8000000894624b80000f03f895e288986d0000000899ed40000008986d8000000899edc0000008986e0000000899ee4000000894630899eec000000895e48895e5089464489464c894654b80000803f8dbe500100008986040100008986080100005389860c010000538bcf895c241889861001000089861401000089861801000089861c01000089862001000089862401000089862801000089862c01000089863001000089863401000089863801000089863c01000089864001000089864401000089864801000089864c010000e800000000891f8dbe6c01000053538bcfc786640100000a000000899e60010000e800000000891f8dbe8801000053538bcfc786800100000a000000899e7c010000e8000000008d4604c7869c0100000a00000050899e98010000891fc786a801000041000001889eac010000891e8918895e08895e0ce800000000889ea4010000a1000000008b0d000000003bc17236381d0000000075043bcb75418b15000000003bd3763703d18b0d0000000053526800000000ff510884c0a1000000000f94c13acb75178b0d000000008d5001891500000000893481a10000000033c93bc37e188b1500000000393274114183c2043bc87d06393275f4eb0383c9ff894e308b15000000003bd3762a8b0d000000008b013bc68b442410740c4083c1043bc27312393175f48986b80000008bc65f5e5bc20400c786b8000000ffffffff8bc65f5e5bc20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::Constructor"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?Construct2@InfantryTypeVector@@QAEPAV1@HH@Z",
+   "sym_key": "InfantryTypeVector::Construct2"
+  },
+  {
+   "off": 270,
+   "type": "REL32",
+   "sym": "?ConstructUnitTypeVectorClass@UnitTypeVector@@QAEPAV1@HH@Z",
+   "sym_key": "UnitTypeVector::ConstructUnitTypeVectorClass"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?Constructor@AircraftTypeVector@@QAEPAV1@HH@Z",
+   "sym_key": "AircraftTypeVector::Constructor"
+  },
+  {
+   "off": 356,
+   "type": "REL32",
+   "sym": "?AbstractClass__GenerateUniqueID@@YGHPAX@Z",
+   "sym_key": "AbstractClass__GenerateUniqueID"
+  },
+  {
+   "off": 367,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeArray@@3IA",
+   "sym_key": "g_SuperWeaponTypeArray"
+  },
+  {
+   "off": 373,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CA0@@3IA",
+   "sym_key": "DataGlobal_A83CA0"
+  },
+  {
+   "off": 383,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CA5@@3EA",
+   "sym_key": "DataGlobal_A83CA5"
+  },
+  {
+   "off": 395,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CAC@@3PAIA",
+   "sym_key": "DataGlobal_A83CAC"
+  },
+  {
+   "off": 407,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83C98@@3IA",
+   "sym_key": "DataGlobal_A83C98"
+  },
+  {
+   "off": 414,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83C98@@3IA",
+   "sym_key": "DataGlobal_A83C98"
+  },
+  {
+   "off": 424,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeArray@@3IA",
+   "sym_key": "g_SuperWeaponTypeArray"
+  },
+  {
+   "off": 437,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeCount@@3PAXA",
+   "sym_key": "g_SuperWeaponTypeCount"
+  },
+  {
+   "off": 446,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeArray@@3IA",
+   "sym_key": "g_SuperWeaponTypeArray"
+  },
+  {
+   "off": 454,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeArray@@3IA",
+   "sym_key": "g_SuperWeaponTypeArray"
+  },
+  {
+   "off": 466,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeCount@@3PAXA",
+   "sym_key": "g_SuperWeaponTypeCount"
+  },
+  {
+   "off": 496,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeArray@@3IA",
+   "sym_key": "g_SuperWeaponTypeArray"
+  },
+  {
+   "off": 506,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeCount@@3PAXA",
+   "sym_key": "g_SuperWeaponTypeCount"
+  }
+ ]
+}

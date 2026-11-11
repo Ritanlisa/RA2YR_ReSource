@@ -1,0 +1,93 @@
+{
+ "symbol": "?RenderTooltipBorder@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::RenderTooltipBorder",
+ "size": 633,
+ "link_base": 0,
+ "bytes_hex": "a1a800000083ec205355568bf18b085750ff510c33c08a461885c074510fbe0dd40000008b510483fa018b9174010000750933c98a0c028bf9eb0633ff668b3c42a1000000008b560c528b160fbe088b46088b198b4e045051528d4c2430e8000000005750a10000000050ff53588b4e048b7e088b6e0c8b1e894c24108a4e1884c98bc7897c241c896c241874188b4c2410438d47fe418d55fe894c24108944241c895424183bfd894424147f088b44241889442414db44241483ec08dc4e20dd1c24e8000000008b54241c83c40833c225ff00000033d0895424140f8eb30000000fbe05d400000033d23bfd8a56108b48048bb8740100007f4e83f901750733c98a0c17eb0633c9668b0c578b5424148b4424108b6c241c03d0a100000000895424248b542418895c2420896c24288954242c0fbe10518d4c24248b125150ff52148b542414eb5083f901750733c98a0c17eb0633c9668b0c578b5424148b442410895424288b54241889442424a100000000895c24208954242c0fbe10518d4c24248b125150ff52148b6c241c8b542414eb048b6c241c8bc52bc285c00f8eaf0000008b4e088b460c3bc87f520fbe05d400000033c98b78048a4e1483ff018bb874010000750733c08a040feb0633c0668b044f8b4c24104a8954242c8b1500000000895c2420894c2424896c2428500fbe0a8d4424248b1150ff5214eb530fbe05d400000033c9837804018a4e148bb874010000750733c08a040feb0633c0668b044f8b4c241803d3894c242c8b0d00000000895424208b542410896c2428895424240fbe11508b0a8d54242452ff5114a1a8000000508b08ff51108a563633c08a462088562c884628c64630015f5e5d5b83c420c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Set@Rect@@QAEPAV1@HHHH@Z",
+   "sym_key": "Rect::Set"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 284,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 368,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 434,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 481,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 516,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 562,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 597,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  }
+ ]
+}
