@@ -1497,6 +1497,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x427d00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AnimTypeClass::LoadFromINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x428990": {
   "attempts": 1,
   "first_diff": null,
@@ -1993,6 +2000,13 @@
   "name": "0x43b010",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x43fb20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::ProcessSpreadEffect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4456d0": {
   "attempts": 1,
@@ -2992,6 +3006,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CellClass::ProcessBridgeRepair",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x485af0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::VisualizePlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -4577,6 +4598,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4ab9b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PlayerClass::ExecuteCommand",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4ac660": {
   "attempts": 4,
   "first_diff": null,
@@ -5031,6 +5059,13 @@
   "name": "0x4c1d30",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x4c1f20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Lightning::Draw",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4c2bd0": {
   "attempts": 1,
@@ -6656,6 +6691,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5054b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::GenerateAIBuildListEnsureSanity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x506b80": {
   "attempts": 1,
   "first_diff": null,
@@ -6718,6 +6760,13 @@
   "name": "HouseClass::RecordCratePlacement",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x50a5c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::AIBuildBase",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x50b6f0": {
   "attempts": 1,
@@ -7010,6 +7059,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "SuperWeaponTypeClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x511850": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseTypeClass::LoadFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -9617,6 +9673,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5b20f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Movement::CalcVelocity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5b2950": {
   "attempts": 9,
   "first_diff": "+0 mov ax, word ptr [ecx]",
@@ -9862,6 +9925,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5b4ee0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ModemGuest::InitDialog",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5b57d0": {
   "attempts": 1,
   "first_diff": null,
@@ -9901,6 +9971,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CellClass::SetOccupancy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5bb6e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Modem::EnumerateDevices",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10464,6 +10541,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5cf8e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSChoiceClass::LoadFromINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5d0190": {
   "attempts": 1,
   "first_diff": null,
@@ -11017,6 +11101,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5f1fa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NullModemClass::DetectModem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5f3440": {
   "attempts": 5,
   "first_diff": null,
@@ -11476,6 +11567,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_610BF0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x616980": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ButtonOwnerDraw::DlgProc",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -13443,6 +13541,13 @@
   "attempts": 4,
   "first_diff": null,
   "name": "ScenarioClass::SetCountryFlag",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x68ad70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScenarioClass::SaveToINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -17121,6 +17226,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x73e5e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelTypeClass::ReadINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x740810": {
   "attempts": 1,
   "first_diff": null,
@@ -17293,6 +17405,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "VoxelAnimClass::DrawVoxelFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x749f30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimClass::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -18451,6 +18570,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x772080": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WeaponTypeClass::ReadINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x772a90": {
   "attempts": 1,
   "first_diff": null,
@@ -18899,6 +19025,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x788b00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateAccountWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x78db70": {
   "attempts": 1,
   "first_diff": null,
@@ -18931,6 +19064,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CComObject_CChatEventSink___ATL::DispatchConnectionPairs",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x793d20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NegotiateNetworkConnection",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },

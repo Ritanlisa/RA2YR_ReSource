@@ -1,0 +1,98 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cf8e0 MSChoiceClass::LoadFromINI -> MSChoiceClass
+[conv] 0x5bb6e0 Modem::EnumerateDevices -> Modem
+[conv] 0x5b4ee0 ModemGuest::InitDialog -> ModemGuest
+[conv] 0x5b20f0 Movement::CalcVelocity -> Movement
+[conv] 0x4c1f20 Lightning::Draw -> Lightning
+[conv] 0x485af0 BuildingClass::VisualizePlacement -> BuildingClass
+[conv] 0x616980 unknown::DlgProc -> unknown
+[conv] 0x4ab9b0 DisplayClass::ExecuteCommand -> DisplayClass
+[conv] 0x511850 HouseTypeClass::LoadFromINI -> HouseTypeClass
+[conv] 0x50a5c0 HouseClass::AIBuildBase -> HouseClass
+[conv] 0x772080 WeaponTypeClass::ReadINI -> WeaponTypeClass
+[conv] 0x5f1fa0 NullModemClass::DetectModem -> NullModemClass
+[conv] 0x73e5e0 Class_7F5C70::ReadINI -> Class_7F5C70
+[conv] 0x788b00 ObjectClass::CreateAccountWOL -> ObjectClass
+[conv] 0x749f30 VoxelAnimClass::Update -> VoxelAnimClass
+[conv] 0x43fb20 BuildingClass::ProcessSpreadEffect -> BuildingClass
+[conv] 0x793d20 unknown::NegotiateNetworkConnection -> unknown
+[conv] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> HouseClass
+[conv] 0x427d00 AnimTypeClass::LoadFromINI -> AnimTypeClass
+[conv] 0x68ad70 ScenarioClass::SaveToINI -> ScenarioClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSChoiceClass            rc=2
+[era] Modem                    rc=2
+[era] ModemGuest               rc=2
+[era] Movement                 rc=2
+[era] Lightning                rc=2
+[era] BuildingClass            rc=2
+[era] unknown                  rc=2
+[era] DisplayClass             rc=2
+[era] HouseTypeClass           rc=2
+[era] HouseClass               rc=2
+[era] WeaponTypeClass          rc=2
+[era] NullModemClass           rc=2
+[era] Class_7F5C70             rc=2
+[era] ObjectClass              rc=2
+[era] VoxelAnimClass           rc=2
+[era] AnimTypeClass            rc=2
+[era] ScenarioClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5cf8e0 MSChoiceClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bb6e0 Modem::EnumerateDevices -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b4ee0 ModemGuest::InitDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b20f0 Movement::CalcVelocity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c1f20 Lightning::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x485af0 BuildingClass::VisualizePlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x616980 ButtonOwnerDraw::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ab9b0 PlayerClass::ExecuteCommand -> COMPILE_FAIL (attempt 1)
+[ledger] 0x511850 HouseTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50a5c0 HouseClass::AIBuildBase -> COMPILE_FAIL (attempt 1)
+[ledger] 0x772080 WeaponTypeClass::ReadINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f1fa0 NullModemClass::DetectModem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x73e5e0 VoxelTypeClass::ReadINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x788b00 CreateAccountWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x749f30 VoxelAnimClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43fb20 BuildingClass::ProcessSpreadEffect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x793d20 NegotiateNetworkConnection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x427d00 AnimTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68ad70 ScenarioClass::SaveToINI -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2934,
+ "verdicts": {
+  "MISMATCH": 724,
+  "MATCH": 521,
+  "COMPILE_FAIL": 1132,
+  "DUP_SKIP": 3,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 537,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 249,
+  "ret_norm": 8,
+  "frame_sched": 79,
+  "const_fold": 71,
+  "branch_polarity": 52,
+  "regalloc": 119,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 41.8,
+ "match_rate_of_total_pct": 17.8,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p28\batch_report.json
