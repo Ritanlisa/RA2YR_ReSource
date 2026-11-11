@@ -1,0 +1,1514 @@
+{
+ "A_43": {
+  "before_red": 43,
+  "after_green": 43,
+  "total": 43,
+  "rows": [
+   {
+    "addr": "0x40d280",
+    "sig": "MouseClass::ProcessInput",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x41b9e0",
+    "sig": "TechnoClass::updateROFTimer",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x41cfd0",
+    "sig": "AircraftTypeClass::GetAuxField",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x425270",
+    "sig": "VtableStub::Method_425270",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x425520",
+    "sig": "AbstractClass::updateLayer",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x427290",
+    "sig": "AnimFile::Stub",
+    "before_violations": 1,
+    "before_rules": [
+     "R4:cast-ptr+int"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x465d70",
+    "sig": "BuildingClass::processPowerState",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x4886b0",
+    "sig": "ListClass::COMStub",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x48ba90",
+    "sig": "IPXManagerClass::init",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x48e610",
+    "sig": "COMObject::GetMember09",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x4b55a0",
+    "sig": "EditClass::COMStub",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x4ca160",
+    "sig": "AbstractClass::GetType",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x4df1d0",
+    "sig": "TechnoClass::vt_entry_4B0",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x4df1e0",
+    "sig": "TechnoClass::vt_entry_4B4",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x4e30a0",
+    "sig": "GaugeClass::Stub",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x50e370",
+    "sig": "AbstractClass::checkPassability",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x540f90",
+    "sig": "Network::GetSendCount",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x54a160",
+    "sig": "IsometricTileTypeClass::GetAuxField",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x557b00",
+    "sig": "CheckListClass::GetItemCount",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x558120",
+    "sig": "SliderClass::vt_method_558120",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x5cd320",
+    "sig": "MSVQAnim::Stub",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x5cd400",
+    "sig": "MSBitPrintAnim::Stub",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x5ceab0",
+    "sig": "MSPCXAnim::Stub",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x5d6350",
+    "sig": "DialogClass::GetFlag",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x5f1950",
+    "sig": "NullModemClass::COMStub",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x634800",
+    "sig": "sub_634800",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:member-pun (&this->m cast)"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x642b20",
+    "sig": "LoadingScreen::GetValue",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x65c330",
+    "sig": "AbstractClass::processTeamOrder",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x65c540",
+    "sig": "AbstractClass::resetTeamState",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x681100",
+    "sig": "LoadOptions::GetData",
+    "before_violations": 1,
+    "before_rules": [
+     "R4:cast-ptr+int"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x681120",
+    "sig": "LoadOptions::GetFlag98",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x681140",
+    "sig": "LoadOptions::GetFlag99",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x6812d0",
+    "sig": "LoadOptions::GetFlag252",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x6e64b0",
+    "sig": "TagTypeClass::GetAuxField",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x6f20c0",
+    "sig": "TeamTypeClass::GetAuxField",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x71fa30",
+    "sig": "TriggerClass::GetValue",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x726910",
+    "sig": "Property::GetField11",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x746d80",
+    "sig": "FootClass::updateScanRange",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x759f70",
+    "sig": "MovieClass::GetWidth",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x759f80",
+    "sig": "MovieClass::GetHeight",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x76b090",
+    "sig": "ComStreamClass::closeStream",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x76f080",
+    "sig": "Count::Get",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   },
+   {
+    "addr": "0x7754c0",
+    "sig": "NullModemClass::GetMember23",
+    "before_violations": 1,
+    "before_rules": [
+     "R3:cast-deref-plus"
+    ],
+    "after_violations": 0,
+    "after_verdict": "MATCH",
+    "after_clean": true
+   }
+  ]
+ },
+ "B_602ae0": {
+  "old_r7": 18,
+  "new_r7": 0,
+  "bytes_equal": true,
+  "bytes": 161
+ },
+ "C_identity": {
+  "sample": 100,
+  "drift": 0,
+  "sentinel_units": 0,
+  "rows": [
+   {
+    "addr": "0x401940",
+    "orig_name": "ObjectClass::GetMember06",
+    "ledger_name": "RawFileClass::GetMember06",
+    "emitted": "RawFileClass::GetMember06",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x40d230",
+    "orig_name": "InputManager_ProcessEvents::AddRef",
+    "ledger_name": "GScreenClass::AddRef",
+    "emitted": "GScreenClass::AddRef",
+    "cls_src": "signals_cls",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x40d240",
+    "orig_name": "InputManager_ProcessEvents::Release",
+    "ledger_name": "GScreenClass::Release",
+    "emitted": "GScreenClass::Release",
+    "cls_src": "signals_cls",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x410580",
+    "orig_name": "AbstractClass::Stub1INoticeSink",
+    "ledger_name": "AbstractClass::Stub1INoticeSink",
+    "emitted": "AbstractClass::Stub1INoticeSink",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4114f0",
+    "orig_name": "BSurface::Stub",
+    "ledger_name": "Surface::Stub",
+    "emitted": "Surface::Stub",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x411500",
+    "orig_name": "XSurface::entry_68_",
+    "ledger_name": "Surface::entry_68_",
+    "emitted": "Surface::entry_68_",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x428e40",
+    "orig_name": "AnimTypeClass::Thunk_AnimTypeClass_sub_428E40",
+    "ledger_name": "ObjectTypeClass::Thunk_AnimTypeClass_sub_428E40",
+    "emitted": "ObjectTypeClass::Thunk_AnimTypeClass_sub_428E40",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x459da0",
+    "orig_name": "BuildingClass::MissionStubReturnZero5",
+    "ledger_name": "TechnoClass::MissionStubReturnZero5",
+    "emitted": "TechnoClass::MissionStubReturnZero5",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4886a0",
+    "orig_name": "ObjectClass::GetStateFlag",
+    "ledger_name": "ShpButtonClass::GetStateFlag",
+    "emitted": "ShpButtonClass::GetStateFlag",
+    "cls_src": "proto_this",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x48ace0",
+    "orig_name": "Return::HRESULT_Fail",
+    "ledger_name": "HRESULT_Fail",
+    "emitted": "HRESULT_Fail",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x48e610",
+    "orig_name": "COMObject::GetMember09",
+    "ledger_name": "ControlClass::GetMember09",
+    "emitted": "ControlClass::GetMember09",
+    "cls_src": "signals_cls",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x49fb60",
+    "orig_name": "VectorClass::GetCount",
+    "ledger_name": "DynamicVectorClass::GetCount",
+    "emitted": "DynamicVectorClass::GetCount",
+    "cls_src": "proto_this",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4a60d0",
+    "orig_name": "TextRenderer::GetInstance",
+    "ledger_name": "TextRenderer::GetInstance",
+    "emitted": "TextRenderer::GetInstance",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4b4870",
+    "orig_name": "JumpjetLocomotionClass::StubReturnZero_1",
+    "ledger_name": "DriveLocomotionClass::StubReturnZero_1",
+    "emitted": "DriveLocomotionClass::StubReturnZero_1",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4b4c60",
+    "orig_name": "JumpjetLocomotionClass::MissionStub6",
+    "ledger_name": "IUnknown::MissionStub6",
+    "emitted": "IUnknown::MissionStub6",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4b4c80",
+    "orig_name": "JumpjetLocomotionClass::MissionStub7",
+    "ledger_name": "IUnknown::MissionStub7",
+    "emitted": "IUnknown::MissionStub7",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4b6630",
+    "orig_name": "JumpjetLocomotionClass::MissionStub8",
+    "ledger_name": "LocomotionClass::MissionStub8",
+    "emitted": "LocomotionClass::MissionStub8",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4b6640",
+    "orig_name": "JumpjetLocomotionClass::MissionStub9",
+    "ledger_name": "LocomotionClass::MissionStub9",
+    "emitted": "LocomotionClass::MissionStub9",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4b6670",
+    "orig_name": "JumpjetLocomotionClass::CheckState3",
+    "ledger_name": "LocomotionClass::CheckState3",
+    "emitted": "LocomotionClass::CheckState3",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4b6680",
+    "orig_name": "JumpjetLocomotionClass::CheckState4",
+    "ledger_name": "LocomotionClass::CheckState4",
+    "emitted": "LocomotionClass::CheckState4",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4e14a0",
+    "orig_name": "ObjectClass::InputThunkA",
+    "ledger_name": "GadgetClass::InputThunkA",
+    "emitted": "GadgetClass::InputThunkA",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4e14b0",
+    "orig_name": "ObjectClass::InputThunkB",
+    "ledger_name": "GadgetClass::InputThunkB",
+    "emitted": "GadgetClass::InputThunkB",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4e8260",
+    "orig_name": "HouseClass::vt_placeholder_02",
+    "ledger_name": "TiberianSunClassFactory::vt_placeholder_02",
+    "emitted": "TiberianSunClassFactory::vt_placeholder_02",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4f2b40",
+    "orig_name": "HouseClass::vt_placeholder_09",
+    "ledger_name": "VectorCursor::vt_placeholder_09",
+    "emitted": "VectorCursor::vt_placeholder_09",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4f2b50",
+    "orig_name": "HouseClass::vt_placeholder_10",
+    "ledger_name": "VectorCursor::vt_placeholder_10",
+    "emitted": "VectorCursor::vt_placeholder_10",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4f3af0",
+    "orig_name": "GraphicMenuItem_Destru::Release",
+    "ledger_name": "GraphicMenuItem::Release",
+    "emitted": "GraphicMenuItem::Release",
+    "cls_src": "signals_cls",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x4f3b00",
+    "orig_name": "GraphicMenuAnimItem::AddRef",
+    "ledger_name": "GraphicMenuItem::AddRef",
+    "emitted": "GraphicMenuItem::AddRef",
+    "cls_src": "signals_cls",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x535bd0",
+    "orig_name": "CreateTeamCommand::Stub",
+    "ledger_name": "CommandClass::Stub",
+    "emitted": "CommandClass::Stub",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x535bf0",
+    "orig_name": "CreateTeamCommand::Do",
+    "ledger_name": "CommandClass::Do",
+    "emitted": "CommandClass::Do",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x536730",
+    "orig_name": "CreateTeamCommand::performAction_36",
+    "ledger_name": "PlanningModeCommandClass::performAction_36",
+    "emitted": "PlanningModeCommandClass::performAction_36",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x536890",
+    "orig_name": "CreateTeamCommand::performAction_50",
+    "ledger_name": "TypeSelectCommandClass::performAction_50",
+    "emitted": "TypeSelectCommandClass::performAction_50",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x536b80",
+    "orig_name": "CreateTeamCommand::performAction_74",
+    "ledger_name": "StopCommandClass::performAction_74",
+    "emitted": "StopCommandClass::performAction_74",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x53a100",
+    "orig_name": "LightningStorm::IsActive",
+    "ledger_name": "LightningStorm::IsActive",
+    "emitted": "LightningStorm::IsActive",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x53f4e0",
+    "orig_name": "Struct::ZeroInitAndSetup_0",
+    "ledger_name": "IPXConnClass::ZeroInitAndSetup_0",
+    "emitted": "IPXConnClass::ZeroInitAndSetup_0",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x540f90",
+    "orig_name": "Network::GetSendCount",
+    "ledger_name": "IPXManagerClass::GetSendCount",
+    "emitted": "IPXManagerClass::GetSendCount",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x557b00",
+    "orig_name": "CheckListClass::GetItemCount",
+    "ledger_name": "ListClass::GetItemCount",
+    "emitted": "ListClass::GetItemCount",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x55a940",
+    "orig_name": "JumpjetLocomotionClass::MissionStub",
+    "ledger_name": "IUnknown::MissionStub",
+    "emitted": "IUnknown::MissionStub",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x55ab70",
+    "orig_name": "JumpjetLocomotionClass::MissionStub2",
+    "ledger_name": "IUnknown::MissionStub2",
+    "emitted": "IUnknown::MissionStub2",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x55ab80",
+    "orig_name": "JumpjetLocomotionClass::MissionStub3",
+    "ledger_name": "IUnknown::MissionStub3",
+    "emitted": "IUnknown::MissionStub3",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x55aba0",
+    "orig_name": "JumpjetLocomotionClass::StubReturnFalse",
+    "ledger_name": "LocomotionClass::StubReturnFalse",
+    "emitted": "LocomotionClass::StubReturnFalse",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x55abc0",
+    "orig_name": "JumpjetLocomotionClass::CheckState2",
+    "ledger_name": "IUnknown::CheckState2",
+    "emitted": "IUnknown::CheckState2",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x55abe0",
+    "orig_name": "JumpjetLocomotionClass::MissionStub4",
+    "ledger_name": "LocomotionClass::MissionStub4",
+    "emitted": "LocomotionClass::MissionStub4",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x55abf0",
+    "orig_name": "JumpjetLocomotionClass::MissionStub5",
+    "ledger_name": "LocomotionClass::MissionStub5",
+    "emitted": "LocomotionClass::MissionStub5",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x55acf0",
+    "orig_name": "JumpjetLocomotionClass::MissionStub10",
+    "ledger_name": "LocomotionClass::MissionStub10",
+    "emitted": "LocomotionClass::MissionStub10",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x55ad00",
+    "orig_name": "JumpjetLocomotionClass::MissionStub11",
+    "ledger_name": "IUnknown::MissionStub11",
+    "emitted": "IUnknown::MissionStub11",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5865e0",
+    "orig_name": "Game::Stub3",
+    "ledger_name": "Game::Stub3",
+    "emitted": "Game::Stub3",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5b2e40",
+    "orig_name": "TechnoClass::StubReturn450",
+    "ledger_name": "MissionClass::StubReturn450",
+    "emitted": "MissionClass::StubReturn450",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5b2e70",
+    "orig_name": "TechnoClass::CheckState1",
+    "ledger_name": "MissionClass::CheckState1",
+    "emitted": "MissionClass::CheckState1",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5b2e80",
+    "orig_name": "TechnoClass::CheckState2",
+    "ledger_name": "MissionClass::CheckState2",
+    "emitted": "MissionClass::CheckState2",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5b2e90",
+    "orig_name": "AircraftClass::CheckMissionStatus",
+    "ledger_name": "MissionClass::CheckMissionStatus",
+    "emitted": "MissionClass::CheckMissionStatus",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5b2ef0",
+    "orig_name": "IPersistStream::GetMaxSize",
+    "ledger_name": "MissionClass::GetMaxSize",
+    "emitted": "MissionClass::GetMaxSize",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5b2f30",
+    "orig_name": "AircraftClass::CheckMissionStatus2",
+    "ledger_name": "MissionClass::CheckMissionStatus2",
+    "emitted": "MissionClass::CheckMissionStatus2",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5c02e0",
+    "orig_name": "AbstractClass::validatePathNode",
+    "ledger_name": "VQMovieHandle::validatePathNode",
+    "emitted": "VQMovieHandle::validatePathNode",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5c03c0",
+    "orig_name": "AbstractClass::resetPathState",
+    "ledger_name": "VQMovieHandle::resetPathState",
+    "emitted": "VQMovieHandle::resetPathState",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5c0e50",
+    "orig_name": "ScenarioClass::StubReturnFalse3",
+    "ledger_name": "MultiplayerGameMode::StubReturnFalse3",
+    "emitted": "MultiplayerGameMode::StubReturnFalse3",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5c0ed0",
+    "orig_name": "ScenarioClass::StubReturnFalse5",
+    "ledger_name": "MultiplayerGameMode::StubReturnFalse5",
+    "emitted": "MultiplayerGameMode::StubReturnFalse5",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5c0f30",
+    "orig_name": "ScenarioClass::initTeams",
+    "ledger_name": "MultiplayerGameMode::initTeams",
+    "emitted": "MultiplayerGameMode::initTeams",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5c5d30",
+    "orig_name": "PlayerClass::AssignPlayerIndex_0",
+    "ledger_name": "FreeForAll::AssignPlayerIndex_0",
+    "emitted": "FreeForAll::AssignPlayerIndex_0",
+    "cls_src": "signals_cls",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5ca7d0",
+    "orig_name": "MPBattleClass::vt_entry_18",
+    "ledger_name": "MultiplayerSiege::vt_entry_18",
+    "emitted": "MultiplayerSiege::vt_entry_18",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5ca7f0",
+    "orig_name": "ScenarioClass::ClearFlag_0",
+    "ledger_name": "MultiplayerSiege::ClearFlag_0",
+    "emitted": "MultiplayerSiege::ClearFlag_0",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5d5db0",
+    "orig_name": "ScenarioClass::MissionStubReturnZero",
+    "ledger_name": "MultiplayerGameMode::MissionStubReturnZero",
+    "emitted": "MultiplayerGameMode::MissionStubReturnZero",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5d6310",
+    "orig_name": "ScenarioClass::MissionStubReturnZero2",
+    "ledger_name": "MultiplayerGameMode::MissionStubReturnZero2",
+    "emitted": "MultiplayerGameMode::MissionStubReturnZero2",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5d6350",
+    "orig_name": "DialogClass::GetFlag",
+    "ledger_name": "MultiplayerGameMode::GetFlag",
+    "emitted": "MultiplayerGameMode::GetFlag",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5d67a0",
+    "orig_name": "ScenarioClass::MissionStubReturnZero4",
+    "ledger_name": "MultiplayerGameMode::MissionStubReturnZero4",
+    "emitted": "MultiplayerGameMode::MissionStubReturnZero4",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5ef280",
+    "orig_name": "Struct::ZeroInitAndSetup_0_0",
+    "ledger_name": "NullModemConnClass::ZeroInitAndSetup_0_0",
+    "emitted": "NullModemConnClass::ZeroInitAndSetup_0_0",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5f3440",
+    "orig_name": "EventClass::GetState",
+    "ledger_name": "EventClass::GetState",
+    "emitted": "EventClass::GetState",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5f43e0",
+    "orig_name": "AbstractClass::processStateUpdate",
+    "ledger_name": "ObjectClass::processStateUpdate",
+    "emitted": "ObjectClass::processStateUpdate",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5f7610",
+    "orig_name": "AbstractTypeClass::GetType",
+    "ledger_name": "ObjectTypeClass::GetType",
+    "emitted": "ObjectTypeClass::GetType",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5fdde0",
+    "orig_name": "Object::ProcessEvent",
+    "ledger_name": "OverlayClass::ProcessEvent",
+    "emitted": "OverlayClass::ProcessEvent",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5fdf00",
+    "orig_name": "Object::StubReturn176",
+    "ledger_name": "OverlayClass::StubReturn176",
+    "emitted": "OverlayClass::StubReturn176",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x5fdf50",
+    "orig_name": "Object::StubReturn20",
+    "ledger_name": "OverlayClass::StubReturn20",
+    "emitted": "OverlayClass::StubReturn20",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x6241c0",
+    "orig_name": "ObjectClass::Release",
+    "ledger_name": "SimpleDialogControl@OwnerDraw::Release",
+    "emitted": "SimpleDialogControl@OwnerDraw::Release",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x6241d0",
+    "orig_name": "ObjectClass::GetMember01",
+    "ledger_name": "SimpleDialogControl@OwnerDraw::GetMember01",
+    "emitted": "SimpleDialogControl@OwnerDraw::GetMember01",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x637aa0",
+    "orig_name": "FactoryClass::GetFlag",
+    "ledger_name": "FactoryClass::GetFlag",
+    "emitted": "FactoryClass::GetFlag",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x65c320",
+    "orig_name": "AbstractClass::updateTeamState",
+    "ledger_name": "RAMFileClass::updateTeamState",
+    "emitted": "RAMFileClass::updateTeamState",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x65c330",
+    "orig_name": "AbstractClass::processTeamOrder",
+    "ledger_name": "RAMFileClass::processTeamOrder",
+    "emitted": "RAMFileClass::processTeamOrder",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x65c4a0",
+    "orig_name": "AbstractClass::checkTeamObjective",
+    "ledger_name": "RAMFileClass::checkTeamObjective",
+    "emitted": "RAMFileClass::checkTeamObjective",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x65c540",
+    "orig_name": "AbstractClass::resetTeamState",
+    "ledger_name": "RAMFileClass::resetTeamState",
+    "emitted": "RAMFileClass::resetTeamState",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x65d690",
+    "orig_name": "VtableStub::RetZero_eax_35",
+    "ledger_name": "ReferenceCounted::RetZero_eax_35",
+    "emitted": "ReferenceCounted::RetZero_eax_35",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x6a3ea0",
+    "orig_name": "JumpjetLocomotionClass::StubReturnZero_14",
+    "ledger_name": "ShipLocomotionClass::StubReturnZero_14",
+    "emitted": "ShipLocomotionClass::StubReturnZero_14",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x6b4f20",
+    "orig_name": "UnitClass::CheckStatus",
+    "ledger_name": "SmudgeClass::CheckStatus",
+    "emitted": "SmudgeClass::CheckStatus",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x6b4f30",
+    "orig_name": "UnitClass::StubReturn176",
+    "ledger_name": "SmudgeClass::StubReturn176",
+    "emitted": "SmudgeClass::StubReturn176",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x6b4f40",
+    "orig_name": "UnitClass::StubReturn29",
+    "ledger_name": "SmudgeClass::StubReturn29",
+    "emitted": "SmudgeClass::StubReturn29",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x6d0260",
+    "orig_name": "BlowStraw_29::Stub",
+    "ledger_name": "TabClass::Stub",
+    "emitted": "TabClass::Stub",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x7099d0",
+    "orig_name": "IPersistStream::IsDirty",
+    "ledger_name": "TechnoClass::IsDirty",
+    "emitted": "TechnoClass::IsDirty",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x70c5b0",
+    "orig_name": "ObjectClass::GetShroudByte",
+    "ledger_name": "TechnoClass::GetShroudByte",
+    "emitted": "TechnoClass::GetShroudByte",
+    "cls_src": "proto_this",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x71d150",
+    "orig_name": "IRTTITypeInfo::GetOffset",
+    "ledger_name": "TerrainClass::GetOffset",
+    "emitted": "TerrainClass::GetOffset",
+    "cls_src": "signals_cls",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x746dd0",
+    "orig_name": "C07F5C70::StubReturn2280",
+    "ledger_name": "UnitClass::StubReturn2280",
+    "emitted": "UnitClass::StubReturn2280",
+    "cls_src": "signals_cls",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x746e20",
+    "orig_name": "C07F5C70::StubReturn1",
+    "ledger_name": "UnitClass::StubReturn1",
+    "emitted": "UnitClass::StubReturn1",
+    "cls_src": "signals_cls",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x753c70",
+    "orig_name": "Miles::DriverGet",
+    "ledger_name": "Miles::DriverGet",
+    "emitted": "Miles::DriverGet",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x775b20",
+    "orig_name": "Dialog::GetCurrentType",
+    "ledger_name": "Dialog::GetCurrentType",
+    "emitted": "Dialog::GetCurrentType",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x777b50",
+    "orig_name": "GameOptions::GetEntry",
+    "ledger_name": "GameOptions::GetEntry",
+    "emitted": "GameOptions::GetEntry",
+    "cls_src": "name_prefix",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x7ab340",
+    "orig_name": "CComObject_CChatEventSink___ATL::StubReturnFalse",
+    "ledger_name": "CChatEventSink::StubReturnFalse",
+    "emitted": "CChatEventSink::StubReturnFalse",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x7ac4a0",
+    "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_38",
+    "ledger_name": "CChatEventSink::DispatchStub_38",
+    "emitted": "CChatEventSink::DispatchStub_38",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x7ac4b0",
+    "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_39",
+    "ledger_name": "CChatEventSink::DispatchStub_39",
+    "emitted": "CChatEventSink::DispatchStub_39",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x7ac4c0",
+    "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_45",
+    "ledger_name": "CChatEventSink::DispatchStub_45",
+    "emitted": "CChatEventSink::DispatchStub_45",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x7ac4d0",
+    "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_46",
+    "ledger_name": "CChatEventSink::DispatchStub_46",
+    "emitted": "CChatEventSink::DispatchStub_46",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x7ac4e0",
+    "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_47",
+    "ledger_name": "CChatEventSink::DispatchStub_47",
+    "emitted": "CChatEventSink::DispatchStub_47",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x7ad610",
+    "orig_name": "WonlineStringDialogControl_28::StubReturnFalse",
+    "ledger_name": "_CComObject_VCDownloadEventSink_ATL::StubReturnFalse",
+    "emitted": "_CComObject_VCDownloadEventSink_ATL::StubReturnFalse",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   },
+   {
+    "addr": "0x7b1750",
+    "orig_name": "IPXInterfaceClass::Send",
+    "ledger_name": "WinsockInterfaceClass::Send",
+    "emitted": "WinsockInterfaceClass::Send",
+    "cls_src": "backfill",
+    "name_equal": true,
+    "verdict": "MATCH",
+    "clean": true
+   }
+  ]
+ },
+ "D_regress": {
+  "match": 40,
+  "total": 40,
+  "rule_viol": 0
+ },
+ "E_48ace0": {
+  "free_sig": "int __stdcall HRESULT_Fail(int p0, int p1, int p2)",
+  "verdict": "MATCH"
+ },
+ "F_r7_scan": {
+  "scanned": 423,
+  "hits": [
+   {
+    "addr": "0x602ae0",
+    "emitted": "Dialog::IsSpecialTemplate",
+    "r7": 18
+   }
+  ]
+ }
+}

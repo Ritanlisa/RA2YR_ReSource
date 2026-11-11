@@ -1,0 +1,156 @@
+======================================================================
+PART 1/3  (15 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\rem_before43\part_00
+=== convert (15 addrs) ===
+[conv] 0x40d280 MouseClass::ProcessInput -> MouseClass
+[conv] 0x41b9e0 TechnoClass::updateROFTimer -> TechnoClass
+[conv] 0x41cfd0 AircraftTypeClass::GetAuxField -> AircraftTypeClass
+[conv] 0x425270 VtableStub::Method_425270 -> VtableStub
+[conv] 0x425520 AbstractClass::updateLayer -> AbstractClass
+[conv] 0x427290 AnimFile::Stub -> AnimFile
+[conv] 0x465d70 BuildingClass::processPowerState -> BuildingClass
+[conv] 0x4886b0 ListClass::COMStub -> ListClass
+[conv] 0x48ba90 IPXManagerClass::init -> IPXManagerClass
+[conv] 0x48e610 ControlClass::GetMember09 -> ControlClass
+[conv] 0x4b55a0 EditClass::COMStub -> EditClass
+[conv] 0x4ca160 AbstractClass::GetType -> AbstractClass
+[conv] 0x4df1d0 TechnoClass::vt_entry_4B0 -> TechnoClass
+[conv] 0x4df1e0 TechnoClass::vt_entry_4B4 -> TechnoClass
+[conv] 0x4e30a0 GaugeClass::Stub -> GaugeClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MouseClass               rc=0
+[era] TechnoClass              rc=0
+[era] AircraftTypeClass        rc=0
+[era] VtableStub               rc=0
+[era] AbstractClass            rc=0
+[era] AnimFile                 rc=0
+[era] BuildingClass            rc=0
+[era] ListClass                rc=0
+[era] IPXManagerClass          rc=0
+[era] ControlClass             rc=0
+[era] EditClass                rc=0
+[era] GaugeClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x40d280   MATCH            MouseClass::ProcessInput
+[diff] 0x41b9e0   MATCH            TechnoClass::updateROFTimer
+[diff] 0x4df1d0   MATCH            TechnoClass::vt_entry_4B0
+[diff] 0x4df1e0   MATCH            TechnoClass::vt_entry_4B4
+[diff] 0x41cfd0   MATCH            AircraftTypeClass::GetAuxField
+[diff] 0x425270   MATCH            VtableStub::Method_425270
+[diff] 0x425520   MATCH            AbstractClass::updateLayer
+[diff] 0x4ca160   MATCH            AbstractClass::GetType
+[diff] 0x427290   MATCH            AnimFile::Stub
+[diff] 0x465d70   MATCH            BuildingClass::processPowerState
+[diff] 0x4886b0   MATCH            ListClass::COMStub
+[diff] 0x48ba90   MATCH            IPXManagerClass::init
+[diff] 0x48e610   MATCH            ControlClass::GetMember09
+[diff] 0x4b55a0   MATCH            EditClass::COMStub
+[diff] 0x4e30a0   MATCH            GaugeClass::Stub
+======================================================================
+PART 2/3  (15 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\rem_before43\part_01
+=== convert (15 addrs) ===
+[conv] 0x50e370 AbstractClass::checkPassability -> AbstractClass
+[conv] 0x540f90 IPXManagerClass::GetSendCount -> IPXManagerClass
+[conv] 0x54a160 IsometricTileTypeClass::GetAuxField -> IsometricTileTypeClass
+[conv] 0x557b00 ListClass::GetItemCount -> ListClass
+[conv] 0x558120 SliderClass::vt_method_558120 -> SliderClass
+[conv] 0x5cd320 MSVQAnim::Stub -> MSVQAnim
+[conv] 0x5cd400 MSBitPrintAnim::Stub -> MSBitPrintAnim
+[conv] 0x5ceab0 MSPCXAnim::Stub -> MSPCXAnim
+[conv] 0x5d6350 MultiplayerGameMode::GetFlag -> MultiplayerGameMode
+[conv] 0x5f1950 NullModemClass::COMStub -> NullModemClass
+[conv] 0x634800 ObjectClass::sub_634800 -> ObjectClass
+[conv] 0x642b20 LoadingScreen::GetValue -> LoadingScreen
+[conv] 0x65c330 RAMFileClass::processTeamOrder -> RAMFileClass
+[conv] 0x65c540 RAMFileClass::resetTeamState -> RAMFileClass
+[conv] 0x681100 LoadOptions::GetData -> LoadOptions
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClass            rc=0
+[era] IPXManagerClass          rc=0
+[era] IsometricTileTypeClass   rc=0
+[era] ListClass                rc=0
+[era] SliderClass              rc=0
+[era] MSVQAnim                 rc=0
+[era] MSBitPrintAnim           rc=0
+[era] MSPCXAnim                rc=0
+[era] MultiplayerGameMode      rc=0
+[era] NullModemClass           rc=0
+[era] ObjectClass              rc=0
+[era] LoadingScreen            rc=0
+[era] RAMFileClass             rc=0
+[era] LoadOptions              rc=0
+=== diffasm byte-compare ===
+[diff] 0x50e370   MATCH            AbstractClass::checkPassability
+[diff] 0x540f90   MATCH            IPXManagerClass::GetSendCount
+[diff] 0x54a160   MATCH            IsometricTileTypeClass::GetAuxField
+[diff] 0x557b00   MATCH            ListClass::GetItemCount
+[diff] 0x558120   MATCH            SliderClass::vt_method_558120
+[diff] 0x5cd320   MATCH            MSVQAnim::Stub
+[diff] 0x5cd400   MATCH            MSBitPrintAnim::Stub
+[diff] 0x5ceab0   MATCH            MSPCXAnim::Stub
+[diff] 0x5d6350   MATCH            MultiplayerGameMode::GetFlag
+[diff] 0x5f1950   MATCH            NullModemClass::COMStub
+[diff] 0x634800   MATCH            ObjectClass::sub_634800
+[diff] 0x642b20   MATCH            LoadingScreen::GetValue
+[diff] 0x65c330   MATCH            RAMFileClass::processTeamOrder
+[diff] 0x65c540   MATCH            RAMFileClass::resetTeamState
+[diff] 0x681100   MATCH            LoadOptions::GetData
+======================================================================
+PART 3/3  (13 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\rem_before43\part_02
+=== convert (13 addrs) ===
+[conv] 0x681120 LoadOptions::GetFlag98 -> LoadOptions
+[conv] 0x681140 LoadOptions::GetFlag99 -> LoadOptions
+[conv] 0x6812d0 LoadOptions::GetFlag252 -> LoadOptions
+[conv] 0x6e64b0 TagTypeClass::GetAuxField -> TagTypeClass
+[conv] 0x6f20c0 TeamTypeClass::GetAuxField -> TeamTypeClass
+[conv] 0x71fa30 TriggerClass::GetValue -> TriggerClass
+[conv] 0x726910 Property::GetField11 -> Property
+[conv] 0x746d80 FootClass::updateScanRange -> FootClass
+[conv] 0x759f70 MovieClass::GetWidth -> MovieClass
+[conv] 0x759f80 MovieClass::GetHeight -> MovieClass
+[conv] 0x76b090 ComStreamClass::closeStream -> ComStreamClass
+[conv] 0x76f080 Count::Get -> Count
+[conv] 0x7754c0 NullModemClass::GetMember23 -> NullModemClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LoadOptions              rc=0
+[era] TagTypeClass             rc=0
+[era] TeamTypeClass            rc=0
+[era] TriggerClass             rc=0
+[era] Property                 rc=0
+[era] FootClass                rc=0
+[era] MovieClass               rc=0
+[era] ComStreamClass           rc=0
+[era] Count                    rc=0
+[era] NullModemClass           rc=0
+=== diffasm byte-compare ===
+[diff] 0x681120   MATCH            LoadOptions::GetFlag98
+[diff] 0x681140   MATCH            LoadOptions::GetFlag99
+[diff] 0x6812d0   MATCH            LoadOptions::GetFlag252
+[diff] 0x6e64b0   MATCH            TagTypeClass::GetAuxField
+[diff] 0x6f20c0   MATCH            TeamTypeClass::GetAuxField
+[diff] 0x71fa30   MATCH            TriggerClass::GetValue
+[diff] 0x726910   MATCH            Property::GetField11
+[diff] 0x746d80   MATCH            FootClass::updateScanRange
+[diff] 0x759f70   MATCH            MovieClass::GetWidth
+[diff] 0x759f80   MATCH            MovieClass::GetHeight
+[diff] 0x76b090   MATCH            ComStreamClass::closeStream
+[diff] 0x76f080   MATCH            Count::Get
+[diff] 0x7754c0   MATCH            NullModemClass::GetMember23
+======================================================================
+{
+ "total": 43,
+ "verdicts": {
+  "MATCH": 43
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 43,
+ "parts": 3
+}
+report -> D:\RA2YR_ReSource\.omo\agents\audit\rem_before43\batch_report.json

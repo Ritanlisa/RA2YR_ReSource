@@ -282,6 +282,7 @@ def run_part(addrs, batch_src, out, reg, idx):
         r["unit"] = unit
         r["name_placeholder"] = ctx.sig.get("name_placeholder", False)
         r["cls_src"] = ctx.sig.get("cls_src")
+        r["this_as_id"] = bool(ctx.sig.get("this_as_id"))
         r["sites"] = "%d/%d" % (sum(1 for s in ctx.sites if s.restored),
                                 len(ctx.sites))
         print("[conv] %s %s -> %s" % (a_low, r["emitted"], unit))
@@ -531,6 +532,11 @@ def run_part(addrs, batch_src, out, reg, idx):
     for r in results.values():
         if not r["verdict"]:
             r.update(verdict="INTERNAL_ERROR", note="no verdict assigned")
+        # Audit-rem ②: "clean" = byte MATCH + zero rule violations.  A
+        # this-as-id emission that could not be re-typed (param-carrying
+        # family) still trips checker R7, so it is not clean either.
+        r["clean"] = bool(r["verdict"] == "MATCH"
+                          and not r.get("rule_violations"))
     return results, check_viol
 
 
@@ -586,12 +592,21 @@ def record_ledger(results):
         # as PENDING is what inflated the pending pool (511 entries).
         status = {"MATCH": "OK", "MISMATCH": "NG",
                   "COMPILE_FAIL": "COMPILE_FAIL"}.get(r["verdict"], "PENDING")
-        lmod.record(addr, name=r.get("name") or r.get("emitted") or addr,
+        # Audit-rem ③: the ledger records the EFFECTIVE (emitted) identity,
+        # not the stale signals display name.  orig_name/cls_src keep the
+        # provenance so identity drift is auditable instead of invisible.
+        emitted = r.get("emitted") or r.get("name") or addr
+        lmod.record(addr, name=emitted,
                     status=status,
                     first_diff=(r.get("first_diff") or {}).get("orig"),
                     note="decomp_batch r2: %s%s" % (
                         r["verdict"],
-                        "/" + r["pathology"] if r.get("pathology") else ""))
+                        "/" + r["pathology"] if r.get("pathology") else ""),
+                    extra={"orig_name": r.get("name"),
+                           "cls_src": r.get("cls_src"),
+                           "rule_violations": r.get("rule_violations"),
+                           "clean": r.get("clean"),
+                           "this_as_id": r.get("this_as_id")})
 
 
 # ---------------------------------------------------------------- driver

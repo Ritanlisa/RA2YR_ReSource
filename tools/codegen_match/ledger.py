@@ -33,7 +33,8 @@ def save(d):
         json.dump(d, f, indent=1, sort_keys=True)
 
 
-def record(addr, name=None, status=None, first_diff=None, note=None):
+def record(addr, name=None, status=None, first_diff=None, note=None,
+           extra=None):
     d = load()
     a = addr.lower()
     if not a.startswith("0x"):
@@ -47,6 +48,10 @@ def record(addr, name=None, status=None, first_diff=None, note=None):
         e["first_diff"] = first_diff
     if note:
         e["note"] = note
+    if extra:
+        for k, v in extra.items():
+            if v is not None:
+                e[k] = v
     e["attempts"] = int(e.get("attempts", 0)) + 1
     d[a] = e
     save(d)

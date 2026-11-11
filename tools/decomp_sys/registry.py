@@ -592,19 +592,39 @@ def build():
                     int(slot_no))
 
     functions = {}
+    # Audit-rem ③: sentinel "classes" from the fleet channels are NOT class
+    # identities -- emitting `unknown::Method` (or `Return::`) creates a
+    # phantom unit and breaks the rule-2 class identity.  Treat them as
+    # absent and let vsa_owner / name prefix supply a real class.
+    cls_sentinel = {"unknown", "Unknown", "UNKNOWN", "?", "none", "None",
+                    "null", "NULL", "", "Return"}
+
+    def _real_cls(x):
+        if not x:
+            return None
+        x = str(x).strip()
+        if x in cls_sentinel:
+            stats["cls_sentinel_dropped"] += 1
+            return None
+        return x
+
     for addr, s in S["signals"]["symbols"].items():
         if not isinstance(s, dict):
             continue
         name = s.get("name")
         a_low = addr.lower().replace("0x", "")
         prefix_cls = str(name).split("::")[0] if "::" in str(name) else None
+        if prefix_cls and not re.match(r"^[A-Za-z_]\w*$", prefix_cls):
+            prefix_cls = None
+        if prefix_cls in cls_sentinel:
+            prefix_cls = None
         owner_map = vsa_owner.get(a_low)
         owner_cls = None
         if owner_map and len(owner_map) == 1:
             owner_cls = next(iter(owner_map))
         bf = s.get("backfill") if isinstance(s.get("backfill"), dict) else {}
-        bf_cls = bf.get("cls")
-        sig_cls = s.get("cls")
+        bf_cls = _real_cls(bf.get("cls"))
+        sig_cls = _real_cls(s.get("cls"))
         eff = bf_cls or sig_cls          # fleet-corrected effective cls
         cls_src = None
         if eff:

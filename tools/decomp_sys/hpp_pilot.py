@@ -211,13 +211,17 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
             continue
         cc = {"__fastcall": " __fastcall",
               "__stdcall": " __stdcall"}.get(s.get("cc"), "")
+        # Audit-rem ①: this-as-id functions are emitted as STATIC
+        # __fastcall members -- the int ID rides ECX exactly like the
+        # original receiver slot did.
+        static = "static " if s.get("this_as_id") else ""
         # R5: VC6 rejects `__thiscall` as a declaration keyword (C4234);
         # callee pseudo-sigs can carry it inside param/ret spellings
         ret = (s["ret"] or "int").replace("__thiscall", "__stdcall")
         params = [(t.replace("__thiscall", "__stdcall"), n)
                   for t, n in s["params_spelled"]]
-        lines.append("    %s%s %s(%s);  // 0x%s" % (
-            ret, cc, s["method"], ", ".join(
+        lines.append("    %s%s%s %s(%s);  // 0x%s" % (
+            static, ret, cc, s["method"], ", ".join(
                 "%s %s" % (t, n) for t, n in params),
             s["addr"][2:].upper().lstrip("0").zfill(6)))
     lines.append("};")

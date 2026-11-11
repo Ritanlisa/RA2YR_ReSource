@@ -1,0 +1,323 @@
+======================================================================
+PART 1/6  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\nocls_clean109\part_00
+=== convert (20 addrs) ===
+[conv] 0x407080 j_Mixer_RequestBuffer -> _addr_40
+[conv] 0x40dc50 sub_40DC50 -> _addr_40
+[conv] 0x40df60 sub_40DF60 -> _addr_40
+[conv] 0x40e1b0 unknown_libname_7 -> _addr_40
+[conv] 0x40ee20 sub_40EE20 -> _addr_40
+[conv] 0x40ff30 nullsub_64 -> _addr_40
+[conv] 0x413590 sub_413590 -> _addr_41
+[conv] 0x41c840 sub_41C840 -> _addr_41
+[conv] 0x41c850 sub_41C850 -> _addr_41
+[conv] 0x41cbd0 nullsub_85 -> _addr_41
+[conv] 0x429740 sub_429740 -> _addr_42
+[conv] 0x42e090 sub_42E090 -> _addr_42
+[conv] 0x437190 sub_437190 -> _addr_43
+[conv] 0x4503e0 nullsub_101 -> _addr_45
+[conv] 0x46bb70 sub_46BB70 -> _addr_46
+[conv] 0x473380 sub_473380 -> _addr_47
+[conv] 0x479730 nullsub_110 -> _addr_47
+[conv] 0x488740 sub_488740 -> _addr_48
+[conv] 0x489140 sub_489140 -> _addr_48
+[conv] 0x48e680 sub_48E680 -> _addr_48
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] _addr_41                 rc=0
+[era] _addr_42                 rc=0
+[era] _addr_43                 rc=0
+[era] _addr_45                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_47                 rc=0
+[era] _addr_48                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x407080   MATCH            j_Mixer_RequestBuffer
+[diff] 0x40dc50   MATCH            sub_40DC50
+[diff] 0x40df60   MATCH            sub_40DF60
+[diff] 0x40e1b0   MATCH            unknown_libname_7
+[diff] 0x40ee20   MATCH            sub_40EE20
+[diff] 0x40ff30   MATCH            nullsub_64
+[diff] 0x413590   MATCH            sub_413590
+[diff] 0x41c840   MATCH            sub_41C840
+[diff] 0x41c850   MATCH            sub_41C850
+[diff] 0x41cbd0   MATCH            nullsub_85
+[diff] 0x429740   MATCH            sub_429740
+[diff] 0x42e090   MATCH            sub_42E090
+[diff] 0x437190   MATCH            sub_437190
+[diff] 0x4503e0   MATCH            nullsub_101
+[diff] 0x46bb70   MATCH            sub_46BB70
+[diff] 0x473380   MATCH            sub_473380
+[diff] 0x479730   MATCH            nullsub_110
+[diff] 0x488740   MATCH            sub_488740
+[diff] 0x489140   MATCH            sub_489140
+[diff] 0x48e680   MATCH            sub_48E680
+======================================================================
+PART 2/6  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\nocls_clean109\part_01
+=== convert (20 addrs) ===
+[conv] 0x4a2300 sub_4A2300 -> _addr_4A
+[conv] 0x4a5050 sub_4A5050 -> _addr_4A
+[conv] 0x4a59c0 sub_4A59C0 -> _addr_4A
+[conv] 0x4a80d0 AlwaysFindYRCD -> _addr_4A
+[conv] 0x4b4770 nullsub_118 -> _addr_4B
+[conv] 0x4b6990 sub_4B6990 -> _addr_4B
+[conv] 0x4c1d30 sub_4C1D30 -> _addr_4C
+[conv] 0x4c4ea0 sub_4C4EA0 -> _addr_4C
+[conv] 0x4cc0c0 sub_4CC0C0 -> _addr_4C
+[conv] 0x4e24e0 sub_4E24E0 -> _addr_4E
+[conv] 0x4e32d0 sub_4E32D0 -> _addr_4E
+[conv] 0x4f4010 sub_4F4010 -> _addr_4F
+[conv] 0x506b80 nullsub_17 -> _addr_50
+[conv] 0x5179f0 sub_5179F0 -> _addr_51
+[conv] 0x52b960 sub_52B960 -> _addr_52
+[conv] 0x538c20 sub_538C20 -> _addr_53
+[conv] 0x5392c0 sub_5392C0 -> _addr_53
+[conv] 0x539560 sub_539560 -> _addr_53
+[conv] 0x53bae0 UI_Helper -> UI
+[conv] 0x53f3e0 sub_53F3E0 -> _addr_53
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4A                 rc=0
+[era] _addr_4B                 rc=0
+[era] _addr_4C                 rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_4F                 rc=0
+[era] _addr_50                 rc=0
+[era] _addr_51                 rc=0
+[era] _addr_52                 rc=0
+[era] _addr_53                 rc=0
+[era] UI                       rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a2300   MATCH            sub_4A2300
+[diff] 0x4a5050   MATCH            sub_4A5050
+[diff] 0x4a59c0   MATCH            sub_4A59C0
+[diff] 0x4a80d0   MATCH            AlwaysFindYRCD
+[diff] 0x4b4770   MATCH            nullsub_118
+[diff] 0x4b6990   MATCH            sub_4B6990
+[diff] 0x4c1d30   MATCH            sub_4C1D30
+[diff] 0x4c4ea0   MATCH            sub_4C4EA0
+[diff] 0x4cc0c0   MATCH            sub_4CC0C0
+[diff] 0x4e24e0   MATCH            sub_4E24E0
+[diff] 0x4e32d0   MATCH            sub_4E32D0
+[diff] 0x4f4010   MATCH            sub_4F4010
+[diff] 0x506b80   MATCH            nullsub_17
+[diff] 0x5179f0   MATCH            sub_5179F0
+[diff] 0x52b960   MATCH            sub_52B960
+[diff] 0x538c20   MATCH            sub_538C20
+[diff] 0x5392c0   MATCH            sub_5392C0
+[diff] 0x539560   MATCH            sub_539560
+[diff] 0x53f3e0   MATCH            sub_53F3E0
+[diff] 0x53bae0   MATCH            UI_Helper
+======================================================================
+PART 3/6  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\nocls_clean109\part_02
+=== convert (20 addrs) ===
+[conv] 0x543310 sub_543310 -> _addr_54
+[conv] 0x544df0 nullsub_155 -> _addr_54
+[conv] 0x54fd50 sub_54FD50 -> _addr_54
+[conv] 0x5558c0 sub_5558C0 -> _addr_55
+[conv] 0x558700 sub_558700 -> _addr_55
+[conv] 0x55f920 sub_55F920 -> _addr_55
+[conv] 0x5616f0 sub_5616F0 -> _addr_56
+[conv] 0x5afe90 sub_5AFE90 -> _addr_5A
+[conv] 0x5b20a0 sub_5B20A0 -> _addr_5B
+[conv] 0x5b2d80 sub_5B2D80 -> _addr_5B
+[conv] 0x5bec80 sub_5BEC80 -> _addr_5B
+[conv] 0x5c1290 sub_5C1290 -> _addr_5C
+[conv] 0x5c5ad0 sub_5C5AD0 -> _addr_5C
+[conv] 0x5cb340 sub_5CB340 -> _addr_5C
+[conv] 0x5cd310 nullsub_190 -> _addr_5C
+[conv] 0x5d5a50 sub_5D5A50 -> _addr_5D
+[conv] 0x5dacd0 sub_5DACD0 -> _addr_5D
+[conv] 0x5f38a0 sub_5F38A0 -> _addr_5F
+[conv] 0x5f6f80 sub_5F6F80 -> _addr_5F
+[conv] 0x5ff1b0 sub_5FF1B0 -> _addr_5F
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_54                 rc=0
+[era] _addr_55                 rc=0
+[era] _addr_56                 rc=0
+[era] _addr_5A                 rc=0
+[era] _addr_5B                 rc=0
+[era] _addr_5C                 rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_5F                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x543310   MATCH            sub_543310
+[diff] 0x544df0   MATCH            nullsub_155
+[diff] 0x54fd50   MATCH            sub_54FD50
+[diff] 0x5558c0   MATCH            sub_5558C0
+[diff] 0x558700   MATCH            sub_558700
+[diff] 0x55f920   MATCH            sub_55F920
+[diff] 0x5616f0   MATCH            sub_5616F0
+[diff] 0x5afe90   MATCH            sub_5AFE90
+[diff] 0x5b20a0   MATCH            sub_5B20A0
+[diff] 0x5b2d80   MATCH            sub_5B2D80
+[diff] 0x5bec80   MATCH            sub_5BEC80
+[diff] 0x5c1290   MATCH            sub_5C1290
+[diff] 0x5c5ad0   MATCH            sub_5C5AD0
+[diff] 0x5cb340   MATCH            sub_5CB340
+[diff] 0x5cd310   MATCH            nullsub_190
+[diff] 0x5d5a50   MATCH            sub_5D5A50
+[diff] 0x5dacd0   MATCH            sub_5DACD0
+[diff] 0x5f38a0   MATCH            sub_5F38A0
+[diff] 0x5f6f80   MATCH            sub_5F6F80
+[diff] 0x5ff1b0   MATCH            sub_5FF1B0
+======================================================================
+PART 4/6  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\nocls_clean109\part_03
+=== convert (20 addrs) ===
+[conv] 0x62dbf0 sub_62DBF0 -> _addr_62
+[conv] 0x63f4a0 sub_63F4A0 -> _addr_63
+[conv] 0x659030 sub_659030 -> _addr_65
+[conv] 0x65f990 sub_65F990 -> _addr_65
+[conv] 0x664380 nullsub_33 -> _addr_66
+[conv] 0x664cb0 sub_664CB0 -> _addr_66
+[conv] 0x67c650 sub_67C650 -> _addr_67
+[conv] 0x693940 sub_693940 -> _addr_69
+[conv] 0x69ebe0 sub_69EBE0 -> _addr_69
+[conv] 0x6b2390 sub_6B2390 -> _addr_6B
+[conv] 0x6bb220 sub_6BB220 -> _addr_6B
+[conv] 0x6c6ab0 sub_6C6AB0 -> _addr_6C
+[conv] 0x6d19e0 sub_6D19E0 -> _addr_6D
+[conv] 0x6dc400 nullsub_43 -> _addr_6D
+[conv] 0x6dcf60 sub_6DCF60 -> _addr_6D
+[conv] 0x6f0660 sub_6F0660 -> _addr_6F
+[conv] 0x70d180 SetGlobalFlag -> _addr_70
+[conv] 0x710a80 sub_710A80 -> _addr_71
+[conv] 0x71e600 sub_71E600 -> _addr_71
+[conv] 0x723c40 sub_723C40 -> _addr_72
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_62                 rc=0
+[era] _addr_63                 rc=0
+[era] _addr_65                 rc=0
+[era] _addr_66                 rc=0
+[era] _addr_67                 rc=0
+[era] _addr_69                 rc=0
+[era] _addr_6B                 rc=0
+[era] _addr_6C                 rc=0
+[era] _addr_6D                 rc=0
+[era] _addr_6F                 rc=0
+[era] _addr_70                 rc=0
+[era] _addr_71                 rc=0
+[era] _addr_72                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x62dbf0   MATCH            sub_62DBF0
+[diff] 0x63f4a0   MATCH            sub_63F4A0
+[diff] 0x659030   MATCH            sub_659030
+[diff] 0x65f990   MATCH            sub_65F990
+[diff] 0x664380   MATCH            nullsub_33
+[diff] 0x664cb0   MATCH            sub_664CB0
+[diff] 0x67c650   MATCH            sub_67C650
+[diff] 0x693940   MATCH            sub_693940
+[diff] 0x69ebe0   MATCH            sub_69EBE0
+[diff] 0x6b2390   MATCH            sub_6B2390
+[diff] 0x6bb220   MATCH            sub_6BB220
+[diff] 0x6c6ab0   MATCH            sub_6C6AB0
+[diff] 0x6d19e0   MATCH            sub_6D19E0
+[diff] 0x6dc400   MATCH            nullsub_43
+[diff] 0x6dcf60   MATCH            sub_6DCF60
+[diff] 0x6f0660   MATCH            sub_6F0660
+[diff] 0x70d180   MATCH            SetGlobalFlag
+[diff] 0x710a80   MATCH            sub_710A80
+[diff] 0x71e600   MATCH            sub_71E600
+[diff] 0x723c40   MATCH            sub_723C40
+======================================================================
+PART 5/6  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\nocls_clean109\part_04
+=== convert (20 addrs) ===
+[conv] 0x725f30 sub_725F30 -> _addr_72
+[conv] 0x727fb0 sub_727FB0 -> _addr_72
+[conv] 0x72a9d0 sub_72A9D0 -> _addr_72
+[conv] 0x72b010 UI_Draw_72B010 -> UI_Draw
+[conv] 0x72b370 sub_72B370 -> _addr_72
+[conv] 0x72bba0 sub_72BBA0 -> _addr_72
+[conv] 0x72c140 sub_72C140 -> _addr_72
+[conv] 0x72c6f0 UI_Create_72C6F0 -> UI_Create
+[conv] 0x72ce30 sub_72CE30 -> _addr_72
+[conv] 0x72d430 sub_72D430 -> _addr_72
+[conv] 0x72e260 UI_Draw_72E260 -> UI_Draw
+[conv] 0x72f4b0 UI_Helper_72F4B0 -> UI_Helper
+[conv] 0x730930 sub_730930 -> _addr_73
+[conv] 0x730ad0 sub_730AD0 -> _addr_73
+[conv] 0x74c170 sub_74C170 -> _addr_74
+[conv] 0x754b40 sub_754B40 -> _addr_75
+[conv] 0x759140 sub_759140 -> _addr_75
+[conv] 0x75ce30 sub_75CE30 -> _addr_75
+[conv] 0x764810 sub_764810 -> _addr_76
+[conv] 0x767e50 sub_767E50 -> _addr_76
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] UI_Draw                  rc=0
+[era] UI_Create                rc=0
+[era] UI_Helper                rc=0
+[era] _addr_73                 rc=0
+[era] _addr_74                 rc=0
+[era] _addr_75                 rc=0
+[era] _addr_76                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x725f30   MATCH            sub_725F30
+[diff] 0x727fb0   MATCH            sub_727FB0
+[diff] 0x72a9d0   MATCH            sub_72A9D0
+[diff] 0x72b370   MATCH            sub_72B370
+[diff] 0x72bba0   MATCH            sub_72BBA0
+[diff] 0x72c140   MATCH            sub_72C140
+[diff] 0x72ce30   MATCH            sub_72CE30
+[diff] 0x72d430   MATCH            sub_72D430
+[diff] 0x72b010   MATCH            UI_Draw_72B010
+[diff] 0x72e260   MATCH            UI_Draw_72E260
+[diff] 0x72c6f0   MATCH            UI_Create_72C6F0
+[diff] 0x72f4b0   MATCH            UI_Helper_72F4B0
+[diff] 0x730930   MATCH            sub_730930
+[diff] 0x730ad0   MATCH            sub_730AD0
+[diff] 0x74c170   MATCH            sub_74C170
+[diff] 0x754b40   MATCH            sub_754B40
+[diff] 0x759140   MATCH            sub_759140
+[diff] 0x75ce30   MATCH            sub_75CE30
+[diff] 0x764810   MATCH            sub_764810
+[diff] 0x767e50   MATCH            sub_767E50
+======================================================================
+PART 6/6  (9 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\nocls_clean109\part_05
+=== convert (9 addrs) ===
+[conv] 0x770060 sub_770060 -> _addr_77
+[conv] 0x776ea0 nullsub_261 -> _addr_77
+[conv] 0x7786a0 sub_7786A0 -> _addr_77
+[conv] 0x77b230 sub_77B230 -> _addr_77
+[conv] 0x77b880 sub_77B880 -> _addr_77
+[conv] 0x77e780 sub_77E780 -> _addr_77
+[conv] 0x7b0370 RequestMatchWOL_Helper -> RequestMatchWOL
+[conv] 0x7c97cb __toupper -> _addr_7C
+[conv] 0x7cd95f nullsub_269 -> _addr_7C
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=0
+[era] RequestMatchWOL          rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x770060   MATCH            sub_770060
+[diff] 0x776ea0   MATCH            nullsub_261
+[diff] 0x7786a0   MATCH            sub_7786A0
+[diff] 0x77b230   MATCH            sub_77B230
+[diff] 0x77b880   MATCH            sub_77B880
+[diff] 0x77e780   MATCH            sub_77E780
+[diff] 0x7b0370   MATCH            RequestMatchWOL_Helper
+[diff] 0x7c97cb   MATCH            __toupper
+[diff] 0x7cd95f   MATCH            nullsub_269
+======================================================================
+{
+ "total": 109,
+ "verdicts": {
+  "MATCH": 109
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 6
+}
+report -> D:\RA2YR_ReSource\.omo\agents\audit\nocls_clean109\batch_report.json

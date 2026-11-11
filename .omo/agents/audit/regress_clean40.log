@@ -1,0 +1,145 @@
+======================================================================
+PART 1/2  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\regress_clean40\part_00
+=== convert (20 addrs) ===
+[conv] 0x406520 AbstractTypeClass::sub_406520 -> AbstractTypeClass
+[conv] 0x408ec0 ObjectClass::sub_408EC0 -> ObjectClass
+[conv] 0x411550 Surface::GetHeight -> Surface
+[conv] 0x41dd30 AirstrikeClass::StubReturn96 -> AirstrikeClass
+[conv] 0x428e90 AnimTypeClass::StubReturnFalse -> AnimTypeClass
+[conv] 0x459ee0 BuildingClass::GetTypePtr -> BuildingClass
+[conv] 0x46c860 BulletTypeClass::GetObjectSize -> BulletTypeClass
+[conv] 0x473450 CCINIClass::GetDB -> CCINIClass
+[conv] 0x49fb60 DynamicVectorClass::GetCount -> DynamicVectorClass
+[conv] 0x4b6630 LocomotionClass::MissionStub8 -> LocomotionClass
+[conv] 0x4c9c50 SidebarClass::draw -> SidebarClass
+[conv] 0x4e14a0 GadgetClass::InputThunkA -> GadgetClass
+[conv] 0x512710 HouseTypeClass::GetTypeIdentifier -> HouseTypeClass
+[conv] 0x524d50 InfantryTypeClass::GetObjectSize -> InfantryTypeClass
+[conv] 0x53a100 LightningStorm::IsActive -> LightningStorm
+[conv] 0x55aba0 LocomotionClass::StubReturnFalse -> LocomotionClass
+[conv] 0x5865e0 Game::Stub3 -> Game
+[conv] 0x5b2e90 MissionClass::CheckMissionStatus -> MissionClass
+[conv] 0x5b2f80 MissionClass::Return450K -> MissionClass
+[conv] 0x5c05f0 BinkMovieHandle::Close -> BinkMovieHandle
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractTypeClass        rc=0
+[era] ObjectClass              rc=0
+[era] Surface                  rc=0
+[era] AirstrikeClass           rc=0
+[era] AnimTypeClass            rc=0
+[era] BuildingClass            rc=0
+[era] BulletTypeClass          rc=0
+[era] CCINIClass               rc=0
+[era] DynamicVectorClass       rc=0
+[era] LocomotionClass          rc=0
+[era] SidebarClass             rc=0
+[era] GadgetClass              rc=0
+[era] HouseTypeClass           rc=0
+[era] InfantryTypeClass        rc=0
+[era] LightningStorm           rc=0
+[era] Game                     rc=0
+[era] MissionClass             rc=0
+[era] BinkMovieHandle          rc=0
+=== diffasm byte-compare ===
+[diff] 0x406520   MATCH            AbstractTypeClass::sub_406520
+[diff] 0x408ec0   MATCH            ObjectClass::sub_408EC0
+[diff] 0x411550   MATCH            Surface::GetHeight
+[diff] 0x41dd30   MATCH            AirstrikeClass::StubReturn96
+[diff] 0x428e90   MATCH            AnimTypeClass::StubReturnFalse
+[diff] 0x459ee0   MATCH            BuildingClass::GetTypePtr
+[diff] 0x46c860   MATCH            BulletTypeClass::GetObjectSize
+[diff] 0x473450   MATCH            CCINIClass::GetDB
+[diff] 0x49fb60   MATCH            DynamicVectorClass::GetCount
+[diff] 0x4b6630   MATCH            LocomotionClass::MissionStub8
+[diff] 0x55aba0   MATCH            LocomotionClass::StubReturnFalse
+[diff] 0x4c9c50   MATCH            SidebarClass::draw
+[diff] 0x4e14a0   MATCH            GadgetClass::InputThunkA
+[diff] 0x512710   MATCH            HouseTypeClass::GetTypeIdentifier
+[diff] 0x524d50   MATCH            InfantryTypeClass::GetObjectSize
+[diff] 0x53a100   MATCH            LightningStorm::IsActive
+[diff] 0x5865e0   MATCH            Game::Stub3
+[diff] 0x5b2e90   MATCH            MissionClass::CheckMissionStatus
+[diff] 0x5b2f80   MATCH            MissionClass::Return450K
+[diff] 0x5c05f0   MATCH            BinkMovieHandle::Close
+======================================================================
+PART 2/2  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\regress_clean40\part_01
+=== convert (20 addrs) ===
+[conv] 0x5d67a0 MultiplayerGameMode::MissionStubReturnZero4 -> MultiplayerGameMode
+[conv] 0x5fdf00 OverlayClass::StubReturn176 -> OverlayClass
+[conv] 0x62af60 ParasiteClass::StubReturn67 -> ParasiteClass
+[conv] 0x633a90 ObjectClass::sub_633A90 -> ObjectClass
+[conv] 0x644920 ParticleSystemTypeClass::GetObjectSize -> ParticleSystemTypeClass
+[conv] 0x65b3a0 RadSiteClass::StubReturn116 -> RadSiteClass
+[conv] 0x67a7c0 RulesClass::readOverlayTypes -> RulesClass
+[conv] 0x6a42a0 ShipLocomotionClass::StubReturn112 -> ShipLocomotionClass
+[conv] 0x6b6140 SmudgeTypeClass::GetObjectSize -> SmudgeTypeClass
+[conv] 0x6e4630 TActionClass::StubReturn148 -> TActionClass
+[conv] 0x6f0430 TeamClass::StubReturn160 -> TeamClass
+[conv] 0x70dd90 TechnoClass::vt_entry_3E8 -> TechnoClass
+[conv] 0x71d300 TerrainClass::MissionStubReturnZero2 -> TerrainClass
+[conv] 0x723700 TiberiumClass::Stub -> TiberiumClass
+[conv] 0x7286c0 TubeClass::StubReturn53 -> TubeClass
+[conv] 0x748180 UnitTypeClass::GetAuxField -> UnitTypeClass
+[conv] 0x74ba20 VoxelAnimTypeClass::StubReturnFalse -> VoxelAnimTypeClass
+[conv] 0x75e500 WarheadTypeClass::GetTypeIdentifier -> WarheadTypeClass
+[conv] 0x773b50 WebBrowser::SetSize -> WebBrowser
+[conv] 0x7ab340 CChatEventSink::StubReturnFalse -> CChatEventSink
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerGameMode      rc=0
+[era] OverlayClass             rc=0
+[era] ParasiteClass            rc=0
+[era] ObjectClass              rc=0
+[era] ParticleSystemTypeClass  rc=0
+[era] RadSiteClass             rc=0
+[era] RulesClass               rc=0
+[era] ShipLocomotionClass      rc=0
+[era] SmudgeTypeClass          rc=0
+[era] TActionClass             rc=0
+[era] TeamClass                rc=0
+[era] TechnoClass              rc=0
+[era] TerrainClass             rc=0
+[era] TiberiumClass            rc=0
+[era] TubeClass                rc=0
+[era] UnitTypeClass            rc=0
+[era] VoxelAnimTypeClass       rc=0
+[era] WarheadTypeClass         rc=0
+[era] WebBrowser               rc=0
+[era] CChatEventSink           rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d67a0   MATCH            MultiplayerGameMode::MissionStubReturnZero4
+[diff] 0x5fdf00   MATCH            OverlayClass::StubReturn176
+[diff] 0x62af60   MATCH            ParasiteClass::StubReturn67
+[diff] 0x633a90   MATCH            ObjectClass::sub_633A90
+[diff] 0x644920   MATCH            ParticleSystemTypeClass::GetObjectSize
+[diff] 0x65b3a0   MATCH            RadSiteClass::StubReturn116
+[diff] 0x67a7c0   MATCH            RulesClass::readOverlayTypes
+[diff] 0x6a42a0   MATCH            ShipLocomotionClass::StubReturn112
+[diff] 0x6b6140   MATCH            SmudgeTypeClass::GetObjectSize
+[diff] 0x6e4630   MATCH            TActionClass::StubReturn148
+[diff] 0x6f0430   MATCH            TeamClass::StubReturn160
+[diff] 0x70dd90   MATCH            TechnoClass::vt_entry_3E8
+[diff] 0x71d300   MATCH            TerrainClass::MissionStubReturnZero2
+[diff] 0x723700   MATCH            TiberiumClass::Stub
+[diff] 0x7286c0   MATCH            TubeClass::StubReturn53
+[diff] 0x748180   MATCH            UnitTypeClass::GetAuxField
+[diff] 0x74ba20   MATCH            VoxelAnimTypeClass::StubReturnFalse
+[diff] 0x75e500   MATCH            WarheadTypeClass::GetTypeIdentifier
+[diff] 0x773b50   MATCH            WebBrowser::SetSize
+[diff] 0x7ab340   MATCH            CChatEventSink::StubReturnFalse
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "MATCH": 40
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 2
+}
+report -> D:\RA2YR_ReSource\.omo\agents\audit\regress_clean40\batch_report.json

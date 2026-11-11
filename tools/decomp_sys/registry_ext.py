@@ -163,6 +163,12 @@ class Registry(object):
 
     _PROTO_THIS = re.compile(r"\(\s*([A-Za-z_?$@][\w?$@]*)\s*\*\s*_?this\b")
 
+    # Audit-rem ③: sentinel "class" names from the fleet/naming channels are
+    # not identities (registry.py drops them too); the NO_CLS resolver must
+    # not smuggle them back in.
+    _CLS_SENTINEL = {"unknown", "Unknown", "UNKNOWN", "?", "none", "None",
+                     "null", "NULL", "", "Return"}
+
     def resolve_function_class(self, addr, proto=None, name=None):
         """Multi-source class attribution for a registry-cls-less function.
 
@@ -183,7 +189,8 @@ class Registry(object):
         """
         out = {"cls": None, "src": None, "evidence": [], "rejected": []}
 
-        claims = self.vsa_claims(addr)
+        claims = [c for c in self.vsa_claims(addr)
+                  if c.get("resolved") not in self._CLS_SENTINEL]
         if claims:
             resolved = sorted({c["resolved"] for c in claims
                                if c["resolved"]})
@@ -208,8 +215,13 @@ class Registry(object):
                 out["evidence"].append({
                     "source": "proto_this", "raw": raw,
                     "canon": self._canon(raw), "resolved": key})
-                if key:
+                if key and key not in self._CLS_SENTINEL:
                     out["cls"], out["src"] = key, "proto_this"
+                elif key in self._CLS_SENTINEL:
+                    out["rejected"].append({
+                        "source": "proto_this", "raw": raw,
+                        "canon": self._canon(raw),
+                        "why": "sentinel class name"})
                 else:
                     out["rejected"].append({
                         "source": "proto_this", "raw": raw,
@@ -221,8 +233,12 @@ class Registry(object):
             key = self.class_key(pre)
             out["evidence"].append({
                 "source": "name_prefix", "raw": pre, "resolved": key})
-            if key:
+            if key and key not in self._CLS_SENTINEL:
                 out["cls"], out["src"] = key, "name_prefix"
+            elif key in self._CLS_SENTINEL:
+                out["rejected"].append({
+                    "source": "name_prefix", "raw": pre,
+                    "why": "sentinel class name"})
             else:
                 out["rejected"].append({
                     "source": "name_prefix", "raw": pre,

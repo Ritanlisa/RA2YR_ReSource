@@ -676,6 +676,23 @@ _BARE_THIS_OFF = re.compile(
     r")")
 _THIS_SUB = re.compile(r"\bthis\s*\[\s*(?P<off>\d+)\s*\]")
 
+# Audit-rem ② (2026-11-12): the NESTED cast spellings Hex-Rays emits for a
+# dword-indexed member access -- `*((_DWORD *)this + 22)` -- and its
+# address-only sibling `(char *)this + 264` / bare `this + 264` (proto
+# `char *this`).  _BARE_THIS_OFF only matched `*(T *)(this + N)`; the
+# cast-inside-parenthesis form survived to emission as raw pointer
+# arithmetic (checker R3 cast-deref-plus / R4: 42/424 OK-pool functions).
+# Restored here to width-true member views (registry member first,
+# offset-true placeholder otherwise); codegen is identical because the
+# member lives at the same byte offset with the same access width.
+_CAST_THIS_DEREF = re.compile(
+    r"\*\s*\(\s*\(\s*(?P<ty>[A-Za-z_]\w*(?:\s+[A-Za-z_]\w+)*)"
+    r"\s*\*\s*\)\s*this\s*\+\s*(?P<off>\d+)\s*\)")
+_CAST_THIS_ADDR = re.compile(
+    r"\(\s*(?P<ty>[A-Za-z_]\w*(?:\s+[A-Za-z_]\w+)*)\s*\*\s*\)"
+    r"\s*this\s*\+\s*(?P<off>\d+)\b")
+_BARE_THIS_ADDR = re.compile(r"\bthis\s*\+\s*(?P<off>\d+)\b")
+
 _ROLE_OF_W = {1: "byte", 2: "word", 4: "dword", 8: "qword"}
 
 
@@ -781,6 +798,98 @@ def pass_this_ptr_math(ctx):
 
     text = _BARE_THIS_OFF.sub(bare_repl, text)
     text = _THIS_SUB.sub(bare_repl, text)
+
+    # ---- audit-rem ②: `*((T *)this + N)` / `(T *)this + N` / `this + N`
+    def _view_for_offset(byte_off, read_ty, read_w, raw):
+        """Width-true member view at byte_off (registry evidence preferred)."""
+        rec, src = ctx.reg.member_at(cls, byte_off, min_span=1)
+        role = _ROLE_OF_W.get(read_w, "dword")
+        existing = (ctx.views.scalars.get(cls) or {}).get(byte_off, {})
+        if rec and int(rec.get("width") or read_w) == read_w:
+            name = rec.get("name") or ("m%03X" % byte_off)
+            w = read_w
+            ty = None
+            rt = rec.get("type")
+            if rt:
+                sp = spell_type(rt)
+                if sp.endswith("*") and w == 4:
+                    ty = sp
+                elif sp.endswith("*") and w in (1, 2):
+                    ty = "bool" if w == 1 else "short"
+                elif WIDTH_OF.get(sp) == w:
+                    ty = sp
+            if not ty:
+                ty = {1: "unsigned char", 2: "short", 4: "int",
+                      8: "double"}.get(w, "int")
+            ctx.views.add_scalar(cls, byte_off, role, name, ty, w, src)
+            ctx.sites.append(Site(
+                "member_read", raw,
+                "cast-this arithmetic -> this->%s (0x%X, w=%d, %s)"
+                % (name, byte_off, w, src), True))
+            return "this->" + name
+        # width mismatch or no registry record: offset-true placeholder
+        # (same convention as the bare path; never silently re-width a
+        # registry member -- a byte load must stay a byte load).
+        if role in existing:
+            name = existing[role]["name"]
+        else:
+            base = "m%03X" % byte_off
+            used = {v.get("name") for v in existing.values()}
+            arr = (ctx.views.arrays.get(cls) or {}).get(byte_off)
+            if arr:
+                used.add(arr.get("name"))
+            name = base if base not in used else "%s_%s" % (base, role)
+        ty = {1: "unsigned char", 2: "short", 4: "int",
+              8: "double"}.get(read_w, "int")
+        ctx.views.add_scalar(cls, byte_off, role, name, ty, read_w,
+                             "registry-gap")
+        ctx.sites.append(Site(
+            "member_read", raw,
+            "cast-this offset 0x%X (%s, w=%d): synthesized view this->%s "
+            "(registry gap/mismatch)" % (byte_off, read_ty, read_w, name),
+            False))
+        return "this->" + name
+
+    def cast_deref_repl(m):
+        ty = TYPE_OF_CAST.get(m.group("ty")) or spell_type(m.group("ty"))
+        read_w = WIDTH_OF.get(ty, 4) or 4
+        byte_off = int(m.group("off")) * read_w
+        return _view_for_offset(byte_off, ty, read_w, m.group(0))
+
+    text = _CAST_THIS_DEREF.sub(cast_deref_repl, text)
+
+    def _addr_view(byte_off, raw, note):
+        arr = (ctx.views.arrays.get(cls) or {}).get(byte_off)
+        if arr:
+            name = arr["name"]
+        else:
+            name = "m%03X" % byte_off
+            ctx.views.add_array(cls, byte_off, name, "char", 0,
+                                "this-addr-view")
+        ctx.sites.append(Site(
+            "this_addr", raw,
+            "%s -> this->%s (0x%X char-array view, address only)"
+            % (note, name, byte_off), True))
+        return "this->" + name
+
+    def cast_addr_repl(m):
+        ty = TYPE_OF_CAST.get(m.group("ty")) or spell_type(m.group("ty"))
+        w = WIDTH_OF.get(ty, 4) or 4
+        return _addr_view(int(m.group("off")) * w, m.group(0),
+                          "this-offset address (%s)" % ty)
+
+    text = _CAST_THIS_ADDR.sub(cast_addr_repl, text)
+
+    # bare `this + N` (proto this is a pointer): N is scaled by the proto
+    # element width.  A non-pointer proto (`int this`) is integer
+    # arithmetic -- pass_receiver_arith owns that family.
+    if _PROTO_THIS_TY.search(ctx.ex.proto or ""):
+        def bare_addr_repl(m):
+            return _addr_view(int(m.group("off")) * scale, m.group(0),
+                              "bare this+N address")
+        text = _BARE_THIS_ADDR.sub(bare_addr_repl, text)
+
+
 
     # R4: bare `*this` (a dword read at offset 0, emitted by IDA when the
     # proto types this as `int *this`) -- `*this` in C++ is the OBJECT, so
@@ -2338,6 +2447,74 @@ def _array_type_ok(reg_ty, elem, count):
     if m:
         return False
     return reg_ty == elem
+
+
+# ---------------------------------------------------------------- member addr
+#
+# Audit-rem ② (2026-11-12): `(T *)&this->m` / `(T *)(&this->m)` member-
+# address puns are checker R3 violations ("&this->member puns").  They occur
+# when a function returns or forwards the ADDRESS of a member (0x634800
+# `lea eax,[ecx+0x38]`, 0x408520 `add ecx,8; jmp Queue::GetNext`).  Model the
+# storage as an offset-true char-array view: `this->mXXX` decays to the same
+# address (`lea`), so codegen is unchanged, while the hpp declares a real
+# member at the real offset.  Registry offsets come from _member_record_for
+# plus the name-encoded `__pad_XX` / `*_field_XX` fallbacks.
+
+_MEMBER_PUN_CAST = re.compile(
+    r"\(\s*(?:[A-Za-z_]\w*\s+)*[A-Za-z_]\w*\s*\*+\s*\)\s*"
+    r"&\s*this->(?P<mem>[A-Za-z_]\w*)")
+_MEMBER_PUN_PAREN = re.compile(
+    r"\(\s*&\s*this->(?P<mem>[A-Za-z_]\w*)\s*\)")
+
+
+def _member_view_offset_guess(mem):
+    """Offset encoded in the name: `__pad_00C` / `Foo_field_08`."""
+    m = re.match(r"^__pad_?([0-9A-Fa-f]+)$", mem)
+    if m:
+        return int(m.group(1), 16)
+    m = re.match(r"^(?:\w+_)?field_([0-9A-Fa-f]+)$", mem)
+    if m:
+        return int(m.group(1), 16)
+    return None
+
+
+def pass_member_addr_view(ctx):
+    cls = ctx.sig["cls"]
+    text = "\n".join(ctx.lines)
+    changed = 0
+
+    def make_repl(wrap):
+        def repl(m):
+            nonlocal changed
+            mem = m.group("mem")
+            moff, rec, src = _member_record_for(ctx, mem)
+            if moff is None:
+                g = _member_view_offset_guess(mem)
+                if g is not None:
+                    moff, src = g, "name-offset"
+            if moff is None:
+                return m.group(0)
+            arr = (ctx.views.arrays.get(cls) or {}).get(moff)
+            if arr and (arr.get("elem") or "") in ("char", "unsigned char"):
+                name = arr["name"]
+            else:
+                name = "m%03X" % moff
+                if arr and arr.get("name") == name:
+                    name = "%s_addr" % name
+                ctx.views.add_array(cls, moff, name, "char", 0,
+                                    src or "member-addr-view")
+            changed += 1
+            ctx.sites.append(Site(
+                "member_addr", m.group(0),
+                "member-address pun -> this->%s (0x%X char-array view)"
+                % (name, moff), True))
+            return ("(this->%s)" % name) if wrap else ("this->" + name)
+        return repl
+
+    text = _MEMBER_PUN_CAST.sub(make_repl(False), text)
+    text = _MEMBER_PUN_PAREN.sub(make_repl(True), text)
+    if changed:
+        ctx.lines = text.split("\n")
 
 
 # ---------------------------------------------------------------- unknown syms

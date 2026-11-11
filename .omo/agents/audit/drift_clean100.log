@@ -1,0 +1,406 @@
+======================================================================
+PART 1/5  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\drift_clean100\part_00
+=== convert (20 addrs) ===
+[conv] 0x401940 RawFileClass::GetMember06 -> RawFileClass
+[conv] 0x40d230 GScreenClass::AddRef -> GScreenClass
+[conv] 0x40d240 GScreenClass::Release -> GScreenClass
+[conv] 0x410580 AbstractClass::Stub1INoticeSink -> AbstractClass
+[conv] 0x4114f0 Surface::Stub -> Surface
+[conv] 0x411500 Surface::entry_68_ -> Surface
+[conv] 0x428e40 ObjectTypeClass::Thunk_AnimTypeClass_sub_428E40 -> ObjectTypeClass
+[conv] 0x459da0 TechnoClass::MissionStubReturnZero5 -> TechnoClass
+[conv] 0x4886a0 ShpButtonClass::GetStateFlag -> ShpButtonClass
+[conv] 0x48ace0 HRESULT_Fail -> Return
+[conv] 0x48e610 ControlClass::GetMember09 -> ControlClass
+[conv] 0x49fb60 DynamicVectorClass::GetCount -> DynamicVectorClass
+[conv] 0x4a60d0 TextRenderer::GetInstance -> TextRenderer
+[conv] 0x4b4870 DriveLocomotionClass::StubReturnZero_1 -> DriveLocomotionClass
+[conv] 0x4b4c60 IUnknown::MissionStub6 -> IUnknown
+[conv] 0x4b4c80 IUnknown::MissionStub7 -> IUnknown
+[conv] 0x4b6630 LocomotionClass::MissionStub8 -> LocomotionClass
+[conv] 0x4b6640 LocomotionClass::MissionStub9 -> LocomotionClass
+[conv] 0x4b6670 LocomotionClass::CheckState3 -> LocomotionClass
+[conv] 0x4b6680 LocomotionClass::CheckState4 -> LocomotionClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RawFileClass             rc=0
+[era] GScreenClass             rc=0
+[era] AbstractClass            rc=0
+[era] Surface                  rc=0
+[era] ObjectTypeClass          rc=0
+[era] TechnoClass              rc=0
+[era] ShpButtonClass           rc=0
+[era] Return                   rc=0
+[era] ControlClass             rc=0
+[era] DynamicVectorClass       rc=0
+[era] TextRenderer             rc=0
+[era] DriveLocomotionClass     rc=0
+[era] IUnknown                 rc=0
+[era] LocomotionClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x401940   MATCH            RawFileClass::GetMember06
+[diff] 0x40d230   MATCH            GScreenClass::AddRef
+[diff] 0x40d240   MATCH            GScreenClass::Release
+[diff] 0x410580   MATCH            AbstractClass::Stub1INoticeSink
+[diff] 0x4114f0   MATCH            Surface::Stub
+[diff] 0x411500   MATCH            Surface::entry_68_
+[diff] 0x428e40   MATCH            ObjectTypeClass::Thunk_AnimTypeClass_sub_428E40
+[diff] 0x459da0   MATCH            TechnoClass::MissionStubReturnZero5
+[diff] 0x4886a0   MATCH            ShpButtonClass::GetStateFlag
+[diff] 0x48ace0   MATCH            HRESULT_Fail
+[diff] 0x48e610   MATCH            ControlClass::GetMember09
+[diff] 0x49fb60   MATCH            DynamicVectorClass::GetCount
+[diff] 0x4a60d0   MATCH            TextRenderer::GetInstance
+[diff] 0x4b4870   MATCH            DriveLocomotionClass::StubReturnZero_1
+[diff] 0x4b4c60   MATCH            IUnknown::MissionStub6
+[diff] 0x4b4c80   MATCH            IUnknown::MissionStub7
+[diff] 0x4b6630   MATCH            LocomotionClass::MissionStub8
+[diff] 0x4b6640   MATCH            LocomotionClass::MissionStub9
+[diff] 0x4b6670   MATCH            LocomotionClass::CheckState3
+[diff] 0x4b6680   MATCH            LocomotionClass::CheckState4
+[ledger] 0x401940 RawFileClass::GetMember06 -> OK (attempt 17)
+[ledger] 0x40d230 GScreenClass::AddRef -> OK (attempt 9)
+[ledger] 0x40d240 GScreenClass::Release -> OK (attempt 8)
+[ledger] 0x410580 AbstractClass::Stub1INoticeSink -> OK (attempt 5)
+[ledger] 0x4114f0 Surface::Stub -> OK (attempt 5)
+[ledger] 0x411500 Surface::entry_68_ -> OK (attempt 4)
+[ledger] 0x428e40 ObjectTypeClass::Thunk_AnimTypeClass_sub_428E40 -> OK (attempt 12)
+[ledger] 0x459da0 TechnoClass::MissionStubReturnZero5 -> OK (attempt 9)
+[ledger] 0x4886a0 ShpButtonClass::GetStateFlag -> OK (attempt 11)
+[ledger] 0x48ace0 HRESULT_Fail -> OK (attempt 8)
+[ledger] 0x48e610 ControlClass::GetMember09 -> OK (attempt 7)
+[ledger] 0x49fb60 DynamicVectorClass::GetCount -> OK (attempt 10)
+[ledger] 0x4a60d0 TextRenderer::GetInstance -> OK (attempt 10)
+[ledger] 0x4b4870 DriveLocomotionClass::StubReturnZero_1 -> OK (attempt 4)
+[ledger] 0x4b4c60 IUnknown::MissionStub6 -> OK (attempt 4)
+[ledger] 0x4b4c80 IUnknown::MissionStub7 -> OK (attempt 4)
+[ledger] 0x4b6630 LocomotionClass::MissionStub8 -> OK (attempt 4)
+[ledger] 0x4b6640 LocomotionClass::MissionStub9 -> OK (attempt 4)
+[ledger] 0x4b6670 LocomotionClass::CheckState3 -> OK (attempt 8)
+[ledger] 0x4b6680 LocomotionClass::CheckState4 -> OK (attempt 9)
+======================================================================
+PART 2/5  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\drift_clean100\part_01
+=== convert (20 addrs) ===
+[conv] 0x4e14a0 GadgetClass::InputThunkA -> GadgetClass
+[conv] 0x4e14b0 GadgetClass::InputThunkB -> GadgetClass
+[conv] 0x4e8260 TiberianSunClassFactory::vt_placeholder_02 -> TiberianSunClassFactory
+[conv] 0x4f2b40 VectorCursor::vt_placeholder_09 -> VectorCursor
+[conv] 0x4f2b50 VectorCursor::vt_placeholder_10 -> VectorCursor
+[conv] 0x4f3af0 GraphicMenuItem::Release -> GraphicMenuItem
+[conv] 0x4f3b00 GraphicMenuItem::AddRef -> GraphicMenuItem
+[conv] 0x535bd0 CommandClass::Stub -> CommandClass
+[conv] 0x535bf0 CommandClass::Do -> CommandClass
+[conv] 0x536730 PlanningModeCommandClass::performAction_36 -> PlanningModeCommandClass
+[conv] 0x536890 TypeSelectCommandClass::performAction_50 -> TypeSelectCommandClass
+[conv] 0x536b80 StopCommandClass::performAction_74 -> StopCommandClass
+[conv] 0x53a100 LightningStorm::IsActive -> LightningStorm
+[conv] 0x53f4e0 IPXConnClass::ZeroInitAndSetup_0 -> IPXConnClass
+[conv] 0x540f90 IPXManagerClass::GetSendCount -> IPXManagerClass
+[conv] 0x557b00 ListClass::GetItemCount -> ListClass
+[conv] 0x55a940 IUnknown::MissionStub -> IUnknown
+[conv] 0x55ab70 IUnknown::MissionStub2 -> IUnknown
+[conv] 0x55ab80 IUnknown::MissionStub3 -> IUnknown
+[conv] 0x55aba0 LocomotionClass::StubReturnFalse -> LocomotionClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GadgetClass              rc=0
+[era] TiberianSunClassFactory  rc=0
+[era] VectorCursor             rc=0
+[era] GraphicMenuItem          rc=0
+[era] CommandClass             rc=0
+[era] PlanningModeCommandClass rc=0
+[era] TypeSelectCommandClass   rc=0
+[era] StopCommandClass         rc=0
+[era] LightningStorm           rc=0
+[era] IPXConnClass             rc=0
+[era] IPXManagerClass          rc=0
+[era] ListClass                rc=0
+[era] IUnknown                 rc=0
+[era] LocomotionClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e14a0   MATCH            GadgetClass::InputThunkA
+[diff] 0x4e14b0   MATCH            GadgetClass::InputThunkB
+[diff] 0x4e8260   MATCH            TiberianSunClassFactory::vt_placeholder_02
+[diff] 0x4f2b40   MATCH            VectorCursor::vt_placeholder_09
+[diff] 0x4f2b50   MATCH            VectorCursor::vt_placeholder_10
+[diff] 0x4f3af0   MATCH            GraphicMenuItem::Release
+[diff] 0x4f3b00   MATCH            GraphicMenuItem::AddRef
+[diff] 0x535bd0   MATCH            CommandClass::Stub
+[diff] 0x535bf0   MATCH            CommandClass::Do
+[diff] 0x536730   MATCH            PlanningModeCommandClass::performAction_36
+[diff] 0x536890   MATCH            TypeSelectCommandClass::performAction_50
+[diff] 0x536b80   MATCH            StopCommandClass::performAction_74
+[diff] 0x53a100   MATCH            LightningStorm::IsActive
+[diff] 0x53f4e0   MATCH            IPXConnClass::ZeroInitAndSetup_0
+[diff] 0x540f90   MATCH            IPXManagerClass::GetSendCount
+[diff] 0x557b00   MATCH            ListClass::GetItemCount
+[diff] 0x55a940   MATCH            IUnknown::MissionStub
+[diff] 0x55ab70   MATCH            IUnknown::MissionStub2
+[diff] 0x55ab80   MATCH            IUnknown::MissionStub3
+[diff] 0x55aba0   MATCH            LocomotionClass::StubReturnFalse
+[ledger] 0x4e14a0 GadgetClass::InputThunkA -> OK (attempt 13)
+[ledger] 0x4e14b0 GadgetClass::InputThunkB -> OK (attempt 13)
+[ledger] 0x4e8260 TiberianSunClassFactory::vt_placeholder_02 -> OK (attempt 4)
+[ledger] 0x4f2b40 VectorCursor::vt_placeholder_09 -> OK (attempt 7)
+[ledger] 0x4f2b50 VectorCursor::vt_placeholder_10 -> OK (attempt 6)
+[ledger] 0x4f3af0 GraphicMenuItem::Release -> OK (attempt 4)
+[ledger] 0x4f3b00 GraphicMenuItem::AddRef -> OK (attempt 4)
+[ledger] 0x535bd0 CommandClass::Stub -> OK (attempt 4)
+[ledger] 0x535bf0 CommandClass::Do -> OK (attempt 4)
+[ledger] 0x536730 PlanningModeCommandClass::performAction_36 -> OK (attempt 4)
+[ledger] 0x536890 TypeSelectCommandClass::performAction_50 -> OK (attempt 4)
+[ledger] 0x536b80 StopCommandClass::performAction_74 -> OK (attempt 7)
+[ledger] 0x53a100 LightningStorm::IsActive -> OK (attempt 9)
+[ledger] 0x53f4e0 IPXConnClass::ZeroInitAndSetup_0 -> OK (attempt 12)
+[ledger] 0x540f90 IPXManagerClass::GetSendCount -> OK (attempt 8)
+[ledger] 0x557b00 ListClass::GetItemCount -> OK (attempt 11)
+[ledger] 0x55a940 IUnknown::MissionStub -> OK (attempt 4)
+[ledger] 0x55ab70 IUnknown::MissionStub2 -> OK (attempt 8)
+[ledger] 0x55ab80 IUnknown::MissionStub3 -> OK (attempt 8)
+[ledger] 0x55aba0 LocomotionClass::StubReturnFalse -> OK (attempt 8)
+======================================================================
+PART 3/5  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\drift_clean100\part_02
+=== convert (20 addrs) ===
+[conv] 0x55abc0 IUnknown::CheckState2 -> IUnknown
+[conv] 0x55abe0 LocomotionClass::MissionStub4 -> LocomotionClass
+[conv] 0x55abf0 LocomotionClass::MissionStub5 -> LocomotionClass
+[conv] 0x55acf0 LocomotionClass::MissionStub10 -> LocomotionClass
+[conv] 0x55ad00 IUnknown::MissionStub11 -> IUnknown
+[conv] 0x5865e0 Game::Stub3 -> Game
+[conv] 0x5b2e40 MissionClass::StubReturn450 -> MissionClass
+[conv] 0x5b2e70 MissionClass::CheckState1 -> MissionClass
+[conv] 0x5b2e80 MissionClass::CheckState2 -> MissionClass
+[conv] 0x5b2e90 MissionClass::CheckMissionStatus -> MissionClass
+[conv] 0x5b2ef0 MissionClass::GetMaxSize -> MissionClass
+[conv] 0x5b2f30 MissionClass::CheckMissionStatus2 -> MissionClass
+[conv] 0x5c02e0 VQMovieHandle::validatePathNode -> VQMovieHandle
+[conv] 0x5c03c0 VQMovieHandle::resetPathState -> VQMovieHandle
+[conv] 0x5c0e50 MultiplayerGameMode::StubReturnFalse3 -> MultiplayerGameMode
+[conv] 0x5c0ed0 MultiplayerGameMode::StubReturnFalse5 -> MultiplayerGameMode
+[conv] 0x5c0f30 MultiplayerGameMode::initTeams -> MultiplayerGameMode
+[conv] 0x5c5d30 FreeForAll::AssignPlayerIndex_0 -> FreeForAll
+[conv] 0x5ca7d0 MultiplayerSiege::vt_entry_18 -> MultiplayerSiege
+[conv] 0x5ca7f0 MultiplayerSiege::ClearFlag_0 -> MultiplayerSiege
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IUnknown                 rc=0
+[era] LocomotionClass          rc=0
+[era] Game                     rc=0
+[era] MissionClass             rc=0
+[era] VQMovieHandle            rc=0
+[era] MultiplayerGameMode      rc=0
+[era] FreeForAll               rc=0
+[era] MultiplayerSiege         rc=0
+=== diffasm byte-compare ===
+[diff] 0x55abc0   MATCH            IUnknown::CheckState2
+[diff] 0x55ad00   MATCH            IUnknown::MissionStub11
+[diff] 0x55abe0   MATCH            LocomotionClass::MissionStub4
+[diff] 0x55abf0   MATCH            LocomotionClass::MissionStub5
+[diff] 0x55acf0   MATCH            LocomotionClass::MissionStub10
+[diff] 0x5865e0   MATCH            Game::Stub3
+[diff] 0x5b2e40   MATCH            MissionClass::StubReturn450
+[diff] 0x5b2e70   MATCH            MissionClass::CheckState1
+[diff] 0x5b2e80   MATCH            MissionClass::CheckState2
+[diff] 0x5b2e90   MATCH            MissionClass::CheckMissionStatus
+[diff] 0x5b2ef0   MATCH            MissionClass::GetMaxSize
+[diff] 0x5b2f30   MATCH            MissionClass::CheckMissionStatus2
+[diff] 0x5c02e0   MATCH            VQMovieHandle::validatePathNode
+[diff] 0x5c03c0   MATCH            VQMovieHandle::resetPathState
+[diff] 0x5c0e50   MATCH            MultiplayerGameMode::StubReturnFalse3
+[diff] 0x5c0ed0   MATCH            MultiplayerGameMode::StubReturnFalse5
+[diff] 0x5c0f30   MATCH            MultiplayerGameMode::initTeams
+[diff] 0x5c5d30   MATCH            FreeForAll::AssignPlayerIndex_0
+[diff] 0x5ca7d0   MATCH            MultiplayerSiege::vt_entry_18
+[diff] 0x5ca7f0   MATCH            MultiplayerSiege::ClearFlag_0
+[ledger] 0x55abc0 IUnknown::CheckState2 -> OK (attempt 8)
+[ledger] 0x55abe0 LocomotionClass::MissionStub4 -> OK (attempt 10)
+[ledger] 0x55abf0 LocomotionClass::MissionStub5 -> OK (attempt 8)
+[ledger] 0x55acf0 LocomotionClass::MissionStub10 -> OK (attempt 8)
+[ledger] 0x55ad00 IUnknown::MissionStub11 -> OK (attempt 8)
+[ledger] 0x5865e0 Game::Stub3 -> OK (attempt 10)
+[ledger] 0x5b2e40 MissionClass::StubReturn450 -> OK (attempt 9)
+[ledger] 0x5b2e70 MissionClass::CheckState1 -> OK (attempt 8)
+[ledger] 0x5b2e80 MissionClass::CheckState2 -> OK (attempt 8)
+[ledger] 0x5b2e90 MissionClass::CheckMissionStatus -> OK (attempt 8)
+[ledger] 0x5b2ef0 MissionClass::GetMaxSize -> OK (attempt 10)
+[ledger] 0x5b2f30 MissionClass::CheckMissionStatus2 -> OK (attempt 8)
+[ledger] 0x5c02e0 VQMovieHandle::validatePathNode -> OK (attempt 10)
+[ledger] 0x5c03c0 VQMovieHandle::resetPathState -> OK (attempt 10)
+[ledger] 0x5c0e50 MultiplayerGameMode::StubReturnFalse3 -> OK (attempt 8)
+[ledger] 0x5c0ed0 MultiplayerGameMode::StubReturnFalse5 -> OK (attempt 8)
+[ledger] 0x5c0f30 MultiplayerGameMode::initTeams -> OK (attempt 10)
+[ledger] 0x5c5d30 FreeForAll::AssignPlayerIndex_0 -> OK (attempt 14)
+[ledger] 0x5ca7d0 MultiplayerSiege::vt_entry_18 -> OK (attempt 11)
+[ledger] 0x5ca7f0 MultiplayerSiege::ClearFlag_0 -> OK (attempt 11)
+======================================================================
+PART 4/5  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\drift_clean100\part_03
+=== convert (20 addrs) ===
+[conv] 0x5d5db0 MultiplayerGameMode::MissionStubReturnZero -> MultiplayerGameMode
+[conv] 0x5d6310 MultiplayerGameMode::MissionStubReturnZero2 -> MultiplayerGameMode
+[conv] 0x5d6350 MultiplayerGameMode::GetFlag -> MultiplayerGameMode
+[conv] 0x5d67a0 MultiplayerGameMode::MissionStubReturnZero4 -> MultiplayerGameMode
+[conv] 0x5ef280 NullModemConnClass::ZeroInitAndSetup_0_0 -> NullModemConnClass
+[conv] 0x5f3440 EventClass::GetState -> EventClass
+[conv] 0x5f43e0 ObjectClass::processStateUpdate -> ObjectClass
+[conv] 0x5f7610 ObjectTypeClass::GetType -> ObjectTypeClass
+[conv] 0x5fdde0 OverlayClass::ProcessEvent -> OverlayClass
+[conv] 0x5fdf00 OverlayClass::StubReturn176 -> OverlayClass
+[conv] 0x5fdf50 OverlayClass::StubReturn20 -> OverlayClass
+[conv] 0x6241c0 SimpleDialogControl@OwnerDraw::Release -> SimpleDialogControl_OwnerDraw
+[conv] 0x6241d0 SimpleDialogControl@OwnerDraw::GetMember01 -> SimpleDialogControl_OwnerDraw
+[conv] 0x637aa0 FactoryClass::GetFlag -> FactoryClass
+[conv] 0x65c320 RAMFileClass::updateTeamState -> RAMFileClass
+[conv] 0x65c330 RAMFileClass::processTeamOrder -> RAMFileClass
+[conv] 0x65c4a0 RAMFileClass::checkTeamObjective -> RAMFileClass
+[conv] 0x65c540 RAMFileClass::resetTeamState -> RAMFileClass
+[conv] 0x65d690 ReferenceCounted::RetZero_eax_35 -> ReferenceCounted
+[conv] 0x6a3ea0 ShipLocomotionClass::StubReturnZero_14 -> ShipLocomotionClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerGameMode      rc=0
+[era] NullModemConnClass       rc=0
+[era] EventClass               rc=0
+[era] ObjectClass              rc=0
+[era] ObjectTypeClass          rc=0
+[era] OverlayClass             rc=0
+[era] SimpleDialogControl_OwnerDraw rc=0
+[era] FactoryClass             rc=0
+[era] RAMFileClass             rc=0
+[era] ReferenceCounted         rc=0
+[era] ShipLocomotionClass      rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d5db0   MATCH            MultiplayerGameMode::MissionStubReturnZero
+[diff] 0x5d6310   MATCH            MultiplayerGameMode::MissionStubReturnZero2
+[diff] 0x5d6350   MATCH            MultiplayerGameMode::GetFlag
+[diff] 0x5d67a0   MATCH            MultiplayerGameMode::MissionStubReturnZero4
+[diff] 0x5ef280   MATCH            NullModemConnClass::ZeroInitAndSetup_0_0
+[diff] 0x5f3440   MATCH            EventClass::GetState
+[diff] 0x5f43e0   MATCH            ObjectClass::processStateUpdate
+[diff] 0x5f7610   MATCH            ObjectTypeClass::GetType
+[diff] 0x5fdde0   MATCH            OverlayClass::ProcessEvent
+[diff] 0x5fdf00   MATCH            OverlayClass::StubReturn176
+[diff] 0x5fdf50   MATCH            OverlayClass::StubReturn20
+[diff] 0x6241c0   MATCH            SimpleDialogControl@OwnerDraw::Release
+[diff] 0x6241d0   MATCH            SimpleDialogControl@OwnerDraw::GetMember01
+[diff] 0x637aa0   MATCH            FactoryClass::GetFlag
+[diff] 0x65c320   MATCH            RAMFileClass::updateTeamState
+[diff] 0x65c330   MATCH            RAMFileClass::processTeamOrder
+[diff] 0x65c4a0   MATCH            RAMFileClass::checkTeamObjective
+[diff] 0x65c540   MATCH            RAMFileClass::resetTeamState
+[diff] 0x65d690   MATCH            ReferenceCounted::RetZero_eax_35
+[diff] 0x6a3ea0   MATCH            ShipLocomotionClass::StubReturnZero_14
+[ledger] 0x5d5db0 MultiplayerGameMode::MissionStubReturnZero -> OK (attempt 8)
+[ledger] 0x5d6310 MultiplayerGameMode::MissionStubReturnZero2 -> OK (attempt 10)
+[ledger] 0x5d6350 MultiplayerGameMode::GetFlag -> OK (attempt 7)
+[ledger] 0x5d67a0 MultiplayerGameMode::MissionStubReturnZero4 -> OK (attempt 8)
+[ledger] 0x5ef280 NullModemConnClass::ZeroInitAndSetup_0_0 -> OK (attempt 11)
+[ledger] 0x5f3440 EventClass::GetState -> OK (attempt 8)
+[ledger] 0x5f43e0 ObjectClass::processStateUpdate -> OK (attempt 10)
+[ledger] 0x5f7610 ObjectTypeClass::GetType -> OK (attempt 8)
+[ledger] 0x5fdde0 OverlayClass::ProcessEvent -> OK (attempt 8)
+[ledger] 0x5fdf00 OverlayClass::StubReturn176 -> OK (attempt 8)
+[ledger] 0x5fdf50 OverlayClass::StubReturn20 -> OK (attempt 8)
+[ledger] 0x6241c0 SimpleDialogControl@OwnerDraw::Release -> OK (attempt 12)
+[ledger] 0x6241d0 SimpleDialogControl@OwnerDraw::GetMember01 -> OK (attempt 10)
+[ledger] 0x637aa0 FactoryClass::GetFlag -> OK (attempt 8)
+[ledger] 0x65c320 RAMFileClass::updateTeamState -> OK (attempt 8)
+[ledger] 0x65c330 RAMFileClass::processTeamOrder -> OK (attempt 13)
+[ledger] 0x65c4a0 RAMFileClass::checkTeamObjective -> OK (attempt 4)
+[ledger] 0x65c540 RAMFileClass::resetTeamState -> OK (attempt 11)
+[ledger] 0x65d690 ReferenceCounted::RetZero_eax_35 -> OK (attempt 8)
+[ledger] 0x6a3ea0 ShipLocomotionClass::StubReturnZero_14 -> OK (attempt 8)
+======================================================================
+PART 5/5  (20 fns) -> D:\RA2YR_ReSource\.omo\agents\audit\drift_clean100\part_04
+=== convert (20 addrs) ===
+[conv] 0x6b4f20 SmudgeClass::CheckStatus -> SmudgeClass
+[conv] 0x6b4f30 SmudgeClass::StubReturn176 -> SmudgeClass
+[conv] 0x6b4f40 SmudgeClass::StubReturn29 -> SmudgeClass
+[conv] 0x6d0260 TabClass::Stub -> TabClass
+[conv] 0x7099d0 TechnoClass::IsDirty -> TechnoClass
+[conv] 0x70c5b0 TechnoClass::GetShroudByte -> TechnoClass
+[conv] 0x71d150 TerrainClass::GetOffset -> TerrainClass
+[conv] 0x746dd0 UnitClass::StubReturn2280 -> UnitClass
+[conv] 0x746e20 UnitClass::StubReturn1 -> UnitClass
+[conv] 0x753c70 Miles::DriverGet -> Miles
+[conv] 0x775b20 Dialog::GetCurrentType -> Dialog
+[conv] 0x777b50 GameOptions::GetEntry -> GameOptions
+[conv] 0x7ab340 CChatEventSink::StubReturnFalse -> CChatEventSink
+[conv] 0x7ac4a0 CChatEventSink::DispatchStub_38 -> CChatEventSink
+[conv] 0x7ac4b0 CChatEventSink::DispatchStub_39 -> CChatEventSink
+[conv] 0x7ac4c0 CChatEventSink::DispatchStub_45 -> CChatEventSink
+[conv] 0x7ac4d0 CChatEventSink::DispatchStub_46 -> CChatEventSink
+[conv] 0x7ac4e0 CChatEventSink::DispatchStub_47 -> CChatEventSink
+[conv] 0x7ad610 _CComObject_VCDownloadEventSink_ATL::StubReturnFalse -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x7b1750 WinsockInterfaceClass::Send -> WinsockInterfaceClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SmudgeClass              rc=0
+[era] TabClass                 rc=0
+[era] TechnoClass              rc=0
+[era] TerrainClass             rc=0
+[era] UnitClass                rc=0
+[era] Miles                    rc=0
+[era] Dialog                   rc=0
+[era] GameOptions              rc=0
+[era] CChatEventSink           rc=0
+[era] _CComObject_VCDownloadEventSink_ATL rc=0
+[era] WinsockInterfaceClass    rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b4f20   MATCH            SmudgeClass::CheckStatus
+[diff] 0x6b4f30   MATCH            SmudgeClass::StubReturn176
+[diff] 0x6b4f40   MATCH            SmudgeClass::StubReturn29
+[diff] 0x6d0260   MATCH            TabClass::Stub
+[diff] 0x7099d0   MATCH            TechnoClass::IsDirty
+[diff] 0x70c5b0   MATCH            TechnoClass::GetShroudByte
+[diff] 0x71d150   MATCH            TerrainClass::GetOffset
+[diff] 0x746dd0   MATCH            UnitClass::StubReturn2280
+[diff] 0x746e20   MATCH            UnitClass::StubReturn1
+[diff] 0x753c70   MATCH            Miles::DriverGet
+[diff] 0x775b20   MATCH            Dialog::GetCurrentType
+[diff] 0x777b50   MATCH            GameOptions::GetEntry
+[diff] 0x7ab340   MATCH            CChatEventSink::StubReturnFalse
+[diff] 0x7ac4a0   MATCH            CChatEventSink::DispatchStub_38
+[diff] 0x7ac4b0   MATCH            CChatEventSink::DispatchStub_39
+[diff] 0x7ac4c0   MATCH            CChatEventSink::DispatchStub_45
+[diff] 0x7ac4d0   MATCH            CChatEventSink::DispatchStub_46
+[diff] 0x7ac4e0   MATCH            CChatEventSink::DispatchStub_47
+[diff] 0x7ad610   MATCH            _CComObject_VCDownloadEventSink_ATL::StubReturnFalse
+[diff] 0x7b1750   MATCH            WinsockInterfaceClass::Send
+[ledger] 0x6b4f20 SmudgeClass::CheckStatus -> OK (attempt 8)
+[ledger] 0x6b4f30 SmudgeClass::StubReturn176 -> OK (attempt 10)
+[ledger] 0x6b4f40 SmudgeClass::StubReturn29 -> OK (attempt 8)
+[ledger] 0x6d0260 TabClass::Stub -> OK (attempt 11)
+[ledger] 0x7099d0 TechnoClass::IsDirty -> OK (attempt 8)
+[ledger] 0x70c5b0 TechnoClass::GetShroudByte -> OK (attempt 8)
+[ledger] 0x71d150 TerrainClass::GetOffset -> OK (attempt 8)
+[ledger] 0x746dd0 UnitClass::StubReturn2280 -> OK (attempt 8)
+[ledger] 0x746e20 UnitClass::StubReturn1 -> OK (attempt 8)
+[ledger] 0x753c70 Miles::DriverGet -> OK (attempt 6)
+[ledger] 0x775b20 Dialog::GetCurrentType -> OK (attempt 9)
+[ledger] 0x777b50 GameOptions::GetEntry -> OK (attempt 8)
+[ledger] 0x7ab340 CChatEventSink::StubReturnFalse -> OK (attempt 8)
+[ledger] 0x7ac4a0 CChatEventSink::DispatchStub_38 -> OK (attempt 8)
+[ledger] 0x7ac4b0 CChatEventSink::DispatchStub_39 -> OK (attempt 8)
+[ledger] 0x7ac4c0 CChatEventSink::DispatchStub_45 -> OK (attempt 8)
+[ledger] 0x7ac4d0 CChatEventSink::DispatchStub_46 -> OK (attempt 10)
+[ledger] 0x7ac4e0 CChatEventSink::DispatchStub_47 -> OK (attempt 8)
+[ledger] 0x7ad610 _CComObject_VCDownloadEventSink_ATL::StubReturnFalse -> OK (attempt 8)
+[ledger] 0x7b1750 WinsockInterfaceClass::Send -> OK (attempt 9)
+======================================================================
+{
+ "total": 100,
+ "verdicts": {
+  "MATCH": 100
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 5
+}
+report -> D:\RA2YR_ReSource\.omo\agents\audit\drift_clean100\batch_report.json

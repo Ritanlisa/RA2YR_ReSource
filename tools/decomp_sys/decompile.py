@@ -147,6 +147,96 @@ def _retn_width(disasm_lines):
     return None, None
 
 
+# ---------------------------------------------------------------- this-as-id
+#
+# Audit-rem ① (2026-11-12): 0x602AE0 `Dialog::IsSpecialTemplate` is the
+# canonical overfit -- the 161B body only compares ECX against 18 small
+# dialog IDs (no memory access at all), but IDA typed ECX as `Dialog *this`;
+# the generator faithfully rendered `this == (Dialog *)293 || ...`, which
+# compiles to the same `cmp ecx, imm32` chain and byte-MATCHes.  The binary
+# evidence for "this is an integer ID" is: no `[ecx...]` operand anywhere +
+# a chain of `cmp ecx, <small imm>` compares + bare `retn` + no declared
+# parameters.  Emit that receiver as an integer __fastcall parameter
+# (static member) -- the honest signature; codegen is identical.
+
+_ECX_MEM = re.compile(r"\[\s*ecx\b")
+_ECX_CMP_HEX = re.compile(r"^\s*cmp\s+ecx\s*,\s*(?:0x)?([0-9A-Fa-f]+)h\s*$")
+_ECX_CMP_DEC = re.compile(r"^\s*cmp\s+ecx\s*,\s*(\d+)\s*$")
+_THIS_AS_ID_MAX = 0x10000
+
+
+def _ecx_small_cmps(disasm_lines):
+    vals = []
+    for dl in disasm_lines:
+        ins = _insn_text(dl)
+        m = _ECX_CMP_HEX.match(ins)
+        if m:
+            vals.append(int(m.group(1), 16))
+            continue
+        m = _ECX_CMP_DEC.match(ins)
+        if m:
+            vals.append(int(m.group(1), 10))
+    return [v for v in vals if 0 < v < _THIS_AS_ID_MAX]
+
+
+def _this_as_id_evidence(ex):
+    """Small-ID compare chain on an un-dereferenced ECX, else None."""
+    dis = ex.disasm_lines or []
+    for dl in dis:
+        if _ECX_MEM.search(_insn_text(dl)):
+            return None
+    vals = _ecx_small_cmps(dis)
+    return vals if len(vals) >= 2 else None
+
+
+# ---------------------------------------------------------------- class hierarchy
+#
+# Audit-rem ③: class identity arbitration uses the binary RTTI base arrays
+# (anchors/rtti_base_arrays.json, 954 classes) first, then the registry's
+# class_layouts parent chain.  A proto `T *this` may only NARROW the
+# registry class (T derives from it); a widening or unrelated proto
+# (BulletClass::Fire typed ObjectClass*, CampaignClass::LoadFromINIList
+# typed INIClass*) is IDA's caller-side guess and must not re-home the unit.
+
+_RTTI_BASES = None
+
+
+def _rtti_bases():
+    global _RTTI_BASES
+    if _RTTI_BASES is None:
+        path = os.path.join(ROOT, "anchors", "rtti_base_arrays.json")
+        try:
+            with open(path, encoding="utf-8") as f:
+                _RTTI_BASES = json.load(f)
+        except (OSError, ValueError):
+            _RTTI_BASES = {}
+    return _RTTI_BASES
+
+
+def _class_ancestors(reg, cls):
+    """All ancestors of cls (RTTI base array + class_layouts parent chain)."""
+    out = []
+    seen = set()
+    cur = cls
+    guard = 0
+    while cur and cur not in seen and guard < 64:
+        seen.add(cur)
+        out.append(cur)
+        rec = reg.classes.get(cur) or {}
+        cur = rec.get("parent")
+        guard += 1
+    for b in (_rtti_bases().get(cls) or []):
+        b = str(b)
+        m = re.match(r"^\d+(.+)$", b)      # MI marker ("1IUnknown")
+        if m:
+            b = m.group(1)
+        if b and b not in seen:
+            seen.add(b)
+            out.append(b)
+    return out
+
+
+
 def _proto_params(proto, keep_this=False):
     """Parameter list from the export proto, as [(spelled_type, name)].
 
@@ -295,11 +385,9 @@ def derive_signature(reg, ex):
     # IDA's live typing of THIS function; a class-typed `T *this` carries
     # its own layout (e.g. VectorClass::GetCount is really
     # DynamicVectorClass -- Count@0x10) and overrides the fleet cls.
+    # Audit-rem ③: applied below as a NARROWING only (see _class_ancestors).
     pm = re.search(r"\(\s*([A-Za-z_]\w*)\s*\*\s*_?this\b", ex.proto or "")
-    if pm:
-        pty = pm.group(1)
-        if pty in reg.classes and pty != cls:
-            cls, cls_src = pty, "proto_this"
+    pty = pm.group(1) if pm else None
     # NO_CLS recovery: a signals-cls-less function may still carry hard
     # class evidence (vtable-slot ownership / class-typed proto this /
     # qualified name).  The resolver canonicalizes aliases and namespaces,
@@ -311,6 +399,19 @@ def derive_signature(reg, ex):
     method = fn.get("method") or (name.split("::")[-1] if "::" in name else name)
     ret = spell_type(fn.get("ret") or "int")
     ret_notes = []
+    # Audit-rem ③: proto `T *this` is accepted only when T derives from the
+    # registry class (narrowing) or the registry has no class.  Widening /
+    # unrelated proto types are IDA's caller-side guesses and must not
+    # re-home the function (BulletClass::Fire typed ObjectClass*,
+    # CampaignClass::LoadFromINIList typed INIClass* -> C2039 families).
+    if pm and pty and pty != cls and pty in reg.classes:
+        if cls is None or cls in _class_ancestors(reg, pty):
+            cls, cls_src = pty, "proto_this"
+        else:
+            ret_notes.append(("proto_this_rejected",
+                              "proto this type %s is not a descendant of "
+                              "registry class %s -- registry class kept"
+                              % (pty, cls)))
     # R3: a registry `unknown` return is not a type -- the export proto is
     # the only ret evidence.  Without this a tail-jmp thunk whose callee
     # ret was never resolved emitted `int Stub(){ Callee(); }` -> C4716
@@ -495,7 +596,11 @@ def derive_signature(reg, ex):
         no_stack_read = not any("[esp" in d for d in dis)
         if retn_bytes and no_stack_read and retn_bytes % 4 == 0:
             have = sum((WIDTH_TY.get(t, 4) or 4) for t, _ in params)
-            want = max(0, retn_bytes // 4 - 1)
+            # Audit-rem ③: a FREE __stdcall function has no implicit
+            # `this` slot -- the whole retn cleanup belongs to explicit
+            # params (0x48ACE0 Return::HRESULT_Fail: retn 0Ch = 3 params,
+            # not 2 + a phantom receiver).
+            want = max(0, retn_bytes // 4 - (1 if cls else 0))
             while len(params) > want:
                 dropped.append(params.pop())
             if len(params) < want:
@@ -505,8 +610,26 @@ def derive_signature(reg, ex):
                 if pad:
                     ret_notes.append(
                         ("cc_stdcall_arity",
-                         "stdcall member retn 0x%X -> arity %d padded"
-                         % (retn_bytes, want)))
+                         "stdcall %s retn 0x%X -> arity %d padded"
+                         % ("member" if cls else "free", retn_bytes, want)))
+    # Audit-rem ①: this-as-id arbitration (see _this_as_id_evidence).
+    # Only the pure-ECX compare family: no declared params, bare retn,
+    # thiscall.  The receiver becomes an integer __fastcall parameter
+    # (static member) -- the honest API; codegen is identical.
+    this_as_id = False
+    if not free_fn and cc in ("thiscall", "__thiscall") and not params:
+        rb, bare = _retn_width(ex.disasm_lines)
+        vals = _this_as_id_evidence(ex)
+        if bare and vals:
+            this_as_id = True
+            cc = "__fastcall"
+            params = [("int", "p0")]
+            ret_notes.append(
+                ("this_as_id",
+                 "receiver is an integer ID: no [ecx] memory operand, "
+                 "%d small cmp-ecx immediates (0x%X..0x%X), bare retn "
+                 "-> static __fastcall int parameter"
+                 % (len(vals), min(vals), max(vals))))
     # R3 ret-width narrowing from the binary's return paths: when EVERY
     # value-producing ret writes only AL (mov al / xor al / setcc al) the
     # real return type is char-width; AX-only -> short.  Only narrows an
@@ -545,6 +668,9 @@ def derive_signature(reg, ex):
         "ret": ret,
         "cc": cc,
         "free": free_fn,
+        # Audit-rem ①: receiver is an integer ID (see _this_as_id_evidence);
+        # emitted as a STATIC __fastcall member with int p0.
+        "this_as_id": this_as_id,
         # R7.1: whether IDA's a1 is the RECEIVER.  True only for real
         # receiver-carrying conventions (thiscall ECX / proto names a
         # `this` parameter).  A __stdcall leaf whose args live on the
@@ -553,7 +679,7 @@ def derive_signature(reg, ex):
         # slot -> C2446).  A __fastcall FREE function (BinkMovieClass::
         # OpenFile: register args, no receiver) is the same story -- its
         # a1 is the first explicit argument, never this.
-        "this_at_a1": (not free_fn) and (
+        "this_at_a1": (not free_fn) and (not this_as_id) and (
             cc in ("thiscall", "__thiscall") or
             bool(re.search(r"\bthis\b", ex.proto or ""))),
         "params": params,                      # [(era_type, name)]
@@ -673,6 +799,20 @@ def run_function(addr, reg, views, idx):
         # the raw pseudo-code receiver keyword is C++-reserved; the free
         # shell spells it as the explicit first parameter
         ctx.lines = [re.sub(r"\bthis\b", "this_", ln) for ln in ctx.lines]
+    if sig.get("this_as_id"):
+        # audit-rem ①: the receiver is an integer ID -- the honest body
+        # compares the explicit parameter, never the object pointer.  The
+        # pseudo-code's pointer cast around the id literal is meaningless
+        # for an int parameter (strip it; the codegen is unchanged).
+        pname = sig["param_names"][0]
+        out = []
+        for ln in ctx.lines:
+            ln = re.sub(r"\bthis\b", pname, ln)
+            ln = re.sub(
+                r"\(\s*(?:[A-Za-z_]\w*(?:\s+[A-Za-z_]\w+)*)\s*\*\s*\)\s*"
+                r"(?=(?:0x[0-9A-Fa-f]+|\d+)\b)", "", ln)
+            out.append(ln)
+        ctx.lines = out
     passes.pass_param_rename(ctx)
     passes.pass_globals(ctx)
     passes.pass_struct_globals(ctx)
@@ -686,6 +826,9 @@ def run_function(addr, reg, views, idx):
     passes.pass_vt_dispatch(ctx)
     passes.pass_member_shapes(ctx)
     widen_byref_for_dispatch(ctx)
+    # audit-rem ②: `(T*)&this->m` member-address puns -> offset-true
+    # char-array view (checker R3 contract; codegen-neutral `lea`)
+    passes.pass_member_addr_view(ctx)
     # R6: bare receiver arithmetic re-spelled AFTER member restoration
     # (this_ptr_math/member_shapes consume the `*(T *)(this + K)` deref
     # shapes first; only value-level residuals reach this pass)
