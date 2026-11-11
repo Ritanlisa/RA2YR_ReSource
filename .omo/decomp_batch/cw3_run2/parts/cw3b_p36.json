@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7ced9e",
+  "name": "__cftof2",
+  "cls": null,
+  "size": 167,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p0'"
+ },
+ {
+  "addr": "0x501160",
+  "name": "CCINIClass::WriteHouses",
+  "cls": null,
+  "size": 169,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'vfptr' : is not a member of 'HouseClass'"
+ },
+ {
+  "addr": "0x517110",
+  "name": "sub_517110",
+  "cls": null,
+  "size": 169,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Assign' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x452360",
+  "name": "BuildingClass::PowerOff",
+  "cls": null,
+  "size": 170,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x6b1f50",
+  "name": "SliderClass::SetValue",
+  "cls": null,
+  "size": 170,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.lineTrailer' must have class/struct/union type"
+ },
+ {
+  "addr": "0x40a850",
+  "name": "sub_40A850",
+  "cls": null,
+  "size": 171,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Assign' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x65cbf0",
+  "name": "FileClass::Open",
+  "cls": null,
+  "size": 171,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'void' to 'unsigned int'"
+ },
+ {
+  "addr": "0x471c90",
+  "name": "CaptureManagerClass::CanCapture",
+  "cls": null,
+  "size": 172,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->vfptr' must point to class/struct/union"
+ },
+ {
+  "addr": "0x7474b0",
+  "name": "UnitTypeClass::CreateUnit",
+  "cls": null,
+  "size": 173,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'short *'"
+ },
+ {
+  "addr": "0x5e9340",
+  "name": "Audio_Helper",
+  "cls": null,
+  "size": 174,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Assign' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x5b4630",
+  "name": "BlowStraw::Constructor_MixFileClass",
+  "cls": null,
+  "size": 175,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2371",
+  "first_msg": "'FileStartOffset' : redefinition"
+ },
+ {
+  "addr": "0x60d380",
+  "name": "Campaign::Screen",
+  "cls": null,
+  "size": 175,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p0'"
+ },
+ {
+  "addr": "0x6e1780",
+  "name": "TActionClass::PlayAudioAtRandomWP",
+  "cls": null,
+  "size": 175,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x6cf350",
+  "name": "SwizzleManagerClass::ConvertNodes",
+  "cls": null,
+  "size": 177,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier"
+ },
+ {
+  "addr": "0x4371d0",
+  "name": "Helper::ProcessData",
+  "cls": null,
+  "size": 178,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x451690",
+  "name": "BuildingClass::ClearSuperWeaponAnim",
+  "cls": null,
+  "size": 179,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'SuperWeaponToken' : is not a member of 'BuildingClass'"
+ },
+ {
+  "addr": "0x6824b0",
+  "name": "Map_Read_6824B0",
+  "cls": null,
+  "size": 179,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_UNKNOWN' : undeclared identifier"
+ },
+ {
+  "addr": "0x509e00",
+  "name": "HouseClass::Fire_LightningStorm",
+  "cls": null,
+  "size": 180,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (int,void *)' : cannot convert parameter 1 from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x74f960",
+  "name": "GameClass::ReadVersionFile",
+  "cls": null,
+  "size": 180,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int *' to 'int [1]'"
+ },
+ {
+  "addr": "0x406670",
+  "name": "sub_406670",
+  "cls": null,
+  "size": 181,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_UNKNOWN' : undeclared identifier"
+ }
+]

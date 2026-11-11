@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p36\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ced9e __cftof2 -> _addr_7C
+[conv] 0x501160 CCINIClass::WriteHouses -> CCINIClass
+[conv] 0x517110 ObjectClass::sub_517110 -> ObjectClass
+[conv] 0x452360 BuildingClass::PowerOff -> BuildingClass
+[conv] 0x6b1f50 SliderClass::SetValue -> SliderClass
+[conv] 0x40a850 ObjectClass::sub_40A850 -> ObjectClass
+[conv] 0x65cbf0 RawFileClass::Open -> RawFileClass
+[conv] 0x471c90 CaptureManagerClass::CanCapture -> CaptureManagerClass
+[conv] 0x7474b0 UnitTypeClass::CreateUnit -> UnitTypeClass
+[conv] 0x5e9340 ObjectClass::Audio_Helper -> ObjectClass
+[conv] 0x5b4630 MixFileClass::Constructor_MixFileClass -> MixFileClass
+[conv] 0x60d380 Campaign::Screen -> Campaign
+[conv] 0x6e1780 TActionClass::PlayAudioAtRandomWP -> TActionClass
+[conv] 0x6cf350 SwizzleManagerClass::ConvertNodes -> SwizzleManagerClass
+[conv] 0x4371d0 Helper::ProcessData -> Helper
+[conv] 0x451690 BuildingClass::ClearSuperWeaponAnim -> BuildingClass
+[conv] 0x6824b0 Map_Read_6824B0 -> Map_Read
+[conv] 0x509e00 HouseClass::Fire_LightningStorm -> HouseClass
+[conv] 0x74f960 GameClass::ReadVersionFile -> GameClass
+[conv] 0x406670 sub_406670 -> _addr_40
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=0
+[era] CCINIClass               rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] SliderClass              rc=2
+[era] RawFileClass             rc=2
+[era] CaptureManagerClass      rc=2
+[era] UnitTypeClass            rc=2
+[era] MixFileClass             rc=2
+[era] Campaign                 rc=2
+[era] TActionClass             rc=2
+[era] SwizzleManagerClass      rc=2
+[era] Helper                   rc=2
+[era] Map_Read                 rc=2
+[era] HouseClass               rc=0
+[era] GameClass                rc=2
+[era] _addr_40                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7ced9e   MISMATCH         __cftof2
+[diff] 0x509e00   MISMATCH         HouseClass::Fire_LightningStorm
+[ledger] 0x7ced9e __cftof2 -> NG (attempt 3)
+[ledger] 0x501160 CCINIClass::WriteHouses -> COMPILE_FAIL (attempt 11)
+[ledger] 0x517110 ObjectClass::sub_517110 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x452360 BuildingClass::PowerOff -> COMPILE_FAIL (attempt 11)
+[ledger] 0x6b1f50 SliderClass::SetValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x40a850 ObjectClass::sub_40A850 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65cbf0 RawFileClass::Open -> COMPILE_FAIL (attempt 3)
+[ledger] 0x471c90 CaptureManagerClass::CanCapture -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7474b0 UnitTypeClass::CreateUnit -> COMPILE_FAIL (attempt 11)
+[ledger] 0x5e9340 ObjectClass::Audio_Helper -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b4630 MixFileClass::Constructor_MixFileClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60d380 Campaign::Screen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e1780 TActionClass::PlayAudioAtRandomWP -> COMPILE_FAIL (attempt 11)
+[ledger] 0x6cf350 SwizzleManagerClass::ConvertNodes -> COMPILE_FAIL (attempt 11)
+[ledger] 0x4371d0 Helper::ProcessData -> COMPILE_FAIL (attempt 12)
+[ledger] 0x451690 BuildingClass::ClearSuperWeaponAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6824b0 Map_Read_6824B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x509e00 HouseClass::Fire_LightningStorm -> NG (attempt 3)
+[ledger] 0x74f960 GameClass::ReadVersionFile -> COMPILE_FAIL (attempt 13)
+[ledger] 0x406670 sub_406670 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 18
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p36\batch_report.json

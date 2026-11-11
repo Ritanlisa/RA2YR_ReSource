@@ -1,0 +1,33 @@
+{
+ "symbol": "?__cftof2@@YAHPADHPAID@Z",
+ "sym_key": "Unnamed::__cftof2",
+ "size": 188,
+ "link_base": 0,
+ "bytes_hex": "538a4c24145556578b7c241c8b5c24188b6c24148b47044884c9741b3bc375178b3733c983fe2d0f94c103c803cd8bc1c60030c64001008b078bf583f82d7507c645002d8d75018b470485c07e0403f0eb0f6a0156e80000000083c408c606304685db7e506a0156e8000000008a150000000083c40888168b470485c08d7e017d338a4c242084c97404f7d8eb06f7d83bd87c028bd85357e8000000008bcbb8303030308bd183c408c1e902f3ab8bca83e103f3aa5f8bc55e5d5bc3",
+ "relocs": [
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?_shift@@YAHPAXHZZ",
+   "sym_key": "_shift"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?_shift@@YAHPAXHZZ",
+   "sym_key": "_shift"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?SrcCh@@3DA",
+   "sym_key": "SrcCh"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?_shift@@YAHPAXHZZ",
+   "sym_key": "_shift"
+  }
+ ]
+}
