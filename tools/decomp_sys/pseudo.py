@@ -181,7 +181,11 @@ def parse_decl(line):
         return None
     ty = re.sub(r"\s+", " ", m.group("type")).strip()
     if m.group("stars"):
-        ty = ty + "*"
+        # R6: preserve EVERY star -- `RefCount **v6` was re-declared as
+        # `RefCount * v6` through the statement re-render (parse ->
+        # decl-dict -> render round-trip), and the star-dropped decl made
+        # every downstream `v6 = (RefCount **)&...` a C2440.
+        ty = ty + m.group("stars").replace(" ", "")
     return {
         "type": ty,
         "name": m.group("name"),

@@ -180,6 +180,112 @@ def _proto_params(proto, keep_this=False):
     return out
 
 
+# ---------------------------------------------------------------- solver domain
+#
+# R6: proto + solver-domain dual source.  anchors/minclass_assignments.json
+# carries per-entity resolved types (P:FN:N params, RET:FN returns) with
+# confidence tiers (forced/narrow/wide).  Empirically (88-function C2440
+# sample) the param domains are mostly forced-int (matching the current
+# spelling) or wide catch-alls -- so the supplement fires NARROWLY:
+#   * unique class candidate over a currently-int-family spelling
+#   * body evidence of pointer use (arrow / ptr-assign / cast)
+#   * never changes arity, never touches fastcall register params
+#   * signed pairs resolve through the signed_default_ledger policy
+
+_DOMAIN_CACHE = {}
+
+
+def _load_solver_domains():
+    if "asg" not in _DOMAIN_CACHE:
+        path = os.path.join(ROOT, "anchors", "minclass_assignments.json")
+        ledger_path = os.path.join(ROOT, "anchors",
+                                   "signed_default_ledger.json")
+        try:
+            with open(path, encoding="utf-8") as f:
+                asg = json.load(f)
+        except (OSError, ValueError):
+            asg = {}
+        try:
+            with open(ledger_path, encoding="utf-8") as f:
+                led = json.load(f)
+        except (OSError, ValueError):
+            led = {}
+        _DOMAIN_CACHE["asg"] = asg
+        _DOMAIN_CACHE["ledger"] = {
+            e.get("ent"): e for e in (led.get("entities") or [])}
+    return _DOMAIN_CACHE["asg"], _DOMAIN_CACHE["ledger"]
+
+
+_PRIM_DOMAIN = {
+    "int", "unsigned int", "long", "unsigned long", "short",
+    "unsigned short", "char", "unsigned char", "signed char", "bool",
+    "float", "double", "void", "void *", "void*", "__int8", "__int16",
+    "__int32", "_DWORD", "_WORD", "_BYTE",
+}
+
+
+def _domain_answer(cands, ledger, ent):
+    """(spelling, confidence) of a unique domain answer, else None."""
+    if not cands:
+        return None
+    uniq = sorted(set(cands))
+    if len(uniq) == 1:
+        c = uniq[0]
+        if c in _PRIM_DOMAIN:
+            return (c, None)
+        # class candidate: pointer to it
+        ident = re.sub(r"[^A-Za-z0-9_]", "_", c)
+        return ("%s *" % ident, None)
+    # signed pair: ledger policy (signed default)
+    if len(uniq) == 2 and all(c in _PRIM_DOMAIN and "*" not in c
+                              for c in uniq):
+        le = ledger.get(ent)
+        if le and le.get("chosen") in uniq:
+            return (le["chosen"], "ledger")
+        for c in uniq:
+            if c in ("int", "short", "long", "char"):
+                return (c, "signed-default")
+    return None
+
+
+_PTR_USE = re.compile(r"%s\s*->|%s\s*\[|=\s*%s\s*;|\(%s\)|\*\s*%s\b"
+                      r"|\(%s\s*\*\)|%s\s*[-+]\s*\d")
+
+
+def _solver_domain_params(addr, params, body_lines, dropped):
+    notes = []
+    if dropped:
+        return params, notes    # arity arbitration won: alignment unsure
+    if not params:
+        return params, notes
+    a6 = addr.lower().replace("0x", "").upper()
+    asg, ledger = _load_solver_domains()
+    body = "\n".join(body_lines or [])
+    out = list(params)
+    for i, (ty, nm) in enumerate(out):
+        ent = "P:%s:%d" % (a6, i)
+        rec = asg.get(ent)
+        if not rec or rec.get("confidence") not in ("forced", "narrow"):
+            continue
+        # int-family current spelling only (ptr spellings keep proto)
+        if ty not in ("int", "unsigned int", "long", "unsigned long",
+                      "_DWORD", "short", "unsigned short"):
+            continue
+        ans = _domain_answer(rec.get("candidates", []), ledger, ent)
+        if not ans or not ans[0].endswith("*"):
+            continue
+        spelled = ans[0]
+        # body evidence: the parameter is USED as a pointer somewhere
+        if not _PTR_USE.findall(nm):
+            continue
+        out[i] = (spelled, nm)
+        notes.append(("solver_domain_param",
+                      "%s domain %s (%s) -> %s (was %s)"
+                      % (ent, rec.get("candidates"), rec.get("confidence"),
+                         spelled, ty)))
+    return out, notes
+
+
 def derive_signature(reg, ex):
     fn = reg.function(ex.addr) or {}
     name = fn.get("name") or ex.name
@@ -393,6 +499,16 @@ def derive_signature(reg, ex):
                               "all ret paths write AX only -> ret int "
                               "narrowed to short"))
             ret = "short"
+    # R6: solver-domain supplement (proto + domain dual source).  The
+    # minclass assignments carry per-entity resolved types; a UNIQUE
+    # forced/narrow domain overrides the proto/registry guess, with the
+    # signed-default ledger policy for sign pairs.  Applied narrowly:
+    # only pointer/class answers over int-family spellings, only when
+    # the body shows pointer use of the parameter (blanket re-typing of
+    # currently-compiling signatures was the regression vector).
+    params, dom_notes = _solver_domain_params(
+        ex.addr, params, ex.body_lines, dropped)
+    ret_notes.extend(dom_notes)
     return {
         "addr": ex.addr,
         "cls": cls,
@@ -464,6 +580,10 @@ def run_function(addr, reg, views, idx):
     passes.pass_vt_dispatch(ctx)
     passes.pass_member_shapes(ctx)
     widen_byref_for_dispatch(ctx)
+    # R6: bare receiver arithmetic re-spelled AFTER member restoration
+    # (this_ptr_math/member_shapes consume the `*(T *)(this + K)` deref
+    # shapes first; only value-level residuals reach this pass)
+    passes.pass_receiver_arith(ctx)
     passes.pass_callees(ctx)
     passes.pass_unknown_symbols(ctx)
     passes.pass_local_retype(ctx)
@@ -472,6 +592,12 @@ def run_function(addr, reg, views, idx):
     passes.pass_branch_polarity(ctx)
     passes.pass_ret_view_align(ctx)
     passes.pass_era_normalize(ctx)
+    # R6: C2440 completion -- LAST text authority.  Runs after
+    # era_normalize (final re-render) because pass_ret_view_align flips
+    # pointer-typed views to `unsigned int` AFTER earlier passes; a
+    # harmonize that ran before it would key on the stale view spelling
+    # (the R5 `(void *)(0)` wrap vs `unsigned int` hpp decl family).
+    passes.pass_assign_harmonize2(ctx)
 
     # unit selection (rule 2: cpp <-> hpp same name):
     # D-fix 1 -- the OWNING CLASS names the unit so a corrected fn->cls

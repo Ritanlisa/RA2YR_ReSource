@@ -742,15 +742,20 @@ _LOBYTE_STORE = re.compile(r"^LOBYTE\(\s*(\w+)\s*\)\s*=\s*(.+)$")
 
 # narrow-macro store forms: LOBYTE/HIBYTE/LOWORD/HIWORD(local | this->member)
 # including compound assignments (+=, |=, ...) -- IDA emits e.g.
-# `LOWORD(this->m) += a2` for word-pair CellStruct updates
+# `LOWORD(this->m) += a2` for word-pair CellStruct updates.
+# R6: BYTE1-3/WORD1 stores joined the set -- they were falling through the
+# read pass (whose store-skip missed the leading space) into the invalid
+# `((x >> 8) & 0xFF) = v` lvalue (C2106 batch).
 _NARROW_STORE = re.compile(
-    r"^(?P<macro>LOBYTE|HIBYTE|LOWORD|HIWORD)\(\s*"
+    r"^(?P<macro>LOBYTE|HIBYTE|LOWORD|HIWORD|BYTE1|BYTE2|BYTE3|WORD1)\(\s*"
     r"(?P<target>this->\w+|\w+)\s*\)\s*(?P<op>\+|-|\*|/|\||\^|&)?="
     r"(?P<expr>.+)$")
 
 _MACRO_META = {          # (byte width, byte shift within the dword slot)
     "LOBYTE": (1, 0), "HIBYTE": (1, 1),
     "LOWORD": (2, 0), "HIWORD": (2, 2),
+    "BYTE1": (1, 1), "BYTE2": (1, 2), "BYTE3": (1, 3),
+    "WORD1": (2, 2),
 }
 _MACRO_TYPES = {
     1: ["char", "unsigned char"], 2: ["short", "unsigned short"],
@@ -1009,7 +1014,8 @@ def pass_narrow_macro_reads(ctx):
         target = m.group("target")
         # skip store forms (handled in the store pass), incl. compound
         # assignments (+=, -=, ...); '==' is a comparison, NOT a store
-        if re.match(r"^[+\-*/|&^%]?=(?!=)", text[m.end():m.end() + 3]):
+        # (R6: tolerate the space between `)` and the operator)
+        if re.match(r"^\s*[+\-*/|&^%]?=(?!=)", text[m.end():m.end() + 4]):
             return m.group(0)
         shift = {"LOBYTE": (1, 0), "LOWORD": (2, 0), "HIBYTE": (1, 1),
                  "HIWORD": (2, 2), "BYTE1": (1, 1), "BYTE2": (1, 2),
@@ -1828,6 +1834,41 @@ def pass_unknown_symbols(ctx):
             continue
         if name in ctx.reg.classes or (name + "Class") in ctx.reg.classes:
             continue
+        # R6: CRT operator spellings first (registry only carries ??2 new
+        # under its mangled key; delete is absent entirely).  The literal
+        # name stays -- the reloc key depends on it.
+        if name in _CRT_OPERATOR_TY:
+            ret = _CRT_OPERATOR_TY[name]
+            params = {"__2_YAPAXI_Z": "unsigned int",
+                      "__3_YAXPAX_Z": "void *"}.get(name, "...")
+            ctx.used_callee_exts.append(
+                "extern %s %s(%s);" % (ret, name, params))
+            declared.add(name)
+            ctx.sites.append(Site(
+                "callee", name + "(...)",
+                "CRT operator -> extern %s %s(%s) (known signature)"
+                % (ret, name, params), True))
+            continue
+        # R6: registry retry under the ??-mangled spelling.  The export
+        # collapses `??2_YAPAXI_Z` to `__2_YAPAXI_Z`; a plain lookup misses
+        # and the callee fell back to `extern int`, which broke every
+        # `void *v = operator_new(size)` site (C2440 family, 126 decls).
+        rec = None
+        if name.startswith("__"):
+            _a, rec = ctx.reg.function_by_name("??" + name[2:])
+        if rec is not None:
+            ret = spell_type(rec.get("ret") or "int")
+            plist = ", ".join(
+                "%s a%d" % (spell_type(p.get("type") or "int"), i)
+                for i, p in enumerate(rec.get("params") or []))
+            ctx.used_callee_exts.append(
+                "extern %s %s(%s);" % (ret, name, plist))
+            declared.add(name)
+            ctx.sites.append(Site(
+                "callee", name + "(...)",
+                "registry retry under ??-mangled key -> extern %s %s(%s)"
+                % (ret, name, plist), True))
+            continue
         ctx.used_callee_exts.append("extern int %s(...);" % name)
         declared.add(name)
         ctx.sites.append(Site(
@@ -2039,6 +2080,477 @@ def pass_assign_harmonize(ctx):
             "pointer-spelling casts inserted at assignments (C2440 family)",
             True))
         ctx.lines = out
+
+
+# ---------------------------------------------------------------- receiver arith
+#
+# R6: the registry re-types the receiver as the CLASS, but IDA's pseudocode
+# computed `this + K` with its OWN proto typing -- every bare-this+-K export
+# examined spells this as `char *this` (scale 1), so the displayed offset is
+# in BYTES.  Re-spelled with the class receiver the same text means
+# +K*sizeof(cls) -- a semantic corruption AND (usually) a C2440 against the
+# char*/uchar*/ushort* local it feeds.  Fix: make the arithmetic explicitly
+# byte-based.  Guard: cast-preceded `((T *)this + K)` (IDA's dword-index
+# member style, present in byte-exact MATCH functions) is left untouched.
+
+def pass_receiver_arith(ctx):
+    text = "\n".join(ctx.lines)
+    scale = _this_scale(ctx)
+    n = 0
+    if scale == 1:
+        pat = re.compile(r"(?<![\)\w\]])this\s*(?=[+-]\s*\S)")
+
+        def repl(m):
+            nonlocal n
+            n += 1
+            return "(char *)this "
+
+        out = pat.sub(repl, text)
+    else:
+        # proto typed this wider than a byte: `this + K` addressed K
+        # elements -- re-spell with the byte-true constant.
+        def sub_scaled(txt, op):
+            pat = re.compile(
+                r"(?<![\)\w\]])this\s*([+-])\s*(\d+)")
+
+            def repl(m):
+                nonlocal n
+                k = int(m.group(2)) * scale
+                n += 1
+                return "(char *)this %s %d" % (m.group(1), k)
+
+            return pat.sub(repl, txt)
+        out = sub_scaled(text, "+")
+
+    if n:
+        ctx.sites.append(Site(
+            "receiver_arith", "%d sites" % n,
+            "bare `this +- K` re-spelled `(char *)this +- K` (IDA proto "
+            "this-elem scale %d applied -- class-typed this would scale "
+            "by sizeof(cls) and mis-compile)" % scale, True))
+        ctx.lines = out.split("\n")
+
+
+# ---------------------------------------------------------------- assign harmonize 2
+#
+# R6: C2440 completion.  The pseudocode mixes type spellings freely at
+# assignment sites (member dword view <- pointer local, int local <-
+# pointer-typed member, `result = this`, split-macro stores, ...).  All are
+# 4-byte moves -- an explicit C-style cast to the LHS spelling is what the
+# compiler generated implicitly when the spellings happened to agree.  The
+# pass builds a light type environment (locals/params/members/globals/
+# callees) and wraps ONLY provably-mismatched assignments.
+
+_INT_FAMILY = {
+    "int", "unsigned int", "long", "unsigned long", "short",
+    "unsigned short", "char", "unsigned char", "signed char", "bool",
+    "__int8", "__int16", "__int32", "_DWORD", "_WORD", "_BYTE",
+}
+
+# known CRT operator spellings (the body keeps IDA's collapsed form; the
+# registry only carries the ??2 new under its mangled key)
+_CRT_OPERATOR_TY = {
+    "__2_YAPAXI_Z": "void *",     # ??2@YAPAXI@Z operator new(unsigned)
+    "__3_YAXPAX_Z": "void",       # ??3@YAXPAX@Z operator delete(void *)
+}
+
+_SPLIT_MACROS = ("HIDWORD", "LODWORD", "HIBYTE", "LOBYTE", "BYTE1",
+                 "BYTE2", "BYTE3", "BYTE4", "WORD1", "WORD2", "SLOWORD",
+                 "SHIWORD")
+
+
+def _is_ptr_spelling(ty):
+    return bool(ty) and ty.endswith("*")
+
+
+def _ptr_base(ty):
+    return ty[:-1].strip() if _is_ptr_spelling(ty) else None
+
+
+def _compatible_ptr(lbase, rbase):
+    """VC6-legal implicit pointer conversions (after which no cast fires)."""
+    if lbase == rbase:
+        return True
+    for b in (lbase, rbase):
+        if b in ("void", ""):
+            return True
+    # char family interconverts with itself in IDA's spellings; C++ needs
+    # the cast, so do NOT treat char*/unsigned char* as compatible
+    return False
+
+
+class _TypeEnv(object):
+    """name -> era type spelling, gathered from the emitted body + ctx."""
+
+    def __init__(self, ctx, text):
+        self.ctx = ctx
+        self.map = {}
+        # params
+        for t, n in (ctx.sig.get("params_spelled") or ctx.sig.get("params")
+                     or []):
+            self.map[n] = t
+        # local decls (star-accurate):  TYPE *name / TYPE name[N] / etc.
+        for m in re.finditer(
+                r"^\s*(?:const\s+)?([A-Za-z_][\w ]*?)\s*(\**)\s*"
+                r"([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*(?:=|;)",
+                text, re.M):
+            ty = re.sub(r"\s+", " ", m.group(1)).strip()
+            stars = m.group(2)
+            nm = m.group(3)
+            if not ty or ty in ("return", "else", "if", "for", "while",
+                                "do", "switch", "case"):
+                continue
+            self.map[nm] = (ty + " " + stars).strip() if stars else ty
+        # globals (registry extern spellings)
+        for nm, ty in (getattr(ctx, "used_globals", None) or {}).items():
+            self.map.setdefault(nm, ty)
+        # member views of the owning class (this->M)
+        self.members = {}
+        cls = ctx.sig.get("cls")
+        for off, roles in (ctx.views.scalars.get(cls) or {}).items():
+            for v in roles.values():
+                self.members[v["name"]] = v.get("type") or "int"
+        for off, arr in (ctx.views.arrays.get(cls) or {}).items():
+            self.members[arr["name"]] = (arr.get("elem") or "int") + " *"
+        # callee returns: pseudo-sigs (member calls) + extern decls
+        self.calls = {}
+        for owner, sigs in (getattr(ctx, "used_callees", None) or {}).items():
+            for cs in sigs:
+                self.calls.setdefault(cs.get("method"), cs.get("ret"))
+        for d in getattr(ctx, "used_callee_exts", None) or []:
+            m = re.match(r"extern\s+([A-Za-z_][\w \*]*?)\s*"
+                         r"(__cdecl\s+|__stdcall\s+|__fastcall\s+)?"
+                         r"([A-Za-z_]\w*)\s*\(", d)
+            if m:
+                self.calls[m.group(3)] = re.sub(r"\s+", " ",
+                                                m.group(1)).strip()
+
+    def of(self, name):
+        return self.map.get(name)
+
+    def member(self, name):
+        return self.members.get(name)
+
+    def call_ret(self, name):
+        return self.calls.get(name)
+
+
+def _rhs_ptr_head(rhs, env):
+    """(kind, spelling) head-type of an RHS expression for the mismatch
+    rules.  kind: 'ptr' (spelling = full pointer type), 'int', 'float',
+    'cls' (class-object cast), None (unknown -- never fires)."""
+    s = rhs.strip()
+    if not s:
+        return None, None
+    # string literal -> char*
+    if s[0] == '"':
+        return "ptr", "char *"
+    # cast head
+    m = re.match(r"^\(\s*([A-Za-z_][\w]*(?:\s+\w+)?)\s*(\**)\s*\)\s*(.+)$",
+                 s, re.S)
+    if m:
+        base, stars = m.group(1), m.group(2)
+        rest = m.group(3).strip()
+        if stars:
+            return "ptr", re.sub(r"\s+", " ", base) + " " + stars
+        # non-pointer cast: (unsigned int)x, (char)x, (Cls)v7 ...
+        if base in _INT_FAMILY:
+            return "int", base
+        if base in ("float", "double", "long double"):
+            return "float", base
+        if base.startswith("_"):
+            return "int", base
+        # class-object cast on a value (TabCameoListClass family)
+        return "cls", base
+    m = re.match(r"^(char|unsigned char|void|int|unsigned int|short|"
+                 r"unsigned short|long|float|double|_DWORD|_WORD|_BYTE|"
+                 r"_QWORD)\s*\*", s)
+    if m:
+        return "ptr", s[:s.index("*") + 1].strip()
+    # this identity / (char *)this +- ...
+    if s == "this":
+        return "ptr", (re.sub(r"[^A-Za-z0-9_]", "_",
+                              env.ctx.sig.get("cls") or "C") + " *")
+    if s.startswith("(char *)this") or s.startswith("this +") or \
+            s.startswith("this -"):
+        return "ptr", "char *"
+    # &expr -> pointer, typed precisely when we know the operand:
+    #   &this->m[i]  -> member view elem type (array views are elem-ptr)
+    #   &this->m     -> scalar member T  -> T *
+    #   &g           -> global/local T   -> T *
+    # (was blanket `void *` which silently passed every `char *v =
+    # &this->m08[136]` decl-init -- the int-array elem spelling vs the
+    # char* LHS never fired; C2440 family.  The wrap is codegen-neutral:
+    # both spellings compile to the same `lea`/`mov` of an address.)
+    if s.startswith("&"):
+        am = re.match(
+            r"^&\s*(this->)?([A-Za-z_]\w*)\s*(\[[^\]]*\])?\s*$", s)
+        if am:
+            nm = am.group(2)
+            if am.group(1):
+                mty = env.member(nm)
+                if not mty:
+                    return "ptr", "void *"
+                if am.group(3):        # &this->m[idx]
+                    if _is_ptr_spelling(mty):
+                        return "ptr", mty
+                    return "ptr", "void *"
+                if _is_ptr_spelling(mty):   # &this->m where m is ptr: T **
+                    return "ptr", mty + "*"
+                return "ptr", mty + " *"
+            ty = env.of(nm)
+            if ty and not _is_ptr_spelling(ty):
+                return "ptr", ty + " *"
+        return "ptr", "void *"
+    # *expr deref -> int-family head (member-slot read)
+    if s.startswith("*"):
+        inner = s[1:].strip()
+        dm = re.match(r"^\(\s*([A-Za-z_][\w \*]*?)\s*\)", inner)
+        if dm and dm.group(1).strip().endswith("*"):
+            return "int", "int"     # *(T *)x slot write/read, dword-ish
+        return None, None
+    # split macros -> int slot
+    m = re.match(r"^(%s)\s*\(" % "|".join(_SPLIT_MACROS), s)
+    if m:
+        return "int", "int"
+    # bare identifier head (with optional callee args / arithmetic tail)
+    m = re.match(r"^([A-Za-z_]\w*)\s*(?:\([^()]*\))?\s*(?:[+\-][^=].*)?$",
+                 s)
+    if m:
+        nm = m.group(1)
+        if nm == "this":
+            return "ptr", "char *"
+        # callee?
+        if re.match(r"^%s\s*\(" % re.escape(nm), s):
+            if nm in _CRT_OPERATOR_TY:
+                return ("ptr" if _CRT_OPERATOR_TY[nm].endswith("*")
+                        else "int"), _CRT_OPERATOR_TY[nm]
+            cr = env.call_ret(nm)
+            if cr:
+                if _is_ptr_spelling(cr):
+                    return "ptr", cr
+                if cr in _INT_FAMILY or cr in ("void",):
+                    return "int", cr
+            return None, None
+        ty = env.of(nm)
+        if ty is None:
+            ty = env.member(nm)
+        if ty is None:
+            return None, None
+        if _is_ptr_spelling(ty):
+            return "ptr", ty
+        if ty in _INT_FAMILY:
+            return "int", ty
+        if ty in ("float", "double"):
+            return "float", ty
+        return None, None
+    # method-call receivers ->M(...)
+    m = re.match(r"^\(?\s*\(.*\)\s*\)?->\s*([A-Za-z_]\w*)\s*\(", s)
+    if m:
+        cr = env.call_ret(m.group(1))
+        if cr:
+            if _is_ptr_spelling(cr):
+                return "ptr", cr
+            if cr in _INT_FAMILY:
+                return "int", cr
+        return None, None
+    # numeric literal
+    if re.match(r"^-?\d", s):
+        return "int", "int"
+    return None, None
+
+
+_ASSIGN_SITE = re.compile(
+    r"(?P<lhs>\*[A-Za-z_]\w*|"
+    r"[A-Za-z_][\w]*(?:->[A-Za-z_]\w*(?:\[[^\]]*\])?)?"
+    r"(?:\[[^\]]*\])?|"
+    r"\*\(.*?\)(?:\s*[A-Za-z_]\w*)?(?:\s*\+\s*\d+)?|"
+    r"(?:HIDWORD|LODWORD|HIBYTE|LOBYTE|BYTE[1-4]|WORD[12]|SLOWORD|SHIWORD)"
+    r"\s*\([^()]*\))"
+    r"\s*(?<![=!<>+\-*/%&|^])=(?!=)\s*"
+    r"(?P<rhs>[^;]+);")
+
+
+def pass_assign_harmonize2(ctx):
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    changed = []
+
+    # R6b: IDA types some register locals as CLASS-OBJECT decls whose
+    # every use is scalar (`AudioFileClass v2; // esi` with
+    # `*(_DWORD *)&v2 + 36`, `v2 = *this`).  The object decl makes those
+    # 4-byte moves ill-typed (C2679/C2440).  When the usage set is
+    # provably scalar -- decl / &v / `v =` / `v ==` / `= v` and NOTHING
+    # else (no member access, no call args) -- re-spell the decl as
+    # `unsigned int` (identical 4-byte storage).
+    param_names = set(n for _t, n in (ctx.sig.get("params_spelled")
+                                      or ctx.sig.get("params") or []))
+    for dm in re.finditer(r"^[ \t]*([A-Za-z_]\w*)\s+([A-Za-z_]\w*)\s*;\s*$",
+                          text, re.M):
+        ty, nm = dm.group(1), dm.group(2)
+        if ty in _INT_FAMILY or ty in ("float", "double", "bool", "void",
+                                       "struct", "class", "union", "enum",
+                                       "const", "static", "unsigned",
+                                       "signed", "register", "volatile",
+                                       "return", "else", "if", "for",
+                                       "while", "do", "switch", "case"):
+            continue
+        if nm in param_names or env.of(nm) != ty:
+            continue        # shadowed / not a plain local decl
+        pn = re.escape(nm)
+        probe = text
+        probe = re.sub(r"^[ \t]*[A-Za-z_]\w*\s+%s\s*;" % pn, "", probe,
+                       flags=re.M)                       # the decl itself
+        probe = re.sub(r"(?<![A-Za-z0-9_])&\s*%s\b" % pn, "", probe)
+        probe = re.sub(r"(?<![A-Za-z0-9_])%s\s*(?:==|=)" % pn, "", probe)
+        probe = re.sub(r"=\s*%s\b" % pn, "", probe)
+        if re.search(r"(?<![A-Za-z0-9_])%s\b" % pn, probe):
+            continue        # some use is member/call/index shaped: skip
+        text = text.replace("%s %s;" % (ty, nm), "unsigned int %s;" % nm, 1)
+        env.map[nm] = "unsigned int"
+        changed.append("cls-local-descalar@%s(%s)" % (nm, ty))
+
+    def lhs_type(lhs):
+        s = lhs.strip()
+        # split macro / deref store: int slot
+        m = re.match(r"^(?:%s)\s*\(" % "|".join(_SPLIT_MACROS), s)
+        if m:
+            return "int"
+        # `*ident` deref store: one star LESS than the identifier's type
+        if re.match(r"^\*[A-Za-z_]\w*$", s):
+            base = s[1:].strip()
+            ty = env.of(base)
+            if ty and _is_ptr_spelling(ty):
+                return _ptr_base(ty)
+            return None
+        if s.startswith("*("):
+            cm = re.match(r"^\*\(\s*([A-Za-z_][\w \*]*?)\s*\)", s)
+            if cm:
+                t = cm.group(1).strip()
+                # `*(T *)expr` deref-store: the stored-into type is T
+                # (the cast's star is consumed by the deref)
+                if t.endswith("*"):
+                    t = t[:-1].strip()
+                return t
+            return "int"
+        if s.startswith("this->"):
+            mem = s[6:].split("[")[0].strip()
+            ty = env.member(mem)
+            if "[" in s and ty and _is_ptr_spelling(ty):
+                # element access of an array view: the ELEMENT type
+                # (`m004[0]` on a `unsigned int *` view is `unsigned int`)
+                return _ptr_base(ty)
+            return ty
+        if "[" in s:
+            base = s.split("[")[0].strip()
+            ty = env.of(base)
+            if ty and _is_ptr_spelling(ty):
+                return _ptr_base(ty)
+            if ty and not ty.endswith("*"):
+                return ty      # int array elem
+            return None
+        return env.of(s) or env.member(s)
+
+    def wrap_site(m):
+        lhs, rhs = m.group("lhs"), m.group("rhs").strip()
+        lty = lhs_type(lhs)
+        if not lty:
+            return m.group(0)
+        knd, rsp = _rhs_ptr_head(rhs, env)
+        if knd is None:
+            return m.group(0)
+        # ptr-cast of a numeric literal into an int-family LHS: the cast
+        # is decoration on an immediate store (`= (MapClass *)140` family)
+        # -- the bare literal is the same mov and needs no fwd decl
+        if knd == "ptr" and lty in _INT_FAMILY:
+            lm = re.match(r"^\(\s*[A-Za-z_][\w]*\s*\*+\s*\)\s*"
+                          r"(\d+|0[xX][0-9A-Fa-f]+)\s*$", rhs)
+            if lm:
+                changed.append("litcast-strip@%s" % lhs)
+                return "%s = %s;" % (lhs, lm.group(1))
+        # class-object cast into anything int-ish: re-spell the cast
+        # (`v12[23] = (TabCameoListClass)v7` -> `(unsigned int)v7`)
+        if knd == "cls" and lty in _INT_FAMILY:
+            new_rhs = re.sub(r"^\(\s*[A-Za-z_]\w*\s*\)\s*",
+                             "(unsigned int)", rhs)
+            changed.append("cls-cast@%s" % lhs)
+            return "%s = %s;" % (lhs, new_rhs)
+        if knd == "float":
+            return m.group(0)
+        lptr = _is_ptr_spelling(lty)
+        rptr = knd == "ptr"
+        if lptr and rptr:
+            lb, rb = _ptr_base(lty), _ptr_base(rsp)
+            if _compatible_ptr(lb, rb):
+                return m.group(0)
+            cast = lty
+        elif lptr and not rptr:
+            cast = lty
+        elif not lptr and rptr and lty in _INT_FAMILY:
+            cast = "unsigned int"
+        else:
+            # class-object / float / unknown LHS: never blanket-cast
+            return m.group(0)
+        # idempotence: RHS already carries exactly this cast
+        if rhs.startswith("(%s)" % cast) or rhs.startswith("(%s )" % cast):
+            return m.group(0)
+        if rhs.startswith("("):
+            # a different cast head: only safe rewrites are
+            #   (void *)x -> (LHS *)x        [identity for pointers]
+            #   (Cls *)const -> wrapped      [handled by generic wrap]
+            vm = re.match(r"^\(\s*void\s*\*\s*\)(.+)$", rhs, re.S)
+            if vm and lptr and lty != "void *":
+                changed.append("voidcast-rebind@%s" % lhs)
+                return "%s = (%s)(%s);" % (lhs, lty, vm.group(1).strip())
+            # wrap the cast expression wholesale (4-byte value move)
+        changed.append("%s<-%s" % (lhs, knd))
+        return "%s = (%s)(%s);" % (lhs, cast, rhs)
+
+    out = _ASSIGN_SITE.sub(wrap_site, text)
+    if changed:
+        ctx.sites.append(Site(
+            "assign_harmonize2", "%d sites" % len(changed),
+            "type-spelling casts at provably-mismatched assignments "
+            "(C2440 completion): %s" % ", ".join(changed[:6]), True))
+        ctx.lines = out.split("\n")
+
+    # R6b: pointer COMPARISONS (== / !=).  `*(T **)x + K == &g` compares a
+    # T* against a G* (g's global spelling) -- C2446/C2440 family the
+    # assignment matcher never sees.  Wrap the &g side with the deref-cast
+    # base (codegen-neutral: both sides are `offset`/register compares of
+    # the same 4-byte address value).
+    cmp_hits = []
+
+    def cmp_wrap(m):
+        cast_ty = re.sub(r"\s+", " ", m.group("cast")).strip()
+        if not cast_ty.endswith("*"):
+            return m.group(0)
+        deref = cast_ty[:-1].strip()          # *(T **)x -> T *
+        if not deref.endswith("*"):
+            return m.group(0)                 # *(T *)x -> T: int cmp, skip
+        g = m.group("g")
+        gty = env.of(g)
+        if not gty or _is_ptr_spelling(gty):
+            return m.group(0)
+        if _compatible_ptr(deref[:-1].strip(), gty):
+            return m.group(0)
+        cmp_hits.append("%s cmp&%s" % (g, deref))
+        return "%s%s%s (%s)&%s" % (m.group("pre"), m.group("tail"),
+                                   m.group("op"), deref, g)
+
+    out2 = _CMP_PTR.sub(cmp_wrap, out)
+    if cmp_hits:
+        ctx.sites.append(Site(
+            "assign_harmonize2_cmp", "%d sites" % len(cmp_hits),
+            "pointer-compare re-spell `==/!= &g` with the deref-cast "
+            "base (C2446 family): %s" % ", ".join(cmp_hits[:4]), True))
+        ctx.lines = out2.split("\n")
+
+
+_CMP_PTR = re.compile(
+    r"(?P<pre>\*\s*\(?\(\s*(?P<cast>[A-Za-z_][\w ]*\*+)\s*\))"
+    r"(?P<tail>[\w\.\[\]\(\)\s+\-]*?)"
+    r"(?P<op>==|!=)\s*&\s*(?P<g>[A-Za-z_]\w*)")
 
 
 # ---------------------------------------------------------------- pass 4: scope
