@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@_VectorClass_U_HashObject_IUSubzoneConnectionStruct@@QAEDHPAD@Z",
+ "sym_key": "_VectorClass_U_HashObject_IUSubzoneConnectionStruct::Release",
+ "size": 270,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db578bf10f84ec0000008b7c2418c7460c0000000085ff8bef741e8d43ff85c07c4c8d47048bcbc70000000000c640040083c00c4975f0eb358d0c5bc1e10251e80000000083c40485c074208d53ff85d27c158d48048bd3c70100000000c641040083c10c4a75f08be8eb0233ed85edc7460c010000007474833e00744b8b7e083bdf7d028bfb85ff7e2333d28b068d0c2a03c283c20c4f8b1889198b58048959048b400889410875e38b5c24148b460cf6c4ff740f50e80000000083c404c706000000008b7c24188b460c33c985ff0f94c133d280e4008af1892e0bd0895e0889560c5f5e5db0015bc208005f5e5d32c05bc208008b168bceff520c5f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -3374,7 +3374,7 @@
   "status": "OK"
  },
  "0x557d20": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "ListClass::Destru_vt50",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3395,7 +3395,7 @@
   "status": "OK"
  },
  "0x55a9b0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "LocomotionClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3486,14 +3486,14 @@
   "status": "OK"
  },
  "0x565b00": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "MapClass::FreeAllCells",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x56bd40": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "CrateClass::FindPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3507,21 +3507,21 @@
   "status": "NG"
  },
  "0x56d230": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "MapClass::GetTileIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x56d460": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Cell::SetRadar",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x56d5a0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "CellClass::DetermineTileConnectivity",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3535,35 +3535,35 @@
   "status": "NG"
  },
  "0x578290": {
-  "attempts": 6,
-  "first_diff": null,
+  "attempts": 7,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x114]",
   "name": "LayerClass::CellIteratorNext",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x578390": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "MapClass::IsRectInBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578460": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "LayerClass::IsWithinUsableArea",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578540": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Type::CheckAmbiguity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578710": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MapClass::SpiralSearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3577,14 +3577,14 @@
   "status": "NG"
  },
  "0x5855a0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "LayerClass::AssignCellOwnership",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x586360": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Cell::IsPassable",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3605,7 +3605,7 @@
   "status": "NG"
  },
  "0x586780": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "MapClass::IsAreaFree",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3619,7 +3619,7 @@
   "status": "NG"
  },
  "0x588ac0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "LayerClass::ClearFactoryCellAssignments",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3633,18 +3633,18 @@
   "status": "NG"
  },
  "0x58a2a0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+1 push ebp",
   "name": "VectorClass_W4PassabilityType::SetCapacity_1",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x58a8f0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+1 push ebp",
   "name": "VectorClass_UHashObject_uint_SubzoneConn::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x58b7d0": {
   "attempts": 5,
@@ -3654,7 +3654,7 @@
   "status": "OK"
  },
  "0x58bb30": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "ScenarioClass::CopyStartPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3682,11 +3682,11 @@
   "status": "NG"
  },
  "0x5acd30": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 push ecx",
   "name": "MSEngine::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x5aced0": {
   "attempts": 4,
