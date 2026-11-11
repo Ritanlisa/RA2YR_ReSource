@@ -216,6 +216,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x406670": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_406670",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x406920": {
   "attempts": 1,
   "first_diff": null,
@@ -355,6 +362,13 @@
   "name": "sub_408ED0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x409030": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WriteAudioStreamToFile",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4090f0": {
   "attempts": 7,
@@ -4164,10 +4178,24 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4acda0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapClass::RevealCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4adba0": {
   "attempts": 11,
   "first_diff": null,
   "name": "ScenarioClass::ProcessGame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4adff0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::RevealShroudForAllies",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -4309,6 +4337,13 @@
   "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "JumpjetLocomotionClass::GetField_0x80",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
+ "0x4b50c0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "DropListClass::Open",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x4b55a0": {
@@ -5802,6 +5837,13 @@
   "note": "decomp_batch r2: NO_PSEUDO",
   "status": "PENDING"
  },
+ "0x4f3b80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_4F3B80",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4f3ff0": {
   "attempts": 5,
   "first_diff": null,
@@ -5976,6 +6018,13 @@
   "name": "HouseClass::FireStoredSW",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x509e00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::Fire_LightningStorm",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x50a490": {
   "attempts": 1,
@@ -7524,6 +7573,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x551b90": {
+  "attempts": 1,
+  "first_diff": "+1 push ebx",
+  "name": "LayerClass::Load",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x551c60": {
   "attempts": 1,
   "first_diff": null,
@@ -8889,6 +8945,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5bf390": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5bf390",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5bf630": {
   "attempts": 1,
   "first_diff": null,
@@ -8993,6 +9056,13 @@
   "name": "MPCooperative::Revert",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x5c2040": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MPCooperative::StartGame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5c21a0": {
   "attempts": 1,
@@ -11724,6 +11794,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6824b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Map_Read_6824B0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6896c0": {
   "attempts": 4,
   "first_diff": null,
@@ -11777,6 +11854,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Screen::CleanupTransitionObjects",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x690a10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScoreScreen::LoadScoreFont",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -12430,6 +12514,13 @@
   "name": "SmudgeTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6b6230": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6b6230",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x6b6a70": {
   "attempts": 1,
@@ -13282,6 +13373,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "TActionClass::PlayAudioAtRandomWP",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6e1980": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TActionClass::executeGuardAreaAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -15952,6 +16050,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x770f10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_770F10",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7719e0": {
   "attempts": 1,
   "first_diff": null,
@@ -16288,6 +16393,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x79da90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ExtractChatCommand",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x79f0a0": {
   "attempts": 1,
   "first_diff": null,
@@ -16477,6 +16589,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x7afad0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Team_Start_7AFAD0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7b0220": {
   "attempts": 1,
   "first_diff": null,
@@ -16644,6 +16763,13 @@
   "name": "String::ToLowerCopy",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7b5d70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "String::CopyTruncated",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7b6760": {
   "attempts": 1,
@@ -17359,6 +17485,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x7cde75": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7cde75",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7ceaff": {
   "attempts": 1,
   "first_diff": null,
@@ -17449,6 +17582,13 @@
   "name": "__strdup",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7d5ac0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7d5ac0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7d5c12": {
   "attempts": 1,

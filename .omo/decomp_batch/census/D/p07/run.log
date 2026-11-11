@@ -1,0 +1,89 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x6824b0 unknown::Map_Read_6824B0 -> unknown
+[conv] 0x509e00 HouseClass::Fire_LightningStorm -> HouseClass
+[conv] 0x406670 unknown::sub_406670 -> unknown
+[conv] 0x5c2040 MPCooperative::StartGame -> MPCooperative
+[conv] 0x7b5d70 String::CopyTruncated -> String
+[conv] 0x4adff0 unknown::RevealShroudForAllies -> unknown
+[conv] 0x409030 unknown::WriteAudioStreamToFile -> unknown
+[conv] 0x7afad0 unknown::Team_Start_7AFAD0 -> unknown
+[conv] 0x4f3b80 unknown::sub_4F3B80 -> unknown
+[conv] 0x6e1980 TActionClass::executeGuardAreaAction -> TActionClass
+[conv] 0x79da90 unknown::ExtractChatCommand -> unknown
+[conv] 0x690a10 ScoreScreen::LoadScoreFont -> ScoreScreen
+[conv] 0x4acda0 MapClass::RevealCell -> MapClass
+[conv] 0x551b90 LayerClass::Load -> LayerClass
+[conv] 0x770f10 ObjectClass::sub_770F10 -> ObjectClass
+[conv] 0x4b50c0 DropListClass::Open -> DropListClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] HouseClass               rc=2
+[era] MPCooperative            rc=2
+[era] String                   rc=2
+[era] TActionClass             rc=2
+[era] ScoreScreen              rc=2
+[era] MapClass                 rc=2
+[era] LayerClass               rc=0
+[era] ObjectClass              rc=2
+[era] DropListClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x551b90   MISMATCH         LayerClass::Load
+[diff] 0x4b50c0   MISMATCH         DropListClass::Open
+[ledger] 0x6824b0 Map_Read_6824B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x509e00 HouseClass::Fire_LightningStorm -> COMPILE_FAIL (attempt 1)
+[ledger] 0x406670 sub_406670 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c2040 MPCooperative::StartGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b5d70 String::CopyTruncated -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4adff0 HouseClass::RevealShroudForAllies -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cde75 0x7cde75 -> PENDING (attempt 1)
+[ledger] 0x7d5ac0 0x7d5ac0 -> PENDING (attempt 1)
+[ledger] 0x409030 WriteAudioStreamToFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7afad0 Team_Start_7AFAD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bf390 0x5bf390 -> PENDING (attempt 1)
+[ledger] 0x4f3b80 sub_4F3B80 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e1980 TActionClass::executeGuardAreaAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79da90 ExtractChatCommand -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690a10 ScoreScreen::LoadScoreFont -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4acda0 MapClass::RevealCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b6230 0x6b6230 -> PENDING (attempt 1)
+[ledger] 0x551b90 LayerClass::Load -> NG (attempt 1)
+[ledger] 0x770f10 sub_770F10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b50c0 DropListClass::Open -> NG (attempt 1)
+======================================================================
+{
+ "total": 2514,
+ "verdicts": {
+  "MISMATCH": 688,
+  "MATCH": 521,
+  "COMPILE_FAIL": 772,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 516,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 238,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 69,
+  "branch_polarity": 50,
+  "regalloc": 111,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 43.1,
+ "match_rate_of_total_pct": 20.7,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p07\batch_report.json
