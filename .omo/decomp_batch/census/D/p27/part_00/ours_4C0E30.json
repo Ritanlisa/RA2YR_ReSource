@@ -1,0 +1,153 @@
+{
+ "symbol": "?DrawStippledRect@DSurface@@QAEDPAH0FD@Z",
+ "sym_key": "DSurface::DrawStippledRect",
+ "size": 1441,
+ "link_base": 0,
+ "bytes_hex": "83ec3453558be95657558b4500896c2424ff507083f802740c5f5e5d32c05b83c434c210008b4d008d5424345255ff51788b5424488b08894c242c8b40048b328b5a048b54244c03d803f1895c24188b7a048974241003f88b0203c18d4c242c518d5424188d4c2414897c242089442418e80000000084c0750a5f5e5d5b83c434c210008b5424108b4c24143bd17f048bc3eb1e8b44241c8bf38bfa8bd8897c24148bd1894c2410895c24188974241c8bfe8b0d00000000894424382b41045052e8000000008b15000000008bf03bdf8b4228894424487e06f7d8894424488b4c24108b4500535155ff505c85c08944244c750c5f5e5d32c05b83c434c210008a44245484c00f84bd020000397c24180f85ee0000008b4424148b5424108bc8c7442454000000002bca78628b7c244c8b0d00000000668b5c245066833e00751166891f8b0d000000008b5424108b4424148b6c244885ed7f1a8b691883c6023bf573030371208b691c83c6023bf572032b71208b6c245483c70245896c24548be82bea396c24547eb18b7c241c3bd0757a8b442420508b10ff52748b6c2418894424288bc72bc550e80000000083c40485c07c4f8b5c24488b4c244c4089442454a1000000008d141b66833e00750d668b442450668901a10000000003f285db7f103b701873030370203b701c72032b70208b6c242803cd8b6c24544d896c245475c68b5424108b4424148b6c24182bc28bd88b442420502bfd8b08ff517485ff894424547d06f7d88944245457e80000000083c4048d2c1b8d14003bd8896c2430896c2434895424280f8f890000002be885c08bdd0f8efe0000008b0d000000008b7c244c894424248b4424488d2c0033c066833e00750f668b4c245066890c388b0d0000000085db7e122bda8b511c83c60283c0023bf272032b71208b54243403f503da8b54245403fa8b54244885d27f103b711873030371203b711c72032b71208b5424244a895424240f84870000008b542428eb9a33c92bd385db895424247e75a1000000008b7c244ceb048b6c243066833e00750e668b4424506689044fa10000000085d27e1d8b54245403fa8b5424488d34568b501c3bf272032b70208b5424242bd58b6c244885ed7f1a8b681883c6023bf573030370208b681c83c6023bf572032b70208b6c242803d5413bcb895424247c968b4424188b4c241c3bc1755e8b4c24148b44241033d22bc878508b4c244ca10000000066833e00740d668b442450668901a1000000008b7c244885ff7f1a8b781883c6023bf773030370208b781c83c6023bf772032b70208b7c24148b6c2410422bfd83c1023bd77eb98b7c241c8b4424183bc78b4424207f0a8b0850ff51748bd8eb0a8b1050ff52748bd8f7db8b4424188bef2be8895c245455e80000000083c40485c07c518b7c24488b4c244c4089442428a1000000008d143feb048b5c245466833e00740d668b442450668901a10000000003f285ff7f103b701873030370203b701c72032b702003cb8b5c24284b895c242875c68b4424208b7c24148b5c2410508b082bfbff51748bd885ed895c24547d08f7d88bd88944245455e80000000083c4048d143f8d2c003bf889542428896c24240f8f800000002bd085c00f8ee90000008b0d00000000894424548b44244c33ffeb048b6c242466833e00740f668b4c245066890c078b0d0000000085d27e122bd58b691c83c60283c7023bf572032b71208b6c242803c303d58b6c244803ed03f58b6c244885ed7f103b711873030371203b711c72032b71208b6c24544d896c2454759eeb738bcd33d22bcf85ff7e69a1000000008b5c244c66833e00740e668b44245066890453a10000000085c97e1b8b6c245403dd8b6c24488d346e8b681c3bf572032b70202b4c24288b6c244885ed7f1a8b681883c6023bf573030370208b681c83c6023bf572032b70208b6c242403cd423bd77ca08b442420508b08ff51605f5e5db0015b83c434c21000",
+ "relocs": [
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?ClipLine@@YIDPAX00@Z",
+   "sym_key": "ClipLine"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?ReadAndSeek@StreamClass@@QAEIHH@Z",
+   "sym_key": "StreamClass::ReadAndSeek"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 306,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 426,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 451,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 473,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 560,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 607,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 645,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 743,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 773,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 890,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 909,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 1015,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 1040,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 1068,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 1147,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 1188,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 1225,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 1315,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 1339,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  }
+ ]
+}

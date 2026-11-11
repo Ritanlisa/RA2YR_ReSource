@@ -4444,6 +4444,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4a7340": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DiskLaserClass::Update",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4a7900": {
   "attempts": 10,
   "first_diff": "+11 jne 0x4a7967",
@@ -5004,6 +5011,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4c0e30": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x3c",
+  "name": "DSurface::DrawStippledRect",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
  "0x4c1bd0": {
   "attempts": 1,
   "first_diff": null,
@@ -5379,6 +5393,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::IsMapCoordVisible",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4ce840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DropPod::ProcessLanding",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -7930,6 +7951,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x53cbe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ExplosionClass::ProcessFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x53da40": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -8258,6 +8286,13 @@
   "name": "JumpjetLocomotionClass::CheckCompositeState",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
+ },
+ "0x54d0f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotion::UpdateFacing",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x54da50": {
   "attempts": 9,
@@ -9050,6 +9085,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x57cf60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CellClass::ApplyTileModification3",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x580b70": {
   "attempts": 1,
   "first_diff": null,
@@ -9253,6 +9295,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x58c800": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RandomMap::GenerateTerrain",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x58d010": {
   "attempts": 1,
   "first_diff": null,
@@ -9264,6 +9313,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "ResetMapState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x590970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RandomMap::CheckCellPlacement",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x591d80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapSeed::PlaceCityBuildings",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10905,6 +10968,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5eb060": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Lobby::UpdatePlayerLabels",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5edde0": {
   "attempts": 1,
   "first_diff": null,
@@ -11310,6 +11380,13 @@
   "name": "ComboBoxOwnerDraw::MatchDimensions",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
+ },
+ "0x602490": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IsValidActionDialog",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x602ae0": {
   "attempts": 5,
@@ -13348,6 +13425,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x685dc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Scenario::EndGame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x689470": {
   "attempts": 1,
   "first_diff": null,
@@ -13516,6 +13600,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x693b70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RequestNetworkFile",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6951f0": {
   "attempts": 1,
   "first_diff": null,
@@ -13557,6 +13648,13 @@
   "name": "SessionClass::GetOption",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6970a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SessionClass::SessionClass",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x697e70": {
   "attempts": 9,
@@ -17009,6 +17107,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x738d30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitClass::DeployToBuilding",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x73cec0": {
   "attempts": 1,
   "first_diff": null,
@@ -17534,6 +17639,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x755db0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::SortDepth",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x756dd0": {
   "attempts": 9,
   "first_diff": null,
@@ -17792,6 +17904,13 @@
   "name": "AnimClass::ProcessFrame",
   "note": "decomp_batch r2: MISMATCH/signedness",
   "status": "NG"
+ },
+ "0x762af0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::TransformMatrix",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7631f0": {
   "attempts": 6,
@@ -18766,6 +18885,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x787010": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoginFlowWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x788800": {
   "attempts": 1,
   "first_diff": null,
@@ -18910,6 +19036,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CComObject_CChatEventSink___ATL::DispatchStub_18",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7aa870": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CChatEventSink::HandleChatChannelList",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -19533,6 +19666,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Audio_Render_7BE670",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c2590": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RenderAudioVideoFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
