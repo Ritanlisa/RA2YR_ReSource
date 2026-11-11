@@ -7847,11 +7847,15 @@
   "status": "NG"
  },
  "0x42fd30": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "EncodeBitmapRGB",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "EncodeBitmapRGB",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x42ff80": {
   "attempts": 1,
@@ -15345,11 +15349,16 @@
   "this_as_id": false
  },
  "0x496d10": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_496D10",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 mov edx, dword ptr [esp + 8]",
+  "name": "_RLEBlitTransLucent75ZReadWarp_G::sub_496D10",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_496D10",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x496e60": {
   "attempts": 2,
@@ -15364,11 +15373,16 @@
   "this_as_id": false
  },
  "0x496fb0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_496FB0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 mov edx, dword ptr [esp + 8]",
+  "name": "_RLEBlitTransLucent25ZReadWarp_G::sub_496FB0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_496FB0",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x497100": {
   "attempts": 3,
@@ -15449,25 +15463,40 @@
   "status": "NG"
  },
  "0x497b80": {
-  "attempts": 11,
+  "attempts": 12,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
+  "name": "_RLEBlitTransLucent75Alpha_G::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x497cf0": {
-  "attempts": 11,
+  "attempts": 12,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
+  "name": "_RLEBlitTransLucent50Alpha_G::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x497e60": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
+  "name": "_RLEBlitTransLucent25Alpha_G::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x497fd0": {
   "attempts": 8,
@@ -21287,11 +21316,16 @@
   "this_as_id": false
  },
  "0x4caf20": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelAnimClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelAnimClass::ProcessFrame",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4cb760": {
   "attempts": 1,
@@ -43278,18 +43312,26 @@
   "this_as_id": false
  },
  "0x5c6660": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "RotateBitBufferRight",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "RotateBitBufferRight",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5c67a0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "RotateBitBufferLeft",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "RotateBitBufferLeft",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5c6940": {
   "attempts": 1,
@@ -43376,11 +43418,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x5c71e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "ShiftBigIntAndScan",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ShiftBigIntAndScan",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5c7db0": {
   "attempts": 1,
@@ -51491,11 +51537,16 @@
   "this_as_id": false
  },
  "0x63d0f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "Render_Render_63D0F0",
+  "name": "ObjectClass::Render_Render_63D0F0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Render_Render_63D0F0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x63d210": {
   "attempts": 1,
@@ -51505,11 +51556,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x63d2d0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "sub_63D2D0",
+  "name": "ObjectClass::sub_63D2D0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_63D2D0",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x63d400": {
   "attempts": 1,
@@ -55250,11 +55306,15 @@
   "this_as_id": false
  },
  "0x6613a0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "ComputeColorSaturation",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ComputeColorSaturation",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x661510": {
   "attempts": 1,
@@ -59203,11 +59263,16 @@
   "this_as_id": false
  },
  "0x6a8220": {
-  "attempts": 10,
+  "attempts": 11,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "SidebarClass::InitCameoGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SidebarClass::InitCameoGrid",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6a8420": {
   "attempts": 1,
@@ -59224,11 +59289,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x6a89e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "resolve:proto_this",
   "first_diff": null,
-  "name": "sub_6A89E0",
+  "name": "ObjectClass::sub_6A89E0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_6A89E0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6a92e0": {
   "attempts": 1,
@@ -76631,11 +76701,16 @@
   "this_as_id": false
  },
  "0x75edf0": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+7 mov edx, dword ptr [esp + 0x10]",
   "name": "Voxel::BlendShadowColor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Voxel::BlendShadowColor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x75ef30": {
   "attempts": 2,
@@ -84839,11 +84914,16 @@
   "status": "NG"
  },
  "0x7d5178": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "_cvtdate",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ebp",
+  "name": "ObjectClass::_cvtdate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_cvtdate",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7d5408": {
   "attempts": 1,
@@ -85135,11 +85215,15 @@
   "this_as_id": false
  },
  "0x7d7ee0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "unknown_libname_76",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "unknown_libname_76",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7d8496": {
   "attempts": 2,
@@ -85683,18 +85767,26 @@
   "status": "COMPILE_FAIL"
  },
  "0x7df3c2": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF3C2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Object_Calc_7DF3C2",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7df500": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF500",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Object_Calc_7DF500",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7df640": {
   "attempts": 1,

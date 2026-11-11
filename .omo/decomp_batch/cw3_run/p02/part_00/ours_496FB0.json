@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_496FB0@_RLEBlitTransLucent25ZReadWarp_G@@QAEHHPAEHHHHHHHPAD@Z",
+ "sym_key": "_RLEBlitTransLucent25ZReadWarp_G::sub_496FB0",
+ "size": 279,
+ "link_base": 0,
+ "bytes_hex": "518b44241453568b742410578b7c242885c0894c240c7f0a8b5c241c8b4c2418eb3d8b4c24188a114184d2740348eb0733d28a112bc24185c07feb8b5c241c8b1500000000f7d82bd88d34468d04473b825c05000072062b82600500008bf885db0f8ea9000000558b6c243c8a014184c088442420894c241c74590fbe45008b54242883c7022bd033c0668b47fe4583c6024b3bd07d588b4424108b4c242081e1ff000000668b50088b4004668b044866c1e80223c28d0c408b442438668b4446fe66c1e80223c203c866894efe8b4c241ceb1b8a1141885424248b54242481e2ff0000002bda03ea03d203f203faa1000000003bb85c05000072062bb86005000085db0f8f62ffffffa1000000005d5f5e5b59c22800",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  }
+ ]
+}

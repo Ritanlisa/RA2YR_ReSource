@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x496d10",
+  "name": "sub_496D10",
+  "cls": null,
+  "size": 267,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x496fb0",
+  "name": "sub_496FB0",
+  "cls": null,
+  "size": 267,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x6a8220",
+  "name": "SidebarClass::InitCameoGrid",
+  "cls": null,
+  "size": 268,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x7d7ee0",
+  "name": "unknown_libname_76",
+  "cls": null,
+  "size": 279,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2296",
+  "first_msg": "'>>' : illegal, left operand has type 'double'"
+ },
+ {
+  "addr": "0x42fd30",
+  "name": "EncodeBitmapRGB",
+  "cls": null,
+  "size": 285,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2065",
+  "first_msg": "'asc_818A0C' : undeclared identifier"
+ },
+ {
+  "addr": "0x63d0f0",
+  "name": "Render_Render_63D0F0",
+  "cls": null,
+  "size": 288,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2065",
+  "first_msg": "'MEMORY' : undeclared identifier"
+ },
+ {
+  "addr": "0x5c71e0",
+  "name": "ShiftBigIntAndScan",
+  "cls": null,
+  "size": 293,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x63d2d0",
+  "name": "sub_63D2D0",
+  "cls": null,
+  "size": 295,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2065",
+  "first_msg": "'MEMORY' : undeclared identifier"
+ },
+ {
+  "addr": "0x6a89e0",
+  "name": "sub_6A89E0",
+  "cls": null,
+  "size": 296,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x497cf0",
+  "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
+  "cls": null,
+  "size": 299,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x497b80",
+  "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
+  "cls": null,
+  "size": 301,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_RLEBlitTransLucent75Alpha_G'"
+ },
+ {
+  "addr": "0x497e60",
+  "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
+  "cls": null,
+  "size": 301,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_RLEBlitTransLucent25Alpha_G'"
+ },
+ {
+  "addr": "0x5c6660",
+  "name": "RotateBitBufferRight",
+  "cls": null,
+  "size": 306,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2562",
+  "first_msg": "'RotateBitBufferRight' : 'void' function returning a value"
+ },
+ {
+  "addr": "0x5c67a0",
+  "name": "RotateBitBufferLeft",
+  "cls": null,
+  "size": 306,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x75edf0",
+  "name": "Voxel::BlendShadowColor",
+  "cls": null,
+  "size": 310,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4caf20",
+  "name": "VoxelAnimClass::ProcessFrame",
+  "cls": null,
+  "size": 314,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2653",
+  "first_msg": "'ToggleClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x7df3c2",
+  "name": "Object_Calc_7DF3C2",
+  "cls": null,
+  "size": 318,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2065",
+  "first_msg": "'__m64' : undeclared identifier"
+ },
+ {
+  "addr": "0x7d5178",
+  "name": "_cvtdate",
+  "cls": null,
+  "size": 320,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7df500",
+  "name": "Object_Calc_7DF500",
+  "cls": null,
+  "size": 320,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2065",
+  "first_msg": "'__m64' : undeclared identifier"
+ },
+ {
+  "addr": "0x6613a0",
+  "name": "ComputeColorSaturation",
+  "cls": null,
+  "size": 321,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'class unknown *const '"
+ }
+]
