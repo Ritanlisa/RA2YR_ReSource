@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_75A100@@YAHHHPAIH@Z",
+ "sym_key": "Unnamed::sub_75A100",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c240c8b542408508b44240851528b88ac000000e800000000c3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?InitializeBuffers@VoxelRenderer@@QAEHHPAXH@Z",
+   "sym_key": "VoxelRenderer::InitializeBuffers"
+  }
+ ]
+}
