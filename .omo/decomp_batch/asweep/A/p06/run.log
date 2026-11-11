@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x6d0e50 nullsub_236 -> _addr_6D
+[conv] 0x6d1b00 ScreenEffect::Stub -> ScreenEffect
+[conv] 0x6d8630 nullsub_41 -> _addr_6D
+[conv] 0x6da350 nullsub_42 -> _addr_6D
+[conv] 0x6dc410 nullsub_44 -> _addr_6D
+[conv] 0x6f25d0 nullsub_240 -> _addr_6F
+[conv] 0x6ff950 nullsub_45 -> _addr_6F
+[conv] 0x70d980 TechnoClass::StubReturnTrue3 -> TechnoClass
+[conv] 0x70f010 TechnoClass::COMStub_Return0_298 -> TechnoClass
+[conv] 0x70f100 TechnoClass::COMStub_Return0_307 -> TechnoClass
+[conv] 0x7179c0 ObjectClass::nullsub_86 -> ObjectClass
+[conv] 0x71ad30 nullsub_246 -> _addr_71
+[conv] 0x71de90 nullsub_247 -> _addr_71
+[conv] 0x749010 ObjectClass::nullsub_143 -> ObjectClass
+[conv] 0x74ff40 ObjectClass::nullsub_69 -> ObjectClass
+[conv] 0x753ad0 ScreenEffect::Stub1 -> ScreenEffect
+[conv] 0x753ae0 ScreenEffect::Stub2 -> ScreenEffect
+[conv] 0x754b20 ScreenEffect::Stub3 -> ScreenEffect
+[conv] 0x754b30 ScreenEffect::Stub4 -> ScreenEffect
+[conv] 0x754ba0 ScreenEffect::Stub5 -> ScreenEffect
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6D                 rc=0
+[era] ScreenEffect             rc=0
+[era] _addr_6F                 rc=0
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=2
+[era] _addr_71                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6d0e50   MATCH            nullsub_236
+[diff] 0x6d8630   MATCH            nullsub_41
+[diff] 0x6da350   MATCH            nullsub_42
+[diff] 0x6dc410   MATCH            nullsub_44
+[diff] 0x6d1b00   MATCH            ScreenEffect::Stub
+[diff] 0x753ad0   MATCH            ScreenEffect::Stub1
+[diff] 0x753ae0   MATCH            ScreenEffect::Stub2
+[diff] 0x754b20   MATCH            ScreenEffect::Stub3
+[diff] 0x754b30   MATCH            ScreenEffect::Stub4
+[diff] 0x754ba0   MATCH            ScreenEffect::Stub5
+[diff] 0x6f25d0   MATCH            nullsub_240
+[diff] 0x6ff950   MATCH            nullsub_45
+[diff] 0x70d980   MATCH            TechnoClass::StubReturnTrue3
+[diff] 0x70f010   MISMATCH         TechnoClass::COMStub_Return0_298
+[diff] 0x70f100   MISMATCH         TechnoClass::COMStub_Return0_307
+[diff] 0x71ad30   MATCH            nullsub_246
+[diff] 0x71de90   MATCH            nullsub_247
+[ledger] 0x6d0e50 nullsub_236 -> OK (attempt 1)
+[ledger] 0x6d1b00 ScreenEffect::Stub -> OK (attempt 1)
+[ledger] 0x6d8630 nullsub_41 -> OK (attempt 1)
+[ledger] 0x6da350 nullsub_42 -> OK (attempt 1)
+[ledger] 0x6dc410 nullsub_44 -> OK (attempt 1)
+[ledger] 0x6f25d0 nullsub_240 -> OK (attempt 1)
+[ledger] 0x6ff950 nullsub_45 -> OK (attempt 1)
+[ledger] 0x70d980 TechnoClass::StubReturnTrue3 -> OK (attempt 1)
+[ledger] 0x70f010 TechnoClass::COMStub_Return0_298 -> NG (attempt 1)
+[ledger] 0x70f100 TechnoClass::COMStub_Return0_307 -> NG (attempt 1)
+[ledger] 0x7179c0 ObjectClass::nullsub_86 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71ad30 nullsub_246 -> OK (attempt 1)
+[ledger] 0x71de90 nullsub_247 -> OK (attempt 1)
+[ledger] 0x749010 ObjectClass::nullsub_143 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74ff40 ObjectClass::nullsub_69 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x753ad0 ScreenEffect::Stub1 -> OK (attempt 1)
+[ledger] 0x753ae0 ScreenEffect::Stub2 -> OK (attempt 1)
+[ledger] 0x754b20 ScreenEffect::Stub3 -> OK (attempt 1)
+[ledger] 0x754b30 ScreenEffect::Stub4 -> OK (attempt 1)
+[ledger] 0x754ba0 ScreenEffect::Stub5 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 15,
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 88.2,
+ "match_rate_of_total_pct": 75.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p06\batch_report.json
