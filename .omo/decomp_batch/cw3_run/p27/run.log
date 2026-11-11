@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e6ff0 BuildingLoadQueue::FindObject -> BuildingLoadQueue
+[conv] 0x6e7330 ObjectClass::System_Read_6E7330 -> ObjectClass
+[conv] 0x6e7a80 BuildingLoadQueue::FindBuilding -> BuildingLoadQueue
+[conv] 0x5d4b20 WideString::WordWrap -> WideString
+[conv] 0x69b7e0 SessionClass::AssignColor -> SessionClass
+[conv] 0x6b7c60 UnitClass::ClearTargetRef -> UnitClass
+[conv] 0x431800 HouseClass::ProcessData -> HouseClass
+[conv] 0x68bdc0 ScenarioClass::ReadWaypoints -> ScenarioClass
+[conv] 0x720070 TextButtonClass::selectWeapon -> TextButtonClass
+[conv] 0x4c58c0 EMPulseClass::IterateCellsInRadius -> EMPulseClass
+[conv] 0x53fbd0 IPXGlobalConnClass::Flush -> IPXGlobalConnClass
+[conv] 0x42f260 BuildingClass::MarkUpgradeComponentUsed -> BuildingClass
+[conv] 0x52b2b0 INIClass::deleteSection -> INIClass
+[conv] 0x5388a0 SortedArray::RemoveByKey -> SortedArray
+[conv] 0x6a8710 TabCameoListClass::AddCameo_ReplaceItAll -> TabCameoListClass
+[conv] 0x50b760 BuildingTypeClass::ProcessData -> BuildingTypeClass
+[conv] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> ObjectClass
+[conv] 0x49e400 CampaignClass::FindMission -> CampaignClass
+[conv] 0x6d02b0 TabClass::LoadButtonSHPs -> TabClass
+[conv] 0x7d7491 _crtGetLocaleInfoA_16 -> _addr_7D
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingLoadQueue        rc=2
+[era] ObjectClass              rc=2
+[era] WideString               rc=2
+[era] SessionClass             rc=2
+[era] UnitClass                rc=2
+[era] HouseClass               rc=2
+[era] ScenarioClass            rc=2
+[era] TextButtonClass          rc=0
+[era] EMPulseClass             rc=2
+[era] IPXGlobalConnClass       rc=2
+[era] BuildingClass            rc=2
+[era] INIClass                 rc=2
+[era] SortedArray              rc=2
+[era] TabCameoListClass        rc=2
+[era] BuildingTypeClass        rc=2
+[era] CampaignClass            rc=2
+[era] TabClass                 rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x720070   MISMATCH         TextButtonClass::selectWeapon
+[ledger] 0x6e6ff0 BuildingLoadQueue::FindObject -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6e7330 ObjectClass::System_Read_6E7330 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e7a80 BuildingLoadQueue::FindBuilding -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5d4b20 WideString::WordWrap -> COMPILE_FAIL (attempt 12)
+[ledger] 0x69b7e0 SessionClass::AssignColor -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6b7c60 UnitClass::ClearTargetRef -> COMPILE_FAIL (attempt 11)
+[ledger] 0x431800 HouseClass::ProcessData -> COMPILE_FAIL (attempt 19)
+[ledger] 0x68bdc0 ScenarioClass::ReadWaypoints -> COMPILE_FAIL (attempt 2)
+[ledger] 0x720070 TextButtonClass::selectWeapon -> NG (attempt 12)
+[ledger] 0x4c58c0 EMPulseClass::IterateCellsInRadius -> COMPILE_FAIL (attempt 10)
+[ledger] 0x53fbd0 IPXGlobalConnClass::Flush -> COMPILE_FAIL (attempt 10)
+[ledger] 0x42f260 BuildingClass::MarkUpgradeComponentUsed -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52b2b0 INIClass::deleteSection -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5388a0 SortedArray::RemoveByKey -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6a8710 TabCameoListClass::AddCameo_ReplaceItAll -> COMPILE_FAIL (attempt 11)
+[ledger] 0x50b760 BuildingTypeClass::ProcessData -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49e400 CampaignClass::FindMission -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6d02b0 TabClass::LoadButtonSHPs -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7d7491 _crtGetLocaleInfoA_16 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p27\batch_report.json

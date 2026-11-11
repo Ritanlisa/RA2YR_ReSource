@@ -1,0 +1,33 @@
+{
+ "symbol": "?selectWeapon@TextButtonClass@@QAEDXZ",
+ "sym_key": "TextButtonClass::selectWeapon",
+ "size": 158,
+ "link_base": 0,
+ "bytes_hex": "51568bf18a86d400000084c00f85890000008b86d000000085c07452e8000000008b0d0d0000008b14818b820c03000083780401750f8b807401000033c98a480c8bc1eb0c8b907401000033c0668b42188b4e0c50498d442408894c24088b0d0000000050510fbe118b12ff52588b467885c07407ba03000000eb0d8b86b000000033d285c00f94c28b4e0c6a01894c24088d4c2408e8000000005e59c3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?GetType@BuildingAnim@@QAEHXZ",
+   "sym_key": "BuildingAnim::GetType"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?DrawBuildingTilesSHP@@YIHPAXHD@Z",
+   "sym_key": "DrawBuildingTilesSHP"
+  }
+ ]
+}

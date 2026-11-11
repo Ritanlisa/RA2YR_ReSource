@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6e6ff0",
+  "name": "BuildingLoadQueue::FindObject",
+  "cls": null,
+  "size": 204,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.uniqueId' must have class/struct/union type"
+ },
+ {
+  "addr": "0x6e7330",
+  "name": "System_Read_6E7330",
+  "cls": null,
+  "size": 204,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6e7a80",
+  "name": "BuildingLoadQueue::FindBuilding",
+  "cls": null,
+  "size": 204,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.uniqueId' must have class/struct/union type"
+ },
+ {
+  "addr": "0x5d4b20",
+  "name": "WideString::WordWrap",
+  "cls": null,
+  "size": 205,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int *' to 'unsigned short *'"
+ },
+ {
+  "addr": "0x69b7e0",
+  "name": "SessionClass::AssignColor",
+  "cls": null,
+  "size": 205,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x6b7c60",
+  "name": "UnitClass::ClearTargetRef",
+  "cls": null,
+  "size": 206,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'unsigned short *'"
+ },
+ {
+  "addr": "0x431800",
+  "name": "HouseClass::ProcessData",
+  "cls": null,
+  "size": 207,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.spawnStatus' must have class/struct/union type"
+ },
+ {
+  "addr": "0x68bdc0",
+  "name": "ScenarioClass::ReadWaypoints",
+  "cls": null,
+  "size": 207,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'CHAR' : undeclared identifier"
+ },
+ {
+  "addr": "0x720070",
+  "name": "AbstractClass::selectWeapon",
+  "cls": null,
+  "size": 207,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.m_1' must have class/struct/union type"
+ },
+ {
+  "addr": "0x4c58c0",
+  "name": "EMPulseClass::IterateCellsInRadius",
+  "cls": null,
+  "size": 210,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x53fbd0",
+  "name": "IPXGlobalConnClass::Flush",
+  "cls": null,
+  "size": 210,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'queueSendPacket' : cannot convert parameter 1 from 'const void *' to 'void *'"
+ },
+ {
+  "addr": "0x42f260",
+  "name": "BuildingClass::MarkUpgradeComponentUsed",
+  "cls": null,
+  "size": 212,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x52b2b0",
+  "name": "INIClass::deleteSection",
+  "cls": null,
+  "size": 213,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier"
+ },
+ {
+  "addr": "0x5388a0",
+  "name": "SortedArray::RemoveByKey",
+  "cls": null,
+  "size": 213,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void' to 'int'"
+ },
+ {
+  "addr": "0x6a8710",
+  "name": "TabCameoListClass::AddCameo_ReplaceItAll",
+  "cls": null,
+  "size": 218,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'int' to 'class TabCameoListClass'"
+ },
+ {
+  "addr": "0x50b760",
+  "name": "BuildingTypeClass::ProcessData",
+  "cls": null,
+  "size": 219,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '?'"
+ },
+ {
+  "addr": "0x6c6d00",
+  "name": "Audio_Read_6C6D00",
+  "cls": null,
+  "size": 220,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x49e400",
+  "name": "CampaignClass::FindMission",
+  "cls": null,
+  "size": 227,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2086",
+  "first_msg": "'scenario_dword' : redefinition"
+ },
+ {
+  "addr": "0x6d02b0",
+  "name": "SidebarClass::LoadButtonSHPs",
+  "cls": null,
+  "size": 228,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7d7491",
+  "name": "_crtGetLocaleInfoA_16",
+  "cls": null,
+  "size": 230,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LCTYPE'"
+ }
+]
