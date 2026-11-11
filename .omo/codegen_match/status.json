@@ -4196,7 +4196,7 @@
   "this_as_id": false
  },
  "0x411330": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -8595,7 +8595,7 @@
   "this_as_id": false
  },
  "0x434500": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0x10",
@@ -13367,7 +13367,7 @@
   "this_as_id": false
  },
  "0x47ff80": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0x18",
@@ -14425,7 +14425,7 @@
   "this_as_id": false
  },
  "0x48b410": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -19385,7 +19385,7 @@
   "this_as_id": false
  },
  "0x4b0c40": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24977,7 +24977,7 @@
   "this_as_id": false
  },
  "0x4e8090": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_18",
@@ -39568,7 +39568,7 @@
   "status": "NG"
  },
  "0x567f70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": "+0 sub esp, 0x10",
   "name": "TActionClass_Helper",
@@ -46498,7 +46498,7 @@
   "this_as_id": false
  },
  "0x5cd0e0": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46637,7 +46637,7 @@
   "this_as_id": false
  },
  "0x5ce8c0": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51932,7 +51932,7 @@
   "this_as_id": false
  },
  "0x623120": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -52791,7 +52791,7 @@
   "this_as_id": false
  },
  "0x62bb20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -58142,7 +58142,7 @@
   "this_as_id": false
  },
  "0x65fe00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0x10",
@@ -62161,7 +62161,7 @@
   "this_as_id": false
  },
  "0x6a0310": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -68430,7 +68430,7 @@
   "this_as_id": false
  },
  "0x6d0fd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0x10",
@@ -68718,7 +68718,7 @@
   "this_as_id": false
  },
  "0x6d6410": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -68910,7 +68910,7 @@
   "status": "OK"
  },
  "0x6da7d0": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73218,15 +73218,15 @@
   "this_as_id": false
  },
  "0x71d160": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x40",
   "name": "TerrainClass::Export",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TerrainClass::Export",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x71d2f0": {
@@ -74484,7 +74484,7 @@
   "this_as_id": false
  },
  "0x7248c0": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87903,7 +87903,7 @@
   "this_as_id": false
  },
  "0x7bcfb0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89515,7 +89515,7 @@
   "this_as_id": false
  },
  "0x7ceaff": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__ms_p5_mp_test_fdiv",

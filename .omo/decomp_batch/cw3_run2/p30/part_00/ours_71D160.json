@@ -1,0 +1,63 @@
+{
+ "symbol": "?Export@TerrainClass@@QAEPAIPAH@Z",
+ "sym_key": "TerrainClass::Export",
+ "size": 373,
+ "link_base": 0,
+ "bytes_hex": "83ec348b81d80000008b15b4000000568b35b00000002bc68944241c8b81dc0000002bc289442424e8000000008bf085f60f84040100005355578d44242c6a0050e8000000008b48048b288b58088b780c894c24140fbf4e068bc1992bc28d542434d1f85052e8000000008b48048b10894c24188b48088b400c894c241c894424200fbf4602894424240fbf460485db8944242c7e0485ff7f028bd98b4c24143bea8bf5897c24107e062bea8bf203dd8b6c24148b4424183be87e0a2bf88bc803fd897c24108b44241c8d2c1e8d3c103bef7d062bc68d5c10018b5424108b4424208d3c0a8b5424188d2c103bfd7d0a2bc18d441001894424108b4424248b7c2448992bc2895f08d1f82bf08b44242803f08b44242c992bc28937d1f82bc88b44243003c88bc7894f048b4c2410894f0c5f5d5b5e83c434c204008b15100400008b44243c81e2ff00000033c989108a0d1104000033d28948048a151204000033c98950088a0d1304000089480c5e83c434c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3PAIA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3PAIA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?HasC4@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::HasC4"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 317,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 337,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 359,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

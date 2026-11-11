@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x48b410",
+  "name": "ConnectionClass::queueSendPacket",
+  "cls": null,
+  "size": 339,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2562",
+  "first_msg": "'queueSendPacket' : 'void' function returning a value"
+ },
+ {
+  "addr": "0x6d0fd0",
+  "name": "UI_Init_6D0FD0",
+  "cls": null,
+  "size": 345,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'fstp' : undeclared identifier"
+ },
+ {
+  "addr": "0x4b0c40",
+  "name": "JumpjetLocomotionClass::SetWaypointTarget",
+  "cls": null,
+  "size": 350,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x5cd0e0",
+  "name": "MSVQAnim::Play",
+  "cls": null,
+  "size": 350,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'void (int,int,class DSurface *,int,unsigned int,int)' : cannot convert parameter 3 from 'int' to 'class DSurf"
+ },
+ {
+  "addr": "0x6a0310",
+  "name": "WalkLocomotionClass::SetWaypointTarget",
+  "cls": null,
+  "size": 350,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x7248c0",
+  "name": "TooltipClass::GetText",
+  "cls": null,
+  "size": 361,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier"
+ },
+ {
+  "addr": "0x5ce8c0",
+  "name": "MSPCXAnim::Draw",
+  "cls": null,
+  "size": 369,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2198",
+  "first_msg": "'char (__stdcall *)(int *,int *,int,int)' : too few actual parameters"
+ },
+ {
+  "addr": "0x7bcfb0",
+  "name": "TacticalMap::FillScanlinesOpaque",
+  "cls": null,
+  "size": 371,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2198",
+  "first_msg": "'int (__stdcall *)(class TacticalMap *,int,int,int)' : too few actual parameters"
+ },
+ {
+  "addr": "0x411330",
+  "name": "TacticalClass::FillScanlinesTransparent",
+  "cls": null,
+  "size": 377,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2198",
+  "first_msg": "'int (__stdcall *)(class TacticalClass *,int,int,int)' : too few actual parameters"
+ },
+ {
+  "addr": "0x6d6410",
+  "name": "Terrain::ClimbCheck",
+  "cls": null,
+  "size": 379,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'int *'"
+ },
+ {
+  "addr": "0x47ff80",
+  "name": "CellClass::GetScreenRect",
+  "cls": null,
+  "size": 392,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int' to 'class CellClass *const '"
+ },
+ {
+  "addr": "0x71d160",
+  "name": "TerrainClass::Export",
+  "cls": null,
+  "size": 398,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x62bb20",
+  "name": "ObjectClass::ProcessUpdate",
+  "cls": null,
+  "size": 412,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'fstp' : undeclared identifier"
+ },
+ {
+  "addr": "0x6da7d0",
+  "name": "Tactical::AddCellToDrawList",
+  "cls": null,
+  "size": 424,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2679",
+  "first_msg": "binary '=' : no operator defined which takes a right-hand operand of type 'int' (or there is no acceptable con"
+ },
+ {
+  "addr": "0x434500",
+  "name": "FontClass::RenderText",
+  "cls": null,
+  "size": 439,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'Color_field_00' : is not a member of 'Color'"
+ },
+ {
+  "addr": "0x567f70",
+  "name": "TActionClass_Helper",
+  "cls": null,
+  "size": 464,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x65fe00",
+  "name": "Map_Helper_65FE00",
+  "cls": null,
+  "size": 499,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'fstp' : undeclared identifier"
+ },
+ {
+  "addr": "0x4e8090",
+  "name": "unknown_libname_18",
+  "cls": null,
+  "size": 10,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2653",
+  "first_msg": "'NullModemClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x7ceaff",
+  "name": "__ms_p5_mp_test_fdiv",
+  "cls": null,
+  "size": 41,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'GetModuleHandleA' : cannot convert parameter 1 from 'char [9]' to 'int'"
+ },
+ {
+  "addr": "0x623120",
+  "name": "Dialog::PumpMessages",
+  "cls": null,
+  "size": 66,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ }
+]

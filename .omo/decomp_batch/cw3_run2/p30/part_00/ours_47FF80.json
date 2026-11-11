@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetScreenRect@CellClass@@QAEPAHPAH@Z",
+ "sym_key": "CellClass::GetScreenRect",
+ "size": 324,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355568bf1570fbf4e248bc1c1f810c1e00805800000009981e2ff00000003c28bd88bc1c1e00805800000008d4c24149981e2ff00000003c2c1f808c1e008894424148d44241050518b0d00000000c1fb08c1e308e8000000000fbe861b0100008b3d040000008b4c24108d0440bd1e0000002bcd8d14808b4424202bfa894c241003f88b46383dffff0000894c241875098b442420e98d00000085c07c7a0fbe0d540100003bc17d6f0fbe0d4801000033d28a961a0100008b04818bf2508b10ff929c00000085c075258b4424208b4c24148b5424205f5e8958045d8908c740080000000089500c5b83c40cc204008b48040faf088d51ff3bf272038d71ff8b4cb010f641240174168b41048b51182bc22bf88d681eeb078bcee8000000008b4424208b4c24188978045f89680c5e5d8908c740083c0000005b83c40cc20400",
+ "relocs": [
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 287,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
