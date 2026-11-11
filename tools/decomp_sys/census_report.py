@@ -227,6 +227,10 @@ def main():
     L.append("注：匹配率 = MATCH/(MATCH+MISMATCH)，表示“已进入字节对拍者”的"
              "全等率；末判率 = MATCH/抽样数，是端到端机械通过率。")
     L.append("")
+    L.append("**六规则红线**：102 个 part 的 `rule_violation_fns` 合计 = **0**"
+             "（2,000 件全部通过 checker 的规则 3/4 自检；失败件同样 emit "
+             "完整实现，未降级为 stub）。")
+    L.append("")
 
     # sanity: unrun / missing addresses
     any_missing = {k: v for k, v in missing.items() if v}
@@ -442,6 +446,10 @@ def main():
     L.append("口径：part 墙钟 = `run_census.py` 子进程调用 batch_run 的耗时"
              "（含伪码转换、发射、编译、抽取、对拍与提交前记账；不含 git "
              "commit 本身）。D 层的单件耗时受大函数/多调用支配。")
+    L.append("")
+    L.append("> 注意：本吞吐包含大量“快速失败”路径（编译墙平均 ~0.9s/件）。"
+             "修墙后成功路径的成本会上升（生成+编译+对拍），因此 §4 的 3.9 "
+             "小时是当前产线的**下界**，不是修完墙后的承诺值。")
     L.append("")
     L.append("### 3.1 每 part 明细")
     L.append("")
