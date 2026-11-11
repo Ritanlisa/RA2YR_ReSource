@@ -1,0 +1,8 @@
+{
+ "symbol": "?_GetPrimaryLen@@YAHPAD@Z",
+ "sym_key": "Unnamed::_GetPrimaryLen",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b54240433c08a0a4280f9417c0580f95a7e0a80f9617c0880f97a7f0340ebe6c3",
+ "relocs": []
+}

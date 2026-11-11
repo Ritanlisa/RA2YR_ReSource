@@ -1,0 +1,21 @@
+{
+ "symbol": "?__ungetch@@YAHH@Z",
+ "sym_key": "Unnamed::__ungetch",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f8ff7414833d00000000ff750b25ff000000a300000000c383c8ffc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87DD70@@3IA",
+   "sym_key": "DataGlobal_87DD70"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87DD70@@3IA",
+   "sym_key": "DataGlobal_87DD70"
+  }
+ ]
+}

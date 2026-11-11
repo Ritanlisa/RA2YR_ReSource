@@ -1,0 +1,11 @@
+{
+ "addr": "0x41C610",
+ "name": "CompareFunction",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41C610",
+ "bytes_hex": "8b4424048b4c24088b008b093bc1750333c0c333d23bc10f9dc24a83e2fe428bc2c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

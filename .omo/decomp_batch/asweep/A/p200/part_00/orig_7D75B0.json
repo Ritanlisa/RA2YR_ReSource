@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D75B0",
+ "name": "_GetPrimaryLen",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D75B0",
+ "bytes_hex": "8b54240433c08a0a4280f9417c0580f95a7e0a80f9617c0880f97a7f0340ebe6c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

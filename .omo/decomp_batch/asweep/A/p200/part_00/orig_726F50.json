@@ -1,0 +1,11 @@
+{
+ "addr": "0x726F50",
+ "name": "HouseClass::HasType26Building",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x726F50",
+ "bytes_hex": "8b89ac00000032c085c97414ba1a00000039512c74088b492885c975f4c3b001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

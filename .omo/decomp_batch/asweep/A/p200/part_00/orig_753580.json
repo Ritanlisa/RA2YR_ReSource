@@ -1,0 +1,11 @@
+{
+ "addr": "0x753580",
+ "name": "ChronoScreenEffect::DecrementCounter",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x753580",
+ "bytes_hex": "a1d8d3b10085c07417a1d8d3b10048a3d8d3b100790ac705d8d3b10000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C7350",
+ "name": "Audio_Render_7C7350",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C7350",
+ "bytes_hex": "558bec8b450866c740040000c7000000000066c7400a0000c7400600000000c9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

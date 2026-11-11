@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p200\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c5e90 _TClassFactory_VNeuronClass::GetSize -> _TClassFactory_VNeuronClass
+[conv] 0x6c6010 _TClassFactory_VFoggedObjectClass::GetSize -> _TClassFactory_VFoggedObjectClass
+[conv] 0x6c6190 _TClassFactory_VAlphaShapeClass::GetSize -> _TClassFactory_VAlphaShapeClass
+[conv] 0x6ec370 AnimTypeClass::sub_6EC370 -> AnimTypeClass
+[conv] 0x726f50 HouseClass::HasType26Building -> HouseClass
+[conv] 0x726fe0 HouseClass::FindType15 -> HouseClass
+[conv] 0x753580 ChronoScreenEffect::DecrementCounter -> ChronoScreenEffect
+[conv] 0x759760 TechnoClass::sub_759760 -> TechnoClass
+[conv] 0x7bc750 _BlitPlain_E::sub_7BC750 -> _BlitPlain_E
+[conv] 0x7bc7a0 _BlitPlain_E::sub_7BC7A0 -> _BlitPlain_E
+[conv] 0x7c7350 Audio_Render_7C7350 -> Audio_Render
+[conv] 0x7d75b0 _GetPrimaryLen -> _addr_7D
+[conv] 0x7db066 ___addl -> _addr_7D
+[conv] 0x7dd413 __ungetch -> _addr_7D
+[conv] 0x6c9820 FirstFloatPositive -> _addr_6C
+[conv] 0x4085b0 ObjectClass::sub_4085B0 -> ObjectClass
+[conv] 0x41c610 CompareFunction -> _addr_41
+[conv] 0x48b720 Terrain::GetTileIndex -> Terrain
+[conv] 0x48b9e0 Terrain::GetTileType -> Terrain
+[conv] 0x48bc20 CompareFuncInt -> _addr_48
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VNeuronClass rc=0
+[era] _TClassFactory_VFoggedObjectClass rc=0
+[era] _TClassFactory_VAlphaShapeClass rc=0
+[era] AnimTypeClass            rc=0
+[era] HouseClass               rc=0
+[era] ChronoScreenEffect       rc=0
+[era] TechnoClass              rc=2
+[era] _BlitPlain_E             rc=0
+[era] Audio_Render             rc=0
+[era] _addr_7D                 rc=0
+[era] _addr_6C                 rc=0
+[era] ObjectClass              rc=0
+[era] _addr_41                 rc=0
+[era] Terrain                  rc=0
+[era] _addr_48                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c5e90   MISMATCH         _TClassFactory_VNeuronClass::GetSize
+[diff] 0x6c6010   MISMATCH         _TClassFactory_VFoggedObjectClass::GetSize
+[diff] 0x6c6190   MISMATCH         _TClassFactory_VAlphaShapeClass::GetSize
+[diff] 0x6ec370   MISMATCH         AnimTypeClass::sub_6EC370
+[diff] 0x726f50   MISMATCH         HouseClass::HasType26Building
+[diff] 0x726fe0   MISMATCH         HouseClass::FindType15
+[diff] 0x753580   MISMATCH         ChronoScreenEffect::DecrementCounter
+[diff] 0x7bc750   MISMATCH         _BlitPlain_E::sub_7BC750
+[diff] 0x7bc7a0   MISMATCH         _BlitPlain_E::sub_7BC7A0
+[diff] 0x7c7350   MISMATCH         Audio_Render_7C7350
+[diff] 0x7d75b0   MATCH            _GetPrimaryLen
+[diff] 0x7db066   MISMATCH         ___addl
+[diff] 0x7dd413   MISMATCH         __ungetch
+[diff] 0x6c9820   MISMATCH         FirstFloatPositive
+[diff] 0x4085b0   MATCH            ObjectClass::sub_4085B0
+[diff] 0x41c610   MISMATCH         CompareFunction
+[diff] 0x48b720   MATCH            Terrain::GetTileIndex
+[diff] 0x48b9e0   MATCH            Terrain::GetTileType
+[diff] 0x48bc20   MISMATCH         CompareFuncInt
+[ledger] 0x6c5e90 _TClassFactory_VNeuronClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c6010 _TClassFactory_VFoggedObjectClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c6190 _TClassFactory_VAlphaShapeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6ec370 AnimTypeClass::sub_6EC370 -> NG (attempt 1)
+[ledger] 0x726f50 HouseClass::HasType26Building -> NG (attempt 1)
+[ledger] 0x726fe0 HouseClass::FindType15 -> NG (attempt 1)
+[ledger] 0x753580 ChronoScreenEffect::DecrementCounter -> NG (attempt 1)
+[ledger] 0x759760 TechnoClass::sub_759760 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bc750 _BlitPlain_E::sub_7BC750 -> NG (attempt 1)
+[ledger] 0x7bc7a0 _BlitPlain_E::sub_7BC7A0 -> NG (attempt 1)
+[ledger] 0x7c7350 Audio_Render_7C7350 -> NG (attempt 1)
+[ledger] 0x7d75b0 _GetPrimaryLen -> OK (attempt 1)
+[ledger] 0x7db066 ___addl -> NG (attempt 1)
+[ledger] 0x7dd413 __ungetch -> NG (attempt 1)
+[ledger] 0x6c9820 FirstFloatPositive -> NG (attempt 1)
+[ledger] 0x4085b0 ObjectClass::sub_4085B0 -> OK (attempt 1)
+[ledger] 0x41c610 CompareFunction -> NG (attempt 1)
+[ledger] 0x48b720 Terrain::GetTileIndex -> OK (attempt 1)
+[ledger] 0x48b9e0 Terrain::GetTileType -> OK (attempt 1)
+[ledger] 0x48bc20 CompareFuncInt -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 1,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "regalloc": 2,
+  "branch_polarity": 1,
+  "cc_mismatch": 2,
+  "branch_order": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 21.1,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p200\batch_report.json

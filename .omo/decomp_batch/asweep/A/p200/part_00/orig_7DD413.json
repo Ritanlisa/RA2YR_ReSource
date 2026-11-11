@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DD413",
+ "name": "__ungetch",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DD413",
+ "bytes_hex": "8b44240483f8ff7414833d70dd8700ff750b25ff000000a370dd8700c383c8ffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

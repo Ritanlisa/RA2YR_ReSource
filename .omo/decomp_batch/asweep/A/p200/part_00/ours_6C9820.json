@@ -1,0 +1,21 @@
+{
+ "symbol": "?FirstFloatPositive@@YIHPAM@Z",
+ "sym_key": "Unnamed::FirstFloatPositive",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "d901dc1d0000000033d2dfe0f6c44174184283c10483fa047d12d901dc1d00000000dfe0f6c44175e88bc2c383c8ffc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

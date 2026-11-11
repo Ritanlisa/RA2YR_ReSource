@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTileIndex@Terrain@@QAEHH@Z",
+ "sym_key": "Terrain::GetTileIndex",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8b41308b5424048b49248b04908d04c08b14818d048180e201f6da1bd223c2c20400",
+ "relocs": []
+}

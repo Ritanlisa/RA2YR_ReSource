@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DB066",
+ "name": "___addl",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DB066",
+ "bytes_hex": "8b542404568b74240c33c08d0c323bca72043bce73036a01588b5424105e890ac3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

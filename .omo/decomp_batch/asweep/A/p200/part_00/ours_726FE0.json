@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindType15@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::FindType15",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b81b000000085c0741b8b502cb90f0000003bd1740c8b402885c0740839482c75f4b001c332c0c3",
+ "relocs": []
+}

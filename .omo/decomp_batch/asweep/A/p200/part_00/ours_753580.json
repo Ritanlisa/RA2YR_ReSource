@@ -1,0 +1,21 @@
+{
+ "symbol": "?DecrementCounter@ChronoScreenEffect@@QAEHXZ",
+ "sym_key": "ChronoScreenEffect::DecrementCounter",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0740648a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3D8@@3IA",
+   "sym_key": "DataGlobal_B1D3D8"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3D8@@3IA",
+   "sym_key": "DataGlobal_B1D3D8"
+  }
+ ]
+}
