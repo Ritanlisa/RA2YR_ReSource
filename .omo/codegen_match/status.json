@@ -35320,7 +35320,7 @@
   "this_as_id": false
  },
  "0x540a80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -39353,7 +39353,7 @@
   "this_as_id": false
  },
  "0x561180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -44880,7 +44880,7 @@
   "this_as_id": false
  },
  "0x5c1dc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -44923,7 +44923,7 @@
   "this_as_id": false
  },
  "0x5c21d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51921,7 +51921,7 @@
   "this_as_id": false
  },
  "0x6211d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DrawTextRendererTextAligned",
@@ -53204,7 +53204,7 @@
   "this_as_id": false
  },
  "0x630ea0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -53931,7 +53931,7 @@
   "this_as_id": false
  },
  "0x635a40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -55025,7 +55025,7 @@
   "status": "NG"
  },
  "0x63f960": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": "+6 sub esp, 0x3c",
@@ -56410,7 +56410,7 @@
   "this_as_id": false
  },
  "0x655560": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -59401,7 +59401,7 @@
   "this_as_id": false
  },
  "0x67bb10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ReadINIClassInfantryTypeList",
@@ -60616,7 +60616,7 @@
   "this_as_id": false
  },
  "0x691970": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -70671,7 +70671,7 @@
   "this_as_id": false
  },
  "0x6ee3f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73163,7 +73163,7 @@
   "this_as_id": false
  },
  "0x71bdf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73848,7 +73848,7 @@
   "this_as_id": false
  },
  "0x720590": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -75211,7 +75211,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x7276a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -81716,7 +81716,7 @@
   "this_as_id": false
  },
  "0x765000": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_765000",
@@ -85776,7 +85776,7 @@
   "this_as_id": false
  },
  "0x79d110": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87595,7 +87595,7 @@
   "this_as_id": false
  },
  "0x7b9750": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -87607,7 +87607,7 @@
   "this_as_id": false
  },
  "0x7b9a60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -88821,7 +88821,7 @@
   "this_as_id": false
  },
  "0x7c8fd2": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

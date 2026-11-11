@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p47\part_00
+=== convert (20 addrs) ===
+[conv] 0x691970 ScoreScreenClass::ProcessFrame -> ScoreScreenClass
+[conv] 0x630ea0 ObjectClass::UI_Get_630EA0 -> ObjectClass
+[conv] 0x63f960 PowerBar::ComputeFill -> PowerBar
+[conv] 0x71bdf0 ObjectClass::ProcessFoggedState -> ObjectClass
+[conv] 0x7b9a60 WWMouseClass::captureMouse -> WWMouseClass
+[conv] 0x6211d0 DrawTextRendererTextAligned -> _addr_62
+[conv] 0x540a80 ObjectClass::Network_Init -> ObjectClass
+[conv] 0x6ee3f0 TeamClass::ProcessTeamMovement -> TeamClass
+[conv] 0x765000 sub_765000 -> _addr_76
+[conv] 0x561180 ObjectClass::Team_Start -> ObjectClass
+[conv] 0x635a40 TeamClass::FindByMemberType -> TeamClass
+[conv] 0x67bb10 ReadINIClassInfantryTypeList -> _addr_67
+[conv] 0x7b9750 WWMouseClass::showCursor -> WWMouseClass
+[conv] 0x7c8fd2 ObjectClass::CIpow_Helper -> ObjectClass
+[conv] 0x5c21d0 CampaignCoop::Setup -> CampaignCoop
+[conv] 0x79d110 ObjectClass::SendGameListWOL -> ObjectClass
+[conv] 0x720590 ThemeClass::InitializeThemes -> ThemeClass
+[conv] 0x5c1dc0 MPCooperative::Seek -> MPCooperative
+[conv] 0x655560 BuildingClass::ProcessFogCellOccupancy -> BuildingClass
+[conv] 0x7276a0 TriggerTypeClass::GetParameter -> TriggerTypeClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScoreScreenClass         rc=2
+[era] ObjectClass              rc=2
+[era] PowerBar                 rc=0
+[era] WWMouseClass             rc=2
+[era] _addr_62                 rc=2
+[era] TeamClass                rc=2
+[era] _addr_76                 rc=2
+[era] _addr_67                 rc=2
+[era] CampaignCoop             rc=2
+[era] ThemeClass               rc=2
+[era] MPCooperative            rc=2
+[era] BuildingClass            rc=2
+[era] TriggerTypeClass         rc=2
+=== diffasm byte-compare ===
+[diff] 0x63f960   MISMATCH         PowerBar::ComputeFill
+[ledger] 0x691970 ScoreScreenClass::ProcessFrame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x630ea0 ObjectClass::UI_Get_630EA0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63f960 PowerBar::ComputeFill -> NG (attempt 3)
+[ledger] 0x71bdf0 ObjectClass::ProcessFoggedState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b9a60 WWMouseClass::captureMouse -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6211d0 DrawTextRendererTextAligned -> COMPILE_FAIL (attempt 3)
+[ledger] 0x540a80 ObjectClass::Network_Init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ee3f0 TeamClass::ProcessTeamMovement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x765000 sub_765000 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x561180 ObjectClass::Team_Start -> COMPILE_FAIL (attempt 3)
+[ledger] 0x635a40 TeamClass::FindByMemberType -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67bb10 ReadINIClassInfantryTypeList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b9750 WWMouseClass::showCursor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8fd2 ObjectClass::CIpow_Helper -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c21d0 CampaignCoop::Setup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x79d110 ObjectClass::SendGameListWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x720590 ThemeClass::InitializeThemes -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c1dc0 MPCooperative::Seek -> COMPILE_FAIL (attempt 3)
+[ledger] 0x655560 BuildingClass::ProcessFogCellOccupancy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7276a0 TriggerTypeClass::GetParameter -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p47\batch_report.json
