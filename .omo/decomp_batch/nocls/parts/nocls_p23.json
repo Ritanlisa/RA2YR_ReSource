@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x770060",
+  "batch": "nocls",
+  "name": "sub_770060",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x770150",
+  "batch": "nocls",
+  "name": "sub_770150",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7701c0",
+  "batch": "nocls",
+  "name": "sub_7701C0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x770d70",
+  "batch": "nocls",
+  "name": "sub_770D70",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x771b10",
+  "batch": "nocls",
+  "name": "sub_771B10",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x775d90",
+  "batch": "nocls",
+  "name": "sub_775D90",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x776ea0",
+  "batch": "nocls",
+  "name": "nullsub_261",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x777340",
+  "batch": "nocls",
+  "name": "sub_777340",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7775c0",
+  "batch": "nocls",
+  "name": "MainWindowProc",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x777e00",
+  "batch": "nocls",
+  "name": "Render_Draw_777E00",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7781b0",
+  "batch": "nocls",
+  "name": "EditControl_Helper",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x778540",
+  "batch": "nocls",
+  "name": "sub_778540",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7786a0",
+  "batch": "nocls",
+  "name": "sub_7786A0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77b100",
+  "batch": "nocls",
+  "name": "sub_77B100",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77b230",
+  "batch": "nocls",
+  "name": "sub_77B230",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77b690",
+  "batch": "nocls",
+  "name": "sub_77B690",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77b880",
+  "batch": "nocls",
+  "name": "sub_77B880",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77bcb0",
+  "batch": "nocls",
+  "name": "sub_77BCB0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x77c580",
+  "batch": "nocls",
+  "name": "sub_77C580",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77c840",
+  "batch": "nocls",
+  "name": "sub_77C840",
+  "cc": "cdecl"
+ }
+]

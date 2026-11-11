@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x770060 sub_770060 -> _addr_77
+[conv] 0x770150 sub_770150 -> _addr_77
+[conv] 0x7701c0 sub_7701C0 -> _addr_77
+[conv] 0x770d70 sub_770D70 -> _addr_77
+[conv] 0x771b10 sub_771B10 -> _addr_77
+[conv] 0x775d90 sub_775D90 -> _addr_77
+[conv] 0x776ea0 nullsub_261 -> _addr_77
+[conv] 0x777340 sub_777340 -> _addr_77
+[conv] 0x7775c0 MainWindowProc -> _addr_77
+[conv] 0x777e00 Render_Draw_777E00 -> Render_Draw
+[conv] 0x7781b0 EditControl_Helper -> EditControl
+[conv] 0x778540 sub_778540 -> _addr_77
+[conv] 0x7786a0 sub_7786A0 -> _addr_77
+[conv] 0x77b100 sub_77B100 -> _addr_77
+[conv] 0x77b230 sub_77B230 -> _addr_77
+[conv] 0x77b690 sub_77B690 -> _addr_77
+[conv] 0x77b880 sub_77B880 -> _addr_77
+[conv] 0x77bcb0 sub_77BCB0 -> _addr_77
+[conv] 0x77c580 sub_77C580 -> _addr_77
+[conv] 0x77c840 sub_77C840 -> _addr_77
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=2
+[era] Render_Draw              rc=2
+[era] EditControl              rc=2
+=== diffasm byte-compare ===
+[diff] 0x770060   MATCH            sub_770060
+[diff] 0x7701c0   MISMATCH         sub_7701C0
+[diff] 0x771b10   MISMATCH         sub_771B10
+[diff] 0x776ea0   MATCH            nullsub_261
+[diff] 0x778540   MISMATCH         sub_778540
+[diff] 0x7786a0   MATCH            sub_7786A0
+[diff] 0x77b100   MISMATCH         sub_77B100
+[diff] 0x77b230   MATCH            sub_77B230
+[diff] 0x77b880   MATCH            sub_77B880
+[ledger] 0x770060 sub_770060 -> OK (attempt 2)
+[ledger] 0x770150 sub_770150 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7701c0 sub_7701C0 -> NG (attempt 2)
+[ledger] 0x770d70 sub_770D70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x771b10 sub_771B10 -> NG (attempt 2)
+[ledger] 0x775d90 sub_775D90 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x776ea0 nullsub_261 -> OK (attempt 2)
+[ledger] 0x777340 sub_777340 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7775c0 MainWindowProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x777e00 Render_Draw_777E00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7781b0 EditControl_Helper -> COMPILE_FAIL (attempt 2)
+[ledger] 0x778540 sub_778540 -> NG (attempt 2)
+[ledger] 0x7786a0 sub_7786A0 -> OK (attempt 2)
+[ledger] 0x77b100 sub_77B100 -> NG (attempt 2)
+[ledger] 0x77b230 sub_77B230 -> OK (attempt 2)
+[ledger] 0x77b690 sub_77B690 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77b880 sub_77B880 -> OK (attempt 2)
+[ledger] 0x77bcb0 sub_77BCB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77c580 sub_77C580 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77c840 sub_77C840 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 5,
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "extern_reloc": 3
+ },
+ "match_rate_of_decided_pct": 55.6,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p23\batch_report.json
