@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p156\part_00
+=== convert (20 addrs) ===
+[conv] 0x717800 TechnoTypeClass::GetSightRange -> TechnoTypeClass
+[conv] 0x717fe0 sub_717FE0 -> _addr_71
+[conv] 0x71a3b0 sub_71A3B0 -> _addr_71
+[conv] 0x71b790 sub_71B790 -> _addr_71
+[conv] 0x71ff00 sub_71FF00 -> _addr_71
+[conv] 0x720420 sub_720420 -> _addr_72
+[conv] 0x721620 sub_721620 -> _addr_72
+[conv] 0x723c80 sub_723C80 -> _addr_72
+[conv] 0x723e40 sub_723E40 -> _addr_72
+[conv] 0x723fe0 sub_723FE0 -> _addr_72
+[conv] 0x7252b0 sub_7252B0 -> _addr_72
+[conv] 0x725f80 sub_725F80 -> _addr_72
+[conv] 0x726c60 sub_726C60 -> _addr_72
+[conv] 0x7289e0 sub_7289E0 -> _addr_72
+[conv] 0x72a230 sub_72A230 -> _addr_72
+[conv] 0x72a690 sub_72A690 -> _addr_72
+[conv] 0x730760 sub_730760 -> _addr_73
+[conv] 0x734620 sub_734620 -> _addr_73
+[conv] 0x735370 sub_735370 -> _addr_73
+[conv] 0x746ec0 sub_746EC0 -> _addr_74
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoTypeClass          rc=2
+[era] _addr_71                 rc=0
+[era] _addr_72                 rc=2
+[era] _addr_73                 rc=0
+[era] _addr_74                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x717fe0   MATCH            sub_717FE0
+[diff] 0x71a3b0   MATCH            sub_71A3B0
+[diff] 0x71b790   MATCH            sub_71B790
+[diff] 0x71ff00   MATCH            sub_71FF00
+[diff] 0x723c80   MATCH            sub_723C80
+[diff] 0x723e40   MATCH            sub_723E40
+[diff] 0x723fe0   MATCH            sub_723FE0
+[diff] 0x7252b0   MATCH            sub_7252B0
+[diff] 0x725f80   MATCH            sub_725F80
+[diff] 0x726c60   MATCH            sub_726C60
+[diff] 0x7289e0   MATCH            sub_7289E0
+[diff] 0x72a230   MATCH            sub_72A230
+[diff] 0x72a690   MATCH            sub_72A690
+[diff] 0x730760   MATCH            sub_730760
+[diff] 0x734620   MATCH            sub_734620
+[diff] 0x735370   MATCH            sub_735370
+[diff] 0x746ec0   MATCH            sub_746EC0
+[ledger] 0x717800 TechnoTypeClass::GetSightRange -> COMPILE_FAIL (attempt 1)
+[ledger] 0x717fe0 sub_717FE0 -> OK (attempt 1)
+[ledger] 0x71a3b0 sub_71A3B0 -> OK (attempt 1)
+[ledger] 0x71b790 sub_71B790 -> OK (attempt 1)
+[ledger] 0x71ff00 sub_71FF00 -> OK (attempt 1)
+[ledger] 0x720420 sub_720420 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721620 sub_721620 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x723c80 sub_723C80 -> OK (attempt 1)
+[ledger] 0x723e40 sub_723E40 -> OK (attempt 1)
+[ledger] 0x723fe0 sub_723FE0 -> OK (attempt 1)
+[ledger] 0x7252b0 sub_7252B0 -> OK (attempt 1)
+[ledger] 0x725f80 sub_725F80 -> OK (attempt 1)
+[ledger] 0x726c60 sub_726C60 -> OK (attempt 1)
+[ledger] 0x7289e0 sub_7289E0 -> OK (attempt 1)
+[ledger] 0x72a230 sub_72A230 -> OK (attempt 1)
+[ledger] 0x72a690 sub_72A690 -> OK (attempt 1)
+[ledger] 0x730760 sub_730760 -> OK (attempt 1)
+[ledger] 0x734620 sub_734620 -> OK (attempt 1)
+[ledger] 0x735370 sub_735370 -> OK (attempt 1)
+[ledger] 0x746ec0 sub_746EC0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 3,
+  "MATCH": 17
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p156\batch_report.json
