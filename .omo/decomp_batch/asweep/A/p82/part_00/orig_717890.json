@@ -1,0 +1,11 @@
+{
+ "addr": "0x717890",
+ "name": "BuildingClass::SetSlot",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x717890",
+ "bytes_hex": "8b4424088b54240489948114080000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

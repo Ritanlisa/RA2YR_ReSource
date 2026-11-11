@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p82\part_00
+=== convert (20 addrs) ===
+[conv] 0x70d670 TechnoClass::DecCounter -> TechnoClass
+[conv] 0x710a90 sub_710A90 -> _addr_71
+[conv] 0x717890 BuildingClass::SetSlot -> BuildingClass
+[conv] 0x717fa0 sub_717FA0 -> _addr_71
+[conv] 0x71a370 sub_71A370 -> _addr_71
+[conv] 0x71b750 sub_71B750 -> _addr_71
+[conv] 0x71d540 sub_71D540 -> _addr_71
+[conv] 0x71e5c0 sub_71E5C0 -> _addr_71
+[conv] 0x7203e0 sub_7203E0 -> _addr_72
+[conv] 0x7215e0 sub_7215E0 -> _addr_72
+[conv] 0x725270 sub_725270 -> _addr_72
+[conv] 0x725f40 sub_725F40 -> _addr_72
+[conv] 0x726c20 sub_726C20 -> _addr_72
+[conv] 0x727f70 sub_727F70 -> _addr_72
+[conv] 0x7289a0 sub_7289A0 -> _addr_72
+[conv] 0x72a860 sub_72A860 -> _addr_72
+[conv] 0x72a9a0 sub_72A9A0 -> _addr_72
+[conv] 0x7345e0 sub_7345E0 -> _addr_73
+[conv] 0x735330 sub_735330 -> _addr_73
+[conv] 0x747090 sub_747090 -> _addr_74
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] _addr_71                 rc=0
+[era] BuildingClass            rc=0
+[era] _addr_72                 rc=2
+[era] _addr_73                 rc=2
+[era] _addr_74                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x70d670   MISMATCH         TechnoClass::DecCounter
+[diff] 0x710a90   MATCH            sub_710A90
+[diff] 0x717fa0   MATCH            sub_717FA0
+[diff] 0x71a370   MATCH            sub_71A370
+[diff] 0x71b750   MATCH            sub_71B750
+[diff] 0x71d540   MATCH            sub_71D540
+[diff] 0x71e5c0   MATCH            sub_71E5C0
+[diff] 0x717890   MATCH            BuildingClass::SetSlot
+[diff] 0x725270   MATCH            sub_725270
+[diff] 0x725f40   MATCH            sub_725F40
+[diff] 0x726c20   MATCH            sub_726C20
+[diff] 0x727f70   MATCH            sub_727F70
+[diff] 0x7289a0   MATCH            sub_7289A0
+[diff] 0x72a860   MATCH            sub_72A860
+[diff] 0x72a9a0   MISMATCH         sub_72A9A0
+[diff] 0x735330   MATCH            sub_735330
+[diff] 0x747090   MATCH            sub_747090
+[ledger] 0x70d670 TechnoClass::DecCounter -> NG (attempt 1)
+[ledger] 0x710a90 sub_710A90 -> OK (attempt 1)
+[ledger] 0x717890 BuildingClass::SetSlot -> OK (attempt 1)
+[ledger] 0x717fa0 sub_717FA0 -> OK (attempt 1)
+[ledger] 0x71a370 sub_71A370 -> OK (attempt 1)
+[ledger] 0x71b750 sub_71B750 -> OK (attempt 1)
+[ledger] 0x71d540 sub_71D540 -> OK (attempt 1)
+[ledger] 0x71e5c0 sub_71E5C0 -> OK (attempt 1)
+[ledger] 0x7203e0 sub_7203E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7215e0 sub_7215E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x725270 sub_725270 -> OK (attempt 1)
+[ledger] 0x725f40 sub_725F40 -> OK (attempt 1)
+[ledger] 0x726c20 sub_726C20 -> OK (attempt 1)
+[ledger] 0x727f70 sub_727F70 -> OK (attempt 1)
+[ledger] 0x7289a0 sub_7289A0 -> OK (attempt 1)
+[ledger] 0x72a860 sub_72A860 -> OK (attempt 1)
+[ledger] 0x72a9a0 sub_72A9A0 -> NG (attempt 1)
+[ledger] 0x7345e0 sub_7345E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x735330 sub_735330 -> OK (attempt 1)
+[ledger] 0x747090 sub_747090 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "MATCH": 15,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 88.2,
+ "match_rate_of_total_pct": 75.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p82\batch_report.json

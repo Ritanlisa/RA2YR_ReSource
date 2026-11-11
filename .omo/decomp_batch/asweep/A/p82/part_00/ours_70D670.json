@@ -1,0 +1,15 @@
+{
+ "symbol": "?DecCounter@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::DecCounter",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "51568bf1d986fc020000e80000000085c07e0f4889442404db442404d99efc0200005e59c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}
