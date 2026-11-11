@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_71C8E0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::sub_71C8E0",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "518a81cd00000084c07537c681cd00000001a1000000008981b40000008b442400ba020000008981b80000008991c00000008991bc000000c781ac0000000000000059c20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

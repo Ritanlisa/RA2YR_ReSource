@@ -1,0 +1,11 @@
+{
+ "addr": "0x7694C0",
+ "name": "Map_Load_7694C0",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7694C0",
+ "bytes_hex": "83ec0833c0568b71083bf07e198b0199f7fe894424048b410499f7fe8d4c240489442408eb0c89442404894424088d4c24048b4424108b118b49045e891089480483c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

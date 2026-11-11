@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorClass_V_rc_ptr_VConflict_WorldDominationTour@@QAEDH@Z",
+ "sym_key": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour::AddRef",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "53568b7108578b7c24103b7708753633d285f67f085f5eb0015bc204008b41048b4f0483c00483c1048b388b193bfb75144283c0083bd67ddc8b388b590883c1083bfb74ec5f5e32c05bc20400",
+ "relocs": []
+}

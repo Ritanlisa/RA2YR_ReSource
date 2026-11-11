@@ -1,0 +1,11 @@
+{
+ "addr": "0x402800",
+ "name": "AudioStream::CheckFormatChanged",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x402800",
+ "bytes_hex": "8bc15355568d987c01000057b9080000008bfb8bf233edf3a7750d89a89c0100005f8bc55e5d5bc3b9080000008bf28bfbc7809c010000010000008b809c010000f3a55f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

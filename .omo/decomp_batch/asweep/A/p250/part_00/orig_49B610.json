@@ -1,0 +1,11 @@
+{
+ "addr": "0x49B610",
+ "name": "MissionClass::Init",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49B610",
+ "bytes_hex": "8bc1bafeffffff33c989501489503089501889503483caff880888481c89483c89504488486c89484089503889484889484c89485089485489485889485c894868894860894864c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

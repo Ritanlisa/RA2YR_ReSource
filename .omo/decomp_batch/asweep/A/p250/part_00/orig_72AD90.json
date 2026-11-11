@@ -1,0 +1,11 @@
+{
+ "addr": "0x72AD90",
+ "name": "SidebarClass::calcSidebarRect",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72AD90",
+ "bytes_hex": "8b1584eba800538a1d7ceba800568b3588eba8008bc15733c933ff84db750f8a1d6beda80084db7505b9a80000008bd881eaa800000083ee20890b897b045f89530889730c5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

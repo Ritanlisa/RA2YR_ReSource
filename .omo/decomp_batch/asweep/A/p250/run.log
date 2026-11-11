@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p250\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f2440 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Read -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x71c8e0 ObjectClass::sub_71C8E0 -> ObjectClass
+[conv] 0x7657f0 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::AddRef -> _VectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766bc0 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::AddRef -> _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x769de0 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::AddRef -> _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76b870 _VectorClass_V_rc_ptr_VWDTTerritory::AddRef -> _VectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x410170 AbstractClass::Constructor -> AbstractClass
+[conv] 0x491590 ?$BlitTransZRemapXlat@E::readFactoryINI -> __BlitTransZRemapXlat_E
+[conv] 0x5f3350 String::NormalizeNewlines -> String
+[conv] 0x6cfd60 sub_6CFD60 -> _addr_6C
+[conv] 0x7694c0 ObjectClass::Map_Load_7694C0 -> ObjectClass
+[conv] 0x7c04e0 Audio_Process_7C04E0 -> Audio_Process
+[conv] 0x402800 AudioStream::CheckFormatChanged -> AudioStream
+[conv] 0x42ead0 ObjectClass::sub_42EAD0 -> ObjectClass
+[conv] 0x49b610 MissionClass::Init -> MissionClass
+[conv] 0x6b0a90 ObjectClass::sub_6B0A90 -> ObjectClass
+[conv] 0x72ad90 SidebarClass::calcSidebarRect -> SidebarClass
+[conv] 0x74cd60 ObjectClass::processDeath -> ObjectClass
+[conv] 0x478470 _VectorClass_VRGBClass::Read -> _VectorClass_VRGBClass
+[conv] 0x54a9e0 ObjectClass::sub_54A9E0 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=2
+[era] ObjectClass              rc=2
+[era] _VectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VWDTTerritory rc=0
+[era] AbstractClass            rc=2
+[era] __BlitTransZRemapXlat_E  rc=0
+[era] String                   rc=2
+[era] _addr_6C                 rc=2
+[era] Audio_Process            rc=2
+[era] AudioStream              rc=0
+[era] MissionClass             rc=0
+[era] SidebarClass             rc=0
+[era] _VectorClass_VRGBClass   rc=2
+=== diffasm byte-compare ===
+[diff] 0x71c8e0   MISMATCH         ObjectClass::sub_71C8E0
+[diff] 0x7694c0   MISMATCH         ObjectClass::Map_Load_7694C0
+[diff] 0x6b0a90   MISMATCH         ObjectClass::sub_6B0A90
+[diff] 0x7657f0   MISMATCH         _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::AddRef
+[diff] 0x766bc0   MISMATCH         _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::AddRef
+[diff] 0x769de0   MISMATCH         _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::AddRef
+[diff] 0x76b870   MISMATCH         _VectorClass_V_rc_ptr_VWDTTerritory::AddRef
+[diff] 0x491590   MISMATCH         ?$BlitTransZRemapXlat@E::readFactoryINI
+[diff] 0x402800   MISMATCH         AudioStream::CheckFormatChanged
+[diff] 0x49b610   MISMATCH         MissionClass::Init
+[diff] 0x72ad90   MISMATCH         SidebarClass::calcSidebarRect
+[ledger] 0x6f2440 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71c8e0 ObjectClass::sub_71C8E0 -> NG (attempt 1)
+[ledger] 0x7657f0 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::AddRef -> NG (attempt 1)
+[ledger] 0x766bc0 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::AddRef -> NG (attempt 1)
+[ledger] 0x769de0 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::AddRef -> NG (attempt 1)
+[ledger] 0x76b870 _VectorClass_V_rc_ptr_VWDTTerritory::AddRef -> NG (attempt 1)
+[ledger] 0x410170 AbstractClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x491590 ?$BlitTransZRemapXlat@E::readFactoryINI -> NG (attempt 1)
+[ledger] 0x5f3350 String::NormalizeNewlines -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cfd60 sub_6CFD60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7694c0 ObjectClass::Map_Load_7694C0 -> NG (attempt 1)
+[ledger] 0x7c04e0 Audio_Process_7C04E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x402800 AudioStream::CheckFormatChanged -> NG (attempt 1)
+[ledger] 0x42ead0 ObjectClass::sub_42EAD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49b610 MissionClass::Init -> NG (attempt 1)
+[ledger] 0x6b0a90 ObjectClass::sub_6B0A90 -> NG (attempt 1)
+[ledger] 0x72ad90 SidebarClass::calcSidebarRect -> NG (attempt 1)
+[ledger] 0x74cd60 ObjectClass::processDeath -> COMPILE_FAIL (attempt 1)
+[ledger] 0x478470 _VectorClass_VRGBClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a9e0 ObjectClass::sub_54A9E0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 11
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "codegen_shape": 8,
+  "regalloc": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p250\batch_report.json

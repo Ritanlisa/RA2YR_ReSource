@@ -1,0 +1,21 @@
+{
+ "symbol": "?calcSidebarRect@SidebarClass@@QAEPAHXZ",
+ "sym_key": "SidebarClass::calcSidebarRect",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "8b15000000008bc15633f68a4a1f84c9750f8a0d8701000084c97505bea80000000fbe4a210fbe522281e9a800000083ea208930c740040000000089480889500c5ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3PADA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3PADA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

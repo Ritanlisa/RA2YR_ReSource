@@ -1,0 +1,11 @@
+{
+ "addr": "0x491590",
+ "name": "AbstractClass::readFactoryINI",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x491590",
+ "bytes_hex": "8b4104578b388b44241085c07e358b5424085355568b7424188be88a064684c08844241c74168b44241c25ff00000033db8a1c388b41088a04038802424d75db5e5d5b5fc22000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x76B870",
+ "name": "VectorClass_rc_ptr_WDTTerritory::AddRef",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76B870",
+ "bytes_hex": "8b44240453568b71088b5008573bf2752d33d285f67e1f8b49048b400483c10483c0048b398b183bfb75134283c00883c1083bd67ced5f5eb0015bc204005f5e32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

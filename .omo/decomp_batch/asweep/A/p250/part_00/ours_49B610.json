@@ -1,0 +1,8 @@
+{
+ "symbol": "?Init@MissionClass@@QAEPAV1@XZ",
+ "sym_key": "MissionClass::Init",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "8bc183caffb9feffffff8948148948308948188948348b0889504480e100895038890833c988481c89483c88486c89484089484889484c89485089485489485889485c894868894860894864c3",
+ "relocs": []
+}

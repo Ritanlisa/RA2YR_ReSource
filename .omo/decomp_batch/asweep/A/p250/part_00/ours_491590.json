@@ -1,0 +1,8 @@
+{
+ "symbol": "?readFactoryINI@__BlitTransZRemapXlat_E@@QAEEPAE0HHHHHH@Z",
+ "sym_key": "__BlitTransZRemapXlat_E::readFactoryINI",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "8b4104568b308b44241085c07e358b5424085355578b7c24188be88a074784c08844241c74168b44241c25ff00000033db8a1c308b41088a04038802424d75db5f5d5b5ec22000",
+ "relocs": []
+}

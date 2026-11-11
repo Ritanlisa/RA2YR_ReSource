@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckFormatChanged@AudioStream@@QAIHHPBX@Z",
+ "sym_key": "AudioStream::CheckFormatChanged",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "538b5c240855568d827c01000057b9080000008bf88bf333edf3a7750f5f89aa9c0100005e5d33c05bc20400b9080000008bf38bf8c7829c01000001000000f3a55f5e5db8010000005bc20400",
+ "relocs": []
+}
