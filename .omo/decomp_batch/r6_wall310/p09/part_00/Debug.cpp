@@ -6,31 +6,31 @@
 char Debug::ScrollText(const char * p0)
 {
         char result = ((g_MissionQueueFrame.localVariables[493] >> 16) & 0xFF);
-        char * v4;
-        char * v5;
+        int v4;
+        int v5;
         int v6;
         int v7;
         int v8;
         const char * v9;
-        char * v10;
+        int v10;
         unsigned int * v11;
         char * v12;
-        char * v13;
+        int v13;
         const char * i;
         char v15;
         if ( ((g_MissionQueueFrame.localVariables[493] >> 16) & 0xFF) )
         {
-            v4 = (char *)this ->m2724;
-            v5 = (char *)this ->m271C + v4;
-            v13 = (char *)this ->m2720 + (char *)this ->m2728;
-            v6 = (unsigned int)(v4 + (char *)this ->m272C);
-            (char *)this ->m2734 = 0;
-            v7 = (unsigned int)(v5 + strlen((char *)(p0)));
+            v4 = (unsigned int)(this->m2724);
+            v5 = (unsigned int)(this->m271C + v4);
+            v13 = (unsigned int)(this->m2720 + this->m2728);
+            v6 = v4 + this->m272C;
+            this->m2734 = 0;
+            v7 = v5 + strlen((char *)(p0));
             if ( v7 > v6 )
             {
                 v7 = v6;
             }
-            v8 = (unsigned int)(v5);
+            v8 = v5;
             if ( v5 < v7 )
             {
                 v12 = (char *)((char *)this + v13 + 20 * v5 + 5 * v5);
@@ -40,16 +40,16 @@ char Debug::ScrollText(const char * p0)
                 {
                     v15 = v9[v8];
                     *v12 = Debug_Helper(v15);
-                    *v11 = (unsigned int)((char *)this ->m2710);
+                    *v11 = (unsigned int)(this->m2710);
                     if ( v15 == 10 )
                     {
-                        v10 = (char *)this ->m2720;
-                        (char *)this ->m271C = 0;
-                        (char *)this ->m2720 = (unsigned int)(v10 + 1);
+                        v10 = (unsigned int)(this->m2720);
+                        this->m271C = 0;
+                        this->m2720 = v10 + 1;
                     }
                     else
                     {
-                        ++(char *)this ->m271C;
+                        ++this->m271C;
                     }
                     ++v8;
                     v11 += 25;

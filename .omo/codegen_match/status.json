@@ -3689,7 +3689,7 @@
   "status": "NG"
  },
  "0x5aced0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 push ecx",
   "name": "MSEngine::SetCapacity",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -3878,7 +3878,7 @@
   "status": "OK"
  },
  "0x5b4270": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HashTree::MarkEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3892,7 +3892,7 @@
   "status": "OK"
  },
  "0x5bd0d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Debug::ScrollText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3955,7 +3955,7 @@
   "status": "NG"
  },
  "0x5c2de0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MPCooperative::selectTeam",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3990,35 +3990,35 @@
   "status": "COMPILE_FAIL"
  },
  "0x5cbb80": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MSOverlayAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cc110": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ScenarioClass::DrawConstructionFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cc550": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ScenarioClass::DrawPlacementPreview",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cc970": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MSBinkAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cd0e0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MSVQAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4039,21 +4039,21 @@
   "status": "OK"
  },
  "0x5cd410": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MSBitPrintAnim::SetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cd4d0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "MSBitPrintAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5ce8c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MSPCXAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4067,7 +4067,7 @@
   "status": "OK"
  },
  "0x5d4b20": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "WideString::WordWrap",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4116,7 +4116,7 @@
   "status": "OK"
  },
  "0x5d74a0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "HouseClass::InitAlliances",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4130,21 +4130,21 @@
   "status": "NG"
  },
  "0x5e2be0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Network::CountDisconnectedHouses",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5e84d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 sub esp, 0x104",
   "name": "GameConfig::ComputeCRC",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x5e9290": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "NetworkLobby::CheckLobbyConditions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4186,7 +4186,7 @@
   "status": "OK"
  },
  "0x5f4730": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ObjectClass::GetPlacementScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4200,7 +4200,7 @@
   "status": "OK"
  },
  "0x5f5fa0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ObjectClass::SetZ",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4214,7 +4214,7 @@
   "status": "NG"
  },
  "0x5f6a70": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ObjectClass::CheckGroundHeightDiff",
   "note": "decomp_batch r2: COMPILE_FAIL",
