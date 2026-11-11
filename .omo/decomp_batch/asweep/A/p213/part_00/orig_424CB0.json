@@ -1,0 +1,11 @@
+{
+ "addr": "0x424CB0",
+ "name": "AnimClass::InWhichLayer_AttachedObjectLayer",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x424CB0",
+ "bytes_hex": "8b81cc00000085c07406b802000000c38b81c800000085c074078b8064030000c3b803000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

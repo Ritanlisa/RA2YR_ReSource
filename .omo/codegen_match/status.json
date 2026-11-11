@@ -5694,6 +5694,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x424cb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+26 mov eax, dword ptr [eax + 0x364]",
+  "name": "AnimClass::InWhichLayer_AttachedObjectLayer",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "AnimClass::InWhichLayer_AttachedObjectLayer",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x425260": {
   "attempts": 5,
   "first_diff": null,
@@ -50623,6 +50635,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6b1900": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVSlaveManagerClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SlaveManagerClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6b1930": {
   "attempts": 1,
   "first_diff": null,
@@ -51394,6 +51418,18 @@
   "orig_name": "VectorClass_ptr_SpawnManagerClass::GetCapacity",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6b8710": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVSpawnManagerClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SpawnManagerClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6b88d0": {
@@ -53748,6 +53784,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c6450": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_K::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_K::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c64d0": {
   "attempts": 1,
   "first_diff": null,
@@ -54271,6 +54319,18 @@
   "orig_name": "VectorClass_ptr_SubTitle::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6ca910": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVSubTitle::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SubTitle::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6cab30": {
@@ -54832,6 +54892,18 @@
   "name": "SwizzleManagerClass_19::Add",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x6cf820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_VSwizzlePointerClass::FindItem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SwizzleManagerClass_19::FindItem",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6cf990": {
   "attempts": 1,
@@ -55505,6 +55577,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x6dcc00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVShadowControlClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_UDirtyAreaStruct::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6dcda0": {
   "attempts": 1,
   "clean": false,
@@ -55791,6 +55875,18 @@
   "orig_name": "Tactical_42::InitMap",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e4a80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Tactical::FindItem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Tactical_42::FindItem",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6e4b80": {
@@ -56199,6 +56295,18 @@
   "orig_name": "VectorClass_ptr_TagTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e6770": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVTagTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TagTypeClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6e6870": {
@@ -58664,6 +58772,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x71b4d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVTemporalClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TemporalClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x71b5d0": {
   "attempts": 1,
   "clean": false,
@@ -59431,6 +59551,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7213b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAUThemeControl::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ThemeControl::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x721460": {
   "attempts": 2,
   "first_diff": null,
@@ -59626,6 +59758,18 @@
   "orig_name": "VectorClass_ptr_TiberiumClass::GetCapacity",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7239c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVTiberiumClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TiberiumClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x723ac0": {
@@ -59941,6 +60085,18 @@
   "orig_name": "ToolTipClass::setString",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x724ec0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PBVToolTip::read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ToolTipClass::read",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x724f90": {
@@ -64112,6 +64268,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x751b60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVVocClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VocClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x751ea0": {
   "attempts": 1,
   "first_diff": null,
@@ -64352,6 +64520,18 @@
   "orig_name": "VectorClass_ptr_VoxClass::GetCapacity",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7538e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVVoxClass::getItemWithIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VoxClass_Vector::getItemWithIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7539b0": {
@@ -65041,6 +65221,18 @@
   "name": "VectorClass_ptr_MovieHandle::SetCapacity",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x75a6c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVMovieHandle::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_MovieHandle::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x75a7d0": {
   "attempts": 1,
@@ -65846,6 +66038,18 @@
   "name": "VectorClass_ptr_WaypointPathClass::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x764690": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVWaypointPathClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_WaypointPathClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x764810": {
   "attempts": 2,
@@ -66812,6 +67016,18 @@
   "orig_name": "Map_WorldDominationTour_28::Write",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x76a360": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::resetAnimation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MSFrameAnim::resetAnimation",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x76a390": {
@@ -70372,6 +70588,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7b2ad0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::initSession",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "IPXInterfaceClass::initSession",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7b2bd0": {
   "attempts": 1,
   "clean": false,
@@ -70569,6 +70797,18 @@
   "orig_name": "VectorClass_PAE::GetCapacity",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7b4550": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAE::sendPacket",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UDPInterfaceClass::sendPacket",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7b4620": {

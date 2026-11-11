@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p213\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b1900 _DynamicVectorClass_PAVSlaveManagerClass::FindItemIndex -> _DynamicVectorClass_PAVSlaveManagerClass
+[conv] 0x6b8710 _DynamicVectorClass_PAVSpawnManagerClass::FindItemIndex -> _DynamicVectorClass_PAVSpawnManagerClass
+[conv] 0x6c6450 _DynamicVectorClass_K::FindItemIndex -> _DynamicVectorClass_K
+[conv] 0x6ca910 _DynamicVectorClass_PAVSubTitle::FindItemIndex -> _DynamicVectorClass_PAVSubTitle
+[conv] 0x6cf820 _DynamicVectorClass_VSwizzlePointerClass::FindItem -> _DynamicVectorClass_VSwizzlePointerClass
+[conv] 0x6dcc00 _DynamicVectorClass_PAVShadowControlClass::FindItemIndex_0 -> _DynamicVectorClass_PAVShadowControlClass
+[conv] 0x6e4a80 Tactical::FindItem -> Tactical
+[conv] 0x6e6770 _DynamicVectorClass_PAVTagTypeClass::FindItemIndex -> _DynamicVectorClass_PAVTagTypeClass
+[conv] 0x71b4d0 _DynamicVectorClass_PAVTemporalClass::FindItemIndex -> _DynamicVectorClass_PAVTemporalClass
+[conv] 0x7213b0 _DynamicVectorClass_PAUThemeControl::FindItemIndex -> _DynamicVectorClass_PAUThemeControl
+[conv] 0x7239c0 _DynamicVectorClass_PAVTiberiumClass::FindItemIndex -> _DynamicVectorClass_PAVTiberiumClass
+[conv] 0x724ec0 _DynamicVectorClass_PBVToolTip::read -> _DynamicVectorClass_PBVToolTip
+[conv] 0x751b60 _DynamicVectorClass_PAVVocClass::FindItemIndex -> _DynamicVectorClass_PAVVocClass
+[conv] 0x7538e0 _DynamicVectorClass_PAVVoxClass::getItemWithIndex -> _DynamicVectorClass_PAVVoxClass
+[conv] 0x75a6c0 _DynamicVectorClass_PAVMovieHandle::FindItemIndex -> _DynamicVectorClass_PAVMovieHandle
+[conv] 0x764690 _DynamicVectorClass_PAVWaypointPathClass::FindItemIndex -> _DynamicVectorClass_PAVWaypointPathClass
+[conv] 0x76a360 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::resetAnimation -> _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x7b2ad0 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::initSession -> _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b4550 _DynamicVectorClass_PAE::sendPacket -> _DynamicVectorClass_PAE
+[conv] 0x424cb0 AnimClass::InWhichLayer_AttachedObjectLayer -> AnimClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVSlaveManagerClass rc=2
+[era] _DynamicVectorClass_PAVSpawnManagerClass rc=2
+[era] _DynamicVectorClass_K    rc=2
+[era] _DynamicVectorClass_PAVSubTitle rc=2
+[era] _DynamicVectorClass_VSwizzlePointerClass rc=2
+[era] _DynamicVectorClass_PAVShadowControlClass rc=2
+[era] Tactical                 rc=2
+[era] _DynamicVectorClass_PAVTagTypeClass rc=2
+[era] _DynamicVectorClass_PAVTemporalClass rc=2
+[era] _DynamicVectorClass_PAUThemeControl rc=2
+[era] _DynamicVectorClass_PAVTiberiumClass rc=2
+[era] _DynamicVectorClass_PBVToolTip rc=2
+[era] _DynamicVectorClass_PAVVocClass rc=2
+[era] _DynamicVectorClass_PAVVoxClass rc=2
+[era] _DynamicVectorClass_PAVMovieHandle rc=2
+[era] _DynamicVectorClass_PAVWaypointPathClass rc=2
+[era] _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=2
+[era] _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=2
+[era] _DynamicVectorClass_PAE  rc=2
+[era] AnimClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x424cb0   MISMATCH         AnimClass::InWhichLayer_AttachedObjectLayer
+[ledger] 0x6b1900 _DynamicVectorClass_PAVSlaveManagerClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8710 _DynamicVectorClass_PAVSpawnManagerClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c6450 _DynamicVectorClass_K::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ca910 _DynamicVectorClass_PAVSubTitle::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf820 _DynamicVectorClass_VSwizzlePointerClass::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dcc00 _DynamicVectorClass_PAVShadowControlClass::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e4a80 Tactical::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e6770 _DynamicVectorClass_PAVTagTypeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71b4d0 _DynamicVectorClass_PAVTemporalClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7213b0 _DynamicVectorClass_PAUThemeControl::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7239c0 _DynamicVectorClass_PAVTiberiumClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x724ec0 _DynamicVectorClass_PBVToolTip::read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x751b60 _DynamicVectorClass_PAVVocClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7538e0 _DynamicVectorClass_PAVVoxClass::getItemWithIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75a6c0 _DynamicVectorClass_PAVMovieHandle::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x764690 _DynamicVectorClass_PAVWaypointPathClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76a360 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::resetAnimation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b2ad0 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::initSession -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4550 _DynamicVectorClass_PAE::sendPacket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x424cb0 AnimClass::InWhichLayer_AttachedObjectLayer -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p213\batch_report.json
