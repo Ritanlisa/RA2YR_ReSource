@@ -4200,11 +4200,11 @@
   "status": "OK"
  },
  "0x5f5fa0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+7 mov edi, dword ptr [esp + 0x18]",
   "name": "ObjectClass::SetZ",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x5f6560": {
   "attempts": 14,
@@ -4214,11 +4214,11 @@
   "status": "NG"
  },
  "0x5f6a70": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ObjectClass::CheckGroundHeightDiff",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
+  "status": "PENDING"
  },
  "0x5f7610": {
   "attempts": 5,
@@ -4228,7 +4228,7 @@
   "status": "OK"
  },
  "0x5f9710": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "ObjectTypeClass::SetRTTI71",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4305,14 +4305,14 @@
   "status": "OK"
  },
  "0x6234b0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SymbolTable::Rebuild",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x624130": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "OwnerDrawControl::InitVtable",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4333,7 +4333,7 @@
   "status": "OK"
  },
  "0x624be0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Dialog::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4375,7 +4375,7 @@
   "status": "NG"
  },
  "0x626690": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "FlagSystem::GetNextActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4431,14 +4431,14 @@
   "status": "OK"
  },
  "0x62e380": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ParticleSystemClass::CreateParticle",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x62e4c0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ParticleClass::CreateInstance",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4550,7 +4550,7 @@
   "status": "OK"
  },
  "0x636ce0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ScriptAction::ClearBuildingState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4564,7 +4564,7 @@
   "status": "OK"
  },
  "0x637060": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "TabClass::processTabInput",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4592,7 +4592,7 @@
   "status": "NG"
  },
  "0x6403a0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "PowerClass::getDrain",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4613,7 +4613,7 @@
   "status": "OK"
  },
  "0x644630": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "WarheadTypeClass::applyDamage",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4676,18 +4676,18 @@
   "status": "OK"
  },
  "0x652cf0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "RadarClass::Destru_vt05",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x653760": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+7 push esi",
   "name": "TacticalClass::PixelToCellCheck",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x655740": {
   "attempts": 4,
@@ -4697,7 +4697,7 @@
   "status": "NG"
  },
  "0x656cb0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "RadarClass::SetViewMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4725,7 +4725,7 @@
   "status": "NG"
  },
  "0x658de0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "RadarHashVector::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4746,7 +4746,7 @@
   "status": "NG"
  },
  "0x65aeb0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RadioClass::ProcessEvent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4774,11 +4774,11 @@
   "status": "OK"
  },
  "0x65b800": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "RadSiteClass::Tick",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x65c320": {
   "attempts": 5,
@@ -4823,7 +4823,7 @@
   "status": "NG"
  },
  "0x65d660": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ReferenceCounted::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",

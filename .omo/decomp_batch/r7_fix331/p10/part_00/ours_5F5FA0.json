@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetZ@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::SetZ",
+ "size": 143,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf1578b7c24088b868c00000085c07407a10000000003f88b467485c0744a8b0e6a0056ff91240100008b969c0000008d442408508954240ce800000000996a01508d0c388b3e89542418898ea4000000e80000000083c4048bd08bceff97240100005f5e83c40cc38b969c0000008d442408508954240ce80000000003c75f8986a40000005e83c40cc3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC13BC@@3IA",
+   "sym_key": "DataGlobal_AC13BC"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "?Cell__GetGroundHeight@@YGHPAX@Z"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?HIDWORD@@YAHHZZ",
+   "sym_key": "HIDWORD"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "?Cell__GetGroundHeight@@YGHPAX@Z"
+  }
+ ]
+}

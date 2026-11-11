@@ -1,0 +1,57 @@
+{
+ "symbol": "?PixelToCellCheck@RadarClass@@QAGPAIPAH0@Z",
+ "sym_key": "RadarClass::PixelToCellCheck",
+ "size": 132,
+ "link_base": 0,
+ "bytes_hex": "83ec148b44241c8d5424088b48048b00894c24048d4c2400518b0d000000005289442408e8000000008b088b15000000003bca752c8b50048b0d000000003bd1751f8b40088b0d000000003bc175128b4424188b0d00000000890883c414c20c008b0d000000008d5424008d44241c5250e8000000008b088b442418890883c414c20c00",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?TransformPixel@TacticalClass@@QAEPAIPAX0@Z",
+   "sym_key": "TacticalClass::TransformPixel"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04900@@3IA",
+   "sym_key": "DataGlobal_B04900"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04904@@3IA",
+   "sym_key": "DataGlobal_B04904"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04908@@3IA",
+   "sym_key": "DataGlobal_B04908"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B048C0@@3IA",
+   "sym_key": "DataGlobal_B048C0"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?PixelToCell@Tactical@@QAEPAIPAX0@Z",
+   "sym_key": "Tactical::PixelToCell"
+  }
+ ]
+}

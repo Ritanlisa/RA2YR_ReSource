@@ -1,0 +1,57 @@
+{
+ "symbol": "?Tick@RadSiteClass@@QAEHXZ",
+ "sym_key": "RadSiteClass::Tick",
+ "size": 228,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1578b5e708b46288b56304b895e708b0da001000083f8ff740c8bf92bf83bfa73082bc103d085d2752b8bcee800000000a1400200008b0da00100008b54240c8b8010180000894e2889562c8946308b0da00100008b56348b463c83faff74082bca3bc87d062bc185c0755c8b7e708b46600fafc78b5e6c33d2f7f38b4e5c556a0033d28b6e24508bc10fafc7f7f333d2508b46580fafc7f7f3508b45242bc18bcd50e8000000008b0d400200008b15a00100005d8b81141800008b4c240c895634894e3889463c8b467085c07f0c85f674088b166a0156ff52205f5e5b59c3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?RadSiteClass__DecreaseRadiation@@YIHPAX@Z",
+   "sym_key": "?RadSiteClass__DecreaseRadiation@@YIHPAX@Z"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?UpdateScrollTarget@TacticalClass@@QAEDHHHHD@Z",
+   "sym_key": "TacticalClass::UpdateScrollTarget"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  }
+ ]
+}
