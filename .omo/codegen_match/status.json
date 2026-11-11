@@ -973,7 +973,7 @@
   "status": "NG"
  },
  "0x468430": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BulletClass::LoseTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1134,7 +1134,7 @@
   "status": "NG"
  },
  "0x4756f0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "HouseTypeClass::loadCountryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1190,7 +1190,7 @@
   "status": "NG"
  },
  "0x477740": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "VtableStub::Method_477740",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1218,14 +1218,14 @@
   "status": "NG"
  },
  "0x47d210": {
-  "attempts": 14,
+  "attempts": 15,
   "first_diff": null,
   "name": "CellClass::SetWallOwner",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x47ff80": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "CellClass::GetScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1246,7 +1246,7 @@
   "status": "NG"
  },
  "0x484050": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Tactical::CreateTacticalLightSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1309,7 +1309,7 @@
   "status": "NG"
  },
  "0x486ff0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Cell::IsBuildableAdvanced",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1344,7 +1344,7 @@
   "status": "OK"
  },
  "0x487f40": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Rect::Union",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1379,7 +1379,7 @@
   "status": "NG"
  },
  "0x48b410": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ConnectionClass::queueSendPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1421,7 +1421,7 @@
   "status": "OK"
  },
  "0x48bf40": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "ConnectionClass::sendAck",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1519,28 +1519,28 @@
   "status": "NG"
  },
  "0x494d90": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x494f20": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4950c0": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495250": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1554,7 +1554,7 @@
   "status": "NG"
  },
  "0x495590": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1568,7 +1568,7 @@
   "status": "NG"
  },
  "0x4958d0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1638,21 +1638,21 @@
   "status": "NG"
  },
  "0x497b80": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497cf0": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497e60": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1687,7 +1687,7 @@
   "status": "NG"
  },
  "0x4986d0": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
