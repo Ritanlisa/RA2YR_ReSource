@@ -1,0 +1,52 @@
+[
+ {
+  "addr": "0x550000",
+  "name": "Game::loadCampaignData",
+  "cls": null,
+  "size": 116,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4756f0",
+  "name": "HouseTypeClass::loadCountryData",
+  "cls": null,
+  "size": 162,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.barrelFacing' must have class/struct/union type"
+ },
+ {
+  "addr": "0x42e1c0",
+  "name": "RenderTooltipBorder",
+  "cls": null,
+  "size": 591,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x453e20",
+  "name": "BuildingClass::LoadFromStream",
+  "cls": null,
+  "size": 870,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Dequeue' : cannot convert parameter 1 from 'int *' to 'int'"
+ },
+ {
+  "addr": "0x484180",
+  "name": "Tactical::CalculateTacticalLighting",
+  "cls": null,
+  "size": 1272,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ }
+]

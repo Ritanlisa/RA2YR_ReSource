@@ -1,0 +1,42 @@
+[
+ {
+  "addr": "0x439080",
+  "name": "TechnoClass::checkRange",
+  "cls": null,
+  "size": 71,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x448160",
+  "name": "FootClass::ProcessPrimarySelect",
+  "cls": null,
+  "size": 251,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x420e90",
+  "name": "AirstrikeClass::UpdateAll",
+  "cls": null,
+  "size": 170,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'unsigned int *'"
+ },
+ {
+  "addr": "0x42a5b0",
+  "family": "cw3_extra",
+  "name": "0x42a5b0"
+ },
+ {
+  "addr": "0x480510",
+  "family": "cw3_extra",
+  "name": "0x480510"
+ }
+]

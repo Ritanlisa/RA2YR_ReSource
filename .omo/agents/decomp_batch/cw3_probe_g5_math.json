@@ -1,0 +1,52 @@
+[
+ {
+  "addr": "0x40f410",
+  "name": "sub_40F410",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x427490",
+  "name": "sub_427490",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x40db70",
+  "name": "sub_40DB70",
+  "cls": null,
+  "size": 49,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x41c380",
+  "name": "Coord::Length",
+  "cls": null,
+  "size": 49,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x7760b0",
+  "name": "Render_Render_7760B0",
+  "cls": null,
+  "size": 350,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'tmAveCharWidth' : is not a member of 'tagTEXTMETRICA'"
+ }
+]

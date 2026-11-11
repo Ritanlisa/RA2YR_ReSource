@@ -1,0 +1,52 @@
+[
+ {
+  "addr": "0x40bc60",
+  "name": "VectorClass_BombClass::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVTechnoClass'"
+ },
+ {
+  "addr": "0x40d850",
+  "name": "MouseClass::applyCursorSettings",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAVMixFileClass'"
+ },
+ {
+  "addr": "0x420630",
+  "name": "AITriggerTypeClass_40::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVAlphaLightingRemapClass'"
+ },
+ {
+  "addr": "0x49fce0",
+  "name": "CounterClass::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x477be0",
+  "name": "VectorClass::Construct",
+  "cls": null,
+  "size": 74,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2275",
+  "first_msg": "'VectorClass' : illegal use of this type as an expression"
+ }
+]

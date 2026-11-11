@@ -1,0 +1,52 @@
+[
+ {
+  "addr": "0x5c21a0",
+  "name": "MPCooperative::CheckReady",
+  "cls": null,
+  "size": 44,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x5550c0",
+  "name": "LightSourceClass::Write",
+  "cls": null,
+  "size": 69,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x69d960",
+  "name": "SHA1::Process",
+  "cls": null,
+  "size": 121,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'SHA1__Transform' : cannot convert parameter 1 from 'int *' to 'int'"
+ },
+ {
+  "addr": "0x4a7b90",
+  "name": "DiskLaserClass::Write",
+  "cls": null,
+  "size": 115,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x438b40",
+  "name": "BombClass::Write",
+  "cls": null,
+  "size": 130,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ }
+]

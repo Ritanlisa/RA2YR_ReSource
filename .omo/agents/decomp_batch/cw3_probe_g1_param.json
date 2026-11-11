@@ -1,0 +1,52 @@
+[
+ {
+  "addr": "0x491d90",
+  "name": "sub_491D90",
+  "cls": null,
+  "size": 202,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x42bca0",
+  "name": "sub_42BCA0",
+  "cls": null,
+  "size": 371,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x4cbba0",
+  "name": "FootClass::FindPathWithRetry",
+  "cls": null,
+  "size": 158,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'WalkPathClassPath' : cannot convert parameter 4 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x53fbd0",
+  "name": "IPXGlobalConnClass::Flush",
+  "cls": null,
+  "size": 210,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'queueSendPacket' : cannot convert parameter 1 from 'const void *' to 'void *'"
+ },
+ {
+  "addr": "0x4c9b20",
+  "name": "FactoryClass::UpdateProduction",
+  "cls": null,
+  "size": 290,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Locomotor__GetSpeed' : cannot convert parameter 1 from 'class Locomotor *' to 'int'"
+ }
+]
