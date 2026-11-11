@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@VectorClass@@QAEPAIHH@Z",
+ "sym_key": "VectorClass::Construct",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf133d23bc2895604894608c6460c0188560d891674248b4c240c3bca7409894e048bc65ec20800c1e00250e80000000083c404894604c6460d018bc65ec20800",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

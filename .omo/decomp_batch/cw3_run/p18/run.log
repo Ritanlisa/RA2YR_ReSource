@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x510310 _VectorClass_PBVTeamTypeClass::Constructor_0 -> _VectorClass_PBVTeamTypeClass
+[conv] 0x5135c0 _DynamicVectorClass_PBVAircraftTypeClass::Constructor_1 -> _DynamicVectorClass_PBVAircraftTypeClass
+[conv] 0x54a760 _DynamicVectorClass_PAG::Constructor -> _DynamicVectorClass_PAG
+[conv] 0x557170 _VectorClass_PAVLineTrail::QueryInterface -> _VectorClass_PAVLineTrail
+[conv] 0x58aae0 _DynamicVectorClass_W4PassabilityType::Constructor_1 -> _DynamicVectorClass_W4PassabilityType
+[conv] 0x5ad610 _DynamicVectorClass_N::Constructor_VectorClass_double_ -> _DynamicVectorClass_N
+[conv] 0x5d1710 _DynamicVectorClass_VPoint2D::Constructor_VectorClass_Point2D_ -> _DynamicVectorClass_VPoint2D
+[conv] 0x5d2ca0 _VectorClass_PAVMSAnim::QueryInterface -> _VectorClass_PAVMSAnim
+[conv] 0x5d8900 _DynamicVectorClass_PAVMultiplayerGameMode::Destruct -> _DynamicVectorClass_PAVMultiplayerGameMode
+[conv] 0x6287b0 _DynamicVectorClass_VHSVClass::Destructor_2 -> _DynamicVectorClass_VHSVClass
+[conv] 0x63ee80 _DynamicVectorClass_PAVEventClass::Destructor_0 -> _DynamicVectorClass_PAVEventClass
+[conv] 0x664ac0 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::QueryInterface -> _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67c0b0 _VectorClass_PBVSmudgeTypeClass::QueryInterface -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x6b1930 VectorClass::checkAIResources -> VectorClass
+[conv] 0x6c64d0 _DynamicVectorClass_K::Constructor -> _DynamicVectorClass_K
+[conv] 0x717b70 _TypeList_PBVParticleSystemTypeClass::QueryInterface -> _TypeList_PBVParticleSystemTypeClass
+[conv] 0x74bfa0 _VectorClass_E::QueryInterface -> _VectorClass_E
+[conv] 0x76a720 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::setScale -> _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x477be0 VectorClass::Construct -> VectorClass
+[conv] 0x4f2c00 VectorClass::sub_4F2C00 -> VectorClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVTeamTypeClass rc=0
+[era] _DynamicVectorClass_PBVAircraftTypeClass rc=0
+[era] _DynamicVectorClass_PAG  rc=0
+[era] _VectorClass_PAVLineTrail rc=0
+[era] _DynamicVectorClass_W4PassabilityType rc=0
+[era] _DynamicVectorClass_N    rc=0
+[era] _DynamicVectorClass_VPoint2D rc=0
+[era] _VectorClass_PAVMSAnim   rc=0
+[era] _DynamicVectorClass_PAVMultiplayerGameMode rc=0
+[era] _DynamicVectorClass_VHSVClass rc=0
+[era] _DynamicVectorClass_PAVEventClass rc=0
+[era] _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _VectorClass_PBVSmudgeTypeClass rc=0
+[era] VectorClass              rc=2
+[era] _DynamicVectorClass_K    rc=0
+[era] _TypeList_PBVParticleSystemTypeClass rc=0
+[era] _VectorClass_E           rc=0
+[era] _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+=== diffasm byte-compare ===
+[diff] 0x510310   MISMATCH         _VectorClass_PBVTeamTypeClass::Constructor_0
+[diff] 0x5135c0   MISMATCH         _DynamicVectorClass_PBVAircraftTypeClass::Constructor_1
+[diff] 0x54a760   MISMATCH         _DynamicVectorClass_PAG::Constructor
+[diff] 0x557170   MISMATCH         _VectorClass_PAVLineTrail::QueryInterface
+[diff] 0x58aae0   MISMATCH         _DynamicVectorClass_W4PassabilityType::Constructor_1
+[diff] 0x5ad610   MISMATCH         _DynamicVectorClass_N::Constructor_VectorClass_double_
+[diff] 0x5d1710   MISMATCH         _DynamicVectorClass_VPoint2D::Constructor_VectorClass_Point2D_
+[diff] 0x5d2ca0   MISMATCH         _VectorClass_PAVMSAnim::QueryInterface
+[diff] 0x5d8900   MISMATCH         _DynamicVectorClass_PAVMultiplayerGameMode::Destruct
+[diff] 0x6287b0   MISMATCH         _DynamicVectorClass_VHSVClass::Destructor_2
+[diff] 0x63ee80   MISMATCH         _DynamicVectorClass_PAVEventClass::Destructor_0
+[diff] 0x664ac0   MISMATCH         _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::QueryInterface
+[diff] 0x67c0b0   MISMATCH         _VectorClass_PBVSmudgeTypeClass::QueryInterface
+[diff] 0x477be0   MISMATCH         VectorClass::Construct
+[diff] 0x4f2c00   MISMATCH         VectorClass::sub_4F2C00
+[diff] 0x6c64d0   MISMATCH         _DynamicVectorClass_K::Constructor
+[diff] 0x717b70   MISMATCH         _TypeList_PBVParticleSystemTypeClass::QueryInterface
+[diff] 0x74bfa0   MISMATCH         _VectorClass_E::QueryInterface
+[diff] 0x76a720   MISMATCH         _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::setScale
+[ledger] 0x510310 _VectorClass_PBVTeamTypeClass::Constructor_0 -> NG (attempt 2)
+[ledger] 0x5135c0 _DynamicVectorClass_PBVAircraftTypeClass::Constructor_1 -> NG (attempt 2)
+[ledger] 0x54a760 _DynamicVectorClass_PAG::Constructor -> NG (attempt 2)
+[ledger] 0x557170 _VectorClass_PAVLineTrail::QueryInterface -> NG (attempt 2)
+[ledger] 0x58aae0 _DynamicVectorClass_W4PassabilityType::Constructor_1 -> NG (attempt 2)
+[ledger] 0x5ad610 _DynamicVectorClass_N::Constructor_VectorClass_double_ -> NG (attempt 2)
+[ledger] 0x5d1710 _DynamicVectorClass_VPoint2D::Constructor_VectorClass_Point2D_ -> NG (attempt 2)
+[ledger] 0x5d2ca0 _VectorClass_PAVMSAnim::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d8900 _DynamicVectorClass_PAVMultiplayerGameMode::Destruct -> NG (attempt 2)
+[ledger] 0x6287b0 _DynamicVectorClass_VHSVClass::Destructor_2 -> NG (attempt 2)
+[ledger] 0x63ee80 _DynamicVectorClass_PAVEventClass::Destructor_0 -> NG (attempt 2)
+[ledger] 0x664ac0 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x67c0b0 _VectorClass_PBVSmudgeTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6b1930 VectorClass::checkAIResources -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c64d0 _DynamicVectorClass_K::Constructor -> NG (attempt 2)
+[ledger] 0x717b70 _TypeList_PBVParticleSystemTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x74bfa0 _VectorClass_E::QueryInterface -> NG (attempt 2)
+[ledger] 0x76a720 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::setScale -> NG (attempt 2)
+[ledger] 0x477be0 VectorClass::Construct -> NG (attempt 2)
+[ledger] 0x4f2c00 VectorClass::sub_4F2C00 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 17,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p18\batch_report.json

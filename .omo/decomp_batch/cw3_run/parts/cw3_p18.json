@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x510310",
+  "name": "VectorClass_BuildingType::Constructor_0",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PBVTeamTypeClass'"
+ },
+ {
+  "addr": "0x5135c0",
+  "name": "TypeList_Infantry::Constructor_1",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PBVAircraftTypeClass'"
+ },
+ {
+  "addr": "0x54a760",
+  "name": "IsometricTileTypeClass::Constructor",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAG'"
+ },
+ {
+  "addr": "0x557170",
+  "name": "VectorClass_ptr_LineTrail::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVLineTrail'"
+ },
+ {
+  "addr": "0x58aae0",
+  "name": "VectorClass_W4PassabilityType::Constructor_1",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_W4PassabilityType'"
+ },
+ {
+  "addr": "0x5ad610",
+  "name": "VectorClass_N::Constructor_VectorClass_double_",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_N'"
+ },
+ {
+  "addr": "0x5d1710",
+  "name": "MSPCXAnim_42::Constructor_VectorClass_Point2D_",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_VPoint2D'"
+ },
+ {
+  "addr": "0x5d2ca0",
+  "name": "CampaignProperties_WorldDominationTour_22::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVMSAnim'"
+ },
+ {
+  "addr": "0x5d8900",
+  "name": "MultiplayerModeVector2::Destruct",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAVMultiplayerGameMode'"
+ },
+ {
+  "addr": "0x6287b0",
+  "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_2",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_VHSVClass'"
+ },
+ {
+  "addr": "0x63ee80",
+  "name": "BlowPipe_23::Destructor_0",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAVEventClass'"
+ },
+ {
+  "addr": "0x664ac0",
+  "name": "RocketLocomotionClass_17::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAUConnect"
+ },
+ {
+  "addr": "0x67c0b0",
+  "name": "SmudgeTypeVector::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PBVSmudgeTypeClass'"
+ },
+ {
+  "addr": "0x6b1930",
+  "name": "AbstractClass::checkAIResources",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x6c64d0",
+  "name": "VectorClass_K::Constructor",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_K'"
+ },
+ {
+  "addr": "0x717b70",
+  "name": "TypeList_cptr_ParticleSystemTypeClass::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x74bfa0",
+  "name": "VectorClass_E::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_E'"
+ },
+ {
+  "addr": "0x76a720",
+  "name": "MSFrameAnim::setScale",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAUAn"
+ },
+ {
+  "addr": "0x477be0",
+  "name": "VectorClass::Construct",
+  "cls": null,
+  "size": 74,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2275",
+  "first_msg": "'VectorClass' : illegal use of this type as an expression"
+ },
+ {
+  "addr": "0x4f2c00",
+  "name": "sub_4F2C00",
+  "cls": null,
+  "size": 74,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2275",
+  "first_msg": "'VectorClass' : illegal use of this type as an expression"
+ }
+]
