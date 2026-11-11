@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CE280",
+ "name": "SuperClass::AdvanceCountdown",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CE280",
+ "bytes_hex": "568b3183feff742c8b410883feff741b8b1584eda8002bd63bd07d0d2bc2c701ffffffff8941085ec333c0894108c701ffffffff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

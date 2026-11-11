@@ -1,0 +1,11 @@
+{
+ "addr": "0x635DB0",
+ "name": "TeamClass::Reset",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x635DB0",
+ "bytes_hex": "8a4424045683ceff84c089b1b400000074208b513033c085d27e11578b7924403bc28b7c87fc8977747cf15f89b1ac0000005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

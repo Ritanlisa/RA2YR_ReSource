@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetEntry@SessionClass@@QAEPAIPAH@Z",
+ "sym_key": "SessionClass::GetEntry",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "8b512c83faff75108b4424048910c7400400000000c204008b49248b442404568bb4d1a400000089308b8cd1a80000008948045ec20400",
+ "relocs": []
+}

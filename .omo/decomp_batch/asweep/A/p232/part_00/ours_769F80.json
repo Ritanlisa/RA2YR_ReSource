@@ -1,0 +1,8 @@
+{
+ "symbol": "?Read@_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour@@QAEHH@Z",
+ "sym_key": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Read",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "8a410c5684c05775075f33c05ec204008b710833c085f67e258b49048b54240c83c1048b520439117417403bc67d0f8b790883c1083bfa75f15f5ec2040083c8ff5f5ec20400",
+ "relocs": []
+}

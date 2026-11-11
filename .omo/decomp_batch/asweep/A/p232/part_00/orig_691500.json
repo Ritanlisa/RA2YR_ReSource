@@ -1,0 +1,11 @@
+{
+ "addr": "0x691500",
+ "name": "SessionClass::GetEntry",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x691500",
+ "bytes_hex": "8b512c83faff75108b4424040bca33d28908895004c204008b49248b442404568bb4d1a400000089305e8b94d1a8000000895004c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

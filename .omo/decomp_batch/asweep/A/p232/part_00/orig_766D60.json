@@ -1,0 +1,11 @@
+{
+ "addr": "0x766D60",
+ "name": "Conflict_WorldDominationTour_12::Read",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x766D60",
+ "bytes_hex": "8a410c5684c0750633c05ec204008b510833c085d27e198b7424088b490483c1048b76043931740b4083c1083bc27cf483c8ff5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

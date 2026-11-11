@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p232\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d0aa0 _DynamicVectorClass_VPoint2D::FindIndex_Pair -> _DynamicVectorClass_VPoint2D
+[conv] 0x5d56a0 _DynamicVectorClass_UAcceleratorTracker::FindPair8 -> _DynamicVectorClass_UAcceleratorTracker
+[conv] 0x626250 ObjectClass::sub_626250 -> ObjectClass
+[conv] 0x635db0 TeamClass::Reset -> TeamClass
+[conv] 0x6ce280 SuperClass::AdvanceCountdown -> SuperClass
+[conv] 0x6ceeb0 SuperWeaponTypeClass::FindFirstOfAction -> SuperWeaponTypeClass
+[conv] 0x7b4100 UDPInterfaceClass::GetStatistics -> UDPInterfaceClass
+[conv] 0x5c6550 sub_5C6550 -> _addr_5C
+[conv] 0x4a1fb0 CRC32::Compute -> CRC32
+[conv] 0x4a48c0 sub_4A48C0 -> _addr_4A
+[conv] 0x53ed60 Network::GetAddress -> Network
+[conv] 0x540fc0 Network::GetClass -> Network
+[conv] 0x541000 Network::FindPlayerByID -> Network
+[conv] 0x691500 SessionClass::GetEntry -> SessionClass
+[conv] 0x765990 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Read -> _VectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766d60 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Read -> _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x769f80 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Read -> _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76ba10 _VectorClass_V_rc_ptr_VWDTTerritory::GetSize -> _VectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x7d67f9 ObjectClass::_fix_grouping -> ObjectClass
+[conv] 0x4e4fc0 ResetLobbyFactionTable -> _addr_4E
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_VPoint2D rc=2
+[era] _DynamicVectorClass_UAcceleratorTracker rc=2
+[era] ObjectClass              rc=0
+[era] TeamClass                rc=0
+[era] SuperClass               rc=0
+[era] SuperWeaponTypeClass     rc=0
+[era] UDPInterfaceClass        rc=0
+[era] _addr_5C                 rc=0
+[era] CRC32                    rc=2
+[era] _addr_4A                 rc=0
+[era] Network                  rc=2
+[era] SessionClass             rc=0
+[era] _VectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VWDTTerritory rc=0
+[era] _addr_4E                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x626250   MISMATCH         ObjectClass::sub_626250
+[diff] 0x635db0   MISMATCH         TeamClass::Reset
+[diff] 0x6ce280   MISMATCH         SuperClass::AdvanceCountdown
+[diff] 0x6ceeb0   MISMATCH         SuperWeaponTypeClass::FindFirstOfAction
+[diff] 0x7b4100   MISMATCH         UDPInterfaceClass::GetStatistics
+[diff] 0x5c6550   MISMATCH         sub_5C6550
+[diff] 0x4a48c0   MISMATCH         sub_4A48C0
+[diff] 0x53ed60   MISMATCH         Network::GetAddress
+[diff] 0x691500   MISMATCH         SessionClass::GetEntry
+[diff] 0x765990   MISMATCH         _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Read
+[diff] 0x766d60   MISMATCH         _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Read
+[diff] 0x769f80   MISMATCH         _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Read
+[diff] 0x76ba10   MISMATCH         _VectorClass_V_rc_ptr_VWDTTerritory::GetSize
+[diff] 0x4e4fc0   MISMATCH         ResetLobbyFactionTable
+[ledger] 0x5d0aa0 _DynamicVectorClass_VPoint2D::FindIndex_Pair -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d56a0 _DynamicVectorClass_UAcceleratorTracker::FindPair8 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x626250 ObjectClass::sub_626250 -> NG (attempt 1)
+[ledger] 0x635db0 TeamClass::Reset -> NG (attempt 1)
+[ledger] 0x6ce280 SuperClass::AdvanceCountdown -> NG (attempt 1)
+[ledger] 0x6ceeb0 SuperWeaponTypeClass::FindFirstOfAction -> NG (attempt 1)
+[ledger] 0x7b4100 UDPInterfaceClass::GetStatistics -> NG (attempt 1)
+[ledger] 0x5c6550 sub_5C6550 -> NG (attempt 1)
+[ledger] 0x4a1fb0 CRC32::Compute -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a48c0 sub_4A48C0 -> NG (attempt 1)
+[ledger] 0x53ed60 Network::GetAddress -> NG (attempt 1)
+[ledger] 0x540fc0 Network::GetClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x541000 Network::FindPlayerByID -> COMPILE_FAIL (attempt 1)
+[ledger] 0x691500 SessionClass::GetEntry -> NG (attempt 1)
+[ledger] 0x765990 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Read -> NG (attempt 1)
+[ledger] 0x766d60 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Read -> NG (attempt 1)
+[ledger] 0x769f80 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Read -> NG (attempt 1)
+[ledger] 0x76ba10 _VectorClass_V_rc_ptr_VWDTTerritory::GetSize -> NG (attempt 1)
+[ledger] 0x7d67f9 ObjectClass::_fix_grouping -> PENDING (attempt 1)
+[ledger] 0x4e4fc0 ResetLobbyFactionTable -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 14,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "regalloc": 4,
+  "branch_polarity": 2,
+  "codegen_shape": 6,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p232\batch_report.json

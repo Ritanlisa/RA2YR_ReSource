@@ -1,0 +1,8 @@
+{
+ "symbol": "?Reset@TeamClass@@QAEDD@Z",
+ "sym_key": "TeamClass::Reset",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b442404568bf2240081e6ff0000000bc683ceff84d289b1b400000074208b513033c085d27e11578b7924403bc28b7c87fc8977747cf15f89b1ac0000005ec20400",
+ "relocs": []
+}

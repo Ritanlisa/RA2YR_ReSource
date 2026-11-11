@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CEEB0",
+ "name": "SuperWeaponTypeClass::FindFirstOfAction",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CEEB0",
+ "bytes_hex": "53568b3540e3a80033c05785f67e1a8b3d34e3a8008bd78b1a398bbc000000740e4083c2043bc67cee5f5e33c05bc38b04875f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

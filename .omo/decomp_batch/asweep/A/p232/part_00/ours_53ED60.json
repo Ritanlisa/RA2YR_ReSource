@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetAddress@Network@@QAEFPAHHPAG@Z",
+ "sym_key": "Network::GetAddress",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b51048910668b510866895004a10000000083f801750c0fbf098b542404890ac20c00668b018b4c240c668901c20c00",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_828140@@3IA",
+   "sym_key": "DataGlobal_828140"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindFirstOfAction@SuperWeaponTypeClass@@QAEHXZ",
+ "sym_key": "SuperWeaponTypeClass::FindFirstOfAction",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "53568b350000000033d25785f677065f5e33c05bc38b3d000000008bc78b18398bbc0000007413423bd673e38b580483c004398bbc00000075ed8b04975f5e5bc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_HouseClassInitState@@3IA",
+   "sym_key": "g_HouseClassInitState"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponPool@@3PAXA",
+   "sym_key": "g_SuperWeaponPool"
+  }
+ ]
+}

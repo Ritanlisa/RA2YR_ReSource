@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E4FC0",
+ "name": "ResetLobbyFactionTable",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E4FC0",
+ "bytes_hex": "85c97e13b8383f8b008bd1c700ffffffff83c00c4a75f483f9097d1a8d04498d0485383f8b00c700feffffff83c00c3da43f8b007cf0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

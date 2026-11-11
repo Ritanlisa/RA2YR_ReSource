@@ -1,0 +1,15 @@
+{
+ "symbol": "?AdvanceCountdown@SuperClass@@QAEXXZ",
+ "sym_key": "SuperClass::AdvanceCountdown",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "568b3183feff74298b15000000008b41082bd63bd0720fc7410800000000c701ffffffff5ec32bc2c701ffffffff8941085ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

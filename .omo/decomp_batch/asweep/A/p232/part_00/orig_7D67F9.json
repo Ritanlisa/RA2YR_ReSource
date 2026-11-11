@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D67F9",
+ "name": "_fix_grouping",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D67F9",
+ "bytes_hex": "8b4c24048a0184c07415563c307c113c397f0d2c308801418a0184c075ed5ec33c3b75f38bc18a50018d700188108bc680380075f1ebe1",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

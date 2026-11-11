@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetStatistics@UDPInterfaceClass@@QAEHH@Z",
+ "sym_key": "UDPInterfaceClass::GetStatistics",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b916cf003003bc2741c83f8ff74172b8170f00300f7d81bc0258bfbffff0575040000c20400b874040000c20400",
+ "relocs": []
+}

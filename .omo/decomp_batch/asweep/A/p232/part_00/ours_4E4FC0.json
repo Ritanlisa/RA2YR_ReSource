@@ -1,0 +1,21 @@
+{
+ "symbol": "?ResetLobbyFactionTable@@YIXH@Z",
+ "sym_key": "Unnamed::ResetLobbyFactionTable",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "85c97e13a1000000008bd1c700ffffffff83c00c4a75f483f9097d1a8d8449cecf2200c1e002c700feffffff83c00c3d000000007cf0c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3F38@@3IA",
+   "sym_key": "DataGlobal_8B3F38"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3FA4@@3EA",
+   "sym_key": "DataGlobal_8B3FA4"
+  }
+ ]
+}

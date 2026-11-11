@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B4100",
+ "name": "UDPInterfaceClass::GetStatistics",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B4100",
+ "bytes_hex": "8b4424048b916cf003003bc2742083f8ff741b568bb170f0030033d23bc60f95c24a5e81e2750400008bc2c20400b874040000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
