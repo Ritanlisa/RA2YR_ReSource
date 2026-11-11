@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_543E10@@YAHXZ",
+ "sym_key": "Unnamed::sub_543E10",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "33c0a300000000a300000000a300000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0F8@@3IA",
+   "sym_key": "DataGlobal_ABB0F8"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0FC@@3IA",
+   "sym_key": "DataGlobal_ABB0FC"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB100@@3IA",
+   "sym_key": "DataGlobal_ABB100"
+  }
+ ]
+}
