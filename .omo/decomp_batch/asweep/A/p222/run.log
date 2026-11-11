@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p222\part_00
+=== convert (20 addrs) ===
+[conv] 0x748fd0 HouseClass::ClearStatArray -> HouseClass
+[conv] 0x749060 HouseClass::InitStatArray -> HouseClass
+[conv] 0x74c110 _VectorClass_E::GetSize -> _VectorClass_E
+[conv] 0x75c8a0 JumpjetLocomotionClass::StubReturnZero_23 -> JumpjetLocomotionClass
+[conv] 0x7dae6e CRTisctype -> _addr_7D
+[conv] 0x408e70 Count::DecrementRefCountsAudio -> Count
+[conv] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> CaptureManagerClass
+[conv] 0x473500 TechnoClass::IndexOf -> TechnoClass
+[conv] 0x491670 _BlitTransRemapDest_E::sub_491670 -> _BlitTransRemapDest_E
+[conv] 0x4a05d0 ConnectionPointClass::ddtor -> ConnectionPointClass
+[conv] 0x4f9a10 HouseClass::IsAllied -> HouseClass
+[conv] 0x54a950 BitArray::TestBit -> BitArray
+[conv] 0x7acb90 ObjectClass::StartGameWOL_Start_7ACB90 -> ObjectClass
+[conv] 0x40b2a0 VectorClass::GetSize -> VectorClass
+[conv] 0x40b820 _VectorClass_PAVBombClass::GetSize -> _VectorClass_PAVBombClass
+[conv] 0x40ba80 _VectorClass_PAVTechnoClass::GetSize -> _VectorClass_PAVTechnoClass
+[conv] 0x40bfd0 _VectorClass_PBVCommandClass::GetSize -> _VectorClass_PBVCommandClass
+[conv] 0x40c3b0 _VectorClass_PAVLightConvertClass::GetSize -> _VectorClass_PAVLightConvertClass
+[conv] 0x40c9a0 _VectorClass_PAVIsometricTileClass::GetSize -> _VectorClass_PAVIsometricTileClass
+[conv] 0x40e970 _VectorClass_PAVScriptClass::GetSize -> _VectorClass_PAVScriptClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] _VectorClass_E           rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] _addr_7D                 rc=2
+[era] Count                    rc=0
+[era] CaptureManagerClass      rc=2
+[era] TechnoClass              rc=0
+[era] _BlitTransRemapDest_E    rc=2
+[era] ConnectionPointClass     rc=0
+[era] BitArray                 rc=0
+[era] ObjectClass              rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVBombClass rc=2
+[era] _VectorClass_PAVTechnoClass rc=2
+[era] _VectorClass_PBVCommandClass rc=2
+[era] _VectorClass_PAVLightConvertClass rc=2
+[era] _VectorClass_PAVIsometricTileClass rc=2
+[era] _VectorClass_PAVScriptClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x748fd0   MISMATCH         HouseClass::ClearStatArray
+[diff] 0x749060   MATCH            HouseClass::InitStatArray
+[diff] 0x4f9a10   MISMATCH         HouseClass::IsAllied
+[diff] 0x74c110   MISMATCH         _VectorClass_E::GetSize
+[diff] 0x75c8a0   MISMATCH         JumpjetLocomotionClass::StubReturnZero_23
+[diff] 0x408e70   MISMATCH         Count::DecrementRefCountsAudio
+[diff] 0x473500   MISMATCH         TechnoClass::IndexOf
+[diff] 0x4a05d0   MISMATCH         ConnectionPointClass::ddtor
+[diff] 0x54a950   MISMATCH         BitArray::TestBit
+[diff] 0x7acb90   MATCH            ObjectClass::StartGameWOL_Start_7ACB90
+[diff] 0x40b2a0   MISMATCH         VectorClass::GetSize
+[ledger] 0x748fd0 HouseClass::ClearStatArray -> NG (attempt 1)
+[ledger] 0x749060 HouseClass::InitStatArray -> OK (attempt 1)
+[ledger] 0x74c110 _VectorClass_E::GetSize -> NG (attempt 1)
+[ledger] 0x75c8a0 JumpjetLocomotionClass::StubReturnZero_23 -> NG (attempt 1)
+[ledger] 0x7dae6e CRTisctype -> COMPILE_FAIL (attempt 1)
+[ledger] 0x408e70 Count::DecrementRefCountsAudio -> NG (attempt 1)
+[ledger] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> COMPILE_FAIL (attempt 1)
+[ledger] 0x473500 TechnoClass::IndexOf -> NG (attempt 1)
+[ledger] 0x491670 _BlitTransRemapDest_E::sub_491670 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a05d0 ConnectionPointClass::ddtor -> NG (attempt 1)
+[ledger] 0x4f9a10 HouseClass::IsAllied -> NG (attempt 1)
+[ledger] 0x54a950 BitArray::TestBit -> NG (attempt 1)
+[ledger] 0x7acb90 ObjectClass::StartGameWOL_Start_7ACB90 -> OK (attempt 1)
+[ledger] 0x40b2a0 VectorClass::GetSize -> NG (attempt 1)
+[ledger] 0x40b820 _VectorClass_PAVBombClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40ba80 _VectorClass_PAVTechnoClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40bfd0 _VectorClass_PBVCommandClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40c3b0 _VectorClass_PAVLightConvertClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40c9a0 _VectorClass_PAVIsometricTileClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40e970 _VectorClass_PAVScriptClass::GetSize -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "MATCH": 2,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "signedness": 1,
+  "codegen_shape": 4,
+  "regalloc": 1,
+  "branch_polarity": 1,
+  "cc_mismatch": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 18.2,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p222\batch_report.json

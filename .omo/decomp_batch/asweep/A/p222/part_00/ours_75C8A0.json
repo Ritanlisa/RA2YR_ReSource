@@ -1,0 +1,15 @@
+{
+ "symbol": "?StubReturnZero_23@JumpjetLocomotionClass@@QAGHHPAH@Z",
+ "sym_key": "JumpjetLocomotionClass::StubReturnZero_23",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "8b4c240885c97508b803400080c20c008b542404db4220dc1500000000dfe0f6c440740addd8b801000000c20c00d919c742200000000033c0c20c00",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

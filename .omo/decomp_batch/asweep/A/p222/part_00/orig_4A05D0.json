@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A05D0",
+ "name": "ConnectionPointClass::ddtor",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A05D0",
+ "bytes_hex": "8b44240885c07508b803400080c208008b4c240483c1048b1189108b51048950048b51088950088b490c89480c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

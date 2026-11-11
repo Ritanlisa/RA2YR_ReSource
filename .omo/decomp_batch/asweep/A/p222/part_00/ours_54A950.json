@@ -1,0 +1,8 @@
+{
+ "symbol": "?TestBit@BitArray@@QAIHHH@Z",
+ "sym_key": "BitArray::TestBit",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "8b442404538bc85681e1070000808bf279054983c9f8419983e207b30103c2d2e3c1f8038a14305e22daf6db1bdbf7db8bc35bc20400",
+ "relocs": []
+}

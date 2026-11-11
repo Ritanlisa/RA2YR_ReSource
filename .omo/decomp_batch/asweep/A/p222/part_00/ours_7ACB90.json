@@ -1,0 +1,8 @@
+{
+ "symbol": "?StartGameWOL_Start_7ACB90@ObjectClass@@QAEDPAXH@Z",
+ "sym_key": "ObjectClass::StartGameWOL_Start_7ACB90",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b4424085685c07c233b017d1f8b49088d0440578b7c240c8d04c08d3481b91b000000f3a55fb0015ec2080032c05ec20800",
+ "relocs": []
+}

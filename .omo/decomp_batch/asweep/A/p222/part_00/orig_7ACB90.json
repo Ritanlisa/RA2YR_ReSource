@@ -1,0 +1,11 @@
+{
+ "addr": "0x7ACB90",
+ "name": "StartGameWOL_Start_7ACB90",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7ACB90",
+ "bytes_hex": "8b4424085685c07c233b017d1f8b49088d0440578b7c240c8d04c08d3481b91b000000f3a55fb0015ec2080032c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

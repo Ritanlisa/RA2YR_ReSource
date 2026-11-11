@@ -220,3 +220,4 @@
 {"layer": "A", "part": 219, "n": 20, "seconds": 17.7, "ok": true, "verdicts": {"MATCH": 2, "COMPILE_FAIL": 5, "MISMATCH": 13}}
 {"layer": "A", "part": 220, "n": 20, "seconds": 14.7, "ok": true, "verdicts": {"MISMATCH": 12, "MATCH": 2, "COMPILE_FAIL": 6}}
 {"layer": "A", "part": 221, "n": 20, "seconds": 14.7, "ok": true, "verdicts": {"COMPILE_FAIL": 6, "MISMATCH": 14}}
+{"layer": "A", "part": 222, "n": 20, "seconds": 14.3, "ok": true, "verdicts": {"MISMATCH": 9, "MATCH": 2, "COMPILE_FAIL": 9}}

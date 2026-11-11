@@ -1,0 +1,8 @@
+{
+ "symbol": "?ddtor@ConnectionPointClass@@QAGHPAH0@Z",
+ "sym_key": "ConnectionPointClass::ddtor",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c20c008b4c24048b510489108b51088950048b510c8950088b491089480c33c0c20c00",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?ClearStatArray@HouseClass@@QAEPAIXZ",
+ "sym_key": "HouseClass::ClearStatArray",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "8bc15633c98bd0c7800008000000020000c702000000008bb0000800004183c2043bce72ecc78004080000000000005ec3",
+ "relocs": []
+}

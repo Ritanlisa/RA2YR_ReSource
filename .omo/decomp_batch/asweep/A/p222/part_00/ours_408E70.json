@@ -1,0 +1,8 @@
+{
+ "symbol": "?DecrementRefCountsAudio@Count@@QAEHXZ",
+ "sym_key": "Count::DecrementRefCountsAudio",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "8b411c4889411c7907c7411c000000008b018b90980000004a899098000000790c8b01c7809800000000000000c3",
+ "relocs": []
+}

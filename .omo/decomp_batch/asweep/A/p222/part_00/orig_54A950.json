@@ -1,0 +1,11 @@
+{
+ "addr": "0x54A950",
+ "name": "BitArray::TestBit",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54A950",
+ "bytes_hex": "53568bc28bf18bc881e10700008079054983c9f8419983e207b30103c2d2e3c1f8038a14305e22daf6db1bdbf7db8bc35bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

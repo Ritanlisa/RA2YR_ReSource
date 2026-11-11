@@ -1,0 +1,11 @@
+{
+ "addr": "0x473500",
+ "name": "TechnoClass::IndexOf",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x473500",
+ "bytes_hex": "8b490433c085c95674228b742408403bce74158b513085d27408f6421404740c8bca85c97406ebe685c9750233c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

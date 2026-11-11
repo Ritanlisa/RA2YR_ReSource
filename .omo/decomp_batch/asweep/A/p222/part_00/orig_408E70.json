@@ -1,0 +1,11 @@
+{
+ "addr": "0x408E70",
+ "name": "Count::DecrementRefCountsAudio",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408E70",
+ "bytes_hex": "8b411c4885c089411c7d07c7411c000000008b018b90980000004a85d28990980000007d0c8b01c7809800000000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?InitStatArray@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::InitStatArray",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "56c781000800000002000033c08bd1c702000000008bb1000800004083c2043bc67cec8b4424085e898100080000c20400",
+ "relocs": []
+}

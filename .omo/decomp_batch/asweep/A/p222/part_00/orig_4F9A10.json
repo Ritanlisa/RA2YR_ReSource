@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F9A10",
+ "name": "HouseClass::IsAllied",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F9A10",
+ "bytes_hex": "8bc18b4c24043b48307505b001c2040083f9ff74188b8088570000ba01000000d3e223c2f7d81bc0f7d8c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

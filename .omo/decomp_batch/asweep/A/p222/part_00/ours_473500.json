@@ -1,0 +1,8 @@
+{
+ "symbol": "?IndexOf@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::IndexOf",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b490433c085c956741c8b742408403bce74158b513085d27408f642140474068bca85c975e833c05ec20400",
+ "relocs": []
+}

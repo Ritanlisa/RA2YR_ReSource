@@ -1,0 +1,11 @@
+{
+ "addr": "0x748FD0",
+ "name": "HouseClass::ClearStatArray",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x748FD0",
+ "bytes_hex": "8bc15633c98bd0c7800008000000020000c702000000008bb0000800004183c2043bce7cecc78004080000000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
