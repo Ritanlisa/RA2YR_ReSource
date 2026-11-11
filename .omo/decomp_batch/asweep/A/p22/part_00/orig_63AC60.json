@@ -1,0 +1,11 @@
+{
+ "addr": "0x63AC60",
+ "name": "UI_Delete_Delete_63AC60",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63AC60",
+ "bytes_hex": "a1f04bac00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

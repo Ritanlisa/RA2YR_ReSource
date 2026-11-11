@@ -1,0 +1,8 @@
+{
+ "symbol": "?COMStub_Ret2@MPCooperative@@QAEHXZ",
+ "sym_key": "MPCooperative::COMStub_Ret2",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b802000000c3",
+ "relocs": []
+}

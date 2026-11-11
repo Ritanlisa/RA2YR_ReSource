@@ -1,0 +1,15 @@
+{
+ "symbol": "?UI_Delete_Delete_63AC60@@YAHXZ",
+ "sym_key": "Unnamed::UI_Delete_Delete_63AC60",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_ScriptActionPool@@3IA",
+   "sym_key": "g_ScriptActionPool"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B2F70",
+ "name": "AbstractClass::COMStub_Ret450_151",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B2F70",
+ "bytes_hex": "b8c2010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

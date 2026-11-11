@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x56c200 sub_56C200 -> _addr_56
+[conv] 0x58b7e0 sub_58B7E0 -> _addr_58
+[conv] 0x58b7f0 sub_58B7F0 -> _addr_58
+[conv] 0x58b800 sub_58B800 -> _addr_58
+[conv] 0x58b810 sub_58B810 -> _addr_58
+[conv] 0x5b2e60 MissionClass::COMStub_Ret450_134 -> MissionClass
+[conv] 0x5b2ea0 MissionClass::COMStub_Ret450_138 -> MissionClass
+[conv] 0x5b2ec0 MissionClass::COMStub_Ret450_140 -> MissionClass
+[conv] 0x5b2f00 MissionClass::COMStub_Ret450_144 -> MissionClass
+[conv] 0x5b2f60 MissionClass::COMStub_Ret450_150 -> MissionClass
+[conv] 0x5b2f70 MissionClass::COMStub_Ret450_151 -> MissionClass
+[conv] 0x5bc440 sub_5BC440 -> _addr_5B
+[conv] 0x5c42c0 MPCooperative::COMStub_Ret2 -> MPCooperative
+[conv] 0x5c61d0 Hash_Check -> Hash
+[conv] 0x5ef270 sub_5EF270 -> _addr_5E
+[conv] 0x63ac60 UI_Delete_Delete_63AC60 -> UI_Delete_Delete
+[conv] 0x63ad40 sub_63AD40 -> _addr_63
+[conv] 0x65c550 RAMFileClass::nullsub_0_5 -> RAMFileClass
+[conv] 0x6ce8f0 SuperWeaponTypeClass::SD_vt11 -> SuperWeaponTypeClass
+[conv] 0x6ce900 SuperWeaponTypeClass::SD_vt12 -> SuperWeaponTypeClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_56                 rc=0
+[era] _addr_58                 rc=0
+[era] MissionClass             rc=0
+[era] _addr_5B                 rc=0
+[era] MPCooperative            rc=0
+[era] Hash                     rc=0
+[era] _addr_5E                 rc=0
+[era] UI_Delete_Delete         rc=0
+[era] _addr_63                 rc=0
+[era] RAMFileClass             rc=0
+[era] SuperWeaponTypeClass     rc=0
+=== diffasm byte-compare ===
+[diff] 0x56c200   MATCH            sub_56C200
+[diff] 0x58b7e0   MATCH            sub_58B7E0
+[diff] 0x58b7f0   MATCH            sub_58B7F0
+[diff] 0x58b800   MATCH            sub_58B800
+[diff] 0x58b810   MATCH            sub_58B810
+[diff] 0x5b2e60   MATCH            MissionClass::COMStub_Ret450_134
+[diff] 0x5b2ea0   MATCH            MissionClass::COMStub_Ret450_138
+[diff] 0x5b2ec0   MATCH            MissionClass::COMStub_Ret450_140
+[diff] 0x5b2f00   MATCH            MissionClass::COMStub_Ret450_144
+[diff] 0x5b2f60   MATCH            MissionClass::COMStub_Ret450_150
+[diff] 0x5b2f70   MATCH            MissionClass::COMStub_Ret450_151
+[diff] 0x5bc440   MATCH            sub_5BC440
+[diff] 0x5c42c0   MATCH            MPCooperative::COMStub_Ret2
+[diff] 0x5c61d0   MATCH            Hash_Check
+[diff] 0x5ef270   MATCH            sub_5EF270
+[diff] 0x63ac60   MATCH            UI_Delete_Delete_63AC60
+[diff] 0x63ad40   MATCH            sub_63AD40
+[diff] 0x65c550   MISMATCH         RAMFileClass::nullsub_0_5
+[diff] 0x6ce8f0   MATCH            SuperWeaponTypeClass::SD_vt11
+[diff] 0x6ce900   MATCH            SuperWeaponTypeClass::SD_vt12
+[ledger] 0x56c200 sub_56C200 -> OK (attempt 1)
+[ledger] 0x58b7e0 sub_58B7E0 -> OK (attempt 1)
+[ledger] 0x58b7f0 sub_58B7F0 -> OK (attempt 1)
+[ledger] 0x58b800 sub_58B800 -> OK (attempt 1)
+[ledger] 0x58b810 sub_58B810 -> OK (attempt 1)
+[ledger] 0x5b2e60 MissionClass::COMStub_Ret450_134 -> OK (attempt 1)
+[ledger] 0x5b2ea0 MissionClass::COMStub_Ret450_138 -> OK (attempt 1)
+[ledger] 0x5b2ec0 MissionClass::COMStub_Ret450_140 -> OK (attempt 1)
+[ledger] 0x5b2f00 MissionClass::COMStub_Ret450_144 -> OK (attempt 1)
+[ledger] 0x5b2f60 MissionClass::COMStub_Ret450_150 -> OK (attempt 1)
+[ledger] 0x5b2f70 MissionClass::COMStub_Ret450_151 -> OK (attempt 1)
+[ledger] 0x5bc440 sub_5BC440 -> OK (attempt 1)
+[ledger] 0x5c42c0 MPCooperative::COMStub_Ret2 -> OK (attempt 1)
+[ledger] 0x5c61d0 Hash_Check -> OK (attempt 1)
+[ledger] 0x5ef270 sub_5EF270 -> OK (attempt 1)
+[ledger] 0x63ac60 UI_Delete_Delete_63AC60 -> OK (attempt 1)
+[ledger] 0x63ad40 sub_63AD40 -> OK (attempt 1)
+[ledger] 0x65c550 RAMFileClass::nullsub_0_5 -> NG (attempt 1)
+[ledger] 0x6ce8f0 SuperWeaponTypeClass::SD_vt11 -> OK (attempt 1)
+[ledger] 0x6ce900 SuperWeaponTypeClass::SD_vt12 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 95.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p22\batch_report.json
