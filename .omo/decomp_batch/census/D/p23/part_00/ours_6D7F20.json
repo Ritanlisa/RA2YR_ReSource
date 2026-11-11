@@ -1,0 +1,99 @@
+{
+ "symbol": "?ProcessCell@TacticalMapClass@@QAEHPAFH@Z",
+ "sym_key": "TacticalMapClass::ProcessCell",
+ "size": 636,
+ "link_base": 0,
+ "bytes_hex": "83ec385355568b7424488bd95756b900000000895c2434e8000000008bf88d4c24400fbf06c1e00805800000009981e2ff00000003c2c1f808c1e008894424248d4424245051e8000000008b48048babb40000008a971b0100002bcd80fa027d288b108b83b00000002bd06a008d44243c83ea1e894c24406800000000508bcf89542444e8000000000fbf160fbf6e0289542410896c2414c74424180000000033ffeb148b5424108b6c241433ffeb088b5424108b6c24148d47018bf589442438d1f88d0c108d1c10894c242c8bcfd1f92bf12be9468d54241c4552b90000000066895c242066896c2422e80000000084c00f84420100008d442420b9000000005066895c242466896c2426e8000000008be88b44241832d283ff010fbe8d1b0100008854244c751a3bc87e078d58043bcb7c078d58013bcb7508b2018854244cebf18a9d1d01000084db7e3284d275362bc883ff01740d85c97d1f0fbed303d17818eb228d410185c07f0f0fbe951d0100008d440a0185c07f0c8a54244c84d20f84b30000008b44242c668974242a66894424280fbfc0c1e00805800000009981e2ff00000003c28bc80fbfc6c1e00805800000009981e2ff00000003c2c1f808c1f908c1e008c1e10850894c2428518d4c243ce8000000008b308b780433c9c1ee08e8000000008bc88bc79981e2ff00000003d08b442430c1fa082b90b40000002bd18b88b00000002bf18d44242883ee1e50b9000000008954244889742444e8000000006a008d4c24446800000000518bc8e8000000008b7c243883ff030f8269feffff8b5424188b7c24108b7424148d420283f818894424180f9cc1474684c9897c2410897424140f8532feffff5f5e5d5b83c438c20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3PADA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?CheckCellVisibility@TacticalClass@@QAEDPAX0D@Z",
+   "sym_key": "TacticalClass::CheckCellVisibility"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3PADA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3PADA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 269,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 470,
+   "type": "REL32",
+   "sym": "?ToPixel@IsoCoord@@QAEPAV1@HH@Z",
+   "sym_key": "IsoCoord::ToPixel"
+  },
+  {
+   "off": 485,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 534,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3PADA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 547,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 558,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 566,
+   "type": "REL32",
+   "sym": "?CheckCellVisibility@TacticalClass@@QAEDPAX0D@Z",
+   "sym_key": "TacticalClass::CheckCellVisibility"
+  }
+ ]
+}

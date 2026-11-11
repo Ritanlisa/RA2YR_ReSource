@@ -1798,6 +1798,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x435820": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingLightClass::CTOR",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x436f40": {
   "attempts": 1,
   "first_diff": null,
@@ -5277,6 +5284,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4cfe80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4d0180": {
   "attempts": 1,
   "first_diff": null,
@@ -6422,6 +6436,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "HouseClass::FindBuildingOfType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4feee0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::AIInfantryProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10926,6 +10947,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5f7a90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimType::LoadSection",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5f9710": {
   "attempts": 8,
   "first_diff": null,
@@ -10972,6 +11000,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Object::SpawnAtCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5fd970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Object::HandleAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -12102,6 +12137,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x640710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Skirmish::RenderPreview",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x641b00": {
   "attempts": 1,
   "first_diff": null,
@@ -12409,6 +12451,13 @@
   "name": "HouseClass::updateAlliedStatus",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x658330": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TabClass::DrawPower",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x658970": {
   "attempts": 6,
@@ -14671,6 +14720,20 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6d7c00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::DrawTerrain",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6d7f20": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x44",
+  "name": "TacticalMapClass::ProcessCell",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
  "0x6d8530": {
   "attempts": 9,
   "first_diff": null,
@@ -15091,6 +15154,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6ea0d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SelectTeamProductionBuilding",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6ea3e0": {
   "attempts": 9,
   "first_diff": null,
@@ -15294,6 +15364,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6f79a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::GetBridgeDamageMult",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6f9dc0": {
   "attempts": 5,
   "first_diff": null,
@@ -15424,6 +15501,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "TechnoClass::RevealAreaConditional",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x70b280": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::ComputeAimVector",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -16091,6 +16175,13 @@
   "name": "0x725710",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7258d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::AnnounceExpiredPointer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x725e40": {
   "attempts": 1,
@@ -17015,6 +17106,13 @@
   "name": "0x7501c0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7510d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio::InitFromINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x751ea0": {
   "attempts": 1,
@@ -18101,6 +18199,20 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x778710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadAccountInfoWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x778f30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LocalizeWOLDateString",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x779dd0": {
   "attempts": 1,
   "first_diff": null,
@@ -18241,6 +18353,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7806c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PopulateWOLLobbyListBox",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7813b0": {
   "attempts": 1,
   "first_diff": null,
@@ -18345,6 +18464,13 @@
   "name": "0x79f0a0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7a16b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HandleWOLMatchMessage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7a2730": {
   "attempts": 1,
@@ -18590,6 +18716,13 @@
   "name": "NetworkOptions::ApplySettings",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x7b13d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IPXInterfaceClass::SendPacket",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7b1750": {
   "attempts": 5,
@@ -19409,6 +19542,13 @@
   "name": "0x7c9af8",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7ca090": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "_memcpy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7ca4b0": {
   "attempts": 1,

@@ -1,0 +1,96 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x70b280 TechnoClass::ComputeAimVector -> TechnoClass
+[conv] 0x4cfe80 FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget -> FlyLocomotionClass
+[conv] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> TechnoClass
+[conv] 0x778f30 unknown::LocalizeWOLDateString -> unknown
+[conv] 0x6ea0d0 ObjectClass::SelectTeamProductionBuilding -> ObjectClass
+[conv] 0x658330 TabClass::DrawPower -> TabClass
+[conv] 0x778710 ObjectClass::LoadAccountInfoWOL -> ObjectClass
+[conv] 0x6d7c00 TacticalClass::DrawTerrain -> TacticalClass
+[conv] 0x7510d0 Audio::InitFromINI -> Audio
+[conv] 0x5f7a90 VoxelAnimType::LoadSection -> VoxelAnimType
+[conv] 0x4feee0 HouseClass::AIInfantryProduction -> HouseClass
+[conv] 0x7a16b0 unknown::HandleWOLMatchMessage -> unknown
+[conv] 0x640710 Skirmish::RenderPreview -> Skirmish
+[conv] 0x435820 BuildingLightClass::CTOR -> BuildingLightClass
+[conv] 0x7ca090 unknown::_memcpy -> unknown
+[conv] 0x6d7f20 TacticalMapClass::ProcessCell -> TacticalMapClass
+[conv] 0x7258d0 unknown::AnnounceExpiredPointer -> unknown
+[conv] 0x7806c0 ObjectClass::PopulateWOLLobbyListBox -> ObjectClass
+[conv] 0x5fd970 OverlayClass::HandleAction -> OverlayClass
+[conv] 0x7b13d0 IPXInterfaceClass::SendPacket -> IPXInterfaceClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] FlyLocomotionClass       rc=2
+[era] unknown                  rc=2
+[era] ObjectClass              rc=2
+[era] TabClass                 rc=2
+[era] TacticalClass            rc=2
+[era] Audio                    rc=2
+[era] VoxelAnimType            rc=2
+[era] HouseClass               rc=2
+[era] Skirmish                 rc=2
+[era] BuildingLightClass       rc=2
+[era] TacticalMapClass         rc=0
+[era] OverlayClass             rc=2
+[era] IPXInterfaceClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x6d7f20   MISMATCH         TacticalMapClass::ProcessCell
+[ledger] 0x70b280 TechnoClass::ComputeAimVector -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cfe80 FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> COMPILE_FAIL (attempt 1)
+[ledger] 0x778f30 LocalizeWOLDateString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ea0d0 SelectTeamProductionBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x658330 TabClass::DrawPower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x778710 LoadAccountInfoWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d7c00 TacticalClass::DrawTerrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7510d0 Audio::InitFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f7a90 VoxelAnimType::LoadSection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4feee0 HouseClass::AIInfantryProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a16b0 HandleWOLMatchMessage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x640710 Skirmish::RenderPreview -> COMPILE_FAIL (attempt 1)
+[ledger] 0x435820 BuildingLightClass::CTOR -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ca090 _memcpy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d7f20 TacticalMapClass::ProcessCell -> NG (attempt 1)
+[ledger] 0x7258d0 AbstractClass::AnnounceExpiredPointer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7806c0 PopulateWOLLobbyListBox -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fd970 Object::HandleAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b13d0 IPXInterfaceClass::SendPacket -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2834,
+ "verdicts": {
+  "MISMATCH": 719,
+  "MATCH": 521,
+  "COMPILE_FAIL": 1041,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 534,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 247,
+  "ret_norm": 8,
+  "frame_sched": 77,
+  "const_fold": 71,
+  "branch_polarity": 52,
+  "regalloc": 118,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.0,
+ "match_rate_of_total_pct": 18.4,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p23\batch_report.json
