@@ -1,0 +1,1 @@
+{"part": 0, "n": 20, "seconds": 3.7, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"RET_VOID_STUB": 18, "RET_ARITY": 1, "RELOC_KEY": 1}, "by_family_hits": {}}}

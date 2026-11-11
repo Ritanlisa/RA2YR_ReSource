@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x410470",
+  "name": "AbstractClass::StubReturnFalse",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p00",
+  "unit": "AbstractClass",
+  "emitted": "AbstractClass::StubReturnFalse",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x410570",
+  "name": "AbstractClass::COMStub_Return0_23",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p00",
+  "unit": "AbstractClass",
+  "emitted": "AbstractClass::COMStub_Return0_23",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x41bfe0",
+  "name": "TechnoClass::vt_entry_428",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p00",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::vt_entry_428",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x426470",
+  "name": "AbstractClass::COMStub_Return0_86",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p01",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::COMStub_Return0_86",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x4264a0",
+  "name": "AbstractClass::COMStub_Return0_92",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p01",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::COMStub_Return0_92",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x5d0590",
+  "name": "nullsub_24",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p04",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::nullsub_24",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x5f3340",
+  "name": "nullsub_28",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p04",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::nullsub_28",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x5f4310",
+  "name": "AbstractClass::COMStub_Return0_63",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p04",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::COMStub_Return0_63",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x5f4330",
+  "name": "AbstractClass::COMStub_Return0_71",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p04",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::COMStub_Return0_71",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x70f010",
+  "name": "TechnoClass::COMStub_Return0_298",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p06",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::COMStub_Return0_298",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x70f100",
+  "name": "TechnoClass::COMStub_Return0_307",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 1,
+  "part": "p06",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::COMStub_Return0_307",
+  "first_diff": {
+   "orig": "+0 ret ",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x410c20",
+  "name": "AbstractTypeClass::StubReturnFalse",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p08",
+  "unit": "AbstractTypeClass",
+  "emitted": "AbstractTypeClass::StubReturnFalse",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x413490",
+  "name": "nullsub_3",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p08",
+  "unit": "_addr_41",
+  "emitted": "nullsub_3",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ },
+ {
+  "addr": "0x41be80",
+  "name": "AircraftClass::CheckStateFlag",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p08",
+  "unit": "IUnknown",
+  "emitted": "IUnknown::CheckStateFlag",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x41be90",
+  "name": "AircraftClass::CheckStateFlag2",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p08",
+  "unit": "IUnknown",
+  "emitted": "IUnknown::CheckStateFlag2",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x41bf90",
+  "name": "TacticalClass::StubReturnFalse6",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p09",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::StubReturnFalse6",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x426440",
+  "name": "AbstractClass::COMStub_Return0_67",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p09",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::COMStub_Return0_67",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x426460",
+  "name": "AbstractClass::COMStub_Return0_85",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p09",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::COMStub_Return0_85",
+  "first_diff": {
+   "orig": "+0 ret 0xc",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x426480",
+  "name": "AbstractClass::COMStub_Return0_87",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p09",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::COMStub_Return0_87",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x664b60",
+  "name": "sub_664B60",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p100",
+  "unit": "_addr_66",
+  "emitted": "sub_664B60",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ }
+]
