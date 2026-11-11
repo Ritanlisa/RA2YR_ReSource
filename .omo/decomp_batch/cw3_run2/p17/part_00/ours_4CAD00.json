@@ -1,0 +1,21 @@
+{
+ "symbol": "?ArcTan2@Math@@QAENN@Z",
+ "sym_key": "Math::ArcTan2",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "d90500000000dc4c240483ec08dd1c24e8000000008bc88b44240c33c883c40881e1ff00000033c18ac8992bc280e101d1f825ff1f00807d1525ffff0000480d00e0ffff4079070500280000eb05050008000084c989442404740c3dff2700007d054089442404db442404c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8223B4@@3MA",
+   "sym_key": "DataGlobal_8223B4"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

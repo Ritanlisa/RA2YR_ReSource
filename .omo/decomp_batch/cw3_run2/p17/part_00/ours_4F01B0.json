@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@_VectorClass_PAVCampaignClass@@QAEPAID@Z",
+ "sym_key": "_VectorClass_PAVCampaignClass::QueryInterface",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4604c7060000000085c074188b4e0cf6c5ff741050e80000000083c404c74604000000008b4e0c8a44240880e500c7460800000000a801894e0c740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
