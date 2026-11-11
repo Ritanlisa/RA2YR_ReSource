@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7d72d4",
+  "name": "_CountryEnumProc_4",
+  "cls": null,
+  "size": 134,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'a1' : undeclared identifier"
+ },
+ {
+  "addr": "0x5e2790",
+  "name": "Dialog::ShowStatusText",
+  "cls": null,
+  "size": 135,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'vswprintf' : none of the 2 overloads can convert parameter 3 from type 'const unsigned short *const '"
+ },
+ {
+  "addr": "0x7b68e0",
+  "name": "WideString::Reassign_Alt",
+  "cls": null,
+  "size": 137,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'wcscmp' : none of the 2 overloads can convert parameter 2 from type 'const int *'"
+ },
+ {
+  "addr": "0x625560",
+  "name": "Options::DestroyComposite",
+  "cls": null,
+  "size": 138,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2059",
+  "first_msg": "syntax error : ')'"
+ },
+ {
+  "addr": "0x707dd0",
+  "name": "TechnoClass::ComputeTotalPowerDrain",
+  "cls": null,
+  "size": 139,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x595680",
+  "name": "MapSeedClass::Constructor",
+  "cls": null,
+  "size": 140,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2533",
+  "first_msg": "'LoadOptions' : constructors not allowed a return type"
+ },
+ {
+  "addr": "0x41cfe0",
+  "name": "AircraftTypeClass::ddtor",
+  "cls": null,
+  "size": 141,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x6e87f0",
+  "name": "TaskForceClass::ExecuteAction",
+  "cls": null,
+  "size": 141,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x6fbfa0",
+  "name": "TechnoClass::ExecuteMoveCommand",
+  "cls": null,
+  "size": 141,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x655a90",
+  "name": "TacticalClass::FreeResources",
+  "cls": null,
+  "size": 142,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'void (unsigned int,int)' : cannot convert parameter 1 from 'void (__stdcall ***  )(unsigned int,int)' to"
+ },
+ {
+  "addr": "0x426270",
+  "name": "AnimClass::UpdateDamageRadius",
+  "cls": null,
+  "size": 143,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'class CellClass *'"
+ },
+ {
+  "addr": "0x46fac0",
+  "name": "Lobby::SetupAllFactionSlots",
+  "cls": null,
+  "size": 143,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x554370",
+  "name": "LoadProgressMgr::ReleaseBuffer",
+  "cls": null,
+  "size": 143,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'void (unsigned int,int)' : cannot convert parameter 1 from 'void (__stdcall ***  )(unsigned int,int)' t"
+ },
+ {
+  "addr": "0x5fea50",
+  "name": "OverlayTypeClass::PowerDrainUpdate",
+  "cls": null,
+  "size": 145,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'Strength_2' : is not a member of 'OverlayTypeClass'"
+ },
+ {
+  "addr": "0x5e9b60",
+  "name": "SelectLobbyCountry",
+  "cls": null,
+  "size": 147,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ',' before '*'"
+ },
+ {
+  "addr": "0x7d30d1",
+  "name": "__commit",
+  "cls": null,
+  "size": 147,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ',' before '*'"
+ },
+ {
+  "addr": "0x7b2630",
+  "name": "Socket::ConfigureBuffers",
+  "cls": null,
+  "size": 149,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'SOCKET'"
+ },
+ {
+  "addr": "0x5cf840",
+  "name": "sub_5CF840",
+  "cls": null,
+  "size": 151,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'char ** ' to 'const char ** '"
+ },
+ {
+  "addr": "0x7dc378",
+  "name": "__mbschr",
+  "cls": null,
+  "size": 151,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ',' before '*'"
+ },
+ {
+  "addr": "0x690360",
+  "name": "Screen::CleanupTransitionObjects",
+  "cls": null,
+  "size": 153,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->vfptr' must point to class/struct/union"
+ }
+]

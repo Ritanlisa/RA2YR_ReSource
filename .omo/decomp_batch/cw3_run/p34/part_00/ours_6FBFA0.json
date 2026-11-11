@@ -1,0 +1,57 @@
+{
+ "symbol": "?ExecuteMoveCommand@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::ExecuteMoveCommand",
+ "size": 155,
+ "link_base": 0,
+ "bytes_hex": "53568bf18a861b04000084c075198b8e1c020000e80000000084c0750a8b1d0000000085db756c8bcee8000000008bd884db745f8b4e3485c97412a1100200006a006a0050566a21e8000000008b8e1c020000e80000000084c075138b8e1c0200008b51348a82a601000084c07412a10000000085c074098b0656ff90600300008bcee80000000080e3015e83cb018bc35bc380e3005e8ac35bc3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?HandleSelection@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::HandleSelection"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Update_0@TeamClass@@QAEDHHHDH@Z",
+   "sym_key": "TeamClass::Update_0"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?IsProductionChainActive@TechnoClass@@QAEDXZ",
+   "sym_key": "TechnoClass::IsProductionChainActive"
+  }
+ ]
+}
