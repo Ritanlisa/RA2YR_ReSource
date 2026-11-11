@@ -1,0 +1,15 @@
+{
+ "symbol": "?processRadarEvent@AbstractClass@@QAEXXZ",
+ "sym_key": "AbstractClass::processRadarEvent",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "8b152c16000053555685d25774478b5a108d72108d43ff85c07c3a8d7a048b52048b2c828d14823be9740d4878278b6afc83ea043be975f33bc37d198d4bff3bc1890e7d108b0f408b1481895481fc8b0e3bc172f05f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

@@ -146,6 +146,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x406570": {
+  "attempts": 1,
+  "first_diff": "+0 test dl, 0x20",
+  "name": "AbstractTypeClass::sub_406570",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4065c0": {
   "attempts": 7,
   "first_diff": null,
@@ -544,6 +551,13 @@
   "name": "XSurface::vt_entry_40",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x410e70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_410E70",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x411330": {
   "attempts": 9,
@@ -2169,6 +2183,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x48dee0": {
+  "attempts": 1,
+  "first_diff": "+0 push esi",
+  "name": "sub_48DEE0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x48e610": {
   "attempts": 1,
   "first_diff": null,
@@ -2243,6 +2264,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_492370",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x492830": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_492830",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -3548,6 +3576,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4d2b50": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "FoggedObject_DrawVector::Read",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x4d2bc0": {
   "attempts": 9,
   "first_diff": null,
@@ -3666,6 +3701,13 @@
   "name": "VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::FindItemIndex",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x4e1340": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ControlClass::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4e14a0": {
   "attempts": 10,
@@ -4079,6 +4121,13 @@
   "name": "HouseClass::ClearLowPowerTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4fce30": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 8",
+  "name": "HouseClass::GetPowerRatio",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4fd060": {
   "attempts": 9,
@@ -5088,6 +5137,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x541070": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IPXManagerClass::receivePacket",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x542520": {
   "attempts": 11,
   "first_diff": null,
@@ -5564,6 +5620,20 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x565520": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 8",
+  "name": "CellClass::GetScreenCenterOffset",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x5656d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapClass::IsCellPassable",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x565b00": {
   "attempts": 14,
   "first_diff": "+57 jle 0x565b63",
@@ -5682,6 +5752,13 @@
   "name": "0x578d80",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x580b70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CellClass::applyTileDamage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5855a0": {
   "attempts": 8,
@@ -7104,6 +7181,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x626020": {
+  "attempts": 1,
+  "first_diff": "+1 mov eax, ecx",
+  "name": "sub_626020",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x626070": {
   "attempts": 1,
   "first_diff": null,
@@ -7370,6 +7454,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x635f20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptAction::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x636540": {
   "attempts": 6,
   "first_diff": null,
@@ -7514,6 +7605,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "PowerClass::getDrain",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6429e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_6429E0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -7824,6 +7922,13 @@
   "name": "FileClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x65c780": {
+  "attempts": 1,
+  "first_diff": "+0 cmp byte ptr [ecx], 0",
+  "name": "Random::State",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "status": "NG"
  },
  "0x65c7e0": {
   "attempts": 4,
@@ -8237,6 +8342,13 @@
   "name": "LocomotionClass::Process",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x69f1b0": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 8",
+  "name": "sub_69F1B0",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x69f210": {
   "attempts": 1,
@@ -9470,6 +9582,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x719ee0": {
+  "attempts": 1,
+  "first_diff": "+17 ret 8",
+  "name": "JumpjetLocomotionClass::StubReturnZero_19",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
+ },
  "0x71a210": {
   "attempts": 1,
   "first_diff": null,
@@ -9757,6 +9876,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x725070": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "UI_Remove",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x725e40": {
   "attempts": 1,
   "first_diff": null,
@@ -10001,6 +10127,13 @@
   "name": "Selection::GetFlag",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x733160": {
+  "attempts": 1,
+  "first_diff": "+0 push esi",
+  "name": "AbstractClass::processRadarEvent",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7344a0": {
   "attempts": 1,
@@ -10687,6 +10820,13 @@
   "name": "0x767e50",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x76a390": {
+  "attempts": 1,
+  "first_diff": "+11 mov edi, dword ptr [ecx + 8]",
+  "name": "Map_WorldDominationTour_43::AddRef",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x76a3f0": {
   "attempts": 6,

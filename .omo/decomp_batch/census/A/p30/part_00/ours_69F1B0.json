@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_69F1B0@ObjectClass@@QAENH@Z",
+ "sym_key": "ObjectClass::sub_69F1B0",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568b713085f689742404750ddd05000000005e83c40cc204008b51248b492c83faff7432a100000000578bf82bfa3bf95f73212bc1c744240c000000002bc203c65e89442404df6c2404da74240083c40cc2040033c92bf1897424085edb442404da74240083c40cc20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

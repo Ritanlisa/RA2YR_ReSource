@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetScreenCenterOffset@CellClass@@QAEPAIPAH0@Z",
+ "sym_key": "CellClass::GetScreenCenterOffset",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "8b81f4000000538b99fc00000056578bb9000100008b4c2414a8018b118b71048bca74052bce41eb022bce2bd75f2bd003d68bf2992bc2d1f9d1f803c88b44240c2bcb8970045e89085bc20800",
+ "relocs": []
+}

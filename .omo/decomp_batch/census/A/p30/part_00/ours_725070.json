@@ -1,0 +1,8 @@
+{
+ "symbol": "?UI_Remove@unknown@@QAIHHHPAI@Z",
+ "sym_key": "unknown::UI_Remove",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "8b4c24045685c9578bf27f075f33c05ec208008b4424108b388bc1992bc2d1f88b14c63bd776048bc8eb0d741683caff8d74c6082bd003ca85c97fdd5f33c05ec208008bc15f992bc2d1f88d04c65ec20800",
+ "relocs": []
+}

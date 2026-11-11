@@ -1,0 +1,8 @@
+{
+ "symbol": "?State@Random@@QAEHXZ",
+ "sym_key": "Random::State",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "833900740333c0c38b41048b5108568b54910c8b74810c8d44810c33f289308b51048b71088b44910c424681fafa0000008951048971087c07c741040000000081fefa0000005e7c07c7410800000000c3",
+ "relocs": []
+}

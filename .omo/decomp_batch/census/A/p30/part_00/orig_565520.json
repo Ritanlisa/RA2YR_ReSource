@@ -1,0 +1,11 @@
+{
+ "addr": "0x565520",
+ "name": "CellClass::GetScreenCenterOffset",
+ "size": 94,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x565520",
+ "bytes_hex": "83ec088b8100010000538b99f4000000894424088b442414558ba9fc000000568b7004578b38f6c3018bcf74052bce41eb022bce8bc32bf3992bc203f7d1f9d1f803c88b4424142bcd2bf08b44241c5f89088970045e5d5b83c408c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

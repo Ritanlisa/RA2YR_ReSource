@@ -1,0 +1,106 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x4fce30 HouseClass::GetPowerRatio -> HouseClass
+[conv] 0x725070 unknown::UI_Remove -> unknown
+[conv] 0x4d2b50 _VectorClass_UDrawRecord_FoggedObjectClass::Read -> _VectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x626020 ObjectClass::sub_626020 -> ObjectClass
+[conv] 0x48dee0 unknown::sub_48DEE0 -> unknown
+[conv] 0x580b70 CellClass::applyTileDamage -> CellClass
+[conv] 0x719ee0 JumpjetLocomotionClass::StubReturnZero_19 -> JumpjetLocomotionClass
+[conv] 0x733160 AbstractClass::processRadarEvent -> AbstractClass
+[conv] 0x406570 unknown::sub_406570 -> unknown
+[conv] 0x4e1340 ControlClass::Constructor -> ControlClass
+[conv] 0x541070 IPXManagerClass::receivePacket -> IPXManagerClass
+[conv] 0x6429e0 ObjectClass::sub_6429E0 -> ObjectClass
+[conv] 0x65c780 Random::State -> Random
+[conv] 0x635f20 ScriptAction::Constructor -> ScriptAction
+[conv] 0x410e70 unknown::sub_410E70 -> unknown
+[conv] 0x5656d0 MapClass::IsCellPassable -> MapClass
+[conv] 0x492830 _BlitTransLucent50_G::sub_492830 -> _BlitTransLucent50_G
+[conv] 0x69f1b0 ObjectClass::sub_69F1B0 -> ObjectClass
+[conv] 0x76a390 _VectorClass_VCentroid_WorldDominationTour::AddRef -> _VectorClass_VCentroid_WorldDominationTour
+[conv] 0x565520 CellClass::GetScreenCenterOffset -> CellClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] unknown                  rc=2
+[era] _VectorClass_UDrawRecord_FoggedObjectClass rc=0
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] JumpjetLocomotionClass   rc=0
+[era] AbstractClass            rc=0
+[era] ControlClass             rc=2
+[era] IPXManagerClass          rc=2
+[era] Random                   rc=0
+[era] ScriptAction             rc=2
+[era] MapClass                 rc=2
+[era] _BlitTransLucent50_G     rc=2
+[era] _VectorClass_VCentroid_WorldDominationTour rc=0
+=== diffasm byte-compare ===
+[diff] 0x4fce30   MISMATCH         HouseClass::GetPowerRatio
+[diff] 0x725070   MISMATCH         unknown::UI_Remove
+[diff] 0x48dee0   MISMATCH         unknown::sub_48DEE0
+[diff] 0x406570   MISMATCH         unknown::sub_406570
+[diff] 0x4d2b50   MISMATCH         _VectorClass_UDrawRecord_FoggedObjectClass::Read
+[diff] 0x626020   MISMATCH         ObjectClass::sub_626020
+[diff] 0x69f1b0   MISMATCH         ObjectClass::sub_69F1B0
+[diff] 0x565520   MISMATCH         CellClass::GetScreenCenterOffset
+[diff] 0x719ee0   MISMATCH         JumpjetLocomotionClass::StubReturnZero_19
+[diff] 0x733160   MISMATCH         AbstractClass::processRadarEvent
+[diff] 0x65c780   MISMATCH         Random::State
+[diff] 0x76a390   MISMATCH         _VectorClass_VCentroid_WorldDominationTour::AddRef
+[ledger] 0x4fce30 HouseClass::GetPowerRatio -> NG (attempt 1)
+[ledger] 0x725070 UI_Remove -> NG (attempt 1)
+[ledger] 0x4d2b50 FoggedObject_DrawVector::Read -> NG (attempt 1)
+[ledger] 0x626020 sub_626020 -> NG (attempt 1)
+[ledger] 0x48dee0 sub_48DEE0 -> NG (attempt 1)
+[ledger] 0x580b70 CellClass::applyTileDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x719ee0 JumpjetLocomotionClass::StubReturnZero_19 -> NG (attempt 1)
+[ledger] 0x733160 AbstractClass::processRadarEvent -> NG (attempt 1)
+[ledger] 0x406570 AbstractTypeClass::sub_406570 -> NG (attempt 1)
+[ledger] 0x4e1340 ControlClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x541070 IPXManagerClass::receivePacket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6429e0 sub_6429E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65c780 Random::State -> NG (attempt 1)
+[ledger] 0x635f20 ScriptAction::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x410e70 sub_410E70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5656d0 MapClass::IsCellPassable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x492830 sub_492830 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69f1b0 sub_69F1B0 -> NG (attempt 1)
+[ledger] 0x76a390 Map_WorldDominationTour_43::AddRef -> NG (attempt 1)
+[ledger] 0x565520 CellClass::GetScreenCenterOffset -> NG (attempt 1)
+======================================================================
+{
+ "total": 1657,
+ "verdicts": {
+  "MISMATCH": 466,
+  "MATCH": 503,
+  "COMPILE_FAIL": 370,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 310,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 8,
+  "codegen_shape": 157,
+  "ret_norm": 5,
+  "frame_sched": 61,
+  "const_fold": 50,
+  "branch_polarity": 32,
+  "regalloc": 55,
+  "branch_order": 67,
+  "width_mismatch": 5,
+  "extern_reloc": 16,
+  "cc_mismatch": 8,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 51.9,
+ "match_rate_of_total_pct": 30.4,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p30\batch_report.json

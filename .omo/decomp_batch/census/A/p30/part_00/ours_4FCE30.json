@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPowerRatio@HouseClass@@QAENXZ",
+ "sym_key": "HouseClass::GetPowerRatio",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "db81a4530000c3",
+ "relocs": []
+}

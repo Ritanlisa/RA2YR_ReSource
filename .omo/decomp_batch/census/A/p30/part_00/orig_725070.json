@@ -1,0 +1,11 @@
+{
+ "addr": "0x725070",
+ "name": "UI_Remove",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x725070",
+ "bytes_hex": "535685d2578bf27e2b8b4424108b188bc6992bc2d1f88b3cc18d14c13bfb76048bf0eb0c74168d4a0883caff2bd003f285f67fdb5f5e33c05bc204005f5e8bc25bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

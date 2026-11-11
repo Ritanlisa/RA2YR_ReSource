@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FCE30",
+ "name": "HouseClass::GetPowerRatio",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FCE30",
+ "bytes_hex": "83ec088b81a45300008b89a85300003bc189442400894c24047d1e85c9741a85c0740cdb442400da74240483c408c3dd0500287e0083c408c3dd0518177e0083c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

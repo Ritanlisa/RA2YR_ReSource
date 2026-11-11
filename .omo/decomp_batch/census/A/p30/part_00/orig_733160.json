@@ -1,0 +1,11 @@
+{
+ "addr": "0x733160",
+ "name": "AbstractClass::processRadarEvent",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x733160",
+ "bytes_hex": "568bf18b0d6cfeb00085c9743b8b41104878358b51048d14823932740a4883ea0485c07df45ec38b51103bc27d1a4a3bc28951107d128b5104408b3482897482fc8b51103bc27cee5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

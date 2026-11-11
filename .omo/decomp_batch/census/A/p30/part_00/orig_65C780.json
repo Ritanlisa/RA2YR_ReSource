@@ -1,0 +1,11 @@
+{
+ "addr": "0x65C780",
+ "name": "Random::State",
+ "size": 81,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65C780",
+ "bytes_hex": "803900740333c0c38b41048b5108568b54910c8b74810c8d44810c33f289308b51048b71088b44910c424681fafa0000008951048971087c07c741040000000081fefa0000005e7c07c7410800000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
