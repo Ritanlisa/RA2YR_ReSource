@@ -1,0 +1,455 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "branch_order": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x660e40",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x660e4c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_RadarEventClass::GetCapacity",
+   "emitted": "_VectorClass_PAVRadarEventClass::GetCapacity",
+   "unit": "_VectorClass_PAVRadarEventClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x661f90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 30B",
+   "first_diff": {
+    "orig": "+10 jl 0x661fa6",
+    "ours": "+10 jl 0x19"
+   },
+   "pathology": "branch_order",
+   "name": "JumpjetLocomotionClass::CheckCompositeState_0",
+   "emitted": "RocketLocomotionClass::CheckCompositeState_0",
+   "unit": "RocketLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x6647e0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6647ec",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "RocketLocomotionClass_17::BeginMove",
+   "emitted": "_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::BeginMove",
+   "unit": "_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x664970",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x66497c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "RocketLocomotionClass_17::PointerToIndex",
+   "emitted": "_VectorClass_PAUConnectionListStruct_OwnerTalkClass::PointerToIndex",
+   "unit": "_VectorClass_PAUConnectionListStruct_OwnerTalkClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x67a440",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x67a44c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "TypeList_VoxelAnim::GetIndex",
+   "emitted": "_DynamicVectorClass_PBVVoxelAnimTypeClass::GetIndex",
+   "unit": "_DynamicVectorClass_PBVVoxelAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x67a6b0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x67a6bc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "TypeList_VoxelAnim::TypeList_vt05",
+   "emitted": "_DynamicVectorClass_PBVSmudgeTypeClass::TypeList_vt05",
+   "unit": "_DynamicVectorClass_PBVSmudgeTypeClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x67ac50",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x67ac5c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "TypeList_VoxelAnim::PointerToIndex",
+   "emitted": "_VectorClass_PBVVoxelAnimTypeClass::PointerToIndex",
+   "unit": "_VectorClass_PBVVoxelAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x67afd0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x67afdc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "SmudgeTypeVector::Remove",
+   "emitted": "_VectorClass_PBVSmudgeTypeClass::Remove",
+   "unit": "_VectorClass_PBVSmudgeTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x67b350",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x67b35c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "TypeList_cptr_TerrainTypeClass::PointerToIndex",
+   "emitted": "_VectorClass_PBVTerrainTypeClass::PointerToIndex",
+   "unit": "_VectorClass_PBVTerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x69c4d0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69c4dc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "_TypeList_W4DiskID::Write",
+   "emitted": "_TypeList_W4DiskID::Write",
+   "unit": "_TypeList_W4DiskID",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x69c560",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69c56c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "MapFile::Write",
+   "emitted": "_DynamicVectorClass_VWstring::Write",
+   "unit": "_DynamicVectorClass_VWstring",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x69c5d0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69c5dc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_GlobalPacketType::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVMultiMission::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVMultiMission",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x69c630",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69c63c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_GlobalPacketType::GetItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAUGlobalPacketType::GetItemIndex_0",
+   "unit": "_DynamicVectorClass_PAUGlobalPacketType",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x69c690",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69c69c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_GlobalPacketType::GetItemIndex_1",
+   "emitted": "VectorClass_ptr_GlobalPacketType::GetItemIndex_1",
+   "unit": "VectorClass_ptr_GlobalPacketType",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x69c870",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69c87c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "_VectorClass_W4DiskID::updatePlayer",
+   "emitted": "_VectorClass_W4DiskID::updatePlayer",
+   "unit": "_VectorClass_W4DiskID",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x69cea0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69ceac",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_MultiMission::GetCapacity",
+   "emitted": "_VectorClass_PAVMultiMission::GetCapacity",
+   "unit": "_VectorClass_PAVMultiMission",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x69d100",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69d10c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_GlobalPacketType::GetCapacity",
+   "emitted": "_VectorClass_PAUGlobalPacketType::GetCapacity",
+   "unit": "_VectorClass_PAUGlobalPacketType",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x69d360",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x69d36c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_PhoneEntryClass::GetCapacity",
+   "emitted": "_VectorClass_PAVPhoneEntryClass::GetCapacity",
+   "unit": "_VectorClass_PAVPhoneEntryClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6b13e0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6b13ec",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "SlaveManagerClass_25::Write",
+   "emitted": "_DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Write",
+   "unit": "_DynamicVectorClass_PAUSlaveControl_SlaveManagerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6b1440",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6b144c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_SlaveManagerClass::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVSlaveManagerClass::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVSlaveManagerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  }
+ ]
+}

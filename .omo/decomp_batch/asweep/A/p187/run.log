@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p187\part_00
+=== convert (20 addrs) ===
+[conv] 0x660e40 _VectorClass_PAVRadarEventClass::GetCapacity -> _VectorClass_PAVRadarEventClass
+[conv] 0x661f90 RocketLocomotionClass::CheckCompositeState_0 -> RocketLocomotionClass
+[conv] 0x6647e0 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::BeginMove -> _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x664970 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::PointerToIndex -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67a440 _DynamicVectorClass_PBVVoxelAnimTypeClass::GetIndex -> _DynamicVectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67a6b0 _DynamicVectorClass_PBVSmudgeTypeClass::TypeList_vt05 -> _DynamicVectorClass_PBVSmudgeTypeClass
+[conv] 0x67ac50 _VectorClass_PBVVoxelAnimTypeClass::PointerToIndex -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67afd0 _VectorClass_PBVSmudgeTypeClass::Remove -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x67b350 _VectorClass_PBVTerrainTypeClass::PointerToIndex -> _VectorClass_PBVTerrainTypeClass
+[conv] 0x69c4d0 _TypeList_W4DiskID::Write -> _TypeList_W4DiskID
+[conv] 0x69c560 _DynamicVectorClass_VWstring::Write -> _DynamicVectorClass_VWstring
+[conv] 0x69c5d0 _DynamicVectorClass_PAVMultiMission::GetItemIndex -> _DynamicVectorClass_PAVMultiMission
+[conv] 0x69c630 _DynamicVectorClass_PAUGlobalPacketType::GetItemIndex_0 -> _DynamicVectorClass_PAUGlobalPacketType
+[conv] 0x69c690 VectorClass_ptr_GlobalPacketType::GetItemIndex_1 -> VectorClass_ptr_GlobalPacketType
+[conv] 0x69c870 _VectorClass_W4DiskID::updatePlayer -> _VectorClass_W4DiskID
+[conv] 0x69cea0 _VectorClass_PAVMultiMission::GetCapacity -> _VectorClass_PAVMultiMission
+[conv] 0x69d100 _VectorClass_PAUGlobalPacketType::GetCapacity -> _VectorClass_PAUGlobalPacketType
+[conv] 0x69d360 _VectorClass_PAVPhoneEntryClass::GetCapacity -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x6b13e0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Write -> _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass
+[conv] 0x6b1440 _DynamicVectorClass_PAVSlaveManagerClass::GetItemIndex -> _DynamicVectorClass_PAVSlaveManagerClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVRadarEventClass rc=0
+[era] RocketLocomotionClass    rc=0
+[era] _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _DynamicVectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _DynamicVectorClass_PBVSmudgeTypeClass rc=0
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PBVSmudgeTypeClass rc=0
+[era] _VectorClass_PBVTerrainTypeClass rc=0
+[era] _TypeList_W4DiskID       rc=0
+[era] _DynamicVectorClass_VWstring rc=0
+[era] _DynamicVectorClass_PAVMultiMission rc=0
+[era] _DynamicVectorClass_PAUGlobalPacketType rc=0
+[era] VectorClass_ptr_GlobalPacketType rc=0
+[era] _VectorClass_W4DiskID    rc=0
+[era] _VectorClass_PAVMultiMission rc=0
+[era] _VectorClass_PAUGlobalPacketType rc=0
+[era] _VectorClass_PAVPhoneEntryClass rc=0
+[era] _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass rc=0
+[era] _DynamicVectorClass_PAVSlaveManagerClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x660e40   MISMATCH         _VectorClass_PAVRadarEventClass::GetCapacity
+[diff] 0x661f90   MISMATCH         RocketLocomotionClass::CheckCompositeState_0
+[diff] 0x6647e0   MISMATCH         _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::BeginMove
+[diff] 0x664970   MISMATCH         _VectorClass_PAUConnectionListStruct_OwnerTalkClass::PointerToIndex
+[diff] 0x67a440   MISMATCH         _DynamicVectorClass_PBVVoxelAnimTypeClass::GetIndex
+[diff] 0x67a6b0   MISMATCH         _DynamicVectorClass_PBVSmudgeTypeClass::TypeList_vt05
+[diff] 0x67ac50   MISMATCH         _VectorClass_PBVVoxelAnimTypeClass::PointerToIndex
+[diff] 0x67afd0   MISMATCH         _VectorClass_PBVSmudgeTypeClass::Remove
+[diff] 0x67b350   MISMATCH         _VectorClass_PBVTerrainTypeClass::PointerToIndex
+[diff] 0x69c4d0   MISMATCH         _TypeList_W4DiskID::Write
+[diff] 0x69c560   MISMATCH         _DynamicVectorClass_VWstring::Write
+[diff] 0x69c5d0   MISMATCH         _DynamicVectorClass_PAVMultiMission::GetItemIndex
+[diff] 0x69c630   MISMATCH         _DynamicVectorClass_PAUGlobalPacketType::GetItemIndex_0
+[diff] 0x69c690   MISMATCH         VectorClass_ptr_GlobalPacketType::GetItemIndex_1
+[diff] 0x69c870   MISMATCH         _VectorClass_W4DiskID::updatePlayer
+[diff] 0x69cea0   MISMATCH         _VectorClass_PAVMultiMission::GetCapacity
+[diff] 0x69d100   MISMATCH         _VectorClass_PAUGlobalPacketType::GetCapacity
+[diff] 0x69d360   MISMATCH         _VectorClass_PAVPhoneEntryClass::GetCapacity
+[diff] 0x6b13e0   MISMATCH         _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Write
+[diff] 0x6b1440   MISMATCH         _DynamicVectorClass_PAVSlaveManagerClass::GetItemIndex
+[ledger] 0x660e40 _VectorClass_PAVRadarEventClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x661f90 RocketLocomotionClass::CheckCompositeState_0 -> NG (attempt 1)
+[ledger] 0x6647e0 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::BeginMove -> NG (attempt 1)
+[ledger] 0x664970 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x67a440 _DynamicVectorClass_PBVVoxelAnimTypeClass::GetIndex -> NG (attempt 1)
+[ledger] 0x67a6b0 _DynamicVectorClass_PBVSmudgeTypeClass::TypeList_vt05 -> NG (attempt 1)
+[ledger] 0x67ac50 _VectorClass_PBVVoxelAnimTypeClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x67afd0 _VectorClass_PBVSmudgeTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x67b350 _VectorClass_PBVTerrainTypeClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x69c4d0 _TypeList_W4DiskID::Write -> NG (attempt 1)
+[ledger] 0x69c560 _DynamicVectorClass_VWstring::Write -> NG (attempt 1)
+[ledger] 0x69c5d0 _DynamicVectorClass_PAVMultiMission::GetItemIndex -> NG (attempt 1)
+[ledger] 0x69c630 _DynamicVectorClass_PAUGlobalPacketType::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x69c690 VectorClass_ptr_GlobalPacketType::GetItemIndex_1 -> NG (attempt 1)
+[ledger] 0x69c870 _VectorClass_W4DiskID::updatePlayer -> NG (attempt 1)
+[ledger] 0x69cea0 _VectorClass_PAVMultiMission::GetCapacity -> NG (attempt 1)
+[ledger] 0x69d100 _VectorClass_PAUGlobalPacketType::GetCapacity -> NG (attempt 1)
+[ledger] 0x69d360 _VectorClass_PAVPhoneEntryClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x6b13e0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Write -> NG (attempt 1)
+[ledger] 0x6b1440 _DynamicVectorClass_PAVSlaveManagerClass::GetItemIndex -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_order": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p187\batch_report.json
