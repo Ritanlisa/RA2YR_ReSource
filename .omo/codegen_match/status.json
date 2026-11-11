@@ -28468,6 +28468,30 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c2140": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C2140",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C2140",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c22c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C22C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C22C0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c2340": {
   "attempts": 1,
   "first_diff": null,
@@ -28487,12 +28511,60 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c25c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C25C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C25C0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c2740": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C2740",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C2740",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c2750": {
   "attempts": 1,
   "first_diff": null,
   "name": "CreateTClassFactory_UnitTypeClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c28c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C28C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C28C0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c2a40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C2A40",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C2A40",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c2ae0": {
   "attempts": 1,
@@ -28508,6 +28580,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x6c2bc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C2BC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C2BC0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c2c90": {
   "attempts": 1,
   "first_diff": null,
@@ -28522,12 +28606,84 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c2ec0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C2EC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C2EC0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c3040": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C3040",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C3040",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c31c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C31C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C31C0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c3340": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C3340",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C3340",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c33c0": {
   "attempts": 1,
   "first_diff": null,
   "name": "TClassFactory_UnitClass::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c34c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C34C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C34C0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c3640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C3640",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C3640",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c3790": {
   "attempts": 1,
@@ -28539,6 +28695,18 @@
   "orig_name": "TClassFactory_AircraftClass::GetSize",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c37c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C37C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C37C0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6c37d0": {
@@ -28562,6 +28730,30 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x6c3940": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C3940",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C3940",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c3ac0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C3AC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C3AC0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c3b60": {
   "attempts": 1,
   "first_diff": null,
@@ -28576,12 +28768,60 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c3dc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C3DC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C3DC0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c3f40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C3F40",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C3F40",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c4010": {
   "attempts": 1,
   "first_diff": null,
   "name": "TClassFactory_DriveLocomotionClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c40c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C40C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C40C0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c4240": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::WinMain_Helper_6C4240",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMain_Helper_6C4240",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c45c0": {
   "attempts": 1,

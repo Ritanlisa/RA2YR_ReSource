@@ -1,0 +1,61 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p68\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c2140 ObjectClass::WinMain_Helper_6C2140 -> ObjectClass
+[conv] 0x6c22c0 ObjectClass::WinMain_Helper_6C22C0 -> ObjectClass
+[conv] 0x6c25c0 ObjectClass::WinMain_Helper_6C25C0 -> ObjectClass
+[conv] 0x6c2740 ObjectClass::WinMain_Helper_6C2740 -> ObjectClass
+[conv] 0x6c28c0 ObjectClass::WinMain_Helper_6C28C0 -> ObjectClass
+[conv] 0x6c2a40 ObjectClass::WinMain_Helper_6C2A40 -> ObjectClass
+[conv] 0x6c2bc0 ObjectClass::WinMain_Helper_6C2BC0 -> ObjectClass
+[conv] 0x6c2ec0 ObjectClass::WinMain_Helper_6C2EC0 -> ObjectClass
+[conv] 0x6c3040 ObjectClass::WinMain_Helper_6C3040 -> ObjectClass
+[conv] 0x6c31c0 ObjectClass::WinMain_Helper_6C31C0 -> ObjectClass
+[conv] 0x6c3340 ObjectClass::WinMain_Helper_6C3340 -> ObjectClass
+[conv] 0x6c34c0 ObjectClass::WinMain_Helper_6C34C0 -> ObjectClass
+[conv] 0x6c3640 ObjectClass::WinMain_Helper_6C3640 -> ObjectClass
+[conv] 0x6c37c0 ObjectClass::WinMain_Helper_6C37C0 -> ObjectClass
+[conv] 0x6c3940 ObjectClass::WinMain_Helper_6C3940 -> ObjectClass
+[conv] 0x6c3ac0 ObjectClass::WinMain_Helper_6C3AC0 -> ObjectClass
+[conv] 0x6c3dc0 ObjectClass::WinMain_Helper_6C3DC0 -> ObjectClass
+[conv] 0x6c3f40 ObjectClass::WinMain_Helper_6C3F40 -> ObjectClass
+[conv] 0x6c40c0 ObjectClass::WinMain_Helper_6C40C0 -> ObjectClass
+[conv] 0x6c4240 ObjectClass::WinMain_Helper_6C4240 -> ObjectClass
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6c2140 ObjectClass::WinMain_Helper_6C2140 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c22c0 ObjectClass::WinMain_Helper_6C22C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c25c0 ObjectClass::WinMain_Helper_6C25C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2740 ObjectClass::WinMain_Helper_6C2740 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c28c0 ObjectClass::WinMain_Helper_6C28C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2a40 ObjectClass::WinMain_Helper_6C2A40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2bc0 ObjectClass::WinMain_Helper_6C2BC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2ec0 ObjectClass::WinMain_Helper_6C2EC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3040 ObjectClass::WinMain_Helper_6C3040 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c31c0 ObjectClass::WinMain_Helper_6C31C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3340 ObjectClass::WinMain_Helper_6C3340 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c34c0 ObjectClass::WinMain_Helper_6C34C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3640 ObjectClass::WinMain_Helper_6C3640 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c37c0 ObjectClass::WinMain_Helper_6C37C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3940 ObjectClass::WinMain_Helper_6C3940 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3ac0 ObjectClass::WinMain_Helper_6C3AC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3dc0 ObjectClass::WinMain_Helper_6C3DC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3f40 ObjectClass::WinMain_Helper_6C3F40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c40c0 ObjectClass::WinMain_Helper_6C40C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4240 ObjectClass::WinMain_Helper_6C4240 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p68\batch_report.json
