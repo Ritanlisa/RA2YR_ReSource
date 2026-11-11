@@ -42,6 +42,7 @@ class Registry(object):
         self._g_by_addr = None
         self._ig = None          # (cls, off) -> {width, types, count}
         self._fn_by_name = None  # qualified name -> addr
+        self._rev_member = None  # member name -> {offset: type} (R7)
         self.notes = []          # registry-gap reports
 
     @classmethod
@@ -178,6 +179,41 @@ class Registry(object):
                                           "width": mm.get("size") or 4}, \
                             "member_lookup:%s" % k
         return None, None, None
+
+    def global_member_offset(self, name):
+        """R7 cross-class reverse index: member name -> (offset, type).
+
+        Answers only when EVERY occurrence of the name across all classes
+        agrees on one offset (hierarchy-invariant names like
+        nextArrayIndex@0x24 bind; family-split names like barrelFacing
+        696/880 return None -- honest refuse).  Placeholder names are
+        excluded.  Used by the named-global member-view supply
+        (`g_BuildingLoadQueue_Array.UnitExitSound`).
+        """
+        if self._rev_member is None:
+            rev = {}
+            for cls, rec in self.classes.items():
+                for o_s, mm in (rec.get("members") or {}).items():
+                    nm = mm.get("name")
+                    if not nm or self._is_placeholder(nm):
+                        continue
+                    rev.setdefault(nm, {}).setdefault(
+                        int(o_s), mm.get("type"))
+            if self._ml is None:
+                self._ml = _j(MEMBER_LOOKUP)
+            for cls, grp in self._ml.items():
+                for o_s, mm in grp.items():
+                    nm = mm.get("name")
+                    if not nm or self._is_placeholder(nm):
+                        continue
+                    rev.setdefault(nm, {}).setdefault(
+                        int(o_s), mm.get("type"))
+            self._rev_member = rev
+        offs = self._rev_member.get(name)
+        if not offs or len(offs) != 1:
+            return None
+        off = next(iter(offs))
+        return (off, offs[off])
 
     def member_offset_inherited(self, cls, ida_name):
         """R5: member_lookup parks inherited members on DERIVED classes

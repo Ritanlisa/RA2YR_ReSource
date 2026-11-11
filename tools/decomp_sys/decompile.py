@@ -560,6 +560,46 @@ def widen_byref_for_dispatch(ctx):
                  % (arr, n, arr, need, need, var, max(idxs)))
 
 
+# ---------------------------------------------------------------- shell supply
+
+def shell_augment(by_cls, views, reg, depth=2):
+    """R7 member-type supply: foreign classes whose members the bodies
+    ACCESS (through-pointer views, `v11[1].field_08` records) must get a
+    real shell block in the unit hpp, not a bare `class C;` forward --
+    `v3->vfptr` (C2227/C2039) and `v11[1].Stream_field_08` / `Stream*`
+    arithmetic (C2036 on an incomplete type) all resolve once the class
+    is DEFINED (members from views + tail pad to the registry size).
+
+    Recurses into pointer-typed member views (depth-capped at 2 to
+    prevent chain explosions).  Returns {cls: []} shell buckets to merge
+    into by_cls (own sigs always win -- a class with methods here is
+    never downgraded to a shell).
+    """
+    out = {}
+    frontier = set(views.scalars.keys()) | set(views.arrays.keys())
+    d = 0
+    while frontier and d < depth:
+        nxt = set()
+        for c in frontier:
+            if c in by_cls or c in out:
+                continue
+            size = (reg.classes.get(c) or {}).get("size") or 0
+            has_views = bool(views.scalars.get(c) or views.arrays.get(c))
+            if not size and not has_views:
+                continue
+            out[c] = []
+            for roles in (views.scalars.get(c) or {}).values():
+                for v in roles.values():
+                    ty = v.get("type") or ""
+                    if ty.endswith("*"):
+                        b = ty.replace("*", "").strip()
+                        if b and b not in by_cls and b not in out:
+                            nxt.add(b)
+        frontier = nxt
+        d += 1
+    return out
+
+
 # ---------------------------------------------------------------- pipeline
 
 def run_function(addr, reg, views, idx):
@@ -585,6 +625,7 @@ def run_function(addr, reg, views, idx):
     # shapes first; only value-level residuals reach this pass)
     passes.pass_receiver_arith(ctx)
     passes.pass_callees(ctx)
+    passes.pass_fncast_harmonize(ctx)
     passes.pass_unknown_symbols(ctx)
     passes.pass_local_retype(ctx)
     passes.pass_assign_harmonize(ctx)
@@ -598,6 +639,9 @@ def run_function(addr, reg, views, idx):
     # harmonize that ran before it would key on the stale view spelling
     # (the R5 `(void *)(0)` wrap vs `unsigned int` hpp decl family).
     passes.pass_assign_harmonize2(ctx)
+    # R7: class-name==global-name phantoms (Stream family) must go before
+    # emission so hpp_pilot's fwd-decl logic sees a clean globals table
+    passes.pass_prune_type_only_globals(ctx)
 
     # unit selection (rule 2: cpp <-> hpp same name):
     # D-fix 1 -- the OWNING CLASS names the unit so a corrected fn->cls
@@ -736,6 +780,9 @@ def main():
                     if not any(s.get("method") == cs.get("method")
                                for s in bucket):
                         bucket.append(cs)
+        # R7: foreign-class shells (member-type supply)
+        for cls, bucket in shell_augment(by_cls, views, reg).items():
+            by_cls.setdefault(cls, bucket)
         members_by_cls = {}
         unit_globals = {}
         unit_externs = []

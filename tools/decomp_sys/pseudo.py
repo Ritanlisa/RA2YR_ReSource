@@ -86,16 +86,29 @@ def fetch(addr):
     # old single-line drop leaked the whole proto into the body as
     # garbage declarations (C2143 INIClass family).  Everything before
     # the first standalone '{' that parses as a signature is dropped.
+    # R7: the 12-line window was too small -- the Blit functor family
+    # carries 13+ param lines; the leaked proto then fed pass_callees
+    # (leaked `Cls::M(` rewritten into a monster call) and
+    # pass_unknown_symbols (`__thiscall` swallowed as a callee NAME ->
+    # `extern int __thiscall(...)`).  Window 24 with control-keyword +
+    # statement guards so a real body's `if (...)` header is never
+    # mistaken for a signature.
+    _CTRL_HEAD = ("if", "for", "while", "switch", "do", "else", "return",
+                  "goto", "break", "continue", "case", "default")
     if body:
         brace_idx = None
-        for i, ln in enumerate(body[:12]):
+        for i, ln in enumerate(body[:24]):
             if ln.strip() == "{":
                 brace_idx = i
                 break
         if brace_idx is not None:
             head = body[:brace_idx]
+            joined = " ".join(head)
+            first_word = re.match(r"\s*(\w+)", head[0]) if head else None
             looks_sig = bool(head) and "(" in head[0] \
-                and ";" not in " ".join(head)
+                and ";" not in joined and "{" not in joined \
+                and "}" not in joined \
+                and not (first_word and first_word.group(1) in _CTRL_HEAD)
             if looks_sig or brace_idx == 0:
                 body = body[brace_idx + 1:]
             elif head and re.search(r"\)\s*$", head[0]) \

@@ -329,6 +329,10 @@ def run_part(addrs, batch_src, out, reg, idx):
                     if not any(s.get("method") == cs.get("method")
                                for s in bucket):
                         bucket.append(cs)
+        # R7: foreign-class shells (member-type supply: through-pointer
+        # views / `v11[1].field` records need DEFINED classes in the hpp)
+        for cls, bucket in decompile.shell_augment(by_cls, views, reg).items():
+            by_cls.setdefault(cls, bucket)
         unit_globals = {}
         unit_externs = []
         unit_fwd = set()
@@ -403,6 +407,9 @@ def run_part(addrs, batch_src, out, reg, idx):
                     if not any(s.get("method") == cs.get("method")
                                for s in bucket):
                         bucket.append(cs)
+            for cls2, bucket2 in decompile.shell_augment(
+                    by_cls2, ctx.views, reg).items():
+                by_cls2.setdefault(cls2, bucket2)
             for cls2, sigs2 in by_cls2.items():
                 size2 = (reg.classes.get(cls2) or {}).get("size") or 0
                 exts2 = list(getattr(ctx, "used_callee_exts", []))

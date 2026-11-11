@@ -164,10 +164,35 @@ class FunctionCtx(object):
 
 def pass_param_rename(ctx):
     body = "\n".join(ctx.lines)
-    avars = sorted(set(re.findall(r"\b(a\d+)\b", body)), key=lambda x: int(x[1:]))
-    for i, an in enumerate(avars):
-        if i < len(ctx.sig["param_names"]):
-            body = re.sub(r"\b%s\b" % an, ctx.sig["param_names"][i], body)
+    # R7 FIX: IDA names call args a1..aN POSITIONALLY (a1 = this for
+    # thiscall).  The old "sorted appearance order" mapping silently
+    # MIS-ALIGNED bodies that reference only a subset (Blit functor:
+    # a11 renamed to p6 because a8..a10 never appeared -- then `*p6`
+    # dereferenced an int param, C2100).  Map by the aN NUMBER against
+    # the signature arity instead.
+    pnames = ctx.sig.get("param_names") or []
+    if pnames or not ctx.sig.get("free"):
+        n_par = len(pnames)
+        base = 2 if not ctx.sig.get("free") else 1
+
+        def _amap(m):
+            k = int(m.group(1))
+            idx = k - base
+            if 0 <= idx < n_par:
+                return pnames[idx]
+            # R7: an unnamed thiscall/fastcall receiver renders as `a1`
+            # in the raw body (`*(_DWORD *)(a1 + 68)` == this+0x44) --
+            # map it to `this`, never leave it dangling (C2065).  A
+            # WRITTEN a1 is a spilled ECX local, not this (this is
+            # const) -- leave it (honest fail).
+            if k == 1 and not ctx.sig.get("free") and \
+                    not re.search(r"\ba1\s*=[^=]", body) and re.search(
+                        r"\(\s*a1\s*\+|a1\s*->|\*\([^)]*\)\s*\(?\s*a1\b"
+                        r"|\ba1\s*\)",
+                        body):
+                return "this"
+            return m.group(0)
+        body = re.sub(r"\ba(\d+)\b", _amap, body)
     # R5: the export proto can NAME its params (`void *Block`) while the
     # body references them by that name; alias positionally to our p names
     proto = ctx.ex.proto or ""
@@ -372,6 +397,144 @@ def pass_struct_globals(ctx):
     sub_indexed(_STRU_PAD, 1, 2)
     for s in stru_seen:
         ctx.used_globals.setdefault(s, "char[]")
+
+    # ---- shared receiver gating for the global member forms ----
+    locals_ = set(ctx.sig.get("param_names") or [])
+    for m in _LOCAL_DECL.finditer(text):
+        locals_.add(m.group(1))
+    reg_globs = getattr(ctx.reg, "reg", {}).get("globals") or {}
+
+    def _named_global_ok(base):
+        """True when base names a global OBJECT (not stru_, local, this)."""
+        if base == "this" or base in locals_ or base.startswith("stru_"):
+            return False
+        if base in ctx.used_globals:
+            return True
+        return base in reg_globs
+
+    # 2b. R7: the SAME member-view forms on non-stru_ receivers --
+    #     registry-named globals (`DSurface_ViewBounds.__pad_FC[324]`,
+    #     `g_BuildingLoadQueue_Array.UnitExitSound`), local/param struct
+    #     objects (`v7.__pad_H[M]`), and this-member chains
+    #     (`this->m9A1[0].__pad_190[4]`).  Offsets are derivable for
+    #     ?[N] / __pad_H / vfptrN (offset IN the token) and for named
+    #     members via the registry reverse index (unique-offset answers
+    #     only).  Global arrays with element indexes stay untouched
+    #     (element size is unknown at text level -- honest refuse).
+    def _chain_ok(base_expr):
+        """(kind, ok): 'this-chain' | 'local' | 'global' | None."""
+        if base_expr.startswith("this->"):
+            return "this-chain"
+        if "[" in base_expr:
+            # indexed base: only member-array chains (this->m..[i]);
+            # indexed GLOBALS have unknown element size
+            return None
+        if base_expr == "this" or base_expr in locals_:
+            return "local"
+        if base_expr.startswith("stru_"):
+            return None           # handled by the stru_ forms above
+        if _named_global_ok(base_expr):
+            return "global"
+        return None
+
+    def _obj_addr(base_expr, kind):
+        # object address: `&obj` for value objects; a global declared as
+        # a pointer type was rendered with `->` by IDA, so the dot form
+        # on it never carries a real &-semantics -- keep & uniformly.
+        return "((char *)&%s)" % base_expr
+
+    def _sub_chain(pattern, render):
+        nonlocal text, changed
+        out = []
+        pos = 0
+        for m in pattern.finditer(text):
+            if m.start() < pos:
+                continue
+            base_expr = m.group(1)
+            kind = _chain_ok(base_expr)
+            if kind is None:
+                continue
+            idx_expr = None
+            j = m.end()
+            if j < len(text) and text[j] == "[":
+                k = _balanced_close(text, j)
+                if k > 0:
+                    idx_expr = text[j + 1:k]
+                    after = k + 1
+                else:
+                    continue
+            else:
+                after = m.end()
+            out.append(text[pos:m.start()])
+            out.append(render(base_expr, kind, idx_expr, m))
+            pos = after
+            changed += 1
+        out.append(text[pos:])
+        text = "".join(out)
+
+    # 2b-1. `G.?[N]` / `v.?[N]` -- unknown member, direct byte offset
+    _sub_chain(
+        re.compile(r"(?<![\w.>])([A-Za-z_]\w*)\.\?\[(\d+)\]"),
+        lambda b, k, idx, m: "%s[%s]" % (_obj_addr(b, k), m.group(2)))
+
+    # 2b-2. `.vfptrN` -- MI vtable slot read as a VALUE
+    _sub_chain(
+        re.compile(r"(?<![\w.>])([A-Za-z_]\w*)\.vfptr(\d*)\b(?!\s*\()"),
+        lambda b, k, idx, m: "((char **)&%s)[%d]" % (b, int(m.group(2) or 0)))
+
+    # 2b-3. `.__pad_H[M]` chains (this->m..[i], locals, globals)
+    _sub_chain(
+        re.compile(r"(?<![\w.>])((?:this->)?[A-Za-z_]\w*(?:\[[^\]\[]*\])?)"
+                   r"\.__pad_([0-9A-Fa-f]+)"),
+        lambda b, k, idx, m: (
+            "%s[0x%X + (%s)]" % (_obj_addr(b, k), int(m.group(2), 16), idx)
+            if idx is not None and idx.strip() else
+            "%s[0x%X]" % (_obj_addr(b, k), int(m.group(2), 16))))
+
+    # 2b-4. NAMED member views on struct globals
+    #       (`FootClass_Array.barrelFacing[0]`,
+    #        `g_BuildingLoadQueue_Array.UnitExitSound`) -- offset from
+    #       the registry reverse index; primitive-typed answers only
+    #       (class-typed members use deeper chains this pass does not
+    #       model).
+    gmo = getattr(ctx.reg, "global_member_offset", None)
+
+    def _named_mem_sub(m):
+        nonlocal changed
+        base, mem = m.group(1), m.group(2)
+        if not _named_global_ok(base):
+            return m.group(0)
+        if gmo is None:
+            return m.group(0)
+        hit = gmo(mem)
+        if hit is None:
+            return m.group(0)
+        off, ty = hit
+        sp = spell_type(ty) if ty else "int"
+        if sp not in WIDTH_OF and not sp.endswith("*"):
+            sp = "int"
+        addr = "((char *)&%s)" % base
+        j = m.end()
+        idx_expr = None
+        if j < len(text) and text[j] == "[":
+            k = _balanced_close(text, j)
+            if k > 0:
+                idx_expr = text[j + 1:k]
+        changed += 1
+        if idx_expr is not None:
+            ctx.sites.append(Site(
+                "global", "%s.%s" % (base, mem),
+                "named member view -> ((%s *)(%s + 0x%X))[idx] (registry "
+                "reverse index, unique offset)" % (sp, addr, off), True))
+            return "((%s *)(%s + 0x%X))[%s]" % (sp, addr, off, idx_expr)
+        ctx.sites.append(Site(
+            "global", "%s.%s" % (base, mem),
+            "named member view -> *(%s *)(%s + 0x%X) (registry reverse "
+            "index, unique offset)" % (sp, addr, off), True))
+        return "(*(%s *)(%s + 0x%X))" % (sp, addr, off)
+
+    text = re.sub(r"(?<![\w.>])([A-Za-z_]\w*)\.([A-Za-z_]\w*)"
+                  r"(?![\w(])(?!\s*\()", _named_mem_sub, text)
 
     # 3. G->__pad_H[idx] -- member through a global POINTER variable
     #    (base is the global's name after registry rename; `this` and
@@ -1370,6 +1533,38 @@ def pass_vt_dispatch(ctx):
 def pass_member_shapes(ctx):
     text = "\n".join(ctx.lines)
 
+    # R7: ancient-til NUMERIC member names (`this->0` in the raw export
+    # -- C2059 'constant'): the number IS the offset.  Decimal/hex
+    # ambiguity resolved against this function's own [ecx+N] disasm
+    # evidence.
+    def _num_member(m):
+        s = m.group(1)
+        cands = []
+        try:
+            cands.append(int(s, 10))
+        except ValueError:
+            cands = []
+        if re.fullmatch(r"[0-9A-Fa-f]+", s):
+            try:
+                h = int(s, 16)
+                if h not in cands:
+                    cands.append(h)
+            except ValueError:
+                pass
+        if not cands:
+            return m.group(0)
+        dis = _disasm_this_offsets(ctx)
+        in_dis = [c for c in cands if c in dis]
+        pick = in_dis[0] if in_dis else cands[0]
+        ctx.sites.append(Site(
+            "member_name", "this->" + s,
+            "numeric til member name -> this->m%03X (disasm-validated=%s)"
+            % (pick, bool(in_dis)), True))
+        return "this->m%03X" % pick
+
+    text = re.sub(r"this->(\d+)(?!\w)", _num_member, text)
+    ctx.lines = text.split("\n")
+
     def repl(m):
         ty, amp, mem, idx = (m.group("ty"), m.group("amp"),
                              m.group("mem"), m.group("idx"))
@@ -1501,7 +1696,7 @@ def pass_member_shapes(ctx):
                 if vm:
                     moff = 4 * int(vm.group(1) or 0)
                     ctx.views.add_scalar(ctx.sig["cls"], moff, "dword", mem,
-                                         "int", 4, "mi-vfptr-synth")
+                                         "void *", 4, "mi-vfptr-synth")
                     ctx.sites.append(Site(
                         "member_name", "this->" + mem,
                         "MI vtable slot synthesized at 0x%X (4-vtable "
@@ -1516,6 +1711,47 @@ def pass_member_shapes(ctx):
                     ctx.sites.append(Site(
                         "member_name", "this->" + mem,
                         "pad-name synthesized at 0x%X" % moff, True))
+                    return m.group(0)
+                # R7: era placeholder member names carry their own hex
+                # offset (`AudioMixer_field_08` == +0x8; the registry
+                # never carries these names, the til did).  Synthesize
+                # the view so the hpp declares what the body reads.
+                fm2 = re.match(r"^(?:\w+_)?field_([0-9A-Fa-f]+)$", mem)
+                if fm2:
+                    moff = int(fm2.group(1), 16)
+                    if is_indexed:
+                        ctx.views.add_array(ctx.sig["cls"], moff, mem,
+                                            "int", 0, "fieldname-synth")
+                    else:
+                        ctx.views.add_scalar(ctx.sig["cls"], moff, "dword",
+                                             mem, "int", 4, "fieldname-synth")
+                    ctx.sites.append(Site(
+                        "member_name", "this->" + mem,
+                        "field-name synthesized at 0x%X" % moff, True))
+                    return m.group(0)
+                # R7: registry-class miss on a semantic member name
+                # (fleet misattribution: VectorClass::GetItem emitted as
+                # LogicClass, body reads `this->items[0]`).  When this
+                # function's disasm touches exactly ONE [ecx+N] offset,
+                # the binary tells us where the member lives -- bind it.
+                dis1 = _disasm_this_offsets(ctx)
+                if len(dis1) == 1:
+                    off1 = next(iter(dis1))
+                    if is_indexed:
+                        ctx.views.add_array(ctx.sig["cls"], off1, mem,
+                                            "int", 0, "disasm-singleton")
+                    else:
+                        w1 = _disasm_max_width(ctx, off1) or 4
+                        ctx.views.add_scalar(
+                            ctx.sig["cls"], off1,
+                            _ROLE_OF_W.get(w1, "dword"), mem,
+                            {1: "unsigned char", 2: "short", 4: "int",
+                             8: "__int64"}.get(w1, "int"), w1,
+                            "disasm-singleton")
+                    ctx.sites.append(Site(
+                        "member_name", "this->" + mem,
+                        "registry miss; disasm singleton [ecx+0x%X] "
+                        "binding" % off1, True))
                     return m.group(0)
                 return m.group(0)
             if moff is not None:
@@ -1580,8 +1816,10 @@ def pass_member_shapes(ctx):
             if vm:
                 moff = 4 * int(vm.group(1) or 0)
                 view_off = moff
-                ctx.views.add_scalar(cls, view_off, "dword", mem, "int", 4,
-                                     "mi-vfptr-synth")
+                # R7: the slot IS a vtable pointer -- `vtable0 =
+                # v3->vfptr` into a void* local was C2440 int->void*
+                ctx.views.add_scalar(cls, view_off, "dword", mem,
+                                     "void *", 4, "mi-vfptr-synth")
                 ctx.sites.append(Site(
                     "member_name", "this->" + mem,
                     "MI vtable slot synthesized at 0x%X (4-vtable layout)"
@@ -1636,7 +1874,12 @@ def pass_member_shapes(ctx):
         ty = defty
         if rt:
             sp = spell_type(rt)
-            if not sp.endswith("*") and WIDTH_OF.get(sp) == w:
+            # R7: TRUE pointer spellings now flow into the view -- the
+            # foreign-class shell supply makes `BuildingTypeClass *rubble`
+            # declarable (`this->rubble->vfptr1` was unsigned->member)
+            if sp.endswith("*") and w == 4:
+                ty = sp
+            elif not sp.endswith("*") and WIDTH_OF.get(sp) == w:
                 ty = sp
         if is_indexed:
             # `this->__pad_XX[i]` renamed to a semantic member: the indexed
@@ -1665,16 +1908,124 @@ def pass_member_shapes(ctx):
     for dm in re.finditer(
             r"\b([A-Z]\w*)\s*\*\s*([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;", text):
         ptr_decls[dm.group(2)] = dm.group(1)
-    if ptr_decls:
-        for am in re.finditer(r"\b([A-Za-z_]\w*)\s*->\s*([A-Za-z_]\w*)", text):
+
+    def _base_class_of(base):
+        """cls behind a receiver base: local decl, or a POINTER-TYPED
+        MEMBER of this class (`this->rubble->vfptr1` -- rubble is a
+        BuildingTypeClass* member, R7)."""
+        cls2 = ptr_decls.get(base)
+        if cls2:
+            return cls2
+        moff_b, rec_b, _srcb = _member_record_for(ctx, base)
+        rt = (rec_b or {}).get("type") or ""
+        if rt.endswith("*"):
+            b = spell_type(rt).replace("*", "").strip()
+            if b in ctx.reg.classes:
+                return b
+        return None
+
+    # R7: finditer is non-overlapping -- `this->rubble->vfptr1` was
+    # consumed by the leading `this->rubble` match and the CHAINED
+    # `rubble->vfptr1` never fired.  The lookbehind pattern below
+    # matches chain links the head match swallows.
+    _arrow_hits = list(re.finditer(
+        r"\b([A-Za-z_]\w*)\s*->\s*([A-Za-z_]\w*)", text))
+    _arrow_hits += re.finditer(
+        r"(?<=\->)([A-Za-z_]\w*)\s*->\s*([A-Za-z_]\w*)", text)
+    for am in _arrow_hits:
+        base, mem = am.group(1), am.group(2)
+        cls2 = _base_class_of(base)
+        if not cls2 or base == "this":
+            continue
+        if text[am.end():am.end() + 1] == "(":
+            continue        # method call through pointer: not a data view
+        moff2 = None
+        rec2 = None
+        src2 = None
+        r2 = ctx.reg.member_offset_by_ida_name(cls2, mem)
+        if r2 is not None and r2[0] is not None:
+            moff2, rec2, src2 = r2
+        else:
+            inh2 = getattr(ctx.reg, "member_offset_inherited", None)
+            if inh2 is not None:
+                r3 = inh2(cls2, mem)
+                if r3 is not None and r3[0] is not None:
+                    moff2, rec2, src2 = r3
+        if moff2 is None:
+            # R7: `v3->vfptr` / `v3->vfptr2` through a typed local
+            # (HouseClass family C2039/C2227): MI vtable slots are
+            # binary-verified at 4*N -- same synth the `this->` path
+            # (Shape E) already does; hpp-convention pad names carry
+            # their own hex offset; era field names carry theirs
+            # (`v11->Stream_field_08` == +0x8).  Without this the
+            # local-path member stays undeclared in the owner shell.
+            vm2 = re.match(r"^vfptr(\d*)$", mem)
+            if vm2:
+                moff2 = 4 * int(vm2.group(1) or 0)
+                src2 = "mi-vfptr-synth"
+            else:
+                pm3 = re.match(r"^__pad_?([0-9A-Fa-f]+)$", mem)
+                if pm3:
+                    moff2 = int(pm3.group(1), 16)
+                    src2 = "padname-synth"
+                else:
+                    fm3 = re.match(r"^(?:\w+_)?field_([0-9A-Fa-f]+)$",
+                                   mem)
+                    if fm3:
+                        moff2 = int(fm3.group(1), 16)
+                        src2 = "fieldname-synth"
+        if moff2 is None:
+            continue
+        have2 = ctx.views.scalars.get(cls2, {}).get(moff2, {})
+        if any(v.get("name") == mem for v in have2.values()):
+            continue
+        w2 = int((rec2 or {}).get("width") or 4)
+        ty2 = (rec2 or {}).get("type")
+        sp2 = spell_type(ty2) if ty2 else None
+        if src2 == "mi-vfptr-synth":
+            sp2 = "void *"    # R7: vtable slot is a pointer
+        elif sp2 and sp2.endswith("*") and w2 == 4:
+            pass            # true pointer
+        elif sp2 and WIDTH_OF.get(sp2) == w2:
+            pass
+        else:
+            sp2 = {1: "unsigned char", 2: "short", 4: "int",
+                   8: "__int64"}.get(w2, "int")
+        ctx.views.add_scalar(cls2, moff2,
+                             _ROLE_OF_W.get(w2, "dword"), mem,
+                             sp2, w2, src2 or "ptr-local")
+        ctx.sites.append(Site(
+            "member_name", "%s->%s" % (base, mem),
+            "through-pointer view recorded for %s@0x%X (%s)"
+            % (cls2, moff2, src2), True))
+
+    # R7: DOT-form member views through POINTER bases -- `v11[1].field_08`
+    # on a class-typed local, `g_ZBufferDescriptor[1].Stream_field_08` on
+    # a class-typed registry global.  Legal C++ once the class shell is
+    # DEFINED (shell_augment emits it from these very views); here we
+    # only RECORD the member so the shell declares it.
+    ptr_typed = {}
+    for dm in re.finditer(
+            r"\b([A-Z]\w*)\s*\*\s*([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;", text):
+        ptr_typed[dm.group(2)] = dm.group(1)
+    for gname, gty in (getattr(ctx, "used_globals", None) or {}).items():
+        if gty.endswith("*"):
+            b = gty.replace("*", "").strip()
+            if b and b in ctx.reg.classes:
+                ptr_typed[gname] = b
+    if ptr_typed:
+        for am in re.finditer(
+                r"\b([A-Za-z_]\w*)\s*(?:\[[^\]\[]*\])?\s*\.\s*"
+                r"([A-Za-z_]\w*)", text):
             base, mem = am.group(1), am.group(2)
-            cls2 = ptr_decls.get(base)
+            cls2 = ptr_typed.get(base) or _base_class_of(base)
             if not cls2 or base == "this":
                 continue
             if text[am.end():am.end() + 1] == "(":
-                continue        # method call through pointer: not a data view
+                continue        # method call: not a data view
             moff2 = None
             rec2 = None
+            src2 = None
             r2 = ctx.reg.member_offset_by_ida_name(cls2, mem)
             if r2 is not None and r2[0] is not None:
                 moff2, rec2, src2 = r2
@@ -1685,30 +2036,44 @@ def pass_member_shapes(ctx):
                     if r3 is not None and r3[0] is not None:
                         moff2, rec2, src2 = r3
             if moff2 is None:
+                vm3 = re.match(r"^vfptr(\d*)$", mem)
+                if vm3:
+                    moff2 = 4 * int(vm3.group(1) or 0)
+                    src2 = "mi-vfptr-synth"
+                else:
+                    fm4 = re.match(r"^(?:\w+_)?field_([0-9A-Fa-f]+)$", mem)
+                    if fm4:
+                        moff2 = int(fm4.group(1), 16)
+                        src2 = "fieldname-synth"
+            if moff2 is None:
                 continue
             have2 = ctx.views.scalars.get(cls2, {}).get(moff2, {})
             if any(v.get("name") == mem for v in have2.values()):
                 continue
             w2 = int((rec2 or {}).get("width") or 4)
+            sp2 = "void *" if src2 == "mi-vfptr-synth" else None
             ty2 = (rec2 or {}).get("type")
-            sp2 = spell_type(ty2) if ty2 else None
+            if sp2 is None:
+                sp2 = spell_type(ty2) if ty2 else None
             if sp2 and sp2.endswith("*") and w2 == 4:
-                pass            # true pointer
+                pass
             elif sp2 and WIDTH_OF.get(sp2) == w2:
                 pass
             else:
                 sp2 = {1: "unsigned char", 2: "short", 4: "int",
                        8: "__int64"}.get(w2, "int")
-            ctx.views.add_scalar(cls2, moff2,
-                                 _ROLE_OF_W.get(w2, "dword"), mem,
-                                 sp2, w2, src2 or "ptr-local")
+            if text[am.end():am.end() + 1] == "[":
+                ctx.views.add_array(cls2, moff2, mem, "int", 0,
+                                    src2 or "ptr-dot")
+            else:
+                ctx.views.add_scalar(cls2, moff2,
+                                     _ROLE_OF_W.get(w2, "dword"), mem,
+                                     sp2, w2, src2 or "ptr-dot")
             ctx.sites.append(Site(
-                "member_name", "%s->%s" % (base, mem),
-                "through-pointer view recorded for %s@0x%X (%s)"
-                % (cls2, moff2, src2), True))
+                "member_name", "%s.%s" % (base, mem),
+                "dot-form view recorded for %s@0x%X (%s)"
+                % (cls2, moff2, src2 or "ptr-dot"), True))
     ctx.lines = text.split("\n")
-
-
 def _array_type_ok(reg_ty, elem, count):
     if not reg_ty:
         return False
@@ -1826,6 +2191,12 @@ def pass_unknown_symbols(ctx):
         # collided with the local decl and poisoned the unit
         if re.match(r"^v\d+$", name):
             continue
+        # R7: calling-convention keywords are never callee names (they
+        # rode in on leaked proto text: `int __thiscall Cls::M(...)` ->
+        # `extern int __thiscall(...)` C2059)
+        if name in ("__thiscall", "__stdcall", "__cdecl", "__fastcall",
+                    "__userpurge", "__usercall", "__pascal"):
+            continue
         if name in _CALL_KEYWORDS or name in _CRT_NAMES or name in locals_:
             continue
         if name == ctx.sig.get("method"):
@@ -1833,6 +2204,11 @@ def pass_unknown_symbols(ctx):
         if name in declared or name in ctx.used_globals:
             continue
         if name in ctx.reg.classes or (name + "Class") in ctx.reg.classes:
+            continue
+        # R7: va_* are stdarg MACROS (the #include <stdarg.h> in every
+        # pilot hpp provides them); declaring an extern with the same
+        # name fights the macro expansion
+        if name in ("va_start", "va_end", "va_arg", "va_copy"):
             continue
         # R6: CRT operator spellings first (registry only carries ??2 new
         # under its mangled key; delete is absent entirely).  The literal
@@ -1869,12 +2245,53 @@ def pass_unknown_symbols(ctx):
                 "registry retry under ??-mangled key -> extern %s %s(%s)"
                 % (ret, name, plist), True))
             continue
-        ctx.used_callee_exts.append("extern int %s(...);" % name)
+        # R7: `extern int f(...)` is a C2059 ('...') hard error in VC6
+        # (an ellipsis needs a named first parameter) and `extern int
+        # f();` is C++ ZERO-arg (C2660 on 2-arg calls).  Spell the
+        # OBSERVED call shape: per-arg form typing (pointer-ish args get
+        # `void *` slots -- ClipRectIntersection(int[4]) family), a
+        # trailing `...` only after a first named param.  The extern
+        # name/reloc key is unchanged.
+        max_args = 0
+        plist = None
+        for cm in re.finditer(r"\b%s\s*\(" % re.escape(name), text):
+            op = cm.end() - 1
+            cl = _balanced_close(text, op)
+            if cl < 0:
+                continue
+            inner = text[op + 1:cl].strip()
+            if not inner:
+                continue
+            args = _split_args(inner)
+            max_args = max(max_args, len(args))
+            if plist is None:
+                plist = []
+                arr_locals_ = set(m2.group(1) for m2 in re.finditer(
+                    r"\b([A-Za-z_]\w*)\s*\[\s*\d+\s*\]\s*;", text))
+                ptr_locals_ = set(m2.group(1) for m2 in re.finditer(
+                    r"\b\w[\w\s]*?\*\s*([A-Za-z_]\w*)\s*;", text))
+                for t_, n_ in ctx.sig.get("params_spelled") or []:
+                    if t_.endswith("*"):
+                        ptr_locals_.add(n_)
+            for i, a0 in enumerate(args):
+                s0 = a0.strip()
+                while len(plist) <= i:
+                    plist.append("int")
+                if s0 == "this" or "->" in s0 or "&" in s0 or \
+                        s0 in arr_locals_ or s0 in ptr_locals_ or \
+                        re.match(r"^\(\s*[\w\s]+\s*\*\s*\)", s0):
+                    plist[i] = "void *"
+        if not max_args:
+            proto = "()"
+        else:
+            proto = "(%s, ...)" % ", ".join(plist)
+        ctx.used_callee_exts.append("extern int %s%s;" % (name, proto))
         declared.add(name)
         ctx.sites.append(Site(
             "callee", name + "(...)",
-            "unqualified callee not in registry -> extern int %s(...) "
-            "(literal IDA symbol spelling keeps the reloc key)" % name, False))
+            "unqualified callee not in registry -> extern int %s%s "
+            "(literal IDA symbol spelling keeps the reloc key)"
+            % (name, proto), False))
 
     # bare function-name VALUES (qsort callback family): IDA renders the
     # address as the bare symbol (`qsort(..., CompareFunc3Int)`) -- declare
@@ -1910,7 +2327,148 @@ def pass_unknown_symbols(ctx):
             "unresolved IDA global -> extern %s %s (registry gap)"
             % (ty, name), False))
 
+    # R7: IDA string labels (`aStructuretab` -- the a-Prefix convention
+    # over an uppercase-initial stem).  These are .rdata string constants
+    # the registry never carries as such; `return aStructuretab;` was
+    # C2065.  Declared as char arrays they decay to char* everywhere a
+    # string literal address is legal, and the extern keeps the exact
+    # IDA symbol spelling (reloc key).
+    for m in re.finditer(r"(?<![\w.>:])a[A-Z]\w{2,}\b", text):
+        name = m.group(0)
+        if name in ctx.used_globals or name in declared or name in locals_:
+            continue
+        if name in ctx.reg.classes or (name + "Class") in ctx.reg.classes:
+            continue
+        if name in _CALL_KEYWORDS or name in _CRT_NAMES or \
+                name in _TYPE_KEYWORDS:
+            continue
+        if re.search(r"\b%s\s*\(" % re.escape(name), text):
+            continue          # used as a callee: not a string label
+        ctx.used_globals[name] = "char[]"
+        ctx.sites.append(Site(
+            "global", name,
+            "IDA string label -> extern char %s[]" % name, False))
+
     ctx.lines = text.split("\n")
+
+
+def pass_prune_type_only_globals(ctx):
+    """R7: registry globals whose NAME equals a CLASS name (e.g. the
+    global variable `Stream` @0xAA0468 vs the class `Stream`) poison
+    class-typed local declarations: hpp_pilot's collision handling
+    degrades the global to void* AND drops the `class Stream;` forward
+    declaration, so the body's `Stream * v15;` dies C2065/C2027.
+
+    When the name occurs ONLY in type positions (`NAME *x`) inside this
+    body, the "global" was a registry token-scan phantom -- nothing
+    reads it as a value.  Dropping it lets the class fwd decl survive;
+    a real value-use keeps the current degrade behaviour.
+    """
+    text = "\n".join(ctx.lines)
+    for name in list(ctx.used_globals):
+        if name not in ctx.reg.classes:
+            continue
+        occs = list(re.finditer(r"\b%s\b" % re.escape(name), text))
+        if not occs:
+            continue
+        type_pos = all(
+            re.match(r"\s*\*", text[m.end():m.end() + 3]) is not None
+            for m in occs)
+        if not type_pos:
+            continue
+        del ctx.used_globals[name]
+        ctx.sites.append(Site(
+            "global", name,
+            "class-name collision; only type-position occurrences here "
+            "-> phantom global dropped so `class %s;` fwd survives" % name,
+            True))
+
+
+# ---------------------------------------------------------------- fn-cast calls
+#
+# R7: function-pointer CAST calls whose cast param list rejects the arg
+# forms: `(*(void (__stdcall **)(char *, int, unsigned int))(this->m[0]
+# + 8))(&this->m2[4], 0x40000, 0)` -- the cast's `char *` slot vs an
+# `&member` arg (C2664 'void (char *,int,unsigned int)' family).  The
+# cast only shapes the INDIRECT call: every arg slot is a 4-byte push,
+# so relaxing a mismatched param spelling to `void *` is codegen-neutral.
+
+_FNCastCore = re.compile(
+    r"\*\s*\(\s*(?P<ret>[A-Za-z_]\w*)\s*\(\s*(?P<cc>__\w+)?\s*\*?\s*\*?\s*\)"
+    r"\s*\((?P<ptys>[^()]*)\)\s*\)")
+
+
+def pass_fncast_harmonize(ctx):
+    text = "\n".join(ctx.lines)
+    ptr_globals = {n for n, t in (getattr(ctx, "used_globals", None)
+                                  or {}).items() if t.endswith("*")}
+    locals_ = set(ctx.sig.get("param_names") or [])
+    for m in _LOCAL_DECL.finditer(text):
+        locals_.add(m.group(1))
+
+    def _arg_ptrish(s):
+        s = s.strip()
+        if s == "this":
+            return True
+        if "->" in s or "&" in s:
+            return True
+        if re.match(r"^\(\s*[\w\s]+\s*\*\s*\)", s):
+            return True
+        if s in ptr_globals:
+            return True
+        return False
+
+    out = []
+    pos = 0
+    for m in _FNCastCore.finditer(text):
+        if m.start() < pos:
+            continue
+        # expect: ( EXPR ) ) ( ARGS )
+        j = m.end()
+        if j >= len(text) or text[j] != "(":
+            continue
+        ke = _balanced_close(text, j)
+        if ke < 0 or ke + 1 >= len(text) or text[ke + 1] != ")":
+            continue
+        ka = ke + 2
+        while ka < len(text) and text[ka].isspace():
+            ka += 1
+        if ka >= len(text) or text[ka] != "(":
+            continue
+        ka_open = ka
+        ka_close = _balanced_close(text, ka_open)
+        if ka_close < 0:
+            continue
+        args = _split_args(text[ka_open + 1:ka_close])
+        ptys = _split_args(m.group("ptys"))
+        if len(ptys) != len(args) or not args:
+            continue
+        new_ptys = []
+        hit = False
+        for t, a in zip(ptys, args):
+            t = t.strip()
+            if _arg_ptrish(a) and (
+                    t in ("int", "unsigned int", "long", "unsigned long",
+                          "short", "unsigned short", "_DWORD", "char",
+                          "unsigned char")
+                    or (t.endswith("*") and t != "void *")):
+                t = "void *"
+                hit = True
+            new_ptys.append(t)
+        if not hit:
+            continue
+        core = "*(%s (%s**)(%s))" % (m.group("ret"), m.group("cc") or "",
+                                     ", ".join(new_ptys))
+        out.append(text[pos:m.start()])
+        out.append(core)
+        pos = m.end()
+        ctx.sites.append(Site(
+            "callee", m.group(0)[:50],
+            "fn-ptr cast params relaxed (ptr-ish args): %s" %
+            ", ".join(new_ptys), True))
+    out.append(text[pos:])
+    if pos:
+        ctx.lines = "".join(out).split("\n")
 
 
 # ---------------------------------------------------------------- local retype
@@ -1932,7 +2490,46 @@ def pass_local_retype(ctx):
     for m in _CAST_ASSIGN.finditer(text):
         var, ty = m.group(1), m.group(2)
         ty = spell_type(ty)
+        # R7 shift guard: a value that is EVER shifted (>>/<<) is scalar
+        # -- retyping it to a pointer made later shifts illegal
+        # (C2296 '>>' on unsigned int*, CaptureManager family)
+        if re.search(r"\b%s\s*(?:>>|<<)" % re.escape(var), text):
+            continue
         want.setdefault(var, ty + " *")
+    # R7 pointer-HEAD assignments: `result = p4 - *p6;` with p4 a
+    # ptr-typed param -- the pseudo decls the local as plain int but the
+    # RHS IS a pointer expression and later `*result` reads need the
+    # pointer type (C2100 illegal indirection, Blit functor family).
+    ptr_vars = {}
+    for t, n in ctx.sig.get("params_spelled") or []:
+        if t.endswith("*"):
+            ptr_vars[n] = t
+    for dm in re.finditer(
+            r"\b([A-Z]\w*)\s*\*\s*([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;", text):
+        ptr_vars.setdefault(dm.group(2), dm.group(1) + " *")
+    for m in re.finditer(
+            r"\b([A-Za-z_]\w*)\s*=\s*([A-Za-z_]\w*)\s*(?:[-+])", text):
+        var, head = m.group(1), m.group(2)
+        if head not in ptr_vars or var == head or var in ptr_vars:
+            continue
+        if var in want:
+            continue
+        # scalar evidence guard: a shifted var is a scalar
+        if re.search(r"\b%s\s*(?:>>|<<)" % re.escape(var), text):
+            continue
+        # pointer-usage evidence: deref or subscript somewhere
+        if not (re.search(r"\*\s*%s\b" % re.escape(var), text) or
+                re.search(r"\b%s\s*\[" % re.escape(var), text)):
+            continue
+        pat = re.compile(
+            r"\b(?:unsigned\s+)?(?:int|long|__int32|_DWORD)\s+%s\b"
+            % re.escape(var))
+        if pat.search(text):
+            want.setdefault(var, ptr_vars[head])
+            ctx.note("local_retype",
+                     "%s: dword local -> %s (assigned a pointer-head "
+                     "expression; body dereferences it)" % (var,
+                                                            ptr_vars[head]))
     if not want:
         return
     changed = 0
@@ -2760,6 +3357,38 @@ def pass_macro_residual_sweep(ctx):
     not consume: rewrite to arithmetic fallback (S* variants sign-extend)."""
     text = "\n".join(ctx.lines)
 
+    # R7: ancient-til `#NNN` enum-member tokens (`(#375 **)` casts in the
+    # raw export -- C2014/C2059).  No preprocessor lines exist in bodies,
+    # so a `#digit` token is always this artifact -> neutral `int`.
+    text = re.sub(r"#(\d+)(?!\w)", r"/*#\1*/int", text)
+
+    # R7: `va_start(ap, this)` -- the VC6 macro takes the address of its
+    # second argument; `this` is a keyword and not addressable
+    # (C2102).  The last named parameter is the first stack param.
+    if re.search(r"\bva_start\s*\(\s*\w+\s*,\s*this\s*\)", text):
+        if "p0" in (ctx.sig.get("param_names") or []):
+            text = re.sub(r"\bva_start\s*\(\s*(\w+)\s*,\s*this\s*\)",
+                          r"va_start(\1, p0)", text)
+        else:
+            text = re.sub(r"\bva_start\s*\(\s*(\w+)\s*,\s*this\s*\)",
+                          r"((void)(\1))", text)
+
+    # R7: shift of a POINTER-declared local (the raw decl is `_DWORD *vN`
+    # but the pseudo shifts the value -- C2296).  Cast the operand for
+    # the shift only; the pointer's other uses are untouched.
+    _ptr_decl = set()
+    for _dm in re.finditer(
+            r"\b\w[\w\s]*?\*\s*([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;", text):
+        _ptr_decl.add(_dm.group(1))
+    if _ptr_decl:
+        def _shwrap(m):
+            v = m.group(1)
+            if v not in _ptr_decl:
+                return m.group(0)
+            return "(unsigned int)(%s) %s" % (v, m.group(2))
+        text = re.sub(r"(?<![\w.>])\b([A-Za-z_]\w*)\s*(<<|>>)",
+                      _shwrap, text)
+
     def splice_macros(text):
         # R5: the OLD re.sub replaced only the matched `MACRO(` span and
         # LEFT THE ARGUMENT TEXT IN PLACE (`LOWORD(x)` -> `((x) & 0xFFFF)x)`)
@@ -2862,9 +3491,15 @@ def pass_ret_view_align(ctx):
                 continue
             mem = v["name"]
             pat = r"this->%s\b" % re.escape(mem)
+            # R7: `&this->member` (address-of, incl. `(T *)&pat` cast
+            # forms) is POINTER evidence; only a real bitwise `x & pat`
+            # (bare ident on the left) is int evidence.  Right-side minus
+            # guards the arrow `->`.
             arith = re.search(
-                r"([\-+*/%%&|^]\s*%s)|(%s\s*[-+*/%%&|^])|(%s\s*(<<|>>))"
-                r"|(int \w+ = %s)" % (pat, pat, pat, pat), text)
+                r"([\w]\s*&\s*%s)|([\-+*/%%|^]\s*%s)"
+                r"|(%s\s*(?:[-+*/%%&|^](?!>)))|(%s\s*(?:<<|>>))"
+                r"|(int \w+ = %s)"
+                % (pat, pat, pat, pat, pat), text)
             ret_int = (ctx.sig.get("ret") or "")
             ret_use = re.search(r"return\s+%s\s*;" % pat, text) \
                 and not ret_int.endswith("*") and ret_int not in ("void",)
@@ -3085,6 +3720,43 @@ def pass_callees(ctx):
                 rparams = [("void *" if t.endswith("*") and
                             t != "void *" else t, n)
                            for t, n in rparams]
+            # R7 supply-side (BOTH the registry-hit and the arity-reset
+            # path -- Building__GetFoundationSize(int[4]) hits the reset
+            # path): (a) fn-type param spellings from the registry
+            # (`int (int)`) are not declarable in a VC6 prototype -- a
+            # void* slot accepts any fn-ptr arg; (b) arg-driven relax:
+            # a POINTER-ISH argument (cast / arrow / address-of / array
+            # decay / our own ptr params) can never land in an int-family
+            # slot (C2664 AnimClass* -> int family) nor in an unrelated
+            # base (int* -> char* family).  The stub is decl-only, so a
+            # void* slot is codegen-neutral at this probe stage.
+            sig_ptys_ = {}
+            for t, n in ctx.sig.get("params_spelled") or []:
+                sig_ptys_[n] = t
+
+            def _arg_ptrish(a):
+                s = a.strip()
+                if s in sig_ptys_:
+                    return sig_ptys_[s].endswith("*")
+                if s == "this":
+                    return True
+                if "->" in s or "&" in s:
+                    return True
+                # NOTE: bare `x[i]` is the ELEMENT (scalar), not decay;
+                # `p * 2` is multiplication.  Neither is pointer evidence.
+                if re.match(r"^\(\s*[\w\s]+\s*\*\s*\)", s):
+                    return True       # cast-form receiver `(T *)...`
+                return False
+
+            rparams = [("void *" if "(" in t else t, n)
+                       for t, n in rparams]
+            rparams = [("void *" if _arg_ptrish(args[i + 1]) and
+                        (t in ("int", "unsigned int", "long",
+                               "unsigned long", "short",
+                               "unsigned short", "_DWORD")
+                         or (t.endswith("*") and t != "void *"))
+                        else t, n)
+                       for i, (t, n) in enumerate(rparams)]
             recv = args[0] if args else "this"
             rcm = re.match(r"^\(\s*\w+\s*\*\s*\)\s*(.+)$", recv)
             if rcm:
@@ -3107,25 +3779,70 @@ def pass_callees(ctx):
                 % (emit[:60], addr), True))
         else:
             rret = spell_type(rec.get("ret")) if rec else "int"
+            # R7: a callee whose return is ASSIGNED to a pointer local
+            # (`int *FoundationSize = Callee(v14, ...)`) must return a
+            # pointer spelling the caller already uses -- int rets become
+            # void* (C2440 int->int*), mismatched pointer bases align to
+            # the lhs spelling.
+            if rret in ("int", "unsigned int", "long", "unsigned long",
+                        "_DWORD") or rret.endswith("*"):
+                lhs_tys = {}
+                for dm in re.finditer(
+                        r"\b\w[\w\s]*?\*\s*([A-Za-z_]\w*)\s*;", text):
+                    lhs_tys[dm.group(1)] = \
+                        dm.group(0).split("*")[0].strip() + " *"
+                fname_chk = re.escape(
+                    re.sub(r"[^A-Za-z0-9_]", "_", qual.rsplit("::", 1)[-1]))
+                hit = None
+                for var, ty in lhs_tys.items():
+                    if re.search(r"\b%s\s*=\s*(?:\w+::)*%s\s*\("
+                                 % (re.escape(var), fname_chk), text):
+                        hit = ty
+                        break
+                if hit is not None:
+                    if rret in ("int", "unsigned int", "long",
+                                "unsigned long", "_DWORD"):
+                        rret = hit if hit.endswith("*") else "void *"
+                    elif rret != hit:
+                        rret = hit
             rcc = {"stdcall": " __stdcall", "fastcall": " __fastcall"}.get(
                 (rec or {}).get("cc") or "", "")
             # R5: param types follow the ARG form -- `this` / cast /
             # arrow-receivers are pointers (`void *` accepts any), bare
             # expressions stay int (C2664 TechnoClass* -> int family);
-            # args that are OUR OWN params inherit their declared type
+            # args that are OUR OWN params inherit their declared type.
+            # R7: address-of / array-decay args are pointer-ish too
+            # (Building__GetFoundationSize `int [4]` -> int family);
+            # fn-type spellings (`int (int)`) are not declarable in a
+            # VC6 prototype -- void* slot instead.
             sig_ptys = {}
             for t, n in ctx.sig.get("params_spelled") or []:
                 sig_ptys[n] = t
+            # R7: array-declared locals decay to pointers at call sites
+            # (`int v14[4]; ... GetFoundationSize(v14, ...)` -- the bare
+            # ident carries no ptr shape)
+            arr_locals = set(m.group(1) for m in re.finditer(
+                r"\b([A-Za-z_]\w*)\s*\[\s*\d+\s*\]\s*;", text))
             plist = []
             for i, a0 in enumerate(args):
                 a0s = a0.strip()
                 if a0s in sig_ptys:
                     pt = sig_ptys[a0s]
-                elif a0s == "this" or "->" in a0s or \
-                        re.match(r"^\(\s*\w+\s*\*?\s*\)", a0s):
+                elif a0s in arr_locals:
                     pt = "void *"
+                elif a0s == "this" or "->" in a0s or "&" in a0s or \
+                        re.match(r"^\(\s*[\w\s]+\s*\*\s*\)", a0s):
+                    pt = "void *"
+                    # R7: a `volatile T *` argument needs a
+                    # qualification-compatible slot (plain void* drops
+                    # volatile -> C2664 DriveLocomotionClass__Release
+                    # family)
+                    if "volatile" in a0s:
+                        pt = "volatile void *"
                 else:
                     pt = "int"
+                if "(" in pt:
+                    pt = "void *"
                 plist.append("%s a%d" % (pt, i))
             fname = re.sub(r"[^A-Za-z0-9_]", "_", qual)
             decl = "extern %s%s %s(%s);" % (rret, rcc, fname, ", ".join(plist))
