@@ -7747,7 +7747,7 @@
   "status": "OK"
  },
  "0x42e1c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0x20",
@@ -16669,7 +16669,7 @@
   "this_as_id": false
  },
  "0x49d120": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -31012,7 +31012,7 @@
   "this_as_id": false
  },
  "0x5113f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+20 mov byte ptr [esi + 0x98], bl",
@@ -32012,7 +32012,7 @@
   "this_as_id": false
  },
  "0x522fe0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -40034,7 +40034,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x583180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -49072,7 +49072,7 @@
   "this_as_id": false
  },
  "0x5e3ab0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "SendMultiplayerStartSignal",
@@ -49318,7 +49318,7 @@
   "this_as_id": false
  },
  "0x5e9e70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SetupSkirmishPlayerSlots",
@@ -53877,7 +53877,7 @@
   "this_as_id": false
  },
  "0x634e10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54227,7 +54227,7 @@
   "this_as_id": false
  },
  "0x639800": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "CompleteBuildingProduction",
@@ -63098,7 +63098,7 @@
   "status": "NG"
  },
  "0x6b0db0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -68626,7 +68626,7 @@
   "this_as_id": false
  },
  "0x6d59d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70733,7 +70733,7 @@
   "this_as_id": false
  },
  "0x6efa10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70745,7 +70745,7 @@
   "this_as_id": false
  },
  "0x6f0130": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -77679,7 +77679,7 @@
   "this_as_id": false
  },
  "0x736990": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -77793,7 +77793,7 @@
   "this_as_id": false
  },
  "0x740810": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -77905,7 +77905,7 @@
   "status": "NG"
  },
  "0x7468c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -78849,7 +78849,7 @@
   "this_as_id": false
  },
  "0x74de90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "InitializeVeinholeSystem",
@@ -84256,7 +84256,7 @@
   "this_as_id": false
  },
  "0x773600": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84435,7 +84435,7 @@
   "this_as_id": false
  },
  "0x774cd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85922,7 +85922,7 @@
   "this_as_id": false
  },
  "0x7abd40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

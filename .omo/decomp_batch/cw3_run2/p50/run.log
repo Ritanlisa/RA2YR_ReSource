@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p50\part_00
+=== convert (20 addrs) ===
+[conv] 0x634e10 ScriptAction::PlaceObject -> ScriptAction
+[conv] 0x639800 CompleteBuildingProduction -> _addr_63
+[conv] 0x42e1c0 ObjectClass::RenderTooltipBorder -> ObjectClass
+[conv] 0x5e9e70 SetupSkirmishPlayerSlots -> _addr_5E
+[conv] 0x773600 WebBrowser::LoadURLFromRegistry -> WebBrowser
+[conv] 0x5113f0 SuperWeaponTypeClass::Construct -> SuperWeaponTypeClass
+[conv] 0x5e3ab0 SendMultiplayerStartSignal -> _addr_5E
+[conv] 0x7468c0 UnitClass::CheckForNearbyEnemies -> UnitClass
+[conv] 0x7abd40 CChatEventSink::DispatchStub_34 -> CChatEventSink
+[conv] 0x6efa10 TeamClass::SelectDeploymentTarget -> TeamClass
+[conv] 0x522fe0 InfantryClass::CreateDeployLocomotor -> InfantryClass
+[conv] 0x6b0db0 BuildingClass::ProcessEnterUnit -> BuildingClass
+[conv] 0x74de90 InitializeVeinholeSystem -> _addr_74
+[conv] 0x583180 Pathfinding::CrossBridge -> Pathfinding
+[conv] 0x49d120 MPCooperative::ReadCoopSaveINI -> MPCooperative
+[conv] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> TeamClass
+[conv] 0x774cd0 WinModemClass::LoadTypeData -> WinModemClass
+[conv] 0x740810 UnitClass::ProcessAIDecision -> UnitClass
+[conv] 0x6d59d0 RadarClass::DrawBlip -> RadarClass
+[conv] 0x736990 UnitClass::UpdateRotation_TurretFacing_EMP -> UnitClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScriptAction             rc=2
+[era] _addr_63                 rc=2
+[era] ObjectClass              rc=0
+[era] _addr_5E                 rc=2
+[era] WebBrowser               rc=2
+[era] SuperWeaponTypeClass     rc=0
+[era] UnitClass                rc=2
+[era] CChatEventSink           rc=2
+[era] TeamClass                rc=2
+[era] InfantryClass            rc=2
+[era] BuildingClass            rc=2
+[era] _addr_74                 rc=2
+[era] Pathfinding              rc=2
+[era] MPCooperative            rc=2
+[era] WinModemClass            rc=2
+[era] RadarClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x42e1c0   MISMATCH         ObjectClass::RenderTooltipBorder
+[diff] 0x5113f0   MISMATCH         SuperWeaponTypeClass::Construct
+[ledger] 0x634e10 ScriptAction::PlaceObject -> COMPILE_FAIL (attempt 3)
+[ledger] 0x639800 CompleteBuildingProduction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42e1c0 ObjectClass::RenderTooltipBorder -> NG (attempt 3)
+[ledger] 0x5e9e70 SetupSkirmishPlayerSlots -> COMPILE_FAIL (attempt 3)
+[ledger] 0x773600 WebBrowser::LoadURLFromRegistry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5113f0 SuperWeaponTypeClass::Construct -> NG (attempt 3)
+[ledger] 0x5e3ab0 SendMultiplayerStartSignal -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7468c0 UnitClass::CheckForNearbyEnemies -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7abd40 CChatEventSink::DispatchStub_34 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6efa10 TeamClass::SelectDeploymentTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x522fe0 InfantryClass::CreateDeployLocomotor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b0db0 BuildingClass::ProcessEnterUnit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74de90 InitializeVeinholeSystem -> COMPILE_FAIL (attempt 4)
+[ledger] 0x583180 Pathfinding::CrossBridge -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49d120 MPCooperative::ReadCoopSaveINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> COMPILE_FAIL (attempt 3)
+[ledger] 0x774cd0 WinModemClass::LoadTypeData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x740810 UnitClass::ProcessAIDecision -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d59d0 RadarClass::DrawBlip -> COMPILE_FAIL (attempt 3)
+[ledger] 0x736990 UnitClass::UpdateRotation_TurretFacing_EMP -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p50\batch_report.json
