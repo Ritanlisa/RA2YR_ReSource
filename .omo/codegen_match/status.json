@@ -19712,6 +19712,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e87b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e87bc",
+  "name": "_DynamicVectorClass_PAVSmudgeClass::updateParticles",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "ParticleSystemClass::updateParticles",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e87d0": {
   "attempts": 1,
   "clean": false,
@@ -19722,6 +19734,18 @@
   "orig_name": "ParticleSystemClass_16::Write",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e8810": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e881c",
+  "name": "_DynamicVectorClass_PAVTerrainClass::GetIndex2",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "ParticleSystemClass_32::GetIndex2",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e8830": {
@@ -19736,6 +19760,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e8870": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e887c",
+  "name": "_DynamicVectorClass_PAVAircraftClass::GetElementIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "ParticleSystemClass_32_::GetElementIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8890": {
   "attempts": 1,
   "clean": false,
@@ -19746,6 +19782,18 @@
   "orig_name": "VectorClass_ptr_AircraftClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e88d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e88dc",
+  "name": "_DynamicVectorClass_PAVUnitClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_UnitClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e88f0": {
@@ -19779,12 +19827,36 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e8990": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e899c",
+  "name": "_DynamicVectorClass_PAVAnimClass::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_TeamClass::GetItemIndex_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e89b0": {
   "attempts": 1,
   "first_diff": null,
   "name": "VectorClass_ptr_AnimClass::Clear",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4e89f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e89fc",
+  "name": "_DynamicVectorClass_PAVFactoryClass::GetItemIndex_1",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_TeamClass::GetItemIndex_1",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4e8a10": {
   "attempts": 1,
@@ -19798,6 +19870,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e8a50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8a5c",
+  "name": "_DynamicVectorClass_PAVCampaignClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_CampaignClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8a70": {
   "attempts": 1,
   "clean": false,
@@ -19808,6 +19892,18 @@
   "orig_name": "VectorClass_ptr_CampaignClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e8ab0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8abc",
+  "name": "_DynamicVectorClass_PAVSideClass::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_CampaignClass::GetItemIndex_0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e8ad0": {
@@ -19829,6 +19925,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x4e8b10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8b1c",
+  "name": "_DynamicVectorClass_PAVHouseTypeClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_HouseTypeClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8b30": {
   "attempts": 1,
   "clean": false,
@@ -19839,6 +19947,18 @@
   "orig_name": "VectorClass_ptr_HouseTypeClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e8b70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8b7c",
+  "name": "_DynamicVectorClass_PAVTaskForceClass::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_HouseTypeClass::GetItemIndex_0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e8b90": {
@@ -19853,6 +19973,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e8bd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8bdc",
+  "name": "_DynamicVectorClass_PAVTeamTypeClass::GetItemIndex_1",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_HouseTypeClass::GetItemIndex_1",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8bf0": {
   "attempts": 1,
   "clean": false,
@@ -19865,6 +19997,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e8c30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8c3c",
+  "name": "_DynamicVectorClass_PAVScriptTypeClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_ScriptTypeClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8c50": {
   "attempts": 1,
   "clean": false,
@@ -19875,6 +20019,18 @@
   "orig_name": "VectorClass_ptr_ScriptTypeClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e8c90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8c9c",
+  "name": "_DynamicVectorClass_PAVOverlayTypeClass::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_ScriptTypeClass::GetItemIndex_0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e8cb0": {
@@ -19903,6 +20059,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e8d50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8d5c",
+  "name": "_DynamicVectorClass_PAVTerrainTypeClass::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_SmudgeTypeClass::GetItemIndex_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8d70": {
   "attempts": 1,
   "clean": false,
@@ -19913,6 +20081,18 @@
   "orig_name": "VectorClass_ptr_TerrainTypeClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e8db0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8dbc",
+  "name": "_DynamicVectorClass_PAVBuildingTypeClass::GetItemIndex_1",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_SmudgeTypeClass::GetItemIndex_1",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e8dd0": {
@@ -19927,6 +20107,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e8e10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8e1c",
+  "name": "_DynamicVectorClass_PAVAircraftTypeClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_AircraftTypeClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8e30": {
   "attempts": 1,
   "clean": false,
@@ -19939,6 +20131,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e8e70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8e7c",
+  "name": "_DynamicVectorClass_PAVUnitTypeClass::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_AircraftTypeClass::GetItemIndex_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8e90": {
   "attempts": 1,
   "clean": false,
@@ -19949,6 +20153,18 @@
   "orig_name": "VectorClass_ptr_UnitTypeClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e8ed0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8edc",
+  "name": "_DynamicVectorClass_PAVAnimTypeClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_AnimTypeClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e8ef0": {
@@ -19994,6 +20210,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e8f90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8f9c",
+  "name": "_DynamicVectorClass_PAVBulletTypeClass::GetItemIndex_1",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_AnimTypeClass::GetItemIndex_1",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8fb0": {
   "attempts": 1,
   "clean": false,
@@ -20004,6 +20232,18 @@
   "orig_name": "VectorClass_ptr_BulletTypeClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e8ff0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4e8ffc",
+  "name": "_DynamicVectorClass_PAVVoxelAnimTypeClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e9010": {

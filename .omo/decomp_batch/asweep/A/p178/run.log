@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p178\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e87b0 _DynamicVectorClass_PAVSmudgeClass::updateParticles -> _DynamicVectorClass_PAVSmudgeClass
+[conv] 0x4e8810 _DynamicVectorClass_PAVTerrainClass::GetIndex2 -> _DynamicVectorClass_PAVTerrainClass
+[conv] 0x4e8870 _DynamicVectorClass_PAVAircraftClass::GetElementIndex -> _DynamicVectorClass_PAVAircraftClass
+[conv] 0x4e88d0 _DynamicVectorClass_PAVUnitClass::GetItemIndex -> _DynamicVectorClass_PAVUnitClass
+[conv] 0x4e8990 _DynamicVectorClass_PAVAnimClass::GetItemIndex_0 -> _DynamicVectorClass_PAVAnimClass
+[conv] 0x4e89f0 _DynamicVectorClass_PAVFactoryClass::GetItemIndex_1 -> _DynamicVectorClass_PAVFactoryClass
+[conv] 0x4e8a50 _DynamicVectorClass_PAVCampaignClass::GetItemIndex -> _DynamicVectorClass_PAVCampaignClass
+[conv] 0x4e8ab0 _DynamicVectorClass_PAVSideClass::GetItemIndex_0 -> _DynamicVectorClass_PAVSideClass
+[conv] 0x4e8b10 _DynamicVectorClass_PAVHouseTypeClass::GetItemIndex -> _DynamicVectorClass_PAVHouseTypeClass
+[conv] 0x4e8b70 _DynamicVectorClass_PAVTaskForceClass::GetItemIndex_0 -> _DynamicVectorClass_PAVTaskForceClass
+[conv] 0x4e8bd0 _DynamicVectorClass_PAVTeamTypeClass::GetItemIndex_1 -> _DynamicVectorClass_PAVTeamTypeClass
+[conv] 0x4e8c30 _DynamicVectorClass_PAVScriptTypeClass::GetItemIndex -> _DynamicVectorClass_PAVScriptTypeClass
+[conv] 0x4e8c90 _DynamicVectorClass_PAVOverlayTypeClass::GetItemIndex_0 -> _DynamicVectorClass_PAVOverlayTypeClass
+[conv] 0x4e8d50 _DynamicVectorClass_PAVTerrainTypeClass::GetItemIndex_0 -> _DynamicVectorClass_PAVTerrainTypeClass
+[conv] 0x4e8db0 _DynamicVectorClass_PAVBuildingTypeClass::GetItemIndex_1 -> _DynamicVectorClass_PAVBuildingTypeClass
+[conv] 0x4e8e10 _DynamicVectorClass_PAVAircraftTypeClass::GetItemIndex -> _DynamicVectorClass_PAVAircraftTypeClass
+[conv] 0x4e8e70 _DynamicVectorClass_PAVUnitTypeClass::GetItemIndex_0 -> _DynamicVectorClass_PAVUnitTypeClass
+[conv] 0x4e8ed0 _DynamicVectorClass_PAVAnimTypeClass::GetItemIndex -> _DynamicVectorClass_PAVAnimTypeClass
+[conv] 0x4e8f90 _DynamicVectorClass_PAVBulletTypeClass::GetItemIndex_1 -> _DynamicVectorClass_PAVBulletTypeClass
+[conv] 0x4e8ff0 _DynamicVectorClass_PAVVoxelAnimTypeClass::GetItemIndex -> _DynamicVectorClass_PAVVoxelAnimTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVSmudgeClass rc=0
+[era] _DynamicVectorClass_PAVTerrainClass rc=0
+[era] _DynamicVectorClass_PAVAircraftClass rc=0
+[era] _DynamicVectorClass_PAVUnitClass rc=0
+[era] _DynamicVectorClass_PAVAnimClass rc=0
+[era] _DynamicVectorClass_PAVFactoryClass rc=0
+[era] _DynamicVectorClass_PAVCampaignClass rc=0
+[era] _DynamicVectorClass_PAVSideClass rc=0
+[era] _DynamicVectorClass_PAVHouseTypeClass rc=0
+[era] _DynamicVectorClass_PAVTaskForceClass rc=0
+[era] _DynamicVectorClass_PAVTeamTypeClass rc=0
+[era] _DynamicVectorClass_PAVScriptTypeClass rc=0
+[era] _DynamicVectorClass_PAVOverlayTypeClass rc=0
+[era] _DynamicVectorClass_PAVTerrainTypeClass rc=0
+[era] _DynamicVectorClass_PAVBuildingTypeClass rc=0
+[era] _DynamicVectorClass_PAVAircraftTypeClass rc=0
+[era] _DynamicVectorClass_PAVUnitTypeClass rc=0
+[era] _DynamicVectorClass_PAVAnimTypeClass rc=0
+[era] _DynamicVectorClass_PAVBulletTypeClass rc=0
+[era] _DynamicVectorClass_PAVVoxelAnimTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e87b0   MISMATCH         _DynamicVectorClass_PAVSmudgeClass::updateParticles
+[diff] 0x4e8810   MISMATCH         _DynamicVectorClass_PAVTerrainClass::GetIndex2
+[diff] 0x4e8870   MISMATCH         _DynamicVectorClass_PAVAircraftClass::GetElementIndex
+[diff] 0x4e88d0   MISMATCH         _DynamicVectorClass_PAVUnitClass::GetItemIndex
+[diff] 0x4e8990   MISMATCH         _DynamicVectorClass_PAVAnimClass::GetItemIndex_0
+[diff] 0x4e89f0   MISMATCH         _DynamicVectorClass_PAVFactoryClass::GetItemIndex_1
+[diff] 0x4e8a50   MISMATCH         _DynamicVectorClass_PAVCampaignClass::GetItemIndex
+[diff] 0x4e8ab0   MISMATCH         _DynamicVectorClass_PAVSideClass::GetItemIndex_0
+[diff] 0x4e8b10   MISMATCH         _DynamicVectorClass_PAVHouseTypeClass::GetItemIndex
+[diff] 0x4e8b70   MISMATCH         _DynamicVectorClass_PAVTaskForceClass::GetItemIndex_0
+[diff] 0x4e8bd0   MISMATCH         _DynamicVectorClass_PAVTeamTypeClass::GetItemIndex_1
+[diff] 0x4e8c30   MISMATCH         _DynamicVectorClass_PAVScriptTypeClass::GetItemIndex
+[diff] 0x4e8c90   MISMATCH         _DynamicVectorClass_PAVOverlayTypeClass::GetItemIndex_0
+[diff] 0x4e8d50   MISMATCH         _DynamicVectorClass_PAVTerrainTypeClass::GetItemIndex_0
+[diff] 0x4e8db0   MISMATCH         _DynamicVectorClass_PAVBuildingTypeClass::GetItemIndex_1
+[diff] 0x4e8e10   MISMATCH         _DynamicVectorClass_PAVAircraftTypeClass::GetItemIndex
+[diff] 0x4e8e70   MISMATCH         _DynamicVectorClass_PAVUnitTypeClass::GetItemIndex_0
+[diff] 0x4e8ed0   MISMATCH         _DynamicVectorClass_PAVAnimTypeClass::GetItemIndex
+[diff] 0x4e8f90   MISMATCH         _DynamicVectorClass_PAVBulletTypeClass::GetItemIndex_1
+[diff] 0x4e8ff0   MISMATCH         _DynamicVectorClass_PAVVoxelAnimTypeClass::GetItemIndex
+[ledger] 0x4e87b0 _DynamicVectorClass_PAVSmudgeClass::updateParticles -> NG (attempt 1)
+[ledger] 0x4e8810 _DynamicVectorClass_PAVTerrainClass::GetIndex2 -> NG (attempt 1)
+[ledger] 0x4e8870 _DynamicVectorClass_PAVAircraftClass::GetElementIndex -> NG (attempt 1)
+[ledger] 0x4e88d0 _DynamicVectorClass_PAVUnitClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8990 _DynamicVectorClass_PAVAnimClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e89f0 _DynamicVectorClass_PAVFactoryClass::GetItemIndex_1 -> NG (attempt 1)
+[ledger] 0x4e8a50 _DynamicVectorClass_PAVCampaignClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8ab0 _DynamicVectorClass_PAVSideClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e8b10 _DynamicVectorClass_PAVHouseTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8b70 _DynamicVectorClass_PAVTaskForceClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e8bd0 _DynamicVectorClass_PAVTeamTypeClass::GetItemIndex_1 -> NG (attempt 1)
+[ledger] 0x4e8c30 _DynamicVectorClass_PAVScriptTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8c90 _DynamicVectorClass_PAVOverlayTypeClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e8d50 _DynamicVectorClass_PAVTerrainTypeClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e8db0 _DynamicVectorClass_PAVBuildingTypeClass::GetItemIndex_1 -> NG (attempt 1)
+[ledger] 0x4e8e10 _DynamicVectorClass_PAVAircraftTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8e70 _DynamicVectorClass_PAVUnitTypeClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e8ed0 _DynamicVectorClass_PAVAnimTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8f90 _DynamicVectorClass_PAVBulletTypeClass::GetItemIndex_1 -> NG (attempt 1)
+[ledger] 0x4e8ff0 _DynamicVectorClass_PAVVoxelAnimTypeClass::GetItemIndex -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_order": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p178\batch_report.json
