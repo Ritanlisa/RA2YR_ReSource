@@ -734,9 +734,21 @@ def pass_this_ptr_math(ctx):
     # through the same registry/view path.
     def star_this(m):
         rec, src = ctx.reg.member_at(cls, 0, min_span=1)
+        # R8: `*this = 0` (IDA's rendering when the proto says `int *this`)
+        # binds offset 0.  When EVERY access this function makes at offset
+        # 0 is narrow (`mov byte ptr [ecx], 0` -- CreditsScreen::Init
+        # 0x4A3C00), the widest view is a lie: narrow it, exactly like the
+        # semantic-name path.
+        dmin = _disasm_min_width(ctx, 0)
+        dmax = _disasm_max_width(ctx, 0)
+        w = 4
+        if dmin and dmax and dmin == dmax and dmin in (1, 2):
+            w = dmin
         if not rec:
             name = "m000"
-            ctx.views.add_scalar(cls, 0, "dword", name, "int", 4,
+            ctx.views.add_scalar(cls, 0, _ROLE_OF_W.get(w, "dword"), name,
+                                 {1: "unsigned char",
+                                  2: "unsigned short"}.get(w, "int"), w,
                                  "registry-gap")
             src = "registry-gap"
         else:
@@ -744,11 +756,14 @@ def pass_this_ptr_math(ctx):
             if re.match(r"^(?:.*_field_0x|__pad|q[0-9A-F]{3}|unknown)",
                         name):
                 name = "m000"
-            ctx.views.add_scalar(cls, 0, "dword", name,
-                                 spell_type(rec.get("type") or "int"), 4, src)
+            ty = spell_type(rec.get("type") or "int")
+            if w != 4:
+                ty = {1: "unsigned char", 2: "unsigned short"}[w]
+            ctx.views.add_scalar(cls, 0, _ROLE_OF_W.get(w, "dword"), name,
+                                 ty, w, src)
         ctx.sites.append(Site(
             "member_read", "*this",
-            "bare *this -> this->%s (offset 0)" % name, True))
+            "bare *this -> this->%s (offset 0, w=%d)" % (name, w), True))
         return "this->" + name
 
     text = re.sub(r"\*\s*this\b(?!\s*(?:->|[\+\[]))", star_this, text)
@@ -1392,12 +1407,50 @@ def _signed_word_context(text, pos):
     return bool(re.search(r">\s*0\b", tail))
 
 
+_ECX_WRITE_OP = re.compile(
+    r"^(?:mov|lea|pop|add|sub|xor|or|and|inc|dec|shl|shr|sar|sal|"
+    r"imul|mul|idiv|div|not|neg|movzx|movsx|xchg|adc|sbb|rol|ror|"
+    r"set[a-z]+)\s+ecx\b")
+
+
+def _this_ecx_lines(ctx):
+    """Disassembly lines where ECX still holds the INCOMING receiver.
+
+    `[ecx+N]` evidence is only `this`-relative until the function writes
+    ECX (msvc6 thiscall bodies routinely `lea ecx, [eax+28h]` mid-body
+    and then index a completely different object).  Attributing those
+    later accesses to the receiver produced false width/offset evidence
+    (R8: TabClass::updateTabProduction 0x6A80A0 -- `mov [ecx+4], esi`
+    after `lea ecx,[eax+28h]` was read as member +4).  A call also
+    clobbers ECX (caller-saved).
+    """
+    if hasattr(ctx, "_dis_ecx_lines"):
+        return ctx._dis_ecx_lines
+    out = []
+    alive = True
+    for dl in ctx.ex.disasm_lines:
+        body = re.sub(r"^[0-9A-Fa-f]+:\s*", "", dl).strip()
+        if not body:
+            continue
+        if alive:
+            out.append(dl)
+        mn = body.split()[0]
+        if mn in ("call", "calln", "callf"):
+            alive = False
+            continue
+        if _ECX_WRITE_OP.match(body) and not re.match(
+                r"^mov\s+ecx\s*,\s*ecx\b", body):
+            alive = False
+    ctx._dis_ecx_lines = out
+    return out
+
+
 def _disasm_this_offsets(ctx):
     """[ecx+0xNN] offsets the binary actually touches for this function
     (thiscall this = ecx). Empty set = no evidence."""
     if not hasattr(ctx, "_dis_offs"):
         offs = set()
-        for dl in ctx.ex.disasm_lines:
+        for dl in _this_ecx_lines(ctx):
             for m in re.finditer(r"\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\]",
                                  dl):
                 offs.add(int(m.group(1) or "0", 16))
@@ -1411,24 +1464,27 @@ def _disasm_this_offsets(ctx):
 # byte/word-stored here (SetByte96 family) -- the function's own disasm
 # outranks the class-level merge for the VIEW this function emits).
 _W_PTR_PREFIX = [
-    (re.compile(r"\bbyte\s+ptr\s+\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 1),
-    (re.compile(r"\bword\s+ptr\s+\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 2),
-    (re.compile(r"\bdword\s+ptr\s+\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 4),
+    (re.compile(r"\bbyte\s+ptr\s+\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\]"), 1),
+    (re.compile(r"\bword\s+ptr\s+\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\]"), 2),
+    (re.compile(r"\bdword\s+ptr\s+\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\]"), 4),
 ]
 # width-carrying register operands around a [ecx+N] memory operand:
 # 8-bit -> byte, 16-bit -> word, 32-bit -> dword (either side of the op)
+# R8: the displacement is OPTIONAL -- `mov byte ptr [ecx], 0` (offset 0,
+# CreditsScreen::Init / Byte::Zero family) carried no width evidence
+# because every pattern demanded `+N`, so the widest view always won.
 _W_REG = [
     (re.compile(r"\b(?:al|ah|bl|bh|cl|ch|dl|dh)\b[^;\n]*"
-                r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 1),
-    (re.compile(r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\][^;\n]*"
+                r"\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\]"), 1),
+    (re.compile(r"\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\][^;\n]*"
                 r"\b(?:al|ah|bl|bh|cl|ch|dl|dh)\b"), 1),
     (re.compile(r"\b(?:ax|bx|cx|dx|si|di|bp|sp)\b[^;\n]*"
-                r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 2),
-    (re.compile(r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\][^;\n]*"
+                r"\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\]"), 2),
+    (re.compile(r"\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\][^;\n]*"
                 r"\b(?:ax|bx|cx|dx|si|di|bp|sp)\b"), 2),
     (re.compile(r"\b(?:eax|ebx|edx|esi|edi|ebp)\b[^;\n]*"
-                r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 4),
-    (re.compile(r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\][^;\n]*"
+                r"\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\]"), 4),
+    (re.compile(r"\[ecx(?:\+0?x?([0-9A-Fa-f]+)h?)?\][^;\n]*"
                 r"\b(?:eax|ebx|edx|esi|edi|ebp)\b"), 4),
 ]
 
@@ -1442,10 +1498,10 @@ def _disasm_this_widths(ctx):
     """
     if not hasattr(ctx, "_dis_widths"):
         w = {}
-        for dl in ctx.ex.disasm_lines:
+        for dl in _this_ecx_lines(ctx):
             for pat, width in _W_PTR_PREFIX + _W_REG:
                 for m in pat.finditer(dl):
-                    off = int(m.group(1), 16)
+                    off = int(m.group(1) or "0", 16)
                     w.setdefault(off, set()).add(width)
         ctx._dis_widths = w
     return ctx._dis_widths
@@ -1490,8 +1546,10 @@ def _disasm_alias_widths(ctx):
     if hasattr(ctx, "_dis_alias_w"):
         return ctx._dis_alias_w
     state = dict.fromkeys(_ALIAS_CAND, False)
+    ecx_ok = True
     out = {}
     for dl in ctx.ex.disasm_lines:
+        body = re.sub(r"^[0-9A-Fa-f]+:\s*", "", dl).strip()
         # 1. accesses made while the register still holds `this`
         for reg, is_this in state.items():
             if not is_this:
@@ -1513,10 +1571,12 @@ def _disasm_alias_widths(ctx):
         if _CALL_LINE.match(dl):
             state["eax"] = False
             state["edx"] = False
+            ecx_ok = False          # caller-saved: no longer the receiver
             continue
         sm = _ALIAS_SRC.match(dl)
         if sm:
-            state[sm.group(1)] = True
+            if ecx_ok:             # `mov reg, ecx` copies THIS only if
+                state[sm.group(1)] = True   # ecx still holds it
             continue
         wm = _REG_WRITE.match(dl)
         if wm:
@@ -1524,6 +1584,9 @@ def _disasm_alias_widths(ctx):
             if op1 in state and wm.group("mn") not in ("cmp", "test",
                                                        "push", "call"):
                 state[op1] = False
+            if op1 == "ecx" and not re.match(r"^mov\s+ecx\s*,\s*ecx\b",
+                                             body):
+                ecx_ok = False
     ctx._dis_alias_w = out
     return out
 
@@ -2370,18 +2433,79 @@ def pass_unknown_symbols(ctx):
         rec = None
         if name.startswith("__"):
             _a, rec = ctx.reg.function_by_name("??" + name[2:])
+        if rec is None:
+            # R8: plain (unmangled) free functions ARE in the registry --
+            # without this lookup every unqualified callee was declared
+            # with the default cdecl convention.  A __fastcall callee then
+            # cost a full argument-setup frame + call + ret instead of the
+            # bare tail jmp (`xor edx, edx; jmp RequestBufferMixer` --
+            # Audio::GetFlag 0x407070) and a __stdcall callee left the
+            # caller to clean a stack the original's callee pops.
+            _a, rec = ctx.reg.function_by_name(name)
         if rec is not None:
             ret = spell_type(rec.get("ret") or "int")
-            plist = ", ".join(
-                "%s a%d" % (spell_type(p.get("type") or "int"), i)
-                for i, p in enumerate(rec.get("params") or []))
+            # `unknown` is IDA's "no type", not a C type spelling (C2146).
+            if ret in ("unknown", ""):
+                ret = "int"
+            # arity guard: the registry record may be missing parameters
+            # (IDA leaves some out) or the call may be variadic -- never
+            # emit a prototype narrower than the observed call sites.
+            obs_args = []
+            for cm in re.finditer(r"\b%s\s*\(" % re.escape(name), text):
+                op = cm.end() - 1
+                cl = _balanced_close(text, op)
+                if cl < 0:
+                    continue
+                inner = text[op + 1:cl].strip()
+                if inner:
+                    a_list = _split_args(inner)
+                    if len(a_list) > len(obs_args):
+                        obs_args = a_list
+            rparams = list(rec.get("params") or [])
+            if obs_args and len(rparams) != len(obs_args):
+                rparams = [{"type": "int"} for _ in range(len(obs_args))]
+            # arg-driven relaxation (R7 policy, extended to registry
+            # hits): the registry type may be a class/pointer spelling
+            # that rejects the observed argument (C2664 ObjectClass* ->
+            # int, char[128] -> unsigned char*), while floats/doubles
+            # and 64-bit slots carry ABI meaning and must be kept.
+            ptr_names_ = set()
+            for t_, n_ in ctx.sig.get("params_spelled") or []:
+                if t_.endswith("*"):
+                    ptr_names_.add(n_)
+            for m2 in re.finditer(
+                    r"\b([A-Za-z_]\w*)\s*\[\s*\d+\s*\]\s*;", text):
+                ptr_names_.add(m2.group(1))
+            for m2 in re.finditer(
+                    r"\b\w[\w\s]*?\*\s*([A-Za-z_]\w*)\s*;", text):
+                ptr_names_.add(m2.group(1))
+            plist_parts = []
+            for i, p in enumerate(rparams):
+                ty_ = spell_type(p.get("type") or "int")
+                if ty_ in ("float", "double", "__int64",
+                           "unsigned __int64"):
+                    plist_parts.append("%s a%d" % (ty_, i))
+                    continue
+                if "(" in ty_:
+                    ty_ = "void *"
+                if i < len(obs_args) and _arg_is_pointerish(
+                        obs_args[i].strip(), ptr_names_):
+                    if ty_.endswith("*") and ty_ != "void *":
+                        ty_ = "void *"
+                    elif not ty_.endswith("*"):
+                        ty_ = "void *"
+                plist_parts.append("%s a%d" % (ty_, i))
+            plist = ", ".join(plist_parts)
+            rcc = {"stdcall": " __stdcall",
+                   "fastcall": " __fastcall"}.get(
+                       (rec or {}).get("cc") or "", "")
             ctx.used_callee_exts.append(
-                "extern %s %s(%s);" % (ret, name, plist))
+                "extern %s%s %s(%s);" % (ret, rcc, name, plist))
             declared.add(name)
             ctx.sites.append(Site(
                 "callee", name + "(...)",
-                "registry retry under ??-mangled key -> extern %s %s(%s)"
-                % (ret, name, plist), True))
+                "registry callee -> extern %s%s %s(%s)"
+                % (ret, rcc, name, plist), True))
             continue
         # R7: `extern int f(...)` is a C2059 ('...') hard error in VC6
         # (an ellipsis needs a named first parameter) and `extern int
@@ -4292,3 +4416,45 @@ def pass_global_canon(ctx):
             "ida extern %s -> canonical global %s (reloc key)" % (old, new),
             True))
     ctx.lines = text.split("\n")
+
+
+# ---------------------------------------------------------------- R8 pair64
+# Hex-Rays renders a 64-bit value assembled from two 32-bit halves as
+# `__PAIR64__(high, low)` -- an IDA macro that does not exist in the era
+# compiler (the call site fell through to an extern declaration and
+# became C2664 AudioMixer::PlaySample 0x4071C0).  Expand it to the exact
+# arithmetic it denotes; `unsigned __int64` locals already carry the
+# binary's 64-bit ops, so the emitted code is unchanged.
+_PAIR64_CALL = re.compile(r"\b__PAIR64__\s*\(")
+
+
+def pass_pair64(ctx):
+    text = "\n".join(ctx.lines)
+    if "__PAIR64__" not in text:
+        return
+    out = []
+    pos = 0
+    n = 0
+    for m in _PAIR64_CALL.finditer(text):
+        if m.start() < pos:
+            continue
+        op = m.end() - 1
+        cl = _balanced_close(text, op)
+        if cl < 0:
+            continue
+        args = _split_args(text[op + 1:cl])
+        if len(args) != 2:
+            continue
+        hi, lo = args[0].strip(), args[1].strip()
+        rep = ("((((unsigned __int64)(unsigned int)(%s)) << 32) | "
+               "((unsigned int)(%s)))" % (hi, lo))
+        out.append(text[pos:m.start()])
+        out.append(rep)
+        pos = cl + 1
+        n += 1
+    if not n:
+        return
+    out.append(text[pos:])
+    ctx.lines = "".join(out).split("\n")
+    ctx.note("pair64", "__PAIR64__(hi,lo) -> 64-bit shift/or (%d site%s)"
+             % (n, "" if n == 1 else "s"))

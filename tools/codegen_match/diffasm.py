@@ -34,10 +34,11 @@ SIGNALS = os.path.join(REPO, "signals.json")
 
 _func_map_cache = None
 _glob_map_cache = None
+_glob_name_map_cache = None
 
 
 def _load_maps():
-    global _func_map_cache, _glob_map_cache
+    global _func_map_cache, _glob_map_cache, _glob_name_map_cache
     if _func_map_cache is None:
         with open(SIGNALS, encoding="utf-8") as f:
             sig = json.load(f)
@@ -48,13 +49,44 @@ def _load_maps():
             except (ValueError, AttributeError):
                 continue
         gm = {}
+        nm = {}
         for name, addr in sig.get("globals", {}).items():
             try:
-                gm[int(addr, 16)] = name
+                ia = int(addr, 16)
             except (ValueError, TypeError):
                 continue
+            gm[ia] = name
+            nm.setdefault(name, ia)
         _func_map_cache, _glob_map_cache = fm, gm
+        _glob_name_map_cache = nm
     return _func_map_cache, _glob_map_cache
+
+
+# R8: data references compare by IDENTITY (address), not spelling.  The
+# original side names an address via signals.globals; when the registry has
+# no name the key stays a raw address, while our side's COFF reloc key is
+# the IDA plate spelling (`dword_8205D0`) or a string label (`aInfantrytab`).
+# Same location, different spelling -> false extern_reloc/const_fold
+# mismatch.  Canonicalize every resolvable DATA key to its address; keys
+# that do not resolve (local statics, float-constant pools) keep their
+# spelling, so a genuinely different location still mismatches.
+_IDA_PLATE_KEY = re.compile(
+    r"^(?:stru|dword|word|byte|qword|flt|dbl|unk|off)_([0-9A-Fa-f]{6,8})$")
+
+
+def data_key_canon(name):
+    if _glob_name_map_cache is None:
+        _load_maps()
+    m = _IDA_PLATE_KEY.match(name)
+    if m:
+        return "0x%X" % int(m.group(1), 16)
+    nm = _glob_name_map_cache or {}
+    if name in nm:
+        return "0x%X" % nm[name]
+    und = undecorate(name)
+    if und in nm:
+        return "0x%X" % nm[und]
+    return name
 
 
 def undecorate(sym):
@@ -74,8 +106,11 @@ def undecorate(sym):
     m = re.match(r"^\?(\w+)@@3", s)
     if m:  # global data object ?name@@3<type>... (e.g. ?DataGlobal_ABAD28@@3IA)
         return m.group(1)
-    m = re.match(r"^\?(\w+)@@YA", s)
-    if m:  # free function ?name@@YA...
+    m = re.match(r"^\?(\w+)@@Y[A-Z]", s)
+    if m:  # free function ?name@@YA/YG/YI... (cdecl/stdcall/fastcall)
+        return m.group(1)
+    m = re.match(r"^_?([A-Za-z_]\w*)@\d+$", s)
+    if m:  # __stdcall/fastcall C decoration _name@N
         return m.group(1)
     if s.startswith("__imp_"):
         s = s[6:]
@@ -186,12 +221,12 @@ class Side:
                         key = None
                         for _o, r in rel_here:
                             if r.get("type") in ("DIR32", "DIR32NB", "SECTION", "SECREL"):
-                                key = "DATA:%s" % r["key"]
+                                key = "DATA:%s" % data_key_canon(r["key"])
                                 masks.append(_o - off)
                                 break
                         if key is None and self.mode == "orig" and self._in_data(val):
                             nm = self.glob_map.get(val)
-                            key = "DATA:%s" % (nm if nm else "0x%X" % val)
+                            key = "DATA:%s" % data_key_canon(nm if nm else "0x%X" % val)
                         if key is not None:
                             canon = self._patch_imm(canon, op.imm, key)
                             pos = _find_field(self.blob, off, ins.size, val)
@@ -203,12 +238,12 @@ class Side:
                             key = None
                             for _o, r in rel_here:
                                 if r.get("type") in ("DIR32", "DIR32NB", "SECTION", "SECREL"):
-                                    key = "DATA:%s" % r["key"]
+                                    key = "DATA:%s" % data_key_canon(r["key"])
                                     masks.append(_o - off)
                                     break
                             if key is None and self.mode == "orig" and self._in_data(disp):
                                 nm = self.glob_map.get(disp)
-                                key = "DATA:%s" % (nm if nm else "0x%X" % disp)
+                                key = "DATA:%s" % data_key_canon(nm if nm else "0x%X" % disp)
                             if key is not None:
                                 for s in ("0x%x" % disp, "0x%X" % disp, "%d" % disp):
                                     if s and s in canon:
