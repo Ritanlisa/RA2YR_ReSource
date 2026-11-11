@@ -624,9 +624,16 @@ def pass_struct_globals(ctx):
         lambda b, k, idx, m: "%s[%s]" % (_obj_addr(b, k), m.group(2)))
 
     # 2b-2. `.vfptrN` -- MI vtable slot read as a VALUE
+    #       CW3: `.vfptr[K]` / `.vfptrN[K]` are indexed slots; the old
+    #       render dropped the index (the arg degraded from `char*` to a
+    #       scalar and the call stub took an int slot -> C2664).
     _sub_chain(
         re.compile(r"(?<![\w.>])([A-Za-z_]\w*)\.vfptr(\d*)\b(?!\s*\()"),
-        lambda b, k, idx, m: "((char **)&%s)[%d]" % (b, int(m.group(2) or 0)))
+        lambda b, k, idx, m: (
+            "((char **)&%s)[%d + (%s)]"
+            % (b, int(m.group(2) or 0), idx)
+            if idx is not None and idx.strip() else
+            "((char **)&%s)[%d]" % (b, int(m.group(2) or 0))))
 
     # 2b-3. `.__pad_H[M]` chains (this->m..[i], locals, globals)
     _sub_chain(
@@ -4665,6 +4672,13 @@ def _arg_is_pointerish(s, ptr_names=None):
     # marking it void* made the macro-ish callee reject an int arg,
     # C2664 TacticalClass::DrawCellTerrainOverlay).  The element's own
     # pointer-ness is unknowable at text level -- do not claim pointer.
+    # CW3: EXCEPT when the subscripted expression is a pointer-to-pointer
+    # cast: `((char **)&G)[i]` is a `char *` element (the `.vfptr[K]`
+    # array-slot spelling) and an int slot rejects it (C2664).
+    m = re.match(r"^\(\s*\(\s*(?:const\s+)?(?:struct\s+|class\s+)?"
+                 r"[A-Za-z_]\w*\s*(\*{2,})\s*\)[^()]*\)\s*\[", s)
+    if m:
+        return True
     if s.endswith("]"):
         return False
     depth = 0
@@ -4913,11 +4927,14 @@ def pass_callees(ctx):
             # CW2: pointer locals (initializer allowed) + pointer globals
             ptr_names_ = set(arr_locals) | _ctx_ptr_names(ctx, text)
             # CW3-5: when the registry arity matches the call, NON-int-family
-            # registry types (double / short / class pointers) are the
-            # authoritative param spellings -- `Math__RoundToInt(double)`
+            # NON-POINTER registry types (double / short / float) are the
+            # authoritative scalar spellings -- `Math__RoundToInt(double)`
             # must not degrade to an int slot (default-argument conversion
-            # would silently change the codegen).  int placeholders keep the
-            # old arg-form-driven behaviour.
+            # would silently change the codegen).  Pointer/array slots stay
+            # arg-form-driven: a decl-only stub must accept the argument the
+            # body actually passes (a registry `int *`/`unsigned int *` over
+            # a `X *const` / `char[1]` argument is C2664 -- the
+            # AbstractClass__SaveLoad_Prefix_0 / SHA1__Transform family).
             _reg_params = (rec or {}).get("params") or []
             _reg_ty_ok = (rec is not None and
                           len(_reg_params) == len(args))
@@ -4925,12 +4942,6 @@ def pass_callees(ctx):
                 a0s = a0.strip()
                 if a0s in sig_ptys:
                     pt = sig_ptys[a0s]
-                elif _reg_ty_ok and (
-                        spell_type(_reg_params[i].get("type") or "int")
-                        not in ("int", "unsigned int", "long",
-                                "unsigned long", "_DWORD", "short",
-                                "unsigned short")):
-                    pt = spell_type(_reg_params[i].get("type") or "int")
                 elif a0s in arr_locals:
                     pt = "void *"
                 elif _arg_ptrish_ctx(a0s, ptr_names_):
@@ -4941,6 +4952,14 @@ def pass_callees(ctx):
                     # family)
                     if "volatile" in a0s:
                         pt = "volatile void *"
+                elif _reg_ty_ok:
+                    _rt = spell_type(_reg_params[i].get("type") or "int")
+                    if _rt.endswith("*") or "(" in _rt or _rt in (
+                            "int", "unsigned int", "long", "unsigned long",
+                            "_DWORD", "short", "unsigned short"):
+                        pt = "int"
+                    else:
+                        pt = _rt
                 else:
                     pt = "int"
                 if "(" in pt:
