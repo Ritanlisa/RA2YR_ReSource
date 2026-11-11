@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetScrollMode@MapClass@@QAEHXZ",
+ "sym_key": "MapClass::GetScrollMode",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8a819c11000084c0750333c0c38b81a0110000c3",
+ "relocs": []
+}
