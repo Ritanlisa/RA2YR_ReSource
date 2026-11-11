@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@ScoutVector@@QAEPAV1@HH@Z",
+ "sym_key": "ScoutVector::Construct",
+ "size": 141,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bf133db3bfb895e04897e08c6460c01885e0d891e74678b4c24143bcb75488d04fd0000000050e80000000083c4043bc374238d57ff8bc885d27c1c891988590483c1084f75f5894604c6460d018bc65f5e5bc2080033c0894604c6460d018bc65f5e5bc208008d57ff8bc185d27c0b891888580483c0084f75f5894e048bc65f5e5bc20800",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

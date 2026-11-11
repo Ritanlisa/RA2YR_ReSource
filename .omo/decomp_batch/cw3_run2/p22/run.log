@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x662240 ObjectClass::sub_662240 -> ObjectClass
+[conv] 0x75ae30 WalkLocomotionClass::DispatchVirtualCall_9 -> WalkLocomotionClass
+[conv] 0x4c68e0 ObjectClass::sub_4C68E0 -> ObjectClass
+[conv] 0x5137d0 HouseTypeClass::readParaDropTypes -> HouseTypeClass
+[conv] 0x71ff20 TextButtonClass::sub_71FF20 -> TextButtonClass
+[conv] 0x47bb60 CellClass::DTOR -> CellClass
+[conv] 0x6551c0 BuildingClass::AddUpgrade -> BuildingClass
+[conv] 0x7c8e25 _bsearch -> _addr_7C
+[conv] 0x635e90 ObjectClass::sub_635E90 -> ObjectClass
+[conv] 0x4a7a30 DiskLaserClass::DiskLaserClass -> DiskLaserClass
+[conv] 0x510780 ScoutVector::Construct -> ScoutVector
+[conv] 0x42e990 ObjectClass::sub_42E990 -> ObjectClass
+[conv] 0x77ca60 sub_77CA60 -> _addr_77
+[conv] 0x40e060 sub_40E060 -> _addr_40
+[conv] 0x47d210 CellClass::SetWallOwner -> CellClass
+[conv] 0x658de0 RadarHashVector::Construct -> RadarHashVector
+[conv] 0x52b170 SortedArray::Find -> SortedArray
+[conv] 0x52b390 HashTable::BinarySearch -> HashTable
+[conv] 0x538980 SortedArray::FindPair -> SortedArray
+[conv] 0x4ac660 BuildingClass::TogglePower -> BuildingClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] WalkLocomotionClass      rc=2
+[era] HouseTypeClass           rc=0
+[era] TextButtonClass          rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] _addr_7C                 rc=2
+[era] DiskLaserClass           rc=2
+[era] ScoutVector              rc=0
+[era] _addr_77                 rc=2
+[era] _addr_40                 rc=2
+[era] RadarHashVector          rc=2
+[era] SortedArray              rc=2
+[era] HashTable                rc=2
+=== diffasm byte-compare ===
+[diff] 0x42e990   MISMATCH         ObjectClass::sub_42E990
+[diff] 0x5137d0   MISMATCH         HouseTypeClass::readParaDropTypes
+[diff] 0x6551c0   MISMATCH         BuildingClass::AddUpgrade
+[diff] 0x510780   MISMATCH         ScoutVector::Construct
+[ledger] 0x662240 ObjectClass::sub_662240 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75ae30 WalkLocomotionClass::DispatchVirtualCall_9 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c68e0 ObjectClass::sub_4C68E0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5137d0 HouseTypeClass::readParaDropTypes -> NG (attempt 3)
+[ledger] 0x71ff20 TextButtonClass::sub_71FF20 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47bb60 CellClass::DTOR -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6551c0 BuildingClass::AddUpgrade -> NG (attempt 3)
+[ledger] 0x7c8e25 _bsearch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x635e90 ObjectClass::sub_635E90 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4a7a30 DiskLaserClass::DiskLaserClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x510780 ScoutVector::Construct -> NG (attempt 3)
+[ledger] 0x42e990 ObjectClass::sub_42E990 -> NG (attempt 3)
+[ledger] 0x77ca60 sub_77CA60 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40e060 sub_40E060 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47d210 CellClass::SetWallOwner -> COMPILE_FAIL (attempt 17)
+[ledger] 0x658de0 RadarHashVector::Construct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x52b170 SortedArray::Find -> COMPILE_FAIL (attempt 7)
+[ledger] 0x52b390 HashTable::BinarySearch -> COMPILE_FAIL (attempt 7)
+[ledger] 0x538980 SortedArray::FindPair -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4ac660 BuildingClass::TogglePower -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p22\batch_report.json
