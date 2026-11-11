@@ -1,0 +1,11 @@
+{
+ "addr": "0x510A50",
+ "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x510A50",
+ "bytes_hex": "836c240424e9d65dfeff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

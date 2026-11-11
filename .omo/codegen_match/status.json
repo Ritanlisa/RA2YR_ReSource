@@ -2443,7 +2443,7 @@
   "status": "OK"
  },
  "0x4e1960": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "VectorClass_ptr_ConvertClass::MarkDirty",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2457,21 +2457,21 @@
   "status": "OK"
  },
  "0x4e4820": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Lobby::FillPlayerFactions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4e5310": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Lobby::InvalidateFactionCombos",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4e5d60": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Lobby::InvalidatePlayerSlots",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2485,18 +2485,18 @@
   "status": "OK"
  },
  "0x4f2b40": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HouseClass::vt_placeholder_09",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x4f2b50": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HouseClass::vt_placeholder_10",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x4f3af0": {
   "attempts": 1,
@@ -2513,49 +2513,49 @@
   "status": "OK"
  },
  "0x4f3ff0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VectorCursor_uint_DynamicVectorClass_uint::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4f4000": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VectorCursor_uint_DynamicVectorClass_uint::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4f4c20": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+2 mov byte ptr [eax], 0",
   "name": "Byte::Zero",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "status": "NG"
  },
  "0x4fae50": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SuperWeapon::FireSuperWeaponHouseClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4fc6d0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HouseClass::ClearLowPowerTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4fd060": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HouseClass::FindBuildingOfType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x501160": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "CCINIClass::WriteHouses",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2576,7 +2576,7 @@
   "status": "NG"
  },
  "0x509610": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TriggerClass::ValidateTeamTriggerConditions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2604,7 +2604,7 @@
   "status": "NG"
  },
  "0x50b760": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BuildingTypeClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2618,7 +2618,7 @@
   "status": "NG"
  },
  "0x50e0e0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HouseClass::LostPoweredCenter",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2632,7 +2632,7 @@
   "status": "NG"
  },
  "0x50e280": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HouseClass::ReactivateTechnos",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2674,11 +2674,11 @@
   "status": "NG"
  },
  "0x510a20": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "AbstractClass::saveToStream",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x510a30": {
   "attempts": 3,
@@ -2695,11 +2695,11 @@
   "status": "NG"
  },
  "0x510a50": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x24",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x510a60": {
   "attempts": 3,
@@ -2716,11 +2716,11 @@
   "status": "NG"
  },
  "0x510a80": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x28",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x510a90": {
   "attempts": 3,

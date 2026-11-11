@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F2B40",
+ "name": "HouseClass::vt_placeholder_09",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F2B40",
+ "bytes_hex": "8bc1ff4008c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
