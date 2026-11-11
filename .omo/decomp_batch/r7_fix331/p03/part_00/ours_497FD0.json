@@ -1,0 +1,33 @@
+{
+ "symbol": "?AddRef@_RLEBlitTransXlatAlphaZRead_G@@QAEHHPAEHHHIPAGHHPAD@Z",
+ "sym_key": "_RLEBlitTransXlatAlphaZRead_G::AddRef",
+ "size": 377,
+ "link_base": 0,
+ "bytes_hex": "518b44242433d285c00f9ec24a5323c2558bd08b6c2410c1e20603d0568b742428578b7c24308d0490c1f80b3dfe000000894c24107e05b8fe0000008b59088b5424248b0d00000000c1e00903c385d2894424347f0a8b4424208b5c241ceb568b5c241c8a034384c074034aeb0733c08a032bd04385d27feb8b4424188bb95c050000f7da8d2c508b44242c8d34508b4424202bc23bf772062bb1600500008b4c24308d14518b0d140100003b511c72032b51208bfa85c00f8eb30000008b4c243c8a138854241c8d53018a5c241c8954241884db74520fbe198b54242883c6022bd333db668b5efe4183c502483bd3894c242c7d2e8b5c243433c9668b0f33d2668b144b8b4c241c81e1ff0000000bd18b4c24108b4904668b14518b4c242c668955fe83c702eb198d5a01895c241833db8a1a8bd32bc203ca03d203ea03f203fa8b15000000003bb25c05000072062bb2600500008b15140100003b7a1c72032b7a2085c07e098b5c2418e951ffffff5f5e5d5b59c22800",
+ "relocs": [
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  },
+  {
+   "off": 324,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 344,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  }
+ ]
+}

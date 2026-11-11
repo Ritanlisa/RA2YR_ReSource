@@ -1,0 +1,396 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 15,
+   "COMPILE_FAIL": 5
+  },
+  "pathologies": {
+   "codegen_shape": 10,
+   "const_fold": 3,
+   "eval_order": 1,
+   "frame_sched": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 20,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x497a10",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 290B ours 300B",
+   "first_diff": {
+    "orig": "+0 push ecx",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
+   "emitted": "_RLEBlitTransZRemapXlatAlpha_G::AddRef",
+   "unit": "_RLEBlitTransZRemapXlatAlpha_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 3,
+   "orig_size": 290,
+   "ours_size": 300
+  },
+  {
+   "addr": "0x497b80",
+   "batch": "adhoc",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix331\\p03\\part_00\\_RLEBlitTransLucent75Alpha_G.cpp(17) : error C2039: '__pad_0' : is not a member of '_RLEBlitTransLucent75Alpha_G'; D:\\RA2YR_ReSource\\.omo\\deco",
+   "first_diff": null,
+   "pathology": null,
+   "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent75Alpha_G::AddRef",
+   "unit": "_RLEBlitTransLucent75Alpha_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/4",
+   "rule_violations": 3
+  },
+  {
+   "addr": "0x497cf0",
+   "batch": "adhoc",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix331\\p03\\part_00\\_RLEBlitTransLucent50Alpha_G.cpp(57) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix331\\p03\\part",
+   "first_diff": null,
+   "pathology": null,
+   "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent50Alpha_G::AddRef",
+   "unit": "_RLEBlitTransLucent50Alpha_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x497e60",
+   "batch": "adhoc",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix331\\p03\\part_00\\_RLEBlitTransLucent25Alpha_G.cpp(17) : error C2039: '__pad_0' : is not a member of '_RLEBlitTransLucent25Alpha_G'; D:\\RA2YR_ReSource\\.omo\\deco",
+   "first_diff": null,
+   "pathology": null,
+   "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent25Alpha_G::AddRef",
+   "unit": "_RLEBlitTransLucent25Alpha_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "3/6",
+   "rule_violations": 3
+  },
+  {
+   "addr": "0x497fd0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 381B ours 377B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [esp + 0x2c]",
+    "ours": "+1 mov eax, dword ptr [esp + 0x24]"
+   },
+   "pathology": "const_fold",
+   "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
+   "emitted": "_RLEBlitTransXlatAlphaZRead_G::AddRef",
+   "unit": "_RLEBlitTransXlatAlphaZRead_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "5/5",
+   "rule_violations": 3,
+   "orig_size": 381,
+   "ours_size": 377
+  },
+  {
+   "addr": "0x498150",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 386B ours 384B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [esp + 0x2c]",
+    "ours": "+1 mov eax, dword ptr [esp + 0x24]"
+   },
+   "pathology": "const_fold",
+   "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
+   "emitted": "_RLEBlitTransXlatAlphaZRead_G::Release",
+   "unit": "_RLEBlitTransXlatAlphaZRead_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "5/5",
+   "rule_violations": 3,
+   "orig_size": 386,
+   "ours_size": 384
+  },
+  {
+   "addr": "0x4982e0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 426B ours 431B",
+   "first_diff": {
+    "orig": "+3 mov eax, dword ptr [esp + 0x30]",
+    "ours": "+3 mov edx, ecx"
+   },
+   "pathology": "eval_order",
+   "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+   "emitted": "_RLEBlitTransZRemapXlatAlphaZRead_G::AddRef",
+   "unit": "_RLEBlitTransZRemapXlatAlphaZRead_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "7/7",
+   "rule_violations": 1,
+   "orig_size": 426,
+   "ours_size": 431
+  },
+  {
+   "addr": "0x4984d0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 443B ours 425B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [esp + 0x2c]",
+    "ours": "+1 push ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent75AlphaZRead_G::AddRef",
+   "unit": "_RLEBlitTransLucent75AlphaZRead_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 443,
+   "ours_size": 425
+  },
+  {
+   "addr": "0x4986d0",
+   "batch": "adhoc",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix331\\p03\\part_00\\_RLEBlitTransLucent50AlphaZRead_G.cpp(67) : error C2100: illegal indirection",
+   "first_diff": null,
+   "pathology": null,
+   "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent50AlphaZRead_G::AddRef",
+   "unit": "_RLEBlitTransLucent50AlphaZRead_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x4988c0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 443B ours 425B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [esp + 0x2c]",
+    "ours": "+1 push ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent25AlphaZRead_G::AddRef",
+   "unit": "_RLEBlitTransLucent25AlphaZRead_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 443,
+   "ours_size": 425
+  },
+  {
+   "addr": "0x498ac0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 454B ours 455B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [esp + 0x2c]",
+    "ours": "+1 push ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent75AlphaZReadWarp_G::AddRef",
+   "unit": "_RLEBlitTransLucent75AlphaZReadWarp_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 4,
+   "orig_size": 454,
+   "ours_size": 455
+  },
+  {
+   "addr": "0x498cd0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 433B ours 458B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [esp + 0x2c]",
+    "ours": "+1 mov eax, dword ptr [esp + 0x24]"
+   },
+   "pathology": "const_fold",
+   "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent50AlphaZReadWarp_G::AddRef",
+   "unit": "_RLEBlitTransLucent50AlphaZReadWarp_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 433,
+   "ours_size": 458
+  },
+  {
+   "addr": "0x498ed0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 454B ours 455B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [esp + 0x2c]",
+    "ours": "+1 push ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent25AlphaZReadWarp_G::AddRef",
+   "unit": "_RLEBlitTransLucent25AlphaZReadWarp_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 4,
+   "orig_size": 454,
+   "ours_size": 455
+  },
+  {
+   "addr": "0x4990e0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 415B ours 414B",
+   "first_diff": {
+    "orig": "+10 mov ebx, dword ptr [esp + 0x18]",
+    "ours": "+10 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
+   "emitted": "_RLEBlitTransXlatAlphaZReadWrite_G::AddRef",
+   "unit": "_RLEBlitTransXlatAlphaZReadWrite_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "5/5",
+   "rule_violations": 3,
+   "orig_size": 415,
+   "ours_size": 414
+  },
+  {
+   "addr": "0x499280",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 420B ours 419B",
+   "first_diff": {
+    "orig": "+10 mov ebx, dword ptr [esp + 0x18]",
+    "ours": "+10 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
+   "emitted": "_RLEBlitTransXlatAlphaZReadWrite_G::Release",
+   "unit": "_RLEBlitTransXlatAlphaZReadWrite_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "5/5",
+   "rule_violations": 3,
+   "orig_size": 420,
+   "ours_size": 419
+  },
+  {
+   "addr": "0x499430",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 468B ours 468B",
+   "first_diff": {
+    "orig": "+0 sub esp, 8",
+    "ours": "+0 sub esp, 0xc"
+   },
+   "pathology": "frame_sched",
+   "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+   "emitted": "_RLEBlitTransZRemapXlatAlphaZReadWrite_G::AddRef",
+   "unit": "_RLEBlitTransZRemapXlatAlphaZReadWrite_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "7/7",
+   "rule_violations": 2,
+   "orig_size": 468,
+   "ours_size": 468
+  },
+  {
+   "addr": "0x499650",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 457B ours 487B",
+   "first_diff": {
+    "orig": "+5 push ebx",
+    "ours": "+5 xor edx, edx"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent75AlphaZReadWrite_G::AddRef",
+   "unit": "_RLEBlitTransLucent75AlphaZReadWrite_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 457,
+   "ours_size": 487
+  },
+  {
+   "addr": "0x499860",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 485B ours 494B",
+   "first_diff": {
+    "orig": "+0 push ecx",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent50AlphaZReadWrite_G::AddRef",
+   "unit": "_RLEBlitTransLucent50AlphaZReadWrite_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 485,
+   "ours_size": 494
+  },
+  {
+   "addr": "0x499a90",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 457B ours 487B",
+   "first_diff": {
+    "orig": "+5 push ebx",
+    "ours": "+5 xor edx, edx"
+   },
+   "pathology": "codegen_shape",
+   "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+   "emitted": "_RLEBlitTransLucent25AlphaZReadWrite_G::AddRef",
+   "unit": "_RLEBlitTransLucent25AlphaZReadWrite_G",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 457,
+   "ours_size": 487
+  },
+  {
+   "addr": "0x49e400",
+   "batch": "adhoc",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix331\\p03\\part_00\\include\\CampaignClass.hpp(20) : error C2086: 'scenario_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix331\\p03\\part_00\\Campai",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CampaignClass::FindMission",
+   "emitted": "CampaignClass::FindMission",
+   "unit": "CampaignClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "8/9",
+   "rule_violations": 4
+  }
+ ]
+}

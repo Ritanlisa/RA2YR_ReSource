@@ -1631,137 +1631,137 @@
   "status": "NG"
  },
  "0x497a10": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push ecx",
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x497b80": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497cf0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497e60": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497fd0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x498150": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x4982e0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+3 mov eax, dword ptr [esp + 0x30]",
   "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "status": "NG"
  },
  "0x4984d0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4986d0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4988c0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x498ac0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x498cd0": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x498ed0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4990e0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+10 mov ebx, dword ptr [esp + 0x18]",
   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x499280": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+10 mov ebx, dword ptr [esp + 0x18]",
   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x499430": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 sub esp, 8",
   "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x499650": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+5 push ebx",
   "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x499860": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push ecx",
   "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x499a90": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+5 push ebx",
   "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x49b660": {
   "attempts": 4,
@@ -1771,7 +1771,7 @@
   "status": "NG"
  },
  "0x49e400": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "CampaignClass::FindMission",
   "note": "decomp_batch r2: COMPILE_FAIL",

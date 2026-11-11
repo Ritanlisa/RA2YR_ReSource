@@ -1,0 +1,33 @@
+{
+ "symbol": "?AddRef@_RLEBlitTransZRemapXlatAlphaZRead_G@@QAEHHPAEHHHIPAGHHPAD@Z",
+ "sym_key": "_RLEBlitTransZRemapXlatAlphaZRead_G::AddRef",
+ "size": 431,
+ "link_base": 0,
+ "bytes_hex": "83ec088bd15355568b42048b7424348944240c33c085f60f9ec0488b6c241823c68b5c24308bc857c1e1068b7c243003c8895424148d0488c1f80b3dfe0000007e05b8fe0000008b4a0c8b5424288b3500000000c1e00903c18b0d140100008944241c8b44242085d27e4f8a184084db74034aeb0733db8a182bd34085d27feb8b7c24248b9e5c050000f7da2bfa897c24248b7c24308d6c55008d3c573bfb72062bbe600500008b7424348d14568b711c3bd672032b51208bda8b4c242485c90f8edd0000008b4c24408a104084d28854243089442420746a0fbe318b54242c83c7022bd633f6668b77fe4183c5023bd6894c24407d3e8b4c241c33d2668b138b74241033c0668b04518b54243081e2ff00000033c98a0c328b5424140bc10fbe4a088b118b4c2440668b0442668945fe8b4424208b7424244e83c30289742424eb268a108b74242488542434408b54243481e2ff0000002bf203ca897424248d341203ee03fe03de8b15000000003bba5c05000072062bba600500008b15140100003b5a1c72032b5a208b54242485d20f8f33ffffff5f5e5d8bc25b83c408c228005f5e5d8bc15b83c408c22800",
+ "relocs": [
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 383,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  }
+ ]
+}

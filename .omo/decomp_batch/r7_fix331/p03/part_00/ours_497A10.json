@@ -1,0 +1,27 @@
+{
+ "symbol": "?AddRef@_RLEBlitTransZRemapXlatAlpha_G@@QAEPAGHPAEHHHHPAGHHH@Z",
+ "sym_key": "_RLEBlitTransZRemapXlatAlpha_G::AddRef",
+ "size": 300,
+ "link_base": 0,
+ "bytes_hex": "83ec088b51045355568b128b7424348954240c33d285f60f9ec24a8b6c243023d6578bf2894c2414c1e60603f28bc58d14b2c1fa0b81fafe0000007e05bafe0000008b710c8b4c2428c1e20903d685c9895424347f148b7424248b5c24208b7c241c8b2d14010000eb3a8b5c24208a034384c0740349eb0733d28a132bca4385c97feb8b7c241c8b742424f7d92bf18d040903f803c58b2d140100003b451c72032b452085f67e7a8a0b4384c9884c2424895c242074468b5c243433c9668b088b6c241033d283c702668b144b8b4c242481e1ff00000033db8a1c298b4c24140bd38b5c24208b49084e83c002668b1451668957fe8b2d14010000eb198a0b43884c241c8b54241c81e2ff0000002bf203d203fa03c23b451c72032b452085f67f865f5e5d5b83c408c22800",
+ "relocs": [
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  },
+  {
+   "off": 247,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  }
+ ]
+}
