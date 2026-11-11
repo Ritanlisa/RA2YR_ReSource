@@ -4059,6 +4059,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4a18f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::CreateCraterAtCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4a1ca0": {
   "attempts": 1,
   "first_diff": null,
@@ -4350,6 +4357,13 @@
   "attempts": 11,
   "first_diff": null,
   "name": "MIXClass::CopyHeader",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4a8eb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetBuildingPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -5304,6 +5318,13 @@
   "name": "FootClass::Destru_vt139",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4d7170": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4d7170",
+  "note": "decomp_batch r2: NO_PSEUDO",
+  "status": "PENDING"
  },
  "0x4d9c00": {
   "attempts": 1,
@@ -7524,6 +7545,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x53a140": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LightningStorm::Strike",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x53ad00": {
   "attempts": 1,
   "first_diff": "+5 sub esp, 0x10",
@@ -7698,6 +7726,13 @@
   "name": "0x540750",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x540a80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Network_Init",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x540c60": {
   "attempts": 8,
@@ -8399,6 +8434,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x561180": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Team_Start",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5616f0": {
   "attempts": 1,
   "first_diff": null,
@@ -8587,6 +8629,13 @@
   "name": "0x578d80",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x578e60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateMapObject",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x57c870": {
   "attempts": 1,
@@ -10786,6 +10835,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x6211d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DrawTextRendererTextAligned",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x623120": {
   "attempts": 1,
   "first_diff": null,
@@ -10965,6 +11021,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "System_Reset",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x626ab0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "System_Read",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11178,6 +11241,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x630ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UI_Get_630EA0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6319c0": {
   "attempts": 1,
   "first_diff": null,
@@ -11371,6 +11441,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Render_Render_635490",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x635a40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamClass::FindByMemberType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11633,6 +11710,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x63f960": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PowerBar::ComputeFill",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6403a0": {
   "attempts": 9,
   "first_diff": null,
@@ -11882,6 +11966,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "RadarClass::Destru_vt34",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x654490": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Shroud::ProcessCellVisibility",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -12445,6 +12536,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x67bb10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ReadINIClassInfantryTypeList",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x67c0b0": {
   "attempts": 1,
   "first_diff": null,
@@ -12659,6 +12757,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "ScriptClass::GetNextAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x691970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScoreScreenClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -14559,6 +14664,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6ee3f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamClass::ProcessTeamMovement",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6ef450": {
   "attempts": 1,
   "first_diff": null,
@@ -15083,6 +15195,13 @@
   "name": "VectorClass_ptr_TemporalClass::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x71bdf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::ProcessFoggedState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x71c4d0": {
   "attempts": 4,
@@ -16743,6 +16862,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x765000": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x765000",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x765790": {
   "attempts": 1,
   "first_diff": null,
@@ -17541,6 +17667,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x797640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x797640",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7982d0": {
   "attempts": 1,
   "first_diff": null,
@@ -18037,6 +18170,13 @@
   "name": "WWMouseClass::COMStub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7b9a60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WWMouseClass::captureMouse",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7b9d70": {
   "attempts": 6,

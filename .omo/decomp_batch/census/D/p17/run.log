@@ -1,0 +1,84 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x578e60 unknown::CreateMapObject -> unknown
+[conv] 0x4a18f0 BuildingClass::CreateCraterAtCell -> BuildingClass
+[conv] 0x626ab0 unknown::System_Read -> unknown
+[conv] 0x53a140 unknown::Strike -> unknown
+[conv] 0x4a8eb0 unknown::GetBuildingPlacement -> unknown
+[conv] 0x654490 RadarClass::ProcessCellVisibility -> RadarClass
+[conv] 0x691970 unknown::ProcessFrame -> unknown
+[conv] 0x630ea0 ObjectClass::UI_Get_630EA0 -> ObjectClass
+[conv] 0x63f960 unknown::ComputeFill -> unknown
+[conv] 0x71bdf0 ObjectClass::ProcessFoggedState -> ObjectClass
+[conv] 0x7b9a60 WWMouseClass::captureMouse -> WWMouseClass
+[conv] 0x6211d0 unknown::DrawTextRendererTextAligned -> unknown
+[conv] 0x540a80 ObjectClass::Network_Init -> ObjectClass
+[conv] 0x6ee3f0 TeamClass::ProcessTeamMovement -> TeamClass
+[conv] 0x561180 ObjectClass::Team_Start -> ObjectClass
+[conv] 0x635a40 TeamClass::FindByMemberType -> TeamClass
+[conv] 0x67bb10 unknown::ReadINIClassInfantryTypeList -> unknown
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] BuildingClass            rc=2
+[era] RadarClass               rc=2
+[era] ObjectClass              rc=2
+[era] WWMouseClass             rc=2
+[era] TeamClass                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x578e60 CreateMapObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a18f0 BuildingClass::CreateCraterAtCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x626ab0 System_Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x797640 0x797640 -> PENDING (attempt 1)
+[ledger] 0x53a140 LightningStorm::Strike -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a8eb0 GetBuildingPlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x654490 Shroud::ProcessCellVisibility -> COMPILE_FAIL (attempt 1)
+[ledger] 0x691970 ScoreScreenClass::ProcessFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d7170 0x4d7170 -> PENDING (attempt 1)
+[ledger] 0x630ea0 UI_Get_630EA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63f960 PowerBar::ComputeFill -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71bdf0 ObjectClass::ProcessFoggedState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b9a60 WWMouseClass::captureMouse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6211d0 DrawTextRendererTextAligned -> COMPILE_FAIL (attempt 1)
+[ledger] 0x540a80 Network_Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ee3f0 TeamClass::ProcessTeamMovement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765000 0x765000 -> PENDING (attempt 1)
+[ledger] 0x561180 Team_Start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x635a40 TeamClass::FindByMemberType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67bb10 ReadINIClassInfantryTypeList -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2714,
+ "verdicts": {
+  "MISMATCH": 716,
+  "MATCH": 521,
+  "COMPILE_FAIL": 930,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 529,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 6
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 247,
+  "ret_norm": 8,
+  "frame_sched": 76,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 117,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.1,
+ "match_rate_of_total_pct": 19.2,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p17\batch_report.json
