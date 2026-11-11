@@ -1,0 +1,11 @@
+{
+ "addr": "0x65AEB0",
+ "name": "RadioClass::ProcessEvent",
+ "size": 152,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65AEB0",
+ "bytes_hex": "568bf1c70608057f00c74604ec047f00c74608e4047f00c7460cdc047f008b86e4000000c786e00000000c187e0085c0741d8a8eed00000084c9741350e84bdc160083c404c786e400000000000000c686ed00000000c786e8000000000000008bcec706c0dc7e00c74604a4dc7e00c746089cdc7e00c7460c94dc7e00e84e8cf9fff644240801740956e8fedb160083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

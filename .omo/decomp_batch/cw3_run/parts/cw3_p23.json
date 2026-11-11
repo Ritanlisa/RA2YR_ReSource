@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x4ac820",
+  "name": "TacticalClass::SetObserverMode",
+  "cls": null,
+  "size": 152,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x4ac8c0",
+  "name": "BuildingClass::TogglePower2",
+  "cls": null,
+  "size": 152,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.bombVisible' must have class/struct/union type"
+ },
+ {
+  "addr": "0x65aeb0",
+  "name": "RadioClass::ProcessEvent",
+  "cls": null,
+  "size": 152,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x5b1aa0",
+  "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_0",
+  "cls": null,
+  "size": 153,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6896c0",
+  "name": "ScenarioClass::SetCountryFlag",
+  "cls": null,
+  "size": 153,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int [1]' to 'char *'"
+ },
+ {
+  "addr": "0x4af540",
+  "name": "LocomotionClass::Initialize",
+  "cls": null,
+  "size": 154,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'ILocomotion' : is not a member of 'LocomotionClass'"
+ },
+ {
+  "addr": "0x69ec50",
+  "name": "LocomotionClass::Process",
+  "cls": null,
+  "size": 154,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'ILocomotion' : is not a member of 'LocomotionClass'"
+ },
+ {
+  "addr": "0x74d5d0",
+  "name": "VeinholeMonsterClass::ProcessExpansion",
+  "cls": null,
+  "size": 154,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x410260",
+  "name": "AbstractClass::QueryInterface",
+  "cls": null,
+  "size": 155,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'IID_IUnknown' : undeclared identifier"
+ },
+ {
+  "addr": "0x5125a0",
+  "name": "HouseTypeClass::QueryInterface",
+  "cls": null,
+  "size": 155,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x5980c0",
+  "name": "Random::Gaussian",
+  "cls": null,
+  "size": 155,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'_ESI' : undeclared identifier"
+ },
+ {
+  "addr": "0x5cc970",
+  "name": "MSBinkAnim::Play",
+  "cls": null,
+  "size": 155,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'int (int,char *,class DSurface *,char *,unsigned int,int)' : cannot convert parameter 3 from 'int' to 'clas"
+ },
+ {
+  "addr": "0x624be0",
+  "name": "Dialog::GrowBuffer",
+  "cls": null,
+  "size": 156,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2227",
+  "first_msg": "left of '->AnimClass_field_0x0' must point to class/struct/union"
+ },
+ {
+  "addr": "0x5b4270",
+  "name": "HashTree::MarkEntry",
+  "cls": null,
+  "size": 157,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x44f640",
+  "name": "BuildingClass::GetFactoryPosition",
+  "cls": null,
+  "size": 158,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x451330",
+  "name": "BuildingClass::GetCrewCount",
+  "cls": null,
+  "size": 158,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x486d90",
+  "name": "sub_486D90",
+  "cls": null,
+  "size": 158,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4cbba0",
+  "name": "FootClass::FindPathWithRetry",
+  "cls": null,
+  "size": 158,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'WalkPathClassPath' : cannot convert parameter 4 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x5cd4d0",
+  "name": "MSBitPrintAnim::Draw",
+  "cls": null,
+  "size": 158,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'g_GameFontObject' : undeclared identifier"
+ },
+ {
+  "addr": "0x4a0a50",
+  "name": "EnumConnectionPointsClass::ddtor",
+  "cls": null,
+  "size": 159,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2446",
+  "first_msg": "'>' : no conversion from 'const int' to 'int *'"
+ }
+]

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B1AA0",
+ "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_0",
+ "size": 153,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B1AA0",
+ "bytes_hex": "8b44240483ec0c8d5424008b08535556575250ff51188b308b58048b68088b4424249981e2ff00000003c28bc88b4424289981e2ff00000003c28bf88bc69981e2ff00000003c28bf08bc39981e2ff00000003c2c1f908c1fe08c1ff08c1f808663bf17528663bc775238b5c242c8bc58b0d50eeab002bc39933c22bc23bc17f0c5f5e5db0015b83c40cc210005f5e5d32c05b83c40cc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
