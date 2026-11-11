@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DBB55",
+ "name": "__umatherr",
+ "size": 136,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DBB55",
+ "bytes_hex": "558bec83ec20ff750ce8a200000085c0598945e474558b4510568945e88b45148945ec8b45188b75088945f08b451c68ffff0000ff75288945f48b45208975e08945f88b45248945fce8d40000008d45e050e8ab00000083c40c85c0750756e82400000059dd45f85ec9c368ffff0000ff7528e8aa000000ff7508e808000000dd452083c40cc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

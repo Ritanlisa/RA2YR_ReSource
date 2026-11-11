@@ -1,0 +1,57 @@
+{
+ "symbol": "?__umatherr@unknown@@QAEHHHHHHHNH@Z",
+ "sym_key": "unknown::__umatherr",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "8b44240850e80000000083c40485c074300fbf4c240451e80000000083c404e80000000085c075318b54240452e800000000dd44242083c404e800000000c224000fbf44240450e8000000008b4c240851e80000000083c408dd44241ce800000000c22400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?_get_fname@@YAHHZZ",
+   "sym_key": "_get_fname"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?_ctrlfp@@YAHHZZ",
+   "sym_key": "_ctrlfp"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?ReturnNull5@@YAHXZ",
+   "sym_key": "ReturnNull5"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?_set_errno@@YAHHZZ",
+   "sym_key": "_set_errno"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?_ctrlfp@@YAHHZZ",
+   "sym_key": "_ctrlfp"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?_set_errno@@YAHHZZ",
+   "sym_key": "_set_errno"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

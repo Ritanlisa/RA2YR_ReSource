@@ -1,0 +1,95 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x6802f0 unknown::SaveGame_Start_6802F0 -> unknown
+[conv] 0x680670 unknown::SaveGame_Start_680670 -> unknown
+[conv] 0x6809f0 unknown::SaveGame_Start_6809F0 -> unknown
+[conv] 0x680df0 unknown::SaveGame_Start_680DF0 -> unknown
+[conv] 0x5e68a0 unknown::Show -> unknown
+[conv] 0x51f660 InfantryClass::ProcessIvanBombResult -> InfantryClass
+[conv] 0x438b40 BombClass::Write -> BombClass
+[conv] 0x524cb0 KeywordType::FindOrCreate2 -> KeywordType
+[conv] 0x6e85f0 TeamTypeClass::FindOrCreateTaskForce -> TeamTypeClass
+[conv] 0x772fa0 InfantryTypeClass::Find -> InfantryTypeClass
+[conv] 0x5b3970 AbstractClass::COMStub_13 -> AbstractClass
+[conv] 0x7d72d4 unknown::_CountryEnumProc_4 -> unknown
+[conv] 0x74e8a0 ObjectClass::System_Init_74E8A0 -> ObjectClass
+[conv] 0x5e2790 unknown::ShowStatusText -> unknown
+[conv] 0x7dbb55 unknown::__umatherr -> unknown
+[conv] 0x7b68e0 WideString::Reassign_Alt -> WideString
+[conv] 0x625560 Options::DestroyComposite -> Options
+[conv] 0x707dd0 TechnoClass::ComputeTotalPowerDrain -> TechnoClass
+[conv] 0x595680 MapSeedClass::Constructor -> MapSeedClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] InfantryClass            rc=2
+[era] BombClass                rc=2
+[era] KeywordType              rc=2
+[era] TeamTypeClass            rc=2
+[era] InfantryTypeClass        rc=2
+[era] AbstractClass            rc=0
+[era] ObjectClass              rc=0
+[era] WideString               rc=2
+[era] Options                  rc=2
+[era] TechnoClass              rc=2
+[era] MapSeedClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x7dbb55   MISMATCH         unknown::__umatherr
+[diff] 0x5b3970   MISMATCH         AbstractClass::COMStub_13
+[diff] 0x74e8a0   MISMATCH         ObjectClass::System_Init_74E8A0
+[ledger] 0x6802f0 SaveGame_Start_6802F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x680670 SaveGame_Start_680670 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6809f0 SaveGame_Start_6809F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x680df0 SaveGame_Start_680DF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e68a0 SkirmishDialog::Show -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51f660 InfantryClass::ProcessIvanBombResult -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d3401 0x7d3401 -> PENDING (attempt 1)
+[ledger] 0x438b40 BombClass::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x524cb0 KeywordType::FindOrCreate2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e85f0 TeamTypeClass::FindOrCreateTaskForce -> COMPILE_FAIL (attempt 1)
+[ledger] 0x772fa0 InfantryTypeClass::Find -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b3970 AbstractClass::COMStub_13 -> NG (attempt 1)
+[ledger] 0x7d72d4 _CountryEnumProc_4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74e8a0 System_Init_74E8A0 -> NG (attempt 1)
+[ledger] 0x5e2790 Dialog::ShowStatusText -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dbb55 __umatherr -> NG (attempt 1)
+[ledger] 0x7b68e0 WideString::Reassign_Alt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x625560 Options::DestroyComposite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x707dd0 TechnoClass::ComputeTotalPowerDrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x595680 MapSeedClass::Constructor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2454,
+ "verdicts": {
+  "MISMATCH": 683,
+  "MATCH": 521,
+  "COMPILE_FAIL": 723,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 511,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 235,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 68,
+  "branch_polarity": 50,
+  "regalloc": 110,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 43.3,
+ "match_rate_of_total_pct": 21.2,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p04\batch_report.json

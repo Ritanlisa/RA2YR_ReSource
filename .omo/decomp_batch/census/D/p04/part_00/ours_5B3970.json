@@ -1,0 +1,57 @@
+{
+ "symbol": "?COMStub_13@AbstractClass@@QAEHH@Z",
+ "sym_key": "AbstractClass::COMStub_13",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b86ac00000050e8000000008b8eb000000051e8000000008b96b400000052e8000000008b86bc00000050e8000000008b86c80000008b8ed000000083f8ff74188b1500000000578bfa2bf83bf95f7c0433c9eb042bc203c851e8000000008b8ec000000051e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?ProcessPower@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::ProcessPower"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

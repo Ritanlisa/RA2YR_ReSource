@@ -1679,6 +1679,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x438b40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BombClass::Write",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x439080": {
   "attempts": 7,
   "first_diff": null,
@@ -6362,6 +6369,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x51f660": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryClass::ProcessIvanBombResult",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x51faf0": {
   "attempts": 5,
   "first_diff": null,
@@ -6438,6 +6452,13 @@
   "name": "0x5247c0",
   "note": "decomp_batch r2: NO_EXPORT",
   "status": "PENDING"
+ },
+ "0x524cb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "KeywordType::FindOrCreate2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x524d40": {
   "attempts": 5,
@@ -8210,6 +8231,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x595680": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapSeedClass::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5975e0": {
   "attempts": 2,
   "first_diff": "+15 jl 0x5975f6",
@@ -8643,6 +8671,13 @@
   "name": "MissionClass::Return450N",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5b3970": {
+  "attempts": 1,
+  "first_diff": "+1 push edi",
+  "name": "AbstractClass::COMStub_13",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x5b3b10": {
   "attempts": 1,
@@ -9491,6 +9526,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5e2790": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Dialog::ShowStatusText",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5e2be0": {
   "attempts": 9,
   "first_diff": null,
@@ -9502,6 +9544,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Dialog::ShowPlayerName",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5e68a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SkirmishDialog::Show",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10029,6 +10078,13 @@
   "name": "ComboBoxOwnerDraw::ComputeMask",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x625560": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Options::DestroyComposite",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x625780": {
   "attempts": 4,
@@ -11434,6 +11490,34 @@
   "attempts": 1,
   "first_diff": null,
   "name": "SaveGame_Start_67FF70",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6802f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SaveGame_Start_6802F0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x680670": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SaveGame_Start_680670",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6809f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SaveGame_Start_6809F0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x680df0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SaveGame_Start_680DF0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -13201,6 +13285,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6e85f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamTypeClass::FindOrCreateTaskForce",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6e87d0": {
   "attempts": 5,
   "first_diff": null,
@@ -13408,6 +13499,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "TechnoClass::GetCrew",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x707dd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::ComputeTotalPowerDrain",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -14741,6 +14839,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x74e8a0": {
+  "attempts": 1,
+  "first_diff": "+14 je 0x74e8ec",
+  "name": "System_Init_74E8A0",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x74f2d0": {
   "attempts": 1,
   "first_diff": null,
@@ -15630,6 +15735,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x772fa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryTypeClass::Find",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7730d0": {
   "attempts": 6,
   "first_diff": null,
@@ -16285,6 +16397,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "DeleteAndZero::Alt",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7b68e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WideString::Reassign_Alt",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -17023,6 +17142,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7d3401": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7d3401",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7d461e": {
   "attempts": 1,
   "first_diff": null,
@@ -17071,6 +17197,13 @@
   "name": "_fix_grouping_0",
   "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
   "status": "PENDING"
+ },
+ "0x7d72d4": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "_CountryEnumProc_4",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7d7374": {
   "attempts": 1,
@@ -17148,6 +17281,13 @@
   "name": "0x7d9fac",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7dbb55": {
+  "attempts": 1,
+  "first_diff": "+0 push ebp",
+  "name": "__umatherr",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7dc468": {
   "attempts": 1,
