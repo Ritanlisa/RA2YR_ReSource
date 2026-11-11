@@ -1,0 +1,11 @@
+{
+ "addr": "0x5176C0",
+ "name": "WinMain_Helper",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5176C0",
+ "bytes_hex": "8b01f6d0c0e8022401c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -125,6 +125,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x406610": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractTypeClass::sub_406610",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x406640": {
   "attempts": 7,
   "first_diff": null,
@@ -229,6 +236,13 @@
   "name": "sub_4090F0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x409320": {
+  "attempts": 1,
+  "first_diff": "+3 mov ecx, dword ptr [ecx + 0x38]",
+  "name": "Audio::GetSampleSize",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x409330": {
   "attempts": 8,
@@ -804,6 +818,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x431920": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_431920",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4324b0": {
   "attempts": 6,
   "first_diff": "+1 push ebx",
@@ -859,6 +880,13 @@
   "name": "MessageListClass::CountCharsInWidth",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x434110": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Field::Int_Set",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x4371d0": {
   "attempts": 10,
@@ -2106,6 +2134,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x4a3640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DDraw::Init",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4a3c00": {
   "attempts": 7,
   "first_diff": "+0 mov byte ptr [ecx], 0",
@@ -3212,6 +3247,13 @@
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "status": "NG"
  },
+ "0x5176c0": {
+  "attempts": 1,
+  "first_diff": "+0 mov eax, dword ptr [ecx]",
+  "name": "WinMain_Helper",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "status": "NG"
+ },
  "0x517cc0": {
   "attempts": 4,
   "first_diff": "+0 push esi",
@@ -3541,6 +3583,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x537e70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CursorPositionCommandClass::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x537f20": {
   "attempts": 5,
   "first_diff": "+0 mov eax, 0x827b3c",
@@ -3575,6 +3624,13 @@
   "name": "sub_538D40",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x539560": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x539560",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x53a100": {
   "attempts": 6,
@@ -5123,6 +5179,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x633a60": {
+  "attempts": 1,
+  "first_diff": "+4 mov dword ptr [ecx + 8], eax",
+  "name": "sub_633A60",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x633a90": {
   "attempts": 7,
   "first_diff": null,
@@ -5431,6 +5494,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x659540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadBeam::drawMindControlPips",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x659570": {
   "attempts": 6,
   "first_diff": "+0 mov al, byte ptr [ecx + 9]",
@@ -5528,6 +5598,13 @@
   "name": "sub_65C910",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x65d420": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RawFileClass::Write",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x65d660": {
   "attempts": 5,
@@ -5759,6 +5836,13 @@
   "name": "JumpjetLocomotionClass::StubReturnZero_15",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6a4210": {
+  "attempts": 1,
+  "first_diff": "+8 ret 4",
+  "name": "JumpjetLocomotionClass::SetByteField_1",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x6a42a0": {
   "attempts": 5,
@@ -5997,6 +6081,13 @@
   "name": "BinkMovie::CheckKeyframeTransition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c9d30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::getTotalValue",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x6cb830": {
   "attempts": 8,
@@ -6467,6 +6558,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x717a30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectTypeClass::loadTypeMember_5717A30",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x717a70": {
   "attempts": 1,
   "first_diff": null,
@@ -6606,6 +6704,13 @@
   "name": "AbstractClass::fireWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x720200": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::reloadWeapon",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x720a80": {
   "attempts": 10,
@@ -6760,6 +6865,13 @@
   "name": "TunnelLocomotionClass::StubReturn60",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x72a9d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x72a9d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x72b010": {
   "attempts": 1,
@@ -7727,6 +7839,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x7b5440": {
+  "attempts": 1,
+  "first_diff": "+4 jne 0x7b544b",
+  "name": "String::GetOrEmpty_Alt",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x7b5b80": {
   "attempts": 2,
   "first_diff": "+5 push edi",
@@ -7851,6 +7970,13 @@
   "first_diff": "+1 mov eax, dword ptr [ecx + 0x80]",
   "name": "Audio_Process_7C3270",
   "note": "decomp_batch r2: MISMATCH/eval_order",
+  "status": "NG"
+ },
+ "0x7c35b0": {
+  "attempts": 1,
+  "first_diff": "+0 xor eax, eax",
+  "name": "sub_7C35B0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x7c35c0": {
@@ -8048,6 +8174,13 @@
   "name": "_strncpy",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7c97cb": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7c97cb",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7caacb": {
   "attempts": 1,
@@ -8249,6 +8382,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7df8c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7df9b7": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7df9b7",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },

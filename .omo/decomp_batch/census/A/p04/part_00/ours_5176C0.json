@@ -1,0 +1,8 @@
+{
+ "symbol": "?WinMain_Helper@ObjectClass@@QAE_NXZ",
+ "sym_key": "ObjectClass::WinMain_Helper",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8a01f7d0c1e80283e001c3",
+ "relocs": []
+}

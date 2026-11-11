@@ -1,0 +1,11 @@
+{
+ "addr": "0x65D420",
+ "name": "RawFileClass::Write",
+ "size": 12,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65D420",
+ "bytes_hex": "8b511433c083faff0f95c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

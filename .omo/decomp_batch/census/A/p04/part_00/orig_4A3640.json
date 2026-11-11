@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A3640",
+ "name": "DDraw::Init",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A3640",
+ "bytes_hex": "c7810080010000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

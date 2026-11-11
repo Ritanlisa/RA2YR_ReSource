@@ -1,0 +1,8 @@
+{
+ "symbol": "?Init@DDraw@@QAEXXZ",
+ "sym_key": "DDraw::Init",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c7810080010000000000c3",
+ "relocs": []
+}

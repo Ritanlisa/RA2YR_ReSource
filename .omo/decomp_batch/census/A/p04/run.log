@@ -1,0 +1,104 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x409320 Audio::GetSampleSize -> Audio
+[conv] 0x537e70 CursorPositionCommandClass::Constructor -> CursorPositionCommandClass
+[conv] 0x717a30 ObjectTypeClass::loadTypeMember_5717A30 -> ObjectTypeClass
+[conv] 0x434110 Field::Int_Set -> Field
+[conv] 0x5176c0 ObjectClass::WinMain_Helper -> ObjectClass
+[conv] 0x633a60 ObjectClass::sub_633A60 -> ObjectClass
+[conv] 0x659540 TechnoClass::drawMindControlPips -> TechnoClass
+[conv] 0x6c9d30 AbstractClass::getTotalValue -> AbstractClass
+[conv] 0x720200 TextButtonClass::reloadWeapon -> TextButtonClass
+[conv] 0x7c35b0 TechnoClass::sub_7C35B0 -> TechnoClass
+[conv] 0x4a3640 DDraw::Init -> DDraw
+[conv] 0x6a4210 ShipLocomotionClass::SetByteField_1 -> ShipLocomotionClass
+[conv] 0x431920 ObjectClass::sub_431920 -> ObjectClass
+[conv] 0x65d420 RawFileClass::Write -> RawFileClass
+[conv] 0x7b5440 String::GetOrEmpty_Alt -> String
+[conv] 0x406610 unknown::sub_406610 -> unknown
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio                    rc=0
+[era] CursorPositionCommandClass rc=2
+[era] ObjectTypeClass          rc=0
+[era] Field                    rc=0
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] AbstractClass            rc=0
+[era] TextButtonClass          rc=0
+[era] DDraw                    rc=0
+[era] ShipLocomotionClass      rc=0
+[era] RawFileClass             rc=0
+[era] String                   rc=0
+[era] unknown                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x409320   MISMATCH         Audio::GetSampleSize
+[diff] 0x717a30   MATCH            ObjectTypeClass::loadTypeMember_5717A30
+[diff] 0x434110   MATCH            Field::Int_Set
+[diff] 0x5176c0   MISMATCH         ObjectClass::WinMain_Helper
+[diff] 0x633a60   MISMATCH         ObjectClass::sub_633A60
+[diff] 0x431920   MATCH            ObjectClass::sub_431920
+[diff] 0x659540   MATCH            TechnoClass::drawMindControlPips
+[diff] 0x7c35b0   MISMATCH         TechnoClass::sub_7C35B0
+[diff] 0x6c9d30   MATCH            AbstractClass::getTotalValue
+[diff] 0x720200   MATCH            TextButtonClass::reloadWeapon
+[diff] 0x4a3640   MATCH            DDraw::Init
+[diff] 0x6a4210   MISMATCH         ShipLocomotionClass::SetByteField_1
+[diff] 0x65d420   MATCH            RawFileClass::Write
+[diff] 0x7b5440   MISMATCH         String::GetOrEmpty_Alt
+[diff] 0x406610   MATCH            unknown::sub_406610
+[ledger] 0x7c97cb 0x7c97cb -> PENDING (attempt 1)
+[ledger] 0x409320 Audio::GetSampleSize -> NG (attempt 1)
+[ledger] 0x537e70 CursorPositionCommandClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x717a30 ObjectTypeClass::loadTypeMember_5717A30 -> OK (attempt 1)
+[ledger] 0x7df9b7 0x7df9b7 -> PENDING (attempt 1)
+[ledger] 0x434110 Field::Int_Set -> OK (attempt 1)
+[ledger] 0x5176c0 WinMain_Helper -> NG (attempt 1)
+[ledger] 0x633a60 sub_633A60 -> NG (attempt 1)
+[ledger] 0x659540 RadBeam::drawMindControlPips -> OK (attempt 1)
+[ledger] 0x6c9d30 AbstractClass::getTotalValue -> OK (attempt 1)
+[ledger] 0x720200 AbstractClass::reloadWeapon -> OK (attempt 1)
+[ledger] 0x7c35b0 sub_7C35B0 -> NG (attempt 1)
+[ledger] 0x4a3640 DDraw::Init -> OK (attempt 1)
+[ledger] 0x539560 0x539560 -> PENDING (attempt 1)
+[ledger] 0x6a4210 JumpjetLocomotionClass::SetByteField_1 -> NG (attempt 1)
+[ledger] 0x72a9d0 0x72a9d0 -> PENDING (attempt 1)
+[ledger] 0x431920 sub_431920 -> OK (attempt 1)
+[ledger] 0x65d420 RawFileClass::Write -> OK (attempt 1)
+[ledger] 0x7b5440 String::GetOrEmpty_Alt -> NG (attempt 1)
+[ledger] 0x406610 AbstractTypeClass::sub_406610 -> OK (attempt 1)
+======================================================================
+{
+ "total": 1137,
+ "verdicts": {
+  "MISMATCH": 296,
+  "MATCH": 457,
+  "COMPILE_FAIL": 320,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 57,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 4,
+  "codegen_shape": 116,
+  "ret_norm": 3,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 24,
+  "regalloc": 45,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 4,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 60.7,
+ "match_rate_of_total_pct": 40.2,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p04\batch_report.json

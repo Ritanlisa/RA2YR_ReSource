@@ -7,3 +7,4 @@
 {"layer": "A", "part": 1, "n": 20, "seconds": 17.5, "ok": true, "verdicts": {"MISMATCH": 5, "MATCH": 14, "COMPILE_FAIL": 1}}
 {"layer": "A", "part": 2, "n": 20, "seconds": 34.0, "ok": true, "verdicts": {"MATCH": 13, "NO_CLS": 7}}
 {"layer": "A", "part": 3, "n": 20, "seconds": 16.8, "ok": true, "verdicts": {"NO_CLS": 11, "MATCH": 6, "COMPILE_FAIL": 2, "MISMATCH": 1}}
+{"layer": "A", "part": 4, "n": 20, "seconds": 18.6, "ok": true, "verdicts": {"NO_CLS": 4, "MISMATCH": 6, "COMPILE_FAIL": 1, "MATCH": 9}}

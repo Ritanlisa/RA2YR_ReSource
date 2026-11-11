@@ -1,0 +1,8 @@
+{
+ "symbol": "?reloadWeapon@TextButtonClass@@QAEHH@Z",
+ "sym_key": "TextButtonClass::reloadWeapon",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b44240489413cc20400",
+ "relocs": []
+}
