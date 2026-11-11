@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturnTrue3@MultiplayerGameMode@@QAEXXZ",
+ "sym_key": "MultiplayerGameMode::StubReturnTrue3",
+ "size": 1,
+ "link_base": 0,
+ "bytes_hex": "c3",
+ "relocs": []
+}

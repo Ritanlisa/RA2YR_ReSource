@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x52d610 nullsub_148 -> _addr_52
+[conv] 0x52d620 nullsub_149 -> _addr_52
+[conv] 0x52d630 nullsub_150 -> _addr_52
+[conv] 0x532130 nullsub_19 -> _addr_53
+[conv] 0x532140 nullsub_151 -> _addr_53
+[conv] 0x53b3f0 nullsub_152 -> _addr_53
+[conv] 0x547ce0 nullsub_20 -> _addr_54
+[conv] 0x54d0c0 nullsub_156 -> _addr_54
+[conv] 0x54ee50 nullsub_157 -> _addr_54
+[conv] 0x5509e0 nullsub_21 -> _addr_55
+[conv] 0x5512c0 nullsub_22 -> _addr_55
+[conv] 0x55e410 nullsub_23 -> _addr_55
+[conv] 0x56c500 nullsub_167 -> _addr_56
+[conv] 0x58b7b0 Camera::StubReturnFalse -> Camera
+[conv] 0x5bcc20 nullsub_174 -> _addr_5B
+[conv] 0x5c0330 VQMovieHandle::nullsub_176 -> VQMovieHandle
+[conv] 0x5c0e60 MultiplayerGameMode::StubReturnTrue -> MultiplayerGameMode
+[conv] 0x5c0e70 MultiplayerGameMode::StubReturnTrue2 -> MultiplayerGameMode
+[conv] 0x5c0f10 MultiplayerGameMode::StubReturnTrue3 -> MultiplayerGameMode
+[conv] 0x5c0f20 MultiplayerGameMode::StubReturnTrue4 -> MultiplayerGameMode
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_52                 rc=0
+[era] _addr_53                 rc=2
+[era] _addr_54                 rc=0
+[era] _addr_55                 rc=0
+[era] _addr_56                 rc=0
+[era] Camera                   rc=0
+[era] _addr_5B                 rc=0
+[era] VQMovieHandle            rc=0
+[era] MultiplayerGameMode      rc=0
+=== diffasm byte-compare ===
+[diff] 0x52d610   MATCH            nullsub_148
+[diff] 0x52d620   MATCH            nullsub_149
+[diff] 0x52d630   MATCH            nullsub_150
+[diff] 0x532140   MATCH            nullsub_151
+[diff] 0x53b3f0   MATCH            nullsub_152
+[diff] 0x547ce0   MATCH            nullsub_20
+[diff] 0x54d0c0   MATCH            nullsub_156
+[diff] 0x54ee50   MATCH            nullsub_157
+[diff] 0x5509e0   MATCH            nullsub_21
+[diff] 0x5512c0   MATCH            nullsub_22
+[diff] 0x55e410   MATCH            nullsub_23
+[diff] 0x56c500   MATCH            nullsub_167
+[diff] 0x58b7b0   MATCH            Camera::StubReturnFalse
+[diff] 0x5bcc20   MATCH            nullsub_174
+[diff] 0x5c0330   MATCH            VQMovieHandle::nullsub_176
+[diff] 0x5c0e60   MATCH            MultiplayerGameMode::StubReturnTrue
+[diff] 0x5c0e70   MATCH            MultiplayerGameMode::StubReturnTrue2
+[diff] 0x5c0f10   MATCH            MultiplayerGameMode::StubReturnTrue3
+[diff] 0x5c0f20   MATCH            MultiplayerGameMode::StubReturnTrue4
+[ledger] 0x52d610 nullsub_148 -> OK (attempt 1)
+[ledger] 0x52d620 nullsub_149 -> OK (attempt 1)
+[ledger] 0x52d630 nullsub_150 -> OK (attempt 1)
+[ledger] 0x532130 nullsub_19 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x532140 nullsub_151 -> OK (attempt 1)
+[ledger] 0x53b3f0 nullsub_152 -> OK (attempt 1)
+[ledger] 0x547ce0 nullsub_20 -> OK (attempt 1)
+[ledger] 0x54d0c0 nullsub_156 -> OK (attempt 1)
+[ledger] 0x54ee50 nullsub_157 -> OK (attempt 1)
+[ledger] 0x5509e0 nullsub_21 -> OK (attempt 1)
+[ledger] 0x5512c0 nullsub_22 -> OK (attempt 1)
+[ledger] 0x55e410 nullsub_23 -> OK (attempt 1)
+[ledger] 0x56c500 nullsub_167 -> OK (attempt 1)
+[ledger] 0x58b7b0 Camera::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x5bcc20 nullsub_174 -> OK (attempt 1)
+[ledger] 0x5c0330 VQMovieHandle::nullsub_176 -> OK (attempt 1)
+[ledger] 0x5c0e60 MultiplayerGameMode::StubReturnTrue -> OK (attempt 1)
+[ledger] 0x5c0e70 MultiplayerGameMode::StubReturnTrue2 -> OK (attempt 1)
+[ledger] 0x5c0f10 MultiplayerGameMode::StubReturnTrue3 -> OK (attempt 1)
+[ledger] 0x5c0f20 MultiplayerGameMode::StubReturnTrue4 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p03\batch_report.json
