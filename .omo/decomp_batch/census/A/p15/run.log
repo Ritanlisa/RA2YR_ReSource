@@ -1,0 +1,60 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p15\part_00
+=== convert (20 addrs) ===
+=== emit 0 units ===
+=== rule self-check ===
+=== era compile ===
+=== diffasm byte-compare ===
+[ledger] 0x5d5960 0x5d5960 -> PENDING (attempt 1)
+[ledger] 0x5dad60 0x5dad60 -> PENDING (attempt 1)
+[ledger] 0x5f1440 0x5f1440 -> PENDING (attempt 1)
+[ledger] 0x5fa160 0x5fa160 -> PENDING (attempt 1)
+[ledger] 0x5ff070 0x5ff070 -> PENDING (attempt 1)
+[ledger] 0x62b480 0x62b480 -> PENDING (attempt 1)
+[ledger] 0x63f530 0x63f530 -> PENDING (attempt 1)
+[ledger] 0x643f20 0x643f20 -> PENDING (attempt 1)
+[ledger] 0x652710 0x652710 -> PENDING (attempt 1)
+[ledger] 0x65b000 0x65b000 -> PENDING (attempt 1)
+[ledger] 0x65f850 0x65f850 -> PENDING (attempt 1)
+[ledger] 0x67c510 0x67c510 -> PENDING (attempt 1)
+[ledger] 0x691220 0x691220 -> PENDING (attempt 1)
+[ledger] 0x695570 0x695570 -> PENDING (attempt 1)
+[ledger] 0x6a4410 0x6a4410 -> PENDING (attempt 1)
+[ledger] 0x6aefc0 0x6aefc0 -> PENDING (attempt 1)
+[ledger] 0x6b6a70 0x6b6a70 -> PENDING (attempt 1)
+[ledger] 0x6c6930 0x6c6930 -> PENDING (attempt 1)
+[ledger] 0x6caca0 0x6caca0 -> PENDING (attempt 1)
+[ledger] 0x6d18e0 0x6d18e0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1357,
+ "verdicts": {
+  "MISMATCH": 309,
+  "MATCH": 489,
+  "COMPILE_FAIL": 329,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 223,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 121,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 24,
+  "regalloc": 46,
+  "branch_order": 18,
+  "width_mismatch": 2,
+  "extern_reloc": 11,
+  "cc_mismatch": 6,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 61.3,
+ "match_rate_of_total_pct": 36.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p15\batch_report.json

@@ -5599,6 +5599,13 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x5d5960": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5d5960",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5d5a50": {
   "attempts": 1,
   "first_diff": null,
@@ -5662,6 +5669,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5dad60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5dad60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5e2460": {
   "attempts": 1,
   "first_diff": null,
@@ -5703,6 +5717,13 @@
   "name": "Struct::ZeroInitAndSetup_0_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5f1440": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5f1440",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x5f1950": {
   "attempts": 1,
@@ -5844,6 +5865,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5fa160": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5fa160",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5fbf70": {
   "attempts": 7,
   "first_diff": null,
@@ -5899,6 +5927,13 @@
   "name": "OverlayTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5ff070": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5ff070",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x600390": {
   "attempts": 1,
@@ -6025,6 +6060,13 @@
   "name": "ParasiteClass::StubReturn67",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x62b480": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x62b480",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x62d770": {
   "attempts": 5,
@@ -6292,6 +6334,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x63f530": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x63f530",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x63f7b0": {
   "attempts": 5,
   "first_diff": "+0 jmp 0x652cf0",
@@ -6319,6 +6368,13 @@
   "name": "LoadingScreen::GetValue",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x643f20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x643f20",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x644630": {
   "attempts": 9,
@@ -6410,6 +6466,13 @@
   "name": "ComputeHash",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x652710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x652710",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x652820": {
   "attempts": 1,
@@ -6516,6 +6579,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x65b000": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x65b000",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x65b3a0": {
   "attempts": 5,
   "first_diff": null,
@@ -6614,6 +6684,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x65f850": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x65f850",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x6613a0": {
   "attempts": 1,
   "first_diff": null,
@@ -6698,6 +6775,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x67c510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x67c510",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x67c650": {
   "attempts": 1,
   "first_diff": null,
@@ -6761,6 +6845,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x691220": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x691220",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x691ec0": {
   "attempts": 5,
   "first_diff": null,
@@ -6795,6 +6886,13 @@
   "name": "ScriptTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x695570": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x695570",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x696d70": {
   "attempts": 1,
@@ -6908,6 +7006,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6a4410": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6a4410",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x6a4910": {
   "attempts": 5,
   "first_diff": null,
@@ -6982,6 +7087,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x6aef60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x6aefc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6aefc0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -7089,6 +7201,13 @@
   "name": "SmudgeTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6b6a70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6b6a70",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x6b7100": {
   "attempts": 4,
@@ -7216,6 +7335,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c6930": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6c6930",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x6c9c60": {
   "attempts": 9,
   "first_diff": null,
@@ -7234,6 +7360,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x6cac40",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x6caca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6caca0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -7292,6 +7425,13 @@
   "name": "SidebarClass::LoadButtonSHPs",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6d18e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6d18e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x6d19e0": {
   "attempts": 1,
