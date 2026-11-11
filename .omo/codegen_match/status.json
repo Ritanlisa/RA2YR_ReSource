@@ -644,7 +644,7 @@
   "status": "OK"
  },
  "0x42a5b0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "CellClass::ClearOccupancyGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -672,7 +672,7 @@
   "status": "NG"
  },
  "0x42df90": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BitmapClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -700,7 +700,7 @@
   "status": "NG"
  },
  "0x431800": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HouseClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -763,7 +763,7 @@
   "status": "NG"
  },
  "0x4371d0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Helper::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -777,10 +777,10 @@
   "status": "OK"
  },
  "0x439080": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TechnoClass::checkRange",
-  "note": "via=mirror COMPILE_FAIL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4393d0": {
@@ -812,21 +812,21 @@
   "status": "OK"
  },
  "0x448070": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AnimClass::updateAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x448160": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "FootClass::ProcessPrimarySelect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x44d7d0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BuildingClass::GetTargetFacing",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -840,35 +840,35 @@
   "status": "NG"
  },
  "0x44f640": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "BuildingClass::GetFactoryPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x451330": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BuildingClass::GetCrewCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x451f60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::SyncCrateVisuals",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x452360": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BuildingClass::PowerOff",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x455c20": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "ObjectClass::GetScreenCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -973,7 +973,7 @@
   "status": "NG"
  },
  "0x468430": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BulletClass::LoseTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1015,7 +1015,7 @@
   "status": "NG"
  },
  "0x46b9a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass_ptr_BulletClass::GetItem_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1064,7 +1064,7 @@
   "status": "OK"
  },
  "0x472160": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "CaptureManagerClass::DrawLinks",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1120,7 +1120,7 @@
   "status": "NG"
  },
  "0x475150": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BulletTypeClass::ReadTrajectoryFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1134,14 +1134,14 @@
   "status": "NG"
  },
  "0x4756f0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HouseTypeClass::loadCountryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x475b70": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "WeaponTypeClass::ReadTrajectoryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1190,7 +1190,7 @@
   "status": "NG"
  },
  "0x477740": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "VtableStub::Method_477740",
   "note": "decomp_batch r2: COMPILE_FAIL",
