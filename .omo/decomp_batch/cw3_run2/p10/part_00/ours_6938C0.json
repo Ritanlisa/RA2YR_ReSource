@@ -1,0 +1,45 @@
+{
+ "symbol": "?ReleaseCapture@ScrollClass@@QAEPAXXZ",
+ "sym_key": "ScrollClass::ReleaseCapture",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "568bf1e800000000c6865a55000000e8000000003b0500000000751b8bcee800000000c6865a55000000e8000000003b050000000074e55ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?ExitMode@DisplayClass@@QAEHXZ",
+   "sym_key": "DisplayClass::ExitMode"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetCapture@@YGPAXXZ",
+   "sym_key": "GetCapture"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?ExitMode@DisplayClass@@QAEHXZ",
+   "sym_key": "DisplayClass::ExitMode"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?GetCapture@@YGPAXXZ",
+   "sym_key": "GetCapture"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  }
+ ]
+}
