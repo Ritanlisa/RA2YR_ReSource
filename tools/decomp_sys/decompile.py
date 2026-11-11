@@ -653,6 +653,9 @@ def run_function(addr, reg, views, idx):
     # R7: class-name==global-name phantoms (Stream family) must go before
     # emission so hpp_pilot's fwd-decl logic sees a clean globals table
     passes.pass_prune_type_only_globals(ctx)
+    # R8: canonical data-symbol spellings LAST (text authority after
+    # era_normalize re-render); codegen-neutral reloc-key fix.
+    passes.pass_global_canon(ctx)
 
     # unit selection (rule 2: cpp <-> hpp same name):
     # D-fix 1 -- the OWNING CLASS names the unit so a corrected fn->cls

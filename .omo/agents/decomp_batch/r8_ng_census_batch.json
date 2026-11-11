@@ -1,0 +1,1286 @@
+[
+ {
+  "addr": "0x402330",
+  "name": "AudioController::UpdatePlayback"
+ },
+ {
+  "addr": "0x4035f0",
+  "name": "AudioQueue::FindBestChannel"
+ },
+ {
+  "addr": "0x404700",
+  "name": "AudioStream::SetupPlayback"
+ },
+ {
+  "addr": "0x4047b0",
+  "name": "AudioStream::SelectRandom"
+ },
+ {
+  "addr": "0x4052f0",
+  "name": "VocClass::Release"
+ },
+ {
+  "addr": "0x405c00",
+  "name": "AudioFileClass::Release"
+ },
+ {
+  "addr": "0x405d40",
+  "name": "AudioController::Stop"
+ },
+ {
+  "addr": "0x407070",
+  "name": "Audio::GetFlag"
+ },
+ {
+  "addr": "0x4071c0",
+  "name": "AudioMixer::PlaySample"
+ },
+ {
+  "addr": "0x408140",
+  "name": "ThemeClass::GetValue"
+ },
+ {
+  "addr": "0x40cc00",
+  "name": "VectorClass_ptr_IsometricTileClass::GetItem"
+ },
+ {
+  "addr": "0x4105f0",
+  "name": "INoticeSource::Dispatch"
+ },
+ {
+  "addr": "0x410600",
+  "name": "XSurface::vt_entry_40"
+ },
+ {
+  "addr": "0x41a9e0",
+  "name": "TechnoClass::CanFireAtTarget"
+ },
+ {
+  "addr": "0x41b910",
+  "name": "AircraftClass::MissionStubReturnZero"
+ },
+ {
+  "addr": "0x41be60",
+  "name": "AircraftClass::LandingCheckStub"
+ },
+ {
+  "addr": "0x41be70",
+  "name": "AircraftClass::StubReturnFalse2"
+ },
+ {
+  "addr": "0x41bff0",
+  "name": "TechnoClass::vt_entry_434"
+ },
+ {
+  "addr": "0x41c030",
+  "name": "TacticalClass::CheckAction"
+ },
+ {
+  "addr": "0x41c070",
+  "name": "AircraftClass::CheckDockState"
+ },
+ {
+  "addr": "0x41c640",
+  "name": "TechnoClass::processIdleState"
+ },
+ {
+  "addr": "0x41c650",
+  "name": "TechnoClass::processGuardState"
+ },
+ {
+  "addr": "0x41c660",
+  "name": "TechnoClass::processAttackState"
+ },
+ {
+  "addr": "0x41cfa0",
+  "name": "ObjectClass::GetMember41_2"
+ },
+ {
+  "addr": "0x41fd60",
+  "name": "AITriggerTypeClass::RegisterSuccess"
+ },
+ {
+  "addr": "0x41fe20",
+  "name": "AITriggerTypeClass::RegisterFailure"
+ },
+ {
+  "addr": "0x4263a0",
+  "name": "AbstractClass::COMStub_26"
+ },
+ {
+  "addr": "0x426430",
+  "name": "AbstractClass::COMStub_50"
+ },
+ {
+  "addr": "0x4264c0",
+  "name": "AbstractClass::COMStub_107"
+ },
+ {
+  "addr": "0x4264d0",
+  "name": "ObjectClass::COMStub_108"
+ },
+ {
+  "addr": "0x42a5b0",
+  "name": "CellClass::ClearOccupancyGrid"
+ },
+ {
+  "addr": "0x42d8f0",
+  "name": "VectorClass_ushort::Remove"
+ },
+ {
+  "addr": "0x42da30",
+  "name": "VectorClass_ushort::SetCapacity"
+ },
+ {
+  "addr": "0x42dca0",
+  "name": "Pathfinding::SiftDown"
+ },
+ {
+  "addr": "0x42e820",
+  "name": "BridgeClass::GetCellData"
+ },
+ {
+  "addr": "0x42f4f0",
+  "name": "BaseClass::Release"
+ },
+ {
+  "addr": "0x42f9c0",
+  "name": "BaseNodeClass_Vector::Release"
+ },
+ {
+  "addr": "0x4324b0",
+  "name": "BufferIOFileClass::SeekInternal"
+ },
+ {
+  "addr": "0x432ab0",
+  "name": "BinkMovieHandle::RenderFrameClipped"
+ },
+ {
+  "addr": "0x433270",
+  "name": "BinkMovie::BlitToTarget"
+ },
+ {
+  "addr": "0x433330",
+  "name": "BinkMovie::AdjustSurfaceFormat"
+ },
+ {
+  "addr": "0x4335e0",
+  "name": "BinkMovieClass::AllocateRenderSurface"
+ },
+ {
+  "addr": "0x4336c0",
+  "name": "BinkMovieClass::ReleaseRenderSurface"
+ },
+ {
+  "addr": "0x433770",
+  "name": "BinkMovieClass::OpenFile"
+ },
+ {
+  "addr": "0x433f50",
+  "name": "MessageListClass::CountCharsInWidth"
+ },
+ {
+  "addr": "0x448070",
+  "name": "AnimClass::updateAnimation"
+ },
+ {
+  "addr": "0x44e3a0",
+  "name": "BuildingClass::CheckOverlapWithOthers"
+ },
+ {
+  "addr": "0x451f60",
+  "name": "BuildingClass::SyncCrateVisuals"
+ },
+ {
+  "addr": "0x4566b0",
+  "name": "BuildingClass::GetPowerFrame"
+ },
+ {
+  "addr": "0x459d90",
+  "name": "TechnoClass::MissionStubReturnZero4"
+ },
+ {
+  "addr": "0x459e50",
+  "name": "BuildingClass::StubReturnFalse14"
+ },
+ {
+  "addr": "0x465e70",
+  "name": "VectorClass_TPoint3D_int::Release"
+ },
+ {
+  "addr": "0x4664c0",
+  "name": "Particle::Init"
+ },
+ {
+  "addr": "0x46b990",
+  "name": "VectorClass_ptr_BulletClass::GetItem"
+ },
+ {
+  "addr": "0x46b9a0",
+  "name": "VectorClass_ptr_BulletClass::GetItem_0"
+ },
+ {
+  "addr": "0x472160",
+  "name": "CaptureManagerClass::DrawLinks"
+ },
+ {
+  "addr": "0x474b50",
+  "name": "INIClass::GetCoord"
+ },
+ {
+  "addr": "0x474c70",
+  "name": "INIEntry::ReadColor"
+ },
+ {
+  "addr": "0x475150",
+  "name": "BulletTypeClass::ReadTrajectoryFlags"
+ },
+ {
+  "addr": "0x475610",
+  "name": "INIClass::SetHouseName"
+ },
+ {
+  "addr": "0x475b70",
+  "name": "WeaponTypeClass::ReadTrajectoryData"
+ },
+ {
+  "addr": "0x475c70",
+  "name": "WeaponTypeClass::ReadVeteranData"
+ },
+ {
+  "addr": "0x475f30",
+  "name": "ScenarioClass::SaveIntListToINI"
+ },
+ {
+  "addr": "0x476240",
+  "name": "ObjectTypeClass::ReadTypeListINI"
+ },
+ {
+  "addr": "0x4766f0",
+  "name": "ScenarioClass::SaveTypeNameListToINI"
+ },
+ {
+  "addr": "0x476a20",
+  "name": "INIClass::WriteSuperWeaponList"
+ },
+ {
+  "addr": "0x477640",
+  "name": "INIEntry::ReadAbilities"
+ },
+ {
+  "addr": "0x478340",
+  "name": "FilePipe_38::Release"
+ },
+ {
+  "addr": "0x4784f0",
+  "name": "ParticleTypeClass::Release"
+ },
+ {
+  "addr": "0x4788e0",
+  "name": "ParticleTypeClass::EnsureCapacity"
+ },
+ {
+  "addr": "0x4802a0",
+  "name": "TacticalClass::DrawCellTerrainOverlay"
+ },
+ {
+  "addr": "0x480510",
+  "name": "BuildingPlacement::ValidateType"
+ },
+ {
+  "addr": "0x485010",
+  "name": "BuildingClass::FindByCellHash"
+ },
+ {
+  "addr": "0x485080",
+  "name": "JumpjetLocomotionClass::FindClosestOccupiableCell"
+ },
+ {
+  "addr": "0x4863d0",
+  "name": "CellLand::IsBuildable"
+ },
+ {
+  "addr": "0x4865b0",
+  "name": "CellClass::IsTerrainType"
+ },
+ {
+  "addr": "0x486650",
+  "name": "CellClass::InMapDataRange"
+ },
+ {
+  "addr": "0x486670",
+  "name": "CellClass::InBounds"
+ },
+ {
+  "addr": "0x486900",
+  "name": "CellClass::IsActiveOrNext"
+ },
+ {
+  "addr": "0x48b2a0",
+  "name": "Struct::ClearAllMemberFlags"
+ },
+ {
+  "addr": "0x48b570",
+  "name": "PacketQueue::ExtractEntry"
+ },
+ {
+  "addr": "0x48b750",
+  "name": "ConnectionClass::allocPacketSlot"
+ },
+ {
+  "addr": "0x48b890",
+  "name": "PacketQueue::ReleaseEntry"
+ },
+ {
+  "addr": "0x493930",
+  "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25"
+ },
+ {
+  "addr": "0x493a60",
+  "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50"
+ },
+ {
+  "addr": "0x493b90",
+  "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0"
+ },
+ {
+  "addr": "0x493cc0",
+  "name": "BlitPlainXlatAlpha_ushort::AddRef"
+ },
+ {
+  "addr": "0x493df0",
+  "name": "BlitTransXlatAlpha_ushort::AddRef"
+ },
+ {
+  "addr": "0x493f30",
+  "name": "BlitTransZRemapXlatAlpha_ushort::AddRef"
+ },
+ {
+  "addr": "0x494080",
+  "name": "BlitTransLucent75Alpha_ushort::AddRef"
+ },
+ {
+  "addr": "0x4941e0",
+  "name": "BlitTransLucent50Alpha_ushort::AddRef"
+ },
+ {
+  "addr": "0x494330",
+  "name": "BlitTransLucent25Alpha_ushort::AddRef"
+ },
+ {
+  "addr": "0x494b60",
+  "name": "BlitTransXlatAlphaZRead_ushort::AddRef"
+ },
+ {
+  "addr": "0x494c40",
+  "name": "BlitTransXlatAlphaZRead_ushort::BlitRect"
+ },
+ {
+  "addr": "0x4953f0",
+  "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef"
+ },
+ {
+  "addr": "0x495730",
+  "name": "BlitTransLucent25AlphaZReadWarp_ushort::AddRef"
+ },
+ {
+  "addr": "0x495a50",
+  "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef"
+ },
+ {
+  "addr": "0x495bc0",
+  "name": "BlitTransLucent75AlphaZReadWrite_ushort::AddRef"
+ },
+ {
+  "addr": "0x495d60",
+  "name": "BlitTransLucent50AlphaZReadWrite_ushort::AddRef"
+ },
+ {
+  "addr": "0x495f00",
+  "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef"
+ },
+ {
+  "addr": "0x4974b0",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25"
+ },
+ {
+  "addr": "0x497610",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50"
+ },
+ {
+  "addr": "0x497760",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite"
+ },
+ {
+  "addr": "0x4978c0",
+  "name": "RLEBlitTransXlatAlpha_ushort::AddRef"
+ },
+ {
+  "addr": "0x497a10",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef"
+ },
+ {
+  "addr": "0x497fd0",
+  "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef"
+ },
+ {
+  "addr": "0x498150",
+  "name": "RLEBlitTransXlatAlphaZRead_ushort::Release"
+ },
+ {
+  "addr": "0x4982e0",
+  "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef"
+ },
+ {
+  "addr": "0x4984d0",
+  "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef"
+ },
+ {
+  "addr": "0x4988c0",
+  "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef"
+ },
+ {
+  "addr": "0x498ac0",
+  "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef"
+ },
+ {
+  "addr": "0x498cd0",
+  "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef"
+ },
+ {
+  "addr": "0x498ed0",
+  "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef"
+ },
+ {
+  "addr": "0x4990e0",
+  "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef"
+ },
+ {
+  "addr": "0x499280",
+  "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release"
+ },
+ {
+  "addr": "0x499430",
+  "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef"
+ },
+ {
+  "addr": "0x499650",
+  "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef"
+ },
+ {
+  "addr": "0x499860",
+  "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef"
+ },
+ {
+  "addr": "0x499a90",
+  "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef"
+ },
+ {
+  "addr": "0x49b660",
+  "name": "MPCooperative::processTurn"
+ },
+ {
+  "addr": "0x4a3220",
+  "name": "CStreamClass::IStreamQueryInterface"
+ },
+ {
+  "addr": "0x4a3230",
+  "name": "CStreamClass::IStreamAddRef"
+ },
+ {
+  "addr": "0x4a3240",
+  "name": "CStreamClass::IStreamRelease"
+ },
+ {
+  "addr": "0x4a3c00",
+  "name": "CreditsScreen::Init"
+ },
+ {
+  "addr": "0x4a60e0",
+  "name": "TextRenderer::Printf"
+ },
+ {
+  "addr": "0x4a7900",
+  "name": "DiskLaserClass::PointerGotInvalid"
+ },
+ {
+  "addr": "0x4a94f0",
+  "name": "CoordList::GetBounds"
+ },
+ {
+  "addr": "0x4b4d90",
+  "name": "JumpjetLocomotionClass::GetField_0x78"
+ },
+ {
+  "addr": "0x4b4da0",
+  "name": "JumpjetLocomotionClass::GetField_0x7C"
+ },
+ {
+  "addr": "0x4b4db0",
+  "name": "JumpjetLocomotionClass::GetField_0x80"
+ },
+ {
+  "addr": "0x4b5630",
+  "name": "BlitterList::CopyEntry"
+ },
+ {
+  "addr": "0x4b6740",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6740"
+ },
+ {
+  "addr": "0x4b6750",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6750"
+ },
+ {
+  "addr": "0x4b6760",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6760"
+ },
+ {
+  "addr": "0x4b6770",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6770"
+ },
+ {
+  "addr": "0x4b6780",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6780"
+ },
+ {
+  "addr": "0x4b6790",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6790"
+ },
+ {
+  "addr": "0x4bbb00",
+  "name": "DSurface::BlitStretch"
+ },
+ {
+  "addr": "0x4bbc90",
+  "name": "DDraw::GetStatus"
+ },
+ {
+  "addr": "0x4c3d00",
+  "name": "CreditsPower::DrawCreditsTextLine"
+ },
+ {
+  "addr": "0x4c4ef0",
+  "name": "TaskForceClass::ParseUnitCountAndType"
+ },
+ {
+  "addr": "0x4c9220",
+  "name": "FacingClass::Update"
+ },
+ {
+  "addr": "0x4c9530",
+  "name": "MovementClass::CompareAbsCoords"
+ },
+ {
+  "addr": "0x4c9c60",
+  "name": "FactoryClass::HasProgressChanged"
+ },
+ {
+  "addr": "0x4cadb0",
+  "name": "Math::ArcTan2_Table"
+ },
+ {
+  "addr": "0x4cade0",
+  "name": "Math::ArcTan"
+ },
+ {
+  "addr": "0x4d0510",
+  "name": "JumpjetLocomotionClass::GetInterface"
+ },
+ {
+  "addr": "0x4d0520",
+  "name": "JumpjetLocomotionClass::GetInterface2"
+ },
+ {
+  "addr": "0x4d0530",
+  "name": "JumpjetLocomotionClass::Stub2"
+ },
+ {
+  "addr": "0x4d2a10",
+  "name": "FoggedObject_DrawVector::Release"
+ },
+ {
+  "addr": "0x4dc810",
+  "name": "FootClass::SetBuildingType"
+ },
+ {
+  "addr": "0x4ddb90",
+  "name": "FootClass::MoveToWeed"
+ },
+ {
+  "addr": "0x4f4c20",
+  "name": "Byte::Zero"
+ },
+ {
+  "addr": "0x5022f0",
+  "name": "WaypointClass::IsCoordinateUsed"
+ },
+ {
+  "addr": "0x5023b0",
+  "name": "Waypoint::FindByCell"
+ },
+ {
+  "addr": "0x509b20",
+  "name": "HouseClass::Find"
+ },
+ {
+  "addr": "0x509c10",
+  "name": "HouseClass::FireStoredSW"
+ },
+ {
+  "addr": "0x50b6f0",
+  "name": "House::IsHumanPlayer"
+ },
+ {
+  "addr": "0x50df30",
+  "name": "HouseClass::GetStartCoords"
+ },
+ {
+  "addr": "0x50e1c0",
+  "name": "TechnoClass::Process"
+ },
+ {
+  "addr": "0x50e280",
+  "name": "HouseClass::ReactivateTechnos"
+ },
+ {
+  "addr": "0x50eb70",
+  "name": "VectorClass::InsertAt"
+ },
+ {
+  "addr": "0x50f9e0",
+  "name": "VectorClass__N::Remove"
+ },
+ {
+  "addr": "0x50fb20",
+  "name": "VectorClass__N::SetCapacity"
+ },
+ {
+  "addr": "0x510a20",
+  "name": "AbstractClass::saveToStream"
+ },
+ {
+  "addr": "0x510a30",
+  "name": "AbstractClass::loadFromStream"
+ },
+ {
+  "addr": "0x510a40",
+  "name": "AbstractClass::computeSize"
+ },
+ {
+  "addr": "0x510a50",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2"
+ },
+ {
+  "addr": "0x510a60",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3"
+ },
+ {
+  "addr": "0x510a70",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4"
+ },
+ {
+  "addr": "0x510a80",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5"
+ },
+ {
+  "addr": "0x510a90",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6"
+ },
+ {
+  "addr": "0x510aa0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7"
+ },
+ {
+  "addr": "0x510ab0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8"
+ },
+ {
+  "addr": "0x510ad0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10"
+ },
+ {
+  "addr": "0x510ae0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11"
+ },
+ {
+  "addr": "0x510af0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12"
+ },
+ {
+  "addr": "0x5139e0",
+  "name": "HouseTypeClass::readBaseDefenses"
+ },
+ {
+  "addr": "0x5139f0",
+  "name": "HouseTypeClass::readAiBuildLists"
+ },
+ {
+  "addr": "0x513a00",
+  "name": "HouseTypeClass::readLoadoutData"
+ },
+ {
+  "addr": "0x517210",
+  "name": "JumpjetLocomotionClass::IsPositionWithinThreshold"
+ },
+ {
+  "addr": "0x517440",
+  "name": "Color::ConvertToRGB"
+ },
+ {
+  "addr": "0x5176a0",
+  "name": "InfantryClass::SetField6"
+ },
+ {
+  "addr": "0x517cc0",
+  "name": "InfantryClass::PerFrameUpdate"
+ },
+ {
+  "addr": "0x523250",
+  "name": "InfantryClass::ComputeTransform"
+ },
+ {
+  "addr": "0x526810",
+  "name": "INIClass::BinarySearchSection"
+ },
+ {
+  "addr": "0x526960",
+  "name": "INIClass::GetKeyCount"
+ },
+ {
+  "addr": "0x526a30",
+  "name": "INIClass::FindKey"
+ },
+ {
+  "addr": "0x526cc0",
+  "name": "INIClass::GetStringByIndex"
+ },
+ {
+  "addr": "0x535d20",
+  "name": "CreateTeamCommand::performAction_2"
+ },
+ {
+  "addr": "0x535de0",
+  "name": "CreateTeamCommand::performAction_7"
+ },
+ {
+  "addr": "0x535ea0",
+  "name": "CreateTeamCommand::performAction_12"
+ },
+ {
+  "addr": "0x535f30",
+  "name": "CreateTeamCommand::performAction_17"
+ },
+ {
+  "addr": "0x5365a0",
+  "name": "CreateTeamCommand::performAction_26"
+ },
+ {
+  "addr": "0x5366a0",
+  "name": "CreateTeamCommand::performAction_31"
+ },
+ {
+  "addr": "0x536770",
+  "name": "CreateTeamCommand::performAction_39"
+ },
+ {
+  "addr": "0x536810",
+  "name": "CreateTeamCommand::performAction_45"
+ },
+ {
+  "addr": "0x5368d0",
+  "name": "CreateTeamCommand::performAction_53"
+ },
+ {
+  "addr": "0x536970",
+  "name": "CreateTeamCommand::performAction_59"
+ },
+ {
+  "addr": "0x536a10",
+  "name": "CreateTeamCommand::performAction_65"
+ },
+ {
+  "addr": "0x536b10",
+  "name": "CreateTeamCommand::performAction_70"
+ },
+ {
+  "addr": "0x536b90",
+  "name": "CreateTeamCommand::performAction_75"
+ },
+ {
+  "addr": "0x537130",
+  "name": "CreateTeamCommand::performAction_128"
+ },
+ {
+  "addr": "0x537a50",
+  "name": "Commands::AddRef"
+ },
+ {
+  "addr": "0x537a70",
+  "name": "Commands::Release"
+ },
+ {
+  "addr": "0x537a80",
+  "name": "Commands::StubReturn8550640"
+ },
+ {
+  "addr": "0x537b50",
+  "name": "ScreenCaptureCommandClass::AddRef"
+ },
+ {
+  "addr": "0x537de0",
+  "name": "PageUserCommandClass::AddRef"
+ },
+ {
+  "addr": "0x537f20",
+  "name": "DeleteCommandClass::AddRef"
+ },
+ {
+  "addr": "0x53ee70",
+  "name": "GUID::Compare"
+ },
+ {
+  "addr": "0x53ef60",
+  "name": "Network::processPacket"
+ },
+ {
+  "addr": "0x53f0e0",
+  "name": "Network::FormatAddress"
+ },
+ {
+  "addr": "0x540340",
+  "name": "IPXGlobalConnClass::SendPacket"
+ },
+ {
+  "addr": "0x540c60",
+  "name": "Network::SetConnectionParams"
+ },
+ {
+  "addr": "0x54f050",
+  "name": "EventQueue::Read"
+ },
+ {
+  "addr": "0x54f2f0",
+  "name": "InputManager::EnqueueInputEvent"
+ },
+ {
+  "addr": "0x565b00",
+  "name": "MapClass::FreeAllCells"
+ },
+ {
+  "addr": "0x56d100",
+  "name": "MapSeed::CheckTileMatch"
+ },
+ {
+  "addr": "0x56d5a0",
+  "name": "CellClass::DetermineTileConnectivity"
+ },
+ {
+  "addr": "0x56e7c0",
+  "name": "MapClass::CheckCellsBuildable"
+ },
+ {
+  "addr": "0x578290",
+  "name": "LayerClass::CellIteratorNext"
+ },
+ {
+  "addr": "0x578ac0",
+  "name": "MapClass::IncrementRedrawCounter"
+ },
+ {
+  "addr": "0x5855a0",
+  "name": "LayerClass::AssignCellOwnership"
+ },
+ {
+  "addr": "0x5865f0",
+  "name": "CellClass::SpiralFindClosest"
+ },
+ {
+  "addr": "0x586ac0",
+  "name": "JumpjetLocomotionClass::ClampToCellBounds"
+ },
+ {
+  "addr": "0x589370",
+  "name": "VectorClass::AllocateCellDataBuffer"
+ },
+ {
+  "addr": "0x58a2a0",
+  "name": "VectorClass_W4PassabilityType::SetCapacity_1"
+ },
+ {
+  "addr": "0x58a8f0",
+  "name": "VectorClass_UHashObject_uint_SubzoneConn::Release"
+ },
+ {
+  "addr": "0x5975e0",
+  "name": "SettingsClass::ClampValues"
+ },
+ {
+  "addr": "0x59c580",
+  "name": "RandomMap::GrowTiberium"
+ },
+ {
+  "addr": "0x5ac960",
+  "name": "PriorityQueue::Pop"
+ },
+ {
+  "addr": "0x5acd30",
+  "name": "MSEngine::Release"
+ },
+ {
+  "addr": "0x5aced0",
+  "name": "MSEngine::SetCapacity"
+ },
+ {
+  "addr": "0x5ad870",
+  "name": "Heap::SiftDown"
+ },
+ {
+  "addr": "0x5b2990",
+  "name": "Math::Abs16Cmp"
+ },
+ {
+  "addr": "0x5c1fa0",
+  "name": "MPCooperative::Revert"
+ },
+ {
+  "addr": "0x5cbb80",
+  "name": "MSOverlayAnim::Draw"
+ },
+ {
+  "addr": "0x5d87e0",
+  "name": "ScenarioClass::distributeStartingUnits"
+ },
+ {
+  "addr": "0x5e84d0",
+  "name": "GameConfig::ComputeCRC"
+ },
+ {
+  "addr": "0x5f5fa0",
+  "name": "ObjectClass::SetZ"
+ },
+ {
+  "addr": "0x5f6560",
+  "name": "Math::DistSq2D"
+ },
+ {
+  "addr": "0x5fed00",
+  "name": "OverlayTypeClass::GetRadarColor"
+ },
+ {
+  "addr": "0x624fc0",
+  "name": "HashTable_flat::Grow2"
+ },
+ {
+  "addr": "0x6252f0",
+  "name": "ComboBoxOwnerDraw::SortItems"
+ },
+ {
+  "addr": "0x625780",
+  "name": "HashTable_flat::Shrink2"
+ },
+ {
+  "addr": "0x625830",
+  "name": "HashTable_flat::Rebuild2"
+ },
+ {
+  "addr": "0x6258e0",
+  "name": "ComboBoxOwnerDraw::SetCapacity"
+ },
+ {
+  "addr": "0x62d830",
+  "name": "ParticleClass::vt_entry_1E8"
+ },
+ {
+  "addr": "0x633e50",
+  "name": "sub_633E50"
+ },
+ {
+  "addr": "0x633e60",
+  "name": "sub_633E60"
+ },
+ {
+  "addr": "0x634700",
+  "name": "sub_634700"
+ },
+ {
+  "addr": "0x635060",
+  "name": "FactoryClass::FinishProduction"
+ },
+ {
+  "addr": "0x638ce0",
+  "name": "ScriptAction::ClassifyAction"
+ },
+ {
+  "addr": "0x63f7b0",
+  "name": "PowerClass::Stub"
+ },
+ {
+  "addr": "0x653760",
+  "name": "TacticalClass::PixelToCellCheck"
+ },
+ {
+  "addr": "0x655740",
+  "name": "BuildingClass::RemoveGapCellCoverage"
+ },
+ {
+  "addr": "0x658970",
+  "name": "RadarHashVector::Release"
+ },
+ {
+  "addr": "0x658b10",
+  "name": "RadarHashVector::ComputeHashIndex"
+ },
+ {
+  "addr": "0x659570",
+  "name": "sub_659570"
+ },
+ {
+  "addr": "0x65a820",
+  "name": "ObjectClass::ProcessGroupInput"
+ },
+ {
+  "addr": "0x65b800",
+  "name": "RadSiteClass::Tick"
+ },
+ {
+  "addr": "0x65c7e0",
+  "name": "Random::Range"
+ },
+ {
+  "addr": "0x6a6140",
+  "name": "Sidebar::FindProductionType"
+ },
+ {
+  "addr": "0x6a80a0",
+  "name": "TabClass::updateTabProduction"
+ },
+ {
+  "addr": "0x6b44a0",
+  "name": "VectorClass_UUndoInfoStruct::Release"
+ },
+ {
+  "addr": "0x6b4650",
+  "name": "VectorClass_UUndoInfoStruct::SetCapacity"
+ },
+ {
+  "addr": "0x6b7100",
+  "name": "TaskManager::Update"
+ },
+ {
+  "addr": "0x6baef0",
+  "name": "HashTable_flat::RebuildEx"
+ },
+ {
+  "addr": "0x6cb830",
+  "name": "SuperClass::StopPreclickAnim"
+ },
+ {
+  "addr": "0x6d5f60",
+  "name": "TacticalClass::SetViewportPosition"
+ },
+ {
+  "addr": "0x6d6070",
+  "name": "Tactical::SetTacticalPosition"
+ },
+ {
+  "addr": "0x6da080",
+  "name": "PlayerClass::HasOccupiedCell"
+ },
+ {
+  "addr": "0x6da180",
+  "name": "TacticalMap::DrawOccupiedRegion"
+ },
+ {
+  "addr": "0x6dc660",
+  "name": "VectorClass_UDirtyAreaStruct::Release"
+ },
+ {
+  "addr": "0x6e0110",
+  "name": "ScenarioClass::Create"
+ },
+ {
+  "addr": "0x6e4150",
+  "name": "TActionClass::executeGeneticMutatorAction"
+ },
+ {
+  "addr": "0x7036c0",
+  "name": "TechnoClass::TransitionEffectState"
+ },
+ {
+  "addr": "0x70c5c0",
+  "name": "ObjectClass::GetFogByte"
+ },
+ {
+  "addr": "0x70ed80",
+  "name": "TechnoClass::GetAnimationFlags"
+ },
+ {
+  "addr": "0x717ad0",
+  "name": "ObjectTypeClass::loadTypeMember_5717AD0"
+ },
+ {
+  "addr": "0x71c4d0",
+  "name": "TerrainClass::IsPlacementValid"
+ },
+ {
+  "addr": "0x720a80",
+  "name": "Movie::SelectNextBuildableType"
+ },
+ {
+  "addr": "0x722390",
+  "name": "BuildingClass::FreeUpgradeQueue"
+ },
+ {
+  "addr": "0x722e50",
+  "name": "BuildingClass::FreeUpgradeQueue2"
+ },
+ {
+  "addr": "0x7268f0",
+  "name": "TActionClass::executeAirstrikeAction"
+ },
+ {
+  "addr": "0x726900",
+  "name": "TActionClass::executeDetonateAction"
+ },
+ {
+  "addr": "0x736ca0",
+  "name": "TechnoClass::UpdateUnitAnimation"
+ },
+ {
+  "addr": "0x7447a0",
+  "name": "InfantryClass::ScanTarget_0"
+ },
+ {
+  "addr": "0x746810",
+  "name": "UnitClass::PerFrameUpdate"
+ },
+ {
+  "addr": "0x74c030",
+  "name": "VectorClass_E::Release"
+ },
+ {
+  "addr": "0x74fa20",
+  "name": "GameClass::ReadVersionFile2"
+ },
+ {
+  "addr": "0x758ea0",
+  "name": "VoxelRenderer::ProjectVertex"
+ },
+ {
+  "addr": "0x75ca80",
+  "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_1"
+ },
+ {
+  "addr": "0x75f140",
+  "name": "Voxel::loadSectionData"
+ },
+ {
+  "addr": "0x76a3f0",
+  "name": "Map_WorldDominationTour_43::Release"
+ },
+ {
+  "addr": "0x76b0a0",
+  "name": "File::LoadWDTDecompress"
+ },
+ {
+  "addr": "0x76f020",
+  "name": "FileClass::GetState"
+ },
+ {
+  "addr": "0x76f070",
+  "name": "FileClass::SetState"
+ },
+ {
+  "addr": "0x7ad930",
+  "name": "CChatEventSink::GrowBuffer"
+ },
+ {
+  "addr": "0x7ae020",
+  "name": "WOLGameList::GrowBuffer"
+ },
+ {
+  "addr": "0x7ae0e0",
+  "name": "ComStreamClass::readData"
+ },
+ {
+  "addr": "0x7ae510",
+  "name": "HashTable_flat::Grow"
+ },
+ {
+  "addr": "0x7aef50",
+  "name": "ComStreamClass::flushStream"
+ },
+ {
+  "addr": "0x7b0f50",
+  "name": "NetworkOptions::ApplySettings"
+ },
+ {
+  "addr": "0x7b1d10",
+  "name": "AudioQueue::Cleanup"
+ },
+ {
+  "addr": "0x7b22e0",
+  "name": "AudioQueue::ReadBuffer"
+ },
+ {
+  "addr": "0x7b3920",
+  "name": "UDPInterfaceClass::Reset"
+ },
+ {
+  "addr": "0x7b4940",
+  "name": "String::Reassign"
+ },
+ {
+  "addr": "0x7b4c20",
+  "name": "String::Append"
+ },
+ {
+  "addr": "0x7b4cd0",
+  "name": "String::Append2"
+ },
+ {
+  "addr": "0x7b5020",
+  "name": "String::Erase"
+ },
+ {
+  "addr": "0x7b5b80",
+  "name": "String::ToLowerCopy"
+ },
+ {
+  "addr": "0x7bd2d0",
+  "name": "AudioStream::CalcReadPos"
+ },
+ {
+  "addr": "0x7c35c0",
+  "name": "AbstractClass::finalizeDestruction"
+ },
+ {
+  "addr": "0x7c81db",
+  "name": "AudioCodec::Decode"
+ },
+ {
+  "addr": "0x7c89f2",
+  "name": "ImageList::DragEnter"
+ },
+ {
+  "addr": "0x7c89f8",
+  "name": "ImageList::BeginDrag"
+ },
+ {
+  "addr": "0x7c89fe",
+  "name": "ImageList::Destroy"
+ },
+ {
+  "addr": "0x7c8a04",
+  "name": "ImageList::EndDrag"
+ },
+ {
+  "addr": "0x7c8a0a",
+  "name": "ImageList::DragMove"
+ },
+ {
+  "addr": "0x7c8a10",
+  "name": "ImageList::DragShowNolock"
+ }
+]

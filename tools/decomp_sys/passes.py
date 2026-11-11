@@ -12,6 +12,8 @@ subscript `((Fn**)member)[slot](args)` -- that is array member access of
 the function table, not data-pointer arithmetic.  It upgrades automatically
 to `this->Method(...)` once the registry declares the vtable.
 """
+import json
+import os
 import re
 
 # ---------------------------------------------------------------- type tables
@@ -1325,6 +1327,39 @@ def _parse_index_expr(idx):
     return None
 
 
+def _array_elem_from_use(ctx, text, pos, base_off):
+    """Element spelling for an indexed `NAME[...]` use at text[pos:].
+
+    Byte-indexed til views (`__pad_D80[984]` -> +0xD80+984) carry BYTE
+    offsets in the index while the registry record may say int[]; the
+    element width is the scale whose absolute address this function's
+    disasm touches AT EXACTLY that width.  Returns (elem, width) or None
+    when there is no literal index or no matching width evidence.
+    """
+    while pos < len(text) and text[pos] in " \t":
+        pos += 1
+    if pos >= len(text) or text[pos] != "[":
+        return None
+    k = _balanced_close(text, pos)
+    if k < 0:
+        return None
+    expr = text[pos + 1:k].strip()
+    if not re.fullmatch(r"(?:0x[0-9A-Fa-f]+|\d+)", expr):
+        return None
+    i = int(expr, 0)
+    if i <= 0:
+        return None
+    widths = _disasm_this_widths(ctx)
+    alias = _disasm_alias_widths(ctx)
+    for w, elem in ((1, "unsigned char"), (2, "unsigned short"),
+                    (4, "int")):
+        o = int(base_off) + w * i
+        ev = set(widths.get(o) or ()) | set(alias.get(o) or ())
+        if w in ev:
+            return elem, w
+    return None
+
+
 def _member_record_for(ctx, mem_name):
     r = ctx.reg.member_offset_by_ida_name(ctx.sig["cls"], mem_name)
     if r is not None and r[0] is not None:
@@ -1418,14 +1453,79 @@ def _disasm_this_widths(ctx):
 
 def _disasm_min_width(ctx, off):
     """Narrowest width THIS function touches [ecx+off] at, or None."""
-    s = _disasm_this_widths(ctx).get(int(off))
+    s = set(_disasm_this_widths(ctx).get(int(off)) or ())
+    s |= _disasm_alias_widths(ctx).get(int(off), set())
     return min(s) if s else None
 
 
 def _disasm_max_width(ctx, off):
     """Widest width THIS function touches [ecx+off] at, or None."""
-    s = _disasm_this_widths(ctx).get(int(off))
+    s = set(_disasm_this_widths(ctx).get(int(off)) or ())
+    s |= _disasm_alias_widths(ctx).get(int(off), set())
     return max(s) if s else None
+
+
+# R8: `this` aliasing (`mov eax, ecx; mov byte ptr [eax], 0` -- Byte::Zero
+# family).  The [ecx+N] scans above miss every access made through a
+# receiver copied into another register, so narrow-store evidence was
+# invisible and the member stayed a dword view.
+_ALIAS_CAND = ("eax", "ebx", "edx", "esi", "edi", "ebp")
+_ALIAS_SRC = re.compile(
+    r"^(?:[0-9A-Fa-f]+:\s*)?(?:mov|lea)\s+(e[a-d]x|e[sd]i|e[sb]p)\s*,"
+    r"\s*\[?\s*ecx\s*\]?\s*$")
+_REG_WRITE = re.compile(
+    r"^(?:[0-9A-Fa-f]+:\s*)?(?P<mn>[a-z]+)\s+(?P<op1>[^,\s]+)")
+_CALL_LINE = re.compile(r"^(?:[0-9A-Fa-f]+:\s*)?call\b")
+_ALIAS_MEM = re.compile(r"\[(%s)(?:\s*\+\s*(0x[0-9A-Fa-f]+|\d+))?\]")
+
+
+def _disasm_alias_widths(ctx):
+    """{offset: set(widths)} for accesses through a receiver COPY.
+
+    Program-order state machine: a register counts as `this` only between
+    its `mov reg, ecx` and the next write to it (calls invalidate the
+    caller-saved eax/ecx/edx).  Conservative: any other write clears the
+    alias, so this never fabricates `this` evidence.
+    """
+    if hasattr(ctx, "_dis_alias_w"):
+        return ctx._dis_alias_w
+    state = dict.fromkeys(_ALIAS_CAND, False)
+    out = {}
+    for dl in ctx.ex.disasm_lines:
+        # 1. accesses made while the register still holds `this`
+        for reg, is_this in state.items():
+            if not is_this:
+                continue
+            for m in re.finditer(
+                    r"\[%s(?:\s*\+\s*(0x[0-9A-Fa-f]+|\d+))?\]" % reg, dl):
+                off = int(m.group(1), 0) if m.group(1) else 0
+                mm = re.search(r"\b(byte|word|dword)\s+ptr\b", dl)
+                if mm:
+                    w = {"byte": 1, "word": 2, "dword": 4}[mm.group(1)]
+                elif re.search(r"\b(?:al|ah|bl|bh|cl|ch|dl|dh)\b", dl):
+                    w = 1
+                elif re.search(r"\b(?:ax|bx|cx|dx|si|di|bp|sp)\b", dl):
+                    w = 2
+                else:
+                    w = 4
+                out.setdefault(off, set()).add(w)
+        # 2. update the alias state for the lines that follow
+        if _CALL_LINE.match(dl):
+            state["eax"] = False
+            state["edx"] = False
+            continue
+        sm = _ALIAS_SRC.match(dl)
+        if sm:
+            state[sm.group(1)] = True
+            continue
+        wm = _REG_WRITE.match(dl)
+        if wm:
+            op1 = wm.group("op1").strip()
+            if op1 in state and wm.group("mn") not in ("cmp", "test",
+                                                       "push", "call"):
+                state[op1] = False
+    ctx._dis_alias_w = out
+    return out
 
 
 def _disasm_arbitrate(ctx, cls, name, off, rec, src):
@@ -1765,8 +1865,16 @@ def pass_member_shapes(ctx):
                 have = ctx.views.scalars.get(ctx.sig["cls"], {}).get(off_i, {})
                 have_arr = ctx.views.arrays.get(ctx.sig["cls"], {}).get(off_i)
                 if is_indexed and not have_arr:
-                    ctx.views.add_array(ctx.sig["cls"], off_i, mem, "int", 0,
+                    ev = _array_elem_from_use(ctx, text, m.end(), off_i)
+                    elem = ev[0] if ev else "int"
+                    ctx.views.add_array(ctx.sig["cls"], off_i, mem, elem, 0,
                                         src or "registry-gap")
+                    if ev and ev[1] != 4:
+                        ctx.note(
+                            "view_array_width",
+                            "%s@0x%X element %s from literal-index scale "
+                            "evidence (registry record was wider)"
+                            % (mem, off_i, elem))
                 elif not any(v.get("name") == mem for v in have.values()):
                     w = int((rec or {}).get("width") or 4)
                     ty = None
@@ -1787,7 +1895,23 @@ def pass_member_shapes(ctx):
                     # this getter must stay a dword read
                     # (ObjectClass 4B getter family).
                     dmax = _disasm_max_width(ctx, off_i)
-                    if dmax and dmax > w:
+                    dmin = _disasm_min_width(ctx, off_i)
+                    if dmin and dmax and dmin == dmax and dmin in (1, 2) \
+                            and w > dmin:
+                        # R8 (semantic-name branch): EVERY access of this
+                        # function at the offset is narrow -- the registry
+                        # width/pointer spelling is a class-level merge
+                        # artifact (TActionClass@0x44 AbstractClass* vs
+                        # `mov byte ptr [ecx+44h], 0`).
+                        w = dmin
+                        ty = {1: "unsigned char",
+                              2: "unsigned short"}[dmin]
+                        ctx.note(
+                            "disasm_width_narrow",
+                            "%s@0x%X registry width/type -> %d (%s): all "
+                            "this fn's accesses there are narrow"
+                            % (mem, off_i, dmin, ty))
+                    elif dmax and dmax > w:
                         w = dmax if w in (1, 2) else w
                         if w in (1, 2, 4, 8):
                             ty = {1: "unsigned char", 2: "short",
@@ -1890,8 +2014,16 @@ def pass_member_shapes(ctx):
         if is_indexed:
             # `this->__pad_XX[i]` renamed to a semantic member: the indexed
             # form needs an ARRAY view (scalar view + [i] was C2109)
-            ctx.views.add_array(cls, view_off, reg_name, "int", 0,
+            ev = _array_elem_from_use(ctx, text, m.end(), view_off)
+            elem = ev[0] if ev else "int"
+            ctx.views.add_array(cls, view_off, reg_name, elem, 0,
                                 src or "registry-gap")
+            if ev and ev[1] != 4:
+                ctx.note(
+                    "view_array_width",
+                    "%s@0x%X element %s from literal-index scale evidence "
+                    "(byte-indexed til view; registry record was wider)"
+                    % (reg_name, view_off, elem))
         else:
             ctx.views.add_scalar(cls, view_off, role, reg_name, ty, w, src)
         if reg_name == mem:
@@ -4025,3 +4157,138 @@ def pass_callees(ctx):
                                      "whole-body forward: ret aligned to "
                                      "callee %s (%s) for bare tail jmp"
                                      % (cs["method"], cret))
+
+
+# ---------------------------------------------------------------- R8 symbol canon
+#
+# The verdict normalizes data references to `DATA:<signals name>` on the
+# original side and to the OBJ reloc key on ours.  An IDA-plate extern
+# (`stru_87E790`, `aStructuretab`, `dword_AA0E18`) therefore never
+# compares equal even when the ADDRESS is right -- the bytes are already
+# identical (absolute [addr32] on both sides), only the symbol spelling
+# differs.  R8 spells such externs with the registry's canonical global
+# name and folds constant `((char *)BASE)[A + (B)]` forms whose final
+# address is a named global into a direct reference to that global.
+# Codegen-neutral: same absolute addressing, same widths, reloc key only.
+
+_IDA_EXTERN = re.compile(
+    r"^(?:stru|dword|word|byte|qword|flt|dbl|unk|off)_([0-9A-Fa-f]{6,})$")
+_STR_LIT_CACHE = {}
+
+
+def _string_literal_addrs():
+    if "m" not in _STR_LIT_CACHE:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "..", "..", "anchors", "string_literals.json")
+        try:
+            with open(os.path.normpath(path), encoding="utf-8") as f:
+                _STR_LIT_CACHE["m"] = json.load(f)
+        except (OSError, ValueError):
+            _STR_LIT_CACHE["m"] = {}
+    return _STR_LIT_CACHE["m"]
+
+
+def _extern_data_addr(name):
+    """Address of an IDA-plate extern name, or None."""
+    m = _IDA_EXTERN.match(name)
+    if m:
+        return int(m.group(1), 16)
+    e = _string_literal_addrs().get(name)
+    if isinstance(e, dict):
+        try:
+            return int(e.get("addr", ""), 16)
+        except (TypeError, ValueError):
+            return None
+    return None
+
+
+def _signals_globals_by_addr():
+    """{addr:int -> name} straight from signals.json (cache-independent).
+
+    The registry snapshot (.omo/decomp_sys/decomp_registry.json) is a
+    build product; R8 symbol-canon answers must also see globals added to
+    signals.json after the last registry build.
+    """
+    if "g" not in _STR_LIT_CACHE:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "..", "..", "signals.json")
+        try:
+            with open(os.path.normpath(path), encoding="utf-8") as f:
+                sig = json.load(f)
+            m = {}
+            for n, v in (sig.get("globals") or {}).items():
+                try:
+                    m[int(v, 16) if isinstance(v, str) else int(v)] = n
+                except (TypeError, ValueError):
+                    continue
+            _STR_LIT_CACHE["g"] = m
+        except (OSError, ValueError):
+            _STR_LIT_CACHE["g"] = {}
+    return _STR_LIT_CACHE["g"]
+
+
+def _canon_global_name(ctx, name):
+    addr = _extern_data_addr(name)
+    if addr is None:
+        return None
+    rec = (getattr(ctx.reg, "globals_by_addr", None) or {}).get(
+        "0x%x" % addr)
+    if rec and rec.get("name") and rec["name"] != name:
+        return rec["name"]
+    nm = _signals_globals_by_addr().get(addr)
+    if nm and nm != name:
+        return nm
+    return None
+
+
+_CHAR_BASE_OFF = re.compile(
+    r"\(\(\s*char\s*\*\s*\)\s*(?P<base>[A-Za-z_]\w*)\s*\)"
+    r"\[\s*(?P<a>0x[0-9A-Fa-f]+|\d+)\s*"
+    r"(?:\+\s*\(?\s*(?P<b>0x[0-9A-Fa-f]+|\d+)\s*\)?\s*)?\]")
+
+
+def pass_global_canon(ctx):
+    """R8: spell data externs with the registry's canonical global name."""
+    if not getattr(ctx, "used_globals", None):
+        return
+    text = "\n".join(ctx.lines)
+    globs = getattr(ctx.reg, "globals_by_addr", None) or {}
+
+    # A. address-level fold: ((char *)BASE)[A + (B)] -> ((char *)GLOBAL)[0]
+    def fold(m):
+        base, a, b = m.group("base"), m.group("a"), m.group("b")
+        if base not in ctx.used_globals:
+            return m.group(0)
+        baddr = _extern_data_addr(base)
+        if baddr is None:
+            return m.group(0)
+        addr = baddr + int(a, 0) + (int(b, 0) if b else 0)
+        rec = globs.get("0x%x" % addr)
+        if not rec or not rec.get("name"):
+            return m.group(0)
+        name = rec["name"]
+        if name == base:
+            return m.group(0)
+        ctx.used_globals.setdefault(name, "char[]")
+        ctx.sites.append(Site(
+            "global", m.group(0),
+            "data address 0x%X folds to canonical global %s"
+            % (addr, name), True))
+        return "((char *)%s)[0]" % name
+
+    text = _CHAR_BASE_OFF.sub(fold, text)
+
+    # B. plain extern rename (IDA label/plate name -> registry name)
+    ren = {}
+    for name in list(ctx.used_globals):
+        c = _canon_global_name(ctx, name)
+        if c and c not in ctx.used_globals:
+            ren[name] = c
+    for old, new in ren.items():
+        text = re.sub(r"\b%s\b" % re.escape(old), new, text)
+        ctx.used_globals[new] = ctx.used_globals.pop(old)
+        ctx.sites.append(Site(
+            "global", old,
+            "ida extern %s -> canonical global %s (reloc key)" % (old, new),
+            True))
+    ctx.lines = text.split("\n")
