@@ -1,0 +1,627 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 12,
+   "NO_HIT": 8
+  },
+  "by_family_total": {
+   "TOKEN_MISMATCH": 7,
+   "TWO_FOUR_INSNS": 1,
+   "STRUCTURAL": 8,
+   "FRAME": 2,
+   "RET_ARITY": 1,
+   "REG_ALLOC": 1
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x537030",
+   "name": "CreateTeamCommand::performAction_119",
+   "family": "TOKEN_MISMATCH",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "BeaconPlacementCommandClass",
+   "method": "performAction_119",
+   "unit": "BeaconPlacementCommandClass",
+   "head": "char * BeaconPlacementCommandClass::performAction_119()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, 0x81bd08",
+    "ours": "+0 mov eax, dword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5370c0",
+   "name": "CreateTeamCommand::performAction_124",
+   "family": "TOKEN_MISMATCH",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "CenterREventCommandClass",
+   "method": "performAction_124",
+   "unit": "CenterREventCommandClass",
+   "head": "char * CenterREventCommandClass::performAction_124()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, 0x827610",
+    "ours": "+0 mov eax, dword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x537260",
+   "name": "CreateTeamCommand::performAction_139",
+   "family": "TWO_FOUR_INSNS",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "OptionsCommandClass",
+   "method": "performAction_139",
+   "unit": "OptionsCommandClass",
+   "head": "CHAR * OptionsCommandClass::performAction_139()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, 0x8254dc",
+    "ours": "+0 xor eax, eax"
+   }
+  },
+  {
+   "addr": "0x5372e0",
+   "name": "CreateTeamCommand::performAction_144",
+   "family": "TOKEN_MISMATCH",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "View1CommandClass",
+   "method": "performAction_144",
+   "unit": "View1CommandClass",
+   "head": "char * View1CommandClass::performAction_144()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, 0x8276d4",
+    "ours": "+0 mov eax, dword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x537760",
+   "name": "CreateTeamCommand::performAction_168",
+   "family": "TOKEN_MISMATCH",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "SetView2CommandClass",
+   "method": "performAction_168",
+   "unit": "SetView2CommandClass",
+   "head": "char * SetView2CommandClass::performAction_168()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, 0x8277dc",
+    "ours": "+0 mov eax, dword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5379a0",
+   "name": "CreateTeamCommand::performAction_183",
+   "family": "TOKEN_MISMATCH",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "FollowCommandClass",
+   "method": "performAction_183",
+   "unit": "FollowCommandClass",
+   "head": "char * FollowCommandClass::performAction_183()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, 0x818bb4",
+    "ours": "+0 mov eax, dword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x537ab0",
+   "name": "CreateTeamCommand::performAction_188",
+   "family": "TOKEN_MISMATCH",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "MultiplayerSyncCommandClass",
+   "method": "performAction_188",
+   "unit": "MultiplayerSyncCommandClass",
+   "head": "char * MultiplayerSyncCommandClass::performAction_188()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, 0x827938",
+    "ours": "+0 mov eax, dword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x537ad0",
+   "name": "CreateTeamCommand::performAction_190",
+   "family": "TOKEN_MISMATCH",
+   "path": "const_fold",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "MultiplayerSyncCommandClass",
+   "method": "performAction_190",
+   "unit": "MultiplayerSyncCommandClass",
+   "head": "wchar_t * MultiplayerSyncCommandClass::performAction_190()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, 0x82794c",
+    "ours": "+0 mov eax, 0"
+   }
+  },
+  {
+   "addr": "0x77d940",
+   "name": "Network::IsMultiplayerActive",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_ELSE_FROM_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(C){A}else{return B}",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push ecx",
+      "ours": "+0 cmp dword ptr [0], 4"
+     },
+     "ours_size": 40
+    },
+    {
+     "vid": "V_IF_GUARD_FROM_TAIL",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(!C){return B} A",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push ecx",
+      "ours": "+0 cmp dword ptr [0], 4"
+     },
+     "ours_size": 40
+    },
+    {
+     "vid": "V_BOOL_SC_SWAP",
+     "kind": "order",
+     "desc": "swap `||` operands (short-circuit order)",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push ecx",
+      "ours": "+0 cmp dword ptr [0], 4"
+     },
+     "ours_size": 40
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "Network",
+   "method": "IsMultiplayerActive",
+   "unit": "Network",
+   "head": "bool Network::IsMultiplayerActive()",
+   "baseline_first_diff": {
+    "orig": "+0 push ecx",
+    "ours": "+0 cmp dword ptr [0], 4"
+   },
+   "variants_generated": [
+    "V_IF_ELSE_FROM_GUARD",
+    "V_IF_GUARD_FROM_TAIL",
+    "V_BOOL_SC_SWAP"
+   ]
+  },
+  {
+   "addr": "0x7cc653",
+   "name": "_wcsncnt",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push ebp",
+      "ours": "+0 mov edx, dword ptr [esp + 8]"
+     },
+     "ours_size": 60
+    },
+    {
+     "vid": "V_IF_GUARD_EQ",
+     "kind": "if_else",
+     "desc": "guard with (C)==0 spelling",
+     "checker": "clean",
+     "seconds": 0.06,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push ebp",
+      "ours": "+0 mov edx, dword ptr [esp + 8]"
+     },
+     "ours_size": 60
+    },
+    {
+     "vid": "V_IF_SWAPNEG",
+     "kind": "if_else",
+     "desc": "if(!C){B} else {A} (block swap + negated cond)",
+     "checker": "clean",
+     "seconds": 0.06,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push ebp",
+      "ours": "+0 mov edx, dword ptr [esp + 8]"
+     },
+     "ours_size": 60
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "_wcsncnt",
+   "unit": "_addr_7C",
+   "head": "int __cdecl _wcsncnt(unsigned short * p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 push ebp",
+    "ours": "+0 mov edx, dword ptr [esp + 8]"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ]
+  },
+  {
+   "addr": "0x4e1970",
+   "name": "COMObject::TrackCurrent",
+   "family": "STRUCTURAL",
+   "path": "ret_norm",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, byte ptr [ecx + 0x1d]",
+      "ours": "+0 mov eax, dword ptr [ecx + 0x1c]"
+     },
+     "ours_size": 39
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ShpButtonClass",
+   "method": "TrackCurrent",
+   "unit": "ShpButtonClass",
+   "head": "char ShpButtonClass::TrackCurrent(char p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov al, byte ptr [ecx + 0x1d]",
+    "ours": "+0 mov eax, dword ptr [ecx + 0x1c]"
+   },
+   "variants_generated": [
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x56bc50",
+   "name": "Cell::PosToLinearIndex",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "Cell",
+   "method": "PosToLinearIndex",
+   "unit": "Cell",
+   "head": "int __stdcall Cell::PosToLinearIndex(short * p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov ecx, dword ptr [esp + 4]",
+    "ours": "+0 mov ecx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x5f1bc0",
+   "name": "NullModemClass::Connect",
+   "family": "REG_ALLOC",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [esp + 8]",
+      "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+     },
+     "ours_size": 48
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [esp + 8]",
+      "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+     },
+     "ours_size": 44
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "NullModemClass",
+   "method": "Connect",
+   "unit": "NullModemClass",
+   "head": "int NullModemClass::Connect(int p0, int p1, int p2, int p3)",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, dword ptr [esp + 8]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x7da4bf",
+   "name": "_wcsncnt_0",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [esp + 8]",
+      "ours": "+0 push esi"
+     },
+     "ours_size": 59
+    },
+    {
+     "vid": "V_IF_GUARD_EQ",
+     "kind": "if_else",
+     "desc": "guard with (C)==0 spelling",
+     "checker": "clean",
+     "seconds": 0.06,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [esp + 8]",
+      "ours": "+0 push esi"
+     },
+     "ours_size": 59
+    },
+    {
+     "vid": "V_IF_SWAPNEG",
+     "kind": "if_else",
+     "desc": "if(!C){B} else {A} (block swap + negated cond)",
+     "checker": "clean",
+     "seconds": 0.06,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [esp + 8]",
+      "ours": "+0 push esi"
+     },
+     "ours_size": 59
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "_wcsncnt_0",
+   "unit": "_addr_7D",
+   "head": "int __cdecl _wcsncnt_0(unsigned short * p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, dword ptr [esp + 8]",
+    "ours": "+0 push esi"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ]
+  },
+  {
+   "addr": "0x7dde50",
+   "name": "__strrev",
+   "family": "FRAME",
+   "path": "regalloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "__strrev",
+   "unit": "_addr_7D",
+   "head": "char * __cdecl __strrev(char * p0)",
+   "baseline_first_diff": {
+    "orig": "+0 push ebp",
+    "ours": "+0 push esi"
+   }
+  },
+  {
+   "addr": "0x4346c0",
+   "name": "Font::GetGlyphDataForChar",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `result` inlined at use",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+3 xor eax, eax",
+      "ours": "+3 test ecx, ecx"
+     },
+     "ours_size": 53
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "Font",
+   "method": "GetGlyphDataForChar",
+   "unit": "Font",
+   "head": "int Font::GetGlyphDataForChar(unsigned short p0)",
+   "baseline_first_diff": {
+    "orig": "+3 xor eax, eax",
+    "ours": "+3 test ecx, ecx"
+   },
+   "variants_generated": [
+    "V_ORD_INLINE_TEMP"
+   ]
+  },
+  {
+   "addr": "0x45add0",
+   "name": "DynamicVector::RemoveItem",
+   "family": "STRUCTURAL",
+   "path": "branch_order",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "DynamicVector",
+   "method": "RemoveItem",
+   "unit": "DynamicVector",
+   "head": "char DynamicVector::RemoveItem(int p0)",
+   "baseline_first_diff": {
+    "orig": "+9 jge 0x45adfc",
+    "ours": "+9 jl 0x10"
+   }
+  },
+  {
+   "addr": "0x45ae10",
+   "name": "Vector::RemoveAt",
+   "family": "STRUCTURAL",
+   "path": "branch_order",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "Vector",
+   "method": "RemoveAt",
+   "unit": "Vector",
+   "head": "char Vector::RemoveAt(int p0)",
+   "baseline_first_diff": {
+    "orig": "+9 jge 0x45ae3c",
+    "ours": "+9 jl 0x10"
+   }
+  },
+  {
+   "addr": "0x50fac0",
+   "name": "VectorClass__N::GetSize",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_LOOP_WHILE2DO",
+     "kind": "loop",
+     "desc": "while(C){B} -> do{B}while(C)",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+14 mov esi, dword ptr [ecx + 8]",
+      "ours": "+14 mov edx, dword ptr [ecx + 8]"
+     },
+     "ours_size": 56
+    },
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (m_8 <= 0)",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+3 test al, al",
+      "ours": "+3 push ebx"
+     },
+     "ours_size": 63
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass__N",
+   "method": "GetSize",
+   "unit": "_VectorClass__N",
+   "head": "int _VectorClass__N::GetSize(unsigned char * p0)",
+   "baseline_first_diff": {
+    "orig": "+3 test al, al",
+    "ours": "+3 push ebx"
+   },
+   "variants_generated": [
+    "V_LOOP_WHILE2DO",
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x53dda0",
+   "name": "Explosion::RemoveItem",
+   "family": "STRUCTURAL",
+   "path": "branch_order",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (p0 >= v2)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+9 jge 0x53ddcc",
+      "ours": "+9 jl 0x10"
+     },
+     "ours_size": 51
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "Explosion",
+   "method": "RemoveItem",
+   "unit": "Explosion",
+   "head": "char Explosion::RemoveItem(int p0)",
+   "baseline_first_diff": {
+    "orig": "+9 jge 0x53ddcc",
+    "ours": "+9 jl 0x10"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  }
+ ]
+}
