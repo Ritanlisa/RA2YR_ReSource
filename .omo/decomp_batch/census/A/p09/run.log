@@ -1,0 +1,63 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x7104a0 unknown::ExitedOpenTopped -> unknown
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x7104a0   MISMATCH         unknown::ExitedOpenTopped
+[ledger] 0x4a5050 0x4a5050 -> PENDING (attempt 1)
+[ledger] 0x4c1d30 0x4c1d30 -> PENDING (attempt 1)
+[ledger] 0x4cc0c0 0x4cc0c0 -> PENDING (attempt 1)
+[ledger] 0x4e8160 0x4e8160 -> PENDING (attempt 1)
+[ledger] 0x5179f0 0x5179f0 -> PENDING (attempt 1)
+[ledger] 0x5392c0 0x5392c0 -> PENDING (attempt 1)
+[ledger] 0x54e200 0x54e200 -> PENDING (attempt 1)
+[ledger] 0x558700 0x558700 -> PENDING (attempt 1)
+[ledger] 0x5afe90 0x5afe90 -> PENDING (attempt 1)
+[ledger] 0x5bec80 0x5bec80 -> PENDING (attempt 1)
+[ledger] 0x5cb340 0x5cb340 -> PENDING (attempt 1)
+[ledger] 0x5f38a0 0x5f38a0 -> PENDING (attempt 1)
+[ledger] 0x62dbf0 0x62dbf0 -> PENDING (attempt 1)
+[ledger] 0x659030 0x659030 -> PENDING (attempt 1)
+[ledger] 0x67c650 0x67c650 -> PENDING (attempt 1)
+[ledger] 0x69ebf0 0x69ebf0 -> PENDING (attempt 1)
+[ledger] 0x6bb220 0x6bb220 -> PENDING (attempt 1)
+[ledger] 0x6d19e0 0x6d19e0 -> PENDING (attempt 1)
+[ledger] 0x7104a0 TechnoClass::ExitedOpenTopped -> NG (attempt 1)
+[ledger] 0x723c40 0x723c40 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1237,
+ "verdicts": {
+  "MISMATCH": 307,
+  "MATCH": 488,
+  "COMPILE_FAIL": 328,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 107,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 120,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 24,
+  "regalloc": 46,
+  "branch_order": 18,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 6,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 61.4,
+ "match_rate_of_total_pct": 39.5,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p09\batch_report.json

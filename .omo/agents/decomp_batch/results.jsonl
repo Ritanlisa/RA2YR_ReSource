@@ -8194,3 +8194,23 @@
 {"addr": "0x429740", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x429740", "first_diff": null, "pathology": null}
 {"addr": "0x466280", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x466280", "first_diff": null, "pathology": null}
 {"addr": "0x489140", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x489140", "first_diff": null, "pathology": null}
+{"addr": "0x4a5050", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x4a5050", "first_diff": null, "pathology": null}
+{"addr": "0x4c1d30", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x4c1d30", "first_diff": null, "pathology": null}
+{"addr": "0x4cc0c0", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x4cc0c0", "first_diff": null, "pathology": null}
+{"addr": "0x4e8160", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x4e8160", "first_diff": null, "pathology": null}
+{"addr": "0x5179f0", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x5179f0", "first_diff": null, "pathology": null}
+{"addr": "0x5392c0", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x5392c0", "first_diff": null, "pathology": null}
+{"addr": "0x54e200", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x54e200", "first_diff": null, "pathology": null}
+{"addr": "0x558700", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x558700", "first_diff": null, "pathology": null}
+{"addr": "0x5afe90", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x5afe90", "first_diff": null, "pathology": null}
+{"addr": "0x5bec80", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x5bec80", "first_diff": null, "pathology": null}
+{"addr": "0x5cb340", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x5cb340", "first_diff": null, "pathology": null}
+{"addr": "0x5f38a0", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x5f38a0", "first_diff": null, "pathology": null}
+{"addr": "0x62dbf0", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x62dbf0", "first_diff": null, "pathology": null}
+{"addr": "0x659030", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x659030", "first_diff": null, "pathology": null}
+{"addr": "0x67c650", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x67c650", "first_diff": null, "pathology": null}
+{"addr": "0x69ebf0", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x69ebf0", "first_diff": null, "pathology": null}
+{"addr": "0x6bb220", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x6bb220", "first_diff": null, "pathology": null}
+{"addr": "0x6d19e0", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x6d19e0", "first_diff": null, "pathology": null}
+{"addr": "0x7104a0", "batch": "censusA", "verdict": "MISMATCH", "note": "orig 18B ours 18B", "first_diff": {"orig": "+0 mov eax, dword ptr [esp + 4]", "ours": "+0 mov eax, dword ptr [esp + 8]"}, "pathology": "cc_mismatch", "name": "TechnoClass::ExitedOpenTopped", "emitted": "unknown::ExitedOpenTopped", "unit": "unknown", "name_placeholder": false, "cls_src": "signals_cls", "sites": "0/0", "rule_violations": 1, "orig_size": 18, "ours_size": 18}
+{"addr": "0x723c40", "batch": "censusA", "verdict": "NO_CLS", "note": "no registry class for 0x723c40", "first_diff": null, "pathology": null}

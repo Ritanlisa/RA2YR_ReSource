@@ -1,0 +1,11 @@
+{
+ "addr": "0x7104A0",
+ "name": "TechnoClass::ExitedOpenTopped",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7104A0",
+ "bytes_hex": "8b44240485c07407c6808200000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
