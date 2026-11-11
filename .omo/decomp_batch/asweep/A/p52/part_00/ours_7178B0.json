@@ -1,0 +1,8 @@
+{
+ "symbol": "?processEnterTarget@UnitClass@@QAEHH@Z",
+ "sym_key": "UnitClass::processEnterTarget",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b848114080000c20400",
+ "relocs": []
+}

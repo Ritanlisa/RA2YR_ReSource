@@ -1,0 +1,15 @@
+{
+ "symbol": "?ReadTSC@@YA_KPAH@Z",
+ "sym_key": "Timer::ReadTSC",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "e8000000008b4c2404998911c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?__rdtsc@@YAHXZ",
+   "sym_key": "__rdtsc"
+  }
+ ]
+}

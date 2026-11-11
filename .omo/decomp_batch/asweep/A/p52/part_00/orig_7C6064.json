@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C6064",
+ "name": "Timer::ReadTSC",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C6064",
+ "bytes_hex": "558bec560f318b750889165ec9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

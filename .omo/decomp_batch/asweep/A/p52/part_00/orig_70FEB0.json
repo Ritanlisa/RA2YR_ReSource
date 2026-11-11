@@ -1,0 +1,11 @@
+{
+ "addr": "0x70FEB0",
+ "name": "FootClass::checkPassability",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70FEB0",
+ "bytes_hex": "8b91cc01000033c085d20f95c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

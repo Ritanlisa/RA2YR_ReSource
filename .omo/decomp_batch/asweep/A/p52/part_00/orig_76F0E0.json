@@ -1,0 +1,11 @@
+{
+ "addr": "0x76F0E0",
+ "name": "VectorCursor::HasNext",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76F0E0",
+ "bytes_hex": "8b41048b49083b48101bc0f7d8c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

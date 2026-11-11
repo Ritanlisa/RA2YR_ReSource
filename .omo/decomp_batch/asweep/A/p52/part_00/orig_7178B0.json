@@ -1,0 +1,11 @@
+{
+ "addr": "0x7178B0",
+ "name": "UnitClass::processEnterTarget",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7178B0",
+ "bytes_hex": "8b4424048b848114080000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

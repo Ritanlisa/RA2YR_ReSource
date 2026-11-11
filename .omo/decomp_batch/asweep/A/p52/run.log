@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p52\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f6690 IUnknown::IsActive -> IUnknown
+[conv] 0x68bcb0 AbstractClass::updateAITimer -> AbstractClass
+[conv] 0x70efd0 TechnoClass::HasPassengers -> TechnoClass
+[conv] 0x70feb0 FootClass::checkPassability -> FootClass
+[conv] 0x717880 HouseClass::HasPower -> HouseClass
+[conv] 0x7178b0 UnitClass::processEnterTarget -> UnitClass
+[conv] 0x718080 JumpjetLocomotionClass::ShortFunc_718080 -> JumpjetLocomotionClass
+[conv] 0x731d00 Selection::SetCurrent -> Selection
+[conv] 0x765700 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::AddRef -> _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766060 ObjectClass::FindWDTTerritoryClass_Find_Find -> ObjectClass
+[conv] 0x766920 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::AddRef -> _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x769d60 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::AddRef -> _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H
+[conv] 0x76f0b0 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::HasCapacity -> _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x76f0e0 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::HasNext -> _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76f0f0 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::AddRef -> _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim
+[conv] 0x7c6064 Timer::ReadTSC -> Timer
+[conv] 0x7ceaa1 _get_short_arg -> _addr_7C
+[conv] 0x7dbc5a __statfp -> _addr_7D
+[conv] 0x7ddcc8 _get_short_arg_0 -> _addr_7D
+[conv] 0x403e80 sub_403E80 -> _addr_40
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IUnknown                 rc=0
+[era] AbstractClass            rc=0
+[era] TechnoClass              rc=0
+[era] FootClass                rc=0
+[era] HouseClass               rc=0
+[era] UnitClass                rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] Selection                rc=2
+[era] _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] ObjectClass              rc=0
+[era] _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H rc=0
+[era] _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry rc=0
+[era] _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim rc=0
+[era] Timer                    rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+[era] _addr_40                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f6690   MATCH            IUnknown::IsActive
+[diff] 0x68bcb0   MATCH            AbstractClass::updateAITimer
+[diff] 0x70efd0   MISMATCH         TechnoClass::HasPassengers
+[diff] 0x70feb0   MATCH            FootClass::checkPassability
+[diff] 0x717880   MATCH            HouseClass::HasPower
+[diff] 0x7178b0   MATCH            UnitClass::processEnterTarget
+[diff] 0x765700   MATCH            _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::AddRef
+[diff] 0x766060   MATCH            ObjectClass::FindWDTTerritoryClass_Find_Find
+[diff] 0x766920   MATCH            _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::AddRef
+[diff] 0x769d60   MATCH            _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::AddRef
+[diff] 0x76f0b0   MATCH            _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::HasCapacity
+[diff] 0x76f0e0   MATCH            _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::HasNext
+[diff] 0x76f0f0   MATCH            _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::AddRef
+[diff] 0x7c6064   MISMATCH         Timer::ReadTSC
+[diff] 0x7ceaa1   MISMATCH         _get_short_arg
+[diff] 0x7dbc5a   MISMATCH         __statfp
+[diff] 0x7ddcc8   MISMATCH         _get_short_arg_0
+[diff] 0x403e80   MATCH            sub_403E80
+[ledger] 0x5f6690 IUnknown::IsActive -> OK (attempt 1)
+[ledger] 0x68bcb0 AbstractClass::updateAITimer -> OK (attempt 1)
+[ledger] 0x70efd0 TechnoClass::HasPassengers -> NG (attempt 1)
+[ledger] 0x70feb0 FootClass::checkPassability -> OK (attempt 1)
+[ledger] 0x717880 HouseClass::HasPower -> OK (attempt 1)
+[ledger] 0x7178b0 UnitClass::processEnterTarget -> OK (attempt 1)
+[ledger] 0x718080 JumpjetLocomotionClass::ShortFunc_718080 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x731d00 Selection::SetCurrent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765700 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::AddRef -> OK (attempt 1)
+[ledger] 0x766060 ObjectClass::FindWDTTerritoryClass_Find_Find -> OK (attempt 1)
+[ledger] 0x766920 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::AddRef -> OK (attempt 1)
+[ledger] 0x769d60 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::AddRef -> OK (attempt 1)
+[ledger] 0x76f0b0 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::HasCapacity -> OK (attempt 1)
+[ledger] 0x76f0e0 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::HasNext -> OK (attempt 1)
+[ledger] 0x76f0f0 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::AddRef -> OK (attempt 1)
+[ledger] 0x7c6064 Timer::ReadTSC -> NG (attempt 1)
+[ledger] 0x7ceaa1 _get_short_arg -> NG (attempt 1)
+[ledger] 0x7dbc5a __statfp -> NG (attempt 1)
+[ledger] 0x7ddcc8 _get_short_arg_0 -> NG (attempt 1)
+[ledger] 0x403e80 sub_403E80 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 13,
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "codegen_shape": 5
+ },
+ "match_rate_of_decided_pct": 72.2,
+ "match_rate_of_total_pct": 65.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p52\batch_report.json

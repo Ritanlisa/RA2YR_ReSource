@@ -1,0 +1,11 @@
+{
+ "addr": "0x717880",
+ "name": "HouseClass::HasPower",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x717880",
+ "bytes_hex": "8b910808000033c085d20f9fc0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

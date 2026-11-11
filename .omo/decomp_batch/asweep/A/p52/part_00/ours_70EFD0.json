@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasPassengers@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::HasPassengers",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b910405000033c03bc21bc0f7d8c3",
+ "relocs": []
+}

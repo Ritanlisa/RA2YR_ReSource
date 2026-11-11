@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H@@QAEHXZ",
+ "sym_key": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::AddRef",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b41048b49083b48081bc0f7d8c3",
+ "relocs": []
+}

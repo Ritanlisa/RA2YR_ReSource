@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsActive@IUnknown@@QAEEXZ",
+ "sym_key": "IUnknown::IsActive",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8a919000000033c084d20f94c0c3",
+ "relocs": []
+}

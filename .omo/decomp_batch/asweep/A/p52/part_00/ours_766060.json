@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindWDTTerritoryClass_Find_Find@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::FindWDTTerritoryClass_Find_Find",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b410c85c074048b4008c333c0c3",
+ "relocs": []
+}

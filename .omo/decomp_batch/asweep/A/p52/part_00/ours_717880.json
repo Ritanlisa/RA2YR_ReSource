@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasPower@HouseClass@@QAEEXZ",
+ "sym_key": "HouseClass::HasPower",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b910808000033c085d20f9fc0c3",
+ "relocs": []
+}
