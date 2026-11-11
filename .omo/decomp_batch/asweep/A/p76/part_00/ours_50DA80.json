@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTransitionCount@HouseClass@@QAEIXZ",
+ "sym_key": "HouseClass::GetTransitionCount",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b897c57000083f9041bc023c1c3",
+ "relocs": []
+}

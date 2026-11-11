@@ -1,0 +1,11 @@
+{
+ "addr": "0x542430",
+ "name": "Network::GetField",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x542430",
+ "bytes_hex": "668b44240433d28ad48af066895122c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

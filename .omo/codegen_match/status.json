@@ -14164,6 +14164,30 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x50da80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x577c]",
+  "name": "HouseClass::GetTransitionCount",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "HouseClass::GetTransitionCount",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x50daa0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x1e0]",
+  "name": "FootClass::checkTurning",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "FootClass::checkTurning",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x50dac0": {
   "attempts": 1,
   "first_diff": "+6 cmp eax, 3",
@@ -14609,6 +14633,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5113b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5113B0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5113B0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5113f0": {
   "attempts": 1,
   "first_diff": null,
@@ -14811,6 +14846,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x513bc0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_513BC0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_513BC0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x513cb0": {
   "attempts": 1,
   "first_diff": null,
@@ -14871,6 +14917,17 @@
   "name": "HoverLocomotionClass::StubReturn120",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x517340": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_517340",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_517340",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x517440": {
   "attempts": 2,
@@ -15076,6 +15133,17 @@
   "name": "sub_523630",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_523630",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x523640": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_523640",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_523640",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -15323,6 +15391,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x52b970": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_52B970",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_52B970",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x52cb80": {
   "attempts": 1,
   "clean": false,
@@ -15467,6 +15546,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x535c00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CreateTeamCommand::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::Construct",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x535cf0": {
   "attempts": 1,
   "clean": false,
@@ -15514,6 +15605,30 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x535fc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "SelectTeamCommand::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SelectTeamCommand::Construct",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5360b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "AddTeamCommand::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AddTeamCommand::Construct",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x536140": {
   "attempts": 1,
   "first_diff": null,
@@ -15521,12 +15636,36 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5361a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CenterTeamCommand::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CenterTeamCommand::Construct",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x536210": {
   "attempts": 1,
   "first_diff": null,
   "name": "CSF::GetTeamString",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x536290": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TauntCommandClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TauntCommandClass::Construct",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5365a0": {
   "attempts": 5,
@@ -16172,6 +16311,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x537ef0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CursorPositionCommandClass::performAction_197",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_197",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x537f10": {
   "attempts": 1,
   "clean": false,
@@ -16328,6 +16479,17 @@
   "orig_name": "sub_5394F0",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x539500": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "sub_539500",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_539500",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x539560": {
@@ -16512,6 +16674,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x53c9d0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_53C9D0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_53C9D0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x53cbe0": {
   "attempts": 1,
   "first_diff": null,
@@ -16628,6 +16801,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x53f3f0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_53F3F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_53F3F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x53f4e0": {
   "attempts": 12,
   "clean": true,
@@ -16672,6 +16856,17 @@
   "name": "sub_53FA40",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_53FA40",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x53fa50": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_53FA50",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_53FA50",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -16729,6 +16924,17 @@
   "name": "sub_540880",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_540880",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x540890": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_540890",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_540890",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -16804,6 +17010,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x542430": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov ax, word ptr [esp + 4]",
+  "name": "Network::GetField",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Network::GetField",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x542520": {
   "attempts": 11,
   "first_diff": null,
@@ -16854,6 +17072,17 @@
   "name": "sub_5432C0",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5432C0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5432d0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5432D0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5432D0",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false

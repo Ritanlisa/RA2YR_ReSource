@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p76\part_00
+=== convert (20 addrs) ===
+[conv] 0x50da80 HouseClass::GetTransitionCount -> HouseClass
+[conv] 0x50daa0 FootClass::checkTurning -> FootClass
+[conv] 0x5113b0 sub_5113B0 -> _addr_51
+[conv] 0x513bc0 sub_513BC0 -> _addr_51
+[conv] 0x517340 sub_517340 -> _addr_51
+[conv] 0x523640 sub_523640 -> _addr_52
+[conv] 0x52b970 sub_52B970 -> _addr_52
+[conv] 0x535c00 CreateTeamCommand::Construct -> CreateTeamCommand
+[conv] 0x535fc0 SelectTeamCommand::Construct -> SelectTeamCommand
+[conv] 0x5360b0 AddTeamCommand::Construct -> AddTeamCommand
+[conv] 0x5361a0 CenterTeamCommand::Construct -> CenterTeamCommand
+[conv] 0x536290 TauntCommandClass::Construct -> TauntCommandClass
+[conv] 0x537ef0 CursorPositionCommandClass::performAction_197 -> CursorPositionCommandClass
+[conv] 0x539500 sub_539500 -> _addr_53
+[conv] 0x53c9d0 sub_53C9D0 -> _addr_53
+[conv] 0x53f3f0 sub_53F3F0 -> _addr_53
+[conv] 0x53fa50 sub_53FA50 -> _addr_53
+[conv] 0x540890 sub_540890 -> _addr_54
+[conv] 0x542430 Network::GetField -> Network
+[conv] 0x5432d0 sub_5432D0 -> _addr_54
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] FootClass                rc=0
+[era] _addr_51                 rc=0
+[era] _addr_52                 rc=0
+[era] CreateTeamCommand        rc=2
+[era] SelectTeamCommand        rc=2
+[era] AddTeamCommand           rc=2
+[era] CenterTeamCommand        rc=2
+[era] TauntCommandClass        rc=2
+[era] CursorPositionCommandClass rc=2
+[era] _addr_53                 rc=2
+[era] _addr_54                 rc=0
+[era] Network                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x50da80   MISMATCH         HouseClass::GetTransitionCount
+[diff] 0x50daa0   MISMATCH         FootClass::checkTurning
+[diff] 0x5113b0   MATCH            sub_5113B0
+[diff] 0x513bc0   MATCH            sub_513BC0
+[diff] 0x517340   MATCH            sub_517340
+[diff] 0x523640   MATCH            sub_523640
+[diff] 0x52b970   MATCH            sub_52B970
+[diff] 0x53c9d0   MATCH            sub_53C9D0
+[diff] 0x53f3f0   MATCH            sub_53F3F0
+[diff] 0x53fa50   MATCH            sub_53FA50
+[diff] 0x540890   MATCH            sub_540890
+[diff] 0x5432d0   MATCH            sub_5432D0
+[diff] 0x542430   MISMATCH         Network::GetField
+[ledger] 0x50da80 HouseClass::GetTransitionCount -> NG (attempt 1)
+[ledger] 0x50daa0 FootClass::checkTurning -> NG (attempt 1)
+[ledger] 0x5113b0 sub_5113B0 -> OK (attempt 1)
+[ledger] 0x513bc0 sub_513BC0 -> OK (attempt 1)
+[ledger] 0x517340 sub_517340 -> OK (attempt 1)
+[ledger] 0x523640 sub_523640 -> OK (attempt 1)
+[ledger] 0x52b970 sub_52B970 -> OK (attempt 1)
+[ledger] 0x535c00 CreateTeamCommand::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x535fc0 SelectTeamCommand::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5360b0 AddTeamCommand::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5361a0 CenterTeamCommand::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536290 TauntCommandClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537ef0 CursorPositionCommandClass::performAction_197 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x539500 sub_539500 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53c9d0 sub_53C9D0 -> OK (attempt 1)
+[ledger] 0x53f3f0 sub_53F3F0 -> OK (attempt 1)
+[ledger] 0x53fa50 sub_53FA50 -> OK (attempt 1)
+[ledger] 0x540890 sub_540890 -> OK (attempt 1)
+[ledger] 0x542430 Network::GetField -> NG (attempt 1)
+[ledger] 0x5432d0 sub_5432D0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "MATCH": 10,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "regalloc": 3
+ },
+ "match_rate_of_decided_pct": 76.9,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p76\batch_report.json

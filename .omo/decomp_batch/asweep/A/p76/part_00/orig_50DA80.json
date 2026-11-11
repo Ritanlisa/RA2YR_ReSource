@@ -1,0 +1,11 @@
+{
+ "addr": "0x50DA80",
+ "name": "HouseClass::GetTransitionCount",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50DA80",
+ "bytes_hex": "8b817c57000085c07c0583f8037e0233c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
