@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetMaxSize@MissionClass@@QAEHXZ",
+ "sym_key": "MissionClass::GetMaxSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b8c2010000c3",
+ "relocs": []
+}

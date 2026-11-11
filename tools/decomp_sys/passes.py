@@ -2098,7 +2098,13 @@ def pass_receiver_arith(ctx):
     scale = _this_scale(ctx)
     n = 0
     if scale == 1:
-        pat = re.compile(r"(?<![\)\w\]])this\s*(?=[+-]\s*\S)")
+        # R6c: the lookahead `(?:[+-]\s*\S)` matched the ARROW of
+        # `this->member` (`-` then `>` = \S) -> every member access in a
+        # scale-1 function became `(char *)this ->m`, i.e. a cast on the
+        # MEMBER READ (C2440 on int-family members; Movie::SelectNext-
+        # BuildableType regression).  Exclude `>` (arrow) and `=`/`+`/`-`
+        # (compound ops / sign flips) after the sign.
+        pat = re.compile(r"(?<![\)\w\]])this\s*(?=[+-]\s*(?![>=+-])\S)")
 
         def repl(m):
             nonlocal n
@@ -2368,7 +2374,7 @@ _ASSIGN_SITE = re.compile(
     r"(?:HIDWORD|LODWORD|HIBYTE|LOBYTE|BYTE[1-4]|WORD[12]|SLOWORD|SHIWORD)"
     r"\s*\([^()]*\))"
     r"\s*(?<![=!<>+\-*/%&|^])=(?!=)\s*"
-    r"(?P<rhs>[^;]+);")
+    r"(?P<rhs>[^;\n]+);")
 
 
 def pass_assign_harmonize2(ctx):
@@ -2814,9 +2820,14 @@ def pass_branch_polarity(ctx):
     if not jm or jm.group(1) in ("e", "z"):
         return                       # je/jz or no jcc: keep if/else form
     text = "\n".join(ctx.lines)
+    # R6c: the a-block line pattern `(?:[ ]+.*\n)+?` is ambiguous per
+    # line ([ ]+ vs .* both match spaces) -> exponential backtracking on
+    # non-matching bodies (SidebarClass::InitPositions hang).  The atomic
+    # space-run (Python 3.11+) gives each line exactly one parse.
     pat = re.compile(
-        r"^[ ]*if \((?P<c>.+)\)\n[ ]*\{\n(?P<a>(?:[ ]+.*\n)+?)[ ]*\}\n"
-        r"[ ]*else\n[ ]*\{\n(?P<b>[ ]*return .+)\n[ ]*\}\n?$")
+        r"^[ ]*if \((?P<c>[^\n]+)\)\n[ ]*\{\n"
+        r"(?P<a>(?:(?>[ ]+)[^\n]*\n)+?)[ ]*\}\n"
+        r"[ ]*else\n[ ]*\{\n(?P<b>[ ]*return [^\n]+)\n[ ]*\}\n?$")
     m = pat.match(text)
     if not m:
         return

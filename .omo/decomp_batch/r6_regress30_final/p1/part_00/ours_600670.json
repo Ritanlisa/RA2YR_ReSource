@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetWidthHeight@ComboBoxOwnerDraw@@QAEHXZ",
+ "sym_key": "ComboBoxOwnerDraw::GetWidthHeight",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b41040faf01c3",
+ "relocs": []
+}

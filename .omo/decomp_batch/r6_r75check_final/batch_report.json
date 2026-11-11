@@ -1,0 +1,222 @@
+{
+ "summary": {
+  "total": 10,
+  "verdicts": {
+   "MISMATCH": 10
+  },
+  "pathologies": {
+   "branch_polarity": 2,
+   "codegen_shape": 1,
+   "regalloc": 4,
+   "frame_sched": 1,
+   "branch_order": 1,
+   "cc_mismatch": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 9,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x7b4c20",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 172B ours 180B",
+   "first_diff": {
+    "orig": "+11 je 0x7b4cc4",
+    "ours": "+11 je 0xac"
+   },
+   "pathology": "branch_polarity",
+   "name": "String::Append",
+   "emitted": "String::Append",
+   "unit": "String",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/10",
+   "rule_violations": 3,
+   "orig_size": 172,
+   "ours_size": 180
+  },
+  {
+   "addr": "0x433f50",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 331B ours 278B",
+   "first_diff": {
+    "orig": "+0 sub esp, 8",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "MessageListClass::CountCharsInWidth",
+   "emitted": "MessageListClass::CountCharsInWidth",
+   "unit": "MessageListClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 1,
+   "orig_size": 331,
+   "ours_size": 278
+  },
+  {
+   "addr": "0x720a80",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 160B ours 185B",
+   "first_diff": {
+    "orig": "+0 push ebp",
+    "ours": "+0 push ebx"
+   },
+   "pathology": "regalloc",
+   "name": "Movie::SelectNextBuildableType",
+   "emitted": "Movie::SelectNextBuildableType",
+   "unit": "Movie",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "11/11",
+   "rule_violations": 1,
+   "orig_size": 160,
+   "ours_size": 185
+  },
+  {
+   "addr": "0x50e1c0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 179B ours 157B",
+   "first_diff": {
+    "orig": "+4 push ebx",
+    "ours": "+4 push ebp"
+   },
+   "pathology": "regalloc",
+   "name": "TechnoClass::Process",
+   "emitted": "TechnoClass::Process",
+   "unit": "TechnoClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "9/11",
+   "rule_violations": 2,
+   "orig_size": 179,
+   "ours_size": 157
+  },
+  {
+   "addr": "0x42e820",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 368B ours 352B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0x18",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "frame_sched",
+   "name": "BridgeClass::GetCellData",
+   "emitted": "BridgeClass::GetCellData",
+   "unit": "BridgeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 11,
+   "orig_size": 368,
+   "ours_size": 352
+  },
+  {
+   "addr": "0x402330",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 178B ours 164B",
+   "first_diff": {
+    "orig": "+12 je 0x4023b0",
+    "ours": "+12 je 0x74"
+   },
+   "pathology": "branch_polarity",
+   "name": "AudioController::UpdatePlayback",
+   "emitted": "AudioController::UpdatePlayback",
+   "unit": "AudioController",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 36,
+   "orig_size": 178,
+   "ours_size": 164
+  },
+  {
+   "addr": "0x4802a0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 165B ours 189B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "TacticalClass::DrawCellTerrainOverlay",
+   "emitted": "TacticalClass::DrawCellTerrainOverlay",
+   "unit": "TacticalClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "6/9",
+   "rule_violations": 2,
+   "orig_size": 165,
+   "ours_size": 189
+  },
+  {
+   "addr": "0x70ed80",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 163B ours 187B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TechnoClass::GetAnimationFlags",
+   "emitted": "TechnoClass::GetAnimationFlags",
+   "unit": "TechnoClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 163,
+   "ours_size": 187
+  },
+  {
+   "addr": "0x5c1fa0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 159B ours 129B",
+   "first_diff": {
+    "orig": "+42 jne 0x5c1fd6",
+    "ours": "+42 je 0x77"
+   },
+   "pathology": "branch_order",
+   "name": "MPCooperative::Revert",
+   "emitted": "MPCooperative::Revert",
+   "unit": "MPCooperative",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "6/6",
+   "rule_violations": 4,
+   "orig_size": 159,
+   "ours_size": 129
+  },
+  {
+   "addr": "0x56e7c0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 206B ours 219B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 8]",
+    "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+   },
+   "pathology": "cc_mismatch",
+   "name": "MapClass::CheckCellsBuildable",
+   "emitted": "unknown::CheckCellsBuildable",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/7",
+   "rule_violations": 1,
+   "orig_size": 206,
+   "ours_size": 219
+  }
+ ]
+}

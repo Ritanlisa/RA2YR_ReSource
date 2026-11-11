@@ -1,0 +1,15 @@
+{
+ "symbol": "?InputThunkB@GadgetClass@@QAEHXZ",
+ "sym_key": "GadgetClass::InputThunkB",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?GetHeight@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetHeight"
+  }
+ ]
+}

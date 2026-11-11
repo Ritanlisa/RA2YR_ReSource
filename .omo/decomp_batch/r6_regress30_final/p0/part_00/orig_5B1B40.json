@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B1B40",
+ "name": "MechLocomotionClass::StubReturn52",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B1B40",
+ "bytes_hex": "b834000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

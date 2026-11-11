@@ -1,0 +1,33 @@
+{
+ "symbol": "?SelectNextBuildableType@Movie@@QAEIH@Z",
+ "sym_key": "Movie::SelectNextBuildableType",
+ "size": 185,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c565783fdff8bf98bf57e178b471c8b0ca88a818902000084c075078b471085c0740d85ed7c095f8bc55e5d5bc20400837f1001754f33f68b5728b9000000004a526a00e800000000468bd881fee80300000f94c081fee80300007d193bdd74d7538bcfe80000000084c074cb81fee80300000f94c0f6d81bc05ff7d05e23c35d5bc204008b5f28438b4728463bf0720233f64b7415568bcfe80000000084c074e78bc65f5e5d5bc204005f5e5d33c05bc20400",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?IsTypeBuildable@RulesClass@@QAE_NI@Z",
+   "sym_key": "RulesClass::IsTypeBuildable"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?IsTypeBuildable@RulesClass@@QAE_NI@Z",
+   "sym_key": "RulesClass::IsTypeBuildable"
+  }
+ ]
+}

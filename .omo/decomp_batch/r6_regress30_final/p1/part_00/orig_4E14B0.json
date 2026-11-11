@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E14B0",
+ "name": "ObjectClass::InputThunkB",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E14B0",
+ "bytes_hex": "e97b510700",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

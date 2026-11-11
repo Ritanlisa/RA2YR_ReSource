@@ -1,0 +1,8 @@
+{
+ "symbol": "?DispatchStub_46@CChatEventSink@@QAGHHH@Z",
+ "sym_key": "CChatEventSink::DispatchStub_46",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "33c0c20c00",
+ "relocs": []
+}

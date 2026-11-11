@@ -1,0 +1,11 @@
+{
+ "addr": "0x691F80",
+ "name": "ScriptTypeClass::GetObjectSize",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x691F80",
+ "bytes_hex": "b834020000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

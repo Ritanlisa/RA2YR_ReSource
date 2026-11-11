@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturn100@SlaveManagerClass@@QAEHXZ",
+ "sym_key": "SlaveManagerClass::StubReturn100",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b864000000c3",
+ "relocs": []
+}

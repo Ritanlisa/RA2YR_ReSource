@@ -1,0 +1,63 @@
+{
+ "symbol": "?Process@TechnoClass@@QAEXH@Z",
+ "sym_key": "TechnoClass::Process",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "8b4424045585c08be90f848a000000a1a400000053565732db8d78ff8b0d980000008b34b939ae1c02000075228b1656ff92840000003b44241475138a868100000084c075098bcee800000000b3014f79ca5f5e84db5b7440a10000000085c07437a10000000085c0740a3b2d000000007526eb0f8b85ec01000084c07505f6c4ff7415a10000000085c0750c6affb900000000e8000000005dc20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Deactivate@TechnoClass@@QAEDXZ",
+   "sym_key": "TechnoClass::Deactivate"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_RobotTanksOffline@@3EA",
+   "sym_key": "g_Str_EVA_RobotTanksOffline"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?FindAndPlay@VoxClass@@QAEXH@Z",
+   "sym_key": "VoxClass::FindAndPlay"
+  }
+ ]
+}

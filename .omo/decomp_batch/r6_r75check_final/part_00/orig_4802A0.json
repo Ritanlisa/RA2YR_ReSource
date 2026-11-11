@@ -1,0 +1,11 @@
+{
+ "addr": "0x4802A0",
+ "name": "TacticalClass::DrawCellTerrainOverlay",
+ "size": 165,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4802A0",
+ "bytes_hex": "53558be956578b45383dffff000074248b0d2ceda80033db8a9d1a0100008b348183bef0020000017e1a538bcee81e6f0c00eb108b152ceda800a1b010aa0033db8b34828a86e102000084c074500fbe851b0100008b5424148d04408b3a8d0c808b4204ba3a0000002bc12bd18b4c2418528b2983ec108bd45057892a8b6904896a048b69088b490c896a08894a0c8b151473880052538bcee8f26e0c005f5e5d5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

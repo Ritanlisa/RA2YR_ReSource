@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdatePlayback@AudioController@@QAEHXZ",
+ "sym_key": "AudioController::UpdatePlayback",
+ "size": 164,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b86a800000085c0746683f8ff7407488986a80000008bbe6801000085ff745a8bcfe80000000085c089866c01000074208b480c898e700100008b4010898674010000898678010000c70700000000eb298b86680100008b108996700100008b4004898674010000898678010000eb0ac78668010000000000008b86b400000085c0740356ffd08b866801000085c0740a8b86d400000056ff50245f33c05ec3",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?GetOffset@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::GetOffset"
+  }
+ ]
+}

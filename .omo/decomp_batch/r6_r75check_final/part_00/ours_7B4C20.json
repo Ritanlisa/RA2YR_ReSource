@@ -1,0 +1,21 @@
+{
+ "symbol": "?Append@String@@QAEPAPBDPBD@Z",
+ "sym_key": "String::Append",
+ "size": 180,
+ "link_base": 0,
+ "bytes_hex": "5355568b74241085f68be90f849b000000578bfe83c9ff33c0f2ae8b4500f7d18b18498bd14285c08bca740e8bfb83c9ff33c0f2aef7d14903ca51e80000000083c4048bd085db89550074258bfb83c9ff33c0f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a48b742414eb03c602008bfe83c9ff33c08b5500f2aef7d12bf98bf78b3a8bd183c9fff2ae8bca4fc1e902f3a58bca83e103f3a485db5f740953e80000000083c4048bc55e5d5bc20400",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

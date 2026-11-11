@@ -1,0 +1,11 @@
+{
+ "addr": "0x70ED80",
+ "name": "TechnoClass::GetAnimationFlags",
+ "size": 163,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70ED80",
+ "bytes_hex": "53568b74240ca184eda800578bf98b9fec0100008b8ff401000083fbff740a8bd02bd33bd17d1a2bca85c974148b8f1c020000e838c9dfff84c0745fa184eda8002b87dc01000083c04025ff0000807907480d00ffffff4083f8407c3e83f8447c3683f84c7d0b83ce045f8bc65e5bc2040083f8507c2183f8707c1f83f8747c1783f87c7d0b83ce045f8bc65e5bc204003d800000007d0383ce028bc65f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

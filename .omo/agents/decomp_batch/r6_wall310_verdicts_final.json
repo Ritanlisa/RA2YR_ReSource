@@ -1,0 +1,1866 @@
+{
+ "final": {
+  "0x4024a0": "COMPILE_FAIL",
+  "0x4035f0": "MISMATCH",
+  "0x404700": "MISMATCH",
+  "0x4052f0": "MISMATCH",
+  "0x405c00": "MISMATCH",
+  "0x405d40": "COMPILE_FAIL",
+  "0x4071c0": "COMPILE_FAIL",
+  "0x408a70": "COMPILE_FAIL",
+  "0x411330": "COMPILE_FAIL",
+  "0x41fd60": "COMPILE_FAIL",
+  "0x41fe20": "COMPILE_FAIL",
+  "0x420e90": "COMPILE_FAIL",
+  "0x42a5b0": "COMPILE_FAIL",
+  "0x42d8f0": "MISMATCH",
+  "0x42da30": "MISMATCH",
+  "0x42df90": "COMPILE_FAIL",
+  "0x42f4f0": "MISMATCH",
+  "0x42f9c0": "MISMATCH",
+  "0x431800": "COMPILE_FAIL",
+  "0x4324b0": "MISMATCH",
+  "0x4371d0": "COMPILE_FAIL",
+  "0x448070": "COMPILE_FAIL",
+  "0x448160": "COMPILE_FAIL",
+  "0x44d7d0": "COMPILE_FAIL",
+  "0x44f640": "COMPILE_FAIL",
+  "0x451330": "COMPILE_FAIL",
+  "0x452360": "COMPILE_FAIL",
+  "0x455c20": "COMPILE_FAIL",
+  "0x465e70": "MISMATCH",
+  "0x468430": "COMPILE_FAIL",
+  "0x472160": "COMPILE_FAIL",
+  "0x474c70": "MISMATCH",
+  "0x475150": "COMPILE_FAIL",
+  "0x4756f0": "COMPILE_FAIL",
+  "0x475b70": "COMPILE_FAIL",
+  "0x475c70": "MISMATCH",
+  "0x476240": "MISMATCH",
+  "0x476a20": "MISMATCH",
+  "0x478340": "MISMATCH",
+  "0x4784f0": "MISMATCH",
+  "0x4788e0": "MISMATCH",
+  "0x47ff80": "COMPILE_FAIL",
+  "0x480510": "COMPILE_FAIL",
+  "0x484050": "COMPILE_FAIL",
+  "0x486ff0": "COMPILE_FAIL",
+  "0x487f40": "COMPILE_FAIL",
+  "0x48b410": "COMPILE_FAIL",
+  "0x48bf40": "COMPILE_FAIL",
+  "0x493930": "COMPILE_FAIL",
+  "0x493a60": "COMPILE_FAIL",
+  "0x493b90": "COMPILE_FAIL",
+  "0x493cc0": "COMPILE_FAIL",
+  "0x493df0": "COMPILE_FAIL",
+  "0x493f30": "COMPILE_FAIL",
+  "0x494080": "COMPILE_FAIL",
+  "0x4941e0": "COMPILE_FAIL",
+  "0x494330": "COMPILE_FAIL",
+  "0x494b60": "COMPILE_FAIL",
+  "0x494c40": "COMPILE_FAIL",
+  "0x494d90": "COMPILE_FAIL",
+  "0x494f20": "COMPILE_FAIL",
+  "0x4950c0": "COMPILE_FAIL",
+  "0x495250": "COMPILE_FAIL",
+  "0x4953f0": "COMPILE_FAIL",
+  "0x495590": "COMPILE_FAIL",
+  "0x495730": "COMPILE_FAIL",
+  "0x4958d0": "COMPILE_FAIL",
+  "0x495a50": "COMPILE_FAIL",
+  "0x495bc0": "COMPILE_FAIL",
+  "0x495d60": "COMPILE_FAIL",
+  "0x495f00": "COMPILE_FAIL",
+  "0x4974b0": "COMPILE_FAIL",
+  "0x497610": "COMPILE_FAIL",
+  "0x497760": "COMPILE_FAIL",
+  "0x4978c0": "COMPILE_FAIL",
+  "0x497a10": "COMPILE_FAIL",
+  "0x497b80": "COMPILE_FAIL",
+  "0x497cf0": "COMPILE_FAIL",
+  "0x497e60": "COMPILE_FAIL",
+  "0x497fd0": "COMPILE_FAIL",
+  "0x498150": "COMPILE_FAIL",
+  "0x4982e0": "COMPILE_FAIL",
+  "0x4984d0": "COMPILE_FAIL",
+  "0x4986d0": "COMPILE_FAIL",
+  "0x4988c0": "COMPILE_FAIL",
+  "0x498ac0": "COMPILE_FAIL",
+  "0x498cd0": "COMPILE_FAIL",
+  "0x498ed0": "COMPILE_FAIL",
+  "0x4990e0": "COMPILE_FAIL",
+  "0x499280": "COMPILE_FAIL",
+  "0x499430": "COMPILE_FAIL",
+  "0x499650": "COMPILE_FAIL",
+  "0x499860": "COMPILE_FAIL",
+  "0x499a90": "COMPILE_FAIL",
+  "0x49e400": "COMPILE_FAIL",
+  "0x4a00b0": "COMPILE_FAIL",
+  "0x4a0630": "COMPILE_FAIL",
+  "0x4a0a50": "COMPILE_FAIL",
+  "0x4a2600": "COMPILE_FAIL",
+  "0x4a2cd0": "COMPILE_FAIL",
+  "0x4a4780": "COMPILE_FAIL",
+  "0x4a61c0": "COMPILE_FAIL",
+  "0x4a7900": "COMPILE_FAIL",
+  "0x4a8bf0": "COMPILE_FAIL",
+  "0x4a8d50": "COMPILE_FAIL",
+  "0x4a95a0": "COMPILE_FAIL",
+  "0x4a9650": "COMPILE_FAIL",
+  "0x4ac960": "COMPILE_FAIL",
+  "0x4adba0": "COMPILE_FAIL",
+  "0x4afb80": "COMPILE_FAIL",
+  "0x4b0c40": "COMPILE_FAIL",
+  "0x4b4b00": "COMPILE_FAIL",
+  "0x4ba5a0": "COMPILE_FAIL",
+  "0x4c3d00": "COMPILE_FAIL",
+  "0x4c4ef0": "MISMATCH",
+  "0x4c58c0": "COMPILE_FAIL",
+  "0x4c9220": "MISMATCH",
+  "0x4c93d0": "COMPILE_FAIL",
+  "0x4c9b20": "COMPILE_FAIL",
+  "0x4c9ea0": "COMPILE_FAIL",
+  "0x4caf20": "COMPILE_FAIL",
+  "0x4cbba0": "COMPILE_FAIL",
+  "0x4d2a10": "MISMATCH",
+  "0x4d2bc0": "COMPILE_FAIL",
+  "0x4da030": "COMPILE_FAIL",
+  "0x4daf10": "COMPILE_FAIL",
+  "0x4e4820": "COMPILE_FAIL",
+  "0x4e5310": "COMPILE_FAIL",
+  "0x4e5d60": "COMPILE_FAIL",
+  "0x4fae50": "COMPILE_FAIL",
+  "0x4fc6d0": "COMPILE_FAIL",
+  "0x4fd060": "COMPILE_FAIL",
+  "0x501160": "COMPILE_FAIL",
+  "0x5022f0": "MISMATCH",
+  "0x5023b0": "MISMATCH",
+  "0x509610": "COMPILE_FAIL",
+  "0x50b760": "COMPILE_FAIL",
+  "0x50e0e0": "COMPILE_FAIL",
+  "0x50e280": "COMPILE_FAIL",
+  "0x50f9e0": "MISMATCH",
+  "0x50fb20": "MISMATCH",
+  "0x523250": "COMPILE_FAIL",
+  "0x526960": "MISMATCH",
+  "0x526a30": "COMPILE_FAIL",
+  "0x526cc0": "MISMATCH",
+  "0x52b2b0": "COMPILE_FAIL",
+  "0x5388a0": "COMPILE_FAIL",
+  "0x53ef60": "MISMATCH",
+  "0x53f0e0": "MISMATCH",
+  "0x53fbd0": "COMPILE_FAIL",
+  "0x540340": "COMPILE_FAIL",
+  "0x540c60": "COMPILE_FAIL",
+  "0x540dc0": "COMPILE_FAIL",
+  "0x542520": "COMPILE_FAIL",
+  "0x547230": "COMPILE_FAIL",
+  "0x54b8d0": "COMPILE_FAIL",
+  "0x54da50": "COMPILE_FAIL",
+  "0x54fe60": "COMPILE_FAIL",
+  "0x552b10": "COMPILE_FAIL",
+  "0x556a20": "COMPILE_FAIL",
+  "0x557d20": "COMPILE_FAIL",
+  "0x55a9b0": "COMPILE_FAIL",
+  "0x565b00": "COMPILE_FAIL",
+  "0x56bd40": "COMPILE_FAIL",
+  "0x56d230": "COMPILE_FAIL",
+  "0x56d460": "COMPILE_FAIL",
+  "0x56d5a0": "COMPILE_FAIL",
+  "0x578290": "MISMATCH",
+  "0x578390": "COMPILE_FAIL",
+  "0x578460": "COMPILE_FAIL",
+  "0x578540": "COMPILE_FAIL",
+  "0x578710": "COMPILE_FAIL",
+  "0x5855a0": "COMPILE_FAIL",
+  "0x586360": "COMPILE_FAIL",
+  "0x586780": "COMPILE_FAIL",
+  "0x588ac0": "COMPILE_FAIL",
+  "0x58a2a0": "MISMATCH",
+  "0x58a8f0": "MISMATCH",
+  "0x58bb30": "COMPILE_FAIL",
+  "0x5acd30": "MISMATCH",
+  "0x5aced0": "MISMATCH",
+  "0x5b4270": "COMPILE_FAIL",
+  "0x5bd0d0": "COMPILE_FAIL",
+  "0x5c2de0": "COMPILE_FAIL",
+  "0x5cbb80": "COMPILE_FAIL",
+  "0x5cc110": "COMPILE_FAIL",
+  "0x5cc550": "COMPILE_FAIL",
+  "0x5cc970": "COMPILE_FAIL",
+  "0x5cd0e0": "COMPILE_FAIL",
+  "0x5cd410": "COMPILE_FAIL",
+  "0x5cd4d0": "COMPILE_FAIL",
+  "0x5ce8c0": "COMPILE_FAIL",
+  "0x5d4b20": "COMPILE_FAIL",
+  "0x5d74a0": "COMPILE_FAIL",
+  "0x5e2be0": "COMPILE_FAIL",
+  "0x5e84d0": "MISMATCH",
+  "0x5e9290": "COMPILE_FAIL",
+  "0x5f4730": "COMPILE_FAIL",
+  "0x5f5fa0": "COMPILE_FAIL",
+  "0x5f6a70": "COMPILE_FAIL",
+  "0x6234b0": "COMPILE_FAIL",
+  "0x624be0": "COMPILE_FAIL",
+  "0x626690": "COMPILE_FAIL",
+  "0x62e380": "COMPILE_FAIL",
+  "0x62e4c0": "COMPILE_FAIL",
+  "0x635060": "MISMATCH",
+  "0x636ce0": "COMPILE_FAIL",
+  "0x6403a0": "COMPILE_FAIL",
+  "0x644630": "COMPILE_FAIL",
+  "0x652cf0": "COMPILE_FAIL",
+  "0x653760": "COMPILE_FAIL",
+  "0x656cb0": "COMPILE_FAIL",
+  "0x658970": "MISMATCH",
+  "0x658b10": "MISMATCH",
+  "0x65b800": "COMPILE_FAIL",
+  "0x661850": "COMPILE_FAIL",
+  "0x6632e0": "COMPILE_FAIL",
+  "0x664440": "COMPILE_FAIL",
+  "0x68c710": "COMPILE_FAIL",
+  "0x697e70": "COMPILE_FAIL",
+  "0x69b7e0": "COMPILE_FAIL",
+  "0x69db30": "COMPILE_FAIL",
+  "0x69deb0": "COMPILE_FAIL",
+  "0x69f290": "COMPILE_FAIL",
+  "0x6a0310": "COMPILE_FAIL",
+  "0x6a4130": "COMPILE_FAIL",
+  "0x6a5090": "COMPILE_FAIL",
+  "0x6a6140": "MISMATCH",
+  "0x6a6a00": "COMPILE_FAIL",
+  "0x6a80a0": "MISMATCH",
+  "0x6a8220": "COMPILE_FAIL",
+  "0x6a8710": "COMPILE_FAIL",
+  "0x6ac5f0": "COMPILE_FAIL",
+  "0x6b1020": "COMPILE_FAIL",
+  "0x6b44a0": "MISMATCH",
+  "0x6b4650": "MISMATCH",
+  "0x6b55f0": "COMPILE_FAIL",
+  "0x6b5f80": "COMPILE_FAIL",
+  "0x6b6080": "COMPILE_FAIL",
+  "0x6b7c60": "COMPILE_FAIL",
+  "0x6c6740": "COMPILE_FAIL",
+  "0x6c9c60": "COMPILE_FAIL",
+  "0x6cb830": "COMPILE_FAIL",
+  "0x6ce0b0": "COMPILE_FAIL",
+  "0x6cf350": "COMPILE_FAIL",
+  "0x6d02b0": "COMPILE_FAIL",
+  "0x6d6410": "COMPILE_FAIL",
+  "0x6d8530": "COMPILE_FAIL",
+  "0x6da080": "MISMATCH",
+  "0x6da180": "COMPILE_FAIL",
+  "0x6da230": "COMPILE_FAIL",
+  "0x6da7d0": "COMPILE_FAIL",
+  "0x6dc660": "MISMATCH",
+  "0x6e0110": "COMPILE_FAIL",
+  "0x6e0ef0": "COMPILE_FAIL",
+  "0x6e1530": "COMPILE_FAIL",
+  "0x6e15f0": "COMPILE_FAIL",
+  "0x6e1780": "COMPILE_FAIL",
+  "0x6e2970": "COMPILE_FAIL",
+  "0x6e4150": "MISMATCH",
+  "0x6e6e20": "COMPILE_FAIL",
+  "0x6e6f20": "COMPILE_FAIL",
+  "0x6e6ff0": "COMPILE_FAIL",
+  "0x6e7a80": "COMPILE_FAIL",
+  "0x6ea3e0": "COMPILE_FAIL",
+  "0x6ef610": "COMPILE_FAIL",
+  "0x7036c0": "COMPILE_FAIL",
+  "0x707d20": "COMPILE_FAIL",
+  "0x70b1d0": "COMPILE_FAIL",
+  "0x71abc0": "COMPILE_FAIL",
+  "0x71d160": "COMPILE_FAIL",
+  "0x720070": "COMPILE_FAIL",
+  "0x720140": "COMPILE_FAIL",
+  "0x722390": "MISMATCH",
+  "0x722e50": "MISMATCH",
+  "0x7248c0": "COMPILE_FAIL",
+  "0x736d50": "COMPILE_FAIL",
+  "0x746420": "COMPILE_FAIL",
+  "0x7464e0": "COMPILE_FAIL",
+  "0x746810": "COMPILE_FAIL",
+  "0x7474b0": "COMPILE_FAIL",
+  "0x74c030": "MISMATCH",
+  "0x74d670": "COMPILE_FAIL",
+  "0x74f960": "COMPILE_FAIL",
+  "0x74fa20": "COMPILE_FAIL",
+  "0x753e00": "COMPILE_FAIL",
+  "0x756dd0": "COMPILE_FAIL",
+  "0x756f80": "COMPILE_FAIL",
+  "0x7575a0": "COMPILE_FAIL",
+  "0x757790": "COMPILE_FAIL",
+  "0x757e70": "COMPILE_FAIL",
+  "0x758030": "COMPILE_FAIL",
+  "0x75edf0": "COMPILE_FAIL",
+  "0x75f140": "COMPILE_FAIL",
+  "0x760190": "COMPILE_FAIL",
+  "0x763a50": "COMPILE_FAIL",
+  "0x76a3f0": "MISMATCH",
+  "0x7adf70": "COMPILE_FAIL",
+  "0x7ae460": "COMPILE_FAIL",
+  "0x7aec00": "COMPILE_FAIL",
+  "0x7b2ff0": "COMPILE_FAIL",
+  "0x7b3310": "COMPILE_FAIL",
+  "0x7b4940": "MISMATCH",
+  "0x7b4cd0": "MISMATCH",
+  "0x7b5020": "MISMATCH",
+  "0x7bcfb0": "COMPILE_FAIL",
+  "0x7c81db": "MISMATCH",
+  "0x7df9c0": "COMPILE_FAIL",
+  "0x7dfae0": "COMPILE_FAIL",
+  "0x7dfc00": "COMPILE_FAIL"
+ },
+ "notes": {
+  "0x4024a0": [
+   "AudioSample::ResetState",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\AudioSample.cpp(16) : error C2653: 'AudioController' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\p",
+   ""
+  ],
+  "0x4035f0": [
+   "AudioQueue::FindBestChannel",
+   "orig 202B ours 194B",
+   "frame_sched"
+  ],
+  "0x404700": [
+   "AudioStream::SetupPlayback",
+   "orig 162B ours 169B",
+   "regalloc"
+  ],
+  "0x4052f0": [
+   "VocClass::Release",
+   "orig 225B ours 239B",
+   "regalloc"
+  ],
+  "0x405c00": [
+   "AudioFileClass::Release",
+   "orig 315B ours 320B",
+   "branch_polarity"
+  ],
+  "0x405d40": [
+   "AudioController::Stop",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\AudioController.cpp(23) : error C2446: '==' : no conversion from 'void *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p",
+   ""
+  ],
+  "0x4071c0": [
+   "AudioMixer::PlaySample",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\AudioMixer.cpp(8) : error C2039: 'AudioMixer_field_08' : is not a member of 'AudioMixer'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\",
+   ""
+  ],
+  "0x408a70": [
+   "AudioMixer::SetupChannels",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\AudioMixer.cpp(8) : error C2039: 'AudioMixer_field_08' : is not a member of 'AudioMixer'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\",
+   ""
+  ],
+  "0x411330": [
+   "TacticalClass::FillScanlinesTransparent",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\TacticalClass.cpp(9) : error C2198: 'int (__stdcall *)(class TacticalClass *,int,int,int)' : too few actual parameters; D:\\RA2YR_ReSource\\.om",
+   ""
+  ],
+  "0x41fd60": [
+   "AITriggerTypeClass::RegisterSuccess",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\AITriggerTypeClass.cpp(18) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall3",
+   ""
+  ],
+  "0x41fe20": [
+   "AITriggerTypeClass::RegisterFailure",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\AITriggerTypeClass.cpp(18) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall3",
+   ""
+  ],
+  "0x420e90": [
+   "AirstrikeClass::UpdateAll",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\AirstrikeClass.cpp(9) : error C2296: '&' : illegal, left operand has type 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p0",
+   ""
+  ],
+  "0x42a5b0": [
+   "CellClass::ClearOccupancyGrid",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\CellClass.cpp(9) : error C2228: left of '.__pad_190' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\pa",
+   ""
+  ],
+  "0x42d8f0": [
+   "VectorClass_ushort::Remove",
+   "orig 173B ours 185B",
+   "codegen_shape"
+  ],
+  "0x42da30": [
+   "VectorClass_ushort::SetCapacity",
+   "orig 175B ours 191B",
+   "codegen_shape"
+  ],
+  "0x42df90": [
+   "BitmapClass::ProcessFrame",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\Base64Straw.cpp(31) : error C2440: 'initializing' : cannot convert from 'char *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00",
+   ""
+  ],
+  "0x42f4f0": [
+   "BaseClass::Release",
+   "orig 235B ours 212B",
+   "regalloc"
+  ],
+  "0x42f9c0": [
+   "BaseNodeClass_Vector::Release",
+   "orig 226B ours 205B",
+   "regalloc"
+  ],
+  "0x431800": [
+   "HouseClass::ProcessData",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\HouseClass.cpp(27) : error C2039: 'vfptr' : is not a member of 'HouseClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p00\\part_00\\House",
+   ""
+  ],
+  "0x4324b0": [
+   "BufferIOFileClass::SeekInternal",
+   "orig 234B ours 272B",
+   "regalloc"
+  ],
+  "0x4371d0": [
+   "Helper::ProcessData",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\unknown.cpp(16) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\unknown.cpp(17) : error C2039: ",
+   ""
+  ],
+  "0x448070": [
+   "AnimClass::updateAnimation",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\AnimClass.cpp(76) : error C2664: 'ChooseHouseEnemy' : cannot convert parameter 1 from 'class AnimClass *const ' to 'int'",
+   ""
+  ],
+  "0x448160": [
+   "FootClass::ProcessPrimarySelect",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\BuildingClass.cpp(29) : error C2227: left of '->bunkersCount' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
+   ""
+  ],
+  "0x44d7d0": [
+   "BuildingClass::GetTargetFacing",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\BuildingClass.cpp(29) : error C2227: left of '->bunkersCount' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
+   ""
+  ],
+  "0x44f640": [
+   "BuildingClass::GetFactoryPosition",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\BuildingClass.cpp(29) : error C2227: left of '->bunkersCount' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
+   ""
+  ],
+  "0x451330": [
+   "BuildingClass::GetCrewCount",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\BuildingClass.cpp(29) : error C2227: left of '->bunkersCount' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
+   ""
+  ],
+  "0x452360": [
+   "BuildingClass::PowerOff",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\BuildingClass.cpp(29) : error C2227: left of '->bunkersCount' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
+   ""
+  ],
+  "0x455c20": [
+   "ObjectClass::GetScreenCoords",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\TechnoClass.cpp(16) : error C2079: 'v16' uses undefined class 'IPersistStream'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\Te",
+   ""
+  ],
+  "0x465e70": [
+   "VectorClass_TPoint3D_int::Release",
+   "orig 221B ours 201B",
+   "regalloc"
+  ],
+  "0x468430": [
+   "BulletClass::LoseTarget",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\BulletClass.cpp(12) : error C2660: 'GetCoords' : function does not take 2 parameters; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part",
+   ""
+  ],
+  "0x472160": [
+   "CaptureManagerClass::DrawLinks",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\include\\CaptureManagerClass.hpp(27) : error C2059: syntax error : '...'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\CaptureMa",
+   ""
+  ],
+  "0x474c70": [
+   "INIEntry::ReadColor",
+   "orig 221B ours 213B",
+   "const_fold"
+  ],
+  "0x475150": [
+   "BulletTypeClass::ReadTrajectoryFlags",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\BulletTypeClass.cpp(21) : error C2297: '&' : illegal, right operand has type 'char *'",
+   ""
+  ],
+  "0x4756f0": [
+   "HouseTypeClass::loadCountryData",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\HouseTypeClass.cpp(30) : error C2228: left of '.barrelFacing' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall3",
+   ""
+  ],
+  "0x475b70": [
+   "WeaponTypeClass::ReadTrajectoryData",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\WeaponTypeClass_475b70.cpp(23) : error C2297: '&' : illegal, right operand has type 'char *'",
+   ""
+  ],
+  "0x475c70": [
+   "WeaponTypeClass::ReadVeteranData",
+   "orig 247B ours 236B",
+   "codegen_shape"
+  ],
+  "0x476240": [
+   "ObjectTypeClass::ReadTypeListINI",
+   "orig 250B ours 246B",
+   "codegen_shape"
+  ],
+  "0x476a20": [
+   "INIClass::WriteSuperWeaponList",
+   "orig 253B ours 245B",
+   "codegen_shape"
+  ],
+  "0x478340": [
+   "FilePipe_38::Release",
+   "orig 242B ours 265B",
+   "codegen_shape"
+  ],
+  "0x4784f0": [
+   "ParticleTypeClass::Release",
+   "orig 248B ours 271B",
+   "codegen_shape"
+  ],
+  "0x4788e0": [
+   "ParticleTypeClass::EnsureCapacity",
+   "orig 163B ours 176B",
+   "branch_polarity"
+  ],
+  "0x47ff80": [
+   "CellClass::GetScreenRect",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\CellClass.cpp(20) : error C2228: left of '.field_4' must have class/struct/union type",
+   ""
+  ],
+  "0x480510": [
+   "BuildingPlacement::ValidateType",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\BuildingPlacement.cpp(35) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
+   ""
+  ],
+  "0x484050": [
+   "Tactical::CreateTacticalLightSurface",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\Tactical.cpp(30) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\Tactical.cpp(3",
+   ""
+  ],
+  "0x486ff0": [
+   "Cell::IsBuildableAdvanced",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\Cell.cpp(44) : error C2440: '=' : cannot convert from 'int' to 'unsigned int *'",
+   ""
+  ],
+  "0x487f40": [
+   "Rect::Union",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\include\\unknown.hpp(20) : error C2061: syntax error : identifier 'LPRECT'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\unknown",
+   ""
+  ],
+  "0x48b410": [
+   "ConnectionClass::queueSendPacket",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\ModemConnectionClass.cpp(15) : error C2562: 'queueSendPacket' : 'void' function returning a value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wal",
+   ""
+  ],
+  "0x48bf40": [
+   "ConnectionClass::sendAck",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\ConnectionClass.cpp(8) : error C2440: '=' : cannot convert from 'unsigned short *' to 'unsigned short'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r",
+   ""
+  ],
+  "0x493930": [
+   "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransLucent75ZReadWrite_G.cpp(9) : error C2065: 'v11' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_0",
+   ""
+  ],
+  "0x493a60": [
+   "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransLucent50ZReadWrite_G.cpp(10) : error C2065: 'v14' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_",
+   ""
+  ],
+  "0x493b90": [
+   "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransLucent25ZReadWrite_G.cpp(9) : error C2065: 'v11' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_0",
+   ""
+  ],
+  "0x493cc0": [
+   "BlitPlainXlatAlpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitPlainXlatAlpha_G.cpp(24) : error C2100: illegal indirection",
+   ""
+  ],
+  "0x493df0": [
+   "BlitTransXlatAlpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransXlatAlpha_G.cpp(26) : error C2100: illegal indirection",
+   ""
+  ],
+  "0x493f30": [
+   "BlitTransZRemapXlatAlpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransZRemapXlatAlpha_G.cpp(30) : error C2100: illegal indirection",
+   ""
+  ],
+  "0x494080": [
+   "BlitTransLucent75Alpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransLucent75Alpha_G.cpp(31) : error C2100: illegal indirection",
+   ""
+  ],
+  "0x4941e0": [
+   "BlitTransLucent50Alpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransLucent50Alpha_G.cpp(30) : error C2100: illegal indirection",
+   ""
+  ],
+  "0x494330": [
+   "BlitTransLucent25Alpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransLucent25Alpha_G.cpp(31) : error C2100: illegal indirection",
+   ""
+  ],
+  "0x494b60": [
+   "BlitTransXlatAlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransXlatAlphaZRead_G.cpp(15) : error C2065: 'v13' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_",
+   ""
+  ],
+  "0x494c40": [
+   "BlitTransXlatAlphaZRead_ushort::BlitRect",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransXlatAlphaZRead_G.cpp(15) : error C2065: 'v13' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_",
+   ""
+  ],
+  "0x494d90": [
+   "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\part_00\\_BlitTransZRemapXlatAlphaZRead_G.cpp(23) : error C2027: use of undefined type 'Stream'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p02\\pa",
+   ""
+  ],
+  "0x494f20": [
+   "BlitTransLucent75AlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransLucent75AlphaZRead_G.cpp(16) : error C2065: 'v14' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_",
+   ""
+  ],
+  "0x4950c0": [
+   "BlitTransLucent50AlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransLucent50AlphaZRead_G.cpp(16) : error C2065: 'v14' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_",
+   ""
+  ],
+  "0x495250": [
+   "BlitTransLucent25AlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransLucent25AlphaZRead_G.cpp(16) : error C2065: 'v14' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_",
+   ""
+  ],
+  "0x4953f0": [
+   "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransLucent75AlphaZReadWarp_G.cpp(17) : error C2065: 'v14' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\p",
+   ""
+  ],
+  "0x495590": [
+   "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransLucent50AlphaZReadWarp_G.cpp(16) : error C2065: 'v14' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\p",
+   ""
+  ],
+  "0x495730": [
+   "BlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransLucent25AlphaZReadWarp_G.cpp(17) : error C2065: 'v14' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\p",
+   ""
+  ],
+  "0x4958d0": [
+   "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransXlatAlphaZReadWrite_G.cpp(20) : error C2027: use of undefined type 'Stream'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\par",
+   ""
+  ],
+  "0x495a50": [
+   "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransZRemapXlatAlphaZReadWrite_G.cpp(17) : error C2065: 'v15' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p0",
+   ""
+  ],
+  "0x495bc0": [
+   "BlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransLucent75AlphaZReadWrite_G.cpp(18) : error C2065: 'v15' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\",
+   ""
+  ],
+  "0x495d60": [
+   "BlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransLucent50AlphaZReadWrite_G.cpp(18) : error C2065: 'v15' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\",
+   ""
+  ],
+  "0x495f00": [
+   "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\_BlitTransLucent25AlphaZReadWrite_G.cpp(18) : error C2065: 'v15' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\",
+   ""
+  ],
+  "0x4974b0": [
+   "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\include\\_RLEBlitTransLucent75ZReadWrite_G.hpp(31) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_",
+   ""
+  ],
+  "0x497610": [
+   "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\include\\_RLEBlitTransLucent50ZReadWrite_G.hpp(31) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_",
+   ""
+  ],
+  "0x497760": [
+   "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\include\\_RLEBlitTransLucent25ZReadWrite_G.hpp(31) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_",
+   ""
+  ],
+  "0x4978c0": [
+   "RLEBlitTransXlatAlpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\include\\_RLEBlitTransXlatAlpha_G.hpp(29) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\includ",
+   ""
+  ],
+  "0x497a10": [
+   "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\include\\_RLEBlitTransZRemapXlatAlpha_G.hpp(31) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\",
+   ""
+  ],
+  "0x497b80": [
+   "RLEBlitTransLucent75Alpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\include\\_RLEBlitTransLucent75Alpha_G.hpp(29) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\in",
+   ""
+  ],
+  "0x497cf0": [
+   "RLEBlitTransLucent50Alpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\include\\_RLEBlitTransLucent50Alpha_G.hpp(31) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\in",
+   ""
+  ],
+  "0x497e60": [
+   "RLEBlitTransLucent25Alpha_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\include\\_RLEBlitTransLucent25Alpha_G.hpp(29) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\in",
+   ""
+  ],
+  "0x497fd0": [
+   "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\include\\_RLEBlitTransXlatAlphaZRead_G.hpp(31) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p03\\part_00\\i",
+   ""
+  ],
+  "0x498150": [
+   "RLEBlitTransXlatAlphaZRead_ushort::Release",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransXlatAlphaZRead_G.hpp(31) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\i",
+   ""
+  ],
+  "0x4982e0": [
+   "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransZRemapXlatAlphaZRead_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\par",
+   ""
+  ],
+  "0x4984d0": [
+   "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransLucent75AlphaZRead_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_",
+   ""
+  ],
+  "0x4986d0": [
+   "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransLucent50AlphaZRead_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_",
+   ""
+  ],
+  "0x4988c0": [
+   "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransLucent25AlphaZRead_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_",
+   ""
+  ],
+  "0x498ac0": [
+   "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransLucent75AlphaZReadWarp_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\p",
+   ""
+  ],
+  "0x498cd0": [
+   "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransLucent50AlphaZReadWarp_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\p",
+   ""
+  ],
+  "0x498ed0": [
+   "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransLucent25AlphaZReadWarp_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\p",
+   ""
+  ],
+  "0x4990e0": [
+   "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransXlatAlphaZReadWrite_G.hpp(32) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part",
+   ""
+  ],
+  "0x499280": [
+   "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransXlatAlphaZReadWrite_G.hpp(32) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part",
+   ""
+  ],
+  "0x499430": [
+   "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransZRemapXlatAlphaZReadWrite_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p0",
+   ""
+  ],
+  "0x499650": [
+   "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransLucent75AlphaZReadWrite_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\",
+   ""
+  ],
+  "0x499860": [
+   "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransLucent50AlphaZReadWrite_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\",
+   ""
+  ],
+  "0x499a90": [
+   "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\_RLEBlitTransLucent25AlphaZReadWrite_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\",
+   ""
+  ],
+  "0x49e400": [
+   "CampaignClass::FindMission",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\CampaignClass.hpp(20) : error C2086: 'scenario_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\Camp",
+   ""
+  ],
+  "0x4a00b0": [
+   "EnumConnectionsClass::ddtor",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\EnumConnectionsClass.cpp(14) : error C2446: '>' : no conversion from 'const int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p",
+   ""
+  ],
+  "0x4a0630": [
+   "ConnectionPointClass::Unadvise",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\ConnectionPointClass.cpp(14) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\ConnectionPointCl",
+   ""
+  ],
+  "0x4a0a50": [
+   "EnumConnectionPointsClass::ddtor",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\EnumConnectionPointsClass.cpp(14) : error C2446: '>' : no conversion from 'const int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall",
+   ""
+  ],
+  "0x4a2600": [
+   "CountdownTimer::UpdateDisplay",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\CountdownTimer.cpp(15) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\CountdownTimer.cpp(",
+   ""
+  ],
+  "0x4a2cd0": [
+   "CStreamClass::CopyStreamToBuffer",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p04\\part_00\\include\\CStreamClass.hpp(6) : error C2371: 'size_t' : redefinition; different basic types; D:\\RA2YR_ReSource\\.vc6-8447\\INCLUDE\\string.h(61) :",
+   ""
+  ],
+  "0x4a4780": [
+   "Surface::CreateSurfacePalette",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\include\\Surface.hpp(21) : error C2146: syntax error : missing ';' before identifier 'CreateSurfacePalette'; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
+   ""
+  ],
+  "0x4a61c0": [
+   "TextRenderer::DrawText",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\include\\unknown.hpp(37) : error C2059: syntax error : '...'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\include\\unknown.hpp(7",
+   ""
+  ],
+  "0x4a7900": [
+   "DiskLaserClass::PointerGotInvalid",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\DiskLaserClass.cpp(12) : error C2228: left of '.__pad_E5C' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\",
+   ""
+  ],
+  "0x4a8bf0": [
+   "Mouse::SetBounds",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\MouseClass.cpp(34) : error C2664: 'memcpy' : cannot convert parameter 1 from 'unsigned short' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
+   ""
+  ],
+  "0x4a8d50": [
+   "MIXClass::CopyHeader",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\MIXClass.cpp(20) : error C2228: left of '.bombVisible' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\",
+   ""
+  ],
+  "0x4a95a0": [
+   "MapClass::SetCellFlagsAlongPath",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\MapClass.cpp(15) : error C2228: left of '.bombVisible' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\",
+   ""
+  ],
+  "0x4a9650": [
+   "BuildingClass::MarkExitPath",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\BuildingClass.cpp(15) : error C2228: left of '.bombVisible' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310",
+   ""
+  ],
+  "0x4ac960": [
+   "MapClass::ToggleZoom",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\MapClass.cpp(15) : error C2228: left of '.bombVisible' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\",
+   ""
+  ],
+  "0x4adba0": [
+   "ScenarioClass::ProcessGame",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\ScenarioClass.cpp(8) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\ScenarioClass.cpp(8) ",
+   ""
+  ],
+  "0x4afb80": [
+   "JumpjetLocomotionClass::StubReturnTrue",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\JumpjetLocomotionClass.cpp(13) : error C2227: left of '->location' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_w",
+   ""
+  ],
+  "0x4b0c40": [
+   "JumpjetLocomotionClass::SetWaypointTarget",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\DriveLocomotionClass.cpp(35) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\Dr",
+   ""
+  ],
+  "0x4b4b00": [
+   "JumpjetLocomotionClass::StubReturnZero_2",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\DriveLocomotionClass.cpp(35) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\Dr",
+   ""
+  ],
+  "0x4ba5a0": [
+   "DSurface::Construct",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\DSurface.cpp(18) : error C2065: 'DSurface_Vtable' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\DSurfac",
+   ""
+  ],
+  "0x4c3d00": [
+   "CreditsPower::DrawCreditsTextLine",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\CreditsPower.cpp(15) : error C2664: 'int (int)' : cannot convert parameter 1 from 'void *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_w",
+   ""
+  ],
+  "0x4c4ef0": [
+   "TaskForceClass::ParseUnitCountAndType",
+   "orig 158B ours 150B",
+   "codegen_shape"
+  ],
+  "0x4c58c0": [
+   "EMPulseClass::IterateCellsInRadius",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\EMPulseClass.cpp(37) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'",
+   ""
+  ],
+  "0x4c9220": [
+   "FacingClass::Update",
+   "orig 223B ours 286B",
+   "eval_order"
+  ],
+  "0x4c93d0": [
+   "ProgressTimer::GetValue",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\ProgressTimer.cpp(15) : error C2440: '=' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\",
+   ""
+  ],
+  "0x4c9b20": [
+   "FactoryClass::UpdateProduction",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\FactoryClass.cpp(37) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\FactoryCla",
+   ""
+  ],
+  "0x4c9ea0": [
+   "ProductionClass::StartTimer",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p05\\part_00\\ProductionClass.cpp(46) : error C2440: '=' : cannot convert from 'void *' to 'unsigned short *'",
+   ""
+  ],
+  "0x4caf20": [
+   "VoxelAnimClass::ProcessFrame",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\VoxelAnimClass.cpp(42) : error C2653: 'ToggleClass' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\pa",
+   ""
+  ],
+  "0x4cbba0": [
+   "FootClass::FindPathWithRetry",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\FootClass.cpp(9) : error C2039: 'vfptr' : is not a member of 'FootClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\FootClas",
+   ""
+  ],
+  "0x4d2a10": [
+   "FoggedObject_DrawVector::Release",
+   "orig 259B ours 276B",
+   "codegen_shape"
+  ],
+  "0x4d2bc0": [
+   "FoggedObjectClass::ResizeArray",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\_DynamicVectorClass_UDrawRecord_FoggedObjectClass.cpp(109) : error C2039: '__tail_10' : is not a member of '_DynamicVectorClass_UDrawRecord_F",
+   ""
+  ],
+  "0x4da030": [
+   "InfantryClass::ProcessExitQueue",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\InfantryClass.cpp(21) : error C2027: use of undefined type 'AbstractClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\Infant",
+   ""
+  ],
+  "0x4daf10": [
+   "FootClass::UpdateState",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\FootClass.cpp(9) : error C2039: 'vfptr' : is not a member of 'FootClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\FootClas",
+   ""
+  ],
+  "0x4e4820": [
+   "Lobby::FillPlayerFactions",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\Lobby.cpp(46) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\Lobby.cpp(4",
+   ""
+  ],
+  "0x4e5310": [
+   "Lobby::InvalidateFactionCombos",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\Lobby.cpp(46) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\Lobby.cpp(4",
+   ""
+  ],
+  "0x4e5d60": [
+   "Lobby::InvalidatePlayerSlots",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\Lobby.cpp(46) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\Lobby.cpp(4",
+   ""
+  ],
+  "0x4fae50": [
+   "SuperWeapon::FireSuperWeaponHouseClass",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\SuperWeapon.cpp(31) : error C2228: left of '.nextArrayIndex' must have class/struct/union type",
+   ""
+  ],
+  "0x4fc6d0": [
+   "HouseClass::ClearLowPowerTargets",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\HouseClass.cpp(23) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\HouseClass.c",
+   ""
+  ],
+  "0x4fd060": [
+   "HouseClass::FindBuildingOfType",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\HouseClass.cpp(23) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\HouseClass.c",
+   ""
+  ],
+  "0x501160": [
+   "CCINIClass::WriteHouses",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\CCINIClass.cpp(15) : error C2039: 'vfptr' : is not a member of 'HouseClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\CCINI",
+   ""
+  ],
+  "0x5022f0": [
+   "WaypointClass::IsCoordinateUsed",
+   "orig 191B ours 190B",
+   "codegen_shape"
+  ],
+  "0x5023b0": [
+   "Waypoint::FindByCell",
+   "orig 163B ours 131B",
+   "codegen_shape"
+  ],
+  "0x509610": [
+   "TriggerClass::ValidateTeamTriggerConditions",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\TriggerClass.cpp(37) : error C2228: left of '.uniqueId' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06",
+   ""
+  ],
+  "0x50b760": [
+   "BuildingTypeClass::ProcessData",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\BuildingTypeClass.cpp(15) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
+   ""
+  ],
+  "0x50e0e0": [
+   "HouseClass::LostPoweredCenter",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\HouseClass.cpp(23) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\HouseClass.c",
+   ""
+  ],
+  "0x50e280": [
+   "HouseClass::ReactivateTechnos",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\HouseClass.cpp(23) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p06\\part_00\\HouseClass.c",
+   ""
+  ],
+  "0x50f9e0": [
+   "VectorClass__N::Remove",
+   "orig 167B ours 113B",
+   "regalloc"
+  ],
+  "0x50fb20": [
+   "VectorClass__N::SetCapacity",
+   "orig 169B ours 121B",
+   "regalloc"
+  ],
+  "0x523250": [
+   "InfantryClass::ComputeTransform",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\InfantryClass.cpp(13) : error C2440: '=' : cannot convert from 'unsigned int' to 'class TechnoClass *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r",
+   ""
+  ],
+  "0x526960": [
+   "INIClass::GetKeyCount",
+   "orig 193B ours 172B",
+   "branch_polarity"
+  ],
+  "0x526a30": [
+   "INIClass::FindKey",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\INIClass_526a30.cpp(8) : error C2059: syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\INIClass_526a30.cpp(29) ",
+   ""
+  ],
+  "0x526cc0": [
+   "INIClass::GetStringByIndex",
+   "orig 205B ours 184B",
+   "regalloc"
+  ],
+  "0x52b2b0": [
+   "INIClass::deleteSection",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\INIClass_52b2b0.cpp(15) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_ba",
+   ""
+  ],
+  "0x5388a0": [
+   "SortedArray::RemoveByKey",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\SortedArray.cpp(16) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\",
+   ""
+  ],
+  "0x53ef60": [
+   "Network::processPacket",
+   "orig 177B ours 223B",
+   "extern_reloc"
+  ],
+  "0x53f0e0": [
+   "Network::FormatAddress",
+   "orig 258B ours 196B",
+   "codegen_shape"
+  ],
+  "0x53fbd0": [
+   "IPXGlobalConnClass::Flush",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\IPXGlobalConnClass.cpp(32) : error C2664: 'queueSendPacket' : cannot convert parameter 1 from 'const void *' to 'int'; D:\\RA2YR_ReSource\\.omo",
+   ""
+  ],
+  "0x540340": [
+   "IPXGlobalConnClass::SendPacket",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\IPXGlobalConnClass.cpp(32) : error C2664: 'queueSendPacket' : cannot convert parameter 1 from 'const void *' to 'int'; D:\\RA2YR_ReSource\\.omo",
+   ""
+  ],
+  "0x540c60": [
+   "Network::SetConnectionParams",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\IPXManagerClass.cpp(16) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\IPXManagerClass.cp",
+   ""
+  ],
+  "0x540dc0": [
+   "SessionClass::initLAN",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\SessionClass.cpp(20) : error C2664: 'constructor' : cannot convert parameter 7 from 'int' to 'void *'",
+   ""
+  ],
+  "0x542520": [
+   "IPXManagerClass::ProcessQueue",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\IPXManagerClass.cpp(16) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\IPXManagerClass.cp",
+   ""
+  ],
+  "0x547230": [
+   "TacticalClass::DrawCellOverlay",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\TacticalClass.cpp(33) : error C2446: '==' : no conversion from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p0",
+   ""
+  ],
+  "0x54b8d0": [
+   "JumpjetLocomotionClass::ConvertCoordToCell_0",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\JumpjetLocomotionClass.cpp(9) : error C2227: left of '->vfptr' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall3",
+   ""
+  ],
+  "0x54da50": [
+   "JumpjetLocomotionClass::StubReturnZero_10",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\JumpjetLocomotionClass.cpp(9) : error C2227: left of '->vfptr' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall3",
+   ""
+  ],
+  "0x54fe60": [
+   "TimerClass::Construct",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\TimerClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\TimerCl",
+   ""
+  ],
+  "0x552b10": [
+   "Scenario::ComputeDisplayPosition",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\Scenario.cpp(10) : error C2446: '!=' : no conversion from 'class LoadingScreen *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_w",
+   ""
+  ],
+  "0x556a20": [
+   "ObjectClass::checkLimbo",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p07\\part_00\\ObjectClass.cpp(34) : error C2664: 'unsigned char (int *,int,unsigned int)' : cannot convert parameter 1 from 'unsigned int *' to 'int *'",
+   ""
+  ],
+  "0x557d20": [
+   "ListClass::Destru_vt50",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\ListClass.cpp(17) : error C2228: left of '.m_1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00",
+   ""
+  ],
+  "0x55a9b0": [
+   "LocomotionClass::QueryInterface",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\LocomotionClass.cpp(12) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\LocomotionClass.cpp(14",
+   ""
+  ],
+  "0x565b00": [
+   "MapClass::FreeAllCells",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\MapClass.cpp(34) : error C2664: 'void (char *,int,unsigned int)' : cannot convert parameter 1 from 'int *' to 'char *'; D:\\RA2YR_ReSource\\.om",
+   ""
+  ],
+  "0x56bd40": [
+   "CrateClass::FindPlacement",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\include\\CrateClass.hpp(33) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\i",
+   ""
+  ],
+  "0x56d230": [
+   "MapClass::GetTileIndex",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\MapClass.cpp(34) : error C2664: 'void (char *,int,unsigned int)' : cannot convert parameter 1 from 'int *' to 'char *'; D:\\RA2YR_ReSource\\.om",
+   ""
+  ],
+  "0x56d460": [
+   "Cell::SetRadar",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\Cell.cpp(12) : error C2440: '=' : cannot convert from 'unsigned int' to 'void *'",
+   ""
+  ],
+  "0x56d5a0": [
+   "CellClass::DetermineTileConnectivity",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\CellClass.cpp(9) : error C2227: left of '->vfptr' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_0",
+   ""
+  ],
+  "0x578290": [
+   "LayerClass::CellIteratorNext",
+   "orig 178B ours 196B",
+   "codegen_shape"
+  ],
+  "0x578390": [
+   "MapClass::IsRectInBounds",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\MapClass.cpp(34) : error C2664: 'void (char *,int,unsigned int)' : cannot convert parameter 1 from 'int *' to 'char *'; D:\\RA2YR_ReSource\\.om",
+   ""
+  ],
+  "0x578460": [
+   "LayerClass::IsWithinUsableArea",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\LayerClass_578460.cpp(17) : error C2228: left of '.briefing' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
+   ""
+  ],
+  "0x578540": [
+   "Type::CheckAmbiguity",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\Type.cpp(25) : error C2143: syntax error : missing ';' before '&&'",
+   ""
+  ],
+  "0x578710": [
+   "MapClass::SpiralSearch",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\MapClass.cpp(34) : error C2664: 'void (char *,int,unsigned int)' : cannot convert parameter 1 from 'int *' to 'char *'; D:\\RA2YR_ReSource\\.om",
+   ""
+  ],
+  "0x5855a0": [
+   "LayerClass::AssignCellOwnership",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\LayerClass_5855a0.cpp(39) : error C2039: 'nextArrayIndex' : is not a member of 'ObjectClass'",
+   ""
+  ],
+  "0x586360": [
+   "Cell::IsPassable",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\unknown.cpp(23) : error C2296: '&' : illegal, left operand has type 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part",
+   ""
+  ],
+  "0x586780": [
+   "MapClass::IsAreaFree",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\MapClass.cpp(34) : error C2664: 'void (char *,int,unsigned int)' : cannot convert parameter 1 from 'int *' to 'char *'; D:\\RA2YR_ReSource\\.om",
+   ""
+  ],
+  "0x588ac0": [
+   "LayerClass::ClearFactoryCellAssignments",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\LayerClass_588ac0.cpp(47) : error C2228: left of '.briefing' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
+   ""
+  ],
+  "0x58a2a0": [
+   "VectorClass_W4PassabilityType::SetCapacity_1",
+   "orig 247B ours 276B",
+   "codegen_shape"
+  ],
+  "0x58a8f0": [
+   "VectorClass_UHashObject_uint_SubzoneConn::Release",
+   "orig 241B ours 270B",
+   "codegen_shape"
+  ],
+  "0x58bb30": [
+   "ScenarioClass::CopyStartPositions",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\ScenarioClass.cpp(18) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\ScenarioClass.cpp(18",
+   ""
+  ],
+  "0x5acd30": [
+   "MSEngine::Release",
+   "orig 226B ours 205B",
+   "regalloc"
+  ],
+  "0x5aced0": [
+   "MSEngine::SetCapacity",
+   "orig 235B ours 212B",
+   "regalloc"
+  ],
+  "0x5b4270": [
+   "HashTree::MarkEntry",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\HashTree.cpp(14) : error C2440: 'initializing' : cannot convert from 'void *' to 'unsigned int *'",
+   ""
+  ],
+  "0x5bd0d0": [
+   "Debug::ScrollText",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\Debug.cpp(8) : error C2228: left of '.localVariables' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\p",
+   ""
+  ],
+  "0x5c2de0": [
+   "MPCooperative::selectTeam",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MPCooperative.cpp(22) : error C2228: left of '.nextArrayIndex' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall",
+   ""
+  ],
+  "0x5cbb80": [
+   "MSOverlayAnim::Draw",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MSShapeAnim.cpp(22) : error C2664: 'Building__GetFoundationSize' : cannot convert parameter 1 from 'int [4]' to 'int'",
+   ""
+  ],
+  "0x5cc110": [
+   "ScenarioClass::DrawConstructionFrame",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MSFadeAnim.cpp(22) : error C2664: 'Building__GetFoundationSize' : cannot convert parameter 1 from 'int [4]' to 'int'; D:\\RA2YR_ReSource\\.omo\\",
+   ""
+  ],
+  "0x5cc550": [
+   "ScenarioClass::DrawPlacementPreview",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MSOverlayAnim.cpp(29) : error C2664: 'Building__GetFoundationSize' : cannot convert parameter 1 from 'int [4]' to 'int'; D:\\RA2YR_ReSource\\.o",
+   ""
+  ],
+  "0x5cc970": [
+   "MSBinkAnim::Play",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MSBinkAnim.cpp(14) : error C2664: 'int (int,char *,class DSurface *,char *,unsigned int,int)' : cannot convert parameter 3 from 'int' to 'cla",
+   ""
+  ],
+  "0x5cd0e0": [
+   "MSVQAnim::Play",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MSVQAnim.cpp(25) : error C2664: 'void (int,int,class DSurface *,int,unsigned int,int)' : cannot convert parameter 3 from 'int' to 'class DSur",
+   ""
+  ],
+  "0x5cd410": [
+   "MSBitPrintAnim::SetText",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MSBitPrintAnim.cpp(17) : error C2065: 'g_GameFontObject' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\",
+   ""
+  ],
+  "0x5cd4d0": [
+   "MSBitPrintAnim::Draw",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MSBitPrintAnim.cpp(17) : error C2065: 'g_GameFontObject' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\",
+   ""
+  ],
+  "0x5ce8c0": [
+   "MSPCXAnim::Draw",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MSPCXAnim.cpp(33) : error C2039: 'MSPCXAnim_field_0x08' : is not a member of 'MSPCXAnim'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\",
+   ""
+  ],
+  "0x5d4b20": [
+   "WideString::WordWrap",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\unknown_5d4b20.cpp(27) : error C2446: '>=' : no conversion from 'int *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\",
+   ""
+  ],
+  "0x5d74a0": [
+   "HouseClass::InitAlliances",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\MultiplayerGameMode.cpp(8) : error C2228: left of '.nextArrayIndex' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6",
+   ""
+  ],
+  "0x5e2be0": [
+   "Network::CountDisconnectedHouses",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\Network.cpp(9) : error C2228: left of '.nextArrayIndex' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09",
+   ""
+  ],
+  "0x5e84d0": [
+   "GameConfig::ComputeCRC",
+   "orig 177B ours 156B",
+   "frame_sched"
+  ],
+  "0x5e9290": [
+   "NetworkLobby::CheckLobbyConditions",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\NetworkLobby.cpp(45) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\Netw",
+   ""
+  ],
+  "0x5f4730": [
+   "ObjectClass::GetPlacementScreenRect",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\IUnknown.cpp(9) : error C2039: 'field_0' : is not a member of 'IUnknown'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\IUnknown",
+   ""
+  ],
+  "0x5f5fa0": [
+   "ObjectClass::SetZ",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\IUnknown.cpp(9) : error C2039: 'field_0' : is not a member of 'IUnknown'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\IUnknown",
+   ""
+  ],
+  "0x5f6a70": [
+   "ObjectClass::CheckGroundHeightDiff",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\IUnknown.cpp(9) : error C2039: 'field_0' : is not a member of 'IUnknown'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p09\\part_00\\IUnknown",
+   ""
+  ],
+  "0x6234b0": [
+   "SymbolTable::Rebuild",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\SymbolTable.cpp(49) : error C2440: '=' : cannot convert from 'int *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\pa",
+   ""
+  ],
+  "0x624be0": [
+   "Dialog::GrowBuffer",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\Dialog.cpp(24) : error C2227: left of '->AnimClass_field_0x0' must point to class/struct/union",
+   ""
+  ],
+  "0x626690": [
+   "FlagSystem::GetNextActive",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\FlagSystem.cpp(9) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\FlagSys",
+   ""
+  ],
+  "0x62e380": [
+   "ParticleSystemClass::CreateParticle",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\ParticleSystemClass.cpp(8) : error C2227: left of '->ParticleSystemTypeClass_field_0x294' must point to class/struct/union; D:\\RA2YR_ReSource",
+   ""
+  ],
+  "0x62e4c0": [
+   "ParticleClass::CreateInstance",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\ParticleClass.cpp(17) : error C2664: 'Construct' : cannot convert parameter 4 from 'class ParticleClass *const ' to 'int'; D:\\RA2YR_ReSource\\",
+   ""
+  ],
+  "0x635060": [
+   "FactoryClass::FinishProduction",
+   "orig 183B ours 187B",
+   "branch_polarity"
+  ],
+  "0x636ce0": [
+   "ScriptAction::ClearBuildingState",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\ScriptAction.cpp(14) : error C2440: '=' : cannot convert from 'int' to 'void *'",
+   ""
+  ],
+  "0x6403a0": [
+   "PowerClass::getDrain",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\PowerClass.cpp(26) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\PowerClass.cpp(26) : er",
+   ""
+  ],
+  "0x644630": [
+   "WarheadTypeClass::applyDamage",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\WarheadTypeClass.cpp(18) : error C2228: left of '.SuperClass_field_0x28' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
+   ""
+  ],
+  "0x652cf0": [
+   "RadarClass::Destru_vt05",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\RadarClass.cpp(18) : error C2228: left of '.Height' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\par",
+   ""
+  ],
+  "0x653760": [
+   "TacticalClass::PixelToCellCheck",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\RadarClass.cpp(18) : error C2228: left of '.Height' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\par",
+   ""
+  ],
+  "0x656cb0": [
+   "RadarClass::SetViewMode",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\RadarClass.cpp(18) : error C2228: left of '.Height' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\par",
+   ""
+  ],
+  "0x658970": [
+   "RadarHashVector::Release",
+   "orig 253B ours 270B",
+   "codegen_shape"
+  ],
+  "0x658b10": [
+   "RadarHashVector::ComputeHashIndex",
+   "orig 263B ours 276B",
+   "codegen_shape"
+  ],
+  "0x65b800": [
+   "RadSiteClass::Tick",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\RadSiteClass.cpp(30) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10",
+   ""
+  ],
+  "0x661850": [
+   "Random::AdvanceRandomBytes",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\Random.cpp(30) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\Random.cpp(41) :",
+   ""
+  ],
+  "0x6632e0": [
+   "JumpjetLocomotionClass::ComputeFloatExpression_3",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\RocketLocomotionClass.cpp(9) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall3",
+   ""
+  ],
+  "0x664440": [
+   "EventClass::validateEventType",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\include\\EventClass.hpp(34) : error C2146: syntax error : missing ';' before identifier 'Game_PlayerInfoArray'; D:\\RA2YR_ReSource\\.omo\\decomp_",
+   ""
+  ],
+  "0x68c710": [
+   "FontClass::InitMetrics",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\FontClass.cpp(18) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\par",
+   ""
+  ],
+  "0x697e70": [
+   "SessionClass::IsValidHouse",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\SessionClass.cpp(8) : error C2019: expected preprocessor directive, found '3'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p10\\part_00\\Ses",
+   ""
+  ],
+  "0x69b7e0": [
+   "SessionClass::AssignColor",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\SessionClass.cpp(25) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\SessionClass.cpp(25) ",
+   ""
+  ],
+  "0x69db30": [
+   "SHA1::Transform",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\unknown.cpp(22) : error C2110: cannot add two pointers",
+   ""
+  ],
+  "0x69deb0": [
+   "ShapeButton::Draw",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\include\\ShapeButtonClass.hpp(27) : error C2146: syntax error : missing ';' before identifier 'Control'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r",
+   ""
+  ],
+  "0x69f290": [
+   "JumpjetLocomotionClass::StubReturnTrue_5",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\JumpjetLocomotionClass.cpp(13) : error C2227: left of '->location' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_w",
+   ""
+  ],
+  "0x6a0310": [
+   "WalkLocomotionClass::SetWaypointTarget",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\ShipLocomotionClass.cpp(35) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\Shi",
+   ""
+  ],
+  "0x6a4130": [
+   "JumpjetLocomotionClass::StubReturnZero_15",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\ShipLocomotionClass.cpp(35) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\Shi",
+   ""
+  ],
+  "0x6a5090": [
+   "SidebarClass::InitPositions",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\SidebarClass.cpp(8) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\SidebarClass.cpp(8) : ",
+   ""
+  ],
+  "0x6a6140": [
+   "Sidebar::FindProductionType",
+   "orig 216B ours 193B",
+   "regalloc"
+  ],
+  "0x6a6a00": [
+   "CreateTeamCommand::performAction_245",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\CreateTeamCommand.cpp(31) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\CreateTeamComman",
+   ""
+  ],
+  "0x6a80a0": [
+   "TabClass::updateTabProduction",
+   "orig 184B ours 182B",
+   "width_mismatch"
+  ],
+  "0x6a8220": [
+   "SidebarClass::InitCameoGrid",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\SidebarClass.cpp(8) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\SidebarClass.cpp(8) : ",
+   ""
+  ],
+  "0x6a8710": [
+   "TabCameoListClass::AddCameo_ReplaceItAll",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\TabCameoListClass.cpp(50) : error C2440: 'type cast' : cannot convert from 'int' to 'class TabCameoListClass'; D:\\RA2YR_ReSource\\.omo\\decomp_",
+   ""
+  ],
+  "0x6ac5f0": [
+   "TActionClass::executeHarvestAction",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\TActionClass.cpp(56) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p1",
+   ""
+  ],
+  "0x6b1020": [
+   "SlaveManagerClass::ShouldWakeUpNow",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\SlaveManagerClass.cpp(13) : error C2027: use of undefined type 'TechnoClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\Slav",
+   ""
+  ],
+  "0x6b44a0": [
+   "VectorClass_UUndoInfoStruct::Release",
+   "orig 253B ours 264B",
+   "codegen_shape"
+  ],
+  "0x6b4650": [
+   "VectorClass_UUndoInfoStruct::SetCapacity",
+   "orig 259B ours 275B",
+   "codegen_shape"
+  ],
+  "0x6b55f0": [
+   "SmudgeTypeClass::vt_entry_A0",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\SmudgeTypeClass.cpp(27) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'",
+   ""
+  ],
+  "0x6b5f80": [
+   "Cell::IsWalkable",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\Cell.cpp(29) : error C2039: 'm298' : is not a member of 'Cell'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\Cell.cpp(42) : err",
+   ""
+  ],
+  "0x6b6080": [
+   "UnitClass::CreateUnloadPlacementCraters",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\UnitClass.cpp(20) : error C2296: '&' : illegal, left operand has type 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\",
+   ""
+  ],
+  "0x6b7c60": [
+   "UnitClass::ClearTargetRef",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\part_00\\UnitClass.cpp(20) : error C2296: '&' : illegal, left operand has type 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p11\\",
+   ""
+  ],
+  "0x6c6740": [
+   "StaticButtonClass::HitTest",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\StaticButtonClass.cpp(31) : error C2664: 'int (class AudioStream *)' : cannot convert parameter 1 from 'void *' to 'class AudioStream *'; D:\\",
+   ""
+  ],
+  "0x6c9c60": [
+   "BinkMovie::CheckKeyframeTransition",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\BinkMovie.cpp(9) : error C2039: 'm000' : is not a member of 'BinkMovie'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\BinkMovie",
+   ""
+  ],
+  "0x6cb830": [
+   "SuperClass::StopPreclickAnim",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\SuperClass.cpp(8) : error C2039: 'u32_68' : is not a member of 'SuperClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\Super",
+   ""
+  ],
+  "0x6ce0b0": [
+   "SuperClass::Reset",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\SuperClass.cpp(8) : error C2039: 'u32_68' : is not a member of 'SuperClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\Super",
+   ""
+  ],
+  "0x6cf350": [
+   "SwizzleManagerClass::ConvertNodes",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\SwizzleManagerClass.cpp(22) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decom",
+   ""
+  ],
+  "0x6d02b0": [
+   "SidebarClass::LoadButtonSHPs",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\TabClass.cpp(22) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\TabClass",
+   ""
+  ],
+  "0x6d6410": [
+   "Terrain::ClimbCheck",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\unknown.cpp(9) : error C2296: '&' : illegal, left operand has type 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\unknow",
+   ""
+  ],
+  "0x6d8530": [
+   "DisplayClass::ScrollTacticalView",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\DisplayClass.cpp(10) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\Disp",
+   ""
+  ],
+  "0x6da080": [
+   "PlayerClass::HasOccupiedCell",
+   "orig 213B ours 215B",
+   "codegen_shape"
+  ],
+  "0x6da180": [
+   "TacticalMap::DrawOccupiedRegion",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\TacticalMap.cpp(54) : error C2664: 'int (class AudioStream *,class CellStruct *,unsigned int *,int)' : cannot convert parameter 2 from 'unsig",
+   ""
+  ],
+  "0x6da230": [
+   "DisplayClass::GetCoordDelta",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\DisplayClass.cpp(10) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\Disp",
+   ""
+  ],
+  "0x6da7d0": [
+   "Tactical::AddCellToDrawList",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\Tactical.cpp(57) : error C2679: binary '=' : no operator defined which takes a right-hand operand of type 'int' (or there is no acceptable co",
+   ""
+  ],
+  "0x6dc660": [
+   "VectorClass_UDirtyAreaStruct::Release",
+   "orig 274B ours 269B",
+   "regalloc"
+  ],
+  "0x6e0110": [
+   "ScenarioClass::Create",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\ScenarioClass.cpp(16) : error C2664: 'Cell__GetGroundHeight' : cannot convert parameter 1 from 'unsigned int [3]' to 'int'; D:\\RA2YR_ReSource",
+   ""
+  ],
+  "0x6e0ef0": [
+   "HouseClass::UpdateTechBuildings",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\HouseClass.cpp(14) : error C2296: '&' : illegal, left operand has type 'class HouseClass *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p",
+   ""
+  ],
+  "0x6e1530": [
+   "ScenarioClass::PrepareTextDisplay",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\ScenarioClass.cpp(16) : error C2664: 'Cell__GetGroundHeight' : cannot convert parameter 1 from 'unsigned int [3]' to 'int'; D:\\RA2YR_ReSource",
+   ""
+  ],
+  "0x6e15f0": [
+   "ObjectClass::ReadINIEntry",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\ObjectClass.cpp(16) : error C2664: 'strncpy' : cannot convert parameter 3 from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
+   ""
+  ],
+  "0x6e1780": [
+   "TActionClass::PlayAudioAtRandomWP",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\TActionClass_6e1780.cpp(25) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\TActionClass_6",
+   ""
+  ],
+  "0x6e2970": [
+   "BuildingLightClass::FindAllTargets",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p12\\part_00\\BuildingLightClass.cpp(34) : error C2664: 'LinkedList__Contains' : cannot convert parameter 1 from 'class LinkedList *' to 'int'",
+   ""
+  ],
+  "0x6e4150": [
+   "TActionClass::executeGeneticMutatorAction",
+   "orig 174B ours 227B",
+   "codegen_shape"
+  ],
+  "0x6e6e20": [
+   "BuildingLoadQueue::GetNext",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\BuildingLoadQueue.cpp(16) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\",
+   ""
+  ],
+  "0x6e6f20": [
+   "BuildingLoadQueue::Find",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\BuildingLoadQueue.cpp(16) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\",
+   ""
+  ],
+  "0x6e6ff0": [
+   "BuildingLoadQueue::FindObject",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\BuildingLoadQueue.cpp(16) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\",
+   ""
+  ],
+  "0x6e7a80": [
+   "BuildingLoadQueue::FindBuilding",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\BuildingLoadQueue.cpp(16) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\",
+   ""
+  ],
+  "0x6ea3e0": [
+   "TeamClass::UpdateReadinessState",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TeamClass.cpp(12) : error C2228: left of '.TeamTypeClass_field_70' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_",
+   ""
+  ],
+  "0x6ef610": [
+   "TeamClass::PlayMemberAnimation",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TeamClass.cpp(12) : error C2228: left of '.TeamTypeClass_field_70' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_",
+   ""
+  ],
+  "0x7036c0": [
+   "TechnoClass::TransitionEffectState",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TechnoClass.cpp(21) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\",
+   ""
+  ],
+  "0x707d20": [
+   "TechnoClass::GetCrew",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TechnoClass.cpp(21) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\",
+   ""
+  ],
+  "0x70b1d0": [
+   "TechnoClass::RevealAreaConditional",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TechnoClass.cpp(21) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\",
+   ""
+  ],
+  "0x71abc0": [
+   "FactoryClass::CompleteItem",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\FactoryClass.cpp(65) : error C2660: 'StubReturn12' : function does not take 1 parameters; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\",
+   ""
+  ],
+  "0x71d160": [
+   "TerrainClass::Export",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TerrainClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\Terra",
+   ""
+  ],
+  "0x720070": [
+   "AbstractClass::selectWeapon",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TextButtonClass.cpp(25) : error C2228: left of '.m_1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\p",
+   ""
+  ],
+  "0x720140": [
+   "AbstractClass::fireWeapon",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TextButtonClass.cpp(25) : error C2228: left of '.m_1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\p",
+   ""
+  ],
+  "0x722390": [
+   "BuildingClass::FreeUpgradeQueue",
+   "orig 172B ours 173B",
+   "signedness"
+  ],
+  "0x722e50": [
+   "BuildingClass::FreeUpgradeQueue2",
+   "orig 172B ours 173B",
+   "signedness"
+  ],
+  "0x7248c0": [
+   "TooltipClass::GetText",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TooltipClass.cpp(24) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch",
+   ""
+  ],
+  "0x736d50": [
+   "TechnoClass::IsC4AnimationActive",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TechnoClass.cpp(21) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\",
+   ""
+  ],
+  "0x746420": [
+   "TechnoClass::CaptureTurret",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TechnoClass.cpp(21) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\",
+   ""
+  ],
+  "0x7464e0": [
+   "TechnoClass::TransferTurret",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\TechnoClass.cpp(21) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\",
+   ""
+  ],
+  "0x746810": [
+   "UnitClass::PerFrameUpdate",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p13\\part_00\\UnitClass.cpp(13) : error C2664: 'Update' : cannot convert parameter 1 from 'int *' to 'int'",
+   ""
+  ],
+  "0x7474b0": [
+   "UnitTypeClass::CreateUnit",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\UnitTypeClass.cpp(13) : error C2664: 'Construct' : cannot convert parameter 2 from 'short *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6",
+   ""
+  ],
+  "0x74c030": [
+   "VectorClass_E::Release",
+   "orig 167B ours 113B",
+   "regalloc"
+  ],
+  "0x74d670": [
+   "ObjectClass::IsCellSuitableForPlacement",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\ObjectClass.cpp(13) : error C2228: left of '.uniqueId' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\",
+   ""
+  ],
+  "0x74f960": [
+   "GameClass::ReadVersionFile",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\GameClass.cpp(15) : error C2664: 'Read' : cannot convert parameter 1 from 'int [1]' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\",
+   ""
+  ],
+  "0x74fa20": [
+   "GameClass::ReadVersionFile2",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\GameClass.cpp(15) : error C2664: 'Read' : cannot convert parameter 1 from 'int [1]' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\",
+   ""
+  ],
+  "0x753e00": [
+   "Viewport::Clear",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Viewport.cpp(8) : error C2228: left of '.Buffer_field_1C' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p",
+   ""
+  ],
+  "0x756dd0": [
+   "VoxelModel::LoadVXLHeader",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\VoxelModel.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\VoxelMo",
+   ""
+  ],
+  "0x756f80": [
+   "VoxelModel::ParseSectionData",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\VoxelModel.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\VoxelMo",
+   ""
+  ],
+  "0x7575a0": [
+   "VoxelRenderer::DrawSection",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\VoxelRenderer.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxe",
+   ""
+  ],
+  "0x757790": [
+   "VoxelRenderer::DrawSectionLines",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\VoxelRenderer.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxe",
+   ""
+  ],
+  "0x757e70": [
+   "VoxelRenderer::ProcessVoxelData",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\VoxelRenderer.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxe",
+   ""
+  ],
+  "0x758030": [
+   "VoxelRenderer::RenderFrame",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\VoxelRenderer.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxe",
+   ""
+  ],
+  "0x75edf0": [
+   "Voxel::BlendShadowColor",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxel.cpp(10) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxel.cpp(1",
+   ""
+  ],
+  "0x75f140": [
+   "Voxel::loadSectionData",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxel.cpp(10) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxel.cpp(1",
+   ""
+  ],
+  "0x760190": [
+   "Voxel::BlendColor",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxel.cpp(10) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Voxel.cpp(1",
+   ""
+  ],
+  "0x763a50": [
+   "Waypoint::FindCell",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Waypoint.cpp(10) : error C2039: 'field_38' : is not a member of 'Waypoint'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Waypoi",
+   ""
+  ],
+  "0x76a3f0": [
+   "Map_WorldDominationTour_43::Release",
+   "orig 249B ours 266B",
+   "codegen_shape"
+  ],
+  "0x7adf70": [
+   "HashMap::Shrink2",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\HashMap.cpp(58) : error C2562: 'Shrink2' : 'void' function returning a value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Hash",
+   ""
+  ],
+  "0x7ae460": [
+   "HashMap::Shrink",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\HashMap.cpp(58) : error C2562: 'Shrink2' : 'void' function returning a value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\Hash",
+   ""
+  ],
+  "0x7aec00": [
+   "HashTable_flat::Shrink",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p14\\part_00\\HashTable.cpp(58) : error C2562: 'Shrink' : 'void' function returning a value",
+   ""
+  ],
+  "0x7b2ff0": [
+   "UDPInterfaceClass_Destru::Flush",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p15\\part_00\\include\\UDPInterfaceClass.hpp(26) : error C2146: syntax error : missing ',' before identifier 'p1'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wa",
+   ""
+  ],
+  "0x7b3310": [
+   "UDPInterfaceClass::CheckStatus",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p15\\part_00\\include\\UDPInterfaceClass.hpp(26) : error C2146: syntax error : missing ',' before identifier 'p1'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wa",
+   ""
+  ],
+  "0x7b4940": [
+   "String::Reassign",
+   "orig 196B ours 200B",
+   "regalloc"
+  ],
+  "0x7b4cd0": [
+   "String::Append2",
+   "orig 195B ours 195B",
+   "regalloc"
+  ],
+  "0x7b5020": [
+   "String::Erase",
+   "orig 196B ours 230B",
+   "regalloc"
+  ],
+  "0x7bcfb0": [
+   "TacticalMap::FillScanlinesOpaque",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p15\\part_00\\TacticalMap.cpp(13) : error C2198: 'int (__stdcall *)(class TacticalMap *,int,int,int)' : too few actual parameters; D:\\RA2YR_ReSource\\.omo\\d",
+   ""
+  ],
+  "0x7c81db": [
+   "AudioCodec::Decode",
+   "orig 391B ours 657B",
+   "regalloc"
+  ],
+  "0x7df9c0": [
+   "Voxel::FacePixelBuffer",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p15\\part_00\\Voxel.cpp(72) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p15\\part_00\\Voxel.cpp(7",
+   ""
+  ],
+  "0x7dfae0": [
+   "Voxel::FacePixelBufferEx",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p15\\part_00\\Voxel.cpp(72) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p15\\part_00\\Voxel.cpp(7",
+   ""
+  ],
+  "0x7dfc00": [
+   "Voxel::FacePixelBuffer3",
+   "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p15\\part_00\\Voxel.cpp(72) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p15\\part_00\\Voxel.cpp(7",
+   ""
+  ]
+ }
+}

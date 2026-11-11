@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@ScriptTypeClass@@QAEHXZ",
+ "sym_key": "ScriptTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b834020000c3",
+ "relocs": []
+}
