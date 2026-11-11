@@ -1,0 +1,81 @@
+{
+ "symbol": "?ComputeFill@PowerBar@@QAGHPAH00@Z",
+ "sym_key": "PowerBar::ComputeFill",
+ "size": 384,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec24a1000000005356578d4803b8abaaaaaaf7e18b4d088bfad1efe8000000008b1500000000894424148b42248d722456ff50248b0e568bd8c744241c00000000c744242000005940ff51202bc389442410db442410dc1500000000dfe0f6c401751bdc1500000000dfe0f6c4017404dd542418dc642418dd5c2420eb22ddd8c744241800000000c744241c00000000c744242000000000c7442424000000008b15000000008b4a248d422450ff512489442410db442410dc442420dc442418dd542428dc1d00000000dfe0f6c4417422c744241800000000c744241c0000f03fc744242800000000c744242c00000000eb2c8b15000000008b4a248d422450ff512489442410db442410dc742428dd5c2418dd442420dc742428dd5c24288b74241c8b5c24185653e8000000008b551456538902e800000000db4424248b4d10dc4c24388901dd5c24388b74243c8b5c24385653e8000000008b550c56538902e8000000008b4d1483c42089018bc75f5e5b8be55dc21000",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B504@@3IA",
+   "sym_key": "DataGlobal_B0B504"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?CalcFill@PowerBar@@QAEHXZ",
+   "sym_key": "PowerBar::CalcFill"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "__real@8@4005c800000000000000",
+   "sym_key": "_real@8@4005c800000000000000"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 305,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 317,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 349,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

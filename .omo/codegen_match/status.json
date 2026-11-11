@@ -35006,11 +35006,16 @@
   "this_as_id": false
  },
  "0x540a80": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "Network_Init",
+  "name": "ObjectClass::Network_Init",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Network_Init",
+  "rule_violations": 7,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x540c50": {
   "attempts": 1,
@@ -39020,11 +39025,16 @@
   "this_as_id": false
  },
  "0x561180": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "Team_Start",
+  "name": "ObjectClass::Team_Start",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Team_Start",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5616f0": {
   "attempts": 2,
@@ -44455,11 +44465,16 @@
   "this_as_id": false
  },
  "0x5c1dc0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MPCooperative::Seek",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MPCooperative::Seek",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5c1fa0": {
   "attempts": 12,
@@ -44493,11 +44508,16 @@
   "this_as_id": false
  },
  "0x5c21d0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CampaignCoop::Setup",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CampaignCoop::Setup",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5c2de0": {
   "attempts": 10,
@@ -51379,11 +51399,15 @@
   "this_as_id": false
  },
  "0x6211d0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "DrawTextRendererTextAligned",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DrawTextRendererTextAligned",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x623120": {
   "attempts": 2,
@@ -52643,11 +52667,16 @@
   "this_as_id": false
  },
  "0x630ea0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "UI_Get_630EA0",
+  "name": "ObjectClass::UI_Get_630EA0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "UI_Get_630EA0",
+  "rule_violations": 9,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6319c0": {
   "attempts": 6,
@@ -53360,11 +53389,16 @@
   "this_as_id": false
  },
  "0x635a40": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TeamClass::FindByMemberType",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TeamClass::FindByMemberType",
+  "rule_violations": 8,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x635db0": {
   "attempts": 1,
@@ -54445,11 +54479,16 @@
   "status": "NG"
  },
  "0x63f960": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+6 sub esp, 0x3c",
   "name": "PowerBar::ComputeFill",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "PowerBar::ComputeFill",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x63fea0": {
   "attempts": 1,
@@ -55797,11 +55836,16 @@
   "this_as_id": false
  },
  "0x655560": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProcessFogCellOccupancy",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BuildingClass::ProcessFogCellOccupancy",
+  "rule_violations": 19,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x655740": {
   "attempts": 4,
@@ -58759,11 +58803,15 @@
   "this_as_id": false
  },
  "0x67bb10": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "ReadINIClassInfantryTypeList",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ReadINIClassInfantryTypeList",
+  "rule_violations": 22,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x67c0b0": {
   "attempts": 2,
@@ -59950,11 +59998,16 @@
   "this_as_id": false
  },
  "0x691970": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "ScoreScreenClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ScoreScreenClass::ProcessFrame",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x691b30": {
   "attempts": 1,
@@ -69918,11 +69971,16 @@
   "this_as_id": false
  },
  "0x6ee3f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TeamClass::ProcessTeamMovement",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TeamClass::ProcessTeamMovement",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6ef450": {
   "attempts": 1,
@@ -72332,11 +72390,16 @@
   "this_as_id": false
  },
  "0x71bdf0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::ProcessFoggedState",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ObjectClass::ProcessFoggedState",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x71c4d0": {
   "attempts": 4,
@@ -73012,11 +73075,16 @@
   "this_as_id": false
  },
  "0x720590": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ThemeClass::InitializeThemes",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ThemeClass::InitializeThemes",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x720940": {
   "attempts": 1,
@@ -74360,11 +74428,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x7276a0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "TriggerTypeClass::GetParameter",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TriggerTypeClass::GetParameter",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x727bb0": {
   "attempts": 1,
@@ -80756,7 +80829,7 @@
   "this_as_id": false
  },
  "0x765000": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_765000",
@@ -84713,11 +84786,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x79d110": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "SendGameListWOL",
+  "name": "ObjectClass::SendGameListWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SendGameListWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x79da90": {
   "attempts": 2,
@@ -86499,18 +86577,28 @@
   "status": "COMPILE_FAIL"
  },
  "0x7b9750": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "WWMouseClass::showCursor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "WWMouseClass::showCursor",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7b9a60": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "WWMouseClass::captureMouse",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "WWMouseClass::captureMouse",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7b9d70": {
   "attempts": 7,
@@ -87707,11 +87795,16 @@
   "this_as_id": false
  },
  "0x7c8fd2": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "CIpow_Helper",
+  "name": "ObjectClass::CIpow_Helper",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CIpow_Helper",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7c91a5": {
   "attempts": 1,

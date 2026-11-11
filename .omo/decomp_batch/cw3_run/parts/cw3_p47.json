@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x691970",
+  "name": "ScoreScreenClass::ProcessFrame",
+  "cls": null,
+  "size": 440,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x630ea0",
+  "name": "UI_Get_630EA0",
+  "cls": null,
+  "size": 444,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x63f960",
+  "name": "PowerBar::ComputeFill",
+  "cls": null,
+  "size": 446,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x71bdf0",
+  "name": "ObjectClass::ProcessFoggedState",
+  "cls": null,
+  "size": 448,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x7b9a60",
+  "name": "WWMouseClass::captureMouse",
+  "cls": null,
+  "size": 450,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2171",
+  "first_msg": "'!' : illegal on operands of type 'void'"
+ },
+ {
+  "addr": "0x6211d0",
+  "name": "DrawTextRendererTextAligned",
+  "cls": null,
+  "size": 453,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x540a80",
+  "name": "Network_Init",
+  "cls": null,
+  "size": 454,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x6ee3f0",
+  "name": "TeamClass::ProcessTeamMovement",
+  "cls": null,
+  "size": 457,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x765000",
+  "name": "sub_765000",
+  "cls": null,
+  "size": 458,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'List' : undeclared identifier"
+ },
+ {
+  "addr": "0x561180",
+  "name": "Team_Start",
+  "cls": null,
+  "size": 460,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x635a40",
+  "name": "TeamClass::FindByMemberType",
+  "cls": null,
+  "size": 462,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x67bb10",
+  "name": "ReadINIClassInfantryTypeList",
+  "cls": null,
+  "size": 464,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x7b9750",
+  "name": "WWMouseClass::showCursor",
+  "cls": null,
+  "size": 465,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'WaitForSingleObject' : cannot convert parameter 1 from 'void *' to 'int'"
+ },
+ {
+  "addr": "0x7c8fd2",
+  "name": "CIpow_Helper",
+  "cls": null,
+  "size": 467,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2102",
+  "first_msg": "'&' requires l-value"
+ },
+ {
+  "addr": "0x5c21d0",
+  "name": "CampaignCoop::Setup",
+  "cls": null,
+  "size": 469,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ')' before '__stdcall'"
+ },
+ {
+  "addr": "0x79d110",
+  "name": "SendGameListWOL",
+  "cls": null,
+  "size": 471,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2102",
+  "first_msg": "'&' requires l-value"
+ },
+ {
+  "addr": "0x720590",
+  "name": "ThemeClass::InitializeThemes",
+  "cls": null,
+  "size": 473,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'const void *'"
+ },
+ {
+  "addr": "0x5c1dc0",
+  "name": "MPCooperative::Seek",
+  "cls": null,
+  "size": 475,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x655560",
+  "name": "BuildingClass::ProcessFogCellOccupancy",
+  "cls": null,
+  "size": 475,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (void *,void *)' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x7276a0",
+  "name": "TriggerTypeClass::GetParameter",
+  "cls": null,
+  "size": 477,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'idxArray' : is not a member of 'TriggerTypeClass'"
+ }
+]
