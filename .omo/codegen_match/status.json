@@ -8967,11 +8967,16 @@
   "this_as_id": false
  },
  "0x438b40": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "BombClass::Write",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BombClass::Write",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x438e60": {
   "attempts": 1,
@@ -12368,11 +12373,16 @@
   "status": "NG"
  },
  "0x475260": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "HouseClass::ReadHouseNamesToBitmask",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseClass::ReadHouseNamesToBitmask",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x475540": {
   "attempts": 1,
@@ -16389,11 +16399,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x49e740": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "SmallFunc_49E740",
+  "name": "ObjectClass::SmallFunc_49E740",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SmallFunc_49E740",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x49e8e0": {
   "attempts": 1,
@@ -22758,11 +22773,16 @@
   "this_as_id": false
  },
  "0x4d4200": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FootClass::Destru_vt139",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "FootClass::Destru_vt139",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4d7170": {
   "attempts": 1,
@@ -22798,11 +22818,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x4d9f70": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "BuildingClass::SellUnit",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+9 je 0x4d9fe9",
+  "name": "FootClass::SellUnit",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "BuildingClass::SellUnit",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4da020": {
   "attempts": 1,
@@ -31151,11 +31176,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x51f660": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryClass::ProcessIvanBombResult",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "InfantryClass::ProcessIvanBombResult",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x51faf0": {
   "attempts": 5,
@@ -31528,11 +31558,16 @@
   "this_as_id": false
  },
  "0x524cb0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "KeywordType::FindOrCreate2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "KeywordType::FindOrCreate2",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x524d40": {
   "attempts": 5,
@@ -47998,11 +48033,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x5e68a0": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "SkirmishDialog::Show",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SkirmishDialog::Show",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5e84d0": {
   "attempts": 6,
@@ -58116,39 +58156,59 @@
   "status": "OK"
  },
  "0x67ff70": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_67FF70",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SaveGame_Start_67FF70",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6802f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_6802F0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SaveGame_Start_6802F0",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x680670": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_680670",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SaveGame_Start_680670",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6809f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_6809F0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SaveGame_Start_6809F0",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x680df0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_680DF0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SaveGame_Start_680DF0",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x680ff0": {
   "attempts": 1,
@@ -64143,11 +64203,16 @@
   "this_as_id": false
  },
  "0x6c2c90": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "TClassFactory_InfantryTypeClass::GetClassIdentifier",
+  "name": "_TClassFactory_VInfantryTypeClass::GetClassIdentifier",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TClassFactory_InfantryTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c2d10": {
   "attempts": 1,
@@ -64361,11 +64426,16 @@
   "this_as_id": false
  },
  "0x6c3890": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "TClassFactory_InfantryClass::ddtor",
+  "name": "_TClassFactory_VInfantryClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TClassFactory_InfantryClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c3910": {
   "attempts": 1,
@@ -64888,11 +64958,16 @@
   "this_as_id": false
  },
  "0x6c5510": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "TClassFactory_WeaponTypeClass::GetClassIdentifier",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VWeaponTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_WeaponTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c5590": {
   "attempts": 1,
@@ -68630,11 +68705,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x6e85f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TeamTypeClass::FindOrCreateTaskForce",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TeamTypeClass::FindOrCreateTaskForce",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6e8710": {
   "attempts": 1,
@@ -78652,11 +78732,16 @@
   "this_as_id": false
  },
  "0x75c680": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "WalkLocomotionClass::BeginMove",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "WalkLocomotionClass::BeginMove",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x75c7e0": {
   "attempts": 1,
@@ -81957,11 +82042,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x772fa0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryTypeClass::Find",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "InfantryTypeClass::Find",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7730d0": {
   "attempts": 6,
@@ -87446,14 +87536,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x7d3401": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "__fcloseall",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "__fcloseall",
   "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7d3679": {
