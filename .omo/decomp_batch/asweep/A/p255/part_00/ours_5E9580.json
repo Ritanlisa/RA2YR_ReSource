@@ -1,0 +1,51 @@
+{
+ "symbol": "?Hash_Check_5E9580@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::Hash_Check_5E9580",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "538b1d00000000568b3500000000578b3d0000000033d2b9000000008b0185c074223bc6741e3bc7741a3bc374163b0500000000740e3b1500000000750683786bff741283c1044281f9000000007ccc5f5e32c05bc35f5eb0015bc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerReady@@3PAGA",
+   "sym_key": "g_Lobby_PlayerReady"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_MPCooperativeState@@3IA",
+   "sym_key": "g_MPCooperativeState"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  }
+ ]
+}

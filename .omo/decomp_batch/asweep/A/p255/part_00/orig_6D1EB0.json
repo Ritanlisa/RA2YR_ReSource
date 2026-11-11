@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D1EB0",
+ "name": "IsoCoord::ToPixel",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D1EB0",
+ "bytes_hex": "5356578b7c24108b5c24148d047f8d0480c1e002992bc28bf08d047fd1fe8d0480d1e0992bc28bf88bc3c1e0042bc3f7d8c1e002992bc2d1f803f08d045bd1ff8d04808931d1e0992bc2d1f803f88bc18979045f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

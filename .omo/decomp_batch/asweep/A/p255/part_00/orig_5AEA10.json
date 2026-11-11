@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AEA10",
+ "name": "TacticalMap::MultiplyByScalar",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AEA10",
+ "bytes_hex": "d9442404d809d919d9442404d84910d95910d9442404d84920d95920d9442404d84904d95904d9442404d84914d95914d9442404d84924d95924d9442404d84908d95908d9442404d84918d95918d9442404d84928d95928c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?MultiplyByScalar@TacticalMap@@QAEXM@Z",
+ "sym_key": "TacticalMap::MultiplyByScalar",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf1db06d84c2410e800000000db46108906d84c2410e800000000db4620894610d84c2410e800000000db4604894620d84c2410e800000000db4614894604d84c2410e800000000db4624894614d84c2410e800000000db4608894624d84c2410e800000000d9442410d84e188946088b462889442404c744240800000000d95e18df6c2404d84c2410e8000000008946285e83c408c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

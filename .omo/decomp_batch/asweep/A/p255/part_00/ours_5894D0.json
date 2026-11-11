@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindSubzoneConnectionIndex@VectorClass@@QAEHPAG@Z",
+ "sym_key": "VectorClass::FindSubzoneConnectionIndex",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "8a410c53565784c075085f5e33c05bc204008b710833c085f67e378b5424108b4904668b3a663939751e668b5902663b5a027514668b5904663b5a04750a668b5906663b5a06740d403bc67d0583c110ebd383c8ff5f5e5bc20400",
+ "relocs": []
+}

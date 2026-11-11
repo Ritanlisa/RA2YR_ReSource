@@ -1,0 +1,8 @@
+{
+ "symbol": "?ToPixel@IsoCoord@@QAEPAV1@HH@Z",
+ "sym_key": "IsoCoord::ToPixel",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108b5c24148d047f8d0480c1e002992bc28bf08d045bd1fe8d0480c1e002992bc2d1f82bf08d047f89318d0480d1e0992bc28bf88d045bd1ff8d0480d1e0992bc2d1f803f88bc68979045f5e5bc20800",
+ "relocs": []
+}

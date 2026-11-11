@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p255\part_00
+=== convert (20 addrs) ===
+[conv] 0x585ee0 sub_585EE0 -> _addr_58
+[conv] 0x5894d0 VectorClass::FindSubzoneConnectionIndex -> VectorClass
+[conv] 0x6cfcc0 SidebarClass::findEntryIndexByName -> SidebarClass
+[conv] 0x6d1eb0 IsoCoord::ToPixel -> IsoCoord
+[conv] 0x487630 DisplayClass::UpdateDisplayTimer -> DisplayClass
+[conv] 0x492740 _BlitTransLucent75_G::sub_492740 -> _BlitTransLucent75_G
+[conv] 0x492920 _BlitTransLucent25_G::sub_492920 -> _BlitTransLucent25_G
+[conv] 0x492a10 _BlitPlainXlatZRead_G::sub_492A10 -> _BlitPlainXlatZRead_G
+[conv] 0x549a00 sub_549A00 -> _addr_54
+[conv] 0x5ace50 _VectorClass_V_TRect_H::Init -> _VectorClass_V_TRect_H
+[conv] 0x6d61c0 sub_6D61C0 -> _addr_6D
+[conv] 0x7d8dc8 __sptype -> _addr_7D
+[conv] 0x5aea10 TacticalMap::MultiplyByScalar -> TacticalMap
+[conv] 0x63a440 sub_63A440 -> _addr_63
+[conv] 0x4afaa0 ObjectClass::sub_4AFAA0 -> ObjectClass
+[conv] 0x42f490 _VectorClass_VBaseNodeClass::AddRef -> _VectorClass_VBaseNodeClass
+[conv] 0x465e10 _VectorClass_V_TPoint3D_H::AddRef -> _VectorClass_V_TPoint3D_H
+[conv] 0x514cb0 JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0 -> JumpjetLocomotionClass
+[conv] 0x5c6aa0 sub_5C6AA0 -> _addr_5C
+[conv] 0x5e9580 ObjectClass::Hash_Check_5E9580 -> ObjectClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_58                 rc=2
+[era] VectorClass              rc=0
+[era] SidebarClass             rc=2
+[era] IsoCoord                 rc=0
+[era] DisplayClass             rc=2
+[era] _BlitTransLucent75_G     rc=0
+[era] _BlitTransLucent25_G     rc=2
+[era] _BlitPlainXlatZRead_G    rc=2
+[era] _addr_54                 rc=0
+[era] _VectorClass_V_TRect_H   rc=2
+[era] _addr_6D                 rc=0
+[era] _addr_7D                 rc=0
+[era] TacticalMap              rc=0
+[era] _addr_63                 rc=2
+[era] ObjectClass              rc=0
+[era] _VectorClass_VBaseNodeClass rc=0
+[era] _VectorClass_V_TPoint3D_H rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] _addr_5C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5894d0   MISMATCH         VectorClass::FindSubzoneConnectionIndex
+[diff] 0x6d1eb0   MISMATCH         IsoCoord::ToPixel
+[diff] 0x492740   MISMATCH         _BlitTransLucent75_G::sub_492740
+[diff] 0x549a00   MATCH            sub_549A00
+[diff] 0x6d61c0   MATCH            sub_6D61C0
+[diff] 0x7d8dc8   MISMATCH         __sptype
+[diff] 0x5aea10   MISMATCH         TacticalMap::MultiplyByScalar
+[diff] 0x4afaa0   MISMATCH         ObjectClass::sub_4AFAA0
+[diff] 0x5e9580   MISMATCH         ObjectClass::Hash_Check_5E9580
+[diff] 0x42f490   MISMATCH         _VectorClass_VBaseNodeClass::AddRef
+[diff] 0x5c6aa0   MISMATCH         sub_5C6AA0
+[ledger] 0x585ee0 sub_585EE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5894d0 VectorClass::FindSubzoneConnectionIndex -> NG (attempt 1)
+[ledger] 0x6cfcc0 SidebarClass::findEntryIndexByName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d1eb0 IsoCoord::ToPixel -> NG (attempt 1)
+[ledger] 0x487630 DisplayClass::UpdateDisplayTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x492740 _BlitTransLucent75_G::sub_492740 -> NG (attempt 1)
+[ledger] 0x492920 _BlitTransLucent25_G::sub_492920 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x492a10 _BlitPlainXlatZRead_G::sub_492A10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x549a00 sub_549A00 -> OK (attempt 1)
+[ledger] 0x5ace50 _VectorClass_V_TRect_H::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d61c0 sub_6D61C0 -> OK (attempt 1)
+[ledger] 0x7d8dc8 __sptype -> NG (attempt 1)
+[ledger] 0x5aea10 TacticalMap::MultiplyByScalar -> NG (attempt 1)
+[ledger] 0x63a440 sub_63A440 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4afaa0 ObjectClass::sub_4AFAA0 -> NG (attempt 1)
+[ledger] 0x42f490 _VectorClass_VBaseNodeClass::AddRef -> NG (attempt 1)
+[ledger] 0x465e10 _VectorClass_V_TPoint3D_H::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x514cb0 JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c6aa0 sub_5C6AA0 -> NG (attempt 1)
+[ledger] 0x5e9580 ObjectClass::Hash_Check_5E9580 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 9,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "regalloc": 1,
+  "codegen_shape": 3,
+  "frame_sched": 2,
+  "branch_polarity": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 18.2,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p255\batch_report.json
