@@ -6268,11 +6268,15 @@
   "this_as_id": false
  },
  "0x420f40": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "UpdateSpotlightsFoo",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "UpdateSpotlightsFoo",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x421830": {
   "attempts": 1,
@@ -7503,11 +7507,15 @@
   "this_as_id": false
  },
  "0x42b420": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "GeneratePathWaypoints",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "GeneratePathWaypoints",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x42bca0": {
   "attempts": 2,
@@ -8565,11 +8573,16 @@
   "status": "OK"
  },
  "0x434120": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FontClass::RenderGlyph",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "FontClass::RenderGlyph",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x434500": {
   "attempts": 2,
@@ -13323,11 +13336,15 @@
   "this_as_id": false
  },
  "0x47e470": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "SetCellClassOccupancyFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SetCellClassOccupancyFlags",
+  "rule_violations": 14,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x47ff80": {
   "attempts": 10,
@@ -14742,11 +14759,16 @@
   "this_as_id": false
  },
  "0x48c8b0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "MainGameFrame",
+  "name": "ObjectClass::MainGameFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MainGameFrame",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x48d1d0": {
   "attempts": 6,
@@ -21211,11 +21233,16 @@
   "status": "NG"
  },
  "0x4c54e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "ApplyEMPPulseEffect",
+  "name": "ObjectClass::ApplyEMPPulseEffect",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ApplyEMPPulseEffect",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4c58c0": {
   "attempts": 10,
@@ -28696,11 +28723,16 @@
   "this_as_id": false
  },
  "0x4f4780": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Frame::Present",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Frame::Present",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4f4bb0": {
   "attempts": 1,
@@ -29002,11 +29034,16 @@
   "this_as_id": false
  },
  "0x4f9b70": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::HandleAlliance",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseClass::HandleAlliance",
+  "rule_violations": 14,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4fa2e0": {
   "attempts": 1,
@@ -29687,11 +29724,16 @@
   "status": "NG"
  },
  "0x50db00": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "House::ChooseHouseEnemy",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "House::ChooseHouseEnemy",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x50def0": {
   "attempts": 1,
@@ -32710,11 +32752,15 @@
   "this_as_id": false
  },
  "0x533fd0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "AllocateSurfaceScreenSurfaces",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "AllocateSurfaceScreenSurfaces",
+  "rule_violations": 48,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x535aa0": {
   "attempts": 1,
@@ -52744,11 +52790,16 @@
   "this_as_id": false
  },
  "0x62f9a0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "UpdateBuildingDamageParticles",
+  "name": "ObjectClass::UpdateBuildingDamageParticles",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "UpdateBuildingDamageParticles",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x62fe60": {
   "attempts": 1,
@@ -57612,11 +57663,15 @@
   "this_as_id": false
  },
  "0x65d8e0": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "DeployScriptActionPlane",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DeployScriptActionPlane",
+  "rule_violations": 15,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x65e650": {
   "attempts": 1,
@@ -66826,11 +66881,15 @@
   "this_as_id": false
  },
  "0x6c8ff0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "DlgProcScoreScreen",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DlgProcScoreScreen",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c9420": {
   "attempts": 1,
@@ -68414,11 +68473,16 @@
   "this_as_id": false
  },
  "0x6d7840": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TacticalClass::DrawMap",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TacticalClass::DrawMap",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6d7c00": {
   "attempts": 2,
@@ -77310,11 +77374,16 @@
   "this_as_id": false
  },
  "0x736579": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryClass::UpdateBehavior",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "InfantryClass::UpdateBehavior",
+  "rule_violations": 9,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x736990": {
   "attempts": 2,
@@ -82946,11 +83015,16 @@
   "this_as_id": false
  },
  "0x76dad0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "proto_this",
   "first_diff": null,
-  "name": "TerritorySelectWDT",
+  "name": "TechnoClass::TerritorySelectWDT",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TerritorySelectWDT",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x76e2f0": {
   "attempts": 2,
@@ -84538,11 +84612,16 @@
   "this_as_id": false
  },
  "0x77a080": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "SaveProfileWOL",
+  "name": "ObjectClass::SaveProfileWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SaveProfileWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x77a700": {
   "attempts": 1,
@@ -85168,25 +85247,39 @@
   "status": "COMPILE_FAIL"
  },
  "0x78db70": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "WOLLogin::DlgProc",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "WOLLogin::DlgProc",
+  "rule_violations": 11,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x78ebc0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "DlgProcGameSetup",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DlgProcGameSetup",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x78f200": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "BuildWOLPlayerTooltip",
+  "name": "ObjectClass::BuildWOLPlayerTooltip",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BuildWOLPlayerTooltip",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x792cf0": {
   "attempts": 2,

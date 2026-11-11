@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x62f9a0",
+  "name": "UpdateBuildingDamageParticles",
+  "cls": null,
+  "size": 951,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x6d7840",
+  "name": "TacticalClass::DrawMap",
+  "cls": null,
+  "size": 954,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x78f200",
+  "name": "BuildWOLPlayerTooltip",
+  "cls": null,
+  "size": 959,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x42b420",
+  "name": "GeneratePathWaypoints",
+  "cls": null,
+  "size": 971,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'GetCellNeighborCoord' : cannot convert parameter 3 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x48c8b0",
+  "name": "MainGameFrame",
+  "cls": null,
+  "size": 978,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x4c54e0",
+  "name": "ApplyEMPPulseEffect",
+  "cls": null,
+  "size": 985,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x434120",
+  "name": "FontClass::RenderGlyph",
+  "cls": null,
+  "size": 989,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2079",
+  "first_msg": "'rc' uses undefined struct 'tagRECT'"
+ },
+ {
+  "addr": "0x50db00",
+  "name": "House::ChooseHouseEnemy",
+  "cls": null,
+  "size": 1002,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4f9b70",
+  "name": "HouseClass::HandleAlliance",
+  "cls": null,
+  "size": 1009,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'void' to 'unsigned char'"
+ },
+ {
+  "addr": "0x76dad0",
+  "name": "TerritorySelectWDT",
+  "cls": null,
+  "size": 1012,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'v15' : undeclared identifier"
+ },
+ {
+  "addr": "0x6c8ff0",
+  "name": "DlgProcScoreScreen",
+  "cls": null,
+  "size": 1020,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p3'"
+ },
+ {
+  "addr": "0x420f40",
+  "name": "UpdateSpotlightsFoo",
+  "cls": null,
+  "size": 1031,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x736579",
+  "name": "InfantryClass::UpdateBehavior",
+  "cls": null,
+  "size": 1040,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'int'"
+ },
+ {
+  "addr": "0x77a080",
+  "name": "SaveProfileWOL",
+  "cls": null,
+  "size": 1048,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x47e470",
+  "name": "SetCellClassOccupancyFlags",
+  "cls": null,
+  "size": 1058,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'short *' to 'int *'"
+ },
+ {
+  "addr": "0x4f4780",
+  "name": "Frame::Present",
+  "cls": null,
+  "size": 1067,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2079",
+  "first_msg": "'Rect' uses undefined struct 'tagRECT'"
+ },
+ {
+  "addr": "0x78ebc0",
+  "name": "DlgProcGameSetup",
+  "cls": null,
+  "size": 1073,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x65d8e0",
+  "name": "DeployScriptActionPlane",
+  "cls": null,
+  "size": 1093,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2371",
+  "first_msg": "'TEXTMETRICA' : redefinition"
+ },
+ {
+  "addr": "0x78db70",
+  "name": "WOLLogin::DlgProc",
+  "cls": null,
+  "size": 1114,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x533fd0",
+  "name": "AllocateSurfaceScreenSurfaces",
+  "cls": null,
+  "size": 1137,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ }
+]
