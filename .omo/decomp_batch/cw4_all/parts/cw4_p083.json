@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x5a00c0",
+  "name": "MapClass::GetTileDataField14",
+  "family": "RET_ARITY",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "MapClass",
+  "emitted": "MapClass::GetTileDataField14",
+  "first_diff": {
+   "orig": "+8 jne 0x5a00d0",
+   "ours": "+8 je 0x2b"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x5ad790",
+  "name": "Vector4::EraseAt",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "Vector4",
+  "emitted": "Vector4::EraseAt",
+  "first_diff": {
+   "orig": "+9 jge 0x5ad7bc",
+   "ours": "+9 jl 0x10"
+  },
+  "ours_size": 51
+ },
+ {
+  "addr": "0x5e23d0",
+  "name": "Network_Check",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Network_Check",
+  "first_diff": {
+   "orig": "+9 jge 0x5e23fc",
+   "ours": "+9 jl 0x10"
+  },
+  "ours_size": 51
+ },
+ {
+  "addr": "0x5f5b50",
+  "name": "ObjectClass::SetReference",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::SetReference",
+  "first_diff": {
+   "orig": "+27 je 0x5f5b7c",
+   "ours": "+27 jne 0x22"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x6107a0",
+  "name": "sub_6107A0",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 49,
+  "part": "p221",
+  "unit": "_addr_61",
+  "emitted": "sub_6107A0",
+  "first_diff": {
+   "orig": "+7 mov dword ptr [0xac1cbc], eax",
+   "ours": "+7 mov dword ptr [0], eax"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x63e590",
+  "name": "Array::RemoveAt",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "Array",
+  "emitted": "Array::RemoveAt",
+  "first_diff": {
+   "orig": "+9 jge 0x63e5bc",
+   "ours": "+9 jl 0x10"
+  },
+  "ours_size": 53
+ },
+ {
+  "addr": "0x63ef70",
+  "name": "Vector4::EraseAt_Copy",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "Vector4",
+  "emitted": "Vector4::EraseAt_Copy",
+  "first_diff": {
+   "orig": "+9 jge 0x63ef9c",
+   "ours": "+9 jl 0x10"
+  },
+  "ours_size": 53
+ },
+ {
+  "addr": "0x652560",
+  "name": "Network_Process_652560",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Network_Process_652560",
+  "first_diff": {
+   "orig": "+9 jge 0x65258c",
+   "ours": "+9 jl 0x10"
+  },
+  "ours_size": 51
+ },
+ {
+  "addr": "0x6ce320",
+  "name": "SuperClass::RemoveFromPointerArray",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "SuperClass",
+  "emitted": "SuperClass::RemoveFromPointerArray",
+  "first_diff": {
+   "orig": "+9 jge 0x6ce34c",
+   "ours": "+9 jl 0x10"
+  },
+  "ours_size": 51
+ },
+ {
+  "addr": "0x70d190",
+  "name": "TechnoClass::GetRangeModifier",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 49,
+  "part": "p221",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::GetRangeModifier",
+  "first_diff": {
+   "orig": "+25 setle al",
+   "ours": "+25 setg al"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x74c110",
+  "name": "VectorClass_E::GetSize",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 49,
+  "part": "p222",
+  "unit": "_VectorClass_E",
+  "emitted": "_VectorClass_E::GetSize",
+  "first_diff": {
+   "orig": "+3 test al, al",
+   "ours": "+3 push ebx"
+  },
+  "ours_size": 63
+ },
+ {
+  "addr": "0x75c8a0",
+  "name": "JumpjetLocomotionClass::StubReturnZero_23",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 49,
+  "part": "p222",
+  "unit": "JumpjetLocomotionClass",
+  "emitted": "JumpjetLocomotionClass::StubReturnZero_23",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [esp + 8]",
+   "ours": "+0 mov ecx, dword ptr [esp + 8]"
+  },
+  "ours_size": 60
+ },
+ {
+  "addr": "0x408e70",
+  "name": "Count::DecrementRefCountsAudio",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 50,
+  "part": "p222",
+  "unit": "Count",
+  "emitted": "Count::DecrementRefCountsAudio",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov dword ptr [ecx + 0x1c], eax"
+  },
+  "ours_size": 46
+ },
+ {
+  "addr": "0x473500",
+  "name": "TechnoClass::IndexOf",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 50,
+  "part": "p222",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::IndexOf",
+  "first_diff": {
+   "orig": "+8 je 0x47352c",
+   "ours": "+8 je 0x26"
+  },
+  "ours_size": 44
+ },
+ {
+  "addr": "0x4a05d0",
+  "name": "ConnectionPointClass::ddtor",
+  "family": "STRUCTURAL",
+  "path": "cc_mismatch",
+  "size": 50,
+  "part": "p222",
+  "unit": "ConnectionPointClass",
+  "emitted": "ConnectionPointClass::ddtor",
+  "first_diff": {
+   "orig": "+13 ret 8",
+   "ours": "+13 ret 0xc"
+  },
+  "ours_size": 48
+ },
+ {
+  "addr": "0x4f9a10",
+  "name": "HouseClass::IsAllied",
+  "family": "STRUCTURAL",
+  "path": "eval_order",
+  "size": 50,
+  "part": "p222",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::IsAllied",
+  "first_diff": {
+   "orig": "+2 mov ecx, dword ptr [esp + 4]",
+   "ours": "+2 mov edx, 1"
+  },
+  "ours_size": 30
+ },
+ {
+  "addr": "0x54a950",
+  "name": "BitArray::TestBit",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 50,
+  "part": "p222",
+  "unit": "BitArray",
+  "emitted": "BitArray::TestBit",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x40b2a0",
+  "name": "VectorClass::GetSize",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 51,
+  "part": "p222",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::GetSize",
+  "first_diff": {
+   "orig": "+6 jne 0x40b2ae",
+   "ours": "+6 push edi"
+  },
+  "ours_size": 68
+ },
+ {
+  "addr": "0x45a500",
+  "name": "FootClass::GetSize",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 51,
+  "part": "p223",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::GetSize",
+  "first_diff": {
+   "orig": "+6 jne 0x45a50e",
+   "ours": "+6 push edi"
+  },
+  "ours_size": 68
+ },
+ {
+  "addr": "0x4b9dc0",
+  "name": "VectorClass_ptr_CrossDissolveEffect::FindItemIndex_0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 51,
+  "part": "p224",
+  "unit": "VectorClass_ptr_CrossDissolveEffect",
+  "emitted": "VectorClass_ptr_CrossDissolveEffect::FindItemIndex_0",
+  "first_diff": {
+   "orig": "+6 jne 0x4b9dce",
+   "ours": "+6 push edi"
+  },
+  "ours_size": 68
+ }
+]
