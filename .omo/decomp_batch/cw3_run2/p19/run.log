@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x538b30 RulesClass::InitINIChain -> RulesClass
+[conv] 0x63a230 PlanManager::Notify -> PlanManager
+[conv] 0x69d770 MapFile::Constructor -> MapFile
+[conv] 0x765b60 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::QueryInterface -> _VectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x774120 WinModemClass::Construct -> WinModemClass
+[conv] 0x625f60 HashTable::FindString -> HashTable
+[conv] 0x43a6b0 ObjectClass::sub_43A6B0 -> ObjectClass
+[conv] 0x513cb0 HoverLocomotionClass::WriteObject -> HoverLocomotionClass
+[conv] 0x65c250 RAMFileClass::WinMain_Helper_65C250 -> RAMFileClass
+[conv] 0x7cbb8d __mbsnccnt -> _addr_7C
+[conv] 0x63a0d0 System_Get -> System
+[conv] 0x48df30 ObjectClass::LookupNameIndex -> ObjectClass
+[conv] 0x63e880 SidebarClass::addToList -> SidebarClass
+[conv] 0x71ab60 ObjectClass::UnlinkFromFactory -> ObjectClass
+[conv] 0x4887f0 ColorListClass::sub_4887F0 -> ColorListClass
+[conv] 0x4cb760 ObjectClass::TerrainInitMap -> ObjectClass
+[conv] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> ObjectClass
+[conv] 0x451e40 BuildingClass::ClearAnims -> BuildingClass
+[conv] 0x68cab0 Network_Assign -> Network
+[conv] 0x50ff50 HouseClass::AddCoordTrackingEntry -> HouseClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RulesClass               rc=0
+[era] PlanManager              rc=2
+[era] MapFile                  rc=0
+[era] _VectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=2
+[era] WinModemClass            rc=0
+[era] HashTable                rc=2
+[era] ObjectClass              rc=2
+[era] HoverLocomotionClass     rc=2
+[era] RAMFileClass             rc=2
+[era] _addr_7C                 rc=2
+[era] System                   rc=2
+[era] SidebarClass             rc=2
+[era] ColorListClass           rc=0
+[era] BuildingClass            rc=2
+[era] Network                  rc=2
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x538b30   MISMATCH         RulesClass::InitINIChain
+[diff] 0x69d770   MISMATCH         MapFile::Constructor
+[diff] 0x774120   MISMATCH         WinModemClass::Construct
+[diff] 0x4887f0   MISMATCH         ColorListClass::sub_4887F0
+[ledger] 0x538b30 RulesClass::InitINIChain -> NG (attempt 3)
+[ledger] 0x63a230 PlanManager::Notify -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69d770 MapFile::Constructor -> NG (attempt 3)
+[ledger] 0x765b60 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x774120 WinModemClass::Construct -> NG (attempt 3)
+[ledger] 0x625f60 HashTable::FindString -> COMPILE_FAIL (attempt 3)
+[ledger] 0x43a6b0 ObjectClass::sub_43A6B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x513cb0 HoverLocomotionClass::WriteObject -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65c250 RAMFileClass::WinMain_Helper_65C250 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cbb8d __mbsnccnt -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63a0d0 System_Get -> COMPILE_FAIL (attempt 4)
+[ledger] 0x48df30 ObjectClass::LookupNameIndex -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63e880 SidebarClass::addToList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71ab60 ObjectClass::UnlinkFromFactory -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4887f0 ColorListClass::sub_4887F0 -> NG (attempt 3)
+[ledger] 0x4cb760 ObjectClass::TerrainInitMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x451e40 BuildingClass::ClearAnims -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68cab0 Network_Assign -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50ff50 HouseClass::AddCoordTrackingEntry -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 16
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p19\batch_report.json

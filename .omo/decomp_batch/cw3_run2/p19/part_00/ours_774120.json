@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@WinModemClass@@QAEPAV1@XZ",
+ "sym_key": "WinModemClass::Construct",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db6800200000891ee80000000083c4048946248b06895e54895e58885e50885e51895e68895e64895e04895e08895e0c895e10895e14895e18c7465cffffffff5e5bc3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x538B30",
+ "name": "RulesClass::InitINIChain",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x538B30",
+ "bytes_hex": "8b442404568bf133d23bc2895604894608c6460c0188560dc7060cb87e0074248b4c240c3bca7409894e048bc65ec20800c1e00250e8ad02290083c404894604c6460d018bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
