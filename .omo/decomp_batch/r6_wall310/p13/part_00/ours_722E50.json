@@ -1,0 +1,51 @@
+{
+ "symbol": "?FreeUpgradeQueue2@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::FreeUpgradeQueue2",
+ "size": 173,
+ "link_base": 0,
+ "bytes_hex": "a100000000535533db33ed3bc30f86970000005657a1000000008b34a88b86100100003bc3743b33c9bafcffffff8b780883c20441891c178b383bcf76f089188bbe100100003bfb74128b4f0851e80000000057e80000000083c408899e100100008b86180100003bc3740f50e80000000083c404899e180100008b86140100003bc3740f50e80000000083c404899e14010000899e0c010000a100000000453be80f826dffffff5f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_CrateProcessState@@3IA",
+   "sym_key": "g_CrateProcessState"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?BuildingClass_InstanceArray@@3PAVBuildingClass@@A",
+   "sym_key": "BuildingClass_InstanceArray"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?g_CrateProcessState@@3IA",
+   "sym_key": "g_CrateProcessState"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x722E50",
+ "name": "BuildingClass::FreeUpgradeQueue2",
+ "size": 172,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x722E50",
+ "bytes_hex": "a1f8f4b000535533db33ed3bc30f8e960000005657a1ecf4b0008b34a88b86100100003bc3743a8b1033c93bd37c0e8b500841895c8afc8b103bca7ef289188bbe100100003bfb74128b470850e89b5c0a0057e8955c0a0083c408899e100100008b86180100003bc3740f50e87c5c0a0083c404899e180100008b86140100003bc3740f50e8635c0a0083c404899e14010000899e0c010000a1f8f4b000453be80f8c6effffff5f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

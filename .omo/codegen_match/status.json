@@ -5481,28 +5481,28 @@
   "status": "OK"
  },
  "0x6e6e20": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BuildingLoadQueue::GetNext",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e6f20": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BuildingLoadQueue::Find",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e6ff0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindObject",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e7a80": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5523,14 +5523,14 @@
   "status": "OK"
  },
  "0x6ea3e0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TeamClass::UpdateReadinessState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6ef610": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TeamClass::PlayMemberAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5579,7 +5579,7 @@
   "status": "OK"
  },
  "0x7036c0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TechnoClass::TransitionEffectState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5600,7 +5600,7 @@
   "status": "OK"
  },
  "0x707d20": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TechnoClass::GetCrew",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5614,7 +5614,7 @@
   "status": "OK"
  },
  "0x70b1d0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TechnoClass::RevealAreaConditional",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5691,7 +5691,7 @@
   "status": "NG"
  },
  "0x71abc0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "FactoryClass::CompleteItem",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5726,7 +5726,7 @@
   "status": "OK"
  },
  "0x71d160": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TerrainClass::Export",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5796,14 +5796,14 @@
   "status": "OK"
  },
  "0x720070": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AbstractClass::selectWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x720140": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "AbstractClass::fireWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5817,18 +5817,18 @@
   "status": "NG"
  },
  "0x722390": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+13 jle 0x722439",
   "name": "BuildingClass::FreeUpgradeQueue",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/signedness",
+  "status": "NG"
  },
  "0x722e50": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+13 jle 0x722ef9",
   "name": "BuildingClass::FreeUpgradeQueue2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/signedness",
+  "status": "NG"
  },
  "0x7236e0": {
   "attempts": 5,
@@ -5852,7 +5852,7 @@
   "status": "OK"
  },
  "0x7248c0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TooltipClass::GetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5978,7 +5978,7 @@
   "status": "NG"
  },
  "0x736d50": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TechnoClass::IsC4AnimationActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5999,21 +5999,21 @@
   "status": "NG"
  },
  "0x746420": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TechnoClass::CaptureTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7464e0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TechnoClass::TransferTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x746810": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "UnitClass::PerFrameUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
