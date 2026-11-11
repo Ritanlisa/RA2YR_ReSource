@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p46\part_00
+=== convert (20 addrs) ===
+[conv] 0x5e8590 ObjectClass::SkirmishSetup_Setup_5E8590 -> ObjectClass
+[conv] 0x4a3c30 FadePalette -> _addr_4A
+[conv] 0x4a6360 RenderTextLabelWordWrap -> _addr_4A
+[conv] 0x7b60e0 ObjectClass::sub_7B60E0 -> ObjectClass
+[conv] 0x530000 ObjectClass::LoadExpansionMixFiles -> ObjectClass
+[conv] 0x6523a0 Network::SendUnreachable -> Network
+[conv] 0x4a61c0 TextRenderer::DrawText -> TextRenderer
+[conv] 0x4a71a0 DiskLaserClass::Fire -> DiskLaserClass
+[conv] 0x72d460 CampaignScore::LoadScreenAssets -> CampaignScore
+[conv] 0x58ef10 ObjectClass::ResetMapState -> ObjectClass
+[conv] 0x6ba230 HashTable::RemoveEntry -> HashTable
+[conv] 0x7298f0 AnimClass::GetAnimation -> AnimClass
+[conv] 0x484d60 InfantryClass::CanMoveThroughCell -> InfantryClass
+[conv] 0x578e60 CreateMapObject -> _addr_57
+[conv] 0x4a18f0 BuildingClass::CreateCraterAtCell -> BuildingClass
+[conv] 0x626ab0 System_Read -> System
+[conv] 0x797640 LoginWOL -> _addr_79
+[conv] 0x53a140 LightningStorm::Strike -> LightningStorm
+[conv] 0x4a8eb0 GetBuildingPlacement -> _addr_4A
+[conv] 0x654490 RadarClass::ProcessCellVisibility -> RadarClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_4A                 rc=2
+[era] Network                  rc=2
+[era] TextRenderer             rc=2
+[era] DiskLaserClass           rc=2
+[era] CampaignScore            rc=2
+[era] HashTable                rc=2
+[era] AnimClass                rc=2
+[era] InfantryClass            rc=2
+[era] _addr_57                 rc=2
+[era] BuildingClass            rc=2
+[era] System                   rc=2
+[era] _addr_79                 rc=2
+[era] LightningStorm           rc=2
+[era] RadarClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5e8590 ObjectClass::SkirmishSetup_Setup_5E8590 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a3c30 FadePalette -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a6360 RenderTextLabelWordWrap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b60e0 ObjectClass::sub_7B60E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x530000 ObjectClass::LoadExpansionMixFiles -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6523a0 Network::SendUnreachable -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a61c0 TextRenderer::DrawText -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4a71a0 DiskLaserClass::Fire -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72d460 CampaignScore::LoadScreenAssets -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58ef10 ObjectClass::ResetMapState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ba230 HashTable::RemoveEntry -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7298f0 AnimClass::GetAnimation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x484d60 InfantryClass::CanMoveThroughCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x578e60 CreateMapObject -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a18f0 BuildingClass::CreateCraterAtCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x626ab0 System_Read -> COMPILE_FAIL (attempt 2)
+[ledger] 0x797640 LoginWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x53a140 LightningStorm::Strike -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a8eb0 GetBuildingPlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x654490 RadarClass::ProcessCellVisibility -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p46\batch_report.json

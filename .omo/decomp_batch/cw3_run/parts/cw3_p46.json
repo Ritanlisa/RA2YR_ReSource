@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x5e8590",
+  "name": "SkirmishSetup_Setup_5E8590",
+  "cls": null,
+  "size": 400,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'loc_5DAF20' : undeclared identifier"
+ },
+ {
+  "addr": "0x4a3c30",
+  "name": "FadePalette",
+  "cls": null,
+  "size": 401,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x4a6360",
+  "name": "RenderTextLabelWordWrap",
+  "cls": null,
+  "size": 404,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x7b60e0",
+  "name": "sub_7B60E0",
+  "cls": null,
+  "size": 405,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'strchr' : cannot convert parameter 2 from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x530000",
+  "name": "LoadExpansionMixFiles",
+  "cls": null,
+  "size": 406,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2079",
+  "first_msg": "'FindFileData' uses undefined struct '_WIN32_FIND_DATAA'"
+ },
+ {
+  "addr": "0x6523a0",
+  "name": "Network::SendUnreachable",
+  "cls": null,
+  "size": 413,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x4a61c0",
+  "name": "TextRenderer::DrawText",
+  "cls": null,
+  "size": 416,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'vswprintf' : none of the 2 overloads can convert parameter 3 from type 'const unsigned short *const '"
+ },
+ {
+  "addr": "0x4a71a0",
+  "name": "DiskLaserClass::Fire",
+  "cls": null,
+  "size": 416,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x72d460",
+  "name": "CampaignScore::LoadScreenAssets",
+  "cls": null,
+  "size": 417,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2446",
+  "first_msg": "'==' : no conversion from 'class LoadingScreen *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x58ef10",
+  "name": "ResetMapState",
+  "cls": null,
+  "size": 421,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6ba230",
+  "name": "HashTable_flat::RemoveEntry",
+  "cls": null,
+  "size": 423,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Assign' : cannot convert parameter 1 from 'const char *' to 'void *'"
+ },
+ {
+  "addr": "0x7298f0",
+  "name": "AnimClass::GetAnimation",
+  "cls": null,
+  "size": 425,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x484d60",
+  "name": "InfantryClass::CanMoveThroughCell",
+  "cls": null,
+  "size": 427,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x578e60",
+  "name": "CreateMapObject",
+  "cls": null,
+  "size": 428,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x4a18f0",
+  "name": "BuildingClass::CreateCraterAtCell",
+  "cls": null,
+  "size": 429,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.vfptr' must have class/struct/union type"
+ },
+ {
+  "addr": "0x626ab0",
+  "name": "System_Read",
+  "cls": null,
+  "size": 430,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x797640",
+  "name": "LoginWOL",
+  "cls": null,
+  "size": 433,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2673",
+  "first_msg": "'LoginWOL' : global functions do not have 'this' pointers"
+ },
+ {
+  "addr": "0x53a140",
+  "name": "LightningStorm::Strike",
+  "cls": null,
+  "size": 436,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x4a8eb0",
+  "name": "GetBuildingPlacement",
+  "cls": null,
+  "size": 438,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x654490",
+  "name": "Shroud::ProcessCellVisibility",
+  "cls": null,
+  "size": 439,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'UpdateVisibility' : cannot convert parameter 1 from 'int' to 'void *'"
+ }
+]
