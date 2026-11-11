@@ -6041,7 +6041,7 @@
   "status": "OK"
  },
  "0x7474b0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "UnitTypeClass::CreateUnit",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6139,14 +6139,14 @@
   "status": "NG"
  },
  "0x74d5d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VeinholeMonsterClass::ProcessExpansion",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x74d670": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ObjectClass::IsCellSuitableForPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6174,18 +6174,18 @@
   "status": "OK"
  },
  "0x74f960": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "GameClass::ReadVersionFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x74fa20": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 sub esp, 0x24",
   "name": "GameClass::ReadVersionFile2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x74fda0": {
   "attempts": 5,
@@ -6209,49 +6209,49 @@
   "status": "OK"
  },
  "0x753e00": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Viewport::Clear",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x756dd0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "VoxelModel::LoadVXLHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x756f80": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "VoxelModel::ParseSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7575a0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x757790": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSectionLines",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x757e70": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "VoxelRenderer::ProcessVoxelData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x758030": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "VoxelRenderer::RenderFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6279,11 +6279,11 @@
   "status": "OK"
  },
  "0x75ca80": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+13 push ebx",
   "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_1",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x75cbd0": {
   "attempts": 7,
@@ -6307,18 +6307,18 @@
   "status": "OK"
  },
  "0x75edf0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Voxel::BlendShadowColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x75f140": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push esi",
   "name": "Voxel::loadSectionData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x75f880": {
   "attempts": 5,
@@ -6335,7 +6335,7 @@
   "status": "OK"
  },
  "0x760190": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Voxel::BlendColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6349,7 +6349,7 @@
   "status": "OK"
  },
  "0x763a50": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Waypoint::FindCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6370,21 +6370,21 @@
   "status": "OK"
  },
  "0x765b40": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Campaign_WorldDominationTour_24::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x765b50": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x766fa0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Conflict_WorldDominationTour_26::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",

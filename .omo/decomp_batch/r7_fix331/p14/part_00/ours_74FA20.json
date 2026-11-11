@@ -1,0 +1,39 @@
+{
+ "symbol": "?ReadVersionFile2@GameClass@@QAEFXZ",
+ "sym_key": "GameClass::ReadVersionFile2",
+ "size": 194,
+ "link_base": 0,
+ "bytes_hex": "51568bf1f64640080f859400000033c055a00000000057508d4c2410e8000000006a008d4c2410e80000000084c074588d6e246a10558d4c2414e8000000008bfd83c9ff33c0c7450000000000f2aef7d149ba0d00000039948e8c000000752f8bfd83c9ff33c0f2aef7d1498bfd89848e8c00000083c9fff2aef7d14939948e8c00000074daeb07c74624000000008d4c240ce8000000008b46445f0c085d8946448b4644a8047407668b46085e59c30c0466c74608010089464466b801005e59c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_Str_File_VERSION_TXT@@3EA",
+   "sym_key": "g_Str_File_VERSION_TXT"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Construct@RawFileClass@@QAEPAV1@H@Z",
+   "sym_key": "RawFileClass::Construct"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Open@FileClass@@QAEDH@Z",
+   "sym_key": "FileClass::Open"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?Read@FileClass@@QAEKPAXH@Z",
+   "sym_key": "FileClass::Read"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  }
+ ]
+}
