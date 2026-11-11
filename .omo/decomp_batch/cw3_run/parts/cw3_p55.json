@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7049c0",
+  "name": "DrawTacticalMapLine",
+  "cls": null,
+  "size": 1151,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x4f1ca0",
+  "name": "LoadFromINIGraphicMenu",
+  "cls": null,
+  "size": 1173,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x5a2f50",
+  "name": "SmoothTerrainMap",
+  "cls": null,
+  "size": 1184,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x55f1e0",
+  "name": "DrawHUD",
+  "cls": null,
+  "size": 1189,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x782bb0",
+  "name": "FindBuddyList",
+  "cls": null,
+  "size": 1201,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Insert' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x7775c0",
+  "name": "MainWindowProc",
+  "cls": null,
+  "size": 1213,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'WCHAR' : undeclared identifier"
+ },
+ {
+  "addr": "0x4fa350",
+  "name": "Sidebar::StartSidebarProduction",
+  "cls": null,
+  "size": 1222,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'class HouseClass *'"
+ },
+ {
+  "addr": "0x55bc00",
+  "name": "CompressLCWBuffer",
+  "cls": null,
+  "size": 1237,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x750440",
+  "name": "LoadVocFromINI",
+  "cls": null,
+  "size": 1246,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x4791f0",
+  "name": "LinkedList_flat::LoadScenarioMixFiles",
+  "cls": null,
+  "size": 1256,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'__tail_0' : is not a member of 'CD'"
+ },
+ {
+  "addr": "0x655c50",
+  "name": "FogOfWar::RevealArea",
+  "cls": null,
+  "size": 1266,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (void *,char *)' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x484180",
+  "name": "Tactical::CalculateTacticalLighting",
+  "cls": null,
+  "size": 1272,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x63fea0",
+  "name": "PowerClass::updatePowerBarAnimation",
+  "cls": null,
+  "size": 1279,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'MapClass__MarkForRedraw' : cannot convert parameter 1 from 'class GScreenClass *' to 'int'"
+ },
+ {
+  "addr": "0x57acf0",
+  "name": "GenerateMapClassCliffTransitions",
+  "cls": null,
+  "size": 1304,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x5a89d0",
+  "name": "ScheduleMapSeedBuildings",
+  "cls": null,
+  "size": 1321,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x79dfe0",
+  "name": "GameSetupDlgProcWOL",
+  "cls": null,
+  "size": 1335,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x62b5e0",
+  "name": "ParticleClass::Construct",
+  "cls": null,
+  "size": 1343,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x49c5a0",
+  "name": "CampaignClass::SaveProgress",
+  "cls": null,
+  "size": 1359,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x485590",
+  "name": "CellClass::ProcessBridgeRepair",
+  "cls": null,
+  "size": 1372,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2079",
+  "first_msg": "'rcDst' uses undefined struct 'tagRECT'"
+ },
+ {
+  "addr": "0x7609e0",
+  "name": "Voxel::FaceDraw",
+  "cls": null,
+  "size": 1382,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.field_4' must have class/struct/union type"
+ }
+]

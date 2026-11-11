@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p55\part_00
+=== convert (20 addrs) ===
+[conv] 0x7049c0 DrawTacticalMapLine -> _addr_70
+[conv] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> ObjectClass
+[conv] 0x5a2f50 ObjectClass::SmoothTerrainMap -> ObjectClass
+[conv] 0x55f1e0 ObjectClass::DrawHUD -> ObjectClass
+[conv] 0x782bb0 FindBuddyList -> _addr_78
+[conv] 0x7775c0 MainWindowProc -> _addr_77
+[conv] 0x4fa350 Sidebar::StartSidebarProduction -> Sidebar
+[conv] 0x55bc00 CompressLCWBuffer -> _addr_55
+[conv] 0x750440 ObjectClass::LoadVocFromINI -> ObjectClass
+[conv] 0x4791f0 CD::LoadScenarioMixFiles -> CD
+[conv] 0x655c50 FogOfWar::RevealArea -> FogOfWar
+[conv] 0x484180 Tactical::CalculateTacticalLighting -> Tactical
+[conv] 0x63fea0 PowerClass::updatePowerBarAnimation -> PowerClass
+[conv] 0x57acf0 GenerateMapClassCliffTransitions -> _addr_57
+[conv] 0x5a89d0 ScheduleMapSeedBuildings -> _addr_5A
+[conv] 0x79dfe0 GameSetupDlgProcWOL -> _addr_79
+[conv] 0x62b5e0 ParticleClass::Construct -> ParticleClass
+[conv] 0x49c5a0 CampaignClass::SaveProgress -> CampaignClass
+[conv] 0x485590 CellClass::ProcessBridgeRepair -> CellClass
+[conv] 0x7609e0 Voxel::FaceDraw -> Voxel
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_70                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_78                 rc=2
+[era] _addr_77                 rc=2
+[era] Sidebar                  rc=2
+[era] _addr_55                 rc=2
+[era] CD                       rc=2
+[era] FogOfWar                 rc=2
+[era] Tactical                 rc=2
+[era] PowerClass               rc=2
+[era] _addr_57                 rc=2
+[era] _addr_5A                 rc=2
+[era] _addr_79                 rc=2
+[era] ParticleClass            rc=2
+[era] CampaignClass            rc=2
+[era] CellClass                rc=2
+[era] Voxel                    rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7049c0 DrawTacticalMapLine -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a2f50 ObjectClass::SmoothTerrainMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55f1e0 ObjectClass::DrawHUD -> COMPILE_FAIL (attempt 2)
+[ledger] 0x782bb0 FindBuddyList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7775c0 MainWindowProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4fa350 Sidebar::StartSidebarProduction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55bc00 CompressLCWBuffer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x750440 ObjectClass::LoadVocFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4791f0 CD::LoadScenarioMixFiles -> COMPILE_FAIL (attempt 2)
+[ledger] 0x655c50 FogOfWar::RevealArea -> COMPILE_FAIL (attempt 2)
+[ledger] 0x484180 Tactical::CalculateTacticalLighting -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63fea0 PowerClass::updatePowerBarAnimation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57acf0 GenerateMapClassCliffTransitions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a89d0 ScheduleMapSeedBuildings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x79dfe0 GameSetupDlgProcWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62b5e0 ParticleClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49c5a0 CampaignClass::SaveProgress -> COMPILE_FAIL (attempt 2)
+[ledger] 0x485590 CellClass::ProcessBridgeRepair -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7609e0 Voxel::FaceDraw -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p55\batch_report.json

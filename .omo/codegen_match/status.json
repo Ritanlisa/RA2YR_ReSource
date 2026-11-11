@@ -13127,11 +13127,16 @@
   "this_as_id": false
  },
  "0x4791f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "LinkedList_flat::LoadScenarioMixFiles",
+  "name": "CD::LoadScenarioMixFiles",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "LinkedList_flat::LoadScenarioMixFiles",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x479700": {
   "attempts": 1,
@@ -13440,11 +13445,16 @@
   "this_as_id": false
  },
  "0x484180": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Tactical::CalculateTacticalLighting",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Tactical::CalculateTacticalLighting",
+  "rule_violations": 17,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x484a80": {
   "attempts": 1,
@@ -13567,11 +13577,16 @@
   "this_as_id": false
  },
  "0x485590": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CellClass::ProcessBridgeRepair",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CellClass::ProcessBridgeRepair",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x485af0": {
   "attempts": 1,
@@ -16593,11 +16608,16 @@
   "this_as_id": false
  },
  "0x49c5a0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CampaignClass::SaveProgress",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CampaignClass::SaveProgress",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x49cc50": {
   "attempts": 1,
@@ -28258,11 +28278,16 @@
   "this_as_id": false
  },
  "0x4f1ca0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "LoadFromINIGraphicMenu",
+  "name": "ObjectClass::LoadFromINIGraphicMenu",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "LoadFromINIGraphicMenu",
+  "rule_violations": 13,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4f2880": {
   "attempts": 1,
@@ -29058,11 +29083,16 @@
   "this_as_id": false
  },
  "0x4fa350": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Sidebar::StartSidebarProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Sidebar::StartSidebarProduction",
+  "rule_violations": 14,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4fae50": {
   "attempts": 10,
@@ -38936,11 +38966,15 @@
   "status": "NG"
  },
  "0x55bc00": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "CompressLCWBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CompressLCWBuffer",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x55c0e0": {
   "attempts": 2,
@@ -39089,11 +39123,16 @@
   "this_as_id": false
  },
  "0x55f1e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "DrawHUD",
+  "name": "ObjectClass::DrawHUD",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DrawHUD",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x55f690": {
   "attempts": 1,
@@ -39852,11 +39891,15 @@
   "this_as_id": false
  },
  "0x57acf0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "GenerateMapClassCliffTransitions",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "GenerateMapClassCliffTransitions",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x57c870": {
   "attempts": 2,
@@ -41271,11 +41314,16 @@
   "status": "NG"
  },
  "0x5a2f50": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "SmoothTerrainMap",
+  "name": "ObjectClass::SmoothTerrainMap",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SmoothTerrainMap",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5a33f0": {
   "attempts": 2,
@@ -41334,11 +41382,15 @@
   "this_as_id": false
  },
  "0x5a89d0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "ScheduleMapSeedBuildings",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ScheduleMapSeedBuildings",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5a9920": {
   "attempts": 1,
@@ -52568,11 +52620,16 @@
   "this_as_id": false
  },
  "0x62b5e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "ParticleClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ParticleClass::Construct",
+  "rule_violations": 74,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x62bb20": {
   "attempts": 2,
@@ -54821,11 +54878,16 @@
   "this_as_id": false
  },
  "0x63fea0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "PowerClass::updatePowerBarAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "PowerClass::updatePowerBarAnimation",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6403a0": {
   "attempts": 10,
@@ -56240,11 +56302,16 @@
   "this_as_id": false
  },
  "0x655c50": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FogOfWar::RevealArea",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "FogOfWar::RevealArea",
+  "rule_violations": 23,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x656580": {
   "attempts": 1,
@@ -71102,11 +71169,15 @@
   "this_as_id": true
  },
  "0x7049c0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "DrawTacticalMapLine",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DrawTacticalMapLine",
+  "rule_violations": 9,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x705860": {
   "attempts": 1,
@@ -79017,11 +79088,16 @@
   "this_as_id": false
  },
  "0x750440": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "LoadVocFromINI",
+  "name": "ObjectClass::LoadVocFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "LoadVocFromINI",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7510d0": {
   "attempts": 2,
@@ -80875,11 +80951,16 @@
   "this_as_id": false
  },
  "0x7609e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::FaceDraw",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Voxel::FaceDraw",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x761030": {
   "attempts": 1,
@@ -84376,7 +84457,7 @@
   "this_as_id": false
  },
  "0x7775c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "MainWindowProc",
@@ -85188,7 +85269,7 @@
   "this_as_id": false
  },
  "0x782bb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "FindBuddyList",
@@ -85440,11 +85521,15 @@
   "status": "PENDING"
  },
  "0x79dfe0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "GameSetupDlgProcWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "GameSetupDlgProcWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x79f0a0": {
   "attempts": 2,
