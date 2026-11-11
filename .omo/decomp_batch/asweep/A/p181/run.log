@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p181\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ef3e0 _VectorClass_PAVAbstractTypeClass::LoadTypeData -> _VectorClass_PAVAbstractTypeClass
+[conv] 0x4f2880 DynamicVector::vt_placeholder_06 -> DynamicVector
+[conv] 0x4f7850 ObjectClass::sub_4F7850 -> ObjectClass
+[conv] 0x501aa0 sub_501AA0 -> _addr_50
+[conv] 0x50e4d0 _DynamicVectorClass_PBVBuildingTypeClass::GetCapacity -> _DynamicVectorClass_PBVBuildingTypeClass
+[conv] 0x50e530 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::GetItemIndex -> _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50e590 _DynamicVectorClass_UAngerStruct::GetItemIndex_0 -> _DynamicVectorClass_UAngerStruct
+[conv] 0x50e600 DynamicVector::setTargetCoordinates -> DynamicVector
+[conv] 0x50e670 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x50e6d0 _DynamicVectorClass_PBVTeamTypeClass::GetItemIndex -> _DynamicVectorClass_PBVTeamTypeClass
+[conv] 0x50e7a0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::GetItemIndex -> _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x50f050 _VectorClass_UAngerStruct::GetCapacity -> _VectorClass_UAngerStruct
+[conv] 0x50f380 _VectorClass_UScoutStruct::GetCapacity -> _VectorClass_UScoutStruct
+[conv] 0x50f640 _VectorClass_PAUBuildChoiceClass_HouseClass::GetCapacity -> _VectorClass_PAUBuildChoiceClass_HouseClass
+[conv] 0x50f8a0 _VectorClass_PBVTeamTypeClass::GetItemIndex_0 -> _VectorClass_PBVTeamTypeClass
+[conv] 0x50fe00 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Get -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x5128d0 _DynamicVectorClass_PBVInfantryTypeClass::GetIndex -> _DynamicVectorClass_PBVInfantryTypeClass
+[conv] 0x512930 _DynamicVectorClass_PBVUnitTypeClass::Write -> _DynamicVectorClass_PBVUnitTypeClass
+[conv] 0x5129c0 _DynamicVectorClass_PBVAircraftTypeClass::Write -> _DynamicVectorClass_PBVAircraftTypeClass
+[conv] 0x513170 _VectorClass_PBVUnitTypeClass::Remove -> _VectorClass_PBVUnitTypeClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVAbstractTypeClass rc=0
+[era] DynamicVector            rc=0
+[era] ObjectClass              rc=0
+[era] _addr_50                 rc=2
+[era] _DynamicVectorClass_PBVBuildingTypeClass rc=0
+[era] _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass rc=0
+[era] _DynamicVectorClass_UAngerStruct rc=0
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] _DynamicVectorClass_PBVTeamTypeClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] _VectorClass_UAngerStruct rc=0
+[era] _VectorClass_UScoutStruct rc=0
+[era] _VectorClass_PAUBuildChoiceClass_HouseClass rc=0
+[era] _VectorClass_PBVTeamTypeClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] _DynamicVectorClass_PBVInfantryTypeClass rc=0
+[era] _DynamicVectorClass_PBVUnitTypeClass rc=0
+[era] _DynamicVectorClass_PBVAircraftTypeClass rc=0
+[era] _VectorClass_PBVUnitTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4ef3e0   MISMATCH         _VectorClass_PAVAbstractTypeClass::LoadTypeData
+[diff] 0x4f2880   MISMATCH         DynamicVector::vt_placeholder_06
+[diff] 0x50e600   MISMATCH         DynamicVector::setTargetCoordinates
+[diff] 0x4f7850   MISMATCH         ObjectClass::sub_4F7850
+[diff] 0x50e4d0   MISMATCH         _DynamicVectorClass_PBVBuildingTypeClass::GetCapacity
+[diff] 0x50e530   MISMATCH         _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::GetItemIndex
+[diff] 0x50e590   MISMATCH         _DynamicVectorClass_UAngerStruct::GetItemIndex_0
+[diff] 0x50e670   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1
+[diff] 0x50e6d0   MISMATCH         _DynamicVectorClass_PBVTeamTypeClass::GetItemIndex
+[diff] 0x50e7a0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::GetItemIndex
+[diff] 0x50f050   MISMATCH         _VectorClass_UAngerStruct::GetCapacity
+[diff] 0x50f380   MISMATCH         _VectorClass_UScoutStruct::GetCapacity
+[diff] 0x50f640   MISMATCH         _VectorClass_PAUBuildChoiceClass_HouseClass::GetCapacity
+[diff] 0x50f8a0   MISMATCH         _VectorClass_PBVTeamTypeClass::GetItemIndex_0
+[diff] 0x50fe00   MISMATCH         _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Get
+[diff] 0x5128d0   MISMATCH         _DynamicVectorClass_PBVInfantryTypeClass::GetIndex
+[diff] 0x512930   MISMATCH         _DynamicVectorClass_PBVUnitTypeClass::Write
+[diff] 0x5129c0   MISMATCH         _DynamicVectorClass_PBVAircraftTypeClass::Write
+[diff] 0x513170   MISMATCH         _VectorClass_PBVUnitTypeClass::Remove
+[ledger] 0x4ef3e0 _VectorClass_PAVAbstractTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4f2880 DynamicVector::vt_placeholder_06 -> NG (attempt 1)
+[ledger] 0x4f7850 ObjectClass::sub_4F7850 -> NG (attempt 1)
+[ledger] 0x501aa0 sub_501AA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50e4d0 _DynamicVectorClass_PBVBuildingTypeClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x50e530 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x50e590 _DynamicVectorClass_UAngerStruct::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x50e600 DynamicVector::setTargetCoordinates -> NG (attempt 1)
+[ledger] 0x50e670 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1 -> NG (attempt 1)
+[ledger] 0x50e6d0 _DynamicVectorClass_PBVTeamTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x50e7a0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x50f050 _VectorClass_UAngerStruct::GetCapacity -> NG (attempt 1)
+[ledger] 0x50f380 _VectorClass_UScoutStruct::GetCapacity -> NG (attempt 1)
+[ledger] 0x50f640 _VectorClass_PAUBuildChoiceClass_HouseClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x50f8a0 _VectorClass_PBVTeamTypeClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x50fe00 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Get -> NG (attempt 1)
+[ledger] 0x5128d0 _DynamicVectorClass_PBVInfantryTypeClass::GetIndex -> NG (attempt 1)
+[ledger] 0x512930 _DynamicVectorClass_PBVUnitTypeClass::Write -> NG (attempt 1)
+[ledger] 0x5129c0 _DynamicVectorClass_PBVAircraftTypeClass::Write -> NG (attempt 1)
+[ledger] 0x513170 _VectorClass_PBVUnitTypeClass::Remove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "branch_order": 16,
+  "ret_norm": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p181\batch_report.json
