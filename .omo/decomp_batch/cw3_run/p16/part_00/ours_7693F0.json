@@ -1,0 +1,27 @@
+{
+ "symbol": "?ToggleTeamMode@WDTGame@@QAEDPAHD@Z",
+ "sym_key": "WDTGame::ToggleTeamMode",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "8b442408568bf124008b4c240c578bd181e2ff0000000bc233d28a56680fbef93bd774338a4674884e6884c0740984c974058b4670eb038b466c8b4e6450e8000000008b4c240c8d465450e8000000008bcee8000000005f5ec20800",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Reset@MSAnim@@QAEHH@Z",
+   "sym_key": "MSAnim::Reset"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?ReleaseAll@Team@@QAEHPAX@Z",
+   "sym_key": "Team::ReleaseAll"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?Flip2@DSurface@@QAEHXZ",
+   "sym_key": "DSurface::Flip2"
+  }
+ ]
+}

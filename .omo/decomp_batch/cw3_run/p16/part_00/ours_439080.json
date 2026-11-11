@@ -1,0 +1,8 @@
+{
+ "symbol": "?checkRange@TechnoClass@@QAEDH@Z",
+ "sym_key": "TechnoClass::checkRange",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "518b51208b4128563bc28d71187c258a460d84c0750485d275358b461485c0894424047e268b0e03c26a005056ff510884c0741b8b46108b4e04894424048d50018956108b54240c8914818a4424045e59c20400",
+ "relocs": []
+}

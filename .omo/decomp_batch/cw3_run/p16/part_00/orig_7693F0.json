@@ -1,0 +1,11 @@
+{
+ "addr": "0x7693F0",
+ "name": "WDTGame::ToggleTeamMode",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7693F0",
+ "bytes_hex": "8a442408568bf138466874358a4e7488466884c9740984c074058b4670eb038b466c8b4e6450e88532e6ff83c654568b74240c8bcee89692e6ff8bcee81f8ae6ff5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

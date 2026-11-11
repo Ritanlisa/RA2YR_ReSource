@@ -1,0 +1,11 @@
+{
+ "addr": "0x439080",
+ "name": "TechnoClass::checkRange",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x439080",
+ "bytes_hex": "8b4128568d71188b49203bc17c228a460d84c0750485c9752a8b461485c07e238b1603c16a00508bceff520884c074138b46108b56048d4801894e108b4c2408890c825ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
