@@ -1,0 +1,33 @@
+{
+ "symbol": "?__get_fname@ObjectClass@@QAEPAPAXH@Z",
+ "sym_key": "ObjectClass::__get_fname",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "8b542404568b350000000033c93bf2b800000000740f83c008413d000000007d0f391075f18b04cd000000005ec2040033c05ec20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D628@@3EA",
+   "sym_key": "DataGlobal_87D628"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D628@@3EA",
+   "sym_key": "DataGlobal_87D628"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D700@@3IA",
+   "sym_key": "DataGlobal_87D700"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D62C@@3IA",
+   "sym_key": "DataGlobal_87D62C"
+  }
+ ]
+}

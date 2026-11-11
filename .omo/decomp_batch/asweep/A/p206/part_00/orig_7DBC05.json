@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DBC05",
+ "name": "__get_fname",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DBC05",
+ "bytes_hex": "33c9b828d687008b103b542404740e83c008413d00d787007ced33c0c38b04cd2cd68700c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

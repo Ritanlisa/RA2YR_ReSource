@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p206\part_00
+=== convert (20 addrs) ===
+[conv] 0x769490 ObjectClass::sub_769490 -> ObjectClass
+[conv] 0x7ca489 _wcscpy -> _addr_7C
+[conv] 0x7cf0f1 _isintTOS -> _addr_7C
+[conv] 0x7d8f16 __chgsign -> _addr_7D
+[conv] 0x7dbc05 ObjectClass::__get_fname -> ObjectClass
+[conv] 0x4dc760 LocomotionClass::GetSpeedMultiplier -> LocomotionClass
+[conv] 0x40b930 _DynamicVectorClass_PAVBombClass::FindItem -> _DynamicVectorClass_PAVBombClass
+[conv] 0x40bb90 _DynamicVectorClass_PAVTechnoClass::Draw -> _DynamicVectorClass_PAVTechnoClass
+[conv] 0x40c4c0 _DynamicVectorClass_PAVLightConvertClass::FindItemIndex -> _DynamicVectorClass_PAVLightConvertClass
+[conv] 0x40cab0 _DynamicVectorClass_PAVIsometricTileClass::FindItemIndex -> _DynamicVectorClass_PAVIsometricTileClass
+[conv] 0x40cf00 DynamicVector::FindValue -> DynamicVector
+[conv] 0x40d7d0 _DynamicVectorClass_PAVMixFileClass::getCursorFrame -> _DynamicVectorClass_PAVMixFileClass
+[conv] 0x40ea80 _DynamicVectorClass_PAVScriptClass::FindItemIndex -> _DynamicVectorClass_PAVScriptClass
+[conv] 0x40f150 _DynamicVectorClass_PAVVoxelAnimClass::FindItemIndex -> _DynamicVectorClass_PAVVoxelAnimClass
+[conv] 0x40f870 _DynamicVectorClass_PAVWarheadTypeClass::FindItemIndex -> _DynamicVectorClass_PAVWarheadTypeClass
+[conv] 0x40fe40 _DynamicVectorClass_PAVWeaponTypeClass::FindItemIndex -> _DynamicVectorClass_PAVWeaponTypeClass
+[conv] 0x41e070 _DynamicVectorClass_PAVAirstrikeClass::FindItemIndex -> _DynamicVectorClass_PAVAirstrikeClass
+[conv] 0x421a90 VectorClass_ptr_AlphaShapeClass::FindItemIndex -> VectorClass_ptr_AlphaShapeClass
+[conv] 0x45a3b0 _DynamicVectorClass_PBVParticleSystemTypeClass::Remove -> _DynamicVectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a610 DynamicVector::FindInPointerArray -> DynamicVector
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=0
+[era] LocomotionClass          rc=0
+[era] _DynamicVectorClass_PAVBombClass rc=2
+[era] _DynamicVectorClass_PAVTechnoClass rc=2
+[era] _DynamicVectorClass_PAVLightConvertClass rc=2
+[era] _DynamicVectorClass_PAVIsometricTileClass rc=2
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PAVMixFileClass rc=2
+[era] _DynamicVectorClass_PAVScriptClass rc=2
+[era] _DynamicVectorClass_PAVVoxelAnimClass rc=2
+[era] _DynamicVectorClass_PAVWarheadTypeClass rc=2
+[era] _DynamicVectorClass_PAVWeaponTypeClass rc=2
+[era] _DynamicVectorClass_PAVAirstrikeClass rc=2
+[era] VectorClass_ptr_AlphaShapeClass rc=0
+[era] _DynamicVectorClass_PBVParticleSystemTypeClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x7dbc05   MISMATCH         ObjectClass::__get_fname
+[diff] 0x7ca489   MISMATCH         _wcscpy
+[diff] 0x7d8f16   MISMATCH         __chgsign
+[diff] 0x4dc760   MISMATCH         LocomotionClass::GetSpeedMultiplier
+[diff] 0x40cf00   MISMATCH         DynamicVector::FindValue
+[diff] 0x45a610   MISMATCH         DynamicVector::FindInPointerArray
+[diff] 0x421a90   MISMATCH         VectorClass_ptr_AlphaShapeClass::FindItemIndex
+[ledger] 0x769490 ObjectClass::sub_769490 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ca489 _wcscpy -> NG (attempt 1)
+[ledger] 0x7cf0f1 _isintTOS -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d8f16 __chgsign -> NG (attempt 1)
+[ledger] 0x7dbc05 ObjectClass::__get_fname -> NG (attempt 1)
+[ledger] 0x4dc760 LocomotionClass::GetSpeedMultiplier -> NG (attempt 1)
+[ledger] 0x40b930 _DynamicVectorClass_PAVBombClass::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40bb90 _DynamicVectorClass_PAVTechnoClass::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40c4c0 _DynamicVectorClass_PAVLightConvertClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40cab0 _DynamicVectorClass_PAVIsometricTileClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40cf00 DynamicVector::FindValue -> NG (attempt 1)
+[ledger] 0x40d7d0 _DynamicVectorClass_PAVMixFileClass::getCursorFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40ea80 _DynamicVectorClass_PAVScriptClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40f150 _DynamicVectorClass_PAVVoxelAnimClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40f870 _DynamicVectorClass_PAVWarheadTypeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40fe40 _DynamicVectorClass_PAVWeaponTypeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41e070 _DynamicVectorClass_PAVAirstrikeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x421a90 VectorClass_ptr_AlphaShapeClass::FindItemIndex -> NG (attempt 1)
+[ledger] 0x45a3b0 _DynamicVectorClass_PBVParticleSystemTypeClass::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a610 DynamicVector::FindInPointerArray -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p206\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetSpeedMultiplier@LocomotionClass@@QAENXZ",
+ "sym_key": "LocomotionClass::GetSpeedMultiplier",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "8b81d405000083ec0885c074178b4024c74424040000000089442400df6c240083c408c3dd050000000083c408c3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

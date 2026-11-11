@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D8F16",
+ "name": "__chgsign",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D8F16",
+ "bytes_hex": "558bec51518b45088945f88b450cf7d08bc8334d0c81e1ffffff7f33c8894dfcdd45f8c9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
