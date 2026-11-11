@@ -1,0 +1,8 @@
+{
+ "symbol": "?ReadPointerFromECX_2@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::ReadPointerFromECX_2",
+ "size": 3,
+ "link_base": 0,
+ "bytes_hex": "8b01c3",
+ "relocs": []
+}

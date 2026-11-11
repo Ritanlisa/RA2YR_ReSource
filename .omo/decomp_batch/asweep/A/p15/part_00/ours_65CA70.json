@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturnFalse@RawFileClass@@QAEXHH@Z",
+ "sym_key": "RawFileClass::StubReturnFalse",
+ "size": 3,
+ "link_base": 0,
+ "bytes_hex": "c20800",
+ "relocs": []
+}

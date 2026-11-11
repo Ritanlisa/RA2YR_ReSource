@@ -1,0 +1,11 @@
+{
+ "addr": "0x633A80",
+ "name": "ReadPointerFromECX_2",
+ "size": 3,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x633A80",
+ "bytes_hex": "8b01c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

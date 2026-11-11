@@ -1,0 +1,11 @@
+{
+ "addr": "0x65C5F0",
+ "name": "FileClass::StubReturnFalse",
+ "size": 3,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65C5F0",
+ "bytes_hex": "33c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

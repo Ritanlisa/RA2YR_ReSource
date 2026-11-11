@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f6bc0 ObjectClass::COMStub_Return0_33 -> ObjectClass
+[conv] 0x5f75b0 ObjectTypeClass::GetData -> ObjectTypeClass
+[conv] 0x5f7620 ObjectTypeClass::SetType -> ObjectTypeClass
+[conv] 0x5f7630 ObjectTypeClass::Validate -> ObjectTypeClass
+[conv] 0x5fdf60 OverlayClass::nullsub_212 -> OverlayClass
+[conv] 0x600660 ObjectClass::ReadPointerFromECX -> ObjectClass
+[conv] 0x633a80 ObjectClass::ReadPointerFromECX_2 -> ObjectClass
+[conv] 0x636110 ObjectClass::ReadPointerFromECX2 -> ObjectClass
+[conv] 0x653750 nullsub_220 -> _addr_65
+[conv] 0x65c570 RAMFileClass::nullsub_0_7 -> RAMFileClass
+[conv] 0x65c590 RAMFileClass::nullsub_0_9 -> RAMFileClass
+[conv] 0x65c5f0 FileClass::StubReturnFalse -> FileClass
+[conv] 0x65ca70 RawFileClass::StubReturnFalse -> RawFileClass
+[conv] 0x65d8d0 ReturnFalse3 -> _addr_65
+[conv] 0x6633c0 RocketLocomotionClass::nullsub_224 -> RocketLocomotionClass
+[conv] 0x69b8b0 nullsub_229 -> _addr_69
+[conv] 0x6a4ff0 nullsub_36 -> _addr_6A
+[conv] 0x6b4c70 nullsub_232 -> _addr_6B
+[conv] 0x6b4f90 SmudgeClass::nullsub_233 -> SmudgeClass
+[conv] 0x6c0025 nullsub_114 -> _addr_6C
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] ObjectTypeClass          rc=0
+[era] OverlayClass             rc=0
+[era] _addr_65                 rc=0
+[era] RAMFileClass             rc=0
+[era] FileClass                rc=0
+[era] RawFileClass             rc=0
+[era] RocketLocomotionClass    rc=0
+[era] _addr_69                 rc=0
+[era] _addr_6A                 rc=0
+[era] _addr_6B                 rc=0
+[era] SmudgeClass              rc=0
+[era] _addr_6C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f6bc0   MATCH            ObjectClass::COMStub_Return0_33
+[diff] 0x600660   MATCH            ObjectClass::ReadPointerFromECX
+[diff] 0x633a80   MATCH            ObjectClass::ReadPointerFromECX_2
+[diff] 0x636110   MATCH            ObjectClass::ReadPointerFromECX2
+[diff] 0x5f75b0   MATCH            ObjectTypeClass::GetData
+[diff] 0x5f7620   MATCH            ObjectTypeClass::SetType
+[diff] 0x5f7630   MATCH            ObjectTypeClass::Validate
+[diff] 0x5fdf60   MISMATCH         OverlayClass::nullsub_212
+[diff] 0x653750   MISMATCH         nullsub_220
+[diff] 0x65d8d0   MATCH            ReturnFalse3
+[diff] 0x65c570   MATCH            RAMFileClass::nullsub_0_7
+[diff] 0x65c590   MISMATCH         RAMFileClass::nullsub_0_9
+[diff] 0x65c5f0   MATCH            FileClass::StubReturnFalse
+[diff] 0x65ca70   MISMATCH         RawFileClass::StubReturnFalse
+[diff] 0x6633c0   MISMATCH         RocketLocomotionClass::nullsub_224
+[diff] 0x69b8b0   MISMATCH         nullsub_229
+[diff] 0x6a4ff0   MISMATCH         nullsub_36
+[diff] 0x6b4c70   MISMATCH         nullsub_232
+[diff] 0x6b4f90   MISMATCH         SmudgeClass::nullsub_233
+[diff] 0x6c0025   MISMATCH         nullsub_114
+[ledger] 0x5f6bc0 ObjectClass::COMStub_Return0_33 -> OK (attempt 1)
+[ledger] 0x5f75b0 ObjectTypeClass::GetData -> OK (attempt 1)
+[ledger] 0x5f7620 ObjectTypeClass::SetType -> OK (attempt 1)
+[ledger] 0x5f7630 ObjectTypeClass::Validate -> OK (attempt 1)
+[ledger] 0x5fdf60 OverlayClass::nullsub_212 -> NG (attempt 1)
+[ledger] 0x600660 ObjectClass::ReadPointerFromECX -> OK (attempt 1)
+[ledger] 0x633a80 ObjectClass::ReadPointerFromECX_2 -> OK (attempt 1)
+[ledger] 0x636110 ObjectClass::ReadPointerFromECX2 -> OK (attempt 1)
+[ledger] 0x653750 nullsub_220 -> NG (attempt 1)
+[ledger] 0x65c570 RAMFileClass::nullsub_0_7 -> OK (attempt 1)
+[ledger] 0x65c590 RAMFileClass::nullsub_0_9 -> NG (attempt 1)
+[ledger] 0x65c5f0 FileClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x65ca70 RawFileClass::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x65d8d0 ReturnFalse3 -> OK (attempt 1)
+[ledger] 0x6633c0 RocketLocomotionClass::nullsub_224 -> NG (attempt 1)
+[ledger] 0x69b8b0 nullsub_229 -> NG (attempt 1)
+[ledger] 0x6a4ff0 nullsub_36 -> NG (attempt 1)
+[ledger] 0x6b4c70 nullsub_232 -> NG (attempt 1)
+[ledger] 0x6b4f90 SmudgeClass::nullsub_233 -> NG (attempt 1)
+[ledger] 0x6c0025 nullsub_114 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "cc_mismatch": 10
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p15\batch_report.json
