@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x40e610 sub_40E610 -> _addr_40
+[conv] 0x40e6c0 sub_40E6C0 -> _addr_40
+[conv] 0x40ee20 sub_40EE20 -> _addr_40
+[conv] 0x40f270 sub_40F270 -> _addr_40
+[conv] 0x40f2f0 sub_40F2F0 -> _addr_40
+[conv] 0x40f410 sub_40F410 -> _addr_40
+[conv] 0x40f470 sub_40F470 -> _addr_40
+[conv] 0x40f9f0 sub_40F9F0 -> _addr_40
+[conv] 0x40ff30 nullsub_64 -> _addr_40
+[conv] 0x410610 sub_410610 -> _addr_41
+[conv] 0x413590 sub_413590 -> _addr_41
+[conv] 0x413af0 sub_413AF0 -> _addr_41
+[conv] 0x413b70 sub_413B70 -> _addr_41
+[conv] 0x413bd0 sub_413BD0 -> _addr_41
+[conv] 0x41c840 sub_41C840 -> _addr_41
+[conv] 0x41c850 sub_41C850 -> _addr_41
+[conv] 0x41cbd0 nullsub_85 -> _addr_41
+[conv] 0x41e210 sub_41E210 -> _addr_41
+[conv] 0x41e230 sub_41E230 -> _addr_41
+[conv] 0x4208c0 sub_4208C0 -> _addr_42
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=2
+[era] _addr_41                 rc=2
+[era] _addr_42                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x40e610   MISMATCH         sub_40E610
+[diff] 0x40e6c0   MISMATCH         sub_40E6C0
+[diff] 0x40ee20   MATCH            sub_40EE20
+[diff] 0x40f2f0   MISMATCH         sub_40F2F0
+[diff] 0x40f470   MISMATCH         sub_40F470
+[diff] 0x40f9f0   MISMATCH         sub_40F9F0
+[diff] 0x40ff30   MATCH            nullsub_64
+[diff] 0x413590   MATCH            sub_413590
+[diff] 0x413af0   MISMATCH         sub_413AF0
+[diff] 0x413b70   MISMATCH         sub_413B70
+[diff] 0x413bd0   MISMATCH         sub_413BD0
+[diff] 0x41c840   MATCH            sub_41C840
+[diff] 0x41c850   MATCH            sub_41C850
+[diff] 0x41cbd0   MATCH            nullsub_85
+[diff] 0x41e210   MISMATCH         sub_41E210
+[diff] 0x4208c0   MISMATCH         sub_4208C0
+[ledger] 0x40e610 sub_40E610 -> NG (attempt 2)
+[ledger] 0x40e6c0 sub_40E6C0 -> NG (attempt 2)
+[ledger] 0x40ee20 sub_40EE20 -> OK (attempt 2)
+[ledger] 0x40f270 sub_40F270 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40f2f0 sub_40F2F0 -> NG (attempt 2)
+[ledger] 0x40f410 sub_40F410 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40f470 sub_40F470 -> NG (attempt 2)
+[ledger] 0x40f9f0 sub_40F9F0 -> NG (attempt 2)
+[ledger] 0x40ff30 nullsub_64 -> OK (attempt 1)
+[ledger] 0x410610 sub_410610 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x413590 sub_413590 -> OK (attempt 2)
+[ledger] 0x413af0 sub_413AF0 -> NG (attempt 2)
+[ledger] 0x413b70 sub_413B70 -> NG (attempt 2)
+[ledger] 0x413bd0 sub_413BD0 -> NG (attempt 2)
+[ledger] 0x41c840 sub_41C840 -> OK (attempt 2)
+[ledger] 0x41c850 sub_41C850 -> OK (attempt 2)
+[ledger] 0x41cbd0 nullsub_85 -> OK (attempt 1)
+[ledger] 0x41e210 sub_41E210 -> NG (attempt 2)
+[ledger] 0x41e230 sub_41E230 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4208c0 sub_4208C0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "MATCH": 6,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 37.5,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p01\batch_report.json
