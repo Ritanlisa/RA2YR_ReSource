@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x5239d0",
+  "name": "InfantryTypeClass::DTOR",
+  "cls": null,
+  "size": 311,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2653",
+  "first_msg": "'InfantryTypeClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x7daf28",
+  "name": "___getlocaleinfo",
+  "cls": null,
+  "size": 312,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LCTYPE'"
+ },
+ {
+  "addr": "0x5cc550",
+  "name": "ScenarioClass::DrawPlacementPreview",
+  "cls": null,
+  "size": 313,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'v22' : undeclared identifier"
+ },
+ {
+  "addr": "0x427940",
+  "name": "LoadBuildingTypeClassTheatreSHP",
+  "cls": null,
+  "size": 315,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'_makepath' : none of the 2 overloads can convert parameter 5 from type 'int (__cdecl *)(const void *,const"
+ },
+ {
+  "addr": "0x5cc110",
+  "name": "ScenarioClass::DrawConstructionFrame",
+  "cls": null,
+  "size": 316,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x71c930",
+  "name": "TerrainClass::ApplyCellModifications",
+  "cls": null,
+  "size": 317,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.scenario' must have class/struct/union type"
+ },
+ {
+  "addr": "0x779f10",
+  "name": "SavePersonaConfigWOL",
+  "cls": null,
+  "size": 317,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Constructor' : cannot convert parameter 1 from 'unsigned char' to 'void *'"
+ },
+ {
+  "addr": "0x779dd0",
+  "name": "LoadConfigWOL",
+  "cls": null,
+  "size": 318,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Constructor' : cannot convert parameter 1 from 'unsigned char' to 'void *'"
+ },
+ {
+  "addr": "0x5f4730",
+  "name": "ObjectClass::GetPlacementScreenRect",
+  "cls": null,
+  "size": 319,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.field_4' must have class/struct/union type"
+ },
+ {
+  "addr": "0x76e2f0",
+  "name": "Team_Start_76E2F0",
+  "cls": null,
+  "size": 319,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Constructor' : cannot convert parameter 1 from 'unsigned char' to 'void *'"
+ },
+ {
+  "addr": "0x459470",
+  "name": "BuildingClass::UpdateDamageAnim",
+  "cls": null,
+  "size": 321,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'bunkerLinkedUnit' : is not a member of 'BuildingClass'"
+ },
+ {
+  "addr": "0x4a8bf0",
+  "name": "Mouse::SetBounds",
+  "cls": null,
+  "size": 321,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'atexit' : none of the 2 overloads can convert parameter 1 from type 'int (__cdecl *)(const void *,const voi"
+ },
+ {
+  "addr": "0x4a8d50",
+  "name": "MIXClass::CopyHeader",
+  "cls": null,
+  "size": 321,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.bombVisible' must have class/struct/union type"
+ },
+ {
+  "addr": "0x722af0",
+  "name": "BuildingClass::AddOccupancy",
+  "cls": null,
+  "size": 323,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'bunkerLinkedUnit' : is not a member of 'BuildingClass'"
+ },
+ {
+  "addr": "0x634cc0",
+  "name": "ScriptAction::FindBuildingMatch",
+  "cls": null,
+  "size": 326,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x52d640",
+  "name": "CampaignMenu::DlgProc",
+  "cls": null,
+  "size": 328,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LCTYPE'"
+ },
+ {
+  "addr": "0x5fc380",
+  "name": "Object::SpawnAtCell",
+  "cls": null,
+  "size": 329,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2653",
+  "first_msg": "'OverlayClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x722d00",
+  "name": "BuildingClass::ClearOccupancyData",
+  "cls": null,
+  "size": 329,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x545000",
+  "name": "TheatreClass::InitView",
+  "cls": null,
+  "size": 330,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Constructor' : cannot convert parameter 3 from 'void *' to 'int'"
+ },
+ {
+  "addr": "0x524d70",
+  "name": "InfantryTypeClass::ddtor",
+  "cls": null,
+  "size": 332,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ }
+]

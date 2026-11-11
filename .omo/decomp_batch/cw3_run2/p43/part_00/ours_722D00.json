@@ -1,0 +1,99 @@
+{
+ "symbol": "?ClearOccupancyData@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::ClearOccupancyData",
+ "size": 346,
+ "link_base": 0,
+ "bytes_hex": "51a1b80c00005333db553bc38be9895c24080f8e3e0100005657a1d80700008b4c24108b3c888b87100100003bc3743b33c9bafcffffff8b700883c20441891c168b303bce76f089188bb7100100003bf374128b560852e80000000056e80000000083c408899f100100008b87180100003bc3740f50e80000000083c404899f180100008b87140100003bc3740f50e80000000083c404899f140100008bcd899f0c010000e800000000c1e00350e80000000083c4043bc3750233c08bcd898718010000e80000000050e8000000006a14898714010000e8000000008bf083c4083bf3744a8bcde8000000008d0c8504000000895e0c51c74610ffffffff891e894604e8000000008b4e0489460883c40433c03bcb7c1ab9fcffffff8b560883c10440891c0a8b56043bc276efeb0233f68bcf89b710010000e8000000008b4c2410a1b80c0000413bc8894c24100f8cc6feffff5f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 314,
+   "type": "REL32",
+   "sym": "?RebuildOccupancy2@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::RebuildOccupancy2"
+  },
+  {
+   "off": 323,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}
