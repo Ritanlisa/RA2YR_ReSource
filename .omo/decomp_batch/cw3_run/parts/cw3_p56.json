@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x706640",
+  "name": "TechnoClass::UpdateState",
+  "cls": null,
+  "size": 1399,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x73cec0",
+  "name": "TechnoClass::Draw",
+  "cls": null,
+  "size": 1417,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x416d50",
+  "name": "Carryall::MissionStateMachine",
+  "cls": null,
+  "size": 1428,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned char *'"
+ },
+ {
+  "addr": "0x4a7340",
+  "name": "DiskLaserClass::Update",
+  "cls": null,
+  "size": 1466,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2660",
+  "first_msg": "'GetInvalidCoord' : function does not take 2 parameters"
+ },
+ {
+  "addr": "0x57cf60",
+  "name": "CellClass::ApplyTileModification3",
+  "cls": null,
+  "size": 1477,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2079",
+  "first_msg": "'rcDst' uses undefined struct 'tagRECT'"
+ },
+ {
+  "addr": "0x54d0f0",
+  "name": "JumpjetLocomotion::UpdateFacing",
+  "cls": null,
+  "size": 1494,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x5eb060",
+  "name": "Lobby::UpdatePlayerLabels",
+  "cls": null,
+  "size": 1523,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x685dc0",
+  "name": "Scenario::EndGame",
+  "cls": null,
+  "size": 1557,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'RunNetworkGameLoop' : cannot convert parameter 1 from 'class ObjectClass *' to 'int'"
+ },
+ {
+  "addr": "0x693b70",
+  "name": "RequestNetworkFile",
+  "cls": null,
+  "size": 1584,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x602490",
+  "name": "IsValidActionDialog",
+  "cls": null,
+  "size": 1602,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x590970",
+  "name": "RandomMap::CheckCellPlacement",
+  "cls": null,
+  "size": 1625,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'short *'"
+ },
+ {
+  "addr": "0x738d30",
+  "name": "UnitClass::DeployToBuilding",
+  "cls": null,
+  "size": 1652,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x58c800",
+  "name": "RandomMap::GenerateTerrain",
+  "cls": null,
+  "size": 1678,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'short *'"
+ },
+ {
+  "addr": "0x591d80",
+  "name": "MapSeed::PlaceCityBuildings",
+  "cls": null,
+  "size": 1724,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'MapSeed_field_0x1C' : is not a member of 'MapSeed'"
+ },
+ {
+  "addr": "0x7c2590",
+  "name": "RenderAudioVideoFrame",
+  "cls": null,
+  "size": 1735,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x755db0",
+  "name": "Voxel::SortDepth",
+  "cls": null,
+  "size": 1762,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'COERCE_FLOAT' : cannot convert parameter 1 from 'void *' to 'int'"
+ },
+ {
+  "addr": "0x762af0",
+  "name": "Voxel::TransformMatrix",
+  "cls": null,
+  "size": 1786,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'COERCE_FLOAT' : cannot convert parameter 1 from 'void *' to 'int'"
+ },
+ {
+  "addr": "0x6970a0",
+  "name": "SessionClass::SessionClass",
+  "cls": null,
+  "size": 1814,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2086",
+  "first_msg": "'LANPreferences_dword' : redefinition"
+ },
+ {
+  "addr": "0x53cbe0",
+  "name": "ExplosionClass::ProcessFrame",
+  "cls": null,
+  "size": 1837,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_EBX' : undeclared identifier"
+ },
+ {
+  "addr": "0x7aa870",
+  "name": "CChatEventSink::HandleChatChannelList",
+  "cls": null,
+  "size": 1849,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.HashTable_field_0x40' must have class/struct/union type"
+ }
+]

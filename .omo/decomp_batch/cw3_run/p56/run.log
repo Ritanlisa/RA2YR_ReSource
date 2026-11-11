@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p56\part_00
+=== convert (20 addrs) ===
+[conv] 0x706640 TechnoClass::UpdateState -> TechnoClass
+[conv] 0x73cec0 TechnoClass::Draw -> TechnoClass
+[conv] 0x416d50 Carryall::MissionStateMachine -> Carryall
+[conv] 0x4a7340 DiskLaserClass::Update -> DiskLaserClass
+[conv] 0x57cf60 CellClass::ApplyTileModification3 -> CellClass
+[conv] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> JumpjetLocomotion
+[conv] 0x5eb060 Lobby::UpdatePlayerLabels -> Lobby
+[conv] 0x685dc0 Scenario::EndGame -> Scenario
+[conv] 0x693b70 RequestNetworkFile -> _addr_69
+[conv] 0x602490 IsValidActionDialog -> _addr_60
+[conv] 0x590970 RandomMap::CheckCellPlacement -> RandomMap
+[conv] 0x738d30 UnitClass::DeployToBuilding -> UnitClass
+[conv] 0x58c800 RandomMap::GenerateTerrain -> RandomMap
+[conv] 0x591d80 MapSeed::PlaceCityBuildings -> MapSeed
+[conv] 0x7c2590 RenderAudioVideoFrame -> _addr_7C
+[conv] 0x755db0 Voxel::SortDepth -> Voxel
+[conv] 0x762af0 Voxel::TransformMatrix -> Voxel
+[conv] 0x6970a0 SessionClass::SessionClass -> SessionClass
+[conv] 0x53cbe0 ExplosionClass::ProcessFrame -> ExplosionClass
+[conv] 0x7aa870 CChatEventSink::HandleChatChannelList -> CChatEventSink
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] Carryall                 rc=2
+[era] DiskLaserClass           rc=2
+[era] CellClass                rc=2
+[era] JumpjetLocomotion        rc=2
+[era] Lobby                    rc=2
+[era] Scenario                 rc=2
+[era] _addr_69                 rc=2
+[era] _addr_60                 rc=2
+[era] RandomMap                rc=2
+[era] UnitClass                rc=2
+[era] MapSeed                  rc=2
+[era] _addr_7C                 rc=2
+[era] Voxel                    rc=2
+[era] SessionClass             rc=2
+[era] ExplosionClass           rc=2
+[era] CChatEventSink           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x706640 TechnoClass::UpdateState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x73cec0 TechnoClass::Draw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x416d50 Carryall::MissionStateMachine -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a7340 DiskLaserClass::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57cf60 CellClass::ApplyTileModification3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5eb060 Lobby::UpdatePlayerLabels -> COMPILE_FAIL (attempt 2)
+[ledger] 0x685dc0 Scenario::EndGame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x693b70 RequestNetworkFile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x602490 IsValidActionDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x590970 RandomMap::CheckCellPlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x738d30 UnitClass::DeployToBuilding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58c800 RandomMap::GenerateTerrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x591d80 MapSeed::PlaceCityBuildings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c2590 RenderAudioVideoFrame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x755db0 Voxel::SortDepth -> COMPILE_FAIL (attempt 2)
+[ledger] 0x762af0 Voxel::TransformMatrix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6970a0 SessionClass::SessionClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53cbe0 ExplosionClass::ProcessFrame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7aa870 CChatEventSink::HandleChatChannelList -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p56\batch_report.json
