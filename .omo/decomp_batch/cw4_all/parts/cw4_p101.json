@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x6347a0",
+  "name": "sub_6347A0",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 13,
+  "part": "p48",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_6347A0",
+  "first_diff": {
+   "orig": "+10 ret 4",
+   "ours": "+10 ret 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x646464",
+  "name": "sub_646464",
+  "family": "STRUCTURAL",
+  "path": "eval_order",
+  "size": 13,
+  "part": "p48",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_646464",
+  "first_diff": {
+   "orig": "+0 mov dword ptr [ecx + 0xc], eax",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 18
+ },
+ {
+  "addr": "0x6ce2c0",
+  "name": "SuperClass::SetCurrentFrame",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 13,
+  "part": "p49",
+  "unit": "SuperClass",
+  "emitted": "SuperClass::SetCurrentFrame",
+  "first_diff": {
+   "orig": "+0 cmp dword ptr [ecx], -1",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x70fe40",
+  "name": "sub_70FE40",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 13,
+  "part": "p49",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_70FE40",
+  "first_diff": {
+   "orig": "+10 ret 4",
+   "ours": "+10 ret 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x724560",
+  "name": "sub_724560",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 13,
+  "part": "p50",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_724560",
+  "first_diff": {
+   "orig": "+10 ret 4",
+   "ours": "+10 ret 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x72a9c0",
+  "name": "Copy8Bytes",
+  "family": "TOKEN_MISMATCH",
+  "path": "regalloc",
+  "size": 13,
+  "part": "p50",
+  "unit": "_addr_72",
+  "emitted": "Copy8Bytes",
+  "first_diff": {
+   "orig": "+2 mov ecx, dword ptr [edx]",
+   "ours": "+2 mov ecx, dword ptr [edx + 4]"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x7342c0",
+  "name": "SelectAllOfType_Helper",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 13,
+  "part": "p50",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::SelectAllOfType_Helper",
+  "first_diff": {
+   "orig": "+2 jne 0x7342c7",
+   "ours": "+2 je 0xb"
+  },
+  "ours_size": 14
+ },
+ {
+  "addr": "0x74f3b0",
+  "name": "?::Seek",
+  "family": "STRUCTURAL",
+  "path": "eval_order",
+  "size": 13,
+  "part": "p50",
+  "unit": "_VectorClass_PAVVeinholeMonsterClass",
+  "emitted": "_VectorClass_PAVVeinholeMonsterClass::Seek",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 4]",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 11
+ },
+ {
+  "addr": "0x7cea84",
+  "name": "_get_int_arg",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 13,
+  "part": "p51",
+  "unit": "_addr_7C",
+  "emitted": "_get_int_arg",
+  "first_diff": {
+   "orig": "+4 add dword ptr [eax], 4",
+   "ours": "+4 mov ecx, dword ptr [eax]"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x7d2995",
+  "name": "_get_int_arg_0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 13,
+  "part": "p51",
+  "unit": "_addr_7D",
+  "emitted": "_get_int_arg_0",
+  "first_diff": {
+   "orig": "+4 add dword ptr [eax], 4",
+   "ours": "+4 mov ecx, dword ptr [eax]"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x7ddcab",
+  "name": "_get_int_arg_1",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 13,
+  "part": "p51",
+  "unit": "_addr_7D",
+  "emitted": "_get_int_arg_1",
+  "first_diff": {
+   "orig": "+4 add dword ptr [eax], 4",
+   "ours": "+4 mov ecx, dword ptr [eax]"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x50d9c0",
+  "name": "IsTechInfiltrated",
+  "family": "MEMBER_OFFSET",
+  "path": "const_fold",
+  "size": 14,
+  "part": "p51",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::IsTechInfiltrated",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x164]",
+   "ours": "+0 mov edx, dword ptr [ecx + 0x168]"
+  },
+  "ours_size": 14
+ },
+ {
+  "addr": "0x5f5930",
+  "name": "AbstractClass::IsNotNull",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 14,
+  "part": "p51",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::IsNotNull",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 14
+ },
+ {
+  "addr": "0x70efd0",
+  "name": "TechnoClass::HasPassengers",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 14,
+  "part": "p52",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::HasPassengers",
+  "first_diff": {
+   "orig": "+8 test edx, edx",
+   "ours": "+8 cmp eax, edx"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x7c6064",
+  "name": "Timer::ReadTSC",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 14,
+  "part": "p52",
+  "unit": "Timer",
+  "emitted": "Timer::ReadTSC",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 call 5"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x7ceaa1",
+  "name": "_get_short_arg",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 14,
+  "part": "p52",
+  "unit": "_addr_7C",
+  "emitted": "_get_short_arg",
+  "first_diff": {
+   "orig": "+4 add dword ptr [eax], 4",
+   "ours": "+4 mov ecx, dword ptr [eax]"
+  },
+  "ours_size": 18
+ },
+ {
+  "addr": "0x7dbc5a",
+  "name": "__statfp",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 14,
+  "part": "p52",
+  "unit": "_addr_7D",
+  "emitted": "__statfp",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 movsx eax, word ptr [esp + 4]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x7ddcc8",
+  "name": "_get_short_arg_0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 14,
+  "part": "p52",
+  "unit": "_addr_7D",
+  "emitted": "_get_short_arg_0",
+  "first_diff": {
+   "orig": "+4 add dword ptr [eax], 4",
+   "ours": "+4 mov ecx, dword ptr [eax]"
+  },
+  "ours_size": 18
+ },
+ {
+  "addr": "0x407480",
+  "name": "AudioList::GetNextEntry",
+  "family": "WIDTH",
+  "path": "regalloc",
+  "size": 15,
+  "part": "p53",
+  "unit": "AudioList",
+  "emitted": "AudioList::GetNextEntry",
+  "first_diff": {
+   "orig": "+3 mov eax, ecx",
+   "ours": "+3 mov eax, dword ptr [ecx + 8]"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x407520",
+  "name": "LinkedList_flat::Next",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 15,
+  "part": "p53",
+  "unit": "LinkedList",
+  "emitted": "LinkedList::Next",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx]",
+   "ours": "+0 mov edx, dword ptr [ecx]"
+  },
+  "ours_size": 16
+ }
+]
