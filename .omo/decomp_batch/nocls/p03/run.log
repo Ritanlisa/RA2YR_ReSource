@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x466240 sub_466240 -> _addr_46
+[conv] 0x466280 sub_466280 -> _addr_46
+[conv] 0x4662e0 sub_4662E0 -> _addr_46
+[conv] 0x46bb70 sub_46BB70 -> _addr_46
+[conv] 0x46c9c0 sub_46C9C0 -> _addr_46
+[conv] 0x46ca20 sub_46CA20 -> _addr_46
+[conv] 0x46d120 sub_46D120 -> _addr_46
+[conv] 0x46da20 sub_46DA20 -> _addr_46
+[conv] 0x471710 sub_471710 -> _addr_47
+[conv] 0x473380 sub_473380 -> _addr_47
+[conv] 0x4735b0 sub_4735B0 -> _addr_47
+[conv] 0x474010 sub_474010 -> _addr_47
+[conv] 0x479730 nullsub_110 -> _addr_47
+[conv] 0x47b1c0 sub_47B1C0 -> _addr_47
+[conv] 0x47b220 sub_47B220 -> _addr_47
+[conv] 0x47b290 sub_47B290 -> _addr_47
+[conv] 0x488740 sub_488740 -> _addr_48
+[conv] 0x489140 sub_489140 -> _addr_48
+[conv] 0x48bde0 sub_48BDE0 -> _addr_48
+[conv] 0x48c6e0 sub_48C6E0 -> _addr_48
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_46                 rc=2
+[era] _addr_47                 rc=2
+[era] _addr_48                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x466280   MISMATCH         sub_466280
+[diff] 0x46bb70   MATCH            sub_46BB70
+[diff] 0x46c9c0   MISMATCH         sub_46C9C0
+[diff] 0x46ca20   MISMATCH         sub_46CA20
+[diff] 0x471710   MISMATCH         sub_471710
+[diff] 0x473380   MATCH            sub_473380
+[diff] 0x4735b0   MISMATCH         sub_4735B0
+[diff] 0x474010   MISMATCH         sub_474010
+[diff] 0x479730   MATCH            nullsub_110
+[diff] 0x47b1c0   MISMATCH         sub_47B1C0
+[diff] 0x47b290   MISMATCH         sub_47B290
+[diff] 0x488740   MATCH            sub_488740
+[diff] 0x489140   MATCH            sub_489140
+[diff] 0x48c6e0   MISMATCH         sub_48C6E0
+[ledger] 0x466240 sub_466240 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x466280 sub_466280 -> NG (attempt 2)
+[ledger] 0x4662e0 sub_4662E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46bb70 sub_46BB70 -> OK (attempt 2)
+[ledger] 0x46c9c0 sub_46C9C0 -> NG (attempt 2)
+[ledger] 0x46ca20 sub_46CA20 -> NG (attempt 2)
+[ledger] 0x46d120 sub_46D120 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46da20 sub_46DA20 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x471710 sub_471710 -> NG (attempt 2)
+[ledger] 0x473380 sub_473380 -> OK (attempt 2)
+[ledger] 0x4735b0 sub_4735B0 -> NG (attempt 2)
+[ledger] 0x474010 sub_474010 -> NG (attempt 2)
+[ledger] 0x479730 nullsub_110 -> OK (attempt 2)
+[ledger] 0x47b1c0 sub_47B1C0 -> NG (attempt 2)
+[ledger] 0x47b220 sub_47B220 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47b290 sub_47B290 -> NG (attempt 2)
+[ledger] 0x488740 sub_488740 -> OK (attempt 2)
+[ledger] 0x489140 sub_489140 -> OK (attempt 2)
+[ledger] 0x48bde0 sub_48BDE0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48c6e0 sub_48C6E0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 9,
+  "MATCH": 5
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "extern_reloc": 7,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 35.7,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p03\batch_report.json
