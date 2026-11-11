@@ -1,0 +1,11 @@
+{
+ "addr": "0x6FBFA0",
+ "name": "TechnoClass::ExecuteMoveCommand",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6FBFA0",
+ "bytes_hex": "568bf18a861b04000084c075188b8e1c020000e838f7e0ff84c07509a15035b70085c075648bcee85485efff84c074598b4e3485c97412a150eab0006a006a0050566a21e8b793feff8b8e1c020000e8fcf6e0ff84c075138b8e1c0200008b51348a82a601000084c07413a0f22c820084c0740a8b068bceff90600300008bcee81bb8f3ffb0015ec332c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

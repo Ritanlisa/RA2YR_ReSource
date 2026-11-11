@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p34\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d72d4 _CountryEnumProc_4 -> _addr_7D
+[conv] 0x5e2790 Dialog::ShowStatusText -> Dialog
+[conv] 0x7b68e0 WideString::Reassign_Alt -> WideString
+[conv] 0x625560 Options::DestroyComposite -> Options
+[conv] 0x707dd0 TechnoClass::ComputeTotalPowerDrain -> TechnoClass
+[conv] 0x595680 MapSeedClass::Constructor -> MapSeedClass
+[conv] 0x41cfe0 AircraftTypeClass::ddtor -> AircraftTypeClass
+[conv] 0x6e87f0 TaskForceClass::ExecuteAction -> TaskForceClass
+[conv] 0x6fbfa0 TechnoClass::ExecuteMoveCommand -> TechnoClass
+[conv] 0x655a90 TacticalClass::FreeResources -> TacticalClass
+[conv] 0x426270 AnimClass::UpdateDamageRadius -> AnimClass
+[conv] 0x46fac0 Lobby::SetupAllFactionSlots -> Lobby
+[conv] 0x554370 LoadProgressMgr::ReleaseBuffer -> LoadProgressMgr
+[conv] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> OverlayTypeClass
+[conv] 0x5e9b60 SelectLobbyCountry -> _addr_5E
+[conv] 0x7d30d1 __commit -> _addr_7D
+[conv] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> WinsockInterfaceClass
+[conv] 0x5cf840 ObjectClass::sub_5CF840 -> ObjectClass
+[conv] 0x7dc378 __mbschr -> _addr_7D
+[conv] 0x690360 Screen::CleanupTransitionObjects -> Screen
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] Dialog                   rc=2
+[era] WideString               rc=2
+[era] Options                  rc=2
+[era] TechnoClass              rc=2
+[era] MapSeedClass             rc=2
+[era] AircraftTypeClass        rc=2
+[era] TaskForceClass           rc=0
+[era] TacticalClass            rc=2
+[era] AnimClass                rc=2
+[era] Lobby                    rc=0
+[era] LoadProgressMgr          rc=2
+[era] OverlayTypeClass         rc=2
+[era] _addr_5E                 rc=2
+[era] WinsockInterfaceClass    rc=2
+[era] ObjectClass              rc=2
+[era] Screen                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x6fbfa0   MISMATCH         TechnoClass::ExecuteMoveCommand
+[diff] 0x6e87f0   MISMATCH         TaskForceClass::ExecuteAction
+[diff] 0x46fac0   MISMATCH         Lobby::SetupAllFactionSlots
+[ledger] 0x7d72d4 _CountryEnumProc_4 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e2790 Dialog::ShowStatusText -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b68e0 WideString::Reassign_Alt -> COMPILE_FAIL (attempt 3)
+[ledger] 0x625560 Options::DestroyComposite -> COMPILE_FAIL (attempt 3)
+[ledger] 0x707dd0 TechnoClass::ComputeTotalPowerDrain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x595680 MapSeedClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41cfe0 AircraftTypeClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e87f0 TaskForceClass::ExecuteAction -> NG (attempt 3)
+[ledger] 0x6fbfa0 TechnoClass::ExecuteMoveCommand -> NG (attempt 3)
+[ledger] 0x655a90 TacticalClass::FreeResources -> COMPILE_FAIL (attempt 3)
+[ledger] 0x426270 AnimClass::UpdateDamageRadius -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46fac0 Lobby::SetupAllFactionSlots -> NG (attempt 3)
+[ledger] 0x554370 LoadProgressMgr::ReleaseBuffer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e9b60 SelectLobbyCountry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d30d1 __commit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cf840 ObjectClass::sub_5CF840 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dc378 __mbschr -> COMPILE_FAIL (attempt 3)
+[ledger] 0x690360 Screen::CleanupTransitionObjects -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p34\batch_report.json

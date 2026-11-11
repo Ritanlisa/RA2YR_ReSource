@@ -1,0 +1,11 @@
+{
+ "addr": "0x46FAC0",
+ "name": "Lobby::SetupAllFactionSlots",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46FAC0",
+ "bytes_hex": "5153555657894c241033dbbfdcb2a8008bcbe8895307008bb7b42700008be88bcee85a99170084c074048b07eb433b359c11ac007507b8feffffffeb343b35a011ac007507b8feffffffeb253b35b011ac007507b8feffffffeb163b35b411ac007507b8feffffffeb078bcee81f7422008b4c2410508bd5e84359070083c7044381fffcb2a8007c875f5e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E87F0",
+ "name": "TaskForceClass::ExecuteAction",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E87F0",
+ "bytes_hex": "51568bf1b201c70680467f00c7460464467f00c746085c467f00c7460c54467f00e8bad003008b15d0e8a8008d44240450b9d0e8a80089742408ff521083f8ff742d8b0de0e8a8003bc17d23493bc1890de0e8a8007d188b0dd4e8a800408b1481895481fc8b0de0e8a8003bc17ce88bcee85a81d2fff644240c01740956e8ca020e0083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

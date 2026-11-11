@@ -1,0 +1,45 @@
+{
+ "symbol": "?SetupAllFactionSlots@Lobby@@QAEHXZ",
+ "sym_key": "Lobby::SetupAllFactionSlots",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "5153555657894c241033dbbe8c00000053e8000000008bbeb427000083c4048bcf8be8e8000000008bcfe8000000008b4c2410508bd5e80000000083c6044381feac0000007cc95f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?GetResourceID3CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID3CSF"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?IsObserver@Player@@QAEHXZ",
+   "sym_key": "Player::IsObserver"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?GetOption@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetOption"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?SetupLobbyFactionSlots@@YIHPAXHH@Z",
+   "sym_key": "SetupLobbyFactionSlots"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  }
+ ]
+}
