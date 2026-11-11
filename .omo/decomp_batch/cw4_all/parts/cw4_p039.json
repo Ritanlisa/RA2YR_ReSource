@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x76c110",
+  "name": "sub_76C110",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_76",
+  "emitted": "sub_76C110",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f72a8]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x76c130",
+  "name": "sub_76C130",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_76",
+  "emitted": "sub_76C130",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f72a8]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x76c150",
+  "name": "sub_76C150",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_76",
+  "emitted": "sub_76C150",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f72a8]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x76f2f0",
+  "name": "sub_76F2F0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_76",
+  "emitted": "sub_76F2F0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7308]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x76f310",
+  "name": "sub_76F310",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_76",
+  "emitted": "sub_76F310",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7308]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x76f790",
+  "name": "sub_76F790",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_76",
+  "emitted": "sub_76F790",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7328]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x76f7b0",
+  "name": "sub_76F7B0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_76",
+  "emitted": "sub_76F7B0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7328]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x76f7d0",
+  "name": "sub_76F7D0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_76",
+  "emitted": "sub_76F7D0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7328]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x7700f0",
+  "name": "sub_7700F0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_77",
+  "emitted": "sub_7700F0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7348]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x770110",
+  "name": "sub_770110",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_77",
+  "emitted": "sub_770110",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7348]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x770130",
+  "name": "sub_770130",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_77",
+  "emitted": "sub_770130",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7348]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x771ad0",
+  "name": "sub_771AD0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_77",
+  "emitted": "sub_771AD0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7380]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x771af0",
+  "name": "sub_771AF0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_77",
+  "emitted": "sub_771AF0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7380]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x7732f0",
+  "name": "sub_7732F0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_77",
+  "emitted": "sub_7732F0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7430]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x773310",
+  "name": "sub_773310",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_77",
+  "emitted": "sub_773310",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f7430]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x777240",
+  "name": "sub_777240",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p138",
+  "unit": "_addr_77",
+  "emitted": "sub_777240",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f74b8]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x777260",
+  "name": "sub_777260",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p139",
+  "unit": "_addr_77",
+  "emitted": "sub_777260",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f74b8]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x777280",
+  "name": "sub_777280",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p139",
+  "unit": "_addr_77",
+  "emitted": "sub_777280",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f74b8]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x778560",
+  "name": "sub_778560",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p139",
+  "unit": "_addr_77",
+  "emitted": "sub_778560",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f74e8]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x778580",
+  "name": "sub_778580",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p139",
+  "unit": "_addr_77",
+  "emitted": "sub_778580",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f74e8]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ }
+]
