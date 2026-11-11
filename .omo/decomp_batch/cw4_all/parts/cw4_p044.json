@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x7177e0",
+  "name": "TechnoClass::GetEliteWeaponSlot",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 23,
+  "part": "p158",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::GetEliteWeaponSlot",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 lea eax, [ecx + 0x70]"
+  },
+  "ours_size": 16
+ },
+ {
+  "addr": "0x473430",
+  "name": "LinkedList_flat::Pop",
+  "family": "STRUCTURAL",
+  "path": "const_fold",
+  "size": 24,
+  "part": "p158",
+  "unit": "LinkedList",
+  "emitted": "LinkedList::Pop",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 4]",
+   "ours": "+0 mov eax, dword ptr [ecx + 8]"
+  },
+  "ours_size": 23
+ },
+ {
+  "addr": "0x4aeb30",
+  "name": "MapClass::SetScrollMode",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 24,
+  "part": "p159",
+  "unit": "MapClass",
+  "emitted": "MapClass::SetScrollMode",
+  "first_diff": {
+   "orig": "+6 mov dword ptr [ecx + 0x11a0], eax",
+   "ours": "+6 setne dl"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x65b510",
+  "name": "CellClass::GetOccupiedRatio",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 24,
+  "part": "p159",
+  "unit": "CellClass",
+  "emitted": "CellClass::GetOccupiedRatio",
+  "first_diff": {
+   "orig": "+6 jg 0x65b51c",
+   "ours": "+6 jle 0x15"
+  },
+  "ours_size": 25
+ },
+ {
+  "addr": "0x681240",
+  "name": "Map_Save_681240",
+  "family": "MEMBER_OFFSET",
+  "path": "const_fold",
+  "size": 24,
+  "part": "p159",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::Map_Save_681240",
+  "first_diff": {
+   "orig": "+6 mov dword ptr [ecx + 0x3e0], edx",
+   "ours": "+6 mov dword ptr [ecx + 0x3a4], edx"
+  },
+  "ours_size": 24
+ },
+ {
+  "addr": "0x74c150",
+  "name": "VectorClass_E::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 24,
+  "part": "p159",
+  "unit": "_VectorClass_E",
+  "emitted": "_VectorClass_E::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x74c15c",
+   "ours": "+5 je 0x13"
+  },
+  "ours_size": 24
+ },
+ {
+  "addr": "0x77a870",
+  "name": "Event_Process_77A870",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 24,
+  "part": "p159",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Event_Process_77A870",
+  "first_diff": {
+   "orig": "+6 je 0x77a885",
+   "ours": "+6 je 0x1d"
+  },
+  "ours_size": 32
+ },
+ {
+  "addr": "0x77a890",
+  "name": "Event_Process_77A890",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 24,
+  "part": "p159",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Event_Process_77A890",
+  "first_diff": {
+   "orig": "+6 je 0x77a8a5",
+   "ours": "+6 je 0x1d"
+  },
+  "ours_size": 32
+ },
+ {
+  "addr": "0x77a8b0",
+  "name": "Event_Process_77A8B0",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 24,
+  "part": "p159",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Event_Process_77A8B0",
+  "first_diff": {
+   "orig": "+6 je 0x77a8c5",
+   "ours": "+6 je 0x1d"
+  },
+  "ours_size": 32
+ },
+ {
+  "addr": "0x74fff0",
+  "name": "VeinholeClass::GetState",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 24,
+  "part": "p159",
+  "unit": "VeinholeClass",
+  "emitted": "VeinholeClass::GetState",
+  "first_diff": {
+   "orig": "+0 fld dword ptr [ecx]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 37
+ },
+ {
+  "addr": "0x5fdf60",
+  "name": "nullsub_212",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "OverlayClass",
+  "emitted": "OverlayClass::nullsub_212",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 ret 4"
+  },
+  "ours_size": 3
+ },
+ {
+  "addr": "0x653750",
+  "name": "nullsub_220",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "_addr_65",
+  "emitted": "nullsub_220",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ },
+ {
+  "addr": "0x65c590",
+  "name": "nullsub_0_9",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "RAMFileClass",
+  "emitted": "RAMFileClass::nullsub_0_9",
+  "first_diff": {
+   "orig": "+0 ret 0xc",
+   "ours": "+0 ret 8"
+  },
+  "ours_size": 3
+ },
+ {
+  "addr": "0x65ca70",
+  "name": "BufferIOFileClass::StubReturnFalse",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "RawFileClass",
+  "emitted": "RawFileClass::StubReturnFalse",
+  "first_diff": {
+   "orig": "+0 ret 0xc",
+   "ours": "+0 ret 8"
+  },
+  "ours_size": 3
+ },
+ {
+  "addr": "0x6633c0",
+  "name": "nullsub_224",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "RocketLocomotionClass",
+  "emitted": "RocketLocomotionClass::nullsub_224",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ },
+ {
+  "addr": "0x69b8b0",
+  "name": "nullsub_229",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "_addr_69",
+  "emitted": "nullsub_229",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ },
+ {
+  "addr": "0x6a4ff0",
+  "name": "nullsub_36",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "_addr_6A",
+  "emitted": "nullsub_36",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ },
+ {
+  "addr": "0x6b4c70",
+  "name": "nullsub_232",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "_addr_6B",
+  "emitted": "nullsub_232",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ },
+ {
+  "addr": "0x6b4f90",
+  "name": "nullsub_233",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "SmudgeClass",
+  "emitted": "SmudgeClass::nullsub_233",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 ret 4"
+  },
+  "ours_size": 3
+ },
+ {
+  "addr": "0x6c0025",
+  "name": "nullsub_114",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p15",
+  "unit": "_addr_6C",
+  "emitted": "nullsub_114",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ }
+]
