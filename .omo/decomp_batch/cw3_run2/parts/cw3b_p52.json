@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7bc2b0",
+  "name": "ClipLine",
+  "cls": null,
+  "size": 717,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x6951f0",
+  "name": "FindAndValidateMap",
+  "cls": null,
+  "size": 719,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'const void *'"
+ },
+ {
+  "addr": "0x609e20",
+  "name": "FilterDialogButtonAction",
+  "cls": null,
+  "size": 725,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2064",
+  "first_msg": "term does not evaluate to a function"
+ },
+ {
+  "addr": "0x5f03b0",
+  "name": "NullModem::TestConnection",
+  "cls": null,
+  "size": 727,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x40'"
+ },
+ {
+  "addr": "0x6d7560",
+  "name": "TacticalClass::RenderIsometric",
+  "cls": null,
+  "size": 730,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.field_0' must have class/struct/union type"
+ },
+ {
+  "addr": "0x6d5c50",
+  "name": "RenderRadarBlips",
+  "cls": null,
+  "size": 733,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x6ef700",
+  "name": "DeployTeamMembersAtStart",
+  "cls": null,
+  "size": 736,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x6ae3f0",
+  "name": "Skirmish::Setup_DlgProc",
+  "cls": null,
+  "size": 738,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'GetDlgCtrlID' : cannot convert parameter 1 from 'class HWND' to 'void *'"
+ },
+ {
+  "addr": "0x64a7b0",
+  "name": "RenderPlayerLatencyBars",
+  "cls": null,
+  "size": 741,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x70b280",
+  "name": "TechnoClass::ComputeAimVector",
+  "cls": null,
+  "size": 752,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x4cfe80",
+  "name": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget",
+  "cls": null,
+  "size": 754,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->target' must point to class/struct/union"
+ },
+ {
+  "addr": "0x6f79a0",
+  "name": "TechnoClass::GetBridgeDamageMult",
+  "cls": null,
+  "size": 761,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x778f30",
+  "name": "LocalizeWOLDateString",
+  "cls": null,
+  "size": 764,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p1'"
+ },
+ {
+  "addr": "0x6ea0d0",
+  "name": "SelectTeamProductionBuilding",
+  "cls": null,
+  "size": 769,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x658330",
+  "name": "TabClass::DrawPower",
+  "cls": null,
+  "size": 775,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x778710",
+  "name": "LoadAccountInfoWOL",
+  "cls": null,
+  "size": 781,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x6d7c00",
+  "name": "TacticalClass::DrawTerrain",
+  "cls": null,
+  "size": 785,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.field_4' must have class/struct/union type"
+ },
+ {
+  "addr": "0x7510d0",
+  "name": "Audio::InitFromINI",
+  "cls": null,
+  "size": 791,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x40'"
+ },
+ {
+  "addr": "0x5f7a90",
+  "name": "VoxelAnimType::LoadSection",
+  "cls": null,
+  "size": 797,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'__tail_0' : is not a member of 'CCFileClass'"
+ },
+ {
+  "addr": "0x4feee0",
+  "name": "HouseClass::AIInfantryProduction",
+  "cls": null,
+  "size": 805,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.waveEffect' must have class/struct/union type"
+ }
+]
