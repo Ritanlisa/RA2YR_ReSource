@@ -1,0 +1,11 @@
+{
+ "addr": "0x69B540",
+ "name": "Network::processGameEvent",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69B540",
+ "bytes_hex": "c74124000000008d416cb90800000083caff8950e0891083c0044975f5c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

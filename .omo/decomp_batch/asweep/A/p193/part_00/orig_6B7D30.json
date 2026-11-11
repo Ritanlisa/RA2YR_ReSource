@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B7D30",
+ "name": "SpawnManagerClass::CountAliveSpawns",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B7D30",
+ "bytes_hex": "8b514833c085d27e148b493c578b39837f040774014083c1044a75f15fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

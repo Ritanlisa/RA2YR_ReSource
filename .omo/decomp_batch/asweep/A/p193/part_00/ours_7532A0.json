@@ -1,0 +1,27 @@
+{
+ "symbol": "?globalHelper_0532A0@@YI_NPAH@Z",
+ "sym_key": "Unnamed::globalHelper_0532A0",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "85c97c1a3b0d000000007312a1000000008b0c8833c0837950020f94c0c351e80000000083c404f7d81bc0f7d8c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_InfantryRenderPool@@3PAXA",
+   "sym_key": "g_InfantryRenderPool"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?_do_always_noconv_codecvt_base_std__MBE_NXZ_21@@YAHPAXZZ",
+   "sym_key": "_do_always_noconv_codecvt_base_std__MBE_NXZ_21"
+  }
+ ]
+}

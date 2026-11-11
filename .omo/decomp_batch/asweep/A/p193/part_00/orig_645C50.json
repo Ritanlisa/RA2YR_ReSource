@@ -1,0 +1,11 @@
+{
+ "addr": "0x645C50",
+ "name": "Int4::Set2",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x645C50",
+ "bytes_hex": "8b4424048b54240889018b44240c8951048b54241089410889510cc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

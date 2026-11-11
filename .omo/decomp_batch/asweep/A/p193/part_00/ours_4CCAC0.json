@@ -1,0 +1,15 @@
+{
+ "symbol": "?ComputeFloatExpression_0@FlyLocomotionClass@@QAG_NH@Z",
+ "sym_key": "FlyLocomotionClass::ComputeFloatExpression_0",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b442404dd4048dc1d00000000dfe0f6c4407508b801000000c2080033c0c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

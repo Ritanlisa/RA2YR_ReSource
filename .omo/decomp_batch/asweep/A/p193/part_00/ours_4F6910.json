@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetItemIndex@VectorClass_ptr_BuildChoiceClass_int_ouseClass@@QAG_NH@Z",
+ "sym_key": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "518b4424008b887c5300008b90805300003bca1bc04059c20800",
+ "relocs": []
+}

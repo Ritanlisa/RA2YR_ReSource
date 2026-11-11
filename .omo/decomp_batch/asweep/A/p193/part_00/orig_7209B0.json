@@ -1,0 +1,11 @@
+{
+ "addr": "0x7209B0",
+ "name": "AudioSettings::Check",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7209B0",
+ "bytes_hex": "8b4424048b51243bc2730e8b49188b04810500020000c2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

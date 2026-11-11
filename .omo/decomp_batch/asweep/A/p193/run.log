@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p193\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f6910 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x557ac0 ListClass::GetClamped -> ListClass
+[conv] 0x589680 Init -> _addr_58
+[conv] 0x5f75c0 ObjectTypeClass::InitTripleTen -> ObjectTypeClass
+[conv] 0x636fa0 ObjectClass::sub_636FA0 -> ObjectClass
+[conv] 0x645c50 Int4::Set2 -> Int4
+[conv] 0x65b4f0 RadSiteClass::SetRadLevel -> RadSiteClass
+[conv] 0x69b540 Network::processGameEvent -> Network
+[conv] 0x6b7d30 SpawnManagerClass::CountAliveSpawns -> SpawnManagerClass
+[conv] 0x6dc4c0 Vector2::Subtract -> Vector2
+[conv] 0x6e57c0 TechnoClass::HasAnyMission -> TechnoClass
+[conv] 0x7209b0 AudioSettings::Check -> AudioSettings
+[conv] 0x721270 ScriptAction::GetArgumentString -> ScriptAction
+[conv] 0x726fb0 HouseClass::FindType24 -> HouseClass
+[conv] 0x72a1e0 TunnelLocomotionClass::ShortFunc_72A1E0 -> TunnelLocomotionClass
+[conv] 0x7532a0 globalHelper_0532A0 -> _addr_75
+[conv] 0x763980 Array::GetElement -> Array
+[conv] 0x767800 MapSizeGameOption_WorldDominationTour::ddtor -> MapSizeGameOption_WorldDominationTour
+[conv] 0x4ccac0 FlyLocomotionClass::ComputeFloatExpression_0 -> FlyLocomotionClass
+[conv] 0x41cf80 ObjectTypeClass::Copy -> ObjectTypeClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] ListClass                rc=0
+[era] _addr_58                 rc=2
+[era] ObjectTypeClass          rc=0
+[era] ObjectClass              rc=0
+[era] Int4                     rc=0
+[era] RadSiteClass             rc=0
+[era] Network                  rc=0
+[era] SpawnManagerClass        rc=0
+[era] Vector2                  rc=0
+[era] TechnoClass              rc=2
+[era] AudioSettings            rc=0
+[era] ScriptAction             rc=0
+[era] HouseClass               rc=2
+[era] TunnelLocomotionClass    rc=0
+[era] _addr_75                 rc=0
+[era] Array                    rc=0
+[era] MapSizeGameOption_WorldDominationTour rc=2
+[era] FlyLocomotionClass       rc=0
+=== diffasm byte-compare ===
+[diff] 0x4f6910   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex
+[diff] 0x557ac0   MISMATCH         ListClass::GetClamped
+[diff] 0x5f75c0   MISMATCH         ObjectTypeClass::InitTripleTen
+[diff] 0x41cf80   MISMATCH         ObjectTypeClass::Copy
+[diff] 0x636fa0   MISMATCH         ObjectClass::sub_636FA0
+[diff] 0x645c50   MATCH            Int4::Set2
+[diff] 0x65b4f0   MISMATCH         RadSiteClass::SetRadLevel
+[diff] 0x69b540   MISMATCH         Network::processGameEvent
+[diff] 0x6b7d30   MATCH            SpawnManagerClass::CountAliveSpawns
+[diff] 0x6dc4c0   MISMATCH         Vector2::Subtract
+[diff] 0x7209b0   MISMATCH         AudioSettings::Check
+[diff] 0x721270   MISMATCH         ScriptAction::GetArgumentString
+[diff] 0x72a1e0   MATCH            TunnelLocomotionClass::ShortFunc_72A1E0
+[diff] 0x7532a0   MISMATCH         globalHelper_0532A0
+[diff] 0x763980   MATCH            Array::GetElement
+[diff] 0x4ccac0   MISMATCH         FlyLocomotionClass::ComputeFloatExpression_0
+[ledger] 0x4f6910 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x557ac0 ListClass::GetClamped -> NG (attempt 1)
+[ledger] 0x589680 Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f75c0 ObjectTypeClass::InitTripleTen -> NG (attempt 1)
+[ledger] 0x636fa0 ObjectClass::sub_636FA0 -> NG (attempt 1)
+[ledger] 0x645c50 Int4::Set2 -> OK (attempt 1)
+[ledger] 0x65b4f0 RadSiteClass::SetRadLevel -> NG (attempt 1)
+[ledger] 0x69b540 Network::processGameEvent -> NG (attempt 1)
+[ledger] 0x6b7d30 SpawnManagerClass::CountAliveSpawns -> OK (attempt 1)
+[ledger] 0x6dc4c0 Vector2::Subtract -> NG (attempt 1)
+[ledger] 0x6e57c0 TechnoClass::HasAnyMission -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7209b0 AudioSettings::Check -> NG (attempt 1)
+[ledger] 0x721270 ScriptAction::GetArgumentString -> NG (attempt 1)
+[ledger] 0x726fb0 HouseClass::FindType24 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72a1e0 TunnelLocomotionClass::ShortFunc_72A1E0 -> OK (attempt 1)
+[ledger] 0x7532a0 globalHelper_0532A0 -> NG (attempt 1)
+[ledger] 0x763980 Array::GetElement -> OK (attempt 1)
+[ledger] 0x767800 MapSizeGameOption_WorldDominationTour::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ccac0 FlyLocomotionClass::ComputeFloatExpression_0 -> NG (attempt 1)
+[ledger] 0x41cf80 ObjectTypeClass::Copy -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 4,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "branch_order": 3,
+  "eval_order": 2,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 25.0,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p193\batch_report.json

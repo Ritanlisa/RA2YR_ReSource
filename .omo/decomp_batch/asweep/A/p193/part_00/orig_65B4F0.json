@@ -1,0 +1,11 @@
+{
+ "addr": "0x65B4F0",
+ "name": "RadSiteClass::SetRadLevel",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65B4F0",
+ "bytes_hex": "8b54240489514ca1e07188008b80041800000fafc289416c894170c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?CountAliveSpawns@SpawnManagerClass@@QAEHXZ",
+ "sym_key": "SpawnManagerClass::CountAliveSpawns",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b514833c085d27e148b493c578b39837f040774014083c1044a75f15fc3",
+ "relocs": []
+}

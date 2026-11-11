@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetClamped@ListClass@@QAEHH@Z",
+ "sym_key": "ListClass::GetClamped",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b414485c074148b542404483bd07c028bd08b41388b0490c2040033c0c20400",
+ "relocs": []
+}

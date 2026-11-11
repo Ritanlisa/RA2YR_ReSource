@@ -1,0 +1,11 @@
+{
+ "addr": "0x721270",
+ "name": "ScriptAction::GetArgumentString",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x721270",
+ "bytes_hex": "8b44240485c07c0e3b41247d098b49188b0481c20400b894768100c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
