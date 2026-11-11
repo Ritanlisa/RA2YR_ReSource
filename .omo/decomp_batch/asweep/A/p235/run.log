@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p235\part_00
+=== convert (20 addrs) ===
+[conv] 0x62d930 ParticleClass::GetClassIdentifier -> ParticleClass
+[conv] 0x6301a0 ParticleSystemClass::ddtor -> ParticleSystemClass
+[conv] 0x6447a0 ParticleSystemTypeClass::GetClassIdentifier -> ParticleSystemTypeClass
+[conv] 0x645620 ParticleTypeClass::ddtor -> ParticleTypeClass
+[conv] 0x65b470 RadSiteClass::ddtor -> RadSiteClass
+[conv] 0x6633d0 RocketLocomotionClass::ddtor -> RocketLocomotionClass
+[conv] 0x6915f0 ScriptClass::ddtor -> ScriptClass
+[conv] 0x691d50 ScriptTypeClass::GetClassIdentifier -> ScriptTypeClass
+[conv] 0x6a4740 SideClass::ddtor -> SideClass
+[conv] 0x6b1130 SlaveManagerClass::ddtor -> SlaveManagerClass
+[conv] 0x6b4f50 SmudgeClass::GetClassID -> SmudgeClass
+[conv] 0x6b58d0 SmudgeTypeClass::GetClassIdentifier -> SmudgeTypeClass
+[conv] 0x6b7ed0 SpawnManagerClass::ddtor -> SpawnManagerClass
+[conv] 0x6cdeb0 SuperClass::ddtor -> SuperClass
+[conv] 0x6ce7c0 SuperWeaponTypeClass::SD_vt03 -> SuperWeaponTypeClass
+[conv] 0x6dbce0 Tactical::ddtor -> Tactical
+[conv] 0x6e3d70 TActionClass::ddtor -> TActionClass
+[conv] 0x6e63a0 TagTypeClass::GetClassIdentifier -> TagTypeClass
+[conv] 0x6e8710 TaskForceClass::ddtor -> TaskForceClass
+[conv] 0x6ec560 TeamClass::ddtor -> TeamClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleClass            rc=2
+[era] ParticleSystemClass      rc=2
+[era] ParticleSystemTypeClass  rc=2
+[era] ParticleTypeClass        rc=2
+[era] RadSiteClass             rc=2
+[era] RocketLocomotionClass    rc=2
+[era] ScriptClass              rc=2
+[era] ScriptTypeClass          rc=2
+[era] SideClass                rc=2
+[era] SlaveManagerClass        rc=2
+[era] SmudgeClass              rc=2
+[era] SmudgeTypeClass          rc=2
+[era] SpawnManagerClass        rc=2
+[era] SuperClass               rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] Tactical                 rc=2
+[era] TActionClass             rc=2
+[era] TagTypeClass             rc=2
+[era] TaskForceClass           rc=2
+[era] TeamClass                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x62d930 ParticleClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6301a0 ParticleSystemClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6447a0 ParticleSystemTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x645620 ParticleTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65b470 RadSiteClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6633d0 RocketLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6915f0 ScriptClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x691d50 ScriptTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a4740 SideClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1130 SlaveManagerClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b4f50 SmudgeClass::GetClassID -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b58d0 SmudgeTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b7ed0 SpawnManagerClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cdeb0 SuperClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ce7c0 SuperWeaponTypeClass::SD_vt03 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dbce0 Tactical::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e3d70 TActionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e63a0 TagTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e8710 TaskForceClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ec560 TeamClass::ddtor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p235\batch_report.json

@@ -233,3 +233,4 @@
 {"layer": "A", "part": 232, "n": 20, "seconds": 13.8, "ok": true, "verdicts": {"COMPILE_FAIL": 5, "MISMATCH": 14, "OBJ_EXTRACT_FAIL": 1}}
 {"layer": "A", "part": 233, "n": 20, "seconds": 18.3, "ok": true, "verdicts": {"MISMATCH": 7, "COMPILE_FAIL": 13}}
 {"layer": "A", "part": 234, "n": 20, "seconds": 18.0, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
+{"layer": "A", "part": 235, "n": 20, "seconds": 9.9, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}

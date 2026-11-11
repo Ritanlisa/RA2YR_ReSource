@@ -45517,6 +45517,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x62d930": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ParticleClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ParticleClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x62d970": {
   "attempts": 5,
   "first_diff": null,
@@ -45679,6 +45691,18 @@
   "name": "ParticleSystemClass::StubReturn2",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6301a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ParticleSystemClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "C07EFB9C::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6301e0": {
   "attempts": 1,
@@ -47828,6 +47852,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6447a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ParticleSystemTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ParticleSystemTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x644920": {
   "attempts": 5,
   "first_diff": null,
@@ -47945,6 +47981,18 @@
   "orig_name": "sub_644BC0",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x645620": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ParticleTypeClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "C07F0188::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x645660": {
@@ -49352,6 +49400,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x65b470": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "RadSiteClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RadSiteClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x65b4b0": {
   "attempts": 7,
   "first_diff": null,
@@ -50478,6 +50538,18 @@
   "orig_name": "nullsub_224",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6633d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "RocketLocomotionClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RocketLocomotionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x663460": {
@@ -52165,6 +52237,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6915f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ScriptClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ScriptClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x691970": {
   "attempts": 1,
   "first_diff": null,
@@ -52179,6 +52263,18 @@
   "name": "nullsub_34",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "nullsub_34",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x691d50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ScriptTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ScriptTypeClass::GetClassIdentifier",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -53723,6 +53819,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6a4740": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SideClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SideClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6a4910": {
   "attempts": 5,
   "first_diff": null,
@@ -54293,6 +54401,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6b1130": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SlaveManagerClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SlaveManagerClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6b1370": {
   "attempts": 7,
   "first_diff": null,
@@ -54783,6 +54903,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6b4f50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SmudgeClass::GetClassID",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UnitClass::GetClassID",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6b4f90": {
   "attempts": 1,
   "clean": false,
@@ -54915,6 +55047,18 @@
   "name": "SmudgeTypeClass::PowerDrainUpdate",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x6b58d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SmudgeTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SmudgeTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6b5f80": {
   "attempts": 12,
@@ -55112,6 +55256,18 @@
   "orig_name": "SpawnManagerClass::CountDockedSpawns",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6b7ed0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SpawnManagerClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SpawnManagerClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6b8120": {
@@ -58425,6 +58581,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6cdeb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SuperClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SuperClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6cdff0": {
   "attempts": 1,
   "clean": false,
@@ -58607,6 +58775,18 @@
   "name": "sub_6CE550",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x6ce7c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SuperWeaponTypeClass::SD_vt03",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SuperWeaponTypeClass::SD_vt03",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6ce8f0": {
   "attempts": 1,
@@ -59391,6 +59571,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6dbce0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Tactical::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Tactical::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6dc400": {
   "attempts": 2,
   "first_diff": null,
@@ -59789,6 +59981,18 @@
   "name": "sub_6E35F0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6e3d70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TActionClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TActionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6e3e50": {
   "attempts": 1,
@@ -60231,6 +60435,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x6e63a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TagTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TagTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6e6470": {
   "attempts": 1,
   "first_diff": "+15 call 0x410320",
@@ -60611,6 +60827,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6e8710": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TaskForceClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TaskForceClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6e87d0": {
   "attempts": 5,
   "first_diff": null,
@@ -60765,6 +60993,18 @@
   "orig_name": "sub_6EC370",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6ec560": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TeamClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TeamClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6edb50": {
