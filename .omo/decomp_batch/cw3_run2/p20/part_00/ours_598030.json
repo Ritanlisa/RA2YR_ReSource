@@ -1,0 +1,33 @@
+{
+ "symbol": "?Range_RandomInt@@YI_JHI@Z",
+ "sym_key": "Unnamed::Range_RandomInt",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec1c568bf28bc6c744240c000000002bc14089442408df6c2408894c2408dd5c2410df6c2408dd5c2418b900000000e80000000089442408c744240c00000000df6c240883ec08dc4c2418dc0d00000000dc442420dd1c24e80000000083c4083bc677c65e8be55dc3",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "__real@8@3fdf800000007ffff800",
+   "sym_key": "_real@8@3fdf800000007ffff800"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

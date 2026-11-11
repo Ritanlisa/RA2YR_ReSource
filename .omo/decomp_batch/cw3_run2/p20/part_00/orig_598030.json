@@ -1,0 +1,11 @@
+{
+ "addr": "0x598030",
+ "name": "Range_RandomInt",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x598030",
+ "bytes_hex": "83ec18568bf28bc6572bc14033ff89442408897c240cdf6c2408894c2408897c240cdd5c2410df6c2408dd5c2418b990e8ab00e818470c0089442408897c240cdf6c2408dc4c2410dc0d98d87e00dc442418e879de22003bc677d35f5e83c418c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x6235b0 ObjectClass::sub_6235B0 -> ObjectClass
+[conv] 0x4a5e50 ObjectClass::sub_4A5E50 -> ObjectClass
+[conv] 0x5d5ac0 System_Init -> System
+[conv] 0x68ca50 FindBuildingAnimByName -> _addr_68
+[conv] 0x69bd00 sub_69BD00 -> _addr_69
+[conv] 0x7781b0 EditControl_Helper -> EditControl
+[conv] 0x477db0 DynamicVectorClass::Construct -> DynamicVectorClass
+[conv] 0x4af720 DriveLocomotionClass::QueryInterface -> DriveLocomotionClass
+[conv] 0x626290 ObjectClass::sub_626290 -> ObjectClass
+[conv] 0x63e1d0 VectorClass::ExecuteActionPlanManager_Helper_63E1D0 -> VectorClass
+[conv] 0x606740 SetDialogActiveFlag -> _addr_60
+[conv] 0x598030 Range_RandomInt -> Range
+[conv] 0x7dc468 ObjectClass::__setmode_lk -> ObjectClass
+[conv] 0x4265b0 Cell::GetHeight -> Cell
+[conv] 0x6bf5d0 _TClassFactory_VSuperClass::QueryInterface -> _TClassFactory_VSuperClass
+[conv] 0x6c0650 _TClassFactory_VTemporalClass::CreateTClassFactory_TemporalClass -> _TClassFactory_VTemporalClass
+[conv] 0x6c16d0 _TClassFactory_VVoxelAnimClass::CreateTClassFactory_VoxelAnimClass -> _TClassFactory_VVoxelAnimClass
+[conv] 0x6c2750 _TClassFactory_VUnitTypeClass::CreateTClassFactory_UnitTypeClass -> _TClassFactory_VUnitTypeClass
+[conv] 0x6c37d0 _TClassFactory_VInfantryClass::CreateTClassFactory_InfantryClass -> _TClassFactory_VInfantryClass
+[conv] 0x6c4850 _TClassFactory_VDropPodLocomotionClass::CreateTClassFactory_DropPodLocomotionClass -> _TClassFactory_VDropPodLocomotionClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] System                   rc=2
+[era] _addr_68                 rc=2
+[era] _addr_69                 rc=2
+[era] EditControl              rc=2
+[era] DynamicVectorClass       rc=2
+[era] DriveLocomotionClass     rc=2
+[era] VectorClass              rc=0
+[era] _addr_60                 rc=2
+[era] Range                    rc=0
+[era] Cell                     rc=2
+[era] _TClassFactory_VSuperClass rc=2
+[era] _TClassFactory_VTemporalClass rc=2
+[era] _TClassFactory_VVoxelAnimClass rc=2
+[era] _TClassFactory_VUnitTypeClass rc=2
+[era] _TClassFactory_VInfantryClass rc=2
+[era] _TClassFactory_VDropPodLocomotionClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a5e50   MISMATCH         ObjectClass::sub_4A5E50
+[diff] 0x63e1d0   MISMATCH         VectorClass::ExecuteActionPlanManager_Helper_63E1D0
+[diff] 0x598030   MISMATCH         Range_RandomInt
+[ledger] 0x6235b0 ObjectClass::sub_6235B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a5e50 ObjectClass::sub_4A5E50 -> NG (attempt 3)
+[ledger] 0x5d5ac0 System_Init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68ca50 FindBuildingAnimByName -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69bd00 sub_69BD00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7781b0 EditControl_Helper -> COMPILE_FAIL (attempt 4)
+[ledger] 0x477db0 DynamicVectorClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4af720 DriveLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x626290 ObjectClass::sub_626290 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63e1d0 VectorClass::ExecuteActionPlanManager_Helper_63E1D0 -> NG (attempt 3)
+[ledger] 0x606740 SetDialogActiveFlag -> COMPILE_FAIL (attempt 4)
+[ledger] 0x598030 Range_RandomInt -> NG (attempt 3)
+[ledger] 0x7dc468 ObjectClass::__setmode_lk -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4265b0 Cell::GetHeight -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6bf5d0 _TClassFactory_VSuperClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c0650 _TClassFactory_VTemporalClass::CreateTClassFactory_TemporalClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c16d0 _TClassFactory_VVoxelAnimClass::CreateTClassFactory_VoxelAnimClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c2750 _TClassFactory_VUnitTypeClass::CreateTClassFactory_UnitTypeClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c37d0 _TClassFactory_VInfantryClass::CreateTClassFactory_InfantryClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c4850 _TClassFactory_VDropPodLocomotionClass::CreateTClassFactory_DropPodLocomotionClass -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p20\batch_report.json

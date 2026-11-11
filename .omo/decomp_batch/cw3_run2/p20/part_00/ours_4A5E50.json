@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4A5E50@ObjectClass@@QAEHHPAHPAI@Z",
+ "sym_key": "ObjectClass::sub_4A5E50",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "53558b6c241056578b7c241c8bf1c7450000000000c707000000008b0d0000000085f68bd9742985c974256a57e8000000000faf442414505755568bcbe8000000008b0733d2f7731c5f5e5d5bc20c005f5e5d33c05bc20c00",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?GetPixelData@FontClass@@QAEHG@Z",
+   "sym_key": "FontClass::GetPixelData"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Layout@Text@@QAEDPAX00H@Z",
+   "sym_key": "Text::Layout"
+  }
+ ]
+}
