@@ -1,0 +1,11 @@
+{
+ "addr": "0x52A9E0",
+ "name": "System_Load",
+ "size": 161,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52A9E0",
+ "bytes_hex": "53558b6c241056578b7c2414c702ffffffff33c0c707ffffffffc74500ffffffff8a1933f684db7445833a007c0c833f007d0780fb20760289378a1980fb3b742780fb09741280fb3d740346eb10833a007d02893246eb0683e6f883c6088a59014184db75c3eb068975008d41018b0a33db85c90f9cc34b23cb890a8b0f33d285c90f9cc24a23ca33d2890f8b4d0085c90f9cc24a5f23ca5e894d005d5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

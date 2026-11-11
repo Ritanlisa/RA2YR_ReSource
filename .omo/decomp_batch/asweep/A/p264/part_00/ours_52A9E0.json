@@ -1,0 +1,8 @@
+{
+ "symbol": "?System_Load@@YIPAEPAEPAI11@Z",
+ "sym_key": "Unnamed::System_Load",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "53558b6c241056578b7c2414c702ffffffff33c0c707ffffffffc74500ffffffff8a1933f684db7436f6420380750df6470380740780fb20760289378a1980fb3b741680fb09750683e6f883c6088a5901464184db7408ebd08975008d41018b0a8bf1c1ee1f4e23f189328b0f8bd1c1ea1f4a23d189178b4d008bd15fc1ea1f4a5e23d18955005d5bc20800",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B0B00",
+ "name": "EncodeScreenshotRLE",
+ "size": 149,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B0B00",
+ "bytes_hex": "53568b74240c578bfa33c083f901b2018a1f7e66558d69ff8a4f01473acb884c24147519fec280fa2f75428a1530797f0088143040880c304032d2eb3084d2742880fa0175188acb80e1c080f9c0740a8a4c2414881c3040eb0f8a4c241480cac088143040881c30408ad9b2014d75a884d25d741a80fa01750a8acb80e1c080f9c0750780cac088143040881c30405f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
