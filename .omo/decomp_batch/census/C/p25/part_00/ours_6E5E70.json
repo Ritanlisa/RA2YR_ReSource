@@ -1,0 +1,39 @@
+{
+ "symbol": "?FindByName@ObjectTypeClass@@QAEHXZ",
+ "sym_key": "ObjectTypeClass::FindByName",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "5356578bf985ff75065f5e33c05bc3a10000000033db85c077065f5e33c05bc3a100000000578b34988d4e2451e80000000083c40885c074218d56645752e80000000083c40885c07410a100000000433bd872cc5f5e33c05bc38bc65f5e5bc3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerCleanup@@3IA",
+   "sym_key": "g_MultiplayerCleanup"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0E784@@3IA",
+   "sym_key": "DataGlobal_B0E784"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerCleanup@@3IA",
+   "sym_key": "g_MultiplayerCleanup"
+  }
+ ]
+}

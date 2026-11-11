@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTileAnimationData@TechnoClass@@QAEDHPAH0@Z",
+ "sym_key": "TechnoClass::GetTileAnimationData",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff909c0000008bc885c9750532c0c20c0053568b71048b44240c0faf3133d2f7f68b7424108b41088b54911089068b4424148b490c85d289087412f6422401740c8b72048b5a182bf303f189305eb0015bc20c00",
+ "relocs": []
+}

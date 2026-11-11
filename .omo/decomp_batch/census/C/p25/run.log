@@ -1,0 +1,91 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a7fe0 DynamicVectorClass::AppendCopy -> DynamicVectorClass
+[conv] 0x63e880 SidebarClass::addToList -> SidebarClass
+[conv] 0x48df30 ObjectClass::LookupNameIndex -> ObjectClass
+[conv] 0x49fae0 DynamicVector::GetOrGrow -> DynamicVector
+[conv] 0x71ab60 ObjectClass::UnlinkFromFactory -> ObjectClass
+[conv] 0x623da0 unknown::sub_623DA0 -> unknown
+[conv] 0x4887f0 ColorListClass::sub_4887F0 -> ColorListClass
+[conv] 0x4cb760 ObjectClass::TerrainInitMap -> ObjectClass
+[conv] 0x6e5e70 ObjectTypeClass::FindByName -> ObjectTypeClass
+[conv] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> ObjectClass
+[conv] 0x547150 TechnoClass::GetTileAnimationData -> TechnoClass
+[conv] 0x68cab0 unknown::Network_Assign -> unknown
+[conv] 0x451e40 BuildingClass::ClearAnims -> BuildingClass
+[conv] 0x50ff50 HouseClass::AddCoordTrackingEntry -> HouseClass
+[conv] 0x6235b0 ObjectClass::sub_6235B0 -> ObjectClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DynamicVectorClass       rc=0
+[era] SidebarClass             rc=2
+[era] ObjectClass              rc=2
+[era] DynamicVector            rc=0
+[era] unknown                  rc=2
+[era] ColorListClass           rc=2
+[era] ObjectTypeClass          rc=0
+[era] TechnoClass              rc=0
+[era] BuildingClass            rc=2
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a7fe0   MISMATCH         DynamicVectorClass::AppendCopy
+[diff] 0x49fae0   MISMATCH         DynamicVector::GetOrGrow
+[diff] 0x623da0   MISMATCH         unknown::sub_623DA0
+[diff] 0x6e5e70   MISMATCH         ObjectTypeClass::FindByName
+[diff] 0x547150   MISMATCH         TechnoClass::GetTileAnimationData
+[ledger] 0x5ca680 0x5ca680 -> PENDING (attempt 1)
+[ledger] 0x63a0d0 0x63a0d0 -> PENDING (attempt 1)
+[ledger] 0x4a7fe0 VectorClass::AppendCopy -> NG (attempt 1)
+[ledger] 0x63e880 SidebarClass::addToList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48df30 LookupNameIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49fae0 DynamicVector::GetOrGrow -> NG (attempt 1)
+[ledger] 0x71ab60 ObjectClass::UnlinkFromFactory -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58d010 0x58d010 -> PENDING (attempt 1)
+[ledger] 0x72e990 0x72e990 -> PENDING (attempt 1)
+[ledger] 0x623da0 sub_623DA0 -> NG (attempt 1)
+[ledger] 0x4887f0 sub_4887F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cb760 TerrainInitMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e5e70 ObjectTypeClass::FindByName -> NG (attempt 1)
+[ledger] 0x7b6ee0 sub_7B6EE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x547150 TechnoClass::GetTileAnimationData -> NG (attempt 1)
+[ledger] 0x68cab0 Network_Assign -> COMPILE_FAIL (attempt 1)
+[ledger] 0x451e40 BuildingClass::ClearAnims -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50ff50 HouseClass::AddCoordTrackingEntry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6235b0 sub_6235B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c5250 0x4c5250 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 2199,
+ "verdicts": {
+  "MISMATCH": 600,
+  "MATCH": 521,
+  "COMPILE_FAIL": 575,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 489,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 190,
+  "ret_norm": 7,
+  "frame_sched": 66,
+  "const_fold": 66,
+  "branch_polarity": 42,
+  "regalloc": 97,
+  "branch_order": 73,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 23,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 46.5,
+ "match_rate_of_total_pct": 23.7,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p25\batch_report.json

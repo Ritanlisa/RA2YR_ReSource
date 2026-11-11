@@ -1,0 +1,310 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_PSEUDO": 1,
+   "NO_CLS": 4,
+   "MISMATCH": 5,
+   "COMPILE_FAIL": 10
+  },
+  "pathologies": {
+   "branch_order": 3,
+   "cc_mismatch": 1,
+   "codegen_shape": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x5ca680",
+   "batch": "censusC",
+   "verdict": "NO_PSEUDO",
+   "note": "empty Hex-Rays body (79B disasm)",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x63a0d0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x63a0d0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4a7fe0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 80B ours 78B",
+   "first_diff": {
+    "orig": "+11 jl 0x4a8015",
+    "ours": "+11 jl 0x31"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass::AppendCopy",
+   "emitted": "DynamicVectorClass::AppendCopy",
+   "unit": "DynamicVectorClass",
+   "name_placeholder": false,
+   "cls_src": "proto_this",
+   "sites": "2/4",
+   "rule_violations": 1,
+   "orig_size": 80,
+   "ours_size": 78
+  },
+  {
+   "addr": "0x63e880",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\SidebarClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\par",
+   "first_diff": null,
+   "pathology": null,
+   "name": "SidebarClass::addToList",
+   "emitted": "SidebarClass::addToList",
+   "unit": "SidebarClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "9/9",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x48df30",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\ObjectClass.cpp(12) : error C2665: '_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'; D:\\RA2YR_ReSource\\.o",
+   "first_diff": null,
+   "pathology": null,
+   "name": "LookupNameIndex",
+   "emitted": "ObjectClass::LookupNameIndex",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "6/8",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x49fae0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 81B ours 102B",
+   "first_diff": {
+    "orig": "+14 jl 0x49fb1d",
+    "ours": "+14 jge 0x1c"
+   },
+   "pathology": "branch_order",
+   "name": "DynamicVector::GetOrGrow",
+   "emitted": "DynamicVector::GetOrGrow",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "7/7",
+   "rule_violations": 3,
+   "orig_size": 81,
+   "ours_size": 102
+  },
+  {
+   "addr": "0x71ab60",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\ObjectClass.cpp(12) : error C2665: '_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'; D:\\RA2YR_ReSource\\.o",
+   "first_diff": null,
+   "pathology": null,
+   "name": "ObjectClass::UnlinkFromFactory",
+   "emitted": "ObjectClass::UnlinkFromFactory",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x58d010",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x58d010",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x72e990",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x72e990",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x623da0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 83B ours 80B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 0x10]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x14]"
+   },
+   "pathology": "cc_mismatch",
+   "name": "sub_623DA0",
+   "emitted": "unknown::sub_623DA0",
+   "unit": "unknown",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 83,
+   "ours_size": 80
+  },
+  {
+   "addr": "0x4887f0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\ColorListClass.cpp(11) : error C2018: unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\ColorListClass.cpp(11)",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_4887F0",
+   "emitted": "ColorListClass::sub_4887F0",
+   "unit": "ColorListClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "4/4",
+   "rule_violations": 8
+  },
+  {
+   "addr": "0x4cb760",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\ObjectClass.cpp(12) : error C2665: '_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'; D:\\RA2YR_ReSource\\.o",
+   "first_diff": null,
+   "pathology": null,
+   "name": "TerrainInitMap",
+   "emitted": "ObjectClass::TerrainInitMap",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x6e5e70",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 84B ours 96B",
+   "first_diff": {
+    "orig": "+7 je 0x6e5eb8",
+    "ours": "+7 jne 0xf"
+   },
+   "pathology": "branch_order",
+   "name": "ObjectTypeClass::FindByName",
+   "emitted": "ObjectTypeClass::FindByName",
+   "unit": "ObjectTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 84,
+   "ours_size": 96
+  },
+  {
+   "addr": "0x7b6ee0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\ObjectClass.cpp(12) : error C2665: '_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'; D:\\RA2YR_ReSource\\.o",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_7B6EE0",
+   "emitted": "ObjectClass::sub_7B6EE0",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "7/10",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x547150",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 85B ours 87B",
+   "first_diff": {
+    "orig": "+2 call dword ptr [eax + 0x9c]",
+    "ours": "+2 push ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "TechnoClass::GetTileAnimationData",
+   "emitted": "TechnoClass::GetTileAnimationData",
+   "unit": "TechnoClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/1",
+   "rule_violations": 3,
+   "orig_size": 85,
+   "ours_size": 87
+  },
+  {
+   "addr": "0x68cab0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\unknown_68cab0.cpp(12) : error C2440: 'initializing' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\ce",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Network_Assign",
+   "emitted": "unknown::Network_Assign",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/4",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x451e40",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\BuildingClass.cpp(34) : error C2562: 'ClearAnims' : 'void' function returning a value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00",
+   "first_diff": null,
+   "pathology": null,
+   "name": "BuildingClass::ClearAnims",
+   "emitted": "BuildingClass::ClearAnims",
+   "unit": "BuildingClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x50ff50",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\HouseClass.cpp(11) : error C2446: '>=' : no conversion from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\HouseCl",
+   "first_diff": null,
+   "pathology": null,
+   "name": "HouseClass::AddCoordTrackingEntry",
+   "emitted": "HouseClass::AddCoordTrackingEntry",
+   "unit": "HouseClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "6/8",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x6235b0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p25\\part_00\\ObjectClass.cpp(12) : error C2665: '_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'; D:\\RA2YR_ReSource\\.o",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_6235B0",
+   "emitted": "ObjectClass::sub_6235B0",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "5/5",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x4c5250",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4c5250",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}

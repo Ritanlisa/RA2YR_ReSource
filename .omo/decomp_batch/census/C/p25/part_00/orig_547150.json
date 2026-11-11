@@ -1,0 +1,11 @@
+{
+ "addr": "0x547150",
+ "name": "TechnoClass::GetTileAnimationData",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x547150",
+ "bytes_hex": "8b01ff909c0000008bc885c9744253568b71048b44240c0faf3199f7fe8b7424108b41088b54911089068b4424148b490c85d289087412f6422401740c8b72048b5a182bf303f189305eb0015bc20c0032c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

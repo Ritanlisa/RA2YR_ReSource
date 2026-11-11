@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E5E70",
+ "name": "ObjectTypeClass::FindByName",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E5E70",
+ "bytes_hex": "5356578bf985ff743fa190e7b00033db85c07e34a184e7b000578b34988d4e2451e88a2e0e0083c40885c074218d56645752e8792e0e0083c40885c07410a190e7b000433bd87ccc5f5e33c05bc38bc65f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

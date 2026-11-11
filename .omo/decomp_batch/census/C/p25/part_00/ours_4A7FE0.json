@@ -1,0 +1,8 @@
+{
+ "symbol": "?AppendCopy@DynamicVectorClass@@QAEDPAH@Z",
+ "sym_key": "DynamicVectorClass::AppendCopy",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e088b46103bc17c2485c0750485c975168b461885c07e0f8b1603c16a005056ff520884c0750624005ec204008b46108b56048d4801894e108b4c24085e8b09890c8224010c01c20400",
+ "relocs": []
+}
