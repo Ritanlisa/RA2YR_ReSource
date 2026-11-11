@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x74f5f0 IRTTITypeInfo::FindItem -> IRTTITypeInfo
+[conv] 0x46dc90 Compare::Field96 -> Compare
+[conv] 0x58d0a0 TileSystem::LookupMapTile -> TileSystem
+[conv] 0x459ef0 BuildingClass::GetBuildCoordsAdjusted -> BuildingClass
+[conv] 0x718230 TeleportLocomotionClass::ResetMovementState -> TeleportLocomotionClass
+[conv] 0x4513d0 BuildingClass::ProductionCheck -> BuildingClass
+[conv] 0x63f040 Sidebar::RemoveItem -> Sidebar
+[conv] 0x40cdf0 _VectorClass_PAVObjectClass::Add -> _VectorClass_PAVObjectClass
+[conv] 0x4c2dc0 _VectorClass_PAVEBolt::GetSize -> _VectorClass_PAVEBolt
+[conv] 0x4ecda0 _VectorClass_PAVTeamTypeClass::GetSize -> _VectorClass_PAVTeamTypeClass
+[conv] 0x54a5d0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::GetSize -> _VectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x5eed30 _VectorClass_PBVMultiMission::GetSize -> _VectorClass_PBVMultiMission
+[conv] 0x71b3c0 _VectorClass_PAVTemporalClass::GetSize -> _VectorClass_PAVTemporalClass
+[conv] 0x4de770 FootClass::IsTimerActive -> FootClass
+[conv] 0x6f2640 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::FindItem -> _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x41d7a0 AirstrikeClass::ddtor -> AirstrikeClass
+[conv] 0x5fdf10 OverlayClass::ddtor -> OverlayClass
+[conv] 0x726820 TriggerClass::ddtor -> TriggerClass
+[conv] 0x7d6cf0 _strpbrk -> _addr_7D
+[conv] 0x41c3f0 BulletClass::NormalizeZeroVector -> BulletClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IRTTITypeInfo            rc=0
+[era] Compare                  rc=0
+[era] TileSystem               rc=2
+[era] BuildingClass            rc=0
+[era] TeleportLocomotionClass  rc=2
+[era] Sidebar                  rc=0
+[era] _VectorClass_PAVObjectClass rc=2
+[era] _VectorClass_PAVEBolt    rc=2
+[era] _VectorClass_PAVTeamTypeClass rc=2
+[era] _VectorClass_PAUTileInsertType_IsometricTileTypeClass rc=2
+[era] _VectorClass_PBVMultiMission rc=2
+[era] _VectorClass_PAVTemporalClass rc=2
+[era] FootClass                rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=2
+[era] AirstrikeClass           rc=2
+[era] OverlayClass             rc=2
+[era] TriggerClass             rc=2
+[era] _addr_7D                 rc=2
+[era] BulletClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x74f5f0   MISMATCH         IRTTITypeInfo::FindItem
+[diff] 0x46dc90   MISMATCH         Compare::Field96
+[diff] 0x459ef0   MISMATCH         BuildingClass::GetBuildCoordsAdjusted
+[diff] 0x4513d0   MISMATCH         BuildingClass::ProductionCheck
+[diff] 0x63f040   MISMATCH         Sidebar::RemoveItem
+[diff] 0x4de770   MISMATCH         FootClass::IsTimerActive
+[ledger] 0x74f5f0 IRTTITypeInfo::FindItem -> NG (attempt 1)
+[ledger] 0x46dc90 Compare::Field96 -> NG (attempt 1)
+[ledger] 0x58d0a0 TileSystem::LookupMapTile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x459ef0 BuildingClass::GetBuildCoordsAdjusted -> NG (attempt 1)
+[ledger] 0x718230 TeleportLocomotionClass::ResetMovementState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4513d0 BuildingClass::ProductionCheck -> NG (attempt 1)
+[ledger] 0x63f040 Sidebar::RemoveItem -> NG (attempt 1)
+[ledger] 0x40cdf0 _VectorClass_PAVObjectClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c2dc0 _VectorClass_PAVEBolt::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ecda0 _VectorClass_PAVTeamTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a5d0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eed30 _VectorClass_PBVMultiMission::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71b3c0 _VectorClass_PAVTemporalClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4de770 FootClass::IsTimerActive -> NG (attempt 1)
+[ledger] 0x6f2640 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41d7a0 AirstrikeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fdf10 OverlayClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x726820 TriggerClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d6cf0 _strpbrk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41c3f0 BulletClass::NormalizeZeroVector -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "regalloc": 1,
+  "branch_polarity": 2,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p08\batch_report.json

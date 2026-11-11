@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetBuildCoordsAdjusted@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::GetBuildCoordsAdjusted",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "518b91a00000008b442400568bb1a40000008b899c00000089700881e98000000083c28089088950045e59c3",
+ "relocs": []
+}

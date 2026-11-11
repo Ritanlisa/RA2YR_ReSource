@@ -1,0 +1,11 @@
+{
+ "addr": "0x63F040",
+ "name": "Sidebar::RemoveItem",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63F040",
+ "bytes_hex": "8b51108b4424043bc27d214a3bc28951107d14568b5104408b3482897482fc8b51103bc27cee5eb001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

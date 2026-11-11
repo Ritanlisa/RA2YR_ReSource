@@ -1,0 +1,11 @@
+{
+ "addr": "0x4513D0",
+ "name": "BuildingClass::ProductionCheck",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4513D0",
+ "bytes_hex": "8b813405000085c074188a81e406000084c0740e8b89200500008b01ffa09c0000008b89200500008b11ffa2c0000000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

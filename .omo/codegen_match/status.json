@@ -612,6 +612,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40cdf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_VectorClass_PAVObjectClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ObjectVector::Add",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x40cff0": {
   "attempts": 2,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
@@ -1290,6 +1302,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x41c3f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "BulletClass::NormalizeZeroVector",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BulletClass::NormalizeZeroVector",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x41c640": {
   "attempts": 4,
   "first_diff": "+0 sub dword ptr [esp + 4], 4",
@@ -1414,6 +1438,18 @@
   "name": "AirstrikeClass::AirstrikeClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x41d7a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AirstrikeClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AirstrikeClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x41d830": {
   "attempts": 1,
@@ -2414,6 +2450,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4513d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 je 0x4513f2",
+  "name": "BuildingClass::ProductionCheck",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "BuildingClass::ProductionCheck",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x451690": {
   "attempts": 1,
   "first_diff": null,
@@ -2617,6 +2665,18 @@
   "name": "BuildingClass::GetTypePtr",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x459ef0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 add ecx, 0x9c",
+  "name": "BuildingClass::GetBuildCoordsAdjusted",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "BuildingClass::GetBuildCoordsAdjusted",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x45b050": {
   "attempts": 2,
@@ -2925,6 +2985,18 @@
   "name": "sub_46DA20",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x46dc90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 mov ecx, dword ptr [esp + 8]",
+  "name": "Compare::Field96",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Compare::Field96",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x46f5e0": {
   "attempts": 1,
@@ -5802,6 +5874,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x4c2dc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVEBolt::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_EBolt::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4c3570": {
   "attempts": 1,
   "first_diff": "+18 call 0x7ca405",
@@ -6493,6 +6577,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4de770": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+15 je 0x4de79b",
+  "name": "FootClass::IsTimerActive",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "FootClass::IsTimerActive",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4de7b0": {
   "attempts": 1,
   "first_diff": null,
@@ -7162,6 +7258,18 @@
   "name": "VectorClass_ptr_TaskForceClass::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x4ecda0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTeamTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TeamTypeClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4ed5d0": {
   "attempts": 1,
@@ -9431,6 +9539,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x54a5d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUTileInsertType_IsometricTileTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x54a610": {
   "attempts": 1,
   "clean": false,
@@ -10656,6 +10776,18 @@
   "name": "Map_Helper_58D010",
   "note": "decomp_batch r2: MISMATCH/signedness",
   "status": "NG"
+ },
+ "0x58d0a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TileSystem::LookupMapTile",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TileSystem::LookupMapTile",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x58ef10": {
   "attempts": 1,
@@ -12635,6 +12767,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5eed30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVMultiMission::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_cptr_MultiMission::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5ef280": {
   "attempts": 11,
   "clean": true,
@@ -13040,6 +13184,18 @@
   "orig_name": "Object::StubReturn176",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5fdf10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "OverlayClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Object::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5fdf50": {
@@ -14272,6 +14428,18 @@
   "name": "BlowPipe_23::Destructor_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x63f040": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+9 jge 0x63f06c",
+  "name": "Sidebar::RemoveItem",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "Sidebar::RemoveItem",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x63f2e0": {
   "attempts": 1,
@@ -18054,6 +18222,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6f2640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::FindItem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TeamTypeClass_28::FindItem",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6f2a10": {
   "attempts": 2,
   "first_diff": null,
@@ -18538,6 +18718,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x718230": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TeleportLocomotionClass::ResetMovementState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::ResetMovementState",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x719ee0": {
   "attempts": 1,
   "first_diff": "+17 ret 8",
@@ -18607,6 +18799,18 @@
   "name": "TemporalClass::StubReturn70",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x71b3c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTemporalClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TemporalClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x71b400": {
   "attempts": 1,
@@ -19101,6 +19305,18 @@
   "name": "TeamClass::AddToBuildQueue",
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
+ },
+ "0x726820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TriggerClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TriggerClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7268f0": {
   "attempts": 4,
@@ -20068,6 +20284,18 @@
   "name": "AbstractClass::checkBuildingPlacement",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x74f5f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "IRTTITypeInfo::FindItem",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IRTTITypeInfo::FindItem",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x74f6f0": {
   "attempts": 1,
@@ -23642,6 +23870,17 @@
   "name": "_fix_grouping_0",
   "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
   "status": "PENDING"
+ },
+ "0x7d6cf0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "_strpbrk",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "_strpbrk",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7d72d4": {
   "attempts": 1,

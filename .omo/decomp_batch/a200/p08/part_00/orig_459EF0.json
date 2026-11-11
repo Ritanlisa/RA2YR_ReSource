@@ -1,0 +1,11 @@
+{
+ "addr": "0x459EF0",
+ "name": "BuildingClass::GetBuildCoordsAdjusted",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x459EF0",
+ "bytes_hex": "81c19c000000568bd1578b028b4a048d70808b44240c83c1808b52088bf88937894f048957085f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

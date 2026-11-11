@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsTimerActive@FootClass@@QAE_NXZ",
+ "sym_key": "FootClass::IsTimerActive",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b91a00600008b81a806000083faff74188b0d000000002bca3bc8730a33d23bc10f95c28ac2c333c033c985c00f95c18ac1c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}
