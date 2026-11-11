@@ -1,0 +1,159 @@
+{
+ "symbol": "?Audio_Helper_7C7F20@@YAHHPAGPAEH@Z",
+ "sym_key": "Unnamed::Audio_Helper_7C7F20",
+ "size": 952,
+ "link_base": 0,
+ "bytes_hex": "83ec0c535557e8000000008b6c24208944241485edc744240c000000000f847d0300008b7c242485ff0f84710300008b44242885c00f84650300008b5c241c897c242083e3808944242480cb8085c00f8e4b0300005633c08b5424108a45004245895424108d0c85000000008bc180e10025ff000000c1e8020bc18bc881e100ff000081f9000200000f85a3000000a820742ac0e0030fbed0c1fa038b4c242803d333d381e2ff00000033da49881f47894c2428897c2424e9d60200008ac82400fec181e1ff0000000bc18bc88944242cd1e97414668b550083c50266891783c7024975f0897c242483e0018bf58bc880e3008bd103e8c1e902f3a58bca8b54242883e103f3a48b4c242c8b7424102bd103f18b4c24248954242833d2897424108a5408ff0bda03c189442424e95d0200008d480133c881e1ff00000033c18944242c2500ff00003d000100000f85d30000008a45008b742410884424144683e00f897424108bf0458a960000000003d333d381e2ff00000033dae80000000050e8000000008a44242883c40484c0740380cbff8b44241481e600ffffff25ff000000c1e8040bc68a800000000003c333c325ff00000033d8e80000000050e8000000008a44242883c40484c0740380cbff8b4424248b4c242883e90266891883c002894424248b44242c894c242833c98d50ff8acf33d080e30081e2ff0000000bd933c284c08944242c0f8542fffffff6c4ff74108b7c24248bc38b44242833c9894424288a45008b54241042450fbef0896c24208bee83e503895424108a8d0000000003cb33cb81e1ff00000033d9e80000000050e8000000008a44242883c40484c0740380cbff6a0853e8000000008bfe81e503fcffff83e70c8bd833fdc1ef028a970000000003d333d381e2ff00000033dae80000000050e8000000008a44243083c40c84c0740380cbff6a0853e8000000008bde81e70ff0ffff83e3308be833dfc1eb048a830000000003c533c525ff00000033e8e80000000050e8000000008a44243083c40c84c0740681cdff0000006a0855e80000000033f38bf881e6c000000033f3c1ee0681e603ffff038a8e0000000003cf33cf81e1ff00000033f9e80000000050e8000000008a44243083c40c84c0740681cfff0000006a0857e8000000008b4c242c8b5c243083eb046a08890183c10450895c2438894c2434e8000000008bd88b44243c8b6c243083c4108d50ff33d081e2ff00000033c284c08944242c0f8597feffff8b7c24248b44242885c00f8fb7fcffff5e8b44241450e8000000008b44241083c4045f5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?__readeflags@@YAHXZ",
+   "sym_key": "__readeflags"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7C80F6@@3PAEA",
+   "sym_key": "DataGlobal_7C80F6"
+  },
+  {
+   "off": 380,
+   "type": "REL32",
+   "sym": "?__readeflags@@YAHXZ",
+   "sym_key": "__readeflags"
+  },
+  {
+   "off": 386,
+   "type": "REL32",
+   "sym": "?__writeeflags@@YAHHZZ",
+   "sym_key": "__writeeflags"
+  },
+  {
+   "off": 426,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7C80F6@@3PAEA",
+   "sym_key": "DataGlobal_7C80F6"
+  },
+  {
+   "off": 442,
+   "type": "REL32",
+   "sym": "?__readeflags@@YAHXZ",
+   "sym_key": "__readeflags"
+  },
+  {
+   "off": 448,
+   "type": "REL32",
+   "sym": "?__writeeflags@@YAHHZZ",
+   "sym_key": "__writeeflags"
+  },
+  {
+   "off": 577,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7C80F2@@3PAEA",
+   "sym_key": "DataGlobal_7C80F2"
+  },
+  {
+   "off": 594,
+   "type": "REL32",
+   "sym": "?__readeflags@@YAHXZ",
+   "sym_key": "__readeflags"
+  },
+  {
+   "off": 600,
+   "type": "REL32",
+   "sym": "?__writeeflags@@YAHHZZ",
+   "sym_key": "__writeeflags"
+  },
+  {
+   "off": 622,
+   "type": "REL32",
+   "sym": "?__ROR4__@@YAHHHZZ",
+   "sym_key": "__ROR4__"
+  },
+  {
+   "off": 646,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7C80F2@@3PAEA",
+   "sym_key": "DataGlobal_7C80F2"
+  },
+  {
+   "off": 663,
+   "type": "REL32",
+   "sym": "?__readeflags@@YAHXZ",
+   "sym_key": "__readeflags"
+  },
+  {
+   "off": 669,
+   "type": "REL32",
+   "sym": "?__writeeflags@@YAHHZZ",
+   "sym_key": "__writeeflags"
+  },
+  {
+   "off": 691,
+   "type": "REL32",
+   "sym": "?__ROR4__@@YAHHHZZ",
+   "sym_key": "__ROR4__"
+  },
+  {
+   "off": 715,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7C80F2@@3PAEA",
+   "sym_key": "DataGlobal_7C80F2"
+  },
+  {
+   "off": 731,
+   "type": "REL32",
+   "sym": "?__readeflags@@YAHXZ",
+   "sym_key": "__readeflags"
+  },
+  {
+   "off": 737,
+   "type": "REL32",
+   "sym": "?__writeeflags@@YAHHZZ",
+   "sym_key": "__writeeflags"
+  },
+  {
+   "off": 762,
+   "type": "REL32",
+   "sym": "?__ROR4__@@YAHHHZZ",
+   "sym_key": "__ROR4__"
+  },
+  {
+   "off": 789,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7C80F2@@3PAEA",
+   "sym_key": "DataGlobal_7C80F2"
+  },
+  {
+   "off": 806,
+   "type": "REL32",
+   "sym": "?__readeflags@@YAHXZ",
+   "sym_key": "__readeflags"
+  },
+  {
+   "off": 812,
+   "type": "REL32",
+   "sym": "?__writeeflags@@YAHHZZ",
+   "sym_key": "__writeeflags"
+  },
+  {
+   "off": 837,
+   "type": "REL32",
+   "sym": "?__ROR4__@@YAHHHZZ",
+   "sym_key": "__ROR4__"
+  },
+  {
+   "off": 869,
+   "type": "REL32",
+   "sym": "?__ROL4__@@YAHHHZZ",
+   "sym_key": "__ROL4__"
+  },
+  {
+   "off": 934,
+   "type": "REL32",
+   "sym": "?__writeeflags@@YAHHZZ",
+   "sym_key": "__writeeflags"
+  }
+ ]
+}
