@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_539560@@YAHXZ",
+ "sym_key": "Unnamed::sub_539560",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "a100000000a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9F8@@3IA",
+   "sym_key": "DataGlobal_A9F9F8"
+  },
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Coords@@3IA",
+   "sym_key": "LightningStorm_Coords"
+  }
+ ]
+}
