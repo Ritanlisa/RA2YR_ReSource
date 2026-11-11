@@ -1,0 +1,8 @@
+{
+ "symbol": "?DecrementRefCount@ScriptAction@@QAEHH@Z",
+ "sym_key": "ScriptAction::DecrementRefCount",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "8b442404c6400c008b81a8000000488981a8000000750ac781b0000000ffffffffc20400",
+ "relocs": []
+}

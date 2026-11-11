@@ -202,3 +202,4 @@
 {"layer": "A", "part": 201, "n": 20, "seconds": 13.8, "ok": true, "verdicts": {"MISMATCH": 9, "COMPILE_FAIL": 10, "MATCH": 1}}
 {"layer": "A", "part": 202, "n": 20, "seconds": 15.1, "ok": true, "verdicts": {"MISMATCH": 13, "MATCH": 5, "COMPILE_FAIL": 2}}
 {"layer": "A", "part": 203, "n": 20, "seconds": 13.7, "ok": true, "verdicts": {"MISMATCH": 14, "COMPILE_FAIL": 6}}
+{"layer": "A", "part": 204, "n": 20, "seconds": 14.5, "ok": true, "verdicts": {"MISMATCH": 15, "MATCH": 3, "COMPILE_FAIL": 2}}

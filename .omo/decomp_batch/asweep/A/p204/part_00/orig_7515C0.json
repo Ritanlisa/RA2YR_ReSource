@@ -1,0 +1,11 @@
+{
+ "addr": "0x7515C0",
+ "name": "System_Get_7515C0",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7515C0",
+ "bytes_hex": "8b1588d3b10033c05685d27e128b357cd3b100390e740b4083c6043bc27cf483c8ff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Update@MSBitPrintAnim@@QAEPAIPAH@Z",
+ "sym_key": "MSBitPrintAnim::Update",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b41208b108b44240489108b51248950048b51288950088b492c89480cc20400",
+ "relocs": []
+}

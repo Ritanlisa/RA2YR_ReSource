@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p204\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cc850 MSBinkAnim::Pause -> MSBinkAnim
+[conv] 0x5cd3d0 MSBitPrintAnim::Update -> MSBitPrintAnim
+[conv] 0x5ce2b0 MSPrintAnim::Update -> MSPrintAnim
+[conv] 0x5cea80 MSPCXAnim::GetFrame -> MSPCXAnim
+[conv] 0x5f75e0 ObjectTypeClass::InitTriple256 -> ObjectTypeClass
+[conv] 0x628830 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Get -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x6342e0 ObjectClass::Team_Helper_6342E0 -> ObjectClass
+[conv] 0x6351e0 ScriptAction::DecrementRefCount -> ScriptAction
+[conv] 0x639f80 DecFactoryClassCounter -> _addr_63
+[conv] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> JumpjetLocomotionClass
+[conv] 0x69f3a0 JumpjetLocomotionClass::GetCoordinate_1 -> JumpjetLocomotionClass
+[conv] 0x6b43e0 _DynamicVectorClass_UUndoInfoStruct::GetItemIndex -> _DynamicVectorClass_UUndoInfoStruct
+[conv] 0x6b4620 _VectorClass_UUndoInfoStruct::GetCapacity -> _VectorClass_UUndoInfoStruct
+[conv] 0x6b7d50 SpawnManagerClass::CountDockedSpawns -> SpawnManagerClass
+[conv] 0x6cc360 SuperClass::CanFire -> SuperClass
+[conv] 0x6dc820 _VectorClass_UDirtyAreaStruct::GetCapacity -> _VectorClass_UDirtyAreaStruct
+[conv] 0x70f740 ObjectClass::sub_70F740 -> ObjectClass
+[conv] 0x7475d0 UnitTypeClass::GetDefaultDimensions -> UnitTypeClass
+[conv] 0x7515c0 ObjectClass::System_Get_7515C0 -> ObjectClass
+[conv] 0x755c60 Locomotor_Update -> Locomotor
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSBinkAnim               rc=0
+[era] MSBitPrintAnim           rc=0
+[era] MSPrintAnim              rc=0
+[era] MSPCXAnim                rc=0
+[era] ObjectTypeClass          rc=0
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] ObjectClass              rc=0
+[era] ScriptAction             rc=0
+[era] _addr_63                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] _DynamicVectorClass_UUndoInfoStruct rc=0
+[era] _VectorClass_UUndoInfoStruct rc=0
+[era] SpawnManagerClass        rc=0
+[era] SuperClass               rc=0
+[era] _VectorClass_UDirtyAreaStruct rc=0
+[era] UnitTypeClass            rc=0
+[era] Locomotor                rc=0
+=== diffasm byte-compare ===
+[diff] 0x5cc850   MISMATCH         MSBinkAnim::Pause
+[diff] 0x5cd3d0   MISMATCH         MSBitPrintAnim::Update
+[diff] 0x5ce2b0   MISMATCH         MSPrintAnim::Update
+[diff] 0x5cea80   MISMATCH         MSPCXAnim::GetFrame
+[diff] 0x5f75e0   MISMATCH         ObjectTypeClass::InitTriple256
+[diff] 0x628830   MISMATCH         _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Get
+[diff] 0x6342e0   MISMATCH         ObjectClass::Team_Helper_6342E0
+[diff] 0x70f740   MISMATCH         ObjectClass::sub_70F740
+[diff] 0x7515c0   MISMATCH         ObjectClass::System_Get_7515C0
+[diff] 0x6351e0   MATCH            ScriptAction::DecrementRefCount
+[diff] 0x69f3a0   MISMATCH         JumpjetLocomotionClass::GetCoordinate_1
+[diff] 0x6b43e0   MISMATCH         _DynamicVectorClass_UUndoInfoStruct::GetItemIndex
+[diff] 0x6b4620   MISMATCH         _VectorClass_UUndoInfoStruct::GetCapacity
+[diff] 0x6b7d50   MATCH            SpawnManagerClass::CountDockedSpawns
+[diff] 0x6cc360   MISMATCH         SuperClass::CanFire
+[diff] 0x6dc820   MISMATCH         _VectorClass_UDirtyAreaStruct::GetCapacity
+[diff] 0x7475d0   MISMATCH         UnitTypeClass::GetDefaultDimensions
+[diff] 0x755c60   MATCH            Locomotor_Update
+[ledger] 0x5cc850 MSBinkAnim::Pause -> NG (attempt 1)
+[ledger] 0x5cd3d0 MSBitPrintAnim::Update -> NG (attempt 1)
+[ledger] 0x5ce2b0 MSPrintAnim::Update -> NG (attempt 1)
+[ledger] 0x5cea80 MSPCXAnim::GetFrame -> NG (attempt 1)
+[ledger] 0x5f75e0 ObjectTypeClass::InitTriple256 -> NG (attempt 1)
+[ledger] 0x628830 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Get -> NG (attempt 1)
+[ledger] 0x6342e0 ObjectClass::Team_Helper_6342E0 -> NG (attempt 1)
+[ledger] 0x6351e0 ScriptAction::DecrementRefCount -> OK (attempt 1)
+[ledger] 0x639f80 DecFactoryClassCounter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69f3a0 JumpjetLocomotionClass::GetCoordinate_1 -> NG (attempt 1)
+[ledger] 0x6b43e0 _DynamicVectorClass_UUndoInfoStruct::GetItemIndex -> NG (attempt 1)
+[ledger] 0x6b4620 _VectorClass_UUndoInfoStruct::GetCapacity -> NG (attempt 1)
+[ledger] 0x6b7d50 SpawnManagerClass::CountDockedSpawns -> OK (attempt 1)
+[ledger] 0x6cc360 SuperClass::CanFire -> NG (attempt 1)
+[ledger] 0x6dc820 _VectorClass_UDirtyAreaStruct::GetCapacity -> NG (attempt 1)
+[ledger] 0x70f740 ObjectClass::sub_70F740 -> NG (attempt 1)
+[ledger] 0x7475d0 UnitTypeClass::GetDefaultDimensions -> NG (attempt 1)
+[ledger] 0x7515c0 ObjectClass::System_Get_7515C0 -> NG (attempt 1)
+[ledger] 0x755c60 Locomotor_Update -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "MATCH": 3,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "eval_order": 4,
+  "codegen_shape": 4,
+  "branch_order": 5,
+  "regalloc": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 16.7,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p204\batch_report.json

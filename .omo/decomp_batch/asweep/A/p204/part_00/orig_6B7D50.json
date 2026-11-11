@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B7D50",
+ "name": "SpawnManagerClass::CountDockedSpawns",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B7D50",
+ "bytes_hex": "568b714833c085f67e188b513c8b0a8b490483f906740485c975014083c2044e75eb5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

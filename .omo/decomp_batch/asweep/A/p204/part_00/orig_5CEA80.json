@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CEA80",
+ "name": "MSPCXAnim::GetFrame",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CEA80",
+ "bytes_hex": "8b44240483c12c568bd08b3189328b71048972048b71088972085e8b490c894a0cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

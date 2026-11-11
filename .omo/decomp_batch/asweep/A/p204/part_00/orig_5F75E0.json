@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F75E0",
+ "name": "Struct::InitTriple256",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F75E0",
+ "bytes_hex": "a17414ac005657b9000100008d34008b44240c8bf88bd1890f8957048977085f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

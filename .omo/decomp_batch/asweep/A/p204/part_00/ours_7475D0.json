@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetDefaultDimensions@UnitTypeClass@@QAGPAIPAH@Z",
+ "sym_key": "UnitTypeClass::GetDefaultDimensions",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "a1000000008d0c008b442404c70000010000c7400400010000894808c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D138@@3IA",
+   "sym_key": "DataGlobal_B1D138"
+  }
+ ]
+}

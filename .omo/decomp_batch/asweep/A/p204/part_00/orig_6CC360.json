@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CC360",
+ "name": "SuperClass::CanFire",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CC360",
+ "bytes_hex": "8a417084c0751a8b41288a90e500000084d274098b417c85c00f95c0c38a416fc332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

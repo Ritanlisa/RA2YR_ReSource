@@ -1,0 +1,8 @@
+{
+ "symbol": "?Update@MSPrintAnim@@QAEPAIPAH@Z",
+ "sym_key": "MSPrintAnim::Update",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b41388b108b44240489108b513c8950048b51408950088b494489480cc20400",
+ "relocs": []
+}

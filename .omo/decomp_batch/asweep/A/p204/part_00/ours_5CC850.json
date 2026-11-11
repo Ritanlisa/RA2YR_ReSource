@@ -1,0 +1,8 @@
+{
+ "symbol": "?Pause@MSBinkAnim@@QAEPAIPAH@Z",
+ "sym_key": "MSBinkAnim::Pause",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b41248b108b44240489108b51288950048b512c8950088b493089480cc20400",
+ "relocs": []
+}

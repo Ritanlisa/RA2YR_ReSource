@@ -1,0 +1,15 @@
+{
+ "symbol": "?InitTriple256@ObjectTypeClass@@QAGPAIPAH@Z",
+ "sym_key": "ObjectTypeClass::InitTriple256",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "a1000000008d0c008b442404c70000010000c7400400010000894808c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1474@@3IA",
+   "sym_key": "DataGlobal_AC1474"
+  }
+ ]
+}

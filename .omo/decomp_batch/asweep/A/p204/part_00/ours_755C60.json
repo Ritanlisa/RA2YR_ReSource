@@ -1,0 +1,15 @@
+{
+ "symbol": "?Locomotor_Update@@YIPADPADH@Z",
+ "sym_key": "Unnamed::Locomotor_Update",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "83fa048bc17c0383ea04568d3452c1e6045781c600000000b90c0000008bf8f3a55f5ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B450B8@@3EA",
+   "sym_key": "DataGlobal_B450B8"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7475D0",
+ "name": "UnitTypeClass::GetDefaultDimensions",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7475D0",
+ "bytes_hex": "a138d1b1005657b9000100008d34008b44240c8bf88bd1890f8957048977085f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
