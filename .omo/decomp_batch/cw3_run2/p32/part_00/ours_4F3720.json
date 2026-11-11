@@ -1,0 +1,21 @@
+{
+ "symbol": "?Draw@GraphicMenuImageItem@@QAEHD@Z",
+ "sym_key": "GraphicMenuImageItem::Draw",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "538a5c2408568bf18b462485c0741b84db740e8a4e0584c97507b901000000eb0233c98b105150ff52048b4e2885c9741b84db740e8a460584c07407b801000000eb0233c08b115051ff52048b462c85c0740c8b0884db0f94c25250ff51048b4e108d460450e8000000008bcee8000000005e5bc20400",
+ "relocs": [
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?ReleaseAll@Team@@QAEHH@Z",
+   "sym_key": "Team::ReleaseAll"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?Flip2@DSurface@@QAEHXZ",
+   "sym_key": "DSurface::Flip2"
+  }
+ ]
+}

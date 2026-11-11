@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x540670",
+  "name": "IPXGlobalConnClass::QueryInterface",
+  "cls": null,
+  "size": 102,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x7d7374",
+  "name": "_ProcessCodePage",
+  "cls": null,
+  "size": 102,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2064",
+  "first_msg": "term does not evaluate to a function"
+ },
+ {
+  "addr": "0x4f1840",
+  "name": "ShowGameDialog",
+  "cls": null,
+  "size": 103,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ')' before '__stdcall'"
+ },
+ {
+  "addr": "0x69a340",
+  "name": "sub_69A340",
+  "cls": null,
+  "size": 104,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2673",
+  "first_msg": "'sub_69A340' : global functions do not have 'this' pointers"
+ },
+ {
+  "addr": "0x765bb0",
+  "name": "COMClass::createInstance",
+  "cls": null,
+  "size": 106,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'rc_ptr' : undeclared identifier"
+ },
+ {
+  "addr": "0x7b7dd0",
+  "name": "FormatWideString",
+  "cls": null,
+  "size": 109,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x7d461e",
+  "name": "___wtomb_environ",
+  "cls": null,
+  "size": 110,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'WideCharToMultiByte' : cannot convert parameter 3 from 'const class WCHAR *' to 'void *'"
+ },
+ {
+  "addr": "0x7982d0",
+  "name": "sub_7982D0",
+  "cls": null,
+  "size": 111,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2673",
+  "first_msg": "'sub_7982D0' : global functions do not have 'this' pointers"
+ },
+ {
+  "addr": "0x5d64c0",
+  "name": "ListBox::Refresh",
+  "cls": null,
+  "size": 114,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x6c0a10",
+  "name": "TClassFactory_SpawnManagerClass::ddtor",
+  "cls": null,
+  "size": 114,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int,unsigned int *,unsigned int *)' : cannot convert parameter 2 from '"
+ },
+ {
+  "addr": "0x6c4010",
+  "name": "TClassFactory_DriveLocomotionClass::ddtor",
+  "cls": null,
+  "size": 114,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int,unsigned int *,unsigned int *)' : cannot convert parameter 2 fro"
+ },
+ {
+  "addr": "0x6c4c10",
+  "name": "TClassFactory_TeleportLocomotionClass::ddtor",
+  "cls": null,
+  "size": 114,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2380",
+  "first_msg": "type(s) preceding 'TeleportLocomotionClass' (constructor with return typ"
+ },
+ {
+  "addr": "0x4a7b90",
+  "name": "DiskLaserClass::Write",
+  "cls": null,
+  "size": 115,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x5f60a0",
+  "name": "ObjectClass::SetCellOverlayFlag",
+  "cls": null,
+  "size": 115,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Cell__GetGroundHeight' : cannot convert parameter 1 from 'unsigned int *' to 'int'"
+ },
+ {
+  "addr": "0x4bb000",
+  "name": "DSurface::RestoreIfLost",
+  "cls": null,
+  "size": 116,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'g_DDraw_Initialized' : undeclared identifier"
+ },
+ {
+  "addr": "0x4f3720",
+  "name": "GraphicMenuImageItem::Draw",
+  "cls": null,
+  "size": 117,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ')' before '__stdcall'"
+ },
+ {
+  "addr": "0x6bf690",
+  "name": "VectorClass_K_38::ddtor",
+  "cls": null,
+  "size": 117,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int,unsigned int *,unsigned int *)' : cannot convert parameter 2 from 'int' to"
+ },
+ {
+  "addr": "0x6c5090",
+  "name": "TClassFactory_BulletClass::ddtor",
+  "cls": null,
+  "size": 117,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2380",
+  "first_msg": "type(s) preceding 'BulletClass' (constructor with return type, or illegal redefiniti"
+ },
+ {
+  "addr": "0x6bf510",
+  "name": "VectorClass_K_32::ddtor",
+  "cls": null,
+  "size": 119,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2380",
+  "first_msg": "type(s) preceding 'SuperWeaponTypeClass' (constructor with return type, or"
+ },
+ {
+  "addr": "0x6c1f10",
+  "name": "TClassFactory_ScriptTypeClass::GetClassIdentifier",
+  "cls": null,
+  "size": 119,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int *,unsigned int *,unsigned int *)' : cannot convert parameter 2 from '"
+ }
+]

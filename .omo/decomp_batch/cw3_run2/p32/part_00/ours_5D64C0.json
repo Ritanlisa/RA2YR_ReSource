@@ -1,0 +1,33 @@
+{
+ "symbol": "?Refresh@MultiplayerGameMode@@QAGHHH@Z",
+ "sym_key": "MultiplayerGameMode::Refresh",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408576a006a00688401000053e80000000033ff8b4424108b481085c9764955568b40048b34b8566a0068cd04000053e8000000008be83b74241c750e6a0055688601000053e8000000005655689a01000053e800000000478b4c24188b41103bf88bc172bb5e5d5f5bc20c00",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

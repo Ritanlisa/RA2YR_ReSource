@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A7B90",
+ "name": "DiskLaserClass::Write",
+ "size": 115,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A7B90",
+ "bytes_hex": "8b442408568b742408575056e8df87f6ff8bf885ff7c5585f674278d4c2410518bcee80986f6ffc706b85f7e00c746049c5f7e00c74608945f7e00c7460c8c5f7e008d5624526810c1b000e8607622008d4628506810c1b000e85276220083c62c566810c1b000e8447622008bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

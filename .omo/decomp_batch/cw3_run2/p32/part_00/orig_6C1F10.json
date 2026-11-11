@@ -1,0 +1,11 @@
+{
+ "addr": "0x6C1F10",
+ "name": "TClassFactory_ScriptTypeClass::GetClassIdentifier",
+ "size": 119,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6C1F10",
+ "bytes_hex": "56578b7c241885ff750a5fb8570007805ec210008b442410c7070000000085c0740a5fb8100104805ec210006834020000e8d16e100083c40485c0740f6a008bc8e85af7fcff8bf085f6750a5fb80e0007805ec210008b4c24148b06575156ff108bf885ff7d098b166a018bceff52208bc75f5ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

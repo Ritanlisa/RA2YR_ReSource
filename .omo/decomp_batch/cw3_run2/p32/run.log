@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x540670 IPXGlobalConnClass::QueryInterface -> IPXGlobalConnClass
+[conv] 0x7d7374 _ProcessCodePage -> _addr_7D
+[conv] 0x4f1840 ShowGameDialog -> _addr_4F
+[conv] 0x69a340 sub_69A340 -> _addr_69
+[conv] 0x765bb0 COMClass::createInstance -> COMClass
+[conv] 0x7b7dd0 FormatWideString -> _addr_7B
+[conv] 0x7d461e ___wtomb_environ -> _addr_7D
+[conv] 0x7982d0 sub_7982D0 -> _addr_79
+[conv] 0x5d64c0 MultiplayerGameMode::Refresh -> MultiplayerGameMode
+[conv] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c4010 _TClassFactory_VDriveLocomotionClass::ddtor -> _TClassFactory_VDriveLocomotionClass
+[conv] 0x6c4c10 _TClassFactory_VTeleportLocomotionClass::ddtor -> _TClassFactory_VTeleportLocomotionClass
+[conv] 0x4a7b90 DiskLaserClass::Write -> DiskLaserClass
+[conv] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> ObjectClass
+[conv] 0x4bb000 DSurface::RestoreIfLost -> DSurface
+[conv] 0x4f3720 GraphicMenuImageItem::Draw -> GraphicMenuImageItem
+[conv] 0x6bf690 _TClassFactory_VSuperClass::ddtor -> _TClassFactory_VSuperClass
+[conv] 0x6c5090 _TClassFactory_VBulletClass::ddtor -> _TClassFactory_VBulletClass
+[conv] 0x6bf510 _TClassFactory_VSuperWeaponTypeClass::ddtor -> _TClassFactory_VSuperWeaponTypeClass
+[conv] 0x6c1f10 _TClassFactory_VScriptTypeClass::GetClassIdentifier -> _TClassFactory_VScriptTypeClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXGlobalConnClass       rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_4F                 rc=2
+[era] _addr_69                 rc=2
+[era] COMClass                 rc=2
+[era] _addr_7B                 rc=2
+[era] _addr_79                 rc=2
+[era] MultiplayerGameMode      rc=0
+[era] _TClassFactory_VSpawnManagerClass rc=2
+[era] _TClassFactory_VDriveLocomotionClass rc=2
+[era] _TClassFactory_VTeleportLocomotionClass rc=2
+[era] DiskLaserClass           rc=0
+[era] ObjectClass              rc=2
+[era] DSurface                 rc=2
+[era] GraphicMenuImageItem     rc=0
+[era] _TClassFactory_VSuperClass rc=2
+[era] _TClassFactory_VBulletClass rc=2
+[era] _TClassFactory_VSuperWeaponTypeClass rc=2
+[era] _TClassFactory_VScriptTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d64c0   MISMATCH         MultiplayerGameMode::Refresh
+[diff] 0x4a7b90   MISMATCH         DiskLaserClass::Write
+[diff] 0x4f3720   MISMATCH         GraphicMenuImageItem::Draw
+[diff] 0x6c1f10   MISMATCH         _TClassFactory_VScriptTypeClass::GetClassIdentifier
+[ledger] 0x540670 IPXGlobalConnClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d7374 _ProcessCodePage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f1840 ShowGameDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69a340 sub_69A340 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x765bb0 COMClass::createInstance -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b7dd0 FormatWideString -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d461e ___wtomb_environ -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7982d0 sub_7982D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d64c0 MultiplayerGameMode::Refresh -> NG (attempt 3)
+[ledger] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c4010 _TClassFactory_VDriveLocomotionClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c4c10 _TClassFactory_VTeleportLocomotionClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a7b90 DiskLaserClass::Write -> NG (attempt 3)
+[ledger] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4bb000 DSurface::RestoreIfLost -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f3720 GraphicMenuImageItem::Draw -> NG (attempt 3)
+[ledger] 0x6bf690 _TClassFactory_VSuperClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c5090 _TClassFactory_VBulletClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6bf510 _TClassFactory_VSuperWeaponTypeClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c1f10 _TClassFactory_VScriptTypeClass::GetClassIdentifier -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "eval_order": 1,
+  "const_fold": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p32\batch_report.json

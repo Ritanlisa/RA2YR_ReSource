@@ -18579,15 +18579,15 @@
   "status": "NG"
  },
  "0x4a7b90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 call 0x410380",
   "name": "DiskLaserClass::Write",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "DiskLaserClass::Write",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a7c30": {
@@ -20520,7 +20520,7 @@
   "status": "OK"
  },
  "0x4bb000": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28306,7 +28306,7 @@
   "this_as_id": false
  },
  "0x4f1840": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "ShowGameDialog",
@@ -28515,7 +28515,7 @@
   "status": "NG"
  },
  "0x4f3720": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+8 mov ecx, dword ptr [esi + 0x24]",
@@ -35213,7 +35213,7 @@
   "status": "NG"
  },
  "0x540670": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -48102,7 +48102,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x5d64c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+1 mov ebx, dword ptr [0x7e14a4]",
@@ -50368,7 +50368,7 @@
   "status": "NG"
  },
  "0x5f60a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61339,7 +61339,7 @@
   "this_as_id": false
  },
  "0x69a340": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_69A340",
@@ -64757,7 +64757,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x6bf510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -64805,7 +64805,7 @@
   "this_as_id": false
  },
  "0x6bf690": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65162,7 +65162,7 @@
   "this_as_id": false
  },
  "0x6c0a10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65531,7 +65531,7 @@
   "this_as_id": false
  },
  "0x6c1f10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
@@ -66142,7 +66142,7 @@
   "this_as_id": false
  },
  "0x6c4010": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66372,7 +66372,7 @@
   "this_as_id": false
  },
  "0x6c4c10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66456,7 +66456,7 @@
   "this_as_id": false
  },
  "0x6c5090": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -81837,7 +81837,7 @@
   "this_as_id": false
  },
  "0x765bb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85720,7 +85720,7 @@
   "this_as_id": false
  },
  "0x7982d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_7982D0",
@@ -87532,7 +87532,7 @@
   "status": "NG"
  },
  "0x7b7dd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "FormatWideString",
@@ -89912,7 +89912,7 @@
   "this_as_id": false
  },
  "0x7d461e": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "___wtomb_environ",
@@ -90123,7 +90123,7 @@
   "this_as_id": false
  },
  "0x7d7374": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_ProcessCodePage",
