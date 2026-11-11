@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p142\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c6940 InitArrayWithValue -> _addr_5C
+[conv] 0x5e8da0 NetworkShare::GetField -> NetworkShare
+[conv] 0x5f3610 NullModemClass::GetAddress -> NullModemClass
+[conv] 0x652cd0 ObjectClass::sub_652CD0 -> ObjectClass
+[conv] 0x6558b0 Radar::PixelIndex -> Radar
+[conv] 0x65b4d0 RadSiteClass::SetSpread -> RadSiteClass
+[conv] 0x6915b0 TeamClass::Check -> TeamClass
+[conv] 0x692270 sub_692270 -> _addr_69
+[conv] 0x6c0010 _TClassFactory_VTiberiumClass::GetSize -> _TClassFactory_VTiberiumClass
+[conv] 0x6f2ad0 sub_6F2AD0 -> _addr_6F
+[conv] 0x6f2b20 sub_6F2B20 -> _addr_6F
+[conv] 0x70de20 ObjectClass::sub_70DE20 -> ObjectClass
+[conv] 0x72b310 LoadingScreen::GetOverlayImage -> LoadingScreen
+[conv] 0x747600 sub_747600 -> _addr_74
+[conv] 0x754be0 AudioConfig::InitDefault -> AudioConfig
+[conv] 0x769c20 ObjectClass::Map_Load_769C20 -> ObjectClass
+[conv] 0x76bfc0 ObjectClass::ConstructWDTSelection_Create_76BFC0 -> ObjectClass
+[conv] 0x77a780 ObjectClass::MainLobbyDlgProcWOL_Helper_77A780 -> ObjectClass
+[conv] 0x77a7a0 ObjectClass::MainLobbyDlgProcWOL_Helper_77A7A0 -> ObjectClass
+[conv] 0x7cf390 __twoToTOS -> _addr_7C
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5C                 rc=0
+[era] NetworkShare             rc=2
+[era] NullModemClass           rc=0
+[era] ObjectClass              rc=0
+[era] Radar                    rc=0
+[era] RadSiteClass             rc=0
+[era] TeamClass                rc=2
+[era] _addr_69                 rc=0
+[era] _TClassFactory_VTiberiumClass rc=0
+[era] _addr_6F                 rc=0
+[era] LoadingScreen            rc=2
+[era] _addr_74                 rc=2
+[era] AudioConfig              rc=0
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c6940   MATCH            InitArrayWithValue
+[diff] 0x5f3610   MATCH            NullModemClass::GetAddress
+[diff] 0x652cd0   MATCH            ObjectClass::sub_652CD0
+[diff] 0x70de20   MISMATCH         ObjectClass::sub_70DE20
+[diff] 0x769c20   MATCH            ObjectClass::Map_Load_769C20
+[diff] 0x76bfc0   MATCH            ObjectClass::ConstructWDTSelection_Create_76BFC0
+[diff] 0x77a780   MISMATCH         ObjectClass::MainLobbyDlgProcWOL_Helper_77A780
+[diff] 0x77a7a0   MISMATCH         ObjectClass::MainLobbyDlgProcWOL_Helper_77A7A0
+[diff] 0x6558b0   MISMATCH         Radar::PixelIndex
+[diff] 0x65b4d0   MATCH            RadSiteClass::SetSpread
+[diff] 0x692270   MATCH            sub_692270
+[diff] 0x6c0010   MISMATCH         _TClassFactory_VTiberiumClass::GetSize
+[diff] 0x6f2ad0   MATCH            sub_6F2AD0
+[diff] 0x6f2b20   MATCH            sub_6F2B20
+[diff] 0x754be0   MATCH            AudioConfig::InitDefault
+[ledger] 0x5c6940 InitArrayWithValue -> OK (attempt 1)
+[ledger] 0x5e8da0 NetworkShare::GetField -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f3610 NullModemClass::GetAddress -> OK (attempt 1)
+[ledger] 0x652cd0 ObjectClass::sub_652CD0 -> OK (attempt 1)
+[ledger] 0x6558b0 Radar::PixelIndex -> NG (attempt 1)
+[ledger] 0x65b4d0 RadSiteClass::SetSpread -> OK (attempt 1)
+[ledger] 0x6915b0 TeamClass::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x692270 sub_692270 -> OK (attempt 1)
+[ledger] 0x6c0010 _TClassFactory_VTiberiumClass::GetSize -> NG (attempt 1)
+[ledger] 0x6f2ad0 sub_6F2AD0 -> OK (attempt 1)
+[ledger] 0x6f2b20 sub_6F2B20 -> OK (attempt 1)
+[ledger] 0x70de20 ObjectClass::sub_70DE20 -> NG (attempt 1)
+[ledger] 0x72b310 LoadingScreen::GetOverlayImage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x747600 sub_747600 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x754be0 AudioConfig::InitDefault -> OK (attempt 1)
+[ledger] 0x769c20 ObjectClass::Map_Load_769C20 -> OK (attempt 1)
+[ledger] 0x76bfc0 ObjectClass::ConstructWDTSelection_Create_76BFC0 -> OK (attempt 1)
+[ledger] 0x77a780 ObjectClass::MainLobbyDlgProcWOL_Helper_77A780 -> NG (attempt 1)
+[ledger] 0x77a7a0 ObjectClass::MainLobbyDlgProcWOL_Helper_77A7A0 -> NG (attempt 1)
+[ledger] 0x7cf390 __twoToTOS -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 3,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 66.7,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p142\batch_report.json

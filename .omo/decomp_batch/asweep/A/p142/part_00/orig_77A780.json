@@ -1,0 +1,11 @@
+{
+ "addr": "0x77A780",
+ "name": "MainLobbyDlgProcWOL_Helper_77A780",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77A780",
+ "bytes_hex": "8b4424048b511c3bc2740789411cc6410801c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

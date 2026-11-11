@@ -1,0 +1,11 @@
+{
+ "addr": "0x6C0010",
+ "name": "TClassFactory_TiberiumClass::GetSize",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6C0010",
+ "bytes_hex": "8b44240885c08b4424048b480474094189480433c0",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetSpread@RadSiteClass@@QAEHH@Z",
+ "sym_key": "RadSiteClass::SetSpread",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b442404894144c1e0080580000000894148c20400",
+ "relocs": []
+}

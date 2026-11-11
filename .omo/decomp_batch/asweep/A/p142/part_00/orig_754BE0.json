@@ -1,0 +1,11 @@
+{
+ "addr": "0x754BE0",
+ "name": "AudioConfig::InitDefault",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x754BE0",
+ "bytes_hex": "568bc157b90c000000be1843b4008bf8f3a55f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

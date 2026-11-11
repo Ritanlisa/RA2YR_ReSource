@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetSize@_TClassFactory_VTiberiumClass@@QAGHHH@Z",
+ "sym_key": "_TClassFactory_VTiberiumClass::GetSize",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b54240885d28b48047415415250894804e8000000008b44241083c408c20c004989480433c0c20c00",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?nullsub_114@@YAHHH@Z",
+   "sym_key": "nullsub_114"
+  }
+ ]
+}

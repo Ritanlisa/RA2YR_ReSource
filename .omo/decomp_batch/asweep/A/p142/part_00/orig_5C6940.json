@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C6940",
+ "name": "InitArrayWithValue",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C6940",
+ "bytes_hex": "568bf18b4c24085733c08bfef3ab89165f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

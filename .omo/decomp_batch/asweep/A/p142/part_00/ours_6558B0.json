@@ -1,0 +1,8 @@
+{
+ "symbol": "?PixelIndex@Radar@@QAEHXZ",
+ "sym_key": "Radar::PixelIndex",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b49048bc1c1e0062bc1c1e002c3",
+ "relocs": []
+}
