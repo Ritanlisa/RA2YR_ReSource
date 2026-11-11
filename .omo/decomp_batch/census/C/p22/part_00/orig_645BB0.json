@@ -1,0 +1,11 @@
+{
+ "addr": "0x645BB0",
+ "name": "GetSuperWeaponTypeFlag",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x645BB0",
+ "bytes_hex": "8d41ff83f80a773dff2485f85b6400b820000000c3b840000000c3b808000000c3b810000000c3b800100000c3b800200000c3b800080000c3b800800000c3b800000100c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

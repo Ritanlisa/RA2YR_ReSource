@@ -398,6 +398,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x40bc60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_BombClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x40bfa0": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -509,6 +516,13 @@
   "name": "VectorClass_ptr_MixFileClass::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x40d850": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MouseClass::applyCursorSettings",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x40d9c0": {
   "attempts": 1,
@@ -1084,6 +1098,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x420630": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AITriggerTypeClass_40::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4208c0": {
   "attempts": 1,
   "first_diff": null,
@@ -1581,6 +1602,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x43acb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NeuronClass_25::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x43af10": {
   "attempts": 1,
   "first_diff": "+2 xor ecx, ecx",
@@ -2071,6 +2099,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x473000": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CaptureManagerClass::Constructor_VectorClass_ControlNode___",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x473380": {
   "attempts": 1,
   "first_diff": null,
@@ -2231,6 +2266,13 @@
   "name": "ParticleTypeClass::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x478680": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TypeList_TechnoType::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4788e0": {
   "attempts": 6,
@@ -2462,6 +2504,13 @@
   "name": "0x488740",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x488910": {
+  "attempts": 1,
+  "first_diff": "+8 je 0x488953",
+  "name": "ColorListClass::GetCount",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x489140": {
   "attempts": 1,
@@ -3359,6 +3408,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x49fce0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CounterClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x49fda0": {
   "attempts": 1,
   "first_diff": null,
@@ -3961,6 +4017,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x4ba250": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_CrossDissolveEffect::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4ba3b0": {
   "attempts": 1,
   "first_diff": null,
@@ -4262,6 +4325,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x4cad00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Math::ArcTan2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4cadb0": {
   "attempts": 4,
   "first_diff": "+4 fadd dword ptr [0x7e2ac8]",
@@ -4392,6 +4462,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "FoggedObjectClass::ResizeArray",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4d2d60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -5017,6 +5094,27 @@
   "name": "VectorClass_ptr_AbstractTypeClass::GetSize",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x4ef710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4efa80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4efdf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleSystemClass_32::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4f2a40": {
   "attempts": 1,
@@ -8154,6 +8252,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5ceb80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSOverlayAnim::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5cf810": {
   "attempts": 1,
   "first_diff": null,
@@ -9518,6 +9623,13 @@
   "name": "ParticleTypeClass::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x645bb0": {
+  "attempts": 1,
+  "first_diff": "+0 lea eax, [ecx - 1]",
+  "name": "GetSuperWeaponTypeFlag",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x645ed0": {
   "attempts": 1,
@@ -12445,6 +12557,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x72bac0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x72bac0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x72bba0": {
   "attempts": 1,
   "first_diff": null,
@@ -12473,12 +12592,26 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x72d120": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x72d120",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x72d430": {
   "attempts": 1,
   "first_diff": null,
   "name": "0x72d430",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x72d730": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Game::LoadMultiplayerScoreAssets",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x72dae0": {
   "attempts": 5,
@@ -12724,6 +12857,13 @@
   "name": "0x749230",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x749b20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimClass::DrawVoxelFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x74a960": {
   "attempts": 5,

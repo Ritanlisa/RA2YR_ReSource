@@ -1,0 +1,99 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x72d730 Game::LoadMultiplayerScoreAssets -> Game
+[conv] 0x488910 ColorListClass::GetCount -> ColorListClass
+[conv] 0x749b20 VoxelAnimClass::DrawVoxelFrame -> VoxelAnimClass
+[conv] 0x645bb0 ObjectClass::GetSuperWeaponTypeFlag -> ObjectClass
+[conv] 0x5ceb80 MSShapeAnim::QueryInterface -> MSShapeAnim
+[conv] 0x4cad00 unknown::ArcTan2 -> unknown
+[conv] 0x40bc60 _VectorClass_PAVTechnoClass::QueryInterface -> _VectorClass_PAVTechnoClass
+[conv] 0x40d850 _DynamicVectorClass_PAVMixFileClass::applyCursorSettings -> _DynamicVectorClass_PAVMixFileClass
+[conv] 0x420630 _VectorClass_PAVAlphaLightingRemapClass::QueryInterface -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x43acb0 _VectorClass_PAVNeuronClass::QueryInterface -> _VectorClass_PAVNeuronClass
+[conv] 0x473000 _VectorClass_PAUControlNode::Constructor_VectorClass_ControlNode___ -> _VectorClass_PAUControlNode
+[conv] 0x478680 _VectorClass_PAVTechnoTypeClass::Add -> _VectorClass_PAVTechnoTypeClass
+[conv] 0x49fce0 CounterClass::QueryInterface -> CounterClass
+[conv] 0x4ba250 _VectorClass_PAUCrossDissolveEffect::Add -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4d2d60 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4ef710 _DynamicVectorClass_PAVAITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___ -> _DynamicVectorClass_PAVAITriggerTypeClass
+[conv] 0x4efa80 _DynamicVectorClass_PAVTriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___ -> _DynamicVectorClass_PAVTriggerTypeClass
+[conv] 0x4efdf0 _VectorClass_PAVTerrainClass::QueryInterface -> _VectorClass_PAVTerrainClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Game                     rc=2
+[era] ColorListClass           rc=0
+[era] VoxelAnimClass           rc=2
+[era] ObjectClass              rc=0
+[era] MSShapeAnim              rc=2
+[era] unknown                  rc=2
+[era] _VectorClass_PAVTechnoClass rc=2
+[era] _DynamicVectorClass_PAVMixFileClass rc=2
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=2
+[era] _VectorClass_PAVNeuronClass rc=2
+[era] _VectorClass_PAUControlNode rc=2
+[era] _VectorClass_PAVTechnoTypeClass rc=2
+[era] CounterClass             rc=2
+[era] _VectorClass_PAUCrossDissolveEffect rc=2
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] _DynamicVectorClass_PAVAITriggerTypeClass rc=2
+[era] _DynamicVectorClass_PAVTriggerTypeClass rc=2
+[era] _VectorClass_PAVTerrainClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x488910   MISMATCH         ColorListClass::GetCount
+[diff] 0x645bb0   MISMATCH         ObjectClass::GetSuperWeaponTypeFlag
+[ledger] 0x72d730 Game::LoadMultiplayerScoreAssets -> COMPILE_FAIL (attempt 1)
+[ledger] 0x488910 ColorListClass::GetCount -> NG (attempt 1)
+[ledger] 0x72bac0 0x72bac0 -> PENDING (attempt 1)
+[ledger] 0x72d120 0x72d120 -> PENDING (attempt 1)
+[ledger] 0x749b20 VoxelAnimClass::DrawVoxelFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x645bb0 GetSuperWeaponTypeFlag -> NG (attempt 1)
+[ledger] 0x5ceb80 MSOverlayAnim::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cad00 Math::ArcTan2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40bc60 VectorClass_BombClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40d850 MouseClass::applyCursorSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x420630 AITriggerTypeClass_40::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43acb0 NeuronClass_25::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x473000 CaptureManagerClass::Constructor_VectorClass_ControlNode___ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x478680 TypeList_TechnoType::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49fce0 CounterClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ba250 VectorClass_ptr_CrossDissolveEffect::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d2d60 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ef710 VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4efa80 VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4efdf0 ParticleSystemClass_32::QueryInterface -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2139,
+ "verdicts": {
+  "MISMATCH": 592,
+  "MATCH": 520,
+  "COMPILE_FAIL": 530,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 484,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 3
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 189,
+  "ret_norm": 6,
+  "frame_sched": 65,
+  "const_fold": 66,
+  "branch_polarity": 41,
+  "regalloc": 97,
+  "branch_order": 70,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 22,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 46.8,
+ "match_rate_of_total_pct": 24.3,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p22\batch_report.json

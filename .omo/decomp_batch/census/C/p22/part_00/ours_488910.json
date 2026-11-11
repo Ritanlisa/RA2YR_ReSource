@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetCount@ColorListClass@@QAEXH@Z",
+ "sym_key": "ColorListClass::GetCount",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "568b74240883feff74378b91840100003bf27d274a8bc63bf2899184010000731a578b9178010000408b3c82897c82fc8b91840100003bc272e85f56e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?RemoveItem@ListClass@@QAEDH@Z",
+   "sym_key": "ListClass::RemoveItem"
+  }
+ ]
+}

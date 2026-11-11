@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetSuperWeaponTypeFlag@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GetSuperWeaponTypeFlag",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "8d41fe83f809773dff248500000000b820000000c3b840000000c3b808000000c3b810000000c3b800100000c3b800200000c3b800080000c3b800800000c3b800000100c333c0c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "$L1146",
+   "sym_key": "$L1146"
+  }
+ ]
+}
