@@ -1,0 +1,11 @@
+{
+ "addr": "0x6612C0",
+ "name": "Color::Lerp",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6612C0",
+ "bytes_hex": "538a19568b74240c578b7c241433c08bd38a0781e2ff00000081e6ff0000002bc20fafc69981e2ff00000003c2c1f80802c38a5901880133c08a47018bd381e2ff0000002bc20fafc69981e2ff00000003c2c1f80802c38a590288410133c08a47028bd381e2ff0000005f2bc20fafc69981e2ff0000005e03c2c1f80802c35b884102c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

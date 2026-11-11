@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D62E0",
+ "name": "IsoCoord::ToScreenOffset",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D62E0",
+ "bytes_hex": "568b7424088b4c2410578d04768b7c24108d0480c1e002992bc2d1f889018d04768b7424188d0480d1e0992bc2d1f889068bc7c1e0042bc7f7d8c1e002992bc28b11d1f803d08d047f89115f8d0480d1e0992bc28b16d1f803d089168b019981e2ff00000003c2c1f80889018b069981e2ff00000003c2c1f80889068b0105003c00005e8901c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

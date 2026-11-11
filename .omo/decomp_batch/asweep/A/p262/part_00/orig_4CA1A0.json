@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CA1A0",
+ "name": "ProductionQueue::CompleteOrCancel",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CA1A0",
+ "bytes_hex": "83ec0c33d2b836000000568b71583bf2577431394124752cb00189515888417088415d8951248b3584eda8008d792c89513889378b74240c8977048957085f5e83c40cc339516874353941247530b001c74168ffffffff88417088415d8951248b3584eda8008d792c89513889378b74240c8977048957085f5e83c40cc35f32c05e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

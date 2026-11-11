@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CC01C",
+ "name": "__hw_cw",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CC01C",
+ "bytes_hex": "538b5c240833c056f6c31074036a0158f6c30874020c04f6c30474020c08f6c30274020c10f6c30174020c20f7c30000080074020c028bcbba0003000023cabe00020000741d81f90001000074123bce74093bca750d80cc0ceb0880cc08eb0380cc048bcb81e100000300740c81f90000010075060bc6eb020bc25ef7c3000004005b740380cc10c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

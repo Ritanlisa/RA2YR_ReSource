@@ -1,0 +1,11 @@
+{
+ "addr": "0x53D960",
+ "name": "GenerateLightningStormGlow_Helper",
+ "size": 133,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53D960",
+ "bytes_hex": "568b742408578b7c241085f6750b85ff75075f33c05ec208008bc7998bc88bc633ca2bca9933c22bc23bc17e028bc8b8010000003bc88bd07e088d04d0423bd17cf83bf1750903f903c75f5ec208003bf9750c8d0c495f2bce5e03c1c208008bd1f7da3bf2750c8d0c892bcf5f03c15ec208008d14cd000000005f2bd103d65e03c2c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

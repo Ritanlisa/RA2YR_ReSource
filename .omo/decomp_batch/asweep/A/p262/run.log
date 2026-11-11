@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p262\part_00
+=== convert (20 addrs) ===
+[conv] 0x7bc580 ObjectClass::sub_7BC580 -> ObjectClass
+[conv] 0x7cda90 _strcmp -> _addr_7C
+[conv] 0x4960a0 _RLEBlitTransXlat_G::Blit_RLE_Xlat -> _RLEBlitTransXlat_G
+[conv] 0x5f15c0 ObjectClass::sub_5F15C0 -> ObjectClass
+[conv] 0x758e10 ObjectClass::sub_758E10 -> ObjectClass
+[conv] 0x53d960 GenerateLightningStormGlow_Helper -> GenerateLightningStormGlow
+[conv] 0x7564e0 ObjectClass::sub_7564E0 -> ObjectClass
+[conv] 0x4ca1a0 ProductionQueue::CompleteOrCancel -> ProductionQueue
+[conv] 0x517360 ObjectClass::sub_517360 -> ObjectClass
+[conv] 0x6612c0 Color::Lerp -> Color
+[conv] 0x728540 ObjectClass::sub_728540 -> ObjectClass
+[conv] 0x41dc80 AirstrikeClass::RemoveAircraft -> AirstrikeClass
+[conv] 0x689790 ObjectClass::sub_689790 -> ObjectClass
+[conv] 0x689a30 ObjectClass::sub_689A30 -> ObjectClass
+[conv] 0x491a70 _RLEBlitTransRemapXlat_E::sub_491A70 -> _RLEBlitTransRemapXlat_E
+[conv] 0x557570 ListClass::Set_Position -> ListClass
+[conv] 0x4918e0 _RLEBlitTransZRemapXlat_E::sub_4918E0 -> _RLEBlitTransZRemapXlat_E
+[conv] 0x6d62e0 IsoCoord::ToScreenOffset -> IsoCoord
+[conv] 0x7cc01c __hw_cw -> _addr_7C
+[conv] 0x492f30 _BlitTransLucent50ZRead_G::sub_492F30 -> _BlitTransLucent50ZRead_G
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+[era] _RLEBlitTransXlat_G      rc=0
+[era] GenerateLightningStormGlow rc=0
+[era] ProductionQueue          rc=0
+[era] Color                    rc=0
+[era] AirstrikeClass           rc=2
+[era] _RLEBlitTransRemapXlat_E rc=2
+[era] ListClass                rc=0
+[era] _RLEBlitTransZRemapXlat_E rc=2
+[era] IsoCoord                 rc=0
+[era] _BlitTransLucent50ZRead_G rc=2
+=== diffasm byte-compare ===
+[diff] 0x7bc580   MISMATCH         ObjectClass::sub_7BC580
+[diff] 0x758e10   MISMATCH         ObjectClass::sub_758E10
+[diff] 0x517360   MISMATCH         ObjectClass::sub_517360
+[diff] 0x7cc01c   MISMATCH         __hw_cw
+[diff] 0x4960a0   MISMATCH         _RLEBlitTransXlat_G::Blit_RLE_Xlat
+[diff] 0x53d960   MISMATCH         GenerateLightningStormGlow_Helper
+[diff] 0x4ca1a0   MISMATCH         ProductionQueue::CompleteOrCancel
+[diff] 0x6612c0   MISMATCH         Color::Lerp
+[diff] 0x557570   MISMATCH         ListClass::Set_Position
+[diff] 0x6d62e0   MISMATCH         IsoCoord::ToScreenOffset
+[ledger] 0x7bc580 ObjectClass::sub_7BC580 -> NG (attempt 1)
+[ledger] 0x7cda90 _strcmp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4960a0 _RLEBlitTransXlat_G::Blit_RLE_Xlat -> NG (attempt 1)
+[ledger] 0x5f15c0 ObjectClass::sub_5F15C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x758e10 ObjectClass::sub_758E10 -> NG (attempt 1)
+[ledger] 0x53d960 GenerateLightningStormGlow_Helper -> NG (attempt 1)
+[ledger] 0x7564e0 ObjectClass::sub_7564E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ca1a0 ProductionQueue::CompleteOrCancel -> NG (attempt 1)
+[ledger] 0x517360 ObjectClass::sub_517360 -> NG (attempt 1)
+[ledger] 0x6612c0 Color::Lerp -> NG (attempt 1)
+[ledger] 0x728540 ObjectClass::sub_728540 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41dc80 AirstrikeClass::RemoveAircraft -> COMPILE_FAIL (attempt 1)
+[ledger] 0x689790 ObjectClass::sub_689790 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x689a30 ObjectClass::sub_689A30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x491a70 _RLEBlitTransRemapXlat_E::sub_491A70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557570 ListClass::Set_Position -> NG (attempt 1)
+[ledger] 0x4918e0 _RLEBlitTransZRemapXlat_E::sub_4918E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d62e0 IsoCoord::ToScreenOffset -> NG (attempt 1)
+[ledger] 0x7cc01c __hw_cw -> NG (attempt 1)
+[ledger] 0x492f30 _BlitTransLucent50ZRead_G::sub_492F30 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 10
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 5,
+  "regalloc": 2,
+  "branch_order": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p262\batch_report.json

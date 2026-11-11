@@ -1,0 +1,21 @@
+{
+ "symbol": "?GenerateLightningStormGlow_Helper@@YGHHH@Z",
+ "sym_key": "Unnamed::GenerateLightningStormGlow_Helper",
+ "size": 141,
+ "link_base": 0,
+ "bytes_hex": "538b5c240c56578b7c241085ff750c85db75085f5e33c05bc2080053e800000000578bf0e80000000083c4083bc67e028bf0b9010000003bf18bc17e088d0cc1403bc67cf83bfe750b8d04315f03c35e5bc208003bde750d8d04762bc75f5e03c15bc208008bc6f7d83bf8750d8d04b65f2bc35e03c15bc208008d04f5000000002bc603c103c75f5e5bc20800",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  }
+ ]
+}

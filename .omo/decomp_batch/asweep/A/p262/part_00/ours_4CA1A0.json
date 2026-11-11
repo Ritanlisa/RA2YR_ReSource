@@ -1,0 +1,15 @@
+{
+ "symbol": "?CompleteOrCancel@ProductionQueue@@QAEDXZ",
+ "sym_key": "ProductionQueue::CompleteOrCancel",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "518b41585633f63bc6742d837924367527b00189715888417088415d8971248b150000000089512c8b5424048971388971348951305e59c332c05e59c3",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}
