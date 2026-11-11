@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckStateFlag@IUnknown@@QAGHXZ",
+ "sym_key": "IUnknown::CheckStateFlag",
+ "size": 9,
+ "link_base": 0,
+ "bytes_hex": "518b44240059c20400",
+ "relocs": []
+}

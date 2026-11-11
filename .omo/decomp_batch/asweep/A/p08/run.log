@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x7e0000 nullsub_272 -> _addr_7E
+[conv] 0x4f4d80 Stub::InfiniteLoop -> Stub
+[conv] 0x5175d0 VtableStub::Method_5175D0 -> VtableStub
+[conv] 0x40d250 DisplayClass::vt_entry_AC -> DisplayClass
+[conv] 0x410440 AbstractClass::computeDistance -> AbstractClass
+[conv] 0x4104a0 AbstractClass::COMStub_Return0_15 -> AbstractClass
+[conv] 0x4104b0 AbstractClass::COMStub_Return0_16 -> AbstractClass
+[conv] 0x410520 AbstractClass::COMStub_Return0_20 -> AbstractClass
+[conv] 0x410530 AbstractClass::COMStub_Return0_21 -> AbstractClass
+[conv] 0x410590 AbstractClass::COM_Stub_Return0 -> AbstractClass
+[conv] 0x410c20 AbstractTypeClass::StubReturnFalse -> AbstractTypeClass
+[conv] 0x411590 XSurface::StubReturnFalse -> XSurface
+[conv] 0x4115c0 Surface::StubReturnFalse -> Surface
+[conv] 0x413490 nullsub_3 -> _addr_41
+[conv] 0x41be80 IUnknown::CheckStateFlag -> IUnknown
+[conv] 0x41be90 IUnknown::CheckStateFlag2 -> IUnknown
+[conv] 0x41bee0 TechnoClass::StubReturnFalse -> TechnoClass
+[conv] 0x41bef0 TechnoClass::selectTarget -> TechnoClass
+[conv] 0x41bf00 TechnoClass::StubReturnFalse2 -> TechnoClass
+[conv] 0x41bf10 TechnoClass::StubReturnFalse3 -> TechnoClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7E                 rc=0
+[era] Stub                     rc=0
+[era] VtableStub               rc=0
+[era] DisplayClass             rc=0
+[era] AbstractClass            rc=0
+[era] AbstractTypeClass        rc=0
+[era] XSurface                 rc=0
+[era] Surface                  rc=0
+[era] _addr_41                 rc=0
+[era] IUnknown                 rc=0
+[era] TechnoClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x7e0000   MATCH            nullsub_272
+[diff] 0x40d250   MATCH            DisplayClass::vt_entry_AC
+[diff] 0x410440   MATCH            AbstractClass::computeDistance
+[diff] 0x4104a0   MATCH            AbstractClass::COMStub_Return0_15
+[diff] 0x4104b0   MATCH            AbstractClass::COMStub_Return0_16
+[diff] 0x410520   MATCH            AbstractClass::COMStub_Return0_20
+[diff] 0x410530   MATCH            AbstractClass::COMStub_Return0_21
+[diff] 0x410590   MATCH            AbstractClass::COM_Stub_Return0
+[diff] 0x410c20   MISMATCH         AbstractTypeClass::StubReturnFalse
+[diff] 0x411590   MATCH            XSurface::StubReturnFalse
+[diff] 0x4115c0   MATCH            Surface::StubReturnFalse
+[diff] 0x413490   MISMATCH         nullsub_3
+[diff] 0x41be80   MISMATCH         IUnknown::CheckStateFlag
+[diff] 0x41be90   MISMATCH         IUnknown::CheckStateFlag2
+[diff] 0x41bee0   MATCH            TechnoClass::StubReturnFalse
+[diff] 0x41bef0   MATCH            TechnoClass::selectTarget
+[diff] 0x41bf00   MATCH            TechnoClass::StubReturnFalse2
+[diff] 0x41bf10   MATCH            TechnoClass::StubReturnFalse3
+[ledger] 0x7e0000 nullsub_272 -> OK (attempt 1)
+[ledger] 0x4f4d80 Stub::InfiniteLoop -> PENDING (attempt 1)
+[ledger] 0x5175d0 VtableStub::Method_5175D0 -> PENDING (attempt 1)
+[ledger] 0x40d250 DisplayClass::vt_entry_AC -> OK (attempt 1)
+[ledger] 0x410440 AbstractClass::computeDistance -> OK (attempt 1)
+[ledger] 0x4104a0 AbstractClass::COMStub_Return0_15 -> OK (attempt 1)
+[ledger] 0x4104b0 AbstractClass::COMStub_Return0_16 -> OK (attempt 1)
+[ledger] 0x410520 AbstractClass::COMStub_Return0_20 -> OK (attempt 1)
+[ledger] 0x410530 AbstractClass::COMStub_Return0_21 -> OK (attempt 1)
+[ledger] 0x410590 AbstractClass::COM_Stub_Return0 -> OK (attempt 1)
+[ledger] 0x410c20 AbstractTypeClass::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x411590 XSurface::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x4115c0 Surface::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x413490 nullsub_3 -> NG (attempt 1)
+[ledger] 0x41be80 IUnknown::CheckStateFlag -> NG (attempt 1)
+[ledger] 0x41be90 IUnknown::CheckStateFlag2 -> NG (attempt 1)
+[ledger] 0x41bee0 TechnoClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x41bef0 TechnoClass::selectTarget -> OK (attempt 1)
+[ledger] 0x41bf00 TechnoClass::StubReturnFalse2 -> OK (attempt 1)
+[ledger] 0x41bf10 TechnoClass::StubReturnFalse3 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "OBJ_EXTRACT_FAIL": 2,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 77.8,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p08\batch_report.json

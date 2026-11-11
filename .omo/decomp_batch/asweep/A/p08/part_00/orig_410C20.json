@@ -1,0 +1,11 @@
+{
+ "addr": "0x410C20",
+ "name": "AbstractTypeClass::StubReturnFalse",
+ "size": 3,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x410C20",
+ "bytes_hex": "c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
