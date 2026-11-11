@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p44\part_00
+=== convert (20 addrs) ===
+[conv] 0x6386e0 ClearFactoryClassProduction -> _addr_63
+[conv] 0x6319c0 ObjectClass::Network_Set -> ObjectClass
+[conv] 0x7438f0 UnitClass::CanCrushTarget -> UnitClass
+[conv] 0x410800 AbstractTypeClass::Constructor -> AbstractTypeClass
+[conv] 0x792cf0 sub_792CF0 -> _addr_79
+[conv] 0x455820 BuildingClass::ScanCircleForUnits2 -> BuildingClass
+[conv] 0x47a6f0 CDROM::LockVolume -> CDROM
+[conv] 0x696ae0 ObjectClass::DlgProcLoadGame_Load_696AE0 -> ObjectClass
+[conv] 0x7760b0 Render_Render_7760B0 -> Render_Render
+[conv] 0x71e6a0 TActionClass::TActionClass -> TActionClass
+[conv] 0x639a50 ScriptAction::ExecutePlacement -> ScriptAction
+[conv] 0x5c1640 MPCooperative::MPCooperative_Cleanup -> MPCooperative
+[conv] 0x5ce640 MSPCXAnim::Construct -> MSPCXAnim
+[conv] 0x5c1300 ObjectClass::ReadMPMapsINI -> ObjectClass
+[conv] 0x501750 ObjectClass::sub_501750 -> ObjectClass
+[conv] 0x7714b0 TechnoClass::TerritorySelectWDT_Delete -> TechnoClass
+[conv] 0x56d230 MapClass::GetTileIndex -> MapClass
+[conv] 0x654320 RadarClass::Destru_vt34 -> RadarClass
+[conv] 0x7a9800 CChatEventSink::DispatchStub_27 -> CChatEventSink
+[conv] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_63                 rc=2
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] AbstractTypeClass        rc=2
+[era] _addr_79                 rc=2
+[era] BuildingClass            rc=2
+[era] CDROM                    rc=2
+[era] Render_Render            rc=0
+[era] TActionClass             rc=2
+[era] ScriptAction             rc=2
+[era] MPCooperative            rc=2
+[era] MSPCXAnim                rc=2
+[era] TechnoClass              rc=2
+[era] MapClass                 rc=2
+[era] RadarClass               rc=2
+[era] CChatEventSink           rc=2
+=== diffasm byte-compare ===
+[diff] 0x696ae0   MISMATCH         ObjectClass::DlgProcLoadGame_Load_696AE0
+[diff] 0x7760b0   MISMATCH         Render_Render_7760B0
+[ledger] 0x6386e0 ClearFactoryClassProduction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6319c0 ObjectClass::Network_Set -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7438f0 UnitClass::CanCrushTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x410800 AbstractTypeClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x792cf0 sub_792CF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x455820 BuildingClass::ScanCircleForUnits2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47a6f0 CDROM::LockVolume -> COMPILE_FAIL (attempt 2)
+[ledger] 0x696ae0 ObjectClass::DlgProcLoadGame_Load_696AE0 -> NG (attempt 6)
+[ledger] 0x7760b0 Render_Render_7760B0 -> NG (attempt 6)
+[ledger] 0x71e6a0 TActionClass::TActionClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x639a50 ScriptAction::ExecutePlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c1640 MPCooperative::MPCooperative_Cleanup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ce640 MSPCXAnim::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c1300 ObjectClass::ReadMPMapsINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x501750 ObjectClass::sub_501750 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7714b0 TechnoClass::TerritorySelectWDT_Delete -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56d230 MapClass::GetTileIndex -> COMPILE_FAIL (attempt 10)
+[ledger] 0x654320 RadarClass::Destru_vt34 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a9800 CChatEventSink::DispatchStub_27 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p44\batch_report.json

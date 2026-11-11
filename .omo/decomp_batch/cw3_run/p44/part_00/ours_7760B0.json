@@ -1,0 +1,99 @@
+{
+ "symbol": "?Render_Render_7760B0@@YIPAXPAXPBDJJD@Z",
+ "sym_key": "Unnamed::Render_Render_7760B0",
+ "size": 355,
+ "link_base": 0,
+ "bytes_hex": "83ec7c5355568be9578bfa55e8000000006a0255e80000000033db6a015355e80000000053535355e80000000053535355e8000000008d5424108b8424900000008b8c24940000006a0152558944241c894c2420e80000000033c0885c2467894424548b4c241489442458885c24688944245c8a8424980000008ad0885c246980e201885c246af7d9f6da1bd2894c24500fbec081e2bc0200008bc8895424608bd0c1e902d1e880e1012401884c246588442464c1ea0383c9ff33c080e201885c246bf2aef7d12bf9885424668d54246c8bc18bf78bfac1e902f3a58bc883e103f3a48d4c245051e8000000008bf0399c249000000074575655e8000000008d5424188bf05255e8000000005655e80000000050e800000000db44241083ec08d9e1da4c2434db44241cd9e1def9dc0500000000dd1c24e80000000083c408894424548d44245050e8000000008bf06aff55e8000000008bc65f5e5d5b83c47cc20c00",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?SaveDC@@YGHPAX@Z",
+   "sym_key": "SaveDC"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?SetGraphicsMode@@YGHPAXH@Z",
+   "sym_key": "SetGraphicsMode"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?ModifyWorldTransform@@YGHPAXHH@Z",
+   "sym_key": "ModifyWorldTransform"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?SetViewportOrgEx@@YGHPAXHHH@Z",
+   "sym_key": "SetViewportOrgEx"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?SetWindowOrgEx@@YGHPAXHHH@Z",
+   "sym_key": "SetWindowOrgEx"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?DPtoLP@@YGHPAX0H@Z",
+   "sym_key": "DPtoLP"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?CreateFontIndirectA@@YGPAXPAX@Z",
+   "sym_key": "CreateFontIndirectA"
+  },
+  {
+   "off": 251,
+   "type": "REL32",
+   "sym": "?SelectObject@@YGPAXPAX0@Z",
+   "sym_key": "SelectObject"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?GetTextMetricsA@@YGHPAX0@Z",
+   "sym_key": "GetTextMetricsA"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?SelectObject@@YGPAXPAX0@Z",
+   "sym_key": "SelectObject"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "?DeleteObject@@YGHPAX@Z",
+   "sym_key": "DeleteObject"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 312,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 329,
+   "type": "REL32",
+   "sym": "?CreateFontIndirectA@@YGPAXPAX@Z",
+   "sym_key": "CreateFontIndirectA"
+  },
+  {
+   "off": 339,
+   "type": "REL32",
+   "sym": "?RestoreDC@@YGHPAXH@Z",
+   "sym_key": "RestoreDC"
+  }
+ ]
+}

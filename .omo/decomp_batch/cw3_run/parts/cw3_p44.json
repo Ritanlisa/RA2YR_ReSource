@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6386e0",
+  "name": "ClearFactoryClassProduction",
+  "cls": null,
+  "size": 337,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->Object_field_0x30' must point to class/struct/union"
+ },
+ {
+  "addr": "0x6319c0",
+  "name": "Network_Set",
+  "cls": null,
+  "size": 338,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.ChargerBarrels' must have class/struct/union type"
+ },
+ {
+  "addr": "0x7438f0",
+  "name": "UnitClass::CanCrushTarget",
+  "cls": null,
+  "size": 339,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x410800",
+  "name": "AbstractTypeClass::Constructor",
+  "cls": null,
+  "size": 340,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2059",
+  "first_msg": "syntax error : ')'"
+ },
+ {
+  "addr": "0x792cf0",
+  "name": "sub_792CF0",
+  "cls": null,
+  "size": 341,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x455820",
+  "name": "FootClass::ScanCircleForUnits2",
+  "cls": null,
+  "size": 344,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x47a6f0",
+  "name": "CDROM::LockVolume",
+  "cls": null,
+  "size": 346,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'void *'"
+ },
+ {
+  "addr": "0x696ae0",
+  "name": "DlgProcLoadGame_Load_696AE0",
+  "cls": null,
+  "size": 348,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "NONE",
+  "first_msg": "orig 348B ours 373B"
+ },
+ {
+  "addr": "0x7760b0",
+  "name": "Render_Render_7760B0",
+  "cls": null,
+  "size": 350,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'tmAveCharWidth' : is not a member of 'tagTEXTMETRICA'"
+ },
+ {
+  "addr": "0x71e6a0",
+  "name": "TActionClass::TActionClass",
+  "cls": null,
+  "size": 352,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2380",
+  "first_msg": "type(s) preceding 'TActionClass' (constructor with return type, or illegal redefinition of current"
+ },
+ {
+  "addr": "0x639a50",
+  "name": "ScriptAction::ExecutePlacement",
+  "cls": null,
+  "size": 354,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x5c1640",
+  "name": "MPCooperative_Cleanup",
+  "cls": null,
+  "size": 355,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x5ce640",
+  "name": "MSPCXAnim::Construct",
+  "cls": null,
+  "size": 357,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'ptr_0' : is not a member of 'MSPCXAnim'"
+ },
+ {
+  "addr": "0x5c1300",
+  "name": "ReadMPMapsINI",
+  "cls": null,
+  "size": 358,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'headNode' : is not a member of 'INIClass'"
+ },
+ {
+  "addr": "0x501750",
+  "name": "sub_501750",
+  "cls": null,
+  "size": 359,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x7714b0",
+  "name": "TerritorySelectWDT_Delete",
+  "cls": null,
+  "size": 361,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2059",
+  "first_msg": "syntax error : ')'"
+ },
+ {
+  "addr": "0x56d230",
+  "name": "MapClass::GetTileIndex",
+  "cls": null,
+  "size": 362,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x654320",
+  "name": "RadarClass::Destru_vt34",
+  "cls": null,
+  "size": 364,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '('"
+ },
+ {
+  "addr": "0x7a9800",
+  "name": "CComObject_CChatEventSink___ATL::DispatchStub_27",
+  "cls": null,
+  "size": 365,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x6c6de0",
+  "name": "Audio_Read_6C6DE0",
+  "cls": null,
+  "size": 367,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'char *' to 'int'"
+ }
+]
