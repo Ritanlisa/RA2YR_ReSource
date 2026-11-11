@@ -1,0 +1,63 @@
+{
+ "symbol": "?FinishProduction@FactoryClass@@QAEDH@Z",
+ "sym_key": "FactoryClass::FinishProduction",
+ "size": 187,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c241083cbff8bf18a470c84c07419c6470c008b86a8000000488986a80000007506899eb00000008b47083bc3747f8b448624895874899eb40000008b487049894870756985f6746533c924008a4e1c0bc184c07558c6461c01a100000000390500000000722f8a0d0000000084c9750485c075398b0d0000000085c9762f8b150000000003c86a00516800000000ff520884c074188b0d000000008bc141890d000000008b0d00000000893481895f085f5e5bc20400",
+ "relocs": [
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CA0@@3IA",
+   "sym_key": "DataGlobal_AC4CA0"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CA8@@3IA",
+   "sym_key": "DataGlobal_AC4CA8"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CA5@@3EA",
+   "sym_key": "DataGlobal_AC4CA5"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CAC@@3IA",
+   "sym_key": "DataGlobal_AC4CAC"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_ScriptConfig@@3IA",
+   "sym_key": "g_ScriptConfig"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?g_ScriptConfig@@3IA",
+   "sym_key": "g_ScriptConfig"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CA8@@3IA",
+   "sym_key": "DataGlobal_AC4CA8"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CA8@@3IA",
+   "sym_key": "DataGlobal_AC4CA8"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C9C@@3IA",
+   "sym_key": "DataGlobal_AC4C9C"
+  }
+ ]
+}
