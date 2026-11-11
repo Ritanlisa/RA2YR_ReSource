@@ -1077,6 +1077,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x41cfe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftTypeClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x41d830": {
   "attempts": 1,
   "first_diff": null,
@@ -1265,6 +1272,13 @@
   "name": "AbstractClass::updateLayer",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x426270": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AnimClass::UpdateDamageRadius",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4263a0": {
   "attempts": 1,
@@ -2211,6 +2225,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x46fac0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Lobby::SetupAllFactionSlots",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x471710": {
   "attempts": 1,
   "first_diff": null,
@@ -2427,6 +2448,13 @@
   "name": "INIClass::WriteSuperWeaponList",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x476d80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Hash::ComputeHashSHA1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x477640": {
   "attempts": 4,
@@ -7482,6 +7510,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x554370": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadProgressMgr::ReleaseBuffer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x554400": {
   "attempts": 1,
   "first_diff": null,
@@ -9197,6 +9232,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5cf840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_5CF840",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5d05f0": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 4]",
@@ -9582,6 +9624,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5e9b60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SelectLobbyCountry",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5ea8e0": {
   "attempts": 1,
   "first_diff": null,
@@ -9845,6 +9894,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "OverlayClass::updateOverlayState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5fea50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "OverlayTypeClass::PowerDrainUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10202,6 +10258,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "ParasiteClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x62a8e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParasiteClass::CanInfect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10954,6 +11017,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x655a90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::FreeResources",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x656cb0": {
   "attempts": 9,
   "first_diff": null,
@@ -11175,6 +11245,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_65C910",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x65cb50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FileClass::Open2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11605,6 +11682,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x690360": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Screen::CleanupTransitionObjects",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x690fc0": {
   "attempts": 1,
   "first_diff": "+7 jne 0x690fd4",
@@ -11744,6 +11828,13 @@
   "name": "SessionClass::AssignColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x69bb40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x69bb40",
+  "note": "decomp_batch r2: NO_PSEUDO",
+  "status": "PENDING"
  },
  "0x69bbe0": {
   "attempts": 5,
@@ -13103,6 +13194,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x6e3e50": {
+  "attempts": 1,
+  "first_diff": "+1 push edi",
+  "name": "TActionClass::Validate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x6e4150": {
   "attempts": 6,
   "first_diff": "+0 sub esp, 8",
@@ -13306,6 +13404,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6e87f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TaskForceClass::ExecuteAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6e88d0": {
   "attempts": 1,
   "first_diff": null,
@@ -13473,6 +13578,13 @@
   "name": "TechnoClass::GetTarget",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6fbfa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::ExecuteMoveCommand",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7036c0": {
   "attempts": 10,
@@ -14670,6 +14782,13 @@
   "name": "UnitTypeClass::GetDimensions",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x748010": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitTypeClass::LoadFromINI2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x748160": {
   "attempts": 5,
@@ -16295,6 +16414,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x7b2630": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Socket::ConfigureBuffers",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7b2720": {
   "attempts": 5,
   "first_diff": null,
@@ -17142,6 +17268,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7d30d1": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "__commit",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7d3401": {
   "attempts": 1,
   "first_diff": null,
@@ -17288,6 +17421,13 @@
   "name": "__umatherr",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7dc378": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "__mbschr",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7dc468": {
   "attempts": 1,

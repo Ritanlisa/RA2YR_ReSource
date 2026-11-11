@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E3E50",
+ "name": "TActionClass::Validate",
+ "size": 144,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E3E50",
+ "bytes_hex": "56578b7c240c8bf157e8b2c5d2ff8b462885c074128b480483c00450ff5110508bcfe8d9dedbff8b562c8bcf52e8cededbff8b463085c074128b480483c00450ff5110508bcfe8b5dedbff8b464c85c074128b500483c00450ff5210508bcfe89cdedbff8b465085c074128b480483c00450ff5110508bcfe883dedbff8b96900000008bcf52e875dedbff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

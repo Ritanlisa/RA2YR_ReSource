@@ -1,0 +1,98 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x41cfe0 AircraftTypeClass::ddtor -> AircraftTypeClass
+[conv] 0x6e87f0 TaskForceClass::ExecuteAction -> TaskForceClass
+[conv] 0x6fbfa0 TechnoClass::ExecuteMoveCommand -> TechnoClass
+[conv] 0x655a90 TacticalClass::FreeResources -> TacticalClass
+[conv] 0x46fac0 Lobby::SetupAllFactionSlots -> Lobby
+[conv] 0x426270 AnimClass::UpdateDamageRadius -> AnimClass
+[conv] 0x554370 LoadProgressMgr::ReleaseBuffer -> LoadProgressMgr
+[conv] 0x6e3e50 TActionClass::Validate -> TActionClass
+[conv] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> OverlayTypeClass
+[conv] 0x5e9b60 unknown::SelectLobbyCountry -> unknown
+[conv] 0x7d30d1 unknown::__commit -> unknown
+[conv] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> WinsockInterfaceClass
+[conv] 0x7dc378 unknown::__mbschr -> unknown
+[conv] 0x5cf840 ObjectClass::sub_5CF840 -> ObjectClass
+[conv] 0x690360 Screen::CleanupTransitionObjects -> Screen
+[conv] 0x748010 UnitTypeClass::LoadFromINI2 -> UnitTypeClass
+[conv] 0x65cb50 RawFileClass::Open2 -> RawFileClass
+[conv] 0x476d80 Hash::ComputeHashSHA1 -> Hash
+[conv] 0x62a8e0 ParasiteClass::CanInfect -> ParasiteClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AircraftTypeClass        rc=2
+[era] TaskForceClass           rc=2
+[era] TechnoClass              rc=2
+[era] TacticalClass            rc=2
+[era] Lobby                    rc=2
+[era] AnimClass                rc=2
+[era] LoadProgressMgr          rc=2
+[era] TActionClass             rc=0
+[era] OverlayTypeClass         rc=2
+[era] unknown                  rc=2
+[era] WinsockInterfaceClass    rc=2
+[era] ObjectClass              rc=2
+[era] Screen                   rc=2
+[era] UnitTypeClass            rc=2
+[era] RawFileClass             rc=2
+[era] Hash                     rc=2
+[era] ParasiteClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x6e3e50   MISMATCH         TActionClass::Validate
+[ledger] 0x41cfe0 AircraftTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e87f0 TaskForceClass::ExecuteAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fbfa0 TechnoClass::ExecuteMoveCommand -> COMPILE_FAIL (attempt 1)
+[ledger] 0x655a90 TacticalClass::FreeResources -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46fac0 Lobby::SetupAllFactionSlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x426270 AnimClass::UpdateDamageRadius -> COMPILE_FAIL (attempt 1)
+[ledger] 0x554370 LoadProgressMgr::ReleaseBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e3e50 TActionClass::Validate -> NG (attempt 1)
+[ledger] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9b60 SelectLobbyCountry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d30d1 __commit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b2630 Socket::ConfigureBuffers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dc378 __mbschr -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cf840 sub_5CF840 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690360 Screen::CleanupTransitionObjects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x748010 UnitTypeClass::LoadFromINI2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65cb50 FileClass::Open2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x476d80 Hash::ComputeHashSHA1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62a8e0 ParasiteClass::CanInfect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69bb40 0x69bb40 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 2474,
+ "verdicts": {
+  "MISMATCH": 684,
+  "MATCH": 521,
+  "COMPILE_FAIL": 741,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 511,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 236,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 68,
+  "branch_polarity": 50,
+  "regalloc": 110,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 43.2,
+ "match_rate_of_total_pct": 21.1,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p05\batch_report.json
