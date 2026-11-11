@@ -51,3 +51,4 @@
 {"part": 50, "n": 20, "seconds": 16.3, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 2}}
 {"part": 51, "n": 20, "seconds": 9.8, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 52, "n": 20, "seconds": 15.8, "ok": true, "verdicts": {"MISMATCH": 1, "COMPILE_FAIL": 19}}
+{"part": 53, "n": 20, "seconds": 10.6, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}

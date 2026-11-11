@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7a16b0",
+  "name": "HandleWOLMatchMessage",
+  "cls": null,
+  "size": 807,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p1'"
+ },
+ {
+  "addr": "0x640710",
+  "name": "Skirmish::RenderPreview",
+  "cls": null,
+  "size": 812,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x435820",
+  "name": "BuildingLightClass::CTOR",
+  "cls": null,
+  "size": 816,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned char'"
+ },
+ {
+  "addr": "0x7ca090",
+  "name": "_memcpy",
+  "cls": null,
+  "size": 821,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p1'"
+ },
+ {
+  "addr": "0x7258d0",
+  "name": "AbstractClass::AnnounceExpiredPointer",
+  "cls": null,
+  "size": 830,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p1'"
+ },
+ {
+  "addr": "0x7806c0",
+  "name": "PopulateWOLLobbyListBox",
+  "cls": null,
+  "size": 832,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x5fd970",
+  "name": "Object::HandleAction",
+  "cls": null,
+  "size": 841,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.field_4' must have class/struct/union type"
+ },
+ {
+  "addr": "0x7b13d0",
+  "name": "IPXInterfaceClass::SendPacket",
+  "cls": null,
+  "size": 848,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x722f00",
+  "name": "RebuildBuildingOccupancy",
+  "cls": null,
+  "size": 854,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x649ca0",
+  "name": "BuildNetworkEventPacket",
+  "cls": null,
+  "size": 860,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'unsigned short *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x49d680",
+  "name": "SerializeCampaignOptions",
+  "cls": null,
+  "size": 865,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x453e20",
+  "name": "BuildingClass::LoadFromStream",
+  "cls": null,
+  "size": 870,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Dequeue' : cannot convert parameter 1 from 'int *' to 'int'"
+ },
+ {
+  "addr": "0x5c8500",
+  "name": "ModBigIntExp",
+  "cls": null,
+  "size": 879,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x41a5c0",
+  "name": "AircraftClass::GetMissionTimer",
+  "cls": null,
+  "size": 886,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2660",
+  "first_msg": "'CheckHeightDiff' : function does not take 1 parameters"
+ },
+ {
+  "addr": "0x6cb920",
+  "name": "SuperClass::ClickFire",
+  "cls": null,
+  "size": 895,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned short *'"
+ },
+ {
+  "addr": "0x70e920",
+  "name": "UpdateTimedStateMachine",
+  "cls": null,
+  "size": 911,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x711ae0",
+  "name": "TechnoTypeClass::DTOR",
+  "cls": null,
+  "size": 916,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x764b90",
+  "name": "CampaignConstructorWDT",
+  "cls": null,
+  "size": 922,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x6990a0",
+  "name": "SaveConfigWOL",
+  "cls": null,
+  "size": 936,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x71a760",
+  "name": "TemporalClass::ProcessTimeWarp",
+  "cls": null,
+  "size": 944,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2660",
+  "first_msg": "'GetInvalidCoord' : function does not take 2 parameters"
+ }
+]

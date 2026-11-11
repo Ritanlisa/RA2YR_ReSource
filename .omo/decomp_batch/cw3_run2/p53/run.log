@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p53\part_00
+=== convert (20 addrs) ===
+[conv] 0x7a16b0 HandleWOLMatchMessage -> _addr_7A
+[conv] 0x640710 Skirmish::RenderPreview -> Skirmish
+[conv] 0x435820 BuildingLightClass::CTOR -> BuildingLightClass
+[conv] 0x7ca090 _memcpy -> _addr_7C
+[conv] 0x7258d0 AbstractClass::AnnounceExpiredPointer -> AbstractClass
+[conv] 0x7806c0 ObjectClass::PopulateWOLLobbyListBox -> ObjectClass
+[conv] 0x5fd970 OverlayClass::HandleAction -> OverlayClass
+[conv] 0x7b13d0 IPXInterfaceClass::SendPacket -> IPXInterfaceClass
+[conv] 0x722f00 ObjectClass::RebuildBuildingOccupancy -> ObjectClass
+[conv] 0x649ca0 BuildNetworkEventPacket -> _addr_64
+[conv] 0x49d680 ObjectClass::SerializeCampaignOptions -> ObjectClass
+[conv] 0x453e20 BuildingClass::LoadFromStream -> BuildingClass
+[conv] 0x5c8500 ModBigIntExp -> _addr_5C
+[conv] 0x41a5c0 AircraftClass::GetMissionTimer -> AircraftClass
+[conv] 0x6cb920 SuperClass::ClickFire -> SuperClass
+[conv] 0x70e920 UpdateTimedStateMachine -> _addr_70
+[conv] 0x711ae0 TechnoTypeClass::DTOR -> TechnoTypeClass
+[conv] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> ReferenceCounted
+[conv] 0x6990a0 TechnoClass::SaveConfigWOL -> TechnoClass
+[conv] 0x71a760 TemporalClass::ProcessTimeWarp -> TemporalClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7A                 rc=2
+[era] Skirmish                 rc=2
+[era] BuildingLightClass       rc=2
+[era] _addr_7C                 rc=2
+[era] AbstractClass            rc=2
+[era] ObjectClass              rc=2
+[era] OverlayClass             rc=2
+[era] IPXInterfaceClass        rc=2
+[era] _addr_64                 rc=2
+[era] BuildingClass            rc=2
+[era] _addr_5C                 rc=2
+[era] AircraftClass            rc=2
+[era] SuperClass               rc=2
+[era] _addr_70                 rc=2
+[era] TechnoTypeClass          rc=2
+[era] ReferenceCounted         rc=2
+[era] TechnoClass              rc=2
+[era] TemporalClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7a16b0 HandleWOLMatchMessage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x640710 Skirmish::RenderPreview -> COMPILE_FAIL (attempt 3)
+[ledger] 0x435820 BuildingLightClass::CTOR -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ca090 _memcpy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7258d0 AbstractClass::AnnounceExpiredPointer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7806c0 ObjectClass::PopulateWOLLobbyListBox -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5fd970 OverlayClass::HandleAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b13d0 IPXInterfaceClass::SendPacket -> COMPILE_FAIL (attempt 3)
+[ledger] 0x722f00 ObjectClass::RebuildBuildingOccupancy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x649ca0 BuildNetworkEventPacket -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49d680 ObjectClass::SerializeCampaignOptions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x453e20 BuildingClass::LoadFromStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c8500 ModBigIntExp -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41a5c0 AircraftClass::GetMissionTimer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6cb920 SuperClass::ClickFire -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70e920 UpdateTimedStateMachine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x711ae0 TechnoTypeClass::DTOR -> COMPILE_FAIL (attempt 3)
+[ledger] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6990a0 TechnoClass::SaveConfigWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71a760 TemporalClass::ProcessTimeWarp -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p53\batch_report.json
