@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturnTwo@DriveLocomotionClass@@QAGHXZ",
+ "sym_key": "DriveLocomotionClass::StubReturnTwo",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "b802000000c20400",
+ "relocs": []
+}

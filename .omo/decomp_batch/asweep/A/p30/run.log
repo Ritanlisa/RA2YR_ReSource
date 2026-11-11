@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x724550 TechnoClass::sub_724550 -> TechnoClass
+[conv] 0x724570 TechnoClass::sub_724570 -> TechnoClass
+[conv] 0x741490 TechnoClass::checkTargetValidity -> TechnoClass
+[conv] 0x74f63a ObjectClass::_Release__NonReentrantLock_details_Concurrency__QAEXXZ_0 -> ObjectClass
+[conv] 0x7518c0 SetVocClassEnabled -> _addr_75
+[conv] 0x7acbd0 ObjectClass::_Release__NonReentrantLock_details_Concurrency__QAEXXZ_1 -> ObjectClass
+[conv] 0x7b4140 UDPInterfaceClass::COMStub -> UDPInterfaceClass
+[conv] 0x7c3950 Audio_Process_7C3950 -> Audio_Process
+[conv] 0x7cd65b sub_7CD65B -> _addr_7C
+[conv] 0x7cf117 notanint -> _addr_7C
+[conv] 0x7cf11e evenint -> _addr_7C
+[conv] 0x7d4bf0 _strcpy -> _addr_7D
+[conv] 0x6acbae ___inc_tmpoff -> _addr_6A
+[conv] 0x410300 AbstractClass::COMStub_AddRef -> AbstractClass
+[conv] 0x4293e0 ApplicationClass::sub_4293E0 -> ApplicationClass
+[conv] 0x4293f0 ApplicationClass::sub_4293F0 -> ApplicationClass
+[conv] 0x449a40 BuildingClass::CheckState2 -> BuildingClass
+[conv] 0x4b4820 DriveLocomotionClass::StubReturnTwo -> DriveLocomotionClass
+[conv] 0x4b64d0 DropPodLocomotionClass::SmallStub_4B64D0 -> DropPodLocomotionClass
+[conv] 0x4e8240 TiberianSunClassFactory::vt_placeholder_00 -> TiberianSunClassFactory
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=0
+[era] _addr_75                 rc=0
+[era] UDPInterfaceClass        rc=0
+[era] Audio_Process            rc=2
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_6A                 rc=2
+[era] AbstractClass            rc=0
+[era] ApplicationClass         rc=0
+[era] BuildingClass            rc=0
+[era] DriveLocomotionClass     rc=0
+[era] DropPodLocomotionClass   rc=0
+[era] TiberianSunClassFactory  rc=0
+=== diffasm byte-compare ===
+[diff] 0x724550   MATCH            TechnoClass::sub_724550
+[diff] 0x724570   MISMATCH         TechnoClass::sub_724570
+[diff] 0x741490   MATCH            TechnoClass::checkTargetValidity
+[diff] 0x74f63a   MATCH            ObjectClass::_Release__NonReentrantLock_details_Concurrency__QAEXXZ_0
+[diff] 0x7acbd0   MATCH            ObjectClass::_Release__NonReentrantLock_details_Concurrency__QAEXXZ_1
+[diff] 0x7518c0   MATCH            SetVocClassEnabled
+[diff] 0x7b4140   MATCH            UDPInterfaceClass::COMStub
+[diff] 0x7cd65b   MATCH            sub_7CD65B
+[diff] 0x7cf117   MISMATCH         notanint
+[diff] 0x7cf11e   MISMATCH         evenint
+[diff] 0x410300   MATCH            AbstractClass::COMStub_AddRef
+[diff] 0x4293e0   MATCH            ApplicationClass::sub_4293E0
+[diff] 0x4293f0   MATCH            ApplicationClass::sub_4293F0
+[diff] 0x449a40   MISMATCH         BuildingClass::CheckState2
+[diff] 0x4b4820   MATCH            DriveLocomotionClass::StubReturnTwo
+[diff] 0x4b64d0   MATCH            DropPodLocomotionClass::SmallStub_4B64D0
+[diff] 0x4e8240   MATCH            TiberianSunClassFactory::vt_placeholder_00
+[ledger] 0x724550 TechnoClass::sub_724550 -> OK (attempt 1)
+[ledger] 0x724570 TechnoClass::sub_724570 -> NG (attempt 1)
+[ledger] 0x741490 TechnoClass::checkTargetValidity -> OK (attempt 1)
+[ledger] 0x74f63a ObjectClass::_Release__NonReentrantLock_details_Concurrency__QAEXXZ_0 -> OK (attempt 1)
+[ledger] 0x7518c0 SetVocClassEnabled -> OK (attempt 1)
+[ledger] 0x7acbd0 ObjectClass::_Release__NonReentrantLock_details_Concurrency__QAEXXZ_1 -> OK (attempt 1)
+[ledger] 0x7b4140 UDPInterfaceClass::COMStub -> OK (attempt 1)
+[ledger] 0x7c3950 Audio_Process_7C3950 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cd65b sub_7CD65B -> OK (attempt 1)
+[ledger] 0x7cf117 notanint -> NG (attempt 1)
+[ledger] 0x7cf11e evenint -> NG (attempt 1)
+[ledger] 0x7d4bf0 _strcpy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6acbae ___inc_tmpoff -> COMPILE_FAIL (attempt 1)
+[ledger] 0x410300 AbstractClass::COMStub_AddRef -> OK (attempt 1)
+[ledger] 0x4293e0 ApplicationClass::sub_4293E0 -> OK (attempt 1)
+[ledger] 0x4293f0 ApplicationClass::sub_4293F0 -> OK (attempt 1)
+[ledger] 0x449a40 BuildingClass::CheckState2 -> NG (attempt 1)
+[ledger] 0x4b4820 DriveLocomotionClass::StubReturnTwo -> OK (attempt 1)
+[ledger] 0x4b64d0 DropPodLocomotionClass::SmallStub_4B64D0 -> OK (attempt 1)
+[ledger] 0x4e8240 TiberianSunClassFactory::vt_placeholder_00 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 13,
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 76.5,
+ "match_rate_of_total_pct": 65.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p30\batch_report.json

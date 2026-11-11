@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_7CD65B@@YAXXZ",
+ "sym_key": "Unnamed::sub_7CD65B",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "ff0500000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB14@@3IA",
+   "sym_key": "DataGlobal_87CB14"
+  }
+ ]
+}
