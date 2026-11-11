@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p42\part_00
+=== convert (20 addrs) ===
+[conv] 0x42d590 _VectorClass_I::Clear -> _VectorClass_I
+[conv] 0x433c90 Char::Swap -> Char
+[conv] 0x433ce0 ObjectClass::sub_433CE0 -> ObjectClass
+[conv] 0x434100 ObjectClass::sub_434100 -> ObjectClass
+[conv] 0x43ab20 _VectorClass_PAVNeuronClass::Update -> _VectorClass_PAVNeuronClass
+[conv] 0x459870 BuildingClass::MissionStubReturnZero -> BuildingClass
+[conv] 0x459880 BuildingClass::MissionStubReturnZero2 -> BuildingClass
+[conv] 0x459890 BuildingClass::MissionStubReturnZero3 -> BuildingClass
+[conv] 0x459fe0 _VectorClass_PBVParticleSystemTypeClass::GetIndex -> _VectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a040 _VectorClass_PAVInfantryClass::Get -> _VectorClass_PAVInfantryClass
+[conv] 0x45a0c0 _VectorClass_PAVFoggedObjectClass::Get -> _VectorClass_PAVFoggedObjectClass
+[conv] 0x45a120 _VectorClass_PAVReestablish::Clear -> _VectorClass_PAVReestablish
+[conv] 0x46b260 Function::Method_46B260 -> Function
+[conv] 0x46b5a0 BulletClass::CheckEndOfSequence -> BulletClass
+[conv] 0x472ad0 _VectorClass_PAUControlNode::vt_06 -> _VectorClass_PAUControlNode
+[conv] 0x472b30 _VectorClass_PAVCaptureManagerClass::Get -> _VectorClass_PAVCaptureManagerClass
+[conv] 0x477890 _VectorClass_H::GetAt_Copy -> _VectorClass_H
+[conv] 0x4778f0 _VectorClass_PAVTechnoTypeClass::Clear -> _VectorClass_PAVTechnoTypeClass
+[conv] 0x483610 ObjectClass::processPointerInvalid -> ObjectClass
+[conv] 0x484a80 sub_484A80 -> _addr_48
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_I           rc=0
+[era] Char                     rc=0
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAVNeuronClass rc=0
+[era] BuildingClass            rc=2
+[era] _VectorClass_PBVParticleSystemTypeClass rc=0
+[era] _VectorClass_PAVInfantryClass rc=0
+[era] _VectorClass_PAVFoggedObjectClass rc=0
+[era] _VectorClass_PAVReestablish rc=0
+[era] Function                 rc=0
+[era] BulletClass              rc=0
+[era] _VectorClass_PAUControlNode rc=0
+[era] _VectorClass_PAVCaptureManagerClass rc=0
+[era] _VectorClass_H           rc=0
+[era] _VectorClass_PAVTechnoTypeClass rc=0
+[era] _addr_48                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x42d590   MATCH            _VectorClass_I::Clear
+[diff] 0x433c90   MISMATCH         Char::Swap
+[diff] 0x433ce0   MISMATCH         ObjectClass::sub_433CE0
+[diff] 0x434100   MISMATCH         ObjectClass::sub_434100
+[diff] 0x483610   MISMATCH         ObjectClass::processPointerInvalid
+[diff] 0x43ab20   MATCH            _VectorClass_PAVNeuronClass::Update
+[diff] 0x459fe0   MATCH            _VectorClass_PBVParticleSystemTypeClass::GetIndex
+[diff] 0x45a040   MATCH            _VectorClass_PAVInfantryClass::Get
+[diff] 0x45a0c0   MATCH            _VectorClass_PAVFoggedObjectClass::Get
+[diff] 0x45a120   MATCH            _VectorClass_PAVReestablish::Clear
+[diff] 0x46b260   MATCH            Function::Method_46B260
+[diff] 0x46b5a0   MATCH            BulletClass::CheckEndOfSequence
+[diff] 0x472ad0   MATCH            _VectorClass_PAUControlNode::vt_06
+[diff] 0x472b30   MATCH            _VectorClass_PAVCaptureManagerClass::Get
+[diff] 0x477890   MATCH            _VectorClass_H::GetAt_Copy
+[diff] 0x4778f0   MATCH            _VectorClass_PAVTechnoTypeClass::Clear
+[diff] 0x484a80   MATCH            sub_484A80
+[ledger] 0x42d590 _VectorClass_I::Clear -> OK (attempt 1)
+[ledger] 0x433c90 Char::Swap -> NG (attempt 1)
+[ledger] 0x433ce0 ObjectClass::sub_433CE0 -> NG (attempt 1)
+[ledger] 0x434100 ObjectClass::sub_434100 -> NG (attempt 1)
+[ledger] 0x43ab20 _VectorClass_PAVNeuronClass::Update -> OK (attempt 1)
+[ledger] 0x459870 BuildingClass::MissionStubReturnZero -> COMPILE_FAIL (attempt 1)
+[ledger] 0x459880 BuildingClass::MissionStubReturnZero2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x459890 BuildingClass::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x459fe0 _VectorClass_PBVParticleSystemTypeClass::GetIndex -> OK (attempt 1)
+[ledger] 0x45a040 _VectorClass_PAVInfantryClass::Get -> OK (attempt 1)
+[ledger] 0x45a0c0 _VectorClass_PAVFoggedObjectClass::Get -> OK (attempt 1)
+[ledger] 0x45a120 _VectorClass_PAVReestablish::Clear -> OK (attempt 1)
+[ledger] 0x46b260 Function::Method_46B260 -> OK (attempt 1)
+[ledger] 0x46b5a0 BulletClass::CheckEndOfSequence -> OK (attempt 1)
+[ledger] 0x472ad0 _VectorClass_PAUControlNode::vt_06 -> OK (attempt 1)
+[ledger] 0x472b30 _VectorClass_PAVCaptureManagerClass::Get -> OK (attempt 1)
+[ledger] 0x477890 _VectorClass_H::GetAt_Copy -> OK (attempt 1)
+[ledger] 0x4778f0 _VectorClass_PAVTechnoTypeClass::Clear -> OK (attempt 1)
+[ledger] 0x483610 ObjectClass::processPointerInvalid -> NG (attempt 1)
+[ledger] 0x484a80 sub_484A80 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 13,
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "const_fold": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 76.5,
+ "match_rate_of_total_pct": 65.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p42\batch_report.json

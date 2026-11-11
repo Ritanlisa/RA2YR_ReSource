@@ -1,0 +1,8 @@
+{
+ "symbol": "?Swap@Char@@QAEDD@Z",
+ "sym_key": "Char::Swap",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b44240433d28a514124000bc28a542404885141c20400",
+ "relocs": []
+}

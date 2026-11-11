@@ -1,0 +1,11 @@
+{
+ "addr": "0x46B260",
+ "name": "Function::Method_46B260",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46B260",
+ "bytes_hex": "8b442404898130010000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

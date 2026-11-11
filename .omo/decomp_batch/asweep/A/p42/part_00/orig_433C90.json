@@ -1,0 +1,11 @@
+{
+ "addr": "0x433C90",
+ "name": "Char::Swap",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x433C90",
+ "bytes_hex": "8a5424048a4141885141c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

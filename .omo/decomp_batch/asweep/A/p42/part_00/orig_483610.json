@@ -1,0 +1,11 @@
+{
+ "addr": "0x483610",
+ "name": "ObjectClass::processPointerInvalid",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x483610",
+ "bytes_hex": "8b8140010000c1e80883e001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

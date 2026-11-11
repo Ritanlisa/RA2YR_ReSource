@@ -1,0 +1,8 @@
+{
+ "symbol": "?processPointerInvalid@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::processPointerInvalid",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b8140010000c1f80883e001c3",
+ "relocs": []
+}

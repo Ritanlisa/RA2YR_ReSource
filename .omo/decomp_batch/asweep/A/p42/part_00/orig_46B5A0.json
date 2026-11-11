@@ -1,0 +1,11 @@
+{
+ "addr": "0x46B5A0",
+ "name": "BulletClass::CheckEndOfSequence",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46B5A0",
+ "bytes_hex": "8b44240489810c010000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
