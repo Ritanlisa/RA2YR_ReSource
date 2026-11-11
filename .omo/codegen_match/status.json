@@ -7,14 +7,14 @@
   "status": "OK"
  },
  "0x402330": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": "+12 je 0x4023b0",
   "name": "AudioController::UpdatePlayback",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
  "0x4024a0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "AudioSample::ResetState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -56,11 +56,11 @@
   "status": "NG"
  },
  "0x405d40": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+1 mov eax, ecx",
   "name": "AudioController::Stop",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x406310": {
   "attempts": 7,
@@ -119,7 +119,7 @@
   "status": "OK"
  },
  "0x407010": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Audio::GetEnabled",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -133,11 +133,11 @@
   "status": "NG"
  },
  "0x4071c0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 9,
+  "first_diff": "+0 sub esp, 8",
   "name": "AudioMixer::PlaySample",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4072c0": {
   "attempts": 3,
@@ -147,7 +147,7 @@
   "status": "OK"
  },
  "0x407510": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VtableStub::Push_407510",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -175,14 +175,14 @@
   "status": "OK"
  },
  "0x408600": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "AudioNode::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x408a70": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "AudioMixer::SetupChannels",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -224,18 +224,18 @@
   "status": "OK"
  },
  "0x40a7a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Audio::GetDirectSound",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x40cc00": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 9,
+  "first_diff": "+2 jmp dword ptr [eax + 0xc]",
   "name": "VectorClass_ptr_IsometricTileClass::GetItem",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x40d230": {
   "attempts": 5,
@@ -266,7 +266,7 @@
   "status": "OK"
  },
  "0x410260": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "AbstractClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -308,7 +308,7 @@
   "status": "NG"
  },
  "0x411330": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "TacticalClass::FillScanlinesTransparent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -504,18 +504,18 @@
   "status": "OK"
  },
  "0x41fd60": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 11,
+  "first_diff": "+7 fld qword ptr [0x7e2800]",
   "name": "AITriggerTypeClass::RegisterSuccess",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x41fe20": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+1 mov edx, dword ptr [ecx + 0x108]",
   "name": "AITriggerTypeClass::RegisterFailure",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x41ffd0": {
   "attempts": 5,
@@ -532,14 +532,14 @@
   "status": "OK"
  },
  "0x420e90": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "AirstrikeClass::UpdateAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x425260": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "AnimClass::SetField8",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -644,11 +644,11 @@
   "status": "OK"
  },
  "0x42a5b0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 18,
+  "first_diff": "+6 push esi",
   "name": "CellClass::ClearOccupancyGrid",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x42d8f0": {
   "attempts": 9,
@@ -672,14 +672,14 @@
   "status": "NG"
  },
  "0x42df90": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BitmapClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x42e820": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": "+0 sub esp, 0x18",
   "name": "BridgeClass::GetCellData",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
@@ -700,7 +700,7 @@
   "status": "NG"
  },
  "0x431800": {
-  "attempts": 7,
+  "attempts": 17,
   "first_diff": null,
   "name": "HouseClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -756,14 +756,14 @@
   "status": "NG"
  },
  "0x433f50": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+0 sub esp, 8",
   "name": "MessageListClass::CountCharsInWidth",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4371d0": {
-  "attempts": 7,
+  "attempts": 9,
   "first_diff": null,
   "name": "Helper::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -777,7 +777,7 @@
   "status": "OK"
  },
  "0x439080": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "TechnoClass::checkRange",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -812,21 +812,21 @@
   "status": "OK"
  },
  "0x448070": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+61 jle 0x44811d",
   "name": "AnimClass::updateAnimation",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x448160": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "FootClass::ProcessPrimarySelect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x44d7d0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BuildingClass::GetTargetFacing",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -840,14 +840,14 @@
   "status": "NG"
  },
  "0x44f640": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "BuildingClass::GetFactoryPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x451330": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BuildingClass::GetCrewCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -917,7 +917,7 @@
   "status": "OK"
  },
  "0x459ec0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BuildingClass::Mission_Construction",
   "note": "decomp_batch r2: MATCH",
@@ -1015,7 +1015,7 @@
   "status": "NG"
  },
  "0x46b9a0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VectorClass_ptr_BulletClass::GetItem_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1064,11 +1064,11 @@
   "status": "OK"
  },
  "0x472160": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 17,
+  "first_diff": "+0 sub esp, 0x20",
   "name": "CaptureManagerClass::DrawLinks",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4722c0": {
   "attempts": 4,
@@ -1218,7 +1218,7 @@
   "status": "NG"
  },
  "0x47d210": {
-  "attempts": 3,
+  "attempts": 13,
   "first_diff": null,
   "name": "CellClass::SetWallOwner",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1232,18 +1232,18 @@
   "status": "COMPILE_FAIL"
  },
  "0x4802a0": {
-  "attempts": 6,
+  "attempts": 10,
   "first_diff": "+1 push ebp",
   "name": "TacticalClass::DrawCellTerrainOverlay",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x480510": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 11,
+  "first_diff": "+34 jne 0x480552",
   "name": "BuildingPlacement::ValidateType",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x484050": {
   "attempts": 7,
@@ -1442,11 +1442,11 @@
   "status": "OK"
  },
  "0x493930": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 11,
+  "first_diff": "+4 push esi",
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x493a60": {
   "attempts": 7,
@@ -1603,21 +1603,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x4974b0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 15,
+  "first_diff": "+5 mov edx, dword ptr [esp + 0x1c]",
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x497610": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 12,
+  "first_diff": "+7 mov ebp, dword ptr [esp + 0x10]",
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x497760": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1876,11 +1876,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x4a7900": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+11 jne 0x4a7967",
   "name": "DiskLaserClass::PointerGotInvalid",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x4a7c70": {
   "attempts": 5,
@@ -2037,11 +2037,11 @@
   "status": "NG"
  },
  "0x4b4db0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 7,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "JumpjetLocomotionClass::GetField_0x80",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4b55a0": {
   "attempts": 1,
@@ -2086,7 +2086,7 @@
   "status": "OK"
  },
  "0x4b6680": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::CheckState4",
   "note": "decomp_batch r2: MATCH",
@@ -2149,7 +2149,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4bad60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "DSurface::GetBytesPerPixel",
   "note": "decomp_batch r2: MATCH",
@@ -2177,11 +2177,11 @@
   "status": "NG"
  },
  "0x4c3d00": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+0 sub esp, 0x10",
   "name": "CreditsPower::DrawCreditsTextLine",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x4c4ef0": {
   "attempts": 9,
@@ -2485,7 +2485,7 @@
   "status": "OK"
  },
  "0x4f2b40": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "HouseClass::vt_placeholder_09",
   "note": "decomp_batch r2: MATCH",
@@ -2625,7 +2625,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x50e1c0": {
-  "attempts": 6,
+  "attempts": 9,
   "first_diff": "+4 push ebx",
   "name": "TechnoClass::Process",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -2828,11 +2828,11 @@
   "status": "NG"
  },
  "0x517210": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+13 push ebx",
   "name": "JumpjetLocomotionClass::IsPositionWithinThreshold",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x5172b0": {
   "attempts": 5,
@@ -2989,11 +2989,11 @@
   "status": "OK"
  },
  "0x535d20": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 mov eax, 0x826fc8",
   "name": "CreateTeamCommand::performAction_2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x535de0": {
   "attempts": 4,
@@ -3486,11 +3486,11 @@
   "status": "OK"
  },
  "0x565b00": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+57 jle 0x565b63",
   "name": "MapClass::FreeAllCells",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x56bd40": {
   "attempts": 7,
@@ -3528,7 +3528,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x56e7c0": {
-  "attempts": 7,
+  "attempts": 10,
   "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "MapClass::CheckCellsBuildable",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
@@ -3864,7 +3864,7 @@
   "status": "OK"
  },
  "0x5b2fb0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MissionClass::Return450M",
   "note": "decomp_batch r2: MATCH",
@@ -3948,7 +3948,7 @@
   "status": "OK"
  },
  "0x5c1fa0": {
-  "attempts": 7,
+  "attempts": 10,
   "first_diff": "+42 jne 0x5c1fd6",
   "name": "MPCooperative::Revert",
   "note": "decomp_batch r2: MISMATCH/branch_order",
@@ -3990,11 +3990,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x5cbb80": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 18,
+  "first_diff": "+0 sub esp, 0x30",
   "name": "MSOverlayAnim::Draw",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x5cc110": {
   "attempts": 7,
@@ -4648,7 +4648,7 @@
   "status": "OK"
  },
  "0x645910": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ParticleTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -5453,7 +5453,7 @@
   "status": "OK"
  },
  "0x6e58a0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "TagClass::StubReturn44",
   "note": "decomp_batch r2: MATCH",
@@ -5649,7 +5649,7 @@
   "status": "OK"
  },
  "0x70ed80": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": "+0 push ebx",
   "name": "TechnoClass::GetAnimationFlags",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -5810,7 +5810,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x720a80": {
-  "attempts": 7,
+  "attempts": 10,
   "first_diff": "+0 push ebp",
   "name": "Movie::SelectNextBuildableType",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -6160,7 +6160,7 @@
   "status": "OK"
  },
  "0x74f320": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "VeinholeMonsterClass::StubReturn264",
   "note": "decomp_batch r2: MATCH",
@@ -6587,7 +6587,7 @@
   "status": "OK"
  },
  "0x77d710": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "GameLoop::Thunk",
   "note": "decomp_batch r2: MATCH",
@@ -6762,7 +6762,7 @@
   "status": "NG"
  },
  "0x7b4c20": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+11 je 0x7b4cc4",
   "name": "String::Append",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
@@ -6839,7 +6839,7 @@
   "status": "OK"
  },
  "0x7bab40": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "XSurface::entry_50_",
   "note": "decomp_batch r2: MATCH",
