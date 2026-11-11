@@ -1,0 +1,11 @@
+{
+ "addr": "0x71F680",
+ "name": "TriggerTypeClass::GetActionCategoryFlags",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71F680",
+ "bytes_hex": "5633f683f93b771433c08a8100f77100ff2485f8f67100be0100000083f931771233d28a9144f77100ff24953cf7710083ce0283f908740583f918750383ce048d51fd83fa37771233c08a8280f77100ff248578f7710083ce0883c1f883f935771233d28a91c0f77100ff2495b8f7710083ce108bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

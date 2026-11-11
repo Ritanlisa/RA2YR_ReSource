@@ -1,0 +1,27 @@
+{
+ "symbol": "?CheckRepairNeeded@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::CheckRepairNeeded",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "568bf18a86e0060000c686d20600000084c0754b8a86e106000084c075418a86e206000084c075378b8e50030000e80000000084c0751f8b86c40600008b88cc030000518b8e500300008b90c803000052e8000000008bcee8000000005ec38b066a006a0556ff90e8010000b8010000005ec3",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?CheckNone@Flag@@QAE_NXZ",
+   "sym_key": "Flag::CheckNone"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?StartDouble@Timer@@QAEDN@Z",
+   "sym_key": "Timer::StartDouble"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Destru_vt139@FootClass@@QAEHXZ",
+   "sym_key": "FootClass::Destru_vt139"
+  }
+ ]
+}

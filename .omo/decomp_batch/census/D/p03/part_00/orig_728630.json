@@ -1,0 +1,11 @@
+{
+ "addr": "0x728630",
+ "name": "TubeClass::PowerDrainUpdate",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x728630",
+ "bytes_hex": "5355568b742410578bf956e8d07dceff668b47248bce50e8e496d7ff668b4f26518bcee8d896d7ff668b57288bce52e8cc96d7ff668b472a8bce50e8c096d7ff8b4f2c518bcee8d596d7ff8d5f30bd640000008b138bce52e8c396d7ff83c3044d75f08b87c00100008bce50e8af96d7ff5f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

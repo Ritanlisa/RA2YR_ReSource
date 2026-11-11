@@ -1,0 +1,57 @@
+{
+ "symbol": "?GetActionCategoryFlags@TriggerTypeClass@@QAEHXZ",
+ "sym_key": "TriggerTypeClass::GetActionCategoryFlags",
+ "size": 123,
+ "link_base": 0,
+ "bytes_hex": "5633f683f93b771433c08a8100000000ff248500000000be0100000083f931771233d28a9100000000ff24950000000083ce0283f908740583f918750383ce048d51fd83fa37771233c08a8200000000ff24850000000083ce0883c1f883f935771533d28a9100000000ff2495000000008bc65e0c10c38bc65ec3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "$L1164",
+   "sym_key": "$L1164"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "$L1165",
+   "sym_key": "$L1165"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "$L1166",
+   "sym_key": "$L1166"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "$L1167",
+   "sym_key": "$L1167"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "$L1168",
+   "sym_key": "$L1168"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "$L1169",
+   "sym_key": "$L1169"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "$L1170",
+   "sym_key": "$L1170"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "$L1171",
+   "sym_key": "$L1171"
+  }
+ ]
+}

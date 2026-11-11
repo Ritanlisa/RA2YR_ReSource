@@ -1,0 +1,101 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x740a90 TechnoClass::CheckRepairNeeded -> TechnoClass
+[conv] 0x4bb000 DSurface::RestoreIfLost -> DSurface
+[conv] 0x6bf690 _TClassFactory_VSuperClass::ddtor -> _TClassFactory_VSuperClass
+[conv] 0x6c5090 _TClassFactory_VBulletClass::ddtor -> _TClassFactory_VBulletClass
+[conv] 0x4f3720 GraphicMenuImageItem::Draw -> GraphicMenuImageItem
+[conv] 0x4df320 TechnoClass::vt_entry_4C8 -> TechnoClass
+[conv] 0x6bf510 _TClassFactory_VSuperWeaponTypeClass::ddtor -> _TClassFactory_VSuperWeaponTypeClass
+[conv] 0x6c1f10 _TClassFactory_VScriptTypeClass::GetClassIdentifier -> _TClassFactory_VScriptTypeClass
+[conv] 0x6c2c90 _TClassFactory_VInfantryTypeClass::GetClassIdentifier -> _TClassFactory_VInfantryTypeClass
+[conv] 0x6c5510 _TClassFactory_VWeaponTypeClass::GetClassIdentifier -> _TClassFactory_VWeaponTypeClass
+[conv] 0x71f680 TriggerTypeClass::GetActionCategoryFlags -> TriggerTypeClass
+[conv] 0x728630 TubeClass::PowerDrainUpdate -> TubeClass
+[conv] 0x6c3890 _TClassFactory_VInfantryClass::ddtor -> _TClassFactory_VInfantryClass
+[conv] 0x475260 HouseClass::ReadHouseNamesToBitmask -> HouseClass
+[conv] 0x49e740 ObjectClass::SmallFunc_49E740 -> ObjectClass
+[conv] 0x4d9f70 FootClass::SellUnit -> FootClass
+[conv] 0x4d4200 FootClass::Destru_vt139 -> FootClass
+[conv] 0x75c680 WalkLocomotionClass::BeginMove -> WalkLocomotionClass
+[conv] 0x67ff70 unknown::SaveGame_Start_67FF70 -> unknown
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] DSurface                 rc=2
+[era] _TClassFactory_VSuperClass rc=2
+[era] _TClassFactory_VBulletClass rc=2
+[era] GraphicMenuImageItem     rc=2
+[era] _TClassFactory_VSuperWeaponTypeClass rc=2
+[era] _TClassFactory_VScriptTypeClass rc=2
+[era] _TClassFactory_VInfantryTypeClass rc=2
+[era] _TClassFactory_VWeaponTypeClass rc=2
+[era] TriggerTypeClass         rc=0
+[era] TubeClass                rc=0
+[era] _TClassFactory_VInfantryClass rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] WalkLocomotionClass      rc=2
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x740a90   MISMATCH         TechnoClass::CheckRepairNeeded
+[diff] 0x4df320   MISMATCH         TechnoClass::vt_entry_4C8
+[diff] 0x71f680   MISMATCH         TriggerTypeClass::GetActionCategoryFlags
+[diff] 0x728630   MISMATCH         TubeClass::PowerDrainUpdate
+[ledger] 0x740a90 TechnoClass::CheckRepairNeeded -> NG (attempt 1)
+[ledger] 0x4bb000 DSurface::RestoreIfLost -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bf690 VectorClass_K_38::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5090 TClassFactory_BulletClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f3720 GraphicMenuImageItem::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4df320 TechnoClass::vt_entry_4C8 -> NG (attempt 1)
+[ledger] 0x6bf510 VectorClass_K_32::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c1f10 TClassFactory_ScriptTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2c90 TClassFactory_InfantryTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5510 TClassFactory_WeaponTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71f680 TriggerTypeClass::GetActionCategoryFlags -> NG (attempt 1)
+[ledger] 0x728630 TubeClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x6c3890 TClassFactory_InfantryClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7de002 0x7de002 -> PENDING (attempt 1)
+[ledger] 0x475260 HouseClass::ReadHouseNamesToBitmask -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49e740 SmallFunc_49E740 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d9f70 BuildingClass::SellUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d4200 FootClass::Destru_vt139 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75c680 WalkLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67ff70 SaveGame_Start_67FF70 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2434,
+ "verdicts": {
+  "MISMATCH": 680,
+  "MATCH": 521,
+  "COMPILE_FAIL": 707,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 510,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 233,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 68,
+  "branch_polarity": 49,
+  "regalloc": 110,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 43.4,
+ "match_rate_of_total_pct": 21.4,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p03\batch_report.json

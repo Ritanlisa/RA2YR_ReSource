@@ -1,0 +1,11 @@
+{
+ "addr": "0x740A90",
+ "name": "TechnoClass::CheckRepairNeeded",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x740A90",
+ "bytes_hex": "568bf18a86e0060000c686d20600000084c0754b8a86e106000084c075418a86e206000084c07537578dbe500300008bcfe80a47d6ff84c0751b8b86c40600008b88cc030000518bcf8b90c803000052e85b47d6ff8bcee81437d9ff5f5ec38b066a006a058bceff90e8010000b8010000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

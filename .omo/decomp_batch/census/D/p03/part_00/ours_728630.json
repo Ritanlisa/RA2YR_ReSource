@@ -1,0 +1,57 @@
+{
+ "symbol": "?PowerDrainUpdate@TubeClass@@QAEHPAI@Z",
+ "sym_key": "TubeClass::PowerDrainUpdate",
+ "size": 114,
+ "link_base": 0,
+ "bytes_hex": "5356578bf1e800000000668b46388b7c2410508bcfe8000000008b4e38c1f910518bcfe800000000668b56288bcf52e800000000660fb6462a508bcfe8000000008b4e2c51e8000000008d7e30bb640000008b0783c70450e8000000004b75f28b96c001000052e8000000005f5e5bc20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Add_WORD@Checksummer@@QAEHF@Z",
+   "sym_key": "Checksummer::Add_WORD"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Add_WORD@Checksummer@@QAEHF@Z",
+   "sym_key": "Checksummer::Add_WORD"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?Add_WORD@Checksummer@@QAEHF@Z",
+   "sym_key": "Checksummer::Add_WORD"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?Add_WORD@Checksummer@@QAEHF@Z",
+   "sym_key": "Checksummer::Add_WORD"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}
