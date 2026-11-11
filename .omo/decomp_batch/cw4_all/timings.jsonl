@@ -39,3 +39,4 @@
 {"part": 38, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
 {"part": 39, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
 {"part": 40, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 16, "RET_ARITY": 3, "RET_VOID_STUB": 1}, "by_family_hits": {}}}
+{"part": 41, "n": 20, "seconds": 1.4, "summary": {"verdicts": {"NO_VARIANT": 12, "NO_HIT": 8}, "by_family_total": {"FOLD_STORE": 1, "STRUCTURAL": 9, "RELOC_KEY": 2, "ONE_INSN": 4, "REG_ALLOC": 1, "RET_ARITY": 2, "FRAME": 1}, "by_family_hits": {}}}

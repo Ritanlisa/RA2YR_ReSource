@@ -1,0 +1,564 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 12,
+   "NO_HIT": 8
+  },
+  "by_family_total": {
+   "FOLD_STORE": 1,
+   "STRUCTURAL": 9,
+   "RELOC_KEY": 2,
+   "ONE_INSN": 4,
+   "REG_ALLOC": 1,
+   "RET_ARITY": 2,
+   "FRAME": 1
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x7b2c50",
+   "name": "sub_7B2C50",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_7B2C50",
+   "unit": "_addr_7B",
+   "head": "void __cdecl sub_7B2C50()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7f7a60]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x46b640",
+   "name": "Timer::Start",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.13,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [esp + 4]",
+      "ours": "+0 mov eax, dword ptr [esp + 4]"
+     },
+     "ours_size": 20
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "Timer",
+   "method": "Start",
+   "unit": "Timer",
+   "head": "Timer * Timer::Start(int p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, dword ptr [esp + 4]",
+    "ours": "+0 mov eax, dword ptr [0]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0"
+   ]
+  },
+  {
+   "addr": "0x4e8180",
+   "name": "sub_4E8180",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4E8180",
+   "unit": "_addr_4E",
+   "head": "char __cdecl sub_4E8180()",
+   "baseline_first_diff": {
+    "orig": "+0 xor al, al",
+    "ours": "+0 mov byte ptr [0], 0xff"
+   }
+  },
+  {
+   "addr": "0x4e81a0",
+   "name": "sub_4E81A0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4E81A0",
+   "unit": "_addr_4E",
+   "head": "char __cdecl sub_4E81A0()",
+   "baseline_first_diff": {
+    "orig": "+2 mov byte ptr [0xa83ec9], 0xff",
+    "ours": "+2 mov byte ptr [0], 0xff"
+   }
+  },
+  {
+   "addr": "0x4e81c0",
+   "name": "sub_4E81C0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4E81C0",
+   "unit": "_addr_4E",
+   "head": "char __cdecl sub_4E81C0()",
+   "baseline_first_diff": {
+    "orig": "+2 mov byte ptr [0xa8e8c6], 0xff",
+    "ours": "+2 mov byte ptr [0], 0xff"
+   }
+  },
+  {
+   "addr": "0x4e81e0",
+   "name": "sub_4E81E0",
+   "family": "ONE_INSN",
+   "path": "extern_reloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.13,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+2 mov byte ptr [0xa83dc0], 0",
+      "ours": "+2 mov byte ptr [0], 0"
+     },
+     "ours_size": 22
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4E81E0",
+   "unit": "_addr_4E",
+   "head": "char __cdecl sub_4E81E0()",
+   "baseline_first_diff": {
+    "orig": "+2 mov byte ptr [0xa83dc0], 0",
+    "ours": "+2 mov byte ptr [0], 0"
+   },
+   "variants_generated": [
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x4e8200",
+   "name": "sub_4E8200",
+   "family": "ONE_INSN",
+   "path": "extern_reloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+2 mov byte ptr [0x8b40e1], 0",
+      "ours": "+2 mov byte ptr [0], 0"
+     },
+     "ours_size": 22
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4E8200",
+   "unit": "_addr_4E",
+   "head": "char __cdecl sub_4E8200()",
+   "baseline_first_diff": {
+    "orig": "+2 mov byte ptr [0x8b40e1], 0",
+    "ours": "+2 mov byte ptr [0], 0"
+   },
+   "variants_generated": [
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x4e8220",
+   "name": "sub_4E8220",
+   "family": "ONE_INSN",
+   "path": "extern_reloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+2 mov byte ptr [0xa8e982], 0",
+      "ours": "+2 mov byte ptr [0], 0"
+     },
+     "ours_size": 22
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4E8220",
+   "unit": "_addr_4E",
+   "head": "char __cdecl sub_4E8220()",
+   "baseline_first_diff": {
+    "orig": "+2 mov byte ptr [0xa8e982], 0",
+    "ours": "+2 mov byte ptr [0], 0"
+   },
+   "variants_generated": [
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x633ac0",
+   "name": "ExecuteActionPlanManager_Helper",
+   "family": "STRUCTURAL",
+   "path": "width_mismatch",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p041\\t_633AC0\\ObjectClass.cpp(8) : error C2100: illegal indirection"
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.04,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p041\\t_633AC0\\ObjectClass.cpp(8) : error C2100: illegal indirection"
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "ExecuteActionPlanManager_Helper",
+   "unit": "ObjectClass",
+   "head": "unsigned int * ObjectClass::ExecuteActionPlanManager_Helper()",
+   "baseline_first_diff": {
+    "orig": "+2 mov byte ptr [eax], 0",
+    "ours": "+2 mov ecx, dword ptr [eax]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x637db0",
+   "name": "ScriptAction::SetField10",
+   "family": "REG_ALLOC",
+   "path": "ret_norm",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_BOOL_SC_SWAP",
+     "kind": "order",
+     "desc": "swap `||` operands (short-circuit order)",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, byte ptr [0xac4cf4]",
+      "ours": "+0 cmp ecx, 4"
+     },
+     "ours_size": 23
+    },
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.06,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+14 xor al, al",
+      "ours": "+14 xor eax, eax"
+     },
+     "ours_size": 23
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ScriptAction",
+   "method": "SetField10",
+   "unit": "ScriptAction",
+   "head": "bool ScriptAction::SetField10()",
+   "baseline_first_diff": {
+    "orig": "+14 xor al, al",
+    "ours": "+14 xor eax, eax"
+   },
+   "variants_generated": [
+    "V_BOOL_SC_SWAP",
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x72a1a0",
+   "name": "JumpjetLocomotionClass::ShortFunc_72A1A0",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TunnelLocomotionClass",
+   "method": "ShortFunc_72A1A0",
+   "unit": "TunnelLocomotionClass",
+   "head": "int __stdcall TunnelLocomotionClass::ShortFunc_72A1A0(int p0)",
+   "baseline_first_diff": {
+    "orig": "+17 ret 4",
+    "ours": "+17 ret 8"
+   }
+  },
+  {
+   "addr": "0x72a8a0",
+   "name": "sub_72A8A0",
+   "family": "ONE_INSN",
+   "path": "extern_reloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.13,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+2 mov byte ptr [0xb0fb4e], 0",
+      "ours": "+2 mov byte ptr [0], 0"
+     },
+     "ours_size": 22
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_72A8A0",
+   "unit": "_addr_72",
+   "head": "char __cdecl sub_72A8A0()",
+   "baseline_first_diff": {
+    "orig": "+2 mov byte ptr [0xb0fb4e], 0",
+    "ours": "+2 mov byte ptr [0], 0"
+   },
+   "variants_generated": [
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x72a8c0",
+   "name": "sub_72A8C0",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_72A8C0",
+   "unit": "_addr_72",
+   "head": "char __cdecl sub_72A8C0()",
+   "baseline_first_diff": {
+    "orig": "+0 xor al, al",
+    "ours": "+0 mov byte ptr [0], 0x48"
+   }
+  },
+  {
+   "addr": "0x72a900",
+   "name": "sub_72A900",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_72A900",
+   "unit": "_addr_72",
+   "head": "char __cdecl sub_72A900()",
+   "baseline_first_diff": {
+    "orig": "+0 xor al, al",
+    "ours": "+0 mov byte ptr [0], 0x48"
+   }
+  },
+  {
+   "addr": "0x72a920",
+   "name": "sub_72A920",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_72A920",
+   "unit": "_addr_72",
+   "head": "char __cdecl sub_72A920()",
+   "baseline_first_diff": {
+    "orig": "+0 xor al, al",
+    "ours": "+0 mov byte ptr [0], 0x48"
+   }
+  },
+  {
+   "addr": "0x72a960",
+   "name": "sub_72A960",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_72A960",
+   "unit": "_addr_72",
+   "head": "char __cdecl sub_72A960()",
+   "baseline_first_diff": {
+    "orig": "+0 mov al, 0xff",
+    "ours": "+0 mov byte ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x72a980",
+   "name": "sub_72A980",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_72A980",
+   "unit": "_addr_72",
+   "head": "char __cdecl sub_72A980()",
+   "baseline_first_diff": {
+    "orig": "+0 mov al, 0xff",
+    "ours": "+0 mov byte ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x7cf465",
+   "name": "__check_overflow_exit",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "__check_overflow_exit",
+   "unit": "_addr_7C",
+   "head": "void __cdecl __check_overflow_exit()",
+   "baseline_first_diff": {
+    "orig": "+0 sub esp, 8",
+    "ours": "+0 push 0x7cf48d"
+   }
+  },
+  {
+   "addr": "0x405140",
+   "name": "sub_405140",
+   "family": "STRUCTURAL",
+   "path": "branch_order",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.13,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+9 fld dword ptr [0x7e1748]",
+      "ours": "+9 fld qword ptr [0]"
+     },
+     "ours_size": 20
+    },
+    {
+     "vid": "V_IF_GUARD_EQ",
+     "kind": "if_else",
+     "desc": "guard with (C)==0 spelling",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+9 fld dword ptr [0x7e1748]",
+      "ours": "+9 fld qword ptr [0]"
+     },
+     "ours_size": 20
+    },
+    {
+     "vid": "V_IF_SWAPNEG",
+     "kind": "if_else",
+     "desc": "if(!C){B} else {A} (block swap + negated cond)",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+9 fld dword ptr [0x7e1748]",
+      "ours": "+9 fld qword ptr [0]"
+     },
+     "ours_size": 20
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_405140",
+   "unit": "ObjectClass",
+   "head": "double ObjectClass::sub_405140()",
+   "baseline_first_diff": {
+    "orig": "+7 jne 0x405150",
+    "ours": "+7 je 0xd"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ]
+  },
+  {
+   "addr": "0x4a0160",
+   "name": "EnumConnectionsClass::Next",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "EnumConnectionsClass",
+   "method": "Next",
+   "unit": "EnumConnectionsClass",
+   "head": "int __stdcall EnumConnectionsClass::Next(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+18 ret 8",
+    "ours": "+18 ret 0xc"
+   }
+  }
+ ]
+}
