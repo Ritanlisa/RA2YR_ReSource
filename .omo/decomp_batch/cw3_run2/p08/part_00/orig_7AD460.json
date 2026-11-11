@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AD460",
+ "name": "WonlineStringDialogControl_28::Read",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AD460",
+ "bytes_hex": "8b442408506a0068f5050000e89f86fcff50ff15a4147e0033c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

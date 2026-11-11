@@ -1,0 +1,21 @@
+{
+ "symbol": "?ShowPlayerName@Dialog@@QAEJXZ",
+ "sym_key": "Dialog::ShowPlayerName",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "68a805000051e8000000006822b3a8006a0068b204000050e800000000c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}
