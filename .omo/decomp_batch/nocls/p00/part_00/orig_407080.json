@@ -1,0 +1,11 @@
+{
+ "addr": "0x407080",
+ "name": "j_Mixer_RequestBuffer",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407080",
+ "bytes_hex": "e9eb000000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

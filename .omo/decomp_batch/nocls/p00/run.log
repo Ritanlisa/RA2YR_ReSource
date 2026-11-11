@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x403d30 sub_403D30 -> _addr_40
+[conv] 0x403eb0 sub_403EB0 -> _addr_40
+[conv] 0x406920 sub_406920 -> _addr_40
+[conv] 0x406ee0 sub_406EE0 -> _addr_40
+[conv] 0x407080 j_Mixer_RequestBuffer -> _addr_40
+[conv] 0x40a7c0 CreateDirectSoundBuffer -> _addr_40
+[conv] 0x40ae00 sub_40AE00 -> _addr_40
+[conv] 0x40c6a0 sub_40C6A0 -> _addr_40
+[conv] 0x40cff0 sub_40CFF0 -> _addr_40
+[conv] 0x40d030 sub_40D030 -> _addr_40
+[conv] 0x40d310 sub_40D310 -> _addr_40
+[conv] 0x40d3c0 sub_40D3C0 -> _addr_40
+[conv] 0x40d400 sub_40D400 -> _addr_40
+[conv] 0x40d9c0 sub_40D9C0 -> _addr_40
+[conv] 0x40d9f0 unknown_libname_4 -> _addr_40
+[conv] 0x40db70 sub_40DB70 -> _addr_40
+[conv] 0x40dc50 sub_40DC50 -> _addr_40
+[conv] 0x40df60 sub_40DF60 -> _addr_40
+[conv] 0x40e060 sub_40E060 -> _addr_40
+[conv] 0x40e1b0 unknown_libname_7 -> _addr_40
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x403d30   MISMATCH         sub_403D30
+[diff] 0x403eb0   MISMATCH         sub_403EB0
+[diff] 0x407080   MATCH            j_Mixer_RequestBuffer
+[diff] 0x40a7c0   MISMATCH         CreateDirectSoundBuffer
+[diff] 0x40ae00   MISMATCH         sub_40AE00
+[diff] 0x40c6a0   MISMATCH         sub_40C6A0
+[diff] 0x40cff0   MISMATCH         sub_40CFF0
+[diff] 0x40d030   MISMATCH         sub_40D030
+[diff] 0x40d9f0   MISMATCH         unknown_libname_4
+[diff] 0x40dc50   MATCH            sub_40DC50
+[diff] 0x40df60   MATCH            sub_40DF60
+[diff] 0x40e1b0   MATCH            unknown_libname_7
+[ledger] 0x403d30 sub_403D30 -> NG (attempt 2)
+[ledger] 0x403eb0 sub_403EB0 -> NG (attempt 2)
+[ledger] 0x406920 sub_406920 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x406ee0 sub_406EE0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x407080 j_Mixer_RequestBuffer -> OK (attempt 2)
+[ledger] 0x40a7c0 CreateDirectSoundBuffer -> NG (attempt 2)
+[ledger] 0x40ae00 sub_40AE00 -> NG (attempt 2)
+[ledger] 0x40c6a0 sub_40C6A0 -> NG (attempt 2)
+[ledger] 0x40cff0 sub_40CFF0 -> NG (attempt 2)
+[ledger] 0x40d030 sub_40D030 -> NG (attempt 2)
+[ledger] 0x40d310 sub_40D310 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40d3c0 sub_40D3C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40d400 sub_40D400 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40d9c0 sub_40D9C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40d9f0 unknown_libname_4 -> NG (attempt 2)
+[ledger] 0x40db70 sub_40DB70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40dc50 sub_40DC50 -> OK (attempt 2)
+[ledger] 0x40df60 sub_40DF60 -> OK (attempt 2)
+[ledger] 0x40e060 sub_40E060 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40e1b0 unknown_libname_7 -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 8,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "extern_reloc": 6,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 33.3,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p00\batch_report.json

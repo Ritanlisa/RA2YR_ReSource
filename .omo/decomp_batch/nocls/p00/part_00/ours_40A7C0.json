@@ -1,0 +1,27 @@
+{
+ "symbol": "?CreateDirectSoundBuffer@@YIHHHF@Z",
+ "sym_key": "Unnamed::CreateDirectSoundBuffer",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "51a10000000085c0743c668b4c240866c7442400010066894c24028b1050ff5248a1000000008d54240052508b08ff5138a1000000006a016a008b086a0050ff513059c204008b44240859c20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E8A0@@3IA",
+   "sym_key": "DataGlobal_87E8A0"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E8A0@@3IA",
+   "sym_key": "DataGlobal_87E8A0"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E8A0@@3IA",
+   "sym_key": "DataGlobal_87E8A0"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x40A7C0",
+ "name": "CreateDirectSoundBuffer",
+ "size": 133,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40A7C0",
+ "bytes_hex": "83ec1456578b3da0e887008bf285ff746c8bc6538b5c242466c744240c01009983e20766895c240e03c2894c2410c1f8030fafc366894424188b44241825ffff0000668974241a0fafc18944241466c744241c00008b0f57ff5148a1a0e887008d4c240c51508b10ff5238a1a0e887006a016a008b106a0050ff52305b5f5e83c414c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

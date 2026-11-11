@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_4@@YAPAIXZ",
+ "sym_key": "Unnamed::unknown_libname_4",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "a1000000006a0050e80000000083c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?SeedInitRNG@@YAPAIHH@Z",
+   "sym_key": "SeedInitRNG"
+  }
+ ]
+}

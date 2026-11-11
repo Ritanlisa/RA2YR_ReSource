@@ -63,7 +63,7 @@
   "status": "NG"
  },
  "0x403490": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -84,18 +84,18 @@
   "status": "NG"
  },
  "0x403d30": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x403d30",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_403D30",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x403eb0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x403eb0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+5 mov dword ptr [0x87e278], 0",
+  "name": "sub_403EB0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x404700": {
   "attempts": 9,
@@ -231,11 +231,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x406920": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x406920",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_406920",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x406b10": {
   "attempts": 1,
@@ -245,11 +245,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x406ee0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x406ee0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_406EE0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x407010": {
   "attempts": 5,
@@ -266,11 +266,11 @@
   "status": "NG"
  },
  "0x407080": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x407080",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "j_Mixer_RequestBuffer",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x4071a0": {
   "attempts": 1,
@@ -441,11 +441,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x40a7c0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x40a7c0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 sub esp, 0x14",
+  "name": "CreateDirectSoundBuffer",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x40a850": {
   "attempts": 1,
@@ -455,11 +455,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x40ae00": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x40ae00",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7e1770]",
+  "name": "sub_40AE00",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x40b6a0": {
   "attempts": 1,
@@ -511,11 +511,11 @@
   "status": "NG"
  },
  "0x40c6a0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x40c6a0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fild dword ptr [0x87f768]",
+  "name": "sub_40C6A0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x40c8c0": {
   "attempts": 1,
@@ -532,18 +532,18 @@
   "status": "NG"
  },
  "0x40cff0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x40cff0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_40CFF0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x40d030": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x40d030",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7e1950]",
+  "name": "sub_40D030",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x40d230": {
   "attempts": 5,
@@ -574,25 +574,25 @@
   "status": "OK"
  },
  "0x40d310": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x40d310",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_40D310",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x40d3c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x40d3c0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_40D3C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x40d400": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x40d400",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_40D400",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x40d6c0": {
   "attempts": 1,
@@ -616,32 +616,32 @@
   "status": "COMPILE_FAIL"
  },
  "0x40d9c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x40d9c0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_40D9C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x40d9f0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x40d9f0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 push 0",
+  "name": "unknown_libname_4",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x40db70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x40db70",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_40DB70",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x40dc50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x40dc50",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_40DC50",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x40dd70": {
   "attempts": 1,
@@ -651,25 +651,25 @@
   "status": "COMPILE_FAIL"
  },
  "0x40df60": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x40df60",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
- },
- "0x40e060": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x40e060",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
- },
- "0x40e1b0": {
   "attempts": 2,
   "first_diff": null,
-  "name": "0x40e1b0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_40DF60",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x40e060": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "sub_40E060",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x40e1b0": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "unknown_libname_7",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x40e610": {
   "attempts": 1,
@@ -1876,7 +1876,7 @@
   "status": "NG"
  },
  "0x438210": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "BlowStraw::Get",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4011,7 +4011,7 @@
   "status": "NG"
  },
  "0x499ce0": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "AbstractClass::setTileIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -10192,7 +10192,7 @@
   "status": "PENDING"
  },
  "0x5c1300": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "ReadMPMapsINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -10682,7 +10682,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x5d2260": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "GameClass::loadScenarioFiles",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -10759,11 +10759,11 @@
   "status": "NG"
  },
  "0x5d5870": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+5 call dword ptr [0x7e1538]",
   "name": "Timer::EnableHighPrecision",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x5d5880": {
   "attempts": 6,
@@ -10997,7 +10997,7 @@
   "status": "PENDING"
  },
  "0x5e68a0": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "SkirmishDialog::Show",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -11571,7 +11571,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x60b740": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "sub_60B740",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -12075,7 +12075,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x6319c0": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "Network_Set",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -12285,7 +12285,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x635e90": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "sub_635E90",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -13146,7 +13146,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x65d240": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "FileClass::SetTime",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -13818,7 +13818,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x696ae0": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "DlgProcLoadGame_Load_696AE0",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -14609,7 +14609,7 @@
   "status": "PENDING"
  },
  "0x6bec60": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "GameClass::Shutdown",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -14630,7 +14630,7 @@
   "status": "NG"
  },
  "0x6bf1c0": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass_K_20::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -14686,7 +14686,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x6c0240": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "TClassFactory_CampaignClass::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -18865,7 +18865,7 @@
   "status": "PENDING"
  },
  "0x7760b0": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "Render_Render_7760B0",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -19502,7 +19502,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x7b0220": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "ComStreamClass::seekToPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -20076,7 +20076,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x7c842e": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "LoadResource",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -20111,7 +20111,7 @@
   "status": "NG"
  },
  "0x7c857e": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "CreateEventA",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -20132,21 +20132,21 @@
   "status": "NG"
  },
  "0x7c8644": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "PeekMessageA",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7c8686": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "DialogBoxIndirectParamA",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7c86c8": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "GetKeyState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -20167,7 +20167,7 @@
   "status": "NG"
  },
  "0x7c8794": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "ScreenToClient",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -20181,7 +20181,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x7c8818": {
-  "attempts": 2,
+  "attempts": 5,
   "first_diff": null,
   "name": "GetTextMetricsA",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -20195,7 +20195,7 @@
   "status": "NG"
  },
  "0x7c889c": {
-  "attempts": 2,
+  "attempts": 5,
   "first_diff": null,
   "name": "RegOpenKeyExA",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -20223,7 +20223,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x7c896e": {
-  "attempts": 2,
+  "attempts": 5,
   "first_diff": null,
   "name": "ntohl",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -20349,14 +20349,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x7c91d0": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "_strncpy",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7c94bc": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "Audio_Write",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -20391,11 +20391,11 @@
   "status": "NG"
  },
  "0x7ca8c6": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "_wcschr",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x7caacb": {
   "attempts": 1,
@@ -20433,11 +20433,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x7cb550": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 0xc]",
   "name": "_strncat",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7cb847": {
   "attempts": 1,
@@ -20496,11 +20496,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x7cd790": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 push ebp",
   "name": "_strcspn",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7cd95f": {
   "attempts": 1,

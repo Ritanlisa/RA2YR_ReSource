@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x403d30",
+  "batch": "nocls",
+  "name": "sub_403D30",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x403eb0",
+  "batch": "nocls",
+  "name": "sub_403EB0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x406920",
+  "batch": "nocls",
+  "name": "sub_406920",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x406ee0",
+  "batch": "nocls",
+  "name": "sub_406EE0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x407080",
+  "batch": "nocls",
+  "name": "j_Mixer_RequestBuffer",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x40a7c0",
+  "batch": "nocls",
+  "name": "CreateDirectSoundBuffer",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x40ae00",
+  "batch": "nocls",
+  "name": "sub_40AE00",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40c6a0",
+  "batch": "nocls",
+  "name": "sub_40C6A0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40cff0",
+  "batch": "nocls",
+  "name": "sub_40CFF0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40d030",
+  "batch": "nocls",
+  "name": "sub_40D030",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40d310",
+  "batch": "nocls",
+  "name": "sub_40D310",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40d3c0",
+  "batch": "nocls",
+  "name": "sub_40D3C0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40d400",
+  "batch": "nocls",
+  "name": "sub_40D400",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x40d9c0",
+  "batch": "nocls",
+  "name": "sub_40D9C0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40d9f0",
+  "batch": "nocls",
+  "name": "unknown_libname_4",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40db70",
+  "batch": "nocls",
+  "name": "sub_40DB70",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40dc50",
+  "batch": "nocls",
+  "name": "sub_40DC50",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40df60",
+  "batch": "nocls",
+  "name": "sub_40DF60",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40e060",
+  "batch": "nocls",
+  "name": "sub_40E060",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x40e1b0",
+  "batch": "nocls",
+  "name": "unknown_libname_7",
+  "cc": "cdecl"
+ }
+]
