@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ca7e0 MultiplayerSiege::StubReturnFalse -> MultiplayerSiege
+[conv] 0x5ceb40 MSAnim::COMStub_Return0_7 -> MSAnim
+[conv] 0x5ceb50 MSAnim::StubReturnFalse -> MSAnim
+[conv] 0x5d5860 nullsub_192 -> _addr_5D
+[conv] 0x5d6320 MultiplayerGameMode::saveGame -> MultiplayerGameMode
+[conv] 0x5d6330 MultiplayerGameMode::loadGame -> MultiplayerGameMode
+[conv] 0x5d6340 MultiplayerGameMode::createStartingForces -> MultiplayerGameMode
+[conv] 0x5d6360 MultiplayerGameMode::Stub -> MultiplayerGameMode
+[conv] 0x5d7570 MultiplayerGameMode::processAI -> MultiplayerGameMode
+[conv] 0x5f42b0 ObjectClass::COMStub_Return0_37 -> ObjectClass
+[conv] 0x5f42d0 ObjectClass::COMStub_Return0_39 -> ObjectClass
+[conv] 0x5f42e0 ObjectClass::COMStub_Return0_40 -> ObjectClass
+[conv] 0x5f42f0 ObjectClass::COMStub_Return0_56 -> ObjectClass
+[conv] 0x5f4300 ObjectClass::COMStub_Return0_57 -> ObjectClass
+[conv] 0x5f4370 ObjectClass::COMStub_Return0_82 -> ObjectClass
+[conv] 0x5f43a0 IUnknown::COMStub_Return0_93 -> IUnknown
+[conv] 0x5f43b0 IUnknown::StubReturnFalse3 -> IUnknown
+[conv] 0x5f43d0 ObjectClass::COMStub_Return0_96 -> ObjectClass
+[conv] 0x5f4400 ObjectClass::COMStub_Return0_104 -> ObjectClass
+[conv] 0x5f6b50 IUnknown::COMStub_Return0_105 -> IUnknown
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerSiege         rc=0
+[era] MSAnim                   rc=0
+[era] _addr_5D                 rc=0
+[era] MultiplayerGameMode      rc=0
+[era] ObjectClass              rc=0
+[era] IUnknown                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ca7e0   MATCH            MultiplayerSiege::StubReturnFalse
+[diff] 0x5ceb40   MATCH            MSAnim::COMStub_Return0_7
+[diff] 0x5ceb50   MISMATCH         MSAnim::StubReturnFalse
+[diff] 0x5d5860   MISMATCH         nullsub_192
+[diff] 0x5d6320   MATCH            MultiplayerGameMode::saveGame
+[diff] 0x5d6330   MATCH            MultiplayerGameMode::loadGame
+[diff] 0x5d6340   MATCH            MultiplayerGameMode::createStartingForces
+[diff] 0x5d6360   MATCH            MultiplayerGameMode::Stub
+[diff] 0x5d7570   MATCH            MultiplayerGameMode::processAI
+[diff] 0x5f42b0   MATCH            ObjectClass::COMStub_Return0_37
+[diff] 0x5f42d0   MATCH            ObjectClass::COMStub_Return0_39
+[diff] 0x5f42e0   MATCH            ObjectClass::COMStub_Return0_40
+[diff] 0x5f42f0   MISMATCH         ObjectClass::COMStub_Return0_56
+[diff] 0x5f4300   MISMATCH         ObjectClass::COMStub_Return0_57
+[diff] 0x5f4370   MISMATCH         ObjectClass::COMStub_Return0_82
+[diff] 0x5f43d0   MATCH            ObjectClass::COMStub_Return0_96
+[diff] 0x5f4400   MISMATCH         ObjectClass::COMStub_Return0_104
+[diff] 0x5f43a0   MISMATCH         IUnknown::COMStub_Return0_93
+[diff] 0x5f43b0   MATCH            IUnknown::StubReturnFalse3
+[diff] 0x5f6b50   MISMATCH         IUnknown::COMStub_Return0_105
+[ledger] 0x5ca7e0 MultiplayerSiege::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x5ceb40 MSAnim::COMStub_Return0_7 -> OK (attempt 1)
+[ledger] 0x5ceb50 MSAnim::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x5d5860 nullsub_192 -> NG (attempt 1)
+[ledger] 0x5d6320 MultiplayerGameMode::saveGame -> OK (attempt 1)
+[ledger] 0x5d6330 MultiplayerGameMode::loadGame -> OK (attempt 1)
+[ledger] 0x5d6340 MultiplayerGameMode::createStartingForces -> OK (attempt 1)
+[ledger] 0x5d6360 MultiplayerGameMode::Stub -> OK (attempt 1)
+[ledger] 0x5d7570 MultiplayerGameMode::processAI -> OK (attempt 1)
+[ledger] 0x5f42b0 ObjectClass::COMStub_Return0_37 -> OK (attempt 1)
+[ledger] 0x5f42d0 ObjectClass::COMStub_Return0_39 -> OK (attempt 1)
+[ledger] 0x5f42e0 ObjectClass::COMStub_Return0_40 -> OK (attempt 1)
+[ledger] 0x5f42f0 ObjectClass::COMStub_Return0_56 -> NG (attempt 1)
+[ledger] 0x5f4300 ObjectClass::COMStub_Return0_57 -> NG (attempt 1)
+[ledger] 0x5f4370 ObjectClass::COMStub_Return0_82 -> NG (attempt 1)
+[ledger] 0x5f43a0 IUnknown::COMStub_Return0_93 -> NG (attempt 1)
+[ledger] 0x5f43b0 IUnknown::StubReturnFalse3 -> OK (attempt 1)
+[ledger] 0x5f43d0 ObjectClass::COMStub_Return0_96 -> OK (attempt 1)
+[ledger] 0x5f4400 ObjectClass::COMStub_Return0_104 -> NG (attempt 1)
+[ledger] 0x5f6b50 IUnknown::COMStub_Return0_105 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "cc_mismatch": 2,
+  "codegen_shape": 6
+ },
+ "match_rate_of_decided_pct": 60.0,
+ "match_rate_of_total_pct": 60.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p14\batch_report.json

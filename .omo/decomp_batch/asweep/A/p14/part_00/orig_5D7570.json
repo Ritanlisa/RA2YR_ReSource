@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D7570",
+ "name": "ScenarioClass::processAI",
+ "size": 3,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D7570",
+ "bytes_hex": "b001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

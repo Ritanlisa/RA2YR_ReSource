@@ -14407,6 +14407,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5ca7e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerSiege::StubReturnFalse",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MultiplayerSiege::StubReturnFalse",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5ca7f0": {
   "attempts": 11,
   "clean": true,
@@ -14607,6 +14619,30 @@
   "orig_name": "MSPCXAnim::Stub",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5ceb40": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MSAnim::COMStub_Return0_7",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::COMStub_Return0_7",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5ceb50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 4",
+  "name": "MSAnim::StubReturnFalse",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "MSOverlayAnim::StubReturnFalse",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5ceb80": {
@@ -14913,6 +14949,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5d5860": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 ret 4",
+  "name": "nullsub_192",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "nullsub_192",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d5870": {
   "attempts": 5,
   "first_diff": "+5 call dword ptr [0x7e1538]",
@@ -14993,6 +15040,42 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5d6320": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::saveGame",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::saveGame",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d6330": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::loadGame",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::loadGame",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d6340": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::createStartingForces",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::createStartingForces",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5d6350": {
   "attempts": 7,
   "clean": true,
@@ -15001,6 +15084,18 @@
   "name": "MultiplayerGameMode::GetFlag",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "DialogClass::GetFlag",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d6360": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::Stub",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPCooperative::Stub",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -15044,6 +15139,18 @@
   "name": "HouseClass::InitAlliances",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5d7570": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::processAI",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::processAI",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5d7fd0": {
   "attempts": 1,
@@ -15491,12 +15598,72 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5f42b0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::COMStub_Return0_37",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::COMStub_Return0_37",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5f42c0": {
   "attempts": 1,
   "first_diff": null,
   "name": "AbstractClass::COMStub_Return0_38",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5f42d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::COMStub_Return0_39",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::COMStub_Return0_39",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5f42e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::COMStub_Return0_40",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::COMStub_Return0_40",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5f42f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 4",
+  "name": "ObjectClass::COMStub_Return0_56",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_56",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5f4300": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 4",
+  "name": "ObjectClass::COMStub_Return0_57",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_57",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5f4310": {
   "attempts": 1,
@@ -15534,6 +15701,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5f4370": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 4",
+  "name": "ObjectClass::COMStub_Return0_82",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_82",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5f4380": {
   "attempts": 1,
   "first_diff": null,
@@ -15541,12 +15720,48 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5f43a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 0xc",
+  "name": "IUnknown::COMStub_Return0_93",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_93",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5f43b0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "IUnknown::StubReturnFalse3",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AircraftClass::StubReturnFalse3",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5f43c0": {
   "attempts": 1,
   "first_diff": "+0 ret ",
   "name": "AircraftClass::StubReturnTrue",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x5f43d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::COMStub_Return0_96",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::COMStub_Return0_96",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5f43e0": {
   "attempts": 10,
@@ -15566,6 +15781,18 @@
   "name": "AircraftClass::StubReturnFalse4",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x5f4400": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 4",
+  "name": "ObjectClass::COMStub_Return0_104",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_104",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5f4520": {
   "attempts": 1,
@@ -15673,6 +15900,18 @@
   "name": "ObjectClass::CheckGroundHeightDiff",
   "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
   "status": "PENDING"
+ },
+ "0x5f6b50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 8",
+  "name": "IUnknown::COMStub_Return0_105",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_105",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5f6e90": {
   "attempts": 1,
