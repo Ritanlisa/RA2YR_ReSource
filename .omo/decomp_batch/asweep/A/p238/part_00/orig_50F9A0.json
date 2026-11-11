@@ -1,0 +1,11 @@
+{
+ "addr": "0x50F9A0",
+ "name": "VectorClass__N::AddRef",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50F9A0",
+ "bytes_hex": "8b5424045356578b79088b42083bf8752333c085ff7e158b52048b71048a0c068a1c023acb750d403bc77cf15f5eb0015bc204005f5e32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

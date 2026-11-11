@@ -1,0 +1,11 @@
+{
+ "addr": "0x74FD60",
+ "name": "NetworkBuffer::UpdateWindow",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74FD60",
+ "bytes_hex": "8b54240456578b79403bd776085f83c8ff5ec208008b413c8b7424103bf073075f33c05ec208003bd0760389513c3bf773038971408b41405f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

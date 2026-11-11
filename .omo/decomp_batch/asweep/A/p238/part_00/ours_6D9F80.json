@@ -1,0 +1,8 @@
+{
+ "symbol": "?InitScrollBounds@TacticalClass@@QAEHPAH@Z",
+ "sym_key": "TacticalClass::InitScrollBounds",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b81900d000085c075308b81940d000085c075268b4424048b108991900d00008b50048991940d00008b108991980d00008b400489819c0d0000c20400",
+ "relocs": []
+}

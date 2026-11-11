@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindByCoord@_DynamicVectorClass_USubzoneTrackingStruct@@QAEHH@Z",
+ "sym_key": "_DynamicVectorClass_USubzoneTrackingStruct::FindByCoord",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "8b5110535533c0565785d27e278b7424148b490483c11c668b7e18663979fc75098b198b6e1c3bdd740d403bc27d0583c124ebe783c8ff5f5e5d5bc20400",
+ "relocs": []
+}

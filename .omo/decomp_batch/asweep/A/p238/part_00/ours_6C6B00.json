@@ -1,0 +1,8 @@
+{
+ "symbol": "?Audio_Read_6C6B00@ObjectClass@@QAEPAIPAH@Z",
+ "sym_key": "ObjectClass::Audio_Read_6C6B00",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b5424048bc18b0a89088b4a0481f9008000008948047f1b568d72088bd1578d7808c1e902f3a58bca83e103f3a45f5ec20400c7400400000000c20400",
+ "relocs": []
+}

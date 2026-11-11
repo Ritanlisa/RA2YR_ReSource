@@ -1,0 +1,8 @@
+{
+ "symbol": "?UpdateWindow@NetworkBuffer@@QAEHII@Z",
+ "sym_key": "NetworkBuffer::UpdateWindow",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b54240456578b79403bd776085f83c8ff5ec208008b413c8b7424103bf073075f33c05ec208003bd0760389513c3bf773038971408b41405f5ec20800",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Convert@HexCoord@@QAEPAIPAH0@Z",
+ "sym_key": "HexCoord::Convert",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "8b91fc000000568b74240c578b068b7e0403d08b81000100008b89f400000003c78bf05fd1fe03ce8d70018b4424082bcad1fe03f289480489305ec20800",
+ "relocs": []
+}

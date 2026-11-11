@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D4B92",
+ "name": "_siglookup",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D4B92",
+ "bytes_hex": "8b5424088b0da4cb8700568b742408397204578bc274128d3c498d3cba83c00c3bc7730539700475f48d0c498d0c8a3bc17305397004740233c05f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

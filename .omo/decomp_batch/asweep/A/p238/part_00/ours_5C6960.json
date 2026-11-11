@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindBitArrayHighestBit@@YIHHH@Z",
+ "sym_key": "Unnamed::FindBitArrayHighestBit",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "8bc2568b5481fc8d7481fc85d275164885c0740d8b56fc83ee0485d275074875f333c05ec385c075025ec38b5481fcb900000080c1e00585d27c07d1e94885ca74f95ec3",
+ "relocs": []
+}

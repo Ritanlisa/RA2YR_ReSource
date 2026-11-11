@@ -1,0 +1,11 @@
+{
+ "addr": "0x589C10",
+ "name": "SubzoneConnectionVector::FindByCoord",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x589C10",
+ "bytes_hex": "8b5110535533c0565785d27e258b7424148b490483c11c668b7e18663979fc75098b198b6e1c3bdd740b4083c1243bc27ce983c8ff5f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

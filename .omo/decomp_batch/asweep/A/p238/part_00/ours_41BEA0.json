@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetCellCoords_Alt@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::GetCellCoords_Alt",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "518b44240033d28a91a100000024000bd08b442400891059c3",
+ "relocs": []
+}

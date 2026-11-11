@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C6960",
+ "name": "FindBitArrayHighestBit",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C6960",
+ "bytes_hex": "8d4491fc568bf2833800750d4e740e8b50fc83e80485d274f385f6750433c05ec38b4cb1fc8bc6ba00000080c1e00585ca7507d1ea4885ca74f95ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5654A0",
+ "name": "HexCoord::Convert",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5654A0",
+ "bytes_hex": "8b81fc000000568bb100010000578b7c24108b89f40000008b1703d08b470403c65f8d7001d1f8d1fe03c88b44240803f22bca89308948045ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

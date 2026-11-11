@@ -1,0 +1,11 @@
+{
+ "addr": "0x6C9740",
+ "name": "HouseClass::AccumulateFloat4",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6C9740",
+ "bytes_hex": "8b542408568bc12bd1be04000000d90402d80083c0044ed958fc75f28b4424088b318bd089328b71048972048b71088972088b490c5e894a0cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

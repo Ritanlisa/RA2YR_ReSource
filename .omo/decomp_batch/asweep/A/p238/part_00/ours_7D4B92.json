@@ -1,0 +1,15 @@
+{
+ "symbol": "?_siglookup@ObjectClass@@QAEIHI@Z",
+ "sym_key": "ObjectClass::_siglookup",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "8b4c2408568b3500000000578b7c240c8b51043bd78bc174128d14768d149183c00c3bc2730539780475f48d14768d0c913bc17305397804740233c05f5ec20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CBA4@@3IA",
+   "sym_key": "DataGlobal_87CBA4"
+  }
+ ]
+}

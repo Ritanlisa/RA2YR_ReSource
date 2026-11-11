@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p238\part_00
+=== convert (20 addrs) ===
+[conv] 0x50f9a0 _VectorClass__N::AddRef -> _VectorClass__N
+[conv] 0x5654a0 HexCoord::Convert -> HexCoord
+[conv] 0x589c10 _DynamicVectorClass_USubzoneTrackingStruct::FindByCoord -> _DynamicVectorClass_USubzoneTrackingStruct
+[conv] 0x5c6960 FindBitArrayHighestBit -> _addr_5C
+[conv] 0x6c9740 HouseClass::AccumulateFloat4 -> HouseClass
+[conv] 0x6c97e0 HouseClass::ComputeResourceDelta -> HouseClass
+[conv] 0x74bff0 _VectorClass_E::AddRef -> _VectorClass_E
+[conv] 0x41bea0 IUnknown::GetCellCoords_Alt -> IUnknown
+[conv] 0x45eca0 BuildingTypeClass::GetFoundationHeight -> BuildingTypeClass
+[conv] 0x4924c0 _BlitPlainXlat_G::sub_4924C0 -> _BlitPlainXlat_G
+[conv] 0x5090f0 Radar::IsRadarTargetEligible -> Radar
+[conv] 0x5095d0 TeamClass::CountActiveTeamsForType -> TeamClass
+[conv] 0x5a99b0 ObjectClass::Object_Helper_5A99B0 -> ObjectClass
+[conv] 0x6c6b00 ObjectClass::Audio_Read_6C6B00 -> ObjectClass
+[conv] 0x6d9f80 TacticalClass::InitScrollBounds -> TacticalClass
+[conv] 0x74fd60 NetworkBuffer::UpdateWindow -> NetworkBuffer
+[conv] 0x74ff50 VeterancyStruct::Accumulate -> VeterancyStruct
+[conv] 0x7ca422 _wcsncpy -> _addr_7C
+[conv] 0x7d4b92 ObjectClass::_siglookup -> ObjectClass
+[conv] 0x40b140 _VectorClass_USubzoneConnectionStruct::AddRef -> _VectorClass_USubzoneConnectionStruct
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass__N          rc=0
+[era] HexCoord                 rc=0
+[era] _DynamicVectorClass_USubzoneTrackingStruct rc=0
+[era] _addr_5C                 rc=0
+[era] HouseClass               rc=0
+[era] _VectorClass_E           rc=0
+[era] IUnknown                 rc=0
+[era] BuildingTypeClass        rc=2
+[era] _BlitPlainXlat_G         rc=2
+[era] Radar                    rc=2
+[era] TeamClass                rc=2
+[era] ObjectClass              rc=2
+[era] TacticalClass            rc=0
+[era] NetworkBuffer            rc=0
+[era] VeterancyStruct          rc=2
+[era] _addr_7C                 rc=0
+[era] _VectorClass_USubzoneConnectionStruct rc=2
+=== diffasm byte-compare ===
+[diff] 0x50f9a0   MISMATCH         _VectorClass__N::AddRef
+[diff] 0x5654a0   MISMATCH         HexCoord::Convert
+[diff] 0x589c10   MISMATCH         _DynamicVectorClass_USubzoneTrackingStruct::FindByCoord
+[diff] 0x5c6960   MISMATCH         FindBitArrayHighestBit
+[diff] 0x6c9740   MISMATCH         HouseClass::AccumulateFloat4
+[diff] 0x6c97e0   MISMATCH         HouseClass::ComputeResourceDelta
+[diff] 0x74bff0   MISMATCH         _VectorClass_E::AddRef
+[diff] 0x41bea0   MISMATCH         IUnknown::GetCellCoords_Alt
+[diff] 0x5a99b0   MISMATCH         ObjectClass::Object_Helper_5A99B0
+[diff] 0x6c6b00   MISMATCH         ObjectClass::Audio_Read_6C6B00
+[diff] 0x7d4b92   MISMATCH         ObjectClass::_siglookup
+[diff] 0x6d9f80   MATCH            TacticalClass::InitScrollBounds
+[diff] 0x74fd60   MATCH            NetworkBuffer::UpdateWindow
+[diff] 0x7ca422   MISMATCH         _wcsncpy
+[ledger] 0x50f9a0 _VectorClass__N::AddRef -> NG (attempt 1)
+[ledger] 0x5654a0 HexCoord::Convert -> NG (attempt 1)
+[ledger] 0x589c10 _DynamicVectorClass_USubzoneTrackingStruct::FindByCoord -> NG (attempt 1)
+[ledger] 0x5c6960 FindBitArrayHighestBit -> NG (attempt 1)
+[ledger] 0x6c9740 HouseClass::AccumulateFloat4 -> NG (attempt 1)
+[ledger] 0x6c97e0 HouseClass::ComputeResourceDelta -> NG (attempt 1)
+[ledger] 0x74bff0 _VectorClass_E::AddRef -> NG (attempt 1)
+[ledger] 0x41bea0 IUnknown::GetCellCoords_Alt -> NG (attempt 1)
+[ledger] 0x45eca0 BuildingTypeClass::GetFoundationHeight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4924c0 _BlitPlainXlat_G::sub_4924C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5090f0 Radar::IsRadarTargetEligible -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5095d0 TeamClass::CountActiveTeamsForType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a99b0 ObjectClass::Object_Helper_5A99B0 -> NG (attempt 1)
+[ledger] 0x6c6b00 ObjectClass::Audio_Read_6C6B00 -> NG (attempt 1)
+[ledger] 0x6d9f80 TacticalClass::InitScrollBounds -> OK (attempt 1)
+[ledger] 0x74fd60 NetworkBuffer::UpdateWindow -> OK (attempt 1)
+[ledger] 0x74ff50 VeterancyStruct::Accumulate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ca422 _wcsncpy -> NG (attempt 1)
+[ledger] 0x7d4b92 ObjectClass::_siglookup -> NG (attempt 1)
+[ledger] 0x40b140 _VectorClass_USubzoneConnectionStruct::AddRef -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 6,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "regalloc": 3,
+  "branch_order": 2,
+  "codegen_shape": 4,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 14.3,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p238\batch_report.json
