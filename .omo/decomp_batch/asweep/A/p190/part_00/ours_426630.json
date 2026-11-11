@@ -1,0 +1,15 @@
+{
+ "symbol": "?TimeRemaining@Locomotor@@QAEHXZ",
+ "sym_key": "Locomotor::TimeRemaining",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8b118b410883faff74178b0d00000000568bf12bf23bf05e720333c0c32bd103c2c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

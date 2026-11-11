@@ -1,0 +1,11 @@
+{
+ "addr": "0x426630",
+ "name": "CDTimerClass::TimeRemaining",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x426630",
+ "bytes_hex": "8b118b410883faff74118b0d84eda8002bca3bc87d032bc1c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

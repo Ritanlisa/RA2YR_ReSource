@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D79E0",
+ "name": "__CopyMan",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D79E0",
+ "bytes_hex": "8b4424088b4c2404566a032bc85a8b3089340183c0044a75f55ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

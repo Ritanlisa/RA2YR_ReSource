@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsBuffering@AudioSample@@QAEHXZ",
+ "sym_key": "AudioSample::IsBuffering",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "f6410c0174138b41148b48148b50183bca7406b801000000c333c0c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D7A07",
+ "name": "__IsZeroMan",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D7A07",
+ "bytes_hex": "8b44240433c9833800750d4183c00483f9037cf26a0158c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,105 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p190\part_00
+=== convert (20 addrs) ===
+[conv] 0x769c80 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::startAnimation -> _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x769d00 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::pauseAnimation -> _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x769fc0 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Write -> _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76a290 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Write -> _VectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x76b740 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Write -> _DynamicVectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x7ac9a0 _DynamicVectorClass_PAUtConnInfoStruct::PointerToIndex -> _DynamicVectorClass_PAUtConnInfoStruct
+[conv] 0x7ad1f0 _VectorClass_PAUtConnInfoStruct::Write -> _VectorClass_PAUtConnInfoStruct
+[conv] 0x7b2870 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::resetSocket -> _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b2a00 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::GetCapacity -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b42f0 _DynamicVectorClass_PAE::reset -> _DynamicVectorClass_PAE
+[conv] 0x7b4480 _VectorClass_PAE::GetCapacity -> _VectorClass_PAE
+[conv] 0x7d79e0 ObjectClass::__CopyMan -> ObjectClass
+[conv] 0x7d7a07 __IsZeroMan -> _addr_7D
+[conv] 0x406620 AbstractTypeClass::sub_406620 -> AbstractTypeClass
+[conv] 0x4080d0 AudioSample::IsBuffering -> AudioSample
+[conv] 0x40b120 _VectorClass_USubzoneConnectionStruct::Clear -> _VectorClass_USubzoneConnectionStruct
+[conv] 0x4101f0 AbstractClass::DTOR -> AbstractClass
+[conv] 0x426630 Locomotor::TimeRemaining -> Locomotor
+[conv] 0x4a0f00 _VectorClass_UtagCONNECTDATA::Clear -> _VectorClass_UtagCONNECTDATA
+[conv] 0x4b4d70 Timeout::GetRemaining -> Timeout
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _VectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VWDTTerritory rc=0
+[era] _DynamicVectorClass_PAUtConnInfoStruct rc=0
+[era] _VectorClass_PAUtConnInfoStruct rc=0
+[era] _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _DynamicVectorClass_PAE  rc=0
+[era] _VectorClass_PAE         rc=0
+[era] ObjectClass              rc=0
+[era] _addr_7D                 rc=0
+[era] AbstractTypeClass        rc=0
+[era] AudioSample              rc=0
+[era] _VectorClass_USubzoneConnectionStruct rc=0
+[era] AbstractClass            rc=2
+[era] Locomotor                rc=0
+[era] _VectorClass_UtagCONNECTDATA rc=0
+[era] Timeout                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x769c80   MISMATCH         _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::startAnimation
+[diff] 0x769d00   MISMATCH         _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::pauseAnimation
+[diff] 0x769fc0   MISMATCH         _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Write
+[diff] 0x76a290   MISMATCH         _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Write
+[diff] 0x76b740   MISMATCH         _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Write
+[diff] 0x7ac9a0   MISMATCH         _DynamicVectorClass_PAUtConnInfoStruct::PointerToIndex
+[diff] 0x7ad1f0   MISMATCH         _VectorClass_PAUtConnInfoStruct::Write
+[diff] 0x7b2870   MISMATCH         _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::resetSocket
+[diff] 0x7b2a00   MISMATCH         _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::GetCapacity
+[diff] 0x7b42f0   MISMATCH         _DynamicVectorClass_PAE::reset
+[diff] 0x7b4480   MISMATCH         _VectorClass_PAE::GetCapacity
+[diff] 0x7d79e0   MISMATCH         ObjectClass::__CopyMan
+[diff] 0x7d7a07   MISMATCH         __IsZeroMan
+[diff] 0x406620   MISMATCH         AbstractTypeClass::sub_406620
+[diff] 0x4080d0   MATCH            AudioSample::IsBuffering
+[diff] 0x40b120   MISMATCH         _VectorClass_USubzoneConnectionStruct::Clear
+[diff] 0x426630   MISMATCH         Locomotor::TimeRemaining
+[diff] 0x4a0f00   MISMATCH         _VectorClass_UtagCONNECTDATA::Clear
+[ledger] 0x769c80 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::startAnimation -> NG (attempt 1)
+[ledger] 0x769d00 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::pauseAnimation -> NG (attempt 1)
+[ledger] 0x769fc0 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Write -> NG (attempt 1)
+[ledger] 0x76a290 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Write -> NG (attempt 1)
+[ledger] 0x76b740 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Write -> NG (attempt 1)
+[ledger] 0x7ac9a0 _DynamicVectorClass_PAUtConnInfoStruct::PointerToIndex -> NG (attempt 1)
+[ledger] 0x7ad1f0 _VectorClass_PAUtConnInfoStruct::Write -> NG (attempt 1)
+[ledger] 0x7b2870 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::resetSocket -> NG (attempt 1)
+[ledger] 0x7b2a00 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x7b42f0 _DynamicVectorClass_PAE::reset -> NG (attempt 1)
+[ledger] 0x7b4480 _VectorClass_PAE::GetCapacity -> NG (attempt 1)
+[ledger] 0x7d79e0 ObjectClass::__CopyMan -> NG (attempt 1)
+[ledger] 0x7d7a07 __IsZeroMan -> NG (attempt 1)
+[ledger] 0x406620 AbstractTypeClass::sub_406620 -> NG (attempt 1)
+[ledger] 0x4080d0 AudioSample::IsBuffering -> OK (attempt 1)
+[ledger] 0x40b120 _VectorClass_USubzoneConnectionStruct::Clear -> NG (attempt 1)
+[ledger] 0x4101f0 AbstractClass::DTOR -> COMPILE_FAIL (attempt 1)
+[ledger] 0x426630 Locomotor::TimeRemaining -> NG (attempt 1)
+[ledger] 0x4a0f00 _VectorClass_UtagCONNECTDATA::Clear -> NG (attempt 1)
+[ledger] 0x4b4d70 Timeout::GetRemaining -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "MATCH": 1,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "branch_order": 11,
+  "regalloc": 4,
+  "codegen_shape": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p190\batch_report.json
