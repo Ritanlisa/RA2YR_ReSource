@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasSubObject@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::HasSubObject",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b817402000085c0740a8b482885c97403b001c332c0c3",
+ "relocs": []
+}

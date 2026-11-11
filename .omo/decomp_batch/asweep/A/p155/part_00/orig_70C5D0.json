@@ -1,0 +1,11 @@
+{
+ "addr": "0x70C5D0",
+ "name": "ObjectClass::HasSubObject",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70C5D0",
+ "bytes_hex": "8b817402000085c0740a8b482885c97403b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
