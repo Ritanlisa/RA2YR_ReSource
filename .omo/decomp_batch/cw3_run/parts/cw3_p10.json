@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x427490",
+  "name": "sub_427490",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x466240",
+  "name": "sub_466240",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x48bde0",
+  "name": "sub_48BDE0",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x4af4a0",
+  "name": "sub_4AF4A0",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x4c9810",
+  "name": "sub_4C9810",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x4f41a0",
+  "name": "sub_4F41A0",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x513100",
+  "name": "Vector::Destructor",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2562",
+  "first_msg": "'Destructor' : 'void' function returning a value"
+ },
+ {
+  "addr": "0x53fa10",
+  "name": "sub_53FA10",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x555d20",
+  "name": "sub_555D20",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x5adc90",
+  "name": "sub_5ADC90",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x5c1260",
+  "name": "sub_5C1260",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x5d8ef0",
+  "name": "sub_5D8EF0",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x5ff130",
+  "name": "sub_5FF130",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x6260f0",
+  "name": "sub_6260F0",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x644b60",
+  "name": "sub_644B60",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x67c610",
+  "name": "sub_67C610",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2371",
+  "first_msg": "'TEXTMETRICA' : redefinition"
+ },
+ {
+  "addr": "0x6938c0",
+  "name": "Mouse::ReleaseCapture",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x6acae0",
+  "name": "sub_6ACAE0",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x6cad80",
+  "name": "sub_6CAD80",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x6f2a10",
+  "name": "sub_6F2A10",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ }
+]

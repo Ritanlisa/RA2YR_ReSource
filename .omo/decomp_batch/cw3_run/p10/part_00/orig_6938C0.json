@@ -1,0 +1,11 @@
+{
+ "addr": "0x6938C0",
+ "name": "Mouse::ReleaseCapture",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6938C0",
+ "bytes_hex": "568bf1e808b2e1ffc6865a55000000ff15b0137e008b0d5035b7005e3bc17506ff25f8137e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
