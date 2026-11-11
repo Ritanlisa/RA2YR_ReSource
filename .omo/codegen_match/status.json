@@ -1526,140 +1526,140 @@
   "status": "COMPILE_FAIL"
  },
  "0x494f20": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4950c0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495250": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4953f0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495590": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495730": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BlitTransLucent25AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4958d0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495a50": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495bc0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BlitTransLucent75AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495d60": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495f00": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4974b0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497610": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497760": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4978c0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497a10": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497b80": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497cf0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497e60": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497fd0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
