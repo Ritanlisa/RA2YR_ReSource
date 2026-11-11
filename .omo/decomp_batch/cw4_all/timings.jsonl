@@ -97,3 +97,4 @@
 {"part": 96, "n": 20, "seconds": 2.7, "summary": {"verdicts": {"NO_HIT": 14, "NO_VARIANT": 6}, "by_family_total": {"STRUCTURAL": 14, "FRAME": 5, "REG_ALLOC": 1}, "by_family_hits": {}}}
 {"part": 97, "n": 20, "seconds": 0.6, "summary": {"verdicts": {"NO_VARIANT": 17, "NO_HIT": 3}, "by_family_total": {"STRUCTURAL": 5, "TWO_FOUR_INSNS": 3, "MEMBER_OFFSET": 2, "ONE_INSN": 1, "POINTER_NULLED": 5, "FRAME": 1, "RELOC_KEY": 3}, "by_family_hits": {}}}
 {"part": 98, "n": 20, "seconds": 0.9, "summary": {"verdicts": {"NO_VARIANT": 14, "NO_HIT": 6}, "by_family_total": {"REG_ALLOC": 1, "TWO_FOUR_INSNS": 4, "WIDTH": 2, "RET_ARITY": 10, "STRUCTURAL": 2, "ONE_INSN": 1}, "by_family_hits": {}}}
+{"part": 99, "n": 20, "seconds": 0.2, "summary": {"verdicts": {"NO_VARIANT": 19, "NO_HIT": 1}, "by_family_total": {"RET_ARITY": 6, "TWO_FOUR_INSNS": 2, "MEMBER_OFFSET": 1, "STRUCTURAL": 4, "RELOC_KEY": 6, "TOKEN_MISMATCH": 1}, "by_family_hits": {}}}
