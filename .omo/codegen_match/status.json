@@ -13,6 +13,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x401f90": {
+  "attempts": 1,
+  "first_diff": "+4 test eax, eax",
+  "name": "RefCount::Decrement",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x402330": {
   "attempts": 11,
   "first_diff": "+12 je 0x4023b0",
@@ -40,6 +47,13 @@
   "name": "AudioQueue::FindBestChannel",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x403d30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x403d30",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x404700": {
   "attempts": 9,
@@ -293,6 +307,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x40cff0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40cff0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x40d230": {
   "attempts": 5,
   "first_diff": null,
@@ -348,6 +369,13 @@
   "name": "VectorClass_ptr_ScriptClass::Get",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x40f2f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40f2f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x410260": {
   "attempts": 4,
@@ -451,6 +479,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x413590",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x413af0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x413af0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -692,6 +727,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x421ce0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x421ce0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x425260": {
   "attempts": 5,
   "first_diff": null,
@@ -860,6 +902,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x42e480": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x42e480",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x42e820": {
   "attempts": 7,
   "first_diff": "+0 sub esp, 0x18",
@@ -1013,6 +1062,13 @@
   "name": "BombClass::StubReturn68",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x43a1b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x43a1b0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x43a9a0": {
   "attempts": 5,
@@ -1301,6 +1357,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x46c9c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x46c9c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x46d070": {
   "attempts": 5,
   "first_diff": null,
@@ -1363,6 +1426,13 @@
   "name": "CCINIClass::GetDB",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x474010": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x474010",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x474b50": {
   "attempts": 4,
@@ -1713,6 +1783,13 @@
   "name": "ConnectionClass::sendAck",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x48c6e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x48c6e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x48d1d0": {
   "attempts": 6,
@@ -2218,6 +2295,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x49fda0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x49fda0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4a00b0": {
   "attempts": 9,
   "first_diff": null,
@@ -2309,6 +2393,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4a51b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::CheckPowerFlags",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4a60d0": {
   "attempts": 7,
   "first_diff": null,
@@ -2364,6 +2455,13 @@
   "name": "sub_4A8410",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4a8490": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4a8490",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4a8bf0": {
   "attempts": 9,
@@ -2672,6 +2770,13 @@
   "name": "BlendColorPack",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x4c1bd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4c1bd0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4c1d30": {
   "attempts": 1,
@@ -7188,6 +7293,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x717a50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectTypeClass::loadTypeMember_5717A50",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x717a70": {
   "attempts": 1,
   "first_diff": null,
@@ -7594,6 +7706,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x730930": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x730930",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x730ad0": {
   "attempts": 1,
   "first_diff": null,
@@ -7937,6 +8056,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x759140": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x759140",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x759ea0": {
   "attempts": 1,
   "first_diff": null,
@@ -8104,6 +8230,13 @@
   "name": "_VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x767e50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x767e50",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x76a3f0": {
   "attempts": 6,
@@ -8314,6 +8447,13 @@
   "name": "GameOptions::GetEntry",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7786a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7786a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x77b230": {
   "attempts": 1,

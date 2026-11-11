@@ -1,0 +1,11 @@
+{
+ "addr": "0x401F90",
+ "name": "RefCount::Decrement",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x401F90",
+ "bytes_hex": "8b410c4885c089410c7d07c7410c00000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

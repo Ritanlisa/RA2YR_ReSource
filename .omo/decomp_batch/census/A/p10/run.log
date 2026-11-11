@@ -1,0 +1,68 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x401f90 RefCount::Decrement -> RefCount
+[conv] 0x4a51b0 BuildingClass::CheckPowerFlags -> BuildingClass
+[conv] 0x717a50 ObjectTypeClass::loadTypeMember_5717A50 -> ObjectTypeClass
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RefCount                 rc=0
+[era] BuildingClass            rc=2
+[era] ObjectTypeClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x401f90   MISMATCH         RefCount::Decrement
+[diff] 0x717a50   MATCH            ObjectTypeClass::loadTypeMember_5717A50
+[ledger] 0x730930 0x730930 -> PENDING (attempt 1)
+[ledger] 0x759140 0x759140 -> PENDING (attempt 1)
+[ledger] 0x767e50 0x767e50 -> PENDING (attempt 1)
+[ledger] 0x7786a0 0x7786a0 -> PENDING (attempt 1)
+[ledger] 0x401f90 RefCount::Decrement -> NG (attempt 1)
+[ledger] 0x4a51b0 BuildingClass::CheckPowerFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x717a50 ObjectTypeClass::loadTypeMember_5717A50 -> OK (attempt 1)
+[ledger] 0x403d30 0x403d30 -> PENDING (attempt 1)
+[ledger] 0x40cff0 0x40cff0 -> PENDING (attempt 1)
+[ledger] 0x40f2f0 0x40f2f0 -> PENDING (attempt 1)
+[ledger] 0x413af0 0x413af0 -> PENDING (attempt 1)
+[ledger] 0x421ce0 0x421ce0 -> PENDING (attempt 1)
+[ledger] 0x42e480 0x42e480 -> PENDING (attempt 1)
+[ledger] 0x43a1b0 0x43a1b0 -> PENDING (attempt 1)
+[ledger] 0x46c9c0 0x46c9c0 -> PENDING (attempt 1)
+[ledger] 0x474010 0x474010 -> PENDING (attempt 1)
+[ledger] 0x48c6e0 0x48c6e0 -> PENDING (attempt 1)
+[ledger] 0x49fda0 0x49fda0 -> PENDING (attempt 1)
+[ledger] 0x4a8490 0x4a8490 -> PENDING (attempt 1)
+[ledger] 0x4c1bd0 0x4c1bd0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1257,
+ "verdicts": {
+  "MISMATCH": 308,
+  "MATCH": 489,
+  "COMPILE_FAIL": 329,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 124,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 121,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 24,
+  "regalloc": 46,
+  "branch_order": 18,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 6,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 61.4,
+ "match_rate_of_total_pct": 38.9,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p10\batch_report.json

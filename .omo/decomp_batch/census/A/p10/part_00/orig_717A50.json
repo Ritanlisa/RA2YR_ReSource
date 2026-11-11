@@ -1,0 +1,11 @@
+{
+ "addr": "0x717A50",
+ "name": "ObjectTypeClass::loadTypeMember_5717A50",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x717A50",
+ "bytes_hex": "8b44240485c07f05b801000000894104c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
