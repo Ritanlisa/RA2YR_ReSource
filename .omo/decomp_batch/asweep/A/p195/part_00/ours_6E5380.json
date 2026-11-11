@@ -1,0 +1,8 @@
+{
+ "symbol": "?Contains@LinkedList@@QAEDH@Z",
+ "sym_key": "LinkedList::Contains",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "8b412885c0741a8b4c24043bc1740b8b402885c0740b3bc175f524010c01c204002400c20400",
+ "relocs": []
+}

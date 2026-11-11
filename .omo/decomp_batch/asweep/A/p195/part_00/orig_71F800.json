@@ -1,0 +1,11 @@
+{
+ "addr": "0x71F800",
+ "name": "TEventClass::CheckConditions",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71F800",
+ "bytes_hex": "8b41288b5424043bc275068b40288941283951307507c7413000000000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

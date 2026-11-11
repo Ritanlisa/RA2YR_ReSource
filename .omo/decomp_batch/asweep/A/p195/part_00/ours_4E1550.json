@@ -1,0 +1,8 @@
+{
+ "symbol": "?ClearState@ShpButtonClass@@QAEHH@Z",
+ "sym_key": "ShpButtonClass::ClearState",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b44240485c0750c8a411c84c0750533c0c20400c6411c00b801000000c20400",
+ "relocs": []
+}

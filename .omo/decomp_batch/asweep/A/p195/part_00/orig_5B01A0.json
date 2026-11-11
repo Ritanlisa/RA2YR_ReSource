@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B01A0",
+ "name": "JumpjetLocomotionClass::InitMultiFieldArray",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B01A0",
+ "bytes_hex": "8b4424088b4c240c568b7424088b54241483c6208906894e048956085ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

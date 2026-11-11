@@ -1,0 +1,8 @@
+{
+ "symbol": "?Set@Rect@@QAEPAV1@HHHH@Z",
+ "sym_key": "Rect::Set",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b5424088bc18b4c240489088b4c240c8950048b54241089480889500cc21000",
+ "relocs": []
+}

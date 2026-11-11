@@ -1,0 +1,11 @@
+{
+ "addr": "0x7291D0",
+ "name": "JumpjetLocomotionClass::StubReturnZero_21",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7291D0",
+ "bytes_hex": "8b4424048378140475118a4c240833c084c90f95c083c004c2080033c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

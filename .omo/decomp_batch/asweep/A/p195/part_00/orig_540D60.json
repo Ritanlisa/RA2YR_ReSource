@@ -1,0 +1,11 @@
+{
+ "addr": "0x540D60",
+ "name": "IPXManagerClass::destroyConnection",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x540D60",
+ "bytes_hex": "8b414885c074188b51648950288b41488b516889502c8b41488b496c894830c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

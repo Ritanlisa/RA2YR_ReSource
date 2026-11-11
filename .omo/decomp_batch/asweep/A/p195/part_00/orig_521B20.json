@@ -1,0 +1,11 @@
+{
+ "addr": "0x521B20",
+ "name": "InfantryClass::ResetMissionIfDone",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x521B20",
+ "bytes_hex": "8b81c406000083f806740a83f803740583f811750ac781c4060000ffffffffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

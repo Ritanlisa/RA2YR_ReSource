@@ -1,0 +1,11 @@
+{
+ "addr": "0x54A120",
+ "name": "Rect::Set4",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54A120",
+ "bytes_hex": "8b5424088bc18b4c240489088b4c240c8950048b54241089480889500cc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x438A70",
+ "name": "BombClass::TimeToExplode",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x438A70",
+ "bytes_hex": "8b413085c07516a184eda8008b51383bc27e0a8a415884c07503b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

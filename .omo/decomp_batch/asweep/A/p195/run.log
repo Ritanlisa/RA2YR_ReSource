@@ -1,0 +1,107 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p195\part_00
+=== convert (20 addrs) ===
+[conv] 0x53ca30 sub_53CA30 -> _addr_53
+[conv] 0x42e410 Rect::Set -> Rect
+[conv] 0x437f10 Coord2D::Add -> Coord2D
+[conv] 0x438a70 BombClass::TimeToExplode -> BombClass
+[conv] 0x49fb40 CounterClass::ddtor -> CounterClass
+[conv] 0x4e1550 ShpButtonClass::ClearState -> ShpButtonClass
+[conv] 0x521b20 InfantryClass::ResetMissionIfDone -> InfantryClass
+[conv] 0x53eda0 Network::CopyAddress -> Network
+[conv] 0x540d60 IPXManagerClass::destroyConnection -> IPXManagerClass
+[conv] 0x54a120 Rect::Set4 -> Rect
+[conv] 0x5657e0 Cell::Exists -> Cell
+[conv] 0x5b01a0 MechLocomotionClass::InitMultiFieldArray -> MechLocomotionClass
+[conv] 0x628740 FileSystem::readFile -> FileSystem
+[conv] 0x633110 PKStrawClass::SetSource -> PKStrawClass
+[conv] 0x645c30 Int4::Set -> Int4
+[conv] 0x6ac870 SidebarClass::initButtons -> SidebarClass
+[conv] 0x6e5380 LinkedList::Contains -> LinkedList
+[conv] 0x70e340 ObjectClass::ResetTimer2 -> ObjectClass
+[conv] 0x71f800 TEventClass::CheckConditions -> TEventClass
+[conv] 0x7291d0 TunnelLocomotionClass::StubReturnZero_21 -> TunnelLocomotionClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_53                 rc=0
+[era] Rect                     rc=0
+[era] Coord2D                  rc=0
+[era] BombClass                rc=0
+[era] CounterClass             rc=0
+[era] ShpButtonClass           rc=0
+[era] InfantryClass            rc=0
+[era] Network                  rc=2
+[era] IPXManagerClass          rc=0
+[era] Cell                     rc=0
+[era] MechLocomotionClass      rc=0
+[era] FileSystem               rc=2
+[era] PKStrawClass             rc=0
+[era] Int4                     rc=0
+[era] SidebarClass             rc=0
+[era] LinkedList               rc=0
+[era] ObjectClass              rc=0
+[era] TEventClass              rc=0
+[era] TunnelLocomotionClass    rc=0
+=== diffasm byte-compare ===
+[diff] 0x53ca30   MISMATCH         sub_53CA30
+[diff] 0x42e410   MATCH            Rect::Set
+[diff] 0x54a120   MATCH            Rect::Set4
+[diff] 0x437f10   MISMATCH         Coord2D::Add
+[diff] 0x438a70   MISMATCH         BombClass::TimeToExplode
+[diff] 0x49fb40   MATCH            CounterClass::ddtor
+[diff] 0x4e1550   MATCH            ShpButtonClass::ClearState
+[diff] 0x521b20   MATCH            InfantryClass::ResetMissionIfDone
+[diff] 0x540d60   MATCH            IPXManagerClass::destroyConnection
+[diff] 0x5657e0   MATCH            Cell::Exists
+[diff] 0x5b01a0   MISMATCH         MechLocomotionClass::InitMultiFieldArray
+[diff] 0x633110   MATCH            PKStrawClass::SetSource
+[diff] 0x645c30   MISMATCH         Int4::Set
+[diff] 0x6ac870   MISMATCH         SidebarClass::initButtons
+[diff] 0x6e5380   MISMATCH         LinkedList::Contains
+[diff] 0x70e340   MISMATCH         ObjectClass::ResetTimer2
+[diff] 0x71f800   MISMATCH         TEventClass::CheckConditions
+[diff] 0x7291d0   MISMATCH         TunnelLocomotionClass::StubReturnZero_21
+[ledger] 0x53ca30 sub_53CA30 -> NG (attempt 1)
+[ledger] 0x42e410 Rect::Set -> OK (attempt 1)
+[ledger] 0x437f10 Coord2D::Add -> NG (attempt 1)
+[ledger] 0x438a70 BombClass::TimeToExplode -> NG (attempt 1)
+[ledger] 0x49fb40 CounterClass::ddtor -> OK (attempt 1)
+[ledger] 0x4e1550 ShpButtonClass::ClearState -> OK (attempt 1)
+[ledger] 0x521b20 InfantryClass::ResetMissionIfDone -> OK (attempt 1)
+[ledger] 0x53eda0 Network::CopyAddress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x540d60 IPXManagerClass::destroyConnection -> OK (attempt 1)
+[ledger] 0x54a120 Rect::Set4 -> OK (attempt 1)
+[ledger] 0x5657e0 Cell::Exists -> OK (attempt 1)
+[ledger] 0x5b01a0 MechLocomotionClass::InitMultiFieldArray -> NG (attempt 1)
+[ledger] 0x628740 FileSystem::readFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x633110 PKStrawClass::SetSource -> OK (attempt 1)
+[ledger] 0x645c30 Int4::Set -> NG (attempt 1)
+[ledger] 0x6ac870 SidebarClass::initButtons -> NG (attempt 1)
+[ledger] 0x6e5380 LinkedList::Contains -> NG (attempt 1)
+[ledger] 0x70e340 ObjectClass::ResetTimer2 -> NG (attempt 1)
+[ledger] 0x71f800 TEventClass::CheckConditions -> NG (attempt 1)
+[ledger] 0x7291d0 TunnelLocomotionClass::StubReturnZero_21 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "MATCH": 8,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "regalloc": 2,
+  "branch_polarity": 2,
+  "cc_mismatch": 1,
+  "eval_order": 1,
+  "codegen_shape": 2,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 44.4,
+ "match_rate_of_total_pct": 40.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p195\batch_report.json

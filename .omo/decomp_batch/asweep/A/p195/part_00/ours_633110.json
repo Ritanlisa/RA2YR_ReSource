@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetSource@PKStrawClass@@QAEHH@Z",
+ "sym_key": "PKStrawClass::SetSource",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b44240433d23bc28941387404c6410c0189913c010000899140010000c20400",
+ "relocs": []
+}

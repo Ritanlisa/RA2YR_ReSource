@@ -1,0 +1,15 @@
+{
+ "symbol": "?TimeToExplode@BombClass@@QAE_NXZ",
+ "sym_key": "BombClass::TimeToExplode",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b413085c07519a1000000008b51383bc27e0d8a415884c07506b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

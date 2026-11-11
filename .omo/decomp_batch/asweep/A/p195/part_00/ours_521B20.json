@@ -1,0 +1,8 @@
+{
+ "symbol": "?ResetMissionIfDone@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::ResetMissionIfDone",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b81c406000083f806740a83f803740583f811750ac781c4060000ffffffffc3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x633110",
+ "name": "PKStrawClass::SetSource",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x633110",
+ "bytes_hex": "8b44240433d23bc28941387404c6410c0189913c010000899140010000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E5380",
+ "name": "LinkedList_flat::Contains",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E5380",
+ "bytes_hex": "8b412885c0740f8b4c24043bc1740c8b402885c075f532c0c20400b001c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

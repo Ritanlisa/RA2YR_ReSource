@@ -1,0 +1,8 @@
+{
+ "symbol": "?Set@Int4@@QAEPAV1@HHHH@Z",
+ "sym_key": "Int4::Set",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b5424088b4424048951048b54240c8951088b542410890189510cc21000",
+ "relocs": []
+}

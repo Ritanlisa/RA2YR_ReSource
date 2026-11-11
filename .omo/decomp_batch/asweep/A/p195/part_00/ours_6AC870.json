@@ -1,0 +1,15 @@
+{
+ "symbol": "?initButtons@SidebarClass@@QAEPAV1@XZ",
+ "sym_key": "SidebarClass::initButtons",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8bc133d289108850048b0d00000000895010894808895014c7401801000000c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

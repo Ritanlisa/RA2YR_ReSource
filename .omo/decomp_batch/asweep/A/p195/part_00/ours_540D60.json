@@ -1,0 +1,8 @@
+{
+ "symbol": "?destroyConnection@IPXManagerClass@@QAEHXZ",
+ "sym_key": "IPXManagerClass::destroyConnection",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b414885c074188b51648950288b41488b516889502c8b41488b496c894830c3",
+ "relocs": []
+}

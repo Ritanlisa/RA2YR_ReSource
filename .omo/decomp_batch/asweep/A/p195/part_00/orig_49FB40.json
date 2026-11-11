@@ -1,0 +1,11 @@
+{
+ "addr": "0x49FB40",
+ "name": "CounterClass::ddtor",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49FB40",
+ "bytes_hex": "568b710833d233c03bf27e0f8b710440895486fc8b71083bc67cf18951105ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
