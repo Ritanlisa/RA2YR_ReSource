@@ -9108,15 +9108,15 @@
   "this_as_id": false
  },
  "0x438b40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 push esi",
   "name": "BombClass::Write",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "BombClass::Write",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x438e60": {
@@ -12599,7 +12599,7 @@
   "status": "NG"
  },
  "0x475260": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -16729,7 +16729,7 @@
   "this_as_id": false
  },
  "0x49e740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23275,7 +23275,7 @@
   "this_as_id": false
  },
  "0x4d4200": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23325,7 +23325,7 @@
   "this_as_id": false
  },
  "0x4d9f70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+9 je 0x4d9fe9",
@@ -31852,7 +31852,7 @@
   "this_as_id": false
  },
  "0x51f660": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -32244,7 +32244,7 @@
   "this_as_id": false
  },
  "0x524cb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49083,7 +49083,7 @@
   "this_as_id": false
  },
  "0x5e68a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -59580,7 +59580,7 @@
   "status": "OK"
  },
  "0x67ff70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_67FF70",
@@ -59591,7 +59591,7 @@
   "this_as_id": false
  },
  "0x6802f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_6802F0",
@@ -59602,7 +59602,7 @@
   "this_as_id": false
  },
  "0x680670": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_680670",
@@ -59613,7 +59613,7 @@
   "this_as_id": false
  },
  "0x6809f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_6809F0",
@@ -59624,7 +59624,7 @@
   "this_as_id": false
  },
  "0x680df0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_680DF0",
@@ -65785,7 +65785,7 @@
   "this_as_id": false
  },
  "0x6c2c90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66008,7 +66008,7 @@
   "this_as_id": false
  },
  "0x6c3890": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66540,7 +66540,7 @@
   "this_as_id": false
  },
  "0x6c5510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
@@ -70376,7 +70376,7 @@
   "this_as_id": false
  },
  "0x6e85f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80756,7 +80756,7 @@
   "this_as_id": false
  },
  "0x75c680": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -84131,7 +84131,7 @@
   "this_as_id": false
  },
  "0x772fa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89868,7 +89868,7 @@
   "this_as_id": false
  },
  "0x7d3401": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": "+0 push ebx",
   "name": "__fcloseall",

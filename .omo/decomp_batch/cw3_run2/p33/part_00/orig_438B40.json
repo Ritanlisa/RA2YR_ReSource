@@ -1,0 +1,11 @@
+{
+ "addr": "0x438B40",
+ "name": "BombClass::Write",
+ "size": 130,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x438B40",
+ "bytes_hex": "8b442408568b742408575056e82f78fdff8bf885ff7c6485f674278d4c2410518bcee85976fdffc706103d7e00c74604f43c7e00c74608ec3c7e00c7460ce43c7e008d4e3ce856d0fcff8d5628c7465400000000526810c1b000e8a16629008d4624506810c1b000e89366290083c62c566810c1b000e8856629008bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p33\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c2c90 _TClassFactory_VInfantryTypeClass::GetClassIdentifier -> _TClassFactory_VInfantryTypeClass
+[conv] 0x6c5510 _TClassFactory_VWeaponTypeClass::GetClassIdentifier -> _TClassFactory_VWeaponTypeClass
+[conv] 0x6c3890 _TClassFactory_VInfantryClass::ddtor -> _TClassFactory_VInfantryClass
+[conv] 0x475260 HouseClass::ReadHouseNamesToBitmask -> HouseClass
+[conv] 0x49e740 ObjectClass::SmallFunc_49E740 -> ObjectClass
+[conv] 0x4d9f70 FootClass::SellUnit -> FootClass
+[conv] 0x4d4200 FootClass::Destru_vt139 -> FootClass
+[conv] 0x5e68a0 SkirmishDialog::Show -> SkirmishDialog
+[conv] 0x67ff70 SaveGame_Start_67FF70 -> SaveGame_Start
+[conv] 0x6802f0 SaveGame_Start_6802F0 -> SaveGame_Start
+[conv] 0x680670 SaveGame_Start_680670 -> SaveGame_Start
+[conv] 0x6809f0 SaveGame_Start_6809F0 -> SaveGame_Start
+[conv] 0x680df0 SaveGame_Start_680DF0 -> SaveGame_Start
+[conv] 0x75c680 WalkLocomotionClass::BeginMove -> WalkLocomotionClass
+[conv] 0x51f660 InfantryClass::ProcessIvanBombResult -> InfantryClass
+[conv] 0x7d3401 __fcloseall -> _addr_7D
+[conv] 0x438b40 BombClass::Write -> BombClass
+[conv] 0x524cb0 KeywordType::FindOrCreate2 -> KeywordType
+[conv] 0x6e85f0 TeamTypeClass::FindOrCreateTaskForce -> TeamTypeClass
+[conv] 0x772fa0 InfantryTypeClass::Find -> InfantryTypeClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VInfantryTypeClass rc=2
+[era] _TClassFactory_VWeaponTypeClass rc=0
+[era] _TClassFactory_VInfantryClass rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] SkirmishDialog           rc=2
+[era] SaveGame_Start           rc=2
+[era] WalkLocomotionClass      rc=2
+[era] InfantryClass            rc=2
+[era] _addr_7D                 rc=0
+[era] BombClass                rc=0
+[era] KeywordType              rc=2
+[era] TeamTypeClass            rc=2
+[era] InfantryTypeClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x6c5510   MISMATCH         _TClassFactory_VWeaponTypeClass::GetClassIdentifier
+[diff] 0x4d9f70   MISMATCH         FootClass::SellUnit
+[diff] 0x7d3401   MISMATCH         __fcloseall
+[diff] 0x438b40   MISMATCH         BombClass::Write
+[ledger] 0x6c2c90 _TClassFactory_VInfantryTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c5510 _TClassFactory_VWeaponTypeClass::GetClassIdentifier -> NG (attempt 3)
+[ledger] 0x6c3890 _TClassFactory_VInfantryClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x475260 HouseClass::ReadHouseNamesToBitmask -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49e740 ObjectClass::SmallFunc_49E740 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4d9f70 FootClass::SellUnit -> NG (attempt 3)
+[ledger] 0x4d4200 FootClass::Destru_vt139 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e68a0 SkirmishDialog::Show -> COMPILE_FAIL (attempt 7)
+[ledger] 0x67ff70 SaveGame_Start_67FF70 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6802f0 SaveGame_Start_6802F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x680670 SaveGame_Start_680670 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6809f0 SaveGame_Start_6809F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x680df0 SaveGame_Start_680DF0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75c680 WalkLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51f660 InfantryClass::ProcessIvanBombResult -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d3401 __fcloseall -> NG (attempt 4)
+[ledger] 0x438b40 BombClass::Write -> NG (attempt 3)
+[ledger] 0x524cb0 KeywordType::FindOrCreate2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e85f0 TeamTypeClass::FindOrCreateTaskForce -> COMPILE_FAIL (attempt 3)
+[ledger] 0x772fa0 InfantryTypeClass::Find -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "branch_polarity": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p33\batch_report.json

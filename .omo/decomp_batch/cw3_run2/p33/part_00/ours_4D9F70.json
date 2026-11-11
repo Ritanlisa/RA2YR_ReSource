@@ -1,0 +1,45 @@
+{
+ "symbol": "?SellUnit@FootClass@@QAEHH@Z",
+ "sym_key": "FootClass::SellUnit",
+ "size": 124,
+ "link_base": 0,
+ "bytes_hex": "8b4424045685c08bf1746b8b8e1c020000e80000000084c074286affb910020000e800000000a1400200006a00680000803fba002000008b88a4060000e8000000008b0e56ff91bc0200008b8e1c02000050e8000000008b1656ff92a00300008b0656ff90d40000008b0e56ff91f80000005ec2040033c05ec20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?aCaryland@@3IA",
+   "sym_key": "aCaryland"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?FindAndPlay@VoxClass@@QAEXH@Z",
+   "sym_key": "VoxClass::FindAndPlay"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?AddPower@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::AddPower"
+  }
+ ]
+}

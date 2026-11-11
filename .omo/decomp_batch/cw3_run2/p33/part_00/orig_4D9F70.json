@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D9F70",
+ "name": "BuildingClass::SellUnit",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D9F70",
+ "bytes_hex": "8b4424045685c08bf1746e8b8e1c020000e86a17030084c0742b6aff83caffb930268200e867872700a1e07188006a00ba00200000680000803f8b88a4060000e86b6927008b168bceff92bc0200008b8e1c02000050e885f901008b068bceff90a00300008b168bceff92d40000008b068bceff90f80000005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

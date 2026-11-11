@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6c2c90",
+  "name": "TClassFactory_InfantryTypeClass::GetClassIdentifier",
+  "cls": null,
+  "size": 119,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int,unsigned int *,unsigned int *)' : cannot convert parameter 2 from '"
+ },
+ {
+  "addr": "0x6c5510",
+  "name": "TClassFactory_WeaponTypeClass::GetClassIdentifier",
+  "cls": null,
+  "size": 119,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int *,unsigned int *,unsigned int *)' : cannot convert parameter 2 from '"
+ },
+ {
+  "addr": "0x6c3890",
+  "name": "TClassFactory_InfantryClass::ddtor",
+  "cls": null,
+  "size": 121,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int,unsigned int *,unsigned int *)' : cannot convert parameter 2 from 'int'"
+ },
+ {
+  "addr": "0x475260",
+  "name": "HouseClass::ReadHouseNamesToBitmask",
+  "cls": null,
+  "size": 124,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'strtok' : none of the 2 overloads can convert parameter 2 from type 'int (__cdecl *)(const void *,const void"
+ },
+ {
+  "addr": "0x49e740",
+  "name": "SmallFunc_49E740",
+  "cls": null,
+  "size": 125,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'void (unsigned int *,void *,unsigned int)' : cannot convert parameter 2 from 'bool' to 'void *'"
+ },
+ {
+  "addr": "0x4d9f70",
+  "name": "BuildingClass::SellUnit",
+  "cls": null,
+  "size": 125,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.ImageFile' must have class/struct/union type"
+ },
+ {
+  "addr": "0x4d4200",
+  "name": "FootClass::Destru_vt139",
+  "cls": null,
+  "size": 126,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.ImageFile' must have class/struct/union type"
+ },
+ {
+  "addr": "0x5e68a0",
+  "name": "SkirmishDialog::Show",
+  "cls": null,
+  "size": 127,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2653",
+  "first_msg": "'SkirmishSetup' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x67ff70",
+  "name": "SaveGame_Start_67FF70",
+  "cls": null,
+  "size": 127,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPSTREAM'"
+ },
+ {
+  "addr": "0x6802f0",
+  "name": "SaveGame_Start_6802F0",
+  "cls": null,
+  "size": 127,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPSTREAM'"
+ },
+ {
+  "addr": "0x680670",
+  "name": "SaveGame_Start_680670",
+  "cls": null,
+  "size": 127,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPSTREAM'"
+ },
+ {
+  "addr": "0x6809f0",
+  "name": "SaveGame_Start_6809F0",
+  "cls": null,
+  "size": 127,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPSTREAM'"
+ },
+ {
+  "addr": "0x680df0",
+  "name": "SaveGame_Start_680DF0",
+  "cls": null,
+  "size": 127,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPSTREAM'"
+ },
+ {
+  "addr": "0x75c680",
+  "name": "WalkLocomotionClass::BeginMove",
+  "cls": null,
+  "size": 127,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p1'"
+ },
+ {
+  "addr": "0x51f660",
+  "name": "InfantryClass::ProcessIvanBombResult",
+  "cls": null,
+  "size": 128,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2676",
+  "first_msg": "binary '+' : 'class SequenceStruct' does not define this operator or a conversion to a type acceptable to"
+ },
+ {
+  "addr": "0x7d3401",
+  "name": "__fcloseall",
+  "cls": null,
+  "size": 129,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2371",
+  "first_msg": "'FILE' : redefinition"
+ },
+ {
+  "addr": "0x438b40",
+  "name": "BombClass::Write",
+  "cls": null,
+  "size": 130,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x524cb0",
+  "name": "KeywordType::FindOrCreate2",
+  "cls": null,
+  "size": 131,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'"
+ },
+ {
+  "addr": "0x6e85f0",
+  "name": "TeamTypeClass::FindOrCreateTaskForce",
+  "cls": null,
+  "size": 131,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'"
+ },
+ {
+  "addr": "0x772fa0",
+  "name": "InfantryTypeClass::Find",
+  "cls": null,
+  "size": 131,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'"
+ }
+]
