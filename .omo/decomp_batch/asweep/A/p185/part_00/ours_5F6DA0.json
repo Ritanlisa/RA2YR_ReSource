@@ -1,0 +1,8 @@
+{
+ "symbol": "?ResetPointerIfMatch@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::ResetPointerIfMatch",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "518b4424008b91880000003bc2750ac781880000000000000059c3",
+ "relocs": []
+}

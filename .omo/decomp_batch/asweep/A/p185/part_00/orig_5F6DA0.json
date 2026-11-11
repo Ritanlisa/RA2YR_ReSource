@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6DA0",
+ "name": "ObjectClass::ResetPointerIfMatch",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6DA0",
+ "bytes_hex": "8b4424048b91880000003bc2750ac7818800000000000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

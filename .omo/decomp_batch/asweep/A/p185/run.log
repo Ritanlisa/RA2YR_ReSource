@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p185\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d0c40 _VectorClass_PAVMSTextEntry::GetCapacity -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d0ea0 _VectorClass_PAVMapSelection::GetCapacity -> _VectorClass_PAVMapSelection
+[conv] 0x5d1100 _VectorClass_PAVMapStage::GetCount_1 -> _VectorClass_PAVMapStage
+[conv] 0x5d1360 _VectorClass_PAVMSAnimEntry::Draw -> _VectorClass_PAVMSAnimEntry
+[conv] 0x5d15c0 _VectorClass_PAVMSSfxEntry::GetCapacity -> _VectorClass_PAVMSSfxEntry
+[conv] 0x5d27b0 _DynamicVectorClass_PAVMSSfx::GetItemIndex -> _DynamicVectorClass_PAVMSSfx
+[conv] 0x5d2940 _VectorClass_PAVMSAnim::Write -> _VectorClass_PAVMSAnim
+[conv] 0x5d2ba0 _VectorClass_PAVMSSfx::GetCapacity -> _VectorClass_PAVMSSfx
+[conv] 0x5d50b0 _DynamicVectorClass_PAUHWND::PointerToIndex -> _DynamicVectorClass_PAUHWND
+[conv] 0x5d5110 _DynamicVectorClass_UAcceleratorTracker::PointerToIndex8 -> _DynamicVectorClass_UAcceleratorTracker
+[conv] 0x5d52b0 _VectorClass_PAUHWND::Draw -> _VectorClass_PAUHWND
+[conv] 0x5d80e0 DynamicVector::deallocateCells -> DynamicVector
+[conv] 0x5d8140 DynamicVector::validateMap -> DynamicVector
+[conv] 0x5d86b0 VectorClass::setGameSpeed -> VectorClass
+[conv] 0x5eebe0 _DynamicVectorClass_PBVMultiMission::GetItemIndex -> _DynamicVectorClass_PBVMultiMission
+[conv] 0x5eed70 _VectorClass_PBVMultiMission::GetCapacity -> _VectorClass_PBVMultiMission
+[conv] 0x5f6da0 ObjectClass::ResetPointerIfMatch -> ObjectClass
+[conv] 0x5f9b30 _DynamicVectorClass_PAVObjectTypeClass::GetItemIndex -> _DynamicVectorClass_PAVObjectTypeClass
+[conv] 0x5f9ce0 _VectorClass_PAVObjectTypeClass::LoadTypeData -> _VectorClass_PAVObjectTypeClass
+[conv] 0x5ffff0 _DynamicVectorClass_PAVSpotLightClass::GetItemIndex -> _DynamicVectorClass_PAVSpotLightClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVMSTextEntry rc=0
+[era] _VectorClass_PAVMapSelection rc=0
+[era] _VectorClass_PAVMapStage rc=0
+[era] _VectorClass_PAVMSAnimEntry rc=0
+[era] _VectorClass_PAVMSSfxEntry rc=0
+[era] _DynamicVectorClass_PAVMSSfx rc=0
+[era] _VectorClass_PAVMSAnim   rc=0
+[era] _VectorClass_PAVMSSfx    rc=0
+[era] _DynamicVectorClass_PAUHWND rc=0
+[era] _DynamicVectorClass_UAcceleratorTracker rc=0
+[era] _VectorClass_PAUHWND     rc=0
+[era] DynamicVector            rc=0
+[era] VectorClass              rc=0
+[era] _DynamicVectorClass_PBVMultiMission rc=0
+[era] _VectorClass_PBVMultiMission rc=0
+[era] ObjectClass              rc=0
+[era] _DynamicVectorClass_PAVObjectTypeClass rc=0
+[era] _VectorClass_PAVObjectTypeClass rc=0
+[era] _DynamicVectorClass_PAVSpotLightClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d0c40   MISMATCH         _VectorClass_PAVMSTextEntry::GetCapacity
+[diff] 0x5d0ea0   MISMATCH         _VectorClass_PAVMapSelection::GetCapacity
+[diff] 0x5d1100   MISMATCH         _VectorClass_PAVMapStage::GetCount_1
+[diff] 0x5d1360   MISMATCH         _VectorClass_PAVMSAnimEntry::Draw
+[diff] 0x5d15c0   MISMATCH         _VectorClass_PAVMSSfxEntry::GetCapacity
+[diff] 0x5d27b0   MISMATCH         _DynamicVectorClass_PAVMSSfx::GetItemIndex
+[diff] 0x5d2940   MISMATCH         _VectorClass_PAVMSAnim::Write
+[diff] 0x5d2ba0   MISMATCH         _VectorClass_PAVMSSfx::GetCapacity
+[diff] 0x5d50b0   MISMATCH         _DynamicVectorClass_PAUHWND::PointerToIndex
+[diff] 0x5d5110   MISMATCH         _DynamicVectorClass_UAcceleratorTracker::PointerToIndex8
+[diff] 0x5d52b0   MISMATCH         _VectorClass_PAUHWND::Draw
+[diff] 0x5d80e0   MISMATCH         DynamicVector::deallocateCells
+[diff] 0x5d8140   MISMATCH         DynamicVector::validateMap
+[diff] 0x5d86b0   MISMATCH         VectorClass::setGameSpeed
+[diff] 0x5eebe0   MISMATCH         _DynamicVectorClass_PBVMultiMission::GetItemIndex
+[diff] 0x5eed70   MISMATCH         _VectorClass_PBVMultiMission::GetCapacity
+[diff] 0x5f6da0   MISMATCH         ObjectClass::ResetPointerIfMatch
+[diff] 0x5f9b30   MISMATCH         _DynamicVectorClass_PAVObjectTypeClass::GetItemIndex
+[diff] 0x5f9ce0   MISMATCH         _VectorClass_PAVObjectTypeClass::LoadTypeData
+[diff] 0x5ffff0   MISMATCH         _DynamicVectorClass_PAVSpotLightClass::GetItemIndex
+[ledger] 0x5d0c40 _VectorClass_PAVMSTextEntry::GetCapacity -> NG (attempt 1)
+[ledger] 0x5d0ea0 _VectorClass_PAVMapSelection::GetCapacity -> NG (attempt 1)
+[ledger] 0x5d1100 _VectorClass_PAVMapStage::GetCount_1 -> NG (attempt 1)
+[ledger] 0x5d1360 _VectorClass_PAVMSAnimEntry::Draw -> NG (attempt 1)
+[ledger] 0x5d15c0 _VectorClass_PAVMSSfxEntry::GetCapacity -> NG (attempt 1)
+[ledger] 0x5d27b0 _DynamicVectorClass_PAVMSSfx::GetItemIndex -> NG (attempt 1)
+[ledger] 0x5d2940 _VectorClass_PAVMSAnim::Write -> NG (attempt 1)
+[ledger] 0x5d2ba0 _VectorClass_PAVMSSfx::GetCapacity -> NG (attempt 1)
+[ledger] 0x5d50b0 _DynamicVectorClass_PAUHWND::PointerToIndex -> NG (attempt 1)
+[ledger] 0x5d5110 _DynamicVectorClass_UAcceleratorTracker::PointerToIndex8 -> NG (attempt 1)
+[ledger] 0x5d52b0 _VectorClass_PAUHWND::Draw -> NG (attempt 1)
+[ledger] 0x5d80e0 DynamicVector::deallocateCells -> NG (attempt 1)
+[ledger] 0x5d8140 DynamicVector::validateMap -> NG (attempt 1)
+[ledger] 0x5d86b0 VectorClass::setGameSpeed -> NG (attempt 1)
+[ledger] 0x5eebe0 _DynamicVectorClass_PBVMultiMission::GetItemIndex -> NG (attempt 1)
+[ledger] 0x5eed70 _VectorClass_PBVMultiMission::GetCapacity -> NG (attempt 1)
+[ledger] 0x5f6da0 ObjectClass::ResetPointerIfMatch -> NG (attempt 1)
+[ledger] 0x5f9b30 _DynamicVectorClass_PAVObjectTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x5f9ce0 _VectorClass_PAVObjectTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x5ffff0 _DynamicVectorClass_PAVSpotLightClass::GetItemIndex -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_order": 17,
+  "ret_norm": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p185\batch_report.json
