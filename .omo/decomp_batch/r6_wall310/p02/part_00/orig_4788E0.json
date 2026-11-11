@@ -1,0 +1,11 @@
+{
+ "addr": "0x4788E0",
+ "name": "ParticleTypeClass::EnsureCapacity",
+ "size": 163,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4788E0",
+ "bytes_hex": "53558b6c240c568bf1573bf50f84880000008b06ff500c8b7d0833db3bfb897e0874718d0c7f51e80b05350083c4043bc3741b8d57ff3bd37c168d4802428859fe8859ff881983c1034a75f2eb0233c03bc389460474438b460833c93bc3c6460d017e3633c08b7d048b5e048bd003d78bf803fb41668b1a83c00366891f8a52028857028b56083bca7cdb8bc65f5e5d5bc20400895e04885e0d8bc65f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

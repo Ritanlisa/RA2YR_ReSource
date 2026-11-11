@@ -1,0 +1,15 @@
+{
+ "symbol": "?EnsureCapacity@ParticleTypeClass@@QAEPAIPAH@Z",
+ "sym_key": "ParticleTypeClass::EnsureCapacity",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c568bf1573bf50f84950000008b0656ff500c8b7d0833db3bfb897e0875148b460c895e0422e35f89460c8bc65e5d5bc204008d0c7f51e80000000083c4043bc3741a8d57ff85d27c158d48028859fe8859ff881983c1034f75f2eb0233c03bc3894604743c8b460c33ff80e40180cc0189460c8b46083bc37e2733d28b4d048b5e048bc203c18bca03cb47668b1883c2036689198a40028841028b46083bf87cdb8bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
