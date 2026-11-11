@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x636fa0",
+  "name": "sub_636FA0",
+  "family": "STRUCTURAL",
+  "path": "eval_order",
+  "size": 30,
+  "part": "p193",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_636FA0",
+  "first_diff": {
+   "orig": "+4 mov edx, dword ptr [esp + 8]",
+   "ours": "+4 mov byte ptr [ecx + 0x98], 1"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x65b4f0",
+  "name": "RadSiteClass::SetRadLevel",
+  "family": "RELOC_KEY",
+  "path": "const_fold",
+  "size": 30,
+  "part": "p193",
+  "unit": "RadSiteClass",
+  "emitted": "RadSiteClass::SetRadLevel",
+  "first_diff": {
+   "orig": "+7 mov eax, dword ptr [0x8871e0]",
+   "ours": "+7 mov eax, dword ptr [0x240]"
+  },
+  "ours_size": 30
+ },
+ {
+  "addr": "0x69b540",
+  "name": "Network::processGameEvent",
+  "family": "MEMBER_OFFSET",
+  "path": "const_fold",
+  "size": 30,
+  "part": "p193",
+  "unit": "Network",
+  "emitted": "Network::processGameEvent",
+  "first_diff": {
+   "orig": "+7 lea eax, [ecx + 0x6c]",
+   "ours": "+7 lea eax, [ecx + 0x84]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x721270",
+  "name": "ScriptAction::GetArgumentString",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 30,
+  "part": "p193",
+  "unit": "ScriptAction",
+  "emitted": "ScriptAction::GetArgumentString",
+  "first_diff": {
+   "orig": "+22 mov eax, 0x817694",
+   "ours": "+22 xor eax, eax"
+  },
+  "ours_size": 32
+ },
+ {
+  "addr": "0x4ccac0",
+  "name": "JumpjetLocomotionClass::ComputeFloatExpression_0",
+  "family": "RET_ARITY",
+  "path": "const_fold",
+  "size": 30,
+  "part": "p193",
+  "unit": "FlyLocomotionClass",
+  "emitted": "FlyLocomotionClass::ComputeFloatExpression_0",
+  "first_diff": {
+   "orig": "+4 fld qword ptr [eax + 0x44]",
+   "ours": "+4 fld qword ptr [eax + 0x48]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x41cf80",
+  "name": "ObjectTypeClass::Copy",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 31,
+  "part": "p193",
+  "unit": "ObjectTypeClass",
+  "emitted": "ObjectTypeClass::Copy",
+  "first_diff": {
+   "orig": "+8 push esi",
+   "ours": "+8 mov edx, dword ptr [ecx]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x483460",
+  "name": "HouseClass::checkAutoProduction",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 31,
+  "part": "p194",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::checkAutoProduction",
+  "first_diff": {
+   "orig": "+8 je 0x48347c",
+   "ours": "+8 jne 0xd"
+  },
+  "ours_size": 31
+ },
+ {
+  "addr": "0x5e9560",
+  "name": "GameOption::CheckDuplicate",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 31,
+  "part": "p194",
+  "unit": "GameOption",
+  "emitted": "GameOption::CheckDuplicate",
+  "first_diff": {
+   "orig": "+6 mov eax, 0xa8da90",
+   "ours": "+6 mov edx, dword ptr [0]"
+  },
+  "ours_size": 41
+ },
+ {
+  "addr": "0x5fea30",
+  "name": "OverlayTypeClass::vt_entry_6C",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 31,
+  "part": "p194",
+  "unit": "OverlayTypeClass",
+  "emitted": "OverlayTypeClass::vt_entry_6C",
+  "first_diff": {
+   "orig": "+8 push esi",
+   "ours": "+8 mov edx, dword ptr [ecx]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x6b8af0",
+  "name": "ApplyGameOptions_Helper",
+  "family": "TOKEN_MISMATCH",
+  "path": "regalloc",
+  "size": 31,
+  "part": "p194",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::ApplyGameOptions_Helper",
+  "first_diff": {
+   "orig": "+10 test al, 0xff",
+   "ours": "+10 test al, al"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x6c9ac0",
+  "name": "sub_6C9AC0",
+  "family": "WIDTH",
+  "path": "width_mismatch",
+  "size": 31,
+  "part": "p194",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_6C9AC0",
+  "first_diff": {
+   "orig": "+15 mov dword ptr [eax + 0x10], ecx",
+   "ours": "+15 mov byte ptr [eax + 0x10], cl"
+  },
+  "ours_size": 31
+ },
+ {
+  "addr": "0x6e8160",
+  "name": "TeamClass::SumMemberCounts",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "codegen_shape",
+  "size": 31,
+  "part": "p194",
+  "unit": "TeamClass",
+  "emitted": "TeamClass::SumMemberCounts",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x9c]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 31
+ },
+ {
+  "addr": "0x7d73da",
+  "name": "_TestDefaultCountry",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 31,
+  "part": "p194",
+  "unit": "_addr_7D",
+  "emitted": "_TestDefaultCountry",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x87d0e4",
+   "ours": "+0 movsx ecx, word ptr [esp + 4]"
+  },
+  "ours_size": 51
+ },
+ {
+  "addr": "0x7d9eb0",
+  "name": "__allshl",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 31,
+  "part": "p194",
+  "unit": "_addr_7D",
+  "emitted": "__allshl",
+  "first_diff": {
+   "orig": "+0 cmp cl, 0x40",
+   "ours": "+0 mov cl, byte ptr [esp + 0xc]"
+  },
+  "ours_size": 14
+ },
+ {
+  "addr": "0x53ca30",
+  "name": "sub_53CA30",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 31,
+  "part": "p195",
+  "unit": "_addr_53",
+  "emitted": "sub_53CA30",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7ec050]",
+   "ours": "+0 mov dword ptr [0], 0x33333334"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x437f10",
+  "name": "Coord2D::Add",
+  "family": "TOKEN_MISMATCH",
+  "path": "regalloc",
+  "size": 32,
+  "part": "p195",
+  "unit": "Coord2D",
+  "emitted": "Coord2D::Add",
+  "first_diff": {
+   "orig": "+5 mov esi, dword ptr [ecx]",
+   "ours": "+5 mov esi, dword ptr [ecx + 4]"
+  },
+  "ours_size": 32
+ },
+ {
+  "addr": "0x438a70",
+  "name": "BombClass::TimeToExplode",
+  "family": "REG_ALLOC",
+  "path": "branch_polarity",
+  "size": 32,
+  "part": "p195",
+  "unit": "BombClass",
+  "emitted": "BombClass::TimeToExplode",
+  "first_diff": {
+   "orig": "+5 jne 0x438a8d",
+   "ours": "+5 jne 0x20"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x5b01a0",
+  "name": "JumpjetLocomotionClass::InitMultiFieldArray",
+  "family": "STRUCTURAL",
+  "path": "cc_mismatch",
+  "size": 32,
+  "part": "p195",
+  "unit": "MechLocomotionClass",
+  "emitted": "MechLocomotionClass::InitMultiFieldArray",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 8]",
+   "ours": "+0 mov ecx, dword ptr [esp + 4]"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x645c30",
+  "name": "Int4::Set",
+  "family": "STRUCTURAL",
+  "path": "eval_order",
+  "size": 32,
+  "part": "p195",
+  "unit": "Int4",
+  "emitted": "Int4::Set",
+  "first_diff": {
+   "orig": "+4 mov eax, ecx",
+   "ours": "+4 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 30
+ },
+ {
+  "addr": "0x6e5380",
+  "name": "LinkedList_flat::Contains",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 32,
+  "part": "p195",
+  "unit": "LinkedList",
+  "emitted": "LinkedList::Contains",
+  "first_diff": {
+   "orig": "+5 je 0x6e5396",
+   "ours": "+5 je 0x21"
+  },
+  "ours_size": 38
+ }
+]
