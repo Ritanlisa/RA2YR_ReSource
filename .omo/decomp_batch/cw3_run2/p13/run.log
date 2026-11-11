@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x7aa6a0 CChatEventSink::DispatchStub_18 -> CChatEventSink
+[conv] 0x7ba590 FileStraw::Destructor -> FileStraw
+[conv] 0x40db70 sub_40DB70 -> _addr_40
+[conv] 0x41c380 Coord::Length -> Coord
+[conv] 0x41e230 sub_41E230 -> _addr_41
+[conv] 0x43b010 sub_43B010 -> _addr_43
+[conv] 0x47b220 sub_47B220 -> _addr_47
+[conv] 0x4a6b30 sub_4A6B30 -> _addr_4A
+[conv] 0x4c6430 sub_4C6430 -> _addr_4C
+[conv] 0x4e63a0 sub_4E63A0 -> _addr_4E
+[conv] 0x539420 sub_539420 -> _addr_53
+[conv] 0x551870 sub_551870 -> _addr_55
+[conv] 0x58b410 sub_58B410 -> _addr_58
+[conv] 0x5beba0 sub_5BEBA0 -> _addr_5B
+[conv] 0x5d5980 sub_5D5980 -> _addr_5D
+[conv] 0x5fc240 sub_5FC240 -> _addr_5F
+[conv] 0x642860 sub_642860 -> _addr_64
+[conv] 0x661d80 Animation::UpdateBobOffset -> Animation
+[conv] 0x69eb10 sub_69EB10 -> _addr_69
+[conv] 0x6c8d50 sub_6C8D50 -> _addr_6C
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CChatEventSink           rc=2
+[era] FileStraw                rc=0
+[era] _addr_40                 rc=0
+[era] Coord                    rc=0
+[era] _addr_41                 rc=0
+[era] _addr_43                 rc=0
+[era] _addr_47                 rc=0
+[era] _addr_4A                 rc=0
+[era] _addr_4C                 rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_53                 rc=0
+[era] _addr_55                 rc=0
+[era] _addr_58                 rc=0
+[era] _addr_5B                 rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_5F                 rc=0
+[era] _addr_64                 rc=0
+[era] Animation                rc=0
+[era] _addr_69                 rc=0
+[era] _addr_6C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x7ba590   MISMATCH         FileStraw::Destructor
+[diff] 0x40db70   MISMATCH         sub_40DB70
+[diff] 0x41c380   MISMATCH         Coord::Length
+[diff] 0x41e230   MISMATCH         sub_41E230
+[diff] 0x43b010   MISMATCH         sub_43B010
+[diff] 0x47b220   MISMATCH         sub_47B220
+[diff] 0x4a6b30   MISMATCH         sub_4A6B30
+[diff] 0x4c6430   MISMATCH         sub_4C6430
+[diff] 0x4e63a0   MISMATCH         sub_4E63A0
+[diff] 0x539420   MISMATCH         sub_539420
+[diff] 0x551870   MISMATCH         sub_551870
+[diff] 0x58b410   MISMATCH         sub_58B410
+[diff] 0x5beba0   MISMATCH         sub_5BEBA0
+[diff] 0x5d5980   MISMATCH         sub_5D5980
+[diff] 0x5fc240   MISMATCH         sub_5FC240
+[diff] 0x642860   MISMATCH         sub_642860
+[diff] 0x661d80   MISMATCH         Animation::UpdateBobOffset
+[diff] 0x69eb10   MISMATCH         sub_69EB10
+[diff] 0x6c8d50   MISMATCH         sub_6C8D50
+[ledger] 0x7aa6a0 CChatEventSink::DispatchStub_18 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ba590 FileStraw::Destructor -> NG (attempt 3)
+[ledger] 0x40db70 sub_40DB70 -> NG (attempt 4)
+[ledger] 0x41c380 Coord::Length -> NG (attempt 3)
+[ledger] 0x41e230 sub_41E230 -> NG (attempt 4)
+[ledger] 0x43b010 sub_43B010 -> NG (attempt 4)
+[ledger] 0x47b220 sub_47B220 -> NG (attempt 4)
+[ledger] 0x4a6b30 sub_4A6B30 -> NG (attempt 5)
+[ledger] 0x4c6430 sub_4C6430 -> NG (attempt 4)
+[ledger] 0x4e63a0 sub_4E63A0 -> NG (attempt 4)
+[ledger] 0x539420 sub_539420 -> NG (attempt 4)
+[ledger] 0x551870 sub_551870 -> NG (attempt 4)
+[ledger] 0x58b410 sub_58B410 -> NG (attempt 4)
+[ledger] 0x5beba0 sub_5BEBA0 -> NG (attempt 4)
+[ledger] 0x5d5980 sub_5D5980 -> NG (attempt 4)
+[ledger] 0x5fc240 sub_5FC240 -> NG (attempt 4)
+[ledger] 0x642860 sub_642860 -> NG (attempt 4)
+[ledger] 0x661d80 Animation::UpdateBobOffset -> NG (attempt 3)
+[ledger] 0x69eb10 sub_69EB10 -> NG (attempt 4)
+[ledger] 0x6c8d50 sub_6C8D50 -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 19
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "const_fold": 17,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p13\batch_report.json

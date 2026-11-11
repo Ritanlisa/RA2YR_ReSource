@@ -1,0 +1,453 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "COMPILE_FAIL": 1,
+   "MISMATCH": 19
+  },
+  "pathologies": {
+   "regalloc": 1,
+   "const_fold": 17,
+   "codegen_shape": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x7aa6a0",
+   "batch": "cw3_C",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p13\\part_00\\CChatEventSink.cpp(8) : error C2228: left of '.HashTable_field_0x40' must have class/struct/union type",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CComObject_CChatEventSink___ATL::DispatchStub_18",
+   "emitted": "CChatEventSink::DispatchStub_18",
+   "unit": "CChatEventSink",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x7ba590",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 48B ours 49B",
+   "first_diff": {
+    "orig": "+3 mov ecx, dword ptr [esi + 0xc]",
+    "ours": "+3 mov eax, dword ptr [esi + 0xc]"
+   },
+   "pathology": "regalloc",
+   "name": "FileStraw::Destructor",
+   "emitted": "FileStraw::Destructor",
+   "unit": "FileStraw",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "3/7",
+   "rule_violations": 0,
+   "orig_size": 48,
+   "ours_size": 49,
+   "clean": false
+  },
+  {
+   "addr": "0x40db70",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_40DB70",
+   "emitted": "sub_40DB70",
+   "unit": "_addr_40",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x41c380",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 105B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [ecx + 8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "Coord::Length",
+   "emitted": "Coord::Length",
+   "unit": "Coord",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "7/9",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 105,
+   "clean": false
+  },
+  {
+   "addr": "0x41e230",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_41E230",
+   "emitted": "sub_41E230",
+   "unit": "_addr_41",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x43b010",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_43B010",
+   "emitted": "sub_43B010",
+   "unit": "_addr_43",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x47b220",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_47B220",
+   "emitted": "sub_47B220",
+   "unit": "_addr_47",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4a6b30",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4A6B30",
+   "emitted": "sub_4A6B30",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4c6430",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4C6430",
+   "emitted": "sub_4C6430",
+   "unit": "_addr_4C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4e63a0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4E63A0",
+   "emitted": "sub_4E63A0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x539420",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_539420",
+   "emitted": "sub_539420",
+   "unit": "_addr_53",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x551870",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_551870",
+   "emitted": "sub_551870",
+   "unit": "_addr_55",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x58b410",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_58B410",
+   "emitted": "sub_58B410",
+   "unit": "_addr_58",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x5beba0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_5BEBA0",
+   "emitted": "sub_5BEBA0",
+   "unit": "_addr_5B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x5d5980",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_5D5980",
+   "emitted": "sub_5D5980",
+   "unit": "_addr_5D",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x5fc240",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_5FC240",
+   "emitted": "sub_5FC240",
+   "unit": "_addr_5F",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x642860",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_642860",
+   "emitted": "sub_642860",
+   "unit": "_addr_64",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x661d80",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "Animation::UpdateBobOffset",
+   "emitted": "Animation::UpdateBobOffset",
+   "unit": "Animation",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x69eb10",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_69EB10",
+   "emitted": "sub_69EB10",
+   "unit": "_addr_69",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x6c8d50",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_6C8D50",
+   "emitted": "sub_6C8D50",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  }
+ ]
+}

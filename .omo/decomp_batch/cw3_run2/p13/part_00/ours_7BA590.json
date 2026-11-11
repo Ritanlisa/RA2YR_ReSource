@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destructor@FileStraw@@QAEHXZ",
+ "sym_key": "FileStraw::Destructor",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "568bf18b460cc7060000000085c074188a4e1084c974118b0850ff5134c6461000c7460c000000008bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Dtor@Straw@@QAEHXZ",
+   "sym_key": "Straw::Dtor"
+  }
+ ]
+}

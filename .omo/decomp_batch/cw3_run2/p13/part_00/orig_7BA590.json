@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BA590",
+ "name": "FileStraw::Destructor",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BA590",
+ "bytes_hex": "568bf18b4e0cc706904d7e0085c974178a461084c074108b01ff5034c6461000c7460c000000008bcee892f2f0ff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
