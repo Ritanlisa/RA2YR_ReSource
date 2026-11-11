@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x426470 ObjectClass::COMStub_Return0_86 -> ObjectClass
+[conv] 0x4264a0 ObjectClass::COMStub_Return0_92 -> ObjectClass
+[conv] 0x42abf0 nullsub_4 -> _addr_42
+[conv] 0x430600 nullsub_98 -> _addr_43
+[conv] 0x438e60 nullsub_99 -> _addr_43
+[conv] 0x454ce0 ObjectClass::nullsub_5 -> ObjectClass
+[conv] 0x456970 nullsub_103 -> _addr_45
+[conv] 0x45e750 nullsub_6 -> _addr_45
+[conv] 0x45ec80 nullsub_107 -> _addr_45
+[conv] 0x465cb0 ObjectClass::nullsub_7 -> ObjectClass
+[conv] 0x4666b0 nullsub_108 -> _addr_46
+[conv] 0x479700 nullsub_109 -> _addr_47
+[conv] 0x489270 ObjectClass::CellChainReact -> ObjectClass
+[conv] 0x48c8a0 nullsub_112 -> _addr_48
+[conv] 0x48db70 nullsub_8 -> _addr_48
+[conv] 0x48ded0 ObjectClass::nullsub_51 -> ObjectClass
+[conv] 0x4a3650 nullsub_115 -> _addr_4A
+[conv] 0x4a4ac0 Debug::Log_0 -> Debug
+[conv] 0x4a5090 nullsub_116 -> _addr_4A
+[conv] 0x4a8d40 nullsub_10 -> _addr_4A
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_42                 rc=0
+[era] _addr_43                 rc=0
+[era] _addr_45                 rc=2
+[era] _addr_46                 rc=0
+[era] _addr_47                 rc=0
+[era] _addr_48                 rc=0
+[era] _addr_4A                 rc=0
+[era] Debug                    rc=0
+=== diffasm byte-compare ===
+[diff] 0x426470   MISMATCH         ObjectClass::COMStub_Return0_86
+[diff] 0x4264a0   MISMATCH         ObjectClass::COMStub_Return0_92
+[diff] 0x489270   MATCH            ObjectClass::CellChainReact
+[diff] 0x42abf0   MATCH            nullsub_4
+[diff] 0x430600   MATCH            nullsub_98
+[diff] 0x438e60   MATCH            nullsub_99
+[diff] 0x456970   MATCH            nullsub_103
+[diff] 0x45ec80   MATCH            nullsub_107
+[diff] 0x4666b0   MATCH            nullsub_108
+[diff] 0x479700   MATCH            nullsub_109
+[diff] 0x48c8a0   MATCH            nullsub_112
+[diff] 0x48db70   MATCH            nullsub_8
+[diff] 0x4a3650   MATCH            nullsub_115
+[diff] 0x4a5090   MATCH            nullsub_116
+[diff] 0x4a8d40   MATCH            nullsub_10
+[diff] 0x4a4ac0   MATCH            Debug::Log_0
+[ledger] 0x426470 ObjectClass::COMStub_Return0_86 -> NG (attempt 1)
+[ledger] 0x4264a0 ObjectClass::COMStub_Return0_92 -> NG (attempt 1)
+[ledger] 0x42abf0 nullsub_4 -> OK (attempt 1)
+[ledger] 0x430600 nullsub_98 -> OK (attempt 1)
+[ledger] 0x438e60 nullsub_99 -> OK (attempt 1)
+[ledger] 0x454ce0 ObjectClass::nullsub_5 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x456970 nullsub_103 -> OK (attempt 1)
+[ledger] 0x45e750 nullsub_6 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45ec80 nullsub_107 -> OK (attempt 1)
+[ledger] 0x465cb0 ObjectClass::nullsub_7 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4666b0 nullsub_108 -> OK (attempt 1)
+[ledger] 0x479700 nullsub_109 -> OK (attempt 1)
+[ledger] 0x489270 ObjectClass::CellChainReact -> OK (attempt 1)
+[ledger] 0x48c8a0 nullsub_112 -> OK (attempt 1)
+[ledger] 0x48db70 nullsub_8 -> OK (attempt 1)
+[ledger] 0x48ded0 ObjectClass::nullsub_51 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a3650 nullsub_115 -> OK (attempt 1)
+[ledger] 0x4a4ac0 Debug::Log_0 -> OK (attempt 1)
+[ledger] 0x4a5090 nullsub_116 -> OK (attempt 1)
+[ledger] 0x4a8d40 nullsub_10 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "MATCH": 14,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 87.5,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p01\batch_report.json

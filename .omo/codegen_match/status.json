@@ -1950,6 +1950,30 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x426470": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret ",
+  "name": "ObjectClass::COMStub_Return0_86",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_86",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4264a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret ",
+  "name": "ObjectClass::COMStub_Return0_92",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::COMStub_Return0_92",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4264c0": {
   "attempts": 1,
   "first_diff": "+2 ret 0x14",
@@ -2092,6 +2116,17 @@
   "name": "CellClass::ClearOccupancyGrid",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x42abf0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_4",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_4",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x42b420": {
   "attempts": 1,
@@ -2266,6 +2301,17 @@
   "name": "nullsub_97",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x430600": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_98",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_98",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x430f70": {
   "attempts": 1,
@@ -2484,6 +2530,17 @@
   "name": "BombClass::Write",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x438e60": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_99",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_99",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x439080": {
   "attempts": 7,
@@ -2764,6 +2821,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x454ce0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::nullsub_5",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "nullsub_5",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x455820": {
   "attempts": 1,
   "first_diff": null,
@@ -2784,6 +2853,17 @@
   "name": "BuildingClass::GetPowerFrame",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x456970": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_103",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_103",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x457aa0": {
   "attempts": 1,
@@ -2924,12 +3004,46 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x45e750": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "nullsub_6",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "nullsub_6",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x45ec80": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_107",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_107",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x465960": {
   "attempts": 1,
   "first_diff": null,
   "name": "AbstractClass::LoadTheaterSHP",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x465cb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::nullsub_7",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "nullsub_7",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x465d70": {
   "attempts": 8,
@@ -3012,6 +3126,17 @@
   "name": "BulletClass::CalculateSpreadAngle",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4666b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_108",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_108",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x468430": {
   "attempts": 9,
@@ -3603,6 +3728,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x479700": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_109",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_109",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x479730": {
   "attempts": 2,
   "first_diff": null,
@@ -3975,6 +4111,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x489270": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::CellChainReact",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CellChainReact",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x48ace0": {
   "attempts": 8,
   "clean": true,
@@ -4109,6 +4257,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x48c8a0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_112",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_112",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x48c8b0": {
   "attempts": 1,
   "first_diff": null,
@@ -4122,6 +4281,29 @@
   "name": "Event_Dispatch::Return0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x48db70": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_8",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_8",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x48ded0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::nullsub_51",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "nullsub_51",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x48dee0": {
   "attempts": 1,
@@ -5266,6 +5448,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4a3650": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_115",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_115",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4a3c00": {
   "attempts": 7,
   "first_diff": "+0 mov byte ptr [ecx], 0",
@@ -5293,6 +5486,18 @@
   "name": "Surface::CreateSurfacePalette",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4a4ac0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "name_prefix",
+  "first_diff": null,
+  "name": "Debug::Log_0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Debug::Log_0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4a4ad0": {
   "attempts": 1,
@@ -5322,6 +5527,17 @@
   "name": "sub_4A5050",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_4A5050",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4a5090": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_116",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_116",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -5530,6 +5746,17 @@
   "name": "Mouse::SetBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4a8d40": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "nullsub_10",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_10",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4a8d50": {
   "attempts": 11,
