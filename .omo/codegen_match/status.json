@@ -2057,6 +2057,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x457aa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::CreateFoggedObjects",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4581f0": {
   "attempts": 5,
   "first_diff": null,
@@ -6292,6 +6299,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4fc9e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::CheckWinCondition",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4fce30": {
   "attempts": 1,
   "first_diff": "+0 sub esp, 8",
@@ -6369,10 +6383,24 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x507f60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::CollectAircraftBuildCandidates",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x509610": {
   "attempts": 9,
   "first_diff": null,
   "name": "TriggerClass::ValidateTeamTriggerConditions",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5098f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::UpdateAITryFireSW",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6394,6 +6422,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "HouseClass::Fire_LightningStorm",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x50a150": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::Fire_PsyDom",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6690,6 +6725,13 @@
   "name": "HouseTypeClass::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x512290": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseTypeClass::SaveLoad_Prefix",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5125a0": {
   "attempts": 4,
@@ -7040,6 +7082,13 @@
   "name": "INIClass::GetString2",
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
+ },
+ "0x528c00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIClass::ReadString",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5295a0": {
   "attempts": 1,
@@ -8476,6 +8525,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x565800": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapClass::Destru_vt05",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x565b00": {
   "attempts": 14,
   "first_diff": "+57 jle 0x565b63",
@@ -8930,6 +8986,13 @@
   "name": "0x5a1f60",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x5a33f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GenerateTerrainHeightMapInternal",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5a4fa0": {
   "attempts": 1,
@@ -9582,6 +9645,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5c1dc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MPCooperative::Seek",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5c1fa0": {
   "attempts": 12,
   "first_diff": "+42 jne 0x5c1fd6",
@@ -9600,6 +9670,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "MPCooperative::CheckReady",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5c21d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CampaignCoop::Setup",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10821,6 +10898,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x610950": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TriggerClass::FindByEventType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x610bf0": {
   "attempts": 1,
   "first_diff": null,
@@ -11987,6 +12071,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingClass::AddUpgrade",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x655560": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::ProcessFogCellOccupancy",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -15427,6 +15518,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x720590": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ThemeClass::InitializeThemes",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x720a80": {
   "attempts": 10,
   "first_diff": "+0 push ebp",
@@ -15671,6 +15769,13 @@
   "name": "0x7271d0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7276a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TriggerTypeClass::GetParameter",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x727ca0": {
   "attempts": 5,
@@ -17275,6 +17380,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7712c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScoreScreen::RemoveItem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7714b0": {
   "attempts": 1,
   "first_diff": null,
@@ -17386,6 +17498,13 @@
   "name": "WebBrowser::Stat",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x773e90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WebBrowser::ShowDialog",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7740a0": {
   "attempts": 1,
@@ -17685,6 +17804,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Dialog::CloseAll",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x79d110": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SendGameListWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -18170,6 +18296,13 @@
   "name": "WWMouseClass::COMStub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7b9750": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WWMouseClass::showCursor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7b9a60": {
   "attempts": 1,
@@ -18702,6 +18835,13 @@
   "name": "0x7c8fc9",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7c8fd2": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CIpow_Helper",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7c91d0": {
   "attempts": 1,

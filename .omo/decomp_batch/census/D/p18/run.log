@@ -1,0 +1,95 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b9750 WWMouseClass::showCursor -> WWMouseClass
+[conv] 0x7c8fd2 ObjectClass::CIpow_Helper -> ObjectClass
+[conv] 0x5c21d0 CampaignCoop::Setup -> CampaignCoop
+[conv] 0x79d110 ObjectClass::SendGameListWOL -> ObjectClass
+[conv] 0x720590 ThemeClass::InitializeThemes -> ThemeClass
+[conv] 0x655560 BuildingClass::ProcessFogCellOccupancy -> BuildingClass
+[conv] 0x5c1dc0 MPCooperative::Seek -> MPCooperative
+[conv] 0x7276a0 TriggerTypeClass::GetParameter -> TriggerTypeClass
+[conv] 0x773e90 WebBrowser::ShowDialog -> WebBrowser
+[conv] 0x507f60 HouseClass::CollectAircraftBuildCandidates -> HouseClass
+[conv] 0x457aa0 BuildingClass::CreateFoggedObjects -> BuildingClass
+[conv] 0x512290 HouseTypeClass::SaveLoad_Prefix -> HouseTypeClass
+[conv] 0x4fc9e0 HouseClass::CheckWinCondition -> HouseClass
+[conv] 0x7712c0 ScoreScreen::RemoveItem -> ScoreScreen
+[conv] 0x565800 MapClass::Destru_vt05 -> MapClass
+[conv] 0x50a150 HouseClass::Fire_PsyDom -> HouseClass
+[conv] 0x610950 TriggerClass::FindByEventType -> TriggerClass
+[conv] 0x528c00 INIClass::ReadString -> INIClass
+[conv] 0x5098f0 HouseClass::UpdateAITryFireSW -> HouseClass
+[conv] 0x5a33f0 ObjectClass::GenerateTerrainHeightMapInternal -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WWMouseClass             rc=2
+[era] ObjectClass              rc=2
+[era] CampaignCoop             rc=2
+[era] ThemeClass               rc=2
+[era] BuildingClass            rc=2
+[era] MPCooperative            rc=2
+[era] TriggerTypeClass         rc=2
+[era] WebBrowser               rc=2
+[era] HouseClass               rc=2
+[era] HouseTypeClass           rc=2
+[era] ScoreScreen              rc=2
+[era] MapClass                 rc=2
+[era] TriggerClass             rc=2
+[era] INIClass                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7b9750 WWMouseClass::showCursor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8fd2 CIpow_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c21d0 CampaignCoop::Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79d110 SendGameListWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x720590 ThemeClass::InitializeThemes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x655560 BuildingClass::ProcessFogCellOccupancy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c1dc0 MPCooperative::Seek -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7276a0 TriggerTypeClass::GetParameter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x773e90 WebBrowser::ShowDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x507f60 HouseClass::CollectAircraftBuildCandidates -> COMPILE_FAIL (attempt 1)
+[ledger] 0x457aa0 BuildingClass::CreateFoggedObjects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x512290 HouseTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fc9e0 HouseClass::CheckWinCondition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7712c0 ScoreScreen::RemoveItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x565800 MapClass::Destru_vt05 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50a150 HouseClass::Fire_PsyDom -> COMPILE_FAIL (attempt 1)
+[ledger] 0x610950 TriggerClass::FindByEventType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x528c00 INIClass::ReadString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5098f0 HouseClass::UpdateAITryFireSW -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a33f0 GenerateTerrainHeightMapInternal -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2734,
+ "verdicts": {
+  "MISMATCH": 716,
+  "MATCH": 521,
+  "COMPILE_FAIL": 950,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 529,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 6
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 247,
+  "ret_norm": 8,
+  "frame_sched": 76,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 117,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.1,
+ "match_rate_of_total_pct": 19.1,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p18\batch_report.json
