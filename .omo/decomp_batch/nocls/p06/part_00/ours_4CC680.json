@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4CC680@@YIHHHH@Z",
+ "sym_key": "Unnamed::sub_4CC680",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "5356578bf98bcae8000000008b5c24108bf08bcbe8000000002bc683f8047c218bcfe8000000008bcb8bf0e8000000002bc685c07e0b5f5eb8010000005bc204005f5e33c05bc20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c64a0 sub_4C64A0 -> _addr_4C
+[conv] 0x4c81d0 sub_4C81D0 -> _addr_4C
+[conv] 0x4c9810 sub_4C9810 -> _addr_4C
+[conv] 0x4c9870 sub_4C9870 -> _addr_4C
+[conv] 0x4cba60 sub_4CBA60 -> _addr_4C
+[conv] 0x4cc0c0 sub_4CC0C0 -> _addr_4C
+[conv] 0x4cc680 sub_4CC680 -> _addr_4C
+[conv] 0x4cc790 sub_4CC790 -> _addr_4C
+[conv] 0x4cc7c0 sub_4CC7C0 -> _addr_4C
+[conv] 0x4d2ed0 globalHelper_0D2ED0 -> _addr_4D
+[conv] 0x4d2fc0 sub_4D2FC0 -> _addr_4D
+[conv] 0x4d30f0 sub_4D30F0 -> _addr_4D
+[conv] 0x4e1020 sub_4E1020 -> _addr_4E
+[conv] 0x4e1b60 sub_4E1B60 -> _addr_4E
+[conv] 0x4e24e0 sub_4E24E0 -> _addr_4E
+[conv] 0x4e31a0 sub_4E31A0 -> _addr_4E
+[conv] 0x4e32d0 sub_4E32D0 -> _addr_4E
+[conv] 0x4e63a0 sub_4E63A0 -> _addr_4E
+[conv] 0x4e6410 sub_4E6410 -> _addr_4E
+[conv] 0x4e64a0 sub_4E64A0 -> _addr_4E
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4C                 rc=2
+[era] _addr_4D                 rc=0
+[era] _addr_4E                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4c64a0   MISMATCH         sub_4C64A0
+[diff] 0x4c9870   MISMATCH         sub_4C9870
+[diff] 0x4cba60   MISMATCH         sub_4CBA60
+[diff] 0x4cc0c0   MATCH            sub_4CC0C0
+[diff] 0x4cc680   MISMATCH         sub_4CC680
+[diff] 0x4cc7c0   MISMATCH         sub_4CC7C0
+[diff] 0x4d2ed0   MISMATCH         globalHelper_0D2ED0
+[diff] 0x4d2fc0   MISMATCH         sub_4D2FC0
+[diff] 0x4d30f0   MISMATCH         sub_4D30F0
+[diff] 0x4e1020   MISMATCH         sub_4E1020
+[diff] 0x4e1b60   MISMATCH         sub_4E1B60
+[diff] 0x4e24e0   MATCH            sub_4E24E0
+[diff] 0x4e31a0   MISMATCH         sub_4E31A0
+[diff] 0x4e32d0   MATCH            sub_4E32D0
+[diff] 0x4e6410   MISMATCH         sub_4E6410
+[diff] 0x4e64a0   MISMATCH         sub_4E64A0
+[ledger] 0x4c64a0 sub_4C64A0 -> NG (attempt 2)
+[ledger] 0x4c81d0 sub_4C81D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c9810 sub_4C9810 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c9870 sub_4C9870 -> NG (attempt 2)
+[ledger] 0x4cba60 sub_4CBA60 -> NG (attempt 2)
+[ledger] 0x4cc0c0 sub_4CC0C0 -> OK (attempt 2)
+[ledger] 0x4cc680 sub_4CC680 -> NG (attempt 2)
+[ledger] 0x4cc790 sub_4CC790 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4cc7c0 sub_4CC7C0 -> NG (attempt 2)
+[ledger] 0x4d2ed0 globalHelper_0D2ED0 -> NG (attempt 2)
+[ledger] 0x4d2fc0 sub_4D2FC0 -> NG (attempt 2)
+[ledger] 0x4d30f0 sub_4D30F0 -> NG (attempt 2)
+[ledger] 0x4e1020 sub_4E1020 -> NG (attempt 2)
+[ledger] 0x4e1b60 sub_4E1B60 -> NG (attempt 2)
+[ledger] 0x4e24e0 sub_4E24E0 -> OK (attempt 2)
+[ledger] 0x4e31a0 sub_4E31A0 -> NG (attempt 2)
+[ledger] 0x4e32d0 sub_4E32D0 -> OK (attempt 2)
+[ledger] 0x4e63a0 sub_4E63A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e6410 sub_4E6410 -> NG (attempt 2)
+[ledger] 0x4e64a0 sub_4E64A0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 4,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "extern_reloc": 8
+ },
+ "match_rate_of_decided_pct": 18.8,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p06\batch_report.json
