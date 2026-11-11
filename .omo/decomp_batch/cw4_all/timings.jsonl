@@ -85,3 +85,4 @@
 {"part": 84, "n": 20, "seconds": 2.8, "summary": {"verdicts": {"NO_HIT": 15, "NO_VARIANT": 5}, "by_family_total": {"STRUCTURAL": 16, "WIDTH": 1, "TOKEN_MISMATCH": 1, "ONE_INSN": 1, "FRAME": 1}, "by_family_hits": {}}}
 {"part": 85, "n": 20, "seconds": 3.2, "summary": {"verdicts": {"NO_HIT": 14, "NO_VARIANT": 6}, "by_family_total": {"STRUCTURAL": 15, "FRAME": 3, "TWO_FOUR_INSNS": 1, "RET_ARITY": 1}, "by_family_hits": {}}}
 {"part": 86, "n": 20, "seconds": 3.3, "summary": {"verdicts": {"NO_HIT": 17, "NO_VARIANT": 3}, "by_family_total": {"STRUCTURAL": 17, "FRAME": 3}, "by_family_hits": {}}}
+{"part": 87, "n": 20, "seconds": 3.2, "summary": {"verdicts": {"NO_HIT": 18, "NO_VARIANT": 2}, "by_family_total": {"STRUCTURAL": 17, "FRAME": 1, "JCC_LAYOUT_PLUS": 1, "JCC_INVERT": 1}, "by_family_hits": {}}}
