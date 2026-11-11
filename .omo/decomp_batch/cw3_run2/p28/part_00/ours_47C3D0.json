@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindClosestObjectCell@Object@@QAEHPAHDH@Z",
+ "sym_key": "Object::FindClosestObjectCell",
+ "size": 249,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec348b5508535633f68b025789742410897424148d1cc5000000002bd88b42048d14c5000000002bd08a450c84c08954241874088b89e8000000eb068b89e40000003bce750b33c05f5e5b8be55dc20c008b7c24208bf1f6461401747d3b751074788b068d4c242c5156ff504833d233c98a108a48048b4424182bd32bc889542420894c241c83ec08db442424db442428d9c0d8c9d9c2d8cbdec1dd1c24ddd8ddd8e8000000008b54242c8b4424285250ddd8e80000000033c783c41025ff00000033f88b44241085c074063b7c24147d0889742410897c24148b763085f60f8572ffffff8b4424105f5e5b8be55dc20c00",
+ "relocs": [
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

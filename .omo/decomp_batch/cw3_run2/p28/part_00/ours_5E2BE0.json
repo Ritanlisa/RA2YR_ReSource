@@ -1,0 +1,45 @@
+{
+ "symbol": "?CountDisconnectedHouses@Network@@QAEHXZ",
+ "sym_key": "Network::CountDisconnectedHouses",
+ "size": 236,
+ "link_base": 0,
+ "bytes_hex": "83ec0ca118000000894c240833c93bc1894c2400894c2404770633c083c40cc3535556578b150c0000008b2c1185ed0f84930000008a8df501000084c90f85850000008b4d348a91a601000084d275783b6c2418747232db33ff85c07e663b7c241474578b150c0000008b34ba85f6744a8a8ef501000084c975408b4e348a91a601000084d275333b742418742d568bcde80000000084c0741c558bcee80000000084c074103b7c24147e0884db7504ff442410b301a118000000473bf8729e84db7504ff4424108b542414423bd0895424148d0c95000000000f8c44ffffff8b4424105f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  }
+ ]
+}
