@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_40D140@@YAHXZ",
+ "sym_key": "Unnamed::sub_40D140",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "33c066a30000000066a300000000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7A8@@3GA",
+   "sym_key": "DataGlobal_87F7A8"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7AA@@3GA",
+   "sym_key": "DataGlobal_87F7AA"
+  }
+ ]
+}

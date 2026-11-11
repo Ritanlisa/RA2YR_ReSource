@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_41D210@@YAHXZ",
+ "sym_key": "Unnamed::sub_41D210",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "c7051c0000000000000033c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  }
+ ]
+}

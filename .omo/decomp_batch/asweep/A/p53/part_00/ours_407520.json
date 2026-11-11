@@ -1,0 +1,8 @@
+{
+ "symbol": "?Next@LinkedList@@QAEPAHXZ",
+ "sym_key": "LinkedList::Next",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b1185d28b0274078b1083c0088911c3",
+ "relocs": []
+}

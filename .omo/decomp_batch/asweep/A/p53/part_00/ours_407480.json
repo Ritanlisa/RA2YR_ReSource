@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetNextEntry@AudioList@@QAEHXZ",
+ "sym_key": "AudioList::GetNextEntry",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b49048b41082bc1f7d81bc023c1c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x407480",
+ "name": "AudioList::GetNextEntry",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407480",
+ "bytes_hex": "8b49048bc12b4108f7d81bc023c1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p53\part_00
+=== convert (20 addrs) ===
+[conv] 0x406ac0 sub_406AC0 -> _addr_40
+[conv] 0x407480 AudioList::GetNextEntry -> AudioList
+[conv] 0x407520 LinkedList::Next -> LinkedList
+[conv] 0x408d30 ObjectClass::sub_408D30 -> ObjectClass
+[conv] 0x40af30 sub_40AF30 -> _addr_40
+[conv] 0x40b4f0 sub_40B4F0 -> _addr_40
+[conv] 0x40c730 sub_40C730 -> _addr_40
+[conv] 0x40d140 sub_40D140 -> _addr_40
+[conv] 0x40e720 sub_40E720 -> _addr_40
+[conv] 0x40edd0 sub_40EDD0 -> _addr_40
+[conv] 0x40f440 sub_40F440 -> _addr_40
+[conv] 0x40fae0 sub_40FAE0 -> _addr_40
+[conv] 0x410100 AbstractClass::initVtableBase -> AbstractClass
+[conv] 0x4107b0 sub_4107B0 -> _addr_41
+[conv] 0x412800 sub_412800 -> _addr_41
+[conv] 0x413c60 sub_413C60 -> _addr_41
+[conv] 0x41c150 FootClass::ProcessTick2 -> FootClass
+[conv] 0x41d210 sub_41D210 -> _addr_41
+[conv] 0x41e300 sub_41E300 -> _addr_41
+[conv] 0x420890 sub_420890 -> _addr_42
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] AudioList                rc=0
+[era] LinkedList               rc=0
+[era] ObjectClass              rc=0
+[era] AbstractClass            rc=0
+[era] _addr_41                 rc=0
+[era] FootClass                rc=0
+[era] _addr_42                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x406ac0   MATCH            sub_406AC0
+[diff] 0x40af30   MATCH            sub_40AF30
+[diff] 0x40b4f0   MATCH            sub_40B4F0
+[diff] 0x40c730   MATCH            sub_40C730
+[diff] 0x40d140   MATCH            sub_40D140
+[diff] 0x40e720   MATCH            sub_40E720
+[diff] 0x40edd0   MATCH            sub_40EDD0
+[diff] 0x40f440   MATCH            sub_40F440
+[diff] 0x40fae0   MATCH            sub_40FAE0
+[diff] 0x407480   MISMATCH         AudioList::GetNextEntry
+[diff] 0x407520   MISMATCH         LinkedList::Next
+[diff] 0x408d30   MISMATCH         ObjectClass::sub_408D30
+[diff] 0x410100   MATCH            AbstractClass::initVtableBase
+[diff] 0x4107b0   MATCH            sub_4107B0
+[diff] 0x412800   MISMATCH         sub_412800
+[diff] 0x413c60   MISMATCH         sub_413C60
+[diff] 0x41d210   MISMATCH         sub_41D210
+[diff] 0x41e300   MATCH            sub_41E300
+[diff] 0x41c150   MATCH            FootClass::ProcessTick2
+[diff] 0x420890   MATCH            sub_420890
+[ledger] 0x406ac0 sub_406AC0 -> OK (attempt 1)
+[ledger] 0x407480 AudioList::GetNextEntry -> NG (attempt 1)
+[ledger] 0x407520 LinkedList::Next -> NG (attempt 1)
+[ledger] 0x408d30 ObjectClass::sub_408D30 -> NG (attempt 1)
+[ledger] 0x40af30 sub_40AF30 -> OK (attempt 1)
+[ledger] 0x40b4f0 sub_40B4F0 -> OK (attempt 1)
+[ledger] 0x40c730 sub_40C730 -> OK (attempt 1)
+[ledger] 0x40d140 sub_40D140 -> OK (attempt 1)
+[ledger] 0x40e720 sub_40E720 -> OK (attempt 1)
+[ledger] 0x40edd0 sub_40EDD0 -> OK (attempt 1)
+[ledger] 0x40f440 sub_40F440 -> OK (attempt 1)
+[ledger] 0x40fae0 sub_40FAE0 -> OK (attempt 1)
+[ledger] 0x410100 AbstractClass::initVtableBase -> OK (attempt 1)
+[ledger] 0x4107b0 sub_4107B0 -> OK (attempt 1)
+[ledger] 0x412800 sub_412800 -> NG (attempt 1)
+[ledger] 0x413c60 sub_413C60 -> NG (attempt 1)
+[ledger] 0x41c150 FootClass::ProcessTick2 -> OK (attempt 1)
+[ledger] 0x41d210 sub_41D210 -> NG (attempt 1)
+[ledger] 0x41e300 sub_41E300 -> OK (attempt 1)
+[ledger] 0x420890 sub_420890 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "extern_reloc": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 70.0,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p53\batch_report.json

@@ -480,6 +480,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x406ac0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_406AC0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_406AC0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x406b10": {
   "attempts": 1,
   "first_diff": null,
@@ -626,12 +637,36 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x407480": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+3 mov eax, ecx",
+  "name": "AudioList::GetNextEntry",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "AudioList::GetNextEntry",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x407510": {
   "attempts": 6,
   "first_diff": null,
   "name": "VtableStub::Push_407510",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x407520": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [ecx]",
+  "name": "LinkedList::Next",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "LinkedList_flat::Next",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x407530": {
   "attempts": 1,
@@ -759,6 +794,18 @@
   "name": "AudioMixer::SetupChannels",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x408d30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov ecx, dword ptr [ecx + 0x90]",
+  "name": "ObjectClass::sub_408D30",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_408D30",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x408d40": {
   "attempts": 1,
@@ -903,6 +950,28 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x40af30": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40AF30",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40AF30",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x40b4f0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40B4F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40B4F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x40b690": {
   "attempts": 1,
   "clean": false,
@@ -1007,6 +1076,17 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x40c730": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40C730",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40C730",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x40c870": {
   "attempts": 1,
   "clean": false,
@@ -1105,6 +1185,17 @@
   "name": "sub_40D030",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x40d140": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40D140",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40D140",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x40d230": {
   "attempts": 9,
@@ -1319,6 +1410,17 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x40e720": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40E720",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40E720",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x40e840": {
   "attempts": 1,
   "first_diff": null,
@@ -1351,6 +1453,17 @@
   "name": "nullsub_60",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_60",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x40edd0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40EDD0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40EDD0",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -1428,6 +1541,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x40f440": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40F440",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40F440",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x40f470": {
   "attempts": 2,
   "first_diff": "+5 mov dword ptr [0x8874f0], 0",
@@ -1453,6 +1577,17 @@
   "name": "sub_40F9F0",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x40fae0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_40FAE0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_40FAE0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x40fc00": {
   "attempts": 1,
@@ -1482,6 +1617,18 @@
   "orig_name": "sub_40FF90",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x410100": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AbstractClass::initVtableBase",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::initVtableBase",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x4101c0": {
@@ -1691,6 +1838,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4107b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_4107B0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4107B0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x410800": {
   "attempts": 1,
   "first_diff": null,
@@ -1886,6 +2044,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x412800": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 xor eax, eax",
+  "name": "sub_412800",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_412800",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4129c0": {
   "attempts": 1,
   "first_diff": "+24 jle 0x412a32",
@@ -1952,6 +2121,17 @@
   "name": "sub_413BD0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x413c60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 xor eax, eax",
+  "name": "sub_413C60",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_413C60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x414a10": {
   "attempts": 1,
@@ -2394,6 +2574,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x41c150": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "FootClass::ProcessTick2",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TacticalClass::ProcessTick2",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x41c160": {
   "attempts": 1,
   "clean": true,
@@ -2589,6 +2781,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x41d210": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 xor eax, eax",
+  "name": "sub_41D210",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_41D210",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x41d240": {
   "attempts": 1,
   "clean": false,
@@ -2684,6 +2887,17 @@
   "name": "sub_41E230",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x41e300": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_41E300",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_41E300",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x41e5e0": {
   "attempts": 1,
@@ -2844,6 +3058,17 @@
   "name": "AITriggerTypeClass_40::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x420890": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_420890",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_420890",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4208c0": {
   "attempts": 2,
