@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x7d8f16",
+  "name": "__chgsign",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 37,
+  "part": "p206",
+  "unit": "_addr_7D",
+  "emitted": "__chgsign",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 sub esp, 8"
+  },
+  "ours_size": 43
+ },
+ {
+  "addr": "0x7dbc05",
+  "name": "__get_fname",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 37,
+  "part": "p206",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::__get_fname",
+  "first_diff": {
+   "orig": "+0 xor ecx, ecx",
+   "ours": "+0 mov edx, dword ptr [esp + 4]"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x4dc760",
+  "name": "LocomotionClass::GetSpeedMultiplier",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 37,
+  "part": "p206",
+  "unit": "LocomotionClass",
+  "emitted": "LocomotionClass::GetSpeedMultiplier",
+  "first_diff": {
+   "orig": "+6 test eax, eax",
+   "ours": "+6 sub esp, 8"
+  },
+  "ours_size": 46
+ },
+ {
+  "addr": "0x40cf00",
+  "name": "VectorClass_ptr_IsometricTileClass::FindValue",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p206",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::FindValue",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x421a90",
+  "name": "VectorClass_ptr_AlphaShapeClass::FindItemIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p206",
+  "unit": "VectorClass_ptr_AlphaShapeClass",
+  "emitted": "VectorClass_ptr_AlphaShapeClass::FindItemIndex",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x45a610",
+  "name": "BuildingClass::FindInPointerArray",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p206",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::FindInPointerArray",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x46b890",
+  "name": "VectorClass_ptr_BulletClass::FindItemIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p207",
+  "unit": "VectorClass_ptr_BulletClass",
+  "emitted": "VectorClass_ptr_BulletClass::FindItemIndex",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x4cab20",
+  "name": "AbstractClass::validateScriptArgs",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p208",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::validateScriptArgs",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x4e9430",
+  "name": "HouseClass::COMStub_4",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p208",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::COMStub_4",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x4f2b10",
+  "name": "HouseClass::vt_placeholder_08",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p209",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::vt_placeholder_08",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x4fce00",
+  "name": "sub_4FCE00",
+  "family": "IMM",
+  "path": "cc_mismatch",
+  "size": 38,
+  "part": "p209",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::sub_4FCE00",
+  "first_diff": {
+   "orig": "+35 ret 0xc",
+   "ours": "+35 ret 0x10"
+  },
+  "ours_size": 38
+ },
+ {
+  "addr": "0x536c10",
+  "name": "CreateTeamCommand::performAction_80",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p20",
+  "unit": "DeployCommandClass",
+  "emitted": "DeployCommandClass::performAction_80",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x82744c",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x536d90",
+  "name": "CreateTeamCommand::performAction_95",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p20",
+  "unit": "CenterViewCommandClass",
+  "emitted": "CenterViewCommandClass::performAction_95",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x8274e0",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x536eb0",
+  "name": "CreateTeamCommand::performAction_105",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p20",
+  "unit": "AllianceCommandClass",
+  "emitted": "AllianceCommandClass::performAction_105",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x827548",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x536f30",
+  "name": "CreateTeamCommand::performAction_110",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p20",
+  "unit": "ToggleRepairCommandClass",
+  "emitted": "ToggleRepairCommandClass::performAction_110",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x82757c",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x536fb0",
+  "name": "CreateTeamCommand::performAction_114",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p20",
+  "unit": "ToggleSellCommandClass",
+  "emitted": "ToggleSellCommandClass::performAction_114",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x8275b4",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x50f710",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p210",
+  "unit": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "emitted": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x538750",
+  "name": "CreateTeamCommand::performAction_242",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p210",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::performAction_242",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x58b780",
+  "name": "sub_58B780",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p211",
+  "unit": "_addr_58",
+  "emitted": "sub_58B780",
+  "first_diff": {
+   "orig": "+0 mov byte ptr [0xabdfb8], 0",
+   "ours": "+0 xor eax, eax"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x5ac8d0",
+  "name": "VectorClass_ptr_MapRegionClass::FindItemIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p211",
+  "unit": "VectorClass_ptr_MapRegionClass",
+  "emitted": "VectorClass_ptr_MapRegionClass::FindItemIndex",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ }
+]
