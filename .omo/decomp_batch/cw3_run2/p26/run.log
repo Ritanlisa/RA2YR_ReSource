@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b2ff0 UDPInterfaceClass::Flush -> UDPInterfaceClass
+[conv] 0x69fb20 ShipLocomotionClass::ComputeAudio3DRotation_1 -> ShipLocomotionClass
+[conv] 0x720140 TextButtonClass::fireWeapon -> TextButtonClass
+[conv] 0x4fd060 HouseClass::FindBuildingOfType -> HouseClass
+[conv] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> BinkMovie
+[conv] 0x6e1530 ScenarioClass::PrepareTextDisplay -> ScenarioClass
+[conv] 0x486ff0 Cell::IsBuildableAdvanced -> Cell
+[conv] 0x5cd410 MSBitPrintAnim::SetText -> MSBitPrintAnim
+[conv] 0x63d210 ActionScenarioClassCoordToScreen -> _addr_63
+[conv] 0x6acca0 Map_Handle_6ACCA0 -> Map_Handle
+[conv] 0x7b3310 UDPInterfaceClass::CheckStatus -> UDPInterfaceClass
+[conv] 0x726400 BuildingClass::ProcessUpgradeEffects -> BuildingClass
+[conv] 0x556df0 ObjectClass::Game_Destroy -> ObjectClass
+[conv] 0x7b4b50 ObjectClass::sub_7B4B50 -> ObjectClass
+[conv] 0x6e6f20 BuildingLoadQueue::Find -> BuildingLoadQueue
+[conv] 0x7464e0 TechnoClass::TransferTurret -> TechnoClass
+[conv] 0x50e0e0 HouseClass::LostPoweredCenter -> HouseClass
+[conv] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> ObjectClass
+[conv] 0x4a0630 ConnectionPointClass::Unadvise -> ConnectionPointClass
+[conv] 0x5d5f30 MultiplayerGameMode::Find -> MultiplayerGameMode
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UDPInterfaceClass        rc=2
+[era] ShipLocomotionClass      rc=2
+[era] TextButtonClass          rc=2
+[era] HouseClass               rc=2
+[era] BinkMovie                rc=2
+[era] ScenarioClass            rc=2
+[era] Cell                     rc=2
+[era] MSBitPrintAnim           rc=2
+[era] _addr_63                 rc=0
+[era] Map_Handle               rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] BuildingLoadQueue        rc=2
+[era] TechnoClass              rc=2
+[era] ConnectionPointClass     rc=2
+[era] MultiplayerGameMode      rc=2
+=== diffasm byte-compare ===
+[diff] 0x63d210   MISMATCH         ActionScenarioClassCoordToScreen
+[diff] 0x556df0   MISMATCH         ObjectClass::Game_Destroy
+[diff] 0x7b4b50   MISMATCH         ObjectClass::sub_7B4B50
+[ledger] 0x7b2ff0 UDPInterfaceClass::Flush -> COMPILE_FAIL (attempt 11)
+[ledger] 0x69fb20 ShipLocomotionClass::ComputeAudio3DRotation_1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x720140 TextButtonClass::fireWeapon -> COMPILE_FAIL (attempt 11)
+[ledger] 0x4fd060 HouseClass::FindBuildingOfType -> COMPILE_FAIL (attempt 11)
+[ledger] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> COMPILE_FAIL (attempt 11)
+[ledger] 0x6e1530 ScenarioClass::PrepareTextDisplay -> COMPILE_FAIL (attempt 11)
+[ledger] 0x486ff0 Cell::IsBuildableAdvanced -> COMPILE_FAIL (attempt 11)
+[ledger] 0x5cd410 MSBitPrintAnim::SetText -> COMPILE_FAIL (attempt 11)
+[ledger] 0x63d210 ActionScenarioClassCoordToScreen -> NG (attempt 3)
+[ledger] 0x6acca0 Map_Handle_6ACCA0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b3310 UDPInterfaceClass::CheckStatus -> COMPILE_FAIL (attempt 11)
+[ledger] 0x726400 BuildingClass::ProcessUpgradeEffects -> COMPILE_FAIL (attempt 3)
+[ledger] 0x556df0 ObjectClass::Game_Destroy -> NG (attempt 3)
+[ledger] 0x7b4b50 ObjectClass::sub_7B4B50 -> NG (attempt 3)
+[ledger] 0x6e6f20 BuildingLoadQueue::Find -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7464e0 TechnoClass::TransferTurret -> COMPILE_FAIL (attempt 11)
+[ledger] 0x50e0e0 HouseClass::LostPoweredCenter -> COMPILE_FAIL (attempt 11)
+[ledger] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a0630 ConnectionPointClass::Unadvise -> COMPILE_FAIL (attempt 11)
+[ledger] 0x5d5f30 MultiplayerGameMode::Find -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "const_fold": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p26\batch_report.json
