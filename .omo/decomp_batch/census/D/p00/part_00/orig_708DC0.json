@@ -1,0 +1,11 @@
+{
+ "addr": "0x708DC0",
+ "name": "TechnoClass::GetPrimaryTargetOrFallback",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x708DC0",
+ "bytes_hex": "568bf18b06ff908400000083b85c050000ff741d578b3e8bceff97840000008b885c050000518bceff97540300005f5ec38b168bceff92580300005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

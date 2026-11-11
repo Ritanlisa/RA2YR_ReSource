@@ -1,0 +1,11 @@
+{
+ "addr": "0x410BE0",
+ "name": "AbstractTypeClass::ProcessPower",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x410BE0",
+ "bytes_hex": "56578b7c240c8bf157e822f8ffff8d46248bcf50e8b71109008d4e64518bcfe8ac11090083c63d8bcf56e8a11109005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

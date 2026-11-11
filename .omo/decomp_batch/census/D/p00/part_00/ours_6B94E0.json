@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6B94E0@ObjectClass@@QAEIXZ",
+ "sym_key": "ObjectClass::sub_6B94E0",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "5356578bf9e8000000008bcf8bd833f6e80000000085c076278bcfe8000000000fbe043003c603c38bc8c1e1088bd98bcfc1e81833d846e8000000003bf072d95f8bc35e5bc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  }
+ ]
+}

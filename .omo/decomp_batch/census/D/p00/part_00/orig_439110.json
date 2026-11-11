@@ -1,0 +1,11 @@
+{
+ "addr": "0x439110",
+ "name": "Stream::FlushAndReset",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x439110",
+ "bytes_hex": "568bf1578b068b7e08c746302d000000ff500c8b166a00578bceff52088b46188b7e2083c6188bceff500c8b166a00578bceff52085f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

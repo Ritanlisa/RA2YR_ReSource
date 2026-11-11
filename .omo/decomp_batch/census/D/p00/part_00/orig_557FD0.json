@@ -1,0 +1,11 @@
+{
+ "addr": "0x557FD0",
+ "name": "ListClass::Flag_To_Redraw",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x557FD0",
+ "bytes_hex": "568bf18a465484c074278b46588d4e58ff50488b96b80000008d8eb8000000ff52488b86180100008d8e18010000ff50488bcee85899f8ff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

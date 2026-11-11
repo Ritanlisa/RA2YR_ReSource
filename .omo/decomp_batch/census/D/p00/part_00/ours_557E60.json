@@ -1,0 +1,15 @@
+{
+ "symbol": "?HitTest@ListClass@@QAEPAIH@Z",
+ "sym_key": "ListClass::HitTest",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7c240c8a465484c0742d8b8e180100008d86180100005750ff51148b96b80000008d86b80000005750ff52148b4e588d46585750ff51145756e80000000083c4085f5ec20400",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?LinkedList__Attach@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Attach"
+  }
+ ]
+}

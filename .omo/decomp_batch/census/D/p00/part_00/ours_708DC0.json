@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPrimaryTargetOrFallback@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetPrimaryTargetOrFallback",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff908400000083b85c050000ff750b8b0e56ff91580300005ec3578b3e56ff97840000008b905c0500005256ff97540300005f5ec3",
+ "relocs": []
+}

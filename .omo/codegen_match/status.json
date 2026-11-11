@@ -755,6 +755,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x410be0": {
+  "attempts": 1,
+  "first_diff": "+2 mov edi, dword ptr [esp + 0xc]",
+  "name": "AbstractTypeClass::ProcessPower",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "status": "NG"
+ },
  "0x410e50": {
   "attempts": 1,
   "first_diff": null,
@@ -845,6 +852,13 @@
   "name": "ObjectClass::HasLinkedObject",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x413800": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadGame::ClearAllSlots",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4138c0": {
   "attempts": 1,
@@ -1174,6 +1188,13 @@
   "name": "0x4208c0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x420da0": {
+  "attempts": 1,
+  "first_diff": "+1 push edi",
+  "name": "AlphaShapeClass::SD_vt13",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x420e90": {
   "attempts": 11,
@@ -1665,6 +1686,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x439110": {
+  "attempts": 1,
+  "first_diff": "+19 mov edx, dword ptr [esi]",
+  "name": "Stream::FlushAndReset",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4393d0": {
   "attempts": 5,
   "first_diff": null,
@@ -2064,6 +2092,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x46b910": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x46b910",
+  "note": "decomp_batch r2: NO_EXPORT",
+  "status": "PENDING"
+ },
  "0x46b990": {
   "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 4",
@@ -2273,6 +2308,13 @@
   "name": "Math::InitArcTan",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x473c00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CCFileClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x474010": {
   "attempts": 1,
@@ -4696,6 +4738,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4cc680": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4cc680",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4cc790": {
   "attempts": 1,
   "first_diff": null,
@@ -4842,6 +4891,13 @@
   "name": "FootClass::vt_entry_54C",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4dbda0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::CanBeHunted",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4dc810": {
   "attempts": 4,
@@ -5148,6 +5204,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x4e7f70",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4e8090": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e8090",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -6362,6 +6425,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x5295a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIClass::ReadBool3",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x52ace0": {
   "attempts": 1,
   "first_diff": null,
@@ -7426,6 +7496,20 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x557e60": {
+  "attempts": 1,
+  "first_diff": "+13 je 0x557e99",
+  "name": "CheckListClass::HitTest",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
+ "0x557fd0": {
+  "attempts": 1,
+  "first_diff": "+8 je 0x558001",
+  "name": "ListClass::Flag_To_Redraw",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x558120": {
   "attempts": 1,
   "first_diff": null,
@@ -8083,6 +8167,13 @@
   "name": "Map_Check",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x5a1f60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5a1f60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x5a4fa0": {
   "attempts": 1,
@@ -9694,6 +9785,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x623120": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Dialog::PumpMessages",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6234b0": {
   "attempts": 9,
   "first_diff": null,
@@ -10076,6 +10174,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_631FE0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x632ff0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GameClass::validateGameFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10960,6 +11065,13 @@
   "name": "LoadGame::RemoveItem",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x660fd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x660fd0",
+  "note": "decomp_batch r2: NO_EXPORT",
+  "status": "PENDING"
  },
  "0x6613a0": {
   "attempts": 1,
@@ -11947,6 +12059,13 @@
   "name": "nullsub_37",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6b94e0": {
+  "attempts": 1,
+  "first_diff": "+3 mov ebx, ecx",
+  "name": "sub_6B94E0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x6baef0": {
   "attempts": 4,
@@ -13044,6 +13163,13 @@
   "attempts": 1,
   "first_diff": "+8 call dword ptr [eax + 0x2a8]",
   "name": "TechnoClass::Vt170",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x708dc0": {
+  "attempts": 1,
+  "first_diff": "+3 mov eax, dword ptr [esi]",
+  "name": "TechnoClass::GetPrimaryTargetOrFallback",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
@@ -14895,6 +15021,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x767fb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ConstructWDTSelection_Create_767FB0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x769330": {
   "attempts": 1,
   "first_diff": null,
@@ -16467,6 +16600,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7cd95f",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7ceaff": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7ceaff",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },

@@ -1,0 +1,11 @@
+{
+ "addr": "0x557E60",
+ "name": "CheckListClass::HitTest",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x557E60",
+ "bytes_hex": "568bf1578b7c240c8a465484c0742a8b86180100008d8e1801000057ff50148b96b80000008d8eb800000057ff52148b46588d4e5857ff5014578bcee82fe8ffff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

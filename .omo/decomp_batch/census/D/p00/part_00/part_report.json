@@ -1,0 +1,314 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_CLS": 4,
+   "MISMATCH": 7,
+   "COMPILE_FAIL": 7,
+   "NO_EXPORT": 2
+  },
+  "pathologies": {
+   "eval_order": 1,
+   "regalloc": 2,
+   "branch_polarity": 2,
+   "codegen_shape": 2
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x4e8090",
+   "batch": "censusD",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4e8090",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7ceaff",
+   "batch": "censusD",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7ceaff",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x410be0",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 52B ours 52B",
+   "first_diff": {
+    "orig": "+2 mov edi, dword ptr [esp + 0xc]",
+    "ours": "+2 mov esi, ecx"
+   },
+   "pathology": "eval_order",
+   "name": "AbstractTypeClass::ProcessPower",
+   "emitted": "AbstractTypeClass::ProcessPower",
+   "unit": "AbstractTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "5/5",
+   "rule_violations": 0,
+   "orig_size": 52,
+   "ours_size": 52
+  },
+  {
+   "addr": "0x439110",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 59B",
+   "first_diff": {
+    "orig": "+19 mov edx, dword ptr [esi]",
+    "ours": "+19 mov ecx, dword ptr [esi]"
+   },
+   "pathology": "regalloc",
+   "name": "Stream::FlushAndReset",
+   "emitted": "Stream::FlushAndReset",
+   "unit": "Stream",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "7/7",
+   "rule_violations": 2,
+   "orig_size": 56,
+   "ours_size": 59
+  },
+  {
+   "addr": "0x557fd0",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 58B ours 61B",
+   "first_diff": {
+    "orig": "+8 je 0x558001",
+    "ours": "+8 je 0x34"
+   },
+   "pathology": "branch_polarity",
+   "name": "ListClass::Flag_To_Redraw",
+   "emitted": "ListClass::Flag_To_Redraw",
+   "unit": "ListClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 14,
+   "orig_size": 58,
+   "ours_size": 61
+  },
+  {
+   "addr": "0x708dc0",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 61B ours 59B",
+   "first_diff": {
+    "orig": "+3 mov eax, dword ptr [esi]",
+    "ours": "+3 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "TechnoClass::GetPrimaryTargetOrFallback",
+   "emitted": "TechnoClass::GetPrimaryTargetOrFallback",
+   "unit": "TechnoClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 61,
+   "ours_size": 59
+  },
+  {
+   "addr": "0x420da0",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 63B ours 48B",
+   "first_diff": {
+    "orig": "+1 push edi",
+    "ours": "+1 mov esi, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "AlphaShapeClass::SD_vt13",
+   "emitted": "AlphaShapeClass::SD_vt13",
+   "unit": "AlphaShapeClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "5/5",
+   "rule_violations": 8,
+   "orig_size": 63,
+   "ours_size": 48
+  },
+  {
+   "addr": "0x623120",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\unknown.cpp(10) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\unknown.cpp(1",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Dialog::PumpMessages",
+   "emitted": "unknown::PumpMessages",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "6/8",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x6b94e0",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 68B ours 70B",
+   "first_diff": {
+    "orig": "+3 mov ebx, ecx",
+    "ours": "+3 mov edi, ecx"
+   },
+   "pathology": "regalloc",
+   "name": "sub_6B94E0",
+   "emitted": "ObjectClass::sub_6B94E0",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "5/5",
+   "rule_violations": 0,
+   "orig_size": 68,
+   "ours_size": 70
+  },
+  {
+   "addr": "0x5295a0",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\INIClass.cpp(12) : error C2664: 'SetString' : cannot convert parameter 3 from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\c",
+   "first_diff": null,
+   "pathology": null,
+   "name": "INIClass::ReadBool3",
+   "emitted": "INIClass::ReadBool3",
+   "unit": "INIClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "8/9",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x557e60",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 70B ours 75B",
+   "first_diff": {
+    "orig": "+13 je 0x557e99",
+    "ours": "+13 je 0x3c"
+   },
+   "pathology": "branch_polarity",
+   "name": "CheckListClass::HitTest",
+   "emitted": "ListClass::HitTest",
+   "unit": "ListClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 14,
+   "orig_size": 70,
+   "ours_size": 75
+  },
+  {
+   "addr": "0x4cc680",
+   "batch": "censusD",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4cc680",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x660fd0",
+   "batch": "censusD",
+   "verdict": "NO_EXPORT",
+   "note": "AttributeError: 'NoneType' object has no attribute 'group'",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x46b910",
+   "batch": "censusD",
+   "verdict": "NO_EXPORT",
+   "note": "AttributeError: 'NoneType' object has no attribute 'group'",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x767fb0",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\rc_ptr.cpp(19) : error C2275: 'rc_ptr' : illegal use of this type as an expression; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\rc",
+   "first_diff": null,
+   "pathology": null,
+   "name": "ConstructWDTSelection_Create_767FB0",
+   "emitted": "rc_ptr::ConstructWDTSelection_Create_767FB0",
+   "unit": "rc_ptr",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "5/5",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x5a1f60",
+   "batch": "censusD",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5a1f60",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x413800",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\LoadGame.cpp(20) : error C2664: 'void (class LoadGame *)' : cannot convert parameter 1 from 'char *' to 'class LoadGame *'; D:\\RA2YR_ReSource\\.",
+   "first_diff": null,
+   "pathology": null,
+   "name": "LoadGame::ClearAllSlots",
+   "emitted": "LoadGame::ClearAllSlots",
+   "unit": "LoadGame",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 10
+  },
+  {
+   "addr": "0x4dbda0",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\FootClass.cpp(20) : error C2660: 'COMStub_Return0_32' : function does not take 1 parameters",
+   "first_diff": null,
+   "pathology": null,
+   "name": "FootClass::CanBeHunted",
+   "emitted": "FootClass::CanBeHunted",
+   "unit": "FootClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x473c00",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\CCFileClass.cpp(19) : error C2664: 'LookupFileInfoCache' : cannot convert parameter 1 from 'const char *' to 'void *'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CCFileClass::GetSize",
+   "emitted": "CCFileClass::GetSize",
+   "unit": "CCFileClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "8/8",
+   "rule_violations": 4
+  },
+  {
+   "addr": "0x632ff0",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\PKPipe.cpp(10) : error C2653: 'BlowPipe' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\D\\p00\\part_00\\PKPipe.cp",
+   "first_diff": null,
+   "pathology": null,
+   "name": "GameClass::validateGameFile",
+   "emitted": "PKPipe::validateGameFile",
+   "unit": "PKPipe",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "11/11",
+   "rule_violations": 1
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?ProcessPower@AbstractTypeClass@@QAEHPAH@Z",
+ "sym_key": "AbstractTypeClass::ProcessPower",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "56578bf1e8000000008b46248b7c240c508bcfe8000000008b4e64518bcfe8000000000fbe563d528bcfe8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?AddString@Checksum@@QAEHPAX@Z",
+   "sym_key": "Checksum::AddString"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?AddString@Checksum@@QAEHPAX@Z",
+   "sym_key": "Checksum::AddString"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?AddString@Checksum@@QAEHPAX@Z",
+   "sym_key": "Checksum::AddString"
+  }
+ ]
+}

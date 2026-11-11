@@ -1,0 +1,15 @@
+{
+ "symbol": "?Flag_To_Redraw@ListClass@@QAEXXZ",
+ "sym_key": "ListClass::Flag_To_Redraw",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "568bf18a465484c0742a8b4e588d465850ff51488b96b80000008d86b800000050ff52488b8e180100008d861801000050ff51488bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?MarkDirty@VectorClass_ptr_ConvertClass@@QAEXXZ",
+   "sym_key": "VectorClass_ptr_ConvertClass::MarkDirty"
+  }
+ ]
+}

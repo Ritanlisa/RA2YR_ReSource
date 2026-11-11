@@ -1,0 +1,95 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x410be0 AbstractTypeClass::ProcessPower -> AbstractTypeClass
+[conv] 0x439110 Stream::FlushAndReset -> Stream
+[conv] 0x557fd0 ListClass::Flag_To_Redraw -> ListClass
+[conv] 0x708dc0 TechnoClass::GetPrimaryTargetOrFallback -> TechnoClass
+[conv] 0x420da0 AlphaShapeClass::SD_vt13 -> AlphaShapeClass
+[conv] 0x623120 unknown::PumpMessages -> unknown
+[conv] 0x6b94e0 ObjectClass::sub_6B94E0 -> ObjectClass
+[conv] 0x5295a0 INIClass::ReadBool3 -> INIClass
+[conv] 0x557e60 ListClass::HitTest -> ListClass
+[conv] 0x767fb0 rc_ptr::ConstructWDTSelection_Create_767FB0 -> rc_ptr
+[conv] 0x413800 LoadGame::ClearAllSlots -> LoadGame
+[conv] 0x4dbda0 FootClass::CanBeHunted -> FootClass
+[conv] 0x473c00 CCFileClass::GetSize -> CCFileClass
+[conv] 0x632ff0 PKPipe::validateGameFile -> PKPipe
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractTypeClass        rc=0
+[era] Stream                   rc=0
+[era] ListClass                rc=0
+[era] TechnoClass              rc=0
+[era] AlphaShapeClass          rc=0
+[era] unknown                  rc=2
+[era] ObjectClass              rc=0
+[era] INIClass                 rc=2
+[era] rc_ptr                   rc=2
+[era] LoadGame                 rc=2
+[era] FootClass                rc=2
+[era] CCFileClass              rc=2
+[era] PKPipe                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x410be0   MISMATCH         AbstractTypeClass::ProcessPower
+[diff] 0x439110   MISMATCH         Stream::FlushAndReset
+[diff] 0x557fd0   MISMATCH         ListClass::Flag_To_Redraw
+[diff] 0x557e60   MISMATCH         ListClass::HitTest
+[diff] 0x708dc0   MISMATCH         TechnoClass::GetPrimaryTargetOrFallback
+[diff] 0x420da0   MISMATCH         AlphaShapeClass::SD_vt13
+[diff] 0x6b94e0   MISMATCH         ObjectClass::sub_6B94E0
+[ledger] 0x4e8090 0x4e8090 -> PENDING (attempt 1)
+[ledger] 0x7ceaff 0x7ceaff -> PENDING (attempt 1)
+[ledger] 0x410be0 AbstractTypeClass::ProcessPower -> NG (attempt 1)
+[ledger] 0x439110 Stream::FlushAndReset -> NG (attempt 1)
+[ledger] 0x557fd0 ListClass::Flag_To_Redraw -> NG (attempt 1)
+[ledger] 0x708dc0 TechnoClass::GetPrimaryTargetOrFallback -> NG (attempt 1)
+[ledger] 0x420da0 AlphaShapeClass::SD_vt13 -> NG (attempt 1)
+[ledger] 0x623120 Dialog::PumpMessages -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b94e0 sub_6B94E0 -> NG (attempt 1)
+[ledger] 0x5295a0 INIClass::ReadBool3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557e60 CheckListClass::HitTest -> NG (attempt 1)
+[ledger] 0x4cc680 0x4cc680 -> PENDING (attempt 1)
+[ledger] 0x660fd0 0x660fd0 -> PENDING (attempt 1)
+[ledger] 0x46b910 0x46b910 -> PENDING (attempt 1)
+[ledger] 0x767fb0 ConstructWDTSelection_Create_767FB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a1f60 0x5a1f60 -> PENDING (attempt 1)
+[ledger] 0x413800 LoadGame::ClearAllSlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dbda0 FootClass::CanBeHunted -> COMPILE_FAIL (attempt 1)
+[ledger] 0x473c00 CCFileClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x632ff0 GameClass::validateGameFile -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2374,
+ "verdicts": {
+  "MISMATCH": 664,
+  "MATCH": 521,
+  "COMPILE_FAIL": 668,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 505,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 227,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 66,
+  "branch_polarity": 48,
+  "regalloc": 106,
+  "branch_order": 77,
+  "width_mismatch": 8,
+  "extern_reloc": 18,
+  "cc_mismatch": 25,
+  "signedness": 3
+ },
+ "match_rate_of_decided_pct": 44.0,
+ "match_rate_of_total_pct": 21.9,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p00\batch_report.json
