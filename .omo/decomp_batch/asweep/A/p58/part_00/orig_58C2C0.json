@@ -1,0 +1,11 @@
+{
+ "addr": "0x58C2C0",
+ "name": "GetTileDataEntry",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58C2C0",
+ "bytes_hex": "8d04898b0d10edab00c1e00403c1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

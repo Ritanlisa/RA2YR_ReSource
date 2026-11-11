@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetTileDataEntry@@YIPADH@Z",
+ "sym_key": "Unnamed::GetTileDataEntry",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8d04898b0d00000000c1e00403c1c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetMissionControl@MissionClass@@QAEPADXZ",
+ "sym_key": "MissionClass::GetMissionControl",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b81ac000000c1e0050500000000c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E3A8@@3EA",
+   "sym_key": "DataGlobal_A8E3A8"
+  }
+ ]
+}

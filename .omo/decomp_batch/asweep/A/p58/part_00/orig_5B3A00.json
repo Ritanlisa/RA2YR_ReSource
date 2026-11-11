@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B3A00",
+ "name": "MissionClass::GetMissionControl",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B3A00",
+ "bytes_hex": "8b81ac000000c1e00505a8e3a800c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

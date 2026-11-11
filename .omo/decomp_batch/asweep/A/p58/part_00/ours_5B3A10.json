@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasValidTarget@MissionClass@@QAEEXZ",
+ "sym_key": "MissionClass::HasValidTarget",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b91b000000033c083faff0f95c0c3",
+ "relocs": []
+}
