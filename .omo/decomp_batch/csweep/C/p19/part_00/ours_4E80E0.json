@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_19@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_19",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b0d00000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?processPacket@IPXManagerClass@@QAEHXZ",
+   "sym_key": "IPXManagerClass::processPacket"
+  }
+ ]
+}

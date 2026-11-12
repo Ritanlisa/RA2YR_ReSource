@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_2@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_2",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "0fbe050000000050e80000000059c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_AudioInitFlag@@3DA",
+   "sym_key": "g_AudioInitFlag"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?sub_42A900@@YAXH@Z",
+   "sym_key": "sub_42A900"
+  }
+ ]
+}

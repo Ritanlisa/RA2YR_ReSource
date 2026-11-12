@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d4bd8 ___pxcptinfoptrs -> _addr_7D
+[conv] 0x407060 ObjectClass::sub_407060 -> ObjectClass
+[conv] 0x40ad80 unknown_libname_1 -> _addr_40
+[conv] 0x40afc0 unknown_libname_2 -> _addr_40
+[conv] 0x40e050 unknown_libname_5 -> _addr_40
+[conv] 0x40e100 unknown_libname_6 -> _addr_40
+[conv] 0x40e260 unknown_libname_8 -> _addr_40
+[conv] 0x40e310 unknown_libname_9 -> _addr_40
+[conv] 0x40ebc0 unknown_libname_10 -> _addr_40
+[conv] 0x40f290 unknown_libname_11 -> _addr_40
+[conv] 0x49b420 unknown_libname_12 -> _addr_49
+[conv] 0x4e7d30 unknown_libname_13 -> _addr_4E
+[conv] 0x4e7e10 unknown_libname_14 -> _addr_4E
+[conv] 0x4e7e90 unknown_libname_16 -> _addr_4E
+[conv] 0x4e8050 unknown_libname_17 -> _addr_4E
+[conv] 0x4e80e0 unknown_libname_19 -> _addr_4E
+[conv] 0x54dff0 JumpjetLocomotionClass::SmallStub_54DFF0 -> JumpjetLocomotionClass
+[conv] 0x54e000 JumpjetLocomotionClass::SmallStub_54E000 -> JumpjetLocomotionClass
+[conv] 0x54e010 JumpjetLocomotionClass::SmallStub_54E010 -> JumpjetLocomotionClass
+[conv] 0x54e020 JumpjetLocomotionClass::SmallStub_54E020 -> JumpjetLocomotionClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=0
+[era] ObjectClass              rc=0
+[era] _addr_40                 rc=0
+[era] _addr_49                 rc=0
+[era] _addr_4E                 rc=0
+[era] JumpjetLocomotionClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x7d4bd8   MISMATCH         ___pxcptinfoptrs
+[diff] 0x407060   MATCH            ObjectClass::sub_407060
+[diff] 0x40ad80   MISMATCH         unknown_libname_1
+[diff] 0x40afc0   MISMATCH         unknown_libname_2
+[diff] 0x40e050   MATCH            unknown_libname_5
+[diff] 0x40e100   MATCH            unknown_libname_6
+[diff] 0x40e260   MATCH            unknown_libname_8
+[diff] 0x40e310   MATCH            unknown_libname_9
+[diff] 0x40ebc0   MISMATCH         unknown_libname_10
+[diff] 0x40f290   MISMATCH         unknown_libname_11
+[diff] 0x49b420   MATCH            unknown_libname_12
+[diff] 0x4e7d30   MISMATCH         unknown_libname_13
+[diff] 0x4e7e10   MATCH            unknown_libname_14
+[diff] 0x4e7e90   MISMATCH         unknown_libname_16
+[diff] 0x4e8050   MISMATCH         unknown_libname_17
+[diff] 0x4e80e0   MISMATCH         unknown_libname_19
+[diff] 0x54dff0   MISMATCH         JumpjetLocomotionClass::SmallStub_54DFF0
+[diff] 0x54e000   MISMATCH         JumpjetLocomotionClass::SmallStub_54E000
+[diff] 0x54e010   MISMATCH         JumpjetLocomotionClass::SmallStub_54E010
+[diff] 0x54e020   MISMATCH         JumpjetLocomotionClass::SmallStub_54E020
+[ledger] 0x7d4bd8 ___pxcptinfoptrs -> NG (attempt 1)
+[ledger] 0x407060 ObjectClass::sub_407060 -> OK (attempt 1)
+[ledger] 0x40ad80 unknown_libname_1 -> NG (attempt 1)
+[ledger] 0x40afc0 unknown_libname_2 -> NG (attempt 1)
+[ledger] 0x40e050 unknown_libname_5 -> OK (attempt 1)
+[ledger] 0x40e100 unknown_libname_6 -> OK (attempt 1)
+[ledger] 0x40e260 unknown_libname_8 -> OK (attempt 1)
+[ledger] 0x40e310 unknown_libname_9 -> OK (attempt 1)
+[ledger] 0x40ebc0 unknown_libname_10 -> NG (attempt 1)
+[ledger] 0x40f290 unknown_libname_11 -> NG (attempt 1)
+[ledger] 0x49b420 unknown_libname_12 -> OK (attempt 1)
+[ledger] 0x4e7d30 unknown_libname_13 -> NG (attempt 1)
+[ledger] 0x4e7e10 unknown_libname_14 -> OK (attempt 1)
+[ledger] 0x4e7e90 unknown_libname_16 -> NG (attempt 1)
+[ledger] 0x4e8050 unknown_libname_17 -> NG (attempt 1)
+[ledger] 0x4e80e0 unknown_libname_19 -> NG (attempt 1)
+[ledger] 0x54dff0 JumpjetLocomotionClass::SmallStub_54DFF0 -> NG (attempt 1)
+[ledger] 0x54e000 JumpjetLocomotionClass::SmallStub_54E000 -> NG (attempt 1)
+[ledger] 0x54e010 JumpjetLocomotionClass::SmallStub_54E010 -> NG (attempt 1)
+[ledger] 0x54e020 JumpjetLocomotionClass::SmallStub_54E020 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "MATCH": 7
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 4,
+  "extern_reloc": 4,
+  "frame_sched": 4
+ },
+ "match_rate_of_decided_pct": 35.0,
+ "match_rate_of_total_pct": 35.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p19\batch_report.json

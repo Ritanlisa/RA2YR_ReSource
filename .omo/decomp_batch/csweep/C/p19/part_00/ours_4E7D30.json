@@ -1,0 +1,45 @@
+{
+ "symbol": "?unknown_libname_13@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_13",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "5733c0b940000000bf14000000a300000000a30c000000a310000000f3ab8b0d00000000e8000000005fc3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_MixFile_LoadCount@@3IA",
+   "sym_key": "g_MixFile_LoadCount"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_MixFile_LoadCount@@3IA",
+   "sym_key": "g_MixFile_LoadCount"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_MixFile_LoadCount@@3IA",
+   "sym_key": "g_MixFile_LoadCount"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_MixFile_LoadCount@@3IA",
+   "sym_key": "g_MixFile_LoadCount"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_MixFile_LoadCount@@3IA",
+   "sym_key": "g_MixFile_LoadCount"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Dtor@Straw@@QAEHXZ",
+   "sym_key": "Straw::Dtor"
+  }
+ ]
+}

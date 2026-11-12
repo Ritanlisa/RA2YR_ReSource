@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_12@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_12",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "b900000000e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?ClearContents@INIClass@@QAEPADXZ",
+   "sym_key": "INIClass::ClearContents"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_14@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_14",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "b900000000e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8ECD8@@3IA",
+   "sym_key": "DataGlobal_A8ECD8"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?ReleaseWaveAndString@ObjectTypeClass@@QAEXXZ",
+   "sym_key": "ObjectTypeClass::ReleaseWaveAndString"
+  }
+ ]
+}

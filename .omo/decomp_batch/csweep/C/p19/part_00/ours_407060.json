@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_407060@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_407060",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "ba00400000e900000000",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  }
+ ]
+}

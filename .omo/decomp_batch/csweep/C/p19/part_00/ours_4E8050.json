@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_17@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_17",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b0d00000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?CleanupArrays@ObjectManager@@QAEXXZ",
+   "sym_key": "ObjectManager::CleanupArrays"
+  }
+ ]
+}

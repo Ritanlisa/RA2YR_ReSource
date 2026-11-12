@@ -885,6 +885,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x407060": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_407060",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_407060",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x407070": {
   "attempts": 4,
   "first_diff": "+0 xor edx, edx",
@@ -1497,6 +1509,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40ad80": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x87e8a8",
+  "name": "unknown_libname_1",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_1",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x40adc0": {
   "attempts": 2,
   "clean": true,
@@ -1594,6 +1617,17 @@
   "orig_name": "sub_40AF80",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x40afc0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x87e8b8",
+  "name": "unknown_libname_2",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "unknown_libname_2",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x40b120": {
@@ -2966,6 +3000,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40e050": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "unknown_libname_5",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "unknown_libname_5",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x40e060": {
   "attempts": 6,
   "clean": false,
@@ -2977,6 +3022,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40e100": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "unknown_libname_6",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "unknown_libname_6",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x40e1b0": {
   "attempts": 4,
   "clean": true,
@@ -2984,6 +3040,28 @@
   "name": "unknown_libname_7",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "unknown_libname_7",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x40e260": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "unknown_libname_8",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "unknown_libname_8",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x40e310": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "unknown_libname_9",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "unknown_libname_9",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -3178,6 +3256,17 @@
   "orig_name": "nullsub_59",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x40ebc0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x88732c",
+  "name": "unknown_libname_10",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_10",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x40ec00": {
@@ -3420,6 +3509,17 @@
   "name": "sub_40F270",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_40F270",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x40f290": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x887460",
+  "name": "unknown_libname_11",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "unknown_libname_11",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -16896,6 +16996,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x49b420": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "unknown_libname_12",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "unknown_libname_12",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x49b430": {
   "attempts": 1,
   "clean": false,
@@ -25373,6 +25484,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e7d30": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xa8e7b0",
+  "name": "unknown_libname_13",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_13",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e7de0": {
   "attempts": 1,
   "clean": false,
@@ -25384,6 +25506,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e7e10": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "unknown_libname_14",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "unknown_libname_14",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4e7e20": {
   "attempts": 3,
   "clean": false,
@@ -25391,6 +25524,17 @@
   "name": "unknown_libname_15",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "unknown_libname_15",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7e90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xa83e18",
+  "name": "unknown_libname_16",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_16",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -25439,6 +25583,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e8050": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xa8b238",
+  "name": "unknown_libname_17",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "unknown_libname_17",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e8090": {
   "attempts": 5,
   "clean": false,
@@ -25446,6 +25601,17 @@
   "name": "unknown_libname_18",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "unknown_libname_18",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e80e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xa8e9c0",
+  "name": "unknown_libname_19",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "unknown_libname_19",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -37170,6 +37336,54 @@
   "orig_name": "JumpjetLocomotionClass::CheckAttachStatus",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x54dff0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_54DFF0",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_54DFF0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x54e000": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_54E000",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_54E000",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x54e010": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_54E010",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_54E010",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x54e020": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
+  "name": "JumpjetLocomotionClass::SmallStub_54E020",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_54E020",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x54e080": {
@@ -94741,6 +94955,17 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "_siglookup",
   "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7d4bd8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 call 0x7d140b",
+  "name": "___pxcptinfoptrs",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "___pxcptinfoptrs",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
