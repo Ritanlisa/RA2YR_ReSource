@@ -1,0 +1,21 @@
+{
+ "symbol": "?SmallFunc_6D1E30@Tactical@@QAEPAV1@H@Z",
+ "sym_key": "Tactical::SmallFunc_6D1E30",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e800000000e8000000008986a40d000033c08986ac0d0000890689460489460889460c5ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?InitVtables@AbstractClass@@QAEPAV1@H@Z",
+   "sym_key": "AbstractClass::InitVtables"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

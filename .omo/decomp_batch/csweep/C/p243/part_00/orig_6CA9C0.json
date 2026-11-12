@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CA9C0",
+ "name": "VectorClass_ptr_SubTitle::Constructor_VectorClass_SubTitle___",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CA9C0",
+ "bytes_hex": "568bf18b4604c7068c3f7f0085c074178a4e0d84c9741050e860e10f0083c404c74604000000008a442408c6460d00a801c7460800000000740956e83de10f0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
