@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p104\part_00
+=== convert (20 addrs) ===
+[conv] 0x5134d0 VectorClass::ClearAndFree4 -> VectorClass
+[conv] 0x5251c0 _VectorClass_PBVAnimTypeClass::Destroy_Alt -> _VectorClass_PBVAnimTypeClass
+[conv] 0x538610 _VectorClass_PAVCCINIClass::ddtor -> _VectorClass_PAVCCINIClass
+[conv] 0x53c610 _VectorClass_PBVAnimClass::ddtor -> _VectorClass_PBVAnimClass
+[conv] 0x53db90 _VectorClass_PAVIonBlastClass::Remove -> _VectorClass_PAVIonBlastClass
+[conv] 0x54a340 _VectorClass_PAG::Set -> _VectorClass_PAG
+[conv] 0x54a5a0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Remove -> _VectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54e9e0 _VectorClass_PAUKamikazeControl::ddtor -> _VectorClass_PAUKamikazeControl
+[conv] 0x551420 _VectorClass_PAVLaserDrawClass::Remove -> _VectorClass_PAVLaserDrawClass
+[conv] 0x5553b0 _VectorClass_PAVLightSourceClass::Remove -> _VectorClass_PAVLightSourceClass
+[conv] 0x557000 _VectorClass_PAVLineTrail::Remove -> _VectorClass_PAVLineTrail
+[conv] 0x558330 _VectorClass_PBG::Set -> _VectorClass_PBG
+[conv] 0x55a2a0 _VectorClass_PAVFileEntryClass::ClearBuffer -> _VectorClass_PAVFileEntryClass
+[conv] 0x5894a0 VectorClass::allocateCellArrays -> VectorClass
+[conv] 0x589d90 VectorClass::InitCellVe_vt03 -> VectorClass
+[conv] 0x589fa0 _VectorClass_W4PassabilityType::ddtor -> _VectorClass_W4PassabilityType
+[conv] 0x58a7b0 _VectorClass_U_HashObject_II::ddtor -> _VectorClass_U_HashObject_II
+[conv] 0x58a9f0 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::ddtor -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x5ac190 sub_5AC190 -> _addr_5A
+[conv] 0x5ac790 _VectorClass_PAVMapRegionClass::Remove -> _VectorClass_PAVMapRegionClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=0
+[era] _VectorClass_PBVAnimTypeClass rc=2
+[era] _VectorClass_PAVCCINIClass rc=0
+[era] _VectorClass_PBVAnimClass rc=0
+[era] _VectorClass_PAVIonBlastClass rc=0
+[era] _VectorClass_PAG         rc=0
+[era] _VectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] _VectorClass_PAUKamikazeControl rc=0
+[era] _VectorClass_PAVLaserDrawClass rc=0
+[era] _VectorClass_PAVLightSourceClass rc=0
+[era] _VectorClass_PAVLineTrail rc=0
+[era] _VectorClass_PBG         rc=0
+[era] _VectorClass_PAVFileEntryClass rc=0
+[era] _VectorClass_W4PassabilityType rc=0
+[era] _VectorClass_U_HashObject_II rc=0
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+[era] _addr_5A                 rc=0
+[era] _VectorClass_PAVMapRegionClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5134d0   MISMATCH         VectorClass::ClearAndFree4
+[diff] 0x5894a0   MISMATCH         VectorClass::allocateCellArrays
+[diff] 0x589d90   MISMATCH         VectorClass::InitCellVe_vt03
+[diff] 0x538610   MISMATCH         _VectorClass_PAVCCINIClass::ddtor
+[diff] 0x53c610   MISMATCH         _VectorClass_PBVAnimClass::ddtor
+[diff] 0x53db90   MISMATCH         _VectorClass_PAVIonBlastClass::Remove
+[diff] 0x54a340   MISMATCH         _VectorClass_PAG::Set
+[diff] 0x54a5a0   MISMATCH         _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Remove
+[diff] 0x54e9e0   MISMATCH         _VectorClass_PAUKamikazeControl::ddtor
+[diff] 0x551420   MISMATCH         _VectorClass_PAVLaserDrawClass::Remove
+[diff] 0x5553b0   MISMATCH         _VectorClass_PAVLightSourceClass::Remove
+[diff] 0x557000   MISMATCH         _VectorClass_PAVLineTrail::Remove
+[diff] 0x558330   MISMATCH         _VectorClass_PBG::Set
+[diff] 0x55a2a0   MISMATCH         _VectorClass_PAVFileEntryClass::ClearBuffer
+[diff] 0x589fa0   MISMATCH         _VectorClass_W4PassabilityType::ddtor
+[diff] 0x58a7b0   MISMATCH         _VectorClass_U_HashObject_II::ddtor
+[diff] 0x58a9f0   MISMATCH         _VectorClass_U_HashObject_IUSubzoneConnectionStruct::ddtor
+[diff] 0x5ac190   MISMATCH         sub_5AC190
+[diff] 0x5ac790   MISMATCH         _VectorClass_PAVMapRegionClass::Remove
+[ledger] 0x5134d0 VectorClass::ClearAndFree4 -> NG (attempt 1)
+[ledger] 0x5251c0 _VectorClass_PBVAnimTypeClass::Destroy_Alt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538610 _VectorClass_PAVCCINIClass::ddtor -> NG (attempt 1)
+[ledger] 0x53c610 _VectorClass_PBVAnimClass::ddtor -> NG (attempt 1)
+[ledger] 0x53db90 _VectorClass_PAVIonBlastClass::Remove -> NG (attempt 1)
+[ledger] 0x54a340 _VectorClass_PAG::Set -> NG (attempt 1)
+[ledger] 0x54a5a0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x54e9e0 _VectorClass_PAUKamikazeControl::ddtor -> NG (attempt 1)
+[ledger] 0x551420 _VectorClass_PAVLaserDrawClass::Remove -> NG (attempt 1)
+[ledger] 0x5553b0 _VectorClass_PAVLightSourceClass::Remove -> NG (attempt 1)
+[ledger] 0x557000 _VectorClass_PAVLineTrail::Remove -> NG (attempt 1)
+[ledger] 0x558330 _VectorClass_PBG::Set -> NG (attempt 1)
+[ledger] 0x55a2a0 _VectorClass_PAVFileEntryClass::ClearBuffer -> NG (attempt 1)
+[ledger] 0x5894a0 VectorClass::allocateCellArrays -> NG (attempt 1)
+[ledger] 0x589d90 VectorClass::InitCellVe_vt03 -> NG (attempt 1)
+[ledger] 0x589fa0 _VectorClass_W4PassabilityType::ddtor -> NG (attempt 1)
+[ledger] 0x58a7b0 _VectorClass_U_HashObject_II::ddtor -> NG (attempt 1)
+[ledger] 0x58a9f0 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::ddtor -> NG (attempt 1)
+[ledger] 0x5ac190 sub_5AC190 -> NG (attempt 1)
+[ledger] 0x5ac790 _VectorClass_PAVMapRegionClass::Remove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "width_mismatch": 3,
+  "regalloc": 15,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p104\batch_report.json

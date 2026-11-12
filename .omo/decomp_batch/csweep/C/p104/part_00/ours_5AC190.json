@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_5AC190@@YAXXZ",
+ "sym_key": "Unnamed::sub_5AC190",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "5657be00000000bf6d0000008b46f483c6f450e80000000083c4044fc7060000000075e85f5ec3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
