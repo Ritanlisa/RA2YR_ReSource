@@ -1,0 +1,15 @@
+{
+ "symbol": "?checkSpawnState@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::checkSpawnState",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "83b9d8060000ff750ce80000000084c0750333c0c3b801000000c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?HasPassengers@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::HasPassengers"
+  }
+ ]
+}

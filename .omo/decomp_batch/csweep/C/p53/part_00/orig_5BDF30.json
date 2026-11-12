@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BDF30",
+ "name": "MouseClass::LoadTypeData",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BDF30",
+ "bytes_hex": "e82b231100badcf2ab00b94c608200e88c59eeffa394f2ab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

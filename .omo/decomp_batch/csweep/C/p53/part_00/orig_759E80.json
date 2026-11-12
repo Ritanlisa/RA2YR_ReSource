@@ -1,0 +1,11 @@
+{
+ "addr": "0x759E80",
+ "name": "AbstractClass::finalizeConstruction",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x759E80",
+ "bytes_hex": "568bf18b8e00020000e8329706008b0e5e85c97405e986fef6ffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BDA80",
+ "name": "Mission::SetAndCall",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BDA80",
+ "bytes_hex": "8b4424048b11568b74240c5650898164550000ff524c5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

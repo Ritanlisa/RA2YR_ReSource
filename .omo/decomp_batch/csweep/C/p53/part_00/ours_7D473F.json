@@ -1,0 +1,15 @@
+{
+ "symbol": "?__ultoa@@YAPADIPADH@Z",
+ "sym_key": "Unnamed::__ultoa",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c2404568b74240c6a00505651e80000000083c4108bc65ec3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?xtoa@@YAHHPAXHHZZ",
+   "sym_key": "xtoa"
+  }
+ ]
+}

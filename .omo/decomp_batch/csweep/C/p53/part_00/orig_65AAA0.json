@@ -1,0 +1,11 @@
+{
+ "addr": "0x65AAA0",
+ "name": "ObjectClass::ThunkTo636",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65AAA0",
+ "bytes_hex": "8b5424088b01528b5424086830eca80052ff907c020000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?MPCooperative_Helper@@YAJXZ",
+ "sym_key": "Unnamed::MPCooperative_Helper",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "a1000000006a006a006888010000685305000050e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  }
+ ]
+}

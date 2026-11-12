@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetAndCall@MouseClass@@QAEHHH@Z",
+ "sym_key": "MouseClass::SetAndCall",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b018991645500008b4c24085152ff504cc20800",
+ "relocs": []
+}

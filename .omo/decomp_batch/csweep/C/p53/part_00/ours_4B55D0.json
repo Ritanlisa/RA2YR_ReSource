@@ -1,0 +1,8 @@
+{
+ "symbol": "?ScrollDown@DropListClass@@QAEHH@Z",
+ "sym_key": "DropListClass::ScrollDown",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b4424048d91b00000005052ff9150010000c20400",
+ "relocs": []
+}

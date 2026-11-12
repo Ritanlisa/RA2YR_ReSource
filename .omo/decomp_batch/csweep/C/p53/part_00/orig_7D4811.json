@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D4811",
+ "name": "__ui64toa",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D4811",
+ "bytes_hex": "558bec6a00ff7514ff7510ff750cff7508e864ffffff8b45105dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

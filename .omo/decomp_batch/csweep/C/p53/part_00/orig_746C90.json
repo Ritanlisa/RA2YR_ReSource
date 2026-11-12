@@ -1,0 +1,11 @@
+{
+ "addr": "0x746C90",
+ "name": "TechnoClass::checkSpawnState",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746C90",
+ "bytes_hex": "83b9d8060000ff750ce83283fcff84c0750333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

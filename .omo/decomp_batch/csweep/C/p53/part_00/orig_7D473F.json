@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D473F",
+ "name": "__ultoa",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D473F",
+ "bytes_hex": "6a00ff742410ff742410ff742410e867ffffff8b44241883c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

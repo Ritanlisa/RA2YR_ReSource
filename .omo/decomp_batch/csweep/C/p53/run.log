@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p53\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d735a _GetLcidFromDefault -> _addr_7D
+[conv] 0x4b55d0 DropListClass::ScrollDown -> DropListClass
+[conv] 0x5bda80 MouseClass::SetAndCall -> MouseClass
+[conv] 0x65aaa0 ObjectClass::ThunkTo636 -> ObjectClass
+[conv] 0x701120 TechnoClass::HasActiveParam -> TechnoClass
+[conv] 0x7cbed3 __initterm -> _addr_7C
+[conv] 0x5bdf30 MouseClass::LoadTypeData -> MouseClass
+[conv] 0x5e36e0 Network_Handle -> Network
+[conv] 0x63f7c0 PowerClass::checkBlackout -> PowerClass
+[conv] 0x7ad440 _CComObject_VCDownloadEventSink_ATL::ddtor -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x746c90 TechnoClass::checkSpawnState -> TechnoClass
+[conv] 0x7535b0 AudioFrame::CounterInc -> AudioFrame
+[conv] 0x759e80 AbstractClass::finalizeConstruction -> AbstractClass
+[conv] 0x777b30 String::FormatDword -> String
+[conv] 0x7c8ad3 _8type_info_QBEHABV0__Z -> _addr_7C
+[conv] 0x7cc291 ObjectClass::__seh_longjmp_unwind_4 -> ObjectClass
+[conv] 0x7d473f __ultoa -> _addr_7D
+[conv] 0x7d4811 __ui64toa -> _addr_7D
+[conv] 0x4ae6b0 DisplayClass::Render -> DisplayClass
+[conv] 0x5e66d0 MPCooperative_Helper -> MPCooperative
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=0
+[era] DropListClass            rc=0
+[era] MouseClass               rc=0
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=2
+[era] Network                  rc=0
+[era] PowerClass               rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=0
+[era] AudioFrame               rc=0
+[era] AbstractClass            rc=0
+[era] String                   rc=2
+[era] DisplayClass             rc=0
+[era] MPCooperative            rc=0
+=== diffasm byte-compare ===
+[diff] 0x7d735a   MISMATCH         _GetLcidFromDefault
+[diff] 0x7d473f   MISMATCH         __ultoa
+[diff] 0x7d4811   MISMATCH         __ui64toa
+[diff] 0x4b55d0   MISMATCH         DropListClass::ScrollDown
+[diff] 0x5bda80   MISMATCH         MouseClass::SetAndCall
+[diff] 0x5bdf30   MISMATCH         MouseClass::LoadTypeData
+[diff] 0x65aaa0   MISMATCH         ObjectClass::ThunkTo636
+[diff] 0x7cc291   MISMATCH         ObjectClass::__seh_longjmp_unwind_4
+[diff] 0x701120   MISMATCH         TechnoClass::HasActiveParam
+[diff] 0x746c90   MATCH            TechnoClass::checkSpawnState
+[diff] 0x5e36e0   MISMATCH         Network_Handle
+[diff] 0x7ad440   MISMATCH         _CComObject_VCDownloadEventSink_ATL::ddtor
+[diff] 0x7535b0   MISMATCH         AudioFrame::CounterInc
+[diff] 0x759e80   MISMATCH         AbstractClass::finalizeConstruction
+[diff] 0x4ae6b0   MISMATCH         DisplayClass::Render
+[diff] 0x5e66d0   MISMATCH         MPCooperative_Helper
+[ledger] 0x7d735a _GetLcidFromDefault -> NG (attempt 1)
+[ledger] 0x4b55d0 DropListClass::ScrollDown -> NG (attempt 1)
+[ledger] 0x5bda80 MouseClass::SetAndCall -> NG (attempt 1)
+[ledger] 0x65aaa0 ObjectClass::ThunkTo636 -> NG (attempt 1)
+[ledger] 0x701120 TechnoClass::HasActiveParam -> NG (attempt 1)
+[ledger] 0x7cbed3 __initterm -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bdf30 MouseClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x5e36e0 Network_Handle -> NG (attempt 1)
+[ledger] 0x63f7c0 PowerClass::checkBlackout -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ad440 _CComObject_VCDownloadEventSink_ATL::ddtor -> NG (attempt 1)
+[ledger] 0x746c90 TechnoClass::checkSpawnState -> OK (attempt 1)
+[ledger] 0x7535b0 AudioFrame::CounterInc -> NG (attempt 1)
+[ledger] 0x759e80 AbstractClass::finalizeConstruction -> NG (attempt 1)
+[ledger] 0x777b30 String::FormatDword -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8ad3 _8type_info_QBEHABV0__Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cc291 ObjectClass::__seh_longjmp_unwind_4 -> NG (attempt 1)
+[ledger] 0x7d473f __ultoa -> NG (attempt 1)
+[ledger] 0x7d4811 __ui64toa -> NG (attempt 1)
+[ledger] 0x4ae6b0 DisplayClass::Render -> NG (attempt 1)
+[ledger] 0x5e66d0 MPCooperative_Helper -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 4,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 2,
+  "regalloc": 5,
+  "codegen_shape": 7,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 6.2,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p53\batch_report.json

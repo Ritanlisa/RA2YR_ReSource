@@ -1,0 +1,27 @@
+{
+ "symbol": "?Network_Handle@@YAXXZ",
+ "sym_key": "Unnamed::Network_Handle",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "b800000000c605000000000185c07405e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?ppv@@YAHPBX0@Z",
+   "sym_key": "ppv"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?UI_Setup_7A2750@@YAXXZ",
+   "sym_key": "UI_Setup_7A2750"
+  }
+ ]
+}

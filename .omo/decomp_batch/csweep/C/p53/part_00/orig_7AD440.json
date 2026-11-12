@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AD440",
+ "name": "WonlineStringDialogControl_28::ddtor",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AD440",
+ "bytes_hex": "6a006a0068f4050000e8c286fcff50ff15a4147e0033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

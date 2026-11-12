@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E36E0",
+ "name": "Network_Handle",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E36E0",
+ "bytes_hex": "a16c11ac00c605b0daa8000185c07405e95bf01b00e946ecffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

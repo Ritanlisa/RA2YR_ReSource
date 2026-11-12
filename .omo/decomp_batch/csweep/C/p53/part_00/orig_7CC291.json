@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CC291",
+ "name": "__seh_longjmp_unwind_4",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CC291",
+ "bytes_hex": "558b4c24088b298b411c508b411850e879feffff83c4085dc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

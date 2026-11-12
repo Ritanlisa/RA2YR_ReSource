@@ -1,0 +1,21 @@
+{
+ "symbol": "?ddtor@_CComObject_VCDownloadEventSink_ATL@@QAGHXZ",
+ "sym_key": "_CComObject_VCDownloadEventSink_ATL::ddtor",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b4c2404e8000000006a006a0068f405000050e80000000033c0c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

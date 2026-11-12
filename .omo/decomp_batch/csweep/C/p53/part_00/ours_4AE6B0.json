@@ -1,0 +1,27 @@
+{
+ "symbol": "?Render@DisplayClass@@QAEPAXXZ",
+ "sym_key": "DisplayClass::Render",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0741050e800000000c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?dword_B73554@@3IA",
+   "sym_key": "dword_B73554"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?CloseWindow@@YGHH@Z",
+   "sym_key": "CloseWindow"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?dword_B73554@@3IA",
+   "sym_key": "dword_B73554"
+  }
+ ]
+}

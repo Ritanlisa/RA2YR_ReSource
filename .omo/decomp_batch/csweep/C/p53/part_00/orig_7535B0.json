@@ -1,0 +1,11 @@
+{
+ "addr": "0x7535B0",
+ "name": "AudioFrame::CounterInc",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7535B0",
+ "bytes_hex": "8b0dccd4b10085c97405e8f149cbffa128d4b10040a328d4b100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

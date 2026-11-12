@@ -1,0 +1,15 @@
+{
+ "symbol": "?finalizeConstruction@AbstractClass@@QAEHXZ",
+ "sym_key": "AbstractClass::finalizeConstruction",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "568bf18b8e00020000e8000000008b3633c93bf17408894e04894e0833c05ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?finalizeDestruction@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::finalizeDestruction"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?__ui64toa@@YAPAD_KPADH@Z",
+ "sym_key": "Unnamed::__ui64toa",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c2404568b7424106a00505651e80000000083c4108bc65ec3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?x64toa_20@@YAHHPAXHHZZ",
+   "sym_key": "x64toa_20"
+  }
+ ]
+}

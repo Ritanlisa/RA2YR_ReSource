@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D735A",
+ "name": "_GetLcidFromDefault",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D735A",
+ "bytes_hex": "66810d5c85b7000401ff1514137e00a36085b700a34485b700c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

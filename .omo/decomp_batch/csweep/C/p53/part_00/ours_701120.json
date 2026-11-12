@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasActiveParam@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::HasActiveParam",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff90f403000085c0740b8338007406b801000000c333c0c3",
+ "relocs": []
+}
