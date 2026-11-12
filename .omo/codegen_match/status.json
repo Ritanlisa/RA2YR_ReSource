@@ -37386,6 +37386,30 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x54e030": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
+  "name": "JumpjetLocomotionClass::SmallStub_54E030",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_54E030",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x54e040": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
+  "name": "JumpjetLocomotionClass::SmallStub_54E040",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_54E040",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x54e080": {
   "attempts": 2,
   "clean": false,
@@ -40411,6 +40435,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x565080": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "unknown_libname_22",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "unknown_libname_22",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5654a0": {
   "attempts": 1,
   "clean": false,
@@ -42006,6 +42041,17 @@
   "orig_name": "sub_58B720",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x58b760": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xabdfd8",
+  "name": "unknown_libname_23",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_23",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x58b780": {
@@ -49246,6 +49292,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5d6430": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov ecx, 0xa8b238",
+  "name": "MultiplayerGameMode::dispatchEvents",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "ScenarioClass::dispatchEvents",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d6440": {
   "attempts": 8,
   "first_diff": null,
@@ -52848,6 +52906,17 @@
   "name": "sub_600530",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_600530",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x600550": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xac4848",
+  "name": "unknown_libname_26",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "unknown_libname_26",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -60402,6 +60471,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x679ed0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "unknown_libname_30",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "unknown_libname_30",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x679f70": {
   "attempts": 6,
   "clean": false,
@@ -63702,6 +63782,42 @@
   "name": "ShipLocomotionClass::StubReturn112",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6a4300": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_6A4300",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_6A4300",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a4310": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_6A4310",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_6A4310",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a4320": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_6A4320",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_6A4320",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6a4390": {
   "attempts": 2,
@@ -74368,6 +74484,78 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x71a160": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_71A160",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_71A160",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x71a170": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_71A170",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_71A170",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x71a180": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_71A180",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_71A180",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x71a190": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
+  "name": "JumpjetLocomotionClass::SmallStub_71A190",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_71A190",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x71a1a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
+  "name": "JumpjetLocomotionClass::SmallStub_71A1A0",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_71A1A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x71a1b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
+  "name": "JumpjetLocomotionClass::SmallStub_71A1B0",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_71A1B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x71a1c0": {
   "attempts": 4,
   "clean": false,
@@ -82640,6 +82828,54 @@
   "name": "JumpjetLocomotionClass::SmallStub_75CC30",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x75cc40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_75CC40",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_75CC40",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x75cc50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "JumpjetLocomotionClass::SmallStub_75CC50",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_75CC50",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x75cc60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
+  "name": "JumpjetLocomotionClass::SmallStub_75CC60",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_75CC60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x75cc70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
+  "name": "JumpjetLocomotionClass::SmallStub_75CC70",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_75CC70",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x75ccc0": {
   "attempts": 2,

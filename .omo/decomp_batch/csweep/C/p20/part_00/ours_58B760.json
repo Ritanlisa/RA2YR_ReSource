@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_23@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_23",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "33c98a0d00000000e900000000",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDFD8@@3EA",
+   "sym_key": "DataGlobal_ABDFD8"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?CleanupRandomMapData@RandomMap@@QAEXXZ",
+   "sym_key": "RandomMap::CleanupRandomMapData"
+  }
+ ]
+}

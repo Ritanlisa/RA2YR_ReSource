@@ -1,0 +1,21 @@
+{
+ "symbol": "?dispatchEvents@MultiplayerGameMode@@QAEHXZ",
+ "sym_key": "MultiplayerGameMode::dispatchEvents",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "a1000000006a096a008d8868050300e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}

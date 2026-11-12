@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x54e030 JumpjetLocomotionClass::SmallStub_54E030 -> JumpjetLocomotionClass
+[conv] 0x54e040 JumpjetLocomotionClass::SmallStub_54E040 -> JumpjetLocomotionClass
+[conv] 0x565080 unknown_libname_22 -> _addr_56
+[conv] 0x58b760 unknown_libname_23 -> _addr_58
+[conv] 0x5d6430 MultiplayerGameMode::dispatchEvents -> MultiplayerGameMode
+[conv] 0x600550 unknown_libname_26 -> _addr_60
+[conv] 0x679ed0 unknown_libname_30 -> _addr_67
+[conv] 0x6a4300 JumpjetLocomotionClass::SmallStub_6A4300 -> JumpjetLocomotionClass
+[conv] 0x6a4310 JumpjetLocomotionClass::SmallStub_6A4310 -> JumpjetLocomotionClass
+[conv] 0x6a4320 JumpjetLocomotionClass::SmallStub_6A4320 -> JumpjetLocomotionClass
+[conv] 0x71a160 JumpjetLocomotionClass::SmallStub_71A160 -> JumpjetLocomotionClass
+[conv] 0x71a170 JumpjetLocomotionClass::SmallStub_71A170 -> JumpjetLocomotionClass
+[conv] 0x71a180 JumpjetLocomotionClass::SmallStub_71A180 -> JumpjetLocomotionClass
+[conv] 0x71a190 JumpjetLocomotionClass::SmallStub_71A190 -> JumpjetLocomotionClass
+[conv] 0x71a1a0 JumpjetLocomotionClass::SmallStub_71A1A0 -> JumpjetLocomotionClass
+[conv] 0x71a1b0 JumpjetLocomotionClass::SmallStub_71A1B0 -> JumpjetLocomotionClass
+[conv] 0x75cc40 JumpjetLocomotionClass::SmallStub_75CC40 -> JumpjetLocomotionClass
+[conv] 0x75cc50 JumpjetLocomotionClass::SmallStub_75CC50 -> JumpjetLocomotionClass
+[conv] 0x75cc60 JumpjetLocomotionClass::SmallStub_75CC60 -> JumpjetLocomotionClass
+[conv] 0x75cc70 JumpjetLocomotionClass::SmallStub_75CC70 -> JumpjetLocomotionClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=0
+[era] _addr_56                 rc=0
+[era] _addr_58                 rc=0
+[era] MultiplayerGameMode      rc=0
+[era] _addr_60                 rc=0
+[era] _addr_67                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x54e030   MISMATCH         JumpjetLocomotionClass::SmallStub_54E030
+[diff] 0x54e040   MISMATCH         JumpjetLocomotionClass::SmallStub_54E040
+[diff] 0x6a4300   MISMATCH         JumpjetLocomotionClass::SmallStub_6A4300
+[diff] 0x6a4310   MISMATCH         JumpjetLocomotionClass::SmallStub_6A4310
+[diff] 0x6a4320   MISMATCH         JumpjetLocomotionClass::SmallStub_6A4320
+[diff] 0x71a160   MISMATCH         JumpjetLocomotionClass::SmallStub_71A160
+[diff] 0x71a170   MISMATCH         JumpjetLocomotionClass::SmallStub_71A170
+[diff] 0x71a180   MISMATCH         JumpjetLocomotionClass::SmallStub_71A180
+[diff] 0x71a190   MISMATCH         JumpjetLocomotionClass::SmallStub_71A190
+[diff] 0x71a1a0   MISMATCH         JumpjetLocomotionClass::SmallStub_71A1A0
+[diff] 0x71a1b0   MISMATCH         JumpjetLocomotionClass::SmallStub_71A1B0
+[diff] 0x75cc40   MISMATCH         JumpjetLocomotionClass::SmallStub_75CC40
+[diff] 0x75cc50   MISMATCH         JumpjetLocomotionClass::SmallStub_75CC50
+[diff] 0x75cc60   MISMATCH         JumpjetLocomotionClass::SmallStub_75CC60
+[diff] 0x75cc70   MISMATCH         JumpjetLocomotionClass::SmallStub_75CC70
+[diff] 0x565080   MATCH            unknown_libname_22
+[diff] 0x58b760   MISMATCH         unknown_libname_23
+[diff] 0x5d6430   MISMATCH         MultiplayerGameMode::dispatchEvents
+[diff] 0x600550   MISMATCH         unknown_libname_26
+[diff] 0x679ed0   MATCH            unknown_libname_30
+[ledger] 0x54e030 JumpjetLocomotionClass::SmallStub_54E030 -> NG (attempt 1)
+[ledger] 0x54e040 JumpjetLocomotionClass::SmallStub_54E040 -> NG (attempt 1)
+[ledger] 0x565080 unknown_libname_22 -> OK (attempt 1)
+[ledger] 0x58b760 unknown_libname_23 -> NG (attempt 1)
+[ledger] 0x5d6430 MultiplayerGameMode::dispatchEvents -> NG (attempt 1)
+[ledger] 0x600550 unknown_libname_26 -> NG (attempt 1)
+[ledger] 0x679ed0 unknown_libname_30 -> OK (attempt 1)
+[ledger] 0x6a4300 JumpjetLocomotionClass::SmallStub_6A4300 -> NG (attempt 1)
+[ledger] 0x6a4310 JumpjetLocomotionClass::SmallStub_6A4310 -> NG (attempt 1)
+[ledger] 0x6a4320 JumpjetLocomotionClass::SmallStub_6A4320 -> NG (attempt 1)
+[ledger] 0x71a160 JumpjetLocomotionClass::SmallStub_71A160 -> NG (attempt 1)
+[ledger] 0x71a170 JumpjetLocomotionClass::SmallStub_71A170 -> NG (attempt 1)
+[ledger] 0x71a180 JumpjetLocomotionClass::SmallStub_71A180 -> NG (attempt 1)
+[ledger] 0x71a190 JumpjetLocomotionClass::SmallStub_71A190 -> NG (attempt 1)
+[ledger] 0x71a1a0 JumpjetLocomotionClass::SmallStub_71A1A0 -> NG (attempt 1)
+[ledger] 0x71a1b0 JumpjetLocomotionClass::SmallStub_71A1B0 -> NG (attempt 1)
+[ledger] 0x75cc40 JumpjetLocomotionClass::SmallStub_75CC40 -> NG (attempt 1)
+[ledger] 0x75cc50 JumpjetLocomotionClass::SmallStub_75CC50 -> NG (attempt 1)
+[ledger] 0x75cc60 JumpjetLocomotionClass::SmallStub_75CC60 -> NG (attempt 1)
+[ledger] 0x75cc70 JumpjetLocomotionClass::SmallStub_75CC70 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 15,
+  "codegen_shape": 1,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 10.0,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p20\batch_report.json

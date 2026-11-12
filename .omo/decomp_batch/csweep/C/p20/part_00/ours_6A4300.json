@@ -1,0 +1,15 @@
+{
+ "symbol": "?SmallStub_6A4300@JumpjetLocomotionClass@@QAGHHPBXPAH@Z",
+ "sym_key": "JumpjetLocomotionClass::SmallStub_6A4300",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b5424088b4c240c5083c2fc5152e800000000c21000",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?ShipLocomotionClass__QueryInterface@@YGHHPBXPAH@Z",
+   "sym_key": "ShipLocomotionClass__QueryInterface"
+  }
+ ]
+}

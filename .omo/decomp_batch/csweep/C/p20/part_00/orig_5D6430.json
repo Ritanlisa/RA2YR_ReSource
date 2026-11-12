@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D6430",
+ "name": "ScenarioClass::dispatchEvents",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D6430",
+ "bytes_hex": "b938b2a800e936520c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

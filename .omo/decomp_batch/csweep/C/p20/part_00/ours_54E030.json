@@ -1,0 +1,15 @@
+{
+ "symbol": "?SmallStub_54E030@JumpjetLocomotionClass@@QAGJH@Z",
+ "sym_key": "JumpjetLocomotionClass::SmallStub_54E030",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b44240883c0e850e800000000c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?JumpjetLocomotionClass__AddRef@@YGJH@Z",
+   "sym_key": "JumpjetLocomotionClass__AddRef"
+  }
+ ]
+}
