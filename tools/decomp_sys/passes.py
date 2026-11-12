@@ -2904,6 +2904,399 @@ def _registry_fn_names(reg):
     return cached
 
 
+# ------------------------------------------------- CW5-F7: call-site arg typing
+#
+# CW5-1/2/4/5: on x86-32 every argument travels in ONE 4-byte stack slot,
+# so a pointer<->int32 argument cast is CODEGEN-NEUTRAL (no conversion
+# instruction is emitted; the same dword is pushed).  The compile wall is
+# purely a TYPE CHECK: the declaration (registry slot / CRT header / Win32
+# prototype) rejects the observed argument spelling.  Fix at the CALL SITE
+# against the declared type -- never by weakening the declaration (only
+# pointer-shaped slots get the CW3-5 `void *` relaxation, which is also
+# how const was lost: see CW5-4).
+#
+# Family gates (hard): float/double/__int64 slots are NEVER touched (a cast
+# there emits a real conversion -> codegen change), and an argument whose
+# family can not be established is left untouched (honest refuse).
+
+_CW5_INT32_TYS = {
+    "int", "unsigned int", "signed int", "long", "unsigned long",
+    "signed long", "unsigned", "signed", "_DWORD", "UINT", "DWORD", "LONG",
+    "ULONG", "BOOL", "int32_t", "uint32_t", "INT_PTR", "UINT_PTR",
+    "ULONG_PTR", "LRESULT", "LSTATUS", "WPARAM", "LPARAM", "size_t",
+    "SOCKET", "MMRESULT", "LCTYPE", "COLORREF", "ATOM", "u_long", "u_short",
+}
+# sub-dword integers: valid as a SOURCE of a pointer-slot cast (the compiler
+# already extends the value), NEVER as a cast TARGET (`(char)ptr` truncates
+# -> real codegen change).
+_CW5_SMALL_INT_TYS = {
+    "char", "unsigned char", "signed char", "short", "unsigned short",
+    "_BYTE", "_WORD", "WORD", "BYTE", "SHORT", "USHORT", "UCHAR", "CHAR",
+    "bool", "u_short",
+}
+_CW5_FLOAT_TYS = {
+    "float", "double", "long double", "__int64", "unsigned __int64",
+    "_QWORD", "__m64",
+}
+
+# CW5-2: real prototypes of the CRT/Win32 names that occur in the residual
+# bodies.  Names owned by the SDK/CRT headers have no extern of ours, so the
+# call site is the only lever; names that DO reach the unknown-callee
+# fallback also take their declaration types from here.
+_CRT_CALL_TYPES = {
+    "atexit": ["void (__cdecl *)(void)"],
+    "_strcmpi": ["const char *", "const char *"],
+    "_stricmp": ["const char *", "const char *"],
+    "_strnicmp": ["const char *", "const char *", "size_t"],
+    "strncpy": ["char *", "const char *", "size_t"],
+    "strncmp": ["const char *", "const char *", "size_t"],
+    "strtok": ["char *", "const char *"],
+    "strchr": ["const char *", "int"],
+    "strrchr": ["const char *", "int"],
+    "memcpy": ["void *", "const void *", "size_t"],
+    "memmove": ["void *", "const void *", "size_t"],
+    "memset": ["void *", "int", "size_t"],
+    "free": ["void *"],
+    "swprintf": ["wchar_t *", "const wchar_t *", "..."],
+    "wcscpy": ["wchar_t *", "const wchar_t *"],
+    "wcslen": ["const wchar_t *"],
+    "wsprintfA": ["char *", "const char *", "..."],
+    "InterlockedIncrement": ["volatile long *"],
+    "InterlockedDecrement": ["volatile long *"],
+    "InterlockedExchange": ["volatile long *", "long"],
+    "MoveWindow": ["void *", "int", "int", "int", "int", "int"],
+    "CompareFileTime": ["const FILETIME *", "const FILETIME *"],
+    "VerQueryValueA": ["const void *", "const char *", "void **",
+                       "unsigned int *"],
+    "RegQueryValueExA": ["void *", "const char *", "unsigned int *",
+                         "unsigned int *", "unsigned char *",
+                         "unsigned int *"],
+}
+
+
+def _cw5_core(ty):
+    """Core spelling of a type: qualifiers / stars / [] stripped."""
+    t = (ty or "").strip()
+    t = re.sub(r"\[\s*\d*\s*\]\s*$", "", t).strip()
+    t = t.rstrip("*").strip()
+    prev = None
+    while prev != t:
+        prev = t
+        t = re.sub(r"^(?:const|volatile|struct|class|union)\b\s*", "",
+                   t).strip()
+    return t
+
+
+def _cw5_ty_kind(ty):
+    t = (ty or "").strip()
+    if not t or "..." in t:
+        return None
+    if "(" in t:
+        return "fnptr"           # function-pointer slot
+    if t.endswith("*") or re.search(r"\[\s*\d*\s*\]$", t):
+        return "ptr"             # pointer or array (decays)
+    core = _cw5_core(t)
+    if core in _PTR_TY_NAMES:
+        return "ptr"
+    if core in _CW5_INT32_TYS:
+        return "int"
+    if core in _CW5_SMALL_INT_TYS:
+        return "small"
+    if core in _CW5_FLOAT_TYS:
+        return "float"
+    return None
+
+
+def _cw5_member_ty(s, ctx):
+    """Declared type of `this->NAME` from the view ledger, else registry."""
+    if ctx is None:
+        return None
+    m = re.match(r"^this->([A-Za-z_]\w*)$", s)
+    if not m:
+        return None
+    name = m.group(1)
+    cls = ctx.sig.get("cls")
+    if not cls:
+        return None
+    for roles in (ctx.views.scalars.get(cls) or {}).values():
+        for v in roles.values():
+            if v.get("name") == name:
+                return v.get("type")
+    for arr in (ctx.views.arrays.get(cls) or {}).values():
+        if arr.get("name") == name:
+            return (arr.get("elem") or "int") + "[]"
+    r = ctx.reg.member_offset_by_ida_name(cls, name)
+    if r is None or r[0] is None:
+        inh = getattr(ctx.reg, "member_offset_inherited", None)
+        if inh is not None:
+            r = inh(cls, name)
+    if r and r[0] is not None and (r[1] or {}).get("type"):
+        return r[1]["type"]
+    return None
+
+
+_FNCast_ARG_HEAD = re.compile(
+    r"^\([^()]*\(\s*__(?:stdcall|cdecl|fastcall)\b[^()]*\*[^()]*\)[^()]*\)")
+
+
+def _cw5_arg_kind(s, syms, ctx=None):
+    """Family of a call argument: 'ptr' | 'int' | 'float' | None (refuse)."""
+    s = (s or "").strip()
+    if not s:
+        return None
+    s2 = _strip_outer_parens(s)
+    if s2 != s:
+        return _cw5_arg_kind(s2, syms, ctx)
+    # deref of an explicit cast -> value kind of the pointee
+    m = re.match(r"^\*\s*\(\s*([A-Za-z_]\w*(?:\s+[A-Za-z_]\w*)*)\s*\*+\s*\)",
+                 s)
+    if m:
+        return _cw5_ty_kind(m.group(1))
+    if s.startswith("*"):
+        return None              # deref of unknown pointer: refuse
+    # explicit pointer cast `(T *)`, `(const char *)`, `(T **)` ...
+    if re.match(r"^\(\s*[A-Za-z_]\w*(?:\s+[A-Za-z_]\w*)*\s*\*+\s*\)", s):
+        return "ptr"
+    if _FNCast_ARG_HEAD.match(s):
+        return "ptr"
+    m = re.match(r"^\(\s*([A-Za-z_]\w*)\s*\)", s)
+    if m:
+        nm = m.group(1)
+        if nm in _PTR_TY_NAMES:
+            return "ptr"
+        if nm in _CW5_INT32_TYS or nm in _CW5_SMALL_INT_TYS:
+            return "int"
+        if nm in _CW5_FLOAT_TYS:
+            return "float"
+        return None
+    if s.startswith("&") and not s.startswith("&&"):
+        return "ptr"
+    if s[0] == '"' or s.startswith('L"'):
+        return "ptr"
+    if re.match(r"^(?:0x[0-9A-Fa-f]+|\d+)[uUlL]*$", s):
+        return "int"
+    # `this->M`: the declared member type is authoritative -- the generic
+    # text heuristic calls every `->` a pointer (a float member would then
+    # be int-cast -> truncation codegen).
+    if s.startswith("this->"):
+        ty = _cw5_member_ty(s, ctx)
+        return _cw5_ty_kind(ty) if ty is not None else None
+    ptr_names = set(n for n, t in syms.items()
+                    if _cw5_ty_kind(t) == "ptr")
+    if _arg_is_pointerish(s, ptr_names):
+        return "ptr"
+    if re.match(r"^[A-Za-z_]\w*$", s):
+        ty = syms.get(s)
+        if ty is not None:
+            return _cw5_ty_kind(ty)
+        # a bare FUNCTION name decays to a function pointer (`atexit(sub_X)`)
+        if ctx is not None:
+            if s in (getattr(ctx, "_cw5_callee_names", ()) or ()):
+                return "ptr"
+            if s in _registry_fn_names(ctx.reg):
+                return "ptr"
+    return None
+
+
+def _cw5_arg_base(s, syms):
+    """Pointer base spelling of an argument, or None when unknown."""
+    s = (s or "").strip()
+    s2 = _strip_outer_parens(s)
+    if s2 != s:
+        return _cw5_arg_base(s2, syms)
+    m = re.match(r"^\(\s*([A-Za-z_]\w*(?:\s+[A-Za-z_]\w*)*)\s*\*+\s*\)", s)
+    if m:
+        return _cw5_core(m.group(1))
+    if re.match(r"^[A-Za-z_]\w*$", s):
+        ty = syms.get(s)
+        if ty is not None:
+            return _cw5_core(ty)
+    return None
+
+
+def _cw5_coerce_one(val, T, syms, ctx):
+    """`(T)(val)` when the families mismatch, else None (no change)."""
+    T = (T or "").strip()
+    if not T or T == "...":
+        return None
+    tk = _cw5_ty_kind(T)
+    if tk is None or tk == "float" or tk == "small":
+        return None
+    ak = _cw5_arg_kind(val, syms, ctx)
+    if ak is None or ak == "float":
+        return None
+    if ak == "small":
+        ak = "int"               # value already extended by the compiler
+    if tk == "fnptr":
+        return "(%s)(%s)" % (T, val)
+    if tk == "ptr" and ak == "ptr":
+        tb = _cw5_core(T)
+        ab = _cw5_arg_base(val, syms)
+        if ab is not None and ab == tb:
+            return None
+        return "(%s)(%s)" % (T, val)
+    if (tk == "ptr" and ak == "int") or (tk == "int" and ak == "ptr"):
+        return "(%s)(%s)" % (T, val)
+    return None
+
+
+def _cw5_arg_spans(inner):
+    """[(start, end)] of top-level comma-separated args (quote-aware)."""
+    spans = []
+    depth = 0
+    q = ""
+    start = 0
+    i = 0
+    while i < len(inner):
+        ch = inner[i]
+        if q:
+            if ch == "\\":
+                i += 2
+                continue
+            if ch == q:
+                q = ""
+        elif ch in "\"'":
+            q = ch
+        elif ch in "([":
+            depth += 1
+        elif ch in ")]":
+            depth -= 1
+        elif ch == "," and depth == 0:
+            spans.append((start, i))
+            start = i + 1
+        i += 1
+    spans.append((start, len(inner)))
+    return spans
+
+
+def _cw5_coerce_inner(inner, types, syms, ctx):
+    spans = _cw5_arg_spans(inner)
+    pieces = []
+    n = 0
+    for idx, (a, b) in enumerate(spans):
+        seg = inner[a:b]
+        val = seg.strip()
+        if idx >= len(types) or not val:
+            pieces.append(seg)
+            continue
+        new = _cw5_coerce_one(val, types[idx], syms, ctx)
+        if new is None:
+            pieces.append(seg)
+        else:
+            lead = seg[:len(seg) - len(seg.lstrip())]
+            trail = seg[len(seg.rstrip()):]
+            pieces.append(lead + new + trail)
+            n += 1
+    return ",".join(pieces), n
+
+
+def _cw5_coerce_call_sites(text, name, types, syms, ctx=None):
+    out = []
+    pos = 0
+    n = 0
+    pat = re.compile(r"(?<![\w:.>])%s\s*\(" % re.escape(name))
+    for m in pat.finditer(text):
+        if m.start() < pos:
+            continue
+        op = m.end() - 1
+        cl = _balanced_close(text, op)
+        if cl < 0:
+            continue
+        inner = text[op + 1:cl]
+        if not inner.strip():
+            continue
+        new_inner, cnt = _cw5_coerce_inner(inner, types, syms, ctx)
+        if cnt:
+            out.append(text[pos:op + 1])
+            out.append(new_inner)
+            pos = cl
+            n += cnt
+    if not n:
+        return text, 0
+    out.append(text[pos:])
+    return "".join(out), n
+
+
+def _cw5_sym_types(ctx, text):
+    """Name -> declared type for params / locals / globals visible here."""
+    out = {}
+    for t, n in (ctx.sig.get("params_spelled") or []):
+        out[n] = t
+    for m in _LOCAL_DECL.finditer(text):
+        name = m.group(1)
+        head = m.group(0)
+        i = head.rfind(name)
+        if i > 0:
+            ty = head[:i].strip()
+            if ty:
+                out.setdefault(name, ty)
+    for n, t in (getattr(ctx, "used_globals", None) or {}).items():
+        out.setdefault(n, t)
+    return out
+
+
+def _cw5_parse_decl(d):
+    """`extern RET CC NAME(T a0, ...);` -> (NAME, [types])."""
+    s = (d or "").strip()
+    m = re.match(
+        r"^extern\s+(?P<ret>.+?)\s+(?:__(?:stdcall|cdecl|fastcall)\s+)?"
+        r"(?P<name>[A-Za-z_]\w*)\s*\((?P<args>.*)\)\s*;\s*$", s)
+    if not m:
+        return None, None
+    name = m.group("name")
+    inner = m.group("args").strip()
+    if not inner:
+        return name, []
+    tys = []
+    for a in _split_args(inner):
+        a = a.strip()
+        if not a:
+            continue
+        if a == "...":
+            tys.append("...")
+            continue
+        a2 = re.sub(r"\s+[A-Za-z_]\w*$", "", a)
+        tys.append(a2.strip())
+    return name, tys
+
+
+def pass_arg_harmonize(ctx):
+    """CW5-1/2/4/5: type every resolvable call argument to its slot.
+
+    Runs AFTER pass_unknown_symbols (declarations final) and covers:
+      * free-function call sites declared by pass_unknown_symbols /
+        pass_callees (`GetStringCSF`, `__3_YAXPAX_Z`, ...);
+      * CRT/Win32 names owned by the SDK headers (`atexit`, `memset`, ...).
+    Member calls with a pseudo-sig receiver are coerced inside pass_callees
+    (their declarations never reach the extern block).
+    """
+    text = "\n".join(ctx.lines)
+    syms = _cw5_sym_types(ctx, text)
+    table = {}
+    for name, tys in (getattr(ctx, "_callee_arg_types", {}) or {}).items():
+        table[name] = list(tys)
+    for d in (getattr(ctx, "used_callee_exts", []) or []):
+        nm, tys = _cw5_parse_decl(d)
+        if nm and tys is not None and nm not in table:
+            table[nm] = tys
+    for name, tys in _CRT_CALL_TYPES.items():
+        if name in table:
+            continue
+        if re.search(r"(?<![\w:.>])%s\s*\(" % re.escape(name), text):
+            table[name] = list(tys)
+    total = 0
+    ctx._cw5_callee_names = set(table)
+    for name in sorted(table, key=len, reverse=True):
+        text, n = _cw5_coerce_call_sites(text, name, table[name], syms, ctx)
+        total += n
+    if total:
+        ctx.lines = text.split("\n")
+        ctx.sites.append(Site(
+            "call_args", "%d argument(s)" % total,
+            "call-site arg typed to the declared slot "
+            "(pointer<->int32 casts are codegen-neutral on x86-32)", True))
+
+
 def pass_unknown_symbols(ctx):
     text = "\n".join(ctx.lines)
     # IDA's qmemcpy builtin is memcpy (declared via <string.h>)
@@ -2913,6 +3306,8 @@ def pass_unknown_symbols(ctx):
         ctx.used_callee_exts = []
     if not hasattr(ctx, "used_globals"):
         ctx.used_globals = {}
+    # CW5-1: declared slot types per free callee (pass_arg_harmonize input)
+    ctx._callee_arg_types = {}
 
     locals_ = set(ctx.sig.get("param_names") or [])
     for m in _LOCAL_DECL.finditer(text):
@@ -2962,6 +3357,8 @@ def pass_unknown_symbols(ctx):
             ctx.used_callee_exts.append(
                 "extern %s %s(%s);" % (ret, name, params))
             declared.add(name)
+            if params != "...":
+                ctx._callee_arg_types[name] = [params]
             ctx.sites.append(Site(
                 "callee", name + "(...)",
                 "CRT operator -> extern %s %s(%s) (known signature)"
@@ -2980,6 +3377,7 @@ def pass_unknown_symbols(ctx):
             ctx.used_callee_exts.append(
                 "extern %s %s %s(%s);" % (ret, cc, name, plist))
             declared.add(name)
+            ctx._callee_arg_types[name] = list(ptypes)
             ctx.sites.append(Site(
                 "callee", name + "(...)",
                 "known Win32 API -> extern %s %s %s(%s)"
@@ -3034,6 +3432,7 @@ def pass_unknown_symbols(ctx):
                 ctx.used_callee_exts.append(
                     "extern %s%s %s(%s);" % (_iret, _icc, name, _plist))
                 declared.add(name)
+                ctx._callee_arg_types[name] = list(_iparts)
                 ctx.sites.append(Site(
                     "callee", name + "(...)",
                     "IAT thunk -> prototype of %s (registry)"
@@ -3077,6 +3476,13 @@ def pass_unknown_symbols(ctx):
             rparams = list(rec.get("params") or [])
             if obs_args and len(rparams) != len(obs_args):
                 rparams = [{"type": "int"} for _ in range(len(obs_args))]
+            # CW5-2: a known CRT/Win32 prototype outranks the registry
+            # import record (whose slots are arg-form relaxed below --
+            # MoveWindow's int height became void* that way).
+            _crt = _CRT_CALL_TYPES.get(name)
+            if _crt and len(_crt) == len(rparams):
+                rparams = [({"type": t} if t != "..." else p)
+                           for p, t in zip(rparams, _crt)]
             # arg-driven relaxation (R7 policy, extended to registry
             # hits): the registry type may be a class/pointer spelling
             # that rejects the observed argument (C2664 ObjectClass* ->
@@ -3089,21 +3495,29 @@ def pass_unknown_symbols(ctx):
                     r"\b([A-Za-z_]\w*)\s*\[\s*\d+\s*\]\s*;", text):
                 ptr_names_.add(m2.group(1))
             plist_parts = []
+            plist_types = []
             for i, p in enumerate(rparams):
                 ty_ = spell_type(p.get("type") or "int")
                 if ty_ in ("float", "double", "__int64",
                            "unsigned __int64"):
                     plist_parts.append("%s a%d" % (ty_, i))
+                    plist_types.append(ty_)
                     continue
                 if "(" in ty_:
                     ty_ = "void *"
                 if i < len(obs_args) and _arg_is_pointerish(
                         obs_args[i].strip(), ptr_names_):
                     if ty_.endswith("*") and ty_ != "void *":
-                        ty_ = "void *"
+                        # CW5-4: preserve const through the relaxation --
+                        # a plain `void *` slot rejects the very common
+                        # `const char *` argument (C2664 Copy /
+                        # LookupFileInfoCache / queueSendPacket).
+                        ty_ = ("const void *" if "const" in obs_args[i]
+                               else "void *")
                     elif not ty_.endswith("*"):
                         ty_ = "void *"
                 plist_parts.append("%s a%d" % (ty_, i))
+                plist_types.append(ty_)
             plist = ", ".join(plist_parts)
             rcc = {"stdcall": " __stdcall",
                    "fastcall": " __fastcall"}.get(
@@ -3111,6 +3525,7 @@ def pass_unknown_symbols(ctx):
             ctx.used_callee_exts.append(
                 "extern %s%s %s(%s);" % (ret, rcc, name, plist))
             declared.add(name)
+            ctx._callee_arg_types[name] = plist_types
             ctx.sites.append(Site(
                 "callee", name + "(...)",
                 "registry callee -> extern %s%s %s(%s)"
@@ -3127,10 +3542,30 @@ def pass_unknown_symbols(ctx):
             ctx.used_callee_exts.append(
                 "extern %s %s %s(%s);" % (ret, cc, name, plist))
             declared.add(name)
+            ctx._callee_arg_types[name] = list(ptypes)
             ctx.sites.append(Site(
                 "callee", name + "(...)",
                 "known Win32 API -> extern %s %s %s(%s)"
                 % (ret, cc, name, plist), True))
+            continue
+        # CW5-2: Win32/CRT names the registry does not carry but whose real
+        # prototype is known (`MoveWindow`'s 5th slot is an int, not a
+        # pointer -- the observed-arg fallback below flipped it to void*).
+        _crt = _CRT_CALL_TYPES.get(name)
+        if _crt is not None:
+            _ctys = [t for t in _crt]
+            _cplist = ", ".join("%s a%d" % (t, i)
+                                for i, t in enumerate(_ctys) if t != "...")
+            if "..." in _ctys:
+                _cplist = (_cplist + ", ...") if _cplist else "..."
+            ctx.used_callee_exts.append(
+                "extern int __stdcall %s(%s);" % (name, _cplist))
+            declared.add(name)
+            ctx._callee_arg_types[name] = _ctys
+            ctx.sites.append(Site(
+                "callee", name + "(...)",
+                "known CRT/Win32 prototype -> extern int %s(%s)"
+                % (name, _cplist), True))
             continue
         # R7: `extern int f(...)` is a C2059 ('...') hard error in VC6
         # (an ellipsis needs a named first parameter) and `extern int
@@ -3170,6 +3605,7 @@ def pass_unknown_symbols(ctx):
             proto = "(%s, ...)" % ", ".join(plist)
         ctx.used_callee_exts.append("extern int %s%s;" % (name, proto))
         declared.add(name)
+        ctx._callee_arg_types[name] = list(plist or [])
         ctx.sites.append(Site(
             "callee", name + "(...)",
             "unqualified callee not in registry -> extern int %s%s "
@@ -4978,7 +5414,9 @@ def pass_callees(ctx):
             # base (int* -> char* family).  The stub is decl-only, so a
             # void* slot is codegen-neutral at this probe stage.
             sig_ptys_ = {}
-            ptr_params_ = set()
+            # CW5-1: global pointer names are pointer-shaped arguments too
+            # (`g_DSurface_Primary` fell to an int slot -> C2664).
+            ptr_params_ = set(_ctx_ptr_names(ctx, text))
             for t, n in ctx.sig.get("params_spelled") or []:
                 sig_ptys_[n] = t
                 if t.endswith("*"):
@@ -4991,22 +5429,42 @@ def pass_callees(ctx):
                 # registry member table first.
                 return _arg_ptrish_ctx(a, ptr_params_)
 
-            rparams = [("void *" if "(" in t else t, n)
-                       for t, n in rparams]
-            rparams = [("void *" if _arg_ptrish(args[i + 1]) and
-                        (t in ("int", "unsigned int", "long",
-                               "unsigned long", "short",
-                               "unsigned short", "_DWORD")
-                         or (t.endswith("*") and t != "void *"))
-                        else t, n)
+            def _relax(t, a):
+                """Pointer/arity relaxation of a decl-only stub slot."""
+                if "(" in t:
+                    return "void *"
+                if not _arg_ptrish(a):
+                    return t
+                if t.endswith("*") and t != "void *":
+                    # CW5-4: keep const through the relaxation (`Copy`
+                    # takes a `const char *`; a plain void* slot lost it)
+                    return ("const void *" if "const" in a else "void *")
+                if t in ("int", "unsigned int", "long", "unsigned long",
+                         "short", "unsigned short", "_DWORD"):
+                    return "void *"
+                return t
+
+            rparams = [(_relax(t, args[i + 1]), n)
                        for i, (t, n) in enumerate(rparams)]
+            # CW5-1: type the call-site arguments to the stub slots --
+            # pointer<->int32 casts are codegen-neutral on x86-32.
+            _syms = _cw5_sym_types(ctx, text)
+            _rest_args, _nco = _cw5_coerce_inner(
+                ", ".join(args[1:]), [t for t, _ in rparams], _syms, ctx)
             recv = args[0] if args else "this"
             rcm = re.match(r"^\(\s*\w+\s*\*\s*\)\s*(.+)$", recv)
             if rcm:
                 recv = rcm.group(1)
-            rest = ", ".join(args[1:])
-            emit = "((%s *)(%s))->%s(%s)" % (re.sub(
-                r"[^A-Za-z0-9_]", "_", str(owner_cls)), recv, method, rest)
+            rest = _rest_args
+            _own = re.sub(r"[^A-Za-z0-9_]", "_", str(owner_cls))
+            # CW5-12: a helper pseudo-class whose name is ALSO a free
+            # function (`DeleteAndZero`) is hidden by that declaration --
+            # the elaborated specifier keeps the cast legal (verified on
+            # the era compiler: `(class X *)` compiles, `(X *)` C2059).
+            _collide = ((_own in _registry_fn_names(ctx.reg)) or
+                        (_own in (getattr(ctx, "used_globals", None) or {})))
+            emit = "((%s%s *)(%s))->%s(%s)" % (
+                "class " if _collide else "", _own, recv, method, rest)
             text = text[:s] + emit + text[e:]
             pseudo_sig = {
                 "addr": addr or "0x0", "ret": rret, "cc": cc,
@@ -5088,12 +5546,17 @@ def pass_callees(ctx):
                 elif a0s in arr_locals:
                     pt = "void *"
                 elif _arg_ptrish_ctx(a0s, ptr_names_):
-                    pt = "void *"
+                    # CW5-4: preserve const through the relaxation
+                    if "const" in a0s:
+                        pt = ("const volatile void *" if "volatile" in a0s
+                              else "const void *")
+                    else:
+                        pt = "void *"
                     # R7: a `volatile T *` argument needs a
                     # qualification-compatible slot (plain void* drops
                     # volatile -> C2664 DriveLocomotionClass__Release
                     # family)
-                    if "volatile" in a0s:
+                    if "volatile" in a0s and "const" not in a0s:
                         pt = "volatile void *"
                 elif _reg_ty_ok:
                     _rt = spell_type(_reg_params[i].get("type") or "int")
@@ -5112,8 +5575,13 @@ def pass_callees(ctx):
             decl = "extern %s%s %s(%s);" % (rret, rcc, fname, ", ".join(plist))
             if decl not in ctx.used_callee_exts:
                 ctx.used_callee_exts.append(decl)
+            # CW5-1: type the rendered call's arguments to the stub slots
+            _syms = _cw5_sym_types(ctx, text)
+            _args2, _nco = _cw5_coerce_inner(
+                ", ".join(args), [p.rsplit(" ", 1)[0] for p in plist],
+                _syms, ctx)
             if "::" in qual:
-                text = text[:s] + "%s(%s)" % (fname, text[s:e].split("(", 1)[1].rsplit(")", 1)[0]) + text[e:]
+                text = text[:s] + "%s(%s)" % (fname, _args2) + text[e:]
             ctx.sites.append(Site(
                 "callee", ("%s(...)" % qual)[:60],
                 "global/static call -> extern prototype (site arity %d)"

@@ -938,6 +938,10 @@ def run_function(addr, reg, views, idx):
     passes.pass_callees(ctx)
     passes.pass_fncast_harmonize(ctx)
     passes.pass_unknown_symbols(ctx)
+    # CW5-F7: call-site argument typing against the declared slot (pointer
+    # <-> int32 casts are codegen-neutral on x86-32; float/__int64 slots are
+    # never touched).  Runs after the declaration passes.
+    passes.pass_arg_harmonize(ctx)
     passes.pass_local_retype(ctx)
     passes.pass_assign_harmonize(ctx)
     passes.pass_scope_shrink(ctx)
