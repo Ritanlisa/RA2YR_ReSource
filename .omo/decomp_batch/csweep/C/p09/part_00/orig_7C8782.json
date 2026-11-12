@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8782",
+ "name": "GetUpdateRect",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8782",
+ "bytes_hex": "ff259c137e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

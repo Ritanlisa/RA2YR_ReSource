@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c8740 GetClassNameA -> _addr_7C
+[conv] 0x7c8746 EnumChildWindows -> _addr_7C
+[conv] 0x7c874c IsWindowVisible -> _addr_7C
+[conv] 0x7c8758 RegisterClassA -> _addr_7C
+[conv] 0x7c875e CreateWindowExA -> _addr_7C
+[conv] 0x7c8764 CallWindowProcA -> _addr_7C
+[conv] 0x7c876a BringWindowToTop -> _addr_7C
+[conv] 0x7c8770 GetWindow -> _addr_7C
+[conv] 0x7c8776 IntersectRect -> _addr_7C
+[conv] 0x7c877c WindowFromPoint -> _addr_7C
+[conv] 0x7c8782 GetUpdateRect -> _addr_7C
+[conv] 0x7c8788 GetFocus -> _addr_7C
+[conv] 0x7c878e LockWindowUpdate -> _addr_7C
+[conv] 0x7c879a GetKeyNameTextA -> _addr_7C
+[conv] 0x7c87a0 CreateDialogIndirectParamA -> _addr_7C
+[conv] 0x7c87a6 SetCursorPos -> _addr_7C
+[conv] 0x7c87ac FindWindowA -> _addr_7C
+[conv] 0x7c87b2 PostQuitMessage -> _addr_7C
+[conv] 0x7c87b8 SetCursor -> _addr_7C
+[conv] 0x7c87be LoadCursorA -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c8740   MISMATCH         GetClassNameA
+[diff] 0x7c874c   MISMATCH         IsWindowVisible
+[diff] 0x7c8758   MISMATCH         RegisterClassA
+[diff] 0x7c875e   MISMATCH         CreateWindowExA
+[diff] 0x7c876a   MISMATCH         BringWindowToTop
+[diff] 0x7c8770   MISMATCH         GetWindow
+[diff] 0x7c8776   MISMATCH         IntersectRect
+[diff] 0x7c8782   MISMATCH         GetUpdateRect
+[diff] 0x7c8788   MISMATCH         GetFocus
+[diff] 0x7c878e   MISMATCH         LockWindowUpdate
+[diff] 0x7c879a   MISMATCH         GetKeyNameTextA
+[diff] 0x7c87a0   MISMATCH         CreateDialogIndirectParamA
+[diff] 0x7c87a6   MISMATCH         SetCursorPos
+[diff] 0x7c87ac   MISMATCH         FindWindowA
+[diff] 0x7c87b2   MISMATCH         PostQuitMessage
+[diff] 0x7c87b8   MISMATCH         SetCursor
+[diff] 0x7c87be   MISMATCH         LoadCursorA
+[ledger] 0x7c8740 GetClassNameA -> NG (attempt 1)
+[ledger] 0x7c8746 EnumChildWindows -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c874c IsWindowVisible -> NG (attempt 1)
+[ledger] 0x7c8758 RegisterClassA -> NG (attempt 1)
+[ledger] 0x7c875e CreateWindowExA -> NG (attempt 1)
+[ledger] 0x7c8764 CallWindowProcA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c876a BringWindowToTop -> NG (attempt 1)
+[ledger] 0x7c8770 GetWindow -> NG (attempt 1)
+[ledger] 0x7c8776 IntersectRect -> NG (attempt 1)
+[ledger] 0x7c877c WindowFromPoint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8782 GetUpdateRect -> NG (attempt 1)
+[ledger] 0x7c8788 GetFocus -> NG (attempt 1)
+[ledger] 0x7c878e LockWindowUpdate -> NG (attempt 1)
+[ledger] 0x7c879a GetKeyNameTextA -> NG (attempt 1)
+[ledger] 0x7c87a0 CreateDialogIndirectParamA -> NG (attempt 1)
+[ledger] 0x7c87a6 SetCursorPos -> NG (attempt 1)
+[ledger] 0x7c87ac FindWindowA -> NG (attempt 1)
+[ledger] 0x7c87b2 PostQuitMessage -> NG (attempt 1)
+[ledger] 0x7c87b8 SetCursor -> NG (attempt 1)
+[ledger] 0x7c87be LoadCursorA -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 16,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p09\batch_report.json
