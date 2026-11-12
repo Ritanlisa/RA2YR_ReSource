@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p323\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d0ec0 _DynamicVectorClass_PAVMapSelection::AllocCopyData_4B_0 -> _DynamicVectorClass_PAVMapSelection
+[conv] 0x5d1120 _DynamicVectorClass_PAVMapStage::Release -> _DynamicVectorClass_PAVMapStage
+[conv] 0x5d1380 _DynamicVectorClass_PAVMSAnimEntry::AllocCopyData_4B_0 -> _DynamicVectorClass_PAVMSAnimEntry
+[conv] 0x5d15e0 _DynamicVectorClass_PAVMSSfxEntry::AllocCopyData_4B_1 -> _DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x5d2bc0 _DynamicVectorClass_PAVMSSfx::SetCapacity -> _DynamicVectorClass_PAVMSSfx
+[conv] 0x5d52d0 _DynamicVectorClass_PAUHWND::SetCapacity -> _DynamicVectorClass_PAUHWND
+[conv] 0x5d8470 _DynamicVectorClass_PAVMultiplayerTeam::ResizeAndCopy -> _DynamicVectorClass_PAVMultiplayerTeam
+[conv] 0x5d8730 _DynamicVectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> _DynamicVectorClass_PAVMultiplayerGameMode
+[conv] 0x5eed90 _DynamicVectorClass_PBVMultiMission::SetCapacity -> _DynamicVectorClass_PBVMultiMission
+[conv] 0x5f9d00 _DynamicVectorClass_PAVObjectTypeClass::SetCapacity -> _DynamicVectorClass_PAVObjectTypeClass
+[conv] 0x6001a0 _DynamicVectorClass_PAVSpotLightClass::SetCapacity -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x627f90 _DynamicVectorClass_PAVColorScheme::SetCapacity -> _DynamicVectorClass_PAVColorScheme
+[conv] 0x62b250 _DynamicVectorClass_PAVParasiteClass::SetCapacity -> _DynamicVectorClass_PAVParasiteClass
+[conv] 0x63df20 _DynamicVectorClass_PAVPlanningMemberClass::SetCapacity -> _DynamicVectorClass_PAVPlanningMemberClass
+[conv] 0x63e490 _DynamicVectorClass_PAVPlanningNodeClass::Release -> _DynamicVectorClass_PAVPlanningNodeClass
+[conv] 0x63e7d0 _DynamicVectorClass_PAVEventClass::SetCapacity_0 -> _DynamicVectorClass_PAVEventClass
+[conv] 0x63ead0 _DynamicVectorClass_PAVPlanningTokenClass::SetCapacity_1 -> _DynamicVectorClass_PAVPlanningTokenClass
+[conv] 0x65a3c0 _DynamicVectorClass_PAVRadBeam::SetCapacity -> _DynamicVectorClass_PAVRadBeam
+[conv] 0x65c0d0 _DynamicVectorClass_PAVRadSiteClass::SetCapacity -> _DynamicVectorClass_PAVRadSiteClass
+[conv] 0x65d510 sub_65D510 -> _addr_65
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVMapSelection rc=2
+[era] _DynamicVectorClass_PAVMapStage rc=2
+[era] _DynamicVectorClass_PAVMSAnimEntry rc=2
+[era] _DynamicVectorClass_PAVMSSfxEntry rc=2
+[era] _DynamicVectorClass_PAVMSSfx rc=2
+[era] _DynamicVectorClass_PAUHWND rc=2
+[era] _DynamicVectorClass_PAVMultiplayerTeam rc=2
+[era] _DynamicVectorClass_PAVMultiplayerGameMode rc=2
+[era] _DynamicVectorClass_PBVMultiMission rc=2
+[era] _DynamicVectorClass_PAVObjectTypeClass rc=2
+[era] _DynamicVectorClass_PAVSpotLightClass rc=2
+[era] _DynamicVectorClass_PAVColorScheme rc=2
+[era] _DynamicVectorClass_PAVParasiteClass rc=2
+[era] _DynamicVectorClass_PAVPlanningMemberClass rc=2
+[era] _DynamicVectorClass_PAVPlanningNodeClass rc=2
+[era] _DynamicVectorClass_PAVEventClass rc=2
+[era] _DynamicVectorClass_PAVPlanningTokenClass rc=2
+[era] _DynamicVectorClass_PAVRadBeam rc=2
+[era] _DynamicVectorClass_PAVRadSiteClass rc=2
+[era] _addr_65                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5d0ec0 _DynamicVectorClass_PAVMapSelection::AllocCopyData_4B_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1120 _DynamicVectorClass_PAVMapStage::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1380 _DynamicVectorClass_PAVMSAnimEntry::AllocCopyData_4B_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d15e0 _DynamicVectorClass_PAVMSSfxEntry::AllocCopyData_4B_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2bc0 _DynamicVectorClass_PAVMSSfx::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d52d0 _DynamicVectorClass_PAUHWND::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8470 _DynamicVectorClass_PAVMultiplayerTeam::ResizeAndCopy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8730 _DynamicVectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eed90 _DynamicVectorClass_PBVMultiMission::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f9d00 _DynamicVectorClass_PAVObjectTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6001a0 _DynamicVectorClass_PAVSpotLightClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x627f90 _DynamicVectorClass_PAVColorScheme::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62b250 _DynamicVectorClass_PAVParasiteClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63df20 _DynamicVectorClass_PAVPlanningMemberClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e490 _DynamicVectorClass_PAVPlanningNodeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e7d0 _DynamicVectorClass_PAVEventClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63ead0 _DynamicVectorClass_PAVPlanningTokenClass::SetCapacity_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65a3c0 _DynamicVectorClass_PAVRadBeam::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65c0d0 _DynamicVectorClass_PAVRadSiteClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65d510 sub_65D510 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p323\batch_report.json
