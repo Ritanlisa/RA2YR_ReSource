@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x4a00b0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "EnumConnectionsClass::ddtor"
+ },
+ {
+  "addr": "0x4a0a50",
+  "family": "W45",
+  "code": "C2446",
+  "name": "EnumConnectionPointsClass::ddtor"
+ },
+ {
+  "addr": "0x4b69d0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_126"
+ },
+ {
+  "addr": "0x4da030",
+  "family": "W45",
+  "code": "C2446",
+  "name": "InfantryClass::ProcessExitQueue"
+ },
+ {
+  "addr": "0x4e0ed0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "FootClass::RemoveFromPointerArray"
+ },
+ {
+  "addr": "0x4e1960",
+  "family": "W45",
+  "code": "C2562",
+  "name": "VectorClass_ptr_ConvertClass::MarkDirty"
+ },
+ {
+  "addr": "0x4f6eb0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "nullsub_15"
+ },
+ {
+  "addr": "0x5054b0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "HouseClass::GenerateAIBuildListEnsureSanity"
+ },
+ {
+  "addr": "0x50a5c0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "HouseClass::AIBuildBase"
+ },
+ {
+  "addr": "0x50e0e0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "HouseClass::LostPoweredCenter"
+ },
+ {
+  "addr": "0x50ff50",
+  "family": "W45",
+  "code": "C2446",
+  "name": "HouseClass::AddCoordTrackingEntry"
+ },
+ {
+  "addr": "0x512290",
+  "family": "W45",
+  "code": "C2446",
+  "name": "HouseTypeClass::SaveLoad_Prefix"
+ },
+ {
+  "addr": "0x513100",
+  "family": "W45",
+  "code": "C2562",
+  "name": "_VectorClass_PBVUnitTypeClass::Destructor"
+ },
+ {
+  "addr": "0x52cb80",
+  "family": "W45",
+  "code": "C4716",
+  "name": "nullsub_18"
+ },
+ {
+  "addr": "0x532130",
+  "family": "W45",
+  "code": "C4716",
+  "name": "nullsub_19"
+ },
+ {
+  "addr": "0x53f1f0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "Multiplayer::Screen"
+ },
+ {
+  "addr": "0x541070",
+  "family": "W45",
+  "code": "C2446",
+  "name": "IPXManagerClass::receivePacket"
+ },
+ {
+  "addr": "0x547230",
+  "family": "W45",
+  "code": "C2446",
+  "name": "TacticalClass::DrawCellOverlay"
+ },
+ {
+  "addr": "0x54f6d0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "TechnoClass::sub_54F6D0"
+ },
+ {
+  "addr": "0x552b10",
+  "family": "W45",
+  "code": "C2446",
+  "name": "Scenario::ComputeDisplayPosition"
+ }
+]

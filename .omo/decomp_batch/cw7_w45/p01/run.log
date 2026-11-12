@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a00b0 EnumConnectionsClass::ddtor -> EnumConnectionsClass
+[conv] 0x4a0a50 EnumConnectionPointsClass::ddtor -> EnumConnectionPointsClass
+[conv] 0x4b69d0 ObjectClass::nullsub_126 -> ObjectClass
+[conv] 0x4da030 InfantryClass::ProcessExitQueue -> InfantryClass
+[conv] 0x4e0ed0 FootClass::RemoveFromPointerArray -> FootClass
+[conv] 0x4e1960 GadgetClass::MarkDirty -> GadgetClass
+[conv] 0x4f6eb0 nullsub_15 -> _addr_4F
+[conv] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> HouseClass
+[conv] 0x50a5c0 HouseClass::AIBuildBase -> HouseClass
+[conv] 0x50e0e0 HouseClass::LostPoweredCenter -> HouseClass
+[conv] 0x50ff50 HouseClass::AddCoordTrackingEntry -> HouseClass
+[conv] 0x512290 HouseTypeClass::SaveLoad_Prefix -> HouseTypeClass
+[conv] 0x513100 _VectorClass_PBVUnitTypeClass::Destructor -> _VectorClass_PBVUnitTypeClass
+[conv] 0x52cb80 nullsub_18 -> _addr_52
+[conv] 0x532130 nullsub_19 -> _addr_53
+[conv] 0x53f1f0 Multiplayer::Screen -> Multiplayer
+[conv] 0x541070 IPXManagerClass::receivePacket -> IPXManagerClass
+[conv] 0x547230 TacticalClass::DrawCellOverlay -> TacticalClass
+[conv] 0x54f6d0 TechnoClass::sub_54F6D0 -> TechnoClass
+[conv] 0x552b10 Scenario::ComputeDisplayPosition -> Scenario
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] EnumConnectionsClass     rc=2
+[era] EnumConnectionPointsClass rc=2
+[era] ObjectClass              rc=0
+[era] InfantryClass            rc=2
+[era] FootClass                rc=0
+[era] GadgetClass              rc=0
+[era] _addr_4F                 rc=0
+[era] HouseClass               rc=2
+[era] HouseTypeClass           rc=2
+[era] _VectorClass_PBVUnitTypeClass rc=2
+[era] _addr_52                 rc=0
+[era] _addr_53                 rc=0
+[era] Multiplayer              rc=0
+[era] IPXManagerClass          rc=2
+[era] TacticalClass            rc=2
+[era] TechnoClass              rc=0
+[era] Scenario                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4b69d0   MATCH            ObjectClass::nullsub_126
+[diff] 0x4e0ed0   MISMATCH         FootClass::RemoveFromPointerArray
+[diff] 0x4e1960   MISMATCH         GadgetClass::MarkDirty
+[diff] 0x4f6eb0   MATCH            nullsub_15
+[diff] 0x52cb80   MATCH            nullsub_18
+[diff] 0x532130   MATCH            nullsub_19
+[diff] 0x53f1f0   MISMATCH         Multiplayer::Screen
+[diff] 0x54f6d0   MISMATCH         TechnoClass::sub_54F6D0
+[ledger] 0x4a00b0 EnumConnectionsClass::ddtor -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4a0a50 EnumConnectionPointsClass::ddtor -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4b69d0 ObjectClass::nullsub_126 -> OK (attempt 2)
+[ledger] 0x4da030 InfantryClass::ProcessExitQueue -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4e0ed0 FootClass::RemoveFromPointerArray -> NG (attempt 2)
+[ledger] 0x4e1960 GadgetClass::MarkDirty -> NG (attempt 10)
+[ledger] 0x4f6eb0 nullsub_15 -> OK (attempt 2)
+[ledger] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> COMPILE_FAIL (attempt 6)
+[ledger] 0x50a5c0 HouseClass::AIBuildBase -> COMPILE_FAIL (attempt 6)
+[ledger] 0x50e0e0 HouseClass::LostPoweredCenter -> COMPILE_FAIL (attempt 13)
+[ledger] 0x50ff50 HouseClass::AddCoordTrackingEntry -> COMPILE_FAIL (attempt 4)
+[ledger] 0x512290 HouseTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 5)
+[ledger] 0x513100 _VectorClass_PBVUnitTypeClass::Destructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52cb80 nullsub_18 -> OK (attempt 2)
+[ledger] 0x532130 nullsub_19 -> OK (attempt 2)
+[ledger] 0x53f1f0 Multiplayer::Screen -> NG (attempt 6)
+[ledger] 0x541070 IPXManagerClass::receivePacket -> COMPILE_FAIL (attempt 2)
+[ledger] 0x547230 TacticalClass::DrawCellOverlay -> COMPILE_FAIL (attempt 12)
+[ledger] 0x54f6d0 TechnoClass::sub_54F6D0 -> NG (attempt 2)
+[ledger] 0x552b10 Scenario::ComputeDisplayPosition -> COMPILE_FAIL (attempt 10)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MATCH": 4,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p01\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Screen@Multiplayer@@QAEHXZ",
+ "sym_key": "Multiplayer::Screen",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "51890d000000008b44240059c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_828140@@3IA",
+   "sym_key": "DataGlobal_828140"
+  }
+ ]
+}
