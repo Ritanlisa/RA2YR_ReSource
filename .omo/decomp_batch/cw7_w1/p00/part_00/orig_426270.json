@@ -1,0 +1,11 @@
+{
+ "addr": "0x426270",
+ "name": "AnimClass::UpdateDamageRadius",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x426270",
+ "bytes_hex": "535556578b7c24148bd98bcfe81fae050057b9e8f787008be8e8a2f4130057b9e8f787008bf0e8e51d15008b15b4a189008b4f0803c23bc17f308b8640010000f6c4017425b0018bcdd2e08a8e280100000ac8888e280100008b138bcbff52388946585f5e5d5bc20400b0018bcdd2e08a8e240100000ac8888e240100008b138bcbff52388946545f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

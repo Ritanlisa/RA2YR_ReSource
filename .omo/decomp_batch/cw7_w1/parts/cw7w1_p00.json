@@ -1,0 +1,363 @@
+[
+ {
+  "addr": "0x406170",
+  "name": "VocClass::Check",
+  "orig_name": "VocClass::Check",
+  "unit": "VocClass",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p160\\part_00\\VocClass.cpp(8) : error C2440: 'type cast' : cannot convert from 'double' to 'int *'",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / type cast",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x408a70",
+  "name": "AudioMixer::SetupChannels",
+  "orig_name": "AudioMixer::SetupChannels",
+  "unit": "AudioMixer",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G_R5toR8",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix251\\p00\\part_00\\AudioMixer.cpp(25) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix251\\p00\\par",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x40d8e0",
+  "name": "sub_40D8E0",
+  "orig_name": "sub_40D8E0",
+  "unit": "_addr_40",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p01\\part_00\\_addr_40_40d8e0.cpp(7) : error C2440: 'initializing' : cannot convert from 'unsigned char' to 'char *'",
+  "file": "",
+  "line": null,
+  "form": "stale_cw5|CW5-10 MEMORY rewrite",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x40ffff",
+  "name": "Math::InitDegToRad",
+  "orig_name": "Math::InitDegToRad",
+  "unit": "Math",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p205\\part_00\\Math.cpp(10) : error C2440: 'type cast' : cannot convert from 'void' to 'int'",
+  "file": "",
+  "line": null,
+  "form": "value cast / type cast",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4112d0",
+  "name": "MapClass::isLocationShrouded",
+  "orig_name": "MapClass::isLocationShrouded",
+  "unit": "MapClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p14\\part_00\\MapClass.cpp(12) : error C2440: 'initializing' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p14\\part_0",
+  "file": "",
+  "line": null,
+  "form": "member->void* init (scalar member, ptr local) / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x416d50",
+  "name": "Carryall::MissionStateMachine",
+  "orig_name": "Carryall::MissionStateMachine",
+  "unit": "Carryall",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p56\\part_00\\Carryall.cpp(48) : error C2440: '=' : cannot convert from 'void *' to 'unsigned char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p56\\part_",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x41cbf0",
+  "name": "AircraftTypeClass::vt_entry_7C",
+  "orig_name": "ObjectTypeClass::vt_entry_7C",
+  "unit": "AircraftTypeClass",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p203\\part_00\\AircraftTypeClass.cpp(9) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int'",
+  "file": "",
+  "line": null,
+  "form": "void* -> int / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x41cfe0",
+  "name": "AircraftTypeClass::ddtor",
+  "orig_name": "AircraftTypeClass::ddtor",
+  "unit": "AircraftTypeClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p34\\part_00\\AircraftTypeClass.cpp(8) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int'",
+  "file": "",
+  "line": null,
+  "form": "void* -> int / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x41dc80",
+  "name": "AirstrikeClass::RemoveAircraft",
+  "orig_name": "AirstrikeClass::RemoveAircraft",
+  "unit": "AirstrikeClass",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p262\\part_00\\AirstrikeClass.cpp(40) : error C2440: '=' : cannot convert from 'void *' to 'unsigned short *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x426270",
+  "name": "AnimClass::UpdateDamageRadius",
+  "orig_name": "AnimClass::UpdateDamageRadius",
+  "unit": "AnimClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p34\\part_00\\AnimClass.cpp(9) : error C2440: 'initializing' : cannot convert from 'void *' to 'class CellClass *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_r",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x42b420",
+  "name": "GeneratePathWaypoints",
+  "orig_name": "GeneratePathWaypoints",
+  "unit": "_addr_42",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p09\\part_00\\_addr_42.cpp(156) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p09\\part_",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x42df90",
+  "name": "Base64Straw::ProcessFrame",
+  "orig_name": "BitmapClass::ProcessFrame",
+  "unit": "Base64Straw",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p40\\part_00\\Base64Straw.cpp(31) : error C2440: 'initializing' : cannot convert from 'char *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p40\\par",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x438210",
+  "name": "BlowStraw::Get",
+  "orig_name": "BlowStraw::Get",
+  "unit": "BlowStraw",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p39\\part_00\\BlowStraw.cpp(13) : error C2440: 'initializing' : cannot convert from 'char *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p39\\part_",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x44f640",
+  "name": "BuildingClass::GetFactoryPosition",
+  "orig_name": "BuildingClass::GetFactoryPosition",
+  "unit": "BuildingClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p23\\part_00\\BuildingClass.cpp(30) : error C2440: '=' : cannot convert from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p23\\par",
+  "file": "",
+  "line": null,
+  "form": "int -> void* / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x457aa0",
+  "name": "BuildingClass::CreateFoggedObjects",
+  "orig_name": "BuildingClass::CreateFoggedObjects",
+  "unit": "BuildingClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p48\\part_00\\BuildingClass.cpp(50) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p48\\p",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x46b960",
+  "name": "BulletClass::AddVector3",
+  "orig_name": "BulletClass::AddVector3",
+  "unit": "BulletClass",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p196\\part_00\\BulletClass.cpp(8) : error C2440: 'type cast' : cannot convert from 'double' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p196\\pa",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / type cast",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x474940",
+  "name": "ObjectTypeClass::loadTypeMember_5474940",
+  "orig_name": "ObjectTypeClass::loadTypeMember_5474940",
+  "unit": "ObjectTypeClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p21\\part_00\\ObjectTypeClass.cpp(14) : error C2440: 'initializing' : cannot convert from 'void ** ' to 'char ** '",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x475540",
+  "name": "SuperWeaponTypeClass::FindOrCreate",
+  "orig_name": "SuperWeaponTypeClass::FindOrCreate",
+  "unit": "SuperWeaponTypeClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p37\\part_00\\SuperWeaponTypeClass.cpp(41) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x47d210",
+  "name": "CellClass::SetWallOwner",
+  "orig_name": "CellClass::SetWallOwner",
+  "unit": "CellClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p03\\part_00\\CellClass_47d210.cpp(19) : error C2440: '=' : cannot convert from 'char *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p03\\part_00\\C",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / assign",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x47e470",
+  "name": "SetCellClassOccupancyFlags",
+  "orig_name": "SetCellClassOccupancyFlags",
+  "unit": "_addr_47",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p54\\part_00\\_addr_47.cpp(43) : error C2440: 'initializing' : cannot convert from 'short *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p54\\par",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ }
+]

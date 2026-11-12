@@ -1,0 +1,141 @@
+{
+ "symbol": "?GeneratePathWaypoints@@YGHPAH0HHHPAPAH@Z",
+ "sym_key": "Unnamed::GeneratePathWaypoints",
+ "size": 970,
+ "link_base": 0,
+ "bytes_hex": "83ec348b4c243c5355568b7424508b1957894c24348b04b1895c24388d3c18d1ff897c24208d57013bd074123bd3740ec74424200000000081e700ffffff83fb080f843e03000083f8080f84350300008b44245c8b5c24583bde8b00894424147e078bdee98e0000000f8d880000008bd6894424102bd385d27e788be9895424588b450083f80875388d4c241051b900000000e8000000000fbf801601000083f8ff750f6a006a008d4c2434e800000000eb248b15000000008b04828b4028eb188d0c8588f689008d54242851528d4c2418e8000000008b008b4c245883c5044989442410894c245875968b4c244c894c2434894424148b6c24488bcde8000000008b951c020000dd5c243c85db895424280f8e2b0200008b44241483e7078d0c1b8bd0894c241c8d2cbd88f68900668b7d002bf1c1e810660345026603fa66897c2424894c24188b4c245066894424268b44242403f3894424108d5424108b34b152b900000000e8000000008bf88b44241885c00f8e180100008b4424488b5424206a016a008b0856525750c644247001ff91ac01000085c07539f7874001000000000400752d8b4424288d4c24145051e8000000008944242cdb44242cdc4c243cdc1d00000000dfe0f6c4017405c6442458008b442418668b5500488d4c2410894424188b4424106603d051c1e810660345026689542434b90000000066894424368b44243489442414e8000000008bf80fbe871b0100002bf083fe04750e8b8f400100008d7004f6c50175028bf08a44245884c00f8432ffffff8b4424388b4c241483e007668bd1c1e91066031485000000008b048500000000c1f81003c88b74245466894c24368b4c241c668954243483e9028b4424344b85db8bd0894c241c894424140f8eaf000000e99cfeffff8b7424548b44244c2bf303db85db8bf87e128b4c2420538d14b05152e80000000083c40c8b44245c8be88b0085f68944245c0f8ef00000008bde8b0783f80875388d44245cb90000000050e8000000000fbf801601000083f8ff750f6a006a008d4c2454e800000000eb248b0d000000008b14818b4228eb188d048588f689008d4c245450518d4c2464e8000000008b0083c7044b8944245c759f8945008bc65f5e5d5b83c434c218008b7c244ceb048b7c24348b54245c85f68b028944244c7e1e8bde8b078d54244c508d4c245883c704e8000000008b004b8944244c75e48b4c245c5f89018bc65e5d5b83c434c218008b44245c8b5424588be803f28b0085f68944245c7e208bf98bde8b078d54245c508d4c245083c704e8000000008b004b8944245c75e48945008bc65f5e5d5b83c434c21800",
+ "relocs": [
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_PathClass_State@@3PAXA",
+   "sym_key": "g_PathClass_State"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?Add@CellStruct@@QAEPAIPAX0@Z",
+   "sym_key": "CellStruct::Add"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?GetSpeedMultiplier@LocomotionClass@@QAENXZ",
+   "sym_key": "LocomotionClass::GetSpeedMultiplier"
+  },
+  {
+   "off": 356,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 435,
+   "type": "REL32",
+   "sym": "?CellClass__GetTileData@@YGHPAXH@Z",
+   "sym_key": "CellClass__GetTileData"
+  },
+  {
+   "off": 453,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 507,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 525,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 594,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 601,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 688,
+   "type": "REL32",
+   "sym": "?memset32@@YAHPAXHHZZ",
+   "sym_key": "memset32"
+  },
+  {
+   "off": 729,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 735,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 760,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 768,
+   "type": "DIR32",
+   "sym": "?g_PathClass_State@@3PAXA",
+   "sym_key": "g_PathClass_State"
+  },
+  {
+   "off": 798,
+   "type": "REL32",
+   "sym": "?Add@CellStruct@@QAEPAIPAX0@Z",
+   "sym_key": "CellStruct::Add"
+  },
+  {
+   "off": 870,
+   "type": "REL32",
+   "sym": "?GetCellNeighborCoord@@YIPAIPAX0H@Z",
+   "sym_key": "GetCellNeighborCoord"
+  },
+  {
+   "off": 942,
+   "type": "REL32",
+   "sym": "?GetCellNeighborCoord@@YIPAIPAX0H@Z",
+   "sym_key": "GetCellNeighborCoord"
+  }
+ ]
+}

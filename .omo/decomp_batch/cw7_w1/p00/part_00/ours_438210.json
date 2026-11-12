@@ -1,0 +1,33 @@
+{
+ "symbol": "?Get@BlowStraw@@QAEIPADH@Z",
+ "sym_key": "BlowStraw::Get",
+ "size": 272,
+ "link_base": 0,
+ "bytes_hex": "515356578b7c241485ff8bd975095f5e33c05b59c208008b4424188bf085c0897424187f095f5e33c05b59c208008b4b0c85c9751050578bcbe8000000005f5e5b59c2080055c744241000000000eb048b7c24188b531885d27e453bf28bc67c028bc28bf38bc82bf28bd183c618c1e902f3a58bca8b54241883e10303d0f3a48b7b188b74241c8b4c24102bf82bf003c8897b188974241c89542418894c241085f674608d43406a08508bcbe8000000008be885ed744d83fd08751f8b531c8b4b0c8d431083fa015055507507e800000000eb25e800000000eb1e8bcd8bfb2bfd8bd18d731083c718c1e902f3a58bca83e103f3a48b74241c85f6896b180f8f4cffffff8b4424105d5f5e5b59c20800",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Invoke@Delegate@@QAEHHH@Z",
+   "sym_key": "Delegate::Invoke"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?Invoke@Delegate@@QAEHHH@Z",
+   "sym_key": "Delegate::Invoke"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?DrawAlt@BlowPipe@@QAEHHHH@Z",
+   "sym_key": "BlowPipe::DrawAlt"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "?Draw@BlowPipe@@QAEHHHH@Z",
+   "sym_key": "BlowPipe::Draw"
+  }
+ ]
+}

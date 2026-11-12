@@ -1,0 +1,11 @@
+{
+ "addr": "0x47D210",
+ "name": "CellClass::SetWallOwner",
+ "size": 150,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47D210",
+ "bytes_hex": "518b4144894c240083f8ff0f84830000008b15843da8008b04828a90a802000084d27470a150eba800535583cdff33db5785c0bfffffff7f7e54568b1544eba8008b349a8a869000000084c074318a467484c0742a8b861c0200008b50348a82a701000084c07417518bcee8e09017003bc77d0b8bf88b068bceff50388be8a150eba8008b4c2410433bd87cae5e8969505f5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x406170 VocClass::Check -> VocClass
+[conv] 0x408a70 AudioMixer::SetupChannels -> AudioMixer
+[conv] 0x40d8e0 sub_40D8E0 -> _addr_40
+[conv] 0x40ffff Math::InitDegToRad -> Math
+[conv] 0x4112d0 MapClass::isLocationShrouded -> MapClass
+[conv] 0x416d50 Carryall::MissionStateMachine -> Carryall
+[conv] 0x41cbf0 AircraftTypeClass::vt_entry_7C -> AircraftTypeClass
+[conv] 0x41cfe0 AircraftTypeClass::ddtor -> AircraftTypeClass
+[conv] 0x41dc80 AirstrikeClass::RemoveAircraft -> AirstrikeClass
+[conv] 0x426270 AnimClass::UpdateDamageRadius -> AnimClass
+[conv] 0x42b420 GeneratePathWaypoints -> _addr_42
+[conv] 0x42df90 Base64Straw::ProcessFrame -> Base64Straw
+[conv] 0x438210 BlowStraw::Get -> BlowStraw
+[conv] 0x44f640 BuildingClass::GetFactoryPosition -> BuildingClass
+[conv] 0x457aa0 BuildingClass::CreateFoggedObjects -> BuildingClass
+[conv] 0x46b960 BulletClass::AddVector3 -> BulletClass
+[conv] 0x474940 ObjectTypeClass::loadTypeMember_5474940 -> ObjectTypeClass
+[conv] 0x475540 SuperWeaponTypeClass::FindOrCreate -> SuperWeaponTypeClass
+[conv] 0x47d210 CellClass::SetWallOwner -> CellClass
+[conv] 0x47e470 SetCellClassOccupancyFlags -> _addr_47
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VocClass                 rc=2
+[era] AudioMixer               rc=0
+[era] _addr_40                 rc=2
+[era] Math                     rc=2
+[era] MapClass                 rc=0
+[era] Carryall                 rc=2
+[era] AircraftTypeClass        rc=0
+[era] AirstrikeClass           rc=0
+[era] AnimClass                rc=0
+[era] _addr_42                 rc=0
+[era] Base64Straw              rc=2
+[era] BlowStraw                rc=0
+[era] BuildingClass            rc=0
+[era] BulletClass              rc=2
+[era] ObjectTypeClass          rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] CellClass                rc=0
+[era] _addr_47                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x408a70   MISMATCH         AudioMixer::SetupChannels
+[diff] 0x4112d0   MISMATCH         MapClass::isLocationShrouded
+[diff] 0x41cbf0   MISMATCH         AircraftTypeClass::vt_entry_7C
+[diff] 0x41cfe0   MISMATCH         AircraftTypeClass::ddtor
+[diff] 0x41dc80   MISMATCH         AirstrikeClass::RemoveAircraft
+[diff] 0x426270   MISMATCH         AnimClass::UpdateDamageRadius
+[diff] 0x42b420   MISMATCH         GeneratePathWaypoints
+[diff] 0x438210   MISMATCH         BlowStraw::Get
+[diff] 0x44f640   MISMATCH         BuildingClass::GetFactoryPosition
+[diff] 0x457aa0   MISMATCH         BuildingClass::CreateFoggedObjects
+[diff] 0x47d210   MISMATCH         CellClass::SetWallOwner
+[diff] 0x47e470   MISMATCH         SetCellClassOccupancyFlags
+[ledger] 0x406170 VocClass::Check -> COMPILE_FAIL (attempt 2)
+[ledger] 0x408a70 AudioMixer::SetupChannels -> NG (attempt 10)
+[ledger] 0x40d8e0 sub_40D8E0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x40ffff Math::InitDegToRad -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4112d0 MapClass::isLocationShrouded -> NG (attempt 4)
+[ledger] 0x416d50 Carryall::MissionStateMachine -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41cbf0 AircraftTypeClass::vt_entry_7C -> NG (attempt 2)
+[ledger] 0x41cfe0 AircraftTypeClass::ddtor -> NG (attempt 4)
+[ledger] 0x41dc80 AirstrikeClass::RemoveAircraft -> NG (attempt 2)
+[ledger] 0x426270 AnimClass::UpdateDamageRadius -> NG (attempt 4)
+[ledger] 0x42b420 GeneratePathWaypoints -> NG (attempt 6)
+[ledger] 0x42df90 Base64Straw::ProcessFrame -> COMPILE_FAIL (attempt 12)
+[ledger] 0x438210 BlowStraw::Get -> NG (attempt 8)
+[ledger] 0x44f640 BuildingClass::GetFactoryPosition -> NG (attempt 15)
+[ledger] 0x457aa0 BuildingClass::CreateFoggedObjects -> NG (attempt 4)
+[ledger] 0x46b960 BulletClass::AddVector3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x474940 ObjectTypeClass::loadTypeMember_5474940 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x475540 SuperWeaponTypeClass::FindOrCreate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47d210 CellClass::SetWallOwner -> NG (attempt 20)
+[ledger] 0x47e470 SetCellClassOccupancyFlags -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "regalloc": 4,
+  "branch_polarity": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p00\batch_report.json

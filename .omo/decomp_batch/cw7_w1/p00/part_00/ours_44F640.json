@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetFactoryPosition@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::GetFactoryPosition",
+ "size": 151,
+ "link_base": 0,
+ "bytes_hex": "8b9120050000a10000000083ec1056578bbaa80e00003bf875478b82ac0e00008b35000000003bc675378b82b00e00008b35000000003bc675278b118d44240c5051ff52488b4c24088b105f5e89118b50048951048b40088941088bc183c410c333c0538a819c0000008b8aac0e00008b92b00e00008b58048b700803cb8b188b44240c03df03d689185b5f8948048950085e83c410c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C84C@@3IA",
+   "sym_key": "DataGlobal_89C84C"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C850@@3IA",
+   "sym_key": "DataGlobal_89C850"
+  }
+ ]
+}

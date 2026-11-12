@@ -1,0 +1,15 @@
+{
+ "symbol": "?RemoveAircraft@AirstrikeClass@@QAEHH@Z",
+ "sym_key": "AirstrikeClass::RemoveAircraft",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "8b415c8b542404535733db33ff3bc275598b82d805000089415c899ad80500008b413048894130899a94020000743b568bb0d80500003bf275238bb2d805000089b0d8050000899ad80500008b713033c04e897130899a94020000eb028bc64783ff647f043bc375c75e395930770f8b150000000088593c89514088593d5f5bc20400",
+ "relocs": [
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

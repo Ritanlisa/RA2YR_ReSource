@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetupChannels@AudioMixer@@QAEHXZ",
+ "sym_key": "AudioMixer::SetupChannels",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "515355568bf157897424108b7e048d5e043bfb750633c933ffeb3633c933ed3bf9742e8bc78d505cbe020000008b4850894afc8b4854890a83c2084e75ef89a8a40000008b00453bc375da8b74241033c983c64cba020000008bc6bdfeffffff3bf98978bcc70017fcffffc7400417fcffff8948c48848c089b868ffffff741433db8a9870ffffff8b5cdf58899860ffffffeb06898860ffffff8b986cffffff898864ffffff23dd89986cffffff83c0404a75ac8b5424108b0e5f8b421403c189065e5d5b59c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x41CFE0",
+ "name": "AircraftTypeClass::ddtor",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41CFE0",
+ "bytes_hex": "51568bf1b201c70668287e00c746044c287e00c7460844287e00c7460c3c287e00e8ca8830008b1518b2a8008d44240450b918b2a80089742408ff521083f8ff742d8b0d28b2a8003bc17d23493bc1890d28b2a8007d188b0d1cb2a800408b1481895481fc8b0d28b2a8003bc17ce88bcee88a4a2f00f644240c01740956e8daba3a0083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

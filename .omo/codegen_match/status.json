@@ -532,7 +532,7 @@
   "this_as_id": false
  },
  "0x406170": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -1243,11 +1243,16 @@
   "this_as_id": false
  },
  "0x408a70": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+3 lea ebp, [ecx + 4]",
   "name": "AudioMixer::SetupChannels",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AudioMixer::SetupChannels",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x408d30": {
   "attempts": 1,
@@ -2600,7 +2605,7 @@
   "this_as_id": false
  },
  "0x40d8e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_40D8E0",
@@ -3775,7 +3780,7 @@
   "this_as_id": false
  },
  "0x40ffff": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -4233,15 +4238,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x4112d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+3 mov edx, dword ptr [ecx + 0x2c]",
   "name": "MapClass::isLocationShrouded",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MapClass::isLocationShrouded",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x411330": {
@@ -4729,7 +4734,7 @@
   "this_as_id": false
  },
  "0x416d50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -5512,15 +5517,15 @@
   "status": "OK"
  },
  "0x41cbf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+5 push esi",
   "name": "AircraftTypeClass::vt_entry_7C",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ObjectTypeClass::vt_entry_7C",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x41cc20": {
@@ -5593,15 +5598,15 @@
   "this_as_id": false
  },
  "0x41cfe0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 mov dl, 1",
   "name": "AircraftTypeClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AircraftTypeClass::ddtor",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x41d0a0": {
@@ -5747,15 +5752,15 @@
   "this_as_id": false
  },
  "0x41dc80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+8 push esi",
   "name": "AirstrikeClass::RemoveAircraft",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "AirstrikeClass::RemoveAircraft",
   "rule_violations": 9,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x41dd10": {
@@ -6699,15 +6704,15 @@
   "this_as_id": false
  },
  "0x426270": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+2 push esi",
   "name": "AnimClass::UpdateDamageRadius",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AnimClass::UpdateDamageRadius",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x426390": {
@@ -7640,14 +7645,14 @@
   "this_as_id": false
  },
  "0x42b420": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+3 push ebx",
   "name": "GeneratePathWaypoints",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "GeneratePathWaypoints",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x42bca0": {
@@ -7851,7 +7856,7 @@
   "status": "NG"
  },
  "0x42df90": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9077,15 +9082,15 @@
   "this_as_id": false
  },
  "0x438210": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "BlowStraw::Get",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "BlowStraw::Get",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x438370": {
@@ -9825,15 +9830,15 @@
   "status": "NG"
  },
  "0x44f640": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x520]",
   "name": "BuildingClass::GetFactoryPosition",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "BuildingClass::GetFactoryPosition",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4503e0": {
@@ -10106,15 +10111,15 @@
   "this_as_id": false
  },
  "0x457aa0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 mov esi, ecx",
   "name": "BuildingClass::CreateFoggedObjects",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BuildingClass::CreateFoggedObjects",
-  "rule_violations": 13,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 26,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4581f0": {
@@ -11467,7 +11472,7 @@
   "status": "PENDING"
  },
  "0x46b960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -12755,7 +12760,7 @@
   "this_as_id": false
  },
  "0x474940": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -12807,7 +12812,7 @@
   "this_as_id": false
  },
  "0x475540": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -13544,26 +13549,26 @@
   "this_as_id": false
  },
  "0x47d210": {
-  "attempts": 19,
+  "attempts": 20,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+11 je 0x47d2a4",
   "name": "CellClass::SetWallOwner",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "CellClass::SetWallOwner",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x47e470": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x28",
   "name": "SetCellClassOccupancyFlags",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "SetCellClassOccupancyFlags",
   "rule_violations": 14,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x47ff80": {

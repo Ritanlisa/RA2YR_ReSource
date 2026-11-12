@@ -1,0 +1,8 @@
+{
+ "symbol": "?isLocationShrouded@MapClass@@QAEHG@Z",
+ "sym_key": "MapClass::isLocationShrouded",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "83ec108b412c8944240c33c089442400894424048b41148b4928894c24088b4c24148b1081e1ffff0000518d4c24045150ff521483c410c20400",
+ "relocs": []
+}

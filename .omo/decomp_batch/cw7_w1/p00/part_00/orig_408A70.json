@@ -1,0 +1,11 @@
+{
+ "addr": "0x408A70",
+ "name": "AudioMixer::SetupChannels",
+ "size": 159,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408A70",
+ "bytes_hex": "5153558d69045657894c24108b7d003bfd750633db33ffeb3133db3bfb742b8bc78d5024be020000008b4818894afc8b481c890a83c2084e75ef8958348b00433bc575dd8b4c241033db8d714cba020000008bc68978f4c70017fcffff8b288968043bfb8958fc8958f88978d8740c8b68e08b6cef208968d0eb038958d08958d48b68dc83e5fe8968dc83c0404a75c48b168b411403c289065f5e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
