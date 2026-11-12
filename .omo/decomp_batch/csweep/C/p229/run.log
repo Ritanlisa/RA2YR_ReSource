@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p229\part_00
+=== convert (20 addrs) ===
+[conv] 0x45ab00 _DynamicVectorClass_PAVFoggedObjectClass::Constructor_VectorClass_FoggedObjectClass___ -> _DynamicVectorClass_PAVFoggedObjectClass
+[conv] 0x45ac90 _VectorClass_PAVFoggedObjectClass::QueryInterface -> _VectorClass_PAVFoggedObjectClass
+[conv] 0x45ace0 _VectorClass_PAVReestablish::Add -> _VectorClass_PAVReestablish
+[conv] 0x45ad30 _DynamicVectorClass_PAVReestablish::Constructor_VectorClass_Reestablish___ -> _DynamicVectorClass_PAVReestablish
+[conv] 0x466080 _VectorClass_V_TPoint3D_H::QueryInterface -> _VectorClass_V_TPoint3D_H
+[conv] 0x46b8c0 _VectorClass_PAVBulletClass::QueryInterface -> _VectorClass_PAVBulletClass
+[conv] 0x473050 _DynamicVectorClass_PAUControlNode::QueryInterface -> _DynamicVectorClass_PAUControlNode
+[conv] 0x4730a0 _VectorClass_PAVCaptureManagerClass::QueryInterface -> _VectorClass_PAVCaptureManagerClass
+[conv] 0x4730f0 _DynamicVectorClass_PAVCaptureManagerClass::Constructor_VectorClass_CaptureManagerClass___ -> _DynamicVectorClass_PAVCaptureManagerClass
+[conv] 0x474f50 ObjectTypeClass::ReadInt -> ObjectTypeClass
+[conv] 0x474fa0 ObjectTypeClass::ReadDouble -> ObjectTypeClass
+[conv] 0x4757d0 INIClass::GetBool -> INIClass
+[conv] 0x477990 _TypeList_H::QueryInterface -> _TypeList_H
+[conv] 0x477a70 _TypeList_PAVTechnoTypeClass::QueryInterface -> _TypeList_PAVTechnoTypeClass
+[conv] 0x477ac0 _TypeList_VRGBClass::QueryInterface -> _TypeList_VRGBClass
+[conv] 0x477b10 _DynamicVectorClass_H::QueryInterface -> _DynamicVectorClass_H
+[conv] 0x478630 VectorClass::vt00 -> VectorClass
+[conv] 0x4786d0 _VectorClass_VRGBClass::QueryInterface -> _VectorClass_VRGBClass
+[conv] 0x488030 _DynamicVectorClass_PAVObjectClass::Constructor_VectorClass_ObjectClass___ -> _DynamicVectorClass_PAVObjectClass
+[conv] 0x48afd0 _VectorClass_PAUDamageGroup::Add -> _VectorClass_PAUDamageGroup
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVFoggedObjectClass rc=0
+[era] _VectorClass_PAVFoggedObjectClass rc=0
+[era] _VectorClass_PAVReestablish rc=0
+[era] _DynamicVectorClass_PAVReestablish rc=0
+[era] _VectorClass_V_TPoint3D_H rc=0
+[era] _VectorClass_PAVBulletClass rc=0
+[era] _DynamicVectorClass_PAUControlNode rc=0
+[era] _VectorClass_PAVCaptureManagerClass rc=0
+[era] _DynamicVectorClass_PAVCaptureManagerClass rc=0
+[era] ObjectTypeClass          rc=2
+[era] INIClass                 rc=2
+[era] _TypeList_H              rc=0
+[era] _TypeList_PAVTechnoTypeClass rc=0
+[era] _TypeList_VRGBClass      rc=0
+[era] _DynamicVectorClass_H    rc=0
+[era] VectorClass              rc=2
+[era] _VectorClass_VRGBClass   rc=0
+[era] _DynamicVectorClass_PAVObjectClass rc=0
+[era] _VectorClass_PAUDamageGroup rc=0
+=== diffasm byte-compare ===
+[diff] 0x45ab00   MISMATCH         _DynamicVectorClass_PAVFoggedObjectClass::Constructor_VectorClass_FoggedObjectClass___
+[diff] 0x45ac90   MISMATCH         _VectorClass_PAVFoggedObjectClass::QueryInterface
+[diff] 0x45ace0   MISMATCH         _VectorClass_PAVReestablish::Add
+[diff] 0x45ad30   MISMATCH         _DynamicVectorClass_PAVReestablish::Constructor_VectorClass_Reestablish___
+[diff] 0x466080   MISMATCH         _VectorClass_V_TPoint3D_H::QueryInterface
+[diff] 0x46b8c0   MISMATCH         _VectorClass_PAVBulletClass::QueryInterface
+[diff] 0x473050   MISMATCH         _DynamicVectorClass_PAUControlNode::QueryInterface
+[diff] 0x4730a0   MISMATCH         _VectorClass_PAVCaptureManagerClass::QueryInterface
+[diff] 0x4730f0   MISMATCH         _DynamicVectorClass_PAVCaptureManagerClass::Constructor_VectorClass_CaptureManagerClass___
+[diff] 0x477990   MISMATCH         _TypeList_H::QueryInterface
+[diff] 0x477a70   MISMATCH         _TypeList_PAVTechnoTypeClass::QueryInterface
+[diff] 0x477ac0   MISMATCH         _TypeList_VRGBClass::QueryInterface
+[diff] 0x477b10   MISMATCH         _DynamicVectorClass_H::QueryInterface
+[diff] 0x4786d0   MISMATCH         _VectorClass_VRGBClass::QueryInterface
+[diff] 0x488030   MISMATCH         _DynamicVectorClass_PAVObjectClass::Constructor_VectorClass_ObjectClass___
+[diff] 0x48afd0   MISMATCH         _VectorClass_PAUDamageGroup::Add
+[ledger] 0x45ab00 _DynamicVectorClass_PAVFoggedObjectClass::Constructor_VectorClass_FoggedObjectClass___ -> NG (attempt 1)
+[ledger] 0x45ac90 _VectorClass_PAVFoggedObjectClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x45ace0 _VectorClass_PAVReestablish::Add -> NG (attempt 1)
+[ledger] 0x45ad30 _DynamicVectorClass_PAVReestablish::Constructor_VectorClass_Reestablish___ -> NG (attempt 1)
+[ledger] 0x466080 _VectorClass_V_TPoint3D_H::QueryInterface -> NG (attempt 1)
+[ledger] 0x46b8c0 _VectorClass_PAVBulletClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x473050 _DynamicVectorClass_PAUControlNode::QueryInterface -> NG (attempt 1)
+[ledger] 0x4730a0 _VectorClass_PAVCaptureManagerClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4730f0 _DynamicVectorClass_PAVCaptureManagerClass::Constructor_VectorClass_CaptureManagerClass___ -> NG (attempt 1)
+[ledger] 0x474f50 ObjectTypeClass::ReadInt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x474fa0 ObjectTypeClass::ReadDouble -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4757d0 INIClass::GetBool -> COMPILE_FAIL (attempt 1)
+[ledger] 0x477990 _TypeList_H::QueryInterface -> NG (attempt 1)
+[ledger] 0x477a70 _TypeList_PAVTechnoTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x477ac0 _TypeList_VRGBClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x477b10 _DynamicVectorClass_H::QueryInterface -> NG (attempt 1)
+[ledger] 0x478630 VectorClass::vt00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4786d0 _VectorClass_VRGBClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x488030 _DynamicVectorClass_PAVObjectClass::Constructor_VectorClass_ObjectClass___ -> NG (attempt 1)
+[ledger] 0x48afd0 _VectorClass_PAUDamageGroup::Add -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "const_fold": 16
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p229\batch_report.json
