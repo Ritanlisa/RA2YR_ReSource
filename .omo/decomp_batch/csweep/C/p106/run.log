@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p106\part_00
+=== convert (20 addrs) ===
+[conv] 0x600110 _VectorClass_PAVSpotLightClass::Remove -> _VectorClass_PAVSpotLightClass
+[conv] 0x627f00 _VectorClass_PAVColorScheme::Remove -> _VectorClass_PAVColorScheme
+[conv] 0x6283e0 _VectorClass_VHSVClass::Destroy -> _VectorClass_VHSVClass
+[conv] 0x628a40 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Destroy_0 -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x62b1c0 _VectorClass_PAVParasiteClass::Remove -> _VectorClass_PAVParasiteClass
+[conv] 0x63de30 _VectorClass_PAVPlanningMemberClass::Remove -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63e140 VectorClass::Cleanup2 -> VectorClass
+[conv] 0x63e400 _VectorClass_PAVPlanningNodeClass::Clear_1 -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63e740 _VectorClass_PAVEventClass::ddtor -> _VectorClass_PAVEventClass
+[conv] 0x63ea40 _VectorClass_PAVPlanningTokenClass::Remove -> _VectorClass_PAVPlanningTokenClass
+[conv] 0x658a70 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::ddtor -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x65c040 _VectorClass_PAVRadSiteClass::Remove -> _VectorClass_PAVRadSiteClass
+[conv] 0x660dd0 _VectorClass_PAVRadarEventClass::Remove -> _VectorClass_PAVRadarEventClass
+[conv] 0x664900 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::Destroy -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67abe0 _VectorClass_PBVVoxelAnimTypeClass::Cleanup2 -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67af60 VectorClass::ClearAndFree -> VectorClass
+[conv] 0x67b2e0 _VectorClass_PBVTerrainTypeClass::TryFreeAndClear -> _VectorClass_PBVTerrainTypeClass
+[conv] 0x69c800 _VectorClass_W4DiskID::removePlayer -> _VectorClass_W4DiskID
+[conv] 0x69ce30 _VectorClass_PAVMultiMission::Remove -> _VectorClass_PAVMultiMission
+[conv] 0x69d090 _VectorClass_PAUGlobalPacketType::Remove -> _VectorClass_PAUGlobalPacketType
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVSpotLightClass rc=0
+[era] _VectorClass_PAVColorScheme rc=0
+[era] _VectorClass_VHSVClass   rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] _VectorClass_PAVParasiteClass rc=0
+[era] _VectorClass_PAVPlanningMemberClass rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVPlanningNodeClass rc=0
+[era] _VectorClass_PAVEventClass rc=0
+[era] _VectorClass_PAVPlanningTokenClass rc=0
+[era] _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=0
+[era] _VectorClass_PAVRadSiteClass rc=0
+[era] _VectorClass_PAVRadarEventClass rc=0
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=2
+[era] _VectorClass_PBVTerrainTypeClass rc=0
+[era] _VectorClass_W4DiskID    rc=0
+[era] _VectorClass_PAVMultiMission rc=0
+[era] _VectorClass_PAUGlobalPacketType rc=0
+=== diffasm byte-compare ===
+[diff] 0x600110   MISMATCH         _VectorClass_PAVSpotLightClass::Remove
+[diff] 0x627f00   MISMATCH         _VectorClass_PAVColorScheme::Remove
+[diff] 0x6283e0   MISMATCH         _VectorClass_VHSVClass::Destroy
+[diff] 0x628a40   MISMATCH         _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Destroy_0
+[diff] 0x62b1c0   MISMATCH         _VectorClass_PAVParasiteClass::Remove
+[diff] 0x63de30   MISMATCH         _VectorClass_PAVPlanningMemberClass::Remove
+[diff] 0x63e140   MISMATCH         VectorClass::Cleanup2
+[diff] 0x67af60   MISMATCH         VectorClass::ClearAndFree
+[diff] 0x63e400   MISMATCH         _VectorClass_PAVPlanningNodeClass::Clear_1
+[diff] 0x63e740   MISMATCH         _VectorClass_PAVEventClass::ddtor
+[diff] 0x63ea40   MISMATCH         _VectorClass_PAVPlanningTokenClass::Remove
+[diff] 0x658a70   MISMATCH         _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::ddtor
+[diff] 0x65c040   MISMATCH         _VectorClass_PAVRadSiteClass::Remove
+[diff] 0x660dd0   MISMATCH         _VectorClass_PAVRadarEventClass::Remove
+[diff] 0x664900   MISMATCH         _VectorClass_PAUConnectionListStruct_OwnerTalkClass::Destroy
+[diff] 0x67b2e0   MISMATCH         _VectorClass_PBVTerrainTypeClass::TryFreeAndClear
+[diff] 0x69c800   MISMATCH         _VectorClass_W4DiskID::removePlayer
+[diff] 0x69ce30   MISMATCH         _VectorClass_PAVMultiMission::Remove
+[diff] 0x69d090   MISMATCH         _VectorClass_PAUGlobalPacketType::Remove
+[ledger] 0x600110 _VectorClass_PAVSpotLightClass::Remove -> NG (attempt 1)
+[ledger] 0x627f00 _VectorClass_PAVColorScheme::Remove -> NG (attempt 1)
+[ledger] 0x6283e0 _VectorClass_VHSVClass::Destroy -> NG (attempt 1)
+[ledger] 0x628a40 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Destroy_0 -> NG (attempt 1)
+[ledger] 0x62b1c0 _VectorClass_PAVParasiteClass::Remove -> NG (attempt 1)
+[ledger] 0x63de30 _VectorClass_PAVPlanningMemberClass::Remove -> NG (attempt 1)
+[ledger] 0x63e140 VectorClass::Cleanup2 -> NG (attempt 1)
+[ledger] 0x63e400 _VectorClass_PAVPlanningNodeClass::Clear_1 -> NG (attempt 1)
+[ledger] 0x63e740 _VectorClass_PAVEventClass::ddtor -> NG (attempt 1)
+[ledger] 0x63ea40 _VectorClass_PAVPlanningTokenClass::Remove -> NG (attempt 1)
+[ledger] 0x658a70 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::ddtor -> NG (attempt 1)
+[ledger] 0x65c040 _VectorClass_PAVRadSiteClass::Remove -> NG (attempt 1)
+[ledger] 0x660dd0 _VectorClass_PAVRadarEventClass::Remove -> NG (attempt 1)
+[ledger] 0x664900 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::Destroy -> NG (attempt 1)
+[ledger] 0x67abe0 _VectorClass_PBVVoxelAnimTypeClass::Cleanup2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67af60 VectorClass::ClearAndFree -> NG (attempt 1)
+[ledger] 0x67b2e0 _VectorClass_PBVTerrainTypeClass::TryFreeAndClear -> NG (attempt 1)
+[ledger] 0x69c800 _VectorClass_W4DiskID::removePlayer -> NG (attempt 1)
+[ledger] 0x69ce30 _VectorClass_PAVMultiMission::Remove -> NG (attempt 1)
+[ledger] 0x69d090 _VectorClass_PAUGlobalPacketType::Remove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 18,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p106\batch_report.json
