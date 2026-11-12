@@ -82877,6 +82877,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x75cc80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x18",
+  "name": "JumpjetLocomotionClass::SmallStub_75CC80",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_75CC80",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x75ccc0": {
   "attempts": 2,
   "clean": true,
@@ -87018,6 +87030,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x778700": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb73590",
+  "name": "unknown_libname_38",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_38",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x778710": {
   "attempts": 5,
   "clean": false,
@@ -87400,6 +87423,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x77b8f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb73ae0",
+  "name": "unknown_libname_39",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_39",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x77bcb0": {
   "attempts": 7,
   "clean": false,
@@ -87455,6 +87489,28 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x77ca20": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb73acc",
+  "name": "unknown_libname_40",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_40",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77ca50": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb76e24",
+  "name": "unknown_libname_41",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_41",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x77ca60": {
   "attempts": 4,
   "clean": false,
@@ -87488,6 +87544,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x77cf30": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb76ac4",
+  "name": "unknown_libname_42",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_42",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x77cf40": {
   "attempts": 1,
   "clean": true,
@@ -87510,6 +87577,83 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x77cfc0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb73b30",
+  "name": "unknown_libname_44",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_44",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77cff0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb7622c",
+  "name": "unknown_libname_45",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_45",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d020": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb76908",
+  "name": "unknown_libname_46",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_46",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d050": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb77794",
+  "name": "unknown_libname_47",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_47",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d080": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb778f4",
+  "name": "unknown_libname_48",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_48",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d0b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb778fc",
+  "name": "unknown_libname_49",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_49",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d0e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb765ec",
+  "name": "unknown_libname_50",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_50",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x77d0f0": {
   "attempts": 6,
   "clean": false,
@@ -87517,6 +87661,17 @@
   "name": "sub_77D0F0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_77D0F0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d110": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb76900",
+  "name": "unknown_libname_51",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_51",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -87543,6 +87698,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x77d1c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+5 jmp 0x7b6760",
+  "name": "unknown_libname_53",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "unknown_libname_53",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x77d200": {
   "attempts": 1,
   "clean": true,
@@ -87562,6 +87728,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x77d8c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x84a45c",
+  "name": "unknown_libname_54",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_54",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x77d8d0": {
   "attempts": 2,
   "clean": false,
@@ -87569,6 +87746,39 @@
   "name": "unknown_libname_55",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "unknown_libname_55",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d8e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x84a468",
+  "name": "unknown_libname_56",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_56",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d8f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x84a470",
+  "name": "unknown_libname_57",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "unknown_libname_57",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d900": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x84a478",
+  "name": "unknown_libname_58",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_58",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -87593,6 +87803,17 @@
   "name": "Network::IsLobbyFeature",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "Network::IsLobbyFeature",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77da10": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb73e40",
+  "name": "unknown_libname_59",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_59",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

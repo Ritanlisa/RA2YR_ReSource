@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_57@@YAPAXXZ",
+ "sym_key": "Unnamed::unknown_libname_57",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "b900000000e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aNews@@3PADA",
+   "sym_key": "aNews"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?ShowDialog@WebBrowser@@QAEPAXXZ",
+   "sym_key": "WebBrowser::ShowDialog"
+  }
+ ]
+}

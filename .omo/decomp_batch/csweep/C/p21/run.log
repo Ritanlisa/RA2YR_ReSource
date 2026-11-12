@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x75cc80 JumpjetLocomotionClass::SmallStub_75CC80 -> JumpjetLocomotionClass
+[conv] 0x778700 unknown_libname_38 -> _addr_77
+[conv] 0x77b8f0 unknown_libname_39 -> _addr_77
+[conv] 0x77ca20 unknown_libname_40 -> _addr_77
+[conv] 0x77ca50 unknown_libname_41 -> _addr_77
+[conv] 0x77cf30 unknown_libname_42 -> _addr_77
+[conv] 0x77cfc0 unknown_libname_44 -> _addr_77
+[conv] 0x77cff0 unknown_libname_45 -> _addr_77
+[conv] 0x77d020 unknown_libname_46 -> _addr_77
+[conv] 0x77d050 unknown_libname_47 -> _addr_77
+[conv] 0x77d080 unknown_libname_48 -> _addr_77
+[conv] 0x77d0b0 unknown_libname_49 -> _addr_77
+[conv] 0x77d0e0 unknown_libname_50 -> _addr_77
+[conv] 0x77d110 unknown_libname_51 -> _addr_77
+[conv] 0x77d1c0 unknown_libname_53 -> _addr_77
+[conv] 0x77d8c0 unknown_libname_54 -> _addr_77
+[conv] 0x77d8e0 unknown_libname_56 -> _addr_77
+[conv] 0x77d8f0 unknown_libname_57 -> _addr_77
+[conv] 0x77d900 unknown_libname_58 -> _addr_77
+[conv] 0x77da10 unknown_libname_59 -> _addr_77
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=0
+[era] _addr_77                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x75cc80   MISMATCH         JumpjetLocomotionClass::SmallStub_75CC80
+[diff] 0x778700   MISMATCH         unknown_libname_38
+[diff] 0x77b8f0   MISMATCH         unknown_libname_39
+[diff] 0x77ca20   MISMATCH         unknown_libname_40
+[diff] 0x77ca50   MISMATCH         unknown_libname_41
+[diff] 0x77cf30   MISMATCH         unknown_libname_42
+[diff] 0x77cfc0   MISMATCH         unknown_libname_44
+[diff] 0x77cff0   MISMATCH         unknown_libname_45
+[diff] 0x77d020   MISMATCH         unknown_libname_46
+[diff] 0x77d050   MISMATCH         unknown_libname_47
+[diff] 0x77d080   MISMATCH         unknown_libname_48
+[diff] 0x77d0b0   MISMATCH         unknown_libname_49
+[diff] 0x77d0e0   MISMATCH         unknown_libname_50
+[diff] 0x77d110   MISMATCH         unknown_libname_51
+[diff] 0x77d1c0   MISMATCH         unknown_libname_53
+[diff] 0x77d8c0   MISMATCH         unknown_libname_54
+[diff] 0x77d8e0   MISMATCH         unknown_libname_56
+[diff] 0x77d8f0   MISMATCH         unknown_libname_57
+[diff] 0x77d900   MISMATCH         unknown_libname_58
+[diff] 0x77da10   MISMATCH         unknown_libname_59
+[ledger] 0x75cc80 JumpjetLocomotionClass::SmallStub_75CC80 -> NG (attempt 1)
+[ledger] 0x778700 unknown_libname_38 -> NG (attempt 1)
+[ledger] 0x77b8f0 unknown_libname_39 -> NG (attempt 1)
+[ledger] 0x77ca20 unknown_libname_40 -> NG (attempt 1)
+[ledger] 0x77ca50 unknown_libname_41 -> NG (attempt 1)
+[ledger] 0x77cf30 unknown_libname_42 -> NG (attempt 1)
+[ledger] 0x77cfc0 unknown_libname_44 -> NG (attempt 1)
+[ledger] 0x77cff0 unknown_libname_45 -> NG (attempt 1)
+[ledger] 0x77d020 unknown_libname_46 -> NG (attempt 1)
+[ledger] 0x77d050 unknown_libname_47 -> NG (attempt 1)
+[ledger] 0x77d080 unknown_libname_48 -> NG (attempt 1)
+[ledger] 0x77d0b0 unknown_libname_49 -> NG (attempt 1)
+[ledger] 0x77d0e0 unknown_libname_50 -> NG (attempt 1)
+[ledger] 0x77d110 unknown_libname_51 -> NG (attempt 1)
+[ledger] 0x77d1c0 unknown_libname_53 -> NG (attempt 1)
+[ledger] 0x77d8c0 unknown_libname_54 -> NG (attempt 1)
+[ledger] 0x77d8e0 unknown_libname_56 -> NG (attempt 1)
+[ledger] 0x77d8f0 unknown_libname_57 -> NG (attempt 1)
+[ledger] 0x77d900 unknown_libname_58 -> NG (attempt 1)
+[ledger] 0x77da10 unknown_libname_59 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 17,
+  "branch_order": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p21\batch_report.json

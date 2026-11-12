@@ -1,0 +1,11 @@
+{
+ "addr": "0x77D0E0",
+ "name": "unknown_libname_50",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77D0E0",
+ "bytes_hex": "b9ec65b700e906760300",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

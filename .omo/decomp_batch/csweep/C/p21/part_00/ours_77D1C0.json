@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_53@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_53",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "b900000000e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76230@@3EA",
+   "sym_key": "DataGlobal_B76230"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  }
+ ]
+}
