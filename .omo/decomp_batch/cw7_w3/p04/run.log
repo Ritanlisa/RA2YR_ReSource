@@ -1,0 +1,45 @@
+======================================================================
+PART 1/1  (9 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p04\part_00
+=== convert (9 addrs) ===
+[conv] 0x7ccf1d ObjectClass::__store_str -> ObjectClass
+[conv] 0x7d6cf0 _strpbrk -> _addr_7D
+[conv] 0x7d7ee0 unknown_libname_76 -> _addr_7D
+[conv] 0x7d8d3b __set_exp -> _addr_7D
+[conv] 0x7d8da4 __set_bexp -> _addr_7D
+[conv] 0x7d8ef5 __copysign -> _addr_7D
+[conv] 0x7d92cd __finite -> _addr_7D
+[conv] 0x7d92e1 __isnan -> _addr_7D
+[conv] 0x7db207 ObjectClass::__I10_OUTPUT -> ObjectClass
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7d6cf0   MISMATCH         _strpbrk
+[diff] 0x7d8ef5   MISMATCH         __copysign
+[ledger] 0x7ccf1d ObjectClass::__store_str -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d6cf0 _strpbrk -> NG (attempt 2)
+[ledger] 0x7d7ee0 unknown_libname_76 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d8d3b __set_exp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d8da4 __set_bexp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d8ef5 __copysign -> NG (attempt 2)
+[ledger] 0x7d92cd __finite -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d92e1 __isnan -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7db207 ObjectClass::__I10_OUTPUT -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 9,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p04\batch_report.json

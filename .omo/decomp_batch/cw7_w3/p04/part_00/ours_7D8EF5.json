@@ -1,0 +1,8 @@
+{
+ "symbol": "?__copysign@@YANNN@Z",
+ "sym_key": "Unnamed::__copysign",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "83ec088b44240c8b4c2410894424008b44241833c881e1ffffff7f33c8894c2404dd44240083c408c3",
+ "relocs": []
+}

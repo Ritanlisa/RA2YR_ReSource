@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D8EF5",
+ "name": "__copysign",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D8EF5",
+ "bytes_hex": "558bec51518b45088945f88b451433450c25ffffff7f3345148945fcdd45f8c9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
