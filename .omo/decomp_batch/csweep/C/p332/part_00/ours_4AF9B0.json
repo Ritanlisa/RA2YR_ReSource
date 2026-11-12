@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_4AF9B0@ObjectClass@@QAEPAXPAX@Z",
+ "sym_key": "ObjectClass::sub_4AF9B0",
+ "size": 294,
+ "link_base": 0,
+ "bytes_hex": "83ec6855568bf1578d4c2414e80000000033c08a46308be885ed896c240c0f84c900000033d233c98a562c8a4e368bfa83f9ff538bc774190fbe15a00100008bda2bd93bd87c0433c0eb068bd92bda03c3db4424108bd55b2bd08954240cdb44240cd8f1dc1d00000000dfe0f6c401747a85ed744483f9ff8bc774290fbe15a00100008bfa2bf93bf87c1633c02be8896c240cdb44240cd8f1dd5c240cddd8eb2a2bca03c12be8896c240cdb44240cd8f1dd5c240cddd8eb12ddd8c744240c00000000c74424100000f03f8b4424108b4c240c33d2508a561c515233d28a56208d4c2450e800000000eb14ddd833d28a561c85d274168d4c2444e800000000b90c0000008bf08d7c2414f3a58b442478b90c0000008d7424148bf8f3a55f5e5d83c468c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Identity@Matrix3x4@@QAEHXZ",
+   "sym_key": "Matrix3x4::Identity"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?InterpolateVoxelAnimPose@@YIPAXPAXH0N@Z",
+   "sym_key": "InterpolateVoxelAnimPose"
+  },
+  {
+   "off": 251,
+   "type": "REL32",
+   "sym": "?CopyAudioData@@YIPADPAXH@Z",
+   "sym_key": "CopyAudioData"
+  }
+ ]
+}

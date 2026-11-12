@@ -1,0 +1,21 @@
+{
+ "symbol": "?SHA1TickRNG@ObjectClass@@QAEPAXD@Z",
+ "sym_key": "ObjectClass::SHA1TickRNG",
+ "size": 168,
+ "link_base": 0,
+ "bytes_hex": "8a44240483ec14a801568bf18b4e0c74238bc183e1079983e20703c2b201c1f80325ff000000d2e28a4c30148d44301432ca88088b460c403d0008000089460c755f5333db55578d6e14885c24286800010000558d4c2430e8000000008d4424108d4c242850e800000000b8000100002bc383f8148bc87605b9140000008d3c2b8bd18d7424108bc7c1e902f3a58bca83e1034381fb00010000f3a472b05f5d5b5e83c414c20400",
+ "relocs": [
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Process@SHA1@@QAEHHH@Z",
+   "sym_key": "SHA1::Process"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?Compute@SHA1@@QAEHPAX@Z",
+   "sym_key": "SHA1::Compute"
+  }
+ ]
+}

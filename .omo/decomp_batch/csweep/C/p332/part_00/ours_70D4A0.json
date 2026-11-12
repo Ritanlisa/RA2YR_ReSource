@@ -1,0 +1,33 @@
+{
+ "symbol": "?ClearTargetToMeClearManagerTarget@AbstractClass@@QAIXH@Z",
+ "sym_key": "AbstractClass::ClearTargetToMeClearManagerTarget",
+ "size": 218,
+ "link_base": 0,
+ "bytes_hex": "558bea565785ed740f8a45142401f6d81bc023c58bf8eb0233ff8b0d00000000538d59ff85db0f8c800000008b1500000000b10185ff8b349a74218b869402000085c0741739685075128b476c85c07e0b8a879000000084c00f94c139aeb4020000754584c974418b0656ff90f80100008b0e56ff512c83f802751a83beac000000197511c786bc00000000000000c686d20600000039aeb4020000750b8b166a0056ff92c80300004b7980a10000000033d25b8d48ff3bca7c1ba1000000008b048839683c750389503c39684075038950404979e55f5e5dc3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_SidebarState@@3IA",
+   "sym_key": "g_SidebarState"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_TechnoClass_Count@@3PAXA",
+   "sym_key": "g_TechnoClass_Count"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_AIProductionState@@3IA",
+   "sym_key": "g_HouseClass_AIProductionState"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?g_TeamClassPool@@3PAXA",
+   "sym_key": "g_TeamClassPool"
+  }
+ ]
+}

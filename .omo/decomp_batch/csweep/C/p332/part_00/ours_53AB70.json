@@ -1,0 +1,69 @@
+{
+ "symbol": "?Entity_Process@@YAHXZ",
+ "sym_key": "Unnamed::Entity_Process",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "51a1000000008b0d000000000548120000c7050000000001000000c705000000001e000000890d0000000089088b4c2400894804c7400801000000a100000000576a018b90603500008990303500008b0d000000008b816c3500008d04808d04808d1480b81f85eb51c1e203f7e28b81683500008b8964350000c1ea058d0480528d04808d1480b81f85eb51c1e203f7e28d04898bfac1ef058d04808d0c80b81f85eb51c1e103f7e18bca8bd7c1e905e8000000006a016800000000e80000000083c4085f59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?NukeFlash_Status@@3IA",
+   "sym_key": "NukeFlash_Status"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?NukeFlash_Duration@@3IA",
+   "sym_key": "NukeFlash_Duration"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?NukeFlash_StartTime@@3IA",
+   "sym_key": "NukeFlash_StartTime"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?UpdateSurfaceAnimations@@YIHHHHH@Z",
+   "sym_key": "UpdateSurfaceAnimations"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}

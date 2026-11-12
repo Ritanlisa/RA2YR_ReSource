@@ -1,0 +1,75 @@
+{
+ "symbol": "?UpdateCameoProduction@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::UpdateCameoProduction",
+ "size": 246,
+ "link_base": 0,
+ "bytes_hex": "a19002000083ec14578d78ff85ff0f8cdd0000008b4c24105556894c240c8b15840200008b34ba8b46088b4e1083f8ff74130fbe15a00100008bea2be83be97d082bc203c885c975078b461485c07506c6460400eb218b4e188b1603d18b4c240cc646040189160fbe15a0010000895608894e0c8946108a465084c0740b8a465184c00f94c28856518b068b4e4c3bc17c5685f674528b15800200008d4c241051688002000089742418ff521083f8ff742d8b0d900200003bc17d23493bc1890d900200007d188b0d84020000408b1481895481fc8b0d900200003bc17ce856e80000000083c4044f0f892fffffff5e5d5f83c414c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
