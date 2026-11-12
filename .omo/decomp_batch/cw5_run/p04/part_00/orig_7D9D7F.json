@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D9D7F",
+ "name": "_mbtowc",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D9D7F",
+ "bytes_hex": "558bec5356bea48bb7005756ff15c8117e008b3dcc117e0033db391da08bb700740e56ffd76a13e84a3cffff596a015bff7510ff750cff7508e81f00000083c40c89451085db740a6a13e8883cffff59eb0356ffd78b45105f5e5b5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

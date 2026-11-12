@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x70b1d0 TechnoClass::RevealAreaConditional -> TechnoClass
+[conv] 0x540dc0 SessionClass::initLAN -> SessionClass
+[conv] 0x4219e0 VectorClass_ptr_AlphaShapeClass::SetCapacity -> VectorClass_ptr_AlphaShapeClass
+[conv] 0x5ac820 VectorClass_ptr_MapRegionClass::SetCapacity -> VectorClass_ptr_MapRegionClass
+[conv] 0x6acca0 Map_Handle_6ACCA0 -> Map_Handle
+[conv] 0x5d4b20 WideString::WordWrap -> WideString
+[conv] 0x68bdc0 ScenarioClass::ReadWaypoints -> ScenarioClass
+[conv] 0x53fbd0 IPXGlobalConnClass::Flush -> IPXGlobalConnClass
+[conv] 0x42f260 BuildingClass::MarkUpgradeComponentUsed -> BuildingClass
+[conv] 0x626690 FlagSystem::GetNextActive -> FlagSystem
+[conv] 0x5cd0e0 MSVQAnim::Play -> MSVQAnim
+[conv] 0x7ceaff __ms_p5_mp_test_fdiv -> _addr_7C
+[conv] 0x5295a0 INIClass::ReadBool3 -> INIClass
+[conv] 0x473c00 CCFileClass::GetSize -> CCFileClass
+[conv] 0x7b7600 WideString::Reassign -> WideString
+[conv] 0x7d9d7f _mbtowc -> _addr_7D
+[conv] 0x7d73f9 _TestDefaultLanguage -> _addr_7D
+[conv] 0x479a40 sub_479A40 -> _addr_47
+[conv] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c4010 _TClassFactory_VDriveLocomotionClass::ddtor -> _TClassFactory_VDriveLocomotionClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] SessionClass             rc=0
+[era] VectorClass_ptr_AlphaShapeClass rc=0
+[era] VectorClass_ptr_MapRegionClass rc=0
+[era] Map_Handle               rc=0
+[era] WideString               rc=2
+[era] ScenarioClass            rc=2
+[era] IPXGlobalConnClass       rc=2
+[era] BuildingClass            rc=0
+[era] FlagSystem               rc=0
+[era] MSVQAnim                 rc=2
+[era] _addr_7C                 rc=0
+[era] INIClass                 rc=0
+[era] CCFileClass              rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_47                 rc=2
+[era] _TClassFactory_VSpawnManagerClass rc=2
+[era] _TClassFactory_VDriveLocomotionClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x70b1d0   MISMATCH         TechnoClass::RevealAreaConditional
+[diff] 0x540dc0   MISMATCH         SessionClass::initLAN
+[diff] 0x4219e0   MISMATCH         VectorClass_ptr_AlphaShapeClass::SetCapacity
+[diff] 0x5ac820   MISMATCH         VectorClass_ptr_MapRegionClass::SetCapacity
+[diff] 0x6acca0   MISMATCH         Map_Handle_6ACCA0
+[diff] 0x7b7600   MISMATCH         WideString::Reassign
+[diff] 0x42f260   MISMATCH         BuildingClass::MarkUpgradeComponentUsed
+[diff] 0x626690   MISMATCH         FlagSystem::GetNextActive
+[diff] 0x7ceaff   MISMATCH         __ms_p5_mp_test_fdiv
+[diff] 0x5295a0   MISMATCH         INIClass::ReadBool3
+[diff] 0x473c00   MISMATCH         CCFileClass::GetSize
+[diff] 0x7d9d7f   MISMATCH         _mbtowc
+[ledger] 0x70b1d0 TechnoClass::RevealAreaConditional -> NG (attempt 12)
+[ledger] 0x540dc0 SessionClass::initLAN -> NG (attempt 12)
+[ledger] 0x4219e0 VectorClass_ptr_AlphaShapeClass::SetCapacity -> NG (attempt 4)
+[ledger] 0x5ac820 VectorClass_ptr_MapRegionClass::SetCapacity -> NG (attempt 4)
+[ledger] 0x6acca0 Map_Handle_6ACCA0 -> NG (attempt 5)
+[ledger] 0x5d4b20 WideString::WordWrap -> COMPILE_FAIL (attempt 14)
+[ledger] 0x68bdc0 ScenarioClass::ReadWaypoints -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53fbd0 IPXGlobalConnClass::Flush -> COMPILE_FAIL (attempt 12)
+[ledger] 0x42f260 BuildingClass::MarkUpgradeComponentUsed -> NG (attempt 4)
+[ledger] 0x626690 FlagSystem::GetNextActive -> NG (attempt 12)
+[ledger] 0x5cd0e0 MSVQAnim::Play -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7ceaff __ms_p5_mp_test_fdiv -> NG (attempt 5)
+[ledger] 0x5295a0 INIClass::ReadBool3 -> NG (attempt 4)
+[ledger] 0x473c00 CCFileClass::GetSize -> NG (attempt 4)
+[ledger] 0x7b7600 WideString::Reassign -> NG (attempt 4)
+[ledger] 0x7d9d7f _mbtowc -> NG (attempt 4)
+[ledger] 0x7d73f9 _TestDefaultLanguage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x479a40 sub_479A40 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c4010 _TClassFactory_VDriveLocomotionClass::ddtor -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "const_fold": 3,
+  "branch_polarity": 4,
+  "extern_reloc": 1,
+  "codegen_shape": 1,
+  "branch_order": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p04\batch_report.json

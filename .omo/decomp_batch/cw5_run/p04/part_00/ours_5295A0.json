@@ -1,0 +1,45 @@
+{
+ "symbol": "?ReadBool3@INIClass@@QAEDPAPAD0D@Z",
+ "sym_key": "INIClass::ReadBool3",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4c240c57e8000000008b4c240c8bf8e8000000008a4c241484c974158b0d000000005157508bcee8000000005f5ec20c0033d28bce8a1500000000525750e8000000005f5ec20c00",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_825BF8@@3PAXA",
+   "sym_key": "DataGlobal_825BF8"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?g_Str_no@@3EA",
+   "sym_key": "g_Str_no"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?Map_Handle_6ACCA0@@YIDH@Z",
+ "sym_key": "Unnamed::Map_Handle_6ACCA0",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "538b1d000000005683f908577c065f5e32c05bc38d79ff85ff744e8d47ff83f8037723ff248500000000be0e050000eb3dbe16050000eb36be1a050000eb2fbe1b050000eb2883ff057507be1c050000eb1c8bf783ee06f7de1bf681e6e2faffff81c61d050000eb05be0b0500006a006a0068470100005653e8000000006a005068500100005653e80000000083f8027613478d470183f8080f8c78ffffff5f5e32c05bc35f5eb0015bc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B59C@@3IA",
+   "sym_key": "DataGlobal_B0B59C"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "$L1874",
+   "sym_key": "$L1874"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJHHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJHHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  }
+ ]
+}
