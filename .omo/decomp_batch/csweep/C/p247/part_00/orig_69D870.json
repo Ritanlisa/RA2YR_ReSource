@@ -1,0 +1,11 @@
+{
+ "addr": "0x69D870",
+ "name": "ParseAndApplyAlliances_Parse",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69D870",
+ "bytes_hex": "8b442404568bf133d23bc2895604894608c6460c0188560dc706049f7e0074248b4c240c3bca7409894e048bc65ec20800c1e00250e86db5120083c404894604c6460d018bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

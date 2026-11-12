@@ -1,0 +1,27 @@
+{
+ "symbol": "?executeExplodeAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeExplodeAction",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0d000000006a008b810caf04008d0480d1e0508b86900000008d14808b8104af0400d1e28d0c80d1e1e8000000008b15000000008b8e90000000b0015e898a08af0400c21000",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?UpdateSurfaceAnimations@@YIHHHHH@Z",
+   "sym_key": "UpdateSurfaceAnimations"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetSize@_VectorClass_VWstring@@QAEHPAPBD@Z",
+ "sym_key": "_VectorClass_VWstring::GetSize",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578a460c84c075085f5e33c05bc204008b460833ff85c07f095f5e83c8ff5bc204008b5c24108b4e0453e80000000084c075188b4608473bf87dde8b4604538d0cb8e80000000084c074e88bc75f5e5bc20400",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  }
+ ]
+}

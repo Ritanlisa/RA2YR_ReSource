@@ -1,0 +1,15 @@
+{
+ "symbol": "?updateAnimationState@AbstractClass@@QAEPAV1@HH@Z",
+ "sym_key": "AbstractClass::updateAnimationState",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b4e0cc746040000000081e10100ffff89460883c901c7060000000085c0894e0c742f8b4c240c85c97409894e048bc65ec208008d14850000000052e8000000008946048b460c83c40480e4000c0189460c8bc65ec20800",
+ "relocs": [
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

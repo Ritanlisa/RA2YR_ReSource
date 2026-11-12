@@ -74073,6 +74073,30 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5c5a30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+7 xor edx, edx",
+  "name": "AbstractClass::updateAnimationState",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::updateAnimationState",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5c5a80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "CoopCampaignVector::Construct",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CoopCampaignVector::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5c5ad0": {
   "attempts": 2,
   "first_diff": null,
@@ -79058,6 +79082,42 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5d8950": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "UnitTypeVector::Construct2",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "UnitTypeVector::Construct2",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5d89a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "InfantryTypeVector::ConstructFromData",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "InfantryTypeVector::ConstructFromData",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5d89f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d8a40": {
   "attempts": 1,
   "clean": true,
@@ -80682,6 +80742,18 @@
   "name": "_DynamicVectorClass_PBVMultiMission::Constructor",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "VectorClass_cptr_MultiMission::Constructor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5ef0b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7eef50",
+  "name": "MultiMissionVector::Constructor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "MultiMissionVector::Constructor",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -86295,6 +86367,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6302a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+7 xor edx, edx",
+  "name": "ParticleSystemClass::resetSystemState",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ParticleSystemClass::resetSystemState",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6302f0": {
   "attempts": 1,
   "clean": true,
@@ -88865,6 +88949,18 @@
   "name": "Vector4::EraseAt_Copy",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "Vector4::EraseAt_Copy",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x63efb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7efe64",
+  "name": "VectorClass::Object_Set",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Object_Set",
   "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
@@ -95539,6 +95635,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x67c310": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7f0d5c",
+  "name": "VoxelAnimTypeVector::Constructor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VoxelAnimTypeVector::Constructor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x67c360": {
   "attempts": 1,
   "clean": false,
@@ -95551,6 +95659,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x67c3a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Game::LockMutex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Game::LockMutex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x67c3f0": {
   "attempts": 1,
   "clean": false,
@@ -95559,6 +95679,18 @@
   "name": "DynamicVector::RemoveAt2",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "DynamicVector::RemoveAt2",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x67c430": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "RulesClass::readIQ",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RulesClass::readIQ",
   "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
@@ -98738,6 +98870,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x69cb50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+2 push edi",
+  "name": "_VectorClass_VWstring::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "VectorClass_Wstring::GetSize",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x69cba0": {
   "attempts": 1,
   "first_diff": "+5 jne 0x69cbac",
@@ -99013,6 +99157,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MapFile::Constructor",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x69d870": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+24 mov dword ptr [esi], 0x7e9f04",
+  "name": "VectorClass::ParseAndApplyAlliances_Parse",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "ParseAndApplyAlliances_Parse",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -101481,6 +101637,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6b1ab0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7f324c",
+  "name": "SlaveControlVector::Constructor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "SlaveControlVector::Constructor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6b1b00": {
   "attempts": 1,
   "clean": true,
@@ -102944,6 +103112,18 @@
   "name": "_DynamicVectorClass_PAVSpawnManagerClass::Constructor_VectorClass_SpawnManagerClass___",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_SpawnManagerClass___",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6b8880": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7f36d4",
+  "name": "SpawnControlVector::Constructor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "SpawnControlVector::Constructor",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -108508,6 +108688,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6caba0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7f3f8c",
+  "name": "VectorClass::Render_Parse_6CABA0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Render_Parse_6CABA0",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6cabf0": {
   "attempts": 1,
   "clean": true,
@@ -111257,6 +111449,42 @@
   "orig_name": "globalHelper_0E2C20",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e2e60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TActionClass::executeSelfDestructAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TActionClass::executeSelfDestructAction",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6e2eb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+11 mov eax, dword ptr [ecx + 0x353c]",
+  "name": "TActionClass::executeExplodeAction",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TActionClass::executeExplodeAction",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e2f00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TActionClass::executeChronoshiftAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TActionClass::executeChronoshiftAction",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6e3120": {
@@ -123376,6 +123604,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "SelectAllOfType_Helper",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7343e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "TacticalClass::updateScroll",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TacticalClass::updateScroll",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
