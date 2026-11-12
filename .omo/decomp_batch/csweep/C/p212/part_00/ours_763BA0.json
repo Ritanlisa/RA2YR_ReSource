@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetAtChecked@VectorClass@@QAEHH@Z",
+ "sym_key": "VectorClass::GetAtChecked",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf1508d4e2851ff563c8b4e244083f9ff74073b463875028bc185c07c123b46387d0d8d14408b462c5e8d0490c2040033c05ec20400",
+ "relocs": []
+}

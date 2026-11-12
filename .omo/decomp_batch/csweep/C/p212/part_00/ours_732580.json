@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsOwnedByHuman@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::IsOwnedByHuman",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "85c974378a819000000084c0742da10000000085c0740d8b891c020000e800000000eb0d8b811c0200000fbe80ed01000085c07406b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  }
+ ]
+}

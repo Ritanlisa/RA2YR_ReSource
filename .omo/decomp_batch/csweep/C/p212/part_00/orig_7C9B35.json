@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C9B35",
+ "name": "___iscsym",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C9B35",
+ "bytes_hex": "833d9cc78700017e126807010000ff742408e8c57700005959eb12a190c587008b4c2404668b0448250701000085c07508837c24045f7401c36a0158c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,69 @@
+{
+ "symbol": "?sub_74C380@@YAHXZ",
+ "sym_key": "Unnamed::sub_74C380",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000c6050000000001a200000000c7050000000000000000c705000000000a000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_74C3C0@@YAHPBX0@Z",
+   "sym_key": "sub_74C3C0"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_VoxelDrawState@@3PAXA",
+   "sym_key": "g_VoxelDrawState"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D298@@3IA",
+   "sym_key": "DataGlobal_B1D298"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D29C@@3EA",
+   "sym_key": "DataGlobal_B1D29C"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D29D@@3EA",
+   "sym_key": "DataGlobal_B1D29D"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D290@@3IA",
+   "sym_key": "DataGlobal_B1D290"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_21@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_21"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D2A4@@3IA",
+   "sym_key": "DataGlobal_B1D2A4"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_VeinholePool@@3IA",
+   "sym_key": "g_VeinholePool"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

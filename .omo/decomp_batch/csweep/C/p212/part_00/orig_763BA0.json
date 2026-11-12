@@ -1,0 +1,11 @@
+{
+ "addr": "0x763BA0",
+ "name": "VectorClass_flat::GetAtChecked",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x763BA0",
+ "bytes_hex": "8b542404568bf1528b46288d4e28ff50148b4e244083f9ff74073b463875028bc185c07c123b46387d0d8b4e2c8d04405e8d0481c2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

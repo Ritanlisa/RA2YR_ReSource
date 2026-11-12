@@ -1,0 +1,11 @@
+{
+ "addr": "0x773030",
+ "name": "SuperWeaponClass::FindByName",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x773030",
+ "bytes_hex": "a1787588005633f65785c08bf97e23a16c758800578b0cb083c12451e8cf5c050083c40885c07410a178758800463bf07cdd5f83c8ff5ec38bc65f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

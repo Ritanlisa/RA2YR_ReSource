@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p212\part_00
+=== convert (20 addrs) ===
+[conv] 0x725650 sub_725650 -> _addr_72
+[conv] 0x725750 sub_725750 -> _addr_72
+[conv] 0x7257d0 sub_7257D0 -> _addr_72
+[conv] 0x725850 sub_725850 -> _addr_72
+[conv] 0x732580 TechnoClass::IsOwnedByHuman -> TechnoClass
+[conv] 0x74c380 sub_74C380 -> _addr_74
+[conv] 0x750300 sub_750300 -> _addr_75
+[conv] 0x752210 sub_752210 -> _addr_75
+[conv] 0x759180 sub_759180 -> _addr_75
+[conv] 0x763590 sub_763590 -> _addr_76
+[conv] 0x766070 sub_766070 -> _addr_76
+[conv] 0x773030 SuperWeaponClass::FindByName -> SuperWeaponClass
+[conv] 0x7c9b35 ___iscsym -> _addr_7C
+[conv] 0x6e85b0 ObjectClass::sub_6E85B0 -> ObjectClass
+[conv] 0x6f03f0 ObjectClass::sub_6F03F0 -> ObjectClass
+[conv] 0x763ba0 VectorClass::GetAtChecked -> VectorClass
+[conv] 0x7660b0 sub_7660B0 -> _addr_76
+[conv] 0x5584f0 sub_5584F0 -> _addr_55
+[conv] 0x6247d0 Struct::WideStringCopy -> Struct
+[conv] 0x4525f0 BuildingClass::IsPoweredOn -> BuildingClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_74                 rc=0
+[era] _addr_75                 rc=0
+[era] _addr_76                 rc=0
+[era] SuperWeaponClass         rc=0
+[era] _addr_7C                 rc=0
+[era] ObjectClass              rc=2
+[era] VectorClass              rc=0
+[era] _addr_55                 rc=2
+[era] Struct                   rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x725650   MISMATCH         sub_725650
+[diff] 0x725750   MISMATCH         sub_725750
+[diff] 0x7257d0   MISMATCH         sub_7257D0
+[diff] 0x725850   MISMATCH         sub_725850
+[diff] 0x732580   MISMATCH         TechnoClass::IsOwnedByHuman
+[diff] 0x74c380   MISMATCH         sub_74C380
+[diff] 0x750300   MISMATCH         sub_750300
+[diff] 0x752210   MISMATCH         sub_752210
+[diff] 0x759180   MISMATCH         sub_759180
+[diff] 0x763590   MISMATCH         sub_763590
+[diff] 0x766070   MISMATCH         sub_766070
+[diff] 0x7660b0   MISMATCH         sub_7660B0
+[diff] 0x773030   MISMATCH         SuperWeaponClass::FindByName
+[diff] 0x7c9b35   MISMATCH         ___iscsym
+[diff] 0x6f03f0   MISMATCH         ObjectClass::sub_6F03F0
+[diff] 0x763ba0   MISMATCH         VectorClass::GetAtChecked
+[ledger] 0x725650 sub_725650 -> NG (attempt 1)
+[ledger] 0x725750 sub_725750 -> NG (attempt 1)
+[ledger] 0x7257d0 sub_7257D0 -> NG (attempt 1)
+[ledger] 0x725850 sub_725850 -> NG (attempt 1)
+[ledger] 0x732580 TechnoClass::IsOwnedByHuman -> NG (attempt 1)
+[ledger] 0x74c380 sub_74C380 -> NG (attempt 1)
+[ledger] 0x750300 sub_750300 -> NG (attempt 1)
+[ledger] 0x752210 sub_752210 -> NG (attempt 1)
+[ledger] 0x759180 sub_759180 -> NG (attempt 1)
+[ledger] 0x763590 sub_763590 -> NG (attempt 1)
+[ledger] 0x766070 sub_766070 -> NG (attempt 1)
+[ledger] 0x773030 SuperWeaponClass::FindByName -> NG (attempt 1)
+[ledger] 0x7c9b35 ___iscsym -> NG (attempt 1)
+[ledger] 0x6e85b0 ObjectClass::sub_6E85B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f03f0 ObjectClass::sub_6F03F0 -> NG (attempt 1)
+[ledger] 0x763ba0 VectorClass::GetAtChecked -> NG (attempt 1)
+[ledger] 0x7660b0 sub_7660B0 -> NG (attempt 1)
+[ledger] 0x5584f0 sub_5584F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6247d0 Struct::WideStringCopy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4525f0 BuildingClass::IsPoweredOn -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "const_fold": 10,
+  "branch_polarity": 1,
+  "signedness": 1,
+  "extern_reloc": 2,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p212\batch_report.json
