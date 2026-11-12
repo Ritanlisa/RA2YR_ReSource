@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p311\part_00
+=== convert (20 addrs) ===
+[conv] 0x45a1c0 _VectorClass_PBVParticleSystemTypeClass::Remove -> _VectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a420 VectorClass::Release -> VectorClass
+[conv] 0x45a7a0 _VectorClass_PAVReestablish::Remove -> _VectorClass_PAVReestablish
+[conv] 0x45ab50 _VectorClass_PAVFoggedObjectClass::Release -> _VectorClass_PAVFoggedObjectClass
+[conv] 0x46b6a0 _VectorClass_PAVBulletClass::Release -> _VectorClass_PAVBulletClass
+[conv] 0x472b80 _VectorClass_PAUControlNode::SetCapacity -> _VectorClass_PAUControlNode
+[conv] 0x472de0 _VectorClass_PAVCaptureManagerClass::Release -> _VectorClass_PAVCaptureManagerClass
+[conv] 0x477c70 _VectorClass_H::vt02 -> _VectorClass_H
+[conv] 0x478000 _VectorClass_PAVTechnoTypeClass::Remove -> _VectorClass_PAVTechnoTypeClass
+[conv] 0x48adb0 _VectorClass_PAUDamageGroup::Remove -> _VectorClass_PAUDamageGroup
+[conv] 0x49eb90 _VectorClass_PAV_DynamicVectorClass_PAD::Release -> _VectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x49ee60 _VectorClass_PAD::Release -> _VectorClass_PAD
+[conv] 0x4a1280 _VectorClass_PAUIConnectionPoint::Release -> _VectorClass_PAUIConnectionPoint
+[conv] 0x4a4b70 _VectorClass_PAU_DDSURFACEDESC::Release -> _VectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a7dc0 _VectorClass_PAVDiskLaserClass::Release -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4b9ce0 VectorClass_ptr_CrossDissolveEffect::SetCapacity -> VectorClass_ptr_CrossDissolveEffect
+[conv] 0x4b9f40 _VectorClass_PAUCrossDissolveEffect::Remove -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4c2ce0 _VectorClass_PAVEBolt::Release -> _VectorClass_PAVEBolt
+[conv] 0x4c4a40 _VectorClass_PAVEgoClass::Release -> _VectorClass_PAVEgoClass
+[conv] 0x4c5c00 _VectorClass_PAVEMPulseClass::Release -> _VectorClass_PAVEMPulseClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVParticleSystemTypeClass rc=2
+[era] VectorClass              rc=2
+[era] _VectorClass_PAVReestablish rc=2
+[era] _VectorClass_PAVFoggedObjectClass rc=2
+[era] _VectorClass_PAVBulletClass rc=2
+[era] _VectorClass_PAUControlNode rc=2
+[era] _VectorClass_PAVCaptureManagerClass rc=2
+[era] _VectorClass_H           rc=2
+[era] _VectorClass_PAVTechnoTypeClass rc=2
+[era] _VectorClass_PAUDamageGroup rc=2
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=2
+[era] _VectorClass_PAD         rc=2
+[era] _VectorClass_PAUIConnectionPoint rc=2
+[era] _VectorClass_PAU_DDSURFACEDESC rc=2
+[era] _VectorClass_PAVDiskLaserClass rc=2
+[era] VectorClass_ptr_CrossDissolveEffect rc=0
+[era] _VectorClass_PAUCrossDissolveEffect rc=2
+[era] _VectorClass_PAVEBolt    rc=2
+[era] _VectorClass_PAVEgoClass rc=2
+[era] _VectorClass_PAVEMPulseClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x4b9ce0   MISMATCH         VectorClass_ptr_CrossDissolveEffect::SetCapacity
+[ledger] 0x45a1c0 _VectorClass_PBVParticleSystemTypeClass::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a420 VectorClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a7a0 _VectorClass_PAVReestablish::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45ab50 _VectorClass_PAVFoggedObjectClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46b6a0 _VectorClass_PAVBulletClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x472b80 _VectorClass_PAUControlNode::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x472de0 _VectorClass_PAVCaptureManagerClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x477c70 _VectorClass_H::vt02 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x478000 _VectorClass_PAVTechnoTypeClass::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48adb0 _VectorClass_PAUDamageGroup::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49eb90 _VectorClass_PAV_DynamicVectorClass_PAD::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ee60 _VectorClass_PAD::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a1280 _VectorClass_PAUIConnectionPoint::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a4b70 _VectorClass_PAU_DDSURFACEDESC::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a7dc0 _VectorClass_PAVDiskLaserClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b9ce0 VectorClass_ptr_CrossDissolveEffect::SetCapacity -> NG (attempt 1)
+[ledger] 0x4b9f40 _VectorClass_PAUCrossDissolveEffect::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c2ce0 _VectorClass_PAVEBolt::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c4a40 _VectorClass_PAVEgoClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c5c00 _VectorClass_PAVEMPulseClass::Release -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p311\batch_report.json
