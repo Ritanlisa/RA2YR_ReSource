@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p241\part_00
+=== convert (20 addrs) ===
+[conv] 0x63eed0 _VectorClass_PAVPlanningTokenClass::QueryInterface -> _VectorClass_PAVPlanningTokenClass
+[conv] 0x63ef20 _DynamicVectorClass_PAVPlanningTokenClass::Destructor_1 -> _DynamicVectorClass_PAVPlanningTokenClass
+[conv] 0x645b10 DynamicVector::getTeamIndex -> DynamicVector
+[conv] 0x658d10 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::QueryInterface -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x65a4a0 _VectorClass_PAVRadBeam::QueryInterface -> _VectorClass_PAVRadBeam
+[conv] 0x65a4f0 _DynamicVectorClass_PAVRadBeam::Constructor_VectorClass_RadBeam___ -> _DynamicVectorClass_PAVRadBeam
+[conv] 0x65c1b0 _VectorClass_PAVRadSiteClass::QueryInterface -> _VectorClass_PAVRadSiteClass
+[conv] 0x65c200 _DynamicVectorClass_PAVRadSiteClass::Constructor_VectorClass_RadSiteClass___ -> _DynamicVectorClass_PAVRadSiteClass
+[conv] 0x660f80 _VectorClass_PAVRadarEventClass::QueryInterface -> _VectorClass_PAVRadarEventClass
+[conv] 0x664a70 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::Constructor -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67a990 _TypeList_PBVVoxelAnimTypeClass::Add -> _TypeList_PBVVoxelAnimTypeClass
+[conv] 0x67a9e0 _TypeList_PBVSmudgeTypeClass::TypeList_vt00 -> _TypeList_PBVSmudgeTypeClass
+[conv] 0x67aa30 _TypeList_PBVTerrainTypeClass::Add -> _TypeList_PBVTerrainTypeClass
+[conv] 0x67b500 SmallFunc_67B500 -> SmallFunc
+[conv] 0x67bac0 GetINIClassInt -> _addr_67
+[conv] 0x67bce0 SmallFunc_67BCE0 -> SmallFunc
+[conv] 0x67bd30 GetINIClassKeyword -> _addr_67
+[conv] 0x67bd80 SmallFunc_67BD80 -> SmallFunc
+[conv] 0x67c010 _VectorClass_PBVVoxelAnimTypeClass::Constructor -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67c060 _DynamicVectorClass_PBVVoxelAnimTypeClass::Add -> _DynamicVectorClass_PBVVoxelAnimTypeClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVPlanningTokenClass rc=0
+[era] _DynamicVectorClass_PAVPlanningTokenClass rc=0
+[era] DynamicVector            rc=2
+[era] _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=0
+[era] _VectorClass_PAVRadBeam  rc=0
+[era] _DynamicVectorClass_PAVRadBeam rc=0
+[era] _VectorClass_PAVRadSiteClass rc=0
+[era] _DynamicVectorClass_PAVRadSiteClass rc=0
+[era] _VectorClass_PAVRadarEventClass rc=0
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _TypeList_PBVVoxelAnimTypeClass rc=0
+[era] _TypeList_PBVSmudgeTypeClass rc=0
+[era] _TypeList_PBVTerrainTypeClass rc=0
+[era] SmallFunc                rc=2
+[era] _addr_67                 rc=2
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _DynamicVectorClass_PBVVoxelAnimTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x63eed0   MISMATCH         _VectorClass_PAVPlanningTokenClass::QueryInterface
+[diff] 0x63ef20   MISMATCH         _DynamicVectorClass_PAVPlanningTokenClass::Destructor_1
+[diff] 0x658d10   MISMATCH         _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::QueryInterface
+[diff] 0x65a4a0   MISMATCH         _VectorClass_PAVRadBeam::QueryInterface
+[diff] 0x65a4f0   MISMATCH         _DynamicVectorClass_PAVRadBeam::Constructor_VectorClass_RadBeam___
+[diff] 0x65c1b0   MISMATCH         _VectorClass_PAVRadSiteClass::QueryInterface
+[diff] 0x65c200   MISMATCH         _DynamicVectorClass_PAVRadSiteClass::Constructor_VectorClass_RadSiteClass___
+[diff] 0x660f80   MISMATCH         _VectorClass_PAVRadarEventClass::QueryInterface
+[diff] 0x664a70   MISMATCH         _VectorClass_PAUConnectionListStruct_OwnerTalkClass::Constructor
+[diff] 0x67a990   MISMATCH         _TypeList_PBVVoxelAnimTypeClass::Add
+[diff] 0x67a9e0   MISMATCH         _TypeList_PBVSmudgeTypeClass::TypeList_vt00
+[diff] 0x67aa30   MISMATCH         _TypeList_PBVTerrainTypeClass::Add
+[diff] 0x67c010   MISMATCH         _VectorClass_PBVVoxelAnimTypeClass::Constructor
+[diff] 0x67c060   MISMATCH         _DynamicVectorClass_PBVVoxelAnimTypeClass::Add
+[ledger] 0x63eed0 _VectorClass_PAVPlanningTokenClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x63ef20 _DynamicVectorClass_PAVPlanningTokenClass::Destructor_1 -> NG (attempt 1)
+[ledger] 0x645b10 DynamicVector::getTeamIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x658d10 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x65a4a0 _VectorClass_PAVRadBeam::QueryInterface -> NG (attempt 1)
+[ledger] 0x65a4f0 _DynamicVectorClass_PAVRadBeam::Constructor_VectorClass_RadBeam___ -> NG (attempt 1)
+[ledger] 0x65c1b0 _VectorClass_PAVRadSiteClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x65c200 _DynamicVectorClass_PAVRadSiteClass::Constructor_VectorClass_RadSiteClass___ -> NG (attempt 1)
+[ledger] 0x660f80 _VectorClass_PAVRadarEventClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x664a70 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::Constructor -> NG (attempt 1)
+[ledger] 0x67a990 _TypeList_PBVVoxelAnimTypeClass::Add -> NG (attempt 1)
+[ledger] 0x67a9e0 _TypeList_PBVSmudgeTypeClass::TypeList_vt00 -> NG (attempt 1)
+[ledger] 0x67aa30 _TypeList_PBVTerrainTypeClass::Add -> NG (attempt 1)
+[ledger] 0x67b500 SmallFunc_67B500 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67bac0 GetINIClassInt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67bce0 SmallFunc_67BCE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67bd30 GetINIClassKeyword -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67bd80 SmallFunc_67BD80 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67c010 _VectorClass_PBVVoxelAnimTypeClass::Constructor -> NG (attempt 1)
+[ledger] 0x67c060 _DynamicVectorClass_PBVVoxelAnimTypeClass::Add -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "const_fold": 14
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p241\batch_report.json
