@@ -60030,6 +60030,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5c5010": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+22 call 0x7c8b3d",
+  "name": "DynamicVector::loadGameState",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MPCooperative::loadGameState",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5c5040": {
   "attempts": 1,
   "clean": false,
@@ -60083,6 +60095,18 @@
   "orig_name": "DynamicVectorClass_ptr_NodeNameType::Clear",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c50d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+22 call 0x7c8b3d",
+  "name": "DynamicVector::processPlayerInput",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MPCooperative::processPlayerInput",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c5100": {
@@ -62368,6 +62392,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5d05a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_VPoint2D::FreeData",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "MSPCXAnim_42::FreeData",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d05d0": {
   "attempts": 2,
   "clean": true,
@@ -62386,6 +62422,18 @@
   "name": "VectorClass_Point2D::Count",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x5d0610": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVMSTextEntry::FreeData_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "MSPCXAnim_42::FreeData_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5d0640": {
   "attempts": 2,
@@ -62409,6 +62457,18 @@
   "orig_name": "VectorClass_ptr_MSTextEntry::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d0670": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVMapSelection::FreeData_1",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "MSPCXAnim_42::FreeData_1",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d06a0": {
@@ -62435,6 +62495,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5d06d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVMapStage::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "MSPCXAnim_26::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d0700": {
   "attempts": 1,
   "first_diff": "+5 jne 0x5d070c",
@@ -62452,6 +62524,18 @@
   "orig_name": "MSPCXAnim_26::GetFrame",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d0730": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVMSAnimEntry::FreeData",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "MSPCXAnim_26::FreeData",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d0760": {
@@ -62476,6 +62560,18 @@
   "orig_name": "MSPCXAnim_42::GetFrame",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d0790": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVMSSfxEntry::FreeData_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "MSPCXAnim_26::FreeData_0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d07c0": {
@@ -62973,6 +63069,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5d2720": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVMSAnim::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_MSSfx::Destroy",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d2750": {
   "attempts": 1,
   "first_diff": "+5 jne 0x5d275c",
@@ -62990,6 +63098,18 @@
   "orig_name": "CampaignProperties_WorldDominationTour_22::Seek",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d2780": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVMSSfx::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_Point2D::Destroy",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d27b0": {
@@ -63402,6 +63522,18 @@
   "orig_name": "MPBattleClass::onDialogCreated",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d5080": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAUHWND::ClearBuffer",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "MSFont_18::ClearBuffer",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d50b0": {
@@ -64140,6 +64272,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5d80b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+22 call 0x7c8b3d",
+  "name": "DynamicVector::sub_5D80B0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "ScenarioClass::sub_5D80B0",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d80e0": {
   "attempts": 1,
   "clean": false,
@@ -64162,6 +64306,18 @@
   "orig_name": "VectorClass_ptr_MultiplayerTeam::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d8110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+22 call 0x7c8b3d",
+  "name": "DynamicVector::resetScenarioData",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "ScenarioClass::resetScenarioData",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d8140": {
@@ -65627,6 +65783,18 @@
   "orig_name": "EnablePlayerSlotControls",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5eebb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PBVMultiMission::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_cptr_MultiMission::Destroy",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5eebe0": {
@@ -67403,6 +67571,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5f9b00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVObjectTypeClass::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_ObjectTypeClass::Destroy",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5f9b30": {
   "attempts": 2,
   "clean": true,
@@ -68349,6 +68529,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Render_Render_5FFFA0",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5fffc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+22 call 0x7c8b3d",
+  "name": "DynamicVector::Destructor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "DynamicVector::Destructor",
+  "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
  },
@@ -69415,6 +69607,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x627d20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVColorScheme::Clear_627D20",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x627d50": {
   "attempts": 2,
   "clean": true,
@@ -69437,6 +69641,18 @@
   "orig_name": "VectorClass_ptr_ColorScheme::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x627d80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_VHSVClass::Clear_627D80",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D80",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x627db0": {
@@ -69552,6 +69768,18 @@
   "name": "_DynamicVectorClass_VHSVClass::Destructor_2",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_2",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x628800": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ddtor",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -69815,6 +70043,18 @@
   "name": "ParasiteClass::StubReturn67",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x62b070": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_PAVParasiteClass::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_ParasiteClass::Destroy",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x62b0a0": {
   "attempts": 2,

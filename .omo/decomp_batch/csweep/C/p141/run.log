@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p141\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c5010 DynamicVector::loadGameState -> DynamicVector
+[conv] 0x5c50d0 DynamicVector::processPlayerInput -> DynamicVector
+[conv] 0x5d05a0 _DynamicVectorClass_VPoint2D::FreeData -> _DynamicVectorClass_VPoint2D
+[conv] 0x5d0610 _DynamicVectorClass_PAVMSTextEntry::FreeData_0 -> _DynamicVectorClass_PAVMSTextEntry
+[conv] 0x5d0670 _DynamicVectorClass_PAVMapSelection::FreeData_1 -> _DynamicVectorClass_PAVMapSelection
+[conv] 0x5d06d0 _DynamicVectorClass_PAVMapStage::ddtor -> _DynamicVectorClass_PAVMapStage
+[conv] 0x5d0730 _DynamicVectorClass_PAVMSAnimEntry::FreeData -> _DynamicVectorClass_PAVMSAnimEntry
+[conv] 0x5d0790 _DynamicVectorClass_PAVMSSfxEntry::FreeData_0 -> _DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x5d2720 _DynamicVectorClass_PAVMSAnim::Destroy -> _DynamicVectorClass_PAVMSAnim
+[conv] 0x5d2780 _DynamicVectorClass_PAVMSSfx::Destroy -> _DynamicVectorClass_PAVMSSfx
+[conv] 0x5d5080 _DynamicVectorClass_PAUHWND::ClearBuffer -> _DynamicVectorClass_PAUHWND
+[conv] 0x5d80b0 DynamicVector::sub_5D80B0 -> DynamicVector
+[conv] 0x5d8110 DynamicVector::resetScenarioData -> DynamicVector
+[conv] 0x5eebb0 _DynamicVectorClass_PBVMultiMission::Destroy -> _DynamicVectorClass_PBVMultiMission
+[conv] 0x5f9b00 _DynamicVectorClass_PAVObjectTypeClass::Destroy -> _DynamicVectorClass_PAVObjectTypeClass
+[conv] 0x5fffc0 DynamicVector::Destructor -> DynamicVector
+[conv] 0x627d20 _DynamicVectorClass_PAVColorScheme::Clear_627D20 -> _DynamicVectorClass_PAVColorScheme
+[conv] 0x627d80 _DynamicVectorClass_VHSVClass::Clear_627D80 -> _DynamicVectorClass_VHSVClass
+[conv] 0x628800 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::ddtor -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x62b070 _DynamicVectorClass_PAVParasiteClass::Destroy -> _DynamicVectorClass_PAVParasiteClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_VPoint2D rc=0
+[era] _DynamicVectorClass_PAVMSTextEntry rc=0
+[era] _DynamicVectorClass_PAVMapSelection rc=0
+[era] _DynamicVectorClass_PAVMapStage rc=0
+[era] _DynamicVectorClass_PAVMSAnimEntry rc=0
+[era] _DynamicVectorClass_PAVMSSfxEntry rc=0
+[era] _DynamicVectorClass_PAVMSAnim rc=0
+[era] _DynamicVectorClass_PAVMSSfx rc=0
+[era] _DynamicVectorClass_PAUHWND rc=0
+[era] _DynamicVectorClass_PBVMultiMission rc=0
+[era] _DynamicVectorClass_PAVObjectTypeClass rc=0
+[era] _DynamicVectorClass_PAVColorScheme rc=0
+[era] _DynamicVectorClass_VHSVClass rc=0
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] _DynamicVectorClass_PAVParasiteClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5c5010   MISMATCH         DynamicVector::loadGameState
+[diff] 0x5c50d0   MISMATCH         DynamicVector::processPlayerInput
+[diff] 0x5d80b0   MISMATCH         DynamicVector::sub_5D80B0
+[diff] 0x5d8110   MISMATCH         DynamicVector::resetScenarioData
+[diff] 0x5fffc0   MISMATCH         DynamicVector::Destructor
+[diff] 0x5d05a0   MISMATCH         _DynamicVectorClass_VPoint2D::FreeData
+[diff] 0x5d0610   MISMATCH         _DynamicVectorClass_PAVMSTextEntry::FreeData_0
+[diff] 0x5d0670   MISMATCH         _DynamicVectorClass_PAVMapSelection::FreeData_1
+[diff] 0x5d06d0   MISMATCH         _DynamicVectorClass_PAVMapStage::ddtor
+[diff] 0x5d0730   MISMATCH         _DynamicVectorClass_PAVMSAnimEntry::FreeData
+[diff] 0x5d0790   MISMATCH         _DynamicVectorClass_PAVMSSfxEntry::FreeData_0
+[diff] 0x5d2720   MISMATCH         _DynamicVectorClass_PAVMSAnim::Destroy
+[diff] 0x5d2780   MISMATCH         _DynamicVectorClass_PAVMSSfx::Destroy
+[diff] 0x5d5080   MISMATCH         _DynamicVectorClass_PAUHWND::ClearBuffer
+[diff] 0x5eebb0   MISMATCH         _DynamicVectorClass_PBVMultiMission::Destroy
+[diff] 0x5f9b00   MISMATCH         _DynamicVectorClass_PAVObjectTypeClass::Destroy
+[diff] 0x627d20   MISMATCH         _DynamicVectorClass_PAVColorScheme::Clear_627D20
+[diff] 0x627d80   MISMATCH         _DynamicVectorClass_VHSVClass::Clear_627D80
+[diff] 0x628800   MISMATCH         _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::ddtor
+[diff] 0x62b070   MISMATCH         _DynamicVectorClass_PAVParasiteClass::Destroy
+[ledger] 0x5c5010 DynamicVector::loadGameState -> NG (attempt 1)
+[ledger] 0x5c50d0 DynamicVector::processPlayerInput -> NG (attempt 1)
+[ledger] 0x5d05a0 _DynamicVectorClass_VPoint2D::FreeData -> NG (attempt 1)
+[ledger] 0x5d0610 _DynamicVectorClass_PAVMSTextEntry::FreeData_0 -> NG (attempt 1)
+[ledger] 0x5d0670 _DynamicVectorClass_PAVMapSelection::FreeData_1 -> NG (attempt 1)
+[ledger] 0x5d06d0 _DynamicVectorClass_PAVMapStage::ddtor -> NG (attempt 1)
+[ledger] 0x5d0730 _DynamicVectorClass_PAVMSAnimEntry::FreeData -> NG (attempt 1)
+[ledger] 0x5d0790 _DynamicVectorClass_PAVMSSfxEntry::FreeData_0 -> NG (attempt 1)
+[ledger] 0x5d2720 _DynamicVectorClass_PAVMSAnim::Destroy -> NG (attempt 1)
+[ledger] 0x5d2780 _DynamicVectorClass_PAVMSSfx::Destroy -> NG (attempt 1)
+[ledger] 0x5d5080 _DynamicVectorClass_PAUHWND::ClearBuffer -> NG (attempt 1)
+[ledger] 0x5d80b0 DynamicVector::sub_5D80B0 -> NG (attempt 1)
+[ledger] 0x5d8110 DynamicVector::resetScenarioData -> NG (attempt 1)
+[ledger] 0x5eebb0 _DynamicVectorClass_PBVMultiMission::Destroy -> NG (attempt 1)
+[ledger] 0x5f9b00 _DynamicVectorClass_PAVObjectTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x5fffc0 DynamicVector::Destructor -> NG (attempt 1)
+[ledger] 0x627d20 _DynamicVectorClass_PAVColorScheme::Clear_627D20 -> NG (attempt 1)
+[ledger] 0x627d80 _DynamicVectorClass_VHSVClass::Clear_627D80 -> NG (attempt 1)
+[ledger] 0x628800 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::ddtor -> NG (attempt 1)
+[ledger] 0x62b070 _DynamicVectorClass_PAVParasiteClass::Destroy -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 5,
+  "regalloc": 15
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p141\batch_report.json

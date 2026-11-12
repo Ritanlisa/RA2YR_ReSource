@@ -1,0 +1,456 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "const_fold": 5,
+   "regalloc": 15
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x5c5010",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 42B",
+   "first_diff": {
+    "orig": "+22 call 0x7c8b3d",
+    "ours": "+22 call 0x1b"
+   },
+   "pathology": "const_fold",
+   "name": "MPCooperative::loadGameState",
+   "emitted": "DynamicVector::loadGameState",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/9",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 42,
+   "clean": false
+  },
+  {
+   "addr": "0x5c50d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 42B",
+   "first_diff": {
+    "orig": "+22 call 0x7c8b3d",
+    "ours": "+22 call 0x1b"
+   },
+   "pathology": "const_fold",
+   "name": "MPCooperative::processPlayerInput",
+   "emitted": "DynamicVector::processPlayerInput",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/9",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 42,
+   "clean": false
+  },
+  {
+   "addr": "0x5d05a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "MSPCXAnim_42::FreeData",
+   "emitted": "_DynamicVectorClass_VPoint2D::FreeData",
+   "unit": "_DynamicVectorClass_VPoint2D",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5d0610",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "MSPCXAnim_42::FreeData_0",
+   "emitted": "_DynamicVectorClass_PAVMSTextEntry::FreeData_0",
+   "unit": "_DynamicVectorClass_PAVMSTextEntry",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5d0670",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "MSPCXAnim_42::FreeData_1",
+   "emitted": "_DynamicVectorClass_PAVMapSelection::FreeData_1",
+   "unit": "_DynamicVectorClass_PAVMapSelection",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5d06d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "MSPCXAnim_26::ddtor",
+   "emitted": "_DynamicVectorClass_PAVMapStage::ddtor",
+   "unit": "_DynamicVectorClass_PAVMapStage",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5d0730",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "MSPCXAnim_26::FreeData",
+   "emitted": "_DynamicVectorClass_PAVMSAnimEntry::FreeData",
+   "unit": "_DynamicVectorClass_PAVMSAnimEntry",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5d0790",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "MSPCXAnim_26::FreeData_0",
+   "emitted": "_DynamicVectorClass_PAVMSSfxEntry::FreeData_0",
+   "unit": "_DynamicVectorClass_PAVMSSfxEntry",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5d2720",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_MSSfx::Destroy",
+   "emitted": "_DynamicVectorClass_PAVMSAnim::Destroy",
+   "unit": "_DynamicVectorClass_PAVMSAnim",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5d2780",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_Point2D::Destroy",
+   "emitted": "_DynamicVectorClass_PAVMSSfx::Destroy",
+   "unit": "_DynamicVectorClass_PAVMSSfx",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5d5080",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "MSFont_18::ClearBuffer",
+   "emitted": "_DynamicVectorClass_PAUHWND::ClearBuffer",
+   "unit": "_DynamicVectorClass_PAUHWND",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5d80b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 42B",
+   "first_diff": {
+    "orig": "+22 call 0x7c8b3d",
+    "ours": "+22 call 0x1b"
+   },
+   "pathology": "const_fold",
+   "name": "ScenarioClass::sub_5D80B0",
+   "emitted": "DynamicVector::sub_5D80B0",
+   "unit": "DynamicVector",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/9",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 42,
+   "clean": false
+  },
+  {
+   "addr": "0x5d8110",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 42B",
+   "first_diff": {
+    "orig": "+22 call 0x7c8b3d",
+    "ours": "+22 call 0x1b"
+   },
+   "pathology": "const_fold",
+   "name": "ScenarioClass::resetScenarioData",
+   "emitted": "DynamicVector::resetScenarioData",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/9",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 42,
+   "clean": false
+  },
+  {
+   "addr": "0x5eebb0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_cptr_MultiMission::Destroy",
+   "emitted": "_DynamicVectorClass_PBVMultiMission::Destroy",
+   "unit": "_DynamicVectorClass_PBVMultiMission",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5f9b00",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_ObjectTypeClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVObjectTypeClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVObjectTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x5fffc0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 42B",
+   "first_diff": {
+    "orig": "+22 call 0x7c8b3d",
+    "ours": "+22 call 0x1b"
+   },
+   "pathology": "const_fold",
+   "name": "DynamicVector::Destructor",
+   "emitted": "DynamicVector::Destructor",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/9",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 42,
+   "clean": false
+  },
+  {
+   "addr": "0x627d20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D20",
+   "emitted": "_DynamicVectorClass_PAVColorScheme::Clear_627D20",
+   "unit": "_DynamicVectorClass_PAVColorScheme",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x627d80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D80",
+   "emitted": "_DynamicVectorClass_VHSVClass::Clear_627D80",
+   "unit": "_DynamicVectorClass_VHSVClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x628800",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ddtor",
+   "emitted": "_DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::ddtor",
+   "unit": "_DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x62b070",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_ParasiteClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVParasiteClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVParasiteClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  }
+ ]
+}
