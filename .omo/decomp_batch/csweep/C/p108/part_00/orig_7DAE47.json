@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DAE47",
+ "name": "__ismbbkana",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DAE47",
+ "bytes_hex": "813d4088b700a403000075186a036a00ff74240ce80e00000083c40c85c074046a0158c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

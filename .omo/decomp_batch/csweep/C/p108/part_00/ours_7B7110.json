@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetCharAt@MSPrintAnim@@QAEGI@Z",
+ "sym_key": "MSPrintAnim::GetCharAt",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0650e8000000008bc88b44240c83c4043bc1730f8b1680e1008a044225ff0000000bc15ec20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

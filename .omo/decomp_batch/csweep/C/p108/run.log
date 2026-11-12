@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p108\part_00
+=== convert (20 addrs) ===
+[conv] 0x753b10 sub_753B10 -> _addr_75
+[conv] 0x754b70 sub_754B70 -> _addr_75
+[conv] 0x75a580 _VectorClass_PAVMovieHandle::Remove -> _VectorClass_PAVMovieHandle
+[conv] 0x764550 _VectorClass_PAVWaypointPathClass::Remove -> _VectorClass_PAVWaypointPathClass
+[conv] 0x76a220 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::ddtor -> _VectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x76a4f0 _VectorClass_VCentroid_WorldDominationTour::ddtor -> _VectorClass_VCentroid_WorldDominationTour
+[conv] 0x7ad180 _VectorClass_PAUtConnInfoStruct::ddtor -> _VectorClass_PAUtConnInfoStruct
+[conv] 0x7b2990 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Remove -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b4410 _VectorClass_PAE::Set -> _VectorClass_PAE
+[conv] 0x7b7110 MSPrintAnim::GetCharAt -> MSPrintAnim
+[conv] 0x7dae47 __ismbbkana -> _addr_7D
+[conv] 0x598000 sub_598000 -> _addr_59
+[conv] 0x403e50 sub_403E50 -> _addr_40
+[conv] 0x406a90 sub_406A90 -> _addr_40
+[conv] 0x40af00 sub_40AF00 -> _addr_40
+[conv] 0x40b4c0 sub_40B4C0 -> _addr_40
+[conv] 0x40c700 sub_40C700 -> _addr_40
+[conv] 0x40d110 sub_40D110 -> _addr_40
+[conv] 0x40dc10 sub_40DC10 -> _addr_40
+[conv] 0x40df30 sub_40DF30 -> _addr_40
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_75                 rc=2
+[era] _VectorClass_PAVMovieHandle rc=0
+[era] _VectorClass_PAVWaypointPathClass rc=0
+[era] _VectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _VectorClass_VCentroid_WorldDominationTour rc=0
+[era] _VectorClass_PAUtConnInfoStruct rc=0
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _VectorClass_PAE         rc=0
+[era] MSPrintAnim              rc=0
+[era] _addr_7D                 rc=0
+[era] _addr_59                 rc=0
+[era] _addr_40                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x754b70   MATCH            sub_754B70
+[diff] 0x75a580   MISMATCH         _VectorClass_PAVMovieHandle::Remove
+[diff] 0x764550   MISMATCH         _VectorClass_PAVWaypointPathClass::Remove
+[diff] 0x76a220   MISMATCH         _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::ddtor
+[diff] 0x76a4f0   MISMATCH         _VectorClass_VCentroid_WorldDominationTour::ddtor
+[diff] 0x7ad180   MISMATCH         _VectorClass_PAUtConnInfoStruct::ddtor
+[diff] 0x7b2990   MISMATCH         _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Remove
+[diff] 0x7b4410   MISMATCH         _VectorClass_PAE::Set
+[diff] 0x7b7110   MISMATCH         MSPrintAnim::GetCharAt
+[diff] 0x7dae47   MISMATCH         __ismbbkana
+[diff] 0x598000   MATCH            sub_598000
+[diff] 0x403e50   MISMATCH         sub_403E50
+[diff] 0x406a90   MISMATCH         sub_406A90
+[diff] 0x40af00   MISMATCH         sub_40AF00
+[diff] 0x40b4c0   MISMATCH         sub_40B4C0
+[diff] 0x40c700   MISMATCH         sub_40C700
+[diff] 0x40d110   MISMATCH         sub_40D110
+[diff] 0x40dc10   MISMATCH         sub_40DC10
+[diff] 0x40df30   MISMATCH         sub_40DF30
+[ledger] 0x753b10 sub_753B10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x754b70 sub_754B70 -> OK (attempt 1)
+[ledger] 0x75a580 _VectorClass_PAVMovieHandle::Remove -> NG (attempt 1)
+[ledger] 0x764550 _VectorClass_PAVWaypointPathClass::Remove -> NG (attempt 1)
+[ledger] 0x76a220 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::ddtor -> NG (attempt 1)
+[ledger] 0x76a4f0 _VectorClass_VCentroid_WorldDominationTour::ddtor -> NG (attempt 1)
+[ledger] 0x7ad180 _VectorClass_PAUtConnInfoStruct::ddtor -> NG (attempt 1)
+[ledger] 0x7b2990 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Remove -> NG (attempt 1)
+[ledger] 0x7b4410 _VectorClass_PAE::Set -> NG (attempt 1)
+[ledger] 0x7b7110 MSPrintAnim::GetCharAt -> NG (attempt 1)
+[ledger] 0x7dae47 __ismbbkana -> NG (attempt 1)
+[ledger] 0x598000 sub_598000 -> OK (attempt 1)
+[ledger] 0x403e50 sub_403E50 -> NG (attempt 1)
+[ledger] 0x406a90 sub_406A90 -> NG (attempt 1)
+[ledger] 0x40af00 sub_40AF00 -> NG (attempt 1)
+[ledger] 0x40b4c0 sub_40B4C0 -> NG (attempt 1)
+[ledger] 0x40c700 sub_40C700 -> NG (attempt 1)
+[ledger] 0x40d110 sub_40D110 -> NG (attempt 1)
+[ledger] 0x40dc10 sub_40DC10 -> NG (attempt 1)
+[ledger] 0x40df30 sub_40DF30 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MATCH": 2,
+  "MISMATCH": 17
+ },
+ "pathologies": {
+  "regalloc": 7,
+  "const_fold": 1,
+  "extern_reloc": 1,
+  "codegen_shape": 8
+ },
+ "match_rate_of_decided_pct": 10.5,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p108\batch_report.json

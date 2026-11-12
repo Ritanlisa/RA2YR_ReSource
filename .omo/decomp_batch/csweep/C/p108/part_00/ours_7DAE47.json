@@ -1,0 +1,21 @@
+{
+ "symbol": "?__ismbbkana@@YAHI@Z",
+ "sym_key": "Unnamed::__ismbbkana",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "813d00000000a4030000751b8b4424046a036a0050e80000000083c40c85c07406b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78840@@3IA",
+   "sym_key": "CRTGlobal_B78840"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?CRTisctype@@YAHEHE@Z",
+   "sym_key": "CRTisctype"
+  }
+ ]
+}
