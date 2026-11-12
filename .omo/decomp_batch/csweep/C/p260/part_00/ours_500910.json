@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetFactoryCount@HouseClass@@QAEHHD@Z",
+ "sym_key": "HouseClass::GetFactoryCount",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "8b4424044883f827774433d28a9000000000ff2495000000008a44240884c074208d8188530000eb1c8d8178530000eb148d8184530000eb0c8d817c530000eb048b44240885c074058b00c2080033c0c20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "$L1940",
+   "sym_key": "$L1940"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "$L1941",
+   "sym_key": "$L1941"
+  }
+ ]
+}

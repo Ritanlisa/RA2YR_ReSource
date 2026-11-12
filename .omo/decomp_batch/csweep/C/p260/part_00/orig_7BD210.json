@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BD210",
+ "name": "DSurface::LockAndPrepareRect",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BD210",
+ "bytes_hex": "568bf1f686bc07000040741b6a006a006a0756ff56588b86bc07000083c41024bf8986bc0700006a006a006a0356ff56588b86bc07000083c4108bc881e10000008083f901750b25ffffff7f8986bc0700005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

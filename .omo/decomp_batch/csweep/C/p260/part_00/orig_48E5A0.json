@@ -1,0 +1,11 @@
+{
+ "addr": "0x48E5A0",
+ "name": "CellClass::Draw",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48E5A0",
+ "bytes_hex": "538b5c240856578b7c24148bf185db74248b462485c0741780cc80f6c34089077413f6462010740d80cc408907eb06c707000000008b4e2885c974088b01565753ff504c6a0057538bcee8412f05005f5e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

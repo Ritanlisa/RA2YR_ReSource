@@ -1,0 +1,27 @@
+{
+ "symbol": "?FindListBoxItem@@YIHPAXHH@Z",
+ "sym_key": "Unnamed::FindListBoxItem",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "535556576a008bf96a0068460100008bf257e8000000008be83bf57c0a5f5e5d83c8ff5bc204006a0056685001000057e8000000008b5c24143bc37417463bf57ddb6a0056685001000057e8000000003bc375e98bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

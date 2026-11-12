@@ -1,0 +1,33 @@
+{
+ "symbol": "?SendSettingsRequest@Network@@QAEHXZ",
+ "sym_key": "Network::SendSettingsRequest",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "8b0181ecf80000006a0150e80000000085c074086a0050e80000000057b93e00000033c08d7c2404f3ab6a018d4c240868fa00000051b900000000c744241074000000e8000000005f81c4f8000000c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?WriteBlock@Stream@@QAEHHHH@Z",
+   "sym_key": "Stream::WriteBlock"
+  }
+ ]
+}

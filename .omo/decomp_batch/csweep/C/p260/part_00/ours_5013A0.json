@@ -1,0 +1,8 @@
+{
+ "symbol": "?ScalarDeletingDestructor@HouseClass@@QAGHPAH@Z",
+ "sym_key": "HouseClass::ScalarDeletingDestructor",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "578b7c24088b87cc02000085c07709b8010000005fc20800538b5f545633f685db7e2b8b47488b04b085c0741c8a888100000084c975128b486c85c97e0b8b086a0150ff91a0010000463bf37cd55e5b33c05fc20800",
+ "relocs": []
+}

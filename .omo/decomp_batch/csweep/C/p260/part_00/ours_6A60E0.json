@@ -1,0 +1,27 @@
+{
+ "symbol": "?UpdateTargetRedrawState@SuperWeapon@@QAEPAGPAH@Z",
+ "sym_key": "SuperWeapon::UpdateTargetRedrawState",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4c24088b869c5300003bc875468bd0b101c1e2052bd06a00888ea653000068f80100008d14d08d0490888c8680150000e800000000a1a00100008b96a05300000fbec883c4083bd17f098d41028986a05300005ec20400",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

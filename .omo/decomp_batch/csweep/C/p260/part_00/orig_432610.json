@@ -1,0 +1,11 @@
+{
+ "addr": "0x432610",
+ "name": "BufferIOFileClass::QueryInterface",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x432610",
+ "bytes_hex": "53568bf133db8b4630c7062c3a7e003bc37414385e24740c50e80f65390083c404885e24895e308bce895e34885e25885e27885e28885e29e8b3a32200f644240c01740956e8e364390083c4048bc65e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

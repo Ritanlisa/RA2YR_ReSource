@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p260\part_00
+=== convert (20 addrs) ===
+[conv] 0x50c8c0 HouseClass::NotifyImpactWater -> HouseClass
+[conv] 0x7104f0 FootClass::UpdatePassengerCoords -> FootClass
+[conv] 0x7bd210 DSurface::LockAndPrepareRect -> DSurface
+[conv] 0x776e10 FindListBoxItem -> _addr_77
+[conv] 0x432610 BufferIOFileClass::QueryInterface -> BufferIOFileClass
+[conv] 0x7db49a __handle_qnan1 -> _addr_7D
+[conv] 0x5b5e90 Network::SendSettingsRequest -> Network
+[conv] 0x556730 LinkClass::RemoveNode -> LinkClass
+[conv] 0x453d60 BuildingClass::MarkCellOccupied -> BuildingClass
+[conv] 0x453dc0 BuildingClass::ClearCellOccupied -> BuildingClass
+[conv] 0x6a60e0 SuperWeapon::UpdateTargetRedrawState -> SuperWeapon
+[conv] 0x500910 HouseClass::GetFactoryCount -> HouseClass
+[conv] 0x54f530 ObjectClass::Event_Process -> ObjectClass
+[conv] 0x487c10 BuildingClass::CheckC4Active -> BuildingClass
+[conv] 0x5013a0 HouseClass::ScalarDeletingDestructor -> HouseClass
+[conv] 0x6b7d80 TechnoClass::CountPassengers -> TechnoClass
+[conv] 0x63a1b0 Team_Get_63A1B0 -> Team_Get
+[conv] 0x6d0f10 sub_6D0F10 -> _addr_6D
+[conv] 0x48e5a0 ControlClass::Draw -> ControlClass
+[conv] 0x551a30 ObjectClass::ProcessAutoSave -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] FootClass                rc=2
+[era] DSurface                 rc=0
+[era] _addr_77                 rc=0
+[era] BufferIOFileClass        rc=0
+[era] _addr_7D                 rc=2
+[era] Network                  rc=0
+[era] LinkClass                rc=2
+[era] BuildingClass            rc=0
+[era] SuperWeapon              rc=0
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=2
+[era] Team_Get                 rc=0
+[era] _addr_6D                 rc=2
+[era] ControlClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x50c8c0   MISMATCH         HouseClass::NotifyImpactWater
+[diff] 0x500910   MISMATCH         HouseClass::GetFactoryCount
+[diff] 0x5013a0   MISMATCH         HouseClass::ScalarDeletingDestructor
+[diff] 0x7bd210   MISMATCH         DSurface::LockAndPrepareRect
+[diff] 0x776e10   MISMATCH         FindListBoxItem
+[diff] 0x432610   MISMATCH         BufferIOFileClass::QueryInterface
+[diff] 0x5b5e90   MISMATCH         Network::SendSettingsRequest
+[diff] 0x453d60   MISMATCH         BuildingClass::MarkCellOccupied
+[diff] 0x453dc0   MISMATCH         BuildingClass::ClearCellOccupied
+[diff] 0x487c10   MISMATCH         BuildingClass::CheckC4Active
+[diff] 0x6a60e0   MISMATCH         SuperWeapon::UpdateTargetRedrawState
+[diff] 0x54f530   MISMATCH         ObjectClass::Event_Process
+[diff] 0x551a30   MISMATCH         ObjectClass::ProcessAutoSave
+[diff] 0x63a1b0   MISMATCH         Team_Get_63A1B0
+[diff] 0x48e5a0   MISMATCH         ControlClass::Draw
+[ledger] 0x50c8c0 HouseClass::NotifyImpactWater -> NG (attempt 1)
+[ledger] 0x7104f0 FootClass::UpdatePassengerCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bd210 DSurface::LockAndPrepareRect -> NG (attempt 1)
+[ledger] 0x776e10 FindListBoxItem -> NG (attempt 1)
+[ledger] 0x432610 BufferIOFileClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x7db49a __handle_qnan1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b5e90 Network::SendSettingsRequest -> NG (attempt 1)
+[ledger] 0x556730 LinkClass::RemoveNode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x453d60 BuildingClass::MarkCellOccupied -> NG (attempt 1)
+[ledger] 0x453dc0 BuildingClass::ClearCellOccupied -> NG (attempt 1)
+[ledger] 0x6a60e0 SuperWeapon::UpdateTargetRedrawState -> NG (attempt 1)
+[ledger] 0x500910 HouseClass::GetFactoryCount -> NG (attempt 1)
+[ledger] 0x54f530 ObjectClass::Event_Process -> NG (attempt 1)
+[ledger] 0x487c10 BuildingClass::CheckC4Active -> NG (attempt 1)
+[ledger] 0x5013a0 HouseClass::ScalarDeletingDestructor -> NG (attempt 1)
+[ledger] 0x6b7d80 TechnoClass::CountPassengers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63a1b0 Team_Get_63A1B0 -> NG (attempt 1)
+[ledger] 0x6d0f10 sub_6D0F10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48e5a0 ControlClass::Draw -> NG (attempt 1)
+[ledger] 0x551a30 ObjectClass::ProcessAutoSave -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "branch_polarity": 2,
+  "regalloc": 4,
+  "frame_sched": 1,
+  "branch_order": 1,
+  "const_fold": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p260\batch_report.json

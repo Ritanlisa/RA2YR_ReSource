@@ -1,0 +1,8 @@
+{
+ "symbol": "?ProcessAutoSave@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::ProcessAutoSave",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "51558be933c0568a451033f64885c07e4253578b45048b7cb0048b1cb0578b07ff90b80000008b0b5389442414ff91b8000000394424107d0d8b5504895cb2048b4504893cb033c0468a4510483bf07cc25f5b5e5d59c3",
+ "relocs": []
+}

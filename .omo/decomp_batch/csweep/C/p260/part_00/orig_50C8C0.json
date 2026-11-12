@@ -1,0 +1,11 @@
+{
+ "addr": "0x50C8C0",
+ "name": "HouseClass::NotifyImpactWater",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50C8C0",
+ "bytes_hex": "5356578b3d88eca80033f68bd985ff7e23a17ceca8008b0cb085c9741239991c020000750a8b116a00ff9288030000463bf77cdda1e07188006a00ba00200000680000803f8b88c8010000e8104024005f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

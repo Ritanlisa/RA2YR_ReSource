@@ -1,0 +1,11 @@
+{
+ "addr": "0x776E10",
+ "name": "FindListBoxItem",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x776E10",
+ "bytes_hex": "51538b1da4147e005556576a008bf96a0068460100008bf257ffd33bf0894424107d1c8b6c24186a0056685001000057ffd33bc574148b442410463bf07ce85f5e5d83c8ff5b59c204008bc65f5e5d5b59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

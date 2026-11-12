@@ -1,0 +1,15 @@
+{
+ "symbol": "?Draw@ControlClass@@QAEHHPAHH@Z",
+ "sym_key": "ControlClass::Draw",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568b742410578bf985db74268b472485c0741924800c80f6c34089067414f6470810740e24400c408906eb06c706000000008b472885c074098b0857565350ff514c6a0056538bcfe8000000005f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?ActivateThunk@COMObject@@QAEHHHH@Z",
+   "sym_key": "COMObject::ActivateThunk"
+  }
+ ]
+}

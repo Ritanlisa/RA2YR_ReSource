@@ -1,0 +1,21 @@
+{
+ "symbol": "?CheckC4Active@BuildingClass@@QAEDXZ",
+ "sym_key": "BuildingClass::CheckC4Active",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "56578bf98a87fc00000084c07425a10000000085c0741c8bb7e400000085f674128b0656ff502c83f80674078b763085f675ee8b87ec0000005f5e8d0cc08a048d00000000c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89EA60@@3PAEA",
+   "sym_key": "DataGlobal_89EA60"
+  }
+ ]
+}

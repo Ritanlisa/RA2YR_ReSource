@@ -1,0 +1,33 @@
+{
+ "symbol": "?NotifyImpactWater@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::NotifyImpactWater",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "53565733f60fbe3da400000085ff8bd97e290fbe05980000008b04b085c0741639981c020000750e8b086a00500fbe9140030000ffd2463bf77cd7a1400200006a00680000803fba002000008b88c8010000e8000000005f5e5bc3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  }
+ ]
+}

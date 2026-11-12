@@ -1,0 +1,11 @@
+{
+ "addr": "0x500910",
+ "name": "HouseClass::GetFactoryCount",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x500910",
+ "bytes_hex": "8b4424044883f827774633d28a907c095000ff2495680950008a44240884c074088d8188530000eb1e8d8180530000eb168d8178530000eb0e8d817c530000eb068d818453000085c074058b00c2080033c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

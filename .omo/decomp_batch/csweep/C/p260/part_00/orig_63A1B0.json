@@ -1,0 +1,11 @@
+{
+ "addr": "0x63A1B0",
+ "name": "Team_Get_63A1B0",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63A1B0",
+ "bytes_hex": "568bf1833cb5f44bac00017d4683fe03751368a10c000068d46b830033d2b90c6d8300eb1683fe04752268a10c000068d46b830033d2b9f06c8300e870ac0f00bae00100008bc8e894680f00ff04b5f44bac005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

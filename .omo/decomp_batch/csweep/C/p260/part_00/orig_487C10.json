@@ -1,0 +1,11 @@
+{
+ "addr": "0x487C10",
+ "name": "BuildingClass::CheckC4Active",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487C10",
+ "bytes_hex": "56578bf98a871c01000084c074055f32c05ec3a0a0e9a80084c0741d8bb7e400000085f674138b068bceff502c83f806741a8b763085f675ed8b87ec0000005f5e8d0cc08a048d60ea8900c385f674e95f32c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

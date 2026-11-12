@@ -1,0 +1,27 @@
+{
+ "symbol": "?QueryInterface@BufferIOFileClass@@QAEPAID@Z",
+ "sym_key": "BufferIOFileClass::QueryInterface",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8b4630891e3bc37414385e24740c50e80000000083c404885e24895e308bce895e34885e25885e28885e29e800000000f644240c01740956e80000000083c4048b065e5bc20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

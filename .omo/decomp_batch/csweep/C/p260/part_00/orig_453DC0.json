@@ -1,0 +1,11 @@
+{
+ "addr": "0x453DC0",
+ "name": "BuildingClass::ClearCellOccupied",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x453DC0",
+ "bytes_hex": "8b4c24048b019981e2ff00000003c2c1f80866894424048b41049981e2ff0000008d4c240403c251c1f808668944240a8b442408b9e8f7870089442408e89e1911008b8824010000052401000080e17f8908c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5013A0",
+ "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::ScalarDeletingDestructor",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5013A0",
+ "bytes_hex": "578b7c24088b87cc02000085c07e3d538b5f545633f685db7e2a8b47488b0cb085c9741b8a818100000084c075118b416c85c07e0a8b116a01ff92a0010000463bf37cd65e5b33c05fc20400b8010000005fc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

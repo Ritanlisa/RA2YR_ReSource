@@ -1,0 +1,21 @@
+{
+ "symbol": "?Event_Process@ObjectClass@@QAEDF@Z",
+ "sym_key": "ObjectClass::Event_Process",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18bc881e1000800006685c9753f0fbed083c2f883fa1c773433c98a8a00000000ff248d000000008a46083c0d750232c08b4e0881e10000ffff894e085ec20400b05c5ec20400b0085ec2040032c05ec20400",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "$L1895",
+   "sym_key": "$L1895"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "$L1896",
+   "sym_key": "$L1896"
+  }
+ ]
+}

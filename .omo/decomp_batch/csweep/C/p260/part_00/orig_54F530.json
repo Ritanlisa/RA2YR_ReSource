@@ -1,0 +1,11 @@
+{
+ "addr": "0x54F530",
+ "name": "Event_Process",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54F530",
+ "bytes_hex": "8b44240456f6c4088bf1754325ff0000008bc881e1ffff00008d51f883fa1c772e33c98a8a9cf55400ff248d88f55400b0085ec20400b05c5ec204008a46083c0d750232c066c7460800005ec2040032c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

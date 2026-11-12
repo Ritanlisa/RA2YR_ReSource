@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B5E90",
+ "name": "Network::SendSettingsRequest",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B5E90",
+ "bytes_hex": "8b0181ecfc0000006a0150ff15a8147e0085c074096a0050ff15a0147e0057b93e00000033c08d7c2404f3ab6a018d4c240868fa0000005166abb970eaa800c744241074000000e814bd03005f81c4fc000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

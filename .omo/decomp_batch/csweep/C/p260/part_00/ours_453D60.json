@@ -1,0 +1,21 @@
+{
+ "symbol": "?MarkCellOccupied@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::MarkCellOccupied",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "518b4424008b08c1e90866894c24008b50048d442400b900000000c1ea08506689542406e8000000008b8824010000052401000080c980890859c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}
