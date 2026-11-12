@@ -288,3 +288,4 @@
 {"layer": "C", "part": 287, "n": 20, "seconds": 63.8, "ok": true, "verdicts": {"MISMATCH": 13, "COMPILE_FAIL": 7}}
 {"layer": "C", "part": 288, "n": 20, "seconds": 63.4, "ok": true, "verdicts": {"MISMATCH": 17, "COMPILE_FAIL": 3}}
 {"layer": "C", "part": 289, "n": 20, "seconds": 62.4, "ok": true, "verdicts": {"COMPILE_FAIL": 6, "MISMATCH": 14}}
+{"layer": "C", "part": 290, "n": 20, "seconds": 64.7, "ok": true, "verdicts": {"MISMATCH": 13, "COMPILE_FAIL": 7}}

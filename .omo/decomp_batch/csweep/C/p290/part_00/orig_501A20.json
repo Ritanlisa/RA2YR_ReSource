@@ -1,0 +1,11 @@
+{
+ "addr": "0x501A20",
+ "name": "House_Notify",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x501A20",
+ "bytes_hex": "538b1dc8eca80085db57746933ff85db7e6356a1bceca8008b34b885f674508b168bceff522c83f80675448a861a04000084c0753a8b86200500008b88e00e000085c97e2a8b0d4c3da800b8010000008b51348b8ab8000000d3e0858610020000740c8b166a028bceff9224010000473bfb7c9f5e5f5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

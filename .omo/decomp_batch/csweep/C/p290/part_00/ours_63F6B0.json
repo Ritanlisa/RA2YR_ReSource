@@ -1,0 +1,27 @@
+{
+ "symbol": "?Create@RadarClass@@QAEPAV1@XZ",
+ "sym_key": "RadarClass::Create",
+ "size": 103,
+ "link_base": 0,
+ "bytes_hex": "53568bf1e80000000033db889e0c150000e800000000898610150000899e18150000899e1c150000e80000000089862015000083c8ff89863c150000898640150000899e28150000899e2c150000899e30150000899e34150000889e38150000891e8bc65e5bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?Construct@RadarClass@@QAEPAV1@XZ",
+   "sym_key": "RadarClass::Construct"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

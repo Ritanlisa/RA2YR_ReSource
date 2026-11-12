@@ -1,0 +1,11 @@
+{
+ "addr": "0x58A5B0",
+ "name": "SubzoneTrackingVector::Destruct",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58A5B0",
+ "bytes_hex": "578bf98b4f04c70700d57e0085c974468a470d84c0743f85c974348b41fc538d59fc568d14c0488d34917818558d680183ee248bcec7067c177e00e8800ce8ff4d75ed5d53e843e5230083c4045e5bc74704000000008a442408c6470d00a801c7470800000000740957e81ee5230083c4048bc75fc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

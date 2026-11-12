@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetCharge@SuperClass@@QAEDH@Z",
+ "sym_key": "SuperClass::SetCharge",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "51568bf18a466d84c074758b44240c83f864776c578b7e2483ffff897c2408750d8b46288bb8b0000000897c2408d90500000000da4c240883ec08da4c2418dd1c24e80000000083c4082bf87504c6466f018b4e308d463083f9ff8944241075088b0d0000000089088b150000000089108b4424108946348a442410897e385f5e59c20400",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7EAAE0@@3MA",
+   "sym_key": "DataGlobal_7EAAE0"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

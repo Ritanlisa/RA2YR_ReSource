@@ -1,0 +1,27 @@
+{
+ "symbol": "?Destruct@_DynamicVectorClass_USubzoneTrackingStruct@@QAEPAID@Z",
+ "sym_key": "_DynamicVectorClass_USubzoneTrackingStruct::Destruct",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "53578bf933db8b4f04891f3bcb7440395f10743b8b41fc558d69fc568d50ff8d04c03bd38d34817c188d5a0183ee248bcec70600000000e8000000004b75ed33db55e80000000083c404895f045e5d8a44240c895f10a801895f08740957e80000000083c4048b075f5bc20400",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Cleanup5@VectorClass@@QAEXXZ",
+   "sym_key": "VectorClass::Cleanup5"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

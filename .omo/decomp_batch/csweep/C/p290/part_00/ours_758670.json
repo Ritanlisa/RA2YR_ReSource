@@ -1,0 +1,69 @@
+{
+ "symbol": "?GlobalHelper_053C80_Helper@@YIDPAMH@Z",
+ "sym_key": "Unnamed::GlobalHelper_053C80_Helper",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "53558b2c95000000005633f68bd985ed7e5e578b3c950000000083c704d947fcd80bd94704d84b08dec1d94304d80fdec1dc1500000000dfe0f6c4017520d90500000000d8c983ec08dd1c24ddd8e80000000083c408888600000000eb09ddd8c68600000000004683c70c3bf57cae5fb0105e5da200000000a200000000a2000000005bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8469F4@@3PAIA",
+   "sym_key": "DataGlobal_8469F4"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8469E0@@3PAIA",
+   "sym_key": "DataGlobal_8469E0"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?flt_7F6960@@3MA",
+   "sym_key": "flt_7F6960"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_VoxelShadeTable@@3PAEA",
+   "sym_key": "g_VoxelShadeTable"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_VoxelShadeTable@@3PAEA",
+   "sym_key": "g_VoxelShadeTable"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45A8F@@3EA",
+   "sym_key": "DataGlobal_B45A8F"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45A8E@@3EA",
+   "sym_key": "DataGlobal_B45A8E"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45A8D@@3EA",
+   "sym_key": "DataGlobal_B45A8D"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x53CB10",
+ "name": "ActionQueue::PushEntry",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53CB10",
+ "bytes_hex": "8b542408568bf18b4c24088bc689088b4c241089500433d289560c895610894808a12001aa0039052801aa007c2c38152501aa0075043bc275388b0d2c01aa003bca7e2e03c8528b151801aa0051b91801aa00ff520884c074188b0d2801aa008bc141890d2801aa008b0d1c01aa008934818bc65ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

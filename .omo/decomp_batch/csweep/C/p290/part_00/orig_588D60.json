@@ -1,0 +1,11 @@
+{
+ "addr": "0x588D60",
+ "name": "SubzoneConnectionVector::ClearAndFree",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x588D60",
+ "bytes_hex": "5153578bf933db8b4f04895f103bcb745d385f0d74583bcb74518b41fc8d51fc568954240c8d34c0488d34b17833558d68018b46e083ee243bc3c7067c177e007411385e0d740c50e890fd230083c404895e044d885e0d895e0875d68b5424105d52e876fd230083c4045e895f04885f0d895f085f5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

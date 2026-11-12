@@ -1,0 +1,8 @@
+{
+ "symbol": "?ClearAndFree@_DynamicVectorClass_USubzoneTrackingStruct@@QAEXXZ",
+ "sym_key": "_DynamicVectorClass_USubzoneTrackingStruct::ClearAndFree",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "518b41048944240033c089411089411089410859c3",
+ "relocs": []
+}

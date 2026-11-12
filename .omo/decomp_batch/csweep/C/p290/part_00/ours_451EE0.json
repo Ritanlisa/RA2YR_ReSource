@@ -1,0 +1,15 @@
+{
+ "symbol": "?globalHelper_051EE0@@YIXHHH@Z",
+ "sym_key": "Unnamed::globalHelper_051EE0",
+ "size": 142,
+ "link_base": 0,
+ "bytes_hex": "5153578bf98bda8b4c2410388fe60600007475558d875c0500005633ed888fe606000033f6894424108b542410833a00743d84c9740f8b87200500008d84305c0f0000eb0d8b9f200500008d841e4c0f000085c0741980380074146a006a005155508bd38bcfe8000000008b4c24188b54241083c6444583c20481fe94050000895424107ca35e5d5f5b59c20400",
+ "relocs": [
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?BuildingClass__PlayAnim@@YIHPAXH0HHHH@Z",
+   "sym_key": "BuildingClass__PlayAnim"
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p290\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d39f6 _towupper_0 -> _addr_7D
+[conv] 0x7d7d49 __fptostr -> _addr_7D
+[conv] 0x44f5c0 BuildingClass::CanBeSoldCheck -> BuildingClass
+[conv] 0x6223c0 ObjectClass::DestroyDialog -> ObjectClass
+[conv] 0x5d9060 ObjectClass::sub_5D9060 -> ObjectClass
+[conv] 0x629530 ObjectClass::sub_629530 -> ObjectClass
+[conv] 0x42f1e0 BaseClass::Construct -> BaseClass
+[conv] 0x63f6b0 RadarClass::Create -> RadarClass
+[conv] 0x69e100 BTree::DeleteSubtree -> BTree
+[conv] 0x6262f0 ObjectClass::sub_6262F0 -> ObjectClass
+[conv] 0x451ee0 globalHelper_051EE0 -> _addr_45
+[conv] 0x4c6780 ScenarioClass::SetEvent -> ScenarioClass
+[conv] 0x63d070 HouseClass::ColorLerpAndPack -> HouseClass
+[conv] 0x6cc1e0 SuperClass::SetCharge -> SuperClass
+[conv] 0x758670 GlobalHelper_053C80_Helper -> GlobalHelper_053C80
+[conv] 0x53cb10 ActionQueue::PushEntry -> ActionQueue
+[conv] 0x588d60 _DynamicVectorClass_USubzoneTrackingStruct::ClearAndFree -> _DynamicVectorClass_USubzoneTrackingStruct
+[conv] 0x501a20 ObjectClass::House_Notify -> ObjectClass
+[conv] 0x58a5b0 _DynamicVectorClass_USubzoneTrackingStruct::Destruct -> _DynamicVectorClass_USubzoneTrackingStruct
+[conv] 0x41c590 BuildingTypeClass::Dequeue -> BuildingTypeClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] BaseClass                rc=2
+[era] RadarClass               rc=0
+[era] BTree                    rc=2
+[era] _addr_45                 rc=0
+[era] ScenarioClass            rc=2
+[era] HouseClass               rc=2
+[era] SuperClass               rc=0
+[era] GlobalHelper_053C80      rc=0
+[era] ActionQueue              rc=0
+[era] _DynamicVectorClass_USubzoneTrackingStruct rc=0
+[era] BuildingTypeClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x7d39f6   MISMATCH         _towupper_0
+[diff] 0x5d9060   MISMATCH         ObjectClass::sub_5D9060
+[diff] 0x629530   MISMATCH         ObjectClass::sub_629530
+[diff] 0x6262f0   MISMATCH         ObjectClass::sub_6262F0
+[diff] 0x501a20   MISMATCH         ObjectClass::House_Notify
+[diff] 0x63f6b0   MISMATCH         RadarClass::Create
+[diff] 0x451ee0   MISMATCH         globalHelper_051EE0
+[diff] 0x6cc1e0   MISMATCH         SuperClass::SetCharge
+[diff] 0x758670   MISMATCH         GlobalHelper_053C80_Helper
+[diff] 0x53cb10   MISMATCH         ActionQueue::PushEntry
+[diff] 0x588d60   MISMATCH         _DynamicVectorClass_USubzoneTrackingStruct::ClearAndFree
+[diff] 0x58a5b0   MISMATCH         _DynamicVectorClass_USubzoneTrackingStruct::Destruct
+[diff] 0x41c590   MISMATCH         BuildingTypeClass::Dequeue
+[ledger] 0x7d39f6 _towupper_0 -> NG (attempt 1)
+[ledger] 0x7d7d49 __fptostr -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44f5c0 BuildingClass::CanBeSoldCheck -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6223c0 ObjectClass::DestroyDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d9060 ObjectClass::sub_5D9060 -> NG (attempt 1)
+[ledger] 0x629530 ObjectClass::sub_629530 -> NG (attempt 1)
+[ledger] 0x42f1e0 BaseClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63f6b0 RadarClass::Create -> NG (attempt 1)
+[ledger] 0x69e100 BTree::DeleteSubtree -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6262f0 ObjectClass::sub_6262F0 -> NG (attempt 1)
+[ledger] 0x451ee0 globalHelper_051EE0 -> NG (attempt 1)
+[ledger] 0x4c6780 ScenarioClass::SetEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63d070 HouseClass::ColorLerpAndPack -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cc1e0 SuperClass::SetCharge -> NG (attempt 1)
+[ledger] 0x758670 GlobalHelper_053C80_Helper -> NG (attempt 1)
+[ledger] 0x53cb10 ActionQueue::PushEntry -> NG (attempt 1)
+[ledger] 0x588d60 _DynamicVectorClass_USubzoneTrackingStruct::ClearAndFree -> NG (attempt 1)
+[ledger] 0x501a20 ObjectClass::House_Notify -> NG (attempt 1)
+[ledger] 0x58a5b0 _DynamicVectorClass_USubzoneTrackingStruct::Destruct -> NG (attempt 1)
+[ledger] 0x41c590 BuildingTypeClass::Dequeue -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "codegen_shape": 5,
+  "branch_polarity": 1,
+  "cc_mismatch": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p290\batch_report.json

@@ -1,0 +1,27 @@
+{
+ "symbol": "?House_Notify@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::House_Notify",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "a1000000005385c0578bd8746833ff85c07e6256a1000000008b34b885f6744f8b0e56ff512c83f80675448a861a04000084c0753a8b96200500008b82e00e000085c07e2aa100000000ba010000008b48348b86100200008b89b8000000d3e285d0740b8b066a0256ff9024010000473bfb7ca05e5f5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_ObjectClass_CurrentCount@@3IA",
+   "sym_key": "g_ObjectClass_CurrentCount"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  }
+ ]
+}

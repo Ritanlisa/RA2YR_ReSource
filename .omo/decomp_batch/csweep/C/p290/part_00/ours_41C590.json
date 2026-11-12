@@ -1,0 +1,21 @@
+{
+ "symbol": "?Dequeue@BuildingTypeClass@@QAEIPAH@Z",
+ "sym_key": "BuildingTypeClass::Dequeue",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b460485c074718a4e0c84c9752668000000006a08508b0650e8000000008b4e0c83c41080e101c746100000000083c901894e0c8b5424108b4e048b3e8b1a85c97e358bc1992bc2d1f88b14c73bd37f0f741583caff8d7cc7082bd003caeb028bc885c97e12ebdb8bc1992bc2d1f88d04c75f5e5bc204005f5e33c05bc20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?CompareFunction@@YAHPBX0@Z",
+   "sym_key": "CompareFunction"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  }
+ ]
+}

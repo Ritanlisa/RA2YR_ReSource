@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_629530@ObjectClass@@QAEXH@Z",
+ "sym_key": "ObjectClass::sub_629530",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "5153568bf133db8b4644895e4c3bc3895e50895e48740c8b0850ff91f8000000895e44385e547447a17c0d00008d542408525089742410ff501083f8ff742d8b0d8c0d00003bc17323493bc1890d8c0d000073188b0d800d0000408b1481895481fc8b0d8c0d00003bc172e8885e545e5b59c20400",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

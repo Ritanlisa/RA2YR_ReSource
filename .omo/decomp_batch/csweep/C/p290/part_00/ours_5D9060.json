@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_5D9060@ObjectClass@@QAEFH@Z",
+ "sym_key": "ObjectClass::sub_5D9060",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "8b442404535556578bf985c08be87505bd01000000bbff00000033c08a47108bf003f50f95c181feffff0000884f107e04c6471001a19000000084c0742d833d000000000475248b1056ff526884c075098bc34b85c07413ebc0a190000000568b0825ff00000050ff516c668bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  }
+ ]
+}
