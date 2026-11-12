@@ -1,0 +1,21 @@
+{
+ "symbol": "?ConstructWDTSelection_Create_771800@ObjectClass@@QAEPAIXZ",
+ "sym_key": "ObjectClass::ConstructWDTSelection_Create_771800",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "5356578bf96a20e8000000008bf033db83c4043bf375065f5e33c05bc3895e04895e08885e0ce800000000894610897e1c895e18891e8bc65f5e5bc3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x771800",
+ "name": "ConstructWDTSelection_Create_771800",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x771800",
+ "bytes_hex": "5356578bf96a20e80b7605008bf033db83c4043bf374268d4e14895e04895e08885e0ce81874f5ff894610895e18897e1cc70654737f008bc65f5e5bc35f5e33c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p219\part_00
+=== convert (20 addrs) ===
+[conv] 0x50d2d0 TActionClass::executeMoveAction -> TActionClass
+[conv] 0x6c9890 Straw::Set -> Straw
+[conv] 0x408410 ObjectClass::sub_408410 -> ObjectClass
+[conv] 0x537af0 MultiplayerSyncCommandClass::performAction_192 -> MultiplayerSyncCommandClass
+[conv] 0x690530 ObjectClass::sub_690530 -> ObjectClass
+[conv] 0x6a4dc0 sub_6A4DC0 -> _addr_6A
+[conv] 0x6dc470 Tactical::UpdateView -> Tactical
+[conv] 0x6e52a0 TeamClass::FindOrCreate -> TeamClass
+[conv] 0x740f80 TechnoClass::GetDeployProgressValue -> TechnoClass
+[conv] 0x74bf40 ObjectClass::sub_74BF40 -> ObjectClass
+[conv] 0x7535d0 WTFMode_Cleanup -> WTFMode
+[conv] 0x771800 ObjectClass::ConstructWDTSelection_Create_771800 -> ObjectClass
+[conv] 0x4753f0 ArmorType::FindIndex -> ArmorType
+[conv] 0x5c6080 sub_5C6080 -> _addr_5C
+[conv] 0x4b63b0 JumpjetLocomotionClass::StubReturnZero_3 -> JumpjetLocomotionClass
+[conv] 0x54da00 JumpjetLocomotionClass::StubReturnZero_9 -> JumpjetLocomotionClass
+[conv] 0x69eff0 JumpjetLocomotionClass::StubReturnZero_12 -> JumpjetLocomotionClass
+[conv] 0x719e90 JumpjetLocomotionClass::StubReturnZero_18 -> JumpjetLocomotionClass
+[conv] 0x732140 sub_732140 -> _addr_73
+[conv] 0x75c850 JumpjetLocomotionClass::StubReturnZero_22 -> JumpjetLocomotionClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TActionClass             rc=0
+[era] Straw                    rc=0
+[era] ObjectClass              rc=2
+[era] MultiplayerSyncCommandClass rc=0
+[era] _addr_6A                 rc=2
+[era] Tactical                 rc=0
+[era] TeamClass                rc=0
+[era] TechnoClass              rc=0
+[era] WTFMode                  rc=0
+[era] ArmorType                rc=2
+[era] _addr_5C                 rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] _addr_73                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x50d2d0   MISMATCH         TActionClass::executeMoveAction
+[diff] 0x6c9890   MISMATCH         Straw::Set
+[diff] 0x408410   MISMATCH         ObjectClass::sub_408410
+[diff] 0x771800   MISMATCH         ObjectClass::ConstructWDTSelection_Create_771800
+[diff] 0x537af0   MISMATCH         MultiplayerSyncCommandClass::performAction_192
+[diff] 0x6dc470   MISMATCH         Tactical::UpdateView
+[diff] 0x6e52a0   MISMATCH         TeamClass::FindOrCreate
+[diff] 0x740f80   MISMATCH         TechnoClass::GetDeployProgressValue
+[diff] 0x7535d0   MISMATCH         WTFMode_Cleanup
+[diff] 0x5c6080   MISMATCH         sub_5C6080
+[diff] 0x4b63b0   MISMATCH         JumpjetLocomotionClass::StubReturnZero_3
+[diff] 0x54da00   MISMATCH         JumpjetLocomotionClass::StubReturnZero_9
+[diff] 0x69eff0   MISMATCH         JumpjetLocomotionClass::StubReturnZero_12
+[diff] 0x719e90   MISMATCH         JumpjetLocomotionClass::StubReturnZero_18
+[diff] 0x75c850   MISMATCH         JumpjetLocomotionClass::StubReturnZero_22
+[ledger] 0x50d2d0 TActionClass::executeMoveAction -> NG (attempt 1)
+[ledger] 0x6c9890 Straw::Set -> NG (attempt 1)
+[ledger] 0x408410 ObjectClass::sub_408410 -> NG (attempt 1)
+[ledger] 0x537af0 MultiplayerSyncCommandClass::performAction_192 -> NG (attempt 1)
+[ledger] 0x690530 ObjectClass::sub_690530 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a4dc0 sub_6A4DC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dc470 Tactical::UpdateView -> NG (attempt 1)
+[ledger] 0x6e52a0 TeamClass::FindOrCreate -> NG (attempt 1)
+[ledger] 0x740f80 TechnoClass::GetDeployProgressValue -> NG (attempt 1)
+[ledger] 0x74bf40 ObjectClass::sub_74BF40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7535d0 WTFMode_Cleanup -> NG (attempt 1)
+[ledger] 0x771800 ObjectClass::ConstructWDTSelection_Create_771800 -> NG (attempt 1)
+[ledger] 0x4753f0 ArmorType::FindIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c6080 sub_5C6080 -> NG (attempt 1)
+[ledger] 0x4b63b0 JumpjetLocomotionClass::StubReturnZero_3 -> NG (attempt 1)
+[ledger] 0x54da00 JumpjetLocomotionClass::StubReturnZero_9 -> NG (attempt 1)
+[ledger] 0x69eff0 JumpjetLocomotionClass::StubReturnZero_12 -> NG (attempt 1)
+[ledger] 0x719e90 JumpjetLocomotionClass::StubReturnZero_18 -> NG (attempt 1)
+[ledger] 0x732140 sub_732140 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75c850 JumpjetLocomotionClass::StubReturnZero_22 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "branch_order": 6,
+  "branch_polarity": 2,
+  "ret_norm": 1,
+  "extern_reloc": 2,
+  "codegen_shape": 1,
+  "signedness": 1,
+  "eval_order": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p219\batch_report.json

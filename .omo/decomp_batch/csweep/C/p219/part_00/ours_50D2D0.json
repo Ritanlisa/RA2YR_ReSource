@@ -1,0 +1,8 @@
+{
+ "symbol": "?executeMoveAction@TActionClass@@QAEHH@Z",
+ "sym_key": "TActionClass::executeMoveAction",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "53558be98b5d784b783856578b7c24148b456c8b349839bee0020000751a8b066a005756ff90d403000033c08986e00200008986cc0200004b79d55f5e5d5bc204008b44240c5d5bc20400",
+ "relocs": []
+}

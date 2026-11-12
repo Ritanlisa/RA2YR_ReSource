@@ -1,0 +1,51 @@
+{
+ "symbol": "?performAction_192@MultiplayerSyncCommandClass@@QAGEXZ",
+ "sym_key": "MultiplayerSyncCommandClass::performAction_192",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "a0000000008b0d0000000084c00f95c284c00f94c084d2a20000000074068b0d00000000e8000000006a00689600000068464000006a03506a006a00b900000000e800000000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04880@@3EA",
+   "sym_key": "DataGlobal_B04880"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?aExtraSyncInfoO@@3HA",
+   "sym_key": "aExtraSyncInfoO"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04880@@3EA",
+   "sym_key": "DataGlobal_B04880"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?aExtraSyncInfoO_0@@3HA",
+   "sym_key": "aExtraSyncInfoO_0"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?CharToWideString@@YIPADPAX@Z",
+   "sym_key": "CharToWideString"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_GameNetworkObject@@3VMessageListClass@@A",
+   "sym_key": "g_GameNetworkObject"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?AddMessage@MessageListClass@@QAEHPAXH0HHHD@Z",
+   "sym_key": "MessageListClass::AddMessage"
+  }
+ ]
+}

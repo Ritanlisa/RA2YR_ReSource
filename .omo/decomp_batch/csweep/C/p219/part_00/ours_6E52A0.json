@@ -1,0 +1,33 @@
+{
+ "symbol": "?FindOrCreate@TeamClass@@QAEHXZ",
+ "sym_key": "TeamClass::FindOrCreate",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "568b3500000000578bf933c985f676158b15000000008b0239782474234183c2043bce72f16a38e80000000083c40485c0740b578bc8e8000000005f5ec333c05f5ec3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_GameObjectCleanup@@3IA",
+   "sym_key": "g_GameObjectCleanup"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_TagClassCount@@3PAXA",
+   "sym_key": "g_TagClassCount"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?GetType@TeknoClass@@QAEPAVTagClass@@H@Z",
+   "sym_key": "TeknoClass::GetType"
+  }
+ ]
+}

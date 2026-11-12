@@ -1,0 +1,11 @@
+{
+ "addr": "0x50D2D0",
+ "name": "TActionClass::executeMoveAction",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50D2D0",
+ "bytes_hex": "53558be98b5d784b783456578b7c24148b456c8b349839bee0020000751b8b166a00578bceff92d403000033c08986e00200008986cc0200004b79d45f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

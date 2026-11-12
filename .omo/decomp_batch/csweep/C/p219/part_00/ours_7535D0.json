@@ -1,0 +1,51 @@
+{
+ "symbol": "?WTFMode_Cleanup@@YAHXZ",
+ "sym_key": "Unnamed::WTFMode_Cleanup",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c07411c7405002000000c70500000000000000008b0d0000000085c97405e800000000e800000000c7050000000000000000c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C4@@3IA",
+   "sym_key": "DataGlobal_B1D4C4"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C4@@3IA",
+   "sym_key": "DataGlobal_B1D4C4"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_InfantryDrawState@@3PAXA",
+   "sym_key": "g_InfantryDrawState"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Release@Audio@@QAEXXZ",
+   "sym_key": "Audio::Release"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?ThemeClass__ClearQueues@@YAHXZ",
+   "sym_key": "ThemeClass__ClearQueues"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D428@@3IA",
+   "sym_key": "DataGlobal_B1D428"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3D8@@3IA",
+   "sym_key": "DataGlobal_B1D3D8"
+  }
+ ]
+}

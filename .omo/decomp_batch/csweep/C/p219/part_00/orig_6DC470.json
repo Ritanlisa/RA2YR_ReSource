@@ -1,0 +1,11 @@
+{
+ "addr": "0x6DC470",
+ "name": "Tactical::UpdateView",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6DC470",
+ "bytes_hex": "568bf1c70648437f00c746042c437f00c7460824437f00c7460c1c437f00c7052473880000000000e8533dd3fff644240801740956e893c60e0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

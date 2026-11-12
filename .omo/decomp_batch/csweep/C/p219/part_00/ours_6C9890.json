@@ -1,0 +1,8 @@
+{
+ "symbol": "?Set@Straw@@QAEHH@Z",
+ "sym_key": "Straw::Set",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "568b742408578bf9397704743785f674168b460885c0740f8b086a0050ff5104c74608000000008b470485c07407c740080000000085f6897704740c897e085f5ec204008b44240c5f5ec20400",
+ "relocs": []
+}

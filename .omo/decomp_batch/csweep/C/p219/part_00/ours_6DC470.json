@@ -1,0 +1,27 @@
+{
+ "symbol": "?UpdateView@Tactical@@QAEPAID@Z",
+ "sym_key": "Tactical::UpdateView",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "568bf133c0890689460489460889460ca300000000e800000000f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?DTOR@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::DTOR"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

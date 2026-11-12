@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E52A0",
+ "name": "TeamClass::FindOrCreate",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E52A0",
+ "bytes_hex": "568b3530e7b000578bf933c985f67e158b1524e7b0008b0239782474234183c2043bce7cf16a38e84b3b0e0083c40485c0740b578bc8e805fbffff5f5ec333c05f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
