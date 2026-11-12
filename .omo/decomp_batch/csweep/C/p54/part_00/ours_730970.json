@@ -1,0 +1,21 @@
+{
+ "symbol": "?WinMainSetup_Setup_730970@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::WinMainSetup_Setup_730970",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "51a12c16000085c074138b086a0150ff11c7052c1600000000000059c38b44240059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

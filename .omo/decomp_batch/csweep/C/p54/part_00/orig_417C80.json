@@ -1,0 +1,11 @@
+{
+ "addr": "0x417C80",
+ "name": "ObjectClass::vt_entry_140",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x417C80",
+ "bytes_hex": "8b4424108b54240c508b44240c528b54240c5052e8b7000c00c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

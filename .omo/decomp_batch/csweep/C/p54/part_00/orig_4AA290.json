@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AA290",
+ "name": "BuildingClass::updateSellBack",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AA290",
+ "bytes_hex": "8b4424088b5424046a005052e8ffb40b008bc8e8f822fdffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

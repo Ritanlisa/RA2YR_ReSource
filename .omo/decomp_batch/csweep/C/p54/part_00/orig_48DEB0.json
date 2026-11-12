@@ -1,0 +1,11 @@
+{
+ "addr": "0x48DEB0",
+ "name": "COMStub_48DEB0",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48DEB0",
+ "bytes_hex": "5633f6e8183908008bc883f9ff7409b8010000005ed3e0c38bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

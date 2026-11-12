@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckIsOne@SlaveManagerClass@@QAE_NXZ",
+ "sym_key": "SlaveManagerClass::CheckIsOne",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff90b4020000dc1d00000000dfe0f6c4407406b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  }
+ ]
+}

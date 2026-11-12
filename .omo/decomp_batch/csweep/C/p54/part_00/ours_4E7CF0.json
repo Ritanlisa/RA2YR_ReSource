@@ -1,0 +1,21 @@
+{
+ "symbol": "?COMStub_4E7CF0@@YAPAEXZ",
+ "sym_key": "Unnamed::COMStub_4E7CF0",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "5657be00000000bf200000008bcee80000000083c6204f75f35f5ec3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E3A8@@3IA",
+   "sym_key": "DataGlobal_A8E3A8"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?FindName@MissionClass@@QAEPAEXZ",
+   "sym_key": "MissionClass::FindName"
+  }
+ ]
+}

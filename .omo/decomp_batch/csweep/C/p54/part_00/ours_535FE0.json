@@ -1,0 +1,33 @@
+{
+ "symbol": "?AddRef@SelectTeamCommand@@QAEPADXZ",
+ "sym_key": "SelectTeamCommand::AddRef",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b410450680000000068d0090000e80000000083c40cb8d0090000c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "??_C@_0O@GGJJ@TeamSelect_?$CFd?$AA@",
+   "sym_key": "??_C@_0O@GGJJ@TeamSelect_?$CFd?$AA@"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

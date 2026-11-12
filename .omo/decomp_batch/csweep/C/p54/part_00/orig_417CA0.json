@@ -1,0 +1,11 @@
+{
+ "addr": "0x417CA0",
+ "name": "TechnoClass::ExecuteMissionCommand",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x417CA0",
+ "bytes_hex": "8b4424108b54240c508b44240c528b54240c5052e8277f2e00c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

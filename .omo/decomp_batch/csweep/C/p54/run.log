@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p54\part_00
+=== convert (20 addrs) ===
+[conv] 0x411310 StreamClass::WriteBytes -> StreamClass
+[conv] 0x48bb40 sub_48BB40 -> _addr_48
+[conv] 0x4f43f0 GScreenClass::IsSameType -> GScreenClass
+[conv] 0x730970 ObjectClass::WinMainSetup_Setup_730970 -> ObjectClass
+[conv] 0x7d06e8 __callnewh -> _addr_7D
+[conv] 0x522d30 SlaveManagerClass::CheckIsOne -> SlaveManagerClass
+[conv] 0x4aa290 BuildingClass::updateSellBack -> BuildingClass
+[conv] 0x646d90 sub_646D90 -> _addr_64
+[conv] 0x6c6ad0 sub_6C6AD0 -> _addr_6C
+[conv] 0x6e2c20 globalHelper_0E2C20 -> _addr_6E
+[conv] 0x7786e0 sub_7786E0 -> _addr_77
+[conv] 0x775ba0 Dialog::GetField -> Dialog
+[conv] 0x777060 Dialog::RestoreParent -> Dialog
+[conv] 0x417c80 ObjectClass::vt_entry_140 -> ObjectClass
+[conv] 0x417ca0 TechnoClass::ExecuteMissionCommand -> TechnoClass
+[conv] 0x48deb0 ObjectClass::COMStub_48DEB0 -> ObjectClass
+[conv] 0x4e7cf0 COMStub_4E7CF0 -> COMStub
+[conv] 0x535c20 CreateTeamCommand::AddRef -> CreateTeamCommand
+[conv] 0x535fe0 SelectTeamCommand::AddRef -> SelectTeamCommand
+[conv] 0x5360d0 AddTeamCommand::AddRef -> AddTeamCommand
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] StreamClass              rc=0
+[era] _addr_48                 rc=0
+[era] GScreenClass             rc=2
+[era] ObjectClass              rc=0
+[era] _addr_7D                 rc=2
+[era] SlaveManagerClass        rc=0
+[era] BuildingClass            rc=0
+[era] _addr_64                 rc=0
+[era] _addr_6C                 rc=0
+[era] _addr_6E                 rc=0
+[era] _addr_77                 rc=0
+[era] Dialog                   rc=2
+[era] TechnoClass              rc=0
+[era] COMStub                  rc=0
+[era] CreateTeamCommand        rc=0
+[era] SelectTeamCommand        rc=0
+[era] AddTeamCommand           rc=0
+=== diffasm byte-compare ===
+[diff] 0x411310   MISMATCH         StreamClass::WriteBytes
+[diff] 0x48bb40   MISMATCH         sub_48BB40
+[diff] 0x730970   MISMATCH         ObjectClass::WinMainSetup_Setup_730970
+[diff] 0x417c80   MATCH            ObjectClass::vt_entry_140
+[diff] 0x48deb0   MISMATCH         ObjectClass::COMStub_48DEB0
+[diff] 0x522d30   MISMATCH         SlaveManagerClass::CheckIsOne
+[diff] 0x4aa290   MISMATCH         BuildingClass::updateSellBack
+[diff] 0x646d90   MISMATCH         sub_646D90
+[diff] 0x6c6ad0   MISMATCH         sub_6C6AD0
+[diff] 0x6e2c20   MISMATCH         globalHelper_0E2C20
+[diff] 0x7786e0   MISMATCH         sub_7786E0
+[diff] 0x777060   MISMATCH         Dialog::RestoreParent
+[diff] 0x417ca0   MISMATCH         TechnoClass::ExecuteMissionCommand
+[diff] 0x4e7cf0   MATCH            COMStub_4E7CF0
+[diff] 0x535c20   MISMATCH         CreateTeamCommand::AddRef
+[diff] 0x535fe0   MISMATCH         SelectTeamCommand::AddRef
+[diff] 0x5360d0   MISMATCH         AddTeamCommand::AddRef
+[ledger] 0x411310 StreamClass::WriteBytes -> NG (attempt 1)
+[ledger] 0x48bb40 sub_48BB40 -> NG (attempt 1)
+[ledger] 0x4f43f0 GScreenClass::IsSameType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x730970 ObjectClass::WinMainSetup_Setup_730970 -> NG (attempt 1)
+[ledger] 0x7d06e8 __callnewh -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522d30 SlaveManagerClass::CheckIsOne -> NG (attempt 1)
+[ledger] 0x4aa290 BuildingClass::updateSellBack -> NG (attempt 1)
+[ledger] 0x646d90 sub_646D90 -> NG (attempt 1)
+[ledger] 0x6c6ad0 sub_6C6AD0 -> NG (attempt 1)
+[ledger] 0x6e2c20 globalHelper_0E2C20 -> NG (attempt 1)
+[ledger] 0x7786e0 sub_7786E0 -> NG (attempt 1)
+[ledger] 0x775ba0 Dialog::GetField -> COMPILE_FAIL (attempt 1)
+[ledger] 0x777060 Dialog::RestoreParent -> NG (attempt 1)
+[ledger] 0x417c80 ObjectClass::vt_entry_140 -> OK (attempt 1)
+[ledger] 0x417ca0 TechnoClass::ExecuteMissionCommand -> NG (attempt 1)
+[ledger] 0x48deb0 ObjectClass::COMStub_48DEB0 -> NG (attempt 1)
+[ledger] 0x4e7cf0 COMStub_4E7CF0 -> OK (attempt 1)
+[ledger] 0x535c20 CreateTeamCommand::AddRef -> NG (attempt 1)
+[ledger] 0x535fe0 SelectTeamCommand::AddRef -> NG (attempt 1)
+[ledger] 0x5360d0 AddTeamCommand::AddRef -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 3,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "regalloc": 2,
+  "cc_mismatch": 1,
+  "const_fold": 4
+ },
+ "match_rate_of_decided_pct": 11.8,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p54\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?COMStub_48DEB0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::COMStub_48DEB0",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "e8000000008bc883f9ff7408b801000000d3e0c333c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?FindByName@SuperWeaponTypeClass@@QAEHXZ",
+   "sym_key": "SuperWeaponTypeClass::FindByName"
+  }
+ ]
+}

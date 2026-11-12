@@ -1,0 +1,11 @@
+{
+ "addr": "0x522D30",
+ "name": "SlaveManagerClass::CheckIsOne",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x522D30",
+ "bytes_hex": "8b01ff90b4020000dc1d18177e00dfe0f6c4407403b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

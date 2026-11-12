@@ -1,0 +1,15 @@
+{
+ "symbol": "?vt_entry_140@ObjectClass@@QAEDHPAF0PAPAX@Z",
+ "sym_key": "ObjectClass::vt_entry_140",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b54240c508b44240c528b54240c5052e800000000c21000",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?SpawnInfantry@ObjectClass@@QAEDHPAX00@Z",
+   "sym_key": "ObjectClass::SpawnInfantry"
+  }
+ ]
+}

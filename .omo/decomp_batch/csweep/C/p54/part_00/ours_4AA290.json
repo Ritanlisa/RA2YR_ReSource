@@ -1,0 +1,21 @@
+{
+ "symbol": "?updateSellBack@BuildingClass@@QAEHPAFPAH@Z",
+ "sym_key": "BuildingClass::updateSellBack",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e8000000008b4c24086a00518bc8e800000000c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?FindObjectCell@Object@@QAEHPAXD@Z",
+   "sym_key": "Object::FindObjectCell"
+  }
+ ]
+}

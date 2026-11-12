@@ -1,0 +1,11 @@
+{
+ "addr": "0x535C20",
+ "name": "CreateTeamCommand::AddRef",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x535C20",
+ "bytes_hex": "8b41045068846f820068b4f5a800e8c132290083c40cb8b4f5a800c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

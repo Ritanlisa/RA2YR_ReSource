@@ -1,0 +1,21 @@
+{
+ "symbol": "?RestoreParent@Dialog@@QAEPAXXZ",
+ "sym_key": "Dialog::RestoreParent",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "568bf16af856e80000000085c0740a8bce8bd05ee900000000",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?SetDialogParent@@YIHPAX0@Z",
+   "sym_key": "SetDialogParent"
+  }
+ ]
+}

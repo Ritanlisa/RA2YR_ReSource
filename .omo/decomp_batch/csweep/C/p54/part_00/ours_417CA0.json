@@ -1,0 +1,15 @@
+{
+ "symbol": "?ExecuteMissionCommand@TechnoClass@@QAEHHHHH@Z",
+ "sym_key": "TechnoClass::ExecuteMissionCommand",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "e800000000c21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?ExecuteMissionCmd@ScriptAction@@QAEHXZ",
+   "sym_key": "ScriptAction::ExecuteMissionCmd"
+  }
+ ]
+}

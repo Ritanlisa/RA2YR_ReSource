@@ -1,0 +1,8 @@
+{
+ "symbol": "?WriteBytes@StreamClass@@QAEHGDHHH@Z",
+ "sym_key": "StreamClass::WriteBytes",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8d41148b49148b118b4c240481e1ffff0000518d4c240c5150ff5214c21400",
+ "relocs": []
+}

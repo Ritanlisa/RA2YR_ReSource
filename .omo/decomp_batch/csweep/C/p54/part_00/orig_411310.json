@@ -1,0 +1,11 @@
+{
+ "addr": "0x411310",
+ "name": "StreamClass::WriteBytes",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x411310",
+ "bytes_hex": "8b5424048b491481e2ffff00008b01528d54240c52ff5014c21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
