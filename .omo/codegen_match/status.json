@@ -67056,6 +67056,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5cb260": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 call 0x4cad50",
+  "name": "MPBattleClass::canAllyWith",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MPBattleClass::canAllyWith",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5cb2a0": {
   "attempts": 1,
   "clean": false,
@@ -68788,6 +68800,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5d38b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5D38B0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5D38B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d38f0": {
   "attempts": 1,
   "clean": false,
@@ -69972,6 +69995,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5d8b30": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5D8B30",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5D8B30",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d8b70": {
   "attempts": 1,
   "clean": false,
@@ -70162,6 +70196,17 @@
   "orig_name": "sub_5D8E30",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d8e50": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5D8E50",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5D8E50",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d8e90": {
@@ -70383,6 +70428,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5da5a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5DA5A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5DA5A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5da5e0": {
   "attempts": 1,
   "clean": false,
@@ -70532,6 +70588,17 @@
   "orig_name": "sub_5DADA0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5dadc0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5DADC0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5DADC0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5dae00": {
@@ -70787,6 +70854,17 @@
   "orig_name": "sub_5E24E0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5e2500": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5E2500",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5E2500",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5e2540": {
@@ -71508,6 +71586,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5ef3c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5EF3C0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5EF3C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5ef400": {
   "attempts": 1,
   "clean": false,
@@ -71692,6 +71781,17 @@
   "orig_name": "sub_5F1480",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5f14a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5F14A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5F14A0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f14e0": {
@@ -72090,6 +72190,17 @@
   "orig_name": "sub_5F37A0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5f37c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5F37C0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5F37C0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f3800": {
@@ -72928,6 +73039,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5f6eb0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5F6EB0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5F6EB0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5f6ef0": {
   "attempts": 1,
   "clean": false,
@@ -73327,6 +73449,17 @@
   "orig_name": "sub_5FA180",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5fa1a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5FA1A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5FA1A0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5fa1e0": {
@@ -73869,6 +74002,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5fe130": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5FE130",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5FE130",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5fe170": {
   "attempts": 1,
   "clean": false,
@@ -74098,6 +74242,17 @@
   "orig_name": "sub_5FF070",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5ff090": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_5FF090",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5FF090",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5ff0d0": {
@@ -74356,6 +74511,17 @@
   "orig_name": "sub_6003F0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x600410": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_600410",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_600410",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x600450": {
@@ -75603,6 +75769,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x629050": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_629050",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_629050",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x629090": {
   "attempts": 1,
   "clean": false,
@@ -75915,6 +76092,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x62b4a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_62B4A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_62B4A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x62b4e0": {
   "attempts": 1,
   "clean": false,
@@ -76164,6 +76352,17 @@
   "orig_name": "sub_62DAF0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x62db10": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_62DB10",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_62DB10",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x62db50": {
@@ -76461,6 +76660,17 @@
   "orig_name": "sub_630A50",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x630a70": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_630A70",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_630A70",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x630ab0": {
@@ -76873,6 +77083,17 @@
   "orig_name": "sub_633480",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6334a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6334A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6334A0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6334e0": {

@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p179\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cb260 MPBattleClass::canAllyWith -> MPBattleClass
+[conv] 0x5d38b0 sub_5D38B0 -> _addr_5D
+[conv] 0x5d8b30 sub_5D8B30 -> _addr_5D
+[conv] 0x5d8e50 sub_5D8E50 -> _addr_5D
+[conv] 0x5da5a0 sub_5DA5A0 -> _addr_5D
+[conv] 0x5dadc0 sub_5DADC0 -> _addr_5D
+[conv] 0x5e2500 sub_5E2500 -> _addr_5E
+[conv] 0x5ef3c0 sub_5EF3C0 -> _addr_5E
+[conv] 0x5f14a0 sub_5F14A0 -> _addr_5F
+[conv] 0x5f37c0 sub_5F37C0 -> _addr_5F
+[conv] 0x5f6eb0 sub_5F6EB0 -> _addr_5F
+[conv] 0x5fa1a0 sub_5FA1A0 -> _addr_5F
+[conv] 0x5fe130 sub_5FE130 -> _addr_5F
+[conv] 0x5ff090 sub_5FF090 -> _addr_5F
+[conv] 0x600410 sub_600410 -> _addr_60
+[conv] 0x629050 sub_629050 -> _addr_62
+[conv] 0x62b4a0 sub_62B4A0 -> _addr_62
+[conv] 0x62db10 sub_62DB10 -> _addr_62
+[conv] 0x630a70 sub_630A70 -> _addr_63
+[conv] 0x6334a0 sub_6334A0 -> _addr_63
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPBattleClass            rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_5E                 rc=0
+[era] _addr_5F                 rc=0
+[era] _addr_60                 rc=0
+[era] _addr_62                 rc=0
+[era] _addr_63                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5cb260   MISMATCH         MPBattleClass::canAllyWith
+[diff] 0x5d38b0   MISMATCH         sub_5D38B0
+[diff] 0x5d8b30   MISMATCH         sub_5D8B30
+[diff] 0x5d8e50   MISMATCH         sub_5D8E50
+[diff] 0x5da5a0   MISMATCH         sub_5DA5A0
+[diff] 0x5dadc0   MISMATCH         sub_5DADC0
+[diff] 0x5e2500   MISMATCH         sub_5E2500
+[diff] 0x5ef3c0   MISMATCH         sub_5EF3C0
+[diff] 0x5f14a0   MISMATCH         sub_5F14A0
+[diff] 0x5f37c0   MISMATCH         sub_5F37C0
+[diff] 0x5f6eb0   MISMATCH         sub_5F6EB0
+[diff] 0x5fa1a0   MISMATCH         sub_5FA1A0
+[diff] 0x5fe130   MISMATCH         sub_5FE130
+[diff] 0x5ff090   MISMATCH         sub_5FF090
+[diff] 0x600410   MISMATCH         sub_600410
+[diff] 0x629050   MISMATCH         sub_629050
+[diff] 0x62b4a0   MISMATCH         sub_62B4A0
+[diff] 0x62db10   MISMATCH         sub_62DB10
+[diff] 0x630a70   MISMATCH         sub_630A70
+[diff] 0x6334a0   MISMATCH         sub_6334A0
+[ledger] 0x5cb260 MPBattleClass::canAllyWith -> NG (attempt 1)
+[ledger] 0x5d38b0 sub_5D38B0 -> NG (attempt 1)
+[ledger] 0x5d8b30 sub_5D8B30 -> NG (attempt 1)
+[ledger] 0x5d8e50 sub_5D8E50 -> NG (attempt 1)
+[ledger] 0x5da5a0 sub_5DA5A0 -> NG (attempt 1)
+[ledger] 0x5dadc0 sub_5DADC0 -> NG (attempt 1)
+[ledger] 0x5e2500 sub_5E2500 -> NG (attempt 1)
+[ledger] 0x5ef3c0 sub_5EF3C0 -> NG (attempt 1)
+[ledger] 0x5f14a0 sub_5F14A0 -> NG (attempt 1)
+[ledger] 0x5f37c0 sub_5F37C0 -> NG (attempt 1)
+[ledger] 0x5f6eb0 sub_5F6EB0 -> NG (attempt 1)
+[ledger] 0x5fa1a0 sub_5FA1A0 -> NG (attempt 1)
+[ledger] 0x5fe130 sub_5FE130 -> NG (attempt 1)
+[ledger] 0x5ff090 sub_5FF090 -> NG (attempt 1)
+[ledger] 0x600410 sub_600410 -> NG (attempt 1)
+[ledger] 0x629050 sub_629050 -> NG (attempt 1)
+[ledger] 0x62b4a0 sub_62B4A0 -> NG (attempt 1)
+[ledger] 0x62db10 sub_62DB10 -> NG (attempt 1)
+[ledger] 0x630a70 sub_630A70 -> NG (attempt 1)
+[ledger] 0x6334a0 sub_6334A0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p179\batch_report.json

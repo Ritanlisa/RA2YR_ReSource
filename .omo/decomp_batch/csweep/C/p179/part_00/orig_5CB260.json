@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CB260",
+ "name": "MPBattleClass::canAllyWith",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CB260",
+ "bytes_hex": "dd0508fbab00dc2530fbab0083ec08dd1c24e8d9faefffdc0d28fbab0083c408dc0d38177e00e875ac1f00a380fbab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
