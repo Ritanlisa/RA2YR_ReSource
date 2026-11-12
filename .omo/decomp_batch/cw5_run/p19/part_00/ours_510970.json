@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@DistributionVector_BuildingType@@QAEPAV1@HPAH@Z",
+ "sym_key": "DistributionVector_BuildingType::Construct",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ffc7460400000000897e08c6460c01c6460d00c7060000000074718b4c241085c974258d47ff893985c07c0f8d4108c7000000000083c0084f75f483c1048bc6894e045f5ec208008d0cfd0400000051e80000000083c40485c0750e894604c6460d018bc65f5ec208008d57ff893885d28d48047c0f83c008c7000000000083c0084f75f4c6460d01894e048bc65f5ec20800",
+ "relocs": [
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x510970 DistributionVector_BuildingType::Construct -> DistributionVector_BuildingType
+[conv] 0x4a4780 Surface::CreateSurfacePalette -> Surface
+[conv] 0x5cd410 MSBitPrintAnim::SetText -> MSBitPrintAnim
+[conv] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> ObjectClass
+[conv] 0x52b2b0 INIClass::deleteSection -> INIClass
+[conv] 0x5388a0 SortedArray::RemoveByKey -> SortedArray
+[conv] 0x7d7491 _crtGetLocaleInfoA_16 -> _addr_7D
+[conv] 0x430f70 PlayerClass::FindNearestWaypoint -> PlayerClass
+[conv] 0x4ba5a0 DSurface::Construct -> DSurface
+[conv] 0x455c20 TechnoClass::GetScreenCoords -> TechnoClass
+[conv] 0x7248c0 TooltipClass::GetText -> TooltipClass
+[conv] 0x7b0220 ComStreamClass::seekToPosition -> ComStreamClass
+[conv] 0x4bb000 DSurface::RestoreIfLost -> DSurface
+[conv] 0x770d70 sub_770D70 -> _addr_77
+[conv] 0x58a630 _DynamicVectorClass_U_HashObject_II::Constructor -> _DynamicVectorClass_U_HashObject_II
+[conv] 0x6cf350 SwizzleManagerClass::ConvertNodes -> SwizzleManagerClass
+[conv] 0x679cc0 sub_679CC0 -> _addr_67
+[conv] 0x6964c0 NetworkDialog::Dispatch -> NetworkDialog
+[conv] 0x5d67b0 GameConfig::Constructor -> GameConfig
+[conv] 0x4d9e70 FootClass::CheckCohesion -> FootClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DistributionVector_BuildingType rc=0
+[era] Surface                  rc=2
+[era] MSBitPrintAnim           rc=0
+[era] ObjectClass              rc=2
+[era] INIClass                 rc=0
+[era] SortedArray              rc=0
+[era] _addr_7D                 rc=2
+[era] PlayerClass              rc=2
+[era] DSurface                 rc=2
+[era] TechnoClass              rc=2
+[era] TooltipClass             rc=2
+[era] ComStreamClass           rc=2
+[era] _addr_77                 rc=0
+[era] _DynamicVectorClass_U_HashObject_II rc=2
+[era] SwizzleManagerClass      rc=0
+[era] _addr_67                 rc=2
+[era] NetworkDialog            rc=2
+[era] GameConfig               rc=2
+[era] FootClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x510970   MISMATCH         DistributionVector_BuildingType::Construct
+[diff] 0x5cd410   MISMATCH         MSBitPrintAnim::SetText
+[diff] 0x52b2b0   MISMATCH         INIClass::deleteSection
+[diff] 0x5388a0   MISMATCH         SortedArray::RemoveByKey
+[diff] 0x770d70   MISMATCH         sub_770D70
+[diff] 0x6cf350   MISMATCH         SwizzleManagerClass::ConvertNodes
+[ledger] 0x510970 DistributionVector_BuildingType::Construct -> NG (attempt 4)
+[ledger] 0x4a4780 Surface::CreateSurfacePalette -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5cd410 MSBitPrintAnim::SetText -> NG (attempt 12)
+[ledger] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52b2b0 INIClass::deleteSection -> NG (attempt 12)
+[ledger] 0x5388a0 SortedArray::RemoveByKey -> NG (attempt 12)
+[ledger] 0x7d7491 _crtGetLocaleInfoA_16 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x430f70 PlayerClass::FindNearestWaypoint -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ba5a0 DSurface::Construct -> COMPILE_FAIL (attempt 12)
+[ledger] 0x455c20 TechnoClass::GetScreenCoords -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7248c0 TooltipClass::GetText -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7b0220 ComStreamClass::seekToPosition -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4bb000 DSurface::RestoreIfLost -> COMPILE_FAIL (attempt 4)
+[ledger] 0x770d70 sub_770D70 -> NG (attempt 5)
+[ledger] 0x58a630 _DynamicVectorClass_U_HashObject_II::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6cf350 SwizzleManagerClass::ConvertNodes -> NG (attempt 12)
+[ledger] 0x679cc0 sub_679CC0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6964c0 NetworkDialog::Dispatch -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d67b0 GameConfig::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4d9e70 FootClass::CheckCohesion -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "extern_reloc": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p19\batch_report.json

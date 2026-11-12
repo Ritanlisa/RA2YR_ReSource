@@ -8314,7 +8314,7 @@
   "this_as_id": false
  },
  "0x430f70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9917,7 +9917,7 @@
   "this_as_id": false
  },
  "0x455c20": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -17963,7 +17963,7 @@
   "this_as_id": false
  },
  "0x4a4780": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20507,7 +20507,7 @@
   "this_as_id": false
  },
  "0x4ba5a0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20533,14 +20533,14 @@
   "status": "OK"
  },
  "0x4bb000": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DSurface::RestoreIfLost",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DSurface::RestoreIfLost",
-  "rule_violations": 2,
+  "rule_violations": 12,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -23326,7 +23326,7 @@
   "status": "OK"
  },
  "0x4d9e70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30682,15 +30682,15 @@
   "this_as_id": false
  },
  "0x510970": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 mov esi, dword ptr [esp + 8]",
   "name": "DistributionVector_BuildingType::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "DistributionVector_BuildingType::Construct",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x510a20": {
@@ -32562,15 +32562,15 @@
   "this_as_id": false
  },
  "0x52b2b0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "INIClass::deleteSection",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "INIClass::deleteSection",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x52b390": {
@@ -33953,15 +33953,15 @@
   "this_as_id": false
  },
  "0x5388a0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "SortedArray::RemoveByKey",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SortedArray::RemoveByKey",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x538980": {
@@ -40656,7 +40656,7 @@
   "this_as_id": false
  },
  "0x58a630": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -46587,15 +46587,15 @@
   "this_as_id": false
  },
  "0x5cd410": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0x89c4b8]",
   "name": "MSBitPrintAnim::SetText",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "MSBitPrintAnim::SetText",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5cd4d0": {
@@ -48160,7 +48160,7 @@
   "this_as_id": false
  },
  "0x5d67b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -49374,7 +49374,7 @@
   "this_as_id": false
  },
  "0x5eacd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -59073,7 +59073,7 @@
   "this_as_id": false
  },
  "0x679cc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_679CC0",
@@ -61082,7 +61082,7 @@
   "this_as_id": false
  },
  "0x6964c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -68098,15 +68098,15 @@
   "this_as_id": false
  },
  "0x6cf350": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "SwizzleManagerClass::ConvertNodes",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "SwizzleManagerClass::ConvertNodes",
   "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6cf410": {
@@ -74544,7 +74544,7 @@
   "this_as_id": false
  },
  "0x7248c0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83963,14 +83963,14 @@
   "this_as_id": false
  },
  "0x770d70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+5 mov ebx, ecx",
   "name": "sub_770D70",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_770D70",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x770f10": {
@@ -86454,14 +86454,14 @@
   "this_as_id": false
  },
  "0x7b0220": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ComStreamClass::seekToPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ComStreamClass::seekToPosition",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -90235,7 +90235,7 @@
   "this_as_id": false
  },
  "0x7d7491": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_crtGetLocaleInfoA_16",
