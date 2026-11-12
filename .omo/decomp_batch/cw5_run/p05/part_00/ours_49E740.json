@@ -1,0 +1,27 @@
+{
+ "symbol": "?SmallFunc_49E740@ObjectClass@@QAEDPAH@Z",
+ "sym_key": "ObjectClass::SmallFunc_49E740",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "578bf98a476084c07512e8000000008a476084c0750632c05fc20400538b5c240c33c9568a4f5c8b036a005153ff50088a475c33f684c076415533ed6802010000e8000000008b530483c4048904b28b43048b04b085c0741333c98a4f588b5429045250e80000000083c40833c0468a475c83c54c3bf07cc35d5e5bb0015fc20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?LoadFromINI@CampaignClass@@QAEHXZ",
+   "sym_key": "CampaignClass::LoadFromINI"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

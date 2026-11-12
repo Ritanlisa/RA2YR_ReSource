@@ -1,0 +1,93 @@
+{
+ "symbol": "?sub_786DC0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::sub_786DC0",
+ "size": 180,
+ "link_base": 0,
+ "bytes_hex": "83ec0853558be95657b900000000e800000000bb01000000b8000000008d542414528b088d44241450536800000000ff919000000085c075298b74241085f674218bfe83c9fff2aef7d14974158bcde8000000005650e80000000083c40885c0741c4383fb207eb0b998030000e8000000005f5e5d32c05b83c408c204008b4c241051b998030000e8000000008b542414b90000000052e800000000a1000000005f24005ea3000000005db0015b83c408c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_WebBrowserConfig@@3PADA",
+   "sym_key": "g_WebBrowserConfig"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Alt2@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt2"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?ppv@@YAHPBX0@Z",
+   "sym_key": "ppv"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?ppv@@YAHPBX0@Z",
+   "sym_key": "ppv"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?Alt2@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt2"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?Assign_Alt@String@@QAEPAPAXPAX@Z",
+   "sym_key": "String::Assign_Alt"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?g_WebBrowserConfig@@3PADA",
+   "sym_key": "g_WebBrowserConfig"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?Assign_Alt@String@@QAEPAPAXPAX@Z",
+   "sym_key": "String::Assign_Alt"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A238@@3IA",
+   "sym_key": "DataGlobal_84A238"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A238@@3IA",
+   "sym_key": "DataGlobal_84A238"
+  }
+ ]
+}

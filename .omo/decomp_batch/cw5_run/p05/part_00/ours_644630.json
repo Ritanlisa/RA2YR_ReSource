@@ -1,0 +1,105 @@
+{
+ "symbol": "?applyDamage@WarheadTypeClass@@QAEHXZ",
+ "sym_key": "WarheadTypeClass::applyDamage",
+ "size": 233,
+ "link_base": 0,
+ "bytes_hex": "33c033c9a0000000008a0d0000000056575051e80000000083c40885c00f84c000000033d283c9ff8a150000000033c08bfaf2aef7d1490f84a6000000a12800000033f685c07e4c0fbe051c0000008b0883c1245152e80000000083c40885c0742da128000000463bf07d280fbe151c00000033c98b04b28a0d0000000083c0245051e80000000083c40885c075d38bc65f5ec36810030000e80000000083c40485c0741233d28bc88a150000000052e800000000eb0233c08b352800000033d285f67e1e8b0d1c0000003901740f423bd67d0f8b790483c1043bf875f15f8bc25ec35f83c8ff5ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?Construct@OverlayTypeClass@@QAEPAIPAX@Z",
+   "sym_key": "OverlayTypeClass::Construct"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  }
+ ]
+}
