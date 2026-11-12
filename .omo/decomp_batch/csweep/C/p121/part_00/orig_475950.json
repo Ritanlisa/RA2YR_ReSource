@@ -1,0 +1,11 @@
+{
+ "addr": "0x475950",
+ "name": "ScenarioClass::loadMapData",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x475950",
+ "bytes_hex": "8b44240c568bf150b9103da800e8deaf2a008b4c240c8b5424085051528bcee8ec2c0b005ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

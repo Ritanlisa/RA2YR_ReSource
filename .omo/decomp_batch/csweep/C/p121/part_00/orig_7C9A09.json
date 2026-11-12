@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C9A09",
+ "name": "_ispunct",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C9A09",
+ "bytes_hex": "833d9cc78700017e0e6a10ff742408e8f47800005959c38b4424048b0d90c587008a044183e010c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

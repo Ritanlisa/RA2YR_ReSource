@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C9ABB",
+ "name": "_iscntrl",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C9ABB",
+ "bytes_hex": "833d9cc78700017e0e6a20ff742408e8427800005959c38b4424048b0d90c587008a044183e020c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

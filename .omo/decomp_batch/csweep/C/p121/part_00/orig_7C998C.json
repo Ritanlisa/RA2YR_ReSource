@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C998C",
+ "name": "_isdigit",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C998C",
+ "bytes_hex": "833d9cc78700017e0e6a04ff742408e8717900005959c38b4424048b0d90c587008a044183e004c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_6D1BF0@@YAXXZ",
+ "sym_key": "Unnamed::sub_6D1BF0",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "a1040000008b0d000000005051e800000000dc0d0000000083c408dc3d00000000e800000000a300000000891504000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD88@@3NA",
+   "sym_key": "DataGlobal_B0CD88"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD88@@3NA",
+   "sym_key": "DataGlobal_B0CD88"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Math__SinCos@@YANN@Z",
+   "sym_key": "Math__SinCos"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1728@@3NA",
+   "sym_key": "DataGlobal_7E1728"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD78@@3NA",
+   "sym_key": "DataGlobal_B0CD78"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?LightningStorm_CloudHeightFactor@@3_KA",
+   "sym_key": "LightningStorm_CloudHeightFactor"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?LightningStorm_CloudHeightFactor@@3_KA",
+   "sym_key": "LightningStorm_CloudHeightFactor"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?HasValidHouse@TagClass@@QAEDXZ",
+ "sym_key": "TagClass::HasValidHouse",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "568bb1a000000085f6750432c05ec38bcee80000000084c075158bb6a800000085f674e78bcee80000000084c074ebb0015ec3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?FindType15@HouseClass@@QAEDXZ",
+   "sym_key": "HouseClass::FindType15"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?FindType15@HouseClass@@QAEDXZ",
+   "sym_key": "HouseClass::FindType15"
+  }
+ ]
+}

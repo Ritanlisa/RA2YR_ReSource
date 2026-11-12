@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CE300",
+ "name": "MSPrintAnim::Clear",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CE300",
+ "bytes_hex": "568bf18a464884c0741a8d4e1ce89e8e1e00394624760d837e28027607b8010000005ec333c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

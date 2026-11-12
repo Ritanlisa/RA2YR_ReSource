@@ -1,0 +1,15 @@
+{
+ "symbol": "?Clear@MSPrintAnim@@QAEHXZ",
+ "sym_key": "MSPrintAnim::Clear",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "568bf18a464884c0741a8d4e1ce800000000394624760d837e28027607b8010000005ec333c05ec3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  }
+ ]
+}

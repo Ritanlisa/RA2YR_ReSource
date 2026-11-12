@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p121\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ce300 MSPrintAnim::Clear -> MSPrintAnim
+[conv] 0x6e6220 TagClass::HasValidHouse -> TagClass
+[conv] 0x6e6250 TagTypeClass::HasCrossesHorizontalLineEvent -> TagTypeClass
+[conv] 0x6e6280 TagTypeClass::HasCrossesVerticalLineEvent -> TagTypeClass
+[conv] 0x6e62b0 TagTypeClass::HasZoneEntryByEvent -> TagTypeClass
+[conv] 0x7c993c _isupper -> _addr_7C
+[conv] 0x7c9964 _islower -> _addr_7C
+[conv] 0x7c998c _isdigit -> _addr_7C
+[conv] 0x7c99e1 _isspace -> _addr_7C
+[conv] 0x7c9a09 _ispunct -> _addr_7C
+[conv] 0x7c9abb _iscntrl -> _addr_7C
+[conv] 0x473ab0 CCFileClass::Destru_vt16 -> CCFileClass
+[conv] 0x6d1bf0 sub_6D1BF0 -> _addr_6D
+[conv] 0x746720 TechnoClass::ClearAllTargets -> TechnoClass
+[conv] 0x765960 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor -> _VectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x769f50 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor -> _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76b9e0 _VectorClass_V_rc_ptr_VWDTTerritory::ddtor -> _VectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x7c3990 MovieClass::ComputeTime -> MovieClass
+[conv] 0x411650 BSurface::ScalarDtor -> BSurface
+[conv] 0x475950 ScenarioClass::loadMapData -> ScenarioClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSPrintAnim              rc=0
+[era] TagClass                 rc=0
+[era] TagTypeClass             rc=0
+[era] _addr_7C                 rc=0
+[era] CCFileClass              rc=2
+[era] _addr_6D                 rc=0
+[era] TechnoClass              rc=0
+[era] _VectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VWDTTerritory rc=0
+[era] MovieClass               rc=0
+[era] BSurface                 rc=2
+[era] ScenarioClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ce300   MATCH            MSPrintAnim::Clear
+[diff] 0x6e6220   MISMATCH         TagClass::HasValidHouse
+[diff] 0x6e6250   MISMATCH         TagTypeClass::HasCrossesHorizontalLineEvent
+[diff] 0x6e6280   MISMATCH         TagTypeClass::HasCrossesVerticalLineEvent
+[diff] 0x6e62b0   MISMATCH         TagTypeClass::HasZoneEntryByEvent
+[diff] 0x7c993c   MISMATCH         _isupper
+[diff] 0x7c9964   MISMATCH         _islower
+[diff] 0x7c998c   MISMATCH         _isdigit
+[diff] 0x7c99e1   MISMATCH         _isspace
+[diff] 0x7c9a09   MISMATCH         _ispunct
+[diff] 0x7c9abb   MISMATCH         _iscntrl
+[diff] 0x6d1bf0   MISMATCH         sub_6D1BF0
+[diff] 0x746720   MATCH            TechnoClass::ClearAllTargets
+[diff] 0x765960   MISMATCH         _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor
+[diff] 0x769f50   MISMATCH         _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor
+[diff] 0x76b9e0   MISMATCH         _VectorClass_V_rc_ptr_VWDTTerritory::ddtor
+[diff] 0x7c3990   MISMATCH         MovieClass::ComputeTime
+[diff] 0x475950   MISMATCH         ScenarioClass::loadMapData
+[ledger] 0x5ce300 MSPrintAnim::Clear -> OK (attempt 1)
+[ledger] 0x6e6220 TagClass::HasValidHouse -> NG (attempt 1)
+[ledger] 0x6e6250 TagTypeClass::HasCrossesHorizontalLineEvent -> NG (attempt 1)
+[ledger] 0x6e6280 TagTypeClass::HasCrossesVerticalLineEvent -> NG (attempt 1)
+[ledger] 0x6e62b0 TagTypeClass::HasZoneEntryByEvent -> NG (attempt 1)
+[ledger] 0x7c993c _isupper -> NG (attempt 1)
+[ledger] 0x7c9964 _islower -> NG (attempt 1)
+[ledger] 0x7c998c _isdigit -> NG (attempt 1)
+[ledger] 0x7c99e1 _isspace -> NG (attempt 1)
+[ledger] 0x7c9a09 _ispunct -> NG (attempt 1)
+[ledger] 0x7c9abb _iscntrl -> NG (attempt 1)
+[ledger] 0x473ab0 CCFileClass::Destru_vt16 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d1bf0 sub_6D1BF0 -> NG (attempt 1)
+[ledger] 0x746720 TechnoClass::ClearAllTargets -> OK (attempt 1)
+[ledger] 0x765960 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor -> NG (attempt 1)
+[ledger] 0x769f50 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor -> NG (attempt 1)
+[ledger] 0x76b9e0 _VectorClass_V_rc_ptr_VWDTTerritory::ddtor -> NG (attempt 1)
+[ledger] 0x7c3990 MovieClass::ComputeTime -> NG (attempt 1)
+[ledger] 0x411650 BSurface::ScalarDtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x475950 ScenarioClass::loadMapData -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 2,
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "branch_order": 4,
+  "extern_reloc": 6,
+  "const_fold": 1,
+  "regalloc": 3,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p121\batch_report.json
