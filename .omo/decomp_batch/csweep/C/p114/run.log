@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p114\part_00
+=== convert (20 addrs) ===
+[conv] 0x5bd950 sub_5BD950 -> _addr_5B
+[conv] 0x5bec40 sub_5BEC40 -> _addr_5B
+[conv] 0x5bf750 sub_5BF750 -> _addr_5B
+[conv] 0x5c5c60 sub_5C5C60 -> _addr_5C
+[conv] 0x5c6000 sub_5C6000 -> _addr_5C
+[conv] 0x5c9360 sub_5C9360 -> _addr_5C
+[conv] 0x5c9680 sub_5C9680 -> _addr_5C
+[conv] 0x5ca590 sub_5CA590 -> _addr_5C
+[conv] 0x5cad90 MPBattleClass::startGame -> MPBattleClass
+[conv] 0x5cb300 sub_5CB300 -> _addr_5C
+[conv] 0x5d3950 MPBattleClass::isDefaultFix -> MPBattleClass
+[conv] 0x5d5a20 Display::CalculateDefaultSize -> Display
+[conv] 0x5d8bd0 sub_5D8BD0 -> _addr_5D
+[conv] 0x5da640 sub_5DA640 -> _addr_5D
+[conv] 0x5dae60 sub_5DAE60 -> _addr_5D
+[conv] 0x5e25a0 sub_5E25A0 -> _addr_5E
+[conv] 0x5ef460 sub_5EF460 -> _addr_5E
+[conv] 0x5f1540 sub_5F1540 -> _addr_5F
+[conv] 0x5f3860 sub_5F3860 -> _addr_5F
+[conv] 0x5f6f50 sub_5F6F50 -> _addr_5F
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=0
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+[era] Display                  rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_5E                 rc=0
+[era] _addr_5F                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5bd950   MISMATCH         sub_5BD950
+[diff] 0x5bec40   MISMATCH         sub_5BEC40
+[diff] 0x5bf750   MISMATCH         sub_5BF750
+[diff] 0x5c5c60   MISMATCH         sub_5C5C60
+[diff] 0x5c6000   MISMATCH         sub_5C6000
+[diff] 0x5c9360   MISMATCH         sub_5C9360
+[diff] 0x5c9680   MISMATCH         sub_5C9680
+[diff] 0x5ca590   MISMATCH         sub_5CA590
+[diff] 0x5cb300   MISMATCH         sub_5CB300
+[diff] 0x5cad90   MISMATCH         MPBattleClass::startGame
+[diff] 0x5d3950   MISMATCH         MPBattleClass::isDefaultFix
+[diff] 0x5d5a20   MISMATCH         Display::CalculateDefaultSize
+[diff] 0x5d8bd0   MISMATCH         sub_5D8BD0
+[diff] 0x5da640   MISMATCH         sub_5DA640
+[diff] 0x5dae60   MISMATCH         sub_5DAE60
+[diff] 0x5e25a0   MISMATCH         sub_5E25A0
+[diff] 0x5ef460   MISMATCH         sub_5EF460
+[diff] 0x5f1540   MISMATCH         sub_5F1540
+[diff] 0x5f3860   MISMATCH         sub_5F3860
+[diff] 0x5f6f50   MISMATCH         sub_5F6F50
+[ledger] 0x5bd950 sub_5BD950 -> NG (attempt 1)
+[ledger] 0x5bec40 sub_5BEC40 -> NG (attempt 1)
+[ledger] 0x5bf750 sub_5BF750 -> NG (attempt 1)
+[ledger] 0x5c5c60 sub_5C5C60 -> NG (attempt 1)
+[ledger] 0x5c6000 sub_5C6000 -> NG (attempt 1)
+[ledger] 0x5c9360 sub_5C9360 -> NG (attempt 1)
+[ledger] 0x5c9680 sub_5C9680 -> NG (attempt 1)
+[ledger] 0x5ca590 sub_5CA590 -> NG (attempt 1)
+[ledger] 0x5cad90 MPBattleClass::startGame -> NG (attempt 1)
+[ledger] 0x5cb300 sub_5CB300 -> NG (attempt 1)
+[ledger] 0x5d3950 MPBattleClass::isDefaultFix -> NG (attempt 1)
+[ledger] 0x5d5a20 Display::CalculateDefaultSize -> NG (attempt 1)
+[ledger] 0x5d8bd0 sub_5D8BD0 -> NG (attempt 1)
+[ledger] 0x5da640 sub_5DA640 -> NG (attempt 1)
+[ledger] 0x5dae60 sub_5DAE60 -> NG (attempt 1)
+[ledger] 0x5e25a0 sub_5E25A0 -> NG (attempt 1)
+[ledger] 0x5ef460 sub_5EF460 -> NG (attempt 1)
+[ledger] 0x5f1540 sub_5F1540 -> NG (attempt 1)
+[ledger] 0x5f3860 sub_5F3860 -> NG (attempt 1)
+[ledger] 0x5f6f50 sub_5F6F50 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p114\batch_report.json
