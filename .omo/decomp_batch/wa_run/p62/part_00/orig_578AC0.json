@@ -1,0 +1,11 @@
+{
+ "addr": "0x578AC0",
+ "name": "MapClass::IncrementRedrawCounter",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x578AC0",
+ "bytes_hex": "fe8158110000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

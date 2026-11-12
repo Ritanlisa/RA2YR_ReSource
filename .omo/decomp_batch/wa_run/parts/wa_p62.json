@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x555c00",
+  "family": "D_RELOC",
+  "name": "sub_555C00"
+ },
+ {
+  "addr": "0x555d80",
+  "family": "D_RELOC",
+  "name": "sub_555D80"
+ },
+ {
+  "addr": "0x5567e0",
+  "family": "D_RELOC",
+  "name": "sub_5567E0"
+ },
+ {
+  "addr": "0x556960",
+  "family": "D_RELOC",
+  "name": "sub_556960"
+ },
+ {
+  "addr": "0x5585a0",
+  "family": "D_RELOC",
+  "name": "sub_5585A0"
+ },
+ {
+  "addr": "0x558720",
+  "family": "D_RELOC",
+  "name": "sub_558720"
+ },
+ {
+  "addr": "0x55a520",
+  "family": "D_RELOC",
+  "name": "sub_55A520"
+ },
+ {
+  "addr": "0x55a6a0",
+  "family": "D_RELOC",
+  "name": "sub_55A6A0"
+ },
+ {
+  "addr": "0x55ada0",
+  "family": "D_RELOC",
+  "name": "sub_55ADA0"
+ },
+ {
+  "addr": "0x55af20",
+  "family": "D_RELOC",
+  "name": "sub_55AF20"
+ },
+ {
+  "addr": "0x55af60",
+  "family": "D_RELOC",
+  "name": "PingPongBuffer::GetWriteOffset"
+ },
+ {
+  "addr": "0x55ca50",
+  "family": "D_RELOC",
+  "name": "sub_55CA50"
+ },
+ {
+  "addr": "0x55cbd0",
+  "family": "D_RELOC",
+  "name": "sub_55CBD0"
+ },
+ {
+  "addr": "0x55cc00",
+  "family": "D_RELOC",
+  "name": "sub_55CC00"
+ },
+ {
+  "addr": "0x55cc10",
+  "family": "D_RELOC",
+  "name": "sub_55CC10"
+ },
+ {
+  "addr": "0x55f7d0",
+  "family": "D_RELOC",
+  "name": "sub_55F7D0"
+ },
+ {
+  "addr": "0x55f950",
+  "family": "D_RELOC",
+  "name": "sub_55F950"
+ },
+ {
+  "addr": "0x561760",
+  "family": "D_RELOC",
+  "name": "sub_561760"
+ },
+ {
+  "addr": "0x5618e0",
+  "family": "D_RELOC",
+  "name": "sub_5618E0"
+ },
+ {
+  "addr": "0x578ac0",
+  "family": "D_RELOC",
+  "name": "MapClass::IncrementRedrawCounter"
+ }
+]

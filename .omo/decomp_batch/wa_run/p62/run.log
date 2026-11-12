@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p62\part_00
+=== convert (20 addrs) ===
+[conv] 0x555c00 sub_555C00 -> _addr_55
+[conv] 0x555d80 sub_555D80 -> _addr_55
+[conv] 0x5567e0 sub_5567E0 -> _addr_55
+[conv] 0x556960 sub_556960 -> _addr_55
+[conv] 0x5585a0 sub_5585A0 -> _addr_55
+[conv] 0x558720 sub_558720 -> _addr_55
+[conv] 0x55a520 sub_55A520 -> _addr_55
+[conv] 0x55a6a0 sub_55A6A0 -> _addr_55
+[conv] 0x55ada0 sub_55ADA0 -> _addr_55
+[conv] 0x55af20 sub_55AF20 -> _addr_55
+[conv] 0x55af60 PingPongBuffer::GetWriteOffset -> PingPongBuffer
+[conv] 0x55ca50 sub_55CA50 -> _addr_55
+[conv] 0x55cbd0 sub_55CBD0 -> _addr_55
+[conv] 0x55cc00 sub_55CC00 -> _addr_55
+[conv] 0x55cc10 sub_55CC10 -> _addr_55
+[conv] 0x55f7d0 sub_55F7D0 -> _addr_55
+[conv] 0x55f950 sub_55F950 -> _addr_55
+[conv] 0x561760 sub_561760 -> _addr_56
+[conv] 0x5618e0 sub_5618E0 -> _addr_56
+[conv] 0x578ac0 MapClass::IncrementRedrawCounter -> MapClass
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_55                 rc=0
+[era] PingPongBuffer           rc=0
+[era] _addr_56                 rc=0
+[era] MapClass                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x555c00   MATCH            sub_555C00
+[diff] 0x555d80   MISMATCH         sub_555D80
+[diff] 0x5567e0   MATCH            sub_5567E0
+[diff] 0x556960   MISMATCH         sub_556960
+[diff] 0x5585a0   MATCH            sub_5585A0
+[diff] 0x558720   MISMATCH         sub_558720
+[diff] 0x55a520   MATCH            sub_55A520
+[diff] 0x55a6a0   MISMATCH         sub_55A6A0
+[diff] 0x55ada0   MATCH            sub_55ADA0
+[diff] 0x55af20   MISMATCH         sub_55AF20
+[diff] 0x55ca50   MATCH            sub_55CA50
+[diff] 0x55cbd0   MISMATCH         sub_55CBD0
+[diff] 0x55cc00   MISMATCH         sub_55CC00
+[diff] 0x55cc10   MISMATCH         sub_55CC10
+[diff] 0x55f7d0   MATCH            sub_55F7D0
+[diff] 0x55f950   MISMATCH         sub_55F950
+[diff] 0x55af60   MISMATCH         PingPongBuffer::GetWriteOffset
+[diff] 0x561760   MATCH            sub_561760
+[diff] 0x5618e0   MISMATCH         sub_5618E0
+[diff] 0x578ac0   MATCH            MapClass::IncrementRedrawCounter
+[ledger] 0x555c00 sub_555C00 -> OK (attempt 2)
+[ledger] 0x555d80 sub_555D80 -> NG (attempt 2)
+[ledger] 0x5567e0 sub_5567E0 -> OK (attempt 2)
+[ledger] 0x556960 sub_556960 -> NG (attempt 2)
+[ledger] 0x5585a0 sub_5585A0 -> OK (attempt 3)
+[ledger] 0x558720 sub_558720 -> NG (attempt 3)
+[ledger] 0x55a520 sub_55A520 -> OK (attempt 2)
+[ledger] 0x55a6a0 sub_55A6A0 -> NG (attempt 2)
+[ledger] 0x55ada0 sub_55ADA0 -> OK (attempt 2)
+[ledger] 0x55af20 sub_55AF20 -> NG (attempt 2)
+[ledger] 0x55af60 PingPongBuffer::GetWriteOffset -> NG (attempt 2)
+[ledger] 0x55ca50 sub_55CA50 -> OK (attempt 2)
+[ledger] 0x55cbd0 sub_55CBD0 -> NG (attempt 2)
+[ledger] 0x55cc00 sub_55CC00 -> NG (attempt 2)
+[ledger] 0x55cc10 sub_55CC10 -> NG (attempt 3)
+[ledger] 0x55f7d0 sub_55F7D0 -> OK (attempt 2)
+[ledger] 0x55f950 sub_55F950 -> NG (attempt 2)
+[ledger] 0x561760 sub_561760 -> OK (attempt 3)
+[ledger] 0x5618e0 sub_5618E0 -> NG (attempt 2)
+[ledger] 0x578ac0 MapClass::IncrementRedrawCounter -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 9,
+  "MISMATCH": 11
+ },
+ "pathologies": {
+  "extern_reloc": 11
+ },
+ "match_rate_of_decided_pct": 45.0,
+ "match_rate_of_total_pct": 45.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p62\batch_report.json

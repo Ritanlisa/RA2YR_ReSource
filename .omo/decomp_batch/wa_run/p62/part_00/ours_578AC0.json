@@ -1,0 +1,8 @@
+{
+ "symbol": "?IncrementRedrawCounter@MapClass@@QAEXXZ",
+ "sym_key": "MapClass::IncrementRedrawCounter",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "fe8158110000c3",
+ "relocs": []
+}
