@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x5fd970",
+  "family": "W45",
+  "code": "C2446",
+  "name": "OverlayClass::HandleAction"
+ },
+ {
+  "addr": "0x60d440",
+  "family": "W45",
+  "code": "C4716",
+  "name": "nullsub_31"
+ },
+ {
+  "addr": "0x6260a0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "ObjectClass::sub_6260A0"
+ },
+ {
+  "addr": "0x62e380",
+  "family": "W45",
+  "code": "C2446",
+  "name": "ParticleSystemClass::CreateParticle"
+ },
+ {
+  "addr": "0x636ce0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "ScriptAction::ClearBuildingState"
+ },
+ {
+  "addr": "0x6386e0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "ClearFactoryClassProduction"
+ },
+ {
+  "addr": "0x63d0f0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "ObjectClass::Render_Render_63D0F0"
+ },
+ {
+  "addr": "0x63f000",
+  "family": "W45",
+  "code": "C2446",
+  "name": "FactoryClass::RemoveItem"
+ },
+ {
+  "addr": "0x63fea0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "PowerClass::updatePowerBarAnimation"
+ },
+ {
+  "addr": "0x645660",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ParticleTypeClass::SaveLoad_Prefix"
+ },
+ {
+  "addr": "0x654490",
+  "family": "W45",
+  "code": "C2446",
+  "name": "RadarClass::ProcessCellVisibility"
+ },
+ {
+  "addr": "0x656e50",
+  "family": "W45",
+  "code": "C2446",
+  "name": "RadarClass::IsActiveMode"
+ },
+ {
+  "addr": "0x658330",
+  "family": "W45",
+  "code": "C2562",
+  "name": "TabClass::DrawPower"
+ },
+ {
+  "addr": "0x661f50",
+  "family": "W45",
+  "code": "C2446",
+  "name": "JumpjetLocomotionClass::HasFieldStateChanged"
+ },
+ {
+  "addr": "0x664440",
+  "family": "W45",
+  "code": "C2446",
+  "name": "EventClass::validateEventType"
+ },
+ {
+  "addr": "0x679cc0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "sub_679CC0"
+ },
+ {
+  "addr": "0x67bb10",
+  "family": "W45",
+  "code": "C2446",
+  "name": "ReadINIClassInfantryTypeList"
+ },
+ {
+  "addr": "0x691b30",
+  "family": "W45",
+  "code": "C4716",
+  "name": "nullsub_34"
+ },
+ {
+  "addr": "0x69b700",
+  "family": "W45",
+  "code": "C2446",
+  "name": "Session::GetPlayerOption"
+ },
+ {
+  "addr": "0x69b720",
+  "family": "W45",
+  "code": "C2446",
+  "name": "Session::GetPlayerColor"
+ }
+]

@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x5fd970 OverlayClass::HandleAction -> OverlayClass
+[conv] 0x60d440 nullsub_31 -> _addr_60
+[conv] 0x6260a0 ObjectClass::sub_6260A0 -> ObjectClass
+[conv] 0x62e380 ParticleSystemClass::CreateParticle -> ParticleSystemClass
+[conv] 0x636ce0 ScriptAction::ClearBuildingState -> ScriptAction
+[conv] 0x6386e0 ClearFactoryClassProduction -> _addr_63
+[conv] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> ObjectClass
+[conv] 0x63f000 FactoryClass::RemoveItem -> FactoryClass
+[conv] 0x63fea0 PowerClass::updatePowerBarAnimation -> PowerClass
+[conv] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> ParticleTypeClass
+[conv] 0x654490 RadarClass::ProcessCellVisibility -> RadarClass
+[conv] 0x656e50 RadarClass::IsActiveMode -> RadarClass
+[conv] 0x658330 TabClass::DrawPower -> TabClass
+[conv] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> JumpjetLocomotionClass
+[conv] 0x664440 EventClass::validateEventType -> EventClass
+[conv] 0x679cc0 sub_679CC0 -> _addr_67
+[conv] 0x67bb10 ReadINIClassInfantryTypeList -> _addr_67
+[conv] 0x691b30 nullsub_34 -> _addr_69
+[conv] 0x69b700 Session::GetPlayerOption -> Session
+[conv] 0x69b720 Session::GetPlayerColor -> Session
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] OverlayClass             rc=2
+[era] _addr_60                 rc=0
+[era] ObjectClass              rc=2
+[era] ParticleSystemClass      rc=2
+[era] ScriptAction             rc=2
+[era] _addr_63                 rc=0
+[era] FactoryClass             rc=0
+[era] PowerClass               rc=0
+[era] ParticleTypeClass        rc=2
+[era] RadarClass               rc=2
+[era] TabClass                 rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] EventClass               rc=2
+[era] _addr_67                 rc=2
+[era] _addr_69                 rc=0
+[era] Session                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x60d440   MATCH            nullsub_31
+[diff] 0x6260a0   MISMATCH         ObjectClass::sub_6260A0
+[diff] 0x6386e0   MISMATCH         ClearFactoryClassProduction
+[diff] 0x63f000   MISMATCH         FactoryClass::RemoveItem
+[diff] 0x63fea0   MISMATCH         PowerClass::updatePowerBarAnimation
+[diff] 0x658330   MISMATCH         TabClass::DrawPower
+[diff] 0x679cc0   MISMATCH         sub_679CC0
+[diff] 0x691b30   MATCH            nullsub_34
+[ledger] 0x5fd970 OverlayClass::HandleAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x60d440 nullsub_31 -> OK (attempt 2)
+[ledger] 0x6260a0 ObjectClass::sub_6260A0 -> NG (attempt 2)
+[ledger] 0x62e380 ParticleSystemClass::CreateParticle -> COMPILE_FAIL (attempt 12)
+[ledger] 0x636ce0 ScriptAction::ClearBuildingState -> COMPILE_FAIL (attempt 11)
+[ledger] 0x6386e0 ClearFactoryClassProduction -> NG (attempt 6)
+[ledger] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x63f000 FactoryClass::RemoveItem -> NG (attempt 2)
+[ledger] 0x63fea0 PowerClass::updatePowerBarAnimation -> NG (attempt 4)
+[ledger] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 4)
+[ledger] 0x654490 RadarClass::ProcessCellVisibility -> COMPILE_FAIL (attempt 4)
+[ledger] 0x656e50 RadarClass::IsActiveMode -> COMPILE_FAIL (attempt 2)
+[ledger] 0x658330 TabClass::DrawPower -> NG (attempt 5)
+[ledger] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> COMPILE_FAIL (attempt 2)
+[ledger] 0x664440 EventClass::validateEventType -> COMPILE_FAIL (attempt 13)
+[ledger] 0x679cc0 sub_679CC0 -> NG (attempt 7)
+[ledger] 0x67bb10 ReadINIClassInfantryTypeList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x691b30 nullsub_34 -> OK (attempt 2)
+[ledger] 0x69b700 Session::GetPlayerOption -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69b720 Session::GetPlayerColor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MATCH": 2,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "branch_order": 2,
+  "regalloc": 1,
+  "codegen_shape": 1,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 25.0,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p03\batch_report.json

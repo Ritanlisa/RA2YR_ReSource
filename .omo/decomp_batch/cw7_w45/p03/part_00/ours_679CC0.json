@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_679CC0@@YAXXZ",
+ "sym_key": "Unnamed::sub_679CC0",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "a00000000081ec8c00000084c075748d4c240cc744240400000000c744240800000000e80000000033c033c98a0d00000000894424288944242c518d4c2438c74424100000000089442434c744240400000000e8000000006a008d5424386a00528d4c240ce80000000085c0740e8d4c2400e800000000a300000000c605000000000181c48c000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B053B8@@3EA",
+   "sym_key": "DataGlobal_B053B8"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Constructor@GenericList@@QAEPAIXZ",
+   "sym_key": "GenericList::Constructor"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CoopCampMD_ini@@3EA",
+   "sym_key": "g_Str_File_CoopCampMD_ini"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?CCINIClass_Vtable@@3PAXA",
+   "sym_key": "CCINIClass_Vtable"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?Load@CCINIClass@@QAEHHDD@Z",
+   "sym_key": "CCINIClass::Load"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?ComputeHashSHA1@Hash@@QAEHXZ",
+   "sym_key": "Hash::ComputeHashSHA1"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B053B4@@3IA",
+   "sym_key": "DataGlobal_B053B4"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B053B8@@3EA",
+   "sym_key": "DataGlobal_B053B8"
+  }
+ ]
+}
