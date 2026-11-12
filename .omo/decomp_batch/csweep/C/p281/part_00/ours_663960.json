@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_663960@DynamicVectorClass@@QAEXXZ",
+ "sym_key": "DynamicVectorClass::sub_663960",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff397e1074348b460450e8000000008b4e1083c4043bcf7e1c33c0493bcf894e107e128b4e04408b1481895481fc8b4e103bc17cee397e1075cc8b4604893e3bc77411397e10740c50e80000000083c404897e04897e10897e085f5ec3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

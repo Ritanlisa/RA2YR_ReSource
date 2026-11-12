@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetTextBoundingRect@@YIPAIPAHHHHFHH@Z",
+ "sym_key": "Unnamed::GetTextBoundingRect",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "538b1d000000005556576a008bf152e8000000008b5b1c8bf88b54241c8b4c24148bea8bc181e5000100006685ed740b8bc7992bc2d1f82bc8eb0d81e2000200006685d274042bcf8bc18b4c24208b5424182bc189068b4424242bd08d0c4f8956048d1443894e0889560c8bc65f5e5d5bc21400",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  }
+ ]
+}

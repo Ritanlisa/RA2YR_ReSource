@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A59E0",
+ "name": "GetTextBoundingRect",
+ "size": 106,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A59E0",
+ "bytes_hex": "535556578b3dd0c489008bf16a00528bcfe8dae4f8ff8b7f1c8bd88b54241c8b4c2414f6c6018bc1740b8bc3992bc2d1f82bc8eb07f6c60274042bcb8bc18b5424208b4c24188b6c24242bc28d14538bde2bcd8d3c6f89038bc6894b04895308897b0c5f5e5d5bc21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

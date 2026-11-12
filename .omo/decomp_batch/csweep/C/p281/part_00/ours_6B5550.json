@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetType@SmudgeTypeClass@@QAE_NPAFH@Z",
+ "sym_key": "SmudgeTypeClass::GetType",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf168b0000000e80000000083c40485c074498b4c24146affc7442410000000000fbf110fbf4902c1e20881c280000000c1e1088954240881c1800000008d542408894c240c52568bc8e80000000085c07409b0015e83c40cc2080032c05e83c40cc20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Create@UnitClass@@QAEPAPAXPAX0H@Z",
+   "sym_key": "UnitClass::Create"
+  }
+ ]
+}

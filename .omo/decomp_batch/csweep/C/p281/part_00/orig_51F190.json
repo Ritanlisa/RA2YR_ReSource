@@ -1,0 +1,11 @@
+{
+ "addr": "0x51F190",
+ "name": "InfantryClass::ValidateTargetAndMove",
+ "size": 106,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x51F190",
+ "bytes_hex": "558b6c2410568bf1578b7c24148b065557ff50748d48ff83f938771b33d28a910cf25100ff2495fcf15100b809000000eb05b8050000003bfe750d83f80575085f5e32c05dc20c008a8e9802000084c974085f5e32c05dc20c005557508bcee8ec82fbff5f5e5dc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

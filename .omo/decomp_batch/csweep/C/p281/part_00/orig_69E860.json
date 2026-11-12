@@ -1,0 +1,11 @@
+{
+ "addr": "0x69E860",
+ "name": "MixFileClass::GetPixelData",
+ "size": 106,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69E860",
+ "bytes_hex": "56e81afdffff33d23bc2743f0fbf70068b4c240c3bce73338d0c498d44c8083bc274288a480d8a500c8a400e884c240d8b4c24088854240c668b74240c8bd16689325e8842028bc1c208008b4424088854240c8854240d668b74240c8bd032c96689325e884a02c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

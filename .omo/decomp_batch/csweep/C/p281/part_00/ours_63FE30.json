@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_63FE30@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_63FE30",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8d4424008d542404568bf18d4c240c505152e8000000008b86341500008b4c24043bc17c388b862c1500008b4c24083bc17c1c8b86301500008b4c240c3bc17d23408986301500005e83c40cc204004089862c1500005e83c40cc20400408986341500005e83c40cc20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?PowerBar__ComputeFill@@YGHPAX00@Z",
+   "sym_key": "PowerBar__ComputeFill"
+  }
+ ]
+}

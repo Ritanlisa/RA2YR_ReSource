@@ -1,0 +1,27 @@
+{
+ "symbol": "?ValidateTargetAndMove@InfantryClass@@QAEDHPAHH@Z",
+ "sym_key": "InfantryClass::ValidateTargetAndMove",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "558b6c241056578b7c24148bf155578b0656ff50748d48f783f930771b33d28a9100000000ff249500000000b809000000eb05b8050000003bfe751183f805750c8b8eac02000033c085c974005557508bcee8000000005f5e5dc20c00",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "$L1887",
+   "sym_key": "$L1887"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "$L1888",
+   "sym_key": "$L1888"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?ValidateMove@FootClass@@QAEDHPAXD@Z",
+   "sym_key": "FootClass::ValidateMove"
+  }
+ ]
+}

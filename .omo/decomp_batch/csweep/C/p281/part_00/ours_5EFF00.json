@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_5EFF00@@YGHPAXHHH@Z",
+ "sym_key": "Unnamed::sub_5EFF00",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "8b442410538b5c240c568b742414578b7c241050568bd38bcfe80000000085c0752981fb11010000751f6a0857e80000000083fe02741081fe510600007e0a81fe550600007f02893033c05f5e5bc21000",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  }
+ ]
+}

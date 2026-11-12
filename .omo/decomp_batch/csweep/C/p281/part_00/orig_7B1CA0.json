@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B1CA0",
+ "name": "IPXInterfaceClass::Disconnect",
+ "size": 105,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B1CA0",
+ "bytes_hex": "53568bf133db395e18744f8b460c8b00385816740b50e8826e010083c404eb108858158b865cf003004889865cf003008b46183bc37e1e8d48ff33c03bcb894e187e128b4e0c408b1481895481fc8b4e183bc17cee395e1875b1899e5cf00300899e50f003005e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

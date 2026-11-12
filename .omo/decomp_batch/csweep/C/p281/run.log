@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p281\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b1ca0 WinsockInterfaceClass::Disconnect -> WinsockInterfaceClass
+[conv] 0x6b5550 SmudgeTypeClass::GetType -> SmudgeTypeClass
+[conv] 0x7d77d6 __wctomb_lk -> _addr_7D
+[conv] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> TechnoClass
+[conv] 0x5eff00 sub_5EFF00 -> _addr_5E
+[conv] 0x630090 ParticleSystemClass::vt_06 -> ParticleSystemClass
+[conv] 0x557f40 ListClass::Clear -> ListClass
+[conv] 0x4a59e0 GetTextBoundingRect -> _addr_4A
+[conv] 0x63fdc0 ObjectClass::sub_63FDC0 -> ObjectClass
+[conv] 0x63fe30 ObjectClass::sub_63FE30 -> ObjectClass
+[conv] 0x661ec0 RocketLocomotionClass::RocketLocomotionClass -> RocketLocomotionClass
+[conv] 0x69e860 MixFileClass::GetPixelData -> MixFileClass
+[conv] 0x46f810 GetLobbyPlayerColor -> _addr_46
+[conv] 0x46f880 GetHouseClassSideIndex -> _addr_46
+[conv] 0x4748a0 INIClass::GetPipIdx -> INIClass
+[conv] 0x663960 DynamicVectorClass::sub_663960 -> DynamicVectorClass
+[conv] 0x51f250 InfantryClass::ProcessUpdate -> InfantryClass
+[conv] 0x65d2b0 RawFileClass::GetFileSizeOp -> RawFileClass
+[conv] 0x71ade0 TagClass::Unlink -> TagClass
+[conv] 0x51f190 InfantryClass::ValidateTargetAndMove -> InfantryClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WinsockInterfaceClass    rc=0
+[era] SmudgeTypeClass          rc=0
+[era] _addr_7D                 rc=2
+[era] TechnoClass              rc=2
+[era] _addr_5E                 rc=0
+[era] ParticleSystemClass      rc=2
+[era] ListClass                rc=2
+[era] _addr_4A                 rc=0
+[era] ObjectClass              rc=0
+[era] RocketLocomotionClass    rc=2
+[era] MixFileClass             rc=0
+[era] _addr_46                 rc=2
+[era] INIClass                 rc=2
+[era] DynamicVectorClass       rc=0
+[era] InfantryClass            rc=2
+[era] RawFileClass             rc=2
+[era] TagClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b1ca0   MISMATCH         WinsockInterfaceClass::Disconnect
+[diff] 0x6b5550   MISMATCH         SmudgeTypeClass::GetType
+[diff] 0x5eff00   MISMATCH         sub_5EFF00
+[diff] 0x4a59e0   MISMATCH         GetTextBoundingRect
+[diff] 0x63fdc0   MISMATCH         ObjectClass::sub_63FDC0
+[diff] 0x63fe30   MISMATCH         ObjectClass::sub_63FE30
+[diff] 0x69e860   MISMATCH         MixFileClass::GetPixelData
+[diff] 0x663960   MISMATCH         DynamicVectorClass::sub_663960
+[diff] 0x51f190   MISMATCH         InfantryClass::ValidateTargetAndMove
+[ledger] 0x7b1ca0 WinsockInterfaceClass::Disconnect -> NG (attempt 1)
+[ledger] 0x6b5550 SmudgeTypeClass::GetType -> NG (attempt 1)
+[ledger] 0x7d77d6 __wctomb_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eff00 sub_5EFF00 -> NG (attempt 1)
+[ledger] 0x630090 ParticleSystemClass::vt_06 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557f40 ListClass::Clear -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a59e0 GetTextBoundingRect -> NG (attempt 1)
+[ledger] 0x63fdc0 ObjectClass::sub_63FDC0 -> NG (attempt 1)
+[ledger] 0x63fe30 ObjectClass::sub_63FE30 -> NG (attempt 1)
+[ledger] 0x661ec0 RocketLocomotionClass::RocketLocomotionClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69e860 MixFileClass::GetPixelData -> NG (attempt 1)
+[ledger] 0x46f810 GetLobbyPlayerColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46f880 GetHouseClassSideIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4748a0 INIClass::GetPipIdx -> COMPILE_FAIL (attempt 1)
+[ledger] 0x663960 DynamicVectorClass::sub_663960 -> NG (attempt 1)
+[ledger] 0x51f250 InfantryClass::ProcessUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65d2b0 RawFileClass::GetFileSizeOp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71ade0 TagClass::Unlink -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51f190 InfantryClass::ValidateTargetAndMove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "const_fold": 1,
+  "extern_reloc": 1,
+  "codegen_shape": 4,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p281\batch_report.json

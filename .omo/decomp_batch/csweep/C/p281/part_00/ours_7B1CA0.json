@@ -1,0 +1,15 @@
+{
+ "symbol": "?Disconnect@WinsockInterfaceClass@@QAEXXZ",
+ "sym_key": "WinsockInterfaceClass::Disconnect",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db395e18744e8b460c8b00385816740b50e80000000083c404eb108858158b865cf003004889865cf003008b46183bc37e1d33c9483bc38946187e138d46088b500883c0044189108b56183bca7cf0395e1875b2899e5cf00300899e50f003005e5bc3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

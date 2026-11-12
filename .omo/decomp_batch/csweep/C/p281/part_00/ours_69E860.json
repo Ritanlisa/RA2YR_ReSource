@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetPixelData@MixFileClass@@QAEHHI@Z",
+ "sym_key": "MixFileClass::GetPixelData",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "e80000000085c0743b0fbf50068b4c24083bca732f8d0c498d44c80885c07424660fb6500d538b5c24088a480e0bd333db8afe8a580c8b4424086689188848025bc208008b44240466c7000000c6400200c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?LoadSubFile@MixFileClass@@QAEPAPADXZ",
+   "sym_key": "MixFileClass::LoadSubFile"
+  }
+ ]
+}
