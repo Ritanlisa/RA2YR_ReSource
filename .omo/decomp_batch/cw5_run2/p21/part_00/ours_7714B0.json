@@ -1,0 +1,69 @@
+{
+ "symbol": "?TerritorySelectWDT_Delete@TechnoClass@@QAEXHDH@Z",
+ "sym_key": "TechnoClass::TerritorySelectWDT_Delete",
+ "size": 389,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1578b86d00300008b8ebc0300003bc18d58ff7e428b86d00300003bd87d2b488bfb3bd88986d0030000731e8b86c40300008d4cb804518d0cb8e8000000008b86d0030000473bf872e28b8ebc0300008bc34b3bc17fbe8b86bc03000085c075128b967c03000080e20183ca0189967c0300008d44240c50e8000000008b1e83c4048d4c240ce8000000008b4424148d0c408b84ce8c03000085c08d3cce0f8ec900000083f801750433c0eb0e48b900000000506a00e8000000008b8f800300008d54240c528b14818bcbe80000000084c00f84950000008bcee80000000084c0751fe8000000008b5424148986ac0300008b44241c8996b00300008986b40300008b96c80300008b86d00300003bc2722b85c0750485d275458b8ed803000085c97e3b8bbec00300008d86c003000003ca6a005150ff570884c074228b86d00300008d54240c528d4801898ed00300008b8ec40300008d0c81e8000000008a44241884c07406ff86bc0300008d54240c52e80000000083c4045f5e5b59c20c00",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?Alt2@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt2"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?Map_Remove_770CE0@@YIDHHPAX@Z",
+   "sym_key": "Map_Remove_770CE0"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?IsPlaying@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsPlaying"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 351,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 375,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

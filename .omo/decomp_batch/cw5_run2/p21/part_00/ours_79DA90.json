@@ -1,0 +1,87 @@
+{
+ "symbol": "?ExtractChatCommand@@YIPAPADPAVString@@PAX@Z",
+ "sym_key": "Unnamed::ExtractChatCommand",
+ "size": 200,
+ "link_base": 0,
+ "bytes_hex": "515356576a008bfa6a0068880100008bd957e8000000008bf083feff750233f66a006a00688b01000057e8000000003bf07d5c8d44240c50e80000000083c4048d4c240c8bd6518bcfe8000000008d4c240c6a00e800000000663d280075138d54240c6a2952e80000000083c40884c075308d4c240c46e8000000006a006a00688b01000057e8000000003bf07ca468000000008bcbe8000000008bc35f5e5b59c36a288d4c2410e8000000008d54240c8bcbe8000000008d4c240ce8000000008bc35f5e5b59c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?UI_Assign_623F60@@YIJPAXH0@Z",
+   "sym_key": "UI_Assign_623F60"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?UI_Helper_7B7980@@YADPAXH@Z",
+   "sym_key": "UI_Helper_7B7980"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::AssignFromPtr"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?RemoveChar@WideString@@QAEDH@Z",
+   "sym_key": "WideString::RemoveChar"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?ToWideStringCharAlt@@YIPAPADPAXPBX@Z",
+   "sym_key": "ToWideStringCharAlt"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  }
+ ]
+}
