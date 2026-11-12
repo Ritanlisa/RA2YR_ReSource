@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B47F0",
+ "name": "VectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStruct_",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B47F0",
+ "bytes_hex": "568bf18b4604c7069c327f0085c074178a4e0d84c9741050e83043110083c404c74604000000008a442408c6460d00a801c7460800000000740956e80d43110083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
