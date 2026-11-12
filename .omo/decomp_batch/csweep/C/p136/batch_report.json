@@ -1,0 +1,458 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "const_fold": 3,
+   "regalloc": 17
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 1,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x421800",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 42B",
+   "first_diff": {
+    "orig": "+22 call 0x7c8b3d",
+    "ours": "+22 call 0x1b"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_AlphaShapeClass::Destroy",
+   "emitted": "VectorClass_ptr_AlphaShapeClass::Destroy",
+   "unit": "VectorClass_ptr_AlphaShapeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 42,
+   "clean": false
+  },
+  {
+   "addr": "0x42d540",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "DynamicVectorClass_uint::ddtor",
+   "emitted": "_DynamicVectorClass_I::ddtor",
+   "unit": "_DynamicVectorClass_I",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x42d5a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ushort::Destroy",
+   "emitted": "_DynamicVectorClass_G::Destroy",
+   "unit": "_DynamicVectorClass_G",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x42f3a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "BaseClass::ddtor",
+   "emitted": "_DynamicVectorClass_VBaseNodeClass::ddtor",
+   "unit": "_DynamicVectorClass_VBaseNodeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x42f420",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "RandomMap::ddtor",
+   "emitted": "_DynamicVectorClass_VCell::ddtor",
+   "unit": "_DynamicVectorClass_VCell",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x459f90",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "TypeList_cptr_ParticleSystemTypeClass::GetClassIdentifier",
+   "emitted": "_DynamicVectorClass_PBVParticleSystemTypeClass::GetClassIdentifier",
+   "unit": "_DynamicVectorClass_PBVParticleSystemTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x459ff0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 42B",
+   "first_diff": {
+    "orig": "+22 call 0x7c8b3d",
+    "ours": "+22 call 0x1b"
+   },
+   "pathology": "const_fold",
+   "name": "BuildingClass::initBuildingData",
+   "emitted": "DynamicVector::initBuildingData",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/9",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 42,
+   "clean": false
+  },
+  {
+   "addr": "0x45a070",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_FoggedObjectClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVFoggedObjectClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVFoggedObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x45a0d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_Reestablish::Destroy",
+   "emitted": "_DynamicVectorClass_PAVReestablish::Destroy",
+   "unit": "_DynamicVectorClass_PAVReestablish",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x46b5e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 42B",
+   "first_diff": {
+    "orig": "+22 call 0x7c8b3d",
+    "ours": "+22 call 0x1b"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_BulletClass::Destroy",
+   "emitted": "VectorClass_ptr_BulletClass::Destroy",
+   "unit": "VectorClass_ptr_BulletClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 42,
+   "clean": false
+  },
+  {
+   "addr": "0x472ae0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_CaptureManagerClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVCaptureManagerClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVCaptureManagerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x477840",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "_DynamicVectorClass_H::ddtor",
+   "emitted": "_DynamicVectorClass_H::ddtor",
+   "unit": "_DynamicVectorClass_H",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4778a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "FilePipe_30::ddtor",
+   "emitted": "_DynamicVectorClass_PAVTechnoTypeClass::ddtor",
+   "unit": "_DynamicVectorClass_PAVTechnoTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x477900",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "ParticleTypeClass::GetClassIdentifier",
+   "emitted": "_DynamicVectorClass_VRGBClass::GetClassIdentifier",
+   "unit": "_DynamicVectorClass_VRGBClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x48ad10",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_DamageGroup::Destroy",
+   "emitted": "_DynamicVectorClass_PAUDamageGroup::Destroy",
+   "unit": "_DynamicVectorClass_PAUDamageGroup",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x491390",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_ConvertClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVConvertClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVConvertClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x49e950",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "DynamicVectorClass_PAD::ddtor",
+   "emitted": "_DynamicVectorClass_PAD::ddtor",
+   "unit": "_DynamicVectorClass_PAD",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x49e9b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "DynamicVectorClass_PAD::Clear_49E9B0",
+   "emitted": "_DynamicVectorClass_PAV_DynamicVectorClass_PAD::Clear_49E9B0",
+   "unit": "_DynamicVectorClass_PAV_DynamicVectorClass_PAD",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4a0eb0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_UtagCONNECTDATA::Destroy",
+   "emitted": "_DynamicVectorClass_UtagCONNECTDATA::Destroy",
+   "unit": "_DynamicVectorClass_UtagCONNECTDATA",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4a0f20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "EnumConnectionPointsClass::ClearBuffer",
+   "emitted": "_DynamicVectorClass_PAUIConnectionPoint::ClearBuffer",
+   "unit": "_DynamicVectorClass_PAUIConnectionPoint",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  }
+ ]
+}
