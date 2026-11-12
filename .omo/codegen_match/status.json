@@ -65552,12 +65552,16 @@
   "this_as_id": false
  },
  "0x6bf440": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
-  "name": "0x6bf440",
-  "note": "decomp_batch r2: DUP_SKIP",
-  "status": "PENDING"
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, ecx",
+  "name": "COMClassFactory::Construct",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "COMClassFactory_5::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6bf510": {
   "attempts": 3,
