@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B9750",
+ "name": "NetworkGameSetup::ReadRulesUnknown",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B9750",
+ "bytes_hex": "568bf168530500008b0650ff15a8147e0085c074196a006a00680004000050ff15a4147e00a378b2a800c64609015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

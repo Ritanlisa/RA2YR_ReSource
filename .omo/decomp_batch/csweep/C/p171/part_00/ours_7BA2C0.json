@@ -1,0 +1,27 @@
+{
+ "symbol": "?UI_Helper_7BA2C0@@YIXPAX@Z",
+ "sym_key": "Unnamed::UI_Helper_7BA2C0",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "a1000000005668102700008bf150e8000000003d0201000075078bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?WaitForSingleObject@@YGKPAXH@Z",
+   "sym_key": "WaitForSingleObject"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

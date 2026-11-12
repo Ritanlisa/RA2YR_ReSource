@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p171\part_00
+=== convert (20 addrs) ===
+[conv] 0x600c70 NavigateDialogTab -> _addr_60
+[conv] 0x4b4f80 DropListClass::OnDblClick -> DropListClass
+[conv] 0x70f670 FootClass::SetThreatBounds -> FootClass
+[conv] 0x403870 CoordBounds::Constructor -> CoordBounds
+[conv] 0x69e900 ObjectClass::Helper_69E900 -> ObjectClass
+[conv] 0x6a4d10 sub_6A4D10 -> _addr_6A
+[conv] 0x6a4e10 sub_6A4E10 -> _addr_6A
+[conv] 0x6cfbd0 sub_6CFBD0 -> _addr_6C
+[conv] 0x708d90 TechnoClass::SetMoveDestination -> TechnoClass
+[conv] 0x746cd0 TechnoClass::SelectAttackWeapon -> TechnoClass
+[conv] 0x4d9ff0 FootClass::vt_entry_4F0 -> FootClass
+[conv] 0x408200 AudioQueue::IncrementPriority -> AudioQueue
+[conv] 0x7ba2c0 UI_Helper_7BA2C0 -> UI_Helper
+[conv] 0x5b9680 NetworkGameSetup::ReadRulesInitConfig -> NetworkGameSetup
+[conv] 0x5b96b0 NetworkGameSetup::ReadRulesBases -> NetworkGameSetup
+[conv] 0x5b96e0 NetworkGameSetup::ReadRulesAlliesAllowed -> NetworkGameSetup
+[conv] 0x5b9750 NetworkGameSetup::ReadRulesUnknown -> NetworkGameSetup
+[conv] 0x4db0a0 FootClass::GetAttackSpeed -> FootClass
+[conv] 0x6ec3a0 TeamClass::WakeUpAllMembers -> TeamClass
+[conv] 0x7ba420 FilePipe::Destructor -> FilePipe
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_60                 rc=2
+[era] DropListClass            rc=0
+[era] FootClass                rc=2
+[era] CoordBounds              rc=2
+[era] ObjectClass              rc=0
+[era] _addr_6A                 rc=0
+[era] _addr_6C                 rc=0
+[era] TechnoClass              rc=0
+[era] AudioQueue               rc=2
+[era] UI_Helper                rc=0
+[era] NetworkGameSetup         rc=0
+[era] TeamClass                rc=2
+[era] FilePipe                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4b4f80   MISMATCH         DropListClass::OnDblClick
+[diff] 0x70f670   MISMATCH         FootClass::SetThreatBounds
+[diff] 0x4d9ff0   MISMATCH         FootClass::vt_entry_4F0
+[diff] 0x69e900   MISMATCH         ObjectClass::Helper_69E900
+[diff] 0x6a4d10   MATCH            sub_6A4D10
+[diff] 0x6a4e10   MATCH            sub_6A4E10
+[diff] 0x6cfbd0   MATCH            sub_6CFBD0
+[diff] 0x708d90   MISMATCH         TechnoClass::SetMoveDestination
+[diff] 0x746cd0   MISMATCH         TechnoClass::SelectAttackWeapon
+[diff] 0x7ba2c0   MISMATCH         UI_Helper_7BA2C0
+[diff] 0x5b9680   MISMATCH         NetworkGameSetup::ReadRulesInitConfig
+[diff] 0x5b96b0   MISMATCH         NetworkGameSetup::ReadRulesBases
+[diff] 0x5b96e0   MISMATCH         NetworkGameSetup::ReadRulesAlliesAllowed
+[diff] 0x5b9750   MISMATCH         NetworkGameSetup::ReadRulesUnknown
+[diff] 0x7ba420   MISMATCH         FilePipe::Destructor
+[ledger] 0x600c70 NavigateDialogTab -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b4f80 DropListClass::OnDblClick -> NG (attempt 1)
+[ledger] 0x70f670 FootClass::SetThreatBounds -> NG (attempt 1)
+[ledger] 0x403870 CoordBounds::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69e900 ObjectClass::Helper_69E900 -> NG (attempt 1)
+[ledger] 0x6a4d10 sub_6A4D10 -> OK (attempt 1)
+[ledger] 0x6a4e10 sub_6A4E10 -> OK (attempt 1)
+[ledger] 0x6cfbd0 sub_6CFBD0 -> OK (attempt 1)
+[ledger] 0x708d90 TechnoClass::SetMoveDestination -> NG (attempt 1)
+[ledger] 0x746cd0 TechnoClass::SelectAttackWeapon -> NG (attempt 1)
+[ledger] 0x4d9ff0 FootClass::vt_entry_4F0 -> NG (attempt 1)
+[ledger] 0x408200 AudioQueue::IncrementPriority -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ba2c0 UI_Helper_7BA2C0 -> NG (attempt 1)
+[ledger] 0x5b9680 NetworkGameSetup::ReadRulesInitConfig -> NG (attempt 1)
+[ledger] 0x5b96b0 NetworkGameSetup::ReadRulesBases -> NG (attempt 1)
+[ledger] 0x5b96e0 NetworkGameSetup::ReadRulesAlliesAllowed -> NG (attempt 1)
+[ledger] 0x5b9750 NetworkGameSetup::ReadRulesUnknown -> NG (attempt 1)
+[ledger] 0x4db0a0 FootClass::GetAttackSpeed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ec3a0 TeamClass::WakeUpAllMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ba420 FilePipe::Destructor -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 12,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "regalloc": 8,
+  "codegen_shape": 2,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p171\batch_report.json

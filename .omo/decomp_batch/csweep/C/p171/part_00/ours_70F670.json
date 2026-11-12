@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetThreatBounds@FootClass@@QAEXPAH@Z",
+ "sym_key": "FootClass::SetThreatBounds",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf185db74228b065756ff90c00200008bf88b065689be08050000ff503857508bcbe8000000005f5e5bc20400",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?SetThreatBounds@CellClass@@QAEHHH@Z",
+   "sym_key": "CellClass::SetThreatBounds"
+  }
+ ]
+}

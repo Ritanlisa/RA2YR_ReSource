@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BA2C0",
+ "name": "UI_Helper_7BA2C0",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BA2C0",
+ "bytes_hex": "a16881b700681027000050ff15dc117e003d02010000751768fd040000681ce6840068dce58400e8f4c5c4ff83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

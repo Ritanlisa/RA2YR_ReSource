@@ -1,0 +1,15 @@
+{
+ "symbol": "?Helper_69E900@ObjectClass@@QAEDI@Z",
+ "sym_key": "ObjectClass::Helper_69E900",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "e80000000085c074220fbf50068b4c24043bca73168d0c498d44c80885c0740b8a4008d1e883e001c2040032c0c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?LoadSubFile@MixFileClass@@QAEPAPADXZ",
+   "sym_key": "MixFileClass::LoadSubFile"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BA420",
+ "name": "FilePipe::Destructor",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BA420",
+ "bytes_hex": "568bf18b4e0cc706a04d7e0085c974178a461084c07410c64610008b01ff5034c7460c000000008bcee83278e7ff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B4F80",
+ "name": "DropListClass::OnDblClick",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B4F80",
+ "bytes_hex": "568bf18a464884c074138b86b00000008d8eb0000000ff5024c64648008b56508d4e50ff52248bcee8d3c402005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destructor@FilePipe@@QAEHXZ",
+ "sym_key": "FilePipe::Destructor",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "568bf18b460cc7060000000085c074188a4e1084c97411c64610008b0850ff5134c7460c000000008bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Dtor@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::Dtor"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetMoveDestination@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::SetMoveDestination",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "518b442400568bf1578b0d000000008bd133d081e2ff00000033c285c9741e8b7c240883ffff74158b8e1c020000e80000000084c0740689bef00400005f5e59c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?SelectAttackWeapon@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::SelectAttackWeapon",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8a81e006000084c074198b81c40600008a90ac06000084d274098b80a8060000c20400e800000000c20400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?SelectWeapon@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::SelectWeapon"
+  }
+ ]
+}

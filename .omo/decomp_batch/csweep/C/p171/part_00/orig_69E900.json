@@ -1,0 +1,11 @@
+{
+ "addr": "0x69E900",
+ "name": "Helper_69E900",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69E900",
+ "bytes_hex": "e87bfcffff85c074220fbf50068b4c24043bca73168d0c498d44c80885c0740b8a400883e002d1e8c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

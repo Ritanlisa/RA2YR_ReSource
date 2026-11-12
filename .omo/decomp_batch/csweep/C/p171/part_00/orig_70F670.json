@@ -1,0 +1,11 @@
+{
+ "addr": "0x70F670",
+ "name": "FootClass::SetThreatBounds",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70F670",
+ "bytes_hex": "56578b7c240c8bf185ff741e8b06ff90c00200008b16508bce898608050000ff5238508bcfe8d621d7ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

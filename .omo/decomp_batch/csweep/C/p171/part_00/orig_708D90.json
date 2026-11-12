@@ -1,0 +1,11 @@
+{
+ "addr": "0x708D90",
+ "name": "TechnoClass::SetMoveDestination",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x708D90",
+ "bytes_hex": "a0f22c82005684c0578bf1741e8b7c240c83ffff74158b8e1c020000e83f29e0ff84c0740689bef00400005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

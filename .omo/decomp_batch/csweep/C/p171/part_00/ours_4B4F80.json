@@ -1,0 +1,15 @@
+{
+ "symbol": "?OnDblClick@DropListClass@@QAEHXZ",
+ "sym_key": "DropListClass::OnDblClick",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "568bf18a464884c074118d86b000000050ff96d4000000c64648008d4e5051ff56748bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Destroy@LinkClass@@QAEHXZ",
+   "sym_key": "LinkClass::Destroy"
+  }
+ ]
+}
