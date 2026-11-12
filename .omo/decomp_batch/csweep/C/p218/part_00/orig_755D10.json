@@ -1,0 +1,11 @@
+{
+ "addr": "0x755D10",
+ "name": "WaveClass::Destroy",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x755D10",
+ "bytes_hex": "568bf15733ff8b46103bc7740950e81a2e070083c4048b4614897e103bc7740950e8072e070083c4048b4618897e143bc7740950e8f42d070083c404897e185f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

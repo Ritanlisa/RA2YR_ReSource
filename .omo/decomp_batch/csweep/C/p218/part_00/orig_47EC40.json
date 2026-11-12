@@ -1,0 +1,11 @@
+{
+ "addr": "0x47EC40",
+ "name": "WTFMode::FindObjectByType",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47EC40",
+ "bytes_hex": "a0a0e9a8005684c0742d8a44240884c074088bb1e8000000eb068bb1e400000085f674138b068bceff502c83f80f740d8b763085f675ed33c05ec204008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

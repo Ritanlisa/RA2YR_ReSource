@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F1B70",
+ "name": "ObjectClass::DetachAndFree",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F1B70",
+ "bytes_hex": "568bf1837e40ff74378b0d202db70085c9742de8c82d18008b0d202db70085c974068b016a01ff10c705202db700000000008bcec74640ffffffffe8b0fdffff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

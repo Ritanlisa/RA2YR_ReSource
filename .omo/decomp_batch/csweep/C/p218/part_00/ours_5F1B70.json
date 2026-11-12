@@ -1,0 +1,39 @@
+{
+ "symbol": "?DetachAndFree@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::DetachAndFree",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "51568bf1837e40ff743a8b0d0000000085c97430e800000000a10000000085c074078b086a0150ff11c70500000000000000008bcec74640ffffffffe8000000005e59c38b4424045e59c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Close@SerialPort@@QAEHXZ",
+   "sym_key": "SerialPort::Close"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?FreeResources@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::FreeResources"
+  }
+ ]
+}

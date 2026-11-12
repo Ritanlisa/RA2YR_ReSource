@@ -1,0 +1,11 @@
+{
+ "addr": "0x75E4A0",
+ "name": "Crate::applyCrateEffect",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75E4A0",
+ "bytes_hex": "a1d07488005633f65785c08bf97e23a1c4748800578b0cb083c12451e85fa8060083c40885c0740fa1d0748800463bf07cdd5f33c05ec38b15c47488005f8b04b25ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,51 @@
+{
+ "symbol": "?applyCrateEffect@Crate@@QAEHXZ",
+ "sym_key": "Crate::applyCrateEffect",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "a1000000005633f65785c08bf977055f33c05ec3a100000000578b0883c12451e80000000083c40885c07424a100000000463bf073d98b1500000000578b04b283c02450e80000000083c40885c075dc8b0d000000005f8b04b15ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WarheadTypePool@@3IA",
+   "sym_key": "g_WarheadTypePool"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8874C4@@3IA",
+   "sym_key": "DataGlobal_8874C4"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_WarheadTypePool@@3IA",
+   "sym_key": "g_WarheadTypePool"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8874C4@@3IA",
+   "sym_key": "DataGlobal_8874C4"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8874C4@@3IA",
+   "sym_key": "DataGlobal_8874C4"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_47ADC0@@YAXXZ",
+ "sym_key": "Unnamed::sub_47ADC0",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "568b350000000085f6742b578b46048b3e85c0740950e80000000083c40456e80000000083c4048bf785ff75df893d000000005f5ec3c70500000000000000005ec3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?CmdLine_NoCD@@3HA",
+   "sym_key": "CmdLine_NoCD"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?CmdLine_NoCD@@3HA",
+   "sym_key": "CmdLine_NoCD"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?CmdLine_NoCD@@3HA",
+   "sym_key": "CmdLine_NoCD"
+  }
+ ]
+}

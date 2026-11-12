@@ -1,0 +1,11 @@
+{
+ "addr": "0x753250",
+ "name": "VocClass::FindByName",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x753250",
+ "bytes_hex": "578bf985ff750583c8ff5fc3a1b0d4b1005633f685c07e20a1a4d4b1008b0cb05157e8a95a070083c40885c07410a1b0d4b100463bf07ce05e83c8ff5fc38bc65e5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

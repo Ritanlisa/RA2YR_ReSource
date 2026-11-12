@@ -1,0 +1,27 @@
+{
+ "symbol": "?Destroy@WaveClass@@QAEXXZ",
+ "sym_key": "WaveClass::Destroy",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b46103bc7740950e80000000083c4048b4614897e103bc7740950e80000000083c4048b4618897e143bc7740950e80000000083c404897e185f5ec3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p218\part_00
+=== convert (20 addrs) ===
+[conv] 0x4747c0 ObjectTypeClass::ReadBool2 -> ObjectTypeClass
+[conv] 0x47adc0 sub_47ADC0 -> _addr_47
+[conv] 0x7d95bf __get_osfhandle -> _addr_7D
+[conv] 0x5f3450 Dialog::CheckButtonState -> Dialog
+[conv] 0x6ab990 SelectClass_StripClass_SidebarClass::select -> SelectClass_StripClass_SidebarClass
+[conv] 0x755d10 WaveClass::Destroy -> WaveClass
+[conv] 0x7a0e50 RefreshLobbyAll_Set -> RefreshLobbyAll
+[conv] 0x5f1b70 ObjectClass::DetachAndFree -> ObjectClass
+[conv] 0x430980 Game::initScenario -> Game
+[conv] 0x544ce0 ObjectClass::Entity_Read -> ObjectClass
+[conv] 0x565bc0 MapClass::InitAllCells -> MapClass
+[conv] 0x6285a0 _DynamicVectorClass_VHSVClass::ProcessAll -> _DynamicVectorClass_VHSVClass
+[conv] 0x63d910 DrawTacticalFillScanline -> _addr_63
+[conv] 0x753250 VocClass::FindByName -> VocClass
+[conv] 0x75e4a0 Crate::applyCrateEffect -> Crate
+[conv] 0x47c550 CellClass::FindInfantry -> CellClass
+[conv] 0x47eba0 CellClass::FindBuilding -> CellClass
+[conv] 0x47ebf0 PlacementList::FindByType -> PlacementList
+[conv] 0x47ec40 WTFMode::FindObjectByType -> WTFMode
+[conv] 0x4ca620 FactoryClass::RemoveOneFromQueue -> FactoryClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectTypeClass          rc=2
+[era] _addr_47                 rc=0
+[era] _addr_7D                 rc=2
+[era] Dialog                   rc=0
+[era] SelectClass_StripClass_SidebarClass rc=0
+[era] WaveClass                rc=0
+[era] RefreshLobbyAll          rc=0
+[era] ObjectClass              rc=0
+[era] Game                     rc=0
+[era] MapClass                 rc=0
+[era] _DynamicVectorClass_VHSVClass rc=2
+[era] _addr_63                 rc=2
+[era] VocClass                 rc=0
+[era] Crate                    rc=0
+[era] CellClass                rc=2
+[era] PlacementList            rc=0
+[era] WTFMode                  rc=0
+[era] FactoryClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x47adc0   MISMATCH         sub_47ADC0
+[diff] 0x5f3450   MISMATCH         Dialog::CheckButtonState
+[diff] 0x6ab990   MISMATCH         SelectClass_StripClass_SidebarClass::select
+[diff] 0x755d10   MISMATCH         WaveClass::Destroy
+[diff] 0x7a0e50   MISMATCH         RefreshLobbyAll_Set
+[diff] 0x5f1b70   MISMATCH         ObjectClass::DetachAndFree
+[diff] 0x544ce0   MISMATCH         ObjectClass::Entity_Read
+[diff] 0x430980   MISMATCH         Game::initScenario
+[diff] 0x565bc0   MISMATCH         MapClass::InitAllCells
+[diff] 0x753250   MISMATCH         VocClass::FindByName
+[diff] 0x75e4a0   MISMATCH         Crate::applyCrateEffect
+[diff] 0x47ebf0   MISMATCH         PlacementList::FindByType
+[diff] 0x47ec40   MISMATCH         WTFMode::FindObjectByType
+[diff] 0x4ca620   MISMATCH         FactoryClass::RemoveOneFromQueue
+[ledger] 0x4747c0 ObjectTypeClass::ReadBool2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47adc0 sub_47ADC0 -> NG (attempt 1)
+[ledger] 0x7d95bf __get_osfhandle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f3450 Dialog::CheckButtonState -> NG (attempt 1)
+[ledger] 0x6ab990 SelectClass_StripClass_SidebarClass::select -> NG (attempt 1)
+[ledger] 0x755d10 WaveClass::Destroy -> NG (attempt 1)
+[ledger] 0x7a0e50 RefreshLobbyAll_Set -> NG (attempt 1)
+[ledger] 0x5f1b70 ObjectClass::DetachAndFree -> NG (attempt 1)
+[ledger] 0x430980 Game::initScenario -> NG (attempt 1)
+[ledger] 0x544ce0 ObjectClass::Entity_Read -> NG (attempt 1)
+[ledger] 0x565bc0 MapClass::InitAllCells -> NG (attempt 1)
+[ledger] 0x6285a0 _DynamicVectorClass_VHSVClass::ProcessAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63d910 DrawTacticalFillScanline -> COMPILE_FAIL (attempt 1)
+[ledger] 0x753250 VocClass::FindByName -> NG (attempt 1)
+[ledger] 0x75e4a0 Crate::applyCrateEffect -> NG (attempt 1)
+[ledger] 0x47c550 CellClass::FindInfantry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47eba0 CellClass::FindBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47ebf0 PlacementList::FindByType -> NG (attempt 1)
+[ledger] 0x47ec40 WTFMode::FindObjectByType -> NG (attempt 1)
+[ledger] 0x4ca620 FactoryClass::RemoveOneFromQueue -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 14
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "extern_reloc": 1,
+  "regalloc": 6,
+  "branch_order": 1,
+  "signedness": 1,
+  "ret_norm": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p218\batch_report.json

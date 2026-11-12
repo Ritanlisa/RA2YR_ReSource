@@ -1,0 +1,27 @@
+{
+ "symbol": "?CheckButtonState@Dialog@@QAEIXZ",
+ "sym_key": "Dialog::CheckButtonState",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec548b085650ff510c6aff6a016a5a8d4c24106a51518bf0a10000000033c96a0d668b0d000000008b105150ff521c83f8028bc67502247f5e83c454c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?DataGlobal_832678@@3GA",
+   "sym_key": "DataGlobal_832678"
+  }
+ ]
+}

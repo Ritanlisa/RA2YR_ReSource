@@ -1,0 +1,57 @@
+{
+ "symbol": "?select@SelectClass_StripClass_SidebarClass@@QAEHXZ",
+ "sym_key": "SelectClass_StripClass_SidebarClass::select",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0d3c000000e8000000008b0d3c0000006a00e8000000008b46348b4e2c24016a000c0168f8010000894634c6413c01e80000000083c408c6050000000001c60500000000015ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?updateStripVisibility@SidebarClass@@QAEHXZ",
+   "sym_key": "SidebarClass::updateStripVisibility"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?initializeStrip@SidebarClass@@QAEHH@Z",
+   "sym_key": "SidebarClass::initializeStrip"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_CameoRenderFlag@@3EA",
+   "sym_key": "g_CameoRenderFlag"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_TooltipActive@@3EA",
+   "sym_key": "g_TooltipActive"
+  }
+ ]
+}

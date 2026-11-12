@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CA620",
+ "name": "FactoryClass::RemoveOneFromQueue",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CA620",
+ "bytes_hex": "8b4140568d71408d4c2408518bceff501083f8ff74278b4e103bc17d20493bc1894e107d128b4e04408b1481895481fc8b4e103bc17ceeb0015ec2040032c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

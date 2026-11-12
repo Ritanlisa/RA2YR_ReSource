@@ -1,0 +1,15 @@
+{
+ "symbol": "?FindObjectByType@WTFMode@@QAEPAVBuildingClass@@D@Z",
+ "sym_key": "WTFMode::FindObjectByType",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c0750633c05ec204008a44240884c074088bb1e8000000eb068bb1e400000085f6750633c05ec204008b0656ff502c83f80f74128b763085f674e88b0e56ff512c83f80f75ee8bc65ec20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  }
+ ]
+}

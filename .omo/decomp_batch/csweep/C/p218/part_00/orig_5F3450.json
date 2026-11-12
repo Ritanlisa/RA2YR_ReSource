@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F3450",
+ "name": "Dialog::CheckButtonState",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F3450",
+ "bytes_hex": "8b0d202db70083ec548b0156ff500c8b0d202db7006aff8bf06a018b116a5a8d4424106a51506a0d6878268300ff521c83f802750681e67fffffff8bc65e83c454c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

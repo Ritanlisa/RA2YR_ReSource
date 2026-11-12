@@ -1,0 +1,15 @@
+{
+ "symbol": "?InitAllCells@MapClass@@QAEPAIXZ",
+ "sym_key": "MapClass::InitAllCells",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "518b442400535556578bf933f633db89b734010000bd000200003b9f400100007d128b873c0100008b0cb085c97405e80000000046434d75e181fb000004007cd45f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?Construct@CellClass@@QAEPAIXZ",
+   "sym_key": "CellClass::Construct"
+  }
+ ]
+}

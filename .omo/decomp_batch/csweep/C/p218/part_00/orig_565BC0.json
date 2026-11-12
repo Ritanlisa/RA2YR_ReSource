@@ -1,0 +1,11 @@
+{
+ "addr": "0x565BC0",
+ "name": "MapClass::InitAllCells",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x565BC0",
+ "bytes_hex": "535556578be933ff33f689bd34010000bb000200003bbd400100007d128b853c0100008b0c3085c97405e80160f1ff83c604474b75df81ff000004007cd25f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

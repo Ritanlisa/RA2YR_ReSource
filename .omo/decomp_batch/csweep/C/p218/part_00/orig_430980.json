@@ -1,0 +1,11 @@
+{
+ "addr": "0x430980",
+ "name": "Game::initScenario",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x430980",
+ "bytes_hex": "558be98b456085c074375356578bf5bb08000000bf030000008b0685c0740f50e89881390083c404c7060000000083c6044f75e54b75dd5f5ec74560000000005b5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

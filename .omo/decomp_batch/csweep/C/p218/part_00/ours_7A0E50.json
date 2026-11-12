@@ -1,0 +1,51 @@
+{
+ "symbol": "?RefreshLobbyAll_Set@@YAXXZ",
+ "sym_key": "Unnamed::RefreshLobbyAll_Set",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "5633f68b860000000085c0740d50e80000000083c40485c0750ac78600000000ffffffff8b8e00000000e8000000008b96000000008bc8e80000000083c60483fe207cbf5ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?IsKnownPointer@@YAHPAX@Z",
+   "sym_key": "IsKnownPointer"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76440@@3PAIA",
+   "sym_key": "DataGlobal_B76440"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAD@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76440@@3PAIA",
+   "sym_key": "DataGlobal_B76440"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?SetGameOptionsPing@@YIXPAXH@Z",
+   "sym_key": "SetGameOptionsPing"
+  }
+ ]
+}

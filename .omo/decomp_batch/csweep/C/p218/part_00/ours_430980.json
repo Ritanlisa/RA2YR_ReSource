@@ -1,0 +1,15 @@
+{
+ "symbol": "?initScenario@Game@@QAEXXZ",
+ "sym_key": "Game::initScenario",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "538bd98b436085c0743b5556578bf3bd08000000bf030000008b068b0085c0741150e8000000008b0e83c404c7010000000083c6044f75e14d75d95f5ec74360000000005d5bc3",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
