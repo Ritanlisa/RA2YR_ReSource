@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p313\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ebe80 _VectorClass_PAVAnimClass::Release -> _VectorClass_PAVAnimClass
+[conv] 0x4ec340 _VectorClass_PAVCampaignClass::Release -> _VectorClass_PAVCampaignClass
+[conv] 0x4ec5a0 _VectorClass_PAVSideClass::Release -> _VectorClass_PAVSideClass
+[conv] 0x4ec800 _VectorClass_PAVHouseTypeClass::Release -> _VectorClass_PAVHouseTypeClass
+[conv] 0x4eca60 _VectorClass_PAVTaskForceClass::Release -> _VectorClass_PAVTaskForceClass
+[conv] 0x4eccc0 _VectorClass_PAVTeamTypeClass::Release -> _VectorClass_PAVTeamTypeClass
+[conv] 0x4ecf20 _VectorClass_PAVScriptTypeClass::Release -> _VectorClass_PAVScriptTypeClass
+[conv] 0x4ed180 _VectorClass_PAVOverlayTypeClass::Release -> _VectorClass_PAVOverlayTypeClass
+[conv] 0x4ed3e0 _VectorClass_PAVSmudgeTypeClass::Release -> _VectorClass_PAVSmudgeTypeClass
+[conv] 0x4ed640 _VectorClass_PAVTerrainTypeClass::Release -> _VectorClass_PAVTerrainTypeClass
+[conv] 0x4ed8a0 _VectorClass_PAVBuildingTypeClass::Release -> _VectorClass_PAVBuildingTypeClass
+[conv] 0x4edd60 _VectorClass_PAVUnitTypeClass::Release -> _VectorClass_PAVUnitTypeClass
+[conv] 0x4edfc0 _VectorClass_PAVAnimTypeClass::Release -> _VectorClass_PAVAnimTypeClass
+[conv] 0x4ee220 _VectorClass_PAVInfantryTypeClass::Release -> _VectorClass_PAVInfantryTypeClass
+[conv] 0x4ee480 _VectorClass_PAVBulletTypeClass::Release -> _VectorClass_PAVBulletTypeClass
+[conv] 0x4ee6e0 _VectorClass_PAVVoxelAnimTypeClass::Release -> _VectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4ee940 _VectorClass_PAVIsometricTileTypeClass::Release -> _VectorClass_PAVIsometricTileTypeClass
+[conv] 0x4eeba0 _VectorClass_PAVParticleTypeClass::Release -> _VectorClass_PAVParticleTypeClass
+[conv] 0x4eee00 _VectorClass_PAVParticleSystemTypeClass::Release -> _VectorClass_PAVParticleSystemTypeClass
+[conv] 0x4ef060 _VectorClass_PAVSuperWeaponTypeClass::Release -> _VectorClass_PAVSuperWeaponTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVAnimClass rc=2
+[era] _VectorClass_PAVCampaignClass rc=2
+[era] _VectorClass_PAVSideClass rc=2
+[era] _VectorClass_PAVHouseTypeClass rc=2
+[era] _VectorClass_PAVTaskForceClass rc=2
+[era] _VectorClass_PAVTeamTypeClass rc=2
+[era] _VectorClass_PAVScriptTypeClass rc=2
+[era] _VectorClass_PAVOverlayTypeClass rc=2
+[era] _VectorClass_PAVSmudgeTypeClass rc=2
+[era] _VectorClass_PAVTerrainTypeClass rc=2
+[era] _VectorClass_PAVBuildingTypeClass rc=2
+[era] _VectorClass_PAVUnitTypeClass rc=2
+[era] _VectorClass_PAVAnimTypeClass rc=2
+[era] _VectorClass_PAVInfantryTypeClass rc=2
+[era] _VectorClass_PAVBulletTypeClass rc=2
+[era] _VectorClass_PAVVoxelAnimTypeClass rc=2
+[era] _VectorClass_PAVIsometricTileTypeClass rc=2
+[era] _VectorClass_PAVParticleTypeClass rc=2
+[era] _VectorClass_PAVParticleSystemTypeClass rc=2
+[era] _VectorClass_PAVSuperWeaponTypeClass rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4ebe80 _VectorClass_PAVAnimClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec340 _VectorClass_PAVCampaignClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec5a0 _VectorClass_PAVSideClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec800 _VectorClass_PAVHouseTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eca60 _VectorClass_PAVTaskForceClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eccc0 _VectorClass_PAVTeamTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ecf20 _VectorClass_PAVScriptTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed180 _VectorClass_PAVOverlayTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed3e0 _VectorClass_PAVSmudgeTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed640 _VectorClass_PAVTerrainTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed8a0 _VectorClass_PAVBuildingTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4edd60 _VectorClass_PAVUnitTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4edfc0 _VectorClass_PAVAnimTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee220 _VectorClass_PAVInfantryTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee480 _VectorClass_PAVBulletTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee6e0 _VectorClass_PAVVoxelAnimTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee940 _VectorClass_PAVIsometricTileTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eeba0 _VectorClass_PAVParticleTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eee00 _VectorClass_PAVParticleSystemTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ef060 _VectorClass_PAVSuperWeaponTypeClass::Release -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p313\batch_report.json
