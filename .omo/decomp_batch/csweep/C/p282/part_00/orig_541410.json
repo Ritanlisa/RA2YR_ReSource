@@ -1,0 +1,11 @@
+{
+ "addr": "0x541410",
+ "name": "Network::SendPacket",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x541410",
+ "bytes_hex": "568bf18a460484c0745b8a460584c074548b4e4c85c9744d8b542410576a0081e2ff0000006a008b01528d514c528b542420528b54242052ff502c8bf885ff751d8b86a0000000408986a00000008bf05668d4838200e87554ecff83c4088bc75f5ec20c0033c05ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

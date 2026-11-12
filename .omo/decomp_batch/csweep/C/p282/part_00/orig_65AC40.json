@@ -1,0 +1,11 @@
+{
+ "addr": "0x65AC40",
+ "name": "RadioClass::SaveState",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65AC40",
+ "bytes_hex": "8b44240c53568b742410578b7c2410505657e8c956dbff85c07c4a8b8fe80000008b166a008d44241c6a045056894c2428ff521085c07c2d8b44241833db85c07e218b97e40000008b0e6a006a048d049a5056ff511085c07c0b8b442418433bd87cdf33c05f5e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckExtensionMatch@FileExtension@@QAEDH@Z",
+ "sym_key": "FileExtension::CheckExtensionMatch",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e088b46103bc17c2e8a460d84c0750a85c9740632c05ec204008b461485c07e108b1603c16a00508bceff520884c0750632c05ec204008b4610578bd08b7c240cc1e2068d480103d08b4604894e10578d34908bcee8000000008b8f000100005f898e00010000b0015ec20400",
+ "relocs": [
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?CopyChecked@String@@QAEPADPAX@Z",
+   "sym_key": "String::CopyChecked"
+  }
+ ]
+}

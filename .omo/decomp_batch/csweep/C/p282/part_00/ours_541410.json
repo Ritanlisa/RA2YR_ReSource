@@ -1,0 +1,15 @@
+{
+ "symbol": "?SendPacket@Network@@QAEHHHE@Z",
+ "sym_key": "Network::SendPacket",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "568bf18a460484c0750633c05ec20c008a460584c0750633c05ec20c008b464c85c075045ec20c008b5424108b08576a0081e2ff0000006a0083c04c528b542418508b4424205052ff512c8bf885ff75148b86a00000008bce408986a0000000e8000000008bc75f5ec20c00",
+ "relocs": [
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

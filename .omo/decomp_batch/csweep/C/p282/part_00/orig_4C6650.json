@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C6650",
+ "name": "PlayerClass::SetTargetOrClear",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C6650",
+ "bytes_hex": "538b5c240c8bc35625ff0000008bf18b0c851c0982005168f00b8200e86f02f4ff8b44241483c40885c07c288846028b442414881e668b1066895607668b4002668946098b0d84eda800894e038bc65e5bc20c00c64602ffc606008b1584eda8008bc68956035e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

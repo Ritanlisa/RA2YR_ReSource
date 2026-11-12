@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D2070",
+ "name": "World::ToScreen",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D2070",
+ "bytes_hex": "83ec188b442420568d91e40d00008d4c2410db00c744240c00000000d95c2404db40048d44240450d95c240ce8dfdaedff8b08894c24048b5004d9442404895424088b40088944240ce8423e0f00d94424088bf0e8373e0f008bc88b44242089308948045e83c418c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?LookupString@HashTable@@QAE_NPAPBDPAH@Z",
+ "sym_key": "HashTable::LookupString",
+ "size": 135,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b460485c0746e8b7c240c57ff56188a4e0cba01000000d3e28b0e4a23c28b348185f67441578bcee80000000025ff00000084c075158b767085f675e833c95f85c00f95c18ac15ec208008b54241024010c0183c6048bc833c085c989325f0f95c05ec2080080e10033c085c95f5e0f95c0c2080033c933c085c95f5e0f95c0c20800",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  }
+ ]
+}

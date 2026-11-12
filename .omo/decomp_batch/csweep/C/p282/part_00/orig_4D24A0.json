@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D24A0",
+ "name": "FoggedObjectClass::SaveToINI",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D24A0",
+ "bytes_hex": "8b44240c538b5c240855568b74241457505653e868def3ff85c07c488b4b6c8b166a008d4424206a045056894c242cff521085c07c2e8b44241c33ed85c07e2233ff8b53608b0e6a0003d76a105256ff511085c07c0c8b44241c4583c7103be87ce033c05f5e5d5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

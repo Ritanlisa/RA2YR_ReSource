@@ -1,0 +1,15 @@
+{
+ "symbol": "?SaveToINI@FoggedObjectClass@@QAGHPAH0@Z",
+ "sym_key": "FoggedObjectClass::SaveToINI",
+ "size": 124,
+ "link_base": 0,
+ "bytes_hex": "8b44240c538b5c2408568b742410505653e80000000085c07c5d8b068b4b6c6a008d5424186a045256894c2424ff501085c07c438b4424145533ed5785c076338b4b608b0633ff576a105156ff501085c07c208b44241c4583c7103be873148b43608b166a0003c76a105056ff521085c07de05f33c05d5e5bc20c00",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXPAH1@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  }
+ ]
+}

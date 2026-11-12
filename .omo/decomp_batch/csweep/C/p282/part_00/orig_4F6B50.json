@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F6B50",
+ "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F6B50",
+ "bytes_hex": "a188eca800555733ed33ff85c07e558b44240c53568d58d88b0d7ceca8008b34b98bce8b16ff9284000000399e1c020000751e8b4c24188b90bc0300003bd175108b90740600008b887006000003d103eaa188eca800473bf87cbd5e5b8bc55f5dc208008bc55f5dc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

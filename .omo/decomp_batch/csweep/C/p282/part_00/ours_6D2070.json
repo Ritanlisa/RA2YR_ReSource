@@ -1,0 +1,27 @@
+{
+ "symbol": "?ToScreen@World@@QAEPAIPAH0@Z",
+ "sym_key": "World::ToScreen",
+ "size": 128,
+ "link_base": 0,
+ "bytes_hex": "83ec108b44241456578bf9db00d95c241c8b54241c8d4c241c5181c2e40d00008d4c2410e8000000008b0883ec08894c24248b5004d944242489542410dd1c24e800000000d94424108bf08b442424dd1c2433f081e6ff00000033f0e8000000008b4c242483c40833c1893725ff00000033c18947048bc75f5e83c410c20800",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?TransformMatrix3x4Point@@YIPAMPAX00@Z",
+   "sym_key": "TransformMatrix3x4Point"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

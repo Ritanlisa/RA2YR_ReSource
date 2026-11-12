@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AE180",
+ "name": "ConnectAndLoginWOL_Connect_7AE180",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AE180",
+ "bytes_hex": "568bf1578b460485c075075f32c05ec208008b7c240c8bcfff56188b4e0cba01000000d3e24a23d08b068b349085f675075f32c05ec20800578bcee8c065000084c0750c8b760885f675ed5f5ec2080085f675075f32c05ec208008b4c241083c6045fb00189315ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetTargetOrClear@PlayerClass@@QAEPADHDPAG@Z",
+ "sym_key": "PlayerClass::SetTargetOrClear",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b44240885c07c2c8946048a44240c88068b44241033c933d2668b08894e0c668b500289560ca1000000008946048bc65ec20c00c74604ffffffffc606008b0d000000008bc6894e045ec20c00",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

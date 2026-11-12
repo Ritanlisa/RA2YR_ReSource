@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetCapacity_2@VectorClass_ptr_BuildChoiceClass_int_ouseClass@@QAGHH@Z",
+ "sym_key": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "a100000000555733ed33ff85c077075f33c05dc208008b44241053568d58d88b0d000000008b34b9568b16ff9284000000399e1c020000751e8b4c24188b90bc0300003bd175108b90740600008b887006000003d103eaa100000000473bf872be5e5b8bc55f5dc20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_SidebarState@@3IA",
+   "sym_key": "g_SidebarState"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_TechnoClass_Count@@3PAXA",
+   "sym_key": "g_TechnoClass_Count"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_SidebarState@@3IA",
+   "sym_key": "g_SidebarState"
+  }
+ ]
+}

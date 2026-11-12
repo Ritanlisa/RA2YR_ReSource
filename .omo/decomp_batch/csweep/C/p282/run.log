@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p282\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d6620 StreamWrapper::readData -> StreamWrapper
+[conv] 0x6607d0 SaveGame::SaveTriggerEvents -> SaveGame
+[conv] 0x4c6650 PlayerClass::SetTargetOrClear -> PlayerClass
+[conv] 0x5a5ae0 sub_5A5AE0 -> _addr_5A
+[conv] 0x4f6ae0 HouseClass::SetCapacity_1 -> HouseClass
+[conv] 0x4f6b50 VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x6907e0 ScoreFontClass::AddRef -> ScoreFontClass
+[conv] 0x541410 Network::SendPacket -> Network
+[conv] 0x628d10 FileExtension::CheckExtensionMatch -> FileExtension
+[conv] 0x7adc60 HashTable::LookupString -> HashTable
+[conv] 0x7ae180 ObjectClass::ConnectAndLoginWOL_Connect_7AE180 -> ObjectClass
+[conv] 0x7ae7c0 ObjectClass::GameOptionsScreenWOL_Helper_7AE7C0 -> ObjectClass
+[conv] 0x481870 CellClass::SetThreatBounds -> CellClass
+[conv] 0x6d2070 World::ToScreen -> World
+[conv] 0x4266d0 AnimFile::sub_4266D0 -> AnimFile
+[conv] 0x4d24a0 FoggedObjectClass::SaveToINI -> FoggedObjectClass
+[conv] 0x65ac40 RadioClass::SaveState -> RadioClass
+[conv] 0x45ece0 BuildingTypeClass::GetMaxPips -> BuildingTypeClass
+[conv] 0x4c6970 EventClass::AddEventEx -> EventClass
+[conv] 0x632c40 CheckSum::AccumulateModulo -> CheckSum
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] StreamWrapper            rc=2
+[era] SaveGame                 rc=2
+[era] PlayerClass              rc=0
+[era] _addr_5A                 rc=0
+[era] HouseClass               rc=0
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] ScoreFontClass           rc=2
+[era] Network                  rc=0
+[era] FileExtension            rc=0
+[era] HashTable                rc=0
+[era] ObjectClass              rc=0
+[era] CellClass                rc=0
+[era] World                    rc=0
+[era] AnimFile                 rc=2
+[era] FoggedObjectClass        rc=0
+[era] RadioClass               rc=0
+[era] BuildingTypeClass        rc=2
+[era] EventClass               rc=2
+[era] CheckSum                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4c6650   MISMATCH         PlayerClass::SetTargetOrClear
+[diff] 0x5a5ae0   MISMATCH         sub_5A5AE0
+[diff] 0x4f6ae0   MISMATCH         HouseClass::SetCapacity_1
+[diff] 0x4f6b50   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2
+[diff] 0x541410   MISMATCH         Network::SendPacket
+[diff] 0x628d10   MISMATCH         FileExtension::CheckExtensionMatch
+[diff] 0x7adc60   MISMATCH         HashTable::LookupString
+[diff] 0x7ae180   MISMATCH         ObjectClass::ConnectAndLoginWOL_Connect_7AE180
+[diff] 0x7ae7c0   MISMATCH         ObjectClass::GameOptionsScreenWOL_Helper_7AE7C0
+[diff] 0x481870   MISMATCH         CellClass::SetThreatBounds
+[diff] 0x6d2070   MISMATCH         World::ToScreen
+[diff] 0x4d24a0   MISMATCH         FoggedObjectClass::SaveToINI
+[diff] 0x65ac40   MISMATCH         RadioClass::SaveState
+[ledger] 0x5d6620 StreamWrapper::readData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6607d0 SaveGame::SaveTriggerEvents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c6650 PlayerClass::SetTargetOrClear -> NG (attempt 1)
+[ledger] 0x5a5ae0 sub_5A5AE0 -> NG (attempt 1)
+[ledger] 0x4f6ae0 HouseClass::SetCapacity_1 -> NG (attempt 1)
+[ledger] 0x4f6b50 VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2 -> NG (attempt 1)
+[ledger] 0x6907e0 ScoreFontClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x541410 Network::SendPacket -> NG (attempt 1)
+[ledger] 0x628d10 FileExtension::CheckExtensionMatch -> NG (attempt 1)
+[ledger] 0x7adc60 HashTable::LookupString -> NG (attempt 1)
+[ledger] 0x7ae180 ObjectClass::ConnectAndLoginWOL_Connect_7AE180 -> NG (attempt 1)
+[ledger] 0x7ae7c0 ObjectClass::GameOptionsScreenWOL_Helper_7AE7C0 -> NG (attempt 1)
+[ledger] 0x481870 CellClass::SetThreatBounds -> NG (attempt 1)
+[ledger] 0x6d2070 World::ToScreen -> NG (attempt 1)
+[ledger] 0x4266d0 AnimFile::sub_4266D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d24a0 FoggedObjectClass::SaveToINI -> NG (attempt 1)
+[ledger] 0x65ac40 RadioClass::SaveState -> NG (attempt 1)
+[ledger] 0x45ece0 BuildingTypeClass::GetMaxPips -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c6970 EventClass::AddEventEx -> COMPILE_FAIL (attempt 1)
+[ledger] 0x632c40 CheckSum::AccumulateModulo -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 3,
+  "ret_norm": 1,
+  "signedness": 1,
+  "branch_order": 3,
+  "eval_order": 1,
+  "frame_sched": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p282\batch_report.json

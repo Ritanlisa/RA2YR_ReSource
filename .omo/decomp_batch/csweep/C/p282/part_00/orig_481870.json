@@ -1,0 +1,11 @@
+{
+ "addr": "0x481870",
+ "name": "CellClass::SetThreatBounds",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x481870",
+ "bytes_hex": "518b4124538d4c24045751b9e8f787008944240ce8c7a30e008bd8a13802a80033ff85c07e3f558b6c2418568b152c02a8008b34ba85f674208b4424188b4e303bc87415508bcee85481070084c0750955538bcee8178a0700a13802a800473bf87cc95e5d5f5b59c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

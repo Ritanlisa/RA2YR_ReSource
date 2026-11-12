@@ -1,0 +1,45 @@
+{
+ "symbol": "?SetThreatBounds@CellClass@@QAEHHH@Z",
+ "sym_key": "CellClass::SetThreatBounds",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "518b4124538d4c240457518944240ce8000000008bd8a11800000033ff85c0763f558b6c2418568b150c0000008b34ba85f674258b4c24188b56303bd1741a518bcee80000000084c0750955538bcee800000000a118000000473bf872c95e5d5f5b59c20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Cell__PosToLinearIndex@@YGHPAX@Z",
+   "sym_key": "Cell__PosToLinearIndex"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?IsAllied@HouseClass@@QAE_NH@Z",
+   "sym_key": "HouseClass::IsAllied"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?SetThreat_Bounds@HouseClass@@QAEHHH@Z",
+   "sym_key": "HouseClass::SetThreat_Bounds"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  }
+ ]
+}

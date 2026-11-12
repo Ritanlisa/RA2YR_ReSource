@@ -1,0 +1,15 @@
+{
+ "symbol": "?SaveState@RadioClass@@QAGHPAH0@Z",
+ "sym_key": "RadioClass::SaveState",
+ "size": 107,
+ "link_base": 0,
+ "bytes_hex": "8b44240c53568b742410578b7c2410505657e80000000085c07c4a8b068b8fe80000006a008d54241c6a045256894c2428ff501085c07c2d8b44241833db85c076218b8fe40000008b066a006a048d14995256ff501085c07c0b8b442418433bd872df33c05f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXPAH1@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  }
+ ]
+}
