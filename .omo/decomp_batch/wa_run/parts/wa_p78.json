@@ -1,0 +1,22 @@
+[
+ {
+  "addr": "0x7b19a0",
+  "family": "D_RELOC",
+  "name": "sub_7B19A0"
+ },
+ {
+  "addr": "0x7b2bf0",
+  "family": "D_RELOC",
+  "name": "sub_7B2BF0"
+ },
+ {
+  "addr": "0x7b2d70",
+  "family": "D_RELOC",
+  "name": "sub_7B2D70"
+ },
+ {
+  "addr": "0x7dd413",
+  "family": "D_RELOC",
+  "name": "__ungetch"
+ }
+]

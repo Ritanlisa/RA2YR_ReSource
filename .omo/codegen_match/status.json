@@ -87562,7 +87562,7 @@
   "this_as_id": false
  },
  "0x7b19a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xb78088], 0",
   "name": "sub_7B19A0",
@@ -87755,14 +87755,14 @@
   "this_as_id": false
  },
  "0x7b2bf0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_7B2BF0",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_7B2BF0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7b2c10": {
@@ -87821,7 +87821,7 @@
   "this_as_id": false
  },
  "0x7b2d70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xb78110], 0",
   "name": "sub_7B2D70",
@@ -91567,7 +91567,7 @@
   "status": "NG"
  },
  "0x7dd413": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+9 cmp dword ptr [0x87dd70], -1",
   "name": "__ungetch",

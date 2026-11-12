@@ -76,3 +76,4 @@
 {"part": 75, "n": 20, "seconds": 21.9, "ok": true, "verdicts": {"MATCH": 10, "MISMATCH": 10}}
 {"part": 76, "n": 20, "seconds": 20.8, "ok": true, "verdicts": {"MISMATCH": 9, "MATCH": 11}}
 {"part": 77, "n": 20, "seconds": 22.3, "ok": true, "verdicts": {"MISMATCH": 10, "MATCH": 10}}
+{"part": 78, "n": 4, "seconds": 22.1, "ok": true, "verdicts": {"MISMATCH": 3, "MATCH": 1}}
