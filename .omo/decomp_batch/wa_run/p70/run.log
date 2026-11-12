@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p70\part_00
+=== convert (20 addrs) ===
+[conv] 0x696ef0 sub_696EF0 -> _addr_69
+[conv] 0x69ea90 sub_69EA90 -> _addr_69
+[conv] 0x69ebf0 sub_69EBF0 -> _addr_69
+[conv] 0x69ec10 sub_69EC10 -> _addr_69
+[conv] 0x6a43b0 sub_6A43B0 -> _addr_6A
+[conv] 0x6a4530 sub_6A4530 -> _addr_6A
+[conv] 0x6a4a70 sub_6A4A70 -> _addr_6A
+[conv] 0x6a4bf0 sub_6A4BF0 -> _addr_6A
+[conv] 0x6ac9c0 sub_6AC9C0 -> _addr_6A
+[conv] 0x6acb40 sub_6ACB40 -> _addr_6A
+[conv] 0x6aef60 sub_6AEF60 -> _addr_6A
+[conv] 0x6af0e0 sub_6AF0E0 -> _addr_6A
+[conv] 0x6b21f0 sub_6B21F0 -> _addr_6B
+[conv] 0x6b2370 sub_6B2370 -> _addr_6B
+[conv] 0x6b4890 sub_6B4890 -> _addr_6B
+[conv] 0x6b4a10 sub_6B4A10 -> _addr_6B
+[conv] 0x6b50c0 sub_6B50C0 -> _addr_6B
+[conv] 0x6b5240 MapCoords::Init -> MapCoords
+[conv] 0x6b6a50 sub_6B6A50 -> _addr_6B
+[conv] 0x6b6bd0 sub_6B6BD0 -> _addr_6B
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_69                 rc=0
+[era] _addr_6A                 rc=0
+[era] _addr_6B                 rc=0
+[era] MapCoords                rc=0
+=== diffasm byte-compare ===
+[diff] 0x696ef0   MISMATCH         sub_696EF0
+[diff] 0x69ea90   MATCH            sub_69EA90
+[diff] 0x69ebf0   MISMATCH         sub_69EBF0
+[diff] 0x69ec10   MISMATCH         sub_69EC10
+[diff] 0x6a43b0   MATCH            sub_6A43B0
+[diff] 0x6a4530   MISMATCH         sub_6A4530
+[diff] 0x6a4a70   MATCH            sub_6A4A70
+[diff] 0x6a4bf0   MISMATCH         sub_6A4BF0
+[diff] 0x6ac9c0   MATCH            sub_6AC9C0
+[diff] 0x6acb40   MISMATCH         sub_6ACB40
+[diff] 0x6aef60   MATCH            sub_6AEF60
+[diff] 0x6af0e0   MISMATCH         sub_6AF0E0
+[diff] 0x6b21f0   MATCH            sub_6B21F0
+[diff] 0x6b2370   MISMATCH         sub_6B2370
+[diff] 0x6b4890   MATCH            sub_6B4890
+[diff] 0x6b4a10   MISMATCH         sub_6B4A10
+[diff] 0x6b50c0   MATCH            sub_6B50C0
+[diff] 0x6b6a50   MATCH            sub_6B6A50
+[diff] 0x6b6bd0   MISMATCH         sub_6B6BD0
+[diff] 0x6b5240   MISMATCH         MapCoords::Init
+[ledger] 0x696ef0 sub_696EF0 -> NG (attempt 2)
+[ledger] 0x69ea90 sub_69EA90 -> OK (attempt 2)
+[ledger] 0x69ebf0 sub_69EBF0 -> NG (attempt 3)
+[ledger] 0x69ec10 sub_69EC10 -> NG (attempt 2)
+[ledger] 0x6a43b0 sub_6A43B0 -> OK (attempt 2)
+[ledger] 0x6a4530 sub_6A4530 -> NG (attempt 2)
+[ledger] 0x6a4a70 sub_6A4A70 -> OK (attempt 2)
+[ledger] 0x6a4bf0 sub_6A4BF0 -> NG (attempt 2)
+[ledger] 0x6ac9c0 sub_6AC9C0 -> OK (attempt 2)
+[ledger] 0x6acb40 sub_6ACB40 -> NG (attempt 2)
+[ledger] 0x6aef60 sub_6AEF60 -> OK (attempt 3)
+[ledger] 0x6af0e0 sub_6AF0E0 -> NG (attempt 2)
+[ledger] 0x6b21f0 sub_6B21F0 -> OK (attempt 2)
+[ledger] 0x6b2370 sub_6B2370 -> NG (attempt 2)
+[ledger] 0x6b4890 sub_6B4890 -> OK (attempt 2)
+[ledger] 0x6b4a10 sub_6B4A10 -> NG (attempt 3)
+[ledger] 0x6b50c0 sub_6B50C0 -> OK (attempt 2)
+[ledger] 0x6b5240 MapCoords::Init -> NG (attempt 2)
+[ledger] 0x6b6a50 sub_6B6A50 -> OK (attempt 2)
+[ledger] 0x6b6bd0 sub_6B6BD0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "MATCH": 9
+ },
+ "pathologies": {
+  "extern_reloc": 10,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 45.0,
+ "match_rate_of_total_pct": 45.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p70\batch_report.json

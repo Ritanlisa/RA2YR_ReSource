@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x696ef0",
+  "family": "D_RELOC",
+  "name": "sub_696EF0"
+ },
+ {
+  "addr": "0x69ea90",
+  "family": "D_RELOC",
+  "name": "sub_69EA90"
+ },
+ {
+  "addr": "0x69ebf0",
+  "family": "D_RELOC",
+  "name": "sub_69EBF0"
+ },
+ {
+  "addr": "0x69ec10",
+  "family": "D_RELOC",
+  "name": "sub_69EC10"
+ },
+ {
+  "addr": "0x6a43b0",
+  "family": "D_RELOC",
+  "name": "sub_6A43B0"
+ },
+ {
+  "addr": "0x6a4530",
+  "family": "D_RELOC",
+  "name": "sub_6A4530"
+ },
+ {
+  "addr": "0x6a4a70",
+  "family": "D_RELOC",
+  "name": "sub_6A4A70"
+ },
+ {
+  "addr": "0x6a4bf0",
+  "family": "D_RELOC",
+  "name": "sub_6A4BF0"
+ },
+ {
+  "addr": "0x6ac9c0",
+  "family": "D_RELOC",
+  "name": "sub_6AC9C0"
+ },
+ {
+  "addr": "0x6acb40",
+  "family": "D_RELOC",
+  "name": "sub_6ACB40"
+ },
+ {
+  "addr": "0x6aef60",
+  "family": "D_RELOC",
+  "name": "sub_6AEF60"
+ },
+ {
+  "addr": "0x6af0e0",
+  "family": "D_RELOC",
+  "name": "sub_6AF0E0"
+ },
+ {
+  "addr": "0x6b21f0",
+  "family": "D_RELOC",
+  "name": "sub_6B21F0"
+ },
+ {
+  "addr": "0x6b2370",
+  "family": "D_RELOC",
+  "name": "sub_6B2370"
+ },
+ {
+  "addr": "0x6b4890",
+  "family": "D_RELOC",
+  "name": "sub_6B4890"
+ },
+ {
+  "addr": "0x6b4a10",
+  "family": "D_RELOC",
+  "name": "sub_6B4A10"
+ },
+ {
+  "addr": "0x6b50c0",
+  "family": "D_RELOC",
+  "name": "sub_6B50C0"
+ },
+ {
+  "addr": "0x6b5240",
+  "family": "D_RELOC",
+  "name": "MapCoords::Init"
+ },
+ {
+  "addr": "0x6b6a50",
+  "family": "D_RELOC",
+  "name": "sub_6B6A50"
+ },
+ {
+  "addr": "0x6b6bd0",
+  "family": "D_RELOC",
+  "name": "sub_6B6BD0"
+ }
+]
