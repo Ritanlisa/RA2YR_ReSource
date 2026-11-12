@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x4eb6f0 _DynamicVectorClass_PAVTerrainClass::FindParticle2 -> _DynamicVectorClass_PAVTerrainClass
+[conv] 0x4eb720 _VectorClass_PAVAircraftClass::Add -> _VectorClass_PAVAircraftClass
+[conv] 0x4eb840 _VectorClass_PAVAircraftClass::GetSize -> _VectorClass_PAVAircraftClass
+[conv] 0x4eb950 _DynamicVectorClass_PAVAircraftClass::FindElementByValue -> _DynamicVectorClass_PAVAircraftClass
+[conv] 0x4eb980 _VectorClass_PAVUnitClass::Add -> _VectorClass_PAVUnitClass
+[conv] 0x4ebaa0 _VectorClass_PAVUnitClass::GetSize -> _VectorClass_PAVUnitClass
+[conv] 0x4ebbb0 _DynamicVectorClass_PAVUnitClass::FindItemIndex -> _DynamicVectorClass_PAVUnitClass
+[conv] 0x4ebbe0 _VectorClass_PAVHouseClass::Add -> _VectorClass_PAVHouseClass
+[conv] 0x4ebd00 _VectorClass_PAVHouseClass::GetSize -> _VectorClass_PAVHouseClass
+[conv] 0x4ebe10 _DynamicVectorClass_PAVHouseClass::FindItemIndex_0 -> _DynamicVectorClass_PAVHouseClass
+[conv] 0x4ebf60 _VectorClass_PAVAnimClass::GetSize -> _VectorClass_PAVAnimClass
+[conv] 0x4ec0a0 _VectorClass_PAVFactoryClass::Add -> _VectorClass_PAVFactoryClass
+[conv] 0x4ec1c0 _VectorClass_PAVFactoryClass::GetSize -> _VectorClass_PAVFactoryClass
+[conv] 0x4ec2d0 _DynamicVectorClass_PAVFactoryClass::FindItemIndex_1 -> _DynamicVectorClass_PAVFactoryClass
+[conv] 0x4ec300 _VectorClass_PAVCampaignClass::Add -> _VectorClass_PAVCampaignClass
+[conv] 0x4ec420 _VectorClass_PAVCampaignClass::GetSize -> _VectorClass_PAVCampaignClass
+[conv] 0x4ec530 _DynamicVectorClass_PAVCampaignClass::FindItemIndex -> _DynamicVectorClass_PAVCampaignClass
+[conv] 0x4ec560 _VectorClass_PAVSideClass::Add -> _VectorClass_PAVSideClass
+[conv] 0x4ec790 _DynamicVectorClass_PAVSideClass::FindItemIndex_0 -> _DynamicVectorClass_PAVSideClass
+[conv] 0x4ec7c0 _VectorClass_PAVHouseTypeClass::Add -> _VectorClass_PAVHouseTypeClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVTerrainClass rc=0
+[era] _VectorClass_PAVAircraftClass rc=0
+[era] _DynamicVectorClass_PAVAircraftClass rc=0
+[era] _VectorClass_PAVUnitClass rc=0
+[era] _DynamicVectorClass_PAVUnitClass rc=0
+[era] _VectorClass_PAVHouseClass rc=0
+[era] _DynamicVectorClass_PAVHouseClass rc=0
+[era] _VectorClass_PAVAnimClass rc=0
+[era] _VectorClass_PAVFactoryClass rc=0
+[era] _DynamicVectorClass_PAVFactoryClass rc=0
+[era] _VectorClass_PAVCampaignClass rc=0
+[era] _DynamicVectorClass_PAVCampaignClass rc=0
+[era] _VectorClass_PAVSideClass rc=0
+[era] _DynamicVectorClass_PAVSideClass rc=0
+[era] _VectorClass_PAVHouseTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4eb6f0   MISMATCH         _DynamicVectorClass_PAVTerrainClass::FindParticle2
+[diff] 0x4eb720   MISMATCH         _VectorClass_PAVAircraftClass::Add
+[diff] 0x4eb840   MISMATCH         _VectorClass_PAVAircraftClass::GetSize
+[diff] 0x4eb950   MISMATCH         _DynamicVectorClass_PAVAircraftClass::FindElementByValue
+[diff] 0x4eb980   MISMATCH         _VectorClass_PAVUnitClass::Add
+[diff] 0x4ebaa0   MISMATCH         _VectorClass_PAVUnitClass::GetSize
+[diff] 0x4ebbb0   MISMATCH         _DynamicVectorClass_PAVUnitClass::FindItemIndex
+[diff] 0x4ebbe0   MISMATCH         _VectorClass_PAVHouseClass::Add
+[diff] 0x4ebd00   MISMATCH         _VectorClass_PAVHouseClass::GetSize
+[diff] 0x4ebe10   MISMATCH         _DynamicVectorClass_PAVHouseClass::FindItemIndex_0
+[diff] 0x4ebf60   MISMATCH         _VectorClass_PAVAnimClass::GetSize
+[diff] 0x4ec0a0   MISMATCH         _VectorClass_PAVFactoryClass::Add
+[diff] 0x4ec1c0   MISMATCH         _VectorClass_PAVFactoryClass::GetSize
+[diff] 0x4ec2d0   MISMATCH         _DynamicVectorClass_PAVFactoryClass::FindItemIndex_1
+[diff] 0x4ec300   MISMATCH         _VectorClass_PAVCampaignClass::Add
+[diff] 0x4ec420   MISMATCH         _VectorClass_PAVCampaignClass::GetSize
+[diff] 0x4ec530   MISMATCH         _DynamicVectorClass_PAVCampaignClass::FindItemIndex
+[diff] 0x4ec560   MISMATCH         _VectorClass_PAVSideClass::Add
+[diff] 0x4ec790   MISMATCH         _DynamicVectorClass_PAVSideClass::FindItemIndex_0
+[diff] 0x4ec7c0   MISMATCH         _VectorClass_PAVHouseTypeClass::Add
+[ledger] 0x4eb6f0 _DynamicVectorClass_PAVTerrainClass::FindParticle2 -> NG (attempt 2)
+[ledger] 0x4eb720 _VectorClass_PAVAircraftClass::Add -> NG (attempt 2)
+[ledger] 0x4eb840 _VectorClass_PAVAircraftClass::GetSize -> NG (attempt 2)
+[ledger] 0x4eb950 _DynamicVectorClass_PAVAircraftClass::FindElementByValue -> NG (attempt 2)
+[ledger] 0x4eb980 _VectorClass_PAVUnitClass::Add -> NG (attempt 2)
+[ledger] 0x4ebaa0 _VectorClass_PAVUnitClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ebbb0 _DynamicVectorClass_PAVUnitClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4ebbe0 _VectorClass_PAVHouseClass::Add -> NG (attempt 2)
+[ledger] 0x4ebd00 _VectorClass_PAVHouseClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ebe10 _DynamicVectorClass_PAVHouseClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4ebf60 _VectorClass_PAVAnimClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ec0a0 _VectorClass_PAVFactoryClass::Add -> NG (attempt 2)
+[ledger] 0x4ec1c0 _VectorClass_PAVFactoryClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ec2d0 _DynamicVectorClass_PAVFactoryClass::FindItemIndex_1 -> NG (attempt 2)
+[ledger] 0x4ec300 _VectorClass_PAVCampaignClass::Add -> NG (attempt 2)
+[ledger] 0x4ec420 _VectorClass_PAVCampaignClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ec530 _DynamicVectorClass_PAVCampaignClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4ec560 _VectorClass_PAVSideClass::Add -> NG (attempt 2)
+[ledger] 0x4ec790 _DynamicVectorClass_PAVSideClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4ec7c0 _VectorClass_PAVHouseTypeClass::Add -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 13,
+  "branch_polarity": 7
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p13\batch_report.json
