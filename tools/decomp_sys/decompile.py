@@ -1080,6 +1080,13 @@ def run_function(addr, reg, views, idx):
     # harmonize that ran before it would key on the stale view spelling
     # (the R5 `(void *)(0)` wrap vs `unsigned int` hpp decl family).
     passes.pass_assign_harmonize2(ctx)
+    # CW7/W5: pointer<->integer and incompatible-pointer comparison sites
+    # (C2446) -- 32-bit cmp identity, codegen-neutral re-spelling.
+    passes.pass_compare_harmonize(ctx)
+    # CW7/W3: IDA's mutable receiver (`this = 0;` / `this = v19;`) -- bind a
+    # local `Cls *this_ = this;` and rewrite.  MUST stay last: every member
+    # pass above matches the literal `this->` spelling.
+    passes.pass_this_assign_local(ctx)
     # R7: class-name==global-name phantoms (Stream family) must go before
     # emission so hpp_pilot's fwd-decl logic sees a clean globals table
     passes.pass_prune_type_only_globals(ctx)
@@ -1092,6 +1099,29 @@ def run_function(addr, reg, views, idx):
     # vftable addresses, __usercall tokens, undeclared IDA data names
     # (asc_/loc_/dword_...), GUID constants and bare g_* globals.
     passes.pass_residual_idents(ctx)
+    # CW7/W2: scalar-typed globals/members used with `[i]` -> site-level
+    # address truth (unit-level declarations stay untouched); pointer-typed
+    # index expressions cast to unsigned int.  Runs after the FINAL residual
+    # ident declaration pass so late-declared names are known.
+    passes.pass_scalar_subscript(ctx)
+
+    # CW7/W4-lite: return-truth arbitration (declaration layer only -- the
+    # body bytes are untouched).  C4716 (`must return a value`) and C2562
+    # (`void function returning a value`) are the two cheap forms.
+    _body = "\n".join(ctx.lines)
+    _ret = sig.get("ret") or "void"
+    if _ret not in ("void", "") and not re.search(r"\breturn\b", _body):
+        sig["ret"] = "void"
+        sig["ret_spelled"] = "void"
+        ctx.note("return_truth",
+                 "body has no return statement -> return type void "
+                 "(was %s; C4716)" % _ret)
+    elif _ret in ("void", "") and \
+            re.search(r"\breturn\s+[^;\s][^;]*;", _body):
+        sig["ret"] = "int"
+        sig["ret_spelled"] = "int"
+        ctx.note("return_truth",
+                 "body returns a value -> return type int (was void; C2562)")
 
     # unit selection (rule 2: cpp <-> hpp same name):
     # D-fix 1 -- the OWNING CLASS names the unit so a corrected fn->cls

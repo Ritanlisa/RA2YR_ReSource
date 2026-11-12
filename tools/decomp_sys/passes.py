@@ -269,18 +269,32 @@ def pass_param_rename(ctx):
             "__int8", "__int16", "__int32", "__int64",
             "_DWORD", "_WORD", "_BYTE", "_QWORD", "va_list",
         }
-        pnames = []
-        for part in pm.group(1).split(","):
-            nm = re.search(r"[*\s](\w+)\s*$", part.strip())
-            pnames.append(nm.group(1) if nm else None)
-        pnames = [n for n in pnames
-                  if n and n != "this" and n not in _TYPE_WORDS]
-        for i, nm in enumerate(pnames):
-            if i < len(ctx.sig["param_names"]) and \
-                    nm != ctx.sig["param_names"][i] and \
-                    not re.match(r"^[a-z]\d+$", nm or ""):
-                body = re.sub(r"\b%s\b" % re.escape(nm),
-                              ctx.sig["param_names"][i], body)
+        # CW7: keep POSITION when resolving proto param names.  The old
+        # code filtered unnamed params out of the list and then indexed it
+        # positionally: `int __stdcall(int, HANDLE hDevice, unsigned __int8,
+        # DWORD BytesReturned, __int16)` produced ['hDevice', 'BytesReturned']
+        # and renamed BytesReturned -> p1 (hDevice!) -- every body value
+        # after an unnamed/type-only param shifted one slot (CDROM::
+        # LockVolume HIBYTE(v5) = p1 vs the real p3).
+        parts = [p.strip() for p in pm.group(1).split(",")]
+        names = []
+        for part in parts:
+            nm = re.search(r"[*\s](\w+)\s*$", part)
+            name = nm.group(1) if nm else None
+            if name and (name == "this" or name in _TYPE_WORDS):
+                name = None
+            names.append(name)
+        # proto may spell the receiver explicitly (`Cls *this`) while the
+        # signature drops it -- align the slots.
+        if parts and re.search(r"\bthis\b", parts[0]):
+            names = names[1:]
+        for i, nm in enumerate(names):
+            if not nm or i >= len(ctx.sig["param_names"]):
+                continue
+            if nm == ctx.sig["param_names"][i] or re.match(r"^[a-z]\d+$", nm):
+                continue
+            body = re.sub(r"\b%s\b" % re.escape(nm),
+                          ctx.sig["param_names"][i], body)
     ctx.lines = body.split("\n")
 
 
@@ -1098,7 +1112,311 @@ def pass_struct_globals(ctx):
         ctx.lines = text.split("\n")
 
 
-# --------------------------------------------- CW5-F10: global object arrays
+# ------------------------------------------- CW7: scalar subscript sites
+#
+# CW6 prep W2 (live 72): a scalar-typed global/member used with `[idx]`.
+# Changing the unit-level declaration is unsafe (the same symbol may be
+# used bare in this or a sibling function, and the emitted hpp merges the
+# unit's externs), so the site is re-spelled address-true:
+#     G[i]        -> ((T *)(&(G)))[i]
+#     this->M[i]  -> ((T *)(&(this->M)))[i]
+# Element type T = IDA's `T[]` global type when available, else the
+# registry scalar spelling (both are the same 4/2/1-byte slot).
+#
+# Two more W2 sub-forms:
+#   * pointer-typed INDEX expression (`dword_819310[this->DeployingAnim_d]`
+#     -- the member is a 4-byte index but the registry says SHPStruct *):
+#     cast the index to unsigned int (same register value).
+#   * member array-of-1 element view (`(this->m0C8_addr[2])[off]`) is left
+#     to the member-chain machinery -- a nested subscript on a scalar
+#     element has no stride evidence here.
+
+_SCALAR_SUB_G = r"(?<![\w.>])%s\s*\[([^\[\]]*)\]"
+_SCALAR_SUB_M = r"this\s*->\s*%s\s*\[([^\[\]]*)\]"
+
+
+def pass_scalar_subscript(ctx):
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    n = 0
+
+    # CW7: a global that this body WRITES cannot be const.  The registry
+    # sometimes carries IDA's `const uint8_t` spelling for a .data flag
+    # (`Game_bAllowVRAMSidebar = 0` -> C2166 l-value specifies const).
+    # `const` is not codegen; drop it when a write site exists.
+    for gname, gty in list((getattr(ctx, "used_globals", None) or {}).items()):
+        if not (gty or "").startswith("const "):
+            continue
+        nm = re.escape(gname)
+        if re.search(r"(?<![\w.>])%s\s*(?:\[[^\]]*\])?\s*=(?!=)" % nm, text) \
+                or re.search(r"\*\s*\(\s*[A-Za-z_][\w \*]*\s*\)\s*&?%s\b"
+                             % nm, text) \
+                or re.search(r"\b(?:LOBYTE|HIBYTE|LOWORD|HIWORD)\s*\(\s*%s\b"
+                             % nm, text):
+            ctx.used_globals[gname] = re.sub(r"^const\s+", "", gty)
+            ctx.note("const_strip",
+                     "%s: registry type %r is written in this body -> "
+                     "declared without const" % (gname, gty))
+
+    def elem_of(gname, gty):
+        elem = spell_type(gty)
+        a = None
+        try:
+            rec = (getattr(ctx.reg, "reg", {}) or {}).get("globals", {}) \
+                .get(gname)
+            if isinstance(rec, dict) and rec.get("addr"):
+                a = int(str(rec["addr"]), 16)
+        except (TypeError, ValueError):
+            a = None
+        if a is not None:
+            e = _ida_global_type_index().get(a)
+            ety = ((e or {}).get("type") or "").strip()
+            if ety.endswith("[]"):
+                cand = spell_type(re.sub(r"\[\]$", "", ety).strip())
+                if cand in WIDTH_OF:
+                    elem = cand
+        return elem
+
+    # ---- global scalar subscript -> address-true element access
+    for gname, gty in list((getattr(ctx, "used_globals", None) or {}).items()):
+        if not gty or gty.endswith("*") or gty.endswith("[]"):
+            continue
+        elem = elem_of(gname, gty)
+        if elem not in WIDTH_OF:
+            continue
+        pat = re.compile(_SCALAR_SUB_G % re.escape(gname))
+        new = pat.sub(lambda m: "((%s *)(&(%s)))[%s]"
+                      % (elem, gname, m.group(1)), text)
+        if new != text:
+            n += len(pat.findall(text))
+            text = new
+            ctx.sites.append(Site(
+                "scalar_subscript", gname,
+                "scalar global %s (%s) subscript -> ((%s *)(&(%s)))[i] "
+                "(site-level address truth)" % (gname, gty, elem, gname),
+                True))
+
+    # ---- this->M / BASE->M / BASE.M scalar subscript -> address-true
+    cls = ctx.sig.get("cls")
+    arr_names = set(env.arrays)
+
+    def _class_of(base):
+        if base == "this":
+            return cls
+        ty = env.of(base)
+        if not ty:
+            return None
+        core = _cw5_core(ty)
+        if core and ctx.reg.class_key(core):
+            return core
+        return None
+
+    def _mem_ty(cls2, mname):
+        if not cls2:
+            return None, None
+        try:
+            r = _cw5_member_load(ctx.reg, cls2, mname)
+        except Exception:                      # noqa: BLE001
+            return None, None
+        if not r:
+            return None, None
+        vt = _view_member_type(ctx, cls2, mname)
+        return r[0], (vt or r[1])
+
+    def _elem_spelling(ty, width):
+        if ty:
+            sp = spell_type(ty)
+            if sp in WIDTH_OF:
+                return sp
+            if _is_ptr_spelling(sp):
+                return None            # pointer member: `[i]` is legal
+            if re.search(r"\[\s*\d*\s*\]$", sp):
+                return None            # array member: `[i]` is legal
+        if width in (1, 2, 4, 8):
+            return {1: "unsigned char", 2: "short", 4: "int",
+                    8: "__int64"}[width]
+        return None
+
+    _BASE_SUB = re.compile(
+        r"(?<![\w.>])(?P<base>this|[A-Za-z_]\w*)\s*(?P<op>->|\.)\s*"
+        r"(?P<mem>[A-Za-z_]\w*)\s*\[(?P<idx>[^\[\]]*)\]")
+
+    def sub_repl(m):
+        nonlocal n
+        base, op, mname, idx = (m.group("base"), m.group("op"),
+                                m.group("mem"), m.group("idx"))
+        cls2 = _class_of(base)
+        if not cls2:
+            return m.group(0)
+        if base == "this" and mname in arr_names:
+            return m.group(0)
+        off, mty = _mem_ty(cls2, mname)
+        if off is None:
+            return m.group(0)
+        rec, _src = ctx.reg.member_at(cls2, int(off), min_span=1)
+        width = int((rec or {}).get("width") or 4)
+        sp0 = spell_type(mty) if mty else ""
+        if sp0 in WIDTH_OF:
+            width = WIDTH_OF[sp0]
+        elem = _elem_spelling(mty, width)
+        if not elem:
+            return m.group(0)
+        n += 1
+        ctx.sites.append(Site(
+            "scalar_subscript", "%s%s%s[i]" % (base, op, mname),
+            "scalar member %s::%s (%s w=%d) subscript -> "
+            "((%s *)(&(%s%s%s)))[i] (site-level address truth)"
+            % (cls2, mname, mty, width, elem, base, op, mname), True))
+        return "((%s *)(&(%s%s%s)))[%s]" % (elem, base, op, mname, idx)
+
+    text = _BASE_SUB.sub(sub_repl, text)
+
+    # ---- pointer-typed index expression -> unsigned int
+    ptr_names = set()
+    for nm, ty in list(env.map.items()) + list(env.members.items()):
+        if _is_ptr_spelling(ty or ""):
+            ptr_names.add(nm)
+    if ptr_names:
+        for nm in sorted(ptr_names):
+            pat = re.compile(r"\[\s*%s\s*\]" % re.escape(nm))
+            if not pat.search(text):
+                continue
+            text = pat.sub("[ (unsigned int)(%s) ]" % nm, text)
+            n += 1
+            ctx.sites.append(Site(
+                "scalar_subscript", "[%s]" % nm,
+                "pointer-typed index expression cast to unsigned int "
+                "(same 32-bit register value)", True))
+
+    # pointer-typed THIS-member index (`dword_819310[this->DeployingAnim_d]`
+    # -- the member stores a 4-byte index but the registry knows SHPStruct *).
+    if cls:
+        mem_idx = re.compile(r"\[\s*this\s*->\s*([A-Za-z_]\w*)\s*\]")
+        for m in list(mem_idx.finditer(text)):
+            mname = m.group(1)
+            off, mty = _mem_ty(cls, mname)
+            if off is None or not _is_ptr_spelling(spell_type(mty or "")):
+                continue
+            text = text.replace(m.group(0),
+                                "[ (unsigned int)(this->%s) ]" % mname)
+            n += 1
+            ctx.sites.append(Site(
+                "scalar_subscript", "[this->%s]" % mname,
+                "pointer-typed this-member index cast to unsigned int "
+                "(member stores a 4-byte index; %s)" % mty, True))
+
+    if n:
+        ctx.lines = text.split("\n")
+
+
+# ------------------------------------------- CW7: comparison sites
+#
+# CW6 prep W5 (live 46 C2446 + the C2440 sites whose first error shifted to
+# a compare): VC6 has no built-in pointer<->integer comparison.  All of
+# these are 32-bit `cmp` on the same register value; re-spell the POINTER
+# side as `unsigned int` (byte-neutral, unsigned compare like the binary),
+# or the RHS as the LHS spelling when two incompatible pointers meet
+# (`void **` vs `const void **`).
+
+_CMP_SIMPLE = re.compile(
+    r"(?<![\w.>])(?P<a>(?:this->)?[A-Za-z_]\w*)\s*"
+    r"(?P<op>==|!=|<=|>=|<|>)\s*"
+    r"(?P<b>(?:this->)?[A-Za-z_]\w*)(?![\w(])")
+_CMP_CASTSUB = re.compile(
+    r"(?<![\w.>])(?P<a>(?:this->)?[A-Za-z_]\w*)\s*"
+    r"(?P<op>==|!=|<=|>=|<|>)\s*"
+    r"(?P<b>\(\s*\(\s*[A-Za-z_][\w ]*\*+\s*\)\s*&[A-Za-z_]\w*"
+    r"(?:\s*[+\-]\s*\d+)?\s*\)\s*\[[^\[\]]*\])")
+
+
+def pass_compare_harmonize(ctx):
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    n = 0
+
+    def rewrite(a, op, b):
+        nonlocal n
+        ka, ta = _rhs_ptr_head(a, env)
+        kb, tb = _rhs_ptr_head(b, env)
+        if ka == "ptr" and kb == "int":
+            n += 1
+            ctx.sites.append(Site(
+                "compare", "%s %s %s" % (a, op, b),
+                "pointer/int compare -> pointer side re-spelled "
+                "`(unsigned int)` (same 32-bit cmp; C2446)", True))
+            return "((unsigned int)(%s)) %s %s" % (a, op, b)
+        if ka == "int" and kb == "ptr":
+            n += 1
+            ctx.sites.append(Site(
+                "compare", "%s %s %s" % (a, op, b),
+                "pointer/int compare -> pointer side re-spelled "
+                "`(unsigned int)` (same 32-bit cmp; C2446)", True))
+            return "%s %s ((unsigned int)(%s))" % (a, op, b)
+        if ka == "ptr" and kb == "ptr":
+            la, lb = _ptr_base(ta), _ptr_base(tb)
+            if _compatible_ptr(la, lb):
+                return None
+            n += 1
+            ctx.sites.append(Site(
+                "compare", "%s %s %s" % (a, op, b),
+                "incompatible pointer compare -> RHS re-spelled `%s` "
+                "(C2446)" % ta, True))
+            return "%s %s (%s)(%s)" % (a, op, ta, b)
+        return None
+
+    def sub_simple(m):
+        r = rewrite(m.group("a"), m.group("op"), m.group("b"))
+        return r if r is not None else m.group(0)
+
+    def sub_castsub(m):
+        r = rewrite(m.group("a"), m.group("op"), m.group("b"))
+        return r if r is not None else m.group(0)
+
+    out = _CMP_SIMPLE.sub(sub_simple, text)
+    out = _CMP_CASTSUB.sub(sub_castsub, out)
+    if n:
+        ctx.lines = out.split("\n")
+
+
+# ------------------------------------------- CW7: `this = ...` receiver local
+#
+# IDA models the receiver as a mutable register/local: `this = 0;` after a
+# failed init (ObjectClass::InitializeAudioSubsystem) or `this = v19;`
+# (blitter functor reuse).  C++ `this` is not assignable (C2106).  When the
+# body writes `this`, bind the receiver to a local pointer at entry and use
+# that name everywhere (same register, byte-neutral copy).  Must run LAST:
+# all member-view passes match the literal `this->` spelling.
+
+_THIS_ASSIGN = re.compile(r"(?<![\w>])this\s*=(?!=)")
+
+
+def pass_this_assign_local(ctx):
+    text = "\n".join(ctx.lines)
+    if not _THIS_ASSIGN.search(text):
+        return
+    if ctx.sig.get("free_this") or not ctx.sig.get("cls"):
+        return
+    cls = ctx.sig["cls"]
+    text = re.sub(r"\bthis\b", "this_", text)
+    # the RHS of a receiver (re)assignment is IDA's integer view of the
+    # same pointer (`this = v7` with `int v7`) -- cast it back.
+    def _cast_rhs(m):
+        rhs = m.group("rhs").strip()
+        if rhs in ("0", "NULL") or re.match(
+                r"^\(\s*%s\s*\*\s*\)" % re.escape(cls), rhs):
+            return m.group(0)
+        return "%sthis_ = (%s *)(%s);" % (m.group("ind"), cls, rhs)
+
+    text = re.sub(r"(?m)^(?P<ind>\s*)this_\s*=\s*(?P<rhs>[^;]+);",
+                  _cast_rhs, text)
+    ctx.lines = ["        %s * this_ = this;" % cls] + text.split("\n")
+    ctx.sites.append(Site(
+        "this_assign", cls,
+        "body writes `this` (IDA mutable receiver) -> entry local "
+        "`%s *this_ = this;` + rewrite (C2106 family)" % cls, True))
+
+
+# ------------------------------------------- CW5-F10: global object arrays
 #
 # CW5-5 (B1): `g_X_Instance[374].NeedsSaveOrLink` -- the global's registry
 # type is `void *` (IDA's own type was lost), so `G[i].M` is C2036
@@ -1534,8 +1852,14 @@ _CAST_THIS_DEREF = re.compile(
     r"\s*\*\s*\)\s*this\s*\+\s*(?P<off>\d+)\s*\)")
 _CAST_THIS_ADDR = re.compile(
     r"\(\s*(?P<ty>[A-Za-z_]\w*(?:\s+[A-Za-z_]\w+)*)\s*\*\s*\)"
-    r"\s*this\s*\+\s*(?P<off>\d+)\b")
-_BARE_THIS_ADDR = re.compile(r"\bthis\s*\+\s*(?P<off>\d+)\b")
+    r"\s*this\s*\+\s*(?P<off>\d+)\b(?!\s*[+\-*/%])")
+# CW7: `this + N` is only a member ADDRESS when N is the whole index.
+# `(unsigned __int16 *)this + 3 * p0 + 1032` (AnimFile::Check) was read as
+# member @0x006 plus a stray `* p0 + 1032`, corrupting the body (C2296
+# char[] operand).  A following arithmetic operator means the constant is
+# an element index term, not a byte offset.
+_BARE_THIS_ADDR = re.compile(
+    r"\bthis\s*\+\s*(?P<off>\d+)\b(?!\s*[+\-*/%])")
 
 _ROLE_OF_W = {1: "byte", 2: "word", 4: "dword", 8: "qword"}
 
@@ -2015,6 +2339,14 @@ def pass_intrinsics_lobyte(ctx):
     # C2296.  era_types.h spells the macro as an address-of lvalue, so the
     # ORIGINAL macro form is already the correct store for these.
     _ptr_locals = _ptr_names_in("\n".join(lines))
+    # CW7: pointer-typed PARAMS are the same case (`LOWORD(p1) = ...` with
+    # `unsigned short *p1` -- BuildingClass::MarkExitPath C2296 family);
+    # era_types.h spells the macro through the address, so keeping the
+    # original macro store is the correct narrow write.
+    for _t, _n in (ctx.sig.get("params_spelled") or
+                   ctx.sig.get("params") or []):
+        if (_t or "").rstrip().endswith("*"):
+            _ptr_locals.add(_n)
     out = []
     i = 0
     while i < len(lines):
@@ -4889,15 +5221,40 @@ def _ptr_base(ty):
 
 
 def _compatible_ptr(lbase, rbase):
-    """VC6-legal implicit pointer conversions (after which no cast fires)."""
+    """VC6-legal implicit pointer conversions (after which no cast fires).
+
+    CW7: the direction matters.  `T * -> void *` is implicit; `void * -> T *`
+    is NOT (C2440 -- CellClass *v4 = To_Cell(...) where the callee returns
+    void *).  The old symmetric rule skipped those sites.
+    """
     if lbase == rbase:
         return True
-    for b in (lbase, rbase):
-        if b in ("void", ""):
-            return True
+    if lbase in ("void", ""):
+        return True         # T * -> void * (LHS void) is implicit
+    if rbase in ("void", ""):
+        return False        # void * -> T * needs an explicit cast
     # char family interconverts with itself in IDA's spellings; C++ needs
     # the cast, so do NOT treat char*/unsigned char* as compatible
     return False
+
+
+def _view_member_type(ctx, cls, name):
+    """Type spelling the EMITTED hpp uses for member `name` (views first).
+
+    The registry record at an offset can carry a different name/type than
+    the view that actually reached the hpp (`AudioMixer` @0x8 registry says
+    `ptr_8: AudioMixer *`, the hpp declares the synthesized
+    `AudioMixer_field_08: int`).  Type arbitration must follow the
+    DECLARATION, otherwise the harmonizer skips the site.
+    """
+    for _off, roles in (ctx.views.scalars.get(cls) or {}).items():
+        for v in roles.values():
+            if v.get("name") == name:
+                return v.get("type") or "int"
+    for _off, arr in (ctx.views.arrays.get(cls) or {}).items():
+        if arr.get("name") == name:
+            return (arr.get("elem") or "int") + " *"
+    return None
 
 
 class _TypeEnv(object):
@@ -4927,12 +5284,15 @@ class _TypeEnv(object):
             self.map.setdefault(nm, ty)
         # member views of the owning class (this->M)
         self.members = {}
+        self.arrays = {}
         cls = ctx.sig.get("cls")
         for off, roles in (ctx.views.scalars.get(cls) or {}).items():
             for v in roles.values():
                 self.members[v["name"]] = v.get("type") or "int"
         for off, arr in (ctx.views.arrays.get(cls) or {}).items():
+            elem = arr.get("elem") or "int"
             self.members[arr["name"]] = (arr.get("elem") or "int") + " *"
+            self.arrays[arr["name"]] = elem
         # callee returns: pseudo-sigs (member calls) + extern decls
         self.calls = {}
         for owner, sigs in (getattr(ctx, "used_callees", None) or {}).items():
@@ -5034,6 +5394,69 @@ def _rhs_ptr_head(rhs, env):
     m = re.match(r"^(%s)\s*\(" % "|".join(_SPLIT_MACROS), s)
     if m:
         return "int", "int"
+    # CW7: `this->M` / `this->M[i]` member read -- the member view already
+    # carries the registry/array element type (was None -> every
+    # `void *v = this->M;` / `T *p = this->arr;` C2440 skipped).
+    m = re.match(r"^this\s*->\s*([A-Za-z_]\w*)\s*(\[[^\[\]]*\])?\s*$", s)
+    if m:
+        name, idx = m.group(1), m.group(2)
+        if name in env.arrays:
+            elem = env.arrays[name]
+            if idx:
+                if elem in _INT_FAMILY:
+                    return "int", elem
+                if elem in ("float", "double"):
+                    return "float", elem
+                return None, None
+            return "ptr", elem + " *"
+        ty = env.member(name)
+        if ty:
+            if idx:
+                if _is_ptr_spelling(ty):
+                    return "ptr", ty          # element of a ptr view
+                if ty in _INT_FAMILY:
+                    return "int", ty
+                return None, None
+            if _is_ptr_spelling(ty):
+                return "ptr", ty
+            if ty in _INT_FAMILY:
+                return "int", ty
+            if ty in ("float", "double"):
+                return "float", ty
+        return None, None
+    # CW7: casted global/base subscript -- `((char **)&G)[k]` is the
+    # element `char *`; `((char *)&G)[k]` is a byte (int family).  IDA
+    # emits this spelling for dword arrays beyond the registry's scalar
+    # declaration (CellClass::SetWallOwner family, C2440).
+    m = re.match(r"^\(\s*\(\s*([A-Za-z_][\w ]*?)\s*(\*+)\s*\)"
+                 r"\s*(?:&\s*)?[A-Za-z_]\w*(?:\s*[+\-]\s*\d+)?\s*\)"
+                 r"\s*\[[^\[\]]*\]\s*$", s)
+    if m:
+        base, stars = re.sub(r"\s+", " ", m.group(1)).strip(), m.group(2)
+        if len(stars) >= 2:
+            return "ptr", base + " " + stars[:-1]
+        if base in _INT_FAMILY:
+            return "int", base
+        if base in ("float", "double"):
+            return "float", base
+        return None, None
+    # CW7: call expression with NESTED parens in its args --
+    # `ClipRectIntersection((void *)(v16), ...)`; the strict bare-ident
+    # pattern below only accepts one paren level, so call-result RHS
+    # sites (the largest C2440 sub-family) never fired.
+    m = re.match(r"^([A-Za-z_]\w*)\s*\(", s)
+    if m:
+        nm = m.group(1)
+        if nm in _CRT_OPERATOR_TY:
+            return ("ptr" if _CRT_OPERATOR_TY[nm].endswith("*")
+                    else "int"), _CRT_OPERATOR_TY[nm]
+        cr = env.call_ret(nm)
+        if cr:
+            if _is_ptr_spelling(cr):
+                return "ptr", cr
+            if cr in _INT_FAMILY or cr in ("void",):
+                return "int", cr
+        return None, None
     # bare identifier head (with optional callee args / arithmetic tail)
     m = re.match(r"^([A-Za-z_]\w*)\s*(?:\([^()]*\))?\s*(?:[+\-][^=].*)?$",
                  s)
@@ -5083,8 +5506,16 @@ def _rhs_ptr_head(rhs, env):
 
 _ASSIGN_SITE = re.compile(
     r"(?P<lhs>\*[A-Za-z_]\w*|"
-    r"[A-Za-z_][\w]*(?:->[A-Za-z_]\w*(?:\[[^\]]*\])?)?"
-    r"(?:\[[^\]]*\])?|"
+    r"[A-Za-z_][\w]*(?:\[[^\]]*\])?"
+    r"(?:(?:->|\.)[A-Za-z_]\w*(?:\[[^\]]*\])?)*|"
+    # CW7: `*(T *)NESTED_EXPR[idx]` store -- the old `\*\(.*?\)` stopped at
+    # the first ')' and never matched `*(unsigned int *)((char *)&v15)[0]`
+    # (MPCooperative::WriteCoopSaveINI vtable install, C2440).
+    r"\*\(\s*[A-Za-z_][\w \*]*\s*\)\s*"
+    r"(?:\((?:[^()]|\([^()]*\))*\)|"
+    r"[A-Za-z_]\w*(?:\.|->)[A-Za-z_]\w*(?:(?:\.|->)[A-Za-z_]\w*)*)"
+    r"\s*(?:\[[^\]]*\])?"
+    r"(?:\s*\+\s*\d+)?|"
     r"\*\(.*?\)(?:\s*[A-Za-z_]\w*)?(?:\s*\+\s*\d+)?|"
     r"(?:HIDWORD|LODWORD|HIBYTE|LOBYTE|BYTE[1-4]|WORD[12]|SLOWORD|SHIWORD)"
     r"\s*\([^()]*\))"
@@ -5162,6 +5593,55 @@ def pass_assign_harmonize2(ctx):
                 # (`m004[0]` on a `unsigned int *` view is `unsigned int`)
                 return _ptr_base(ty)
             return ty
+        # CW7: `<expr>.Owner_field_0xNN` / `<expr>->Owner_field_0xNN`
+        # (base may itself be an indexed pointer): the name encodes the
+        # owner class + byte offset, so the registry record is the type
+        # (AudioMixer::SetupChannels `v3[2].AudioMixer_field_04 = ptr`).
+        mf = re.match(r"^.*?(?:->|\.)\s*([A-Za-z_]\w*)_field_0x([0-9A-Fa-f]+)$", s)
+        if not mf:
+            # older til spelling drops the 0x (`AudioMixer_field_04`)
+            mf = re.match(r"^.*?(?:->|\.)\s*([A-Za-z_]\w*)_field_([0-9A-Fa-f]+)$", s)
+        if mf:
+            view_ty = _view_member_type(ctx, mf.group(1), s.rsplit(
+                ".", 1)[-1].rsplit("->", 1)[-1].strip())
+            if view_ty:
+                return view_ty
+            try:
+                rec, _src = ctx.reg.member_at(mf.group(1),
+                                              int(mf.group(2), 16))
+            except Exception:                  # noqa: BLE001
+                rec = None
+            if rec and rec.get("type"):
+                return spell_type(rec["type"])
+            if rec:
+                return {1: "unsigned char", 2: "short",
+                        4: "unsigned int"}.get(int(rec.get("width") or 4),
+                                               "unsigned int")
+            return None
+        # CW7: ordinary member access on a typed local (`Type->ExitCoord`)
+        mm = re.match(r"^(.*?)(?:->|\.)\s*([A-Za-z_]\w*)$", s)
+        if mm:
+            base, mem = mm.group(1).strip(), mm.group(2)
+            tys = env.of(base.rstrip("[]")) if base else None
+            if tys is None and "[" in base:
+                tys = env.of(base.split("[")[0].strip())
+            if tys:
+                core = _cw5_core(tys)
+                if core and ctx.reg.class_key(core):
+                    try:
+                        r = _cw5_member_load(ctx.reg, core, mem)
+                    except Exception:          # noqa: BLE001
+                        r = None
+                    if r:
+                        off, ty = r
+                        rec, _src = ctx.reg.member_at(core, int(off),
+                                                      min_span=1)
+                        if ty:
+                            return spell_type(ty)
+                        return {1: "unsigned char", 2: "short",
+                                4: "unsigned int"}.get(
+                                    int((rec or {}).get("width") or 4),
+                                    "unsigned int")
         if "[" in s:
             base = s.split("[")[0].strip()
             ty = env.of(base)
@@ -5508,7 +5988,7 @@ def pass_macro_residual_sweep(ctx):
             if v not in _ptr_decl:
                 return m.group(0)
             return "(unsigned int)(%s) %s" % (v, m.group(2))
-        text = re.sub(r"(?<![\w.>])\b([A-Za-z_]\w*)\s*(<<|>>)",
+        text = re.sub(r"(?<![*\w.>])\b([A-Za-z_]\w*)\s*(<<|>>)",
                       _shwrap, text)
 
     def splice_macros(text):
