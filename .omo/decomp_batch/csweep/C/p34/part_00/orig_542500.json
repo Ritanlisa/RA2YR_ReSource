@@ -1,0 +1,11 @@
+{
+ "addr": "0x542500",
+ "name": "Network::updateLatency",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x542500",
+ "bytes_hex": "8b415085c074088b4804e97195f4ff33c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

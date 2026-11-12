@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_4035B0@@YIHHPAH@Z",
+ "sym_key": "Unnamed::sub_4035B0",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "568bf281c1f8000000e80000000089065ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  }
+ ]
+}

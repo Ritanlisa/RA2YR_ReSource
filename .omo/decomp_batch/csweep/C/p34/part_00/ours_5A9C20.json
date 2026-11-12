@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_5A9C20@@YAHXZ",
+ "sym_key": "Unnamed::sub_5A9C20",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "e8000000006800000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?InitializePathData@@YAPAIXZ",
+   "sym_key": "InitializePathData"
+  },
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?sub_5AC190@@YAHPBX0@Z",
+   "sym_key": "sub_5AC190"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

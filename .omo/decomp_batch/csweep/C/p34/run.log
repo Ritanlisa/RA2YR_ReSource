@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p34\part_00
+=== convert (20 addrs) ===
+[conv] 0x4baf20 DSurface::CheckBltStatus -> DSurface
+[conv] 0x55a8f0 IUnknown::SetDirty -> IUnknown
+[conv] 0x55a910 IUnknown::ClearDirty -> IUnknown
+[conv] 0x5a9c20 sub_5A9C20 -> _addr_5A
+[conv] 0x746d60 TechnoClass::releaseSpawns -> TechnoClass
+[conv] 0x4e1480 GadgetClass::Destroy -> GadgetClass
+[conv] 0x7b3900 UDPInterfaceClass::CheckStatus -> UDPInterfaceClass
+[conv] 0x4035b0 sub_4035B0 -> _addr_40
+[conv] 0x422bc0 AnimClass::SetAnimSpeed -> AnimClass
+[conv] 0x4238b0 AnimClass::UpdateMirrorState -> AnimClass
+[conv] 0x4666c0 BulletClass::CheckMirrorState -> BulletClass
+[conv] 0x4a9700 DisplayClass::Update -> DisplayClass
+[conv] 0x4cca70 FlyLocomotionClass::sub_4CCA70 -> FlyLocomotionClass
+[conv] 0x4dfa50 FootClass::IsNotAttackAndPlayer -> FootClass
+[conv] 0x513d00 HoverLocomotionClass::sub_513D00 -> HoverLocomotionClass
+[conv] 0x53ab50 Game_Load_Load_53AB50 -> Game_Load_Load
+[conv] 0x540630 IPXGlobalConnClass::ddtor -> IPXGlobalConnClass
+[conv] 0x540650 IPXGlobalConnClass::Connect -> IPXGlobalConnClass
+[conv] 0x5424c0 Network::GetLobbyStatus -> Network
+[conv] 0x542500 Network::updateLatency -> Network
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DSurface                 rc=2
+[era] IUnknown                 rc=0
+[era] _addr_5A                 rc=0
+[era] TechnoClass              rc=0
+[era] GadgetClass              rc=0
+[era] UDPInterfaceClass        rc=0
+[era] _addr_40                 rc=0
+[era] AnimClass                rc=0
+[era] BulletClass              rc=0
+[era] DisplayClass             rc=0
+[era] FlyLocomotionClass       rc=0
+[era] FootClass                rc=0
+[era] HoverLocomotionClass     rc=0
+[era] Game_Load_Load           rc=2
+[era] IPXGlobalConnClass       rc=0
+[era] Network                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x55a8f0   MISMATCH         IUnknown::SetDirty
+[diff] 0x55a910   MISMATCH         IUnknown::ClearDirty
+[diff] 0x5a9c20   MISMATCH         sub_5A9C20
+[diff] 0x746d60   MISMATCH         TechnoClass::releaseSpawns
+[diff] 0x4e1480   MISMATCH         GadgetClass::Destroy
+[diff] 0x7b3900   MISMATCH         UDPInterfaceClass::CheckStatus
+[diff] 0x4035b0   MATCH            sub_4035B0
+[diff] 0x422bc0   MATCH            AnimClass::SetAnimSpeed
+[diff] 0x4238b0   MISMATCH         AnimClass::UpdateMirrorState
+[diff] 0x4666c0   MISMATCH         BulletClass::CheckMirrorState
+[diff] 0x4a9700   MATCH            DisplayClass::Update
+[diff] 0x4cca70   MISMATCH         FlyLocomotionClass::sub_4CCA70
+[diff] 0x4dfa50   MATCH            FootClass::IsNotAttackAndPlayer
+[diff] 0x513d00   MISMATCH         HoverLocomotionClass::sub_513D00
+[diff] 0x540630   MATCH            IPXGlobalConnClass::ddtor
+[diff] 0x540650   MATCH            IPXGlobalConnClass::Connect
+[diff] 0x5424c0   MISMATCH         Network::GetLobbyStatus
+[diff] 0x542500   MISMATCH         Network::updateLatency
+[ledger] 0x4baf20 DSurface::CheckBltStatus -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55a8f0 IUnknown::SetDirty -> NG (attempt 1)
+[ledger] 0x55a910 IUnknown::ClearDirty -> NG (attempt 1)
+[ledger] 0x5a9c20 sub_5A9C20 -> NG (attempt 1)
+[ledger] 0x746d60 TechnoClass::releaseSpawns -> NG (attempt 1)
+[ledger] 0x4e1480 GadgetClass::Destroy -> NG (attempt 1)
+[ledger] 0x7b3900 UDPInterfaceClass::CheckStatus -> NG (attempt 1)
+[ledger] 0x4035b0 sub_4035B0 -> OK (attempt 1)
+[ledger] 0x422bc0 AnimClass::SetAnimSpeed -> OK (attempt 1)
+[ledger] 0x4238b0 AnimClass::UpdateMirrorState -> NG (attempt 1)
+[ledger] 0x4666c0 BulletClass::CheckMirrorState -> NG (attempt 1)
+[ledger] 0x4a9700 DisplayClass::Update -> OK (attempt 1)
+[ledger] 0x4cca70 FlyLocomotionClass::sub_4CCA70 -> NG (attempt 1)
+[ledger] 0x4dfa50 FootClass::IsNotAttackAndPlayer -> OK (attempt 1)
+[ledger] 0x513d00 HoverLocomotionClass::sub_513D00 -> NG (attempt 1)
+[ledger] 0x53ab50 Game_Load_Load_53AB50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x540630 IPXGlobalConnClass::ddtor -> OK (attempt 1)
+[ledger] 0x540650 IPXGlobalConnClass::Connect -> OK (attempt 1)
+[ledger] 0x5424c0 Network::GetLobbyStatus -> NG (attempt 1)
+[ledger] 0x542500 Network::updateLatency -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 12,
+  "MATCH": 6
+ },
+ "pathologies": {
+  "width_mismatch": 2,
+  "const_fold": 3,
+  "codegen_shape": 4,
+  "ret_norm": 1,
+  "branch_polarity": 2
+ },
+ "match_rate_of_decided_pct": 33.3,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p34\batch_report.json

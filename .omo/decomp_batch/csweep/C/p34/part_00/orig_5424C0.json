@@ -1,0 +1,11 @@
+{
+ "addr": "0x5424C0",
+ "name": "Network::GetLobbyStatus",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5424C0",
+ "bytes_hex": "8b414885c074088b4804e9b195f4ff33c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

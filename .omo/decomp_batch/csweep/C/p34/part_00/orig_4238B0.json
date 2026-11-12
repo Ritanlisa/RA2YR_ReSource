@@ -1,0 +1,11 @@
+{
+ "addr": "0x4238B0",
+ "name": "AnimClass::UpdateMirrorState",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4238B0",
+ "bytes_hex": "8b44240450e8961f1d0084c00f95c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

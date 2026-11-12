@@ -1,0 +1,11 @@
+{
+ "addr": "0x746D60",
+ "name": "TechnoClass::releaseSpawns",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746D60",
+ "bytes_hex": "568bf1e81819ffff8bcee8f196fcff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

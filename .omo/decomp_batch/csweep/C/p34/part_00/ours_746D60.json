@@ -1,0 +1,27 @@
+{
+ "symbol": "?releaseSpawns@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::releaseSpawns",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "dd4424f883ec08568bf1e800000000508bcee8000000008bcee8000000005e83c408c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?CreateDeathAnim@TechnoClass@@QAEPAPAXH@Z",
+   "sym_key": "TechnoClass::CreateDeathAnim"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?FreeCaptureManager@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::FreeCaptureManager"
+  }
+ ]
+}

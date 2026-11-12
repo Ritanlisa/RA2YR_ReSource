@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destroy@GadgetClass@@QAEHXZ",
+ "sym_key": "GadgetClass::Destroy",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "568bf18b06ff1056e80000000083c4045ec3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?LinkedList__RemoveNode@@YAHPAX@Z",
+   "sym_key": "LinkedList__RemoveNode"
+  }
+ ]
+}

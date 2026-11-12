@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DFA50",
+ "name": "FootClass::IsNotAttackAndPlayer",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DFA50",
+ "bytes_hex": "8a81ad06000084c0740332c0c3e9ce711100",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

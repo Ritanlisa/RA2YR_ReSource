@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A9700",
+ "name": "DisplayClass::Update",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A9700",
+ "bytes_hex": "8b4424088b5424045052e8a1b40400c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

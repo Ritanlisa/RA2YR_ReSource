@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetDirty@IUnknown@@QAGHPAE@Z",
+ "sym_key": "IUnknown::SetDirty",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b442404508b480c8b1080e10183c90189480cff5260c20800",
+ "relocs": []
+}

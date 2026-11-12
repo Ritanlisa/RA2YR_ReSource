@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@IPXGlobalConnClass@@QAEHHH@Z",
+ "sym_key": "IPXGlobalConnClass::ddtor",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b5424045052e800000000c20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?receivePacket@ConnectionClass@@QAEHHH@Z",
+   "sym_key": "ConnectionClass::receivePacket"
+  }
+ ]
+}

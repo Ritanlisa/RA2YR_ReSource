@@ -1,0 +1,15 @@
+{
+ "symbol": "?Connect@IPXGlobalConnClass@@QAEHPAXPAH@Z",
+ "sym_key": "IPXGlobalConnClass::Connect",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b5424045052e800000000c20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?processTileUpdate@ConnectionClass@@QAEHPAX0@Z",
+   "sym_key": "ConnectionClass::processTileUpdate"
+  }
+ ]
+}

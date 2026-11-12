@@ -1,0 +1,11 @@
+{
+ "addr": "0x422BC0",
+ "name": "AnimClass::SetAnimSpeed",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x422BC0",
+ "bytes_hex": "568bf1e808401d008b8e040100005e03c1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
