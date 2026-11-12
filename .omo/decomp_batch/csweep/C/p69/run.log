@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p69\part_00
+=== convert (20 addrs) ===
+[conv] 0x499fc0 _BlitTransLucent25_G::_Gfacet_locale_std__UAEPAXI_Z_29 -> _BlitTransLucent25_G
+[conv] 0x499fe0 _BlitPlainXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_30 -> _BlitPlainXlatZRead_G
+[conv] 0x49a000 _BlitTransXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_31 -> _BlitTransXlatZRead_G
+[conv] 0x49a020 _BlitTransZRemapXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_32 -> _BlitTransZRemapXlatZRead_G
+[conv] 0x49a040 _BlitTransDarkenZRead_G::_Gfacet_locale_std__UAEPAXI_Z_33 -> _BlitTransDarkenZRead_G
+[conv] 0x49a060 _BlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_34 -> _BlitTransLucent75ZRead_G
+[conv] 0x49a080 _BlitTransLucent50ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_35 -> _BlitTransLucent50ZRead_G
+[conv] 0x49a0a0 _BlitTransLucent25ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_36 -> _BlitTransLucent25ZRead_G
+[conv] 0x49a0c0 _BlitTransLucent75ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_37 -> _BlitTransLucent75ZReadWarp_G
+[conv] 0x49a0e0 _BlitTransLucent50ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_38 -> _BlitTransLucent50ZReadWarp_G
+[conv] 0x49a120 _BlitPlainXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_40 -> _BlitPlainXlatZReadWrite_G
+[conv] 0x49a140 _BlitTransXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_41 -> _BlitTransXlatZReadWrite_G
+[conv] 0x49a160 _BlitTransZRemapXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_42 -> _BlitTransZRemapXlatZReadWrite_G
+[conv] 0x49a180 _BlitTransDarkenZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_43 -> _BlitTransDarkenZReadWrite_G
+[conv] 0x49a1a0 _BlitTransLucent75ZReadWrite_G::Constructor_Blitter -> _BlitTransLucent75ZReadWrite_G
+[conv] 0x49a1c0 _BlitTransLucent50ZReadWrite_G::Constructor_Blitter_0 -> _BlitTransLucent50ZReadWrite_G
+[conv] 0x49a1e0 _BlitTransLucent25ZReadWrite_G::Constructor_Blitter_1 -> _BlitTransLucent25ZReadWrite_G
+[conv] 0x49a380 _BlitTransXlatWriteAlpha_G::Constructor_Blitter -> _BlitTransXlatWriteAlpha_G
+[conv] 0x49a3a0 _BlitTransXlatMultWriteAlpha_G::Constructor_Blitter -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x49a3c0 _BlitTranslucentWriteAlpha_G::Constructor_Blitter_0 -> _BlitTranslucentWriteAlpha_G
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTransLucent25_G     rc=0
+[era] _BlitPlainXlatZRead_G    rc=0
+[era] _BlitTransXlatZRead_G    rc=0
+[era] _BlitTransZRemapXlatZRead_G rc=0
+[era] _BlitTransDarkenZRead_G  rc=0
+[era] _BlitTransLucent75ZRead_G rc=0
+[era] _BlitTransLucent50ZRead_G rc=0
+[era] _BlitTransLucent25ZRead_G rc=0
+[era] _BlitTransLucent75ZReadWarp_G rc=0
+[era] _BlitTransLucent50ZReadWarp_G rc=0
+[era] _BlitPlainXlatZReadWrite_G rc=0
+[era] _BlitTransXlatZReadWrite_G rc=0
+[era] _BlitTransZRemapXlatZReadWrite_G rc=0
+[era] _BlitTransDarkenZReadWrite_G rc=0
+[era] _BlitTransLucent75ZReadWrite_G rc=2
+[era] _BlitTransLucent50ZReadWrite_G rc=2
+[era] _BlitTransLucent25ZReadWrite_G rc=2
+[era] _BlitTransXlatWriteAlpha_G rc=2
+[era] _BlitTransXlatMultWriteAlpha_G rc=2
+[era] _BlitTranslucentWriteAlpha_G rc=2
+=== diffasm byte-compare ===
+[diff] 0x499fc0   MISMATCH         _BlitTransLucent25_G::_Gfacet_locale_std__UAEPAXI_Z_29
+[diff] 0x499fe0   MISMATCH         _BlitPlainXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_30
+[diff] 0x49a000   MISMATCH         _BlitTransXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_31
+[diff] 0x49a020   MISMATCH         _BlitTransZRemapXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_32
+[diff] 0x49a040   MISMATCH         _BlitTransDarkenZRead_G::_Gfacet_locale_std__UAEPAXI_Z_33
+[diff] 0x49a060   MISMATCH         _BlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_34
+[diff] 0x49a080   MISMATCH         _BlitTransLucent50ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_35
+[diff] 0x49a0a0   MISMATCH         _BlitTransLucent25ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_36
+[diff] 0x49a0c0   MISMATCH         _BlitTransLucent75ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_37
+[diff] 0x49a0e0   MISMATCH         _BlitTransLucent50ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_38
+[diff] 0x49a120   MISMATCH         _BlitPlainXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_40
+[diff] 0x49a140   MISMATCH         _BlitTransXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_41
+[diff] 0x49a160   MISMATCH         _BlitTransZRemapXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_42
+[diff] 0x49a180   MISMATCH         _BlitTransDarkenZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_43
+[ledger] 0x499fc0 _BlitTransLucent25_G::_Gfacet_locale_std__UAEPAXI_Z_29 -> NG (attempt 1)
+[ledger] 0x499fe0 _BlitPlainXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_30 -> NG (attempt 1)
+[ledger] 0x49a000 _BlitTransXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_31 -> NG (attempt 1)
+[ledger] 0x49a020 _BlitTransZRemapXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_32 -> NG (attempt 1)
+[ledger] 0x49a040 _BlitTransDarkenZRead_G::_Gfacet_locale_std__UAEPAXI_Z_33 -> NG (attempt 1)
+[ledger] 0x49a060 _BlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_34 -> NG (attempt 1)
+[ledger] 0x49a080 _BlitTransLucent50ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_35 -> NG (attempt 1)
+[ledger] 0x49a0a0 _BlitTransLucent25ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_36 -> NG (attempt 1)
+[ledger] 0x49a0c0 _BlitTransLucent75ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_37 -> NG (attempt 1)
+[ledger] 0x49a0e0 _BlitTransLucent50ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_38 -> NG (attempt 1)
+[ledger] 0x49a120 _BlitPlainXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_40 -> NG (attempt 1)
+[ledger] 0x49a140 _BlitTransXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_41 -> NG (attempt 1)
+[ledger] 0x49a160 _BlitTransZRemapXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_42 -> NG (attempt 1)
+[ledger] 0x49a180 _BlitTransDarkenZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_43 -> NG (attempt 1)
+[ledger] 0x49a1a0 _BlitTransLucent75ZReadWrite_G::Constructor_Blitter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49a1c0 _BlitTransLucent50ZReadWrite_G::Constructor_Blitter_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49a1e0 _BlitTransLucent25ZReadWrite_G::Constructor_Blitter_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49a380 _BlitTransXlatWriteAlpha_G::Constructor_Blitter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49a3a0 _BlitTransXlatMultWriteAlpha_G::Constructor_Blitter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49a3c0 _BlitTranslucentWriteAlpha_G::Constructor_Blitter_0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "const_fold": 14
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p69\batch_report.json
