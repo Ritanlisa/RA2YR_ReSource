@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetByteField_3@WalkLocomotionClass@@QAGHH@Z",
+ "sym_key": "WalkLocomotionClass::SetByteField_3",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b442404c64032008b00c20800",
+ "relocs": []
+}

@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x68bf30 ScenarioClass::Set_Default_Waypoint -> ScenarioClass
+[conv] 0x68bf50 ScenarioClass::Set_Waypoint -> ScenarioClass
+[conv] 0x69bbf0 ObjectClass::Network_Disconnect_69BBF0 -> ObjectClass
+[conv] 0x6a92e0 ObjectClass::GetSidebarTooltip -> ObjectClass
+[conv] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> ObjectClass
+[conv] 0x6d6410 Terrain::ClimbCheck -> Terrain
+[conv] 0x6e6e20 BuildingLoadQueue::GetNext -> BuildingLoadQueue
+[conv] 0x6e6f20 BuildingLoadQueue::Find -> BuildingLoadQueue
+[conv] 0x6e7330 ObjectClass::System_Read_6E7330 -> ObjectClass
+[conv] 0x6ef9e0 TechnoClass::IsDeployed -> TechnoClass
+[conv] 0x718080 JumpjetLocomotionClass::ShortFunc_718080 -> JumpjetLocomotionClass
+[conv] 0x720440 TechnoClass::sub_720440 -> TechnoClass
+[conv] 0x7474b0 UnitTypeClass::CreateUnit -> UnitTypeClass
+[conv] 0x74ff50 VeterancyStruct::Accumulate -> VeterancyStruct
+[conv] 0x75ab30 JumpjetLocomotionClass::SmallStub_75AB30 -> JumpjetLocomotionClass
+[conv] 0x75cbc0 WalkLocomotionClass::SetByteField_3 -> WalkLocomotionClass
+[conv] 0x765bb0 COMClass::createInstance -> COMClass
+[conv] 0x7a2730 ObjectClass::Network_Create_7A2730 -> ObjectClass
+[conv] 0x7b33d0 UDPInterfaceClass::GetStatistics -> UDPInterfaceClass
+[conv] 0x7bc890 _BlitTrans_G::sub_7BC890 -> _BlitTrans_G
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScenarioClass            rc=2
+[era] ObjectClass              rc=2
+[era] Terrain                  rc=2
+[era] BuildingLoadQueue        rc=2
+[era] TechnoClass              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] UnitTypeClass            rc=0
+[era] VeterancyStruct          rc=2
+[era] WalkLocomotionClass      rc=0
+[era] COMClass                 rc=0
+[era] UDPInterfaceClass        rc=2
+[era] _BlitTrans_G             rc=0
+=== diffasm byte-compare ===
+[diff] 0x68bf50   MATCH            ScenarioClass::Set_Waypoint
+[diff] 0x69bbf0   MATCH            ObjectClass::Network_Disconnect_69BBF0
+[diff] 0x720440   MISMATCH         TechnoClass::sub_720440
+[diff] 0x7474b0   MISMATCH         UnitTypeClass::CreateUnit
+[diff] 0x75cbc0   MISMATCH         WalkLocomotionClass::SetByteField_3
+[diff] 0x765bb0   MISMATCH         COMClass::createInstance
+[diff] 0x7bc890   MISMATCH         _BlitTrans_G::sub_7BC890
+[ledger] 0x68bf30 ScenarioClass::Set_Default_Waypoint -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68bf50 ScenarioClass::Set_Waypoint -> OK (attempt 2)
+[ledger] 0x69bbf0 ObjectClass::Network_Disconnect_69BBF0 -> OK (attempt 2)
+[ledger] 0x6a92e0 ObjectClass::GetSidebarTooltip -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d6410 Terrain::ClimbCheck -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6e6e20 BuildingLoadQueue::GetNext -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6e6f20 BuildingLoadQueue::Find -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6e7330 ObjectClass::System_Read_6E7330 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ef9e0 TechnoClass::IsDeployed -> COMPILE_FAIL (attempt 3)
+[ledger] 0x718080 JumpjetLocomotionClass::ShortFunc_718080 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x720440 TechnoClass::sub_720440 -> NG (attempt 2)
+[ledger] 0x7474b0 UnitTypeClass::CreateUnit -> NG (attempt 12)
+[ledger] 0x74ff50 VeterancyStruct::Accumulate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75ab30 JumpjetLocomotionClass::SmallStub_75AB30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75cbc0 WalkLocomotionClass::SetByteField_3 -> NG (attempt 2)
+[ledger] 0x765bb0 COMClass::createInstance -> NG (attempt 4)
+[ledger] 0x7a2730 ObjectClass::Network_Create_7A2730 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b33d0 UDPInterfaceClass::GetStatistics -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc890 _BlitTrans_G::sub_7BC890 -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MATCH": 2,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "const_fold": 1,
+  "codegen_shape": 2,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 28.6,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p03\batch_report.json

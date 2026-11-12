@@ -1,0 +1,11 @@
+{
+ "addr": "0x75CBC0",
+ "name": "JumpjetLocomotionClass::SetByteField_3",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75CBC0",
+ "bytes_hex": "8b442404c6403200c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

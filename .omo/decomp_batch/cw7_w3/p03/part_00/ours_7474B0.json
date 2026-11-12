@@ -1,0 +1,33 @@
+{
+ "symbol": "?CreateUnit@UnitTypeClass@@QAEDPAFPAX@Z",
+ "sym_key": "UnitTypeClass::CreateUnit",
+ "size": 197,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf168e8080000e80000000083c40485c0750932c05e83c40cc208008b4c241851568bc8e8000000008bf085f6750932c05e83c40cc208008b150000000066c74424180000538b5c241c8d8a6805030081e300ff0000e80000000032c3c74424100000000025ff00000033d88b442418c1eb070fbf080fbf50028b44241cc1e80725feffff01c1e108c1e2080bc381c18000000081c28000000040894c24088b0ed1e88954240c25ff0000008d542408505256ff91d80000005b5e83c40cc20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Construct@UnitClass@@QAEHHPAX@Z",
+   "sym_key": "UnitClass::Construct"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  }
+ ]
+}

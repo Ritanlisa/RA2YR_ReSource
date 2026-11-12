@@ -61018,7 +61018,7 @@
   "this_as_id": false
  },
  "0x68bf30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61030,15 +61030,15 @@
   "this_as_id": false
  },
  "0x68bf50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ScenarioClass::Set_Waypoint",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "ScenarioClass::Set_Waypoint",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x68c030": {
@@ -62285,15 +62285,15 @@
   "status": "OK"
  },
  "0x69bbf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::Network_Disconnect_69BBF0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "Network_Disconnect_69BBF0",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "OK",
   "this_as_id": false
  },
  "0x69bc20": {
@@ -63486,14 +63486,14 @@
   "this_as_id": false
  },
  "0x6a92e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::GetSidebarTooltip",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ObjectClass::GetSidebarTooltip",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -67898,7 +67898,7 @@
   "this_as_id": false
  },
  "0x6c6d00": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -69644,7 +69644,7 @@
   "this_as_id": false
  },
  "0x6d6410": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -71118,7 +71118,7 @@
   "this_as_id": false
  },
  "0x6e6e20": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71130,7 +71130,7 @@
   "this_as_id": false
  },
  "0x6e6f20": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71154,7 +71154,7 @@
   "this_as_id": false
  },
  "0x6e7330": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71669,7 +71669,7 @@
   "this_as_id": false
  },
  "0x6ef9e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -73696,7 +73696,7 @@
   "this_as_id": false
  },
  "0x718080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -74831,11 +74831,16 @@
   "this_as_id": false
  },
  "0x720440": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_720440",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+4 mov dword ptr [eax + 0x280], ecx",
+  "name": "TechnoClass::sub_720440",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_720440",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x720480": {
   "attempts": 5,
@@ -79187,15 +79192,15 @@
   "status": "PENDING"
  },
  "0x7474b0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+11 call 0x7c8e17",
   "name": "UnitTypeClass::CreateUnit",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "UnitTypeClass::CreateUnit",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x747590": {
@@ -80211,14 +80216,14 @@
   "this_as_id": false
  },
  "0x74ff50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "VeterancyStruct::Accumulate",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VeterancyStruct::Accumulate",
-  "rule_violations": 3,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -81810,7 +81815,7 @@
   "this_as_id": false
  },
  "0x75ab30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -81937,15 +81942,15 @@
   "this_as_id": false
  },
  "0x75cbc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+8 ret 4",
   "name": "WalkLocomotionClass::SetByteField_3",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "JumpjetLocomotionClass::SetByteField_3",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x75cbd0": {
@@ -82959,15 +82964,15 @@
   "this_as_id": false
  },
  "0x765bb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+11 je 0x765bf8",
   "name": "COMClass::createInstance",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "COMClass::createInstance",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x765d50": {
@@ -87031,7 +87036,7 @@
   "this_as_id": false
  },
  "0x7a2730": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -88268,7 +88273,7 @@
   "this_as_id": false
  },
  "0x7b33d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89071,15 +89076,15 @@
   "this_as_id": false
  },
  "0x7bc890": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 test eax, eax",
   "name": "_BlitTrans_G::sub_7BC890",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_7BC890",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7bc950": {
