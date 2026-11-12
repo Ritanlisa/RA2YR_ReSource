@@ -1,0 +1,11 @@
+{
+ "addr": "0x6FB010",
+ "name": "TechnoClass::StepAnimFrame",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6FB010",
+ "bytes_hex": "568bf1578b06ff90840000008b808406000083f8ff74478bbefc0200003bf87d3d8b96fc0100008b860402000083faff740e8b0d84eda8002bca3bc87d062bc185c0751a8b16476a028bce89befc020000ff92240100008bcee8120000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

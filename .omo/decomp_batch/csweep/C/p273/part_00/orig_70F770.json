@@ -1,0 +1,11 @@
+{
+ "addr": "0x70F770",
+ "name": "Mission::GetMissionDelay",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70F770",
+ "bytes_hex": "8b918001000083ec0c8b818801000083faff568db180010000740e8b0d84eda8002bca3bc87d362bc183f80a7e2fa1ace7a80085c07526a130b2a8006a086a048d8818020000e825d0f4ff8b0d84eda800890e8b4c2408894e048946085e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

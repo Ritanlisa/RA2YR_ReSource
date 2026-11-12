@@ -1,0 +1,27 @@
+{
+ "symbol": "?CheckDefeated@HouseClass@@QAEHHD@Z",
+ "sym_key": "HouseClass::CheckDefeated",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "8a4424085684c08bf174218b4424088b54240c0fbe0da00100008b4004894e5889565c8d04408d04808946608bcee8000000008b4e588b466083f9ff74150fbe15a0010000578bfa2bf93bf85f7d082bca03c185c07507c68680000000015ec20800",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?EvaluateTarget@HouseClass@@QAEDXZ",
+   "sym_key": "HouseClass::EvaluateTarget"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

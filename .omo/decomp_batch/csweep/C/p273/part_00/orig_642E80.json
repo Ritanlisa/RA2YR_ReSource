@@ -1,0 +1,11 @@
+{
+ "addr": "0x642E80",
+ "name": "UI_Render_642E80",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x642E80",
+ "bytes_hex": "83ec245355894c240856578beab946000000e83932e6ff8bd88d742414bf0f000000b9c0588200e874220f00668b0066890683c6024f75ea8d4c24146a00518bcb66c744243a0000e80310dfff8b5424105f5e89028b431c8945005d5b83c424c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

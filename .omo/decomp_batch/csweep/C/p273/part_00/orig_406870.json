@@ -1,0 +1,11 @@
+{
+ "addr": "0x406870",
+ "name": "Audio::ApplyFormatFlags",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x406870",
+ "bytes_hex": "a14860810053565785c08bda8bf9be48608100741a8b065053e892243c0083c40885c0740a8b460883c60885c075e685ff74228b4604a86074068b07249feb0af6c40c74078b0780e4f389078b4e048b070bc189078b0e33c085c95f5e0f95c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

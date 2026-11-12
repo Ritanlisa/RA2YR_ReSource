@@ -1,0 +1,8 @@
+{
+ "symbol": "?Save@LayerClass@@QAEHPAH@Z",
+ "sym_key": "LayerClass::Save",
+ "size": 100,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c5785f68bf9750b5f5eb8034000805bc204008b57108b06895424106a008d5424148bce6a045251ff501085c07c2a8b44241033db85c07e1e8b4f048b066a006a048d14995256ff501085c07c0b8b442410433bd87ce233c05f5e5bc20400",
+ "relocs": []
+}

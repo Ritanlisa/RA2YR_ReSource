@@ -1,0 +1,11 @@
+{
+ "addr": "0x638C70",
+ "name": "ScriptAction::IsBuildingTypeMatch",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x638C70",
+ "bytes_hex": "83ec10568bf185f657744f8b06ff90840100008bf883ff0575085fb0015e83c410c38b8eb4020000518d4c240ce80ede0a008b1083ff01895424108a4004740583ff0b75153c0b740983ff0b750c84c075085fb0015e83c410c35f32c05e83c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x551B20",
+ "name": "LayerClass::Save",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x551B20",
+ "bytes_hex": "53568b74240c5785f68bd9750b5f5eb8034000805bc204008b43108b0e6a008d5424146a04525689442420ff511085c07c2a8b44241033ff85c07e1e8b4b048b066a006a048d14b95256ff501085c07c0b8b442410473bf87ce233c05f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

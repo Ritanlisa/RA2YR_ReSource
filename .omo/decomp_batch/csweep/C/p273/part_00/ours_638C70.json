@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsBuildingTypeMatch@ScriptAction@@QAEDXZ",
+ "sym_key": "ScriptAction::IsBuildingTypeMatch",
+ "size": 94,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf185f65775085f32c05e83c408c38b068bceff90840100008bf883ff0574328b8eb4020000518d4c240ce8000000008a400483ff01740583ff0b750d3c0b741183ff0b750484c074085f32c05e83c408c35fb0015e83c408c3",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  }
+ ]
+}

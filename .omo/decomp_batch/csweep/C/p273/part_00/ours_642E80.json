@@ -1,0 +1,33 @@
+{
+ "symbol": "?UI_Render_642E80@@YIHPAXPAH1@Z",
+ "sym_key": "Unnamed::UI_Render_642E80",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "83ec20535556578bdae8000000008be88d742410bf0f00000033c9668b0d00000000e800000000668b0066890683c6024f75e68d4c24106a0051e80000000089038b451c8b5424345f5e5d89025b83c420c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_Str_W@@3GA",
+   "sym_key": "g_Str_W"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?CharToWideString@@YIPADPAE@Z",
+   "sym_key": "CharToWideString"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  }
+ ]
+}

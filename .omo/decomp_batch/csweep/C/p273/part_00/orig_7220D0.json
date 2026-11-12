@@ -1,0 +1,11 @@
+{
+ "addr": "0x7220D0",
+ "name": "TiberiumClass::SaveLoad_Prefix_0",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7220D0",
+ "bytes_hex": "8b44240c538b5c2408578b7c2410505753e83ae2ceff85c07c428b8bd40000008b17566a008d44241c6a045057894c2428ff521033f68b44241885c07e1b8b93c80000008b0f6a006a048d04b25057ff5110463b7424187ce533c05e5f5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

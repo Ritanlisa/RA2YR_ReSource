@@ -1,0 +1,15 @@
+{
+ "symbol": "?Initialize@PKStrawClass@@QAEHHH@Z",
+ "sym_key": "PKStrawClass::Initialize",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "8b442408568bf133d28b4c240889461033c089460489460889461889461c89462089462c3bc889461489463889863c01000089864001000089068d4650894e340f95c2508bcec6460c01895630e8000000008b065ec20800",
+ "relocs": [
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?RelayBlowfishKey@PKStrawClass@@QAEXH@Z",
+   "sym_key": "PKStrawClass::RelayBlowfishKey"
+  }
+ ]
+}

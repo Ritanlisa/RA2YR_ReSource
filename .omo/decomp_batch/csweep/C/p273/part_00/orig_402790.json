@@ -1,0 +1,11 @@
+{
+ "addr": "0x402790",
+ "name": "BindChannelAudioStream",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x402790",
+ "bytes_hex": "56578bfa8bf185ff89be68010000744f8bcfe8795d000085c089866c01000074218b480c898e700100008b4010898674010000898678010000c707000000005f5ec38b86680100008b108996700100008b40048986740100008986780100005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

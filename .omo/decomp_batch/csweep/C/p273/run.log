@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p273\part_00
+=== convert (20 addrs) ===
+[conv] 0x523c90 Factory::FindExitCellByName -> Factory
+[conv] 0x642e80 UI_Render_642E80 -> UI_Render
+[conv] 0x7cec26 __cftoe -> _addr_7C
+[conv] 0x4379a0 sub_4379A0 -> _addr_43
+[conv] 0x6a48a0 SideClass::SaveLoad_Prefix_0 -> SideClass
+[conv] 0x6fb010 TechnoClass::StepAnimFrame -> TechnoClass
+[conv] 0x7220d0 TiberiumClass::SaveLoad_Prefix_0 -> TiberiumClass
+[conv] 0x402790 BindChannelAudioStream -> _addr_40
+[conv] 0x406870 Audio::ApplyFormatFlags -> Audio
+[conv] 0x6ed770 HouseClass::CheckDefeated -> HouseClass
+[conv] 0x70f770 Mission::GetMissionDelay -> Mission
+[conv] 0x633050 PKStrawClass::Initialize -> PKStrawClass
+[conv] 0x44e880 BuildingClass::GetPowerDrain -> BuildingClass
+[conv] 0x46c4f0 BulletTypeClass::GetROF -> BulletTypeClass
+[conv] 0x71ad40 TriggerClass::UnlinkTags -> TriggerClass
+[conv] 0x474ee0 SuperWeaponTypeClass::loadSWProperties -> SuperWeaponTypeClass
+[conv] 0x4a88c0 DisplayClass::SetSize -> DisplayClass
+[conv] 0x638c70 ScriptAction::IsBuildingTypeMatch -> ScriptAction
+[conv] 0x551b20 LayerClass::Save -> LayerClass
+[conv] 0x5d1d80 Session::RemoveTeam -> Session
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Factory                  rc=0
+[era] UI_Render                rc=0
+[era] _addr_7C                 rc=2
+[era] _addr_43                 rc=0
+[era] SideClass                rc=0
+[era] TechnoClass              rc=0
+[era] TiberiumClass            rc=0
+[era] _addr_40                 rc=0
+[era] Audio                    rc=0
+[era] HouseClass               rc=0
+[era] Mission                  rc=0
+[era] PKStrawClass             rc=0
+[era] BuildingClass            rc=2
+[era] BulletTypeClass          rc=0
+[era] TriggerClass             rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] DisplayClass             rc=2
+[era] ScriptAction             rc=0
+[era] LayerClass               rc=0
+[era] Session                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x523c90   MISMATCH         Factory::FindExitCellByName
+[diff] 0x642e80   MISMATCH         UI_Render_642E80
+[diff] 0x4379a0   MISMATCH         sub_4379A0
+[diff] 0x6a48a0   MISMATCH         SideClass::SaveLoad_Prefix_0
+[diff] 0x6fb010   MISMATCH         TechnoClass::StepAnimFrame
+[diff] 0x7220d0   MISMATCH         TiberiumClass::SaveLoad_Prefix_0
+[diff] 0x402790   MISMATCH         BindChannelAudioStream
+[diff] 0x406870   MISMATCH         Audio::ApplyFormatFlags
+[diff] 0x6ed770   MISMATCH         HouseClass::CheckDefeated
+[diff] 0x70f770   MISMATCH         Mission::GetMissionDelay
+[diff] 0x633050   MISMATCH         PKStrawClass::Initialize
+[diff] 0x46c4f0   MISMATCH         BulletTypeClass::GetROF
+[diff] 0x638c70   MISMATCH         ScriptAction::IsBuildingTypeMatch
+[diff] 0x551b20   MISMATCH         LayerClass::Save
+[ledger] 0x523c90 Factory::FindExitCellByName -> NG (attempt 1)
+[ledger] 0x642e80 UI_Render_642E80 -> NG (attempt 1)
+[ledger] 0x7cec26 __cftoe -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4379a0 sub_4379A0 -> NG (attempt 1)
+[ledger] 0x6a48a0 SideClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x6fb010 TechnoClass::StepAnimFrame -> NG (attempt 1)
+[ledger] 0x7220d0 TiberiumClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x402790 BindChannelAudioStream -> NG (attempt 1)
+[ledger] 0x406870 Audio::ApplyFormatFlags -> NG (attempt 1)
+[ledger] 0x6ed770 HouseClass::CheckDefeated -> NG (attempt 1)
+[ledger] 0x70f770 Mission::GetMissionDelay -> NG (attempt 1)
+[ledger] 0x633050 PKStrawClass::Initialize -> NG (attempt 1)
+[ledger] 0x44e880 BuildingClass::GetPowerDrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46c4f0 BulletTypeClass::GetROF -> NG (attempt 1)
+[ledger] 0x71ad40 TriggerClass::UnlinkTags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x474ee0 SuperWeaponTypeClass::loadSWProperties -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a88c0 DisplayClass::SetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x638c70 ScriptAction::IsBuildingTypeMatch -> NG (attempt 1)
+[ledger] 0x551b20 LayerClass::Save -> NG (attempt 1)
+[ledger] 0x5d1d80 Session::RemoveTeam -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "frame_sched": 3,
+  "const_fold": 2,
+  "regalloc": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p273\batch_report.json

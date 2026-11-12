@@ -1,0 +1,69 @@
+{
+ "symbol": "?FindExitCellByName@Factory@@QAEHXZ",
+ "sym_key": "Factory::FindExitCellByName",
+ "size": 150,
+ "link_base": 0,
+ "bytes_hex": "56578bf933c0a0000000008b0f5051e80000000083c40885c075065f83c8ff5ec38b0733d28a15000000005250e80000000083c40885c075065f83c8ff5ec3a10000000033f685c077065f83c8ff5ec38b15000000008b0f518b0283c02450e80000000083c40885c07426a100000000463bf073d58b15000000008b0f518b04b283c02450e80000000083c40885c075da8bc65f5ec3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_Str_none@@3EA",
+   "sym_key": "g_Str_none"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenProgress@@3IA",
+   "sym_key": "g_LoadScreenProgress"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenProgress@@3IA",
+   "sym_key": "g_LoadScreenProgress"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

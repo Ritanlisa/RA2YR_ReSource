@@ -1,0 +1,27 @@
+{
+ "symbol": "?StepAnimFrame@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::StepAnimFrame",
+ "size": 128,
+ "link_base": 0,
+ "bytes_hex": "5153568bf157568b06ff90840000008bb88406000083ffff745fd986fc020000e8000000008bd83bdf7d4e8b8efc0100008b860402000083f9ff74130fbe15a00100008bfa2bf93bf87d082bca03c185c075288b0e43895c240c6a02db44241056d99efc020000ff91240100008bcee8000000005f5e5b59c38bc75f5e5b59c3",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?CalcAnimDelay@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::CalcAnimDelay"
+  }
+ ]
+}

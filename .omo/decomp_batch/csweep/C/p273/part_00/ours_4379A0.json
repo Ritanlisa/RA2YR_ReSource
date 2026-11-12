@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_4379A0@@YI_NHHPAIHPAHHHHH@Z",
+ "sym_key": "Unnamed::sub_4379A0",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "83ec205355568bf18b4c2434578b7c24348bda8d54241c518b075257ff50788be88b0656ff50788b4c244c8b5424486a006a006a006a00518b4c2458528b542458518b4c2458525155578d54243c53528bd08bcee8000000005f5e5d5b83c420c21c00",
+ "relocs": [
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?BlitterRLEBlitSHP@@YI_NHPAX0H000HHHHHHHH@Z",
+   "sym_key": "BlitterRLEBlitSHP"
+  }
+ ]
+}

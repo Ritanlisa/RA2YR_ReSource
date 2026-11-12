@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetROF@BulletTypeClass@@QAGPAIPAH@Z",
+ "sym_key": "BulletTypeClass::GetROF",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "8b442408568d54240c578b088b78048b700852894c2414e8000000003bf07f0d8d44241050e8000000008bf0468b44240c8b5424108b0889118978048970088b005f5ec20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6ED770",
+ "name": "HouseClass::CheckDefeated",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6ED770",
+ "bytes_hex": "8a44240883ec0c84c0568bf174228b4424148b0d84eda8008d56588b4004890a8b4c24088d0440894a048d04808942088bcee8c9e0ffff8b56588b466083faff740e8b0d84eda8002bca3bc87d062bc185c07507c68680000000015e83c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

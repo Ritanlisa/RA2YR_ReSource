@@ -1,0 +1,11 @@
+{
+ "addr": "0x633050",
+ "name": "PKStrawClass::Initialize",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x633050",
+ "bytes_hex": "8b442408568bf1578b7c240c33c933d28946103bf98d46140f95c2894e04894e08c6460c0189480489480889480c89481889501cc70040df7e00894e38898e3c010000898e40010000508bce897e34c706e0fd7e00ff15e4fd7e008bc65f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

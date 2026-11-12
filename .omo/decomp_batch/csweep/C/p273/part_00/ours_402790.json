@@ -1,0 +1,15 @@
+{
+ "symbol": "?BindChannelAudioStream@@YIHPAH0@Z",
+ "sym_key": "Unnamed::BindChannelAudioStream",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "5156578bfa8bf185ff89be6801000074548bcfe80000000085c089866c01000074228b480c898e700100008b4010898674010000898678010000c707000000005f5e59c38b86680100005f8b108996700100008b40048986740100008986780100005e59c38b4424085f5e59c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?GetOffset@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::GetOffset"
+  }
+ ]
+}
