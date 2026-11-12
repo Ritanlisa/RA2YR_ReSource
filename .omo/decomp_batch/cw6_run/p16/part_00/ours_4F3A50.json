@@ -1,0 +1,8 @@
+{
+ "symbol": "?Constructor@GraphicMenuItem@@QAEPAV1@H@Z",
+ "sym_key": "GraphicMenuItem::Constructor",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b442404c641090189410433c088410889410c8901c20400",
+ "relocs": []
+}

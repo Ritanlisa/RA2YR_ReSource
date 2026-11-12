@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F3A50",
+ "name": "GraphicMenuItem::Constructor",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F3A50",
+ "bytes_hex": "8bc18b4c240489480433c9884808c640090189480cc70090a67e00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

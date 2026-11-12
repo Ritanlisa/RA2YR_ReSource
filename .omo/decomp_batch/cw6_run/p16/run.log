@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x4eeb30 _DynamicVectorClass_PAVIsometricTileTypeClass::FindItemIndex_0 -> _DynamicVectorClass_PAVIsometricTileTypeClass
+[conv] 0x4eec80 _VectorClass_PAVParticleTypeClass::GetSize -> _VectorClass_PAVParticleTypeClass
+[conv] 0x4eedc0 _VectorClass_PAVParticleSystemTypeClass::Add -> _VectorClass_PAVParticleSystemTypeClass
+[conv] 0x4eeee0 _VectorClass_PAVParticleSystemTypeClass::GetSize -> _VectorClass_PAVParticleSystemTypeClass
+[conv] 0x4eeff0 _DynamicVectorClass_PAVParticleSystemTypeClass::FindItemIndex_0 -> _DynamicVectorClass_PAVParticleSystemTypeClass
+[conv] 0x4ef020 _VectorClass_PAVSuperWeaponTypeClass::Add -> _VectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4ef140 _VectorClass_PAVSuperWeaponTypeClass::GetSize -> _VectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4ef250 _DynamicVectorClass_PAVSuperWeaponTypeClass::FindItemIndex_1 -> _DynamicVectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4ef280 _VectorClass_PAVAbstractTypeClass::Add -> _VectorClass_PAVAbstractTypeClass
+[conv] 0x4ef4b0 _DynamicVectorClass_PAVAbstractTypeClass::FindItemIndex_0 -> _DynamicVectorClass_PAVAbstractTypeClass
+[conv] 0x4f28e0 _VectorClass_PAVGraphicMenuItem::AddRef -> _VectorClass_PAVGraphicMenuItem
+[conv] 0x4f2a00 _VectorClass_PAVGraphicMenuItem::Read -> _VectorClass_PAVGraphicMenuItem
+[conv] 0x4f3a50 GraphicMenuItem::Constructor -> GraphicMenuItem
+[conv] 0x4f3ff0 _VectorCursor_IV_DynamicVectorClass_I::Release -> _VectorCursor_IV_DynamicVectorClass_I
+[conv] 0x4f4000 _VectorCursor_IV_DynamicVectorClass_I::ddtor -> _VectorCursor_IV_DynamicVectorClass_I
+[conv] 0x4fa2e0 HouseClass::SetThreat_Bounds -> HouseClass
+[conv] 0x4fd120 sub_4FD120 -> _addr_4F
+[conv] 0x501aa0 sub_501AA0 -> _addr_50
+[conv] 0x502d30 HouseClass::FindOwner -> HouseClass
+[conv] 0x5095d0 TeamClass::CountActiveTeamsForType -> TeamClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVIsometricTileTypeClass rc=0
+[era] _VectorClass_PAVParticleTypeClass rc=0
+[era] _VectorClass_PAVParticleSystemTypeClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemTypeClass rc=0
+[era] _VectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _DynamicVectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _VectorClass_PAVAbstractTypeClass rc=0
+[era] _DynamicVectorClass_PAVAbstractTypeClass rc=0
+[era] _VectorClass_PAVGraphicMenuItem rc=0
+[era] GraphicMenuItem          rc=0
+[era] _VectorCursor_IV_DynamicVectorClass_I rc=0
+[era] HouseClass               rc=2
+[era] _addr_4F                 rc=0
+[era] _addr_50                 rc=0
+[era] TeamClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x4eeb30   MISMATCH         _DynamicVectorClass_PAVIsometricTileTypeClass::FindItemIndex_0
+[diff] 0x4eec80   MISMATCH         _VectorClass_PAVParticleTypeClass::GetSize
+[diff] 0x4eedc0   MISMATCH         _VectorClass_PAVParticleSystemTypeClass::Add
+[diff] 0x4eeee0   MISMATCH         _VectorClass_PAVParticleSystemTypeClass::GetSize
+[diff] 0x4eeff0   MISMATCH         _DynamicVectorClass_PAVParticleSystemTypeClass::FindItemIndex_0
+[diff] 0x4ef020   MISMATCH         _VectorClass_PAVSuperWeaponTypeClass::Add
+[diff] 0x4ef140   MISMATCH         _VectorClass_PAVSuperWeaponTypeClass::GetSize
+[diff] 0x4ef250   MISMATCH         _DynamicVectorClass_PAVSuperWeaponTypeClass::FindItemIndex_1
+[diff] 0x4ef280   MISMATCH         _VectorClass_PAVAbstractTypeClass::Add
+[diff] 0x4ef4b0   MISMATCH         _DynamicVectorClass_PAVAbstractTypeClass::FindItemIndex_0
+[diff] 0x4f28e0   MISMATCH         _VectorClass_PAVGraphicMenuItem::AddRef
+[diff] 0x4f2a00   MISMATCH         _VectorClass_PAVGraphicMenuItem::Read
+[diff] 0x4f3a50   MISMATCH         GraphicMenuItem::Constructor
+[diff] 0x4f3ff0   MISMATCH         _VectorCursor_IV_DynamicVectorClass_I::Release
+[diff] 0x4f4000   MISMATCH         _VectorCursor_IV_DynamicVectorClass_I::ddtor
+[diff] 0x502d30   MISMATCH         HouseClass::FindOwner
+[diff] 0x4fd120   MISMATCH         sub_4FD120
+[diff] 0x501aa0   MISMATCH         sub_501AA0
+[ledger] 0x4eeb30 _DynamicVectorClass_PAVIsometricTileTypeClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4eec80 _VectorClass_PAVParticleTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4eedc0 _VectorClass_PAVParticleSystemTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4eeee0 _VectorClass_PAVParticleSystemTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4eeff0 _DynamicVectorClass_PAVParticleSystemTypeClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4ef020 _VectorClass_PAVSuperWeaponTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ef140 _VectorClass_PAVSuperWeaponTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ef250 _DynamicVectorClass_PAVSuperWeaponTypeClass::FindItemIndex_1 -> NG (attempt 2)
+[ledger] 0x4ef280 _VectorClass_PAVAbstractTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ef4b0 _DynamicVectorClass_PAVAbstractTypeClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4f28e0 _VectorClass_PAVGraphicMenuItem::AddRef -> NG (attempt 2)
+[ledger] 0x4f2a00 _VectorClass_PAVGraphicMenuItem::Read -> NG (attempt 2)
+[ledger] 0x4f3a50 GraphicMenuItem::Constructor -> NG (attempt 2)
+[ledger] 0x4f3ff0 _VectorCursor_IV_DynamicVectorClass_I::Release -> NG (attempt 6)
+[ledger] 0x4f4000 _VectorCursor_IV_DynamicVectorClass_I::ddtor -> NG (attempt 6)
+[ledger] 0x4fa2e0 HouseClass::SetThreat_Bounds -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fd120 sub_4FD120 -> NG (attempt 2)
+[ledger] 0x501aa0 sub_501AA0 -> NG (attempt 2)
+[ledger] 0x502d30 HouseClass::FindOwner -> NG (attempt 2)
+[ledger] 0x5095d0 TeamClass::CountActiveTeamsForType -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "branch_polarity": 4,
+  "eval_order": 1,
+  "regalloc": 2,
+  "extern_reloc": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p16\batch_report.json

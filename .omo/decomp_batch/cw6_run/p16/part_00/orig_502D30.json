@@ -1,0 +1,11 @@
+{
+ "addr": "0x502D30",
+ "name": "HouseClass::FindOwner",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x502D30",
+ "bytes_hex": "5356578b3d3802a80033d285ff7e1b8b352c02a8008b068b5834398bb8000000740a4283c6043bd77ceb33c05f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

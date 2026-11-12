@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindOwner@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::FindOwner",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "5356578b3d1800000033f685ff762d8b150c0000008b028b5834398bb8000000741c463bf773158b420483c2048b5834398bb800000075ea5f5e5bc333c05f5e5bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  }
+ ]
+}

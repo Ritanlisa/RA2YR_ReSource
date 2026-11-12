@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindItemIndex_0@_DynamicVectorClass_PAVParticleSystemTypeClass@@QAEHPAH@Z",
+ "sym_key": "_DynamicVectorClass_PAVParticleSystemTypeClass::FindItemIndex_0",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "568b711033c05785f67e238b49048b54240c8b128b393bfa7417403bc67d0f8b790483c1043bfa75f15f5ec2040083c8ff5f5ec20400",
+ "relocs": []
+}

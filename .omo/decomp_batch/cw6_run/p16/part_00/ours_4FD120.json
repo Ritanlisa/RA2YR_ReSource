@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4FD120@@YGPAIPAIH@Z",
+ "sym_key": "Unnamed::sub_4FD120",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b0d0000000089088b15000000008950048b0d00000000894808c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_ControlGroupPool@@3IA",
+   "sym_key": "g_ControlGroupPool"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_ControlGroupConfig@@3IA",
+   "sym_key": "g_ControlGroupConfig"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_ControlGroupLimit@@3IA",
+   "sym_key": "g_ControlGroupLimit"
+  }
+ ]
+}
