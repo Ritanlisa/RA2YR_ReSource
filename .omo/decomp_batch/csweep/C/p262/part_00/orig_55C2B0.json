@@ -1,0 +1,11 @@
+{
+ "addr": "0x55C2B0",
+ "name": "LZOPipe::Constructor",
+ "size": 87,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55C2B0",
+ "bytes_hex": "568bf18b4c240833c08946048946088946108946148946188b44240c894e0c89461c8d1400c7067cd37e0052894620e833cb26008b4e1c8946148b462003c150e822cb260083c40889461866c74624ffff8bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

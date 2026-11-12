@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6960",
+ "name": "ObjectClass::GetCellCoords",
+ "size": 87,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6960",
+ "bytes_hex": "83ec0c568db19c0000008bc68b08894c24048d4c24048b500451b9e8f787008954240c8b400889442410e8a1edf6ff8b168b4e088b4604895424048d542404894c240c52b9e8f787008944240ce87eedf6ff5e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

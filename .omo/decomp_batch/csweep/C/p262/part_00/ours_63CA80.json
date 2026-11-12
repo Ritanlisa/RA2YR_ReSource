@@ -1,0 +1,15 @@
+{
+ "symbol": "?Render_Render_63CA80@@YIPAIPAHPAEH@Z",
+ "sym_key": "Unnamed::Render_Render_63CA80",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf1578d4c2408e8000000008b088b50048b400883f9ff75233bd1751f3bc1751b8b7c241885ff74138b078d4c24085157ff50588b088b50048b4008894608890e8956048bc65f5e83c40cc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  }
+ ]
+}

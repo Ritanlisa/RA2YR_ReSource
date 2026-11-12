@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C9D66",
+ "name": "_atof",
+ "size": 87,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C9D66",
+ "bytes_hex": "558bec83ec18568b7508833d9cc78700017e0f0fb6066a0850e88d7500005959eb0f0fb6068b0d90c587008a044183e00885c0740346ebd26a006a0056e8f877000059508d45e85650e86a770000dd401083c4145ec9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

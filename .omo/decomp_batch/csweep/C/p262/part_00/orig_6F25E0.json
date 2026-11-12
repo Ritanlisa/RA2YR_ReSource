@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F25E0",
+ "name": "Team_Helper_6F25E0",
+ "size": 87,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F25E0",
+ "bytes_hex": "568bf18b4e088b46103bc17c288a460d84c0750485c975178b461485c07e108b1603c16a00508bceff520884c0750632c05ec204008b46108b56048d4801894e108b4c24088b318934c28b49045e894cc204b001c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?System_Init_766EE0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::System_Init_766EE0",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "568bf133c08b4e088a46103bc17c308b460cf6c4ff750a85c9740632c05ec2040033c08a461485c07e0f8b1603c16a005056ff520884c0750632c05ec2040033c08a46108d480185c98b4c24080f95c28856108b51048b4e04528d0cc1e800000000b0015ec20400",
+ "relocs": [
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

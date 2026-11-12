@@ -1,0 +1,15 @@
+{
+ "symbol": "?DispatchEvent@ShpButtonClass@@QAEHHHHHH@Z",
+ "sym_key": "ShpButtonClass::DispatchEvent",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "8b41208b1500000000568b74240c23c63bca742ff6c401752a85c074208b5424108b710c2bd68b71143bd673108b5424148b71102bd68b71183bd6720633c05ec214008b7424188b11568b74240c5650ff527c5ec21400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E88@@3IA",
+   "sym_key": "DataGlobal_8B3E88"
+  }
+ ]
+}

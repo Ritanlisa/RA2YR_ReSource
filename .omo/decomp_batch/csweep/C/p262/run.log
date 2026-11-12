@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p262\part_00
+=== convert (20 addrs) ===
+[conv] 0x7718a0 Anim_Voices_WorldDominationTour::AddRef -> Anim_Voices_WorldDominationTour
+[conv] 0x4e4170 GetComboBoxSelected -> _addr_4E
+[conv] 0x4c66c0 EventClass::AddEvent -> EventClass
+[conv] 0x4e0c40 PairVector::PushBack -> PairVector
+[conv] 0x4e13f0 ShpButtonClass::DispatchEvent -> ShpButtonClass
+[conv] 0x4f9af0 Object::IsAlliedWithObjectSimpleHouse -> Object
+[conv] 0x6f25e0 ObjectClass::Team_Helper_6F25E0 -> ObjectClass
+[conv] 0x55c2b0 LZOPipe::Constructor -> LZOPipe
+[conv] 0x5f6960 IUnknown::GetCellCoords -> IUnknown
+[conv] 0x632ac0 ObjectClass::sub_632AC0 -> ObjectClass
+[conv] 0x7539d0 sub_7539D0 -> _addr_75
+[conv] 0x753a50 sub_753A50 -> _addr_75
+[conv] 0x4f9610 HouseClass::GiveTiberium_Storage -> HouseClass
+[conv] 0x755ad0 sub_755AD0 -> _addr_75
+[conv] 0x63ca80 Render_Render_63CA80 -> Render_Render
+[conv] 0x766ee0 ObjectClass::System_Init_766EE0 -> ObjectClass
+[conv] 0x7c9d66 _atof -> _addr_7C
+[conv] 0x41bb30 AircraftClass::OverrideMission_SyncLog -> AircraftClass
+[conv] 0x6a5030 SidebarClass::InitSubsystems -> SidebarClass
+[conv] 0x7241a0 Tooltip::Enable -> Tooltip
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Anim_Voices_WorldDominationTour rc=0
+[era] _addr_4E                 rc=0
+[era] EventClass               rc=2
+[era] PairVector               rc=0
+[era] ShpButtonClass           rc=0
+[era] Object                   rc=2
+[era] ObjectClass              rc=0
+[era] LZOPipe                  rc=0
+[era] IUnknown                 rc=0
+[era] _addr_75                 rc=0
+[era] HouseClass               rc=2
+[era] Render_Render            rc=0
+[era] _addr_7C                 rc=0
+[era] AircraftClass            rc=2
+[era] SidebarClass             rc=0
+[era] Tooltip                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x7718a0   MISMATCH         Anim_Voices_WorldDominationTour::AddRef
+[diff] 0x4e4170   MISMATCH         GetComboBoxSelected
+[diff] 0x4e0c40   MISMATCH         PairVector::PushBack
+[diff] 0x4e13f0   MISMATCH         ShpButtonClass::DispatchEvent
+[diff] 0x6f25e0   MISMATCH         ObjectClass::Team_Helper_6F25E0
+[diff] 0x632ac0   MISMATCH         ObjectClass::sub_632AC0
+[diff] 0x766ee0   MISMATCH         ObjectClass::System_Init_766EE0
+[diff] 0x55c2b0   MISMATCH         LZOPipe::Constructor
+[diff] 0x5f6960   MISMATCH         IUnknown::GetCellCoords
+[diff] 0x7539d0   MISMATCH         sub_7539D0
+[diff] 0x753a50   MISMATCH         sub_753A50
+[diff] 0x755ad0   MISMATCH         sub_755AD0
+[diff] 0x63ca80   MISMATCH         Render_Render_63CA80
+[diff] 0x7c9d66   MISMATCH         _atof
+[diff] 0x6a5030   MISMATCH         SidebarClass::InitSubsystems
+[ledger] 0x7718a0 Anim_Voices_WorldDominationTour::AddRef -> NG (attempt 1)
+[ledger] 0x4e4170 GetComboBoxSelected -> NG (attempt 1)
+[ledger] 0x4c66c0 EventClass::AddEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e0c40 PairVector::PushBack -> NG (attempt 1)
+[ledger] 0x4e13f0 ShpButtonClass::DispatchEvent -> NG (attempt 1)
+[ledger] 0x4f9af0 Object::IsAlliedWithObjectSimpleHouse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f25e0 ObjectClass::Team_Helper_6F25E0 -> NG (attempt 1)
+[ledger] 0x55c2b0 LZOPipe::Constructor -> NG (attempt 1)
+[ledger] 0x5f6960 IUnknown::GetCellCoords -> NG (attempt 1)
+[ledger] 0x632ac0 ObjectClass::sub_632AC0 -> NG (attempt 1)
+[ledger] 0x7539d0 sub_7539D0 -> NG (attempt 1)
+[ledger] 0x753a50 sub_753A50 -> NG (attempt 1)
+[ledger] 0x4f9610 HouseClass::GiveTiberium_Storage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x755ad0 sub_755AD0 -> NG (attempt 1)
+[ledger] 0x63ca80 Render_Render_63CA80 -> NG (attempt 1)
+[ledger] 0x766ee0 ObjectClass::System_Init_766EE0 -> NG (attempt 1)
+[ledger] 0x7c9d66 _atof -> NG (attempt 1)
+[ledger] 0x41bb30 AircraftClass::OverrideMission_SyncLog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a5030 SidebarClass::InitSubsystems -> NG (attempt 1)
+[ledger] 0x7241a0 Tooltip::Enable -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "branch_order": 1,
+  "eval_order": 1,
+  "codegen_shape": 9,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p262\batch_report.json

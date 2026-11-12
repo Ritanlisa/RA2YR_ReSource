@@ -1,0 +1,87 @@
+{
+ "symbol": "?sub_7539D0@@YAHXZ",
+ "sym_key": "Unnamed::sub_7539D0",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "8b0d00000000b800010000a300000000a30000000033c06800000100a000000000c705000000000000000050c7050000000000000000c7050000000001000000e8000000006800000000c7050000000000000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D93C@@3IA",
+   "sym_key": "DataGlobal_B2D93C"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D92C@@3IA",
+   "sym_key": "DataGlobal_B2D92C"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D930@@3IA",
+   "sym_key": "DataGlobal_B2D930"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_VoxelRenderBuffer@@3EA",
+   "sym_key": "g_VoxelRenderBuffer"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D934@@3IA",
+   "sym_key": "DataGlobal_B2D934"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D928@@3IA",
+   "sym_key": "DataGlobal_B2D928"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D938@@3IA",
+   "sym_key": "DataGlobal_B2D938"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?sub_753A30@@YAHPBX0@Z",
+   "sym_key": "sub_753A30"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D928@@3IA",
+   "sym_key": "DataGlobal_B2D928"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

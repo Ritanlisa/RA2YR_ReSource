@@ -1,0 +1,21 @@
+{
+ "symbol": "?AddRef@Anim_Voices_WorldDominationTour@@QAEDD@Z",
+ "sym_key": "Anim_Voices_WorldDominationTour::AddRef",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b442404568bf2240081e6ff0000000bc60fbef284d289710c75438b711c8b86d003000085c07e17b101e8000000008b8ec00300008d86c003000050ff510ce8000000008b5424088986ac0300008996b0030000c786b4030000000000005ec20400",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?StopThemeClass@@YIXD@Z",
+   "sym_key": "StopThemeClass"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

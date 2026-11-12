@@ -1,0 +1,21 @@
+{
+ "symbol": "?InitSubsystems@SidebarClass@@QAEHXZ",
+ "sym_key": "SidebarClass::InitSubsystems",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "535556578bf1e80000000033dbc686a653000001889e15550000889e145500008dbe44150000bd040000008bcfe80000000081c7940f00004d75f08b065356899e9c530000899ea0530000ff90d80000005f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?updateDrain@PowerClass@@QAEPAV1@XZ",
+   "sym_key": "PowerClass::updateDrain"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?ClearProductionQueue@HouseClass@@QAEPAIXZ",
+   "sym_key": "HouseClass::ClearProductionQueue"
+  }
+ ]
+}

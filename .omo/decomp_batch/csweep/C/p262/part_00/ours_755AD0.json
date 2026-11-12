@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_755AD0@@YIDPAIPAH@Z",
+ "sym_key": "Unnamed::sub_755AD0",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "51db02568b318974240483ec08da64240c83ec08dd5c2408db4104da6204dd1c24e800000000dc250000000083c408dc0d00000000dd1c24e8000000008bc883c40833ceb82000000081e18000000033ce5ec1e90741d1e92bc159c3",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Math__CalcAngle@@YANNN@Z",
+   "sym_key": "Math__CalcAngle"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2820@@3NA",
+   "sym_key": "DataGlobal_7E2820"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "__real@8@c00ca2f83d7b47678000",
+   "sym_key": "_real@8@c00ca2f83d7b47678000"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

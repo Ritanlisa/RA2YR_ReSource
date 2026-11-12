@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetCellCoords@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::GetCellCoords",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "51568bf18d4c24048b869c00000051b9f801000089442408e8000000008b969c0000008d44240450b9f801000089542408e8000000005e59c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  }
+ ]
+}

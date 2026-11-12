@@ -1,0 +1,21 @@
+{
+ "symbol": "?Constructor@LZOPipe@@QAEPAV1@HH@Z",
+ "sym_key": "LZOPipe::Constructor",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf133c989460c8b44240c894e04894e08894e10894e14894e18890e8d0c0089461c51894620e8000000008b4e1c8b562003d189461452e80000000083c4088946188b0666c74624ffff5ec20800",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

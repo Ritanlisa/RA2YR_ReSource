@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E4170",
+ "name": "GetComboBoxSelected",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E4170",
+ "bytes_hex": "8b442404538b1d90147e00565783f8ff8bf28bf9750d6a006a0068470100005657ffd36a005068500100005657ffd383f8fd5f5e5b7c0583f8097e178b0d3cb2a80085c974088b01ff5028c20400b8feffffffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
