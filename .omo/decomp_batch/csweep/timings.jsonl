@@ -337,3 +337,4 @@
 {"layer": "C", "part": 336, "n": 20, "seconds": 62.3, "ok": true, "verdicts": {"MISMATCH": 13, "COMPILE_FAIL": 7}}
 {"layer": "C", "part": 337, "n": 20, "seconds": 64.4, "ok": true, "verdicts": {"MISMATCH": 15, "COMPILE_FAIL": 5}}
 {"layer": "C", "part": 338, "n": 20, "seconds": 67.3, "ok": true, "verdicts": {"COMPILE_FAIL": 9, "MISMATCH": 11}}
+{"layer": "C", "part": 339, "n": 20, "seconds": 65.6, "ok": true, "verdicts": {"COMPILE_FAIL": 11, "MISMATCH": 9}}

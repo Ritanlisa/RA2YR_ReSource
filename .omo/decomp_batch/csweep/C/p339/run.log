@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p339\part_00
+=== convert (20 addrs) ===
+[conv] 0x6ce5b0 SuperWeaponTypeClass::SuperWeaponTypeClass -> SuperWeaponTypeClass
+[conv] 0x69d9e0 SHA1::Compute -> SHA1
+[conv] 0x753f90 globalHelper_053F90 -> _addr_75
+[conv] 0x7b20e0 AudioQueue::AllocBuffer -> AudioQueue
+[conv] 0x7b5640 ObjectClass::sub_7B5640 -> ObjectClass
+[conv] 0x56bec0 BuildingClass::SearchPlacement -> BuildingClass
+[conv] 0x594190 sub_594190 -> _addr_59
+[conv] 0x42aa90 globalHelper_02AA90 -> _addr_42
+[conv] 0x5b4430 LookupFileInfoCache -> _addr_5B
+[conv] 0x420af0 AlphaShapeClass::Constructor -> AlphaShapeClass
+[conv] 0x58e5d0 TileSystem::AnalyzeTileConnectivity -> TileSystem
+[conv] 0x59b940 Map_Helper_59B940 -> Map_Helper
+[conv] 0x5fe250 OverlayTypeClass::OverlayTypeClass -> OverlayTypeClass
+[conv] 0x5a6c10 PlaceMapSeedClassBuildings -> _addr_5A
+[conv] 0x4ac4f0 TechnoClass::GetHouseData -> TechnoClass
+[conv] 0x4834a0 Cell::IsBuildable -> Cell
+[conv] 0x508df0 HouseClass::CanTogglePower -> HouseClass
+[conv] 0x586e50 HouseClass::ClampToUsableCell -> HouseClass
+[conv] 0x7d2c36 __openfile -> _addr_7D
+[conv] 0x65fb80 ObjectClass::Team_Load_65FB80 -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SuperWeaponTypeClass     rc=2
+[era] SHA1                     rc=0
+[era] _addr_75                 rc=0
+[era] AudioQueue               rc=0
+[era] ObjectClass              rc=0
+[era] BuildingClass            rc=2
+[era] _addr_59                 rc=2
+[era] _addr_42                 rc=0
+[era] _addr_5B                 rc=2
+[era] AlphaShapeClass          rc=0
+[era] TileSystem               rc=2
+[era] Map_Helper               rc=2
+[era] OverlayTypeClass         rc=2
+[era] _addr_5A                 rc=2
+[era] TechnoClass              rc=2
+[era] Cell                     rc=2
+[era] HouseClass               rc=2
+[era] _addr_7D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x69d9e0   MISMATCH         SHA1::Compute
+[diff] 0x753f90   MISMATCH         globalHelper_053F90
+[diff] 0x7b20e0   MISMATCH         AudioQueue::AllocBuffer
+[diff] 0x7b5640   MISMATCH         ObjectClass::sub_7B5640
+[diff] 0x65fb80   MISMATCH         ObjectClass::Team_Load_65FB80
+[diff] 0x42aa90   MISMATCH         globalHelper_02AA90
+[diff] 0x420af0   MISMATCH         AlphaShapeClass::Constructor
+[diff] 0x586e50   MISMATCH         HouseClass::ClampToUsableCell
+[diff] 0x7d2c36   MISMATCH         __openfile
+[ledger] 0x6ce5b0 SuperWeaponTypeClass::SuperWeaponTypeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d9e0 SHA1::Compute -> NG (attempt 1)
+[ledger] 0x753f90 globalHelper_053F90 -> NG (attempt 1)
+[ledger] 0x7b20e0 AudioQueue::AllocBuffer -> NG (attempt 1)
+[ledger] 0x7b5640 ObjectClass::sub_7B5640 -> NG (attempt 1)
+[ledger] 0x56bec0 BuildingClass::SearchPlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x594190 sub_594190 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42aa90 globalHelper_02AA90 -> NG (attempt 1)
+[ledger] 0x5b4430 LookupFileInfoCache -> COMPILE_FAIL (attempt 1)
+[ledger] 0x420af0 AlphaShapeClass::Constructor -> NG (attempt 1)
+[ledger] 0x58e5d0 TileSystem::AnalyzeTileConnectivity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59b940 Map_Helper_59B940 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fe250 OverlayTypeClass::OverlayTypeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a6c10 PlaceMapSeedClassBuildings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ac4f0 TechnoClass::GetHouseData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4834a0 Cell::IsBuildable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x508df0 HouseClass::CanTogglePower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x586e50 HouseClass::ClampToUsableCell -> NG (attempt 1)
+[ledger] 0x7d2c36 __openfile -> NG (attempt 1)
+[ledger] 0x65fb80 ObjectClass::Team_Load_65FB80 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "regalloc": 6,
+  "frame_sched": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p339\batch_report.json

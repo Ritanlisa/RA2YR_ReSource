@@ -1,0 +1,39 @@
+{
+ "symbol": "?ClampToUsableCell@HouseClass@@QAEPAIPAHPAF@Z",
+ "sym_key": "HouseClass::ClampToUsableCell",
+ "size": 408,
+ "link_base": 0,
+ "bytes_hex": "8b4424085355560fbf308bd9570fbf78028b8b000100008b830c0100008b93f400000003c1d1e08bee2bc22bef3be87d248d04098bea2be88bc72bc63bc57c358d4409022bc22bc603c7992bc2d1f82bf803f0eb208bab0c010000b8010000002bc52bc1d1e02bc703c203c6992bc2d1f82bf003f80fbfc70fbfcec1e00903c1668974241885c066897c241a7c193d000004007d120fbe15340300008b048285c074048bc8eb0e8b442418b958160000a37c1600008a911c0100000fbe811b01000084d2741a8b8b080100008b93f40000008d4c4a048d143703c83bd17d01408b8b080100008babf40000008d14378d6c4d0003e83bd57e4f8bab1401000003e98b8bf40000008d4c690203c83bd17e6c8d56ff8d47ff33d633c781e2ff00000025ff0000008d4c24186a0133f233f8518bcb668974242066897c2422e80000000084c074cbeb358d56018d470133d633c781e2ff00000025ff0000008d4c24186a0133f233f8518bcb668974242066897c2422e80000000084c074cb8b44241466897c241a66897424188b5424185f5e5d89105bc20800",
+ "relocs": [
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 373,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  }
+ ]
+}
