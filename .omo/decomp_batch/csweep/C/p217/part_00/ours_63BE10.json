@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsIdleWithNoCaptives@BuildingClass@@QAE_NXZ",
+ "sym_key": "BuildingClass::IsIdleWithNoCaptives",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff908401000083f80b752585f6741af646140474148b86a405000085c075118b86b402000085c07507b8010000005ec333c05ec3",
+ "relocs": []
+}

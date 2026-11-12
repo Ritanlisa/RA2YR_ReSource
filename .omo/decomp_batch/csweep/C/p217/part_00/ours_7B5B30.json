@@ -1,0 +1,15 @@
+{
+ "symbol": "?ToLower@String@@QAEHXZ",
+ "sym_key": "String::ToLower",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "5153558be95633f6578b550085d274438bfa83c9ff33c033dbf2aef7d1493bf173298a143280fa417c1980fa5a7f140fbec250e8000000008b4d008bd883c404881c318b55004685d275c55f5e8bc35d5b59c38b4424105f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "_tolower",
+   "sym_key": "tolower"
+  }
+ ]
+}

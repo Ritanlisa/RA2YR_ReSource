@@ -1,0 +1,27 @@
+{
+ "symbol": "?updateTargeting@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::updateTargeting",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "568bf1578bbe50030000c686d2060000008bcfe80000000084c0751b8b86c40600008b88cc030000518bcf8b90c803000052e8000000008bcee8000000005f5ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?CheckNone@Flag@@QAE_NXZ",
+   "sym_key": "Flag::CheckNone"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?StartDouble@Timer@@QAEDN@Z",
+   "sym_key": "Timer::StartDouble"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?ApproachEvaluate@UnitClass@@QAEHXZ",
+   "sym_key": "UnitClass::ApproachEvaluate"
+  }
+ ]
+}

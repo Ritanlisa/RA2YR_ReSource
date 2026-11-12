@@ -1,0 +1,11 @@
+{
+ "addr": "0x63E900",
+ "name": "VectorClass::EraseAt",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63E900",
+ "bytes_hex": "568bf18b4c24088b06518bceff501083f8ff74278b4e103bc17d20493bc1894e107d128b4e04408b1481895481fc8b4e103bc17ceeb0015ec2040032c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

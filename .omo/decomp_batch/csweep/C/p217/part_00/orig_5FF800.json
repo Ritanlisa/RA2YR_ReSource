@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FF800",
+ "name": "WinMainSetup_Setup_5FF800",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FF800",
+ "bytes_hex": "a13818ac0085c0741350e82e931c0083c404c7053818ac000000000056be9816ac008b0e85c974068b016a01ff10c7060000000083c60481fec017ac007ce35ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

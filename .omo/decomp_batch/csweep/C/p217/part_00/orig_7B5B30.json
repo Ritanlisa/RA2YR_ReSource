@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B5B30",
+ "name": "String::ToLower",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B5B30",
+ "bytes_hex": "5356578bd933f68b1385d274318bfa83c9ff33c0f2aef7d1493bf173218a143280fa417c1680fa5a7f110fbec250e8915401008b0b83c40488043146ebc95f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

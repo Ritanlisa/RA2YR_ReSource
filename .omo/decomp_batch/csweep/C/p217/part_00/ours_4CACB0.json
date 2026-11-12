@@ -1,0 +1,21 @@
+{
+ "symbol": "?SinCos@Math@@QAENN@Z",
+ "sym_key": "Math::SinCos",
+ "size": 100,
+ "link_base": 0,
+ "bytes_hex": "d90500000000dc4c240483ec08dd1c24e8000000008bc88b44240c33c883c40881e1ff00000033c18ac8992bc280e101d1f825ff1f0080894424047d1025ffff0000480d00e0ffff408944240484c9740c3dff1f00007d054089442404db442404c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8223B0@@3MA",
+   "sym_key": "DataGlobal_8223B0"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

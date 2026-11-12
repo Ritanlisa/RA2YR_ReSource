@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@ControlClass@@QAEPAV1@HHHHHHD@Z",
+ "sym_key": "ControlClass::Construct",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "8b44241c8b542414568bf18b4c241c508b442418518b4c2418528b5424185051528bcee8000000008b442408c7462800000000894624c7060000000033c05ec21c00",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Construct@GadgetClass@@QAEPAIHHHHHD@Z",
+   "sym_key": "GadgetClass::Construct"
+  }
+ ]
+}

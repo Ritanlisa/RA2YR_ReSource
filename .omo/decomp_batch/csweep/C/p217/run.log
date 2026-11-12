@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p217\part_00
+=== convert (20 addrs) ===
+[conv] 0x63e900 DynamicVectorClass::EraseAt -> DynamicVectorClass
+[conv] 0x63ebd0 PlanningNodeClass::RemoveFromArray -> PlanningNodeClass
+[conv] 0x6b0cc0 BuildingClass::InitBuildLimit -> BuildingClass
+[conv] 0x6b0d60 BuildingClass::RefreshOccupierCache -> BuildingClass
+[conv] 0x6ce2d0 DynamicVectorClass::RemoveAt -> DynamicVectorClass
+[conv] 0x6eddc0 ObjectClass::sub_6EDDC0 -> ObjectClass
+[conv] 0x475820 INIClass::SetStringByIndex -> INIClass
+[conv] 0x5ff800 ObjectClass::WinMainSetup_Setup_5FF800 -> ObjectClass
+[conv] 0x7c1d40 Audio_Render_7C1D40 -> Audio_Render
+[conv] 0x740b10 TechnoClass::updateTargeting -> TechnoClass
+[conv] 0x4b4d00 DriveLocomotionClass::ProcessMove -> DriveLocomotionClass
+[conv] 0x4b66f0 DropPodLocomotionClass::ProcessMove -> DropPodLocomotionClass
+[conv] 0x6a42b0 ShipLocomotionClass::ProcessMove -> ShipLocomotionClass
+[conv] 0x48e520 ControlClass::Construct -> ControlClass
+[conv] 0x4cacb0 Math::SinCos -> Math
+[conv] 0x6d4db0 HouseClass::SetOwnerName -> HouseClass
+[conv] 0x7b5b30 String::ToLower -> String
+[conv] 0x7b5c50 ObjectClass::sub_7B5C50 -> ObjectClass
+[conv] 0x63be10 BuildingClass::IsIdleWithNoCaptives -> BuildingClass
+[conv] 0x407100 SetupSampleAudioMixer -> _addr_40
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DynamicVectorClass       rc=0
+[era] PlanningNodeClass        rc=0
+[era] BuildingClass            rc=0
+[era] ObjectClass              rc=0
+[era] INIClass                 rc=0
+[era] Audio_Render             rc=2
+[era] TechnoClass              rc=0
+[era] DriveLocomotionClass     rc=2
+[era] DropPodLocomotionClass   rc=2
+[era] ShipLocomotionClass      rc=2
+[era] ControlClass             rc=0
+[era] Math                     rc=0
+[era] HouseClass               rc=0
+[era] String                   rc=0
+[era] _addr_40                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x63e900   MISMATCH         DynamicVectorClass::EraseAt
+[diff] 0x6ce2d0   MISMATCH         DynamicVectorClass::RemoveAt
+[diff] 0x63ebd0   MISMATCH         PlanningNodeClass::RemoveFromArray
+[diff] 0x6b0cc0   MISMATCH         BuildingClass::InitBuildLimit
+[diff] 0x6b0d60   MISMATCH         BuildingClass::RefreshOccupierCache
+[diff] 0x63be10   MISMATCH         BuildingClass::IsIdleWithNoCaptives
+[diff] 0x6eddc0   MISMATCH         ObjectClass::sub_6EDDC0
+[diff] 0x5ff800   MISMATCH         ObjectClass::WinMainSetup_Setup_5FF800
+[diff] 0x7b5c50   MISMATCH         ObjectClass::sub_7B5C50
+[diff] 0x475820   MISMATCH         INIClass::SetStringByIndex
+[diff] 0x740b10   MISMATCH         TechnoClass::updateTargeting
+[diff] 0x48e520   MISMATCH         ControlClass::Construct
+[diff] 0x4cacb0   MISMATCH         Math::SinCos
+[diff] 0x6d4db0   MISMATCH         HouseClass::SetOwnerName
+[diff] 0x7b5b30   MISMATCH         String::ToLower
+[ledger] 0x63e900 DynamicVectorClass::EraseAt -> NG (attempt 1)
+[ledger] 0x63ebd0 PlanningNodeClass::RemoveFromArray -> NG (attempt 1)
+[ledger] 0x6b0cc0 BuildingClass::InitBuildLimit -> NG (attempt 1)
+[ledger] 0x6b0d60 BuildingClass::RefreshOccupierCache -> NG (attempt 1)
+[ledger] 0x6ce2d0 DynamicVectorClass::RemoveAt -> NG (attempt 1)
+[ledger] 0x6eddc0 ObjectClass::sub_6EDDC0 -> NG (attempt 1)
+[ledger] 0x475820 INIClass::SetStringByIndex -> NG (attempt 1)
+[ledger] 0x5ff800 ObjectClass::WinMainSetup_Setup_5FF800 -> NG (attempt 1)
+[ledger] 0x7c1d40 Audio_Render_7C1D40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x740b10 TechnoClass::updateTargeting -> NG (attempt 1)
+[ledger] 0x4b4d00 DriveLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b66f0 DropPodLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a42b0 ShipLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48e520 ControlClass::Construct -> NG (attempt 1)
+[ledger] 0x4cacb0 Math::SinCos -> NG (attempt 1)
+[ledger] 0x6d4db0 HouseClass::SetOwnerName -> NG (attempt 1)
+[ledger] 0x7b5b30 String::ToLower -> NG (attempt 1)
+[ledger] 0x7b5c50 ObjectClass::sub_7B5C50 -> NG (attempt 1)
+[ledger] 0x63be10 BuildingClass::IsIdleWithNoCaptives -> NG (attempt 1)
+[ledger] 0x407100 SetupSampleAudioMixer -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "branch_order": 3,
+  "branch_polarity": 3,
+  "const_fold": 2,
+  "extern_reloc": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p217\batch_report.json

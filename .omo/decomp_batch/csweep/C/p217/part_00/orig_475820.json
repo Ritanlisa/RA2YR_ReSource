@@ -1,0 +1,11 @@
+{
+ "addr": "0x475820",
+ "name": "INIClass::SetStringByIndex",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x475820",
+ "bytes_hex": "8b44240c8b15a0f3ab003bc272178b4424088b54240468747481005052e81e2e0b00c20c008b1594f3ab008b04828b542408508b4424085250e8022e0b00c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

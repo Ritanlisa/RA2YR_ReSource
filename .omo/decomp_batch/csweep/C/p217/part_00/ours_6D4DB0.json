@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetOwnerName@HouseClass@@QAEPAGPAHH@Z",
+ "sym_key": "HouseClass::SetOwnerName",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "8b4424045685c08bf1741b508d462450e8000000008b4c241483c408898ea40000005ec208008b44240c66c7462400008986a40000005ec20800",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

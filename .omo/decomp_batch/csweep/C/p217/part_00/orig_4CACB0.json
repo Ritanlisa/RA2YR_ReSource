@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CACB0",
+ "name": "Math::SinCos",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CACB0",
+ "bytes_hex": "dd442404d80db0238200e841b22f008ac8992bc280e101d1f825ff1f0080790e480d00e0ffff407905050020000084c974083dff1f00007d0140d9048584f08400c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

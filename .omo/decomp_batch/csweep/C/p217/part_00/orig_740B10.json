@@ -1,0 +1,11 @@
+{
+ "addr": "0x740B10",
+ "name": "TechnoClass::updateTargeting",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x740B10",
+ "bytes_hex": "568bf1578dbe50030000c686d2060000008bcfe8a846d6ff84c0751b8b86c40600008b88cc030000518bcf8b90c803000052e8f946d6ff8bcee83237d9ff5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

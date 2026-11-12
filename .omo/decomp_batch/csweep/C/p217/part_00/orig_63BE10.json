@@ -1,0 +1,11 @@
+{
+ "addr": "0x63BE10",
+ "name": "BuildingClass::IsIdleWithNoCaptives",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63BE10",
+ "bytes_hex": "51568bf18b06ff908401000083f80b752c85f674238a4e14c0e90280e101884c240774148b86a405000085c0750f8b86b402000085c07505b0015e59c332c05e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
