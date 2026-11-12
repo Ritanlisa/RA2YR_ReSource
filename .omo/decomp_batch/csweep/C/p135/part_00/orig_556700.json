@@ -1,0 +1,11 @@
+{
+ "addr": "0x556700",
+ "name": "LinkedList_flat::Append",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x556700",
+ "bytes_hex": "568bf18b06ff50248b4c24088b11ff521c8970048946088b068bcec7460400000000ff50185ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8A8E",
+ "name": "??1type_info_UAE_XZ",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8A8E",
+ "bytes_hex": "568bf16a1bc70694957f00e8574f00008b76045985f6740756e83c090000596a1be8a24f0000595ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

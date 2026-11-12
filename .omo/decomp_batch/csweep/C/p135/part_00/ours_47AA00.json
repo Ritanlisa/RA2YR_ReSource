@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_47AA00@CDFileClass@@QAEPAV1@PAPAD@Z",
+ "sym_key": "CDFileClass::sub_47AA00",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b068b4c2408c6465400c70000000000e800000000508bcee8000000008b065ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@BufferIOFileClass@@QAEPAV1@XZ",
+   "sym_key": "BufferIOFileClass::Constructor"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?OpenWithCDSearch@FileClass@@QAEHPAX@Z",
+   "sym_key": "FileClass::OpenWithCDSearch"
+  }
+ ]
+}

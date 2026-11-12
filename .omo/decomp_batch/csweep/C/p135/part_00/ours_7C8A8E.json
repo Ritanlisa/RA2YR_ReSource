@@ -1,0 +1,33 @@
+{
+ "symbol": "?_1type_info_UAE_XZ@type_info@@QAEXXZ",
+ "sym_key": "type_info::_1type_info_UAE_XZ",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "568bf16a1bc70600000000e8000000008b760483c40485f6740956e80000000083c4046a1be80000000083c4045ec3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?vt_type_info@@3PAXA",
+   "sym_key": "vt_type_info"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}

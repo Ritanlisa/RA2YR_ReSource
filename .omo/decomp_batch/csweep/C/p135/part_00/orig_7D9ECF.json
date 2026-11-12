@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D9ECF",
+ "name": "_ungetc",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D9ECF",
+ "bytes_hex": "56ff74240ce82015ffffff742410ff742410e812000000ff7424188bf0e85a15ffff83c4108bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

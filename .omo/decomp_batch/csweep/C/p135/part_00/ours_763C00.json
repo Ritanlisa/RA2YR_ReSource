@@ -1,0 +1,27 @@
+{
+ "symbol": "?PowerDrainUpdate@WaypointPathClass@@QAEHH@Z",
+ "sym_key": "WaypointPathClass::PowerDrainUpdate",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b462450e8000000008b4e3851e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

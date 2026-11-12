@@ -1,0 +1,106 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p135\part_00
+=== convert (20 addrs) ===
+[conv] 0x543a10 AbstractClass::COMStub_54 -> AbstractClass
+[conv] 0x47aa00 CDFileClass::sub_47AA00 -> CDFileClass
+[conv] 0x5b4080 Tree::Destructor -> Tree
+[conv] 0x763c00 WaypointPathClass::PowerDrainUpdate -> WaypointPathClass
+[conv] 0x7c8a8e type_info::_1type_info_UAE_XZ -> type_info
+[conv] 0x7d9ecf _ungetc -> _addr_7D
+[conv] 0x4a8930 DisplayClass::ddtor -> DisplayClass
+[conv] 0x556700 LinkClass::Append -> LinkClass
+[conv] 0x40b640 _DynamicVectorClass_PAVBombClass::ClearBuffer -> _DynamicVectorClass_PAVBombClass
+[conv] 0x40bda0 sub_40BDA0 -> _addr_40
+[conv] 0x40be50 _DynamicVectorClass_PBVCommandClass::Destroy -> _DynamicVectorClass_PBVCommandClass
+[conv] 0x40c230 _DynamicVectorClass_PAVLightConvertClass::Destroy -> _DynamicVectorClass_PAVLightConvertClass
+[conv] 0x40c820 _DynamicVectorClass_PAVIsometricTileClass::Destroy -> _DynamicVectorClass_PAVIsometricTileClass
+[conv] 0x40cc70 DynamicVector::TryFreeAndClear -> DynamicVector
+[conv] 0x40d540 _DynamicVectorClass_PAVMixFileClass::initCursor -> _DynamicVectorClass_PAVMixFileClass
+[conv] 0x40e7f0 _DynamicVectorClass_PAVScriptClass::Destroy -> _DynamicVectorClass_PAVScriptClass
+[conv] 0x40eec0 _DynamicVectorClass_PAVVoxelAnimClass::Destroy -> _DynamicVectorClass_PAVVoxelAnimClass
+[conv] 0x40f5e0 _DynamicVectorClass_PAVWarheadTypeClass::Destroy -> _DynamicVectorClass_PAVWarheadTypeClass
+[conv] 0x40fbb0 _DynamicVectorClass_PAVWeaponTypeClass::Destroy -> _DynamicVectorClass_PAVWeaponTypeClass
+[conv] 0x420370 _DynamicVectorClass_PAVAlphaLightingRemapClass::ClearBuffer -> _DynamicVectorClass_PAVAlphaLightingRemapClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClass            rc=0
+[era] CDFileClass              rc=0
+[era] Tree                     rc=2
+[era] WaypointPathClass        rc=0
+[era] type_info                rc=0
+[era] _addr_7D                 rc=0
+[era] DisplayClass             rc=0
+[era] LinkClass                rc=0
+[era] _DynamicVectorClass_PAVBombClass rc=0
+[era] _addr_40                 rc=0
+[era] _DynamicVectorClass_PBVCommandClass rc=0
+[era] _DynamicVectorClass_PAVLightConvertClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileClass rc=0
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PAVMixFileClass rc=0
+[era] _DynamicVectorClass_PAVScriptClass rc=0
+[era] _DynamicVectorClass_PAVVoxelAnimClass rc=0
+[era] _DynamicVectorClass_PAVWarheadTypeClass rc=0
+[era] _DynamicVectorClass_PAVWeaponTypeClass rc=0
+[era] _DynamicVectorClass_PAVAlphaLightingRemapClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x543a10   MISMATCH         AbstractClass::COMStub_54
+[diff] 0x47aa00   MISMATCH         CDFileClass::sub_47AA00
+[diff] 0x763c00   MISMATCH         WaypointPathClass::PowerDrainUpdate
+[diff] 0x7c8a8e   MISMATCH         type_info::_1type_info_UAE_XZ
+[diff] 0x7d9ecf   MISMATCH         _ungetc
+[diff] 0x4a8930   MISMATCH         DisplayClass::ddtor
+[diff] 0x556700   MISMATCH         LinkClass::Append
+[diff] 0x40b640   MISMATCH         _DynamicVectorClass_PAVBombClass::ClearBuffer
+[diff] 0x40bda0   MISMATCH         sub_40BDA0
+[diff] 0x40be50   MISMATCH         _DynamicVectorClass_PBVCommandClass::Destroy
+[diff] 0x40c230   MISMATCH         _DynamicVectorClass_PAVLightConvertClass::Destroy
+[diff] 0x40c820   MISMATCH         _DynamicVectorClass_PAVIsometricTileClass::Destroy
+[diff] 0x40cc70   MISMATCH         DynamicVector::TryFreeAndClear
+[diff] 0x40d540   MISMATCH         _DynamicVectorClass_PAVMixFileClass::initCursor
+[diff] 0x40e7f0   MISMATCH         _DynamicVectorClass_PAVScriptClass::Destroy
+[diff] 0x40eec0   MISMATCH         _DynamicVectorClass_PAVVoxelAnimClass::Destroy
+[diff] 0x40f5e0   MISMATCH         _DynamicVectorClass_PAVWarheadTypeClass::Destroy
+[diff] 0x40fbb0   MISMATCH         _DynamicVectorClass_PAVWeaponTypeClass::Destroy
+[diff] 0x420370   MISMATCH         _DynamicVectorClass_PAVAlphaLightingRemapClass::ClearBuffer
+[ledger] 0x543a10 AbstractClass::COMStub_54 -> NG (attempt 1)
+[ledger] 0x47aa00 CDFileClass::sub_47AA00 -> NG (attempt 1)
+[ledger] 0x5b4080 Tree::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x763c00 WaypointPathClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x7c8a8e type_info::_1type_info_UAE_XZ -> NG (attempt 1)
+[ledger] 0x7d9ecf _ungetc -> NG (attempt 1)
+[ledger] 0x4a8930 DisplayClass::ddtor -> NG (attempt 1)
+[ledger] 0x556700 LinkClass::Append -> NG (attempt 1)
+[ledger] 0x40b640 _DynamicVectorClass_PAVBombClass::ClearBuffer -> NG (attempt 1)
+[ledger] 0x40bda0 sub_40BDA0 -> NG (attempt 1)
+[ledger] 0x40be50 _DynamicVectorClass_PBVCommandClass::Destroy -> NG (attempt 1)
+[ledger] 0x40c230 _DynamicVectorClass_PAVLightConvertClass::Destroy -> NG (attempt 1)
+[ledger] 0x40c820 _DynamicVectorClass_PAVIsometricTileClass::Destroy -> NG (attempt 1)
+[ledger] 0x40cc70 DynamicVector::TryFreeAndClear -> NG (attempt 1)
+[ledger] 0x40d540 _DynamicVectorClass_PAVMixFileClass::initCursor -> NG (attempt 1)
+[ledger] 0x40e7f0 _DynamicVectorClass_PAVScriptClass::Destroy -> NG (attempt 1)
+[ledger] 0x40eec0 _DynamicVectorClass_PAVVoxelAnimClass::Destroy -> NG (attempt 1)
+[ledger] 0x40f5e0 _DynamicVectorClass_PAVWarheadTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x40fbb0 _DynamicVectorClass_PAVWeaponTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x420370 _DynamicVectorClass_PAVAlphaLightingRemapClass::ClearBuffer -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "eval_order": 1,
+  "const_fold": 3,
+  "regalloc": 11,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p135\batch_report.json

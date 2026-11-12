@@ -1,0 +1,39 @@
+{
+ "symbol": "?ddtor@DisplayClass@@QAEDXZ",
+ "sym_key": "DisplayClass::ddtor",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b4c2404e800000000a00000000084c07515b900000000e8000000008b06680000000056ff50305e59c3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Get@VectorCursor_uint_DynamicVectorClass_uint____13@@QAEXXZ",
+   "sym_key": "VectorCursor_uint_DynamicVectorClass_uint____13::Get"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_ArmageddonMode@@3_NA",
+   "sym_key": "g_ArmageddonMode"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A06F8@@3IA",
+   "sym_key": "DataGlobal_8A06F8"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A06F8@@3IA",
+   "sym_key": "DataGlobal_8A06F8"
+  }
+ ]
+}

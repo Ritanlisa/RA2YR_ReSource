@@ -1,0 +1,11 @@
+{
+ "addr": "0x763C00",
+ "name": "WaypointPathClass::PowerDrainUpdate",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x763C00",
+ "bytes_hex": "56578b7c240c8bf157e802c8caff8b46248bcf50e837e1d3ff8b4e38518bcfe82ce1d3ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

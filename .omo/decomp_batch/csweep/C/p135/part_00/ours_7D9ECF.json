@@ -1,0 +1,27 @@
+{
+ "symbol": "?_ungetc@@YAHHPAH@Z",
+ "sym_key": "Unnamed::_ungetc",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "568b74240c5756e8000000008b4424105650e800000000568bf8e80000000083c4108bc75f5ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?_lock_file@@YAHPAXZZ",
+   "sym_key": "_lock_file"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?ungetc_0@@YAHHPAXZZ",
+   "sym_key": "ungetc_0"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?_unlock_file@@YAHPAXZZ",
+   "sym_key": "_unlock_file"
+  }
+ ]
+}
