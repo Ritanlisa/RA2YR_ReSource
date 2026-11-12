@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B4F40",
+ "name": "DropListClass::Draw",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B4F40",
+ "bytes_hex": "568bf1578b7c240c8b46508d4e5057ff5010578bcee8a6170a005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

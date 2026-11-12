@@ -1,0 +1,15 @@
+{
+ "symbol": "?HitTest@DropListClass@@QAEPAIH@Z",
+ "sym_key": "DropListClass::HitTest",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e50578b7c240c8d46505750ff51145756e80000000083c4085f5ec20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?LinkedList__Attach@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Attach"
+  }
+ ]
+}

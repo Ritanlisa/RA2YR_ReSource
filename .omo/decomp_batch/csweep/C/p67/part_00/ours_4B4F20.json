@@ -1,0 +1,15 @@
+{
+ "symbol": "?vt_method_4B4F20@DropListClass@@QAEHH@Z",
+ "sym_key": "DropListClass::vt_method_4B4F20",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e50578b7c240c8d46505750ff510c5756e80000000083c4085f5ec20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?LinkedList__InsertAfter@@YAHPAXH@Z",
+   "sym_key": "LinkedList__InsertAfter"
+  }
+ ]
+}

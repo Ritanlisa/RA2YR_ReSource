@@ -1,0 +1,27 @@
+{
+ "symbol": "?SD_vt53@BuildingLightClass@@QAEDXZ",
+ "sym_key": "BuildingLightClass::SD_vt53",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000084c075025ec356b900000000e800000000b0015ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Undeploy@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Undeploy"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_GameConfigManager@@3IA",
+   "sym_key": "g_GameConfigManager"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?RemoveItem@VectorClass@@QAEHH@Z",
+   "sym_key": "VectorClass::RemoveItem"
+  }
+ ]
+}

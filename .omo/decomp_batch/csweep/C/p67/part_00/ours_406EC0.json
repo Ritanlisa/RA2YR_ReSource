@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_406EC0@@YIHPAX@Z",
+ "sym_key": "Unnamed::sub_406EC0",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008bcee8000000008b0d0000000085c9743881c1f8000000e80000000085c08bf07427f680a400000004740d83780c0175078bc8e80000000085f6740d8bcee80000000085c08bf075d95ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?sub_751080@@YAHXZ",
+   "sym_key": "sub_751080"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?UpdateCountdowners@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::UpdateCountdowners"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?ActivatePlay@AudioChannel@@QAEHXZ",
+   "sym_key": "AudioChannel::ActivatePlay"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  }
+ ]
+}

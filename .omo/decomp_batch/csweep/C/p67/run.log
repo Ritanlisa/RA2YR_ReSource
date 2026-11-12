@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p67\part_00
+=== convert (20 addrs) ===
+[conv] 0x6d04d0 ObjectClass::SidebarUpdateAll -> ObjectClass
+[conv] 0x406ec0 sub_406EC0 -> _addr_40
+[conv] 0x437030 BuildingLightClass::SD_vt53 -> BuildingLightClass
+[conv] 0x7d2f22 ObjectClass::_4exception_QAEAAV0_ABV0__Z -> ObjectClass
+[conv] 0x431f50 BufferIOFileClass::Write -> BufferIOFileClass
+[conv] 0x4b4f20 DropListClass::vt_method_4B4F20 -> DropListClass
+[conv] 0x4b4f40 DropListClass::Draw -> DropListClass
+[conv] 0x4b4f60 DropListClass::HitTest -> DropListClass
+[conv] 0x401980 CCFileClass::Destru_vt08 -> CCFileClass
+[conv] 0x65cb30 RawFileClass::Close -> RawFileClass
+[conv] 0x40d900 sub_40D900 -> _addr_40
+[conv] 0x40d920 sub_40D920 -> _addr_40
+[conv] 0x4115a0 XSurface::ScalarDtor -> XSurface
+[conv] 0x4115d0 Surface::getObjectValue -> Surface
+[conv] 0x427270 Animate::ScalarDtor -> Animate
+[conv] 0x471500 CampaignScore::Constructor_CampaignScoreClass -> CampaignScore
+[conv] 0x471520 CampaignScore::Constructor_CampaignEndScoreClass -> CampaignScore
+[conv] 0x499ca0 _BlitTransXlat_G::_Gfacet_locale_std__UAEPAXI_Z_4 -> _BlitTransXlat_G
+[conv] 0x499cc0 Blitter::getTileIndex -> Blitter
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_40                 rc=0
+[era] BuildingLightClass       rc=0
+[era] BufferIOFileClass        rc=2
+[era] DropListClass            rc=0
+[era] CCFileClass              rc=2
+[era] RawFileClass             rc=2
+[era] XSurface                 rc=2
+[era] Surface                  rc=2
+[era] Animate                  rc=2
+[era] CampaignScore            rc=2
+[era] _BlitTransXlat_G         rc=0
+[era] Blitter                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x7d2f22   MISMATCH         ObjectClass::_4exception_QAEAAV0_ABV0__Z
+[diff] 0x406ec0   MISMATCH         sub_406EC0
+[diff] 0x40d900   MISMATCH         sub_40D900
+[diff] 0x40d920   MISMATCH         sub_40D920
+[diff] 0x437030   MISMATCH         BuildingLightClass::SD_vt53
+[diff] 0x4b4f20   MISMATCH         DropListClass::vt_method_4B4F20
+[diff] 0x4b4f40   MISMATCH         DropListClass::Draw
+[diff] 0x4b4f60   MISMATCH         DropListClass::HitTest
+[diff] 0x499ca0   MISMATCH         _BlitTransXlat_G::_Gfacet_locale_std__UAEPAXI_Z_4
+[ledger] 0x6d04d0 ObjectClass::SidebarUpdateAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x406ec0 sub_406EC0 -> NG (attempt 1)
+[ledger] 0x437030 BuildingLightClass::SD_vt53 -> NG (attempt 1)
+[ledger] 0x7d2f22 ObjectClass::_4exception_QAEAAV0_ABV0__Z -> NG (attempt 1)
+[ledger] 0x431f50 BufferIOFileClass::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b4f20 DropListClass::vt_method_4B4F20 -> NG (attempt 1)
+[ledger] 0x4b4f40 DropListClass::Draw -> NG (attempt 1)
+[ledger] 0x4b4f60 DropListClass::HitTest -> NG (attempt 1)
+[ledger] 0x401980 CCFileClass::Destru_vt08 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65cb30 RawFileClass::Close -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40d900 sub_40D900 -> NG (attempt 1)
+[ledger] 0x40d920 sub_40D920 -> NG (attempt 1)
+[ledger] 0x4115a0 XSurface::ScalarDtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4115d0 Surface::getObjectValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x427270 Animate::ScalarDtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x471500 CampaignScore::Constructor_CampaignScoreClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x471520 CampaignScore::Constructor_CampaignEndScoreClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x472140 0x472140 -> PENDING (attempt 1)
+[ledger] 0x499ca0 _BlitTransXlat_G::_Gfacet_locale_std__UAEPAXI_Z_4 -> NG (attempt 1)
+[ledger] 0x499cc0 Blitter::getTileIndex -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 9,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "branch_order": 1,
+  "eval_order": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p67\batch_report.json

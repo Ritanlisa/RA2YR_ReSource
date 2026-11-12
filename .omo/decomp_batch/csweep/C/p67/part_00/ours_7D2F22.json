@@ -1,0 +1,21 @@
+{
+ "symbol": "?_4exception_QAEAAV0_ABV0__Z@ObjectClass@@QAEHPAX@Z",
+ "sym_key": "ObjectClass::_4exception_QAEAAV0_ABV0__Z",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf13bf7740fe8000000005756e80000000083c4088bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Destructor@Exception@@QAEXXZ",
+   "sym_key": "Exception::Destructor"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__0exception_QAE_ABV0__Z@@YAPAVexception@@PAX0@Z",
+   "sym_key": "__0exception_QAE_ABV0__Z"
+  }
+ ]
+}
