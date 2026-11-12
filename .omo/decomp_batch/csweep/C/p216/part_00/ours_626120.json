@@ -1,0 +1,15 @@
+{
+ "symbol": "?Render_Helper@ObjectClass@@QAEEEH@Z",
+ "sym_key": "ObjectClass::Render_Helper",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "538b5c24085556578b7c24188be933f68bc625ff0000807907480d00ffffff408d0c4703c18bcd5053e80000000025ff0000004681fe000100007cd45f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Lerp@Color@@QAEEEPAX@Z",
+   "sym_key": "Color::Lerp"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddRef@ScoreAnimClass@@QAEHXZ",
+ "sym_key": "ScoreAnimClass::AddRef",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b460c83f8ff742c8b7e14e8000000002b460c3bc77c11c7461400000000c7460cffffffff5f5ec32bf8c7460cffffffff897e145f5ec3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

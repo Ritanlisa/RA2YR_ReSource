@@ -1,0 +1,15 @@
+{
+ "symbol": "?Release@Anim_Voices_WorldDominationTour@@QAEHXZ",
+ "sym_key": "Anim_Voices_WorldDominationTour::Release",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b461083f8ff742c8b7e18e8000000002b46103bc77c11c7461800000000c74610ffffffff5f5ec32bf8c74610ffffffff897e185f5ec3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

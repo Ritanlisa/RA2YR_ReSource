@@ -1,0 +1,11 @@
+{
+ "addr": "0x771900",
+ "name": "Territory_WorldDominationTour_8::Release",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x771900",
+ "bytes_hex": "568bf18b461083f8ff7434578b7e1883f8ff74208d4e14e82473f5ff2b46103bc77d0f2bf8c74610ffffffff897e185f5ec333ff897e18c74610ffffffff5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

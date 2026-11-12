@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p216\part_00
+=== convert (20 addrs) ===
+[conv] 0x522bc0 InfantryClass::CanEnterBuilding -> InfantryClass
+[conv] 0x4381d0 GameClass::processFrame -> GameClass
+[conv] 0x438300 GameClass::updateUI -> GameClass
+[conv] 0x5c2640 MPCooperative::Clone -> MPCooperative
+[conv] 0x41caa0 TypeClass::FindByName -> TypeClass
+[conv] 0x427cb0 AnimTypeClass::FindIndex -> AnimTypeClass
+[conv] 0x45e7b0 BuildingTypeClass::FindIndexByName -> BuildingTypeClass
+[conv] 0x4b48d0 DriveLocomotionClass::MoveToChecked -> DriveLocomotionClass
+[conv] 0x5cead0 MSAnim::GetRemaining -> MSAnim
+[conv] 0x626120 ObjectClass::Render_Helper -> ObjectClass
+[conv] 0x690f70 ScoreAnimClass::AddRef -> ScoreAnimClass
+[conv] 0x6a3f00 ShipLocomotionClass::MoveToChecked_0 -> ShipLocomotionClass
+[conv] 0x6b5440 ObjectClass::Object_Read_6B5440 -> ObjectClass
+[conv] 0x71dd80 Terrain::LookupByName -> Terrain
+[conv] 0x747370 BuildingTypeClass::FindIndex -> BuildingTypeClass
+[conv] 0x771900 Anim_Voices_WorldDominationTour::Release -> Anim_Voices_WorldDominationTour
+[conv] 0x7c0490 ObjectClass::Audio_Process_7C0490 -> ObjectClass
+[conv] 0x7748b0 WinModemClass::GetClassIdentifier -> WinModemClass
+[conv] 0x63dfd0 FactoryClass::RemoveItemAt -> FactoryClass
+[conv] 0x63e5d0 ObjectClass::Team_Destroy -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=0
+[era] GameClass                rc=2
+[era] MPCooperative            rc=0
+[era] TypeClass                rc=0
+[era] AnimTypeClass            rc=0
+[era] BuildingTypeClass        rc=0
+[era] DriveLocomotionClass     rc=0
+[era] MSAnim                   rc=0
+[era] ObjectClass              rc=0
+[era] ScoreAnimClass           rc=0
+[era] ShipLocomotionClass      rc=0
+[era] Terrain                  rc=0
+[era] Anim_Voices_WorldDominationTour rc=0
+[era] WinModemClass            rc=0
+[era] FactoryClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x522bc0   MISMATCH         InfantryClass::CanEnterBuilding
+[diff] 0x5c2640   MISMATCH         MPCooperative::Clone
+[diff] 0x41caa0   MISMATCH         TypeClass::FindByName
+[diff] 0x427cb0   MISMATCH         AnimTypeClass::FindIndex
+[diff] 0x45e7b0   MISMATCH         BuildingTypeClass::FindIndexByName
+[diff] 0x747370   MISMATCH         BuildingTypeClass::FindIndex
+[diff] 0x4b48d0   MISMATCH         DriveLocomotionClass::MoveToChecked
+[diff] 0x5cead0   MISMATCH         MSAnim::GetRemaining
+[diff] 0x626120   MISMATCH         ObjectClass::Render_Helper
+[diff] 0x6b5440   MISMATCH         ObjectClass::Object_Read_6B5440
+[diff] 0x7c0490   MISMATCH         ObjectClass::Audio_Process_7C0490
+[diff] 0x63e5d0   MISMATCH         ObjectClass::Team_Destroy
+[diff] 0x690f70   MISMATCH         ScoreAnimClass::AddRef
+[diff] 0x6a3f00   MISMATCH         ShipLocomotionClass::MoveToChecked_0
+[diff] 0x71dd80   MISMATCH         Terrain::LookupByName
+[diff] 0x771900   MISMATCH         Anim_Voices_WorldDominationTour::Release
+[diff] 0x7748b0   MISMATCH         WinModemClass::GetClassIdentifier
+[ledger] 0x522bc0 InfantryClass::CanEnterBuilding -> NG (attempt 1)
+[ledger] 0x4381d0 GameClass::processFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x438300 GameClass::updateUI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c2640 MPCooperative::Clone -> NG (attempt 1)
+[ledger] 0x41caa0 TypeClass::FindByName -> NG (attempt 1)
+[ledger] 0x427cb0 AnimTypeClass::FindIndex -> NG (attempt 1)
+[ledger] 0x45e7b0 BuildingTypeClass::FindIndexByName -> NG (attempt 1)
+[ledger] 0x4b48d0 DriveLocomotionClass::MoveToChecked -> NG (attempt 1)
+[ledger] 0x5cead0 MSAnim::GetRemaining -> NG (attempt 1)
+[ledger] 0x626120 ObjectClass::Render_Helper -> NG (attempt 1)
+[ledger] 0x690f70 ScoreAnimClass::AddRef -> NG (attempt 1)
+[ledger] 0x6a3f00 ShipLocomotionClass::MoveToChecked_0 -> NG (attempt 1)
+[ledger] 0x6b5440 ObjectClass::Object_Read_6B5440 -> NG (attempt 1)
+[ledger] 0x71dd80 Terrain::LookupByName -> NG (attempt 1)
+[ledger] 0x747370 BuildingTypeClass::FindIndex -> NG (attempt 1)
+[ledger] 0x771900 Anim_Voices_WorldDominationTour::Release -> NG (attempt 1)
+[ledger] 0x7c0490 ObjectClass::Audio_Process_7C0490 -> NG (attempt 1)
+[ledger] 0x7748b0 WinModemClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x63dfd0 FactoryClass::RemoveItemAt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e5d0 ObjectClass::Team_Destroy -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "branch_polarity": 1,
+  "branch_order": 7,
+  "regalloc": 3,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p216\batch_report.json

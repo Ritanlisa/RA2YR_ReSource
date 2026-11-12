@@ -1,0 +1,11 @@
+{
+ "addr": "0x690F70",
+ "name": "ScoreAnimClass::AddRef",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x690F70",
+ "bytes_hex": "568bf18b460c83f8ff7434578b7e1483f8ff74208d4e10e8b47c03002b460c3bc77d0f2bf8c7460cffffffff897e145f5ec333ff897e14c7460cffffffff5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

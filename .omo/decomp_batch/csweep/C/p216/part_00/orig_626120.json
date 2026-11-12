@@ -1,0 +1,11 @@
+{
+ "addr": "0x626120",
+ "name": "Gap2Recv_6120::Render_Helper",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x626120",
+ "bytes_hex": "538b5c240c558b6c240c565733f68bf98bc625ff0000807907480d00ffffff408d0c4303c18bcf5055e872b103004683c70381fe000100007cd65f5e5d5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

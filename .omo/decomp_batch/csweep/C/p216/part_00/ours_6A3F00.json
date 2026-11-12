@@ -1,0 +1,33 @@
+{
+ "symbol": "?MoveToChecked_0@ShipLocomotionClass@@QAGDH@Z",
+ "sym_key": "ShipLocomotionClass::MoveToChecked_0",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "8b442404568b35000000008b503c8d483c3bd675208b50408b35000000003bd675138b50448b35040000003bd675062c105ec208008b54240c52518d48fce8000000005ec20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_OverlayTypeConfig@@3IA",
+   "sym_key": "g_OverlayTypeConfig"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077FC@@3_JA",
+   "sym_key": "DataGlobal_B077FC"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077FC@@3_JA",
+   "sym_key": "DataGlobal_B077FC"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?MoveTo@WalkLocomotion@@QAEDPAXH@Z",
+   "sym_key": "WalkLocomotion::MoveTo"
+  }
+ ]
+}

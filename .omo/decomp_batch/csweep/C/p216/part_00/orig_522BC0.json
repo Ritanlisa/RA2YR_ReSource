@@ -1,0 +1,11 @@
+{
+ "addr": "0x522BC0",
+ "name": "InfantryClass::CanEnterBuilding",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x522BC0",
+ "bytes_hex": "568bf18b06ff908401000083f805740f8b168bceff928401000083f80b75198b86c406000085c0741383f809740e83f80a740983f820740432c05ec3b0015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

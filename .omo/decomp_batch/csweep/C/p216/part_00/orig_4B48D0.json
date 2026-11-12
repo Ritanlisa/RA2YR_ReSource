@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B48D0",
+ "name": "JumpjetLocomotionClass::MoveToChecked",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B48D0",
+ "bytes_hex": "8b4c2404568b3590078a008b513c8d413c3bd6751a8b50048b3594078a003bd6750d8b50088b3598078a003bd6740e8b54240c83c1fc5250e8c3c1ffff5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?FindIndex@AnimTypeClass@@QAEHXZ",
+ "sym_key": "AnimTypeClass::FindIndex",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "56578bf985ff75065f83c8ff5ec3a1a003000033f685c07f065f83c8ff5ec3a194030000578b0883c12451e80000000083c40885c07424a1a0030000463bf07dd88b1594030000578b04b283c02450e80000000083c40885c075dc8bc65f5ec3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

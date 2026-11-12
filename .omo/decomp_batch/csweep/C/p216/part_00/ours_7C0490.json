@@ -1,0 +1,15 @@
+{
+ "symbol": "?Audio_Process_7C0490@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Audio_Process_7C0490",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b868800000085c07e22ba200000008bcee80000000083f8ff740d8b8688000000473bf87d06ebe2c64614015f83c8ff5ec3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?FillAudioStreamBuffer@@YIHHH@Z",
+   "sym_key": "FillAudioStreamBuffer"
+  }
+ ]
+}

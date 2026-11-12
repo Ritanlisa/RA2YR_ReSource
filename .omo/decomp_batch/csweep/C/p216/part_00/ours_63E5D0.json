@@ -1,0 +1,8 @@
+{
+ "symbol": "?Team_Destroy@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::Team_Destroy",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4c24088b065156ff501083f8ff750632c05ec2040033c98a4e103bc17c0632c05ec204004985c90f95c1884e1081e1ff0000003bc17d158b16408d0c828b14828951fc33c98a4e103bc17cebb0015ec20400",
+ "relocs": []
+}

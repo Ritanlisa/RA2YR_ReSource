@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C2640",
+ "name": "MPCooperative::Clone",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C2640",
+ "bytes_hex": "53558b6c240c8bd985ed742f56578b3d84daa80033f685ff7e158bcee86f11f2ff50558bcbe846fdffff463bf77ceb6a01558bcbe857fbffff5f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

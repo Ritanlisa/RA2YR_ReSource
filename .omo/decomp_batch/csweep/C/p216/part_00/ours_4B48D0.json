@@ -1,0 +1,33 @@
+{
+ "symbol": "?MoveToChecked@DriveLocomotionClass@@QAGDH@Z",
+ "sym_key": "DriveLocomotionClass::MoveToChecked",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "8b442404568b35000000008b503c8d483c3bd675208b50408b35000000003bd675138b50448b35040000003bd675062c105ec208008b54240c52518d48fce8000000005ec20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_DDraw_ClipRect@@3IA",
+   "sym_key": "g_DDraw_ClipRect"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?MoveTo@JumpjetLocomotion@@QAEDPAXH@Z",
+   "sym_key": "JumpjetLocomotion::MoveTo"
+  }
+ ]
+}

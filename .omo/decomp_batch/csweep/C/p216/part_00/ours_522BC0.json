@@ -1,0 +1,8 @@
+{
+ "symbol": "?CanEnterBuilding@InfantryClass@@QAE_NXZ",
+ "sym_key": "InfantryClass::CanEnterBuilding",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff908401000083f805740e8b0e56ff918401000083f80b75198b86c406000085c0741383f809740e83f80a740983f820740432c05ec3b0015ec3",
+ "relocs": []
+}

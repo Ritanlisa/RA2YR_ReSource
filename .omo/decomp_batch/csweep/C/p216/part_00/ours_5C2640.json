@@ -1,0 +1,33 @@
+{
+ "symbol": "?Clone@MPCooperative@@QAEXPAX@Z",
+ "sym_key": "MPCooperative::Clone",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c8bd985ed743156578b3d0000000033f685ff7e1756e80000000083c4048bcb5055e800000000463bf77ce96a01558bcbe8000000005f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?Game_PlayerCount@@3IA",
+   "sym_key": "Game_PlayerCount"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?GetResourceID2CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID2CSF"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?ReadConfig@MovieClass@@QAEPAXPAXH@Z",
+   "sym_key": "MovieClass::ReadConfig"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?Setup@CampaignCoop@@QAEPAXPAXH@Z",
+   "sym_key": "CampaignCoop::Setup"
+  }
+ ]
+}

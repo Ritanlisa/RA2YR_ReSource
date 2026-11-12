@@ -1,0 +1,11 @@
+{
+ "addr": "0x747370",
+ "name": "BuildingTypeClass::FindIndex",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x747370",
+ "bytes_hex": "56578bf985ff742ea1f03ca80033f685c07e23a1e43ca800578b0cb083c12451e88b19080083c40885c07410a1f03ca800463bf07cdd5f83c8ff5ec38bc65f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

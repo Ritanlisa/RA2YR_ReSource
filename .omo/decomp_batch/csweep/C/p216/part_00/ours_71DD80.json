@@ -1,0 +1,45 @@
+{
+ "symbol": "?LookupByName@Terrain@@QAEHXZ",
+ "sym_key": "Terrain::LookupByName",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "56578bf985ff75065f83c8ff5ec3a10000000033f685c077065f83c8ff5ec3a1000000008b178b0883c1245152e80000000083c40885c07425a100000000463bf073d6a1000000008b178b0cb083c1245152e80000000083c40885c075db8bc65f5ec3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_RulesClassInitState@@3IA",
+   "sym_key": "g_RulesClassInitState"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E31C@@3IA",
+   "sym_key": "DataGlobal_A8E31C"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_RulesClassInitState@@3IA",
+   "sym_key": "g_RulesClassInitState"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E31C@@3IA",
+   "sym_key": "DataGlobal_A8E31C"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}
