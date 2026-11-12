@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor_GenericNode@MixFileClass@@QAEPAID@Z",
+ "sym_key": "MixFileClass::Constructor_GenericNode",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "568bf133d23bf2891674208b4e043bca74198b46083bc274128948048b46048b4e08894808895608895604f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

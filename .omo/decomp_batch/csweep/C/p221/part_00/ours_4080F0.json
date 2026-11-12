@@ -1,0 +1,27 @@
+{
+ "symbol": "?ProcessCallback@ThemeManager@@QAEDXZ",
+ "sym_key": "ThemeManager::ProcessCallback",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556578bf1e8000000008b7c24148b56148bef33db33c90beb8b5a200bc88a463003cb894c24108b4a2413e9a80174448b46148b48148b50183bca74438bcee8000000003bfd8bd8773472063b5c2410732ce8000000008a4e3025ff0000009980e3000bfa0bc3f6c10175c45f5e5d5b83c408c35f5e5d8ac25b83c408c38ac35f5e5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  }
+ ]
+}

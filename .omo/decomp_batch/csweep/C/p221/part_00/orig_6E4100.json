@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E4100",
+ "name": "TActionClass::executePsychicDominatorAction",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E4100",
+ "bytes_hex": "568bb19000000083fe047d3285f67c2e8bc6c1e0052bc68d0cc68d148e8d0c952c0d8800e89779fcff84c0741156b9e8f78700e85834fcffb0015ec2100032c05ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

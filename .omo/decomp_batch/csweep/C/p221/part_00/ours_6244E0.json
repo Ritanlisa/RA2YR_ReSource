@@ -1,0 +1,21 @@
+{
+ "symbol": "?DeleteAndZero@Options@@QAEHXZ",
+ "sym_key": "Options::DeleteAndZero",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "5153578bf933db833f00770a8b442408891f5f5b59c3555633ed8b770803f58d4e08e8000000008d4e04e8000000008b074383c5183bd872e15ec707000000005d5f5b59c3",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5170B0",
+ "name": "HoverLocomotionClass::BeginMove",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5170B0",
+ "bytes_hex": "8b442408568b742408575056e8ff3904008bf885ff7c2685f674228d4e30c706c0ae7e00c74604f4ad7e00e8e020fbffc706c8ad7e00c74604fcac7e008bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

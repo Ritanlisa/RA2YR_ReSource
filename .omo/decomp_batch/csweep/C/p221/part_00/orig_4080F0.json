@@ -1,0 +1,11 @@
+{
+ "addr": "0x4080F0",
+ "name": "ThemeManager::ProcessCallback",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4080F0",
+ "bytes_hex": "5556578bf1e8b61200008be88b46148bfa036820137824f6460c0174238b46148b48148b50183bca7416e8911200003bd7770d72043bc57307e8524f0800ebd75f5e5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

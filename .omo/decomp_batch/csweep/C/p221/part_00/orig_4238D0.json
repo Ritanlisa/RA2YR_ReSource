@@ -1,0 +1,11 @@
+{
+ "addr": "0x4238D0",
+ "name": "AnimClass::CheckMirrorFlags",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4238D0",
+ "bytes_hex": "518a0d90a18900b00184c8752f8ad168203942000ad0b8ff7f0000668944240466894424068b442404881590a18900a360a18900e8815e3a0083c404b860a1890059c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

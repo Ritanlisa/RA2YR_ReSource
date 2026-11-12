@@ -1,0 +1,21 @@
+{
+ "symbol": "?BeginMove@HoverLocomotionClass@@QAGHPAH@Z",
+ "sym_key": "HoverLocomotionClass::BeginMove",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b74240857508b0e51e8000000008bf885ff7c2685f674228b4e30c70600000000c7460400000000e800000000c70600000000c74604000000008bc75f5ec20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?SwizzleManager__SaveLoad@@YGHPAXPAH@Z",
+   "sym_key": "SwizzleManager__SaveLoad"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Init@FrameSnapshot@@QAEPAV1@XZ",
+   "sym_key": "FrameSnapshot::Init"
+  }
+ ]
+}

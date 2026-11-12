@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BF260",
+ "name": "Movie::PlayWrapper",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BF260",
+ "bytes_hex": "85c97c3e3b0da0f3ab007d368b44240c8b542408538a1d78e3a8006a00508b4424105250a194f3ab00c60578e3a8000083caff8b0c88e8a5faffff881d78e3a8005bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

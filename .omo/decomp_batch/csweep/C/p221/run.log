@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p221\part_00
+=== convert (20 addrs) ===
+[conv] 0x5170b0 HoverLocomotionClass::BeginMove -> HoverLocomotionClass
+[conv] 0x529bf0 INIClass::ReadCoord3 -> INIClass
+[conv] 0x6244e0 Options::DeleteAndZero -> Options
+[conv] 0x6e4100 TActionClass::executePsychicDominatorAction -> TActionClass
+[conv] 0x4a2e50 CStreamClass::Write -> CStreamClass
+[conv] 0x4070b0 Audio::WaitForCallback -> Audio
+[conv] 0x4080f0 ThemeManager::ProcessCallback -> ThemeManager
+[conv] 0x7676f0 rc_ptr::System_Init_7676F0 -> rc_ptr
+[conv] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> JumpjetLocomotionClass
+[conv] 0x557a20 ListClass::SetItemState -> ListClass
+[conv] 0x557a70 ListClass::OnKeyUp -> ListClass
+[conv] 0x4067d0 sub_4067D0 -> _addr_40
+[conv] 0x40e390 MixFileClass::sub_40E390 -> MixFileClass
+[conv] 0x4238d0 AnimClass::CheckMirrorFlags -> AnimClass
+[conv] 0x488280 CheckListClass::sub_488280 -> CheckListClass
+[conv] 0x4b5780 ObjectClass::sub_4B5780 -> ObjectClass
+[conv] 0x4b5ab0 DropPodLocomotionClass::SmallFunc_4B5AB0 -> DropPodLocomotionClass
+[conv] 0x52ae20 MixFileClass::Constructor_GenericNode -> MixFileClass
+[conv] 0x5bf260 Movie::PlayWrapper -> Movie
+[conv] 0x626200 Palette::FindClosestColor -> Palette
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HoverLocomotionClass     rc=0
+[era] INIClass                 rc=2
+[era] Options                  rc=0
+[era] TActionClass             rc=0
+[era] CStreamClass             rc=2
+[era] Audio                    rc=0
+[era] ThemeManager             rc=0
+[era] rc_ptr                   rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] ListClass                rc=2
+[era] _addr_40                 rc=2
+[era] MixFileClass             rc=0
+[era] AnimClass                rc=0
+[era] CheckListClass           rc=0
+[era] ObjectClass              rc=0
+[era] DropPodLocomotionClass   rc=2
+[era] Movie                    rc=0
+[era] Palette                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x5170b0   MISMATCH         HoverLocomotionClass::BeginMove
+[diff] 0x6244e0   MISMATCH         Options::DeleteAndZero
+[diff] 0x6e4100   MISMATCH         TActionClass::executePsychicDominatorAction
+[diff] 0x4070b0   MISMATCH         Audio::WaitForCallback
+[diff] 0x4080f0   MISMATCH         ThemeManager::ProcessCallback
+[diff] 0x7676f0   MISMATCH         rc_ptr::System_Init_7676F0
+[diff] 0x40e390   MISMATCH         MixFileClass::sub_40E390
+[diff] 0x52ae20   MISMATCH         MixFileClass::Constructor_GenericNode
+[diff] 0x4238d0   MISMATCH         AnimClass::CheckMirrorFlags
+[diff] 0x488280   MISMATCH         CheckListClass::sub_488280
+[diff] 0x4b5780   MISMATCH         ObjectClass::sub_4B5780
+[diff] 0x5bf260   MISMATCH         Movie::PlayWrapper
+[ledger] 0x5170b0 HoverLocomotionClass::BeginMove -> NG (attempt 1)
+[ledger] 0x529bf0 INIClass::ReadCoord3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6244e0 Options::DeleteAndZero -> NG (attempt 1)
+[ledger] 0x6e4100 TActionClass::executePsychicDominatorAction -> NG (attempt 1)
+[ledger] 0x4a2e50 CStreamClass::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4070b0 Audio::WaitForCallback -> NG (attempt 1)
+[ledger] 0x4080f0 ThemeManager::ProcessCallback -> NG (attempt 1)
+[ledger] 0x7676f0 rc_ptr::System_Init_7676F0 -> NG (attempt 1)
+[ledger] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557a20 ListClass::SetItemState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557a70 ListClass::OnKeyUp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4067d0 sub_4067D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40e390 MixFileClass::sub_40E390 -> NG (attempt 1)
+[ledger] 0x4238d0 AnimClass::CheckMirrorFlags -> NG (attempt 1)
+[ledger] 0x488280 CheckListClass::sub_488280 -> NG (attempt 1)
+[ledger] 0x4b5780 ObjectClass::sub_4B5780 -> NG (attempt 1)
+[ledger] 0x4b5ab0 DropPodLocomotionClass::SmallFunc_4B5AB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52ae20 MixFileClass::Constructor_GenericNode -> NG (attempt 1)
+[ledger] 0x5bf260 Movie::PlayWrapper -> NG (attempt 1)
+[ledger] 0x626200 Palette::FindClosestColor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "regalloc": 3,
+  "signedness": 1,
+  "extern_reloc": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p221\batch_report.json

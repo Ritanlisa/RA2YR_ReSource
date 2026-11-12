@@ -1,0 +1,11 @@
+{
+ "addr": "0x4070B0",
+ "name": "Audio::WaitForCallback",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4070B0",
+ "bytes_hex": "5356578bf1e8f62200008b4e088bd88b46108bfa8b561403d88b460413fa3bc1741ee8d92200003bd7771572043bc3730fe89a5f08008b4e048b46083bc875e25f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

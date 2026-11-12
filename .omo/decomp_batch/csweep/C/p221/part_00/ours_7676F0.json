@@ -1,0 +1,15 @@
+{
+ "symbol": "?System_Init_7676F0@rc_ptr@@QAIXPAH@Z",
+ "sym_key": "rc_ptr::System_Init_7676F0",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "568bf26a0ce80000000083c40485c0740a897008c74004000000005ec3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

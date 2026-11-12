@@ -1,0 +1,27 @@
+{
+ "symbol": "?executePsychicDominatorAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executePsychicDominatorAction",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "568bb19000000083fe04732e8bc6c1e0052bc68d0cc68d148e8d0c952c0d8800e80000000084c0741156b9f8010000e800000000b0015ec2100032c05ec21000",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?HasPlayers@PlayerClass@@QAEHXZ",
+   "sym_key": "PlayerClass::HasPlayers"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?SwitchTab@SidebarClass@@QAEHH@Z",
+   "sym_key": "SidebarClass::SwitchTab"
+  }
+ ]
+}

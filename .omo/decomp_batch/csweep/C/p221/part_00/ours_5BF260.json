@@ -1,0 +1,39 @@
+{
+ "symbol": "?PlayWrapper@Movie@@QAEXHHHDDD@Z",
+ "sym_key": "Movie::PlayWrapper",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "8b44240485c07c433b0500000000733b0fbe4424180fbe4c24140fbe542410538a1d000000006a00508b442418518b4c241852505183c9ffc6050000000000e800000000881d000000005bc21800",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF3A0@@3IA",
+   "sym_key": "DataGlobal_ABF3A0"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E378@@3EA",
+   "sym_key": "DataGlobal_A8E378"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E378@@3EA",
+   "sym_key": "DataGlobal_A8E378"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Play@Movie@@QAEXHHHHHH@Z",
+   "sym_key": "Movie::Play"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E378@@3EA",
+   "sym_key": "DataGlobal_A8E378"
+  }
+ ]
+}

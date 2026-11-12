@@ -1,0 +1,33 @@
+{
+ "symbol": "?WaitForCallback@Audio@@QAEHXZ",
+ "sym_key": "Audio::WaitForCallback",
+ "size": 107,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556578bf1e8000000008b6c24148bc88b460433db8bfd33d20bd98b4e100bfa8b561403d98b4e0813fa3bc174318bcee8000000003bef772672043bc37320e8000000008b46088b4e043bc874118bcee8000000003bef72e677043bc372e05f5e5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  }
+ ]
+}

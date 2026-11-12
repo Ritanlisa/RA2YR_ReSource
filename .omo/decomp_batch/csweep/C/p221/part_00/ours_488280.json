@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_488280@CheckListClass@@QAEPAEHHHHHHHH@Z",
+ "sym_key": "CheckListClass::sub_488280",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "8b4424208b542418568bf18b4c2420508b44241c518b4c241c528b54241c508b44241c518b4c241c5250518bcee800000000c6867401000000c7060000000033c05ec22000",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Construct@ListClass@@QAEPAV1@HHHHHHHH@Z",
+   "sym_key": "ListClass::Construct"
+  }
+ ]
+}
