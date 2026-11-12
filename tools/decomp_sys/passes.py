@@ -3618,6 +3618,14 @@ _CRT_CALL_TYPES = {
     "InflateRect": ["void *", "int", "int"],
     "SetWindowPos": ["void *", "void *", "int", "int", "int", "int", "int",
                      "unsigned int"],
+    "RegOpenKeyExA": ["void *", "const char *", "unsigned long",
+                      "unsigned long", "void **"],
+    "RegQueryInfoKeyA": ["void *", "char *", "unsigned long *",
+                         "unsigned long *", "unsigned long *",
+                         "unsigned long *", "unsigned long *",
+                         "unsigned long *", "unsigned long *",
+                         "unsigned long *", "unsigned long *",
+                         "void *"],
     "CompareFileTime": ["const FILETIME *", "const FILETIME *"],
     "VerQueryValueA": ["const void *", "const char *", "void **",
                        "unsigned int *"],
@@ -6054,9 +6062,14 @@ def _arg_is_pointerish(s, ptr_names=None):
     if s.startswith("&") and not s.startswith("&&"):
         return True
     m = re.match(r"^\*\s*\(\s*((?:unsigned\s+|signed\s+)?[A-Za-z_]\w*)"
-                 r"\s*\*\s*\)", s)
+                 r"\s*\*+\s*\)", s)
     if m:
         return m.group(1).strip() not in _SCALAR_TYS
+    # CW5: a bare DEREF (`*(&g + 1)`, `*p`) yields a VALUE of unknown
+    # pointee type -- do not claim pointer-ness (the R7 `&` fallback below
+    # flipped MoveWindow's int slot to void* on exactly this shape).
+    if s.startswith("*") and not s.startswith("**"):
+        return False
     # R7.1: a top-level SUBSCRIPT yields an ELEMENT, not array decay
     # (`SHIBYTE(this->visibleCells[13])` -- the member is an int array;
     # marking it void* made the macro-ish callee reject an int arg,
