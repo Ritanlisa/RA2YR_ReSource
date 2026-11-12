@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B0D90",
+ "name": "IPXInterfaceClass::Construct",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B0D90",
+ "bytes_hex": "568bf1e8280c00008d86fcf203008d9600f30300c7064c797f0083c9ffc700ffffffff890a83c8ff66894a048d8e06f30300898606f30300668941048bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

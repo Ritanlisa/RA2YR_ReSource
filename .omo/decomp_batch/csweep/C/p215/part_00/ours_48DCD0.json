@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetByTypeAndIndex@TechnoTypeClass@@QAIHHH@Z",
+ "sym_key": "TechnoTypeClass::GetByTypeAndIndex",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "8d42ff83f827774d33c98a8800000000ff248d000000008b542404a1000000008b0490c204008b4c24048b15000000008b048ac204008b4424048b0d000000008b0481c204008b542404a1000000008b0490c2040033c0c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "$L1865",
+   "sym_key": "$L1865"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "$L1866",
+   "sym_key": "$L1866"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeCount2@@3PAXA",
+   "sym_key": "g_UnitTypeCount2"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_AircraftTypeCount@@3IA",
+   "sym_key": "g_AircraftTypeCount"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  }
+ ]
+}

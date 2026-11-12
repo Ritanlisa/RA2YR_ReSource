@@ -1,0 +1,15 @@
+{
+ "symbol": "?UI_Render_642E40@@YGHPAH0@Z",
+ "sym_key": "Unnamed::UI_Render_642E40",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "5633c9e8000000008bf085f6741f8b0656ff507c568b4c240c89018b16ff92800000005e8b4c24088901c208008b4424088b54240c5ec70000000000c70200000000c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?FindDefault@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindDefault"
+  }
+ ]
+}

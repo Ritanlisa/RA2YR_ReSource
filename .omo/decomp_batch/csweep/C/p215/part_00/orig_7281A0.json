@@ -1,0 +1,11 @@
+{
+ "addr": "0x7281A0",
+ "name": "TubeClass::LoadState",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7281A0",
+ "bytes_hex": "8b442408568b7424085056e8d081ceff85c07c2885f674228bcee8b17fceffc706b0597f00c7460494597f00c746088c597f00c7460c84597f0033c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x693880",
+ "name": "MouseClass::CheckCapture",
+ "size": 63,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x693880",
+ "bytes_hex": "a09ceda8005684c08bf1752f578b7c240c57e88974e1ff8b078986505500008b4f04898e54550000c68658550000008b0d407688008b11ff52105f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

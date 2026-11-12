@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddRef@AnimFile@@QAEDHH@Z",
+ "sym_key": "AnimFile::AddRef",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "51568b74240485c9898e84000000750732c05e59c208008b01ff501884c075158b86840000006a01508b08ff511cc686890000000156e80000000083c4045e59c20800",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?sub_4267F0@@YADPAX@Z",
+   "sym_key": "sub_4267F0"
+  }
+ ]
+}

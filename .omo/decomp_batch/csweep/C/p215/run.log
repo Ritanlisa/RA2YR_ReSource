@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p215\part_00
+=== convert (20 addrs) ===
+[conv] 0x6d0270 TabClass::CleanupResources -> TabClass
+[conv] 0x693880 ScrollClass::CheckCapture -> ScrollClass
+[conv] 0x5c0a30 BinkMovieHandle::QueryInterface -> BinkMovieHandle
+[conv] 0x5cec70 MSBinkAnim::QueryInterface -> MSBinkAnim
+[conv] 0x426750 AnimFile::AddRef -> AnimFile
+[conv] 0x642e40 UI_Render_642E40 -> UI_Render
+[conv] 0x700d10 TechnoClass::IsDeadOrInactive -> TechnoClass
+[conv] 0x7589f0 ObjectClass::sub_7589F0 -> ObjectClass
+[conv] 0x431930 ObjectClass::sub_431930 -> ObjectClass
+[conv] 0x4d0820 sub_4D0820 -> _addr_4D
+[conv] 0x5093c0 ObjectClass::sub_5093C0 -> ObjectClass
+[conv] 0x5c02f0 VQMovieHandle::processPathNode -> VQMovieHandle
+[conv] 0x7b0d90 IPXInterfaceClass::Construct -> IPXInterfaceClass
+[conv] 0x48dcd0 TechnoTypeClass::GetByTypeAndIndex -> TechnoTypeClass
+[conv] 0x4ca670 FactoryClass::CountType -> FactoryClass
+[conv] 0x4023f0 AudioController::CleanupStream -> AudioController
+[conv] 0x431b80 BufferIOFileClass::Dtor -> BufferIOFileClass
+[conv] 0x5297e0 INIEntry::Write2Integers -> INIEntry
+[conv] 0x7281a0 TubeClass::LoadState -> TubeClass
+[conv] 0x4a83d0 sub_4A83D0 -> _addr_4A
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TabClass                 rc=0
+[era] ScrollClass              rc=0
+[era] BinkMovieHandle          rc=2
+[era] MSBinkAnim               rc=0
+[era] AnimFile                 rc=0
+[era] UI_Render                rc=0
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] _addr_4D                 rc=0
+[era] VQMovieHandle            rc=0
+[era] IPXInterfaceClass        rc=0
+[era] TechnoTypeClass          rc=0
+[era] FactoryClass             rc=2
+[era] AudioController          rc=2
+[era] BufferIOFileClass        rc=2
+[era] INIEntry                 rc=2
+[era] TubeClass                rc=0
+[era] _addr_4A                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6d0270   MISMATCH         TabClass::CleanupResources
+[diff] 0x693880   MISMATCH         ScrollClass::CheckCapture
+[diff] 0x5cec70   MISMATCH         MSBinkAnim::QueryInterface
+[diff] 0x426750   MISMATCH         AnimFile::AddRef
+[diff] 0x642e40   MISMATCH         UI_Render_642E40
+[diff] 0x7589f0   MISMATCH         ObjectClass::sub_7589F0
+[diff] 0x431930   MISMATCH         ObjectClass::sub_431930
+[diff] 0x4d0820   MISMATCH         sub_4D0820
+[diff] 0x5c02f0   MISMATCH         VQMovieHandle::processPathNode
+[diff] 0x7b0d90   MISMATCH         IPXInterfaceClass::Construct
+[diff] 0x48dcd0   MISMATCH         TechnoTypeClass::GetByTypeAndIndex
+[diff] 0x7281a0   MISMATCH         TubeClass::LoadState
+[ledger] 0x6d0270 TabClass::CleanupResources -> NG (attempt 1)
+[ledger] 0x693880 ScrollClass::CheckCapture -> NG (attempt 1)
+[ledger] 0x5c0a30 BinkMovieHandle::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cec70 MSBinkAnim::QueryInterface -> NG (attempt 1)
+[ledger] 0x426750 AnimFile::AddRef -> NG (attempt 1)
+[ledger] 0x642e40 UI_Render_642E40 -> NG (attempt 1)
+[ledger] 0x700d10 TechnoClass::IsDeadOrInactive -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7589f0 ObjectClass::sub_7589F0 -> NG (attempt 1)
+[ledger] 0x431930 ObjectClass::sub_431930 -> NG (attempt 1)
+[ledger] 0x4d0820 sub_4D0820 -> NG (attempt 1)
+[ledger] 0x5093c0 ObjectClass::sub_5093C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c02f0 VQMovieHandle::processPathNode -> NG (attempt 1)
+[ledger] 0x7b0d90 IPXInterfaceClass::Construct -> NG (attempt 1)
+[ledger] 0x48dcd0 TechnoTypeClass::GetByTypeAndIndex -> NG (attempt 1)
+[ledger] 0x4ca670 FactoryClass::CountType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4023f0 AudioController::CleanupStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x431b80 BufferIOFileClass::Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5297e0 INIEntry::Write2Integers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7281a0 TubeClass::LoadState -> NG (attempt 1)
+[ledger] 0x4a83d0 sub_4A83D0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "const_fold": 5,
+  "branch_order": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p215\batch_report.json

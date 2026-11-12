@@ -1,0 +1,11 @@
+{
+ "addr": "0x48DCD0",
+ "name": "TechnoTypeClass::GetByTypeAndIndex",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48DCD0",
+ "bytes_hex": "8d41ff83f827773533c98a8824dd4800ff248d10dd4800a1e43ca8008b0490c38b0d6c3ca8008b0491c3a14ce3a8008b0490c38b0d1cb2a8008b0491c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

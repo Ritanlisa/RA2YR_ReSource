@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@IPXInterfaceClass@@QAEPAIXZ",
+ "sym_key": "IPXInterfaceClass::Construct",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000083c8ffb9ffff00008986fcf20300898600f30300898608f30300c7060000000066898e04f3030066898e0cf303008bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?bindSocket@IPXInterfaceClass@@QAEPADXZ",
+   "sym_key": "IPXInterfaceClass::bindSocket"
+  }
+ ]
+}

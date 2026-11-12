@@ -1,0 +1,39 @@
+{
+ "symbol": "?CleanupResources@TabClass@@QAEXXZ",
+ "sym_key": "TabClass::CleanupResources",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "518b4c24005657e8000000008b3500000000bf00000000803f00740e8b0650e80000000083c404c60700c7060000000083c6044781fe000000007cdb5f5e59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?CleanupSidebarResources@ObjectClass@@QAEXXZ",
+   "sym_key": "ObjectClass::CleanupSidebarResources"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0C148@@3IA",
+   "sym_key": "DataGlobal_B0C148"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CBDC@@3PAEA",
+   "sym_key": "DataGlobal_B0CBDC"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0C1AC@@3EA",
+   "sym_key": "DataGlobal_B0C1AC"
+  }
+ ]
+}

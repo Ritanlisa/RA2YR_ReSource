@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D0270",
+ "name": "TacticalClass::CleanupResources",
+ "size": 63,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D0270",
+ "bytes_hex": "5657e87959fdff33ffbe48c1b0008a87dccbb00084c074128b0650e8ad880f0083c404c687dccbb00000c7060000000083c6044781feacc1b0007cd25f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

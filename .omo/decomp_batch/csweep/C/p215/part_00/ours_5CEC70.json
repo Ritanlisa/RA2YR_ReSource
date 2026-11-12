@@ -1,0 +1,27 @@
+{
+ "symbol": "?QueryInterface@MSBinkAnim@@QAEPAID@Z",
+ "sym_key": "MSBinkAnim::QueryInterface",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7e1cc7060000000085ff74108bcfe80000000057e80000000083c4048a44240cc70600000000a801740956e80000000083c4048b065f5ec20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Stop@BinkMovie@@QAEHXZ",
+   "sym_key": "BinkMovie::Stop"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

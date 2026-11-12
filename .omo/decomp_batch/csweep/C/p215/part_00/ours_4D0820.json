@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_4D0820@@YAXXZ",
+ "sym_key": "Unnamed::sub_4D0820",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "8a0d00000000b00184c875338ad10ad0a10000000050881500000000e80000000083c40433c0a300000000a300000000a300000000a200000000a300000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3CD4@@3EA",
+   "sym_key": "DataGlobal_8B3CD4"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_MissionPool@@3PAXA",
+   "sym_key": "g_MissionPool"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3CD4@@3EA",
+   "sym_key": "DataGlobal_8B3CD4"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_MissionPool@@3PAXA",
+   "sym_key": "g_MissionPool"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_MissionState@@3IA",
+   "sym_key": "g_MissionState"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3CC8@@3IA",
+   "sym_key": "DataGlobal_8B3CC8"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3CCC@@3EA",
+   "sym_key": "DataGlobal_8B3CCC"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3CD0@@3IA",
+   "sym_key": "DataGlobal_8B3CD0"
+  }
+ ]
+}

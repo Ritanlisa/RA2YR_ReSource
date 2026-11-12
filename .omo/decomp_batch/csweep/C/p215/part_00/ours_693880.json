@@ -1,0 +1,27 @@
+{
+ "symbol": "?CheckCapture@ScrollClass@@QAEDPAH@Z",
+ "sym_key": "ScrollClass::CheckCapture",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "a0b80100005684c08bf1752f578b7c240c57e8000000008b078986505500008b4f04898e54550000c6865855000000a1a8000000508b10ff52105f5ec20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?DisplayClass__vt_entry_B0@@YGXPAX@Z",
+   "sym_key": "DisplayClass__vt_entry_B0"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  }
+ ]
+}
