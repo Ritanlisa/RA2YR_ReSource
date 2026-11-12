@@ -1,0 +1,69 @@
+{
+ "symbol": "?InterpolateView@TacticalClass@@QAEHXZ",
+ "sym_key": "TacticalClass::InterpolateView",
+ "size": 334,
+ "link_base": 0,
+ "bytes_hex": "83ec28a0e4000000560fbef084c0897424080f8e2d0100008b15d8000000535533db5733c033ff895c24108b0a83c2048ba99c000000896c242003c58ba9a00000008b89a400000003fd03d983fe01894424100f94c14e84c974d08b4c24148944241c99f7f933ed8bf08bc799f7f9897424108bc88bc399f77c24148a15e40000008bf980fa02894424180f8e9c00000033db895c24140fbe15d80000008b14aa2b82a4000000508b82a00000002bc88b829c0000002bf051568d4c2438e8000000008b08894c24208b5004895424248b40088d4c242089442428e8000000003bc37e160fbe0dd80000008bd88b14a98b829c000000894424140fbe0de4000000453be97d0c8b4424188b7424108bcfeb8583f901750433c0eb0e8b44241c8b5424142bc24999f7f9894424108d4c2410518b0d00000000e8000000005f5d5b5e83c428c38b4424105e83c428c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?Length@Coord@@QAE_JXZ",
+   "sym_key": "Coord::Length"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 313,
+   "type": "REL32",
+   "sym": "?SetTacticalPosition@Tactical@@QAEIPAX@Z",
+   "sym_key": "Tactical::SetTacticalPosition"
+  }
+ ]
+}

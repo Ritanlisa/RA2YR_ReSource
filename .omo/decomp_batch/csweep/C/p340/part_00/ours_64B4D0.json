@@ -1,0 +1,87 @@
+{
+ "symbol": "?DictionaryCompressLookup@@YIDPAXPAEPAH1PBXD@Z",
+ "sym_key": "Unnamed::DictionaryCompressLookup",
+ "size": 406,
+ "link_base": 0,
+ "bytes_hex": "83ec108a02894c240c53558ac8563c01578954241888442413884c24140f86b20000008b442414c64424120025ff000000ba00000000894424148bf0a1000000008b183bf3752a8b7c2428b9050000008d72fb33edf3a675108b7c242c8d4c9bfb8bf233dbf3a674248b7424148a4c24138a5c241283c00481c280020000fec33d00000000885c24127d4aebb48a54243084d274188b4c24148b442424be050000008d0c892bf18b0803ce890824010c0184d20f84d30000008b5424188a4c24125f5ec602008b5424205d5b884a0683c410c210008a44243084c00f84a900000080f9010f86a00000008b15000000008b2d0000000083cbff83cfff33f68b0a85c9741a8bc52bc13bc77e048bf88bde83c2044681fa000000007d04ebe08bde83fbff750233db8b4c241ce800000000a1000000008b6c242889049d000000008d049b8b4d008b74242cc1e0078988000000008a55048890040000008b54241833c98db8000000008a0a8d4c89fb8bc1c1e902f3a58bc883e103f3a433c98a0a890c9d00000000885d0632c05f5e5d5b83c410c21000",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC5235@@3EA",
+   "sym_key": "DataGlobal_AC5235"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AFA338@@3IA",
+   "sym_key": "DataGlobal_AFA338"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AFA358@@3IA",
+   "sym_key": "DataGlobal_AFA358"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AFA42C@@3IA",
+   "sym_key": "DataGlobal_AFA42C"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AFA44C@@3IA",
+   "sym_key": "DataGlobal_AFA44C"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AFA42C@@3IA",
+   "sym_key": "DataGlobal_AFA42C"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC5230@@3EA",
+   "sym_key": "DataGlobal_AC5230"
+  },
+  {
+   "off": 344,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC5230@@3EA",
+   "sym_key": "DataGlobal_AC5230"
+  },
+  {
+   "off": 356,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC5235@@3EA",
+   "sym_key": "DataGlobal_AC5235"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AFA338@@3IA",
+   "sym_key": "DataGlobal_AFA338"
+  }
+ ]
+}

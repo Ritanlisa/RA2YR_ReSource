@@ -1,0 +1,45 @@
+{
+ "symbol": "?CheckUnitOverlap@TacticalClass@@QAEDHHHH@Z",
+ "sym_key": "TacticalClass::CheckUnitOverlap",
+ "size": 362,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec2c8b81b00000008b55088b89b400000003c28b550c8944241003d18b4d1003c189542418894424148b451403d0a15000000033c953563bc15789542428894c24100f86100100008b15440000008b048a8a909000000084d20f84db0000008a908000000084d20f84cd0000008a507484d20f84c20000008b088d54242c5250ff91ac0000008b48048b18894424148d04498d0c498d0480c1e002992bc28bd08d045bd1fa8d3c808d0489c1e702d1efd1e02bfa8b4c2414992bc28d1c5b8bf08d049bd1e0d1fed1e803f08b4108c1ef08c1ee08894424143dd8020000db4424141bd283ec0842dc0d000000008954241cdb44241cdec1dc0500000000dd1c24e8000000008bc88b44242033c883c40881e1ff00000033c1894424182bf03b7c241c7c123b7c24207f0c3b7424247c063b7424287e178b4c2410a150000000413bc8894c24107310e9fbfeffffb0015f5e5b8be55dc210005f5e32c05b8be55dc21000",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD48@@3NA",
+   "sym_key": "DataGlobal_B0CD48"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 322,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetProductionState@SidebarClass@@QAEHXZ",
+ "sym_key": "SidebarClass::GetProductionState",
+ "size": 326,
+ "link_base": 0,
+ "bytes_hex": "8a416d83ec0c84c053750733c05b83c40cc38b59288a83e500000084c0750ab8360000005b83c40cc38b417c5683f8025774628b792483ffff897c240c8bd775068b93b00000008b41388b493083f9ff74190fbe35a0010000558bee2be93be85d7c0433c0eb042bce03c183ffff75152bd089542410db442410dab3b0000000e9880000002bd089542410db442410da74240ceb788b712483feff750c8b83b00000008944240ceb048974240c8b41388b493083f9ff741d0fbe15a00100008bfa2bf93bf87c0ac744241000000000eb082bca03c18944241083feff750a8b8bb0000000894c2414db44240ca140020000dc8860070000da642410db442414dc8860070000def9dc2d00000000dd0500000000d8c983ec08dd1c24ddd8e8000000008bc88b44241c33c883c40881e1ff00000033c15f83f8355e7c05b8350000005b83c40cc3",
+ "relocs": [
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F4048@@3NA",
+   "sym_key": "DataGlobal_7F4048"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

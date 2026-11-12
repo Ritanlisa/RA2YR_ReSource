@@ -1,0 +1,99 @@
+{
+ "symbol": "?ComputeTransform@VoxelAnim@@QAIDPAM0MH@Z",
+ "sym_key": "VoxelAnim::ComputeTransform",
+ "size": 405,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec148b4508538bda56578b7d10d903d8008b34bd0000000083ec08d95c2414d94004d84304d95c2418d94008d84308d954241cd944241cd8c9d9442418d84c2418dec1d9442414d84c2414dec1dd1c24ddd8e800000000dc150000000083c408dfe0f6c440741c8b4424148b4c240c8b54241089442418ddd8894c240c89542410eb1cd944240cd8f1d95c240cd9442410d8f1d95c2410d87c2414d95c24188b0cbd0000000033ff85c9894c241c0f8ec000000083c604d903d84efcd94604d84b08dec1d906d84b04dec1d9442410d80ed944240cd84efcdec1d9442418d84e04dec1d9450cd9c0d8cad8e9d8c2d8fad95c2414ddd8ddd8d9442414d81d00000000dfe0f6c4017408c744241400000000d90500000000d9c1ded9dfe0f6c4017408ddd8d90500000000d8442414dc1500000000dfe0f6c4017524d90500000000d8c983ec08dd1c24ddd8e8000000008b4c242483c408888700000000eb09ddd8c68700000000004783c60c3bf90f8c43ffffffb0105f5ea200000000a200000000a2000000005b8be55dc20c00",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8469E0@@3PAIA",
+   "sym_key": "DataGlobal_8469E0"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8469F4@@3PAIA",
+   "sym_key": "DataGlobal_8469F4"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 282,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 301,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 324,
+   "type": "DIR32",
+   "sym": "?flt_7F6960@@3MA",
+   "sym_key": "flt_7F6960"
+  },
+  {
+   "off": 339,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?g_VoxelShadeTable@@3PAEA",
+   "sym_key": "g_VoxelShadeTable"
+  },
+  {
+   "off": 362,
+   "type": "DIR32",
+   "sym": "?g_VoxelShadeTable@@3PAEA",
+   "sym_key": "g_VoxelShadeTable"
+  },
+  {
+   "off": 384,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45A8F@@3EA",
+   "sym_key": "DataGlobal_B45A8F"
+  },
+  {
+   "off": 389,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45A8E@@3EA",
+   "sym_key": "DataGlobal_B45A8E"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45A8D@@3EA",
+   "sym_key": "DataGlobal_B45A8D"
+  }
+ ]
+}

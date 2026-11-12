@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p340\part_00
+=== convert (20 addrs) ===
+[conv] 0x5bce10 ObjectClass::sub_5BCE10 -> ObjectClass
+[conv] 0x6440a0 OverlayTypeClass::Construct -> OverlayTypeClass
+[conv] 0x7c1f30 Audio_Helper_7C1F30 -> Audio_Helper
+[conv] 0x6d9b50 TacticalClass::CheckUnitOverlap -> TacticalClass
+[conv] 0x7586f0 VoxelAnim::ComputeTransform -> VoxelAnim
+[conv] 0x41fb10 AITriggerTypeClass::SaveToINI -> AITriggerTypeClass
+[conv] 0x64b4d0 DictionaryCompressLookup -> _addr_64
+[conv] 0x6cbee0 SidebarClass::GetProductionState -> SidebarClass
+[conv] 0x506d50 MapClass::CalcVisibleCellRange -> MapClass
+[conv] 0x6219d0 Team_Find -> Team
+[conv] 0x483c80 BuildingClass::DetermineVisualState -> BuildingClass
+[conv] 0x621b80 DSurface::FillRectWithColor -> DSurface
+[conv] 0x5c9020 ModCryptoExp -> _addr_5C
+[conv] 0x6242b0 ObjectClass::sub_6242B0 -> ObjectClass
+[conv] 0x603240 UI_Helper_603240 -> UI_Helper
+[conv] 0x4ae290 TacticalClass::InterpolateView -> TacticalClass
+[conv] 0x7bee20 Audio_Process_7BEE20 -> Audio_Process
+[conv] 0x433cf0 Text::Layout -> Text
+[conv] 0x586fc0 FootClass::FindNearestApproachableCell -> FootClass
+[conv] 0x47bbf0 CellClass::Construct -> CellClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] OverlayTypeClass         rc=2
+[era] Audio_Helper             rc=0
+[era] TacticalClass            rc=0
+[era] VoxelAnim                rc=0
+[era] AITriggerTypeClass       rc=2
+[era] _addr_64                 rc=0
+[era] SidebarClass             rc=0
+[era] MapClass                 rc=0
+[era] Team                     rc=2
+[era] BuildingClass            rc=2
+[era] DSurface                 rc=2
+[era] _addr_5C                 rc=2
+[era] UI_Helper                rc=2
+[era] Audio_Process            rc=0
+[era] Text                     rc=0
+[era] FootClass                rc=2
+[era] CellClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x5bce10   MISMATCH         ObjectClass::sub_5BCE10
+[diff] 0x7c1f30   MISMATCH         Audio_Helper_7C1F30
+[diff] 0x6d9b50   MISMATCH         TacticalClass::CheckUnitOverlap
+[diff] 0x4ae290   MISMATCH         TacticalClass::InterpolateView
+[diff] 0x7586f0   MISMATCH         VoxelAnim::ComputeTransform
+[diff] 0x64b4d0   MISMATCH         DictionaryCompressLookup
+[diff] 0x6cbee0   MISMATCH         SidebarClass::GetProductionState
+[diff] 0x506d50   MISMATCH         MapClass::CalcVisibleCellRange
+[diff] 0x7bee20   MISMATCH         Audio_Process_7BEE20
+[diff] 0x433cf0   MISMATCH         Text::Layout
+[diff] 0x47bbf0   MISMATCH         CellClass::Construct
+[ledger] 0x5bce10 ObjectClass::sub_5BCE10 -> NG (attempt 1)
+[ledger] 0x6440a0 OverlayTypeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c1f30 Audio_Helper_7C1F30 -> NG (attempt 1)
+[ledger] 0x6d9b50 TacticalClass::CheckUnitOverlap -> NG (attempt 1)
+[ledger] 0x7586f0 VoxelAnim::ComputeTransform -> NG (attempt 1)
+[ledger] 0x41fb10 AITriggerTypeClass::SaveToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64b4d0 DictionaryCompressLookup -> NG (attempt 1)
+[ledger] 0x6cbee0 SidebarClass::GetProductionState -> NG (attempt 1)
+[ledger] 0x506d50 MapClass::CalcVisibleCellRange -> NG (attempt 1)
+[ledger] 0x6219d0 Team_Find -> COMPILE_FAIL (attempt 1)
+[ledger] 0x483c80 BuildingClass::DetermineVisualState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x621b80 DSurface::FillRectWithColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c9020 ModCryptoExp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6242b0 ObjectClass::sub_6242B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x603240 UI_Helper_603240 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ae290 TacticalClass::InterpolateView -> NG (attempt 1)
+[ledger] 0x7bee20 Audio_Process_7BEE20 -> NG (attempt 1)
+[ledger] 0x433cf0 Text::Layout -> NG (attempt 1)
+[ledger] 0x586fc0 FootClass::FindNearestApproachableCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47bbf0 CellClass::Construct -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "width_mismatch": 1,
+  "codegen_shape": 5,
+  "frame_sched": 4,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p340\batch_report.json
