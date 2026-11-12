@@ -1,0 +1,11 @@
+{
+ "addr": "0x554A80",
+ "name": "MapClass::ScrollOnce",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x554A80",
+ "bytes_hex": "8a414884c0740e8b442404c641480050e85b000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Cleanup@BufferIO@@QAEHH@Z",
+ "sym_key": "BufferIO::Cleanup",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf1508b08ff516033c089460c8946105ec20400",
+ "relocs": []
+}

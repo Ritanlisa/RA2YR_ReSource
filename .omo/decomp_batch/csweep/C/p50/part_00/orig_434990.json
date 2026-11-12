@@ -1,0 +1,11 @@
+{
+ "addr": "0x434990",
+ "name": "BufferIO::Cleanup",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x434990",
+ "bytes_hex": "568bf18b4c24088b01ff506033c089460c8946105ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

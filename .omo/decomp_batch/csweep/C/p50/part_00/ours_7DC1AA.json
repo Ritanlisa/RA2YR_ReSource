@@ -1,0 +1,15 @@
+{
+ "symbol": "?_ValidateExecute_YAHP6GHXZ_Z@@YAHH@Z",
+ "sym_key": "Unnamed::_ValidateExecute_YAHP6GHXZ_Z",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e800000000f7d81bc040c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?IsBadCodePtr@@YGHH@Z",
+   "sym_key": "IsBadCodePtr"
+  }
+ ]
+}

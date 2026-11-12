@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetSizeMaxWrapper@ObjectTypeClass@@QAGHPAI@Z",
+ "sym_key": "ObjectTypeClass::GetSizeMaxWrapper",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8b4c2404e80000000033c985c00f9dc14923c1c20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?GetSizeMax@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetSizeMax"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Disconnect@IPXGlobalConnClass@@QAEPAIH@Z",
+ "sym_key": "IPXGlobalConnClass::Disconnect",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b49048b4424043b41387d0950e800000000830802c20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?GetTileType@Terrain@@QAEHH@Z",
+   "sym_key": "Terrain::GetTileType"
+  }
+ ]
+}

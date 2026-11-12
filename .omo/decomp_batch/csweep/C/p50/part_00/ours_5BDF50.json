@@ -1,0 +1,15 @@
+{
+ "symbol": "?HandleClick@MouseClass@@QAEHXZ",
+ "sym_key": "MouseClass::HandleClick",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000033c088865c5500008986645500005ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?InitSubsystems@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::InitSubsystems"
+  }
+ ]
+}

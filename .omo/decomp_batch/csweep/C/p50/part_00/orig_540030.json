@@ -1,0 +1,11 @@
+{
+ "addr": "0x540030",
+ "name": "IPXGlobalConnClass::Disconnect",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x540030",
+ "bytes_hex": "8b49048b4424043b41387d0950e89eb9f4ff830802c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

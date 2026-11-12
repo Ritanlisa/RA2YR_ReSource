@@ -1,0 +1,15 @@
+{
+ "symbol": "?read@ToolTipManager@@QAGXH@Z",
+ "sym_key": "ToolTipManager::read",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "8b4c2404e800000000c20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

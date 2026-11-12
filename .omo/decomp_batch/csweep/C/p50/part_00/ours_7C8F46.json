@@ -1,0 +1,33 @@
+{
+ "symbol": "?System_Helper@@YAHXZ",
+ "sym_key": "Unnamed::System_Helper",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "e800000000e800000000a300000000e800000000dbe2c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?_cfltcvt_init_13@@YAHXZ",
+   "sym_key": "_cfltcvt_init_13"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?_ms_p5_mp_test_fdiv@@YAHXZ",
+   "sym_key": "_ms_p5_mp_test_fdiv"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B781A0@@3IA",
+   "sym_key": "DataGlobal_B781A0"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?_setdefaultprecision@@YAHXZ",
+   "sym_key": "_setdefaultprecision"
+  }
+ ]
+}

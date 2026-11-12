@@ -1,0 +1,15 @@
+{
+ "symbol": "?StepCleanup@ObjectClass@@QAEHPAX@Z",
+ "sym_key": "ObjectClass::StepCleanup",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff90880000008b4c2404518bc8e800000000c20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?NameEquals@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::NameEquals"
+  }
+ ]
+}

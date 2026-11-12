@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BDF50",
+ "name": "MouseClass::HandleClick",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BDF50",
+ "bytes_hex": "568bf1e8d8700e0033c088865c5500008986645500005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

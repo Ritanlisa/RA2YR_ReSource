@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p50\part_00
+=== convert (20 addrs) ===
+[conv] 0x6fc090 TechnoClass::Vt240Thunk -> TechnoClass
+[conv] 0x5f3e50 ObjectClass::StepCleanup -> ObjectClass
+[conv] 0x7c8f46 System_Helper -> System
+[conv] 0x407040 sub_407040 -> _addr_40
+[conv] 0x478e10 CCToolTip::Draw1 -> CCToolTip
+[conv] 0x4cb890 ResultNode::Init -> ResultNode
+[conv] 0x4e7df0 sub_4E7DF0 -> _addr_4E
+[conv] 0x540030 IPXGlobalConnClass::Disconnect -> IPXGlobalConnClass
+[conv] 0x554a60 Trigger::EnableOnce -> Trigger
+[conv] 0x554a80 MapClass::ScrollOnce -> MapClass
+[conv] 0x5bdf50 MouseClass::HandleClick -> MouseClass
+[conv] 0x5f9970 ObjectTypeClass::GetSizeMaxWrapper -> ObjectTypeClass
+[conv] 0x724bb0 ToolTipManager::read -> ToolTipManager
+[conv] 0x7ca9b4 __non_rtti_object::sub_7CA9B4 -> __non_rtti_object
+[conv] 0x7ca9cc bad_typeid::sub_7CA9CC -> bad_typeid
+[conv] 0x7dc1aa _ValidateExecute_YAHP6GHXZ_Z -> _addr_7D
+[conv] 0x434990 BufferIO::Cleanup -> BufferIO
+[conv] 0x6f3950 TechnoClass::GetCrewCount -> TechnoClass
+[conv] 0x70dd70 ObjectClass::CheckTypeFlag1681 -> ObjectClass
+[conv] 0x70dda0 ObjectClass::CheckTypeFlag1681_2 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=0
+[era] System                   rc=0
+[era] _addr_40                 rc=0
+[era] CCToolTip                rc=2
+[era] ResultNode               rc=2
+[era] _addr_4E                 rc=0
+[era] IPXGlobalConnClass       rc=0
+[era] Trigger                  rc=0
+[era] MapClass                 rc=0
+[era] MouseClass               rc=0
+[era] ObjectTypeClass          rc=0
+[era] ToolTipManager           rc=0
+[era] __non_rtti_object        rc=0
+[era] bad_typeid               rc=0
+[era] _addr_7D                 rc=0
+[era] BufferIO                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6fc090   MISMATCH         TechnoClass::Vt240Thunk
+[diff] 0x6f3950   MISMATCH         TechnoClass::GetCrewCount
+[diff] 0x5f3e50   MISMATCH         ObjectClass::StepCleanup
+[diff] 0x70dd70   MISMATCH         ObjectClass::CheckTypeFlag1681
+[diff] 0x70dda0   MISMATCH         ObjectClass::CheckTypeFlag1681_2
+[diff] 0x7c8f46   MISMATCH         System_Helper
+[diff] 0x407040   MISMATCH         sub_407040
+[diff] 0x4e7df0   MISMATCH         sub_4E7DF0
+[diff] 0x540030   MATCH            IPXGlobalConnClass::Disconnect
+[diff] 0x554a60   MISMATCH         Trigger::EnableOnce
+[diff] 0x554a80   MISMATCH         MapClass::ScrollOnce
+[diff] 0x5bdf50   MATCH            MouseClass::HandleClick
+[diff] 0x5f9970   MISMATCH         ObjectTypeClass::GetSizeMaxWrapper
+[diff] 0x724bb0   MISMATCH         ToolTipManager::read
+[diff] 0x7ca9b4   MISMATCH         __non_rtti_object::sub_7CA9B4
+[diff] 0x7ca9cc   MISMATCH         bad_typeid::sub_7CA9CC
+[diff] 0x7dc1aa   MISMATCH         _ValidateExecute_YAHP6GHXZ_Z
+[diff] 0x434990   MISMATCH         BufferIO::Cleanup
+[ledger] 0x6fc090 TechnoClass::Vt240Thunk -> NG (attempt 1)
+[ledger] 0x5f3e50 ObjectClass::StepCleanup -> NG (attempt 1)
+[ledger] 0x7c8f46 System_Helper -> NG (attempt 1)
+[ledger] 0x407040 sub_407040 -> NG (attempt 1)
+[ledger] 0x478e10 CCToolTip::Draw1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cb890 ResultNode::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e7df0 sub_4E7DF0 -> NG (attempt 1)
+[ledger] 0x540030 IPXGlobalConnClass::Disconnect -> OK (attempt 1)
+[ledger] 0x554a60 Trigger::EnableOnce -> NG (attempt 1)
+[ledger] 0x554a80 MapClass::ScrollOnce -> NG (attempt 1)
+[ledger] 0x5bdf50 MouseClass::HandleClick -> OK (attempt 1)
+[ledger] 0x5f9970 ObjectTypeClass::GetSizeMaxWrapper -> NG (attempt 1)
+[ledger] 0x724bb0 ToolTipManager::read -> NG (attempt 1)
+[ledger] 0x7ca9b4 __non_rtti_object::sub_7CA9B4 -> NG (attempt 1)
+[ledger] 0x7ca9cc bad_typeid::sub_7CA9CC -> NG (attempt 1)
+[ledger] 0x7dc1aa _ValidateExecute_YAHP6GHXZ_Z -> NG (attempt 1)
+[ledger] 0x434990 BufferIO::Cleanup -> NG (attempt 1)
+[ledger] 0x6f3950 TechnoClass::GetCrewCount -> NG (attempt 1)
+[ledger] 0x70dd70 ObjectClass::CheckTypeFlag1681 -> NG (attempt 1)
+[ledger] 0x70dda0 ObjectClass::CheckTypeFlag1681_2 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 2,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "eval_order": 1,
+  "const_fold": 2,
+  "ret_norm": 2,
+  "cc_mismatch": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p50\batch_report.json

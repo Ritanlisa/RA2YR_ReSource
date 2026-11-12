@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_7CA9B4@__non_rtti_object@@QAEPAVexception@@PAV2@@Z",
+ "sym_key": "__non_rtti_object::sub_7CA9B4",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf15056e80000000083c408c706000000008bc65ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?__0exception_QAE_ABV0__Z@@YAPAVexception@@PAX0@Z",
+   "sym_key": "__0exception_QAE_ABV0__Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F9970",
+ "name": "COMObject::GetSizeMaxWrapper",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F9970",
+ "bytes_hex": "8b4424088b4c24045051e8616ae1ff85c07c0233c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

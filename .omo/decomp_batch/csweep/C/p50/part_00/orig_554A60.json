@@ -1,0 +1,11 @@
+{
+ "addr": "0x554A60",
+ "name": "Trigger::EnableOnce",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x554A60",
+ "bytes_hex": "8a414884c0750e8b442404c641480150e87b000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
