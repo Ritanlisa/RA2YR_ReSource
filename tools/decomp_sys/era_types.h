@@ -293,6 +293,37 @@ typedef unsigned int        _ESP;
 #define SHIWORD(x) (*(short *)((char *)&(x) + 2))
 #endif
 
+
+// ---- CW5-10: host/IDA spellings that leak into residual pseudo-code bodies.
+// Fixed-width aliases (VC6 has no <stdint.h>), the host CRT's qsort callback
+// typedef, 16-bit pseudo-register names and the MMX value type.  Pure
+// spelling aliases: no codegen effect on their own.
+typedef int                 int32_t;
+typedef unsigned int        uint32_t;
+typedef short               int16_t;
+typedef unsigned short      uint16_t;
+typedef signed char         int8_t;
+typedef unsigned char       uint8_t;
+typedef unsigned short      WCHAR;
+// CW5-10: MMX value type (the export's `.m64_*` member views are re-spelled
+// as value slicings by passes.pass_residual_idents).
+typedef unsigned __int64    __m64;
+typedef int (__cdecl *_CoreCrtNonSecureSearchSortCompareFunction)(
+    const void *, const void *);
+typedef unsigned char       _AH, _AL, _BH, _BL, _CH, _CL, _DH, _DL;
+typedef unsigned short      _AX, _BX, _CX, _DX, _SI, _DI, _BP, _SP;
+
+// Win32 registry root handles (winreg.h normally supplies these constants).
+#ifndef HKEY_LOCAL_MACHINE
+#define HKEY_LOCAL_MACHINE  ((HKEY)0x80000002)
+#endif
+#ifndef HKEY_CURRENT_USER
+#define HKEY_CURRENT_USER   ((HKEY)0x80000001)
+#endif
+#ifndef HKEY_CLASSES_ROOT
+#define HKEY_CLASSES_ROOT   ((HKEY)0x80000000)
+#endif
+
 // `min`/`max` are macros in VC6 <windef.h>; emitted bodies may spell member
 // functions with those names, so keep them out of the namespace entirely.
 

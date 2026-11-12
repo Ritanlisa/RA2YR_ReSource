@@ -310,13 +310,6 @@ def run_part(addrs, batch_src, out, reg, idx):
         views = ClassView()
         for ctx in ctxs:
             merge_views(views, ctx.views)
-        cpp_parts = []
-        for ctx in ctxs:
-            cpp_parts.append("")
-            cpp_parts.append(decompile.emit_cpp(ctx, unit).rstrip())
-        cpp_path = os.path.join(out, unit + ".cpp")
-        with open(cpp_path, "w", encoding="utf-8", newline="\n") as f:
-            f.write("\n".join(cpp_parts) + "\n")
         by_cls = OrderedDict()
         for ctx in ctxs:
             if ctx.sig["cls"] is None:
@@ -338,6 +331,23 @@ def run_part(addrs, batch_src, out, reg, idx):
         # views / `v11[1].field` records need DEFINED classes in the hpp)
         for cls, bucket in decompile.shell_augment(by_cls, views, reg).items():
             by_cls.setdefault(cls, bucket)
+        # CW5-12: helper pseudo-class names that collide with free callees
+        # (BEFORE cpp emission -- the body casts must carry the new name)
+        _pre_exts = []
+        for ctx in ctxs:
+            _pre_exts.extend(getattr(ctx, "used_callee_exts", []))
+            if ctx.sig.get("free"):
+                _pre_exts.append(decompile.free_decl(ctx.sig))
+        decompile._cw5_rename_helper_classes(by_cls, ctxs, _pre_exts)
+        # CW5-8: registry member supply for every shell in this unit
+        unit_extra = decompile._cw5_unit_extra_members(reg, by_cls, ctxs)
+        cpp_parts = []
+        for ctx in ctxs:
+            cpp_parts.append("")
+            cpp_parts.append(decompile.emit_cpp(ctx, unit).rstrip())
+        cpp_path = os.path.join(out, unit + ".cpp")
+        with open(cpp_path, "w", encoding="utf-8", newline="\n") as f:
+            f.write("\n".join(cpp_parts) + "\n")
         unit_globals = {}
         unit_externs = []
         unit_fwd = set()
@@ -357,7 +367,8 @@ def run_part(addrs, batch_src, out, reg, idx):
             size = (reg.classes.get(cls) or {}).get("size") or 0
             hpp_text, members = hpp_pilot.gen_class_hpp(
                 cls, views, sigs, size, used_globals=unit_globals,
-                extra_externs=unit_externs, extra_fwd=unit_fwd)
+                extra_externs=unit_externs, extra_fwd=unit_fwd,
+                reg_members=unit_extra.get(cls))
             with open(os.path.join(inc_dir, unit + ".hpp"), "a",
                       encoding="utf-8", newline="\n") as f:
                 f.write(hpp_text)
@@ -431,12 +442,15 @@ def run_part(addrs, batch_src, out, reg, idx):
             for _ln in ctx.lines:
                 for _m in re.finditer(r"\b([A-Z]\w+)\s*\*", _ln):
                     fwd2.add(_m.group(1))
+            decompile._cw5_rename_helper_classes(by_cls2, [ctx], exts2)
+            extra2 = decompile._cw5_unit_extra_members(reg, by_cls2, [ctx])
             for cls2, sigs2 in by_cls2.items():
                 size2 = (reg.classes.get(cls2) or {}).get("size") or 0
                 hpp2, _m2 = hpp_pilot.gen_class_hpp(
                     cls2, ctx.views, sigs2, size2,
                     used_globals=getattr(ctx, "used_globals", {}),
-                    extra_externs=exts2, extra_fwd=fwd2)
+                    extra_externs=exts2, extra_fwd=fwd2,
+                    reg_members=extra2.get(cls2))
                 with open(os.path.join(inc_dir, iso_base + ".hpp"), "a",
                           encoding="utf-8", newline="\n") as f:
                     f.write(hpp2)

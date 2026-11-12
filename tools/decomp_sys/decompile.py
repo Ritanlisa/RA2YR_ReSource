@@ -823,6 +823,98 @@ def widen_byref_for_dispatch(ctx):
                  % (arr, n, arr, need, need, var, max(idxs)))
 
 
+
+# ------------------------------------------------- CW5-8: shell member supply
+
+def _cw5_unit_extra_members(reg, by_cls, ctxs):
+    """Registry members the unit bodies NAME but ClassView never recorded.
+
+    Intersection method (report_cw5_prep 5.4#3): only member names that
+    literally occur in this unit's emitted bodies are supplied, so a shell
+    never grows an unrelated member surface.  Inherited members are looked up
+    through the class_layouts parent chain (registry member tables are OWN
+    region only); their absolute offsets are valid in the derived shell.
+    Placeholder names are never supplied.
+    """
+    body = "\n".join("\n".join(c.lines) for c in ctxs)
+    out = {}
+    cl = None
+    for cls in by_cls:
+        try:
+            reg.member_at(cls, 0)          # force lazy _ml/_cl loading
+        except Exception:                  # noqa: BLE001
+            pass
+        cl = getattr(reg, "_cl", None) or {}
+        rec = reg.classes.get(cls) or {}
+        extra = {}
+        seen = set()
+
+        def add_members(members):
+            for o_s, m in (members or {}).items():
+                nm = m.get("name")
+                if not nm or nm in seen:
+                    continue
+                if reg._is_placeholder(nm):
+                    continue
+                if not re.search(r"\b%s\b" % re.escape(nm), body):
+                    continue
+                seen.add(nm)
+                try:
+                    off = int(o_s)
+                except (TypeError, ValueError):
+                    continue
+                extra[off] = {"name": nm, "type": m.get("type"),
+                              "width": int(m.get("width") or 4)}
+
+        add_members(rec.get("members"))
+        cur = (cl.get(cls) or {}).get("parent")
+        guard = set()
+        while cur and cur not in guard:
+            guard.add(cur)
+            add_members((reg.classes.get(cur) or {}).get("members"))
+            cur = (cl.get(cur) or {}).get("parent")
+        if extra:
+            out[cls] = extra
+    return out
+
+
+def _cw5_rename_helper_classes(by_cls, ctxs, unit_externs):
+    """CW5-12: a helper pseudo-class whose name is ALSO a free function.
+
+    `class DeleteAndZero;` and `extern int DeleteAndZero(...)` cannot coexist:
+    the class name hides the function, so the direct call site fails C2065.
+    Rename the shell class (and every `(class X *)` cast of it) to `X_Helper`.
+    """
+    fn_names = set()
+    for d in unit_externs:
+        m = re.match(r"extern\s+.+?\s+(\w+)\s*\(", d)
+        if m:
+            fn_names.add(m.group(1))
+    renamed = {}
+    for cls in list(by_cls):
+        if not cls or cls not in fn_names:
+            continue
+        new = cls + "_Helper"
+        renamed[cls] = new
+    if not renamed:
+        return
+    for ctx in ctxs:
+        out = []
+        for ln in ctx.lines:
+            for old, new in renamed.items():
+                ln = re.sub(r"\b%s(?=\s*\*)" % re.escape(old), new, ln)
+            out.append(ln)
+        ctx.lines = out
+        uc = getattr(ctx, "used_callees", None)
+        if uc:
+            for old, new in renamed.items():
+                if old in uc:
+                    uc.setdefault(new, []).extend(uc.pop(old))
+    for old, new in renamed.items():
+        if old in by_cls:
+            by_cls[new] = by_cls.pop(old)
+
+
 # ---------------------------------------------------------------- shell supply
 
 def shell_augment(by_cls, views, reg, depth=2):
@@ -918,6 +1010,9 @@ def run_function(addr, reg, views, idx):
     passes.pass_param_rename(ctx)
     passes.pass_globals(ctx)
     passes.pass_struct_globals(ctx)
+    # CW5-7b: `LOCAL.Class_field_0xNN` -- name-encoded owner+offset on a
+    # local/param base (the ClassView never records these members)
+    passes.pass_local_field_members(ctx)
     # CW5-5: `g_X_Instance[i].M` on a void*-typed global -> offset-true
     # element access (stride from the member's shallowest declaring class)
     passes.pass_global_array_members(ctx)
@@ -945,6 +1040,10 @@ def run_function(addr, reg, views, idx):
     passes.pass_callees(ctx)
     passes.pass_fncast_harmonize(ctx)
     passes.pass_unknown_symbols(ctx)
+    # CW5-10: declare F8 residual identifiers BEFORE the call-site typing
+    # pass (asc_/GUID/global declarations are argument types for CW5-1/2).
+    # The late call (after era_normalize) still handles late-born forms.
+    passes.pass_residual_idents(ctx)
     # CW5-F7: call-site argument typing against the declared slot (pointer
     # <-> int32 casts are codegen-neutral on x86-32; float/__int64 slots are
     # never touched).  Runs after the declaration passes.
@@ -981,6 +1080,10 @@ def run_function(addr, reg, views, idx):
     passes.pass_global_canon(ctx)
     # R8: signed-evidence global reads (byte-carrier cast form)
     passes.pass_signed_globals(ctx)
+    # CW5-10 (F8): residual identifier spellings -- MEMORY[0xADDR], templated
+    # vftable addresses, __usercall tokens, undeclared IDA data names
+    # (asc_/loc_/dword_...), GUID constants and bare g_* globals.
+    passes.pass_residual_idents(ctx)
 
     # unit selection (rule 2: cpp <-> hpp same name):
     # D-fix 1 -- the OWNING CLASS names the unit so a corrected fn->cls
@@ -1132,16 +1235,8 @@ def main():
 
     report = {"functions": [], "units": {}, "stats": {}}
     for unit, ctxs in units.items():
-        cpp_parts = []
-        for ctx in ctxs:
-            cpp_parts.append("")
-            cpp_parts.append(emit_cpp(ctx, unit).rstrip())
-        cpp_path = os.path.join(args.out, unit + ".cpp")
-        with open(cpp_path, "w", encoding="utf-8", newline="\n") as f:
-            f.write("\n".join(cpp_parts) + "\n")
-        print("[emit] %s" % cpp_path)
-
-        # pilot hpp: all classes touched by this unit
+        # pilot hpp classes touched by this unit (built BEFORE cpp emission:
+        # CW5-12 renames helper pseudo-classes in the BODY text)
         by_cls = OrderedDict()
         for ctx in ctxs:
             if ctx.sig["cls"] is None:
@@ -1171,11 +1266,24 @@ def main():
                 d = free_decl(ctx.sig)
                 if d not in unit_externs:
                     unit_externs.append(d)
+        # CW5-12: helper pseudo-class name collisions with free callees
+        _cw5_rename_helper_classes(by_cls, ctxs, unit_externs)
+        # CW5-8: registry member supply for every shell in this unit
+        unit_extra = _cw5_unit_extra_members(reg, by_cls, ctxs)
+        cpp_parts = []
+        for ctx in ctxs:
+            cpp_parts.append("")
+            cpp_parts.append(emit_cpp(ctx, unit).rstrip())
+        cpp_path = os.path.join(args.out, unit + ".cpp")
+        with open(cpp_path, "w", encoding="utf-8", newline="\n") as f:
+            f.write("\n".join(cpp_parts) + "\n")
+        print("[emit] %s" % cpp_path)
         for cls, sigs in by_cls.items():
             size = (reg.classes.get(cls) or {}).get("size") or 0
             hpp_text, members = hpp_pilot.gen_class_hpp(
                 cls, views, sigs, size, used_globals=unit_globals,
-                extra_externs=unit_externs)
+                extra_externs=unit_externs,
+                reg_members=unit_extra.get(cls))
             hpp_path = os.path.join(inc_dir, unit + ".hpp")
             with open(hpp_path, "a", encoding="utf-8", newline="\n") as f:
                 f.write(hpp_text)

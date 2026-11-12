@@ -955,7 +955,10 @@ def pass_struct_globals(ctx):
         hit = _cw5_member_tiered(ctx.reg, mem, ctx)
         if hit is not None:
             return hit
-        return _cw5_abs_member(ctx, _global_addr(base), mem)
+        addr = _global_addr(base)
+        if addr is None:
+            addr = _cw5_global_addr(ctx.reg, base)
+        return _cw5_abs_member(ctx, addr, mem)
 
     def _named_mem_sub(m):
         nonlocal changed
@@ -1114,6 +1117,67 @@ def pass_struct_globals(ctx):
 _CW5_GARR_MEM = re.compile(
     r"(?<![\w.>])(?P<base>[A-Za-z_]\w*)\s*\[(?P<idx>[^\[\]]{1,60})\]"
     r"\s*\.\s*(?P<mem>[A-Za-z_]\w*)(?P<idx2>\[[^\[\]]*\])?")
+
+
+_CW5_LOCAL_FIELD = re.compile(
+    r"(?<![\w.>])(?P<base>this|[A-Za-z_]\w*)\s*(?:\.|->)\s*"
+    r"(?P<cls>[A-Za-z_]\w*)_field_0x(?P<off>[0-9A-Fa-f]+)\b"
+    r"(?P<idx>\s*\[[^\[\]]*\])?")
+
+
+def pass_local_field_members(ctx):
+    """CW5-7b (B5-local): `v6.DeleteAndZero_field_0x04` -- the member NAME
+    encodes its owner class and byte offset, but the base is a local/param
+    (ClassView never sees it, `pass_struct_globals` only handles globals).
+    Re-spell offset-true: the registry record for (class, offset) supplies
+    the member type; an unknown type degrades to a 4-byte int carrier.
+    """
+    text = "\n".join(ctx.lines)
+    if "_field_0x" not in text:
+        return
+    locals_ = set(ctx.sig.get("param_names") or [])
+    for m in _LOCAL_DECL.finditer(text):
+        locals_.add(m.group(1))
+    syms = _cw5_sym_types(ctx, text)
+    n = 0
+
+    def repl(m):
+        nonlocal n
+        base = m.group("base")
+        if base != "this" and base not in locals_ and \
+                base not in (getattr(ctx, "used_globals", None) or {}):
+            return m.group(0)
+        cls = m.group("cls")
+        off = int(m.group("off"), 16)
+        rec = None
+        try:
+            rec = ctx.reg.member_at(cls, off)[0]
+        except Exception:                  # noqa: BLE001
+            rec = None
+        ty = (rec or {}).get("type")
+        sp = spell_type(ty) if ty else None
+        if not sp or (sp not in WIDTH_OF and not sp.endswith("*")):
+            sp = "int"
+        if base == "this":
+            addr = "((char *)this + 0x%X)" % off
+        elif (syms.get(base) or "").strip().endswith("*"):
+            addr = "((char *)(%s) + 0x%X)" % (base, off)
+        else:
+            addr = "((char *)&%s + 0x%X)" % (base, off)
+        n += 1
+        idx = m.group("idx")
+        if idx and idx.strip():
+            inner = idx.strip()[1:-1]
+            return "((%s *)(%s))[%s]" % (sp, addr, inner)
+        return "(*(%s *)(%s))" % (sp, addr)
+
+    text2 = _CW5_LOCAL_FIELD.sub(repl, text)
+    if n:
+        ctx.lines = text2.split("\n")
+        ctx.sites.append(Site(
+            "member_read", "%d local field-member(s)" % n,
+            "LOCAL.Class_field_0xNN -> offset-true read (name-encoded "
+            "owner+offset, registry type)", True))
 
 
 def pass_global_array_members(ctx):
@@ -1315,7 +1379,7 @@ def pass_member_chain_reads(ctx):
         ctx.sites.append(Site(
             "member_chain", "%s->%s->%s" % (base, mem, mem2),
             "offset-true chain read (M +0x%X, X +0x%X)" % (moff, off), True))
-        return _cw5_value_read(ty, "%s + 0x%X" % (inner, off), arr)
+        return _cw5_value_read(ty, "(char *)%s + 0x%X" % (inner, off), arr)
 
     text2 = _CW5_CHAIN2.sub(repl, text)
 
@@ -3545,6 +3609,11 @@ _CRT_CALL_TYPES = {
     "InterlockedDecrement": ["volatile long *"],
     "InterlockedExchange": ["volatile long *", "long"],
     "MoveWindow": ["void *", "int", "int", "int", "int", "int"],
+    "SetRect": ["void *", "int", "int", "int", "int"],
+    "OffsetRect": ["void *", "int", "int"],
+    "InflateRect": ["void *", "int", "int"],
+    "SetWindowPos": ["void *", "void *", "int", "int", "int", "int", "int",
+                     "unsigned int"],
     "CompareFileTime": ["const FILETIME *", "const FILETIME *"],
     "VerQueryValueA": ["const void *", "const char *", "void **",
                        "unsigned int *"],
@@ -3619,9 +3688,17 @@ _FNCast_ARG_HEAD = re.compile(
     r"^\([^()]*\(\s*__(?:stdcall|cdecl|fastcall|thiscall)\b[^()]*\*[^()]*\)[^()]*\)")
 
 
+_CW5_CAST_HEAD = re.compile(
+    r"^\(\s*((?:(?:const|volatile|struct|class|union|unsigned|signed|long|"
+    r"short)\s+)*[A-Za-z_]\w*(?:\s+[A-Za-z_]\w*)*)\s*\)\s*(?=\S)")
+
+
 def _cw5_arg_kind(s, syms, ctx=None):
     """Family of a call argument: 'ptr' | 'int' | 'float' | None (refuse)."""
     s = (s or "").strip()
+    # IDA site comments inside expressions (`(/*#375*/int *)p0`) are not
+    # part of the type spelling
+    s = re.sub(r"/\*.*?\*/", " ", s).strip()
     if not s:
         return None
     s2 = _strip_outer_parens(s)
@@ -3632,6 +3709,10 @@ def _cw5_arg_kind(s, syms, ctx=None):
                  s)
     if m:
         return _cw5_ty_kind(m.group(1))
+    # `*(*(T **)X + n)` / `*((T **)X + n)`: one deref of a typed slot
+    if re.match(r"^\*\s*\(\s*\(\s*[A-Za-z_]\w*(?:\s+[A-Za-z_]\w*)*"
+                r"\s*\*+\s*\)", s):
+        return "ptr"
     if s.startswith("*"):
         return None              # deref of unknown pointer: refuse
     # explicit pointer cast `(T *)`, `(const char *)`, `(T **)` ...
@@ -3639,15 +3720,12 @@ def _cw5_arg_kind(s, syms, ctx=None):
         return "ptr"
     if _FNCast_ARG_HEAD.match(s):
         return "ptr"
-    m = re.match(r"^\(\s*([A-Za-z_]\w*)\s*\)", s)
+    # multi-word C-style cast (`(const unsigned int)`, `(unsigned __int64)`)
+    m = _CW5_CAST_HEAD.match(s)
     if m:
-        nm = m.group(1)
-        if nm in _PTR_TY_NAMES:
-            return "ptr"
-        if nm in _CW5_INT32_TYS or nm in _CW5_SMALL_INT_TYS:
-            return "int"
-        if nm in _CW5_FLOAT_TYS:
-            return "float"
+        tk = _cw5_ty_kind(m.group(1))
+        if tk is not None:
+            return tk
         return None
     if s.startswith("&") and not s.startswith("&&"):
         return "ptr"
@@ -3680,7 +3758,7 @@ def _cw5_arg_kind(s, syms, ctx=None):
 
 def _cw5_arg_base(s, syms):
     """Pointer base spelling of an argument, or None when unknown."""
-    s = (s or "").strip()
+    s = re.sub(r"/\*.*?\*/", " ", (s or "")).strip()
     s2 = _strip_outer_parens(s)
     if s2 != s:
         return _cw5_arg_base(s2, syms)
@@ -4044,7 +4122,20 @@ def pass_unknown_symbols(ctx):
         if name in declared or name in ctx.used_globals:
             continue
         if name in ctx.reg.classes or (name + "Class") in ctx.reg.classes:
-            continue
+            # CW5-12: a PHANTOM registry class (no vtable, no slots, only
+            # placeholder members) that the body CALLS is a helper pseudo-
+            # class, not a real type -- declare the free function.  The
+            # shell (if any) is renamed to `Name_Helper` at emission.
+            _ck = name if name in ctx.reg.classes else name + "Class"
+            _crec = ctx.reg.classes.get(_ck) or {}
+            _synth = re.compile(r"^(?:ptr_|m_?|u\d+_|q[0-9A-Fa-f]+|pad_|__pad)")
+            _phantom = (not _crec.get("vtable")
+                        and not _crec.get("slot_count")
+                        and all(ctx.reg._is_placeholder((m or {}).get("name"))
+                                or _synth.match(((m or {}).get("name") or ""))
+                                for m in (_crec.get("members") or {}).values()))
+            if not _phantom:
+                continue
         # R7: va_* are stdarg MACROS (the #include <stdarg.h> in every
         # pilot hpp provides them); declaring an extern with the same
         # name fights the macro expansion
@@ -6548,3 +6639,207 @@ def pass_signed_globals(ctx):
         ctx.note("signed_global_read",
                  "%d unsigned dword read%s of evidence-signed global "
                  "spelling(s) -> int" % (n, "" if n == 1 else "s"))
+
+# ------------------------------------------- CW5-F8: residual identifier forms
+#
+# CW5-10 (F8 C2065/C2059): mechanical spellings the residual bodies still carry
+# from the export:
+#   * `MEMORY[0xADDR]`                -> byte read at the absolute address
+#   * `IID_X` / `CLSID_X` / `g_CLSID_X` constants -> `extern GUID X;`
+#   * IDA data names (`asc_`/`loc_`/`dword_`...) the registry cannot name ->
+#     extern declarations with the prefix's width
+#   * `&Template<...>::`vftable'`      -> 0 (the templated vftable is not
+#     declarable; the address value is not recoverable at this stage)
+#   * `__usercall` / `__userpurge`     -> `__cdecl` (IDA-only CC token)
+#   * undeclared `g_*`/`s_*`/`p_*`/`hWnd` globals -> `extern unsigned int`
+# All rewrites are compile-level; none is claimed byte-faithful.
+_CW5_MEMORY_READ = re.compile(r"\bMEMORY\s*\[\s*(0x[0-9A-Fa-f]+|\d+)\s*\]")
+_CW5_GUID_CONST = re.compile(
+    r"(?<![\w.])((?:IID|CLSID|LIBID)_[A-Za-z0-9_]+|g_CLSID_[A-Za-z0-9_]+)\b")
+_CW5_IDA_DATA = re.compile(
+    r"(?<![\w.])((?:asc|loc|algn|byte|word|dword|qword|flt|dbl|unk|off|stru)_"
+    r"[0-9A-Fa-f]{4,8})\b")
+_CW5_VFTABLE_TMPL = re.compile(
+    r"&\s*[A-Za-z_]\w*\s*<[^;{}\n]*?>\s*::\s*`vftable[^\x27\n]*\x27")
+_CW5_USERCALL = re.compile(r"\b__(?:usercall|userpurge)\b")
+_CW5_VTABLE_SYM = re.compile(r"(?<![\w.])([A-Za-z_]\w*_Vtable)\b")
+_CW5_UNKNOWN_GNAME = re.compile(
+    r"(?<![\w.])((?:g_|s_|p_)[A-Za-z]\w*|hWnd|hDC|hInstance)\b")
+
+# CW5-10b: IDA's `__m64` is a plain 64-bit value in the original (MMX); the
+# `union _m64_era` spelling cannot take an int cast (`(__m64)x`).  The export
+# bodies only use the member VIEWS as value slicings, so re-spell them.
+_CW5_M64_VIEW = re.compile(
+    r"(?P<base>[A-Za-z_]\w*)\s*\.\s*(?P<mem>m64_(?:u64|i64|f64|u32|i32|"
+    r"u16|i16|u8|i8))\b\s*(?P<idx>\[[^\[\]]*\])?")
+_CW5_M64_TY = {
+    "m64_u32": "unsigned long", "m64_i32": "long",
+    "m64_u16": "unsigned short", "m64_i16": "short",
+    "m64_u8": "unsigned char", "m64_i8": "signed char",
+    "m64_f64": "double",
+}
+
+_CW5_IDA_PREFIX_TY = {
+    "asc": "wchar_t *", "loc": "char *", "algn": "char *",
+    "byte": "unsigned char",
+    "word": "unsigned short", "dword": "unsigned int", "qword": "__int64",
+    "flt": "float", "dbl": "double", "unk": "unsigned char",
+    "off": "void *", "stru": "unsigned char",
+}
+
+
+def pass_residual_idents(ctx):
+    text = "\n".join(ctx.lines)
+    n = 0
+    changed = False
+
+    def mem_repl(m):
+        nonlocal n
+        n += 1
+        return "(*(unsigned char *)%s)" % m.group(1)
+
+    text2 = _CW5_MEMORY_READ.sub(mem_repl, text)
+    if text2 != text:
+        changed = True
+        text = text2
+
+    # templated vftable address: not declarable at this stage
+    text2 = _CW5_VFTABLE_TMPL.sub("0", text)
+    if text2 != text:
+        changed = True
+        text = text2
+
+    # IDA-only calling-convention tokens in cast types
+    text2 = _CW5_USERCALL.sub("__cdecl", text)
+    if text2 != text:
+        changed = True
+        text = text2
+
+    # __m64 member views -> value slicings on the 64-bit scalar
+    def m64_repl(m):
+        nonlocal n
+        base = m.group("base")
+        mem = m.group("mem")
+        if mem in ("m64_u64", "m64_i64"):
+            n += 1
+            return base
+        ty = _CW5_M64_TY.get(mem)
+        if not ty:
+            return m.group(0)
+        idx = m.group("idx")
+        n += 1
+        if idx and idx.strip():
+            return "((%s *)&%s)%s" % (ty, base, idx)
+        return "(*(%s *)&%s)" % (ty, base)
+
+    text2 = _CW5_M64_VIEW.sub(m64_repl, text)
+    if text2 != text:
+        changed = True
+        text = text2
+
+    # names already declared in this function/unit
+    declared = set(ctx.sig.get("param_names") or [])
+    for m in _LOCAL_DECL.finditer(text):
+        declared.add(m.group(1))
+    declared |= set((getattr(ctx, "used_globals", None) or {}))
+
+    def _is_declared(name):
+        return name in declared
+
+    def guid_repl(m):
+        nonlocal n
+        name = m.group(1)
+        if _is_declared(name):
+            return m.group(0)
+        ctx.used_globals[name] = "GUID"
+        declared.add(name)
+        n += 1
+        return m.group(0)
+
+    text2 = _CW5_GUID_CONST.sub(guid_repl, text)
+    if text2 != text:
+        changed = True
+        text = text2
+
+    def ida_repl(m):
+        nonlocal n
+        name = m.group(1)
+        if _is_declared(name):
+            return m.group(0)
+        ty = _CW5_IDA_PREFIX_TY.get(name.split("_")[0], "unsigned int")
+        ctx.used_globals[name] = ty
+        declared.add(name)
+        n += 1
+        return m.group(0)
+
+    text2 = _CW5_IDA_DATA.sub(ida_repl, text)
+    if text2 != text:
+        changed = True
+        text = text2
+
+    def gname_repl(m):
+        nonlocal n
+        name = m.group(1)
+        if _is_declared(name):
+            return m.group(0)
+        # never declare a callee (`g_Foo(`) or a known class spelling
+        if re.search(r"\b%s\s*\(" % re.escape(name), text):
+            return m.group(0)
+        if ctx.reg.class_key(name) is not None:
+            return m.group(0)
+        ctx.used_globals[name] = "unsigned int"
+        declared.add(name)
+        n += 1
+        return m.group(0)
+
+    text2 = _CW5_UNKNOWN_GNAME.sub(gname_repl, text)
+    if text2 != text:
+        changed = True
+        text = text2
+
+    def vtable_repl(m):
+        nonlocal n
+        name = m.group(1)
+        if name in declared:
+            return m.group(0)
+        ctx.used_globals[name] = "void *"
+        declared.add(name)
+        n += 1
+        return m.group(0)
+
+    text2 = _CW5_VTABLE_SYM.sub(vtable_repl, text)
+    if text2 != text:
+        changed = True
+        text = text2
+
+    # pointer mask-merge repair: IDA's `LOBYTE(ptr)`/`LOWORD(this)` spills
+    # became `p = (p & ~0xFF) | (...)` -- a bit-and on a pointer (C2296).
+    syms2 = _cw5_sym_types(ctx, text)
+
+    def mask_repl(m):
+        nonlocal n
+        var = m.group("var")
+        expr = m.group("expr")
+        if var == "this":
+            ty = "class %s *" % (ctx.sig.get("cls") or "void")
+        else:
+            decl = (syms2.get(var) or "").strip()
+            if not decl.endswith("*"):
+                return m.group(0)
+            ty = decl
+        n += 1
+        return ("%s%s = (%s)(((unsigned int)%s & ~0xFF) | "
+                "((unsigned int)(%s)));" % (m.group("ind"), var, ty, var, expr))
+
+    text = re.sub(
+        r"^(?P<ind>\s*)(?P<var>this|[A-Za-z_]\w*)\s*=\s*\(\s*(?P=var)\s*&"
+        r"\s*~\s*0xFF\s*\)\s*\|\s*\((?P<expr>.*)\);\s*$",
+        mask_repl, text, flags=re.M)
+
+    if changed:
+        ctx.lines = text.split("\n")
+        ctx.sites.append(Site(
+            "residual_ident", "%d residual identifier form(s)" % n,
+            "F8 residual spellings normalized (MEMORY/GUID/IDA-data/"
+            "templated-vftable/usercall/undeclared global)", True))
+
