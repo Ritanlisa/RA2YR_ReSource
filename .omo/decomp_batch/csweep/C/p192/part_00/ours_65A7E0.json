@@ -1,0 +1,15 @@
+{
+ "symbol": "?Helper_65A7E0@RadioClass@@QAEPAV1@H@Z",
+ "sym_key": "RadioClass::Helper_65A7E0",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000033c08986e0000000890689460489460889460c8bc65ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Init@ObjectClass@@QAEPAV1@H@Z",
+   "sym_key": "ObjectClass::Init"
+  }
+ ]
+}

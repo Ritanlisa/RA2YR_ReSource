@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4A20B0@ObjectClass@@QAEHPAEH@Z",
+ "sym_key": "ObjectClass::sub_4A20B0",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408578bf985db74258b44241083f8017c1c565053e8000000008bf08d4f0c5653e8000000008bc65e5f5bc208005f33c05bc20800",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Invoke@Delegate@@QAEHHH@Z",
+   "sym_key": "Delegate::Invoke"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  }
+ ]
+}

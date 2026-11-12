@@ -1,0 +1,15 @@
+{
+ "symbol": "?createStartingUnits@HouseClass@@QAEDH@Z",
+ "sym_key": "HouseClass::createStartingUnits",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "558be98b456085c074305356578b7c241433f68d0c7f8d047f8d5c8d00833b00740c56578bcde8000000000fbec04683c30483fe037ce65f5e5b5dc20400",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?SendBeaconDelete@Network@@QAEDPAXH@Z",
+   "sym_key": "Network::SendBeaconDelete"
+  }
+ ]
+}

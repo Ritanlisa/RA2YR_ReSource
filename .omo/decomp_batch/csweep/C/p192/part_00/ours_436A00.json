@@ -1,0 +1,15 @@
+{
+ "symbol": "?SD_vt10@BuildingLightClass@@QAEHHH@Z",
+ "sym_key": "BuildingLightClass::SD_vt10",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b4424088b96e000000033c93bd07506898ee00000003986e40000007506898ee400000033c05ec20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Unlink@Object@@QAEHXZ",
+   "sym_key": "Object::Unlink"
+  }
+ ]
+}

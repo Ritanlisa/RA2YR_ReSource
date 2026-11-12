@@ -1,0 +1,39 @@
+{
+ "symbol": "?readSection@INIClass@@QAEHXZ",
+ "sym_key": "INIClass::readSection",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "538bd9565785db75065f5e33c05bc3a1000000008b0b505133ffbe00000000e80000000083c40885c0741e83c6044781fe000000007dd28b168b035250e80000000083c40885c075e28bc75f5e5bc3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E523C@@3PAXA",
+   "sym_key": "DataGlobal_7E523C"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E523C@@3PAXA",
+   "sym_key": "DataGlobal_7E523C"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E5288@@3PAXA",
+   "sym_key": "DataGlobal_7E5288"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

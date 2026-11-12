@@ -1,0 +1,11 @@
+{
+ "addr": "0x431410",
+ "name": "HouseClass::createStartingUnits",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x431410",
+ "bytes_hex": "558be98b456085c0742a538b5c240c56578d045b33f68d7c8500833f00740956538bcde888fdffff4683c70483fe037ce95f5e5b5dc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

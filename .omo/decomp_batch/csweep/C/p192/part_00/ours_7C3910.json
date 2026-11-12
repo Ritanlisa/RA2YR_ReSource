@@ -1,0 +1,8 @@
+{
+ "symbol": "?CalcAudioStreamOffset@@YIHHH@Z",
+ "sym_key": "Unnamed::CalcAudioStreamOffset",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf1578bfa56c7864801000000000000ff56508d044033d283c4048d0480c1e002f776782bf88b86480100002bf889be480100005f5ec3",
+ "relocs": []
+}

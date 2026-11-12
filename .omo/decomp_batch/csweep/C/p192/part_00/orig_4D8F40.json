@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D8F40",
+ "name": "FootClass::OverrideMission_SyncLog",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D8F40",
+ "bytes_hex": "8b54240456578b7c24148bf1578b4c24148b86a405000051528bce8986a8050000e83a8422008b066a01578bceff90800400005f5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

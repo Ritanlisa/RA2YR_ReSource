@@ -1,0 +1,15 @@
+{
+ "symbol": "?allocateMapBuffers@MapClass@@QAEPAIXZ",
+ "sym_key": "MapClass::allocateMapBuffers",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db568b460c895e042401895e080c01891e89460c885e0cc746140a000000895e10e80000000083c40466895e18895e1c895e208bc65e5bc3",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?VectorClass__CleanupSubzone@@YAHH@Z",
+   "sym_key": "VectorClass__CleanupSubzone"
+  }
+ ]
+}

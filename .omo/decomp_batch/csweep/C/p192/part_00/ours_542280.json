@@ -1,0 +1,8 @@
+{
+ "symbol": "?deserializeEvent@EventClass@@QAEHHPAH@Z",
+ "sym_key": "EventClass::deserializeEvent",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4c24088b065156ff501883f8ff74213b46447d1c0fbe4c30288b44240c83c14c8b1089118b50048951048b40088941085ec20800",
+ "relocs": []
+}

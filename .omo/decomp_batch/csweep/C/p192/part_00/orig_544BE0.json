@@ -1,0 +1,11 @@
+{
+ "addr": "0x544BE0",
+ "name": "House::LookupObject",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x544BE0",
+ "bytes_hex": "8b01ff909c0000008bc885c97425568b71040faf318b44240899f7fe5e8b4c911085c9740e0fbe49298b048de4888200c2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

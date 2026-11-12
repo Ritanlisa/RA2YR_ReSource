@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p192\part_00
+=== convert (20 addrs) ===
+[conv] 0x431410 HouseClass::createStartingUnits -> HouseClass
+[conv] 0x436a00 BuildingLightClass::SD_vt10 -> BuildingLightClass
+[conv] 0x48de70 INIClass::readSection -> INIClass
+[conv] 0x5c5d90 FreeForAll::Write -> FreeForAll
+[conv] 0x65a7e0 RadioClass::Helper_65A7E0 -> RadioClass
+[conv] 0x7446e0 UnitClass::HandleTargetDestroyed -> UnitClass
+[conv] 0x772a50 ArmorType::LookupByName -> ArmorType
+[conv] 0x7cea4c _write_string -> _addr_7C
+[conv] 0x589bd0 MapClass::allocateMapBuffers -> MapClass
+[conv] 0x542280 EventClass::deserializeEvent -> EventClass
+[conv] 0x544be0 House::LookupObject -> House
+[conv] 0x732190 sub_732190 -> _addr_73
+[conv] 0x7321d0 sub_7321D0 -> _addr_73
+[conv] 0x7c3910 CalcAudioStreamOffset -> _addr_7C
+[conv] 0x4a20b0 ObjectClass::sub_4A20B0 -> ObjectClass
+[conv] 0x7dd2e0 sub_7DD2E0 -> _addr_7D
+[conv] 0x4d8f40 FootClass::OverrideMission_SyncLog -> FootClass
+[conv] 0x693840 ScrollClass::GetButtonState -> ScrollClass
+[conv] 0x4f4410 GScreenClass::InsertOrdered -> GScreenClass
+[conv] 0x4749e0 ObjectTypeClass::loadTypeMember_54749E0 -> ObjectTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] BuildingLightClass       rc=0
+[era] INIClass                 rc=0
+[era] FreeForAll               rc=2
+[era] RadioClass               rc=0
+[era] UnitClass                rc=2
+[era] ArmorType                rc=0
+[era] _addr_7C                 rc=0
+[era] MapClass                 rc=0
+[era] EventClass               rc=0
+[era] House                    rc=0
+[era] _addr_73                 rc=2
+[era] ObjectClass              rc=0
+[era] _addr_7D                 rc=0
+[era] FootClass                rc=0
+[era] ScrollClass              rc=2
+[era] GScreenClass             rc=2
+[era] ObjectTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x431410   MISMATCH         HouseClass::createStartingUnits
+[diff] 0x436a00   MISMATCH         BuildingLightClass::SD_vt10
+[diff] 0x48de70   MISMATCH         INIClass::readSection
+[diff] 0x65a7e0   MISMATCH         RadioClass::Helper_65A7E0
+[diff] 0x772a50   MISMATCH         ArmorType::LookupByName
+[diff] 0x7cea4c   MISMATCH         _write_string
+[diff] 0x7c3910   MATCH            CalcAudioStreamOffset
+[diff] 0x589bd0   MISMATCH         MapClass::allocateMapBuffers
+[diff] 0x542280   MISMATCH         EventClass::deserializeEvent
+[diff] 0x544be0   MISMATCH         House::LookupObject
+[diff] 0x4a20b0   MATCH            ObjectClass::sub_4A20B0
+[diff] 0x7dd2e0   MISMATCH         sub_7DD2E0
+[diff] 0x4d8f40   MISMATCH         FootClass::OverrideMission_SyncLog
+[ledger] 0x431410 HouseClass::createStartingUnits -> NG (attempt 1)
+[ledger] 0x436a00 BuildingLightClass::SD_vt10 -> NG (attempt 1)
+[ledger] 0x48de70 INIClass::readSection -> NG (attempt 1)
+[ledger] 0x5c5d90 FreeForAll::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65a7e0 RadioClass::Helper_65A7E0 -> NG (attempt 1)
+[ledger] 0x7446e0 UnitClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x772a50 ArmorType::LookupByName -> NG (attempt 1)
+[ledger] 0x7cea4c _write_string -> NG (attempt 1)
+[ledger] 0x589bd0 MapClass::allocateMapBuffers -> NG (attempt 1)
+[ledger] 0x542280 EventClass::deserializeEvent -> NG (attempt 1)
+[ledger] 0x544be0 House::LookupObject -> NG (attempt 1)
+[ledger] 0x732190 sub_732190 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7321d0 sub_7321D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c3910 CalcAudioStreamOffset -> OK (attempt 1)
+[ledger] 0x4a20b0 ObjectClass::sub_4A20B0 -> OK (attempt 1)
+[ledger] 0x7dd2e0 sub_7DD2E0 -> NG (attempt 1)
+[ledger] 0x4d8f40 FootClass::OverrideMission_SyncLog -> NG (attempt 1)
+[ledger] 0x693840 ScrollClass::GetButtonState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f4410 GScreenClass::InsertOrdered -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4749e0 ObjectTypeClass::loadTypeMember_54749E0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 7,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "codegen_shape": 7,
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 15.4,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p192\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x542280",
+ "name": "EventClass::deserializeEvent",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x542280",
+ "bytes_hex": "568bf18b4c24088b06518bceff501883f8ff74203b46447d1b8b5486288b44240c83c24c8b08890a8b4804894a048b40088942085ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

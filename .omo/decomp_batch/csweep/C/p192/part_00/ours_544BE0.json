@@ -1,0 +1,15 @@
+{
+ "symbol": "?LookupObject@House@@QAEHH@Z",
+ "sym_key": "House::LookupObject",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "8b01ff909c0000008bc885c97426568b71040faf318b44240833d2f7f65e8b4c911085c9740e0fbe49298b048d00000000c2040033c0c20400",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8288E4@@3PAIA",
+   "sym_key": "DataGlobal_8288E4"
+  }
+ ]
+}

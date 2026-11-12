@@ -1,0 +1,11 @@
+{
+ "addr": "0x65A7E0",
+ "name": "Helper_65A7E0",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65A7E0",
+ "bytes_hex": "8b442404568bf150e86393f9ffc786e00000000c187e00c70608057f00c74604ec047f00c74608e4047f00c7460cdc047f008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

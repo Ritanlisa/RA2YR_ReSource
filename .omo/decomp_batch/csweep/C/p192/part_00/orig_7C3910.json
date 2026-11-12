@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C3910",
+ "name": "CalcAudioStreamOffset",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C3910",
+ "bytes_hex": "568bf1578bfa56c7864801000000000000ff56508d044033d283c4048d0480c1e002f776782bf88b86480100002bf889be480100005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

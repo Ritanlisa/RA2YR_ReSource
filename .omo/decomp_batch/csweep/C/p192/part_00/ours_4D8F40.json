@@ -1,0 +1,15 @@
+{
+ "symbol": "?OverrideMission_SyncLog@FootClass@@QAEHHHH@Z",
+ "sym_key": "FootClass::OverrideMission_SyncLog",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86a40500008986a8050000e8000000008b5424108b0e6a015256ff91800400005ec20c00",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?OverrideMission_SyncLog@MissionClass@@QAEHXZ",
+   "sym_key": "MissionClass::OverrideMission_SyncLog"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?_write_string@@YAHPADPAIPAH1@Z",
+ "sym_key": "Unnamed::_write_string",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b44240853555685c0578d68ff7e298b7c24208b5c241c8b7424140fbe0657535046e8000000008b0f83c40c83f9ff74078bc54d85c07fe35f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?write_char@@YAHHPAX0ZZ",
+   "sym_key": "write_char"
+  }
+ ]
+}

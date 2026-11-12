@@ -1,0 +1,11 @@
+{
+ "addr": "0x589BD0",
+ "name": "MapClass::allocateMapBuffers",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x589BD0",
+ "bytes_hex": "53568bf133db895e04895e08c6460c01885e0dc706a0d57e00c746140a000000895e10ff15acd57e0066895e18895e1c895e208bc65e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
