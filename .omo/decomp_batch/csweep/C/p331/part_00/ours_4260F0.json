@@ -1,0 +1,33 @@
+{
+ "symbol": "?IsCellPlaceable@BuildingClass@@QAEDPAF@Z",
+ "sym_key": "BuildingClass::IsCellPlaceable",
+ "size": 172,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf15750b900000000e8000000008b8840010000f6c5018b0d0000000074290fbe901b0100000fafd18bbea40000002bfa8d14093bfa7610f68028010000e0755f5fb0015ec204008b90ec00000083ea03744d4a744a83ea0674458b504483faff74158b3d00000000538b14978a9aa00a000084db5b7528f68024010000e0751f0fbe801b0100000fafc18bbea400000003c92bc73bc177075fb0015ec204005f32c05ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?Map_CellHeight@@3IA",
+   "sym_key": "Map_CellHeight"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_BuildingTypeClass_Array@@3PAXA",
+   "sym_key": "g_BuildingTypeClass_Array"
+  }
+ ]
+}

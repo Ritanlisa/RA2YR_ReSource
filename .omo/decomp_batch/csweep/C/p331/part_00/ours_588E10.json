@@ -1,0 +1,21 @@
+{
+ "symbol": "?Clear@_VectorClass_USubzoneTrackingStruct@@QAEHHH@Z",
+ "sym_key": "_VectorClass_USubzoneTrackingStruct::Clear",
+ "size": 202,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b490453558d04c0568b742410578d3c8133db3bf7895e04895e08c6460c01885e0d891e74758bcee8000000008b6f083beb896e08745e8d14ed0000000052e80000000083c4043bc374168d55ff8bc885d27c0f891988590483c1084d75f5eb0233c03bc389460474318b4e0833c03bcbc6460d017e248b4f048b56048b2cc1892cc28b4cc104894cc2048b4e08403bc172e4eb06895e04885e0d8b57108956108b4714894614891e668b4f1866894e188b571c89561c8b47208946208bc65f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Cleanup5@VectorClass@@QAEXXZ",
+   "sym_key": "VectorClass::Cleanup5"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

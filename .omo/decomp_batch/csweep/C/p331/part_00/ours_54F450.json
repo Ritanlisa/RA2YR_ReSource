@@ -1,0 +1,21 @@
+{
+ "symbol": "?MapKey@Keyboard@@QAEDG@Z",
+ "sym_key": "Keyboard::MapKey",
+ "size": 177,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568b742414578bf9f7c600080000740a5f32c05e83c40cc2040053558beeb18081e5000100006685ed7403884f248bc625000200006685c0894424207403884f258bde81e3000400006685db7403884f2681e6ffff00006a0056e8000000008d4c24106a008d575051525056e8000000006685ed7404c647240066837c2420007404c64725005d6685db5b7404c647260033c983f8010f95c133c85f33c88b442404495e23c88ac183c40cc20400",
+ "relocs": [
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?MapVirtualKeyA@@YGIHH@Z",
+   "sym_key": "MapVirtualKeyA"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?ToAscii@@YGHHHPAX0H@Z",
+   "sym_key": "ToAscii"
+  }
+ ]
+}

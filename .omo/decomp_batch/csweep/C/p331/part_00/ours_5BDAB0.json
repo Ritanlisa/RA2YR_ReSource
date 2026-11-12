@@ -1,0 +1,45 @@
+{
+ "symbol": "?SetPosition@MouseClass@@QAEDD@Z",
+ "sym_key": "MouseClass::SetPosition",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "8a815c5500008a54240483ec083ac20f84da0000008b816055000053555684d25788915c55000074208d90cb0000008d34d5000000002bf28a14b50000000080faff74050fbed2eb118d14c5000000002bd00fbe1495281600008954241c8d14c5000000002bd08b2d9c2c00000fbe04953c1600008d34950000000033db33ff3d39300000750d0fbf4502992bc28bd8d1fbeb0b3d31d4000075040fbf5d020fbe86401600003d39300000750d0fbf4504992bc28bf8d1ffeb0b3d31d4000075040fbf7d048b89685500008b74241ca1a800000003ce518d4c2414897c2418895c24148b10555150ff52045f5e5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  }
+ ]
+}

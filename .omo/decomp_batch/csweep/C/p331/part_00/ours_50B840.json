@@ -1,0 +1,63 @@
+{
+ "symbol": "?GetColor@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::GetColor",
+ "size": 213,
+ "link_base": 0,
+ "bytes_hex": "5153568bf18b865860010085c07d0ac78658600100050000008b86586001008b0d000000008b048185c0751a8bcee800000000c78658600100050000008b15000000008b42148b88300300008b800c0300008b58048b907401000083fb017507660fb6140aeb04668b144a668b0d000000008bc266d3e88b0d000000008b5c2408660fb6c0d3e0668b0d0000000032c325ff00000033d88bc266d3e88b0d00000000d2e0668b0d0000000066d3ea8b0d000000008886fe560000660fb6d2d3e232d381e2ff00000033d3668996fc5600005e5b59c3",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 158,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  }
+ ]
+}

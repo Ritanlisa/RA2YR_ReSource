@@ -1,0 +1,81 @@
+{
+ "symbol": "?Constructor@SlaveManagerClass@@QAEHXZ",
+ "sym_key": "SlaveManagerClass::Constructor",
+ "size": 196,
+ "link_base": 0,
+ "bytes_hex": "51568bf1e8000000008b4e4433c080e10189463c83c901894640894e44884644894638c7464c0a0000008946480fbe15a00100008956508b542404894658890689460489460889460c89462489462889462c8946308946340fbe0da0010000894e5089565489465889465c8946608b0d00000000390d00000000722b38050000000075043bc875378b15000000003bd0762d03d150a100000000526800000000ff500884c074188b0d000000008bc141890d000000008b0d000000008934818bc65e59c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractClass@@QAEPAV1@XZ",
+   "sym_key": "AbstractClass::Constructor"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B5F8@@3IA",
+   "sym_key": "DataGlobal_B0B5F8"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B600@@3IA",
+   "sym_key": "DataGlobal_B0B600"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B5FD@@3EA",
+   "sym_key": "DataGlobal_B0B5FD"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B604@@3IA",
+   "sym_key": "DataGlobal_B0B604"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?SlaveManagerClass_Array@@3IA",
+   "sym_key": "SlaveManagerClass_Array"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?SlaveManagerClass_Array@@3IA",
+   "sym_key": "SlaveManagerClass_Array"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B600@@3IA",
+   "sym_key": "DataGlobal_B0B600"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B600@@3IA",
+   "sym_key": "DataGlobal_B0B600"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B5F4@@3IA",
+   "sym_key": "DataGlobal_B0B5F4"
+  }
+ ]
+}

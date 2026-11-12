@@ -1,0 +1,63 @@
+{
+ "symbol": "?Map_Create_57CBE0@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::Map_Create_57CBE0",
+ "size": 192,
+ "link_base": 0,
+ "bytes_hex": "53568b318a1d340300000fbfd68d860000ffff57c1e8100fbfc0c1e00903c23d00000400730a0fbed38b048285c0751181c60000ffffb85816000089357c1600008b70448b010fbf098d90000001008bc2c1e8100fbfc0c1e00903c13d00000400730a0fbecb8b048185c0750bb85816000089157c1600008b78448d8e26ffffff32c083f90e771533d28a9100000000ff249500000000b001eb02b0028d8f25ffffff5f5e83f90d5b771433d28a9100000000ff2495000000000c04c30c08c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "$L2034",
+   "sym_key": "$L2034"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "$L2035",
+   "sym_key": "$L2035"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "$L2036",
+   "sym_key": "$L2036"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "$L2037",
+   "sym_key": "$L2037"
+  }
+ ]
+}
