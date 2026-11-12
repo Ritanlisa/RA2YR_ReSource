@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p51\part_00
+=== convert (20 addrs) ===
+[conv] 0x70e120 TechnoClass::Vt249to254 -> TechnoClass
+[conv] 0x410a40 AbstractTypeClass::NameEquals -> AbstractTypeClass
+[conv] 0x4a1d30 Checksummer::Add_WORD -> Checksummer
+[conv] 0x5c0550 BinkMovieHandle::InitFromFile -> BinkMovieHandle
+[conv] 0x5cc880 MSBinkAnim::Stop -> MSBinkAnim
+[conv] 0x644830 ParticleSystemTypeClass::SaveLoad_Prefix_0 -> ParticleSystemTypeClass
+[conv] 0x68bce0 ScenarioClass::GetCellFromArray -> ScenarioClass
+[conv] 0x6e5300 TagClass::HasCrossesVerticalLineEvent -> TagClass
+[conv] 0x6e5320 TagClass::HasCrossesHorizontalLineEvent -> TagClass
+[conv] 0x6e5340 TagClass::HasZoneEntryByEvent -> TagClass
+[conv] 0x70c250 TechnoClass::GetSizeMax -> TechnoClass
+[conv] 0x764fa0 ObjectClass::Team_Start_764FA0 -> ObjectClass
+[conv] 0x7b84d0 Audio_Update -> Audio
+[conv] 0x7c8fb0 __CIpow -> _addr_7C
+[conv] 0x7d45a1 __un_inc_0 -> _addr_7D
+[conv] 0x4a0610 ConnectionPointClass::Advise -> ConnectionPointClass
+[conv] 0x4a4830 DDraw::WaitForIdle -> DDraw
+[conv] 0x4d2790 CellClass::recalcPassability -> CellClass
+[conv] 0x53f830 Network_Get -> Network
+[conv] 0x5bf500 AsyncIO::Read -> AsyncIO
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] AbstractTypeClass        rc=0
+[era] Checksummer              rc=0
+[era] BinkMovieHandle          rc=0
+[era] MSBinkAnim               rc=0
+[era] ParticleSystemTypeClass  rc=0
+[era] ScenarioClass            rc=2
+[era] TagClass                 rc=0
+[era] ObjectClass              rc=2
+[era] Audio                    rc=0
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=0
+[era] ConnectionPointClass     rc=0
+[era] DDraw                    rc=0
+[era] CellClass                rc=0
+[era] Network                  rc=0
+[era] AsyncIO                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x70e120   MISMATCH         TechnoClass::Vt249to254
+[diff] 0x70c250   MISMATCH         TechnoClass::GetSizeMax
+[diff] 0x410a40   MISMATCH         AbstractTypeClass::NameEquals
+[diff] 0x4a1d30   MISMATCH         Checksummer::Add_WORD
+[diff] 0x5c0550   MISMATCH         BinkMovieHandle::InitFromFile
+[diff] 0x5cc880   MATCH            MSBinkAnim::Stop
+[diff] 0x644830   MISMATCH         ParticleSystemTypeClass::SaveLoad_Prefix_0
+[diff] 0x6e5300   MATCH            TagClass::HasCrossesVerticalLineEvent
+[diff] 0x6e5320   MATCH            TagClass::HasCrossesHorizontalLineEvent
+[diff] 0x6e5340   MATCH            TagClass::HasZoneEntryByEvent
+[diff] 0x7b84d0   MISMATCH         Audio_Update
+[diff] 0x7d45a1   MISMATCH         __un_inc_0
+[diff] 0x4a0610   MATCH            ConnectionPointClass::Advise
+[diff] 0x4a4830   MISMATCH         DDraw::WaitForIdle
+[diff] 0x4d2790   MISMATCH         CellClass::recalcPassability
+[diff] 0x53f830   MISMATCH         Network_Get
+[diff] 0x5bf500   MISMATCH         AsyncIO::Read
+[ledger] 0x70e120 TechnoClass::Vt249to254 -> NG (attempt 1)
+[ledger] 0x410a40 AbstractTypeClass::NameEquals -> NG (attempt 1)
+[ledger] 0x4a1d30 Checksummer::Add_WORD -> NG (attempt 1)
+[ledger] 0x5c0550 BinkMovieHandle::InitFromFile -> NG (attempt 1)
+[ledger] 0x5cc880 MSBinkAnim::Stop -> OK (attempt 1)
+[ledger] 0x644830 ParticleSystemTypeClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x68bce0 ScenarioClass::GetCellFromArray -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e5300 TagClass::HasCrossesVerticalLineEvent -> OK (attempt 1)
+[ledger] 0x6e5320 TagClass::HasCrossesHorizontalLineEvent -> OK (attempt 1)
+[ledger] 0x6e5340 TagClass::HasZoneEntryByEvent -> OK (attempt 1)
+[ledger] 0x70c250 TechnoClass::GetSizeMax -> NG (attempt 1)
+[ledger] 0x764fa0 ObjectClass::Team_Start_764FA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b84d0 Audio_Update -> NG (attempt 1)
+[ledger] 0x7c8fb0 __CIpow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d45a1 __un_inc_0 -> NG (attempt 1)
+[ledger] 0x4a0610 ConnectionPointClass::Advise -> OK (attempt 1)
+[ledger] 0x4a4830 DDraw::WaitForIdle -> NG (attempt 1)
+[ledger] 0x4d2790 CellClass::recalcPassability -> NG (attempt 1)
+[ledger] 0x53f830 Network_Get -> NG (attempt 1)
+[ledger] 0x5bf500 AsyncIO::Read -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "MATCH": 5,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "const_fold": 4,
+  "regalloc": 1,
+  "branch_polarity": 2,
+  "frame_sched": 1,
+  "extern_reloc": 2,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 29.4,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p51\batch_report.json

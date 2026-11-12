@@ -1,0 +1,11 @@
+{
+ "addr": "0x53F830",
+ "name": "Network_Get",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53F830",
+ "bytes_hex": "8bc1568b0d287688006a0052508b31ff5610b8010000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

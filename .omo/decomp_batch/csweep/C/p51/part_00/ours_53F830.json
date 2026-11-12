@@ -1,0 +1,15 @@
+{
+ "symbol": "?Network_Get@@YIHHH@Z",
+ "sym_key": "Unnamed::Network_Get",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "a100000000566a00528b305150ff5610b8010000005ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  }
+ ]
+}

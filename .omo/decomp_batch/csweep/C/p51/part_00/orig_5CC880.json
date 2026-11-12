@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CC880",
+ "name": "MSBinkAnim::Stop",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CC880",
+ "bytes_hex": "8b491c85c9740ce8c463e6ff84c0750333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

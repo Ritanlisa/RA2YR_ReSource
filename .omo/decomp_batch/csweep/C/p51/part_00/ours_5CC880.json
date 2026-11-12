@@ -1,0 +1,15 @@
+{
+ "symbol": "?Stop@MSBinkAnim@@QAEHXZ",
+ "sym_key": "MSBinkAnim::Stop",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b491c85c9740ce80000000084c0750333c0c3b801000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?IsAtEnd@BinkMovie@@QAEHXZ",
+   "sym_key": "BinkMovie::IsAtEnd"
+  }
+ ]
+}

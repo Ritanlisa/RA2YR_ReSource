@@ -1,0 +1,15 @@
+{
+ "symbol": "?NameEquals@AbstractTypeClass@@QAEHPAX@Z",
+ "sym_key": "AbstractTypeClass::NameEquals",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b44240483c1245150e80000000083c408f7d81bc040c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

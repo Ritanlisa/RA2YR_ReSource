@@ -1,0 +1,21 @@
+{
+ "symbol": "?Read@AsyncIO@@QAEHXZ",
+ "sym_key": "AsyncIO::Read",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0760ea100000000518b00508b10ff520cc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_AsyncIOState@@3IA",
+   "sym_key": "g_AsyncIOState"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?AsyncIO_Instance@@3PAXA",
+   "sym_key": "AsyncIO_Instance"
+  }
+ ]
+}

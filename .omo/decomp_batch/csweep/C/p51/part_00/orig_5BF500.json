@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BF500",
+ "name": "AsyncIO::Read",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BF500",
+ "bytes_hex": "a1685bb40085c07e0fa15c5bb400518b008bc88b10ff520cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

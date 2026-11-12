@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D45A1",
+ "name": "__un_inc_0",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D45A1",
+ "bytes_hex": "66817c2404ffff740fff742408ff742408e8816000005959c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

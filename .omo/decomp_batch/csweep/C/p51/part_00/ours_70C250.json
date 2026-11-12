@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetSizeMax@TechnoClass@@QAGHHH@Z",
+ "sym_key": "TechnoClass::GetSizeMax",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24088b542404505152e80000000033c0c20c00",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?RadioClass__SaveState@@YGHPAX0H@Z",
+   "sym_key": "RadioClass__SaveState"
+  }
+ ]
+}

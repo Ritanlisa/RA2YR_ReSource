@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A1D30",
+ "name": "Checksummer::Add_WORD",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A1D30",
+ "bytes_hex": "668b4424048d5424046a0252668944240ce89a000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

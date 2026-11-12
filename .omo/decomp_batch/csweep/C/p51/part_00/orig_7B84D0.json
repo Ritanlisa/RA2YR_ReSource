@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B84D0",
+ "name": "Audio_Update",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B84D0",
+ "bytes_hex": "a16c81b70085c0750f8b0d6481b70085c97405e9a81b0000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

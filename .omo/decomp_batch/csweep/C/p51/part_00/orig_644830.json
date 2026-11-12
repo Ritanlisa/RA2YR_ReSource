@@ -1,0 +1,11 @@
+{
+ "addr": "0x644830",
+ "name": "ParticleSystemTypeClass::SaveLoad_Prefix_0",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x644830",
+ "bytes_hex": "8b44240c8b4c24088b542404505152e80c51fbff33c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

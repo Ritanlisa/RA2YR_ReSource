@@ -1,0 +1,27 @@
+{
+ "symbol": "?Audio_Update@@YAHXZ",
+ "sym_key": "Unnamed::Audio_Update",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0750f8b0d0000000085c97405e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7816C@@3IA",
+   "sym_key": "DataGlobal_B7816C"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78164@@3IA",
+   "sym_key": "DataGlobal_B78164"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?UpdateCursorMovement@WWMouseClass@@QAEHXZ",
+   "sym_key": "WWMouseClass::UpdateCursorMovement"
+  }
+ ]
+}

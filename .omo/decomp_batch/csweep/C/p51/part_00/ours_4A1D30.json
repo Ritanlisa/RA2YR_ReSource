@@ -1,0 +1,15 @@
+{
+ "symbol": "?Add_WORD@Checksummer@@QAEHF@Z",
+ "sym_key": "Checksummer::Add_WORD",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8d4424046a0250e800000000c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  }
+ ]
+}

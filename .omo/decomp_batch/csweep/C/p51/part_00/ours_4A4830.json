@@ -1,0 +1,15 @@
+{
+ "symbol": "?WaitForIdle@DDraw@@QAEHXZ",
+ "sym_key": "DDraw::WaitForIdle",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "a1000000006a02508b08ff513485c074073dc201768875e8c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_DDraw_PrimarySurface@@3IA",
+   "sym_key": "g_DDraw_PrimarySurface"
+  }
+ ]
+}

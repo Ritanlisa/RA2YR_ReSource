@@ -1,0 +1,11 @@
+{
+ "addr": "0x70E120",
+ "name": "TechnoClass::Vt249to254",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70E120",
+ "bytes_hex": "568bf1578b3eff97e4030000508bceff97f80300005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

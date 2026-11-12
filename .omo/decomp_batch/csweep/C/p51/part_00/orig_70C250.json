@@ -1,0 +1,11 @@
+{
+ "addr": "0x70C250",
+ "name": "IPersistStream::GetSizeMax",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70C250",
+ "bytes_hex": "8b44240c8b4c24088b542404505152e8dce9f4ff33c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
