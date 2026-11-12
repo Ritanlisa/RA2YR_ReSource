@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> MultiplayerSiegeDefenderTeam
+[conv] 0x5cc110 MSFadeAnim::DrawConstructionFrame -> MSFadeAnim
+[conv] 0x5ce640 MSPCXAnim::Construct -> MSPCXAnim
+[conv] 0x5cf760 CampaignClass::DeleteAndZero -> CampaignClass
+[conv] 0x5cf840 ObjectClass::sub_5CF840 -> ObjectClass
+[conv] 0x5d4b20 WideString::WordWrap -> WideString
+[conv] 0x5d6790 MultiplayerGameMode::ClearFlag -> MultiplayerGameMode
+[conv] 0x5d74a0 MultiplayerGameMode::InitAlliances -> MultiplayerGameMode
+[conv] 0x5d8270 AbstractClass::applyRevealToCell -> AbstractClass
+[conv] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> ObjectClass
+[conv] 0x610950 TriggerClass::FindByEventType -> TriggerClass
+[conv] 0x6234b0 SymbolTable::Rebuild -> SymbolTable
+[conv] 0x625560 Options::DestroyComposite -> Options
+[conv] 0x626ab0 System_Read -> System
+[conv] 0x627170 FileSystem::findFile -> FileSystem
+[conv] 0x62f9a0 ObjectClass::UpdateBuildingDamageParticles -> ObjectClass
+[conv] 0x634290 Array::FindValue -> Array
+[conv] 0x634e10 ScriptAction::PlaceObject -> ScriptAction
+[conv] 0x635490 ObjectClass::Render_Render_635490 -> ObjectClass
+[conv] 0x635e90 ObjectClass::sub_635E90 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerSiegeDefenderTeam rc=2
+[era] MSFadeAnim               rc=0
+[era] MSPCXAnim                rc=2
+[era] CampaignClass            rc=2
+[era] ObjectClass              rc=2
+[era] WideString               rc=0
+[era] MultiplayerGameMode      rc=0
+[era] AbstractClass            rc=0
+[era] TriggerClass             rc=2
+[era] SymbolTable              rc=2
+[era] Options                  rc=2
+[era] System                   rc=0
+[era] FileSystem               rc=2
+[era] Array                    rc=2
+[era] ScriptAction             rc=2
+=== diffasm byte-compare ===
+[diff] 0x5cc110   MISMATCH         MSFadeAnim::DrawConstructionFrame
+[diff] 0x62f9a0   MISMATCH         ObjectClass::UpdateBuildingDamageParticles
+[diff] 0x635490   MISMATCH         ObjectClass::Render_Render_635490
+[diff] 0x635e90   MISMATCH         ObjectClass::sub_635E90
+[diff] 0x5d4b20   MISMATCH         WideString::WordWrap
+[diff] 0x5d6790   MISMATCH         MultiplayerGameMode::ClearFlag
+[diff] 0x5d74a0   MISMATCH         MultiplayerGameMode::InitAlliances
+[diff] 0x5d8270   MISMATCH         AbstractClass::applyRevealToCell
+[diff] 0x626ab0   MISMATCH         System_Read
+[ledger] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cc110 MSFadeAnim::DrawConstructionFrame -> NG (attempt 14)
+[ledger] 0x5ce640 MSPCXAnim::Construct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5cf760 CampaignClass::DeleteAndZero -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5cf840 ObjectClass::sub_5CF840 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d4b20 WideString::WordWrap -> NG (attempt 16)
+[ledger] 0x5d6790 MultiplayerGameMode::ClearFlag -> NG (attempt 3)
+[ledger] 0x5d74a0 MultiplayerGameMode::InitAlliances -> NG (attempt 12)
+[ledger] 0x5d8270 AbstractClass::applyRevealToCell -> NG (attempt 4)
+[ledger] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x610950 TriggerClass::FindByEventType -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6234b0 SymbolTable::Rebuild -> COMPILE_FAIL (attempt 12)
+[ledger] 0x625560 Options::DestroyComposite -> COMPILE_FAIL (attempt 4)
+[ledger] 0x626ab0 System_Read -> NG (attempt 4)
+[ledger] 0x627170 FileSystem::findFile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62f9a0 ObjectClass::UpdateBuildingDamageParticles -> NG (attempt 4)
+[ledger] 0x634290 Array::FindValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x634e10 ScriptAction::PlaceObject -> COMPILE_FAIL (attempt 4)
+[ledger] 0x635490 ObjectClass::Render_Render_635490 -> NG (attempt 6)
+[ledger] 0x635e90 ObjectClass::sub_635E90 -> NG (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "regalloc": 2,
+  "codegen_shape": 1,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p05\batch_report.json

@@ -1,0 +1,365 @@
+[
+ {
+  "addr": "0x5cae70",
+  "name": "MultiplayerSiegeDefenderTeam::AddRef",
+  "orig_name": "MultiplayerSiegeDefenderTeam::AddRef",
+  "unit": "MultiplayerSiegeDefenderTeam",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p25\\part_00\\MultiplayerSiegeDefenderTeam.cpp(13) : error C2440: '=' : cannot convert from 'const unsigned int' to 'unsigned int *'",
+  "file": "",
+  "line": null,
+  "form": "stale_cw5|CW5-10 uintN_t typedef",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x5cc110",
+  "name": "MSFadeAnim::DrawConstructionFrame",
+  "orig_name": "ScenarioClass::DrawConstructionFrame",
+  "unit": "MSFadeAnim",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p07\\part_00\\MSFadeAnim.cpp(43) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x5ce640",
+  "name": "MSPCXAnim::Construct",
+  "orig_name": "MSPCXAnim::Construct",
+  "unit": "MSPCXAnim",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p17\\part_00\\MSPCXAnim.cpp(23) : error C2440: '=' : cannot convert from 'char *' to 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p17\\part_00\\MSP",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / assign",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x5cf760",
+  "name": "CampaignClass::DeleteAndZero",
+  "orig_name": "CampaignClass::DeleteAndZero",
+  "unit": "CampaignClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p35\\part_00\\CampaignClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'char ** ' to 'const char ** '; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr const mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x5cf840",
+  "name": "ObjectClass::sub_5CF840",
+  "orig_name": "sub_5CF840",
+  "unit": "ObjectClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p34\\part_00\\ObjectClass.cpp(17) : error C2440: 'initializing' : cannot convert from 'char ** ' to 'const char ** '; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr const mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x5d4b20",
+  "name": "WideString::WordWrap",
+  "orig_name": "WideString::WordWrap",
+  "unit": "WideString",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p04\\part_00\\WideString_5d4b20.cpp(29) : error C2440: '=' : cannot convert from 'int *' to 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x5d6790",
+  "name": "MultiplayerGameMode::ClearFlag",
+  "orig_name": "ScenarioClass::ClearFlag",
+  "unit": "MultiplayerGameMode",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p26\\part_00\\MultiplayerGameMode.cpp(10) : error C2440: '=' : cannot convert from 'void *' to 'void ** '",
+  "file": "",
+  "line": null,
+  "form": "stale_cw5|CW5-6/7 member chain",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x5d74a0",
+  "name": "MultiplayerGameMode::InitAlliances",
+  "orig_name": "HouseClass::InitAlliances",
+  "unit": "MultiplayerGameMode",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p25\\part_00\\MultiplayerGameMode.cpp(13) : error C2440: 'initializing' : cannot convert from 'char *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x5d8270",
+  "name": "AbstractClass::applyRevealToCell",
+  "orig_name": "AbstractClass::applyRevealToCell",
+  "unit": "AbstractClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p15\\part_00\\AbstractClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'void *' to 'unsigned int *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x5eacd0",
+  "name": "ObjectClass::RefreshLobbyAll_Get_5EACD0",
+  "orig_name": "RefreshLobbyAll_Get_5EACD0",
+  "unit": "ObjectClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p19\\part_00\\ObjectClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'unsigned char' to 'int *'",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / initializing",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x610950",
+  "name": "TriggerClass::FindByEventType",
+  "orig_name": "TriggerClass::FindByEventType",
+  "unit": "TriggerClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p48\\part_00\\TriggerClass.cpp(25) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p48\\pa",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x6234b0",
+  "name": "SymbolTable::Rebuild",
+  "orig_name": "SymbolTable::Rebuild",
+  "unit": "SymbolTable",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p35\\part_00\\SymbolTable.cpp(49) : error C2440: '=' : cannot convert from 'int *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p35\\part_0",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x625560",
+  "name": "Options::DestroyComposite",
+  "orig_name": "Options::DestroyComposite",
+  "unit": "Options",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p34\\part_00\\Options.cpp(35) : error C2440: '=' : cannot convert from 'unsigned int' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p34\\p",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x626ab0",
+  "name": "System_Read",
+  "orig_name": "System_Read",
+  "unit": "System",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p46\\part_00\\System.cpp(17) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p46\\part_00\\",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x627170",
+  "name": "FileSystem::findFile",
+  "orig_name": "FileSystem::findFile",
+  "unit": "FileSystem",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p42\\part_00\\FileSystem.cpp(55) : error C2440: '=' : cannot convert from 'int (__cdecl *)(const void *,const void *)' to 'unsigned int'; D:\\RA2YR_ReSource\\.",
+  "file": "",
+  "line": null,
+  "form": "void* -> int / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x62f9a0",
+  "name": "ObjectClass::UpdateBuildingDamageParticles",
+  "orig_name": "UpdateBuildingDamageParticles",
+  "unit": "ObjectClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p54\\part_00\\ObjectClass.cpp(29) : error C2440: '=' : cannot convert from 'void *' to 'unsigned char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p54\\pa",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x634290",
+  "name": "Array::FindValue",
+  "orig_name": "Array::FindValue",
+  "unit": "Array",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G0_preCW2_census",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p26\\part_00\\Array.cpp(8) : error C2440: 'initializing' : cannot convert from 'unsigned int' to 'void *'",
+  "file": "",
+  "line": null,
+  "form": "member->void* init (scalar member, ptr local) / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x634e10",
+  "name": "ScriptAction::PlaceObject",
+  "orig_name": "ScriptAction::PlaceObject",
+  "unit": "ScriptAction",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p50\\part_00\\ScriptAction.cpp(97) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p50\\pa",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x635490",
+  "name": "ObjectClass::Render_Render_635490",
+  "orig_name": "Render_Render_635490",
+  "unit": "ObjectClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p21\\part_00\\ObjectClass.cpp(65) : error C2440: 'initializing' : cannot convert from 'class Coord3D *' to 'unsigned int *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x635e90",
+  "name": "ObjectClass::sub_635E90",
+  "orig_name": "sub_635E90",
+  "unit": "ObjectClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p22\\part_00\\ObjectClass_635e90.cpp(8) : error C2440: 'initializing' : cannot convert from 'class Coord3D *' to 'unsigned int *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ }
+]

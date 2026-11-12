@@ -1,0 +1,15 @@
+{
+ "symbol": "?ClearFlag@MultiplayerGameMode@@QAEDXZ",
+ "sym_key": "MultiplayerGameMode::ClearFlag",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "51a10000000033d28a50018b0880e2fb894c2400885424018b4c24008908b00159c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  }
+ ]
+}

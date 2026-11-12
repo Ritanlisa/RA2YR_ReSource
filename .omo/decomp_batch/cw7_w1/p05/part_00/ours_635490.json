@@ -1,0 +1,51 @@
+{
+ "symbol": "?Render_Render_635490@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::Render_Render_635490",
+ "size": 190,
+ "link_base": 0,
+ "bytes_hex": "83ec44568bf18d4c2438e8000000008b088b7604894c24288b50048954242c8b4808894c24308b500c895424348b068d4c24388b5004e8000000008b08894c240c8b5004895424108b40088d4c24048d54240c518b0d00000000528944241ce8000000008b4424048b0d0000000003c18b0d040000008944240483c0fd894424188b4424088d5401fdb8060000008944242089442424a1000000008954241c0fbe088b118b4c244c518d4c241c518d4c24305150ff52105e83c444c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?GetViewport@Display@@QAEPAHXZ",
+   "sym_key": "Display::GetViewport"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAXPAE@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  }
+ ]
+}

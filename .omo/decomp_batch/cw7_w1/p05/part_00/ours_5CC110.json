@@ -1,0 +1,39 @@
+{
+ "symbol": "?DrawConstructionFrame@MSFadeAnim@@QAEXHPAH@Z",
+ "sym_key": "MSFadeAnim::DrawConstructionFrame",
+ "size": 232,
+ "link_base": 0,
+ "bytes_hex": "83ec2456578b7c24348bf185ffc744240800000000745b8b46288d4c240c5051e8000000008b4e048b108b463803caf6c402894c240874128b561c0fbf4202992bc2d1f82bc8894c24086a008d44240c6a00508bd78d4c2418e8000000008b08894c24088b480885c97e758b480c85c97e6e8b46405383f80455720b8b6e388b3d00000000eb0a8b2c85000000008b7e388b56048b5c24388b4608895424148b0b8d542424525389442420ff51786a006a006a006a006a008b4e2868e80300008b561c6a006a000bfd6a0057508d4424405051528b56208bcbe8000000005d5b5f5e83c424c20800",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_830084@@3IA",
+   "sym_key": "DataGlobal_830084"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_830078@@3PAIA",
+   "sym_key": "DataGlobal_830078"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHPAX0000HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

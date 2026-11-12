@@ -1,0 +1,15 @@
+{
+ "symbol": "?WordWrap@WideString@@QAGHPAH0HHH@Z",
+ "sym_key": "WideString::WordWrap",
+ "size": 191,
+ "link_base": 0,
+ "bytes_hex": "538b5c241485db7f0633c05bc2180055568b7424185756e8000000008b4c242883c4043bc8894424207e028bc88b44242885c074223bcb8bc17c3c8d548efc668b0a6685c974066683f920762c4883ea023bc37c22ebe83bd98bc37f1a8d7c9efc668b176685d274066683fa20760a4083c7023bc17eea8bc38b5c24188d14008bca8bfb8be9c1e902f3a58bcd83e103f3a48b4c24208b7c241c2bc8c70483000000008d343a8d4c09028bd1c1e902f3a58bca83e103f3a45f5e5d5bc21800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

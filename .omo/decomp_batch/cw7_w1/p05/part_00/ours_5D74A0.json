@@ -1,0 +1,45 @@
+{
+ "symbol": "?InitAlliances@MultiplayerGameMode@@QAEDXZ",
+ "sym_key": "MultiplayerGameMode::InitAlliances",
+ "size": 165,
+ "link_base": 0,
+ "bytes_hex": "518b151800000085d27704b00159c3a10c00000053555657bf01000000897c241033ed8b1c288b4b3480b9a601000000755c8b8b5c60010083f9fe745183f9ff744c3bfa7d488b34b88b4e3480b9a60100000075308b0c288b895c6001003b8e5c600100751f6a00568bcbe8000000006a00538bcee800000000a10c0000008b1518000000473bfa72bc8b7c24104783c504897c24108d4fff3bca7c865f5e5db0015b59c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?HandleAlliance@HouseClass@@QAEHHD@Z",
+   "sym_key": "HouseClass::HandleAlliance"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?HandleAlliance@HouseClass@@QAEHHD@Z",
+   "sym_key": "HouseClass::HandleAlliance"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  }
+ ]
+}

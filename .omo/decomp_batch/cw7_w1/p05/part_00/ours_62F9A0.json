@@ -1,0 +1,153 @@
+{
+ "symbol": "?UpdateBuildingDamageParticles@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::UpdateBuildingDamageParticles",
+ "size": 994,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec28535556578bf98b9fcc0000004b781c8b87c00000008b34988bcee80000000056e80000000083c4044b79e48bb7cc0000004e781f8b8fc00000008b04b18a883101000084c974098b1050ff92f80000004e79e18b4f3832dbe8000000008bf085f60f84d00100008a869000000084c00f84b60100008b86b402000085c00f849e0100008d8e88030000e80000000085c00f848b0100008b86b40200008d54241452508b08ff51488b088b50048b9e9c0000008b4008895c24148baea00000002bcb83ec08894c24388b9ea4000000894c24308bca2bc32bcd89442418894c2428db442418db442428db442430894c243cd9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e800000000dd5c24308b4424348b4c24305051e8000000008b96a00000008b9ea400000083c4108d4c241c894424208b869c000000518d8ec4010000895424148944241ce8000000000fbf1081eaff3f000089542428db442428dc0d00000000dd5c2428db4424208b6c242c8b4424285550dd5c2438db442418dd5c2428e800000000dc4c2438dc6c2428dd1c24e8000000008b4c2430555189442430e800000000dc4c2440da44242883c408dd1c24e800000000dd44242883c4088be853e80000000050e80000000083c4048d4c24185055e8000000008b4424288b5424148b4c24288b1f6a008987d80000006a006a008d4424208997d4000000898fdc0000008b166a005056ff92b00000005057ff93b4010000b3018a869000000084c075160fbe8fe003000057ff11eb0a0fbe97e003000057ff128b4c241033c08a87f800000080e1008bf00bf1897424108a44241084c00f856d0100008b0d000000008bafac0000008bc133d2f7b59c02000085d27436b856555555be03000000f7e98bc2c1e81f03d08bc18954241099f7fe85d20f852b0100008ac384db884424100f84210100008b7424108bc1b9f401000099f7f98b8fa00000008bafd80000008bc72bcd8bafdc00000083ec08c7442418030000008bda8b97d40000002bc28b97a40000002bd5059c0000008bea0fafea8bd00fafd08bc103ea0fafc103e8896c2430db442430dd1c24e800000000dc1d0000000083c408dfe0f6c4017508c74424100100000033c083ec08668b045d000000008d0c40c1e102894c2430db442430db442418d80d00000000def9dd1c24e8000000008b97d80000008b8f9c0000008bd88b87d40000008954243c894c242483c4088d5424308d4c241c89442430e8000000008b0485000000008b8fd40000000fafc38b979c00000003c18d4c24146a04518d4c2420895424208944241ce80000000033c625ff00000033f0897424108a4424105f5e5d5b8be55dc3",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Dispatch@ParticleClass@@QAEHXZ",
+   "sym_key": "ParticleClass::Dispatch"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?BuildingClass__AdjustHeight@@YAHPAX@Z",
+   "sym_key": "BuildingClass__AdjustHeight"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?IsTechnoType@AbstractClass@@QAEPAXXZ",
+   "sym_key": "AbstractClass::IsTechnoType"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?Active@TimerClass@@QAEHXZ",
+   "sym_key": "TimerClass::Active"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 343,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 366,
+   "type": "DIR32",
+   "sym": "__real@8@bff1c9116cc4faf2b800",
+   "sym_key": "_real@8@bff1c9116cc4faf2b800"
+  },
+  {
+   "off": 401,
+   "type": "REL32",
+   "sym": "?Math__SinCos@@YANN@Z",
+   "sym_key": "Math__SinCos"
+  },
+  {
+   "off": 417,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 432,
+   "type": "REL32",
+   "sym": "?Math__ArcTan2@@YANN@Z",
+   "sym_key": "Math__ArcTan2"
+  },
+  {
+   "off": 451,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 466,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 472,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 486,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 623,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 798,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 804,
+   "type": "DIR32",
+   "sym": "__real@8@4006c800000000000000",
+   "sym_key": "_real@8@4006c800000000000000"
+  },
+  {
+   "off": 835,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B46254@@3PAGA",
+   "sym_key": "DataGlobal_B46254"
+  },
+  {
+   "off": 859,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7EFD84@@3MA",
+   "sym_key": "DataGlobal_7EFD84"
+  },
+  {
+   "off": 869,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 917,
+   "type": "REL32",
+   "sym": "?CalcMathFacing8@@YIHPAX0@Z",
+   "sym_key": "CalcMathFacing8"
+  },
+  {
+   "off": 924,
+   "type": "DIR32",
+   "sym": "?DataGlobal_836704@@3PAIA",
+   "sym_key": "DataGlobal_836704"
+  },
+  {
+   "off": 965,
+   "type": "REL32",
+   "sym": "?CreateInstance@ParticleClass@@QAEHPAXH@Z",
+   "sym_key": "ParticleClass::CreateInstance"
+  }
+ ]
+}

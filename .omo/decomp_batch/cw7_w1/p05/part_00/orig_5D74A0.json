@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D74A0",
+ "name": "HouseClass::InitAlliances",
+ "size": 174,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D74A0",
+ "bytes_hex": "518b153802a80085d20f8e9b000000a12c02a80053555657bf0100000033ed897c24108b1c288b4b3480b9a60100000075618bcb8b895c60010083f9fe745483f9ff744f3bfa7d4b8b34b88b56348a8aa601000084c9752c8b0c288bd68b895c6001003b8a5c60010075196a00568bcbe85b26f2ff6a00538bcee85126f2ffa12c02a8008b153802a800473bfa7cb98b7c24104783c504897c24108d4fff3bca7c815f5e5db0015b59c3b00159c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
