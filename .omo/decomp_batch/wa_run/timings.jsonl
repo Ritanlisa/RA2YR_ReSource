@@ -64,3 +64,4 @@
 {"part": 63, "n": 20, "seconds": 23.7, "ok": true, "verdicts": {"MATCH": 10, "MISMATCH": 10}}
 {"part": 64, "n": 20, "seconds": 22.4, "ok": true, "verdicts": {"MISMATCH": 10, "MATCH": 10}}
 {"part": 65, "n": 20, "seconds": 25.1, "ok": true, "verdicts": {"MISMATCH": 11, "MATCH": 9}}
+{"part": 66, "n": 20, "seconds": 22.8, "ok": true, "verdicts": {"MATCH": 10, "MISMATCH": 10}}
