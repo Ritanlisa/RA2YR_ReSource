@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetUIName@CellClass@@QAEHXZ",
+ "sym_key": "CellClass::GetUIName",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b4944e80000000083f8ff740d8b0dd80700008b14818b4260c333c0c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?FindBuildingByTiberiumType@@YIHH@Z",
+   "sym_key": "FindBuildingByTiberiumType"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_4085E0@@YIXPAIHH@Z",
+ "sym_key": "Unnamed::sub_4085E0",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf189461089560ce800000000c74614000000005ec20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?InitEmpty@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::InitEmpty"
+  }
+ ]
+}

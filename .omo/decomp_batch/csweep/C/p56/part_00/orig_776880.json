@@ -1,0 +1,11 @@
+{
+ "addr": "0x776880",
+ "name": "System_Read_776880",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x776880",
+ "bytes_hex": "568b710c56ff1530147e00506a08682c9e840056ff1534147e005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

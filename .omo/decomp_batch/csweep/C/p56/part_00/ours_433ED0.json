@@ -1,0 +1,15 @@
+{
+ "symbol": "?MeasureWidth@Text@@QAGHHH@Z",
+ "sym_key": "Text::MeasureWidth",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8d4c240c506a00518b4c2414e8000000008b44240cc20c00",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Layout@Text@@QAEDPAXHH@Z",
+   "sym_key": "Text::Layout"
+  }
+ ]
+}

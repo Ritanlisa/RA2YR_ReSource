@@ -1,0 +1,11 @@
+{
+ "addr": "0x77D820",
+ "name": "Dialog::UpdateGameUI",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77D820",
+ "bytes_hex": "e8fb58eaffe8964ee6ff85c0740b6a016a0050ff159c147e0032c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

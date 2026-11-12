@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p56\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ca9e4 ObjectClass::sub_7CA9E4 -> ObjectClass
+[conv] 0x7cac13 ObjectClass::sub_7CAC13 -> ObjectClass
+[conv] 0x7d2e7f ObjectClass::sub_7D2E7F -> ObjectClass
+[conv] 0x7dcdf2 ObjectClass::sub_7DCDF2 -> ObjectClass
+[conv] 0x776880 ObjectClass::System_Read_776880 -> ObjectClass
+[conv] 0x458db0 BuildingClass::HasActiveParam -> BuildingClass
+[conv] 0x7dd1d7 sub_7DD1D7 -> _addr_7D
+[conv] 0x77d820 Dialog::UpdateGameUI -> Dialog
+[conv] 0x4085e0 sub_4085E0 -> _addr_40
+[conv] 0x41a570 TechnoClass::GetTurretFacing -> TechnoClass
+[conv] 0x41c1e0 TechnoClass::GetBodyFacing -> TechnoClass
+[conv] 0x41e5c0 AITriggerTypeClass::SaveToINI -> AITriggerTypeClass
+[conv] 0x428970 AnimTypeClass::SaveLoad_Prefix_0 -> AnimTypeClass
+[conv] 0x433ed0 Text::MeasureWidth -> Text
+[conv] 0x43a5b0 NeuronClass::Update -> NeuronClass
+[conv] 0x46d050 CampaignClass::Seek -> CampaignClass
+[conv] 0x484ff0 CellClass::GetUIName -> CellClass
+[conv] 0x4c5a80 EMPulseClass::Seek -> EMPulseClass
+[conv] 0x4e0150 TechnoClass::GetAnimationValue -> TechnoClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] BuildingClass            rc=0
+[era] _addr_7D                 rc=0
+[era] Dialog                   rc=0
+[era] _addr_40                 rc=0
+[era] TechnoClass              rc=0
+[era] AITriggerTypeClass       rc=0
+[era] AnimTypeClass            rc=2
+[era] Text                     rc=0
+[era] NeuronClass              rc=0
+[era] CampaignClass            rc=0
+[era] CellClass                rc=0
+[era] EMPulseClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x7ca9e4   MISMATCH         ObjectClass::sub_7CA9E4
+[diff] 0x7cac13   MISMATCH         ObjectClass::sub_7CAC13
+[diff] 0x7d2e7f   MISMATCH         ObjectClass::sub_7D2E7F
+[diff] 0x7dcdf2   MISMATCH         ObjectClass::sub_7DCDF2
+[diff] 0x776880   MISMATCH         ObjectClass::System_Read_776880
+[diff] 0x458db0   MISMATCH         BuildingClass::HasActiveParam
+[diff] 0x7dd1d7   MISMATCH         sub_7DD1D7
+[diff] 0x77d820   MISMATCH         Dialog::UpdateGameUI
+[diff] 0x4085e0   MATCH            sub_4085E0
+[diff] 0x41a570   MISMATCH         TechnoClass::GetTurretFacing
+[diff] 0x41c1e0   MISMATCH         TechnoClass::GetBodyFacing
+[diff] 0x4e0150   MISMATCH         TechnoClass::GetAnimationValue
+[diff] 0x41e5c0   MISMATCH         AITriggerTypeClass::SaveToINI
+[diff] 0x433ed0   MISMATCH         Text::MeasureWidth
+[diff] 0x43a5b0   MISMATCH         NeuronClass::Update
+[diff] 0x46d050   MISMATCH         CampaignClass::Seek
+[diff] 0x484ff0   MISMATCH         CellClass::GetUIName
+[diff] 0x4c5a80   MISMATCH         EMPulseClass::Seek
+[ledger] 0x7ca9e4 ObjectClass::sub_7CA9E4 -> NG (attempt 1)
+[ledger] 0x7cac13 ObjectClass::sub_7CAC13 -> NG (attempt 1)
+[ledger] 0x7d2e7f ObjectClass::sub_7D2E7F -> NG (attempt 1)
+[ledger] 0x7dcdf2 ObjectClass::sub_7DCDF2 -> NG (attempt 1)
+[ledger] 0x776880 ObjectClass::System_Read_776880 -> NG (attempt 1)
+[ledger] 0x458db0 BuildingClass::HasActiveParam -> NG (attempt 1)
+[ledger] 0x7dd1d7 sub_7DD1D7 -> NG (attempt 1)
+[ledger] 0x77d820 Dialog::UpdateGameUI -> NG (attempt 1)
+[ledger] 0x4085e0 sub_4085E0 -> OK (attempt 1)
+[ledger] 0x41a570 TechnoClass::GetTurretFacing -> NG (attempt 1)
+[ledger] 0x41c1e0 TechnoClass::GetBodyFacing -> NG (attempt 1)
+[ledger] 0x41ce90 0x41ce90 -> PENDING (attempt 1)
+[ledger] 0x41e5c0 AITriggerTypeClass::SaveToINI -> NG (attempt 1)
+[ledger] 0x428970 AnimTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x433ed0 Text::MeasureWidth -> NG (attempt 1)
+[ledger] 0x43a5b0 NeuronClass::Update -> NG (attempt 1)
+[ledger] 0x46d050 CampaignClass::Seek -> NG (attempt 1)
+[ledger] 0x484ff0 CellClass::GetUIName -> NG (attempt 1)
+[ledger] 0x4c5a80 EMPulseClass::Seek -> NG (attempt 1)
+[ledger] 0x4e0150 TechnoClass::GetAnimationValue -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "MATCH": 1,
+  "NO_PSEUDO": 1,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "branch_polarity": 1,
+  "regalloc": 4,
+  "const_fold": 3,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p56\batch_report.json

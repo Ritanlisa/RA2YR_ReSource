@@ -1,0 +1,11 @@
+{
+ "addr": "0x484FF0",
+ "name": "CellClass::GetUIName",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x484FF0",
+ "bytes_hex": "8b4944e8288d170083f8ff740d8b0decf4b0008b14818b4260c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

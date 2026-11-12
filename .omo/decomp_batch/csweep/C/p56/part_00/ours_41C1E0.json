@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetBodyFacing@TechnoClass@@QAEPAIPAH@Z",
+ "sym_key": "TechnoClass::GetBodyFacing",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "518d442400894c24008b89a003000050e8000000008b088b442408890859c20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  }
+ ]
+}

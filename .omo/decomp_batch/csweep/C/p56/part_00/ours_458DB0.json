@@ -1,0 +1,15 @@
+{
+ "symbol": "?HasActiveParam@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::HasActiveParam",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff900004000084c0750d8bcee80000000085c075025ec3b8010000005ec3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?HasActiveParam@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::HasActiveParam"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x458DB0",
+ "name": "BuildingClass::HasActiveParam",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x458DB0",
+ "bytes_hex": "568bf18b06ff900004000084c07404b0015ec38bcee856832a005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

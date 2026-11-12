@@ -1,0 +1,11 @@
+{
+ "addr": "0x433ED0",
+ "name": "Text::MeasureWidth",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x433ED0",
+ "bytes_hex": "8b4424088d542408508b4424086a005250e80afeffff8b442408c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

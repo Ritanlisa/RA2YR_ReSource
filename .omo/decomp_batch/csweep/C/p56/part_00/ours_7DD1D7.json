@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_7DD1D7@@YAHXZ",
+ "sym_key": "Unnamed::sub_7DD1D7",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "566a08e800000000e8000000006a088bf0e80000000083c4088bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?_getch@@YAHXZ",
+   "sym_key": "_getch"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}

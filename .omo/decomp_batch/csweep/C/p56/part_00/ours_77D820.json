@@ -1,0 +1,27 @@
+{
+ "symbol": "?UpdateGameUI@Dialog@@QAEDXZ",
+ "sym_key": "Dialog::UpdateGameUI",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008bcee80000000085c05e740a6a016a0050e80000000032c0c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?PumpMessages@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::PumpMessages"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?FindGameUI@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindGameUI"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?InvalidateRect@@YGHHHH@Z",
+   "sym_key": "InvalidateRect"
+  }
+ ]
+}

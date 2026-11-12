@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E0150",
+ "name": "TechnoClass::GetAnimationValue",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E0150",
+ "bytes_hex": "518d44240081c18803000050e86f92feff8b088b442408890859c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
