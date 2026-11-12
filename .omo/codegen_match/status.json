@@ -91248,6 +91248,28 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c8638": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e146c]",
+  "name": "UpdateWindow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "UpdateWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c863e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1480]",
+  "name": "MessageBoxIndirectA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MessageBoxIndirectA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c8644": {
   "attempts": 7,
   "clean": false,
@@ -91255,6 +91277,116 @@
   "name": "PeekMessageA",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "PeekMessageA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c864a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1460]",
+  "name": "MessageBoxA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MessageBoxA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8650": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1464]",
+  "name": "ReleaseDC",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ReleaseDC",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8656": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13a4]",
+  "name": "GetDC",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetDC",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c865c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13c4]",
+  "name": "CloseWindow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CloseWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8662": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1394]",
+  "name": "DefWindowProcA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DefWindowProcA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8668": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13ac]",
+  "name": "GetActiveWindow",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "GetActiveWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c866e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13c8]",
+  "name": "EndDialog",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "EndDialog",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8674": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13cc]",
+  "name": "SetFocus",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetFocus",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c867a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13d0]",
+  "name": "SetDlgItemTextA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetDlgItemTextA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8680": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13d4]",
+  "name": "DialogBoxParamA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DialogBoxParamA",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -91268,6 +91400,94 @@
   "orig_name": "DialogBoxIndirectParamA",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c868c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13dc]",
+  "name": "ShowCursor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ShowCursor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8692": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13f0]",
+  "name": "SetWindowPos",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetWindowPos",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8698": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13f4]",
+  "name": "DestroyWindow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DestroyWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c869e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13f8]",
+  "name": "ReleaseCapture",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "ReleaseCapture",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86a4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13b0]",
+  "name": "GetCapture",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "GetCapture",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86aa": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13fc]",
+  "name": "SetCapture",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetCapture",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13b4]",
+  "name": "GetDlgCtrlID",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetDlgCtrlID",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86b6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "ChildWindowFromPointEx",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ChildWindowFromPointEx",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7c86c8": {

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8650",
+ "name": "ReleaseDC",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8650",
+ "bytes_hex": "ff2564147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

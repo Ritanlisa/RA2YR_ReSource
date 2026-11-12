@@ -1,0 +1,15 @@
+{
+ "symbol": "?DestroyWindow@@YGHPAX@Z",
+ "sym_key": "Unnamed::DestroyWindow",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e800000000c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?__imp_DestroyWindow@@YGHPBX@Z",
+   "sym_key": "__imp_DestroyWindow"
+  }
+ ]
+}

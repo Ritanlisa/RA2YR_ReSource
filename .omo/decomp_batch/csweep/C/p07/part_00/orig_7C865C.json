@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C865C",
+ "name": "CloseWindow",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C865C",
+ "bytes_hex": "ff25c4137e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c8638 UpdateWindow -> _addr_7C
+[conv] 0x7c863e MessageBoxIndirectA -> _addr_7C
+[conv] 0x7c864a MessageBoxA -> _addr_7C
+[conv] 0x7c8650 ReleaseDC -> _addr_7C
+[conv] 0x7c8656 GetDC -> _addr_7C
+[conv] 0x7c865c CloseWindow -> _addr_7C
+[conv] 0x7c8662 DefWindowProcA -> _addr_7C
+[conv] 0x7c8668 GetActiveWindow -> _addr_7C
+[conv] 0x7c866e EndDialog -> _addr_7C
+[conv] 0x7c8674 SetFocus -> _addr_7C
+[conv] 0x7c867a SetDlgItemTextA -> _addr_7C
+[conv] 0x7c8680 DialogBoxParamA -> _addr_7C
+[conv] 0x7c868c ShowCursor -> _addr_7C
+[conv] 0x7c8692 SetWindowPos -> _addr_7C
+[conv] 0x7c8698 DestroyWindow -> _addr_7C
+[conv] 0x7c869e ReleaseCapture -> _addr_7C
+[conv] 0x7c86a4 GetCapture -> _addr_7C
+[conv] 0x7c86aa SetCapture -> _addr_7C
+[conv] 0x7c86b0 GetDlgCtrlID -> _addr_7C
+[conv] 0x7c86b6 ChildWindowFromPointEx -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c8638   MISMATCH         UpdateWindow
+[diff] 0x7c863e   MISMATCH         MessageBoxIndirectA
+[diff] 0x7c864a   MISMATCH         MessageBoxA
+[diff] 0x7c8650   MISMATCH         ReleaseDC
+[diff] 0x7c8656   MISMATCH         GetDC
+[diff] 0x7c865c   MISMATCH         CloseWindow
+[diff] 0x7c8662   MISMATCH         DefWindowProcA
+[diff] 0x7c8668   MISMATCH         GetActiveWindow
+[diff] 0x7c866e   MISMATCH         EndDialog
+[diff] 0x7c8674   MISMATCH         SetFocus
+[diff] 0x7c867a   MISMATCH         SetDlgItemTextA
+[diff] 0x7c8680   MISMATCH         DialogBoxParamA
+[diff] 0x7c868c   MISMATCH         ShowCursor
+[diff] 0x7c8692   MISMATCH         SetWindowPos
+[diff] 0x7c8698   MISMATCH         DestroyWindow
+[diff] 0x7c869e   MISMATCH         ReleaseCapture
+[diff] 0x7c86a4   MISMATCH         GetCapture
+[diff] 0x7c86aa   MISMATCH         SetCapture
+[diff] 0x7c86b0   MISMATCH         GetDlgCtrlID
+[ledger] 0x7c8638 UpdateWindow -> NG (attempt 1)
+[ledger] 0x7c863e MessageBoxIndirectA -> NG (attempt 1)
+[ledger] 0x7c864a MessageBoxA -> NG (attempt 1)
+[ledger] 0x7c8650 ReleaseDC -> NG (attempt 1)
+[ledger] 0x7c8656 GetDC -> NG (attempt 1)
+[ledger] 0x7c865c CloseWindow -> NG (attempt 1)
+[ledger] 0x7c8662 DefWindowProcA -> NG (attempt 1)
+[ledger] 0x7c8668 GetActiveWindow -> NG (attempt 1)
+[ledger] 0x7c866e EndDialog -> NG (attempt 1)
+[ledger] 0x7c8674 SetFocus -> NG (attempt 1)
+[ledger] 0x7c867a SetDlgItemTextA -> NG (attempt 1)
+[ledger] 0x7c8680 DialogBoxParamA -> NG (attempt 1)
+[ledger] 0x7c868c ShowCursor -> NG (attempt 1)
+[ledger] 0x7c8692 SetWindowPos -> NG (attempt 1)
+[ledger] 0x7c8698 DestroyWindow -> NG (attempt 1)
+[ledger] 0x7c869e ReleaseCapture -> NG (attempt 1)
+[ledger] 0x7c86a4 GetCapture -> NG (attempt 1)
+[ledger] 0x7c86aa SetCapture -> NG (attempt 1)
+[ledger] 0x7c86b0 GetDlgCtrlID -> NG (attempt 1)
+[ledger] 0x7c86b6 ChildWindowFromPointEx -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 16,
+  "branch_order": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p07\batch_report.json
