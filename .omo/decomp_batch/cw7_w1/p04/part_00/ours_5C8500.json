@@ -1,0 +1,129 @@
+{
+ "symbol": "?ModBigIntExp@@YIHPAH0PAD1H@Z",
+ "sym_key": "Unnamed::ModBigIntExp",
+ "size": 884,
+ "link_base": 0,
+ "bytes_hex": "81ec180100005355568bb4243001000089542414578d1cb5000000008bf98bd333c0c1ea02c1e2028bca897c241c8be989742414c1e902f3ab8bcd83e103f3aa8b44241cc700010000008b84242c010000833800756d8b4c03fc8bfe85c975178d7eff85ff74108d4403f88b0883e80485c975034f75f483ff017f478b4424188338000f85dc0200008d5402fc833a0075144e85f674138b42fc83ea0485c075094e75f3eb048b74241483fe010f8fb20200005f5e5d83c8ff5b81c418010000c20c008bac2430010000837d000075388b442bfc8bfe85c075178d7eff85ff74108d442bf88b0883e80485c975034f75f483ff017f125f5e5db8feffffff5b81c418010000c20c008b4424188b7c2bfc8d4c2bfc897424108b6c02fc8d4402fc3bef8bd1723c2bc189442414393c08771feb048b4424148b6c241083ea044d896c2410740b8b2c108b023be8721476e35f5e5db8fdffffff5b81c418010000c20c008b94242c0100008bee8bc18b5c13fc3bdf7237772383e8044d741d8b9c24300100008bd02bd38b9c242c0100008b141a8b183bd3721476dd5f5e5db8fcffffff5b81c418010000c20c0033db897424203bfb75184e3bf3740f83c1fc8b0183e9043bc375034e75f4897424208b8c24300100008bd6e80000000085c074125f5e5db8fbffffff5b81c418010000c20c008bac242c0100008d3cb500000000897c24248bc6395c2ffc751f8d46ff3bc374108d4c2ff88b1183e9043bd3750b4875f4895c24108bf3eb388b4c85fcba00000080c1e0053bcb7c07d1ea4885d174f98bf03bc38974241074178d48ff81e11f00008079054983c9e041bb01000000d3e38d461f8bcf9983e21f8b7c241c03c28bd1c1f8054e897424148b742418c1e902f3a58bca8d6c85fc83e103d1ebf3a475108b8c242c010000bb000000808d6c81f8837c24100174568b7424208b7c241c5657e8000000008b450083c40885c374108b5424185652e80000000083c408eb168b4c24248d7424288bc1c1e902f3a58bc883e103f3a4d1eb7508bb0000008083ed048b442414488944241475aa8b35000000008b1500000000b900ffffff33c023f123d1a300000000a300000000a300000000893500000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000891500000000a3000000005f5e5d33c05b81c418010000c20c00",
+ "relocs": [
+  {
+   "off": 472,
+   "type": "REL32",
+   "sym": "?ModBigIntExp_Helper@@YIHPAX0@Z",
+   "sym_key": "ModBigIntExp_Helper"
+  },
+  {
+   "off": 694,
+   "type": "REL32",
+   "sym": "?ComputeModularInverse@@YAHPAXH@Z",
+   "sym_key": "ComputeModularInverse"
+  },
+  {
+   "off": 715,
+   "type": "REL32",
+   "sym": "?ComputeModularInverse@@YAHPAXH@Z",
+   "sym_key": "ComputeModularInverse"
+  },
+  {
+   "off": 771,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF5A0@@3IA",
+   "sym_key": "DataGlobal_ABF5A0"
+  },
+  {
+   "off": 777,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF6B4@@3IA",
+   "sym_key": "DataGlobal_ABF6B4"
+  },
+  {
+   "off": 793,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF6B8@@3IA",
+   "sym_key": "DataGlobal_ABF6B8"
+  },
+  {
+   "off": 798,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF5B4@@3IA",
+   "sym_key": "DataGlobal_ABF5B4"
+  },
+  {
+   "off": 803,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF8C4@@3IA",
+   "sym_key": "DataGlobal_ABF8C4"
+  },
+  {
+   "off": 809,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF5A0@@3IA",
+   "sym_key": "DataGlobal_ABF5A0"
+  },
+  {
+   "off": 814,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF5A8@@3IA",
+   "sym_key": "DataGlobal_ABF5A8"
+  },
+  {
+   "off": 819,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF8CC@@3IA",
+   "sym_key": "DataGlobal_ABF8CC"
+  },
+  {
+   "off": 824,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF5AC@@3IA",
+   "sym_key": "DataGlobal_ABF5AC"
+  },
+  {
+   "off": 829,
+   "type": "DIR32",
+   "sym": "?dword_ABF8D0@@3IA",
+   "sym_key": "dword_ABF8D0"
+  },
+  {
+   "off": 834,
+   "type": "DIR32",
+   "sym": "?g_BigIntModExpObject@@3IA",
+   "sym_key": "g_BigIntModExpObject"
+  },
+  {
+   "off": 839,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF5B0@@3IA",
+   "sym_key": "DataGlobal_ABF5B0"
+  },
+  {
+   "off": 844,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF5A4@@3IA",
+   "sym_key": "DataGlobal_ABF5A4"
+  },
+  {
+   "off": 849,
+   "type": "DIR32",
+   "sym": "?dword_ABF8D4@@3IA",
+   "sym_key": "dword_ABF8D4"
+  },
+  {
+   "off": 854,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF8C8@@3IA",
+   "sym_key": "DataGlobal_ABF8C8"
+  },
+  {
+   "off": 860,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF6B4@@3IA",
+   "sym_key": "DataGlobal_ABF6B4"
+  },
+  {
+   "off": 865,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF59C@@3IA",
+   "sym_key": "DataGlobal_ABF59C"
+  }
+ ]
+}

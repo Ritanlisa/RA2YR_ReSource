@@ -41777,14 +41777,14 @@
   "this_as_id": false
  },
  "0x591d80": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MapSeed::PlaceCityBuildings",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MapSeed::PlaceCityBuildings",
-  "rule_violations": 11,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -41962,15 +41962,15 @@
   "this_as_id": false
  },
  "0x5a33f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 mov ecx, 0x87f7e8",
   "name": "ObjectClass::GenerateTerrainHeightMapInternal",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "GenerateTerrainHeightMapInternal",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5a4fa0": {
@@ -41996,13 +41996,13 @@
   "this_as_id": false
  },
  "0x5a7e90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "Object_Helper_5A7E90",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Object_Helper_5A7E90",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -42018,14 +42018,14 @@
   "this_as_id": false
  },
  "0x5a89d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, 0x6058",
   "name": "ScheduleMapSeedBuildings",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "ScheduleMapSeedBuildings",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5a9920": {
@@ -42798,7 +42798,7 @@
   "this_as_id": false
  },
  "0x5aead0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -42810,7 +42810,7 @@
   "this_as_id": false
  },
  "0x5aeaf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -42822,7 +42822,7 @@
   "this_as_id": false
  },
  "0x5aeb20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -42846,7 +42846,7 @@
   "this_as_id": false
  },
  "0x5af120": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43459,15 +43459,15 @@
   "status": "OK"
  },
  "0x5b2da0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+67 mov dword ptr [esi + 0xc8], ecx",
   "name": "MissionClass::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "RadioClass::Constructor",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5b2e10": {
@@ -43899,7 +43899,7 @@
   "status": "NG"
  },
  "0x5b4270": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -43911,14 +43911,14 @@
   "this_as_id": false
  },
  "0x5b4310": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+38 call 0x7c8b3d",
   "name": "WinMainSetup_Setup_5B4310",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMainSetup_Setup_5B4310",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5b43e0": {
@@ -44964,7 +44964,7 @@
   "status": "OK"
  },
  "0x5c0630": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -45426,7 +45426,7 @@
   "this_as_id": false
  },
  "0x5c1300": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -45438,7 +45438,7 @@
   "this_as_id": false
  },
  "0x5c1640": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -45462,7 +45462,7 @@
   "this_as_id": false
  },
  "0x5c1dc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -45517,7 +45517,7 @@
   "this_as_id": false
  },
  "0x5c2de0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46125,25 +46125,25 @@
   "this_as_id": false
  },
  "0x5c6660": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "RotateBitBufferRight",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "RotateBitBufferRight",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c67a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+5 mov edi, edx",
   "name": "RotateBitBufferLeft",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "RotateBitBufferLeft",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c6940": {
@@ -46235,14 +46235,14 @@
   "this_as_id": false
  },
  "0x5c71e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "ShiftBigIntAndScan",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ShiftBigIntAndScan",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c7db0": {
@@ -46280,14 +46280,14 @@
   "this_as_id": false
  },
  "0x5c8500": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x114",
   "name": "ModBigIntExp",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "ModBigIntExp",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c8930": {

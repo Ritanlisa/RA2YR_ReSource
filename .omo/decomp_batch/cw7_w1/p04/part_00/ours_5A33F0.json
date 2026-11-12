@@ -1,0 +1,171 @@
+{
+ "symbol": "?GenerateTerrainHeightMapInternal@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GenerateTerrainHeightMapInternal",
+ "size": 531,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53b900000000e800000000b900000000e8000000008bd885db895c24080f84e601000055568b742414578b7c24188bcbe80000000084c00f84ed00000033c9894c24188b432483e107668bd06603148d000000008b0c8d00000000c1f8100fbfd28bea33ee81e5ff000000c1f91033f503c133c68b2d0000000025ff00000033f08bc689742410c1f8100fbfc08d0c103bcd7e348bda2bd83bdd7d282bc23bc57d223b0d00000000771a8d4c241051b900000000e8000000008bc8e80000000084c0751b8b5c24148b4c24184183f908894c24180f8d0f010000e964ffffff8b4c24108bd1c1fa100fbfc20faf05000000000fbfc98b150000000003c18d0480c1e004c7440208000000008b0d00000000c744010c0000e03f8b4c24108bd1c1fa100fbfc2e9a30000008bcbe80000000084c00f84b00000008b2d0000000033c0894424188b4b2483e007c1f9108b048500000000c1f81003c10fbfc08bc833cf81e1ff00000033f90fbfcf897c24108d14013bd57e3a8bd92bd83bdd7d2e2bc13bc57d283b150000000077208d542410b90000000052e8000000008bc8e80000000084c0751a8b2d000000008b5c24148b4424184083f808894424187c86eb288b4c24108bc1c1f8100fbfc00faf05000000000fbfc903c18d1480a100000000c1e204c644024501b900000000e8000000008bd885db895c24140f852dfeffff5f5e5d5b83c40cc38bc35b83c40cc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?IsTerrainType@CellClass@@QAE_NXZ",
+   "sym_key": "CellClass::IsTerrainType"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 241,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 304,
+   "type": "REL32",
+   "sym": "?IsBuildable@CellLand@@QAE_NXZ",
+   "sym_key": "CellLand::IsBuildable"
+  },
+  {
+   "off": 318,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 405,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 411,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 418,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 428,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 467,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 480,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 493,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 498,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

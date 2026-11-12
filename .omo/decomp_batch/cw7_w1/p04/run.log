@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x591d80 MapSeed::PlaceCityBuildings -> MapSeed
+[conv] 0x5a33f0 ObjectClass::GenerateTerrainHeightMapInternal -> ObjectClass
+[conv] 0x5a7e90 Object_Helper_5A7E90 -> Object_Helper
+[conv] 0x5a89d0 ScheduleMapSeedBuildings -> _addr_5A
+[conv] 0x5aead0 BuildingClass::processBaseExpansion -> BuildingClass
+[conv] 0x5aeaf0 BuildingClass::updateFoundation -> BuildingClass
+[conv] 0x5aeb20 BuildingClass::recalcAdjacency -> BuildingClass
+[conv] 0x5af120 ObjectClass::sub_5AF120 -> ObjectClass
+[conv] 0x5b2da0 MissionClass::Constructor -> MissionClass
+[conv] 0x5b4270 HashTree::MarkEntry -> HashTree
+[conv] 0x5b4310 WinMainSetup_Setup_5B4310 -> WinMainSetup_Setup
+[conv] 0x5c0630 MovieHandle::sub_5C0630 -> MovieHandle
+[conv] 0x5c1300 ObjectClass::ReadMPMapsINI -> ObjectClass
+[conv] 0x5c1640 MPCooperative::MPCooperative_Cleanup -> MPCooperative
+[conv] 0x5c1dc0 MPCooperative::Seek -> MPCooperative
+[conv] 0x5c2de0 MPCooperative::selectTeam -> MPCooperative
+[conv] 0x5c6660 RotateBitBufferRight -> _addr_5C
+[conv] 0x5c67a0 RotateBitBufferLeft -> _addr_5C
+[conv] 0x5c71e0 ShiftBigIntAndScan -> _addr_5C
+[conv] 0x5c8500 ModBigIntExp -> _addr_5C
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MapSeed                  rc=2
+[era] ObjectClass              rc=2
+[era] Object_Helper            rc=2
+[era] _addr_5A                 rc=0
+[era] BuildingClass            rc=2
+[era] MissionClass             rc=0
+[era] HashTree                 rc=2
+[era] WinMainSetup_Setup       rc=0
+[era] MovieHandle              rc=2
+[era] MPCooperative            rc=2
+[era] _addr_5C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5a33f0   MISMATCH         ObjectClass::GenerateTerrainHeightMapInternal
+[diff] 0x5a89d0   MISMATCH         ScheduleMapSeedBuildings
+[diff] 0x5b2da0   MISMATCH         MissionClass::Constructor
+[diff] 0x5b4310   MISMATCH         WinMainSetup_Setup_5B4310
+[diff] 0x5c6660   MISMATCH         RotateBitBufferRight
+[diff] 0x5c67a0   MISMATCH         RotateBitBufferLeft
+[diff] 0x5c71e0   MISMATCH         ShiftBigIntAndScan
+[diff] 0x5c8500   MISMATCH         ModBigIntExp
+[ledger] 0x591d80 MapSeed::PlaceCityBuildings -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a33f0 ObjectClass::GenerateTerrainHeightMapInternal -> NG (attempt 4)
+[ledger] 0x5a7e90 Object_Helper_5A7E90 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a89d0 ScheduleMapSeedBuildings -> NG (attempt 4)
+[ledger] 0x5aead0 BuildingClass::processBaseExpansion -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5aeaf0 BuildingClass::updateFoundation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5aeb20 BuildingClass::recalcAdjacency -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5af120 ObjectClass::sub_5AF120 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b2da0 MissionClass::Constructor -> NG (attempt 4)
+[ledger] 0x5b4270 HashTree::MarkEntry -> COMPILE_FAIL (attempt 13)
+[ledger] 0x5b4310 WinMainSetup_Setup_5B4310 -> NG (attempt 5)
+[ledger] 0x5c0630 MovieHandle::sub_5C0630 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c1300 ObjectClass::ReadMPMapsINI -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5c1640 MPCooperative::MPCooperative_Cleanup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c1dc0 MPCooperative::Seek -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c2de0 MPCooperative::selectTeam -> COMPILE_FAIL (attempt 14)
+[ledger] 0x5c6660 RotateBitBufferRight -> NG (attempt 4)
+[ledger] 0x5c67a0 RotateBitBufferLeft -> NG (attempt 4)
+[ledger] 0x5c71e0 ShiftBigIntAndScan -> NG (attempt 4)
+[ledger] 0x5c8500 ModBigIntExp -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "const_fold": 2,
+  "regalloc": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p04\batch_report.json

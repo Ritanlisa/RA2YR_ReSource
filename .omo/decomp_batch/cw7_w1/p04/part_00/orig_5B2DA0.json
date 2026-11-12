@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B2DA0",
+ "name": "RadioClass::Constructor",
+ "size": 104,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B2DA0",
+ "bytes_hex": "568bf1e8580b040083c8ff8986ac0000008986b00000008986b400000033c08886b80000008986bc0000008986c00000008986c40000008b0d84eda8008986d0000000898ec8000000c706c0dc7e00c74604a4dc7e00c746089cdc7e00c7460c94dc7e008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B4310",
+ "name": "WinMainSetup_Setup_5B4310",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B4310",
+ "bytes_hex": "a10cf0ab005685c08bf074228b0085c074078bc8e857fdffff8b4e0485c97405e84bfdffff56e80248210083c404c7050cf0ab00000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

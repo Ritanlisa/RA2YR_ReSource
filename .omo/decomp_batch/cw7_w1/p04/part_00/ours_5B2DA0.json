@@ -1,0 +1,21 @@
+{
+ "symbol": "?Constructor@MissionClass@@QAEPAVRadioClass@@XZ",
+ "sym_key": "MissionClass::Constructor",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000083c8ff8986ac0000008986b00000008986b400000033c08886b80000008986bc0000008986c00000008986c40000008b0d000000008986d0000000890688460488460889460c898ec80000008bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?ctor@ObjectClass@@QAEPAIXZ",
+   "sym_key": "ObjectClass::ctor"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

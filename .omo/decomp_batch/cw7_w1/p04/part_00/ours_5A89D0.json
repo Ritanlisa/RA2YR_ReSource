@@ -1,0 +1,183 @@
+{
+ "symbol": "?ScheduleMapSeedBuildings@@YG_NPAH@Z",
+ "sym_key": "Unnamed::ScheduleMapSeedBuildings",
+ "size": 1204,
+ "link_base": 0,
+ "bytes_hex": "b844600000e8000000005355565733db8d742454bf0004000056e80000000083c40483c6144f75f1895c2428895c2438b900000000e80000000089442448895c244cdf6c244883ec08dc0d00000000dd1c24e8000000008bf883c40883ff0a77cf8d041fb90b00000099f7f933c98bf28b150000000003f233d2e80000000084c075134383fb0b7cd85f5e5d5b81c444600000c204008b94245860000089742414b9050000008d7424148b028d7c24548944241889442420c744241cffff0000c7442424fffffffff3a5e8000000008b5c2444bd0100000089842454500000896c242c8b44242833ff897c2410897c24308d0480897c24348b5484588b4c84548b74845c8d4484548954241881f9ffff00008b500c8b4010894c24148974241c89542420894424240f841e02000081feffff00007410578d5424248bcee8000000008b4c24146aff6aff8d542420e8000000008b15000000008b4424143bc28bc8720b8d72653bc673042bc2eb1a8b15000000003bc2720e8d72083bc673072bc283c065eb0233c08d14408dbc40dcf82a00c1e7028b149500000000897c244483fa010f8e9f0100008b4c242433c083f9ff0f95c02bd08bea8d4cad00c1e10251e8000000008bf083c40485f68974243c0f84610100008d55ff85d27c4d83c6086a006a008d4c2458c746f8ffff0000e8000000008b006a006a008d4c24508946fcc706ffff0000e8000000008b00c74608ffffffff89460483c6144d75c28b74243cc7442410000000008b0f33c03bc8897424348944243c0f860101000083c6048974241083c60c3b4424240f84b90000008b57048d6ef88b0cc28b44c2048b54241883e007c7442440000000008b0485000000008d3c0803fa33fbc1f810c1ea1081e7ff00000003c2c1f91033df03c133c38d4c24408d7efc25ff00000051578bd5b90100000033d8e80000000084c074688b442410568d56f050b904000000e80000000084c074108b5424108b4ef06a01e800000000eb068b4c2440890e8b4d006a018bd7e8000000008b6c24308b5424108b7c24448b44243c4583c214896c24308954241083c6148b0f403bc18944243c7313e92dffffff8b5424308b4c241489542410eb1a8b4424308b4c241489442410eb0cc7442434000000008b4c24148b6c242c8b7c24348d542418e8000000008b44241085c07e4383c7088d77fc8b4efc81f9ffff000074096a008bd6e8000000008b0f81f9ffff0000740a6a008d5608e8000000008b44241083c71483c614488944241075c78b7c24348b4c241c81f9ffff0000740d6aff6aff8d542428e80000000085ff740957e80000000083c40485ed8bc574188b4c24288d45ff418944242c81e1ff0300008be8894c24288b5424384285c0895424380f84a60000003dfc0300000f8ce3fcffff8b7424286aff6aff8d04b68b54845c8b4c84608d44845c8954241c894c24208b500c8b48088b4010895424288d542428894c24248944242ce80000000085ed745aeb048b7424288d460125ff03000083fd010f94c14d8944242884c9753d8d04806aff6aff8b5484608b4c845c8d44845c89542420894c241c8b500c8b48088b4010895424288d542428894c24248944242ce80000000085ed75a88b4c243833c05f83f9015e5d0f9fc05b81c444600000c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "__chkstk",
+   "sym_key": "_chkstk"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Object_Helper_5A99B0@@YAPAIPAX@Z",
+   "sym_key": "Object_Helper_5A99B0"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?dbl_7EDB28@@3NA",
+   "sym_key": "dbl_7EDB28"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD20@@3IA",
+   "sym_key": "DataGlobal_ABAD20"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?Map_Helper_5A7D00@@YIDHH@Z",
+   "sym_key": "Map_Helper_5A7D00"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?DrawIsoTile@@YIHHPAXD@Z",
+   "sym_key": "DrawIsoTile"
+  },
+  {
+   "off": 335,
+   "type": "REL32",
+   "sym": "?PlaceMapSeedClassBuildings@@YIHHPAXHH@Z",
+   "sym_key": "PlaceMapSeedClassBuildings"
+  },
+  {
+   "off": 341,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC1D4@@3IA",
+   "sym_key": "DataGlobal_ABC1D4"
+  },
+  {
+   "off": 368,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABBEC0@@3IA",
+   "sym_key": "DataGlobal_ABBEC0"
+  },
+  {
+   "off": 408,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABE370@@3PAIA",
+   "sym_key": "DataGlobal_ABE370"
+  },
+  {
+   "off": 450,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 497,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 521,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 626,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 684,
+   "type": "REL32",
+   "sym": "?PlaceRandomTerrainFeatures@@YIDHPAX00@Z",
+   "sym_key": "PlaceRandomTerrainFeatures"
+  },
+  {
+   "off": 707,
+   "type": "REL32",
+   "sym": "?PlaceRandomTerrainFeatures@@YIDHPAX00@Z",
+   "sym_key": "PlaceRandomTerrainFeatures"
+  },
+  {
+   "off": 725,
+   "type": "REL32",
+   "sym": "?DrawIsoTile@@YIHHPAXD@Z",
+   "sym_key": "DrawIsoTile"
+  },
+  {
+   "off": 745,
+   "type": "REL32",
+   "sym": "?DrawIsoTile@@YIHHPAXD@Z",
+   "sym_key": "DrawIsoTile"
+  },
+  {
+   "off": 849,
+   "type": "REL32",
+   "sym": "?Object_Helper_5A7E90@@YIHHPAX@Z",
+   "sym_key": "Object_Helper_5A7E90"
+  },
+  {
+   "off": 883,
+   "type": "REL32",
+   "sym": "?DrawIsoTile@@YIHHPAXD@Z",
+   "sym_key": "DrawIsoTile"
+  },
+  {
+   "off": 903,
+   "type": "REL32",
+   "sym": "?DrawIsoTile@@YIHHPAXD@Z",
+   "sym_key": "DrawIsoTile"
+  },
+  {
+   "off": 949,
+   "type": "REL32",
+   "sym": "?PlaceMapSeedClassBuildings@@YIHHPAXHH@Z",
+   "sym_key": "PlaceMapSeedClassBuildings"
+  },
+  {
+   "off": 959,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 1081,
+   "type": "REL32",
+   "sym": "?PlaceMapSeedClassBuildings@@YIHHPAXHH@Z",
+   "sym_key": "PlaceMapSeedClassBuildings"
+  },
+  {
+   "off": 1171,
+   "type": "REL32",
+   "sym": "?PlaceMapSeedClassBuildings@@YIHHPAXHH@Z",
+   "sym_key": "PlaceMapSeedClassBuildings"
+  }
+ ]
+}
