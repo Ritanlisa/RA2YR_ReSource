@@ -1,0 +1,21 @@
+{
+ "symbol": "?Construct@MSBitPrintAnim@@QAEPAXPAPBHPAHD@Z",
+ "sym_key": "MSBitPrintAnim::Construct",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7c24108b560c8b47048b0f80e201894e0483ca0189460889560ce8000000008946108b44240c508d4e1cc7461800000000c70600000000e8000000008b0f894e208b57048a4c24148956248b47088946288b7f0c897e2cc6463000c70600000000884e318bc65f5ec20c00",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::AssignFromPtr"
+  }
+ ]
+}

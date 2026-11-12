@@ -1,0 +1,15 @@
+{
+ "symbol": "?Init@ProgressAnim@@QAEHHHDH@Z",
+ "sym_key": "ProgressAnim::Init",
+ "size": 123,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b4c240c8946488a442410894e4c33c984c08846617e1d8d460833d2c70000000000c74004000000008a56614183c0083bca7ce68b442414c646600185c07415894664c7465000000000c7467cffffffff5ec21000a1000000006a00508b08ff5118c7465000000000c7467cffffffff5ec21000",
+ "relocs": [
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  }
+ ]
+}

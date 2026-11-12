@@ -1,0 +1,21 @@
+{
+ "symbol": "?__store_num@ObjectClass@@QAEHHIPAI0@Z",
+ "sym_key": "ObjectClass::__store_num",
+ "size": 150,
+ "link_base": 0,
+ "bytes_hex": "a1000000005733ff85c0741b8b4424148b4c24108b542408505152e80000000083c40c5fc210008b5424148b44240c3b02720cc7020000000033c05fc21000538b5c241485c08d48ff743855568b7424148bc6bd0a00000099f7fd8b0380c23047881408b867666666f7eec1fa028bc249c1e81f03d083f9ff8bf275d48b5424205e5d8b0b03cf890b8b022bc75b89028bc75fc21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BB0@@3IA",
+   "sym_key": "CRTGlobal_B78BB0"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?_store_number@@YAHHPAX0ZZ",
+   "sym_key": "_store_number"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Constructor@LCWPipe@@QAEPAV1@HH@Z",
+ "sym_key": "LCWPipe::Constructor",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b4c240c89460c33c089460489460889461089461489461889068bc1894e1c9983e27f03c2c1f807403d800000007d05b88000000089462003c150e8000000008b4e208b561c03ca89461451e80000000083c4088946188b0666c74624ffff5ec20800",
+ "relocs": [
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

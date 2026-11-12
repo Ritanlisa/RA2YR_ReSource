@@ -1,0 +1,11 @@
+{
+ "addr": "0x763D90",
+ "name": "WaypointPathClass::SaveState",
+ "size": 109,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x763D90",
+ "bytes_hex": "8b44240c538b5c240855568b74241457505653e878c5caff85c07c4a8b4b388b166a008d4424206a045056894c242cff521085c07c308b44241c33ed85c07e2433ff8b432c8b0e8bd76a0003d06a0c5256ff511085c07c0e8b44241c4583c70c3be87cde33c05f5e5d5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

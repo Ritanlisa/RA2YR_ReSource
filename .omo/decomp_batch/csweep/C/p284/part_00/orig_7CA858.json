@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CA858",
+ "name": "_vswprintf",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CA858",
+ "bytes_hex": "558bec83ec208b450856ff75108945e88945e08d45e0ff750cc745ec42000000c745e4ffffff7f50e83979000083c40cff4de48bf0780b8b45e0802000ff45e0eb0d8d45e0506a00e8e83800005959ff4de478088b45e0802000eb0d8d45e0506a00e8ce38000059598bc65ec9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

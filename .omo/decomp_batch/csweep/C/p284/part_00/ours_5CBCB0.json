@@ -1,0 +1,15 @@
+{
+ "symbol": "?Update@MSShapeAnim@@QAEPAHPAH@Z",
+ "sym_key": "MSShapeAnim::Update",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "83ec105355568bf1578d4c24108b46285051e8000000008b78048b5e088b4e048b108b761c8b680c03fb8b580803caf7c600020000741a0fbf4602992bc2d1f8f7d803c80fbf4604992bc2d1f8f7d803f88b4424248978045f89680c5e8958085d89085b83c410c20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAX0@Z",
+   "sym_key": "Building__GetFoundationSize"
+  }
+ ]
+}

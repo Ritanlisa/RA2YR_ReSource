@@ -1,0 +1,11 @@
+{
+ "addr": "0x551FF0",
+ "name": "LCWPipe::Constructor",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x551FF0",
+ "bytes_hex": "568bf18b4c240833c0894e0c8b4c240c8946048946088946108946148946188bc19983e27f894e1c03c2c7062ccf7e00c1f807403d800000007d05b88000000089462003c150e8dc6d27008b56208b4e1c03d189461452e8cb6d270083c40889461866c74624ffff8bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

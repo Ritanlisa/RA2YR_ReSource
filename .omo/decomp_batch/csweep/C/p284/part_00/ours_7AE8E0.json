@@ -1,0 +1,15 @@
+{
+ "symbol": "?GameOptionsScreenWOL_Helper_7AE8E0@ObjectClass@@QAE_NPAPBDPAH@Z",
+ "sym_key": "ObjectClass::GameOptionsScreenWOL_Helper_7AE8E0",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b460485c075075f32c05ec208008b7c240c33c08a461857ffd08b4e0cba01000000d3e28b0e4a23c28b348185f675075f32c05ec20800578bcee80000000084c0750f8bb61001000085f675ea5f5ec208008b54241083c6045fb00189325ec20800",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  }
+ ]
+}

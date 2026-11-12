@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B5A40",
+ "name": "String::Assign_Bool",
+ "size": 109,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B5A40",
+ "bytes_hex": "538bd956578b0385c0740950e8ec30010083c4048b742410c7030000000085f6740d8bfe83c9ff33c0f2aef7d1eb05b90100000051e89d33010083c404890385f6c60000741f8bfe83c9ff33c0f2aef7d12bf98bc18bf78b3bc1e902f3a58bc883e103f3a45f5eb0015bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

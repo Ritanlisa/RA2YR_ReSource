@@ -1,0 +1,27 @@
+{
+ "symbol": "?_vswprintf@@YAHQAGIQBGPAD@Z",
+ "sym_key": "Unnamed::_vswprintf",
+ "size": 148,
+ "link_base": 0,
+ "bytes_hex": "83ec208b4424248b4c242889442408894424008b44242c56508d5424085152c744241c42000000c7442414ffffff7fe8000000008bf08b44241483c40c488944240879118d442404506a00e80000000083c408eb108b4c2404c601008b44240440894424048b442408488944240879168d542404526a00e80000000083c4088bc65e83c420c38b442404c600008bc65e83c420c3",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?_woutput@@YAHPAXHHZZ",
+   "sym_key": "_woutput"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?_flsbuf@@YAHHPAXZZ",
+   "sym_key": "_flsbuf"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?_flsbuf@@YAHHPAXZZ",
+   "sym_key": "_flsbuf"
+  }
+ ]
+}

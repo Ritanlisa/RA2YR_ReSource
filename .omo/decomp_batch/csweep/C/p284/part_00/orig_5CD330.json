@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CD330",
+ "name": "MSBitPrintAnim::Construct",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CD330",
+ "bytes_hex": "56578b7c24108bf18b0f8b4704894e048d4e14894608c6460c01e8f1b80f008b54240c894610c7461800000000528d4e1cc706e8e87e00e8b4931e008b0f8d4620894e208b57048950048b4f088948088b570cc6463000c706d8e97e0089500c8a4424148846318bc65f5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

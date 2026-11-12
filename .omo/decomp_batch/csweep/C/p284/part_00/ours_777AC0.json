@@ -1,0 +1,33 @@
+{
+ "symbol": "?FormatDate@Time@@QAEHPAD@Z",
+ "sym_key": "Time::FormatDate",
+ "size": 118,
+ "link_base": 0,
+ "bytes_hex": "83ec108d442400506800000000e80000000085c074588b4c240c8b54240a8b44240881e1ffff000081e2ffff0000518b4c240425ffff0000528b54240e508b44240e81e1ffff000081e2ffff0000518b4c242425ffff00005250680000000051e80000000083c42083c410c2040033c083c410c20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?FileTime@@3_KA",
+   "sym_key": "FileTime"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?FileTimeToSystemTime@@YGHPAX0@Z",
+   "sym_key": "FileTimeToSystemTime"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "??_C@_0CA@EOMK@?$CF02d?1?$CF02d?1?$CF04d?5?9?5?$CF02d?3?$CF02d?3?$CF02d?$AA@",
+   "sym_key": "??_C@_0CA@EOMK@?$CF02d?1?$CF02d?1?$CF04d?5?9?5?$CF02d?3?$CF02d?3?$CF02d?$AA@"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  }
+ ]
+}

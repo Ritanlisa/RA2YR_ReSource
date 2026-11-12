@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_5A6BA0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::sub_5A6BA0",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "83ec088b01530fbf09c1e8100fbfc05556578d59078d79f98d48f95357894c24188d6807e80000000083c40885c075468b7424108bc63bc57d298d542414b9f80100005266897c2418668974241ae8000000008bc8e80000000084c0750c463bf57cd7473bfb7d0eebc65f5e5d32c05b83c408c204005f5e5db0015b83c408c20400",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?__OFSUB__@@YAHHHZZ",
+   "sym_key": "__OFSUB__"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?IsBuildable@CellLand@@QAE_NXZ",
+   "sym_key": "CellLand::IsBuildable"
+  }
+ ]
+}

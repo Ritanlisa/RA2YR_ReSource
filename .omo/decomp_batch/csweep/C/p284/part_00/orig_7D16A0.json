@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D16A0",
+ "name": "__mbsdec",
+ "size": 109,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D16A0",
+ "bytes_hex": "56578b7c2410397c240c720433c0eb5a833d5c88b7000075058d47ffeb4c6a19e830c3ffff0fb647ff8d77ff59f6806189b70004740d6a19e879c3ffff598d46ffeb274e3974240c770c0fb606f6806189b7000475ed6a19e859c3ffff598bc78bcf2bce83e1012bc1485f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

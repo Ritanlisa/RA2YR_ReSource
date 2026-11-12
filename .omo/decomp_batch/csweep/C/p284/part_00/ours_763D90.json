@@ -1,0 +1,15 @@
+{
+ "symbol": "?SaveState@WaypointPathClass@@QAGHPAH0@Z",
+ "sym_key": "WaypointPathClass::SaveState",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "8b44240c538b5c240855568b74241457505653e80000000085c07c608b068b4b386a008d5424206a045256894c242cff501085c07c468b44241c33ed85c0763a8b4b2c8b0633ff576a0c5156ff501085c07c298b44241c453be8731e8b432c8b1683c70c6a0003c76a0c5056ff521085c07de05f5e5d5bc20c0033c05f5e5d5bc20c00",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXPAH1@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  }
+ ]
+}

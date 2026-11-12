@@ -1,0 +1,11 @@
+{
+ "addr": "0x642A60",
+ "name": "ProgressAnim::Init",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x642A60",
+ "bytes_hex": "8b44240453568bf18b4c241033db8946488a442414894e4c33c93ac38846617e148d460889188958040fbe56614183c0083bca7cef8b442418c64660013bc37412894664895e50c7467cffffffff5e5bc210008b0d0c738800538b01ff5018895e50c7467cffffffff5e5bc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

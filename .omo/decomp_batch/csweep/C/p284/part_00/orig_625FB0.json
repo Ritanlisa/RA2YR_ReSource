@@ -1,0 +1,11 @@
+{
+ "addr": "0x625FB0",
+ "name": "HashTable_flat::FindChunk",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x625FB0",
+ "bytes_hex": "538b590485db56741b8b74240c6a045356e84a461a0083c40c85c074138b5b0c85db75e933db5e85db0f95c05bc20c0085db74338b54241433c0668b43068b0a3bc17d028bc88b73088bc1578b7c2414c1e902f3a58bc883e103f3a433c95f668b4b06890a85db5e5b0f95c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

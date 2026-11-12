@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CBCB0",
+ "name": "MSOverlayAnim::Update",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CBCB0",
+ "bytes_hex": "83ec105355568bf1578d4c24108b462850518b4e1ce8162b0d008b088b56088b780403fa8b58088b680c8b460403c88b4638f6c402741d8b761c0fbf4602992bc2d1f8f7d803c80fbf4604992bc2d1f8f7d803f88b4424248bd0890a897a045f5e895a08896a0c5d5b83c410c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

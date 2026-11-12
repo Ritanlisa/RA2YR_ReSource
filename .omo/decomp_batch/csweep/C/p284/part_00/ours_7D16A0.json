@@ -1,0 +1,45 @@
+{
+ "symbol": "?__mbsdec@@YAPAEPBE0@Z",
+ "sym_key": "Unnamed::__mbsdec",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "538b5c240c568b74240c3bf372055e33c05bc3a10000000085c075068d43ff5e5bc36a19e80000000083c4044b33c08a038bc8b00484810000000074146a19e8000000008b54241483c4045e8d42fe5bc34b3bf3770c33c98a0b84810000000075ef6a19e8000000008b44241483c4048ad02bd35e83e2015b2bc248c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B7885C@@3IA",
+   "sym_key": "CRTGlobal_B7885C"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78961@@3PAEA",
+   "sym_key": "CRTGlobal_B78961"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78961@@3PAEA",
+   "sym_key": "CRTGlobal_B78961"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}

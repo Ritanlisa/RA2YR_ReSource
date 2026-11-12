@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p284\part_00
+=== convert (20 addrs) ===
+[conv] 0x4251f0 sub_4251F0 -> _addr_42
+[conv] 0x6a87f0 ObjectClass::sub_6A87F0 -> ObjectClass
+[conv] 0x7b5a40 String::Assign_Bool -> String
+[conv] 0x777ac0 Time::FormatDate -> Time
+[conv] 0x7d16a0 __mbsdec -> _addr_7D
+[conv] 0x763d90 WaypointPathClass::SaveState -> WaypointPathClass
+[conv] 0x7d9ef8 _ungetc_0 -> _addr_7D
+[conv] 0x642a60 ProgressAnim::Init -> ProgressAnim
+[conv] 0x465cc0 BulletTypeClass::ReadTrailerAnim -> BulletTypeClass
+[conv] 0x551ff0 LCWPipe::Constructor -> LCWPipe
+[conv] 0x5a6ba0 ObjectClass::sub_5A6BA0 -> ObjectClass
+[conv] 0x5cd330 MSBitPrintAnim::Construct -> MSBitPrintAnim
+[conv] 0x7ae8e0 ObjectClass::GameOptionsScreenWOL_Helper_7AE8E0 -> ObjectClass
+[conv] 0x7ca858 _vswprintf -> _addr_7C
+[conv] 0x5cbcb0 MSShapeAnim::Update -> MSShapeAnim
+[conv] 0x625fb0 HashTable::FindChunk -> HashTable
+[conv] 0x69b690 ObjectClass::sub_69B690 -> ObjectClass
+[conv] 0x731060 CreateTeamCommand::performAction_246 -> CreateTeamCommand
+[conv] 0x771710 TechnoClass::sub_771710 -> TechnoClass
+[conv] 0x7ccf44 ObjectClass::__store_num -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_42                 rc=2
+[era] ObjectClass              rc=2
+[era] String                   rc=0
+[era] Time                     rc=0
+[era] _addr_7D                 rc=2
+[era] WaypointPathClass        rc=0
+[era] ProgressAnim             rc=0
+[era] BulletTypeClass          rc=2
+[era] LCWPipe                  rc=0
+[era] MSBitPrintAnim           rc=0
+[era] _addr_7C                 rc=0
+[era] MSShapeAnim              rc=0
+[era] HashTable                rc=0
+[era] CreateTeamCommand        rc=0
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x5a6ba0   MISMATCH         ObjectClass::sub_5A6BA0
+[diff] 0x7ae8e0   MISMATCH         ObjectClass::GameOptionsScreenWOL_Helper_7AE8E0
+[diff] 0x69b690   MISMATCH         ObjectClass::sub_69B690
+[diff] 0x7ccf44   MISMATCH         ObjectClass::__store_num
+[diff] 0x7b5a40   MISMATCH         String::Assign_Bool
+[diff] 0x777ac0   MISMATCH         Time::FormatDate
+[diff] 0x7d16a0   MISMATCH         __mbsdec
+[diff] 0x763d90   MISMATCH         WaypointPathClass::SaveState
+[diff] 0x642a60   MISMATCH         ProgressAnim::Init
+[diff] 0x551ff0   MISMATCH         LCWPipe::Constructor
+[diff] 0x5cd330   MISMATCH         MSBitPrintAnim::Construct
+[diff] 0x7ca858   MISMATCH         _vswprintf
+[diff] 0x5cbcb0   MISMATCH         MSShapeAnim::Update
+[diff] 0x625fb0   MISMATCH         HashTable::FindChunk
+[diff] 0x731060   MISMATCH         CreateTeamCommand::performAction_246
+[ledger] 0x4251f0 sub_4251F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a87f0 ObjectClass::sub_6A87F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b5a40 String::Assign_Bool -> NG (attempt 1)
+[ledger] 0x777ac0 Time::FormatDate -> NG (attempt 1)
+[ledger] 0x7d16a0 __mbsdec -> NG (attempt 1)
+[ledger] 0x763d90 WaypointPathClass::SaveState -> NG (attempt 1)
+[ledger] 0x7d9ef8 _ungetc_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x642a60 ProgressAnim::Init -> NG (attempt 1)
+[ledger] 0x465cc0 BulletTypeClass::ReadTrailerAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x551ff0 LCWPipe::Constructor -> NG (attempt 1)
+[ledger] 0x5a6ba0 ObjectClass::sub_5A6BA0 -> NG (attempt 1)
+[ledger] 0x5cd330 MSBitPrintAnim::Construct -> NG (attempt 1)
+[ledger] 0x7ae8e0 ObjectClass::GameOptionsScreenWOL_Helper_7AE8E0 -> NG (attempt 1)
+[ledger] 0x7ca858 _vswprintf -> NG (attempt 1)
+[ledger] 0x5cbcb0 MSShapeAnim::Update -> NG (attempt 1)
+[ledger] 0x625fb0 HashTable::FindChunk -> NG (attempt 1)
+[ledger] 0x69b690 ObjectClass::sub_69B690 -> NG (attempt 1)
+[ledger] 0x731060 CreateTeamCommand::performAction_246 -> NG (attempt 1)
+[ledger] 0x771710 TechnoClass::sub_771710 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ccf44 ObjectClass::__store_num -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 15
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "regalloc": 4,
+  "codegen_shape": 5,
+  "width_mismatch": 1,
+  "branch_polarity": 1,
+  "branch_order": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p284\batch_report.json
