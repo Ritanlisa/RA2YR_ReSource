@@ -1,0 +1,11 @@
+{
+ "addr": "0x731A10",
+ "name": "UI_Delete",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x731A10",
+ "bytes_hex": "e84b92f0ff85c074078bc8e9e062f0ff6aff6affb9b0c38900e892f7cfffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

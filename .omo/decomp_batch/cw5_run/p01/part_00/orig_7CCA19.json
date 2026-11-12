@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CCA19",
+ "name": "String::Wrapper5to4",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CCA19",
+ "bytes_hex": "6a00ff742414ff742414ff742414ff742414e80400000083c414c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Clear@_VectorClass_U_HashObject_VHashString_PAVSchemeNode@@QAEHHH@Z",
+ "sym_key": "_VectorClass_U_HashObject_VHashString_PAVSchemeNode::Clear",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b442408568bd0578b7c240cc1e20603d08b41048bcf8d349056e8000000008b8e000100008bc7898f000100005f5ec20800",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Copy@String@@QAEPADPAX@Z",
+   "sym_key": "String::Copy"
+  }
+ ]
+}

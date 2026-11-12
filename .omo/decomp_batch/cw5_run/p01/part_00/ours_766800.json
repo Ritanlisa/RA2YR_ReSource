@@ -1,0 +1,8 @@
+{
+ "symbol": "?ReleaseBuffer@_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour@@QAEHXZ",
+ "sym_key": "_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ReleaseBuffer",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b4610c746140000000085c07426f6c4ff74218b086a0350ff118b4e10c746040000000080e500c7460c00000000894e105e59c38b4e108b44240480e500c7460c00000000894e105e59c3",
+ "relocs": []
+}

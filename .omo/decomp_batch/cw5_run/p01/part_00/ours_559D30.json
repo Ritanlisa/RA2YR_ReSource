@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_559D30@@YAHPBX0@Z",
+ "sym_key": "Unnamed::sub_559D30",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b5424048b088b0281c1ac01000005ac0100005150e800000000f7d8c3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?CompareFileTime@@YGJPBX0@Z",
+   "sym_key": "CompareFileTime"
+  }
+ ]
+}

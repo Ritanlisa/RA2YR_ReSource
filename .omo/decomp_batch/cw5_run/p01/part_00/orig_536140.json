@@ -1,0 +1,11 @@
+{
+ "addr": "0x536140",
+ "name": "AddTeamCommand::Read",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x536140",
+ "bytes_hex": "8b410433d25068ba18000068b85f8200b95c718200e806ed1f00506854f6a800e8ff43290083c40cb854f6a800c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

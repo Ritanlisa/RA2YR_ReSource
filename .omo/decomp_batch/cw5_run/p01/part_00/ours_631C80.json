@@ -1,0 +1,8 @@
+{
+ "symbol": "?Dtor@Pipe@@QAEHXZ",
+ "sym_key": "Pipe::Dtor",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf133c08a4604c7060000000085c074068b4e088948088b4e0885c9740c8b1133c08a46045051ff520cc7460800000000c64604005ec3",
+ "relocs": []
+}

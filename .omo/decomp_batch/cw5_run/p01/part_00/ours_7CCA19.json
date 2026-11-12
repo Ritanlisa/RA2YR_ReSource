@@ -1,0 +1,15 @@
+{
+ "symbol": "?Wrapper5to4@String@@QAEHHHHH@Z",
+ "sym_key": "String::Wrapper5to4",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c240c8b5424086a00508b44240c515250e80000000083c414c21000",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?String_Helper_7CCA34@@YAIPAEI0HPAX@Z",
+   "sym_key": "String_Helper_7CCA34"
+  }
+ ]
+}

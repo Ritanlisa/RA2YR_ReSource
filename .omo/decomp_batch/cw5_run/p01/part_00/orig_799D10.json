@@ -1,0 +1,11 @@
+{
+ "addr": "0x799D10",
+ "name": "Dialog::CloseAll",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x799D10",
+ "bytes_hex": "e8fbbdfdff85c0741233d28bc8e8bebafdffe8e9bdfdff85c075eec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

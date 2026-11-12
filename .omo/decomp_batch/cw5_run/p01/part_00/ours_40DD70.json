@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsTechnoType@AbstractClass@@QAEPAXXZ",
+ "sym_key": "AbstractClass::IsTechnoType",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "568bf185f6741f8b0656ff502c4883f80e771333c98a8800000000ff248d000000008bc65ec333c05ec3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "$L1857",
+   "sym_key": "$L1857"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "$L1858",
+   "sym_key": "$L1858"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?CloseAll@Dialog@@QAEPAXXZ",
+ "sym_key": "Dialog::CloseAll",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000085c0741433d28bc8e8000000008bcee80000000085c075ec5ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?CloseDialog@@YIDHH@Z",
+   "sym_key": "CloseDialog"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  }
+ ]
+}
