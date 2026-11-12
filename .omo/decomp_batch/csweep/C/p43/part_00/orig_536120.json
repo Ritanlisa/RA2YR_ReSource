@@ -1,0 +1,11 @@
+{
+ "addr": "0x536120",
+ "name": "AddTeamCommand::ddtor",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x536120",
+ "bytes_hex": "68b818000068b85f820033d2b9a46f8200e82aed1f00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

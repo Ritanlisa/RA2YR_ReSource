@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p43\part_00
+=== convert (20 addrs) ===
+[conv] 0x536030 SelectTeamCommand::ddtor -> SelectTeamCommand
+[conv] 0x536120 AddTeamCommand::ddtor -> AddTeamCommand
+[conv] 0x536300 TauntCommandClass::ddtor -> TauntCommandClass
+[conv] 0x5365b0 NextObjectCommandClass::performAction_27 -> NextObjectCommandClass
+[conv] 0x5365d0 NextObjectCommandClass::performAction_28 -> NextObjectCommandClass
+[conv] 0x5365f0 NextObjectCommandClass::performAction_29 -> NextObjectCommandClass
+[conv] 0x5366b0 PlanningModeCommandClass::performAction_32 -> PlanningModeCommandClass
+[conv] 0x5366d0 PlanningModeCommandClass::performAction_33 -> PlanningModeCommandClass
+[conv] 0x5366f0 PlanningModeCommandClass::performAction_34 -> PlanningModeCommandClass
+[conv] 0x536780 CombatantSelectCommandClass::performAction_40 -> CombatantSelectCommandClass
+[conv] 0x5367a0 CombatantSelectCommandClass::performAction_41 -> CombatantSelectCommandClass
+[conv] 0x5367c0 CombatantSelectCommandClass::performAction_42 -> CombatantSelectCommandClass
+[conv] 0x536820 TypeSelectCommandClass::performAction_46 -> TypeSelectCommandClass
+[conv] 0x536860 TypeSelectCommandClass::performAction_48 -> TypeSelectCommandClass
+[conv] 0x5368e0 HealthNavCommandClass::performAction_54 -> HealthNavCommandClass
+[conv] 0x536900 HealthNavCommandClass::performAction_55 -> HealthNavCommandClass
+[conv] 0x536920 HealthNavCommandClass::performAction_56 -> HealthNavCommandClass
+[conv] 0x536980 VeterancyNavCommandClass::performAction_60 -> VeterancyNavCommandClass
+[conv] 0x5369a0 VeterancyNavCommandClass::performAction_61 -> VeterancyNavCommandClass
+[conv] 0x5369c0 VeterancyNavCommandClass::performAction_62 -> VeterancyNavCommandClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SelectTeamCommand        rc=0
+[era] AddTeamCommand           rc=0
+[era] TauntCommandClass        rc=0
+[era] NextObjectCommandClass   rc=0
+[era] PlanningModeCommandClass rc=0
+[era] CombatantSelectCommandClass rc=0
+[era] TypeSelectCommandClass   rc=0
+[era] HealthNavCommandClass    rc=0
+[era] VeterancyNavCommandClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x536030   MISMATCH         SelectTeamCommand::ddtor
+[diff] 0x536120   MISMATCH         AddTeamCommand::ddtor
+[diff] 0x536300   MISMATCH         TauntCommandClass::ddtor
+[diff] 0x5365b0   MISMATCH         NextObjectCommandClass::performAction_27
+[diff] 0x5365d0   MISMATCH         NextObjectCommandClass::performAction_28
+[diff] 0x5365f0   MISMATCH         NextObjectCommandClass::performAction_29
+[diff] 0x5366b0   MISMATCH         PlanningModeCommandClass::performAction_32
+[diff] 0x5366d0   MISMATCH         PlanningModeCommandClass::performAction_33
+[diff] 0x5366f0   MISMATCH         PlanningModeCommandClass::performAction_34
+[diff] 0x536780   MISMATCH         CombatantSelectCommandClass::performAction_40
+[diff] 0x5367a0   MISMATCH         CombatantSelectCommandClass::performAction_41
+[diff] 0x5367c0   MISMATCH         CombatantSelectCommandClass::performAction_42
+[diff] 0x536820   MISMATCH         TypeSelectCommandClass::performAction_46
+[diff] 0x536860   MISMATCH         TypeSelectCommandClass::performAction_48
+[diff] 0x5368e0   MISMATCH         HealthNavCommandClass::performAction_54
+[diff] 0x536900   MISMATCH         HealthNavCommandClass::performAction_55
+[diff] 0x536920   MISMATCH         HealthNavCommandClass::performAction_56
+[diff] 0x536980   MISMATCH         VeterancyNavCommandClass::performAction_60
+[diff] 0x5369a0   MISMATCH         VeterancyNavCommandClass::performAction_61
+[diff] 0x5369c0   MISMATCH         VeterancyNavCommandClass::performAction_62
+[ledger] 0x536030 SelectTeamCommand::ddtor -> NG (attempt 1)
+[ledger] 0x536120 AddTeamCommand::ddtor -> NG (attempt 1)
+[ledger] 0x536300 TauntCommandClass::ddtor -> NG (attempt 1)
+[ledger] 0x5365b0 NextObjectCommandClass::performAction_27 -> NG (attempt 1)
+[ledger] 0x5365d0 NextObjectCommandClass::performAction_28 -> NG (attempt 1)
+[ledger] 0x5365f0 NextObjectCommandClass::performAction_29 -> NG (attempt 1)
+[ledger] 0x5366b0 PlanningModeCommandClass::performAction_32 -> NG (attempt 1)
+[ledger] 0x5366d0 PlanningModeCommandClass::performAction_33 -> NG (attempt 1)
+[ledger] 0x5366f0 PlanningModeCommandClass::performAction_34 -> NG (attempt 1)
+[ledger] 0x536780 CombatantSelectCommandClass::performAction_40 -> NG (attempt 1)
+[ledger] 0x5367a0 CombatantSelectCommandClass::performAction_41 -> NG (attempt 1)
+[ledger] 0x5367c0 CombatantSelectCommandClass::performAction_42 -> NG (attempt 1)
+[ledger] 0x536820 TypeSelectCommandClass::performAction_46 -> NG (attempt 1)
+[ledger] 0x536860 TypeSelectCommandClass::performAction_48 -> NG (attempt 1)
+[ledger] 0x5368e0 HealthNavCommandClass::performAction_54 -> NG (attempt 1)
+[ledger] 0x536900 HealthNavCommandClass::performAction_55 -> NG (attempt 1)
+[ledger] 0x536920 HealthNavCommandClass::performAction_56 -> NG (attempt 1)
+[ledger] 0x536980 VeterancyNavCommandClass::performAction_60 -> NG (attempt 1)
+[ledger] 0x5369a0 VeterancyNavCommandClass::performAction_61 -> NG (attempt 1)
+[ledger] 0x5369c0 VeterancyNavCommandClass::performAction_62 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "extern_reloc": 11
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p43\batch_report.json

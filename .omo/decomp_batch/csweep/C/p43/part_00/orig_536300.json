@@ -1,0 +1,11 @@
+{
+ "addr": "0x536300",
+ "name": "TauntCommandClass::ddtor",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x536300",
+ "bytes_hex": "680519000068b85f820033d2b918728200e84aeb1f00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
