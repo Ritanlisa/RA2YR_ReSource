@@ -1,0 +1,11 @@
+{
+ "addr": "0x663D60",
+ "name": "Factory::GetLinkedIndex",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x663D60",
+ "bytes_hex": "578b7c240883ffff75060cff5fc204008b511033c0535685d27e288b71048bce8b190fbe1b3bfb74104083c1043bc27cef5e5b0cff5fc204008b04868a402884c075020cff5e5b5fc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x636E60",
+ "name": "ArrayClass::GetAt_Wrap",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x636E60",
+ "bytes_hex": "56578b791485ff74348b44240c3bc77c198bb19400000085f67f0275202bc699f7b99000000003d68bc285c07c0f3bc77d0b8b49085f5e8b0481c204005f33c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

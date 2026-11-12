@@ -1,0 +1,11 @@
+{
+ "addr": "0x65ADF0",
+ "name": "Array::ContainsValue",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65ADF0",
+ "bytes_hex": "568bb1e800000033d25785f67e1c8b89e40000008b7c240c8b0185c074133bc7740f4283c1043bd67cee5f32c05ec204005fb0015ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x65AE30",
+ "name": "Team::AllMembersValid",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65AE30",
+ "bytes_hex": "8b91e800000033c085d27e138b89e4000000833900750b4083c1043bc27cf332c0c3b001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

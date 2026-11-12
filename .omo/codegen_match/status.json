@@ -54717,23 +54717,28 @@
   "status": "OK"
  },
  "0x636570": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ScriptAction::Check",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "ScriptAction::Check",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x636ce0": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ScriptAction::ClearBuildingState",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ScriptAction::ClearBuildingState",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x636d90": {
   "attempts": 1,
@@ -54755,15 +54760,15 @@
   "status": "OK"
  },
  "0x636e60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+7 je 0x636e9d",
   "name": "ArrayClass::GetAt_Wrap",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "ArrayClass::GetAt_Wrap",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x636eb0": {
@@ -54774,7 +54779,7 @@
   "status": "NG"
  },
  "0x636f00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -54841,11 +54846,16 @@
   "status": "OK"
  },
  "0x637060": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "TabClass::processTabInput",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TabClass::processTabInput",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x637070": {
   "attempts": 1,
@@ -54938,7 +54948,7 @@
   "this_as_id": false
  },
  "0x639a50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -55002,7 +55012,7 @@
   "this_as_id": false
  },
  "0x63a4a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -55047,7 +55057,7 @@
   "this_as_id": false
  },
  "0x63ad30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -55070,7 +55080,7 @@
   "this_as_id": false
  },
  "0x63b080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -55501,15 +55511,15 @@
   "this_as_id": false
  },
  "0x63e880": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+11 jl 0x63e8b5",
   "name": "SidebarClass::addToList",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/signedness",
   "orig_name": "SidebarClass::addToList",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x63e8d0": {
@@ -55616,7 +55626,7 @@
   "this_as_id": false
  },
  "0x63f2e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process",
@@ -56740,7 +56750,7 @@
   "this_as_id": false
  },
  "0x649ca0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "BuildNetworkEventPacket",
@@ -57854,7 +57864,7 @@
   "this_as_id": false
  },
  "0x65ad50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -57890,27 +57900,27 @@
   "this_as_id": false
  },
  "0x65adf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+12 jle 0x65ae1a",
   "name": "Array::ContainsValue",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "Array::ContainsValue",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x65ae30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 jle 0x65ae4f",
   "name": "Team::AllMembersValid",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "Team::AllMembersValid",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x65aeb0": {
@@ -58187,7 +58197,7 @@
   "this_as_id": false
  },
  "0x65c250": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -58424,7 +58434,7 @@
   "this_as_id": false
  },
  "0x65cbf0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -58627,7 +58637,7 @@
   "this_as_id": false
  },
  "0x65d8e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "DeployScriptActionPlane",
@@ -59514,15 +59524,15 @@
   "status": "NG"
  },
  "0x663d60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push edi",
   "name": "Factory::GetLinkedIndex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Factory::GetLinkedIndex",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x664380": {
@@ -59810,15 +59820,15 @@
   "this_as_id": false
  },
  "0x679f70": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [esi], 0x7e4db8",
   "name": "VectorClass::Dtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "VectorClass::Dtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x67a390": {

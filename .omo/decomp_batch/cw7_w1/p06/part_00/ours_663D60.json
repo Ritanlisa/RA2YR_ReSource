@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetLinkedIndex@Factory@@QAEDH@Z",
+ "sym_key": "Factory::GetLinkedIndex",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c5783feff750c8b4424105f5e0cff5bc204008b791033c085ff7e328b51048bca8b1a0fbe1b3bf37412403bc77d1f8b590483c1040fbe1b3bf375ee8b048233c98a482824008bd10bc284c075020cff5f5e5bc20400",
+ "relocs": []
+}

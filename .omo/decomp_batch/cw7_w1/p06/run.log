@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x636570 ScriptAction::Check -> ScriptAction
+[conv] 0x636ce0 ScriptAction::ClearBuildingState -> ScriptAction
+[conv] 0x636e60 ArrayClass::GetAt_Wrap -> ArrayClass
+[conv] 0x636f00 ObjectClass::sub_636F00 -> ObjectClass
+[conv] 0x637060 TabClass::processTabInput -> TabClass
+[conv] 0x639a50 ScriptAction::ExecutePlacement -> ScriptAction
+[conv] 0x63a4a0 ObjectClass::sub_63A4A0 -> ObjectClass
+[conv] 0x63ad30 ObjectClass::sub_63AD30 -> ObjectClass
+[conv] 0x63b080 ObjectClass::sub_63B080 -> ObjectClass
+[conv] 0x63e880 SidebarClass::addToList -> SidebarClass
+[conv] 0x63f2e0 Audio_Process -> Audio
+[conv] 0x649ca0 BuildNetworkEventPacket -> _addr_64
+[conv] 0x65ad50 Array::Contains -> Array
+[conv] 0x65adf0 Array::ContainsValue -> Array
+[conv] 0x65ae30 Team::AllMembersValid -> Team
+[conv] 0x65c250 RAMFileClass::WinMain_Helper_65C250 -> RAMFileClass
+[conv] 0x65cbf0 RawFileClass::Open -> RawFileClass
+[conv] 0x65d8e0 DeployScriptActionPlane -> _addr_65
+[conv] 0x663d60 Factory::GetLinkedIndex -> Factory
+[conv] 0x679f70 VectorClass::Dtor -> VectorClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScriptAction             rc=2
+[era] ArrayClass               rc=0
+[era] ObjectClass              rc=2
+[era] TabClass                 rc=2
+[era] SidebarClass             rc=0
+[era] Audio                    rc=2
+[era] _addr_64                 rc=2
+[era] Array                    rc=2
+[era] Team                     rc=0
+[era] RAMFileClass             rc=2
+[era] RawFileClass             rc=2
+[era] _addr_65                 rc=2
+[era] Factory                  rc=0
+[era] VectorClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x636570   MATCH            ScriptAction::Check
+[diff] 0x636e60   MISMATCH         ArrayClass::GetAt_Wrap
+[diff] 0x63e880   MISMATCH         SidebarClass::addToList
+[diff] 0x65adf0   MISMATCH         Array::ContainsValue
+[diff] 0x65ae30   MISMATCH         Team::AllMembersValid
+[diff] 0x663d60   MISMATCH         Factory::GetLinkedIndex
+[diff] 0x679f70   MISMATCH         VectorClass::Dtor
+[ledger] 0x636570 ScriptAction::Check -> OK (attempt 2)
+[ledger] 0x636ce0 ScriptAction::ClearBuildingState -> COMPILE_FAIL (attempt 10)
+[ledger] 0x636e60 ArrayClass::GetAt_Wrap -> NG (attempt 2)
+[ledger] 0x636f00 ObjectClass::sub_636F00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x637060 TabClass::processTabInput -> COMPILE_FAIL (attempt 6)
+[ledger] 0x639a50 ScriptAction::ExecutePlacement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x63a4a0 ObjectClass::sub_63A4A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63ad30 ObjectClass::sub_63AD30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63b080 ObjectClass::sub_63B080 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63e880 SidebarClass::addToList -> NG (attempt 4)
+[ledger] 0x63f2e0 Audio_Process -> COMPILE_FAIL (attempt 4)
+[ledger] 0x649ca0 BuildNetworkEventPacket -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65ad50 Array::Contains -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65adf0 Array::ContainsValue -> NG (attempt 2)
+[ledger] 0x65ae30 Team::AllMembersValid -> NG (attempt 2)
+[ledger] 0x65c250 RAMFileClass::WinMain_Helper_65C250 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65cbf0 RawFileClass::Open -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65d8e0 DeployScriptActionPlane -> COMPILE_FAIL (attempt 5)
+[ledger] 0x663d60 Factory::GetLinkedIndex -> NG (attempt 2)
+[ledger] 0x679f70 VectorClass::Dtor -> NG (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "signedness": 1,
+  "branch_order": 2,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 14.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p06\batch_report.json
