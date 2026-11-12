@@ -1,0 +1,21 @@
+{
+ "symbol": "?SD_vt54@BuildingLightClass@@QAEDHH@Z",
+ "sym_key": "BuildingLightClass::SD_vt54",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000084c075045ec208006a0056e800000000b0015ec20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Deploy@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Deploy"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?ObjectClass__SetDeployState@@YGDPAXD@Z",
+   "sym_key": "ObjectClass__SetDeployState"
+  }
+ ]
+}

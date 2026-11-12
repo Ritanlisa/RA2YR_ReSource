@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4E80A0@@YAHXZ",
+ "sym_key": "Unnamed::sub_4E80A0",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "a1000000006804aa000068138800006a2068a0000000682e02000068c701000050e8000000006800000000e80000000083c420c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?sub_5408F0@@YAPADPAXHHHHHH@Z",
+   "sym_key": "sub_5408F0"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?unknown_libname_19@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_19"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

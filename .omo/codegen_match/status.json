@@ -493,6 +493,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x403db0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_403DB0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_403DB0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x403df0": {
   "attempts": 1,
   "clean": false,
@@ -977,6 +988,17 @@
   "orig_name": "sub_4069D0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4069f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_4069F0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4069F0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x406a30": {
@@ -2010,6 +2032,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x40ae60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_40AE60",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_40AE60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x40aea0": {
   "attempts": 1,
   "clean": false,
@@ -2245,6 +2278,17 @@
   "orig_name": "sub_40B400",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x40b420": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_40B420",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_40B420",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x40b460": {
@@ -2791,6 +2835,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x40c660": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_40C660",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_40C660",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x40c6a0": {
   "attempts": 2,
   "first_diff": "+0 fild dword ptr [0x87f768]",
@@ -3157,6 +3212,17 @@
   "orig_name": "sub_40D050",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x40d070": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_40D070",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_40D070",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x40d0b0": {
@@ -3891,6 +3957,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x40de90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_40DE90",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_40DE90",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x40ded0": {
   "attempts": 1,
   "clean": false,
@@ -4123,6 +4200,17 @@
   "orig_name": "sub_40E630",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x40e650": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_40E650",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_40E650",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x40e690": {
@@ -4414,6 +4502,17 @@
   "orig_name": "sub_40ECE0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x40ed00": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_40ED00",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_40ED00",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x40ed40": {
@@ -4717,6 +4816,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x40f370": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_40F370",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_40F370",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x40f3b0": {
   "attempts": 1,
   "clean": false,
@@ -4943,6 +5053,17 @@
   "orig_name": "sub_40F9F0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x40fa10": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_40FA10",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_40FA10",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x40fa50": {
@@ -5649,6 +5770,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4106e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_4106E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4106E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x410720": {
   "attempts": 1,
   "clean": false,
@@ -6122,6 +6254,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x412730": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_412730",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_412730",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x412770": {
   "attempts": 1,
   "clean": false,
@@ -6338,6 +6481,17 @@
   "orig_name": "sub_413B70",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x413b90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_413B90",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_413B90",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x413bd0": {
@@ -7404,6 +7558,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x41c770": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_41C770",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_41C770",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x41c7b0": {
   "attempts": 1,
   "clean": false,
@@ -7697,6 +7862,17 @@
   "name": "sub_41D120",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "sub_41D120",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x41d140": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x889f68]",
+  "name": "sub_41D140",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_41D140",
   "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
@@ -11901,6 +12077,18 @@
   "name": "BuildingLightClass::SD_vt53",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "BuildingLightClass::SD_vt53",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x437050": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
+  "name": "BuildingLightClass::SD_vt54",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "BuildingLightClass::SD_vt54",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -35674,6 +35862,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e80a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push 0xaa04",
+  "name": "sub_4E80A0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_4E80A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e80e0": {
   "attempts": 1,
   "clean": false,
@@ -40018,6 +40217,18 @@
   "orig_name": "LoadFromINIGraphicMenu",
   "rule_violations": 13,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4f2640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "resolve:proto_this",
+  "first_diff": "+14 je 0x4f2661",
+  "name": "ObjectClass::sub_4F2640",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "sub_4F2640",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4f2810": {
@@ -103171,6 +103382,18 @@
   "name": "sub_71D560",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_71D560",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x71ddd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 call 0x7c8e17",
+  "name": "TerrainTypeClass::GetHeight",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TerrainTypeClass::GetHeight",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetHeight@TerrainTypeClass@@QAE_NPAFH@Z",
+ "sym_key": "TerrainTypeClass::GetHeight",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "568bf168e0000000e80000000083c40485c0741a8b4c240851568bc8e80000000085c07409b8010000005ec2080033c05ec20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Construct@TerrainClass@@QAEPAPAXPAX0@Z",
+   "sym_key": "TerrainClass::Construct"
+  }
+ ]
+}

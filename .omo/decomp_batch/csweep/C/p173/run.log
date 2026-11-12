@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p173\part_00
+=== convert (20 addrs) ===
+[conv] 0x437050 BuildingLightClass::SD_vt54 -> BuildingLightClass
+[conv] 0x4e80a0 sub_4E80A0 -> _addr_4E
+[conv] 0x4f2640 ObjectClass::sub_4F2640 -> ObjectClass
+[conv] 0x71ddd0 TerrainTypeClass::GetHeight -> TerrainTypeClass
+[conv] 0x403db0 sub_403DB0 -> _addr_40
+[conv] 0x4069f0 sub_4069F0 -> _addr_40
+[conv] 0x40ae60 sub_40AE60 -> _addr_40
+[conv] 0x40b420 sub_40B420 -> _addr_40
+[conv] 0x40c660 sub_40C660 -> _addr_40
+[conv] 0x40d070 sub_40D070 -> _addr_40
+[conv] 0x40de90 sub_40DE90 -> _addr_40
+[conv] 0x40e650 sub_40E650 -> _addr_40
+[conv] 0x40ed00 sub_40ED00 -> _addr_40
+[conv] 0x40f370 sub_40F370 -> _addr_40
+[conv] 0x40fa10 sub_40FA10 -> _addr_40
+[conv] 0x4106e0 sub_4106E0 -> _addr_41
+[conv] 0x412730 sub_412730 -> _addr_41
+[conv] 0x413b90 sub_413B90 -> _addr_41
+[conv] 0x41c770 sub_41C770 -> _addr_41
+[conv] 0x41d140 sub_41D140 -> _addr_41
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingLightClass       rc=0
+[era] _addr_4E                 rc=0
+[era] ObjectClass              rc=0
+[era] TerrainTypeClass         rc=0
+[era] _addr_40                 rc=0
+[era] _addr_41                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x437050   MISMATCH         BuildingLightClass::SD_vt54
+[diff] 0x4e80a0   MISMATCH         sub_4E80A0
+[diff] 0x4f2640   MISMATCH         ObjectClass::sub_4F2640
+[diff] 0x71ddd0   MISMATCH         TerrainTypeClass::GetHeight
+[diff] 0x403db0   MISMATCH         sub_403DB0
+[diff] 0x4069f0   MISMATCH         sub_4069F0
+[diff] 0x40ae60   MISMATCH         sub_40AE60
+[diff] 0x40b420   MISMATCH         sub_40B420
+[diff] 0x40c660   MISMATCH         sub_40C660
+[diff] 0x40d070   MISMATCH         sub_40D070
+[diff] 0x40de90   MISMATCH         sub_40DE90
+[diff] 0x40e650   MISMATCH         sub_40E650
+[diff] 0x40ed00   MISMATCH         sub_40ED00
+[diff] 0x40f370   MISMATCH         sub_40F370
+[diff] 0x40fa10   MISMATCH         sub_40FA10
+[diff] 0x4106e0   MISMATCH         sub_4106E0
+[diff] 0x412730   MISMATCH         sub_412730
+[diff] 0x413b90   MISMATCH         sub_413B90
+[diff] 0x41c770   MISMATCH         sub_41C770
+[diff] 0x41d140   MISMATCH         sub_41D140
+[ledger] 0x437050 BuildingLightClass::SD_vt54 -> NG (attempt 1)
+[ledger] 0x4e80a0 sub_4E80A0 -> NG (attempt 1)
+[ledger] 0x4f2640 ObjectClass::sub_4F2640 -> NG (attempt 1)
+[ledger] 0x71ddd0 TerrainTypeClass::GetHeight -> NG (attempt 1)
+[ledger] 0x403db0 sub_403DB0 -> NG (attempt 1)
+[ledger] 0x4069f0 sub_4069F0 -> NG (attempt 1)
+[ledger] 0x40ae60 sub_40AE60 -> NG (attempt 1)
+[ledger] 0x40b420 sub_40B420 -> NG (attempt 1)
+[ledger] 0x40c660 sub_40C660 -> NG (attempt 1)
+[ledger] 0x40d070 sub_40D070 -> NG (attempt 1)
+[ledger] 0x40de90 sub_40DE90 -> NG (attempt 1)
+[ledger] 0x40e650 sub_40E650 -> NG (attempt 1)
+[ledger] 0x40ed00 sub_40ED00 -> NG (attempt 1)
+[ledger] 0x40f370 sub_40F370 -> NG (attempt 1)
+[ledger] 0x40fa10 sub_40FA10 -> NG (attempt 1)
+[ledger] 0x4106e0 sub_4106E0 -> NG (attempt 1)
+[ledger] 0x412730 sub_412730 -> NG (attempt 1)
+[ledger] 0x413b90 sub_413B90 -> NG (attempt 1)
+[ledger] 0x41c770 sub_41C770 -> NG (attempt 1)
+[ledger] 0x41d140 sub_41D140 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "extern_reloc": 1,
+  "branch_polarity": 1,
+  "const_fold": 17
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p173\batch_report.json

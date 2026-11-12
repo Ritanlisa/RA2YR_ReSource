@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4F2640@ObjectClass@@QAEHPAXH@Z",
+ "sym_key": "ObjectClass::sub_4F2640",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7c240c8b46545785c07415508d460450e80000000083c40c897e545f5ec208008d4e04e800000000897e545f5ec20800",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?UI_Load_5D1C90@@YAHPAXH0@Z",
+   "sym_key": "UI_Load_5D1C90"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Add@PriorityQueue@@QAEHH@Z",
+   "sym_key": "PriorityQueue::Add"
+  }
+ ]
+}
