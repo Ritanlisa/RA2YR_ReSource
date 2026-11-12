@@ -110,3 +110,4 @@
 {"layer": "C", "part": 109, "n": 20, "seconds": 35.6, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "C", "part": 110, "n": 20, "seconds": 36.1, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "C", "part": 111, "n": 20, "seconds": 35.7, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"layer": "C", "part": 112, "n": 20, "seconds": 36.1, "ok": true, "verdicts": {"MISMATCH": 20}}
