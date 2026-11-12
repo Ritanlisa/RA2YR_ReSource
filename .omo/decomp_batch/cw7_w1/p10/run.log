@@ -1,0 +1,35 @@
+======================================================================
+PART 1/1  (5 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p10\part_00
+=== convert (5 addrs) ===
+[conv] 0x7cde75 __setlocale_get_all -> _addr_7C
+[conv] 0x7d1512 GetCurrentThreadId::_0 -> GetCurrentThreadId
+[conv] 0x7d5ac0 __setenvp -> _addr_7D
+[conv] 0x7dcee0 GetCurrentThread::_0 -> GetCurrentThread
+[conv] 0x7dcf22 GetCurrentProcessId::_0 -> GetCurrentProcessId
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] GetCurrentThreadId       rc=2
+[era] _addr_7D                 rc=2
+[era] GetCurrentThread         rc=2
+[era] GetCurrentProcessId      rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7cde75 __setlocale_get_all -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d1512 GetCurrentThreadId::_0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7d5ac0 __setenvp -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7dcee0 GetCurrentThread::_0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7dcf22 GetCurrentProcessId::_0 -> COMPILE_FAIL (attempt 9)
+======================================================================
+{
+ "total": 5,
+ "verdicts": {
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p10\batch_report.json
