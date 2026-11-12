@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x420f40",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x78db70",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4791f0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x655c50",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x685dc0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x755db0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x762af0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x5bb6e0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x50a5c0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x5f1fa0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x73e5e0",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x5054b0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4b4b00",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x516370",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x554400",
+  "family": "B2",
+  "shape": "B2 member used with '->' but declared scalar (vfptr)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x6f1f30",
+  "family": "B2",
+  "shape": "B2 member used with '->' but declared scalar (vfptr)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x749b20",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x513cb0",
+  "family": "B2",
+  "shape": "B2 member used with '->' but declared scalar (vfptr)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x75ae30",
+  "family": "B2",
+  "shape": "B2 member used with '->' but declared scalar (vfptr)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x624be0",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ }
+]

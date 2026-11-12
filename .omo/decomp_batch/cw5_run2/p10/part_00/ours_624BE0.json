@@ -1,0 +1,21 @@
+{
+ "symbol": "?GrowBuffer@Dialog@@QAEXXZ",
+ "sym_key": "Dialog::GrowBuffer",
+ "size": 158,
+ "link_base": 0,
+ "bytes_hex": "51538bd9837b20010f848d000000558b2b568b7308578b7b0c8d0cf5000000008d04364751896c2414894308897b0ce8000000008b4b088bf8c1e1028bd133c0c1e902893b83c404f3ab8bca83e10385f6f3aa7e3a8bfd8bee8b3785f6742656ff53308b4b0cba01000000d3e28b0b4a23c28d04818b0889308b4608894e0885c08bf075da83c7044d75ce8b6c241055e80000000083c4045f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

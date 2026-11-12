@@ -1,0 +1,21 @@
+{
+ "symbol": "?WriteObject@HoverLocomotionClass@@QAGHH@Z",
+ "sym_key": "HoverLocomotionClass::WriteObject",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "8b44240883ec1853568b742424575056e8000000008bd88b4608508b08ff91840000008b901c0700008d4c240cd1e252e8000000008d7e2cb9060000008d74240c8bc3f3a55f5e5b83c418c20800",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?StreamClass__ResetPosition@@YGHPAXH@Z",
+   "sym_key": "StreamClass__ResetPosition"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?InitMax@FrameSnapshot@@QAEPAGH@Z",
+   "sym_key": "FrameSnapshot::InitMax"
+  }
+ ]
+}

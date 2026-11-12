@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F1F30",
+ "name": "TeamTypeClass::FlashAllInstances",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F1F30",
+ "bytes_hex": "a1f8408b005633f65785c08bf97e23538b5c2410a1ec408b008b0cb0397924750653e899d6ffffa1f8408b00463bf07ce35b5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_554400@LoadProgressMgr@@QAEDHH@Z",
+ "sym_key": "LoadProgressMgr::sub_554400",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "817c2404ae110000740532c0c208008b416085c074118b0d000000006a016a00508b1151ff5204b001c20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  }
+ ]
+}

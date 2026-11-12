@@ -6281,7 +6281,7 @@
   "this_as_id": false
  },
  "0x420f40": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "UpdateSpotlightsFoo",
@@ -13155,7 +13155,7 @@
   "this_as_id": false
  },
  "0x4791f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19477,7 +19477,7 @@
   "this_as_id": false
  },
  "0x4b4b00": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29431,7 +29431,7 @@
   "this_as_id": false
  },
  "0x5054b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29600,7 +29600,7 @@
   "status": "NG"
  },
  "0x50a5c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -31518,7 +31518,7 @@
   "this_as_id": false
  },
  "0x513cb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+16 call 0x55a710",
@@ -31590,7 +31590,7 @@
   "this_as_id": false
  },
  "0x516370": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov edx, dword ptr [esp + 4]",
@@ -37418,7 +37418,7 @@
   "this_as_id": false
  },
  "0x554400": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:vsa_slot",
   "first_diff": "+0 mov eax, ecx",
@@ -43690,7 +43690,7 @@
   "this_as_id": false
  },
  "0x5bb6e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49776,7 +49776,7 @@
   "this_as_id": false
  },
  "0x5f1fa0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52106,15 +52106,15 @@
   "this_as_id": false
  },
  "0x624be0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 cmp byte ptr [ebx + 0x14], 1",
   "name": "Dialog::GrowBuffer",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "Dialog::GrowBuffer",
-  "rule_violations": 10,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 4,
+  "status": "NG",
   "this_as_id": false
  },
  "0x624fc0": {
@@ -56491,7 +56491,7 @@
   "this_as_id": false
  },
  "0x655c50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+5 sub esp, 0x30",
@@ -60085,7 +60085,7 @@
   "this_as_id": false
  },
  "0x685dc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70939,7 +70939,7 @@
   "this_as_id": false
  },
  "0x6f1f30": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov eax, dword ptr [0x8b40f8]",
@@ -77845,7 +77845,7 @@
   "this_as_id": false
  },
  "0x73e5e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -78484,14 +78484,14 @@
   "this_as_id": false
  },
  "0x749b20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "VoxelAnimClass::DrawVoxelFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VoxelAnimClass::DrawVoxelFrame",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -80186,7 +80186,7 @@
   "this_as_id": false
  },
  "0x755db0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80806,7 +80806,7 @@
   "this_as_id": false
  },
  "0x75ae30": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+60 jne 0x75aeaa",
@@ -81323,7 +81323,7 @@
   "this_as_id": false
  },
  "0x762af0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85679,7 +85679,7 @@
   "this_as_id": false
  },
  "0x78db70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": "+1 mov ebx, dword ptr [esp + 0xc]",
