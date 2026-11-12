@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p324\part_00
+=== convert (20 addrs) ===
+[conv] 0x660e60 VectorClass_ptr_RadarEventClass::SetCapacity -> VectorClass_ptr_RadarEventClass
+[conv] 0x664990 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::Release -> _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67acd0 _DynamicVectorClass_PBVVoxelAnimTypeClass::Remove -> _DynamicVectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67b050 _DynamicVectorClass_PBVSmudgeTypeClass::Release -> _DynamicVectorClass_PBVSmudgeTypeClass
+[conv] 0x69c890 _TypeList_W4DiskID::Release -> _TypeList_W4DiskID
+[conv] 0x69cec0 _DynamicVectorClass_PAVMultiMission::SetCapacity -> _DynamicVectorClass_PAVMultiMission
+[conv] 0x69d120 _DynamicVectorClass_PAUGlobalPacketType::SetCapacity_0 -> _DynamicVectorClass_PAUGlobalPacketType
+[conv] 0x69d380 VectorClass_ptr_GlobalPacketType::SetCapacity_1 -> VectorClass_ptr_GlobalPacketType
+[conv] 0x6b15f0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Release -> _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass
+[conv] 0x6b1850 _DynamicVectorClass_PAVSlaveManagerClass::SetCapacity -> _DynamicVectorClass_PAVSlaveManagerClass
+[conv] 0x6b8400 _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::Release -> _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass
+[conv] 0x6b8660 _DynamicVectorClass_PAVSpawnManagerClass::SetCapacity -> _DynamicVectorClass_PAVSpawnManagerClass
+[conv] 0x6c6350 _DynamicVectorClass_K::SetCapacity -> _DynamicVectorClass_K
+[conv] 0x6ca860 _DynamicVectorClass_PAVSubTitle::SetCapacity -> _DynamicVectorClass_PAVSubTitle
+[conv] 0x6e49d0 Tactical::SetCapacity -> Tactical
+[conv] 0x6e66c0 _DynamicVectorClass_PAVTagTypeClass::SetCapacity -> _DynamicVectorClass_PAVTagTypeClass
+[conv] 0x71b420 _DynamicVectorClass_PAVTemporalClass::SetCapacity -> _DynamicVectorClass_PAVTemporalClass
+[conv] 0x71fd80 _DynamicVectorClass_PAVTEventClass::SetCapacity -> _DynamicVectorClass_PAVTEventClass
+[conv] 0x721300 _DynamicVectorClass_PAUThemeControl::SetCapacity -> _DynamicVectorClass_PAUThemeControl
+[conv] 0x723910 _DynamicVectorClass_PAVTiberiumClass::SetCapacity -> _DynamicVectorClass_PAVTiberiumClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass_ptr_RadarEventClass rc=0
+[era] _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass rc=2
+[era] _DynamicVectorClass_PBVVoxelAnimTypeClass rc=2
+[era] _DynamicVectorClass_PBVSmudgeTypeClass rc=2
+[era] _TypeList_W4DiskID       rc=2
+[era] _DynamicVectorClass_PAVMultiMission rc=2
+[era] _DynamicVectorClass_PAUGlobalPacketType rc=2
+[era] VectorClass_ptr_GlobalPacketType rc=0
+[era] _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass rc=2
+[era] _DynamicVectorClass_PAVSlaveManagerClass rc=2
+[era] _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass rc=2
+[era] _DynamicVectorClass_PAVSpawnManagerClass rc=2
+[era] _DynamicVectorClass_K    rc=2
+[era] _DynamicVectorClass_PAVSubTitle rc=2
+[era] Tactical                 rc=2
+[era] _DynamicVectorClass_PAVTagTypeClass rc=2
+[era] _DynamicVectorClass_PAVTemporalClass rc=2
+[era] _DynamicVectorClass_PAVTEventClass rc=2
+[era] _DynamicVectorClass_PAUThemeControl rc=2
+[era] _DynamicVectorClass_PAVTiberiumClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x660e60   MISMATCH         VectorClass_ptr_RadarEventClass::SetCapacity
+[diff] 0x69d380   MISMATCH         VectorClass_ptr_GlobalPacketType::SetCapacity_1
+[ledger] 0x660e60 VectorClass_ptr_RadarEventClass::SetCapacity -> NG (attempt 1)
+[ledger] 0x664990 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67acd0 _DynamicVectorClass_PBVVoxelAnimTypeClass::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67b050 _DynamicVectorClass_PBVSmudgeTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69c890 _TypeList_W4DiskID::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69cec0 _DynamicVectorClass_PAVMultiMission::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d120 _DynamicVectorClass_PAUGlobalPacketType::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d380 VectorClass_ptr_GlobalPacketType::SetCapacity_1 -> NG (attempt 1)
+[ledger] 0x6b15f0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1850 _DynamicVectorClass_PAVSlaveManagerClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8400 _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8660 _DynamicVectorClass_PAVSpawnManagerClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c6350 _DynamicVectorClass_K::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ca860 _DynamicVectorClass_PAVSubTitle::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e49d0 Tactical::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e66c0 _DynamicVectorClass_PAVTagTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71b420 _DynamicVectorClass_PAVTemporalClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71fd80 _DynamicVectorClass_PAVTEventClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721300 _DynamicVectorClass_PAUThemeControl::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x723910 _DynamicVectorClass_PAVTiberiumClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 18
+ },
+ "pathologies": {
+  "branch_polarity": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p324\batch_report.json
