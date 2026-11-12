@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C5E40",
+ "name": "ScenarioClass::executeTriggerActions",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C5E40",
+ "bytes_hex": "568bf1c70624e47e00e8d2fe0000f644240801740956e8e22c200083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

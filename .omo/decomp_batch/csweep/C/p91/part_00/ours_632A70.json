@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_632A70@ObjectClass@@QAEEHHH@Z",
+ "sym_key": "ObjectClass::sub_632A70",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b542404568bf18b4c240c6a4050518bcee8000000008b0e8bc133c125fe00000033c10c0189065ec20c00",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?sub_5C8E40@@YIDPAXHHHH@Z",
+   "sym_key": "sub_5C8E40"
+  }
+ ]
+}

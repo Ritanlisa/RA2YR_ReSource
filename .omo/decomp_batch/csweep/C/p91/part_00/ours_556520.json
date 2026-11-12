@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_556520@LightConvertClass@@QAEPAIH@Z",
+ "sym_key": "LightConvertClass::sub_556520",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "568bf156c70600000000e8000000008a44240c83c404a801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?sub_490400@@YAHH@Z",
+   "sym_key": "sub_490400"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

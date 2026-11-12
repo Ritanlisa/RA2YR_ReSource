@@ -1,0 +1,15 @@
+{
+ "symbol": "?AllocSlot@BuildingQueue@@QAEHH@Z",
+ "sym_key": "BuildingQueue::AllocSlot",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000083f8ff740c8b4e085ec1e00403c1c2040033c05ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?FindFreeSlot@BuildingQueue@@QAEHH@Z",
+   "sym_key": "BuildingQueue::FindFreeSlot"
+  }
+ ]
+}

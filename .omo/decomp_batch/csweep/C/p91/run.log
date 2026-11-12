@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p91\part_00
+=== convert (20 addrs) ===
+[conv] 0x42eb20 BuildingQueue::AllocSlot -> BuildingQueue
+[conv] 0x558810 ObjectClass::ShowSaveLoadDialog -> ObjectClass
+[conv] 0x5b4400 ObjectClass::sub_5B4400 -> ObjectClass
+[conv] 0x5bf360 ObjectClass::sub_5BF360 -> ObjectClass
+[conv] 0x5cb400 UnholyAlliance::Write -> UnholyAlliance
+[conv] 0x632a70 ObjectClass::sub_632A70 -> ObjectClass
+[conv] 0x720e50 AudioSettings::ComputeTransform -> AudioSettings
+[conv] 0x753b40 sub_753B40 -> _addr_75
+[conv] 0x7c3960 AudioStream::GetPosition -> AudioStream
+[conv] 0x47a9d0 BufferIOFile::Constructor -> BufferIOFile
+[conv] 0x4e8060 sub_4E8060 -> _addr_4E
+[conv] 0x53f850 IPXConnClass::QueryInterface -> IPXConnClass
+[conv] 0x556520 LightConvertClass::sub_556520 -> LightConvertClass
+[conv] 0x5c0fe0 MultiplayerBattle::initAI -> MultiplayerBattle
+[conv] 0x5c5e40 FreeForAll::executeTriggerActions -> FreeForAll
+[conv] 0x5c61a0 MultiplayerManBattle::QueryInterface -> MultiplayerManBattle
+[conv] 0x5c9440 Megawealth::QueryInterface -> Megawealth
+[conv] 0x5caf10 MultiplayerSiegeDefenderTeam::QueryInterface -> MultiplayerSiegeDefenderTeam
+[conv] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> MultiplayerSiegeAttackerTeam
+[conv] 0x5cb540 UnholyAlliance::QueryInterface -> UnholyAlliance
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingQueue            rc=0
+[era] ObjectClass              rc=2
+[era] UnholyAlliance           rc=0
+[era] AudioSettings            rc=0
+[era] _addr_75                 rc=2
+[era] AudioStream              rc=0
+[era] BufferIOFile             rc=0
+[era] _addr_4E                 rc=0
+[era] IPXConnClass             rc=0
+[era] LightConvertClass        rc=0
+[era] MultiplayerBattle        rc=0
+[era] FreeForAll               rc=0
+[era] MultiplayerManBattle     rc=0
+[era] Megawealth               rc=0
+[era] MultiplayerSiegeDefenderTeam rc=0
+[era] MultiplayerSiegeAttackerTeam rc=2
+=== diffasm byte-compare ===
+[diff] 0x42eb20   MATCH            BuildingQueue::AllocSlot
+[diff] 0x5b4400   MISMATCH         ObjectClass::sub_5B4400
+[diff] 0x5bf360   MISMATCH         ObjectClass::sub_5BF360
+[diff] 0x632a70   MISMATCH         ObjectClass::sub_632A70
+[diff] 0x5cb400   MISMATCH         UnholyAlliance::Write
+[diff] 0x5cb540   MISMATCH         UnholyAlliance::QueryInterface
+[diff] 0x720e50   MISMATCH         AudioSettings::ComputeTransform
+[diff] 0x7c3960   MISMATCH         AudioStream::GetPosition
+[diff] 0x47a9d0   MISMATCH         BufferIOFile::Constructor
+[diff] 0x4e8060   MISMATCH         sub_4E8060
+[diff] 0x53f850   MISMATCH         IPXConnClass::QueryInterface
+[diff] 0x556520   MISMATCH         LightConvertClass::sub_556520
+[diff] 0x5c0fe0   MISMATCH         MultiplayerBattle::initAI
+[diff] 0x5c5e40   MISMATCH         FreeForAll::executeTriggerActions
+[diff] 0x5c61a0   MISMATCH         MultiplayerManBattle::QueryInterface
+[diff] 0x5c9440   MISMATCH         Megawealth::QueryInterface
+[diff] 0x5caf10   MISMATCH         MultiplayerSiegeDefenderTeam::QueryInterface
+[ledger] 0x42eb20 BuildingQueue::AllocSlot -> OK (attempt 1)
+[ledger] 0x558810 ObjectClass::ShowSaveLoadDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b4400 ObjectClass::sub_5B4400 -> NG (attempt 1)
+[ledger] 0x5bf360 ObjectClass::sub_5BF360 -> NG (attempt 1)
+[ledger] 0x5cb400 UnholyAlliance::Write -> NG (attempt 1)
+[ledger] 0x632a70 ObjectClass::sub_632A70 -> NG (attempt 1)
+[ledger] 0x720e50 AudioSettings::ComputeTransform -> NG (attempt 1)
+[ledger] 0x753b40 sub_753B40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c3960 AudioStream::GetPosition -> NG (attempt 1)
+[ledger] 0x47a9d0 BufferIOFile::Constructor -> NG (attempt 1)
+[ledger] 0x4e8060 sub_4E8060 -> NG (attempt 1)
+[ledger] 0x53f850 IPXConnClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x556520 LightConvertClass::sub_556520 -> NG (attempt 1)
+[ledger] 0x5c0fe0 MultiplayerBattle::initAI -> NG (attempt 1)
+[ledger] 0x5c5e40 FreeForAll::executeTriggerActions -> NG (attempt 1)
+[ledger] 0x5c61a0 MultiplayerManBattle::QueryInterface -> NG (attempt 1)
+[ledger] 0x5c9440 Megawealth::QueryInterface -> NG (attempt 1)
+[ledger] 0x5caf10 MultiplayerSiegeDefenderTeam::QueryInterface -> NG (attempt 1)
+[ledger] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cb540 UnholyAlliance::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 16
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 4,
+  "const_fold": 8,
+  "branch_order": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 5.9,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p91\batch_report.json

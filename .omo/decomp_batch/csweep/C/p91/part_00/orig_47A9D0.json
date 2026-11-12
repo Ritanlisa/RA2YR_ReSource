@@ -1,0 +1,11 @@
+{
+ "addr": "0x47A9D0",
+ "name": "BufferIOFile::Constructor",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47A9D0",
+ "bytes_hex": "568bf1e84871fbff8b4424088bce50c6465400c70668167e00e8220400008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

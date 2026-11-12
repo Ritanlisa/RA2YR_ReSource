@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPosition@AudioStream@@QAEIXZ",
+ "sym_key": "AudioStream::GetPosition",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "568bf156ff56508d044033d28b8e4801000083c4048d0480c1e002f776785e03c1c3",
+ "relocs": []
+}

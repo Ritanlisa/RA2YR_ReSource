@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_5BF360@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_5BF360",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "5185c974238b41046a0033d2508a511468464000006a00526a006a00b944010000e80000000059c38b44240059c3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_NetworkRematchObject@@3IA",
+   "sym_key": "g_NetworkRematchObject"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?AddMessage@MessageListClass@@QAEHPAXH0HHHD@Z",
+   "sym_key": "MessageListClass::AddMessage"
+  }
+ ]
+}

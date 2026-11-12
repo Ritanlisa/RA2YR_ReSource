@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5B4400@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::sub_5B4400",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568bf18a463684c07417f746100000ff00740e25ff00000050e80000000083c4048b4610c646360025ffff00ff8946105ec3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

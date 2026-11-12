@@ -1,0 +1,11 @@
+{
+ "addr": "0x42EB20",
+ "name": "BuildingQueue::AllocSlot",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42EB20",
+ "bytes_hex": "8b442404568bf150e82300000083f8ff740c8b4e085ec1e00403c1c2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

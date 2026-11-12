@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CB540",
+ "name": "UnholyAlliance::QueryInterface",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CB540",
+ "bytes_hex": "568bf1c70614e87e00e8d2a70000f644240801740956e8e2d51f0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

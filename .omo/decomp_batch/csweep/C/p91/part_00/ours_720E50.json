@@ -1,0 +1,15 @@
+{
+ "symbol": "?ComputeTransform@AudioSettings@@QAEHI@Z",
+ "sym_key": "AudioSettings::ComputeTransform",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b51243bc2720533c0c204008b491883ec088b1481d98284020000dd1c24e8000000008b4c240c83c40833c125ff00000033c1c20400",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

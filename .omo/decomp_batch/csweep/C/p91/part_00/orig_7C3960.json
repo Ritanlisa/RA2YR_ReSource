@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C3960",
+ "name": "AudioStream::GetPosition",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C3960",
+ "bytes_hex": "568bf156ff56508d044033d283c4048d0480c1e002f776788bc88b864801000003c15ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

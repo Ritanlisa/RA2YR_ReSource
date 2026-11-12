@@ -1,0 +1,11 @@
+{
+ "addr": "0x720E50",
+ "name": "AudioSettings::ComputeTransform",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x720E50",
+ "bytes_hex": "8b4424048b51243bc273148b49188b1481d98284020000e894500a00c2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
