@@ -1,0 +1,458 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "const_fold": 13,
+   "width_mismatch": 1,
+   "branch_polarity": 2,
+   "codegen_shape": 4
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x7202e0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+12 fstp qword ptr [0xb0f3f8]",
+    "ours": "+12 fstp qword ptr [0x200]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_7202E0",
+   "emitted": "sub_7202E0",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/3",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x7203d0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 15B ours 15B",
+   "first_diff": {
+    "orig": "+2 mov word ptr [0xb0f410], ax",
+    "ours": "+2 mov word ptr [0x218], ax"
+   },
+   "pathology": "const_fold",
+   "name": "sub_7203D0",
+   "emitted": "sub_7203D0",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/3",
+   "rule_violations": 0,
+   "orig_size": 15,
+   "ours_size": 15,
+   "clean": false
+  },
+  {
+   "addr": "0x7203e0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 18B ours 18B",
+   "first_diff": {
+    "orig": "+2 mov dword ptr [0xb0f430], eax",
+    "ours": "+2 mov dword ptr [0x238], eax"
+   },
+   "pathology": "const_fold",
+   "name": "sub_7203E0",
+   "emitted": "sub_7203E0",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/4",
+   "rule_violations": 0,
+   "orig_size": 18,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x720400",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0f460], 0",
+    "ours": "+5 mov dword ptr [0x268], 0"
+   },
+   "pathology": "const_fold",
+   "name": "sub_720400",
+   "emitted": "sub_720400",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/4",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x720420",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 23B",
+   "first_diff": {
+    "orig": "+2 mov dword ptr [0xb0f400], eax",
+    "ours": "+2 mov dword ptr [0x208], eax"
+   },
+   "pathology": "const_fold",
+   "name": "sub_720420",
+   "emitted": "sub_720420",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/5",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 23,
+   "clean": false
+  },
+  {
+   "addr": "0x720960",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 65B ours 52B",
+   "first_diff": {
+    "orig": "+22 mov byte ptr [eax + 0x10], cl",
+    "ours": "+22 mov dword ptr [eax + 0x10], ecx"
+   },
+   "pathology": "width_mismatch",
+   "name": "sub_720960",
+   "emitted": "ObjectClass::sub_720960",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "10/13",
+   "rule_violations": 1,
+   "orig_size": 65,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x721140",
+   "batch": "stale_cw5|CW5-6/7 member chain",
+   "verdict": "MISMATCH",
+   "note": "orig 147B ours 124B",
+   "first_diff": {
+    "orig": "+7 je 0x7211ce",
+    "ours": "+7 je 0x71"
+   },
+   "pathology": "branch_polarity",
+   "name": "RulesClass::IsTypeBuildable",
+   "emitted": "RulesClass::IsTypeBuildable",
+   "unit": "RulesClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/12",
+   "rule_violations": 5,
+   "orig_size": 147,
+   "ours_size": 124,
+   "clean": false
+  },
+  {
+   "addr": "0x7213b0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_ThemeControl::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAUThemeControl::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAUThemeControl",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x721460",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0xb0f498]",
+    "ours": "+0 fld qword ptr [0x2a0]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_721460",
+   "emitted": "sub_721460",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x721480",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+12 fstp qword ptr [0xb0f4d0]",
+    "ours": "+12 fstp qword ptr [0x2d8]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_721480",
+   "emitted": "sub_721480",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/5",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x7214a0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+12 fstp qword ptr [0xb0f4c8]",
+    "ours": "+12 fstp qword ptr [0x2d0]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_7214A0",
+   "emitted": "sub_7214A0",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/3",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x7214c0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+12 fstp qword ptr [0xb0f4a0]",
+    "ours": "+12 fstp qword ptr [0x2a8]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_7214C0",
+   "emitted": "sub_7214C0",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x7215d0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 15B ours 15B",
+   "first_diff": {
+    "orig": "+2 mov word ptr [0xb0f490], ax",
+    "ours": "+2 mov word ptr [0x298], ax"
+   },
+   "pathology": "const_fold",
+   "name": "sub_7215D0",
+   "emitted": "sub_7215D0",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/3",
+   "rule_violations": 0,
+   "orig_size": 15,
+   "ours_size": 15,
+   "clean": false
+  },
+  {
+   "addr": "0x7215e0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 18B ours 18B",
+   "first_diff": {
+    "orig": "+2 mov dword ptr [0xb0f4b0], eax",
+    "ours": "+2 mov dword ptr [0x2b8], eax"
+   },
+   "pathology": "const_fold",
+   "name": "sub_7215E0",
+   "emitted": "sub_7215E0",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/4",
+   "rule_violations": 0,
+   "orig_size": 18,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x721600",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0f4e0], 0",
+    "ours": "+5 mov dword ptr [0x2e8], 0"
+   },
+   "pathology": "const_fold",
+   "name": "sub_721600",
+   "emitted": "sub_721600",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/4",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x721620",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 23B",
+   "first_diff": {
+    "orig": "+2 mov dword ptr [0xb0f480], eax",
+    "ours": "+2 mov dword ptr [0x288], eax"
+   },
+   "pathology": "const_fold",
+   "name": "sub_721620",
+   "emitted": "sub_721620",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/5",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 23,
+   "clean": false
+  },
+  {
+   "addr": "0x721e40",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 52B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e9920]",
+    "ours": "+16 xor ecx, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "TiberiumClass::ddtor",
+   "emitted": "TiberiumClass::ddtor",
+   "unit": "TiberiumClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x723790",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x7237c6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_TiberiumClass::Add",
+   "emitted": "_VectorClass_PAVTiberiumClass::Add",
+   "unit": "_VectorClass_PAVTiberiumClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x7238b0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x7238be",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TiberiumClass::GetSize",
+   "emitted": "_VectorClass_PAVTiberiumClass::GetSize",
+   "unit": "_VectorClass_PAVTiberiumClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x7239c0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TiberiumClass::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVTiberiumClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVTiberiumClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  }
+ ]
+}

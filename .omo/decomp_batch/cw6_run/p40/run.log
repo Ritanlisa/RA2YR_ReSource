@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p40\part_00
+=== convert (20 addrs) ===
+[conv] 0x7202e0 sub_7202E0 -> _addr_72
+[conv] 0x7203d0 sub_7203D0 -> _addr_72
+[conv] 0x7203e0 sub_7203E0 -> _addr_72
+[conv] 0x720400 sub_720400 -> _addr_72
+[conv] 0x720420 sub_720420 -> _addr_72
+[conv] 0x720960 ObjectClass::sub_720960 -> ObjectClass
+[conv] 0x721140 RulesClass::IsTypeBuildable -> RulesClass
+[conv] 0x7213b0 _DynamicVectorClass_PAUThemeControl::FindItemIndex -> _DynamicVectorClass_PAUThemeControl
+[conv] 0x721460 sub_721460 -> _addr_72
+[conv] 0x721480 sub_721480 -> _addr_72
+[conv] 0x7214a0 sub_7214A0 -> _addr_72
+[conv] 0x7214c0 sub_7214C0 -> _addr_72
+[conv] 0x7215d0 sub_7215D0 -> _addr_72
+[conv] 0x7215e0 sub_7215E0 -> _addr_72
+[conv] 0x721600 sub_721600 -> _addr_72
+[conv] 0x721620 sub_721620 -> _addr_72
+[conv] 0x721e40 TiberiumClass::ddtor -> TiberiumClass
+[conv] 0x723790 _VectorClass_PAVTiberiumClass::Add -> _VectorClass_PAVTiberiumClass
+[conv] 0x7238b0 _VectorClass_PAVTiberiumClass::GetSize -> _VectorClass_PAVTiberiumClass
+[conv] 0x7239c0 _DynamicVectorClass_PAVTiberiumClass::FindItemIndex -> _DynamicVectorClass_PAVTiberiumClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] ObjectClass              rc=0
+[era] RulesClass               rc=0
+[era] _DynamicVectorClass_PAUThemeControl rc=0
+[era] TiberiumClass            rc=0
+[era] _VectorClass_PAVTiberiumClass rc=0
+[era] _DynamicVectorClass_PAVTiberiumClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x7202e0   MISMATCH         sub_7202E0
+[diff] 0x7203d0   MISMATCH         sub_7203D0
+[diff] 0x7203e0   MISMATCH         sub_7203E0
+[diff] 0x720400   MISMATCH         sub_720400
+[diff] 0x720420   MISMATCH         sub_720420
+[diff] 0x721460   MISMATCH         sub_721460
+[diff] 0x721480   MISMATCH         sub_721480
+[diff] 0x7214a0   MISMATCH         sub_7214A0
+[diff] 0x7214c0   MISMATCH         sub_7214C0
+[diff] 0x7215d0   MISMATCH         sub_7215D0
+[diff] 0x7215e0   MISMATCH         sub_7215E0
+[diff] 0x721600   MISMATCH         sub_721600
+[diff] 0x721620   MISMATCH         sub_721620
+[diff] 0x720960   MISMATCH         ObjectClass::sub_720960
+[diff] 0x721140   MISMATCH         RulesClass::IsTypeBuildable
+[diff] 0x7213b0   MISMATCH         _DynamicVectorClass_PAUThemeControl::FindItemIndex
+[diff] 0x721e40   MISMATCH         TiberiumClass::ddtor
+[diff] 0x723790   MISMATCH         _VectorClass_PAVTiberiumClass::Add
+[diff] 0x7238b0   MISMATCH         _VectorClass_PAVTiberiumClass::GetSize
+[diff] 0x7239c0   MISMATCH         _DynamicVectorClass_PAVTiberiumClass::FindItemIndex
+[ledger] 0x7202e0 sub_7202E0 -> NG (attempt 2)
+[ledger] 0x7203d0 sub_7203D0 -> NG (attempt 2)
+[ledger] 0x7203e0 sub_7203E0 -> NG (attempt 2)
+[ledger] 0x720400 sub_720400 -> NG (attempt 2)
+[ledger] 0x720420 sub_720420 -> NG (attempt 2)
+[ledger] 0x720960 ObjectClass::sub_720960 -> NG (attempt 2)
+[ledger] 0x721140 RulesClass::IsTypeBuildable -> NG (attempt 2)
+[ledger] 0x7213b0 _DynamicVectorClass_PAUThemeControl::FindItemIndex -> NG (attempt 2)
+[ledger] 0x721460 sub_721460 -> NG (attempt 3)
+[ledger] 0x721480 sub_721480 -> NG (attempt 2)
+[ledger] 0x7214a0 sub_7214A0 -> NG (attempt 2)
+[ledger] 0x7214c0 sub_7214C0 -> NG (attempt 2)
+[ledger] 0x7215d0 sub_7215D0 -> NG (attempt 2)
+[ledger] 0x7215e0 sub_7215E0 -> NG (attempt 2)
+[ledger] 0x721600 sub_721600 -> NG (attempt 2)
+[ledger] 0x721620 sub_721620 -> NG (attempt 2)
+[ledger] 0x721e40 TiberiumClass::ddtor -> NG (attempt 2)
+[ledger] 0x723790 _VectorClass_PAVTiberiumClass::Add -> NG (attempt 2)
+[ledger] 0x7238b0 _VectorClass_PAVTiberiumClass::GetSize -> NG (attempt 2)
+[ledger] 0x7239c0 _DynamicVectorClass_PAVTiberiumClass::FindItemIndex -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 13,
+  "width_mismatch": 1,
+  "branch_polarity": 2,
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p40\batch_report.json

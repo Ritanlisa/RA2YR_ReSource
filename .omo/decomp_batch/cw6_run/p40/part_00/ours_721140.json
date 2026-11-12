@@ -1,0 +1,27 @@
+{
+ "symbol": "?IsTypeBuildable@RulesClass@@QAE_NI@Z",
+ "sym_key": "RulesClass::IsTypeBuildable",
+ "size": 124,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f8fd746883f8fe74633b412473648b49188b04818a888a02000084c974548a888802000084c9744a8b150000000085d2741a8b888c02000083f9ff740f8b5234568bb2bc0000003bf15e75268b0d0000000085c975168b0d000000008b91649c01008b88800200003bd1720624010c01ebfa32c0c20400",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  }
+ ]
+}
