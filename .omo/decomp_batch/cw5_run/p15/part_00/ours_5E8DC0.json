@@ -1,0 +1,135 @@
+{
+ "symbol": "?BuildListString@Player@@QAEXXZ",
+ "sym_key": "Player::BuildListString",
+ "size": 221,
+ "link_base": 0,
+ "bytes_hex": "51538bd9565766c70300008b3d000000008b378d44240c50e80000000083c40485f674443b3500000000743c3b350000000074343b3500000000742c3b350000000074243b3500000000741c3b350000000074143b3500000000740c568d4c2410e800000000eb388bd68d4c2410e8000000008d5424108d4c2414e800000000508d4c2410e8000000008d4c2414e8000000008d4c241051e80000000083c4048d4c240ce8000000005053e8000000008b15000000005253e80000000083c4108d4c240ce80000000083c70481ff000000000f8c39ffffff5f5e5b59c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerReady@@3PAGA",
+   "sym_key": "g_Lobby_PlayerReady"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXPAX@Z",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?GetPlayerTypeString@@YIPAPADPAX0@Z",
+   "sym_key": "GetPlayerTypeString"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?CharStringToWide@@YIPAPAGPAXPBX@Z",
+   "sym_key": "CharStringToWide"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?Reassign_Alt@WideString@@QAEPAPAXPAX@Z",
+   "sym_key": "WideString::Reassign_Alt"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::GetOrEmpty"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "_wcscat",
+   "sym_key": "wcscat"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?asc_8304FC@@3PAGA",
+   "sym_key": "asc_8304FC"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "_wcscat",
+   "sym_key": "wcscat"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  }
+ ]
+}

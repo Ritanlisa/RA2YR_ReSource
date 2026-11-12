@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x62bb20",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x766880",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x4f3b80",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x6ee310",
+  "family": "B3",
+  "shape": "B3 member used with '[i].' but declared scalar",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x5e8dc0",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x474430",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x660840",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x633d30",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x5f4730",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x4a8d50",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x4a18f0",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x6ee3f0",
+  "family": "B3",
+  "shape": "B3 member used with '[i].' but declared scalar",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x635a40",
+  "family": "B3",
+  "shape": "B3 member used with '[i].' but declared scalar",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x7712c0",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x4a8960",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x6d7560",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x6d7c00",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x782bb0",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x7aa870",
+  "family": "B5",
+  "shape": "B5 global object declared scalar, member-accessed",
+  "errfam": "C2228"
+ },
+ {
+  "addr": "0x68ad70",
+  "family": "B4",
+  "shape": "B4 string-literal base + member name (IDA artifact)",
+  "errfam": "C2228"
+ }
+]

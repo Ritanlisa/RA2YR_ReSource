@@ -12560,7 +12560,7 @@
   "this_as_id": false
  },
  "0x474430": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -17616,7 +17616,7 @@
   "this_as_id": false
  },
  "0x4a18f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -18818,14 +18818,14 @@
   "this_as_id": false
  },
  "0x4a8960": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DisplayClass::SetViewDimensions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TacticalClass::SetViewDimensions",
-  "rule_violations": 0,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -18853,7 +18853,7 @@
   "this_as_id": false
  },
  "0x4a8d50": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28629,7 +28629,7 @@
   "this_as_id": false
  },
  "0x4f3b80": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_4F3B80",
@@ -49167,15 +49167,15 @@
   "this_as_id": false
  },
  "0x5e8dc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "Player::BuildListString",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Player::BuildListString",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5e9240": {
@@ -50295,15 +50295,15 @@
   "this_as_id": false
  },
  "0x5f4730": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+3 lea eax, [esp]",
   "name": "IUnknown::GetPlacementScreenRect",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ObjectClass::GetPlacementScreenRect",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f4d30": {
@@ -52817,15 +52817,15 @@
   "this_as_id": false
  },
  "0x62bb20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+10 lea ecx, [esi + 0xe8]",
   "name": "ObjectClass::ProcessUpdate",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ObjectClass::ProcessUpdate",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x62d5e0": {
@@ -53694,15 +53694,15 @@
   "status": "OK"
  },
  "0x633d30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 mov edx, dword ptr [0xac4c98]",
   "name": "TechnoClass::ClearScriptPlanningData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "TechnoClass::ClearScriptPlanningData",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x633e50": {
@@ -53957,14 +53957,14 @@
   "this_as_id": false
  },
  "0x635a40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TeamClass::FindByMemberType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TeamClass::FindByMemberType",
-  "rule_violations": 8,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -58196,7 +58196,7 @@
   "this_as_id": false
  },
  "0x660840": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -60193,7 +60193,7 @@
   "this_as_id": false
  },
  "0x68ad70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -68770,15 +68770,15 @@
   "this_as_id": false
  },
  "0x6d7560": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x98",
   "name": "TacticalClass::RenderIsometric",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TacticalClass::RenderIsometric",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d7840": {
@@ -68794,7 +68794,7 @@
   "this_as_id": false
  },
  "0x6d7c00": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70699,7 +70699,7 @@
   "this_as_id": false
  },
  "0x6ee310": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70711,7 +70711,7 @@
   "this_as_id": false
  },
  "0x6ee3f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82077,7 +82077,7 @@
   "this_as_id": false
  },
  "0x766880": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83986,7 +83986,7 @@
   "this_as_id": false
  },
  "0x7712c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85610,14 +85610,14 @@
   "this_as_id": false
  },
  "0x782bb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+3 mov byte ptr [esp + 3], dl",
   "name": "FindBuddyList",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FindBuddyList",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x783270": {
@@ -85960,7 +85960,7 @@
   "this_as_id": false
  },
  "0x7aa870": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x62bb20 ObjectClass::ProcessUpdate -> ObjectClass
+[conv] 0x766880 rc_ptr::System_Init_766880 -> rc_ptr
+[conv] 0x4f3b80 sub_4F3B80 -> _addr_4F
+[conv] 0x6ee310 TeamClass::SelectAreaAttackTarget -> TeamClass
+[conv] 0x5e8dc0 Player::BuildListString -> Player
+[conv] 0x474430 CCINIClass::WriteDigest -> CCINIClass
+[conv] 0x660840 LoadGame::LoadTriggerEvents -> LoadGame
+[conv] 0x633d30 TechnoClass::ClearScriptPlanningData -> TechnoClass
+[conv] 0x5f4730 IUnknown::GetPlacementScreenRect -> IUnknown
+[conv] 0x4a8d50 MIXClass::CopyHeader -> MIXClass
+[conv] 0x4a18f0 BuildingClass::CreateCraterAtCell -> BuildingClass
+[conv] 0x6ee3f0 TeamClass::ProcessTeamMovement -> TeamClass
+[conv] 0x635a40 TeamClass::FindByMemberType -> TeamClass
+[conv] 0x7712c0 ScoreScreen::RemoveItem -> ScoreScreen
+[conv] 0x4a8960 DisplayClass::SetViewDimensions -> DisplayClass
+[conv] 0x6d7560 TacticalClass::RenderIsometric -> TacticalClass
+[conv] 0x6d7c00 TacticalClass::DrawTerrain -> TacticalClass
+[conv] 0x782bb0 FindBuddyList -> _addr_78
+[conv] 0x7aa870 CChatEventSink::HandleChatChannelList -> CChatEventSink
+[conv] 0x68ad70 ScenarioClass::SaveToINI -> ScenarioClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] rc_ptr                   rc=2
+[era] _addr_4F                 rc=2
+[era] TeamClass                rc=2
+[era] Player                   rc=0
+[era] CCINIClass               rc=2
+[era] LoadGame                 rc=2
+[era] TechnoClass              rc=0
+[era] IUnknown                 rc=0
+[era] MIXClass                 rc=2
+[era] BuildingClass            rc=2
+[era] ScoreScreen              rc=2
+[era] DisplayClass             rc=2
+[era] TacticalClass            rc=2
+[era] _addr_78                 rc=0
+[era] CChatEventSink           rc=2
+[era] ScenarioClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x62bb20   MISMATCH         ObjectClass::ProcessUpdate
+[diff] 0x5e8dc0   MISMATCH         Player::BuildListString
+[diff] 0x633d30   MISMATCH         TechnoClass::ClearScriptPlanningData
+[diff] 0x5f4730   MISMATCH         IUnknown::GetPlacementScreenRect
+[diff] 0x6d7560   MISMATCH         TacticalClass::RenderIsometric
+[diff] 0x782bb0   MISMATCH         FindBuddyList
+[ledger] 0x62bb20 ObjectClass::ProcessUpdate -> NG (attempt 4)
+[ledger] 0x766880 rc_ptr::System_Init_766880 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f3b80 sub_4F3B80 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ee310 TeamClass::SelectAreaAttackTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e8dc0 Player::BuildListString -> NG (attempt 4)
+[ledger] 0x474430 CCINIClass::WriteDigest -> COMPILE_FAIL (attempt 4)
+[ledger] 0x660840 LoadGame::LoadTriggerEvents -> COMPILE_FAIL (attempt 4)
+[ledger] 0x633d30 TechnoClass::ClearScriptPlanningData -> NG (attempt 4)
+[ledger] 0x5f4730 IUnknown::GetPlacementScreenRect -> NG (attempt 12)
+[ledger] 0x4a8d50 MIXClass::CopyHeader -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4a18f0 BuildingClass::CreateCraterAtCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ee3f0 TeamClass::ProcessTeamMovement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x635a40 TeamClass::FindByMemberType -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7712c0 ScoreScreen::RemoveItem -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a8960 DisplayClass::SetViewDimensions -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d7560 TacticalClass::RenderIsometric -> NG (attempt 4)
+[ledger] 0x6d7c00 TacticalClass::DrawTerrain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x782bb0 FindBuddyList -> NG (attempt 5)
+[ledger] 0x7aa870 CChatEventSink::HandleChatChannelList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68ad70 ScenarioClass::SaveToINI -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "width_mismatch": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p15\batch_report.json
