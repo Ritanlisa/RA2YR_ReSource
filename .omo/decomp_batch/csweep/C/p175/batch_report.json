@@ -1,0 +1,457 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "const_fold": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x478a80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_478A80",
+   "emitted": "sub_478A80",
+   "unit": "_addr_47",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x489060",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_489060",
+   "emitted": "sub_489060",
+   "unit": "_addr_48",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x48bd40",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_48BD40",
+   "emitted": "sub_48BD40",
+   "unit": "_addr_48",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x48c780",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_48C780",
+   "emitted": "sub_48C780",
+   "unit": "_addr_48",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x48e360",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_48E360",
+   "emitted": "sub_48E360",
+   "unit": "_addr_48",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x49b250",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_49B250",
+   "emitted": "sub_49B250",
+   "unit": "_addr_49",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x49f1b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x89f680]",
+    "ours": "+0 fld qword ptr [0xa8]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_49F1B0",
+   "emitted": "sub_49F1B0",
+   "unit": "_addr_49",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x49fe20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_49FE20",
+   "emitted": "sub_49FE20",
+   "unit": "_addr_49",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4a1630",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4A1630",
+   "emitted": "sub_4A1630",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4a2230",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4A2230",
+   "emitted": "sub_4A2230",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4a4f70",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4A4F70",
+   "emitted": "sub_4A4F70",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4a8510",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4A8510",
+   "emitted": "sub_4A8510",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4af400",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4AF400",
+   "emitted": "sub_4AF400",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4b5970",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4B5970",
+   "emitted": "sub_4B5970",
+   "unit": "_addr_4B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4b6870",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4B6870",
+   "emitted": "sub_4B6870",
+   "unit": "_addr_4B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4ba480",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "DSurface::ConstructFromHandle",
+   "emitted": "DSurface::ConstructFromHandle",
+   "unit": "DSurface",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4c1c50",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4C1C50",
+   "emitted": "sub_4C1C50",
+   "unit": "_addr_4C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4c3670",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4C3670",
+   "emitted": "sub_4C3670",
+   "unit": "_addr_4C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4c4dd0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4C4DD0",
+   "emitted": "sub_4C4DD0",
+   "unit": "_addr_4C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x4c50d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_4C50D0",
+   "emitted": "sub_4C50D0",
+   "unit": "_addr_4C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  }
+ ]
+}

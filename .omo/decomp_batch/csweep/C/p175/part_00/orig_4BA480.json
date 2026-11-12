@@ -1,0 +1,11 @@
+{
+ "addr": "0x4BA480",
+ "name": "DSurface::ConstructFromHandle",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4BA480",
+ "bytes_hex": "dd0528098a00dc2570098a0083ec08dd1c24e8b9080100dc0d68098a0083c408dc0d38177e00e855ba3000a3c80d8a00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
