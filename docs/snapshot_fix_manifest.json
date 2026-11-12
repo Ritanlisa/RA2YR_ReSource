@@ -33,7 +33,7 @@
    "sha_before": "21f09348a91f6a35ba2be6715ebfd45da5579bc38c9b516902340e3f3df98a97",
    "sha_after": "e43ffaa2fed4209dabc104acf95f9369e57bcac047461dd54ada0e4f51daf351",
    "backup": ".omo/snapshot_fix_backup/files/BuildingClass.cpp.bak",
-   "n_blocks": 6
+   "n_blocks": 7
   },
   "BuildingLightClass.cpp": {
    "sha_before": "2a0bf6e40f3a369cb47bba4dc73ade6b20f4579f37d4953adb8741323bf7329e",
