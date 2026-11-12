@@ -1,0 +1,11 @@
+{
+ "addr": "0x75E080",
+ "name": "WarheadTypeClass::vt_03",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75E080",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d40987e0089088b1544987e008950048b0d48987e008948088b154c987e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

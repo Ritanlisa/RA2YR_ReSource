@@ -1,0 +1,15 @@
+{
+ "symbol": "?ResetAnimSystem@@YIHH@Z",
+ "sym_key": "Unnamed::ResetAnimSystem",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8bc183e107b201c1f803d2e2089000000000c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45BA8@@3PAEA",
+   "sym_key": "DataGlobal_B45BA8"
+  }
+ ]
+}

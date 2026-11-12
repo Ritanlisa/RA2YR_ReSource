@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p43\part_00
+=== convert (20 addrs) ===
+[conv] 0x75a7d0 ResetAnimSystem -> _addr_75
+[conv] 0x75a810 TestBitArray -> _addr_75
+[conv] 0x75c640 WalkLocomotionClass::ddtor -> WalkLocomotionClass
+[conv] 0x75e080 WarheadTypeClass::vt_03 -> WarheadTypeClass
+[conv] 0x75e690 WarheadTypeClass::checkImmunity -> WarheadTypeClass
+[conv] 0x75e6a0 WarheadTypeClass::calculateDamage -> WarheadTypeClass
+[conv] 0x75f840 WaveClass::GetClassIdentifier -> WaveClass
+[conv] 0x763700 ObjectClass::sub_763700 -> ObjectClass
+[conv] 0x763c30 WaypointPathClass::ddtor -> WaypointPathClass
+[conv] 0x7640b0 _VectorClass_VWaypointClass::setSWCharge -> _VectorClass_VWaypointClass
+[conv] 0x764460 _VectorClass_PAVWaypointPathClass::Add -> _VectorClass_PAVWaypointPathClass
+[conv] 0x764580 _VectorClass_PAVWaypointPathClass::GetSize -> _VectorClass_PAVWaypointPathClass
+[conv] 0x764690 _DynamicVectorClass_PAVWaypointPathClass::FindItemIndex -> _DynamicVectorClass_PAVWaypointPathClass
+[conv] 0x765b40 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Release -> _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x765b50 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor -> _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766fa0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release -> _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x766fb0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor -> _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x769490 ObjectClass::sub_769490 -> ObjectClass
+[conv] 0x769d70 Map_Load_769D70 -> Map_Load
+[conv] 0x76a130 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::AddRef -> _VectorClass_PAUAnimationPalette_Map_WorldDominationTour
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_75                 rc=0
+[era] WalkLocomotionClass      rc=0
+[era] WarheadTypeClass         rc=2
+[era] WaveClass                rc=0
+[era] ObjectClass              rc=2
+[era] WaypointPathClass        rc=0
+[era] _VectorClass_VWaypointClass rc=0
+[era] _VectorClass_PAVWaypointPathClass rc=0
+[era] _DynamicVectorClass_PAVWaypointPathClass rc=0
+[era] _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] Map_Load                 rc=0
+[era] _VectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+=== diffasm byte-compare ===
+[diff] 0x75a7d0   MISMATCH         ResetAnimSystem
+[diff] 0x75a810   MISMATCH         TestBitArray
+[diff] 0x75c640   MISMATCH         WalkLocomotionClass::ddtor
+[diff] 0x75e080   MISMATCH         WarheadTypeClass::vt_03
+[diff] 0x75f840   MISMATCH         WaveClass::GetClassIdentifier
+[diff] 0x763700   MISMATCH         ObjectClass::sub_763700
+[diff] 0x769490   MATCH            ObjectClass::sub_769490
+[diff] 0x763c30   MISMATCH         WaypointPathClass::ddtor
+[diff] 0x7640b0   MISMATCH         _VectorClass_VWaypointClass::setSWCharge
+[diff] 0x764460   MISMATCH         _VectorClass_PAVWaypointPathClass::Add
+[diff] 0x764580   MISMATCH         _VectorClass_PAVWaypointPathClass::GetSize
+[diff] 0x764690   MISMATCH         _DynamicVectorClass_PAVWaypointPathClass::FindItemIndex
+[diff] 0x765b40   MISMATCH         _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Release
+[diff] 0x765b50   MISMATCH         _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor
+[diff] 0x766fa0   MISMATCH         _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release
+[diff] 0x766fb0   MISMATCH         _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor
+[diff] 0x769d70   MISMATCH         Map_Load_769D70
+[diff] 0x76a130   MISMATCH         _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::AddRef
+[ledger] 0x75a7d0 ResetAnimSystem -> NG (attempt 2)
+[ledger] 0x75a810 TestBitArray -> NG (attempt 2)
+[ledger] 0x75c640 WalkLocomotionClass::ddtor -> NG (attempt 2)
+[ledger] 0x75e080 WarheadTypeClass::vt_03 -> NG (attempt 2)
+[ledger] 0x75e690 WarheadTypeClass::checkImmunity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75e6a0 WarheadTypeClass::calculateDamage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75f840 WaveClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x763700 ObjectClass::sub_763700 -> NG (attempt 2)
+[ledger] 0x763c30 WaypointPathClass::ddtor -> NG (attempt 2)
+[ledger] 0x7640b0 _VectorClass_VWaypointClass::setSWCharge -> NG (attempt 2)
+[ledger] 0x764460 _VectorClass_PAVWaypointPathClass::Add -> NG (attempt 2)
+[ledger] 0x764580 _VectorClass_PAVWaypointPathClass::GetSize -> NG (attempt 2)
+[ledger] 0x764690 _DynamicVectorClass_PAVWaypointPathClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x765b40 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Release -> NG (attempt 7)
+[ledger] 0x765b50 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor -> NG (attempt 7)
+[ledger] 0x766fa0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release -> NG (attempt 7)
+[ledger] 0x766fb0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor -> NG (attempt 7)
+[ledger] 0x769490 ObjectClass::sub_769490 -> OK (attempt 2)
+[ledger] 0x769d70 Map_Load_769D70 -> NG (attempt 2)
+[ledger] 0x76a130 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::AddRef -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 2,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "codegen_shape": 7,
+  "extern_reloc": 1,
+  "branch_polarity": 3,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p43\batch_report.json

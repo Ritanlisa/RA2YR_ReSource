@@ -1,0 +1,15 @@
+{
+ "symbol": "?vt_03@WarheadTypeClass@@QAGHPAI@Z",
+ "sym_key": "WarheadTypeClass::vt_03",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c2080033c9c700a44dc5a8c740047b0fd211c74008817200608a0d0000000089480c33c0c20800",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?unk_7E984C@@3EA",
+   "sym_key": "unk_7E984C"
+  }
+ ]
+}

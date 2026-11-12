@@ -1,0 +1,11 @@
+{
+ "addr": "0x765B50",
+ "name": "_VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x765B50",
+ "bytes_hex": "8bc1ff4808c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?TestBitArray@@YI_NH@Z",
+ "sym_key": "Unnamed::TestBitArray",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8bc1b20183e107d2e2c1f8038490000000000f95c0c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45BA8@@3PAEA",
+   "sym_key": "DataGlobal_B45BA8"
+  }
+ ]
+}
