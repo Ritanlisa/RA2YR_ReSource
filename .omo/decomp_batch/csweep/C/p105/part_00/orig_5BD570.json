@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BD570",
+ "name": "File::LoadFileHVA",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BD570",
+ "bytes_hex": "568bf133c0880689460489460889460c8b44240850e83600000085c07503c606018bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

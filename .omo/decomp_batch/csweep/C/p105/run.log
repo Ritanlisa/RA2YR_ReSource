@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p105\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ace20 _VectorClass_V_TRect_H::ddtor -> _VectorClass_V_TRect_H
+[conv] 0x5ad1f0 _VectorClass_N::ddtor -> _VectorClass_N
+[conv] 0x5bd570 File::LoadFileHVA -> File
+[conv] 0x5c0bc0 VectorClass::processDamageEvent -> VectorClass
+[conv] 0x5c5220 VectorClass::ddtor -> VectorClass
+[conv] 0x5c5480 VectorClass::updateScoreBoard -> VectorClass
+[conv] 0x5c56e0 _VectorClass_PAVCoopCampaignClass::ddtor -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5d0920 _VectorClass_VPoint2D::Set -> _VectorClass_VPoint2D
+[conv] 0x5d0bd0 _VectorClass_PAVMSTextEntry::Remove -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d0e30 _VectorClass_PAVMapSelection::Remove -> _VectorClass_PAVMapSelection
+[conv] 0x5d1090 _VectorClass_PAVMapStage::FreeData_1 -> _VectorClass_PAVMapStage
+[conv] 0x5d1550 _VectorClass_PAVMSSfxEntry::Remove -> _VectorClass_PAVMSSfxEntry
+[conv] 0x5d28d0 _VectorClass_PAVMSAnim::Destroy_0 -> _VectorClass_PAVMSAnim
+[conv] 0x5d2b30 _VectorClass_PAVMSSfx::Remove -> _VectorClass_PAVMSSfx
+[conv] 0x5d5240 _VectorClass_PAUHWND::ddtor -> _VectorClass_PAUHWND
+[conv] 0x5d5500 _VectorClass_UAcceleratorTracker::ddtor -> _VectorClass_UAcceleratorTracker
+[conv] 0x5d83e0 _VectorClass_PAVMultiplayerTeam::Remove -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x5eed00 VectorClass::Cleanup3 -> VectorClass
+[conv] 0x5f9c70 _VectorClass_PAVObjectTypeClass::Remove -> _VectorClass_PAVObjectTypeClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_V_TRect_H   rc=0
+[era] _VectorClass_N           rc=0
+[era] File                     rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVCoopCampaignClass rc=0
+[era] _VectorClass_VPoint2D    rc=0
+[era] _VectorClass_PAVMSTextEntry rc=0
+[era] _VectorClass_PAVMapSelection rc=0
+[era] _VectorClass_PAVMapStage rc=0
+[era] _VectorClass_PAVMSSfxEntry rc=0
+[era] _VectorClass_PAVMSAnim   rc=0
+[era] _VectorClass_PAVMSSfx    rc=0
+[era] _VectorClass_PAUHWND     rc=0
+[era] _VectorClass_UAcceleratorTracker rc=0
+[era] _VectorClass_PAVMultiplayerTeam rc=0
+[era] _VectorClass_PAVObjectTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ace20   MISMATCH         _VectorClass_V_TRect_H::ddtor
+[diff] 0x5ad1f0   MISMATCH         _VectorClass_N::ddtor
+[diff] 0x5bd570   MISMATCH         File::LoadFileHVA
+[diff] 0x5c0bc0   MISMATCH         VectorClass::processDamageEvent
+[diff] 0x5c5220   MISMATCH         VectorClass::ddtor
+[diff] 0x5c5480   MISMATCH         VectorClass::updateScoreBoard
+[diff] 0x5eed00   MISMATCH         VectorClass::Cleanup3
+[diff] 0x5c56e0   MISMATCH         _VectorClass_PAVCoopCampaignClass::ddtor
+[diff] 0x5d0920   MISMATCH         _VectorClass_VPoint2D::Set
+[diff] 0x5d0bd0   MISMATCH         _VectorClass_PAVMSTextEntry::Remove
+[diff] 0x5d0e30   MISMATCH         _VectorClass_PAVMapSelection::Remove
+[diff] 0x5d1090   MISMATCH         _VectorClass_PAVMapStage::FreeData_1
+[diff] 0x5d1550   MISMATCH         _VectorClass_PAVMSSfxEntry::Remove
+[diff] 0x5d28d0   MISMATCH         _VectorClass_PAVMSAnim::Destroy_0
+[diff] 0x5d2b30   MISMATCH         _VectorClass_PAVMSSfx::Remove
+[diff] 0x5d5240   MISMATCH         _VectorClass_PAUHWND::ddtor
+[diff] 0x5d5500   MISMATCH         _VectorClass_UAcceleratorTracker::ddtor
+[diff] 0x5d83e0   MISMATCH         _VectorClass_PAVMultiplayerTeam::Remove
+[diff] 0x5f9c70   MISMATCH         _VectorClass_PAVObjectTypeClass::Remove
+[ledger] 0x5ace20 _VectorClass_V_TRect_H::ddtor -> NG (attempt 1)
+[ledger] 0x5ad1f0 _VectorClass_N::ddtor -> NG (attempt 1)
+[ledger] 0x5bd570 File::LoadFileHVA -> NG (attempt 1)
+[ledger] 0x5c0bc0 VectorClass::processDamageEvent -> NG (attempt 1)
+[ledger] 0x5c5220 VectorClass::ddtor -> NG (attempt 1)
+[ledger] 0x5c5480 VectorClass::updateScoreBoard -> NG (attempt 1)
+[ledger] 0x5c56e0 _VectorClass_PAVCoopCampaignClass::ddtor -> NG (attempt 1)
+[ledger] 0x5d0920 _VectorClass_VPoint2D::Set -> NG (attempt 1)
+[ledger] 0x5d0bd0 _VectorClass_PAVMSTextEntry::Remove -> NG (attempt 1)
+[ledger] 0x5d0e30 _VectorClass_PAVMapSelection::Remove -> NG (attempt 1)
+[ledger] 0x5d1090 _VectorClass_PAVMapStage::FreeData_1 -> NG (attempt 1)
+[ledger] 0x5d1550 _VectorClass_PAVMSSfxEntry::Remove -> NG (attempt 1)
+[ledger] 0x5d28d0 _VectorClass_PAVMSAnim::Destroy_0 -> NG (attempt 1)
+[ledger] 0x5d2b30 _VectorClass_PAVMSSfx::Remove -> NG (attempt 1)
+[ledger] 0x5d5240 _VectorClass_PAUHWND::ddtor -> NG (attempt 1)
+[ledger] 0x5d5500 _VectorClass_UAcceleratorTracker::ddtor -> NG (attempt 1)
+[ledger] 0x5d83e0 _VectorClass_PAVMultiplayerTeam::Remove -> NG (attempt 1)
+[ledger] 0x5d8640 0x5d8640 -> PENDING (attempt 1)
+[ledger] 0x5eed00 VectorClass::Cleanup3 -> NG (attempt 1)
+[ledger] 0x5f9c70 _VectorClass_PAVObjectTypeClass::Remove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "DUP_SKIP": 1
+ },
+ "pathologies": {
+  "regalloc": 14,
+  "ret_norm": 1,
+  "width_mismatch": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p105\batch_report.json

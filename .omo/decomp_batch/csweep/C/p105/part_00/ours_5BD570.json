@@ -1,0 +1,15 @@
+{
+ "symbol": "?LoadFileHVA@File@@QAEPAV1@H@Z",
+ "sym_key": "File::LoadFileHVA",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "568bf133c0890689460489460889460c8b44240850e80000000085c07506c706010000008bc65ec20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?ParseFileHVA@File@@QAEHH@Z",
+   "sym_key": "File::ParseFileHVA"
+  }
+ ]
+}

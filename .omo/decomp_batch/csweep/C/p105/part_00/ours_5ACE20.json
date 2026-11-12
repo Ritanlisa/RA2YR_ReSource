@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@_VectorClass_V_TRect_H@@QAEXXZ",
+ "sym_key": "_VectorClass_V_TRect_H::ddtor",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "568bf18b460485c074188b4e0cf6c5ff741050e80000000083c404c74604000000008b460cc746080000000080e40089460c5ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
