@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C83F8",
+ "name": "GetDiskFreeSpaceA",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C83F8",
+ "bytes_hex": "ff2554127e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

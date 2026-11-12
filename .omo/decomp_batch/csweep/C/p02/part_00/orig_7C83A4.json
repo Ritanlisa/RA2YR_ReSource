@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C83A4",
+ "name": "DeleteCriticalSection",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C83A4",
+ "bytes_hex": "ff25e4117e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

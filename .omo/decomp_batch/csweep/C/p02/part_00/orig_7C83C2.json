@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C83C2",
+ "name": "GetCurrentThreadId",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C83C2",
+ "bytes_hex": "ff25d0117e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

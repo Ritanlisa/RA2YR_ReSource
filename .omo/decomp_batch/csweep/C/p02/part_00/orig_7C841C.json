@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C841C",
+ "name": "OpenEventA",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C841C",
+ "bytes_hex": "ff253c127e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
