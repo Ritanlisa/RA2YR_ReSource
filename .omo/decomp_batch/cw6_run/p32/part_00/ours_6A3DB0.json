@@ -1,0 +1,15 @@
+{
+ "symbol": "?TransformCoords@WalkLocomotion@@QAEPAIPAH00@Z",
+ "sym_key": "WalkLocomotion::TransformCoords",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "5355568bf18b442418578b56588b008d0c528b1c8d000000008b4c2418f6c3018b298b51048bfd7410b1c08bfa2ac88bd581e1ff0000008bc1f6c3027409f6d8f7df25ff000000f6c304740eb1802ac8f7da81e1ff0000008bc18b4c241c89018b4e448b76408b44241403f75f893003ca5e5d8948045bc20c00",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F2A48@@3PAIA",
+   "sym_key": "DataGlobal_7F2A48"
+  }
+ ]
+}

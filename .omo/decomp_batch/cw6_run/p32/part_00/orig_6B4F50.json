@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B4F50",
+ "name": "UnitClass::GetClassID",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B4F50",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d90967e0089088b1594967e008950048b0d98967e008948088b159c967e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6A3DB0",
+ "name": "WalkLocomotion::TransformCoords",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6A3DB0",
+ "bytes_hex": "8b515853558b6c24148d1452568b4500578b1c95482a7f008b542418f6c3018b3a8b720474158bd78bfe8bf2bac0ffffff2bd081e2ff0000008bc2f6c3027409f7d8f7df25ff000000f6c3047411ba80ffffff2bd0f7de81e2ff0000008bc28945008b51408b49448b44241403d703ce5f5e89105d8948045bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

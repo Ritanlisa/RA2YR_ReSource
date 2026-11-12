@@ -1,0 +1,39 @@
+{
+ "symbol": "?UI_Add_6AC430@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::UI_Add_6AC430",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "8b0d00000000b81a0000008b91c8b1500085d27405b8120000008b15000000008b0d000000002bd16a002bd0a100000000681f85eb516a008d4c02f951e800000000c1ea048bc2c1e81f03c2d1e0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_SidebarBounds@@3IA",
+   "sym_key": "g_SidebarBounds"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_DSurface_ViewBounds@@3IA",
+   "sym_key": "g_DSurface_ViewBounds"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  }
+ ]
+}

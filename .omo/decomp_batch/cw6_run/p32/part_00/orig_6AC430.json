@@ -1,0 +1,11 @@
+{
+ "addr": "0x6AC430",
+ "name": "UI_Add_6AC430",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6AC430",
+ "bytes_hex": "a130b2a8008b88b8340000b81a00000085c97405b8120000008b0d9c6f88008b15f8b4b0002bca8b15946f88002bc8b81f85eb518d4c11f9f7e98bc2c1f8048bc8c1e91f03c1d1e0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

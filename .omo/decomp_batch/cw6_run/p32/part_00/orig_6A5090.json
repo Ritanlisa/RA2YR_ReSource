@@ -1,0 +1,11 @@
+{
+ "addr": "0x6A5090",
+ "name": "SidebarClass::InitPositions",
+ "size": 152,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6A5090",
+ "bytes_hex": "a130b2a8008b80b834000085c0753d8b0d946f8800c705e4b4b00040000000c705f0b4b0001d000000c705fcb4b0003f0000008d4108a3e0b4b00083c01fa3ecb4b00083c01ea3f8b4b000c383f801750b8b15946f88008d4207eb08a1946f880083c007a3e0b4b00083c020a3ecb4b00083c01ec705e4b4b00034000000c705f0b4b00020000000a3f8b4b000c705fcb4b00040000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

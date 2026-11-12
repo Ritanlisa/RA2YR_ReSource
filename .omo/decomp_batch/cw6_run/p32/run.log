@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x69d1d0 _DynamicVectorClass_PAUGlobalPacketType::FindItemIndex_0 -> _DynamicVectorClass_PAUGlobalPacketType
+[conv] 0x69d200 _VectorClass_PAVPhoneEntryClass::Add -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x69d320 _VectorClass_PAVPhoneEntryClass::GetSize -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x69f040 JumpjetLocomotionClass::StubReturnZero_13 -> JumpjetLocomotionClass
+[conv] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> JumpjetLocomotionClass
+[conv] 0x6a3db0 WalkLocomotion::TransformCoords -> WalkLocomotion
+[conv] 0x6a3e60 ShipLocomotionClass::ddtor -> ShipLocomotionClass
+[conv] 0x6a4740 SideClass::ddtor -> SideClass
+[conv] 0x6a5090 SidebarClass::InitPositions -> SidebarClass
+[conv] 0x6ac430 ObjectClass::UI_Add_6AC430 -> ObjectClass
+[conv] 0x6acbae ___inc_tmpoff -> _addr_6A
+[conv] 0x6b1130 SlaveManagerClass::ddtor -> SlaveManagerClass
+[conv] 0x6b1470 _VectorClass_PAUSlaveControl_SlaveManagerClass::AddRef -> _VectorClass_PAUSlaveControl_SlaveManagerClass
+[conv] 0x6b16a0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Read -> _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass
+[conv] 0x6b16d0 _VectorClass_PAVSlaveManagerClass::Add -> _VectorClass_PAVSlaveManagerClass
+[conv] 0x6b1900 _DynamicVectorClass_PAVSlaveManagerClass::FindItemIndex -> _DynamicVectorClass_PAVSlaveManagerClass
+[conv] 0x6b4440 _VectorClass_UUndoInfoStruct::AddRef -> _VectorClass_UUndoInfoStruct
+[conv] 0x6b45d0 _VectorClass_UUndoInfoStruct::GetSize -> _VectorClass_UUndoInfoStruct
+[conv] 0x6b4760 _DynamicVectorClass_UUndoInfoStruct::FindItemIndex -> _DynamicVectorClass_UUndoInfoStruct
+[conv] 0x6b4f50 SmudgeClass::GetClassID -> SmudgeClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAUGlobalPacketType rc=0
+[era] _VectorClass_PAVPhoneEntryClass rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] WalkLocomotion           rc=0
+[era] ShipLocomotionClass      rc=0
+[era] SideClass                rc=0
+[era] SidebarClass             rc=0
+[era] ObjectClass              rc=0
+[era] _addr_6A                 rc=0
+[era] SlaveManagerClass        rc=0
+[era] _VectorClass_PAUSlaveControl_SlaveManagerClass rc=0
+[era] _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass rc=0
+[era] _VectorClass_PAVSlaveManagerClass rc=0
+[era] _DynamicVectorClass_PAVSlaveManagerClass rc=0
+[era] _VectorClass_UUndoInfoStruct rc=0
+[era] _DynamicVectorClass_UUndoInfoStruct rc=0
+[era] SmudgeClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x69d1d0   MISMATCH         _DynamicVectorClass_PAUGlobalPacketType::FindItemIndex_0
+[diff] 0x69d200   MISMATCH         _VectorClass_PAVPhoneEntryClass::Add
+[diff] 0x69d320   MISMATCH         _VectorClass_PAVPhoneEntryClass::GetSize
+[diff] 0x69f040   MISMATCH         JumpjetLocomotionClass::StubReturnZero_13
+[diff] 0x6a3db0   MISMATCH         WalkLocomotion::TransformCoords
+[diff] 0x6a3e60   MISMATCH         ShipLocomotionClass::ddtor
+[diff] 0x6a4740   MISMATCH         SideClass::ddtor
+[diff] 0x6a5090   MISMATCH         SidebarClass::InitPositions
+[diff] 0x6ac430   MISMATCH         ObjectClass::UI_Add_6AC430
+[diff] 0x6acbae   MISMATCH         ___inc_tmpoff
+[diff] 0x6b1130   MISMATCH         SlaveManagerClass::ddtor
+[diff] 0x6b1470   MISMATCH         _VectorClass_PAUSlaveControl_SlaveManagerClass::AddRef
+[diff] 0x6b16a0   MISMATCH         _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Read
+[diff] 0x6b16d0   MISMATCH         _VectorClass_PAVSlaveManagerClass::Add
+[diff] 0x6b1900   MISMATCH         _DynamicVectorClass_PAVSlaveManagerClass::FindItemIndex
+[diff] 0x6b4440   MISMATCH         _VectorClass_UUndoInfoStruct::AddRef
+[diff] 0x6b45d0   MISMATCH         _VectorClass_UUndoInfoStruct::GetSize
+[diff] 0x6b4760   MISMATCH         _DynamicVectorClass_UUndoInfoStruct::FindItemIndex
+[diff] 0x6b4f50   MISMATCH         SmudgeClass::GetClassID
+[ledger] 0x69d1d0 _DynamicVectorClass_PAUGlobalPacketType::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x69d200 _VectorClass_PAVPhoneEntryClass::Add -> NG (attempt 2)
+[ledger] 0x69d320 _VectorClass_PAVPhoneEntryClass::GetSize -> NG (attempt 2)
+[ledger] 0x69f040 JumpjetLocomotionClass::StubReturnZero_13 -> NG (attempt 2)
+[ledger] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x6a3db0 WalkLocomotion::TransformCoords -> NG (attempt 2)
+[ledger] 0x6a3e60 ShipLocomotionClass::ddtor -> NG (attempt 2)
+[ledger] 0x6a4740 SideClass::ddtor -> NG (attempt 2)
+[ledger] 0x6a5090 SidebarClass::InitPositions -> NG (attempt 10)
+[ledger] 0x6ac430 ObjectClass::UI_Add_6AC430 -> NG (attempt 2)
+[ledger] 0x6acbae ___inc_tmpoff -> NG (attempt 2)
+[ledger] 0x6b1130 SlaveManagerClass::ddtor -> NG (attempt 2)
+[ledger] 0x6b1470 _VectorClass_PAUSlaveControl_SlaveManagerClass::AddRef -> NG (attempt 2)
+[ledger] 0x6b16a0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Read -> NG (attempt 2)
+[ledger] 0x6b16d0 _VectorClass_PAVSlaveManagerClass::Add -> NG (attempt 2)
+[ledger] 0x6b1900 _DynamicVectorClass_PAVSlaveManagerClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x6b4440 _VectorClass_UUndoInfoStruct::AddRef -> NG (attempt 2)
+[ledger] 0x6b45d0 _VectorClass_UUndoInfoStruct::GetSize -> NG (attempt 2)
+[ledger] 0x6b4760 _DynamicVectorClass_UUndoInfoStruct::FindItemIndex -> NG (attempt 2)
+[ledger] 0x6b4f50 SmudgeClass::GetClassID -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "branch_polarity": 4,
+  "branch_order": 1,
+  "extern_reloc": 2,
+  "regalloc": 3,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p32\batch_report.json

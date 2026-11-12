@@ -1,0 +1,99 @@
+{
+ "symbol": "?InitPositions@SidebarClass@@QAEHXZ",
+ "sym_key": "SidebarClass::InitPositions",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b88c8b1500085c9753ea100000000c7050000000040000000c705000000001d000000c705000000003f0000008d48088d502783c045890d00000000891500000000a300000000c3a100000000c7050000000034000000c7050000000020000000c70500000000400000008d48078d502783c045890d00000000891500000000a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4E4@@3IA",
+   "sym_key": "DataGlobal_B0B4E4"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4F0@@3IA",
+   "sym_key": "DataGlobal_B0B4F0"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4FC@@3IA",
+   "sym_key": "DataGlobal_B0B4FC"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4E0@@3IA",
+   "sym_key": "DataGlobal_B0B4E0"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4EC@@3IA",
+   "sym_key": "DataGlobal_B0B4EC"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_SidebarBounds@@3IA",
+   "sym_key": "g_SidebarBounds"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4E4@@3IA",
+   "sym_key": "DataGlobal_B0B4E4"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4F0@@3IA",
+   "sym_key": "DataGlobal_B0B4F0"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4FC@@3IA",
+   "sym_key": "DataGlobal_B0B4FC"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4E0@@3IA",
+   "sym_key": "DataGlobal_B0B4E0"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4EC@@3IA",
+   "sym_key": "DataGlobal_B0B4EC"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_SidebarBounds@@3IA",
+   "sym_key": "g_SidebarBounds"
+  }
+ ]
+}
