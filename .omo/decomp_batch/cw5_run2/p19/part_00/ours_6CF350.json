@@ -1,0 +1,33 @@
+{
+ "symbol": "?ConvertNodes@SwizzleManagerClass@@QAEHXZ",
+ "sym_key": "SwizzleManagerClass::ConvertNodes",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "568bf18b461485c00f848b0000008b462c85c07e1468000000006a08508b462050e80000000083c4108b461485c07e148b4e0868000000006a085051e80000000083c4108b4620538b5e14558b6e2c578b7e0885db7e298b0f3b08751f8b4f048b500483c7084b89118b108b0f3bca760b8b500883c0084d3bca77f585db7fd98b4e048d460450ff510c8b561c8d461c50ff520c5f5d5b5ec333c05ec3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?globalHelper_0CF320@@YAHPBX0@Z",
+   "sym_key": "globalHelper_0CF320"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?globalHelper_0CF320@@YAHPBX0@Z",
+   "sym_key": "globalHelper_0CF320"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  }
+ ]
+}

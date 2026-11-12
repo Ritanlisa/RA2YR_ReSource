@@ -1,0 +1,45 @@
+{
+ "symbol": "?SetText@MSBitPrintAnim@@QAEEHPAI@Z",
+ "sym_key": "MSBitPrintAnim::SetText",
+ "size": 195,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec1885c0568bf10f84840000008b0d0000000085c9747a8b562053558b4624578b7e28895424188944241c8d543aff895424208b562c8d4402ff8d5424185289442428e8000000008a56318b4e208b7e2c8b5e288b6e24894c241484d20f95c08d4e1c88442410e8000000008b5424108b4c24146a006a00528b5424385753555150a1000000005250e8000000005f5d5b8b4424248b4e2089088b56248950048b4e288948088b562c89500c8a4e3033c05e84c90f94c083c418c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameFontObject@@3IA",
+   "sym_key": "g_GameFontObject"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?SetRect@TextGroup@@QAEPAIPAX@Z",
+   "sym_key": "TextGroup::SetRect"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::GetOrEmpty"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?Font__Print@@YGDHHPAXHHHHDHH@Z",
+   "sym_key": "Font__Print"
+  }
+ ]
+}

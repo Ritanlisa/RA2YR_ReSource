@@ -1,0 +1,21 @@
+{
+ "symbol": "?deleteSection@INIClass@@QAEDPAH@Z",
+ "sym_key": "INIClass::deleteSection",
+ "size": 239,
+ "link_base": 0,
+ "bytes_hex": "5355568bf1578b460485c075095f5e5d32c05bc204008a4e0c84c9751e68000000006a08508b0650e80000000083c410c7461000000000c6460c018b4c24148b7e048b1e8b118beb85ff895424147f095f5e5d32c05bc204008bc7992bc2d1f88b54c5008d4cc500395424147d048bf8eb103b54241474178d690883c9ff2bc803f985ff7fd35f5e5d32c05bc2040033ff3bcf75095f5e5d32c05bc204002bcbc1f90383f9ff75095f5e5d32c05bc204008b4604413bc87d1a0fbe46200fafc1418b108950f88b50048950fc8b46043bc87ce68b46048b0e48894604893cc1897cc104897e105f5e5db0015bc20400",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?CompareFunc4Int@@YAHPBX0@Z",
+   "sym_key": "CompareFunc4Int"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  }
+ ]
+}

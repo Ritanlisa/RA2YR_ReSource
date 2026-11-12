@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_770D70@@YIXPAVString@@PAI@Z",
+ "sym_key": "Unnamed::sub_770D70",
+ "size": 173,
+ "link_base": 0,
+ "bytes_hex": "5153568bf2578bd9568b06ff500c8d4c240c51e80000000083c4048d54240c8bcb5268000000006a00e8000000008bf883ffff7466558b6c24108d44241050e8000000008b4e088b461083c4043bc172218a460d84c0750485c975258b461485c07e1e8b1603c16a005056ff520884c0740f8b46108b56048d4801894e10892c828d4424108bcb50680000000057e8000000008bf883ffff75a05d8d4c240c51e80000000083c4045f5e5b59c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?__1_Timevec_std__QAE_XZ@@YAXPAX@Z",
+   "sym_key": "__1_Timevec_std__QAE_XZ"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}
