@@ -1,0 +1,11 @@
+{
+ "addr": "0x6339E0",
+ "name": "ToCoordPixel",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6339E0",
+ "bytes_hex": "83ec088d442400568bf18b0d247388005052e849e709008b0da06f88008b15a46f88008b44240403c18b4c240803ca8906894e048bc65e83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

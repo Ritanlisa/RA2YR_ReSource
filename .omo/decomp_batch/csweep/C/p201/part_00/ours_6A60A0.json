@@ -1,0 +1,21 @@
+{
+ "symbol": "?ActivateTab@Sidebar@@QAEHH@Z",
+ "sym_key": "Sidebar::ActivateTab",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b919c5300003bc27532568bf0c1e6052bf0b2018891a65300008d34f08d04b0889481801500008b4c2408516a006800000000e80000000083c40c5ec20400",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXHH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}

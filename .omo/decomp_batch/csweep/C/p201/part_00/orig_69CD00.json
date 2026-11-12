@@ -1,0 +1,11 @@
+{
+ "addr": "0x69CD00",
+ "name": "MapFile::Read",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69CD00",
+ "bytes_hex": "5356578bf933f68b471085c07e1c8b5c24108b4704538d0cb0e8627a110084c075118b4710463bf07ce85f5e83c8ff5bc204008bc65f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Read@_DynamicVectorClass_VWstring@@QAEHPAPBD@Z",
+ "sym_key": "_DynamicVectorClass_VWstring::Read",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "53568bf15733ff8b461085c07f095f5e83c8ff5bc204008b5c24108b4e0453e80000000084c075188b4610473bf87dde8b4604538d0cb8e80000000084c074e88bc75f5e5bc20400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  }
+ ]
+}

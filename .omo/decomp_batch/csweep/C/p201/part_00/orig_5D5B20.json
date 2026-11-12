@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D5B20",
+ "name": "MultiplayerConfig::Cleanup",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D5B20",
+ "bytes_hex": "a1a4fdab005333dbc705a0fdab0040ed7e003bc37417381dadfdab00740f50e8f92f1f0083c404891da4fdab00881dadfdab00891da8fdab005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p201\part_00
+=== convert (20 addrs) ===
+[conv] 0x5569e0 sub_5569E0 -> _addr_55
+[conv] 0x5bf810 sub_5BF810 -> _addr_5B
+[conv] 0x5d4c90 sub_5D4C90 -> _addr_5D
+[conv] 0x5d4d10 sub_5D4D10 -> _addr_5D
+[conv] 0x5d5b20 MultiplayerConfig::Cleanup -> MultiplayerConfig
+[conv] 0x5ff210 sub_5FF210 -> _addr_5F
+[conv] 0x6291d0 sub_6291D0 -> _addr_62
+[conv] 0x6339e0 ToCoordPixel -> _addr_63
+[conv] 0x65b1a0 sub_65B1A0 -> _addr_65
+[conv] 0x68c370 sub_68C370 -> _addr_68
+[conv] 0x69cd00 _DynamicVectorClass_VWstring::Read -> _DynamicVectorClass_VWstring
+[conv] 0x6a60a0 Sidebar::ActivateTab -> Sidebar
+[conv] 0x6af160 sub_6AF160 -> _addr_6A
+[conv] 0x6b23f0 sub_6B23F0 -> _addr_6B
+[conv] 0x6b6c50 sub_6B6C50 -> _addr_6B
+[conv] 0x6bb2a0 sub_6BB2A0 -> _addr_6B
+[conv] 0x6dcfc0 sub_6DCFC0 -> _addr_6D
+[conv] 0x6e4da0 sub_6E4DA0 -> _addr_6E
+[conv] 0x71a410 sub_71A410 -> _addr_71
+[conv] 0x71e660 sub_71E660 -> _addr_71
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_55                 rc=0
+[era] _addr_5B                 rc=0
+[era] _addr_5D                 rc=0
+[era] MultiplayerConfig        rc=0
+[era] _addr_5F                 rc=0
+[era] _addr_62                 rc=0
+[era] _addr_63                 rc=0
+[era] _addr_65                 rc=0
+[era] _addr_68                 rc=0
+[era] _DynamicVectorClass_VWstring rc=0
+[era] Sidebar                  rc=0
+[era] _addr_6A                 rc=0
+[era] _addr_6B                 rc=0
+[era] _addr_6D                 rc=0
+[era] _addr_6E                 rc=0
+[era] _addr_71                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5569e0   MISMATCH         sub_5569E0
+[diff] 0x5bf810   MISMATCH         sub_5BF810
+[diff] 0x5d4c90   MISMATCH         sub_5D4C90
+[diff] 0x5d4d10   MISMATCH         sub_5D4D10
+[diff] 0x5d5b20   MISMATCH         MultiplayerConfig::Cleanup
+[diff] 0x5ff210   MISMATCH         sub_5FF210
+[diff] 0x6291d0   MISMATCH         sub_6291D0
+[diff] 0x6339e0   MISMATCH         ToCoordPixel
+[diff] 0x65b1a0   MISMATCH         sub_65B1A0
+[diff] 0x68c370   MISMATCH         sub_68C370
+[diff] 0x69cd00   MISMATCH         _DynamicVectorClass_VWstring::Read
+[diff] 0x6a60a0   MISMATCH         Sidebar::ActivateTab
+[diff] 0x6af160   MISMATCH         sub_6AF160
+[diff] 0x6b23f0   MISMATCH         sub_6B23F0
+[diff] 0x6b6c50   MISMATCH         sub_6B6C50
+[diff] 0x6bb2a0   MISMATCH         sub_6BB2A0
+[diff] 0x6dcfc0   MISMATCH         sub_6DCFC0
+[diff] 0x6e4da0   MISMATCH         sub_6E4DA0
+[diff] 0x71a410   MISMATCH         sub_71A410
+[diff] 0x71e660   MISMATCH         sub_71E660
+[ledger] 0x5569e0 sub_5569E0 -> NG (attempt 1)
+[ledger] 0x5bf810 sub_5BF810 -> NG (attempt 1)
+[ledger] 0x5d4c90 sub_5D4C90 -> NG (attempt 1)
+[ledger] 0x5d4d10 sub_5D4D10 -> NG (attempt 1)
+[ledger] 0x5d5b20 MultiplayerConfig::Cleanup -> NG (attempt 1)
+[ledger] 0x5ff210 sub_5FF210 -> NG (attempt 1)
+[ledger] 0x6291d0 sub_6291D0 -> NG (attempt 1)
+[ledger] 0x6339e0 ToCoordPixel -> NG (attempt 1)
+[ledger] 0x65b1a0 sub_65B1A0 -> NG (attempt 1)
+[ledger] 0x68c370 sub_68C370 -> NG (attempt 1)
+[ledger] 0x69cd00 _DynamicVectorClass_VWstring::Read -> NG (attempt 1)
+[ledger] 0x6a60a0 Sidebar::ActivateTab -> NG (attempt 1)
+[ledger] 0x6af160 sub_6AF160 -> NG (attempt 1)
+[ledger] 0x6b23f0 sub_6B23F0 -> NG (attempt 1)
+[ledger] 0x6b6c50 sub_6B6C50 -> NG (attempt 1)
+[ledger] 0x6bb2a0 sub_6BB2A0 -> NG (attempt 1)
+[ledger] 0x6dcfc0 sub_6DCFC0 -> NG (attempt 1)
+[ledger] 0x6e4da0 sub_6E4DA0 -> NG (attempt 1)
+[ledger] 0x71a410 sub_71A410 -> NG (attempt 1)
+[ledger] 0x71e660 sub_71E660 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 18,
+  "regalloc": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p201\batch_report.json
