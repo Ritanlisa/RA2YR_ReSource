@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_776750@@YIDPAXHHH@Z",
+ "sym_key": "Unnamed::sub_776750",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "83ec188b420c8b523c5332db4889542408c744240432000000740983f80175068ad8eb0232db8d442404506a00680d11000051e8000000008ac35b83c418c20800",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

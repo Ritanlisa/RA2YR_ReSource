@@ -1,0 +1,33 @@
+{
+ "symbol": "?__wincmdln@@YAHXZ",
+ "sym_key": "Unnamed::__wincmdln",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "51a10000000085c07505e800000000568b35000000008a063c22740e3c2076398a4601463c2077f8eb2f8a4601463c2288442404741d84c074198b44240425ff00000050e80000000083c40485c074da46ebd7803e227501468a0684c074043c2076f58bc65e59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BB8@@3IA",
+   "sym_key": "CRTGlobal_B78BB8"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?__initmbctable@@YAHXZ",
+   "sym_key": "__initmbctable"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA8@@3IA",
+   "sym_key": "CRTGlobal_B78BA8"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?_ismbblead@@YAHHZZ",
+   "sym_key": "_ismbblead"
+  }
+ ]
+}

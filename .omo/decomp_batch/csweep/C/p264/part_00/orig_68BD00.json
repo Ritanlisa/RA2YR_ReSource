@@ -1,0 +1,11 @@
+{
+ "addr": "0x68BD00",
+ "name": "Cell::GetWorldCoords",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x68BD00",
+ "bytes_hex": "8b44240883ec0c568d8c81320600005751b9e8f78700e8859aedff8bf08d442408508bce8b16ff52488b108b78048b48088b8640010000f6c4057406030dbc54b0008b4424188bf08916897e045f894e085e83c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p264\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f7030 sub_5F7030 -> _addr_5F
+[conv] 0x633620 sub_633620 -> _addr_63
+[conv] 0x6336c0 sub_6336C0 -> _addr_63
+[conv] 0x633760 sub_633760 -> _addr_63
+[conv] 0x633800 sub_633800 -> _addr_63
+[conv] 0x6338a0 sub_6338A0 -> _addr_63
+[conv] 0x633940 sub_633940 -> _addr_63
+[conv] 0x6d1aa0 sub_6D1AA0 -> _addr_6D
+[conv] 0x6d1b50 sub_6D1B50 -> _addr_6D
+[conv] 0x74c3c0 sub_74C3C0 -> _addr_74
+[conv] 0x7ba3c0 BufferPipe::processNetworkPacket -> BufferPipe
+[conv] 0x7ba4d0 BufferStraw::ReadFromBuffer -> BufferStraw
+[conv] 0x7dab54 _findenv -> _addr_7D
+[conv] 0x776750 sub_776750 -> _addr_77
+[conv] 0x4f6a20 HouseClass::SetCapacity -> HouseClass
+[conv] 0x4f6a80 VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x5d4e70 DialogQueue::PushEntry -> DialogQueue
+[conv] 0x661c10 RandomStraw::Release -> RandomStraw
+[conv] 0x7d5a68 __wincmdln -> _addr_7D
+[conv] 0x68bd00 Cell::GetWorldCoords -> Cell
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5F                 rc=0
+[era] _addr_63                 rc=0
+[era] _addr_6D                 rc=0
+[era] _addr_74                 rc=0
+[era] BufferPipe               rc=0
+[era] BufferStraw              rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_77                 rc=0
+[era] HouseClass               rc=0
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] DialogQueue              rc=0
+[era] RandomStraw              rc=0
+[era] Cell                     rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f7030   MISMATCH         sub_5F7030
+[diff] 0x633620   MISMATCH         sub_633620
+[diff] 0x6336c0   MISMATCH         sub_6336C0
+[diff] 0x633760   MISMATCH         sub_633760
+[diff] 0x633800   MISMATCH         sub_633800
+[diff] 0x6338a0   MISMATCH         sub_6338A0
+[diff] 0x633940   MISMATCH         sub_633940
+[diff] 0x6d1aa0   MISMATCH         sub_6D1AA0
+[diff] 0x6d1b50   MISMATCH         sub_6D1B50
+[diff] 0x74c3c0   MISMATCH         sub_74C3C0
+[diff] 0x7ba3c0   MISMATCH         BufferPipe::processNetworkPacket
+[diff] 0x7ba4d0   MISMATCH         BufferStraw::ReadFromBuffer
+[diff] 0x7d5a68   MISMATCH         __wincmdln
+[diff] 0x776750   MISMATCH         sub_776750
+[diff] 0x4f6a20   MISMATCH         HouseClass::SetCapacity
+[diff] 0x4f6a80   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0
+[diff] 0x5d4e70   MISMATCH         DialogQueue::PushEntry
+[diff] 0x661c10   MISMATCH         RandomStraw::Release
+[diff] 0x68bd00   MISMATCH         Cell::GetWorldCoords
+[ledger] 0x5f7030 sub_5F7030 -> NG (attempt 1)
+[ledger] 0x633620 sub_633620 -> NG (attempt 1)
+[ledger] 0x6336c0 sub_6336C0 -> NG (attempt 1)
+[ledger] 0x633760 sub_633760 -> NG (attempt 1)
+[ledger] 0x633800 sub_633800 -> NG (attempt 1)
+[ledger] 0x6338a0 sub_6338A0 -> NG (attempt 1)
+[ledger] 0x633940 sub_633940 -> NG (attempt 1)
+[ledger] 0x6d1aa0 sub_6D1AA0 -> NG (attempt 1)
+[ledger] 0x6d1b50 sub_6D1B50 -> NG (attempt 1)
+[ledger] 0x74c3c0 sub_74C3C0 -> NG (attempt 1)
+[ledger] 0x7ba3c0 BufferPipe::processNetworkPacket -> NG (attempt 1)
+[ledger] 0x7ba4d0 BufferStraw::ReadFromBuffer -> NG (attempt 1)
+[ledger] 0x7dab54 _findenv -> COMPILE_FAIL (attempt 1)
+[ledger] 0x776750 sub_776750 -> NG (attempt 1)
+[ledger] 0x4f6a20 HouseClass::SetCapacity -> NG (attempt 1)
+[ledger] 0x4f6a80 VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0 -> NG (attempt 1)
+[ledger] 0x5d4e70 DialogQueue::PushEntry -> NG (attempt 1)
+[ledger] 0x661c10 RandomStraw::Release -> NG (attempt 1)
+[ledger] 0x7d5a68 __wincmdln -> NG (attempt 1)
+[ledger] 0x68bd00 Cell::GetWorldCoords -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "branch_polarity": 11,
+  "codegen_shape": 3,
+  "frame_sched": 1,
+  "ret_norm": 1,
+  "regalloc": 1,
+  "width_mismatch": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p264\batch_report.json

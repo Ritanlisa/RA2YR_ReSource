@@ -1,0 +1,11 @@
+{
+ "addr": "0x661C10",
+ "name": "RandomStraw::Release",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x661C10",
+ "bytes_hex": "538b5c240c56578b7c24108bf185ff743883fb017c3333c085db7e36895c24108b46108d4cc61440894610e870acffff88078b561083e21f474b89561075e18b4424105f5e5bc2080053578bcee87e7c06005f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

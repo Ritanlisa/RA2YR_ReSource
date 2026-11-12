@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D5A68",
+ "name": "__wincmdln",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D5A68",
+ "bytes_hex": "833db88bb700007505e8f4ddffff568b35a88bb7008a063c2275258a4601463c22741584c074110fb6c050e88d53000085c05974e646ebe3803e22750d46eb0a3c20760646803e2077fa8a0684c074043c2076e98bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

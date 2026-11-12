@@ -1,0 +1,8 @@
+{
+ "symbol": "?ReadFromBuffer@BufferStraw@@QAEHPAXH@Z",
+ "sym_key": "BufferStraw::ReadFromBuffer",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "8bd153578b5a0c85db74488b7c240c85ff74408b44241085c07e388b4a105685c974092b4a183bc17c028bc185c07e158b72188bc803f38bd9c1e902f3a58bcb83e103f3a48b4a185e03c85f894a185bc208005f33c05bc20800",
+ "relocs": []
+}

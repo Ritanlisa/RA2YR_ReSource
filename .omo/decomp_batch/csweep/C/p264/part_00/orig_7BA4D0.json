@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BA4D0",
+ "name": "DisplayClass::ReadFromBuffer",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BA4D0",
+ "bytes_hex": "53568bf133c08b560c85d274468b5c240c85db743e8b4c241085c97e368b46105785c08bf9740d8b7e182bc78bf93bc87c028bf885ff7e108b46185703c25053e87bfb000083c40c8b461803c78946188bc75f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

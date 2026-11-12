@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@RandomStraw@@QAEHHH@Z",
+ "sym_key": "RandomStraw::Release",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "538b5c240c56578b7c24108bf185ff743283fb017c2d8b46108d4801894e108d4cc614e80000000088078b4e10474b83e11f85db894e1075dd8b4424145f5e5bc2080053578bcee8000000005f5e5bc20800",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?AdvanceState@RandomStraw@@QAEHXZ",
+   "sym_key": "RandomStraw::AdvanceState"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?Invoke@Delegate@@QAEHHH@Z",
+   "sym_key": "Delegate::Invoke"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetCapacity@HouseClass@@QAGHH@Z",
+ "sym_key": "HouseClass::SetCapacity",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "a0a4000000535633db33f684c07f075e33c05bc208008b44240c558b6c2414578d78dc0fbe0d980000008b04b139b81c02000075128b1050ff928400000039a8bc0300007501430fbe05a4000000463bf07cd05f5d8bc35e5bc20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}
