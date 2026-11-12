@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B2050",
+ "name": "Winsock::VerifyCRC",
+ "size": 144,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B2050",
+ "bytes_hex": "538b5c24088b43103d800200007d7b9983e2035603c257c1f80233ff8d732085c0897c24107e1f8b168d4c241083c604e8fbbde9ff8b4310479983e20303c2c1f8023bf87ce18b431083e003741cc1e003b92000000083caff2bc88b06d3ea8d4c241023d0e8c6bde9ff8b4c24108b431c5f3bc85e7506b0015bc204006840e08400e80948c5ff83c40432c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

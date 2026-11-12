@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_457A10@TechnoClass@@QAEDH@Z",
+ "sym_key": "TechnoClass::sub_457A10",
+ "size": 145,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1578d4c240c8b065156ff90b80100008bb6200500008b186a00568b16ff92900000008b74240c8bf8668b07663dff7f750666394702744303c38bcb33c68d54240c25ff0000005233f0668b4702c1f91003c1b90000000033c625ff00000033f089742410e800000000f7804001000000004000740e83c704ebae5f5eb0015b59c204005f5e32c05b59c20400",
+ "relocs": [
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

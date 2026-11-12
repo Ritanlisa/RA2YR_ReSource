@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D2DB0",
+ "name": "FoggedObject::DrawVector_Constructor",
+ "size": 144,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D2DB0",
+ "bytes_hex": "5356578b7c24108bf133db3bfb895e04897e08c6460c01885e0dc706c08b7e0074668b5424143bd374278d4fff3bcb7c158d4208418958f88958fc881889580483c0104975ef8956048bc65f5e5bc208008bc7c1e00450e80b602f0083c4043bc3741e8d57ff3bd37c158d4808428959f88959fc881989590483c1104a75ef8bd8895e04c6460d018bc65f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

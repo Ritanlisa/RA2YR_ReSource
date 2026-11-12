@@ -1,0 +1,11 @@
+{
+ "addr": "0x629210",
+ "name": "ParasiteClass::Constructor",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x629210",
+ "bytes_hex": "568bf1e8586fdeffa184eda80033d289462c8956348b0d84eda800895640894e38c70690f87e00c7460474f87e00c746086cf87e00c7460c64f87e00a11849ac0039052049ac007c2c38151d49ac0075043bc275388b0d2449ac003bca7e2e03c8528b151049ac0051b91049ac00ff520884c074188b0d2049ac008bc141890d2049ac008b0d1449ac008934818bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

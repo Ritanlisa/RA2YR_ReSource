@@ -1,0 +1,15 @@
+{
+ "symbol": "?finalizeSession@Network@@QAEHXZ",
+ "sym_key": "Network::finalizeSession",
+ "size": 136,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000033c0b201b90a00000089863cf30300898640f30300888645f30300898638f30300898648f30300898654f50300898658f5030088865df50300898650f50300898660f50300668986fcf20300898630f30300898668f503008906889644f30300898e4cf3030088965cf50300898e64f50300c78634f30300ffffffff8bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?bindSocket@IPXInterfaceClass@@QAEPADXZ",
+   "sym_key": "IPXInterfaceClass::bindSocket"
+  }
+ ]
+}

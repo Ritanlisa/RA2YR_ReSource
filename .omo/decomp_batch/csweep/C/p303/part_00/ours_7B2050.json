@@ -1,0 +1,27 @@
+{
+ "symbol": "?VerifyCRC@WinsockInterfaceClass@@QAGDH@Z",
+ "sym_key": "WinsockInterfaceClass::VerifyCRC",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408895c24088b43103d800200007d739983e2035603c257c1f80233ff8d732085c0897c24107e198b168d4c241083c604e8000000008b432847c1e8023bf872e78b432883e00374228d0cc5000000008b068bd1b9200000002bca83caffd3ea8d4c241023d0e8000000008b4c24108b434c5f3bc85e7506b0015bc20800e80000000032c05bc20800",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?ComputeHash@@YIHPAXH@Z",
+   "sym_key": "ComputeHash"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?ComputeHash@@YIHPAXH@Z",
+   "sym_key": "ComputeHash"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

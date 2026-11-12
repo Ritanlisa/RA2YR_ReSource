@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p303\part_00
+=== convert (20 addrs) ===
+[conv] 0x62fe90 ParticleSystemClass::UpdateSystem -> ParticleSystemClass
+[conv] 0x48c320 ModemConnectionClass::processTileUpdate -> ModemConnectionClass
+[conv] 0x4d2db0 FoggedObject::DrawVector_Constructor -> FoggedObject
+[conv] 0x589100 Subzone::Constructor -> Subzone
+[conv] 0x691e30 ScriptTypeClass::GetAction -> ScriptTypeClass
+[conv] 0x6c8870 ObjectClass::Audio_Read_6C8870 -> ObjectClass
+[conv] 0x6f6030 globalHelper_0F6030 -> _addr_6F
+[conv] 0x58a470 _VectorClass_USubzoneTrackingStruct::QueryInterface -> _VectorClass_USubzoneTrackingStruct
+[conv] 0x7b2050 WinsockInterfaceClass::VerifyCRC -> WinsockInterfaceClass
+[conv] 0x5b1d90 ObjectClass::sub_5B1D90 -> ObjectClass
+[conv] 0x4af2a0 BlitterDrawSHP -> _addr_4A
+[conv] 0x457a10 TechnoClass::sub_457A10 -> TechnoClass
+[conv] 0x7b2db0 Network::finalizeSession -> Network
+[conv] 0x7c9ff0 __makepath -> _addr_7C
+[conv] 0x42ea30 ObjectClass::sub_42EA30 -> ObjectClass
+[conv] 0x52a940 INIClass::SaveTimeField -> INIClass
+[conv] 0x635df0 ObjectClass::sub_635DF0 -> ObjectClass
+[conv] 0x6023f0 sub_6023F0 -> _addr_60
+[conv] 0x629210 ParasiteClass::Constructor -> ParasiteClass
+[conv] 0x779690 ReferenceCounted::LoadAccountInfoWOL_Load -> ReferenceCounted
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleSystemClass      rc=2
+[era] ModemConnectionClass     rc=2
+[era] FoggedObject             rc=0
+[era] Subzone                  rc=0
+[era] ScriptTypeClass          rc=2
+[era] ObjectClass              rc=2
+[era] _addr_6F                 rc=2
+[era] _VectorClass_USubzoneTrackingStruct rc=0
+[era] WinsockInterfaceClass    rc=0
+[era] _addr_4A                 rc=0
+[era] TechnoClass              rc=0
+[era] Network                  rc=0
+[era] _addr_7C                 rc=2
+[era] INIClass                 rc=2
+[era] _addr_60                 rc=2
+[era] ParasiteClass            rc=0
+[era] ReferenceCounted         rc=2
+=== diffasm byte-compare ===
+[diff] 0x4d2db0   MISMATCH         FoggedObject::DrawVector_Constructor
+[diff] 0x589100   MISMATCH         Subzone::Constructor
+[diff] 0x6c8870   MISMATCH         ObjectClass::Audio_Read_6C8870
+[diff] 0x42ea30   MISMATCH         ObjectClass::sub_42EA30
+[diff] 0x635df0   MISMATCH         ObjectClass::sub_635DF0
+[diff] 0x58a470   MISMATCH         _VectorClass_USubzoneTrackingStruct::QueryInterface
+[diff] 0x7b2050   MISMATCH         WinsockInterfaceClass::VerifyCRC
+[diff] 0x4af2a0   MISMATCH         BlitterDrawSHP
+[diff] 0x457a10   MISMATCH         TechnoClass::sub_457A10
+[diff] 0x7b2db0   MISMATCH         Network::finalizeSession
+[diff] 0x629210   MISMATCH         ParasiteClass::Constructor
+[ledger] 0x62fe90 ParticleSystemClass::UpdateSystem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48c320 ModemConnectionClass::processTileUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d2db0 FoggedObject::DrawVector_Constructor -> NG (attempt 1)
+[ledger] 0x589100 Subzone::Constructor -> NG (attempt 1)
+[ledger] 0x691e30 ScriptTypeClass::GetAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c8870 ObjectClass::Audio_Read_6C8870 -> NG (attempt 1)
+[ledger] 0x6f6030 globalHelper_0F6030 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58a470 _VectorClass_USubzoneTrackingStruct::QueryInterface -> NG (attempt 1)
+[ledger] 0x7b2050 WinsockInterfaceClass::VerifyCRC -> NG (attempt 1)
+[ledger] 0x5b1d90 ObjectClass::sub_5B1D90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4af2a0 BlitterDrawSHP -> NG (attempt 1)
+[ledger] 0x457a10 TechnoClass::sub_457A10 -> NG (attempt 1)
+[ledger] 0x7b2db0 Network::finalizeSession -> NG (attempt 1)
+[ledger] 0x7c9ff0 __makepath -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42ea30 ObjectClass::sub_42EA30 -> NG (attempt 1)
+[ledger] 0x52a940 INIClass::SaveTimeField -> COMPILE_FAIL (attempt 1)
+[ledger] 0x635df0 ObjectClass::sub_635DF0 -> NG (attempt 1)
+[ledger] 0x6023f0 sub_6023F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x629210 ParasiteClass::Constructor -> NG (attempt 1)
+[ledger] 0x779690 ReferenceCounted::LoadAccountInfoWOL_Load -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 11
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 5,
+  "eval_order": 1,
+  "cc_mismatch": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p303\batch_report.json

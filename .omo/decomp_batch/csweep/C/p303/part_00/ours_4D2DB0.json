@@ -1,0 +1,15 @@
+{
+ "symbol": "?DrawVector_Constructor@FoggedObject@@QAEPAV1@HH@Z",
+ "sym_key": "FoggedObject::DrawVector_Constructor",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bf133db3bfb895e04897e08c6460c01885e0d891e75085f5e33c05bc208008b4c24143bcb753e8bc7c1e00450e80000000083c4043bc3741d8d4fff85c97c148d48088959f88959fc881989590483c1104f75ef8bd88b06895e04c6460d015f5e5bc208008d57ff85d27c148d41088958f88958fc881889580483c0104f75ef8b06894e045f5e5bc20800",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

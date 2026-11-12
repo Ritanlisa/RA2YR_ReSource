@@ -1,0 +1,21 @@
+{
+ "symbol": "?BlitterDrawSHP@@YIDPAHH0000H0HHHHH@Z",
+ "sym_key": "Unnamed::BlitterDrawSHP",
+ "size": 149,
+ "link_base": 0,
+ "bytes_hex": "8b44241483ec2089827c010000538b5c243c555685db578be97511f7d81bc08bca83e01050e8000000008bd88b44243c8b7424388b7c24348b48048b108b4608894c24148b4e0c894424188d442420895424108b175057894c2424ff52788b4c245c8b542458518b4c2458528b542458518b4c245852515356508d54243057528b5424688bcde8000000005f5e5d5b83c420c22c00",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?GetSHPFrame@BuildingClass@@QAEHH@Z",
+   "sym_key": "BuildingClass::GetSHPFrame"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?BlitterCopySHP@@YIDPAX000H00HHHHH@Z",
+   "sym_key": "BlitterCopySHP"
+  }
+ ]
+}
