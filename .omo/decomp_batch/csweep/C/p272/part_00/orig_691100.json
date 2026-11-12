@@ -1,0 +1,11 @@
+{
+ "addr": "0x691100",
+ "name": "ScoreFontClass::Constructor_ScoreFontClass",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x691100",
+ "bytes_hex": "53568bf133db8b460cc706f00e7f003bc37415807e1001750f50e81e7a130083c404895e0c885e10a18c55b00048a38c55b0007514b89455b0008958fc881883c0083dac55b0007cf1f644240c01740956e8e779130083c4048bc65e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

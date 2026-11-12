@@ -1,0 +1,11 @@
+{
+ "addr": "0x558790",
+ "name": "LoadOptions::Cleanup",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x558790",
+ "bytes_hex": "53568bf15733db33ffc706e4d27e008b46303bc37e178b46248b0cb851e88b0327008b463083c404473bf87ce98b562083c6208bceff520c8b4604c7062cd37e003bc37411385e0d740c50e85d03270083c404895e04885e0d895e085f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

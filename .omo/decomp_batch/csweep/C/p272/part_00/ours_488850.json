@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetIndex@ColorListClass@@QAEHHH@Z",
+ "sym_key": "ColorListClass::GetIndex",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "568bf18b967c0100008b86840100003bc2722f8a868101000084c0750485d2753d8b8e8801000085c97e338d86740100005703ca6a008b385150ff570884c05f741c8b86840100008b96780100008d4801898e840100008b4c240c890c828b5424088bce52e8000000005ec20800",
+ "relocs": [
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?AddItem@ListClass@@QAEHH@Z",
+   "sym_key": "ListClass::AddItem"
+  }
+ ]
+}

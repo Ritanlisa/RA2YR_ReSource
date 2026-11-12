@@ -1,0 +1,11 @@
+{
+ "addr": "0x45F160",
+ "name": "BuildingClass::GetPlacementCoords",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45F160",
+ "bytes_hex": "8a81681700005684c074508b74240885f674488b81f414000085c0752c8b01ff909c00000085c0890674300fbf4006992bc2d1f883f8037e228b4c240cb0015ec70103000000c208008b54240c8906b0015ec70200000000c2080032c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

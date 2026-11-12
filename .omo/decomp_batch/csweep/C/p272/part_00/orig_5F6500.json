@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6500",
+ "name": "BuildingClass::SquaredDistanceTo",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6500",
+ "bytes_hex": "83ec0c538b5c241485db750933c05b83c40cc204008b01568d5424085752ff50488b308b138bcb8b78048b4008894424148d44240c50ff52488bd08b022bf08b4a042bf98bce8bc70fafce0fafc08b52085f5e8954240c03c15b83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

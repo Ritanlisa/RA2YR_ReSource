@@ -1,0 +1,11 @@
+{
+ "addr": "0x58AF80",
+ "name": "RadarClass::drawRadarEvents",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58AF80",
+ "bytes_hex": "568bf18b4e088b46103bc17c288a460d84c0750485c975178b461485c07e108b1603c16a00508bceff520884c0750632c05ec204008b46108d48018d14408b4604894e105e8d0c908b5424048b0289018b4204894104b0018b5208895108c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

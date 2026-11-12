@@ -1,0 +1,11 @@
+{
+ "addr": "0x68C860",
+ "name": "LoadTheaterClassMIX_Load",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x68C860",
+ "bytes_hex": "568bf18b8e0c03000085c974108b016a01ff10c7860c030000000000008b4c24188b5424148b44241068ace18300518b8e10030000528b150873880050518b4c24208d4604528b54242050518d8e08030000e8f9faffff89860c0300005ec21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CB7B0",
+ "name": "SuperClass::Lose",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CB7B0",
+ "bytes_hex": "518a516d32c03ad0745388416f88416d8b15503da8008d442400894c240050b9503da800ff521083f8ff742d8b0d603da8003bc17d23493bc1890d603da8007d188b0d543da800408b1481895481fc8b0d603da8003bc17ce8b00159c332c059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

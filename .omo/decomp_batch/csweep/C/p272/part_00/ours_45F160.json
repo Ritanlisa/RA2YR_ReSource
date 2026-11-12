@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPlacementCoords@BuildingClass@@QAEDPAH0@Z",
+ "sym_key": "BuildingClass::GetPlacementCoords",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "8a81681700005684c074518b74240885f674498b81f414000085c0741289068b44240c5ec70000000000b001c208008b1151ff929c00000085c08906741e0fbf4006992bc2d1f883f8037e108b44240c5ec70003000000b001c2080032c05ec20800",
+ "relocs": []
+}

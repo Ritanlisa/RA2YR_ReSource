@@ -1,0 +1,11 @@
+{
+ "addr": "0x4079C0",
+ "name": "AudioStream::ReadStreamAndSyncPosition",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4079C0",
+ "bytes_hex": "56578bf98bb7c00000008b96900000008b4e38e8e81700008b4e38e8301900008b4e388b86a00000008b49083bc17e08898e90000000eb068986900000008b86900000008987740100008987780100008b56388b42048987700100005f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

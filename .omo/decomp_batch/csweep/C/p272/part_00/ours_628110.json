@@ -1,0 +1,21 @@
+{
+ "symbol": "?openFile@FileSystem@@QAEPBDPBD@Z",
+ "sym_key": "FileSystem::openFile",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "8b442404535556578bf150ff560499f77e088d0c528b168b6cca108d1cca4d784a8b73048bfd8b442414c1e70603fd50c1e70203f78bcee80000000084c0751e4d78288b73048b4c241481ef040100005103f78bcee80000000084c074e28d86000100005f5e5d5bc204005f5e5d33c05bc20400",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Equals@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Equals@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals"
+  }
+ ]
+}

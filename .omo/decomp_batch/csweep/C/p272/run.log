@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p272\part_00
+=== convert (20 addrs) ===
+[conv] 0x664750 ObjectClass::sub_664750 -> ObjectClass
+[conv] 0x691040 ScoreFontClass::QueryInterface -> ScoreFontClass
+[conv] 0x6910a0 ScoreFullFontClass::Constructor_ScoreFontClass -> ScoreFullFontClass
+[conv] 0x691100 ScoreBigFontClass::Constructor_ScoreFontClass -> ScoreBigFontClass
+[conv] 0x488850 ColorListClass::GetIndex -> ColorListClass
+[conv] 0x628110 FileSystem::openFile -> FileSystem
+[conv] 0x5f6500 BuildingClass::SquaredDistanceTo -> BuildingClass
+[conv] 0x7db4ee __handle_qnan2 -> _addr_7D
+[conv] 0x558790 LoadOptions::Cleanup -> LoadOptions
+[conv] 0x45f160 BuildingClass::GetPlacementCoords -> BuildingClass
+[conv] 0x4a04b0 ConnectionPointClass::QueryInterface -> ConnectionPointClass
+[conv] 0x55b880 LogicClass::RemoveItemByValue -> LogicClass
+[conv] 0x58af80 RadarClass::drawRadarEvents -> RadarClass
+[conv] 0x6cb7b0 SuperClass::Lose -> SuperClass
+[conv] 0x4079c0 AudioStream::ReadStreamAndSyncPosition -> AudioStream
+[conv] 0x5247d0 InfantryTypeClass::ClampToGroundHeight -> InfantryTypeClass
+[conv] 0x6f0fc0 TeamTypeClass::FindByName -> TeamTypeClass
+[conv] 0x71e0d0 TerrainTypeClass::GetWidth -> TerrainTypeClass
+[conv] 0x747eb0 UnitTypeClass::ClampToGroundHeight -> UnitTypeClass
+[conv] 0x68c860 ObjectClass::LoadTheaterClassMIX_Load -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] ScoreFontClass           rc=0
+[era] ScoreFullFontClass       rc=0
+[era] ScoreBigFontClass        rc=0
+[era] ColorListClass           rc=0
+[era] FileSystem               rc=0
+[era] BuildingClass            rc=0
+[era] _addr_7D                 rc=2
+[era] LoadOptions              rc=0
+[era] ConnectionPointClass     rc=2
+[era] LogicClass               rc=2
+[era] RadarClass               rc=0
+[era] SuperClass               rc=0
+[era] AudioStream              rc=0
+[era] InfantryTypeClass        rc=0
+[era] TeamTypeClass            rc=0
+[era] TerrainTypeClass         rc=0
+[era] UnitTypeClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x664750   MISMATCH         ObjectClass::sub_664750
+[diff] 0x68c860   MISMATCH         ObjectClass::LoadTheaterClassMIX_Load
+[diff] 0x691040   MISMATCH         ScoreFontClass::QueryInterface
+[diff] 0x6910a0   MISMATCH         ScoreFullFontClass::Constructor_ScoreFontClass
+[diff] 0x691100   MISMATCH         ScoreBigFontClass::Constructor_ScoreFontClass
+[diff] 0x488850   MISMATCH         ColorListClass::GetIndex
+[diff] 0x628110   MISMATCH         FileSystem::openFile
+[diff] 0x5f6500   MISMATCH         BuildingClass::SquaredDistanceTo
+[diff] 0x45f160   MISMATCH         BuildingClass::GetPlacementCoords
+[diff] 0x558790   MISMATCH         LoadOptions::Cleanup
+[diff] 0x58af80   MISMATCH         RadarClass::drawRadarEvents
+[diff] 0x6cb7b0   MISMATCH         SuperClass::Lose
+[diff] 0x4079c0   MISMATCH         AudioStream::ReadStreamAndSyncPosition
+[diff] 0x5247d0   MISMATCH         InfantryTypeClass::ClampToGroundHeight
+[diff] 0x6f0fc0   MISMATCH         TeamTypeClass::FindByName
+[diff] 0x71e0d0   MISMATCH         TerrainTypeClass::GetWidth
+[diff] 0x747eb0   MISMATCH         UnitTypeClass::ClampToGroundHeight
+[ledger] 0x664750 ObjectClass::sub_664750 -> NG (attempt 1)
+[ledger] 0x691040 ScoreFontClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x6910a0 ScoreFullFontClass::Constructor_ScoreFontClass -> NG (attempt 1)
+[ledger] 0x691100 ScoreBigFontClass::Constructor_ScoreFontClass -> NG (attempt 1)
+[ledger] 0x488850 ColorListClass::GetIndex -> NG (attempt 1)
+[ledger] 0x628110 FileSystem::openFile -> NG (attempt 1)
+[ledger] 0x5f6500 BuildingClass::SquaredDistanceTo -> NG (attempt 1)
+[ledger] 0x7db4ee __handle_qnan2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x558790 LoadOptions::Cleanup -> NG (attempt 1)
+[ledger] 0x45f160 BuildingClass::GetPlacementCoords -> NG (attempt 1)
+[ledger] 0x4a04b0 ConnectionPointClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55b880 LogicClass::RemoveItemByValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58af80 RadarClass::drawRadarEvents -> NG (attempt 1)
+[ledger] 0x6cb7b0 SuperClass::Lose -> NG (attempt 1)
+[ledger] 0x4079c0 AudioStream::ReadStreamAndSyncPosition -> NG (attempt 1)
+[ledger] 0x5247d0 InfantryTypeClass::ClampToGroundHeight -> NG (attempt 1)
+[ledger] 0x6f0fc0 TeamTypeClass::FindByName -> NG (attempt 1)
+[ledger] 0x71e0d0 TerrainTypeClass::GetWidth -> NG (attempt 1)
+[ledger] 0x747eb0 UnitTypeClass::ClampToGroundHeight -> NG (attempt 1)
+[ledger] 0x68c860 ObjectClass::LoadTheaterClassMIX_Load -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 7,
+  "branch_polarity": 1,
+  "branch_order": 3,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p272\batch_report.json

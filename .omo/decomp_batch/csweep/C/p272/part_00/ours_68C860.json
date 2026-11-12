@@ -1,0 +1,27 @@
+{
+ "symbol": "?LoadTheaterClassMIX_Load@ObjectClass@@QAEHPBXHHHH@Z",
+ "sym_key": "ObjectClass::LoadTheaterClassMIX_Load",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "568bf18b860c03000085c074118b086a0150ff11c7860c030000000000008b5424188b4424148b4c24106800000000528b961003000050a10000000051528b5424208d4e045051528b5424288d8e08030000e80000000089860c0300005ec21400",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83E1AC@@3EA",
+   "sym_key": "DataGlobal_83E1AC"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?FontClass__CreateGlyphColor@@YIHPAXPBXH000HHHH@Z",
+   "sym_key": "FontClass__CreateGlyphColor"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_664750@ObjectClass@@QAEDD@Z",
+ "sym_key": "ObjectClass::sub_664750",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "81ec540100008bd1b95400000033c0578d7c2404f3ab66ab8a42185f84c074368a8424580100008bcac64424000688442401e8000000006a018d4c2404685201000051b900000000e80000000081c454010000c2040032c081c454010000c20400",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?SendPacket@Network@@QAEHHHE@Z",
+   "sym_key": "Network::SendPacket"
+  }
+ ]
+}

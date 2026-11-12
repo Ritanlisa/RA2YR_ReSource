@@ -1,0 +1,45 @@
+{
+ "symbol": "?Constructor_ScoreFontClass@ScoreFullFontClass@@QAEPAID@Z",
+ "sym_key": "ScoreFullFontClass::Constructor_ScoreFontClass",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8b460c891e3bc37415807e1001750f50e80000000083c404895e0c885e10a10000000048a300000000751933c9b8000000008a0d000000008958fc881883c0083bc17cf4f644240c01740956e80000000083c4048b065e5bc20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0558C@@3IA",
+   "sym_key": "DataGlobal_B0558C"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0558C@@3IA",
+   "sym_key": "DataGlobal_B0558C"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B05594@@3EA",
+   "sym_key": "DataGlobal_B05594"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?byte_B055AC@@3EA",
+   "sym_key": "byte_B055AC"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

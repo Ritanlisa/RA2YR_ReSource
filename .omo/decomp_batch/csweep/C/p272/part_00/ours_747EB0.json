@@ -1,0 +1,21 @@
+{
+ "symbol": "?ClampToGroundHeight@UnitTypeClass@@QAGPAIPAH@Z",
+ "sym_key": "UnitTypeClass::ClampToGroundHeight",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "8b442408568d54240c578b088b78048b700852894c2414e8000000003bf07d0c8d44241050e8000000008bf08b44240c8b4c24108978048970085f89085ec20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x628110",
+ "name": "FileSystem::openFile",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x628110",
+ "bytes_hex": "5355568bf18b4c241057ff560499f77e088b0e8d04528b7cc1108d2cc14f782a8bdfc1e30603dfc1e3028b75048b54241403f3528bcee895cbecff84c075144f81eb0401000085ff7de05f5e5d33c05bc204008d86000100005f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x488850",
+ "name": "ColorListClass::GetIndex",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x488850",
+ "bytes_hex": "56578bf98b8f7c0100008b87840100008db7740100003bc17c228a460d84c0750485c9752a8b461485c07e238b1603c16a00508bceff520884c074138b46108b56048d4801894e108b4c2410890c828b54240c8bcf52e8f5ed0c005f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

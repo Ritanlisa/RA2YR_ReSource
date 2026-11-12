@@ -1,0 +1,8 @@
+{
+ "symbol": "?SquaredDistanceTo@BuildingClass@@QAEHPAH@Z",
+ "sym_key": "BuildingClass::SquaredDistanceTo",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568b74241485f6750933c05e83c40cc204008b01538d542408575251ff50488b388b58048b0e8b40088d54240c894424145256ff51488bd08bcb8bc75f8b5a048b322bcb2bc68bd10fafc00fafd15b03c25e83c40cc20400",
+ "relocs": []
+}

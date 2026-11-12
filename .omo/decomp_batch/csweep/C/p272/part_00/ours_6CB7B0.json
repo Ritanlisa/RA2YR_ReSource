@@ -1,0 +1,45 @@
+{
+ "symbol": "?Lose@SuperClass@@QAEDXZ",
+ "sym_key": "SuperClass::Lose",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "518a416d84c0750432c059c38d442400c6416d00894c24008b0d00000000506800000000ff511083f8ff74388a0d1000000033d28ad13bc27d2afec933d28ad1880d100000003bc27d1a8b0d04000000408b1481895481fc33c98a0d100000003bc17ce6b00159c3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  }
+ ]
+}

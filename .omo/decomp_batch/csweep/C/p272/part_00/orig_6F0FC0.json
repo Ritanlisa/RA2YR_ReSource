@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F0FC0",
+ "name": "TeamTypeClass::FindByName",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F0FC0",
+ "bytes_hex": "56578bf985ff7448a1b0eca80033f685c07e3da1a4eca8008b0cb083c1245157e83b7d0d0083c40885c074298b15a4eca8008b04b283c0645057e8217d0d0083c40885c0740fa1b0eca800463bf07cc35f33c05ec38b0da4eca8005f8b04b15ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

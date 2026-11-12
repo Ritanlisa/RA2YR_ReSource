@@ -1,0 +1,21 @@
+{
+ "symbol": "?Cleanup@LoadOptions@@QAEHXZ",
+ "sym_key": "LoadOptions::Cleanup",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4630c7060000000085c0764b8b4624578b0851e8000000008b562083c62083c40456ff520c8b7e04c7060000000085ff74178a460d84c0741057e80000000083c404c74604000000008bc7c6460d00c74608000000005f5ec3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
