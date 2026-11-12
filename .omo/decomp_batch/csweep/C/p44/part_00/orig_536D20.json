@@ -1,0 +1,11 @@
+{
+ "addr": "0x536D20",
+ "name": "CreateTeamCommand::performAction_91",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x536D20",
+ "bytes_hex": "68301b000068b85f820033d2b9c0748200e82ae11f00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

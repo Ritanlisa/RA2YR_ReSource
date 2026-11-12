@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p44\part_00
+=== convert (20 addrs) ===
+[conv] 0x536a20 PrevObjectCommandClass::performAction_66 -> PrevObjectCommandClass
+[conv] 0x536a40 PrevObjectCommandClass::performAction_67 -> PrevObjectCommandClass
+[conv] 0x536a60 PrevObjectCommandClass::performAction_68 -> PrevObjectCommandClass
+[conv] 0x536b40 StopCommandClass::performAction_72 -> StopCommandClass
+[conv] 0x536b60 StopCommandClass::performAction_73 -> StopCommandClass
+[conv] 0x536ba0 AllToCheerCommandClass::performAction_76 -> AllToCheerCommandClass
+[conv] 0x536bc0 AllToCheerCommandClass::performAction_77 -> AllToCheerCommandClass
+[conv] 0x536be0 AllToCheerCommandClass::performAction_78 -> AllToCheerCommandClass
+[conv] 0x536c20 DeployCommandClass::performAction_81 -> DeployCommandClass
+[conv] 0x536c40 DeployCommandClass::performAction_82 -> DeployCommandClass
+[conv] 0x536c60 DeployCommandClass::performAction_83 -> DeployCommandClass
+[conv] 0x536ca0 GuardCommandClass::performAction_86 -> GuardCommandClass
+[conv] 0x536cc0 GuardCommandClass::performAction_87 -> GuardCommandClass
+[conv] 0x536d20 ScatterCommandClass::performAction_91 -> ScatterCommandClass
+[conv] 0x536d40 ScatterCommandClass::performAction_92 -> ScatterCommandClass
+[conv] 0x536d60 ScatterCommandClass::performAction_93 -> ScatterCommandClass
+[conv] 0x536da0 CenterViewCommandClass::performAction_96 -> CenterViewCommandClass
+[conv] 0x536dc0 CenterViewCommandClass::performAction_97 -> CenterViewCommandClass
+[conv] 0x536de0 CenterViewCommandClass::performAction_98 -> CenterViewCommandClass
+[conv] 0x536e40 CenterBaseCommandClass::performAction_101 -> CenterBaseCommandClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] PrevObjectCommandClass   rc=0
+[era] StopCommandClass         rc=0
+[era] AllToCheerCommandClass   rc=0
+[era] DeployCommandClass       rc=0
+[era] GuardCommandClass        rc=0
+[era] ScatterCommandClass      rc=0
+[era] CenterViewCommandClass   rc=0
+[era] CenterBaseCommandClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x536a20   MISMATCH         PrevObjectCommandClass::performAction_66
+[diff] 0x536a40   MISMATCH         PrevObjectCommandClass::performAction_67
+[diff] 0x536a60   MISMATCH         PrevObjectCommandClass::performAction_68
+[diff] 0x536b40   MISMATCH         StopCommandClass::performAction_72
+[diff] 0x536b60   MISMATCH         StopCommandClass::performAction_73
+[diff] 0x536ba0   MISMATCH         AllToCheerCommandClass::performAction_76
+[diff] 0x536bc0   MISMATCH         AllToCheerCommandClass::performAction_77
+[diff] 0x536be0   MISMATCH         AllToCheerCommandClass::performAction_78
+[diff] 0x536c20   MISMATCH         DeployCommandClass::performAction_81
+[diff] 0x536c40   MISMATCH         DeployCommandClass::performAction_82
+[diff] 0x536c60   MISMATCH         DeployCommandClass::performAction_83
+[diff] 0x536ca0   MISMATCH         GuardCommandClass::performAction_86
+[diff] 0x536cc0   MISMATCH         GuardCommandClass::performAction_87
+[diff] 0x536d20   MISMATCH         ScatterCommandClass::performAction_91
+[diff] 0x536d40   MISMATCH         ScatterCommandClass::performAction_92
+[diff] 0x536d60   MISMATCH         ScatterCommandClass::performAction_93
+[diff] 0x536da0   MISMATCH         CenterViewCommandClass::performAction_96
+[diff] 0x536dc0   MISMATCH         CenterViewCommandClass::performAction_97
+[diff] 0x536de0   MISMATCH         CenterViewCommandClass::performAction_98
+[diff] 0x536e40   MISMATCH         CenterBaseCommandClass::performAction_101
+[ledger] 0x536a20 PrevObjectCommandClass::performAction_66 -> NG (attempt 1)
+[ledger] 0x536a40 PrevObjectCommandClass::performAction_67 -> NG (attempt 1)
+[ledger] 0x536a60 PrevObjectCommandClass::performAction_68 -> NG (attempt 1)
+[ledger] 0x536b40 StopCommandClass::performAction_72 -> NG (attempt 1)
+[ledger] 0x536b60 StopCommandClass::performAction_73 -> NG (attempt 1)
+[ledger] 0x536ba0 AllToCheerCommandClass::performAction_76 -> NG (attempt 1)
+[ledger] 0x536bc0 AllToCheerCommandClass::performAction_77 -> NG (attempt 1)
+[ledger] 0x536be0 AllToCheerCommandClass::performAction_78 -> NG (attempt 1)
+[ledger] 0x536c20 DeployCommandClass::performAction_81 -> NG (attempt 1)
+[ledger] 0x536c40 DeployCommandClass::performAction_82 -> NG (attempt 1)
+[ledger] 0x536c60 DeployCommandClass::performAction_83 -> NG (attempt 1)
+[ledger] 0x536ca0 GuardCommandClass::performAction_86 -> NG (attempt 1)
+[ledger] 0x536cc0 GuardCommandClass::performAction_87 -> NG (attempt 1)
+[ledger] 0x536d20 ScatterCommandClass::performAction_91 -> NG (attempt 1)
+[ledger] 0x536d40 ScatterCommandClass::performAction_92 -> NG (attempt 1)
+[ledger] 0x536d60 ScatterCommandClass::performAction_93 -> NG (attempt 1)
+[ledger] 0x536da0 CenterViewCommandClass::performAction_96 -> NG (attempt 1)
+[ledger] 0x536dc0 CenterViewCommandClass::performAction_97 -> NG (attempt 1)
+[ledger] 0x536de0 CenterViewCommandClass::performAction_98 -> NG (attempt 1)
+[ledger] 0x536e40 CenterBaseCommandClass::performAction_101 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 13,
+  "codegen_shape": 7
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p44\batch_report.json
