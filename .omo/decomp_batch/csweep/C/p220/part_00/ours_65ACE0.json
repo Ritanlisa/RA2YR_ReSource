@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdateObjects@RadioClass@@QAEHXZ",
+ "sym_key": "RadioClass::UpdateObjects",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "51568bf15733ff8b86e800000085c07e2e538b5c240c8b86e40000008b04b885c074108b0e50684c0000005356ff917c0200008b86e8000000473bf87cd85b5f5e59c3",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

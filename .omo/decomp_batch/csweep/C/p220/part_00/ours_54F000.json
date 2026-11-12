@@ -1,0 +1,15 @@
+{
+ "symbol": "?Process@EventQueue@@QAEFXZ",
+ "sym_key": "EventQueue::Process",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86180300004025ff0000807907480d00ffffff403b86140300007405e8000000008b86140300008b8e180300003bc175056633c05ec3668b8446140100005ec3",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAPAXXZ",
+   "sym_key": "MessageLoop"
+  }
+ ]
+}

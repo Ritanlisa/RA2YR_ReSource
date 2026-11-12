@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D7710",
+ "name": "__getbuf",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D7710",
+ "bytes_hex": "ff05c081b7006800100000e8101dffff598b4c240485c0894108740d83490c08c7411800100000eb1183490c048d4114894108c74118020000008b4108836104008901c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

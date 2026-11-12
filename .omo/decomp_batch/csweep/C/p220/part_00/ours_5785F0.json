@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsCoordVisibleMap@ObjectClass@@QAE_NPAH@Z",
+ "sym_key": "ObjectClass::IsCoordVisibleMap",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf06a018b009981e2ff00000003c28d54240cc1f808668944240c8b4604c1e808526689442412e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  }
+ ]
+}

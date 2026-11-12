@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p220\part_00
+=== convert (20 addrs) ===
+[conv] 0x403770 AudioQueue::DeactivateAllMatching -> AudioQueue
+[conv] 0x47aac0 sub_47AAC0 -> _addr_47
+[conv] 0x7bf140 TechnoClass::sub_7BF140 -> TechnoClass
+[conv] 0x75a2f0 sub_75A2F0 -> _addr_75
+[conv] 0x470c40 sub_470C40 -> _addr_47
+[conv] 0x5c9850 sub_5C9850 -> _addr_5C
+[conv] 0x6c8fa0 sub_6C8FA0 -> _addr_6C
+[conv] 0x4da4e0 FootClass::CheckTargetValidity -> FootClass
+[conv] 0x483410 HouseClass::MarkCellBuildable -> HouseClass
+[conv] 0x49e3b0 Movie::GetSection -> Movie
+[conv] 0x54f000 EventQueue::Process -> EventQueue
+[conv] 0x5785f0 ObjectClass::IsCoordVisibleMap -> ObjectClass
+[conv] 0x7d7710 ObjectClass::__getbuf -> ObjectClass
+[conv] 0x413cd0 sub_413CD0 -> _addr_41
+[conv] 0x54db00 JumpjetLocomotionClass::StubReturnTrue_2 -> JumpjetLocomotionClass
+[conv] 0x65ace0 RadioClass::UpdateObjects -> RadioClass
+[conv] 0x65ae60 RadioClass::SetLinkCount -> RadioClass
+[conv] 0x731aa0 ObjectClass::sub_731AA0 -> ObjectClass
+[conv] 0x74bba0 ObjectClass::sub_74BBA0 -> ObjectClass
+[conv] 0x5090a0 TacticalClass::updateVisibility -> TacticalClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioQueue               rc=0
+[era] _addr_47                 rc=2
+[era] TechnoClass              rc=0
+[era] _addr_75                 rc=2
+[era] _addr_5C                 rc=2
+[era] _addr_6C                 rc=2
+[era] FootClass                rc=2
+[era] HouseClass               rc=0
+[era] Movie                    rc=0
+[era] EventQueue               rc=0
+[era] ObjectClass              rc=2
+[era] _addr_41                 rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] RadioClass               rc=0
+[era] TacticalClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x403770   MISMATCH         AudioQueue::DeactivateAllMatching
+[diff] 0x47aac0   MISMATCH         sub_47AAC0
+[diff] 0x7bf140   MISMATCH         TechnoClass::sub_7BF140
+[diff] 0x483410   MISMATCH         HouseClass::MarkCellBuildable
+[diff] 0x49e3b0   MATCH            Movie::GetSection
+[diff] 0x54f000   MATCH            EventQueue::Process
+[diff] 0x5785f0   MISMATCH         ObjectClass::IsCoordVisibleMap
+[diff] 0x7d7710   MISMATCH         ObjectClass::__getbuf
+[diff] 0x731aa0   MISMATCH         ObjectClass::sub_731AA0
+[diff] 0x74bba0   MISMATCH         ObjectClass::sub_74BBA0
+[diff] 0x413cd0   MISMATCH         sub_413CD0
+[diff] 0x54db00   MISMATCH         JumpjetLocomotionClass::StubReturnTrue_2
+[diff] 0x65ace0   MISMATCH         RadioClass::UpdateObjects
+[diff] 0x65ae60   MISMATCH         RadioClass::SetLinkCount
+[diff] 0x5090a0   MISMATCH         TacticalClass::updateVisibility
+[ledger] 0x403770 AudioQueue::DeactivateAllMatching -> NG (attempt 1)
+[ledger] 0x47aac0 sub_47AAC0 -> NG (attempt 1)
+[ledger] 0x7bf140 TechnoClass::sub_7BF140 -> NG (attempt 1)
+[ledger] 0x75a2f0 sub_75A2F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x470c40 sub_470C40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c9850 sub_5C9850 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c8fa0 sub_6C8FA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4da4e0 FootClass::CheckTargetValidity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x483410 HouseClass::MarkCellBuildable -> NG (attempt 1)
+[ledger] 0x49e3b0 Movie::GetSection -> OK (attempt 1)
+[ledger] 0x54f000 EventQueue::Process -> OK (attempt 1)
+[ledger] 0x5785f0 ObjectClass::IsCoordVisibleMap -> NG (attempt 1)
+[ledger] 0x7d7710 ObjectClass::__getbuf -> NG (attempt 1)
+[ledger] 0x413cd0 sub_413CD0 -> NG (attempt 1)
+[ledger] 0x54db00 JumpjetLocomotionClass::StubReturnTrue_2 -> NG (attempt 1)
+[ledger] 0x65ace0 RadioClass::UpdateObjects -> NG (attempt 1)
+[ledger] 0x65ae60 RadioClass::SetLinkCount -> NG (attempt 1)
+[ledger] 0x731aa0 ObjectClass::sub_731AA0 -> NG (attempt 1)
+[ledger] 0x74bba0 ObjectClass::sub_74BBA0 -> NG (attempt 1)
+[ledger] 0x5090a0 TacticalClass::updateVisibility -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 5,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "const_fold": 2,
+  "branch_polarity": 2,
+  "branch_order": 1,
+  "regalloc": 2,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 13.3,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p220\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5090A0",
+ "name": "TacticalClass::updateVisibility",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5090A0",
+ "bytes_hex": "565733f68db9100200008b0785c075196a40e860fd2b0083c40485c074098bc8e86ba62500eb0233c08b483885c9740f4683c70483fe0c7cd15f83c8ff5ec38bc65f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

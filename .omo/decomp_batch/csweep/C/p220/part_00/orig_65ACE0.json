@@ -1,0 +1,11 @@
+{
+ "addr": "0x65ACE0",
+ "name": "TacticalClass::UpdateObjects",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65ACE0",
+ "bytes_hex": "568bf15733ff8b86e800000085c07e2f538b5c24108b86e40000008b04b885c074118b16506830eca800538bceff927c0200008b86e8000000473bf87cd75b5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

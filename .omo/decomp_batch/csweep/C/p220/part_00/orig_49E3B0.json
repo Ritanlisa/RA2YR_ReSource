@@ -1,0 +1,11 @@
+{
+ "addr": "0x49E3B0",
+ "name": "Movie::GetSection",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49E3B0",
+ "bytes_hex": "568bf18a466084c07505e841f7ffff8b44240885c07c1d3b465c7d188d0cc08d14488b46585e8d0c908b542408b001890ac208008b44240c5ec7000000000032c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

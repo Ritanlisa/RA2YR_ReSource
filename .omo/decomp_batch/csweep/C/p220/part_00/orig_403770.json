@@ -1,0 +1,11 @@
+{
+ "addr": "0x403770",
+ "name": "AudioQueue::DeactivateAllMatching",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x403770",
+ "bytes_hex": "56578bfa81c1f8000000e8413c00008bf085f6742bf686a400000001741183ffff7405397e0c75078bcee861eeffff85f6740d8bcee8363c00008bf085f675d55f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

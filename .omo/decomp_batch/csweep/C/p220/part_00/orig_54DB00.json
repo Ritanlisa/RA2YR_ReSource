@@ -1,0 +1,11 @@
+{
+ "addr": "0x54DB00",
+ "name": "JumpjetLocomotionClass::StubReturnTrue_2",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54DB00",
+ "bytes_hex": "568b7424088b4eec8d46ec50ff511084c0752b8b467c85c074248a467984c0751d8b76f48a86ad06000084c0740a8a86ae06000084c07406b0015ec2040032c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x65AE60",
+ "name": "RadioClass::SetLinkCount",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65AE60",
+ "bytes_hex": "53568b74240c578bf98b9fe80000003bf37e2b8b87e00000008d8fe00000006a0056ff50083bde8bc37d138b8fe4000000403bc6c74481fc000000007ced5f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

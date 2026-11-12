@@ -1,0 +1,11 @@
+{
+ "addr": "0x54F000",
+ "name": "EventQueue::Process",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54F000",
+ "bytes_hex": "568bf18b86180300004025ff0000807907480d00ffffff403b86140300007405e82b5d08008b86140300008b8e180300003bc175056633c05ec3668b8446140100005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

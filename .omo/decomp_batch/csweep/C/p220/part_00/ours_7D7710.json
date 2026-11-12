@@ -1,0 +1,27 @@
+{
+ "symbol": "?__getbuf@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::__getbuf",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0d00000000680010000041890d00000000e80000000083c40489460885c08b460c74170c08c646180189460c8b4608c746040000000089065ec30c04c646180189460c8d4614894608c746040000000089065ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B781C0@@3IA",
+   "sym_key": "CRTGlobal_B781C0"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B781C0@@3IA",
+   "sym_key": "CRTGlobal_B781C0"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  }
+ ]
+}

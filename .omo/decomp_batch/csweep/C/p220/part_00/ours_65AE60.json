@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetLinkCount@RadioClass@@QAEXH@Z",
+ "sym_key": "RadioClass::SetLinkCount",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b7c24108b9ee80000003bfb7e288b8ee00000008d86e00000006a005750ff51088bc38b96e4000000403bc7c74482fc000000007ced5f5e5bc20400",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?sub_74BBA0@ObjectClass@@QAEPADHH@Z",
+ "sym_key": "ObjectClass::sub_74BBA0",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4c240833d28d460c890e885604c74608ffffffff89500489500888500d89108b54240c83c107c1e903525150c6400c01ff15080000008bc65ec20800",
+ "relocs": []
+}

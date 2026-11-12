@@ -1,0 +1,21 @@
+{
+ "symbol": "?updateVisibility@TacticalClass@@QAEHXZ",
+ "sym_key": "TacticalClass::updateVisibility",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "565733ff8db1100200008b0685c075196a40e80000000083c40485c074098bc8e800000000eb0233c08b483885c9740b4783ff0c7d0a83c604ebcf8bc75f5ec35f83c8ff5ec3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?Init@WaypointPathClass@@QAEHXZ",
+   "sym_key": "WaypointPathClass::Init"
+  }
+ ]
+}

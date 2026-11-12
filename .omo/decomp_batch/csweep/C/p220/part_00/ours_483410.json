@@ -1,0 +1,15 @@
+{
+ "symbol": "?MarkCellBuildable@HouseClass@@QAEDH@Z",
+ "sym_key": "HouseClass::MarkCellBuildable",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "568bf1f6864c0100001075326a016aff6a006aff6a006a006a01e80000000084c0741b8b86400100000c108986400100008b442408894650b0015ec2040032c05ec20400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?IsBuildable@Cell@@QAE_NHDDHHHD@Z",
+   "sym_key": "Cell::IsBuildable"
+  }
+ ]
+}
