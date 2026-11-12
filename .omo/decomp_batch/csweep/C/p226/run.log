@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p226\part_00
+=== convert (20 addrs) ===
+[conv] 0x537710 SetView1CommandClass::performAction_167 -> SetView1CommandClass
+[conv] 0x5377d0 SetView2CommandClass::performAction_172 -> SetView2CommandClass
+[conv] 0x537890 SetView3CommandClass::performAction_177 -> SetView3CommandClass
+[conv] 0x537950 SetView4CommandClass::performAction_182 -> SetView4CommandClass
+[conv] 0x53ae00 Weapon_Get -> Weapon
+[conv] 0x53b410 Weapon_Get_53B410 -> Weapon_Get
+[conv] 0x5cebd0 MSFadeAnim::Destruct -> MSFadeAnim
+[conv] 0x5cec20 MSOverlayAnim::processCrates -> MSOverlayAnim
+[conv] 0x65c5a0 RAMFileClass::nullsub_0_10 -> RAMFileClass
+[conv] 0x59c530 SmallFunc_59C530 -> SmallFunc
+[conv] 0x7768a0 ObjectClass::System_Read_7768A0 -> ObjectClass
+[conv] 0x7717a0 TechnoClass::sub_7717A0 -> TechnoClass
+[conv] 0x406820 sub_406820 -> _addr_40
+[conv] 0x42dd60 WordVector::Constructor -> WordVector
+[conv] 0x486840 CellClass::GetOccupier -> CellClass
+[conv] 0x4a8630 sub_4A8630 -> _addr_4A
+[conv] 0x4d3540 FootClass::PostLoadInit -> FootClass
+[conv] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> InfantryClass
+[conv] 0x523980 InfantryTypeClass::Constructor_523980 -> InfantryTypeClass
+[conv] 0x5d62c0 MultiplayerGameMode::AssignPlayerIndex -> MultiplayerGameMode
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SetView1CommandClass     rc=0
+[era] SetView2CommandClass     rc=2
+[era] SetView3CommandClass     rc=0
+[era] SetView4CommandClass     rc=0
+[era] Weapon                   rc=2
+[era] Weapon_Get               rc=2
+[era] MSFadeAnim               rc=0
+[era] MSOverlayAnim            rc=0
+[era] RAMFileClass             rc=0
+[era] SmallFunc                rc=0
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] _addr_40                 rc=2
+[era] WordVector               rc=0
+[era] CellClass                rc=0
+[era] _addr_4A                 rc=0
+[era] FootClass                rc=0
+[era] InfantryClass            rc=2
+[era] InfantryTypeClass        rc=0
+[era] MultiplayerGameMode      rc=2
+=== diffasm byte-compare ===
+[diff] 0x537710   MISMATCH         SetView1CommandClass::performAction_167
+[diff] 0x537890   MISMATCH         SetView3CommandClass::performAction_177
+[diff] 0x537950   MISMATCH         SetView4CommandClass::performAction_182
+[diff] 0x5cebd0   MISMATCH         MSFadeAnim::Destruct
+[diff] 0x5cec20   MISMATCH         MSOverlayAnim::processCrates
+[diff] 0x65c5a0   MISMATCH         RAMFileClass::nullsub_0_10
+[diff] 0x59c530   MATCH            SmallFunc_59C530
+[diff] 0x7768a0   MISMATCH         ObjectClass::System_Read_7768A0
+[diff] 0x7717a0   MISMATCH         TechnoClass::sub_7717A0
+[diff] 0x42dd60   MISMATCH         WordVector::Constructor
+[diff] 0x486840   MISMATCH         CellClass::GetOccupier
+[diff] 0x4a8630   MISMATCH         sub_4A8630
+[diff] 0x4d3540   MISMATCH         FootClass::PostLoadInit
+[diff] 0x523980   MISMATCH         InfantryTypeClass::Constructor_523980
+[ledger] 0x537710 SetView1CommandClass::performAction_167 -> NG (attempt 1)
+[ledger] 0x5377d0 SetView2CommandClass::performAction_172 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537890 SetView3CommandClass::performAction_177 -> NG (attempt 1)
+[ledger] 0x537950 SetView4CommandClass::performAction_182 -> NG (attempt 1)
+[ledger] 0x53ae00 Weapon_Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53b410 Weapon_Get_53B410 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cebd0 MSFadeAnim::Destruct -> NG (attempt 1)
+[ledger] 0x5cec20 MSOverlayAnim::processCrates -> NG (attempt 1)
+[ledger] 0x65c5a0 RAMFileClass::nullsub_0_10 -> NG (attempt 1)
+[ledger] 0x59c530 SmallFunc_59C530 -> OK (attempt 1)
+[ledger] 0x7768a0 ObjectClass::System_Read_7768A0 -> NG (attempt 1)
+[ledger] 0x7717a0 TechnoClass::sub_7717A0 -> NG (attempt 1)
+[ledger] 0x406820 sub_406820 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42dd60 WordVector::Constructor -> NG (attempt 1)
+[ledger] 0x486840 CellClass::GetOccupier -> NG (attempt 1)
+[ledger] 0x4a8630 sub_4A8630 -> NG (attempt 1)
+[ledger] 0x4d3540 FootClass::PostLoadInit -> NG (attempt 1)
+[ledger] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x523980 InfantryTypeClass::Constructor_523980 -> NG (attempt 1)
+[ledger] 0x5d62c0 MultiplayerGameMode::AssignPlayerIndex -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 6,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "const_fold": 5,
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p226\batch_report.json

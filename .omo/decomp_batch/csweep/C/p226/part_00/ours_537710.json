@@ -1,0 +1,39 @@
+{
+ "symbol": "?performAction_167@SetView1CommandClass@@QAGPAXH@Z",
+ "sym_key": "SetView1CommandClass::performAction_167",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "83ec108b0d000000008d44240850e8000000008b08894c24008b50048d4424008d4c240850518b0d000000008954240ce8000000008b0d000000008b0089818e3400008bc183c410c20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?ComputeDelta@ObjectClass@@QAEPAHPAX@Z",
+   "sym_key": "ObjectClass::ComputeDelta"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?PixelToCell@Tactical@@QAEPAIPAX0@Z",
+   "sym_key": "Tactical::PixelToCell"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x523980",
+ "name": "InfantryTypeClass::Constructor_523980",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x523980",
+ "bytes_hex": "8b442404568bf150e8b3de1e00b8d4b67e008986500e000089866c0e0000c786880e0000d84d7e00c70610b67e00c74604f4b57e00c74608ecb57e00c7460ce4b57e008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

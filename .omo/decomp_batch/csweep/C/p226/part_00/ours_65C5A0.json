@@ -1,0 +1,21 @@
+{
+ "symbol": "?nullsub_0_10@RAMFileClass@@QAEPAXH@Z",
+ "sym_key": "RAMFileClass::nullsub_0_10",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "568bf18a461dc7060000000084c0c6461c0074178b460850e80000000083c404c7460800000000c6461d008a442408c70600000000a801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

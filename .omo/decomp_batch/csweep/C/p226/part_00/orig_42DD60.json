@@ -1,0 +1,11 @@
+{
+ "addr": "0x42DD60",
+ "name": "WordVector::Constructor",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42DD60",
+ "bytes_hex": "8b442404568bf133d23bc2895604894608c6460c0188560dc70624387e0074238b4c240c3bca7409894e048bc65ec2080003c050e87eb0390083c404894604c6460d018bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

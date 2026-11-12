@@ -1,0 +1,11 @@
+{
+ "addr": "0x7768A0",
+ "name": "System_Read_7768A0",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7768A0",
+ "bytes_hex": "83ec10568bf133c06af4568944240c894424108944241489442418ff1574147e005689442408ff1530147e00894424088d442404506a0a682c9e840056ff1534147e005e83c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

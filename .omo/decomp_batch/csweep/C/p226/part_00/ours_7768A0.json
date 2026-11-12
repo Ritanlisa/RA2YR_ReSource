@@ -1,0 +1,33 @@
+{
+ "symbol": "?System_Read_7768A0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::System_Read_7768A0",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf133c06af4568944241489442418e8000000005689442408e800000000894424088d44240433c9508a0d000000006a0a5156e8000000005e83c410c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?GetWindowContextHelpId@@YGKPAX@Z",
+   "sym_key": "GetWindowContextHelpId"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?szHelp@@3EA",
+   "sym_key": "szHelp"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?WinHelpA@@YGHPAXHHH@Z",
+   "sym_key": "WinHelpA"
+  }
+ ]
+}

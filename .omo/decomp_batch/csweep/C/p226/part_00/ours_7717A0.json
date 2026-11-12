@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_7717A0@TechnoClass@@QAEKH@Z",
+ "sym_key": "TechnoClass::sub_7717A0",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b86d003000085c07e17b101e8000000008b8ec00300008d86c003000050ff510ce8000000008b5424048986ac0300008996b0030000c786b4030000000000005e59c20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?StopThemeClass@@YIXD@Z",
+   "sym_key": "StopThemeClass"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

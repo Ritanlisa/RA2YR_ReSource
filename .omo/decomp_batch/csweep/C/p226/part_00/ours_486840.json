@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetOccupier@CellClass@@QAEHXZ",
+ "sym_key": "CellClass::GetOccupier",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "83ec088b412456c1f8100fbff00fbf4124c1e608c1e0088d5424045781c6800000000580000000528944240c8bf889742410e8000000008bc88b44240889388970045f8948085e83c408c3",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  }
+ ]
+}

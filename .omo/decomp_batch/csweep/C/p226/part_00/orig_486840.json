@@ -1,0 +1,11 @@
+{
+ "addr": "0x486840",
+ "name": "CellClass::GetOccupier",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x486840",
+ "bytes_hex": "83ec0856570fbf71240fbf7926c1e608c1e7088d44240881c68000000081c780000000508974240c897c2410e82f4bffff8b4c24148bd18932897a045f5e8942088bc183c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

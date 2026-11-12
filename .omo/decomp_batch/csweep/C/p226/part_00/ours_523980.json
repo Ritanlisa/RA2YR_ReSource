@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor_523980@InfantryTypeClass@@QAEPAIH@Z",
+ "sym_key": "InfantryTypeClass::Constructor_523980",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000033c0894640894644894648890689460489460889460c8bc65ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Construct@TechnoTypeClass@@QAEPAV1@H@Z",
+   "sym_key": "TechnoTypeClass::Construct"
+  }
+ ]
+}

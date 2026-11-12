@@ -1,0 +1,15 @@
+{
+ "symbol": "?PostLoadInit@FootClass@@QAEPAV1@H@Z",
+ "sym_key": "FootClass::PostLoadInit",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000033c08986880500008986ac050000898674060000890689460489460889460c8bc65ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Constructor@TechnoClass@@QAEPAV1@H@Z",
+   "sym_key": "TechnoClass::Constructor"
+  }
+ ]
+}

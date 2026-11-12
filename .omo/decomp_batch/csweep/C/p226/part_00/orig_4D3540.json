@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D3540",
+ "name": "FootClass::PostLoadInit",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D3540",
+ "bytes_hex": "8b442404568bf150e8b30d2200b8ec917e008986880500008986ac050000c7867406000000000000c706948c7e00c74604788c7e00c74608708c7e00c7460c688c7e008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
