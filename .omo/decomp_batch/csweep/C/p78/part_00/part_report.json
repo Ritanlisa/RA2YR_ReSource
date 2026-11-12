@@ -1,0 +1,452 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 19,
+   "COMPILE_FAIL": 1
+  },
+  "pathologies": {
+   "codegen_shape": 18,
+   "const_fold": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x46d230",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89e048]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_46D230",
+   "emitted": "sub_46D230",
+   "unit": "_addr_46",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x471650",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89e178]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_471650",
+   "emitted": "sub_471650",
+   "unit": "_addr_47",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4732a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89e1f8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4732A0",
+   "emitted": "sub_4732A0",
+   "unit": "_addr_47",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4740f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89e308]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4740F0",
+   "emitted": "sub_4740F0",
+   "unit": "_addr_47",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x478ac0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89e388]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_478AC0",
+   "emitted": "sub_478AC0",
+   "unit": "_addr_47",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x47b260",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\csweep\\C\\p78\\part_00\\_addr_47_47b260.cpp(8) : error C2400: inline assembler syntax error in 'opcode'; found 'data type'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\csweep\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_47B260",
+   "emitted": "sub_47B260",
+   "unit": "_addr_47",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "5/5",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x4890a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89e870]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4890A0",
+   "emitted": "sub_4890A0",
+   "unit": "_addr_48",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x48bd80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89e910]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_48BD80",
+   "emitted": "sub_48BD80",
+   "unit": "_addr_48",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x48c7c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89e9a8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_48C7C0",
+   "emitted": "sub_48C7C0",
+   "unit": "_addr_48",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x48e3a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89ec20]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_48E3A0",
+   "emitted": "sub_48E3A0",
+   "unit": "_addr_48",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x49b290",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89f678]",
+    "ours": "+0 fild dword ptr [0xa0]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_49B290",
+   "emitted": "sub_49B290",
+   "unit": "_addr_49",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x49f1f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89f758]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_49F1F0",
+   "emitted": "sub_49F1F0",
+   "unit": "_addr_49",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x49fe60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89f7d8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_49FE60",
+   "emitted": "sub_49FE60",
+   "unit": "_addr_49",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4a2270",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89f958]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4A2270",
+   "emitted": "sub_4A2270",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4a4fb0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x8a0130]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4A4FB0",
+   "emitted": "sub_4A4FB0",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4a6b70",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x8a0290]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4A6B70",
+   "emitted": "sub_4A6B70",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4a8550",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x8a0740]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4A8550",
+   "emitted": "sub_4A8550",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4af440",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x8a07d0]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4AF440",
+   "emitted": "sub_4AF440",
+   "unit": "_addr_4A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4b59b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x8a0860]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4B59B0",
+   "emitted": "sub_4B59B0",
+   "unit": "_addr_4B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4b68b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x8a0920]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4B68B0",
+   "emitted": "sub_4B68B0",
+   "unit": "_addr_4B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  }
+ ]
+}
