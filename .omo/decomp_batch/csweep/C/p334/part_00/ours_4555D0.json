@@ -1,0 +1,33 @@
+{
+ "symbol": "?IsPoweredActive@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::IsPoweredActive",
+ "size": 232,
+ "link_base": 0,
+ "bytes_hex": "53568bf157bf020000008a866006000084c0750c39be7c0600000f8cc20000008b860405000085c00f8fb40000008b466c85c00f84a90000008b86200500008a887315000084c9742e8b88e40e000085c97e248b8e1c020000e800000000e8000000003edc1d00000000f6c401740839be7c0600007c6b8b86200500008a887415000084c974398bbe1c0200008b87a40200008b8fac02000083f8ff74130fbe15a00100008bda2bd83bd97d082bc203c885c9752d8b8778570000f6c4ff75228b0e56ff918401000083f81274148b1656ff928401000083f81374065f5eb0015bc35f5e32c05bc3",
+ "relocs": [
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?GetPowerRatio@HouseClass@@QAENXZ",
+   "sym_key": "HouseClass::GetPowerRatio"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

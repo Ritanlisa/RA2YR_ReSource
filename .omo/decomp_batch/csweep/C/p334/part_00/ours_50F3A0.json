@@ -1,0 +1,21 @@
+{
+ "symbol": "?evaluateTarget@DynamicVector@@QAEDHPAD@Z",
+ "sym_key": "DynamicVector::evaluateTarget",
+ "size": 261,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db578bf10f84d60000008b6c2418c6460c0085ed8bfd741d8d4bff8bc585c97c498bcbc70000000000c640040083c0084975f0eb358d14dd0000000052e80000000083c40485c0741f8d53ff8bc885d27c128bd3c70100000000c641040083c1084a75f08bf8eb0233ff85ffc6460c0175095f5e5d32c05bc208008b460485c0744e8b6e083bdd7d028beb33d285ed7e218b46048d0cd50000000003c1423bd58b18891c398b400489440f047ce38b5c24148a460d84c074138b4e0451e80000000083c404c74604000000008b6c241885ed0f94c2897e04895e0888560deb070fbe463056ff108b46088b4e103bc17d038946105f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

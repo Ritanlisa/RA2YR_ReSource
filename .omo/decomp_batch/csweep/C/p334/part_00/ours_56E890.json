@@ -1,0 +1,69 @@
+{
+ "symbol": "?ProcessDataHouseClass@ObjectClass@@QAEDPAFPAH1@Z",
+ "sym_key": "ObjectClass::ProcessDataHouseClass",
+ "size": 311,
+ "link_base": 0,
+ "bytes_hex": "83ec0c33c066a18a270000538b5c241455560fbf333bf057751c0fbf530233c066a1922700003bd0750c5f5e5d32c05b83c40cc20c000fbf43028b91f40000008d3c303bfa7f0c5f5e5d32c05b83c40cc20c008bee2be83bea7c0c5f5e5d32c05b83c40cc20c002bc63bc27c0c5f5e5d32c05b83c40cc20c008b89f80000008d144a3bfa7e0c5f5e5d32c05b83c40cc20c00a11800000033ff85c0770c5f5e5d32c05b83c40cc20c008b6c2428a10c0000008b34b885f6744d8a86f501000084c075438d4c2410518bcee8000000008b108b0d181600003bd175198b48048b151c1600003bca750c8b5008a1201600003bd074125356e80000000083c40883f8ff8945007516a118000000473bf8729d5f5e5d32c05b83c40cc20c008b46348b5424245f5e8b88b80000005d890ab0015b83c40cc20c00",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?GetStartCoords@HouseClass@@QAEPAIPAX@Z",
+   "sym_key": "HouseClass::GetStartCoords"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?sub_4FFD90@@YAHPAX0@Z",
+   "sym_key": "sub_4FFD90"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?UpdatePrism@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::UpdatePrism",
+ "size": 231,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db578b86040700003bc30f84ce0000008b8e14070000493bcb898e140700000f8fb900000048899e140700003bc3742f483bc30f859f0000008b86100700008b8e0c0700008b96080700005051528bcee800000000899e040700005f5e5bc38b86b40200003bc3746f8b96080700008b0e6a01525056ff91c00300003bc375588b8e080700008b96b40200008b06515256ff90cc0300003bc38bf8743b8b86640600003bc374318b0d4002000053681f85eb51538b919c0400000fafd083c264c1e20852e800000000c1ea05899750010000899e64060000899e040700005f5e5bc3",
+ "relocs": [
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?FireLaser@BuildingClass@@QAEHHHH@Z",
+   "sym_key": "BuildingClass::FireLaser"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  }
+ ]
+}

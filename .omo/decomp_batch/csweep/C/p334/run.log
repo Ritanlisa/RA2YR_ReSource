@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p334\part_00
+=== convert (20 addrs) ===
+[conv] 0x4b0df0 ObjectClass::sub_4B0DF0 -> ObjectClass
+[conv] 0x6a04c0 ObjectClass::sub_6A04C0 -> ObjectClass
+[conv] 0x6282e0 _VectorClass_VHSVClass::SetCapacity -> _VectorClass_VHSVClass
+[conv] 0x6d9a50 Render_Render_6D9A50 -> Render_Render
+[conv] 0x4503f0 BuildingClass::UpdatePrism -> BuildingClass
+[conv] 0x7ac700 _CComObject_VCChatEventSink_ATL::QueryInterface -> _CComObject_VCChatEventSink_ATL
+[conv] 0x7ac870 _CComObject_VCNetUtilEventSink_ATL::QueryInterface -> _CComObject_VCNetUtilEventSink_ATL
+[conv] 0x7af540 ObjectClass::WorldDominationFactionDlgProc_Helper -> ObjectClass
+[conv] 0x4555d0 BuildingClass::IsPoweredActive -> BuildingClass
+[conv] 0x4a3270 ObjectClass::sub_4A3270 -> ObjectClass
+[conv] 0x426fd0 UnitClass::sub_426FD0 -> UnitClass
+[conv] 0x5aed50 ObjectClass::sub_5AED50 -> ObjectClass
+[conv] 0x60c7d0 ObjectClass::UI_Helper_60C7D0 -> ObjectClass
+[conv] 0x56e890 ObjectClass::ProcessDataHouseClass -> ObjectClass
+[conv] 0x6284a0 _DynamicVectorClass_VHSVClass::SetCapacity_0 -> _DynamicVectorClass_VHSVClass
+[conv] 0x752b70 PlayTauntClass -> _addr_75
+[conv] 0x455980 BuildingClass::ScanCircleForTiberium -> BuildingClass
+[conv] 0x50f070 _DynamicVectorClass_UAngerStruct::SetCapacity_0 -> _DynamicVectorClass_UAngerStruct
+[conv] 0x50f3a0 DynamicVector::evaluateTarget -> DynamicVector
+[conv] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> _DynamicVectorClass_USubzoneConnectionStruct
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _VectorClass_VHSVClass   rc=2
+[era] Render_Render            rc=2
+[era] BuildingClass            rc=2
+[era] _CComObject_VCChatEventSink_ATL rc=2
+[era] _CComObject_VCNetUtilEventSink_ATL rc=2
+[era] UnitClass                rc=2
+[era] _DynamicVectorClass_VHSVClass rc=2
+[era] _addr_75                 rc=2
+[era] _DynamicVectorClass_UAngerStruct rc=2
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=2
+=== diffasm byte-compare ===
+[diff] 0x7af540   MISMATCH         ObjectClass::WorldDominationFactionDlgProc_Helper
+[diff] 0x4a3270   MISMATCH         ObjectClass::sub_4A3270
+[diff] 0x56e890   MISMATCH         ObjectClass::ProcessDataHouseClass
+[diff] 0x4503f0   MISMATCH         BuildingClass::UpdatePrism
+[diff] 0x4555d0   MISMATCH         BuildingClass::IsPoweredActive
+[diff] 0x50f3a0   MISMATCH         DynamicVector::evaluateTarget
+[ledger] 0x4b0df0 ObjectClass::sub_4B0DF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a04c0 ObjectClass::sub_6A04C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6282e0 _VectorClass_VHSVClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d9a50 Render_Render_6D9A50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4503f0 BuildingClass::UpdatePrism -> NG (attempt 1)
+[ledger] 0x7ac700 _CComObject_VCChatEventSink_ATL::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ac870 _CComObject_VCNetUtilEventSink_ATL::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7af540 ObjectClass::WorldDominationFactionDlgProc_Helper -> NG (attempt 1)
+[ledger] 0x4555d0 BuildingClass::IsPoweredActive -> NG (attempt 1)
+[ledger] 0x4a3270 ObjectClass::sub_4A3270 -> NG (attempt 1)
+[ledger] 0x426fd0 UnitClass::sub_426FD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5aed50 ObjectClass::sub_5AED50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60c7d0 ObjectClass::UI_Helper_60C7D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56e890 ObjectClass::ProcessDataHouseClass -> NG (attempt 1)
+[ledger] 0x6284a0 _DynamicVectorClass_VHSVClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x752b70 PlayTauntClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x455980 BuildingClass::ScanCircleForTiberium -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f070 _DynamicVectorClass_UAngerStruct::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f3a0 DynamicVector::evaluateTarget -> NG (attempt 1)
+[ledger] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 4,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p334\batch_report.json
