@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x42e460",
+  "family": "D_CONST_FP",
+  "name": "sub_42E460"
+ },
+ {
+  "addr": "0x42ffd0",
+  "family": "D_CONST_FP",
+  "name": "sub_42FFD0"
+ },
+ {
+  "addr": "0x435640",
+  "family": "D_CONST_FP",
+  "name": "sub_435640"
+ },
+ {
+  "addr": "0x438370",
+  "family": "D_CONST_FP",
+  "name": "sub_438370"
+ },
+ {
+  "addr": "0x4394d0",
+  "family": "D_CONST_FP",
+  "name": "sub_4394D0"
+ },
+ {
+  "addr": "0x43a190",
+  "family": "D_CONST_FP",
+  "name": "sub_43A190"
+ },
+ {
+  "addr": "0x43af70",
+  "family": "D_CONST_FP",
+  "name": "sub_43AF70"
+ },
+ {
+  "addr": "0x45afd0",
+  "family": "D_CONST_FP",
+  "name": "sub_45AFD0"
+ },
+ {
+  "addr": "0x466100",
+  "family": "D_CONST_FP",
+  "name": "sub_466100"
+ },
+ {
+  "addr": "0x46ba00",
+  "family": "D_CONST_FP",
+  "name": "sub_46BA00"
+ },
+ {
+  "addr": "0x46c9a0",
+  "family": "D_CONST_FP",
+  "name": "sub_46C9A0"
+ },
+ {
+  "addr": "0x46d150",
+  "family": "D_CONST_FP",
+  "name": "sub_46D150"
+ },
+ {
+  "addr": "0x471570",
+  "family": "D_CONST_FP",
+  "name": "sub_471570"
+ },
+ {
+  "addr": "0x4731c0",
+  "family": "D_CONST_FP",
+  "name": "sub_4731C0"
+ },
+ {
+  "addr": "0x473570",
+  "family": "D_CONST_FP",
+  "name": "sub_473570"
+ },
+ {
+  "addr": "0x474010",
+  "family": "D_CONST_FP",
+  "name": "sub_474010"
+ },
+ {
+  "addr": "0x4789e0",
+  "family": "D_CONST_FP",
+  "name": "sub_4789E0"
+ },
+ {
+  "addr": "0x47b180",
+  "family": "D_CONST_FP",
+  "name": "sub_47B180"
+ },
+ {
+  "addr": "0x488fc0",
+  "family": "D_CONST_FP",
+  "name": "sub_488FC0"
+ },
+ {
+  "addr": "0x48bca0",
+  "family": "D_CONST_FP",
+  "name": "sub_48BCA0"
+ }
+]
