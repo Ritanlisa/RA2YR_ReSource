@@ -1,0 +1,27 @@
+{
+ "symbol": "?IsCellPassableFor@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::IsCellPassableFor",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "83ec10568b74240485f674268b018d5424085251ff504850b9f8010000e8000000008b4e30518bc8e8000000005e83c410c332c05e83c410c3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?IsPassableOffset@Cell@@QAEHH@Z",
+   "sym_key": "Cell::IsPassableOffset"
+  }
+ ]
+}

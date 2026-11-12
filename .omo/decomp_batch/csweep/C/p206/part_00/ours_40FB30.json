@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_40FB30@@YAHXZ",
+ "sym_key": "Unnamed::sub_40FB30",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000c6050000000001a200000000a300000000c705000000000a000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_40FB70@@YAHPBX0@Z",
+   "sym_key": "sub_40FB70"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_WeaponTypeConfig@@3PAXA",
+   "sym_key": "g_WeaponTypeConfig"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887570@@3IA",
+   "sym_key": "DataGlobal_887570"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887574@@3EA",
+   "sym_key": "DataGlobal_887574"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887575@@3EA",
+   "sym_key": "DataGlobal_887575"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?WeaponTypeClass_Array@@3PAVWeaponTypeClass@@A",
+   "sym_key": "WeaponTypeClass_Array"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88757C@@3IA",
+   "sym_key": "DataGlobal_88757C"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_WeaponTypePool@@3IA",
+   "sym_key": "g_WeaponTypePool"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

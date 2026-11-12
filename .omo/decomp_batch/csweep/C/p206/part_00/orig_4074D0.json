@@ -1,0 +1,11 @@
+{
+ "addr": "0x4074D0",
+ "name": "AllocLinkedListMemory",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4074D0",
+ "bytes_hex": "56578d7a088bf18bc70fafc683c00850e832193c0083c40485c0741e8d56ff8d480885d28908760c8bf28d140f4e89118bca75f6c701000000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

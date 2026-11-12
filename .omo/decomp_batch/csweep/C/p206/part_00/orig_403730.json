@@ -1,0 +1,11 @@
+{
+ "addr": "0x403730",
+ "name": "AudioQueue::StopAllVoices",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x403730",
+ "bytes_hex": "5356578bda81c1f8000000e8803c00008bf085f68bfe74208bcee8913c000083fbff8bf07405395f0c75078bcfe84eeeffff85f68bfe75e05f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

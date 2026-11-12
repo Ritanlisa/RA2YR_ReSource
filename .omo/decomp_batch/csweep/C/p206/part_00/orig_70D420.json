@@ -1,0 +1,11 @@
+{
+ "addr": "0x70D420",
+ "name": "TechnoClass::IsPlayerCellPassable",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70D420",
+ "bytes_hex": "a14c3da80083ec0c85c0742a8b018d54240052ff504850b9e8f78700e8ef82e5ff8b0d4c3da8008b51308bc852e87e9cd7ff83c40cc332c083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

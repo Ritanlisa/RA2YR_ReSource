@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CF6B1",
+ "name": "__heap_init",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CF6B1",
+ "bytes_hex": "33c06a003944240868001000000f94c050ff1598127e0085c0a39c8bb7007415e8a900000085c0750fff359c8bb700ff1590117e0033c0c36a0158c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

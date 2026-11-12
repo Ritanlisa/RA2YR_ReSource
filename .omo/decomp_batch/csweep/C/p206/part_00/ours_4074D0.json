@@ -1,0 +1,15 @@
+{
+ "symbol": "?AllocLinkedListMemory@@YIPAIHH@Z",
+ "sym_key": "Unnamed::AllocLinkedListMemory",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "568d7208578bf98bc60fafc783c00850e80000000083c40485c0741b8d480883ff018908740b4f8d14314f89118bca75f6c701000000005f5ec3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

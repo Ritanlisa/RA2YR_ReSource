@@ -1,0 +1,39 @@
+{
+ "symbol": "?__heap_init@@YAHH@Z",
+ "sym_key": "Unnamed::__heap_init",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "8b4c240433c085c96a0068001000000f94c050e80000000085c0a3000000007501c3e80000000085c0750f8b0d0000000051e80000000033c0c3b801000000c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?HeapCreate@@YGPAXHHH@Z",
+   "sym_key": "HeapCreate"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?hHeap@@3PAXA",
+   "sym_key": "hHeap"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?__sbh_heap_init@@YAHXZ",
+   "sym_key": "__sbh_heap_init"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?hHeap@@3PAXA",
+   "sym_key": "hHeap"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?HeapDestroy@@YGHPAX@Z",
+   "sym_key": "HeapDestroy"
+  }
+ ]
+}

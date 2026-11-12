@@ -1,0 +1,27 @@
+{
+ "symbol": "?StopAllVoices@AudioQueue@@QAEPAXXZ",
+ "sym_key": "AudioQueue::StopAllVoices",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "518b44240056578d88f8000000e8000000008bf085f68bfe7430538b5c240c558b6c24108bcee80000000083fbff8bf07405395f0c75078bcde80000000085f68bfe75e05d5b5f5e59c38bc65f5e59c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Stop@Voice@@QAEPAXXZ",
+   "sym_key": "Voice::Stop"
+  }
+ ]
+}

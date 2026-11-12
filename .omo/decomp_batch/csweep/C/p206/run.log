@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p206\part_00
+=== convert (20 addrs) ===
+[conv] 0x403730 AudioQueue::StopAllVoices -> AudioQueue
+[conv] 0x7cf6b1 __heap_init -> _addr_7C
+[conv] 0x70d420 TechnoClass::IsPlayerCellPassable -> TechnoClass
+[conv] 0x70d460 TechnoClass::IsCellPassableFor -> TechnoClass
+[conv] 0x4074d0 AllocLinkedListMemory -> _addr_40
+[conv] 0x40bdd0 sub_40BDD0 -> _addr_40
+[conv] 0x40c1b0 sub_40C1B0 -> _addr_40
+[conv] 0x40c7a0 sub_40C7A0 -> _addr_40
+[conv] 0x40cb80 sub_40CB80 -> _addr_40
+[conv] 0x40d340 sub_40D340 -> _addr_40
+[conv] 0x40d440 sub_40D440 -> _addr_40
+[conv] 0x40d4c0 sub_40D4C0 -> _addr_40
+[conv] 0x40e770 sub_40E770 -> _addr_40
+[conv] 0x40ee40 sub_40EE40 -> _addr_40
+[conv] 0x40f490 sub_40F490 -> _addr_40
+[conv] 0x40fb30 sub_40FB30 -> _addr_40
+[conv] 0x41d280 sub_41D280 -> _addr_41
+[conv] 0x420080 sub_420080 -> _addr_42
+[conv] 0x4208e0 sub_4208E0 -> _addr_42
+[conv] 0x438550 BombClass::InitPool -> BombClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioQueue               rc=0
+[era] _addr_7C                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_40                 rc=2
+[era] _addr_41                 rc=0
+[era] _addr_42                 rc=0
+[era] BombClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x403730   MISMATCH         AudioQueue::StopAllVoices
+[diff] 0x7cf6b1   MISMATCH         __heap_init
+[diff] 0x70d420   MISMATCH         TechnoClass::IsPlayerCellPassable
+[diff] 0x70d460   MISMATCH         TechnoClass::IsCellPassableFor
+[diff] 0x4074d0   MISMATCH         AllocLinkedListMemory
+[diff] 0x40c1b0   MISMATCH         sub_40C1B0
+[diff] 0x40c7a0   MISMATCH         sub_40C7A0
+[diff] 0x40cb80   MISMATCH         sub_40CB80
+[diff] 0x40d340   MISMATCH         sub_40D340
+[diff] 0x40d440   MISMATCH         sub_40D440
+[diff] 0x40d4c0   MISMATCH         sub_40D4C0
+[diff] 0x40e770   MISMATCH         sub_40E770
+[diff] 0x40ee40   MISMATCH         sub_40EE40
+[diff] 0x40f490   MISMATCH         sub_40F490
+[diff] 0x40fb30   MISMATCH         sub_40FB30
+[diff] 0x41d280   MISMATCH         sub_41D280
+[diff] 0x420080   MISMATCH         sub_420080
+[diff] 0x4208e0   MISMATCH         sub_4208E0
+[diff] 0x438550   MISMATCH         BombClass::InitPool
+[ledger] 0x403730 AudioQueue::StopAllVoices -> NG (attempt 1)
+[ledger] 0x7cf6b1 __heap_init -> NG (attempt 1)
+[ledger] 0x70d420 TechnoClass::IsPlayerCellPassable -> NG (attempt 1)
+[ledger] 0x70d460 TechnoClass::IsCellPassableFor -> NG (attempt 1)
+[ledger] 0x4074d0 AllocLinkedListMemory -> NG (attempt 1)
+[ledger] 0x40bdd0 sub_40BDD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40c1b0 sub_40C1B0 -> NG (attempt 1)
+[ledger] 0x40c7a0 sub_40C7A0 -> NG (attempt 1)
+[ledger] 0x40cb80 sub_40CB80 -> NG (attempt 1)
+[ledger] 0x40d340 sub_40D340 -> NG (attempt 1)
+[ledger] 0x40d440 sub_40D440 -> NG (attempt 1)
+[ledger] 0x40d4c0 sub_40D4C0 -> NG (attempt 1)
+[ledger] 0x40e770 sub_40E770 -> NG (attempt 1)
+[ledger] 0x40ee40 sub_40EE40 -> NG (attempt 1)
+[ledger] 0x40f490 sub_40F490 -> NG (attempt 1)
+[ledger] 0x40fb30 sub_40FB30 -> NG (attempt 1)
+[ledger] 0x41d280 sub_41D280 -> NG (attempt 1)
+[ledger] 0x420080 sub_420080 -> NG (attempt 1)
+[ledger] 0x4208e0 sub_4208E0 -> NG (attempt 1)
+[ledger] 0x438550 BombClass::InitPool -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 2,
+  "branch_polarity": 1,
+  "frame_sched": 1,
+  "const_fold": 14
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p206\batch_report.json
