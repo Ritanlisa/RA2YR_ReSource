@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x5ce640",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x4456d0",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x6b0300",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x7276a0",
+  "family": "B6",
+  "shape": "B6 member exists in registry/base, shell omits it (supply)",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x522fe0",
+  "family": "B6",
+  "shape": "B6 member exists in registry/base, shell omits it (supply)",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x42fd30",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x63d0f0",
+  "family": "C2",
+  "shape": "C2 MEMORY[0xADDR] marker",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x63d2d0",
+  "family": "C2",
+  "shape": "C2 MEMORY[0xADDR] marker",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7df3c2",
+  "family": "C3",
+  "shape": "C3 __m64 / MMX type missing",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7df500",
+  "family": "C3",
+  "shape": "C3 __m64 / MMX type missing",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7df640",
+  "family": "C3",
+  "shape": "C3 __m64 / MMX type missing",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7df280",
+  "family": "C3",
+  "shape": "C3 __m64 / MMX type missing",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x77cf90",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7af4d0",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7a2730",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x653f50",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x406ee0",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x769dc0",
+  "family": "C6",
+  "shape": "C6 nested-template vftable name",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x40d400",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x40d3c0",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ }
+]

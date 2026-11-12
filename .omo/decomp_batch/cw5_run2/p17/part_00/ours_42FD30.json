@@ -1,0 +1,45 @@
+{
+ "symbol": "?EncodeBitmapRGB@@YIHPADHPAEH@Z",
+ "sym_key": "Unnamed::EncodeBitmapRGB",
+ "size": 283,
+ "link_base": 0,
+ "bytes_hex": "535685c975075e33c05bc2080085d275075e33c05bc208008b74240c85f675075e33c05bc208008b5c241085db75075e33c05bc20800555785d28bf9c7442414000000000f8ebf0000008d43fc83fb040f8cb30000008a0f33ed474a81e1ff00000085d274228a1f4733d94a81e3ff00000033cb85d274158a1f4733d981e3ff00000033cb4aeb06bd01000000458bd9c1eb1283e33f8a1c9d00000000881e8bd9c1eb0c83e33f83fd028a1c9d00000000885e017c0a8b1d000000008a1beb0f8bd9c1eb0683e33f8a1c9d0000000083fd01885e027c0a8b0d000000008a09eb0a83e13f8a0c8d000000008b6c2414884e038bd883c60483e80483c50485d2896c24140f8f44ffffff5f5d85db7e03c606008b44240c5e5bc20800",
+ "relocs": [
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?aAbcdefghijklmn@@3PAHA",
+   "sym_key": "aAbcdefghijklmn"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?aAbcdefghijklmn@@3PAHA",
+   "sym_key": "aAbcdefghijklmn"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?asc_818A0C@@3PAGA",
+   "sym_key": "asc_818A0C"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?aAbcdefghijklmn@@3PAHA",
+   "sym_key": "aAbcdefghijklmn"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?asc_818A0C@@3PAGA",
+   "sym_key": "asc_818A0C"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?aAbcdefghijklmn@@3PAHA",
+   "sym_key": "aAbcdefghijklmn"
+  }
+ ]
+}

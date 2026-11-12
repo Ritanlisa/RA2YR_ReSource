@@ -1,0 +1,11 @@
+{
+ "addr": "0x769DC0",
+ "name": "Map_WorldDominationTour_20::Constructor",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x769DC0",
+ "bytes_hex": "8a442404568bf1a801c706cc717f00740956e866ed050083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
