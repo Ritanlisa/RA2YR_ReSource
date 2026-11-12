@@ -1,0 +1,153 @@
+{
+ "symbol": "?SaveLoad_Prefix@BulletClass@@QAEHPAHH@Z",
+ "sym_key": "BulletClass::SaveLoad_Prefix",
+ "size": 300,
+ "link_base": 0,
+ "bytes_hex": "55e8000000008be885ed0f8c16010000568b74240c85f65774418d4424148bce50e8000000006a008d8eb8000000e8000000006a008d8ec4000000e800000000c70600000000c7460400000000c7460800000000c7460c000000008b86540100008dbe5401000085c07453a1800d00008b158c0d00000fbec83bd1722f8b15880d0000f6c6ff750484c07532a1900d000085c0762903c8a17c0d00006a005150ff500884c07417a1800d00008b158c0d00008bca4289158c0d00008934888d8eac000000516800000000e8000000008d96b0000000526800000000e8000000008d8628010000506800000000e8000000008d8e0c010000516800000000e80000000081c630010000566800000000e800000000576800000000e8000000005f8bc55e5dc208008bc55dc20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?SaveLoad_Register@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::SaveLoad_Register"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Init@ObjectClass@@QAEPAV1@H@Z",
+   "sym_key": "ObjectClass::Init"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Start@Timer@@QAEPAV1@H@Z",
+   "sym_key": "Timer::Start"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Start@Timer@@QAEPAV1@H@Z",
+   "sym_key": "Timer::Start"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 266,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 277,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

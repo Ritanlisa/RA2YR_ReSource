@@ -1,0 +1,99 @@
+{
+ "symbol": "?ReadThemeEntry@ThemeClass@@QAEDPAPAPAE@Z",
+ "sym_key": "ThemeClass::ReadThemeEntry",
+ "size": 275,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c8bd98bcde800000000538bcde80000000085c075075d32c05bc20400a10000000056578dbb00010000680001000057680000000050538bcde8000000008a073c2474043c23750347ebf383c9ff33c0f2aef7d12bf98bd18bf78dbb00010000c1e902f3a58bca83e103f3a48b83800200008bcd50680000000053e8000000008a8b88020000898380020000884c241433c08b542414a0000000005250538bcde8000000008a8b890200008883880200008b15000000005152538bcde8000000008b8b8c020000888389020000516800000000538bcde80000000089838c0200008a83880200005f5e84c0741a33c98d83000200008a0d000000006a405051538bcde8000000005db0015bc20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?ResetSection@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ResetSection"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?BinarySearchSection@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::BinarySearchSection"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?aSound@@3HA",
+   "sym_key": "aSound"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?aScenario@@3PADA",
+   "sym_key": "aScenario"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?ReadInt_Overwrite@INIClass@@QAEHPAX0H@Z",
+   "sym_key": "INIClass::ReadInt_Overwrite"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Normal@@3EA",
+   "sym_key": "g_INI_Key_Normal"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?aRepeat@@3HA",
+   "sym_key": "aRepeat"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?aSide@@3PADA",
+   "sym_key": "aSide"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?loadCountryData@HouseTypeClass@@QAEHPAX0H@Z",
+   "sym_key": "HouseTypeClass::loadCountryData"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Name@@3EA",
+   "sym_key": "g_INI_Key_Name"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?GetStringEx@INIClass@@QAEIPAX00H@Z",
+   "sym_key": "INIClass::GetStringEx"
+  }
+ ]
+}

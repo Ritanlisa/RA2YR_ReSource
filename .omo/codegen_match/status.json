@@ -4668,7 +4668,7 @@
   "status": "OK"
  },
  "0x4157c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0x14",
@@ -11143,7 +11143,7 @@
   "this_as_id": false
  },
  "0x46ae70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov eax, dword ptr [esp + 8]",
@@ -18830,7 +18830,7 @@
   "this_as_id": false
  },
  "0x4a8bf0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -22842,7 +22842,7 @@
   "this_as_id": false
  },
  "0x4d0180": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+3 push ebx",
@@ -24543,7 +24543,7 @@
   "this_as_id": false
  },
  "0x4e43c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -46417,7 +46417,7 @@
   "status": "NG"
  },
  "0x5cc110": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46429,14 +46429,14 @@
   "this_as_id": false
  },
  "0x5cc550": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "MSOverlayAnim::DrawPlacementPreview",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ScenarioClass::DrawPlacementPreview",
-  "rule_violations": 7,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -47645,7 +47645,7 @@
   "this_as_id": false
  },
  "0x5d3a60": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51071,14 +51071,14 @@
   "this_as_id": false
  },
  "0x5fc380": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0xc",
   "name": "Object::SpawnAtCell",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Object::SpawnAtCell",
-  "rule_violations": 4,
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -53020,7 +53020,7 @@
   "this_as_id": false
  },
  "0x62e4c0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71539,7 +71539,7 @@
   "status": "NG"
  },
  "0x7090a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73891,7 +73891,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x720480": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+25 setne al",
@@ -79160,7 +79160,7 @@
   "this_as_id": false
  },
  "0x74fdc0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "GetModuleVersion",
@@ -82125,7 +82125,7 @@
   "this_as_id": false
  },
  "0x766c10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+8 push edi",
@@ -82600,7 +82600,7 @@
   "this_as_id": false
  },
  "0x7680c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+6 mov ecx, dword ptr [esi + 0x24]",
@@ -83444,7 +83444,7 @@
   "this_as_id": false
  },
  "0x76e2f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85010,7 +85010,7 @@
   "this_as_id": false
  },
  "0x779dd0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85022,7 +85022,7 @@
   "this_as_id": false
  },
  "0x779f10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90151,7 +90151,7 @@
   "this_as_id": false
  },
  "0x7d68fb": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__get_lc_lconv",
@@ -90561,7 +90561,7 @@
   "this_as_id": false
  },
  "0x7daf28": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "___getlocaleinfo",

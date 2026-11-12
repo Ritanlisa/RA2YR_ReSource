@@ -1,0 +1,39 @@
+{
+ "symbol": "?CheckOccupancyEligibility@DamageArea@@QAEDXZ",
+ "sym_key": "DamageArea::CheckOccupancyEligibility",
+ "size": 312,
+ "link_base": 0,
+ "bytes_hex": "83ec08558be9568b750c85f674298b0656ff502c83f802751c8b8ec00600008d86c006000050ff512085c0740a5e32c05d83c408c333f68a455184c00f85dc0000008a455c84c00f84d100000085f674148b96c40600008a820b0e000084c00f85cb0000008b450c33f685c0897424080f84910000008b088d54240c5752680000000050ff118bf885ff7c178b7424108d44240c50e80000000083c4048974240ceb138d4c240c51e80000000083c40433f68974240c85ff7d1181ff02400080740957e80000000083c40485f65f74378b1656ff521885c075298b44240885c075116803400080e8000000008b44240c83c4048b0850ff511c85c075068b742408eb118b7424088b550c8b82fc02000085c0751285f674068b0656ff50085eb0015d83c408c385f674068b0e56ff51085e32c05d83c408c3",
+ "relocs": [
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_822410@@3EA",
+   "sym_key": "DataGlobal_822410"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?Release3COM@@YAHPAX@Z",
+   "sym_key": "Release3COM"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?Release3COM@@YAHPAX@Z",
+   "sym_key": "Release3COM"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}
