@@ -1,0 +1,11 @@
+{
+ "addr": "0x535A70",
+ "name": "CCFileClass::Destruct",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x535A70",
+ "bytes_hex": "568bf18d4e58c706b0167e00c7466400000000e8c853f0ff8bcec70668167e00e8ebc0efff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

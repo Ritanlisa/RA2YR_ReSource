@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@MultiplayerTeam@@QAEPAPAXD@Z",
+ "sym_key": "MultiplayerTeam::QueryInterface",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "568bf18d4e04c70600000000e800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4399E0",
+ "name": "VoxelAnimClass::QuaternionToMatrix",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4399E0",
+ "bytes_hex": "83ec308d51308d4c24005657e88fcf20008bf08b44243cb90c0000008bf8f3a55f5e83c430c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

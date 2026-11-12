@@ -1,0 +1,27 @@
+{
+ "symbol": "?executePatrolAction@TActionClass@@QAEDPAXHHH@Z",
+ "sym_key": "TActionClass::executePatrolAction",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "518b4144894c24008d4c240050518b0d00000000e8000000008b108b4424085250e800000000b00183c40cc21000",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?SelectSimilarBuildingTypes@@YAFPAXH@Z",
+   "sym_key": "SelectSimilarBuildingTypes"
+  }
+ ]
+}

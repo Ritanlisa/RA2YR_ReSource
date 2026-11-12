@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E1A40",
+ "name": "TActionClass::executePatrolAction",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E1A40",
+ "bytes_hex": "518b41448d4c240050518b0d30b2a800e86ba2faff8b008b4c240850e86fbce2ffb00159c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

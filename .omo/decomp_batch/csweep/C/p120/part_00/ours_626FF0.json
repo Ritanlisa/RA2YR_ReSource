@@ -1,0 +1,33 @@
+{
+ "symbol": "?WinMainSetup_Setup_626FF0@@YAXXZ",
+ "sym_key": "Unnamed::WinMainSetup_Setup_626FF0",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "8b0d000000005685c98bf17418e80000000056e80000000083c404c70500000000000000005ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_FileExtensionState@@3IA",
+   "sym_key": "g_FileExtensionState"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?FlushTempFiles@FileSystem@@QAEXXZ",
+   "sym_key": "FileSystem::FlushTempFiles"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_FileExtensionState@@3IA",
+   "sym_key": "g_FileExtensionState"
+  }
+ ]
+}

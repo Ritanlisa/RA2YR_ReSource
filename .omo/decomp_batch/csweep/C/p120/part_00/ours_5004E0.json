@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetHouseTechLevel@@YIHHH@Z",
+ "sym_key": "Unnamed::GetHouseTechLevel",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "568bf185d27d0433c05ec38bcee80000000083fe06740983fe07740433c05ec38b80080e00005ec3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__GetByTypeAndIndex@@YIHHH@Z",
+   "sym_key": "TechnoTypeClass__GetByTypeAndIndex"
+  }
+ ]
+}

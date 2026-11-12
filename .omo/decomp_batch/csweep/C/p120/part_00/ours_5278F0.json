@@ -1,0 +1,27 @@
+{
+ "symbol": "?ReadInt@INIClass@@QAGHPAPAD0H@Z",
+ "sym_key": "INIClass::ReadInt",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8b4c240c56e8000000008b4c240c8bf0e8000000008b4c2414518b4c240c5650e8000000005ec21000",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?ReadInt_Overwrite@INIClass@@QAEHPAX0H@Z",
+   "sym_key": "INIClass::ReadInt_Overwrite"
+  }
+ ]
+}

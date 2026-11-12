@@ -1,0 +1,15 @@
+{
+ "symbol": "?connect@UDPInterfaceClass@@QAEDXZ",
+ "sym_key": "UDPInterfaceClass::connect",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "568bf18a8668f0030084c074188b0656ff50208b0e56ff5104e800000000c68668f00300005ec3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?WSACleanup@@YGHXZ",
+   "sym_key": "WSACleanup"
+  }
+ ]
+}

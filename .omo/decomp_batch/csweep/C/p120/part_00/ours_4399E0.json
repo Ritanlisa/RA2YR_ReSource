@@ -1,0 +1,15 @@
+{
+ "symbol": "?QuaternionToMatrix@VoxelAnimClass@@QAEPAMPAM@Z",
+ "sym_key": "VoxelAnimClass::QuaternionToMatrix",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "83ec308d51308d4c24005657e8000000008bf08b44243cb90c0000008bf8f3a55f5e83c430c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?ToQuaternionMatrix@@YIPAMPAX0@Z",
+   "sym_key": "ToQuaternionMatrix"
+  }
+ ]
+}

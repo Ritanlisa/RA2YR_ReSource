@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B1B50",
+ "name": "UDPInterfaceClass::connect",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B1B50",
+ "bytes_hex": "568bf18a8668f0030084c074188b06ff50208b168bceff5204e8486e0100c68668f00300005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

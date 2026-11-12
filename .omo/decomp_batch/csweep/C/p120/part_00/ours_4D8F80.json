@@ -1,0 +1,15 @@
+{
+ "symbol": "?ConditionalAction@FootClass@@QAEDXZ",
+ "sym_key": "FootClass::ConditionalAction",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000084c075025ec38b8ea80500008b066a015156ff9080040000b0015ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?CheckOccupantState@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::CheckOccupantState"
+  }
+ ]
+}

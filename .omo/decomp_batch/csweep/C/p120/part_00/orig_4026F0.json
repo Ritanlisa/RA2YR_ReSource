@@ -1,0 +1,11 @@
+{
+ "addr": "0x4026F0",
+ "name": "AudioStream::ReleaseChannel",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4026F0",
+ "bytes_hex": "568bf18b86d4000000ff50288b8ea400000083e1ef898ea40000008b96d40000008bce5eff622c",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

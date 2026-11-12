@@ -1,0 +1,15 @@
+{
+ "symbol": "?ThunkTo159x4@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::ThunkTo159x4",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "518b81e40000008b0085c074168b11508b442404684c0000005051ff927c02000059c333c059c3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

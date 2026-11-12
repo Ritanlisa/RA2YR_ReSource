@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D8D50",
+ "name": "MultiplayerTeam_Destru::QueryInterface",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D8D50",
+ "bytes_hex": "568bf18d4e04c706dcee7e00e8ffd91d00f644240801740956e8cffd1e0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
