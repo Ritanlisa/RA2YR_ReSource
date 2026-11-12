@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p177\part_00
+=== convert (20 addrs) ===
+[conv] 0x5391e0 sub_5391E0 -> _addr_53
+[conv] 0x53c8f0 sub_53C8F0 -> _addr_53
+[conv] 0x53f310 sub_53F310 -> _addr_53
+[conv] 0x53f970 sub_53F970 -> _addr_53
+[conv] 0x5407b0 sub_5407B0 -> _addr_54
+[conv] 0x5431f0 sub_5431F0 -> _addr_54
+[conv] 0x543d30 sub_543D30 -> _addr_54
+[conv] 0x54ab00 sub_54AB00 -> _addr_54
+[conv] 0x54e120 sub_54E120 -> _addr_54
+[conv] 0x54ed30 sub_54ED30 -> _addr_54
+[conv] 0x54fc80 sub_54FC80 -> _addr_54
+[conv] 0x552920 sub_552920 -> _addr_55
+[conv] 0x554500 sub_554500 -> _addr_55
+[conv] 0x555c80 sub_555C80 -> _addr_55
+[conv] 0x556860 sub_556860 -> _addr_55
+[conv] 0x558620 sub_558620 -> _addr_55
+[conv] 0x55a5a0 sub_55A5A0 -> _addr_55
+[conv] 0x55ae20 sub_55AE20 -> _addr_55
+[conv] 0x55cad0 sub_55CAD0 -> _addr_55
+[conv] 0x55f850 sub_55F850 -> _addr_55
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_53                 rc=0
+[era] _addr_54                 rc=0
+[era] _addr_55                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5391e0   MISMATCH         sub_5391E0
+[diff] 0x53c8f0   MISMATCH         sub_53C8F0
+[diff] 0x53f310   MISMATCH         sub_53F310
+[diff] 0x53f970   MISMATCH         sub_53F970
+[diff] 0x5407b0   MISMATCH         sub_5407B0
+[diff] 0x5431f0   MISMATCH         sub_5431F0
+[diff] 0x543d30   MISMATCH         sub_543D30
+[diff] 0x54ab00   MISMATCH         sub_54AB00
+[diff] 0x54e120   MISMATCH         sub_54E120
+[diff] 0x54ed30   MISMATCH         sub_54ED30
+[diff] 0x54fc80   MISMATCH         sub_54FC80
+[diff] 0x552920   MISMATCH         sub_552920
+[diff] 0x554500   MISMATCH         sub_554500
+[diff] 0x555c80   MISMATCH         sub_555C80
+[diff] 0x556860   MISMATCH         sub_556860
+[diff] 0x558620   MISMATCH         sub_558620
+[diff] 0x55a5a0   MISMATCH         sub_55A5A0
+[diff] 0x55ae20   MISMATCH         sub_55AE20
+[diff] 0x55cad0   MISMATCH         sub_55CAD0
+[diff] 0x55f850   MISMATCH         sub_55F850
+[ledger] 0x5391e0 sub_5391E0 -> NG (attempt 1)
+[ledger] 0x53c8f0 sub_53C8F0 -> NG (attempt 1)
+[ledger] 0x53f310 sub_53F310 -> NG (attempt 1)
+[ledger] 0x53f970 sub_53F970 -> NG (attempt 1)
+[ledger] 0x5407b0 sub_5407B0 -> NG (attempt 1)
+[ledger] 0x5431f0 sub_5431F0 -> NG (attempt 1)
+[ledger] 0x543d30 sub_543D30 -> NG (attempt 1)
+[ledger] 0x54ab00 sub_54AB00 -> NG (attempt 1)
+[ledger] 0x54e120 sub_54E120 -> NG (attempt 1)
+[ledger] 0x54ed30 sub_54ED30 -> NG (attempt 1)
+[ledger] 0x54fc80 sub_54FC80 -> NG (attempt 1)
+[ledger] 0x552920 sub_552920 -> NG (attempt 1)
+[ledger] 0x554500 sub_554500 -> NG (attempt 1)
+[ledger] 0x555c80 sub_555C80 -> NG (attempt 1)
+[ledger] 0x556860 sub_556860 -> NG (attempt 1)
+[ledger] 0x558620 sub_558620 -> NG (attempt 1)
+[ledger] 0x55a5a0 sub_55A5A0 -> NG (attempt 1)
+[ledger] 0x55ae20 sub_55AE20 -> NG (attempt 1)
+[ledger] 0x55cad0 sub_55CAD0 -> NG (attempt 1)
+[ledger] 0x55f850 sub_55F850 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 18,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p177\batch_report.json
