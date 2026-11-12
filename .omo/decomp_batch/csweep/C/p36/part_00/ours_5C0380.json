@@ -1,0 +1,15 @@
+{
+ "symbol": "?checkPathEnd@VQMovieHandle@@QAEHH@Z",
+ "sym_key": "VQMovieHandle::checkPathEnd",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8b49108b442404508b4948e800000000c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?getTotalValue@AbstractClass@@QAEHH@Z",
+   "sym_key": "AbstractClass::getTotalValue"
+  }
+ ]
+}

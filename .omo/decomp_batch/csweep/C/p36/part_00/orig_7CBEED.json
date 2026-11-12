@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CBEED",
+ "name": "__statusfp",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CBEED",
+ "bytes_hex": "558bec519bdd7dfcff75fce8a801000059c9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

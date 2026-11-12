@@ -1,0 +1,11 @@
+{
+ "addr": "0x4035D0",
+ "name": "AudioQueue::IteratorNext",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4035D0",
+ "bytes_hex": "568bf18b0e85c97407e8023e000089068b065ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?PrepareSaveLoadDlg@Options@@QAE_NXZ",
+ "sym_key": "Options::PrepareSaveLoadDlg",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "c7410403000000c7410c00000000e900000000",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?DlgProc@SaveLoadDialog@@QAE_NXZ",
+   "sym_key": "SaveLoadDialog::DlgProc"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5587F0",
+ "name": "LoadOptions::Run",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5587F0",
+ "bytes_hex": "c7410401000000c7410c00000000e9cd050000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

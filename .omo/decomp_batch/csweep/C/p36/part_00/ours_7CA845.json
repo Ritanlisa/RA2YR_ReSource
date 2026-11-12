@@ -1,0 +1,15 @@
+{
+ "symbol": "?_fopen@@YAPAU_iobuf@@PBD0@Z",
+ "sym_key": "Unnamed::_fopen",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b4c24046a405051e80000000083c40cc3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?_fsopen@@YAHPAX0HZZ",
+   "sym_key": "_fsopen"
+  }
+ ]
+}

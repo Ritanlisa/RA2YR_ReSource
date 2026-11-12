@@ -1,0 +1,15 @@
+{
+ "symbol": "?CallMethod@AppState@@QAGHH@Z",
+ "sym_key": "AppState::CallMethod",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b54240852508b08ff5120c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  }
+ ]
+}

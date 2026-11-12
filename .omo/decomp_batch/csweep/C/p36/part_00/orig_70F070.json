@@ -1,0 +1,11 @@
+{
+ "addr": "0x70F070",
+ "name": "TechnoClass::GetTypeVt40",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70F070",
+ "bytes_hex": "8b01ff90840000008b108bc8ffa2a0000000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

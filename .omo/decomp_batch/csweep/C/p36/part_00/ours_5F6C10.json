@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsAboveScreenMargin@IUnknown@@QAEEXZ",
+ "sym_key": "IUnknown::IsAboveScreenMargin",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff90c801000083f8ec0f9fc0c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CA845",
+ "name": "_fopen",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CA845",
+ "bytes_hex": "6a40ff74240cff74240ce8c0ffffff83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

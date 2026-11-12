@@ -1,0 +1,27 @@
+{
+ "symbol": "?Flip2@DSurface@@QAEHXZ",
+ "sym_key": "DSurface::Flip2",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b0d00000000c7050000000001000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenFlag@@3IA",
+   "sym_key": "g_LoadScreenFlag"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?RenderToSurface@DSurface@@QAEHXZ",
+   "sym_key": "DSurface::RenderToSurface"
+  }
+ ]
+}

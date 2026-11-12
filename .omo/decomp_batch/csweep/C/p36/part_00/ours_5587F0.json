@@ -1,0 +1,15 @@
+{
+ "symbol": "?Run@LoadOptions@@QAEHXZ",
+ "sym_key": "LoadOptions::Run",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "51c7410401000000c7410c00000000e8000000008b4c240025ff00000080e1000bc159c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?DlgProc@SaveLoadDialog@@QAE_NXZ",
+   "sym_key": "SaveLoadDialog::DlgProc"
+  }
+ ]
+}

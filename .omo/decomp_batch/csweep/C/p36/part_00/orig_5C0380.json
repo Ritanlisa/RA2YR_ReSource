@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C0380",
+ "name": "AbstractClass::checkPathEnd",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C0380",
+ "bytes_hex": "8b49108b442404508b4948e8a0991000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x522FC0",
+ "name": "SlaveManagerClass::IsMasterHarvester",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x522FC0",
+ "bytes_hex": "8b01ff908401000033c983f80a0f94c18ac1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

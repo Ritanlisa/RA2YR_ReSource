@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsMasterHarvester@SlaveManagerClass@@QAE_NXZ",
+ "sym_key": "SlaveManagerClass::IsMasterHarvester",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff908401000033c983f80a0f94c18ac1c3",
+ "relocs": []
+}

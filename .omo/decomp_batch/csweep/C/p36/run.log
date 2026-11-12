@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p36\part_00
+=== convert (20 addrs) ===
+[conv] 0x70f070 TechnoClass::GetTypeVt40 -> TechnoClass
+[conv] 0x70f090 ObjectClass::GetTypeVt41 -> ObjectClass
+[conv] 0x5424a0 IPXManagerClass::CheckStatus -> IPXManagerClass
+[conv] 0x5587f0 LoadOptions::Run -> LoadOptions
+[conv] 0x558840 Options::PrepareSaveLoadDlg -> Options
+[conv] 0x5c0380 VQMovieHandle::checkPathEnd -> VQMovieHandle
+[conv] 0x5d1e50 DSurface::Flip2 -> DSurface
+[conv] 0x5ef170 NullModemClass::closeConnection -> NullModemClass
+[conv] 0x653f70 RadarClass::SetPositionThunk -> RadarClass
+[conv] 0x7ca845 _fopen -> _addr_7C
+[conv] 0x7cbeed __statusfp -> _addr_7C
+[conv] 0x7d84a9 unknown_libname_79 -> _addr_7D
+[conv] 0x522fc0 SlaveManagerClass::IsMasterHarvester -> SlaveManagerClass
+[conv] 0x5f3320 AppState::CallMethod -> AppState
+[conv] 0x5f6c10 IUnknown::IsAboveScreenMargin -> IUnknown
+[conv] 0x406550 AbstractTypeClass::sub_406550 -> AbstractTypeClass
+[conv] 0x4f42b0 GScreenClass::DtorSequence -> GScreenClass
+[conv] 0x4035d0 AudioQueue::IteratorNext -> AudioQueue
+[conv] 0x432c10 WeaponTypeClass::COMStub_432C10 -> WeaponTypeClass
+[conv] 0x473fc0 CCFileClass::SetFileName -> CCFileClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=0
+[era] IPXManagerClass          rc=0
+[era] LoadOptions              rc=0
+[era] Options                  rc=0
+[era] VQMovieHandle            rc=0
+[era] DSurface                 rc=0
+[era] NullModemClass           rc=0
+[era] RadarClass               rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=2
+[era] SlaveManagerClass        rc=0
+[era] AppState                 rc=0
+[era] IUnknown                 rc=0
+[era] AbstractTypeClass        rc=0
+[era] GScreenClass             rc=2
+[era] AudioQueue               rc=0
+[era] WeaponTypeClass          rc=2
+[era] CCFileClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x70f070   MISMATCH         TechnoClass::GetTypeVt40
+[diff] 0x70f090   MISMATCH         ObjectClass::GetTypeVt41
+[diff] 0x5424a0   MATCH            IPXManagerClass::CheckStatus
+[diff] 0x5587f0   MISMATCH         LoadOptions::Run
+[diff] 0x558840   MATCH            Options::PrepareSaveLoadDlg
+[diff] 0x5c0380   MATCH            VQMovieHandle::checkPathEnd
+[diff] 0x5d1e50   MISMATCH         DSurface::Flip2
+[diff] 0x5ef170   MATCH            NullModemClass::closeConnection
+[diff] 0x653f70   MISMATCH         RadarClass::SetPositionThunk
+[diff] 0x7ca845   MISMATCH         _fopen
+[diff] 0x7cbeed   MISMATCH         __statusfp
+[diff] 0x522fc0   MISMATCH         SlaveManagerClass::IsMasterHarvester
+[diff] 0x5f3320   MISMATCH         AppState::CallMethod
+[diff] 0x5f6c10   MISMATCH         IUnknown::IsAboveScreenMargin
+[diff] 0x406550   MISMATCH         AbstractTypeClass::sub_406550
+[diff] 0x4035d0   MATCH            AudioQueue::IteratorNext
+[diff] 0x473fc0   MATCH            CCFileClass::SetFileName
+[ledger] 0x70f070 TechnoClass::GetTypeVt40 -> NG (attempt 1)
+[ledger] 0x70f090 ObjectClass::GetTypeVt41 -> NG (attempt 1)
+[ledger] 0x5424a0 IPXManagerClass::CheckStatus -> OK (attempt 1)
+[ledger] 0x5587f0 LoadOptions::Run -> NG (attempt 1)
+[ledger] 0x558840 Options::PrepareSaveLoadDlg -> OK (attempt 1)
+[ledger] 0x5c0380 VQMovieHandle::checkPathEnd -> OK (attempt 1)
+[ledger] 0x5d1e50 DSurface::Flip2 -> NG (attempt 1)
+[ledger] 0x5ef170 NullModemClass::closeConnection -> OK (attempt 1)
+[ledger] 0x653f70 RadarClass::SetPositionThunk -> NG (attempt 1)
+[ledger] 0x7ca845 _fopen -> NG (attempt 1)
+[ledger] 0x7cbeed __statusfp -> NG (attempt 1)
+[ledger] 0x7d84a9 unknown_libname_79 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522fc0 SlaveManagerClass::IsMasterHarvester -> NG (attempt 1)
+[ledger] 0x5f3320 AppState::CallMethod -> NG (attempt 1)
+[ledger] 0x5f6c10 IUnknown::IsAboveScreenMargin -> NG (attempt 1)
+[ledger] 0x406550 AbstractTypeClass::sub_406550 -> NG (attempt 1)
+[ledger] 0x4f42b0 GScreenClass::DtorSequence -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4035d0 AudioQueue::IteratorNext -> OK (attempt 1)
+[ledger] 0x432c10 WeaponTypeClass::COMStub_432C10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x473fc0 CCFileClass::SetFileName -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "MATCH": 6,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "extern_reloc": 2,
+  "cc_mismatch": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 35.3,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p36\batch_report.json

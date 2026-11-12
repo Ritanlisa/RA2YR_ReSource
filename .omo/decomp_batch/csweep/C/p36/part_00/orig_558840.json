@@ -1,0 +1,11 @@
+{
+ "addr": "0x558840",
+ "name": "Options::PrepareSaveLoadDlg",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x558840",
+ "bytes_hex": "c7410403000000c7410c00000000e97d050000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

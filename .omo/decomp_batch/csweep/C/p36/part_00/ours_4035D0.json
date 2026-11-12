@@ -1,0 +1,15 @@
+{
+ "symbol": "?IteratorNext@AudioQueue@@QAEPAHXZ",
+ "sym_key": "AudioQueue::IteratorNext",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0e85c97407e80000000089068b065ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  }
+ ]
+}

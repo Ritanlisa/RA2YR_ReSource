@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F3320",
+ "name": "AppState::CallMethod",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F3320",
+ "bytes_hex": "8b0d202db7008b542404528b01ff5020c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_406550@AbstractTypeClass@@QAIHHH@Z",
+ "sym_key": "AbstractTypeClass::sub_406550",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "568d72188b5424088bcee8000000008bcee8000000005ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?EndBufferMixer@@YIHPAXH@Z",
+   "sym_key": "EndBufferMixer"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?PlaySample@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::PlaySample"
+  }
+ ]
+}

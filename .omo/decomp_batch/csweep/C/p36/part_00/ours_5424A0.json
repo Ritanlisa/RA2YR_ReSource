@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckStatus@IPXManagerClass@@QAEHH@Z",
+ "sym_key": "IPXManagerClass::CheckStatus",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b4c81288b4904e800000000c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetBridgeIndex@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::GetBridgeIndex"
+  }
+ ]
+}
