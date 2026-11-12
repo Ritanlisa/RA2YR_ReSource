@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p58\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c6530 sub_4C6530 -> _addr_4C
+[conv] 0x4c96f0 sub_4C96F0 -> _addr_4C
+[conv] 0x4c9870 sub_4C9870 -> _addr_4C
+[conv] 0x4c9c60 FactoryClass::HasProgressChanged -> FactoryClass
+[conv] 0x4cba00 sub_4CBA00 -> _addr_4C
+[conv] 0x4cbb80 sub_4CBB80 -> _addr_4C
+[conv] 0x4cbf60 sub_4CBF60 -> _addr_4C
+[conv] 0x4cc0e0 sub_4CC0E0 -> _addr_4C
+[conv] 0x4cc7e0 sub_4CC7E0 -> _addr_4C
+[conv] 0x4cc960 sub_4CC960 -> _addr_4C
+[conv] 0x4d05b0 sub_4D05B0 -> _addr_4D
+[conv] 0x4d0730 sub_4D0730 -> _addr_4D
+[conv] 0x4d2fa0 sub_4D2FA0 -> _addr_4D
+[conv] 0x4d3120 sub_4D3120 -> _addr_4D
+[conv] 0x4e0f60 sub_4E0F60 -> _addr_4E
+[conv] 0x4e10e0 sub_4E10E0 -> _addr_4E
+[conv] 0x4e1b60 sub_4E1B60 -> _addr_4E
+[conv] 0x4e1ce0 sub_4E1CE0 -> _addr_4E
+[conv] 0x4e3180 sub_4E3180 -> _addr_4E
+[conv] 0x4e3300 sub_4E3300 -> _addr_4E
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4C                 rc=0
+[era] FactoryClass             rc=0
+[era] _addr_4D                 rc=0
+[era] _addr_4E                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4c6530   MISMATCH         sub_4C6530
+[diff] 0x4c96f0   MATCH            sub_4C96F0
+[diff] 0x4c9870   MISMATCH         sub_4C9870
+[diff] 0x4cba00   MATCH            sub_4CBA00
+[diff] 0x4cbb80   MISMATCH         sub_4CBB80
+[diff] 0x4cbf60   MATCH            sub_4CBF60
+[diff] 0x4cc0e0   MISMATCH         sub_4CC0E0
+[diff] 0x4cc7e0   MATCH            sub_4CC7E0
+[diff] 0x4cc960   MISMATCH         sub_4CC960
+[diff] 0x4c9c60   MATCH            FactoryClass::HasProgressChanged
+[diff] 0x4d05b0   MATCH            sub_4D05B0
+[diff] 0x4d0730   MISMATCH         sub_4D0730
+[diff] 0x4d2fa0   MATCH            sub_4D2FA0
+[diff] 0x4d3120   MISMATCH         sub_4D3120
+[diff] 0x4e0f60   MATCH            sub_4E0F60
+[diff] 0x4e10e0   MISMATCH         sub_4E10E0
+[diff] 0x4e1b60   MATCH            sub_4E1B60
+[diff] 0x4e1ce0   MISMATCH         sub_4E1CE0
+[diff] 0x4e3180   MATCH            sub_4E3180
+[diff] 0x4e3300   MISMATCH         sub_4E3300
+[ledger] 0x4c6530 sub_4C6530 -> NG (attempt 2)
+[ledger] 0x4c96f0 sub_4C96F0 -> OK (attempt 2)
+[ledger] 0x4c9870 sub_4C9870 -> NG (attempt 3)
+[ledger] 0x4c9c60 FactoryClass::HasProgressChanged -> OK (attempt 3)
+[ledger] 0x4cba00 sub_4CBA00 -> OK (attempt 2)
+[ledger] 0x4cbb80 sub_4CBB80 -> NG (attempt 2)
+[ledger] 0x4cbf60 sub_4CBF60 -> OK (attempt 2)
+[ledger] 0x4cc0e0 sub_4CC0E0 -> NG (attempt 2)
+[ledger] 0x4cc7e0 sub_4CC7E0 -> OK (attempt 2)
+[ledger] 0x4cc960 sub_4CC960 -> NG (attempt 2)
+[ledger] 0x4d05b0 sub_4D05B0 -> OK (attempt 2)
+[ledger] 0x4d0730 sub_4D0730 -> NG (attempt 2)
+[ledger] 0x4d2fa0 sub_4D2FA0 -> OK (attempt 2)
+[ledger] 0x4d3120 sub_4D3120 -> NG (attempt 2)
+[ledger] 0x4e0f60 sub_4E0F60 -> OK (attempt 2)
+[ledger] 0x4e10e0 sub_4E10E0 -> NG (attempt 2)
+[ledger] 0x4e1b60 sub_4E1B60 -> OK (attempt 3)
+[ledger] 0x4e1ce0 sub_4E1CE0 -> NG (attempt 2)
+[ledger] 0x4e3180 sub_4E3180 -> OK (attempt 2)
+[ledger] 0x4e3300 sub_4E3300 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "MATCH": 10
+ },
+ "pathologies": {
+  "extern_reloc": 10
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p58\batch_report.json
