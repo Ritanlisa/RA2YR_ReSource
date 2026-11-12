@@ -3036,7 +3036,7 @@ def _cw5_member_ty(s, ctx):
 
 
 _FNCast_ARG_HEAD = re.compile(
-    r"^\([^()]*\(\s*__(?:stdcall|cdecl|fastcall)\b[^()]*\*[^()]*\)[^()]*\)")
+    r"^\([^()]*\(\s*__(?:stdcall|cdecl|fastcall|thiscall)\b[^()]*\*[^()]*\)[^()]*\)")
 
 
 def _cw5_arg_kind(s, syms, ctx=None):
@@ -3127,6 +3127,8 @@ def _cw5_coerce_one(val, T, syms, ctx):
         return None
     if ak == "small":
         ak = "int"               # value already extended by the compiler
+    if ak == "fnptr":
+        ak = "ptr"               # function name / fn-ptr value is a pointer
     if tk == "fnptr":
         return "(%s)(%s)" % (T, val)
     if tk == "ptr" and ak == "ptr":
@@ -3232,6 +3234,11 @@ def _cw5_sym_types(ctx, text):
                 out.setdefault(name, ty)
     for n, t in (getattr(ctx, "used_globals", None) or {}).items():
         out.setdefault(n, t)
+    # function-pointer locals (`int (__stdcall ***v6)(...)`) -- their value
+    # is a pointer; the indirect-call pass also uses THIS table's per-slot
+    # prototype list.
+    for m in _FNPTR_DECL.finditer(text):
+        out.setdefault(m.group("name"), "void (__cdecl *)()")
     return out
 
 
@@ -3295,6 +3302,122 @@ def pass_arg_harmonize(ctx):
             "call_args", "%d argument(s)" % total,
             "call-site arg typed to the declared slot "
             "(pointer<->int32 casts are codegen-neutral on x86-32)", True))
+
+
+# --------------------------------------------- CW5-F7: indirect fn-ptr calls
+#
+# CW5-3 (A3): IDA renders vtable/interface calls as an explicit fn-pointer
+# type cast plus a call, passing the receiver as the FIRST explicit
+# argument: `(**v6)(v6, p2, v9)` / `(*(int (__stdcall **)(unsigned int *))
+# &this->m010[8])(p0)`.  The cast's parameter list IS the callee prototype,
+# so each argument is typed to its slot exactly like a named callee (the
+# pointer<->int32 casts stay codegen-neutral).
+
+_FNPTR_DECL = re.compile(
+    r"^\s*(?P<ret>[A-Za-z_][\w\s\*]*?)\s*\(\s*__(?P<cc>stdcall|cdecl|fastcall|thiscall)"
+    r"\s*(?P<stars>\*+)\s*(?P<name>[A-Za-z_]\w*)\s*\)\s*"
+    r"\((?P<params>(?:[^()]|\([^()]*\))*)\)\s*;", re.M)
+
+_FNPTR_CAST = re.compile(
+    r"\(\s*(?:[A-Za-z_]\w*[\s\*]+)*\(\s*__(?:stdcall|cdecl|fastcall|thiscall)"
+    r"\s*\*+[^()]*\)\s*"
+    r"\((?P<params>(?:[^()]|\([^()]*\))*)\)\s*\)")
+
+
+def _balanced_open(text, close_idx):
+    """text[close_idx] == ')' -> index of the matching '(' or -1."""
+    depth = 0
+    for i in range(close_idx, -1, -1):
+        if text[i] == ")":
+            depth += 1
+        elif text[i] == "(":
+            depth -= 1
+            if depth == 0:
+                return i
+    return -1
+
+
+def _cw5_param_list(inner):
+    out = []
+    if not (inner or "").strip():
+        return out
+    for a in _split_args(inner):
+        a = a.strip()
+        if a:
+            out.append(a)
+    return out
+
+
+def pass_indirect_call_args(ctx):
+    text = "\n".join(ctx.lines)
+    if ("(__stdcall" not in text and "(__cdecl" not in text and
+            "(__fastcall" not in text and "(__thiscall" not in text):
+        return
+    syms = _cw5_sym_types(ctx, text)
+    local_fns = {}
+    for m in _FNPTR_DECL.finditer(text):
+        local_fns[m.group("name")] = _cw5_param_list(m.group("params"))
+    reps = []
+    total = 0
+    n = len(text)
+    i = 0
+    while i < n:
+        if text[i] != "(":
+            i += 1
+            continue
+        j = i - 1
+        while j >= 0 and text[j] in " \t\r\n":
+            j -= 1
+        types = None
+        if j >= 0 and text[j] == ")":
+            gs = _balanced_open(text, j)
+            if gs >= 0:
+                grp = text[gs:j + 1]
+                mm = re.match(r"^\(\s*\*+\s*(?:this->)?([A-Za-z_]\w*)\s*\)$",
+                              grp)
+                if mm and mm.group(1) in local_fns:
+                    types = local_fns[mm.group(1)]
+                if types is None:
+                    cm = None
+                    for cm in _FNPTR_CAST.finditer(grp):
+                        pass
+                    if cm is not None:
+                        types = _cw5_param_list(cm.group("params"))
+        elif j >= 0 and (text[j].isalnum() or text[j] == "_"):
+            k = j
+            while k >= 0 and (text[k].isalnum() or text[k] == "_"):
+                k -= 1
+            nm = text[k + 1:j + 1]
+            if nm in local_fns:
+                types = local_fns[nm]
+        if types:
+            cl = _balanced_close(text, i)
+            if cl > 0:
+                inner = text[i + 1:cl]
+                if inner.strip():
+                    new_inner, cnt = _cw5_coerce_inner(
+                        inner, types, syms, ctx)
+                    if cnt:
+                        reps.append((i + 1, cl, new_inner))
+                        total += cnt
+                        i = cl + 1
+                        continue
+        i += 1
+    if total:
+        out = []
+        pos = 0
+        for a, b, s in reps:
+            if a < pos:
+                continue
+            out.append(text[pos:a])
+            out.append(s)
+            pos = b
+        out.append(text[pos:])
+        ctx.lines = "".join(out).split("\n")
+        ctx.sites.append(Site(
+            "call_args", "%d indirect arg(s)" % total,
+            "indirect fn-ptr call args typed to the cast prototype "
+            "(codegen-neutral pointer<->int32 casts)", True))
 
 
 def pass_unknown_symbols(ctx):
@@ -5057,11 +5180,23 @@ _CRT_STR_FNS = ("strcpy", "strcat", "strcmp", "strlen", "strncpy",
                 "strncmp", "strchr", "strrchr", "strstr", "strupr",
                 "strlwr", "strdup")
 
+# CW5-2: which argument positions of the char* family actually take a
+# char*.  The old blanket cast also wrapped the `size_t n` slot of
+# strncpy/strncmp and the `int c` slot of strchr/strrchr -- `(char *)(4u)`
+# then failed the real prototype (C2664 'char *' -> 'unsigned int').
+_CRT_STR_CHAR_POS = {
+    "strcpy": (0, 1), "strcat": (0, 1), "strcmp": (0, 1),
+    "strlen": (0,), "strncpy": (0, 1), "strncmp": (0, 1),
+    "strchr": (0,), "strrchr": (0,), "strstr": (0, 1),
+    "strupr": (0,), "strlwr": (0,), "strdup": (0,),
+}
+
 
 def _crt_string_casts(text):
     """Fixed-arity char* CRT family only (sprintf's variadic tail would be
     corrupted by blanket casts)."""
     for fn in _CRT_STR_FNS:
+        _pos_ok = _CRT_STR_CHAR_POS.get(fn)
         pat = re.compile(r"\b%s\s*\(" % fn)
         out = []
         pos = 0
@@ -5091,9 +5226,10 @@ def _crt_string_casts(text):
                     cur.append(ch)
             args.append("".join(cur))
             new_args = []
-            for a in args:
+            for _ai, a in enumerate(args):
                 a2 = a.strip()
-                if not a2 or a2.startswith("("):
+                if (not a2 or a2.startswith("(") or
+                        (_pos_ok is not None and _ai not in _pos_ok)):
                     new_args.append(a)
                     continue
                 new_args.append("(char *)(%s)" % a2)

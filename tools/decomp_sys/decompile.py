@@ -942,6 +942,8 @@ def run_function(addr, reg, views, idx):
     # <-> int32 casts are codegen-neutral on x86-32; float/__int64 slots are
     # never touched).  Runs after the declaration passes.
     passes.pass_arg_harmonize(ctx)
+    # CW5-3: indirect fn-ptr calls carry their prototype in the cast
+    passes.pass_indirect_call_args(ctx)
     passes.pass_local_retype(ctx)
     passes.pass_assign_harmonize(ctx)
     passes.pass_scope_shrink(ctx)
