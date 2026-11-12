@@ -1,0 +1,11 @@
+{
+ "addr": "0x731CD0",
+ "name": "Factory::IdleHandler",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x731CD0",
+ "bytes_hex": "6a006a4db9e8f78700e8b2bee8ffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

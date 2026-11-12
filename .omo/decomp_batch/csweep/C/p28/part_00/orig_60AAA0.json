@@ -1,0 +1,11 @@
+{
+ "addr": "0x60AAA0",
+ "name": "Dialog::EnumAndCleanup",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x60AAA0",
+ "bytes_hex": "6a006860aa600051ff15e4147e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

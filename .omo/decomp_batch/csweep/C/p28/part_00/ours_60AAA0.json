@@ -1,0 +1,21 @@
+{
+ "symbol": "?EnumAndCleanup@Dialog@@QAEHXZ",
+ "sym_key": "Dialog::EnumAndCleanup",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "6a00680000000051e800000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_60AA60@@YAHPBX0@Z",
+   "sym_key": "sub_60AA60"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?EnumChildWindows@@YGHPAXHH@Z",
+   "sym_key": "EnumChildWindows"
+  }
+ ]
+}

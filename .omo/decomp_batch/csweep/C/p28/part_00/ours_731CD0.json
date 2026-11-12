@@ -1,0 +1,15 @@
+{
+ "symbol": "?IdleHandler@Factory@@QAEHXZ",
+ "sym_key": "Factory::IdleHandler",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "6a006a4de800000000c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?System_Handle@@YGHHD@Z",
+   "sym_key": "System_Handle"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x718090",
+ "name": "TeleportLocomotionClass::ShortFunc_718090",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x718090",
+ "bytes_hex": "8d4104508b08ff511084c00f94c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

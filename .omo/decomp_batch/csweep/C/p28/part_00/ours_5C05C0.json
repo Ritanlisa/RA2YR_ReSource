@@ -1,0 +1,15 @@
+{
+ "symbol": "?RenderLoop@BinkMovieHandle@@QAEHH@Z",
+ "sym_key": "BinkMovieHandle::RenderLoop",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b49105051e80000000083c408c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?COMStub_432C10@@YAHPAXH@Z",
+   "sym_key": "COMStub_432C10"
+  }
+ ]
+}

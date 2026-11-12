@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_538C10@@YAHXZ",
+ "sym_key": "Unnamed::sub_538C10",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "33c96a408a0d0000000033d2e800000000c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F7F8@@3EA",
+   "sym_key": "DataGlobal_A8F7F8"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?InitArrayWithValue@@YIHPAHHH@Z",
+   "sym_key": "InitArrayWithValue"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPosition@MouseClass@@QAEHXZ",
+ "sym_key": "MouseClass::GetPosition",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b91645500008b016a005251ff504cc3",
+ "relocs": []
+}

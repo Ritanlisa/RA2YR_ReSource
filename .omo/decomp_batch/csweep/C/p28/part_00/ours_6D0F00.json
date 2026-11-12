@@ -1,0 +1,8 @@
+{
+ "symbol": "?PreDraw@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::PreDraw",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b016a00c6814555000001ff5038c3",
+ "relocs": []
+}

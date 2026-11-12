@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x538c10 sub_538C10 -> _addr_53
+[conv] 0x5c9430 Megawealth::ProcessTick -> Megawealth
+[conv] 0x6c9930 BinkMovie::Destroy -> BinkMovie
+[conv] 0x6ea4f0 CaptureManagerClass::AddMember -> CaptureManagerClass
+[conv] 0x731cd0 Factory::IdleHandler -> Factory
+[conv] 0x731ce0 Memory::Alloc76 -> Memory
+[conv] 0x7cbdfe __cexit -> _addr_7C
+[conv] 0x7cbe0d __c_exit -> _addr_7C
+[conv] 0x60aaa0 Dialog::EnumAndCleanup -> Dialog
+[conv] 0x41bfa0 TechnoClass::ProcessFrame -> TechnoClass
+[conv] 0x4da2a0 FootClass::ClearSomeVector2 -> FootClass
+[conv] 0x5bdaa0 MouseClass::GetPosition -> MouseClass
+[conv] 0x6d0f00 ObjectClass::PreDraw -> ObjectClass
+[conv] 0x708b30 ObjectClass::GetTypeVt28 -> ObjectClass
+[conv] 0x70dc50 TechnoClass::processEMPulse -> TechnoClass
+[conv] 0x718090 TeleportLocomotionClass::ShortFunc_718090 -> TeleportLocomotionClass
+[conv] 0x70dc60 TechnoClass::OwnerHasPower -> TechnoClass
+[conv] 0x4080b0 UnitTypeClass::sub_4080B0 -> UnitTypeClass
+[conv] 0x5c0540 BinkMovieHandle::unnamed -> BinkMovieHandle
+[conv] 0x5c05c0 BinkMovieHandle::RenderLoop -> BinkMovieHandle
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_53                 rc=0
+[era] Megawealth               rc=2
+[era] BinkMovie                rc=0
+[era] CaptureManagerClass      rc=0
+[era] Factory                  rc=0
+[era] Memory                   rc=0
+[era] _addr_7C                 rc=0
+[era] Dialog                   rc=0
+[era] TechnoClass              rc=0
+[era] FootClass                rc=0
+[era] MouseClass               rc=0
+[era] ObjectClass              rc=0
+[era] TeleportLocomotionClass  rc=0
+[era] UnitTypeClass            rc=0
+[era] BinkMovieHandle          rc=0
+=== diffasm byte-compare ===
+[diff] 0x538c10   MISMATCH         sub_538C10
+[diff] 0x6c9930   MISMATCH         BinkMovie::Destroy
+[diff] 0x6ea4f0   MATCH            CaptureManagerClass::AddMember
+[diff] 0x731cd0   MISMATCH         Factory::IdleHandler
+[diff] 0x731ce0   MISMATCH         Memory::Alloc76
+[diff] 0x7cbdfe   MISMATCH         __cexit
+[diff] 0x7cbe0d   MISMATCH         __c_exit
+[diff] 0x60aaa0   MISMATCH         Dialog::EnumAndCleanup
+[diff] 0x41bfa0   MISMATCH         TechnoClass::ProcessFrame
+[diff] 0x70dc50   MISMATCH         TechnoClass::processEMPulse
+[diff] 0x70dc60   MISMATCH         TechnoClass::OwnerHasPower
+[diff] 0x4da2a0   MISMATCH         FootClass::ClearSomeVector2
+[diff] 0x5bdaa0   MISMATCH         MouseClass::GetPosition
+[diff] 0x6d0f00   MATCH            ObjectClass::PreDraw
+[diff] 0x708b30   MISMATCH         ObjectClass::GetTypeVt28
+[diff] 0x718090   MISMATCH         TeleportLocomotionClass::ShortFunc_718090
+[diff] 0x4080b0   MATCH            UnitTypeClass::sub_4080B0
+[diff] 0x5c0540   MISMATCH         BinkMovieHandle::unnamed
+[diff] 0x5c05c0   MISMATCH         BinkMovieHandle::RenderLoop
+[ledger] 0x538c10 sub_538C10 -> NG (attempt 1)
+[ledger] 0x5c9430 Megawealth::ProcessTick -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c9930 BinkMovie::Destroy -> NG (attempt 1)
+[ledger] 0x6ea4f0 CaptureManagerClass::AddMember -> OK (attempt 1)
+[ledger] 0x731cd0 Factory::IdleHandler -> NG (attempt 1)
+[ledger] 0x731ce0 Memory::Alloc76 -> NG (attempt 1)
+[ledger] 0x7cbdfe __cexit -> NG (attempt 1)
+[ledger] 0x7cbe0d __c_exit -> NG (attempt 1)
+[ledger] 0x60aaa0 Dialog::EnumAndCleanup -> NG (attempt 1)
+[ledger] 0x41bfa0 TechnoClass::ProcessFrame -> NG (attempt 1)
+[ledger] 0x4da2a0 FootClass::ClearSomeVector2 -> NG (attempt 1)
+[ledger] 0x5bdaa0 MouseClass::GetPosition -> NG (attempt 1)
+[ledger] 0x6d0f00 ObjectClass::PreDraw -> OK (attempt 1)
+[ledger] 0x708b30 ObjectClass::GetTypeVt28 -> NG (attempt 1)
+[ledger] 0x70dc50 TechnoClass::processEMPulse -> NG (attempt 1)
+[ledger] 0x718090 TeleportLocomotionClass::ShortFunc_718090 -> NG (attempt 1)
+[ledger] 0x70dc60 TechnoClass::OwnerHasPower -> NG (attempt 1)
+[ledger] 0x4080b0 UnitTypeClass::sub_4080B0 -> OK (attempt 1)
+[ledger] 0x5c0540 BinkMovieHandle::unnamed -> NG (attempt 1)
+[ledger] 0x5c05c0 BinkMovieHandle::RenderLoop -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 1,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 11,
+  "const_fold": 5
+ },
+ "match_rate_of_decided_pct": 15.8,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p28\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?OwnerHasPower@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::OwnerHasPower",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff90840000008bc8e900000000",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?HasPower@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::HasPower"
+  }
+ ]
+}

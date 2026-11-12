@@ -1,0 +1,11 @@
+{
+ "addr": "0x731CE0",
+ "name": "Memory::Alloc76",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x731CE0",
+ "bytes_hex": "6a006a4cb9e8f78700e8a2bee8ffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

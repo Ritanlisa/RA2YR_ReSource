@@ -1,0 +1,11 @@
+{
+ "addr": "0x708B30",
+ "name": "ObjectClass::GetTypeVt28",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x708B30",
+ "bytes_hex": "8b01ff90840000008b108bc8ff6270",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

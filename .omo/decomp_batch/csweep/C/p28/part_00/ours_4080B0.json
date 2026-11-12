@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_4080B0@UnitTypeClass@@QAEHXZ",
+ "sym_key": "UnitTypeClass::sub_4080B0",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b4914ba0040000083c110e900000000",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  }
+ ]
+}

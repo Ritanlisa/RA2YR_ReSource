@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddMember@CaptureManagerClass@@QAEDH@Z",
+ "sym_key": "CaptureManagerClass::AddMember",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b4424046a0150e800000000c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?AddMember@TeamClass@@QAEDHD@Z",
+   "sym_key": "TeamClass::AddMember"
+  }
+ ]
+}
