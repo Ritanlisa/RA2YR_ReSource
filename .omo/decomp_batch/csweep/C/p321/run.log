@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p321\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ed520 _DynamicVectorClass_PAVSmudgeTypeClass::SetCapacity -> _DynamicVectorClass_PAVSmudgeTypeClass
+[conv] 0x4ed780 _DynamicVectorClass_PAVTerrainTypeClass::SetCapacity_0 -> _DynamicVectorClass_PAVTerrainTypeClass
+[conv] 0x4ed9e0 _DynamicVectorClass_PAVBuildingTypeClass::SetCapacity_1 -> _DynamicVectorClass_PAVBuildingTypeClass
+[conv] 0x4edea0 _DynamicVectorClass_PAVUnitTypeClass::SetCapacity_0 -> _DynamicVectorClass_PAVUnitTypeClass
+[conv] 0x4ee100 _DynamicVectorClass_PAVAnimTypeClass::SetCapacity -> _DynamicVectorClass_PAVAnimTypeClass
+[conv] 0x4ee360 _DynamicVectorClass_PAVInfantryTypeClass::SetCapacity_0 -> _DynamicVectorClass_PAVInfantryTypeClass
+[conv] 0x4ee5c0 _DynamicVectorClass_PAVBulletTypeClass::SetCapacity_1 -> _DynamicVectorClass_PAVBulletTypeClass
+[conv] 0x4ee820 _DynamicVectorClass_PAVVoxelAnimTypeClass::SetCapacity -> _DynamicVectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4eea80 _DynamicVectorClass_PAVIsometricTileTypeClass::SetCapacity_0 -> _DynamicVectorClass_PAVIsometricTileTypeClass
+[conv] 0x4eece0 _DynamicVectorClass_PAVParticleTypeClass::SetCapacity -> _DynamicVectorClass_PAVParticleTypeClass
+[conv] 0x4eef40 _DynamicVectorClass_PAVParticleSystemTypeClass::SetCapacity_0 -> _DynamicVectorClass_PAVParticleSystemTypeClass
+[conv] 0x4ef1a0 _DynamicVectorClass_PAVSuperWeaponTypeClass::SetCapacity_1 -> _DynamicVectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4ef400 _DynamicVectorClass_PAVAbstractTypeClass::SetCapacity -> _DynamicVectorClass_PAVAbstractTypeClass
+[conv] 0x50ea90 _DynamicVectorClass_PBVBuildingTypeClass::Resize2 -> _DynamicVectorClass_PBVBuildingTypeClass
+[conv] 0x50eda0 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::SetCapacity -> _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50f660 VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x50f8c0 _DynamicVectorClass_PBVTeamTypeClass::SetCapacity_0 -> _DynamicVectorClass_PBVTeamTypeClass
+[conv] 0x512e70 _DynamicVectorClass_PBVInfantryTypeClass::Remove -> _DynamicVectorClass_PBVInfantryTypeClass
+[conv] 0x513240 _DynamicVectorClass_PBVUnitTypeClass::Release -> _DynamicVectorClass_PBVUnitTypeClass
+[conv] 0x513610 _DynamicVectorClass_PBVAircraftTypeClass::Release -> _DynamicVectorClass_PBVAircraftTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVSmudgeTypeClass rc=2
+[era] _DynamicVectorClass_PAVTerrainTypeClass rc=2
+[era] _DynamicVectorClass_PAVBuildingTypeClass rc=2
+[era] _DynamicVectorClass_PAVUnitTypeClass rc=2
+[era] _DynamicVectorClass_PAVAnimTypeClass rc=2
+[era] _DynamicVectorClass_PAVInfantryTypeClass rc=2
+[era] _DynamicVectorClass_PAVBulletTypeClass rc=2
+[era] _DynamicVectorClass_PAVVoxelAnimTypeClass rc=2
+[era] _DynamicVectorClass_PAVIsometricTileTypeClass rc=2
+[era] _DynamicVectorClass_PAVParticleTypeClass rc=2
+[era] _DynamicVectorClass_PAVParticleSystemTypeClass rc=2
+[era] _DynamicVectorClass_PAVSuperWeaponTypeClass rc=2
+[era] _DynamicVectorClass_PAVAbstractTypeClass rc=2
+[era] _DynamicVectorClass_PBVBuildingTypeClass rc=2
+[era] _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass rc=2
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] _DynamicVectorClass_PBVTeamTypeClass rc=2
+[era] _DynamicVectorClass_PBVInfantryTypeClass rc=2
+[era] _DynamicVectorClass_PBVUnitTypeClass rc=2
+[era] _DynamicVectorClass_PBVAircraftTypeClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x50f660   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6
+[ledger] 0x4ed520 _DynamicVectorClass_PAVSmudgeTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed780 _DynamicVectorClass_PAVTerrainTypeClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed9e0 _DynamicVectorClass_PAVBuildingTypeClass::SetCapacity_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4edea0 _DynamicVectorClass_PAVUnitTypeClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee100 _DynamicVectorClass_PAVAnimTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee360 _DynamicVectorClass_PAVInfantryTypeClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee5c0 _DynamicVectorClass_PAVBulletTypeClass::SetCapacity_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee820 _DynamicVectorClass_PAVVoxelAnimTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eea80 _DynamicVectorClass_PAVIsometricTileTypeClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eece0 _DynamicVectorClass_PAVParticleTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eef40 _DynamicVectorClass_PAVParticleSystemTypeClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ef1a0 _DynamicVectorClass_PAVSuperWeaponTypeClass::SetCapacity_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ef400 _DynamicVectorClass_PAVAbstractTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50ea90 _DynamicVectorClass_PBVBuildingTypeClass::Resize2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50eda0 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f660 VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6 -> NG (attempt 1)
+[ledger] 0x50f8c0 _DynamicVectorClass_PBVTeamTypeClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x512e70 _DynamicVectorClass_PBVInfantryTypeClass::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513240 _DynamicVectorClass_PBVUnitTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513610 _DynamicVectorClass_PBVAircraftTypeClass::Release -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p321\batch_report.json

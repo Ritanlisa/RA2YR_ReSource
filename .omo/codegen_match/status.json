@@ -50162,6 +50162,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4ed520": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVSmudgeTypeClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SmudgeTypeClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ed5d0": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -50217,6 +50229,18 @@
   "orig_name": "VectorClass_ptr_TerrainTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4ed780": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVTerrainTypeClass::SetCapacity_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SmudgeTypeClass::SetCapacity_0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4ed830": {
@@ -50289,6 +50313,18 @@
   "orig_name": "VectorClass_ptr_BuildingTypeClass::Remove",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4ed9e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVBuildingTypeClass::SetCapacity_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SmudgeTypeClass::SetCapacity_1",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4eda90": {
@@ -50432,6 +50468,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4edea0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVUnitTypeClass::SetCapacity_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AircraftTypeClass::SetCapacity_0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4edf50": {
   "attempts": 2,
   "clean": false,
@@ -50504,6 +50552,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4ee100": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVAnimTypeClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AnimTypeClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ee1b0": {
   "attempts": 2,
   "clean": false,
@@ -50570,6 +50630,18 @@
   "name": "VectorClass_ptr_InfantryTypeClass::LoadTypeData",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x4ee360": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVInfantryTypeClass::SetCapacity_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AnimTypeClass::SetCapacity_0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4ee410": {
   "attempts": 2,
@@ -50641,6 +50713,18 @@
   "orig_name": "VectorClass_ptr_BulletTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4ee5c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVBulletTypeClass::SetCapacity_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AnimTypeClass::SetCapacity_1",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4ee670": {
@@ -50715,6 +50799,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4ee820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVVoxelAnimTypeClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ee8d0": {
   "attempts": 2,
   "clean": false,
@@ -50787,6 +50883,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4eea80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVIsometricTileTypeClass::SetCapacity_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::SetCapacity_0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4eeb30": {
   "attempts": 2,
   "clean": false,
@@ -50852,6 +50960,18 @@
   "orig_name": "VectorClass_ptr_ParticleTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4eece0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVParticleTypeClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ParticleTypeClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4eed90": {
@@ -50921,6 +51041,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4eef40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVParticleSystemTypeClass::SetCapacity_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ParticleTypeClass::SetCapacity_0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4eeff0": {
   "attempts": 2,
   "clean": false,
@@ -50988,6 +51120,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4ef1a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVSuperWeaponTypeClass::SetCapacity_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ParticleTypeClass::SetCapacity_1",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ef250": {
   "attempts": 2,
   "clean": false,
@@ -51053,6 +51197,18 @@
   "orig_name": "VectorClass_ptr_AbstractTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4ef400": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVAbstractTypeClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SuperClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4ef4b0": {
@@ -55364,6 +55520,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x50ea90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PBVBuildingTypeClass::Resize2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GenericVector::Resize2",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x50eb40": {
   "attempts": 2,
   "clean": false,
@@ -55441,6 +55609,18 @@
   "orig_name": "VectorClass_UAngerStruct___16::GetCapacity",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x50eda0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_UAngerStruct::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x50ee50": {
@@ -55635,6 +55815,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x50f660": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+12 je 0x50f6ea",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x50f710": {
   "attempts": 1,
   "clean": false,
@@ -55705,6 +55897,18 @@
   "orig_name": "VectorClass_BuildingType::GetItemIndex_0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x50f8c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PBVTeamTypeClass::SetCapacity_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_BuildingType::SetCapacity_0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x50f970": {
@@ -57078,6 +57282,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x512e70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PBVInfantryTypeClass::Remove",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TypeList_Infantry::Remove",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x512f20": {
   "attempts": 1,
   "clean": false,
@@ -57191,6 +57407,18 @@
   "orig_name": "TypeList_Infantry::Constructor_0",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x513240": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PBVUnitTypeClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseTypeClass_36::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5132f0": {
@@ -57311,6 +57539,18 @@
   "orig_name": "TypeList_Infantry::Constructor_1",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x513610": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PBVAircraftTypeClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseTypeClass_28::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5136c0": {
