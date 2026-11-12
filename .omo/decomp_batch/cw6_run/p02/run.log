@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x41c1d0 AircraftClass::CheckMissionAbort -> AircraftClass
+[conv] 0x41ceb0 AircraftTypeClass::GetClassIdentifier -> AircraftTypeClass
+[conv] 0x41d7a0 AirstrikeClass::ddtor -> AirstrikeClass
+[conv] 0x41de40 _VectorClass_PAVAirstrikeClass::Add -> _VectorClass_PAVAirstrikeClass
+[conv] 0x41df60 _VectorClass_PAVAirstrikeClass::GetSize -> _VectorClass_PAVAirstrikeClass
+[conv] 0x41e070 _DynamicVectorClass_PAVAirstrikeClass::FindItemIndex -> _DynamicVectorClass_PAVAirstrikeClass
+[conv] 0x41e500 AITriggerTypeClass::GetClassIdentifier -> AITriggerTypeClass
+[conv] 0x4204f0 _VectorClass_PAVAlphaLightingRemapClass::Read -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x420d40 AlphaShapeClass::SD_vt03 -> AlphaShapeClass
+[conv] 0x421860 _VectorClass_PAVAlphaShapeClass::Add -> _VectorClass_PAVAlphaShapeClass
+[conv] 0x421980 _VectorClass_PAVAlphaShapeClass::GetSize -> _VectorClass_PAVAlphaShapeClass
+[conv] 0x4263c0 ObjectClass::COMStub_Ret8487648_36 -> ObjectClass
+[conv] 0x426540 AnimClass::MissionStubReturnZero2 -> AnimClass
+[conv] 0x428990 AnimTypeClass::GetClassIdentifier -> AnimTypeClass
+[conv] 0x429200 sub_429200 -> _addr_42
+[conv] 0x42d510 CellStruct::Add -> CellStruct
+[conv] 0x42d600 _VectorClass_I::AddRef -> _VectorClass_I
+[conv] 0x42d720 _VectorClass_I::FindItemIndex -> _VectorClass_I
+[conv] 0x42d880 _DynamicVectorClass_I::GetSize -> _DynamicVectorClass_I
+[conv] 0x42d8b0 _VectorClass_G::AddRef -> _VectorClass_G
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AircraftClass            rc=0
+[era] AircraftTypeClass        rc=0
+[era] AirstrikeClass           rc=0
+[era] _VectorClass_PAVAirstrikeClass rc=0
+[era] _DynamicVectorClass_PAVAirstrikeClass rc=0
+[era] AITriggerTypeClass       rc=0
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=0
+[era] AlphaShapeClass          rc=0
+[era] _VectorClass_PAVAlphaShapeClass rc=0
+[era] ObjectClass              rc=0
+[era] AnimClass                rc=0
+[era] AnimTypeClass            rc=0
+[era] _addr_42                 rc=0
+[era] CellStruct               rc=0
+[era] _VectorClass_I           rc=0
+[era] _DynamicVectorClass_I    rc=0
+[era] _VectorClass_G           rc=0
+=== diffasm byte-compare ===
+[diff] 0x41c1d0   MISMATCH         AircraftClass::CheckMissionAbort
+[diff] 0x41ceb0   MISMATCH         AircraftTypeClass::GetClassIdentifier
+[diff] 0x41d7a0   MISMATCH         AirstrikeClass::ddtor
+[diff] 0x41de40   MISMATCH         _VectorClass_PAVAirstrikeClass::Add
+[diff] 0x41df60   MISMATCH         _VectorClass_PAVAirstrikeClass::GetSize
+[diff] 0x41e070   MISMATCH         _DynamicVectorClass_PAVAirstrikeClass::FindItemIndex
+[diff] 0x41e500   MISMATCH         AITriggerTypeClass::GetClassIdentifier
+[diff] 0x4204f0   MISMATCH         _VectorClass_PAVAlphaLightingRemapClass::Read
+[diff] 0x420d40   MISMATCH         AlphaShapeClass::SD_vt03
+[diff] 0x421860   MISMATCH         _VectorClass_PAVAlphaShapeClass::Add
+[diff] 0x421980   MISMATCH         _VectorClass_PAVAlphaShapeClass::GetSize
+[diff] 0x4263c0   MISMATCH         ObjectClass::COMStub_Ret8487648_36
+[diff] 0x426540   MISMATCH         AnimClass::MissionStubReturnZero2
+[diff] 0x428990   MISMATCH         AnimTypeClass::GetClassIdentifier
+[diff] 0x429200   MISMATCH         sub_429200
+[diff] 0x42d510   MISMATCH         CellStruct::Add
+[diff] 0x42d600   MISMATCH         _VectorClass_I::AddRef
+[diff] 0x42d720   MISMATCH         _VectorClass_I::FindItemIndex
+[diff] 0x42d880   MISMATCH         _DynamicVectorClass_I::GetSize
+[diff] 0x42d8b0   MISMATCH         _VectorClass_G::AddRef
+[ledger] 0x41c1d0 AircraftClass::CheckMissionAbort -> NG (attempt 2)
+[ledger] 0x41ceb0 AircraftTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x41d7a0 AirstrikeClass::ddtor -> NG (attempt 2)
+[ledger] 0x41de40 _VectorClass_PAVAirstrikeClass::Add -> NG (attempt 2)
+[ledger] 0x41df60 _VectorClass_PAVAirstrikeClass::GetSize -> NG (attempt 2)
+[ledger] 0x41e070 _DynamicVectorClass_PAVAirstrikeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x41e500 AITriggerTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x4204f0 _VectorClass_PAVAlphaLightingRemapClass::Read -> NG (attempt 2)
+[ledger] 0x420d40 AlphaShapeClass::SD_vt03 -> NG (attempt 2)
+[ledger] 0x421860 _VectorClass_PAVAlphaShapeClass::Add -> NG (attempt 2)
+[ledger] 0x421980 _VectorClass_PAVAlphaShapeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4263c0 ObjectClass::COMStub_Ret8487648_36 -> NG (attempt 2)
+[ledger] 0x426540 AnimClass::MissionStubReturnZero2 -> NG (attempt 2)
+[ledger] 0x428990 AnimTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x429200 sub_429200 -> NG (attempt 2)
+[ledger] 0x42d510 CellStruct::Add -> NG (attempt 2)
+[ledger] 0x42d600 _VectorClass_I::AddRef -> NG (attempt 2)
+[ledger] 0x42d720 _VectorClass_I::FindItemIndex -> NG (attempt 2)
+[ledger] 0x42d880 _DynamicVectorClass_I::GetSize -> NG (attempt 2)
+[ledger] 0x42d8b0 _VectorClass_G::AddRef -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 12,
+  "branch_polarity": 4,
+  "const_fold": 1,
+  "extern_reloc": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p02\batch_report.json

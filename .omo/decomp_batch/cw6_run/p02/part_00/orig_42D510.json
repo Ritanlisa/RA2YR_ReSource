@@ -1,0 +1,11 @@
+{
+ "addr": "0x42D510",
+ "name": "CellStruct::Add",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42D510",
+ "bytes_hex": "8b442408668b10668b400266034102660311668944240a8b44240466895424088b4c24088908c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

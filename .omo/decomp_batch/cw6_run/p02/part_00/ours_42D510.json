@@ -1,0 +1,8 @@
+{
+ "symbol": "?Add@CellStruct@@QAEPAIPAHPAG@Z",
+ "sym_key": "CellStruct::Add",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8b118b442408c1fa1066035002668b00660301668954240a66894424088b4424048b4c24088908c20800",
+ "relocs": []
+}

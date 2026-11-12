@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorClass_G@@QAEDH@Z",
+ "sym_key": "_VectorClass_G::AddRef",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "568b7108578b7c240c3b7708752f33d285f67f075fb0015ec204008b41048b4f042bc8668b38663b3c0175114283c0023bd67de0668b38663b3c0174ef5f32c05ec20400",
+ "relocs": []
+}

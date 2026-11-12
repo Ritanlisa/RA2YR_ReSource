@@ -1,0 +1,15 @@
+{
+ "symbol": "?SD_vt03@AlphaShapeClass@@QAGHPAI@Z",
+ "sym_key": "AlphaShapeClass::SD_vt03",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c2080033c9c70084753c62c74004e774d211c74008b8f500608a0d0000000089480c33c0c20800",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?unk_7E99AC@@3EA",
+   "sym_key": "unk_7E99AC"
+  }
+ ]
+}

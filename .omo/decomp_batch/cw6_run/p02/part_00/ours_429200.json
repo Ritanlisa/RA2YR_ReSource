@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_429200@@YAXXZ",
+ "sym_key": "Unnamed::sub_429200",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?punk@@3PAXA",
+   "sym_key": "punk"
+  },
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?vt_ApplicationClass@@3PAXA",
+   "sym_key": "vt_ApplicationClass"
+  }
+ ]
+}

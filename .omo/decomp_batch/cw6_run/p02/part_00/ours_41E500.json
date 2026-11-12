@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetClassIdentifier@AITriggerTypeClass@@QAGHPAI@Z",
+ "sym_key": "AITriggerTypeClass::GetClassIdentifier",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c2080033c9c700243509bac74004f44cd211c74008bc2600108a0d0000000089480c33c0c20800",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?unk_7E996C@@3EA",
+   "sym_key": "unk_7E996C"
+  }
+ ]
+}
