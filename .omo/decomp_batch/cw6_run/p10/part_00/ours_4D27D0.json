@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetClassIdentifier@FoggedObjectClass@@QAGHPAI@Z",
+ "sym_key": "FoggedObjectClass::GetClassIdentifier",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c2080033c9c7000e0b471cc74004d769d211c74008b8f200608a0d0000000089480c33c0c20800",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?unk_7E999C@@3EA",
+   "sym_key": "unk_7E999C"
+  }
+ ]
+}

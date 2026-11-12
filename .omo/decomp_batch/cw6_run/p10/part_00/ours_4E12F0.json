@@ -1,0 +1,8 @@
+{
+ "symbol": "?Construct@ShpButtonClass@@QAEPAIHHHHHD@Z",
+ "sym_key": "ShpButtonClass::Construct",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b44240889510c8b54240c538a5c241c56578b791c8951148b3133d28941108b44241c8af381e7000000ff0bd789411833c089511c8b5424203ad88941048941088951208901740683ca058951208bc65f5e5bc21800",
+ "relocs": []
+}

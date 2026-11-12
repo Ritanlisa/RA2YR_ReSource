@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x4cf940 FlyLocomotionClass::ShortFunc_4CF940 -> FlyLocomotionClass
+[conv] 0x4cfc80 FlyLocomotionClass::ddtor -> FlyLocomotionClass
+[conv] 0x4d27d0 FoggedObjectClass::GetClassIdentifier -> FoggedObjectClass
+[conv] 0x4d29b0 _VectorClass_UDrawRecord_FoggedObjectClass::AddRef -> _VectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4d2cd0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::Read -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4e0220 FoggedObjectClass::PointerToIndex -> FoggedObjectClass
+[conv] 0x4e0320 _VectorClass_PAVAbstractClass::AddRef -> _VectorClass_PAVAbstractClass
+[conv] 0x4e0440 _VectorClass_PAVAbstractClass::Read -> _VectorClass_PAVAbstractClass
+[conv] 0x4e0550 _DynamicVectorClass_PAVAbstractClass::Find -> _DynamicVectorClass_PAVAbstractClass
+[conv] 0x4e0580 _VectorClass_PAVFootClass::AddRef -> _VectorClass_PAVFootClass
+[conv] 0x4e06a0 _VectorClass_PAVFootClass::Read -> _VectorClass_PAVFootClass
+[conv] 0x4e07b0 FoggedObjectClass::FindItem -> FoggedObjectClass
+[conv] 0x4e07e0 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::AddRef -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e0990 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetSize -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e12f0 ShpButtonClass::Construct -> ShpButtonClass
+[conv] 0x4e19f0 GadgetClass::IsPrimaryInstance -> GadgetClass
+[conv] 0x4e4580 IsAvailableColorhWnd -> _addr_4E
+[conv] 0x4e50a0 sub_4E50A0 -> _addr_4E
+[conv] 0x4e7ce0 sub_4E7CE0 -> _addr_4E
+[conv] 0x4e7e20 unknown_libname_15 -> _addr_4E
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FlyLocomotionClass       rc=0
+[era] FoggedObjectClass        rc=2
+[era] _VectorClass_UDrawRecord_FoggedObjectClass rc=0
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] _VectorClass_PAVAbstractClass rc=0
+[era] _DynamicVectorClass_PAVAbstractClass rc=0
+[era] _VectorClass_PAVFootClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] ShpButtonClass           rc=0
+[era] GadgetClass              rc=0
+[era] _addr_4E                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4cf940   MISMATCH         FlyLocomotionClass::ShortFunc_4CF940
+[diff] 0x4cfc80   MISMATCH         FlyLocomotionClass::ddtor
+[diff] 0x4d27d0   MISMATCH         FoggedObjectClass::GetClassIdentifier
+[diff] 0x4d29b0   MISMATCH         _VectorClass_UDrawRecord_FoggedObjectClass::AddRef
+[diff] 0x4e0320   MISMATCH         _VectorClass_PAVAbstractClass::AddRef
+[diff] 0x4e0440   MISMATCH         _VectorClass_PAVAbstractClass::Read
+[diff] 0x4e0550   MISMATCH         _DynamicVectorClass_PAVAbstractClass::Find
+[diff] 0x4e0580   MISMATCH         _VectorClass_PAVFootClass::AddRef
+[diff] 0x4e06a0   MISMATCH         _VectorClass_PAVFootClass::Read
+[diff] 0x4e07e0   MISMATCH         _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::AddRef
+[diff] 0x4e0990   MISMATCH         _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetSize
+[diff] 0x4e12f0   MISMATCH         ShpButtonClass::Construct
+[diff] 0x4e19f0   MISMATCH         GadgetClass::IsPrimaryInstance
+[diff] 0x4e4580   MISMATCH         IsAvailableColorhWnd
+[diff] 0x4e50a0   MISMATCH         sub_4E50A0
+[diff] 0x4e7ce0   MISMATCH         sub_4E7CE0
+[ledger] 0x4cf940 FlyLocomotionClass::ShortFunc_4CF940 -> NG (attempt 2)
+[ledger] 0x4cfc80 FlyLocomotionClass::ddtor -> NG (attempt 2)
+[ledger] 0x4d27d0 FoggedObjectClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x4d29b0 _VectorClass_UDrawRecord_FoggedObjectClass::AddRef -> NG (attempt 2)
+[ledger] 0x4d2cd0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::Read -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e0220 FoggedObjectClass::PointerToIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e0320 _VectorClass_PAVAbstractClass::AddRef -> NG (attempt 2)
+[ledger] 0x4e0440 _VectorClass_PAVAbstractClass::Read -> NG (attempt 2)
+[ledger] 0x4e0550 _DynamicVectorClass_PAVAbstractClass::Find -> NG (attempt 2)
+[ledger] 0x4e0580 _VectorClass_PAVFootClass::AddRef -> NG (attempt 2)
+[ledger] 0x4e06a0 _VectorClass_PAVFootClass::Read -> NG (attempt 2)
+[ledger] 0x4e07b0 FoggedObjectClass::FindItem -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e07e0 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::AddRef -> NG (attempt 2)
+[ledger] 0x4e0990 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetSize -> NG (attempt 2)
+[ledger] 0x4e12f0 ShpButtonClass::Construct -> NG (attempt 2)
+[ledger] 0x4e19f0 GadgetClass::IsPrimaryInstance -> NG (attempt 2)
+[ledger] 0x4e4580 IsAvailableColorhWnd -> NG (attempt 2)
+[ledger] 0x4e50a0 sub_4E50A0 -> NG (attempt 2)
+[ledger] 0x4e7ce0 sub_4E7CE0 -> NG (attempt 2)
+[ledger] 0x4e7e20 unknown_libname_15 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "extern_reloc": 2,
+  "branch_polarity": 2,
+  "branch_order": 1,
+  "cc_mismatch": 1,
+  "const_fold": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p10\batch_report.json

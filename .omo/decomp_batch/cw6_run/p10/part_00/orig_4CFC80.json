@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CFC80",
+ "name": "FlyLocomotionClass::ddtor",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CFC80",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d809a7e0089088b15849a7e008950048b0d889a7e008948088b158c9a7e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

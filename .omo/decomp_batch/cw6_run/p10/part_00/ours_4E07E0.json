@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass@@QAEDH@Z",
+ "sym_key": "_VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::AddRef",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "8b44240453558b69088b5008563bea57754833db85ed7f095f5e5db0015bc204008b50048b41048b308d7a042bd03b34028d0c027524be040000002bf28bd72bd08b3c0e3b3c0275114383c00883c1083bdd7dc48b383b3974e75f5e5d32c05bc20400",
+ "relocs": []
+}

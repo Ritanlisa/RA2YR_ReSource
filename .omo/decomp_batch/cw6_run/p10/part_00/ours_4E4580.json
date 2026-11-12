@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsAvailableColorhWnd@@YI_NH@Z",
+ "sym_key": "Unnamed::IsAvailableColorhWnd",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8d044933c9833c8500000000ff0f95c18ac1c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4040@@3PAIA",
+   "sym_key": "DataGlobal_8B4040"
+  }
+ ]
+}

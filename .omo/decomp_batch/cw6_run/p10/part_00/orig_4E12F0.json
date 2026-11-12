@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E12F0",
+ "name": "GadgetClass::Construct",
+ "size": 79,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E12F0",
+ "bytes_hex": "8b5424088bc18b4c2404538950108b54241489480c8b4c24108950188a54241c33db8948148b4c241889580489580888581c88581e3ad388501d894820c700bc927e005b740683c905894820c21800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

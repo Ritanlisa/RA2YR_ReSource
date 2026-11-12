@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D27D0",
+ "name": "FoggedObjectClass::GetClassIdentifier",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D27D0",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d90997e0089088b1594997e008950048b0d98997e008948088b159c997e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
