@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x49f170 sub_49F170 -> _addr_49
+[conv] 0x49f190 sub_49F190 -> _addr_49
+[conv] 0x49fdc0 sub_49FDC0 -> _addr_49
+[conv] 0x49fde0 sub_49FDE0 -> _addr_49
+[conv] 0x49fe00 sub_49FE00 -> _addr_49
+[conv] 0x4a15d0 sub_4A15D0 -> _addr_4A
+[conv] 0x4a15f0 sub_4A15F0 -> _addr_4A
+[conv] 0x4a1610 sub_4A1610 -> _addr_4A
+[conv] 0x4a21d0 sub_4A21D0 -> _addr_4A
+[conv] 0x4a21f0 sub_4A21F0 -> _addr_4A
+[conv] 0x4a2210 sub_4A2210 -> _addr_4A
+[conv] 0x4a4f10 sub_4A4F10 -> _addr_4A
+[conv] 0x4a4f30 sub_4A4F30 -> _addr_4A
+[conv] 0x4a4f50 sub_4A4F50 -> _addr_4A
+[conv] 0x4a6ad0 sub_4A6AD0 -> _addr_4A
+[conv] 0x4a6af0 sub_4A6AF0 -> _addr_4A
+[conv] 0x4a6b10 sub_4A6B10 -> _addr_4A
+[conv] 0x4a84b0 sub_4A84B0 -> _addr_4A
+[conv] 0x4a84d0 sub_4A84D0 -> _addr_4A
+[conv] 0x4a84f0 sub_4A84F0 -> _addr_4A
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_49                 rc=0
+[era] _addr_4A                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x49f170   MATCH            sub_49F170
+[diff] 0x49f190   MISMATCH         sub_49F190
+[diff] 0x49fdc0   MATCH            sub_49FDC0
+[diff] 0x49fde0   MATCH            sub_49FDE0
+[diff] 0x49fe00   MATCH            sub_49FE00
+[diff] 0x4a15d0   MATCH            sub_4A15D0
+[diff] 0x4a15f0   MATCH            sub_4A15F0
+[diff] 0x4a1610   MATCH            sub_4A1610
+[diff] 0x4a21d0   MATCH            sub_4A21D0
+[diff] 0x4a21f0   MATCH            sub_4A21F0
+[diff] 0x4a2210   MATCH            sub_4A2210
+[diff] 0x4a4f10   MATCH            sub_4A4F10
+[diff] 0x4a4f30   MATCH            sub_4A4F30
+[diff] 0x4a4f50   MATCH            sub_4A4F50
+[diff] 0x4a6ad0   MATCH            sub_4A6AD0
+[diff] 0x4a6af0   MATCH            sub_4A6AF0
+[diff] 0x4a6b10   MATCH            sub_4A6B10
+[diff] 0x4a84b0   MATCH            sub_4A84B0
+[diff] 0x4a84d0   MATCH            sub_4A84D0
+[diff] 0x4a84f0   MATCH            sub_4A84F0
+[ledger] 0x49f170 sub_49F170 -> OK (attempt 2)
+[ledger] 0x49f190 sub_49F190 -> NG (attempt 4)
+[ledger] 0x49fdc0 sub_49FDC0 -> OK (attempt 2)
+[ledger] 0x49fde0 sub_49FDE0 -> OK (attempt 2)
+[ledger] 0x49fe00 sub_49FE00 -> OK (attempt 2)
+[ledger] 0x4a15d0 sub_4A15D0 -> OK (attempt 2)
+[ledger] 0x4a15f0 sub_4A15F0 -> OK (attempt 2)
+[ledger] 0x4a1610 sub_4A1610 -> OK (attempt 2)
+[ledger] 0x4a21d0 sub_4A21D0 -> OK (attempt 2)
+[ledger] 0x4a21f0 sub_4A21F0 -> OK (attempt 2)
+[ledger] 0x4a2210 sub_4A2210 -> OK (attempt 4)
+[ledger] 0x4a4f10 sub_4A4F10 -> OK (attempt 2)
+[ledger] 0x4a4f30 sub_4A4F30 -> OK (attempt 2)
+[ledger] 0x4a4f50 sub_4A4F50 -> OK (attempt 2)
+[ledger] 0x4a6ad0 sub_4A6AD0 -> OK (attempt 2)
+[ledger] 0x4a6af0 sub_4A6AF0 -> OK (attempt 2)
+[ledger] 0x4a6b10 sub_4A6B10 -> OK (attempt 2)
+[ledger] 0x4a84b0 sub_4A84B0 -> OK (attempt 2)
+[ledger] 0x4a84d0 sub_4A84D0 -> OK (attempt 2)
+[ledger] 0x4a84f0 sub_4A84F0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 95.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p07\batch_report.json
