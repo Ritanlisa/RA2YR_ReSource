@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_6C6B40@@YAHXZ",
+ "sym_key": "Unnamed::sub_6C6B40",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_6C6B60@@YAHPBX0@Z",
+   "sym_key": "sub_6C6B60"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_SidebarButtonState@@3IA",
+   "sym_key": "g_SidebarButtonState"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0BD54@@3IA",
+   "sym_key": "DataGlobal_B0BD54"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_SidebarPool@@3PAXA",
+   "sym_key": "g_SidebarPool"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

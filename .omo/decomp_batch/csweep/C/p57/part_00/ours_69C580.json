@@ -1,0 +1,15 @@
+{
+ "symbol": "?Clear@_VectorClass_VWstring@@QAEPAPADPAPADH@Z",
+ "sym_key": "_VectorClass_VWstring::Clear",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b41048b4c2408568b7424088d14888bce52e8000000008bc65ec20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::AssignFromPtr"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetName@PlayerType@@QAEPADXZ",
+ "sym_key": "PlayerType::GetName",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "e80000000083f8087606a100000000c38b048500000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?DetectProcessorType@@YAHXZ",
+   "sym_key": "DetectProcessorType"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?aUnknown@@3HA",
+   "sym_key": "aUnknown"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?off_822C54@@3IA",
+   "sym_key": "off_822C54"
+  }
+ ]
+}

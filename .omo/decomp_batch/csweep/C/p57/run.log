@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p57\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e62b0 PlayerType::GetName -> PlayerType
+[conv] 0x4f6930 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x5439f0 AbstractClass::COMStub_6 -> AbstractClass
+[conv] 0x549d70 IsometricTileTypeClass::SaveToINI -> IsometricTileTypeClass
+[conv] 0x555110 LightSourceClass::Seek -> LightSourceClass
+[conv] 0x5f9950 AbstractClass::SaveLoad_PrefixWrapper -> AbstractClass
+[conv] 0x5fec10 OverlayTypeClass::SaveLoad_Prefix_0 -> OverlayTypeClass
+[conv] 0x691690 ScriptClass::SaveState -> ScriptClass
+[conv] 0x691de0 ScriptTypeClass::SaveToINI -> ScriptTypeClass
+[conv] 0x69c580 _VectorClass_VWstring::Clear -> _VectorClass_VWstring
+[conv] 0x6b58b0 SmudgeTypeClass::SaveToINI -> SmudgeTypeClass
+[conv] 0x6c6b40 sub_6C6B40 -> _addr_6C
+[conv] 0x6cdfd0 SuperClass::SaveState -> SuperClass
+[conv] 0x6ce8d0 SuperWeaponTypeClass::SaveLoad_Prefix_0 -> SuperWeaponTypeClass
+[conv] 0x6dbe00 Tactical::UpdateMapView -> Tactical
+[conv] 0x6e3e30 TActionClass::SaveLoad_Prefix_0 -> TActionClass
+[conv] 0x6e57a0 TagClass::SaveTag -> TagClass
+[conv] 0x6e8680 TaskForceClass::SaveTaskForce -> TaskForceClass
+[conv] 0x6ec540 TeamClass::SaveLoad_Prefix_0 -> TeamClass
+[conv] 0x6f1b90 TeamTypeClass::SaveToINI -> TeamTypeClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] PlayerType               rc=0
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] AbstractClass            rc=0
+[era] IsometricTileTypeClass   rc=0
+[era] LightSourceClass         rc=0
+[era] OverlayTypeClass         rc=2
+[era] ScriptClass              rc=0
+[era] ScriptTypeClass          rc=0
+[era] _VectorClass_VWstring    rc=0
+[era] SmudgeTypeClass          rc=2
+[era] _addr_6C                 rc=0
+[era] SuperClass               rc=0
+[era] SuperWeaponTypeClass     rc=0
+[era] Tactical                 rc=0
+[era] TActionClass             rc=0
+[era] TagClass                 rc=0
+[era] TaskForceClass           rc=0
+[era] TeamClass                rc=0
+[era] TeamTypeClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e62b0   MISMATCH         PlayerType::GetName
+[diff] 0x4f6930   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0
+[diff] 0x5439f0   MISMATCH         AbstractClass::COMStub_6
+[diff] 0x5f9950   MISMATCH         AbstractClass::SaveLoad_PrefixWrapper
+[diff] 0x549d70   MISMATCH         IsometricTileTypeClass::SaveToINI
+[diff] 0x555110   MISMATCH         LightSourceClass::Seek
+[diff] 0x691690   MISMATCH         ScriptClass::SaveState
+[diff] 0x691de0   MISMATCH         ScriptTypeClass::SaveToINI
+[diff] 0x69c580   MATCH            _VectorClass_VWstring::Clear
+[diff] 0x6c6b40   MISMATCH         sub_6C6B40
+[diff] 0x6cdfd0   MISMATCH         SuperClass::SaveState
+[diff] 0x6ce8d0   MISMATCH         SuperWeaponTypeClass::SaveLoad_Prefix_0
+[diff] 0x6dbe00   MISMATCH         Tactical::UpdateMapView
+[diff] 0x6e3e30   MISMATCH         TActionClass::SaveLoad_Prefix_0
+[diff] 0x6e57a0   MISMATCH         TagClass::SaveTag
+[diff] 0x6e8680   MISMATCH         TaskForceClass::SaveTaskForce
+[diff] 0x6ec540   MISMATCH         TeamClass::SaveLoad_Prefix_0
+[diff] 0x6f1b90   MISMATCH         TeamTypeClass::SaveToINI
+[ledger] 0x4e62b0 PlayerType::GetName -> NG (attempt 1)
+[ledger] 0x4f6930 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x5439f0 AbstractClass::COMStub_6 -> NG (attempt 1)
+[ledger] 0x549d70 IsometricTileTypeClass::SaveToINI -> NG (attempt 1)
+[ledger] 0x555110 LightSourceClass::Seek -> NG (attempt 1)
+[ledger] 0x5f9950 AbstractClass::SaveLoad_PrefixWrapper -> NG (attempt 1)
+[ledger] 0x5fec10 OverlayTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x691690 ScriptClass::SaveState -> NG (attempt 1)
+[ledger] 0x691de0 ScriptTypeClass::SaveToINI -> NG (attempt 1)
+[ledger] 0x69c580 _VectorClass_VWstring::Clear -> OK (attempt 1)
+[ledger] 0x6b58b0 SmudgeTypeClass::SaveToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c6b40 sub_6C6B40 -> NG (attempt 1)
+[ledger] 0x6cdfd0 SuperClass::SaveState -> NG (attempt 1)
+[ledger] 0x6ce8d0 SuperWeaponTypeClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x6dbe00 Tactical::UpdateMapView -> NG (attempt 1)
+[ledger] 0x6e3e30 TActionClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x6e57a0 TagClass::SaveTag -> NG (attempt 1)
+[ledger] 0x6e8680 TaskForceClass::SaveTaskForce -> NG (attempt 1)
+[ledger] 0x6ec540 TeamClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x6f1b90 TeamTypeClass::SaveToINI -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 2,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 1,
+  "const_fold": 13
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p57\batch_report.json

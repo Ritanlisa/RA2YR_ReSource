@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetItemIndex_0@VectorClass_ptr_BuildChoiceClass_int_ouseClass@@QAEPAXH@Z",
+ "sym_key": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "518d442400894c24005068000000006800000000e8000000008b44240059c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E36C0@@3EA",
+   "sym_key": "DataGlobal_7E36C0"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?punk@@3PAXA",
+   "sym_key": "punk"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?sub_429360@@YGHHPAX0@Z",
+   "sym_key": "sub_429360"
+  }
+ ]
+}

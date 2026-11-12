@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E62B0",
+ "name": "PlayerType::GetName",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E62B0",
+ "bytes_hex": "e8dbfeffff83f8ff7e0d83f8097d088b0485542c8200c3b8e82c8200c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

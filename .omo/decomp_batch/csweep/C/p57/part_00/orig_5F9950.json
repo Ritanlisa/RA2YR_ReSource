@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F9950",
+ "name": "AbstractClass::SaveLoad_PrefixWrapper",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F9950",
+ "bytes_hex": "8b44240c8b4c24088b542404505152e8bc69e1ff85c07c0233c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
