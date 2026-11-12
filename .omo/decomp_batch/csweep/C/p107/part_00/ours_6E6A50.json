@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_6E6A50@@YAHXZ",
+ "sym_key": "Unnamed::sub_6E6A50",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000a300000000a300000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_6E6A80@@YAHPBX0@Z",
+   "sym_key": "sub_6E6A80"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Count@@3IA",
+   "sym_key": "g_BuildingLoadQueue_Count"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Capacity@@3IA",
+   "sym_key": "g_BuildingLoadQueue_Capacity"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Dirty@@3IA",
+   "sym_key": "g_BuildingLoadQueue_Dirty"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Active@@3IA",
+   "sym_key": "g_BuildingLoadQueue_Active"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p107\part_00
+=== convert (20 addrs) ===
+[conv] 0x69d2f0 _VectorClass_PAVPhoneEntryClass::Remove -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x6b17c0 _VectorClass_PAVSlaveManagerClass::Remove -> _VectorClass_PAVSlaveManagerClass
+[conv] 0x6b45a0 _VectorClass_UUndoInfoStruct::ddtor -> _VectorClass_UUndoInfoStruct
+[conv] 0x6b8310 VectorClass::freePathMemory -> VectorClass
+[conv] 0x6b85d0 _VectorClass_PAVSpawnManagerClass::Remove -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x6c62c0 _VectorClass_K::ddtor -> _VectorClass_K
+[conv] 0x6caac0 _VectorClass_PAVSubTitle::Remove -> _VectorClass_PAVSubTitle
+[conv] 0x6cf690 _VectorClass_VSwizzlePointerClass::ddtor -> _VectorClass_VSwizzlePointerClass
+[conv] 0x6dc780 _VectorClass_UDirtyAreaStruct::ddtor -> _VectorClass_UDirtyAreaStruct
+[conv] 0x6dcac0 _VectorClass_PAVShadowControlClass::ddtor -> _VectorClass_PAVShadowControlClass
+[conv] 0x6e4940 _VectorClass_PAVTActionClass::ddtor -> _VectorClass_PAVTActionClass
+[conv] 0x6e6a50 sub_6E6A50 -> _addr_6E
+[conv] 0x71b390 _VectorClass_PAVTemporalClass::Remove -> _VectorClass_PAVTemporalClass
+[conv] 0x71fcf0 _VectorClass_PAVTEventClass::Remove -> _VectorClass_PAVTEventClass
+[conv] 0x723880 _VectorClass_PAVTiberiumClass::Remove -> _VectorClass_PAVTiberiumClass
+[conv] 0x724d80 _VectorClass_PBVToolTip::writeString -> _VectorClass_PBVToolTip
+[conv] 0x74c0e0 _VectorClass_E::ddtor -> _VectorClass_E
+[conv] 0x74f4b0 _VectorClass_PAVVeinholeMonsterClass::ddtor -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x751a20 _VectorClass_PAVVocClass::Remove -> _VectorClass_PAVVocClass
+[conv] 0x7537a0 _VectorClass_PAVVoxClass::Remove -> _VectorClass_PAVVoxClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVPhoneEntryClass rc=0
+[era] _VectorClass_PAVSlaveManagerClass rc=0
+[era] _VectorClass_UUndoInfoStruct rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVSpawnManagerClass rc=0
+[era] _VectorClass_K           rc=0
+[era] _VectorClass_PAVSubTitle rc=0
+[era] _VectorClass_VSwizzlePointerClass rc=0
+[era] _VectorClass_UDirtyAreaStruct rc=0
+[era] _VectorClass_PAVShadowControlClass rc=0
+[era] _VectorClass_PAVTActionClass rc=0
+[era] _addr_6E                 rc=0
+[era] _VectorClass_PAVTemporalClass rc=0
+[era] _VectorClass_PAVTEventClass rc=0
+[era] _VectorClass_PAVTiberiumClass rc=0
+[era] _VectorClass_PBVToolTip  rc=0
+[era] _VectorClass_E           rc=0
+[era] _VectorClass_PAVVeinholeMonsterClass rc=0
+[era] _VectorClass_PAVVocClass rc=0
+[era] _VectorClass_PAVVoxClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x69d2f0   MISMATCH         _VectorClass_PAVPhoneEntryClass::Remove
+[diff] 0x6b17c0   MISMATCH         _VectorClass_PAVSlaveManagerClass::Remove
+[diff] 0x6b45a0   MISMATCH         _VectorClass_UUndoInfoStruct::ddtor
+[diff] 0x6b8310   MISMATCH         VectorClass::freePathMemory
+[diff] 0x6b85d0   MISMATCH         _VectorClass_PAVSpawnManagerClass::Remove
+[diff] 0x6c62c0   MISMATCH         _VectorClass_K::ddtor
+[diff] 0x6caac0   MISMATCH         _VectorClass_PAVSubTitle::Remove
+[diff] 0x6cf690   MISMATCH         _VectorClass_VSwizzlePointerClass::ddtor
+[diff] 0x6dc780   MISMATCH         _VectorClass_UDirtyAreaStruct::ddtor
+[diff] 0x6dcac0   MISMATCH         _VectorClass_PAVShadowControlClass::ddtor
+[diff] 0x6e4940   MISMATCH         _VectorClass_PAVTActionClass::ddtor
+[diff] 0x6e6a50   MISMATCH         sub_6E6A50
+[diff] 0x71b390   MISMATCH         _VectorClass_PAVTemporalClass::Remove
+[diff] 0x71fcf0   MISMATCH         _VectorClass_PAVTEventClass::Remove
+[diff] 0x723880   MISMATCH         _VectorClass_PAVTiberiumClass::Remove
+[diff] 0x724d80   MISMATCH         _VectorClass_PBVToolTip::writeString
+[diff] 0x74c0e0   MISMATCH         _VectorClass_E::ddtor
+[diff] 0x74f4b0   MISMATCH         _VectorClass_PAVVeinholeMonsterClass::ddtor
+[diff] 0x751a20   MISMATCH         _VectorClass_PAVVocClass::Remove
+[diff] 0x7537a0   MISMATCH         _VectorClass_PAVVoxClass::Remove
+[ledger] 0x69d2f0 _VectorClass_PAVPhoneEntryClass::Remove -> NG (attempt 1)
+[ledger] 0x6b17c0 _VectorClass_PAVSlaveManagerClass::Remove -> NG (attempt 1)
+[ledger] 0x6b45a0 _VectorClass_UUndoInfoStruct::ddtor -> NG (attempt 1)
+[ledger] 0x6b8310 VectorClass::freePathMemory -> NG (attempt 1)
+[ledger] 0x6b85d0 _VectorClass_PAVSpawnManagerClass::Remove -> NG (attempt 1)
+[ledger] 0x6c62c0 _VectorClass_K::ddtor -> NG (attempt 1)
+[ledger] 0x6caac0 _VectorClass_PAVSubTitle::Remove -> NG (attempt 1)
+[ledger] 0x6cf690 _VectorClass_VSwizzlePointerClass::ddtor -> NG (attempt 1)
+[ledger] 0x6dc780 _VectorClass_UDirtyAreaStruct::ddtor -> NG (attempt 1)
+[ledger] 0x6dcac0 _VectorClass_PAVShadowControlClass::ddtor -> NG (attempt 1)
+[ledger] 0x6e4940 _VectorClass_PAVTActionClass::ddtor -> NG (attempt 1)
+[ledger] 0x6e6a50 sub_6E6A50 -> NG (attempt 1)
+[ledger] 0x71b390 _VectorClass_PAVTemporalClass::Remove -> NG (attempt 1)
+[ledger] 0x71fcf0 _VectorClass_PAVTEventClass::Remove -> NG (attempt 1)
+[ledger] 0x723880 _VectorClass_PAVTiberiumClass::Remove -> NG (attempt 1)
+[ledger] 0x724d80 _VectorClass_PBVToolTip::writeString -> NG (attempt 1)
+[ledger] 0x74c0e0 _VectorClass_E::ddtor -> NG (attempt 1)
+[ledger] 0x74f4b0 _VectorClass_PAVVeinholeMonsterClass::ddtor -> NG (attempt 1)
+[ledger] 0x751a20 _VectorClass_PAVVocClass::Remove -> NG (attempt 1)
+[ledger] 0x7537a0 _VectorClass_PAVVoxClass::Remove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 18,
+  "width_mismatch": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p107\batch_report.json
