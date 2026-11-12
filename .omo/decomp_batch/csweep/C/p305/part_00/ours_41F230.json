@@ -1,0 +1,15 @@
+{
+ "symbol": "?HouseCredits@AITriggerTypeClass@@QAE_NHH@Z",
+ "sym_key": "AITriggerTypeClass::HouseCredits",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "8b4424085685c08bf1747a8b482483c02450ff51188b8ee800000083f9057765ff248d000000008b8ee40000005e3bc10f92c0c208008b8ee40000005e3bc10f96c0c208008b8ee40000005e3bc10f94c0c208008b8ee40000005e3bc10f93c0c208008b8ee40000005e3bc10f97c0c208008b8ee400000033d23bc15e0f95c28ac2c2080032c05ec20800",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "$L1871",
+   "sym_key": "$L1871"
+  }
+ ]
+}

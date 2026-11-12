@@ -1,0 +1,11 @@
+{
+ "addr": "0x52B210",
+ "name": "SortedArray::BinarySearch2",
+ "size": 149,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52B210",
+ "bytes_hex": "538bd955568b4b045785c974688b43108b74241485c074088b008b163bc274688a430c84c0751e68a0b652006a08518b0b51e801d9290083c410c7431000000000c6430c018b4b048b2e8b3b85c97e258bc1992bc2d1f88b34c78d14c73bf57e048bc8eb0c741a8d7a0883caff2bd003ca85c97fdb5f5e5db83088b7005bc2040085d274f08953108b43105f5e5d83c0045bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

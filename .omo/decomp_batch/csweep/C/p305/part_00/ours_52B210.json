@@ -1,0 +1,27 @@
+{
+ "symbol": "?BinarySearch2@SortedArray@@QAEPAXPAH@Z",
+ "sym_key": "SortedArray::BinarySearch2",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "538bd955568b4b045785c974728b43108b74241485c074128b108b3e3bd7750a5f5e5d83c0045bc204008a430c84c0751e8b0368000000006a085150e80000000083c410c7431000000000c6430c018b4b048b2e8b3b85c97e258bc1992bc2d1f88b34c78d14c73bf57e048bc8eb0c741a8d7a0883caff2bd003ca85c97fdb5f5e5db8000000005bc2040085d274f05f5e8953105d8d42045bc20400",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?CompareFunc3Int@@YAHPBX0@Z",
+   "sym_key": "CompareFunc3Int"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78830@@3EA",
+   "sym_key": "DataGlobal_B78830"
+  }
+ ]
+}

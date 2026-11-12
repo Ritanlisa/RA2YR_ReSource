@@ -1,0 +1,39 @@
+{
+ "symbol": "?CalcFill@PowerBar@@QAEHXZ",
+ "sym_key": "PowerBar::CalcFill",
+ "size": 163,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec0833c98d5003b8abaaaaaaf7e2568b3500000000578bfa8b467833d2d1ef85c07e278b766c53558bd88b0683c6048b80200500008ba8e40e000003cd8ba8e00e000003d54b75e25d5b03d1c744240c000000008954240883ec08db442410897c2410dc0500000000dc3d00000000df6c2410dec9dd1c24e80000000083c40833c985c00f9ec14923c88d47ff3bc87c028bc88bc75f2bc15e83c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B504@@3IA",
+   "sym_key": "DataGlobal_B0B504"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "__real@8@4007c800000000000000",
+   "sym_key": "_real@8@4007c800000000000000"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?dbl_7ED8C8@@3NA",
+   "sym_key": "dbl_7ED8C8"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

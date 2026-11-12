@@ -1,0 +1,39 @@
+{
+ "symbol": "?System_Init_6B2520@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::System_Init_6B2520",
+ "size": 189,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1578b3d000000008b56388bc2c1f8100fbfc00fbfca8d1c013bdf77075f5e32c05b59c3558be92be83bef5d72075f5e32c05b59c32bc13bc772075f5e32c05b59c33b1d0000000076075f5e32c05b59c3837e48ff74075f5e32c05b59c38b86e800000085c074075f5e32c05b59c38d4c240c8954240ce8000000008a484584c974075f5e32c05b59c38b7638a1000000003bf0731c81feffff000074148b0d000000005f8b14b15e5b8a82e002000059c35f5eb0015b59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?GetCellData@Tactical@@QAEPADXZ",
+   "sym_key": "Tactical::GetCellData"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?g_TechnoClassCount@@3IA",
+   "sym_key": "g_TechnoClassCount"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  }
+ ]
+}

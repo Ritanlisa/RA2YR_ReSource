@@ -1,0 +1,105 @@
+{
+ "symbol": "?sub_40DFB0@@YAHXZ",
+ "sym_key": "Unnamed::sub_40DFB0",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "8b0d000000005333db891d00000000891d00000000891d00000000891d00000000891d00000000e800000000a100000000891d00000000506800000000e800000000891d00000000881da8718800881dac718800881db0718800881db4718800881db8718800881dbc718800881dc07188006800000000c7050000000000000000e80000000083c40c5bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88719C@@3IA",
+   "sym_key": "DataGlobal_88719C"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887184@@3IA",
+   "sym_key": "DataGlobal_887184"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887188@@3IA",
+   "sym_key": "DataGlobal_887188"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887194@@3IA",
+   "sym_key": "DataGlobal_887194"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887198@@3IA",
+   "sym_key": "DataGlobal_887198"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887190@@3IA",
+   "sym_key": "DataGlobal_887190"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Constructor@GenericNode@@QAEPAV1@XZ",
+   "sym_key": "GenericNode::Constructor"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88719C@@3IA",
+   "sym_key": "DataGlobal_88719C"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88718C@@3IA",
+   "sym_key": "DataGlobal_88718C"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887190@@3IA",
+   "sym_key": "DataGlobal_887190"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?LinkedList__Prepend@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Prepend"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88718C@@3IA",
+   "sym_key": "DataGlobal_88718C"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?unknown_libname_5@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_5"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887180@@3IA",
+   "sym_key": "DataGlobal_887180"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?CCINIClass_Vtable@@3PAXA",
+   "sym_key": "CCINIClass_Vtable"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

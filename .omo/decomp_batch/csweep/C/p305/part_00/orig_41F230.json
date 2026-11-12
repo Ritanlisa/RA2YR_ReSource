@@ -1,0 +1,11 @@
+{
+ "addr": "0x41F230",
+ "name": "AITriggerTypeClass::HouseCredits",
+ "size": 148,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41F230",
+ "bytes_hex": "8b4424085332db5685c08bf1747f8b482483c02450ff51188b8ee800000083f905776aff248dc4f241008b8ee40000005e3bc10f9cc38ac35bc208008b8ee40000005e3bc10f9ec38ac35bc208008b8ee40000005e3bc10f94c38ac35bc208008b8ee40000005e3bc10f9dc38ac35bc208008b8ee40000005e3bc10f9fc38ac35bc208003b86e40000000f95c38ac35e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

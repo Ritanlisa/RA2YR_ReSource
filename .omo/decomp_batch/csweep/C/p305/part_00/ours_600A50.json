@@ -1,0 +1,111 @@
+{
+ "symbol": "?sub_600A50@@YAHXZ",
+ "sym_key": "Unnamed::sub_600A50",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "b98000000033d2c705000000009a999999c705040000009999c93fc705000000009a999999c705040000009999e93f890d0000000033c040d1e975fb8d48ff891500000000890d000000008d48ffb801000000891500000000d3e088150000000057a3000000008d14850000000052e8000000008b0d000000008bf833c0893d00000000f3ab6800000000c7050000000000000000e80000000083c4085fc3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1B20@@3NA",
+   "sym_key": "DataGlobal_AC1B20"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1B20@@3NA",
+   "sym_key": "DataGlobal_AC1B20"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1B28@@3NA",
+   "sym_key": "DataGlobal_AC1B28"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1B28@@3NA",
+   "sym_key": "DataGlobal_AC1B28"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1B30@@3IA",
+   "sym_key": "DataGlobal_AC1B30"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1B10@@3IA",
+   "sym_key": "DataGlobal_AC1B10"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_DialogHashMap_Buckets@@3IA",
+   "sym_key": "g_DialogHashMap_Buckets"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_DialogHashMap_Count@@3IA",
+   "sym_key": "g_DialogHashMap_Count"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1B14@@3EA",
+   "sym_key": "DataGlobal_AC1B14"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1B08@@3IA",
+   "sym_key": "DataGlobal_AC1B08"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1B08@@3IA",
+   "sym_key": "DataGlobal_AC1B08"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?g_DialogHashMap_Base@@3PAXA",
+   "sym_key": "g_DialogHashMap_Base"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?sub_600AF0@@YAHPBX0@Z",
+   "sym_key": "sub_600AF0"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?g_DialogHashMap_Hasher@@3PAXA",
+   "sym_key": "g_DialogHashMap_Hasher"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?ReadPointerFromECX@@YAHPBX0@Z",
+   "sym_key": "ReadPointerFromECX"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

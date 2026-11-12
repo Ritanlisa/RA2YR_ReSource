@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p305\part_00
+=== convert (20 addrs) ===
+[conv] 0x600880 sub_600880 -> _addr_60
+[conv] 0x600a50 sub_600A50 -> _addr_60
+[conv] 0x77ba40 sub_77BA40 -> _addr_77
+[conv] 0x77bc10 sub_77BC10 -> _addr_77
+[conv] 0x77bde0 sub_77BDE0 -> _addr_77
+[conv] 0x77bfb0 sub_77BFB0 -> _addr_77
+[conv] 0x77c180 sub_77C180 -> _addr_77
+[conv] 0x77c3b0 sub_77C3B0 -> _addr_77
+[conv] 0x77cc30 sub_77CC30 -> _addr_77
+[conv] 0x7ad9d0 DynamicArray::Grow -> DynamicArray
+[conv] 0x6913c0 ScriptClass::Construct -> ScriptClass
+[conv] 0x41f230 AITriggerTypeClass::HouseCredits -> AITriggerTypeClass
+[conv] 0x58ad10 VectorClass_USubzoneTrackingStruct::SetCapacity -> VectorClass_USubzoneTrackingStruct
+[conv] 0x52b210 SortedArray::BinarySearch2 -> SortedArray
+[conv] 0x52b430 SortedArray::FindValue -> SortedArray
+[conv] 0x6b2520 TechnoClass::System_Init_6B2520 -> TechnoClass
+[conv] 0x7813e0 sub_7813E0 -> _addr_78
+[conv] 0x63f850 PowerBar::CalcFill -> PowerBar
+[conv] 0x40dfb0 sub_40DFB0 -> _addr_40
+[conv] 0x40e110 sub_40E110 -> _addr_40
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_60                 rc=2
+[era] _addr_77                 rc=2
+[era] DynamicArray             rc=0
+[era] ScriptClass              rc=0
+[era] AITriggerTypeClass       rc=0
+[era] VectorClass_USubzoneTrackingStruct rc=2
+[era] SortedArray              rc=2
+[era] TechnoClass              rc=0
+[era] _addr_78                 rc=0
+[era] PowerBar                 rc=0
+[era] _addr_40                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x600a50   MISMATCH         sub_600A50
+[diff] 0x7ad9d0   MISMATCH         DynamicArray::Grow
+[diff] 0x6913c0   MISMATCH         ScriptClass::Construct
+[diff] 0x41f230   MISMATCH         AITriggerTypeClass::HouseCredits
+[diff] 0x52b210   MISMATCH         SortedArray::BinarySearch2
+[diff] 0x6b2520   MISMATCH         TechnoClass::System_Init_6B2520
+[diff] 0x7813e0   MISMATCH         sub_7813E0
+[diff] 0x63f850   MISMATCH         PowerBar::CalcFill
+[diff] 0x40dfb0   MISMATCH         sub_40DFB0
+[diff] 0x40e110   MISMATCH         sub_40E110
+[ledger] 0x600880 sub_600880 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x600a50 sub_600A50 -> NG (attempt 1)
+[ledger] 0x77ba40 sub_77BA40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77bc10 sub_77BC10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77bde0 sub_77BDE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77bfb0 sub_77BFB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77c180 sub_77C180 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77c3b0 sub_77C3B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77cc30 sub_77CC30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ad9d0 DynamicArray::Grow -> NG (attempt 1)
+[ledger] 0x6913c0 ScriptClass::Construct -> NG (attempt 1)
+[ledger] 0x41f230 AITriggerTypeClass::HouseCredits -> NG (attempt 1)
+[ledger] 0x58ad10 VectorClass_USubzoneTrackingStruct::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52b210 SortedArray::BinarySearch2 -> NG (attempt 1)
+[ledger] 0x52b430 SortedArray::FindValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b2520 TechnoClass::System_Init_6B2520 -> NG (attempt 1)
+[ledger] 0x7813e0 sub_7813E0 -> NG (attempt 1)
+[ledger] 0x63f850 PowerBar::CalcFill -> NG (attempt 1)
+[ledger] 0x40dfb0 sub_40DFB0 -> NG (attempt 1)
+[ledger] 0x40e110 sub_40E110 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "signedness": 1,
+  "branch_polarity": 1,
+  "codegen_shape": 2,
+  "extern_reloc": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p305\batch_report.json

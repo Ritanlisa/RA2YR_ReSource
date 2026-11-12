@@ -1,0 +1,11 @@
+{
+ "addr": "0x63F850",
+ "name": "PowerBar::CalcFill",
+ "size": 149,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63F850",
+ "bytes_hex": "83ec08a104b5b00053568b354c3da8008d4803b856555555f7e98b46788bcac1e91f03d133c98bda33d285c0895c240c7e278b766c55578bf88b0683c6048b80200500008ba8e40e000003cd8ba8e00e000003d54f75e25f5d03d189542408db442408dc05c8d87e00dc3dc8d87e00da4c240ce83866180033c985c00f9ec14923c88d43ff3bc87c028bc88bc35e2bc15b83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
