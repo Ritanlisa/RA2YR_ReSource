@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x77c840",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x765b60",
+  "family": "C6",
+  "shape": "C6 nested-template vftable name",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7781b0",
+  "family": "C3",
+  "shape": "C3 WCHAR typedef missing",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x4af720",
+  "family": "C5",
+  "shape": "C5 IID/CLSID constant undeclared",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x4265b0",
+  "family": "C1",
+  "shape": "C1 asm-token leak (decompile failed body)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6bf5d0",
+  "family": "C5",
+  "shape": "C5 IID/CLSID constant undeclared",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6c0650",
+  "family": "C5",
+  "shape": "C5 IID/CLSID constant undeclared",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6c16d0",
+  "family": "C5",
+  "shape": "C5 IID/CLSID constant undeclared",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6c2750",
+  "family": "C5",
+  "shape": "C5 IID/CLSID constant undeclared",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6c37d0",
+  "family": "C5",
+  "shape": "C5 IID/CLSID constant undeclared",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6c4850",
+  "family": "C5",
+  "shape": "C5 IID/CLSID constant undeclared",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6c5a50",
+  "family": "C5",
+  "shape": "C5 IID/CLSID constant undeclared",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x633f20",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x662240",
+  "family": "C1",
+  "shape": "C1 asm-token leak (decompile failed body)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x4c68e0",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x71ff20",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x40e060",
+  "family": "C2",
+  "shape": "C2 MEMORY[0xADDR] marker",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x658de0",
+  "family": "C6",
+  "shape": "C6 nested-template vftable name",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x410260",
+  "family": "C5",
+  "shape": "C5 IID/CLSID constant undeclared",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x5cd4d0",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ }
+]

@@ -1,0 +1,11 @@
+{
+ "addr": "0x765B60",
+ "name": "Campaign_WorldDominationTour_16::QueryInterface",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x765B60",
+ "bytes_hex": "568bf18b4e04c7067c6f7f0085c974188a460d84c0741185c974068b016a03ff10c74604000000008a442408c6460d00a801c7460800000000740956e89c2f060083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

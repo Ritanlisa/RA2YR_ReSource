@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x77c840 sub_77C840 -> _addr_77
+[conv] 0x765b60 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::QueryInterface -> _VectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x7781b0 EditControl_Helper -> EditControl
+[conv] 0x4af720 DriveLocomotionClass::QueryInterface -> DriveLocomotionClass
+[conv] 0x4265b0 Cell::GetHeight -> Cell
+[conv] 0x6bf5d0 _TClassFactory_VSuperClass::QueryInterface -> _TClassFactory_VSuperClass
+[conv] 0x6c0650 _TClassFactory_VTemporalClass::CreateTClassFactory_TemporalClass -> _TClassFactory_VTemporalClass
+[conv] 0x6c16d0 _TClassFactory_VVoxelAnimClass::CreateTClassFactory_VoxelAnimClass -> _TClassFactory_VVoxelAnimClass
+[conv] 0x6c2750 _TClassFactory_VUnitTypeClass::CreateTClassFactory_UnitTypeClass -> _TClassFactory_VUnitTypeClass
+[conv] 0x6c37d0 _TClassFactory_VInfantryClass::CreateTClassFactory_InfantryClass -> _TClassFactory_VInfantryClass
+[conv] 0x6c4850 _TClassFactory_VDropPodLocomotionClass::CreateTClassFactory_DropPodLocomotionClass -> _TClassFactory_VDropPodLocomotionClass
+[conv] 0x6c5a50 _TClassFactory_VParticleSystemTypeClass::CreateTClassFactory_ParticleSystemTypeClass -> _TClassFactory_VParticleSystemTypeClass
+[conv] 0x633f20 TeamClass::GetNextScriptAction -> TeamClass
+[conv] 0x662240 ObjectClass::sub_662240 -> ObjectClass
+[conv] 0x4c68e0 ObjectClass::sub_4C68E0 -> ObjectClass
+[conv] 0x71ff20 TextButtonClass::sub_71FF20 -> TextButtonClass
+[conv] 0x40e060 sub_40E060 -> _addr_40
+[conv] 0x658de0 RadarHashVector::Construct -> RadarHashVector
+[conv] 0x410260 AbstractClass::QueryInterface -> AbstractClass
+[conv] 0x5cd4d0 MSBitPrintAnim::Draw -> MSBitPrintAnim
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=0
+[era] _VectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] EditControl              rc=0
+[era] DriveLocomotionClass     rc=2
+[era] Cell                     rc=2
+[era] _TClassFactory_VSuperClass rc=0
+[era] _TClassFactory_VTemporalClass rc=0
+[era] _TClassFactory_VVoxelAnimClass rc=0
+[era] _TClassFactory_VUnitTypeClass rc=0
+[era] _TClassFactory_VInfantryClass rc=0
+[era] _TClassFactory_VDropPodLocomotionClass rc=0
+[era] _TClassFactory_VParticleSystemTypeClass rc=0
+[era] TeamClass                rc=0
+[era] ObjectClass              rc=2
+[era] TextButtonClass          rc=2
+[era] _addr_40                 rc=0
+[era] RadarHashVector          rc=0
+[era] AbstractClass            rc=0
+[era] MSBitPrintAnim           rc=0
+=== diffasm byte-compare ===
+[diff] 0x77c840   MISMATCH         sub_77C840
+[diff] 0x765b60   MISMATCH         _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::QueryInterface
+[diff] 0x7781b0   MISMATCH         EditControl_Helper
+[diff] 0x6bf5d0   MISMATCH         _TClassFactory_VSuperClass::QueryInterface
+[diff] 0x6c0650   MISMATCH         _TClassFactory_VTemporalClass::CreateTClassFactory_TemporalClass
+[diff] 0x6c16d0   MISMATCH         _TClassFactory_VVoxelAnimClass::CreateTClassFactory_VoxelAnimClass
+[diff] 0x6c2750   MISMATCH         _TClassFactory_VUnitTypeClass::CreateTClassFactory_UnitTypeClass
+[diff] 0x6c37d0   MISMATCH         _TClassFactory_VInfantryClass::CreateTClassFactory_InfantryClass
+[diff] 0x6c4850   MISMATCH         _TClassFactory_VDropPodLocomotionClass::CreateTClassFactory_DropPodLocomotionClass
+[diff] 0x6c5a50   MISMATCH         _TClassFactory_VParticleSystemTypeClass::CreateTClassFactory_ParticleSystemTypeClass
+[diff] 0x633f20   MISMATCH         TeamClass::GetNextScriptAction
+[diff] 0x40e060   MISMATCH         sub_40E060
+[diff] 0x658de0   MISMATCH         RadarHashVector::Construct
+[diff] 0x410260   MISMATCH         AbstractClass::QueryInterface
+[diff] 0x5cd4d0   MISMATCH         MSBitPrintAnim::Draw
+[ledger] 0x77c840 sub_77C840 -> NG (attempt 5)
+[ledger] 0x765b60 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::QueryInterface -> NG (attempt 4)
+[ledger] 0x7781b0 EditControl_Helper -> NG (attempt 5)
+[ledger] 0x4af720 DriveLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4265b0 Cell::GetHeight -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6bf5d0 _TClassFactory_VSuperClass::QueryInterface -> NG (attempt 4)
+[ledger] 0x6c0650 _TClassFactory_VTemporalClass::CreateTClassFactory_TemporalClass -> NG (attempt 4)
+[ledger] 0x6c16d0 _TClassFactory_VVoxelAnimClass::CreateTClassFactory_VoxelAnimClass -> NG (attempt 4)
+[ledger] 0x6c2750 _TClassFactory_VUnitTypeClass::CreateTClassFactory_UnitTypeClass -> NG (attempt 4)
+[ledger] 0x6c37d0 _TClassFactory_VInfantryClass::CreateTClassFactory_InfantryClass -> NG (attempt 4)
+[ledger] 0x6c4850 _TClassFactory_VDropPodLocomotionClass::CreateTClassFactory_DropPodLocomotionClass -> NG (attempt 4)
+[ledger] 0x6c5a50 _TClassFactory_VParticleSystemTypeClass::CreateTClassFactory_ParticleSystemTypeClass -> NG (attempt 4)
+[ledger] 0x633f20 TeamClass::GetNextScriptAction -> NG (attempt 4)
+[ledger] 0x662240 ObjectClass::sub_662240 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c68e0 ObjectClass::sub_4C68E0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71ff20 TextButtonClass::sub_71FF20 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40e060 sub_40E060 -> NG (attempt 5)
+[ledger] 0x658de0 RadarHashVector::Construct -> NG (attempt 8)
+[ledger] 0x410260 AbstractClass::QueryInterface -> NG (attempt 7)
+[ledger] 0x5cd4d0 MSBitPrintAnim::Draw -> NG (attempt 15)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "signedness": 1,
+  "regalloc": 2,
+  "codegen_shape": 2,
+  "const_fold": 7,
+  "extern_reloc": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p18\batch_report.json

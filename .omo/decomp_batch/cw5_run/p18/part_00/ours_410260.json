@@ -1,0 +1,33 @@
+{
+ "symbol": "?QueryInterface@AbstractClass@@QAEHXZ",
+ "sym_key": "AbstractClass::QueryInterface",
+ "size": 153,
+ "link_base": 0,
+ "bytes_hex": "518b4424005385c07508b8034000805b59c38b5424045657b904000000bf000000008bf233dbc700000000008b5c240cf3a77502891855b904000000bf000000008bf233edf3a775028918b904000000bf000000008bf233edf3a75d750289188bf2b904000000bf0000000033d2f3a75f5e750d85db74058d4b04eb0233c989088338007508b8024000805b59c38b0353ff500433c05b59c3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?IID_IUnknown@@3U_GUID_era@@A",
+   "sym_key": "IID_IUnknown"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?IID_IPersistStream@@3U_GUID_era@@A",
+   "sym_key": "IID_IPersistStream"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?IID_IPersist@@3U_GUID_era@@A",
+   "sym_key": "IID_IPersist"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?IID_IRTTITypeInfo@@3U_GUID_era@@A",
+   "sym_key": "IID_IRTTITypeInfo"
+  }
+ ]
+}

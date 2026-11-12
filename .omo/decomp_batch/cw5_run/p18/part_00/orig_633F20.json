@@ -1,0 +1,11 @@
+{
+ "addr": "0x633F20",
+ "name": "TeamClass::GetNextScriptAction",
+ "size": 123,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x633F20",
+ "bytes_hex": "538bd98b4c24085657e8f21d0d008bf08b46048d542410895c24108d4e0452ff501083f8ff744c8b7e1483ff0175085f8bc35e5bc20400403bc77c0233c085ff8bd0742f3bc77c178b8e9400000085c97f02751f2bc199f7be9000000003d185d27c103bd77d0c8b46085f5e5b8b0490c204005f5e33c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

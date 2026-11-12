@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CD4D0",
+ "name": "MSBitPrintAnim::Draw",
+ "size": 158,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CD4D0",
+ "bytes_hex": "a1b8c4890083ec1085c0568bf10f84840000008b0dd0c4890085c9747a8b44241c85c075038d46208b10538b5808578b78048b400c8954240c8d5413ff895424148d5438ff8d44240c897c2410508954241ce87967e6ff8a5e318b4e2c8b562833c084db0f95c06a006a00508b4624518b4e205250518d4e1ce8b29b1e008b54243c8b0db8c4890050a1d0c489005250e86b77e6ff5f5b5e83c410c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

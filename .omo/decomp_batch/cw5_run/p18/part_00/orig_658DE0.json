@@ -1,0 +1,11 @@
+{
+ "addr": "0x658DE0",
+ "name": "RadarHashVector::Construct",
+ "size": 150,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x658DE0",
+ "bytes_hex": "5356578b7c24108bf133db3bfb895e04897e08c6460c01885e0dc7064c047f00745c8b5424143bd3741e8d4fff3bcb7c128d4204418958fc891889580483c0104975f2895604eb368bc7c1e00450e8e4ff160083c4043bc3741b8d57ff3bd37c168d4804428959fc891989590483c1104a75f2eb0233c0894604c6460d01c7062c047f00c746140a000000895e108bc65f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@RadarHashVector@@QAEPAIHH@Z",
+ "sym_key": "RadarHashVector::Construct",
+ "size": 158,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bf133db3bfb895e04897e08c6460c01885e0d891e746c8b4c24143bcb742f8d47ff85c07c118d41048958fc891889580483c0104f75f2894e04891ec746140a000000895e105f5e33c05bc208008bcfc1e10451e80000000083c4043bc3741a8d57ff85d27c158d48048959fc891989590483c1104f75f2eb0233c0894604c6460d01891ec746140a000000895e105f5e33c05bc20800",
+ "relocs": [
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
