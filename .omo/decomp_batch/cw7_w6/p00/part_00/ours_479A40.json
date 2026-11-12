@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_479A40@@YIDPAX0@Z",
+ "sym_key": "Unnamed::sub_479A40",
+ "size": 111,
+ "link_base": 0,
+ "bytes_hex": "51535633f6578d44240c565056565656681c0009008bf9528954242c8bdae80000000085c0753ae8000000008bcfe80000000068f4010000e8000000004683fe147d258d4c240c6a00516a006a006a006a00681c00090053e80000000085c074c65f5eb0015b59c35f5e32c05b59c3",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?DeviceIoControl@@YGHHHHHHHPAXH@Z",
+   "sym_key": "DeviceIoControl"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Sleep@@YGXH@Z",
+   "sym_key": "Sleep"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?DeviceIoControl@@YGHHHHHHHPAXH@Z",
+   "sym_key": "DeviceIoControl"
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "symbol": "?unknown_libname_18@@YIXPAX@Z",
+ "sym_key": "Unnamed::unknown_libname_18",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "a0000000005333d233db8ad0563ac38bf2891d00000000740ee80000000056e80000000083c404b900000000e80000000033c0a00000000083f8ff74368b0d000000003bcb7442e800000000a1000000003bc374078b086a0150ff11b900000000891d00000000c60500000000ffe800000000a1000000003bc3740d8b106a0150ff12891d00000000891d000000005e5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?unk_A8EAA4@@3EA",
+   "sym_key": "unk_A8EAA4"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Close@FileFind@@QAEHXZ",
+   "sym_key": "FileFind::Close"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?FreeResources@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::FreeResources"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?unk_A8EAB0@@3EA",
+   "sym_key": "unk_A8EAB0"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?Close@SerialPort@@QAEHXZ",
+   "sym_key": "SerialPort::Close"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?unk_A8EAB0@@3EA",
+   "sym_key": "unk_A8EAB0"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?FreeResources@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::FreeResources"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  }
+ ]
+}

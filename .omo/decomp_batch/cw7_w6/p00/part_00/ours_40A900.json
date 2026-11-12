@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_40A900@@YIHH@Z",
+ "sym_key": "Unnamed::sub_40A900",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "8d04898d0480c1e0029981e2ff00000003c2c1f80883f8647e06a100000000c385c07d0233c08b048500000000c3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816510@@3IA",
+   "sym_key": "DataGlobal_816510"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816380@@3PAIA",
+   "sym_key": "DataGlobal_816380"
+  }
+ ]
+}

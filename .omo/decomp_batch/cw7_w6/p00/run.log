@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w6\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x401190 sub_401190 -> _addr_40
+[conv] 0x4095b0 AudioStreamThreadProc -> _addr_40
+[conv] 0x40a900 sub_40A900 -> _addr_40
+[conv] 0x40d3c0 sub_40D3C0 -> _addr_40
+[conv] 0x40d400 sub_40D400 -> _addr_40
+[conv] 0x426620 _4type_info_AAEAAV0_ABV0__Z -> _addr_42
+[conv] 0x433560 sub_433560 -> _addr_43
+[conv] 0x4335a0 sub_4335A0 -> _addr_43
+[conv] 0x479a40 sub_479A40 -> _addr_47
+[conv] 0x4e8090 unknown_libname_18 -> _addr_4E
+[conv] 0x505f80 globalHelper_005F80 -> _addr_50
+[conv] 0x5d9db0 DetectPortAllocationPattern -> _addr_5D
+[conv] 0x63a440 sub_63A440 -> _addr_63
+[conv] 0x6430c0 sub_6430C0 -> _addr_64
+[conv] 0x6613a0 ComputeColorSaturation -> _addr_66
+[conv] 0x69a340 sub_69A340 -> _addr_69
+[conv] 0x6b4240 Map_Helper_6B4240 -> Map_Helper
+[conv] 0x6d0fb0 sub_6D0FB0 -> _addr_6D
+[conv] 0x72f350 House_Load -> House
+[conv] 0x732210 SelectFactionThemeMusic_Helper -> SelectFactionThemeMusic
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=2
+[era] _addr_42                 rc=0
+[era] _addr_43                 rc=2
+[era] _addr_47                 rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_50                 rc=2
+[era] _addr_5D                 rc=2
+[era] _addr_63                 rc=2
+[era] _addr_64                 rc=0
+[era] _addr_66                 rc=2
+[era] _addr_69                 rc=0
+[era] Map_Helper               rc=2
+[era] _addr_6D                 rc=2
+[era] House                    rc=2
+[era] SelectFactionThemeMusic  rc=2
+=== diffasm byte-compare ===
+[diff] 0x4095b0   MISMATCH         AudioStreamThreadProc
+[diff] 0x40a900   MISMATCH         sub_40A900
+[diff] 0x426620   MISMATCH         _4type_info_AAEAAV0_ABV0__Z
+[diff] 0x479a40   MISMATCH         sub_479A40
+[diff] 0x4e8090   MISMATCH         unknown_libname_18
+[diff] 0x6430c0   MISMATCH         sub_6430C0
+[diff] 0x69a340   MISMATCH         sub_69A340
+[ledger] 0x401190 sub_401190 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4095b0 AudioStreamThreadProc -> NG (attempt 4)
+[ledger] 0x40a900 sub_40A900 -> NG (attempt 2)
+[ledger] 0x40d3c0 sub_40D3C0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x40d400 sub_40D400 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x426620 _4type_info_AAEAAV0_ABV0__Z -> NG (attempt 2)
+[ledger] 0x433560 sub_433560 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4335a0 sub_4335A0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x479a40 sub_479A40 -> NG (attempt 6)
+[ledger] 0x4e8090 unknown_libname_18 -> NG (attempt 5)
+[ledger] 0x505f80 globalHelper_005F80 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d9db0 DetectPortAllocationPattern -> COMPILE_FAIL (attempt 4)
+[ledger] 0x63a440 sub_63A440 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6430c0 sub_6430C0 -> NG (attempt 4)
+[ledger] 0x6613a0 ComputeColorSaturation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69a340 sub_69A340 -> NG (attempt 5)
+[ledger] 0x6b4240 Map_Helper_6B4240 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d0fb0 sub_6D0FB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72f350 House_Load -> COMPILE_FAIL (attempt 5)
+[ledger] 0x732210 SelectFactionThemeMusic_Helper -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "branch_order": 1,
+  "cc_mismatch": 1,
+  "regalloc": 1,
+  "extern_reloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w6\p00\batch_report.json

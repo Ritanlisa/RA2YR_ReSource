@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_69A340@@YIKPAX@Z",
+ "sym_key": "Unnamed::sub_69A340",
+ "size": 107,
+ "link_base": 0,
+ "bytes_hex": "515356578bf1e8000000008bce8944240ce8000000008bd08d4c240ce8000000006800000000e8000000008bd883c40485db742e8bfb83c9ff33c033f6f2aef7d149741e0fbe141e8d4c240c46e8000000008bfb83c9ff33c0f2aef7d1493bf172e28b44240c5f5e5b59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?CheckAvailable@DiskSpace@@QAEKXZ",
+   "sym_key": "DiskSpace::CheckAvailable"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?ComputeHash@@YIHPAXH@Z",
+   "sym_key": "ComputeHash"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?aPath@@3PADA",
+   "sym_key": "aPath"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?Object_Init_7CBC11@@YAPADPAD@Z",
+   "sym_key": "Object_Init_7CBC11"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?ComputeHash@@YIHPAXH@Z",
+   "sym_key": "ComputeHash"
+  }
+ ]
+}

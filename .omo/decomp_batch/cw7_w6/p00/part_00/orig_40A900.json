@@ -1,0 +1,11 @@
+{
+ "addr": "0x40A900",
+ "name": "sub_40A900",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40A900",
+ "bytes_hex": "8d04898d0480c1e0029981e2ff00000003c2c1f80883f8647e0db8640000008b048580638100c385c07d0233c08b048580638100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

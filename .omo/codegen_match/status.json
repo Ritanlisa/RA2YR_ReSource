@@ -19,7 +19,7 @@
   "status": "OK"
  },
  "0x401190": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_401190",
@@ -1372,14 +1372,14 @@
   "this_as_id": false
  },
  "0x4095b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x14",
   "name": "AudioStreamThreadProc",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "AudioStreamThreadProc",
   "rule_violations": 26,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x409d90": {
@@ -1454,14 +1454,14 @@
   "this_as_id": false
  },
  "0x40a900": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+24 jle 0x40a927",
   "name": "sub_40A900",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "sub_40A900",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x40acd0": {
@@ -2492,7 +2492,7 @@
   "this_as_id": false
  },
  "0x40d3c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "sub_40D3C0",
@@ -2503,7 +2503,7 @@
   "this_as_id": false
  },
  "0x40d400": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "sub_40D400",
@@ -7023,14 +7023,14 @@
   "this_as_id": false
  },
  "0x426620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+2 ret 4",
   "name": "_4type_info_AAEAAV0_ABV0__Z",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "??4type_info_AAEAAV0_ABV0__Z",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x426630": {
@@ -8593,22 +8593,26 @@
   "status": "NG"
  },
  "0x433560": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_433560",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_433560",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4335a0": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "sub_4335A0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_4335A0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4335e0": {
   "attempts": 4,
@@ -13383,14 +13387,14 @@
   "status": "OK"
  },
  "0x479a40": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "sub_479A40",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_479A40",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x47a6f0": {
@@ -25345,14 +25349,14 @@
   "this_as_id": false
  },
  "0x4e8090": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, 0xa8ea70",
   "name": "unknown_libname_18",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "unknown_libname_18",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e8110": {
@@ -29825,7 +29829,7 @@
   "this_as_id": false
  },
  "0x505f80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_005F80",
@@ -49309,7 +49313,7 @@
   "this_as_id": false
  },
  "0x5d9db0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "DetectPortAllocationPattern",
@@ -55060,7 +55064,7 @@
   "this_as_id": false
  },
  "0x63a440": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_63A440",
@@ -56153,14 +56157,14 @@
   "this_as_id": false
  },
  "0x6430c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x38",
   "name": "sub_6430C0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "sub_6430C0",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6433d0": {
@@ -59186,13 +59190,13 @@
   "this_as_id": false
  },
  "0x6613a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "ComputeColorSaturation",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ComputeColorSaturation",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -62193,14 +62197,14 @@
   "this_as_id": false
  },
  "0x69a340": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+4 call dword ptr [0x7e1530]",
   "name": "sub_69A340",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_69A340",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69acc0": {
@@ -64343,7 +64347,7 @@
   "this_as_id": false
  },
  "0x6b4240": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Map_Helper_6B4240",
@@ -69386,7 +69390,7 @@
   "this_as_id": false
  },
  "0x6d0fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_6D0FB0",
@@ -78025,7 +78029,7 @@
   "status": "NG"
  },
  "0x72f350": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "House_Load",
@@ -78404,13 +78408,13 @@
   "this_as_id": false
  },
  "0x732210": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SelectFactionThemeMusic_Helper",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SelectFactionThemeMusic_Helper",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
