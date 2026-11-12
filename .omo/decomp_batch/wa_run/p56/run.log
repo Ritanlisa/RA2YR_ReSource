@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p56\part_00
+=== convert (20 addrs) ===
+[conv] 0x48e2e0 sub_48E2E0 -> _addr_48
+[conv] 0x48e460 sub_48E460 -> _addr_48
+[conv] 0x49b1d0 sub_49B1D0 -> _addr_49
+[conv] 0x49b350 sub_49B350 -> _addr_49
+[conv] 0x49f130 sub_49F130 -> _addr_49
+[conv] 0x49f2b0 sub_49F2B0 -> _addr_49
+[conv] 0x49fda0 sub_49FDA0 -> _addr_49
+[conv] 0x49ff20 sub_49FF20 -> _addr_49
+[conv] 0x4a15b0 sub_4A15B0 -> _addr_4A
+[conv] 0x4a1730 sub_4A1730 -> _addr_4A
+[conv] 0x4a21b0 sub_4A21B0 -> _addr_4A
+[conv] 0x4a2330 sub_4A2330 -> _addr_4A
+[conv] 0x4a3c00 CreditsScreen::Init -> CreditsScreen
+[conv] 0x4a4ef0 sub_4A4EF0 -> _addr_4A
+[conv] 0x4a5070 sub_4A5070 -> _addr_4A
+[conv] 0x4a6ab0 sub_4A6AB0 -> _addr_4A
+[conv] 0x4a6c30 sub_4A6C30 -> _addr_4A
+[conv] 0x4a8490 sub_4A8490 -> _addr_4A
+[conv] 0x4a8610 sub_4A8610 -> _addr_4A
+[conv] 0x4af380 sub_4AF380 -> _addr_4A
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_48                 rc=0
+[era] _addr_49                 rc=0
+[era] _addr_4A                 rc=0
+[era] CreditsScreen            rc=0
+=== diffasm byte-compare ===
+[diff] 0x48e2e0   MATCH            sub_48E2E0
+[diff] 0x48e460   MISMATCH         sub_48E460
+[diff] 0x49b1d0   MISMATCH         sub_49B1D0
+[diff] 0x49b350   MISMATCH         sub_49B350
+[diff] 0x49f130   MATCH            sub_49F130
+[diff] 0x49f2b0   MISMATCH         sub_49F2B0
+[diff] 0x49fda0   MATCH            sub_49FDA0
+[diff] 0x49ff20   MISMATCH         sub_49FF20
+[diff] 0x4a15b0   MATCH            sub_4A15B0
+[diff] 0x4a1730   MISMATCH         sub_4A1730
+[diff] 0x4a21b0   MATCH            sub_4A21B0
+[diff] 0x4a2330   MISMATCH         sub_4A2330
+[diff] 0x4a4ef0   MATCH            sub_4A4EF0
+[diff] 0x4a5070   MISMATCH         sub_4A5070
+[diff] 0x4a6ab0   MATCH            sub_4A6AB0
+[diff] 0x4a6c30   MISMATCH         sub_4A6C30
+[diff] 0x4a8490   MATCH            sub_4A8490
+[diff] 0x4a8610   MISMATCH         sub_4A8610
+[diff] 0x4af380   MATCH            sub_4AF380
+[diff] 0x4a3c00   MATCH            CreditsScreen::Init
+[ledger] 0x48e2e0 sub_48E2E0 -> OK (attempt 2)
+[ledger] 0x48e460 sub_48E460 -> NG (attempt 2)
+[ledger] 0x49b1d0 sub_49B1D0 -> NG (attempt 2)
+[ledger] 0x49b350 sub_49B350 -> NG (attempt 2)
+[ledger] 0x49f130 sub_49F130 -> OK (attempt 2)
+[ledger] 0x49f2b0 sub_49F2B0 -> NG (attempt 4)
+[ledger] 0x49fda0 sub_49FDA0 -> OK (attempt 4)
+[ledger] 0x49ff20 sub_49FF20 -> NG (attempt 2)
+[ledger] 0x4a15b0 sub_4A15B0 -> OK (attempt 2)
+[ledger] 0x4a1730 sub_4A1730 -> NG (attempt 2)
+[ledger] 0x4a21b0 sub_4A21B0 -> OK (attempt 2)
+[ledger] 0x4a2330 sub_4A2330 -> NG (attempt 2)
+[ledger] 0x4a3c00 CreditsScreen::Init -> OK (attempt 8)
+[ledger] 0x4a4ef0 sub_4A4EF0 -> OK (attempt 2)
+[ledger] 0x4a5070 sub_4A5070 -> NG (attempt 2)
+[ledger] 0x4a6ab0 sub_4A6AB0 -> OK (attempt 2)
+[ledger] 0x4a6c30 sub_4A6C30 -> NG (attempt 2)
+[ledger] 0x4a8490 sub_4A8490 -> OK (attempt 3)
+[ledger] 0x4a8610 sub_4A8610 -> NG (attempt 2)
+[ledger] 0x4af380 sub_4AF380 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p56\batch_report.json

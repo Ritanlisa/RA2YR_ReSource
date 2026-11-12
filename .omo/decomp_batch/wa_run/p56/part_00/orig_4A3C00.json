@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A3C00",
+ "name": "CreditsScreen::Init",
+ "size": 4,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A3C00",
+ "bytes_hex": "c60100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

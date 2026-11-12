@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x48e2e0",
+  "family": "D_RELOC",
+  "name": "sub_48E2E0"
+ },
+ {
+  "addr": "0x48e460",
+  "family": "D_RELOC",
+  "name": "sub_48E460"
+ },
+ {
+  "addr": "0x49b1d0",
+  "family": "D_RELOC",
+  "name": "sub_49B1D0"
+ },
+ {
+  "addr": "0x49b350",
+  "family": "D_RELOC",
+  "name": "sub_49B350"
+ },
+ {
+  "addr": "0x49f130",
+  "family": "D_RELOC",
+  "name": "sub_49F130"
+ },
+ {
+  "addr": "0x49f2b0",
+  "family": "D_RELOC",
+  "name": "sub_49F2B0"
+ },
+ {
+  "addr": "0x49fda0",
+  "family": "D_RELOC",
+  "name": "sub_49FDA0"
+ },
+ {
+  "addr": "0x49ff20",
+  "family": "D_RELOC",
+  "name": "sub_49FF20"
+ },
+ {
+  "addr": "0x4a15b0",
+  "family": "D_RELOC",
+  "name": "sub_4A15B0"
+ },
+ {
+  "addr": "0x4a1730",
+  "family": "D_RELOC",
+  "name": "sub_4A1730"
+ },
+ {
+  "addr": "0x4a21b0",
+  "family": "D_RELOC",
+  "name": "sub_4A21B0"
+ },
+ {
+  "addr": "0x4a2330",
+  "family": "D_RELOC",
+  "name": "sub_4A2330"
+ },
+ {
+  "addr": "0x4a3c00",
+  "family": "D_RELOC",
+  "name": "CreditsScreen::Init"
+ },
+ {
+  "addr": "0x4a4ef0",
+  "family": "D_RELOC",
+  "name": "sub_4A4EF0"
+ },
+ {
+  "addr": "0x4a5070",
+  "family": "D_RELOC",
+  "name": "sub_4A5070"
+ },
+ {
+  "addr": "0x4a6ab0",
+  "family": "D_RELOC",
+  "name": "sub_4A6AB0"
+ },
+ {
+  "addr": "0x4a6c30",
+  "family": "D_RELOC",
+  "name": "sub_4A6C30"
+ },
+ {
+  "addr": "0x4a8490",
+  "family": "D_RELOC",
+  "name": "sub_4A8490"
+ },
+ {
+  "addr": "0x4a8610",
+  "family": "D_RELOC",
+  "name": "sub_4A8610"
+ },
+ {
+  "addr": "0x4af380",
+  "family": "D_RELOC",
+  "name": "sub_4AF380"
+ }
+]

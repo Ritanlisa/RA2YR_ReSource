@@ -1,0 +1,8 @@
+{
+ "symbol": "?Init@CreditsScreen@@QAEXXZ",
+ "sym_key": "CreditsScreen::Init",
+ "size": 4,
+ "link_base": 0,
+ "bytes_hex": "c60100c3",
+ "relocs": []
+}
