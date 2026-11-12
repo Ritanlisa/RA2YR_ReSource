@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetStringValue@IUnknown@@QAGHPAI@Z",
+ "sym_key": "IUnknown::GetStringValue",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "568b74240c85f67509b8034000805ec208008b442408508b08ff512483c004c7460400000000890633c05ec20800",
+ "relocs": []
+}

@@ -164,3 +164,4 @@
 {"layer": "C", "part": 163, "n": 20, "seconds": 50.8, "ok": true, "verdicts": {"MATCH": 20}}
 {"layer": "C", "part": 164, "n": 20, "seconds": 50.7, "ok": true, "verdicts": {"MATCH": 19, "COMPILE_FAIL": 1}}
 {"layer": "C", "part": 165, "n": 20, "seconds": 51.3, "ok": true, "verdicts": {"MATCH": 20}}
+{"layer": "C", "part": 166, "n": 20, "seconds": 53.1, "ok": true, "verdicts": {"MATCH": 18, "MISMATCH": 1, "COMPILE_FAIL": 1}}
