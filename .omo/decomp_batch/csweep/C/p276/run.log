@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p276\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c07d0 _TClassFactory_VAirstrikeClass::CreateTClassFactory_AirstrikeClass -> _TClassFactory_VAirstrikeClass
+[conv] 0x6c0950 _TClassFactory_VSpawnManagerClass::CreateTClassFactory_SpawnManagerClass -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c0ad0 _TClassFactory_VSlaveManagerClass::CreateTClassFactory_SlaveManagerClass -> _TClassFactory_VSlaveManagerClass
+[conv] 0x6c0c50 _TClassFactory_VCaptureManagerClass::CreateTClassFactory_CaptureManagerClass -> _TClassFactory_VCaptureManagerClass
+[conv] 0x6c0dd0 _TClassFactory_VDiskLaserClass::CreateTClassFactory_DiskLaserClass -> _TClassFactory_VDiskLaserClass
+[conv] 0x6c0f50 _TClassFactory_VParasiteClass::CreateTClassFactory_ParasiteClass -> _TClassFactory_VParasiteClass
+[conv] 0x6c10d0 _TClassFactory_VBombClass::CreateTClassFactory_BombClass -> _TClassFactory_VBombClass
+[conv] 0x6c1250 _TClassFactory_VRadSiteClass::CreateTClassFactory_RadSiteClass -> _TClassFactory_VRadSiteClass
+[conv] 0x6c13d0 _TClassFactory_VTEventClass::CreateTClassFactory_TEventClass -> _TClassFactory_VTEventClass
+[conv] 0x6c1550 _TClassFactory_VVoxelAnimTypeClass::CreateTClassFactory_VoxelAnimTypeClass -> _TClassFactory_VVoxelAnimTypeClass
+[conv] 0x6c1850 _TClassFactory_VTActionClass::CreateTClassFactory_TActionClass -> _TClassFactory_VTActionClass
+[conv] 0x6c19d0 _TClassFactory_VTriggerClass::CreateTClassFactory_TriggerClass -> _TClassFactory_VTriggerClass
+[conv] 0x6c1b50 _TClassFactory_VTriggerTypeClass::CreateTClassFactory_TriggerTypeClass -> _TClassFactory_VTriggerTypeClass
+[conv] 0x6c1cd0 _TClassFactory_VScriptClass::CreateTClassFactory_ScriptClass -> _TClassFactory_VScriptClass
+[conv] 0x6c1e50 _TClassFactory_VScriptTypeClass::CreateTClassFactory_ScriptTypeClass -> _TClassFactory_VScriptTypeClass
+[conv] 0x6c1fd0 _TClassFactory_VTagClass::CreateTClassFactory_TagClass -> _TClassFactory_VTagClass
+[conv] 0x6c2150 _TClassFactory_VTagTypeClass::CreateTClassFactory_TagTypeClass -> _TClassFactory_VTagTypeClass
+[conv] 0x6c22d0 _TClassFactory_VTeamClass::CreateTClassFactory_TeamClass -> _TClassFactory_VTeamClass
+[conv] 0x6c2450 _TClassFactory_VTeamTypeClass::CreateTClassFactory_TeamTypeClass -> _TClassFactory_VTeamTypeClass
+[conv] 0x6c25d0 _TClassFactory_VTaskForceClass::CreateTClassFactory_TaskForceClass -> _TClassFactory_VTaskForceClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VAirstrikeClass rc=0
+[era] _TClassFactory_VSpawnManagerClass rc=0
+[era] _TClassFactory_VSlaveManagerClass rc=0
+[era] _TClassFactory_VCaptureManagerClass rc=0
+[era] _TClassFactory_VDiskLaserClass rc=0
+[era] _TClassFactory_VParasiteClass rc=0
+[era] _TClassFactory_VBombClass rc=0
+[era] _TClassFactory_VRadSiteClass rc=0
+[era] _TClassFactory_VTEventClass rc=0
+[era] _TClassFactory_VVoxelAnimTypeClass rc=0
+[era] _TClassFactory_VTActionClass rc=0
+[era] _TClassFactory_VTriggerClass rc=0
+[era] _TClassFactory_VTriggerTypeClass rc=0
+[era] _TClassFactory_VScriptClass rc=0
+[era] _TClassFactory_VScriptTypeClass rc=0
+[era] _TClassFactory_VTagClass rc=0
+[era] _TClassFactory_VTagTypeClass rc=0
+[era] _TClassFactory_VTeamClass rc=0
+[era] _TClassFactory_VTeamTypeClass rc=0
+[era] _TClassFactory_VTaskForceClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c07d0   MISMATCH         _TClassFactory_VAirstrikeClass::CreateTClassFactory_AirstrikeClass
+[diff] 0x6c0950   MISMATCH         _TClassFactory_VSpawnManagerClass::CreateTClassFactory_SpawnManagerClass
+[diff] 0x6c0ad0   MISMATCH         _TClassFactory_VSlaveManagerClass::CreateTClassFactory_SlaveManagerClass
+[diff] 0x6c0c50   MISMATCH         _TClassFactory_VCaptureManagerClass::CreateTClassFactory_CaptureManagerClass
+[diff] 0x6c0dd0   MISMATCH         _TClassFactory_VDiskLaserClass::CreateTClassFactory_DiskLaserClass
+[diff] 0x6c0f50   MISMATCH         _TClassFactory_VParasiteClass::CreateTClassFactory_ParasiteClass
+[diff] 0x6c10d0   MISMATCH         _TClassFactory_VBombClass::CreateTClassFactory_BombClass
+[diff] 0x6c1250   MISMATCH         _TClassFactory_VRadSiteClass::CreateTClassFactory_RadSiteClass
+[diff] 0x6c13d0   MISMATCH         _TClassFactory_VTEventClass::CreateTClassFactory_TEventClass
+[diff] 0x6c1550   MISMATCH         _TClassFactory_VVoxelAnimTypeClass::CreateTClassFactory_VoxelAnimTypeClass
+[diff] 0x6c1850   MISMATCH         _TClassFactory_VTActionClass::CreateTClassFactory_TActionClass
+[diff] 0x6c19d0   MISMATCH         _TClassFactory_VTriggerClass::CreateTClassFactory_TriggerClass
+[diff] 0x6c1b50   MISMATCH         _TClassFactory_VTriggerTypeClass::CreateTClassFactory_TriggerTypeClass
+[diff] 0x6c1cd0   MISMATCH         _TClassFactory_VScriptClass::CreateTClassFactory_ScriptClass
+[diff] 0x6c1e50   MISMATCH         _TClassFactory_VScriptTypeClass::CreateTClassFactory_ScriptTypeClass
+[diff] 0x6c1fd0   MISMATCH         _TClassFactory_VTagClass::CreateTClassFactory_TagClass
+[diff] 0x6c2150   MISMATCH         _TClassFactory_VTagTypeClass::CreateTClassFactory_TagTypeClass
+[diff] 0x6c22d0   MISMATCH         _TClassFactory_VTeamClass::CreateTClassFactory_TeamClass
+[diff] 0x6c2450   MISMATCH         _TClassFactory_VTeamTypeClass::CreateTClassFactory_TeamTypeClass
+[diff] 0x6c25d0   MISMATCH         _TClassFactory_VTaskForceClass::CreateTClassFactory_TaskForceClass
+[ledger] 0x6c07d0 _TClassFactory_VAirstrikeClass::CreateTClassFactory_AirstrikeClass -> NG (attempt 1)
+[ledger] 0x6c0950 _TClassFactory_VSpawnManagerClass::CreateTClassFactory_SpawnManagerClass -> NG (attempt 1)
+[ledger] 0x6c0ad0 _TClassFactory_VSlaveManagerClass::CreateTClassFactory_SlaveManagerClass -> NG (attempt 1)
+[ledger] 0x6c0c50 _TClassFactory_VCaptureManagerClass::CreateTClassFactory_CaptureManagerClass -> NG (attempt 1)
+[ledger] 0x6c0dd0 _TClassFactory_VDiskLaserClass::CreateTClassFactory_DiskLaserClass -> NG (attempt 1)
+[ledger] 0x6c0f50 _TClassFactory_VParasiteClass::CreateTClassFactory_ParasiteClass -> NG (attempt 1)
+[ledger] 0x6c10d0 _TClassFactory_VBombClass::CreateTClassFactory_BombClass -> NG (attempt 1)
+[ledger] 0x6c1250 _TClassFactory_VRadSiteClass::CreateTClassFactory_RadSiteClass -> NG (attempt 1)
+[ledger] 0x6c13d0 _TClassFactory_VTEventClass::CreateTClassFactory_TEventClass -> NG (attempt 1)
+[ledger] 0x6c1550 _TClassFactory_VVoxelAnimTypeClass::CreateTClassFactory_VoxelAnimTypeClass -> NG (attempt 1)
+[ledger] 0x6c1850 _TClassFactory_VTActionClass::CreateTClassFactory_TActionClass -> NG (attempt 1)
+[ledger] 0x6c19d0 _TClassFactory_VTriggerClass::CreateTClassFactory_TriggerClass -> NG (attempt 1)
+[ledger] 0x6c1b50 _TClassFactory_VTriggerTypeClass::CreateTClassFactory_TriggerTypeClass -> NG (attempt 1)
+[ledger] 0x6c1cd0 _TClassFactory_VScriptClass::CreateTClassFactory_ScriptClass -> NG (attempt 1)
+[ledger] 0x6c1e50 _TClassFactory_VScriptTypeClass::CreateTClassFactory_ScriptTypeClass -> NG (attempt 1)
+[ledger] 0x6c1fd0 _TClassFactory_VTagClass::CreateTClassFactory_TagClass -> NG (attempt 1)
+[ledger] 0x6c2150 _TClassFactory_VTagTypeClass::CreateTClassFactory_TagTypeClass -> NG (attempt 1)
+[ledger] 0x6c22d0 _TClassFactory_VTeamClass::CreateTClassFactory_TeamClass -> NG (attempt 1)
+[ledger] 0x6c2450 _TClassFactory_VTeamTypeClass::CreateTClassFactory_TeamTypeClass -> NG (attempt 1)
+[ledger] 0x6c25d0 _TClassFactory_VTaskForceClass::CreateTClassFactory_TaskForceClass -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p276\batch_report.json
