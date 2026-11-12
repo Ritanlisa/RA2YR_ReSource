@@ -60089,15 +60089,15 @@
   "this_as_id": false
  },
  "0x67b310": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x67b31e",
   "name": "_VectorClass_PBVTerrainTypeClass::IndexOf",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TypeList_cptr_TerrainTypeClass::IndexOf",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x67b350": {
@@ -60120,15 +60120,15 @@
   "status": "NG"
  },
  "0x67b4d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_PBVTerrainTypeClass::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TypeList_cptr_TerrainTypeClass::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x67bb10": {
@@ -60545,15 +60545,15 @@
   "this_as_id": false
  },
  "0x681220": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
-  "first_diff": null,
+  "first_diff": "+4 mov edx, dword ptr [ecx + 0x3d8]",
   "name": "TechnoClass::sub_681220",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "sub_681220",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x681240": {
@@ -60569,15 +60569,15 @@
   "this_as_id": false
  },
  "0x681260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
-  "first_diff": null,
+  "first_diff": "+4 mov edx, dword ptr [ecx + 0x3e0]",
   "name": "TechnoClass::sub_681260",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "sub_681260",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x681280": {
@@ -60593,15 +60593,15 @@
   "this_as_id": false
  },
  "0x6812a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
-  "first_diff": null,
+  "first_diff": "+4 mov edx, dword ptr [ecx + 0x3e8]",
   "name": "TechnoClass::sub_6812A0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "sub_6812A0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6812c0": {
@@ -60832,7 +60832,7 @@
   "this_as_id": false
  },
  "0x689790": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -60856,7 +60856,7 @@
   "this_as_id": false
  },
  "0x689a00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -60868,7 +60868,7 @@
   "this_as_id": false
  },
  "0x689a30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61323,7 +61323,7 @@
   "this_as_id": false
  },
  "0x6915b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61347,15 +61347,15 @@
   "this_as_id": false
  },
  "0x6915f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e97a0]",
   "name": "ScriptClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ScriptClass::ddtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x691970": {
@@ -61382,15 +61382,15 @@
   "this_as_id": false
  },
  "0x691d50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e97b0]",
   "name": "ScriptTypeClass::GetClassIdentifier",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ScriptTypeClass::GetClassIdentifier",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x691ec0": {
@@ -62082,7 +62082,7 @@
   "this_as_id": false
  },
  "0x69a310": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -62238,7 +62238,7 @@
   "this_as_id": false
  },
  "0x69bc20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -62364,15 +62364,15 @@
   "this_as_id": false
  },
  "0x69c710": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x69c746",
   "name": "_VectorClass_W4DiskID::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "_VectorClass_W4DiskID::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69c750": {
@@ -62383,15 +62383,15 @@
   "status": "NG"
  },
  "0x69c830": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x69c83e",
   "name": "_VectorClass_W4DiskID::findPlayer",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "_VectorClass_W4DiskID::findPlayer",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69c870": {
@@ -62407,15 +62407,15 @@
   "this_as_id": false
  },
  "0x69c940": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_TypeList_W4DiskID::Read",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "_TypeList_W4DiskID::Read",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69cba0": {
@@ -62433,15 +62433,15 @@
   "status": "NG"
  },
  "0x69ce60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x69ce6e",
   "name": "_VectorClass_PAVMultiMission::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_MultiMission::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69cea0": {
@@ -62457,39 +62457,39 @@
   "this_as_id": false
  },
  "0x69cf70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_PAVMultiMission::FindItemIndex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_GlobalPacketType::FindItemIndex",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69cfa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x69cfd6",
   "name": "_VectorClass_PAUGlobalPacketType::Add",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_GlobalPacketType::Add",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69d0c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x69d0ce",
   "name": "_VectorClass_PAUGlobalPacketType::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_GlobalPacketType::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69d100": {

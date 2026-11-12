@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x67b310 _VectorClass_PBVTerrainTypeClass::IndexOf -> _VectorClass_PBVTerrainTypeClass
+[conv] 0x67b4d0 _DynamicVectorClass_PBVTerrainTypeClass::GetSize -> _DynamicVectorClass_PBVTerrainTypeClass
+[conv] 0x681220 TechnoClass::sub_681220 -> TechnoClass
+[conv] 0x681260 TechnoClass::sub_681260 -> TechnoClass
+[conv] 0x6812a0 TechnoClass::sub_6812A0 -> TechnoClass
+[conv] 0x689790 ObjectClass::sub_689790 -> ObjectClass
+[conv] 0x689a00 ScenarioClass::GetLocalStateByID -> ScenarioClass
+[conv] 0x689a30 ObjectClass::sub_689A30 -> ObjectClass
+[conv] 0x6915b0 TeamClass::Check -> TeamClass
+[conv] 0x6915f0 ScriptClass::ddtor -> ScriptClass
+[conv] 0x691d50 ScriptTypeClass::GetClassIdentifier -> ScriptTypeClass
+[conv] 0x69a310 SessionClass::GetPlayerColorScheme -> SessionClass
+[conv] 0x69bc20 IPXConnClass::closeConnection -> IPXConnClass
+[conv] 0x69c710 _VectorClass_W4DiskID::AddRef -> _VectorClass_W4DiskID
+[conv] 0x69c830 _VectorClass_W4DiskID::findPlayer -> _VectorClass_W4DiskID
+[conv] 0x69c940 _TypeList_W4DiskID::Read -> _TypeList_W4DiskID
+[conv] 0x69ce60 _VectorClass_PAVMultiMission::GetSize -> _VectorClass_PAVMultiMission
+[conv] 0x69cf70 _DynamicVectorClass_PAVMultiMission::FindItemIndex -> _DynamicVectorClass_PAVMultiMission
+[conv] 0x69cfa0 _VectorClass_PAUGlobalPacketType::Add -> _VectorClass_PAUGlobalPacketType
+[conv] 0x69d0c0 _VectorClass_PAUGlobalPacketType::GetSize -> _VectorClass_PAUGlobalPacketType
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVTerrainTypeClass rc=0
+[era] _DynamicVectorClass_PBVTerrainTypeClass rc=0
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=2
+[era] ScenarioClass            rc=2
+[era] TeamClass                rc=2
+[era] ScriptClass              rc=0
+[era] ScriptTypeClass          rc=0
+[era] SessionClass             rc=2
+[era] IPXConnClass             rc=2
+[era] _VectorClass_W4DiskID    rc=0
+[era] _TypeList_W4DiskID       rc=0
+[era] _VectorClass_PAVMultiMission rc=0
+[era] _DynamicVectorClass_PAVMultiMission rc=0
+[era] _VectorClass_PAUGlobalPacketType rc=0
+=== diffasm byte-compare ===
+[diff] 0x67b310   MISMATCH         _VectorClass_PBVTerrainTypeClass::IndexOf
+[diff] 0x67b4d0   MISMATCH         _DynamicVectorClass_PBVTerrainTypeClass::GetSize
+[diff] 0x681220   MISMATCH         TechnoClass::sub_681220
+[diff] 0x681260   MISMATCH         TechnoClass::sub_681260
+[diff] 0x6812a0   MISMATCH         TechnoClass::sub_6812A0
+[diff] 0x6915f0   MISMATCH         ScriptClass::ddtor
+[diff] 0x691d50   MISMATCH         ScriptTypeClass::GetClassIdentifier
+[diff] 0x69c710   MISMATCH         _VectorClass_W4DiskID::AddRef
+[diff] 0x69c830   MISMATCH         _VectorClass_W4DiskID::findPlayer
+[diff] 0x69c940   MISMATCH         _TypeList_W4DiskID::Read
+[diff] 0x69ce60   MISMATCH         _VectorClass_PAVMultiMission::GetSize
+[diff] 0x69cf70   MISMATCH         _DynamicVectorClass_PAVMultiMission::FindItemIndex
+[diff] 0x69cfa0   MISMATCH         _VectorClass_PAUGlobalPacketType::Add
+[diff] 0x69d0c0   MISMATCH         _VectorClass_PAUGlobalPacketType::GetSize
+[ledger] 0x67b310 _VectorClass_PBVTerrainTypeClass::IndexOf -> NG (attempt 2)
+[ledger] 0x67b4d0 _DynamicVectorClass_PBVTerrainTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x681220 TechnoClass::sub_681220 -> NG (attempt 2)
+[ledger] 0x681260 TechnoClass::sub_681260 -> NG (attempt 2)
+[ledger] 0x6812a0 TechnoClass::sub_6812A0 -> NG (attempt 2)
+[ledger] 0x689790 ObjectClass::sub_689790 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x689a00 ScenarioClass::GetLocalStateByID -> COMPILE_FAIL (attempt 2)
+[ledger] 0x689a30 ObjectClass::sub_689A30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6915b0 TeamClass::Check -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6915f0 ScriptClass::ddtor -> NG (attempt 2)
+[ledger] 0x691d50 ScriptTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x69a310 SessionClass::GetPlayerColorScheme -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69bc20 IPXConnClass::closeConnection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69c710 _VectorClass_W4DiskID::AddRef -> NG (attempt 2)
+[ledger] 0x69c830 _VectorClass_W4DiskID::findPlayer -> NG (attempt 2)
+[ledger] 0x69c940 _TypeList_W4DiskID::Read -> NG (attempt 2)
+[ledger] 0x69ce60 _VectorClass_PAVMultiMission::GetSize -> NG (attempt 2)
+[ledger] 0x69cf70 _DynamicVectorClass_PAVMultiMission::FindItemIndex -> NG (attempt 2)
+[ledger] 0x69cfa0 _VectorClass_PAUGlobalPacketType::Add -> NG (attempt 2)
+[ledger] 0x69d0c0 _VectorClass_PAUGlobalPacketType::GetSize -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "const_fold": 3,
+  "branch_polarity": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p31\batch_report.json
