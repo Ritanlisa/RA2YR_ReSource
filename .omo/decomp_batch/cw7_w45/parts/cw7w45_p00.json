@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x406130",
+  "family": "W45",
+  "code": "C2446",
+  "name": "AudioSource::Get"
+ },
+ {
+  "addr": "0x4072d0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "DListNode::InitEmpty"
+ },
+ {
+  "addr": "0x407510",
+  "family": "W45",
+  "code": "C2562",
+  "name": "VtableStub::Push_407510"
+ },
+ {
+  "addr": "0x408530",
+  "family": "W45",
+  "code": "C2562",
+  "name": "ObjectClass::nullsub_2"
+ },
+ {
+  "addr": "0x408600",
+  "family": "W45",
+  "code": "C2562",
+  "name": "AudioNode::Release"
+ },
+ {
+  "addr": "0x40d300",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_57"
+ },
+ {
+  "addr": "0x4101f0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "AbstractClass::DTOR"
+ },
+ {
+  "addr": "0x41c3f0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "BulletClass::NormalizeZeroVector"
+ },
+ {
+  "addr": "0x41c460",
+  "family": "W45",
+  "code": "C2562",
+  "name": "Vector2::NormalizeNonZero"
+ },
+ {
+  "addr": "0x420130",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_53"
+ },
+ {
+  "addr": "0x425280",
+  "family": "W45",
+  "code": "C4716",
+  "name": "AnimClass::SaveLoad_Prefix"
+ },
+ {
+  "addr": "0x451e40",
+  "family": "W45",
+  "code": "C2562",
+  "name": "BuildingClass::ClearAnims"
+ },
+ {
+  "addr": "0x454ce0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_5"
+ },
+ {
+  "addr": "0x45e750",
+  "family": "W45",
+  "code": "C4716",
+  "name": "nullsub_6"
+ },
+ {
+  "addr": "0x465cb0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_7"
+ },
+ {
+  "addr": "0x476d80",
+  "family": "W45",
+  "code": "C4716",
+  "name": "Hash::ComputeHashSHA1"
+ },
+ {
+  "addr": "0x4790b0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "SetSoundWarning"
+ },
+ {
+  "addr": "0x485460",
+  "family": "W45",
+  "code": "C2446",
+  "name": "BuildingClass::CheckAdjacentCells"
+ },
+ {
+  "addr": "0x48b410",
+  "family": "W45",
+  "code": "C2562",
+  "name": "ModemConnectionClass::queueSendPacket"
+ },
+ {
+  "addr": "0x48ded0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_51"
+ }
+]

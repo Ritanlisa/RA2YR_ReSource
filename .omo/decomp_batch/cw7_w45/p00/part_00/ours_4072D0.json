@@ -1,0 +1,8 @@
+{
+ "symbol": "?InitEmpty@DListNode@@QAEHXZ",
+ "sym_key": "DListNode::InitEmpty",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "518b4424008909894904c741080000000059c3",
+ "relocs": []
+}

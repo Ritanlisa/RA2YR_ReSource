@@ -1,0 +1,11 @@
+{
+ "addr": "0x408600",
+ "name": "AudioNode::Release",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408600",
+ "bytes_hex": "c7411400000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

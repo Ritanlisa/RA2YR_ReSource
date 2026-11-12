@@ -1,0 +1,8 @@
+{
+ "symbol": "?ClearAnims@BuildingClass@@QAEHH@Z",
+ "sym_key": "BuildingClass::ClearAnims",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "8b54240483fafe75308b44240456578db15c050000bf150000008b0e85c9740ec706000000008b016a0151ff502083c6044f75e65f5ec204008b84915c05000085c07413c784915c050000000000008b086a0150ff5120c20400",
+ "relocs": []
+}

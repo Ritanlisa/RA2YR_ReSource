@@ -1,0 +1,11 @@
+{
+ "addr": "0x4101F0",
+ "name": "AbstractClass::DTOR",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4101F0",
+ "bytes_hex": "c701501f7e00c74104341f7e00c741082c1f7e00c7410c241f7e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

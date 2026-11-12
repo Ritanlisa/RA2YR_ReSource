@@ -1,0 +1,15 @@
+{
+ "symbol": "?Push_407510@VtableStub@@QAEHXZ",
+ "sym_key": "VtableStub::Push_407510",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "5151e8000000008b44240483c408c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

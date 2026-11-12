@@ -1,0 +1,11 @@
+{
+ "addr": "0x451E40",
+ "name": "BuildingClass::ClearAnims",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x451E40",
+ "bytes_hex": "8b54240483fafe752b56578db15c050000bf150000008b0e85c9740dc706000000008b016a01ff502083c6044f75e75f5ec204008b84915c05000085c07414c784915c050000000000008b106a018bc8ff5220c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

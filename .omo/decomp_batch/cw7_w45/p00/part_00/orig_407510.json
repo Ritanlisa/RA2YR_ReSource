@@ -1,0 +1,11 @@
+{
+ "addr": "0x407510",
+ "name": "VtableStub::Push_407510",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407510",
+ "bytes_hex": "51e827163c0059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4790B0",
+ "name": "SetSoundWarning",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4790B0",
+ "bytes_hex": "803da0e3890001750bc705d0c18100feffffffc385c97c05b902000000890dd0c18100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -520,14 +520,14 @@
   "this_as_id": false
  },
  "0x406130": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "AudioSource::Get",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AudioSource::Get",
-  "rule_violations": 1,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -934,15 +934,15 @@
   "status": "OK"
  },
  "0x4072d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov dword ptr [ecx], ecx",
   "name": "DListNode::InitEmpty",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "DListNode::InitEmpty",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4072e0": {
@@ -1047,15 +1047,15 @@
   "this_as_id": false
  },
  "0x407510": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 call 0x7c8b3d",
   "name": "VtableStub::Push_407510",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VtableStub::Push_407510",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x407520": {
@@ -1181,15 +1181,15 @@
   "status": "OK"
  },
  "0x408530": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 ret ",
   "name": "ObjectClass::nullsub_2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "nullsub_2",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x408540": {
@@ -1224,11 +1224,16 @@
   "this_as_id": false
  },
  "0x408600": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov dword ptr [ecx + 0x14], 0",
   "name": "AudioNode::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AudioNode::Release",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x408930": {
   "attempts": 1,
@@ -2464,15 +2469,15 @@
   "this_as_id": false
  },
  "0x40d300": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_57",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_57",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x40d310": {
@@ -3856,15 +3861,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x4101f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov dword ptr [ecx], 0x7e1f50",
   "name": "AbstractClass::DTOR",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AbstractClass::DTOR",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x410220": {
@@ -5332,27 +5337,27 @@
   "this_as_id": false
  },
  "0x41c3f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BulletClass::NormalizeZeroVector",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::NormalizeZeroVector",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x41c460": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 fld qword ptr [ecx]",
   "name": "Vector2::NormalizeNonZero",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Vector2::NormalizeNonZero",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x41c610": {
@@ -6098,15 +6103,15 @@
   "this_as_id": false
  },
  "0x420130": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_53",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_53",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x4202f0": {
@@ -6661,15 +6666,15 @@
   "this_as_id": false
  },
  "0x425280": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "AnimClass::SaveLoad_Prefix",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AnimClass::SaveLoad_Prefix",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x425510": {
@@ -9897,15 +9902,15 @@
   "status": "NG"
  },
  "0x451e40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+7 jne 0x451e74",
   "name": "BuildingClass::ClearAnims",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "BuildingClass::ClearAnims",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x451f60": {
@@ -10038,15 +10043,15 @@
   "this_as_id": false
  },
  "0x454ce0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_5",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_5",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x455820": {
@@ -10883,14 +10888,14 @@
   "this_as_id": false
  },
  "0x45e750": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": null,
   "name": "nullsub_6",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_6",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x45e8b0": {
@@ -11001,15 +11006,15 @@
   "this_as_id": false
  },
  "0x465cb0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_7",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_7",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x465d30": {
@@ -12902,15 +12907,15 @@
   "status": "NG"
  },
  "0x476d80": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x8c",
   "name": "Hash::ComputeHashSHA1",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Hash::ComputeHashSHA1",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x476ea0": {
@@ -13337,14 +13342,14 @@
   "this_as_id": false
  },
  "0x4790b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 cmp byte ptr [0x89e3a0], 1",
   "name": "SetSoundWarning",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SetSoundWarning",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4791f0": {
@@ -13795,14 +13800,14 @@
   "this_as_id": false
  },
  "0x485460": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BuildingClass::CheckAdjacentCells",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::CheckAdjacentCells",
-  "rule_violations": 6,
+  "rule_violations": 9,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -14650,7 +14655,7 @@
   "this_as_id": false
  },
  "0x48b410": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -15058,15 +15063,15 @@
   "this_as_id": false
  },
  "0x48ded0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_51",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_51",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x48dee0": {

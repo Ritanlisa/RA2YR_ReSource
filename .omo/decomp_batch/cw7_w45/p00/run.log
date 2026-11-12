@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x406130 AudioSource::Get -> AudioSource
+[conv] 0x4072d0 DListNode::InitEmpty -> DListNode
+[conv] 0x407510 VtableStub::Push_407510 -> VtableStub
+[conv] 0x408530 ObjectClass::nullsub_2 -> ObjectClass
+[conv] 0x408600 AudioNode::Release -> AudioNode
+[conv] 0x40d300 ObjectClass::nullsub_57 -> ObjectClass
+[conv] 0x4101f0 AbstractClass::DTOR -> AbstractClass
+[conv] 0x41c3f0 BulletClass::NormalizeZeroVector -> BulletClass
+[conv] 0x41c460 Vector2::NormalizeNonZero -> Vector2
+[conv] 0x420130 ObjectClass::nullsub_53 -> ObjectClass
+[conv] 0x425280 AnimClass::SaveLoad_Prefix -> AnimClass
+[conv] 0x451e40 BuildingClass::ClearAnims -> BuildingClass
+[conv] 0x454ce0 ObjectClass::nullsub_5 -> ObjectClass
+[conv] 0x45e750 nullsub_6 -> _addr_45
+[conv] 0x465cb0 ObjectClass::nullsub_7 -> ObjectClass
+[conv] 0x476d80 Hash::ComputeHashSHA1 -> Hash
+[conv] 0x4790b0 SetSoundWarning -> _addr_47
+[conv] 0x485460 BuildingClass::CheckAdjacentCells -> BuildingClass
+[conv] 0x48b410 ModemConnectionClass::queueSendPacket -> ModemConnectionClass
+[conv] 0x48ded0 ObjectClass::nullsub_51 -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioSource              rc=2
+[era] DListNode                rc=0
+[era] VtableStub               rc=0
+[era] ObjectClass              rc=0
+[era] AudioNode                rc=0
+[era] AbstractClass            rc=0
+[era] BulletClass              rc=2
+[era] Vector2                  rc=0
+[era] AnimClass                rc=0
+[era] BuildingClass            rc=2
+[era] _addr_45                 rc=0
+[era] Hash                     rc=0
+[era] _addr_47                 rc=0
+[era] ModemConnectionClass     rc=2
+=== diffasm byte-compare ===
+[diff] 0x4072d0   MISMATCH         DListNode::InitEmpty
+[diff] 0x407510   MISMATCH         VtableStub::Push_407510
+[diff] 0x408530   MISMATCH         ObjectClass::nullsub_2
+[diff] 0x40d300   MATCH            ObjectClass::nullsub_57
+[diff] 0x420130   MATCH            ObjectClass::nullsub_53
+[diff] 0x454ce0   MATCH            ObjectClass::nullsub_5
+[diff] 0x465cb0   MATCH            ObjectClass::nullsub_7
+[diff] 0x48ded0   MATCH            ObjectClass::nullsub_51
+[diff] 0x408600   MISMATCH         AudioNode::Release
+[diff] 0x4101f0   MISMATCH         AbstractClass::DTOR
+[diff] 0x41c460   MISMATCH         Vector2::NormalizeNonZero
+[diff] 0x425280   MISMATCH         AnimClass::SaveLoad_Prefix
+[diff] 0x451e40   MISMATCH         BuildingClass::ClearAnims
+[diff] 0x45e750   MATCH            nullsub_6
+[diff] 0x476d80   MISMATCH         Hash::ComputeHashSHA1
+[diff] 0x4790b0   MISMATCH         SetSoundWarning
+[ledger] 0x406130 AudioSource::Get -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4072d0 DListNode::InitEmpty -> NG (attempt 2)
+[ledger] 0x407510 VtableStub::Push_407510 -> NG (attempt 9)
+[ledger] 0x408530 ObjectClass::nullsub_2 -> NG (attempt 2)
+[ledger] 0x408600 AudioNode::Release -> NG (attempt 6)
+[ledger] 0x40d300 ObjectClass::nullsub_57 -> OK (attempt 2)
+[ledger] 0x4101f0 AbstractClass::DTOR -> NG (attempt 2)
+[ledger] 0x41c3f0 BulletClass::NormalizeZeroVector -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41c460 Vector2::NormalizeNonZero -> NG (attempt 2)
+[ledger] 0x420130 ObjectClass::nullsub_53 -> OK (attempt 2)
+[ledger] 0x425280 AnimClass::SaveLoad_Prefix -> NG (attempt 4)
+[ledger] 0x451e40 BuildingClass::ClearAnims -> NG (attempt 4)
+[ledger] 0x454ce0 ObjectClass::nullsub_5 -> OK (attempt 2)
+[ledger] 0x45e750 nullsub_6 -> OK (attempt 2)
+[ledger] 0x465cb0 ObjectClass::nullsub_7 -> OK (attempt 2)
+[ledger] 0x476d80 Hash::ComputeHashSHA1 -> NG (attempt 4)
+[ledger] 0x4790b0 SetSoundWarning -> NG (attempt 2)
+[ledger] 0x485460 BuildingClass::CheckAdjacentCells -> COMPILE_FAIL (attempt 4)
+[ledger] 0x48b410 ModemConnectionClass::queueSendPacket -> COMPILE_FAIL (attempt 12)
+[ledger] 0x48ded0 ObjectClass::nullsub_51 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 4,
+  "MISMATCH": 10,
+  "MATCH": 6
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 37.5,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p00\batch_report.json

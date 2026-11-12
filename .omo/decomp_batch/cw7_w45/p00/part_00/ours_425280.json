@@ -1,0 +1,27 @@
+{
+ "symbol": "?SaveLoad_Prefix@AnimClass@@QAEXHH@Z",
+ "sym_key": "AnimClass::SaveLoad_Prefix",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "56e80000000085c07c288b74240885f674208d44240c8bce50e8000000008d4c240c81c6b40000005156e80000000083c4085ec20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?SaveLoad_Register@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::SaveLoad_Register"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Init@ObjectClass@@QAEPAV1@H@Z",
+   "sym_key": "ObjectClass::Init"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?__4type_info_AAEAAV0_ABV0__Z@@YAHPAXH@Z",
+   "sym_key": "__4type_info_AAEAAV0_ABV0__Z"
+  }
+ ]
+}

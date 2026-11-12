@@ -1,0 +1,21 @@
+{
+ "symbol": "?NormalizeNonZero@Vector2@@QAEHXZ",
+ "sym_key": "Vector2::NormalizeNonZero",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "51dd018b5424008b442400dc1d0000000081e2ff00000024000bd056dfe0f6c440742edd4108dc1d000000008b74240480e20081e6ff0000000bf2dfe0f6c440740ac60100c74104000059408bc65e59c38bc25e59c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

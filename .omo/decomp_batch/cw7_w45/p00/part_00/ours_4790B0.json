@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetSoundWarning@@YIHH@Z",
+ "sym_key": "Unnamed::SetSoundWarning",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "51803d00000000017510c70500000000feffffff8b44240059c385c97c05b902000000890d000000008b44240059c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E3A0@@3_NA",
+   "sym_key": "DataGlobal_89E3A0"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81C1D0@@3IA",
+   "sym_key": "DataGlobal_81C1D0"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81C1D0@@3IA",
+   "sym_key": "DataGlobal_81C1D0"
+  }
+ ]
+}
