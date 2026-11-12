@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@RandomStraw@@QAEPAHD@Z",
+ "sym_key": "RandomStraw::QueryInterface",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "568bf15733c0b9400000008d7e14890689460c894610f3ab8bcee800000000f644240c01740956e80000000083c4048b065f5ec20400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Dtor@Straw@@QAEHXZ",
+   "sym_key": "Straw::Dtor"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

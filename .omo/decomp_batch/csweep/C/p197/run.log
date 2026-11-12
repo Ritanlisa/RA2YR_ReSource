@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p197\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f6990 HouseClass::FindItemIndex_0 -> HouseClass
+[conv] 0x661c70 RandomStraw::QueryInterface -> RandomStraw
+[conv] 0x6b1a70 SlaveManagerClass::Calc2DDistance -> SlaveManagerClass
+[conv] 0x7b8250 ObjectClass::sub_7B8250 -> ObjectClass
+[conv] 0x7dcc74 sub_7DCC74 -> _addr_7D
+[conv] 0x474620 INIClass::ReadCoord -> INIClass
+[conv] 0x4739f0 CCFileClass::Construct -> CCFileClass
+[conv] 0x6b10f0 SlaveManagerClass::AssignTask -> SlaveManagerClass
+[conv] 0x732cc0 UI_Create_732CC0 -> UI_Create
+[conv] 0x5bc3c0 Network_Process -> Network
+[conv] 0x6b1d00 SliderClass::Destructor -> SliderClass
+[conv] 0x7325c0 ObjectClass::sub_7325C0 -> ObjectClass
+[conv] 0x40be10 EventClass::finalizeEvent -> EventClass
+[conv] 0x40c1f0 sub_40C1F0 -> _addr_40
+[conv] 0x40c7e0 sub_40C7E0 -> _addr_40
+[conv] 0x40cbc0 sub_40CBC0 -> _addr_40
+[conv] 0x40d380 sub_40D380 -> _addr_40
+[conv] 0x40d480 sub_40D480 -> _addr_40
+[conv] 0x40d500 sub_40D500 -> _addr_40
+[conv] 0x40e7b0 sub_40E7B0 -> _addr_40
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] RandomStraw              rc=0
+[era] SlaveManagerClass        rc=2
+[era] ObjectClass              rc=0
+[era] _addr_7D                 rc=2
+[era] INIClass                 rc=2
+[era] CCFileClass              rc=0
+[era] UI_Create                rc=0
+[era] Network                  rc=0
+[era] SliderClass              rc=0
+[era] EventClass               rc=0
+[era] _addr_40                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4f6990   MISMATCH         HouseClass::FindItemIndex_0
+[diff] 0x661c70   MISMATCH         RandomStraw::QueryInterface
+[diff] 0x6b10f0   MISMATCH         SlaveManagerClass::AssignTask
+[diff] 0x7b8250   MISMATCH         ObjectClass::sub_7B8250
+[diff] 0x7325c0   MISMATCH         ObjectClass::sub_7325C0
+[diff] 0x4739f0   MISMATCH         CCFileClass::Construct
+[diff] 0x732cc0   MISMATCH         UI_Create_732CC0
+[diff] 0x5bc3c0   MISMATCH         Network_Process
+[diff] 0x6b1d00   MISMATCH         SliderClass::Destructor
+[diff] 0x40be10   MISMATCH         EventClass::finalizeEvent
+[diff] 0x40c1f0   MISMATCH         sub_40C1F0
+[diff] 0x40c7e0   MISMATCH         sub_40C7E0
+[diff] 0x40cbc0   MISMATCH         sub_40CBC0
+[diff] 0x40d380   MISMATCH         sub_40D380
+[diff] 0x40d480   MISMATCH         sub_40D480
+[diff] 0x40d500   MISMATCH         sub_40D500
+[diff] 0x40e7b0   MISMATCH         sub_40E7B0
+[ledger] 0x4f6990 HouseClass::FindItemIndex_0 -> NG (attempt 1)
+[ledger] 0x661c70 RandomStraw::QueryInterface -> NG (attempt 1)
+[ledger] 0x6b1a70 SlaveManagerClass::Calc2DDistance -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b8250 ObjectClass::sub_7B8250 -> NG (attempt 1)
+[ledger] 0x7dcc74 sub_7DCC74 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x474620 INIClass::ReadCoord -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4739f0 CCFileClass::Construct -> NG (attempt 1)
+[ledger] 0x6b10f0 SlaveManagerClass::AssignTask -> NG (attempt 1)
+[ledger] 0x732cc0 UI_Create_732CC0 -> NG (attempt 1)
+[ledger] 0x5bc3c0 Network_Process -> NG (attempt 1)
+[ledger] 0x6b1d00 SliderClass::Destructor -> NG (attempt 1)
+[ledger] 0x7325c0 ObjectClass::sub_7325C0 -> NG (attempt 1)
+[ledger] 0x40be10 EventClass::finalizeEvent -> NG (attempt 1)
+[ledger] 0x40c1f0 sub_40C1F0 -> NG (attempt 1)
+[ledger] 0x40c7e0 sub_40C7E0 -> NG (attempt 1)
+[ledger] 0x40cbc0 sub_40CBC0 -> NG (attempt 1)
+[ledger] 0x40d380 sub_40D380 -> NG (attempt 1)
+[ledger] 0x40d480 sub_40D480 -> NG (attempt 1)
+[ledger] 0x40d500 sub_40D500 -> NG (attempt 1)
+[ledger] 0x40e7b0 sub_40E7B0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 10,
+  "regalloc": 3,
+  "const_fold": 2,
+  "ret_norm": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p197\batch_report.json

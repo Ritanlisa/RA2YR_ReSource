@@ -1,0 +1,27 @@
+{
+ "symbol": "?AssignTask@SlaveManagerClass@@QAEHH@Z",
+ "sym_key": "SlaveManagerClass::AssignTask",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "56578bf9e8000000008b475c50e8000000008b77484e78128b4f3c8b14b18b420450e8000000004e79ee5f5ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

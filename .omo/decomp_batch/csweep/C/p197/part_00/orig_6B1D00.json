@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B1D00",
+ "name": "SliderClass::Destructor",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B1D00",
+ "bytes_hex": "568bf18b4e3cc7061cd27e0085c9740d8b016a01ff10c7463c000000008b4e4085c9740d8b116a01ff12c74640000000008bcee858f6e2ff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BC3C0",
+ "name": "Network_Process",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BC3C0",
+ "bytes_hex": "a038f2ab0084c07430a140f2ab0085c07505e859010000a140f2ab006a0150c6053af2ab0001ff1598147e008b0d34f2ab0051ff15cc137e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

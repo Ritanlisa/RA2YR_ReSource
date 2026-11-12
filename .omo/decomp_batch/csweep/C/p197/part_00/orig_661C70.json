@@ -1,0 +1,11 @@
+{
+ "addr": "0x661C70",
+ "name": "RandomStraw::QueryInterface",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x661C70",
+ "bytes_hex": "568bf15733c0b9400000008d7e14c706fc0a7f0089460c894610f3ab8bcee8bd7b0600f644240c01740956e89d6e160083c4048bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

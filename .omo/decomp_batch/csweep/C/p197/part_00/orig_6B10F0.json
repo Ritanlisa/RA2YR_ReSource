@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B10F0",
+ "name": "SlaveManagerClass::AssignTask",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B10F0",
+ "bytes_hex": "538b5c240856578bf953e811f3d5ff8b475c8bcb50e8460cdfff8b77484e78148b4f3c8b14b18bcb8b420450e82f0cdfff4e79ec5f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
