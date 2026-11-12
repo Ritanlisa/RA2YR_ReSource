@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetValue@GaugeClass@@QAEHH@Z",
+ "sym_key": "GaugeClass::SetValue",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b51343bc2750533c0c204008941348b01ff10b801000000c20400",
+ "relocs": []
+}

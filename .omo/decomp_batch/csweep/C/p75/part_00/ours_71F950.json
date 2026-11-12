@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetStateA@TEventClass@@QAEDXZ",
+ "sym_key": "TEventClass::GetStateA",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b492c8d41ff83f83a771233c98a8800000000ff248d00000000b001c332c0c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "$L1865",
+   "sym_key": "$L1865"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "$L1866",
+   "sym_key": "$L1866"
+  }
+ ]
+}

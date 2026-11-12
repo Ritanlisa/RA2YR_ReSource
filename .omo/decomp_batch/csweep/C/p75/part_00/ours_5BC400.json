@@ -1,0 +1,33 @@
+{
+ "symbol": "?HideWindow@MouseClass@@QAEPAXXZ",
+ "sym_key": "MouseClass::HideWindow",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "a10000000033c93bc1880d00000000740d5150880d00000000e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF240@@3IA",
+   "sym_key": "DataGlobal_ABF240"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF239@@3EA",
+   "sym_key": "DataGlobal_ABF239"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_MiscFlag@@3EA",
+   "sym_key": "g_MiscFlag"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?ParseWDTTerritories_Parse_76B790@rc_ptr@@QAEPAV1@H@Z",
+ "sym_key": "rc_ptr::ParseWDTTerritories_Parse_76B790",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b4424088bce50c70600000000e8000000008bc65ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

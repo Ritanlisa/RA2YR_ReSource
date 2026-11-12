@@ -1,0 +1,8 @@
+{
+ "symbol": "?ProcessMission16@InfantryClass@@QAEDXZ",
+ "sym_key": "InfantryClass::ProcessMission16",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "518b44240033d28a91e406000024000bc284c074158b016a006a006a1bc681e406000000ff905805000059c3",
+ "relocs": []
+}

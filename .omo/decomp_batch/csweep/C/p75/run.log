@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p75\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cc0dc __global_unwind2 -> _addr_7C
+[conv] 0x7d290b _write_char_0 -> _addr_7D
+[conv] 0x53ec90 MouseClass::GetKeyState -> MouseClass
+[conv] 0x5bc400 MouseClass::HideWindow -> MouseClass
+[conv] 0x71f950 TEventClass::GetStateA -> TEventClass
+[conv] 0x71f9c0 TEventClass::GetStateB_SpyEvent -> TEventClass
+[conv] 0x4e2580 GaugeClass::SetValue -> GaugeClass
+[conv] 0x521b40 InfantryClass::ProcessMission16 -> InfantryClass
+[conv] 0x5f5c60 BuildingClass::GetHealthRatio -> BuildingClass
+[conv] 0x631d10 Pipe::Dispatch -> Pipe
+[conv] 0x7bd270 AudioStream::SetFlag4C -> AudioStream
+[conv] 0x7bd290 UnitClass::Audio_Process_7BD290 -> UnitClass
+[conv] 0x798340 GameOptionsScreenWOL_Helper -> GameOptionsScreenWOL
+[conv] 0x4f3a70 GraphicMenuItem::Dtor -> GraphicMenuItem
+[conv] 0x5c03a0 VQMovieHandle::finalizePath -> VQMovieHandle
+[conv] 0x76b790 rc_ptr::ParseWDTTerritories_Parse_76B790 -> rc_ptr
+[conv] 0x77d120 sub_77D120 -> _addr_77
+[conv] 0x7ac610 SimpleWonlineDialogControl::CreateGameWOL_Create_7AC610 -> SimpleWonlineDialogControl
+[conv] 0x7b0110 sub_7B0110 -> _addr_7B
+[conv] 0x7b0150 sub_7B0150 -> _addr_7B
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=0
+[era] MouseClass               rc=0
+[era] TEventClass              rc=0
+[era] GaugeClass               rc=0
+[era] InfantryClass            rc=0
+[era] BuildingClass            rc=2
+[era] Pipe                     rc=0
+[era] AudioStream              rc=0
+[era] UnitClass                rc=0
+[era] GameOptionsScreenWOL     rc=2
+[era] GraphicMenuItem          rc=0
+[era] VQMovieHandle            rc=0
+[era] rc_ptr                   rc=0
+[era] _addr_77                 rc=0
+[era] SimpleWonlineDialogControl rc=0
+[era] _addr_7B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x7d290b   MISMATCH         _write_char_0
+[diff] 0x53ec90   MISMATCH         MouseClass::GetKeyState
+[diff] 0x5bc400   MISMATCH         MouseClass::HideWindow
+[diff] 0x71f950   MISMATCH         TEventClass::GetStateA
+[diff] 0x71f9c0   MISMATCH         TEventClass::GetStateB_SpyEvent
+[diff] 0x4e2580   MISMATCH         GaugeClass::SetValue
+[diff] 0x521b40   MISMATCH         InfantryClass::ProcessMission16
+[diff] 0x631d10   MISMATCH         Pipe::Dispatch
+[diff] 0x7bd270   MATCH            AudioStream::SetFlag4C
+[diff] 0x7bd290   MATCH            UnitClass::Audio_Process_7BD290
+[diff] 0x4f3a70   MISMATCH         GraphicMenuItem::Dtor
+[diff] 0x5c03a0   MISMATCH         VQMovieHandle::finalizePath
+[diff] 0x76b790   MISMATCH         rc_ptr::ParseWDTTerritories_Parse_76B790
+[diff] 0x77d120   MISMATCH         sub_77D120
+[diff] 0x7ac610   MISMATCH         SimpleWonlineDialogControl::CreateGameWOL_Create_7AC610
+[diff] 0x7b0110   MISMATCH         sub_7B0110
+[diff] 0x7b0150   MISMATCH         sub_7B0150
+[ledger] 0x7cc0dc __global_unwind2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d290b _write_char_0 -> NG (attempt 1)
+[ledger] 0x53ec90 MouseClass::GetKeyState -> NG (attempt 1)
+[ledger] 0x5bc400 MouseClass::HideWindow -> NG (attempt 1)
+[ledger] 0x71f950 TEventClass::GetStateA -> NG (attempt 1)
+[ledger] 0x71f9c0 TEventClass::GetStateB_SpyEvent -> NG (attempt 1)
+[ledger] 0x4e2580 GaugeClass::SetValue -> NG (attempt 1)
+[ledger] 0x521b40 InfantryClass::ProcessMission16 -> NG (attempt 1)
+[ledger] 0x5f5c60 BuildingClass::GetHealthRatio -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631d10 Pipe::Dispatch -> NG (attempt 1)
+[ledger] 0x7bd270 AudioStream::SetFlag4C -> OK (attempt 1)
+[ledger] 0x7bd290 UnitClass::Audio_Process_7BD290 -> OK (attempt 1)
+[ledger] 0x798340 GameOptionsScreenWOL_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f3a70 GraphicMenuItem::Dtor -> NG (attempt 1)
+[ledger] 0x5c03a0 VQMovieHandle::finalizePath -> NG (attempt 1)
+[ledger] 0x76b790 rc_ptr::ParseWDTTerritories_Parse_76B790 -> NG (attempt 1)
+[ledger] 0x77d120 sub_77D120 -> NG (attempt 1)
+[ledger] 0x7ac610 SimpleWonlineDialogControl::CreateGameWOL_Create_7AC610 -> NG (attempt 1)
+[ledger] 0x7b0110 sub_7B0110 -> NG (attempt 1)
+[ledger] 0x7b0150 sub_7B0150 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 15,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "const_fold": 7,
+  "branch_polarity": 1,
+  "regalloc": 5,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 11.8,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p75\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BD290",
+ "name": "Audio_Process_7BD290",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BD290",
+ "bytes_hex": "566a008bf16a006a0656ff56588b86bc07000083c41024bf8986bc0700005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

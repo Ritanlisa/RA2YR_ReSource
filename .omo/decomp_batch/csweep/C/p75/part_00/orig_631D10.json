@@ -1,0 +1,11 @@
+{
+ "addr": "0x631D10",
+ "name": "Delegate::Dispatch",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x631D10",
+ "bytes_hex": "8b490485c974128b5424088b01528b54240852ff5010c208008b442408c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

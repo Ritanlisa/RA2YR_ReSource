@@ -1,0 +1,11 @@
+{
+ "addr": "0x521B40",
+ "name": "InfantryClass::ProcessMission16",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x521B40",
+ "bytes_hex": "8a81e406000084c074158b016a006a006a1bc681e406000000ff9058050000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

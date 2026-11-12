@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetKeyState@MouseClass@@QAEFXZ",
+ "sym_key": "MouseClass::GetKeyState",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "a1ac00000085c0750d81e1ff00000051e800000000c381e1ff000000668b044d00000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0398@@3IA",
+   "sym_key": "DataGlobal_AA0398"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?GetAsyncKeyState@@YGFH@Z",
+   "sym_key": "GetAsyncKeyState"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0168@@3PAGA",
+   "sym_key": "DataGlobal_AA0168"
+  }
+ ]
+}

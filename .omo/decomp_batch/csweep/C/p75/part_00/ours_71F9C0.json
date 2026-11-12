@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetStateB_SpyEvent@TEventClass@@QAEDXZ",
+ "sym_key": "TEventClass::GetStateB_SpyEvent",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b492c8d41ff83f83a771233c98a8800000000ff248d0000000032c0c3b001c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "$L1869",
+   "sym_key": "$L1869"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "$L1870",
+   "sym_key": "$L1870"
+  }
+ ]
+}

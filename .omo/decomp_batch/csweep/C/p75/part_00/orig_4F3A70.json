@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F3A70",
+ "name": "GraphicMenuItem::Dtor",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F3A70",
+ "bytes_hex": "568b710c85f6c70190a67e0074108bcee8fbca0d0056e8b2502d0083c4045ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

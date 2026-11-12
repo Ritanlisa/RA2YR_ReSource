@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BD270",
+ "name": "AudioStream::SetFlag4C",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BD270",
+ "bytes_hex": "566a008bf16a006a0456ff56588b86bc07000083c4100c408986bc0700005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetFlag4C@AudioStream@@QAEEXZ",
+ "sym_key": "AudioStream::SetFlag4C",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "566a008bf16a006a0456ff56588b86bc07000083c4100c408986bc0700005ec3",
+ "relocs": []
+}

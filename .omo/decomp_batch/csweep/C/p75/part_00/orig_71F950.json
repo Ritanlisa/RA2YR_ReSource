@@ -1,0 +1,11 @@
+{
+ "addr": "0x71F950",
+ "name": "TEventClass::GetStateA",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71F950",
+ "bytes_hex": "8b492c8d41ff83f83a771233c98a8878f97100ff248d70f97100b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?CreateGameWOL_Create_7AC610@SimpleWonlineDialogControl@@QAEPAIXZ",
+ "sym_key": "SimpleWonlineDialogControl::CreateGameWOL_Create_7AC610",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008d460cc7060000000050e80000000083c404c7060000000033c05ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@SimpleDialogControl@@QAEPAV1@XZ",
+   "sym_key": "SimpleDialogControl::Constructor"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?vt_SimpleWonlineDialogControl@@3PAXA",
+   "sym_key": "vt_SimpleWonlineDialogControl"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  }
+ ]
+}

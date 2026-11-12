@@ -1,0 +1,11 @@
+{
+ "addr": "0x76B790",
+ "name": "ParseWDTTerritories_Parse_76B790",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76B790",
+ "bytes_hex": "568bf1e8981cefff8b4424088bce50c706a4bf7e00e8d61cefff8bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
