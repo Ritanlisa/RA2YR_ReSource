@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetThreat_Bounds@HouseClass@@QAEHHH@Z",
+ "sym_key": "HouseClass::SetThreat_Bounds",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "8b44240853555685c0578be98bf07c0433ffeb09f7d88bf0bf010000008b5c241433d2c7442418090000008b8a000000008bc6d3f88b8a0000000003cb85ff8d8c8de457000074042901eb0201018339007d06c701000000008b44241883c204488944241875c45f5e5d33c05bc20800",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8243EC@@3PAIA",
+   "sym_key": "DataGlobal_8243EC"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8243C8@@3PAIA",
+   "sym_key": "DataGlobal_8243C8"
+  }
+ ]
+}

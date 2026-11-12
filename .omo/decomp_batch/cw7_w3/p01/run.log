@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x4cca90 JumpjetLocomotionClass::ComputeFloatExpression -> JumpjetLocomotionClass
+[conv] 0x4fa2e0 HouseClass::SetThreat_Bounds -> HouseClass
+[conv] 0x52b080 INIClass::getValue -> INIClass
+[conv] 0x537530 View3CommandClass::performAction_158 -> View3CommandClass
+[conv] 0x537ef0 CursorPositionCommandClass::performAction_197 -> CursorPositionCommandClass
+[conv] 0x53eda0 Network::CopyAddress -> Network
+[conv] 0x540c50 ObjectClass::sub_540C50 -> ObjectClass
+[conv] 0x54a990 ObjectClass::sub_54A990 -> ObjectClass
+[conv] 0x54a9e0 ObjectClass::sub_54A9E0 -> ObjectClass
+[conv] 0x551c60 BitStreamIOLCW -> _addr_55
+[conv] 0x56bd40 CrateClass::FindPlacement -> CrateClass
+[conv] 0x56d460 Cell::SetRadar -> Cell
+[conv] 0x56da10 ObjectClass::GetRegionMap -> ObjectClass
+[conv] 0x578390 MapClass::IsRectInBounds -> MapClass
+[conv] 0x586360 Cell::IsPassable -> Cell
+[conv] 0x588c40 CellClass::initCellData -> CellClass
+[conv] 0x58c800 RandomMap::GenerateTerrain -> RandomMap
+[conv] 0x590970 RandomMap::CheckCellPlacement -> RandomMap
+[conv] 0x595ce0 ObjectClass::CleanupRandomMapCache -> ObjectClass
+[conv] 0x5b2930 Movement::Check -> Movement
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] HouseClass               rc=0
+[era] INIClass                 rc=0
+[era] View3CommandClass        rc=2
+[era] CursorPositionCommandClass rc=0
+[era] Network                  rc=0
+[era] ObjectClass              rc=2
+[era] _addr_55                 rc=0
+[era] CrateClass               rc=0
+[era] Cell                     rc=2
+[era] MapClass                 rc=0
+[era] CellClass                rc=0
+[era] RandomMap                rc=2
+[era] Movement                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4fa2e0   MISMATCH         HouseClass::SetThreat_Bounds
+[diff] 0x52b080   MISMATCH         INIClass::getValue
+[diff] 0x537ef0   MISMATCH         CursorPositionCommandClass::performAction_197
+[diff] 0x53eda0   MISMATCH         Network::CopyAddress
+[diff] 0x551c60   MISMATCH         BitStreamIOLCW
+[diff] 0x56bd40   MISMATCH         CrateClass::FindPlacement
+[diff] 0x56d460   MISMATCH         Cell::SetRadar
+[diff] 0x578390   MISMATCH         MapClass::IsRectInBounds
+[diff] 0x588c40   MATCH            CellClass::initCellData
+[diff] 0x5b2930   MATCH            Movement::Check
+[ledger] 0x4cca90 JumpjetLocomotionClass::ComputeFloatExpression -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fa2e0 HouseClass::SetThreat_Bounds -> NG (attempt 3)
+[ledger] 0x52b080 INIClass::getValue -> NG (attempt 2)
+[ledger] 0x537530 View3CommandClass::performAction_158 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x537ef0 CursorPositionCommandClass::performAction_197 -> NG (attempt 2)
+[ledger] 0x53eda0 Network::CopyAddress -> NG (attempt 2)
+[ledger] 0x540c50 ObjectClass::sub_540C50 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54a990 ObjectClass::sub_54A990 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54a9e0 ObjectClass::sub_54A9E0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x551c60 BitStreamIOLCW -> NG (attempt 4)
+[ledger] 0x56bd40 CrateClass::FindPlacement -> NG (attempt 12)
+[ledger] 0x56d460 Cell::SetRadar -> NG (attempt 12)
+[ledger] 0x56da10 ObjectClass::GetRegionMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x578390 MapClass::IsRectInBounds -> NG (attempt 12)
+[ledger] 0x586360 Cell::IsPassable -> COMPILE_FAIL (attempt 12)
+[ledger] 0x588c40 CellClass::initCellData -> OK (attempt 2)
+[ledger] 0x58c800 RandomMap::GenerateTerrain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x590970 RandomMap::CheckCellPlacement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x595ce0 ObjectClass::CleanupRandomMapCache -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b2930 Movement::Check -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 8,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "const_fold": 1,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p01\batch_report.json

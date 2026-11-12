@@ -1,0 +1,343 @@
+[
+ {
+  "addr": "0x4cca90",
+  "name": "JumpjetLocomotionClass::ComputeFloatExpression",
+  "orig_name": "JumpjetLocomotionClass::ComputeFloatExpression",
+  "unit": "JumpjetLocomotionClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p219\\part_00\\JumpjetLocomotionClass.cpp(8) : error C2296: '&' : illegal, left operand has type 'float'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p219\\p",
+  "file": "",
+  "line": null,
+  "form": "float operand (mask/merge)",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x4fa2e0",
+  "name": "HouseClass::SetThreat_Bounds",
+  "orig_name": "HouseClass::SetThreat_Bounds",
+  "unit": "HouseClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p16\\part_00\\HouseClass_4fa2e0.cpp(26) : error C2296: '*' : illegal, left operand has type 'char [1]'",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-3 global-array upgrade",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x52b080",
+  "name": "INIClass::getValue",
+  "orig_name": "INIClass::getValue",
+  "unit": "INIClass",
+  "layer": "A",
+  "code": "C2106",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p85\\part_00\\INIClass.cpp(11) : error C2106: '=' : left operand must be l-value",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x537530",
+  "name": "View3CommandClass::performAction_158",
+  "orig_name": "CreateTeamCommand::performAction_158",
+  "unit": "View3CommandClass",
+  "layer": "C",
+  "code": "C2296",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p13\\part_00\\View3CommandClass.cpp(8) : error C2296: '&' : illegal, left operand has type 'void *'",
+  "file": "",
+  "line": null,
+  "form": "void* operand (mask/merge)",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows"
+  ]
+ },
+ {
+  "addr": "0x537ef0",
+  "name": "CursorPositionCommandClass::performAction_197",
+  "orig_name": "CreateTeamCommand::performAction_197",
+  "unit": "CursorPositionCommandClass",
+  "layer": "A",
+  "code": "C2106",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p76\\part_00\\CursorPositionCommandClass.cpp(9) : error C2106: '=' : left operand must be l-value",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x53eda0",
+  "name": "Network::CopyAddress",
+  "orig_name": "Network::CopyAddress",
+  "unit": "Network",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p195\\part_00\\Network.cpp(10) : error C2296: '&' : illegal, left operand has type 'char *'",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x540c50",
+  "name": "ObjectClass::sub_540C50",
+  "orig_name": "sub_540C50",
+  "unit": "ObjectClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00\\ObjectClass_540c50.cpp(7) : error C2296: '&' : illegal, left operand has type 'void *'",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-4 pointer-local store",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x54a990",
+  "name": "ObjectClass::sub_54A990",
+  "orig_name": "sub_54A990",
+  "unit": "ObjectClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00\\ObjectClass_54a990.cpp(10) : error C2296: '&' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-4 pointer-local store",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x54a9e0",
+  "name": "ObjectClass::sub_54A9E0",
+  "orig_name": "sub_54A9E0",
+  "unit": "ObjectClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00\\ObjectClass_54a9e0.cpp(10) : error C2296: '&' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-4 pointer-local store",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x551c60",
+  "name": "BitStreamIOLCW",
+  "orig_name": "BitStreamIOLCW",
+  "unit": "_addr_55",
+  "layer": "B",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p04\\part_00\\_addr_55.cpp(78) : error C2296: '&' : illegal, left operand has type 'unsigned char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p04\\part_0",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x56bd40",
+  "name": "CrateClass::FindPlacement",
+  "orig_name": "CrateClass::FindPlacement",
+  "unit": "CrateClass",
+  "layer": "D",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p45\\part_00\\CrateClass.cpp(24) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p45\\part_00\\Cra",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x56d460",
+  "name": "Cell::SetRadar",
+  "orig_name": "Cell::SetRadar",
+  "unit": "Cell",
+  "layer": "C",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p29\\part_00\\Cell.cpp(25) : error C2296: '>>' : illegal, left operand has type 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p29\\part_00\\Ce",
+  "file": "",
+  "line": null,
+  "form": "typed pointer operand (mask/merge)",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x56da10",
+  "name": "ObjectClass::GetRegionMap",
+  "orig_name": "GetRegionMap",
+  "unit": "ObjectClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p22\\part_00\\ObjectClass.cpp(30) : error C2296: '>>' : illegal, left operand has type 'short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p22\\part_00\\Obje",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-4 pointer-local store",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x578390",
+  "name": "MapClass::IsRectInBounds",
+  "orig_name": "MapClass::IsRectInBounds",
+  "unit": "MapClass",
+  "layer": "D",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p38\\part_00\\MapClass.cpp(11) : error C2296: '&' : illegal, left operand has type 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p38\\part_",
+  "file": "",
+  "line": null,
+  "form": "typed pointer operand (mask/merge)",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x586360",
+  "name": "Cell::IsPassable",
+  "orig_name": "Cell::IsPassable",
+  "unit": "Cell",
+  "layer": "C",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p29\\part_00\\Cell.cpp(25) : error C2296: '>>' : illegal, left operand has type 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p29\\part_00\\Ce",
+  "file": "",
+  "line": null,
+  "form": "typed pointer operand (mask/merge)",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x588c40",
+  "name": "CellClass::initCellData",
+  "orig_name": "CellClass::initCellData",
+  "unit": "CellClass",
+  "layer": "A",
+  "code": "C2106",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p150\\part_00\\CellClass.cpp(8) : error C2106: '+=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p150\\part_00\\CellClass.cpp(9",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x58c800",
+  "name": "RandomMap::GenerateTerrain",
+  "orig_name": "RandomMap::GenerateTerrain",
+  "unit": "RandomMap",
+  "layer": "D",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p56\\part_00\\RandomMap.cpp(35) : error C2296: '&' : illegal, left operand has type 'short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p56\\part_00\\Rando",
+  "file": "",
+  "line": null,
+  "form": "typed pointer operand (mask/merge)",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x590970",
+  "name": "RandomMap::CheckCellPlacement",
+  "orig_name": "RandomMap::CheckCellPlacement",
+  "unit": "RandomMap",
+  "layer": "D",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p56\\part_00\\RandomMap.cpp(35) : error C2296: '&' : illegal, left operand has type 'short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p56\\part_00\\Rando",
+  "file": "",
+  "line": null,
+  "form": "typed pointer operand (mask/merge)",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x595ce0",
+  "name": "ObjectClass::CleanupRandomMapCache",
+  "orig_name": "CleanupRandomMapCache",
+  "unit": "ObjectClass",
+  "layer": "D",
+  "code": "C2106",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p51\\part_00\\ObjectClass.cpp(122) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p51\\part_00\\ObjectClass.cp",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x5b2930",
+  "name": "Movement::Check",
+  "orig_name": "Movement::Check",
+  "unit": "Movement",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\Movement.cpp(8) : error C2296: '&' : illegal, left operand has type 'unsigned short *'",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-4 pointer-local store",
+  "buckets": [
+   "refail_rows"
+  ]
+ }
+]

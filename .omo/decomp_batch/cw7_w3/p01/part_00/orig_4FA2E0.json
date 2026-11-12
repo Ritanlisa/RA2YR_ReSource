@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FA2E0",
+ "name": "HouseClass::SetThreat_Bounds",
+ "size": 106,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FA2E0",
+ "bytes_hex": "5355568b74241485f6578be97d09f7debf01000000eb0233ff8b5c241433d2c7442418090000008b8aec4382008bc6d3f88b8ac843820003cb85ff8d8c8de457000074042901eb0201018339007d06c701000000008b44241883c204488944241875c45f5e5d5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

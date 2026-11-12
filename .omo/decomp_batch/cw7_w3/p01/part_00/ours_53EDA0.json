@@ -1,0 +1,8 @@
+{
+ "symbol": "?CopyAddress@Network@@QAEPADPAHH@Z",
+ "sym_key": "Network::CopyAddress",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "518b54240c8d4104894424008902668b41086689442400668942048b018b4c240889018b44240059c20800",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x52B080",
+ "name": "INIClass::getValue",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52B080",
+ "bytes_hex": "8bc133c9890889480489480888480c894810c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

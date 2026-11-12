@@ -1,0 +1,11 @@
+{
+ "addr": "0x53EDA0",
+ "name": "Network::CopyAddress",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53EDA0",
+ "bytes_hex": "8b5424088d4104568b3089325e668b4004668942048b5424048b09890ac20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

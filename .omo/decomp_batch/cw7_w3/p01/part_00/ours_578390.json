@@ -1,0 +1,33 @@
+{
+ "symbol": "?IsRectInBounds@MapClass@@QAEHPAGH@Z",
+ "sym_key": "MapClass::IsRectInBounds",
+ "size": 231,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b4424145355568b74241c578bf988442418668b0e668b56048d5e04508d44242466894c2424508bcf668954242ae80000000084c0750c5f5e5d33c05b83c40cc208008a0b8b5424248b6c241881e1ff00000080e2008d4424240bca55894c2428508bcfe80000000084c0750c5f5e5d33c05b83c40cc208008b038b4e0c668b16558d4401ff8d4c2414518bcf6689542418668944241ae80000000084c0750c5f5e5d33c05b83c40cc20800668b56088b1b8b460c6603168d4c2414554a8d4418ff518bcf668954241c668944241ee800000000f6d85f5e1bc05df7d85b83c40cc20800",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  }
+ ]
+}

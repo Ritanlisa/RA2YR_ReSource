@@ -23070,7 +23070,7 @@
   "this_as_id": false
  },
  "0x4cca90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29506,15 +29506,15 @@
   "this_as_id": false
  },
  "0x4fa2e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "HouseClass::SetThreat_Bounds",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HouseClass::SetThreat_Bounds",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4fa350": {
@@ -32947,15 +32947,15 @@
   "this_as_id": false
  },
  "0x52b080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, ecx",
   "name": "INIClass::getValue",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "INIClass::getValue",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x52b170": {
@@ -33949,7 +33949,7 @@
   "this_as_id": false
  },
  "0x537530": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -34219,15 +34219,15 @@
   "this_as_id": false
  },
  "0x537ef0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [0xa8f7d8]",
   "name": "CursorPositionCommandClass::performAction_197",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "CreateTeamCommand::performAction_197",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x537f10": {
@@ -35246,15 +35246,15 @@
   "this_as_id": false
  },
  "0x53eda0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [esp + 8]",
   "name": "Network::CopyAddress",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Network::CopyAddress",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x53edc0": {
@@ -35785,7 +35785,7 @@
   "this_as_id": false
  },
  "0x540c50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -36726,7 +36726,7 @@
   "this_as_id": false
  },
  "0x54a990": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -36738,7 +36738,7 @@
   "this_as_id": false
  },
  "0x54a9e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -37691,14 +37691,14 @@
   "status": "NG"
  },
  "0x551c60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x18",
   "name": "BitStreamIOLCW",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "BitStreamIOLCW",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x551e50": {
@@ -40160,15 +40160,15 @@
   "this_as_id": false
  },
  "0x56bd40": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 mov bx, word ptr [0xabd482]",
   "name": "CrateClass::FindPlacement",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CrateClass::FindPlacement",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x56c200": {
@@ -40249,15 +40249,15 @@
   "this_as_id": false
  },
  "0x56d460": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0xf8]",
   "name": "Cell::SetRadar",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Cell::SetRadar",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x56d5a0": {
@@ -40268,7 +40268,7 @@
   "status": "NG"
  },
  "0x56da10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -40374,15 +40374,15 @@
   "this_as_id": false
  },
  "0x578390": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "MapClass::IsRectInBounds",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "MapClass::IsRectInBounds",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x578460": {
@@ -40629,7 +40629,7 @@
   "this_as_id": false
  },
  "0x586360": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -40738,15 +40738,15 @@
   "this_as_id": false
  },
  "0x588c40": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CellClass::initCellData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "CellClass::initCellData",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x588c60": {
@@ -41725,7 +41725,7 @@
   "this_as_id": false
  },
  "0x58c800": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -41779,7 +41779,7 @@
   "this_as_id": false
  },
  "0x590970": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -41839,7 +41839,7 @@
   "this_as_id": false
  },
  "0x595ce0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -43328,15 +43328,15 @@
   "this_as_id": false
  },
  "0x5b2930": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "Movement::Check",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "Movement::Check",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5b2950": {

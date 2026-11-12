@@ -1,0 +1,8 @@
+{
+ "symbol": "?getValue@INIClass@@QAEPAV1@XZ",
+ "sym_key": "INIClass::getValue",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "33c0890189410489410888410c894110c3",
+ "relocs": []
+}

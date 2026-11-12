@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B2930",
+ "name": "Movement::Check",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B2930",
+ "bytes_hex": "8b442408668b108b44240466031166895424088b4c24088908c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

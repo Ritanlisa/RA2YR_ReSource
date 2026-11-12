@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetRadar@Cell@@QAEDPAF@Z",
+ "sym_key": "Cell::SetRadar",
+ "size": 347,
+ "link_base": 0,
+ "bytes_hex": "83ec2853558be956578b85f80000008b8df40000008d4408018b4c243c0fbf51020fbf090fafc203c1780c8b4d6c3bc17c078d41ffeb0233c08b5568c7442420010000000fbe0df00200008d3c82c7442430ffffffff0fbe05ec0200008a1f8d14088bca8954242cf7d9894c241c8d4a028d4201894c242483caff8bcb894424288bf02bd0240081e1ff00000089542434f7de0bc180fb07897424180f84af0000008a14b78d34b733db33c93ad38d44241889742414741c4183f9080f8d850000008b500483c004381c978d14978954241475e48b008d0c8785c9746a8b5518895c243c8d742418c7442410080000008b068d0c8733c0668b4102668b2c42663b2c5a7410803907740b8bd88b44243c408944243c8b44241083c604488944241075cd8b44243c83f8037f1b803f0075168b4c2414668b5102668957025f5e5d5b83c428c20400b9f8010000e8000000005f5e5d5b83c428c20400",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 333,
+   "type": "REL32",
+   "sym": "?ConnectivityGraph@Terrain@@QAEHXZ",
+   "sym_key": "Terrain::ConnectivityGraph"
+  }
+ ]
+}

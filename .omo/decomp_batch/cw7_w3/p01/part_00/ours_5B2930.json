@@ -1,0 +1,8 @@
+{
+ "symbol": "?Check@Movement@@QAEPAIPAHPAG@Z",
+ "sym_key": "Movement::Check",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b442408668b108b44240466031166895424088b4c24088908c20800",
+ "relocs": []
+}
