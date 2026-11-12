@@ -1,0 +1,33 @@
+{
+ "symbol": "?SD_vt05@AlphaShapeClass@@QAGHPAH@Z",
+ "sym_key": "AlphaShapeClass::SD_vt05",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "8b44240853568b74240c575056e8000000008bf833db3bfb7c2c3bf374178d4c2414518bcee800000000891e895e04895e08895e0c8d5624526800000000e800000000895e388bc75f5e5bc20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix_0@@YGHPAXPAH@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix_0"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?InitVtables@AbstractClass@@QAEPAV1@H@Z",
+   "sym_key": "AbstractClass::InitVtables"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

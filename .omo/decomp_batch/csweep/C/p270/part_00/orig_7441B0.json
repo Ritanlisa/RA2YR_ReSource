@@ -1,0 +1,11 @@
+{
+ "addr": "0x7441B0",
+ "name": "TechnoClass::MarkCellImpassable",
+ "size": 94,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7441B0",
+ "bytes_hex": "568b7424085756b9e8f78700e86f15e2ff56b9e8f787008bf8e8b23ee3ff8b15acd0b1008b4e0803c23bc17f1e8b8740010000f6c40174138b87280100000c208987280100005f5ec204008b87240100000c208987240100005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

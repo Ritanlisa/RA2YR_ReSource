@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_43EE50@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::sub_43EE50",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "51568bf1568b06ff90fc03000084c0744b8b868005000085c074418d4c2404518b8e88030000e8000000008b108b8e80050000c1ea0a42d1ea83e21f85c98b04950000000074178981ac000000c781c4000000000000005e59c2040033c05e59c20400",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F4890@@3PAIA",
+   "sym_key": "DataGlobal_7F4890"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?StubReturnZero_16@JumpjetLocomotionClass@@QAEDXZ",
+ "sym_key": "JumpjetLocomotionClass::StubReturnZero_16",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf16a00e80000000084c075055e83c40cc30fbe05a0010000538b9eb4020000578b3e8d4c240c6a0151568986fc040000ff57485056ff979c03000084c0740f399eb40200007407c6860c050000015f5b5e83c40cc3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?CanEnterCell@FootClass@@QAE_NH@Z",
+   "sym_key": "FootClass::CanEnterCell"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

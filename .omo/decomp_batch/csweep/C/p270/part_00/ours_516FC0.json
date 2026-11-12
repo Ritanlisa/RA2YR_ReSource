@@ -1,0 +1,33 @@
+{
+ "symbol": "?RandomizeLocomotionParam@HoverLocomotionClass@@QAGDH@Z",
+ "sym_key": "HoverLocomotionClass::RandomizeLocomotionParam",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "8b4c2408568b74240851568b06ff506884c075045ec20800c64664018b15000000006a1e6a148d8a68050300e800000000894668a1000000006a636a008d8818020000e80000000083f8327d088b4e68f7d9894e68b0015ec20800",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}

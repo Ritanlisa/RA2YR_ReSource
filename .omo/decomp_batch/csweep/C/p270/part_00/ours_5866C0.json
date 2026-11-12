@@ -1,0 +1,27 @@
+{
+ "symbol": "?SmallFunc_5866C0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::SmallFunc_5866C0",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86f40000008b963c010000898610010000c7860c010000010000008d48ffc1e00b898e140100008bce8d441004898618010000e80000000085c0741bf680400100000275078bc8e8000000008bcee80000000085c075e55ec3",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?CreateFoggedObjects@CellClass@@QAEDXZ",
+   "sym_key": "CellClass::CreateFoggedObjects"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

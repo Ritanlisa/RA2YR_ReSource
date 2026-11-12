@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_4A0450@EnumConnectionsClass@@QAEXXZ",
+ "sym_key": "EnumConnectionsClass::sub_4A0450",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "5355578bf933db33ed8b4714891f3bc37e3f568d77048b47088b04e8508b08ff51088b1656ff520c8b4604891e3bc37411385e0d740c50e80000000083c404895e04885e0d895e088b4714453be87cc65e5f5d5bc3",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

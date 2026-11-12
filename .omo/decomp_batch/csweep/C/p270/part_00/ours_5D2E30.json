@@ -1,0 +1,39 @@
+{
+ "symbol": "?Constructor_MSFont@MSFont@@QAEXXZ",
+ "sym_key": "MSFont::Constructor_MSFont",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db891ea1e835000048a3e83500007542b8f035000039187405891888580483c0083d083600007ced8b46183bc374078b086a0150ff118b46143bc3740f807e1c01750950e80000000083c404895e14885e1c5e5bc3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

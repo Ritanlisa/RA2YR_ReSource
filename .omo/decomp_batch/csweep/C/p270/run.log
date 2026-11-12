@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p270\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d2e30 MSFont::Constructor_MSFont -> MSFont
+[conv] 0x69ee30 ShipLocomotionClass::QueryInterface -> ShipLocomotionClass
+[conv] 0x719e30 TeleportLocomotionClass::UpdateAltitude -> TeleportLocomotionClass
+[conv] 0x75c7f0 WalkLocomotionClass::QueryInterface -> WalkLocomotionClass
+[conv] 0x43ee50 TechnoClass::sub_43EE50 -> TechnoClass
+[conv] 0x5866c0 ObjectClass::SmallFunc_5866C0 -> ObjectClass
+[conv] 0x642c20 SHPClass::Load -> SHPClass
+[conv] 0x516fc0 HoverLocomotionClass::RandomizeLocomotionParam -> HoverLocomotionClass
+[conv] 0x626370 FileSystem::mountDrive -> FileSystem
+[conv] 0x7b36c0 UDPInterfaceClass::ddtor -> UDPInterfaceClass
+[conv] 0x426790 AnimFile::Release -> AnimFile
+[conv] 0x4a0450 EnumConnectionsClass::sub_4A0450 -> EnumConnectionsClass
+[conv] 0x4a0db0 EnumConnectionPointsClass::sub_4A0DB0 -> EnumConnectionPointsClass
+[conv] 0x709480 JumpjetLocomotionClass::StubReturnZero_16 -> JumpjetLocomotionClass
+[conv] 0x4c6720 EventClass::Add2 -> EventClass
+[conv] 0x7b4630 String::Assign -> String
+[conv] 0x565aa0 MapClass::InitCellVector -> MapClass
+[conv] 0x6348f0 ObjectClass::sub_6348F0 -> ObjectClass
+[conv] 0x7441b0 TechnoClass::MarkCellImpassable -> TechnoClass
+[conv] 0x420de0 AlphaShapeClass::SD_vt05 -> AlphaShapeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSFont                   rc=0
+[era] ShipLocomotionClass      rc=2
+[era] TeleportLocomotionClass  rc=2
+[era] WalkLocomotionClass      rc=2
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=0
+[era] SHPClass                 rc=0
+[era] HoverLocomotionClass     rc=0
+[era] FileSystem               rc=0
+[era] UDPInterfaceClass        rc=2
+[era] AnimFile                 rc=2
+[era] EnumConnectionsClass     rc=0
+[era] EnumConnectionPointsClass rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] EventClass               rc=2
+[era] String                   rc=0
+[era] MapClass                 rc=2
+[era] AlphaShapeClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d2e30   MISMATCH         MSFont::Constructor_MSFont
+[diff] 0x43ee50   MISMATCH         TechnoClass::sub_43EE50
+[diff] 0x7441b0   MISMATCH         TechnoClass::MarkCellImpassable
+[diff] 0x5866c0   MISMATCH         ObjectClass::SmallFunc_5866C0
+[diff] 0x6348f0   MISMATCH         ObjectClass::sub_6348F0
+[diff] 0x642c20   MISMATCH         SHPClass::Load
+[diff] 0x516fc0   MISMATCH         HoverLocomotionClass::RandomizeLocomotionParam
+[diff] 0x626370   MISMATCH         FileSystem::mountDrive
+[diff] 0x4a0450   MISMATCH         EnumConnectionsClass::sub_4A0450
+[diff] 0x4a0db0   MISMATCH         EnumConnectionPointsClass::sub_4A0DB0
+[diff] 0x709480   MISMATCH         JumpjetLocomotionClass::StubReturnZero_16
+[diff] 0x7b4630   MISMATCH         String::Assign
+[diff] 0x420de0   MISMATCH         AlphaShapeClass::SD_vt05
+[ledger] 0x5d2e30 MSFont::Constructor_MSFont -> NG (attempt 1)
+[ledger] 0x69ee30 ShipLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x719e30 TeleportLocomotionClass::UpdateAltitude -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75c7f0 WalkLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43ee50 TechnoClass::sub_43EE50 -> NG (attempt 1)
+[ledger] 0x5866c0 ObjectClass::SmallFunc_5866C0 -> NG (attempt 1)
+[ledger] 0x642c20 SHPClass::Load -> NG (attempt 1)
+[ledger] 0x516fc0 HoverLocomotionClass::RandomizeLocomotionParam -> NG (attempt 1)
+[ledger] 0x626370 FileSystem::mountDrive -> NG (attempt 1)
+[ledger] 0x7b36c0 UDPInterfaceClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x426790 AnimFile::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a0450 EnumConnectionsClass::sub_4A0450 -> NG (attempt 1)
+[ledger] 0x4a0db0 EnumConnectionPointsClass::sub_4A0DB0 -> NG (attempt 1)
+[ledger] 0x709480 JumpjetLocomotionClass::StubReturnZero_16 -> NG (attempt 1)
+[ledger] 0x4c6720 EventClass::Add2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4630 String::Assign -> NG (attempt 1)
+[ledger] 0x565aa0 MapClass::InitCellVector -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6348f0 ObjectClass::sub_6348F0 -> NG (attempt 1)
+[ledger] 0x7441b0 TechnoClass::MarkCellImpassable -> NG (attempt 1)
+[ledger] 0x420de0 AlphaShapeClass::SD_vt05 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "regalloc": 7,
+  "branch_polarity": 2,
+  "branch_order": 1,
+  "const_fold": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p270\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x516FC0",
+ "name": "JumpjetLocomotionClass::RandomizeLocomotionParam",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x516FC0",
+ "bytes_hex": "8b4c2408568b74240851568b06ff506884c07443c64664018b1530b2a8006a1e6a148d8a18020000e8f3571400894668a130b2a8006a636a008d8818020000e8dc57140083f8327d088b4e68f7d9894e68b0015ec2080032c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

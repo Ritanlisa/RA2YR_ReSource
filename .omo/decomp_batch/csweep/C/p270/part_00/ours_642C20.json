@@ -1,0 +1,27 @@
+{
+ "symbol": "?Load@SHPClass@@QAEHPAD0H@Z",
+ "sym_key": "SHPClass::Load",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ff74538b465485c0741b8a4e5884c9740d50e80000000083c404c6465800c74654000000008d56588bcfe80000000085c089465474248b44241085c0740c5089465ce80000000083c4048b4424145f8946745ec20c008b44240c5f5ec20c00",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?Render_Load@@YAHPAX@Z",
+   "sym_key": "Render_Load"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x642C20",
+ "name": "SHPClass::Load",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x642C20",
+ "bytes_hex": "56578b7c240c8bf185ff744c8b465485c0741b8a4e5884c9740d50e8fd5e180083c404c6465800c74654000000008d56588bcfe8780ce6ff85c089465474198b4c241085c9740a32d2894e5ce81fd3eeff8b4424148946745f5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

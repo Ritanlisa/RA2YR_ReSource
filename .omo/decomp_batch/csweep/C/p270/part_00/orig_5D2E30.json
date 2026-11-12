@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D2E30",
+ "name": "MSFont::Constructor_MSFont",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D2E30",
+ "bytes_hex": "568bf1c70664ec7e00a1e0fbab0048a3e0fbab00754553b8e8fbab0033db39187405891888580483c0083d00fcab007ced8b4e183bcb74068b016a01ff108b46143bc3740f807e1c01750950e8bc5c1f0083c404895e14885e1c5b5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

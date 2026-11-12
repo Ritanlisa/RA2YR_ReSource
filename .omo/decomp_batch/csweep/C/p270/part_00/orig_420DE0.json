@@ -1,0 +1,11 @@
+{
+ "addr": "0x420DE0",
+ "name": "AlphaShapeClass::SD_vt05",
+ "size": 94,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x420DE0",
+ "bytes_hex": "8b442408568b742408575056e88ff5feff8bf885ff7c4085f674278d4c2410518bcee8b9f3feffc706a4327e00c7460488327e00c7460880327e00c7460c78327e008d5624526810c1b000e810e42a00c74638000000008bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
