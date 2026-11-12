@@ -20602,6 +20602,30 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4927d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent75_G::sub_4927D0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4927D0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492800": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent75_G::sub_492800",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492800",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x492830": {
   "attempts": 2,
   "clean": false,
@@ -20614,6 +20638,42 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x492890": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent50_G::sub_492890",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492890",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4928c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent50_G::sub_4928C0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4928C0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4928f0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent50_G::sub_4928F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4928F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x492920": {
   "attempts": 2,
   "clean": false,
@@ -20624,6 +20684,30 @@
   "orig_name": "sub_492920",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x492980": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent25_G::sub_492980",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492980",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4929b0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent25_G::sub_4929B0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4929B0",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x4929e0": {
@@ -20645,6 +20729,42 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x492a70": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitPlainXlatZRead_G::sub_492A70",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492A70",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492aa0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitPlainXlatZRead_G::sub_492AA0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492AA0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492ad0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitPlainXlatZRead_G::sub_492AD0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492AD0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x492b00": {
   "attempts": 2,
   "clean": false,
@@ -20655,6 +20775,42 @@
   "orig_name": "sub_492B00",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x492b70": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransXlatZRead_G::sub_492B70",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492B70",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492ba0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransXlatZRead_G::sub_492BA0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492BA0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492bd0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransXlatZRead_G::sub_492BD0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492BD0",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x492c00": {
@@ -20669,6 +20825,42 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x492c90": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlatZRead_G::sub_492C90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492C90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492cc0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlatZRead_G::sub_492CC0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492CC0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492cf0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlatZRead_G::sub_492CF0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492CF0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x492d20": {
   "attempts": 2,
   "clean": false,
@@ -20681,12 +20873,36 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x492d80": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransDarkenZRead_G::sub_492D80",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492D80",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x492db0": {
   "attempts": 1,
   "first_diff": "+42 ret 0x24",
   "name": "sub_492DB0",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
+ },
+ "0x492de0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransDarkenZRead_G::sub_492DE0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492DE0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x492e10": {
   "attempts": 2,
@@ -20698,6 +20914,30 @@
   "orig_name": "sub_492E10",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x492ea0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent75ZRead_G::sub_492EA0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492EA0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492ed0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent75ZRead_G::sub_492ED0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492ED0",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x492f30": {

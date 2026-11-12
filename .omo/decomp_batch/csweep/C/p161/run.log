@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p161\part_00
+=== convert (20 addrs) ===
+[conv] 0x4927d0 _BlitTransLucent75_G::sub_4927D0 -> _BlitTransLucent75_G
+[conv] 0x492800 _BlitTransLucent75_G::sub_492800 -> _BlitTransLucent75_G
+[conv] 0x492890 _BlitTransLucent50_G::sub_492890 -> _BlitTransLucent50_G
+[conv] 0x4928c0 _BlitTransLucent50_G::sub_4928C0 -> _BlitTransLucent50_G
+[conv] 0x4928f0 _BlitTransLucent50_G::sub_4928F0 -> _BlitTransLucent50_G
+[conv] 0x492980 _BlitTransLucent25_G::sub_492980 -> _BlitTransLucent25_G
+[conv] 0x4929b0 _BlitTransLucent25_G::sub_4929B0 -> _BlitTransLucent25_G
+[conv] 0x492a70 _BlitPlainXlatZRead_G::sub_492A70 -> _BlitPlainXlatZRead_G
+[conv] 0x492aa0 _BlitPlainXlatZRead_G::sub_492AA0 -> _BlitPlainXlatZRead_G
+[conv] 0x492ad0 _BlitPlainXlatZRead_G::sub_492AD0 -> _BlitPlainXlatZRead_G
+[conv] 0x492b70 _BlitTransXlatZRead_G::sub_492B70 -> _BlitTransXlatZRead_G
+[conv] 0x492ba0 _BlitTransXlatZRead_G::sub_492BA0 -> _BlitTransXlatZRead_G
+[conv] 0x492bd0 _BlitTransXlatZRead_G::sub_492BD0 -> _BlitTransXlatZRead_G
+[conv] 0x492c90 _BlitTransZRemapXlatZRead_G::sub_492C90 -> _BlitTransZRemapXlatZRead_G
+[conv] 0x492cc0 _BlitTransZRemapXlatZRead_G::sub_492CC0 -> _BlitTransZRemapXlatZRead_G
+[conv] 0x492cf0 _BlitTransZRemapXlatZRead_G::sub_492CF0 -> _BlitTransZRemapXlatZRead_G
+[conv] 0x492d80 _BlitTransDarkenZRead_G::sub_492D80 -> _BlitTransDarkenZRead_G
+[conv] 0x492de0 _BlitTransDarkenZRead_G::sub_492DE0 -> _BlitTransDarkenZRead_G
+[conv] 0x492ea0 _BlitTransLucent75ZRead_G::sub_492EA0 -> _BlitTransLucent75ZRead_G
+[conv] 0x492ed0 _BlitTransLucent75ZRead_G::sub_492ED0 -> _BlitTransLucent75ZRead_G
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTransLucent75_G     rc=0
+[era] _BlitTransLucent50_G     rc=0
+[era] _BlitTransLucent25_G     rc=0
+[era] _BlitPlainXlatZRead_G    rc=0
+[era] _BlitTransXlatZRead_G    rc=0
+[era] _BlitTransZRemapXlatZRead_G rc=0
+[era] _BlitTransDarkenZRead_G  rc=0
+[era] _BlitTransLucent75ZRead_G rc=0
+=== diffasm byte-compare ===
+[diff] 0x4927d0   MATCH            _BlitTransLucent75_G::sub_4927D0
+[diff] 0x492800   MATCH            _BlitTransLucent75_G::sub_492800
+[diff] 0x492890   MATCH            _BlitTransLucent50_G::sub_492890
+[diff] 0x4928c0   MATCH            _BlitTransLucent50_G::sub_4928C0
+[diff] 0x4928f0   MATCH            _BlitTransLucent50_G::sub_4928F0
+[diff] 0x492980   MATCH            _BlitTransLucent25_G::sub_492980
+[diff] 0x4929b0   MATCH            _BlitTransLucent25_G::sub_4929B0
+[diff] 0x492a70   MATCH            _BlitPlainXlatZRead_G::sub_492A70
+[diff] 0x492aa0   MATCH            _BlitPlainXlatZRead_G::sub_492AA0
+[diff] 0x492ad0   MATCH            _BlitPlainXlatZRead_G::sub_492AD0
+[diff] 0x492b70   MATCH            _BlitTransXlatZRead_G::sub_492B70
+[diff] 0x492ba0   MATCH            _BlitTransXlatZRead_G::sub_492BA0
+[diff] 0x492bd0   MATCH            _BlitTransXlatZRead_G::sub_492BD0
+[diff] 0x492c90   MATCH            _BlitTransZRemapXlatZRead_G::sub_492C90
+[diff] 0x492cc0   MATCH            _BlitTransZRemapXlatZRead_G::sub_492CC0
+[diff] 0x492cf0   MATCH            _BlitTransZRemapXlatZRead_G::sub_492CF0
+[diff] 0x492d80   MATCH            _BlitTransDarkenZRead_G::sub_492D80
+[diff] 0x492de0   MATCH            _BlitTransDarkenZRead_G::sub_492DE0
+[diff] 0x492ea0   MATCH            _BlitTransLucent75ZRead_G::sub_492EA0
+[diff] 0x492ed0   MATCH            _BlitTransLucent75ZRead_G::sub_492ED0
+[ledger] 0x4927d0 _BlitTransLucent75_G::sub_4927D0 -> OK (attempt 1)
+[ledger] 0x492800 _BlitTransLucent75_G::sub_492800 -> OK (attempt 1)
+[ledger] 0x492890 _BlitTransLucent50_G::sub_492890 -> OK (attempt 1)
+[ledger] 0x4928c0 _BlitTransLucent50_G::sub_4928C0 -> OK (attempt 1)
+[ledger] 0x4928f0 _BlitTransLucent50_G::sub_4928F0 -> OK (attempt 1)
+[ledger] 0x492980 _BlitTransLucent25_G::sub_492980 -> OK (attempt 1)
+[ledger] 0x4929b0 _BlitTransLucent25_G::sub_4929B0 -> OK (attempt 1)
+[ledger] 0x492a70 _BlitPlainXlatZRead_G::sub_492A70 -> OK (attempt 1)
+[ledger] 0x492aa0 _BlitPlainXlatZRead_G::sub_492AA0 -> OK (attempt 1)
+[ledger] 0x492ad0 _BlitPlainXlatZRead_G::sub_492AD0 -> OK (attempt 1)
+[ledger] 0x492b70 _BlitTransXlatZRead_G::sub_492B70 -> OK (attempt 1)
+[ledger] 0x492ba0 _BlitTransXlatZRead_G::sub_492BA0 -> OK (attempt 1)
+[ledger] 0x492bd0 _BlitTransXlatZRead_G::sub_492BD0 -> OK (attempt 1)
+[ledger] 0x492c90 _BlitTransZRemapXlatZRead_G::sub_492C90 -> OK (attempt 1)
+[ledger] 0x492cc0 _BlitTransZRemapXlatZRead_G::sub_492CC0 -> OK (attempt 1)
+[ledger] 0x492cf0 _BlitTransZRemapXlatZRead_G::sub_492CF0 -> OK (attempt 1)
+[ledger] 0x492d80 _BlitTransDarkenZRead_G::sub_492D80 -> OK (attempt 1)
+[ledger] 0x492de0 _BlitTransDarkenZRead_G::sub_492DE0 -> OK (attempt 1)
+[ledger] 0x492ea0 _BlitTransLucent75ZRead_G::sub_492EA0 -> OK (attempt 1)
+[ledger] 0x492ed0 _BlitTransLucent75ZRead_G::sub_492ED0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p161\batch_report.json
