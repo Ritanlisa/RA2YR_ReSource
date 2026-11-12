@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e8160 sub_4E8160 -> _addr_4E
+[conv] 0x4e9460 _VectorClass_PAVBuildingClass::Get -> _VectorClass_PAVBuildingClass
+[conv] 0x4e9580 _VectorClass_PAVBuildingClass::GetSize -> _VectorClass_PAVBuildingClass
+[conv] 0x4e9690 _DynamicVectorClass_PAVBuildingClass::FindItem -> _DynamicVectorClass_PAVBuildingClass
+[conv] 0x4e96c0 _VectorClass_PAVSuperClass::Add -> _VectorClass_PAVSuperClass
+[conv] 0x4e97e0 _VectorClass_PAVSuperClass::GetSize -> _VectorClass_PAVSuperClass
+[conv] 0x4e98f0 _DynamicVectorClass_PAVSuperClass::FindItemIndex -> _DynamicVectorClass_PAVSuperClass
+[conv] 0x4e9920 _VectorClass_PAVAITriggerTypeClass::Add -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4e9b50 _DynamicVectorClass_PAVAITriggerTypeClass::FindItemIndex -> _DynamicVectorClass_PAVAITriggerTypeClass
+[conv] 0x4e9b80 _VectorClass_PAVBuildingLightClass::Add -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4e9ca0 _VectorClass_PAVBuildingLightClass::GetSize -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4e9db0 _DynamicVectorClass_PAVBuildingLightClass::FindItemIndex -> _DynamicVectorClass_PAVBuildingLightClass
+[conv] 0x4e9de0 _VectorClass_PAVParticleClass::AddRef -> _VectorClass_PAVParticleClass
+[conv] 0x4e9f00 _VectorClass_PAVParticleClass::vt_04 -> _VectorClass_PAVParticleClass
+[conv] 0x4ea010 _DynamicVectorClass_PAVParticleClass::Init -> _DynamicVectorClass_PAVParticleClass
+[conv] 0x4ea040 _VectorClass_PAVTeamClass::Add -> _VectorClass_PAVTeamClass
+[conv] 0x4ea160 _VectorClass_PAVTeamClass::GetSize -> _VectorClass_PAVTeamClass
+[conv] 0x4ea270 _DynamicVectorClass_PAVTeamClass::FindItemIndex -> _DynamicVectorClass_PAVTeamClass
+[conv] 0x4ea2a0 _VectorClass_PAUThemeControl::AddRef -> _VectorClass_PAUThemeControl
+[conv] 0x4ea3c0 _VectorClass_PAUThemeControl::GetSize -> _VectorClass_PAUThemeControl
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4E                 rc=0
+[era] _VectorClass_PAVBuildingClass rc=0
+[era] _DynamicVectorClass_PAVBuildingClass rc=0
+[era] _VectorClass_PAVSuperClass rc=0
+[era] _DynamicVectorClass_PAVSuperClass rc=0
+[era] _VectorClass_PAVAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVAITriggerTypeClass rc=0
+[era] _VectorClass_PAVBuildingLightClass rc=0
+[era] _DynamicVectorClass_PAVBuildingLightClass rc=0
+[era] _VectorClass_PAVParticleClass rc=0
+[era] _DynamicVectorClass_PAVParticleClass rc=0
+[era] _VectorClass_PAVTeamClass rc=0
+[era] _DynamicVectorClass_PAVTeamClass rc=0
+[era] _VectorClass_PAUThemeControl rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e8160   MISMATCH         sub_4E8160
+[diff] 0x4e9460   MISMATCH         _VectorClass_PAVBuildingClass::Get
+[diff] 0x4e9580   MISMATCH         _VectorClass_PAVBuildingClass::GetSize
+[diff] 0x4e9690   MISMATCH         _DynamicVectorClass_PAVBuildingClass::FindItem
+[diff] 0x4e96c0   MISMATCH         _VectorClass_PAVSuperClass::Add
+[diff] 0x4e97e0   MISMATCH         _VectorClass_PAVSuperClass::GetSize
+[diff] 0x4e98f0   MISMATCH         _DynamicVectorClass_PAVSuperClass::FindItemIndex
+[diff] 0x4e9920   MISMATCH         _VectorClass_PAVAITriggerTypeClass::Add
+[diff] 0x4e9b50   MISMATCH         _DynamicVectorClass_PAVAITriggerTypeClass::FindItemIndex
+[diff] 0x4e9b80   MISMATCH         _VectorClass_PAVBuildingLightClass::Add
+[diff] 0x4e9ca0   MISMATCH         _VectorClass_PAVBuildingLightClass::GetSize
+[diff] 0x4e9db0   MISMATCH         _DynamicVectorClass_PAVBuildingLightClass::FindItemIndex
+[diff] 0x4e9de0   MISMATCH         _VectorClass_PAVParticleClass::AddRef
+[diff] 0x4e9f00   MISMATCH         _VectorClass_PAVParticleClass::vt_04
+[diff] 0x4ea010   MISMATCH         _DynamicVectorClass_PAVParticleClass::Init
+[diff] 0x4ea040   MISMATCH         _VectorClass_PAVTeamClass::Add
+[diff] 0x4ea160   MISMATCH         _VectorClass_PAVTeamClass::GetSize
+[diff] 0x4ea270   MISMATCH         _DynamicVectorClass_PAVTeamClass::FindItemIndex
+[diff] 0x4ea2a0   MISMATCH         _VectorClass_PAUThemeControl::AddRef
+[diff] 0x4ea3c0   MISMATCH         _VectorClass_PAUThemeControl::GetSize
+[ledger] 0x4e8160 sub_4E8160 -> NG (attempt 3)
+[ledger] 0x4e9460 _VectorClass_PAVBuildingClass::Get -> NG (attempt 2)
+[ledger] 0x4e9580 _VectorClass_PAVBuildingClass::GetSize -> NG (attempt 2)
+[ledger] 0x4e9690 _DynamicVectorClass_PAVBuildingClass::FindItem -> NG (attempt 2)
+[ledger] 0x4e96c0 _VectorClass_PAVSuperClass::Add -> NG (attempt 2)
+[ledger] 0x4e97e0 _VectorClass_PAVSuperClass::GetSize -> NG (attempt 2)
+[ledger] 0x4e98f0 _DynamicVectorClass_PAVSuperClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4e9920 _VectorClass_PAVAITriggerTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4e9b50 _DynamicVectorClass_PAVAITriggerTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4e9b80 _VectorClass_PAVBuildingLightClass::Add -> NG (attempt 2)
+[ledger] 0x4e9ca0 _VectorClass_PAVBuildingLightClass::GetSize -> NG (attempt 2)
+[ledger] 0x4e9db0 _DynamicVectorClass_PAVBuildingLightClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4e9de0 _VectorClass_PAVParticleClass::AddRef -> NG (attempt 2)
+[ledger] 0x4e9f00 _VectorClass_PAVParticleClass::vt_04 -> NG (attempt 2)
+[ledger] 0x4ea010 _DynamicVectorClass_PAVParticleClass::Init -> NG (attempt 2)
+[ledger] 0x4ea040 _VectorClass_PAVTeamClass::Add -> NG (attempt 2)
+[ledger] 0x4ea160 _VectorClass_PAVTeamClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ea270 _DynamicVectorClass_PAVTeamClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4ea2a0 _VectorClass_PAUThemeControl::AddRef -> NG (attempt 2)
+[ledger] 0x4ea3c0 _VectorClass_PAUThemeControl::GetSize -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 13,
+  "branch_polarity": 7
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p11\batch_report.json
