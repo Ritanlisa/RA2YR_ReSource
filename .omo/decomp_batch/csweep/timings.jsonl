@@ -130,3 +130,4 @@
 {"layer": "C", "part": 129, "n": 20, "seconds": 41.7, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "C", "part": 130, "n": 20, "seconds": 52.1, "ok": true, "verdicts": {"MISMATCH": 19, "COMPILE_FAIL": 1}}
 {"layer": "C", "part": 131, "n": 20, "seconds": 40.6, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"layer": "C", "part": 132, "n": 20, "seconds": 41.0, "ok": true, "verdicts": {"MISMATCH": 20}}

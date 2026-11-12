@@ -99863,6 +99863,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x730780": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_730780",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_730780",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7307b0": {
   "attempts": 2,
   "clean": true,
@@ -100265,6 +100276,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x734430": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_734430",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_734430",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x734460": {
   "attempts": 2,
   "clean": true,
@@ -100483,6 +100505,17 @@
   "name": "CharToWideString",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CharToWideString",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x735180": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_735180",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_735180",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -101066,6 +101099,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x746ee0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_746EE0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_746EE0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x746f10": {
   "attempts": 2,
   "clean": true,
@@ -101425,6 +101469,17 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x7491a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_7491A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_7491A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7491d0": {
   "attempts": 2,
   "clean": true,
@@ -101640,6 +101695,17 @@
   "orig_name": "VoxelAnimClass::DrawVoxel",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x74ab70": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_74AB70",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_74AB70",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x74aba0": {
@@ -101907,6 +101973,17 @@
   "name": "sub_74C170",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x74c190": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_74C190",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_74C190",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x74c1c0": {
   "attempts": 2,
@@ -102533,6 +102610,17 @@
   "orig_name": "sub_7500F0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x750110": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_750110",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_750110",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x750140": {
@@ -103300,6 +103388,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x754910": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_754910",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_754910",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x754940": {
   "attempts": 2,
   "clean": true,
@@ -103770,6 +103869,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x758f90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_758F90",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_758F90",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x758fc0": {
   "attempts": 2,
   "clean": true,
@@ -104194,6 +104304,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x75a8a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_75A8A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_75A8A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x75a8d0": {
   "attempts": 2,
   "clean": true,
@@ -104577,6 +104698,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x75cc90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_75CC90",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_75CC90",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x75ccc0": {
   "attempts": 2,
   "clean": true,
@@ -104735,6 +104867,17 @@
   "orig_name": "WarheadTypeClass::calculateDamage",
   "rule_violations": 2,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x75e740": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_75E740",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_75E740",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x75e770": {
@@ -105015,6 +105158,17 @@
   "name": "WaveClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x763380": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_763380",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_763380",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7633b0": {
   "attempts": 2,
@@ -105396,6 +105550,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x764830": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_764830",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_764830",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x764860": {
   "attempts": 3,
   "clean": true,
@@ -105766,6 +105931,17 @@
   "orig_name": "sub_765D50",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x765d70": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_765D70",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_765D70",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x765da0": {
@@ -106196,6 +106372,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x767110": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_767110",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_767110",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x767140": {
   "attempts": 2,
   "clean": true,
@@ -106385,6 +106572,17 @@
   "orig_name": "sub_7678F0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x767910": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_767910",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_767910",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x767940": {
@@ -107176,6 +107374,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x76a8a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_76A8A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_76A8A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x76a8d0": {
   "attempts": 3,
   "clean": true,
@@ -107459,6 +107668,17 @@
   "orig_name": "sub_76BC80",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x76bca0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_76BCA0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_76BCA0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x76bcd0": {
