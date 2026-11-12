@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p246\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e0e80 AbstractClassVector::Construct -> AbstractClassVector
+[conv] 0x510500 SuperClassVector::Construct -> SuperClassVector
+[conv] 0x510550 VectorClass::BuildingConstructor -> VectorClass
+[conv] 0x5105a0 VectorClass::BuildingTypeConstructor -> VectorClass
+[conv] 0x5105f0 ConnectionPointVector::Construct -> ConnectionPointVector
+[conv] 0x510640 TagClassVector::Construct -> TagClassVector
+[conv] 0x510690 StartingTechnoVector::Construct -> StartingTechnoVector
+[conv] 0x5138f0 InfantryTypeVector::Construct2 -> InfantryTypeVector
+[conv] 0x513940 UnitTypeVector::ConstructUnitTypeVectorClass -> UnitTypeVector
+[conv] 0x513990 AircraftTypeVector::Constructor -> AircraftTypeVector
+[conv] 0x525680 AnimTypeVector::Constructor -> AnimTypeVector
+[conv] 0x54a850 IsometricTileTypeClass::Constructor_0 -> IsometricTileTypeClass
+[conv] 0x54ebf0 VectorClass::sub_54EBF0 -> VectorClass
+[conv] 0x55bb40 ScenarioClass::ProcessAmbientEffects -> ScenarioClass
+[conv] 0x5ad6f0 StringVector::Construct -> StringVector
+[conv] 0x5ad740 TileSystem::Constructor -> TileSystem
+[conv] 0x5ad820 RandomMap::Constructor -> RandomMap
+[conv] 0x5ad9f0 VectorClass::Map_Cleanup -> VectorClass
+[conv] 0x5adab0 RandomMap::Constructor_1 -> RandomMap
+[conv] 0x5c59e0 MPCooperative::applyVoteResult -> MPCooperative
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClassVector      rc=0
+[era] SuperClassVector         rc=0
+[era] VectorClass              rc=0
+[era] ConnectionPointVector    rc=0
+[era] TagClassVector           rc=0
+[era] StartingTechnoVector     rc=0
+[era] InfantryTypeVector       rc=0
+[era] UnitTypeVector           rc=0
+[era] AircraftTypeVector       rc=0
+[era] AnimTypeVector           rc=0
+[era] IsometricTileTypeClass   rc=0
+[era] ScenarioClass            rc=0
+[era] StringVector             rc=0
+[era] TileSystem               rc=0
+[era] RandomMap                rc=0
+[era] MPCooperative            rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e0e80   MISMATCH         AbstractClassVector::Construct
+[diff] 0x510500   MISMATCH         SuperClassVector::Construct
+[diff] 0x510550   MISMATCH         VectorClass::BuildingConstructor
+[diff] 0x5105a0   MISMATCH         VectorClass::BuildingTypeConstructor
+[diff] 0x54ebf0   MISMATCH         VectorClass::sub_54EBF0
+[diff] 0x5ad9f0   MISMATCH         VectorClass::Map_Cleanup
+[diff] 0x5105f0   MISMATCH         ConnectionPointVector::Construct
+[diff] 0x510640   MISMATCH         TagClassVector::Construct
+[diff] 0x510690   MISMATCH         StartingTechnoVector::Construct
+[diff] 0x5138f0   MISMATCH         InfantryTypeVector::Construct2
+[diff] 0x513940   MISMATCH         UnitTypeVector::ConstructUnitTypeVectorClass
+[diff] 0x513990   MISMATCH         AircraftTypeVector::Constructor
+[diff] 0x525680   MISMATCH         AnimTypeVector::Constructor
+[diff] 0x54a850   MISMATCH         IsometricTileTypeClass::Constructor_0
+[diff] 0x55bb40   MISMATCH         ScenarioClass::ProcessAmbientEffects
+[diff] 0x5ad6f0   MISMATCH         StringVector::Construct
+[diff] 0x5ad740   MISMATCH         TileSystem::Constructor
+[diff] 0x5ad820   MISMATCH         RandomMap::Constructor
+[diff] 0x5adab0   MISMATCH         RandomMap::Constructor_1
+[diff] 0x5c59e0   MISMATCH         MPCooperative::applyVoteResult
+[ledger] 0x4e0e80 AbstractClassVector::Construct -> NG (attempt 1)
+[ledger] 0x510500 SuperClassVector::Construct -> NG (attempt 1)
+[ledger] 0x510550 VectorClass::BuildingConstructor -> NG (attempt 1)
+[ledger] 0x5105a0 VectorClass::BuildingTypeConstructor -> NG (attempt 1)
+[ledger] 0x5105f0 ConnectionPointVector::Construct -> NG (attempt 1)
+[ledger] 0x510640 TagClassVector::Construct -> NG (attempt 1)
+[ledger] 0x510690 StartingTechnoVector::Construct -> NG (attempt 1)
+[ledger] 0x5138f0 InfantryTypeVector::Construct2 -> NG (attempt 1)
+[ledger] 0x513940 UnitTypeVector::ConstructUnitTypeVectorClass -> NG (attempt 1)
+[ledger] 0x513990 AircraftTypeVector::Constructor -> NG (attempt 1)
+[ledger] 0x525680 AnimTypeVector::Constructor -> NG (attempt 1)
+[ledger] 0x54a850 IsometricTileTypeClass::Constructor_0 -> NG (attempt 1)
+[ledger] 0x54ebf0 VectorClass::sub_54EBF0 -> NG (attempt 1)
+[ledger] 0x55bb40 ScenarioClass::ProcessAmbientEffects -> NG (attempt 1)
+[ledger] 0x5ad6f0 StringVector::Construct -> NG (attempt 1)
+[ledger] 0x5ad740 TileSystem::Constructor -> NG (attempt 1)
+[ledger] 0x5ad820 RandomMap::Constructor -> NG (attempt 1)
+[ledger] 0x5ad9f0 VectorClass::Map_Cleanup -> NG (attempt 1)
+[ledger] 0x5adab0 RandomMap::Constructor_1 -> NG (attempt 1)
+[ledger] 0x5c59e0 MPCooperative::applyVoteResult -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "regalloc": 11
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p246\batch_report.json

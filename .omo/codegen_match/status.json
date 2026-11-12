@@ -39119,6 +39119,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e0e80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "AbstractClassVector::Construct",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClassVector::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e0ed0": {
   "attempts": 2,
   "clean": false,
@@ -50284,6 +50296,78 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x510500": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7ea504",
+  "name": "SuperClassVector::Construct",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "SuperClassVector::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x510550": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+24 mov dword ptr [esi], 0x7e9e44",
+  "name": "VectorClass::BuildingConstructor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass::BuildingConstructor",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5105a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+24 mov dword ptr [esi], 0x7eaa08",
+  "name": "VectorClass::BuildingTypeConstructor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass::BuildingTypeConstructor",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5105f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7e5d08",
+  "name": "ConnectionPointVector::Construct",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "ConnectionPointVector::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x510640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7ea5c4",
+  "name": "TagClassVector::Construct",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TagClassVector::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x510690": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7ea964",
+  "name": "StartingTechnoVector::Construct",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "StartingTechnoVector::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x510780": {
   "attempts": 3,
   "clean": false,
@@ -51303,6 +51387,42 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "HouseTypeClass::readParaDropTypes",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5138f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "InfantryTypeVector::Construct2",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "InfantryTypeVector::Construct2",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x513940": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "UnitTypeVector::ConstructUnitTypeVectorClass",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "UnitTypeVector::ConstructUnitTypeVectorClass",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x513990": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7eac68",
+  "name": "AircraftTypeVector::Constructor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "AircraftTypeVector::Constructor",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -52884,6 +53004,18 @@
   "name": "_DynamicVectorClass_PBVAnimTypeClass::Init",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "_DynamicVectorClass_PBVAnimTypeClass::Init",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x525680": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+24 mov dword ptr [esi], 0x7eb6f4",
+  "name": "AnimTypeVector::Constructor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "AnimTypeVector::Constructor",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -60510,6 +60642,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x54a850": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "IsometricTileTypeClass::Constructor_0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IsometricTileTypeClass::Constructor_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x54a8a0": {
   "attempts": 1,
   "clean": true,
@@ -61262,6 +61406,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeControl___",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x54ebf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+24 mov dword ptr [esi], 0x7ece9c",
+  "name": "VectorClass::sub_54EBF0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_54EBF0",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -64947,6 +65103,18 @@
   "name": "ObjectClass::SetDeployState",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
+ },
+ "0x55bb40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+24 mov dword ptr [esi], 0x7e9f84",
+  "name": "ScenarioClass::ProcessAmbientEffects",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "ScenarioClass::ProcessAmbientEffects",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x55bc00": {
   "attempts": 3,
@@ -68924,6 +69092,30 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5ad6f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "StringVector::Construct",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "StringVector::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5ad740": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "TileSystem::Constructor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TileSystem::Constructor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5ad790": {
   "attempts": 1,
   "clean": false,
@@ -68933,6 +69125,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "Vector4::EraseAt",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5ad820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "RandomMap::Constructor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RandomMap::Constructor",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -68950,6 +69154,30 @@
   "name": "sub_5AD9C0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_5AD9C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5ad9f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+24 mov dword ptr [esi], 0x7ed92c",
+  "name": "VectorClass::Map_Cleanup",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Map_Cleanup",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5adab0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "RandomMap::Constructor_1",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RandomMap::Constructor_1",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -73831,6 +74059,18 @@
   "orig_name": "MPCooperative::tallyVotes",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5c59e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "MPCooperative::applyVoteResult",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MPCooperative::applyVoteResult",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c5ad0": {
