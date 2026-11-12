@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p250\part_00
+=== convert (20 addrs) ===
+[conv] 0x48df80 OverlayTypeClass::LookupByName -> OverlayTypeClass
+[conv] 0x525a10 FileStraw::Open -> FileStraw
+[conv] 0x632a20 ObjectClass::sub_632A20 -> ObjectClass
+[conv] 0x631cc0 Pipe::SetDelegate -> Pipe
+[conv] 0x67a3c0 RulesClass::readTerrainTypes -> RulesClass
+[conv] 0x67a4a0 Stream::WriteIntArray -> Stream
+[conv] 0x67a520 DynamicVector::Read -> DynamicVector
+[conv] 0x67a630 DynamicVectorClass::LoadStream -> DynamicVectorClass
+[conv] 0x67a6e0 DynamicVector::Read_Alt -> DynamicVector
+[conv] 0x67a770 SaveLoad::StreamVector -> SaveLoad
+[conv] 0x67a7d0 RulesClass::readAnimations -> RulesClass
+[conv] 0x67a850 DynamicVectorClass::SaveLoad -> DynamicVectorClass
+[conv] 0x67a8e0 RulesClass::readParticleSystems -> RulesClass
+[conv] 0x708bc0 TechnoClass::ComputeAverageValue -> TechnoClass
+[conv] 0x4bb080 DSurface::BlitPart -> DSurface
+[conv] 0x7ba480 FilePipe::Read -> FilePipe
+[conv] 0x511650 HouseTypeClass::loadVeteranWeapons -> HouseTypeClass
+[conv] 0x663910 Network::validatePacket -> Network
+[conv] 0x6905f0 ScoreFontClass::sub_6905F0 -> ScoreFontClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] OverlayTypeClass         rc=0
+[era] FileStraw                rc=0
+[era] ObjectClass              rc=2
+[era] Pipe                     rc=2
+[era] RulesClass               rc=0
+[era] Stream                   rc=0
+[era] DynamicVector            rc=0
+[era] DynamicVectorClass       rc=0
+[era] SaveLoad                 rc=0
+[era] TechnoClass              rc=0
+[era] DSurface                 rc=0
+[era] FilePipe                 rc=2
+[era] HouseTypeClass           rc=0
+[era] Network                  rc=0
+[era] ScoreFontClass           rc=0
+=== diffasm byte-compare ===
+[diff] 0x48df80   MISMATCH         OverlayTypeClass::LookupByName
+[diff] 0x525a10   MISMATCH         FileStraw::Open
+[diff] 0x67a3c0   MATCH            RulesClass::readTerrainTypes
+[diff] 0x67a7d0   MATCH            RulesClass::readAnimations
+[diff] 0x67a8e0   MATCH            RulesClass::readParticleSystems
+[diff] 0x67a4a0   MATCH            Stream::WriteIntArray
+[diff] 0x67a520   MATCH            DynamicVector::Read
+[diff] 0x67a6e0   MATCH            DynamicVector::Read_Alt
+[diff] 0x67a630   MATCH            DynamicVectorClass::LoadStream
+[diff] 0x67a850   MATCH            DynamicVectorClass::SaveLoad
+[diff] 0x67a770   MATCH            SaveLoad::StreamVector
+[diff] 0x708bc0   MISMATCH         TechnoClass::ComputeAverageValue
+[diff] 0x4bb080   MISMATCH         DSurface::BlitPart
+[diff] 0x511650   MISMATCH         HouseTypeClass::loadVeteranWeapons
+[diff] 0x663910   MISMATCH         Network::validatePacket
+[diff] 0x6905f0   MISMATCH         ScoreFontClass::sub_6905F0
+[ledger] 0x48df80 OverlayTypeClass::LookupByName -> NG (attempt 1)
+[ledger] 0x525a10 FileStraw::Open -> NG (attempt 1)
+[ledger] 0x632a20 ObjectClass::sub_632A20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631cc0 Pipe::SetDelegate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67a3c0 RulesClass::readTerrainTypes -> OK (attempt 1)
+[ledger] 0x67a4a0 Stream::WriteIntArray -> OK (attempt 1)
+[ledger] 0x67a520 DynamicVector::Read -> OK (attempt 1)
+[ledger] 0x67a630 DynamicVectorClass::LoadStream -> OK (attempt 1)
+[ledger] 0x67a6e0 DynamicVector::Read_Alt -> OK (attempt 1)
+[ledger] 0x67a770 SaveLoad::StreamVector -> OK (attempt 1)
+[ledger] 0x67a7d0 RulesClass::readAnimations -> OK (attempt 1)
+[ledger] 0x67a850 DynamicVectorClass::SaveLoad -> OK (attempt 1)
+[ledger] 0x67a8e0 RulesClass::readParticleSystems -> OK (attempt 1)
+[ledger] 0x4de580 0x4de580 -> PENDING (attempt 1)
+[ledger] 0x708bc0 TechnoClass::ComputeAverageValue -> NG (attempt 1)
+[ledger] 0x4bb080 DSurface::BlitPart -> NG (attempt 1)
+[ledger] 0x7ba480 FilePipe::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x511650 HouseTypeClass::loadVeteranWeapons -> NG (attempt 1)
+[ledger] 0x663910 Network::validatePacket -> NG (attempt 1)
+[ledger] 0x6905f0 ScoreFontClass::sub_6905F0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 3,
+  "MATCH": 9,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "frame_sched": 2,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 56.2,
+ "match_rate_of_total_pct": 45.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p250\batch_report.json

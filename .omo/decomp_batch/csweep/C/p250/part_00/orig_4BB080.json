@@ -1,0 +1,11 @@
+{
+ "addr": "0x4BB080",
+ "name": "DSurface::BlitPart",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4BB080",
+ "bytes_hex": "8b44241483ec208b54242c53568bf1578b4c243c8b7c24348b1e508b07518d4c241452518bcfff50788b54243c508b06578d4c243052518bceff5078508bceff530c5f5e5b83c420c21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

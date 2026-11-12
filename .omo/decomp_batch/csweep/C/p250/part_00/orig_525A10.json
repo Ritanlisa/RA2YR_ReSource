@@ -1,0 +1,11 @@
+{
+ "addr": "0x525A10",
+ "name": "FileStraw::Open",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x525A10",
+ "bytes_hex": "83ec148b54241833c08941048941088944240489442408884424108b44241c8954240c568d5424045052c744240c904d7e00e8190000008d4c24048bf0e83e4b29008bc65e83c414c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x663910",
+ "name": "Network::validatePacket",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x663910",
+ "bytes_hex": "53568bf133db395e1074388b46048b0851e8175216008b461083c4043bc37e1e8d48ff33c03bcb894e107e128b4e04408b1481895481fc8b4e103bc17cee395e1075c8885e18895e1c5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

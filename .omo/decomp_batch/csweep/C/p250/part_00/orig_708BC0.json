@@ -1,0 +1,11 @@
+{
+ "addr": "0x708BC0",
+ "name": "TechnoClass::ComputeAverageValue",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x708BC0",
+ "bytes_hex": "83ec08568bf18b06ff90840000008b880008000085c974288d8e3c030000e86d0afcff8b168bcedd5c2404ff9284000000db80000800005edc7c240083c408c3dd0500287e005e83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

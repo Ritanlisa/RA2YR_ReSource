@@ -1,0 +1,21 @@
+{
+ "symbol": "?Open@FileStraw@@QAEHHD@Z",
+ "sym_key": "FileStraw::Open",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "83ec108b54241433c08941048941088944240489442408894424008b4424188954240c568d5424045052e8000000008d4c24048bf0e8000000008bc65e83c410c20800",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?LoadFile@INIClass@@QAEHHD@Z",
+   "sym_key": "INIClass::LoadFile"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Destructor@FileStraw@@QAEHXZ",
+   "sym_key": "FileStraw::Destructor"
+  }
+ ]
+}

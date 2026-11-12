@@ -1,0 +1,45 @@
+{
+ "symbol": "?LookupByName@OverlayTypeClass@@QAEHXZ",
+ "sym_key": "OverlayTypeClass::LookupByName",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "5333c0a000000000568bd9575350e80000000083c40885c0743f85db743b8b35000000005333ff8b0e51e80000000083c40885c0741da10000000083c604473bf07d168b165352e80000000083c40885c075e38bc75f5e5bc35f5e83c8ff5bc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81DA28@@3PAXA",
+   "sym_key": "DataGlobal_81DA28"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81DA58@@3PAXA",
+   "sym_key": "DataGlobal_81DA58"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

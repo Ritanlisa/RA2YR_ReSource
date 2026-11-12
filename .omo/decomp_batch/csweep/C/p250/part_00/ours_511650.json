@@ -1,0 +1,15 @@
+{
+ "symbol": "?loadVeteranWeapons@HouseTypeClass@@QAEPAIH@Z",
+ "sym_key": "HouseTypeClass::loadVeteranWeapons",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000033c08986a40000008986c0000000898684010000890689460489460889460c8bc65ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Init@AbstractTypeClass@@QAEHH@Z",
+   "sym_key": "AbstractTypeClass::Init"
+  }
+ ]
+}

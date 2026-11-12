@@ -1,0 +1,15 @@
+{
+ "symbol": "?ComputeAverageValue@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ComputeAverageValue",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff90840000008b880008000085c974168d8e3c030000e8000000008b0e56ddd8ff91840000005ec3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Sum@Float4@@QAENXZ",
+   "sym_key": "Float4::Sum"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?BlitPart@DSurface@@QAEHHHHHH@Z",
+ "sym_key": "DSurface::BlitPart",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "83ec1c8b54242853558b6c2434568bf1578b4c24408b7c24348b1e518b07558d4c2418525157ff50788b1650578d44243c555056ff52785056ff530c5f5e5d5b83c41cc21400",
+ "relocs": []
+}

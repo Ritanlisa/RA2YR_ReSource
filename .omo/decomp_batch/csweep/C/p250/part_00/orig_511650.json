@@ -1,0 +1,11 @@
+{
+ "addr": "0x511650",
+ "name": "HouseTypeClass::loadVeteranWeapons",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x511650",
+ "bytes_hex": "8b442404568bf150e803f3efffc7864c01000008ac7e00c78668010000e8ab7e00c78684010000c8ab7e00c70658ab7e00c746043cab7e00c7460834ab7e00c7460c2cab7e008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
