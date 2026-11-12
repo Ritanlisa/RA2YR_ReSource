@@ -1,0 +1,11 @@
+{
+ "addr": "0x45C2F0",
+ "name": "j_Map_InitCellOffsets",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45C2F0",
+ "bytes_hex": "e90b000000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

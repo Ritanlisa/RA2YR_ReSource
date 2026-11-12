@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x412540 j_Time_GetElapsedMS -> _addr_41
+[conv] 0x44b760 AbstractClass::COMStub_133 -> AbstractClass
+[conv] 0x44b770 AbstractClass::COMStub_137 -> AbstractClass
+[conv] 0x45b1b0 j_MapData_InitHeights -> _addr_45
+[conv] 0x45c2f0 j_Map_InitCellOffsets -> _addr_45
+[conv] 0x4da2b0 FootClass::COMStub_143 -> FootClass
+[conv] 0x4f4d90 j_Stub_InfiniteLoop -> _addr_4F
+[conv] 0x5228b0 ObjectClass::GetTypeVt40_0 -> ObjectClass
+[conv] 0x5228c0 ObjectClass::GetTypeVt41_0 -> ObjectClass
+[conv] 0x5247b0 InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19 -> InfantryTypeClass
+[conv] 0x561900 j_CoordinateTables_Init -> _addr_56
+[conv] 0x597d40 j_Options::GetValue -> j_Options
+[conv] 0x5c36f0 MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17 -> MPCooperative
+[conv] 0x5d0580 ObjectClass::j_DeleteAndZero -> ObjectClass
+[conv] 0x6370a0 j_PlanningNodeClass_CleanupAll -> _addr_63
+[conv] 0x731a90 j_FactoryClass_GetFlag -> _addr_73
+[conv] 0x746cb0 ObjectClass::GetTypeVt40_2 -> ObjectClass
+[conv] 0x746cc0 ObjectClass::GetTypeVt41_2 -> ObjectClass
+[conv] 0x7473c0 UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0 -> UnitTypeClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_41                 rc=0
+[era] AbstractClass            rc=0
+[era] _addr_45                 rc=0
+[era] FootClass                rc=0
+[era] _addr_4F                 rc=0
+[era] ObjectClass              rc=0
+[era] InfantryTypeClass        rc=2
+[era] _addr_56                 rc=0
+[era] j_Options                rc=0
+[era] MPCooperative            rc=0
+[era] _addr_63                 rc=0
+[era] _addr_73                 rc=2
+[era] UnitTypeClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x412540   MATCH            j_Time_GetElapsedMS
+[diff] 0x44b760   MISMATCH         AbstractClass::COMStub_133
+[diff] 0x44b770   MISMATCH         AbstractClass::COMStub_137
+[diff] 0x45b1b0   MATCH            j_MapData_InitHeights
+[diff] 0x45c2f0   MATCH            j_Map_InitCellOffsets
+[diff] 0x4da2b0   MATCH            FootClass::COMStub_143
+[diff] 0x4f4d90   MISMATCH         j_Stub_InfiniteLoop
+[diff] 0x5228b0   MATCH            ObjectClass::GetTypeVt40_0
+[diff] 0x5228c0   MATCH            ObjectClass::GetTypeVt41_0
+[diff] 0x5d0580   MISMATCH         ObjectClass::j_DeleteAndZero
+[diff] 0x746cb0   MATCH            ObjectClass::GetTypeVt40_2
+[diff] 0x746cc0   MATCH            ObjectClass::GetTypeVt41_2
+[diff] 0x561900   MATCH            j_CoordinateTables_Init
+[diff] 0x597d40   MATCH            j_Options::GetValue
+[diff] 0x5c36f0   MATCH            MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17
+[diff] 0x6370a0   MATCH            j_PlanningNodeClass_CleanupAll
+[ledger] 0x412540 j_Time_GetElapsedMS -> OK (attempt 1)
+[ledger] 0x44b760 AbstractClass::COMStub_133 -> NG (attempt 1)
+[ledger] 0x44b770 AbstractClass::COMStub_137 -> NG (attempt 1)
+[ledger] 0x45b1b0 j_MapData_InitHeights -> OK (attempt 1)
+[ledger] 0x45c2f0 j_Map_InitCellOffsets -> OK (attempt 1)
+[ledger] 0x4da2b0 FootClass::COMStub_143 -> OK (attempt 1)
+[ledger] 0x4f4d90 j_Stub_InfiniteLoop -> NG (attempt 1)
+[ledger] 0x5228b0 ObjectClass::GetTypeVt40_0 -> OK (attempt 1)
+[ledger] 0x5228c0 ObjectClass::GetTypeVt41_0 -> OK (attempt 1)
+[ledger] 0x5247b0 InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x561900 j_CoordinateTables_Init -> OK (attempt 1)
+[ledger] 0x597d40 j_Options::GetValue -> OK (attempt 1)
+[ledger] 0x5c36f0 MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17 -> OK (attempt 1)
+[ledger] 0x5d0580 ObjectClass::j_DeleteAndZero -> NG (attempt 1)
+[ledger] 0x6370a0 j_PlanningNodeClass_CleanupAll -> OK (attempt 1)
+[ledger] 0x731a90 j_FactoryClass_GetFlag -> COMPILE_FAIL (attempt 1)
+[ledger] 0x740ee0 0x740ee0 -> PENDING (attempt 1)
+[ledger] 0x746cb0 ObjectClass::GetTypeVt40_2 -> OK (attempt 1)
+[ledger] 0x746cc0 ObjectClass::GetTypeVt41_2 -> OK (attempt 1)
+[ledger] 0x7473c0 UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 12,
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 3,
+  "NO_EXPORT": 1
+ },
+ "pathologies": {
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 75.0,
+ "match_rate_of_total_pct": 60.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p00\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x597D40",
+ "name": "j_Options::GetValue",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x597D40",
+ "bytes_hex": "e9fb0afcff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

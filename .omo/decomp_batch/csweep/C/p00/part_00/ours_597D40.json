@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetValue@j_Options@@QAE_NXZ",
+ "sym_key": "j_Options::GetValue",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?PrepareSaveLoadDlg@Options@@QAE_NXZ",
+   "sym_key": "Options::PrepareSaveLoadDlg"
+  }
+ ]
+}

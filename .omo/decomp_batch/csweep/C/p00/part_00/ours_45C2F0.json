@@ -1,0 +1,15 @@
+{
+ "symbol": "?j_Map_InitCellOffsets@@YAHXZ",
+ "sym_key": "Unnamed::j_Map_InitCellOffsets",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?InitCellOffsetsMap@@YAHXZ",
+   "sym_key": "InitCellOffsetsMap"
+  }
+ ]
+}

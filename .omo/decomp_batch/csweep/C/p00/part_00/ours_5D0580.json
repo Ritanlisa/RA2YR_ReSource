@@ -1,0 +1,15 @@
+{
+ "symbol": "?j_DeleteAndZero@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::j_DeleteAndZero",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "51e80000000059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

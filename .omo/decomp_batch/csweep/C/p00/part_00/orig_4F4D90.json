@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F4D90",
+ "name": "j_Stub_InfiniteLoop",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F4D90",
+ "bytes_hex": "e8ebffffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

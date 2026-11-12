@@ -1,0 +1,11 @@
+{
+ "addr": "0x6370A0",
+ "name": "j_PlanningNodeClass_CleanupAll",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6370A0",
+ "bytes_hex": "e90b000000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

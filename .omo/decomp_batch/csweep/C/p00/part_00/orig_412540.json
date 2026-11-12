@@ -1,0 +1,11 @@
+{
+ "addr": "0x412540",
+ "name": "j_Time_GetElapsedMS",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x412540",
+ "bytes_hex": "e95bff0c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

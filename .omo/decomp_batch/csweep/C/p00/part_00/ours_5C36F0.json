@@ -1,0 +1,15 @@
+{
+ "symbol": "?j__do_always_noconv_codecvt_base_std__MBE_NXZ_17@MPCooperative@@QAEDXZ",
+ "sym_key": "MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?processAI@ScenarioClass@@QAEDXZ",
+   "sym_key": "ScenarioClass::processAI"
+  }
+ ]
+}

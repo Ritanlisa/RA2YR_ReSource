@@ -1,0 +1,11 @@
+{
+ "addr": "0x746CB0",
+ "name": "ObjectClass::GetTypeVt40_2",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746CB0",
+ "bytes_hex": "e9bb83fcff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

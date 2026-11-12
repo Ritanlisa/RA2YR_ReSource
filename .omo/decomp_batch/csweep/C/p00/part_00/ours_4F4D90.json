@@ -1,0 +1,15 @@
+{
+ "symbol": "?j_Stub_InfiniteLoop@@YAXHH@Z",
+ "sym_key": "Unnamed::j_Stub_InfiniteLoop",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b5424088b4c2404e900000000",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Stub__InfiniteLoop@@YIXHH@Z",
+   "sym_key": "Stub__InfiniteLoop"
+  }
+ ]
+}

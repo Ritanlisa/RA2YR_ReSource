@@ -1,0 +1,15 @@
+{
+ "symbol": "?COMStub_133@AbstractClass@@QAEHXZ",
+ "sym_key": "AbstractClass::COMStub_133",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "518b4c2400e80000000059c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?StubReturn450@IPersistStream@@QAEHXZ",
+   "sym_key": "IPersistStream::StubReturn450"
+  }
+ ]
+}
