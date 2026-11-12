@@ -1,0 +1,15 @@
+{
+ "symbol": "?SynchronizeFacingDirection@FlyLocomotionClass@@QAGDH@Z",
+ "sym_key": "FlyLocomotionClass::SynchronizeFacingDirection",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b4c24048d442408508b51088b8aa0030000e800000000c20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Set_SyncLog@FacingClass@@QAEDPAX@Z",
+   "sym_key": "FacingClass::Set_SyncLog"
+  }
+ ]
+}

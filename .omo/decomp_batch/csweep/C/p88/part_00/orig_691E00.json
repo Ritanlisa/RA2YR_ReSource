@@ -1,0 +1,11 @@
+{
+ "addr": "0x691E00",
+ "name": "ScriptTypeClass::PowerDrainUpdate",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x691E00",
+ "bytes_hex": "56578b7c240c8bf157e8d2edd7ff8b86a00000008bcf50e834ffe0ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

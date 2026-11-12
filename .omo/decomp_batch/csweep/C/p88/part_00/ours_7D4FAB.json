@@ -1,0 +1,27 @@
+{
+ "symbol": "?__isindst@@YAHH@Z",
+ "sym_key": "Unnamed::__isindst",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "566a0be8000000008b44240c50e8000000006a0b8bf0e80000000083c40c8bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?_isindst_0@@YAHHZZ",
+   "sym_key": "_isindst_0"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}

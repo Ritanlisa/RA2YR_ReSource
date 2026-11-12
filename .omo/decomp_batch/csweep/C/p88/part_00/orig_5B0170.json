@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B0170",
+ "name": "JumpjetLocomotionClass::UpdateFacingDirection_1",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B0170",
+ "bytes_hex": "8b5424048b4424088d4c240889442408518b4a0881c188030000e89190f1ffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

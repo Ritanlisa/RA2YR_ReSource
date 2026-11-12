@@ -1,0 +1,15 @@
+{
+ "symbol": "?DrawVoxelAnimation@WalkLocomotionClass@@QAGHPAE@Z",
+ "sym_key": "WalkLocomotionClass::DrawVoxelAnimation",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "568b7424086a018d4efcc6463101e8000000008b0656c6463100ff50105ec20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Draw@VoxelAnim@@QAEDPAX@Z",
+   "sym_key": "VoxelAnim::Draw"
+  }
+ ]
+}

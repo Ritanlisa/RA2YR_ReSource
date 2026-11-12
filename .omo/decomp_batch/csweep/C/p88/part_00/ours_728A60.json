@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturnZero_20@TunnelLocomotionClass@@QAGDPAH@Z",
+ "sym_key": "TunnelLocomotionClass::StubReturnZero_20",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "568b742408568b06ff501084c075045ec208008b46145e83f8010f95c0c20800",
+ "relocs": []
+}

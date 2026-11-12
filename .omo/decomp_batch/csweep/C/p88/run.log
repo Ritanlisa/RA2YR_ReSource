@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p88\part_00
+=== convert (20 addrs) ===
+[conv] 0x728a60 TunnelLocomotionClass::StubReturnZero_20 -> TunnelLocomotionClass
+[conv] 0x691e00 ScriptTypeClass::PowerDrainUpdate -> ScriptTypeClass
+[conv] 0x6a4710 SideClass::GetCountry -> SideClass
+[conv] 0x6a5000 SidebarClass::processDamage -> SidebarClass
+[conv] 0x6e63e0 TagTypeClass::PowerDrainUpdate -> TagTypeClass
+[conv] 0x41a590 AircraftClass::CheckLandingClearance -> AircraftClass
+[conv] 0x75ac80 WalkLocomotionClass::DrawVoxelAnimation -> WalkLocomotionClass
+[conv] 0x7cbc11 Object_Init_7CBC11 -> Object_Init
+[conv] 0x7d4fab __isindst -> _addr_7D
+[conv] 0x41c350 Math::Hypotenuse2D -> Math
+[conv] 0x41c430 Function::Method_41C430 -> Function
+[conv] 0x4a31f0 CStreamClass::IsEmpty -> CStreamClass
+[conv] 0x4b0ef0 DriveLocomotionClass::UpdateFacingDirection -> DriveLocomotionClass
+[conv] 0x4c4f90 TaskForceClass::Check -> TaskForceClass
+[conv] 0x4cfc10 FlyLocomotionClass::SynchronizeFacingDirection -> FlyLocomotionClass
+[conv] 0x4d0400 JumpjetLocomotionClass::CheckWindowsErrorWrapper_0 -> JumpjetLocomotionClass
+[conv] 0x54b6e0 JumpjetLocomotionClass::SynchronizeFacingDirection_0 -> JumpjetLocomotionClass
+[conv] 0x5b0170 MechLocomotionClass::UpdateFacingDirection_1 -> MechLocomotionClass
+[conv] 0x6810d0 ObjectClass::Map_Save_6810D0 -> ObjectClass
+[conv] 0x6a05c0 ShipLocomotionClass::UpdateFacingDirection_2 -> ShipLocomotionClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TunnelLocomotionClass    rc=0
+[era] ScriptTypeClass          rc=0
+[era] SideClass                rc=0
+[era] SidebarClass             rc=2
+[era] TagTypeClass             rc=0
+[era] AircraftClass            rc=0
+[era] WalkLocomotionClass      rc=0
+[era] Object_Init              rc=0
+[era] _addr_7D                 rc=0
+[era] Math                     rc=0
+[era] Function                 rc=2
+[era] CStreamClass             rc=0
+[era] DriveLocomotionClass     rc=0
+[era] TaskForceClass           rc=2
+[era] FlyLocomotionClass       rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] MechLocomotionClass      rc=0
+[era] ObjectClass              rc=2
+[era] ShipLocomotionClass      rc=0
+=== diffasm byte-compare ===
+[diff] 0x728a60   MISMATCH         TunnelLocomotionClass::StubReturnZero_20
+[diff] 0x691e00   MISMATCH         ScriptTypeClass::PowerDrainUpdate
+[diff] 0x6a4710   MISMATCH         SideClass::GetCountry
+[diff] 0x6e63e0   MISMATCH         TagTypeClass::PowerDrainUpdate
+[diff] 0x41a590   MISMATCH         AircraftClass::CheckLandingClearance
+[diff] 0x75ac80   MISMATCH         WalkLocomotionClass::DrawVoxelAnimation
+[diff] 0x7cbc11   MISMATCH         Object_Init_7CBC11
+[diff] 0x7d4fab   MISMATCH         __isindst
+[diff] 0x41c350   MISMATCH         Math::Hypotenuse2D
+[diff] 0x4a31f0   MISMATCH         CStreamClass::IsEmpty
+[diff] 0x4b0ef0   MISMATCH         DriveLocomotionClass::UpdateFacingDirection
+[diff] 0x4cfc10   MISMATCH         FlyLocomotionClass::SynchronizeFacingDirection
+[diff] 0x4d0400   MISMATCH         JumpjetLocomotionClass::CheckWindowsErrorWrapper_0
+[diff] 0x54b6e0   MISMATCH         JumpjetLocomotionClass::SynchronizeFacingDirection_0
+[diff] 0x5b0170   MISMATCH         MechLocomotionClass::UpdateFacingDirection_1
+[diff] 0x6a05c0   MISMATCH         ShipLocomotionClass::UpdateFacingDirection_2
+[ledger] 0x728a60 TunnelLocomotionClass::StubReturnZero_20 -> NG (attempt 1)
+[ledger] 0x691e00 ScriptTypeClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x6a4710 SideClass::GetCountry -> NG (attempt 1)
+[ledger] 0x6a5000 SidebarClass::processDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e63e0 TagTypeClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x41a590 AircraftClass::CheckLandingClearance -> NG (attempt 1)
+[ledger] 0x75ac80 WalkLocomotionClass::DrawVoxelAnimation -> NG (attempt 1)
+[ledger] 0x7cbc11 Object_Init_7CBC11 -> NG (attempt 1)
+[ledger] 0x7d4fab __isindst -> NG (attempt 1)
+[ledger] 0x41c350 Math::Hypotenuse2D -> NG (attempt 1)
+[ledger] 0x41c430 Function::Method_41C430 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a31f0 CStreamClass::IsEmpty -> NG (attempt 1)
+[ledger] 0x4b0ef0 DriveLocomotionClass::UpdateFacingDirection -> NG (attempt 1)
+[ledger] 0x4c4f90 TaskForceClass::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cfc10 FlyLocomotionClass::SynchronizeFacingDirection -> NG (attempt 1)
+[ledger] 0x4d0400 JumpjetLocomotionClass::CheckWindowsErrorWrapper_0 -> NG (attempt 1)
+[ledger] 0x54b6e0 JumpjetLocomotionClass::SynchronizeFacingDirection_0 -> NG (attempt 1)
+[ledger] 0x5b0170 MechLocomotionClass::UpdateFacingDirection_1 -> NG (attempt 1)
+[ledger] 0x6810d0 ObjectClass::Map_Save_6810D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a05c0 ShipLocomotionClass::UpdateFacingDirection_2 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "codegen_shape": 3,
+  "branch_polarity": 3,
+  "width_mismatch": 1,
+  "const_fold": 3,
+  "regalloc": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p88\batch_report.json

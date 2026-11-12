@@ -1,0 +1,21 @@
+{
+ "symbol": "?PowerDrainUpdate@TagTypeClass@@QAEHPAH@Z",
+ "sym_key": "TagTypeClass::PowerDrainUpdate",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e8000000008b8e9c00000051e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::ProcessPower"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

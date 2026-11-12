@@ -1,0 +1,21 @@
+{
+ "symbol": "?Hypotenuse2D@Math@@QAEHXZ",
+ "sym_key": "Math::Hypotenuse2D",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "dd4108dd01d9c0d8c9d9c2d8cb83ec08dec1dd1c24ddd8ddd8e80000000083c408e900000000",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

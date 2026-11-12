@@ -5488,6 +5488,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x41a590": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+13 je 0x41a5ad",
+  "name": "AircraftClass::CheckLandingClearance",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "AircraftClass::CheckLandingClearance",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x41a5c0": {
   "attempts": 3,
   "clean": false,
@@ -6110,6 +6122,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x41c350": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+25 call 0x4cac40",
+  "name": "Math::Hypotenuse2D",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Math::Hypotenuse2D",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x41c380": {
   "attempts": 3,
   "clean": false,
@@ -6130,6 +6154,18 @@
   "name": "BulletClass::NormalizeZeroVector",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::NormalizeZeroVector",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x41c430": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Function::Method_41C430",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Function::Method_41C430",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -20936,6 +20972,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4a31f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+9 je 0x4a3205",
+  "name": "CStreamClass::IsEmpty",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "CStreamClass::IsEmpty",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4a3220": {
   "attempts": 4,
   "first_diff": "+0 sub dword ptr [esp + 4], 4",
@@ -22736,6 +22784,18 @@
   "orig_name": "JumpjetLocomotionClass::SetWaypointTarget",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4b0ef0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
+  "name": "DriveLocomotionClass::UpdateFacingDirection",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::UpdateFacingDirection",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4b2630": {
@@ -24830,6 +24890,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4c4f90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TaskForceClass::Check",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TaskForceClass::Check",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4c5030": {
   "attempts": 2,
   "clean": true,
@@ -26620,6 +26692,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4cfc10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
+  "name": "FlyLocomotionClass::SynchronizeFacingDirection",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::SynchronizeFacingDirection",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4cfc80": {
   "attempts": 2,
   "clean": false,
@@ -26707,6 +26791,18 @@
   "name": "UnitClass::CompareCoordinateMagnitude",
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "UnitClass::CompareCoordinateMagnitude",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4d0400": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+9 je 0x4d0415",
+  "name": "JumpjetLocomotionClass::CheckWindowsErrorWrapper_0",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "JumpjetLocomotionClass::CheckWindowsErrorWrapper_0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -43778,6 +43874,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x54b6e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
+  "name": "JumpjetLocomotionClass::SynchronizeFacingDirection_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::SynchronizeFacingDirection_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x54b710": {
   "attempts": 2,
   "clean": false,
@@ -50651,6 +50759,18 @@
   "name": "MechLocomotionClass::SyncMatrixTransformState",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "JumpjetLocomotionClass::SyncMatrixTransformState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5b0170": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
+  "name": "MechLocomotionClass::UpdateFacingDirection_1",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::UpdateFacingDirection_1",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -70417,6 +70537,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6810d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::Map_Save_6810D0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Map_Save_6810D0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x681100": {
   "attempts": 6,
   "clean": true,
@@ -71540,6 +71672,18 @@
   "name": "ScriptTypeClass::SaveToINI",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "ScriptTypeClass::SaveToINI",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x691e00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push esi",
+  "name": "ScriptTypeClass::PowerDrainUpdate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ScriptTypeClass::PowerDrainUpdate",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -73183,6 +73327,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6a05c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
+  "name": "ShipLocomotionClass::UpdateFacingDirection_2",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::UpdateFacingDirection_2",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6a3da0": {
   "attempts": 1,
   "clean": true,
@@ -73511,6 +73667,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6a4710": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "SideClass::GetCountry",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SideClass::GetCountry",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6a4740": {
   "attempts": 2,
   "clean": false,
@@ -73767,6 +73935,18 @@
   "orig_name": "nullsub_36",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a5000": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SidebarClass::processDamage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ObjectClass::processDamage",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6a5090": {
@@ -82853,6 +83033,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6e63e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "TagTypeClass::PowerDrainUpdate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TagTypeClass::PowerDrainUpdate",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6e6470": {
   "attempts": 1,
   "first_diff": "+15 call 0x410320",
@@ -89389,6 +89581,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x728a60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+13 je 0x728a7b",
+  "name": "TunnelLocomotionClass::StubReturnZero_20",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "JumpjetLocomotionClass::StubReturnZero_20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7291d0": {
   "attempts": 1,
   "clean": false,
@@ -95202,6 +95406,18 @@
   "name": "JumpjetLocomotionClass::GetRenderCoordinate_2",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "JumpjetLocomotionClass::GetRenderCoordinate_2",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x75ac80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+19 mov byte ptr [esi + 0x31], 0",
+  "name": "WalkLocomotionClass::DrawVoxelAnimation",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "JumpjetLocomotionClass::DrawVoxelAnimation",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -109427,6 +109643,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7cbc11": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+3 call 0x7cd9f5",
+  "name": "Object_Init_7CBC11",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Object_Init_7CBC11",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7cbdaf": {
   "attempts": 4,
   "clean": false,
@@ -110534,6 +110761,17 @@
   "name": "__tzset",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "__tzset",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7d4fab": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+3 call 0x7cd9f5",
+  "name": "__isindst",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "__isindst",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckLandingClearance@AircraftClass@@QAEPADHHH@Z",
+ "sym_key": "AircraftClass::CheckLandingClearance",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008a480984c9740d8b066a016a0056ff90840400005ec20c00",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?GetMissionControl@MissionClass@@QAEPADXZ",
+   "sym_key": "MissionClass::GetMissionControl"
+  }
+ ]
+}

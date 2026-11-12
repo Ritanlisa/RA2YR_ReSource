@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CBC11",
+ "name": "Object_Init_7CBC11",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CBC11",
+ "bytes_hex": "566a0ce8dc1d0000ff74240ce8100000006a0c8bf0e82b1e000083c40c8bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

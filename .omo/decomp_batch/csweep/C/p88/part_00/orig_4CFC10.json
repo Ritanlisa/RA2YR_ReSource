@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CFC10",
+ "name": "JumpjetLocomotionClass::SynchronizeFacingDirection",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CFC10",
+ "bytes_hex": "8b5424048b4424088d4c240889442408518b4a0881c1a0030000e8d196ffffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
