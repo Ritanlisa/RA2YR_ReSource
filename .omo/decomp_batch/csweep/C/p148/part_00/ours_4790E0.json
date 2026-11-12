@@ -1,0 +1,21 @@
+{
+ "symbol": "?AlwaysAvailable@CD@@QAEDH@Z",
+ "sym_key": "CD::AlwaysAvailable",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f8fe7505b001c20400803d00000000017505b001c2040050c74104ffffffffe800000000c20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E3A0@@3_NA",
+   "sym_key": "DataGlobal_89E3A0"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?CheckDiscPresence@CD@@QAEDH@Z",
+   "sym_key": "CD::CheckDiscPresence"
+  }
+ ]
+}

@@ -16510,6 +16510,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x474120": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_474120",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_474120",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x474150": {
   "attempts": 1,
   "clean": false,
@@ -17283,6 +17294,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x478af0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_478AF0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_478AF0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x478b20": {
   "attempts": 1,
   "clean": false,
@@ -17381,6 +17403,18 @@
   "name": "SetSoundWarning",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SetSoundWarning",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4790e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+14 cmp byte ptr [0x89e3a0], 1",
+  "name": "CD::AlwaysAvailable",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CD::AlwaysAvailable",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -18728,6 +18762,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4890d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4890D0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4890D0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x489100": {
   "attempts": 1,
   "clean": false,
@@ -19189,6 +19234,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x48bdb0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_48BDB0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_48BDB0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x48bde0": {
   "attempts": 4,
   "clean": false,
@@ -19365,6 +19421,17 @@
   "name": "sub_48C7C0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_48C7C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x48c7f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_48C7F0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_48C7F0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -19614,6 +19681,17 @@
   "name": "sub_48E3A0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_48E3A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x48e3d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_48E3D0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_48E3D0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -22021,6 +22099,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x49b2c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_49B2C0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_49B2C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x49b2f0": {
   "attempts": 1,
   "clean": false,
@@ -22568,6 +22657,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x49f220": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_49F220",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_49F220",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x49f250": {
   "attempts": 1,
   "clean": false,
@@ -22815,6 +22915,17 @@
   "name": "sub_49FE60",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_49FE60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x49fe90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_49FE90",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_49FE90",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -23311,6 +23422,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4a16a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4A16A0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4A16A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4a16d0": {
   "attempts": 1,
   "clean": false,
@@ -23559,6 +23681,17 @@
   "name": "sub_4A2270",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4A2270",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4a22a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4A22A0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4A22A0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -24089,6 +24222,17 @@
   "name": "sub_4A4FB0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4A4FB0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4a4fe0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4A4FE0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4A4FE0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -24868,6 +25012,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4a8580": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4A8580",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4A8580",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4a85b0": {
   "attempts": 1,
   "clean": false,
@@ -25485,6 +25640,17 @@
   "name": "sub_4AF440",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4AF440",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4af470": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4AF470",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4AF470",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -26280,6 +26446,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4b59e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4B59E0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4B59E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4b5a10": {
   "attempts": 1,
   "clean": false,
@@ -26720,6 +26897,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4b68e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4B68E0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4B68E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4b6910": {
   "attempts": 1,
   "clean": false,
@@ -27132,6 +27320,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ba4f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4BA4F0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4BA4F0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4ba520": {
   "attempts": 1,
   "clean": false,
@@ -27462,6 +27661,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4c1cc0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4C1CC0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4C1CC0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4c1cf0": {
   "attempts": 1,
   "clean": false,
@@ -27779,6 +27989,17 @@
   "name": "sub_4C36B0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4C36B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4c36e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_4C36E0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4C36E0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
