@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E2AF0",
+ "name": "TActionClass::executeUnloadAction",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E2AF0",
+ "bytes_hex": "56578bf98b475085c0746da1f8eaa80033f685c07e6253a1eceaa8008b57508b0cb08b41243bc2753d8b1530b2a8008b920c06000085d2750a8a989c00000084db742383fa01750a8a989d00000084db741483fa02750a8a909e00000084d27405e89a3d0400a1f8eaa800463bf07ca75b5fb0015ec210005fb0015ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

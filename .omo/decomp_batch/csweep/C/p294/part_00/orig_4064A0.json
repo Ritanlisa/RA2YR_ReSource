@@ -1,0 +1,11 @@
+{
+ "addr": "0x4064A0",
+ "name": "AbstractTypeClass::AddSampleVocClass",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4064A0",
+ "bytes_hex": "56578bf98bf283bf340100002075055f33c05ec3a1a0e2870085c0745a8b0d94e2870085c974508a063c2474043c23750346ebf38bd6e8e5b0ffff83f8ff74228b8f3401000089848fb40000008b8734010000408987340100005fb8010000005ec3566818628100e8d303000083c408c7470c000000005fb8010000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

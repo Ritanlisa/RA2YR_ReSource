@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D151E",
+ "name": "__fltin2",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D151E",
+ "bytes_hex": "558bec83ec18535633f65756565656ff750c8d45fc33ff508d45e850e8338300008bd883c41cf6c304740dbf000200008975f48975f8eb2e8d45f4508d45e850e8b866000059f6c30259750583f8017505bf80000000f6c301750583f802750681cf000100008b45088b4dfc2b4d0cdd45f489385fdd58105e8948045bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

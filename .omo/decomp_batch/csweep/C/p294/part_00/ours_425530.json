@@ -1,0 +1,33 @@
+{
+ "symbol": "?Undeploy@AnimClass@@QAEDXZ",
+ "sym_key": "AnimClass::Undeploy",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf18b86c800000085c074418b88b005000085c974378b869c0000008b8ea00000008b96a4000000894424048d442404894c240850b9f801000089542410e80000000081a040010000fffffdff8bcee80000000084c075055e83c40cc356e800000000b0015e83c40cc3",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Undeploy@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Undeploy"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?RemoveTarget@@YGXH@Z",
+   "sym_key": "RemoveTarget"
+  }
+ ]
+}

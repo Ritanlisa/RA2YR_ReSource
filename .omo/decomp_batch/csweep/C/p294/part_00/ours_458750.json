@@ -1,0 +1,27 @@
+{
+ "symbol": "?Process@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::Process",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "51568bf10fbe0da00100008b86200500008b5424048b8060150000898ed00600008986d80600008b861c0200008996d40600008b48348a81a601000084c0753a8b1656ff925003000084c0742d8b86200500008b805c15000085c07f118b8e1c020000f7d850e8000000005e59c38b8e1c02000050e8000000005e59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?ProcessPowerDrain@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::ProcessPowerDrain"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?AddPower@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::AddPower"
+  }
+ ]
+}

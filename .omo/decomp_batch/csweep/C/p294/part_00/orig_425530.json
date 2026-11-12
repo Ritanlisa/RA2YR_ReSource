@@ -1,0 +1,11 @@
+{
+ "addr": "0x425530",
+ "name": "AnimClass::Undeploy",
+ "size": 126,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x425530",
+ "bytes_hex": "83ec0c568bf18b86c800000085c0744a8a885503000084c974408d869c0000008b8e9c000000894c24048d4c24048b500451b9e8f787008954240c8b400889442410e8b90114008b8840010000054001000081e1fffffdff89088bcee89ff71c0084c0741256b9e8f78700e8d0410800b0015e83c40cc332c05e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

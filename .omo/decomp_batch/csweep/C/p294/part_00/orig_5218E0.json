@@ -1,0 +1,11 @@
+{
+ "addr": "0x5218E0",
+ "name": "InfantryClass::GetDeployWeaponIndex",
+ "size": 126,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5218E0",
+ "bytes_hex": "568bf18b8ec00600008a81ac06000084c0745b8b86c406000083f81b740f83f81c740a83f81d740583f81e750a8b81a80600005ec204008a868200000084c074278b068bceff908400000083b8500d0000ff74148b168bceff92840000008b80500d00005ec2040033c05ec204008b4424088bce50e8d6191d005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

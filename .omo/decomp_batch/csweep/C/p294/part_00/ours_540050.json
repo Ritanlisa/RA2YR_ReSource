@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetAddress@IPXGlobalConnClass@@QAEHHHPAEHHH@Z",
+ "sym_key": "IPXGlobalConnClass::GetAddress",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "56578b7c24148bf18bcfe80000000085c074128b5424108b4c240ce8000000005f5ec21800833d000000000375228b86c000000085c074188b078b8eba0000003bc1750c8b0633c98d96bb000000eb088b068b4c242033d2518b4c2420518b4c2414528b54241c57525156ff50285f5ec21800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?IsBroadcastAddr@Network@@QAEHXZ",
+   "sym_key": "Network::IsBroadcastAddr"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Network_Get@@YIHHH@Z",
+   "sym_key": "Network_Get"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  }
+ ]
+}

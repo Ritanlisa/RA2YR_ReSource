@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p294\part_00
+=== convert (20 addrs) ===
+[conv] 0x420270 FractalNoise::Release -> FractalNoise
+[conv] 0x63d480 ObjectClass::DrawActionLineSegment -> ObjectClass
+[conv] 0x425530 AnimClass::Undeploy -> AnimClass
+[conv] 0x537350 View1CommandClass::performAction_148 -> View1CommandClass
+[conv] 0x537440 View2CommandClass::performAction_153 -> View2CommandClass
+[conv] 0x537620 View4CommandClass::InitView -> View4CommandClass
+[conv] 0x458750 HouseClass::Process -> HouseClass
+[conv] 0x5218e0 InfantryClass::GetDeployWeaponIndex -> InfantryClass
+[conv] 0x4c69e0 ObjectClass::sub_4C69E0 -> ObjectClass
+[conv] 0x4c6a60 ObjectClass::sub_4C6A60 -> ObjectClass
+[conv] 0x6e2af0 TActionClass::executeUnloadAction -> TActionClass
+[conv] 0x5ff250 ObjectClass::RegisterInArray -> ObjectClass
+[conv] 0x4064a0 AbstractTypeClass::AddSampleVocClass -> AbstractTypeClass
+[conv] 0x7d151e __fltin2 -> _addr_7D
+[conv] 0x60a100 sub_60A100 -> _addr_60
+[conv] 0x7b3a20 UDPInterfaceClass::Flush -> UDPInterfaceClass
+[conv] 0x7d9540 ObjectClass::__free_osfhnd -> ObjectClass
+[conv] 0x540050 IPXGlobalConnClass::GetAddress -> IPXGlobalConnClass
+[conv] 0x5410f0 Network::SendMessage -> Network
+[conv] 0x7a2830 ObjectClass::sub_7A2830 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FractalNoise             rc=0
+[era] ObjectClass              rc=2
+[era] AnimClass                rc=0
+[era] View1CommandClass        rc=0
+[era] View2CommandClass        rc=2
+[era] View4CommandClass        rc=2
+[era] HouseClass               rc=0
+[era] InfantryClass            rc=0
+[era] TActionClass             rc=0
+[era] AbstractTypeClass        rc=0
+[era] _addr_7D                 rc=0
+[era] _addr_60                 rc=2
+[era] UDPInterfaceClass        rc=2
+[era] IPXGlobalConnClass       rc=0
+[era] Network                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x420270   MISMATCH         FractalNoise::Release
+[diff] 0x63d480   MISMATCH         ObjectClass::DrawActionLineSegment
+[diff] 0x4c69e0   MISMATCH         ObjectClass::sub_4C69E0
+[diff] 0x4c6a60   MISMATCH         ObjectClass::sub_4C6A60
+[diff] 0x5ff250   MISMATCH         ObjectClass::RegisterInArray
+[diff] 0x7a2830   MISMATCH         ObjectClass::sub_7A2830
+[diff] 0x425530   MISMATCH         AnimClass::Undeploy
+[diff] 0x537350   MISMATCH         View1CommandClass::performAction_148
+[diff] 0x458750   MISMATCH         HouseClass::Process
+[diff] 0x5218e0   MISMATCH         InfantryClass::GetDeployWeaponIndex
+[diff] 0x6e2af0   MISMATCH         TActionClass::executeUnloadAction
+[diff] 0x4064a0   MISMATCH         AbstractTypeClass::AddSampleVocClass
+[diff] 0x7d151e   MISMATCH         __fltin2
+[diff] 0x540050   MISMATCH         IPXGlobalConnClass::GetAddress
+[ledger] 0x420270 FractalNoise::Release -> NG (attempt 1)
+[ledger] 0x63d480 ObjectClass::DrawActionLineSegment -> NG (attempt 1)
+[ledger] 0x425530 AnimClass::Undeploy -> NG (attempt 1)
+[ledger] 0x537350 View1CommandClass::performAction_148 -> NG (attempt 1)
+[ledger] 0x537440 View2CommandClass::performAction_153 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537620 View4CommandClass::InitView -> COMPILE_FAIL (attempt 1)
+[ledger] 0x458750 HouseClass::Process -> NG (attempt 1)
+[ledger] 0x5218e0 InfantryClass::GetDeployWeaponIndex -> NG (attempt 1)
+[ledger] 0x4c69e0 ObjectClass::sub_4C69E0 -> NG (attempt 1)
+[ledger] 0x4c6a60 ObjectClass::sub_4C6A60 -> NG (attempt 1)
+[ledger] 0x6e2af0 TActionClass::executeUnloadAction -> NG (attempt 1)
+[ledger] 0x5ff250 ObjectClass::RegisterInArray -> NG (attempt 1)
+[ledger] 0x4064a0 AbstractTypeClass::AddSampleVocClass -> NG (attempt 1)
+[ledger] 0x7d151e __fltin2 -> NG (attempt 1)
+[ledger] 0x60a100 sub_60A100 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b3a20 UDPInterfaceClass::Flush -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d9540 ObjectClass::__free_osfhnd -> COMPILE_FAIL (attempt 1)
+[ledger] 0x540050 IPXGlobalConnClass::GetAddress -> NG (attempt 1)
+[ledger] 0x5410f0 Network::SendMessage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a2830 ObjectClass::sub_7A2830 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "cc_mismatch": 2,
+  "codegen_shape": 4,
+  "branch_polarity": 2,
+  "frame_sched": 1,
+  "ret_norm": 1,
+  "regalloc": 2,
+  "extern_reloc": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p294\batch_report.json

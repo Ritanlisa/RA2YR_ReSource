@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetDeployWeaponIndex@InfantryClass@@QAEHH@Z",
+ "sym_key": "InfantryClass::GetDeployWeaponIndex",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "568bf18b8ec00600008b815c05000085c0750b8bcee8000000005ec204008b86c406000083f81b744483f81c743f83f81d743a83f81e74358a868200000084c074258b0656ff908400000083b8500d0000ff74138b0e56ff91840000008b80500d00005ec2040033c05ec204008b81580500005ec20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?SelectWeapon@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::SelectWeapon"
+  }
+ ]
+}

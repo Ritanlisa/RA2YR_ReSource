@@ -1,0 +1,57 @@
+{
+ "symbol": "?performAction_148@View1CommandClass@@QAGPAIH@Z",
+ "sym_key": "View1CommandClass::performAction_148",
+ "size": 114,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b0d000000000fbf81903400008b898c340000c1e910c1e0080fbfd10580000000c1e208894424088d44240481c2800000005089542408e8000000008d4c2404518b0d00000000e800000000a10000000085c074148d542400680000000052b900000000e80000000083c40cc20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?SetTacticalPosition@Tactical@@QAEIPAX@Z",
+   "sym_key": "Tactical::SetTacticalPosition"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_RadarBlipManager@@3IA",
+   "sym_key": "g_RadarBlipManager"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F2F8@@3GA",
+   "sym_key": "DataGlobal_A8F2F8"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?MouseMove@Tactical@@QAEPAIPAX0@Z",
+   "sym_key": "Tactical::MouseMove"
+  }
+ ]
+}

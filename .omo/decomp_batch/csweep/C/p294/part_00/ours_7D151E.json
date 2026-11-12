@@ -1,0 +1,21 @@
+{
+ "symbol": "?__fltin2@@YAHHH@Z",
+ "sym_key": "Unnamed::__fltin2",
+ "size": 143,
+ "link_base": 0,
+ "bytes_hex": "83ec148d44241c8d4c2408535633f6578b7c242856565656575051e8000000008ad883c41cf6c3047417be00020000c744240c00000000c744241000000000eb318d54240c8d4424145250e80000000083c408f6c302750583f8017505be80000000f6c301750583f802750681ce000100008b4424248b4c2428dd44240c2bcf89305f5edd58108948045b83c414c3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?__strgtold12@@YAHPAX0HHHHHZZ",
+   "sym_key": "__strgtold12"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?Fltin2_Helper@@YAHHH@Z",
+   "sym_key": "Fltin2_Helper"
+  }
+ ]
+}

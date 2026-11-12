@@ -1,0 +1,39 @@
+{
+ "symbol": "?executeUnloadAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeUnloadAction",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "56578bf98b475085c07468a10000000033f685c0765da1000000008b57508b0cb08b41243bc275418b15000000008b920402000085d2750c8a909c00000084d27427eb2083fa01750c8a909d00000084d27416eb0f83fa02750a8a909e00000084d27405e800000000a100000000463bf072a35fb0015ec21000",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_ProductionQueueState@@3IA",
+   "sym_key": "g_ProductionQueueState"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_TriggerClassCapacity@@3PAXA",
+   "sym_key": "g_TriggerClassCapacity"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVBlitTransXlatAlpha_ushort@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?executeAirstrikeAction@TActionClass@@QAEHXZ",
+   "sym_key": "TActionClass::executeAirstrikeAction"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_ProductionQueueState@@3IA",
+   "sym_key": "g_ProductionQueueState"
+  }
+ ]
+}

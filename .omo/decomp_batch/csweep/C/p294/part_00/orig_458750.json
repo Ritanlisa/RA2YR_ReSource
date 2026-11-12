@@ -1,0 +1,11 @@
+{
+ "addr": "0x458750",
+ "name": "HouseClass::Process",
+ "size": 126,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x458750",
+ "bytes_hex": "83ec0ca184eda800568bf18b8e200500008d96d00600008b896015000089028b442408894204894a088b8e1c0200008b51348a82a601000084c0753d8b068bceff905003000084c0742f8b8e200500008b815c15000085c07e118b8e1c02000050e89a110a005e83c40cc38b8e1c020000f7d850e8c70f0a005e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

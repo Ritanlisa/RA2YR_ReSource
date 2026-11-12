@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FF250",
+ "name": "ObjectClass::RegisterInArray",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FF250",
+ "bytes_hex": "8b542408568bf18b4c24088bc689088b4c241089500433d289560c8956148948088b442414894610a18016ac0039058816ac007c2c38158516ac0075043bc275388b0d8c16ac003bca7e2e03c8528b157816ac0051b97816ac00ff520884c074188b0d8816ac008bc141890d8816ac008b0d7c16ac008934818bc65ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

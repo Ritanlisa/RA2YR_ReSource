@@ -1,0 +1,33 @@
+{
+ "symbol": "?AddSampleVocClass@AbstractTypeClass@@QAIHHPAE@Z",
+ "sym_key": "AbstractTypeClass::AddSampleVocClass",
+ "size": 127,
+ "link_base": 0,
+ "bytes_hex": "568bf2578bf983be340100002075075f33c05ec20400a10000000085c07456a10000000085c0744d8b4c240c8a013c2474043c23750341ebf3e80000000083f8ff74248b8e340100005f89848eb40000008b863401000040898634010000b8010000005ec204008bcfe800000000c7460c000000005fb8010000005ec20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_AudioConfigState@@3IA",
+   "sym_key": "g_AudioConfigState"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E294@@3IA",
+   "sym_key": "DataGlobal_87E294"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?sub_4015C0@@YIIXZ",
+   "sym_key": "sub_4015C0"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
