@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x40d5a0 _VectorClass_PAVMixFileClass::Add -> _VectorClass_PAVMixFileClass
+[conv] 0x40d7d0 _DynamicVectorClass_PAVMixFileClass::getCursorFrame -> _DynamicVectorClass_PAVMixFileClass
+[conv] 0x40d8a0 sub_40D8A0 -> _addr_40
+[conv] 0x40d8e0 sub_40D8E0 -> _addr_40
+[conv] 0x40d940 sub_40D940 -> _addr_40
+[conv] 0x40e320 MixFileClass::Constructor -> MixFileClass
+[conv] 0x40e850 _VectorClass_PAVScriptClass::Add -> _VectorClass_PAVScriptClass
+[conv] 0x40e970 _VectorClass_PAVScriptClass::GetSize -> _VectorClass_PAVScriptClass
+[conv] 0x40ea80 _DynamicVectorClass_PAVScriptClass::FindItemIndex -> _DynamicVectorClass_PAVScriptClass
+[conv] 0x40ef20 _VectorClass_PAVVoxelAnimClass::Add -> _VectorClass_PAVVoxelAnimClass
+[conv] 0x40f040 _VectorClass_PAVVoxelAnimClass::GetSize -> _VectorClass_PAVVoxelAnimClass
+[conv] 0x40f150 _DynamicVectorClass_PAVVoxelAnimClass::FindItemIndex -> _DynamicVectorClass_PAVVoxelAnimClass
+[conv] 0x40f640 _VectorClass_PAVWarheadTypeClass::Add -> _VectorClass_PAVWarheadTypeClass
+[conv] 0x40f760 _VectorClass_PAVWarheadTypeClass::GetSize -> _VectorClass_PAVWarheadTypeClass
+[conv] 0x40f870 _DynamicVectorClass_PAVWarheadTypeClass::FindItemIndex -> _DynamicVectorClass_PAVWarheadTypeClass
+[conv] 0x40fc10 _VectorClass_PAVWeaponTypeClass::Add -> _VectorClass_PAVWeaponTypeClass
+[conv] 0x40fd30 _VectorClass_PAVWeaponTypeClass::GetSize -> _VectorClass_PAVWeaponTypeClass
+[conv] 0x40fe40 _DynamicVectorClass_PAVWeaponTypeClass::FindItemIndex -> _DynamicVectorClass_PAVWeaponTypeClass
+[conv] 0x417fd0 AbstractClass::GetField9 -> AbstractClass
+[conv] 0x41c190 AircraftClass::PowerDrainProcess -> AircraftClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVMixFileClass rc=0
+[era] _DynamicVectorClass_PAVMixFileClass rc=0
+[era] _addr_40                 rc=2
+[era] MixFileClass             rc=0
+[era] _VectorClass_PAVScriptClass rc=0
+[era] _DynamicVectorClass_PAVScriptClass rc=0
+[era] _VectorClass_PAVVoxelAnimClass rc=0
+[era] _DynamicVectorClass_PAVVoxelAnimClass rc=0
+[era] _VectorClass_PAVWarheadTypeClass rc=0
+[era] _DynamicVectorClass_PAVWarheadTypeClass rc=0
+[era] _VectorClass_PAVWeaponTypeClass rc=0
+[era] _DynamicVectorClass_PAVWeaponTypeClass rc=0
+[era] AbstractClass            rc=2
+[era] AircraftClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x40d5a0   MISMATCH         _VectorClass_PAVMixFileClass::Add
+[diff] 0x40d7d0   MISMATCH         _DynamicVectorClass_PAVMixFileClass::getCursorFrame
+[diff] 0x40d8a0   MISMATCH         sub_40D8A0
+[diff] 0x40d940   MISMATCH         sub_40D940
+[diff] 0x40e320   MISMATCH         MixFileClass::Constructor
+[diff] 0x40e850   MISMATCH         _VectorClass_PAVScriptClass::Add
+[diff] 0x40e970   MISMATCH         _VectorClass_PAVScriptClass::GetSize
+[diff] 0x40ea80   MISMATCH         _DynamicVectorClass_PAVScriptClass::FindItemIndex
+[diff] 0x40ef20   MISMATCH         _VectorClass_PAVVoxelAnimClass::Add
+[diff] 0x40f040   MISMATCH         _VectorClass_PAVVoxelAnimClass::GetSize
+[diff] 0x40f150   MISMATCH         _DynamicVectorClass_PAVVoxelAnimClass::FindItemIndex
+[diff] 0x40f640   MISMATCH         _VectorClass_PAVWarheadTypeClass::Add
+[diff] 0x40f760   MISMATCH         _VectorClass_PAVWarheadTypeClass::GetSize
+[diff] 0x40f870   MISMATCH         _DynamicVectorClass_PAVWarheadTypeClass::FindItemIndex
+[diff] 0x40fc10   MISMATCH         _VectorClass_PAVWeaponTypeClass::Add
+[diff] 0x40fd30   MISMATCH         _VectorClass_PAVWeaponTypeClass::GetSize
+[diff] 0x40fe40   MISMATCH         _DynamicVectorClass_PAVWeaponTypeClass::FindItemIndex
+[diff] 0x41c190   MISMATCH         AircraftClass::PowerDrainProcess
+[ledger] 0x40d5a0 _VectorClass_PAVMixFileClass::Add -> NG (attempt 2)
+[ledger] 0x40d7d0 _DynamicVectorClass_PAVMixFileClass::getCursorFrame -> NG (attempt 2)
+[ledger] 0x40d8a0 sub_40D8A0 -> NG (attempt 2)
+[ledger] 0x40d8e0 sub_40D8E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40d940 sub_40D940 -> NG (attempt 2)
+[ledger] 0x40e320 MixFileClass::Constructor -> NG (attempt 2)
+[ledger] 0x40e850 _VectorClass_PAVScriptClass::Add -> NG (attempt 2)
+[ledger] 0x40e970 _VectorClass_PAVScriptClass::GetSize -> NG (attempt 2)
+[ledger] 0x40ea80 _DynamicVectorClass_PAVScriptClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x40ef20 _VectorClass_PAVVoxelAnimClass::Add -> NG (attempt 2)
+[ledger] 0x40f040 _VectorClass_PAVVoxelAnimClass::GetSize -> NG (attempt 2)
+[ledger] 0x40f150 _DynamicVectorClass_PAVVoxelAnimClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x40f640 _VectorClass_PAVWarheadTypeClass::Add -> NG (attempt 2)
+[ledger] 0x40f760 _VectorClass_PAVWarheadTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x40f870 _DynamicVectorClass_PAVWarheadTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x40fc10 _VectorClass_PAVWeaponTypeClass::Add -> NG (attempt 2)
+[ledger] 0x40fd30 _VectorClass_PAVWeaponTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x40fe40 _DynamicVectorClass_PAVWeaponTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x417fd0 AbstractClass::GetField9 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41c190 AircraftClass::PowerDrainProcess -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "branch_polarity": 5,
+  "codegen_shape": 11,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p01\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x40E320",
+ "name": "GenericNode::Constructor",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40E320",
+ "bytes_hex": "8bc133c9894804894808c7000c1b7e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x41C190",
+ "name": "AircraftClass::PowerDrainProcess",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41C190",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d60967e0089088b1564967e008950048b0d68967e008948088b156c967e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
