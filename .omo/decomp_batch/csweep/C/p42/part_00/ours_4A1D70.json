@@ -1,0 +1,15 @@
+{
+ "symbol": "?Add_float@Checksummer@@QAEHH@Z",
+ "sym_key": "Checksummer::Add_float",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8d4424046a0450e800000000c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  }
+ ]
+}

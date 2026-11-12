@@ -1,0 +1,15 @@
+{
+ "symbol": "?BlitWhole@DSurface@@QAGHHH@Z",
+ "sym_key": "DSurface::BlitWhole",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24088b54240450518b4c241452e800000000c20c00",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?BlitWhole@XSurface@@QAEHPAXHH@Z",
+   "sym_key": "XSurface::BlitWhole"
+  }
+ ]
+}

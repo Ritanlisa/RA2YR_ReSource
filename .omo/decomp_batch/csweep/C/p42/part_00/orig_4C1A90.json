@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C1A90",
+ "name": "DSurface::BlitWhole",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C1A90",
+ "bytes_hex": "8b44240c8b542408508b4424085250e84ca02f00c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

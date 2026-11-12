@@ -1,0 +1,15 @@
+{
+ "symbol": "?TimerProcess@Power@@QAGHH@Z",
+ "sym_key": "Power::TimerProcess",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "6a048d4c240ce800000000c20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p42\part_00
+=== convert (20 addrs) ===
+[conv] 0x4369c0 BuildingLightClass::SD_vt06 -> BuildingLightClass
+[conv] 0x438bd0 BombClass::Seek -> BombClass
+[conv] 0x4a1d50 Power::TimerProcess -> Power
+[conv] 0x4a1d70 Checksummer::Add_float -> Checksummer
+[conv] 0x4a7c10 DiskLaserClass::Seek -> DiskLaserClass
+[conv] 0x4c1a90 DSurface::BlitWhole -> DSurface
+[conv] 0x4e4f30 sub_4E4F30 -> _addr_4E
+[conv] 0x521b00 InfantryClass::SaveLoad_Prefix -> InfantryClass
+[conv] 0x535c70 CreateTeamCommand::ddtor -> CreateTeamCommand
+[conv] 0x535d30 SetStructureTabCommandClass::performAction_3 -> SetStructureTabCommandClass
+[conv] 0x535d50 SetStructureTabCommandClass::performAction_4 -> SetStructureTabCommandClass
+[conv] 0x535d70 SetStructureTabCommandClass::performAction_5 -> SetStructureTabCommandClass
+[conv] 0x535e10 SetDefenseTabCommandClass::performAction_9 -> SetDefenseTabCommandClass
+[conv] 0x535e30 SetDefenseTabCommandClass::performAction_10 -> SetDefenseTabCommandClass
+[conv] 0x535eb0 SetInfantryTabCommandClass::performAction_13 -> SetInfantryTabCommandClass
+[conv] 0x535ed0 SetInfantryTabCommandClass::performAction_14 -> SetInfantryTabCommandClass
+[conv] 0x535ef0 SetInfantryTabCommandClass::performAction_15 -> SetInfantryTabCommandClass
+[conv] 0x535f40 SetUnitTabCommandClass::performAction_18 -> SetUnitTabCommandClass
+[conv] 0x535f60 SetUnitTabCommandClass::performAction_19 -> SetUnitTabCommandClass
+[conv] 0x535f80 SetUnitTabCommandClass::performAction_20 -> SetUnitTabCommandClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingLightClass       rc=0
+[era] BombClass                rc=0
+[era] Power                    rc=0
+[era] Checksummer              rc=0
+[era] DiskLaserClass           rc=0
+[era] DSurface                 rc=0
+[era] _addr_4E                 rc=0
+[era] InfantryClass            rc=2
+[era] CreateTeamCommand        rc=0
+[era] SetStructureTabCommandClass rc=0
+[era] SetDefenseTabCommandClass rc=0
+[era] SetInfantryTabCommandClass rc=0
+[era] SetUnitTabCommandClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x4369c0   MISMATCH         BuildingLightClass::SD_vt06
+[diff] 0x438bd0   MISMATCH         BombClass::Seek
+[diff] 0x4a1d50   MISMATCH         Power::TimerProcess
+[diff] 0x4a1d70   MISMATCH         Checksummer::Add_float
+[diff] 0x4a7c10   MISMATCH         DiskLaserClass::Seek
+[diff] 0x4c1a90   MISMATCH         DSurface::BlitWhole
+[diff] 0x4e4f30   MISMATCH         sub_4E4F30
+[diff] 0x535c70   MISMATCH         CreateTeamCommand::ddtor
+[diff] 0x535d30   MISMATCH         SetStructureTabCommandClass::performAction_3
+[diff] 0x535d50   MISMATCH         SetStructureTabCommandClass::performAction_4
+[diff] 0x535d70   MISMATCH         SetStructureTabCommandClass::performAction_5
+[diff] 0x535e10   MISMATCH         SetDefenseTabCommandClass::performAction_9
+[diff] 0x535e30   MISMATCH         SetDefenseTabCommandClass::performAction_10
+[diff] 0x535eb0   MISMATCH         SetInfantryTabCommandClass::performAction_13
+[diff] 0x535ed0   MISMATCH         SetInfantryTabCommandClass::performAction_14
+[diff] 0x535ef0   MISMATCH         SetInfantryTabCommandClass::performAction_15
+[diff] 0x535f40   MISMATCH         SetUnitTabCommandClass::performAction_18
+[diff] 0x535f60   MISMATCH         SetUnitTabCommandClass::performAction_19
+[diff] 0x535f80   MISMATCH         SetUnitTabCommandClass::performAction_20
+[ledger] 0x4369c0 BuildingLightClass::SD_vt06 -> NG (attempt 1)
+[ledger] 0x438bd0 BombClass::Seek -> NG (attempt 1)
+[ledger] 0x4a1d50 Power::TimerProcess -> NG (attempt 1)
+[ledger] 0x4a1d70 Checksummer::Add_float -> NG (attempt 1)
+[ledger] 0x4a7c10 DiskLaserClass::Seek -> NG (attempt 1)
+[ledger] 0x4c1a90 DSurface::BlitWhole -> NG (attempt 1)
+[ledger] 0x4e4f30 sub_4E4F30 -> NG (attempt 1)
+[ledger] 0x521b00 InfantryClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x535c70 CreateTeamCommand::ddtor -> NG (attempt 1)
+[ledger] 0x535d30 SetStructureTabCommandClass::performAction_3 -> NG (attempt 1)
+[ledger] 0x535d50 SetStructureTabCommandClass::performAction_4 -> NG (attempt 1)
+[ledger] 0x535d70 SetStructureTabCommandClass::performAction_5 -> NG (attempt 1)
+[ledger] 0x535e10 SetDefenseTabCommandClass::performAction_9 -> NG (attempt 1)
+[ledger] 0x535e30 SetDefenseTabCommandClass::performAction_10 -> NG (attempt 1)
+[ledger] 0x535eb0 SetInfantryTabCommandClass::performAction_13 -> NG (attempt 1)
+[ledger] 0x535ed0 SetInfantryTabCommandClass::performAction_14 -> NG (attempt 1)
+[ledger] 0x535ef0 SetInfantryTabCommandClass::performAction_15 -> NG (attempt 1)
+[ledger] 0x535f40 SetUnitTabCommandClass::performAction_18 -> NG (attempt 1)
+[ledger] 0x535f60 SetUnitTabCommandClass::performAction_19 -> NG (attempt 1)
+[ledger] 0x535f80 SetUnitTabCommandClass::performAction_20 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "codegen_shape": 8,
+  "regalloc": 3,
+  "extern_reloc": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p42\batch_report.json
