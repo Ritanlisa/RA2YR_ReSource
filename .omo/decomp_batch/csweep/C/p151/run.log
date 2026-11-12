@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p151\part_00
+=== convert (20 addrs) ===
+[conv] 0x55ae90 sub_55AE90 -> _addr_55
+[conv] 0x55cb40 sub_55CB40 -> _addr_55
+[conv] 0x55f8c0 sub_55F8C0 -> _addr_55
+[conv] 0x561850 sub_561850 -> _addr_56
+[conv] 0x58b480 sub_58B480 -> _addr_58
+[conv] 0x58b670 sub_58B670 -> _addr_58
+[conv] 0x5adc60 sub_5ADC60 -> _addr_5A
+[conv] 0x5afe20 sub_5AFE20 -> _addr_5A
+[conv] 0x5b1ce0 sub_5B1CE0 -> _addr_5B
+[conv] 0x5b2040 sub_5B2040 -> _addr_5B
+[conv] 0x5b2cd0 sub_5B2CD0 -> _addr_5B
+[conv] 0x5b4900 sub_5B4900 -> _addr_5B
+[conv] 0x5b7730 sub_5B7730 -> _addr_5B
+[conv] 0x5bc0d0 sub_5BC0D0 -> _addr_5B
+[conv] 0x5bec10 sub_5BEC10 -> _addr_5B
+[conv] 0x5bf720 sub_5BF720 -> _addr_5B
+[conv] 0x5c1230 sub_5C1230 -> _addr_5C
+[conv] 0x5c5c30 sub_5C5C30 -> _addr_5C
+[conv] 0x5c5fd0 sub_5C5FD0 -> _addr_5C
+[conv] 0x5c9330 sub_5C9330 -> _addr_5C
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_55                 rc=0
+[era] _addr_56                 rc=0
+[era] _addr_58                 rc=0
+[era] _addr_5A                 rc=0
+[era] _addr_5B                 rc=0
+[era] _addr_5C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x55ae90   MISMATCH         sub_55AE90
+[diff] 0x55cb40   MISMATCH         sub_55CB40
+[diff] 0x55f8c0   MISMATCH         sub_55F8C0
+[diff] 0x561850   MISMATCH         sub_561850
+[diff] 0x58b480   MISMATCH         sub_58B480
+[diff] 0x58b670   MISMATCH         sub_58B670
+[diff] 0x5adc60   MISMATCH         sub_5ADC60
+[diff] 0x5afe20   MISMATCH         sub_5AFE20
+[diff] 0x5b1ce0   MISMATCH         sub_5B1CE0
+[diff] 0x5b2040   MISMATCH         sub_5B2040
+[diff] 0x5b2cd0   MISMATCH         sub_5B2CD0
+[diff] 0x5b4900   MISMATCH         sub_5B4900
+[diff] 0x5b7730   MISMATCH         sub_5B7730
+[diff] 0x5bc0d0   MISMATCH         sub_5BC0D0
+[diff] 0x5bec10   MISMATCH         sub_5BEC10
+[diff] 0x5bf720   MISMATCH         sub_5BF720
+[diff] 0x5c1230   MISMATCH         sub_5C1230
+[diff] 0x5c5c30   MISMATCH         sub_5C5C30
+[diff] 0x5c5fd0   MISMATCH         sub_5C5FD0
+[diff] 0x5c9330   MISMATCH         sub_5C9330
+[ledger] 0x55ae90 sub_55AE90 -> NG (attempt 1)
+[ledger] 0x55cb40 sub_55CB40 -> NG (attempt 1)
+[ledger] 0x55f8c0 sub_55F8C0 -> NG (attempt 1)
+[ledger] 0x561850 sub_561850 -> NG (attempt 1)
+[ledger] 0x58b480 sub_58B480 -> NG (attempt 1)
+[ledger] 0x58b670 sub_58B670 -> NG (attempt 1)
+[ledger] 0x5adc60 sub_5ADC60 -> NG (attempt 1)
+[ledger] 0x5afe20 sub_5AFE20 -> NG (attempt 1)
+[ledger] 0x5b1ce0 sub_5B1CE0 -> NG (attempt 1)
+[ledger] 0x5b2040 sub_5B2040 -> NG (attempt 1)
+[ledger] 0x5b2cd0 sub_5B2CD0 -> NG (attempt 1)
+[ledger] 0x5b4900 sub_5B4900 -> NG (attempt 1)
+[ledger] 0x5b7730 sub_5B7730 -> NG (attempt 1)
+[ledger] 0x5bc0d0 sub_5BC0D0 -> NG (attempt 1)
+[ledger] 0x5bec10 sub_5BEC10 -> NG (attempt 1)
+[ledger] 0x5bf720 sub_5BF720 -> NG (attempt 1)
+[ledger] 0x5c1230 sub_5C1230 -> NG (attempt 1)
+[ledger] 0x5c5c30 sub_5C5C30 -> NG (attempt 1)
+[ledger] 0x5c5fd0 sub_5C5FD0 -> NG (attempt 1)
+[ledger] 0x5c9330 sub_5C9330 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p151\batch_report.json
