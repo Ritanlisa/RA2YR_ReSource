@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D1200",
+ "name": "MSPCXAnim_42::AddRef",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D1200",
+ "bytes_hex": "53568b7108578b7c24103b7708752733d285f67e198b41048b4f042bc88b388b1c013bfb75104283c0043bd67cef5f5eb0015bc204005f5e32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

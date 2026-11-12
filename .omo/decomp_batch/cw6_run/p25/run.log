@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> MultiplayerSiegeDefenderTeam
+[conv] 0x5cb6c0 VtableStub::_5CB6C0 -> VtableStub
+[conv] 0x5d07f0 _VectorClass_VPoint2D::Get -> _VectorClass_VPoint2D
+[conv] 0x5d0950 _VectorClass_VPoint2D::GetSize -> _VectorClass_VPoint2D
+[conv] 0x5d0aa0 _DynamicVectorClass_VPoint2D::FindIndex_Pair -> _DynamicVectorClass_VPoint2D
+[conv] 0x5d0ae0 _VectorClass_PAVMSTextEntry::Add -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d0c00 _VectorClass_PAVMSTextEntry::GetSize -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d0d10 _DynamicVectorClass_PAVMSTextEntry::FindIndex -> _DynamicVectorClass_PAVMSTextEntry
+[conv] 0x5d0e60 _VectorClass_PAVMapSelection::GetSize -> _VectorClass_PAVMapSelection
+[conv] 0x5d0f70 _DynamicVectorClass_PAVMapSelection::FindIndex_0 -> _DynamicVectorClass_PAVMapSelection
+[conv] 0x5d0fa0 _VectorClass_PAVMapStage::AddRef -> _VectorClass_PAVMapStage
+[conv] 0x5d10c0 _VectorClass_PAVMapStage::FindIndex -> _VectorClass_PAVMapStage
+[conv] 0x5d11d0 _DynamicVectorClass_PAVMapStage::Load -> _DynamicVectorClass_PAVMapStage
+[conv] 0x5d1200 _VectorClass_PAVMSAnimEntry::AddRef -> _VectorClass_PAVMSAnimEntry
+[conv] 0x5d1430 _DynamicVectorClass_PAVMSAnimEntry::FindIndex_0 -> _DynamicVectorClass_PAVMSAnimEntry
+[conv] 0x5d1460 _VectorClass_PAVMSSfxEntry::Add -> _VectorClass_PAVMSSfxEntry
+[conv] 0x5d1580 _VectorClass_PAVMSSfxEntry::GetSize -> _VectorClass_PAVMSSfxEntry
+[conv] 0x5d1690 _DynamicVectorClass_PAVMSSfxEntry::FindIndex_1 -> _DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x5d27e0 _VectorClass_PAVMSAnim::FindItemIndex -> _VectorClass_PAVMSAnim
+[conv] 0x5d2900 _VectorClass_PAVMSAnim::Read -> _VectorClass_PAVMSAnim
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerSiegeDefenderTeam rc=2
+[era] VtableStub               rc=0
+[era] _VectorClass_VPoint2D    rc=0
+[era] _DynamicVectorClass_VPoint2D rc=0
+[era] _VectorClass_PAVMSTextEntry rc=0
+[era] _DynamicVectorClass_PAVMSTextEntry rc=0
+[era] _VectorClass_PAVMapSelection rc=0
+[era] _DynamicVectorClass_PAVMapSelection rc=0
+[era] _VectorClass_PAVMapStage rc=0
+[era] _DynamicVectorClass_PAVMapStage rc=0
+[era] _VectorClass_PAVMSAnimEntry rc=0
+[era] _DynamicVectorClass_PAVMSAnimEntry rc=0
+[era] _VectorClass_PAVMSSfxEntry rc=0
+[era] _DynamicVectorClass_PAVMSSfxEntry rc=0
+[era] _VectorClass_PAVMSAnim   rc=0
+=== diffasm byte-compare ===
+[diff] 0x5cb6c0   MISMATCH         VtableStub::_5CB6C0
+[diff] 0x5d07f0   MISMATCH         _VectorClass_VPoint2D::Get
+[diff] 0x5d0950   MISMATCH         _VectorClass_VPoint2D::GetSize
+[diff] 0x5d0aa0   MISMATCH         _DynamicVectorClass_VPoint2D::FindIndex_Pair
+[diff] 0x5d0ae0   MISMATCH         _VectorClass_PAVMSTextEntry::Add
+[diff] 0x5d0c00   MISMATCH         _VectorClass_PAVMSTextEntry::GetSize
+[diff] 0x5d0d10   MISMATCH         _DynamicVectorClass_PAVMSTextEntry::FindIndex
+[diff] 0x5d0e60   MISMATCH         _VectorClass_PAVMapSelection::GetSize
+[diff] 0x5d0f70   MISMATCH         _DynamicVectorClass_PAVMapSelection::FindIndex_0
+[diff] 0x5d0fa0   MISMATCH         _VectorClass_PAVMapStage::AddRef
+[diff] 0x5d10c0   MISMATCH         _VectorClass_PAVMapStage::FindIndex
+[diff] 0x5d11d0   MISMATCH         _DynamicVectorClass_PAVMapStage::Load
+[diff] 0x5d1200   MISMATCH         _VectorClass_PAVMSAnimEntry::AddRef
+[diff] 0x5d1430   MISMATCH         _DynamicVectorClass_PAVMSAnimEntry::FindIndex_0
+[diff] 0x5d1460   MISMATCH         _VectorClass_PAVMSSfxEntry::Add
+[diff] 0x5d1580   MISMATCH         _VectorClass_PAVMSSfxEntry::GetSize
+[diff] 0x5d1690   MISMATCH         _DynamicVectorClass_PAVMSSfxEntry::FindIndex_1
+[diff] 0x5d27e0   MISMATCH         _VectorClass_PAVMSAnim::FindItemIndex
+[diff] 0x5d2900   MISMATCH         _VectorClass_PAVMSAnim::Read
+[ledger] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cb6c0 VtableStub::_5CB6C0 -> NG (attempt 6)
+[ledger] 0x5d07f0 _VectorClass_VPoint2D::Get -> NG (attempt 2)
+[ledger] 0x5d0950 _VectorClass_VPoint2D::GetSize -> NG (attempt 2)
+[ledger] 0x5d0aa0 _DynamicVectorClass_VPoint2D::FindIndex_Pair -> NG (attempt 2)
+[ledger] 0x5d0ae0 _VectorClass_PAVMSTextEntry::Add -> NG (attempt 2)
+[ledger] 0x5d0c00 _VectorClass_PAVMSTextEntry::GetSize -> NG (attempt 2)
+[ledger] 0x5d0d10 _DynamicVectorClass_PAVMSTextEntry::FindIndex -> NG (attempt 2)
+[ledger] 0x5d0e60 _VectorClass_PAVMapSelection::GetSize -> NG (attempt 2)
+[ledger] 0x5d0f70 _DynamicVectorClass_PAVMapSelection::FindIndex_0 -> NG (attempt 2)
+[ledger] 0x5d0fa0 _VectorClass_PAVMapStage::AddRef -> NG (attempt 2)
+[ledger] 0x5d10c0 _VectorClass_PAVMapStage::FindIndex -> NG (attempt 2)
+[ledger] 0x5d11d0 _DynamicVectorClass_PAVMapStage::Load -> NG (attempt 2)
+[ledger] 0x5d1200 _VectorClass_PAVMSAnimEntry::AddRef -> NG (attempt 2)
+[ledger] 0x5d1430 _DynamicVectorClass_PAVMSAnimEntry::FindIndex_0 -> NG (attempt 2)
+[ledger] 0x5d1460 _VectorClass_PAVMSSfxEntry::Add -> NG (attempt 2)
+[ledger] 0x5d1580 _VectorClass_PAVMSSfxEntry::GetSize -> NG (attempt 2)
+[ledger] 0x5d1690 _DynamicVectorClass_PAVMSSfxEntry::FindIndex_1 -> NG (attempt 2)
+[ledger] 0x5d27e0 _VectorClass_PAVMSAnim::FindItemIndex -> NG (attempt 2)
+[ledger] 0x5d2900 _VectorClass_PAVMSAnim::Read -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 19
+ },
+ "pathologies": {
+  "width_mismatch": 1,
+  "codegen_shape": 11,
+  "branch_order": 2,
+  "branch_polarity": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p25\batch_report.json
