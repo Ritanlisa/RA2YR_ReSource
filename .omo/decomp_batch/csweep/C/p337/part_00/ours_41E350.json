@@ -1,0 +1,69 @@
+{
+ "symbol": "?Construct2@AnimTypeClass@@QAEPAIPAD@Z",
+ "sym_key": "AnimTypeClass::Construct2",
+ "size": 274,
+ "link_base": 0,
+ "bytes_hex": "8b44240456578bf150e80000000083c8ff33d28986980000008986a8000000b80000f03fb9080000008986bc0000008986c40000008986cc000000b0018886d20000008886d400000033c08dbee40000008996b80000008996c00000008996c800000089969c0000008996a00000008896a40000008996ac0000008996b00000008896d00000008896d10000008996d80000008996dc0000008996e0000000899604010000899608010000891689560489560889560cf3aba1000000008b0d000000003bc8722c38150000000075043bc275388b0d000000003bca762e03c852518b0d000000006800000000ff510884c074188b0d000000008b15000000008bc141890d000000008934828bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::Constructor"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B208@@3IA",
+   "sym_key": "DataGlobal_A8B208"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B20D@@3EA",
+   "sym_key": "DataGlobal_A8B20D"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B214@@3IA",
+   "sym_key": "DataGlobal_A8B214"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?AITriggerTypeClass_Array@@3IA",
+   "sym_key": "AITriggerTypeClass_Array"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?AITriggerTypeClass_Array@@3IA",
+   "sym_key": "AITriggerTypeClass_Array"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B204@@3IA",
+   "sym_key": "DataGlobal_A8B204"
+  },
+  {
+   "off": 260,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  }
+ ]
+}

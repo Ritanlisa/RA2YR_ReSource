@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetPosition@TacticalClass@@QAEHPAHH@Z",
+ "sym_key": "TacticalClass::SetPosition",
+ "size": 251,
+ "link_base": 0,
+ "bytes_hex": "8b44240853558b6c240c568bf157c786dc000000000000008b0c8500000000898ed80000008b7d008b4d048b6d088d047f896c2418db4424188d0480c1e00299dc0d000000002bc28bd88d0449d1fb8d0480c1e002992bc2d1f82bd88bc39981e2ff00000003c28bd88d047fc1fb088d0480d1e0992bc28bf88d0449d1ff8d0480d1e0992bc2d1f803c79981e2ff00000003c233d28bf8c1ff0881fdd80200000f9dc28954241883ec08db442420dec1dc0500000000dd1c24e8000000008b4c242083c40833c1899ed000000025ff00000033c88b86640d00002bf98b8e680d000089bed40000008986c8000000898ecc0000005f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8428EC@@3PAIA",
+   "sym_key": "DataGlobal_8428EC"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD48@@3NA",
+   "sym_key": "DataGlobal_B0CD48"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

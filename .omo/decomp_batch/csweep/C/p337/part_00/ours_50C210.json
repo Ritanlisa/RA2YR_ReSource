@@ -1,0 +1,57 @@
+{
+ "symbol": "?SetPrimaryTechBuilding@HouseClass@@QAEXXZ",
+ "sym_key": "HouseClass::SetPrimaryTechBuilding",
+ "size": 225,
+ "link_base": 0,
+ "bytes_hex": "51538bd955568b43785748894424100f88c60000008b0d400200008b536c8bb1bc0800008d2c828b550033c985f67e2fa1400200008bba200500008b80b00800003938740c4183c0043bce7d0e393875f48a828100000084c074108b4424104889442410787583ed04ebbc85d2746c33c98a83ec0100008a8aa10000008b54241080e2000bca8bf189b3905400008b0d0000000085c9740d84c075098b4c2410e8000000008b831457000085c0751d8b3d000000008bcbc7050000000000000000e800000000893d000000008b830857000089700489b3505700005f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?CanDetect@HouseClass@@QAEDXZ",
+   "sym_key": "HouseClass::CanDetect"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?GenerateAIBuildListEnsureSanity@HouseClass@@QAEXXZ",
+   "sym_key": "HouseClass::GenerateAIBuildListEnsureSanity"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  }
+ ]
+}

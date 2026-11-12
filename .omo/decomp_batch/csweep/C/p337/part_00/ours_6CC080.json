@@ -1,0 +1,105 @@
+{
+ "symbol": "?AnnounceReady@SuperClass@@QAEDD@Z",
+ "sym_key": "SuperClass::AnnounceReady",
+ "size": 272,
+ "link_base": 0,
+ "bytes_hex": "51568bf18a466d84c00f84fc000000578b7e2483ffff897c2408c6466f01750d8b46288bb8b0000000897c2408db44240883ec08dd1c24e80000000083c4082bf87504c6466f01837e30ff75098b0d00000000894e308b4424108b15000000008946348a442410897e3889563084c05f747c8b4e288b81b400000083f80b776eff2485000000006affb900000000eb596affb900000000eb508b0d000000006affeb4633c96aff8a0d00000000eb3a6affb900000000eb316affb900000000eb286affb900000000eb1f33c96aff8a0d00000000eb136affb900000000eb0a33c96aff8a0d00000000e8000000008b15000000008b46288956748a80e500000084c07407c7467c010000005e59c20400",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "$L1932",
+   "sym_key": "$L1932"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?aEvaNuclearmiss@@3PADA",
+   "sym_key": "aEvaNuclearmiss"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?aEvaIroncurtain@@3PADA",
+   "sym_key": "aEvaIroncurtain"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?aEvaLightningst@@3HA",
+   "sym_key": "aEvaLightningst"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_ChronosphereReady@@3EA",
+   "sym_key": "g_Str_EVA_ChronosphereReady"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?aEvaReinforceme@@3PADA",
+   "sym_key": "aEvaReinforceme"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?aEvaPsychicdomi@@3PADA",
+   "sym_key": "aEvaPsychicdomi"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?aEvaSpyplanerea@@3PADA",
+   "sym_key": "aEvaSpyplanerea"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_GeneticMutatorReady@@3EA",
+   "sym_key": "g_Str_EVA_GeneticMutatorReady"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?aEvaForceshield@@3PADA",
+   "sym_key": "aEvaForceshield"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_PsychicRevealReady@@3EA",
+   "sym_key": "g_Str_EVA_PsychicRevealReady"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?FindAndPlay@VoxClass@@QAEXH@Z",
+   "sym_key": "VoxClass::FindAndPlay"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

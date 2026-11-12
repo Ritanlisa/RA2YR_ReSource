@@ -335,3 +335,4 @@
 {"layer": "C", "part": 334, "n": 20, "seconds": 67.4, "ok": true, "verdicts": {"COMPILE_FAIL": 14, "MISMATCH": 6}}
 {"layer": "C", "part": 335, "n": 20, "seconds": 64.1, "ok": true, "verdicts": {"COMPILE_FAIL": 6, "MISMATCH": 14}}
 {"layer": "C", "part": 336, "n": 20, "seconds": 62.3, "ok": true, "verdicts": {"MISMATCH": 13, "COMPILE_FAIL": 7}}
+{"layer": "C", "part": 337, "n": 20, "seconds": 64.4, "ok": true, "verdicts": {"MISMATCH": 15, "COMPILE_FAIL": 5}}

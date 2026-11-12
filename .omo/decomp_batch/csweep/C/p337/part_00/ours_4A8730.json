@@ -1,0 +1,33 @@
+{
+ "symbol": "?RenderSpySatellite@RadarClass@@QAEPAV1@XZ",
+ "sym_key": "RadarClass::RenderSpySatellite",
+ "size": 134,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000033c0668986980200008986b82c00008986bc2c00008986941100008986282d00008986782d000089867c2d00008986802d00008986842d00008986882d00008986e82d00008986ec2d00008986f02d00008986f42d00008986f82d00008986fc2d00008986980200008906a300000000a36c000000a3880000008bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?RenderMapPreview@RadarClass@@QAEPAV1@XZ",
+   "sym_key": "RadarClass::RenderMapPreview"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A072C@@3IA",
+   "sym_key": "DataGlobal_8A072C"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?stru_8A0390@@3PADA",
+   "sym_key": "stru_8A0390"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?stru_8A0390@@3PADA",
+   "sym_key": "stru_8A0390"
+  }
+ ]
+}

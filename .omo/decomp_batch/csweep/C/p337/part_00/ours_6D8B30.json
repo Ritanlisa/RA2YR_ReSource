@@ -1,0 +1,69 @@
+{
+ "symbol": "?CalcViewportCells@TacticalClass@@QAEIXZ",
+ "sym_key": "TacticalClass::CalcViewportCells",
+ "size": 315,
+ "link_base": 0,
+ "bytes_hex": "83ec14568bf1578b86640d00008bbe680d00008986b000000089beb40000008b0d00000000d1e92bc18986b000000083c0c489442410d9442410e80000000050e8000000008b15000000008944240cdb44240cd1ea2bfa8b96e40d0000d95c240c83c40489beb40000008d44240883c7e2508d4c2414897c2418e8000000008b0883ec08894c24108b5004d944241089542414dd1c24e800000000d94424148bf88b442414dd1c2433f881e7ff00000033f8e8000000008b4c241483c40833c125ff0000006a0033c88bc79981e2ff000000688988888803c26a00c1f8088986800d00008bc19981e2ff00000003c2c1f8088986840d0000b889888888f72500000000c1ea0583c2028996880d00008b3d0000000057e800000000b8898888888bcaf7e7c1e91fc1ea0383c2045f89968c0d00008bc15e83c414c3",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE30@@3IA",
+   "sym_key": "DataGlobal_B0CE30"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE34@@3IA",
+   "sym_key": "DataGlobal_B0CE34"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?TransformMatrix3x4Point@@YIPAMPAX00@Z",
+   "sym_key": "TransformMatrix3x4Point"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE30@@3IA",
+   "sym_key": "DataGlobal_B0CE30"
+  },
+  {
+   "off": 273,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE34@@3IA",
+   "sym_key": "DataGlobal_B0CE34"
+  },
+  {
+   "off": 279,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  }
+ ]
+}

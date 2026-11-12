@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p337\part_00
+=== convert (20 addrs) ===
+[conv] 0x58ae60 RadarClass::RenderJammerRadius -> RadarClass
+[conv] 0x44abd0 BuildingClass::FireLaser -> BuildingClass
+[conv] 0x7c1e10 Audio_Helper_7C1E10 -> Audio_Helper
+[conv] 0x590fd0 RandomMap::CheckNeighborhoodCompatibility -> RandomMap
+[conv] 0x4a8730 RadarClass::RenderSpySatellite -> RadarClass
+[conv] 0x6d2420 TacticalClass::SetPosition -> TacticalClass
+[conv] 0x7835c0 sub_7835C0 -> _addr_78
+[conv] 0x7836e0 sub_7836E0 -> _addr_78
+[conv] 0x57c990 globalHelper_07C990 -> _addr_57
+[conv] 0x48abc0 globalHelper_08ABC0 -> _addr_48
+[conv] 0x42fe50 DecodeBitmapRGB -> _addr_42
+[conv] 0x6d8b30 TacticalClass::CalcViewportCells -> TacticalClass
+[conv] 0x6cc080 SuperClass::AnnounceReady -> SuperClass
+[conv] 0x5051e0 HouseClass::FirstBuildableFromArray -> HouseClass
+[conv] 0x50c210 HouseClass::SetPrimaryTechBuilding -> HouseClass
+[conv] 0x420140 CreateFractalNoise -> _addr_42
+[conv] 0x57daf0 globalHelper_07DAF0 -> _addr_57
+[conv] 0x57dc20 globalHelper_07DC20 -> _addr_57
+[conv] 0x4c14d0 ObjectClass::sub_4C14D0 -> ObjectClass
+[conv] 0x41e350 AnimTypeClass::Construct2 -> AnimTypeClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RadarClass               rc=2
+[era] BuildingClass            rc=2
+[era] Audio_Helper             rc=0
+[era] RandomMap                rc=2
+[era] TacticalClass            rc=0
+[era] _addr_78                 rc=2
+[era] _addr_57                 rc=0
+[era] _addr_48                 rc=0
+[era] _addr_42                 rc=0
+[era] SuperClass               rc=0
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=0
+[era] AnimTypeClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x58ae60   MISMATCH         RadarClass::RenderJammerRadius
+[diff] 0x4a8730   MISMATCH         RadarClass::RenderSpySatellite
+[diff] 0x7c1e10   MISMATCH         Audio_Helper_7C1E10
+[diff] 0x6d2420   MISMATCH         TacticalClass::SetPosition
+[diff] 0x6d8b30   MISMATCH         TacticalClass::CalcViewportCells
+[diff] 0x57c990   MISMATCH         globalHelper_07C990
+[diff] 0x57daf0   MISMATCH         globalHelper_07DAF0
+[diff] 0x57dc20   MISMATCH         globalHelper_07DC20
+[diff] 0x48abc0   MISMATCH         globalHelper_08ABC0
+[diff] 0x42fe50   MISMATCH         DecodeBitmapRGB
+[diff] 0x420140   MISMATCH         CreateFractalNoise
+[diff] 0x6cc080   MISMATCH         SuperClass::AnnounceReady
+[diff] 0x50c210   MISMATCH         HouseClass::SetPrimaryTechBuilding
+[diff] 0x4c14d0   MISMATCH         ObjectClass::sub_4C14D0
+[diff] 0x41e350   MISMATCH         AnimTypeClass::Construct2
+[ledger] 0x58ae60 RadarClass::RenderJammerRadius -> NG (attempt 1)
+[ledger] 0x44abd0 BuildingClass::FireLaser -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c1e10 Audio_Helper_7C1E10 -> NG (attempt 1)
+[ledger] 0x590fd0 RandomMap::CheckNeighborhoodCompatibility -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a8730 RadarClass::RenderSpySatellite -> NG (attempt 1)
+[ledger] 0x6d2420 TacticalClass::SetPosition -> NG (attempt 1)
+[ledger] 0x7835c0 sub_7835C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7836e0 sub_7836E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57c990 globalHelper_07C990 -> NG (attempt 1)
+[ledger] 0x48abc0 globalHelper_08ABC0 -> NG (attempt 1)
+[ledger] 0x42fe50 DecodeBitmapRGB -> NG (attempt 1)
+[ledger] 0x6d8b30 TacticalClass::CalcViewportCells -> NG (attempt 1)
+[ledger] 0x6cc080 SuperClass::AnnounceReady -> NG (attempt 1)
+[ledger] 0x5051e0 HouseClass::FirstBuildableFromArray -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50c210 HouseClass::SetPrimaryTechBuilding -> NG (attempt 1)
+[ledger] 0x420140 CreateFractalNoise -> NG (attempt 1)
+[ledger] 0x57daf0 globalHelper_07DAF0 -> NG (attempt 1)
+[ledger] 0x57dc20 globalHelper_07DC20 -> NG (attempt 1)
+[ledger] 0x4c14d0 ObjectClass::sub_4C14D0 -> NG (attempt 1)
+[ledger] 0x41e350 AnimTypeClass::Construct2 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 5,
+  "frame_sched": 5,
+  "eval_order": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p337\batch_report.json
