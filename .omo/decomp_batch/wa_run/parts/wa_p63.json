@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x58b180",
+  "family": "D_RELOC",
+  "name": "sub_58B180"
+ },
+ {
+  "addr": "0x58b300",
+  "family": "D_RELOC",
+  "name": "sub_58B300"
+ },
+ {
+  "addr": "0x58b390",
+  "family": "D_RELOC",
+  "name": "sub_58B390"
+ },
+ {
+  "addr": "0x58b510",
+  "family": "D_RELOC",
+  "name": "sub_58B510"
+ },
+ {
+  "addr": "0x58b580",
+  "family": "D_RELOC",
+  "name": "sub_58B580"
+ },
+ {
+  "addr": "0x58b700",
+  "family": "D_RELOC",
+  "name": "sub_58B700"
+ },
+ {
+  "addr": "0x58bc20",
+  "family": "D_RELOC",
+  "name": "SynchronizeMultiplayerGameStart_Start"
+ },
+ {
+  "addr": "0x5adb70",
+  "family": "D_RELOC",
+  "name": "sub_5ADB70"
+ },
+ {
+  "addr": "0x5adcf0",
+  "family": "D_RELOC",
+  "name": "sub_5ADCF0"
+ },
+ {
+  "addr": "0x5afd30",
+  "family": "D_RELOC",
+  "name": "sub_5AFD30"
+ },
+ {
+  "addr": "0x5afeb0",
+  "family": "D_RELOC",
+  "name": "sub_5AFEB0"
+ },
+ {
+  "addr": "0x5b1bf0",
+  "family": "D_RELOC",
+  "name": "sub_5B1BF0"
+ },
+ {
+  "addr": "0x5b1d70",
+  "family": "D_RELOC",
+  "name": "sub_5B1D70"
+ },
+ {
+  "addr": "0x5b1f50",
+  "family": "D_RELOC",
+  "name": "sub_5B1F50"
+ },
+ {
+  "addr": "0x5b20d0",
+  "family": "D_RELOC",
+  "name": "sub_5B20D0"
+ },
+ {
+  "addr": "0x5b2be0",
+  "family": "D_RELOC",
+  "name": "sub_5B2BE0"
+ },
+ {
+  "addr": "0x5b2d60",
+  "family": "D_RELOC",
+  "name": "sub_5B2D60"
+ },
+ {
+  "addr": "0x5b4810",
+  "family": "D_RELOC",
+  "name": "sub_5B4810"
+ },
+ {
+  "addr": "0x5b4990",
+  "family": "D_RELOC",
+  "name": "sub_5B4990"
+ },
+ {
+  "addr": "0x5b7640",
+  "family": "D_RELOC",
+  "name": "sub_5B7640"
+ }
+]

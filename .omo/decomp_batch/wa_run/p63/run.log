@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p63\part_00
+=== convert (20 addrs) ===
+[conv] 0x58b180 sub_58B180 -> _addr_58
+[conv] 0x58b300 sub_58B300 -> _addr_58
+[conv] 0x58b390 sub_58B390 -> _addr_58
+[conv] 0x58b510 sub_58B510 -> _addr_58
+[conv] 0x58b580 sub_58B580 -> _addr_58
+[conv] 0x58b700 sub_58B700 -> _addr_58
+[conv] 0x58bc20 SynchronizeMultiplayerGameStart_Start -> SynchronizeMultiplayerGameStart
+[conv] 0x5adb70 sub_5ADB70 -> _addr_5A
+[conv] 0x5adcf0 sub_5ADCF0 -> _addr_5A
+[conv] 0x5afd30 sub_5AFD30 -> _addr_5A
+[conv] 0x5afeb0 sub_5AFEB0 -> _addr_5A
+[conv] 0x5b1bf0 sub_5B1BF0 -> _addr_5B
+[conv] 0x5b1d70 sub_5B1D70 -> _addr_5B
+[conv] 0x5b1f50 sub_5B1F50 -> _addr_5B
+[conv] 0x5b20d0 sub_5B20D0 -> _addr_5B
+[conv] 0x5b2be0 sub_5B2BE0 -> _addr_5B
+[conv] 0x5b2d60 sub_5B2D60 -> _addr_5B
+[conv] 0x5b4810 sub_5B4810 -> _addr_5B
+[conv] 0x5b4990 sub_5B4990 -> _addr_5B
+[conv] 0x5b7640 sub_5B7640 -> _addr_5B
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_58                 rc=0
+[era] SynchronizeMultiplayerGameStart rc=0
+[era] _addr_5A                 rc=0
+[era] _addr_5B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x58b180   MATCH            sub_58B180
+[diff] 0x58b300   MISMATCH         sub_58B300
+[diff] 0x58b390   MATCH            sub_58B390
+[diff] 0x58b510   MISMATCH         sub_58B510
+[diff] 0x58b580   MATCH            sub_58B580
+[diff] 0x58b700   MISMATCH         sub_58B700
+[diff] 0x58bc20   MISMATCH         SynchronizeMultiplayerGameStart_Start
+[diff] 0x5adb70   MATCH            sub_5ADB70
+[diff] 0x5adcf0   MISMATCH         sub_5ADCF0
+[diff] 0x5afd30   MATCH            sub_5AFD30
+[diff] 0x5afeb0   MISMATCH         sub_5AFEB0
+[diff] 0x5b1bf0   MATCH            sub_5B1BF0
+[diff] 0x5b1d70   MISMATCH         sub_5B1D70
+[diff] 0x5b1f50   MATCH            sub_5B1F50
+[diff] 0x5b20d0   MISMATCH         sub_5B20D0
+[diff] 0x5b2be0   MATCH            sub_5B2BE0
+[diff] 0x5b2d60   MISMATCH         sub_5B2D60
+[diff] 0x5b4810   MATCH            sub_5B4810
+[diff] 0x5b4990   MISMATCH         sub_5B4990
+[diff] 0x5b7640   MATCH            sub_5B7640
+[ledger] 0x58b180 sub_58B180 -> OK (attempt 2)
+[ledger] 0x58b300 sub_58B300 -> NG (attempt 2)
+[ledger] 0x58b390 sub_58B390 -> OK (attempt 2)
+[ledger] 0x58b510 sub_58B510 -> NG (attempt 2)
+[ledger] 0x58b580 sub_58B580 -> OK (attempt 2)
+[ledger] 0x58b700 sub_58B700 -> NG (attempt 2)
+[ledger] 0x58bc20 SynchronizeMultiplayerGameStart_Start -> NG (attempt 2)
+[ledger] 0x5adb70 sub_5ADB70 -> OK (attempt 2)
+[ledger] 0x5adcf0 sub_5ADCF0 -> NG (attempt 2)
+[ledger] 0x5afd30 sub_5AFD30 -> OK (attempt 2)
+[ledger] 0x5afeb0 sub_5AFEB0 -> NG (attempt 3)
+[ledger] 0x5b1bf0 sub_5B1BF0 -> OK (attempt 2)
+[ledger] 0x5b1d70 sub_5B1D70 -> NG (attempt 2)
+[ledger] 0x5b1f50 sub_5B1F50 -> OK (attempt 2)
+[ledger] 0x5b20d0 sub_5B20D0 -> NG (attempt 2)
+[ledger] 0x5b2be0 sub_5B2BE0 -> OK (attempt 2)
+[ledger] 0x5b2d60 sub_5B2D60 -> NG (attempt 2)
+[ledger] 0x5b4810 sub_5B4810 -> OK (attempt 2)
+[ledger] 0x5b4990 sub_5B4990 -> NG (attempt 2)
+[ledger] 0x5b7640 sub_5B7640 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "extern_reloc": 10
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p63\batch_report.json
