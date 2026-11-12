@@ -314,3 +314,4 @@
 {"layer": "C", "part": 313, "n": 20, "seconds": 24.9, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"layer": "C", "part": 314, "n": 20, "seconds": 25.2, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"layer": "C", "part": 315, "n": 20, "seconds": 23.5, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"layer": "C", "part": 316, "n": 20, "seconds": 24.1, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}

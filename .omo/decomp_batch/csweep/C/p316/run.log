@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p316\part_00
+=== convert (20 addrs) ===
+[conv] 0x62b110 _VectorClass_PAVParasiteClass::Release -> _VectorClass_PAVParasiteClass
+[conv] 0x63dd80 _VectorClass_PAVPlanningMemberClass::Release -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63e350 _VectorClass_PAVPlanningNodeClass::SetCapacity -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63e690 _VectorClass_PAVEventClass::Release -> _VectorClass_PAVEventClass
+[conv] 0x63e990 _VectorClass_PAVPlanningTokenClass::Release -> _VectorClass_PAVPlanningTokenClass
+[conv] 0x65a280 _VectorClass_PAVRadBeam::Release -> _VectorClass_PAVRadBeam
+[conv] 0x65bf90 _VectorClass_PAVRadSiteClass::Release -> _VectorClass_PAVRadSiteClass
+[conv] 0x660d20 _VectorClass_PAVRadarEventClass::Release -> _VectorClass_PAVRadarEventClass
+[conv] 0x664850 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::SetCapacity -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67ab30 _VectorClass_PBVVoxelAnimTypeClass::SetCapacity -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67aeb0 _VectorClass_PBVSmudgeTypeClass::Release -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x67b230 _VectorClass_PBVTerrainTypeClass::SetCapacity -> _VectorClass_PBVTerrainTypeClass
+[conv] 0x69cd80 _VectorClass_PAVMultiMission::Release -> _VectorClass_PAVMultiMission
+[conv] 0x69cfe0 _VectorClass_PAUGlobalPacketType::Release -> _VectorClass_PAUGlobalPacketType
+[conv] 0x69d240 _VectorClass_PAVPhoneEntryClass::Release -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x6b14b0 VectorClass::getAIPriority -> VectorClass
+[conv] 0x6b1710 _VectorClass_PAVSlaveManagerClass::Release -> _VectorClass_PAVSlaveManagerClass
+[conv] 0x6b8260 VectorClass::allocatePathMemory -> VectorClass
+[conv] 0x6b8520 _VectorClass_PAVSpawnManagerClass::Release -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x6c6210 _VectorClass_K::Release -> _VectorClass_K
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVParasiteClass rc=2
+[era] _VectorClass_PAVPlanningMemberClass rc=2
+[era] _VectorClass_PAVPlanningNodeClass rc=2
+[era] _VectorClass_PAVEventClass rc=2
+[era] _VectorClass_PAVPlanningTokenClass rc=2
+[era] _VectorClass_PAVRadBeam  rc=2
+[era] _VectorClass_PAVRadSiteClass rc=2
+[era] _VectorClass_PAVRadarEventClass rc=2
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=2
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=2
+[era] _VectorClass_PBVSmudgeTypeClass rc=2
+[era] _VectorClass_PBVTerrainTypeClass rc=2
+[era] _VectorClass_PAVMultiMission rc=2
+[era] _VectorClass_PAUGlobalPacketType rc=2
+[era] _VectorClass_PAVPhoneEntryClass rc=2
+[era] VectorClass              rc=2
+[era] _VectorClass_PAVSlaveManagerClass rc=2
+[era] _VectorClass_PAVSpawnManagerClass rc=2
+[era] _VectorClass_K           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x62b110 _VectorClass_PAVParasiteClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63dd80 _VectorClass_PAVPlanningMemberClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e350 _VectorClass_PAVPlanningNodeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e690 _VectorClass_PAVEventClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e990 _VectorClass_PAVPlanningTokenClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65a280 _VectorClass_PAVRadBeam::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65bf90 _VectorClass_PAVRadSiteClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660d20 _VectorClass_PAVRadarEventClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x664850 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67ab30 _VectorClass_PBVVoxelAnimTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67aeb0 _VectorClass_PBVSmudgeTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67b230 _VectorClass_PBVTerrainTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69cd80 _VectorClass_PAVMultiMission::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69cfe0 _VectorClass_PAUGlobalPacketType::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d240 _VectorClass_PAVPhoneEntryClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b14b0 VectorClass::getAIPriority -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1710 _VectorClass_PAVSlaveManagerClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8260 VectorClass::allocatePathMemory -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8520 _VectorClass_PAVSpawnManagerClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c6210 _VectorClass_K::Release -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p316\batch_report.json
