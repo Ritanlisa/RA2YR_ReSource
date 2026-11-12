@@ -90541,6 +90541,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7c84ac": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "CreateProcessA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateProcessA",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7c84b2": {
   "attempts": 3,
   "clean": false,
@@ -90552,12 +90563,221 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c84b8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10e4]",
+  "name": "GetTempFileNameA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetTempFileNameA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c84be": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10e8]",
+  "name": "GetWindowsDirectoryA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetWindowsDirectoryA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c84c4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10ec]",
+  "name": "GetTimeFormatA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetTimeFormatA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c84ca": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10f0]",
+  "name": "GetDateFormatA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetDateFormatA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c84d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "FileTimeToSystemTime",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FileTimeToSystemTime",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c84d6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "FileTimeToLocalFileTime",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FileTimeToLocalFileTime",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c84dc": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "SystemTimeToFileTime",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SystemTimeToFileTime",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c84e2": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1100]",
+  "name": "CompareFileTime",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CompareFileTime",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c84e8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1104]",
+  "name": "CopyFileA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CopyFileA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c84ee": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1108]",
+  "name": "CreateDirectoryA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateDirectoryA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c84f4": {
   "attempts": 1,
   "first_diff": "+0 jmp dword ptr [0x7e110c]",
   "name": "MulDiv",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7c84fa": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1110]",
+  "name": "EscapeCommFunction",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "EscapeCommFunction",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8500": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1114]",
+  "name": "ClearCommBreak",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ClearCommBreak",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8506": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1118]",
+  "name": "SetCommBreak",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetCommBreak",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c850c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "ReadFile",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ReadFile",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8512": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1120]",
+  "name": "GetFileSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetFileSize",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8518": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1124]",
+  "name": "FileTimeToDosDateTime",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "FileTimeToDosDateTime",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c851e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "GetFileInformationByHandle",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GetFileInformationByHandle",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8524": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e112c]",
+  "name": "SetFileTime",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetFileTime",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c852a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "DosDateTimeToFileTime",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DosDateTimeToFileTime",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7c8536": {
   "attempts": 1,

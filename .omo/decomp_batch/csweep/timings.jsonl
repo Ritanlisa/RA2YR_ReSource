@@ -2,3 +2,4 @@
 {"layer": "C", "part": 1, "n": 20, "seconds": 19.8, "ok": true, "verdicts": {"MATCH": 6, "OBJ_EXTRACT_FAIL": 1, "MISMATCH": 10, "COMPILE_FAIL": 3}}
 {"layer": "C", "part": 2, "n": 20, "seconds": 19.0, "ok": true, "verdicts": {"MISMATCH": 16, "COMPILE_FAIL": 4}}
 {"layer": "C", "part": 3, "n": 20, "seconds": 18.4, "ok": true, "verdicts": {"MISMATCH": 14, "COMPILE_FAIL": 6}}
+{"layer": "C", "part": 4, "n": 20, "seconds": 19.3, "ok": true, "verdicts": {"COMPILE_FAIL": 7, "MISMATCH": 13}}
