@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6232B0@@YGHPAXHHH@Z",
+ "sym_key": "Unnamed::sub_6232B0",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "8b442410538b5c2410568b74240c578b7c241450538bd78bcee80000000085c0753081ff11010000752681fbc0050000751e6a0856e8000000008bf085f674108b0d000000006a1be800000000c6060133c05f5e5bc21000",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_BinkMoviePlayer@@3IA",
+   "sym_key": "g_BinkMoviePlayer"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Enqueue@EventBuffer@@QAEDF@Z",
+   "sym_key": "EventBuffer::Enqueue"
+  }
+ ]
+}

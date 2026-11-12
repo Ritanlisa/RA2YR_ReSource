@@ -1,0 +1,21 @@
+{
+ "symbol": "?CanMoveToCell@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::CanMoveToCell",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86dc02000085c0740432c05ec38b86d401000085c0740432c05ec38b86e402000085c0740432c05ec38a861804000084c074188b0656ff90bc0100008bc8e80000000085c0740432c05ec38bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?COMStub_79@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::COMStub_79"
+  }
+ ]
+}

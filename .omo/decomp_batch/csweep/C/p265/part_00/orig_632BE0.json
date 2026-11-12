@@ -1,0 +1,11 @@
+{
+ "addr": "0x632BE0",
+ "name": "Palette::ConvertIndices",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x632BE0",
+ "bytes_hex": "5153578bf9897c2408c60700e8ef35f9ff8bd8e8d835f9ff85db7e35558b6c2414568bf083c702668b066a40508bd5b9f8f7a800e8c745f9ff66890783c60283c7024b75e28b4424105e5d5f5b59c204008bc75f5b59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

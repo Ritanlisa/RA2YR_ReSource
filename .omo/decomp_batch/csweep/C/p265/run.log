@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p265\part_00
+=== convert (20 addrs) ===
+[conv] 0x738910 TechnoClass::SpawnInfantryFromBuilding -> TechnoClass
+[conv] 0x7271e0 TriggerTypeClass::GetFlags -> TriggerTypeClass
+[conv] 0x793a10 UI_Setup_793A10 -> UI_Setup
+[conv] 0x457630 BuildingClass::SWAvailable -> BuildingClass
+[conv] 0x457690 BuildingClass::SW2Available -> BuildingClass
+[conv] 0x45e520 BuildingTypeClass::loadBuildingProperty_b_545E520 -> BuildingTypeClass
+[conv] 0x6d84d0 sub_6D84D0 -> _addr_6D
+[conv] 0x75e440 WarheadTypeClass::GetDamage -> WarheadTypeClass
+[conv] 0x4746e0 ObjectTypeClass::ReadPrerequisite -> ObjectTypeClass
+[conv] 0x77d240 ObjectClass::sub_77D240 -> ObjectClass
+[conv] 0x632be0 Palette::ConvertIndices -> Palette
+[conv] 0x6232b0 sub_6232B0 -> _addr_62
+[conv] 0x6fc030 TechnoClass::CanMoveToCell -> TechnoClass
+[conv] 0x4da1d0 FootClass::CanBeControlled -> FootClass
+[conv] 0x552a40 LoadProgressMgr::GetInstance -> LoadProgressMgr
+[conv] 0x60d320 GameSetup::LookupDialogHash -> GameSetup
+[conv] 0x664240 NetworkManager::SetPlayerAddress -> NetworkManager
+[conv] 0x6aba60 ObjectClass::sub_6ABA60 -> ObjectClass
+[conv] 0x7cac66 FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> _addr_7C
+[conv] 0x6f1030 TeamTypeClass::GetTeam -> TeamTypeClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] TriggerTypeClass         rc=2
+[era] UI_Setup                 rc=0
+[era] BuildingClass            rc=2
+[era] BuildingTypeClass        rc=0
+[era] _addr_6D                 rc=0
+[era] WarheadTypeClass         rc=2
+[era] ObjectTypeClass          rc=2
+[era] ObjectClass              rc=2
+[era] Palette                  rc=0
+[era] _addr_62                 rc=0
+[era] FootClass                rc=0
+[era] LoadProgressMgr          rc=0
+[era] GameSetup                rc=2
+[era] NetworkManager           rc=2
+[era] _addr_7C                 rc=2
+[era] TeamTypeClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x738910   MISMATCH         TechnoClass::SpawnInfantryFromBuilding
+[diff] 0x6fc030   MISMATCH         TechnoClass::CanMoveToCell
+[diff] 0x793a10   MISMATCH         UI_Setup_793A10
+[diff] 0x45e520   MISMATCH         BuildingTypeClass::loadBuildingProperty_b_545E520
+[diff] 0x6d84d0   MISMATCH         sub_6D84D0
+[diff] 0x77d240   MISMATCH         ObjectClass::sub_77D240
+[diff] 0x632be0   MISMATCH         Palette::ConvertIndices
+[diff] 0x6232b0   MISMATCH         sub_6232B0
+[diff] 0x4da1d0   MISMATCH         FootClass::CanBeControlled
+[diff] 0x552a40   MISMATCH         LoadProgressMgr::GetInstance
+[diff] 0x6f1030   MISMATCH         TeamTypeClass::GetTeam
+[ledger] 0x738910 TechnoClass::SpawnInfantryFromBuilding -> NG (attempt 1)
+[ledger] 0x7271e0 TriggerTypeClass::GetFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x793a10 UI_Setup_793A10 -> NG (attempt 1)
+[ledger] 0x457630 BuildingClass::SWAvailable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x457690 BuildingClass::SW2Available -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45e520 BuildingTypeClass::loadBuildingProperty_b_545E520 -> NG (attempt 1)
+[ledger] 0x6d84d0 sub_6D84D0 -> NG (attempt 1)
+[ledger] 0x75e440 WarheadTypeClass::GetDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4746e0 ObjectTypeClass::ReadPrerequisite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77d240 ObjectClass::sub_77D240 -> NG (attempt 1)
+[ledger] 0x632be0 Palette::ConvertIndices -> NG (attempt 1)
+[ledger] 0x6232b0 sub_6232B0 -> NG (attempt 1)
+[ledger] 0x6fc030 TechnoClass::CanMoveToCell -> NG (attempt 1)
+[ledger] 0x4da1d0 FootClass::CanBeControlled -> NG (attempt 1)
+[ledger] 0x552a40 LoadProgressMgr::GetInstance -> NG (attempt 1)
+[ledger] 0x60d320 GameSetup::LookupDialogHash -> COMPILE_FAIL (attempt 1)
+[ledger] 0x664240 NetworkManager::SetPlayerAddress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6aba60 ObjectClass::sub_6ABA60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cac66 FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f1030 TeamTypeClass::GetTeam -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "regalloc": 2,
+  "codegen_shape": 3,
+  "branch_polarity": 2,
+  "ret_norm": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p265\batch_report.json

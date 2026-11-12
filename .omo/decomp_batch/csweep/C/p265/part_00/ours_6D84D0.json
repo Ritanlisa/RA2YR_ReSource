@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_6D84D0@@YGPAHPAH0@Z",
+ "sym_key": "Unnamed::sub_6D84D0",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "568b74240c8d4c240c578b068b7e045189442414e80000000084c0741ba00000000084c075128b44240c8b5424108978045f89105ec208008b44240c8b0e5f89088b56048950045ec20800",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?ClampCoordMap@@YGDPAX@Z",
+   "sym_key": "ClampCoordMap"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_ArmageddonMode@@3_NA",
+   "sym_key": "g_ArmageddonMode"
+  }
+ ]
+}

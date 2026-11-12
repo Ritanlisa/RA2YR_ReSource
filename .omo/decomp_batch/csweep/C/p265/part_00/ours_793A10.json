@@ -1,0 +1,45 @@
+{
+ "symbol": "?UI_Setup_793A10@@YIHPAX0F@Z",
+ "sym_key": "Unnamed::UI_Setup_793A10",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "5356578bfae80000000033dbbe000000008b0ee8000000005750e80000000083c40885c0741283c6044381fe000000007cdf5f5e5bc20400668b4424105f6689045d000000005e33c05bc20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAD@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E050@@3IA",
+   "sym_key": "DataGlobal_A8E050"
+  }
+ ]
+}

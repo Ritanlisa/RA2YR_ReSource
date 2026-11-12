@@ -1,0 +1,11 @@
+{
+ "addr": "0x6FC030",
+ "name": "TechnoClass::CanMoveToCell",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6FC030",
+ "bytes_hex": "568bf18b86dc02000085c0740432c05ec38a86c801000084c0740432c05ec38b86e402000085c0740432c05ec38a861804000084c074198b068bceff90bc0100008bc8e8a804d8ff85c0740432c05ec38bcee8e9abefff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?SpawnInfantryFromBuilding@TechnoClass@@QAEDHPAF0PAPAX@Z",
+ "sym_key": "TechnoClass::SpawnInfantryFromBuilding",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "538b5c240c568bf1578b7c241c8a86e006000084c074178b06576a005356ff507083f80275085f5e32c05bc210008b869802000085c074085f5e32c05bc210008b4c24188b542410575153528bcee8000000005f5e5bc21000",
+ "relocs": [
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?SpawnInfantry@ObjectClass@@QAEDHPAX00@Z",
+   "sym_key": "ObjectClass::SpawnInfantry"
+  }
+ ]
+}

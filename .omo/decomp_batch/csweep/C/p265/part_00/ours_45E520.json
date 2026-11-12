@@ -1,0 +1,15 @@
+{
+ "symbol": "?loadBuildingProperty_b_545E520@BuildingTypeClass@@QAEPAIH@Z",
+ "sym_key": "BuildingTypeClass::loadBuildingProperty_b_545E520",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000033c0c78604190000010000008986f002000089868817000089868c170000898608190000898684170000890689460489460889460c8bc65ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Construct@TechnoTypeClass@@QAEPAV1@H@Z",
+   "sym_key": "TechnoTypeClass::Construct"
+  }
+ ]
+}

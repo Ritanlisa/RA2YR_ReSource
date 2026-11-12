@@ -1,0 +1,11 @@
+{
+ "addr": "0x552A40",
+ "name": "LoadProgressMgr::GetInstance",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x552A40",
+ "bytes_hex": "a1bcc9ab005333db3bc3754c6a64e8c463270083c4043bc37437c70064cf7e0089580489580889583c89584089584489584889584c88585088585188585289585489585889585c895860a3bcc9ab005bc333c0a3bcc9ab005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

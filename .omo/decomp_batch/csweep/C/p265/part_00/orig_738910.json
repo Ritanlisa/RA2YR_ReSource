@@ -1,0 +1,11 @@
+{
+ "addr": "0x738910",
+ "name": "TechnoClass::SpawnInfantryFromBuilding",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x738910",
+ "bytes_hex": "538b5c2414568bf1578b7c24148a86e006000084c074168b06536a0057ff507083f80275085f5e32c05bc210008a869802000084c074085f5e32c05bc210008b4c24188b542410535157528bcee8eef3d9ff5f5e5bc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

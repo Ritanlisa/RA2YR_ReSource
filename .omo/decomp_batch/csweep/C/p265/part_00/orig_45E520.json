@@ -1,0 +1,11 @@
+{
+ "addr": "0x45E520",
+ "name": "BuildingTypeClass::loadBuildingProperty_b_545E520",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45E520",
+ "bytes_hex": "8b442404568bf150e813332b0033c08986000e000089868817000089868c170000c6869017000001888691170000c7868417000038467e00c70670457e00c7460454457e00c746084c457e00c7460c44457e008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

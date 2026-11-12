@@ -1,0 +1,33 @@
+{
+ "symbol": "?ConvertIndices@Palette@@QAEPAEH@Z",
+ "sym_key": "Palette::ConvertIndices",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "83ec0853578bf9897c240cc60700e8000000008bd8e80000000085db894424087f0a8bc75f5b83c408c20400558b6c2418568bf083c702668b066a4066894424148bd58b4c241451b901000000e80000000066890783c60283c7024b75d98b4424145e5d5f5b83c408c20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Hash_Check_5C61E0@@YAHXZ",
+   "sym_key": "Hash_Check_5C61E0"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Hash_Check@@YAPAXXZ",
+   "sym_key": "Hash_Check"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?ShiftBigIntAndScan@@YIFPAXHHH@Z",
+   "sym_key": "ShiftBigIntAndScan"
+  }
+ ]
+}

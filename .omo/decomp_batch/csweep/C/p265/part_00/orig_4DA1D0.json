@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DA1D0",
+ "name": "FootClass::CanBeControlled",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DA1D0",
+ "bytes_hex": "568bf18a86d503000084c0750432c05ec38b068bceff90840000008a88940c000084c975308a86d403000084c075268b168bceff928401000083f80474178b8ed405000085c97409e8e320210084c0750432c05ec3b0015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

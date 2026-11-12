@@ -1,0 +1,15 @@
+{
+ "symbol": "?CanBeControlled@FootClass@@QAEDXZ",
+ "sym_key": "FootClass::CanBeControlled",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "568bf18a86d503000084c0744e8b0656ff90840000008a88940c000084c97404b0015ec38a86d403000084c07404b0015ec38b0e56ff918401000083f8047504b0015ec38b8ed405000085c9740de80000000084c07404b0015ec332c05ec3",
+ "relocs": [
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?IsWaypointHidden@TechnoClass@@QAE_NXZ",
+   "sym_key": "TechnoClass::IsWaypointHidden"
+  }
+ ]
+}

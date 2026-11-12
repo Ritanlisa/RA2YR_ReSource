@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetInstance@LoadProgressMgr@@QAEXXZ",
+ "sym_key": "LoadProgressMgr::GetInstance",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c075086a64e80000000059c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?dword_ABC9BC@@3IA",
+   "sym_key": "dword_ABC9BC"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
