@@ -1,0 +1,33 @@
+{
+ "symbol": "?validatePlayer@MPBattleClass@@QAEXXZ",
+ "sym_key": "MPBattleClass::validatePlayer",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "83ec08a100000000c74424040000000083ec088d0c00894c2408df6c2408dc3500000000dd1c24e800000000dd1d0000000083c410c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFAF8@@3IA",
+   "sym_key": "DataGlobal_ABFAF8"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFAA0@@3NA",
+   "sym_key": "DataGlobal_ABFAA0"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Math__ArcTan@@YANN@Z",
+   "sym_key": "Math__ArcTan"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFAC8@@3NA",
+   "sym_key": "DataGlobal_ABFAC8"
+  }
+ ]
+}

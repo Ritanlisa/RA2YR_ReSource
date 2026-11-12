@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CAD60",
+ "name": "MPBattleClass::validatePlayer",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CAD60",
+ "bytes_hex": "51a1f8faab0083ec088d0c00894c2408db442408dc35a0faab00dd1c24e85e00f0ffdd1dc8faab0083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
