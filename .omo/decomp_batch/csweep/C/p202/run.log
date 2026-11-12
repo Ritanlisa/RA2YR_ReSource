@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p202\part_00
+=== convert (20 addrs) ===
+[conv] 0x721680 sub_721680 -> _addr_72
+[conv] 0x725310 sub_725310 -> _addr_72
+[conv] 0x725390 sub_725390 -> _addr_72
+[conv] 0x725410 sub_725410 -> _addr_72
+[conv] 0x725490 sub_725490 -> _addr_72
+[conv] 0x725510 sub_725510 -> _addr_72
+[conv] 0x725590 sub_725590 -> _addr_72
+[conv] 0x725610 sub_725610 -> _addr_72
+[conv] 0x725690 sub_725690 -> _addr_72
+[conv] 0x725790 sub_725790 -> _addr_72
+[conv] 0x725810 sub_725810 -> _addr_72
+[conv] 0x725890 sub_725890 -> _addr_72
+[conv] 0x74cdb0 ObjectClass::Helper_486E30_Helper -> ObjectClass
+[conv] 0x750340 sub_750340 -> _addr_75
+[conv] 0x752250 sub_752250 -> _addr_75
+[conv] 0x7591c0 sub_7591C0 -> _addr_75
+[conv] 0x7635d0 sub_7635D0 -> _addr_76
+[conv] 0x7b6630 ValidateStringContains -> _addr_7B
+[conv] 0x4390d0 TechnoClass::RemoveFromDynamicVector -> TechnoClass
+[conv] 0x6b0c80 FactoryClass::ResetProductionTimers -> FactoryClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] ObjectClass              rc=0
+[era] _addr_75                 rc=0
+[era] _addr_76                 rc=0
+[era] _addr_7B                 rc=2
+[era] TechnoClass              rc=2
+[era] FactoryClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x721680   MISMATCH         sub_721680
+[diff] 0x725310   MISMATCH         sub_725310
+[diff] 0x725390   MISMATCH         sub_725390
+[diff] 0x725410   MISMATCH         sub_725410
+[diff] 0x725490   MISMATCH         sub_725490
+[diff] 0x725510   MISMATCH         sub_725510
+[diff] 0x725590   MISMATCH         sub_725590
+[diff] 0x725610   MISMATCH         sub_725610
+[diff] 0x725690   MISMATCH         sub_725690
+[diff] 0x725790   MISMATCH         sub_725790
+[diff] 0x725810   MISMATCH         sub_725810
+[diff] 0x725890   MISMATCH         sub_725890
+[diff] 0x74cdb0   MISMATCH         ObjectClass::Helper_486E30_Helper
+[diff] 0x750340   MISMATCH         sub_750340
+[diff] 0x752250   MISMATCH         sub_752250
+[diff] 0x7591c0   MISMATCH         sub_7591C0
+[diff] 0x7635d0   MISMATCH         sub_7635D0
+[diff] 0x6b0c80   MISMATCH         FactoryClass::ResetProductionTimers
+[ledger] 0x721680 sub_721680 -> NG (attempt 1)
+[ledger] 0x725310 sub_725310 -> NG (attempt 1)
+[ledger] 0x725390 sub_725390 -> NG (attempt 1)
+[ledger] 0x725410 sub_725410 -> NG (attempt 1)
+[ledger] 0x725490 sub_725490 -> NG (attempt 1)
+[ledger] 0x725510 sub_725510 -> NG (attempt 1)
+[ledger] 0x725590 sub_725590 -> NG (attempt 1)
+[ledger] 0x725610 sub_725610 -> NG (attempt 1)
+[ledger] 0x725690 sub_725690 -> NG (attempt 1)
+[ledger] 0x725790 sub_725790 -> NG (attempt 1)
+[ledger] 0x725810 sub_725810 -> NG (attempt 1)
+[ledger] 0x725890 sub_725890 -> NG (attempt 1)
+[ledger] 0x74cdb0 ObjectClass::Helper_486E30_Helper -> NG (attempt 1)
+[ledger] 0x750340 sub_750340 -> NG (attempt 1)
+[ledger] 0x752250 sub_752250 -> NG (attempt 1)
+[ledger] 0x7591c0 sub_7591C0 -> NG (attempt 1)
+[ledger] 0x7635d0 sub_7635D0 -> NG (attempt 1)
+[ledger] 0x7b6630 ValidateStringContains -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4390d0 TechnoClass::RemoveFromDynamicVector -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b0c80 FactoryClass::ResetProductionTimers -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "codegen_shape": 17,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p202\batch_report.json

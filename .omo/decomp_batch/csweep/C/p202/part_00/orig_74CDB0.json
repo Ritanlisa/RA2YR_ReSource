@@ -1,0 +1,11 @@
+{
+ "addr": "0x74CDB0",
+ "name": "Helper_486E30_Helper",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74CDB0",
+ "bytes_hex": "a1a0d2b10056578d70ff8bf985f67c208bcfe8f9e3cdff8bc8a194d2b1008b14b08b92c4000000803c110075084e79e05f5e33c0c38b04b05f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

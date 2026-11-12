@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B0C80",
+ "name": "FactoryClass::ResetProductionTimers",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B0C80",
+ "bytes_hex": "56578bf9c7475c00000000a184eda8008947608b77484e781f8b4f3c8b04b18b50048b0883fa06740c85c974088b11ff92d00300004e79e15f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

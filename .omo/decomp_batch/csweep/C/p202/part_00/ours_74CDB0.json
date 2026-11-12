@@ -1,0 +1,39 @@
+{
+ "symbol": "?Helper_486E30_Helper@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Helper_486E30_Helper",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "a11000000056578bf98d70ffe8000000008bc8a1040000008b14b08b92c4000000803c110075204e78238bcfe8000000008bc8a1040000008b14b08b92c4000000803c110074e08b04b05f5ec35f5e33c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D290@@3IA",
+   "sym_key": "DataGlobal_B1D290"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?PosToIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::PosToIndex"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D290@@3IA",
+   "sym_key": "DataGlobal_B1D290"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?PosToIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::PosToIndex"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D290@@3IA",
+   "sym_key": "DataGlobal_B1D290"
+  }
+ ]
+}
