@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x76f8f0",
+  "family": "D_RELOC",
+  "name": "sub_76F8F0"
+ },
+ {
+  "addr": "0x7700d0",
+  "family": "D_RELOC",
+  "name": "sub_7700D0"
+ },
+ {
+  "addr": "0x770250",
+  "family": "D_RELOC",
+  "name": "sub_770250"
+ },
+ {
+  "addr": "0x771ab0",
+  "family": "D_RELOC",
+  "name": "sub_771AB0"
+ },
+ {
+  "addr": "0x771c30",
+  "family": "D_RELOC",
+  "name": "sub_771C30"
+ },
+ {
+  "addr": "0x7732b0",
+  "family": "D_RELOC",
+  "name": "sub_7732B0"
+ },
+ {
+  "addr": "0x773430",
+  "family": "D_RELOC",
+  "name": "sub_773430"
+ },
+ {
+  "addr": "0x777220",
+  "family": "D_RELOC",
+  "name": "sub_777220"
+ },
+ {
+  "addr": "0x7773a0",
+  "family": "D_RELOC",
+  "name": "sub_7773A0"
+ },
+ {
+  "addr": "0x778540",
+  "family": "D_RELOC",
+  "name": "sub_778540"
+ },
+ {
+  "addr": "0x7786c0",
+  "family": "D_RELOC",
+  "name": "sub_7786C0"
+ },
+ {
+  "addr": "0x77b0e0",
+  "family": "D_RELOC",
+  "name": "sub_77B0E0"
+ },
+ {
+  "addr": "0x77b260",
+  "family": "D_RELOC",
+  "name": "sub_77B260"
+ },
+ {
+  "addr": "0x77b6e0",
+  "family": "D_RELOC",
+  "name": "sub_77B6E0"
+ },
+ {
+  "addr": "0x77b860",
+  "family": "D_RELOC",
+  "name": "sub_77B860"
+ },
+ {
+  "addr": "0x7af100",
+  "family": "D_RELOC",
+  "name": "sub_7AF100"
+ },
+ {
+  "addr": "0x7af280",
+  "family": "D_RELOC",
+  "name": "sub_7AF280"
+ },
+ {
+  "addr": "0x7b0bf0",
+  "family": "D_RELOC",
+  "name": "sub_7B0BF0"
+ },
+ {
+  "addr": "0x7b0d70",
+  "family": "D_RELOC",
+  "name": "sub_7B0D70"
+ },
+ {
+  "addr": "0x7b1820",
+  "family": "D_RELOC",
+  "name": "sub_7B1820"
+ }
+]
