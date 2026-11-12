@@ -1,0 +1,99 @@
+{
+ "symbol": "?globalHelper_06EE40@@YGDPAGH@Z",
+ "sym_key": "Unnamed::globalHelper_06EE40",
+ "size": 294,
+ "link_base": 0,
+ "bytes_hex": "8b4c2408538bc1568b74240c83e007578b1c8500000000668b7e02668b148500000000668b36c1fb1003fb03f233f833f181e7ff00000081e6ff00000033c733ce8bd033d181e2ff00000033ca0fbfc00fbfd1c1e00903c2894c24143d00000400730d8b15000000008b048285c0750ba100000000890d000000008a884001000084c97d1e8a881e01000080f903771380f904c6801e010000057507c6801e010000068b70388b1500000000a1000000002bf2463bf074083b350000000075406a008d4424186a0150e8000000008b0d0000000025ff00000081e600ffffff0bc63bc1751b8b15000000006a006aff6aff8d4411018d4c24205051e8000000008b1500000000a1000000006a006aff8d4c02026aff8d5424205152e8000000005f5e5bc20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_TerrainBridgeIndex@@3IA",
+   "sym_key": "g_TerrainBridgeIndex"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC2B4@@3IA",
+   "sym_key": "DataGlobal_ABC2B4"
+  },
+  {
+   "off": 186,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1130@@3IA",
+   "sym_key": "DataGlobal_AA1130"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?Cell__UpdateTileType@@YGDPAXHH@Z",
+   "sym_key": "Cell__UpdateTileType"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundTable2@@3IA",
+   "sym_key": "g_TerrainSoundTable2"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?g_TerrainBridgeIndex@@3IA",
+   "sym_key": "g_TerrainBridgeIndex"
+  },
+  {
+   "off": 252,
+   "type": "REL32",
+   "sym": "?Cell__SetTileType@@YGDPAXHHHH@Z",
+   "sym_key": "Cell__SetTileType"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundTable2@@3IA",
+   "sym_key": "g_TerrainSoundTable2"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?g_TerrainBridgeIndex@@3IA",
+   "sym_key": "g_TerrainBridgeIndex"
+  },
+  {
+   "off": 284,
+   "type": "REL32",
+   "sym": "?Cell__SetTileType@@YGDPAXHHHH@Z",
+   "sym_key": "Cell__SetTileType"
+  }
+ ]
+}

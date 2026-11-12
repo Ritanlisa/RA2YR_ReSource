@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4C37D0@@YIPAEHPAEHE@Z",
+ "sym_key": "Unnamed::sub_4C37D0",
+ "size": 241,
+ "link_base": 0,
+ "bytes_hex": "83ec1033c0573bd08bf98954241075075f83c410c2080053555689542410894424183df00000000f8f9d00000085c00f849500000025ff0000807907480d00ffffff408d0c47668b14088b44242425ff000080895424147907480d00ffffff408b5424288d0c4703c18d4c24145052e80000000083cbff33edbef00000008bce8d44241481e1ff0000805079084981c900ffffff418d144f03cae80000000083fbff74043bc57d048bde8be84681feff0000007cc98b4424108b54241c881840894424108b442418eb0b8b4c2410880141894c2410403d00010000894424180f8c3dffffff5e5d5b8bc25f83c410c20800",
+ "relocs": [
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Lerp@Color@@QAEEEPAX@Z",
+   "sym_key": "Color::Lerp"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?CalcColorDistance@Palette@@QAEHPAX@Z",
+   "sym_key": "Palette::CalcColorDistance"
+  }
+ ]
+}

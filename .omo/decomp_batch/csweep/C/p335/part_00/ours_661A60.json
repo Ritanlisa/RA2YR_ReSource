@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_661A60@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_661A60",
+ "size": 217,
+ "link_base": 0,
+ "bytes_hex": "83ec205355568bf15789742418c744241420000000f64424340174268b4e0c8bc183e1079983e20703c2b201c1f80325ff000000d2e28a4c30148d44301432ca88088b460c403d0008000089460c755c33edc6442410008d5e146800010000538d4c2418e8000000008d44241c8d4c241050e800000000b8000100002bc583f8148bc87605b9140000008bd18d74241c8d3c2bc1e902f3a58bca83e1034581fd00010000f3a472b28b7424188b4c24148b7c243483f9018d41ff0f94c1d1ff84c9897c2434894424140f8446ffffff5f5e5d5b83c420c20400",
+ "relocs": [
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?Process@SHA1@@QAEHHH@Z",
+   "sym_key": "SHA1::Process"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?Compute@SHA1@@QAEHPAX@Z",
+   "sym_key": "SHA1::Compute"
+  }
+ ]
+}

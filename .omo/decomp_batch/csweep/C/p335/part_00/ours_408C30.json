@@ -1,0 +1,15 @@
+{
+ "symbol": "?AcquireAudioStreamBuffer@@YIHPAXPAHH@Z",
+ "sym_key": "Unnamed::AcquireAudioStreamBuffer",
+ "size": 173,
+ "link_base": 0,
+ "bytes_hex": "8b44240453c1e00656578b5c10348d341033ff8d46183bdf89442410740de80000000033c05f5e5bc2040039ba9800000075608b72048d4a043bf1750233f6558d6a4c8bcdbb020000003bf78971f4c70117fcffffc7410417fcffff8979fc8979f88971d874108b41e08b44c6208941d08b442414eb038979d08361dcfe8979d483c1404b75c38b4a148b750003f18975005d8b701c5f4689701c8b8a98000000415e898a980000005bc20400",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

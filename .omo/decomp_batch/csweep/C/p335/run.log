@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p335\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d55a0 _DynamicVectorClass_UAcceleratorTracker::SetCapacity8 -> _DynamicVectorClass_UAcceleratorTracker
+[conv] 0x6cf720 _DynamicVectorClass_VSwizzlePointerClass::SetCapacity -> _DynamicVectorClass_VSwizzlePointerClass
+[conv] 0x501540 HouseClass::CanAlly -> HouseClass
+[conv] 0x7cfecd ObjectClass::___sbh_alloc_new_group -> ObjectClass
+[conv] 0x661960 ObjectClass::sub_661960 -> ObjectClass
+[conv] 0x408c30 AcquireAudioStreamBuffer -> _addr_40
+[conv] 0x7c34b0 SeekAudioStream -> _addr_7C
+[conv] 0x426ed0 UnitClass::sub_426ED0 -> UnitClass
+[conv] 0x4c37d0 sub_4C37D0 -> _addr_4C
+[conv] 0x75f230 CalcMathFacing8 -> _addr_75
+[conv] 0x56ed40 globalHelper_06ED40 -> _addr_56
+[conv] 0x572230 globalHelper_072230 -> _addr_57
+[conv] 0x4e0840 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Release -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x50fc60 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Remove -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x6f22f0 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Release -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x56ee40 globalHelper_06EE40 -> _addr_56
+[conv] 0x572330 globalHelper_072330 -> _addr_57
+[conv] 0x661a60 ObjectClass::sub_661A60 -> ObjectClass
+[conv] 0x4752e0 HouseClass::WriteHouseListToINI -> HouseClass
+[conv] 0x5a7fa0 DrawIsoTile -> _addr_5A
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_UAcceleratorTracker rc=2
+[era] _DynamicVectorClass_VSwizzlePointerClass rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=0
+[era] _addr_40                 rc=0
+[era] _addr_7C                 rc=2
+[era] UnitClass                rc=2
+[era] _addr_4C                 rc=0
+[era] _addr_75                 rc=0
+[era] _addr_56                 rc=0
+[era] _addr_57                 rc=0
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] _addr_5A                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x501540   MISMATCH         HouseClass::CanAlly
+[diff] 0x7cfecd   MISMATCH         ObjectClass::___sbh_alloc_new_group
+[diff] 0x661960   MISMATCH         ObjectClass::sub_661960
+[diff] 0x661a60   MISMATCH         ObjectClass::sub_661A60
+[diff] 0x408c30   MISMATCH         AcquireAudioStreamBuffer
+[diff] 0x4c37d0   MISMATCH         sub_4C37D0
+[diff] 0x75f230   MISMATCH         CalcMathFacing8
+[diff] 0x56ed40   MISMATCH         globalHelper_06ED40
+[diff] 0x56ee40   MISMATCH         globalHelper_06EE40
+[diff] 0x572230   MISMATCH         globalHelper_072230
+[diff] 0x572330   MISMATCH         globalHelper_072330
+[diff] 0x4e0840   MISMATCH         _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Release
+[diff] 0x50fc60   MISMATCH         _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Remove
+[diff] 0x6f22f0   MISMATCH         _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Release
+[ledger] 0x5d55a0 _DynamicVectorClass_UAcceleratorTracker::SetCapacity8 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf720 _DynamicVectorClass_VSwizzlePointerClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x501540 HouseClass::CanAlly -> NG (attempt 1)
+[ledger] 0x7cfecd ObjectClass::___sbh_alloc_new_group -> NG (attempt 1)
+[ledger] 0x661960 ObjectClass::sub_661960 -> NG (attempt 1)
+[ledger] 0x408c30 AcquireAudioStreamBuffer -> NG (attempt 1)
+[ledger] 0x7c34b0 SeekAudioStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x426ed0 UnitClass::sub_426ED0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c37d0 sub_4C37D0 -> NG (attempt 1)
+[ledger] 0x75f230 CalcMathFacing8 -> NG (attempt 1)
+[ledger] 0x56ed40 globalHelper_06ED40 -> NG (attempt 1)
+[ledger] 0x572230 globalHelper_072230 -> NG (attempt 1)
+[ledger] 0x4e0840 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Release -> NG (attempt 1)
+[ledger] 0x50fc60 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x6f22f0 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Release -> NG (attempt 1)
+[ledger] 0x56ee40 globalHelper_06EE40 -> NG (attempt 1)
+[ledger] 0x572330 globalHelper_072330 -> NG (attempt 1)
+[ledger] 0x661a60 ObjectClass::sub_661A60 -> NG (attempt 1)
+[ledger] 0x4752e0 HouseClass::WriteHouseListToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a7fa0 DrawIsoTile -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 14
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "codegen_shape": 5,
+  "frame_sched": 3,
+  "const_fold": 1,
+  "regalloc": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p335\batch_report.json

@@ -1,0 +1,27 @@
+{
+ "symbol": "?CalcMathFacing8@@YIEPAH0@Z",
+ "sym_key": "Unnamed::CalcMathFacing8",
+ "size": 186,
+ "link_base": 0,
+ "bytes_hex": "83ec10568b32578b392bf78b79048b4a0468fb21d93f2bf968172d445489742414897c2410e800000000dd5c241868fb21d93f68172d4454e800000000dc7c242083c41085f6751533c085ff0f9ec0485f24fc5eddd883c00483c410c3db442408da74240cdd0500000000d8f2d9c1ded9dfe0f6c4017509d8d1dfe0f6c4017422d9c9d9e0d9c9ded9dfe0f6c401751733c05f85f60f9ec0485e24fc83c00683c410c3ddd8ddd833c05f85f60f9ec0485e24fc83c00783c410c3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?Math__SinCos@@YANN@Z",
+   "sym_key": "Math__SinCos"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Math__ArcTan2@@YANN@Z",
+   "sym_key": "Math__ArcTan2"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  }
+ ]
+}

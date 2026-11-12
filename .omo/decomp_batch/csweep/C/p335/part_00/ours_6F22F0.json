@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass@@QAEDHPAH@Z",
+ "sym_key": "_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Release",
+ "size": 275,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db578bf10f84f10000008b6c2418c7460c0000000085ed74208d43ff895d0085c08d7d047c488d45088bcbc7000000000083c0084975f4eb358d0cdd0400000051e80000000083c40485c0741f8d53ff891885d28d78047c1583c0088bcbc7000000000083c0084975f4eb0233ff85ffc7460c0100000074798b460485c0744d8b56083bda7d028bd333c085d27e1c8b4e04403bc28b6cc1f8896cc7f88b4cc1fc894cc7fc7ce88b6c24188b460cf6c4ff741a8b460485c0740c83c0fc50e80000000083c404c74604000000008b4e0c33d285ed0f94c233c080e5008ae2897e040bc1895e0889460c5f5e5db0015bc208005f5e5d32c05bc208008b168bceff520c5f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -333,3 +333,4 @@
 {"layer": "C", "part": 332, "n": 20, "seconds": 65.2, "ok": true, "verdicts": {"COMPILE_FAIL": 9, "MISMATCH": 11}}
 {"layer": "C", "part": 333, "n": 20, "seconds": 52.9, "ok": true, "verdicts": {"MISMATCH": 7, "COMPILE_FAIL": 13}}
 {"layer": "C", "part": 334, "n": 20, "seconds": 67.4, "ok": true, "verdicts": {"COMPILE_FAIL": 14, "MISMATCH": 6}}
+{"layer": "C", "part": 335, "n": 20, "seconds": 64.1, "ok": true, "verdicts": {"COMPILE_FAIL": 6, "MISMATCH": 14}}

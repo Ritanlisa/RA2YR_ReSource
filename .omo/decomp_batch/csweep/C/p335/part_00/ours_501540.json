@@ -1,0 +1,45 @@
+{
+ "symbol": "?CanAlly@HouseClass@@QAE_NH@Z",
+ "sym_key": "HouseClass::CanAlly",
+ "size": 253,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ff74303bfe75075f32c05ec204008b4f308b46303bc8741483f9ff7416b801000000d3e085868857000074075f32c05ec2040033c98a0d00000000e8000000008b4f343981bc0000007510a10000000085c074075f32c05ec20400a10000000085c074075fb0015ec204008a86f501000084c074075f32c05ec20400a1000000005533ff33ed85c0765c8b1500000000538bd88b028b008a88f501000084c9753e8b483480b9a60100000075324785c0742d3bc674288b40308b4e303bc1741e83f8ff741ab901000000894c24148bc88b442414d3e085868857000074014583c2044b75ae5b4533c03bfd5d5f5e0f95c0c20400",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Civilian@@3EA",
+   "sym_key": "g_INI_Key_Civilian"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?Find@HouseTypeClass@@QAEHXZ",
+   "sym_key": "HouseTypeClass::Find"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?HouseClass_Count@@3IA",
+   "sym_key": "HouseClass_Count"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  }
+ ]
+}
