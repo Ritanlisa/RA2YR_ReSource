@@ -1,0 +1,69 @@
+{
+ "symbol": "?IsPlaying@Audio@@QAEHXZ",
+ "sym_key": "Audio::IsPlaying",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "e8000000008b0d0000000085c9750333c0c3e80000000085c0753a813d0000000000000000752e813d00000000000000007522a10000000085c07519a100000000394004750f83c00c3d000000007dbf39400474f1b801000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?UpdateThemes@@YAXXZ",
+   "sym_key": "UpdateThemes"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_InfantryDrawState@@3PAXA",
+   "sym_key": "g_InfantryDrawState"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?IsSoundPlaying@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsSoundPlaying"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3CC@@3IA",
+   "sym_key": "DataGlobal_B1D3CC"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3C8@@3IA",
+   "sym_key": "DataGlobal_B1D3C8"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3F4@@3IA",
+   "sym_key": "DataGlobal_B1D3F4"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3F0@@3IA",
+   "sym_key": "DataGlobal_B1D3F0"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4B8@@3IA",
+   "sym_key": "DataGlobal_B1D4B8"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D450@@3IA",
+   "sym_key": "DataGlobal_B1D450"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D480@@3EA",
+   "sym_key": "DataGlobal_B1D480"
+  }
+ ]
+}

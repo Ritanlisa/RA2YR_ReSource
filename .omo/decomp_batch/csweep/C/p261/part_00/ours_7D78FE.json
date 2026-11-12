@@ -1,0 +1,21 @@
+{
+ "symbol": "?__IncMan@@YAHHH@Z",
+ "sym_key": "Unnamed::__IncMan",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "8b4c2408568bc157998b7c240c83e21f03c28bd18bf0c1fe0581e21f0000808d04b75079054a83cae042b91f0000008b002bcaba01000000d3e25250e80000000083c40c4e85f67c2185c08d3cb7741a8b0f576a0151e80000000083c40c4e83ef0485f67c0485c075e65f5ec3",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?__addl@@YAHHHPAXZZ",
+   "sym_key": "__addl"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?__addl@@YAHHHPAXZZ",
+   "sym_key": "__addl"
+  }
+ ]
+}

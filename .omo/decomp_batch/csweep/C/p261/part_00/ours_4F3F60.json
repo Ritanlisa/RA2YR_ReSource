@@ -1,0 +1,27 @@
+{
+ "symbol": "?QueryInterface@GraphicMenuShortcutItem@@QAEPAID@Z",
+ "sym_key": "GraphicMenuShortcutItem::QueryInterface",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8b4614891e3bc3895e107411385e1d740c50e80000000083c404895e148bce885e1d895e18e800000000f644240c01740956e80000000083c4048b065e5bc20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?Dtor@GraphicMenuItem@@QAEXXZ",
+   "sym_key": "GraphicMenuItem::Dtor"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

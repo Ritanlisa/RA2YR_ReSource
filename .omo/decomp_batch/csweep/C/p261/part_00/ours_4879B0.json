@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4879B0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::sub_4879B0",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "83ec1433d2560fbf71248a5138578bfab880000000c1e608c1e70803f003f8894424088944240c8d44240850e8000000008d4c24108974241051897c24188944241ce8000000005f5e83c414c20400",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Game__Stub3@@YGDH@Z",
+   "sym_key": "Game__Stub3"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x54E6F0",
+ "name": "LoadGame::CleanupArray",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54E6F0",
+ "bytes_hex": "83ec0c5356578bf98b771c4e78128b47108b0cb051e833a4270083c4044e79ee8b570c8b5f148d770c8bceff520c8b066a00538bceff5008a184eda8008b542410b9010000008907895704894f085f5e5b83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

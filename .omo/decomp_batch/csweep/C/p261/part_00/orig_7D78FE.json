@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D78FE",
+ "name": "__IncMan",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D78FE",
+ "bytes_hex": "8b4424085356576a208b5c24149959f7f98bf08b44241499f7f98d3cb3576a1f596a01582bcad3e050ff37e83837000083c40c4e781c8d3cb385c07415576a01ff37e82137000083c40c4e83ef0485f67de75f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

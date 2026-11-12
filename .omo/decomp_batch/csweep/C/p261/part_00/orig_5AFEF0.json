@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AFEF0",
+ "name": "SmallFunc_5AFEF0",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AFEF0",
+ "bytes_hex": "568bf1e8c8a7faff8b0d10eeab008d4618894e188b1514eeab008950048b0d18eeab008d5624894808a110eeab0089028b0d14eeab00894a04a118eeab00c6463000c70638dc7e00894208c746046cdb7e008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

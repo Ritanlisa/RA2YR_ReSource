@@ -1,0 +1,27 @@
+{
+ "symbol": "?Constructor@CStreamClass@@QAEPAIXZ",
+ "sym_key": "CStreamClass::Constructor",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db6800000100895e08895e0c885e10885e11895e14e8000000006800000100894618e800000000680000010089461ce80000000083c40c894620891e895e04c74624ffff00005e33c05bc3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

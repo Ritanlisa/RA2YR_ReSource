@@ -1,0 +1,21 @@
+{
+ "symbol": "?CleanupArray@LoadGame@@QAEPAGXZ",
+ "sym_key": "LoadGame::CleanupArray",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1578b7e1c4f78128b46108b0cb851e80000000083c4044f79ee8b5e148d7e0c57ff56186a005357ff5614a1a00100008b4c240c0fbed08916894e04c74608010000005f5e5b59c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

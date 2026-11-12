@@ -1,0 +1,21 @@
+{
+ "symbol": "?QuickPassable@CellClass@@QAE_NXZ",
+ "sym_key": "CellClass::QuickPassable",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "83ec1433d2560fbf71248a5124578bfab880000000c1e608c1e70803f003f8894424088944240c8d44240850e8000000008d4c24108974241051897c24188944241ce8000000005f5e83c414c3",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  }
+ ]
+}

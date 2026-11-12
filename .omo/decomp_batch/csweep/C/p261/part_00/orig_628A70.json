@@ -1,0 +1,11 @@
+{
+ "addr": "0x628A70",
+ "name": "VectorClass_ptr_ColorScheme::SetCapacity_1",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x628A70",
+ "bytes_hex": "5355568bf1578a460c84c075095f5e5d33c05bc204008b460833db85c07e248b6c241433ff8b4e048bd503cfe8dfc2ecff84c075188b46084381c7040100003bd87ce25f5e5d83c8ff5bc204005f5e8bc35d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

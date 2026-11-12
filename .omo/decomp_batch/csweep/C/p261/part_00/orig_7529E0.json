@@ -1,0 +1,11 @@
+{
+ "addr": "0x7529E0",
+ "name": "Audio::IsPlaying",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7529E0",
+ "bytes_hex": "e87bfdffff8b0dccd4b10085c9743ee87c56cbff85c07538813dccd3b100c8d3b100752c813df4d3b100f0d3b1007520a1b8d4b10085c07517b850d4b100394004750d83c00c3d80d4b1007cf133c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

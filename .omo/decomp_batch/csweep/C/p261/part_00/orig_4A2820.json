@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A2820",
+ "name": "VectorClass_K_8::Constructor",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A2820",
+ "bytes_hex": "568bf133c0680000010089460889460c884610884611894614e8d96532006800000100894618e8cc653200680000010089461ce8bf65320083c40c894620c706ac5d7e00c74604945d7e00c74624ffff00008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

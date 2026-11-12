@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p261\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ced49 __cftof -> _addr_7C
+[conv] 0x54e6f0 LoadGame::CleanupArray -> LoadGame
+[conv] 0x474810 WarheadTypeClass::loadWarheadINI -> WarheadTypeClass
+[conv] 0x5afef0 MechLocomotionClass::SmallFunc_5AFEF0 -> MechLocomotionClass
+[conv] 0x628a70 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_1 -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x63d960 globalHelper_03D960 -> _addr_63
+[conv] 0x69ad80 GameOption::SetDigest -> GameOption
+[conv] 0x481810 Cell::GetNeighbourContent -> Cell
+[conv] 0x70fe50 TechnoClass::sub_70FE50 -> TechnoClass
+[conv] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> WalkLocomotionClass
+[conv] 0x410960 AbstractTypeClass::Init -> AbstractTypeClass
+[conv] 0x487950 CellClass::QuickPassable -> CellClass
+[conv] 0x4879b0 ObjectClass::sub_4879B0 -> ObjectClass
+[conv] 0x7529e0 Audio::IsPlaying -> Audio
+[conv] 0x7d78fe __IncMan -> _addr_7D
+[conv] 0x4a45c0 ObjectClass::sub_4A45C0 -> ObjectClass
+[conv] 0x4a2820 CStreamClass::Constructor -> CStreamClass
+[conv] 0x4f3f60 GraphicMenuShortcutItem::QueryInterface -> GraphicMenuShortcutItem
+[conv] 0x6e6410 TagTypeClass::LoadTypeData -> TagTypeClass
+[conv] 0x7d718a _GetLcidFromLanguage -> _addr_7D
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] LoadGame                 rc=0
+[era] WarheadTypeClass         rc=0
+[era] MechLocomotionClass      rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] _addr_63                 rc=0
+[era] GameOption               rc=0
+[era] Cell                     rc=0
+[era] TechnoClass              rc=0
+[era] WalkLocomotionClass      rc=2
+[era] AbstractTypeClass        rc=2
+[era] CellClass                rc=0
+[era] ObjectClass              rc=2
+[era] Audio                    rc=0
+[era] _addr_7D                 rc=2
+[era] CStreamClass             rc=0
+[era] GraphicMenuShortcutItem  rc=0
+[era] TagTypeClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x54e6f0   MISMATCH         LoadGame::CleanupArray
+[diff] 0x474810   MATCH            WarheadTypeClass::loadWarheadINI
+[diff] 0x5afef0   MISMATCH         MechLocomotionClass::SmallFunc_5AFEF0
+[diff] 0x628a70   MISMATCH         _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_1
+[diff] 0x69ad80   MISMATCH         GameOption::SetDigest
+[diff] 0x481810   MISMATCH         Cell::GetNeighbourContent
+[diff] 0x70fe50   MISMATCH         TechnoClass::sub_70FE50
+[diff] 0x487950   MISMATCH         CellClass::QuickPassable
+[diff] 0x4879b0   MISMATCH         ObjectClass::sub_4879B0
+[diff] 0x7529e0   MISMATCH         Audio::IsPlaying
+[diff] 0x7d78fe   MISMATCH         __IncMan
+[diff] 0x4a2820   MISMATCH         CStreamClass::Constructor
+[diff] 0x4f3f60   MISMATCH         GraphicMenuShortcutItem::QueryInterface
+[diff] 0x6e6410   MISMATCH         TagTypeClass::LoadTypeData
+[ledger] 0x7ced49 __cftof -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54e6f0 LoadGame::CleanupArray -> NG (attempt 1)
+[ledger] 0x474810 WarheadTypeClass::loadWarheadINI -> OK (attempt 1)
+[ledger] 0x5afef0 MechLocomotionClass::SmallFunc_5AFEF0 -> NG (attempt 1)
+[ledger] 0x628a70 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_1 -> NG (attempt 1)
+[ledger] 0x63d960 globalHelper_03D960 -> PENDING (attempt 1)
+[ledger] 0x69ad80 GameOption::SetDigest -> NG (attempt 1)
+[ledger] 0x481810 Cell::GetNeighbourContent -> NG (attempt 1)
+[ledger] 0x70fe50 TechnoClass::sub_70FE50 -> NG (attempt 1)
+[ledger] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x410960 AbstractTypeClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x487950 CellClass::QuickPassable -> NG (attempt 1)
+[ledger] 0x4879b0 ObjectClass::sub_4879B0 -> NG (attempt 1)
+[ledger] 0x7529e0 Audio::IsPlaying -> NG (attempt 1)
+[ledger] 0x7d78fe __IncMan -> NG (attempt 1)
+[ledger] 0x4a45c0 ObjectClass::sub_4A45C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2820 CStreamClass::Constructor -> NG (attempt 1)
+[ledger] 0x4f3f60 GraphicMenuShortcutItem::QueryInterface -> NG (attempt 1)
+[ledger] 0x6e6410 TagTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x7d718a _GetLcidFromLanguage -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 13,
+  "MATCH": 1,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "regalloc": 6,
+  "branch_order": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p261\batch_report.json

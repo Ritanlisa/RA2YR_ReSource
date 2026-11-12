@@ -1,0 +1,15 @@
+{
+ "symbol": "?loadWarheadINI@WarheadTypeClass@@QAEHPAE0H@Z",
+ "sym_key": "WarheadTypeClass::loadWarheadINI",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b5424046aff5052e80000000083f8ff75078b44240cc20c0083f8647c05b86400000033c985c00f9ec14923c8b81f85eb51c1e108f7e9c1fa058bc2c1e81f03d08bc23dff0000007c05b8ff000000c20c00",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?ReadInt_Overwrite@INIClass@@QAEHPAX0H@Z",
+   "sym_key": "INIClass::ReadInt_Overwrite"
+  }
+ ]
+}

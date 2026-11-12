@@ -1,0 +1,11 @@
+{
+ "addr": "0x474810",
+ "name": "WarheadTypeClass::loadWarheadINI",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x474810",
+ "bytes_hex": "8b4424088b5424046aff5052e8af2e0b0083f8ff75078b44240cc20c0083f8647c05b86400000033c985c00f9ec14923c8b81f85eb51c1e108f7e9c1fa058bc2c1e81f03d08bc23dff0000007c05b8ff000000c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

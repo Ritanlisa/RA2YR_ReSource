@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetDigest@GameOption@@QAEPADPAD@Z",
+ "sym_key": "GameOption::SetDigest",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "8b4424045385c08bd974206a20508d835c01000050e80000000083c40cc78378010000000000005bc2040033c9568a0d00000000578bf183c9ff8bfe33c0f2aef7d1498dbb5c0100008bc1408bc88bd1c1e902f3a58bca83e103f3a45f5e5bc20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_Str_No_Digest@@3EA",
+   "sym_key": "g_Str_No_Digest"
+  }
+ ]
+}

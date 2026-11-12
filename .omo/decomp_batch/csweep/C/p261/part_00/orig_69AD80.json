@@ -1,0 +1,11 @@
+{
+ "addr": "0x69AD80",
+ "name": "GameOption::SetDigest",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69AD80",
+ "bytes_hex": "8b4424045685c08bf1741d6a20508d865c01000050e836e4120083c40cc6867b010000005ec2040057bfe4f3830083c9ff33c0f2aef7d12bf98d965c0100008bc18bf78bfac1e902f3a58bc883e103f3a45f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
