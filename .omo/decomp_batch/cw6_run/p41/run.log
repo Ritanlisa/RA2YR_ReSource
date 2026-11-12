@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p41\part_00
+=== convert (20 addrs) ===
+[conv] 0x724a30 TechnoClass::sub_724A30 -> TechnoClass
+[conv] 0x724c90 _VectorClass_PBVToolTip::addRef -> _VectorClass_PBVToolTip
+[conv] 0x724db0 _VectorClass_PBVToolTip::seekString -> _VectorClass_PBVToolTip
+[conv] 0x724ec0 _DynamicVectorClass_PBVToolTip::read -> _DynamicVectorClass_PBVToolTip
+[conv] 0x726820 TriggerClass::ddtor -> TriggerClass
+[conv] 0x7271d0 sub_7271D0 -> _addr_72
+[conv] 0x727bb0 TriggerTypeClass::GetClassIdentifier -> TriggerTypeClass
+[conv] 0x7286d0 TubeClass::ddtor -> TubeClass
+[conv] 0x72a110 TunnelLocomotionClass::ddtor -> TunnelLocomotionClass
+[conv] 0x72b2f0 LoadingScreen::GetBackgroundImage -> LoadingScreen
+[conv] 0x72b310 LoadingScreen::GetOverlayImage -> LoadingScreen
+[conv] 0x72f510 VtableStub::_72F510 -> VtableStub
+[conv] 0x734250 SidebarClass::registerBuildingType -> SidebarClass
+[conv] 0x734270 Selection::ClearGlobals -> Selection
+[conv] 0x7345e0 sub_7345E0 -> _addr_73
+[conv] 0x746de0 UnitClass::ddtor -> UnitClass
+[conv] 0x747600 sub_747600 -> _addr_74
+[conv] 0x747f30 UnitTypeClass::GetClassIdentifier -> UnitTypeClass
+[conv] 0x74aad0 VoxelAnimClass::ddtor -> VoxelAnimClass
+[conv] 0x74b7d0 VoxelAnimTypeClass::GetClassIdentifier -> VoxelAnimTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] _VectorClass_PBVToolTip  rc=0
+[era] _DynamicVectorClass_PBVToolTip rc=0
+[era] TriggerClass             rc=0
+[era] _addr_72                 rc=2
+[era] TriggerTypeClass         rc=0
+[era] TubeClass                rc=0
+[era] TunnelLocomotionClass    rc=0
+[era] LoadingScreen            rc=2
+[era] VtableStub               rc=0
+[era] SidebarClass             rc=0
+[era] Selection                rc=0
+[era] _addr_73                 rc=0
+[era] UnitClass                rc=0
+[era] _addr_74                 rc=0
+[era] UnitTypeClass            rc=0
+[era] VoxelAnimClass           rc=0
+[era] VoxelAnimTypeClass       rc=0
+=== diffasm byte-compare ===
+[diff] 0x724a30   MISMATCH         TechnoClass::sub_724A30
+[diff] 0x724c90   MISMATCH         _VectorClass_PBVToolTip::addRef
+[diff] 0x724db0   MISMATCH         _VectorClass_PBVToolTip::seekString
+[diff] 0x724ec0   MISMATCH         _DynamicVectorClass_PBVToolTip::read
+[diff] 0x726820   MISMATCH         TriggerClass::ddtor
+[diff] 0x727bb0   MISMATCH         TriggerTypeClass::GetClassIdentifier
+[diff] 0x7286d0   MISMATCH         TubeClass::ddtor
+[diff] 0x72a110   MISMATCH         TunnelLocomotionClass::ddtor
+[diff] 0x72f510   MATCH            VtableStub::_72F510
+[diff] 0x734250   MISMATCH         SidebarClass::registerBuildingType
+[diff] 0x734270   MISMATCH         Selection::ClearGlobals
+[diff] 0x7345e0   MISMATCH         sub_7345E0
+[diff] 0x746de0   MISMATCH         UnitClass::ddtor
+[diff] 0x747600   MATCH            sub_747600
+[diff] 0x747f30   MISMATCH         UnitTypeClass::GetClassIdentifier
+[diff] 0x74aad0   MISMATCH         VoxelAnimClass::ddtor
+[diff] 0x74b7d0   MISMATCH         VoxelAnimTypeClass::GetClassIdentifier
+[ledger] 0x724a30 TechnoClass::sub_724A30 -> NG (attempt 2)
+[ledger] 0x724c90 _VectorClass_PBVToolTip::addRef -> NG (attempt 2)
+[ledger] 0x724db0 _VectorClass_PBVToolTip::seekString -> NG (attempt 2)
+[ledger] 0x724ec0 _DynamicVectorClass_PBVToolTip::read -> NG (attempt 2)
+[ledger] 0x726820 TriggerClass::ddtor -> NG (attempt 2)
+[ledger] 0x7271d0 sub_7271D0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x727bb0 TriggerTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x7286d0 TubeClass::ddtor -> NG (attempt 2)
+[ledger] 0x72a110 TunnelLocomotionClass::ddtor -> NG (attempt 2)
+[ledger] 0x72b2f0 LoadingScreen::GetBackgroundImage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72b310 LoadingScreen::GetOverlayImage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72f510 VtableStub::_72F510 -> OK (attempt 6)
+[ledger] 0x734250 SidebarClass::registerBuildingType -> NG (attempt 2)
+[ledger] 0x734270 Selection::ClearGlobals -> NG (attempt 2)
+[ledger] 0x7345e0 sub_7345E0 -> NG (attempt 2)
+[ledger] 0x746de0 UnitClass::ddtor -> NG (attempt 2)
+[ledger] 0x747600 sub_747600 -> OK (attempt 2)
+[ledger] 0x747f30 UnitTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x74aad0 VoxelAnimClass::ddtor -> NG (attempt 2)
+[ledger] 0x74b7d0 VoxelAnimTypeClass::GetClassIdentifier -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 3,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "const_fold": 3,
+  "branch_polarity": 1,
+  "codegen_shape": 10,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 11.8,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p41\batch_report.json

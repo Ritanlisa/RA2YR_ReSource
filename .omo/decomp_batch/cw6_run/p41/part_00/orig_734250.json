@@ -1,0 +1,11 @@
+{
+ "addr": "0x734250",
+ "name": "SidebarClass::registerBuildingType",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x734250",
+ "bytes_hex": "8b812005000083b8080e0000057507890d60feb000c3890d5cfeb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x734270",
+ "name": "Selection::ClearGlobals",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x734270",
+ "bytes_hex": "33c03bc8750ba35cfeb000a360feb000c33b0d5cfeb0007506a35cfeb000c33b0d60feb0007505a360feb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
