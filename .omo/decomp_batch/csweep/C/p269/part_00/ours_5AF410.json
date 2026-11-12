@@ -1,0 +1,21 @@
+{
+ "symbol": "?CalcFacingFromMatrix@TechnoClass@@QAEXXZ",
+ "sym_key": "TechnoClass::CalcFacingFromMatrix",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "83ec188d4424008bd1508d4c2410c744240400000000c744240800000000c744240c0000803fe800000000d9400883ec08dd1c24d90083ec08dd1c24e800000000ddd883c428c3",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?TransformMatrix3x4Point@@YIPAMPAX00@Z",
+   "sym_key": "TransformMatrix3x4Point"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?Math__CalcAngle@@YANNN@Z",
+   "sym_key": "Math__CalcAngle"
+  }
+ ]
+}

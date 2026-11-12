@@ -1,0 +1,11 @@
+{
+ "addr": "0x7729F0",
+ "name": "WeaponTypeClass::CalculateSpeed",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7729F0",
+ "bytes_hex": "83ec08568bf18b86a000000085c074488b88dc02000085c9753e8b0de0718800db81b81600008a889502000084c9dd5c24047409e8c782d1ffdd5c24048b5424088b4424048b8eb40000005250e84e81d1ff8986a80000005e83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

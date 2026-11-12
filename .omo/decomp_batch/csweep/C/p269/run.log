@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p269\part_00
+=== convert (20 addrs) ===
+[conv] 0x67b370 TerrainTypeVector::Construct -> TerrainTypeVector
+[conv] 0x68c200 TechnoTypeVector::Construct -> TechnoTypeVector
+[conv] 0x6b83a0 SpawnManagerClass::Constructor_6B83A0 -> SpawnManagerClass
+[conv] 0x6f2230 VectorClass::Team_Helper_6F2230 -> VectorClass
+[conv] 0x717c70 TypeList::ParticleConstructor -> TypeList
+[conv] 0x7342d0 DynamicVector::Constructor_Techno -> DynamicVector
+[conv] 0x734330 VectorClass::SelectFactionThemeMusic_Helper_734330 -> VectorClass
+[conv] 0x7632d0 WaveClass::Constructor_7632D0 -> WaveClass
+[conv] 0x456580 BuildingClass::UpdateRevealField -> BuildingClass
+[conv] 0x4565e0 BuildingClass::UpdateGapGeneratorField -> BuildingClass
+[conv] 0x486bf0 CellClass::UpdateZone -> CellClass
+[conv] 0x5af3b0 ObjectClass::sub_5AF3B0 -> ObjectClass
+[conv] 0x5af410 TechnoClass::CalcFacingFromMatrix -> TechnoClass
+[conv] 0x5af470 ObjectClass::sub_5AF470 -> ObjectClass
+[conv] 0x633c60 ObjectClass::sub_633C60 -> ObjectClass
+[conv] 0x69ae10 GameClass::initPlayerData -> GameClass
+[conv] 0x7729f0 WeaponTypeClass::CalculateSpeed -> WeaponTypeClass
+[conv] 0x5e8ae0 GameClass::InitDifficultyButtons -> GameClass
+[conv] 0x4b6470 DropPodLocomotionClass::QueryInterface -> DropPodLocomotionClass
+[conv] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> JumpjetLocomotionClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TerrainTypeVector        rc=0
+[era] TechnoTypeVector         rc=0
+[era] SpawnManagerClass        rc=0
+[era] VectorClass              rc=0
+[era] TypeList                 rc=2
+[era] DynamicVector            rc=0
+[era] WaveClass                rc=0
+[era] BuildingClass            rc=0
+[era] CellClass                rc=0
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] GameClass                rc=2
+[era] WeaponTypeClass          rc=0
+[era] DropPodLocomotionClass   rc=2
+[era] JumpjetLocomotionClass   rc=2
+=== diffasm byte-compare ===
+[diff] 0x67b370   MISMATCH         TerrainTypeVector::Construct
+[diff] 0x68c200   MISMATCH         TechnoTypeVector::Construct
+[diff] 0x6b83a0   MISMATCH         SpawnManagerClass::Constructor_6B83A0
+[diff] 0x6f2230   MISMATCH         VectorClass::Team_Helper_6F2230
+[diff] 0x734330   MISMATCH         VectorClass::SelectFactionThemeMusic_Helper_734330
+[diff] 0x7342d0   MISMATCH         DynamicVector::Constructor_Techno
+[diff] 0x7632d0   MISMATCH         WaveClass::Constructor_7632D0
+[diff] 0x456580   MISMATCH         BuildingClass::UpdateRevealField
+[diff] 0x4565e0   MISMATCH         BuildingClass::UpdateGapGeneratorField
+[diff] 0x486bf0   MISMATCH         CellClass::UpdateZone
+[diff] 0x5af3b0   MISMATCH         ObjectClass::sub_5AF3B0
+[diff] 0x5af470   MISMATCH         ObjectClass::sub_5AF470
+[diff] 0x633c60   MISMATCH         ObjectClass::sub_633C60
+[diff] 0x5af410   MISMATCH         TechnoClass::CalcFacingFromMatrix
+[diff] 0x5e8ae0   MISMATCH         GameClass::InitDifficultyButtons
+[diff] 0x7729f0   MISMATCH         WeaponTypeClass::CalculateSpeed
+[ledger] 0x67b370 TerrainTypeVector::Construct -> NG (attempt 1)
+[ledger] 0x68c200 TechnoTypeVector::Construct -> NG (attempt 1)
+[ledger] 0x6b83a0 SpawnManagerClass::Constructor_6B83A0 -> NG (attempt 1)
+[ledger] 0x6f2230 VectorClass::Team_Helper_6F2230 -> NG (attempt 1)
+[ledger] 0x717c70 TypeList::ParticleConstructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7342d0 DynamicVector::Constructor_Techno -> NG (attempt 1)
+[ledger] 0x734330 VectorClass::SelectFactionThemeMusic_Helper_734330 -> NG (attempt 1)
+[ledger] 0x7632d0 WaveClass::Constructor_7632D0 -> NG (attempt 1)
+[ledger] 0x456580 BuildingClass::UpdateRevealField -> NG (attempt 1)
+[ledger] 0x4565e0 BuildingClass::UpdateGapGeneratorField -> NG (attempt 1)
+[ledger] 0x486bf0 CellClass::UpdateZone -> NG (attempt 1)
+[ledger] 0x5af3b0 ObjectClass::sub_5AF3B0 -> NG (attempt 1)
+[ledger] 0x5af410 TechnoClass::CalcFacingFromMatrix -> NG (attempt 1)
+[ledger] 0x5af470 ObjectClass::sub_5AF470 -> NG (attempt 1)
+[ledger] 0x633c60 ObjectClass::sub_633C60 -> NG (attempt 1)
+[ledger] 0x69ae10 GameClass::initPlayerData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7729f0 WeaponTypeClass::CalculateSpeed -> NG (attempt 1)
+[ledger] 0x5e8ae0 GameClass::InitDifficultyButtons -> NG (attempt 1)
+[ledger] 0x4b6470 DropPodLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "const_fold": 6,
+  "codegen_shape": 2,
+  "width_mismatch": 1,
+  "regalloc": 2,
+  "frame_sched": 3,
+  "branch_polarity": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p269\batch_report.json

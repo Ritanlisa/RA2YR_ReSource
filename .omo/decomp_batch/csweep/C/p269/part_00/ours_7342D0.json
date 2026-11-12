@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor_Techno@DynamicVector@@QAEPAV1@HH@Z",
+ "sym_key": "DynamicVector::Constructor_Techno",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf185c0c7460400000000894608c7460c01000000c7461000000000c7060000000074238b4c240c85c97405894e04eb16c1e00250e80000000083c404894604c7461001000000c70600000000c746140a000000c746100000000033c05ec20800",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

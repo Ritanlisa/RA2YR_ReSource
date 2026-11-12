@@ -1,0 +1,27 @@
+{
+ "symbol": "?CalculateSpeed@WeaponTypeClass@@QAEHXZ",
+ "sym_key": "WeaponTypeClass::CalculateSpeed",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf18b86a000000085c0744a8b88dc02000085c975408b0d40020000db81b81600008a889502000084c9dd5c2404740b8bcee800000000dd5c24048b5424088b4424048b8eb40000005250e8000000008986a80000005e83c408c3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?GetFiringDistance@RulesClass@@QAENXZ",
+   "sym_key": "RulesClass::GetFiringDistance"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?ComputeScanRange@TechnoClass@@QAE_JN@Z",
+   "sym_key": "TechnoClass::ComputeScanRange"
+  }
+ ]
+}

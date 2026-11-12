@@ -1,0 +1,33 @@
+{
+ "symbol": "?UpdateRevealField@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::UpdateRevealField",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "53568bf157b9f80100008b862405000050e8000000008bd833ff8b431085c07e318b4b048b54f9048d04f98b8e100200008b0003d1528b960802000003c2b9f80100005056e8000000008b4310473bf87ccfc786e8030000010000005f5e5bc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?GetField@Diplomacy@@QAEPADH@Z",
+   "sym_key": "Diplomacy::GetField"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?ProcessFogCellOccupancy@BuildingClass@@QAEXHHH@Z",
+   "sym_key": "BuildingClass::ProcessFogCellOccupancy"
+  }
+ ]
+}

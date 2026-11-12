@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AF410",
+ "name": "TechnoClass::CalcFacingFromMatrix",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AF410",
+ "bytes_hex": "83ec248d44240c8bd1508d4c241cc744241000000000c744241400000000c74424180000803fe8450700008b0883ec08894c240883ec088b5004895424148b400889442418d9442418dd5c2408d9442410dd1c24e8c7b9f1ff83c434c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

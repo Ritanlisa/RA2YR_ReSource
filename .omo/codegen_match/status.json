@@ -15568,6 +15568,30 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x456580": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+5 mov ecx, 0x87f7e8",
+  "name": "BuildingClass::UpdateRevealField",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "BuildingClass::UpdateRevealField",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4565e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ebp",
+  "name": "BuildingClass::UpdateGapGeneratorField",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "BuildingClass::UpdateGapGeneratorField",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4566b0": {
   "attempts": 5,
   "first_diff": "+0 push ebx",
@@ -21767,6 +21791,18 @@
   "name": "CellClass::IsActiveOrNext",
   "note": "via=mirror MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x486bf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+19 mov ecx, 0x87f7e8",
+  "name": "CellClass::UpdateZone",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CellClass::UpdateZone",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x486d90": {
   "attempts": 4,
@@ -33906,6 +33942,18 @@
   "orig_name": "JumpjetLocomotionClass::CheckBaseClassState",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4b6470": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "DropPodLocomotionClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DropPodLocomotionClass::QueryInterface",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4b64d0": {
@@ -62720,6 +62768,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x54dc60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::QueryInterface",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x54df50": {
   "attempts": 1,
   "clean": false,
@@ -71594,6 +71654,42 @@
   "name": "ObjectClass::sub_5AF360",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "sub_5AF360",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5af3b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0x24",
+  "name": "ObjectClass::sub_5AF3B0",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "sub_5AF3B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5af410": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x24",
+  "name": "TechnoClass::CalcFacingFromMatrix",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "TechnoClass::CalcFacingFromMatrix",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5af470": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0x24",
+  "name": "ObjectClass::sub_5AF470",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "sub_5AF470",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -82493,6 +82589,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x5e8ae0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 cmp dword ptr [0xa8b238], 4",
+  "name": "GameClass::InitDifficultyButtons",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "GameClass::InitDifficultyButtons",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5e8b40": {
   "attempts": 1,
   "clean": true,
@@ -90003,6 +90111,18 @@
   "name": "ScenarioClass::GetActionCoordsCopy",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ScenarioClass::GetActionCoordsCopy",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x633c60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 lea ecx, [esp]",
+  "name": "ObjectClass::sub_633C60",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_633C60",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -98577,6 +98697,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x67b370": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+27 mov dword ptr [esi], 0x7f0d9c",
+  "name": "TerrainTypeVector::Construct",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TerrainTypeVector::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x67b3d0": {
   "attempts": 1,
   "first_diff": "+1 push ebp",
@@ -99887,6 +100019,18 @@
   "name": "BuildingType::Init",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x68c200": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+27 mov dword ptr [esi], 0x7e4df8",
+  "name": "TechnoTypeVector::Construct",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TechnoTypeVector::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x68c260": {
   "attempts": 1,
@@ -101666,6 +101810,18 @@
   "orig_name": "IsRandMap::Sed",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x69ae10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "GameClass::initPlayerData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GameClass::initPlayerData",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x69ae70": {
@@ -106339,6 +106495,18 @@
   "name": "AbstractClass::resetPathMemory",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x6b83a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+7 test eax, eax",
+  "name": "SpawnManagerClass::Constructor_6B83A0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SpawnManagerClass::Constructor_6B83A0",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6b84b0": {
   "attempts": 1,
@@ -117652,6 +117820,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6f2230": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+27 mov dword ptr [esi], 0x7ea9e4",
+  "name": "VectorClass::Team_Helper_6F2230",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Team_Helper_6F2230",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6f2290": {
   "attempts": 2,
   "clean": false,
@@ -120216,6 +120396,18 @@
   "name": "ObjectTypeClass::loadTypeMember_5717C00",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
+ },
+ "0x717c70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TypeList::ParticleConstructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TypeList::ParticleConstructor",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x717cd0": {
   "attempts": 1,
@@ -127609,6 +127801,30 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7342d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+19 mov byte ptr [esi + 0xc], 1",
+  "name": "DynamicVector::Constructor_Techno",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "DynamicVector::Constructor_Techno",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x734330": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+27 mov dword ptr [esi], 0x7ee0d4",
+  "name": "VectorClass::SelectFactionThemeMusic_Helper_734330",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "SelectFactionThemeMusic_Helper_734330",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x734390": {
   "attempts": 1,
   "clean": false,
@@ -133629,6 +133845,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x7632d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+7 test eax, eax",
+  "name": "WaveClass::Constructor_7632D0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "WaveClass::Constructor_7632D0",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x763330": {
   "attempts": 1,
   "clean": false,
@@ -138350,6 +138578,18 @@
   "orig_name": "WeaponTypeClass::ReadINI",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7729f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+14 je 0x772a48",
+  "name": "WeaponTypeClass::CalculateSpeed",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "WeaponTypeClass::CalculateSpeed",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x772a50": {

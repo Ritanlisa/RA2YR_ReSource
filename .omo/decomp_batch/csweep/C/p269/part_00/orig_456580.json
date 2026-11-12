@@ -1,0 +1,11 @@
+{
+ "addr": "0x456580",
+ "name": "BuildingClass::UpdateRevealField",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x456580",
+ "bytes_hex": "53568bf157b9e8f787008b862005000050e8eaff1f008bd833ff8b431085c07e318b4b048b86080200008b14f98d0cf903c28b960c0200008b490403ca515056b9e8f78700e896ef1f008b4310473bf87ccfc68623040000015f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

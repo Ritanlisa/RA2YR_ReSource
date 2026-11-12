@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_5AF470@ObjectClass@@QAEXH@Z",
+ "sym_key": "ObjectClass::sub_5AF470",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "83ec188d4424008bd1508d4c2410c74424040000803fc744240800000000c744240c00000000e800000000d90083ec08dd1c24d9400483ec08dd1c24e800000000ddd883c428c20400",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?TransformMatrix3x4Point@@YIPAMPAX00@Z",
+   "sym_key": "TransformMatrix3x4Point"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?Math__CalcAngle@@YANNN@Z",
+   "sym_key": "Math__CalcAngle"
+  }
+ ]
+}

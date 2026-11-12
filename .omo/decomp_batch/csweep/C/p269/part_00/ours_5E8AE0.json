@@ -1,0 +1,57 @@
+{
+ "symbol": "?InitDifficultyButtons@GameClass@@QAEXXZ",
+ "sym_key": "GameClass::InitDifficultyButtons",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "a1000000005683f8048bf17522e80000000084c074128bcee80000000084c07507be02000000eb0cbe06000000eb05be08000000a10000000056506800000000e80000000083c40c83fe087d1f8b1500000000b9080000002bce8d04b590daa800515250e80000000083c40c5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?IsMultiplayerActive@Network@@QAE_NXZ",
+   "sym_key": "Network::IsMultiplayerActive"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?IsLobbyFeature@Network@@QAEDXZ",
+   "sym_key": "Network::IsLobbyFeature"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?memset32@@YAHPAXHHZZ",
+   "sym_key": "memset32"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?memset32@@YAHPAXHHZZ",
+   "sym_key": "memset32"
+  }
+ ]
+}

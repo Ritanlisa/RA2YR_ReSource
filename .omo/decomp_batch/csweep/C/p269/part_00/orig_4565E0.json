@@ -1,0 +1,11 @@
+{
+ "addr": "0x4565E0",
+ "name": "BuildingClass::UpdateGapGeneratorField",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4565E0",
+ "bytes_hex": "55568bf157b9e8f787008b862005000050e88aff1f008be833ff8b451085c07e318b4d048b86080200008b14f98d0cf903c28b960c0200008b490403ca515056b9e8f78700e816f11f008b4510473bf87ccfc68623040000005f5e5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

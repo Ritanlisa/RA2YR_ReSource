@@ -1,0 +1,27 @@
+{
+ "symbol": "?UpdateZone@CellClass@@QAEPAIXZ",
+ "sym_key": "CellClass::UpdateZone",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "518b41245689442404be010000008d4c240451b9f8010000e8000000000fbe881b0100008d56fe3bca7c1d3bce7f198b884001000081e1ffffbfff8988400100008bc8e80000000066ff44240466ff44240683c60283fe0f7cb45e59c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?ClearCellContents@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::ClearCellContents"
+  }
+ ]
+}
