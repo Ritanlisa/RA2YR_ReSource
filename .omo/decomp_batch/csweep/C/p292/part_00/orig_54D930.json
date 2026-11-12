@@ -1,0 +1,11 @@
+{
+ "addr": "0x54D930",
+ "name": "JumpjetLocomotionClass::DispatchVirtualCall_4",
+ "size": 122,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54D930",
+ "bytes_hex": "8b44240883ec1885c05675678b7424208d4c241057518b0656ff50188b088b3da8c5ab00894c24088b50048954240c8b40083bcf894424105f75103b15acc5ab0075083b05b0c5ab0074288b464c85c0740a8a868c00000084c074178b4e088d442404508b11ff92f4000000c6868c000000005e83c418c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

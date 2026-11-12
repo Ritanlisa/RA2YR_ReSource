@@ -1,0 +1,11 @@
+{
+ "addr": "0x42E780",
+ "name": "BuildingQueue::IsCellSuitable",
+ "size": 123,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42E780",
+ "bytes_hex": "568b742408578bf956e89200000085c074075fb0015ec204008b4708c1e6048d0c068b040685c07c4b8b156c3ca8008b34828a867115000084c0743883c10451b9e8f78700e8d66f13008b8e540e00008b50443b919402000075075fb0015ec204008bc8e837dd040085c074075fb0015ec204005f32c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

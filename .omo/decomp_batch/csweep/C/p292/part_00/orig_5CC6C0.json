@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CC6C0",
+ "name": "ScenarioClass::DrawSHPFrameToSurface",
+ "size": 123,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CC6C0",
+ "bytes_hex": "83ec18568bf18b564083fa037205ba030000008a460c84c0745a33c9578b7e0433c051508b0495780083008b563851515168e80300005151897c24288b7e08518b0d107388000bc2897c24308b11508d44243850ff52788b56288d4c2430508b461c518b0d10738800528b562050e83d26eeff5f5e83c418c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

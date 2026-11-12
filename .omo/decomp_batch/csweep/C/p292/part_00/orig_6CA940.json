@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CA940",
+ "name": "Render_Parse_6CA940",
+ "size": 122,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CA940",
+ "bytes_hex": "83ec088b44240c535556578bfa32db33f685c0894c241466c70700007e388befeb048b4c24148b018d5424126a0252ff500883f8027531668b442412663d0a007414663d0d007408668945004683c5023b74241c7ccc66c7047700005f5e8ac35d5b83c408c2040066c7047700005f5e5db0015b83c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

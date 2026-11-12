@@ -1,0 +1,33 @@
+{
+ "symbol": "?FindScriptAction@TeamClass@@QAEPAIPAH@Z",
+ "sym_key": "TeamClass::FindScriptAction",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "a1000000005356578bf950e8000000008bf083c4048b4e048d4604680000000050893d00000000ff511083f8ff744c8b5e1483fb0175088bc75f5e5bc204004885c07d038d43ff85db8bd0742e3bc37c168b8e9400000085c97c202bc133d2f7b69000000003d185d27c103bd37d0c8b4e085f5e5b8b0491c204005f5e33c05bc20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?p_vtable0@@3IA",
+   "sym_key": "p_vtable0"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?p_vtable0@@3IA",
+   "sym_key": "p_vtable0"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?p_vtable0@@3IA",
+   "sym_key": "p_vtable0"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?DispatchVirtualCall_4@JumpjetLocomotionClass@@QAGDH@Z",
+ "sym_key": "JumpjetLocomotionClass::DispatchVirtualCall_4",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "83ec188b4424208b4c24208bd05633d15781e2ff00000033c285c9894424280f85810000008b7424248d4c241451568b06ff50188b10895424088b4804894c240c8b7808a100000000897c24283bd0897c241075103b0d0000000075083b3d0000000074418b464c85c074128a869800000084c08844242874308b7c24288b46088d4c240851508b10ff92f400000033c7c786980000000000000025ff00000033f8897c24288a4424285f5e83c418c20800",
+ "relocs": [
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC5A8@@3IA",
+   "sym_key": "DataGlobal_ABC5A8"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC5AC@@3IA",
+   "sym_key": "DataGlobal_ABC5AC"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC5B0@@3IA",
+   "sym_key": "DataGlobal_ABC5B0"
+  }
+ ]
+}

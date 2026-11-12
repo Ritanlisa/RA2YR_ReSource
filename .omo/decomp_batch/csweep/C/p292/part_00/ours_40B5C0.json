@@ -1,0 +1,105 @@
+{
+ "symbol": "?sub_40B5C0@@YAXXZ",
+ "sym_key": "Unnamed::sub_40B5C0",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "53b900000000e800000000a10000000033db3bc3891d000000007417381d00000000740f50e80000000083c404891d00000000a100000000881d000000003bc3891d00000000891d000000007417381d00000000740f50e80000000083c404891d00000000881d00000000891d000000005bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5D8@@3IA",
+   "sym_key": "DataGlobal_87F5D8"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?FlushAndReset@Stream@@QAEHXZ",
+   "sym_key": "Stream::FlushAndReset"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F4@@3IA",
+   "sym_key": "DataGlobal_87F5F4"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5FD@@3EA",
+   "sym_key": "DataGlobal_87F5FD"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F4@@3IA",
+   "sym_key": "DataGlobal_87F5F4"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5DC@@3IA",
+   "sym_key": "DataGlobal_87F5DC"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5FD@@3EA",
+   "sym_key": "DataGlobal_87F5FD"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F8@@3IA",
+   "sym_key": "DataGlobal_87F5F8"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5D8@@3IA",
+   "sym_key": "DataGlobal_87F5D8"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5E5@@3EA",
+   "sym_key": "DataGlobal_87F5E5"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5DC@@3IA",
+   "sym_key": "DataGlobal_87F5DC"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5E5@@3EA",
+   "sym_key": "DataGlobal_87F5E5"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5E0@@3IA",
+   "sym_key": "DataGlobal_87F5E0"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?DrawSHPFrameToSurface@MSOverlayAnim@@QAEXH@Z",
+ "sym_key": "MSOverlayAnim::DrawSHPFrameToSurface",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "83ec18568bf18b464083f8037205b8030000008a4e0c84c9745c8b56088b4e04578b3c85000000008d4424108954240c8b563850a100000000894c240c500bfaff50786a006a006a008b56286a006a0068e80300006a006a006a00578d4c2430508b461c518b0d00000000528b562050e8000000005f5e83c418c20400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_830078@@3PAIA",
+   "sym_key": "DataGlobal_830078"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHPAX0000HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

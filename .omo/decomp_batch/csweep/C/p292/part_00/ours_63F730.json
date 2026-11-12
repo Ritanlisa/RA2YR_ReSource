@@ -1,0 +1,27 @@
+{
+ "symbol": "?updateDrain@PowerClass@@QAEPAV1@XZ",
+ "sym_key": "PowerClass::updateDrain",
+ "size": 123,
+ "link_base": 0,
+ "bytes_hex": "515356578bf1e80000000083c8ff89863c150000898640150000e8000000008b7c240c33db898610150000899e1c15000089be14150000899e18150000e8000000008986201500008b863815000022c389be241500008986381500008bc7899e2c150000899e30150000899e34150000899e281500005f5e5b59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Destru_vt07@RadarClass@@QAEXXZ",
+   "sym_key": "RadarClass::Destru_vt07"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

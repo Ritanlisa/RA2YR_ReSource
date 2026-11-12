@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetProductionLimit@InfantryClass@@QAEHD@Z",
+ "sym_key": "InfantryClass::GetProductionLimit",
+ "size": 124,
+ "link_base": 0,
+ "bytes_hex": "a100000000568bf1508b8e1c020000e80000000084c074128a44240884c0750a8b86c00600005ec204008b861805000085c07544a10000000085c0742f0fbe80e801000085c075108b15400200005e8b82580d0000c2040083f801750fa1400200005e8b805c0d0000c204008b0d400200008b81600d00005ec20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

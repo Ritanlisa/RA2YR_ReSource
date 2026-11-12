@@ -1,0 +1,39 @@
+{
+ "symbol": "?IsCellSuitable@BuildingQueue@@QAE_NH@Z",
+ "sym_key": "BuildingQueue::IsCellSuitable",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "568b742408578bf956e80000000085c074075fb0015ec204008b5708c1e60403f28b0685c07c408b0d000000008b3c818a877115000084c0742d83c604b9f801000056e8000000008b97540e00008b48443b8a9402000075075fb0015ec204008bc8e8000000005f32c05ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?GetCellData@BridgeClass@@QAEPAIH@Z",
+   "sym_key": "BridgeClass::GetCellData"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x522640",
+ "name": "InfantryClass::GetProductionLimit",
+ "size": 123,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x522640",
+ "bytes_hex": "a14c3da800568bf1508b8e1c020000e8fc73fdff84c074128a44240884c0750a8b86c00600005ec204008b861805000085c07543a14c3da80085c0742f8b80e801000085c075108b0de07188005e8b81580d0000c2040083f80175108b15e07188005e8b825c0d0000c20400a1e07188008b80600d00005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

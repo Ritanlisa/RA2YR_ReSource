@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p292\part_00
+=== convert (20 addrs) ===
+[conv] 0x6ca940 Render_Parse_6CA940 -> Render_Parse
+[conv] 0x5cbd20 Trigger::initTrigger -> Trigger
+[conv] 0x5dab80 ObjectClass::sub_5DAB80 -> ObjectClass
+[conv] 0x633ea0 TeamClass::FindScriptAction -> TeamClass
+[conv] 0x54d930 JumpjetLocomotionClass::DispatchVirtualCall_4 -> JumpjetLocomotionClass
+[conv] 0x5b6eb0 ObjectClass::UI_Setup -> ObjectClass
+[conv] 0x5baa80 ObjectClass::sub_5BAA80 -> ObjectClass
+[conv] 0x4494c0 BuildingClass::CanBeSold -> BuildingClass
+[conv] 0x522640 InfantryClass::GetProductionLimit -> InfantryClass
+[conv] 0x429360 ApplicationClass::sub_429360 -> ApplicationClass
+[conv] 0x65c420 RAMFileClass::nullsub_0_4 -> RAMFileClass
+[conv] 0x5d4f20 ObjectClass::sub_5D4F20 -> ObjectClass
+[conv] 0x4093f0 ObjectClass::sub_4093F0 -> ObjectClass
+[conv] 0x5275c0 INIClass::SetInt -> INIClass
+[conv] 0x5cc6c0 MSOverlayAnim::DrawSHPFrameToSurface -> MSOverlayAnim
+[conv] 0x40b5c0 sub_40B5C0 -> _addr_40
+[conv] 0x42e780 BuildingQueue::IsCellSuitable -> BuildingQueue
+[conv] 0x476e20 ObjectClass::sub_476E20 -> ObjectClass
+[conv] 0x63f730 PowerClass::updateDrain -> PowerClass
+[conv] 0x5f44a0 IUnknown::Remove -> IUnknown
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Render_Parse             rc=0
+[era] Trigger                  rc=2
+[era] ObjectClass              rc=2
+[era] TeamClass                rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] BuildingClass            rc=0
+[era] InfantryClass            rc=0
+[era] ApplicationClass         rc=0
+[era] RAMFileClass             rc=2
+[era] INIClass                 rc=2
+[era] MSOverlayAnim            rc=0
+[era] _addr_40                 rc=0
+[era] BuildingQueue            rc=0
+[era] PowerClass               rc=0
+[era] IUnknown                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6ca940   MISMATCH         Render_Parse_6CA940
+[diff] 0x5d4f20   MISMATCH         ObjectClass::sub_5D4F20
+[diff] 0x4093f0   MISMATCH         ObjectClass::sub_4093F0
+[diff] 0x633ea0   MISMATCH         TeamClass::FindScriptAction
+[diff] 0x54d930   MISMATCH         JumpjetLocomotionClass::DispatchVirtualCall_4
+[diff] 0x4494c0   MISMATCH         BuildingClass::CanBeSold
+[diff] 0x522640   MISMATCH         InfantryClass::GetProductionLimit
+[diff] 0x429360   MISMATCH         ApplicationClass::sub_429360
+[diff] 0x5cc6c0   MISMATCH         MSOverlayAnim::DrawSHPFrameToSurface
+[diff] 0x40b5c0   MISMATCH         sub_40B5C0
+[diff] 0x42e780   MISMATCH         BuildingQueue::IsCellSuitable
+[diff] 0x63f730   MISMATCH         PowerClass::updateDrain
+[ledger] 0x6ca940 Render_Parse_6CA940 -> NG (attempt 1)
+[ledger] 0x5cbd20 Trigger::initTrigger -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dab80 ObjectClass::sub_5DAB80 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x633ea0 TeamClass::FindScriptAction -> NG (attempt 1)
+[ledger] 0x54d930 JumpjetLocomotionClass::DispatchVirtualCall_4 -> NG (attempt 1)
+[ledger] 0x5b6eb0 ObjectClass::UI_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5baa80 ObjectClass::sub_5BAA80 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4494c0 BuildingClass::CanBeSold -> NG (attempt 1)
+[ledger] 0x522640 InfantryClass::GetProductionLimit -> NG (attempt 1)
+[ledger] 0x429360 ApplicationClass::sub_429360 -> NG (attempt 1)
+[ledger] 0x65c420 RAMFileClass::nullsub_0_4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d4f20 ObjectClass::sub_5D4F20 -> NG (attempt 1)
+[ledger] 0x4093f0 ObjectClass::sub_4093F0 -> NG (attempt 1)
+[ledger] 0x5275c0 INIClass::SetInt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cc6c0 MSOverlayAnim::DrawSHPFrameToSurface -> NG (attempt 1)
+[ledger] 0x40b5c0 sub_40B5C0 -> NG (attempt 1)
+[ledger] 0x42e780 BuildingQueue::IsCellSuitable -> NG (attempt 1)
+[ledger] 0x476e20 ObjectClass::sub_476E20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63f730 PowerClass::updateDrain -> NG (attempt 1)
+[ledger] 0x5f44a0 IUnknown::Remove -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "extern_reloc": 3,
+  "frame_sched": 1,
+  "branch_polarity": 2,
+  "cc_mismatch": 1,
+  "ret_norm": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p292\batch_report.json
