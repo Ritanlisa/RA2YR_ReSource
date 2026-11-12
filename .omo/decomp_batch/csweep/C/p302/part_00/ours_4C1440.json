@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_4C1440@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_4C1440",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "81ec3c01000057b94f00000033c08d7c2404f3aba1000000008d542404c74424043c0100006a008b085250ff512c85c05f7532f64424040174288b442438f6c404741f8b842484000000f6c4207413f6c410740ec1e81183e0014881c43c010000c383c8ff81c43c010000c3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E00@@3IA",
+   "sym_key": "DataGlobal_8A0E00"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x69E180",
+ "name": "MixFileClass::DestroyCache",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69E180",
+ "bytes_hex": "53568b35b077b00033db3bf37477578b7e183bf3745f66833eff7550385e1074148b4e0c3bcb74076a01e881070000895e0c885e108b46183bc374068b4e1c89481c8b461c3bc374088b5618895018eb088b4618a3b077b0008b46083bc3740c50e802b2120083c404895e0856e84ba9120083c4043bfb8bf775945f891db077b0005e5bc3891db077b0005e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

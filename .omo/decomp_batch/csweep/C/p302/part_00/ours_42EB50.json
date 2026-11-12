@@ -1,0 +1,39 @@
+{
+ "symbol": "?FindFreeSlot@BuildingQueue@@QAEHH@Z",
+ "sym_key": "BuildingQueue::FindFreeSlot",
+ "size": 154,
+ "link_base": 0,
+ "bytes_hex": "5355568bf15733ff8b461485c07f0a5f5e5d83c8ff5bc204008b6c241433db83fdff74168b4608392c18753e578bcee80000000084c07459eb30578bcee80000000084c07524a10000000085c074428b4e088d04198a4c190884c974348b4e7450e80000000084c075158b46144783c3103bf87caa5f5e5d83c8ff5bc204008b46088b0d000000008bd7c1e204894c02048bc75f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?IsCellSuitable@BuildingQueue@@QAE_NH@Z",
+   "sym_key": "BuildingQueue::IsCellSuitable"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?IsCellSuitable@BuildingQueue@@QAE_NH@Z",
+   "sym_key": "BuildingQueue::IsCellSuitable"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?ProcessTarget@TechnoClass@@QAE_NH@Z",
+   "sym_key": "TechnoClass::ProcessTarget"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C310@@3IA",
+   "sym_key": "DataGlobal_89C310"
+  }
+ ]
+}

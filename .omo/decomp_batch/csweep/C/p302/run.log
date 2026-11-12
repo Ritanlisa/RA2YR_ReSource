@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p302\part_00
+=== convert (20 addrs) ===
+[conv] 0x42e6f0 BaseClass::Constructor -> BaseClass
+[conv] 0x4fb920 HouseClass::SDDTORAllAndTriggers -> HouseClass
+[conv] 0x5415f0 IPXManagerClass::ddtor -> IPXManagerClass
+[conv] 0x406060 Mixer::ReleaseChannel -> Mixer
+[conv] 0x4c3b60 sub_4C3B60 -> _addr_4C
+[conv] 0x5c1980 ObjectClass::MPCooperative_Copy -> ObjectClass
+[conv] 0x6550c0 ObjectClass::Team_Load_6550C0 -> ObjectClass
+[conv] 0x6c8900 ObjectClass::sub_6C8900 -> ObjectClass
+[conv] 0x7aed40 CChatEventSink::ProcessChatEvent -> CChatEventSink
+[conv] 0x58c320 ObjectClass::sub_58C320 -> ObjectClass
+[conv] 0x42eb50 BuildingQueue::FindFreeSlot -> BuildingQueue
+[conv] 0x69e180 MixFileClass::DestroyCache -> MixFileClass
+[conv] 0x69ac30 ScenarioClass::CheckExists -> ScenarioClass
+[conv] 0x4733a0 CellClass::AddObject -> CellClass
+[conv] 0x4c1440 ObjectClass::sub_4C1440 -> ObjectClass
+[conv] 0x5e35a0 ObjectClass::sub_5E35A0 -> ObjectClass
+[conv] 0x6253b0 Options::GrowBuffer -> Options
+[conv] 0x625990 ComboBoxOwnerDraw::GrowBuffer -> ComboBoxOwnerDraw
+[conv] 0x7af000 DynamicVector::EnsureCapacity -> DynamicVector
+[conv] 0x4bac60 DSurface::CreateBackBuffer -> DSurface
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BaseClass                rc=2
+[era] HouseClass               rc=0
+[era] IPXManagerClass          rc=0
+[era] Mixer                    rc=2
+[era] _addr_4C                 rc=0
+[era] ObjectClass              rc=2
+[era] CChatEventSink           rc=0
+[era] BuildingQueue            rc=0
+[era] MixFileClass             rc=0
+[era] ScenarioClass            rc=2
+[era] CellClass                rc=0
+[era] Options                  rc=0
+[era] ComboBoxOwnerDraw        rc=0
+[era] DynamicVector            rc=2
+[era] DSurface                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4fb920   MISMATCH         HouseClass::SDDTORAllAndTriggers
+[diff] 0x5415f0   MISMATCH         IPXManagerClass::ddtor
+[diff] 0x4c3b60   MISMATCH         sub_4C3B60
+[diff] 0x5c1980   MISMATCH         ObjectClass::MPCooperative_Copy
+[diff] 0x6550c0   MISMATCH         ObjectClass::Team_Load_6550C0
+[diff] 0x6c8900   MISMATCH         ObjectClass::sub_6C8900
+[diff] 0x4c1440   MISMATCH         ObjectClass::sub_4C1440
+[diff] 0x7aed40   MISMATCH         CChatEventSink::ProcessChatEvent
+[diff] 0x42eb50   MISMATCH         BuildingQueue::FindFreeSlot
+[diff] 0x69e180   MISMATCH         MixFileClass::DestroyCache
+[diff] 0x4733a0   MISMATCH         CellClass::AddObject
+[diff] 0x6253b0   MISMATCH         Options::GrowBuffer
+[diff] 0x625990   MISMATCH         ComboBoxOwnerDraw::GrowBuffer
+[ledger] 0x42e6f0 BaseClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fb920 HouseClass::SDDTORAllAndTriggers -> NG (attempt 1)
+[ledger] 0x5415f0 IPXManagerClass::ddtor -> NG (attempt 1)
+[ledger] 0x406060 Mixer::ReleaseChannel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c3b60 sub_4C3B60 -> NG (attempt 1)
+[ledger] 0x5c1980 ObjectClass::MPCooperative_Copy -> NG (attempt 1)
+[ledger] 0x6550c0 ObjectClass::Team_Load_6550C0 -> NG (attempt 1)
+[ledger] 0x6c8900 ObjectClass::sub_6C8900 -> NG (attempt 1)
+[ledger] 0x7aed40 CChatEventSink::ProcessChatEvent -> NG (attempt 1)
+[ledger] 0x58c320 ObjectClass::sub_58C320 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42eb50 BuildingQueue::FindFreeSlot -> NG (attempt 1)
+[ledger] 0x69e180 MixFileClass::DestroyCache -> NG (attempt 1)
+[ledger] 0x69ac30 ScenarioClass::CheckExists -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4733a0 CellClass::AddObject -> NG (attempt 1)
+[ledger] 0x4c1440 ObjectClass::sub_4C1440 -> NG (attempt 1)
+[ledger] 0x5e35a0 ObjectClass::sub_5E35A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6253b0 Options::GrowBuffer -> NG (attempt 1)
+[ledger] 0x625990 ComboBoxOwnerDraw::GrowBuffer -> NG (attempt 1)
+[ledger] 0x7af000 DynamicVector::EnsureCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bac60 DSurface::CreateBackBuffer -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "branch_order": 3,
+  "codegen_shape": 5,
+  "regalloc": 1,
+  "signedness": 1,
+  "branch_polarity": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p302\batch_report.json

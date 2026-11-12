@@ -1,0 +1,21 @@
+{
+ "symbol": "?Team_Load_6550C0@ObjectClass@@QAEPAIPAHPAF@Z",
+ "sym_key": "ObjectClass::Team_Load_6550C0",
+ "size": 168,
+ "link_base": 0,
+ "bytes_hex": "518b44240c5355560fbf18578bf10fbf78028b8e901400008b869c1400002bcf8944241c03cb83ec08894c2418db442418da8e88140000da442424dd1c24e8000000008b969814000066894424188b6c24182bfa03fb897c2418db442418da8e88140000da86a0140000dd1c24e8000000008b4c24248b54242433c183c40825ff00000033c84a3bea7501458b4424185f5e8948048928b9010000005d89480889480c5b59c20800",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

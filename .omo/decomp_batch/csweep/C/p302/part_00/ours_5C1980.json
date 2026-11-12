@@ -1,0 +1,57 @@
+{
+ "symbol": "?MPCooperative_Copy@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::MPCooperative_Copy",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "51a035000000535533db83cdff84c07e7856578d442410b9000000005053e80000000033f6a00400000084c074398b4c241033c08b510c83c9ff03d68bfaf2ae0fbe0504000000f7d149518b0d00000000528b148183c25852e80000000083c40c85c075028beb81c60401000081fe0c0300007cb00fbe0535000000433bd87c925f8bc55e5d5b59c35d83c8ff5b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?GetSection@Movie@@QAEDHPAX@Z",
+   "sym_key": "Movie::GetSection"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "__strnicmp",
+   "sym_key": "_strnicmp"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  }
+ ]
+}

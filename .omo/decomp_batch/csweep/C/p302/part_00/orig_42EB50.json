@@ -1,0 +1,11 @@
+{
+ "addr": "0x42EB50",
+ "name": "BuildingQueue::FindFreeSlot",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42EB50",
+ "bytes_hex": "5355568bf15733ff8b461485c07e5a8b6c241433db83fdff7530578bcee80efcffff84c07538a138b2a80085c074568b460803c38a480884c9744a8b4e7450e83cdf0d0084c0752beb148b4e08392c19750c578bcee8d6fbffff84c074278b46144783c3103bf87cac5f5e5d83c8ff5bc204008b46088b0d10c389008bd7c1e204894c02048bc75f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

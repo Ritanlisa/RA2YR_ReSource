@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FB920",
+ "name": "HouseClass::SDDTORAllAndTriggers",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FB920",
+ "bytes_hex": "a188eca8005633f65785c08bf97e2ca17ceca8008b0cb039b91c020000751185c9740c8b116a01ff5220a17ceca8004e8b0d88eca800463bf17cd9a1f8eaa80033f685c07e37a1eceaa8008b0cb08b51248b8aa40000008b57343bca75148b0cb085c9740c8b116a01ff5220a1eceaa8004e8b0df8eaa800463bf17cce85ff74098b076a018bcfff50205f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

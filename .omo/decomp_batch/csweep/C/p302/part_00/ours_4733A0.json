@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddObject@CellClass@@QAEXPAH@Z",
+ "sym_key": "CellClass::AddObject",
+ "size": 100,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ff74538b0757ff90d40000008b4730b20485c0741d84501474188b483085c97409845114740c8bc1ebf08b4e04894830eb068b4604894730897e04c706000000008b064089068b473085c0740984501474048bf8ebeb5f5ec20400",
+ "relocs": []
+}

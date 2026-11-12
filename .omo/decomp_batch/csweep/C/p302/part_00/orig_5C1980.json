@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C1980",
+ "name": "MPCooperative_Copy",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C1980",
+ "bytes_hex": "83ec088b0d74f589005583c8ff33ed85c9894424047e725356578d442414b918f589005055e806caedff33dba154b2a80085c074358b0dccb8a8008b14818b44241483c2588b480c33c08d341983c9ff8bfef2aef7d149515652e8a1bc200083c40c85c07504896c241081c30401000081fb0c0300007cb4a174f58900453be87c988b4424105f5e5b5d83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?SDDTORAllAndTriggers@HouseClass@@QAEPAIXZ",
+ "sym_key": "HouseClass::SDDTORAllAndTriggers",
+ "size": 151,
+ "link_base": 0,
+ "bytes_hex": "a0a40000005633f65784c08bf97e320fbe0d980000008b04b139b81c020000751485c0740f8b086a0150ff51200fbe0d980000004e0fbe15a4000000463bf27cd58b150000000033f685d28bc27639a10000000053558b0cb08b6f348b59248b9ba40000003bdd751885c974138b016a0151ff5020a1000000008b15000000004e463bf272d05d5b85ff74088b0f6a0157ff51205f5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_ProductionQueueState@@3IA",
+   "sym_key": "g_ProductionQueueState"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_TriggerClassCapacity@@3PAXA",
+   "sym_key": "g_TriggerClassCapacity"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_TriggerClassCapacity@@3PAXA",
+   "sym_key": "g_TriggerClassCapacity"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?g_ProductionQueueState@@3IA",
+   "sym_key": "g_ProductionQueueState"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4C3B60@@YIPAEPADPAEHH@Z",
+ "sym_key": "Unnamed::sub_4C3B60",
+ "size": 204,
+ "link_base": 0,
+ "bytes_hex": "5153558b6c24108bda8b5424148bc5565725ff0000808bf9885424107907480d00ffffff408d0c4781e500ffffff03c1be010000008a0881e1ff0000000be933c9896c24188a48022400c603000bc833cd81e1ff00000033e9896c24188b6c2410eb048b54241c8bc625ff0000807907480d00ffffff408d0c4780e20003c18a0881e1ff0000000bca33d2894c241c8a500280e1008d4424180bd150558d4c242489542424e8000000008d4c241c518bcfe80000000088041e4681fe000100007ca15f5e8bc35d5b59c20800",
+ "relocs": [
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?Lerp@Color@@QAEEEPAX@Z",
+   "sym_key": "Color::Lerp"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?FindClosestColor@Palette@@QAEHH@Z",
+   "sym_key": "Palette::FindClosestColor"
+  }
+ ]
+}
