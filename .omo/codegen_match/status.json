@@ -79877,6 +79877,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c3fe0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VDriveLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_DriveLocomotionClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c4010": {
   "attempts": 5,
   "clean": false,
@@ -79925,6 +79937,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c4160": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VJumpjetLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_JumpjetLocomotionClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c4210": {
   "attempts": 1,
   "clean": false,
@@ -79957,6 +79981,18 @@
   "name": "_TClassFactory_VHoverLocomotionClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_HoverLocomotionClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c42e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VHoverLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_HoverLocomotionClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -79997,6 +80033,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c4460": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VRocketLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_RocketLocomotionClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c4510": {
   "attempts": 1,
   "clean": false,
@@ -80033,6 +80081,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c45e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VTunnelLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_TunnelLocomotionClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c4690": {
   "attempts": 1,
   "clean": false,
@@ -80065,6 +80125,18 @@
   "name": "_TClassFactory_VWalkLocomotionClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_WalkLocomotionClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c4760": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VWalkLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_WalkLocomotionClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -80112,6 +80184,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c48e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VDropPodLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_DropPodLocomotionClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c4990": {
   "attempts": 1,
   "clean": false,
@@ -80144,6 +80228,18 @@
   "name": "_TClassFactory_VFlyLocomotionClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_FlyLocomotionClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c4a60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VFlyLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_FlyLocomotionClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -80244,6 +80340,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c4d60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VMechLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_MechLocomotionClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c4e10": {
   "attempts": 1,
   "clean": false,
@@ -80280,6 +80388,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c4ee0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VShipLocomotionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_ShipLocomotionClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c4f90": {
   "attempts": 1,
   "clean": false,
@@ -80312,6 +80432,18 @@
   "name": "_TClassFactory_VBulletClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_BulletClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c5060": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VBulletClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_BulletClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -80364,6 +80496,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c51e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VFactoryClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_FactoryClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c5290": {
   "attempts": 1,
   "clean": false,
@@ -80400,6 +80544,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c5360": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VWarheadTypeClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_WarheadTypeClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c5410": {
   "attempts": 1,
   "clean": false,
@@ -80432,6 +80588,18 @@
   "name": "_TClassFactory_VWeaponTypeClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_WeaponTypeClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c54e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VWeaponTypeClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_WeaponTypeClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -80484,6 +80652,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c5660": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VParticleClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_ParticleClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c5710": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -80511,6 +80691,18 @@
   "name": "_TClassFactory_VParticleTypeClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_ParticleTypeClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c57e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VParticleTypeClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_ParticleTypeClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -80547,6 +80739,18 @@
   "name": "_TClassFactory_VParticleSystemClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_ParticleSystemClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c5960": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VParticleSystemClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_ParticleSystemClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -80599,6 +80803,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c5ae0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VParticleSystemTypeClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_ParticleSystemTypeClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c5b90": {
   "attempts": 1,
   "clean": false,
@@ -80631,6 +80847,18 @@
   "name": "_TClassFactory_VAITriggerTypeClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_AITriggerTypeClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c5c60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VAITriggerTypeClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_AITriggerTypeClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -80715,6 +80943,18 @@
   "name": "_TClassFactory_VFoggedObjectClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_FoggedObjectClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c5f60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VFoggedObjectClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_FoggedObjectClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

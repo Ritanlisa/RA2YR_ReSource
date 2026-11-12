@@ -1,0 +1,455 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "regalloc": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x6c3fe0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_DriveLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VDriveLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VDriveLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4160",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_JumpjetLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VJumpjetLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VJumpjetLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c42e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_HoverLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VHoverLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VHoverLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4460",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_RocketLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VRocketLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VRocketLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c45e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_TunnelLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VTunnelLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VTunnelLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4760",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_WalkLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VWalkLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VWalkLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c48e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_DropPodLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VDropPodLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VDropPodLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4a60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_FlyLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VFlyLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VFlyLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4d60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_MechLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VMechLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VMechLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4ee0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_ShipLocomotionClass::GetClassName",
+   "emitted": "_TClassFactory_VShipLocomotionClass::GetClassName",
+   "unit": "_TClassFactory_VShipLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5060",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_BulletClass::GetClassName",
+   "emitted": "_TClassFactory_VBulletClass::GetClassName",
+   "unit": "_TClassFactory_VBulletClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c51e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_FactoryClass::GetClassName",
+   "emitted": "_TClassFactory_VFactoryClass::GetClassName",
+   "unit": "_TClassFactory_VFactoryClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5360",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_WarheadTypeClass::GetClassName",
+   "emitted": "_TClassFactory_VWarheadTypeClass::GetClassName",
+   "unit": "_TClassFactory_VWarheadTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c54e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_WeaponTypeClass::GetClassName",
+   "emitted": "_TClassFactory_VWeaponTypeClass::GetClassName",
+   "unit": "_TClassFactory_VWeaponTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5660",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_ParticleClass::GetClassName",
+   "emitted": "_TClassFactory_VParticleClass::GetClassName",
+   "unit": "_TClassFactory_VParticleClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c57e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_ParticleTypeClass::GetClassName",
+   "emitted": "_TClassFactory_VParticleTypeClass::GetClassName",
+   "unit": "_TClassFactory_VParticleTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5960",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_ParticleSystemClass::GetClassName",
+   "emitted": "_TClassFactory_VParticleSystemClass::GetClassName",
+   "unit": "_TClassFactory_VParticleSystemClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5ae0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_ParticleSystemTypeClass::GetClassName",
+   "emitted": "_TClassFactory_VParticleSystemTypeClass::GetClassName",
+   "unit": "_TClassFactory_VParticleSystemTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5c60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_AITriggerTypeClass::GetClassName",
+   "emitted": "_TClassFactory_VAITriggerTypeClass::GetClassName",
+   "unit": "_TClassFactory_VAITriggerTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5f60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 39B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "TClassFactory_FoggedObjectClass::GetClassName",
+   "emitted": "_TClassFactory_VFoggedObjectClass::GetClassName",
+   "unit": "_TClassFactory_VFoggedObjectClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 39,
+   "clean": false
+  }
+ ]
+}

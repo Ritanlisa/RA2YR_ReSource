@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p98\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c3fe0 _TClassFactory_VDriveLocomotionClass::GetClassName -> _TClassFactory_VDriveLocomotionClass
+[conv] 0x6c4160 _TClassFactory_VJumpjetLocomotionClass::GetClassName -> _TClassFactory_VJumpjetLocomotionClass
+[conv] 0x6c42e0 _TClassFactory_VHoverLocomotionClass::GetClassName -> _TClassFactory_VHoverLocomotionClass
+[conv] 0x6c4460 _TClassFactory_VRocketLocomotionClass::GetClassName -> _TClassFactory_VRocketLocomotionClass
+[conv] 0x6c45e0 _TClassFactory_VTunnelLocomotionClass::GetClassName -> _TClassFactory_VTunnelLocomotionClass
+[conv] 0x6c4760 _TClassFactory_VWalkLocomotionClass::GetClassName -> _TClassFactory_VWalkLocomotionClass
+[conv] 0x6c48e0 _TClassFactory_VDropPodLocomotionClass::GetClassName -> _TClassFactory_VDropPodLocomotionClass
+[conv] 0x6c4a60 _TClassFactory_VFlyLocomotionClass::GetClassName -> _TClassFactory_VFlyLocomotionClass
+[conv] 0x6c4d60 _TClassFactory_VMechLocomotionClass::GetClassName -> _TClassFactory_VMechLocomotionClass
+[conv] 0x6c4ee0 _TClassFactory_VShipLocomotionClass::GetClassName -> _TClassFactory_VShipLocomotionClass
+[conv] 0x6c5060 _TClassFactory_VBulletClass::GetClassName -> _TClassFactory_VBulletClass
+[conv] 0x6c51e0 _TClassFactory_VFactoryClass::GetClassName -> _TClassFactory_VFactoryClass
+[conv] 0x6c5360 _TClassFactory_VWarheadTypeClass::GetClassName -> _TClassFactory_VWarheadTypeClass
+[conv] 0x6c54e0 _TClassFactory_VWeaponTypeClass::GetClassName -> _TClassFactory_VWeaponTypeClass
+[conv] 0x6c5660 _TClassFactory_VParticleClass::GetClassName -> _TClassFactory_VParticleClass
+[conv] 0x6c57e0 _TClassFactory_VParticleTypeClass::GetClassName -> _TClassFactory_VParticleTypeClass
+[conv] 0x6c5960 _TClassFactory_VParticleSystemClass::GetClassName -> _TClassFactory_VParticleSystemClass
+[conv] 0x6c5ae0 _TClassFactory_VParticleSystemTypeClass::GetClassName -> _TClassFactory_VParticleSystemTypeClass
+[conv] 0x6c5c60 _TClassFactory_VAITriggerTypeClass::GetClassName -> _TClassFactory_VAITriggerTypeClass
+[conv] 0x6c5f60 _TClassFactory_VFoggedObjectClass::GetClassName -> _TClassFactory_VFoggedObjectClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VDriveLocomotionClass rc=0
+[era] _TClassFactory_VJumpjetLocomotionClass rc=0
+[era] _TClassFactory_VHoverLocomotionClass rc=0
+[era] _TClassFactory_VRocketLocomotionClass rc=0
+[era] _TClassFactory_VTunnelLocomotionClass rc=0
+[era] _TClassFactory_VWalkLocomotionClass rc=0
+[era] _TClassFactory_VDropPodLocomotionClass rc=0
+[era] _TClassFactory_VFlyLocomotionClass rc=0
+[era] _TClassFactory_VMechLocomotionClass rc=0
+[era] _TClassFactory_VShipLocomotionClass rc=0
+[era] _TClassFactory_VBulletClass rc=0
+[era] _TClassFactory_VFactoryClass rc=0
+[era] _TClassFactory_VWarheadTypeClass rc=0
+[era] _TClassFactory_VWeaponTypeClass rc=0
+[era] _TClassFactory_VParticleClass rc=0
+[era] _TClassFactory_VParticleTypeClass rc=0
+[era] _TClassFactory_VParticleSystemClass rc=0
+[era] _TClassFactory_VParticleSystemTypeClass rc=0
+[era] _TClassFactory_VAITriggerTypeClass rc=0
+[era] _TClassFactory_VFoggedObjectClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c3fe0   MISMATCH         _TClassFactory_VDriveLocomotionClass::GetClassName
+[diff] 0x6c4160   MISMATCH         _TClassFactory_VJumpjetLocomotionClass::GetClassName
+[diff] 0x6c42e0   MISMATCH         _TClassFactory_VHoverLocomotionClass::GetClassName
+[diff] 0x6c4460   MISMATCH         _TClassFactory_VRocketLocomotionClass::GetClassName
+[diff] 0x6c45e0   MISMATCH         _TClassFactory_VTunnelLocomotionClass::GetClassName
+[diff] 0x6c4760   MISMATCH         _TClassFactory_VWalkLocomotionClass::GetClassName
+[diff] 0x6c48e0   MISMATCH         _TClassFactory_VDropPodLocomotionClass::GetClassName
+[diff] 0x6c4a60   MISMATCH         _TClassFactory_VFlyLocomotionClass::GetClassName
+[diff] 0x6c4d60   MISMATCH         _TClassFactory_VMechLocomotionClass::GetClassName
+[diff] 0x6c4ee0   MISMATCH         _TClassFactory_VShipLocomotionClass::GetClassName
+[diff] 0x6c5060   MISMATCH         _TClassFactory_VBulletClass::GetClassName
+[diff] 0x6c51e0   MISMATCH         _TClassFactory_VFactoryClass::GetClassName
+[diff] 0x6c5360   MISMATCH         _TClassFactory_VWarheadTypeClass::GetClassName
+[diff] 0x6c54e0   MISMATCH         _TClassFactory_VWeaponTypeClass::GetClassName
+[diff] 0x6c5660   MISMATCH         _TClassFactory_VParticleClass::GetClassName
+[diff] 0x6c57e0   MISMATCH         _TClassFactory_VParticleTypeClass::GetClassName
+[diff] 0x6c5960   MISMATCH         _TClassFactory_VParticleSystemClass::GetClassName
+[diff] 0x6c5ae0   MISMATCH         _TClassFactory_VParticleSystemTypeClass::GetClassName
+[diff] 0x6c5c60   MISMATCH         _TClassFactory_VAITriggerTypeClass::GetClassName
+[diff] 0x6c5f60   MISMATCH         _TClassFactory_VFoggedObjectClass::GetClassName
+[ledger] 0x6c3fe0 _TClassFactory_VDriveLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c4160 _TClassFactory_VJumpjetLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c42e0 _TClassFactory_VHoverLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c4460 _TClassFactory_VRocketLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c45e0 _TClassFactory_VTunnelLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c4760 _TClassFactory_VWalkLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c48e0 _TClassFactory_VDropPodLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c4a60 _TClassFactory_VFlyLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c4d60 _TClassFactory_VMechLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c4ee0 _TClassFactory_VShipLocomotionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c5060 _TClassFactory_VBulletClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c51e0 _TClassFactory_VFactoryClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c5360 _TClassFactory_VWarheadTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c54e0 _TClassFactory_VWeaponTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c5660 _TClassFactory_VParticleClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c57e0 _TClassFactory_VParticleTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c5960 _TClassFactory_VParticleSystemClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c5ae0 _TClassFactory_VParticleSystemTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c5c60 _TClassFactory_VAITriggerTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c5f60 _TClassFactory_VFoggedObjectClass::GetClassName -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p98\batch_report.json
