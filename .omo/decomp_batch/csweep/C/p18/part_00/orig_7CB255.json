@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB255",
+ "name": "Endstdio_Helper",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB255",
+ "bytes_hex": "6a01e80200000059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

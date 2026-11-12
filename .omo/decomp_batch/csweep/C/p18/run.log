@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x7de1e0 WriteConsoleA -> _addr_7D
+[conv] 0x5dafd0 RetVtableStubZero_eax_27 -> RetVtableStubZero_eax
+[conv] 0x403470 sub_403470 -> _addr_40
+[conv] 0x403480 sub_403480 -> _addr_40
+[conv] 0x5c0570 BinkMovieHandle::COMStub -> BinkMovieHandle
+[conv] 0x65c560 RAMFileClass::nullsub_0_6 -> RAMFileClass
+[conv] 0x6ca7b0 sub_6CA7B0 -> _addr_6C
+[conv] 0x785360 DisplayRankingsThunkWOL -> _addr_78
+[conv] 0x7cb255 Endstdio_Helper -> Endstdio
+[conv] 0x7cbec1 __lockexit -> _addr_7C
+[conv] 0x7cbeca __unlockexit -> _addr_7C
+[conv] 0x7d168e __errno -> _addr_7D
+[conv] 0x7d1697 ___doserrno -> _addr_7D
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=0
+[era] RetVtableStubZero_eax    rc=0
+[era] _addr_40                 rc=0
+[era] BinkMovieHandle          rc=0
+[era] RAMFileClass             rc=2
+[era] _addr_6C                 rc=0
+[era] _addr_78                 rc=0
+[era] Endstdio                 rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x7de1e0   MISMATCH         WriteConsoleA
+[diff] 0x7d168e   MISMATCH         __errno
+[diff] 0x7d1697   MISMATCH         ___doserrno
+[diff] 0x5dafd0   MISMATCH         RetVtableStubZero_eax_27
+[diff] 0x403470   MATCH            sub_403470
+[diff] 0x403480   MATCH            sub_403480
+[diff] 0x5c0570   MATCH            BinkMovieHandle::COMStub
+[diff] 0x6ca7b0   MISMATCH         sub_6CA7B0
+[diff] 0x785360   MISMATCH         DisplayRankingsThunkWOL
+[diff] 0x7cb255   MISMATCH         Endstdio_Helper
+[diff] 0x7cbec1   MISMATCH         __lockexit
+[diff] 0x7cbeca   MISMATCH         __unlockexit
+[ledger] 0x7de1e0 WriteConsoleA -> NG (attempt 1)
+[ledger] 0x5dafd0 RetVtableStubZero_eax_27 -> NG (attempt 1)
+[ledger] 0x7d7ed2 0x7d7ed2 -> PENDING (attempt 1)
+[ledger] 0x403470 sub_403470 -> OK (attempt 1)
+[ledger] 0x403480 sub_403480 -> OK (attempt 1)
+[ledger] 0x536c80 0x536c80 -> PENDING (attempt 1)
+[ledger] 0x536d00 0x536d00 -> PENDING (attempt 1)
+[ledger] 0x536d80 0x536d80 -> PENDING (attempt 1)
+[ledger] 0x536ea0 0x536ea0 -> PENDING (attempt 1)
+[ledger] 0x536f20 0x536f20 -> PENDING (attempt 1)
+[ledger] 0x5372d0 0x5372d0 -> PENDING (attempt 1)
+[ledger] 0x5c0570 BinkMovieHandle::COMStub -> OK (attempt 1)
+[ledger] 0x65c560 RAMFileClass::nullsub_0_6 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ca7b0 sub_6CA7B0 -> NG (attempt 1)
+[ledger] 0x785360 DisplayRankingsThunkWOL -> NG (attempt 1)
+[ledger] 0x7cb255 Endstdio_Helper -> NG (attempt 1)
+[ledger] 0x7cbec1 __lockexit -> NG (attempt 1)
+[ledger] 0x7cbeca __unlockexit -> NG (attempt 1)
+[ledger] 0x7d168e __errno -> NG (attempt 1)
+[ledger] 0x7d1697 ___doserrno -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "NO_EXPORT": 1,
+  "MATCH": 3,
+  "NO_PSEUDO": 6,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "const_fold": 5
+ },
+ "match_rate_of_decided_pct": 25.0,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p18\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_403480@@YIHHH@Z",
+ "sym_key": "Unnamed::sub_403480",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "83c168e900000000",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  }
+ ]
+}

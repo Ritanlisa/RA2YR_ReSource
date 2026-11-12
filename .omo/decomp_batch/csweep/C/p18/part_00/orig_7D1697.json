@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D1697",
+ "name": "___doserrno",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D1697",
+ "bytes_hex": "e86ffdffff83c00cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

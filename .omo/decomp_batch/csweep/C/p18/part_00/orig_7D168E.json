@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D168E",
+ "name": "__errno",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D168E",
+ "bytes_hex": "e878fdffff83c008c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

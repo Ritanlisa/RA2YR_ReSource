@@ -1,0 +1,15 @@
+{
+ "symbol": "?__unlockexit@@YAXXZ",
+ "sym_key": "Unnamed::__unlockexit",
+ "size": 9,
+ "link_base": 0,
+ "bytes_hex": "6a0de80000000059c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}

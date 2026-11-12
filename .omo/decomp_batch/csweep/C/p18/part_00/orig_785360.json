@@ -1,0 +1,11 @@
+{
+ "addr": "0x785360",
+ "name": "DisplayRankingsThunkWOL",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x785360",
+ "bytes_hex": "32d233c9e917e9ffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CBECA",
+ "name": "__unlockexit",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CBECA",
+ "bytes_hex": "6a0de8851b000059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
