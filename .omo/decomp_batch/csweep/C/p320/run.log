@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p320\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e9f60 _DynamicVectorClass_PAVParticleClass::Release -> _DynamicVectorClass_PAVParticleClass
+[conv] 0x4ea1c0 _DynamicVectorClass_PAVTeamClass::SetCapacity -> _DynamicVectorClass_PAVTeamClass
+[conv] 0x4ea5a0 _DynamicVectorClass_PAVTriggerClass::SetCapacity_0 -> _DynamicVectorClass_PAVTriggerClass
+[conv] 0x4eaa60 _DynamicVectorClass_PAVTubeClass::SetCapacity -> _DynamicVectorClass_PAVTubeClass
+[conv] 0x4eacc0 _DynamicVectorClass_PAVParticleSystemClass::SetCapacity_0 -> _DynamicVectorClass_PAVParticleSystemClass
+[conv] 0x4eaf20 _DynamicVectorClass_PAVWaveClass::SetCapacity_0 -> _DynamicVectorClass_PAVWaveClass
+[conv] 0x4eb180 _DynamicVectorClass_PAVOverlayClass::SetCapacity_1 -> _DynamicVectorClass_PAVOverlayClass
+[conv] 0x4eb3e0 _DynamicVectorClass_PAVSmudgeClass::ReallocateBuffer -> _DynamicVectorClass_PAVSmudgeClass
+[conv] 0x4eb640 _DynamicVectorClass_PAVTerrainClass::CopyParticles2 -> _DynamicVectorClass_PAVTerrainClass
+[conv] 0x4eb8a0 _DynamicVectorClass_PAVAircraftClass::ResizeDataArray -> _DynamicVectorClass_PAVAircraftClass
+[conv] 0x4ebb00 _DynamicVectorClass_PAVUnitClass::SetCapacity -> _DynamicVectorClass_PAVUnitClass
+[conv] 0x4ebd60 _DynamicVectorClass_PAVHouseClass::SetCapacity_0 -> _DynamicVectorClass_PAVHouseClass
+[conv] 0x4ebfc0 _DynamicVectorClass_PAVAnimClass::SetCapacity_0 -> _DynamicVectorClass_PAVAnimClass
+[conv] 0x4ec480 _DynamicVectorClass_PAVCampaignClass::SetCapacity -> _DynamicVectorClass_PAVCampaignClass
+[conv] 0x4ec6e0 _DynamicVectorClass_PAVSideClass::SetCapacity_0 -> _DynamicVectorClass_PAVSideClass
+[conv] 0x4ec940 _DynamicVectorClass_PAVHouseTypeClass::SetCapacity -> _DynamicVectorClass_PAVHouseTypeClass
+[conv] 0x4ecba0 _DynamicVectorClass_PAVTaskForceClass::SetCapacity_0 -> _DynamicVectorClass_PAVTaskForceClass
+[conv] 0x4ece00 _DynamicVectorClass_PAVTeamTypeClass::SetCapacity_1 -> _DynamicVectorClass_PAVTeamTypeClass
+[conv] 0x4ed060 _DynamicVectorClass_PAVScriptTypeClass::SetCapacity -> _DynamicVectorClass_PAVScriptTypeClass
+[conv] 0x4ed2c0 _DynamicVectorClass_PAVOverlayTypeClass::SetCapacity_0 -> _DynamicVectorClass_PAVOverlayTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVParticleClass rc=2
+[era] _DynamicVectorClass_PAVTeamClass rc=2
+[era] _DynamicVectorClass_PAVTriggerClass rc=2
+[era] _DynamicVectorClass_PAVTubeClass rc=2
+[era] _DynamicVectorClass_PAVParticleSystemClass rc=2
+[era] _DynamicVectorClass_PAVWaveClass rc=2
+[era] _DynamicVectorClass_PAVOverlayClass rc=2
+[era] _DynamicVectorClass_PAVSmudgeClass rc=2
+[era] _DynamicVectorClass_PAVTerrainClass rc=2
+[era] _DynamicVectorClass_PAVAircraftClass rc=2
+[era] _DynamicVectorClass_PAVUnitClass rc=2
+[era] _DynamicVectorClass_PAVHouseClass rc=2
+[era] _DynamicVectorClass_PAVAnimClass rc=2
+[era] _DynamicVectorClass_PAVCampaignClass rc=2
+[era] _DynamicVectorClass_PAVSideClass rc=2
+[era] _DynamicVectorClass_PAVHouseTypeClass rc=2
+[era] _DynamicVectorClass_PAVTaskForceClass rc=2
+[era] _DynamicVectorClass_PAVTeamTypeClass rc=2
+[era] _DynamicVectorClass_PAVScriptTypeClass rc=2
+[era] _DynamicVectorClass_PAVOverlayTypeClass rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4e9f60 _DynamicVectorClass_PAVParticleClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea1c0 _DynamicVectorClass_PAVTeamClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea5a0 _DynamicVectorClass_PAVTriggerClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eaa60 _DynamicVectorClass_PAVTubeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eacc0 _DynamicVectorClass_PAVParticleSystemClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eaf20 _DynamicVectorClass_PAVWaveClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb180 _DynamicVectorClass_PAVOverlayClass::SetCapacity_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb3e0 _DynamicVectorClass_PAVSmudgeClass::ReallocateBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb640 _DynamicVectorClass_PAVTerrainClass::CopyParticles2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb8a0 _DynamicVectorClass_PAVAircraftClass::ResizeDataArray -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebb00 _DynamicVectorClass_PAVUnitClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebd60 _DynamicVectorClass_PAVHouseClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebfc0 _DynamicVectorClass_PAVAnimClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec480 _DynamicVectorClass_PAVCampaignClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec6e0 _DynamicVectorClass_PAVSideClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec940 _DynamicVectorClass_PAVHouseTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ecba0 _DynamicVectorClass_PAVTaskForceClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ece00 _DynamicVectorClass_PAVTeamTypeClass::SetCapacity_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed060 _DynamicVectorClass_PAVScriptTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed2c0 _DynamicVectorClass_PAVOverlayTypeClass::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p320\batch_report.json
