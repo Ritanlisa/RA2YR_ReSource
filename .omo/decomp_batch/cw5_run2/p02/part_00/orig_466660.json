@@ -1,0 +1,11 @@
+{
+ "addr": "0x466660",
+ "name": "BulletClass::CalculateSpreadAngle",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x466660",
+ "bytes_hex": "518a0d10de8900b00184c8752f8ad168b06646000ad0b8ff7f0000668944240466894424068b442404881510de8900a3f4dd8900e8f130360083c404b8f4dd890059c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

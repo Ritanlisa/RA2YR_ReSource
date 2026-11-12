@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_7256D0@@YAHXZ",
+ "sym_key": "Unnamed::sub_7256D0",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000c6050000000001a200000000a300000000c705000000000a000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_725710@@YAXXZ",
+   "sym_key": "sub_725710"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5DC@@3IA",
+   "sym_key": "DataGlobal_B0F5DC"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5E0@@3IA",
+   "sym_key": "DataGlobal_B0F5E0"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5E4@@3EA",
+   "sym_key": "DataGlobal_B0F5E4"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5E5@@3EA",
+   "sym_key": "DataGlobal_B0F5E5"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5D8@@3IA",
+   "sym_key": "DataGlobal_B0F5D8"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5EC@@3IA",
+   "sym_key": "DataGlobal_B0F5EC"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5E8@@3IA",
+   "sym_key": "DataGlobal_B0F5E8"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

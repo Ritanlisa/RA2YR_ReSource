@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> SkirmishDialog
+[conv] 0x55a970 LocomotionClass::ReleaseRef -> LocomotionClass
+[conv] 0x4a6cb0 sub_4A6CB0 -> _addr_4A
+[conv] 0x4e6820 sub_4E6820 -> _addr_4E
+[conv] 0x4e7320 sub_4E7320 -> _addr_4E
+[conv] 0x4e7f70 sub_4E7F70 -> _addr_4E
+[conv] 0x6590d0 sub_6590D0 -> _addr_65
+[conv] 0x6e5b20 sub_6E5B20 -> _addr_6E
+[conv] 0x725710 sub_725710 -> _addr_72
+[conv] 0x4662e0 sub_4662E0 -> _addr_46
+[conv] 0x4e6560 sub_4E6560 -> _addr_4E
+[conv] 0x4e6ae0 sub_4E6AE0 -> _addr_4E
+[conv] 0x4e7060 sub_4E7060 -> _addr_4E
+[conv] 0x4e7660 sub_4E7660 -> _addr_4E
+[conv] 0x4e7be0 sub_4E7BE0 -> _addr_4E
+[conv] 0x543e70 sub_543E70 -> _addr_54
+[conv] 0x629190 sub_629190 -> _addr_62
+[conv] 0x71a3d0 sub_71A3D0 -> _addr_71
+[conv] 0x7256d0 sub_7256D0 -> _addr_72
+[conv] 0x466660 BulletClass::CalculateSpreadAngle -> BulletClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SkirmishDialog           rc=2
+[era] LocomotionClass          rc=2
+[era] _addr_4A                 rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_65                 rc=0
+[era] _addr_6E                 rc=0
+[era] _addr_72                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_54                 rc=0
+[era] _addr_62                 rc=0
+[era] _addr_71                 rc=0
+[era] BulletClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a6cb0   MISMATCH         sub_4A6CB0
+[diff] 0x4e6820   MISMATCH         sub_4E6820
+[diff] 0x4e7320   MISMATCH         sub_4E7320
+[diff] 0x4e7f70   MISMATCH         sub_4E7F70
+[diff] 0x4e6560   MISMATCH         sub_4E6560
+[diff] 0x4e6ae0   MISMATCH         sub_4E6AE0
+[diff] 0x4e7060   MISMATCH         sub_4E7060
+[diff] 0x4e7660   MISMATCH         sub_4E7660
+[diff] 0x4e7be0   MISMATCH         sub_4E7BE0
+[diff] 0x6590d0   MISMATCH         sub_6590D0
+[diff] 0x6e5b20   MISMATCH         sub_6E5B20
+[diff] 0x725710   MISMATCH         sub_725710
+[diff] 0x7256d0   MISMATCH         sub_7256D0
+[diff] 0x4662e0   MISMATCH         sub_4662E0
+[diff] 0x543e70   MISMATCH         sub_543E70
+[diff] 0x629190   MISMATCH         sub_629190
+[diff] 0x71a3d0   MISMATCH         sub_71A3D0
+[diff] 0x466660   MISMATCH         BulletClass::CalculateSpreadAngle
+[ledger] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55a970 LocomotionClass::ReleaseRef -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a6cb0 sub_4A6CB0 -> NG (attempt 6)
+[ledger] 0x4e6820 sub_4E6820 -> NG (attempt 6)
+[ledger] 0x4e7320 sub_4E7320 -> NG (attempt 6)
+[ledger] 0x4e7f70 sub_4E7F70 -> NG (attempt 6)
+[ledger] 0x6590d0 sub_6590D0 -> NG (attempt 6)
+[ledger] 0x6e5b20 sub_6E5B20 -> NG (attempt 6)
+[ledger] 0x725710 sub_725710 -> NG (attempt 6)
+[ledger] 0x4662e0 sub_4662E0 -> NG (attempt 6)
+[ledger] 0x4e6560 sub_4E6560 -> NG (attempt 6)
+[ledger] 0x4e6ae0 sub_4E6AE0 -> NG (attempt 6)
+[ledger] 0x4e7060 sub_4E7060 -> NG (attempt 6)
+[ledger] 0x4e7660 sub_4E7660 -> NG (attempt 6)
+[ledger] 0x4e7be0 sub_4E7BE0 -> NG (attempt 6)
+[ledger] 0x543e70 sub_543E70 -> NG (attempt 6)
+[ledger] 0x629190 sub_629190 -> NG (attempt 6)
+[ledger] 0x71a3d0 sub_71A3D0 -> NG (attempt 6)
+[ledger] 0x7256d0 sub_7256D0 -> NG (attempt 6)
+[ledger] 0x466660 BulletClass::CalculateSpreadAngle -> NG (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 18
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "const_fold": 10,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p02\batch_report.json
