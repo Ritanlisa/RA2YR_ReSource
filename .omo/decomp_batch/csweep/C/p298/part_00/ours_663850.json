@@ -1,0 +1,93 @@
+{
+ "symbol": "?sub_663850@@YAXXZ",
+ "sym_key": "Unnamed::sub_663850",
+ "size": 163,
+ "link_base": 0,
+ "bytes_hex": "a0000000005333db3ac3745f33c0a0000000008b0851e8000000008a0d0000000083c4043acb0f94c03acb763a33c08ad1fec980fa01880d00000000742d3acb76ca33c9408a0d000000008b14818d0c818951fc8a0d0000000033d28ad13bc27ce03acb0f94c03ac374a1a000000000891d000000003ac3741b381d00000000741333c98ac851e80000000083c404881d00000000881d00000000881d000000005bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052E0@@3EA",
+   "sym_key": "DataGlobal_B052E0"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052D4@@3EA",
+   "sym_key": "DataGlobal_B052D4"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052E0@@3EA",
+   "sym_key": "DataGlobal_B052E0"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052E0@@3EA",
+   "sym_key": "DataGlobal_B052E0"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052D4@@3EA",
+   "sym_key": "DataGlobal_B052D4"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052E0@@3EA",
+   "sym_key": "DataGlobal_B052E0"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052D4@@3EA",
+   "sym_key": "DataGlobal_B052D4"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_NetworkEventQueue@@3IA",
+   "sym_key": "g_NetworkEventQueue"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052DD@@3EA",
+   "sym_key": "DataGlobal_B052DD"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052D4@@3EA",
+   "sym_key": "DataGlobal_B052D4"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052DD@@3EA",
+   "sym_key": "DataGlobal_B052DD"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052D8@@3EA",
+   "sym_key": "DataGlobal_B052D8"
+  }
+ ]
+}

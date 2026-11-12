@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CEFE0",
+ "name": "SuperWeaponTypeClass::SDDTOR",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CEFE0",
+ "bytes_hex": "51568bf18d442404b930e3a800c70690407f00c7460474407f00c746086c407f00c7460c64407f008b1530e3a8005089742408ff521083f8ff742d8b0d40e3a8003bc17d23493bc1890d40e3a8007d188b0d34e3a800408b1481895481fc8b0d40e3a8003bc17ce88bcee87119d4fff644240c01740956e8e19a0f0083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

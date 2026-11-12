@@ -1,0 +1,11 @@
+{
+ "addr": "0x41DD50",
+ "name": "AirstrikeClass::CopyTo",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41DD50",
+ "bytes_hex": "51568bf18d442404b9b89f8800c706a8297e00c746048c297e00c7460884297e00c7460c7c297e008b15b89f88005089742408ff521083f8ff742d8b0dc89f88003bc17d23493bc1890dc89f88007d188b0dbc9f8800408b1481895481fc8b0dc89f88003bc17ce88bcee83124fffff644240c01740956e871ad3a0083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

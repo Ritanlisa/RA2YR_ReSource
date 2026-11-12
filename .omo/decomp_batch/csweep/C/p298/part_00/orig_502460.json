@@ -1,0 +1,11 @@
+{
+ "addr": "0x502460",
+ "name": "WaypointClass::FindOrCreate",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x502460",
+ "bytes_hex": "53558b6c240c565733ff8db110020000833e00751c6a40e89b692c0083c40485c0740a578bc8e885132600eb0233c089068b0e33db8b413885c07e1253e8de1426003bc5742b8b0e433b59387cee4783c60483ff0c7cb98b5424188b44241c5f5ec702ffffffffc600005d32c05bc20c008b4424188b4c241c89385f5e88195db0015bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

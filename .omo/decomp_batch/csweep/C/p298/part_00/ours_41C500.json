@@ -1,0 +1,21 @@
+{
+ "symbol": "?Enqueue@BuildingTypeClass@@QAEDH@Z",
+ "sym_key": "BuildingTypeClass::Enqueue",
+ "size": 132,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408565785db8bf17d085f5e32c05bc204008b460803c3c1e00350e8000000008bf883c40485ff75085f5e32c05bc204008b460433d285c07623558b2e8d0cd5000000008bc103c5428b28892c398b400489440f048b46043bd072df5d8b0e51e8000000008b460883c40403c3893e894608c74610000000005f5eb0015bc20400",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

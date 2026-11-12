@@ -1,0 +1,11 @@
+{
+ "addr": "0x71B1B0",
+ "name": "TemporalClass::ProcessEvent",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71B1B0",
+ "bytes_hex": "51568bf18d442404b960ecb000c70680517f00c7460464517f00c746085c517f00c7460c54517f008b1560ecb0005089742408ff521083f8ff742d8b0d70ecb0003bc17d23493bc1890d70ecb0007d188b0d64ecb000408b1481895481fc8b0d70ecb0003bc17ce88bcee8d14fcffff644240c01740956e811d90a0083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

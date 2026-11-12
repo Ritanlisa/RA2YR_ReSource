@@ -1,0 +1,11 @@
+{
+ "addr": "0x41FFF0",
+ "name": "AITriggerTypeClass::ddtor",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41FFF0",
+ "bytes_hex": "51568bf18d442404b900b2a800c706502a7e00c74604342a7e00c746082c2a7e00c7460c242a7e008b1500b2a8005089742408ff521083f8ff742d8b0d10b2a8003bc17d23493bc1890d10b2a8007d188b0d04b2a800408b1481895481fc8b0d10b2a8003bc17ce88bcee86109fffff644240c01740956e8d18a3a0083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

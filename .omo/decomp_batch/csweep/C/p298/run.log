@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p298\part_00
+=== convert (20 addrs) ===
+[conv] 0x41c500 BuildingTypeClass::Enqueue -> BuildingTypeClass
+[conv] 0x4d2e40 Vector::ReallocDynamic -> Vector
+[conv] 0x510860 BuildLocationVector::Grow -> BuildLocationVector
+[conv] 0x52b570 INIClass::mergeSection -> INIClass
+[conv] 0x538b80 KeyboardConfig::ReleaseBuffer -> KeyboardConfig
+[conv] 0x5ad930 ObjectClass::Map_Helper_5AD930 -> ObjectClass
+[conv] 0x710750 ObjectClass::Object_Helper_710750 -> ObjectClass
+[conv] 0x502460 WaypointClass::FindOrCreate -> WaypointClass
+[conv] 0x410c30 AbstractTypeClass::ddtor -> AbstractTypeClass
+[conv] 0x41dd50 AirstrikeClass::CopyTo -> AirstrikeClass
+[conv] 0x41fff0 AITriggerTypeClass::ddtor -> AITriggerTypeClass
+[conv] 0x4a7c90 DiskLaserClass::CopyTo -> DiskLaserClass
+[conv] 0x5216d0 InfantryClass::CanMoveFreely -> InfantryClass
+[conv] 0x6b1dc0 SliderClass::OnClick -> SliderClass
+[conv] 0x6cefe0 SuperWeaponTypeClass::SDDTOR -> SuperWeaponTypeClass
+[conv] 0x71b1b0 TemporalClass::ProcessEvent -> TemporalClass
+[conv] 0x4a2990 CStreamClass::QueryInterface -> CStreamClass
+[conv] 0x625a20 Options::SaveOptionValue -> Options
+[conv] 0x663850 sub_663850 -> _addr_66
+[conv] 0x6646c0 NetworkManager::RemovePlayer -> NetworkManager
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingTypeClass        rc=0
+[era] Vector                   rc=0
+[era] BuildLocationVector      rc=0
+[era] INIClass                 rc=0
+[era] KeyboardConfig           rc=0
+[era] ObjectClass              rc=0
+[era] WaypointClass            rc=0
+[era] AbstractTypeClass        rc=2
+[era] AirstrikeClass           rc=0
+[era] AITriggerTypeClass       rc=0
+[era] DiskLaserClass           rc=0
+[era] InfantryClass            rc=2
+[era] SliderClass              rc=0
+[era] SuperWeaponTypeClass     rc=0
+[era] TemporalClass            rc=0
+[era] CStreamClass             rc=2
+[era] Options                  rc=0
+[era] _addr_66                 rc=0
+[era] NetworkManager           rc=2
+=== diffasm byte-compare ===
+[diff] 0x41c500   MISMATCH         BuildingTypeClass::Enqueue
+[diff] 0x4d2e40   MISMATCH         Vector::ReallocDynamic
+[diff] 0x510860   MISMATCH         BuildLocationVector::Grow
+[diff] 0x52b570   MISMATCH         INIClass::mergeSection
+[diff] 0x538b80   MISMATCH         KeyboardConfig::ReleaseBuffer
+[diff] 0x5ad930   MISMATCH         ObjectClass::Map_Helper_5AD930
+[diff] 0x710750   MISMATCH         ObjectClass::Object_Helper_710750
+[diff] 0x502460   MISMATCH         WaypointClass::FindOrCreate
+[diff] 0x41dd50   MISMATCH         AirstrikeClass::CopyTo
+[diff] 0x41fff0   MISMATCH         AITriggerTypeClass::ddtor
+[diff] 0x4a7c90   MISMATCH         DiskLaserClass::CopyTo
+[diff] 0x6b1dc0   MISMATCH         SliderClass::OnClick
+[diff] 0x6cefe0   MISMATCH         SuperWeaponTypeClass::SDDTOR
+[diff] 0x71b1b0   MISMATCH         TemporalClass::ProcessEvent
+[diff] 0x625a20   MISMATCH         Options::SaveOptionValue
+[diff] 0x663850   MISMATCH         sub_663850
+[ledger] 0x41c500 BuildingTypeClass::Enqueue -> NG (attempt 1)
+[ledger] 0x4d2e40 Vector::ReallocDynamic -> NG (attempt 1)
+[ledger] 0x510860 BuildLocationVector::Grow -> NG (attempt 1)
+[ledger] 0x52b570 INIClass::mergeSection -> NG (attempt 1)
+[ledger] 0x538b80 KeyboardConfig::ReleaseBuffer -> NG (attempt 1)
+[ledger] 0x5ad930 ObjectClass::Map_Helper_5AD930 -> NG (attempt 1)
+[ledger] 0x710750 ObjectClass::Object_Helper_710750 -> NG (attempt 1)
+[ledger] 0x502460 WaypointClass::FindOrCreate -> NG (attempt 1)
+[ledger] 0x410c30 AbstractTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41dd50 AirstrikeClass::CopyTo -> NG (attempt 1)
+[ledger] 0x41fff0 AITriggerTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x4a7c90 DiskLaserClass::CopyTo -> NG (attempt 1)
+[ledger] 0x5216d0 InfantryClass::CanMoveFreely -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1dc0 SliderClass::OnClick -> NG (attempt 1)
+[ledger] 0x6cefe0 SuperWeaponTypeClass::SDDTOR -> NG (attempt 1)
+[ledger] 0x71b1b0 TemporalClass::ProcessEvent -> NG (attempt 1)
+[ledger] 0x4a2990 CStreamClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x625a20 Options::SaveOptionValue -> NG (attempt 1)
+[ledger] 0x663850 sub_663850 -> NG (attempt 1)
+[ledger] 0x6646c0 NetworkManager::RemovePlayer -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "codegen_shape": 13,
+  "regalloc": 1,
+  "signedness": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p298\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B1DC0",
+ "name": "SliderClass::OnClick",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B1DC0",
+ "bytes_hex": "568bf18b4c24088b46303bc87d028bc183f8018946487f05b8010000008946488b0653578bceff50488a462e84c074058b5e14eb038b5e18db4630895c2410db442410db4648d8f2d8c9e8f140110083f8048bf87f05bf04000000db4634897e4cd8f2d8c9e8d64011008bcb2bcf5fddd83bc15bddd87d078946505ec20400894e505ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

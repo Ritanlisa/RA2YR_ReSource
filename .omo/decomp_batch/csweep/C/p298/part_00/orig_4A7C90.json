@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A7C90",
+ "name": "DiskLaserClass::CopyTo",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A7C90",
+ "bytes_hex": "51568bf18d442404b908028a00c706b85f7e00c746049c5f7e00c74608945f7e00c7460c8c5f7e008b1508028a005089742408ff521083f8ff742d8b0d18028a003bc17d23493bc1890d18028a007d188b0d0c028a00408b1481895481fc8b0d18028a003bc17ce88bcee8f184f6fff644240c01740956e8310e320083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

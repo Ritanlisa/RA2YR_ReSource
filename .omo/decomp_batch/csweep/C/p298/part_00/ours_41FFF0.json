@@ -1,0 +1,57 @@
+{
+ "symbol": "?ddtor@AITriggerTypeClass@@QAEPAID@Z",
+ "sym_key": "AITriggerTypeClass::ddtor",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "51568bf133c089742404890689460489460889460c8b0d000000008d442404506800000000ff511083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e88bcee800000000f644240c01740956e80000000083c4048b065e59c20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?AITriggerTypeClass_Array@@3IA",
+   "sym_key": "AITriggerTypeClass_Array"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?AITriggerTypeClass_Array@@3IA",
+   "sym_key": "AITriggerTypeClass_Array"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B204@@3IA",
+   "sym_key": "DataGlobal_A8B204"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?Dtor@AbstractTypeClass@@QAEHXZ",
+   "sym_key": "AbstractTypeClass::Dtor"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
