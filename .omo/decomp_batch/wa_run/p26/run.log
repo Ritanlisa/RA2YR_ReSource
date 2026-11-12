@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x6aca20 sub_6ACA20 -> _addr_6A
+[conv] 0x6aef80 sub_6AEF80 -> _addr_6A
+[conv] 0x6aefa0 sub_6AEFA0 -> _addr_6A
+[conv] 0x6aefc0 sub_6AEFC0 -> _addr_6A
+[conv] 0x6b2210 sub_6B2210 -> _addr_6B
+[conv] 0x6b2230 sub_6B2230 -> _addr_6B
+[conv] 0x6b2250 sub_6B2250 -> _addr_6B
+[conv] 0x6b48b0 sub_6B48B0 -> _addr_6B
+[conv] 0x6b48d0 sub_6B48D0 -> _addr_6B
+[conv] 0x6b48f0 sub_6B48F0 -> _addr_6B
+[conv] 0x6b50e0 sub_6B50E0 -> _addr_6B
+[conv] 0x6b5100 sub_6B5100 -> _addr_6B
+[conv] 0x6b5120 sub_6B5120 -> _addr_6B
+[conv] 0x6b6a70 sub_6B6A70 -> _addr_6B
+[conv] 0x6b6a90 sub_6B6A90 -> _addr_6B
+[conv] 0x6b6ab0 sub_6B6AB0 -> _addr_6B
+[conv] 0x6b8960 sub_6B8960 -> _addr_6B
+[conv] 0x6b8980 sub_6B8980 -> _addr_6B
+[conv] 0x6b89a0 sub_6B89A0 -> _addr_6B
+[conv] 0x6bb0e0 sub_6BB0E0 -> _addr_6B
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6A                 rc=0
+[era] _addr_6B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6aca20   MATCH            sub_6ACA20
+[diff] 0x6aef80   MATCH            sub_6AEF80
+[diff] 0x6aefa0   MATCH            sub_6AEFA0
+[diff] 0x6aefc0   MATCH            sub_6AEFC0
+[diff] 0x6b2210   MATCH            sub_6B2210
+[diff] 0x6b2230   MATCH            sub_6B2230
+[diff] 0x6b2250   MATCH            sub_6B2250
+[diff] 0x6b48b0   MATCH            sub_6B48B0
+[diff] 0x6b48d0   MATCH            sub_6B48D0
+[diff] 0x6b48f0   MATCH            sub_6B48F0
+[diff] 0x6b50e0   MATCH            sub_6B50E0
+[diff] 0x6b5100   MATCH            sub_6B5100
+[diff] 0x6b5120   MATCH            sub_6B5120
+[diff] 0x6b6a70   MATCH            sub_6B6A70
+[diff] 0x6b6a90   MATCH            sub_6B6A90
+[diff] 0x6b6ab0   MATCH            sub_6B6AB0
+[diff] 0x6b8960   MATCH            sub_6B8960
+[diff] 0x6b8980   MATCH            sub_6B8980
+[diff] 0x6b89a0   MATCH            sub_6B89A0
+[diff] 0x6bb0e0   MATCH            sub_6BB0E0
+[ledger] 0x6aca20 sub_6ACA20 -> OK (attempt 2)
+[ledger] 0x6aef80 sub_6AEF80 -> OK (attempt 2)
+[ledger] 0x6aefa0 sub_6AEFA0 -> OK (attempt 2)
+[ledger] 0x6aefc0 sub_6AEFC0 -> OK (attempt 3)
+[ledger] 0x6b2210 sub_6B2210 -> OK (attempt 2)
+[ledger] 0x6b2230 sub_6B2230 -> OK (attempt 2)
+[ledger] 0x6b2250 sub_6B2250 -> OK (attempt 2)
+[ledger] 0x6b48b0 sub_6B48B0 -> OK (attempt 2)
+[ledger] 0x6b48d0 sub_6B48D0 -> OK (attempt 2)
+[ledger] 0x6b48f0 sub_6B48F0 -> OK (attempt 2)
+[ledger] 0x6b50e0 sub_6B50E0 -> OK (attempt 2)
+[ledger] 0x6b5100 sub_6B5100 -> OK (attempt 2)
+[ledger] 0x6b5120 sub_6B5120 -> OK (attempt 2)
+[ledger] 0x6b6a70 sub_6B6A70 -> OK (attempt 3)
+[ledger] 0x6b6a90 sub_6B6A90 -> OK (attempt 2)
+[ledger] 0x6b6ab0 sub_6B6AB0 -> OK (attempt 2)
+[ledger] 0x6b8960 sub_6B8960 -> OK (attempt 2)
+[ledger] 0x6b8980 sub_6B8980 -> OK (attempt 2)
+[ledger] 0x6b89a0 sub_6B89A0 -> OK (attempt 2)
+[ledger] 0x6bb0e0 sub_6BB0E0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p26\batch_report.json
