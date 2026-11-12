@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p100\part_00
+=== convert (20 addrs) ===
+[conv] 0x42d9a0 _VectorClass_G::ddtor -> _VectorClass_G
+[conv] 0x42f7c0 _VectorClass_VCell::Cleanup -> _VectorClass_VCell
+[conv] 0x42fab0 _VectorClass_VBaseNodeClass::ddtor -> _VectorClass_VBaseNodeClass
+[conv] 0x43ac20 _VectorClass_PAVNeuronClass::ddtor -> _VectorClass_PAVNeuronClass
+[conv] 0x45a270 VectorClass::Cleanup -> VectorClass
+[conv] 0x45a4d0 _VectorClass_PAVInfantryClass::Remove -> _VectorClass_PAVInfantryClass
+[conv] 0x45a850 _VectorClass_PAVReestablish::ddtor -> _VectorClass_PAVReestablish
+[conv] 0x45ac00 _VectorClass_PAVFoggedObjectClass::Remove -> _VectorClass_PAVFoggedObjectClass
+[conv] 0x465f50 _VectorClass_V_TPoint3D_H::ddtor -> _VectorClass_V_TPoint3D_H
+[conv] 0x472c30 _VectorClass_PAUControlNode::Destroy -> _VectorClass_PAUControlNode
+[conv] 0x472e90 _VectorClass_PAVCaptureManagerClass::Remove -> _VectorClass_PAVCaptureManagerClass
+[conv] 0x477d20 VectorClass::Destroy -> VectorClass
+[conv] 0x4780b0 _VectorClass_PAVTechnoTypeClass::ddtor -> _VectorClass_PAVTechnoTypeClass
+[conv] 0x478440 _VectorClass_VRGBClass::ddtor -> _VectorClass_VRGBClass
+[conv] 0x487cb0 Cell::GetTraversability -> Cell
+[conv] 0x48ae60 _VectorClass_PAUDamageGroup::ddtor -> _VectorClass_PAUDamageGroup
+[conv] 0x48e570 ControlClass::CtorFromData -> ControlClass
+[conv] 0x49af70 _VectorClass_PAVConvertClass::Remove -> _VectorClass_PAVConvertClass
+[conv] 0x49ec40 _VectorClass_PAV_DynamicVectorClass_PAD::Remove -> _VectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x4a10a0 VectorClass::ClearAndFree2 -> VectorClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_G           rc=0
+[era] _VectorClass_VCell       rc=2
+[era] _VectorClass_VBaseNodeClass rc=0
+[era] _VectorClass_PAVNeuronClass rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVInfantryClass rc=0
+[era] _VectorClass_PAVReestablish rc=0
+[era] _VectorClass_PAVFoggedObjectClass rc=0
+[era] _VectorClass_V_TPoint3D_H rc=0
+[era] _VectorClass_PAUControlNode rc=0
+[era] _VectorClass_PAVCaptureManagerClass rc=0
+[era] _VectorClass_PAVTechnoTypeClass rc=0
+[era] _VectorClass_VRGBClass   rc=0
+[era] Cell                     rc=0
+[era] _VectorClass_PAUDamageGroup rc=0
+[era] ControlClass             rc=0
+[era] _VectorClass_PAVConvertClass rc=0
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=0
+=== diffasm byte-compare ===
+[diff] 0x42d9a0   MISMATCH         _VectorClass_G::ddtor
+[diff] 0x42fab0   MISMATCH         _VectorClass_VBaseNodeClass::ddtor
+[diff] 0x43ac20   MISMATCH         _VectorClass_PAVNeuronClass::ddtor
+[diff] 0x45a270   MISMATCH         VectorClass::Cleanup
+[diff] 0x477d20   MISMATCH         VectorClass::Destroy
+[diff] 0x4a10a0   MISMATCH         VectorClass::ClearAndFree2
+[diff] 0x45a4d0   MISMATCH         _VectorClass_PAVInfantryClass::Remove
+[diff] 0x45a850   MISMATCH         _VectorClass_PAVReestablish::ddtor
+[diff] 0x45ac00   MISMATCH         _VectorClass_PAVFoggedObjectClass::Remove
+[diff] 0x465f50   MISMATCH         _VectorClass_V_TPoint3D_H::ddtor
+[diff] 0x472c30   MISMATCH         _VectorClass_PAUControlNode::Destroy
+[diff] 0x472e90   MISMATCH         _VectorClass_PAVCaptureManagerClass::Remove
+[diff] 0x4780b0   MISMATCH         _VectorClass_PAVTechnoTypeClass::ddtor
+[diff] 0x478440   MISMATCH         _VectorClass_VRGBClass::ddtor
+[diff] 0x487cb0   MISMATCH         Cell::GetTraversability
+[diff] 0x48ae60   MISMATCH         _VectorClass_PAUDamageGroup::ddtor
+[diff] 0x48e570   MISMATCH         ControlClass::CtorFromData
+[diff] 0x49af70   MISMATCH         _VectorClass_PAVConvertClass::Remove
+[diff] 0x49ec40   MISMATCH         _VectorClass_PAV_DynamicVectorClass_PAD::Remove
+[ledger] 0x42d9a0 _VectorClass_G::ddtor -> NG (attempt 1)
+[ledger] 0x42f7c0 _VectorClass_VCell::Cleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42fab0 _VectorClass_VBaseNodeClass::ddtor -> NG (attempt 1)
+[ledger] 0x43ac20 _VectorClass_PAVNeuronClass::ddtor -> NG (attempt 1)
+[ledger] 0x45a270 VectorClass::Cleanup -> NG (attempt 1)
+[ledger] 0x45a4d0 _VectorClass_PAVInfantryClass::Remove -> NG (attempt 1)
+[ledger] 0x45a850 _VectorClass_PAVReestablish::ddtor -> NG (attempt 1)
+[ledger] 0x45ac00 _VectorClass_PAVFoggedObjectClass::Remove -> NG (attempt 1)
+[ledger] 0x465f50 _VectorClass_V_TPoint3D_H::ddtor -> NG (attempt 1)
+[ledger] 0x472c30 _VectorClass_PAUControlNode::Destroy -> NG (attempt 1)
+[ledger] 0x472e90 _VectorClass_PAVCaptureManagerClass::Remove -> NG (attempt 1)
+[ledger] 0x477d20 VectorClass::Destroy -> NG (attempt 1)
+[ledger] 0x4780b0 _VectorClass_PAVTechnoTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x478440 _VectorClass_VRGBClass::ddtor -> NG (attempt 1)
+[ledger] 0x487cb0 Cell::GetTraversability -> NG (attempt 1)
+[ledger] 0x48ae60 _VectorClass_PAUDamageGroup::ddtor -> NG (attempt 1)
+[ledger] 0x48e570 ControlClass::CtorFromData -> NG (attempt 1)
+[ledger] 0x49af70 _VectorClass_PAVConvertClass::Remove -> NG (attempt 1)
+[ledger] 0x49ec40 _VectorClass_PAV_DynamicVectorClass_PAD::Remove -> NG (attempt 1)
+[ledger] 0x4a10a0 VectorClass::ClearAndFree2 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 15,
+  "width_mismatch": 2,
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p100\batch_report.json

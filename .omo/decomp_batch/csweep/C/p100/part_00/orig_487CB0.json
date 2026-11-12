@@ -1,0 +1,11 @@
+{
+ "addr": "0x487CB0",
+ "name": "Cell::GetTraversability",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487CB0",
+ "bytes_hex": "a1e0718800db800c180000dd81f0000000d8d9dfe0f6c4017408ddd8dd81f0000000e929e23300",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

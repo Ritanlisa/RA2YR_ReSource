@@ -1,0 +1,15 @@
+{
+ "symbol": "?CtorFromData@ControlClass@@QAEPAV1@H@Z",
+ "sym_key": "ControlClass::CtorFromData",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf157e8000000008b47248946248b4f28894e28c706000000005f33c05ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Constructor@ControlClass@@QAEPAV1@H@Z",
+   "sym_key": "ControlClass::Constructor"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x48E570",
+ "name": "ControlClass::CtorFromData",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48E570",
+ "bytes_hex": "56578b7c240c8bf157e8c22d05008b47248946248b4f28894e28c7068c527e008bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

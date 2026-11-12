@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetTraversability@Cell@@QAE_JXZ",
+ "sym_key": "Cell::GetTraversability",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "83ec08a100000000db800c180000dd5c2400dd81f0000000dc5c2400dfe0f6c40174148b91f00000008b81f400000089542400894424048b4c24048b5424005152e80000000083c410c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

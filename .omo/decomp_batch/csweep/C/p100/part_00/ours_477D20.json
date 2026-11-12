@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destroy@VectorClass@@QAEHXZ",
+ "sym_key": "VectorClass::Destroy",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "568bf1570fbf7e0485ff74198a460d84c074128b460450e80000000083c40466c7460400008bc7c6460d00c74608000000005f5ec3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

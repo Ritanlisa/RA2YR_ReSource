@@ -1,0 +1,15 @@
+{
+ "symbol": "?Remove@_VectorClass_PAVInfantryClass@@QAEXXZ",
+ "sym_key": "_VectorClass_PAVInfantryClass::Remove",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b46043bc77411397e10740c50e80000000083c404897e04897e10897e085f5ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
