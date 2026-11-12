@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p184\part_00
+=== convert (20 addrs) ===
+[conv] 0x76c170 sub_76C170 -> _addr_76
+[conv] 0x76f350 sub_76F350 -> _addr_76
+[conv] 0x76f7f0 sub_76F7F0 -> _addr_76
+[conv] 0x771b30 sub_771B30 -> _addr_77
+[conv] 0x773330 sub_773330 -> _addr_77
+[conv] 0x7772a0 ScreenEffect::UpdateBob -> ScreenEffect
+[conv] 0x7785c0 sub_7785C0 -> _addr_77
+[conv] 0x77b160 sub_77B160 -> _addr_77
+[conv] 0x77b760 sub_77B760 -> _addr_77
+[conv] 0x7af180 sub_7AF180 -> _addr_7A
+[conv] 0x7b0c70 sub_7B0C70 -> _addr_7B
+[conv] 0x7b18a0 sub_7B18A0 -> _addr_7B
+[conv] 0x7b2c70 sub_7B2C70 -> _addr_7B
+[conv] 0x70f6a0 FootClass::ApplyThreatBounds -> FootClass
+[conv] 0x4115f0 BSurface::Lock -> BSurface
+[conv] 0x6b2000 SliderClass::OnTrack -> SliderClass
+[conv] 0x6f9e10 TechnoClass::IsInvisible -> TechnoClass
+[conv] 0x7ca75b _fclose -> _addr_7C
+[conv] 0x7ca814 __fsopen -> _addr_7C
+[conv] 0x7cb80b _fgetc -> _addr_7C
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_76                 rc=0
+[era] _addr_77                 rc=0
+[era] ScreenEffect             rc=0
+[era] _addr_7A                 rc=0
+[era] _addr_7B                 rc=0
+[era] FootClass                rc=0
+[era] BSurface                 rc=2
+[era] SliderClass              rc=0
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x76c170   MISMATCH         sub_76C170
+[diff] 0x76f350   MISMATCH         sub_76F350
+[diff] 0x76f7f0   MISMATCH         sub_76F7F0
+[diff] 0x771b30   MISMATCH         sub_771B30
+[diff] 0x773330   MISMATCH         sub_773330
+[diff] 0x7785c0   MISMATCH         sub_7785C0
+[diff] 0x77b160   MISMATCH         sub_77B160
+[diff] 0x77b760   MISMATCH         sub_77B760
+[diff] 0x7772a0   MISMATCH         ScreenEffect::UpdateBob
+[diff] 0x7af180   MISMATCH         sub_7AF180
+[diff] 0x7b0c70   MISMATCH         sub_7B0C70
+[diff] 0x7b18a0   MISMATCH         sub_7B18A0
+[diff] 0x7b2c70   MISMATCH         sub_7B2C70
+[diff] 0x70f6a0   MISMATCH         FootClass::ApplyThreatBounds
+[diff] 0x6b2000   MISMATCH         SliderClass::OnTrack
+[diff] 0x6f9e10   MISMATCH         TechnoClass::IsInvisible
+[diff] 0x7ca814   MISMATCH         __fsopen
+[ledger] 0x76c170 sub_76C170 -> NG (attempt 1)
+[ledger] 0x76f350 sub_76F350 -> NG (attempt 1)
+[ledger] 0x76f7f0 sub_76F7F0 -> NG (attempt 1)
+[ledger] 0x771b30 sub_771B30 -> NG (attempt 1)
+[ledger] 0x773330 sub_773330 -> NG (attempt 1)
+[ledger] 0x7772a0 ScreenEffect::UpdateBob -> NG (attempt 1)
+[ledger] 0x7785c0 sub_7785C0 -> NG (attempt 1)
+[ledger] 0x77b160 sub_77B160 -> NG (attempt 1)
+[ledger] 0x77b760 sub_77B760 -> NG (attempt 1)
+[ledger] 0x7af180 sub_7AF180 -> NG (attempt 1)
+[ledger] 0x7b0c70 sub_7B0C70 -> NG (attempt 1)
+[ledger] 0x7b18a0 sub_7B18A0 -> NG (attempt 1)
+[ledger] 0x7b2c70 sub_7B2C70 -> NG (attempt 1)
+[ledger] 0x70f6a0 FootClass::ApplyThreatBounds -> NG (attempt 1)
+[ledger] 0x4115f0 BSurface::Lock -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b2000 SliderClass::OnTrack -> NG (attempt 1)
+[ledger] 0x6f9e10 TechnoClass::IsInvisible -> NG (attempt 1)
+[ledger] 0x7ca75b _fclose -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ca814 __fsopen -> NG (attempt 1)
+[ledger] 0x7cb80b _fgetc -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "const_fold": 14,
+  "regalloc": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p184\batch_report.json

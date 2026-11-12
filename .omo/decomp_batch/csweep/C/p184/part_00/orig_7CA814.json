@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CA814",
+ "name": "__fsopen",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CA814",
+ "bytes_hex": "56e88c8500008bf085f675025ec35756ff742418ff742418ff742418e801840000568bf8e80e0c000083c4148bc75f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

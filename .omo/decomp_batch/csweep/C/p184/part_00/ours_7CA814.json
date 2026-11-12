@@ -1,0 +1,27 @@
+{
+ "symbol": "?__fsopen@@YAPAU_iobuf@@PBD0H@Z",
+ "sym_key": "Unnamed::__fsopen",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "56e8000000008bf085f674268b4424108b4c240c8b5424085756505152e800000000568bf8e80000000083c4148bc75f5ec333c05ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?_getstream@@YAHXZ",
+   "sym_key": "_getstream"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?_openfile@@YAHPAXHHHZZ",
+   "sym_key": "_openfile"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?_unlock_file@@YAHPAXZZ",
+   "sym_key": "_unlock_file"
+  }
+ ]
+}

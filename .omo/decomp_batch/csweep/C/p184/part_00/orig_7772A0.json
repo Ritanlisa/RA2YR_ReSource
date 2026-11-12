@@ -1,0 +1,11 @@
+{
+ "addr": "0x7772A0",
+ "name": "ScreenEffect::UpdateBob",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7772A0",
+ "bytes_hex": "dd05b030b700dc25d830b70083ec08dd1c24e8993ad5ffdc0dd030b70083c408dc0d38177e00e835ec0400a34035b700c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

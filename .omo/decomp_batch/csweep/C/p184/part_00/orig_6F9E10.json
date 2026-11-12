@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F9E10",
+ "name": "BuildingClass::IsInvisible",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F9E10",
+ "bytes_hex": "568bf18b06ff90840000008b88b000000085c9750432c05ec38b168bceff92840000008b80b00000005e8038000f94c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

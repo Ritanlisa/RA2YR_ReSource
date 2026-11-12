@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsInvisible@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::IsInvisible",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff90840000008b88b000000085c974238b0e56ff91840000008b80b000000033d25e8038000f94c233d081e2ff00000033c2c324005ec3",
+ "relocs": []
+}
