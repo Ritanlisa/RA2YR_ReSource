@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p39\part_00
+=== convert (20 addrs) ===
+[conv] 0x708c10 TechnoClass::GetGlobalValue -> TechnoClass
+[conv] 0x717af0 TechnoTypeClass::Constructor -> TechnoTypeClass
+[conv] 0x717bc0 TechnoTypeClass::Constructor_0 -> TechnoTypeClass
+[conv] 0x717bd0 IntDynamicVector::Construct -> IntDynamicVector
+[conv] 0x717be0 TechnoTypeClass::Constructor_1 -> TechnoTypeClass
+[conv] 0x717bf0 ObjectTypeClass::CheckFlag -> ObjectTypeClass
+[conv] 0x718230 TeleportLocomotionClass::ResetMovementState -> TeleportLocomotionClass
+[conv] 0x719c60 TeleportLocomotionClass::StubReturnZero_17 -> TeleportLocomotionClass
+[conv] 0x71a720 TemporalClass::ddtor -> TemporalClass
+[conv] 0x71b2a0 _VectorClass_PAVTemporalClass::Add -> _VectorClass_PAVTemporalClass
+[conv] 0x71b3c0 _VectorClass_PAVTemporalClass::GetSize -> _VectorClass_PAVTemporalClass
+[conv] 0x71b4d0 _DynamicVectorClass_PAVTemporalClass::FindItemIndex -> _DynamicVectorClass_PAVTemporalClass
+[conv] 0x71d310 TerrainClass::MissionStubReturnZero3 -> TerrainClass
+[conv] 0x71e260 TerrainTypeClass::GetClassIdentifier -> TerrainTypeClass
+[conv] 0x71f880 TEventClass::ddtor -> TEventClass
+[conv] 0x71fc00 _VectorClass_PAVTEventClass::Add -> _VectorClass_PAVTEventClass
+[conv] 0x720260 sub_720260 -> _addr_72
+[conv] 0x720280 sub_720280 -> _addr_72
+[conv] 0x7202a0 sub_7202A0 -> _addr_72
+[conv] 0x7202c0 sub_7202C0 -> _addr_72
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] TechnoTypeClass          rc=0
+[era] IntDynamicVector         rc=0
+[era] ObjectTypeClass          rc=0
+[era] TeleportLocomotionClass  rc=0
+[era] TemporalClass            rc=0
+[era] _VectorClass_PAVTemporalClass rc=0
+[era] _DynamicVectorClass_PAVTemporalClass rc=0
+[era] TerrainClass             rc=0
+[era] TerrainTypeClass         rc=0
+[era] TEventClass              rc=0
+[era] _VectorClass_PAVTEventClass rc=0
+[era] _addr_72                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x708c10   MISMATCH         TechnoClass::GetGlobalValue
+[diff] 0x717af0   MISMATCH         TechnoTypeClass::Constructor
+[diff] 0x717bc0   MISMATCH         TechnoTypeClass::Constructor_0
+[diff] 0x717be0   MISMATCH         TechnoTypeClass::Constructor_1
+[diff] 0x717bd0   MISMATCH         IntDynamicVector::Construct
+[diff] 0x717bf0   MISMATCH         ObjectTypeClass::CheckFlag
+[diff] 0x718230   MISMATCH         TeleportLocomotionClass::ResetMovementState
+[diff] 0x719c60   MISMATCH         TeleportLocomotionClass::StubReturnZero_17
+[diff] 0x71a720   MISMATCH         TemporalClass::ddtor
+[diff] 0x71b2a0   MISMATCH         _VectorClass_PAVTemporalClass::Add
+[diff] 0x71b3c0   MISMATCH         _VectorClass_PAVTemporalClass::GetSize
+[diff] 0x71b4d0   MISMATCH         _DynamicVectorClass_PAVTemporalClass::FindItemIndex
+[diff] 0x71d310   MISMATCH         TerrainClass::MissionStubReturnZero3
+[diff] 0x71e260   MISMATCH         TerrainTypeClass::GetClassIdentifier
+[diff] 0x71f880   MISMATCH         TEventClass::ddtor
+[diff] 0x71fc00   MISMATCH         _VectorClass_PAVTEventClass::Add
+[diff] 0x720260   MISMATCH         sub_720260
+[diff] 0x720280   MISMATCH         sub_720280
+[diff] 0x7202a0   MISMATCH         sub_7202A0
+[diff] 0x7202c0   MISMATCH         sub_7202C0
+[ledger] 0x708c10 TechnoClass::GetGlobalValue -> NG (attempt 2)
+[ledger] 0x717af0 TechnoTypeClass::Constructor -> NG (attempt 2)
+[ledger] 0x717bc0 TechnoTypeClass::Constructor_0 -> NG (attempt 2)
+[ledger] 0x717bd0 IntDynamicVector::Construct -> NG (attempt 2)
+[ledger] 0x717be0 TechnoTypeClass::Constructor_1 -> NG (attempt 2)
+[ledger] 0x717bf0 ObjectTypeClass::CheckFlag -> NG (attempt 2)
+[ledger] 0x718230 TeleportLocomotionClass::ResetMovementState -> NG (attempt 2)
+[ledger] 0x719c60 TeleportLocomotionClass::StubReturnZero_17 -> NG (attempt 2)
+[ledger] 0x71a720 TemporalClass::ddtor -> NG (attempt 2)
+[ledger] 0x71b2a0 _VectorClass_PAVTemporalClass::Add -> NG (attempt 2)
+[ledger] 0x71b3c0 _VectorClass_PAVTemporalClass::GetSize -> NG (attempt 2)
+[ledger] 0x71b4d0 _DynamicVectorClass_PAVTemporalClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x71d310 TerrainClass::MissionStubReturnZero3 -> NG (attempt 2)
+[ledger] 0x71e260 TerrainTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x71f880 TEventClass::ddtor -> NG (attempt 2)
+[ledger] 0x71fc00 _VectorClass_PAVTEventClass::Add -> NG (attempt 2)
+[ledger] 0x720260 sub_720260 -> NG (attempt 2)
+[ledger] 0x720280 sub_720280 -> NG (attempt 2)
+[ledger] 0x7202a0 sub_7202A0 -> NG (attempt 2)
+[ledger] 0x7202c0 sub_7202C0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "regalloc": 3,
+  "const_fold": 7,
+  "extern_reloc": 1,
+  "branch_polarity": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p39\batch_report.json

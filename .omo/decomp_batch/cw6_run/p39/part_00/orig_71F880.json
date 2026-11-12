@@ -1,0 +1,11 @@
+{
+ "addr": "0x71F880",
+ "name": "TEventClass::ddtor",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71F880",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d10987e0089088b1514987e008950048b0d18987e008948088b151c987e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,461 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 7,
+   "regalloc": 3,
+   "const_fold": 7,
+   "extern_reloc": 1,
+   "branch_polarity": 2
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 6,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x708c10",
+   "batch": "stale_cw3|CW3-3 idx consumption",
+   "verdict": "MISMATCH",
+   "note": "orig 17B ours 17B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 8]",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "TechnoClass::GetGlobalValue",
+   "emitted": "TechnoClass::GetGlobalValue",
+   "unit": "TechnoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 17,
+   "ours_size": 17,
+   "clean": false
+  },
+  {
+   "addr": "0x717af0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 34B ours 38B",
+   "first_diff": {
+    "orig": "+4 mov dword ptr [eax + 4], ecx",
+    "ours": "+4 mov edx, dword ptr [eax + 0xc]"
+   },
+   "pathology": "regalloc",
+   "name": "TechnoTypeClass::Constructor",
+   "emitted": "TechnoTypeClass::Constructor",
+   "unit": "TechnoTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "10/12",
+   "rule_violations": 1,
+   "orig_size": 34,
+   "ours_size": 38,
+   "clean": false
+  },
+  {
+   "addr": "0x717bc0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 11B ours 11B",
+   "first_diff": {
+    "orig": "+2 mov dword ptr [eax], 0x7f0dcc",
+    "ours": "+2 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "TechnoTypeClass::Constructor_0",
+   "emitted": "TechnoTypeClass::Constructor_0",
+   "unit": "TechnoTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 1,
+   "orig_size": 11,
+   "ours_size": 11,
+   "clean": false
+  },
+  {
+   "addr": "0x717bd0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 11B ours 11B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov dword ptr [ecx], 0"
+   },
+   "pathology": "regalloc",
+   "name": "IntDynamicVector::Construct",
+   "emitted": "IntDynamicVector::Construct",
+   "unit": "IntDynamicVector",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 11,
+   "ours_size": 11,
+   "clean": false
+  },
+  {
+   "addr": "0x717be0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 11B ours 11B",
+   "first_diff": {
+    "orig": "+2 mov dword ptr [eax], 0x7eaa28",
+    "ours": "+2 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "TechnoTypeClass::Constructor_1",
+   "emitted": "TechnoTypeClass::Constructor_1",
+   "unit": "TechnoTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 1,
+   "orig_size": 11,
+   "ours_size": 11,
+   "clean": false
+  },
+  {
+   "addr": "0x717bf0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 11B ours 11B",
+   "first_diff": {
+    "orig": "+2 mov dword ptr [eax], 0x7eb714",
+    "ours": "+2 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "ObjectTypeClass::CheckFlag",
+   "emitted": "ObjectTypeClass::CheckFlag",
+   "unit": "ObjectTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 1,
+   "orig_size": 11,
+   "ours_size": 11,
+   "clean": false
+  },
+  {
+   "addr": "0x718230",
+   "batch": "stale_cw3|CW3-3 idx consumption",
+   "verdict": "MISMATCH",
+   "note": "orig 45B ours 44B",
+   "first_diff": {
+    "orig": "+4 mov edx, dword ptr [0xb0ebf8]",
+    "ours": "+4 mov ecx, dword ptr [0x3b8]"
+   },
+   "pathology": "regalloc",
+   "name": "JumpjetLocomotionClass::ResetMovementState",
+   "emitted": "TeleportLocomotionClass::ResetMovementState",
+   "unit": "TeleportLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/8",
+   "rule_violations": 0,
+   "orig_size": 45,
+   "ours_size": 44,
+   "clean": false
+  },
+  {
+   "addr": "0x719c60",
+   "batch": "stale_cw5|CW5-10 GUID constants",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 69B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e9a90]",
+    "ours": "+16 mov edx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "JumpjetLocomotionClass::StubReturnZero_17",
+   "emitted": "TeleportLocomotionClass::StubReturnZero_17",
+   "unit": "TeleportLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x71a720",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 52B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e98d0]",
+    "ours": "+16 xor ecx, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "TemporalClass::ddtor",
+   "emitted": "TemporalClass::ddtor",
+   "unit": "TemporalClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x71b2a0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x71b2d6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_TemporalClass::Add",
+   "emitted": "_VectorClass_PAVTemporalClass::Add",
+   "unit": "_VectorClass_PAVTemporalClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x71b3c0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x71b3ce",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TemporalClass::GetSize",
+   "emitted": "_VectorClass_PAVTemporalClass::GetSize",
+   "unit": "_VectorClass_PAVTemporalClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x71b4d0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TemporalClass::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVTemporalClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVTemporalClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x71d310",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 52B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e9740]",
+    "ours": "+16 xor ecx, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "TerrainClass::MissionStubReturnZero3",
+   "emitted": "TerrainClass::MissionStubReturnZero3",
+   "unit": "TerrainClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x71e260",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 52B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e95e0]",
+    "ours": "+16 xor ecx, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "TerrainTypeClass::GetClassIdentifier",
+   "emitted": "TerrainTypeClass::GetClassIdentifier",
+   "unit": "TerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x71f880",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 52B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e9810]",
+    "ours": "+16 xor ecx, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "TEventClass::ddtor",
+   "emitted": "TEventClass::ddtor",
+   "unit": "TEventClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x71fc00",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x71fc36",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_TEventClass::Add",
+   "emitted": "_VectorClass_PAVTEventClass::Add",
+   "unit": "_VectorClass_PAVTEventClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x720260",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0xb0f418]",
+    "ours": "+0 fld qword ptr [0x220]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_720260",
+   "emitted": "sub_720260",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/4",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x720280",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+6 fdiv qword ptr [0xb0f468]",
+    "ours": "+6 fdiv qword ptr [0x270]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_720280",
+   "emitted": "sub_720280",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/5",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x7202a0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+12 fstp qword ptr [0xb0f448]",
+    "ours": "+12 fstp qword ptr [0x250]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_7202A0",
+   "emitted": "sub_7202A0",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/3",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x7202c0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+12 fstp qword ptr [0xb0f420]",
+    "ours": "+12 fstp qword ptr [0x228]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_7202C0",
+   "emitted": "sub_7202C0",
+   "unit": "_addr_72",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19,
+   "clean": false
+  }
+ ]
+}

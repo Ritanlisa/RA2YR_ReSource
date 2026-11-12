@@ -1,0 +1,27 @@
+{
+ "symbol": "?ResetMovementState@TeleportLocomotionClass@@QAGHH@Z",
+ "sym_key": "TeleportLocomotionClass::ResetMovementState",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b0db80300008948188b15bc03000089501c8b0dc003000089482032c98848308848328b00c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

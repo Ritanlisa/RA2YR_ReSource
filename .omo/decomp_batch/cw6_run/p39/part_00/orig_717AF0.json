@@ -1,0 +1,11 @@
+{
+ "addr": "0x717AF0",
+ "name": "TechnoTypeClass::Constructor",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x717AF0",
+ "bytes_hex": "8bc133c9894804894808c6400c0188480dc740140a000000894810c7009c4f7f00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Construct@IntDynamicVector@@QAEPAV1@H@Z",
+ "sym_key": "IntDynamicVector::Construct",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c7010000000033c0c20400",
+ "relocs": []
+}

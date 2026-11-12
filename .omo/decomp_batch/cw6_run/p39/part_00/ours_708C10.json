@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetGlobalValue@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetGlobalValue",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "518b4424008b0d10020000890833c059c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

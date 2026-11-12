@@ -1,0 +1,11 @@
+{
+ "addr": "0x708C10",
+ "name": "TechnoClass::GetGlobalValue",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x708C10",
+ "bytes_hex": "8b4424088b0d50eab000890833c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

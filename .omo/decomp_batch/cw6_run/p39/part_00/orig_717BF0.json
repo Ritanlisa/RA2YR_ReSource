@@ -1,0 +1,11 @@
+{
+ "addr": "0x717BF0",
+ "name": "ObjectTypeClass::CheckFlag",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x717BF0",
+ "bytes_hex": "8bc1c70014b77e00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
