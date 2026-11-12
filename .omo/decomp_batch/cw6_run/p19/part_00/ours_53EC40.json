@@ -1,0 +1,21 @@
+{
+ "symbol": "?Memory_Helper@@YIHED@Z",
+ "sym_key": "Unnamed::Memory_Helper",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0741ef6da1bd281e20080ffff81c20080000081e1ff0000006689144d00000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_StreamBufferState@@3IA",
+   "sym_key": "g_StreamBufferState"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0168@@3PAGA",
+   "sym_key": "DataGlobal_AA0168"
+  }
+ ]
+}

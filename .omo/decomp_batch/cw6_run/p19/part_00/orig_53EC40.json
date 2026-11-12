@@ -1,0 +1,11 @@
+{
+ "addr": "0x53EC40",
+ "name": "Memory_Helper",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53EC40",
+ "bytes_hex": "a14404aa0085c0741ef6da1bd281e20080000081c20080ffff81e1ff0000006689144d6801aa00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_189@MultiplayerSyncCommandClass@@QAEPBGXZ",
+ "sym_key": "MultiplayerSyncCommandClass::performAction_189",
+ "size": 9,
+ "link_base": 0,
+ "bytes_hex": "33c066a100000000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_De@@3GB",
+   "sym_key": "g_INI_Key_De"
+  }
+ ]
+}

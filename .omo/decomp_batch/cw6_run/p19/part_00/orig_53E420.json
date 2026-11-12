@@ -1,0 +1,11 @@
+{
+ "addr": "0x53E420",
+ "name": "Object::RemoveObjectArray",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53E420",
+ "bytes_hex": "a14804aa005685c0743785c974338b357403aa00a14c04aa00ba010000003bf27e1f3908740a4283c0043bd67cf45ec3c70000000000a15004aa0048a35004aa005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

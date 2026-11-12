@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x537a60 MultiplayerDebugCommandClass::ddtor -> MultiplayerDebugCommandClass
+[conv] 0x537ac0 MultiplayerSyncCommandClass::performAction_189 -> MultiplayerSyncCommandClass
+[conv] 0x537b40 ScreenCaptureCommandClass::Constructor -> ScreenCaptureCommandClass
+[conv] 0x537e70 CursorPositionCommandClass::Constructor -> CursorPositionCommandClass
+[conv] 0x537f10 DeleteCommandClass::Constructor -> DeleteCommandClass
+[conv] 0x538520 _VectorClass_PAVCCINIClass::AddRef -> _VectorClass_PAVCCINIClass
+[conv] 0x538640 _VectorClass_PAVCCINIClass::GetSize -> _VectorClass_PAVCCINIClass
+[conv] 0x539500 sub_539500 -> _addr_53
+[conv] 0x53c520 _VectorClass_PBVAnimClass::AddRef -> _VectorClass_PBVAnimClass
+[conv] 0x53c640 _VectorClass_PBVAnimClass::Read -> _VectorClass_PBVAnimClass
+[conv] 0x53c750 _DynamicVectorClass_PBVAnimClass::FindItem -> _DynamicVectorClass_PBVAnimClass
+[conv] 0x53daa0 _VectorClass_PAVIonBlastClass::Add -> _VectorClass_PAVIonBlastClass
+[conv] 0x53dbc0 _VectorClass_PAVIonBlastClass::GetSize -> _VectorClass_PAVIonBlastClass
+[conv] 0x53dcd0 _DynamicVectorClass_PAVIonBlastClass::FindItemIndex -> _DynamicVectorClass_PAVIonBlastClass
+[conv] 0x53e3c0 TimerPool::AllocSlot -> TimerPool
+[conv] 0x53e420 Object::RemoveObjectArray -> Object
+[conv] 0x53ec40 Memory_Helper -> Memory
+[conv] 0x53f020 ObjectClass::sub_53F020 -> ObjectClass
+[conv] 0x53f050 ObjectClass::sub_53F050 -> ObjectClass
+[conv] 0x53f080 ObjectClass::sub_53F080 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerDebugCommandClass rc=0
+[era] MultiplayerSyncCommandClass rc=0
+[era] ScreenCaptureCommandClass rc=2
+[era] CursorPositionCommandClass rc=2
+[era] DeleteCommandClass       rc=2
+[era] _VectorClass_PAVCCINIClass rc=0
+[era] _addr_53                 rc=0
+[era] _VectorClass_PBVAnimClass rc=0
+[era] _DynamicVectorClass_PBVAnimClass rc=0
+[era] _VectorClass_PAVIonBlastClass rc=0
+[era] _DynamicVectorClass_PAVIonBlastClass rc=0
+[era] TimerPool                rc=2
+[era] Object                   rc=0
+[era] Memory                   rc=0
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x537a60   MISMATCH         MultiplayerDebugCommandClass::ddtor
+[diff] 0x537ac0   MISMATCH         MultiplayerSyncCommandClass::performAction_189
+[diff] 0x538520   MISMATCH         _VectorClass_PAVCCINIClass::AddRef
+[diff] 0x538640   MISMATCH         _VectorClass_PAVCCINIClass::GetSize
+[diff] 0x539500   MISMATCH         sub_539500
+[diff] 0x53c520   MISMATCH         _VectorClass_PBVAnimClass::AddRef
+[diff] 0x53c640   MISMATCH         _VectorClass_PBVAnimClass::Read
+[diff] 0x53c750   MISMATCH         _DynamicVectorClass_PBVAnimClass::FindItem
+[diff] 0x53daa0   MISMATCH         _VectorClass_PAVIonBlastClass::Add
+[diff] 0x53dbc0   MISMATCH         _VectorClass_PAVIonBlastClass::GetSize
+[diff] 0x53dcd0   MISMATCH         _DynamicVectorClass_PAVIonBlastClass::FindItemIndex
+[diff] 0x53e420   MISMATCH         Object::RemoveObjectArray
+[diff] 0x53ec40   MISMATCH         Memory_Helper
+[diff] 0x53f020   MATCH            ObjectClass::sub_53F020
+[diff] 0x53f050   MATCH            ObjectClass::sub_53F050
+[diff] 0x53f080   MATCH            ObjectClass::sub_53F080
+[ledger] 0x537a60 MultiplayerDebugCommandClass::ddtor -> NG (attempt 7)
+[ledger] 0x537ac0 MultiplayerSyncCommandClass::performAction_189 -> NG (attempt 2)
+[ledger] 0x537b40 ScreenCaptureCommandClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537e70 CursorPositionCommandClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537f10 DeleteCommandClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538520 _VectorClass_PAVCCINIClass::AddRef -> NG (attempt 2)
+[ledger] 0x538640 _VectorClass_PAVCCINIClass::GetSize -> NG (attempt 2)
+[ledger] 0x539500 sub_539500 -> NG (attempt 2)
+[ledger] 0x53c520 _VectorClass_PBVAnimClass::AddRef -> NG (attempt 2)
+[ledger] 0x53c640 _VectorClass_PBVAnimClass::Read -> NG (attempt 2)
+[ledger] 0x53c750 _DynamicVectorClass_PBVAnimClass::FindItem -> NG (attempt 2)
+[ledger] 0x53daa0 _VectorClass_PAVIonBlastClass::Add -> NG (attempt 2)
+[ledger] 0x53dbc0 _VectorClass_PAVIonBlastClass::GetSize -> NG (attempt 2)
+[ledger] 0x53dcd0 _DynamicVectorClass_PAVIonBlastClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x53e3c0 TimerPool::AllocSlot -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53e420 Object::RemoveObjectArray -> NG (attempt 2)
+[ledger] 0x53ec40 Memory_Helper -> NG (attempt 2)
+[ledger] 0x53f020 ObjectClass::sub_53F020 -> OK (attempt 2)
+[ledger] 0x53f050 ObjectClass::sub_53F050 -> OK (attempt 2)
+[ledger] 0x53f080 ObjectClass::sub_53F080 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 4,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "branch_polarity": 3,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 18.8,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p19\batch_report.json

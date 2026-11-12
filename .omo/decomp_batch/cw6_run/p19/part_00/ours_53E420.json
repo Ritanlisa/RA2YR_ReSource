@@ -1,0 +1,39 @@
+{
+ "symbol": "?RemoveObjectArray@Object@@QAEPAPAXXZ",
+ "sym_key": "Object::RemoveObjectArray",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "a1b00000005685c0744185c9743d0fbe05b40000008b3500000000ba010000008b003bf276253908740c4283c0043bd67319390875f4c70000000000a0b8000000fec8a2b80000000fbec05ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0398@@3IA",
+   "sym_key": "DataGlobal_AA0398"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0398@@3IA",
+   "sym_key": "DataGlobal_AA0398"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0374@@3IA",
+   "sym_key": "DataGlobal_AA0374"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0398@@3IA",
+   "sym_key": "DataGlobal_AA0398"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0398@@3IA",
+   "sym_key": "DataGlobal_AA0398"
+  }
+ ]
+}
