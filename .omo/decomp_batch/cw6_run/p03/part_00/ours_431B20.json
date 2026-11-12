@@ -1,0 +1,8 @@
+{
+ "symbol": "?Constructor@CCFileClass@@QAEPAVBufferIOFileClass@@XZ",
+ "sym_key": "CCFileClass::Constructor",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "568b712881e60000ffff33c083caff897128884104c741080100000089410c8951108951148941186689411c6689411e89412089412489412c89413089413489413889413c89514089514489414889414c89415089015ec3",
+ "relocs": []
+}

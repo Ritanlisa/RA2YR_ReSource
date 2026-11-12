@@ -1,0 +1,11 @@
+{
+ "addr": "0x42D9D0",
+ "name": "VectorClass_ushort::GetSize",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42D9D0",
+ "bytes_hex": "8a410c5684c0750633c05ec204008b510833c085d27e178b7424088b4904668b36663931740b4083c1023bc27cf383c8ff5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

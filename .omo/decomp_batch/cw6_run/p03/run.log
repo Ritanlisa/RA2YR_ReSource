@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x42d9d0 _VectorClass_G::GetSize -> _VectorClass_G
+[conv] 0x42dae0 _DynamicVectorClass_G::FindItemIndex -> _DynamicVectorClass_G
+[conv] 0x42ead0 ObjectClass::sub_42EAD0 -> ObjectClass
+[conv] 0x42f620 _VectorClass_VCell::AddRef -> _VectorClass_VCell
+[conv] 0x42f7f0 _VectorClass_VCell::GetSize -> _VectorClass_VCell
+[conv] 0x42f930 _DynamicVectorClass_VCell::Read -> _DynamicVectorClass_VCell
+[conv] 0x430f60 sub_430F60 -> _addr_43
+[conv] 0x431b20 CCFileClass::Constructor -> CCFileClass
+[conv] 0x436910 BuildingLightClass::SD_vt03 -> BuildingLightClass
+[conv] 0x438b00 BombClass::ddtor -> BombClass
+[conv] 0x43a500 NeuronClass::GetClassID -> NeuronClass
+[conv] 0x43ab30 _VectorClass_PAVNeuronClass::AddRef -> _VectorClass_PAVNeuronClass
+[conv] 0x43adf0 ObjectClass::sub_43ADF0 -> ObjectClass
+[conv] 0x45a180 _VectorClass_PBVParticleSystemTypeClass::AddRef -> _VectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a2a0 _VectorClass_PBVParticleSystemTypeClass::GetSize -> _VectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a3b0 _DynamicVectorClass_PBVParticleSystemTypeClass::Remove -> _DynamicVectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a3e0 _VectorClass_PAVInfantryClass::Add -> _VectorClass_PAVInfantryClass
+[conv] 0x45a640 _VectorClass_PAVFoggedObjectClass::Add -> _VectorClass_PAVFoggedObjectClass
+[conv] 0x45a730 _DynamicVectorClass_PAVFoggedObjectClass::FindItemIndex -> _DynamicVectorClass_PAVFoggedObjectClass
+[conv] 0x45a760 _VectorClass_PAVReestablish::AddRef -> _VectorClass_PAVReestablish
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_G           rc=0
+[era] _DynamicVectorClass_G    rc=0
+[era] ObjectClass              rc=0
+[era] _VectorClass_VCell       rc=0
+[era] _DynamicVectorClass_VCell rc=0
+[era] _addr_43                 rc=0
+[era] CCFileClass              rc=0
+[era] BuildingLightClass       rc=0
+[era] BombClass                rc=0
+[era] NeuronClass              rc=0
+[era] _VectorClass_PAVNeuronClass rc=0
+[era] _VectorClass_PBVParticleSystemTypeClass rc=0
+[era] _DynamicVectorClass_PBVParticleSystemTypeClass rc=0
+[era] _VectorClass_PAVInfantryClass rc=0
+[era] _VectorClass_PAVFoggedObjectClass rc=0
+[era] _DynamicVectorClass_PAVFoggedObjectClass rc=0
+[era] _VectorClass_PAVReestablish rc=0
+=== diffasm byte-compare ===
+[diff] 0x42d9d0   MISMATCH         _VectorClass_G::GetSize
+[diff] 0x42dae0   MISMATCH         _DynamicVectorClass_G::FindItemIndex
+[diff] 0x42ead0   MISMATCH         ObjectClass::sub_42EAD0
+[diff] 0x43adf0   MISMATCH         ObjectClass::sub_43ADF0
+[diff] 0x42f620   MISMATCH         _VectorClass_VCell::AddRef
+[diff] 0x42f7f0   MISMATCH         _VectorClass_VCell::GetSize
+[diff] 0x42f930   MISMATCH         _DynamicVectorClass_VCell::Read
+[diff] 0x430f60   MISMATCH         sub_430F60
+[diff] 0x431b20   MISMATCH         CCFileClass::Constructor
+[diff] 0x436910   MISMATCH         BuildingLightClass::SD_vt03
+[diff] 0x438b00   MISMATCH         BombClass::ddtor
+[diff] 0x43a500   MISMATCH         NeuronClass::GetClassID
+[diff] 0x43ab30   MISMATCH         _VectorClass_PAVNeuronClass::AddRef
+[diff] 0x45a180   MISMATCH         _VectorClass_PBVParticleSystemTypeClass::AddRef
+[diff] 0x45a2a0   MISMATCH         _VectorClass_PBVParticleSystemTypeClass::GetSize
+[diff] 0x45a3b0   MISMATCH         _DynamicVectorClass_PBVParticleSystemTypeClass::Remove
+[diff] 0x45a3e0   MISMATCH         _VectorClass_PAVInfantryClass::Add
+[diff] 0x45a640   MISMATCH         _VectorClass_PAVFoggedObjectClass::Add
+[diff] 0x45a730   MISMATCH         _DynamicVectorClass_PAVFoggedObjectClass::FindItemIndex
+[diff] 0x45a760   MISMATCH         _VectorClass_PAVReestablish::AddRef
+[ledger] 0x42d9d0 _VectorClass_G::GetSize -> NG (attempt 2)
+[ledger] 0x42dae0 _DynamicVectorClass_G::FindItemIndex -> NG (attempt 2)
+[ledger] 0x42ead0 ObjectClass::sub_42EAD0 -> NG (attempt 2)
+[ledger] 0x42f620 _VectorClass_VCell::AddRef -> NG (attempt 2)
+[ledger] 0x42f7f0 _VectorClass_VCell::GetSize -> NG (attempt 2)
+[ledger] 0x42f930 _DynamicVectorClass_VCell::Read -> NG (attempt 2)
+[ledger] 0x430f60 sub_430F60 -> NG (attempt 2)
+[ledger] 0x431b20 CCFileClass::Constructor -> NG (attempt 2)
+[ledger] 0x436910 BuildingLightClass::SD_vt03 -> NG (attempt 2)
+[ledger] 0x438b00 BombClass::ddtor -> NG (attempt 2)
+[ledger] 0x43a500 NeuronClass::GetClassID -> NG (attempt 2)
+[ledger] 0x43ab30 _VectorClass_PAVNeuronClass::AddRef -> NG (attempt 2)
+[ledger] 0x43adf0 ObjectClass::sub_43ADF0 -> NG (attempt 2)
+[ledger] 0x45a180 _VectorClass_PBVParticleSystemTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x45a2a0 _VectorClass_PBVParticleSystemTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x45a3b0 _DynamicVectorClass_PBVParticleSystemTypeClass::Remove -> NG (attempt 2)
+[ledger] 0x45a3e0 _VectorClass_PAVInfantryClass::Add -> NG (attempt 2)
+[ledger] 0x45a640 _VectorClass_PAVFoggedObjectClass::Add -> NG (attempt 2)
+[ledger] 0x45a730 _DynamicVectorClass_PAVFoggedObjectClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x45a760 _VectorClass_PAVReestablish::AddRef -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 10,
+  "branch_order": 2,
+  "branch_polarity": 5,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p03\batch_report.json

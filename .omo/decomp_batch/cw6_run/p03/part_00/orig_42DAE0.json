@@ -1,0 +1,11 @@
+{
+ "addr": "0x42DAE0",
+ "name": "VectorClass_ushort::FindItemIndex",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42DAE0",
+ "bytes_hex": "8b511033c085d2567e178b7424088b4904668b36663931740b4083c1023bc27cf383c8ff5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x42F620",
+ "name": "RandomMap::AddRef",
+ "size": 79,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42F620",
+ "bytes_hex": "8b4424045356578b79088b50083bfa753633f685ff7e288b50048b41048d4a022bd0668b18663b1c02751c668b5802663b1975134683c10483c0043bf77ce35f5eb0015bc204005f5e32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

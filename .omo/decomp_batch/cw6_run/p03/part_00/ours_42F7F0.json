@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetSize@_VectorClass_VCell@@QAEHPAG@Z",
+ "sym_key": "_VectorClass_VCell::GetSize",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "8a410c53565784c075085f5e33c05bc204008b510833c085d27e238b7424108b4904668b3e663939750a668b5902663b5e02740d403bc27d0583c104ebe783c8ff5f5e5bc20400",
+ "relocs": []
+}

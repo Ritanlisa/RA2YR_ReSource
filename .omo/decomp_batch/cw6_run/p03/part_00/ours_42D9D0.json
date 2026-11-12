@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetSize@_VectorClass_G@@QAEHPAG@Z",
+ "sym_key": "_VectorClass_G::GetSize",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "8a410c5684c0750633c05ec204008b710833c085f67e208b5424088b4904668b126639117414403bc67d0c83c10266391175f35ec2040083c8ff5ec20400",
+ "relocs": []
+}
