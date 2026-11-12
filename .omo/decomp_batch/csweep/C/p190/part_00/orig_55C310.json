@@ -1,0 +1,11 @@
+{
+ "addr": "0x55C310",
+ "name": "LZOPipe::Destructor",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55C310",
+ "bytes_hex": "568bf18b4614c7067cd37e0050e81bc826008b4e18c746140000000051e80bc8260083c4088bcec7461800000000e83d590d005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

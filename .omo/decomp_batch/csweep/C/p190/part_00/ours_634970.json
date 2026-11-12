@@ -1,0 +1,27 @@
+{
+ "symbol": "?Helper_634970@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Helper_634970",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "5356578bf1e80000000033db33ff8a5e1085db7e128b068b0cb8518bcee800000000473bfb7cee8bcee800000000c6461c005f5e5bc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?ClearObjects@FactoryClass@@QAEHXZ",
+   "sym_key": "FactoryClass::ClearObjects"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?PlaceObject@ScriptAction@@QAEHPAX@Z",
+   "sym_key": "ScriptAction::PlaceObject"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?FindSquadMember@ScriptAction@@QAEHXZ",
+   "sym_key": "ScriptAction::FindSquadMember"
+  }
+ ]
+}

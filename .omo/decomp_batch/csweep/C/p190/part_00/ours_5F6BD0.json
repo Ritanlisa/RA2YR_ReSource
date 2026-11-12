@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetBoundingSize@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GetBoundingSize",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "83ec18568bf18d4c2404578b065156ff90ac0000008b168bf88d4424145056ff92ac0000008b008b4f045f03c15e83c418c3",
+ "relocs": []
+}

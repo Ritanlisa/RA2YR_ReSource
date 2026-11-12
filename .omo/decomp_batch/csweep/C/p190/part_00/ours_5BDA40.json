@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5BDA40@MouseClass@@QAEPAV1@XZ",
+ "sym_key": "MouseClass::sub_5BDA40",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568bf156e80000000033c083c404890688865c5500008986605500008986645500008986685500008986185500008bc65ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?SmallFunc_692290@@YAPAVScrollClass@@H@Z",
+   "sym_key": "SmallFunc_692290"
+  }
+ ]
+}

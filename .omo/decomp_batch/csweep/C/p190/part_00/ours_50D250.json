@@ -1,0 +1,15 @@
+{
+ "symbol": "?IterateOccupiers@CellClass@@QAEFH@Z",
+ "sym_key": "CellClass::IterateOccupiers",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "51538bd956578bbb145700008d77ff85f68974240c7c24558b6c2418c1e6048b8b085700005503cee80000000083ee104f75ec5d5f5e5b59c20400668b44240c5f5e5b59c20400",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?setTileIndex@CellClass@@QAEFH@Z",
+   "sym_key": "CellClass::setTileIndex"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1920",
+ "name": "COMObject::FindInList",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1920",
+ "bytes_hex": "56578b7c240c8bf185ff741c85f674188b068bceff50443bc774148b168bceff52048bf085f675e85f33c05ec204008bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

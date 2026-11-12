@@ -1,0 +1,11 @@
+{
+ "addr": "0x529560",
+ "name": "INIClass::SetBool",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x529560",
+ "bytes_hex": "8a44240c84c074178b4424088b54240468f85b82005052e8e4f0ffffc20c008b4424088b54240468f45b82005052e8cdf0ffffc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

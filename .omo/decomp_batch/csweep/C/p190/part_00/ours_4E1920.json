@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindInList@GadgetClass@@QAEHH@Z",
+ "sym_key": "GadgetClass::FindInList",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ff743185f6742d8b06568b08ff51443bc7741a8b16568b02ff50048bf085f674138b0e568b11ff52443bc775e68b065f5ec204005f33c05ec20400",
+ "relocs": []
+}

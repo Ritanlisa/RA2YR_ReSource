@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p190\part_00
+=== convert (20 addrs) ===
+[conv] 0x55c310 LZOPipe::Destructor -> LZOPipe
+[conv] 0x55c780 LZOStraw::Destructor -> LZOStraw
+[conv] 0x634970 ObjectClass::Helper_634970 -> ObjectClass
+[conv] 0x581f50 MapClass::BuildSubzones -> MapClass
+[conv] 0x50d250 CellClass::IterateOccupiers -> CellClass
+[conv] 0x5bda40 MouseClass::sub_5BDA40 -> MouseClass
+[conv] 0x626170 ObjectClass::sub_626170 -> ObjectClass
+[conv] 0x634810 ObjectClass::sub_634810 -> ObjectClass
+[conv] 0x690f30 ScoreScreen::Constructor -> ScoreScreen
+[conv] 0x723ca0 ScriptTypeClass::SetField -> ScriptTypeClass
+[conv] 0x7d745b _IsThisWindowsNT -> _addr_7D
+[conv] 0x6a83e0 SidebarClass::sortCameoList -> SidebarClass
+[conv] 0x5471f0 CellClass::GetTerrainFlag -> CellClass
+[conv] 0x529560 INIClass::SetBool -> INIClass
+[conv] 0x7cbbdb _swscanf -> _addr_7C
+[conv] 0x7013a0 TechnoClass::OverrideMission_SyncLog -> TechnoClass
+[conv] 0x4e1920 GadgetClass::FindInList -> GadgetClass
+[conv] 0x5f6bd0 ObjectClass::GetBoundingSize -> ObjectClass
+[conv] 0x6f9dd0 TechnoClass::SetTargetIfAllowed -> TechnoClass
+[conv] 0x623840 ListBox::Clear -> ListBox
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LZOPipe                  rc=0
+[era] LZOStraw                 rc=0
+[era] ObjectClass              rc=0
+[era] MapClass                 rc=0
+[era] CellClass                rc=0
+[era] MouseClass               rc=0
+[era] ScoreScreen              rc=0
+[era] ScriptTypeClass          rc=2
+[era] _addr_7D                 rc=2
+[era] SidebarClass             rc=0
+[era] INIClass                 rc=0
+[era] _addr_7C                 rc=2
+[era] TechnoClass              rc=0
+[era] GadgetClass              rc=0
+[era] ListBox                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x55c310   MISMATCH         LZOPipe::Destructor
+[diff] 0x55c780   MISMATCH         LZOStraw::Destructor
+[diff] 0x634970   MISMATCH         ObjectClass::Helper_634970
+[diff] 0x626170   MISMATCH         ObjectClass::sub_626170
+[diff] 0x634810   MISMATCH         ObjectClass::sub_634810
+[diff] 0x5f6bd0   MISMATCH         ObjectClass::GetBoundingSize
+[diff] 0x581f50   MISMATCH         MapClass::BuildSubzones
+[diff] 0x50d250   MISMATCH         CellClass::IterateOccupiers
+[diff] 0x5471f0   MISMATCH         CellClass::GetTerrainFlag
+[diff] 0x5bda40   MISMATCH         MouseClass::sub_5BDA40
+[diff] 0x690f30   MISMATCH         ScoreScreen::Constructor
+[diff] 0x6a83e0   MISMATCH         SidebarClass::sortCameoList
+[diff] 0x529560   MISMATCH         INIClass::SetBool
+[diff] 0x7013a0   MISMATCH         TechnoClass::OverrideMission_SyncLog
+[diff] 0x6f9dd0   MISMATCH         TechnoClass::SetTargetIfAllowed
+[diff] 0x4e1920   MISMATCH         GadgetClass::FindInList
+[diff] 0x623840   MISMATCH         ListBox::Clear
+[ledger] 0x55c310 LZOPipe::Destructor -> NG (attempt 1)
+[ledger] 0x55c780 LZOStraw::Destructor -> NG (attempt 1)
+[ledger] 0x634970 ObjectClass::Helper_634970 -> NG (attempt 1)
+[ledger] 0x581f50 MapClass::BuildSubzones -> NG (attempt 1)
+[ledger] 0x50d250 CellClass::IterateOccupiers -> NG (attempt 1)
+[ledger] 0x5bda40 MouseClass::sub_5BDA40 -> NG (attempt 1)
+[ledger] 0x626170 ObjectClass::sub_626170 -> NG (attempt 1)
+[ledger] 0x634810 ObjectClass::sub_634810 -> NG (attempt 1)
+[ledger] 0x690f30 ScoreScreen::Constructor -> NG (attempt 1)
+[ledger] 0x723ca0 ScriptTypeClass::SetField -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d745b _IsThisWindowsNT -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a83e0 SidebarClass::sortCameoList -> NG (attempt 1)
+[ledger] 0x5471f0 CellClass::GetTerrainFlag -> NG (attempt 1)
+[ledger] 0x529560 INIClass::SetBool -> NG (attempt 1)
+[ledger] 0x7cbbdb _swscanf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7013a0 TechnoClass::OverrideMission_SyncLog -> NG (attempt 1)
+[ledger] 0x4e1920 GadgetClass::FindInList -> NG (attempt 1)
+[ledger] 0x5f6bd0 ObjectClass::GetBoundingSize -> NG (attempt 1)
+[ledger] 0x6f9dd0 TechnoClass::SetTargetIfAllowed -> NG (attempt 1)
+[ledger] 0x623840 ListBox::Clear -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "const_fold": 3,
+  "codegen_shape": 8,
+  "regalloc": 3,
+  "cc_mismatch": 1,
+  "branch_polarity": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p190\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetTargetIfAllowed@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::SetTargetIfAllowed",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0d000000008b065156ff90c800000084c074138b166a0156ff92d000000085c075045ec204008b4424088986e40000005ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  }
+ ]
+}

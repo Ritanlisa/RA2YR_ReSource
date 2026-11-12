@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6BD0",
+ "name": "ObjectClass::GetBoundingSize",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6BD0",
+ "bytes_hex": "83ec18568bf18d4c2404578b06518bceff90ac0000008b168bf88d4424148bce50ff92ac0000008b4f048b1003ca5f8bc15e83c418c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

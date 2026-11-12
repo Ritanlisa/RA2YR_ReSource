@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F9DD0",
+ "name": "TechnoClass::SetTargetIfAllowed",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F9DD0",
+ "bytes_hex": "568bf18b0d4c3da8008b06518bceff90c800000084c074108b166a018bceff92d000000085c0740a8b4424088986f00000005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

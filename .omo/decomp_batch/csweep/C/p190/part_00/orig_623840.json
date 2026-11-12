@@ -1,0 +1,11 @@
+{
+ "addr": "0x623840",
+ "name": "ListBox::Clear",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x623840",
+ "bytes_hex": "538b1da4147e0056576a008bf96a00684601000057ffd38bf04e85c074126a0056684401000057ffd38bce4e85c975ee5f5e33c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

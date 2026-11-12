@@ -1,0 +1,21 @@
+{
+ "symbol": "?sortCameoList@SidebarClass@@QAEDXZ",
+ "sym_key": "SidebarClass::sortCameoList",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "56578bf933f68b47388d04408d04808d04868d0cc5000000002bc88d14cd807eb000b9f801000052e8000000004683fe3c7cd35f5ec3",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?SelectObject@Tactical@@QAEDH@Z",
+   "sym_key": "Tactical::SelectObject"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor@ScoreScreen@@QAEPAV1@HHH@Z",
+ "sym_key": "ScoreScreen::Constructor",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b442408568bf18b4c2408894608894e04e8000000008b54241089460cc7461400000000895618c7060000000033c05ec20c00",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

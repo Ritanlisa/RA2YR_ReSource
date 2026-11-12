@@ -1,0 +1,11 @@
+{
+ "addr": "0x5471F0",
+ "name": "CellClass::GetTerrainFlag",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5471F0",
+ "bytes_hex": "8b01ff909c0000008bc885c97423568b71040faf318b44240899f7fe5e8b4c911085c9740c8b4124c1e80283e001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
