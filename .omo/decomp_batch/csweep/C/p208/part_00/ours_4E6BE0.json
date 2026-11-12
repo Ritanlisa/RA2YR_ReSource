@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_4E6BE0@@YAHXZ",
+ "sym_key": "Unnamed::sub_4E6BE0",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000c6050000000001a200000000a300000000c705000000000a000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_4E6C20@@YAHPBX0@Z",
+   "sym_key": "sub_4E6C20"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E394@@3IA",
+   "sym_key": "DataGlobal_A8E394"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E398@@3IA",
+   "sym_key": "DataGlobal_A8E398"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E39C@@3EA",
+   "sym_key": "DataGlobal_A8E39C"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E39D@@3EA",
+   "sym_key": "DataGlobal_A8E39D"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?AircraftClass_Array@@3IA",
+   "sym_key": "AircraftClass_Array"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E3A4@@3IA",
+   "sym_key": "DataGlobal_A8E3A4"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_AircraftClassCount@@3IA",
+   "sym_key": "g_AircraftClassCount"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p208\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e6b60 sub_4E6B60 -> _addr_4E
+[conv] 0x4e6be0 sub_4E6BE0 -> _addr_4E
+[conv] 0x4e6c60 sub_4E6C60 -> _addr_4E
+[conv] 0x4e6ce0 sub_4E6CE0 -> _addr_4E
+[conv] 0x4e6d60 sub_4E6D60 -> _addr_4E
+[conv] 0x4e6de0 sub_4E6DE0 -> _addr_4E
+[conv] 0x4e6e60 sub_4E6E60 -> _addr_4E
+[conv] 0x4e6ee0 sub_4E6EE0 -> _addr_4E
+[conv] 0x4e6f60 sub_4E6F60 -> _addr_4E
+[conv] 0x4e6fe0 sub_4E6FE0 -> _addr_4E
+[conv] 0x4e70e0 sub_4E70E0 -> _addr_4E
+[conv] 0x4e7160 sub_4E7160 -> _addr_4E
+[conv] 0x4e71e0 sub_4E71E0 -> _addr_4E
+[conv] 0x4e7260 sub_4E7260 -> _addr_4E
+[conv] 0x4e72e0 sub_4E72E0 -> _addr_4E
+[conv] 0x4e7360 sub_4E7360 -> _addr_4E
+[conv] 0x4e73e0 sub_4E73E0 -> _addr_4E
+[conv] 0x4e7460 sub_4E7460 -> _addr_4E
+[conv] 0x4e74e0 sub_4E74E0 -> _addr_4E
+[conv] 0x4e7560 sub_4E7560 -> _addr_4E
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4E                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e6b60   MISMATCH         sub_4E6B60
+[diff] 0x4e6be0   MISMATCH         sub_4E6BE0
+[diff] 0x4e6c60   MISMATCH         sub_4E6C60
+[diff] 0x4e6ce0   MISMATCH         sub_4E6CE0
+[diff] 0x4e6d60   MISMATCH         sub_4E6D60
+[diff] 0x4e6de0   MISMATCH         sub_4E6DE0
+[diff] 0x4e6e60   MISMATCH         sub_4E6E60
+[diff] 0x4e6ee0   MISMATCH         sub_4E6EE0
+[diff] 0x4e6f60   MISMATCH         sub_4E6F60
+[diff] 0x4e6fe0   MISMATCH         sub_4E6FE0
+[diff] 0x4e70e0   MISMATCH         sub_4E70E0
+[diff] 0x4e7160   MISMATCH         sub_4E7160
+[diff] 0x4e71e0   MISMATCH         sub_4E71E0
+[diff] 0x4e7260   MISMATCH         sub_4E7260
+[diff] 0x4e72e0   MISMATCH         sub_4E72E0
+[diff] 0x4e7360   MISMATCH         sub_4E7360
+[diff] 0x4e73e0   MISMATCH         sub_4E73E0
+[diff] 0x4e7460   MISMATCH         sub_4E7460
+[diff] 0x4e74e0   MISMATCH         sub_4E74E0
+[diff] 0x4e7560   MISMATCH         sub_4E7560
+[ledger] 0x4e6b60 sub_4E6B60 -> NG (attempt 1)
+[ledger] 0x4e6be0 sub_4E6BE0 -> NG (attempt 1)
+[ledger] 0x4e6c60 sub_4E6C60 -> NG (attempt 1)
+[ledger] 0x4e6ce0 sub_4E6CE0 -> NG (attempt 1)
+[ledger] 0x4e6d60 sub_4E6D60 -> NG (attempt 1)
+[ledger] 0x4e6de0 sub_4E6DE0 -> NG (attempt 1)
+[ledger] 0x4e6e60 sub_4E6E60 -> NG (attempt 1)
+[ledger] 0x4e6ee0 sub_4E6EE0 -> NG (attempt 1)
+[ledger] 0x4e6f60 sub_4E6F60 -> NG (attempt 1)
+[ledger] 0x4e6fe0 sub_4E6FE0 -> NG (attempt 1)
+[ledger] 0x4e70e0 sub_4E70E0 -> NG (attempt 1)
+[ledger] 0x4e7160 sub_4E7160 -> NG (attempt 1)
+[ledger] 0x4e71e0 sub_4E71E0 -> NG (attempt 1)
+[ledger] 0x4e7260 sub_4E7260 -> NG (attempt 1)
+[ledger] 0x4e72e0 sub_4E72E0 -> NG (attempt 1)
+[ledger] 0x4e7360 sub_4E7360 -> NG (attempt 1)
+[ledger] 0x4e73e0 sub_4E73E0 -> NG (attempt 1)
+[ledger] 0x4e7460 sub_4E7460 -> NG (attempt 1)
+[ledger] 0x4e74e0 sub_4E74E0 -> NG (attempt 1)
+[ledger] 0x4e7560 sub_4E7560 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p208\batch_report.json
