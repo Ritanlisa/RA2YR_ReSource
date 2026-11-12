@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_773E30@@YGHPAXHHH@Z",
+ "sym_key": "Unnamed::sub_773E30",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c240c83ec08568b742414578b7c241450518bd68bcfe80000000085c0752881fe10010000751e8d542408c7442408200300005257c744241458020000e80000000083c40833c05f5e83c408c21000",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?ResizeDialogAndEnum@@YAHPAXHZZ",
+   "sym_key": "ResizeDialogAndEnum"
+  }
+ ]
+}

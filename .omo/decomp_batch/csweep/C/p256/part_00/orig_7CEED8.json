@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CEED8",
+ "name": "__cfltcvt",
+ "size": 81,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CEED8",
+ "bytes_hex": "558bec837d10657432837d1045742c837d10667513ff7514ff750cff7508e84efeffff83c40c5dc3ff7518ff7514ff750cff7508e834ffffffeb11ff7518ff7514ff750cff7508e802fdffff83c4105dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

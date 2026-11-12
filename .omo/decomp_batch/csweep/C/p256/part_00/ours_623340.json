@@ -1,0 +1,27 @@
+{
+ "symbol": "?Constructor@DialogControl@@QAEPAIXZ",
+ "sym_key": "DialogControl::Constructor",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "568bf157b98000000033c08bfef3abc746680b000000a1000000006a04894664e80000000033ff83c4043bc7740b50e80000000083c404eb0233c089463c8b06897e40897e5cc78690000000ffffffff5f5ec3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  }
+ ]
+}

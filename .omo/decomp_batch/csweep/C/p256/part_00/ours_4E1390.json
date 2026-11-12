@@ -1,0 +1,57 @@
+{
+ "symbol": "?Dtor@ShpButtonClass@@QAEHXZ",
+ "sym_key": "ShpButtonClass::Dtor",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "33d28911a1000000003bc875128b412024fe0cfe89412033c0891500000000568b35000000003bce75068915000000008b35000000003bce5e75068915000000003bc87506891500000000e900000000",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E90@@3IA",
+   "sym_key": "DataGlobal_8B3E90"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E90@@3IA",
+   "sym_key": "DataGlobal_8B3E90"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E88@@3IA",
+   "sym_key": "DataGlobal_8B3E88"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E88@@3IA",
+   "sym_key": "DataGlobal_8B3E88"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E8C@@3IA",
+   "sym_key": "DataGlobal_8B3E8C"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E8C@@3IA",
+   "sym_key": "DataGlobal_8B3E8C"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E90@@3IA",
+   "sym_key": "DataGlobal_8B3E90"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?Destruct@LinkClass@@QAEHXZ",
+   "sym_key": "LinkClass::Destruct"
+  }
+ ]
+}

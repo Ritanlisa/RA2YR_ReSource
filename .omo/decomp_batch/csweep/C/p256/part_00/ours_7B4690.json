@@ -1,0 +1,15 @@
+{
+ "symbol": "?AssignFromPtr@String@@QAEPAPADPAPBD@Z",
+ "sym_key": "String::AssignFromPtr",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c8bd957c703000000008b3e85ff743583c9ff33c0f2aef7d151e8000000008bd083c9ff89138b3e33c083c404f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a45f8bc35e5bc20400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetZAboveGround@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::GetZAboveGround",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf18b869c0000008b8ea00000008b96a4000000894424048d442404894c24085089542410e8000000008b8ea40000002bc88b868c00000085c05e74062b0d000000008bc183c40cc3",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC13BC@@3IA",
+   "sym_key": "DataGlobal_AC13BC"
+  }
+ ]
+}

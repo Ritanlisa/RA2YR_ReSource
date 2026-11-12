@@ -1,0 +1,11 @@
+{
+ "addr": "0x7440B0",
+ "name": "TechnoClass::ReturnCapturedFlag",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7440B0",
+ "bytes_hex": "51568bf1e8a771d9ff84c0743e8b86cc06000083f8ff742e8b0d2c02a8008b16576a008d3c818d44240c508bceff92b80100008b0f50e8757edbffc786cc060000ffffffff5fb0015e59c332c05e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x69B5B0",
+ "name": "LoadGame::LoadBlock300",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69B5B0",
+ "bytes_hex": "568b742408578bf985f6743d8b066a008d4c24106a045156ff500c85c07c2a817c240c2c01000075208b166a00682c0100005756ff520c85c0c74704ffffffff7c075fb0015ec204005f32c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

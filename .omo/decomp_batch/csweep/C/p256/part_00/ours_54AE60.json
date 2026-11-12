@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetMovementCoordinate_0@JumpjetLocomotionClass@@QAGPAIPAH@Z",
+ "sym_key": "JumpjetLocomotionClass::GetMovementCoordinate_0",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "568b742408568b06ff501084c074198b4e408b56448b44240c8b763c89308948048950085ec208008b44240c8b35000000008b0d000000008b150000000089308948048950085ec20800",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC5A8@@3IA",
+   "sym_key": "DataGlobal_ABC5A8"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC5AC@@3IA",
+   "sym_key": "DataGlobal_ABC5AC"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC5B0@@3IA",
+   "sym_key": "DataGlobal_ABC5B0"
+  }
+ ]
+}

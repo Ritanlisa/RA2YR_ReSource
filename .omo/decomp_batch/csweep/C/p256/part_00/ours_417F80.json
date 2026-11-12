@@ -1,0 +1,21 @@
+{
+ "symbol": "?CanEnterCell@AircraftClass@@QAEHPAFDD@Z",
+ "sym_key": "AircraftClass::CanEnterCell",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b8e20020000e80000000084c075075f33c05ec20c008b4424148b4c24108b54240c5051528bcee8000000008bf883ff0575178b066a0056ff90f803000083380075075f33c05ec20c008bc75f5ec20c00",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?HandleCursorWithCheck@FootClass@@QAEHPAXDD@Z",
+   "sym_key": "FootClass::HandleCursorWithCheck"
+  }
+ ]
+}

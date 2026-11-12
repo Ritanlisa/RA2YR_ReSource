@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1390",
+ "name": "GadgetClass::Dtor",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1390",
+ "bytes_hex": "c701bc927e00a1903e8b0033d23bc875108b412080e4fe89412033c0a3903e8b00568b35883e8b003bce75068915883e8b008b358c3e8b003bce5e750689158c3e8b003bc875068915903e8b00e9be510700",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

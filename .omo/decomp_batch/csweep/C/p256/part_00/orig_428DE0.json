@@ -1,0 +1,11 @@
+{
+ "addr": "0x428DE0",
+ "name": "AnimClass::FreeRenderBuffer",
+ "size": 81,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x428DE0",
+ "bytes_hex": "568bf18a865e03000084c074428b86a400000085c074388a865f03000084c0742e8d4664506888868100e8d1dafdff8b8ea400000051e822fd390083c40cc786a400000000000000c686a8000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

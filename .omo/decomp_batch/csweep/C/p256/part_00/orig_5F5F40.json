@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F5F40",
+ "name": "ObjectClass::GetZAboveGround",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F5F40",
+ "bytes_hex": "83ec0c568bf18d869c0000008b8e9c000000894c24048d4c24048b500451b9e8f787008954240c8b400889442410e80d21f8ff8b8ea40000002bc88a868c00000084c05e74062b0dbc13ac008bc183c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

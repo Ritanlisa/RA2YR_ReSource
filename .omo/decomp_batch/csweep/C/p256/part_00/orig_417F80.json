@@ -1,0 +1,11 @@
+{
+ "addr": "0x417F80",
+ "name": "AircraftClass::CanEnterCell",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x417F80",
+ "bytes_hex": "568bf18b8e1c020000e862370f0084c0750633c05ec20c008b4424108b4c240c8b542408575051528bcee8315e0c008bf883ff0575138b066a008bceff90f8030000833800750233ff8bc75f5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

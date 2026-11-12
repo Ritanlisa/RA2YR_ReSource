@@ -7619,6 +7619,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x417f80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+3 mov ecx, dword ptr [esi + 0x21c]",
+  "name": "AircraftClass::CanEnterCell",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AircraftClass::CanEnterCell",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x417fd0": {
   "attempts": 2,
   "clean": false,
@@ -11097,6 +11109,18 @@
   "orig_name": "AnimTypeClass::GetAnimData",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x428de0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+3 mov al, byte ptr [esi + 0x35e]",
+  "name": "AnimClass::FreeRenderBuffer",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "AnimClass::FreeRenderBuffer",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x428e40": {
@@ -22633,6 +22657,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x48c5a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "ModemConnectionClass::connect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ConnectionClass::connect",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x48c650": {
   "attempts": 1,
   "clean": false,
@@ -31696,6 +31732,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4a8680": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+10 jne 0x4a86d0",
+  "name": "sub_4A8680",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "sub_4A8680",
+  "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4a86e0": {
   "attempts": 1,
   "clean": false,
@@ -37712,6 +37759,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ccae0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::GetMovementCoordinate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::GetMovementCoordinate",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ccb40": {
   "attempts": 5,
   "clean": false,
@@ -39794,6 +39853,18 @@
   "name": "ControlClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4e1390": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7e92bc",
+  "name": "ShpButtonClass::Dtor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GadgetClass::Dtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4e1450": {
   "attempts": 1,
@@ -48751,6 +48822,18 @@
   "orig_name": "HouseClass::IsAlliedWith",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4f9a90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Object::IsAlliedWithObjectHouse",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Object::IsAlliedWithObjectHouse",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4f9b50": {
@@ -61528,6 +61611,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x54ae60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 push edi",
+  "name": "JumpjetLocomotionClass::GetMovementCoordinate_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::GetMovementCoordinate_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x54b6e0": {
   "attempts": 1,
   "clean": false,
@@ -70551,6 +70646,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5aff80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::GetMovementCoordinate_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::GetMovementCoordinate_1",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5affe0": {
   "attempts": 3,
   "clean": false,
@@ -72115,6 +72222,18 @@
   "orig_name": "sub_5B77C0",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5b93f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_5B93F0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_5B93F0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5b9550": {
@@ -82982,6 +83101,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5f5f40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 lea eax, [esi + 0x9c]",
+  "name": "IUnknown::GetZAboveGround",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ObjectClass::GetZAboveGround",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5f5fa0": {
   "attempts": 8,
   "first_diff": "+7 mov edi, dword ptr [esp + 0x18]",
@@ -85439,6 +85570,18 @@
   "name": "Network_Start",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Network_Start",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x623340": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+32 call 0x7c8e17",
+  "name": "DialogControl::Constructor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "DialogControl::Constructor",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -99793,6 +99936,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x69b5b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+1 mov esi, dword ptr [esp + 8]",
+  "name": "LoadGame::LoadBlock300",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "LoadGame::LoadBlock300",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x69b600": {
   "attempts": 1,
   "clean": false,
@@ -112059,6 +112214,18 @@
   "name": "nullsub_239",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6da560": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Tactical::ScrollMap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Tactical::ScrollMap",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6da740": {
   "attempts": 1,
@@ -125846,6 +126013,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7440b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+11 je 0x7440fb",
+  "name": "TechnoClass::ReturnCapturedFlag",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "TechnoClass::ReturnCapturedFlag",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x744180": {
   "attempts": 1,
   "clean": false,
@@ -130181,6 +130360,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "JumpjetLocomotionClass::SmallStub_75AB30",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x75aba0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::GetMovementCoordinate_2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::GetMovementCoordinate_2",
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -136066,6 +136257,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x773e30": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+34 jne 0x773e79",
+  "name": "sub_773E30",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "sub_773E30",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x773e90": {
   "attempts": 3,
   "clean": false,
@@ -141280,6 +141482,18 @@
   "orig_name": "unknown_libname_73",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x7b4690": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+31 call 0x7c8e17",
+  "name": "String::AssignFromPtr",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "String::AssignFromPtr",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7b46f0": {
@@ -147481,6 +147695,17 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7cb7ba": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "_vsprintf",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_vsprintf",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7cb80b": {
   "attempts": 1,
   "clean": false,
@@ -148330,6 +148555,17 @@
   "name": "__cftof2",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "__cftof2",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7ceed8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "__cfltcvt",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "__cfltcvt",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

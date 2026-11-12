@@ -1,0 +1,27 @@
+{
+ "symbol": "?__cfltcvt@@YAHPANPADH1H@Z",
+ "sym_key": "Unnamed::__cfltcvt",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "8b44240c83f865743f83f845743a83f86675188b4424108b4c24088b542404505152e80000000083c40cc38b4424148b4c24108b542408508b442408515250e80000000083c410c38b4c24148b5424108b442408518b4c2408525051e80000000083c410c3",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?_cftof@@YAHPAX0HZZ",
+   "sym_key": "_cftof"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?_cftog@@YAHPAX00HZZ",
+   "sym_key": "_cftog"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?_cftoe@@YAHPAXHHHZZ",
+   "sym_key": "_cftoe"
+  }
+ ]
+}

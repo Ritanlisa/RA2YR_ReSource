@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4A8680@@YAXXZ",
+ "sym_key": "Unnamed::sub_4A8680",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "8a0d00000000b00184c8753f53560ac857880d00000000bee5038a00bf0500000033db8b46df83ee183bc3895ef37410381e740c50e80000000083c404895ef74f881e895efb75db5f5e5bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A03E1@@3EA",
+   "sym_key": "DataGlobal_8A03E1"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A03E1@@3EA",
+   "sym_key": "DataGlobal_8A03E1"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

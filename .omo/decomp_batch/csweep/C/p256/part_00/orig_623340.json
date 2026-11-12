@@ -1,0 +1,11 @@
+{
+ "addr": "0x623340",
+ "name": "DialogControl::Constructor",
+ "size": 81,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x623340",
+ "bytes_hex": "568bf157b98000000033c08bfef3abc746680b000000a1d0c489006a04894664e8b25a1a0033ff83c4043bc774098bc8e84b331900eb0233c089463c897e40897e5cc78690000000ffffffff8bc65f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

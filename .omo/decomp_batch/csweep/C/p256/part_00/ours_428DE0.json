@@ -1,0 +1,21 @@
+{
+ "symbol": "?FreeRenderBuffer@AnimClass@@QAEXXZ",
+ "sym_key": "AnimClass::FreeRenderBuffer",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "568bf18b866403000085c0743c8b86a400000085c074328b866803000085c07428e8000000008b86a400000050e80000000083c404c786a400000000000000c786a8000000000000005ec3",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

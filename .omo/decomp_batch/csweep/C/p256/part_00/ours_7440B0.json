@@ -1,0 +1,27 @@
+{
+ "symbol": "?ReturnCapturedFlag@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::ReturnCapturedFlag",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "51568bf1e80000000084c075035e59c38b86cc06000083f8ff742d8b0d0c0000008b16578d3c818d4424085056ff92b80100008b0f6a0050e800000000c786cc060000ffffffff5fb0015e59c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?CleanupDirection@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::CleanupDirection"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?DroppedFlag@HouseClass@@QAEDPAXH@Z",
+   "sym_key": "HouseClass::DroppedFlag"
+  }
+ ]
+}
