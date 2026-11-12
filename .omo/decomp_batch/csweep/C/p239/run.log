@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p239\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d17b0 _DynamicVectorClass_PAVMSTextEntry::Constructor_VectorClass_MSTextEntry___ -> _DynamicVectorClass_PAVMSTextEntry
+[conv] 0x5d1800 _VectorClass_PAVMapSelection::QueryInterface -> _VectorClass_PAVMapSelection
+[conv] 0x5d1850 _DynamicVectorClass_PAVMapSelection::Constructor_VectorClass_MapSelection___ -> _DynamicVectorClass_PAVMapSelection
+[conv] 0x5d18a0 _VectorClass_PAVMapStage::Constructor_VectorClass_MapStage___ -> _VectorClass_PAVMapStage
+[conv] 0x5d18f0 _DynamicVectorClass_PAVMapStage::QueryInterface -> _DynamicVectorClass_PAVMapStage
+[conv] 0x5d1940 _VectorClass_PAVMSAnimEntry::QueryInterface -> _VectorClass_PAVMSAnimEntry
+[conv] 0x5d1990 _DynamicVectorClass_PAVMSAnimEntry::Constructor_VectorClass_MSAnimEntry___ -> _DynamicVectorClass_PAVMSAnimEntry
+[conv] 0x5d19e0 _VectorClass_PAVMSSfxEntry::QueryInterface -> _VectorClass_PAVMSSfxEntry
+[conv] 0x5d1a30 _DynamicVectorClass_PAVMSSfxEntry::Constructor_VectorClass_MSSfxEntry___ -> _DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x5d2cf0 _DynamicVectorClass_PAVMSAnim::Constructor_VectorClass_MSAnim___ -> _DynamicVectorClass_PAVMSAnim
+[conv] 0x5d2d40 _VectorClass_PAVMSSfx::QueryInterface -> _VectorClass_PAVMSSfx
+[conv] 0x5d2d90 _DynamicVectorClass_PAVMSSfx::Constructor_VectorClass_MSSfx___ -> _DynamicVectorClass_PAVMSSfx
+[conv] 0x5d56e0 _VectorClass_PAUHWND::QueryInterface -> _VectorClass_PAUHWND
+[conv] 0x5d5730 _DynamicVectorClass_PAUHWND::Constructor_VectorClass_HWND_____ -> _DynamicVectorClass_PAUHWND
+[conv] 0x5d5780 _VectorClass_UAcceleratorTracker::QueryInterface -> _VectorClass_UAcceleratorTracker
+[conv] 0x5d57d0 _DynamicVectorClass_UAcceleratorTracker::Constructor_VectorClass_AcceleratorTracker_ -> _DynamicVectorClass_UAcceleratorTracker
+[conv] 0x5d8810 _VectorClass_PAVMultiplayerTeam::QueryInterface -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x5d8860 _DynamicVectorClass_PAVMultiplayerTeam::Destruct -> _DynamicVectorClass_PAVMultiplayerTeam
+[conv] 0x5d88b0 _VectorClass_PAVMultiplayerGameMode::Destruct -> _VectorClass_PAVMultiplayerGameMode
+[conv] 0x5eeec0 _VectorClass_PBVMultiMission::GetAt -> _VectorClass_PBVMultiMission
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVMSTextEntry rc=0
+[era] _VectorClass_PAVMapSelection rc=0
+[era] _DynamicVectorClass_PAVMapSelection rc=0
+[era] _VectorClass_PAVMapStage rc=0
+[era] _DynamicVectorClass_PAVMapStage rc=0
+[era] _VectorClass_PAVMSAnimEntry rc=0
+[era] _DynamicVectorClass_PAVMSAnimEntry rc=0
+[era] _VectorClass_PAVMSSfxEntry rc=0
+[era] _DynamicVectorClass_PAVMSSfxEntry rc=0
+[era] _DynamicVectorClass_PAVMSAnim rc=0
+[era] _VectorClass_PAVMSSfx    rc=0
+[era] _DynamicVectorClass_PAVMSSfx rc=0
+[era] _VectorClass_PAUHWND     rc=0
+[era] _DynamicVectorClass_PAUHWND rc=0
+[era] _VectorClass_UAcceleratorTracker rc=0
+[era] _DynamicVectorClass_UAcceleratorTracker rc=0
+[era] _VectorClass_PAVMultiplayerTeam rc=0
+[era] _DynamicVectorClass_PAVMultiplayerTeam rc=0
+[era] _VectorClass_PAVMultiplayerGameMode rc=0
+[era] _VectorClass_PBVMultiMission rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d17b0   MISMATCH         _DynamicVectorClass_PAVMSTextEntry::Constructor_VectorClass_MSTextEntry___
+[diff] 0x5d1800   MISMATCH         _VectorClass_PAVMapSelection::QueryInterface
+[diff] 0x5d1850   MISMATCH         _DynamicVectorClass_PAVMapSelection::Constructor_VectorClass_MapSelection___
+[diff] 0x5d18a0   MISMATCH         _VectorClass_PAVMapStage::Constructor_VectorClass_MapStage___
+[diff] 0x5d18f0   MISMATCH         _DynamicVectorClass_PAVMapStage::QueryInterface
+[diff] 0x5d1940   MISMATCH         _VectorClass_PAVMSAnimEntry::QueryInterface
+[diff] 0x5d1990   MISMATCH         _DynamicVectorClass_PAVMSAnimEntry::Constructor_VectorClass_MSAnimEntry___
+[diff] 0x5d19e0   MISMATCH         _VectorClass_PAVMSSfxEntry::QueryInterface
+[diff] 0x5d1a30   MISMATCH         _DynamicVectorClass_PAVMSSfxEntry::Constructor_VectorClass_MSSfxEntry___
+[diff] 0x5d2cf0   MISMATCH         _DynamicVectorClass_PAVMSAnim::Constructor_VectorClass_MSAnim___
+[diff] 0x5d2d40   MISMATCH         _VectorClass_PAVMSSfx::QueryInterface
+[diff] 0x5d2d90   MISMATCH         _DynamicVectorClass_PAVMSSfx::Constructor_VectorClass_MSSfx___
+[diff] 0x5d56e0   MISMATCH         _VectorClass_PAUHWND::QueryInterface
+[diff] 0x5d5730   MISMATCH         _DynamicVectorClass_PAUHWND::Constructor_VectorClass_HWND_____
+[diff] 0x5d5780   MISMATCH         _VectorClass_UAcceleratorTracker::QueryInterface
+[diff] 0x5d57d0   MISMATCH         _DynamicVectorClass_UAcceleratorTracker::Constructor_VectorClass_AcceleratorTracker_
+[diff] 0x5d8810   MISMATCH         _VectorClass_PAVMultiplayerTeam::QueryInterface
+[diff] 0x5d8860   MISMATCH         _DynamicVectorClass_PAVMultiplayerTeam::Destruct
+[diff] 0x5d88b0   MISMATCH         _VectorClass_PAVMultiplayerGameMode::Destruct
+[diff] 0x5eeec0   MISMATCH         _VectorClass_PBVMultiMission::GetAt
+[ledger] 0x5d17b0 _DynamicVectorClass_PAVMSTextEntry::Constructor_VectorClass_MSTextEntry___ -> NG (attempt 1)
+[ledger] 0x5d1800 _VectorClass_PAVMapSelection::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d1850 _DynamicVectorClass_PAVMapSelection::Constructor_VectorClass_MapSelection___ -> NG (attempt 1)
+[ledger] 0x5d18a0 _VectorClass_PAVMapStage::Constructor_VectorClass_MapStage___ -> NG (attempt 1)
+[ledger] 0x5d18f0 _DynamicVectorClass_PAVMapStage::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d1940 _VectorClass_PAVMSAnimEntry::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d1990 _DynamicVectorClass_PAVMSAnimEntry::Constructor_VectorClass_MSAnimEntry___ -> NG (attempt 1)
+[ledger] 0x5d19e0 _VectorClass_PAVMSSfxEntry::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d1a30 _DynamicVectorClass_PAVMSSfxEntry::Constructor_VectorClass_MSSfxEntry___ -> NG (attempt 1)
+[ledger] 0x5d2cf0 _DynamicVectorClass_PAVMSAnim::Constructor_VectorClass_MSAnim___ -> NG (attempt 1)
+[ledger] 0x5d2d40 _VectorClass_PAVMSSfx::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d2d90 _DynamicVectorClass_PAVMSSfx::Constructor_VectorClass_MSSfx___ -> NG (attempt 1)
+[ledger] 0x5d56e0 _VectorClass_PAUHWND::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d5730 _DynamicVectorClass_PAUHWND::Constructor_VectorClass_HWND_____ -> NG (attempt 1)
+[ledger] 0x5d5780 _VectorClass_UAcceleratorTracker::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d57d0 _DynamicVectorClass_UAcceleratorTracker::Constructor_VectorClass_AcceleratorTracker_ -> NG (attempt 1)
+[ledger] 0x5d8810 _VectorClass_PAVMultiplayerTeam::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d8860 _DynamicVectorClass_PAVMultiplayerTeam::Destruct -> NG (attempt 1)
+[ledger] 0x5d88b0 _VectorClass_PAVMultiplayerGameMode::Destruct -> NG (attempt 1)
+[ledger] 0x5eeec0 _VectorClass_PBVMultiMission::GetAt -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p239\batch_report.json
