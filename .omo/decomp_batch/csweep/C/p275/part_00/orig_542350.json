@@ -1,0 +1,11 @@
+{
+ "addr": "0x542350",
+ "name": "IPXManagerClass::GetAddress",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x542350",
+ "bytes_hex": "568bf18a460484c074558a460584c0744e8b4e4485c974478b44240883f8ff741b8b16508bceff521883f8ff74318b4486285e8b48048b4128c2040033c085c97e1f8d56288bf18b0a8b49048b49283bc87e028bc183c2044e75ec5ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

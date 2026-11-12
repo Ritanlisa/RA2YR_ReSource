@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p275\part_00
+=== convert (20 addrs) ===
+[conv] 0x49fa70 CounterClass::Decrement -> CounterClass
+[conv] 0x46b050 CreateUIObjectCOM -> _addr_46
+[conv] 0x41b760 TechnoClass::GetAutoFireDirection -> TechnoClass
+[conv] 0x542350 IPXManagerClass::GetAddress -> IPXManagerClass
+[conv] 0x5423c0 IPXManagerClass::SetAddress -> IPXManagerClass
+[conv] 0x6bee50 _TClassFactory_VCStreamClass::QueryInterface -> _TClassFactory_VCStreamClass
+[conv] 0x6befd0 _TClassFactory_VWaveClass::QueryInterface -> _TClassFactory_VWaveClass
+[conv] 0x6bf150 _TClassFactory_VTerrainTypeClass::QueryInterface -> _TClassFactory_VTerrainTypeClass
+[conv] 0x6bf2d0 _TClassFactory_VTerrainClass::QueryInterface -> _TClassFactory_VTerrainClass
+[conv] 0x6bf450 _TClassFactory_VSuperWeaponTypeClass::QueryInterface -> _TClassFactory_VSuperWeaponTypeClass
+[conv] 0x6bf750 _TClassFactory_VTactical::QueryInterface -> _TClassFactory_VTactical
+[conv] 0x6bf8d0 _TClassFactory_VCellClass::CreateTClassFactory_CellClass -> _TClassFactory_VCellClass
+[conv] 0x6bfa50 _TClassFactory_VEMPulseClass::CreateTClassFactory_EMPulseClass -> _TClassFactory_VEMPulseClass
+[conv] 0x6bfbd0 _TClassFactory_VLightSourceClass::CreateTClassFactory_LightSourceClass -> _TClassFactory_VLightSourceClass
+[conv] 0x6bfd50 _TClassFactory_VSideClass::CreateTClassFactory_SideClass -> _TClassFactory_VSideClass
+[conv] 0x6bfed0 _TClassFactory_VTiberiumClass::CreateTClassFactory_TiberiumClass -> _TClassFactory_VTiberiumClass
+[conv] 0x6c0050 _TClassFactory_VTubeClass::QueryInterface2 -> _TClassFactory_VTubeClass
+[conv] 0x6c01d0 _TClassFactory_VCampaignClass::CreateTClassFactory_CampaignClass -> _TClassFactory_VCampaignClass
+[conv] 0x6c0350 _TClassFactory_VBuildingLightClass::CreateTClassFactory_BuildingLightClass -> _TClassFactory_VBuildingLightClass
+[conv] 0x6c04d0 _TClassFactory_VWaypointPathClass::CreateTClassFactory_WaypointPathClass -> _TClassFactory_VWaypointPathClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CounterClass             rc=0
+[era] _addr_46                 rc=2
+[era] TechnoClass              rc=2
+[era] IPXManagerClass          rc=0
+[era] _TClassFactory_VCStreamClass rc=0
+[era] _TClassFactory_VWaveClass rc=0
+[era] _TClassFactory_VTerrainTypeClass rc=0
+[era] _TClassFactory_VTerrainClass rc=0
+[era] _TClassFactory_VSuperWeaponTypeClass rc=0
+[era] _TClassFactory_VTactical rc=0
+[era] _TClassFactory_VCellClass rc=0
+[era] _TClassFactory_VEMPulseClass rc=0
+[era] _TClassFactory_VLightSourceClass rc=0
+[era] _TClassFactory_VSideClass rc=0
+[era] _TClassFactory_VTiberiumClass rc=0
+[era] _TClassFactory_VTubeClass rc=0
+[era] _TClassFactory_VCampaignClass rc=0
+[era] _TClassFactory_VBuildingLightClass rc=0
+[era] _TClassFactory_VWaypointPathClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x49fa70   MISMATCH         CounterClass::Decrement
+[diff] 0x542350   MISMATCH         IPXManagerClass::GetAddress
+[diff] 0x5423c0   MISMATCH         IPXManagerClass::SetAddress
+[diff] 0x6bee50   MISMATCH         _TClassFactory_VCStreamClass::QueryInterface
+[diff] 0x6befd0   MISMATCH         _TClassFactory_VWaveClass::QueryInterface
+[diff] 0x6bf150   MISMATCH         _TClassFactory_VTerrainTypeClass::QueryInterface
+[diff] 0x6bf2d0   MISMATCH         _TClassFactory_VTerrainClass::QueryInterface
+[diff] 0x6bf450   MISMATCH         _TClassFactory_VSuperWeaponTypeClass::QueryInterface
+[diff] 0x6bf750   MISMATCH         _TClassFactory_VTactical::QueryInterface
+[diff] 0x6bf8d0   MISMATCH         _TClassFactory_VCellClass::CreateTClassFactory_CellClass
+[diff] 0x6bfa50   MISMATCH         _TClassFactory_VEMPulseClass::CreateTClassFactory_EMPulseClass
+[diff] 0x6bfbd0   MISMATCH         _TClassFactory_VLightSourceClass::CreateTClassFactory_LightSourceClass
+[diff] 0x6bfd50   MISMATCH         _TClassFactory_VSideClass::CreateTClassFactory_SideClass
+[diff] 0x6bfed0   MISMATCH         _TClassFactory_VTiberiumClass::CreateTClassFactory_TiberiumClass
+[diff] 0x6c0050   MISMATCH         _TClassFactory_VTubeClass::QueryInterface2
+[diff] 0x6c01d0   MISMATCH         _TClassFactory_VCampaignClass::CreateTClassFactory_CampaignClass
+[diff] 0x6c0350   MISMATCH         _TClassFactory_VBuildingLightClass::CreateTClassFactory_BuildingLightClass
+[diff] 0x6c04d0   MISMATCH         _TClassFactory_VWaypointPathClass::CreateTClassFactory_WaypointPathClass
+[ledger] 0x49fa70 CounterClass::Decrement -> NG (attempt 1)
+[ledger] 0x46b050 CreateUIObjectCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41b760 TechnoClass::GetAutoFireDirection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x542350 IPXManagerClass::GetAddress -> NG (attempt 1)
+[ledger] 0x5423c0 IPXManagerClass::SetAddress -> NG (attempt 1)
+[ledger] 0x6bee50 _TClassFactory_VCStreamClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x6befd0 _TClassFactory_VWaveClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x6bf150 _TClassFactory_VTerrainTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x6bf2d0 _TClassFactory_VTerrainClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x6bf450 _TClassFactory_VSuperWeaponTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x6bf750 _TClassFactory_VTactical::QueryInterface -> NG (attempt 1)
+[ledger] 0x6bf8d0 _TClassFactory_VCellClass::CreateTClassFactory_CellClass -> NG (attempt 1)
+[ledger] 0x6bfa50 _TClassFactory_VEMPulseClass::CreateTClassFactory_EMPulseClass -> NG (attempt 1)
+[ledger] 0x6bfbd0 _TClassFactory_VLightSourceClass::CreateTClassFactory_LightSourceClass -> NG (attempt 1)
+[ledger] 0x6bfd50 _TClassFactory_VSideClass::CreateTClassFactory_SideClass -> NG (attempt 1)
+[ledger] 0x6bfed0 _TClassFactory_VTiberiumClass::CreateTClassFactory_TiberiumClass -> NG (attempt 1)
+[ledger] 0x6c0050 _TClassFactory_VTubeClass::QueryInterface2 -> NG (attempt 1)
+[ledger] 0x6c01d0 _TClassFactory_VCampaignClass::CreateTClassFactory_CampaignClass -> NG (attempt 1)
+[ledger] 0x6c0350 _TClassFactory_VBuildingLightClass::CreateTClassFactory_BuildingLightClass -> NG (attempt 1)
+[ledger] 0x6c04d0 _TClassFactory_VWaypointPathClass::CreateTClassFactory_WaypointPathClass -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "branch_order": 3,
+  "const_fold": 15
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p275\batch_report.json

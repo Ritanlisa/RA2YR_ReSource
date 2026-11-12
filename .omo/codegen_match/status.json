@@ -7841,6 +7841,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x41b760": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TechnoClass::GetAutoFireDirection",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TechnoClass::GetAutoFireDirection",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x41b7d0": {
   "attempts": 1,
   "clean": false,
@@ -17666,6 +17678,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::ValidateTarget",
   "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x46b050": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "CreateUIObjectCOM",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateUIObjectCOM",
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -29852,6 +29875,18 @@
   "name": "RefCount::Increment",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x49fa70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+14 jl 0x49faad",
+  "name": "CounterClass::Decrement",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "CounterClass::Decrement",
+  "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x49fae0": {
   "attempts": 1,
@@ -61682,6 +61717,30 @@
   "orig_name": "IPXManagerClass::GetConnectionCount",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x542350": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 je 0x5423af",
+  "name": "IPXManagerClass::GetAddress",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "IPXManagerClass::GetAddress",
+  "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5423c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 je 0x54241f",
+  "name": "IPXManagerClass::SetAddress",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "IPXManagerClass::SetAddress",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x542430": {
@@ -108050,6 +108109,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6bee50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VCStreamClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_K_8::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6beec0": {
   "attempts": 1,
   "clean": false,
@@ -108089,6 +108160,18 @@
   "name": "ClassFactory_Wave::Construct",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "ClassFactory_Wave::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6befd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VWaveClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_K_14::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -108141,6 +108224,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6bf150": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VTerrainTypeClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_K_20::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6bf1c0": {
   "attempts": 7,
   "clean": false,
@@ -108184,6 +108279,18 @@
   "name": "0x6bf2c0",
   "note": "decomp_batch r2: DUP_SKIP",
   "status": "PENDING"
+ },
+ "0x6bf2d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VTerrainClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_K_26::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6bf340": {
   "attempts": 1,
@@ -108229,6 +108336,18 @@
   "name": "COMClassFactory::Construct",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "COMClassFactory_5::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6bf450": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VSuperWeaponTypeClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_K_32::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -108361,6 +108480,18 @@
   "note": "decomp_batch r2: DUP_SKIP",
   "status": "PENDING"
  },
+ "0x6bf750": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VTactical::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_K_44::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6bf7c0": {
   "attempts": 1,
   "clean": false,
@@ -108404,6 +108535,18 @@
   "name": "0x6bf8c0",
   "note": "decomp_batch r2: DUP_SKIP",
   "status": "PENDING"
+ },
+ "0x6bf8d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VCellClass::CreateTClassFactory_CellClass",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CreateTClassFactory_CellClass",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6bf940": {
   "attempts": 1,
@@ -108449,6 +108592,18 @@
   "note": "decomp_batch r2: DUP_SKIP",
   "status": "PENDING"
  },
+ "0x6bfa50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VEMPulseClass::CreateTClassFactory_EMPulseClass",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CreateTClassFactory_EMPulseClass",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6bfac0": {
   "attempts": 1,
   "clean": false,
@@ -108492,6 +108647,18 @@
   "name": "0x6bfbc0",
   "note": "decomp_batch r2: DUP_SKIP",
   "status": "PENDING"
+ },
+ "0x6bfbd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VLightSourceClass::CreateTClassFactory_LightSourceClass",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CreateTClassFactory_LightSourceClass",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6bfc40": {
   "attempts": 1,
@@ -108541,6 +108708,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6bfd50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VSideClass::CreateTClassFactory_SideClass",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CreateTClassFactory_SideClass",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6bfdc0": {
   "attempts": 1,
   "clean": false,
@@ -108581,6 +108760,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6BFEC0",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6bfed0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VTiberiumClass::CreateTClassFactory_TiberiumClass",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CreateTClassFactory_TiberiumClass",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -108643,6 +108834,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c0050": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VTubeClass::QueryInterface2",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "COMObject::QueryInterface2",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c00c0": {
   "attempts": 1,
   "clean": false,
@@ -108688,6 +108891,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6C01C0",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c01d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VCampaignClass::CreateTClassFactory_CampaignClass",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CreateTClassFactory_CampaignClass",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -108739,6 +108954,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c0350": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VBuildingLightClass::CreateTClassFactory_BuildingLightClass",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CreateTClassFactory_BuildingLightClass",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c03c0": {
   "attempts": 1,
   "clean": false,
@@ -108784,6 +109011,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6C04C0",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c04d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
+  "name": "_TClassFactory_VWaypointPathClass::CreateTClassFactory_WaypointPathClass",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CreateTClassFactory_WaypointPathClass",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },

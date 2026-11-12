@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetAddress@IPXManagerClass@@QAEHH@Z",
+ "sym_key": "IPXManagerClass::GetAddress",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "568bf18a460484c0750633c05ec204008a460584c0750633c05ec204008b4e4485c9750633c05ec204008b44240883f8ff741a8b0e5056ff511883f8ff74e58b5486285e8b42048b4028c2040033c085c97e198d56148bf18b0a8b49048b49283bc876028bc183c2044e75ec5ec20400",
+ "relocs": []
+}
