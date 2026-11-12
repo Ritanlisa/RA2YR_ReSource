@@ -44555,6 +44555,17 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x539110": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_539110",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_539110",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x539140": {
   "attempts": 2,
   "clean": true,
@@ -44677,6 +44688,17 @@
   "orig_name": "sub_539300",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x539350": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_539350",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_539350",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x539380": {
@@ -45070,6 +45092,17 @@
   "name": "_DynamicVectorClass_PBVAnimClass::FindItem",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "DeleteCommandClass_28::FindItem",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x53c820": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_53C820",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_53C820",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -45670,6 +45703,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x53f240": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_53F240",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_53F240",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x53f270": {
   "attempts": 3,
   "clean": true,
@@ -45855,6 +45899,17 @@
   "orig_name": "sub_53F880",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x53f8a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_53F8A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_53F8A0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x53f8d0": {
@@ -46063,6 +46118,17 @@
   "orig_name": "IPXGlobalConnClass::QueryInterface",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5406e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_5406E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5406E0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x540710": {
@@ -46569,6 +46635,17 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "IPXManagerClass::getPlayerName",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x543120": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_543120",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_543120",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -47380,6 +47457,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x54aa30": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_54AA30",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_54AA30",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x54aa60": {
   "attempts": 3,
   "clean": true,
@@ -47723,6 +47811,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x54e050": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_54E050",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_54E050",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x54e080": {
   "attempts": 2,
   "clean": false,
@@ -47950,6 +48049,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x54ec60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_54EC60",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_54EC60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x54ec90": {
   "attempts": 2,
   "clean": false,
@@ -48163,6 +48273,17 @@
   "name": "Timer::PumpMessages",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x54fbb0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_54FBB0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_54FBB0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x54fbe0": {
   "attempts": 2,
@@ -48418,6 +48539,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5517a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_5517A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5517A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5517d0": {
   "attempts": 2,
   "clean": true,
@@ -48602,6 +48734,17 @@
   "orig_name": "sub_552830",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x552850": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_552850",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_552850",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x552880": {
@@ -48794,6 +48937,17 @@
   "name": "LoadProgressMgr::sub_554400",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_554400",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x554430": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_554430",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_554430",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -49187,6 +49341,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x555bb0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_555BB0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_555BB0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x555be0": {
   "attempts": 2,
   "clean": true,
@@ -49392,6 +49557,17 @@
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "LinkedList_flat::Attach",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x556790": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_556790",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_556790",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -49898,6 +50074,17 @@
   "orig_name": "sub_558530",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x558550": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_558550",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_558550",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x558580": {
@@ -50735,6 +50922,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x55ad50": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_55AD50",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_55AD50",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x55ad80": {
   "attempts": 2,
   "clean": true,
@@ -50919,6 +51117,17 @@
   "orig_name": "sub_55C9E0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x55ca00": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_55CA00",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_55CA00",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x55ca30": {
@@ -51116,6 +51325,17 @@
   "orig_name": "sub_55F760",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x55f780": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_55F780",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_55F780",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x55f7b0": {
