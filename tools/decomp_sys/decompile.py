@@ -36,6 +36,7 @@ import pseudo  # noqa: E402
 import passes  # noqa: E402
 import checker  # noqa: E402
 import hpp_pilot  # noqa: E402
+import wa_const  # noqa: E402  (W-A: folded .rdata constant restore)
 from registry_ext import Registry  # noqa: E402
 from passes import ClassView, FunctionCtx, spell_type, WIDTH_OF as WIDTH_TY  # noqa: E402
 
@@ -1009,6 +1010,13 @@ def run_function(addr, reg, views, idx):
         ctx.lines = out
     passes.pass_param_rename(ctx)
     passes.pass_globals(ctx)
+    # W-A (2026-11-12): Hex-Rays folds .rdata double loads into numeric
+    # literals (`dbl_X = 0.0174532925199433 * 45.0`), which the era compiler
+    # then constant-folds into immediate stores -- 736 D_CONST_FOLD + 247
+    # D_CONST_FP MISMATCHes.  The export's own disassembly block still
+    # carries the symbol operands; restore them (statement-span restricted,
+    # load operands only, x87 double-swap rule) so the loads reappear.
+    wa_const.restore_data_constants(ctx)
     passes.pass_struct_globals(ctx)
     # CW5-7b: `LOCAL.Class_field_0xNN` -- name-encoded owner+offset on a
     # local/param base (the ClassView never records these members)
