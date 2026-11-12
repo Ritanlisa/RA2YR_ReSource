@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x771970 Anim_Voices_WorldDominationTour::Read -> Anim_Voices_WorldDominationTour
+[conv] 0x7cb49d _srand -> _addr_7C
+[conv] 0x7500d0 FootClass::GetField -> FootClass
+[conv] 0x7ba2f0 __CxxRestoreUnhandledExceptionFilter_YAXXZ -> _addr_7B
+[conv] 0x7d9fbd sub_7D9FBD -> _addr_7D
+[conv] 0x437fc0 COMObject::Release -> COMObject
+[conv] 0x45a160 ObjectClass::Release2COM -> ObjectClass
+[conv] 0x45a170 CellClass::SetField2C -> CellClass
+[conv] 0x4b4d60 Function::Method_4B4D60 -> Function
+[conv] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> LocomotionClass
+[conv] 0x4d0430 ObjectClass::Release3COM -> ObjectClass
+[conv] 0x4e02c0 ObjectClass::updateStateFlags -> ObjectClass
+[conv] 0x522d20 SlaveManagerClass::VtableDispatch -> SlaveManagerClass
+[conv] 0x5cf830 ObjectClass::Network_Load -> ObjectClass
+[conv] 0x632fe0 PKPipe::loadGameState -> PKPipe
+[conv] 0x633360 PKStrawClass::parseGameOptions -> PKStrawClass
+[conv] 0x65c340 RAMFileClass::dispatchTeamEvent -> RAMFileClass
+[conv] 0x67fdd0 ComPtr::ReleaseSimple -> ComPtr
+[conv] 0x683050 ObjectClass::Map_Read_683050 -> ObjectClass
+[conv] 0x683060 ObjectClass::ReleaseCOM -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Anim_Voices_WorldDominationTour rc=0
+[era] _addr_7C                 rc=2
+[era] FootClass                rc=0
+[era] _addr_7B                 rc=0
+[era] _addr_7D                 rc=2
+[era] COMObject                rc=0
+[era] ObjectClass              rc=0
+[era] CellClass                rc=0
+[era] Function                 rc=0
+[era] LocomotionClass          rc=2
+[era] SlaveManagerClass        rc=0
+[era] PKPipe                   rc=2
+[era] PKStrawClass             rc=2
+[era] RAMFileClass             rc=2
+[era] ComPtr                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x771970   MATCH            Anim_Voices_WorldDominationTour::Read
+[diff] 0x7500d0   MISMATCH         FootClass::GetField
+[diff] 0x7ba2f0   MISMATCH         __CxxRestoreUnhandledExceptionFilter_YAXXZ
+[diff] 0x437fc0   MATCH            COMObject::Release
+[diff] 0x45a160   MATCH            ObjectClass::Release2COM
+[diff] 0x4d0430   MATCH            ObjectClass::Release3COM
+[diff] 0x4e02c0   MATCH            ObjectClass::updateStateFlags
+[diff] 0x5cf830   MISMATCH         ObjectClass::Network_Load
+[diff] 0x683050   MATCH            ObjectClass::Map_Read_683050
+[diff] 0x683060   MATCH            ObjectClass::ReleaseCOM
+[diff] 0x45a170   MATCH            CellClass::SetField2C
+[diff] 0x4b4d60   MATCH            Function::Method_4B4D60
+[diff] 0x522d20   MISMATCH         SlaveManagerClass::VtableDispatch
+[diff] 0x67fdd0   MATCH            ComPtr::ReleaseSimple
+[ledger] 0x771970 Anim_Voices_WorldDominationTour::Read -> OK (attempt 1)
+[ledger] 0x7cb49d _srand -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7500d0 FootClass::GetField -> NG (attempt 1)
+[ledger] 0x7ba2f0 __CxxRestoreUnhandledExceptionFilter_YAXXZ -> NG (attempt 1)
+[ledger] 0x7d9fbd sub_7D9FBD -> COMPILE_FAIL (attempt 1)
+[ledger] 0x437fc0 COMObject::Release -> OK (attempt 1)
+[ledger] 0x45a160 ObjectClass::Release2COM -> OK (attempt 1)
+[ledger] 0x45a170 CellClass::SetField2C -> OK (attempt 1)
+[ledger] 0x4b4d60 Function::Method_4B4D60 -> OK (attempt 1)
+[ledger] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d0430 ObjectClass::Release3COM -> OK (attempt 1)
+[ledger] 0x4e02c0 ObjectClass::updateStateFlags -> OK (attempt 1)
+[ledger] 0x522d20 SlaveManagerClass::VtableDispatch -> NG (attempt 1)
+[ledger] 0x5cf830 ObjectClass::Network_Load -> NG (attempt 1)
+[ledger] 0x632fe0 PKPipe::loadGameState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x633360 PKStrawClass::parseGameOptions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65c340 RAMFileClass::dispatchTeamEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67fdd0 ComPtr::ReleaseSimple -> OK (attempt 1)
+[ledger] 0x683050 ObjectClass::Map_Read_683050 -> OK (attempt 1)
+[ledger] 0x683060 ObjectClass::ReleaseCOM -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 71.4,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p26\batch_report.json

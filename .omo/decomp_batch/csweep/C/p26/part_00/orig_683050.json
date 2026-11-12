@@ -1,0 +1,11 @@
+{
+ "addr": "0x683050",
+ "name": "Map_Read_683050",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x683050",
+ "bytes_hex": "8b0185c074068b0850ff5108c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

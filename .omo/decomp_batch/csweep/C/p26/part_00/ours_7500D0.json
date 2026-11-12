@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetField@FootClass@@QAENXZ",
+ "sym_key": "FootClass::GetField",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "83ec08d90500000000d8095683ec08dd1c24e8000000008bc88b44240c240081e1ff0000009933f683c4080bc80bf2894c240489742408df6c24045e83c408c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?flt_7F6890@@3MA",
+   "sym_key": "flt_7F6890"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

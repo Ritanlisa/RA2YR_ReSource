@@ -1,0 +1,11 @@
+{
+ "addr": "0x45A170",
+ "name": "CellClass::SetField2C",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45A170",
+ "bytes_hex": "8b0185c074068b0850ff5104c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

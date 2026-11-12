@@ -1,0 +1,15 @@
+{
+ "symbol": "?Read@Anim_Voices_WorldDominationTour@@QAEDHH@Z",
+ "sym_key": "Anim_Voices_WorldDominationTour::Read",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b491ce80000000032c0c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Update@AudioQueue@@QAEXXZ",
+   "sym_key": "AudioQueue::Update"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?__CxxRestoreUnhandledExceptionFilter_YAXXZ@@YAXXZ",
+ "sym_key": "Unnamed::__CxxRestoreUnhandledExceptionFilter_YAXXZ",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "a10000000050e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?ReleaseMutex@@YGHPAX@Z",
+   "sym_key": "ReleaseMutex"
+  }
+ ]
+}
