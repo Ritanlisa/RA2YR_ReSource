@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p318\part_00
+=== convert (20 addrs) ===
+[conv] 0x40b880 _DynamicVectorClass_PAVBombClass::validateEvent -> _DynamicVectorClass_PAVBombClass
+[conv] 0x40bae0 _DynamicVectorClass_PAVTechnoClass::checkCondition -> _DynamicVectorClass_PAVTechnoClass
+[conv] 0x40c410 _DynamicVectorClass_PAVLightConvertClass::clearEvents -> _DynamicVectorClass_PAVLightConvertClass
+[conv] 0x40ca00 _DynamicVectorClass_PAVIsometricTileClass::SetCapacity -> _DynamicVectorClass_PAVIsometricTileClass
+[conv] 0x40ce50 DynamicVector::Resize -> DynamicVector
+[conv] 0x40d720 _DynamicVectorClass_PAVMixFileClass::selectCursor -> _DynamicVectorClass_PAVMixFileClass
+[conv] 0x40e9d0 _DynamicVectorClass_PAVScriptClass::SetCapacity -> _DynamicVectorClass_PAVScriptClass
+[conv] 0x40f0a0 _DynamicVectorClass_PAVVoxelAnimClass::SetCapacity -> _DynamicVectorClass_PAVVoxelAnimClass
+[conv] 0x40f7c0 _DynamicVectorClass_PAVWarheadTypeClass::SetCapacity -> _DynamicVectorClass_PAVWarheadTypeClass
+[conv] 0x40fd90 _DynamicVectorClass_PAVWeaponTypeClass::SetCapacity -> _DynamicVectorClass_PAVWeaponTypeClass
+[conv] 0x41dfc0 _DynamicVectorClass_PAVAirstrikeClass::SetCapacity -> _DynamicVectorClass_PAVAirstrikeClass
+[conv] 0x420550 _DynamicVectorClass_PAVAlphaLightingRemapClass::SetCapacity -> _DynamicVectorClass_PAVAlphaLightingRemapClass
+[conv] 0x42d780 _DynamicVectorClass_I::Remove -> _DynamicVectorClass_I
+[conv] 0x45a300 _DynamicVectorClass_PBVParticleSystemTypeClass::Add -> _DynamicVectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a560 DynamicVector::ResizeOccupiedCellList -> DynamicVector
+[conv] 0x45a680 _DynamicVectorClass_PAVFoggedObjectClass::SetCapacity -> _DynamicVectorClass_PAVFoggedObjectClass
+[conv] 0x45a8e0 _DynamicVectorClass_PAVReestablish::SetCapacity -> _DynamicVectorClass_PAVReestablish
+[conv] 0x46b7e0 VectorClass_ptr_BulletClass::SetCapacity -> VectorClass_ptr_BulletClass
+[conv] 0x472cc0 _DynamicVectorClass_PAUControlNode::Release -> _DynamicVectorClass_PAUControlNode
+[conv] 0x472f20 _DynamicVectorClass_PAVCaptureManagerClass::SetCapacity -> _DynamicVectorClass_PAVCaptureManagerClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVBombClass rc=2
+[era] _DynamicVectorClass_PAVTechnoClass rc=2
+[era] _DynamicVectorClass_PAVLightConvertClass rc=2
+[era] _DynamicVectorClass_PAVIsometricTileClass rc=2
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PAVMixFileClass rc=2
+[era] _DynamicVectorClass_PAVScriptClass rc=2
+[era] _DynamicVectorClass_PAVVoxelAnimClass rc=2
+[era] _DynamicVectorClass_PAVWarheadTypeClass rc=2
+[era] _DynamicVectorClass_PAVWeaponTypeClass rc=2
+[era] _DynamicVectorClass_PAVAirstrikeClass rc=2
+[era] _DynamicVectorClass_PAVAlphaLightingRemapClass rc=2
+[era] _DynamicVectorClass_I    rc=2
+[era] _DynamicVectorClass_PBVParticleSystemTypeClass rc=2
+[era] _DynamicVectorClass_PAVFoggedObjectClass rc=2
+[era] _DynamicVectorClass_PAVReestablish rc=2
+[era] VectorClass_ptr_BulletClass rc=0
+[era] _DynamicVectorClass_PAUControlNode rc=2
+[era] _DynamicVectorClass_PAVCaptureManagerClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x40ce50   MISMATCH         DynamicVector::Resize
+[diff] 0x45a560   MISMATCH         DynamicVector::ResizeOccupiedCellList
+[diff] 0x46b7e0   MISMATCH         VectorClass_ptr_BulletClass::SetCapacity
+[ledger] 0x40b880 _DynamicVectorClass_PAVBombClass::validateEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40bae0 _DynamicVectorClass_PAVTechnoClass::checkCondition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40c410 _DynamicVectorClass_PAVLightConvertClass::clearEvents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40ca00 _DynamicVectorClass_PAVIsometricTileClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40ce50 DynamicVector::Resize -> NG (attempt 1)
+[ledger] 0x40d720 _DynamicVectorClass_PAVMixFileClass::selectCursor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40e9d0 _DynamicVectorClass_PAVScriptClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40f0a0 _DynamicVectorClass_PAVVoxelAnimClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40f7c0 _DynamicVectorClass_PAVWarheadTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40fd90 _DynamicVectorClass_PAVWeaponTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41dfc0 _DynamicVectorClass_PAVAirstrikeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x420550 _DynamicVectorClass_PAVAlphaLightingRemapClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42d780 _DynamicVectorClass_I::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a300 _DynamicVectorClass_PBVParticleSystemTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a560 DynamicVector::ResizeOccupiedCellList -> NG (attempt 1)
+[ledger] 0x45a680 _DynamicVectorClass_PAVFoggedObjectClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a8e0 _DynamicVectorClass_PAVReestablish::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46b7e0 VectorClass_ptr_BulletClass::SetCapacity -> NG (attempt 1)
+[ledger] 0x472cc0 _DynamicVectorClass_PAUControlNode::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x472f20 _DynamicVectorClass_PAVCaptureManagerClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "branch_polarity": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p318\batch_report.json
