@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (15 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w6\p01\part_00
+=== convert (15 addrs) ===
+[conv] 0x74de90 InitializeVeinholeSystem -> _addr_74
+[conv] 0x788800 LeaveChannelExWOL -> _addr_78
+[conv] 0x793d20 NegotiateNetworkConnection -> _addr_79
+[conv] 0x797640 LoginWOL -> _addr_79
+[conv] 0x7982d0 sub_7982D0 -> _addr_79
+[conv] 0x79ba60 ValidateGameJoinWOL -> _addr_79
+[conv] 0x7b8610 sub_7B8610 -> _addr_7B
+[conv] 0x7c04e0 Audio_Process_7C04E0 -> Audio_Process
+[conv] 0x7c06b0 Audio_Process_7C06B0 -> Audio_Process
+[conv] 0x7c19f0 Audio_Process_7C19F0 -> Audio_Process
+[conv] 0x7c3230 Render_Render_7C3230 -> Render_Render
+[conv] 0x7c3690 Render_Render_7C3690 -> Render_Render
+[conv] 0x7c3840 sub_7C3840 -> _addr_7C
+[conv] 0x7c3860 Audio_Render_7C3860 -> Audio_Render
+[conv] 0x7c3950 Audio_Process_7C3950 -> Audio_Process
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_74                 rc=2
+[era] _addr_78                 rc=0
+[era] _addr_79                 rc=2
+[era] _addr_7B                 rc=0
+[era] Audio_Process            rc=2
+[era] Render_Render            rc=2
+[era] _addr_7C                 rc=2
+[era] Audio_Render             rc=2
+=== diffasm byte-compare ===
+[diff] 0x788800   MISMATCH         LeaveChannelExWOL
+[diff] 0x7b8610   MISMATCH         sub_7B8610
+[ledger] 0x74de90 InitializeVeinholeSystem -> COMPILE_FAIL (attempt 5)
+[ledger] 0x788800 LeaveChannelExWOL -> NG (attempt 6)
+[ledger] 0x793d20 NegotiateNetworkConnection -> COMPILE_FAIL (attempt 5)
+[ledger] 0x797640 LoginWOL -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7982d0 sub_7982D0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x79ba60 ValidateGameJoinWOL -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b8610 sub_7B8610 -> NG (attempt 4)
+[ledger] 0x7c04e0 Audio_Process_7C04E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c06b0 Audio_Process_7C06B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c19f0 Audio_Process_7C19F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c3230 Render_Render_7C3230 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c3690 Render_Render_7C3690 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c3840 sub_7C3840 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c3860 Audio_Render_7C3860 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c3950 Audio_Process_7C3950 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 15,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w6\p01\batch_report.json

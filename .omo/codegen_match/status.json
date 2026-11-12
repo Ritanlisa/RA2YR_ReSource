@@ -79987,13 +79987,13 @@
   "this_as_id": false
  },
  "0x74de90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "InitializeVeinholeSystem",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InitializeVeinholeSystem",
-  "rule_violations": 7,
+  "rule_violations": 8,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -86837,14 +86837,14 @@
   "this_as_id": false
  },
  "0x788800": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "LeaveChannelExWOL",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "LeaveChannelExWOL",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x788b00": {
@@ -86930,7 +86930,7 @@
   "this_as_id": false
  },
  "0x793d20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "NegotiateNetworkConnection",
@@ -86964,7 +86964,7 @@
   "this_as_id": false
  },
  "0x797640": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "LoginWOL",
@@ -86975,7 +86975,7 @@
   "this_as_id": false
  },
  "0x7982d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_7982D0",
@@ -87020,7 +87020,7 @@
   "this_as_id": false
  },
  "0x79ba60": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "ValidateGameJoinWOL",
@@ -88820,14 +88820,14 @@
   "this_as_id": false
  },
  "0x7b8610": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+1 mov esi, dword ptr [esp + 8]",
   "name": "sub_7B8610",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
   "orig_name": "sub_7B8610",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7b89f0": {
@@ -89274,18 +89274,18 @@
   "this_as_id": false
  },
  "0x7c04e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7C04E0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Audio_Process_7C04E0",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7c06b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7C06B0",
@@ -89296,7 +89296,7 @@
   "this_as_id": false
  },
  "0x7c19f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7C19F0",
@@ -89318,7 +89318,7 @@
   "this_as_id": false
  },
  "0x7c3230": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Render_Render_7C3230",
@@ -89362,7 +89362,7 @@
   "this_as_id": false
  },
  "0x7c3690": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Render_Render_7C3690",
@@ -89413,7 +89413,7 @@
   "status": "NG"
  },
  "0x7c3840": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_7C3840",
@@ -89424,18 +89424,18 @@
   "this_as_id": false
  },
  "0x7c3860": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Render_7C3860",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Audio_Render_7C3860",
-  "rule_violations": 5,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7c3950": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7C3950",
