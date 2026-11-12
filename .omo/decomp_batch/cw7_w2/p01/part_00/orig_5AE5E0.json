@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AE5E0",
+ "name": "Matrix::Copy12Float",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AE5E0",
+ "bytes_hex": "568b7424088bc1578bd02bf0bf0c0000008b0c16890a83c2044f75f55f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

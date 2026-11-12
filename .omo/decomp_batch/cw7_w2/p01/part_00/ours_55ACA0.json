@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetCoord3D@LocomotionClass@@QAGPAIPAI@Z",
+ "sym_key": "LocomotionClass::GetCoord3D",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b44240433d25633c98b40088a909e0000008a889d0000008bf233d28a909c0000008b44240c89700889108948045ec20800",
+ "relocs": []
+}

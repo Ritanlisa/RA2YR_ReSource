@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w2\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c83a0 sub_4C83A0 -> _addr_4C
+[conv] 0x4c83c0 sub_4C83C0 -> _addr_4C
+[conv] 0x4de7b0 FootClass::IsTargetInRange -> FootClass
+[conv] 0x4e7e20 unknown_libname_15 -> _addr_4E
+[conv] 0x4f4780 Frame::Present -> Frame
+[conv] 0x512290 HouseTypeClass::SaveLoad_Prefix -> HouseTypeClass
+[conv] 0x512570 HouseTypeClass::LoadHouse -> HouseTypeClass
+[conv] 0x512960 HouseTypeClass::readStartUnit -> HouseTypeClass
+[conv] 0x552c90 Map::Load -> Map
+[conv] 0x554100 LoadingScreen::AdjustForResolution -> LoadingScreen
+[conv] 0x55aca0 LocomotionClass::GetCoord3D -> LocomotionClass
+[conv] 0x55f970 unknown_libname_21 -> _addr_55
+[conv] 0x5654e0 ObjectClass::sub_5654E0 -> ObjectClass
+[conv] 0x565610 ObjectClass::sub_565610 -> ObjectClass
+[conv] 0x565800 MapClass::Destru_vt05 -> MapClass
+[conv] 0x56d230 MapClass::GetTileIndex -> MapClass
+[conv] 0x57cf60 CellClass::ApplyTileModification3 -> CellClass
+[conv] 0x5889f0 globalHelper_0889F0 -> _addr_58
+[conv] 0x58b6e0 sub_58B6E0 -> _addr_58
+[conv] 0x5ae5e0 Matrix::Copy12Float -> Matrix
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4C                 rc=0
+[era] FootClass                rc=2
+[era] _addr_4E                 rc=0
+[era] Frame                    rc=2
+[era] HouseTypeClass           rc=2
+[era] Map                      rc=0
+[era] LoadingScreen            rc=2
+[era] LocomotionClass          rc=0
+[era] _addr_55                 rc=0
+[era] ObjectClass              rc=0
+[era] MapClass                 rc=2
+[era] CellClass                rc=2
+[era] _addr_58                 rc=2
+[era] Matrix                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x4c83a0   MISMATCH         sub_4C83A0
+[diff] 0x4c83c0   MISMATCH         sub_4C83C0
+[diff] 0x4e7e20   MISMATCH         unknown_libname_15
+[diff] 0x512570   MATCH            HouseTypeClass::LoadHouse
+[diff] 0x512960   MISMATCH         HouseTypeClass::readStartUnit
+[diff] 0x552c90   MISMATCH         Map::Load
+[diff] 0x55aca0   MISMATCH         LocomotionClass::GetCoord3D
+[diff] 0x55f970   MISMATCH         unknown_libname_21
+[diff] 0x5654e0   MISMATCH         ObjectClass::sub_5654E0
+[diff] 0x565610   MISMATCH         ObjectClass::sub_565610
+[diff] 0x56d230   MISMATCH         MapClass::GetTileIndex
+[diff] 0x58b6e0   MISMATCH         sub_58B6E0
+[diff] 0x5ae5e0   MISMATCH         Matrix::Copy12Float
+[ledger] 0x4c83a0 sub_4C83A0 -> NG (attempt 2)
+[ledger] 0x4c83c0 sub_4C83C0 -> NG (attempt 2)
+[ledger] 0x4de7b0 FootClass::IsTargetInRange -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e7e20 unknown_libname_15 -> NG (attempt 3)
+[ledger] 0x4f4780 Frame::Present -> COMPILE_FAIL (attempt 4)
+[ledger] 0x512290 HouseTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 4)
+[ledger] 0x512570 HouseTypeClass::LoadHouse -> OK (attempt 2)
+[ledger] 0x512960 HouseTypeClass::readStartUnit -> NG (attempt 2)
+[ledger] 0x552c90 Map::Load -> NG (attempt 2)
+[ledger] 0x554100 LoadingScreen::AdjustForResolution -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55aca0 LocomotionClass::GetCoord3D -> NG (attempt 2)
+[ledger] 0x55f970 unknown_libname_21 -> NG (attempt 3)
+[ledger] 0x5654e0 ObjectClass::sub_5654E0 -> NG (attempt 2)
+[ledger] 0x565610 ObjectClass::sub_565610 -> NG (attempt 2)
+[ledger] 0x565800 MapClass::Destru_vt05 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56d230 MapClass::GetTileIndex -> NG (attempt 12)
+[ledger] 0x57cf60 CellClass::ApplyTileModification3 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5889f0 globalHelper_0889F0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58b6e0 sub_58B6E0 -> NG (attempt 2)
+[ledger] 0x5ae5e0 Matrix::Copy12Float -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 7,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 3,
+  "extern_reloc": 2,
+  "regalloc": 2,
+  "codegen_shape": 4,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 7.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w2\p01\batch_report.json

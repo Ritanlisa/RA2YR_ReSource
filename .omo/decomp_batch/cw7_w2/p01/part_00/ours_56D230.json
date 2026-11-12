@@ -1,0 +1,69 @@
+{
+ "symbol": "?GetTileIndex@MapClass@@QAEFPAFHD@Z",
+ "sym_key": "MapClass::GetTileIndex",
+ "size": 357,
+ "link_base": 0,
+ "bytes_hex": "518a4424105355568b742414578bf98bde84c0897c24100f84fc0000000fbf46020fbf0ec1e00903c13d00000400730e0fbe15340300008b048285c0750c8b06a37c160000b8581600008b8840010000f6c5010f84c00000006a006a015657e80000000083c41083f8ff750b5f5e5d660bc05b59c20c008b4f54c1e0048b118d1c028a44020884c00f858b0000000fbf46020fbf0ec1e00903c13d0000040073120fbe15340300008b048285c074048bf8eb0c8b06bf58160000a37c160000668b73048d6b04662b338b874001000066f7de1bf683e6fe83c604f6c4017415568bcfe8000000008bf88b8740010000f6c40175eb8bcfe80000000084c0750b8bcfe80000000084c0740b83bfec0000000374028bdd8b7c24108b8ff80000008b87f40000008b110fbf4b028d4402010fbf130fafc103c2780c8b4f6c3bc17c078d41ffeb0233c08b4f6833d2668b5481028b44241c8b4cc7185f5e5d668b04515b59c20c00",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?GetRegionMap@@YAHPAX0HH@Z",
+   "sym_key": "GetRegionMap"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?IsInRange@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsInRange"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?IsInRange2@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsInRange2"
+  }
+ ]
+}

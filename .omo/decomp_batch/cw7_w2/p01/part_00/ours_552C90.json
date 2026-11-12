@@ -1,0 +1,21 @@
+{
+ "symbol": "?Load@Map@@QAEHXZ",
+ "sym_key": "Map::Load",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c07417a1000000002d80020000f7d81bc083e0500546010000c383c8ffc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  }
+ ]
+}

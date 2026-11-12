@@ -1,0 +1,237 @@
+{
+ "symbol": "?unknown_libname_15@@YAPADXZ",
+ "sym_key": "Unnamed::unknown_libname_15",
+ "size": 292,
+ "link_base": 0,
+ "bytes_hex": "a10000000033d2b901000000c700030000008a150000000033c0890d0000000089028b1500000000880d00000000880d00000000880d00000000880d00000000880d00000000880d00000000b912000000c7050000000003000000890d00000000890d00000000b911000000c7050000000002000000890d00000000890d0000000083c9ffc7050000000010000000890d00000000c70210000000890d00000000b1ff880d00000000880d00000000b151a200000000a200000000a200000000a200000000a200000000a200000000a300000000a200000000a100000000c7050000000020030000c7050000000058020000c705000000003333333fc70500000000cdcc7c4ec70500000000cdcccc3ec6050000000009880d00000000880d00000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptions@@3IA",
+   "sym_key": "g_GameModeOptions"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?unk_A8EB6C@@3EA",
+   "sym_key": "unk_A8EB6C"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB64@@3IA",
+   "sym_key": "DataGlobal_A8EB64"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC0C@@3IA",
+   "sym_key": "DataGlobal_A8EC0C"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?unk_A8EB74@@3EA",
+   "sym_key": "unk_A8EB74"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB7C@@3EA",
+   "sym_key": "DataGlobal_A8EB7C"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?unk_A8EB7D@@3EA",
+   "sym_key": "unk_A8EB7D"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB7E@@3EA",
+   "sym_key": "DataGlobal_A8EB7E"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB80@@3EA",
+   "sym_key": "DataGlobal_A8EB80"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EBA5@@3EA",
+   "sym_key": "DataGlobal_A8EBA5"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB70@@3IA",
+   "sym_key": "DataGlobal_A8EB70"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?dword_A8EBF8@@3IA",
+   "sym_key": "dword_A8EBF8"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?dword_A8EBFC@@3IA",
+   "sym_key": "dword_A8EBFC"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_lParam@@3IA",
+   "sym_key": "g_lParam"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC00@@3IA",
+   "sym_key": "DataGlobal_A8EC00"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC04@@3IA",
+   "sym_key": "DataGlobal_A8EC04"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC08@@3IA",
+   "sym_key": "DataGlobal_A8EC08"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_CommandLineFlags@@3IA",
+   "sym_key": "g_CommandLineFlags"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB88@@3IA",
+   "sym_key": "DataGlobal_A8EB88"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?unk_A8EBAC@@3EA",
+   "sym_key": "unk_A8EBAC"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?unk_A8EBB0@@3EA",
+   "sym_key": "unk_A8EBB0"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?MCV_DeployModeEnabled@@3EA",
+   "sym_key": "MCV_DeployModeEnabled"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?byte_A8EB94@@3EA",
+   "sym_key": "byte_A8EB94"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB95@@3EA",
+   "sym_key": "DataGlobal_A8EB95"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?Game_bAllowVRAMSidebar@@3EA",
+   "sym_key": "Game_bAllowVRAMSidebar"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EBA4@@3EA",
+   "sym_key": "DataGlobal_A8EBA4"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EBA6@@3EA",
+   "sym_key": "DataGlobal_A8EBA6"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EBB4@@3IA",
+   "sym_key": "DataGlobal_A8EBB4"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?unk_A8EBB8@@3EA",
+   "sym_key": "unk_A8EBB8"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptions@@3IA",
+   "sym_key": "g_GameModeOptions"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?xRight@@3HA",
+   "sym_key": "xRight"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?yBottom@@3HA",
+   "sym_key": "yBottom"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB98@@3MA",
+   "sym_key": "DataGlobal_A8EB98"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB9C@@3MA",
+   "sym_key": "DataGlobal_A8EB9C"
+  },
+  {
+   "off": 264,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EBA0@@3MA",
+   "sym_key": "DataGlobal_A8EBA0"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?unk_A8EBA8@@3EA",
+   "sym_key": "unk_A8EBA8"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?unk_A8EC10@@3EA",
+   "sym_key": "unk_A8EC10"
+  },
+  {
+   "off": 287,
+   "type": "DIR32",
+   "sym": "?unk_A8EC14@@3EA",
+   "sym_key": "unk_A8EC14"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x552C90",
+ "name": "Map::Load",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x552C90",
+ "bytes_hex": "8b0d38b2a80083c8ff85c97419a1a4008a008b0de05b7f002bc1f7d81bc083e0500546010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
