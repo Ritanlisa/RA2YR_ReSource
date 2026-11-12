@@ -1,0 +1,39 @@
+{
+ "symbol": "?To_Screen@Coord@@QAE_NPAH0@Z",
+ "sym_key": "Coord::To_Screen",
+ "size": 277,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c56578bd98b7d008b4d048b6d088d047f896c2414db4424148d0480c1e00299dc0d000000002bc28bf08d0449d1fe8d0480c1e002992bc2d1f82bf08bc69981e2ff00000003c28bf08d047fc1fe088d0480d1e0992bc28bf88d0449d1ff8d0480d1e0992bc2d1f803c79981e2ff00000003c28bf833c0c1ff0881fdd80200000f9dc08944241483ec08db44241cdec1dc0500000000dd1c24e8000000008b54241c8b4c242033c283c40825ff000000893133d08bc72bc28941048bbbb00000008b93b40000002bf72bc281fe98feffff89318941047c2f8b0d0000000081c1680100003bf1771f3d4cffffff7c188b15000000005f81c2b40000005e3bd05d1bc05b40c208005f5e5d32c05bc20800",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD48@@3NA",
+   "sym_key": "DataGlobal_B0CD48"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE30@@3IA",
+   "sym_key": "DataGlobal_B0CE30"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE34@@3IA",
+   "sym_key": "DataGlobal_B0CE34"
+  }
+ ]
+}

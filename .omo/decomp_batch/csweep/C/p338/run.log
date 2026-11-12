@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p338\part_00
+=== convert (20 addrs) ===
+[conv] 0x505360 HouseClass::PrerequisitesForTechnoTypeAreListed -> HouseClass
+[conv] 0x7be4a0 ObjectClass::Audio_Process_7BE4A0 -> ObjectClass
+[conv] 0x5c8980 sub_5C8980 -> _addr_5C
+[conv] 0x7cf51c __powhlp -> _addr_7C
+[conv] 0x48a4f0 GetWarheadVersusMultiplier -> _addr_48
+[conv] 0x748220 Voxel::BuildIndexTable -> Voxel
+[conv] 0x6b4100 ObjectClass::Map_Get_6B4100 -> ObjectClass
+[conv] 0x6d2140 Coord::To_Screen -> Coord
+[conv] 0x5864a0 FogOfWar_Get -> FogOfWar
+[conv] 0x5bdc80 MouseClass::SetCursor -> MouseClass
+[conv] 0x41c8b0 AircraftTypeClass::AircraftTypeClass -> AircraftTypeClass
+[conv] 0x6a6af0 ObjectClass::sub_6A6AF0 -> ObjectClass
+[conv] 0x42b080 globalHelper_02B080 -> _addr_42
+[conv] 0x506b90 HouseClass::FindBestProductionBuilding -> HouseClass
+[conv] 0x4c38e0 sub_4C38E0 -> _addr_4C
+[conv] 0x656750 TacticalClass::ScreenToCellLookup -> TacticalClass
+[conv] 0x42a460 BuildingClass::AddRectToDrawList -> BuildingClass
+[conv] 0x71da80 TerrainTypeClass::TerrainTypeClass -> TerrainTypeClass
+[conv] 0x405e80 ObjectClass::sub_405E80 -> ObjectClass
+[conv] 0x47af70 FileClass::FindFirstWithCD -> FileClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] _addr_5C                 rc=0
+[era] _addr_7C                 rc=2
+[era] _addr_48                 rc=2
+[era] Voxel                    rc=0
+[era] Coord                    rc=0
+[era] FogOfWar                 rc=0
+[era] MouseClass               rc=0
+[era] AircraftTypeClass        rc=2
+[era] _addr_42                 rc=0
+[era] _addr_4C                 rc=0
+[era] TacticalClass            rc=2
+[era] BuildingClass            rc=2
+[era] TerrainTypeClass         rc=2
+[era] FileClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x506b90   MISMATCH         HouseClass::FindBestProductionBuilding
+[diff] 0x7be4a0   MISMATCH         ObjectClass::Audio_Process_7BE4A0
+[diff] 0x6a6af0   MISMATCH         ObjectClass::sub_6A6AF0
+[diff] 0x405e80   MISMATCH         ObjectClass::sub_405E80
+[diff] 0x5c8980   MISMATCH         sub_5C8980
+[diff] 0x748220   MISMATCH         Voxel::BuildIndexTable
+[diff] 0x6d2140   MISMATCH         Coord::To_Screen
+[diff] 0x5864a0   MISMATCH         FogOfWar_Get
+[diff] 0x5bdc80   MISMATCH         MouseClass::SetCursor
+[diff] 0x42b080   MISMATCH         globalHelper_02B080
+[diff] 0x4c38e0   MISMATCH         sub_4C38E0
+[ledger] 0x505360 HouseClass::PrerequisitesForTechnoTypeAreListed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7be4a0 ObjectClass::Audio_Process_7BE4A0 -> NG (attempt 1)
+[ledger] 0x5c8980 sub_5C8980 -> NG (attempt 1)
+[ledger] 0x7cf51c __powhlp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48a4f0 GetWarheadVersusMultiplier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x748220 Voxel::BuildIndexTable -> NG (attempt 1)
+[ledger] 0x6b4100 ObjectClass::Map_Get_6B4100 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d2140 Coord::To_Screen -> NG (attempt 1)
+[ledger] 0x5864a0 FogOfWar_Get -> NG (attempt 1)
+[ledger] 0x5bdc80 MouseClass::SetCursor -> NG (attempt 1)
+[ledger] 0x41c8b0 AircraftTypeClass::AircraftTypeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a6af0 ObjectClass::sub_6A6AF0 -> NG (attempt 1)
+[ledger] 0x42b080 globalHelper_02B080 -> NG (attempt 1)
+[ledger] 0x506b90 HouseClass::FindBestProductionBuilding -> NG (attempt 1)
+[ledger] 0x4c38e0 sub_4C38E0 -> NG (attempt 1)
+[ledger] 0x656750 TacticalClass::ScreenToCellLookup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42a460 BuildingClass::AddRectToDrawList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71da80 TerrainTypeClass::TerrainTypeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x405e80 ObjectClass::sub_405E80 -> NG (attempt 1)
+[ledger] 0x47af70 FileClass::FindFirstWithCD -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 11
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "frame_sched": 3,
+  "regalloc": 1,
+  "codegen_shape": 5,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p338\batch_report.json

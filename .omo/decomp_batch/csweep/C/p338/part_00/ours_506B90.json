@@ -1,0 +1,45 @@
+{
+ "symbol": "?FindBestProductionBuilding@HouseClass@@QAEPAIPAHH@Z",
+ "sym_key": "HouseClass::FindBestProductionBuilding",
+ "size": 249,
+ "link_base": 0,
+ "bytes_hex": "83ec105355568b742424894c2410578d8e880e0000e80000000083f8ff0f84c20000008b0d000000008b96fc16000033ed33db8b0481894424188bb8e01400008d88e014000083c70a894c241c8b0d5000000083faff0f9444241385c90f86820000008b15440000008b4c24148b34aa398e1c020000753939862005000075318b44242851508bcee80000000084c074208a4c24138a860207000084c9750684c07409eb0c0fbec83bf97e050fbef88bdea150000000453be873068b442418eba285db74208b44242433d28a93a100000024000bd08b4424245f5e5d89105b83c410c208008b4424245f5e5dc700000000005b83c410c20800",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?FindIndexByName@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindIndexByName"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?CanAcceptType@BuildingClass@@QAE_NHH@Z",
+   "sym_key": "BuildingClass::CanAcceptType"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "symbol": "?SetCursor@MouseClass@@QAEDHD@Z",
+ "sym_key": "MouseClass::SetCursor",
+ "size": 285,
+ "link_base": 0,
+ "bytes_hex": "5155568b742410578be98d3cf5000000002bfec1e70283bf00000000ff750cc644241400c644241800eb088a44241888442414a00000000084c07431a10000000085c074193bb56055000075200fbe54241433c98a8d5c5500003bd1750f81e600ffffff5f8bc65e5d59c20800538b9f00000000c6050000000001e800000000a3000000008b44241ca3000000008a442418891d00000000c785685500000000000084c0740b8b9f0000000083fbff75068b9f000000008bbf000000008b0d0000000033c081ff39300000750b0fbf4102992bc2d1f8eb0c81ff31d4000075040fbf410289442410a10000000053518b108d4c24185150ff52048a54241c89b56055000081e601ffffff5b83ce015f8bc688955c5500005e5d59c20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82D034@@3PAIA",
+   "sym_key": "DataGlobal_82D034"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?byte_ABF2DD@@3EA",
+   "sym_key": "byte_ABF2DD"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF294@@3IA",
+   "sym_key": "DataGlobal_ABF294"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82D030@@3PAIA",
+   "sym_key": "DataGlobal_82D030"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?byte_ABF2DD@@3EA",
+   "sym_key": "byte_ABF2DD"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF2A0@@3IA",
+   "sym_key": "DataGlobal_ABF2A0"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?dword_ABF2A4@@3IA",
+   "sym_key": "dword_ABF2A4"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF2A8@@3IA",
+   "sym_key": "DataGlobal_ABF2A8"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82D034@@3PAIA",
+   "sym_key": "DataGlobal_82D034"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?MouseClass_Cursors@@3PAHA",
+   "sym_key": "MouseClass_Cursors"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82D03C@@3PAIA",
+   "sym_key": "DataGlobal_82D03C"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF294@@3IA",
+   "sym_key": "DataGlobal_ABF294"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  }
+ ]
+}

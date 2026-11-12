@@ -1,0 +1,33 @@
+{
+ "symbol": "?globalHelper_02B080@@YGHPAFH@Z",
+ "sym_key": "Unnamed::globalHelper_02B080",
+ "size": 360,
+ "link_base": 0,
+ "bytes_hex": "83ec248b4424288b0d000000000faf4c242c53550fbf288944241883c00256570fbf38c1e508c1e70881c58000000081c780000000894c242889442424897c2418c7442410feffffffbbfeffffff895c241c8b442420668b542410668b088b4424246603cb66031066894c241466895424168d5424388b4c241452894c243cb900000000e8000000008bf08b8640010000f6c40174390fbe861b0100008b7c243c2bc733ff998bca33c88bc733c22bca1bc78944243078137f0583f902760c8bb6e80000008b7c2418eb0a8b7c24188bb6e400000085f674568a46148ac8f6d1c0e902c0e80280e101240184c98844243875318b867406000085c0750d6803400080e80000000083c4048b5424288b867406000052578b085550ff91a000000084c0752c8b763085f675ae8b5c241c4383fb03895c241c0f8c15ffffff8b4424104083f803894424107d11e9f9feffff8bc65f5e5d5b83c424c208005f5e5d33c05b83c424c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C2D8@@3IA",
+   "sym_key": "DataGlobal_89C2D8"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

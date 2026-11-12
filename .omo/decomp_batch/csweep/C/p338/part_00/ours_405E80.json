@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_405E80@ObjectClass@@QAEPAIH@Z",
+ "sym_key": "ObjectClass::sub_405E80",
+ "size": 336,
+ "link_base": 0,
+ "bytes_hex": "51a1000000005333db563bc357894c240c0f842d01000081790c000000000f85200100008b313bf30f84160100008b46248b51083bd00f85060100008b51048bbe380100003bd70f85f5000000f64010010f84ed00000039584c0f85e40000008a5618f6c2010f85d60000008b86b00000003bc3747f3bb0c00000007577f6c20274098b4c240ce8000000008b8eb0000000e8000000008b86b00000008998c00000008b8eb00000008999bc0000008b96b0000000899ab40000008b86b00000008998b80000008b8eb00000008999900000008b96b00000008b4c240c899a980000008b86b000000089989c000000899eb00000008b86a80000005533ed3bc37e1e8d7e288b0fe800000000891f8b86a80000004583c7043be872e98b4c24108b4618899ea80000000c01c7461c04000000899e38010000899e780200008946185d89195f8959085e8bc15b59c20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_AudioConfigState@@3IA",
+   "sym_key": "g_AudioConfigState"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E294@@3IA",
+   "sym_key": "DataGlobal_87E294"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?Stop@Voice@@QAEPAXXZ",
+   "sym_key": "Voice::Stop"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?ReleaseChannel@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::ReleaseChannel"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?Decrement@RefCount@@QAEHXZ",
+   "sym_key": "RefCount::Decrement"
+  }
+ ]
+}

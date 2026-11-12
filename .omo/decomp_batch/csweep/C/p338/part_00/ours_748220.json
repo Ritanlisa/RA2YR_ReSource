@@ -1,0 +1,51 @@
+{
+ "symbol": "?BuildIndexTable@Voxel@@QAEDXZ",
+ "sym_key": "Voxel::BuildIndexTable",
+ "size": 275,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec18565733ff8bf13bc7740f50e80000000083c404893d0000000068fcff0100e80000000083c4043bc7a3000000000f84d000000083fe030f87c7000000ff24b500000000b00aeb10b00bb106b201eb0cb00bb106eb04b00bb10532d20fbec00fbec90fbed25355897c241489442418894c241c895424208b4c24188bef33c0d3e5c1e7058bd789442410895424248b4c241c8bf80bc233f6c1e0058bd8d3e781e3ffff00008b4c24208bc6d3e08b0d000000008bd681e2ffff00000bd30bc70bc54683fe20668904517cda8b4424104083f820894424107d068b542424ebaf8b5424148d7a018bc783f820894424147c8681e601ffffff5d83ce015b8bc65f5e83c418c35f24005e83c418c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D14C@@3IA",
+   "sym_key": "DataGlobal_B1D14C"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D14C@@3IA",
+   "sym_key": "DataGlobal_B1D14C"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D14C@@3IA",
+   "sym_key": "DataGlobal_B1D14C"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "$L1905",
+   "sym_key": "$L1905"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D14C@@3IA",
+   "sym_key": "DataGlobal_B1D14C"
+  }
+ ]
+}
