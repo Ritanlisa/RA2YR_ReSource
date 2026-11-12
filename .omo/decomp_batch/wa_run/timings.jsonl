@@ -51,3 +51,4 @@
 {"part": 50, "n": 20, "seconds": 25.6, "ok": true, "verdicts": {"MATCH": 14, "MISMATCH": 6}}
 {"part": 51, "n": 20, "seconds": 20.2, "ok": true, "verdicts": {"MISMATCH": 11, "MATCH": 9}}
 {"part": 52, "n": 20, "seconds": 21.2, "ok": true, "verdicts": {"MATCH": 11, "MISMATCH": 9}}
+{"part": 53, "n": 20, "seconds": 25.5, "ok": true, "verdicts": {"MATCH": 12, "MISMATCH": 8}}
