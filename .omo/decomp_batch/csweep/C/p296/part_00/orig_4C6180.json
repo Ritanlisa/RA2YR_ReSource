@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C6180",
+ "name": "Scenario::CopyLocalScenarioData",
+ "size": 130,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C6180",
+ "bytes_hex": "568bf133c933c08b1530b2a80083c029413d020800008a9410871c0000885431ff7ce4a14c3da80083c024508b08ff51188946348b0d30b2a8008b91e81100008b81f011000083faff74128b0d84eda8002bca3bc87d042bc1eb0233c08946388b154c3da8008b828401000089463c8b0d30b2a800668b91a0350000668956405ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

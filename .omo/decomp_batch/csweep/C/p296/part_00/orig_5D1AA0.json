@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D1AA0",
+ "name": "MSEngine::Construct",
+ "size": 129,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D1AA0",
+ "bytes_hex": "538bd956578d4b0833c0b2018d73188d7b3089410489410888510c88410dc70170d97e0089460489460888560c88460dc70604ec7e00c746140a00000089461089470489470888570c88470dc707e4eb7e00c747140a0000008947108b11506a14c703d4eb7e00894304ff52088b068bceff500c8b178bcfff520c5f8bc35e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

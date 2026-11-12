@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_405B50@@YIPAIHD@Z",
+ "sym_key": "Unnamed::sub_405B50",
+ "size": 137,
+ "link_base": 0,
+ "bytes_hex": "515356578bf98b0d0000000033f685c98ada746eba01000000e8000000008bf085f6745ef686a400000015740f39bea000000076075f5e33c05b59c38b4c240ce800000000a1000000008986940000008b0d00000000f6c301898e9c00000089bea00000007411c786a8000000ffffffff8bc65f5e5b59c3c786a8000000000000008bc65f5e5b59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E29C@@3IA",
+   "sym_key": "DataGlobal_87E29C"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?AudioQueue__FindBestChannel@@YIHHH@Z",
+   "sym_key": "AudioQueue__FindBestChannel"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Stop@Voice@@QAEPAXXZ",
+   "sym_key": "Voice::Stop"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Score@@3IA",
+   "sym_key": "g_MixerChannel_Score"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?g_MixerState@@3IA",
+   "sym_key": "g_MixerState"
+  }
+ ]
+}

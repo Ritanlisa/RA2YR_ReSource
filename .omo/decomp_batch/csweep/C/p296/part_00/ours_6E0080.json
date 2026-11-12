@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_6E0080@ObjectClass@@QAEDHHHH@Z",
+ "sym_key": "ObjectClass::sub_6E0080",
+ "size": 135,
+ "link_base": 0,
+ "bytes_hex": "518b414453578d4c240850518b0d00000000e8000000008b18a10000000033ff895c240885c077085fb0015b59c21000558beb56c1fd108b15000000008b34ba8a869000000084c074298b068d4c24105156ff90b8010000663918751633d2668b50020fbfc53bd075098b0e56ff91f8000000a100000000473bf872ba5e5d5fb0015b59c21000",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_GameCleanupState@@3IA",
+   "sym_key": "g_GameCleanupState"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8020C@@3IA",
+   "sym_key": "DataGlobal_A8020C"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_GameCleanupState@@3IA",
+   "sym_key": "g_GameCleanupState"
+  }
+ ]
+}

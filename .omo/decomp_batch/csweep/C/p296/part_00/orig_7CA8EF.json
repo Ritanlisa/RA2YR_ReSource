@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CA8EF",
+ "name": "___RTCastToVoid",
+ "size": 130,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CA8EF",
+ "bytes_hex": "558bec6aff68c0957f0068d4c17c0064a100000000506489250000000083ec185356578965e8837d0800751133c08b4df064890d000000005f5e5bc9c38365fc00ff7508e81403000059834dfcffebde8b45ec8b008b0033c93d050000c00f94c18bc1c38b65e86898957f008d4ddce80e0000006838f080008d45dc50e8f3850000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

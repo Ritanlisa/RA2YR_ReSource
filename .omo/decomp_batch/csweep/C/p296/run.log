@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p296\part_00
+=== convert (20 addrs) ===
+[conv] 0x609aa0 sub_609AA0 -> _addr_60
+[conv] 0x5d1aa0 MSEngine::Construct -> MSEngine
+[conv] 0x510ed0 BuildingType::FindOwnerHouse -> BuildingType
+[conv] 0x53ff10 IPXGlobalConnClass::ConnectToHost -> IPXGlobalConnClass
+[conv] 0x731130 ObjectClass::sub_731130 -> ObjectClass
+[conv] 0x4c6180 Scenario::CopyLocalScenarioData -> Scenario
+[conv] 0x6ca6a0 sub_6CA6A0 -> _addr_6C
+[conv] 0x7ca8ef ___RTCastToVoid -> _addr_7C
+[conv] 0x6e0080 ObjectClass::sub_6E0080 -> ObjectClass
+[conv] 0x488760 ColorListClass::sub_488760 -> ColorListClass
+[conv] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> ObjectClass
+[conv] 0x6e5610 TagClass::CheckEvent -> TagClass
+[conv] 0x405b50 sub_405B50 -> _addr_40
+[conv] 0x405fd0 AudioFile::Stop -> AudioFile
+[conv] 0x513c20 LocomotionClass::ProcessData -> LocomotionClass
+[conv] 0x6345a0 ObjectClass::Render_Render_6345A0 -> ObjectClass
+[conv] 0x5e8b60 Network::InitPlayerSlots -> Network
+[conv] 0x47a620 sub_47A620 -> _addr_47
+[conv] 0x639da0 UI_Process_639DA0 -> UI_Process
+[conv] 0x434700 ObjectClass::sub_434700 -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_60                 rc=2
+[era] MSEngine                 rc=0
+[era] BuildingType             rc=2
+[era] IPXGlobalConnClass       rc=0
+[era] ObjectClass              rc=2
+[era] Scenario                 rc=0
+[era] _addr_6C                 rc=2
+[era] _addr_7C                 rc=0
+[era] ColorListClass           rc=0
+[era] TagClass                 rc=0
+[era] _addr_40                 rc=0
+[era] AudioFile                rc=2
+[era] LocomotionClass          rc=2
+[era] Network                  rc=0
+[era] _addr_47                 rc=0
+[era] UI_Process               rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d1aa0   MISMATCH         MSEngine::Construct
+[diff] 0x53ff10   MISMATCH         IPXGlobalConnClass::ConnectToHost
+[diff] 0x731130   MISMATCH         ObjectClass::sub_731130
+[diff] 0x6e0080   MISMATCH         ObjectClass::sub_6E0080
+[diff] 0x6345a0   MISMATCH         ObjectClass::Render_Render_6345A0
+[diff] 0x4c6180   MISMATCH         Scenario::CopyLocalScenarioData
+[diff] 0x7ca8ef   MISMATCH         ___RTCastToVoid
+[diff] 0x488760   MISMATCH         ColorListClass::sub_488760
+[diff] 0x6e5610   MISMATCH         TagClass::CheckEvent
+[diff] 0x405b50   MISMATCH         sub_405B50
+[diff] 0x5e8b60   MISMATCH         Network::InitPlayerSlots
+[diff] 0x47a620   MISMATCH         sub_47A620
+[diff] 0x639da0   MISMATCH         UI_Process_639DA0
+[ledger] 0x609aa0 sub_609AA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1aa0 MSEngine::Construct -> NG (attempt 1)
+[ledger] 0x510ed0 BuildingType::FindOwnerHouse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53ff10 IPXGlobalConnClass::ConnectToHost -> NG (attempt 1)
+[ledger] 0x731130 ObjectClass::sub_731130 -> NG (attempt 1)
+[ledger] 0x4c6180 Scenario::CopyLocalScenarioData -> NG (attempt 1)
+[ledger] 0x6ca6a0 sub_6CA6A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ca8ef ___RTCastToVoid -> NG (attempt 1)
+[ledger] 0x6e0080 ObjectClass::sub_6E0080 -> NG (attempt 1)
+[ledger] 0x488760 ColorListClass::sub_488760 -> NG (attempt 1)
+[ledger] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e5610 TagClass::CheckEvent -> NG (attempt 1)
+[ledger] 0x405b50 sub_405B50 -> NG (attempt 1)
+[ledger] 0x405fd0 AudioFile::Stop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513c20 LocomotionClass::ProcessData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6345a0 ObjectClass::Render_Render_6345A0 -> NG (attempt 1)
+[ledger] 0x5e8b60 Network::InitPlayerSlots -> NG (attempt 1)
+[ledger] 0x47a620 sub_47A620 -> NG (attempt 1)
+[ledger] 0x639da0 UI_Process_639DA0 -> NG (attempt 1)
+[ledger] 0x434700 ObjectClass::sub_434700 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "regalloc": 5,
+  "signedness": 1,
+  "branch_polarity": 1,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p296\batch_report.json

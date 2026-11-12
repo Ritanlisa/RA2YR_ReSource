@@ -1,0 +1,15 @@
+{
+ "symbol": "?ConnectToHost@IPXGlobalConnClass@@QAEHPAXPAH1PAG@Z",
+ "sym_key": "IPXGlobalConnClass::ConnectToHost",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "8b49048b413885c074736a00e80000000085c074688b08f6c10275618b500883c90283ea10538b580c890885d27e1d8bca55568be9578b7c24148d7310c1e902f3a58bcd83e103f3a45f5e5d8b4c240c89118b4c2414668b530e5b6689118b40148b4c240c8b1089118b50048951048b4008894108b801000000c2100033c0c21000",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetTileType@Terrain@@QAEHH@Z",
+   "sym_key": "Terrain::GetTileType"
+  }
+ ]
+}

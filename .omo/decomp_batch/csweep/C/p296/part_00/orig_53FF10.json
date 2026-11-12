@@ -1,0 +1,11 @@
+{
+ "addr": "0x53FF10",
+ "name": "IPXGlobalConnClass::ConnectToHost",
+ "size": 130,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53FF10",
+ "bytes_hex": "8b49048b413885c074736a00e8bfbaf4ff85c074688b08f6c10275618b500883c90283ea10538b580c890885d27e1d8bca55568be9578b7c24148d7310c1e902f3a58bcd83e103f3a45f5e5d8b4c240c89118b4c2414668b530e5b6689118b50148b44240c8b0a89088b4a048948048b5208895008b801000000c2100033c0c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

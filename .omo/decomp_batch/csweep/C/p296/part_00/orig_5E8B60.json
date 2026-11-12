@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E8B60",
+ "name": "Network::InitPlayerSlots",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E8B60",
+ "bytes_hex": "833d38b2a800047520e8d24d190084c07410e8f94d190084c07507ba02000000eb0cba06000000eb05ba0800000085d2577e0ea19c11ac008bcabf90daa800f3ab83fa087d15a1a011ac00b9080000008d3c9590daa8002bcaf3abb950b2a800c7058cdaa800ffffffffe871290b0066c705440dac00000066c705940bac0000005fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

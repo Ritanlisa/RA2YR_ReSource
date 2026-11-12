@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_731130@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::sub_731130",
+ "size": 142,
+ "link_base": 0,
+ "bytes_hex": "510fbe05a4000000535556578d78ff8be985ff7c718b5c24100fbe05980000008b34b885f674528a868100000084c07548a1000000008b8e1c02000085c07410e80000000033c325ff00000033d8eb0833db8a99ed01000084db741d8b86140200008d55ff3bc28a8683000000750684c0740beb0484c075054f780aeb9b5f5e5d32c05b59c35f5e5db0015b59c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?UI_Process_639DA0@@YAHXZ",
+ "sym_key": "Unnamed::UI_Process_639DA0",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "a10000000055565733ff8be885c07f075f5e83c8ff5dc3a1000000008b34b885f67440f6461401743a8b0e56ff91bc04000084c07407473bfd7dd5ebda8b1656ff522c83f80275065f5e33c05dc38b0656ff502c33c983f8060f95c1415f5e8bc15dc35f5eb8020000005dc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_ObjectClass_CurrentCount@@3IA",
+   "sym_key": "g_ObjectClass_CurrentCount"
+  }
+ ]
+}

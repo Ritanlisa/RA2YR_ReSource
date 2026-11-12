@@ -1,0 +1,45 @@
+{
+ "symbol": "?CopyLocalScenarioData@Scenario@@QAEHXZ",
+ "sym_key": "Scenario::CopyLocalScenarioData",
+ "size": 136,
+ "link_base": 0,
+ "bytes_hex": "568bf133c08d4eff8b150000000083c029413d020800008a9402d780020088117ce6a10000000083c024500fbe08ff511889068b0d000000008b81e09201008b89e892010083f8ff74190fbe15a0010000578bfa2bf83bf95f7c0433c9eb042bc203c8890e8b15000000000fbe828401000089068b0d00000000660fb69188b80400668956405ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  }
+ ]
+}

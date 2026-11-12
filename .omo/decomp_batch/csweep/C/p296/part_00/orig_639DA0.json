@@ -1,0 +1,11 @@
+{
+ "addr": "0x639DA0",
+ "name": "UI_Process_639DA0",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x639DA0",
+ "bytes_hex": "51538b1dc8eca80055565783cdff33ff85db7e67a1bceca8008b34b885f674508a4e1480e101884c241374448b168bceff92bc04000084c07407473bfb7d3cebd385f6742b8b068bceff502c83f80275085f5e5d33c05b59c38b168bceff522c83f806750b5f5e5db8010000005b59c35f5e5db8020000005b59c35f8bc55e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
