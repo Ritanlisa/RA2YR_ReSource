@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_77CA00@@YAHXZ",
+ "sym_key": "Unnamed::sub_77CA00",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "6800000000e8000000006800000000e80000000083c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WOL_AuthObject@@3PBDB",
+   "sym_key": "g_WOL_AuthObject"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?unknown_libname_40@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_40"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

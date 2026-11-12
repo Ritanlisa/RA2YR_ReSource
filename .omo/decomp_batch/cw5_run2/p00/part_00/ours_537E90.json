@@ -1,0 +1,27 @@
+{
+ "symbol": "?performAction_194@CursorPositionCommandClass@@QAEPAGXZ",
+ "sym_key": "CursorPositionCommandClass::performAction_194",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "33c06827200000a00000000033d250b900000000e800000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Init_CPP@@3EA",
+   "sym_key": "g_Str_File_Init_CPP"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_827AE8@@3PADA",
+   "sym_key": "DataGlobal_827AE8"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  }
+ ]
+}

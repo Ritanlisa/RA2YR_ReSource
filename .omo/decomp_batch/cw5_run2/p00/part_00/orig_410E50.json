@@ -1,0 +1,11 @@
+{
+ "addr": "0x410E50",
+ "name": "StreamObj::Release",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x410E50",
+ "bytes_hex": "568bf18b4e1485c974068b016a01ff10c74614000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

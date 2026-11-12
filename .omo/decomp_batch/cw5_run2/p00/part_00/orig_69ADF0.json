@@ -1,0 +1,11 @@
+{
+ "addr": "0x69ADF0",
+ "name": "IsRandMap::Sed",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69ADF0",
+ "bytes_hex": "83c1586830bc820051e822df120083c408f7d81bc040c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
