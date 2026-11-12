@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x54eb20 _DynamicVectorClass_PAUKamikazeControl::FindItem -> _DynamicVectorClass_PAUKamikazeControl
+[conv] 0x551450 _VectorClass_PAVLaserDrawClass::GetSize -> _VectorClass_PAVLaserDrawClass
+[conv] 0x551560 _DynamicVectorClass_PAVLaserDrawClass::FindItemIndex -> _DynamicVectorClass_PAVLaserDrawClass
+[conv] 0x555080 LightSourceClass::ddtor -> LightSourceClass
+[conv] 0x5552c0 _VectorClass_PAVLightSourceClass::Add -> _VectorClass_PAVLightSourceClass
+[conv] 0x5553e0 _VectorClass_PAVLightSourceClass::GetSize -> _VectorClass_PAVLightSourceClass
+[conv] 0x5554f0 _DynamicVectorClass_PAVLightSourceClass::FindItemIndex -> _DynamicVectorClass_PAVLightSourceClass
+[conv] 0x555520 _VectorClass_PAVPendingCellClass_LightSourceClass::Add -> _VectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x555750 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::FindItemIndex_0 -> _DynamicVectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x556f10 _VectorClass_PAVLineTrail::Add -> _VectorClass_PAVLineTrail
+[conv] 0x557030 _VectorClass_PAVLineTrail::GetSize -> _VectorClass_PAVLineTrail
+[conv] 0x557140 _DynamicVectorClass_PAVLineTrail::FindItemIndex -> _DynamicVectorClass_PAVLineTrail
+[conv] 0x558240 _VectorClass_PBG::Get -> _VectorClass_PBG
+[conv] 0x558360 _VectorClass_PBG::GetSize -> _VectorClass_PBG
+[conv] 0x558470 _DynamicVectorClass_PBG::getItemCount -> _DynamicVectorClass_PBG
+[conv] 0x55a1b0 _VectorClass_PAVFileEntryClass::vt01 -> _VectorClass_PAVFileEntryClass
+[conv] 0x55a2d0 _VectorClass_PAVFileEntryClass::FindItem -> _VectorClass_PAVFileEntryClass
+[conv] 0x55a6c0 LocomotionClass::Init -> LocomotionClass
+[conv] 0x55a6f0 LocomotionClass::Construct -> LocomotionClass
+[conv] 0x55abd0 IUnknown::ReturnZeroPos -> IUnknown
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAUKamikazeControl rc=0
+[era] _VectorClass_PAVLaserDrawClass rc=0
+[era] _DynamicVectorClass_PAVLaserDrawClass rc=0
+[era] LightSourceClass         rc=0
+[era] _VectorClass_PAVLightSourceClass rc=0
+[era] _DynamicVectorClass_PAVLightSourceClass rc=0
+[era] _VectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _DynamicVectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _VectorClass_PAVLineTrail rc=0
+[era] _DynamicVectorClass_PAVLineTrail rc=0
+[era] _VectorClass_PBG         rc=0
+[era] _DynamicVectorClass_PBG  rc=0
+[era] _VectorClass_PAVFileEntryClass rc=0
+[era] LocomotionClass          rc=2
+[era] IUnknown                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x54eb20   MISMATCH         _DynamicVectorClass_PAUKamikazeControl::FindItem
+[diff] 0x551450   MISMATCH         _VectorClass_PAVLaserDrawClass::GetSize
+[diff] 0x551560   MISMATCH         _DynamicVectorClass_PAVLaserDrawClass::FindItemIndex
+[diff] 0x555080   MISMATCH         LightSourceClass::ddtor
+[diff] 0x5552c0   MISMATCH         _VectorClass_PAVLightSourceClass::Add
+[diff] 0x5553e0   MISMATCH         _VectorClass_PAVLightSourceClass::GetSize
+[diff] 0x5554f0   MISMATCH         _DynamicVectorClass_PAVLightSourceClass::FindItemIndex
+[diff] 0x555520   MISMATCH         _VectorClass_PAVPendingCellClass_LightSourceClass::Add
+[diff] 0x555750   MISMATCH         _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::FindItemIndex_0
+[diff] 0x556f10   MISMATCH         _VectorClass_PAVLineTrail::Add
+[diff] 0x557030   MISMATCH         _VectorClass_PAVLineTrail::GetSize
+[diff] 0x557140   MISMATCH         _DynamicVectorClass_PAVLineTrail::FindItemIndex
+[diff] 0x558240   MISMATCH         _VectorClass_PBG::Get
+[diff] 0x558360   MISMATCH         _VectorClass_PBG::GetSize
+[diff] 0x558470   MISMATCH         _DynamicVectorClass_PBG::getItemCount
+[diff] 0x55a1b0   MISMATCH         _VectorClass_PAVFileEntryClass::vt01
+[diff] 0x55a2d0   MISMATCH         _VectorClass_PAVFileEntryClass::FindItem
+[diff] 0x55abd0   MISMATCH         IUnknown::ReturnZeroPos
+[ledger] 0x54eb20 _DynamicVectorClass_PAUKamikazeControl::FindItem -> NG (attempt 2)
+[ledger] 0x551450 _VectorClass_PAVLaserDrawClass::GetSize -> NG (attempt 2)
+[ledger] 0x551560 _DynamicVectorClass_PAVLaserDrawClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x555080 LightSourceClass::ddtor -> NG (attempt 2)
+[ledger] 0x5552c0 _VectorClass_PAVLightSourceClass::Add -> NG (attempt 2)
+[ledger] 0x5553e0 _VectorClass_PAVLightSourceClass::GetSize -> NG (attempt 2)
+[ledger] 0x5554f0 _DynamicVectorClass_PAVLightSourceClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x555520 _VectorClass_PAVPendingCellClass_LightSourceClass::Add -> NG (attempt 2)
+[ledger] 0x555750 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x556f10 _VectorClass_PAVLineTrail::Add -> NG (attempt 2)
+[ledger] 0x557030 _VectorClass_PAVLineTrail::GetSize -> NG (attempt 2)
+[ledger] 0x557140 _DynamicVectorClass_PAVLineTrail::FindItemIndex -> NG (attempt 2)
+[ledger] 0x558240 _VectorClass_PBG::Get -> NG (attempt 2)
+[ledger] 0x558360 _VectorClass_PBG::GetSize -> NG (attempt 2)
+[ledger] 0x558470 _DynamicVectorClass_PBG::getItemCount -> NG (attempt 2)
+[ledger] 0x55a1b0 _VectorClass_PAVFileEntryClass::vt01 -> NG (attempt 2)
+[ledger] 0x55a2d0 _VectorClass_PAVFileEntryClass::FindItem -> NG (attempt 2)
+[ledger] 0x55a6c0 LocomotionClass::Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55a6f0 LocomotionClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55abd0 IUnknown::ReturnZeroPos -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "codegen_shape": 13,
+  "branch_polarity": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p21\batch_report.json

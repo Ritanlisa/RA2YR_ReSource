@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@LightSourceClass@@QAGHPAI@Z",
+ "sym_key": "LightSourceClass::ddtor",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c2080033c9c700f0489c6fc740040712d211c74008817400608a0d0000000089480c33c0c20800",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?unk_7E98FC@@3EA",
+   "sym_key": "unk_7E98FC"
+  }
+ ]
+}

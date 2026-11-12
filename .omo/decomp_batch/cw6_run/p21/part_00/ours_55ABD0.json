@@ -1,0 +1,8 @@
+{
+ "symbol": "?ReturnZeroPos@IUnknown@@QAGPAIPAI@Z",
+ "sym_key": "IUnknown::ReturnZeroPos",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b442408c70000000000c7400400000000c20800",
+ "relocs": []
+}
