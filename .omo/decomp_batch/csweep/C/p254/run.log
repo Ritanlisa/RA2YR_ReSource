@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p254\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b25e0 WinsockInterfaceClass::GetAddress -> WinsockInterfaceClass
+[conv] 0x409360 sub_409360 -> _addr_40
+[conv] 0x6a7d20 HouseClass::UpdateAllProductionTabs -> HouseClass
+[conv] 0x40d1b0 SmallFunc_40D1B0 -> SmallFunc
+[conv] 0x7a5240 CChatEventSink::GetTypeInfoCount -> CChatEventSink
+[conv] 0x407fb0 AudioFrame::ProcessAudioFrame -> AudioFrame
+[conv] 0x7bbff0 sub_7BBFF0 -> _addr_7B
+[conv] 0x5565a0 LinkClass::Destruct -> LinkClass
+[conv] 0x6616b0 Straw::sub_6616B0 -> Straw
+[conv] 0x749100 HouseClass::NetworkConvert -> HouseClass
+[conv] 0x7b53b0 ObjectClass::sub_7B53B0 -> ObjectClass
+[conv] 0x413a70 DynamicVector::AddItem -> DynamicVector
+[conv] 0x42d830 ObjectClass::sub_42D830 -> ObjectClass
+[conv] 0x477ec0 DynamicVector::Add_Alt -> DynamicVector
+[conv] 0x512f20 InfantryTypeVector::Add -> InfantryTypeVector
+[conv] 0x5132f0 DynamicVectorClass::PushBack -> DynamicVectorClass
+[conv] 0x5136c0 HouseTypeClass::readPowerPlants -> HouseTypeClass
+[conv] 0x5253b0 DynamicVector::Add_Alt4 -> DynamicVector
+[conv] 0x538780 DynamicVector::Add_Alt2 -> DynamicVector
+[conv] 0x589c50 TileVector::PushBack -> TileVector
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WinsockInterfaceClass    rc=0
+[era] _addr_40                 rc=2
+[era] HouseClass               rc=0
+[era] SmallFunc                rc=0
+[era] CChatEventSink           rc=2
+[era] AudioFrame               rc=0
+[era] _addr_7B                 rc=0
+[era] LinkClass                rc=2
+[era] Straw                    rc=0
+[era] ObjectClass              rc=0
+[era] DynamicVector            rc=0
+[era] InfantryTypeVector       rc=0
+[era] DynamicVectorClass       rc=2
+[era] HouseTypeClass           rc=0
+[era] TileVector               rc=0
+=== diffasm byte-compare ===
+[diff] 0x7b25e0   MISMATCH         WinsockInterfaceClass::GetAddress
+[diff] 0x6a7d20   MISMATCH         HouseClass::UpdateAllProductionTabs
+[diff] 0x749100   MATCH            HouseClass::NetworkConvert
+[diff] 0x40d1b0   MISMATCH         SmallFunc_40D1B0
+[diff] 0x407fb0   MISMATCH         AudioFrame::ProcessAudioFrame
+[diff] 0x7bbff0   MISMATCH         sub_7BBFF0
+[diff] 0x6616b0   MISMATCH         Straw::sub_6616B0
+[diff] 0x7b53b0   MISMATCH         ObjectClass::sub_7B53B0
+[diff] 0x42d830   MISMATCH         ObjectClass::sub_42D830
+[diff] 0x413a70   MISMATCH         DynamicVector::AddItem
+[diff] 0x477ec0   MISMATCH         DynamicVector::Add_Alt
+[diff] 0x5253b0   MISMATCH         DynamicVector::Add_Alt4
+[diff] 0x538780   MISMATCH         DynamicVector::Add_Alt2
+[diff] 0x512f20   MISMATCH         InfantryTypeVector::Add
+[diff] 0x5136c0   MISMATCH         HouseTypeClass::readPowerPlants
+[diff] 0x589c50   MISMATCH         TileVector::PushBack
+[ledger] 0x7b25e0 WinsockInterfaceClass::GetAddress -> NG (attempt 1)
+[ledger] 0x409360 sub_409360 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a7d20 HouseClass::UpdateAllProductionTabs -> NG (attempt 1)
+[ledger] 0x40d1b0 SmallFunc_40D1B0 -> NG (attempt 1)
+[ledger] 0x7a5240 CChatEventSink::GetTypeInfoCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x407fb0 AudioFrame::ProcessAudioFrame -> NG (attempt 1)
+[ledger] 0x7bbff0 sub_7BBFF0 -> NG (attempt 1)
+[ledger] 0x5565a0 LinkClass::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6616b0 Straw::sub_6616B0 -> NG (attempt 1)
+[ledger] 0x749100 HouseClass::NetworkConvert -> OK (attempt 1)
+[ledger] 0x7b53b0 ObjectClass::sub_7B53B0 -> NG (attempt 1)
+[ledger] 0x413a70 DynamicVector::AddItem -> NG (attempt 1)
+[ledger] 0x42d830 ObjectClass::sub_42D830 -> NG (attempt 1)
+[ledger] 0x477ec0 DynamicVector::Add_Alt -> NG (attempt 1)
+[ledger] 0x512f20 InfantryTypeVector::Add -> NG (attempt 1)
+[ledger] 0x5132f0 DynamicVectorClass::PushBack -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5136c0 HouseTypeClass::readPowerPlants -> NG (attempt 1)
+[ledger] 0x5253b0 DynamicVector::Add_Alt4 -> NG (attempt 1)
+[ledger] 0x538780 DynamicVector::Add_Alt2 -> NG (attempt 1)
+[ledger] 0x589c50 TileVector::PushBack -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 4,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "codegen_shape": 3,
+  "frame_sched": 1,
+  "const_fold": 1,
+  "branch_order": 6
+ },
+ "match_rate_of_decided_pct": 6.2,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p254\batch_report.json

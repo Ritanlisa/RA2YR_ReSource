@@ -1,0 +1,57 @@
+{
+ "symbol": "?SmallFunc_40D1B0@@YAXXZ",
+ "sym_key": "Unnamed::SmallFunc_40D1B0",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "51538b5c24045633c057a2f8010000a300000000be50000000bf0400000081ee940f000068000000006a4b6a348bcee80000000053e80000000083c4044f75deb9f8010000e8000000005f5e5b59c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_884D00@@3IA",
+   "sym_key": "DataGlobal_884D00"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_884B84@@3IA",
+   "sym_key": "DataGlobal_884B84"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?nullsub_56@@YAHPBX0@Z",
+   "sym_key": "nullsub_56"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?ForEachReverse@Array@@QAEHHHPAX@Z",
+   "sym_key": "Array::ForEachReverse"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?nullsub_57@@YAHPAX@Z",
+   "sym_key": "nullsub_57"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?Destruct@RadarClass@@QAEHXZ",
+   "sym_key": "RadarClass::Destruct"
+  }
+ ]
+}

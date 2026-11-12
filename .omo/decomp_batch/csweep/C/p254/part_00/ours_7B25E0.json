@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetAddress@WinsockInterfaceClass@@QAGHXZ",
+ "sym_key": "WinsockInterfaceClass::GetAddress",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "518d442400568b74240c8d4c240c5051680710000068ffff00005689742420c744241804000000e8000000008d44240cc744240c000000008b5424045250680710000068ffff000056e8000000005e59c20400",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?getsockopt@@YGHHHHPAX0@Z",
+   "sym_key": "getsockopt"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?setsockopt@@YGHHHHPAXH@Z",
+   "sym_key": "setsockopt"
+  }
+ ]
+}

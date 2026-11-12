@@ -1,0 +1,39 @@
+{
+ "symbol": "?ProcessAudioFrame@AudioFrame@@QAEHXZ",
+ "sym_key": "AudioFrame::ProcessAudioFrame",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b868000000085c075308d7e1485ff74296868000000e8000000008b0fe8000000008b460ca801740724fe0c0289460c6868000000e8000000008b86800000005f408986800000005ec3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?EnterCriticalSection@@YGXPAX@Z",
+   "sym_key": "EnterCriticalSection"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?DeactivatePlay@AudioChannel@@QAEHXZ",
+   "sym_key": "AudioChannel::DeactivatePlay"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?LeaveCriticalSection@@YGXPAX@Z",
+   "sym_key": "LeaveCriticalSection"
+  }
+ ]
+}

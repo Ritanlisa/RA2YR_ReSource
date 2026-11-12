@@ -1,0 +1,15 @@
+{
+ "symbol": "?NetworkConvert@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::NetworkConvert",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "53578bf98b870408000085c075358b870008000033db85c07e29568bf78b0650e80000000089068b87000800004383c6043bd87ce8c78704080000010000005e5f5bc3c78704080000010000005f5bc3",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?htonl@@YGKH@Z",
+   "sym_key": "htonl"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Add@InfantryTypeVector@@QAEDPAH@Z",
+ "sym_key": "InfantryTypeVector::Add",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e088b46103bc17c2e8a460d84c0750a85c9740632c05ec204008b461485c07e108b1603c16a00508bceff520884c0750632c05ec204008b46108b56048d4801894e108b4c24085e8b09890c82b001c20400",
+ "relocs": []
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_7B53B0@ObjectClass@@QAEIPADH@Z",
+ "sym_key": "ObjectClass::sub_7B53B0",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568b742410578bf9568b075053e8000000008b3f83c9ff33c083c40cf2aef7d1498bd1428d42ff3bc6732c8bce552bca8d7c1aff41bd202020208bd18bc5c1e902f3ab8bca83e103f3aa8bc55dc60433005f5e5bc20800c60433005f5e5bc20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  }
+ ]
+}

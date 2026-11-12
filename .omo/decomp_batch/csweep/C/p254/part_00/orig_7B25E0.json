@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B25E0",
+ "name": "IPXInterfaceClass::GetAddress",
+ "size": 79,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B25E0",
+ "bytes_hex": "518d442400568b74240c8d4c240c5051680710000068ffff000056c744241804000000e8846301008b5424048d44240c5250680710000068ffff000056c744242000000000e87a6301005e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

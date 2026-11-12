@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_6616B0@Straw@@QAEPAV1@XZ",
+ "sym_key": "Straw::sub_6616B0",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "535556578bf133ffbd20000000897e04897e08893e897e0c897e108d5e14575753e80000000083c40c83c3084d75ef897e0c897e10893eb94000000033c08d7e14f3ab8b065f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?sub_65C890@@YAPAIPAXHH@Z",
+   "sym_key": "sub_65C890"
+  }
+ ]
+}

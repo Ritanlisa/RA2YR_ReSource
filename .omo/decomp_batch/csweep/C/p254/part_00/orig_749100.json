@@ -1,0 +1,11 @@
+{
+ "addr": "0x749100",
+ "name": "HouseClass::NetworkConvert",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x749100",
+ "bytes_hex": "53578bf98b870408000085c075358b870008000033db85c07e29568bf78b0650e83df8070089068b87000800004383c6043bd87ce8c78704080000010000005e5f5bc3c78704080000010000005f5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

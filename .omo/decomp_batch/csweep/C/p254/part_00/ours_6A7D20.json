@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdateAllProductionTabs@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::UpdateAllProductionTabs",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "83ec08538bd95556578db38015000033ffc644241300897c24148d6ec48bcde8000000008ac884c97419db442414d89b9c530000dfe0f6c4407408c60601c6442413014781c6940f000081c5940f000083ff04897c24147cc48a44241384c0741a8b036a0053c783a853000001000000ff50385f5e5d5b83c408c35f5e5d8ac15b83c408c3",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?UpdateProduction@SidebarClass@@QAEDXZ",
+   "sym_key": "SidebarClass::UpdateProduction"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Add_Alt@DynamicVector@@QAEDPAH@Z",
+ "sym_key": "DynamicVector::Add_Alt",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e088b46103bc17c2585c0750485c975178b461485c07e108b1603c16a00508bceff520884c0750624005ec204008b46108b56048d4801894e108b4c24085e8b09890c8224010c01c20400",
+ "relocs": []
+}

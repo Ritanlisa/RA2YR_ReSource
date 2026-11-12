@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_7BBFF0@@YIDHHPAHHPAE00@Z",
+ "sym_key": "Unnamed::sub_7BBFF0",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "83ec205355568bf18b4c2434578b7c24348bda8d54241c518b075257ff50788be88b0656ff50788b4c24448b542440518b4c2440525155578d54242453528bd08bcee8000000005f5e5d5b83c420c21400",
+ "relocs": [
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?CalcSurfaceBlitRects@@YIDHHPAXH00000@Z",
+   "sym_key": "CalcSurfaceBlitRects"
+  }
+ ]
+}

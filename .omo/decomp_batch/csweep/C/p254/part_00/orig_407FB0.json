@@ -1,0 +1,11 @@
+{
+ "addr": "0x407FB0",
+ "name": "AudioFrame::ProcessAudioFrame",
+ "size": 79,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407FB0",
+ "bytes_hex": "568bf18b868000000085c075338b461485c0742c68f8e78700ff15e8117e008b4e14e829a6ffff8b460ca801740724fe0c0289460c68f8e78700ff15ec117e008b8680000000408986800000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
