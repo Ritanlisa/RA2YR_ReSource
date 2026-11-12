@@ -1,0 +1,15 @@
+{
+ "symbol": "?Render_Load_759EB0@TechnoClass@@QAE_NHIIHH@Z",
+ "sym_key": "TechnoClass::Render_Load_759EB0",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "8b442408565783f8ff8bf875088bb920050000eb068981200500008b44241483f8ff8bf075088bb124050000eb068981240500008b54241883faff750233d28b44241c83f8ff750233c08b890002000050528b5424145657e80000000033c983f8ff0f94c15f8ac15ec21400",
+ "relocs": [
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Audio_Process_7C3270@@YIHHHIIHH@Z",
+   "sym_key": "Audio_Process_7C3270"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Init@VoxelPalette@@QAEPAV1@HH@Z",
+ "sym_key": "VoxelPalette::Init",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "8b4424045685c08bf1740c894610c7461800000000eb176800030000e80000000083c404894610c74618010000008b44240c85c074108946148b06c7461c000000005ec208006800800000e80000000083c4048946148b06c7461c010000005ec20800",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

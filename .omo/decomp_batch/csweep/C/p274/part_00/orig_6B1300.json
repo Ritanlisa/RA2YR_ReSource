@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B1300",
+ "name": "SlaveManagerClass::SaveManager",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B1300",
+ "bytes_hex": "8b44240c538b5c2408568b74241057505653e809f0d5ff85c07c428b4b488b166a008d44241c6a045056894c2428ff521085c07c288b4c241833ff85c97e1e8b533c8b0e6a006a148b04ba5056ff511085c07c098b4c2418473bf97ce25f5e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

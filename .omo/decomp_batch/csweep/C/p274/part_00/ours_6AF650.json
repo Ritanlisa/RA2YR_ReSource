@@ -1,0 +1,15 @@
+{
+ "symbol": "?CreateSlave@SlaveManagerClass@@QAEPAGPAPAH@Z",
+ "sym_key": "SlaveManagerClass::CreateSlave",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "56578bf98b47288b308b4724508b08ff513c8b57285052ff968c0000008b74240c85c0890674318b0850ff91d40000008b168b47248b4c240c8982dc020000c7460400000000a1a0010000894e0c894608c74610000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

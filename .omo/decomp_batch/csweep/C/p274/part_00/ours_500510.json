@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetBuildLimit@HouseClass@@QAEHHDH@Z",
+ "sym_key": "HouseClass::GetBuildLimit",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "8b4424044883f827774233d28a9000000000ff2495000000008a44240884c074308b81b8530000c20c008b81ac530000c20c00837c240c0575178b81cc530000c20c008b81b0530000c20c0033c0c20c008b442408c20c00",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "$L1876",
+   "sym_key": "$L1876"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "$L1877",
+   "sym_key": "$L1877"
+  }
+ ]
+}

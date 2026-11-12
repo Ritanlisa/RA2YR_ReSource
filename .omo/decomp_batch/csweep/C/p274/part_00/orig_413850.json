@@ -1,0 +1,11 @@
+{
+ "addr": "0x413850",
+ "name": "SaveGame::SaveIteratedData",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x413850",
+ "bytes_hex": "5355568b7424105733ed8d79048b470c8b0e6a008d5424186a04525689442424ff511085c07c358b44241433db85c07e1d8b0f8b066a006a048d14995256ff501085c07c178b442414433bd87ce34583c71881fd900100007cb333c05f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

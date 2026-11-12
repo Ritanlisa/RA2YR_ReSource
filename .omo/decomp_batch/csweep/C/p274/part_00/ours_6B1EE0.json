@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_6B1EE0@ObjectClass@@QAE_JH@Z",
+ "sym_key": "ObjectClass::sub_6B1EE0",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "83ec0c578bf98a472e84c0740b33c08a471489442404eb0933c98a4f18894c240433d2538a5730558954241056db442414dd5c24148b5c24188b6c24145355e8000000008b74241c83c40833c625ff00000033f083fe047f05be04000000535589774ce8000000008bc825ff000000c1f91066894c24208b4c241c8b5c242080e100990bc18b4c241883c4082bce0bd33bc15e5d5b7c0a894f505f83c40cc204008947505f83c40cc20400",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

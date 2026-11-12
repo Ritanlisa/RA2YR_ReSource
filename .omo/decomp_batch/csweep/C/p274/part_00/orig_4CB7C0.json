@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CB7C0",
+ "name": "BuildResultPacket",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CB7C0",
+ "bytes_hex": "8b4424045356578bd96a045053e8fed92f008b74242083c9ff8bfe33c066c743040700f2aef7d18d016689430625ffff000050e81fd62f0033c98bf8668b4b068943088bd183c410c1e902f3a58bca8bc383e103f3a45fc7430c000000005e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

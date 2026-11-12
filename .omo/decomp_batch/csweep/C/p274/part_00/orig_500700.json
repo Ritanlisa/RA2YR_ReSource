@@ -1,0 +1,11 @@
+{
+ "addr": "0x500700",
+ "name": "SidebarClass::getTypeProductionCount",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x500700",
+ "bytes_hex": "8b4424044883f827775433d28a9078075000ff2495640750008a81d1530000c20c008a44240884c074098a81d3530000c20c008a81d2530000c20c00837c240c0575098a81d8530000c20c008a81d4530000c20c008a81d0530000c20c0032c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

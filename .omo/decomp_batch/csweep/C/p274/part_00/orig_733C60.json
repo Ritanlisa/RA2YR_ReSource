@@ -1,0 +1,11 @@
+{
+ "addr": "0x733C60",
+ "name": "Object_Helper_733C60",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x733C60",
+ "bytes_hex": "56578bf98bf28b07ff908800000083c02485f67449538a108a1e8aca3ad3751e84c974168a50018a5e018aca3ad3750e83c00283c60284c975dc33c0eb051bc083d8ff85c05b75168b078bcfff903c01000084c074085fb8010000005ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

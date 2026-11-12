@@ -7431,6 +7431,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x413850": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+10 lea edi, [ecx + 4]",
+  "name": "SaveGame::SaveIteratedData",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SaveGame::SaveIteratedData",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4138c0": {
   "attempts": 1,
   "first_diff": "+1 mov edx, dword ptr [esp + 0x10]",
@@ -8526,6 +8538,18 @@
   "orig_name": "Coord::Subtract",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x41c2e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Vector::ToFacingMath",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Vector::ToFacingMath",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x41c350": {
@@ -12251,6 +12275,18 @@
   "name": "sub_42E090",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x42e150": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "resolve:proto_this",
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x18]",
+  "name": "ObjectClass::sub_42E150",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "orig_name": "sub_42E150",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x42e1c0": {
   "attempts": 3,
@@ -19966,6 +20002,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x474e40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectTypeClass::loadTypeMember_5474E40",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ObjectTypeClass::loadTypeMember_5474E40",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x474ee0": {
   "attempts": 1,
   "clean": false,
@@ -21206,6 +21254,18 @@
   "orig_name": "sub_47ADC0",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x47b0c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "FileFind::Next",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FileFind::Next",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x47b130": {
@@ -38104,6 +38164,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4cb7c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "ObjectClass::BuildResultPacket",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "BuildResultPacket",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4cb830": {
   "attempts": 1,
   "clean": false,
@@ -50221,6 +50293,30 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "GetHouseTechLevel",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x500510": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 ja 0x50056e",
+  "name": "HouseClass::GetBuildLimit",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "HouseClass::GetBuildLimit",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x500700": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 ja 0x50075e",
+  "name": "SidebarClass::getTypeProductionCount",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "SidebarClass::getTypeProductionCount",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -90807,6 +90903,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x634400": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ScriptAction::GetScreenPos",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ScriptAction::GetScreenPos",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x634510": {
   "attempts": 1,
   "clean": false,
@@ -95359,6 +95467,18 @@
   "name": "sub_659570",
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "status": "NG"
+ },
+ "0x6599c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_6599C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_6599C0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x659ee0": {
   "attempts": 5,
@@ -103297,6 +103417,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x69de00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ShapeButtonClass::SetShape",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ShapeButton::SetShape",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x69de70": {
   "attempts": 1,
   "clean": false,
@@ -105380,6 +105512,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6af650": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0xc",
+  "name": "SlaveManagerClass::CreateSlave",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SlaveManagerClass::CreateSlave",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6b0300": {
   "attempts": 5,
   "clean": false,
@@ -105516,6 +105660,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SlaveManagerClass::ddtor",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6b1300": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 mov ebx, dword ptr [esp + 8]",
+  "name": "SlaveManagerClass::SaveManager",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SlaveManagerClass::SaveManager",
+  "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
  },
@@ -105830,6 +105986,18 @@
   "name": "SliderClass::GetValue",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SliderClass::GetValue",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6b1ee0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ecx",
+  "name": "ObjectClass::sub_6B1EE0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_6B1EE0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -107031,6 +107199,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SpawnManagerClass::ddtor",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6b80b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 mov ebx, dword ptr [esp + 8]",
+  "name": "SpawnManagerClass::SaveState",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SpawnManagerClass::SaveState",
+  "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
  },
@@ -117640,6 +117820,18 @@
   "name": "TaskForceClass::SaveTaskForce",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TaskForceClass::SaveTaskForce",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e86a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+9 push eax",
+  "name": "TaskForceClass::LoadTaskForce",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TaskForceClass::LoadTaskForce",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -128567,6 +128759,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x733c60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 mov eax, dword ptr [edi]",
+  "name": "Object_Helper_733C60",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Object_Helper_733C60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x733cd0": {
   "attempts": 4,
   "clean": false,
@@ -133094,6 +133297,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x758950": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+9 jne 0x758974",
+  "name": "VoxelPalette::Init",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VoxelPalette::Init",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7589c0": {
   "attempts": 1,
   "clean": false,
@@ -133345,6 +133560,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7597a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+28 je 0x7597ca",
+  "name": "TechnoClass::Render_Load_7597A0",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "Render_Load_7597A0",
+  "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x759830": {
   "attempts": 1,
   "clean": true,
@@ -133447,6 +133674,18 @@
   "name": "Render_Load_759EA0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x759eb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+0 push esi",
+  "name": "TechnoClass::Render_Load_759EB0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Render_Load_759EB0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x759f20": {
   "attempts": 1,

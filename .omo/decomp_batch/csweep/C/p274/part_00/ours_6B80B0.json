@@ -1,0 +1,15 @@
+{
+ "symbol": "?SaveState@SpawnManagerClass@@QAGHPAH0@Z",
+ "sym_key": "SpawnManagerClass::SaveState",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "8b44240c53568b742410578b7c2410505657e80000000085c07c428b068b4f486a008d54241c6a045256894c2428ff501085c07c288b4c241833db85c9761e8b4f3c8b066a006a188b14995256ff501085c07c098b4c2418433bd972e25f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXPAH1@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  }
+ ]
+}

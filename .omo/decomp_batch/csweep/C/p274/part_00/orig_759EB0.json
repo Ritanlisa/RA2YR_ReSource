@@ -1,0 +1,11 @@
+{
+ "addr": "0x759EB0",
+ "name": "Render_Load_759EB0",
+ "size": 100,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x759EB0",
+ "bytes_hex": "56578b7c241083ffff75088bb920050000eb0689b9200500008b74241483feff75088bb124050000eb0689b1240500008b54241883faff750233d28b44241c83f8ff750233c08b890002000050528b5424145657e86793060083f8ff5f0f94c05ec21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

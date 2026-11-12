@@ -1,0 +1,11 @@
+{
+ "addr": "0x500510",
+ "name": "HouseClass::GetBuildLimit",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x500510",
+ "bytes_hex": "8b4424044883f827775433d28a9088055000ff2495740550008b81b0530000c20c008a44240884c074098b81b8530000c20c008b81b4530000c20c00837c240c0575098b81cc530000c20c008b81bc530000c20c008b81ac530000c20c0033c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

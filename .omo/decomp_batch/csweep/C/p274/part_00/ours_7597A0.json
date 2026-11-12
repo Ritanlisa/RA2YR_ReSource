@@ -1,0 +1,15 @@
+{
+ "symbol": "?Render_Load_7597A0@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::Render_Load_7597A0",
+ "size": 114,
+ "link_base": 0,
+ "bytes_hex": "568bf1578dbe000200008d9678010000578d4e71e80000000083f8ff74138b86140500005f240089861405000032c05ec38b075f8b4810898e080500008a500c33c988960c050000668b480233d2898e18050000668b50048b861405000089961c05000024010c01898614050000b0015ec3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?RenderAudioVideoFrame@@YIHPBDPAX1@Z",
+   "sym_key": "RenderAudioVideoFrame"
+  }
+ ]
+}

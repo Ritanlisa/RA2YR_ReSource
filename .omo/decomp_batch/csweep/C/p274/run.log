@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p274\part_00
+=== convert (20 addrs) ===
+[conv] 0x6af650 SlaveManagerClass::CreateSlave -> SlaveManagerClass
+[conv] 0x69de00 ShapeButtonClass::SetShape -> ShapeButtonClass
+[conv] 0x500510 HouseClass::GetBuildLimit -> HouseClass
+[conv] 0x500700 SidebarClass::getTypeProductionCount -> SidebarClass
+[conv] 0x474e40 ObjectTypeClass::loadTypeMember_5474E40 -> ObjectTypeClass
+[conv] 0x4cb7c0 ObjectClass::BuildResultPacket -> ObjectClass
+[conv] 0x634400 ScriptAction::GetScreenPos -> ScriptAction
+[conv] 0x6b1ee0 ObjectClass::sub_6B1EE0 -> ObjectClass
+[conv] 0x758950 VoxelPalette::Init -> VoxelPalette
+[conv] 0x413850 SaveGame::SaveIteratedData -> SaveGame
+[conv] 0x733c60 Object_Helper_733C60 -> Object_Helper
+[conv] 0x6e86a0 TaskForceClass::LoadTaskForce -> TaskForceClass
+[conv] 0x41c2e0 Vector::ToFacingMath -> Vector
+[conv] 0x6b1300 SlaveManagerClass::SaveManager -> SlaveManagerClass
+[conv] 0x6b80b0 SpawnManagerClass::SaveState -> SpawnManagerClass
+[conv] 0x6599c0 ObjectClass::sub_6599C0 -> ObjectClass
+[conv] 0x7597a0 TechnoClass::Render_Load_7597A0 -> TechnoClass
+[conv] 0x759eb0 TechnoClass::Render_Load_759EB0 -> TechnoClass
+[conv] 0x47b0c0 FileFind::Next -> FileFind
+[conv] 0x42e150 ObjectClass::sub_42E150 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SlaveManagerClass        rc=0
+[era] ShapeButtonClass         rc=2
+[era] HouseClass               rc=0
+[era] SidebarClass             rc=0
+[era] ObjectTypeClass          rc=2
+[era] ObjectClass              rc=2
+[era] ScriptAction             rc=2
+[era] VoxelPalette             rc=0
+[era] SaveGame                 rc=0
+[era] Object_Helper            rc=0
+[era] TaskForceClass           rc=0
+[era] Vector                   rc=2
+[era] SpawnManagerClass        rc=0
+[era] TechnoClass              rc=0
+[era] FileFind                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6af650   MISMATCH         SlaveManagerClass::CreateSlave
+[diff] 0x6b1300   MISMATCH         SlaveManagerClass::SaveManager
+[diff] 0x500510   MISMATCH         HouseClass::GetBuildLimit
+[diff] 0x500700   MISMATCH         SidebarClass::getTypeProductionCount
+[diff] 0x4cb7c0   MISMATCH         ObjectClass::BuildResultPacket
+[diff] 0x6b1ee0   MISMATCH         ObjectClass::sub_6B1EE0
+[diff] 0x42e150   MISMATCH         ObjectClass::sub_42E150
+[diff] 0x758950   MISMATCH         VoxelPalette::Init
+[diff] 0x413850   MISMATCH         SaveGame::SaveIteratedData
+[diff] 0x733c60   MISMATCH         Object_Helper_733C60
+[diff] 0x6e86a0   MISMATCH         TaskForceClass::LoadTaskForce
+[diff] 0x6b80b0   MISMATCH         SpawnManagerClass::SaveState
+[diff] 0x7597a0   MISMATCH         TechnoClass::Render_Load_7597A0
+[diff] 0x759eb0   MISMATCH         TechnoClass::Render_Load_759EB0
+[ledger] 0x6af650 SlaveManagerClass::CreateSlave -> NG (attempt 1)
+[ledger] 0x69de00 ShapeButtonClass::SetShape -> COMPILE_FAIL (attempt 1)
+[ledger] 0x500510 HouseClass::GetBuildLimit -> NG (attempt 1)
+[ledger] 0x500700 SidebarClass::getTypeProductionCount -> NG (attempt 1)
+[ledger] 0x474e40 ObjectTypeClass::loadTypeMember_5474E40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cb7c0 ObjectClass::BuildResultPacket -> NG (attempt 1)
+[ledger] 0x634400 ScriptAction::GetScreenPos -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1ee0 ObjectClass::sub_6B1EE0 -> NG (attempt 1)
+[ledger] 0x758950 VoxelPalette::Init -> NG (attempt 1)
+[ledger] 0x413850 SaveGame::SaveIteratedData -> NG (attempt 1)
+[ledger] 0x733c60 Object_Helper_733C60 -> NG (attempt 1)
+[ledger] 0x6e86a0 TaskForceClass::LoadTaskForce -> NG (attempt 1)
+[ledger] 0x41c2e0 Vector::ToFacingMath -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1300 SlaveManagerClass::SaveManager -> NG (attempt 1)
+[ledger] 0x6b80b0 SpawnManagerClass::SaveState -> NG (attempt 1)
+[ledger] 0x6599c0 ObjectClass::sub_6599C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7597a0 TechnoClass::Render_Load_7597A0 -> NG (attempt 1)
+[ledger] 0x759eb0 TechnoClass::Render_Load_759EB0 -> NG (attempt 1)
+[ledger] 0x47b0c0 FileFind::Next -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42e150 ObjectClass::sub_42E150 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "branch_order": 3,
+  "regalloc": 1,
+  "branch_polarity": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p274\batch_report.json

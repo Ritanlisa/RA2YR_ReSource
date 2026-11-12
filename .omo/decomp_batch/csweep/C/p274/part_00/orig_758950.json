@@ -1,0 +1,11 @@
+{
+ "addr": "0x758950",
+ "name": "VoxelPalette::Init",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x758950",
+ "bytes_hex": "8b4424045685c08bf175196800030000e8b204070083c404894610c7461801000000eb0a894610c74618000000008b44240c85c0751d6800800000e88704070083c404894614c7461c010000008bc65ec20800894614c7461c000000008bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
