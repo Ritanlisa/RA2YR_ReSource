@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p248\part_00
+=== convert (20 addrs) ===
+[conv] 0x76f1c0 Trigger::checkCondition -> Trigger
+[conv] 0x76f210 VectorClass::ConstructWDTSelection_Create_76F210 -> VectorClass
+[conv] 0x7aecd0 VectorClass::QueryNATPortWOL_Helper -> VectorClass
+[conv] 0x4349f0 ObjectClass::sub_4349F0 -> ObjectClass
+[conv] 0x5f5cd0 BuildingClass::IsHealthLow -> BuildingClass
+[conv] 0x412610 ObjectClass::sub_412610 -> ObjectClass
+[conv] 0x473980 ObjectTypeClass::loadTypeMember_473980 -> ObjectTypeClass
+[conv] 0x474c20 INIEntry::Write3Bytes -> INIEntry
+[conv] 0x474d50 ObjectTypeClass::ReadString -> ObjectTypeClass
+[conv] 0x4cc310 TrajectoryHelper::FindFirstImpenetrableObstacle -> TrajectoryHelper
+[conv] 0x7d362f _getSystemCP -> _addr_7D
+[conv] 0x7120d0 TechnoTypeClass::ComputeValue -> TechnoTypeClass
+[conv] 0x765c20 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::getInterface -> _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766fc0 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::QueryInterface -> _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x767080 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_2 -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x76a5c0 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::QueryInterface -> _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76a680 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::setPosition -> _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76bbc0 _VectorClass_V_rc_ptr_VWDTTerritory::QueryInterface -> _VectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x76bc10 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::QueryInterface -> _DynamicVectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x716290 TechnoTypeClass::GetModeSpecificValue -> TechnoTypeClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Trigger                  rc=2
+[era] VectorClass              rc=0
+[era] ObjectClass              rc=0
+[era] BuildingClass            rc=2
+[era] ObjectTypeClass          rc=2
+[era] INIEntry                 rc=2
+[era] TrajectoryHelper         rc=0
+[era] _addr_7D                 rc=0
+[era] TechnoTypeClass          rc=2
+[era] _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VWDTTerritory rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VWDTTerritory rc=0
+=== diffasm byte-compare ===
+[diff] 0x76f210   MISMATCH         VectorClass::ConstructWDTSelection_Create_76F210
+[diff] 0x7aecd0   MISMATCH         VectorClass::QueryNATPortWOL_Helper
+[diff] 0x4349f0   MISMATCH         ObjectClass::sub_4349F0
+[diff] 0x412610   MISMATCH         ObjectClass::sub_412610
+[diff] 0x473980   MISMATCH         ObjectTypeClass::loadTypeMember_473980
+[diff] 0x4cc310   MISMATCH         TrajectoryHelper::FindFirstImpenetrableObstacle
+[diff] 0x7d362f   MISMATCH         _getSystemCP
+[diff] 0x765c20   MISMATCH         _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::getInterface
+[diff] 0x766fc0   MISMATCH         _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::QueryInterface
+[diff] 0x767080   MISMATCH         _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_2
+[diff] 0x76a5c0   MISMATCH         _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::QueryInterface
+[diff] 0x76a680   MISMATCH         _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::setPosition
+[diff] 0x76bbc0   MISMATCH         _VectorClass_V_rc_ptr_VWDTTerritory::QueryInterface
+[diff] 0x76bc10   MISMATCH         _DynamicVectorClass_V_rc_ptr_VWDTTerritory::QueryInterface
+[ledger] 0x76f1c0 Trigger::checkCondition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76f210 VectorClass::ConstructWDTSelection_Create_76F210 -> NG (attempt 1)
+[ledger] 0x7aecd0 VectorClass::QueryNATPortWOL_Helper -> NG (attempt 1)
+[ledger] 0x4349f0 ObjectClass::sub_4349F0 -> NG (attempt 1)
+[ledger] 0x5f5cd0 BuildingClass::IsHealthLow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x412610 ObjectClass::sub_412610 -> NG (attempt 1)
+[ledger] 0x473980 ObjectTypeClass::loadTypeMember_473980 -> NG (attempt 1)
+[ledger] 0x474c20 INIEntry::Write3Bytes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x474d50 ObjectTypeClass::ReadString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cc310 TrajectoryHelper::FindFirstImpenetrableObstacle -> NG (attempt 1)
+[ledger] 0x7d362f _getSystemCP -> NG (attempt 1)
+[ledger] 0x7120d0 TechnoTypeClass::ComputeValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765c20 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::getInterface -> NG (attempt 1)
+[ledger] 0x766fc0 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x767080 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_2 -> NG (attempt 1)
+[ledger] 0x76a5c0 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x76a680 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::setPosition -> NG (attempt 1)
+[ledger] 0x76bbc0 _VectorClass_V_rc_ptr_VWDTTerritory::QueryInterface -> NG (attempt 1)
+[ledger] 0x76bc10 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::QueryInterface -> NG (attempt 1)
+[ledger] 0x716290 TechnoTypeClass::GetModeSpecificValue -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 14
+ },
+ "pathologies": {
+  "regalloc": 9,
+  "ret_norm": 1,
+  "const_fold": 1,
+  "codegen_shape": 2,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p248\batch_report.json

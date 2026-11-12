@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CC310",
+ "name": "TrajectoryHelper::FindFirstImpenetrableObstacle",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CC310",
+ "bytes_hex": "568b74240c578b7c240c568b87a000000050e8d9fdffff8bf085f674266aff6aff8bcee8d841fbff84c074178b87ac0000008a884401000084c974075f33c05ec208008bc65f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "?loadTypeMember_473980@ObjectTypeClass@@QAEHXZ",
+ "sym_key": "ObjectTypeClass::loadTypeMember_473980",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "5356578bf985ff75075f5e83c8ff5bc38b35000000005733db8b460450e80000000083c40885c0742e8b0e5751e80000000083c40885c0741ea10000000083c608433bf07dc38b56045752e80000000083c40885c075d25f8bc35e5bc3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81B7C8@@3PAXA",
+   "sym_key": "DataGlobal_81B7C8"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?aAirlift@@3HA",
+   "sym_key": "aAirlift"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

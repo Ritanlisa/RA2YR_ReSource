@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D362F",
+ "name": "_getSystemCP",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D362F",
+ "bytes_hex": "8b4424048325d882b7000083f8fe7510c705d882b70001000000ff25dc127e0083f8fd7510c705d882b70001000000ff25d8127e0083f8fc750fa1b082b700c705d882b70001000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

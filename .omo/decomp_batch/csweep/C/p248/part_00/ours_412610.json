@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_412610@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_412610",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "56578bf933f685ff743b0fbe0750e80000000083c40485c0742b8a07c1e604473c307c0d3c397f090fbec88d7431d0eb100fbed052e80000000083c4048d7430c985ff75c58bc65f5ec3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?isxdigit@@YAHHZZ",
+   "sym_key": "isxdigit"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "_toupper",
+   "sym_key": "toupper"
+  }
+ ]
+}

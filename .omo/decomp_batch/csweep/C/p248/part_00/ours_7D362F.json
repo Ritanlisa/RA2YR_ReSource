@@ -1,0 +1,27 @@
+{
+ "symbol": "?_getSystemCP@@YAII@Z",
+ "sym_key": "Unnamed::_getSystemCP",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b442404c705000000000000000083f8fc742883f8fd741483f8fe752dc7050000000001000000e900000000",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782D8@@3IA",
+   "sym_key": "CRTGlobal_B782D8"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782D8@@3IA",
+   "sym_key": "CRTGlobal_B782D8"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?GetOEMCP@@YGIXZ",
+   "sym_key": "GetOEMCP"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindFirstImpenetrableObstacle@TrajectoryHelper@@QAIPAIPAH0H0@Z",
+ "sym_key": "TrajectoryHelper::FindFirstImpenetrableObstacle",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "8b44240c56578b7c24108bca508b97a0000000528b542414e8000000008bf085f674266aff6aff8bcee80000000084c074178b87ac0000008a884401000084c974075f33c05ec20c008bc65f5ec20c00",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?TrajectoryHelper__FindFirstObstacle@@YIPAIPAH0H0@Z",
+   "sym_key": "TrajectoryHelper__FindFirstObstacle"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?ValidateType@BuildingPlacement@@QAEDHH@Z",
+   "sym_key": "BuildingPlacement::ValidateType"
+  }
+ ]
+}

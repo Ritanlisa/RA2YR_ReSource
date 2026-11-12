@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_4349F0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_4349F0",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "5333c0568bf150505089460488462089460c894608508d4630b30150c64636ffc6462840885e40885e41885e18885e1ce800000000885e2c5e5bc3",
+ "relocs": [
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?SetRect@@YGHPAXHHHH@Z",
+   "sym_key": "SetRect"
+  }
+ ]
+}
