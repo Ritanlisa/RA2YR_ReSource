@@ -1,0 +1,15 @@
+{
+ "symbol": "?j_Audio_IsPlaying@@YIHPAX@Z",
+ "sym_key": "Unnamed::j_Audio_IsPlaying",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?IsPlaying@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsPlaying"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?_0timeGetTime@@YGKXZ",
+ "sym_key": "Unnamed::_0timeGetTime",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  }
+ ]
+}

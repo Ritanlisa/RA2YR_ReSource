@@ -1,0 +1,11 @@
+{
+ "addr": "0x77D200",
+ "name": "j_Game_ProcessIdle",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77D200",
+ "bytes_hex": "e9fb260000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

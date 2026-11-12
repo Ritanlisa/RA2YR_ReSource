@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C838C",
+ "name": "InitializeCriticalSection",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C838C",
+ "bytes_hex": "ff25f4117e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

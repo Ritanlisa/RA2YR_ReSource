@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x755c50 j_TechnoClass_ClearArrays -> _addr_75
+[conv] 0x7717f0 j_Audio_IsPlaying -> _addr_77
+[conv] 0x77d200 SimpleWonlineDialogControl::j_Game_ProcessIdle -> SimpleWonlineDialogControl
+[conv] 0x7ca9af ObjectClass::j_Exception_Destructor -> ObjectClass
+[conv] 0x7caa00 ObjectClass::j_Exception_Destructor_2 -> ObjectClass
+[conv] 0x7cac2f ObjectClass::j_Exception_Destructor_3 -> ObjectClass
+[conv] 0x6bec50 ObjectClass::ExitProgram -> ObjectClass
+[conv] 0x5d5890 timeGetTime -> _addr_5D
+[conv] 0x5d58a0 _0timeGetTime -> _addr_5D
+[conv] 0x77b8c0 OleUninitialize -> _addr_77
+[conv] 0x7c8368 FindNextFileA -> _addr_7C
+[conv] 0x7c836e FindFirstFileA -> _addr_7C
+[conv] 0x7c8374 FormatMessageA -> _addr_7C
+[conv] 0x7c837a GetLastError -> _addr_7C
+[conv] 0x7c8380 SetThreadPriority -> _addr_7C
+[conv] 0x7c8386 CreateThread -> _addr_7C
+[conv] 0x7c838c InitializeCriticalSection -> _addr_7C
+[conv] 0x7c8392 Sleep -> _addr_7C
+[conv] 0x7c8398 LeaveCriticalSection -> _addr_7C
+[conv] 0x7c839e EnterCriticalSection -> _addr_7C
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_75                 rc=0
+[era] _addr_77                 rc=0
+[era] SimpleWonlineDialogControl rc=0
+[era] ObjectClass              rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x755c50   MATCH            j_TechnoClass_ClearArrays
+[diff] 0x7717f0   MATCH            j_Audio_IsPlaying
+[diff] 0x77b8c0   MISMATCH         OleUninitialize
+[diff] 0x77d200   MATCH            SimpleWonlineDialogControl::j_Game_ProcessIdle
+[diff] 0x7ca9af   MATCH            ObjectClass::j_Exception_Destructor
+[diff] 0x7caa00   MATCH            ObjectClass::j_Exception_Destructor_2
+[diff] 0x7cac2f   MATCH            ObjectClass::j_Exception_Destructor_3
+[diff] 0x5d5890   MISMATCH         timeGetTime
+[diff] 0x5d58a0   MISMATCH         _0timeGetTime
+[diff] 0x7c8374   MISMATCH         FormatMessageA
+[diff] 0x7c837a   MISMATCH         GetLastError
+[diff] 0x7c8380   MISMATCH         SetThreadPriority
+[diff] 0x7c838c   MISMATCH         InitializeCriticalSection
+[diff] 0x7c8392   MISMATCH         Sleep
+[diff] 0x7c8398   MISMATCH         LeaveCriticalSection
+[diff] 0x7c839e   MISMATCH         EnterCriticalSection
+[ledger] 0x755c50 j_TechnoClass_ClearArrays -> OK (attempt 1)
+[ledger] 0x7717f0 j_Audio_IsPlaying -> OK (attempt 1)
+[ledger] 0x77d200 SimpleWonlineDialogControl::j_Game_ProcessIdle -> OK (attempt 1)
+[ledger] 0x7ca9af ObjectClass::j_Exception_Destructor -> OK (attempt 1)
+[ledger] 0x7caa00 ObjectClass::j_Exception_Destructor_2 -> OK (attempt 1)
+[ledger] 0x7cac2f ObjectClass::j_Exception_Destructor_3 -> OK (attempt 1)
+[ledger] 0x6bec50 ObjectClass::ExitProgram -> PENDING (attempt 1)
+[ledger] 0x5d5890 timeGetTime -> NG (attempt 1)
+[ledger] 0x5d58a0 _0timeGetTime -> NG (attempt 1)
+[ledger] 0x77b8c0 OleUninitialize -> NG (attempt 1)
+[ledger] 0x7c8368 FindNextFileA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c836e FindFirstFileA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8374 FormatMessageA -> NG (attempt 1)
+[ledger] 0x7c837a GetLastError -> NG (attempt 1)
+[ledger] 0x7c8380 SetThreadPriority -> NG (attempt 1)
+[ledger] 0x7c8386 CreateThread -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c838c InitializeCriticalSection -> NG (attempt 1)
+[ledger] 0x7c8392 Sleep -> NG (attempt 1)
+[ledger] 0x7c8398 LeaveCriticalSection -> NG (attempt 1)
+[ledger] 0x7c839e EnterCriticalSection -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 6,
+  "OBJ_EXTRACT_FAIL": 1,
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "branch_order": 4,
+  "codegen_shape": 6
+ },
+ "match_rate_of_decided_pct": 37.5,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p01\batch_report.json

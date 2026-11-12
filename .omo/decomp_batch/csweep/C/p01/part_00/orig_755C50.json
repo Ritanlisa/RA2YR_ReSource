@@ -1,0 +1,11 @@
+{
+ "addr": "0x755C50",
+ "name": "j_TechnoClass_ClearArrays",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x755C50",
+ "bytes_hex": "e98b3deaff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

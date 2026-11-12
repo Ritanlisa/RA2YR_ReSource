@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CAC2F",
+ "name": "j_Exception_Destructor_3",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CAC2F",
+ "bytes_hex": "e90d830000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

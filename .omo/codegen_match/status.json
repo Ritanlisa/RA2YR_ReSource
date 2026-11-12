@@ -48676,6 +48676,28 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5d5890": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1530]",
+  "name": "timeGetTime",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "timeGetTime",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5d58a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1530]",
+  "name": "_0timeGetTime",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "_0timeGetTime",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d58e0": {
   "attempts": 2,
   "clean": true,
@@ -65691,6 +65713,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6bec50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::ExitProgram",
+  "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
+  "orig_name": "ExitProgram",
+  "rule_violations": 0,
+  "status": "PENDING",
+  "this_as_id": false
+ },
  "0x6bec60": {
   "attempts": 9,
   "clean": false,
@@ -81463,6 +81497,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x755c50": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "j_TechnoClass_ClearArrays",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "j_TechnoClass_ClearArrays",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x755c60": {
   "attempts": 1,
   "clean": true,
@@ -85431,6 +85476,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x7717f0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "j_Audio_IsPlaying",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "j_Audio_IsPlaying",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x771990": {
   "attempts": 1,
   "clean": false,
@@ -86767,6 +86823,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x77b8c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15d0]",
+  "name": "OleUninitialize",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "OleUninitialize",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x77bcb0": {
   "attempts": 7,
   "clean": false,
@@ -86906,6 +86973,18 @@
   "name": "nullsub_263",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_263",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x77d200": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "SimpleWonlineDialogControl::j_Game_ProcessIdle",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "j_Game_ProcessIdle",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -89872,6 +89951,116 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7c8368": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "FindNextFileA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FindNextFileA",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c836e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "FindFirstFileA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FindFirstFileA",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8374": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1204]",
+  "name": "FormatMessageA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "FormatMessageA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c837a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1200]",
+  "name": "GetLastError",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "GetLastError",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8380": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e11fc]",
+  "name": "SetThreadPriority",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetThreadPriority",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8386": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "CreateThread",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateThread",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c838c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e11f4]",
+  "name": "InitializeCriticalSection",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "InitializeCriticalSection",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8392": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e11f0]",
+  "name": "Sleep",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Sleep",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8398": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e11ec]",
+  "name": "LeaveCriticalSection",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "LeaveCriticalSection",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c839e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e11e8]",
+  "name": "EnterCriticalSection",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "EnterCriticalSection",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c83aa": {
   "attempts": 1,
   "first_diff": "+0 jmp dword ptr [0x7e11e0]",
@@ -90535,6 +90724,30 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x7ca9af": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::j_Exception_Destructor",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "j_Exception_Destructor",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7caa00": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::j_Exception_Destructor_2",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "j_Exception_Destructor_2",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x7caacb": {
   "attempts": 1,
   "first_diff": null,
@@ -90548,6 +90761,18 @@
   "name": "0x7cabfb",
   "note": "decomp_batch r2: NO_EXPORT",
   "status": "PENDING"
+ },
+ "0x7cac2f": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::j_Exception_Destructor_3",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "j_Exception_Destructor_3",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x7cac34": {
   "attempts": 3,

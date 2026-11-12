@@ -1,0 +1,15 @@
+{
+ "symbol": "?FormatMessageA@@YGKKPBXKKPADKPAPAD@Z",
+ "sym_key": "Unnamed::FormatMessageA",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b44241c8b4c24188b542414508b442414518b4c2414528b542414508b442414515250e800000000c21c00",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?__imp_FormatMessageA@@YGKHPBXHH0H0@Z",
+   "sym_key": "__imp_FormatMessageA"
+  }
+ ]
+}
