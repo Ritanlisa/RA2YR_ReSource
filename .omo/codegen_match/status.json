@@ -809,7 +809,7 @@
   "this_as_id": false
  },
  "0x406b10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19924,7 +19924,7 @@
   "this_as_id": false
  },
  "0x4b64e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20754,7 +20754,7 @@
   "this_as_id": false
  },
  "0x4c1f20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23005,7 +23005,7 @@
   "this_as_id": false
  },
  "0x4d1650": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -32817,7 +32817,7 @@
   "this_as_id": false
  },
  "0x530000": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -40063,7 +40063,7 @@
   "this_as_id": false
  },
  "0x583ad0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -41244,7 +41244,7 @@
   "this_as_id": false
  },
  "0x58ef10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -43540,7 +43540,7 @@
   "this_as_id": false
  },
  "0x5b57d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43654,7 +43654,7 @@
   "this_as_id": false
  },
  "0x5b9550": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49124,7 +49124,7 @@
   "status": "NG"
  },
  "0x5e8590": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49996,15 +49996,15 @@
   "this_as_id": false
  },
  "0x5f3900": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+11 mov eax, 0xff",
   "name": "ObjectClass::ctor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ObjectClass::ctor",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f4240": {
@@ -61339,7 +61339,7 @@
   "this_as_id": false
  },
  "0x6990a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -71257,7 +71257,7 @@
   "this_as_id": false
  },
  "0x6f7ca0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80270,7 +80270,7 @@
   "this_as_id": false
  },
  "0x757360": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81766,14 +81766,14 @@
   "this_as_id": false
  },
  "0x764b90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ReferenceCounted::CampaignConstructorWDT",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CampaignConstructorWDT",
-  "rule_violations": 9,
+  "rule_violations": 8,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -84330,7 +84330,7 @@
   "this_as_id": false
  },
  "0x773600": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84592,13 +84592,13 @@
   "this_as_id": false
  },
  "0x7759e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "MessageDialogLoopAlt",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MessageDialogLoopAlt",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -84798,7 +84798,7 @@
   "this_as_id": false
  },
  "0x7775c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "MainWindowProc",
@@ -85358,7 +85358,7 @@
   "this_as_id": false
  },
  "0x77bcb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_77BCB0",
@@ -87477,7 +87477,7 @@
   "this_as_id": false
  },
  "0x7b60e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,

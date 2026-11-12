@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x5b9550",
+  "family": "C4",
+  "shape": "C4 calling-convention token leak",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x4b64e0",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7759e0",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x77bcb0",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x5b57d0",
+  "family": "C4",
+  "shape": "C4 calling-convention token leak",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x583ad0",
+  "family": "C4",
+  "shape": "C4 calling-convention token leak",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x5e8590",
+  "family": "C7",
+  "shape": "C7 code label used as value",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7b60e0",
+  "family": "C7",
+  "shape": "C7 code label used as value",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x530000",
+  "family": "C7",
+  "shape": "C7 code label used as value",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x58ef10",
+  "family": "C7",
+  "shape": "C7 code label used as value",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x406b10",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x757360",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x4d1650",
+  "family": "C4",
+  "shape": "C4 host-CRT typedef leak",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x5f3900",
+  "family": "C8",
+  "shape": "C8 global undeclared (registry gap)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x773600",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x764b90",
+  "family": "C6",
+  "shape": "C6 nested-template vftable name",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6990a0",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x7775c0",
+  "family": "C3",
+  "shape": "C3 WCHAR typedef missing",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x4c1f20",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6f7ca0",
+  "family": "C1",
+  "shape": "C1 asm-token leak (decompile failed body)",
+  "errfam": "C2065"
+ }
+]

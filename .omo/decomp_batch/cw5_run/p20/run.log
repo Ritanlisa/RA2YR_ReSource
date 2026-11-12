@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> ModemGuest
+[conv] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> JumpjetLocomotionClass
+[conv] 0x7759e0 MessageDialogLoopAlt -> _addr_77
+[conv] 0x77bcb0 sub_77BCB0 -> _addr_77
+[conv] 0x5b57d0 ObjectClass::sub_5B57D0 -> ObjectClass
+[conv] 0x583ad0 ObjectClass::sub_583AD0 -> ObjectClass
+[conv] 0x5e8590 ObjectClass::SkirmishSetup_Setup_5E8590 -> ObjectClass
+[conv] 0x7b60e0 ObjectClass::sub_7B60E0 -> ObjectClass
+[conv] 0x530000 ObjectClass::LoadExpansionMixFiles -> ObjectClass
+[conv] 0x58ef10 ObjectClass::ResetMapState -> ObjectClass
+[conv] 0x406b10 ObjectClass::InitializeAudioSubsystem -> ObjectClass
+[conv] 0x757360 ObjectClass::ProcessVoxelDepthSamples -> ObjectClass
+[conv] 0x4d1650 FoggedObjectClass::DestructFoggedObjectClass -> FoggedObjectClass
+[conv] 0x5f3900 ObjectClass::ctor -> ObjectClass
+[conv] 0x773600 WebBrowser::LoadURLFromRegistry -> WebBrowser
+[conv] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> ReferenceCounted
+[conv] 0x6990a0 TechnoClass::SaveConfigWOL -> TechnoClass
+[conv] 0x7775c0 MainWindowProc -> _addr_77
+[conv] 0x4c1f20 Lightning::Draw -> Lightning
+[conv] 0x6f7ca0 TechnoClass::EvaluateTarget -> TechnoClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ModemGuest               rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] _addr_77                 rc=2
+[era] ObjectClass              rc=2
+[era] FoggedObjectClass        rc=2
+[era] WebBrowser               rc=2
+[era] ReferenceCounted         rc=2
+[era] TechnoClass              rc=2
+[era] Lightning                rc=2
+=== diffasm byte-compare ===
+[diff] 0x5f3900   MISMATCH         ObjectClass::ctor
+[ledger] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7759e0 MessageDialogLoopAlt -> COMPILE_FAIL (attempt 4)
+[ledger] 0x77bcb0 sub_77BCB0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b57d0 ObjectClass::sub_5B57D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x583ad0 ObjectClass::sub_583AD0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e8590 ObjectClass::SkirmishSetup_Setup_5E8590 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b60e0 ObjectClass::sub_7B60E0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x530000 ObjectClass::LoadExpansionMixFiles -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58ef10 ObjectClass::ResetMapState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x406b10 ObjectClass::InitializeAudioSubsystem -> COMPILE_FAIL (attempt 4)
+[ledger] 0x757360 ObjectClass::ProcessVoxelDepthSamples -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4d1650 FoggedObjectClass::DestructFoggedObjectClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f3900 ObjectClass::ctor -> NG (attempt 4)
+[ledger] 0x773600 WebBrowser::LoadURLFromRegistry -> COMPILE_FAIL (attempt 4)
+[ledger] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6990a0 TechnoClass::SaveConfigWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7775c0 MainWindowProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c1f20 Lightning::Draw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f7ca0 TechnoClass::EvaluateTarget -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p20\batch_report.json
