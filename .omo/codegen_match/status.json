@@ -98,7 +98,7 @@
   "this_as_id": false
  },
  "0x402040": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -8429,7 +8429,7 @@
   "this_as_id": false
  },
  "0x433040": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9733,7 +9733,7 @@
   "this_as_id": false
  },
  "0x451690": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9814,7 +9814,7 @@
   "this_as_id": false
  },
  "0x452360": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9990,14 +9990,14 @@
   "status": "OK"
  },
  "0x459470": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::UpdateDamageAnim",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::UpdateDamageAnim",
-  "rule_violations": 3,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -15778,7 +15778,7 @@
   "status": "OK"
  },
  "0x4950c0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16142,7 +16142,7 @@
   "status": "NG"
  },
  "0x497b80": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16166,7 +16166,7 @@
   "this_as_id": false
  },
  "0x497e60": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19269,7 +19269,7 @@
   "this_as_id": false
  },
  "0x4af540": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29328,14 +29328,14 @@
   "status": "NG"
  },
  "0x501160": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CCINIClass::WriteHouses",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CCINIClass::WriteHouses",
-  "rule_violations": 0,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -51339,7 +51339,7 @@
   "this_as_id": false
  },
  "0x5fea50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61971,7 +61971,7 @@
   "this_as_id": false
  },
  "0x69e930": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -62096,7 +62096,7 @@
   "this_as_id": false
  },
  "0x69ec50": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -62189,14 +62189,14 @@
   "this_as_id": false
  },
  "0x69fb20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ShipLocomotionClass::ComputeAudio3DRotation_1",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "JumpjetLocomotionClass::ComputeAudio3DRotation_1",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -62267,14 +62267,14 @@
   "this_as_id": false
  },
  "0x6a4130": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ShipLocomotionClass::StubReturnZero_15",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "JumpjetLocomotionClass::StubReturnZero_15",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -63150,15 +63150,15 @@
   "this_as_id": false
  },
  "0x6b1020": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 mov ecx, dword ptr [esi + 0x24]",
   "name": "SlaveManagerClass::ShouldWakeUpNow",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "SlaveManagerClass::ShouldWakeUpNow",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b1130": {
@@ -63923,14 +63923,14 @@
   "this_as_id": false
  },
  "0x6b5f80": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Cell::IsWalkable",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Cell::IsWalkable",
-  "rule_violations": 1,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -67445,14 +67445,14 @@
   "this_as_id": false
  },
  "0x6c9c60": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BinkMovie::CheckKeyframeTransition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BinkMovie::CheckKeyframeTransition",
-  "rule_violations": 11,
+  "rule_violations": 17,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -80830,7 +80830,7 @@
   "this_as_id": false
  },
  "0x75c680": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -80928,7 +80928,7 @@
   "status": "OK"
  },
  "0x75cbe0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
