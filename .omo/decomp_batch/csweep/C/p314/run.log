@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p314\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ef2c0 _VectorClass_PAVAbstractTypeClass::Release -> _VectorClass_PAVAbstractTypeClass
+[conv] 0x50e950 _VectorClass_PBVBuildingTypeClass::Set -> _VectorClass_PBVBuildingTypeClass
+[conv] 0x50ec60 _VectorClass_PAUStartingTechnoStruct_HouseClass::Release -> _VectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50f520 _VectorClass_PAUBuildChoiceClass_HouseClass::Release -> _VectorClass_PAUBuildChoiceClass_HouseClass
+[conv] 0x50f780 _VectorClass_PBVTeamTypeClass::SetCapacity -> _VectorClass_PBVTeamTypeClass
+[conv] 0x512c80 _VectorClass_PBVInfantryTypeClass::Release -> _VectorClass_PBVInfantryTypeClass
+[conv] 0x513050 _VectorClass_PBVUnitTypeClass::Release -> _VectorClass_PBVUnitTypeClass
+[conv] 0x513420 _VectorClass_PBVAircraftTypeClass::SetCapacity -> _VectorClass_PBVAircraftTypeClass
+[conv] 0x525110 _VectorClass_PBVAnimTypeClass::Release -> _VectorClass_PBVAnimTypeClass
+[conv] 0x538560 _VectorClass_PAVCCINIClass::Remove -> _VectorClass_PAVCCINIClass
+[conv] 0x53c560 _VectorClass_PBVAnimClass::Release -> _VectorClass_PBVAnimClass
+[conv] 0x54a290 _VectorClass_PAG::Release -> _VectorClass_PAG
+[conv] 0x54a4f0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Release -> _VectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54e930 _VectorClass_PAUKamikazeControl::Release -> _VectorClass_PAUKamikazeControl
+[conv] 0x551370 _VectorClass_PAVLaserDrawClass::Release -> _VectorClass_PAVLaserDrawClass
+[conv] 0x555300 _VectorClass_PAVLightSourceClass::Release -> _VectorClass_PAVLightSourceClass
+[conv] 0x555560 _VectorClass_PAVPendingCellClass_LightSourceClass::Release -> _VectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x556f50 _VectorClass_PAVLineTrail::Release -> _VectorClass_PAVLineTrail
+[conv] 0x558280 _VectorClass_PBG::Release -> _VectorClass_PBG
+[conv] 0x55a1f0 _VectorClass_PAVFileEntryClass::CopyItems -> _VectorClass_PAVFileEntryClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVAbstractTypeClass rc=2
+[era] _VectorClass_PBVBuildingTypeClass rc=2
+[era] _VectorClass_PAUStartingTechnoStruct_HouseClass rc=2
+[era] _VectorClass_PAUBuildChoiceClass_HouseClass rc=2
+[era] _VectorClass_PBVTeamTypeClass rc=2
+[era] _VectorClass_PBVInfantryTypeClass rc=2
+[era] _VectorClass_PBVUnitTypeClass rc=2
+[era] _VectorClass_PBVAircraftTypeClass rc=2
+[era] _VectorClass_PBVAnimTypeClass rc=2
+[era] _VectorClass_PAVCCINIClass rc=2
+[era] _VectorClass_PBVAnimClass rc=2
+[era] _VectorClass_PAG         rc=2
+[era] _VectorClass_PAUTileInsertType_IsometricTileTypeClass rc=2
+[era] _VectorClass_PAUKamikazeControl rc=2
+[era] _VectorClass_PAVLaserDrawClass rc=2
+[era] _VectorClass_PAVLightSourceClass rc=2
+[era] _VectorClass_PAVPendingCellClass_LightSourceClass rc=2
+[era] _VectorClass_PAVLineTrail rc=2
+[era] _VectorClass_PBG         rc=2
+[era] _VectorClass_PAVFileEntryClass rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4ef2c0 _VectorClass_PAVAbstractTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50e950 _VectorClass_PBVBuildingTypeClass::Set -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50ec60 _VectorClass_PAUStartingTechnoStruct_HouseClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f520 _VectorClass_PAUBuildChoiceClass_HouseClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f780 _VectorClass_PBVTeamTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x512c80 _VectorClass_PBVInfantryTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513050 _VectorClass_PBVUnitTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513420 _VectorClass_PBVAircraftTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x525110 _VectorClass_PBVAnimTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538560 _VectorClass_PAVCCINIClass::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53c560 _VectorClass_PBVAnimClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a290 _VectorClass_PAG::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a4f0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54e930 _VectorClass_PAUKamikazeControl::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x551370 _VectorClass_PAVLaserDrawClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x555300 _VectorClass_PAVLightSourceClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x555560 _VectorClass_PAVPendingCellClass_LightSourceClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x556f50 _VectorClass_PAVLineTrail::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x558280 _VectorClass_PBG::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55a1f0 _VectorClass_PAVFileEntryClass::CopyItems -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p314\batch_report.json
