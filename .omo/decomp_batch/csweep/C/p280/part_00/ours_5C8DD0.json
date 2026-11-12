@@ -1,0 +1,8 @@
+{
+ "symbol": "?ValidateRSAKey_Helper@@YIDPAHHHH@Z",
+ "sym_key": "Unnamed::ValidateRSAKey_Helper",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "53558b5c240c568bf1578b4c24188bea8bc1c1e0053bd87c028bd833c08bfef3ab89068bc39983e20703c28bf88b4500c1ff038d4f01515655ff50088bcb81e10700008079054983c9f8410cffd2e08a0c37f6d022c18804375f5e5d5bc20800",
+ "relocs": []
+}

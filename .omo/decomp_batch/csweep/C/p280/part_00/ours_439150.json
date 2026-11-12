@@ -1,0 +1,8 @@
+{
+ "symbol": "?processDetection@AbstractClass@@QAEHH@Z",
+ "sym_key": "AbstractClass::processDetection",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "568bf18d4c2408578b068b7c240c5156ff501083f8ff74238b4e103bc17d1c493bc1894e1073148b5604408d0c828b14828951fc8b4e103bc172ec8b461033d233c93bc27e1a8b46048b04883bc2740839782475038950248b4610413bc87ce65f5ec20400",
+ "relocs": []
+}

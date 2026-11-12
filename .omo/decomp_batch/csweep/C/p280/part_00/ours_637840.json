@@ -1,0 +1,39 @@
+{
+ "symbol": "?IsProductionChainActive@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::IsProductionChainActive",
+ "size": 165,
+ "link_base": 0,
+ "bytes_hex": "518b4424008a15c6010000568bf133c924008aca0bc184d20f858400000022c28a15c401000033c9538aca550bc15784d28bd8c605c601000001745a56e8000000008bd883c40485db744b8b43144878458b5b088b3c8385ff743b8b6f1033f685ed7e328b570433c980e3008b04b28b008a88830000008bd10bda84db75128b0850ff914c01000033c325ff00000033d8463bf57cce5f8ac35dc605c6010000005b5e59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  }
+ ]
+}

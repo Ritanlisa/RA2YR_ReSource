@@ -1,0 +1,39 @@
+{
+ "symbol": "?UI_Draw_72E920@@YIXHPAH@Z",
+ "sym_key": "Unnamed::UI_Draw_72E920",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "51a100000000568b3500000000c7442404000000008b0081fe20030000894424045e720783c050894424006a006a006a006a006a0068e8030000a1000000006a006a006a006800040000528d54242c528b15000000006a0050e80000000059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_GadgetAnimState@@3PAXA",
+   "sym_key": "g_GadgetAnimState"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FB00@@3IA",
+   "sym_key": "DataGlobal_B0FB00"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBA8@@3IA",
+   "sym_key": "DataGlobal_B0FBA8"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHHIPAX0HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

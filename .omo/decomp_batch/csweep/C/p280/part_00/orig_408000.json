@@ -1,0 +1,11 @@
+{
+ "addr": "0x408000",
+ "name": "AudioMixer::ProcessAudioFrame",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408000",
+ "bytes_hex": "568bf18b868000000085c074588b86800000004885c08986800000007d0ac78680000000000000008b868000000085c075338b461485c0742c68f8e78700ff15e8117e008b460ca802740724fd0c0189460c8b4e14e8f6a5ffff68f8e78700ff15ec117e005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

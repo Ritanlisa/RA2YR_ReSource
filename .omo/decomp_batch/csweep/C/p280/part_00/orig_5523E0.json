@@ -1,0 +1,11 @@
+{
+ "addr": "0x5523E0",
+ "name": "LCWStraw::Constructor",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5523E0",
+ "bytes_hex": "53568bf18b5c240c8b4c2410578bc133ff9983e27f897e0403c2897e08c1f80740895e0c89462003c150897e10897e14897e18894e1cc70644cf7e00e8f669270083c4043bdf89461475148b46208b7e1c03c750e8de69270083c4048946188bc65f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

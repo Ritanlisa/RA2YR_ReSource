@@ -1,0 +1,33 @@
+{
+ "symbol": "?StubReturnTrue_4@MechLocomotionClass@@QAG_NPAH@Z",
+ "sym_key": "MechLocomotionClass::StubReturnTrue_4",
+ "size": 107,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b46088b8888030000e80000000084c07406b0015ec208008b0e56ff511084c0743e8b5620a1182800003bd075198b46248b0d1c2800003bc1750c8b4e28a1202800003bc874198b7608568b16ff923805000085c07e09b8010000005ec2080033c05ec20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Active@TimerClass@@QAEHXZ",
+   "sym_key": "TimerClass::Active"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

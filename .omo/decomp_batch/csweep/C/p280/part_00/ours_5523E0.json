@@ -1,0 +1,21 @@
+{
+ "symbol": "?Constructor@LCWStraw@@QAEPAV1@HH@Z",
+ "sym_key": "LCWStraw::Constructor",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "53568bf18b5c240c8b4c2410578bc133ff9983e27f897e0403c2897e08c1f80740895e0c89462003c150897e10897e14897e18894e1c893ee80000000083c4043bdf89461475148b46208b7e1c03c750e80000000083c4048946188b065f5e5bc20800",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x719BF0",
+ "name": "JumpjetLocomotionClass::SetCoordinateField",
+ "size": 104,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x719BF0",
+ "bytes_hex": "568b7424088b563c8b464483faff740e8b0d84eda8002bca3bc87d062bc185c075428b460cc68071020000008b4e0c8b81b402000085c07520e8425bffff8b4e0ce84af8feff84c0750f8b4e0c6a016a008b11ff92840400008b463885c07e04408946385ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

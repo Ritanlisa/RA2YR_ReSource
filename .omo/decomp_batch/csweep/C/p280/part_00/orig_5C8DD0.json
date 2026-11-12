@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C8DD0",
+ "name": "ValidateRSAKey_Helper",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C8DD0",
+ "bytes_hex": "51538bd98b4c2410558b6c24108bc1c1e005563be857895424107c028be88bc58bfb9983e20703c28bf033c0f3ab8b4c24108903c1fe038b01465653ff50088bcd81e10700008079054983c9f8418a441eff80caffd2e25ff6d222c288441eff5e5d5b59c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

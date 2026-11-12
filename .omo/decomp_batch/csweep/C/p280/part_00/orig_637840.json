@@ -1,0 +1,11 @@
+{
+ "addr": "0x637840",
+ "name": "TechnoClass::IsProductionChainActive",
+ "size": 104,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x637840",
+ "bytes_hex": "a0f64cac0084c0755ea0f44cac0053565784c0c605f64cac00017441e8bfe40c0085c074388b48144978328b40088b3c8885ff74288b5f1033f685db7e1f8b4f048b14b18b0a8a818300000084c075088b01ff904c010000463bf37ce15f5ec605f64cac00005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

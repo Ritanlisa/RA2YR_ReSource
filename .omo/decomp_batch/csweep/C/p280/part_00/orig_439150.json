@@ -1,0 +1,11 @@
+{
+ "addr": "0x439150",
+ "name": "AbstractClass::processDetection",
+ "size": 104,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x439150",
+ "bytes_hex": "568bf18d4c2408578b7c240c8b06518bce897c2410ff501083f8ff74218b4e103bc17d1a493bc1894e107d128b4e04408b1481895481fc8b4e103bc17cee8b461033d233c93bc27e1a8b46048b04883bc2740839782475038950248b4610413bc87ce65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

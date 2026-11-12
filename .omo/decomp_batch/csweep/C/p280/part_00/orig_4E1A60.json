@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1A60",
+ "name": "GadgetClass::QueryInterface",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1A60",
+ "bytes_hex": "568bf133c9c706bc927e00a1903e8b003bf075108b462080e4fe89462033c0a3903e8b003b35883e8b007506890d883e8b003b358c3e8b007506890d8c3e8b003bf07506890d903e8b008bcee8ef4a0700f644240801740956e87f702e0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

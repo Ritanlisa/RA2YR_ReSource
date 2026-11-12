@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetCoordinateField@TeleportLocomotionClass@@QAGHPAH@Z",
+ "sym_key": "TeleportLocomotionClass::SetCoordinateField",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b4e3c8b464483f9ff74150fbe15a0010000578bfa2bf93bf85f7d082bca03c185c075438b460cc68071020000008b4e0c8a81c802000084c07521e8000000008b4e0ce80000000084c075108b460c6a016a00508b08ff91840400008b463885c07e04408946385ec20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?GetMissionDelay@Mission@@QAEHXZ",
+   "sym_key": "Mission::GetMissionDelay"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?StubReturnZero_16@JumpjetLocomotionClass@@QAEDXZ",
+   "sym_key": "JumpjetLocomotionClass::StubReturnZero_16"
+  }
+ ]
+}

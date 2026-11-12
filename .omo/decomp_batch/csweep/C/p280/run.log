@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p280\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c8dd0 ValidateRSAKey_Helper -> ValidateRSAKey
+[conv] 0x6378b0 ScriptQueue::PushEntry -> ScriptQueue
+[conv] 0x474da0 INIClass::LookupEnum -> INIClass
+[conv] 0x4e1a60 ShpButtonClass::QueryInterface -> ShpButtonClass
+[conv] 0x5523e0 LCWStraw::Constructor -> LCWStraw
+[conv] 0x4da230 FootClass::CanBeRecruited -> FootClass
+[conv] 0x7dabac ObjectClass::_copy_environ -> ObjectClass
+[conv] 0x408000 AudioMixer::ProcessAudioFrame -> AudioMixer
+[conv] 0x4afc20 DriveLocomotionClass::StubReturnTrue_0 -> DriveLocomotionClass
+[conv] 0x5b19e0 MechLocomotionClass::StubReturnTrue_4 -> MechLocomotionClass
+[conv] 0x69f330 ShipLocomotionClass::StubReturnTrue_6 -> ShipLocomotionClass
+[conv] 0x72e920 UI_Draw_72E920 -> UI_Draw
+[conv] 0x439150 AbstractClass::processDetection -> AbstractClass
+[conv] 0x5bc460 sub_5BC460 -> _addr_5B
+[conv] 0x637840 TechnoClass::IsProductionChainActive -> TechnoClass
+[conv] 0x7cc11e __local_unwind2 -> _addr_7C
+[conv] 0x751520 ObjectClass::System_Get_751520 -> ObjectClass
+[conv] 0x719bf0 TeleportLocomotionClass::SetCoordinateField -> TeleportLocomotionClass
+[conv] 0x43a600 BrainClass::sub_43A600 -> BrainClass
+[conv] 0x639470 sub_639470 -> _addr_63
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ValidateRSAKey           rc=0
+[era] ScriptQueue              rc=0
+[era] INIClass                 rc=2
+[era] ShpButtonClass           rc=0
+[era] LCWStraw                 rc=0
+[era] FootClass                rc=2
+[era] ObjectClass              rc=2
+[era] AudioMixer               rc=0
+[era] DriveLocomotionClass     rc=2
+[era] MechLocomotionClass      rc=0
+[era] ShipLocomotionClass      rc=2
+[era] UI_Draw                  rc=0
+[era] AbstractClass            rc=0
+[era] _addr_5B                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=2
+[era] TeleportLocomotionClass  rc=0
+[era] BrainClass               rc=0
+[era] _addr_63                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c8dd0   MISMATCH         ValidateRSAKey_Helper
+[diff] 0x6378b0   MISMATCH         ScriptQueue::PushEntry
+[diff] 0x4e1a60   MISMATCH         ShpButtonClass::QueryInterface
+[diff] 0x5523e0   MISMATCH         LCWStraw::Constructor
+[diff] 0x408000   MISMATCH         AudioMixer::ProcessAudioFrame
+[diff] 0x5b19e0   MISMATCH         MechLocomotionClass::StubReturnTrue_4
+[diff] 0x72e920   MISMATCH         UI_Draw_72E920
+[diff] 0x439150   MISMATCH         AbstractClass::processDetection
+[diff] 0x5bc460   MISMATCH         sub_5BC460
+[diff] 0x637840   MISMATCH         TechnoClass::IsProductionChainActive
+[diff] 0x719bf0   MISMATCH         TeleportLocomotionClass::SetCoordinateField
+[diff] 0x43a600   MISMATCH         BrainClass::sub_43A600
+[ledger] 0x5c8dd0 ValidateRSAKey_Helper -> NG (attempt 1)
+[ledger] 0x6378b0 ScriptQueue::PushEntry -> NG (attempt 1)
+[ledger] 0x474da0 INIClass::LookupEnum -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e1a60 ShpButtonClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x5523e0 LCWStraw::Constructor -> NG (attempt 1)
+[ledger] 0x4da230 FootClass::CanBeRecruited -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dabac ObjectClass::_copy_environ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x408000 AudioMixer::ProcessAudioFrame -> NG (attempt 1)
+[ledger] 0x4afc20 DriveLocomotionClass::StubReturnTrue_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b19e0 MechLocomotionClass::StubReturnTrue_4 -> NG (attempt 1)
+[ledger] 0x69f330 ShipLocomotionClass::StubReturnTrue_6 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72e920 UI_Draw_72E920 -> NG (attempt 1)
+[ledger] 0x439150 AbstractClass::processDetection -> NG (attempt 1)
+[ledger] 0x5bc460 sub_5BC460 -> NG (attempt 1)
+[ledger] 0x637840 TechnoClass::IsProductionChainActive -> NG (attempt 1)
+[ledger] 0x7cc11e __local_unwind2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x751520 ObjectClass::System_Get_751520 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x719bf0 TeleportLocomotionClass::SetCoordinateField -> NG (attempt 1)
+[ledger] 0x43a600 BrainClass::sub_43A600 -> NG (attempt 1)
+[ledger] 0x639470 sub_639470 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "regalloc": 7,
+  "branch_polarity": 1,
+  "codegen_shape": 2,
+  "eval_order": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p280\batch_report.json
