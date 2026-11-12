@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x6e4ba0",
+  "family": "D_RELOC",
+  "name": "sub_6E4BA0"
+ },
+ {
+  "addr": "0x6e4d20",
+  "family": "D_RELOC",
+  "name": "sub_6E4D20"
+ },
+ {
+  "addr": "0x6e5920",
+  "family": "D_RELOC",
+  "name": "sub_6E5920"
+ },
+ {
+  "addr": "0x6e5aa0",
+  "family": "D_RELOC",
+  "name": "sub_6E5AA0"
+ },
+ {
+  "addr": "0x6e6890",
+  "family": "D_RELOC",
+  "name": "sub_6E6890"
+ },
+ {
+  "addr": "0x6e6a10",
+  "family": "D_RELOC",
+  "name": "sub_6E6A10"
+ },
+ {
+  "addr": "0x6e7cc0",
+  "family": "D_RELOC",
+  "name": "sub_6E7CC0"
+ },
+ {
+  "addr": "0x6e7e40",
+  "family": "D_RELOC",
+  "name": "sub_6E7E40"
+ },
+ {
+  "addr": "0x6e88d0",
+  "family": "D_RELOC",
+  "name": "sub_6E88D0"
+ },
+ {
+  "addr": "0x6e8a50",
+  "family": "D_RELOC",
+  "name": "sub_6E8A50"
+ },
+ {
+  "addr": "0x6f04c0",
+  "family": "D_RELOC",
+  "name": "sub_6F04C0"
+ },
+ {
+  "addr": "0x6f0640",
+  "family": "D_RELOC",
+  "name": "sub_6F0640"
+ },
+ {
+  "addr": "0x6f28f0",
+  "family": "D_RELOC",
+  "name": "sub_6F28F0"
+ },
+ {
+  "addr": "0x6f2a70",
+  "family": "D_RELOC",
+  "name": "sub_6F2A70"
+ },
+ {
+  "addr": "0x710930",
+  "family": "D_RELOC",
+  "name": "sub_710930"
+ },
+ {
+  "addr": "0x710ab0",
+  "family": "D_RELOC",
+  "name": "sub_710AB0"
+ },
+ {
+  "addr": "0x712120",
+  "family": "D_RELOC",
+  "name": "TechnoTypeClass::GetGameplayValue"
+ },
+ {
+  "addr": "0x717ad0",
+  "family": "D_RELOC",
+  "name": "ObjectTypeClass::loadTypeMember_5717AD0"
+ },
+ {
+  "addr": "0x717e40",
+  "family": "D_RELOC",
+  "name": "sub_717E40"
+ },
+ {
+  "addr": "0x717fc0",
+  "family": "D_RELOC",
+  "name": "sub_717FC0"
+ }
+]
