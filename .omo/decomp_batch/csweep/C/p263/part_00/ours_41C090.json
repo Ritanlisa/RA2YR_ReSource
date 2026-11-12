@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destru_vt323@FootClass@@QAGHHHHHHHHHHHHHHHH@Z",
+ "sym_key": "FootClass::Destru_vt323",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "8b4424408b4c243c8b542438508b442438518b4c2438528b542438508b442438518b4c2438528b542438508b442438518b4c2438528b542438508b442438518b4c2438528b542438508b442438515250ff1500000000c24000",
+ "relocs": [
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?loc_705E00@@3PADA",
+   "sym_key": "loc_705E00"
+  }
+ ]
+}

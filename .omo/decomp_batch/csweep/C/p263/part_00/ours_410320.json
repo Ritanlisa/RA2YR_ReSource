@@ -1,0 +1,8 @@
+{
+ "symbol": "?SaveLoad_Prefix@AbstractClass@@QAGHPAH0H@Z",
+ "sym_key": "AbstractClass::SaveLoad_Prefix",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "8b44240c5385c08bd87509b8034000805bc210008b08568b7424106a008d5424186a04525089742424ff511085c07c228b06578b3b6a0056ff5030505653ff571085c05f7c0c8b4c241885c97404c64620005e5bc21000",
+ "relocs": []
+}

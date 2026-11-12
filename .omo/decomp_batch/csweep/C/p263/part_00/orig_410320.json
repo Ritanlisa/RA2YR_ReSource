@@ -1,0 +1,11 @@
+{
+ "addr": "0x410320",
+ "name": "AbstractClass::SaveLoad_Prefix",
+ "size": 87,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x410320",
+ "bytes_hex": "568b74240c85f657750a5fb8034000805ec20c008b7c240c8b066a008d4c24146a045156897c2420ff501085c07c238b17538b1e6a008bcfff5230505756ff531085c05b7c0c8b4c241485c97404c64720005f5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

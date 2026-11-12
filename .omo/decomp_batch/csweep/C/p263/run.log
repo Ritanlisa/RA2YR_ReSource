@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p263\part_00
+=== convert (20 addrs) ===
+[conv] 0x410320 AbstractClass::SaveLoad_Prefix -> AbstractClass
+[conv] 0x55aa60 LocomotionClass::LoadIPersistStream -> LocomotionClass
+[conv] 0x41c090 FootClass::Destru_vt323 -> FootClass
+[conv] 0x4200c0 sub_4200C0 -> _addr_42
+[conv] 0x466320 sub_466320 -> _addr_46
+[conv] 0x48e6e0 sub_48E6E0 -> _addr_48
+[conv] 0x4d0790 sub_4D0790 -> _addr_4D
+[conv] 0x4f5130 sub_4F5130 -> _addr_4F
+[conv] 0x5395c0 sub_5395C0 -> _addr_53
+[conv] 0x539660 sub_539660 -> _addr_53
+[conv] 0x539700 sub_539700 -> _addr_53
+[conv] 0x53cab0 sub_53CAB0 -> _addr_53
+[conv] 0x543eb0 sub_543EB0 -> _addr_54
+[conv] 0x54fe00 sub_54FE00 -> _addr_54
+[conv] 0x554700 sub_554700 -> _addr_55
+[conv] 0x58bc70 sub_58BC70 -> _addr_58
+[conv] 0x5d5ed0 MultiplayerGameMode::ListGet -> MultiplayerGameMode
+[conv] 0x5ea9b0 RefreshLobbyAll_Play -> RefreshLobbyAll
+[conv] 0x5eaa10 RefreshLobbyAll_Get -> RefreshLobbyAll
+[conv] 0x5eaa70 RefreshLobbyAll_Get_5EAA70 -> RefreshLobbyAll_Get
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClass            rc=0
+[era] LocomotionClass          rc=2
+[era] FootClass                rc=0
+[era] _addr_42                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_48                 rc=0
+[era] _addr_4D                 rc=0
+[era] _addr_4F                 rc=0
+[era] _addr_53                 rc=0
+[era] _addr_54                 rc=0
+[era] _addr_55                 rc=0
+[era] _addr_58                 rc=0
+[era] MultiplayerGameMode      rc=2
+[era] RefreshLobbyAll          rc=2
+[era] RefreshLobbyAll_Get      rc=2
+=== diffasm byte-compare ===
+[diff] 0x410320   MISMATCH         AbstractClass::SaveLoad_Prefix
+[diff] 0x41c090   MISMATCH         FootClass::Destru_vt323
+[diff] 0x4200c0   MISMATCH         sub_4200C0
+[diff] 0x466320   MISMATCH         sub_466320
+[diff] 0x48e6e0   MISMATCH         sub_48E6E0
+[diff] 0x4d0790   MISMATCH         sub_4D0790
+[diff] 0x4f5130   MISMATCH         sub_4F5130
+[diff] 0x5395c0   MISMATCH         sub_5395C0
+[diff] 0x539660   MISMATCH         sub_539660
+[diff] 0x539700   MISMATCH         sub_539700
+[diff] 0x53cab0   MISMATCH         sub_53CAB0
+[diff] 0x543eb0   MISMATCH         sub_543EB0
+[diff] 0x54fe00   MISMATCH         sub_54FE00
+[diff] 0x554700   MISMATCH         sub_554700
+[diff] 0x58bc70   MISMATCH         sub_58BC70
+[ledger] 0x410320 AbstractClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x55aa60 LocomotionClass::LoadIPersistStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41c090 FootClass::Destru_vt323 -> NG (attempt 1)
+[ledger] 0x4200c0 sub_4200C0 -> NG (attempt 1)
+[ledger] 0x466320 sub_466320 -> NG (attempt 1)
+[ledger] 0x48e6e0 sub_48E6E0 -> NG (attempt 1)
+[ledger] 0x4d0790 sub_4D0790 -> NG (attempt 1)
+[ledger] 0x4f5130 sub_4F5130 -> NG (attempt 1)
+[ledger] 0x5395c0 sub_5395C0 -> NG (attempt 1)
+[ledger] 0x539660 sub_539660 -> NG (attempt 1)
+[ledger] 0x539700 sub_539700 -> NG (attempt 1)
+[ledger] 0x53cab0 sub_53CAB0 -> NG (attempt 1)
+[ledger] 0x543eb0 sub_543EB0 -> NG (attempt 1)
+[ledger] 0x54fe00 sub_54FE00 -> NG (attempt 1)
+[ledger] 0x554700 sub_554700 -> NG (attempt 1)
+[ledger] 0x58bc70 sub_58BC70 -> NG (attempt 1)
+[ledger] 0x5d5ed0 MultiplayerGameMode::ListGet -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ea9b0 RefreshLobbyAll_Play -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eaa10 RefreshLobbyAll_Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eaa70 RefreshLobbyAll_Get_5EAA70 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 1,
+  "branch_polarity": 13
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p263\batch_report.json
