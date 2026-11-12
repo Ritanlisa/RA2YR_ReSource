@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_77CEB0@@YAHXZ",
+ "sym_key": "Unnamed::sub_77CEB0",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_77CED0@@YAHPBX0@Z",
+   "sym_key": "sub_77CED0"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginPool@@3IA",
+   "sym_key": "g_WOL_LoginPool"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76974@@3IA",
+   "sym_key": "DataGlobal_B76974"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76978@@3IA",
+   "sym_key": "DataGlobal_B76978"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p59\part_00
+=== convert (20 addrs) ===
+[conv] 0x77c700 sub_77C700 -> _addr_77
+[conv] 0x77c760 sub_77C760 -> _addr_77
+[conv] 0x77c7c0 sub_77C7C0 -> _addr_77
+[conv] 0x77c820 sub_77C820 -> _addr_77
+[conv] 0x77c880 sub_77C880 -> _addr_77
+[conv] 0x77c8e0 sub_77C8E0 -> _addr_77
+[conv] 0x77c940 sub_77C940 -> _addr_77
+[conv] 0x77ce50 sub_77CE50 -> _addr_77
+[conv] 0x77ceb0 sub_77CEB0 -> _addr_77
+[conv] 0x7b00b0 sub_7B00B0 -> _addr_7B
+[conv] 0x7b00f0 sub_7B00F0 -> _addr_7B
+[conv] 0x7bc820 _BlitPlain_G::sub_7BC820 -> _BlitPlain_G
+[conv] 0x7bc870 _BlitPlain_G::sub_7BC870 -> _BlitPlain_G
+[conv] 0x60d520 sub_60D520 -> _addr_60
+[conv] 0x4bafe0 ObjectClass::sub_4BAFE0 -> ObjectClass
+[conv] 0x624c80 HashMap::ComputeIndex -> HashMap
+[conv] 0x625070 HashTable::ComputeHash -> HashTable
+[conv] 0x773ab0 WebBrowser::Release -> WebBrowser
+[conv] 0x7ae0c0 HashMap::ComputeIndex_2 -> HashMap
+[conv] 0x7ae5b0 CComObject_CChatEventSink___ATL::Check -> CComObject_CChatEventSink___ATL
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=0
+[era] _addr_7B                 rc=0
+[era] _BlitPlain_G             rc=2
+[era] _addr_60                 rc=0
+[era] ObjectClass              rc=0
+[era] HashMap                  rc=0
+[era] HashTable                rc=0
+[era] WebBrowser               rc=0
+[era] CComObject_CChatEventSink___ATL rc=0
+=== diffasm byte-compare ===
+[diff] 0x77c700   MISMATCH         sub_77C700
+[diff] 0x77c760   MISMATCH         sub_77C760
+[diff] 0x77c7c0   MISMATCH         sub_77C7C0
+[diff] 0x77c820   MISMATCH         sub_77C820
+[diff] 0x77c880   MISMATCH         sub_77C880
+[diff] 0x77c8e0   MISMATCH         sub_77C8E0
+[diff] 0x77c940   MISMATCH         sub_77C940
+[diff] 0x77ce50   MISMATCH         sub_77CE50
+[diff] 0x77ceb0   MISMATCH         sub_77CEB0
+[diff] 0x7b00b0   MISMATCH         sub_7B00B0
+[diff] 0x7b00f0   MISMATCH         sub_7B00F0
+[diff] 0x60d520   MISMATCH         sub_60D520
+[diff] 0x4bafe0   MATCH            ObjectClass::sub_4BAFE0
+[diff] 0x624c80   MISMATCH         HashMap::ComputeIndex
+[diff] 0x7ae0c0   MISMATCH         HashMap::ComputeIndex_2
+[diff] 0x625070   MISMATCH         HashTable::ComputeHash
+[diff] 0x773ab0   MISMATCH         WebBrowser::Release
+[diff] 0x7ae5b0   MISMATCH         CComObject_CChatEventSink___ATL::Check
+[ledger] 0x77c700 sub_77C700 -> NG (attempt 1)
+[ledger] 0x77c760 sub_77C760 -> NG (attempt 1)
+[ledger] 0x77c7c0 sub_77C7C0 -> NG (attempt 1)
+[ledger] 0x77c820 sub_77C820 -> NG (attempt 1)
+[ledger] 0x77c880 sub_77C880 -> NG (attempt 1)
+[ledger] 0x77c8e0 sub_77C8E0 -> NG (attempt 1)
+[ledger] 0x77c940 sub_77C940 -> NG (attempt 1)
+[ledger] 0x77ce50 sub_77CE50 -> NG (attempt 1)
+[ledger] 0x77ceb0 sub_77CEB0 -> NG (attempt 1)
+[ledger] 0x7b00b0 sub_7B00B0 -> NG (attempt 1)
+[ledger] 0x7b00f0 sub_7B00F0 -> NG (attempt 1)
+[ledger] 0x7bc820 _BlitPlain_G::sub_7BC820 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bc870 _BlitPlain_G::sub_7BC870 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60d520 sub_60D520 -> NG (attempt 1)
+[ledger] 0x4bafe0 ObjectClass::sub_4BAFE0 -> OK (attempt 1)
+[ledger] 0x624c80 HashMap::ComputeIndex -> NG (attempt 1)
+[ledger] 0x625070 HashTable::ComputeHash -> NG (attempt 1)
+[ledger] 0x773ab0 WebBrowser::Release -> NG (attempt 1)
+[ledger] 0x7ae0c0 HashMap::ComputeIndex_2 -> NG (attempt 1)
+[ledger] 0x7ae5b0 CComObject_CChatEventSink___ATL::Check -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 2,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 11,
+  "regalloc": 1,
+  "codegen_shape": 5
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p59\batch_report.json
