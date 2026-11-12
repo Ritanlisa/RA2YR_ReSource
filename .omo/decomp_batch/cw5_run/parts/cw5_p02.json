@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x60c4a0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x55a970",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4a6cb0",
+  "family": "A5",
+  "shape": "A5 mangled operator new/delete arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4e6820",
+  "family": "A5",
+  "shape": "A5 mangled operator new/delete arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4e7320",
+  "family": "A5",
+  "shape": "A5 mangled operator new/delete arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4e7f70",
+  "family": "A5",
+  "shape": "A5 mangled operator new/delete arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x6590d0",
+  "family": "A5",
+  "shape": "A5 mangled operator new/delete arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x6e5b20",
+  "family": "A5",
+  "shape": "A5 mangled operator new/delete arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x725710",
+  "family": "A5",
+  "shape": "A5 mangled operator new/delete arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4662e0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4e6560",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4e6ae0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4e7060",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4e7660",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4e7be0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x543e70",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x629190",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x71a3d0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x7256d0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x466660",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ }
+]

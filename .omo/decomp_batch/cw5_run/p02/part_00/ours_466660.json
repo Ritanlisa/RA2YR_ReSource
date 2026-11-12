@@ -1,0 +1,45 @@
+{
+ "symbol": "?CalculateSpreadAngle@BulletClass@@QAGPAHH@Z",
+ "sym_key": "BulletClass::CalculateSpreadAngle",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8a0d00000000b00184c875218ad168000000000ad0c70500000000ff7fff7f881500000000e80000000083c404b800000000c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DE10@@3EA",
+   "sym_key": "DataGlobal_89DE10"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?nullsub_108@@YAHPBX0@Z",
+   "sym_key": "nullsub_108"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DDF4@@3IA",
+   "sym_key": "DataGlobal_89DDF4"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DE10@@3EA",
+   "sym_key": "DataGlobal_89DE10"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DDF4@@3IA",
+   "sym_key": "DataGlobal_89DDF4"
+  }
+ ]
+}
