@@ -1,0 +1,11 @@
+{
+ "addr": "0x48BE60",
+ "name": "IPXConnClass::initConnection",
+ "size": 118,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48BE60",
+ "bytes_hex": "8b44240c8b542414568bf1668b4c241483c00e66894e248b4c241c8956288b54242050c706b4517e0089461c894e2c895630e880cf33006a58894620e876cf330083c40885c074238b4c24248b561c518b4c2410528b54241051528bc8e81ef2ffff8946048bc65ec2200033c08946048bc65ec22000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_786E70@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_786E70",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "5356578bd9e80000000085c07464a100000000bf010000003bc78bc87e54bef800000033c085f67c0b3bf97d07a10800000003c683c0186a3a50e80000000083c40885c07412803800740d408bcb50e80000000084c07514a100000000473bf88bc87d0e81c6f8000000ebb78bc75f5e5bc35f5e83c8ff5bc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?Equals_Alt@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals_Alt"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  }
+ ]
+}

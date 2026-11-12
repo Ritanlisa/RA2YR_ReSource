@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_7A0DD0@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::sub_7A0DD0",
+ "size": 118,
+ "link_base": 0,
+ "bytes_hex": "53558be95685ed5774678b3d0000000033db8b0f85c974358d7536e8000000008a108aca3a16751c84c974148a50018aca3a5601750e83c00283c60284c975e033c0eb051bc083d8ff85c0740e83c7044381ff000000007d18ebb78bcde80000000085c0740b6aff8bd38bc8e8000000005f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAD@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?FindGameUI@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindGameUI"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?UpdateLobbyGraphicsWOL@@YIPAPAXHHH@Z",
+   "sym_key": "UpdateLobbyGraphicsWOL"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B9040",
+ "name": "WWMouseClass::initSurface",
+ "size": 118,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B9040",
+ "bytes_hex": "8bc183ec208b48505585c97e648b485485c97e5d8b482485c974568b684485ed744f8b50485303502c8b5854568b704c578b7850895424208b503033c06a018944241489442418508d44241803f250897c2434895c243889742430897c2424895c24288b118d44242c5550ff52085f5e5b5d83c420c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

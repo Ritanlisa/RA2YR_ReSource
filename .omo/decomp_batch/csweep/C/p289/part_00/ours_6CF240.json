@@ -1,0 +1,8 @@
+{
+ "symbol": "?RegisterForTracking@SwizzleManagerClass@@QAGHHPAH@Z",
+ "sym_key": "SwizzleManagerClass::RegisterForTracking",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "53578b7c241485ff750a5fb8034000805bc20c008b1f85db75075f33c05bc20c00568b7424148b560c8b46143bc272268a461184c0750485d2752e8b4e1885c97e278d46045503ca6a008b285150ff550884c05d74138b46148b4e088d5001895614891cc1897cc104c707000000005e5f33c05bc20c00",
+ "relocs": []
+}

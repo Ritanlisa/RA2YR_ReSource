@@ -1,0 +1,11 @@
+{
+ "addr": "0x65B3D0",
+ "name": "RadSiteClass::SaveLoad_Prefix",
+ "size": 118,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65B3D0",
+ "bytes_hex": "8b442408568b742408575056e89f4fdbff8bf885ff7c5885f674468d4c2410518bcee8c94ddbff8b1584eda800c7463000000000895628a184eda800894634c7463c00000000c70610087f00c74604f4077f00c74608ec077f00c7460ce4077f0083c624566810c1b000e8013e07008bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

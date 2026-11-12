@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetCursorAction@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::GetCursorAction",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "518b442400568bb1200500008b5024895424048b86f003000085c074408a417484c07439538b9e2c050000578bb91c0200008d44240cb9f801000050e8000000005756538bc8e800000000f6d81bc05ff7d8f7d824f95b83c0075e59c38b811c0200008b168d4c2404505156ff92a8000000f6d81bc05ef7d8f7d824f983c00759c3",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?IsPassable@CellClass@@QAEDHHH@Z",
+   "sym_key": "CellClass::IsPassable"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x45E800",
+ "name": "AbstractClass::clearRefCount",
+ "size": 118,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45E800",
+ "bytes_hex": "83ec0c568bf16820070000e807a6360083c40485c074568b4c241851568bc8e81ccffdff85c074458b4c24146a00c7442410000000000fbf110fbf4902c1e108c1e20881c18000000081c280000000894c240c8d4c2408895424088b10518bc8ff92d80000005e83c40cc2080032c05e83c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

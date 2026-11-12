@@ -1,0 +1,27 @@
+{
+ "symbol": "?initConnection@ModemConnectionClass@@QAEPAXHHHFHHHH@Z",
+ "sym_key": "ModemConnectionClass::initConnection",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "668b4424108b54240c568bf18b4c241866894624894e288b4c241c8d420e8b54242050c7060000000089461c894e2c895630e8000000006a58894620e80000000083c40885c074258b4c24248b561c518b4c2410528b542410515250e80000000083c4148946048bc65ec22000c74604000000008bc65ec22000",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?sub_48B0E0@@YAPAVCommBufferClass@@PAXHHHH@Z",
+   "sym_key": "sub_48B0E0"
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p289\part_00
+=== convert (20 addrs) ===
+[conv] 0x793120 ObjectClass::sub_793120 -> ObjectClass
+[conv] 0x7de07c _towlower_0 -> _addr_7D
+[conv] 0x5a2ed0 sub_5A2ED0 -> _addr_5A
+[conv] 0x5a4ae0 sub_5A4AE0 -> _addr_5A
+[conv] 0x62e650 ScenarioClass::DestroyAndClearVector -> ScenarioClass
+[conv] 0x786e70 ObjectClass::sub_786E70 -> ObjectClass
+[conv] 0x449440 BuildingClass::GetCursorAction -> BuildingClass
+[conv] 0x718000 TeleportLocomotionClass::TeleportLocomotionClass -> TeleportLocomotionClass
+[conv] 0x6cf240 SwizzleManagerClass::RegisterForTracking -> SwizzleManagerClass
+[conv] 0x7b9040 WWMouseClass::initSurface -> WWMouseClass
+[conv] 0x403530 AudioQueue::PreallocateChannels -> AudioQueue
+[conv] 0x4dba50 TechnoClass::GetTargetCellCenter -> TechnoClass
+[conv] 0x48be60 ModemConnectionClass::initConnection -> ModemConnectionClass
+[conv] 0x65b3d0 RadSiteClass::SaveLoad_Prefix -> RadSiteClass
+[conv] 0x7a0dd0 ObjectClass::sub_7A0DD0 -> ObjectClass
+[conv] 0x45e800 AbstractClass::clearRefCount -> AbstractClass
+[conv] 0x6977c0 CSFClass::LoadMissingStrings -> CSFClass
+[conv] 0x4bf650 BlendMinimapPixel -> _addr_4B
+[conv] 0x6edfd0 ObjectClass::sub_6EDFD0 -> ObjectClass
+[conv] 0x5cb6d0 MSShapeAnim::Constructor -> MSShapeAnim
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=0
+[era] _addr_5A                 rc=0
+[era] ScenarioClass            rc=2
+[era] BuildingClass            rc=0
+[era] TeleportLocomotionClass  rc=2
+[era] SwizzleManagerClass      rc=0
+[era] WWMouseClass             rc=0
+[era] AudioQueue               rc=2
+[era] TechnoClass              rc=0
+[era] ModemConnectionClass     rc=0
+[era] RadSiteClass             rc=0
+[era] AbstractClass            rc=0
+[era] CSFClass                 rc=2
+[era] _addr_4B                 rc=0
+[era] MSShapeAnim              rc=2
+=== diffasm byte-compare ===
+[diff] 0x786e70   MISMATCH         ObjectClass::sub_786E70
+[diff] 0x7a0dd0   MISMATCH         ObjectClass::sub_7A0DD0
+[diff] 0x6edfd0   MISMATCH         ObjectClass::sub_6EDFD0
+[diff] 0x7de07c   MISMATCH         _towlower_0
+[diff] 0x5a2ed0   MISMATCH         sub_5A2ED0
+[diff] 0x5a4ae0   MISMATCH         sub_5A4AE0
+[diff] 0x449440   MISMATCH         BuildingClass::GetCursorAction
+[diff] 0x6cf240   MISMATCH         SwizzleManagerClass::RegisterForTracking
+[diff] 0x7b9040   MISMATCH         WWMouseClass::initSurface
+[diff] 0x4dba50   MISMATCH         TechnoClass::GetTargetCellCenter
+[diff] 0x48be60   MISMATCH         ModemConnectionClass::initConnection
+[diff] 0x65b3d0   MISMATCH         RadSiteClass::SaveLoad_Prefix
+[diff] 0x45e800   MISMATCH         AbstractClass::clearRefCount
+[diff] 0x4bf650   MISMATCH         BlendMinimapPixel
+[ledger] 0x793120 ObjectClass::sub_793120 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7de07c _towlower_0 -> NG (attempt 1)
+[ledger] 0x5a2ed0 sub_5A2ED0 -> NG (attempt 1)
+[ledger] 0x5a4ae0 sub_5A4AE0 -> NG (attempt 1)
+[ledger] 0x62e650 ScenarioClass::DestroyAndClearVector -> COMPILE_FAIL (attempt 1)
+[ledger] 0x786e70 ObjectClass::sub_786E70 -> NG (attempt 1)
+[ledger] 0x449440 BuildingClass::GetCursorAction -> NG (attempt 1)
+[ledger] 0x718000 TeleportLocomotionClass::TeleportLocomotionClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf240 SwizzleManagerClass::RegisterForTracking -> NG (attempt 1)
+[ledger] 0x7b9040 WWMouseClass::initSurface -> NG (attempt 1)
+[ledger] 0x403530 AudioQueue::PreallocateChannels -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dba50 TechnoClass::GetTargetCellCenter -> NG (attempt 1)
+[ledger] 0x48be60 ModemConnectionClass::initConnection -> NG (attempt 1)
+[ledger] 0x65b3d0 RadSiteClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x7a0dd0 ObjectClass::sub_7A0DD0 -> NG (attempt 1)
+[ledger] 0x45e800 AbstractClass::clearRefCount -> NG (attempt 1)
+[ledger] 0x6977c0 CSFClass::LoadMissingStrings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bf650 BlendMinimapPixel -> NG (attempt 1)
+[ledger] 0x6edfd0 ObjectClass::sub_6EDFD0 -> NG (attempt 1)
+[ledger] 0x5cb6d0 MSShapeAnim::Constructor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 14
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "const_fold": 4,
+  "branch_polarity": 1,
+  "codegen_shape": 5,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p289\batch_report.json

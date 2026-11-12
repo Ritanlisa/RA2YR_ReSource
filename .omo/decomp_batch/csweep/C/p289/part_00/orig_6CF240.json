@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CF240",
+ "name": "ObjectPtr::RegisterForTracking",
+ "size": 118,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CF240",
+ "bytes_hex": "53578b7c241085ff750a5fb8034000805bc208008b1f85db75075f33c05bc208008b44240c568b480c8d70048b40143bc17c228a460d84c0750485c9752a8b461485c07e238b1603c16a00508bceff520884c074138b46108b56048d4801894e10891cc2897cc204c707000000005e5f33c05bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

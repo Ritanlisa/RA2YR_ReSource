@@ -1,0 +1,33 @@
+{
+ "symbol": "?_towlower_0@@YAGG@Z",
+ "sym_key": "Unnamed::_towlower_0",
+ "size": 137,
+ "link_base": 0,
+ "bytes_hex": "518b442408c1f810894424008b442408663dffff74718b0d0000000085c97467663d0001731b25ffff00006a0150e80000000083c40885c07507668b44240859c3a1000000006a008d4c24046a01518d5424146a0152680001000050e80000000083c41c85c00f94c084c07507668b44240059c38b442408663d41007209663d5a00770383c02059c3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782A0@@3IA",
+   "sym_key": "CRTGlobal_B782A0"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?iswctype@@YAHHHZZ",
+   "sym_key": "iswctype"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782A0@@3IA",
+   "sym_key": "CRTGlobal_B782A0"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?__crtLCMapStringW@@YAHHHPAXH0HHZZ",
+   "sym_key": "__crtLCMapStringW"
+  }
+ ]
+}

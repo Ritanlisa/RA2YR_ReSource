@@ -1,0 +1,11 @@
+{
+ "addr": "0x449440",
+ "name": "BuildingClass::GetCursorAction",
+ "size": 117,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x449440",
+ "bytes_hex": "8b4424048b50248b8120050000895424048b900804000085d274388a517484d274318b891c0200008b907c06000051508d44240c5250b9e8f78700e820c311008bc8e899310300f6d81bc024f983c007c214008b891c0200008b10518d4c2408518bc8ff92a8000000f6d81bc024f983c007c21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTargetCellCenter@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::GetTargetCellCenter",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "83ec188b44241c53568bf18b08578d542418565250ff514c8b088b78048bc18b1e9981e2ff000000c74424140000000003c2c1f8080fbfc0c1e00805800000008944240c8bc79981e2ff00000003c28d54240cc1f8080fbfc8c1e10881c1800000005256894c2418ff93cc0200005f5e5b83c418c20400",
+ "relocs": []
+}

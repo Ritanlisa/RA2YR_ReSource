@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_6EDFD0@ObjectClass@@QAEXHH@Z",
+ "sym_key": "ObjectClass::sub_6EDFD0",
+ "size": 127,
+ "link_base": 0,
+ "bytes_hex": "5156578bf932c98b775485f674648b466c85c07e468a969000000084d2743c8a567484d274358a968100000084d2752b8b0d400200006a008944240c8b068b91a80f00006a006a016a00528d4c241c6a005156ff906c010000b1018bb6d805000085f675a984c974098b775432c985f6759cc68780000000015f5e59c20800",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

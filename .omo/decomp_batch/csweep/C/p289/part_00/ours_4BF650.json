@@ -1,0 +1,39 @@
+{
+ "symbol": "?BlendMinimapPixel@@YIFGGH@Z",
+ "sym_key": "Unnamed::BlendMinimapPixel",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "81e1ffff0000568b7424088bc133c6578b7c240c25ff00000033f083ff4b777433c08a8700000000ff24850000000081e2ff00000081e600ffffff0bd65f8bc25ec204008b15000000005fc1e902c1ea1023ca5ec1e1028bc1c20400a10000000081e2ffff000025ffff00005fd1ead1e923d023c803d15e8bc2c20400a1000000005fc1e902c1e81023c85ec1e1028bc1c20400668bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "$L1854",
+   "sym_key": "$L1854"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "$L1855",
+   "sym_key": "$L1855"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Gray127@@3IA",
+   "sym_key": "g_DDraw_Gray127"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Gray127@@3IA",
+   "sym_key": "g_DDraw_Gray127"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Gray127@@3IA",
+   "sym_key": "g_DDraw_Gray127"
+  }
+ ]
+}

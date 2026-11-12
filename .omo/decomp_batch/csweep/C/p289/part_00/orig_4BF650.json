@@ -1,0 +1,11 @@
+{
+ "addr": "0x4BF650",
+ "name": "BlendMinimapPixel",
+ "size": 119,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4BF650",
+ "bytes_hex": "568b74240883fe648bc1776733c98a8ee0f64b00ff248dc8f64b00668b15ea0d8a0025ffff0000c1e80223c25ec1e002c204008b35e80d8a0025ffff000081e2ffff000081e6ffff0000d1e8d1ea23c623d603c25ec20400668b0dea0d8a0025ffff0000c1e80223c15ec1e002c20400668bc25ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

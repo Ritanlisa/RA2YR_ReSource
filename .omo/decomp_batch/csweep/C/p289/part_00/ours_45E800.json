@@ -1,0 +1,21 @@
+{
+ "symbol": "?clearRefCount@AbstractClass@@QAEDPAFH@Z",
+ "sym_key": "AbstractClass::clearRefCount",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf16820070000e80000000083c40485c0750932c05e83c40cc208008b4c241851568bc8e80000000085c0750932c05e83c40cc208008b4c2414c744240c000000006a000fbf51020fbf09c1e108c1e20881c18000000081c280000000894c24088d4c24088954240c8b105150ff92d80000005e83c40cc20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Construct@BuildingClass@@QAEPAV1@HH@Z",
+   "sym_key": "BuildingClass::Construct"
+  }
+ ]
+}
