@@ -1,0 +1,11 @@
+{
+ "addr": "0x43ADC0",
+ "name": "INIClass::loadFile",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x43ADC0",
+ "bytes_hex": "8b442404568bf185c0c70600000000894604c64608007e0f50e839e0380083c4048906c64608018bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

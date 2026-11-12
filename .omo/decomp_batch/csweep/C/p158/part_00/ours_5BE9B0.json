@@ -1,0 +1,15 @@
+{
+ "symbol": "?drawCursor@MouseClass@@QAEPAIH@Z",
+ "sym_key": "MouseClass::drawCursor",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf15056e80000000083c408c70600000000c78618550000000000008bc65ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?UI_Init@@YAPAVRadarClass@@HH@Z",
+   "sym_key": "UI_Init"
+  }
+ ]
+}

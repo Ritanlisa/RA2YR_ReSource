@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C9442",
+ "name": "__nh_malloc",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C9442",
+ "bytes_hex": "837c2404e07722ff742404e81c00000085c0597516394424087410ff742404e88272000085c05975de33c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

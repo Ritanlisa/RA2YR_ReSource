@@ -1,0 +1,21 @@
+{
+ "symbol": "?__nh_malloc@@YAHIH@Z",
+ "sym_key": "Unnamed::__nh_malloc",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568b74240883fee05777228b7c241056e80000000083c40485c0751385ff740f56e80000000083c40485c075e233c05f5ec3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?_heap_alloc@@YAHHZZ",
+   "sym_key": "_heap_alloc"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?_callnewh@@YAHHZZ",
+   "sym_key": "_callnewh"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?EnterAttackState@FootClass@@QAEHXZ",
+ "sym_key": "FootClass::EnterAttackState",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "568bf16a016a008b0656ff90800400008b0e56c786e0050000ffffffffff91000500008bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?ProcessDeploymentState@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::ProcessDeploymentState"
+  }
+ ]
+}

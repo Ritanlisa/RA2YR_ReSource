@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p158\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a86e0 sub_4A86E0 -> _addr_4A
+[conv] 0x6a4c10 sub_6A4C10 -> _addr_6A
+[conv] 0x6f2070 Techno::GetOwnerHouse -> Techno
+[conv] 0x7263a0 TriggerClass::NotifyGlobalChanged -> TriggerClass
+[conv] 0x7263d0 TriggerClass::NotifyLocalChanged -> TriggerClass
+[conv] 0x7c9442 __nh_malloc -> _addr_7C
+[conv] 0x4e1570 GadgetClass::BroadcastFlag -> GadgetClass
+[conv] 0x52cb50 PlayIntroSequence -> _addr_52
+[conv] 0x4726f0 CaptureManagerClass::PowerDrainUpdate -> CaptureManagerClass
+[conv] 0x4d5660 FootClass::EnterAttackState -> FootClass
+[conv] 0x4dc030 FootClass::vt_entry_4F4 -> FootClass
+[conv] 0x41c3c0 Vector3::Magnitude -> Vector3
+[conv] 0x43a130 JumpjetLocomotionClass::ComputeVectorLengthMetric_0 -> JumpjetLocomotionClass
+[conv] 0x43adc0 INIClass::loadFile -> INIClass
+[conv] 0x49f9d0 IntVector::Destructor -> IntVector
+[conv] 0x5be9b0 MouseClass::drawCursor -> MouseClass
+[conv] 0x679fa0 RulesClass::readMaximums -> RulesClass
+[conv] 0x679fd0 RulesClass::readInfantryTypes -> RulesClass
+[conv] 0x67a000 RulesClass::readCountries -> RulesClass
+[conv] 0x67a030 TypeList::InfantryCleanup -> TypeList
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4A                 rc=0
+[era] _addr_6A                 rc=0
+[era] Techno                   rc=0
+[era] TriggerClass             rc=0
+[era] _addr_7C                 rc=0
+[era] GadgetClass              rc=0
+[era] _addr_52                 rc=0
+[era] CaptureManagerClass      rc=0
+[era] FootClass                rc=0
+[era] Vector3                  rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] INIClass                 rc=0
+[era] IntVector                rc=0
+[era] MouseClass               rc=0
+[era] RulesClass               rc=0
+[era] TypeList                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a86e0   MISMATCH         sub_4A86E0
+[diff] 0x6a4c10   MISMATCH         sub_6A4C10
+[diff] 0x6f2070   MISMATCH         Techno::GetOwnerHouse
+[diff] 0x7263a0   MATCH            TriggerClass::NotifyGlobalChanged
+[diff] 0x7263d0   MATCH            TriggerClass::NotifyLocalChanged
+[diff] 0x7c9442   MISMATCH         __nh_malloc
+[diff] 0x4e1570   MISMATCH         GadgetClass::BroadcastFlag
+[diff] 0x52cb50   MISMATCH         PlayIntroSequence
+[diff] 0x4726f0   MISMATCH         CaptureManagerClass::PowerDrainUpdate
+[diff] 0x4d5660   MISMATCH         FootClass::EnterAttackState
+[diff] 0x4dc030   MISMATCH         FootClass::vt_entry_4F4
+[diff] 0x41c3c0   MISMATCH         Vector3::Magnitude
+[diff] 0x43adc0   MISMATCH         INIClass::loadFile
+[diff] 0x49f9d0   MISMATCH         IntVector::Destructor
+[diff] 0x5be9b0   MISMATCH         MouseClass::drawCursor
+[diff] 0x679fa0   MISMATCH         RulesClass::readMaximums
+[diff] 0x679fd0   MISMATCH         RulesClass::readInfantryTypes
+[diff] 0x67a000   MISMATCH         RulesClass::readCountries
+[ledger] 0x4a86e0 sub_4A86E0 -> NG (attempt 1)
+[ledger] 0x6a4c10 sub_6A4C10 -> NG (attempt 1)
+[ledger] 0x6f2070 Techno::GetOwnerHouse -> NG (attempt 1)
+[ledger] 0x7263a0 TriggerClass::NotifyGlobalChanged -> OK (attempt 1)
+[ledger] 0x7263d0 TriggerClass::NotifyLocalChanged -> OK (attempt 1)
+[ledger] 0x7c9442 __nh_malloc -> NG (attempt 1)
+[ledger] 0x4e1570 GadgetClass::BroadcastFlag -> NG (attempt 1)
+[ledger] 0x52cb50 PlayIntroSequence -> NG (attempt 1)
+[ledger] 0x4726f0 CaptureManagerClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x4d5660 FootClass::EnterAttackState -> NG (attempt 1)
+[ledger] 0x4dc030 FootClass::vt_entry_4F4 -> NG (attempt 1)
+[ledger] 0x41c3c0 Vector3::Magnitude -> NG (attempt 1)
+[ledger] 0x43a130 JumpjetLocomotionClass::ComputeVectorLengthMetric_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43adc0 INIClass::loadFile -> NG (attempt 1)
+[ledger] 0x49f9d0 IntVector::Destructor -> NG (attempt 1)
+[ledger] 0x5be9b0 MouseClass::drawCursor -> NG (attempt 1)
+[ledger] 0x679fa0 RulesClass::readMaximums -> NG (attempt 1)
+[ledger] 0x679fd0 RulesClass::readInfantryTypes -> NG (attempt 1)
+[ledger] 0x67a000 RulesClass::readCountries -> NG (attempt 1)
+[ledger] 0x67a030 TypeList::InfantryCleanup -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "MATCH": 2,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "extern_reloc": 2,
+  "const_fold": 3,
+  "branch_polarity": 2,
+  "codegen_shape": 5,
+  "regalloc": 4
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p158\batch_report.json

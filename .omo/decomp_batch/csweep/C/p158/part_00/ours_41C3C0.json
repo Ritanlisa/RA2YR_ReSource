@@ -1,0 +1,21 @@
+{
+ "symbol": "?Magnitude@Vector3@@QAEHXZ",
+ "sym_key": "Vector3::Magnitude",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "dd4110dd4108dd01d9c0d8c9d9c2d8cb83ec08dec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e80000000083c408e900000000",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

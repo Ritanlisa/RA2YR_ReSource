@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetOwnerHouse@Techno@@QAEHXZ",
+ "sym_key": "Techno::GetOwnerHouse",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86c400000085c0751e8b8ec8000000e80000000084c0740d8b8ec8000000e8000000005ec333c05ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?IsSpecialType@BuildingType@@QAE_NXZ",
+   "sym_key": "BuildingType::IsSpecialType"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?FindOwnerHouse@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindOwnerHouse"
+  }
+ ]
+}

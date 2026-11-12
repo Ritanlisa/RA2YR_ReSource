@@ -1,0 +1,21 @@
+{
+ "symbol": "?NotifyGlobalChanged@TriggerClass@@QAEXH@Z",
+ "sym_key": "TriggerClass::NotifyGlobalChanged",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "568bf185f67421578b7c240c8b4e2457e80000000084c074078bcee8000000008b762885f675e55f5ec20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?FindType2728@HouseClass@@QAEDH@Z",
+   "sym_key": "HouseClass::FindType2728"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?ProcessUpgradeEffects@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::ProcessUpgradeEffects"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4726F0",
+ "name": "CaptureManagerClass::PowerDrainUpdate",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4726F0",
+ "bytes_hex": "56578b7c240c8bf157e812ddf9ff8b764885f674128b4e048d460450ff5110508bcfe839f602005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

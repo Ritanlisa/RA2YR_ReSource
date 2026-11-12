@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DC030",
+ "name": "FootClass::vt_entry_4F4",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DC030",
+ "bytes_hex": "568bf18b06ff908401000083f80f751a8b166a008bceff92c80300008b066a016a008bceff90800400005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

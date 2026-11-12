@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1570",
+ "name": "ObjectClass::BroadcastFlag",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1570",
+ "bytes_hex": "568bf185f67421578b7c240c81e7ff0000008b06578bceff506c8b168bceff52048bf085f675eb5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

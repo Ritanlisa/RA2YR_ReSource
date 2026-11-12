@@ -1,0 +1,11 @@
+{
+ "addr": "0x52CB50",
+ "name": "PlayIntroSequence",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52CB50",
+ "bytes_hex": "f60560e9a8000474156a006a016a016a0183caffb98c618200e8d2210900b20133c9e849330000e90405f6ff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

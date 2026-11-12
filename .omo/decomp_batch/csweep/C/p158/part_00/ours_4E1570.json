@@ -1,0 +1,8 @@
+{
+ "symbol": "?BroadcastFlag@GadgetClass@@QAEXE@Z",
+ "sym_key": "GadgetClass::BroadcastFlag",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "568bf185f67423578b7c240c81e7ff0000008b0657568b08ff516c8b16568b02ff50048bf085f675e95f5ec20400",
+ "relocs": []
+}

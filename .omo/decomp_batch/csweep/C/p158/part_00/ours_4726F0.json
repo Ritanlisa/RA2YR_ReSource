@@ -1,0 +1,21 @@
+{
+ "symbol": "?PowerDrainUpdate@CaptureManagerClass@@QAEHH@Z",
+ "sym_key": "CaptureManagerClass::PowerDrainUpdate",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b764885f674108b4e048d460450ff511050e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

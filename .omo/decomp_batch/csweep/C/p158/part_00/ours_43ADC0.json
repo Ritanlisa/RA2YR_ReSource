@@ -1,0 +1,15 @@
+{
+ "symbol": "?loadFile@INIClass@@QAEPAV1@H@Z",
+ "sym_key": "INIClass::loadFile",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf185c0c70600000000894604c64608007e0f50e80000000083c4048906c64608018b065ec20400",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
