@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C87CA",
+ "name": "WinHelpA",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C87CA",
+ "bytes_hex": "ff2534147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

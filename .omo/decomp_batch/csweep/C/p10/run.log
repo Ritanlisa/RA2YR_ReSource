@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c87c4 ChildWindowFromPoint -> _addr_7C
+[conv] 0x7c87ca WinHelpA -> _addr_7C
+[conv] 0x7c87d0 GetWindowContextHelpId -> _addr_7C
+[conv] 0x7c87dc SetActiveWindow -> _addr_7C
+[conv] 0x7c87e2 RegisterHotKey -> _addr_7C
+[conv] 0x7c87e8 LoadIconA -> _addr_7C
+[conv] 0x7c87ee GetForegroundWindow -> _addr_7C
+[conv] 0x7c87f4 GetTopWindow -> _addr_7C
+[conv] 0x7c87fa WaitForInputIdle -> _addr_7C
+[conv] 0x7c8800 CheckDlgButton -> _addr_7C
+[conv] 0x7c8806 IsDlgButtonChecked -> _addr_7C
+[conv] 0x7c880c CreateDIBSection -> _addr_7C
+[conv] 0x7c8812 DeleteObject -> _addr_7C
+[conv] 0x7c881e SelectObject -> _addr_7C
+[conv] 0x7c8824 CreateFontIndirectA -> _addr_7C
+[conv] 0x7c882a GetDeviceCaps -> _addr_7C
+[conv] 0x7c8830 TextOutA -> _addr_7C
+[conv] 0x7c8836 SetTextColor -> _addr_7C
+[conv] 0x7c883c SetBkColor -> _addr_7C
+[conv] 0x7c8842 SetBkMode -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c87ca   MISMATCH         WinHelpA
+[diff] 0x7c87d0   MISMATCH         GetWindowContextHelpId
+[diff] 0x7c87dc   MISMATCH         SetActiveWindow
+[diff] 0x7c87e2   MISMATCH         RegisterHotKey
+[diff] 0x7c87e8   MISMATCH         LoadIconA
+[diff] 0x7c87ee   MISMATCH         GetForegroundWindow
+[diff] 0x7c87f4   MISMATCH         GetTopWindow
+[diff] 0x7c87fa   MISMATCH         WaitForInputIdle
+[diff] 0x7c8800   MISMATCH         CheckDlgButton
+[diff] 0x7c8806   MISMATCH         IsDlgButtonChecked
+[diff] 0x7c880c   MISMATCH         CreateDIBSection
+[diff] 0x7c8812   MISMATCH         DeleteObject
+[diff] 0x7c881e   MISMATCH         SelectObject
+[diff] 0x7c8824   MISMATCH         CreateFontIndirectA
+[diff] 0x7c882a   MISMATCH         GetDeviceCaps
+[diff] 0x7c8830   MISMATCH         TextOutA
+[diff] 0x7c8836   MISMATCH         SetTextColor
+[diff] 0x7c883c   MISMATCH         SetBkColor
+[diff] 0x7c8842   MISMATCH         SetBkMode
+[ledger] 0x7c87c4 ChildWindowFromPoint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c87ca WinHelpA -> NG (attempt 1)
+[ledger] 0x7c87d0 GetWindowContextHelpId -> NG (attempt 1)
+[ledger] 0x7c87dc SetActiveWindow -> NG (attempt 1)
+[ledger] 0x7c87e2 RegisterHotKey -> NG (attempt 1)
+[ledger] 0x7c87e8 LoadIconA -> NG (attempt 1)
+[ledger] 0x7c87ee GetForegroundWindow -> NG (attempt 1)
+[ledger] 0x7c87f4 GetTopWindow -> NG (attempt 1)
+[ledger] 0x7c87fa WaitForInputIdle -> NG (attempt 1)
+[ledger] 0x7c8800 CheckDlgButton -> NG (attempt 1)
+[ledger] 0x7c8806 IsDlgButtonChecked -> NG (attempt 1)
+[ledger] 0x7c880c CreateDIBSection -> NG (attempt 1)
+[ledger] 0x7c8812 DeleteObject -> NG (attempt 1)
+[ledger] 0x7c881e SelectObject -> NG (attempt 1)
+[ledger] 0x7c8824 CreateFontIndirectA -> NG (attempt 1)
+[ledger] 0x7c882a GetDeviceCaps -> NG (attempt 1)
+[ledger] 0x7c8830 TextOutA -> NG (attempt 1)
+[ledger] 0x7c8836 SetTextColor -> NG (attempt 1)
+[ledger] 0x7c883c SetBkColor -> NG (attempt 1)
+[ledger] 0x7c8842 SetBkMode -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 19
+ },
+ "pathologies": {
+  "codegen_shape": 18,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p10\batch_report.json

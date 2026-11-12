@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C87DC",
+ "name": "SetActiveWindow",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C87DC",
+ "bytes_hex": "ff2528147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

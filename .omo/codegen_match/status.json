@@ -91970,6 +91970,39 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c87c4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "ChildWindowFromPoint",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ChildWindowFromPoint",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c87ca": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1434]",
+  "name": "WinHelpA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "WinHelpA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c87d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1430]",
+  "name": "GetWindowContextHelpId",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetWindowContextHelpId",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c87d6": {
   "attempts": 4,
   "clean": false,
@@ -91981,6 +92014,116 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c87dc": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1428]",
+  "name": "SetActiveWindow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetActiveWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c87e2": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1510]",
+  "name": "RegisterHotKey",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RegisterHotKey",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c87e8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1424]",
+  "name": "LoadIconA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "LoadIconA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c87ee": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1420]",
+  "name": "GetForegroundWindow",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "GetForegroundWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c87f4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e141c]",
+  "name": "GetTopWindow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetTopWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c87fa": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1418]",
+  "name": "WaitForInputIdle",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "WaitForInputIdle",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8800": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1414]",
+  "name": "CheckDlgButton",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CheckDlgButton",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8806": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1410]",
+  "name": "IsDlgButtonChecked",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IsDlgButtonChecked",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c880c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1058]",
+  "name": "CreateDIBSection",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateDIBSection",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8812": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10ac]",
+  "name": "DeleteObject",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DeleteObject",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c8818": {
   "attempts": 8,
   "clean": false,
@@ -91988,6 +92131,83 @@
   "name": "GetTextMetricsA",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "GetTextMetricsA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c881e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e105c]",
+  "name": "SelectObject",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SelectObject",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8824": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1060]",
+  "name": "CreateFontIndirectA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateFontIndirectA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c882a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1070]",
+  "name": "GetDeviceCaps",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetDeviceCaps",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8830": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1068]",
+  "name": "TextOutA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TextOutA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8836": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e106c]",
+  "name": "SetTextColor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetTextColor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c883c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e107c]",
+  "name": "SetBkColor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetBkColor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8842": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1074]",
+  "name": "SetBkMode",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetBkMode",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

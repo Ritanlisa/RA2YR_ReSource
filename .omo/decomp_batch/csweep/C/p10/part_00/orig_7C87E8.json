@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C87E8",
+ "name": "LoadIconA",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C87E8",
+ "bytes_hex": "ff2524147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
