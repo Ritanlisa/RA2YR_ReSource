@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p45\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b29c0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::GetSize -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b2ad0 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::initSession -> _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b33d0 UDPInterfaceClass::GetStatistics -> UDPInterfaceClass
+[conv] 0x7b39d0 ObjectClass::sub_7B39D0 -> ObjectClass
+[conv] 0x7b4320 _VectorClass_PAE::Get -> _VectorClass_PAE
+[conv] 0x7b4440 _VectorClass_PAE::GetSize -> _VectorClass_PAE
+[conv] 0x7b4550 _DynamicVectorClass_PAE::sendPacket -> _DynamicVectorClass_PAE
+[conv] 0x7bc610 _BlitTrans_E::sub_7BC610 -> _BlitTrans_E
+[conv] 0x7bc890 _BlitTrans_G::sub_7BC890 -> _BlitTrans_G
+[conv] 0x7c8f5e __cfltcvt_init_13 -> _addr_7C
+[conv] 0x7c91a5 CIpow_Helper_Helper -> CIpow_Helper
+[conv] 0x7c92d0 __alldiv -> _addr_7C
+[conv] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> _addr_7C
+[conv] 0x7cc186 __abnormal_termination -> _addr_7C
+[conv] 0x7cf0ae __ffexpm1 -> _addr_7C
+[conv] 0x7cf0f1 _isintTOS -> _addr_7C
+[conv] 0x7cf390 __twoToTOS -> _addr_7C
+[conv] 0x7d2e6e ObjectClass::sub_7D2E6E -> ObjectClass
+[conv] 0x7d75e0 _memset -> _addr_7D
+[conv] 0x7dbc68 __clrfp -> _addr_7D
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] UDPInterfaceClass        rc=2
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAE         rc=0
+[era] _DynamicVectorClass_PAE  rc=0
+[era] _BlitTrans_E             rc=0
+[era] _BlitTrans_G             rc=2
+[era] _addr_7C                 rc=2
+[era] CIpow_Helper             rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b29c0   MISMATCH         _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::GetSize
+[diff] 0x7b2ad0   MISMATCH         _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::initSession
+[diff] 0x7b39d0   MISMATCH         ObjectClass::sub_7B39D0
+[diff] 0x7d2e6e   MISMATCH         ObjectClass::sub_7D2E6E
+[diff] 0x7b4320   MISMATCH         _VectorClass_PAE::Get
+[diff] 0x7b4440   MISMATCH         _VectorClass_PAE::GetSize
+[diff] 0x7b4550   MISMATCH         _DynamicVectorClass_PAE::sendPacket
+[diff] 0x7bc610   MISMATCH         _BlitTrans_E::sub_7BC610
+[ledger] 0x7b29c0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::GetSize -> NG (attempt 2)
+[ledger] 0x7b2ad0 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::initSession -> NG (attempt 2)
+[ledger] 0x7b33d0 UDPInterfaceClass::GetStatistics -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b39d0 ObjectClass::sub_7B39D0 -> NG (attempt 2)
+[ledger] 0x7b4320 _VectorClass_PAE::Get -> NG (attempt 2)
+[ledger] 0x7b4440 _VectorClass_PAE::GetSize -> NG (attempt 2)
+[ledger] 0x7b4550 _DynamicVectorClass_PAE::sendPacket -> NG (attempt 2)
+[ledger] 0x7bc610 _BlitTrans_E::sub_7BC610 -> NG (attempt 2)
+[ledger] 0x7bc890 _BlitTrans_G::sub_7BC890 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8f5e __cfltcvt_init_13 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c91a5 CIpow_Helper_Helper -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c92d0 __alldiv -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cc186 __abnormal_termination -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cf0ae __ffexpm1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cf0f1 _isintTOS -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cf390 __twoToTOS -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d2e6e ObjectClass::sub_7D2E6E -> NG (attempt 2)
+[ledger] 0x7d75e0 _memset -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dbc68 __clrfp -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "branch_order": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p45\batch_report.json
