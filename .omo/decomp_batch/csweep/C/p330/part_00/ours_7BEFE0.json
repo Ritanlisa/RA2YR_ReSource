@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_7BEFE0@@YIDH@Z",
+ "sym_key": "Unnamed::sub_7BEFE0",
+ "size": 214,
+ "link_base": 0,
+ "bytes_hex": "515356578bf98b4c240c33c08a87a40100008bb7a001000080e1008b5e040bc1a8020f85a90000008b430ca8027439f6875401000001740d8b8ff00600000c0489430ceb028b0b8b97740700008b43105251030350e8000000008943148b430c83c40c24fd89430cf646140874248b46088b8f700700008b56245103d05052e8000000008946288b461483c40c24f78946148b4614a8107438f6875401000002740d8b8fe80600000c40894614eb028b0e8b87780700008b1e50518b4e2003cb51e8000000008b461483c40c24ef8946145f5e5b59c3",
+ "relocs": [
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?AudioCodec__Decode@@YAPADPAX0H@Z",
+   "sym_key": "AudioCodec__Decode"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?AudioCodec__Decode@@YAPADPAX0H@Z",
+   "sym_key": "AudioCodec__Decode"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?AudioCodec__Decode@@YAPADPAX0H@Z",
+   "sym_key": "AudioCodec__Decode"
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p330\part_00
+=== convert (20 addrs) ===
+[conv] 0x759670 HVAAnimation::ParseFrames -> HVAAnimation
+[conv] 0x7cb063 _tolower_0 -> _addr_7C
+[conv] 0x4aa2b0 sub_4AA2B0 -> _addr_4A
+[conv] 0x4a9770 RemoveTarget -> _addr_4A
+[conv] 0x7befe0 sub_7BEFE0 -> _addr_7B
+[conv] 0x50e010 TechnoClass::Find -> TechnoClass
+[conv] 0x7c9842 _toupper_0 -> _addr_7C
+[conv] 0x60b880 sub_60B880 -> _addr_60
+[conv] 0x7738a0 ObjectClass::sub_7738A0 -> ObjectClass
+[conv] 0x64d9e0 ObjectClass::Network_Process_64D9E0 -> ObjectClass
+[conv] 0x7c2180 Audio_Helper_7C2180 -> Audio_Helper
+[conv] 0x57b990 ObjectClass::Map_Create_57B990 -> ObjectClass
+[conv] 0x62d510 ObjectClass::sub_62D510 -> ObjectClass
+[conv] 0x646f70 sub_646F70 -> _addr_64
+[conv] 0x6392d0 sub_6392D0 -> _addr_63
+[conv] 0x6393a0 sub_6393A0 -> _addr_63
+[conv] 0x5d7e50 ObjectClass::WinMain_Helper_5D7E50 -> ObjectClass
+[conv] 0x7831a0 sub_7831A0 -> _addr_78
+[conv] 0x58a6e0 _VectorClass_U_HashObject_II::Release -> _VectorClass_U_HashObject_II
+[conv] 0x5d0850 _VectorClass_VPoint2D::Release -> _VectorClass_VPoint2D
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HVAAnimation             rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_4A                 rc=2
+[era] _addr_7B                 rc=0
+[era] TechnoClass              rc=2
+[era] _addr_60                 rc=2
+[era] ObjectClass              rc=2
+[era] Audio_Helper             rc=0
+[era] _addr_64                 rc=0
+[era] _addr_63                 rc=0
+[era] _addr_78                 rc=0
+[era] _VectorClass_U_HashObject_II rc=2
+[era] _VectorClass_VPoint2D    rc=2
+=== diffasm byte-compare ===
+[diff] 0x759670   MISMATCH         HVAAnimation::ParseFrames
+[diff] 0x7cb063   MISMATCH         _tolower_0
+[diff] 0x7c9842   MISMATCH         _toupper_0
+[diff] 0x4aa2b0   MISMATCH         sub_4AA2B0
+[diff] 0x4a9770   MISMATCH         RemoveTarget
+[diff] 0x7befe0   MISMATCH         sub_7BEFE0
+[diff] 0x64d9e0   MISMATCH         ObjectClass::Network_Process_64D9E0
+[diff] 0x57b990   MISMATCH         ObjectClass::Map_Create_57B990
+[diff] 0x7c2180   MISMATCH         Audio_Helper_7C2180
+[diff] 0x646f70   MISMATCH         sub_646F70
+[diff] 0x6392d0   MISMATCH         sub_6392D0
+[diff] 0x6393a0   MISMATCH         sub_6393A0
+[diff] 0x7831a0   MISMATCH         sub_7831A0
+[ledger] 0x759670 HVAAnimation::ParseFrames -> NG (attempt 1)
+[ledger] 0x7cb063 _tolower_0 -> NG (attempt 1)
+[ledger] 0x4aa2b0 sub_4AA2B0 -> NG (attempt 1)
+[ledger] 0x4a9770 RemoveTarget -> NG (attempt 1)
+[ledger] 0x7befe0 sub_7BEFE0 -> NG (attempt 1)
+[ledger] 0x50e010 TechnoClass::Find -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c9842 _toupper_0 -> NG (attempt 1)
+[ledger] 0x60b880 sub_60B880 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7738a0 ObjectClass::sub_7738A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64d9e0 ObjectClass::Network_Process_64D9E0 -> NG (attempt 1)
+[ledger] 0x7c2180 Audio_Helper_7C2180 -> NG (attempt 1)
+[ledger] 0x57b990 ObjectClass::Map_Create_57B990 -> NG (attempt 1)
+[ledger] 0x62d510 ObjectClass::sub_62D510 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x646f70 sub_646F70 -> NG (attempt 1)
+[ledger] 0x6392d0 sub_6392D0 -> NG (attempt 1)
+[ledger] 0x6393a0 sub_6393A0 -> NG (attempt 1)
+[ledger] 0x5d7e50 ObjectClass::WinMain_Helper_5D7E50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7831a0 sub_7831A0 -> NG (attempt 1)
+[ledger] 0x58a6e0 _VectorClass_U_HashObject_II::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0850 _VectorClass_VPoint2D::Release -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "branch_order": 2,
+  "regalloc": 5,
+  "codegen_shape": 2,
+  "width_mismatch": 1,
+  "branch_polarity": 1,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p330\batch_report.json

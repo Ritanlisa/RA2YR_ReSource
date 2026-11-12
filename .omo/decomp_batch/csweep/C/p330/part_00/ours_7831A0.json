@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_7831A0@@YAEPAH0@Z",
+ "sym_key": "Unnamed::sub_7831A0",
+ "size": 224,
+ "link_base": 0,
+ "bytes_hex": "8b54240481ecd80000008b4208538b9c24e40000003b43080f85ab0000008b42048b4b043bc10f8f930000000f8c83000000555657b91b00000033c08d7c247cf3ab8b2d00000000b91b0000008d7c2410f3ab8b028b150000000085c07c183bc57d148d0440b91b0000008d7c247c8d04c08d3482f3a58b0385c07c183bc57d148d04408d7c24108d0cc08d348ab91b000000f3a58d5424348d8424a00000005250e80000000083c4085f5e5d5b81c4d8000000c3b0015b81c4d8000000c30cff5b81c4d8000000c333c95b85c00f95c1f7d983e1fe418ac181c4d8000000c3",
+ "relocs": [
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionFlags@@3PAXA",
+   "sym_key": "g_WOL_ConnectionFlags"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

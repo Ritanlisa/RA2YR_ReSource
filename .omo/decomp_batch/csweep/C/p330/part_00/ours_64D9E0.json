@@ -1,0 +1,111 @@
+{
+ "symbol": "?Network_Process_64D9E0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Network_Process_64D9E0",
+ "size": 214,
+ "link_base": 0,
+ "bytes_hex": "518a15a001000053565784d2750da10000000085c00f85b6000000a13804000033ff3bc7897c240cb3017e358b0d3c040000558bf00fbed28bc125ff3f00008d2cc08d04a83b944044040000750a849c4042040000750147414e75dc897c24105d8d44240c6a0450b900000000e800000000a13804000033f685c07e548b0d3c04000003ce81e1ff3f00008d14c98d0c910fbe15a00100003b944944040000752b849c494204000075228d8449410400006a6f50b900000000e8000000008b44240c488944240ca138040000463bf07cac5f5e5b59c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_MainLoopObject@@3HA",
+   "sym_key": "g_MainLoopObject"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?Write@FileClass@@QAEHPAXH@Z",
+   "sym_key": "FileClass::Write"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_MainLoopObject@@3HA",
+   "sym_key": "g_MainLoopObject"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?Write@FileClass@@QAEHPAXH@Z",
+   "sym_key": "FileClass::Write"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

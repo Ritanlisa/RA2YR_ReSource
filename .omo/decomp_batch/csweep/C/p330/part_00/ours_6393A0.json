@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_6393A0@@YGPAPAIHH@Z",
+ "sym_key": "Unnamed::sub_6393A0",
+ "size": 208,
+ "link_base": 0,
+ "bytes_hex": "83ec3ca1000000005355565733ff85c089442410770c5f5e5d33c05b83c43cc208008b6c24548b5c2450a1000000008d4c2420518b34b88bcee8000000008b10895424148b4804894c24188b50088954241c8d5424148d4c2454e8000000008b48048b106a0883e9046a0883ea0451528d4c243ce8000000008b44242c8b4c243083c1fc8944243c8d50fc3bda721c8b5424348d4402043bd873103be97c0c8b5424388d440a083be872198b442410473bf80f8c72ffffff5f5e5d33c05b83c43cc208008bc65f5e5d5b83c43cc20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C28@@3IA",
+   "sym_key": "DataGlobal_AC4C28"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C1C@@3IA",
+   "sym_key": "DataGlobal_AC4C1C"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?GetCoords@ScriptAction@@QAEPAIPAX@Z",
+   "sym_key": "ScriptAction::GetCoords"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?ToCoordPixel@@YIPAIPAX0@Z",
+   "sym_key": "ToCoordPixel"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?Set@Rect@@QAEPAV1@HHHH@Z",
+   "sym_key": "Rect::Set"
+  }
+ ]
+}
