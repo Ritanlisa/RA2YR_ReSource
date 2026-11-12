@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_6CA4F0@@YIPAGPAI@Z",
+ "sym_key": "Unnamed::sub_6CA4F0",
+ "size": 187,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53558d59045657894c2418895c24148b318d4c241466c70300006a028b065156c644241f0033ff8bebff500883f8027533668b442414663d0a00742d663d0d007408668945004783c50281ff000400007d178b168d4424146a025056ff520883f80274cdc64424130166c7047b00008b7c24188bcbff8704080000e8000000008bf056e80000000083c40485c0740666833e3b750f8a44241384c075118bcfe96bffffff8bc65f5e5d5b83c40cc35f5e5d33c05b83c40cc3",
+ "relocs": [
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?Trim@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::Trim"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

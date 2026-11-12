@@ -1,0 +1,27 @@
+{
+ "symbol": "?WstringConstructor@VectorClass@@QAEPAV1@HPAH@Z",
+ "sym_key": "VectorClass::WstringConstructor",
+ "size": 149,
+ "link_base": 0,
+ "bytes_hex": "535556578b7c24148bf133db3bfb895e04897e08c6460c01885e0d891e746d8b4424183bc375438d04bd0400000050e80000000083c4043bc3741f8d4fff8d580485c989388beb7c118bc583c50450e80000000083c4044f75ef895e04c6460d018bc65f5e5d5bc208008d57ff8d680485d289388bdd7c118bc383c30450e80000000083c4044f75ef896e048bc65f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  }
+ ]
+}

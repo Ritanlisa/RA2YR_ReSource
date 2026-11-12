@@ -1,0 +1,81 @@
+{
+ "symbol": "?SetProjectionAngle@Voxel@@QAGHM@Z",
+ "sym_key": "Voxel::SetProjectionAngle",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "83ec488d4c2418e800000000d9442450e800000000a3000000008b442450508d4c241ce8000000008d4c240c8d542418518d4c2404c7442410e60435bfc7442414e60435bfc744241800000000e8000000008b08890d000000008b50048915000000008b4008a30000000033c0894c240089442404df6c2400a300000000a300000000dc0d00000000d95c240c8b4c240c890d0000000083c448c20800",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?Identity@Matrix3x4@@QAEHXZ",
+   "sym_key": "Matrix3x4::Identity"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88746C@@3IA",
+   "sym_key": "DataGlobal_88746C"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?RotateZ@Matrix3D@@QAEXM@Z",
+   "sym_key": "Matrix3D::RotateZ"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?TransformMatrix3x4Point@@YIPAMPAX00@Z",
+   "sym_key": "TransformMatrix3x4Point"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887470@@3IA",
+   "sym_key": "DataGlobal_887470"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887474@@3IA",
+   "sym_key": "DataGlobal_887474"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887478@@3IA",
+   "sym_key": "DataGlobal_887478"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887424@@3IA",
+   "sym_key": "DataGlobal_887424"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887428@@3IA",
+   "sym_key": "DataGlobal_887428"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "__real@8@c001c000000000000000",
+   "sym_key": "_real@8@c001c000000000000000"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887420@@3IA",
+   "sym_key": "DataGlobal_887420"
+  }
+ ]
+}

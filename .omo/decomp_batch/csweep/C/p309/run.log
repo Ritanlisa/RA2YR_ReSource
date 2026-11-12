@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p309\part_00
+=== convert (20 addrs) ===
+[conv] 0x724000 ToolTipManager::MainWindowProc_Helper_724000 -> ToolTipManager
+[conv] 0x754c00 Voxel::SetProjectionAngle -> Voxel
+[conv] 0x5d30c0 ObjectClass::sub_5D30C0 -> ObjectClass
+[conv] 0x7cb33d ObjectClass::___initstdio -> ObjectClass
+[conv] 0x5eef60 ObjectClass::String_Process -> ObjectClass
+[conv] 0x7ae830 ObjectClass::RemoveWOLPlayerLogin_Remove -> ObjectClass
+[conv] 0x7bf3a0 sub_7BF3A0 -> _addr_7B
+[conv] 0x554830 LightSourceClass::Constructor -> LightSourceClass
+[conv] 0x5f5dd0 BuildingClass::GetSellPriority -> BuildingClass
+[conv] 0x76abe0 WDTState::sub_76ABE0 -> WDTState
+[conv] 0x41f180 AITriggerTypeClass::ChronoSphereCharged -> AITriggerTypeClass
+[conv] 0x6a8330 SidebarClass::RefreshCameoGrid -> SidebarClass
+[conv] 0x7639a0 ObjectClass::WaypointClass_Find -> ObjectClass
+[conv] 0x730f30 ObjectClass::UI_Create_730F30 -> ObjectClass
+[conv] 0x6603b0 ObjectClass::Render_Render_6603B0 -> ObjectClass
+[conv] 0x628b00 VectorClass::sub_628B00 -> VectorClass
+[conv] 0x69d7c0 VectorClass::WstringConstructor -> VectorClass
+[conv] 0x46cb60 CampaignClass::CampaignClass -> CampaignClass
+[conv] 0x6ca4f0 sub_6CA4F0 -> _addr_6C
+[conv] 0x58a500 Subzone::CopyDataFrom -> Subzone
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ToolTipManager           rc=0
+[era] Voxel                    rc=0
+[era] ObjectClass              rc=2
+[era] _addr_7B                 rc=0
+[era] LightSourceClass         rc=0
+[era] BuildingClass            rc=2
+[era] WDTState                 rc=2
+[era] AITriggerTypeClass       rc=2
+[era] SidebarClass             rc=2
+[era] VectorClass              rc=2
+[era] CampaignClass            rc=2
+[era] _addr_6C                 rc=0
+[era] Subzone                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x724000   MISMATCH         ToolTipManager::MainWindowProc_Helper_724000
+[diff] 0x754c00   MISMATCH         Voxel::SetProjectionAngle
+[diff] 0x5d30c0   MISMATCH         ObjectClass::sub_5D30C0
+[diff] 0x7639a0   MISMATCH         ObjectClass::WaypointClass_Find
+[diff] 0x6603b0   MISMATCH         ObjectClass::Render_Render_6603B0
+[diff] 0x7bf3a0   MISMATCH         sub_7BF3A0
+[diff] 0x554830   MISMATCH         LightSourceClass::Constructor
+[diff] 0x628b00   MISMATCH         VectorClass::sub_628B00
+[diff] 0x69d7c0   MISMATCH         VectorClass::WstringConstructor
+[diff] 0x6ca4f0   MISMATCH         sub_6CA4F0
+[diff] 0x58a500   MISMATCH         Subzone::CopyDataFrom
+[ledger] 0x724000 ToolTipManager::MainWindowProc_Helper_724000 -> NG (attempt 1)
+[ledger] 0x754c00 Voxel::SetProjectionAngle -> NG (attempt 1)
+[ledger] 0x5d30c0 ObjectClass::sub_5D30C0 -> NG (attempt 1)
+[ledger] 0x7cb33d ObjectClass::___initstdio -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eef60 ObjectClass::String_Process -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ae830 ObjectClass::RemoveWOLPlayerLogin_Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bf3a0 sub_7BF3A0 -> NG (attempt 1)
+[ledger] 0x554830 LightSourceClass::Constructor -> NG (attempt 1)
+[ledger] 0x5f5dd0 BuildingClass::GetSellPriority -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76abe0 WDTState::sub_76ABE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41f180 AITriggerTypeClass::ChronoSphereCharged -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a8330 SidebarClass::RefreshCameoGrid -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7639a0 ObjectClass::WaypointClass_Find -> NG (attempt 1)
+[ledger] 0x730f30 ObjectClass::UI_Create_730F30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6603b0 ObjectClass::Render_Render_6603B0 -> NG (attempt 1)
+[ledger] 0x628b00 VectorClass::sub_628B00 -> NG (attempt 1)
+[ledger] 0x69d7c0 VectorClass::WstringConstructor -> NG (attempt 1)
+[ledger] 0x46cb60 CampaignClass::CampaignClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ca4f0 sub_6CA4F0 -> NG (attempt 1)
+[ledger] 0x58a500 Subzone::CopyDataFrom -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "regalloc": 1,
+  "const_fold": 1,
+  "frame_sched": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p309\batch_report.json

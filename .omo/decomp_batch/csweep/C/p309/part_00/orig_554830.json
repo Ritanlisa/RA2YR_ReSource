@@ -1,0 +1,11 @@
+{
+ "addr": "0x554830",
+ "name": "LightSourceClass::Constructor",
+ "size": 169,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x554830",
+ "bytes_hex": "568bf1e838b9ebff33c08d4e3889462489462889462c8946308b1500caab0089118b1504caab008951048b1508caab00894644884648895108c70628d07e00c746040cd07e00c7460804d07e00c7460cfccf7e008b0d18caab00390d20caab007c2b38051dcaab0075043bc875378b1524caab003bd07e2d50a110caab0003d1b910caab0052ff500884c074188b0d20caab008bc141890d20caab008b0d14caab008934818bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

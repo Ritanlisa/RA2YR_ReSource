@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_7BF3A0@@YAHPAIHPAXH@Z",
+ "sym_key": "Unnamed::sub_7BF3A0",
+ "size": 134,
+ "link_base": 0,
+ "bytes_hex": "8b44240853485683f8087775ff2485000000008b44240c8b5c24188b90040700008bb0000700008d0c1a3bce76085eb8010000005bc38bb0f40600008bcb03f28bd1578b7c2418c1e902f3a58bca83e103f3a48b88040700005f03cb5e89880407000033c05bc38b54240c8b4424188b8afc0600003bc17cb52bc18982040700005e33c05bc3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "$L1867",
+   "sym_key": "$L1867"
+  }
+ ]
+}

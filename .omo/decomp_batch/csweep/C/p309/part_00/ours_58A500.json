@@ -1,0 +1,15 @@
+{
+ "symbol": "?CopyDataFrom@Subzone@@QAEPAV1@H@Z",
+ "sym_key": "Subzone::CopyDataFrom",
+ "size": 172,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c568bf1573bf574758b06ff500c8b7d0833db3bfb897e08745e8d0cfd0000000051e80000000083c4043bc374168d57ff8bc885d27c0f891988590483c1084f75f5eb0233c03bc389460474318b4e0833c03bcbc6460d017e248b4d048b56048b3cc1893cc28b4cc104894cc2048b4e08403bc17ce4eb06895e04885e0d8b55105f8956108b4514894614668b4d1866894e188b551c89561c8b45208946208b065e5d5bc20400",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
