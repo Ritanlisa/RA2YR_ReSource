@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p240\part_00
+=== convert (20 addrs) ===
+[conv] 0x5eef10 _DynamicVectorClass_PBVMultiMission::Constructor -> _DynamicVectorClass_PBVMultiMission
+[conv] 0x5f34d0 sub_5F34D0 -> _addr_5F
+[conv] 0x5f9de0 _VectorClass_PAVObjectTypeClass::QueryInterface -> _VectorClass_PAVObjectTypeClass
+[conv] 0x5f9e30 _DynamicVectorClass_PAVObjectTypeClass::Constructor_VectorClass_ObjectTypeClass___ -> _DynamicVectorClass_PAVObjectTypeClass
+[conv] 0x600280 _VectorClass_PAVSpotLightClass::QueryInterface -> _VectorClass_PAVSpotLightClass
+[conv] 0x6002d0 _DynamicVectorClass_PAVSpotLightClass::Constructor_VectorClass_SpotLightClass___ -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x623460 LinkedList::Remove -> LinkedList
+[conv] 0x6285f0 _VectorClass_PAVColorScheme::QueryInterface -> _VectorClass_PAVColorScheme
+[conv] 0x628640 _DynamicVectorClass_PAVColorScheme::Destructor_1 -> _DynamicVectorClass_PAVColorScheme
+[conv] 0x628760 _VectorClass_VHSVClass::Constructor_VectorClass_HSVClass_ -> _VectorClass_VHSVClass
+[conv] 0x628e80 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Constructor -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x62b330 _VectorClass_PAVParasiteClass::QueryInterface -> _VectorClass_PAVParasiteClass
+[conv] 0x62b380 _DynamicVectorClass_PAVParasiteClass::Constructor_VectorClass_ParasiteClass___ -> _DynamicVectorClass_PAVParasiteClass
+[conv] 0x63ec50 _VectorClass_PAVPlanningMemberClass::QueryInterface -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63eca0 _DynamicVectorClass_PAVPlanningMemberClass::Constructor_VectorClass_PlanningMemberClass___ -> _DynamicVectorClass_PAVPlanningMemberClass
+[conv] 0x63ecf0 _VectorClass_PAVPlanningBranchClass::QueryInterface -> _VectorClass_PAVPlanningBranchClass
+[conv] 0x63ed40 _DynamicVectorClass_PAVPlanningBranchClass::Constructor_VectorClass_PlanningBranchClass___ -> _DynamicVectorClass_PAVPlanningBranchClass
+[conv] 0x63ed90 _VectorClass_PAVPlanningNodeClass::Destructor -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63ede0 _DynamicVectorClass_PAVPlanningNodeClass::QueryInterface -> _DynamicVectorClass_PAVPlanningNodeClass
+[conv] 0x63ee30 _VectorClass_PAVEventClass::QueryInterface -> _VectorClass_PAVEventClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PBVMultiMission rc=0
+[era] _addr_5F                 rc=2
+[era] _VectorClass_PAVObjectTypeClass rc=0
+[era] _DynamicVectorClass_PAVObjectTypeClass rc=0
+[era] _VectorClass_PAVSpotLightClass rc=0
+[era] _DynamicVectorClass_PAVSpotLightClass rc=0
+[era] LinkedList               rc=2
+[era] _VectorClass_PAVColorScheme rc=0
+[era] _DynamicVectorClass_PAVColorScheme rc=0
+[era] _VectorClass_VHSVClass   rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] _VectorClass_PAVParasiteClass rc=0
+[era] _DynamicVectorClass_PAVParasiteClass rc=0
+[era] _VectorClass_PAVPlanningMemberClass rc=0
+[era] _DynamicVectorClass_PAVPlanningMemberClass rc=0
+[era] _VectorClass_PAVPlanningBranchClass rc=0
+[era] _DynamicVectorClass_PAVPlanningBranchClass rc=0
+[era] _VectorClass_PAVPlanningNodeClass rc=0
+[era] _DynamicVectorClass_PAVPlanningNodeClass rc=0
+[era] _VectorClass_PAVEventClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5eef10   MISMATCH         _DynamicVectorClass_PBVMultiMission::Constructor
+[diff] 0x5f9de0   MISMATCH         _VectorClass_PAVObjectTypeClass::QueryInterface
+[diff] 0x5f9e30   MISMATCH         _DynamicVectorClass_PAVObjectTypeClass::Constructor_VectorClass_ObjectTypeClass___
+[diff] 0x600280   MISMATCH         _VectorClass_PAVSpotLightClass::QueryInterface
+[diff] 0x6002d0   MISMATCH         _DynamicVectorClass_PAVSpotLightClass::Constructor_VectorClass_SpotLightClass___
+[diff] 0x6285f0   MISMATCH         _VectorClass_PAVColorScheme::QueryInterface
+[diff] 0x628640   MISMATCH         _DynamicVectorClass_PAVColorScheme::Destructor_1
+[diff] 0x628760   MISMATCH         _VectorClass_VHSVClass::Constructor_VectorClass_HSVClass_
+[diff] 0x628e80   MISMATCH         _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Constructor
+[diff] 0x62b330   MISMATCH         _VectorClass_PAVParasiteClass::QueryInterface
+[diff] 0x62b380   MISMATCH         _DynamicVectorClass_PAVParasiteClass::Constructor_VectorClass_ParasiteClass___
+[diff] 0x63ec50   MISMATCH         _VectorClass_PAVPlanningMemberClass::QueryInterface
+[diff] 0x63eca0   MISMATCH         _DynamicVectorClass_PAVPlanningMemberClass::Constructor_VectorClass_PlanningMemberClass___
+[diff] 0x63ecf0   MISMATCH         _VectorClass_PAVPlanningBranchClass::QueryInterface
+[diff] 0x63ed40   MISMATCH         _DynamicVectorClass_PAVPlanningBranchClass::Constructor_VectorClass_PlanningBranchClass___
+[diff] 0x63ed90   MISMATCH         _VectorClass_PAVPlanningNodeClass::Destructor
+[diff] 0x63ede0   MISMATCH         _DynamicVectorClass_PAVPlanningNodeClass::QueryInterface
+[diff] 0x63ee30   MISMATCH         _VectorClass_PAVEventClass::QueryInterface
+[ledger] 0x5eef10 _DynamicVectorClass_PBVMultiMission::Constructor -> NG (attempt 1)
+[ledger] 0x5f34d0 sub_5F34D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f9de0 _VectorClass_PAVObjectTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x5f9e30 _DynamicVectorClass_PAVObjectTypeClass::Constructor_VectorClass_ObjectTypeClass___ -> NG (attempt 1)
+[ledger] 0x600280 _VectorClass_PAVSpotLightClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x6002d0 _DynamicVectorClass_PAVSpotLightClass::Constructor_VectorClass_SpotLightClass___ -> NG (attempt 1)
+[ledger] 0x623460 LinkedList::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6285f0 _VectorClass_PAVColorScheme::QueryInterface -> NG (attempt 1)
+[ledger] 0x628640 _DynamicVectorClass_PAVColorScheme::Destructor_1 -> NG (attempt 1)
+[ledger] 0x628760 _VectorClass_VHSVClass::Constructor_VectorClass_HSVClass_ -> NG (attempt 1)
+[ledger] 0x628e80 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Constructor -> NG (attempt 1)
+[ledger] 0x62b330 _VectorClass_PAVParasiteClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x62b380 _DynamicVectorClass_PAVParasiteClass::Constructor_VectorClass_ParasiteClass___ -> NG (attempt 1)
+[ledger] 0x63ec50 _VectorClass_PAVPlanningMemberClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x63eca0 _DynamicVectorClass_PAVPlanningMemberClass::Constructor_VectorClass_PlanningMemberClass___ -> NG (attempt 1)
+[ledger] 0x63ecf0 _VectorClass_PAVPlanningBranchClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x63ed40 _DynamicVectorClass_PAVPlanningBranchClass::Constructor_VectorClass_PlanningBranchClass___ -> NG (attempt 1)
+[ledger] 0x63ed90 _VectorClass_PAVPlanningNodeClass::Destructor -> NG (attempt 1)
+[ledger] 0x63ede0 _DynamicVectorClass_PAVPlanningNodeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x63ee30 _VectorClass_PAVEventClass::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "const_fold": 18
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p240\batch_report.json
