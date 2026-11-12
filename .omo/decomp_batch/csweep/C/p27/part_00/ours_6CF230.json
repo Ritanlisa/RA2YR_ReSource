@@ -1,0 +1,15 @@
+{
+ "symbol": "?ConvertWrapper@SwizzleManagerClass@@QAGHH@Z",
+ "sym_key": "SwizzleManagerClass::ConvertWrapper",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b4c2404e80000000033c0c20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ConvertNodes@SwizzleManagerClass@@QAEHXZ",
+   "sym_key": "SwizzleManagerClass::ConvertNodes"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB8F7",
+ "name": "_iswcntrl",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB8F7",
+ "bytes_hex": "6a20ff742408e81e8000005959c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

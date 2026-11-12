@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c61c0 ObjectClass::COM_SafeRelease -> ObjectClass
+[conv] 0x6ce270 SuperClass::SetFieldX -> SuperClass
+[conv] 0x7ac670 ObjectClass::System_Init_7AC670 -> ObjectClass
+[conv] 0x7ac680 ObjectClass::System_Init_7AC680 -> ObjectClass
+[conv] 0x5d5850 MSEngine::DestroyData -> MSEngine
+[conv] 0x5d8c80 MultiplayerTeam::Destructor -> MultiplayerTeam
+[conv] 0x6cf230 SwizzleManagerClass::ConvertWrapper -> SwizzleManagerClass
+[conv] 0x7781a0 DisableIME -> _addr_77
+[conv] 0x7cb87b _iswlower -> _addr_7C
+[conv] 0x7cb889 _iswdigit -> _addr_7C
+[conv] 0x7cb8a8 _iswspace -> _addr_7C
+[conv] 0x7cb8f7 _iswcntrl -> _addr_7C
+[conv] 0x411640 BSurface::GetPitch -> BSurface
+[conv] 0x705d50 TechnoClass::IsNotBusy -> TechnoClass
+[conv] 0x7bcae0 Stream::GetField -> Stream
+[conv] 0x409310 AudioStream::ReadStreamAndReturn -> AudioStream
+[conv] 0x473cd0 CCFileClass::Destru_vt06 -> CCFileClass
+[conv] 0x488350 CheckListClass::Clear -> CheckListClass
+[conv] 0x536fa0 ToggleRepairCommandClass::Execute -> ToggleRepairCommandClass
+[conv] 0x537020 ToggleSellCommandClass::performAction_118 -> ToggleSellCommandClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] SuperClass               rc=0
+[era] MSEngine                 rc=0
+[era] MultiplayerTeam          rc=0
+[era] SwizzleManagerClass      rc=0
+[era] _addr_77                 rc=0
+[era] _addr_7C                 rc=0
+[era] BSurface                 rc=2
+[era] TechnoClass              rc=0
+[era] Stream                   rc=0
+[era] AudioStream              rc=0
+[era] CCFileClass              rc=0
+[era] CheckListClass           rc=0
+[era] ToggleRepairCommandClass rc=0
+[era] ToggleSellCommandClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c61c0   MATCH            ObjectClass::COM_SafeRelease
+[diff] 0x7ac670   MATCH            ObjectClass::System_Init_7AC670
+[diff] 0x7ac680   MATCH            ObjectClass::System_Init_7AC680
+[diff] 0x6ce270   MATCH            SuperClass::SetFieldX
+[diff] 0x5d5850   MISMATCH         MSEngine::DestroyData
+[diff] 0x5d8c80   MISMATCH         MultiplayerTeam::Destructor
+[diff] 0x6cf230   MISMATCH         SwizzleManagerClass::ConvertWrapper
+[diff] 0x7781a0   MATCH            DisableIME
+[diff] 0x7cb87b   MISMATCH         _iswlower
+[diff] 0x7cb889   MISMATCH         _iswdigit
+[diff] 0x7cb8a8   MISMATCH         _iswspace
+[diff] 0x7cb8f7   MISMATCH         _iswcntrl
+[diff] 0x705d50   MISMATCH         TechnoClass::IsNotBusy
+[diff] 0x7bcae0   MISMATCH         Stream::GetField
+[diff] 0x409310   MISMATCH         AudioStream::ReadStreamAndReturn
+[diff] 0x473cd0   MISMATCH         CCFileClass::Destru_vt06
+[diff] 0x488350   MATCH            CheckListClass::Clear
+[diff] 0x536fa0   MISMATCH         ToggleRepairCommandClass::Execute
+[diff] 0x537020   MISMATCH         ToggleSellCommandClass::performAction_118
+[ledger] 0x6c61c0 ObjectClass::COM_SafeRelease -> OK (attempt 1)
+[ledger] 0x6ce270 SuperClass::SetFieldX -> OK (attempt 1)
+[ledger] 0x7ac670 ObjectClass::System_Init_7AC670 -> OK (attempt 1)
+[ledger] 0x7ac680 ObjectClass::System_Init_7AC680 -> OK (attempt 1)
+[ledger] 0x5d5850 MSEngine::DestroyData -> NG (attempt 1)
+[ledger] 0x5d8c80 MultiplayerTeam::Destructor -> NG (attempt 1)
+[ledger] 0x6cf230 SwizzleManagerClass::ConvertWrapper -> NG (attempt 1)
+[ledger] 0x7781a0 DisableIME -> OK (attempt 1)
+[ledger] 0x7cb87b _iswlower -> NG (attempt 1)
+[ledger] 0x7cb889 _iswdigit -> NG (attempt 1)
+[ledger] 0x7cb8a8 _iswspace -> NG (attempt 1)
+[ledger] 0x7cb8f7 _iswcntrl -> NG (attempt 1)
+[ledger] 0x411640 BSurface::GetPitch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x705d50 TechnoClass::IsNotBusy -> NG (attempt 1)
+[ledger] 0x7bcae0 Stream::GetField -> NG (attempt 1)
+[ledger] 0x409310 AudioStream::ReadStreamAndReturn -> NG (attempt 1)
+[ledger] 0x473cd0 CCFileClass::Destru_vt06 -> NG (attempt 1)
+[ledger] 0x488350 CheckListClass::Clear -> OK (attempt 1)
+[ledger] 0x536fa0 ToggleRepairCommandClass::Execute -> NG (attempt 1)
+[ledger] 0x537020 ToggleSellCommandClass::performAction_118 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 6,
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 4,
+  "cc_mismatch": 1,
+  "codegen_shape": 7,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 31.6,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p27\batch_report.json

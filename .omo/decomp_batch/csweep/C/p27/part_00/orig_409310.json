@@ -1,0 +1,11 @@
+{
+ "addr": "0x409310",
+ "name": "AudioStream::ReadStreamAndReturn",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x409310",
+ "bytes_hex": "568bf133d2e8a6feffff8b46085ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

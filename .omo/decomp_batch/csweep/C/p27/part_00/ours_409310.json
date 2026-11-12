@@ -1,0 +1,15 @@
+{
+ "symbol": "?ReadStreamAndReturn@AudioStream@@QAEHXZ",
+ "sym_key": "AudioStream::ReadStreamAndReturn",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "568bf133d28b0ee8000000008b46085ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?ReadAudioStream@@YIHPAXH@Z",
+   "sym_key": "ReadAudioStream"
+  }
+ ]
+}

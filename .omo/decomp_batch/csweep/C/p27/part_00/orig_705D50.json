@@ -1,0 +1,11 @@
+{
+ "addr": "0x705D50",
+ "name": "TechnoClass::IsNotBusy",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x705D50",
+ "bytes_hex": "8b01ff90d801000084c00f94c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

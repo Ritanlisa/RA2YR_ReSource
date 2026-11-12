@@ -1,0 +1,15 @@
+{
+ "symbol": "?_iswlower@@YAHG@Z",
+ "sym_key": "Unnamed::_iswlower",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b4424046a0225ffff000050e80000000083c408c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?iswctype@@YAHHHZZ",
+   "sym_key": "iswctype"
+  }
+ ]
+}

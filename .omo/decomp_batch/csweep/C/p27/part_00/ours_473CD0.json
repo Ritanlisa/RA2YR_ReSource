@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destru_vt06@CCFileClass@@QAE_NXZ",
+ "sym_key": "CCFileClass::Destru_vt06",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b415885c0750ce80000000084c0750333c0c3b801000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?Read@BufferIOFileClass@@QAE_NXZ",
+   "sym_key": "BufferIOFileClass::Read"
+  }
+ ]
+}

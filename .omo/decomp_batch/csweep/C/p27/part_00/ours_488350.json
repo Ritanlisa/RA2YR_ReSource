@@ -1,0 +1,15 @@
+{
+ "symbol": "?Clear@CheckListClass@@QAEHXZ",
+ "sym_key": "CheckListClass::Clear",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "e80000000085c074038b00c333c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?SetColor@ColorListClass@@QAEHXZ",
+   "sym_key": "ColorListClass::SetColor"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Execute@ToggleRepairCommandClass@@QAGDXZ",
+ "sym_key": "ToggleRepairCommandClass::Execute",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "6affb9f8010000e800000000c20400",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?TogglePower2@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::TogglePower2"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destructor@MultiplayerTeam@@QAEXXZ",
+ "sym_key": "MultiplayerTeam::Destructor",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "c7010000000083c104e900000000",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  }
+ ]
+}

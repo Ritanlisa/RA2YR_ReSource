@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB87B",
+ "name": "_iswlower",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB87B",
+ "bytes_hex": "6a02ff742408e89a8000005959c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

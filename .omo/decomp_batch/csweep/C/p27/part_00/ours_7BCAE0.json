@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetField@Stream@@QAEHXZ",
+ "sym_key": "Stream::GetField",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "518b411485c074098b086a0150ff1159c38b44240059c3",
+ "relocs": []
+}

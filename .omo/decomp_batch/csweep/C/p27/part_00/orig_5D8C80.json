@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D8C80",
+ "name": "MultiplayerTeam::Destructor",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D8C80",
+ "bytes_hex": "c701dcee7e0083c104e9d2da1d00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

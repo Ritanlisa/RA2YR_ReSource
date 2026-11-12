@@ -1,0 +1,21 @@
+{
+ "symbol": "?DisableIME@@YAPAXXZ",
+ "sym_key": "Unnamed::DisableIME",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "a1000000006a0050e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?ImmAssociateContext@@YGPAXPAXH@Z",
+   "sym_key": "ImmAssociateContext"
+  }
+ ]
+}
