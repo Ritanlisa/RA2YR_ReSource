@@ -1,0 +1,39 @@
+{
+ "symbol": "?CreateDestructionCrater@BuildingClass@@QAEDXZ",
+ "sym_key": "BuildingClass::CreateDestructionCrater",
+ "size": 163,
+ "link_base": 0,
+ "bytes_hex": "83ec14568bf18d4c2404c7442414000000008b463851c1e8100fbfc0c1e00805800000008b0d000000009981e2ff00000003c2c1f808c1e008894424140fbf4638c1e00805800000009981e2ff00000003c28d542410c1f808c1e0085289442414e8000000008b867c0200006a006a1e6a3c50e8000000008b150400000083c404408d04408d0c808b4424142bd103d08b44241083c0e25250e8000000005e83c414c3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?SHIBYTE@@YAHHZZ",
+   "sym_key": "SHIBYTE"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?Cell__CreateCrater@@YGDHHHHD@Z",
+   "sym_key": "Cell__CreateCrater"
+  }
+ ]
+}

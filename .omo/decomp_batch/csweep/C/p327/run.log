@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p327\part_00
+=== convert (20 addrs) ===
+[conv] 0x6471a0 Network::AddFrameEvent -> Network
+[conv] 0x4a0fe0 _VectorClass_UtagCONNECTDATA::Release -> _VectorClass_UtagCONNECTDATA
+[conv] 0x4a6010 globalHelper_0A6010 -> _addr_4A
+[conv] 0x639210 sub_639210 -> _addr_63
+[conv] 0x6558d0 RandomMap::PlaceTileSet -> RandomMap
+[conv] 0x731eb0 sub_731EB0 -> _addr_73
+[conv] 0x409100 ObjectClass::sub_409100 -> ObjectClass
+[conv] 0x4e1130 BulletClass::InitDetonationTimer -> BulletClass
+[conv] 0x722c40 ObjectClass::UpdateAudioTriggers -> ObjectClass
+[conv] 0x4e11f0 BulletClass::CheckProximityDetonation -> BulletClass
+[conv] 0x4717d0 CaptureManagerClass::CaptureManagerClass -> CaptureManagerClass
+[conv] 0x765c90 ObjectClass::Team_Create_765C90 -> ObjectClass
+[conv] 0x76a7e0 ObjectClass::ConstructWDTSelection_Create_767FB0_Create_Create -> ObjectClass
+[conv] 0x5ad290 _DynamicVectorClass_N::SetCapacity -> _DynamicVectorClass_N
+[conv] 0x5fdd20 FindBuildingByTiberiumType -> _addr_5F
+[conv] 0x71a4e0 TemporalClass::TemporalClass -> TemporalClass
+[conv] 0x6d2360 Matrix3x4::TransformCell -> Matrix3x4
+[conv] 0x4e34a0 UpdateLobbyGraphicsWOL -> _addr_4E
+[conv] 0x7aedd0 CChatEventSink::EnsureCapacity -> CChatEventSink
+[conv] 0x4852d0 BuildingClass::CreateDestructionCrater -> BuildingClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Network                  rc=2
+[era] _VectorClass_UtagCONNECTDATA rc=2
+[era] _addr_4A                 rc=0
+[era] _addr_63                 rc=2
+[era] RandomMap                rc=2
+[era] _addr_73                 rc=2
+[era] ObjectClass              rc=2
+[era] BulletClass              rc=2
+[era] CaptureManagerClass      rc=2
+[era] _DynamicVectorClass_N    rc=2
+[era] _addr_5F                 rc=2
+[era] TemporalClass            rc=2
+[era] Matrix3x4                rc=0
+[era] _addr_4E                 rc=2
+[era] CChatEventSink           rc=0
+[era] BuildingClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a6010   MISMATCH         globalHelper_0A6010
+[diff] 0x409100   MISMATCH         ObjectClass::sub_409100
+[diff] 0x765c90   MISMATCH         ObjectClass::Team_Create_765C90
+[diff] 0x76a7e0   MISMATCH         ObjectClass::ConstructWDTSelection_Create_767FB0_Create_Create
+[diff] 0x6d2360   MISMATCH         Matrix3x4::TransformCell
+[diff] 0x7aedd0   MISMATCH         CChatEventSink::EnsureCapacity
+[diff] 0x4852d0   MISMATCH         BuildingClass::CreateDestructionCrater
+[ledger] 0x6471a0 Network::AddFrameEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a0fe0 _VectorClass_UtagCONNECTDATA::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a6010 globalHelper_0A6010 -> NG (attempt 1)
+[ledger] 0x639210 sub_639210 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6558d0 RandomMap::PlaceTileSet -> COMPILE_FAIL (attempt 1)
+[ledger] 0x731eb0 sub_731EB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x409100 ObjectClass::sub_409100 -> NG (attempt 1)
+[ledger] 0x4e1130 BulletClass::InitDetonationTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x722c40 ObjectClass::UpdateAudioTriggers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e11f0 BulletClass::CheckProximityDetonation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4717d0 CaptureManagerClass::CaptureManagerClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765c90 ObjectClass::Team_Create_765C90 -> NG (attempt 1)
+[ledger] 0x76a7e0 ObjectClass::ConstructWDTSelection_Create_767FB0_Create_Create -> NG (attempt 1)
+[ledger] 0x5ad290 _DynamicVectorClass_N::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fdd20 FindBuildingByTiberiumType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71a4e0 TemporalClass::TemporalClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d2360 Matrix3x4::TransformCell -> NG (attempt 1)
+[ledger] 0x4e34a0 UpdateLobbyGraphicsWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7aedd0 CChatEventSink::EnsureCapacity -> NG (attempt 1)
+[ledger] 0x4852d0 BuildingClass::CreateDestructionCrater -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 1,
+  "eval_order": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p327\batch_report.json

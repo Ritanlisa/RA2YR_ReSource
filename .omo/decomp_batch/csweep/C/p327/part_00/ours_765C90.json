@@ -1,0 +1,27 @@
+{
+ "symbol": "?Team_Create_765C90@ObjectClass@@QAEPAIHPAH@Z",
+ "sym_key": "ObjectClass::Team_Create_765C90",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "5355568bf1578b7c24148b460c33ed250100ffff896e040c013bfd897e0889460c892e0f84950000008b4424183bc575678d0cfd0400000051e80000000083c4043bc5743b8d57ff8d680485d289388bdd7c2d8bcbe8000000008b0383c3084fc7000000000075eb8b4e0c896e0480e5008bc683c9015f894e0c5e5d5bc208008b560c896e0480e6008bc683ca015f89560c5e5d5bc2080089388d68048d47ff8bdd85c07c158bcbe8000000008b0b83c3084fc7010000000075eb896e048bc65f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?TransformCell@Matrix3x4@@QAEPAVAbstractClass@@PAH0@Z",
+ "sym_key": "Matrix3x4::TransformCell",
+ "size": 172,
+ "link_base": 0,
+ "bytes_hex": "83ec108b542418568b35000000008b023bc68944241c736f8b42048b15000000003bc27362db44241c8d54241c528d91e40d0000d95c24208d4c240ce8000000008b0883ec08894c24248b5004d94424248954240cdd1c24e800000000d944240c8bf0dd1c24e8000000008bc88b44242083c4088930894804c74008000000005e83c410c208008b4424188b0d000000005e89088b15000000008950048b0d0000000089480883c410c20800",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE30@@3IA",
+   "sym_key": "DataGlobal_B0CE30"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE34@@3IA",
+   "sym_key": "DataGlobal_B0CE34"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?TransformMatrix3x4Point@@YIPAMPAX00@Z",
+   "sym_key": "TransformMatrix3x4Point"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE08@@3IA",
+   "sym_key": "DataGlobal_B0CE08"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE0C@@3IA",
+   "sym_key": "DataGlobal_B0CE0C"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE10@@3IA",
+   "sym_key": "DataGlobal_B0CE10"
+  }
+ ]
+}
