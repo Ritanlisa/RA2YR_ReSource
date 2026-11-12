@@ -1,0 +1,458 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "const_fold": 19,
+   "codegen_shape": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x63f590",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_63F590",
+   "emitted": "sub_63F590",
+   "unit": "_addr_63",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x6405c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_6405C0",
+   "emitted": "sub_6405C0",
+   "unit": "_addr_64",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x643f80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_643F80",
+   "emitted": "sub_643F80",
+   "unit": "_addr_64",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x644ac0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_644AC0",
+   "emitted": "sub_644AC0",
+   "unit": "_addr_64",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x646b50",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_646B50",
+   "emitted": "sub_646B50",
+   "unit": "_addr_64",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x652750",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_652750",
+   "emitted": "sub_652750",
+   "unit": "_addr_65",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x658f50",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_658F50",
+   "emitted": "sub_658F50",
+   "unit": "_addr_65",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x65a610",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_65A610",
+   "emitted": "sub_65A610",
+   "unit": "_addr_65",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x65b020",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_65B020",
+   "emitted": "sub_65B020",
+   "unit": "_addr_65",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x65d790",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_65D790",
+   "emitted": "sub_65D790",
+   "unit": "_addr_65",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x65f400",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_65F400",
+   "emitted": "sub_65F400",
+   "unit": "_addr_65",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x65f870",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_65F870",
+   "emitted": "sub_65F870",
+   "unit": "_addr_65",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x6636c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_6636C0",
+   "emitted": "sub_6636C0",
+   "unit": "_addr_66",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x664be0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_664BE0",
+   "emitted": "sub_664BE0",
+   "unit": "_addr_66",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x67c570",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_67C570",
+   "emitted": "sub_67C570",
+   "unit": "_addr_67",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x683140",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_683140",
+   "emitted": "sub_683140",
+   "unit": "_addr_68",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x68cc00",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_68CC00",
+   "emitted": "sub_68CC00",
+   "unit": "_addr_68",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x691280",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 66B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0xb055a8]",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_691280",
+   "emitted": "sub_691280",
+   "unit": "_addr_69",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 66,
+   "clean": false
+  },
+  {
+   "addr": "0x692120",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_692120",
+   "emitted": "sub_692120",
+   "unit": "_addr_69",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  },
+  {
+   "addr": "0x693a30",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 56B",
+   "first_diff": {
+    "orig": "+18 call 0x4cad50",
+    "ours": "+18 call 0x17"
+   },
+   "pathology": "const_fold",
+   "name": "sub_693A30",
+   "emitted": "sub_693A30",
+   "unit": "_addr_69",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 56,
+   "clean": false
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p180\part_00
+=== convert (20 addrs) ===
+[conv] 0x63f590 sub_63F590 -> _addr_63
+[conv] 0x6405c0 sub_6405C0 -> _addr_64
+[conv] 0x643f80 sub_643F80 -> _addr_64
+[conv] 0x644ac0 sub_644AC0 -> _addr_64
+[conv] 0x646b50 sub_646B50 -> _addr_64
+[conv] 0x652750 sub_652750 -> _addr_65
+[conv] 0x658f50 sub_658F50 -> _addr_65
+[conv] 0x65a610 sub_65A610 -> _addr_65
+[conv] 0x65b020 sub_65B020 -> _addr_65
+[conv] 0x65d790 sub_65D790 -> _addr_65
+[conv] 0x65f400 sub_65F400 -> _addr_65
+[conv] 0x65f870 sub_65F870 -> _addr_65
+[conv] 0x6636c0 sub_6636C0 -> _addr_66
+[conv] 0x664be0 sub_664BE0 -> _addr_66
+[conv] 0x67c570 sub_67C570 -> _addr_67
+[conv] 0x683140 sub_683140 -> _addr_68
+[conv] 0x68cc00 sub_68CC00 -> _addr_68
+[conv] 0x691280 sub_691280 -> _addr_69
+[conv] 0x692120 sub_692120 -> _addr_69
+[conv] 0x693a30 sub_693A30 -> _addr_69
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_63                 rc=0
+[era] _addr_64                 rc=0
+[era] _addr_65                 rc=0
+[era] _addr_66                 rc=0
+[era] _addr_67                 rc=0
+[era] _addr_68                 rc=0
+[era] _addr_69                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x63f590   MISMATCH         sub_63F590
+[diff] 0x6405c0   MISMATCH         sub_6405C0
+[diff] 0x643f80   MISMATCH         sub_643F80
+[diff] 0x644ac0   MISMATCH         sub_644AC0
+[diff] 0x646b50   MISMATCH         sub_646B50
+[diff] 0x652750   MISMATCH         sub_652750
+[diff] 0x658f50   MISMATCH         sub_658F50
+[diff] 0x65a610   MISMATCH         sub_65A610
+[diff] 0x65b020   MISMATCH         sub_65B020
+[diff] 0x65d790   MISMATCH         sub_65D790
+[diff] 0x65f400   MISMATCH         sub_65F400
+[diff] 0x65f870   MISMATCH         sub_65F870
+[diff] 0x6636c0   MISMATCH         sub_6636C0
+[diff] 0x664be0   MISMATCH         sub_664BE0
+[diff] 0x67c570   MISMATCH         sub_67C570
+[diff] 0x683140   MISMATCH         sub_683140
+[diff] 0x68cc00   MISMATCH         sub_68CC00
+[diff] 0x691280   MISMATCH         sub_691280
+[diff] 0x692120   MISMATCH         sub_692120
+[diff] 0x693a30   MISMATCH         sub_693A30
+[ledger] 0x63f590 sub_63F590 -> NG (attempt 1)
+[ledger] 0x6405c0 sub_6405C0 -> NG (attempt 1)
+[ledger] 0x643f80 sub_643F80 -> NG (attempt 1)
+[ledger] 0x644ac0 sub_644AC0 -> NG (attempt 1)
+[ledger] 0x646b50 sub_646B50 -> NG (attempt 1)
+[ledger] 0x652750 sub_652750 -> NG (attempt 1)
+[ledger] 0x658f50 sub_658F50 -> NG (attempt 1)
+[ledger] 0x65a610 sub_65A610 -> NG (attempt 1)
+[ledger] 0x65b020 sub_65B020 -> NG (attempt 1)
+[ledger] 0x65d790 sub_65D790 -> NG (attempt 1)
+[ledger] 0x65f400 sub_65F400 -> NG (attempt 1)
+[ledger] 0x65f870 sub_65F870 -> NG (attempt 1)
+[ledger] 0x6636c0 sub_6636C0 -> NG (attempt 1)
+[ledger] 0x664be0 sub_664BE0 -> NG (attempt 1)
+[ledger] 0x67c570 sub_67C570 -> NG (attempt 1)
+[ledger] 0x683140 sub_683140 -> NG (attempt 1)
+[ledger] 0x68cc00 sub_68CC00 -> NG (attempt 1)
+[ledger] 0x691280 sub_691280 -> NG (attempt 1)
+[ledger] 0x692120 sub_692120 -> NG (attempt 1)
+[ledger] 0x693a30 sub_693A30 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 19,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p180\batch_report.json
