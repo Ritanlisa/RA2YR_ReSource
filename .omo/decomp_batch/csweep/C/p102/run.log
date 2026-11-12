@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p102\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ea510 _VectorClass_PAVTriggerClass::Remove -> _VectorClass_PAVTriggerClass
+[conv] 0x4ea770 _VectorClass_PAVTriggerTypeClass::Remove -> _VectorClass_PAVTriggerTypeClass
+[conv] 0x4ea9d0 _VectorClass_PAVTubeClass::Remove -> _VectorClass_PAVTubeClass
+[conv] 0x4eac30 _VectorClass_PAVParticleSystemClass::Remove -> _VectorClass_PAVParticleSystemClass
+[conv] 0x4eae90 _VectorClass_PAVWaveClass::Remove -> _VectorClass_PAVWaveClass
+[conv] 0x4eb0f0 _VectorClass_PAVOverlayClass::Remove -> _VectorClass_PAVOverlayClass
+[conv] 0x4eb350 _VectorClass_PAVSmudgeClass::ddtor -> _VectorClass_PAVSmudgeClass
+[conv] 0x4eb5b0 _VectorClass_PAVTerrainClass::ddtor -> _VectorClass_PAVTerrainClass
+[conv] 0x4eb810 _VectorClass_PAVAircraftClass::Remove -> _VectorClass_PAVAircraftClass
+[conv] 0x4eba70 _VectorClass_PAVUnitClass::Remove -> _VectorClass_PAVUnitClass
+[conv] 0x4ebf30 _VectorClass_PAVAnimClass::Remove -> _VectorClass_PAVAnimClass
+[conv] 0x4ec190 _VectorClass_PAVFactoryClass::Remove -> _VectorClass_PAVFactoryClass
+[conv] 0x4ec3f0 _VectorClass_PAVCampaignClass::Remove -> _VectorClass_PAVCampaignClass
+[conv] 0x4ec650 _VectorClass_PAVSideClass::Remove -> _VectorClass_PAVSideClass
+[conv] 0x4ec8b0 _VectorClass_PAVHouseTypeClass::Remove -> _VectorClass_PAVHouseTypeClass
+[conv] 0x4ecb10 _VectorClass_PAVTaskForceClass::Remove -> _VectorClass_PAVTaskForceClass
+[conv] 0x4ecd70 _VectorClass_PAVTeamTypeClass::Remove -> _VectorClass_PAVTeamTypeClass
+[conv] 0x4ecfd0 _VectorClass_PAVScriptTypeClass::Remove -> _VectorClass_PAVScriptTypeClass
+[conv] 0x4ed230 _VectorClass_PAVOverlayTypeClass::Remove -> _VectorClass_PAVOverlayTypeClass
+[conv] 0x4ed490 _VectorClass_PAVSmudgeTypeClass::Remove -> _VectorClass_PAVSmudgeTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVTriggerClass rc=0
+[era] _VectorClass_PAVTriggerTypeClass rc=0
+[era] _VectorClass_PAVTubeClass rc=0
+[era] _VectorClass_PAVParticleSystemClass rc=0
+[era] _VectorClass_PAVWaveClass rc=0
+[era] _VectorClass_PAVOverlayClass rc=0
+[era] _VectorClass_PAVSmudgeClass rc=0
+[era] _VectorClass_PAVTerrainClass rc=0
+[era] _VectorClass_PAVAircraftClass rc=0
+[era] _VectorClass_PAVUnitClass rc=0
+[era] _VectorClass_PAVAnimClass rc=0
+[era] _VectorClass_PAVFactoryClass rc=0
+[era] _VectorClass_PAVCampaignClass rc=0
+[era] _VectorClass_PAVSideClass rc=0
+[era] _VectorClass_PAVHouseTypeClass rc=0
+[era] _VectorClass_PAVTaskForceClass rc=0
+[era] _VectorClass_PAVTeamTypeClass rc=0
+[era] _VectorClass_PAVScriptTypeClass rc=0
+[era] _VectorClass_PAVOverlayTypeClass rc=0
+[era] _VectorClass_PAVSmudgeTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4ea510   MISMATCH         _VectorClass_PAVTriggerClass::Remove
+[diff] 0x4ea770   MISMATCH         _VectorClass_PAVTriggerTypeClass::Remove
+[diff] 0x4ea9d0   MISMATCH         _VectorClass_PAVTubeClass::Remove
+[diff] 0x4eac30   MISMATCH         _VectorClass_PAVParticleSystemClass::Remove
+[diff] 0x4eae90   MISMATCH         _VectorClass_PAVWaveClass::Remove
+[diff] 0x4eb0f0   MISMATCH         _VectorClass_PAVOverlayClass::Remove
+[diff] 0x4eb350   MISMATCH         _VectorClass_PAVSmudgeClass::ddtor
+[diff] 0x4eb5b0   MISMATCH         _VectorClass_PAVTerrainClass::ddtor
+[diff] 0x4eb810   MISMATCH         _VectorClass_PAVAircraftClass::Remove
+[diff] 0x4eba70   MISMATCH         _VectorClass_PAVUnitClass::Remove
+[diff] 0x4ebf30   MISMATCH         _VectorClass_PAVAnimClass::Remove
+[diff] 0x4ec190   MISMATCH         _VectorClass_PAVFactoryClass::Remove
+[diff] 0x4ec3f0   MISMATCH         _VectorClass_PAVCampaignClass::Remove
+[diff] 0x4ec650   MISMATCH         _VectorClass_PAVSideClass::Remove
+[diff] 0x4ec8b0   MISMATCH         _VectorClass_PAVHouseTypeClass::Remove
+[diff] 0x4ecb10   MISMATCH         _VectorClass_PAVTaskForceClass::Remove
+[diff] 0x4ecd70   MISMATCH         _VectorClass_PAVTeamTypeClass::Remove
+[diff] 0x4ecfd0   MISMATCH         _VectorClass_PAVScriptTypeClass::Remove
+[diff] 0x4ed230   MISMATCH         _VectorClass_PAVOverlayTypeClass::Remove
+[diff] 0x4ed490   MISMATCH         _VectorClass_PAVSmudgeTypeClass::Remove
+[ledger] 0x4ea510 _VectorClass_PAVTriggerClass::Remove -> NG (attempt 1)
+[ledger] 0x4ea770 _VectorClass_PAVTriggerTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x4ea9d0 _VectorClass_PAVTubeClass::Remove -> NG (attempt 1)
+[ledger] 0x4eac30 _VectorClass_PAVParticleSystemClass::Remove -> NG (attempt 1)
+[ledger] 0x4eae90 _VectorClass_PAVWaveClass::Remove -> NG (attempt 1)
+[ledger] 0x4eb0f0 _VectorClass_PAVOverlayClass::Remove -> NG (attempt 1)
+[ledger] 0x4eb350 _VectorClass_PAVSmudgeClass::ddtor -> NG (attempt 1)
+[ledger] 0x4eb5b0 _VectorClass_PAVTerrainClass::ddtor -> NG (attempt 1)
+[ledger] 0x4eb810 _VectorClass_PAVAircraftClass::Remove -> NG (attempt 1)
+[ledger] 0x4eba70 _VectorClass_PAVUnitClass::Remove -> NG (attempt 1)
+[ledger] 0x4ebf30 _VectorClass_PAVAnimClass::Remove -> NG (attempt 1)
+[ledger] 0x4ec190 _VectorClass_PAVFactoryClass::Remove -> NG (attempt 1)
+[ledger] 0x4ec3f0 _VectorClass_PAVCampaignClass::Remove -> NG (attempt 1)
+[ledger] 0x4ec650 _VectorClass_PAVSideClass::Remove -> NG (attempt 1)
+[ledger] 0x4ec8b0 _VectorClass_PAVHouseTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x4ecb10 _VectorClass_PAVTaskForceClass::Remove -> NG (attempt 1)
+[ledger] 0x4ecd70 _VectorClass_PAVTeamTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x4ecfd0 _VectorClass_PAVScriptTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x4ed230 _VectorClass_PAVOverlayTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x4ed490 _VectorClass_PAVSmudgeTypeClass::Remove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p102\batch_report.json
