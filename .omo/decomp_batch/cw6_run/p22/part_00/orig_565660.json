@@ -1,0 +1,11 @@
+{
+ "addr": "0x565660",
+ "name": "DamageArea::CalcScatterOffset",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x565660",
+ "bytes_hex": "83ec088b442410538b99f4000000558ba9fc000000560fbf7002570fbf388b81000100008bcff6c3018944241474052bce41eb022bce8bc32bf3992bc203f7d1f9d1f803c88b4424142bcd2bf08b44241c66894c242066897424228b4c24205f5e5d89085b83c408c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

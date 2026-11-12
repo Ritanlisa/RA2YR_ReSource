@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x55ac70 JumpjetLocomotionClass::GetGlobalCoordinate -> JumpjetLocomotionClass
+[conv] 0x55f970 unknown_libname_21 -> _addr_55
+[conv] 0x565660 DamageArea::CalcScatterOffset -> DamageArea
+[conv] 0x5656d0 MapClass::IsCellPassable -> MapClass
+[conv] 0x565730 Coord::To_Cell -> Coord
+[conv] 0x5657a0 CellCoord::To_CellObj -> CellCoord
+[conv] 0x56da10 ObjectClass::GetRegionMap -> ObjectClass
+[conv] 0x580b20 CellClass::updateLighting -> CellClass
+[conv] 0x580b70 CellClass::applyTileDamage -> CellClass
+[conv] 0x585ee0 sub_585EE0 -> _addr_58
+[conv] 0x588c60 CellStruct::Sub -> CellStruct
+[conv] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x589300 _VectorClass_UZoneConnectionClass::AddRef -> _VectorClass_UZoneConnectionClass
+[conv] 0x5896a0 _DynamicVectorClass_UZoneConnectionClass::Read -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x589ca0 _VectorClass_PAVCellClass::InitCellVe_vt01 -> _VectorClass_PAVCellClass
+[conv] 0x589eb0 _VectorClass_W4PassabilityType::AddRef -> _VectorClass_W4PassabilityType
+[conv] 0x589fd0 _VectorClass_W4PassabilityType::GetSize -> _VectorClass_W4PassabilityType
+[conv] 0x58a0e0 _DynamicVectorClass_W4PassabilityType::FindItemIndex -> _DynamicVectorClass_W4PassabilityType
+[conv] 0x58a230 _DynamicVectorClass_U_HashObject_II::FindItemIndex_0 -> _DynamicVectorClass_U_HashObject_II
+[conv] 0x58a260 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::AddRef -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=0
+[era] _addr_55                 rc=2
+[era] DamageArea               rc=0
+[era] MapClass                 rc=0
+[era] Coord                    rc=0
+[era] CellCoord                rc=0
+[era] ObjectClass              rc=2
+[era] CellClass                rc=0
+[era] _addr_58                 rc=0
+[era] CellStruct               rc=0
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=2
+[era] _VectorClass_UZoneConnectionClass rc=0
+[era] _DynamicVectorClass_UZoneConnectionClass rc=0
+[era] _VectorClass_PAVCellClass rc=0
+[era] _VectorClass_W4PassabilityType rc=0
+[era] _DynamicVectorClass_W4PassabilityType rc=0
+[era] _DynamicVectorClass_U_HashObject_II rc=0
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+=== diffasm byte-compare ===
+[diff] 0x55ac70   MISMATCH         JumpjetLocomotionClass::GetGlobalCoordinate
+[diff] 0x565660   MISMATCH         DamageArea::CalcScatterOffset
+[diff] 0x5656d0   MISMATCH         MapClass::IsCellPassable
+[diff] 0x565730   MISMATCH         Coord::To_Cell
+[diff] 0x5657a0   MISMATCH         CellCoord::To_CellObj
+[diff] 0x580b20   MISMATCH         CellClass::updateLighting
+[diff] 0x580b70   MISMATCH         CellClass::applyTileDamage
+[diff] 0x585ee0   MISMATCH         sub_585EE0
+[diff] 0x588c60   MISMATCH         CellStruct::Sub
+[diff] 0x589300   MISMATCH         _VectorClass_UZoneConnectionClass::AddRef
+[diff] 0x5896a0   MISMATCH         _DynamicVectorClass_UZoneConnectionClass::Read
+[diff] 0x589ca0   MISMATCH         _VectorClass_PAVCellClass::InitCellVe_vt01
+[diff] 0x589eb0   MISMATCH         _VectorClass_W4PassabilityType::AddRef
+[diff] 0x589fd0   MISMATCH         _VectorClass_W4PassabilityType::GetSize
+[diff] 0x58a0e0   MISMATCH         _DynamicVectorClass_W4PassabilityType::FindItemIndex
+[diff] 0x58a230   MISMATCH         _DynamicVectorClass_U_HashObject_II::FindItemIndex_0
+[diff] 0x58a260   MISMATCH         _VectorClass_U_HashObject_IUSubzoneConnectionStruct::AddRef
+[ledger] 0x55ac70 JumpjetLocomotionClass::GetGlobalCoordinate -> NG (attempt 2)
+[ledger] 0x55f970 unknown_libname_21 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x565660 DamageArea::CalcScatterOffset -> NG (attempt 2)
+[ledger] 0x5656d0 MapClass::IsCellPassable -> NG (attempt 2)
+[ledger] 0x565730 Coord::To_Cell -> NG (attempt 2)
+[ledger] 0x5657a0 CellCoord::To_CellObj -> NG (attempt 2)
+[ledger] 0x56da10 ObjectClass::GetRegionMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x580b20 CellClass::updateLighting -> NG (attempt 2)
+[ledger] 0x580b70 CellClass::applyTileDamage -> NG (attempt 2)
+[ledger] 0x585ee0 sub_585EE0 -> NG (attempt 2)
+[ledger] 0x588c60 CellStruct::Sub -> NG (attempt 2)
+[ledger] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> COMPILE_FAIL (attempt 2)
+[ledger] 0x589300 _VectorClass_UZoneConnectionClass::AddRef -> NG (attempt 2)
+[ledger] 0x5896a0 _DynamicVectorClass_UZoneConnectionClass::Read -> NG (attempt 2)
+[ledger] 0x589ca0 _VectorClass_PAVCellClass::InitCellVe_vt01 -> NG (attempt 2)
+[ledger] 0x589eb0 _VectorClass_W4PassabilityType::AddRef -> NG (attempt 2)
+[ledger] 0x589fd0 _VectorClass_W4PassabilityType::GetSize -> NG (attempt 2)
+[ledger] 0x58a0e0 _DynamicVectorClass_W4PassabilityType::FindItemIndex -> NG (attempt 2)
+[ledger] 0x58a230 _DynamicVectorClass_U_HashObject_II::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x58a260 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::AddRef -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 8,
+  "regalloc": 1,
+  "width_mismatch": 2,
+  "eval_order": 1,
+  "branch_order": 1,
+  "branch_polarity": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p22\batch_report.json

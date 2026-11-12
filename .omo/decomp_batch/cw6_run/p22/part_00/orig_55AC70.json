@@ -1,0 +1,11 @@
+{
+ "addr": "0x55AC70",
+ "name": "JumpjetLocomotionClass::GetGlobalCoordinate",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55AC70",
+ "bytes_hex": "8b4424088b0d78ccab008b157cccab00568b3580ccab00578bf8890f8957048977085f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?applyTileDamage@CellClass@@QAEHXZ",
+ "sym_key": "CellClass::applyTileDamage",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "8b118bc2c1f8100fbfc00fbfcac1e00903c13d00000400730e0fbe0d340300008b048185c0750b89157c160000b8581600008b40443dcd0000007c0d3de80000007f06b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x580B20",
+ "name": "CellClass::updateLighting",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x580B20",
+ "bytes_hex": "0fbf41020fbf11c1e00903c278143d000004007d0d8b1524f987008b048285c0750c8b01a374dcab00b850dcab008b404483f84a7c0b83f8657f06b801000000c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

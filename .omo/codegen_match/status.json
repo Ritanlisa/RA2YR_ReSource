@@ -39317,11 +39317,16 @@
   "status": "OK"
  },
  "0x55ac70": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+4 mov ecx, dword ptr [0xabcc78]",
   "name": "JumpjetLocomotionClass::GetGlobalCoordinate",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "JumpjetLocomotionClass::GetGlobalCoordinate",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x55aca0": {
   "attempts": 1,
@@ -39815,7 +39820,7 @@
   "this_as_id": false
  },
  "0x55f970": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_21",
@@ -39976,41 +39981,51 @@
   "this_as_id": false
  },
  "0x565660": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "DamageArea::CalcScatterOffset",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
- },
- "0x5656d0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "MapClass::IsCellPassable",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
- },
- "0x565730": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
+  "name": "DamageArea::CalcScatterOffset",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DamageArea::CalcScatterOffset",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5656d0": {
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ecx",
+  "name": "MapClass::IsCellPassable",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MapClass::IsCellPassable",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x565730": {
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+6 mov eax, dword ptr [edi]",
   "name": "Coord::To_Cell",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Coord::To_Cell",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5657a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+18 js 0x5657c8",
   "name": "CellCoord::To_CellObj",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CellCoord::To_CellObj",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5657e0": {
@@ -40224,7 +40239,7 @@
   "status": "NG"
  },
  "0x56da10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -40497,23 +40512,28 @@
   "this_as_id": false
  },
  "0x580b20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 movsx eax, word ptr [ecx + 2]",
   "name": "CellClass::updateLighting",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "CellClass::updateLighting",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x580b70": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 movsx eax, word ptr [ecx + 2]",
   "name": "CellClass::applyTileDamage",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "CellClass::applyTileDamage",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x583180": {
   "attempts": 5,
@@ -40558,14 +40578,14 @@
   "status": "NG"
  },
  "0x585ee0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "sub_585EE0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_585EE0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5862c0": {
@@ -40701,15 +40721,15 @@
   "this_as_id": false
  },
  "0x588c60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+3 mov eax, dword ptr [esp + 8]",
   "name": "CellStruct::Sub",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
   "orig_name": "CellStruct::Sub",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x588cc0": {
@@ -40859,7 +40879,7 @@
   "this_as_id": false
  },
  "0x5892d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -40871,15 +40891,15 @@
   "this_as_id": false
  },
  "0x589300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+5 push esi",
   "name": "_VectorClass_UZoneConnectionClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "unknown::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x589370": {
@@ -40925,15 +40945,15 @@
   "this_as_id": false
  },
  "0x5896a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 jle 0x5896e1",
   "name": "_DynamicVectorClass_UZoneConnectionClass::Read",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "_DynamicVectorClass_UZoneConnectionClass::Read",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5896f0": {
@@ -40980,15 +41000,15 @@
   "this_as_id": false
  },
  "0x589ca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x589cd6",
   "name": "_VectorClass_PAVCellClass::InitCellVe_vt01",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "_VectorClass_PAVCellClass::InitCellVe_vt01",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x589dc0": {
@@ -41016,15 +41036,15 @@
   "this_as_id": false
  },
  "0x589eb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x589ee6",
   "name": "_VectorClass_W4PassabilityType::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_W4PassabilityType::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x589ef0": {
@@ -41035,15 +41055,15 @@
   "status": "NG"
  },
  "0x589fd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x589fde",
   "name": "_VectorClass_W4PassabilityType::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_W4PassabilityType::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a010": {
@@ -41059,15 +41079,15 @@
   "this_as_id": false
  },
  "0x58a0e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_W4PassabilityType::FindItemIndex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_W4PassabilityType::FindItemIndex",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a110": {
@@ -41078,27 +41098,27 @@
   "status": "NG"
  },
  "0x58a230": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_U_HashObject_II::FindItemIndex_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_W4PassabilityType::FindItemIndex_0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x58a296",
   "name": "_VectorClass_U_HashObject_IUSubzoneConnectionStruct::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_UHashObject_uint_SubzoneConn::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a2a0": {

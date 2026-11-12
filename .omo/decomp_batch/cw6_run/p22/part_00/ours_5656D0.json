@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsCellPassable@MapClass@@QAGHH@Z",
+ "sym_key": "MapClass::IsCellPassable",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "8b4c24088bc1c1f8100fbfc00fbfd1c1e00903c23d0000040073118b5424048b923c0100008b048285c0750bb858160000890d7c1600008b802c010000c1e80383e001c20800",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

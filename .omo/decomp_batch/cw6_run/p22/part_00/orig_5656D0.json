@@ -1,0 +1,11 @@
+{
+ "addr": "0x5656D0",
+ "name": "MapClass::IsCellPassable",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5656D0",
+ "bytes_hex": "51668b44240e8b4c240c668944240266894c24000fbfc00fbfc9c1e00903c178183d000004007d118b5424088b8a3c0100008b048185c0750f8b542400b850dcab00891574dcab008b802c010000c1e80383e00159c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

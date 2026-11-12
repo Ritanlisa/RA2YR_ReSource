@@ -1,0 +1,8 @@
+{
+ "symbol": "?CalcScatterOffset@DamageArea@@QAEPAIPAHPAF@Z",
+ "sym_key": "DamageArea::CalcScatterOffset",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "518b44240c538b99f4000000558ba9fc000000560fbf700257668b388b8100010000f6c301894424100fbfcf74052bce41eb022bce8bc3992bc28b542410d1f9d1f82bf203c88b4424182bf32bcd03f766894c241c668974241e8b4c241c5f5e5d89085b59c20800",
+ "relocs": []
+}

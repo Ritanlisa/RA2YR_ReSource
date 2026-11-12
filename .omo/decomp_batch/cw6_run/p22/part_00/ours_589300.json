@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorClass_UZoneConnectionClass@@QAEDH@Z",
+ "sym_key": "_VectorClass_UZoneConnectionClass::AddRef",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "8b442404538b5908568b5008573bda755a33ff85db7f085f5eb0015bc204008b50048b41048bf2668b082bf0663b0c0675398bc82bc88d4c1106668b5002663b51fc7527668b5004663b51fe751d668b5006663b1175144783c01083c1103bfb7db5668b10663b140674cf5f5e32c05bc20400",
+ "relocs": []
+}

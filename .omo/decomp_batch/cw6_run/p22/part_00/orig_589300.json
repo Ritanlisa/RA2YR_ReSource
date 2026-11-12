@@ -1,0 +1,11 @@
+{
+ "addr": "0x589300",
+ "name": "unknown::AddRef",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x589300",
+ "bytes_hex": "8b4424045356578b79088b50083bfa754a33f685ff7e3c8b50048b41048d4a022bd0668b18663b1c027530668b5802663b197527668b5804663b5902751d668b5806663b590475134683c11083c0103bf77ccf5f5eb0015bc204005f5e32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

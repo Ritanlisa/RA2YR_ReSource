@@ -1,0 +1,21 @@
+{
+ "symbol": "?To_CellObj@CellCoord@@QAEPAXPAF@Z",
+ "sym_key": "CellCoord::To_CellObj",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "8b542404560fbf42020fbf32c1e00903c65e3d00000400730d8b893c0100008b048185c0750d8b12b85816000089157c160000c20400",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

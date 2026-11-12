@@ -1,0 +1,11 @@
+{
+ "addr": "0x580B70",
+ "name": "CellClass::applyTileDamage",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x580B70",
+ "bytes_hex": "0fbf41020fbf11c1e00903c278143d000004007d0d8b1524f987008b048285c0750c8b01a374dcab00b850dcab008b40443dcd0000007c0d3de80000007f06b801000000c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

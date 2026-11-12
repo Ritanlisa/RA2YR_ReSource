@@ -1,0 +1,11 @@
+{
+ "addr": "0x5657A0",
+ "name": "CellCoord::To_CellObj",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5657A0",
+ "bytes_hex": "8b542404560fbf42020fbf32c1e00903c65e78143d000004007d0d8b893c0100008b048185c0750d8b12b850dcab00891574dcab00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

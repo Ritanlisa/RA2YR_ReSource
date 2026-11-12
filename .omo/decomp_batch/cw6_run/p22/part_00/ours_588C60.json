@@ -1,0 +1,8 @@
+{
+ "symbol": "?Sub@CellStruct@@QAEPAIPAHPAG@Z",
+ "sym_key": "CellStruct::Sub",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "668b118b098b442408c1f910662b10662b48028b442404668954240866894c240a8b5424088910c20800",
+ "relocs": []
+}
