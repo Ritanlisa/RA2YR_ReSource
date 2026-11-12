@@ -21290,6 +21290,42 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4937a0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlatZReadWrite_G::sub_4937A0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4937A0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4937d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlatZReadWrite_G::sub_4937D0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4937D0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x493800": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlatZReadWrite_G::sub_493800",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_493800",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x493830": {
   "attempts": 2,
   "clean": false,
@@ -21302,12 +21338,60 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4938a0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransDarkenZReadWrite_G::sub_4938A0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4938A0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4938d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransDarkenZReadWrite_G::sub_4938D0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4938D0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x493900": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransDarkenZReadWrite_G::sub_493900",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_493900",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x493930": {
   "attempts": 11,
   "first_diff": "+4 push esi",
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x4939d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent75ZReadWrite_G::CallBlit0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::CallBlit0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x493a00": {
   "attempts": 1,
@@ -21316,12 +21400,60 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x493a30": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent75ZReadWrite_G::CallBlit0_1",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::CallBlit0_1",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x493a60": {
   "attempts": 8,
   "first_diff": "+4 mov edx, dword ptr [esp + 0x14]",
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x493b00": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent50ZReadWrite_G::CallBlit0_2",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::CallBlit0_2",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x493b30": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent50ZReadWrite_G::CallBlit0_3",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::CallBlit0_3",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x493b60": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent50ZReadWrite_G::CallBlit0_4",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::CallBlit0_4",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x493b90": {
   "attempts": 10,
@@ -21330,12 +21462,84 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x493c30": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent25ZReadWrite_G::CallBlit0_5",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::CallBlit0_5",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x493c60": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent25ZReadWrite_G::CallBlit0_6",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::CallBlit0_6",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x493c90": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent25ZReadWrite_G::CallBlit0_7",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::CallBlit0_7",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x493cc0": {
   "attempts": 8,
   "first_diff": "+0 push ebp",
   "name": "BlitPlainXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x493d60": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitPlainXlatAlpha_G::ddtor",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitPlainXlatAlpha_ushort::ddtor",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x493d90": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitPlainXlatAlpha_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitPlainXlatAlpha_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x493dc0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitPlainXlatAlpha_G::Blit",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitPlainXlatAlpha_ushort::Blit",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x493df0": {
   "attempts": 8,
@@ -21351,12 +21555,48 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x493ed0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransXlatAlpha_G::BlitRect",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::BlitRect",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x493f00": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransXlatAlpha_G::GetSize",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlpha_ushort::GetSize",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x493f30": {
   "attempts": 8,
   "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
   "name": "BlitTransZRemapXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x493ff0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlatAlpha_G::ddtor",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransZRemapXlatAlpha_ushort::ddtor",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x494080": {
   "attempts": 8,

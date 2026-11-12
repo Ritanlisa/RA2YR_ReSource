@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p163\part_00
+=== convert (20 addrs) ===
+[conv] 0x4937a0 _BlitTransZRemapXlatZReadWrite_G::sub_4937A0 -> _BlitTransZRemapXlatZReadWrite_G
+[conv] 0x4937d0 _BlitTransZRemapXlatZReadWrite_G::sub_4937D0 -> _BlitTransZRemapXlatZReadWrite_G
+[conv] 0x493800 _BlitTransZRemapXlatZReadWrite_G::sub_493800 -> _BlitTransZRemapXlatZReadWrite_G
+[conv] 0x4938a0 _BlitTransDarkenZReadWrite_G::sub_4938A0 -> _BlitTransDarkenZReadWrite_G
+[conv] 0x4938d0 _BlitTransDarkenZReadWrite_G::sub_4938D0 -> _BlitTransDarkenZReadWrite_G
+[conv] 0x493900 _BlitTransDarkenZReadWrite_G::sub_493900 -> _BlitTransDarkenZReadWrite_G
+[conv] 0x4939d0 _BlitTransLucent75ZReadWrite_G::CallBlit0 -> _BlitTransLucent75ZReadWrite_G
+[conv] 0x493a30 _BlitTransLucent75ZReadWrite_G::CallBlit0_1 -> _BlitTransLucent75ZReadWrite_G
+[conv] 0x493b00 _BlitTransLucent50ZReadWrite_G::CallBlit0_2 -> _BlitTransLucent50ZReadWrite_G
+[conv] 0x493b30 _BlitTransLucent50ZReadWrite_G::CallBlit0_3 -> _BlitTransLucent50ZReadWrite_G
+[conv] 0x493b60 _BlitTransLucent50ZReadWrite_G::CallBlit0_4 -> _BlitTransLucent50ZReadWrite_G
+[conv] 0x493c30 _BlitTransLucent25ZReadWrite_G::CallBlit0_5 -> _BlitTransLucent25ZReadWrite_G
+[conv] 0x493c60 _BlitTransLucent25ZReadWrite_G::CallBlit0_6 -> _BlitTransLucent25ZReadWrite_G
+[conv] 0x493c90 _BlitTransLucent25ZReadWrite_G::CallBlit0_7 -> _BlitTransLucent25ZReadWrite_G
+[conv] 0x493d60 _BlitPlainXlatAlpha_G::ddtor -> _BlitPlainXlatAlpha_G
+[conv] 0x493d90 _BlitPlainXlatAlpha_G::Release -> _BlitPlainXlatAlpha_G
+[conv] 0x493dc0 _BlitPlainXlatAlpha_G::Blit -> _BlitPlainXlatAlpha_G
+[conv] 0x493ed0 _BlitTransXlatAlpha_G::BlitRect -> _BlitTransXlatAlpha_G
+[conv] 0x493f00 _BlitTransXlatAlpha_G::GetSize -> _BlitTransXlatAlpha_G
+[conv] 0x493ff0 _BlitTransZRemapXlatAlpha_G::ddtor -> _BlitTransZRemapXlatAlpha_G
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTransZRemapXlatZReadWrite_G rc=0
+[era] _BlitTransDarkenZReadWrite_G rc=0
+[era] _BlitTransLucent75ZReadWrite_G rc=0
+[era] _BlitTransLucent50ZReadWrite_G rc=0
+[era] _BlitTransLucent25ZReadWrite_G rc=0
+[era] _BlitPlainXlatAlpha_G    rc=0
+[era] _BlitTransXlatAlpha_G    rc=0
+[era] _BlitTransZRemapXlatAlpha_G rc=0
+=== diffasm byte-compare ===
+[diff] 0x4937a0   MATCH            _BlitTransZRemapXlatZReadWrite_G::sub_4937A0
+[diff] 0x4937d0   MATCH            _BlitTransZRemapXlatZReadWrite_G::sub_4937D0
+[diff] 0x493800   MATCH            _BlitTransZRemapXlatZReadWrite_G::sub_493800
+[diff] 0x4938a0   MATCH            _BlitTransDarkenZReadWrite_G::sub_4938A0
+[diff] 0x4938d0   MATCH            _BlitTransDarkenZReadWrite_G::sub_4938D0
+[diff] 0x493900   MATCH            _BlitTransDarkenZReadWrite_G::sub_493900
+[diff] 0x4939d0   MATCH            _BlitTransLucent75ZReadWrite_G::CallBlit0
+[diff] 0x493a30   MATCH            _BlitTransLucent75ZReadWrite_G::CallBlit0_1
+[diff] 0x493b00   MATCH            _BlitTransLucent50ZReadWrite_G::CallBlit0_2
+[diff] 0x493b30   MATCH            _BlitTransLucent50ZReadWrite_G::CallBlit0_3
+[diff] 0x493b60   MATCH            _BlitTransLucent50ZReadWrite_G::CallBlit0_4
+[diff] 0x493c30   MATCH            _BlitTransLucent25ZReadWrite_G::CallBlit0_5
+[diff] 0x493c60   MATCH            _BlitTransLucent25ZReadWrite_G::CallBlit0_6
+[diff] 0x493c90   MATCH            _BlitTransLucent25ZReadWrite_G::CallBlit0_7
+[diff] 0x493d60   MATCH            _BlitPlainXlatAlpha_G::ddtor
+[diff] 0x493d90   MATCH            _BlitPlainXlatAlpha_G::Release
+[diff] 0x493dc0   MATCH            _BlitPlainXlatAlpha_G::Blit
+[diff] 0x493ed0   MATCH            _BlitTransXlatAlpha_G::BlitRect
+[diff] 0x493f00   MATCH            _BlitTransXlatAlpha_G::GetSize
+[diff] 0x493ff0   MATCH            _BlitTransZRemapXlatAlpha_G::ddtor
+[ledger] 0x4937a0 _BlitTransZRemapXlatZReadWrite_G::sub_4937A0 -> OK (attempt 1)
+[ledger] 0x4937d0 _BlitTransZRemapXlatZReadWrite_G::sub_4937D0 -> OK (attempt 1)
+[ledger] 0x493800 _BlitTransZRemapXlatZReadWrite_G::sub_493800 -> OK (attempt 1)
+[ledger] 0x4938a0 _BlitTransDarkenZReadWrite_G::sub_4938A0 -> OK (attempt 1)
+[ledger] 0x4938d0 _BlitTransDarkenZReadWrite_G::sub_4938D0 -> OK (attempt 1)
+[ledger] 0x493900 _BlitTransDarkenZReadWrite_G::sub_493900 -> OK (attempt 1)
+[ledger] 0x4939d0 _BlitTransLucent75ZReadWrite_G::CallBlit0 -> OK (attempt 1)
+[ledger] 0x493a30 _BlitTransLucent75ZReadWrite_G::CallBlit0_1 -> OK (attempt 1)
+[ledger] 0x493b00 _BlitTransLucent50ZReadWrite_G::CallBlit0_2 -> OK (attempt 1)
+[ledger] 0x493b30 _BlitTransLucent50ZReadWrite_G::CallBlit0_3 -> OK (attempt 1)
+[ledger] 0x493b60 _BlitTransLucent50ZReadWrite_G::CallBlit0_4 -> OK (attempt 1)
+[ledger] 0x493c30 _BlitTransLucent25ZReadWrite_G::CallBlit0_5 -> OK (attempt 1)
+[ledger] 0x493c60 _BlitTransLucent25ZReadWrite_G::CallBlit0_6 -> OK (attempt 1)
+[ledger] 0x493c90 _BlitTransLucent25ZReadWrite_G::CallBlit0_7 -> OK (attempt 1)
+[ledger] 0x493d60 _BlitPlainXlatAlpha_G::ddtor -> OK (attempt 1)
+[ledger] 0x493d90 _BlitPlainXlatAlpha_G::Release -> OK (attempt 1)
+[ledger] 0x493dc0 _BlitPlainXlatAlpha_G::Blit -> OK (attempt 1)
+[ledger] 0x493ed0 _BlitTransXlatAlpha_G::BlitRect -> OK (attempt 1)
+[ledger] 0x493f00 _BlitTransXlatAlpha_G::GetSize -> OK (attempt 1)
+[ledger] 0x493ff0 _BlitTransZRemapXlatAlpha_G::ddtor -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p163\batch_report.json
