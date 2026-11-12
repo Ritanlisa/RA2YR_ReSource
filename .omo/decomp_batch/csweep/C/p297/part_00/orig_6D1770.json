@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D1770",
+ "name": "MouseClass::ToggleContextGadget",
+ "size": 132,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D1770",
+ "bytes_hex": "8b4424043dc71100007536a11cccb0008b048578cbb00085c07c2183f8197d1c8d0c40c1e10581c1c0c1b00085c9740c8a412d84c07505e8f4260500b001c208003dc811000075378b0d1cccb0008b048d78cbb00085c07c2183f8197d1c8d0c40c1e10581c1c0c1b00085c9740c8a412d84c07405e8c6260500b001c2080032c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?CopyDataArray@InfantryTypeClass@@QAEPAIPAH@Z",
+ "sym_key": "InfantryTypeClass::CopyDataArray",
+ "size": 141,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf13bf7746e8b0656ff500c8b470885c0894608751f8946048b460c80e40089460c8b47108946108b4f14894e148bc65f5ec204008d0c850000000051e80000000083c40489460485c074288b560c8b4e0833c022f083ca0185c989560c7e148b57048b4e048b14828914818b4e08403bc17cec8b47108946108b4f14894e148bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

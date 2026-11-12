@@ -1,0 +1,63 @@
+{
+ "symbol": "?ProcessHarvesterLogic@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::ProcessHarvesterLogic",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "51a100000000578d78ff85ff7c71568b0d000000008b34b98b460c83c00883f85089460c7c5585f67451a1000000008d54240852680000000089742410ff501083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e856e80000000083c4044f79915e5f59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1688@@3IA",
+   "sym_key": "DataGlobal_AC1688"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC167C@@3IA",
+   "sym_key": "DataGlobal_AC167C"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1678@@3IA",
+   "sym_key": "DataGlobal_AC1678"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1678@@3IA",
+   "sym_key": "DataGlobal_AC1678"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1688@@3IA",
+   "sym_key": "DataGlobal_AC1688"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1688@@3IA",
+   "sym_key": "DataGlobal_AC1688"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC167C@@3IA",
+   "sym_key": "DataGlobal_AC167C"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1688@@3IA",
+   "sym_key": "DataGlobal_AC1688"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5BCB90@UnitClass@@QAEHH@Z",
+ "sym_key": "UnitClass::sub_5BCB90",
+ "size": 132,
+ "link_base": 0,
+ "bytes_hex": "8b4424045355568bf133ed5733ff89861827000089ae1c27000089ae2027000089ae2427000089ae28270000c7862c27000050000000c78630270000190000008d9e880a00008d0c378bc3ba50000000c60120892883c06483c1194a75f24783c30483ff197cdf6a196a5055558bcec6863427000001e8000000008bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?DrawRepeated@Text@@QAEDHHHH@Z",
+   "sym_key": "Text::DrawRepeated"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CF0F0",
+ "name": "SwizzleManagerClass::Register",
+ "size": 133,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CF0F0",
+ "bytes_hex": "53b910c1b000c70510c1b00008417f00e84b020000a130c1b00033db3bc3c7052cc1b00054417f007417381d39c1b000740f50e8159a0f0083c404891d30c1b000a118c1b000881d39c1b0003bc3891d34c1b000c70514c1b00054417f007417381d21c1b000740f50e8df990f0083c404891d18c1b000881d21c1b000891d1cc1b0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

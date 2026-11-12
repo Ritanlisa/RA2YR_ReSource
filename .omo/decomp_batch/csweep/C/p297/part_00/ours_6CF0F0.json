@@ -1,0 +1,111 @@
+{
+ "symbol": "?Register@SwizzleManagerClass@@QAEXXZ",
+ "sym_key": "SwizzleManagerClass::Register",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "5333dbb900000000891d00000000e800000000a100000000891d000000003bc37417381d00000000740f50e80000000083c404891d00000000a100000000881d000000003bc3891d00000000891d000000007417381d00000000740f50e80000000083c404891d00000000881d00000000891d000000005bc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?ConvertNodes@SwizzleManagerClass@@QAEHXZ",
+   "sym_key": "SwizzleManagerClass::ConvertNodes"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?dword_B0C130@@3IA",
+   "sym_key": "dword_B0C130"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0C12C@@3IA",
+   "sym_key": "DataGlobal_B0C12C"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?byte_B0C139@@3EA",
+   "sym_key": "byte_B0C139"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?dword_B0C130@@3IA",
+   "sym_key": "dword_B0C130"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?dword_B0C118@@3IA",
+   "sym_key": "dword_B0C118"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?byte_B0C139@@3EA",
+   "sym_key": "byte_B0C139"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?dword_B0C134@@3IA",
+   "sym_key": "dword_B0C134"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0C114@@3IA",
+   "sym_key": "DataGlobal_B0C114"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?byte_B0C121@@3EA",
+   "sym_key": "byte_B0C121"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?dword_B0C118@@3IA",
+   "sym_key": "dword_B0C118"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?byte_B0C121@@3EA",
+   "sym_key": "byte_B0C121"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?dword_B0C11C@@3IA",
+   "sym_key": "dword_B0C11C"
+  }
+ ]
+}

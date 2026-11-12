@@ -1,0 +1,51 @@
+{
+ "symbol": "?ProcessIdleOrders@UnitClass@@QAEHXZ",
+ "sym_key": "UnitClass::ProcessIdleOrders",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "51568bf15733ff8b464885c07e6753bb020000008b463c8b04b8395804754b8b008b88c40600008a91680d000084d274398b5668b9000000005250e800000000a0a00100008a4c240ca200000000880d01000000881d020000008b563c8b04ba8b08518bcee8000000008b4648473bf87ca25beb048b442408c7467000000000c7466c00000000c74668000000005f5e59c3",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?GetExitCell@UnitClass@@QAEHPAX0@Z",
+   "sym_key": "UnitClass::GetExitCell"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?ClearTargetRef@UnitClass@@QAEXH@Z",
+   "sym_key": "UnitClass::ClearTargetRef"
+  }
+ ]
+}

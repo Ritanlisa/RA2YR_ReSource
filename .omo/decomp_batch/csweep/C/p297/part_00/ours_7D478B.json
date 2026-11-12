@@ -1,0 +1,21 @@
+{
+ "symbol": "?_x64toa_20@@YAPAD_KPADIH@Z",
+ "sym_key": "Unnamed::_x64toa_20",
+ "size": 173,
+ "link_base": 0,
+ "bytes_hex": "8b4c24148b44240c535585c98944241474198b5c240c8b6c2410c6002d40f7db83d50089442414f7ddeb088b5c240c8b6c24108b4424145657894424248b4c242033ff57515553e8000000008b542420575255538bf0e80000000083fe098bd88bea8d4e3076038d4e5781e1ff00000024000bc88b44241c33f60bf288084085f68944241c75b685db75b288185f485e8b4c241c8a10488a19418858018851ff3bc8894c241c72e85d8bc15bc3",
+ "relocs": [
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "__aullrem",
+   "sym_key": "_aullrem"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "__aulldiv",
+   "sym_key": "_aulldiv"
+  }
+ ]
+}

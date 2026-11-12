@@ -1,0 +1,11 @@
+{
+ "addr": "0x625440",
+ "name": "DynamicArray::ShrinkCapacity",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x625440",
+ "bytes_hex": "5153558be98b45008b4d048d04403bc17e065d32c05b59c38bc1992bc28bd8d1fb83fb0a7d05bb0a0000003bd97c065d32c05b59c38d0c9d000000005651e894391a008b750883c40485f68944240c74188b4d0057c1e1028bd18bf8c1e902f3a58bca83e103f3a45f8b450850e88b361a008b4c241083c404894d08895d045e5db0015b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

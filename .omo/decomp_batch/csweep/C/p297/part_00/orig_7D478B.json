@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D478B",
+ "name": "_x64toa_20",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D478B",
+ "bytes_hex": "558bec837d180053568b75105774138b5d088b7d0cc6062d46f7db83d700f7dfeb068b7d0c8b5d0889751033c050ff75145753e87d30000089451833c050ff75145753e8ad4bffff8bd88b451883f8098bfa76040457eb02043088064685ff77ca720485db77c48026004e8b45108a0e8a10881688084e403bc689451072ec5f5e5b5dc21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

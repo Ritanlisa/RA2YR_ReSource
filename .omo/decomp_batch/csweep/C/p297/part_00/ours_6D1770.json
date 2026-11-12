@@ -1,0 +1,33 @@
+{
+ "symbol": "?ToggleContextGadget@MouseClass@@QAGDHH@Z",
+ "sym_key": "MouseClass::ToggleContextGadget",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "817c2408c7110000752fa1000000008b04850000000083f8187719c1e0050500000000740f8b482cf6c5ff75078bc8e800000000b001c20c0032c0c20c00",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC1C@@3IA",
+   "sym_key": "DataGlobal_B0CC1C"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_ObjectTrackingPool@@3PAHA",
+   "sym_key": "g_ObjectTrackingPool"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0C1C0@@3IA",
+   "sym_key": "DataGlobal_B0C1C0"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?Show@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Show"
+  }
+ ]
+}

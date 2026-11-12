@@ -1,0 +1,11 @@
+{
+ "addr": "0x727090",
+ "name": "TriggerTypeClass::GetAction",
+ "size": 133,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x727090",
+ "bytes_hex": "538bd9578b7c240c8b83a800000085c074103bc7750c8b80a80000008983a8000000568bb3b000000085f674118b166a01578bceff52288b762885f675ef8b83b00000003bc775098b40288983b00000008bb3ac00000085f674118b166a01578bceff52288b762885f675ef8b83ac0000005e3bc775098b40288983ac0000005f5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

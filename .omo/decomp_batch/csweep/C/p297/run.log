@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p297\part_00
+=== convert (20 addrs) ===
+[conv] 0x5bcb90 UnitClass::sub_5BCB90 -> UnitClass
+[conv] 0x4810a0 Input::OffsetToDirection -> Input
+[conv] 0x63a120 UI_Create_731A50_Create_63A120 -> UI_Create_731A50_Create
+[conv] 0x6d1770 MouseClass::ToggleContextGadget -> MouseClass
+[conv] 0x5ff390 ObjectClass::ProcessHarvesterLogic -> ObjectClass
+[conv] 0x524f20 InfantryTypeClass::CopyDataArray -> InfantryTypeClass
+[conv] 0x67a570 Rules::CopyDataArray -> Rules
+[conv] 0x609b30 sub_609B30 -> _addr_60
+[conv] 0x6b7bb0 UnitClass::ProcessIdleOrders -> UnitClass
+[conv] 0x7b6290 FromStringInt -> _addr_7B
+[conv] 0x727090 TriggerTypeClass::GetAction -> TriggerTypeClass
+[conv] 0x454730 BuildingClass::UpdateIdleAnims -> BuildingClass
+[conv] 0x6cf0f0 SwizzleManagerClass::Register -> SwizzleManagerClass
+[conv] 0x6c8f10 sub_6C8F10 -> _addr_6C
+[conv] 0x6e6160 TagTypeClass::GetParameter -> TagTypeClass
+[conv] 0x422be0 AnimClass::UpdateZAdjust -> AnimClass
+[conv] 0x69dd30 ShapeButtonClass::Constructor -> ShapeButtonClass
+[conv] 0x7d478b _x64toa_20 -> _addr_7D
+[conv] 0x625440 DynamicArray::ShrinkCapacity -> DynamicArray
+[conv] 0x7ae730 VectorClass::Shrink -> VectorClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitClass                rc=0
+[era] Input                    rc=2
+[era] UI_Create_731A50_Create  rc=0
+[era] MouseClass               rc=0
+[era] ObjectClass              rc=0
+[era] InfantryTypeClass        rc=0
+[era] Rules                    rc=2
+[era] _addr_60                 rc=2
+[era] _addr_7B                 rc=2
+[era] TriggerTypeClass         rc=0
+[era] BuildingClass            rc=2
+[era] SwizzleManagerClass      rc=0
+[era] _addr_6C                 rc=2
+[era] TagTypeClass             rc=2
+[era] AnimClass                rc=2
+[era] ShapeButtonClass         rc=0
+[era] _addr_7D                 rc=0
+[era] DynamicArray             rc=0
+[era] VectorClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x5bcb90   MISMATCH         UnitClass::sub_5BCB90
+[diff] 0x6b7bb0   MISMATCH         UnitClass::ProcessIdleOrders
+[diff] 0x63a120   MISMATCH         UI_Create_731A50_Create_63A120
+[diff] 0x6d1770   MISMATCH         MouseClass::ToggleContextGadget
+[diff] 0x5ff390   MISMATCH         ObjectClass::ProcessHarvesterLogic
+[diff] 0x524f20   MISMATCH         InfantryTypeClass::CopyDataArray
+[diff] 0x727090   MISMATCH         TriggerTypeClass::GetAction
+[diff] 0x6cf0f0   MISMATCH         SwizzleManagerClass::Register
+[diff] 0x69dd30   MISMATCH         ShapeButtonClass::Constructor
+[diff] 0x7d478b   MISMATCH         _x64toa_20
+[diff] 0x625440   MISMATCH         DynamicArray::ShrinkCapacity
+[diff] 0x7ae730   MISMATCH         VectorClass::Shrink
+[ledger] 0x5bcb90 UnitClass::sub_5BCB90 -> NG (attempt 1)
+[ledger] 0x4810a0 Input::OffsetToDirection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63a120 UI_Create_731A50_Create_63A120 -> NG (attempt 1)
+[ledger] 0x6d1770 MouseClass::ToggleContextGadget -> NG (attempt 1)
+[ledger] 0x5ff390 ObjectClass::ProcessHarvesterLogic -> NG (attempt 1)
+[ledger] 0x524f20 InfantryTypeClass::CopyDataArray -> NG (attempt 1)
+[ledger] 0x67a570 Rules::CopyDataArray -> COMPILE_FAIL (attempt 1)
+[ledger] 0x609b30 sub_609B30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b7bb0 UnitClass::ProcessIdleOrders -> NG (attempt 1)
+[ledger] 0x7b6290 FromStringInt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x727090 TriggerTypeClass::GetAction -> NG (attempt 1)
+[ledger] 0x454730 BuildingClass::UpdateIdleAnims -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf0f0 SwizzleManagerClass::Register -> NG (attempt 1)
+[ledger] 0x6c8f10 sub_6C8F10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e6160 TagTypeClass::GetParameter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x422be0 AnimClass::UpdateZAdjust -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69dd30 ShapeButtonClass::Constructor -> NG (attempt 1)
+[ledger] 0x7d478b _x64toa_20 -> NG (attempt 1)
+[ledger] 0x625440 DynamicArray::ShrinkCapacity -> NG (attempt 1)
+[ledger] 0x7ae730 VectorClass::Shrink -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "regalloc": 1,
+  "frame_sched": 1,
+  "branch_order": 1,
+  "branch_polarity": 1,
+  "codegen_shape": 6,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p297\batch_report.json

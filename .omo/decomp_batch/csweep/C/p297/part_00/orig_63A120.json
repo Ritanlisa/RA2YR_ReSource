@@ -1,0 +1,11 @@
+{
+ "addr": "0x63A120",
+ "name": "UI_Create_731A50_Create_63A120",
+ "size": 132,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63A120",
+ "bytes_hex": "84d256740b33c084c90f94c08bf0eb05be0200000084c9740a8b04b5f44bac0040eb05b801000000578b3cb5f44bac003bf85f7d4d84d2742084c968a10c000068d46b8300740933d2b9d06c8300eb1a33d2b9b46c8300eb1168a10c000068d46b830033d2b99c6c8300e8d1ac0f00bae00100008bc8e8f5680f00ff04b5f44bac005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
