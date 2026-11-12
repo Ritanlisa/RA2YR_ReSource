@@ -1,0 +1,11 @@
+{
+ "addr": "0x438410",
+ "name": "sub_438410",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x438410",
+ "bytes_hex": "dd0580c68900dc25a8c6890083ec08dd1c24e829290900dc0da0c6890083c408dc0d38177e00e8c5da3800a3f8c68900c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
