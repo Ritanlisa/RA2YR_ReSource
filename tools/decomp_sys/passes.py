@@ -1144,7 +1144,11 @@ def pass_local_field_members(ctx):
     def repl(m):
         nonlocal n
         base = m.group("base")
-        if base != "this" and base not in locals_ and \
+        if base == "this":
+            # `this->M` is owned by the this-member machinery (mNNN views);
+            # rewriting it here would add R3 cast-deref-plus sites.
+            return m.group(0)
+        if base not in locals_ and \
                 base not in (getattr(ctx, "used_globals", None) or {}):
             return m.group(0)
         cls = m.group("cls")
