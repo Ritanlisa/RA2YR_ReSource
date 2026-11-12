@@ -1,0 +1,457 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x4e69a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa83dc8], 0x7e9d84",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E69A0",
+   "emitted": "sub_4E69A0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6a20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa8b1e0], 0x7e9dc4",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6A20",
+   "emitted": "sub_4E6A20",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6aa0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa8e988], 0x7e9e04",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6AA0",
+   "emitted": "sub_4E6AA0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6b20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa83de8], 0x7e43e8",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6B20",
+   "emitted": "sub_4E6B20",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6ba0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa8eb40], 0x7e9e44",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6BA0",
+   "emitted": "sub_4E6BA0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6c20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa8e390], 0x7e9e84",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6C20",
+   "emitted": "sub_4E6C20",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6ca0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0x8b4108], 0x7e9ec4",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6CA0",
+   "emitted": "sub_4E6CA0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6d20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa80228], 0x7e9f04",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6D20",
+   "emitted": "sub_4E6D20",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "8/8",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6e20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0x8b40e8], 0x7e9f84",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6E20",
+   "emitted": "sub_4E6E20",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6ea0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa83e30], 0x7e9fc4",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6EA0",
+   "emitted": "sub_4E6EA0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6f20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa83cf8], 0x7ea004",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6F20",
+   "emitted": "sub_4E6F20",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e6fa0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0x8b4120], 0x7ea044",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E6FA0",
+   "emitted": "sub_4E6FA0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e7020",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa83c98], 0x7ea084",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E7020",
+   "emitted": "sub_4E7020",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e70a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa8e8d0], 0x7ea0c4",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E70A0",
+   "emitted": "sub_4E70A0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e7120",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa8eca0], 0x7ea104",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E7120",
+   "emitted": "sub_4E7120",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e71a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0x8b41c8], 0x7ea144",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E71A0",
+   "emitted": "sub_4E71A0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e7220",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa83d80], 0x7ea184",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E7220",
+   "emitted": "sub_4E7220",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e72a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa8ec18], 0x7ea1c4",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E72A0",
+   "emitted": "sub_4E72A0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e73a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa83c68], 0x7ea244",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E73A0",
+   "emitted": "sub_4E73A0",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  },
+  {
+   "addr": "0x4e7420",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 59B ours 55B",
+   "first_diff": {
+    "orig": "+8 mov dword ptr [0xa8b218], 0x7ea284",
+    "ours": "+8 cmp eax, ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4E7420",
+   "emitted": "sub_4E7420",
+   "unit": "_addr_4E",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 59,
+   "ours_size": 55,
+   "clean": false
+  }
+ ]
+}
