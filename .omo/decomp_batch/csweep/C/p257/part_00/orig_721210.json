@@ -1,0 +1,11 @@
+{
+ "addr": "0x721210",
+ "name": "StringList::Find",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x721210",
+ "bytes_hex": "53558b6c240c5685ed8bd97435578bfd83c9ff33c0f2aef7d1495f74258b432433f685c07e1c8b4318558b0cb051e8dd7a0a0083c40885c074118b4324463bf07ce45e5d83c8ff5bc204008bc65e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

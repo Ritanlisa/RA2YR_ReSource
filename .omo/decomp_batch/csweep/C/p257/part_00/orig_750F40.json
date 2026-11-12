@@ -1,0 +1,11 @@
+{
+ "addr": "0x750F40",
+ "name": "globalHelper_050F40",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750F40",
+ "bytes_hex": "5356578bf98bdab920d3b100e86f64cbff8bf085f67437855e2c74258b46208b0f3bc1751c8b4e248b47043bc875128b56288b47083bd075088d4e0ce84f50cbff8bcee85864cbff8bf085f675c95f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

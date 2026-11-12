@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D3920",
+ "name": "_iswctype",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D3920",
+ "bytes_hex": "558bec5166817d08ffff743466817d08000173100fb745088b0d94c58700668b0441eb236a008d45fc6a00508d45086a01506a01e89867000083c41885c0750433c0c9c38b45fc0fb74d0c0fb7c023c1c9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

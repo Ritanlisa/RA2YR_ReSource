@@ -1,0 +1,11 @@
+{
+ "addr": "0x45EC20",
+ "name": "AbstractClass::validatePointer",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45EC20",
+ "bytes_hex": "51568bf18a0d90c88900b00184c8752f8ad16880ec45000ad0b8ff7f00006689442408668944240a8b442408881590c88900a3e8c88900e82eab360083c4048b86fc0d00005e85c07505b8e8c8890059c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

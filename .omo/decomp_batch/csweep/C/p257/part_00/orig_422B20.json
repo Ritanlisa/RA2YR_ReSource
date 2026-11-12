@@ -1,0 +1,11 @@
+{
+ "addr": "0x422B20",
+ "name": "GlobalArray::FindString",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x422B20",
+ "bytes_hex": "56578bf985ff7440687474810057e8ed613a0083c40885c0742ea160418b0033f685c07e23a154418b00578b0cb083c12451e8c9613a0083c40885c07410a160418b00463bf07cdd5f83c8ff5ec38bc65f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

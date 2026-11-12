@@ -1,0 +1,33 @@
+{
+ "symbol": "?globalHelper_050F40@@YIHPAHH@Z",
+ "sym_key": "Unnamed::globalHelper_050F40",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "5356578bf933c98bda8a0d00000000e8000000008bf085f67437855e2c74258b46208b0f3bc1751c8b4e248b47043bc875128b56288b47083bd075088d4e0ce8000000008bcee8000000008bf085f675c98bc65f5e5bc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D320@@3EA",
+   "sym_key": "DataGlobal_B1D320"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Stop@AudioFile@@QAEHXZ",
+   "sym_key": "AudioFile::Stop"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  }
+ ]
+}

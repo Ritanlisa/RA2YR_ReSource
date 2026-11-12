@@ -1,0 +1,11 @@
+{
+ "addr": "0x69C500",
+ "name": "MapFile::ddtor",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69C500",
+ "bytes_hex": "568bf133c98b4604894e103bc1743b8a560d84d274343bc1742d8b48fc538d58fc578d3c88497812558d690183ef048bcfe8ba8111004d75f35d53e8fdc5120083c40433c95f5b894e04c6460d00894e085ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

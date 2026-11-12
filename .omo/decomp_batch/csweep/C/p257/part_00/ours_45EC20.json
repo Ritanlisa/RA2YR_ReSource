@@ -1,0 +1,45 @@
+{
+ "symbol": "?validatePointer@AbstractClass@@QAEPAHH@Z",
+ "sym_key": "AbstractClass::validatePointer",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "568bf18a0d00000000b00184c875218ad168000000000ad0c70500000000ff7fff7f881500000000e80000000083c4048b86fc0d00005e85c07505b800000000c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C890@@3EA",
+   "sym_key": "DataGlobal_89C890"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?nullsub_107@@YAHPBX0@Z",
+   "sym_key": "nullsub_107"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8E8@@3IA",
+   "sym_key": "DataGlobal_89C8E8"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C890@@3EA",
+   "sym_key": "DataGlobal_89C890"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8E8@@3IA",
+   "sym_key": "DataGlobal_89C8E8"
+  }
+ ]
+}

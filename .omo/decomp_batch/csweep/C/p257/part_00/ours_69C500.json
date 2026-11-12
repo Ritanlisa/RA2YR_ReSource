@@ -1,0 +1,21 @@
+{
+ "symbol": "?ddtor@_DynamicVectorClass_VWstring@@QAEXXZ",
+ "sym_key": "_DynamicVectorClass_VWstring::ddtor",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "578bf98b4f04c747100000000085c9743e8b470cf6c4ff74368b41fc538d59fc568d34814885c07c14558d680183ee0456e80000000083c4044d75f15d53e80000000083c404c74704000000005e5b8b470cc747080000000080e40089470c5fc3",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

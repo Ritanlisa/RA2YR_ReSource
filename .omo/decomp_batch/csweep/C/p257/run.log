@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p257\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d3920 _iswctype -> _addr_7D
+[conv] 0x55bae0 DynamicVectorClass::RemoveItem -> DynamicVectorClass
+[conv] 0x7180a0 JumpjetLocomotionClass::GetCoordinateConditional -> JumpjetLocomotionClass
+[conv] 0x728a90 JumpjetLocomotionClass::GetCoordinateConditional_0 -> JumpjetLocomotionClass
+[conv] 0x6329c0 ObjectClass::sub_6329C0 -> ObjectClass
+[conv] 0x7c8ef4 _sprintf -> _addr_7C
+[conv] 0x44fe60 ObjectClass::sub_44FE60 -> ObjectClass
+[conv] 0x5da6c0 Network_Init_5DA6C0 -> Network_Init
+[conv] 0x750f40 globalHelper_050F40 -> _addr_75
+[conv] 0x41ba90 AircraftClass::MissionDispatch -> AircraftClass
+[conv] 0x41b980 AircraftClass::IsBelowScreen -> AircraftClass
+[conv] 0x45ec20 AbstractClass::validatePointer -> AbstractClass
+[conv] 0x628410 _VectorClass_VHSVClass::ScalarDeletingDestructor -> _VectorClass_VHSVClass
+[conv] 0x721210 StringList::Find -> StringList
+[conv] 0x72e860 UI_Draw_72E860 -> UI_Draw
+[conv] 0x72ea70 sub_72EA70 -> _addr_72
+[conv] 0x422b20 GlobalArray::FindString -> GlobalArray
+[conv] 0x4758f0 Scenario::FindBuildingTypeByName -> Scenario
+[conv] 0x52a040 INIClass::ReadBool2 -> INIClass
+[conv] 0x69c500 _DynamicVectorClass_VWstring::ddtor -> _DynamicVectorClass_VWstring
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=0
+[era] DynamicVectorClass       rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=0
+[era] _addr_7C                 rc=2
+[era] Network_Init             rc=0
+[era] _addr_75                 rc=0
+[era] AircraftClass            rc=2
+[era] AbstractClass            rc=0
+[era] _VectorClass_VHSVClass   rc=2
+[era] StringList               rc=0
+[era] UI_Draw                  rc=0
+[era] _addr_72                 rc=0
+[era] GlobalArray              rc=0
+[era] Scenario                 rc=2
+[era] INIClass                 rc=2
+[era] _DynamicVectorClass_VWstring rc=0
+=== diffasm byte-compare ===
+[diff] 0x7d3920   MISMATCH         _iswctype
+[diff] 0x55bae0   MISMATCH         DynamicVectorClass::RemoveItem
+[diff] 0x6329c0   MATCH            ObjectClass::sub_6329C0
+[diff] 0x44fe60   MISMATCH         ObjectClass::sub_44FE60
+[diff] 0x5da6c0   MISMATCH         Network_Init_5DA6C0
+[diff] 0x750f40   MISMATCH         globalHelper_050F40
+[diff] 0x45ec20   MISMATCH         AbstractClass::validatePointer
+[diff] 0x721210   MISMATCH         StringList::Find
+[diff] 0x72e860   MISMATCH         UI_Draw_72E860
+[diff] 0x72ea70   MISMATCH         sub_72EA70
+[diff] 0x422b20   MISMATCH         GlobalArray::FindString
+[diff] 0x69c500   MISMATCH         _DynamicVectorClass_VWstring::ddtor
+[ledger] 0x7d3920 _iswctype -> NG (attempt 1)
+[ledger] 0x55bae0 DynamicVectorClass::RemoveItem -> NG (attempt 1)
+[ledger] 0x7180a0 JumpjetLocomotionClass::GetCoordinateConditional -> COMPILE_FAIL (attempt 1)
+[ledger] 0x728a90 JumpjetLocomotionClass::GetCoordinateConditional_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6329c0 ObjectClass::sub_6329C0 -> OK (attempt 1)
+[ledger] 0x7c8ef4 _sprintf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44fe60 ObjectClass::sub_44FE60 -> NG (attempt 1)
+[ledger] 0x5da6c0 Network_Init_5DA6C0 -> NG (attempt 1)
+[ledger] 0x750f40 globalHelper_050F40 -> NG (attempt 1)
+[ledger] 0x41ba90 AircraftClass::MissionDispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41b980 AircraftClass::IsBelowScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45ec20 AbstractClass::validatePointer -> NG (attempt 1)
+[ledger] 0x628410 _VectorClass_VHSVClass::ScalarDeletingDestructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721210 StringList::Find -> NG (attempt 1)
+[ledger] 0x72e860 UI_Draw_72E860 -> NG (attempt 1)
+[ledger] 0x72ea70 sub_72EA70 -> NG (attempt 1)
+[ledger] 0x422b20 GlobalArray::FindString -> NG (attempt 1)
+[ledger] 0x4758f0 Scenario::FindBuildingTypeByName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52a040 INIClass::ReadBool2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69c500 _DynamicVectorClass_VWstring::ddtor -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 8,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "branch_polarity": 1,
+  "extern_reloc": 2,
+  "codegen_shape": 3,
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 8.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p257\batch_report.json
