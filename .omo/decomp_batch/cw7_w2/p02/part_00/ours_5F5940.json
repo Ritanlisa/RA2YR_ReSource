@@ -1,0 +1,93 @@
+{
+ "symbol": "?ParachuteDrop@IUnknown@@QAEEXZ",
+ "sym_key": "IUnknown::ParachuteDrop",
+ "size": 530,
+ "link_base": 0,
+ "bytes_hex": "83ec14535556578b7c24108bf15768f8010000e80000000083c40884c00f84e5010000bd0100000057b9f801000089ae90000000e8000000008bd885db0f84c50100008b8340010000f6c401741589ae8c0000008b8340010000f6c4020f84a501000085f60f848f0000008a46142401884424100f84800000008b0e56ff91840000008ba8b40500008b079981e2ff00000033c903c28a8e8c000000c1f80866894424108b47049981e2ff0000005103c28d542414c1f8085552b9f8010000668944241ee800000000894424148b0656ff90840000008b4c24148b907c0600006a016aff55516a006a00528bcbe80000000084c00f840e0100008b0668800000005756ff90d800000084c00f84f70000008b0e5756ff91b40100008b1656ff522c83f808753b68c8010000e80000000083c40485c00f84c30000008b0d400200006a006a0068000600008b91b80b00006a016a0057528bc8e8000000008bf8eb5a8b47088b4f048b1783c04b68c80100008954241c894c242089442424e80000000083c40485c0742a8b15400200006a006a0068000600006a018d4c24286a00518b8abc0b0000518bc8e8000000008bf8eb0233ff89be8800000085ff743f568bcfe8000000008b1656ff522c83f808742c8b0656ff90e40100008987d40000008b0e56ff91bc0100000fbf800a010000998987f80000008997fc0000005f5e5db0015b83c414c35f5e5d32c05b83c414c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?IsCoordVisibleMap@@YA_NPAX0@Z",
+   "sym_key": "IsCoordVisibleMap"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?IsBuildable@Cell@@QAE_NHDDHHHD@Z",
+   "sym_key": "Cell::IsBuildable"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 317,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 345,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 382,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 395,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 427,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 451,
+   "type": "REL32",
+   "sym": "?AimTurret@BuildingClass@@QAEXPAX@Z",
+   "sym_key": "BuildingClass::AimTurret"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?processQueue@Network@@QAEHXZ",
+ "sym_key": "Network::processQueue",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "8b151800000033c085d2763353568b350c000000578bfa8b1685d274198b9ab402000085db740f8b9af501000085db75053bd174014083c6044f75db5f5e5bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  }
+ ]
+}

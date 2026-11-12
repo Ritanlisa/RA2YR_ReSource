@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E2BA0",
+ "name": "Network::processQueue",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E2BA0",
+ "bytes_hex": "8b153802a80033c085d27e3353568b352c02a800578bfa8b1685d274198a9aec01000084db740f8a9af501000084db75053bd174014083c6044f75db5f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

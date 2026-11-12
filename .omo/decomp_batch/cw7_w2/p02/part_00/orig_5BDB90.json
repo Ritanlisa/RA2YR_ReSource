@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BDB90",
+ "name": "System_Handle",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BDB90",
+ "bytes_hex": "8b4424048d0cc5000000002bc88a44240884c08d0c8d28d0820074088b410c83f8ff75028b01c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

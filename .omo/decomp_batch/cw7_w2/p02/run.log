@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w2\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x5affe0 JumpjetLocomotionClass::GetRenderCoordinate_0 -> JumpjetLocomotionClass
+[conv] 0x5bdb90 System_Handle -> System
+[conv] 0x5be970 Render_Render_5BE970 -> Render_Render
+[conv] 0x5d67b0 GameConfig::Constructor -> GameConfig
+[conv] 0x5e2ba0 Network::processQueue -> Network
+[conv] 0x5e9240 NetworkLobby::AssignPlayerSlot -> NetworkLobby
+[conv] 0x5e9510 NetworkLobby::CheckMinPlayers -> NetworkLobby
+[conv] 0x5f5940 IUnknown::ParachuteDrop -> IUnknown
+[conv] 0x5fd970 OverlayClass::HandleAction -> OverlayClass
+[conv] 0x634cc0 ScriptAction::FindBuildingMatch -> ScriptAction
+[conv] 0x639800 CompleteBuildingProduction -> _addr_63
+[conv] 0x691540 ScriptClass::GetNextAction -> ScriptClass
+[conv] 0x69a310 SessionClass::GetPlayerColorScheme -> SessionClass
+[conv] 0x69f3d0 JumpjetLocomotionClass::GetRenderCoordinate_1 -> JumpjetLocomotionClass
+[conv] 0x6abc40 Network_Process_6ABC40 -> Network_Process
+[conv] 0x6cfd20 globalHelper_0CFD20 -> _addr_6C
+[conv] 0x6cfd30 sub_6CFD30 -> _addr_6C
+[conv] 0x6cfd40 GetFontClassEntry -> _addr_6C
+[conv] 0x6cfd60 sub_6CFD60 -> _addr_6C
+[conv] 0x6d02b0 TabClass::LoadButtonSHPs -> TabClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=0
+[era] System                   rc=0
+[era] Render_Render            rc=0
+[era] GameConfig               rc=0
+[era] Network                  rc=0
+[era] NetworkLobby             rc=2
+[era] IUnknown                 rc=0
+[era] OverlayClass             rc=2
+[era] ScriptAction             rc=2
+[era] _addr_63                 rc=0
+[era] ScriptClass              rc=0
+[era] SessionClass             rc=0
+[era] Network_Process          rc=0
+[era] _addr_6C                 rc=0
+[era] TabClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5affe0   MISMATCH         JumpjetLocomotionClass::GetRenderCoordinate_0
+[diff] 0x69f3d0   MISMATCH         JumpjetLocomotionClass::GetRenderCoordinate_1
+[diff] 0x5bdb90   MISMATCH         System_Handle
+[diff] 0x5be970   MISMATCH         Render_Render_5BE970
+[diff] 0x5d67b0   MISMATCH         GameConfig::Constructor
+[diff] 0x5e2ba0   MISMATCH         Network::processQueue
+[diff] 0x5f5940   MISMATCH         IUnknown::ParachuteDrop
+[diff] 0x639800   MISMATCH         CompleteBuildingProduction
+[diff] 0x691540   MISMATCH         ScriptClass::GetNextAction
+[diff] 0x69a310   MISMATCH         SessionClass::GetPlayerColorScheme
+[diff] 0x6abc40   MISMATCH         Network_Process_6ABC40
+[diff] 0x6cfd20   MISMATCH         globalHelper_0CFD20
+[diff] 0x6cfd30   MISMATCH         sub_6CFD30
+[diff] 0x6cfd40   MISMATCH         GetFontClassEntry
+[diff] 0x6cfd60   MISMATCH         sub_6CFD60
+[ledger] 0x5affe0 JumpjetLocomotionClass::GetRenderCoordinate_0 -> NG (attempt 3)
+[ledger] 0x5bdb90 System_Handle -> NG (attempt 2)
+[ledger] 0x5be970 Render_Render_5BE970 -> NG (attempt 2)
+[ledger] 0x5d67b0 GameConfig::Constructor -> NG (attempt 6)
+[ledger] 0x5e2ba0 Network::processQueue -> NG (attempt 3)
+[ledger] 0x5e9240 NetworkLobby::AssignPlayerSlot -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e9510 NetworkLobby::CheckMinPlayers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f5940 IUnknown::ParachuteDrop -> NG (attempt 4)
+[ledger] 0x5fd970 OverlayClass::HandleAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x634cc0 ScriptAction::FindBuildingMatch -> COMPILE_FAIL (attempt 4)
+[ledger] 0x639800 CompleteBuildingProduction -> NG (attempt 4)
+[ledger] 0x691540 ScriptClass::GetNextAction -> NG (attempt 2)
+[ledger] 0x69a310 SessionClass::GetPlayerColorScheme -> NG (attempt 3)
+[ledger] 0x69f3d0 JumpjetLocomotionClass::GetRenderCoordinate_1 -> NG (attempt 2)
+[ledger] 0x6abc40 Network_Process_6ABC40 -> NG (attempt 2)
+[ledger] 0x6cfd20 globalHelper_0CFD20 -> NG (attempt 2)
+[ledger] 0x6cfd30 sub_6CFD30 -> NG (attempt 2)
+[ledger] 0x6cfd40 GetFontClassEntry -> NG (attempt 2)
+[ledger] 0x6cfd60 sub_6CFD60 -> NG (attempt 2)
+[ledger] 0x6d02b0 TabClass::LoadButtonSHPs -> COMPILE_FAIL (attempt 12)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "cc_mismatch": 2,
+  "frame_sched": 2,
+  "const_fold": 1,
+  "codegen_shape": 2,
+  "branch_order": 1,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w2\p02\batch_report.json

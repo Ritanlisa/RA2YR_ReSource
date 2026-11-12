@@ -1,0 +1,27 @@
+{
+ "symbol": "?System_Handle@@YGHHD@Z",
+ "sym_key": "Unnamed::System_Handle",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "8a44240884c08b4424048d0cc500000000750c2bc88b048d00000000c208002bc8c1e1028b810000000083f8ff75068b8100000000c20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?MouseClass_Cursors@@3PAHA",
+   "sym_key": "MouseClass_Cursors"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82D034@@3PAIA",
+   "sym_key": "DataGlobal_82D034"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?MouseClass_Cursors@@3PAHA",
+   "sym_key": "MouseClass_Cursors"
+  }
+ ]
+}

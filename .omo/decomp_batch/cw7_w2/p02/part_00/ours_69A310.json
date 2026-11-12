@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetPlayerColorScheme@SessionClass@@QAGII@Z",
+ "sym_key": "SessionClass::GetPlayerColorScheme",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b44240883f8fe750a33c0a000000000c2080083f809730a33c98a88000000008bc1c20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?unk_83ED1C@@3EA",
+   "sym_key": "unk_83ED1C"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?byte_83ED14@@3EA",
+   "sym_key": "byte_83ED14"
+  }
+ ]
+}

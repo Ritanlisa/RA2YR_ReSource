@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6CFD60@@YIPAIPAIH@Z",
+ "sym_key": "Unnamed::sub_6CFD60",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "8b1495000000008bc10faf15000000008b0d000000005355568b35000000008b590c8b29578b79088970048978085f03d55e89580c5d89105bc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_ObjectTrackingPool@@3PAHA",
+   "sym_key": "g_ObjectTrackingPool"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC38@@3IA",
+   "sym_key": "DataGlobal_B0CC38"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC68@@3IA",
+   "sym_key": "DataGlobal_B0FC68"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC24@@3IA",
+   "sym_key": "DataGlobal_B0CC24"
+  }
+ ]
+}

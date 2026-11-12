@@ -1,0 +1,11 @@
+{
+ "addr": "0x69A310",
+ "name": "SessionClass::GetPlayerColorScheme",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69A310",
+ "bytes_hex": "8b44240483f8fe750fb8080000000fbe8014ed8300c2040083f80973070fbe8014ed8300c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

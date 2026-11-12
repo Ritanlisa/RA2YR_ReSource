@@ -1,0 +1,51 @@
+{
+ "symbol": "?Constructor@GameConfig@@QAEXXZ",
+ "sym_key": "GameConfig::Constructor",
+ "size": 180,
+ "link_base": 0,
+ "bytes_hex": "83ec0853578bf933db897c240c395f380f8598000000566a58e8000000008bf083c4043bf3744e558d7e108d6e1c895e048bcd895e08895e14895e18891fe8000000005557895e0ce8000000008b7c241c83c408895e0c895e28895e2c895e30885e34895e38895e3c885e40c706000000005deb0233f68d87b00000008d4c240c5089b7e0000000e800000000538d4c2410e80000000084c05e7412538d4c240c53518b8fe0000000e8000000005f5b83c408c3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Constructor@GenericNode@@QAEPAV1@XZ",
+   "sym_key": "GenericNode::Constructor"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?LinkedList__Prepend@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Prepend"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?CCINIClass_Vtable@@3PAXA",
+   "sym_key": "CCINIClass_Vtable"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?Construct2@CCFileClass@@QAEPAV1@PAX@Z",
+   "sym_key": "CCFileClass::Construct2"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?Load@CCINIClass@@QAEHHDD@Z",
+   "sym_key": "CCINIClass::Load"
+  }
+ ]
+}

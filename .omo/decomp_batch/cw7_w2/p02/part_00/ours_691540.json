@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetNextAction@ScriptClass@@QAEPAIPAH@Z",
+ "sym_key": "ScriptClass::GetNextAction",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "8b51248b492c568bb2a00000008d41013bc67d1b8b4424088bb4caac00000089308b8ccab00000008948045ec204008b4424085ec700ffffffffc7400400000000c20400",
+ "relocs": []
+}

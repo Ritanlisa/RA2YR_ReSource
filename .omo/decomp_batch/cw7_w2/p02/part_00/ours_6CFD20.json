@@ -1,0 +1,15 @@
+{
+ "symbol": "?globalHelper_0CFD20@@YIXHH@Z",
+ "sym_key": "Unnamed::globalHelper_0CFD20",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "89148d00000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_ObjectTrackingPool@@3PAHA",
+   "sym_key": "g_ObjectTrackingPool"
+  }
+ ]
+}
