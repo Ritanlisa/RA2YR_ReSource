@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x510cd0",
+  "family": "D_RELOC",
+  "name": "sub_510CD0"
+ },
+ {
+  "addr": "0x511250",
+  "family": "D_RELOC",
+  "name": "sub_511250"
+ },
+ {
+  "addr": "0x5113d0",
+  "family": "D_RELOC",
+  "name": "sub_5113D0"
+ },
+ {
+  "addr": "0x513a60",
+  "family": "D_RELOC",
+  "name": "sub_513A60"
+ },
+ {
+  "addr": "0x513be0",
+  "family": "D_RELOC",
+  "name": "sub_513BE0"
+ },
+ {
+  "addr": "0x517890",
+  "family": "D_RELOC",
+  "name": "sub_517890"
+ },
+ {
+  "addr": "0x517a10",
+  "family": "D_RELOC",
+  "name": "sub_517A10"
+ },
+ {
+  "addr": "0x5234e0",
+  "family": "D_RELOC",
+  "name": "sub_5234E0"
+ },
+ {
+  "addr": "0x523660",
+  "family": "D_RELOC",
+  "name": "sub_523660"
+ },
+ {
+  "addr": "0x524790",
+  "family": "D_RELOC",
+  "name": "InfantryTypeClass::GetGameplayValue"
+ },
+ {
+  "addr": "0x52b810",
+  "family": "D_RELOC",
+  "name": "sub_52B810"
+ },
+ {
+  "addr": "0x52b990",
+  "family": "D_RELOC",
+  "name": "sub_52B990"
+ },
+ {
+  "addr": "0x539160",
+  "family": "D_RELOC",
+  "name": "sub_539160"
+ },
+ {
+  "addr": "0x5392e0",
+  "family": "D_RELOC",
+  "name": "sub_5392E0"
+ },
+ {
+  "addr": "0x5393a0",
+  "family": "D_RELOC",
+  "name": "sub_5393A0"
+ },
+ {
+  "addr": "0x539520",
+  "family": "D_RELOC",
+  "name": "sub_539520"
+ },
+ {
+  "addr": "0x53a090",
+  "family": "D_RELOC",
+  "name": "LightningStorm::End"
+ },
+ {
+  "addr": "0x53c870",
+  "family": "D_RELOC",
+  "name": "sub_53C870"
+ },
+ {
+  "addr": "0x53c9f0",
+  "family": "D_RELOC",
+  "name": "sub_53C9F0"
+ },
+ {
+  "addr": "0x53ca50",
+  "family": "D_RELOC",
+  "name": "sub_53CA50"
+ }
+]

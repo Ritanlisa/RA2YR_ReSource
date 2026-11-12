@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p60\part_00
+=== convert (20 addrs) ===
+[conv] 0x510cd0 sub_510CD0 -> _addr_51
+[conv] 0x511250 sub_511250 -> _addr_51
+[conv] 0x5113d0 sub_5113D0 -> _addr_51
+[conv] 0x513a60 sub_513A60 -> _addr_51
+[conv] 0x513be0 sub_513BE0 -> _addr_51
+[conv] 0x517890 sub_517890 -> _addr_51
+[conv] 0x517a10 sub_517A10 -> _addr_51
+[conv] 0x5234e0 sub_5234E0 -> _addr_52
+[conv] 0x523660 sub_523660 -> _addr_52
+[conv] 0x524790 InfantryTypeClass::GetGameplayValue -> InfantryTypeClass
+[conv] 0x52b810 sub_52B810 -> _addr_52
+[conv] 0x52b990 sub_52B990 -> _addr_52
+[conv] 0x539160 sub_539160 -> _addr_53
+[conv] 0x5392e0 sub_5392E0 -> _addr_53
+[conv] 0x5393a0 sub_5393A0 -> _addr_53
+[conv] 0x539520 sub_539520 -> _addr_53
+[conv] 0x53a090 LightningStorm::End -> LightningStorm
+[conv] 0x53c870 sub_53C870 -> _addr_53
+[conv] 0x53c9f0 sub_53C9F0 -> _addr_53
+[conv] 0x53ca50 sub_53CA50 -> _addr_53
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_51                 rc=0
+[era] _addr_52                 rc=0
+[era] InfantryTypeClass        rc=0
+[era] _addr_53                 rc=0
+[era] LightningStorm           rc=0
+=== diffasm byte-compare ===
+[diff] 0x510cd0   MISMATCH         sub_510CD0
+[diff] 0x511250   MATCH            sub_511250
+[diff] 0x5113d0   MISMATCH         sub_5113D0
+[diff] 0x513a60   MATCH            sub_513A60
+[diff] 0x513be0   MISMATCH         sub_513BE0
+[diff] 0x517890   MATCH            sub_517890
+[diff] 0x517a10   MISMATCH         sub_517A10
+[diff] 0x5234e0   MATCH            sub_5234E0
+[diff] 0x523660   MISMATCH         sub_523660
+[diff] 0x52b810   MATCH            sub_52B810
+[diff] 0x52b990   MISMATCH         sub_52B990
+[diff] 0x524790   MISMATCH         InfantryTypeClass::GetGameplayValue
+[diff] 0x539160   MATCH            sub_539160
+[diff] 0x5392e0   MISMATCH         sub_5392E0
+[diff] 0x5393a0   MATCH            sub_5393A0
+[diff] 0x539520   MISMATCH         sub_539520
+[diff] 0x53c870   MATCH            sub_53C870
+[diff] 0x53c9f0   MISMATCH         sub_53C9F0
+[diff] 0x53ca50   MISMATCH         sub_53CA50
+[diff] 0x53a090   MISMATCH         LightningStorm::End
+[ledger] 0x510cd0 sub_510CD0 -> NG (attempt 2)
+[ledger] 0x511250 sub_511250 -> OK (attempt 2)
+[ledger] 0x5113d0 sub_5113D0 -> NG (attempt 2)
+[ledger] 0x513a60 sub_513A60 -> OK (attempt 2)
+[ledger] 0x513be0 sub_513BE0 -> NG (attempt 2)
+[ledger] 0x517890 sub_517890 -> OK (attempt 2)
+[ledger] 0x517a10 sub_517A10 -> NG (attempt 2)
+[ledger] 0x5234e0 sub_5234E0 -> OK (attempt 3)
+[ledger] 0x523660 sub_523660 -> NG (attempt 2)
+[ledger] 0x524790 InfantryTypeClass::GetGameplayValue -> NG (attempt 2)
+[ledger] 0x52b810 sub_52B810 -> OK (attempt 2)
+[ledger] 0x52b990 sub_52B990 -> NG (attempt 2)
+[ledger] 0x539160 sub_539160 -> OK (attempt 2)
+[ledger] 0x5392e0 sub_5392E0 -> NG (attempt 3)
+[ledger] 0x5393a0 sub_5393A0 -> OK (attempt 2)
+[ledger] 0x539520 sub_539520 -> NG (attempt 2)
+[ledger] 0x53a090 LightningStorm::End -> NG (attempt 2)
+[ledger] 0x53c870 sub_53C870 -> OK (attempt 2)
+[ledger] 0x53c9f0 sub_53C9F0 -> NG (attempt 2)
+[ledger] 0x53ca50 sub_53CA50 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "MATCH": 8
+ },
+ "pathologies": {
+  "extern_reloc": 10,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 40.0,
+ "match_rate_of_total_pct": 40.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p60\batch_report.json

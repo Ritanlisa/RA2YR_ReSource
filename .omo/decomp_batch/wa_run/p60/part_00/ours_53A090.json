@@ -1,0 +1,21 @@
+{
+ "symbol": "?End@LightningStorm@@QAEDXZ",
+ "sym_key": "LightningStorm::End",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c07407c6050000000001c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Active@@3EA",
+   "sym_key": "LightningStorm_Active"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?LightningStorm_TimeToEnd@@3EA",
+   "sym_key": "LightningStorm_TimeToEnd"
+  }
+ ]
+}
