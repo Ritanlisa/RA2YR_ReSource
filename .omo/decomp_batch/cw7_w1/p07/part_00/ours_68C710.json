@@ -1,0 +1,93 @@
+{
+ "symbol": "?InitMetrics@FontClass@@QAEPADPADHHHHD@Z",
+ "sym_key": "FontClass::InitMetrics",
+ "size": 328,
+ "link_base": 0,
+ "bytes_hex": "53568bf157b90001000033db8d7e048bc7881888580188580283c0034975f28b44241050e8000000008986040300008b44241883c404668b0866898e080300008a50028b442420680000000068e8030000b91000000068e803000068e803000088960a030000899e0c030000898610030000898e14030000c786180300000f000000c7861c03000019000000c7862003000018000000c7862403000016000000898e28030000c7862c03000013000000898e30030000898e340300008b4c242cc786380300001500000050a100000000508bd7e80000000089860c0300008a4424243ac3745aa1000000008b0d000000003bc8722c381d0000000075043bc375388b0d000000003bcb762e03c853518b0d000000006800000000ff510884c074188b0d000000008b15000000008bc141890d00000000893482a10000000089068bc65f5e5bc21800",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?_strdup@@YAHPAXZZ",
+   "sym_key": "_strdup"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83E1AC@@3EA",
+   "sym_key": "DataGlobal_83E1AC"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?FontClass__CreateGlyphColor@@YIHHPAX0HHHH0@Z",
+   "sym_key": "FontClass__CreateGlyphColor"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B054D8@@3IA",
+   "sym_key": "DataGlobal_B054D8"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?g_AnimClass_SaveState@@3IA",
+   "sym_key": "g_AnimClass_SaveState"
+  },
+  {
+   "off": 247,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B054DD@@3EA",
+   "sym_key": "DataGlobal_B054DD"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B054E4@@3IA",
+   "sym_key": "DataGlobal_B054E4"
+  },
+  {
+   "off": 273,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 291,
+   "type": "DIR32",
+   "sym": "?g_AnimClass_SaveState@@3IA",
+   "sym_key": "g_AnimClass_SaveState"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 306,
+   "type": "DIR32",
+   "sym": "?g_AnimClass_SaveState@@3IA",
+   "sym_key": "g_AnimClass_SaveState"
+  },
+  {
+   "off": 314,
+   "type": "DIR32",
+   "sym": "?g_AnimClass_SaveState@@3IA",
+   "sym_key": "g_AnimClass_SaveState"
+  }
+ ]
+}

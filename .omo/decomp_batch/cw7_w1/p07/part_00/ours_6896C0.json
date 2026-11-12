@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetCountryFlag@ScenarioClass@@QAEDPBDD@Z",
+ "sym_key": "ScenarioClass::SetCountryFlag",
+ "size": 219,
+ "link_base": 0,
+ "bytes_hex": "51538b5c240c55568da98c1c000057894c241033ff8bf58bc38a088ad13a0e751c84d274148a48018ad13a4e01750e83c00283c60284d275e033c0eb051bc083d8ff85c074584783ff327d3983c5298bc38bf58a088ad13a0e751c84d274148a48018ad13a4e01750e83c00283c60284d275e033c0eb051bc083d8ff85c075c683ffff750a5f5e5db0015b59c2080083ff32720a5f5e5d32c05b59c208008b4c24108d14bf8d04d78a54241c8a9c812c1d00008d84812c1d00003ada74130fbed28910c681ae340000018bcfe8000000005f5e8ac35d5b59c20800",
+ "relocs": [
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?UpdateAllTypes@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::UpdateAllTypes"
+  }
+ ]
+}

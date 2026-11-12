@@ -1,0 +1,63 @@
+{
+ "symbol": "?ReadWaypoints@ScenarioClass@@QAEFH@Z",
+ "sym_key": "ScenarioClass::ReadWaypoints",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "83ec1c5355568bb1340600005733db538d44241c680000000050e80000000083c40c33d28a15000000008d4c24186a00518b4c243852e8000000008bc885c9894c24108bf9744399bde80300006a00f7fd8bc168d34d6210668954241c995250e800000000c1ea1fb8d34d621089542410f7efc1fa068bc2c1e81f03d066895424168b4c2414890eeb088b1500000000891685db7c408b0d000000000fbf068bd181e2ffff00003bc2750c668b4602c1e910663bc1742456b9f8010000e8000000008b8840010000054001000083c904894424108908668b4424104383c60481fbbe0200000f8c24ffffff5f5e5d5b83c41cc20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "??_C@_02MECO@?$CFd?$AA@",
+   "sym_key": "??_C@_02MECO@?$CFd?$AA@"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?wsprintfA@@YAHPAXPBDH@Z",
+   "sym_key": "wsprintfA"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Waypoints@@3EA",
+   "sym_key": "g_INI_Key_Waypoints"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?ReadInt_Overwrite@INIClass@@QAEHPAX0H@Z",
+   "sym_key": "INIClass::ReadInt_Overwrite"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B05458@@3IA",
+   "sym_key": "DataGlobal_B05458"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B05458@@3IA",
+   "sym_key": "DataGlobal_B05458"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

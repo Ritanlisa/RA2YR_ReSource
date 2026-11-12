@@ -1,0 +1,39 @@
+{
+ "symbol": "?vt_entry_A0@SmudgeTypeClass@@QAEXPAH0HHPAF@Z",
+ "sym_key": "SmudgeTypeClass::vt_entry_A0",
+ "size": 180,
+ "link_base": 0,
+ "bytes_hex": "5153578bf9578b07ff909c0000008bd885db0f84960000008b4c2410568b74241c8b1185f68954240c742c8b8f980200008bc699f7f98bc68bfa99f7f98b4c240c2bc78d04408d0480c1e002992bc2d1f803c8894c240c8b442424b9f801000050e8000000008b4c24208bf00fbfbe0c010000e8000000006a008b54241c6a006a006a0083c9ff6a00572bc86a00518b0d000000006a0068000e00008d442434528b5634506a0053e8000000005e5f5b59c21400",
+ "relocs": [
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHHIPAX0HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

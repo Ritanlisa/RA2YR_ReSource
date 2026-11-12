@@ -1,0 +1,27 @@
+{
+ "symbol": "?CreateUnloadPlacementCraters@UnitClass@@QAEHPAG@Z",
+ "sym_key": "UnitClass::CreateUnloadPlacementCraters",
+ "size": 172,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf133c08b8e9c0200008944240485c90f8e8900000053578b7c24188b8e9802000033db85c97e5f668b0f668b57026603cb6603d066894c2418668954241a8b4424188d4c241051b90000000089442414e8000000008b96940200008bc88a44240c895148f6ae9802000002c388811f010000e8000000008b8698020000433bd88b44240c7ca18b8e9c020000403bc18944240c72865f5b5e83c408c204008bc15e83c408c20400",
+ "relocs": [
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?CreatePlacementCrater@BuildingClass@@QAEDXZ",
+   "sym_key": "BuildingClass::CreatePlacementCrater"
+  }
+ ]
+}

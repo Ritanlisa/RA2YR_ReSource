@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x6824b0 Map_Read_6824B0 -> Map_Read
+[conv] 0x6896c0 ScenarioClass::SetCountryFlag -> ScenarioClass
+[conv] 0x68bdc0 ScenarioClass::ReadWaypoints -> ScenarioClass
+[conv] 0x68c710 FontClass::InitMetrics -> FontClass
+[conv] 0x68ca50 FindBuildingAnimByName -> _addr_68
+[conv] 0x68cab0 Network_Assign -> Network
+[conv] 0x690a10 ScoreScreen::LoadScoreFont -> ScoreScreen
+[conv] 0x697e70 SessionClass::IsValidHouse -> SessionClass
+[conv] 0x69bc20 IPXConnClass::closeConnection -> IPXConnClass
+[conv] 0x69deb0 ShapeButtonClass::Draw -> ShapeButtonClass
+[conv] 0x69e010 SidebarClass::updateFlashTimer -> SidebarClass
+[conv] 0x6a0310 ShipLocomotionClass::SetWaypointTarget -> ShipLocomotionClass
+[conv] 0x6b55f0 SmudgeTypeClass::vt_entry_A0 -> SmudgeTypeClass
+[conv] 0x6b6080 UnitClass::CreateUnloadPlacementCraters -> UnitClass
+[conv] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> ObjectClass
+[conv] 0x6cb920 SuperClass::ClickFire -> SuperClass
+[conv] 0x6cfcc0 SidebarClass::findEntryIndexByName -> SidebarClass
+[conv] 0x6d59d0 RadarClass::DrawBlip -> RadarClass
+[conv] 0x6dbb60 Tactical::DrawOverlay -> Tactical
+[conv] 0x6e37f0 ObjectClass::sub_6E37F0 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Map_Read                 rc=2
+[era] ScenarioClass            rc=0
+[era] FontClass                rc=0
+[era] _addr_68                 rc=2
+[era] Network                  rc=2
+[era] ScoreScreen              rc=0
+[era] SessionClass             rc=2
+[era] IPXConnClass             rc=2
+[era] ShapeButtonClass         rc=0
+[era] SidebarClass             rc=2
+[era] ShipLocomotionClass      rc=2
+[era] SmudgeTypeClass          rc=0
+[era] UnitClass                rc=0
+[era] ObjectClass              rc=2
+[era] SuperClass               rc=2
+[era] RadarClass               rc=0
+[era] Tactical                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6896c0   MISMATCH         ScenarioClass::SetCountryFlag
+[diff] 0x68bdc0   MISMATCH         ScenarioClass::ReadWaypoints
+[diff] 0x68c710   MISMATCH         FontClass::InitMetrics
+[diff] 0x690a10   MISMATCH         ScoreScreen::LoadScoreFont
+[diff] 0x69deb0   MISMATCH         ShapeButtonClass::Draw
+[diff] 0x69e010   MATCH            SidebarClass::updateFlashTimer
+[diff] 0x6b55f0   MISMATCH         SmudgeTypeClass::vt_entry_A0
+[diff] 0x6b6080   MISMATCH         UnitClass::CreateUnloadPlacementCraters
+[diff] 0x6d59d0   MISMATCH         RadarClass::DrawBlip
+[ledger] 0x6824b0 Map_Read_6824B0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6896c0 ScenarioClass::SetCountryFlag -> NG (attempt 7)
+[ledger] 0x68bdc0 ScenarioClass::ReadWaypoints -> NG (attempt 6)
+[ledger] 0x68c710 FontClass::InitMetrics -> NG (attempt 12)
+[ledger] 0x68ca50 FindBuildingAnimByName -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68cab0 Network_Assign -> COMPILE_FAIL (attempt 4)
+[ledger] 0x690a10 ScoreScreen::LoadScoreFont -> NG (attempt 6)
+[ledger] 0x697e70 SessionClass::IsValidHouse -> COMPILE_FAIL (attempt 12)
+[ledger] 0x69bc20 IPXConnClass::closeConnection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69deb0 ShapeButtonClass::Draw -> NG (attempt 15)
+[ledger] 0x69e010 SidebarClass::updateFlashTimer -> OK (attempt 2)
+[ledger] 0x6a0310 ShipLocomotionClass::SetWaypointTarget -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6b55f0 SmudgeTypeClass::vt_entry_A0 -> NG (attempt 13)
+[ledger] 0x6b6080 UnitClass::CreateUnloadPlacementCraters -> NG (attempt 13)
+[ledger] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6cb920 SuperClass::ClickFire -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6cfcc0 SidebarClass::findEntryIndexByName -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d59d0 RadarClass::DrawBlip -> NG (attempt 4)
+[ledger] 0x6dbb60 Tactical::DrawOverlay -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e37f0 ObjectClass::sub_6E37F0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 8,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "frame_sched": 2,
+  "codegen_shape": 3,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p07\batch_report.json

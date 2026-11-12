@@ -1,0 +1,33 @@
+{
+ "symbol": "?Draw@ShapeButtonClass@@QAEHH@Z",
+ "sym_key": "ShapeButtonClass::Draw",
+ "size": 283,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec20568bf150e80000000085c00f84fa0000008b465885c00f84ef0000008a461e5384c05775418a464084c074288a463484c0740f8a4e2d33db84c90f95c383c303eb298a462d33db84c00f95c381e3ff000000eb178a462c33db84c00f95c381e3ff000000eb05bb020000008a464c8b3d0000000084c075068b3d000000008b0f8d44241c50578b11ff52788b086a00894c24108b5004895424148b4808894c24188b500c8b46448b4e0c8954241c8b561003c18b4e4803ca8a56556a006a006a006a00f6da68e80300006a001bd2894424386a0081e200080000894c24406a008d442430528b56588d4c2444505153528b56508bcfe800000000b8010000005f8846545b5e83c420c2040033c05e83c420c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?DispatchClick@Control@@QAEHH@Z",
+   "sym_key": "Control::DispatchClick"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHPAX0I00HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

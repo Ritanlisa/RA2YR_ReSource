@@ -1,0 +1,11 @@
+{
+ "addr": "0x6896C0",
+ "name": "ScenarioClass::SetCountryFlag",
+ "size": 153,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6896C0",
+ "bytes_hex": "5355565733ff8da9881c00008b4424148bf58a188ad33a1e751c84d274148a58018ad33a5e01750e83c00283c60284d275e033c0eb051bc083d8ff85c074124783c52983ff327cc45f5e5db0015bc2080083ffff74f283ff3273358d04bf8d14398a9cc2b01c00008d84c2b01c00008a5424183ada74108810c681aa340000018bcfe8a9c005005f5e8ac35d5bc208005f5e5d32c05bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

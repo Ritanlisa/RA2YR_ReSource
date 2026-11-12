@@ -1,0 +1,69 @@
+{
+ "symbol": "?LoadScoreFont@ScoreScreen@@QAEXH@Z",
+ "sym_key": "ScoreScreen::LoadScoreFont",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "5153568bf133db895e04895e08895e0c895e14891ee8000000008b150000000033c942891500000000891e885e108a0d0000000032d2e8000000003bc389460c753133c08d4c2408a00000000050e8000000008d4c2408e8000000008d4c240889460cc6461001e8000000008bcee8000000005e5b59c20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?LoadAudio@ScoreScreen@@QAEHXZ",
+   "sym_key": "ScoreScreen::LoadAudio"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0558C@@3IA",
+   "sym_key": "DataGlobal_B0558C"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0558C@@3IA",
+   "sym_key": "DataGlobal_B0558C"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_Str_File_FULLFNT3_SHP@@3EA",
+   "sym_key": "g_Str_File_FULLFNT3_SHP"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_Str_File_FULLFNT3_SHP@@3EA",
+   "sym_key": "g_Str_File_FULLFNT3_SHP"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?ReadEntireFile@CCFileClass@@QAEPAXXZ",
+   "sym_key": "CCFileClass::ReadEntireFile"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?Reset@CCFileClass@@QAEHXZ",
+   "sym_key": "CCFileClass::Reset"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
