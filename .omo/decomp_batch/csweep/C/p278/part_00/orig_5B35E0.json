@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B35E0",
+ "name": "MissionClass::QueueMission",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B35E0",
+ "bytes_hex": "8b442404568bf18b8eac00000083f91c750583f805744a83f913744583f8ff74203bc8750f8b8eb40000003bc8741283f9ff740d8986b4000000c686b8000000008a44240c84c074188b068bceff900002000084c0740a8b168bceff92ec0100005ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

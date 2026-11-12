@@ -1,0 +1,8 @@
+{
+ "symbol": "?QueueMission@MissionClass@@QAEHXZ",
+ "sym_key": "MissionClass::QueueMission",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "518b442400568bf18b8eac00000083f91c750783f8057456eb0583f913744f83f8ff74203bc8750f8b8eb40000003bc8741283f9ff740d8986b4000000c686b8000000008b4c240424008bd181e2ff0000000bc284c974168b0656ff900002000084c074098b0e56ff91ec0100005e59c3",
+ "relocs": []
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetOwner@SlaveManagerClass@@QAEDH@Z",
+ "sym_key": "SlaveManagerClass::SetOwner",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "51568bf1578b7c24108b462489442408c780d802000000000000897e248b8fd802000085c9741d6a006a00e8000000008b8fd802000085c9740e8b016a0151ff5020eb048a44240889b7d80200008b4e484978208b563c8b048a8b0085c08944240874098b56248990dc0200004979e48a4424085f5e59c20400",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?MutateAll@TechnoClass@@QAEDHH@Z",
+   "sym_key": "TechnoClass::MutateAll"
+  }
+ ]
+}

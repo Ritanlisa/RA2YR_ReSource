@@ -1,0 +1,11 @@
+{
+ "addr": "0x6AF580",
+ "name": "SlaveManagerClass::SetOwner",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6AF580",
+ "bytes_hex": "568bf1578b7c240c8b4624c780d802000000000000897e248b8fd802000085c9741a6a006a00e8351500008b8fd802000085c974078b116a01ff522089b7d80200008b4e484978188b463c8b14888b0285c074098b56248990dc0200004979e85f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

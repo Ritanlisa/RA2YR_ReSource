@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F5320",
+ "name": "ObjectClass::ProcessInputKey",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F5320",
+ "bytes_hex": "8b44240883ec0883f80d744483f822740833c083c408c20c00db416c8b01dd5c2400ff9088000000db80a00000008b0de0718800dc7c2400dc99f8160000dfe0f6c4017515b80a00000083c408c20c008b116a02ff9224010000b80100000083c408c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

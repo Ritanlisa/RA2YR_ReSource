@@ -1,0 +1,15 @@
+{
+ "symbol": "?ProcessInputKey@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::ProcessInputKey",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "8b4424f883ec0883f80d75148b016a0251ff9024010000b80100000083c408c383f822740633c083c408c3db416c8b1151dd5c2404ff9288000000db80a0000000a140020000dc7c2400dc98f8160000dfe0f6c401b80a0000007405b80100000083c408c3",
+ "relocs": [
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

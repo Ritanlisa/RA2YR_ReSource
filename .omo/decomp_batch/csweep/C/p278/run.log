@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p278\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c49d0 _TClassFactory_VFlyLocomotionClass::CreateTClassFactory_FlyLocomotionClass -> _TClassFactory_VFlyLocomotionClass
+[conv] 0x6c4b50 _TClassFactory_VTeleportLocomotionClass::CreateTClassFactory_TeleportLocomotionClass -> _TClassFactory_VTeleportLocomotionClass
+[conv] 0x6c4cd0 _TClassFactory_VMechLocomotionClass::CreateTClassFactory_MechLocomotionClass -> _TClassFactory_VMechLocomotionClass
+[conv] 0x6c4e50 _TClassFactory_VShipLocomotionClass::CreateTClassFactory_ShipLocomotionClass -> _TClassFactory_VShipLocomotionClass
+[conv] 0x6c4fd0 _TClassFactory_VBulletClass::CreateTClassFactory_BulletClass -> _TClassFactory_VBulletClass
+[conv] 0x6c5150 _TClassFactory_VFactoryClass::CreateTClassFactory_FactoryClass -> _TClassFactory_VFactoryClass
+[conv] 0x6c52d0 _TClassFactory_VWarheadTypeClass::CreateTClassFactory_WarheadTypeClass -> _TClassFactory_VWarheadTypeClass
+[conv] 0x6c5450 _TClassFactory_VWeaponTypeClass::CreateTClassFactory_WeaponTypeClass -> _TClassFactory_VWeaponTypeClass
+[conv] 0x6c55d0 _TClassFactory_VParticleClass::CreateTClassFactory_ParticleClass -> _TClassFactory_VParticleClass
+[conv] 0x6c5750 _TClassFactory_VParticleTypeClass::CreateTClassFactory_ParticleTypeClass -> _TClassFactory_VParticleTypeClass
+[conv] 0x6c58d0 _TClassFactory_VParticleSystemClass::CreateTClassFactory_ParticleSystemClass -> _TClassFactory_VParticleSystemClass
+[conv] 0x6c5bd0 _TClassFactory_VAITriggerTypeClass::CreateTClassFactory_AITriggerTypeClass -> _TClassFactory_VAITriggerTypeClass
+[conv] 0x6c5d50 _TClassFactory_VNeuronClass::CreateTClassFactory_NeuronClass -> _TClassFactory_VNeuronClass
+[conv] 0x6c5ed0 _TClassFactory_VFoggedObjectClass::CreateTClassFactory_FoggedObjectClass -> _TClassFactory_VFoggedObjectClass
+[conv] 0x6c6050 _TClassFactory_VAlphaShapeClass::CreateTClassFactory_AlphaShapeClass -> _TClassFactory_VAlphaShapeClass
+[conv] 0x634880 ObjectClass::sub_634880 -> ObjectClass
+[conv] 0x759bc0 TechnoClass::sub_759BC0 -> TechnoClass
+[conv] 0x6af580 SlaveManagerClass::SetOwner -> SlaveManagerClass
+[conv] 0x5b35e0 MissionClass::QueueMission -> MissionClass
+[conv] 0x5f5320 ObjectClass::ProcessInputKey -> ObjectClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VFlyLocomotionClass rc=0
+[era] _TClassFactory_VTeleportLocomotionClass rc=0
+[era] _TClassFactory_VMechLocomotionClass rc=0
+[era] _TClassFactory_VShipLocomotionClass rc=0
+[era] _TClassFactory_VBulletClass rc=0
+[era] _TClassFactory_VFactoryClass rc=0
+[era] _TClassFactory_VWarheadTypeClass rc=0
+[era] _TClassFactory_VWeaponTypeClass rc=0
+[era] _TClassFactory_VParticleClass rc=0
+[era] _TClassFactory_VParticleTypeClass rc=0
+[era] _TClassFactory_VParticleSystemClass rc=0
+[era] _TClassFactory_VAITriggerTypeClass rc=0
+[era] _TClassFactory_VNeuronClass rc=0
+[era] _TClassFactory_VFoggedObjectClass rc=0
+[era] _TClassFactory_VAlphaShapeClass rc=0
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] SlaveManagerClass        rc=0
+[era] MissionClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c49d0   MISMATCH         _TClassFactory_VFlyLocomotionClass::CreateTClassFactory_FlyLocomotionClass
+[diff] 0x6c4b50   MISMATCH         _TClassFactory_VTeleportLocomotionClass::CreateTClassFactory_TeleportLocomotionClass
+[diff] 0x6c4cd0   MISMATCH         _TClassFactory_VMechLocomotionClass::CreateTClassFactory_MechLocomotionClass
+[diff] 0x6c4e50   MISMATCH         _TClassFactory_VShipLocomotionClass::CreateTClassFactory_ShipLocomotionClass
+[diff] 0x6c4fd0   MISMATCH         _TClassFactory_VBulletClass::CreateTClassFactory_BulletClass
+[diff] 0x6c5150   MISMATCH         _TClassFactory_VFactoryClass::CreateTClassFactory_FactoryClass
+[diff] 0x6c52d0   MISMATCH         _TClassFactory_VWarheadTypeClass::CreateTClassFactory_WarheadTypeClass
+[diff] 0x6c5450   MISMATCH         _TClassFactory_VWeaponTypeClass::CreateTClassFactory_WeaponTypeClass
+[diff] 0x6c55d0   MISMATCH         _TClassFactory_VParticleClass::CreateTClassFactory_ParticleClass
+[diff] 0x6c5750   MISMATCH         _TClassFactory_VParticleTypeClass::CreateTClassFactory_ParticleTypeClass
+[diff] 0x6c58d0   MISMATCH         _TClassFactory_VParticleSystemClass::CreateTClassFactory_ParticleSystemClass
+[diff] 0x6c5bd0   MISMATCH         _TClassFactory_VAITriggerTypeClass::CreateTClassFactory_AITriggerTypeClass
+[diff] 0x6c5d50   MISMATCH         _TClassFactory_VNeuronClass::CreateTClassFactory_NeuronClass
+[diff] 0x6c5ed0   MISMATCH         _TClassFactory_VFoggedObjectClass::CreateTClassFactory_FoggedObjectClass
+[diff] 0x6c6050   MISMATCH         _TClassFactory_VAlphaShapeClass::CreateTClassFactory_AlphaShapeClass
+[diff] 0x634880   MISMATCH         ObjectClass::sub_634880
+[diff] 0x5f5320   MISMATCH         ObjectClass::ProcessInputKey
+[diff] 0x759bc0   MATCH            TechnoClass::sub_759BC0
+[diff] 0x6af580   MISMATCH         SlaveManagerClass::SetOwner
+[diff] 0x5b35e0   MISMATCH         MissionClass::QueueMission
+[ledger] 0x6c49d0 _TClassFactory_VFlyLocomotionClass::CreateTClassFactory_FlyLocomotionClass -> NG (attempt 1)
+[ledger] 0x6c4b50 _TClassFactory_VTeleportLocomotionClass::CreateTClassFactory_TeleportLocomotionClass -> NG (attempt 1)
+[ledger] 0x6c4cd0 _TClassFactory_VMechLocomotionClass::CreateTClassFactory_MechLocomotionClass -> NG (attempt 1)
+[ledger] 0x6c4e50 _TClassFactory_VShipLocomotionClass::CreateTClassFactory_ShipLocomotionClass -> NG (attempt 1)
+[ledger] 0x6c4fd0 _TClassFactory_VBulletClass::CreateTClassFactory_BulletClass -> NG (attempt 1)
+[ledger] 0x6c5150 _TClassFactory_VFactoryClass::CreateTClassFactory_FactoryClass -> NG (attempt 1)
+[ledger] 0x6c52d0 _TClassFactory_VWarheadTypeClass::CreateTClassFactory_WarheadTypeClass -> NG (attempt 1)
+[ledger] 0x6c5450 _TClassFactory_VWeaponTypeClass::CreateTClassFactory_WeaponTypeClass -> NG (attempt 1)
+[ledger] 0x6c55d0 _TClassFactory_VParticleClass::CreateTClassFactory_ParticleClass -> NG (attempt 1)
+[ledger] 0x6c5750 _TClassFactory_VParticleTypeClass::CreateTClassFactory_ParticleTypeClass -> NG (attempt 1)
+[ledger] 0x6c58d0 _TClassFactory_VParticleSystemClass::CreateTClassFactory_ParticleSystemClass -> NG (attempt 1)
+[ledger] 0x6c5bd0 _TClassFactory_VAITriggerTypeClass::CreateTClassFactory_AITriggerTypeClass -> NG (attempt 1)
+[ledger] 0x6c5d50 _TClassFactory_VNeuronClass::CreateTClassFactory_NeuronClass -> NG (attempt 1)
+[ledger] 0x6c5ed0 _TClassFactory_VFoggedObjectClass::CreateTClassFactory_FoggedObjectClass -> NG (attempt 1)
+[ledger] 0x6c6050 _TClassFactory_VAlphaShapeClass::CreateTClassFactory_AlphaShapeClass -> NG (attempt 1)
+[ledger] 0x634880 ObjectClass::sub_634880 -> NG (attempt 1)
+[ledger] 0x759bc0 TechnoClass::sub_759BC0 -> OK (attempt 1)
+[ledger] 0x6af580 SlaveManagerClass::SetOwner -> NG (attempt 1)
+[ledger] 0x5b35e0 MissionClass::QueueMission -> NG (attempt 1)
+[ledger] 0x5f5320 ObjectClass::ProcessInputKey -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 15,
+  "codegen_shape": 2,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p278\batch_report.json
