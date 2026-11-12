@@ -1,0 +1,11 @@
+{
+ "addr": "0x6A3EB0",
+ "name": "JumpjetLocomotionClass::DispatchCheckState_6A3EB0",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6A3EB0",
+ "bytes_hex": "8b44240450e8f66cebffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

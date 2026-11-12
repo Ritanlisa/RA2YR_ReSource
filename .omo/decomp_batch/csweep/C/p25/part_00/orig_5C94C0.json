@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C94C0",
+ "name": "MultiplayerObserverTeam::AddRef",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C94C0",
+ "bytes_hex": "8b44240450e8c6f70000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

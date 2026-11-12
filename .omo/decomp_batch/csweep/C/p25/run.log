@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x4b66a0 DropPodLocomotionClass::AddRef -> DropPodLocomotionClass
+[conv] 0x4b66b0 DropPodLocomotionClass::Release -> DropPodLocomotionClass
+[conv] 0x4cfd90 FlyLocomotionClass::ShortFunc_4CFD90 -> FlyLocomotionClass
+[conv] 0x54df50 JumpjetLocomotionClass::AddRef -> JumpjetLocomotionClass
+[conv] 0x54df60 JumpjetLocomotionClass::Release -> JumpjetLocomotionClass
+[conv] 0x555070 LightSourceClass::Stat -> LightSourceClass
+[conv] 0x58b770 unknown_libname_24 -> _addr_58
+[conv] 0x5c94c0 MultiplayerObserverTeam::AddRef -> MultiplayerObserverTeam
+[conv] 0x658770 RadarClass::Destru_vt33 -> RadarClass
+[conv] 0x65b3b0 RadSiteClass::PowerDrainUpdate -> RadSiteClass
+[conv] 0x6a3eb0 ShipLocomotionClass::DispatchCheckState_6A3EB0 -> ShipLocomotionClass
+[conv] 0x6a4260 ShipLocomotionClass::AddRef -> ShipLocomotionClass
+[conv] 0x6a4270 ShipLocomotionClass::Release -> ShipLocomotionClass
+[conv] 0x6ac5d0 SidebarClass::saveLoadPrefix -> SidebarClass
+[conv] 0x6ac5e0 SidebarClass::saveLoadPrefix2 -> SidebarClass
+[conv] 0x6d1800 TabClass::Load -> TabClass
+[conv] 0x71a0e0 TeleportLocomotionClass::IUnknownAddRef -> TeleportLocomotionClass
+[conv] 0x71a650 TemporalClass::SetTarget -> TemporalClass
+[conv] 0x75cb80 WalkLocomotionClass::AddRef -> WalkLocomotionClass
+[conv] 0x75cb90 WalkLocomotionClass::Release -> WalkLocomotionClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DropPodLocomotionClass   rc=2
+[era] FlyLocomotionClass       rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] LightSourceClass         rc=0
+[era] _addr_58                 rc=0
+[era] MultiplayerObserverTeam  rc=0
+[era] RadarClass               rc=0
+[era] RadSiteClass             rc=0
+[era] ShipLocomotionClass      rc=0
+[era] SidebarClass             rc=0
+[era] TabClass                 rc=0
+[era] TeleportLocomotionClass  rc=2
+[era] TemporalClass            rc=0
+[era] WalkLocomotionClass      rc=0
+=== diffasm byte-compare ===
+[diff] 0x4cfd90   MISMATCH         FlyLocomotionClass::ShortFunc_4CFD90
+[diff] 0x54df50   MISMATCH         JumpjetLocomotionClass::AddRef
+[diff] 0x54df60   MISMATCH         JumpjetLocomotionClass::Release
+[diff] 0x555070   MISMATCH         LightSourceClass::Stat
+[diff] 0x58b770   MISMATCH         unknown_libname_24
+[diff] 0x5c94c0   MISMATCH         MultiplayerObserverTeam::AddRef
+[diff] 0x658770   MATCH            RadarClass::Destru_vt33
+[diff] 0x65b3b0   MISMATCH         RadSiteClass::PowerDrainUpdate
+[diff] 0x6a3eb0   MISMATCH         ShipLocomotionClass::DispatchCheckState_6A3EB0
+[diff] 0x6a4260   MISMATCH         ShipLocomotionClass::AddRef
+[diff] 0x6a4270   MISMATCH         ShipLocomotionClass::Release
+[diff] 0x6ac5d0   MATCH            SidebarClass::saveLoadPrefix
+[diff] 0x6ac5e0   MATCH            SidebarClass::saveLoadPrefix2
+[diff] 0x6d1800   MISMATCH         TabClass::Load
+[diff] 0x71a650   MISMATCH         TemporalClass::SetTarget
+[diff] 0x75cb80   MISMATCH         WalkLocomotionClass::AddRef
+[diff] 0x75cb90   MISMATCH         WalkLocomotionClass::Release
+[ledger] 0x4b66a0 DropPodLocomotionClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b66b0 DropPodLocomotionClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cfd90 FlyLocomotionClass::ShortFunc_4CFD90 -> NG (attempt 1)
+[ledger] 0x54df50 JumpjetLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x54df60 JumpjetLocomotionClass::Release -> NG (attempt 1)
+[ledger] 0x555070 LightSourceClass::Stat -> NG (attempt 1)
+[ledger] 0x58b770 unknown_libname_24 -> NG (attempt 1)
+[ledger] 0x5c94c0 MultiplayerObserverTeam::AddRef -> NG (attempt 1)
+[ledger] 0x658770 RadarClass::Destru_vt33 -> OK (attempt 1)
+[ledger] 0x65b3b0 RadSiteClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x6a3eb0 ShipLocomotionClass::DispatchCheckState_6A3EB0 -> NG (attempt 1)
+[ledger] 0x6a4260 ShipLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x6a4270 ShipLocomotionClass::Release -> NG (attempt 1)
+[ledger] 0x6ac5d0 SidebarClass::saveLoadPrefix -> OK (attempt 1)
+[ledger] 0x6ac5e0 SidebarClass::saveLoadPrefix2 -> OK (attempt 1)
+[ledger] 0x6d1800 TabClass::Load -> NG (attempt 1)
+[ledger] 0x71a0e0 TeleportLocomotionClass::IUnknownAddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71a650 TemporalClass::SetTarget -> NG (attempt 1)
+[ledger] 0x75cb80 WalkLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x75cb90 WalkLocomotionClass::Release -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 14,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "const_fold": 9,
+  "codegen_shape": 5
+ },
+ "match_rate_of_decided_pct": 17.6,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p25\batch_report.json

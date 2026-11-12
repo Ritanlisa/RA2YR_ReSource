@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetTarget@TemporalClass@@QAEHH@Z",
+ "sym_key": "TemporalClass::SetTarget",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "e800000000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  }
+ ]
+}

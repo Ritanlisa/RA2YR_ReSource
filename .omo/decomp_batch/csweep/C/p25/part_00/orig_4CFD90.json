@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CFD90",
+ "name": "JumpjetLocomotionClass::ShortFunc_4CFD90",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CFD90",
+ "bytes_hex": "8b44240450e896ab0800c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

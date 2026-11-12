@@ -1,0 +1,15 @@
+{
+ "symbol": "?DispatchCheckState_6A3EB0@ShipLocomotionClass@@QAGHH@Z",
+ "sym_key": "ShipLocomotionClass::DispatchCheckState_6A3EB0",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e800000000c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?JumpjetLocomotionClass__CheckState@@YGHPAX@Z",
+   "sym_key": "JumpjetLocomotionClass__CheckState"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6AC5E0",
+ "name": "SidebarClass::saveLoadPrefix2",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6AC5E0",
+ "bytes_hex": "8b44240450e8d6a4faffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
