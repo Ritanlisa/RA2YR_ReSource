@@ -1,0 +1,11 @@
+{
+ "addr": "0x748360",
+ "name": "System_Cleanup",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x748360",
+ "bytes_hex": "a14cd1b10085c0741350e8ce07080083c404c7054cd1b10000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

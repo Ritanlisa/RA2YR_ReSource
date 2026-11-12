@@ -1,0 +1,21 @@
+{
+ "symbol": "?Load@MSFrameAnim@@QAGDPAH@Z",
+ "sym_key": "MSFrameAnim::Load",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c074118b4424048b5424086a018b08e80000000032c0c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8487BC@@3EA",
+   "sym_key": "DataGlobal_8487BC"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?RenderScoreScreen@@YIXPAX0D@Z",
+   "sym_key": "RenderScoreScreen"
+  }
+ ]
+}

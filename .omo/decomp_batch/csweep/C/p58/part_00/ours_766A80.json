@@ -1,0 +1,15 @@
+{
+ "symbol": "?enumConnections@_ValueGameOption_E_WorldDominationTour@@QAEHH@Z",
+ "sym_key": "_ValueGameOption_E_WorldDominationTour::enumConnections",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000084c075078b460c5ec20400b8020000005ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Network_Connect_767310@@YGDH@Z",
+   "sym_key": "Network_Connect_767310"
+  }
+ ]
+}

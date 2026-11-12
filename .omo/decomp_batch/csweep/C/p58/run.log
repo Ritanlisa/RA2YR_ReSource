@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p58\part_00
+=== convert (20 addrs) ===
+[conv] 0x71e240 TerrainTypeClass::SaveLoad_Prefix_0 -> TerrainTypeClass
+[conv] 0x71f930 TEventClass::SaveLoad_Prefix_0 -> TEventClass
+[conv] 0x7268d0 TriggerClass::SaveTrigger -> TriggerClass
+[conv] 0x727c80 TriggerTypeClass::Write -> TriggerTypeClass
+[conv] 0x7281e0 TubeClass::SaveState -> TubeClass
+[conv] 0x748360 System_Cleanup -> System
+[conv] 0x74e880 Map_Destroy -> Map
+[conv] 0x766a80 _ValueGameOption_E_WorldDominationTour::enumConnections -> _ValueGameOption_E_WorldDominationTour
+[conv] 0x767ed0 MSFrameAnim::Load -> MSFrameAnim
+[conv] 0x775d70 sub_775D70 -> _addr_77
+[conv] 0x77b900 sub_77B900 -> _addr_77
+[conv] 0x77b940 sub_77B940 -> _addr_77
+[conv] 0x77b980 sub_77B980 -> _addr_77
+[conv] 0x77b9c0 sub_77B9C0 -> _addr_77
+[conv] 0x77ba00 sub_77BA00 -> _addr_77
+[conv] 0x77c350 sub_77C350 -> _addr_77
+[conv] 0x77c5e0 sub_77C5E0 -> _addr_77
+[conv] 0x77c640 sub_77C640 -> _addr_77
+[conv] 0x77c6a0 sub_77C6A0 -> _addr_77
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TerrainTypeClass         rc=2
+[era] TEventClass              rc=0
+[era] TriggerClass             rc=0
+[era] TriggerTypeClass         rc=0
+[era] TubeClass                rc=0
+[era] System                   rc=0
+[era] Map                      rc=0
+[era] _ValueGameOption_E_WorldDominationTour rc=0
+[era] MSFrameAnim              rc=0
+[era] _addr_77                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x71f930   MISMATCH         TEventClass::SaveLoad_Prefix_0
+[diff] 0x7268d0   MISMATCH         TriggerClass::SaveTrigger
+[diff] 0x727c80   MISMATCH         TriggerTypeClass::Write
+[diff] 0x7281e0   MISMATCH         TubeClass::SaveState
+[diff] 0x748360   MISMATCH         System_Cleanup
+[diff] 0x74e880   MISMATCH         Map_Destroy
+[diff] 0x766a80   MISMATCH         _ValueGameOption_E_WorldDominationTour::enumConnections
+[diff] 0x767ed0   MISMATCH         MSFrameAnim::Load
+[diff] 0x775d70   MISMATCH         sub_775D70
+[diff] 0x77b900   MISMATCH         sub_77B900
+[diff] 0x77b940   MISMATCH         sub_77B940
+[diff] 0x77b980   MISMATCH         sub_77B980
+[diff] 0x77b9c0   MISMATCH         sub_77B9C0
+[diff] 0x77ba00   MISMATCH         sub_77BA00
+[diff] 0x77c350   MISMATCH         sub_77C350
+[diff] 0x77c5e0   MISMATCH         sub_77C5E0
+[diff] 0x77c640   MISMATCH         sub_77C640
+[diff] 0x77c6a0   MISMATCH         sub_77C6A0
+[ledger] 0x71e240 TerrainTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71f930 TEventClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x7268d0 TriggerClass::SaveTrigger -> NG (attempt 1)
+[ledger] 0x727c80 TriggerTypeClass::Write -> NG (attempt 1)
+[ledger] 0x7281e0 TubeClass::SaveState -> NG (attempt 1)
+[ledger] 0x7480b0 0x7480b0 -> PENDING (attempt 1)
+[ledger] 0x748360 System_Cleanup -> NG (attempt 1)
+[ledger] 0x74e880 Map_Destroy -> NG (attempt 1)
+[ledger] 0x766a80 _ValueGameOption_E_WorldDominationTour::enumConnections -> NG (attempt 1)
+[ledger] 0x767ed0 MSFrameAnim::Load -> NG (attempt 1)
+[ledger] 0x775d70 sub_775D70 -> NG (attempt 1)
+[ledger] 0x77b900 sub_77B900 -> NG (attempt 1)
+[ledger] 0x77b940 sub_77B940 -> NG (attempt 1)
+[ledger] 0x77b980 sub_77B980 -> NG (attempt 1)
+[ledger] 0x77b9c0 sub_77B9C0 -> NG (attempt 1)
+[ledger] 0x77ba00 sub_77BA00 -> NG (attempt 1)
+[ledger] 0x77c350 sub_77C350 -> NG (attempt 1)
+[ledger] 0x77c5e0 sub_77C5E0 -> NG (attempt 1)
+[ledger] 0x77c640 sub_77C640 -> NG (attempt 1)
+[ledger] 0x77c6a0 sub_77C6A0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 18,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "const_fold": 16,
+  "codegen_shape": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p58\batch_report.json

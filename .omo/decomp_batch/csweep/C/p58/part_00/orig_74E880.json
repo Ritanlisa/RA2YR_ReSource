@@ -1,0 +1,11 @@
+{
+ "addr": "0x74E880",
+ "name": "Map_Destroy",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74E880",
+ "bytes_hex": "a1f0d2b10085c0741350e8aea2070083c404c705f0d2b10000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
