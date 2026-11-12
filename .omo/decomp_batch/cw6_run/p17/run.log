@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x50bc90 HouseClass::CreatePowerOutage -> HouseClass
+[conv] 0x50c160 ObjectClass::sub_50C160 -> ObjectClass
+[conv] 0x50e910 _VectorClass_PBVBuildingTypeClass::AddRef -> _VectorClass_PBVBuildingTypeClass
+[conv] 0x50ea30 _VectorClass_PBVBuildingTypeClass::GetSize -> _VectorClass_PBVBuildingTypeClass
+[conv] 0x50eb40 _DynamicVectorClass_PBVBuildingTypeClass::GetSize -> _DynamicVectorClass_PBVBuildingTypeClass
+[conv] 0x50ec20 _VectorClass_PAUStartingTechnoStruct_HouseClass::AddRef -> _VectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50ed40 _VectorClass_PAUStartingTechnoStruct_HouseClass::GetSize -> _VectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50ee50 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::FindItemIndex -> _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50ee80 _VectorClass_UAngerStruct::AddRef -> _VectorClass_UAngerStruct
+[conv] 0x50f000 _VectorClass_UAngerStruct::GetSize -> _VectorClass_UAngerStruct
+[conv] 0x50f170 _DynamicVectorClass_UAngerStruct::FindItemIndex_0 -> _DynamicVectorClass_UAngerStruct
+[conv] 0x50f4e0 _VectorClass_PAUBuildChoiceClass_HouseClass::Add -> _VectorClass_PAUBuildChoiceClass_HouseClass
+[conv] 0x50f600 _VectorClass_PAUBuildChoiceClass_HouseClass::GetSize -> _VectorClass_PAUBuildChoiceClass_HouseClass
+[conv] 0x50f740 _VectorClass_PBVTeamTypeClass::CompareVectors -> _VectorClass_PBVTeamTypeClass
+[conv] 0x50f860 _VectorClass_PBVTeamTypeClass::FindItemIndex -> _VectorClass_PBVTeamTypeClass
+[conv] 0x50f970 _DynamicVectorClass_PBVTeamTypeClass::FindItemIndex_0 -> _DynamicVectorClass_PBVTeamTypeClass
+[conv] 0x50fc00 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::AddRef -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x50fdb0 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::GetSize -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x50ffb0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::FindItemIndex -> _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x512640 HouseTypeClass::GetClassIdentifier -> HouseTypeClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] _VectorClass_PBVBuildingTypeClass rc=0
+[era] _DynamicVectorClass_PBVBuildingTypeClass rc=0
+[era] _VectorClass_PAUStartingTechnoStruct_HouseClass rc=0
+[era] _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass rc=0
+[era] _VectorClass_UAngerStruct rc=0
+[era] _DynamicVectorClass_UAngerStruct rc=0
+[era] _VectorClass_PAUBuildChoiceClass_HouseClass rc=0
+[era] _VectorClass_PBVTeamTypeClass rc=0
+[era] _DynamicVectorClass_PBVTeamTypeClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] HouseTypeClass           rc=0
+=== diffasm byte-compare ===
+[diff] 0x50e910   MISMATCH         _VectorClass_PBVBuildingTypeClass::AddRef
+[diff] 0x50ea30   MISMATCH         _VectorClass_PBVBuildingTypeClass::GetSize
+[diff] 0x50eb40   MISMATCH         _DynamicVectorClass_PBVBuildingTypeClass::GetSize
+[diff] 0x50ec20   MISMATCH         _VectorClass_PAUStartingTechnoStruct_HouseClass::AddRef
+[diff] 0x50ed40   MISMATCH         _VectorClass_PAUStartingTechnoStruct_HouseClass::GetSize
+[diff] 0x50ee50   MISMATCH         _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::FindItemIndex
+[diff] 0x50ee80   MISMATCH         _VectorClass_UAngerStruct::AddRef
+[diff] 0x50f000   MISMATCH         _VectorClass_UAngerStruct::GetSize
+[diff] 0x50f170   MISMATCH         _DynamicVectorClass_UAngerStruct::FindItemIndex_0
+[diff] 0x50f4e0   MISMATCH         _VectorClass_PAUBuildChoiceClass_HouseClass::Add
+[diff] 0x50f600   MISMATCH         _VectorClass_PAUBuildChoiceClass_HouseClass::GetSize
+[diff] 0x50f740   MISMATCH         _VectorClass_PBVTeamTypeClass::CompareVectors
+[diff] 0x50f860   MISMATCH         _VectorClass_PBVTeamTypeClass::FindItemIndex
+[diff] 0x50f970   MISMATCH         _DynamicVectorClass_PBVTeamTypeClass::FindItemIndex_0
+[diff] 0x50fc00   MISMATCH         _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::AddRef
+[diff] 0x50fdb0   MISMATCH         _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::GetSize
+[diff] 0x50ffb0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::FindItemIndex
+[diff] 0x512640   MISMATCH         HouseTypeClass::GetClassIdentifier
+[ledger] 0x50bc90 HouseClass::CreatePowerOutage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50c160 ObjectClass::sub_50C160 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50e910 _VectorClass_PBVBuildingTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x50ea30 _VectorClass_PBVBuildingTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x50eb40 _DynamicVectorClass_PBVBuildingTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x50ec20 _VectorClass_PAUStartingTechnoStruct_HouseClass::AddRef -> NG (attempt 2)
+[ledger] 0x50ed40 _VectorClass_PAUStartingTechnoStruct_HouseClass::GetSize -> NG (attempt 2)
+[ledger] 0x50ee50 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x50ee80 _VectorClass_UAngerStruct::AddRef -> NG (attempt 2)
+[ledger] 0x50f000 _VectorClass_UAngerStruct::GetSize -> NG (attempt 2)
+[ledger] 0x50f170 _DynamicVectorClass_UAngerStruct::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x50f4e0 _VectorClass_PAUBuildChoiceClass_HouseClass::Add -> NG (attempt 2)
+[ledger] 0x50f600 _VectorClass_PAUBuildChoiceClass_HouseClass::GetSize -> NG (attempt 2)
+[ledger] 0x50f740 _VectorClass_PBVTeamTypeClass::CompareVectors -> NG (attempt 2)
+[ledger] 0x50f860 _VectorClass_PBVTeamTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x50f970 _DynamicVectorClass_PBVTeamTypeClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x50fc00 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x50fdb0 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x50ffb0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x512640 HouseTypeClass::GetClassIdentifier -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 18
+ },
+ "pathologies": {
+  "branch_polarity": 4,
+  "codegen_shape": 10,
+  "branch_order": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p17\batch_report.json

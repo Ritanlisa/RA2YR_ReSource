@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindItemIndex@_DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass@@QAEHPAH@Z",
+ "sym_key": "_DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::FindItemIndex",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "8b5110535533c0565785d27e218b7424148b49048b3e3939750a8b59048b6e043bdd740d403bc27d0583c108ebe883c8ff5f5e5d5bc20400",
+ "relocs": []
+}
