@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p231\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c4c60 _VectorClass_PAVEgoClass::QueryInterface -> _VectorClass_PAVEgoClass
+[conv] 0x4c4cb0 _DynamicVectorClass_PAVEgoClass::Constructor_VectorClass_EgoClass___ -> _DynamicVectorClass_PAVEgoClass
+[conv] 0x4c5e20 _VectorClass_PAVEMPulseClass::QueryInterface -> _VectorClass_PAVEMPulseClass
+[conv] 0x4c5e70 _DynamicVectorClass_PAVEMPulseClass::Constructor_VectorClass_EMPulseClass___ -> _DynamicVectorClass_PAVEMPulseClass
+[conv] 0x4cab50 _VectorClass_PBVTechnoTypeClass::QueryInterface -> _VectorClass_PBVTechnoTypeClass
+[conv] 0x4caba0 DynamicVector::resetScriptState -> DynamicVector
+[conv] 0x4d2d10 _VectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> _VectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4e0270 DynamicVector::processMissionQueue -> DynamicVector
+[conv] 0x4e02d0 _VectorClass_PAVAbstractClass::QueryInterface -> _VectorClass_PAVAbstractClass
+[conv] 0x4e0ce0 _VectorClass_PAVFootClass::QueryInterface -> _VectorClass_PAVFootClass
+[conv] 0x4ef4e0 VectorClass::vt_00 -> VectorClass
+[conv] 0x4ef530 DynamicVector::COMStub_0 -> DynamicVector
+[conv] 0x4ef580 _VectorClass_PAVBuildingClass::QueryInterface -> _VectorClass_PAVBuildingClass
+[conv] 0x4ef5d0 _DynamicVectorClass_PAVBuildingClass::Constructor_VectorClass_BuildingClass___ -> _DynamicVectorClass_PAVBuildingClass
+[conv] 0x4ef620 _VectorClass_PAVSuperClass::QueryInterface -> _VectorClass_PAVSuperClass
+[conv] 0x4ef670 _DynamicVectorClass_PAVSuperClass::Constructor_VectorClass_SuperClass___ -> _DynamicVectorClass_PAVSuperClass
+[conv] 0x4ef6c0 _VectorClass_PAVAITriggerTypeClass::QueryInterface -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4ef760 _VectorClass_PAVBuildingLightClass::QueryInterface -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4ef7b0 _DynamicVectorClass_PAVBuildingLightClass::Constructor_VectorClass_BuildingLightClass___ -> _DynamicVectorClass_PAVBuildingLightClass
+[conv] 0x4ef800 _VectorClass_PAVParticleClass::vt_00 -> _VectorClass_PAVParticleClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVEgoClass rc=0
+[era] _DynamicVectorClass_PAVEgoClass rc=0
+[era] _VectorClass_PAVEMPulseClass rc=0
+[era] _DynamicVectorClass_PAVEMPulseClass rc=0
+[era] _VectorClass_PBVTechnoTypeClass rc=0
+[era] DynamicVector            rc=2
+[era] _VectorClass_UDrawRecord_FoggedObjectClass rc=0
+[era] _VectorClass_PAVAbstractClass rc=0
+[era] _VectorClass_PAVFootClass rc=0
+[era] VectorClass              rc=2
+[era] _VectorClass_PAVBuildingClass rc=0
+[era] _DynamicVectorClass_PAVBuildingClass rc=0
+[era] _VectorClass_PAVSuperClass rc=0
+[era] _DynamicVectorClass_PAVSuperClass rc=0
+[era] _VectorClass_PAVAITriggerTypeClass rc=0
+[era] _VectorClass_PAVBuildingLightClass rc=0
+[era] _DynamicVectorClass_PAVBuildingLightClass rc=0
+[era] _VectorClass_PAVParticleClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4c4c60   MISMATCH         _VectorClass_PAVEgoClass::QueryInterface
+[diff] 0x4c4cb0   MISMATCH         _DynamicVectorClass_PAVEgoClass::Constructor_VectorClass_EgoClass___
+[diff] 0x4c5e20   MISMATCH         _VectorClass_PAVEMPulseClass::QueryInterface
+[diff] 0x4c5e70   MISMATCH         _DynamicVectorClass_PAVEMPulseClass::Constructor_VectorClass_EMPulseClass___
+[diff] 0x4cab50   MISMATCH         _VectorClass_PBVTechnoTypeClass::QueryInterface
+[diff] 0x4d2d10   MISMATCH         _VectorClass_UDrawRecord_FoggedObjectClass::QueryInterface
+[diff] 0x4e02d0   MISMATCH         _VectorClass_PAVAbstractClass::QueryInterface
+[diff] 0x4e0ce0   MISMATCH         _VectorClass_PAVFootClass::QueryInterface
+[diff] 0x4ef580   MISMATCH         _VectorClass_PAVBuildingClass::QueryInterface
+[diff] 0x4ef5d0   MISMATCH         _DynamicVectorClass_PAVBuildingClass::Constructor_VectorClass_BuildingClass___
+[diff] 0x4ef620   MISMATCH         _VectorClass_PAVSuperClass::QueryInterface
+[diff] 0x4ef670   MISMATCH         _DynamicVectorClass_PAVSuperClass::Constructor_VectorClass_SuperClass___
+[diff] 0x4ef6c0   MISMATCH         _VectorClass_PAVAITriggerTypeClass::QueryInterface
+[diff] 0x4ef760   MISMATCH         _VectorClass_PAVBuildingLightClass::QueryInterface
+[diff] 0x4ef7b0   MISMATCH         _DynamicVectorClass_PAVBuildingLightClass::Constructor_VectorClass_BuildingLightClass___
+[diff] 0x4ef800   MISMATCH         _VectorClass_PAVParticleClass::vt_00
+[ledger] 0x4c4c60 _VectorClass_PAVEgoClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4c4cb0 _DynamicVectorClass_PAVEgoClass::Constructor_VectorClass_EgoClass___ -> NG (attempt 1)
+[ledger] 0x4c5e20 _VectorClass_PAVEMPulseClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4c5e70 _DynamicVectorClass_PAVEMPulseClass::Constructor_VectorClass_EMPulseClass___ -> NG (attempt 1)
+[ledger] 0x4cab50 _VectorClass_PBVTechnoTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4caba0 DynamicVector::resetScriptState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d2d10 _VectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4e0270 DynamicVector::processMissionQueue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e02d0 _VectorClass_PAVAbstractClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4e0ce0 _VectorClass_PAVFootClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4ef4e0 VectorClass::vt_00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ef530 DynamicVector::COMStub_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ef580 _VectorClass_PAVBuildingClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4ef5d0 _DynamicVectorClass_PAVBuildingClass::Constructor_VectorClass_BuildingClass___ -> NG (attempt 1)
+[ledger] 0x4ef620 _VectorClass_PAVSuperClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4ef670 _DynamicVectorClass_PAVSuperClass::Constructor_VectorClass_SuperClass___ -> NG (attempt 1)
+[ledger] 0x4ef6c0 _VectorClass_PAVAITriggerTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4ef760 _VectorClass_PAVBuildingLightClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4ef7b0 _DynamicVectorClass_PAVBuildingLightClass::Constructor_VectorClass_BuildingLightClass___ -> NG (attempt 1)
+[ledger] 0x4ef800 _VectorClass_PAVParticleClass::vt_00 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "const_fold": 16
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p231\batch_report.json
