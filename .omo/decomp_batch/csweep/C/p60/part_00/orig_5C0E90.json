@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C0E90",
+ "name": "Memory::FreeConditional",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C0E90",
+ "bytes_hex": "8b44240c85c074118a4c241584c9740950e8977c200083c40432c0c22400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

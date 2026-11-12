@@ -1,0 +1,21 @@
+{
+ "symbol": "?MarkForRedraw@IUnknown@@QAEEXZ",
+ "sym_key": "IUnknown::MarkForRedraw",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "518b44240033d28a918000000024000bc284c075166a0068f8010000c6818000000001e80000000083c40859c3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}

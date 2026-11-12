@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C0EB0",
+ "name": "SafeDelete::Conditional",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C0EB0",
+ "bytes_hex": "8b44240c85c074118a4c241584c9740950e8777c200083c40432c0c21c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

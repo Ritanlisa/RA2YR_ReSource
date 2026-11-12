@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsMassSelectable@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::IsMassSelectable",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "5153568bf18b862005000050e8000000008b5c240c83c40433c325ff00000033d884db74118bcee80000000025ff00000080e3000bc35e5b59c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?BuildingClass__Is1x1AndUndeployable_BuildingMassSelectable@@YAHPAX@Z",
+   "sym_key": "BuildingClass__Is1x1AndUndeployable_BuildingMassSelectable"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?CanMoveToCell@TechnoClass@@QAEDXZ",
+   "sym_key": "TechnoClass::CanMoveToCell"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?DecodeByte@Crypto@@QAEPAXH@Z",
+ "sym_key": "Crypto::DecodeByte",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf16a406a00508bd6e800000000a2000000008bc65ec20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Crypto_Helper@@YI_NPAX00_NH@Z",
+   "sym_key": "Crypto_Helper"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F8FC@@3EA",
+   "sym_key": "DataGlobal_A8F8FC"
+  }
+ ]
+}

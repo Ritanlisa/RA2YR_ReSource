@@ -1,0 +1,11 @@
+{
+ "addr": "0x632AA0",
+ "name": "Crypto::DecodeByte",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x632AA0",
+ "bytes_hex": "8b442404568bf16a406a00508bd6e87d3ff9ffa2fcf8a8008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

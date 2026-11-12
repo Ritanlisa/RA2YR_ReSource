@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B3430",
+ "name": "UDPInterfaceClass_Destru::GetAddress",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B3430",
+ "bytes_hex": "568bf1e8a8e9ffff84c0740ec78630f3030000000000b0015ec332c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

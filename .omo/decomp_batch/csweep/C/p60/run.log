@@ -1,0 +1,107 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p60\part_00
+=== convert (20 addrs) ===
+[conv] 0x7aecb0 CChatEventSink::ComputeBucketMask -> CChatEventSink
+[conv] 0x7c1130 Audio_Render_7C1130 -> Audio_Render
+[conv] 0x459c00 BuildingClass::IsMassSelectable -> BuildingClass
+[conv] 0x535f10 SetInfantryTabCommandClass::performAction_16 -> SetInfantryTabCommandClass
+[conv] 0x535fa0 SetUnitTabCommandClass::performAction_21 -> SetUnitTabCommandClass
+[conv] 0x536750 PlanningModeCommandClass::performAction_38 -> PlanningModeCommandClass
+[conv] 0x6922e0 ScrollClass::Scroll -> ScrollClass
+[conv] 0x408080 SetAudioFileName -> _addr_40
+[conv] 0x4796e0 sub_4796E0 -> _addr_47
+[conv] 0x5c0e90 MultiplayerGameMode::FreeConditional -> MultiplayerGameMode
+[conv] 0x5c0eb0 MultiplayerGameMode::Conditional -> MultiplayerGameMode
+[conv] 0x5c0fa0 MultiplayerGameMode::FreeConditional2 -> MultiplayerGameMode
+[conv] 0x5f4d10 IUnknown::MarkForRedraw -> IUnknown
+[conv] 0x632aa0 Crypto::DecodeByte -> Crypto
+[conv] 0x6c89b0 ObjectClass::sub_6C89B0 -> ObjectClass
+[conv] 0x7b3430 UDPInterfaceClass::GetAddress -> UDPInterfaceClass
+[conv] 0x46afd0 BulletClass::CheckTargetValidity -> BulletClass
+[conv] 0x4759d0 HouseClass::updateBuildingProduction -> HouseClass
+[conv] 0x4a0520 ConnectionPointClass::AddRef -> ConnectionPointClass
+[conv] 0x4a0990 EnumConnectionPointsClass::AddRef -> EnumConnectionPointsClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CChatEventSink           rc=0
+[era] Audio_Render             rc=0
+[era] BuildingClass            rc=0
+[era] SetInfantryTabCommandClass rc=0
+[era] SetUnitTabCommandClass   rc=0
+[era] PlanningModeCommandClass rc=0
+[era] ScrollClass              rc=0
+[era] _addr_40                 rc=0
+[era] _addr_47                 rc=0
+[era] MultiplayerGameMode      rc=0
+[era] IUnknown                 rc=0
+[era] Crypto                   rc=0
+[era] ObjectClass              rc=0
+[era] UDPInterfaceClass        rc=0
+[era] BulletClass              rc=0
+[era] HouseClass               rc=0
+[era] ConnectionPointClass     rc=0
+[era] EnumConnectionPointsClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x7aecb0   MISMATCH         CChatEventSink::ComputeBucketMask
+[diff] 0x7c1130   MISMATCH         Audio_Render_7C1130
+[diff] 0x459c00   MISMATCH         BuildingClass::IsMassSelectable
+[diff] 0x535f10   MATCH            SetInfantryTabCommandClass::performAction_16
+[diff] 0x535fa0   MATCH            SetUnitTabCommandClass::performAction_21
+[diff] 0x536750   MISMATCH         PlanningModeCommandClass::performAction_38
+[diff] 0x6922e0   MATCH            ScrollClass::Scroll
+[diff] 0x408080   MISMATCH         SetAudioFileName
+[diff] 0x4796e0   MISMATCH         sub_4796E0
+[diff] 0x5c0e90   MISMATCH         MultiplayerGameMode::FreeConditional
+[diff] 0x5c0eb0   MISMATCH         MultiplayerGameMode::Conditional
+[diff] 0x5c0fa0   MISMATCH         MultiplayerGameMode::FreeConditional2
+[diff] 0x5f4d10   MISMATCH         IUnknown::MarkForRedraw
+[diff] 0x632aa0   MATCH            Crypto::DecodeByte
+[diff] 0x6c89b0   MISMATCH         ObjectClass::sub_6C89B0
+[diff] 0x7b3430   MISMATCH         UDPInterfaceClass::GetAddress
+[diff] 0x46afd0   MISMATCH         BulletClass::CheckTargetValidity
+[diff] 0x4759d0   MISMATCH         HouseClass::updateBuildingProduction
+[diff] 0x4a0520   MISMATCH         ConnectionPointClass::AddRef
+[diff] 0x4a0990   MISMATCH         EnumConnectionPointsClass::AddRef
+[ledger] 0x7aecb0 CChatEventSink::ComputeBucketMask -> NG (attempt 1)
+[ledger] 0x7c1130 Audio_Render_7C1130 -> NG (attempt 1)
+[ledger] 0x459c00 BuildingClass::IsMassSelectable -> NG (attempt 1)
+[ledger] 0x535f10 SetInfantryTabCommandClass::performAction_16 -> OK (attempt 1)
+[ledger] 0x535fa0 SetUnitTabCommandClass::performAction_21 -> OK (attempt 1)
+[ledger] 0x536750 PlanningModeCommandClass::performAction_38 -> NG (attempt 1)
+[ledger] 0x6922e0 ScrollClass::Scroll -> OK (attempt 1)
+[ledger] 0x408080 SetAudioFileName -> NG (attempt 1)
+[ledger] 0x4796e0 sub_4796E0 -> NG (attempt 1)
+[ledger] 0x5c0e90 MultiplayerGameMode::FreeConditional -> NG (attempt 1)
+[ledger] 0x5c0eb0 MultiplayerGameMode::Conditional -> NG (attempt 1)
+[ledger] 0x5c0fa0 MultiplayerGameMode::FreeConditional2 -> NG (attempt 1)
+[ledger] 0x5f4d10 IUnknown::MarkForRedraw -> NG (attempt 1)
+[ledger] 0x632aa0 Crypto::DecodeByte -> OK (attempt 1)
+[ledger] 0x6c89b0 ObjectClass::sub_6C89B0 -> NG (attempt 1)
+[ledger] 0x7b3430 UDPInterfaceClass::GetAddress -> NG (attempt 1)
+[ledger] 0x46afd0 BulletClass::CheckTargetValidity -> NG (attempt 1)
+[ledger] 0x4759d0 HouseClass::updateBuildingProduction -> NG (attempt 1)
+[ledger] 0x4a0520 ConnectionPointClass::AddRef -> NG (attempt 1)
+[ledger] 0x4a0990 EnumConnectionPointsClass::AddRef -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 2,
+  "const_fold": 5,
+  "branch_polarity": 3,
+  "ret_norm": 1,
+  "branch_order": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p60\batch_report.json

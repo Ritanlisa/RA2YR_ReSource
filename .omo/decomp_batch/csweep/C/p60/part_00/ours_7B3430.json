@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetAddress@UDPInterfaceClass@@QAEDXZ",
+ "sym_key": "UDPInterfaceClass::GetAddress",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000084c075025ec3c78630f3030000000000b0015ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Init@WinsockInterface@@QAEDXZ",
+   "sym_key": "WinsockInterface::Init"
+  }
+ ]
+}

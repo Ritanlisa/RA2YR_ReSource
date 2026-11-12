@@ -1,0 +1,11 @@
+{
+ "addr": "0x4759D0",
+ "name": "HouseClass::updateBuildingProduction",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4759D0",
+ "bytes_hex": "8b44240c8b1485601b7e008b442408528b5424085052e8752c0b00c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

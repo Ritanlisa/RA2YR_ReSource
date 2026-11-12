@@ -1,0 +1,15 @@
+{
+ "symbol": "?FreeConditional@MultiplayerGameMode@@QAGDHPAX0HFHHH@Z",
+ "sym_key": "MultiplayerGameMode::FreeConditional",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8b44240c85c074128b4c2414f6c5ff740950e80000000083c40432c0c22400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

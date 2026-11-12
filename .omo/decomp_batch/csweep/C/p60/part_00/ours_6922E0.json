@@ -1,0 +1,21 @@
+{
+ "symbol": "?Scroll@ScrollClass@@QAEHPAH0@Z",
+ "sym_key": "ScrollClass::Scroll",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b44240c8b4c240850518bcee8000000005ec20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?ProcessView@TacticalClass@@QAEXXZ",
+   "sym_key": "TacticalClass::ProcessView"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Seek@BlowStraw_29@@QAEHPAX0@Z",
+   "sym_key": "BlowStraw_29::Seek"
+  }
+ ]
+}

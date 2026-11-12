@@ -1,0 +1,21 @@
+{
+ "symbol": "?performAction_38@PlanningModeCommandClass@@QAGHF@Z",
+ "sym_key": "PlanningModeCommandClass::performAction_38",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "51f644240308740b32c9e80000000059c2080032c9e80000000059c20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?UI_Create_731A70@@YIHD@Z",
+   "sym_key": "UI_Create_731A70"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?UI_Create_731A50@@YIHD@Z",
+   "sym_key": "UI_Create_731A50"
+  }
+ ]
+}

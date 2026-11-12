@@ -1250,6 +1250,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x408080": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+13 call 0x7c91d0",
+  "name": "SetAudioFileName",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "SetAudioFileName",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4080a0": {
   "attempts": 1,
   "clean": false,
@@ -11031,6 +11042,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x459c00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push esi",
+  "name": "BuildingClass::IsMassSelectable",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "BuildingClass::IsMassSelectable",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x459d80": {
   "attempts": 1,
   "clean": true,
@@ -12228,6 +12251,18 @@
   "name": "BulletClass::SaveLoad_Prefix_0",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x46afd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "BulletClass::CheckTargetValidity",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "orig_name": "BulletClass::CheckTargetValidity",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x46b260": {
   "attempts": 1,
@@ -13788,6 +13823,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4759d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+4 mov edx, dword ptr [eax*4 + 0x7e1b60]",
+  "name": "HouseClass::updateBuildingProduction",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "HouseClass::updateBuildingProduction",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x475b70": {
   "attempts": 8,
   "first_diff": "+11 mov dword ptr [esp + 4], ecx",
@@ -14322,6 +14369,17 @@
   "orig_name": "LinkedList_flat::LoadScenarioMixFiles",
   "rule_violations": 3,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4796e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+15 push 0x479700",
+  "name": "sub_4796E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4796E0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x479700": {
@@ -18625,6 +18683,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4a0520": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 mov edx, dword ptr [0xabcd3c]",
+  "name": "ConnectionPointClass::AddRef",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "ConnectionPointClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4a05d0": {
   "attempts": 1,
   "clean": false,
@@ -18670,6 +18740,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ConnectionPointClass::EnumConnections",
   "rule_violations": 4,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4a0990": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 mov edx, dword ptr [0xabcd3c]",
+  "name": "EnumConnectionPointsClass::AddRef",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "EnumConnectionPointsClass::AddRef",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -35487,6 +35569,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x535f10": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SetInfantryTabCommandClass::performAction_16",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CreateTeamCommand::performAction_16",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x535f30": {
   "attempts": 5,
   "first_diff": "+0 mov eax, 0x827080",
@@ -35528,6 +35622,18 @@
   "orig_name": "CreateTeamCommand::performAction_20",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x535fa0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SetUnitTabCommandClass::performAction_21",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CreateTeamCommand::performAction_21",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x535fc0": {
@@ -35840,6 +35946,18 @@
   "name": "PlanningModeCommandClass::performAction_37",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CreateTeamCommand::performAction_37",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536750": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "PlanningModeCommandClass::performAction_38",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_38",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -49453,6 +49571,30 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5c0e90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 je 0x5c0ea9",
+  "name": "MultiplayerGameMode::FreeConditional",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "Memory::FreeConditional",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5c0eb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+6 je 0x5c0ec9",
+  "name": "MultiplayerGameMode::Conditional",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "SafeDelete::Conditional",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5c0ed0": {
   "attempts": 8,
   "clean": true,
@@ -49602,6 +49744,18 @@
   "orig_name": "ScenarioClass::StubReturnTrue7",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c0fa0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 je 0x5c0fb9",
+  "name": "MultiplayerGameMode::FreeConditional2",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "Memory::FreeConditional2",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c0fc0": {
@@ -55661,6 +55815,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5f4d10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov al, byte ptr [ecx + 0x80]",
+  "name": "IUnknown::MarkForRedraw",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "ObjectClass::MarkForRedraw",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5f4d30": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [0xa8e9a0]",
@@ -58993,6 +59159,18 @@
   "name": "BigInt::RSAOperation",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x632aa0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Crypto::DecodeByte",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Crypto::DecodeByte",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x632bc0": {
   "attempts": 1,
@@ -66974,6 +67152,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6922e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ScrollClass::Scroll",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScrollClass::Scroll",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x692f20": {
   "attempts": 1,
   "clean": true,
@@ -74432,6 +74622,18 @@
   "orig_name": "sub_6C8990",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6c89b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+10 call 0x7c8e17",
+  "name": "ObjectClass::sub_6C89B0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6C89B0",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c8c40": {
@@ -96337,6 +96539,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7aecb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push esi",
+  "name": "CChatEventSink::ComputeBucketMask",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CChatEventSink::ComputeBucketMask",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7aee90": {
   "attempts": 1,
   "clean": false,
@@ -97378,6 +97592,18 @@
   "orig_name": "UDPInterfaceClass::GetStatistics",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7b3430": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+10 je 0x7b344a",
+  "name": "UDPInterfaceClass::GetAddress",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "UDPInterfaceClass_Destru::GetAddress",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7b3900": {
@@ -98497,6 +98723,17 @@
   "orig_name": "Audio_Process_7C06B0",
   "rule_violations": 2,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c1130": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+25 and al, 0xfd",
+  "name": "Audio_Render_7C1130",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Audio_Render_7C1130",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7c19f0": {

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F4D10",
+ "name": "ObjectClass::MarkForRedraw",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F4D10",
+ "bytes_hex": "8a818000000084c07513c68180000000016a00b9e8f78700e8c3f5efffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
