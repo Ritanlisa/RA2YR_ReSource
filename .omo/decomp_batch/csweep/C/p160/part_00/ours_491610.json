@@ -1,0 +1,8 @@
+{
+ "symbol": "?resetFactoryState@__BlitTransZRemapXlat_E@@QAEHHHHHHHHHH@Z",
+ "sym_key": "__BlitTransZRemapXlat_E::resetFactoryState",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "8b54241c6a00528b542420528b542420528b5424200fbe4110528b542420528b542420528b5424205251ff10c22400",
+ "relocs": []
+}

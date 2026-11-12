@@ -20113,6 +20113,42 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x491500": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+21 mov eax, dword ptr [ecx]",
+  "name": "BlitTransXlat::getFactoryIndex",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "AbstractClass::getFactoryIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x491530": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+21 mov eax, dword ptr [ecx]",
+  "name": "BlitTransXlat::setFactoryState",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "AbstractClass::setFactoryState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x491560": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+21 mov eax, dword ptr [ecx]",
+  "name": "BlitTransXlat::checkFactoryQueue",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "AbstractClass::checkFactoryQueue",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x491590": {
   "attempts": 1,
   "clean": false,
@@ -20122,6 +20158,42 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "AbstractClass::readFactoryINI",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4915e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+21 mov eax, dword ptr [ecx]",
+  "name": "?$BlitTransZRemapXlat@E::writeFactoryINI",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "AbstractClass::writeFactoryINI",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x491610": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+21 mov eax, dword ptr [ecx]",
+  "name": "?$BlitTransZRemapXlat@E::resetFactoryState",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "AbstractClass::resetFactoryState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x491640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+21 mov eax, dword ptr [ecx]",
+  "name": "?$BlitTransZRemapXlat@E::validateFactory",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "AbstractClass::validateFactory",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -20144,6 +20216,30 @@
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
+ "0x4916e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransRemapDest_E::sub_4916E0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4916E0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x491710": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransRemapDest_E::sub_491710",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_491710",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x491740": {
   "attempts": 2,
   "clean": false,
@@ -20154,6 +20250,42 @@
   "orig_name": "sub_491740",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x491790": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransRemapXlat_E::sub_491790",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_491790",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4917c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransRemapXlat_E::sub_4917C0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4917C0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4917f0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransRemapXlat_E::sub_4917F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4917F0",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x491820": {
@@ -20319,6 +20451,42 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x492500": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitPlainXlat_G::sub_492500",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492500",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492530": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitPlainXlat_G::sub_492530",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492530",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492560": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitPlainXlat_G::sub_492560",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492560",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x492590": {
   "attempts": 2,
   "clean": false,
@@ -20329,6 +20497,42 @@
   "orig_name": "sub_492590",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4925e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlat_G::sub_4925E0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4925E0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492610": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlat_G::sub_492610",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492610",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492640": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlat_G::sub_492640",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492640",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x492670": {
@@ -20350,6 +20554,30 @@
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
+ "0x4926e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransDarken_G::sub_4926E0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4926E0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x492710": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransDarken_G::sub_492710",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_492710",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x492740": {
   "attempts": 1,
   "clean": false,
@@ -20360,6 +20588,18 @@
   "orig_name": "sub_492740",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4927a0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent75_G::sub_4927A0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4927A0",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x492830": {

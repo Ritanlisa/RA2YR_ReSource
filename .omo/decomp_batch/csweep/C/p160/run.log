@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p160\part_00
+=== convert (20 addrs) ===
+[conv] 0x491500 BlitTransXlat::getFactoryIndex -> BlitTransXlat
+[conv] 0x491530 BlitTransXlat::setFactoryState -> BlitTransXlat
+[conv] 0x491560 BlitTransXlat::checkFactoryQueue -> BlitTransXlat
+[conv] 0x4915e0 ?$BlitTransZRemapXlat@E::writeFactoryINI -> __BlitTransZRemapXlat_E
+[conv] 0x491610 ?$BlitTransZRemapXlat@E::resetFactoryState -> __BlitTransZRemapXlat_E
+[conv] 0x491640 ?$BlitTransZRemapXlat@E::validateFactory -> __BlitTransZRemapXlat_E
+[conv] 0x4916e0 _BlitTransRemapDest_E::sub_4916E0 -> _BlitTransRemapDest_E
+[conv] 0x491710 _BlitTransRemapDest_E::sub_491710 -> _BlitTransRemapDest_E
+[conv] 0x491790 _BlitTransRemapXlat_E::sub_491790 -> _BlitTransRemapXlat_E
+[conv] 0x4917c0 _BlitTransRemapXlat_E::sub_4917C0 -> _BlitTransRemapXlat_E
+[conv] 0x4917f0 _BlitTransRemapXlat_E::sub_4917F0 -> _BlitTransRemapXlat_E
+[conv] 0x492500 _BlitPlainXlat_G::sub_492500 -> _BlitPlainXlat_G
+[conv] 0x492530 _BlitPlainXlat_G::sub_492530 -> _BlitPlainXlat_G
+[conv] 0x492560 _BlitPlainXlat_G::sub_492560 -> _BlitPlainXlat_G
+[conv] 0x4925e0 _BlitTransZRemapXlat_G::sub_4925E0 -> _BlitTransZRemapXlat_G
+[conv] 0x492610 _BlitTransZRemapXlat_G::sub_492610 -> _BlitTransZRemapXlat_G
+[conv] 0x492640 _BlitTransZRemapXlat_G::sub_492640 -> _BlitTransZRemapXlat_G
+[conv] 0x4926e0 _BlitTransDarken_G::sub_4926E0 -> _BlitTransDarken_G
+[conv] 0x492710 _BlitTransDarken_G::sub_492710 -> _BlitTransDarken_G
+[conv] 0x4927a0 _BlitTransLucent75_G::sub_4927A0 -> _BlitTransLucent75_G
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BlitTransXlat            rc=0
+[era] __BlitTransZRemapXlat_E  rc=0
+[era] _BlitTransRemapDest_E    rc=0
+[era] _BlitTransRemapXlat_E    rc=0
+[era] _BlitPlainXlat_G         rc=0
+[era] _BlitTransZRemapXlat_G   rc=0
+[era] _BlitTransDarken_G       rc=0
+[era] _BlitTransLucent75_G     rc=0
+=== diffasm byte-compare ===
+[diff] 0x491500   MISMATCH         BlitTransXlat::getFactoryIndex
+[diff] 0x491530   MISMATCH         BlitTransXlat::setFactoryState
+[diff] 0x491560   MISMATCH         BlitTransXlat::checkFactoryQueue
+[diff] 0x4915e0   MISMATCH         ?$BlitTransZRemapXlat@E::writeFactoryINI
+[diff] 0x491610   MISMATCH         ?$BlitTransZRemapXlat@E::resetFactoryState
+[diff] 0x491640   MISMATCH         ?$BlitTransZRemapXlat@E::validateFactory
+[diff] 0x4916e0   MATCH            _BlitTransRemapDest_E::sub_4916E0
+[diff] 0x491710   MATCH            _BlitTransRemapDest_E::sub_491710
+[diff] 0x491790   MATCH            _BlitTransRemapXlat_E::sub_491790
+[diff] 0x4917c0   MATCH            _BlitTransRemapXlat_E::sub_4917C0
+[diff] 0x4917f0   MATCH            _BlitTransRemapXlat_E::sub_4917F0
+[diff] 0x492500   MATCH            _BlitPlainXlat_G::sub_492500
+[diff] 0x492530   MATCH            _BlitPlainXlat_G::sub_492530
+[diff] 0x492560   MATCH            _BlitPlainXlat_G::sub_492560
+[diff] 0x4925e0   MATCH            _BlitTransZRemapXlat_G::sub_4925E0
+[diff] 0x492610   MATCH            _BlitTransZRemapXlat_G::sub_492610
+[diff] 0x492640   MATCH            _BlitTransZRemapXlat_G::sub_492640
+[diff] 0x4926e0   MATCH            _BlitTransDarken_G::sub_4926E0
+[diff] 0x492710   MATCH            _BlitTransDarken_G::sub_492710
+[diff] 0x4927a0   MATCH            _BlitTransLucent75_G::sub_4927A0
+[ledger] 0x491500 BlitTransXlat::getFactoryIndex -> NG (attempt 1)
+[ledger] 0x491530 BlitTransXlat::setFactoryState -> NG (attempt 1)
+[ledger] 0x491560 BlitTransXlat::checkFactoryQueue -> NG (attempt 1)
+[ledger] 0x4915e0 ?$BlitTransZRemapXlat@E::writeFactoryINI -> NG (attempt 1)
+[ledger] 0x491610 ?$BlitTransZRemapXlat@E::resetFactoryState -> NG (attempt 1)
+[ledger] 0x491640 ?$BlitTransZRemapXlat@E::validateFactory -> NG (attempt 1)
+[ledger] 0x4916e0 _BlitTransRemapDest_E::sub_4916E0 -> OK (attempt 1)
+[ledger] 0x491710 _BlitTransRemapDest_E::sub_491710 -> OK (attempt 1)
+[ledger] 0x491790 _BlitTransRemapXlat_E::sub_491790 -> OK (attempt 1)
+[ledger] 0x4917c0 _BlitTransRemapXlat_E::sub_4917C0 -> OK (attempt 1)
+[ledger] 0x4917f0 _BlitTransRemapXlat_E::sub_4917F0 -> OK (attempt 1)
+[ledger] 0x492500 _BlitPlainXlat_G::sub_492500 -> OK (attempt 1)
+[ledger] 0x492530 _BlitPlainXlat_G::sub_492530 -> OK (attempt 1)
+[ledger] 0x492560 _BlitPlainXlat_G::sub_492560 -> OK (attempt 1)
+[ledger] 0x4925e0 _BlitTransZRemapXlat_G::sub_4925E0 -> OK (attempt 1)
+[ledger] 0x492610 _BlitTransZRemapXlat_G::sub_492610 -> OK (attempt 1)
+[ledger] 0x492640 _BlitTransZRemapXlat_G::sub_492640 -> OK (attempt 1)
+[ledger] 0x4926e0 _BlitTransDarken_G::sub_4926E0 -> OK (attempt 1)
+[ledger] 0x492710 _BlitTransDarken_G::sub_492710 -> OK (attempt 1)
+[ledger] 0x4927a0 _BlitTransLucent75_G::sub_4927A0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "MATCH": 14
+ },
+ "pathologies": {
+  "width_mismatch": 6
+ },
+ "match_rate_of_decided_pct": 70.0,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p160\batch_report.json
