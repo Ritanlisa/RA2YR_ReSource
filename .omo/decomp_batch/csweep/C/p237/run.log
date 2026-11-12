@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p237\part_00
+=== convert (20 addrs) ===
+[conv] 0x54a800 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Constructor -> _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54eb50 _VectorClass_PAUKamikazeControl::QueryInterface -> _VectorClass_PAUKamikazeControl
+[conv] 0x54eba0 _DynamicVectorClass_PAUKamikazeControl::Constructor_VectorClass_KamikazeControl___ -> _DynamicVectorClass_PAUKamikazeControl
+[conv] 0x551590 _VectorClass_PAVLaserDrawClass::QueryInterface -> _VectorClass_PAVLaserDrawClass
+[conv] 0x5515e0 _DynamicVectorClass_PAVLaserDrawClass::Constructor_VectorClass_LaserDrawClass___ -> _DynamicVectorClass_PAVLaserDrawClass
+[conv] 0x555780 _VectorClass_PAVLightSourceClass::QueryInterface -> _VectorClass_PAVLightSourceClass
+[conv] 0x5557d0 _DynamicVectorClass_PAVLightSourceClass::Constructor_VectorClass_LightSourceClass___ -> _DynamicVectorClass_PAVLightSourceClass
+[conv] 0x555820 _VectorClass_PAVPendingCellClass_LightSourceClass::QueryInterface -> _VectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x555870 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Constructor -> _DynamicVectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x5571c0 _DynamicVectorClass_PAVLineTrail::toggleItem -> _DynamicVectorClass_PAVLineTrail
+[conv] 0x558130 _DynamicVectorClass_PBG::drawList -> _DynamicVectorClass_PBG
+[conv] 0x5584a0 _VectorClass_PBG::QueryInterface -> _VectorClass_PBG
+[conv] 0x55a410 _VectorClass_PAVFileEntryClass::Constructor_VectorClass_FileEntryClass___ -> _VectorClass_PAVFileEntryClass
+[conv] 0x55a460 _DynamicVectorClass_PAVFileEntryClass::vt00 -> _DynamicVectorClass_PAVFileEntryClass
+[conv] 0x589060 VectorClass::InitCellVe_vt00 -> VectorClass
+[conv] 0x5890b0 _DynamicVectorClass_USubzoneConnectionStruct::Add -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x58a3d0 _VectorClass_UZoneConnectionClass::Destruct -> _VectorClass_UZoneConnectionClass
+[conv] 0x58a420 _DynamicVectorClass_UZoneConnectionClass::QueryInterface -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x58aa90 _VectorClass_W4PassabilityType::QueryInterface -> _VectorClass_W4PassabilityType
+[conv] 0x58ab30 _VectorClass_U_HashObject_II::QueryInterface -> _VectorClass_U_HashObject_II
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] _VectorClass_PAUKamikazeControl rc=0
+[era] _DynamicVectorClass_PAUKamikazeControl rc=0
+[era] _VectorClass_PAVLaserDrawClass rc=0
+[era] _DynamicVectorClass_PAVLaserDrawClass rc=0
+[era] _VectorClass_PAVLightSourceClass rc=0
+[era] _DynamicVectorClass_PAVLightSourceClass rc=0
+[era] _VectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _DynamicVectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _DynamicVectorClass_PAVLineTrail rc=0
+[era] _DynamicVectorClass_PBG  rc=0
+[era] _VectorClass_PBG         rc=0
+[era] _VectorClass_PAVFileEntryClass rc=0
+[era] _DynamicVectorClass_PAVFileEntryClass rc=0
+[era] VectorClass              rc=2
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=0
+[era] _VectorClass_UZoneConnectionClass rc=0
+[era] _DynamicVectorClass_UZoneConnectionClass rc=0
+[era] _VectorClass_W4PassabilityType rc=0
+[era] _VectorClass_U_HashObject_II rc=0
+=== diffasm byte-compare ===
+[diff] 0x54a800   MISMATCH         _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Constructor
+[diff] 0x54eb50   MISMATCH         _VectorClass_PAUKamikazeControl::QueryInterface
+[diff] 0x54eba0   MISMATCH         _DynamicVectorClass_PAUKamikazeControl::Constructor_VectorClass_KamikazeControl___
+[diff] 0x551590   MISMATCH         _VectorClass_PAVLaserDrawClass::QueryInterface
+[diff] 0x5515e0   MISMATCH         _DynamicVectorClass_PAVLaserDrawClass::Constructor_VectorClass_LaserDrawClass___
+[diff] 0x555780   MISMATCH         _VectorClass_PAVLightSourceClass::QueryInterface
+[diff] 0x5557d0   MISMATCH         _DynamicVectorClass_PAVLightSourceClass::Constructor_VectorClass_LightSourceClass___
+[diff] 0x555820   MISMATCH         _VectorClass_PAVPendingCellClass_LightSourceClass::QueryInterface
+[diff] 0x555870   MISMATCH         _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Constructor
+[diff] 0x5571c0   MISMATCH         _DynamicVectorClass_PAVLineTrail::toggleItem
+[diff] 0x558130   MISMATCH         _DynamicVectorClass_PBG::drawList
+[diff] 0x5584a0   MISMATCH         _VectorClass_PBG::QueryInterface
+[diff] 0x55a410   MISMATCH         _VectorClass_PAVFileEntryClass::Constructor_VectorClass_FileEntryClass___
+[diff] 0x55a460   MISMATCH         _DynamicVectorClass_PAVFileEntryClass::vt00
+[diff] 0x5890b0   MISMATCH         _DynamicVectorClass_USubzoneConnectionStruct::Add
+[diff] 0x58a3d0   MISMATCH         _VectorClass_UZoneConnectionClass::Destruct
+[diff] 0x58a420   MISMATCH         _DynamicVectorClass_UZoneConnectionClass::QueryInterface
+[diff] 0x58aa90   MISMATCH         _VectorClass_W4PassabilityType::QueryInterface
+[diff] 0x58ab30   MISMATCH         _VectorClass_U_HashObject_II::QueryInterface
+[ledger] 0x54a800 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Constructor -> NG (attempt 1)
+[ledger] 0x54eb50 _VectorClass_PAUKamikazeControl::QueryInterface -> NG (attempt 1)
+[ledger] 0x54eba0 _DynamicVectorClass_PAUKamikazeControl::Constructor_VectorClass_KamikazeControl___ -> NG (attempt 1)
+[ledger] 0x551590 _VectorClass_PAVLaserDrawClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x5515e0 _DynamicVectorClass_PAVLaserDrawClass::Constructor_VectorClass_LaserDrawClass___ -> NG (attempt 1)
+[ledger] 0x555780 _VectorClass_PAVLightSourceClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x5557d0 _DynamicVectorClass_PAVLightSourceClass::Constructor_VectorClass_LightSourceClass___ -> NG (attempt 1)
+[ledger] 0x555820 _VectorClass_PAVPendingCellClass_LightSourceClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x555870 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Constructor -> NG (attempt 1)
+[ledger] 0x5571c0 _DynamicVectorClass_PAVLineTrail::toggleItem -> NG (attempt 1)
+[ledger] 0x558130 _DynamicVectorClass_PBG::drawList -> NG (attempt 1)
+[ledger] 0x5584a0 _VectorClass_PBG::QueryInterface -> NG (attempt 1)
+[ledger] 0x55a410 _VectorClass_PAVFileEntryClass::Constructor_VectorClass_FileEntryClass___ -> NG (attempt 1)
+[ledger] 0x55a460 _DynamicVectorClass_PAVFileEntryClass::vt00 -> NG (attempt 1)
+[ledger] 0x589060 VectorClass::InitCellVe_vt00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5890b0 _DynamicVectorClass_USubzoneConnectionStruct::Add -> NG (attempt 1)
+[ledger] 0x58a3d0 _VectorClass_UZoneConnectionClass::Destruct -> NG (attempt 1)
+[ledger] 0x58a420 _DynamicVectorClass_UZoneConnectionClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x58aa90 _VectorClass_W4PassabilityType::QueryInterface -> NG (attempt 1)
+[ledger] 0x58ab30 _VectorClass_U_HashObject_II::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 19
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p237\batch_report.json

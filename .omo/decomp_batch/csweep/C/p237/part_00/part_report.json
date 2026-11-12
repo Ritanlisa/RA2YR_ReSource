@@ -1,0 +1,451 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 19,
+   "COMPILE_FAIL": 1
+  },
+  "pathologies": {
+   "const_fold": 19
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x54a800",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ecbfc",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Constructor",
+   "emitted": "_DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Constructor",
+   "unit": "_DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x54eb50",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ece9c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "JumpjetLocomotionClass_26::QueryInterface",
+   "emitted": "_VectorClass_PAUKamikazeControl::QueryInterface",
+   "unit": "_VectorClass_PAUKamikazeControl",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x54eba0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ece9c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeControl___",
+   "emitted": "_DynamicVectorClass_PAUKamikazeControl::Constructor_VectorClass_KamikazeControl___",
+   "unit": "_DynamicVectorClass_PAUKamikazeControl",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x551590",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ecefc",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_LaserDrawClass::QueryInterface",
+   "emitted": "_VectorClass_PAVLaserDrawClass::QueryInterface",
+   "unit": "_VectorClass_PAVLaserDrawClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5515e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ecefc",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDrawClass___",
+   "emitted": "_DynamicVectorClass_PAVLaserDrawClass::Constructor_VectorClass_LaserDrawClass___",
+   "unit": "_DynamicVectorClass_PAVLaserDrawClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x555780",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ecf9c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_LightSourceClass::QueryInterface",
+   "emitted": "_VectorClass_PAVLightSourceClass::QueryInterface",
+   "unit": "_VectorClass_PAVLightSourceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5557d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ecf9c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightSourceClass___",
+   "emitted": "_DynamicVectorClass_PAVLightSourceClass::Constructor_VectorClass_LightSourceClass___",
+   "unit": "_DynamicVectorClass_PAVLightSourceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x555820",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ecfdc",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_PendingCellClass_LightSourceClass::QueryInterface",
+   "emitted": "_VectorClass_PAVPendingCellClass_LightSourceClass::QueryInterface",
+   "unit": "_VectorClass_PAVPendingCellClass_LightSourceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x555870",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ecfdc",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_LightSourceClass::Constructor",
+   "emitted": "_DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Constructor",
+   "unit": "_DynamicVectorClass_PAVPendingCellClass_LightSourceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5571c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed0ec",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CheckListClass::toggleItem",
+   "emitted": "_DynamicVectorClass_PAVLineTrail::toggleItem",
+   "unit": "_DynamicVectorClass_PAVLineTrail",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x558130",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed1fc",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CheckListClass::drawList",
+   "emitted": "_DynamicVectorClass_PBG::drawList",
+   "unit": "_DynamicVectorClass_PBG",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5584a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed1fc",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_PBG::QueryInterface",
+   "emitted": "_VectorClass_PBG::QueryInterface",
+   "unit": "_VectorClass_PBG",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x55a410",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed32c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "LoadOptions::Constructor_VectorClass_FileEntryClass___",
+   "emitted": "_VectorClass_PAVFileEntryClass::Constructor_VectorClass_FileEntryClass___",
+   "unit": "_VectorClass_PAVFileEntryClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x55a460",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed32c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "LoadOptions::vt00",
+   "emitted": "_DynamicVectorClass_PAVFileEntryClass::vt00",
+   "unit": "_DynamicVectorClass_PAVFileEntryClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x589060",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\csweep\\C\\p237\\part_00\\VectorClass.cpp(8) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\csweep\\C\\p237\\part_00\\VectorClass.cpp(9) : error C2",
+   "first_diff": null,
+   "pathology": null,
+   "name": "VectorClass::InitCellVe_vt00",
+   "emitted": "VectorClass::InitCellVe_vt00",
+   "unit": "VectorClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x5890b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e177c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "DynamicVectorClass_SubzoneConn::Add",
+   "emitted": "_DynamicVectorClass_USubzoneConnectionStruct::Add",
+   "unit": "_DynamicVectorClass_USubzoneConnectionStruct",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x58a3d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 73B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed4e0",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "ZoneConnectionVector::Destruct",
+   "emitted": "_VectorClass_UZoneConnectionClass::Destruct",
+   "unit": "_VectorClass_UZoneConnectionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "8/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 73,
+   "clean": false
+  },
+  {
+   "addr": "0x58a420",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed4e0",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "unknown::QueryInterface",
+   "emitted": "_DynamicVectorClass_UZoneConnectionClass::QueryInterface",
+   "unit": "_DynamicVectorClass_UZoneConnectionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x58aa90",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed560",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_W4PassabilityType::QueryInterface",
+   "emitted": "_VectorClass_W4PassabilityType::QueryInterface",
+   "unit": "_VectorClass_W4PassabilityType",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x58ab30",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed5c0",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_UHashObject_uint_uint::QueryInterface",
+   "emitted": "_VectorClass_U_HashObject_II::QueryInterface",
+   "unit": "_VectorClass_U_HashObject_II",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  }
+ ]
+}
