@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p74\part_00
+=== convert (20 addrs) ===
+[conv] 0x7289c0 sub_7289C0 -> _addr_72
+[conv] 0x72a2a0 sub_72A2A0 -> _addr_72
+[conv] 0x72a420 sub_72A420 -> _addr_72
+[conv] 0x72a700 sub_72A700 -> _addr_72
+[conv] 0x72a880 sub_72A880 -> _addr_72
+[conv] 0x7307d0 sub_7307D0 -> _addr_73
+[conv] 0x730950 sub_730950 -> _addr_73
+[conv] 0x731be0 sub_731BE0 -> _addr_73
+[conv] 0x731cf0 TechnoClass::GetField -> TechnoClass
+[conv] 0x734480 sub_734480 -> _addr_73
+[conv] 0x734600 sub_734600 -> _addr_73
+[conv] 0x7351d0 sub_7351D0 -> _addr_73
+[conv] 0x735350 sub_735350 -> _addr_73
+[conv] 0x746f30 sub_746F30 -> _addr_74
+[conv] 0x7470b0 sub_7470B0 -> _addr_74
+[conv] 0x747f20 UnitTypeClass::GetGameplayValue -> UnitTypeClass
+[conv] 0x7491f0 sub_7491F0 -> _addr_74
+[conv] 0x749370 sub_749370 -> _addr_74
+[conv] 0x74abc0 sub_74ABC0 -> _addr_74
+[conv] 0x74ad40 sub_74AD40 -> _addr_74
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] _addr_73                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_74                 rc=0
+[era] UnitTypeClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x7289c0   MISMATCH         sub_7289C0
+[diff] 0x72a2a0   MATCH            sub_72A2A0
+[diff] 0x72a420   MISMATCH         sub_72A420
+[diff] 0x72a700   MATCH            sub_72A700
+[diff] 0x72a880   MISMATCH         sub_72A880
+[diff] 0x7307d0   MATCH            sub_7307D0
+[diff] 0x730950   MISMATCH         sub_730950
+[diff] 0x731be0   MISMATCH         sub_731BE0
+[diff] 0x734480   MATCH            sub_734480
+[diff] 0x734600   MISMATCH         sub_734600
+[diff] 0x7351d0   MATCH            sub_7351D0
+[diff] 0x735350   MISMATCH         sub_735350
+[diff] 0x731cf0   MISMATCH         TechnoClass::GetField
+[diff] 0x746f30   MATCH            sub_746F30
+[diff] 0x7470b0   MISMATCH         sub_7470B0
+[diff] 0x7491f0   MATCH            sub_7491F0
+[diff] 0x749370   MISMATCH         sub_749370
+[diff] 0x74abc0   MATCH            sub_74ABC0
+[diff] 0x74ad40   MISMATCH         sub_74AD40
+[diff] 0x747f20   MISMATCH         UnitTypeClass::GetGameplayValue
+[ledger] 0x7289c0 sub_7289C0 -> NG (attempt 2)
+[ledger] 0x72a2a0 sub_72A2A0 -> OK (attempt 2)
+[ledger] 0x72a420 sub_72A420 -> NG (attempt 2)
+[ledger] 0x72a700 sub_72A700 -> OK (attempt 2)
+[ledger] 0x72a880 sub_72A880 -> NG (attempt 3)
+[ledger] 0x7307d0 sub_7307D0 -> OK (attempt 3)
+[ledger] 0x730950 sub_730950 -> NG (attempt 2)
+[ledger] 0x731be0 sub_731BE0 -> NG (attempt 2)
+[ledger] 0x731cf0 TechnoClass::GetField -> NG (attempt 2)
+[ledger] 0x734480 sub_734480 -> OK (attempt 2)
+[ledger] 0x734600 sub_734600 -> NG (attempt 2)
+[ledger] 0x7351d0 sub_7351D0 -> OK (attempt 2)
+[ledger] 0x735350 sub_735350 -> NG (attempt 2)
+[ledger] 0x746f30 sub_746F30 -> OK (attempt 2)
+[ledger] 0x7470b0 sub_7470B0 -> NG (attempt 2)
+[ledger] 0x747f20 UnitTypeClass::GetGameplayValue -> NG (attempt 2)
+[ledger] 0x7491f0 sub_7491F0 -> OK (attempt 2)
+[ledger] 0x749370 sub_749370 -> NG (attempt 2)
+[ledger] 0x74abc0 sub_74ABC0 -> OK (attempt 3)
+[ledger] 0x74ad40 sub_74AD40 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "MATCH": 8
+ },
+ "pathologies": {
+  "extern_reloc": 11,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 40.0,
+ "match_rate_of_total_pct": 40.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p74\batch_report.json

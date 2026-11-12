@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x7289c0",
+  "family": "D_RELOC",
+  "name": "sub_7289C0"
+ },
+ {
+  "addr": "0x72a2a0",
+  "family": "D_RELOC",
+  "name": "sub_72A2A0"
+ },
+ {
+  "addr": "0x72a420",
+  "family": "D_RELOC",
+  "name": "sub_72A420"
+ },
+ {
+  "addr": "0x72a700",
+  "family": "D_RELOC",
+  "name": "sub_72A700"
+ },
+ {
+  "addr": "0x72a880",
+  "family": "D_RELOC",
+  "name": "sub_72A880"
+ },
+ {
+  "addr": "0x7307d0",
+  "family": "D_RELOC",
+  "name": "sub_7307D0"
+ },
+ {
+  "addr": "0x730950",
+  "family": "D_RELOC",
+  "name": "sub_730950"
+ },
+ {
+  "addr": "0x731be0",
+  "family": "D_RELOC",
+  "name": "sub_731BE0"
+ },
+ {
+  "addr": "0x731cf0",
+  "family": "D_RELOC",
+  "name": "TechnoClass::GetField"
+ },
+ {
+  "addr": "0x734480",
+  "family": "D_RELOC",
+  "name": "sub_734480"
+ },
+ {
+  "addr": "0x734600",
+  "family": "D_RELOC",
+  "name": "sub_734600"
+ },
+ {
+  "addr": "0x7351d0",
+  "family": "D_RELOC",
+  "name": "sub_7351D0"
+ },
+ {
+  "addr": "0x735350",
+  "family": "D_RELOC",
+  "name": "sub_735350"
+ },
+ {
+  "addr": "0x746f30",
+  "family": "D_RELOC",
+  "name": "sub_746F30"
+ },
+ {
+  "addr": "0x7470b0",
+  "family": "D_RELOC",
+  "name": "sub_7470B0"
+ },
+ {
+  "addr": "0x747f20",
+  "family": "D_RELOC",
+  "name": "UnitTypeClass::GetGameplayValue"
+ },
+ {
+  "addr": "0x7491f0",
+  "family": "D_RELOC",
+  "name": "sub_7491F0"
+ },
+ {
+  "addr": "0x749370",
+  "family": "D_RELOC",
+  "name": "sub_749370"
+ },
+ {
+  "addr": "0x74abc0",
+  "family": "D_RELOC",
+  "name": "sub_74ABC0"
+ },
+ {
+  "addr": "0x74ad40",
+  "family": "D_RELOC",
+  "name": "sub_74AD40"
+ }
+]
