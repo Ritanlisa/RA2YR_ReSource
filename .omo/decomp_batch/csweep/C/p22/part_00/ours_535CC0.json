@@ -1,0 +1,15 @@
+{
+ "symbol": "?Undo@CreateTeamCommand@@QAEXH@Z",
+ "sym_key": "CreateTeamCommand::Undo",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b4904e800000000c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?performAction_246@CreateTeamCommand@@QAEXXZ",
+   "sym_key": "CreateTeamCommand::performAction_246"
+  }
+ ]
+}

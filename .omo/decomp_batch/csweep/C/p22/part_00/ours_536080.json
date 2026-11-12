@@ -1,0 +1,15 @@
+{
+ "symbol": "?Do@SelectTeamCommand@@QAEHH@Z",
+ "sym_key": "SelectTeamCommand::Do",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b4904e800000000c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?SetObserverView@TacticalClass@@QAEHXZ",
+   "sym_key": "TacticalClass::SetObserverView"
+  }
+ ]
+}

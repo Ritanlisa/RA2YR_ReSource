@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x77da40 unknown_libname_60 -> _addr_77
+[conv] 0x7af390 unknown_libname_61 -> _addr_7A
+[conv] 0x7af3a0 unknown_libname_62 -> _addr_7A
+[conv] 0x7af3b0 unknown_libname_63 -> _addr_7A
+[conv] 0x7af3c0 unknown_libname_64 -> _addr_7A
+[conv] 0x7af4c0 unknown_libname_65 -> _addr_7A
+[conv] 0x7af4e0 unknown_libname_67 -> _addr_7A
+[conv] 0x7af4f0 unknown_libname_68 -> _addr_7A
+[conv] 0x40d330 unknown_libname_3 -> _addr_40
+[conv] 0x6c8c40 Timer::GetTicks -> Timer
+[conv] 0x730660 unknown_libname_34 -> _addr_73
+[conv] 0x457620 BuildingClass::IsFactorySelectable -> BuildingClass
+[conv] 0x535a60 BufferIOFileClass::Destruct -> BufferIOFileClass
+[conv] 0x535cc0 CreateTeamCommand::Undo -> CreateTeamCommand
+[conv] 0x536080 SelectTeamCommand::Do -> SelectTeamCommand
+[conv] 0x536170 AddTeamCommand::Do -> AddTeamCommand
+[conv] 0x536260 CenterTeamCommand::Do -> CenterTeamCommand
+[conv] 0x5c0e10 MultiplayerBattle::sub_5C0E10 -> MultiplayerBattle
+[conv] 0x5c5d20 FreeForAll::sub_5C5D20 -> FreeForAll
+[conv] 0x5c6190 MultiplayerManBattle::sub_5C6190 -> MultiplayerManBattle
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=0
+[era] _addr_7A                 rc=0
+[era] _addr_40                 rc=0
+[era] Timer                    rc=0
+[era] _addr_73                 rc=0
+[era] BuildingClass            rc=0
+[era] BufferIOFileClass        rc=0
+[era] CreateTeamCommand        rc=0
+[era] SelectTeamCommand        rc=0
+[era] AddTeamCommand           rc=0
+[era] CenterTeamCommand        rc=0
+[era] MultiplayerBattle        rc=0
+[era] FreeForAll               rc=0
+[era] MultiplayerManBattle     rc=0
+=== diffasm byte-compare ===
+[diff] 0x77da40   MISMATCH         unknown_libname_60
+[diff] 0x7af390   MISMATCH         unknown_libname_61
+[diff] 0x7af3a0   MISMATCH         unknown_libname_62
+[diff] 0x7af3b0   MISMATCH         unknown_libname_63
+[diff] 0x7af3c0   MISMATCH         unknown_libname_64
+[diff] 0x7af4c0   MISMATCH         unknown_libname_65
+[diff] 0x7af4e0   MISMATCH         unknown_libname_67
+[diff] 0x7af4f0   MISMATCH         unknown_libname_68
+[diff] 0x40d330   MISMATCH         unknown_libname_3
+[diff] 0x6c8c40   MISMATCH         Timer::GetTicks
+[diff] 0x730660   MISMATCH         unknown_libname_34
+[diff] 0x457620   MISMATCH         BuildingClass::IsFactorySelectable
+[diff] 0x535a60   MATCH            BufferIOFileClass::Destruct
+[diff] 0x535cc0   MATCH            CreateTeamCommand::Undo
+[diff] 0x536080   MATCH            SelectTeamCommand::Do
+[diff] 0x536170   MATCH            AddTeamCommand::Do
+[diff] 0x536260   MATCH            CenterTeamCommand::Do
+[diff] 0x5c0e10   MISMATCH         MultiplayerBattle::sub_5C0E10
+[diff] 0x5c5d20   MISMATCH         FreeForAll::sub_5C5D20
+[diff] 0x5c6190   MISMATCH         MultiplayerManBattle::sub_5C6190
+[ledger] 0x77da40 unknown_libname_60 -> NG (attempt 1)
+[ledger] 0x7af390 unknown_libname_61 -> NG (attempt 1)
+[ledger] 0x7af3a0 unknown_libname_62 -> NG (attempt 1)
+[ledger] 0x7af3b0 unknown_libname_63 -> NG (attempt 1)
+[ledger] 0x7af3c0 unknown_libname_64 -> NG (attempt 1)
+[ledger] 0x7af4c0 unknown_libname_65 -> NG (attempt 1)
+[ledger] 0x7af4e0 unknown_libname_67 -> NG (attempt 1)
+[ledger] 0x7af4f0 unknown_libname_68 -> NG (attempt 1)
+[ledger] 0x40d330 unknown_libname_3 -> NG (attempt 1)
+[ledger] 0x6c8c40 Timer::GetTicks -> NG (attempt 1)
+[ledger] 0x730660 unknown_libname_34 -> NG (attempt 1)
+[ledger] 0x457620 BuildingClass::IsFactorySelectable -> NG (attempt 1)
+[ledger] 0x535a60 BufferIOFileClass::Destruct -> OK (attempt 1)
+[ledger] 0x535cc0 CreateTeamCommand::Undo -> OK (attempt 1)
+[ledger] 0x536080 SelectTeamCommand::Do -> OK (attempt 1)
+[ledger] 0x536170 AddTeamCommand::Do -> OK (attempt 1)
+[ledger] 0x536260 CenterTeamCommand::Do -> OK (attempt 1)
+[ledger] 0x5c0e10 MultiplayerBattle::sub_5C0E10 -> NG (attempt 1)
+[ledger] 0x5c5d20 FreeForAll::sub_5C5D20 -> NG (attempt 1)
+[ledger] 0x5c6190 MultiplayerManBattle::sub_5C6190 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "MATCH": 5
+ },
+ "pathologies": {
+  "codegen_shape": 10,
+  "extern_reloc": 1,
+  "regalloc": 1,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 25.0,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p22\batch_report.json

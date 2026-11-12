@@ -1,0 +1,27 @@
+{
+ "symbol": "?unknown_libname_3@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_3",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0750c813d040000000000f03f74076a01e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_884D88@@3NA",
+   "sym_key": "DataGlobal_884D88"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_884D88@@3NA",
+   "sym_key": "DataGlobal_884D88"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?timeEndPeriod@@YGIH@Z",
+   "sym_key": "timeEndPeriod"
+  }
+ ]
+}

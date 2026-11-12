@@ -1,0 +1,15 @@
+{
+ "symbol": "?Do@AddTeamCommand@@QAEHH@Z",
+ "sym_key": "AddTeamCommand::Do",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b4904e800000000c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?SelectAllMembers@SquadClass@@QAEHXZ",
+   "sym_key": "SquadClass::SelectAllMembers"
+  }
+ ]
+}

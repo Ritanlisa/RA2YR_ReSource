@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_34@@YIPAXPAX@Z",
+ "sym_key": "Unnamed::unknown_libname_34",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?CleanupAll@FileTree@@QAEXXZ",
+   "sym_key": "FileTree::CleanupAll"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?LoadSHPs@LoadingScreen@@QAEPAXXZ",
+   "sym_key": "LoadingScreen::LoadSHPs"
+  }
+ ]
+}

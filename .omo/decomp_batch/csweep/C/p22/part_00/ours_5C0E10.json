@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5C0E10@MultiplayerBattle@@QAEXXZ",
+ "sym_key": "MultiplayerBattle::sub_5C0E10",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c70100000000e900000000",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Dtor@MultiplayerGameMode@@QAEXXZ",
+   "sym_key": "MultiplayerGameMode::Dtor"
+  }
+ ]
+}

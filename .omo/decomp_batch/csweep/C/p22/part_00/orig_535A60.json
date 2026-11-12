@@ -1,0 +1,11 @@
+{
+ "addr": "0x535A60",
+ "name": "BufferIOFileClass::Destruct",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x535A60",
+ "bytes_hex": "c70168167e00e915c1efff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x536170",
+ "name": "AddTeamCommand::Do",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x536170",
+ "bytes_hex": "8b4904e848b31f00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

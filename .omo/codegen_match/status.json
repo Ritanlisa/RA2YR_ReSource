@@ -2547,6 +2547,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40d330": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x884d88",
+  "name": "unknown_libname_3",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "unknown_libname_3",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x40d3c0": {
   "attempts": 7,
   "clean": false,
@@ -10277,6 +10288,18 @@
   "name": "TechnoClass::ProcessMissionDeploy",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TechnoClass::ProcessMissionDeploy",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x457620": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov ecx, dword ptr [ecx + 0x520]",
+  "name": "BuildingClass::IsFactorySelectable",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "BuildingClass::IsFactorySelectable",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -33607,6 +33630,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x535a60": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "BufferIOFileClass::Destruct",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BufferIOFileClass::Destruct",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x535aa0": {
   "attempts": 1,
   "clean": false,
@@ -33679,6 +33714,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x535cc0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CreateTeamCommand::Undo",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CreateTeamCommand::Undo",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x535cf0": {
   "attempts": 1,
   "clean": false,
@@ -33743,6 +33790,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x536080": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SelectTeamCommand::Do",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SelectTeamCommand::Do",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5360b0": {
   "attempts": 2,
   "clean": false,
@@ -33767,6 +33826,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x536170": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AddTeamCommand::Do",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AddTeamCommand::Do",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5361a0": {
   "attempts": 2,
   "clean": false,
@@ -33789,6 +33860,18 @@
   "orig_name": "CSF::GetTeamString",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x536260": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CenterTeamCommand::Do",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CenterTeamCommand::Do",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x536290": {
@@ -45589,6 +45672,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5c0e10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7ee184",
+  "name": "MultiplayerBattle::sub_5C0E10",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5C0E10",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5c0e20": {
   "attempts": 1,
   "clean": true,
@@ -46442,6 +46537,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5c5d20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7ee424",
+  "name": "FreeForAll::sub_5C5D20",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5C5D20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5c5d30": {
   "attempts": 14,
   "clean": true,
@@ -46561,6 +46668,18 @@
   "name": "sub_5C6060",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_5C6060",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5c6190": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7ee50c",
+  "name": "MultiplayerManBattle::sub_5C6190",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5C6190",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -68624,6 +68743,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6c8c40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 call dword ptr [0x7e1530]",
+  "name": "Timer::GetTicks",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Timer::GetTicks",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c8c60": {
   "attempts": 1,
   "clean": true,
@@ -78895,6 +79026,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x730660": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 call 0x730100",
+  "name": "unknown_libname_34",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_34",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x730740": {
   "attempts": 1,
   "clean": true,
@@ -87818,6 +87960,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x77da40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb7778c",
+  "name": "unknown_libname_60",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x77e780": {
   "attempts": 2,
   "clean": true,
@@ -88695,6 +88848,50 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7af390": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb77ef0",
+  "name": "unknown_libname_61",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_61",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7af3a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb77f30",
+  "name": "unknown_libname_62",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_62",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7af3b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb77f08",
+  "name": "unknown_libname_63",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_63",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7af3c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb77f20",
+  "name": "unknown_libname_64",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_64",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7af3d0": {
   "attempts": 5,
   "clean": false,
@@ -88707,6 +88904,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7af4c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb77eb0",
+  "name": "unknown_libname_65",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_65",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7af4d0": {
   "attempts": 6,
   "clean": false,
@@ -88714,6 +88922,28 @@
   "name": "unknown_libname_66",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "unknown_libname_66",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7af4e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb77ec8",
+  "name": "unknown_libname_67",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_67",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7af4f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb77ec0",
+  "name": "unknown_libname_68",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "unknown_libname_68",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
