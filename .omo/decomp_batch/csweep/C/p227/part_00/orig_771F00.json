@@ -1,0 +1,11 @@
+{
+ "addr": "0x771F00",
+ "name": "WeaponTypeClass::loadWeaponProperties",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x771F00",
+ "bytes_hex": "8b442404568bf150e853eac9ffb8d84d7e008986bc0000008986d8000000c786f4000000d4b67e00c706b8737f00c746049c737f00c7460894737f00c7460c8c737f008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

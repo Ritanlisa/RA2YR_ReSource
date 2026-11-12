@@ -1,0 +1,15 @@
+{
+ "symbol": "?FindByID@PlacementList@@QAEPAVBuildingClass@@HD@Z",
+ "sym_key": "PlacementList::FindByID",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c05775075f33c05ec208008a44241084c074088bb1e8000000eb068bb1e400000085f675075f33c05ec208008b0656ff502c8b7c240c3bc774118b763085f674e48b0e56ff512c3bc775ef8bc65f5ec20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  }
+ ]
+}

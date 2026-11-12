@@ -1,0 +1,11 @@
+{
+ "addr": "0x47C4D0",
+ "name": "PlacementList::FindByID",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47C4D0",
+ "bytes_hex": "a0a0e9a8005684c05774308a44241084c074088bb1e8000000eb068bb1e400000085f674168b7c240c8b068bceff502c3bc7740e8b763085f675ee5f33c05ec208008bc65f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

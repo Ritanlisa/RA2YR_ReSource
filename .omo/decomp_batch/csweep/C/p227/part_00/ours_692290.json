@@ -1,0 +1,15 @@
+{
+ "symbol": "?SmallFunc_692290@ScrollClass@@QAEPAV1@XZ",
+ "sym_key": "ScrollClass::SmallFunc_692290",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000033c0c686595500000189864855000088864c55000089865055000089865455000088865855000088865a55000089068986185500008bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@TabClass@@QAEPAV1@XZ",
+   "sym_key": "TabClass::Constructor"
+  }
+ ]
+}

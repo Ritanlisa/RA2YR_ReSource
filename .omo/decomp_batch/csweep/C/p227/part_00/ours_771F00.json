@@ -1,0 +1,15 @@
+{
+ "symbol": "?loadWeaponProperties@WeaponTypeClass@@QAEPAIH@Z",
+ "sym_key": "WeaponTypeClass::loadWeaponProperties",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000033c08986bc0000008986d80000008986c0000000890689460489460889460c8bc65ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Init@AbstractTypeClass@@QAEHH@Z",
+   "sym_key": "AbstractTypeClass::Init"
+  }
+ ]
+}
