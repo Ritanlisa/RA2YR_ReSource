@@ -1,0 +1,11 @@
+{
+ "addr": "0x473BA0",
+ "name": "BufferIOFileClass::Seek",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x473BA0",
+ "bytes_hex": "8b415885c08b442408744283e800740d83e802750f8b415c894164eb07c74164000000008b5424048b416403c2ba000000000f98c24a89416423c28941648b515c3bc27e028bc2894164c208008b5424045052e8b8e8fbffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

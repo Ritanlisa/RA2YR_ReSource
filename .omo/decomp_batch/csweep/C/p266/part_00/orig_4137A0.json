@@ -1,0 +1,11 @@
+{
+ "addr": "0x4137A0",
+ "name": "VectorClass_flat::RemoveObjectById",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4137A0",
+ "bytes_hex": "518b819025000085c0750433c059c38b8184250000568db1802500008d4c24048b10518b068bce89542408ff501083f8ff74218b4e103bc17d1a493bc1894e107d128b4e04408b1481895481fc8b4e103bc17cee8b4424045e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

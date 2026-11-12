@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FD8F0",
+ "name": "Object::LoadObject",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FD8F0",
+ "bytes_hex": "8b442408568b742408575056e87f85ffff8bf885ff7c3c85f674278d4c2410518bcee83962ffffc706d4f37e00c74604b0f37e00c74608ccf37e00c7460ca8f37e0081c6ac000000566810c1b000e8fd180d008bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

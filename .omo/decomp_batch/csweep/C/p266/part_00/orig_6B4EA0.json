@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B4EA0",
+ "name": "UnitClass::SaveLoadData",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B4EA0",
+ "bytes_hex": "8b442408568b742408575056e8cf0ff4ff8bf885ff7c3c85f674278d4c2410518bcee889ecf3ffc706fc327f00c74604d8327f00c74608f4327f00c7460cd0327f0081c6ac000000566810c1b000e84da301008bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,51 @@
+{
+ "symbol": "?CreateAircraft@AircraftTypeClass@@QAGPAHH@Z",
+ "sym_key": "AircraftTypeClass::CreateAircraft",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "8a0d00000000b00184c8752b8ad168000000000ad0c7050000000000000000881500000000c70500000000ff7fff7fe80000000083c404b800000000c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889F38@@3EA",
+   "sym_key": "DataGlobal_889F38"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?nullsub_85@@YAHPBX0@Z",
+   "sym_key": "nullsub_85"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889F20@@3IA",
+   "sym_key": "DataGlobal_889F20"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889F38@@3EA",
+   "sym_key": "DataGlobal_889F38"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889F24@@3IA",
+   "sym_key": "DataGlobal_889F24"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889F20@@3IA",
+   "sym_key": "DataGlobal_889F20"
+  }
+ ]
+}

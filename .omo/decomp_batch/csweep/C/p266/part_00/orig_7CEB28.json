@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CEB28",
+ "name": "__forcdecpt",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CEB28",
+ "bytes_hex": "568b7424080fbe0650e8bec4ffff83f86559742c46833d9cc78700017e0f0fbe066a0450e8c02700005959eb0f0fbe068b0d90c587008a044183e00485c075d48a0da0c787008a06880e468a0e88068ac18a0e4684c975f35ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

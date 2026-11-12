@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p266\part_00
+=== convert (20 addrs) ===
+[conv] 0x4cb830 NetMessage::Pack -> NetMessage
+[conv] 0x7ceb28 ObjectClass::__forcdecpt -> ObjectClass
+[conv] 0x7d453c __hextodec_0 -> _addr_7D
+[conv] 0x6d0e60 ObjectClass::UI_Draw_6D0E60 -> ObjectClass
+[conv] 0x543990 AbstractClass::COMStub_5 -> AbstractClass
+[conv] 0x5fd8f0 OverlayClass::LoadObject -> OverlayClass
+[conv] 0x656df0 HouseClass::SetRadarVisibility -> HouseClass
+[conv] 0x6b4ea0 SmudgeClass::SaveLoadData -> SmudgeClass
+[conv] 0x70e1e0 InfantryClass::ProcessIdle -> InfantryClass
+[conv] 0x41cb70 AircraftTypeClass::CreateAircraft -> AircraftTypeClass
+[conv] 0x473ba0 CCFileClass::Seek -> CCFileClass
+[conv] 0x523c20 InfantryTypeClass::GetDimensions -> InfantryTypeClass
+[conv] 0x5f7640 ObjectTypeClass::RegisterSingleton -> ObjectTypeClass
+[conv] 0x5fe4c0 OverlayTypeClass::GetTile -> OverlayTypeClass
+[conv] 0x72a440 MessageListClass::clearMessages -> MessageListClass
+[conv] 0x7b2f90 UDPInterfaceClass::GetQueueSize -> UDPInterfaceClass
+[conv] 0x4f1aa0 OptionQueue::PushEntry -> OptionQueue
+[conv] 0x4137a0 VectorClass::RemoveObjectById -> VectorClass
+[conv] 0x429210 TiberianSunClassFactory::QueryInterface_Helper -> TiberianSunClassFactory
+[conv] 0x4f4240 GScreenClass::QueryInterface -> GScreenClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] NetMessage               rc=0
+[era] ObjectClass              rc=0
+[era] _addr_7D                 rc=0
+[era] AbstractClass            rc=0
+[era] OverlayClass             rc=0
+[era] HouseClass               rc=0
+[era] SmudgeClass              rc=0
+[era] InfantryClass            rc=0
+[era] AircraftTypeClass        rc=0
+[era] CCFileClass              rc=0
+[era] InfantryTypeClass        rc=0
+[era] ObjectTypeClass          rc=0
+[era] OverlayTypeClass         rc=0
+[era] MessageListClass         rc=0
+[era] UDPInterfaceClass        rc=2
+[era] OptionQueue              rc=2
+[era] VectorClass              rc=0
+[era] TiberianSunClassFactory  rc=0
+[era] GScreenClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x4cb830   MISMATCH         NetMessage::Pack
+[diff] 0x7ceb28   MISMATCH         ObjectClass::__forcdecpt
+[diff] 0x6d0e60   MISMATCH         ObjectClass::UI_Draw_6D0E60
+[diff] 0x7d453c   MISMATCH         __hextodec_0
+[diff] 0x543990   MISMATCH         AbstractClass::COMStub_5
+[diff] 0x5fd8f0   MISMATCH         OverlayClass::LoadObject
+[diff] 0x656df0   MISMATCH         HouseClass::SetRadarVisibility
+[diff] 0x6b4ea0   MISMATCH         SmudgeClass::SaveLoadData
+[diff] 0x70e1e0   MISMATCH         InfantryClass::ProcessIdle
+[diff] 0x41cb70   MISMATCH         AircraftTypeClass::CreateAircraft
+[diff] 0x473ba0   MISMATCH         CCFileClass::Seek
+[diff] 0x523c20   MISMATCH         InfantryTypeClass::GetDimensions
+[diff] 0x5f7640   MISMATCH         ObjectTypeClass::RegisterSingleton
+[diff] 0x5fe4c0   MISMATCH         OverlayTypeClass::GetTile
+[diff] 0x72a440   MISMATCH         MessageListClass::clearMessages
+[diff] 0x4137a0   MISMATCH         VectorClass::RemoveObjectById
+[diff] 0x429210   MISMATCH         TiberianSunClassFactory::QueryInterface_Helper
+[ledger] 0x4cb830 NetMessage::Pack -> NG (attempt 1)
+[ledger] 0x7ceb28 ObjectClass::__forcdecpt -> NG (attempt 1)
+[ledger] 0x7d453c __hextodec_0 -> NG (attempt 1)
+[ledger] 0x6d0e60 ObjectClass::UI_Draw_6D0E60 -> NG (attempt 1)
+[ledger] 0x543990 AbstractClass::COMStub_5 -> NG (attempt 1)
+[ledger] 0x5fd8f0 OverlayClass::LoadObject -> NG (attempt 1)
+[ledger] 0x656df0 HouseClass::SetRadarVisibility -> NG (attempt 1)
+[ledger] 0x6b4ea0 SmudgeClass::SaveLoadData -> NG (attempt 1)
+[ledger] 0x70e1e0 InfantryClass::ProcessIdle -> NG (attempt 1)
+[ledger] 0x41cb70 AircraftTypeClass::CreateAircraft -> NG (attempt 1)
+[ledger] 0x473ba0 CCFileClass::Seek -> NG (attempt 1)
+[ledger] 0x523c20 InfantryTypeClass::GetDimensions -> NG (attempt 1)
+[ledger] 0x5f7640 ObjectTypeClass::RegisterSingleton -> NG (attempt 1)
+[ledger] 0x5fe4c0 OverlayTypeClass::GetTile -> NG (attempt 1)
+[ledger] 0x72a440 MessageListClass::clearMessages -> NG (attempt 1)
+[ledger] 0x7b2f90 UDPInterfaceClass::GetQueueSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f1aa0 OptionQueue::PushEntry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4137a0 VectorClass::RemoveObjectById -> NG (attempt 1)
+[ledger] 0x429210 TiberianSunClassFactory::QueryInterface_Helper -> NG (attempt 1)
+[ledger] 0x4f4240 GScreenClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "regalloc": 4,
+  "extern_reloc": 4,
+  "branch_order": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p266\batch_report.json

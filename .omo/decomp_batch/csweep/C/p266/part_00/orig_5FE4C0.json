@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FE4C0",
+ "name": "OverlayTypeClass::GetTile",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FE4C0",
+ "bytes_hex": "518a0de815ac00b00184c875458ad16820e55f000ad033c0668944240466894424068b4424048815e815ac00a34016ac00b8ff7f0000668944240466894424068b4c2404890d4416ac00e87bb21c0083c404b84016ac0059c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

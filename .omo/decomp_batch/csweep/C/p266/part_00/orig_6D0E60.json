@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D0E60",
+ "name": "UI_Draw_6D0E60",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D0E60",
+ "bytes_hex": "83ec1833c95633c0515051515168e8030000518b3508fbb0005151894c2428894c242c518b0d007388008d542434528b01ff50788b15ccf687008b0d00738800508d442430506a0056e8c2deddffc60518b5b000015e83c418c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

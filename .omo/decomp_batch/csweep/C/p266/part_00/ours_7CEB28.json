@@ -1,0 +1,57 @@
+{
+ "symbol": "?__forcdecpt@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::__forcdecpt",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "53568bf18b0650e80000000050e80000000083c40883f865743ea1000000004683f8017f198b0e51e8000000008b150000000083c4048a044283e004eb168b066a0450e80000000083c40450e80000000083c40885c075c28a0d000000008a16880e8d4e018a0188118a194184db8ad075f35e5bc3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?SLOBYTE@@YAHPAXZZ",
+   "sym_key": "SLOBYTE"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "_tolower",
+   "sym_key": "tolower"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?SrcSizeInBytes@@3IA",
+   "sym_key": "SrcSizeInBytes"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?SLOBYTE@@YAHPAXZZ",
+   "sym_key": "SLOBYTE"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C590@@3PAXA",
+   "sym_key": "DataGlobal_87C590"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?SLOBYTE@@YAHPAXZZ",
+   "sym_key": "SLOBYTE"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?_isctype@@YAHHHZZ",
+   "sym_key": "_isctype"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?SrcCh@@3DA",
+   "sym_key": "SrcCh"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F7640",
+ "name": "GlobalInit::RegisterSingleton",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F7640",
+ "bytes_hex": "518a0d5c14ac00b00184c875458ad168a0765f000ad033c0668944240466894424068b44240488155c14ac00a33814ac00b8ff7f0000668944240466894424068b4c2404890d3c14ac00e8fb201d0083c404b83814ac0059c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

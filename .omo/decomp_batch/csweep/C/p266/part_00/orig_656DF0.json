@@ -1,0 +1,11 @@
+{
+ "addr": "0x656DF0",
+ "name": "HouseClass::SetRadarVisibility",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x656DF0",
+ "bytes_hex": "538b5c2408568bf1389ed8140000744584db889ed8140000b8e89483007505b8e49483005068bc948300e8c1fadaff8b86b014000083c40883f8016a01750d538bcee8a9fdffff5e5bc204006a018bcee86bfeffff5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

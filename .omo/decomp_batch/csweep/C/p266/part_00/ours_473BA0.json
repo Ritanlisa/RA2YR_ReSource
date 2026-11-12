@@ -1,0 +1,15 @@
+{
+ "symbol": "?Seek@CCFileClass@@QAEHJK@Z",
+ "sym_key": "CCFileClass::Seek",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "8b415885c08b442408750e8b5424045052e800000000c2080085c0740d83f802750f8b415c894164eb07c74164000000008b41648b54240403c233d285c00f9cc24a23c28b515c3bc28941647e028bc2894164c20800",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?SeekInternal@BufferIOFileClass@@QAEHHH@Z",
+   "sym_key": "BufferIOFileClass::SeekInternal"
+  }
+ ]
+}

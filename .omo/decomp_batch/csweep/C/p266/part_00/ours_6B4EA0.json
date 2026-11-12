@@ -1,0 +1,33 @@
+{
+ "symbol": "?SaveLoadData@SmudgeClass@@QAEHPAHH@Z",
+ "sym_key": "SmudgeClass::SaveLoadData",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "57e8000000008bf885ff7c48568b74240c85f674278d4424108bce50e800000000c70600000000c7460400000000c7460800000000c7460c0000000081c6ac000000566800000000e8000000008bc75e5fc208008bc75fc20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?SaveLoad_Register@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::SaveLoad_Register"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Init@ObjectClass@@QAEPAV1@H@Z",
+   "sym_key": "ObjectClass::Init"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

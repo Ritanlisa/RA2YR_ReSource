@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A440",
+ "name": "MessageListClass::clearMessages",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A440",
+ "bytes_hex": "8b44240c5333db56538bf18b4c2414536a016a0150518bcee8936edbff8b44240c8b54241c8b4c2418894630895e24895e2889562c894e34c74638ffffffff895e3c885e40885e41895e44895e48c706445b7f008bc65e5bc21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

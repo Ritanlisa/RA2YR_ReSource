@@ -1,0 +1,8 @@
+{
+ "symbol": "?RemoveObjectById@VectorClass@@QAEHXZ",
+ "sym_key": "VectorClass::RemoveObjectById",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "518b8190250000894c240085c0750433c059c38b8180250000568db1600900008b89842500008b118d4c240451568954240cff501083f8ff742d8b8e942500003bc17d23493bc1898e942500007d180fbf5604408d0c828b14828951fc8b8e942500003bc17ce88b4424045e59c3",
+ "relocs": []
+}

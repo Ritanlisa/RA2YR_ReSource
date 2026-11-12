@@ -1,0 +1,15 @@
+{
+ "symbol": "?clearMessages@MessageListClass@@QAEPAV1@HHHHH@Z",
+ "sym_key": "MessageListClass::clearMessages",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "8b44240c5333db56538bf18b4c2414536a016a0150518bcee8000000008b44240c8b4c24183bc38b44241c0f95c289462c885630895e24895e20894e34c74638ffffffff895e3c885e40885e41895e44895e48891e8bc65e5bc21400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Construct@GadgetClass@@QAEPAIHHHHHD@Z",
+   "sym_key": "GadgetClass::Construct"
+  }
+ ]
+}

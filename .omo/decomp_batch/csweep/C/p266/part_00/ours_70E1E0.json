@@ -1,0 +1,15 @@
+{
+ "symbol": "?ProcessIdle@InfantryClass@@QAEHH@Z",
+ "sym_key": "InfantryClass::ProcessIdle",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "568bf157568b06ff90840000008bc8e8000000008b7c240c84c074158b0e56ff91840000003bb80c0800007304b001eb0232c083ffff7c1383ff027c0484c0740a5fb8010000005ec204005f33c05ec20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?HasPower@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::HasPower"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CB830",
+ "name": "NetMessage::Pack",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CB830",
+ "bytes_hex": "8b4424045356578bd96a045053e88ed92f008b44242466c7430414006689430625ffff000050e8bcd52f008b74242433c9668b4b068bf88bd1894308c1e902f3a58bca83c41083e1038bc3f3a45fc7430c000000005e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

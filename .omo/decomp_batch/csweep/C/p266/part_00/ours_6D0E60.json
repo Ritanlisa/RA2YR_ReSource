@@ -1,0 +1,45 @@
+{
+ "symbol": "?UI_Draw_6D0E60@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::UI_Draw_6D0E60",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "83ec18a1000000008d542408568b35c8120000c744240400000000c7442408000000008b085250ff51786a006a006a006a006a0068e80300000fbe15dc0000006a006a008b0d000000006a006a00508d442430506a0056e800000000c60500000000015e83c418c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHHIPAX0HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?g_TooltipActive@@3EA",
+   "sym_key": "g_TooltipActive"
+  }
+ ]
+}

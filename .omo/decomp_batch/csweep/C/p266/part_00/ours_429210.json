@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface_Helper@TiberianSunClassFactory@@QAGHPBX0@Z",
+ "sym_key": "TiberianSunClassFactory::QueryInterface_Helper",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "8b54240c5685d257750a5fb8034000805ec20c008b44241453b904000000bf000000008bf033dbf3a75b741c8bf0b904000000bf0000000033c0f3a7740a5fb8024000805ec20c008b4424108902508b08ff51045f33c05ec20c00",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F7CA0@@3EA",
+   "sym_key": "DataGlobal_7F7CA0"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?IID_IUnknown@@3U_GUID_era@@A",
+   "sym_key": "IID_IUnknown"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x41CB70",
+ "name": "AircraftTypeClass::CreateAircraft",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41CB70",
+ "bytes_hex": "518a0d389f8800b00184c875458ad168d0cb41000ad033c0668944240466894424068b4424048815389f8800a3209f8800b8ff7f0000668944240466894424068b4c2404890d249f8800e8cbcb3a0083c404b8209f880059c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

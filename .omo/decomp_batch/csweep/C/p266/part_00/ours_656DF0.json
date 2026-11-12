@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetRadarVisibility@HouseClass@@QAEXD@Z",
+ "sym_key": "HouseClass::SetRadarVisibility",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf10fbec333c98a8ed81400003bc874308bce889ed8140000e8000000008b86b01400006a0183f801750d538bcee8000000005e5bc204006a018bcee8000000005e5bc20400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?Toggle@RadarClass@@QAEXDD@Z",
+   "sym_key": "RadarClass::Toggle"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?SetViewMode@RadarClass@@QAEHHD@Z",
+   "sym_key": "RadarClass::SetViewMode"
+  }
+ ]
+}
