@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x76f970 ReferenceCounted::Constructor -> ReferenceCounted
+[conv] 0x76ff20 Trigger::executeActions -> Trigger
+[conv] 0x770f10 ObjectClass::sub_770F10 -> ObjectClass
+[conv] 0x778210 ScoreScreen::DrawSHPBackground -> ScoreScreen
+[conv] 0x778710 ObjectClass::LoadAccountInfoWOL -> ObjectClass
+[conv] 0x779dd0 ObjectClass::LoadConfigWOL -> ObjectClass
+[conv] 0x779f10 ObjectClass::SavePersonaConfigWOL -> ObjectClass
+[conv] 0x77a080 ObjectClass::SaveProfileWOL -> ObjectClass
+[conv] 0x77e900 AssignWOLPlayerSide -> _addr_77
+[conv] 0x783270 SortWOLPlayerList -> _addr_78
+[conv] 0x78f200 ObjectClass::BuildWOLPlayerTooltip -> ObjectClass
+[conv] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> WinsockInterfaceClass
+[conv] 0x7b2ff0 UDPInterfaceClass::Flush -> UDPInterfaceClass
+[conv] 0x7b3310 UDPInterfaceClass::CheckStatus -> UDPInterfaceClass
+[conv] 0x7b60e0 ObjectClass::sub_7B60E0 -> ObjectClass
+[conv] 0x7b9d90 WWMouseClass::processFrame -> WWMouseClass
+[conv] 0x7ba360 WWMouseClass::updatePosition -> WWMouseClass
+[conv] 0x7be670 UnitClass::Audio_Render_7BE670 -> UnitClass
+[conv] 0x7c61cf globalHelper_0C61CF -> _addr_7C
+[conv] 0x7cc682 _wcsstr -> _addr_7C
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ReferenceCounted         rc=2
+[era] Trigger                  rc=0
+[era] ObjectClass              rc=2
+[era] ScoreScreen              rc=0
+[era] _addr_77                 rc=2
+[era] _addr_78                 rc=0
+[era] WinsockInterfaceClass    rc=2
+[era] UDPInterfaceClass        rc=2
+[era] WWMouseClass             rc=0
+[era] UnitClass                rc=2
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x76ff20   MATCH            Trigger::executeActions
+[diff] 0x770f10   MISMATCH         ObjectClass::sub_770F10
+[diff] 0x779dd0   MISMATCH         ObjectClass::LoadConfigWOL
+[diff] 0x7b60e0   MISMATCH         ObjectClass::sub_7B60E0
+[diff] 0x778210   MISMATCH         ScoreScreen::DrawSHPBackground
+[diff] 0x783270   MISMATCH         SortWOLPlayerList
+[diff] 0x7b9d90   MATCH            WWMouseClass::processFrame
+[diff] 0x7ba360   MISMATCH         WWMouseClass::updatePosition
+[ledger] 0x76f970 ReferenceCounted::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x76ff20 Trigger::executeActions -> OK (attempt 2)
+[ledger] 0x770f10 ObjectClass::sub_770F10 -> NG (attempt 6)
+[ledger] 0x778210 ScoreScreen::DrawSHPBackground -> NG (attempt 6)
+[ledger] 0x778710 ObjectClass::LoadAccountInfoWOL -> COMPILE_FAIL (attempt 5)
+[ledger] 0x779dd0 ObjectClass::LoadConfigWOL -> NG (attempt 6)
+[ledger] 0x779f10 ObjectClass::SavePersonaConfigWOL -> COMPILE_FAIL (attempt 6)
+[ledger] 0x77a080 ObjectClass::SaveProfileWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x77e900 AssignWOLPlayerSide -> COMPILE_FAIL (attempt 5)
+[ledger] 0x783270 SortWOLPlayerList -> NG (attempt 5)
+[ledger] 0x78f200 ObjectClass::BuildWOLPlayerTooltip -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b2ff0 UDPInterfaceClass::Flush -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7b3310 UDPInterfaceClass::CheckStatus -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7b60e0 ObjectClass::sub_7B60E0 -> NG (attempt 6)
+[ledger] 0x7b9d90 WWMouseClass::processFrame -> OK (attempt 2)
+[ledger] 0x7ba360 WWMouseClass::updatePosition -> NG (attempt 2)
+[ledger] 0x7be670 UnitClass::Audio_Render_7BE670 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c61cf globalHelper_0C61CF -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cc682 _wcsstr -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MATCH": 2,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 3,
+  "branch_order": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 25.0,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p09\batch_report.json

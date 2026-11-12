@@ -1,0 +1,33 @@
+{
+ "symbol": "?LoadConfigWOL@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::LoadConfigWOL",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "83ec4433c0a0000000008d4c24005650e80000000033f68d4c240456e80000000084c074350fbe4c24288d5424248d44241889742418897424248974240c897424108974241c897424205289315089742434e80000000083c4085e83c444c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wolinfoMD_ini@@3EA",
+   "sym_key": "g_Str_File_wolinfoMD_ini"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Constructor@BufferIOFile@@QAEPAV1@PAX@Z",
+   "sym_key": "BufferIOFile::Constructor"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?IsReady@File@@QAEDH@Z",
+   "sym_key": "File::IsReady"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?LinkedList__Prepend@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Prepend"
+  }
+ ]
+}

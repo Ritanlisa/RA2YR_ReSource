@@ -1,0 +1,15 @@
+{
+ "symbol": "?processFrame@WWMouseClass@@QAEHPAH0@Z",
+ "sym_key": "WWMouseClass::processFrame",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b512c56578b302bf28b54241089308b71308b3a2bfe893a8b3085f67d06c70000000000833a007d12538a1d0000000084db5b7506c702000000008b71348b383bfe7c034e89308b49388b025f3bc15e7c0349890ac20800",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?byte_B78160@@3EA",
+   "sym_key": "byte_B78160"
+  }
+ ]
+}

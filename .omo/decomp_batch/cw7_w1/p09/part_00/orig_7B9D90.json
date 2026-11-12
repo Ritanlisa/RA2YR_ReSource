@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B9D90",
+ "name": "WWMouseClass::processFrame",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B9D90",
+ "bytes_hex": "8b4424048b512c56578b302bf28b54241089308b71308b3a2bfe893a8b3085f67d06c70000000000833a007d12538a1d6081b70084db5b7506c702000000008b71348b383bfe7c034e89308b49388b025f3bc15e7c0349890ac20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
