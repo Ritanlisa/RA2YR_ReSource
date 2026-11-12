@@ -1,0 +1,11 @@
+{
+ "addr": "0x597FC0",
+ "name": "MapSeedClass::SetCell",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x597FC0",
+ "bytes_hex": "68d01500006848ba820033d2b95cbc8200e88ace1900c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

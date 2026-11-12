@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckResult@RadarClass@@QAG_NH@Z",
+ "sym_key": "RadarClass::CheckResult",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b4c240450518b4c2410e800000000f6d81bc0f7d8c20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?UpdateCellPassability@DisplayClass@@QAEDPAXH@Z",
+   "sym_key": "DisplayClass::UpdateCellPassability"
+  }
+ ]
+}

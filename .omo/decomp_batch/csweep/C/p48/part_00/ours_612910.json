@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_612910@@YAXXZ",
+ "sym_key": "Unnamed::sub_612910",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "a100000000c705000000000000000050e80000000059c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1DE8@@3IA",
+   "sym_key": "DataGlobal_AC1DE8"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_ComboBoxState@@3IA",
+   "sym_key": "g_ComboBoxState"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x597FE0",
+ "name": "MapSeedClass::Validate",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x597FE0",
+ "bytes_hex": "68d61500006848ba820033d2b970bc8200e86ace1900c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

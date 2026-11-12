@@ -1,0 +1,15 @@
+{
+ "symbol": "?globalHelper_0E4540@@YGDPAHHHH@Z",
+ "sym_key": "Unnamed::globalHelper_0E4540",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "8b44240485c0750532c0c2100050e80000000083c404b001c21000",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?GlobalHelper_0E4540_Helper@@YAHPAX@Z",
+   "sym_key": "GlobalHelper_0E4540_Helper"
+  }
+ ]
+}

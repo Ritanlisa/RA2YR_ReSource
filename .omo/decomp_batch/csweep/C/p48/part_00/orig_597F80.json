@@ -1,0 +1,11 @@
+{
+ "addr": "0x597F80",
+ "name": "MapSeedClass::Generate",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x597F80",
+ "bytes_hex": "68c41500006848ba820033d2b93cbc8200e8cace1900c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

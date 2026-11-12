@@ -1,0 +1,11 @@
+{
+ "addr": "0x653810",
+ "name": "Conditions::CheckResult",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x653810",
+ "bytes_hex": "8b4424088b5424045052e87160e5ff84c00f95c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

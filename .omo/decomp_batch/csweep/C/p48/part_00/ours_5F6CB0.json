@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckFlagD0@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::CheckFlagD0",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f8ff89416475088b4950e800000000c20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Stop@AudioFile@@QAEHXZ",
+   "sym_key": "AudioFile::Stop"
+  }
+ ]
+}

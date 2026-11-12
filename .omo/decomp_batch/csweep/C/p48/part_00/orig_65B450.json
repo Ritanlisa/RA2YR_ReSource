@@ -1,0 +1,11 @@
+{
+ "addr": "0x65B450",
+ "name": "RadSiteClass::SaveLoad_Prefix_0",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65B450",
+ "bytes_hex": "8b44240c8b4c24088b542404505152e8bc4edbffc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

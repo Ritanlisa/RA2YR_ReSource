@@ -1,0 +1,11 @@
+{
+ "addr": "0x55A070",
+ "name": "LoadOptions::Seek",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55A070",
+ "bytes_hex": "68c6040000685c9f820033d2b9b49f8200e8daad1d00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

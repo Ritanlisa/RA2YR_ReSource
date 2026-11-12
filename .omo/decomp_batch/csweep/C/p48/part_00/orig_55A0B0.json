@@ -1,0 +1,11 @@
+{
+ "addr": "0x55A0B0",
+ "name": "LoadOptions::Close",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55A0B0",
+ "bytes_hex": "68d2040000685c9f820033d2b9e09f8200e89aad1d00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

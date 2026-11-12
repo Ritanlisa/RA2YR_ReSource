@@ -1,0 +1,11 @@
+{
+ "addr": "0x6296B0",
+ "name": "ParasiteClass::SaveParasite",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6296B0",
+ "bytes_hex": "8b44240c8b4c24088b542404505152e85c6cdeffc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

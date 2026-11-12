@@ -42098,6 +42098,42 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x55a070": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x4c6",
+  "name": "LoadOptions::Seek",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "LoadOptions::Seek",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x55a090": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x4cc",
+  "name": "LoadOptions::Open",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "LoadOptions::Open",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x55a0b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x4d2",
+  "name": "LoadOptions::Close",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "LoadOptions::Close",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x55a180": {
   "attempts": 2,
   "clean": true,
@@ -45174,6 +45210,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x597f80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+5 push 0x82ba48",
+  "name": "MapSeedClass::Generate",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MapSeedClass::Generate",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x597fa0": {
   "attempts": 3,
   "clean": false,
@@ -45182,6 +45230,30 @@
   "name": "MapSeedClass::GetCell",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "MapSeedClass::GetCell",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x597fc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 push 0x82ba48",
+  "name": "MapSeedClass::SetCell",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MapSeedClass::SetCell",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x597fe0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 push 0x82ba48",
+  "name": "MapSeedClass::Validate",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MapSeedClass::Validate",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -54948,6 +55020,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5f6cb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+12 add ecx, 0x50",
+  "name": "ObjectClass::CheckFlagD0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ObjectClass::CheckFlagD0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5f6da0": {
   "attempts": 1,
   "clean": false,
@@ -55569,6 +55653,18 @@
   "orig_name": "nullsub_211",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5fd950": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+15 call 0x410320",
+  "name": "OverlayClass::SaveObject",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Object::SaveObject",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5fd970": {
@@ -56384,6 +56480,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x612910": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+5 mov dword ptr [0xac1de0], 0",
+  "name": "sub_612910",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_612910",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x612b70": {
   "attempts": 3,
   "clean": false,
@@ -57096,6 +57203,18 @@
   "name": "sub_629190",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "sub_629190",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6296b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+15 call 0x410320",
+  "name": "ParasiteClass::SaveParasite",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "ParasiteClass::SaveParasite",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -57879,6 +57998,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x631fc0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_631FC0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_631FC0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x631fe0": {
   "attempts": 3,
   "clean": false,
@@ -57916,6 +58047,18 @@
   "name": "BigInt::RSAOperation",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x632bc0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BigInt::Compare",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BigInt::Compare",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x632fe0": {
   "attempts": 1,
@@ -61070,6 +61213,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x653810": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 mov edx, dword ptr [esp + 4]",
+  "name": "RadarClass::CheckResult",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Conditions::CheckResult",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x653f50": {
   "attempts": 5,
   "clean": false,
@@ -62085,6 +62240,18 @@
   "name": "RadSiteClass::StubReturn69",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x65b450": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+15 call 0x410320",
+  "name": "RadSiteClass::SaveLoad_Prefix_0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "RadSiteClass::SaveLoad_Prefix_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x65b470": {
   "attempts": 2,
@@ -68841,6 +69008,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6b4f00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+15 call 0x410320",
+  "name": "SmudgeClass::SaveState",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "UnitClass::SaveState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6b4f20": {
   "attempts": 8,
   "clean": true,
@@ -73086,6 +73265,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c6b60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+5 mov dword ptr [0xb0bd50], 0",
+  "name": "sub_6C6B60",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_6C6B60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c6d00": {
   "attempts": 4,
   "clean": false,
@@ -75721,6 +75911,39 @@
   "name": "TActionClass::executeGeneticMutatorAction",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x6e4440": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
+  "name": "globalHelper_0E4440",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "globalHelper_0E4440",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e44c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
+  "name": "globalHelper_0E44C0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "globalHelper_0E44C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e4540": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
+  "name": "globalHelper_0E4540",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "globalHelper_0E4540",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6e4560": {
   "attempts": 1,
@@ -79454,6 +79677,18 @@
   "name": "TemporalClass::SetTarget",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TemporalClass::SetTarget",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x71a700": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+15 call 0x410320",
+  "name": "TemporalClass::SaveTemporal",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TemporalClass::SaveTemporal",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
