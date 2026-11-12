@@ -1,0 +1,21 @@
+{
+ "symbol": "?updateAnimation@SBGadgetClass_SidebarClass@@QAEPAID@Z",
+ "sym_key": "SBGadgetClass_SidebarClass::updateAnimation",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "538a5c2408560fbef38bcee800000000f6c301740956e80000000083c4048bc65e5bc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Dtor@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Dtor"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

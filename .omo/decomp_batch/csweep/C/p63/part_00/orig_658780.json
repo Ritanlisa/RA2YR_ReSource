@@ -1,0 +1,11 @@
+{
+ "addr": "0x658780",
+ "name": "TacticalClass::renderOverlay",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x658780",
+ "bytes_hex": "568bf1e8088ce8fff644240801740956e8a803170083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

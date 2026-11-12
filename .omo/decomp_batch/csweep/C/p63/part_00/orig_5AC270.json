@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AC270",
+ "name": "MapSeedClass::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AC270",
+ "bytes_hex": "568bf1e818c5fafff644240801740956e8b8c8210083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

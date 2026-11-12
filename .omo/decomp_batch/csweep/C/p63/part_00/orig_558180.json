@@ -1,0 +1,11 @@
+{
+ "addr": "0x558180",
+ "name": "SliderClass::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x558180",
+ "bytes_hex": "568bf1e8789b1500f644240801740956e8a809270083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

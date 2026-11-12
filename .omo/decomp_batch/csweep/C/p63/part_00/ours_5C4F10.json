@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@MPCooperative@@QAEPAIPAHH@Z",
+ "sym_key": "MPCooperative::QueryInterface",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "8b442404538bd9508b4c240c51e80000000083c408f6c3015b7414568b74240856e80000000083c4048bc65ec208008b442404c20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?MPCooperative_Cleanup@@YAXPAX0@Z",
+   "sym_key": "MPCooperative_Cleanup"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

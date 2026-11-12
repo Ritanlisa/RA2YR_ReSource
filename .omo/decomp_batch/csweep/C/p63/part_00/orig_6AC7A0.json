@@ -1,0 +1,11 @@
+{
+ "addr": "0x6AC7A0",
+ "name": "ObjectClass::updateAnimation",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6AC7A0",
+ "bytes_hex": "568bf1e8e84be3fff644240801740956e888c3110083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p63\part_00
+=== convert (20 addrs) ===
+[conv] 0x54a170 IsometricTileTypeClass::ddtor -> IsometricTileTypeClass
+[conv] 0x558180 SliderClass::QueryInterface -> SliderClass
+[conv] 0x588bf0 MapClass::Destru_vt04 -> MapClass
+[conv] 0x5ac270 MapSeedClass::QueryInterface -> MapSeedClass
+[conv] 0x5b4610 MixFileClass::UnlinkFromPool -> MixFileClass
+[conv] 0x5bb560 NetworkGameSetup::DeleteComPtr -> NetworkGameSetup
+[conv] 0x5c10d0 MultiplayerBattleTeam::QueryInterface -> MultiplayerBattleTeam
+[conv] 0x5c4f10 MPCooperative::QueryInterface -> MPCooperative
+[conv] 0x5d2700 MSEngine::QueryInterface -> MSEngine
+[conv] 0x5d3450 MSFont::QueryInterface -> MSFont
+[conv] 0x5e8760 Settings::CheckString -> Settings
+[conv] 0x5f6dc0 ObjectClass::CreateInstance -> ObjectClass
+[conv] 0x5f9ae0 ObjectTypeClass::Destru_vt08 -> ObjectTypeClass
+[conv] 0x624480 DeleteAndZero::OrFree -> DeleteAndZero
+[conv] 0x630230 ParticleSystemClass::ddtor -> ParticleSystemClass
+[conv] 0x6404b0 PowerClass::Initialize -> PowerClass
+[conv] 0x658780 RTacticalClass@RadarClass::renderOverlay -> RTacticalClass_RadarClass
+[conv] 0x65bed0 RadSiteClass::ProcessEvent -> RadSiteClass
+[conv] 0x6914e0 ScriptClass::PowerDrainUpdate -> ScriptClass
+[conv] 0x6ac7a0 SBGadgetClass@SidebarClass::updateAnimation -> SBGadgetClass_SidebarClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IsometricTileTypeClass   rc=0
+[era] SliderClass              rc=0
+[era] MapClass                 rc=0
+[era] MapSeedClass             rc=0
+[era] MixFileClass             rc=2
+[era] NetworkGameSetup         rc=0
+[era] MultiplayerBattleTeam    rc=0
+[era] MPCooperative            rc=0
+[era] MSEngine                 rc=0
+[era] MSFont                   rc=0
+[era] Settings                 rc=2
+[era] ObjectClass              rc=0
+[era] ObjectTypeClass          rc=0
+[era] DeleteAndZero            rc=2
+[era] ParticleSystemClass      rc=2
+[era] PowerClass               rc=0
+[era] RTacticalClass_RadarClass rc=0
+[era] RadSiteClass             rc=0
+[era] ScriptClass              rc=0
+[era] SBGadgetClass_SidebarClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x54a170   MISMATCH         IsometricTileTypeClass::ddtor
+[diff] 0x558180   MISMATCH         SliderClass::QueryInterface
+[diff] 0x588bf0   MISMATCH         MapClass::Destru_vt04
+[diff] 0x5ac270   MISMATCH         MapSeedClass::QueryInterface
+[diff] 0x5bb560   MISMATCH         NetworkGameSetup::DeleteComPtr
+[diff] 0x5c10d0   MISMATCH         MultiplayerBattleTeam::QueryInterface
+[diff] 0x5c4f10   MISMATCH         MPCooperative::QueryInterface
+[diff] 0x5d2700   MISMATCH         MSEngine::QueryInterface
+[diff] 0x5d3450   MISMATCH         MSFont::QueryInterface
+[diff] 0x5f6dc0   MISMATCH         ObjectClass::CreateInstance
+[diff] 0x5f9ae0   MISMATCH         ObjectTypeClass::Destru_vt08
+[diff] 0x6404b0   MISMATCH         PowerClass::Initialize
+[diff] 0x658780   MISMATCH         RTacticalClass@RadarClass::renderOverlay
+[diff] 0x65bed0   MISMATCH         RadSiteClass::ProcessEvent
+[diff] 0x6914e0   MISMATCH         ScriptClass::PowerDrainUpdate
+[diff] 0x6ac7a0   MISMATCH         SBGadgetClass@SidebarClass::updateAnimation
+[ledger] 0x54a170 IsometricTileTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x558180 SliderClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x588bf0 MapClass::Destru_vt04 -> NG (attempt 1)
+[ledger] 0x5ac270 MapSeedClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x5b4610 MixFileClass::UnlinkFromPool -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bb560 NetworkGameSetup::DeleteComPtr -> NG (attempt 1)
+[ledger] 0x5c10d0 MultiplayerBattleTeam::QueryInterface -> NG (attempt 1)
+[ledger] 0x5c4f10 MPCooperative::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d2700 MSEngine::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d3450 MSFont::QueryInterface -> NG (attempt 1)
+[ledger] 0x5e8760 Settings::CheckString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f6dc0 ObjectClass::CreateInstance -> NG (attempt 1)
+[ledger] 0x5f9ae0 ObjectTypeClass::Destru_vt08 -> NG (attempt 1)
+[ledger] 0x624480 DeleteAndZero::OrFree -> COMPILE_FAIL (attempt 1)
+[ledger] 0x630230 ParticleSystemClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6404b0 PowerClass::Initialize -> NG (attempt 1)
+[ledger] 0x658780 RTacticalClass@RadarClass::renderOverlay -> NG (attempt 1)
+[ledger] 0x65bed0 RadSiteClass::ProcessEvent -> NG (attempt 1)
+[ledger] 0x6914e0 ScriptClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x6ac7a0 SBGadgetClass@SidebarClass::updateAnimation -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "const_fold": 11,
+  "codegen_shape": 2,
+  "regalloc": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p63\batch_report.json

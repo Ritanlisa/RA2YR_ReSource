@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C10D0",
+ "name": "MultiplayerBattleTeam::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C10D0",
+ "bytes_hex": "568bf1e8a87b0100f644240801740956e8587a200083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

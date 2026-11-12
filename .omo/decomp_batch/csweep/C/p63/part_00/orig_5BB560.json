@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BB560",
+ "name": "NetworkGameSetup::DeleteComPtr",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BB560",
+ "bytes_hex": "568bf1e888510800f644240801740956e8c8d5200083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

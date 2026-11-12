@@ -1,0 +1,11 @@
+{
+ "addr": "0x54A170",
+ "name": "IsometricTileTypeClass::ddtor",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54A170",
+ "bytes_hex": "568bf1e8f8a8fffff644240801740956e8b8e9270083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
