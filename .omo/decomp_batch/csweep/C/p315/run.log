@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p315\part_00
+=== convert (20 addrs) ===
+[conv] 0x589ce0 VectorClass::InitCellVe_vt02 -> VectorClass
+[conv] 0x5ac6e0 _VectorClass_PAVMapRegionClass::Release -> _VectorClass_PAVMapRegionClass
+[conv] 0x5acaa0 _VectorClass_PAU_WIN32_FIND_DATAA::Release -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5c0b10 VectorClass::checkCombatFlags -> VectorClass
+[conv] 0x5c5170 VectorClass::Release -> VectorClass
+[conv] 0x5c53d0 VectorClass::processTeamChat -> VectorClass
+[conv] 0x5c5630 _VectorClass_PAVCoopCampaignClass::Release -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5d0b20 _VectorClass_PAVMSTextEntry::Release -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d0d80 _VectorClass_PAVMapSelection::Release -> _VectorClass_PAVMapSelection
+[conv] 0x5d0fe0 _VectorClass_PAVMapStage::AllocCopyData_4B -> _VectorClass_PAVMapStage
+[conv] 0x5d1240 _VectorClass_PAVMSAnimEntry::Release -> _VectorClass_PAVMSAnimEntry
+[conv] 0x5d2820 _VectorClass_PAVMSAnim::SetCapacity -> _VectorClass_PAVMSAnim
+[conv] 0x5d2a80 _VectorClass_PAVMSSfx::Release -> _VectorClass_PAVMSSfx
+[conv] 0x5d5190 _VectorClass_PAUHWND::Release -> _VectorClass_PAUHWND
+[conv] 0x5d8330 _VectorClass_PAVMultiplayerTeam::Release -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x5d8590 _VectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> _VectorClass_PAVMultiplayerGameMode
+[conv] 0x5eec50 _VectorClass_PBVMultiMission::SetAt -> _VectorClass_PBVMultiMission
+[conv] 0x5f9bc0 _VectorClass_PAVObjectTypeClass::Release -> _VectorClass_PAVObjectTypeClass
+[conv] 0x600060 _VectorClass_PAVSpotLightClass::Release -> _VectorClass_PAVSpotLightClass
+[conv] 0x627e50 _VectorClass_PAVColorScheme::Release -> _VectorClass_PAVColorScheme
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=2
+[era] _VectorClass_PAVMapRegionClass rc=2
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=2
+[era] _VectorClass_PAVCoopCampaignClass rc=2
+[era] _VectorClass_PAVMSTextEntry rc=2
+[era] _VectorClass_PAVMapSelection rc=2
+[era] _VectorClass_PAVMapStage rc=2
+[era] _VectorClass_PAVMSAnimEntry rc=2
+[era] _VectorClass_PAVMSAnim   rc=2
+[era] _VectorClass_PAVMSSfx    rc=2
+[era] _VectorClass_PAUHWND     rc=2
+[era] _VectorClass_PAVMultiplayerTeam rc=2
+[era] _VectorClass_PAVMultiplayerGameMode rc=2
+[era] _VectorClass_PBVMultiMission rc=2
+[era] _VectorClass_PAVObjectTypeClass rc=2
+[era] _VectorClass_PAVSpotLightClass rc=2
+[era] _VectorClass_PAVColorScheme rc=2
+=== diffasm byte-compare ===
+[ledger] 0x589ce0 VectorClass::InitCellVe_vt02 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ac6e0 _VectorClass_PAVMapRegionClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5acaa0 _VectorClass_PAU_WIN32_FIND_DATAA::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c0b10 VectorClass::checkCombatFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c5170 VectorClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c53d0 VectorClass::processTeamChat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c5630 _VectorClass_PAVCoopCampaignClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0b20 _VectorClass_PAVMSTextEntry::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0d80 _VectorClass_PAVMapSelection::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0fe0 _VectorClass_PAVMapStage::AllocCopyData_4B -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1240 _VectorClass_PAVMSAnimEntry::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2820 _VectorClass_PAVMSAnim::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2a80 _VectorClass_PAVMSSfx::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d5190 _VectorClass_PAUHWND::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8330 _VectorClass_PAVMultiplayerTeam::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8590 _VectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eec50 _VectorClass_PBVMultiMission::SetAt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f9bc0 _VectorClass_PAVObjectTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x600060 _VectorClass_PAVSpotLightClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x627e50 _VectorClass_PAVColorScheme::Release -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p315\batch_report.json
