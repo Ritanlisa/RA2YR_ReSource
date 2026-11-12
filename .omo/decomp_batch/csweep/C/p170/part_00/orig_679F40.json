@@ -1,0 +1,11 @@
+{
+ "addr": "0x679F40",
+ "name": "INIEntry::Exists",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x679F40",
+ "bytes_hex": "8b44240885c075138b44240450e8bec8eafff7d81bc0f7d8c208008b5424045052e8aacbeafff7d81bc0f7d8c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p170\part_00
+=== convert (20 addrs) ===
+[conv] 0x47c520 Cell::IsBridge -> Cell
+[conv] 0x4cfe50 FlyLocomotionClass::StubReturnZero_8 -> FlyLocomotionClass
+[conv] 0x4e25a0 GaugeClass::GetValue -> GaugeClass
+[conv] 0x65d480 ComPtr::Set -> ComPtr
+[conv] 0x652870 sub_652870 -> _addr_65
+[conv] 0x679f40 INIEntry::Exists -> INIEntry
+[conv] 0x764fc0 ObjectClass::ConstructWDTSelection_Create -> ObjectClass
+[conv] 0x7656d0 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Seek -> _VectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766850 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Seek -> _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x76b760 _VectorClass_V_rc_ptr_VWDTTerritory::Clear -> _VectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x7c979c ___onexitinit -> _addr_7C
+[conv] 0x4093c0 sub_4093C0 -> _addr_40
+[conv] 0x7cb3f9 __lock_file -> _addr_7C
+[conv] 0x7cb44b __unlock_file -> _addr_7C
+[conv] 0x438000 BlowPipe::Draw -> BlowPipe
+[conv] 0x438030 BlowPipe::DrawAlt -> BlowPipe
+[conv] 0x40eb90 sub_40EB90 -> _addr_40
+[conv] 0x6e8750 TaskForceClass::LoadTask -> TaskForceClass
+[conv] 0x759510 CCFileClass::Cleanup -> CCFileClass
+[conv] 0x7c95d3 Audio_Write_7C95D3 -> Audio_Write
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Cell                     rc=0
+[era] FlyLocomotionClass       rc=0
+[era] GaugeClass               rc=0
+[era] ComPtr                   rc=0
+[era] _addr_65                 rc=0
+[era] INIEntry                 rc=0
+[era] ObjectClass              rc=0
+[era] _VectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VWDTTerritory rc=0
+[era] _addr_7C                 rc=2
+[era] _addr_40                 rc=2
+[era] BlowPipe                 rc=2
+[era] TaskForceClass           rc=0
+[era] CCFileClass              rc=0
+[era] Audio_Write              rc=0
+=== diffasm byte-compare ===
+[diff] 0x47c520   MISMATCH         Cell::IsBridge
+[diff] 0x4cfe50   MISMATCH         FlyLocomotionClass::StubReturnZero_8
+[diff] 0x4e25a0   MISMATCH         GaugeClass::GetValue
+[diff] 0x65d480   MISMATCH         ComPtr::Set
+[diff] 0x652870   MISMATCH         sub_652870
+[diff] 0x679f40   MATCH            INIEntry::Exists
+[diff] 0x764fc0   MISMATCH         ObjectClass::ConstructWDTSelection_Create
+[diff] 0x7656d0   MISMATCH         _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Seek
+[diff] 0x766850   MISMATCH         _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Seek
+[diff] 0x76b760   MISMATCH         _VectorClass_V_rc_ptr_VWDTTerritory::Clear
+[diff] 0x40eb90   MISMATCH         sub_40EB90
+[diff] 0x6e8750   MISMATCH         TaskForceClass::LoadTask
+[diff] 0x759510   MISMATCH         CCFileClass::Cleanup
+[diff] 0x7c95d3   MISMATCH         Audio_Write_7C95D3
+[ledger] 0x47c520 Cell::IsBridge -> NG (attempt 1)
+[ledger] 0x4cfe50 FlyLocomotionClass::StubReturnZero_8 -> NG (attempt 1)
+[ledger] 0x4e25a0 GaugeClass::GetValue -> NG (attempt 1)
+[ledger] 0x65d480 ComPtr::Set -> NG (attempt 1)
+[ledger] 0x652870 sub_652870 -> NG (attempt 1)
+[ledger] 0x679f40 INIEntry::Exists -> OK (attempt 1)
+[ledger] 0x764fc0 ObjectClass::ConstructWDTSelection_Create -> NG (attempt 1)
+[ledger] 0x7656d0 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Seek -> NG (attempt 1)
+[ledger] 0x766850 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Seek -> NG (attempt 1)
+[ledger] 0x76b760 _VectorClass_V_rc_ptr_VWDTTerritory::Clear -> NG (attempt 1)
+[ledger] 0x7c979c ___onexitinit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4093c0 sub_4093C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cb3f9 __lock_file -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cb44b __unlock_file -> COMPILE_FAIL (attempt 1)
+[ledger] 0x438000 BlowPipe::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x438030 BlowPipe::DrawAlt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40eb90 sub_40EB90 -> NG (attempt 1)
+[ledger] 0x6e8750 TaskForceClass::LoadTask -> NG (attempt 1)
+[ledger] 0x759510 CCFileClass::Cleanup -> NG (attempt 1)
+[ledger] 0x7c95d3 Audio_Write_7C95D3 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "MATCH": 1,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "cc_mismatch": 1,
+  "codegen_shape": 4,
+  "branch_polarity": 1,
+  "extern_reloc": 1,
+  "const_fold": 4,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p170\batch_report.json

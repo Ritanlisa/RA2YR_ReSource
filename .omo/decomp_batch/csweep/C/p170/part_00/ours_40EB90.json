@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_40EB90@@YAHXZ",
+ "sym_key": "Unnamed::sub_40EB90",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "e800000000b900000000a300000000e8000000006800000000c7050000000000000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_TacticalState@@3IA",
+   "sym_key": "g_TacticalState"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?EnableHighPrecision@Timer@@QAEPAXXZ",
+   "sym_key": "Timer::EnableHighPrecision"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?unknown_libname_10@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_10"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887330@@3IA",
+   "sym_key": "DataGlobal_887330"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

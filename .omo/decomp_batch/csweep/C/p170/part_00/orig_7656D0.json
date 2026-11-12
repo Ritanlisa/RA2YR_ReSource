@@ -1,0 +1,11 @@
+{
+ "addr": "0x7656D0",
+ "name": "Campaign_WorldDominationTour_16::Seek",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7656D0",
+ "bytes_hex": "8b41048b4c2408568b742408578d3cc88bcee8497defffc706346f7f008b5704528bcee8887defff8bc65f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

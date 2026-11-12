@@ -1,0 +1,33 @@
+{
+ "symbol": "?Cleanup@CCFileClass@@QAEHXZ",
+ "sym_key": "CCFileClass::Cleanup",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000083c6048d8e60010000c70600000000c7466400000000e8000000008bcec70600000000e8000000005ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?System_Cleanup@@YAXXZ",
+   "sym_key": "System_Cleanup"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

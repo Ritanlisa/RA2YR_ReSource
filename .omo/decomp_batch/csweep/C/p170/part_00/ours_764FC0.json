@@ -1,0 +1,21 @@
+{
+ "symbol": "?ConstructWDTSelection_Create@ObjectClass@@QAE_NH@Z",
+ "sym_key": "ObjectClass::ConstructWDTSelection_Create",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e0ce80000000033c98a4e303bc875188b4e0ce8000000008b54240839449634750633c05ec20400b8010000005ec20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?GetSize@WDTObject@@QAEHXZ",
+   "sym_key": "WDTObject::GetSize"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetOwnerHouse@Conflict@@QAEHXZ",
+   "sym_key": "Conflict::GetOwnerHouse"
+  }
+ ]
+}

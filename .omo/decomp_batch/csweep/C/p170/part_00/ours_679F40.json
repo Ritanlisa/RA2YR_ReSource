@@ -1,0 +1,21 @@
+{
+ "symbol": "?Exists@INIEntry@@QAEHPAE0@Z",
+ "sym_key": "INIEntry::Exists",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c075138b44240450e800000000f7d81bc0f7d8c208008b5424045052e800000000f7d81bc0f7d8c20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?BinarySearchSection@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::BinarySearchSection"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?FindSection@HashTableSection@@QAEHPAX0@Z",
+   "sym_key": "HashTableSection::FindSection"
+  }
+ ]
+}

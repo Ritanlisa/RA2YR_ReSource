@@ -1,0 +1,11 @@
+{
+ "addr": "0x65D480",
+ "name": "ComPtr::Set",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65D480",
+ "bytes_hex": "568bf1578b7c240c3b7e04741d85ff7403ff47048b4e0485c9740cc74604000000008b01ff5008897e045f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

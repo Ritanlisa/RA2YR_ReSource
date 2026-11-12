@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsBridge@Cell@@QAEPAIXZ",
+ "sym_key": "Cell::IsBridge",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c0750433c05ec38bb1e400000085f6750433c05ec38b0656ff502c83f80674128b763085f674ea8b0e56ff512c83f80675ee8bc65ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  }
+ ]
+}

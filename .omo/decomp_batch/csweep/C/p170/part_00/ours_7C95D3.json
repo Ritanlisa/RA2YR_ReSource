@@ -1,0 +1,27 @@
+{
+ "symbol": "?Audio_Write_7C95D3@@YAIPAXIIPAU_iobuf@@@Z",
+ "sym_key": "Unnamed::Audio_Write_7C95D3",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "568b7424145756e8000000008b4424188b4c24148b54241056505152e800000000568bf8e80000000083c4188bc75f5ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?_lock_file@@YAHPAXZZ",
+   "sym_key": "_lock_file"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "_fwrite",
+   "sym_key": "fwrite"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?_unlock_file@@YAHPAXZZ",
+   "sym_key": "_unlock_file"
+  }
+ ]
+}

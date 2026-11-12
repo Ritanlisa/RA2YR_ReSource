@@ -1,0 +1,11 @@
+{
+ "addr": "0x47C520",
+ "name": "Cell::IsBridge",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47C520",
+ "bytes_hex": "a0a0e9a8005684c0741d8bb1e400000085f674138b068bceff502c83f806740b8b763085f675ed33c05ec38bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

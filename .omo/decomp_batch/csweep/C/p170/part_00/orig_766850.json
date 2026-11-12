@@ -1,0 +1,11 @@
+{
+ "addr": "0x766850",
+ "name": "Conflict_WorldDominationTour_12::Seek",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x766850",
+ "bytes_hex": "8b41048b4c2408568b742408578d3cc88bcee8c96befffc70624707f008b5704528bcee8086cefff8bc65f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

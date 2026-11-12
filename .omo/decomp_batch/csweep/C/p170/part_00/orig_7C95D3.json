@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C95D3",
+ "name": "Audio_Write_7C95D3",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C95D3",
+ "bytes_hex": "558bec56ff7514e81a1e0000ff7514ff7510ff750cff7508e812000000ff75148bf0e8511e000083c4188bc65e5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

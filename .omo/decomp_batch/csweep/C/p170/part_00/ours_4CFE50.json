@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturnZero_8@FlyLocomotionClass@@QAGHPAE@Z",
+ "sym_key": "FlyLocomotionClass::StubReturnZero_8",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "8b4424048a484d84c97408b801000000c208008a484c84c9740533c0c208008b0850ff51108ad0b803000000f6da1bd2f7da2bc2c20800",
+ "relocs": []
+}
