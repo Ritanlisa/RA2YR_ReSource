@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p86\part_00
+=== convert (20 addrs) ===
+[conv] 0x726b80 sub_726B80 -> _addr_72
+[conv] 0x727ed0 sub_727ED0 -> _addr_72
+[conv] 0x728900 sub_728900 -> _addr_72
+[conv] 0x72a360 sub_72A360 -> _addr_72
+[conv] 0x72a7c0 sub_72A7C0 -> _addr_72
+[conv] 0x734540 sub_734540 -> _addr_73
+[conv] 0x735290 sub_735290 -> _addr_73
+[conv] 0x746ff0 sub_746FF0 -> _addr_74
+[conv] 0x7492b0 ArcTan::Update -> ArcTan
+[conv] 0x74ac80 sub_74AC80 -> _addr_74
+[conv] 0x74c2a0 sub_74C2A0 -> _addr_74
+[conv] 0x750220 sub_750220 -> _addr_75
+[conv] 0x752130 sub_752130 -> _addr_75
+[conv] 0x754a20 sub_754A20 -> _addr_75
+[conv] 0x7590a0 sub_7590A0 -> _addr_75
+[conv] 0x75cda0 sub_75CDA0 -> _addr_75
+[conv] 0x75e850 sub_75E850 -> _addr_75
+[conv] 0x763490 sub_763490 -> _addr_76
+[conv] 0x764940 sub_764940 -> _addr_76
+[conv] 0x765e80 sub_765E80 -> _addr_76
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] _addr_73                 rc=0
+[era] _addr_74                 rc=0
+[era] ArcTan                   rc=0
+[era] _addr_75                 rc=0
+[era] _addr_76                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x726b80   MISMATCH         sub_726B80
+[diff] 0x727ed0   MISMATCH         sub_727ED0
+[diff] 0x728900   MISMATCH         sub_728900
+[diff] 0x72a360   MISMATCH         sub_72A360
+[diff] 0x72a7c0   MISMATCH         sub_72A7C0
+[diff] 0x734540   MISMATCH         sub_734540
+[diff] 0x735290   MISMATCH         sub_735290
+[diff] 0x746ff0   MISMATCH         sub_746FF0
+[diff] 0x74ac80   MISMATCH         sub_74AC80
+[diff] 0x74c2a0   MISMATCH         sub_74C2A0
+[diff] 0x7492b0   MISMATCH         ArcTan::Update
+[diff] 0x750220   MISMATCH         sub_750220
+[diff] 0x752130   MISMATCH         sub_752130
+[diff] 0x754a20   MISMATCH         sub_754A20
+[diff] 0x7590a0   MISMATCH         sub_7590A0
+[diff] 0x75cda0   MISMATCH         sub_75CDA0
+[diff] 0x75e850   MISMATCH         sub_75E850
+[diff] 0x763490   MISMATCH         sub_763490
+[diff] 0x764940   MISMATCH         sub_764940
+[diff] 0x765e80   MISMATCH         sub_765E80
+[ledger] 0x726b80 sub_726B80 -> NG (attempt 1)
+[ledger] 0x727ed0 sub_727ED0 -> NG (attempt 1)
+[ledger] 0x728900 sub_728900 -> NG (attempt 1)
+[ledger] 0x72a360 sub_72A360 -> NG (attempt 1)
+[ledger] 0x72a7c0 sub_72A7C0 -> NG (attempt 1)
+[ledger] 0x734540 sub_734540 -> NG (attempt 1)
+[ledger] 0x735290 sub_735290 -> NG (attempt 1)
+[ledger] 0x746ff0 sub_746FF0 -> NG (attempt 1)
+[ledger] 0x7492b0 ArcTan::Update -> NG (attempt 1)
+[ledger] 0x74ac80 sub_74AC80 -> NG (attempt 1)
+[ledger] 0x74c2a0 sub_74C2A0 -> NG (attempt 1)
+[ledger] 0x750220 sub_750220 -> NG (attempt 1)
+[ledger] 0x752130 sub_752130 -> NG (attempt 1)
+[ledger] 0x754a20 sub_754A20 -> NG (attempt 1)
+[ledger] 0x7590a0 sub_7590A0 -> NG (attempt 1)
+[ledger] 0x75cda0 sub_75CDA0 -> NG (attempt 1)
+[ledger] 0x75e850 sub_75E850 -> NG (attempt 1)
+[ledger] 0x763490 sub_763490 -> NG (attempt 1)
+[ledger] 0x764940 sub_764940 -> NG (attempt 1)
+[ledger] 0x765e80 sub_765E80 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p86\batch_report.json
