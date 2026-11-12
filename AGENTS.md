@@ -190,12 +190,14 @@ cmake --build build_linux
 | 项 | 数值 |
 |---|---|
 | 判定条目 | **8,516**（全池 19,067） |
-| OK（字节 MATCH） | **3,906** |
-| NG（MISMATCH，编译过但字节不等） | **2,690** |
-| COMPILE_FAIL | **1,889** |
+| OK（字节 MATCH） | **3,921** |
+| NG（MISMATCH，编译过但字节不等） | **3,512** |
+| COMPILE_FAIL | **1,052** |
 | PENDING | 31 |
 
-构成路径：A 层全量放量新增 MATCH 1,638（`report_a_sweep.md` §0，266 part）；CW4 回填 +313（`report_cw4.md` §4，账本 NG 4,059 → 3,746、OK 2,340 → 2,653）；CW5 编译墙 **+197**（`report_cw5.md`，NG 3,746 → 3,942、OK 2,653 → 2,654）；**W-A 收割 +1,252**（`report_wa_harvest.md`，NG 3,942 → 2,690、OK 2,654 → 3,906）。
+构成路径：A 层全量放量新增 MATCH 1,638（`report_a_sweep.md` §0，266 part）；CW4 回填 +313（`report_cw4.md` §4，账本 NG 4,059 → 3,746、OK 2,340 → 2,653）；CW5 编译墙 **+197**（`report_cw5.md`，NG 3,746 → 3,942、OK 2,653 → 2,654）；**W-A 收割 +1,252**（`report_wa_harvest.md`，NG 3,942 → 2,690、OK 2,654 → 3,906）；**CW6 陈旧 CF 收割 +837 编译**（`report_cw6.md`，947 件 stale 重跑：CF 1,889 → 1,052、NG 2,690 → 3,512、OK 3,906 → 3,921）。
+
+CF 残墙构成（1,052）：**live 817 + evidence 125 + 复败 110**（三者地址不相交）；下一轮建议靶集 = G5 live 194 + 复败 110 = 304（`cw6_live_workorder.md`）。
 
 ### 分层编译率与匹配率
 
@@ -247,7 +249,8 @@ cmake --build build_linux
 
 - **CW5（已完成，2026-11-12）**：残 871 CF 三族工单（`report_cw5_prep.md`）——靶集 442 件（F7 212 + F10 133 + F8 97）**0 → 197 编译（44.6%，196 MISMATCH + 1 MATCH）**，账本 **OK 2,653→2,654 / NG 3,746→3,942 / CF 2,086→1,889**。落地：CW5-1/2/3/4（调用点实参、CRT 表、间接 fn-ptr、const 槽）+ CW5-5/6/7（全局数组元素、成员层级反查、成员链/vfptr 偏移真值）+ **CW5-8 壳供给（壳生成器读 registry 合并成员 + `class_layouts.parent` 继承链，∩ 本单元 body 名字）** + CW5-10（F8 残留标识符：MEMORY/GUID/asc_/algn_/`?` 以外/`__usercall`/`__m64`/`WCHAR`/`int32_t`/`HKEY_*`）+ CW5-12（伪类碰撞：extern + 壳改名 `_Helper`）。**未做：CW5-11（C9 参数/局部名映射，C9 4/20 的主残因）、CW5-9 全量拼写归一**。六规则红线：同 442 集违规条目 **1,195→1,170**、函数 **190→185**（净降）；零回归 **30/30 历史 MATCH**（R5-75 中 0x402330 的 CF 经二分证实为 CW3 期 `dcd4b0ec9` 回归，非 CW5）。剩余 245 CF 归因见 `report_cw5.md` §6：C2440 长尾 31 / C2664 长尾 28 / 成员名缺失（B9 16 无源）/ 快照坏 12 件（`?`/asm/截断，需 IDA 重导出）。
 - **W-A 收割（已完成，2026-11-12）**：三桶全量重跑（D_CONST_FOLD 736 + D_CONST_FP 273 + D_RELOC 555 = 1,564 件，全部核验为当前 NG）→ **1,252 件翻 MATCH（80.0%）**，账本 **OK 2,654→3,906 / NG 3,942→2,690**（CF 1,889 / PENDING 31 不变），非目标条目变动 **0**；1,252 新 OK 全部 `clean=true / rule_violations=0 / this_as_id=false`。零回归 = 穷举扫描 2,654 历史 OK **无 FP 字面量（触发面空集）** + 30 抽样 29/30（1 件 `0x5378e0` 证明为 censusA 期陈旧账本条目：pass off/on 同差 + 无 FP 字面量）。残余 312 件归因见报告（D_RELOC 仍残 262 件 `extern_reloc` = W1 领土）。**BM 第二轮提示**：G1 clean 池 1,939→3,191，但新 MATCH 为常数叶子函数（median 19B），可提取证据结构性稀少（owner ≤35 / member ≤15 / sig ≈0）——收益按 s7_build 实测，勿把 +1,252 当 BM 增量（**已实测：+49 = owner 35 / member 8 / sig 6，覆盖率 47.6%→47.7%，见 BM 条第二轮**）。报告 = `.omo/agents/decomp_batch/report_wa_harvest.md`；驱动/验证 = `run_wa.py` / `wa_harvest_regress.py`。
-- **待办**：W1（diffasm reloc 符号键映射；W-A 收割后 D_RELOC 仍残 **262 件 extern_reloc**，另普查遗留 45 行“账本 NG 但工件 MATCH”的陈旧行待复核）/ W2（FP 常量物化 **已被 W-A 收割，见 report_wa_harvest.md**）/ W4（签名与类型确定性 226 件），W1/W4 是 CW4 证伪后的确定性修复主线（对应形态分桶 L0-L2）；规则违规残债 ~482 函数（CW3 自检口径）；形态层残余 492 件结构级（STRUCTURAL 446 + FRAME 46 非 CRT，自动试错 ROI <10%，需逐件 IDA 取证）+ 72 件 CRT 内件（VC6 CRT 版本差异，建议移出形态战场）。完整分桶与 ROI 见 `report_shape_census.md`。
+- **CW6 收割（已完成，2026-11-12）**：947 件陈旧 CF（`report_cw6_prep.md` 判定的 stale_cw3 817 + stale_cw5 130）用当前 HEAD 重跑（20 件/part，48 part + 1 补提交 + 3 单件收口 = 52 commit）→ **837 件恢复编译（88.4%，超预告上限 784）**：MATCH **15**（10 clean）/ MISMATCH **822** / 仍 CF **110**；账本 **CF 1,889→1,052（−837）/ NG 2,690→3,512 / OK 3,906→3,921**，目标集外变动 **0**，零回归 **30/30**。**两条备弹假设被证伪**：CW5-10 `uintN_t` 只解 C2146 25.8%（8/31，旧错消失但换下游类型错）、`__usercall` strip 0/6。CF 残墙构成 = live 817 + evidence 125 + 复败 110（不相交）；新 NG 形态谱 = codegen_shape 394 / branch_polarity 158 / const_fold 115（已过 W-A 默认 ON pass，勿盲目重跑）/ regalloc 76 / extern_reloc 20。下一轮靶集 = **G5 live 194 + 复败 110 = 304**（全清单 `.omo/agents/decomp_batch/cw6_live_workorder.md`）。报告 = `.omo/agents/decomp_batch/report_cw6.md`；分析/回归/工单 = `.omo/decomp_batch/cw6_prep/cw6_{analyze,regress,workorder}.py`。
+- **待办**：W1（diffasm reloc 符号键映射；W-A 收割后 D_RELOC 仍残 **262 件 extern_reloc**，CW6 新 NG 再添 20 件 extern_reloc，另普查遗留 45 行“账本 NG 但工件 MATCH”的陈旧行待复核）/ W2（FP 常量物化 **已被 W-A 收割，见 report_wa_harvest.md**）/ W4（签名与类型确定性 226 件），W1/W4 是 CW4 证伪后的确定性修复主线（对应形态分桶 L0-L2）；规则违规残债 ~482 函数（CW3 自检口径）；形态层残余 492 件结构级（STRUCTURAL 446 + FRAME 46 非 CRT，自动试错 ROI <10%，需逐件 IDA 取证）+ 72 件 CRT 内件（VC6 CRT 版本差异，建议移出形态战场）。完整分桶与 ROI 见 `report_shape_census.md`。
 
 ## ⚠️ 当前活跃方向 2：数据段字节级对齐（data-first 战略，2026-11-11 首战完成）
 

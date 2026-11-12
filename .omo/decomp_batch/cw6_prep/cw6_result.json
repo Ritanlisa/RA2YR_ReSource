@@ -1,0 +1,1454 @@
+{
+ "targets": 947,
+ "records": 947,
+ "missing_records": [],
+ "extra_records": [],
+ "verdicts": {
+  "COMPILE_FAIL": 110,
+  "MISMATCH": 822,
+  "MATCH": 15
+ },
+ "compiled": 837,
+ "compile_rate_pct": 88.4,
+ "match_rate_pct": 1.6,
+ "per_family": {
+  "stale_cw3|CW3-1 param proto merge": {
+   "MISMATCH": 118,
+   "MATCH": 7,
+   "COMPILE_FAIL": 6
+  },
+  "stale_cw3|CW3-2 return-tail ; strip": {
+   "MISMATCH": 16
+  },
+  "stale_cw3|CW3-2 template shell": {
+   "MISMATCH": 462
+  },
+  "stale_cw3|CW3-2 vftable regex": {
+   "MISMATCH": 89,
+   "COMPILE_FAIL": 1
+  },
+  "stale_cw3|CW3-3 global member view": {
+   "MISMATCH": 4,
+   "COMPILE_FAIL": 3
+  },
+  "stale_cw3|CW3-3 global-array upgrade": {
+   "MISMATCH": 56,
+   "COMPILE_FAIL": 15
+  },
+  "stale_cw3|CW3-3 idx consumption": {
+   "MISMATCH": 19,
+   "COMPILE_FAIL": 2
+  },
+  "stale_cw3|CW3-4 __int64 literal": {
+   "COMPILE_FAIL": 2,
+   "MISMATCH": 1,
+   "MATCH": 1
+  },
+  "stale_cw3|CW3-4 pointer-local store": {
+   "MISMATCH": 4,
+   "COMPILE_FAIL": 11
+  },
+  "stale_cw5|CW5-1/2/3/4 call-site args": {
+   "COMPILE_FAIL": 4,
+   "MATCH": 7,
+   "MISMATCH": 1
+  },
+  "stale_cw5|CW5-10 GUID constants": {
+   "MISMATCH": 8
+  },
+  "stale_cw5|CW5-10 MEMORY rewrite": {
+   "MISMATCH": 6,
+   "COMPILE_FAIL": 1
+  },
+  "stale_cw5|CW5-10 __usercall strip": {
+   "COMPILE_FAIL": 6
+  },
+  "stale_cw5|CW5-10 uintN_t typedef": {
+   "COMPILE_FAIL": 23,
+   "MISMATCH": 8
+  },
+  "stale_cw5|CW5-10 undeclared g_/s_/p_": {
+   "MISMATCH": 3,
+   "COMPILE_FAIL": 1
+  },
+  "stale_cw5|CW5-5 global object array": {
+   "MISMATCH": 5,
+   "COMPILE_FAIL": 1
+  },
+  "stale_cw5|CW5-5/6/7/8 member view": {
+   "MISMATCH": 6,
+   "COMPILE_FAIL": 8
+  },
+  "stale_cw5|CW5-6/7 member chain": {
+   "COMPILE_FAIL": 6,
+   "MISMATCH": 2
+  },
+  "stale_cw5|CW5-8/9/12 shell supply": {
+   "COMPILE_FAIL": 20,
+   "MISMATCH": 14
+  }
+ },
+ "per_old_code": {
+  "C2036": {
+   "COMPILE_FAIL": 2,
+   "MISMATCH": 5
+  },
+  "C2039": {
+   "COMPILE_FAIL": 20,
+   "MISMATCH": 14
+  },
+  "C2059": {
+   "COMPILE_FAIL": 2,
+   "MISMATCH": 1,
+   "MATCH": 1
+  },
+  "C2065": {
+   "MISMATCH": 105,
+   "COMPILE_FAIL": 3
+  },
+  "C2100": {
+   "MISMATCH": 580,
+   "MATCH": 7,
+   "COMPILE_FAIL": 6
+  },
+  "C2109": {
+   "MISMATCH": 75,
+   "COMPILE_FAIL": 16
+  },
+  "C2143": {
+   "MISMATCH": 16,
+   "COMPILE_FAIL": 6
+  },
+  "C2146": {
+   "COMPILE_FAIL": 23,
+   "MISMATCH": 8
+  },
+  "C2227": {
+   "COMPILE_FAIL": 6,
+   "MISMATCH": 2
+  },
+  "C2228": {
+   "MISMATCH": 10,
+   "COMPILE_FAIL": 11
+  },
+  "C2275": {
+   "MISMATCH": 1
+  },
+  "C2296": {
+   "MISMATCH": 4,
+   "COMPILE_FAIL": 11
+  },
+  "C2664": {
+   "COMPILE_FAIL": 4,
+   "MATCH": 7,
+   "MISMATCH": 1
+  }
+ },
+ "per_gen": {
+  "G0_preCW2_census": {
+   "MISMATCH": 33,
+   "COMPILE_FAIL": 8,
+   "MATCH": 3
+  },
+  "G1_CW2": {
+   "MISMATCH": 29,
+   "COMPILE_FAIL": 3
+  },
+  "G2_asweep_preCW4": {
+   "COMPILE_FAIL": 73,
+   "MISMATCH": 735,
+   "MATCH": 11
+  },
+  "G3_CW3": {
+   "MISMATCH": 3,
+   "COMPILE_FAIL": 21
+  },
+  "G_R5toR8": {
+   "MISMATCH": 19,
+   "COMPILE_FAIL": 3,
+   "MATCH": 1
+  },
+  "G_nocls": {
+   "MISMATCH": 3,
+   "COMPILE_FAIL": 2
+  }
+ },
+ "ledger_before": {
+  "OK": 3906,
+  "COMPILE_FAIL": 1889,
+  "NG": 2690,
+  "PENDING": 31
+ },
+ "ledger_after": {
+  "OK": 3921,
+  "COMPILE_FAIL": 1052,
+  "NG": 3512,
+  "PENDING": 31
+ },
+ "ledger_move_targets": {
+  "COMPILE_FAIL->COMPILE_FAIL": 110,
+  "COMPILE_FAIL->NG": 822,
+  "COMPILE_FAIL->OK": 15
+ },
+ "ledger_move_outside": [],
+ "still_cf": [
+  {
+   "addr": "0x401190",
+   "code_new": "C2673",
+   "code_old": "C2059",
+   "family": "stale_cw3|CW3-4 __int64 literal",
+   "layer": "A",
+   "unit": "_addr_40",
+   "name": "sub_401190",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p00\\part_00\\_addr_40_401190.cpp(7) : error C2673: 'sub_401190' : global functions do not have 'this' pointers; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p"
+  },
+  {
+   "addr": "0x4073b0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "SaveGame",
+   "name": "SaveGame::CountLinkedList",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p00\\part_00\\SaveGame.cpp(8) : error C2039: 'm000' : is not a member of 'SaveGame'"
+  },
+  {
+   "addr": "0x40d8e0",
+   "code_new": "C2440",
+   "code_old": "C2065",
+   "family": "stale_cw5|CW5-10 MEMORY rewrite",
+   "layer": "A",
+   "unit": "_addr_40",
+   "name": "sub_40D8E0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p01\\part_00\\_addr_40_40d8e0.cpp(7) : error C2440: 'initializing' : cannot convert from 'unsigned char' to 'char *'"
+  },
+  {
+   "addr": "0x417fd0",
+   "code_new": "C2227",
+   "code_old": "C2227",
+   "family": "stale_cw5|CW5-6/7 member chain",
+   "layer": "A",
+   "unit": "AbstractClass",
+   "name": "AbstractClass::GetField9",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p01\\part_00\\AbstractClass.cpp(8) : error C2227: left of '->PoseDir' must point to class/struct/union"
+  },
+  {
+   "addr": "0x45dd20",
+   "code_new": "C2228",
+   "code_old": "C2228",
+   "family": "stale_cw5|CW5-5/6/7/8 member view",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_45DD20",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\ObjectClass.cpp(9) : error C2228: left of '.Name' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\Obj"
+  },
+  {
+   "addr": "0x45ec90",
+   "code_new": "C2109",
+   "code_old": "C2228",
+   "family": "stale_cw5|CW5-5/6/7/8 member view",
+   "layer": "A",
+   "unit": "BuildingTypeClass",
+   "name": "BuildingTypeClass::GetFoundationWidth",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\BuildingTypeClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\Buildi"
+  },
+  {
+   "addr": "0x45eca0",
+   "code_new": "C2109",
+   "code_old": "C2036",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "BuildingTypeClass",
+   "name": "BuildingTypeClass::GetFoundationHeight",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\BuildingTypeClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\Buildi"
+  },
+  {
+   "addr": "0x464af0",
+   "code_new": "C2109",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "BuildingTypeClass",
+   "name": "BuildingTypeClass::GetSizeInLeptons",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\BuildingTypeClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\Buildi"
+  },
+  {
+   "addr": "0x4722f0",
+   "code_new": "C2228",
+   "code_old": "C2228",
+   "family": "stale_cw5|CW5-5/6/7/8 member view",
+   "layer": "A",
+   "unit": "CaptureManagerClass",
+   "name": "CaptureManagerClass::GetOriginalOwner",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\CaptureManagerClass_4722f0.cpp(7) : error C2228: left of '.HouseClass_field_160B4' must have class/struct/union type"
+  },
+  {
+   "addr": "0x473960",
+   "code_new": "C2036",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_47",
+   "name": "sub_473960",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p05\\part_00\\_addr_47.cpp(10) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p05\\part_00\\_addr_47.cpp(10) : error C2440:"
+  },
+  {
+   "addr": "0x48dfd0",
+   "code_new": "C2036",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_48",
+   "name": "sub_48DFD0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p05\\part_00\\_addr_48.cpp(10) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p05\\part_00\\_addr_48.cpp(10) : error C2440:"
+  },
+  {
+   "addr": "0x48e030",
+   "code_new": "C2036",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_48",
+   "name": "sub_48E030",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p05\\part_00\\_addr_48.cpp(10) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p05\\part_00\\_addr_48.cpp(10) : error C2440:"
+  },
+  {
+   "addr": "0x48e090",
+   "code_new": "C2036",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_48",
+   "name": "globalHelper_08E090",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p06\\part_00\\_addr_48_48e090.cpp(9) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p06\\part_00\\_addr_48_48e090.cpp(9) : "
+  },
+  {
+   "addr": "0x494590",
+   "code_new": "C2296",
+   "code_old": "C2100",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "layer": "A",
+   "unit": "_BlitTransXlatMultWriteAlpha_G",
+   "name": "_BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p07\\part_00\\_BlitTransXlatMultWriteAlpha_G.cpp(22) : error C2296: '*' : illegal, left operand has type 'unsigned short *'"
+  },
+  {
+   "addr": "0x4963f0",
+   "code_new": "C2100",
+   "code_old": "C2100",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "layer": "A",
+   "unit": "_RLEBlitTransLucent50_G",
+   "name": "_RLEBlitTransLucent50_G::sub_4963F0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p07\\part_00\\_RLEBlitTransLucent50_G.cpp(41) : error C2100: illegal indirection"
+  },
+  {
+   "addr": "0x4ac310",
+   "code_new": "C2440",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "DisplayClass",
+   "name": "DisplayClass::InitViewBounds",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p08\\part_00\\DisplayClass.cpp(18) : error C2440: '=' : cannot convert from 'int' to 'void *'"
+  },
+  {
+   "addr": "0x4afb80",
+   "code_new": "C2227",
+   "code_old": "C2664",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "layer": "A",
+   "unit": "JumpjetLocomotionClass",
+   "name": "JumpjetLocomotionClass::StubReturnTrue",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p08\\part_00\\JumpjetLocomotionClass_4afb80.cpp(12) : error C2227: left of '->location' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\"
+  },
+  {
+   "addr": "0x4d2cd0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass",
+   "name": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass::Read",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p10\\part_00\\_DynamicVectorClass_UDrawRecord_FoggedObjectClass.cpp(8) : error C2039: '__tail_10' : is not a member of '_DynamicVectorClass_UDrawRecord_Fogged"
+  },
+  {
+   "addr": "0x4e0220",
+   "code_new": "C2228",
+   "code_old": "C2228",
+   "family": "stale_cw5|CW5-5/6/7/8 member view",
+   "layer": "A",
+   "unit": "FoggedObjectClass",
+   "name": "FoggedObjectClass::PointerToIndex",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p10\\part_00\\FoggedObjectClass_4e0220.cpp(7) : error C2228: left of '.vfptr3' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\"
+  },
+  {
+   "addr": "0x4e07b0",
+   "code_new": "C2228",
+   "code_old": "C2228",
+   "family": "stale_cw5|CW5-5/6/7/8 member view",
+   "layer": "A",
+   "unit": "FoggedObjectClass",
+   "name": "FoggedObjectClass::FindItem",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p10\\part_00\\FoggedObjectClass_4e07b0.cpp(7) : error C2228: left of '.uniqueId' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_ru"
+  },
+  {
+   "addr": "0x4e7e20",
+   "code_new": "C2109",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "A",
+   "unit": "_addr_4E",
+   "name": "unknown_libname_15",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p10\\part_00\\_addr_4E_4e7e20.cpp(11) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p10\\part_00\\_addr_4"
+  },
+  {
+   "addr": "0x4fa2e0",
+   "code_new": "C2296",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "HouseClass",
+   "name": "HouseClass::SetThreat_Bounds",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p16\\part_00\\HouseClass_4fa2e0.cpp(26) : error C2296: '*' : illegal, left operand has type 'char [1]'"
+  },
+  {
+   "addr": "0x5095d0",
+   "code_new": "C2228",
+   "code_old": "C2228",
+   "family": "stale_cw5|CW5-5/6/7/8 member view",
+   "layer": "A",
+   "unit": "TeamClass",
+   "name": "TeamClass::CountActiveTeamsForType",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p16\\part_00\\TeamClass.cpp(12) : error C2228: left of '.Cells' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p16\\part_00\\Tea"
+  },
+  {
+   "addr": "0x50bc90",
+   "code_new": "C2440",
+   "code_old": "C2228",
+   "family": "stale_cw3|CW3-3 global member view",
+   "layer": "A",
+   "unit": "HouseClass",
+   "name": "HouseClass::CreatePowerOutage",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p17\\part_00\\HouseClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'void *' to 'unsigned short *'"
+  },
+  {
+   "addr": "0x50c160",
+   "code_new": "C2228",
+   "code_old": "C2228",
+   "family": "stale_cw5|CW5-5/6/7/8 member view",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_50C160",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p17\\part_00\\ObjectClass.cpp(8) : error C2228: left of '.defaultCoords' must have class/struct/union type"
+  },
+  {
+   "addr": "0x52ace0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "GenericList",
+   "name": "GenericList::Constructor",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18\\part_00\\GenericList.cpp(8) : error C2039: 'vtable' : is not a member of 'GenericList'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18\\part_00\\GenericLi"
+  },
+  {
+   "addr": "0x535fc0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "SelectTeamCommand",
+   "name": "SelectTeamCommand::Construct",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18\\part_00\\SelectTeamCommand.cpp(9) : error C2039: 'CommandClass' : is not a member of 'SelectTeamCommand'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18"
+  },
+  {
+   "addr": "0x5360b0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "AddTeamCommand",
+   "name": "AddTeamCommand::Construct",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18\\part_00\\AddTeamCommand.cpp(9) : error C2039: 'CommandClass' : is not a member of 'AddTeamCommand'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18\\part_"
+  },
+  {
+   "addr": "0x5361a0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "CenterTeamCommand",
+   "name": "CenterTeamCommand::Construct",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18\\part_00\\CenterTeamCommand.cpp(9) : error C2039: 'CommandClass' : is not a member of 'CenterTeamCommand'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18"
+  },
+  {
+   "addr": "0x536290",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "TauntCommandClass",
+   "name": "TauntCommandClass::Construct",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18\\part_00\\TauntCommandClass.cpp(9) : error C2039: '__tail_0' : is not a member of 'TauntCommandClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p18\\par"
+  },
+  {
+   "addr": "0x537b40",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "ScreenCaptureCommandClass",
+   "name": "ScreenCaptureCommandClass::Constructor",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p19\\part_00\\ScreenCaptureCommandClass.cpp(8) : error C2039: '__tail_0' : is not a member of 'ScreenCaptureCommandClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch"
+  },
+  {
+   "addr": "0x537e70",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "CursorPositionCommandClass",
+   "name": "CursorPositionCommandClass::Constructor",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p19\\part_00\\CursorPositionCommandClass.cpp(8) : error C2039: '__tail_0' : is not a member of 'CursorPositionCommandClass'; D:\\RA2YR_ReSource\\.omo\\decomp_bat"
+  },
+  {
+   "addr": "0x537f10",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "DeleteCommandClass",
+   "name": "DeleteCommandClass::Constructor",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p19\\part_00\\DeleteCommandClass.cpp(8) : error C2039: '__tail_0' : is not a member of 'DeleteCommandClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p19\\p"
+  },
+  {
+   "addr": "0x53e3c0",
+   "code_new": "C2440",
+   "code_old": "C2228",
+   "family": "stale_cw3|CW3-3 global member view",
+   "layer": "A",
+   "unit": "TimerPool",
+   "name": "TimerPool::AllocSlot",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p19\\part_00\\TimerPool.cpp(8) : error C2440: 'initializing' : cannot convert from 'int' to 'unsigned int *'"
+  },
+  {
+   "addr": "0x540c50",
+   "code_new": "C2296",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_540C50",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00\\ObjectClass_540c50.cpp(7) : error C2296: '&' : illegal, left operand has type 'void *'"
+  },
+  {
+   "addr": "0x54a990",
+   "code_new": "C2296",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_54A990",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00\\ObjectClass_54a990.cpp(10) : error C2296: '&' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00"
+  },
+  {
+   "addr": "0x54a9e0",
+   "code_new": "C2296",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_54A9E0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00\\ObjectClass_54a9e0.cpp(10) : error C2296: '&' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00"
+  },
+  {
+   "addr": "0x54d9b0",
+   "code_new": "C2227",
+   "code_old": "C2227",
+   "family": "stale_cw5|CW5-6/7 member chain",
+   "layer": "A",
+   "unit": "JumpjetLocomotionClass",
+   "name": "JumpjetLocomotionClass::GetConditionedCoordinate",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p20\\part_00\\JumpjetLocomotionClass_54d9b0.cpp(13) : error C2227: left of '->location' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\"
+  },
+  {
+   "addr": "0x55a6c0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "LocomotionClass",
+   "name": "LocomotionClass::Init",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p21\\part_00\\LocomotionClass.cpp(13) : error C2039: 'ILocomotion' : is not a member of 'LocomotionClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p21\\par"
+  },
+  {
+   "addr": "0x55a6f0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "LocomotionClass",
+   "name": "LocomotionClass::Construct",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p21\\part_00\\LocomotionClass.cpp(13) : error C2039: 'ILocomotion' : is not a member of 'LocomotionClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p21\\par"
+  },
+  {
+   "addr": "0x55f970",
+   "code_new": "C2109",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_55",
+   "name": "unknown_libname_21",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p22\\part_00\\_addr_55.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p22\\part_00\\_addr_55.cpp(8)"
+  },
+  {
+   "addr": "0x56da10",
+   "code_new": "C2296",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::GetRegionMap",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p22\\part_00\\ObjectClass.cpp(30) : error C2296: '>>' : illegal, left operand has type 'short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p22\\part_00\\Obje"
+  },
+  {
+   "addr": "0x5892d0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "_DynamicVectorClass_USubzoneConnectionStruct",
+   "name": "_DynamicVectorClass_USubzoneConnectionStruct::GetSize",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p22\\part_00\\_DynamicVectorClass_USubzoneConnectionStruct.cpp(8) : error C2039: '__tail_10' : is not a member of '_DynamicVectorClass_USubzoneConnectionStruc"
+  },
+  {
+   "addr": "0x58bdc0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "TileData",
+   "name": "TileData::Constructor",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p23\\part_00\\TileData.cpp(14) : error C2039: '__tail_0' : is not a member of 'TileData'"
+  },
+  {
+   "addr": "0x5ac230",
+   "code_new": "C2143",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 idx consumption",
+   "layer": "A",
+   "unit": "MapSeed",
+   "name": "MapSeed::IsCellInBounds",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p23\\part_00\\MapSeed.cpp(12) : error C2143: syntax error : missing ';' before '&&'"
+  },
+  {
+   "addr": "0x5affe0",
+   "code_new": "C2109",
+   "code_old": "C2664",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "layer": "A",
+   "unit": "JumpjetLocomotionClass",
+   "name": "JumpjetLocomotionClass::GetRenderCoordinate_0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\JumpjetLocomotionClass.cpp(21) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\"
+  },
+  {
+   "addr": "0x5b2930",
+   "code_new": "C2296",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "Movement",
+   "name": "Movement::Check",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\Movement.cpp(8) : error C2296: '&' : illegal, left operand has type 'unsigned short *'"
+  },
+  {
+   "addr": "0x5b2950",
+   "code_new": "C2296",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "Math",
+   "name": "Math::Sub16",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\Math.cpp(8) : error C2296: '&' : illegal, left operand has type 'unsigned short *'"
+  },
+  {
+   "addr": "0x5b3950",
+   "code_new": "C2036",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_5B",
+   "name": "FromNameIndex",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\_addr_5B_5b3950.cpp(9) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\_addr_5B_5b3950.cpp(9) : "
+  },
+  {
+   "addr": "0x5c8470",
+   "code_new": "C2296",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 idx consumption",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_5C8470",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\ObjectClass_5c8470.cpp(8) : error C2296: '&' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\"
+  },
+  {
+   "addr": "0x5cae70",
+   "code_new": "C2440",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "A",
+   "unit": "MultiplayerSiegeDefenderTeam",
+   "name": "MultiplayerSiegeDefenderTeam::AddRef",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p25\\part_00\\MultiplayerSiegeDefenderTeam.cpp(13) : error C2440: '=' : cannot convert from 'const unsigned int' to 'unsigned int *'"
+  },
+  {
+   "addr": "0x5d39d0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "SessionClass",
+   "name": "SessionClass::saveSettings",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p26\\part_00\\SessionClass.cpp(10) : error C2039: 'unknown_08' : is not a member of 'SessionClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p26\\part_00\\Se"
+  },
+  {
+   "addr": "0x5d6790",
+   "code_new": "C2440",
+   "code_old": "C2227",
+   "family": "stale_cw5|CW5-6/7 member chain",
+   "layer": "A",
+   "unit": "MultiplayerGameMode",
+   "name": "MultiplayerGameMode::ClearFlag",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p26\\part_00\\MultiplayerGameMode.cpp(10) : error C2440: '=' : cannot convert from 'void *' to 'void ** '"
+  },
+  {
+   "addr": "0x5e2ba0",
+   "code_new": "C2109",
+   "code_old": "C2228",
+   "family": "stale_cw3|CW3-3 global member view",
+   "layer": "A",
+   "unit": "Network",
+   "name": "Network::processQueue",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p26\\part_00\\Network.cpp(19) : error C2109: subscript requires array or pointer type"
+  },
+  {
+   "addr": "0x5f96b0",
+   "code_new": "C2562",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_5F",
+   "name": "TheaterObjectTypeClassSpecificID",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p27\\part_00\\_addr_5F.cpp(26) : error C2562: 'TheaterObjectTypeClassSpecificID' : 'void' function returning a value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_"
+  },
+  {
+   "addr": "0x600250",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "_DynamicVectorClass_PAVSpotLightClass",
+   "name": "_DynamicVectorClass_PAVSpotLightClass::FindItemIndex",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p27\\part_00\\_DynamicVectorClass_PAVSpotLightClass.cpp(8) : error C2039: '__tail_10' : is not a member of '_DynamicVectorClass_PAVSpotLightClass'"
+  },
+  {
+   "addr": "0x645ba0",
+   "code_new": "C2036",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_64",
+   "name": "sub_645BA0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p28\\part_00\\_addr_64_645ba0.cpp(7) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p28\\part_00\\_addr_64_645ba0.cpp(7) : "
+  },
+  {
+   "addr": "0x661fb0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "JumpjetLocomotionClass",
+   "name": "JumpjetLocomotionClass::GetCoordinate_0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p30\\part_00\\JumpjetLocomotionClass.cpp(8) : error C2039: 'TurnRate' : is not a member of 'JumpjetLocomotionClass'"
+  },
+  {
+   "addr": "0x689790",
+   "code_new": "C2296",
+   "code_old": "C2100",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_689790",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\ObjectClass.cpp(21) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\Obje"
+  },
+  {
+   "addr": "0x689a00",
+   "code_new": "C2100",
+   "code_old": "C2100",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "layer": "A",
+   "unit": "ScenarioClass",
+   "name": "ScenarioClass::GetLocalStateByID",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\ScenarioClass.cpp(12) : error C2100: illegal indirection"
+  },
+  {
+   "addr": "0x689a30",
+   "code_new": "C2296",
+   "code_old": "C2100",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_689A30",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\ObjectClass.cpp(21) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\Obje"
+  },
+  {
+   "addr": "0x6915b0",
+   "code_new": "C2228",
+   "code_old": "C2227",
+   "family": "stale_cw5|CW5-6/7 member chain",
+   "layer": "A",
+   "unit": "TeamClass",
+   "name": "TeamClass::Check",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\TeamClass.cpp(10) : error C2228: left of '.TeamTypeClass_field_2C' must have class/struct/union type"
+  },
+  {
+   "addr": "0x69a310",
+   "code_new": "C2109",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "SessionClass",
+   "name": "SessionClass::GetPlayerColorScheme",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\SessionClass.cpp(15) : error C2109: subscript requires array or pointer type"
+  },
+  {
+   "addr": "0x69bc20",
+   "code_new": "C2440",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "A",
+   "unit": "IPXConnClass",
+   "name": "IPXConnClass::closeConnection",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\IPXConnClass.cpp(14) : error C2440: '=' : cannot convert from 'const unsigned int' to 'unsigned int *'"
+  },
+  {
+   "addr": "0x69f290",
+   "code_new": "C2227",
+   "code_old": "C2664",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "layer": "A",
+   "unit": "JumpjetLocomotionClass",
+   "name": "JumpjetLocomotionClass::StubReturnTrue_5",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p32\\part_00\\JumpjetLocomotionClass_69f290.cpp(12) : error C2227: left of '->location' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\"
+  },
+  {
+   "addr": "0x6d9ef0",
+   "code_new": "C2065",
+   "code_old": "C2065",
+   "family": "stale_cw5|CW5-10 undeclared g_/s_/p_",
+   "layer": "A",
+   "unit": "TacticalClass",
+   "name": "TacticalClass::AddToDrawQueue",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p37\\part_00\\TacticalClass.cpp(21) : error C2065: 'DataGlobal_B0CE' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p37\\part_00\\Tactical"
+  },
+  {
+   "addr": "0x6e0290",
+   "code_new": "C2036",
+   "code_old": "C2036",
+   "family": "stale_cw5|CW5-5 global object array",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_6E0290",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p38\\part_00\\ObjectClass_6e0290.cpp(7) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p38\\part_00\\ObjectClass_6e0290.cpp"
+  },
+  {
+   "addr": "0x6e37f0",
+   "code_new": "C2440",
+   "code_old": "C2065",
+   "family": "stale_cw3|CW3-2 vftable regex",
+   "layer": "A",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::sub_6E37F0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p38\\part_00\\ObjectClass_6e37f0.cpp(8) : error C2440: '=' : cannot convert from 'char *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p38\\part_00\\Ob"
+  },
+  {
+   "addr": "0x6ef9e0",
+   "code_new": "C2296",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "TechnoClass",
+   "name": "TechnoClass::IsDeployed",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p38\\part_00\\TechnoClass.cpp(8) : error C2296: '&' : illegal, left operand has type 'class TechnoClass *const '; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\"
+  },
+  {
+   "addr": "0x6f1f70",
+   "code_new": "C2440",
+   "code_old": "C2228",
+   "family": "stale_cw5|CW5-5/6/7/8 member view",
+   "layer": "A",
+   "unit": "TeamTypeClass",
+   "name": "TeamTypeClass::FindFirstInstance",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p38\\part_00\\TeamTypeClass_6f1f70.cpp(14) : error C2440: '=' : cannot convert from 'bool' to 'class ParticleSystemClass *'"
+  },
+  {
+   "addr": "0x7271d0",
+   "code_new": "C2036",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_72",
+   "name": "sub_7271D0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\_addr_72.cpp(8) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\_addr_72.cpp(8) : error C2440: '"
+  },
+  {
+   "addr": "0x72b2f0",
+   "code_new": "C2109",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "LoadingScreen",
+   "name": "LoadingScreen::GetBackgroundImage",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\LoadingScreen.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\LoadingScr"
+  },
+  {
+   "addr": "0x72b310",
+   "code_new": "C2109",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "LoadingScreen",
+   "name": "LoadingScreen::GetOverlayImage",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\LoadingScreen.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\LoadingScr"
+  },
+  {
+   "addr": "0x74ff50",
+   "code_new": "C2296",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "VeterancyStruct",
+   "name": "VeterancyStruct::Accumulate",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p42\\part_00\\VeterancyStruct.cpp(8) : error C2296: '>>' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p42\\part_00\\Ve"
+  },
+  {
+   "addr": "0x754740",
+   "code_new": "C2109",
+   "code_old": "C2664",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "layer": "A",
+   "unit": "_addr_75",
+   "name": "sub_754740",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p42\\part_00\\_addr_75_754740.cpp(17) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p42\\part_00\\_addr_7"
+  },
+  {
+   "addr": "0x75e690",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "WarheadTypeClass",
+   "name": "WarheadTypeClass::checkImmunity",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p43\\part_00\\WarheadTypeClass_75e690.cpp(7) : error C2039: 'Deform' : is not a member of 'WarheadTypeClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p43\\"
+  },
+  {
+   "addr": "0x75e6a0",
+   "code_new": "C2039",
+   "code_old": "C2039",
+   "family": "stale_cw5|CW5-8/9/12 shell supply",
+   "layer": "A",
+   "unit": "WarheadTypeClass",
+   "name": "WarheadTypeClass::calculateDamage",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p43\\part_00\\WarheadTypeClass_75e6a0.cpp(7) : error C2039: 'Deform' : is not a member of 'WarheadTypeClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p43\\"
+  },
+  {
+   "addr": "0x7b33d0",
+   "code_new": "C2296",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "UDPInterfaceClass",
+   "name": "UDPInterfaceClass::GetStatistics",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\UDPInterfaceClass.cpp(19) : error C2296: '&' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\"
+  },
+  {
+   "addr": "0x7bc890",
+   "code_new": "C2106",
+   "code_old": "C2100",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "layer": "A",
+   "unit": "_BlitTrans_G",
+   "name": "_BlitTrans_G::sub_7BC890",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\_BlitTrans_G.cpp(20) : error C2106: '=' : left operand must be l-value"
+  },
+  {
+   "addr": "0x7c8f5e",
+   "code_new": "C2143",
+   "code_old": "C2109",
+   "family": "stale_cw3|CW3-3 global-array upgrade",
+   "layer": "A",
+   "unit": "_addr_7C",
+   "name": "__cfltcvt_init_13",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\_addr_7C.hpp(31) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\inc"
+  },
+  {
+   "addr": "0x7c91a5",
+   "code_new": "C2143",
+   "code_old": "C2143",
+   "family": "stale_cw5|CW5-10 __usercall strip",
+   "layer": "A",
+   "unit": "CIpow_Helper",
+   "name": "CIpow_Helper_Helper",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\CIpow_Helper.hpp(17) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00"
+  },
+  {
+   "addr": "0x7c92d0",
+   "code_new": "C2143",
+   "code_old": "C2059",
+   "family": "stale_cw3|CW3-4 __int64 literal",
+   "layer": "A",
+   "unit": "_addr_7C",
+   "name": "__alldiv",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\_addr_7C.hpp(31) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\inc"
+  },
+  {
+   "addr": "0x7caef1",
+   "code_new": "C2143",
+   "code_old": "C2227",
+   "family": "stale_cw5|CW5-6/7 member chain",
+   "layer": "A",
+   "unit": "_addr_7C",
+   "name": "PMDtoOffset_YAHPAXABUPMD___Z",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\_addr_7C.hpp(31) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\inc"
+  },
+  {
+   "addr": "0x7cc186",
+   "code_new": "C2143",
+   "code_old": "C2227",
+   "family": "stale_cw5|CW5-6/7 member chain",
+   "layer": "A",
+   "unit": "_addr_7C",
+   "name": "__abnormal_termination",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\_addr_7C.hpp(31) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\inc"
+  },
+  {
+   "addr": "0x7cf0ae",
+   "code_new": "C2143",
+   "code_old": "C2143",
+   "family": "stale_cw5|CW5-10 __usercall strip",
+   "layer": "A",
+   "unit": "_addr_7C",
+   "name": "__ffexpm1",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\_addr_7C.hpp(31) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\inc"
+  },
+  {
+   "addr": "0x7cf0f1",
+   "code_new": "C2143",
+   "code_old": "C2143",
+   "family": "stale_cw5|CW5-10 __usercall strip",
+   "layer": "A",
+   "unit": "_addr_7C",
+   "name": "_isintTOS",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\_addr_7C.hpp(31) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\inc"
+  },
+  {
+   "addr": "0x7cf390",
+   "code_new": "C2143",
+   "code_old": "C2143",
+   "family": "stale_cw5|CW5-10 __usercall strip",
+   "layer": "A",
+   "unit": "_addr_7C",
+   "name": "__twoToTOS",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\_addr_7C.hpp(31) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\inc"
+  },
+  {
+   "addr": "0x7d75e0",
+   "code_new": "C2143",
+   "code_old": "C2296",
+   "family": "stale_cw3|CW3-4 pointer-local store",
+   "layer": "A",
+   "unit": "_addr_7D",
+   "name": "_memset",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\_addr_7D.hpp(16) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\_ad"
+  },
+  {
+   "addr": "0x7dbc68",
+   "code_new": "C2143",
+   "code_old": "C2143",
+   "family": "stale_cw5|CW5-10 __usercall strip",
+   "layer": "A",
+   "unit": "_addr_7D",
+   "name": "__clrfp",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\include\\_addr_7D.hpp(16) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p45\\part_00\\_ad"
+  },
+  {
+   "addr": "0x664440",
+   "code_new": "C2446",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "C",
+   "unit": "EventClass",
+   "name": "EventClass::validateEventType",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\EventClass.cpp(51) : error C2446: '!=' : no conversion from 'class ObjectClass *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part"
+  },
+  {
+   "addr": "0x49c5a0",
+   "code_new": "C2440",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "CampaignClass",
+   "name": "CampaignClass::SaveProgress",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\CampaignClass.cpp(47) : error C2440: '=' : cannot convert from 'void ** ' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\par"
+  },
+  {
+   "addr": "0x4f1ca0",
+   "code_new": "C2228",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::LoadFromINIGraphicMenu",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\ObjectClass.cpp(12) : error C2228: left of '.abstractFlags' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\p"
+  },
+  {
+   "addr": "0x533fd0",
+   "code_new": "C2660",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "_addr_53",
+   "name": "AllocateSurfaceScreenSurfaces",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\_addr_53.cpp(8) : error C2660: 'Log' : function does not take 0 parameters; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\_addr_53.cpp"
+  },
+  {
+   "addr": "0x5c1dc0",
+   "code_new": "C2440",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "MPCooperative",
+   "name": "MPCooperative::Seek",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\MPCooperative.cpp(24) : error C2440: '=' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\MPCoop"
+  },
+  {
+   "addr": "0x5e9b60",
+   "code_new": "C2446",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "_addr_5E",
+   "name": "SelectLobbyCountry",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\_addr_5E.cpp(11) : error C2446: '==' : no conversion from 'unsigned int' to 'class ObjectClass *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p"
+  },
+  {
+   "addr": "0x5e9c00",
+   "code_new": "C2446",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "_addr_5E",
+   "name": "AssignPlayerColor",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\_addr_5E.cpp(11) : error C2446: '==' : no conversion from 'unsigned int' to 'class ObjectClass *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p"
+  },
+  {
+   "addr": "0x5edde0",
+   "code_new": "C2446",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "_addr_5E",
+   "name": "EnablePlayerSlotControls",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\_addr_5E.cpp(11) : error C2446: '==' : no conversion from 'unsigned int' to 'class ObjectClass *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p"
+  },
+  {
+   "addr": "0x640710",
+   "code_new": "C2664",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "Skirmish",
+   "name": "Skirmish::RenderPreview",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\Skirmish.cpp(78) : error C2664: 'void (class DSurface *,int *,unsigned int,int)' : cannot convert parameter 1 from 'int' to 'class DSurface *'; "
+  },
+  {
+   "addr": "0x64a7b0",
+   "code_new": "C2228",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::RenderPlayerLatencyBars",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\ObjectClass.cpp(12) : error C2228: left of '.abstractFlags' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\p"
+  },
+  {
+   "addr": "0x64ad10",
+   "code_new": "C2100",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "Network_Process",
+   "name": "Network_Process_64AD10",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\Network_Process.cpp(31) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\Network_Process.cpp(34) : er"
+  },
+  {
+   "addr": "0x6523a0",
+   "code_new": "C2100",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "Network",
+   "name": "Network::SendUnreachable",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\Network.cpp(33) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\Network.cpp(37) : error C2100: illeg"
+  },
+  {
+   "addr": "0x658330",
+   "code_new": "C2562",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "TabClass",
+   "name": "TabClass::DrawPower",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\TabClass.cpp(111) : error C2562: 'DrawPower' : 'void' function returning a value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\TabCla"
+  },
+  {
+   "addr": "0x693b70",
+   "code_new": "C2660",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "_addr_69",
+   "name": "RequestNetworkFile",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\_addr_69_693b70.cpp(11) : error C2660: 'Log' : function does not take 0 parameters; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\_add"
+  },
+  {
+   "addr": "0x6c8ff0",
+   "code_new": "C2227",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "_addr_6C",
+   "name": "DlgProcScoreScreen",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\_addr_6C.cpp(56) : error C2227: left of '->BunkerWallsUpSound' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46"
+  },
+  {
+   "addr": "0x778710",
+   "code_new": "C2440",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "ObjectClass",
+   "name": "ObjectClass::LoadAccountInfoWOL",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\ObjectClass_778710.cpp(9) : error C2440: '=' : cannot convert from 'class ComPtr *' to 'unsigned char'"
+  },
+  {
+   "addr": "0x77e900",
+   "code_new": "C2440",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "_addr_77",
+   "name": "AssignWOLPlayerSide",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\_addr_77.cpp(11) : error C2440: '=' : cannot convert from 'char ** ' to 'const char ** '; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_0"
+  },
+  {
+   "addr": "0x793d20",
+   "code_new": "C2673",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "_addr_79",
+   "name": "NegotiateNetworkConnection",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\_addr_79.cpp(28) : error C2673: 'NegotiateNetworkConnection' : global functions do not have 'this' pointers; D:\\RA2YR_ReSource\\.omo\\decomp_batch"
+  },
+  {
+   "addr": "0x796de0",
+   "code_new": "C2109",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "Game",
+   "name": "Game::CreateAIPlayer",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\Game.cpp(35) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\Game.cpp(35) : err"
+  },
+  {
+   "addr": "0x7b7dd0",
+   "code_new": "C2664",
+   "code_old": "C2146",
+   "family": "stale_cw5|CW5-10 uintN_t typedef",
+   "layer": "D",
+   "unit": "_addr_7B",
+   "name": "FormatWideString",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\_addr_7B.cpp(25) : error C2664: 'wcscpy' : cannot convert parameter 1 from 'int *' to 'unsigned short *'"
+  },
+  {
+   "addr": "0x7cf125",
+   "code_new": "C2143",
+   "code_old": "C2143",
+   "family": "stale_cw5|CW5-10 __usercall strip",
+   "layer": "D",
+   "unit": "_addr_7C",
+   "name": "_usepowhlp",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\include\\_addr_7C.hpp(15) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\_ad"
+  }
+ ],
+ "still_cf_codes": {
+  "C2039": 19,
+  "C2296": 14,
+  "C2440": 13,
+  "C2109": 12,
+  "C2143": 12,
+  "C2228": 9,
+  "C2036": 8,
+  "C2227": 5,
+  "C2100": 4,
+  "C2446": 4,
+  "C2673": 2,
+  "C2562": 2,
+  "C2660": 2,
+  "C2664": 2,
+  "C2065": 1,
+  "C2106": 1
+ },
+ "dup_skip": [],
+ "matches": [
+  {
+   "addr": "0x491670",
+   "name": "_BlitTransRemapDest_E::sub_491670",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "code_old": "C2100",
+   "clean": false,
+   "rule_violations": 1,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x53f020",
+   "name": "ObjectClass::sub_53F020",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "code_old": "C2664",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x53f050",
+   "name": "ObjectClass::sub_53F050",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "code_old": "C2664",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x53f080",
+   "name": "ObjectClass::sub_53F080",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "code_old": "C2664",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x53f0b0",
+   "name": "ObjectClass::sub_53F0B0",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "code_old": "C2664",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x5a9920",
+   "name": "ObjectClass::sub_5A9920",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "code_old": "C2100",
+   "clean": false,
+   "rule_violations": 2,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x5a9960",
+   "name": "ObjectClass::sub_5A9960",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "code_old": "C2100",
+   "clean": false,
+   "rule_violations": 2,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x626070",
+   "name": "ObjectClass::sub_626070",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "code_old": "C2664",
+   "clean": false,
+   "rule_violations": 1,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x633ae0",
+   "name": "ObjectClass::sub_633AE0",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "code_old": "C2664",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x6cf410",
+   "name": "SwizzleManagerClass::Clear",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "code_old": "C2100",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x6cf490",
+   "name": "SwizzleManagerClass::Add",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "code_old": "C2100",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x72f510",
+   "name": "VtableStub::_72F510",
+   "family": "stale_cw3|CW3-4 __int64 literal",
+   "code_old": "C2059",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x747600",
+   "name": "sub_747600",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "code_old": "C2100",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x759760",
+   "name": "TechnoClass::sub_759760",
+   "family": "stale_cw5|CW5-1/2/3/4 call-site args",
+   "code_old": "C2664",
+   "clean": false,
+   "rule_violations": 1,
+   "this_as_id": false
+  },
+  {
+   "addr": "0x769490",
+   "name": "ObjectClass::sub_769490",
+   "family": "stale_cw3|CW3-1 param proto merge",
+   "code_old": "C2100",
+   "clean": true,
+   "rule_violations": 0,
+   "this_as_id": false
+  }
+ ],
+ "parts": 51,
+ "part_seconds": 0
+}
