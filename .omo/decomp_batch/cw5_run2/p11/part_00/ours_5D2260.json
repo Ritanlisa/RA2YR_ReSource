@@ -1,0 +1,51 @@
+{
+ "symbol": "?loadScenarioFiles@GameClass@@QAEHH@Z",
+ "sym_key": "GameClass::loadScenarioFiles",
+ "size": 179,
+ "link_base": 0,
+ "bytes_hex": "83ec1455568bf18b460485c00f8e990000008b0d000000008d44240c5051e800000000a1000000008d54240c5250e800000000a1a80000008b6c242085c074098b086a005550ff513c8b46045333db85c07e3d5733c0bf100000008b4e0c8b54241403c86a016a00518b018d4c241c03d0a1000000008954241c558b105150ff52088b4e04438bc783c7103bd97ccc5fc74604000000008b0da800000085c95b74098b116a005551ff52405e5d83c414c20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  }
+ ]
+}

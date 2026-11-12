@@ -1371,7 +1371,7 @@
   "this_as_id": false
  },
  "0x40a090": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -9647,7 +9647,7 @@
   "status": "NG"
  },
  "0x448160": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9671,7 +9671,7 @@
   "this_as_id": false
  },
  "0x44d7d0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9905,7 +9905,7 @@
   "this_as_id": false
  },
  "0x455820": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -11931,7 +11931,7 @@
   "this_as_id": false
  },
  "0x471c90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -18997,14 +18997,14 @@
   "this_as_id": false
  },
  "0x4ac960": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+4 push ebx",
   "name": "MapClass::ToggleZoom",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MapClass::ToggleZoom",
-  "rule_violations": 2,
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -22770,7 +22770,7 @@
   "this_as_id": false
  },
  "0x4ccb40": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 push ebx",
@@ -22782,7 +22782,7 @@
   "this_as_id": false
  },
  "0x4cd510": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -36425,7 +36425,7 @@
   "this_as_id": false
  },
  "0x54b8d0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -38411,7 +38411,7 @@
   "this_as_id": false
  },
  "0x559d60": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -46623,7 +46623,7 @@
   "this_as_id": false
  },
  "0x5ce330": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -47319,15 +47319,15 @@
   "this_as_id": false
  },
  "0x5d2260": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x24",
   "name": "GameClass::loadScenarioFiles",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "GameClass::loadScenarioFiles",
-  "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d2410": {
@@ -50394,7 +50394,7 @@
   "status": "NG"
  },
  "0x5f60a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -51875,7 +51875,7 @@
   "this_as_id": false
  },
  "0x610bf0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": "+0 mov eax, dword ptr [0xac1dcc]",
@@ -54216,7 +54216,7 @@
   "this_as_id": false
  },
  "0x6386e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "ClearFactoryClassProduction",
@@ -60436,7 +60436,7 @@
   "this_as_id": false
  },
  "0x690360": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov al, byte ptr [0x8a00a0]",
@@ -62961,7 +62961,7 @@
   "this_as_id": false
  },
  "0x6acd60": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -64648,7 +64648,7 @@
   "this_as_id": false
  },
  "0x6bec60": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 mov eax, dword ptr [0xb73550]",
@@ -70916,7 +70916,7 @@
   "status": "NG"
  },
  "0x6f19b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "SmallFunc_6F19B0",
@@ -77907,7 +77907,7 @@
   "this_as_id": false
  },
  "0x7438f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

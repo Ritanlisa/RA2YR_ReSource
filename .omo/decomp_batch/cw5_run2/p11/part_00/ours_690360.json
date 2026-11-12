@@ -1,0 +1,45 @@
+{
+ "symbol": "?CleanupTransitionObjects@Screen@@QAEHXZ",
+ "sym_key": "Screen::CleanupTransitionObjects",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c0578bf1c6050000000000742da100000000c70500000000000000006a00508b08ff5118a1000000008b0d000000006a016a008b105150ff52048b462c33ff85c07e528b56208b04ba8b560852508b08ff510c3c0175368b46208b04b885c074078b086a0150ff118b4e2c3bf97d1e498bc73bf9894e2c7d148b5620408d0c828b14828951fc8b4e2c3bc17cec8b462c473bf87cae5f5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenFlag@@3IA",
+   "sym_key": "g_LoadScreenFlag"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B05584@@3EA",
+   "sym_key": "DataGlobal_B05584"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenFlag@@3IA",
+   "sym_key": "g_LoadScreenFlag"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  }
+ ]
+}

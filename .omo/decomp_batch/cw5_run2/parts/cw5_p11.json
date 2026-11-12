@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x54b8d0",
+  "family": "B2",
+  "shape": "B2 member used with '->' but declared scalar (vfptr)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x610bf0",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x5ce330",
+  "family": "B2",
+  "shape": "B2 member used with '->' but declared scalar (vfptr)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x5f60a0",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x690360",
+  "family": "B2",
+  "shape": "B2 member used with '->' but declared scalar (vfptr)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x44d7d0",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x4ac960",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x471c90",
+  "family": "B2",
+  "shape": "B2 member used with '->' but declared scalar (vfptr)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x559d60",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x5d2260",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x4cd510",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x6bec60",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x6f19b0",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x448160",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x6acd60",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x4ccb40",
+  "family": "B2",
+  "shape": "B2 member used with '->' but declared scalar (vfptr)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x6386e0",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x7438f0",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x455820",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ },
+ {
+  "addr": "0x40a090",
+  "family": "B3",
+  "shape": "B3 member used with '->' but declared scalar (named)",
+  "errfam": "C2227"
+ }
+]

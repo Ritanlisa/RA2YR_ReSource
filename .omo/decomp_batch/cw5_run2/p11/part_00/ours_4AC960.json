@@ -1,0 +1,8 @@
+{
+ "symbol": "?ToggleZoom@MapClass@@QAEHH@Z",
+ "sym_key": "MapClass::ToggleZoom",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf15733ff39bee411000074368b86a81100003bc7752c8b0657575689bed811000089bedc11000089bee011000089bed4110000ff50488b065689bee4110000ff50505f5ec20400",
+ "relocs": []
+}
