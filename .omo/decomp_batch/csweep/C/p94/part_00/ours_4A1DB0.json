@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddString@Checksum@@QAEHPAE@Z",
+ "sym_key": "Checksum::AddString",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "8b5424045685d28bf1741b578bfa83c9ff33c0f2aef7d14951528bcee8000000005f5ec204008b4424085ec20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  }
+ ]
+}

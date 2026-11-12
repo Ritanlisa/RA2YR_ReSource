@@ -1,0 +1,11 @@
+{
+ "addr": "0x7013E0",
+ "name": "BuildingClass::CheckOccupantState",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7013E0",
+ "bytes_hex": "568bf1e8c822ebff84c074158b8eb80200008b06518bceff90c8030000b0015ec332c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

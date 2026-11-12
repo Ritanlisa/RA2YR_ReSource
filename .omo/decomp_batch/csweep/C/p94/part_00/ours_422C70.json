@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckLayerFlags@AnimClass@@QAEDHHH@Z",
+ "sym_key": "AnimClass::CheckLayerFlags",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b818401000085c0740532c0c20c00e800000000c20c00",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?CalcDrawRect@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::CalcDrawRect"
+  }
+ ]
+}

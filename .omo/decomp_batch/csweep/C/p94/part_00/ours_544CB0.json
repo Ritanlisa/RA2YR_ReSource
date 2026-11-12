@@ -1,0 +1,15 @@
+{
+ "symbol": "?LoadTileFileData@IsometricTileTypeClass@@QAEHXZ",
+ "sym_key": "IsometricTileTypeClass::LoadTileFileData",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86a400000085c075178a8ef402000084c9740d8bcee8000000008b86a40000005ec3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?LoadFileData@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::LoadFileData"
+  }
+ ]
+}

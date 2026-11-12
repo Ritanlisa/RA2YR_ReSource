@@ -1,0 +1,21 @@
+{
+ "symbol": "?System_Init_632000@TechnoClass@@QAEHPAE@Z",
+ "sym_key": "TechnoClass::System_Init_632000",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b542404568bf16a40e800000000ba400000008bcee800000000488986000200005ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?DecodeLengthLCW@@YIDHPAXH@Z",
+   "sym_key": "DecodeLengthLCW"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?FindBitArrayHighestBit@@YIHHH@Z",
+   "sym_key": "FindBitArrayHighestBit"
+  }
+ ]
+}

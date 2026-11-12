@@ -1,0 +1,11 @@
+{
+ "addr": "0x544CB0",
+ "name": "IsometricTileTypeClass::LoadTileFileData",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x544CB0",
+ "bytes_hex": "568bf18b86a400000085c075178a8ef402000084c9740d8bcee8522300008b86a40000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?__whiteout_0@@YAFPAIPAH@Z",
+ "sym_key": "Unnamed::__whiteout_0",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "538b5c240c56578b7c24108b0f5341890fe8000000008bf025ffff000050e80000000083c40885c075e1668bc65f5e5bc3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?fgetwc@@YAHPAX@Z",
+   "sym_key": "fgetwc"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?iswspace@@YAHHZZ",
+   "sym_key": "iswspace"
+  }
+ ]
+}

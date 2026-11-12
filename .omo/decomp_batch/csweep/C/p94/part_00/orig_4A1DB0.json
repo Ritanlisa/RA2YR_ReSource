@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A1DB0",
+ "name": "Checksum::AddString",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A1DB0",
+ "bytes_hex": "8b5424045685d28bf17417578bfa83c9ff33c0f2aef7d14951528bcee80f0000005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

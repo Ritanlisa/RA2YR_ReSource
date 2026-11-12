@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p94\part_00
+=== convert (20 addrs) ===
+[conv] 0x5bd9f0 sub_5BD9F0 -> _addr_5B
+[conv] 0x5daee0 sub_5DAEE0 -> _addr_5D
+[conv] 0x632000 TechnoClass::System_Init_632000 -> TechnoClass
+[conv] 0x683280 sub_683280 -> _addr_68
+[conv] 0x692240 sub_692240 -> _addr_69
+[conv] 0x6f2af0 sub_6F2AF0 -> _addr_6F
+[conv] 0x752b40 Audio_Cleanup_752B40 -> Audio_Cleanup
+[conv] 0x7cef29 __shift -> _addr_7C
+[conv] 0x7d45ba __whiteout_0 -> _addr_7D
+[conv] 0x41adc0 AircraftClass::ProcessDockCheck -> AircraftClass
+[conv] 0x4db7e0 FootClass::Destru_vt30 -> FootClass
+[conv] 0x7013e0 TechnoClass::CheckOccupantState -> TechnoClass
+[conv] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> DriveLocomotionClass
+[conv] 0x4f4450 GScreenClass::SelectObject -> GScreenClass
+[conv] 0x69fbe0 ShipLocomotionClass::DispatchVirtualCall_6 -> ShipLocomotionClass
+[conv] 0x422c70 AnimClass::CheckLayerFlags -> AnimClass
+[conv] 0x4a1db0 Checksum::AddString -> Checksum
+[conv] 0x4b6b80 ObjectClass::sub_4B6B80 -> ObjectClass
+[conv] 0x544cb0 IsometricTileTypeClass::LoadTileFileData -> IsometricTileTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=0
+[era] _addr_5D                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_68                 rc=0
+[era] _addr_69                 rc=0
+[era] _addr_6F                 rc=0
+[era] Audio_Cleanup            rc=0
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=0
+[era] AircraftClass            rc=2
+[era] FootClass                rc=2
+[era] DriveLocomotionClass     rc=2
+[era] GScreenClass             rc=2
+[era] ShipLocomotionClass      rc=2
+[era] AnimClass                rc=0
+[era] Checksum                 rc=0
+[era] ObjectClass              rc=0
+[era] IsometricTileTypeClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x5bd9f0   MISMATCH         sub_5BD9F0
+[diff] 0x5daee0   MISMATCH         sub_5DAEE0
+[diff] 0x632000   MATCH            TechnoClass::System_Init_632000
+[diff] 0x7013e0   MISMATCH         TechnoClass::CheckOccupantState
+[diff] 0x683280   MISMATCH         sub_683280
+[diff] 0x692240   MISMATCH         sub_692240
+[diff] 0x6f2af0   MISMATCH         sub_6F2AF0
+[diff] 0x752b40   MISMATCH         Audio_Cleanup_752B40
+[diff] 0x7d45ba   MISMATCH         __whiteout_0
+[diff] 0x422c70   MISMATCH         AnimClass::CheckLayerFlags
+[diff] 0x4a1db0   MISMATCH         Checksum::AddString
+[diff] 0x4b6b80   MISMATCH         ObjectClass::sub_4B6B80
+[diff] 0x544cb0   MATCH            IsometricTileTypeClass::LoadTileFileData
+[ledger] 0x5bd9f0 sub_5BD9F0 -> NG (attempt 1)
+[ledger] 0x5daee0 sub_5DAEE0 -> NG (attempt 1)
+[ledger] 0x632000 TechnoClass::System_Init_632000 -> OK (attempt 1)
+[ledger] 0x683280 sub_683280 -> NG (attempt 1)
+[ledger] 0x692240 sub_692240 -> NG (attempt 1)
+[ledger] 0x6f2af0 sub_6F2AF0 -> NG (attempt 1)
+[ledger] 0x752b40 Audio_Cleanup_752B40 -> NG (attempt 1)
+[ledger] 0x7cef29 __shift -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d45ba __whiteout_0 -> NG (attempt 1)
+[ledger] 0x41adc0 AircraftClass::ProcessDockCheck -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4db7e0 FootClass::Destru_vt30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52ffd0 0x52ffd0 -> PENDING (attempt 1)
+[ledger] 0x7013e0 TechnoClass::CheckOccupantState -> NG (attempt 1)
+[ledger] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f4450 GScreenClass::SelectObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69fbe0 ShipLocomotionClass::DispatchVirtualCall_6 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x422c70 AnimClass::CheckLayerFlags -> NG (attempt 1)
+[ledger] 0x4a1db0 Checksum::AddString -> NG (attempt 1)
+[ledger] 0x4b6b80 ObjectClass::sub_4B6B80 -> NG (attempt 1)
+[ledger] 0x544cb0 IsometricTileTypeClass::LoadTileFileData -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "MATCH": 2,
+  "COMPILE_FAIL": 6,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "extern_reloc": 1,
+  "regalloc": 3,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 15.4,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p94\batch_report.json

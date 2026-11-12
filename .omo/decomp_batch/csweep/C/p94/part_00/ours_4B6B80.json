@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_4B6B80@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::sub_4B6B80",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "51568bf133c0578a46108b4e0c8bf880e10085ff894e0c7e1a6a0056e80000000083c4084f75f2c6461000c64628005f5e59c38a44240bc6461000c64628005f5e59c3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?sub_4B6AB0@@YADPAXH@Z",
+   "sym_key": "sub_4B6AB0"
+  }
+ ]
+}

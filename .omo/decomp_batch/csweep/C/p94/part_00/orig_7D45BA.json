@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D45BA",
+ "name": "__whiteout_0",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D45BA",
+ "bytes_hex": "568b74240857ff742410ff06e8cbffffff8bf857e8d572ffff5985c05975e7668bc75f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

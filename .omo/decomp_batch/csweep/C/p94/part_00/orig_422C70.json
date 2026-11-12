@@ -1,0 +1,11 @@
+{
+ "addr": "0x422C70",
+ "name": "AnimClass::CheckLayerFlags",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x422C70",
+ "bytes_hex": "8b818401000085c0740532c0c20c008b44240c8b542408508b4424085250e87d1e1d00c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
