@@ -1,0 +1,33 @@
+{
+ "symbol": "?DispatchVirtualCall_9@WalkLocomotionClass@@QAGHHHH@Z",
+ "sym_key": "WalkLocomotionClass::DispatchVirtualCall_9",
+ "size": 132,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b4424148b4c24188b54241c53568b742418894424088d4424088a5e3057894c2410508d4efc89542418e800000000a1000000008b4e243bc8753d8b15000000008b4e283bca75308b0d000000008b7e2c3bf97523394618751e39561c7519394e20751484dbc6463000740c8b7608568b0eff914c0500005f5e5b83c40cc21000",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?DrawHelper@Voxel@@QAEDPAX@Z",
+   "sym_key": "Voxel::DrawHelper"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_AsyncMovieState@@3IA",
+   "sym_key": "g_AsyncMovieState"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState1@@3IA",
+   "sym_key": "g_MovieFrameState1"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState2@@3IA",
+   "sym_key": "g_MovieFrameState2"
+  }
+ ]
+}

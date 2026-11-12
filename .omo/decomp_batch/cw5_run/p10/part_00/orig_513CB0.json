@@ -1,0 +1,11 @@
+{
+ "addr": "0x513CB0",
+ "name": "SaveGame::WriteObject",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x513CB0",
+ "bytes_hex": "8b44240883ec1853568b742424575056e84b6a04008b4e088bd88b11ff92840000008b801c0700008d4c240cd1e050e8fc54fbff8d7e2cb9060000008d74240c8bc3f3a55f5e5b83c418c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

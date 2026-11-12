@@ -1,0 +1,333 @@
+{
+ "symbol": "?DlgProc@WOLLogin@@QAGHPAX0H0@Z",
+ "sym_key": "WOLLogin::DlgProc",
+ "size": 1091,
+ "link_base": 0,
+ "bytes_hex": "538b5c2410558b6c241c568b74241481fb1001000057751085ed740c8b4504506a0856e8000000008b4c242055518bd38bcee80000000085c00f85fd0300006a0856e80000000081fb110100008bf80f865001000081fb970400000f85d9030000682c07000056e8000000006a006a0168d104000050e800000000682c07000056e80000000068000000006a0068b404000050e8000000006a006a0868c5000000682c07000056e800000000682c07000056e80000000050e8000000008a471033d284c00f95c252682906000056e8000000008a4f1133c084c90f95c050686c06000056e800000000833d00000000047509833d0000000003741c833d00000000017313686c06000056e8000000006a0050e800000000681e07000056e8000000008be8a1000000008b4c24203d000400001bd24233d181e2ff00000033ca3d000400001bc0894c2420f7d85055e8000000008a471284c0740f8a44242084c07507b801000000eb0233c06a005068f100000055e800000000681f07000056e8000000008a5f1333c984db0f95c16a005168f100000050e8000000005f5e5d33c05bc21400745183fb0f751f8bcee8000000008bcee8000000006a0056e8000000005f5e5d33c05bc2140083fb14750c5f5e5db8010000005bc2140083fb2b0f85550200008bcde8000000005f5e5db8010000005bc214008b442420663ddf060f86e20000000fbfc00520f9ffff83f84c0f872302000033d28a9000000000ff24950000000068df06000056e80000000085c00f84010200006a0068df06000056e8000000005f5e5d33c05bc214006a006a0068f000000055e80000000083f8010f94c08847125f5e5d33c05bc214006a006a0068f000000055e80000000083f8010f94c1884f135f5e5d33c05bc2140085ed0f84a10100008d54242052e80000000083c4048d5424208bcde8000000008b0d00000000e800000000f6d81bc06a0140568bf8e8000000005750e8000000008d44242050e80000000083c40433c05f5e5d5bc214000f841a010000663d29067655663d6c060f853c0100006a006a0068f0000000686c06000056e80000000083f801740dc64711005f5e5d33c05bc214006a006a0068f1000000682906000056e800000000c6471101c64710005f5e5d33c05bc21400747b663d010075598d4c2420c705000000000700000051e80000000083c404682c07000056e8000000008d5424208bc8e8000000008d5424208d4f0c52e8000000008b076a015657ff50048d4c242051e80000000083c40433c05f5e5d5bc21400663d02000f85860000008b176a025657ff52045f5e5d33c05bc214006a006a0068f0000000682906000056e80000000083f8010f8559ffffff6a006a0068f1000000686c06000056e800000000c6471100c64710015f5e5d33c05bc2140068e006000056e80000000085c074166a0068e006000056e8000000005f5e5d33c05bc214006a0168df06000056e80000000033c05f5e5d5bc21400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJPAXHH@Z",
+   "sym_key": "SetWindowLongA"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXH@Z",
+   "sym_key": "SetFocus"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?CheckDlgButton@@YGHPAXHH@Z",
+   "sym_key": "CheckDlgButton"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?CheckDlgButton@@YGHPAXHH@Z",
+   "sym_key": "CheckDlgButton"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77DE4@@3IA",
+   "sym_key": "DataGlobal_B77DE4"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 293,
+   "type": "DIR32",
+   "sym": "?g_CommandLineFlags@@3IA",
+   "sym_key": "g_CommandLineFlags"
+  },
+  {
+   "off": 335,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 373,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 408,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 431,
+   "type": "REL32",
+   "sym": "?DrawBackground@Dialog@@QAEXXZ",
+   "sym_key": "Dialog::DrawBackground"
+  },
+  {
+   "off": 438,
+   "type": "REL32",
+   "sym": "?StopBink@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::StopBink"
+  },
+  {
+   "off": 446,
+   "type": "REL32",
+   "sym": "?ValidateRect@@YGHPAXH@Z",
+   "sym_key": "ValidateRect"
+  },
+  {
+   "off": 488,
+   "type": "REL32",
+   "sym": "?Resize@Dialog@@QAEJXZ",
+   "sym_key": "Dialog::Resize"
+  },
+  {
+   "off": 539,
+   "type": "DIR32",
+   "sym": "$L2203",
+   "sym_key": "$L2203"
+  },
+  {
+   "off": 546,
+   "type": "DIR32",
+   "sym": "$L2204",
+   "sym_key": "$L2204"
+  },
+  {
+   "off": 557,
+   "type": "REL32",
+   "sym": "?IsDlgButtonChecked@@YGIPAXH@Z",
+   "sym_key": "IsDlgButtonChecked"
+  },
+  {
+   "off": 578,
+   "type": "REL32",
+   "sym": "?CheckDlgButton@@YGHPAXHH@Z",
+   "sym_key": "CheckDlgButton"
+  },
+  {
+   "off": 602,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 635,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 671,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 685,
+   "type": "REL32",
+   "sym": "?GetDialogText@@YIJHPAX@Z",
+   "sym_key": "GetDialogText"
+  },
+  {
+   "off": 691,
+   "type": "DIR32",
+   "sym": "?asc_84BA18@@3PAGA",
+   "sym_key": "asc_84BA18"
+  },
+  {
+   "off": 696,
+   "type": "REL32",
+   "sym": "?ValidateStringContains@@YI_NH@Z",
+   "sym_key": "ValidateStringContains"
+  },
+  {
+   "off": 711,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 718,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 728,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 782,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 820,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 855,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77DC4@@3IA",
+   "sym_key": "DataGlobal_B77DC4"
+  },
+  {
+   "off": 865,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 879,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 890,
+   "type": "REL32",
+   "sym": "?GetDialogText@@YIJHPAX@Z",
+   "sym_key": "GetDialogText"
+  },
+  {
+   "off": 903,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 922,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 982,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 1011,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 1039,
+   "type": "REL32",
+   "sym": "?IsDlgButtonChecked@@YGIPAXH@Z",
+   "sym_key": "IsDlgButtonChecked"
+  },
+  {
+   "off": 1056,
+   "type": "REL32",
+   "sym": "?CheckDlgButton@@YGHPAXHH@Z",
+   "sym_key": "CheckDlgButton"
+  },
+  {
+   "off": 1078,
+   "type": "REL32",
+   "sym": "?CheckDlgButton@@YGHPAXHH@Z",
+   "sym_key": "CheckDlgButton"
+  }
+ ]
+}

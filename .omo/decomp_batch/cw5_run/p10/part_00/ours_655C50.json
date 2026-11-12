@@ -1,0 +1,183 @@
+{
+ "symbol": "?RevealArea@FogOfWar@@QAEHPAH@Z",
+ "sym_key": "FogOfWar::RevealArea",
+ "size": 1157,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec2485c05356578bf1750b5f5e33c05b83c424c204008b861c1200008d54242052508b08ff51788b7c24348b108b0f3bca894c24340f823b0400008b580803da3bcb0f832e0400008b4f048b50043bca0f8c200400008b400c03c23bc80f8d13040000db44243455dab688140000daa690140000dd5c24148b5c24188b6c24145355e8000000000fbfc0c1e008058000000053558944242ce8000000000fbfc883c4108d54241cc1e10881c18000000052894c2424e800000000a10000000085c074138d44241cc64424380150e80000000084c07505c644243800a10000000085c0740a8d4c241c51e8000000008a4704b205f6ea8a0fc7442410000000002ac881e1ff0000008bc18d14408b86581200008b088b44d11085c08d0cd1894424140f8eba0000008b590483c3048b138b0f8b6bfc3bd10f85880000008b4b048b57043bca757e8a44243884c0740f8b8d1c020000e80000000084c074638b550055ff92840000008a882f02000084c974108b0d0000000055e80000000084c0743f8b450055ff90840000008a883202000084c974448b4d0055ff91840000008a889b0c000084c975308b851c02000085c0740d8b50348a82a601000084c074198b4424148b4c241083c310413bc8894c24107d0de954ffffff85ed0f85c80000008b862012000057508b08ff51288be88b861c120000894424388bdd8b10a100000000668bc866d3eb8b0d00000000d2e381e3ff000000d1ebd3eb8bc88bc5d3e3668b0d0000000066d3e88b0d00000000d2e025ff000000d1e8d3e88b0d00000000d3e00bd88bc58b2d00000000668bcd66d3e88b0d00000000d2e025ff000000d1e8d3e88bcdd3e08b4c24380bd8535751ff52248b961c1200006a00578b02ff50248b86201200008b8e1c12000057508b108b19ff5228508b861c1200005750ff5324e9210100008b9d1c0200008b4d0055895c2414895c243cff91c400000084c074168b55006a0055ff92d000000089442438894424108bd885db745c8b4424388a0d0000000033db8bd08a98fa560000d3eb8b0d00000000d3e333c98a8af95600008b5424108bc18a0d00000000d3e88b0d00000000d3e033c98a8afb5600000bd88bc18a0d00000000d3e88b0d00000000d3e00bd8eb1833c9ba010000008a0d00000000e8000000008b98300300008b85740100008b8d7c01000083f8ff894c243874188b0d000000008bd12bd03b5424387d452bc18b4c243803c885c97e398d41ff8b0d0000000033d2f7b18800000083e0013c0175218b951c020000a1000000003bd075128b861c120000f7d38b08535750ff5124eb0d8b961c12000053578b02ff50248b869c1400008b178b8ea01400008b9e1412000003c28b570403d185db7e698bae1812000085ed7e5f8b8e0c1200008bbe101200003bc8895c2438896c24107e0a2bc803d98bc8895c24383bfa7e0a2bea03ef8bfa896c241003d98d68013bdd7d092bc183c002894424388b5c24108d6a018d043b3bc57d072bd783c2028bda8b4424388bd3eb0b8bc8b8010000008bfa8bd0898e0c12000089be101200008986141200008996181200005d5f5e5b83c424c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?FogOfWar_Get@@YG_NPAX@Z",
+   "sym_key": "FogOfWar_Get"
+  },
+  {
+   "off": 347,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 377,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 383,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 517,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 529,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 554,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 563,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 580,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 592,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 604,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 747,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 765,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 787,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 795,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 815,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 823,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 842,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_LightGrey@@3EA",
+   "sym_key": "g_INI_Key_LightGrey"
+  },
+  {
+   "off": 847,
+   "type": "REL32",
+   "sym": "?FindBuildingAnimByName@@YIHPAXH@Z",
+   "sym_key": "FindBuildingAnimByName"
+  },
+  {
+   "off": 880,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 911,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 937,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdateFacingDirection_0@HoverLocomotionClass@@QAGDH@Z",
+ "sym_key": "HoverLocomotionClass::UpdateFacingDirection_0",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b4c24048d442408508b51088b8a88030000e800000000c20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Update@FacingClass@@QAEDPAX@Z",
+   "sym_key": "FacingClass::Update"
+  }
+ ]
+}

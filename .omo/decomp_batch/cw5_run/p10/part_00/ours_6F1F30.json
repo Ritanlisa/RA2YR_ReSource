@@ -1,0 +1,33 @@
+{
+ "symbol": "?FlashAllInstances@TeamTypeClass@@QAEHH@Z",
+ "sym_key": "TeamTypeClass::FlashAllInstances",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "a1800200005633f65785c08bf97e26538b5c241033c98a0d2c0300008b0cb1397924750b53e800000000a180020000463bf07ce05b5f5ec20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?Check@TeamTypeClass@@QAEHH@Z",
+   "sym_key": "TeamTypeClass::Check"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

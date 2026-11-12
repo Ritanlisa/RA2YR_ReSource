@@ -6281,7 +6281,7 @@
   "this_as_id": false
  },
  "0x420f40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "UpdateSpotlightsFoo",
@@ -13155,7 +13155,7 @@
   "this_as_id": false
  },
  "0x4791f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19477,7 +19477,7 @@
   "this_as_id": false
  },
  "0x4b4b00": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29431,14 +29431,14 @@
   "this_as_id": false
  },
  "0x5054b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::GenerateAIBuildListEnsureSanity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::GenerateAIBuildListEnsureSanity",
-  "rule_violations": 17,
+  "rule_violations": 18,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -29600,14 +29600,14 @@
   "status": "NG"
  },
  "0x50a5c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::AIBuildBase",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::AIBuildBase",
-  "rule_violations": 50,
+  "rule_violations": 53,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -31518,15 +31518,15 @@
   "this_as_id": false
  },
  "0x513cb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 call 0x55a710",
   "name": "HoverLocomotionClass::WriteObject",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "SaveGame::WriteObject",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x513d20": {
@@ -31590,15 +31590,15 @@
   "this_as_id": false
  },
  "0x516370": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
   "name": "HoverLocomotionClass::UpdateFacingDirection_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "JumpjetLocomotionClass::UpdateFacingDirection_0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x517070": {
@@ -37418,15 +37418,15 @@
   "this_as_id": false
  },
  "0x554400": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:vsa_slot",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, ecx",
   "name": "LoadProgressMgr::sub_554400",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_554400",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x554460": {
@@ -43690,7 +43690,7 @@
   "this_as_id": false
  },
  "0x5bb6e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49776,7 +49776,7 @@
   "this_as_id": false
  },
  "0x5f1fa0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52106,14 +52106,14 @@
   "this_as_id": false
  },
  "0x624be0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Dialog::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Dialog::GrowBuffer",
-  "rule_violations": 4,
+  "rule_violations": 10,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -56491,15 +56491,15 @@
   "this_as_id": false
  },
  "0x655c50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 sub esp, 0x30",
   "name": "FogOfWar::RevealArea",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "FogOfWar::RevealArea",
   "rule_violations": 23,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x656580": {
@@ -60085,7 +60085,7 @@
   "this_as_id": false
  },
  "0x685dc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70939,15 +70939,15 @@
   "this_as_id": false
  },
  "0x6f1f30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0x8b40f8]",
   "name": "TeamTypeClass::FlashAllInstances",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TeamTypeClass::FlashAllInstances",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6f1f70": {
@@ -77845,7 +77845,7 @@
   "this_as_id": false
  },
  "0x73e5e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -78484,14 +78484,14 @@
   "this_as_id": false
  },
  "0x749b20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "VoxelAnimClass::DrawVoxelFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VoxelAnimClass::DrawVoxelFrame",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -80186,7 +80186,7 @@
   "this_as_id": false
  },
  "0x755db0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80806,15 +80806,15 @@
   "this_as_id": false
  },
  "0x75ae30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+60 jne 0x75aeaa",
   "name": "WalkLocomotionClass::DispatchVirtualCall_9",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "JumpjetLocomotionClass::DispatchVirtualCall_9",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x75c640": {
@@ -81323,7 +81323,7 @@
   "this_as_id": false
  },
  "0x762af0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85679,15 +85679,15 @@
   "this_as_id": false
  },
  "0x78db70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+1 mov ebx, dword ptr [esp + 0xc]",
   "name": "WOLLogin::DlgProc",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WOLLogin::DlgProc",
   "rule_violations": 11,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x78ebc0": {
