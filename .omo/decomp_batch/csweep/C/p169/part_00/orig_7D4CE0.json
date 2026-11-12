@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D4CE0",
+ "name": "___tzset",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D4CE0",
+ "bytes_hex": "833da883b7000075246a0be8058dffff833da883b7000059750be825000000ff05a883b7006a0be84a8dffff59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?__atoldbl@@YAHPANPAD@Z",
+ "sym_key": "Unnamed::__atoldbl",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b44240883ec0c8d4c24148d5424006a006a006a006a01505152e8000000008b44242c8d4c241c5051e80000000083c430c3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?__strgtold12@@YAHPAX00HHHHZZ",
+   "sym_key": "__strgtold12"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?_ld12told@@YAHPAXHZZ",
+   "sym_key": "_ld12told"
+  }
+ ]
+}

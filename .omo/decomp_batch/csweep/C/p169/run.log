@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p169\part_00
+=== convert (20 addrs) ===
+[conv] 0x536230 CenterTeamCommand::Read -> CenterTeamCommand
+[conv] 0x5362d0 TauntCommandClass::Release -> TauntCommandClass
+[conv] 0x536320 TauntCommandClass::Read -> TauntCommandClass
+[conv] 0x5be940 WinMainSetup_Setup_5BE940 -> WinMainSetup_Setup
+[conv] 0x5ced10 MSBitPrintAnim::QueryInterface -> MSBitPrintAnim
+[conv] 0x5ced40 MSPrintAnim::QueryInterface -> MSPrintAnim
+[conv] 0x7cb1cb __fflush_lk -> _addr_7C
+[conv] 0x7d7cee __atoldbl -> _addr_7D
+[conv] 0x5c6120 PtrVector::Destroy -> PtrVector
+[conv] 0x5ae500 ObjectClass::sub_5AE500 -> ObjectClass
+[conv] 0x7d4ce0 ___tzset -> _addr_7D
+[conv] 0x7dde13 __wcsdup -> _addr_7D
+[conv] 0x5d2e00 CampaignClass::Constructor_1 -> CampaignClass
+[conv] 0x634850 ObjectClass::sub_634850 -> ObjectClass
+[conv] 0x637dd0 Object_Helper_637DD0 -> Object_Helper
+[conv] 0x6c9650 Float4::Sum -> Float4
+[conv] 0x70f820 TechnoClass::GetPriorityTarget -> TechnoClass
+[conv] 0x7598d0 AbstractClass::updateBuildingState -> AbstractClass
+[conv] 0x7220a0 TiberiumClass::SpreadGrowth -> TiberiumClass
+[conv] 0x458dd0 BuildingClass::CheckMissionGuard -> BuildingClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CenterTeamCommand        rc=0
+[era] TauntCommandClass        rc=0
+[era] WinMainSetup_Setup       rc=0
+[era] MSBitPrintAnim           rc=0
+[era] MSPrintAnim              rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+[era] PtrVector                rc=0
+[era] ObjectClass              rc=2
+[era] CampaignClass            rc=0
+[era] Object_Helper            rc=2
+[era] Float4                   rc=2
+[era] TechnoClass              rc=0
+[era] AbstractClass            rc=0
+[era] TiberiumClass            rc=0
+[era] BuildingClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x536230   MISMATCH         CenterTeamCommand::Read
+[diff] 0x5362d0   MISMATCH         TauntCommandClass::Release
+[diff] 0x536320   MISMATCH         TauntCommandClass::Read
+[diff] 0x5be940   MISMATCH         WinMainSetup_Setup_5BE940
+[diff] 0x5ced10   MISMATCH         MSBitPrintAnim::QueryInterface
+[diff] 0x5ced40   MISMATCH         MSPrintAnim::QueryInterface
+[diff] 0x7cb1cb   MISMATCH         __fflush_lk
+[diff] 0x7d7cee   MISMATCH         __atoldbl
+[diff] 0x7d4ce0   MISMATCH         ___tzset
+[diff] 0x7dde13   MISMATCH         __wcsdup
+[diff] 0x5c6120   MISMATCH         PtrVector::Destroy
+[diff] 0x634850   MISMATCH         ObjectClass::sub_634850
+[diff] 0x5d2e00   MISMATCH         CampaignClass::Constructor_1
+[diff] 0x70f820   MATCH            TechnoClass::GetPriorityTarget
+[diff] 0x7598d0   MATCH            AbstractClass::updateBuildingState
+[diff] 0x7220a0   MISMATCH         TiberiumClass::SpreadGrowth
+[diff] 0x458dd0   MISMATCH         BuildingClass::CheckMissionGuard
+[ledger] 0x536230 CenterTeamCommand::Read -> NG (attempt 1)
+[ledger] 0x5362d0 TauntCommandClass::Release -> NG (attempt 1)
+[ledger] 0x536320 TauntCommandClass::Read -> NG (attempt 1)
+[ledger] 0x5be940 WinMainSetup_Setup_5BE940 -> NG (attempt 1)
+[ledger] 0x5ced10 MSBitPrintAnim::QueryInterface -> NG (attempt 1)
+[ledger] 0x5ced40 MSPrintAnim::QueryInterface -> NG (attempt 1)
+[ledger] 0x7cb1cb __fflush_lk -> NG (attempt 1)
+[ledger] 0x7d7cee __atoldbl -> NG (attempt 1)
+[ledger] 0x5c6120 PtrVector::Destroy -> NG (attempt 1)
+[ledger] 0x5ae500 ObjectClass::sub_5AE500 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d4ce0 ___tzset -> NG (attempt 1)
+[ledger] 0x7dde13 __wcsdup -> NG (attempt 1)
+[ledger] 0x5d2e00 CampaignClass::Constructor_1 -> NG (attempt 1)
+[ledger] 0x634850 ObjectClass::sub_634850 -> NG (attempt 1)
+[ledger] 0x637dd0 Object_Helper_637DD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c9650 Float4::Sum -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70f820 TechnoClass::GetPriorityTarget -> OK (attempt 1)
+[ledger] 0x7598d0 AbstractClass::updateBuildingState -> OK (attempt 1)
+[ledger] 0x7220a0 TiberiumClass::SpreadGrowth -> NG (attempt 1)
+[ledger] 0x458dd0 BuildingClass::CheckMissionGuard -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 3,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "extern_reloc": 2,
+  "const_fold": 4,
+  "branch_polarity": 2,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 11.8,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p169\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB1CB",
+ "name": "__fflush_lk",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB1CB",
+ "bytes_hex": "568b74240856e82300000085c059740583c8ff5ec3f6460d40740fff7610e8e37e0000f7d8595e1bc0c333c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

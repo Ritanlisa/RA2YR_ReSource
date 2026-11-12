@@ -1,0 +1,27 @@
+{
+ "symbol": "?Constructor_1@CampaignClass@@QAEPAV1@F@Z",
+ "sym_key": "CampaignClass::Constructor_1",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "568bf133c088460c88460d88460e89068b44240850e800000000a1e835000040a3e83500008bc65ec20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?LoadFontResources@FontClass@@QAEDF@Z",
+   "sym_key": "FontClass::LoadFontResources"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

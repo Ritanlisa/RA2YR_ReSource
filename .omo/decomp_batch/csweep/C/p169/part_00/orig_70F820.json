@@ -1,0 +1,11 @@
+{
+ "addr": "0x70F820",
+ "name": "ObjectClass::GetPriorityTarget",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70F820",
+ "bytes_hex": "8b81c002000085c0740d518b88bc020000e8ba2ad6ffc38b81cc02000085c074078b81e0020000c38b811c020000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

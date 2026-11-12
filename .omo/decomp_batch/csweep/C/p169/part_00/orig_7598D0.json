@@ -1,0 +1,11 @@
+{
+ "addr": "0x7598D0",
+ "name": "AbstractClass::updateBuildingState",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7598D0",
+ "bytes_hex": "568bf1578b7c240c3bbe04050000741a8b8e000200006a008bd7e8e197060083f8fa740689be040500005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

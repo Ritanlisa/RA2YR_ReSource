@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetPriorityTarget@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetPriorityTarget",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "8b81c002000085c0740d518b88bc020000e800000000c38b81cc02000085c074078b81e0020000c38b811c020000c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?GetOriginalOwner@CaptureManagerClass@@QAEHH@Z",
+   "sym_key": "CaptureManagerClass::GetOriginalOwner"
+  }
+ ]
+}

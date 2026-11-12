@@ -1,0 +1,45 @@
+{
+ "symbol": "?___tzset@@YAXXZ",
+ "sym_key": "Unnamed::___tzset",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c075266a0be800000000a10000000083c40485c0750be800000000ff05000000006a0be80000000059c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B783A8@@3IA",
+   "sym_key": "CRTGlobal_B783A8"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B783A8@@3IA",
+   "sym_key": "CRTGlobal_B783A8"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?_tzset_lk@@YAHXZ",
+   "sym_key": "_tzset_lk"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B783A8@@3IA",
+   "sym_key": "CRTGlobal_B783A8"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}

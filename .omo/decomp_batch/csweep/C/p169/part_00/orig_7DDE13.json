@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DDE13",
+ "name": "__wcsdup",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DDE13",
+ "bytes_hex": "568b74240885f6742156e8e3c5feff8d44000250e804b6feff5985c059740b5650e850c6feff59595ec333c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

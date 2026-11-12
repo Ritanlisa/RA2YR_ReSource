@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destroy@PtrVector@@QAEHXZ",
+ "sym_key": "PtrVector::Destroy",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b461085c07e178b46048b0cb851e8000000008b461083c404473bf87ce90fbe563056ff125f5ec3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

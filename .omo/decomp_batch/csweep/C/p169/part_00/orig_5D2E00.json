@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D2E00",
+ "name": "CampaignClass::Constructor_1",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D2E00",
+ "bytes_hex": "568bf132c088460c88460d88460e8b44240850c70664ec7e00e872000000a1e0fbab0040a3e0fbab008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

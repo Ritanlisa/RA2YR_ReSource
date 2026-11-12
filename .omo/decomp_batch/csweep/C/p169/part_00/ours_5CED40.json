@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@MSPrintAnim@@QAEPAPAXD@Z",
+ "sym_key": "MSPrintAnim::QueryInterface",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "568bf18d4e1cc70600000000e8000000008a442408c70600000000a801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

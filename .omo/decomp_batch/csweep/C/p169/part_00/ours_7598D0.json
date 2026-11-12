@@ -1,0 +1,15 @@
+{
+ "symbol": "?updateBuildingState@AbstractClass@@QAEXH@Z",
+ "sym_key": "AbstractClass::updateBuildingState",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7c240c3bbe04050000741a8b8e000200006a008bd7e80000000083f8fa740689be040500005f5ec20400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?ProcessAudioStreamBuffer@@YIHPAXHH@Z",
+   "sym_key": "ProcessAudioStreamBuffer"
+  }
+ ]
+}

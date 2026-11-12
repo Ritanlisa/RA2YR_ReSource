@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckMissionGuard@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::CheckMissionGuard",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "8b81200500008a907b15000084d2741d8a907c15000084d274138b0151ff900804000085c07e06b801000000c333c0c3",
+ "relocs": []
+}

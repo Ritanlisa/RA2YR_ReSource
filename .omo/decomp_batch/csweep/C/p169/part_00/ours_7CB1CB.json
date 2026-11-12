@@ -1,0 +1,21 @@
+{
+ "symbol": "?__fflush_lk@@YAHH@Z",
+ "sym_key": "Unnamed::__fflush_lk",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "568b74240856e80000000083c40485c0740583c8ff5ec3f6460d4074168b461050e80000000083c404f7d81bc05ef7d8f7d8c333c05ec3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?_flush@@YAHPAXZZ",
+   "sym_key": "_flush"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?_commit@@YAHHZZ",
+   "sym_key": "_commit"
+  }
+ ]
+}

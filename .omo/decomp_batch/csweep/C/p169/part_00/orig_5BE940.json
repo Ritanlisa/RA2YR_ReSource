@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BE940",
+ "name": "WinMainSetup_Setup_5BE940",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BE940",
+ "bytes_hex": "568b3594f2ab0085f674178bcee8aefb0d0056e8e5a1200083c404c605dcf2ab0000c70594f2ab00000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

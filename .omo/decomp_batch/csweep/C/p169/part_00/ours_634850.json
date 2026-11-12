@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_634850@ObjectClass@@QAEPAIPAI@Z",
+ "sym_key": "ObjectClass::sub_634850",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8d51388d4c240056e8000000008b48048b50088b308b44241489308948048950085e83c40cc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  }
+ ]
+}

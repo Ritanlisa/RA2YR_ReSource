@@ -1,0 +1,15 @@
+{
+ "symbol": "?SpreadGrowth@TiberiumClass@@QAEHHPAH@Z",
+ "sym_key": "TiberiumClass::SpreadGrowth",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "e80000000085c07c1d8b4424048b88d40000008b4424088d148d040000008b0803ca890833c0c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?GetSizeMax@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetSizeMax"
+  }
+ ]
+}

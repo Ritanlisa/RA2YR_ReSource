@@ -1,0 +1,27 @@
+{
+ "symbol": "?__wcsdup@@YAPAGPBH@Z",
+ "sym_key": "Unnamed::__wcsdup",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "568b74240885f6742356e8000000008d44000250e80000000083c40885c0740c5650e80000000083c4085ec333c05ec3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

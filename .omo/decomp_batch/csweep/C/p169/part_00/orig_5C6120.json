@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C6120",
+ "name": "PtrVector::Destroy",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C6120",
+ "bytes_hex": "568bf15733ff8b461085c07e178b46048b0cb851e8042a20008b461083c404473bf87ce98b168bceff520c5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
