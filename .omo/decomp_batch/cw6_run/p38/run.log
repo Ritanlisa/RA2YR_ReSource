@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p38\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e0290 ObjectClass::sub_6E0290 -> ObjectClass
+[conv] 0x6e37f0 ObjectClass::sub_6E37F0 -> ObjectClass
+[conv] 0x6e3d70 TActionClass::ddtor -> TActionClass
+[conv] 0x6e4850 _VectorClass_PAVTActionClass::AddRef -> _VectorClass_PAVTActionClass
+[conv] 0x6e4970 _VectorClass_PAVTActionClass::Init -> _VectorClass_PAVTActionClass
+[conv] 0x6e4a80 Tactical::FindItem -> Tactical
+[conv] 0x6e56a0 TagClass::ddtor -> TagClass
+[conv] 0x6e63a0 TagTypeClass::GetClassIdentifier -> TagTypeClass
+[conv] 0x6e6540 _VectorClass_PAVTagTypeClass::Add -> _VectorClass_PAVTagTypeClass
+[conv] 0x6e6660 _VectorClass_PAVTagTypeClass::GetSize -> _VectorClass_PAVTagTypeClass
+[conv] 0x6e6770 _DynamicVectorClass_PAVTagTypeClass::FindItemIndex -> _DynamicVectorClass_PAVTagTypeClass
+[conv] 0x6e6b70 ObjectClass::sub_6E6B70 -> ObjectClass
+[conv] 0x6e8710 TaskForceClass::ddtor -> TaskForceClass
+[conv] 0x6ec560 TeamClass::ddtor -> TeamClass
+[conv] 0x6ef9e0 TechnoClass::IsDeployed -> TechnoClass
+[conv] 0x6f1c40 TeamTypeClass::GetClassIdentifier -> TeamTypeClass
+[conv] 0x6f1f70 TeamTypeClass::FindFirstInstance -> TeamTypeClass
+[conv] 0x6f2290 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::AddRef -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x6f2440 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Read -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x6f2640 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::FindItem -> _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] TActionClass             rc=0
+[era] _VectorClass_PAVTActionClass rc=0
+[era] Tactical                 rc=0
+[era] TagClass                 rc=0
+[era] TagTypeClass             rc=0
+[era] _VectorClass_PAVTagTypeClass rc=0
+[era] _DynamicVectorClass_PAVTagTypeClass rc=0
+[era] TaskForceClass           rc=0
+[era] TeamClass                rc=0
+[era] TechnoClass              rc=2
+[era] TeamTypeClass            rc=2
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6e6b70   MISMATCH         ObjectClass::sub_6E6B70
+[diff] 0x6e3d70   MISMATCH         TActionClass::ddtor
+[diff] 0x6e4850   MISMATCH         _VectorClass_PAVTActionClass::AddRef
+[diff] 0x6e4970   MISMATCH         _VectorClass_PAVTActionClass::Init
+[diff] 0x6e4a80   MISMATCH         Tactical::FindItem
+[diff] 0x6e56a0   MISMATCH         TagClass::ddtor
+[diff] 0x6e63a0   MISMATCH         TagTypeClass::GetClassIdentifier
+[diff] 0x6e6540   MISMATCH         _VectorClass_PAVTagTypeClass::Add
+[diff] 0x6e6660   MISMATCH         _VectorClass_PAVTagTypeClass::GetSize
+[diff] 0x6e6770   MISMATCH         _DynamicVectorClass_PAVTagTypeClass::FindItemIndex
+[diff] 0x6e8710   MISMATCH         TaskForceClass::ddtor
+[diff] 0x6ec560   MISMATCH         TeamClass::ddtor
+[diff] 0x6f1c40   MISMATCH         TeamTypeClass::GetClassIdentifier
+[diff] 0x6f2290   MISMATCH         _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::AddRef
+[diff] 0x6f2440   MISMATCH         _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Read
+[diff] 0x6f2640   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::FindItem
+[ledger] 0x6e0290 ObjectClass::sub_6E0290 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e37f0 ObjectClass::sub_6E37F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e3d70 TActionClass::ddtor -> NG (attempt 2)
+[ledger] 0x6e4850 _VectorClass_PAVTActionClass::AddRef -> NG (attempt 2)
+[ledger] 0x6e4970 _VectorClass_PAVTActionClass::Init -> NG (attempt 2)
+[ledger] 0x6e4a80 Tactical::FindItem -> NG (attempt 2)
+[ledger] 0x6e56a0 TagClass::ddtor -> NG (attempt 2)
+[ledger] 0x6e63a0 TagTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x6e6540 _VectorClass_PAVTagTypeClass::Add -> NG (attempt 2)
+[ledger] 0x6e6660 _VectorClass_PAVTagTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x6e6770 _DynamicVectorClass_PAVTagTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x6e6b70 ObjectClass::sub_6E6B70 -> NG (attempt 2)
+[ledger] 0x6e8710 TaskForceClass::ddtor -> NG (attempt 2)
+[ledger] 0x6ec560 TeamClass::ddtor -> NG (attempt 2)
+[ledger] 0x6ef9e0 TechnoClass::IsDeployed -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f1c40 TeamTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x6f1f70 TeamTypeClass::FindFirstInstance -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f2290 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x6f2440 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Read -> NG (attempt 2)
+[ledger] 0x6f2640 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::FindItem -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 4,
+  "MISMATCH": 16
+ },
+ "pathologies": {
+  "codegen_shape": 12,
+  "branch_polarity": 2,
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p38\batch_report.json

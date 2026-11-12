@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E3D70",
+ "name": "TActionClass::ddtor",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E3D70",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d00987e0089088b1504987e008950048b0d08987e008948088b150c987e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
