@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p55\part_00
+=== convert (20 addrs) ===
+[conv] 0x4731e0 sub_4731E0 -> _addr_47
+[conv] 0x473360 sub_473360 -> _addr_47
+[conv] 0x473590 sub_473590 -> _addr_47
+[conv] 0x473710 sub_473710 -> _addr_47
+[conv] 0x474030 sub_474030 -> _addr_47
+[conv] 0x4741b0 sub_4741B0 -> _addr_47
+[conv] 0x478a00 sub_478A00 -> _addr_47
+[conv] 0x478b80 sub_478B80 -> _addr_47
+[conv] 0x47b1a0 sub_47B1A0 -> _addr_47
+[conv] 0x47b320 sub_47B320 -> _addr_47
+[conv] 0x4865b0 CellClass::IsTerrainType -> CellClass
+[conv] 0x486650 CellClass::InMapDataRange -> CellClass
+[conv] 0x486670 CellClass::InBounds -> CellClass
+[conv] 0x488fe0 sub_488FE0 -> _addr_48
+[conv] 0x489160 sub_489160 -> _addr_48
+[conv] 0x48acf0 RulesClass::GetFiringDistance -> RulesClass
+[conv] 0x48bcc0 sub_48BCC0 -> _addr_48
+[conv] 0x48be40 sub_48BE40 -> _addr_48
+[conv] 0x48c700 sub_48C700 -> _addr_48
+[conv] 0x48c880 sub_48C880 -> _addr_48
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_47                 rc=0
+[era] CellClass                rc=0
+[era] _addr_48                 rc=0
+[era] RulesClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x4731e0   MATCH            sub_4731E0
+[diff] 0x473360   MISMATCH         sub_473360
+[diff] 0x473590   MATCH            sub_473590
+[diff] 0x473710   MISMATCH         sub_473710
+[diff] 0x474030   MATCH            sub_474030
+[diff] 0x4741b0   MISMATCH         sub_4741B0
+[diff] 0x478a00   MATCH            sub_478A00
+[diff] 0x478b80   MISMATCH         sub_478B80
+[diff] 0x47b1a0   MATCH            sub_47B1A0
+[diff] 0x47b320   MISMATCH         sub_47B320
+[diff] 0x4865b0   MATCH            CellClass::IsTerrainType
+[diff] 0x486650   MATCH            CellClass::InMapDataRange
+[diff] 0x486670   MATCH            CellClass::InBounds
+[diff] 0x488fe0   MATCH            sub_488FE0
+[diff] 0x489160   MISMATCH         sub_489160
+[diff] 0x48bcc0   MATCH            sub_48BCC0
+[diff] 0x48be40   MISMATCH         sub_48BE40
+[diff] 0x48c700   MATCH            sub_48C700
+[diff] 0x48c880   MISMATCH         sub_48C880
+[diff] 0x48acf0   MATCH            RulesClass::GetFiringDistance
+[ledger] 0x4731e0 sub_4731E0 -> OK (attempt 2)
+[ledger] 0x473360 sub_473360 -> NG (attempt 2)
+[ledger] 0x473590 sub_473590 -> OK (attempt 2)
+[ledger] 0x473710 sub_473710 -> NG (attempt 2)
+[ledger] 0x474030 sub_474030 -> OK (attempt 2)
+[ledger] 0x4741b0 sub_4741B0 -> NG (attempt 2)
+[ledger] 0x478a00 sub_478A00 -> OK (attempt 2)
+[ledger] 0x478b80 sub_478B80 -> NG (attempt 2)
+[ledger] 0x47b1a0 sub_47B1A0 -> OK (attempt 2)
+[ledger] 0x47b320 sub_47B320 -> NG (attempt 2)
+[ledger] 0x4865b0 CellClass::IsTerrainType -> OK (attempt 5)
+[ledger] 0x486650 CellClass::InMapDataRange -> OK (attempt 5)
+[ledger] 0x486670 CellClass::InBounds -> OK (attempt 9)
+[ledger] 0x488fe0 sub_488FE0 -> OK (attempt 2)
+[ledger] 0x489160 sub_489160 -> NG (attempt 2)
+[ledger] 0x48acf0 RulesClass::GetFiringDistance -> OK (attempt 2)
+[ledger] 0x48bcc0 sub_48BCC0 -> OK (attempt 2)
+[ledger] 0x48be40 sub_48BE40 -> NG (attempt 2)
+[ledger] 0x48c700 sub_48C700 -> OK (attempt 2)
+[ledger] 0x48c880 sub_48C880 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "extern_reloc": 8
+ },
+ "match_rate_of_decided_pct": 60.0,
+ "match_rate_of_total_pct": 60.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p55\batch_report.json

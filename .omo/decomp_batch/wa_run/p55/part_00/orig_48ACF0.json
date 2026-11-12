@@ -1,0 +1,11 @@
+{
+ "addr": "0x48ACF0",
+ "name": "RulesClass::GetFiringDistance",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48ACF0",
+ "bytes_hex": "a1e0718800db80b8160000dc0d38177e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

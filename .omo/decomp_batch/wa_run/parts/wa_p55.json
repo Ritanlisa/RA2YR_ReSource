@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x4731e0",
+  "family": "D_RELOC",
+  "name": "sub_4731E0"
+ },
+ {
+  "addr": "0x473360",
+  "family": "D_RELOC",
+  "name": "sub_473360"
+ },
+ {
+  "addr": "0x473590",
+  "family": "D_RELOC",
+  "name": "sub_473590"
+ },
+ {
+  "addr": "0x473710",
+  "family": "D_RELOC",
+  "name": "sub_473710"
+ },
+ {
+  "addr": "0x474030",
+  "family": "D_RELOC",
+  "name": "sub_474030"
+ },
+ {
+  "addr": "0x4741b0",
+  "family": "D_RELOC",
+  "name": "sub_4741B0"
+ },
+ {
+  "addr": "0x478a00",
+  "family": "D_RELOC",
+  "name": "sub_478A00"
+ },
+ {
+  "addr": "0x478b80",
+  "family": "D_RELOC",
+  "name": "sub_478B80"
+ },
+ {
+  "addr": "0x47b1a0",
+  "family": "D_RELOC",
+  "name": "sub_47B1A0"
+ },
+ {
+  "addr": "0x47b320",
+  "family": "D_RELOC",
+  "name": "sub_47B320"
+ },
+ {
+  "addr": "0x4865b0",
+  "family": "D_RELOC",
+  "name": "CellClass::IsTerrainType"
+ },
+ {
+  "addr": "0x486650",
+  "family": "D_RELOC",
+  "name": "CellClass::InMapDataRange"
+ },
+ {
+  "addr": "0x486670",
+  "family": "D_RELOC",
+  "name": "CellClass::InBounds"
+ },
+ {
+  "addr": "0x488fe0",
+  "family": "D_RELOC",
+  "name": "sub_488FE0"
+ },
+ {
+  "addr": "0x489160",
+  "family": "D_RELOC",
+  "name": "sub_489160"
+ },
+ {
+  "addr": "0x48acf0",
+  "family": "D_RELOC",
+  "name": "RulesClass::GetFiringDistance"
+ },
+ {
+  "addr": "0x48bcc0",
+  "family": "D_RELOC",
+  "name": "sub_48BCC0"
+ },
+ {
+  "addr": "0x48be40",
+  "family": "D_RELOC",
+  "name": "sub_48BE40"
+ },
+ {
+  "addr": "0x48c700",
+  "family": "D_RELOC",
+  "name": "sub_48C700"
+ },
+ {
+  "addr": "0x48c880",
+  "family": "D_RELOC",
+  "name": "sub_48C880"
+ }
+]

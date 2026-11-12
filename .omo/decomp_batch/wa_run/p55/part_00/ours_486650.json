@@ -1,0 +1,15 @@
+{
+ "symbol": "?InMapDataRange@CellClass@@QAE_NXZ",
+ "sym_key": "CellClass::InMapDataRange",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b41388b0d000000003bc17c0a83c10e3bc17d03b001c332c0c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA10A4@@3HA",
+   "sym_key": "DataGlobal_AA10A4"
+  }
+ ]
+}

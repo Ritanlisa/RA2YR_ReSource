@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetFiringDistance@RulesClass@@QAENXZ",
+ "sym_key": "RulesClass::GetFiringDistance",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "a100000000db80b8160000dc0d00000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  }
+ ]
+}

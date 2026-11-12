@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsTerrainType@CellClass@@QAE_NXZ",
+ "sym_key": "CellClass::IsTerrainType",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b41388b0d000000003bc17c0a83c12a3bc17d03b001c332c0c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD28@@3HA",
+   "sym_key": "DataGlobal_ABAD28"
+  }
+ ]
+}

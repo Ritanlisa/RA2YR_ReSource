@@ -1,0 +1,11 @@
+{
+ "addr": "0x4865B0",
+ "name": "CellClass::IsTerrainType",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4865B0",
+ "bytes_hex": "8b41388b0d28adab003bc17c0a83c12a3bc17d03b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
