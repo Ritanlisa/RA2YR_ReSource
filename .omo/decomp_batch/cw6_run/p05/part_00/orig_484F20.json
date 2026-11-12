@@ -1,0 +1,11 @@
+{
+ "addr": "0x484F20",
+ "name": "InfantryClass::GetType",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x484F20",
+ "bytes_hex": "668b81160100006685c07c178b0d48418b000fbfc03bc17d0a8b0d3c418b008b0481c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

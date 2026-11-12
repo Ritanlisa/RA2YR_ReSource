@@ -1,0 +1,15 @@
+{
+ "symbol": "?DetachPrimary@GadgetClass@@QAEXXZ",
+ "sym_key": "GadgetClass::DetachPrimary",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c705cc00000000000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

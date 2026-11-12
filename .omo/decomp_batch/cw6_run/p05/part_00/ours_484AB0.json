@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsTunnelEntrance@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::IsTunnelEntrance",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "8b8114010000c1f8106685c07c1c8b15880300000fbfc03bc27d0f83b9ec0000000a7506b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x484AB0",
+ "name": "CellClass::IsTunnelEntrance",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x484AB0",
+ "bytes_hex": "668b81160100006685c07c1c8b1548418b000fbfc03bc27d0f83b9ec0000000a7506b801000000c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

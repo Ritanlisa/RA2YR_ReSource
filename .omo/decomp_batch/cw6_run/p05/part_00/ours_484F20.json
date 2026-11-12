@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetType@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::GetType",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b8114010000c1f8106685c07c178b0d880300000fbfc03bc17d0a8b0d7c0300008b0481c333c0c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

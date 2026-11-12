@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorClass_VRGBClass@@QAEDH@Z",
+ "sym_key": "_VectorClass_VRGBClass::AddRef",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "8b44240453558b69088b5008563bea57754b33f685ed7f095f5e5db0015bc204008b50048b41048d4a022bd08bfa8a103a140775282bc88a50018a5c01ff3ad3751b8a50028a1c013ad375114683c0033bf57dc48a108a1c073ad374da5f5e5d32c05bc20400",
+ "relocs": []
+}

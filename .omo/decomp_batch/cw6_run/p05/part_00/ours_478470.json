@@ -1,0 +1,8 @@
+{
+ "symbol": "?Read@_VectorClass_VRGBClass@@QAEHPAE@Z",
+ "sym_key": "_VectorClass_VRGBClass::Read",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "8a410c53565784c075085f5e33c05bc204008b790833f685ff7e2f8b5424108b49048a02380175108a59013a5a0175088a59023a5a02740a463bf77d0d83c103ebe28bc65f5e5bc204005f5e83c8ff5bc20400",
+ "relocs": []
+}

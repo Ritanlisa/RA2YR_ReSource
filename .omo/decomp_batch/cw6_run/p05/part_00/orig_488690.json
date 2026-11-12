@@ -1,0 +1,11 @@
+{
+ "addr": "0x488690",
+ "name": "COMObject::DetachPrimary",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x488690",
+ "bytes_hex": "c7058c3e8b0000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
