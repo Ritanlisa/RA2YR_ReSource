@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D09C0",
+ "name": "PushCommandClass::Execute",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D09C0",
+ "bytes_hex": "83ec1c85c974488b4124895424148b510c50895424088b51108954240c8b51148b4918c644241c00894c24148b0d687388008944240489542410e8313d05008b0d687388008d54240052e8713b050083c41cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

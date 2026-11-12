@@ -1,0 +1,21 @@
+{
+ "symbol": "?StubReturnNullPointer@HouseClass@@QAGHPAI@Z",
+ "sym_key": "HouseClass::StubReturnNullPointer",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "56578b7c241085ff750a5fb8034000805ec208006a24e80000000083c40485c0750a5fb80e0007805ec208008b4c240c81c170600100518bc8e8000000008bf085f6750a5fb80e0007805ec208008b1656ff520489375f33c05ec20800",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Constructor@VectorClass_ptr_BuildChoiceClass_int_ouseClass@@QAEPAIPAX@Z",
+   "sym_key": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor"
+  }
+ ]
+}

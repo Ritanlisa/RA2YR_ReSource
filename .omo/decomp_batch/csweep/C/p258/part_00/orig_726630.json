@@ -1,0 +1,11 @@
+{
+ "addr": "0x726630",
+ "name": "TriggerClass::Create",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x726630",
+ "bytes_hex": "53568bf185f65774448b15f8eaa80033c085d27e178b3deceaa8008bcf8b193b732474224083c1043bc27cf16a48e8b4270a0083c40485c07413568bc8e82ef9ffff5f5e5bc38b04875f5e5bc35f5e33c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

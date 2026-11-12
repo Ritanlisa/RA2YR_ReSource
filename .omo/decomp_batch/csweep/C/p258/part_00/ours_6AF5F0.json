@@ -1,0 +1,27 @@
+{
+ "symbol": "?UpdateSlaves@SlaveManagerClass@@QAEDXZ",
+ "sym_key": "SlaveManagerClass::UpdateSlaves",
+ "size": 114,
+ "link_base": 0,
+ "bytes_hex": "518b15a0010000568bf1578b46508b4e5883f8ff894c240874150fbefa538bdf2bd83bd95b7d0c2bc703c8894c240885c975378b4c2408c746580a0000000fbec28946508b462485c0894e548944240874188b4c24085652e80000000056e80000000083c4045f5e59c38a4424085f5e59c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?ProcessSlaves@SlaveManagerClass@@QAEHPAXH@Z",
+   "sym_key": "SlaveManagerClass::ProcessSlaves"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?ProcessDeployAction@@YADPAX@Z",
+   "sym_key": "ProcessDeployAction"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@WebBrowser@@QAEHXZ",
+ "sym_key": "WebBrowser::QueryInterface",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "518b5424008b442400535657b904000000bf000000008bf033dbc70200000000f3a7741c8bf0b904000000bf0000000033c0f3a7740a5f5eb8024000805b59c38b44240c8902508b08ff51045f5e33c05b59c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?IID_IUnknown@@3U_GUID_era@@A",
+   "sym_key": "IID_IUnknown"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F7C20@@3EA",
+   "sym_key": "DataGlobal_7F7C20"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?Create@TriggerClass@@QAEHXZ",
+ "sym_key": "TriggerClass::Create",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "53568bf185f65775065f5e33c05bc38b150000000033c985d276258b3d000000008bc78b183b7324740f4183c0043bca730e8b183b732475f18b048f5f5e5bc36a48e80000000083c40485c074bb568bc8e8000000005f5e5bc3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_ProductionQueueState@@3IA",
+   "sym_key": "g_ProductionQueueState"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_TriggerClassCapacity@@3PAXA",
+   "sym_key": "g_TriggerClassCapacity"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?Construct@TriggerClass@@QAEPAV1@H@Z",
+   "sym_key": "TriggerClass::Construct"
+  }
+ ]
+}

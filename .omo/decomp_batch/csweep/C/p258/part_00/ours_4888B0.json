@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddColor@ColorListClass@@QAEHH@Z",
+ "sym_key": "ColorListClass::AddColor",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e348d5424088d46345250ff511083f8ff743d8b8e840100003bc17d23493bc1898e8401000073188b8e78010000408b1481895481fc8b8e840100003bc172e88b4424088bce50e8000000005ec2040083c8ff5ec20400",
+ "relocs": [
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?Destru_vt43@ListClass@@QAEHH@Z",
+   "sym_key": "ListClass::Destru_vt43"
+  }
+ ]
+}

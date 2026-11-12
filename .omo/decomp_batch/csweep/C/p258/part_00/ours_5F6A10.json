@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetCell@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::GetCell",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "83ec108b018d5424046a005251ff504c8b54240033c98a480580e2000bca8d442400894c240050b9f8010000e80000000083c410c3",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

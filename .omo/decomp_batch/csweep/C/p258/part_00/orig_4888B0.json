@@ -1,0 +1,11 @@
+{
+ "addr": "0x4888B0",
+ "name": "ColorListClass::AddColor",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4888B0",
+ "bytes_hex": "568bf18d5424088b46348d4e3452ff501083f8ff74398b8e840100003bc17d23493bc1898e840100007d188b8e78010000408b1481895481fc8b8e840100003bc17ce88b4424088bce50e801ef0c005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CE13A",
+ "name": "___lc_lctostr",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CE13A",
+ "bytes_hex": "568b74240c56ff74240ce8a76a0000807e40008d46405959741450687c8d81006a02ff742414e8e4feffff83c41080be80000000008d86800000005e74145068986582006a02ff742410e8c0feffff83c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

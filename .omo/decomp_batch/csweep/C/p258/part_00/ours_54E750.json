@@ -1,0 +1,8 @@
+{
+ "symbol": "?WriteDataArray@SaveGame@@QAEHPAH@Z",
+ "sym_key": "SaveGame::WriteDataArray",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c578bf96a008b068d5424148b4f1c6a045256894c2420ff501085c07c288b4c241033db85c97e1e8b4f108b066a006a088b14995256ff501085c07c098b4c2410433bd97ce25f5e5bc20400",
+ "relocs": []
+}

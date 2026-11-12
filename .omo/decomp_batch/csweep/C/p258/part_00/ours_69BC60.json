@@ -1,0 +1,45 @@
+{
+ "symbol": "?FindPlayerName@GameClass@@QAGHH@Z",
+ "sym_key": "GameClass::FindPlayerName",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "5355565733edbe00000000a1000000008b4c24188b3e8b0c88e8000000008bcf8bd8e8000000005053e80000000083c40885c0741583c6044581fe000000007cca5f5e5d33c05bc208005f8bc55e5d5bc20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IB",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAD@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAD@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  }
+ ]
+}

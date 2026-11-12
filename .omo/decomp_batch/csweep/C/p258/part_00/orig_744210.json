@@ -1,0 +1,11 @@
+{
+ "addr": "0x744210",
+ "name": "TechnoClass::ClearCellImpassable",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x744210",
+ "bytes_hex": "568b7424085756b9e8f78700e80f15e2ff56b9e8f787008bf8e8523ee3ff8b15acd0b1008b4e0803c23bc17f138b872801000024df8987280100005f5ec204008b872401000024df8987240100005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

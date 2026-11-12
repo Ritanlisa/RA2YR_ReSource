@@ -1,0 +1,15 @@
+{
+ "symbol": "?LoadMapFileData@House@@QAE_NHD@Z",
+ "sym_key": "House::LoadMapFileData",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "8a4424085684c08bf174198b86a400000085c0750f8b86c003000085c07405e8000000008b068bceff909c00000085c05e741e8b50048b4c24040faf103bca73108b54881085d27408b801000000c2080033c0c20800",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?LoadFileData@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::LoadFileData"
+  }
+ ]
+}

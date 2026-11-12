@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p258\part_00
+=== convert (20 addrs) ===
+[conv] 0x6af5f0 SlaveManagerClass::UpdateSlaves -> SlaveManagerClass
+[conv] 0x6d09c0 PushCommandClass::Execute -> PushCommandClass
+[conv] 0x726630 TriggerClass::Create -> TriggerClass
+[conv] 0x732770 StepTechnoClassCleanupIfHuman -> _addr_73
+[conv] 0x744210 TechnoClass::ClearCellImpassable -> TechnoClass
+[conv] 0x4888b0 ColorListClass::AddColor -> ColorListClass
+[conv] 0x544c20 House::LoadMapFileData -> House
+[conv] 0x5f6a10 IUnknown::GetCell -> IUnknown
+[conv] 0x7463a0 TechnoClass::TransferSlavedUnit -> TechnoClass
+[conv] 0x54e750 SaveGame::WriteDataArray -> SaveGame
+[conv] 0x640450 PowerClass::getAvailable -> PowerClass
+[conv] 0x691630 ScriptClass::LoadState -> ScriptClass
+[conv] 0x69bc60 GameClass::FindPlayerName -> GameClass
+[conv] 0x7ce13a ___lc_lctostr -> _addr_7C
+[conv] 0x41b920 AircraftClass::IsHeightAboveThreshold -> AircraftClass
+[conv] 0x5024f0 HouseClass::StubReturnNullPointer -> HouseClass
+[conv] 0x4cb1a0 ComputeChronosphereDistortion -> _addr_4C
+[conv] 0x72e8c0 UI_Draw_72E8C0 -> UI_Draw
+[conv] 0x773a40 WebBrowser::QueryInterface -> WebBrowser
+[conv] 0x447ac0 BuildingClass::GetExitCoords -> BuildingClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SlaveManagerClass        rc=0
+[era] PushCommandClass         rc=0
+[era] TriggerClass             rc=0
+[era] _addr_73                 rc=0
+[era] TechnoClass              rc=2
+[era] ColorListClass           rc=0
+[era] House                    rc=0
+[era] IUnknown                 rc=0
+[era] SaveGame                 rc=0
+[era] PowerClass               rc=0
+[era] ScriptClass              rc=0
+[era] GameClass                rc=0
+[era] _addr_7C                 rc=0
+[era] AircraftClass            rc=2
+[era] HouseClass               rc=0
+[era] _addr_4C                 rc=0
+[era] UI_Draw                  rc=0
+[era] WebBrowser               rc=0
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x6af5f0   MISMATCH         SlaveManagerClass::UpdateSlaves
+[diff] 0x6d09c0   MISMATCH         PushCommandClass::Execute
+[diff] 0x726630   MISMATCH         TriggerClass::Create
+[diff] 0x732770   MISMATCH         StepTechnoClassCleanupIfHuman
+[diff] 0x744210   MISMATCH         TechnoClass::ClearCellImpassable
+[diff] 0x4888b0   MISMATCH         ColorListClass::AddColor
+[diff] 0x544c20   MISMATCH         House::LoadMapFileData
+[diff] 0x5f6a10   MISMATCH         IUnknown::GetCell
+[diff] 0x54e750   MISMATCH         SaveGame::WriteDataArray
+[diff] 0x640450   MISMATCH         PowerClass::getAvailable
+[diff] 0x691630   MISMATCH         ScriptClass::LoadState
+[diff] 0x69bc60   MISMATCH         GameClass::FindPlayerName
+[diff] 0x7ce13a   MISMATCH         ___lc_lctostr
+[diff] 0x5024f0   MISMATCH         HouseClass::StubReturnNullPointer
+[diff] 0x4cb1a0   MISMATCH         ComputeChronosphereDistortion
+[diff] 0x72e8c0   MISMATCH         UI_Draw_72E8C0
+[diff] 0x773a40   MISMATCH         WebBrowser::QueryInterface
+[ledger] 0x6af5f0 SlaveManagerClass::UpdateSlaves -> NG (attempt 1)
+[ledger] 0x6d09c0 PushCommandClass::Execute -> NG (attempt 1)
+[ledger] 0x726630 TriggerClass::Create -> NG (attempt 1)
+[ledger] 0x732770 StepTechnoClassCleanupIfHuman -> NG (attempt 1)
+[ledger] 0x744210 TechnoClass::ClearCellImpassable -> NG (attempt 1)
+[ledger] 0x4888b0 ColorListClass::AddColor -> NG (attempt 1)
+[ledger] 0x544c20 House::LoadMapFileData -> NG (attempt 1)
+[ledger] 0x5f6a10 IUnknown::GetCell -> NG (attempt 1)
+[ledger] 0x7463a0 TechnoClass::TransferSlavedUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54e750 SaveGame::WriteDataArray -> NG (attempt 1)
+[ledger] 0x640450 PowerClass::getAvailable -> NG (attempt 1)
+[ledger] 0x691630 ScriptClass::LoadState -> NG (attempt 1)
+[ledger] 0x69bc60 GameClass::FindPlayerName -> NG (attempt 1)
+[ledger] 0x7ce13a ___lc_lctostr -> NG (attempt 1)
+[ledger] 0x41b920 AircraftClass::IsHeightAboveThreshold -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5024f0 HouseClass::StubReturnNullPointer -> NG (attempt 1)
+[ledger] 0x4cb1a0 ComputeChronosphereDistortion -> NG (attempt 1)
+[ledger] 0x72e8c0 UI_Draw_72E8C0 -> NG (attempt 1)
+[ledger] 0x773a40 WebBrowser::QueryInterface -> NG (attempt 1)
+[ledger] 0x447ac0 BuildingClass::GetExitCoords -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "frame_sched": 2,
+  "branch_order": 3,
+  "ret_norm": 1,
+  "regalloc": 2,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p258\batch_report.json

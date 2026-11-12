@@ -1,0 +1,11 @@
+{
+ "addr": "0x69BC60",
+ "name": "GameClass::FindPlayerName",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69BC60",
+ "bytes_hex": "5355565733edbe90daa800a178daa8008b4c24148b3e8b0c88e8429409008bcf8bd8e8399409005053e892d0120083c40885c0741583c6044581feb0daa8007cca5f5e5d33c05bc204005f8bc55e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

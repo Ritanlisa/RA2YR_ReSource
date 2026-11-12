@@ -1,0 +1,11 @@
+{
+ "addr": "0x544C20",
+ "name": "House::LoadMapFileData",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x544C20",
+ "bytes_hex": "8a4424085684c08bf174198b86a400000085c0750f8a86f402000084c07405e8dc2300008b068bceff909c00000085c05e741b8b50048b4c24040faf103bca7d0d8b54881085d27405b001c2080032c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

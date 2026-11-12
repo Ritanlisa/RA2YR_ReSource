@@ -1,0 +1,11 @@
+{
+ "addr": "0x54E750",
+ "name": "SaveGame::WriteDataArray",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54E750",
+ "bytes_hex": "5153568b742410578bd96a008b0e8d5424108b431c6a0452568944241cff511085c07c288b4c240c33ff85c97e1e8b4b108b066a006a088b14b95256ff501085c07c098b4c240c473bf97ce25f5e5b59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

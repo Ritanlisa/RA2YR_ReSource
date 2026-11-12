@@ -1,0 +1,11 @@
+{
+ "addr": "0x5024F0",
+ "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5024F0",
+ "bytes_hex": "56578b7c241085ff750a5fb8034000805ec208006a24e80c692c0083c40485c074188b4c240c81c138600100518bc8e8fce6f9ff8bf085f6750a5fb80e0007805ec208008b1656ff520489375f33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

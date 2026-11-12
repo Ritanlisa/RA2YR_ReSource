@@ -1,0 +1,33 @@
+{
+ "symbol": "?Execute@PushCommandClass@@QAIDPAHH@Z",
+ "sym_key": "PushCommandClass::Execute",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "83ec1885d274508b4c241c8b4224894c24148b4a0c894c24048b4a10894c24088b4a188b52148944240050a10000000050894c241889542414e80000000083c4088d4c2400518b0d00000000e80000000083c418c204008a44241c83c418c20400",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_TacticalRender@@3IA",
+   "sym_key": "g_TacticalRender"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?HashTable__Remove@@YAHPAXH@Z",
+   "sym_key": "HashTable__Remove"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_TacticalRender@@3IA",
+   "sym_key": "g_TacticalRender"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?AddAction@CommandClass@@QAEDH@Z",
+   "sym_key": "CommandClass::AddAction"
+  }
+ ]
+}

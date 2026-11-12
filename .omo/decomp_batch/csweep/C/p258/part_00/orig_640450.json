@@ -1,0 +1,11 @@
+{
+ "addr": "0x640450",
+ "name": "PowerClass::getAvailable",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x640450",
+ "bytes_hex": "8b4424043de7030000753fa14c3da8008b88a85300008b90a45300005152689e02000068b86d830033d2b9a86d8300e8dc490f005068304dac00e8d5a0180083c410b8304dac00c2040050e8d0820100c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
