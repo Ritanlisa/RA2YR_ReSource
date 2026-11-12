@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b6760 DeleteAndZero::Alt -> DeleteAndZero
+[conv] 0x40f270 sub_40F270 -> _addr_40
+[conv] 0x7cca19 String::Wrapper5to4 -> String
+[conv] 0x799d10 Dialog::CloseAll -> Dialog
+[conv] 0x77c580 sub_77C580 -> _addr_77
+[conv] 0x77c9a0 sub_77C9A0 -> _addr_77
+[conv] 0x49fff0 EnumConnectionsClass::AddRef -> EnumConnectionsClass
+[conv] 0x731a10 UI_Delete -> UI
+[conv] 0x559d30 sub_559D30 -> _addr_55
+[conv] 0x7a2800 Map_Handle_7A2800 -> Map_Handle
+[conv] 0x773b10 WebBrowser::Write -> WebBrowser
+[conv] 0x77d160 sub_77D160 -> _addr_77
+[conv] 0x40d9c0 sub_40D9C0 -> _addr_40
+[conv] 0x766d30 VectorClass::ddtor -> VectorClass
+[conv] 0x40dd70 AbstractClass::IsTechnoType -> AbstractClass
+[conv] 0x766800 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ReleaseBuffer -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x679f70 VectorClass::Dtor -> VectorClass
+[conv] 0x536140 AddTeamCommand::Read -> AddTeamCommand
+[conv] 0x628860 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Clear -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x631c80 Pipe::Dtor -> Pipe
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DeleteAndZero            rc=2
+[era] _addr_40                 rc=0
+[era] String                   rc=0
+[era] Dialog                   rc=0
+[era] _addr_77                 rc=0
+[era] EnumConnectionsClass     rc=0
+[era] UI                       rc=0
+[era] _addr_55                 rc=0
+[era] Map_Handle               rc=0
+[era] WebBrowser               rc=0
+[era] VectorClass              rc=2
+[era] AbstractClass            rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] AddTeamCommand           rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] Pipe                     rc=0
+=== diffasm byte-compare ===
+[diff] 0x40f270   MISMATCH         sub_40F270
+[diff] 0x40d9c0   MISMATCH         sub_40D9C0
+[diff] 0x7cca19   MISMATCH         String::Wrapper5to4
+[diff] 0x799d10   MISMATCH         Dialog::CloseAll
+[diff] 0x77c580   MISMATCH         sub_77C580
+[diff] 0x77c9a0   MISMATCH         sub_77C9A0
+[diff] 0x77d160   MISMATCH         sub_77D160
+[diff] 0x49fff0   MISMATCH         EnumConnectionsClass::AddRef
+[diff] 0x731a10   MISMATCH         UI_Delete
+[diff] 0x559d30   MISMATCH         sub_559D30
+[diff] 0x7a2800   MISMATCH         Map_Handle_7A2800
+[diff] 0x773b10   MISMATCH         WebBrowser::Write
+[diff] 0x766d30   MISMATCH         VectorClass::ddtor
+[diff] 0x40dd70   MISMATCH         AbstractClass::IsTechnoType
+[diff] 0x766800   MISMATCH         _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ReleaseBuffer
+[diff] 0x536140   MISMATCH         AddTeamCommand::Read
+[diff] 0x628860   MATCH            _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Clear
+[diff] 0x631c80   MISMATCH         Pipe::Dtor
+[ledger] 0x7b6760 DeleteAndZero::Alt -> COMPILE_FAIL (attempt 5)
+[ledger] 0x40f270 sub_40F270 -> NG (attempt 6)
+[ledger] 0x7cca19 String::Wrapper5to4 -> NG (attempt 5)
+[ledger] 0x799d10 Dialog::CloseAll -> NG (attempt 5)
+[ledger] 0x77c580 sub_77C580 -> NG (attempt 6)
+[ledger] 0x77c9a0 sub_77C9A0 -> NG (attempt 6)
+[ledger] 0x49fff0 EnumConnectionsClass::AddRef -> NG (attempt 5)
+[ledger] 0x731a10 UI_Delete -> NG (attempt 6)
+[ledger] 0x559d30 sub_559D30 -> NG (attempt 6)
+[ledger] 0x7a2800 Map_Handle_7A2800 -> NG (attempt 5)
+[ledger] 0x773b10 WebBrowser::Write -> NG (attempt 5)
+[ledger] 0x77d160 sub_77D160 -> NG (attempt 6)
+[ledger] 0x40d9c0 sub_40D9C0 -> NG (attempt 6)
+[ledger] 0x766d30 VectorClass::ddtor -> NG (attempt 5)
+[ledger] 0x40dd70 AbstractClass::IsTechnoType -> NG (attempt 5)
+[ledger] 0x766800 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ReleaseBuffer -> NG (attempt 5)
+[ledger] 0x679f70 VectorClass::Dtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x536140 AddTeamCommand::Read -> NG (attempt 5)
+[ledger] 0x628860 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Clear -> OK (attempt 5)
+[ledger] 0x631c80 Pipe::Dtor -> NG (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 17,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "const_fold": 3,
+  "branch_polarity": 2,
+  "regalloc": 4,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p01\batch_report.json

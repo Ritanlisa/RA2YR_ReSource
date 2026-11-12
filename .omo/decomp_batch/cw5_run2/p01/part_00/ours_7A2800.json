@@ -1,0 +1,21 @@
+{
+ "symbol": "?Map_Handle_7A2800@@YIDHDD@Z",
+ "sym_key": "Unnamed::Map_Handle_7A2800",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "53568bf18adab9c2000000e8000000000fbe4c240c0fbed351528bd68bc8e8000000005e5bc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Map_Handle_5EC880@@YIDHHHH@Z",
+   "sym_key": "Map_Handle_5EC880"
+  }
+ ]
+}

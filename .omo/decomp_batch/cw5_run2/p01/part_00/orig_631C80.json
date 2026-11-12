@@ -1,0 +1,11 @@
+{
+ "addr": "0x631C80",
+ "name": "Pipe::Dtor",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x631C80",
+ "bytes_hex": "568bf15733ff8b4604c70618627e003bc774068b4e088948088b4e083bcf74098b46048b1150ff520c897e08897e045f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

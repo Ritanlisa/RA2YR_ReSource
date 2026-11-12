@@ -1,0 +1,11 @@
+{
+ "addr": "0x49FFF0",
+ "name": "EnumConnectionsClass::AddRef",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49FFF0",
+ "bytes_hex": "8b4424048b153ccdab0083c020425089153ccdab00ff15c8117e00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

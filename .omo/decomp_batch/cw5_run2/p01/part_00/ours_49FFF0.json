@@ -1,0 +1,27 @@
+{
+ "symbol": "?AddRef@EnumConnectionsClass@@QAGJXZ",
+ "sym_key": "EnumConnectionsClass::AddRef",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b157a0a000083c020425089157a0a0000e800000000c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?InterlockedIncrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedIncrement"
+  }
+ ]
+}

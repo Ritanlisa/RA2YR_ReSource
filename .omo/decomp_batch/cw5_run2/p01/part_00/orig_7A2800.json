@@ -1,0 +1,11 @@
+{
+ "addr": "0x7A2800",
+ "name": "Map_Handle_7A2800",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7A2800",
+ "bytes_hex": "56578bf98bf2b9c2000000e83031fdff8b4c240c8bd751568bc8e861a0e4ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

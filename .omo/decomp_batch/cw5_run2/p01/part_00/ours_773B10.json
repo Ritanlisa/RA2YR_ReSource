@@ -1,0 +1,15 @@
+{
+ "symbol": "?Write@WebBrowser@@QAEHXZ",
+ "sym_key": "WebBrowser::Write",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "518b44240085c074188b4c240068000000006a008b410883c10c51508b10ff524033c059c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?aMain@@3PADA",
+   "sym_key": "aMain"
+  }
+ ]
+}
