@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p45\part_00
+=== convert (20 addrs) ===
+[conv] 0x536e60 CenterBaseCommandClass::performAction_102 -> CenterBaseCommandClass
+[conv] 0x536e80 CenterBaseCommandClass::performAction_103 -> CenterBaseCommandClass
+[conv] 0x536ec0 AllianceCommandClass::performAction_106 -> AllianceCommandClass
+[conv] 0x536f00 AllianceCommandClass::performAction_108 -> AllianceCommandClass
+[conv] 0x536f40 ToggleRepairCommandClass::performAction_111 -> ToggleRepairCommandClass
+[conv] 0x536f60 ToggleRepairCommandClass::performAction_112 -> ToggleRepairCommandClass
+[conv] 0x536f80 ToggleRepairCommandClass::performAction_113 -> ToggleRepairCommandClass
+[conv] 0x536fc0 ToggleSellCommandClass::performAction_115 -> ToggleSellCommandClass
+[conv] 0x536fe0 ToggleSellCommandClass::performAction_116 -> ToggleSellCommandClass
+[conv] 0x537000 ToggleSellCommandClass::performAction_117 -> ToggleSellCommandClass
+[conv] 0x537040 BeaconPlacementCommandClass::performAction_120 -> BeaconPlacementCommandClass
+[conv] 0x537060 BeaconPlacementCommandClass::performAction_121 -> BeaconPlacementCommandClass
+[conv] 0x537080 BeaconPlacementCommandClass::performAction_122 -> BeaconPlacementCommandClass
+[conv] 0x5370f0 CenterREventCommandClass::performAction_126 -> CenterREventCommandClass
+[conv] 0x537110 CenterREventCommandClass::performAction_127 -> CenterREventCommandClass
+[conv] 0x537150 SidebarUpCommandClass::performAction_130 -> SidebarUpCommandClass
+[conv] 0x537170 SidebarUpCommandClass::performAction_131 -> SidebarUpCommandClass
+[conv] 0x537190 SidebarUpCommandClass::performAction_132 -> SidebarUpCommandClass
+[conv] 0x5371e0 SidebarDownCommandClass::performAction_135 -> SidebarDownCommandClass
+[conv] 0x537200 SidebarDownCommandClass::performAction_136 -> SidebarDownCommandClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CenterBaseCommandClass   rc=0
+[era] AllianceCommandClass     rc=0
+[era] ToggleRepairCommandClass rc=0
+[era] ToggleSellCommandClass   rc=0
+[era] BeaconPlacementCommandClass rc=0
+[era] CenterREventCommandClass rc=0
+[era] SidebarUpCommandClass    rc=0
+[era] SidebarDownCommandClass  rc=0
+=== diffasm byte-compare ===
+[diff] 0x536e60   MISMATCH         CenterBaseCommandClass::performAction_102
+[diff] 0x536e80   MISMATCH         CenterBaseCommandClass::performAction_103
+[diff] 0x536ec0   MISMATCH         AllianceCommandClass::performAction_106
+[diff] 0x536f00   MISMATCH         AllianceCommandClass::performAction_108
+[diff] 0x536f40   MISMATCH         ToggleRepairCommandClass::performAction_111
+[diff] 0x536f60   MISMATCH         ToggleRepairCommandClass::performAction_112
+[diff] 0x536f80   MISMATCH         ToggleRepairCommandClass::performAction_113
+[diff] 0x536fc0   MISMATCH         ToggleSellCommandClass::performAction_115
+[diff] 0x536fe0   MISMATCH         ToggleSellCommandClass::performAction_116
+[diff] 0x537000   MISMATCH         ToggleSellCommandClass::performAction_117
+[diff] 0x537040   MISMATCH         BeaconPlacementCommandClass::performAction_120
+[diff] 0x537060   MISMATCH         BeaconPlacementCommandClass::performAction_121
+[diff] 0x537080   MISMATCH         BeaconPlacementCommandClass::performAction_122
+[diff] 0x5370f0   MISMATCH         CenterREventCommandClass::performAction_126
+[diff] 0x537110   MISMATCH         CenterREventCommandClass::performAction_127
+[diff] 0x537150   MISMATCH         SidebarUpCommandClass::performAction_130
+[diff] 0x537170   MISMATCH         SidebarUpCommandClass::performAction_131
+[diff] 0x537190   MISMATCH         SidebarUpCommandClass::performAction_132
+[diff] 0x5371e0   MISMATCH         SidebarDownCommandClass::performAction_135
+[diff] 0x537200   MISMATCH         SidebarDownCommandClass::performAction_136
+[ledger] 0x536e60 CenterBaseCommandClass::performAction_102 -> NG (attempt 1)
+[ledger] 0x536e80 CenterBaseCommandClass::performAction_103 -> NG (attempt 1)
+[ledger] 0x536ec0 AllianceCommandClass::performAction_106 -> NG (attempt 1)
+[ledger] 0x536f00 AllianceCommandClass::performAction_108 -> NG (attempt 1)
+[ledger] 0x536f40 ToggleRepairCommandClass::performAction_111 -> NG (attempt 1)
+[ledger] 0x536f60 ToggleRepairCommandClass::performAction_112 -> NG (attempt 1)
+[ledger] 0x536f80 ToggleRepairCommandClass::performAction_113 -> NG (attempt 1)
+[ledger] 0x536fc0 ToggleSellCommandClass::performAction_115 -> NG (attempt 1)
+[ledger] 0x536fe0 ToggleSellCommandClass::performAction_116 -> NG (attempt 1)
+[ledger] 0x537000 ToggleSellCommandClass::performAction_117 -> NG (attempt 1)
+[ledger] 0x537040 BeaconPlacementCommandClass::performAction_120 -> NG (attempt 1)
+[ledger] 0x537060 BeaconPlacementCommandClass::performAction_121 -> NG (attempt 1)
+[ledger] 0x537080 BeaconPlacementCommandClass::performAction_122 -> NG (attempt 1)
+[ledger] 0x5370f0 CenterREventCommandClass::performAction_126 -> NG (attempt 1)
+[ledger] 0x537110 CenterREventCommandClass::performAction_127 -> NG (attempt 1)
+[ledger] 0x537150 SidebarUpCommandClass::performAction_130 -> NG (attempt 1)
+[ledger] 0x537170 SidebarUpCommandClass::performAction_131 -> NG (attempt 1)
+[ledger] 0x537190 SidebarUpCommandClass::performAction_132 -> NG (attempt 1)
+[ledger] 0x5371e0 SidebarDownCommandClass::performAction_135 -> NG (attempt 1)
+[ledger] 0x537200 SidebarDownCommandClass::performAction_136 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "extern_reloc": 13
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p45\batch_report.json

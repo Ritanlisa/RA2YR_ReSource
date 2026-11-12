@@ -35892,6 +35892,30 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x536e60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1b6c",
+  "name": "CenterBaseCommandClass::performAction_102",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_102",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536e80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1b6e",
+  "name": "CenterBaseCommandClass::performAction_103",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_103",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x536ea0": {
   "attempts": 1,
   "clean": false,
@@ -35912,6 +35936,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x536ec0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1b85",
+  "name": "AllianceCommandClass::performAction_106",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_106",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x536ee0": {
   "attempts": 5,
   "clean": false,
@@ -35920,6 +35956,18 @@
   "name": "AllianceCommandClass::performAction_107",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CreateTeamCommand::performAction_107",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536f00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1b89",
+  "name": "AllianceCommandClass::performAction_108",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_108",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -35940,6 +35988,42 @@
   "name": "ToggleRepairCommandClass::performAction_110",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "CreateTeamCommand::performAction_110",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536f40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1bbf",
+  "name": "ToggleRepairCommandClass::performAction_111",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_111",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536f60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1bc1",
+  "name": "ToggleRepairCommandClass::performAction_112",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_112",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536f80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1bc3",
+  "name": "ToggleRepairCommandClass::performAction_113",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_113",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -35968,6 +36052,42 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x536fc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1bd9",
+  "name": "ToggleSellCommandClass::performAction_115",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_115",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536fe0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1bdb",
+  "name": "ToggleSellCommandClass::performAction_116",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_116",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537000": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1bdd",
+  "name": "ToggleSellCommandClass::performAction_117",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_117",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x537020": {
   "attempts": 1,
   "clean": false,
@@ -35988,6 +36108,42 @@
   "name": "BeaconPlacementCommandClass::performAction_119",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "CreateTeamCommand::performAction_119",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537040": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1c04",
+  "name": "BeaconPlacementCommandClass::performAction_120",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_120",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537060": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1c06",
+  "name": "BeaconPlacementCommandClass::performAction_121",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_121",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537080": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1c08",
+  "name": "BeaconPlacementCommandClass::performAction_122",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_122",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -36028,6 +36184,30 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5370f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1c1d",
+  "name": "CenterREventCommandClass::performAction_126",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_126",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1c1f",
+  "name": "CenterREventCommandClass::performAction_127",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_127",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x537130": {
   "attempts": 4,
   "first_diff": "+0 call 0x734120",
@@ -36043,6 +36223,42 @@
   "name": "SidebarUpCommandClass::performAction_129",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "CreateTeamCommand::performAction_129",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537150": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1c51",
+  "name": "SidebarUpCommandClass::performAction_130",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_130",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537170": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1c53",
+  "name": "SidebarUpCommandClass::performAction_131",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_131",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537190": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1c55",
+  "name": "SidebarUpCommandClass::performAction_132",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_132",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -36065,6 +36281,30 @@
   "name": "CreateTeamCommand::performAction_134",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5371e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1cdd",
+  "name": "SidebarDownCommandClass::performAction_135",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_135",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537200": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1cdf",
+  "name": "SidebarDownCommandClass::performAction_136",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_136",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x537240": {
   "attempts": 1,

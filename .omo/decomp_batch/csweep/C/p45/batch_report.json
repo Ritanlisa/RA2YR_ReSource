@@ -1,0 +1,458 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 7,
+   "extern_reloc": 13
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x536e60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1b6c",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_102",
+   "emitted": "CenterBaseCommandClass::performAction_102",
+   "unit": "CenterBaseCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x536e80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1b6e",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_103",
+   "emitted": "CenterBaseCommandClass::performAction_103",
+   "unit": "CenterBaseCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x536ec0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1b85",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_106",
+   "emitted": "AllianceCommandClass::performAction_106",
+   "unit": "AllianceCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x536f00",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1b89",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_108",
+   "emitted": "AllianceCommandClass::performAction_108",
+   "unit": "AllianceCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x536f40",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1bbf",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_111",
+   "emitted": "ToggleRepairCommandClass::performAction_111",
+   "unit": "ToggleRepairCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x536f60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1bc1",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_112",
+   "emitted": "ToggleRepairCommandClass::performAction_112",
+   "unit": "ToggleRepairCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x536f80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1bc3",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_113",
+   "emitted": "ToggleRepairCommandClass::performAction_113",
+   "unit": "ToggleRepairCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x536fc0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1bd9",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_115",
+   "emitted": "ToggleSellCommandClass::performAction_115",
+   "unit": "ToggleSellCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x536fe0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1bdb",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_116",
+   "emitted": "ToggleSellCommandClass::performAction_116",
+   "unit": "ToggleSellCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x537000",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1bdd",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_117",
+   "emitted": "ToggleSellCommandClass::performAction_117",
+   "unit": "ToggleSellCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537040",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1c04",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_120",
+   "emitted": "BeaconPlacementCommandClass::performAction_120",
+   "unit": "BeaconPlacementCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537060",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1c06",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_121",
+   "emitted": "BeaconPlacementCommandClass::performAction_121",
+   "unit": "BeaconPlacementCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x537080",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1c08",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_122",
+   "emitted": "BeaconPlacementCommandClass::performAction_122",
+   "unit": "BeaconPlacementCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x5370f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1c1d",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_126",
+   "emitted": "CenterREventCommandClass::performAction_126",
+   "unit": "CenterREventCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x537110",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1c1f",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_127",
+   "emitted": "CenterREventCommandClass::performAction_127",
+   "unit": "CenterREventCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537150",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1c51",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_130",
+   "emitted": "SidebarUpCommandClass::performAction_130",
+   "unit": "SidebarUpCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537170",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1c53",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_131",
+   "emitted": "SidebarUpCommandClass::performAction_131",
+   "unit": "SidebarUpCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x537190",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1c55",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_132",
+   "emitted": "SidebarUpCommandClass::performAction_132",
+   "unit": "SidebarUpCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x5371e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1cdd",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_135",
+   "emitted": "SidebarDownCommandClass::performAction_135",
+   "unit": "SidebarDownCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537200",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1cdf",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_136",
+   "emitted": "SidebarDownCommandClass::performAction_136",
+   "unit": "SidebarDownCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  }
+ ]
+}
