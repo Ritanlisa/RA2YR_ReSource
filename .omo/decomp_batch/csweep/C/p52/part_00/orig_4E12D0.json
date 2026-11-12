@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E12D0",
+ "name": "BuildingAnim::GetType",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E12D0",
+ "bytes_hex": "8b0d24278200ba01000000e870b71a0085c074038b00c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

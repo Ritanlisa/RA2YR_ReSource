@@ -1,0 +1,11 @@
+{
+ "addr": "0x76F000",
+ "name": "ComPtr::DestroyWrapper",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76F000",
+ "bytes_hex": "8b442408568b7424088d512c508bcee82c0f00008bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

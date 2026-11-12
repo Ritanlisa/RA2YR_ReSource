@@ -1,0 +1,15 @@
+{
+ "symbol": "?DeleteAndZero@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::DeleteAndZero",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "56578bf98b3785f6740956e80000000083c404c707000000008bc65f5ec3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

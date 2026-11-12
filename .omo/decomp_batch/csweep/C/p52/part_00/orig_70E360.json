@@ -1,0 +1,11 @@
+{
+ "addr": "0x70E360",
+ "name": "Techno::StartInvulnerability",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70E360",
+ "bytes_hex": "8b442404568bf150e813000000508bcee83b0100005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

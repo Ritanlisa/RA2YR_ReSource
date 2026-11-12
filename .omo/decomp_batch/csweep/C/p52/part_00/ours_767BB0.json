@@ -1,0 +1,15 @@
+{
+ "symbol": "?ActivateScreenWDT@@YGHHH@Z",
+ "sym_key": "Unnamed::ActivateScreenWDT",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b4c2408e8000000008b442404c20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ActivateScreenWDT_Create@@YIPAVrc_ptr_base@@H@Z",
+   "sym_key": "ActivateScreenWDT_Create"
+  }
+ ]
+}

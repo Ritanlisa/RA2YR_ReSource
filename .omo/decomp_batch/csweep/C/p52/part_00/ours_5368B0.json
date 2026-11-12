@@ -1,0 +1,21 @@
+{
+ "symbol": "?performAction_52@TypeSelectCommandClass@@QAGDF@Z",
+ "sym_key": "TypeSelectCommandClass::performAction_52",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "51f6442403087409e80000000059c20800e80000000059c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?UI_Create_732CC0@@YADXZ",
+   "sym_key": "UI_Create_732CC0"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?UI_Create_732CA0@@YADXZ",
+   "sym_key": "UI_Create_732CA0"
+  }
+ ]
+}

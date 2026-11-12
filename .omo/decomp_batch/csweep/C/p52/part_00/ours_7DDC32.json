@@ -1,0 +1,15 @@
+{
+ "symbol": "?_write_char_1@@YAPAIHPAI@Z",
+ "sym_key": "Unnamed::_write_char_1",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e80000000083c40483f8ff8b4424087507c700ffffffffc3ff00c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?_putch@@YAHHZZ",
+   "sym_key": "_putch"
+  }
+ ]
+}

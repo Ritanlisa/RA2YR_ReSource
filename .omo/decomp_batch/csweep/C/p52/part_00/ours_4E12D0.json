@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetType@BuildingAnim@@QAEHXZ",
+ "sym_key": "BuildingAnim::GetType",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b0d00000000ba01000000e80000000085c074038b00c333c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_822724@@3PAXA",
+   "sym_key": "DataGlobal_822724"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?FindBuildingAnimByName@@YIHPAXH@Z",
+   "sym_key": "FindBuildingAnimByName"
+  }
+ ]
+}

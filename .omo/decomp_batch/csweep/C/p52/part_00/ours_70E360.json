@@ -1,0 +1,21 @@
+{
+ "symbol": "?StartInvulnerability@Techno@@QAGHH@Z",
+ "sym_key": "Techno::StartInvulnerability",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b742408508bcee800000000508bcee8000000005ec20800",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?InvulnerabilityIntensity_SetContext@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::InvulnerabilityIntensity_SetContext"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?CalcFlashAlpha@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::CalcFlashAlpha"
+  }
+ ]
+}

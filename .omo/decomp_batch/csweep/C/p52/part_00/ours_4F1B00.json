@@ -1,0 +1,15 @@
+{
+ "symbol": "?Init@Timer@@QAEPAV1@K@Z",
+ "sym_key": "Timer::Init",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000089068b4424088946088bc65ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B7040",
+ "name": "SafeDelete::Ptr",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B7040",
+ "bytes_hex": "568bf18b0685c0740950e8ee1a010083c404c706000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

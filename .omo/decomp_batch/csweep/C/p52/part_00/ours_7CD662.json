@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_75@@YAHPAH@Z",
+ "sym_key": "Unnamed::unknown_libname_75",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e80000000083c40485c0740a50e80000000083c404c333c0c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?localtime@@YAHPAXZZ",
+   "sym_key": "localtime"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?asctime@@YAHPAXZZ",
+   "sym_key": "asctime"
+  }
+ ]
+}
