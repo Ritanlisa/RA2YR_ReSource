@@ -1,0 +1,15 @@
+{
+ "symbol": "?System_Init_7A41A0@CChatEventSink@@QAEPADXZ",
+ "sym_key": "CChatEventSink::System_Init_7A41A0",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "568bf18d4608c746040000000050e800000000c706000000008bc65ec3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?InitializeCriticalSection@@YGXPAX@Z",
+   "sym_key": "InitializeCriticalSection"
+  }
+ ]
+}

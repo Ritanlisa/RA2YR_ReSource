@@ -1,0 +1,11 @@
+{
+ "addr": "0x5413F0",
+ "name": "Network::receiveData",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5413F0",
+ "bytes_hex": "8a410484c074148a410584c0740d8b49488b542404528b01ff503cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

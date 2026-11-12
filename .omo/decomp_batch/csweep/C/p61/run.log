@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p61\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a2930 CStreamClass::AddRef -> CStreamClass
+[conv] 0x55a950 LocomotionClass::AddRef -> LocomotionClass
+[conv] 0x7a2fc0 CNetUtilEventSink::System_Init_7A2FC0 -> CNetUtilEventSink
+[conv] 0x7a41a0 CChatEventSink::System_Init_7A41A0 -> CChatEventSink
+[conv] 0x483480 CellClass::DamageAllObjects -> CellClass
+[conv] 0x5413f0 Network::receiveData -> Network
+[conv] 0x65c2e0 RAMFileClass::checkTeamMembership -> RAMFileClass
+[conv] 0x65c300 RAMFileClass::nullsub_0_1 -> RAMFileClass
+[conv] 0x40e4a0 ObjectClass::sub_40E4A0 -> ObjectClass
+[conv] 0x41c210 AircraftClass::CheckActionStatus -> AircraftClass
+[conv] 0x426590 AnimClass::MissionStubReturnZero3 -> AnimClass
+[conv] 0x459f20 BuildingClass::ScalarDtor -> BuildingClass
+[conv] 0x465dc0 BuildingTypeClass::ddtor -> BuildingTypeClass
+[conv] 0x46b5c0 BulletClass::CheckActionStatus -> BulletClass
+[conv] 0x473920 CarryoverClass::QueryInterface -> CarryoverClass
+[conv] 0x477750 SHAPipe::ScalarDtor -> SHAPipe
+[conv] 0x477770 FileStraw::QueryInterface -> FileStraw
+[conv] 0x477790 FilePipe::QueryInterface -> FilePipe
+[conv] 0x48bb00 ObjectClass::sub_48BB00 -> ObjectClass
+[conv] 0x48e660 ControlClass::QueryInterface -> ControlClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CStreamClass             rc=0
+[era] LocomotionClass          rc=0
+[era] CNetUtilEventSink        rc=0
+[era] CChatEventSink           rc=0
+[era] CellClass                rc=2
+[era] Network                  rc=0
+[era] RAMFileClass             rc=2
+[era] ObjectClass              rc=0
+[era] AircraftClass            rc=0
+[era] AnimClass                rc=2
+[era] BuildingClass            rc=0
+[era] BuildingTypeClass        rc=0
+[era] BulletClass              rc=2
+[era] CarryoverClass           rc=0
+[era] SHAPipe                  rc=0
+[era] FileStraw                rc=0
+[era] FilePipe                 rc=0
+[era] ControlClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a2930   MISMATCH         CStreamClass::AddRef
+[diff] 0x55a950   MISMATCH         LocomotionClass::AddRef
+[diff] 0x7a2fc0   MISMATCH         CNetUtilEventSink::System_Init_7A2FC0
+[diff] 0x7a41a0   MISMATCH         CChatEventSink::System_Init_7A41A0
+[diff] 0x5413f0   MISMATCH         Network::receiveData
+[diff] 0x40e4a0   MISMATCH         ObjectClass::sub_40E4A0
+[diff] 0x48bb00   MISMATCH         ObjectClass::sub_48BB00
+[diff] 0x41c210   MISMATCH         AircraftClass::CheckActionStatus
+[diff] 0x459f20   MISMATCH         BuildingClass::ScalarDtor
+[diff] 0x465dc0   MISMATCH         BuildingTypeClass::ddtor
+[diff] 0x473920   MISMATCH         CarryoverClass::QueryInterface
+[diff] 0x477750   MISMATCH         SHAPipe::ScalarDtor
+[diff] 0x477770   MISMATCH         FileStraw::QueryInterface
+[diff] 0x477790   MISMATCH         FilePipe::QueryInterface
+[diff] 0x48e660   MISMATCH         ControlClass::QueryInterface
+[ledger] 0x4a2930 CStreamClass::AddRef -> NG (attempt 1)
+[ledger] 0x55a950 LocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x7a2fc0 CNetUtilEventSink::System_Init_7A2FC0 -> NG (attempt 1)
+[ledger] 0x7a41a0 CChatEventSink::System_Init_7A41A0 -> NG (attempt 1)
+[ledger] 0x483480 CellClass::DamageAllObjects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5413f0 Network::receiveData -> NG (attempt 1)
+[ledger] 0x65c2e0 RAMFileClass::checkTeamMembership -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65c300 RAMFileClass::nullsub_0_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40e4a0 ObjectClass::sub_40E4A0 -> NG (attempt 1)
+[ledger] 0x41c210 AircraftClass::CheckActionStatus -> NG (attempt 1)
+[ledger] 0x426590 AnimClass::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x459f20 BuildingClass::ScalarDtor -> NG (attempt 1)
+[ledger] 0x465dc0 BuildingTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x46b5c0 BulletClass::CheckActionStatus -> COMPILE_FAIL (attempt 1)
+[ledger] 0x473920 CarryoverClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x477750 SHAPipe::ScalarDtor -> NG (attempt 1)
+[ledger] 0x477770 FileStraw::QueryInterface -> NG (attempt 1)
+[ledger] 0x477790 FilePipe::QueryInterface -> NG (attempt 1)
+[ledger] 0x48bb00 ObjectClass::sub_48BB00 -> NG (attempt 1)
+[ledger] 0x48e660 ControlClass::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "const_fold": 9,
+  "regalloc": 4,
+  "branch_polarity": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p61\batch_report.json

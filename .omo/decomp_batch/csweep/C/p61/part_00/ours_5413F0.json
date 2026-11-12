@@ -1,0 +1,8 @@
+{
+ "symbol": "?receiveData@Network@@QAEDH@Z",
+ "sym_key": "Network::receiveData",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8a410484c074158a410584c0740e8b49488b54240452518b01ff503cc20400",
+ "relocs": []
+}

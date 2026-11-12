@@ -1,0 +1,11 @@
+{
+ "addr": "0x473920",
+ "name": "CarryoverClass::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x473920",
+ "bytes_hex": "568bf1e8782c0e00f644240801740956e80852350083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
