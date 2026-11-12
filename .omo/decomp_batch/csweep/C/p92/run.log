@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p92\part_00
+=== convert (20 addrs) ===
+[conv] 0x5db650 Map_Handle -> Map
+[conv] 0x6c8840 rc_ptr::sub_6C8840 -> rc_ptr
+[conv] 0x734f50 ObjectClass::RestartNetworkSession -> ObjectClass
+[conv] 0x734f80 ObjectClass::ToggleNetworkSession -> ObjectClass
+[conv] 0x765710 Campaign_WorldDominationTour::Constructor -> Campaign_WorldDominationTour
+[conv] 0x765740 Campaign_WorldDominationTour::Constructor_0 -> Campaign_WorldDominationTour
+[conv] 0x7657c0 COMClass::getTypeInfo -> COMClass
+[conv] 0x766960 Conflict_WorldDominationTour::Constructor -> Conflict_WorldDominationTour
+[conv] 0x766990 Conflict_WorldDominationTour::Constructor_0 -> Conflict_WorldDominationTour
+[conv] 0x7669c0 COMClass::connectPoint -> COMClass
+[conv] 0x7678c0 MapSizeGameOption_WorldDominationTour::QueryInterface -> MapSizeGameOption_WorldDominationTour
+[conv] 0x767c50 COMClass::marshalInterface -> COMClass
+[conv] 0x769bd0 MSFrameAnim::QueryInterface -> MSFrameAnim
+[conv] 0x769d90 MSFrameAnim::resumeAnimation -> MSFrameAnim
+[conv] 0x771a30 Anim_Voices_WorldDominationTour::QueryInterface -> Anim_Voices_WorldDominationTour
+[conv] 0x7784a0 CCToolTip::QueryInterface -> CCToolTip
+[conv] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> _addr_7D
+[conv] 0x7d219a __whiteout -> _addr_7D
+[conv] 0x7dcd9c ThrowErrorCOM -> _addr_7D
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Map                      rc=0
+[era] rc_ptr                   rc=0
+[era] ObjectClass              rc=2
+[era] Campaign_WorldDominationTour rc=0
+[era] COMClass                 rc=0
+[era] Conflict_WorldDominationTour rc=0
+[era] MapSizeGameOption_WorldDominationTour rc=0
+[era] MSFrameAnim              rc=2
+[era] Anim_Voices_WorldDominationTour rc=2
+[era] CCToolTip                rc=0
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5db650   MISMATCH         Map_Handle
+[diff] 0x6c8840   MISMATCH         rc_ptr::sub_6C8840
+[diff] 0x765710   MISMATCH         Campaign_WorldDominationTour::Constructor
+[diff] 0x765740   MISMATCH         Campaign_WorldDominationTour::Constructor_0
+[diff] 0x7657c0   MISMATCH         COMClass::getTypeInfo
+[diff] 0x7669c0   MISMATCH         COMClass::connectPoint
+[diff] 0x767c50   MISMATCH         COMClass::marshalInterface
+[diff] 0x766960   MISMATCH         Conflict_WorldDominationTour::Constructor
+[diff] 0x766990   MISMATCH         Conflict_WorldDominationTour::Constructor_0
+[diff] 0x7678c0   MISMATCH         MapSizeGameOption_WorldDominationTour::QueryInterface
+[diff] 0x769d90   MISMATCH         MSFrameAnim::resumeAnimation
+[diff] 0x7784a0   MISMATCH         CCToolTip::QueryInterface
+[ledger] 0x5db650 Map_Handle -> NG (attempt 1)
+[ledger] 0x63f7e0 0x63f7e0 -> PENDING (attempt 1)
+[ledger] 0x6c8840 rc_ptr::sub_6C8840 -> NG (attempt 1)
+[ledger] 0x734f50 ObjectClass::RestartNetworkSession -> COMPILE_FAIL (attempt 1)
+[ledger] 0x734f80 ObjectClass::ToggleNetworkSession -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765710 Campaign_WorldDominationTour::Constructor -> NG (attempt 1)
+[ledger] 0x765740 Campaign_WorldDominationTour::Constructor_0 -> NG (attempt 1)
+[ledger] 0x7657c0 COMClass::getTypeInfo -> NG (attempt 1)
+[ledger] 0x766960 Conflict_WorldDominationTour::Constructor -> NG (attempt 1)
+[ledger] 0x766990 Conflict_WorldDominationTour::Constructor_0 -> NG (attempt 1)
+[ledger] 0x7669c0 COMClass::connectPoint -> NG (attempt 1)
+[ledger] 0x7678c0 MapSizeGameOption_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x767c50 COMClass::marshalInterface -> NG (attempt 1)
+[ledger] 0x769bd0 MSFrameAnim::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x769d90 MSFrameAnim::resumeAnimation -> NG (attempt 1)
+[ledger] 0x771a30 Anim_Voices_WorldDominationTour::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7784a0 CCToolTip::QueryInterface -> NG (attempt 1)
+[ledger] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d219a __whiteout -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dcd9c ThrowErrorCOM -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "NO_PSEUDO": 1,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "const_fold": 11
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p92\batch_report.json

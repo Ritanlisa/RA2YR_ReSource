@@ -1,0 +1,11 @@
+{
+ "addr": "0x766990",
+ "name": "Conflict_WorldDominationTour_12::Constructor_0",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x766990",
+ "bytes_hex": "568bf1c70614707f00e8c26aeffff644240801740956e89221060083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

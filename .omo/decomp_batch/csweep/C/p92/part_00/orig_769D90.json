@@ -1,0 +1,11 @@
+{
+ "addr": "0x769D90",
+ "name": "MSFrameAnim::resumeAnimation",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x769D90",
+ "bytes_hex": "568bf1c7062c717f00e8c236effff644240801740956e892ed050083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

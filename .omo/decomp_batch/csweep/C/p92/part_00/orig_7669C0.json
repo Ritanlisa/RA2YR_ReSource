@@ -1,0 +1,11 @@
+{
+ "addr": "0x7669C0",
+ "name": "COMClass::connectPoint",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7669C0",
+ "bytes_hex": "568bf1c70640707f00e8926aeffff644240801740956e86221060083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

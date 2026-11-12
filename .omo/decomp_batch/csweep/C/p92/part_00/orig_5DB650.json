@@ -1,0 +1,11 @@
+{
+ "addr": "0x5DB650",
+ "name": "Map_Handle",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5DB650",
+ "bytes_hex": "56578bf98bf2b9bc000000e8e0a219008b4c240c8bd751568bc8e8111201005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
