@@ -1,0 +1,81 @@
+{
+ "symbol": "?checkLimbo@ObjectClass@@QAEPADXZ",
+ "sym_key": "ObjectClass::checkLimbo",
+ "size": 174,
+ "link_base": 0,
+ "bytes_hex": "568bf1b080578806884601884602c7460400000000c7460810000000c7460c000000008d4e0cba200000008b3d000000008d410483c1104a89388b3d000000008978048b3d00000000897808c7010000000075d7a1000000008b0d000000003bc8722e8a0d0000000084c9750485c075388b0d0000000085c9762e03c8a1000000006a00516800000000ff500884c074188b0d000000008bc141890d000000008b0d000000008934818bc65f5ec3",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB50@@3IA",
+   "sym_key": "DataGlobal_ABCB50"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB54@@3IA",
+   "sym_key": "DataGlobal_ABCB54"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB58@@3IA",
+   "sym_key": "DataGlobal_ABCB58"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB80@@3IA",
+   "sym_key": "DataGlobal_ABCB80"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB88@@3IA",
+   "sym_key": "DataGlobal_ABCB88"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB85@@3EA",
+   "sym_key": "DataGlobal_ABCB85"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB8C@@3IA",
+   "sym_key": "DataGlobal_ABCB8C"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB78@@3IA",
+   "sym_key": "DataGlobal_ABCB78"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB78@@3IA",
+   "sym_key": "DataGlobal_ABCB78"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB88@@3IA",
+   "sym_key": "DataGlobal_ABCB88"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB88@@3IA",
+   "sym_key": "DataGlobal_ABCB88"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCB7C@@3IA",
+   "sym_key": "DataGlobal_ABCB7C"
+  }
+ ]
+}

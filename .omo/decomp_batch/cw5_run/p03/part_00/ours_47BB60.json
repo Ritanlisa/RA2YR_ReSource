@@ -1,0 +1,27 @@
+{
+ "symbol": "?DTOR@CellClass@@QAEXXZ",
+ "sym_key": "CellClass::DTOR",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b46288b00893e3bc7897e04897e08897e0c740a8b086a0150ff11897e288b86fc0000003bc7740d8b106a0150ff1289befc0000000fbf462489bee40000008b0d000000003bc174188b46343bc77411393d000000007406ff8894010000897e348bcee8000000005f5ec3",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E748@@3IA",
+   "sym_key": "DataGlobal_89E748"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?DTOR@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::DTOR"
+  }
+ ]
+}

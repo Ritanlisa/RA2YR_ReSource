@@ -1,0 +1,21 @@
+{
+ "symbol": "?TerritoryUpdateDisplayWOL@ObjectClass@@QAEIH@Z",
+ "sym_key": "ObjectClass::TerritoryUpdateDisplayWOL",
+ "size": 142,
+ "link_base": 0,
+ "bytes_hex": "83ec145355568bf18d4c2410578b065156ff50188b108b0e895424108b78048b58088b680c8a4424288d5424145256884628ff51188b4c24108b103bca750f3b7804750a3b580875053b680c7420a1000000006a018d4c24146a008b10518b0d00000000518d4c24205150ff520833d233c98a561c8a4e280fbf42063bc87204488846285f5e5d5b83c414c20400",
+ "relocs": [
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  }
+ ]
+}

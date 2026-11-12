@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x63a230 PlanManager::Notify -> PlanManager
+[conv] 0x625f60 HashTable::FindString -> HashTable
+[conv] 0x43a6b0 ObjectClass::sub_43A6B0 -> ObjectClass
+[conv] 0x63a0d0 System_Get -> System
+[conv] 0x48df30 ObjectClass::LookupNameIndex -> ObjectClass
+[conv] 0x71ab60 ObjectClass::UnlinkFromFactory -> ObjectClass
+[conv] 0x4cb760 ObjectClass::TerrainInitMap -> ObjectClass
+[conv] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> ObjectClass
+[conv] 0x6235b0 ObjectClass::sub_6235B0 -> ObjectClass
+[conv] 0x626290 ObjectClass::sub_626290 -> ObjectClass
+[conv] 0x624930 Dialog::UpdateControlState -> Dialog
+[conv] 0x624760 HashTable::Get -> HashTable
+[conv] 0x63d400 DSurface::DrawMarker -> DSurface
+[conv] 0x7d1311 __isctype -> _addr_7D
+[conv] 0x47bb60 CellClass::DTOR -> CellClass
+[conv] 0x47d210 CellClass::SetWallOwner -> CellClass
+[conv] 0x5cc970 MSBinkAnim::Play -> MSBinkAnim
+[conv] 0x4cbba0 FootClass::FindPathWithRetry -> FootClass
+[conv] 0x556a20 ObjectClass::checkLimbo -> ObjectClass
+[conv] 0x5cb790 ObjectClass::TerritoryUpdateDisplayWOL -> ObjectClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] PlanManager              rc=0
+[era] HashTable                rc=0
+[era] ObjectClass              rc=2
+[era] System                   rc=2
+[era] Dialog                   rc=0
+[era] DSurface                 rc=0
+[era] _addr_7D                 rc=0
+[era] CellClass                rc=2
+[era] MSBinkAnim               rc=0
+[era] FootClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x63a230   MISMATCH         PlanManager::Notify
+[diff] 0x625f60   MISMATCH         HashTable::FindString
+[diff] 0x624760   MISMATCH         HashTable::Get
+[diff] 0x43a6b0   MISMATCH         ObjectClass::sub_43A6B0
+[diff] 0x48df30   MISMATCH         ObjectClass::LookupNameIndex
+[diff] 0x4cb760   MISMATCH         ObjectClass::TerrainInitMap
+[diff] 0x6235b0   MISMATCH         ObjectClass::sub_6235B0
+[diff] 0x626290   MISMATCH         ObjectClass::sub_626290
+[diff] 0x556a20   MISMATCH         ObjectClass::checkLimbo
+[diff] 0x5cb790   MISMATCH         ObjectClass::TerritoryUpdateDisplayWOL
+[diff] 0x624930   MISMATCH         Dialog::UpdateControlState
+[diff] 0x63d400   MISMATCH         DSurface::DrawMarker
+[diff] 0x7d1311   MISMATCH         __isctype
+[diff] 0x47bb60   MISMATCH         CellClass::DTOR
+[diff] 0x5cc970   MISMATCH         MSBinkAnim::Play
+[ledger] 0x63a230 PlanManager::Notify -> NG (attempt 4)
+[ledger] 0x625f60 HashTable::FindString -> NG (attempt 4)
+[ledger] 0x43a6b0 ObjectClass::sub_43A6B0 -> NG (attempt 4)
+[ledger] 0x63a0d0 System_Get -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48df30 ObjectClass::LookupNameIndex -> NG (attempt 4)
+[ledger] 0x71ab60 ObjectClass::UnlinkFromFactory -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4cb760 ObjectClass::TerrainInitMap -> NG (attempt 4)
+[ledger] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6235b0 ObjectClass::sub_6235B0 -> NG (attempt 4)
+[ledger] 0x626290 ObjectClass::sub_626290 -> NG (attempt 4)
+[ledger] 0x624930 Dialog::UpdateControlState -> NG (attempt 4)
+[ledger] 0x624760 HashTable::Get -> NG (attempt 4)
+[ledger] 0x63d400 DSurface::DrawMarker -> NG (attempt 4)
+[ledger] 0x7d1311 __isctype -> NG (attempt 4)
+[ledger] 0x47bb60 CellClass::DTOR -> NG (attempt 4)
+[ledger] 0x47d210 CellClass::SetWallOwner -> COMPILE_FAIL (attempt 18)
+[ledger] 0x5cc970 MSBinkAnim::Play -> NG (attempt 13)
+[ledger] 0x4cbba0 FootClass::FindPathWithRetry -> COMPILE_FAIL (attempt 13)
+[ledger] 0x556a20 ObjectClass::checkLimbo -> NG (attempt 12)
+[ledger] 0x5cb790 ObjectClass::TerritoryUpdateDisplayWOL -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "branch_order": 3,
+  "regalloc": 4,
+  "frame_sched": 2,
+  "const_fold": 1,
+  "branch_polarity": 1,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p03\batch_report.json

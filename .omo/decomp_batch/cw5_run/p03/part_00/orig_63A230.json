@@ -1,0 +1,11 @@
+{
+ "addr": "0x63A230",
+ "name": "PlanManager::Notify",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63A230",
+ "bytes_hex": "a0084cac0084c0754068a10c000068d46b830033d2c605084cac0001e80fac0f00bae00100008bc8e833680f00a1e0718800ba002000006a00680000803f8b8800070000e8a7661100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

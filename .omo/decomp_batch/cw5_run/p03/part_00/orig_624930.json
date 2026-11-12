@@ -1,0 +1,11 @@
+{
+ "addr": "0x624930",
+ "name": "Dialog::UpdateControlState",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x624930",
+ "bytes_hex": "568bf1578b460485c075075f32c05ec208008b7c240c8bcfff56188b4e0cba01000000d3e24a23d08b068b049085c075075f32c05ec208008b3f3938740e8b400885c075f55f32c05ec2080085c075075f32c05ec208008b4c241083c0045f5e8901b001c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

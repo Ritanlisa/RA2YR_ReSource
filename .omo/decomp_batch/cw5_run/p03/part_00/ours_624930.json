@@ -1,0 +1,8 @@
+{
+ "symbol": "?UpdateControlState@Dialog@@QAEDPAH0@Z",
+ "sym_key": "Dialog::UpdateControlState",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b460485c075075f32c05ec208008b7c240c57ff56308b4e0cba01000000d3e28b0e4a23c28b048185c075075f32c05ec208008b0f8b103bd1740b8b400885c074ea390875f58b54241083c0045f5e8902b001c20800",
+ "relocs": []
+}

@@ -1,0 +1,51 @@
+{
+ "symbol": "?Notify@PlanManager@@QAEDXZ",
+ "sym_key": "PlanManager::Notify",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "518b4424008a15d8000000568bf133c924008aca0bc184d2754633d268a10c00008a15000000008bce5233d2c605d800000001e800000000bae00100008bc8e800000000a1400200006a00680000803fba002000008b8800070000e8000000005e59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_Str_File_PlanMgr_cpp@@3EA",
+   "sym_key": "g_Str_File_PlanMgr_cpp"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?AddMessageListPlayerMessage@@YIHPAXH@Z",
+   "sym_key": "AddMessageListPlayerMessage"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  }
+ ]
+}

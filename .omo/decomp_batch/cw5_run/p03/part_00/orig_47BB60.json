@@ -1,0 +1,11 @@
+{
+ "addr": "0x47BB60",
+ "name": "CellClass::DTOR",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47BB60",
+ "bytes_hex": "53568bf133db8b4e28c706ec4e7e003bcbc74604d04e7e00c74608c84e7e00c7460cc04e7e0074098b016a01ff10895e288b8efc0000003bcb740c8b116a01ff12899efc000000899ee4000000668b4624663b0548e78900750d668b4e26663b0d4ae7890074188b46343bc37411381da0e9a8007406ff8894010000895e348bcee80a46f9ff5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
