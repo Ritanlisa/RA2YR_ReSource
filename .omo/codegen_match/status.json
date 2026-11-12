@@ -77683,6 +77683,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6bfde0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VSideClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_SideClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6bfe90": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -77710,6 +77722,18 @@
   "name": "_TClassFactory_VTiberiumClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_TiberiumClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6bff60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VTiberiumClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_TiberiumClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -77761,6 +77785,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c00e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VTubeClass::Release",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_CampaignClass::Release",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c0190": {
   "attempts": 1,
   "clean": false,
@@ -77793,6 +77829,18 @@
   "name": "_TClassFactory_VCampaignClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_CampaignClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c0260": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VCampaignClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_CampaignClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -77833,6 +77881,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c03e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VBuildingLightClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_BuildingLightClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c0490": {
   "attempts": 1,
   "clean": false,
@@ -77865,6 +77925,18 @@
   "name": "_TClassFactory_VWaypointPathClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_WaypointPathClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c0560": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VWaypointPathClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_WaypointPathClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -77917,6 +77989,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c06e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VTemporalClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_TemporalClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c0790": {
   "attempts": 1,
   "clean": false,
@@ -77949,6 +78033,18 @@
   "name": "_TClassFactory_VAirstrikeClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_AirstrikeClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c0860": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VAirstrikeClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_AirstrikeClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -78049,6 +78145,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c0b60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VSlaveManagerClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_SlaveManagerClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c0c10": {
   "attempts": 1,
   "clean": false,
@@ -78085,6 +78193,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c0ce0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VCaptureManagerClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_CaptureManagerClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c0d90": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -78112,6 +78232,18 @@
   "name": "_TClassFactory_VDiskLaserClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_DiskLaserClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c0e60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VDiskLaserClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_DiskLaserClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -78152,6 +78284,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c0fe0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VParasiteClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_ParasiteClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c1090": {
   "attempts": 1,
   "clean": false,
@@ -78184,6 +78328,18 @@
   "name": "_TClassFactory_VBombClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_BombClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c1160": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VBombClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_BombClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -78224,6 +78380,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c12e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VRadSiteClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_RadSiteClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c1390": {
   "attempts": 1,
   "clean": false,
@@ -78260,6 +78428,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c1460": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VTEventClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_TEventClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c1510": {
   "attempts": 1,
   "clean": false,
@@ -78292,6 +78472,18 @@
   "name": "_TClassFactory_VVoxelAnimTypeClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_VoxelAnimTypeClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c15e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VVoxelAnimTypeClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_VoxelAnimTypeClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -78344,6 +78536,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c1760": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VVoxelAnimClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_VoxelAnimClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c1810": {
   "attempts": 1,
   "clean": false,
@@ -78376,6 +78580,18 @@
   "name": "_TClassFactory_VTActionClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_TActionClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c18e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VTActionClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_TActionClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -78464,6 +78680,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c1be0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VTriggerTypeClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_TriggerTypeClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c1c90": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -78491,6 +78719,18 @@
   "name": "_TClassFactory_VScriptClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TClassFactory_ScriptClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c1d60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VScriptClass::GetClassName",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TClassFactory_ScriptClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

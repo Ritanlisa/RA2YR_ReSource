@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p96\part_00
+=== convert (20 addrs) ===
+[conv] 0x6bfde0 _TClassFactory_VSideClass::GetClassName -> _TClassFactory_VSideClass
+[conv] 0x6bff60 _TClassFactory_VTiberiumClass::GetClassName -> _TClassFactory_VTiberiumClass
+[conv] 0x6c00e0 _TClassFactory_VTubeClass::Release -> _TClassFactory_VTubeClass
+[conv] 0x6c0260 _TClassFactory_VCampaignClass::GetClassName -> _TClassFactory_VCampaignClass
+[conv] 0x6c03e0 _TClassFactory_VBuildingLightClass::GetClassName -> _TClassFactory_VBuildingLightClass
+[conv] 0x6c0560 _TClassFactory_VWaypointPathClass::GetClassName -> _TClassFactory_VWaypointPathClass
+[conv] 0x6c06e0 _TClassFactory_VTemporalClass::GetClassName -> _TClassFactory_VTemporalClass
+[conv] 0x6c0860 _TClassFactory_VAirstrikeClass::GetClassName -> _TClassFactory_VAirstrikeClass
+[conv] 0x6c0b60 _TClassFactory_VSlaveManagerClass::GetClassName -> _TClassFactory_VSlaveManagerClass
+[conv] 0x6c0ce0 _TClassFactory_VCaptureManagerClass::GetClassName -> _TClassFactory_VCaptureManagerClass
+[conv] 0x6c0e60 _TClassFactory_VDiskLaserClass::GetClassName -> _TClassFactory_VDiskLaserClass
+[conv] 0x6c0fe0 _TClassFactory_VParasiteClass::GetClassName -> _TClassFactory_VParasiteClass
+[conv] 0x6c1160 _TClassFactory_VBombClass::GetClassName -> _TClassFactory_VBombClass
+[conv] 0x6c12e0 _TClassFactory_VRadSiteClass::GetClassName -> _TClassFactory_VRadSiteClass
+[conv] 0x6c1460 _TClassFactory_VTEventClass::GetClassName -> _TClassFactory_VTEventClass
+[conv] 0x6c15e0 _TClassFactory_VVoxelAnimTypeClass::GetClassName -> _TClassFactory_VVoxelAnimTypeClass
+[conv] 0x6c1760 _TClassFactory_VVoxelAnimClass::GetClassName -> _TClassFactory_VVoxelAnimClass
+[conv] 0x6c18e0 _TClassFactory_VTActionClass::GetClassName -> _TClassFactory_VTActionClass
+[conv] 0x6c1be0 _TClassFactory_VTriggerTypeClass::GetClassName -> _TClassFactory_VTriggerTypeClass
+[conv] 0x6c1d60 _TClassFactory_VScriptClass::GetClassName -> _TClassFactory_VScriptClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VSideClass rc=0
+[era] _TClassFactory_VTiberiumClass rc=0
+[era] _TClassFactory_VTubeClass rc=0
+[era] _TClassFactory_VCampaignClass rc=0
+[era] _TClassFactory_VBuildingLightClass rc=0
+[era] _TClassFactory_VWaypointPathClass rc=0
+[era] _TClassFactory_VTemporalClass rc=0
+[era] _TClassFactory_VAirstrikeClass rc=0
+[era] _TClassFactory_VSlaveManagerClass rc=0
+[era] _TClassFactory_VCaptureManagerClass rc=0
+[era] _TClassFactory_VDiskLaserClass rc=0
+[era] _TClassFactory_VParasiteClass rc=0
+[era] _TClassFactory_VBombClass rc=0
+[era] _TClassFactory_VRadSiteClass rc=0
+[era] _TClassFactory_VTEventClass rc=0
+[era] _TClassFactory_VVoxelAnimTypeClass rc=0
+[era] _TClassFactory_VVoxelAnimClass rc=0
+[era] _TClassFactory_VTActionClass rc=0
+[era] _TClassFactory_VTriggerTypeClass rc=0
+[era] _TClassFactory_VScriptClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6bfde0   MISMATCH         _TClassFactory_VSideClass::GetClassName
+[diff] 0x6bff60   MISMATCH         _TClassFactory_VTiberiumClass::GetClassName
+[diff] 0x6c00e0   MISMATCH         _TClassFactory_VTubeClass::Release
+[diff] 0x6c0260   MISMATCH         _TClassFactory_VCampaignClass::GetClassName
+[diff] 0x6c03e0   MISMATCH         _TClassFactory_VBuildingLightClass::GetClassName
+[diff] 0x6c0560   MISMATCH         _TClassFactory_VWaypointPathClass::GetClassName
+[diff] 0x6c06e0   MISMATCH         _TClassFactory_VTemporalClass::GetClassName
+[diff] 0x6c0860   MISMATCH         _TClassFactory_VAirstrikeClass::GetClassName
+[diff] 0x6c0b60   MISMATCH         _TClassFactory_VSlaveManagerClass::GetClassName
+[diff] 0x6c0ce0   MISMATCH         _TClassFactory_VCaptureManagerClass::GetClassName
+[diff] 0x6c0e60   MISMATCH         _TClassFactory_VDiskLaserClass::GetClassName
+[diff] 0x6c0fe0   MISMATCH         _TClassFactory_VParasiteClass::GetClassName
+[diff] 0x6c1160   MISMATCH         _TClassFactory_VBombClass::GetClassName
+[diff] 0x6c12e0   MISMATCH         _TClassFactory_VRadSiteClass::GetClassName
+[diff] 0x6c1460   MISMATCH         _TClassFactory_VTEventClass::GetClassName
+[diff] 0x6c15e0   MISMATCH         _TClassFactory_VVoxelAnimTypeClass::GetClassName
+[diff] 0x6c1760   MISMATCH         _TClassFactory_VVoxelAnimClass::GetClassName
+[diff] 0x6c18e0   MISMATCH         _TClassFactory_VTActionClass::GetClassName
+[diff] 0x6c1be0   MISMATCH         _TClassFactory_VTriggerTypeClass::GetClassName
+[diff] 0x6c1d60   MISMATCH         _TClassFactory_VScriptClass::GetClassName
+[ledger] 0x6bfde0 _TClassFactory_VSideClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6bff60 _TClassFactory_VTiberiumClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c00e0 _TClassFactory_VTubeClass::Release -> NG (attempt 1)
+[ledger] 0x6c0260 _TClassFactory_VCampaignClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c03e0 _TClassFactory_VBuildingLightClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c0560 _TClassFactory_VWaypointPathClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c06e0 _TClassFactory_VTemporalClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c0860 _TClassFactory_VAirstrikeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c0b60 _TClassFactory_VSlaveManagerClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c0ce0 _TClassFactory_VCaptureManagerClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c0e60 _TClassFactory_VDiskLaserClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c0fe0 _TClassFactory_VParasiteClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c1160 _TClassFactory_VBombClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c12e0 _TClassFactory_VRadSiteClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c1460 _TClassFactory_VTEventClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c15e0 _TClassFactory_VVoxelAnimTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c1760 _TClassFactory_VVoxelAnimClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c18e0 _TClassFactory_VTActionClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c1be0 _TClassFactory_VTriggerTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c1d60 _TClassFactory_VScriptClass::GetClassName -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p96\batch_report.json
