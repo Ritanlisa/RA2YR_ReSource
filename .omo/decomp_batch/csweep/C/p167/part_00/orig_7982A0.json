@@ -1,0 +1,11 @@
+{
+ "addr": "0x7982A0",
+ "name": "Network_Delete",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7982A0",
+ "bytes_hex": "538b5c2410578b7c240c85ff7e11568bf38bcee838c4010083c6044f75f35e53e87808030083c4045f5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

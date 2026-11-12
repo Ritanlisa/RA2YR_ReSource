@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A3370",
+ "name": "DDraw::ReleaseSurfaces",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A3370",
+ "bytes_hex": "568bf18b467485c0740d8b0850ff5108c74674000000008b467085c0740d8b1050ff5208c74670000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

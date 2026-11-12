@@ -1,0 +1,8 @@
+{
+ "symbol": "?VtableDispatch@SaveGame@@QAEHH@Z",
+ "sym_key": "SaveGame::VtableDispatch",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "568b742408578bf98b066a008d4f106a045156ff501085c07c0e8b166a0083c7206a045756ff52105f5ec20400",
+ "relocs": []
+}

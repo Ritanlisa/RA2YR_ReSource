@@ -1,0 +1,11 @@
+{
+ "addr": "0x600630",
+ "name": "Gadget::InitProperties",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x600630",
+ "bytes_hex": "568bf18d4e04e885601b008d4e08e87d601b0083c8ffc7060000000089460c894614c74610000000008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

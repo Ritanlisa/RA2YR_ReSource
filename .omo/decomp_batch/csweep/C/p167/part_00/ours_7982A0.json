@@ -1,0 +1,21 @@
+{
+ "symbol": "?Network_Delete@@YGXHHPAPAX@Z",
+ "sym_key": "Unnamed::Network_Delete",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "538b5c2410578b7c240c85ff7e15568bf38bc683c60450e80000000083c4044f75ef5e53e80000000083c4045f5bc20c00",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXH@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

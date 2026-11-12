@@ -1,0 +1,11 @@
+{
+ "addr": "0x407A30",
+ "name": "AudioStream::SetPlaybackCallback",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407A30",
+ "bytes_hex": "568bb1c0000000f6460c03740be86e1900008946208956248b460c24f889460cc786800000000000000033c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

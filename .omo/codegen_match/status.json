@@ -1388,6 +1388,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x407a30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "AudioStream::SetPlaybackCallback",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "AudioStream::SetPlaybackCallback",
+  "rule_violations": 6,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x407b40": {
   "attempts": 1,
   "clean": false,
@@ -25684,6 +25696,18 @@
   "status": "PENDING",
   "this_as_id": false
  },
+ "0x4a2fc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CStreamClass::UnlockRegion",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CStreamClass::UnlockRegion",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4a2ff0": {
   "attempts": 1,
   "clean": false,
@@ -25736,6 +25760,18 @@
   "name": "sub_4A3250",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_4A3250",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4a3370": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "DDraw::ReleaseSurfaces",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "DDraw::ReleaseSurfaces",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -70892,6 +70928,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5f6c80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+2 sub esp, 0xc",
+  "name": "IUnknown::GetCoords_Alt",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "ObjectClass::GetCoords_Alt",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5f6cb0": {
   "attempts": 1,
   "clean": false,
@@ -71988,6 +72036,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5fe570": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "OverlayTypeClass::GetDamage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "OverlayTypeClass::GetDamage",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5fea30": {
   "attempts": 1,
   "clean": false,
@@ -72473,6 +72533,18 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "unknown_libname_26",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x600630": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+3 lea ecx, [esi + 4]",
+  "name": "Gadget::InitProperties",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Gadget::InitProperties",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -88391,6 +88463,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6b55c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 call 0x7c8e17",
+  "name": "SmudgeTypeClass::GetFlag",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "SmudgeTypeClass::GetFlag",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6b55f0": {
   "attempts": 13,
   "clean": false,
@@ -101410,6 +101494,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x71a130": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TeleportLocomotionClass::ConstructLocomotor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TeleportLocomotionClass::ConstructLocomotor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x71a160": {
   "attempts": 1,
   "clean": false,
@@ -102961,6 +103057,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "AudioSettings::ComputeTransform",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x721010": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+12 lea ecx, [edi + 4]",
+  "name": "SaveGame::VtableDispatch",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "SaveGame::VtableDispatch",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -119233,6 +119341,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7982a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 jle 0x7982bf",
+  "name": "Network_Delete",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "Network_Delete",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7982d0": {
   "attempts": 5,
   "clean": false,
@@ -122358,6 +122477,42 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7bc6c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTrans_E::sub_7BC6C0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7BC6C0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7bc6f0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTrans_E::sub_7BC6F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7BC6F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7bc720": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTrans_E::sub_7BC720",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7BC720",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x7bc750": {
   "attempts": 1,
   "clean": false,
@@ -122464,6 +122619,42 @@
   "orig_name": "sub_7BC890",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7bc8c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTrans_G::sub_7BC8C0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7BC8C0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7bc8f0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTrans_G::sub_7BC8F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7BC8F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7bc920": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTrans_G::sub_7BC920",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7BC920",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x7bc950": {
@@ -129004,6 +129195,28 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7d7cc1": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "Fassign_Helper",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Fassign_Helper",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7d7d1c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "Fassign_Helper_7D7D1C",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Fassign_Helper_7D7D1C",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7d7e1c": {
   "attempts": 1,
   "clean": false,
@@ -129673,6 +129886,18 @@
   "orig_name": "sub_7DCDF2",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dce0e": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "resolve:proto_this",
+  "first_diff": null,
+  "name": "_com_error::sub_7DCE0E",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_7DCE0E",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7dce3b": {
@@ -130463,6 +130688,17 @@
   "name": "___initconout",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "___initconout",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7de12f": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+5 push esi",
+  "name": "___termcon",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "___termcon",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

@@ -1,0 +1,33 @@
+{
+ "symbol": "?___termcon@@YAPAXXZ",
+ "sym_key": "Unnamed::___termcon",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "a10000000083f8ff740b83f8fe740650e800000000a10000000083f8ff740b83f8fe740650e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?hConsoleOutput@@3PAXA",
+   "sym_key": "hConsoleOutput"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHPAX@Z",
+   "sym_key": "CloseHandle"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?hConsoleInput@@3PAXA",
+   "sym_key": "hConsoleInput"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHPAX@Z",
+   "sym_key": "CloseHandle"
+  }
+ ]
+}

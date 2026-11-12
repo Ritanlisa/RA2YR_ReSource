@@ -1,0 +1,21 @@
+{
+ "symbol": "?InitProperties@Gadget@@QAEPAV1@XZ",
+ "sym_key": "Gadget::InitProperties",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "568bf1578d460c50e8000000008d7e1457e80000000083c40883c8ffc70700000000c706000000008946108946185f33c05ec3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  }
+ ]
+}

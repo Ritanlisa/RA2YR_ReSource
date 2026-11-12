@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DE12F",
+ "name": "___termcon",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DE12F",
+ "bytes_hex": "a184dd8700568b35e0117e0083f8ff740883f8fe740350ffd6a180dd870083f8ff740883f8fe740350ffd65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

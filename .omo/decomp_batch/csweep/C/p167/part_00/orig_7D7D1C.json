@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D7D1C",
+ "name": "Fassign_Helper_7D7D1C",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D7D1C",
+ "bytes_hex": "558bec83ec0c33c050505050ff750c8d450c508d45f450e83a1b0000ff75088d45f450e8edfeffff83c424c9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

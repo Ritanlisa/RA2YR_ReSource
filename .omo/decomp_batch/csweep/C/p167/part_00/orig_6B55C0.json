@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B55C0",
+ "name": "SmudgeTypeClass::GetFlag",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B55C0",
+ "bytes_hex": "568bf168b0000000e84a38110083c40485c074136aff68a8b7b000568bc8e86df4ffff5ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

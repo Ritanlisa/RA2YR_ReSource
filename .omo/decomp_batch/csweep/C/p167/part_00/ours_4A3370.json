@@ -1,0 +1,8 @@
+{
+ "symbol": "?ReleaseSurfaces@DDraw@@QAEHXZ",
+ "sym_key": "DDraw::ReleaseSurfaces",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "568bf18b467485c0740d8b0850ff5108c74674000000008b467085c0740d8b1050ff5208c74670000000005ec3",
+ "relocs": []
+}

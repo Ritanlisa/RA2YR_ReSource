@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p167\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f6c80 IUnknown::GetCoords_Alt -> IUnknown
+[conv] 0x7bc6c0 _BlitTrans_E::sub_7BC6C0 -> _BlitTrans_E
+[conv] 0x7bc6f0 _BlitTrans_E::sub_7BC6F0 -> _BlitTrans_E
+[conv] 0x7bc720 _BlitTrans_E::sub_7BC720 -> _BlitTrans_E
+[conv] 0x7bc8c0 _BlitTrans_G::sub_7BC8C0 -> _BlitTrans_G
+[conv] 0x7bc8f0 _BlitTrans_G::sub_7BC8F0 -> _BlitTrans_G
+[conv] 0x7bc920 _BlitTrans_G::sub_7BC920 -> _BlitTrans_G
+[conv] 0x7dce0e _com_error::sub_7DCE0E -> _com_error
+[conv] 0x5fe570 OverlayTypeClass::GetDamage -> OverlayTypeClass
+[conv] 0x600630 Gadget::InitProperties -> Gadget
+[conv] 0x6b55c0 SmudgeTypeClass::GetFlag -> SmudgeTypeClass
+[conv] 0x7982a0 Network_Delete -> Network
+[conv] 0x7d7cc1 Fassign_Helper -> Fassign
+[conv] 0x7d7d1c Fassign_Helper_7D7D1C -> Fassign_Helper
+[conv] 0x4a2fc0 CStreamClass::UnlockRegion -> CStreamClass
+[conv] 0x4a3370 DDraw::ReleaseSurfaces -> DDraw
+[conv] 0x721010 SaveGame::VtableDispatch -> SaveGame
+[conv] 0x7de12f ___termcon -> _addr_7D
+[conv] 0x71a130 TeleportLocomotionClass::ConstructLocomotor -> TeleportLocomotionClass
+[conv] 0x407a30 AudioStream::SetPlaybackCallback -> AudioStream
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IUnknown                 rc=0
+[era] _BlitTrans_E             rc=0
+[era] _BlitTrans_G             rc=0
+[era] _com_error               rc=2
+[era] OverlayTypeClass         rc=2
+[era] Gadget                   rc=0
+[era] SmudgeTypeClass          rc=0
+[era] Network                  rc=0
+[era] Fassign                  rc=0
+[era] Fassign_Helper           rc=0
+[era] CStreamClass             rc=2
+[era] DDraw                    rc=0
+[era] SaveGame                 rc=0
+[era] _addr_7D                 rc=0
+[era] TeleportLocomotionClass  rc=2
+[era] AudioStream              rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f6c80   MISMATCH         IUnknown::GetCoords_Alt
+[diff] 0x7bc6c0   MATCH            _BlitTrans_E::sub_7BC6C0
+[diff] 0x7bc6f0   MATCH            _BlitTrans_E::sub_7BC6F0
+[diff] 0x7bc720   MATCH            _BlitTrans_E::sub_7BC720
+[diff] 0x7bc8c0   MATCH            _BlitTrans_G::sub_7BC8C0
+[diff] 0x7bc8f0   MATCH            _BlitTrans_G::sub_7BC8F0
+[diff] 0x7bc920   MATCH            _BlitTrans_G::sub_7BC920
+[diff] 0x600630   MISMATCH         Gadget::InitProperties
+[diff] 0x6b55c0   MISMATCH         SmudgeTypeClass::GetFlag
+[diff] 0x7982a0   MISMATCH         Network_Delete
+[diff] 0x7d7cc1   MISMATCH         Fassign_Helper
+[diff] 0x7d7d1c   MISMATCH         Fassign_Helper_7D7D1C
+[diff] 0x4a3370   MATCH            DDraw::ReleaseSurfaces
+[diff] 0x721010   MISMATCH         SaveGame::VtableDispatch
+[diff] 0x7de12f   MISMATCH         ___termcon
+[diff] 0x407a30   MISMATCH         AudioStream::SetPlaybackCallback
+[ledger] 0x5f6c80 IUnknown::GetCoords_Alt -> NG (attempt 1)
+[ledger] 0x7bc6c0 _BlitTrans_E::sub_7BC6C0 -> OK (attempt 1)
+[ledger] 0x7bc6f0 _BlitTrans_E::sub_7BC6F0 -> OK (attempt 1)
+[ledger] 0x7bc720 _BlitTrans_E::sub_7BC720 -> OK (attempt 1)
+[ledger] 0x7bc8c0 _BlitTrans_G::sub_7BC8C0 -> OK (attempt 1)
+[ledger] 0x7bc8f0 _BlitTrans_G::sub_7BC8F0 -> OK (attempt 1)
+[ledger] 0x7bc920 _BlitTrans_G::sub_7BC920 -> OK (attempt 1)
+[ledger] 0x7dce0e _com_error::sub_7DCE0E -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fe570 OverlayTypeClass::GetDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x600630 Gadget::InitProperties -> NG (attempt 1)
+[ledger] 0x6b55c0 SmudgeTypeClass::GetFlag -> NG (attempt 1)
+[ledger] 0x7982a0 Network_Delete -> NG (attempt 1)
+[ledger] 0x7d7cc1 Fassign_Helper -> NG (attempt 1)
+[ledger] 0x7d7d1c Fassign_Helper_7D7D1C -> NG (attempt 1)
+[ledger] 0x4a2fc0 CStreamClass::UnlockRegion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a3370 DDraw::ReleaseSurfaces -> OK (attempt 1)
+[ledger] 0x721010 SaveGame::VtableDispatch -> NG (attempt 1)
+[ledger] 0x7de12f ___termcon -> NG (attempt 1)
+[ledger] 0x71a130 TeleportLocomotionClass::ConstructLocomotor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x407a30 AudioStream::SetPlaybackCallback -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "MATCH": 7,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 4,
+  "const_fold": 2,
+  "branch_order": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 43.8,
+ "match_rate_of_total_pct": 35.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p167\batch_report.json
