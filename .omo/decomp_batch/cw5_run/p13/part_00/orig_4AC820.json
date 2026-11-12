@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AC820",
+ "name": "TacticalClass::SetObserverMode",
+ "size": 152,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AC820",
+ "bytes_hex": "53568bf18b4c240c8a86b211000083f9ff8ad8741185c9740983f901750d8ad9eb0932dbeb0584c00f94c33ad874648b86a811000085c0755a8b066a006a008bceff504884dbc686b011000000c686b111000000c686b311000000c686b41100000074218b0d4c3da8008b81f002000085c07e11c686b211000001e8f013feff5e5bc204008b168bcec686b211000000ff52505e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

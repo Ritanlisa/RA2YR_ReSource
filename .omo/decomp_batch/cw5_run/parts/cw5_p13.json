@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x537530",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x4ac660",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x4ac820",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x6403a0",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x707d20",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x6e1530",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x726400",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x69b7e0",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x509610",
+  "family": "B1",
+  "shape": "B1 global elem typed void* (data blob)",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x542520",
+  "family": "B1",
+  "shape": "B1 global elem typed void* (data blob)",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x5c2de0",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x4d2bc0",
+  "family": "B1",
+  "shape": "B1 global elem typed void* (data blob)",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x6e1780",
+  "family": "B1",
+  "shape": "B1 global elem typed void* (data blob)",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x4adff0",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x6b56d0",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x4adba0",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x453240",
+  "family": "B1",
+  "shape": "B1 global elem typed void* (data blob)",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x4a2cd0",
+  "family": "B1",
+  "shape": "B1 global elem typed void* (data blob)",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x4a2600",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ },
+ {
+  "addr": "0x64a630",
+  "family": "B1",
+  "shape": "B1 global object-array elem typed void*",
+  "errfam": "C2036"
+ }
+]

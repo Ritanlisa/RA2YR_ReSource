@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetObserverMode@TacticalClass@@QAEDH@Z",
+ "sym_key": "TacticalClass::SetObserverMode",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "518b44240053568bf133c924008a8eb211000033db0bc13ac374368b86a81100003bc3752c8b16535356ff52488b0656889eb0110000889eb1110000889eb3110000889eb4110000889eb2110000ff50505e5b59c20400",
+ "relocs": []
+}

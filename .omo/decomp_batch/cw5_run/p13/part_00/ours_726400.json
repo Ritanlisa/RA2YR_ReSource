@@ -1,0 +1,21 @@
+{
+ "symbol": "?ProcessUpgradeEffects@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::ProcessUpgradeEffects",
+ "size": 153,
+ "link_base": 0,
+ "bytes_hex": "5153568bf15732db8b46348bb8ac00000085ff747f558b6c2410837f2c0d75228b47348acb896e348d04408d048089463cb801000000d3e08b4e40f7d023c1894640837f2c3375428b4f348b1500000000516a008d8a68050300e8000000008bc88b4734992bc2896e34d1f803c18acb8d04408d048089463cb801000000d3e08b4e40f7d023c8894e408b7f28fec385ff75875d5f5e5b59c3",
+ "relocs": [
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}
