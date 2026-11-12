@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B4A10",
+ "name": "String_Process_7B4A10",
+ "size": 175,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B4A10",
+ "bytes_hex": "55568b74240c8be985f675075eb0015dc2040053578bfe83c9ff33c08b5d00f2aef7d1498bd14285db740c8bfb83c9fff2aef7d14903d152e8ca43010083c4048bd085db89550074258bfb83c9ff33c0f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a48b742414eb03c602008bfe83c9ff33c0f2aef7d12bf98bf78b7d008bd183c9fff2ae8bca4fc1e902f3a58bca83e10385dbf3a4740953e88a40010083c4045f5b5eb0015dc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

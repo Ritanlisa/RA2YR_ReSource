@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p317\part_00
+=== convert (20 addrs) ===
+[conv] 0x6caa10 _VectorClass_PAVSubTitle::Release -> _VectorClass_PAVSubTitle
+[conv] 0x6dca10 _VectorClass_PAVShadowControlClass::Release -> _VectorClass_PAVShadowControlClass
+[conv] 0x6e6580 _VectorClass_PAVTagTypeClass::Release -> _VectorClass_PAVTagTypeClass
+[conv] 0x71b2e0 _VectorClass_PAVTemporalClass::Release -> _VectorClass_PAVTemporalClass
+[conv] 0x71fc40 _VectorClass_PAVTEventClass::Release -> _VectorClass_PAVTEventClass
+[conv] 0x7237d0 _VectorClass_PAVTiberiumClass::Release -> _VectorClass_PAVTiberiumClass
+[conv] 0x724cd0 _VectorClass_PBVToolTip::readString -> _VectorClass_PBVToolTip
+[conv] 0x74f400 _VectorClass_PAVVeinholeMonsterClass::Release -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x751970 _VectorClass_PAVVocClass::Release -> _VectorClass_PAVVocClass
+[conv] 0x7536f0 _VectorClass_PAVVoxClass::Release -> _VectorClass_PAVVoxClass
+[conv] 0x75a4d0 _VectorClass_PAVMovieHandle::Release -> _VectorClass_PAVMovieHandle
+[conv] 0x7644a0 _VectorClass_PAVWaypointPathClass::Release -> _VectorClass_PAVWaypointPathClass
+[conv] 0x7ad0d0 _VectorClass_PAUtConnInfoStruct::Release -> _VectorClass_PAUtConnInfoStruct
+[conv] 0x7b28e0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Release -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b4360 _VectorClass_PAE::Release -> _VectorClass_PAE
+[conv] 0x7b4a10 ObjectClass::String_Process_7B4A10 -> ObjectClass
+[conv] 0x763810 WaypointPathClass::Construct -> WaypointPathClass
+[conv] 0x60caf0 ObjectClass::UI_Helper_60CAF0 -> ObjectClass
+[conv] 0x731840 SquadClass::ProcessMove -> SquadClass
+[conv] 0x5175f0 ObjectClass::ReadRegistryOptionsWOL -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVSubTitle rc=2
+[era] _VectorClass_PAVShadowControlClass rc=2
+[era] _VectorClass_PAVTagTypeClass rc=2
+[era] _VectorClass_PAVTemporalClass rc=2
+[era] _VectorClass_PAVTEventClass rc=2
+[era] _VectorClass_PAVTiberiumClass rc=2
+[era] _VectorClass_PBVToolTip  rc=2
+[era] _VectorClass_PAVVeinholeMonsterClass rc=2
+[era] _VectorClass_PAVVocClass rc=2
+[era] _VectorClass_PAVVoxClass rc=2
+[era] _VectorClass_PAVMovieHandle rc=2
+[era] _VectorClass_PAVWaypointPathClass rc=2
+[era] _VectorClass_PAUtConnInfoStruct rc=2
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=2
+[era] _VectorClass_PAE         rc=2
+[era] ObjectClass              rc=2
+[era] WaypointPathClass        rc=0
+[era] SquadClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b4a10   MISMATCH         ObjectClass::String_Process_7B4A10
+[diff] 0x763810   MISMATCH         WaypointPathClass::Construct
+[ledger] 0x6caa10 _VectorClass_PAVSubTitle::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dca10 _VectorClass_PAVShadowControlClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e6580 _VectorClass_PAVTagTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71b2e0 _VectorClass_PAVTemporalClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71fc40 _VectorClass_PAVTEventClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7237d0 _VectorClass_PAVTiberiumClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x724cd0 _VectorClass_PBVToolTip::readString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74f400 _VectorClass_PAVVeinholeMonsterClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x751970 _VectorClass_PAVVocClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7536f0 _VectorClass_PAVVoxClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75a4d0 _VectorClass_PAVMovieHandle::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7644a0 _VectorClass_PAVWaypointPathClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ad0d0 _VectorClass_PAUtConnInfoStruct::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b28e0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4360 _VectorClass_PAE::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4a10 ObjectClass::String_Process_7B4A10 -> NG (attempt 1)
+[ledger] 0x763810 WaypointPathClass::Construct -> NG (attempt 1)
+[ledger] 0x60caf0 ObjectClass::UI_Helper_60CAF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x731840 SquadClass::ProcessMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5175f0 ObjectClass::ReadRegistryOptionsWOL -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p317\batch_report.json

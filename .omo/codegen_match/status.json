@@ -57196,6 +57196,18 @@
   "status": "PENDING",
   "this_as_id": false
  },
+ "0x5175f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::ReadRegistryOptionsWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ReadRegistryOptionsWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5176a0": {
   "attempts": 2,
   "first_diff": "+2 not al",
@@ -92805,6 +92817,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x60caf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::UI_Helper_60CAF0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UI_Helper_60CAF0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x60cba0": {
   "attempts": 1,
   "clean": false,
@@ -121147,6 +121171,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6caa10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVSubTitle::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SubTitle::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6caac0": {
   "attempts": 1,
   "clean": false,
@@ -123755,6 +123791,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6dca10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVShadowControlClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_UDirtyAreaStruct___16::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6dcac0": {
   "attempts": 1,
   "clean": false,
@@ -125581,6 +125629,18 @@
   "orig_name": "VectorClass_ptr_TagTypeClass::Add",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e6580": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTagTypeClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TagTypeClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6e6630": {
@@ -130728,6 +130788,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x71b2e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTemporalClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TemporalClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x71b390": {
   "attempts": 1,
   "clean": false,
@@ -131724,6 +131796,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x71fc40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTEventClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TEventClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x71fcf0": {
   "attempts": 1,
   "clean": false,
@@ -132633,6 +132717,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7237d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTiberiumClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TiberiumClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x723880": {
   "attempts": 1,
   "clean": false,
@@ -133184,6 +133280,18 @@
   "orig_name": "ToolTipClass::addRef",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x724cd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVToolTip::readString",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ToolTipClass::readString",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x724d80": {
@@ -137207,6 +137315,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x731840": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "SquadClass::ProcessMove",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SquadClass::ProcessMove",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x731a10": {
   "attempts": 6,
   "clean": false,
@@ -140125,6 +140245,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x74f400": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_VectorClass_PAVVeinholeMonsterClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "?::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x74f4b0": {
   "attempts": 1,
   "clean": false,
@@ -140803,6 +140935,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x751970": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVVocClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VocClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x751a20": {
   "attempts": 1,
   "clean": false,
@@ -141317,6 +141461,18 @@
   "name": "VectorClass_ptr_VoxClass::Add",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x7536f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVVoxClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VoxClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7537a0": {
   "attempts": 1,
@@ -142710,6 +142866,18 @@
   "orig_name": "VectorClass_ptr_MovieHandle::Add",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x75a4d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVMovieHandle::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_MovieHandle::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x75a580": {
@@ -144186,6 +144354,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x763810": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 mov eax, dword ptr [esp + 8]",
+  "name": "WaypointPathClass::Construct",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "WaypointPathClass::Construct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x763980": {
   "attempts": 1,
   "clean": true,
@@ -144450,6 +144630,18 @@
   "orig_name": "VectorClass_ptr_WaypointPathClass::Add",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7644a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVWaypointPathClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_WaypointPathClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x764550": {
@@ -152777,6 +152969,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7ad0d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUtConnInfoStruct::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WonlineStringDialogControl_12::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7ad180": {
   "attempts": 1,
   "clean": false,
@@ -154396,6 +154600,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7b28e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7b2990": {
   "attempts": 1,
   "clean": false,
@@ -154852,6 +155068,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7b4360": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAE::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_PAE::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7b4410": {
   "attempts": 1,
   "clean": false,
@@ -155033,6 +155261,18 @@
   "name": "String::Reassign",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x7b4a10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+56 call 0x7c8e17",
+  "name": "ObjectClass::String_Process_7B4A10",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "String_Process_7B4A10",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7b4ac0": {
   "attempts": 1,
