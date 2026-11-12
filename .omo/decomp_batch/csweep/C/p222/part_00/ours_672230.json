@@ -1,0 +1,39 @@
+{
+ "symbol": "?ReadMaximumPlayersINI@ObjectClass@@QAEEXZ",
+ "sym_key": "ObjectClass::ReadMaximumPlayersINI",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "51a10000000056578b7c24088bf1508bcfe80000000085c074218b8ed01400008b1500000000a1000000005152508bcfe8000000008986d01400005fb0015e59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?aMaximums@@3HA",
+   "sym_key": "aMaximums"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?BinarySearchSection@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::BinarySearchSection"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?aPlayers@@3HA",
+   "sym_key": "aPlayers"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?aMaximums@@3HA",
+   "sym_key": "aMaximums"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?ReadInt_Overwrite@INIClass@@QAEHPAX00@Z",
+   "sym_key": "INIClass::ReadInt_Overwrite"
+  }
+ ]
+}

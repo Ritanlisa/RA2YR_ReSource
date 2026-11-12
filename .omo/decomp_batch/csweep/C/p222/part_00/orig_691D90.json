@@ -1,0 +1,11 @@
+{
+ "addr": "0x691D90",
+ "name": "ScriptTypeClass::LoadTypeData",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x691D90",
+ "bytes_hex": "8b442408568b7424085056e8e0e5d7ff85c07c2d85f674278d4c240c518bcee8acebd7ffc70608107f00c74604ec0f7f00c74608e40f7f00c7460cdc0f7f0033c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p222\part_00
+=== convert (20 addrs) ===
+[conv] 0x62d710 ParticleClass::CheckDrawFlags -> ParticleClass
+[conv] 0x6e7c20 ObjectClass::Network_Process_6E7C20 -> ObjectClass
+[conv] 0x46d000 CampaignClass::Write -> CampaignClass
+[conv] 0x4c5a30 EMPulseClass::Write -> EMPulseClass
+[conv] 0x6447e0 ParticleSystemTypeClass::SaveLoad_Prefix -> ParticleSystemTypeClass
+[conv] 0x691d90 ScriptTypeClass::LoadTypeData -> ScriptTypeClass
+[conv] 0x672230 ObjectClass::ReadMaximumPlayersINI -> ObjectClass
+[conv] 0x435560 BufferIOFileClass::ScalarDtor -> BufferIOFileClass
+[conv] 0x5d4ad0 TacticalClass::processInput -> TacticalClass
+[conv] 0x6ee050 ObjectClass::sub_6EE050 -> ObjectClass
+[conv] 0x674500 ObjectClass::sub_674500 -> ObjectClass
+[conv] 0x69acd0 GameOption::SetDescriptionWStr -> GameOption
+[conv] 0x7693a0 WDTSurface::ToggleState -> WDTSurface
+[conv] 0x7010d0 TechnoClass::HasValidWeapon -> TechnoClass
+[conv] 0x429500 ApplicationClass::sub_429500 -> ApplicationClass
+[conv] 0x554aa0 TacticalClass::UpdateScrollTarget -> TacticalClass
+[conv] 0x628d80 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::GetSize -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x632b70 Buffer::RotateBufferCrypto -> Buffer
+[conv] 0x663410 RocketLocomotionClass::BeginMove -> RocketLocomotionClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleClass            rc=0
+[era] ObjectClass              rc=2
+[era] CampaignClass            rc=0
+[era] EMPulseClass             rc=0
+[era] ParticleSystemTypeClass  rc=0
+[era] ScriptTypeClass          rc=0
+[era] BufferIOFileClass        rc=2
+[era] TacticalClass            rc=0
+[era] GameOption               rc=2
+[era] WDTSurface               rc=0
+[era] TechnoClass              rc=2
+[era] ApplicationClass         rc=2
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] Buffer                   rc=0
+[era] RocketLocomotionClass    rc=0
+=== diffasm byte-compare ===
+[diff] 0x62d710   MISMATCH         ParticleClass::CheckDrawFlags
+[diff] 0x672230   MISMATCH         ObjectClass::ReadMaximumPlayersINI
+[diff] 0x6ee050   MISMATCH         ObjectClass::sub_6EE050
+[diff] 0x674500   MISMATCH         ObjectClass::sub_674500
+[diff] 0x46d000   MISMATCH         CampaignClass::Write
+[diff] 0x4c5a30   MISMATCH         EMPulseClass::Write
+[diff] 0x6447e0   MISMATCH         ParticleSystemTypeClass::SaveLoad_Prefix
+[diff] 0x691d90   MISMATCH         ScriptTypeClass::LoadTypeData
+[diff] 0x5d4ad0   MISMATCH         TacticalClass::processInput
+[diff] 0x554aa0   MISMATCH         TacticalClass::UpdateScrollTarget
+[diff] 0x7693a0   MISMATCH         WDTSurface::ToggleState
+[diff] 0x628d80   MISMATCH         _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::GetSize
+[diff] 0x632b70   MATCH            Buffer::RotateBufferCrypto
+[diff] 0x663410   MISMATCH         RocketLocomotionClass::BeginMove
+[ledger] 0x62d710 ParticleClass::CheckDrawFlags -> NG (attempt 1)
+[ledger] 0x6e7c20 ObjectClass::Network_Process_6E7C20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46d000 CampaignClass::Write -> NG (attempt 1)
+[ledger] 0x4c5a30 EMPulseClass::Write -> NG (attempt 1)
+[ledger] 0x6447e0 ParticleSystemTypeClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x691d90 ScriptTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x7b1c50 0x7b1c50 -> PENDING (attempt 1)
+[ledger] 0x672230 ObjectClass::ReadMaximumPlayersINI -> NG (attempt 1)
+[ledger] 0x435560 BufferIOFileClass::ScalarDtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d4ad0 TacticalClass::processInput -> NG (attempt 1)
+[ledger] 0x6ee050 ObjectClass::sub_6EE050 -> NG (attempt 1)
+[ledger] 0x674500 ObjectClass::sub_674500 -> NG (attempt 1)
+[ledger] 0x69acd0 GameOption::SetDescriptionWStr -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7693a0 WDTSurface::ToggleState -> NG (attempt 1)
+[ledger] 0x7010d0 TechnoClass::HasValidWeapon -> COMPILE_FAIL (attempt 1)
+[ledger] 0x429500 ApplicationClass::sub_429500 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x554aa0 TacticalClass::UpdateScrollTarget -> NG (attempt 1)
+[ledger] 0x628d80 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::GetSize -> NG (attempt 1)
+[ledger] 0x632b70 Buffer::RotateBufferCrypto -> OK (attempt 1)
+[ledger] 0x663410 RocketLocomotionClass::BeginMove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 5,
+  "NO_PSEUDO": 1,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "const_fold": 4,
+  "codegen_shape": 4,
+  "regalloc": 3,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p222\batch_report.json

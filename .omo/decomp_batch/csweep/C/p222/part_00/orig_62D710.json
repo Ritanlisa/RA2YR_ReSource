@@ -1,0 +1,11 @@
+{
+ "addr": "0x62D710",
+ "name": "ParticleClass::CheckDrawFlags",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x62D710",
+ "bytes_hex": "518a0d9849ac00b00184c8752f8ad16860d762000ad0b8ff7f0000668944240466894424068b44240488159849ac00a3d049ac00e841c0190083c404b8d049ac0059c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?RotateBufferCrypto@Buffer@@QAEPAHPAHH@Z",
+ "sym_key": "Buffer::RotateBufferCrypto",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "81ec000100008b942408010000568bf157b9400000008d7c24086a40f3a58d4c240ce8000000008b84240c010000b9400000008d7424088bf8f3a55f5e81c400010000c20800",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?RotateBitBufferLeft@@YIXPAXHH@Z",
+   "sym_key": "RotateBitBufferLeft"
+  }
+ ]
+}

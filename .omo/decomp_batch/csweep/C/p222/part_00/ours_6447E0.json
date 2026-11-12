@@ -1,0 +1,21 @@
+{
+ "symbol": "?SaveLoad_Prefix@ParticleSystemTypeClass@@QAGXPAH@Z",
+ "sym_key": "ParticleSystemTypeClass::SaveLoad_Prefix",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b7424085056e80000000085c07c1d85f674198d4c240c518bcee800000000c70600000000c74604000000005ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?ObjectTypeClass__LoadCleanup@@YGHPAXPAH@Z",
+   "sym_key": "ObjectTypeClass__LoadCleanup"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Construct@ObjectTypeClass@@QAEPAIH@Z",
+   "sym_key": "ObjectTypeClass::Construct"
+  }
+ ]
+}

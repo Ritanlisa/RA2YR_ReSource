@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdateScrollTarget@TacticalClass@@QAEDHHHHD@Z",
+ "sym_key": "TacticalClass::UpdateScrollTarget",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b412453568b742410578b7c241c3bc2750d8b41283bc6750a3bc7743feb048b44241033db24008a59488951248b5424180bd884db89512c897128897930741a8b44242050e80000000025ff00000080e3005f0bc35e5bc214008ac35f5e5bc21400",
+ "relocs": [
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?ScrollView@TacticalClass@@QAEDD@Z",
+   "sym_key": "TacticalClass::ScrollView"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D4AD0",
+ "name": "TacticalClass::processInput",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D4AD0",
+ "bytes_hex": "568b7424085783ee088bf95668a806830089b7c4020000e8f41de3ff8b0783c40885c0740e8b108bc8897038ff520485c075f28a471984c074068b47248970385f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

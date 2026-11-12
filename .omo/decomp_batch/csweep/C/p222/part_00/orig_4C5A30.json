@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C5A30",
+ "name": "EMPulseClass::Write",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C5A30",
+ "bytes_hex": "8b442408568b7424085056e840a9f4ff85c07c2d85f674278d4c240c518bcee86ca7f4ffc706a8877e00c746048c877e00c7460884877e00c7460c7c877e0033c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?BeginMove@RocketLocomotionClass@@QAGHPAH@Z",
+ "sym_key": "RocketLocomotionClass::BeginMove",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b742408508b0e51e80000000033d23bc27c1b3bf2741789168956040fbe0da001000089563c894e3489168956045ec20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?SwizzleManager__SaveLoad@@YGHPAXPAH@Z",
+   "sym_key": "SwizzleManager__SaveLoad"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

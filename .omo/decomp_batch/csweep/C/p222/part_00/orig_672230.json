@@ -1,0 +1,11 @@
+{
+ "addr": "0x672230",
+ "name": "ReadMaximumPlayersINI",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x672230",
+ "bytes_hex": "a1a40c7f0056578b7c240c8bf1508bcfe8cb45ebff85c00f95c084c074208b8ed01400008b15a40c7f005168bca08300528bcfe86854ebff8986d01400005fb0015ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

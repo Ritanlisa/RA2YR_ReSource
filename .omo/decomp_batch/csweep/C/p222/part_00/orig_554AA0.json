@@ -1,0 +1,11 @@
+{
+ "addr": "0x554AA0",
+ "name": "TacticalClass::UpdateScrollTarget",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x554AA0",
+ "bytes_hex": "8b41248b542408568b742408578b7c24183bc6750b8b41283bc275043bc774218b44241489712489412c8a414884c0895128897930740a8b54241c52e80f0000005f5ec21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

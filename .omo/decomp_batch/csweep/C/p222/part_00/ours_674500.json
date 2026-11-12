@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_674500@ObjectClass@@QAEEH@Z",
+ "sym_key": "ObjectClass::sub_674500",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "51568b7424048bcee8000000008bcee8000000008bcee800000000b0015e59c20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?ReadDifficultyModifiers@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ReadDifficultyModifiers"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?ReadDifficultyModifiers@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ReadDifficultyModifiers"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?ReadDifficultyModifiers@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ReadDifficultyModifiers"
+  }
+ ]
+}

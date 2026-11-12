@@ -1,0 +1,11 @@
+{
+ "addr": "0x663410",
+ "name": "RocketLocomotionClass::BeginMove",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x663410",
+ "bytes_hex": "8b442408568b7424085056e8a076efff85c07c2e85f6742ac706c0ae7e00c74604f4ad7e008b0d84eda800c7463c00000000894e34c706e80b7f00c746041c0b7f005ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

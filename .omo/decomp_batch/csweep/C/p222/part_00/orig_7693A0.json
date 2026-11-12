@@ -1,0 +1,11 @@
+{
+ "addr": "0x7693A0",
+ "name": "WDTSurface::ToggleState",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7693A0",
+ "bytes_hex": "8a442408568bf1384674743584c0884674740c8a466884c074058b4670eb038b466c8b4e6450e8d532e6ff83c654568b74240c8bcee8e692e6ff8bcee86f8ae6ff5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
