@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x480a80",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x6b8ca0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x7abd40",
+  "family": "A4",
+  "shape": "A4 const-loss void* slot",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x6b0db0",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x583180",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x49d120",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x774cd0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x778210",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x49be40",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x711840",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x5a8720",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x62dc50",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x6951f0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x5f03b0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x6ae3f0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x778f30",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x7510d0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x7a16b0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x42b420",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x434120",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ }
+]

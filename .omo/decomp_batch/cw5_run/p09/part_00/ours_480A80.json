@@ -1,0 +1,105 @@
+{
+ "symbol": "?ReduceTiberium@CellClass@@QAEHH@Z",
+ "sym_key": "CellClass::ReduceTiberium",
+ "size": 569,
+ "link_base": 0,
+ "bytes_hex": "83ec348d442414535556578bf950e8000000008d4c24348bf0518bcfe8000000008b680885ed0f8eae0000008b580c85db0f8ea30000008b4e0885c9894c24140f8e810000008b4e0c85c9894c241c7e768b108b0e8b40043bd1896c2418895c24107e0a2bd103ea8bd1896c24188b76043bc67e0e8b5c24102bc603d88bc6895c24108b5c241403ea03d93beb7c068b4c2418eb0a8b5c24142bca8d4c19018b5c241c8b6c241003de03e83beb7d0e8b5c241c2bf08d741e018974241089542418894c2414eb2a8b108b400489542418896c2414895c2410eb178b068b4e088b560c894424188b4604894c2414895424108b35040000008b4f442bc689442420e8000000008b4c244885c98bd90f8e1a01000083f8ff0f84110100008b0dd80700008b04818a8f1e01000080f90b8944241c750b8d57248bc852e8000000008a8f1e0100008bc125ff0000008d50013bd30f8fa70000006aff8bcf8bd8c74744ffffffffc6871e01000000e80000000083c724b9f801000057e8000000008bcfe8000000008b74244833ed668b0f8bc583e007668b57020fbe807a00000003c833ce81e1ff000000c1f81033f103c233c6b9f801000025ff00000033f08d442448508974244ce80000000084c074278d4c2448e8000000008bc88b44241c8b90f8000000803c1100750c8d4c2448518b08e8000000004583fd087c8feb082acb888f1e0100008b5424108b4424148b4c24206a00528b542420505152e8000000005f5e8bc35d5b83c434c204005f5e5d33c05b83c434c20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?GetPlacementRect@BuildingClass@@QAEPAHPAX@Z",
+   "sym_key": "BuildingClass::GetPlacementRect"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?GetStartCoords@House@@QAEPAIPAX@Z",
+   "sym_key": "House::GetStartCoords"
+  },
+  {
+   "off": 243,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?FindBuildingByTiberiumType@@YIHPAX@Z",
+   "sym_key": "FindBuildingByTiberiumType"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?RegisterForRedraw@CellClass@@QAEPAEPAX@Z",
+   "sym_key": "CellClass::RegisterForRedraw"
+  },
+  {
+   "off": 364,
+   "type": "REL32",
+   "sym": "?AnnounceUpgrade@House@@QAEXH@Z",
+   "sym_key": "House::AnnounceUpgrade"
+  },
+  {
+   "off": 372,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 378,
+   "type": "REL32",
+   "sym": "?AddUpgrade@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::AddUpgrade"
+  },
+  {
+   "off": 385,
+   "type": "REL32",
+   "sym": "?ClearCrateStateForAll@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::ClearCrateStateForAll"
+  },
+  {
+   "off": 410,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 434,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 455,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 468,
+   "type": "REL32",
+   "sym": "?PosToIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::PosToIndex"
+  },
+  {
+   "off": 498,
+   "type": "REL32",
+   "sym": "?AddOccupancy@BuildingClass@@QAEHPAX@Z",
+   "sym_key": "BuildingClass::AddOccupancy"
+  },
+  {
+   "off": 541,
+   "type": "REL32",
+   "sym": "?Cell__CreateCrater@@YGDHHHHD@Z",
+   "sym_key": "Cell__CreateCrater"
+  }
+ ]
+}

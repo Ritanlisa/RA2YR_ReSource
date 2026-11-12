@@ -7525,7 +7525,7 @@
   "this_as_id": false
  },
  "0x42b420": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "GeneratePathWaypoints",
@@ -8591,7 +8591,7 @@
   "status": "OK"
  },
  "0x434120": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -13406,15 +13406,15 @@
   "status": "NG"
  },
  "0x480a80": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x3c",
   "name": "CellClass::ReduceTiberium",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "CellClass::ReduceTiberium",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x481130": {
@@ -16634,14 +16634,14 @@
   "this_as_id": false
  },
  "0x49be40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MPCooperative::WriteCoopSaveINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MPCooperative::WriteCoopSaveINI",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -16682,7 +16682,7 @@
   "this_as_id": false
  },
  "0x49d120": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -40051,7 +40051,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x583180": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -41498,14 +41498,14 @@
   "this_as_id": false
  },
  "0x5a8720": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x4c",
   "name": "PlaceNeutralCreeps",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "PlaceNeutralCreeps",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5a89d0": {
@@ -49614,15 +49614,15 @@
   "this_as_id": false
  },
  "0x5f03b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x208",
   "name": "NullModem::TestConnection",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "NullModem::TestConnection",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f1350": {
@@ -52996,14 +52996,14 @@
   "this_as_id": false
  },
  "0x62dc50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ParticleSystemClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ParticleSystemClass::Constructor",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -60976,14 +60976,14 @@
   "this_as_id": false
  },
  "0x6951f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xdc",
   "name": "FindAndValidateMap",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "FindAndValidateMap",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6954c0": {
@@ -62980,15 +62980,15 @@
   "status": "NG"
  },
  "0x6ae3f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+1 mov ebx, dword ptr [esp + 8]",
   "name": "Skirmish::Setup_DlgProc",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "Skirmish::Setup_DlgProc",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6aef40": {
@@ -63138,7 +63138,7 @@
   "status": "NG"
  },
  "0x6b0db0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -64440,7 +64440,7 @@
   "this_as_id": false
  },
  "0x6b8ca0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -72279,7 +72279,7 @@
   "this_as_id": false
  },
  "0x711840": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -79426,7 +79426,7 @@
   "this_as_id": false
  },
  "0x7510d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84509,7 +84509,7 @@
   "this_as_id": false
  },
  "0x774cd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84876,7 +84876,7 @@
   "this_as_id": false
  },
  "0x778210": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84999,14 +84999,14 @@
   "this_as_id": false
  },
  "0x778f30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "LocalizeWOLDateString",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "LocalizeWOLDateString",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x779dd0": {
@@ -85902,7 +85902,7 @@
   "this_as_id": false
  },
  "0x7a16b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "HandleWOLMatchMessage",
@@ -85996,7 +85996,7 @@
   "this_as_id": false
  },
  "0x7abd40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,225 @@
+{
+ "symbol": "?Setup_DlgProc@Skirmish@@QAGHPAXIIH@Z",
+ "sym_key": "Skirmish::Setup_DlgProc",
+ "size": 610,
+ "link_base": 0,
+ "bytes_hex": "538b5c2418558b6c2418568b742418578b7c241853558bd68bcfe80000000085c00f853402000081fe970400000f86b801000081fee90400000f851a02000033c9e8000000008b0385c00f84cf010000837b04ff0f84c501000050e8000000008bf081fe0b050000743481fe0e050000742c81fe16050000742481fe1a050000741c81fe1b050000741481fe1c050000740c81fe1d0500000f85210100008b430483f8ff75106a006a0068470100005657e8000000006a005068500100005657e8000000004083f8037779ff24850000000033d268870000008a1500000000b900000000eb4633d233c98a1500000000668b0d000000006889000000eb2e33d233c98a1500000000668b0d00000000688b000000eb1633d233c98a1500000000668b0d00000000688d000000e8000000008bc8e8000000005f5e5db8010000005bc2140033c9e8000000008bcee80000000083f8ff75688bcee80000000083f8ff74278b43048bd6508bcfe8000000008bc8e8000000008bc8e8000000005f5e5db8010000005bc214008bcee80000000083f8ff74298b4b048bd6518bcfe80000000050e80000000083c4048bc8e8000000005f5e5db8010000005bc214008b53048bcf528bd6e80000000083f8ff744e8bc8e8000000008bc8e8000000005f5e5db8010000005bc21400750f538bcfe8000000005f5e5d5bc2140083fe0f742a81fe1101000075508bc58bd5c1e810505381e2ffff00008bcfe8000000005f5e5db8010000005bc21400a10000000085c0741d686804000057e8000000008bc8e80000000084c075078bcfe8000000006a0057e80000000033c05f5e5d5bc21400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXXZ",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?GetDlgCtrlID@@YGHPAX@Z",
+   "sym_key": "GetDlgCtrlID"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "$L2360",
+   "sym_key": "$L2360"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Skirmish_cpp@@3EA",
+   "sym_key": "g_Str_File_Skirmish_cpp"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83FC3C@@3PADA",
+   "sym_key": "DataGlobal_83FC3C"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Skirmish_cpp@@3EA",
+   "sym_key": "g_Str_File_Skirmish_cpp"
+  },
+  {
+   "off": 243,
+   "type": "DIR32",
+   "sym": "?g_Str_STT_PlayerDumbAI@@3GA",
+   "sym_key": "g_Str_STT_PlayerDumbAI"
+  },
+  {
+   "off": 260,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Skirmish_cpp@@3EA",
+   "sym_key": "g_Str_File_Skirmish_cpp"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "?g_Str_STT_PlayerSmartAI@@3GA",
+   "sym_key": "g_Str_STT_PlayerSmartAI"
+  },
+  {
+   "off": 284,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Skirmish_cpp@@3EA",
+   "sym_key": "g_Str_File_Skirmish_cpp"
+  },
+  {
+   "off": 291,
+   "type": "DIR32",
+   "sym": "?g_Str_STT_PlayerGeniusAI@@3GA",
+   "sym_key": "g_Str_STT_PlayerGeniusAI"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGHHH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXXZ",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXXZ",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 334,
+   "type": "REL32",
+   "sym": "?IDToIndex@CountryCombo@@QAEHXZ",
+   "sym_key": "CountryCombo::IDToIndex"
+  },
+  {
+   "off": 346,
+   "type": "REL32",
+   "sym": "?IDToIndex@StartCombo@@QAEHXZ",
+   "sym_key": "StartCombo::IDToIndex"
+  },
+  {
+   "off": 364,
+   "type": "REL32",
+   "sym": "?GetComboBoxSelectedRaw@@YIJPAXHH@Z",
+   "sym_key": "GetComboBoxSelectedRaw"
+  },
+  {
+   "off": 371,
+   "type": "REL32",
+   "sym": "?GetColorTooltip@GameSetup@@QAEPAGXZ",
+   "sym_key": "GameSetup::GetColorTooltip"
+  },
+  {
+   "off": 378,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXXZ",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 397,
+   "type": "REL32",
+   "sym": "?SideIDToIndex@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::SideIDToIndex"
+  },
+  {
+   "off": 415,
+   "type": "REL32",
+   "sym": "?SetComboBoxSelection@@YIJPAXHH@Z",
+   "sym_key": "SetComboBoxSelection"
+  },
+  {
+   "off": 421,
+   "type": "REL32",
+   "sym": "?sub_4E4F30@@YAPAGH@Z",
+   "sym_key": "sub_4E4F30"
+  },
+  {
+   "off": 431,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXXZ",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 456,
+   "type": "REL32",
+   "sym": "?GetComboBoxSelected@@YIJPAXHH@Z",
+   "sym_key": "GetComboBoxSelected"
+  },
+  {
+   "off": 468,
+   "type": "REL32",
+   "sym": "?GetName@SideClass@@QAEPAGXZ",
+   "sym_key": "SideClass::GetName"
+  },
+  {
+   "off": 475,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXXZ",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 497,
+   "type": "REL32",
+   "sym": "?SetupGame@Skirmish@@QAEHH@Z",
+   "sym_key": "Skirmish::SetupGame"
+  },
+  {
+   "off": 539,
+   "type": "REL32",
+   "sym": "?DialogSkirmishFunc_UpdateMultiEngineer@@YIXPAXHHH@Z",
+   "sym_key": "DialogSkirmishFunc_UpdateMultiEngineer"
+  },
+  {
+   "off": 556,
+   "type": "DIR32",
+   "sym": "?g_UIControlState@@3PAXA",
+   "sym_key": "g_UIControlState"
+  },
+  {
+   "off": 571,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 578,
+   "type": "REL32",
+   "sym": "?LookupDialogHash@SkirmishMapGen@@QAEDXZ",
+   "sym_key": "SkirmishMapGen::LookupDialogHash"
+  },
+  {
+   "off": 589,
+   "type": "REL32",
+   "sym": "?RenderPreview@Skirmish@@QAEHXZ",
+   "sym_key": "Skirmish::RenderPreview"
+  },
+  {
+   "off": 597,
+   "type": "REL32",
+   "sym": "?ValidateRect@@YGHPAXH@Z",
+   "sym_key": "ValidateRect"
+  }
+ ]
+}

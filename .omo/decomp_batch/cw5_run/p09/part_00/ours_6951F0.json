@@ -1,0 +1,111 @@
+{
+ "symbol": "?FindAndValidateMap@@YIDPAXHPBDHD@Z",
+ "sym_key": "Unnamed::FindAndValidateMap",
+ "size": 217,
+ "link_base": 0,
+ "bytes_hex": "83ec5856578bf9680000000057e80000000083c40885c0750a5f32c05e83c458c20c00a10000000033f685c0770a5f32c05e83c458c20c00a100000000578b0883c15851e80000000083c40885c07424a100000000463bf073bf8b1500000000578b04b283c05850e80000000083c40885c075dc8b0d000000008b14b18d4c240883c25852e8000000008d4c24086a00e80000000084c07538807c246c017531a100000000b93c0000008b34b0e8000000008bc8e80000000084c0750e8bcee8000000008bc8e800000000ff05000000005f5e83c458c20c00",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?aRandmapSed@@3PADA",
+   "sym_key": "aRandmapSed"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerOptions@@3IA",
+   "sym_key": "g_MultiplayerOptions"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerOptions@@3IA",
+   "sym_key": "g_MultiplayerOptions"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?CheckForGameCD@Game@@QAEHXZ",
+   "sym_key": "Game::CheckForGameCD"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?CheckExists@ScenarioClass@@QAEDXZ",
+   "sym_key": "ScenarioClass::CheckExists"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?GetField@GameOption@@QAEHXZ",
+   "sym_key": "GameOption::GetField"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?SetSoundWarning@@YIXH@Z",
+   "sym_key": "SetSoundWarning"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?g_GameFlags_Campaign@@3IA",
+   "sym_key": "g_GameFlags_Campaign"
+  }
+ ]
+}

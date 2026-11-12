@@ -1,0 +1,237 @@
+{
+ "symbol": "?PlaceNeutralCreeps@@YGHPAG@Z",
+ "sym_key": "Unnamed::PlaceNeutralCreeps",
+ "size": 746,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec54535657b900000000e8000000008bc8e8000000008944241889442428b900000000e8000000008944242cc744243000000000df6c242c83ec08dc0d00000000dc0500000000dd1c24e80000000083c40883f8048944242477c333ff3bc7897c241c897c24200f8e6d0200008b4c241c03c03bc80f8d5f020000b900000000e80000000089442434897c2438df6c243483ec08dc0d00000000dd1c24e8000000008bf083c40883fe0577cf83fe027e3768e8080000e8000000008bd883c4043bdf74378b0cb500000000e8000000008b15000000008b4c2418518bcb8b048250e800000000eb3968f0060000e8000000008bd883c4043bdf750433f6eb248b0cb500000000e8000000008b15000000008b4c2418518bcb8b048250e8000000008bf0897c2418c644241300b900000000e8000000008944243c897c2440df6c243c83ec08dc0d00000000dd1c24e8000000008bd883c40883fb1077cfb900000000e80000000089442444897c2448df6c244483ec08dc0d00000000dd1c24e80000000083c40883f81077d18b4d086a018a51028b4c243002d380e10080ea0881e2ff0000000fbfc2990bc18b4c24340bd1b900000000895424348d54241852894424348944241ce80000000084c00f84bb0000008d442414b90000000050e80000000039b8e40000000f85a0000000b900000000e8000000008944244c897c2450df6c244c83ec08dc0d00000000dd1c24e80000000083c40883f80777d18b4c24148bd1c1fa100fbfd20fbfc9c1e208c1e00581c28000000050c1e1088d4424588954245c8b1681c1800000005056894c2460897c2468ff92d800000084c0742e8b0e56ff91840000008b80a00000008b166a025689466c894670ff92240100008b442420c64424130140894424208b4c24188a4424134184c0894c241875178bc183f83c0f8c80feffff3bf774088b066a0156ff50208b54241c8b4424248b4c2420423bc88954241c7d0d8b4c2428894c2418e993fdffff5f5e5b8be55dc20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?aNeutral@@3PADA",
+   "sym_key": "aNeutral"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?FindByName@SuperWeaponTypeClass@@QAEHXZ",
+   "sym_key": "SuperWeaponTypeClass::FindByName"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?FindOwner@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::FindOwner"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "__real@8@3fe18000000080000000",
+   "sym_key": "_real@8@3fe18000000080000000"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "__real@8@3fe1c0000000bffff000",
+   "sym_key": "_real@8@3fe1c0000000bffff000"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82B240@@3PAXA",
+   "sym_key": "DataGlobal_82B240"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?FindIndex@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindIndex"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeCount2@@3PAXA",
+   "sym_key": "g_UnitTypeCount2"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?Construct@UnitClass@@QAEHHPAX@Z",
+   "sym_key": "UnitClass::Construct"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82B240@@3PAXA",
+   "sym_key": "DataGlobal_82B240"
+  },
+  {
+   "off": 270,
+   "type": "REL32",
+   "sym": "?FindExitCellByName@Factory@@QAEHXZ",
+   "sym_key": "Factory::FindExitCellByName"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 292,
+   "type": "REL32",
+   "sym": "?Construct@InfantryClass@@QAEPAV1@HPAX@Z",
+   "sym_key": "InfantryClass::Construct"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 313,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 334,
+   "type": "DIR32",
+   "sym": "__real@8@3fe38800000088000800",
+   "sym_key": "_real@8@3fe38800000088000800"
+  },
+  {
+   "off": 342,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 357,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 362,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 383,
+   "type": "DIR32",
+   "sym": "__real@8@3fe38800000088000800",
+   "sym_key": "_real@8@3fe38800000088000800"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 442,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 464,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 481,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 487,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 504,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 509,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 530,
+   "type": "DIR32",
+   "sym": "__real@8@3fe28000000080000000",
+   "sym_key": "_real@8@3fe28000000080000000"
+  },
+  {
+   "off": 538,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}
