@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D8D10",
+ "name": "MPCombatTeam::AddToList",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D8D10",
+ "bytes_hex": "5355568bf1578d4e04e822e41d008b5c24148b2da4147e00506a00684301000053ffd58bf88b46085057685101000053ffd58bc75f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

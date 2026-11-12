@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DE630",
+ "name": "FootClass::OnCompleteAction",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DE630",
+ "bytes_hex": "56578b7c240c8bf157e8322023008b068bceff90840000008a880508000084c9741483be1401000001750b8b16578bceff92d40400005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

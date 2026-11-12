@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D9D43",
+ "name": "___STRINGTOLD",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D9D43",
+ "bytes_hex": "558bec83ec0c33c0565050508d45f4ff7514ff7510ff750c50e811fbffffff75088bf08d45f450e8d8deffff83c42483f801750383ce028bc65ec9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E6150",
+ "name": "GetVersionString",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E6150",
+ "bytes_hex": "56578bf28bf9e8e2fd2d008806e89dfe2d000fbe0563e8840089078b44240c5f5e85c074138b4c2408516865e8840050e84b302e0083c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

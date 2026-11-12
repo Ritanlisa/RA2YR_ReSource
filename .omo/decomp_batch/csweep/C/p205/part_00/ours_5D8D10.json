@@ -1,0 +1,27 @@
+{
+ "symbol": "?AddToList@MPCombatTeam@@QAEJPAX@Z",
+ "sym_key": "MPCombatTeam::AddToList",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578d4e04e8000000008b5c2410506a00684301000053e8000000008bf88b46085057685101000053e8000000008bc75f5e5bc20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::GetOrEmpty_Alt"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

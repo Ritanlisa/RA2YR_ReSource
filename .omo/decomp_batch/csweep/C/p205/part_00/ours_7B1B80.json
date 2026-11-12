@@ -1,0 +1,21 @@
+{
+ "symbol": "?AddRef@WinsockInterfaceClass@@QAEHXZ",
+ "sym_key": "WinsockInterfaceClass::AddRef",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "568bf18b866cf0030083f8ff741050e800000000c7866cf00300ffffffff8b8670f0030083f8ff741050e800000000c78670f00300ffffffff5ec3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?closesocket@@YGHPAX@Z",
+   "sym_key": "closesocket"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?closesocket@@YGHPAX@Z",
+   "sym_key": "closesocket"
+  }
+ ]
+}

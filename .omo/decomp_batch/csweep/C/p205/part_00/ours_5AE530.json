@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_5AE530@ObjectClass@@QAEKPAPBDH@Z",
+ "sym_key": "ObjectClass::sub_5AE530",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf1508d4e64e800000000e8000000008b4c24088b54240c8986cc000000898ed00000008996d40000005ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

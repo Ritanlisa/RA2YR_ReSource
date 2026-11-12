@@ -1,0 +1,11 @@
+{
+ "addr": "0x4019A0",
+ "name": "CCFileClass::Destru_vt00",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4019A0",
+ "bytes_hex": "568bf18d4e58c706b0167e00c7466400000000e8989403008bcec70668167e00e8bb010300f644240801740956e86b713c0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

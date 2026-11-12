@@ -1,0 +1,15 @@
+{
+ "symbol": "?OnCompleteAction@FootClass@@QAEHH@Z",
+ "sym_key": "FootClass::OnCompleteAction",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b0656ff90840000008a880508000084c9741783bef400000001750e8b5424088b0e5256ff91d40400005ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?OnCellPlacementComplete@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::OnCellPlacementComplete"
+  }
+ ]
+}

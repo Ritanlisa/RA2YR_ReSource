@@ -1,0 +1,21 @@
+{
+ "symbol": "?___STRINGTOLD@@YAHHPAPADPADH@Z",
+ "sym_key": "Unnamed::___STRINGTOLD",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c240c8b54240883ec0c566a006a006a0050518d4424185250e8000000008b4c24308d54242051528bf0e80000000083c42483f8018bc675020c025e83c40cc3",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?__strgtold12@@YAHHPAX0HHHHZZ",
+   "sym_key": "__strgtold12"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?_ld12told@@YAHPAXHZZ",
+   "sym_key": "_ld12told"
+  }
+ ]
+}

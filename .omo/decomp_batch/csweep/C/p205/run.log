@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p205\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b1b80 WinsockInterfaceClass::AddRef -> WinsockInterfaceClass
+[conv] 0x74d450 Game_Load_Load -> Game_Load
+[conv] 0x4019a0 CCFileClass::Destru_vt00 -> CCFileClass
+[conv] 0x4e6150 GetVersionString -> _addr_4E
+[conv] 0x537a10 FollowCommandClass::performAction_187 -> FollowCommandClass
+[conv] 0x4de630 FootClass::OnCompleteAction -> FootClass
+[conv] 0x5d8d10 MPCombatTeam::AddToList -> MPCombatTeam
+[conv] 0x64aaa0 ObjectClass::sub_64AAA0 -> ObjectClass
+[conv] 0x7cf347 __startOneArgErrorHandling -> _addr_7C
+[conv] 0x6d20e0 ZCoordToScreenY -> _addr_6D
+[conv] 0x522600 InfantryClass::FireAtTargetPos -> InfantryClass
+[conv] 0x5413b0 Network::SendPacketThunk -> Network
+[conv] 0x5ae530 ObjectClass::sub_5AE530 -> ObjectClass
+[conv] 0x7d9d43 ___STRINGTOLD -> _addr_7D
+[conv] 0x7dc78f sub_7DC78F -> _addr_7D
+[conv] 0x4a2ea0 CStreamClass::Seek -> CStreamClass
+[conv] 0x4a2f40 CStreamClass::Revert -> CStreamClass
+[conv] 0x4a2f80 CStreamClass::LockRegion -> CStreamClass
+[conv] 0x43a670 ObjectClass::sub_43A670 -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WinsockInterfaceClass    rc=0
+[era] Game_Load                rc=2
+[era] CCFileClass              rc=0
+[era] _addr_4E                 rc=0
+[era] FollowCommandClass       rc=0
+[era] FootClass                rc=0
+[era] MPCombatTeam             rc=0
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_6D                 rc=0
+[era] InfantryClass            rc=2
+[era] Network                  rc=0
+[era] _addr_7D                 rc=2
+[era] CStreamClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b1b80   MATCH            WinsockInterfaceClass::AddRef
+[diff] 0x4019a0   MISMATCH         CCFileClass::Destru_vt00
+[diff] 0x4e6150   MISMATCH         GetVersionString
+[diff] 0x537a10   MATCH            FollowCommandClass::performAction_187
+[diff] 0x4de630   MISMATCH         FootClass::OnCompleteAction
+[diff] 0x5d8d10   MISMATCH         MPCombatTeam::AddToList
+[diff] 0x64aaa0   MISMATCH         ObjectClass::sub_64AAA0
+[diff] 0x5ae530   MISMATCH         ObjectClass::sub_5AE530
+[diff] 0x43a670   MISMATCH         ObjectClass::sub_43A670
+[diff] 0x6d20e0   MISMATCH         ZCoordToScreenY
+[diff] 0x5413b0   MISMATCH         Network::SendPacketThunk
+[diff] 0x7d9d43   MISMATCH         ___STRINGTOLD
+[ledger] 0x7b1b80 WinsockInterfaceClass::AddRef -> OK (attempt 1)
+[ledger] 0x74d450 Game_Load_Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4019a0 CCFileClass::Destru_vt00 -> NG (attempt 1)
+[ledger] 0x4e6150 GetVersionString -> NG (attempt 1)
+[ledger] 0x537a10 FollowCommandClass::performAction_187 -> OK (attempt 1)
+[ledger] 0x52ff90 0x52ff90 -> PENDING (attempt 1)
+[ledger] 0x4de630 FootClass::OnCompleteAction -> NG (attempt 1)
+[ledger] 0x5d8d10 MPCombatTeam::AddToList -> NG (attempt 1)
+[ledger] 0x64aaa0 ObjectClass::sub_64AAA0 -> NG (attempt 1)
+[ledger] 0x7cf347 __startOneArgErrorHandling -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d20e0 ZCoordToScreenY -> NG (attempt 1)
+[ledger] 0x522600 InfantryClass::FireAtTargetPos -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5413b0 Network::SendPacketThunk -> NG (attempt 1)
+[ledger] 0x5ae530 ObjectClass::sub_5AE530 -> NG (attempt 1)
+[ledger] 0x7d9d43 ___STRINGTOLD -> NG (attempt 1)
+[ledger] 0x7dc78f sub_7DC78F -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2ea0 CStreamClass::Seek -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2f40 CStreamClass::Revert -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2f80 CStreamClass::LockRegion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43a670 ObjectClass::sub_43A670 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 2,
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 10,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 5,
+  "regalloc": 3,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 16.7,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p205\batch_report.json

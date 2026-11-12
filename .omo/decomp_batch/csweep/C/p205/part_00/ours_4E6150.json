@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetVersionString@@YIPADPAIPAEPADI@Z",
+ "sym_key": "Unnamed::GetVersionString",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "56578bf28bf9e8000000008806e80000000033c0a00000000089078b44240c5f5e85c0741a8b4c240833d28a1500000000515250e80000000083c40cc2080033c0c20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Event_Process_7C5F3D@@YAHXZ",
+   "sym_key": "Event_Process_7C5F3D"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Event_Process_7C5FFF@@YAHXZ",
+   "sym_key": "Event_Process_7C5FFF"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84E863@@3EA",
+   "sym_key": "DataGlobal_84E863"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  }
+ ]
+}

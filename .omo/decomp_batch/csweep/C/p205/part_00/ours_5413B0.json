@@ -1,0 +1,8 @@
+{
+ "symbol": "?SendPacketThunk@Network@@QAEHHHHHHH@Z",
+ "sym_key": "Network::SendPacketThunk",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8a410484c074318a410584c0742a8b5424188b4948528b542418528b542418528b5424188b01528b542418528b5424185251ff5038c2180033c0c21800",
+ "relocs": []
+}

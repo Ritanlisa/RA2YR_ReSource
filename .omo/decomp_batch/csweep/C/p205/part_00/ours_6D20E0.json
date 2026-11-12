@@ -1,0 +1,27 @@
+{
+ "symbol": "?ZCoordToScreenY@@YI_JH@Z",
+ "sym_key": "Unnamed::ZCoordToScreenY",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "51894c240033c0db44240081f9d8020000560f9dc0dc0d000000008944240483ec08db44240cdec1dc0500000000dd1c24e8000000008bc88b44240c240081e1ff0000009933f683c4080bc80bf28bd68bc15e59c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD48@@3NA",
+   "sym_key": "DataGlobal_B0CD48"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}
