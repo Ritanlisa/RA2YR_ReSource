@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetBridgeBitfield@CellClass@@QAEHXZ",
+ "sym_key": "CellClass::GetBridgeBitfield",
+ "size": 212,
+ "link_base": 0,
+ "bytes_hex": "83ec0c0fbe05340000005333db8b105556895c240c8b74240c578bf983fb0473548acb8d542414d1e18bc1520fbf4f2483e007894c24180fbe807a00000003c833ce81e1ff00000033f18b4c241ac1f81003c1b9f801000033c625ff00000033f089742418e8000000000fbe0d340000008b11eb028b078b484483f9ff743f80b81c01000000740c8b2c8a80bdae02000000742a83f97e750b80b81e01000030730feb1a8b048a8a88ae02000084c9740db8010000008bcbd3e0094424104383fb040f8c57ffffff8b4424105f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  }
+ ]
+}

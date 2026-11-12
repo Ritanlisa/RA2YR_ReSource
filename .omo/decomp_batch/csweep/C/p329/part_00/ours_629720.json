@@ -1,0 +1,21 @@
+{
+ "symbol": "?AnimController@BuildingClass@@QAEDXZ",
+ "sym_key": "BuildingClass::AnimController",
+ "size": 194,
+ "link_base": 0,
+ "bytes_hex": "83ec108d44240053568bf1508b4e2881c188030000e8000000008b4e488b0085c97c1883f9017f0933dbba03000000eb1483f902bb500000007405bba0000000ba040000008b4e50413bca894e507c6a8b4e4cc74650000000004183f90a894e4c7c085eb0015b83c410c38b4e4485c974480fbe15a0010000c1e80c408991b40000008b542410c781c000000080000000d1e883e0078991b8000000c781bc000000800000008b4e4c8d04808d14418b464403d38990ac0000005e32c05b83c410c3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

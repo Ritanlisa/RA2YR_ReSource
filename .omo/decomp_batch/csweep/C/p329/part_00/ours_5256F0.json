@@ -1,0 +1,21 @@
+{
+ "symbol": "?DestroyHashTableINIClass@INIClass@@QAEPADXZ",
+ "sym_key": "INIClass::DestroyHashTableINIClass",
+ "size": 177,
+ "link_base": 0,
+ "bytes_hex": "535633db8bf1535333c9891ee8000000008b462850e80000000083c404895e28895e2c895e30885e34895e38895e0c8b46143bc374268b48043bcb741f8b50083bd374183bcb74e7894a048b48048b5008895108895808895804ebd383fee4895e1c74208b4e203bcb74198b46243bc374128948048b46208b4e24894808895e24895e208d461083fef0891874208b56143bd374198b4e183bcb74128951048b56148b4e18894a08895e18895e145e5bc3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

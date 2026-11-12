@@ -1,0 +1,57 @@
+{
+ "symbol": "?Render_Render_554280@@YIHPAGHPAHGD@Z",
+ "sym_key": "Unnamed::Render_Render_554280",
+ "size": 169,
+ "link_base": 0,
+ "bytes_hex": "83ec108b4424145556578b308bfa8b500c8be98b48048b40086a0003d1894c24148b4c242c6a008974241403c68b74242c6a006a0c8954242851668b0d000000008bd666d3ea8b0d000000008944242833c0d2e2668b0d000000008ae28bd666d3ea8b0d00000000d2e2668b0d000000008ac28bd666d3ea8b0d00000000c1e008d2e28d4c242081e2ff0000000bc28bd550a10000000050518bcfe8000000005f5e5d83c410c20c00",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?PrintFontLayout@@YIHHPAX00HDHHHH@Z",
+   "sym_key": "PrintFontLayout"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Append@SortedArray@@QAEDPAH0@Z",
+ "sym_key": "SortedArray::Append",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "55568bf1578b4e048b4608413bc8767285c0740c8be87d0d5f5e32c05dc20800bd0a0000008d1428c1e20352e8000000008bf883c40485ff74de8b460433d285c07623538b1e8d0cd5000000008bc103c3428b18891c398b400489440f048b46043bd072df5b8b0e51e8000000008b460883c40403c5893e894608c74610000000008b4c24108b56048b065f8b09890cd08b4c24108b56048b068b09894cd0048b460440c6460c008946045eb0015dc20800",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

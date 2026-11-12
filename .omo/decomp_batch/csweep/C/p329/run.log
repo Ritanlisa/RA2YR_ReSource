@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p329\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c20b0 Audio_Helper_7C20B0 -> Audio_Helper
+[conv] 0x629720 BuildingClass::AnimController -> BuildingClass
+[conv] 0x485390 CellClass::GetBridgeBitfield -> CellClass
+[conv] 0x5eab30 ObjectClass::RefreshLobbyAll_Play_5EAB30 -> ObjectClass
+[conv] 0x5eac00 ObjectClass::RefreshLobbyAll_Get_5EAC00 -> ObjectClass
+[conv] 0x52b0a0 INIClass::setValue -> INIClass
+[conv] 0x5387d0 SortedArray::Append -> SortedArray
+[conv] 0x6caec0 SuperClass::Constructor -> SuperClass
+[conv] 0x6d1f10 Coord::To_ScreenRaw -> Coord
+[conv] 0x4b6ab0 ObjectClass::sub_4B6AB0 -> ObjectClass
+[conv] 0x5256f0 INIClass::DestroyHashTableINIClass -> INIClass
+[conv] 0x4afe00 DriveLocomotionClass::CheckWindowsErrorWrapper -> DriveLocomotionClass
+[conv] 0x69f510 ShipLocomotionClass::CheckWindowsErrorWrapper_1 -> ShipLocomotionClass
+[conv] 0x4d08b0 ObjectClass::Construct -> ObjectClass
+[conv] 0x60d450 DialogClass::RegisterWinClasses -> DialogClass
+[conv] 0x7d9ddc __mbtowc_lk -> _addr_7D
+[conv] 0x44e7b0 BuildingClass::GetPowerOutput -> BuildingClass
+[conv] 0x554280 Render_Render_554280 -> Render_Render
+[conv] 0x42f860 DynamicVector::ResizeEx -> DynamicVector
+[conv] 0x485130 MapClass::RemoveCellReference -> MapClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio_Helper             rc=2
+[era] BuildingClass            rc=2
+[era] CellClass                rc=0
+[era] ObjectClass              rc=2
+[era] INIClass                 rc=2
+[era] SortedArray              rc=0
+[era] SuperClass               rc=2
+[era] Coord                    rc=0
+[era] DriveLocomotionClass     rc=2
+[era] ShipLocomotionClass      rc=2
+[era] DialogClass              rc=2
+[era] _addr_7D                 rc=2
+[era] Render_Render            rc=0
+[era] DynamicVector            rc=0
+[era] MapClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x629720   MISMATCH         BuildingClass::AnimController
+[diff] 0x485390   MISMATCH         CellClass::GetBridgeBitfield
+[diff] 0x4d08b0   MISMATCH         ObjectClass::Construct
+[diff] 0x52b0a0   MISMATCH         INIClass::setValue
+[diff] 0x5256f0   MISMATCH         INIClass::DestroyHashTableINIClass
+[diff] 0x5387d0   MISMATCH         SortedArray::Append
+[diff] 0x6d1f10   MISMATCH         Coord::To_ScreenRaw
+[diff] 0x554280   MISMATCH         Render_Render_554280
+[diff] 0x42f860   MISMATCH         DynamicVector::ResizeEx
+[ledger] 0x7c20b0 Audio_Helper_7C20B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x629720 BuildingClass::AnimController -> NG (attempt 1)
+[ledger] 0x485390 CellClass::GetBridgeBitfield -> NG (attempt 1)
+[ledger] 0x5eab30 ObjectClass::RefreshLobbyAll_Play_5EAB30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eac00 ObjectClass::RefreshLobbyAll_Get_5EAC00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52b0a0 INIClass::setValue -> NG (attempt 1)
+[ledger] 0x5387d0 SortedArray::Append -> NG (attempt 1)
+[ledger] 0x6caec0 SuperClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d1f10 Coord::To_ScreenRaw -> NG (attempt 1)
+[ledger] 0x4b6ab0 ObjectClass::sub_4B6AB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5256f0 INIClass::DestroyHashTableINIClass -> NG (attempt 1)
+[ledger] 0x4afe00 DriveLocomotionClass::CheckWindowsErrorWrapper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69f510 ShipLocomotionClass::CheckWindowsErrorWrapper_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d08b0 ObjectClass::Construct -> NG (attempt 1)
+[ledger] 0x60d450 DialogClass::RegisterWinClasses -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d9ddc __mbtowc_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44e7b0 BuildingClass::GetPowerOutput -> COMPILE_FAIL (attempt 1)
+[ledger] 0x554280 Render_Render_554280 -> NG (attempt 1)
+[ledger] 0x42f860 DynamicVector::ResizeEx -> NG (attempt 1)
+[ledger] 0x485130 MapClass::RemoveCellReference -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 4,
+  "frame_sched": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p329\batch_report.json
