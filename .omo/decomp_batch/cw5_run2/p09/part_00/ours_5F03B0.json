@@ -1,0 +1,369 @@
+{
+ "symbol": "?TestConnection@NullModem@@QAEDH@Z",
+ "sym_key": "NullModem::TestConnection",
+ "size": 721,
+ "link_base": 0,
+ "bytes_hex": "81ec2401000053558be933c0a0000000005633c96859190000668b0d000000005033d2896c2424c644241700b301c6050000000000e80000000033c968591900008a0d0000000033d2518b0d000000008bf0e80000000068000000008bd68bc8e80000000085c089442414750e5e5d32c05b81c424010000c204008bc8e800000000a1000000008b350000000083f8ff740de8000000002b050000000003f0578bcd897424148bfee8000000003c010f84fd010000bd64000000a00000000084c00f85eb010000b900000000e8000000008b0d000000008b350000000083f9ff740fe8000000008b0d000000002bc103f02bf783fe1e764a8b350000000083f9ff740de8000000002b050000000003f08a1500000000b93e00000033c08d7c243cf3ab508d44244068fa00000050b9000000008bfe896c244888542460e8000000008d4c241c8d5424245152b900000000e80000000085c00f8ec4000000a1000000008b350000000083f8ff740de8000000002b050000000003f08b442424897424143bc50f85970000008b44241c8b150000000025ff0000003bc20f84c1000000b93e00000033c08d7c243c6a01f3ab8d4c244068fa00000051b900000000896c244888542460e800000000a1000000008b3d0000000083cbff3bc3740de8000000002b050000000003f8a1000000008b35000000003bc3740de8000000002b050000000003f02bf783fe3c730cb900000000e800000000ebd1c64424130132dba1000000008b350000000083f8ff740de8000000002b050000000003f02b74241481fe84030000776780fb0175678b4c2420e8000000003ac30f8559feffffeb4f33d268821900008a150000000033c9668b0d000000005233d2e8000000008bf033c0a00000000068821900005033d2b900000000e8000000008b8c2438010000516a006a006a00568bc8e800000000c6442413008b4c2418e8000000008a4424135f5e5d5b81c424010000c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_Str_File_NullDlg_CPP@@3EA",
+   "sym_key": "g_Str_File_NullDlg_CPP"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_Str_TXT_CANCEL@@3GA",
+   "sym_key": "g_Str_TXT_CANCEL"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_Str_File_NullDlg_CPP@@3EA",
+   "sym_key": "g_Str_File_NullDlg_CPP"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?aTxtNullConnerr@@3HA",
+   "sym_key": "aTxtNullConnerr"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?CreateMessageBox@@YIPAXHHH@Z",
+   "sym_key": "CreateMessageBox"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?Show@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::Show"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?PumpMessages@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::PumpMessages"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?ReadPacket@Stream@@QAEHXZ",
+   "sym_key": "Stream::ReadPacket"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 266,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?g_TauntCommandState@@3HA",
+   "sym_key": "g_TauntCommandState"
+  },
+  {
+   "off": 303,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?WriteBlock@Stream@@QAEHHHH@Z",
+   "sym_key": "Stream::WriteBlock"
+  },
+  {
+   "off": 333,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 338,
+   "type": "REL32",
+   "sym": "?CreateInstance@ObjectTypeClass@@QAEHHH@Z",
+   "sym_key": "ObjectTypeClass::CreateInstance"
+  },
+  {
+   "off": 351,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 357,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 367,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 373,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 401,
+   "type": "DIR32",
+   "sym": "?g_TauntCommandState@@3HA",
+   "sym_key": "g_TauntCommandState"
+  },
+  {
+   "off": 444,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 457,
+   "type": "REL32",
+   "sym": "?WriteBlock@Stream@@QAEHHHH@Z",
+   "sym_key": "Stream::WriteBlock"
+  },
+  {
+   "off": 462,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 468,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 480,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 486,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 493,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 499,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 508,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 514,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 528,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 533,
+   "type": "REL32",
+   "sym": "?ReadPacket@Stream@@QAEHXZ",
+   "sym_key": "Stream::ReadPacket"
+  },
+  {
+   "off": 547,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 553,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 563,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 569,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 597,
+   "type": "REL32",
+   "sym": "?PumpMessages@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::PumpMessages"
+  },
+  {
+   "off": 620,
+   "type": "DIR32",
+   "sym": "?g_Str_File_NullDlg_CPP@@3EA",
+   "sym_key": "g_Str_File_NullDlg_CPP"
+  },
+  {
+   "off": 629,
+   "type": "DIR32",
+   "sym": "?g_Str_TXT_OK@@3GA",
+   "sym_key": "g_Str_TXT_OK"
+  },
+  {
+   "off": 637,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 646,
+   "type": "DIR32",
+   "sym": "?g_Str_File_NullDlg_CPP@@3EA",
+   "sym_key": "g_Str_File_NullDlg_CPP"
+  },
+  {
+   "off": 659,
+   "type": "DIR32",
+   "sym": "?aTxtSystemNotRe@@3PADA",
+   "sym_key": "aTxtSystemNotRe"
+  },
+  {
+   "off": 664,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 686,
+   "type": "REL32",
+   "sym": "?ShowMessageBox@Dialog@@QAEJPAXHHHH@Z",
+   "sym_key": "Dialog::ShowMessageBox"
+  },
+  {
+   "off": 700,
+   "type": "REL32",
+   "sym": "?Destroy@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::Destroy"
+  }
+ ]
+}

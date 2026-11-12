@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x480a80 CellClass::ReduceTiberium -> CellClass
+[conv] 0x6b8ca0 GameMode::ReadFlagsFromINI -> GameMode
+[conv] 0x7abd40 CChatEventSink::DispatchStub_34 -> CChatEventSink
+[conv] 0x6b0db0 BuildingClass::ProcessEnterUnit -> BuildingClass
+[conv] 0x583180 Pathfinding::CrossBridge -> Pathfinding
+[conv] 0x49d120 MPCooperative::ReadCoopSaveINI -> MPCooperative
+[conv] 0x774cd0 WinModemClass::LoadTypeData -> WinModemClass
+[conv] 0x778210 ScoreScreen::DrawSHPBackground -> ScoreScreen
+[conv] 0x49be40 MPCooperative::WriteCoopSaveINI -> MPCooperative
+[conv] 0x711840 TechnoTypeClass::Construct -> TechnoTypeClass
+[conv] 0x5a8720 PlaceNeutralCreeps -> _addr_5A
+[conv] 0x62dc50 ParticleSystemClass::Constructor -> ParticleSystemClass
+[conv] 0x6951f0 FindAndValidateMap -> _addr_69
+[conv] 0x5f03b0 NullModem::TestConnection -> NullModem
+[conv] 0x6ae3f0 Skirmish::Setup_DlgProc -> Skirmish
+[conv] 0x778f30 LocalizeWOLDateString -> _addr_77
+[conv] 0x7510d0 Audio::InitFromINI -> Audio
+[conv] 0x7a16b0 HandleWOLMatchMessage -> _addr_7A
+[conv] 0x42b420 GeneratePathWaypoints -> _addr_42
+[conv] 0x434120 FontClass::RenderGlyph -> FontClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CellClass                rc=0
+[era] GameMode                 rc=2
+[era] CChatEventSink           rc=2
+[era] BuildingClass            rc=2
+[era] Pathfinding              rc=2
+[era] MPCooperative            rc=2
+[era] WinModemClass            rc=2
+[era] ScoreScreen              rc=2
+[era] TechnoTypeClass          rc=2
+[era] _addr_5A                 rc=0
+[era] ParticleSystemClass      rc=2
+[era] _addr_69                 rc=0
+[era] NullModem                rc=0
+[era] Skirmish                 rc=0
+[era] _addr_77                 rc=0
+[era] Audio                    rc=2
+[era] _addr_7A                 rc=2
+[era] _addr_42                 rc=2
+[era] FontClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x480a80   MISMATCH         CellClass::ReduceTiberium
+[diff] 0x5a8720   MISMATCH         PlaceNeutralCreeps
+[diff] 0x6951f0   MISMATCH         FindAndValidateMap
+[diff] 0x5f03b0   MISMATCH         NullModem::TestConnection
+[diff] 0x6ae3f0   MISMATCH         Skirmish::Setup_DlgProc
+[diff] 0x778f30   MISMATCH         LocalizeWOLDateString
+[diff] 0x434120   MISMATCH         FontClass::RenderGlyph
+[ledger] 0x480a80 CellClass::ReduceTiberium -> NG (attempt 5)
+[ledger] 0x6b8ca0 GameMode::ReadFlagsFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7abd40 CChatEventSink::DispatchStub_34 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6b0db0 BuildingClass::ProcessEnterUnit -> COMPILE_FAIL (attempt 5)
+[ledger] 0x583180 Pathfinding::CrossBridge -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49d120 MPCooperative::ReadCoopSaveINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x774cd0 WinModemClass::LoadTypeData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x778210 ScoreScreen::DrawSHPBackground -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49be40 MPCooperative::WriteCoopSaveINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x711840 TechnoTypeClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5a8720 PlaceNeutralCreeps -> NG (attempt 5)
+[ledger] 0x62dc50 ParticleSystemClass::Constructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6951f0 FindAndValidateMap -> NG (attempt 5)
+[ledger] 0x5f03b0 NullModem::TestConnection -> NG (attempt 5)
+[ledger] 0x6ae3f0 Skirmish::Setup_DlgProc -> NG (attempt 5)
+[ledger] 0x778f30 LocalizeWOLDateString -> NG (attempt 5)
+[ledger] 0x7510d0 Audio::InitFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7a16b0 HandleWOLMatchMessage -> COMPILE_FAIL (attempt 5)
+[ledger] 0x42b420 GeneratePathWaypoints -> COMPILE_FAIL (attempt 5)
+[ledger] 0x434120 FontClass::RenderGlyph -> NG (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "codegen_shape": 1,
+  "const_fold": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p09\batch_report.json

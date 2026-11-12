@@ -7525,7 +7525,7 @@
   "this_as_id": false
  },
  "0x42b420": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "GeneratePathWaypoints",
@@ -8591,15 +8591,15 @@
   "status": "OK"
  },
  "0x434120": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x30",
   "name": "FontClass::RenderGlyph",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "FontClass::RenderGlyph",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x434500": {
@@ -13406,7 +13406,7 @@
   "status": "NG"
  },
  "0x480a80": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0x3c",
@@ -16634,14 +16634,14 @@
   "this_as_id": false
  },
  "0x49be40": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MPCooperative::WriteCoopSaveINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MPCooperative::WriteCoopSaveINI",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -16682,7 +16682,7 @@
   "this_as_id": false
  },
  "0x49d120": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -40051,7 +40051,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x583180": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -41498,7 +41498,7 @@
   "this_as_id": false
  },
  "0x5a8720": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": "+0 sub esp, 0x4c",
   "name": "PlaceNeutralCreeps",
@@ -49614,7 +49614,7 @@
   "this_as_id": false
  },
  "0x5f03b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0x208",
@@ -52996,7 +52996,7 @@
   "this_as_id": false
  },
  "0x62dc50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -60976,7 +60976,7 @@
   "this_as_id": false
  },
  "0x6951f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": "+0 sub esp, 0xdc",
   "name": "FindAndValidateMap",
@@ -62980,7 +62980,7 @@
   "status": "NG"
  },
  "0x6ae3f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": "+1 mov ebx, dword ptr [esp + 8]",
@@ -63138,7 +63138,7 @@
   "status": "NG"
  },
  "0x6b0db0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -64440,7 +64440,7 @@
   "this_as_id": false
  },
  "0x6b8ca0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -72279,7 +72279,7 @@
   "this_as_id": false
  },
  "0x711840": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -79426,7 +79426,7 @@
   "this_as_id": false
  },
  "0x7510d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84509,7 +84509,7 @@
   "this_as_id": false
  },
  "0x774cd0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84876,7 +84876,7 @@
   "this_as_id": false
  },
  "0x778210": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84999,7 +84999,7 @@
   "this_as_id": false
  },
  "0x778f30": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": "+0 push esi",
   "name": "LocalizeWOLDateString",
@@ -85902,7 +85902,7 @@
   "this_as_id": false
  },
  "0x7a16b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "HandleWOLMatchMessage",
@@ -85996,7 +85996,7 @@
   "this_as_id": false
  },
  "0x7abd40": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
