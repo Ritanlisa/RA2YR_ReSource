@@ -1,0 +1,11 @@
+{
+ "addr": "0x49A4A0",
+ "name": "BlitTransLucent75AlphaZRead_ushort::Blit",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49A4A0",
+ "bytes_hex": "568bf1b9a8e887008b4608c706c0567e0050e8b95df8ff8a442408c7460800000000a801c706885b7e00740956e86be6320083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

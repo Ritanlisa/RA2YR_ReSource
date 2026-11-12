@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p203\part_00
+=== convert (20 addrs) ===
+[conv] 0x49a200 _BlitPlainXlatAlpha_G::QueryInterface -> _BlitPlainXlatAlpha_G
+[conv] 0x49a240 _BlitTransXlatAlpha_G::Blit -> _BlitTransXlatAlpha_G
+[conv] 0x49a280 _BlitTransZRemapXlatAlpha_G::Blit -> _BlitTransZRemapXlatAlpha_G
+[conv] 0x49a2c0 _BlitTransLucent75Alpha_G::Blit -> _BlitTransLucent75Alpha_G
+[conv] 0x49a300 _BlitTransLucent50Alpha_G::Blit -> _BlitTransLucent50Alpha_G
+[conv] 0x49a340 _BlitTransLucent25Alpha_G::Blit -> _BlitTransLucent25Alpha_G
+[conv] 0x49a420 _BlitTransXlatAlphaZRead_G::Blit -> _BlitTransXlatAlphaZRead_G
+[conv] 0x49a460 _BlitTransZRemapXlatAlphaZRead_G::Blit -> _BlitTransZRemapXlatAlphaZRead_G
+[conv] 0x49a4a0 _BlitTransLucent75AlphaZRead_G::Blit -> _BlitTransLucent75AlphaZRead_G
+[conv] 0x49a520 _BlitTransLucent25AlphaZRead_G::Blit -> _BlitTransLucent25AlphaZRead_G
+[conv] 0x49a560 _BlitTransLucent75AlphaZReadWarp_G::Blit -> _BlitTransLucent75AlphaZReadWarp_G
+[conv] 0x49a5a0 _BlitTransLucent50AlphaZReadWarp_G::Blit -> _BlitTransLucent50AlphaZReadWarp_G
+[conv] 0x49a5e0 _BlitTransLucent25AlphaZReadWarp_G::Blit -> _BlitTransLucent25AlphaZReadWarp_G
+[conv] 0x49a620 _BlitTransXlatAlphaZReadWrite_G::Blit -> _BlitTransXlatAlphaZReadWrite_G
+[conv] 0x49a660 _BlitTransZRemapXlatAlphaZReadWrite_G::Blit -> _BlitTransZRemapXlatAlphaZReadWrite_G
+[conv] 0x49a6a0 _BlitTransLucent75AlphaZReadWrite_G::Blit -> _BlitTransLucent75AlphaZReadWrite_G
+[conv] 0x49a6e0 _BlitTransLucent50AlphaZReadWrite_G::Blit -> _BlitTransLucent50AlphaZReadWrite_G
+[conv] 0x49a720 _BlitTransLucent25AlphaZReadWrite_G::Blit -> _BlitTransLucent25AlphaZReadWrite_G
+[conv] 0x49aa00 _RLEBlitTransXlatAlpha_G::QueryInterface -> _RLEBlitTransXlatAlpha_G
+[conv] 0x49aa80 _RLEBlitTransLucent75Alpha_G::QueryInterface -> _RLEBlitTransLucent75Alpha_G
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitPlainXlatAlpha_G    rc=0
+[era] _BlitTransXlatAlpha_G    rc=0
+[era] _BlitTransZRemapXlatAlpha_G rc=0
+[era] _BlitTransLucent75Alpha_G rc=0
+[era] _BlitTransLucent50Alpha_G rc=0
+[era] _BlitTransLucent25Alpha_G rc=0
+[era] _BlitTransXlatAlphaZRead_G rc=0
+[era] _BlitTransZRemapXlatAlphaZRead_G rc=0
+[era] _BlitTransLucent75AlphaZRead_G rc=0
+[era] _BlitTransLucent25AlphaZRead_G rc=0
+[era] _BlitTransLucent75AlphaZReadWarp_G rc=0
+[era] _BlitTransLucent50AlphaZReadWarp_G rc=0
+[era] _BlitTransLucent25AlphaZReadWarp_G rc=0
+[era] _BlitTransXlatAlphaZReadWrite_G rc=0
+[era] _BlitTransZRemapXlatAlphaZReadWrite_G rc=0
+[era] _BlitTransLucent75AlphaZReadWrite_G rc=0
+[era] _BlitTransLucent50AlphaZReadWrite_G rc=0
+[era] _BlitTransLucent25AlphaZReadWrite_G rc=0
+[era] _RLEBlitTransXlatAlpha_G rc=0
+[era] _RLEBlitTransLucent75Alpha_G rc=0
+=== diffasm byte-compare ===
+[diff] 0x49a200   MISMATCH         _BlitPlainXlatAlpha_G::QueryInterface
+[diff] 0x49a240   MISMATCH         _BlitTransXlatAlpha_G::Blit
+[diff] 0x49a280   MISMATCH         _BlitTransZRemapXlatAlpha_G::Blit
+[diff] 0x49a2c0   MISMATCH         _BlitTransLucent75Alpha_G::Blit
+[diff] 0x49a300   MISMATCH         _BlitTransLucent50Alpha_G::Blit
+[diff] 0x49a340   MISMATCH         _BlitTransLucent25Alpha_G::Blit
+[diff] 0x49a420   MISMATCH         _BlitTransXlatAlphaZRead_G::Blit
+[diff] 0x49a460   MISMATCH         _BlitTransZRemapXlatAlphaZRead_G::Blit
+[diff] 0x49a4a0   MISMATCH         _BlitTransLucent75AlphaZRead_G::Blit
+[diff] 0x49a520   MISMATCH         _BlitTransLucent25AlphaZRead_G::Blit
+[diff] 0x49a560   MISMATCH         _BlitTransLucent75AlphaZReadWarp_G::Blit
+[diff] 0x49a5a0   MISMATCH         _BlitTransLucent50AlphaZReadWarp_G::Blit
+[diff] 0x49a5e0   MISMATCH         _BlitTransLucent25AlphaZReadWarp_G::Blit
+[diff] 0x49a620   MISMATCH         _BlitTransXlatAlphaZReadWrite_G::Blit
+[diff] 0x49a660   MISMATCH         _BlitTransZRemapXlatAlphaZReadWrite_G::Blit
+[diff] 0x49a6a0   MISMATCH         _BlitTransLucent75AlphaZReadWrite_G::Blit
+[diff] 0x49a6e0   MISMATCH         _BlitTransLucent50AlphaZReadWrite_G::Blit
+[diff] 0x49a720   MISMATCH         _BlitTransLucent25AlphaZReadWrite_G::Blit
+[diff] 0x49aa00   MISMATCH         _RLEBlitTransXlatAlpha_G::QueryInterface
+[diff] 0x49aa80   MISMATCH         _RLEBlitTransLucent75Alpha_G::QueryInterface
+[ledger] 0x49a200 _BlitPlainXlatAlpha_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49a240 _BlitTransXlatAlpha_G::Blit -> NG (attempt 1)
+[ledger] 0x49a280 _BlitTransZRemapXlatAlpha_G::Blit -> NG (attempt 1)
+[ledger] 0x49a2c0 _BlitTransLucent75Alpha_G::Blit -> NG (attempt 1)
+[ledger] 0x49a300 _BlitTransLucent50Alpha_G::Blit -> NG (attempt 1)
+[ledger] 0x49a340 _BlitTransLucent25Alpha_G::Blit -> NG (attempt 1)
+[ledger] 0x49a420 _BlitTransXlatAlphaZRead_G::Blit -> NG (attempt 1)
+[ledger] 0x49a460 _BlitTransZRemapXlatAlphaZRead_G::Blit -> NG (attempt 1)
+[ledger] 0x49a4a0 _BlitTransLucent75AlphaZRead_G::Blit -> NG (attempt 1)
+[ledger] 0x49a520 _BlitTransLucent25AlphaZRead_G::Blit -> NG (attempt 1)
+[ledger] 0x49a560 _BlitTransLucent75AlphaZReadWarp_G::Blit -> NG (attempt 1)
+[ledger] 0x49a5a0 _BlitTransLucent50AlphaZReadWarp_G::Blit -> NG (attempt 1)
+[ledger] 0x49a5e0 _BlitTransLucent25AlphaZReadWarp_G::Blit -> NG (attempt 1)
+[ledger] 0x49a620 _BlitTransXlatAlphaZReadWrite_G::Blit -> NG (attempt 1)
+[ledger] 0x49a660 _BlitTransZRemapXlatAlphaZReadWrite_G::Blit -> NG (attempt 1)
+[ledger] 0x49a6a0 _BlitTransLucent75AlphaZReadWrite_G::Blit -> NG (attempt 1)
+[ledger] 0x49a6e0 _BlitTransLucent50AlphaZReadWrite_G::Blit -> NG (attempt 1)
+[ledger] 0x49a720 _BlitTransLucent25AlphaZReadWrite_G::Blit -> NG (attempt 1)
+[ledger] 0x49aa00 _RLEBlitTransXlatAlpha_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49aa80 _RLEBlitTransLucent75Alpha_G::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p203\batch_report.json
