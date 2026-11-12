@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p65\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ca5f0 sub_5CA5F0 -> _addr_5C
+[conv] 0x5cac70 sub_5CAC70 -> _addr_5C
+[conv] 0x5cadf0 MPBattleClass::isHouseAllyChangeAllowed -> MPBattleClass
+[conv] 0x5cb1e0 MPBattleClass::getMaximumPlayers -> MPBattleClass
+[conv] 0x5cb360 sub_5CB360 -> _addr_5C
+[conv] 0x5d3830 MPBattleClass::validateOwner -> MPBattleClass
+[conv] 0x5d39b0 MPBattleClass::randomAICountryIndex -> MPBattleClass
+[conv] 0x5d5900 MPBattleClass::isMegawealthAllowed -> MPBattleClass
+[conv] 0x5d5a80 sub_5D5A80 -> _addr_5D
+[conv] 0x5d8ab0 sub_5D8AB0 -> _addr_5D
+[conv] 0x5d8c30 sub_5D8C30 -> _addr_5D
+[conv] 0x5d8dd0 sub_5D8DD0 -> _addr_5D
+[conv] 0x5d8f50 sub_5D8F50 -> _addr_5D
+[conv] 0x5da520 sub_5DA520 -> _addr_5D
+[conv] 0x5da6a0 sub_5DA6A0 -> _addr_5D
+[conv] 0x5dad40 sub_5DAD40 -> _addr_5D
+[conv] 0x5daec0 sub_5DAEC0 -> _addr_5D
+[conv] 0x5e2480 sub_5E2480 -> _addr_5E
+[conv] 0x5e2600 sub_5E2600 -> _addr_5E
+[conv] 0x5e8d90 Network_Handle_5E8D90 -> Network_Handle
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_5E                 rc=0
+[era] Network_Handle           rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ca5f0   MISMATCH         sub_5CA5F0
+[diff] 0x5cac70   MATCH            sub_5CAC70
+[diff] 0x5cb360   MISMATCH         sub_5CB360
+[diff] 0x5cadf0   MISMATCH         MPBattleClass::isHouseAllyChangeAllowed
+[diff] 0x5cb1e0   MATCH            MPBattleClass::getMaximumPlayers
+[diff] 0x5d3830   MATCH            MPBattleClass::validateOwner
+[diff] 0x5d39b0   MISMATCH         MPBattleClass::randomAICountryIndex
+[diff] 0x5d5900   MATCH            MPBattleClass::isMegawealthAllowed
+[diff] 0x5d5a80   MISMATCH         sub_5D5A80
+[diff] 0x5d8ab0   MATCH            sub_5D8AB0
+[diff] 0x5d8c30   MISMATCH         sub_5D8C30
+[diff] 0x5d8dd0   MATCH            sub_5D8DD0
+[diff] 0x5d8f50   MISMATCH         sub_5D8F50
+[diff] 0x5da520   MATCH            sub_5DA520
+[diff] 0x5da6a0   MISMATCH         sub_5DA6A0
+[diff] 0x5dad40   MATCH            sub_5DAD40
+[diff] 0x5daec0   MISMATCH         sub_5DAEC0
+[diff] 0x5e2480   MATCH            sub_5E2480
+[diff] 0x5e2600   MISMATCH         sub_5E2600
+[diff] 0x5e8d90   MISMATCH         Network_Handle_5E8D90
+[ledger] 0x5ca5f0 sub_5CA5F0 -> NG (attempt 2)
+[ledger] 0x5cac70 sub_5CAC70 -> OK (attempt 2)
+[ledger] 0x5cadf0 MPBattleClass::isHouseAllyChangeAllowed -> NG (attempt 2)
+[ledger] 0x5cb1e0 MPBattleClass::getMaximumPlayers -> OK (attempt 2)
+[ledger] 0x5cb360 sub_5CB360 -> NG (attempt 2)
+[ledger] 0x5d3830 MPBattleClass::validateOwner -> OK (attempt 2)
+[ledger] 0x5d39b0 MPBattleClass::randomAICountryIndex -> NG (attempt 2)
+[ledger] 0x5d5900 MPBattleClass::isMegawealthAllowed -> OK (attempt 2)
+[ledger] 0x5d5a80 sub_5D5A80 -> NG (attempt 2)
+[ledger] 0x5d8ab0 sub_5D8AB0 -> OK (attempt 2)
+[ledger] 0x5d8c30 sub_5D8C30 -> NG (attempt 2)
+[ledger] 0x5d8dd0 sub_5D8DD0 -> OK (attempt 2)
+[ledger] 0x5d8f50 sub_5D8F50 -> NG (attempt 2)
+[ledger] 0x5da520 sub_5DA520 -> OK (attempt 2)
+[ledger] 0x5da6a0 sub_5DA6A0 -> NG (attempt 2)
+[ledger] 0x5dad40 sub_5DAD40 -> OK (attempt 2)
+[ledger] 0x5daec0 sub_5DAEC0 -> NG (attempt 2)
+[ledger] 0x5e2480 sub_5E2480 -> OK (attempt 2)
+[ledger] 0x5e2600 sub_5E2600 -> NG (attempt 2)
+[ledger] 0x5e8d90 Network_Handle_5E8D90 -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "MATCH": 9
+ },
+ "pathologies": {
+  "extern_reloc": 10,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 45.0,
+ "match_rate_of_total_pct": 45.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p65\batch_report.json

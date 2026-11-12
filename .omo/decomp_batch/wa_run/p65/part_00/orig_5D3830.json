@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D3830",
+ "name": "MPBattleClass::validateOwner",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D3830",
+ "bytes_hex": "dd0518177e00dc3580fcab00dd1d68fcab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x5ca5f0",
+  "family": "D_RELOC",
+  "name": "sub_5CA5F0"
+ },
+ {
+  "addr": "0x5cac70",
+  "family": "D_RELOC",
+  "name": "sub_5CAC70"
+ },
+ {
+  "addr": "0x5cadf0",
+  "family": "D_RELOC",
+  "name": "MPBattleClass::isHouseAllyChangeAllowed"
+ },
+ {
+  "addr": "0x5cb1e0",
+  "family": "D_RELOC",
+  "name": "MPBattleClass::getMaximumPlayers"
+ },
+ {
+  "addr": "0x5cb360",
+  "family": "D_RELOC",
+  "name": "sub_5CB360"
+ },
+ {
+  "addr": "0x5d3830",
+  "family": "D_RELOC",
+  "name": "MPBattleClass::validateOwner"
+ },
+ {
+  "addr": "0x5d39b0",
+  "family": "D_RELOC",
+  "name": "MPBattleClass::randomAICountryIndex"
+ },
+ {
+  "addr": "0x5d5900",
+  "family": "D_RELOC",
+  "name": "MPBattleClass::isMegawealthAllowed"
+ },
+ {
+  "addr": "0x5d5a80",
+  "family": "D_RELOC",
+  "name": "sub_5D5A80"
+ },
+ {
+  "addr": "0x5d8ab0",
+  "family": "D_RELOC",
+  "name": "sub_5D8AB0"
+ },
+ {
+  "addr": "0x5d8c30",
+  "family": "D_RELOC",
+  "name": "sub_5D8C30"
+ },
+ {
+  "addr": "0x5d8dd0",
+  "family": "D_RELOC",
+  "name": "sub_5D8DD0"
+ },
+ {
+  "addr": "0x5d8f50",
+  "family": "D_RELOC",
+  "name": "sub_5D8F50"
+ },
+ {
+  "addr": "0x5da520",
+  "family": "D_RELOC",
+  "name": "sub_5DA520"
+ },
+ {
+  "addr": "0x5da6a0",
+  "family": "D_RELOC",
+  "name": "sub_5DA6A0"
+ },
+ {
+  "addr": "0x5dad40",
+  "family": "D_RELOC",
+  "name": "sub_5DAD40"
+ },
+ {
+  "addr": "0x5daec0",
+  "family": "D_RELOC",
+  "name": "sub_5DAEC0"
+ },
+ {
+  "addr": "0x5e2480",
+  "family": "D_RELOC",
+  "name": "sub_5E2480"
+ },
+ {
+  "addr": "0x5e2600",
+  "family": "D_RELOC",
+  "name": "sub_5E2600"
+ },
+ {
+  "addr": "0x5e8d90",
+  "family": "D_RELOC",
+  "name": "Network_Handle_5E8D90"
+ }
+]
