@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x4eda90 _DynamicVectorClass_PAVBuildingTypeClass::FindItemIndex_1 -> _DynamicVectorClass_PAVBuildingTypeClass
+[conv] 0x4edac0 _VectorClass_PAVAircraftTypeClass::Add -> _VectorClass_PAVAircraftTypeClass
+[conv] 0x4edcf0 _DynamicVectorClass_PAVAircraftTypeClass::FindItemIndex -> _DynamicVectorClass_PAVAircraftTypeClass
+[conv] 0x4edd20 _VectorClass_PAVUnitTypeClass::Add -> _VectorClass_PAVUnitTypeClass
+[conv] 0x4ede40 _VectorClass_PAVUnitTypeClass::GetSize -> _VectorClass_PAVUnitTypeClass
+[conv] 0x4edf50 _DynamicVectorClass_PAVUnitTypeClass::FindItemIndex_0 -> _DynamicVectorClass_PAVUnitTypeClass
+[conv] 0x4edf80 _VectorClass_PAVAnimTypeClass::Add -> _VectorClass_PAVAnimTypeClass
+[conv] 0x4ee0a0 _VectorClass_PAVAnimTypeClass::GetSize -> _VectorClass_PAVAnimTypeClass
+[conv] 0x4ee1b0 _DynamicVectorClass_PAVAnimTypeClass::FindItemIndex -> _DynamicVectorClass_PAVAnimTypeClass
+[conv] 0x4ee1e0 _VectorClass_PAVInfantryTypeClass::Add -> _VectorClass_PAVInfantryTypeClass
+[conv] 0x4ee300 _VectorClass_PAVInfantryTypeClass::GetSize -> _VectorClass_PAVInfantryTypeClass
+[conv] 0x4ee410 _DynamicVectorClass_PAVInfantryTypeClass::FindItemIndex_0 -> _DynamicVectorClass_PAVInfantryTypeClass
+[conv] 0x4ee440 _VectorClass_PAVBulletTypeClass::Add -> _VectorClass_PAVBulletTypeClass
+[conv] 0x4ee560 _VectorClass_PAVBulletTypeClass::GetSize -> _VectorClass_PAVBulletTypeClass
+[conv] 0x4ee670 _DynamicVectorClass_PAVBulletTypeClass::FindItemIndex_1 -> _DynamicVectorClass_PAVBulletTypeClass
+[conv] 0x4ee6a0 _VectorClass_PAVVoxelAnimTypeClass::Add -> _VectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4ee7c0 _VectorClass_PAVVoxelAnimTypeClass::GetSize -> _VectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4ee8d0 _DynamicVectorClass_PAVVoxelAnimTypeClass::FindItemIndex -> _DynamicVectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4ee900 _VectorClass_PAVIsometricTileTypeClass::Add -> _VectorClass_PAVIsometricTileTypeClass
+[conv] 0x4eea20 _VectorClass_PAVIsometricTileTypeClass::GetSize -> _VectorClass_PAVIsometricTileTypeClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVBuildingTypeClass rc=0
+[era] _VectorClass_PAVAircraftTypeClass rc=0
+[era] _DynamicVectorClass_PAVAircraftTypeClass rc=0
+[era] _VectorClass_PAVUnitTypeClass rc=0
+[era] _DynamicVectorClass_PAVUnitTypeClass rc=0
+[era] _VectorClass_PAVAnimTypeClass rc=0
+[era] _DynamicVectorClass_PAVAnimTypeClass rc=0
+[era] _VectorClass_PAVInfantryTypeClass rc=0
+[era] _DynamicVectorClass_PAVInfantryTypeClass rc=0
+[era] _VectorClass_PAVBulletTypeClass rc=0
+[era] _DynamicVectorClass_PAVBulletTypeClass rc=0
+[era] _VectorClass_PAVVoxelAnimTypeClass rc=0
+[era] _DynamicVectorClass_PAVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PAVIsometricTileTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4eda90   MISMATCH         _DynamicVectorClass_PAVBuildingTypeClass::FindItemIndex_1
+[diff] 0x4edac0   MISMATCH         _VectorClass_PAVAircraftTypeClass::Add
+[diff] 0x4edcf0   MISMATCH         _DynamicVectorClass_PAVAircraftTypeClass::FindItemIndex
+[diff] 0x4edd20   MISMATCH         _VectorClass_PAVUnitTypeClass::Add
+[diff] 0x4ede40   MISMATCH         _VectorClass_PAVUnitTypeClass::GetSize
+[diff] 0x4edf50   MISMATCH         _DynamicVectorClass_PAVUnitTypeClass::FindItemIndex_0
+[diff] 0x4edf80   MISMATCH         _VectorClass_PAVAnimTypeClass::Add
+[diff] 0x4ee0a0   MISMATCH         _VectorClass_PAVAnimTypeClass::GetSize
+[diff] 0x4ee1b0   MISMATCH         _DynamicVectorClass_PAVAnimTypeClass::FindItemIndex
+[diff] 0x4ee1e0   MISMATCH         _VectorClass_PAVInfantryTypeClass::Add
+[diff] 0x4ee300   MISMATCH         _VectorClass_PAVInfantryTypeClass::GetSize
+[diff] 0x4ee410   MISMATCH         _DynamicVectorClass_PAVInfantryTypeClass::FindItemIndex_0
+[diff] 0x4ee440   MISMATCH         _VectorClass_PAVBulletTypeClass::Add
+[diff] 0x4ee560   MISMATCH         _VectorClass_PAVBulletTypeClass::GetSize
+[diff] 0x4ee670   MISMATCH         _DynamicVectorClass_PAVBulletTypeClass::FindItemIndex_1
+[diff] 0x4ee6a0   MISMATCH         _VectorClass_PAVVoxelAnimTypeClass::Add
+[diff] 0x4ee7c0   MISMATCH         _VectorClass_PAVVoxelAnimTypeClass::GetSize
+[diff] 0x4ee8d0   MISMATCH         _DynamicVectorClass_PAVVoxelAnimTypeClass::FindItemIndex
+[diff] 0x4ee900   MISMATCH         _VectorClass_PAVIsometricTileTypeClass::Add
+[diff] 0x4eea20   MISMATCH         _VectorClass_PAVIsometricTileTypeClass::GetSize
+[ledger] 0x4eda90 _DynamicVectorClass_PAVBuildingTypeClass::FindItemIndex_1 -> NG (attempt 2)
+[ledger] 0x4edac0 _VectorClass_PAVAircraftTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4edcf0 _DynamicVectorClass_PAVAircraftTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4edd20 _VectorClass_PAVUnitTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ede40 _VectorClass_PAVUnitTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4edf50 _DynamicVectorClass_PAVUnitTypeClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4edf80 _VectorClass_PAVAnimTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ee0a0 _VectorClass_PAVAnimTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ee1b0 _DynamicVectorClass_PAVAnimTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4ee1e0 _VectorClass_PAVInfantryTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ee300 _VectorClass_PAVInfantryTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ee410 _DynamicVectorClass_PAVInfantryTypeClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4ee440 _VectorClass_PAVBulletTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ee560 _VectorClass_PAVBulletTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ee670 _DynamicVectorClass_PAVBulletTypeClass::FindItemIndex_1 -> NG (attempt 2)
+[ledger] 0x4ee6a0 _VectorClass_PAVVoxelAnimTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ee7c0 _VectorClass_PAVVoxelAnimTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ee8d0 _DynamicVectorClass_PAVVoxelAnimTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4ee900 _VectorClass_PAVIsometricTileTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4eea20 _VectorClass_PAVIsometricTileTypeClass::GetSize -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 13,
+  "branch_polarity": 7
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p15\batch_report.json

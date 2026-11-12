@@ -1,0 +1,458 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 13,
+   "branch_polarity": 7
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 7,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x4eda90",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_SmudgeTypeClass::FindItemIndex_1",
+   "emitted": "_DynamicVectorClass_PAVBuildingTypeClass::FindItemIndex_1",
+   "unit": "_DynamicVectorClass_PAVBuildingTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4edac0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4edaf6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_AircraftTypeClass::Add",
+   "emitted": "_VectorClass_PAVAircraftTypeClass::Add",
+   "unit": "_VectorClass_PAVAircraftTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4edcf0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AircraftTypeClass::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVAircraftTypeClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVAircraftTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4edd20",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4edd56",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_UnitTypeClass::Add",
+   "emitted": "_VectorClass_PAVUnitTypeClass::Add",
+   "unit": "_VectorClass_PAVUnitTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4ede40",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4ede4e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_UnitTypeClass::GetSize",
+   "emitted": "_VectorClass_PAVUnitTypeClass::GetSize",
+   "unit": "_VectorClass_PAVUnitTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4edf50",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AircraftTypeClass::FindItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAVUnitTypeClass::FindItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVUnitTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4edf80",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4edfb6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_AnimTypeClass::Add",
+   "emitted": "_VectorClass_PAVAnimTypeClass::Add",
+   "unit": "_VectorClass_PAVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee0a0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4ee0ae",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AnimTypeClass::GetSize",
+   "emitted": "_VectorClass_PAVAnimTypeClass::GetSize",
+   "unit": "_VectorClass_PAVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee1b0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AnimTypeClass::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVAnimTypeClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee1e0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4ee216",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_InfantryTypeClass::Add",
+   "emitted": "_VectorClass_PAVInfantryTypeClass::Add",
+   "unit": "_VectorClass_PAVInfantryTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee300",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4ee30e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_InfantryTypeClass::GetSize",
+   "emitted": "_VectorClass_PAVInfantryTypeClass::GetSize",
+   "unit": "_VectorClass_PAVInfantryTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee410",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AnimTypeClass::FindItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAVInfantryTypeClass::FindItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVInfantryTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee440",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4ee476",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_BulletTypeClass::Add",
+   "emitted": "_VectorClass_PAVBulletTypeClass::Add",
+   "unit": "_VectorClass_PAVBulletTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee560",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4ee56e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_BulletTypeClass::GetSize",
+   "emitted": "_VectorClass_PAVBulletTypeClass::GetSize",
+   "unit": "_VectorClass_PAVBulletTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee670",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AnimTypeClass::FindItemIndex_1",
+   "emitted": "_DynamicVectorClass_PAVBulletTypeClass::FindItemIndex_1",
+   "unit": "_DynamicVectorClass_PAVBulletTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee6a0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4ee6d6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_VoxelAnimTypeClass::Add",
+   "emitted": "_VectorClass_PAVVoxelAnimTypeClass::Add",
+   "unit": "_VectorClass_PAVVoxelAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee7c0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4ee7ce",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_VoxelAnimTypeClass::GetSize",
+   "emitted": "_VectorClass_PAVVoxelAnimTypeClass::GetSize",
+   "unit": "_VectorClass_PAVVoxelAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee8d0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_VoxelAnimTypeClass::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVVoxelAnimTypeClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVVoxelAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee900",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4ee936",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_IsometricTileTypeClass::Add",
+   "emitted": "_VectorClass_PAVIsometricTileTypeClass::Add",
+   "unit": "_VectorClass_PAVIsometricTileTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4eea20",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4eea2e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_IsometricTileTypeClass::GetSize",
+   "emitted": "_VectorClass_PAVIsometricTileTypeClass::GetSize",
+   "unit": "_VectorClass_PAVIsometricTileTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  }
+ ]
+}
