@@ -1,0 +1,11 @@
+{
+ "addr": "0x479050",
+ "name": "CCToolTip::Show",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x479050",
+ "bytes_hex": "8b0d407688008b01ff502885c07d0533c0c204008b4c240451b9e8f78700e88d872500c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

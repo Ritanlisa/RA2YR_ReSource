@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_40BD70@@YAHXZ",
+ "sym_key": "Unnamed::sub_40BD70",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000a300000000a200000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_40BDA0@@YAHPBX0@Z",
+   "sym_key": "sub_40BDA0"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?Base@@3PAXA",
+   "sym_key": "Base"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?NumOfElements@@3IA",
+   "sym_key": "NumOfElements"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F688@@3IA",
+   "sym_key": "DataGlobal_87F688"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_FileSystemInitFlag@@3EA",
+   "sym_key": "g_FileSystemInitFlag"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_FileSystemPool@@3IA",
+   "sym_key": "g_FileSystemPool"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

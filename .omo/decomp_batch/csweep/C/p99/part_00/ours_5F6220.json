@@ -1,0 +1,8 @@
+{
+ "symbol": "?checkScreenBounds@DisplayClass@@QAE_NH@Z",
+ "sym_key": "DisplayClass::checkScreenBounds",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf1578b0850ff91b80000008b16568bf8ff92b800000033c93bc70f9fc15f8ac15ec20400",
+ "relocs": []
+}

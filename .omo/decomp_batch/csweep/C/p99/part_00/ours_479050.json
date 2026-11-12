@@ -1,0 +1,21 @@
+{
+ "symbol": "?Show@CCToolTip@@QAGHH@Z",
+ "sym_key": "CCToolTip::Show",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "a1a8000000508b08ff512885c07d0533c0c208008b54240452e800000000c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?CursorAnim__Load@@YGHPAX@Z",
+   "sym_key": "CursorAnim__Load"
+  }
+ ]
+}

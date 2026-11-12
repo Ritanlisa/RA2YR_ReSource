@@ -1,0 +1,11 @@
+{
+ "addr": "0x40FD00",
+ "name": "VectorClass_ptr_WeaponTypeClass::Remove",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40FD00",
+ "bytes_hex": "53568bf133db8b46043bc37411385e0d740c50e8258e3b0083c404895e04885e0d895e085e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

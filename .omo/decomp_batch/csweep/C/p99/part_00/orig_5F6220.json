@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6220",
+ "name": "DisplayClass::checkScreenBounds",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6220",
+ "bytes_hex": "568bf18b4c2408578b01ff90b80000008b168bce8bf8ff92b80000003bc75f0f9fc05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

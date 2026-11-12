@@ -1,0 +1,106 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p99\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c60e0 _TClassFactory_VAlphaShapeClass::GetClassName -> _TClassFactory_VAlphaShapeClass
+[conv] 0x479050 CCToolTip::Show -> CCToolTip
+[conv] 0x724b80 ToolTipManager::ddtor -> ToolTipManager
+[conv] 0x7dce3b _com_error::sub_7DCE3B -> _com_error
+[conv] 0x5f6220 DisplayClass::checkScreenBounds -> DisplayClass
+[conv] 0x40b270 VectorClass::Cleanup5 -> VectorClass
+[conv] 0x40b7f0 _VectorClass_PAVBombClass::Remove -> _VectorClass_PAVBombClass
+[conv] 0x40ba50 _VectorClass_PAVTechnoClass::ddtor -> _VectorClass_PAVTechnoClass
+[conv] 0x40bd70 sub_40BD70 -> _addr_40
+[conv] 0x40c380 _VectorClass_PAVLightConvertClass::Remove -> _VectorClass_PAVLightConvertClass
+[conv] 0x40c970 _VectorClass_PAVIsometricTileClass::Remove -> _VectorClass_PAVIsometricTileClass
+[conv] 0x40cdc0 _VectorClass_PAVObjectClass::ddtor -> _VectorClass_PAVObjectClass
+[conv] 0x40d690 _VectorClass_PAVMixFileClass::Remove -> _VectorClass_PAVMixFileClass
+[conv] 0x40e940 _VectorClass_PAVScriptClass::Remove -> _VectorClass_PAVScriptClass
+[conv] 0x40f010 _VectorClass_PAVVoxelAnimClass::Remove -> _VectorClass_PAVVoxelAnimClass
+[conv] 0x40f730 _VectorClass_PAVWarheadTypeClass::Remove -> _VectorClass_PAVWarheadTypeClass
+[conv] 0x40fd00 _VectorClass_PAVWeaponTypeClass::Remove -> _VectorClass_PAVWeaponTypeClass
+[conv] 0x41df30 _VectorClass_PAVAirstrikeClass::Remove -> _VectorClass_PAVAirstrikeClass
+[conv] 0x4204c0 _VectorClass_PAVAlphaLightingRemapClass::ddtor -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x42d6f0 _VectorClass_I::Clear_0 -> _VectorClass_I
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VAlphaShapeClass rc=0
+[era] CCToolTip                rc=0
+[era] ToolTipManager           rc=0
+[era] _com_error               rc=0
+[era] DisplayClass             rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVBombClass rc=0
+[era] _VectorClass_PAVTechnoClass rc=0
+[era] _addr_40                 rc=0
+[era] _VectorClass_PAVLightConvertClass rc=0
+[era] _VectorClass_PAVIsometricTileClass rc=0
+[era] _VectorClass_PAVObjectClass rc=0
+[era] _VectorClass_PAVMixFileClass rc=0
+[era] _VectorClass_PAVScriptClass rc=0
+[era] _VectorClass_PAVVoxelAnimClass rc=0
+[era] _VectorClass_PAVWarheadTypeClass rc=0
+[era] _VectorClass_PAVWeaponTypeClass rc=0
+[era] _VectorClass_PAVAirstrikeClass rc=0
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=0
+[era] _VectorClass_I           rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c60e0   MISMATCH         _TClassFactory_VAlphaShapeClass::GetClassName
+[diff] 0x479050   MISMATCH         CCToolTip::Show
+[diff] 0x724b80   MISMATCH         ToolTipManager::ddtor
+[diff] 0x7dce3b   MISMATCH         _com_error::sub_7DCE3B
+[diff] 0x5f6220   MISMATCH         DisplayClass::checkScreenBounds
+[diff] 0x40b270   MISMATCH         VectorClass::Cleanup5
+[diff] 0x40b7f0   MISMATCH         _VectorClass_PAVBombClass::Remove
+[diff] 0x40ba50   MISMATCH         _VectorClass_PAVTechnoClass::ddtor
+[diff] 0x40bd70   MISMATCH         sub_40BD70
+[diff] 0x40c380   MISMATCH         _VectorClass_PAVLightConvertClass::Remove
+[diff] 0x40c970   MISMATCH         _VectorClass_PAVIsometricTileClass::Remove
+[diff] 0x40cdc0   MISMATCH         _VectorClass_PAVObjectClass::ddtor
+[diff] 0x40d690   MISMATCH         _VectorClass_PAVMixFileClass::Remove
+[diff] 0x40e940   MISMATCH         _VectorClass_PAVScriptClass::Remove
+[diff] 0x40f010   MISMATCH         _VectorClass_PAVVoxelAnimClass::Remove
+[diff] 0x40f730   MISMATCH         _VectorClass_PAVWarheadTypeClass::Remove
+[diff] 0x40fd00   MISMATCH         _VectorClass_PAVWeaponTypeClass::Remove
+[diff] 0x41df30   MISMATCH         _VectorClass_PAVAirstrikeClass::Remove
+[diff] 0x4204c0   MISMATCH         _VectorClass_PAVAlphaLightingRemapClass::ddtor
+[diff] 0x42d6f0   MISMATCH         _VectorClass_I::Clear_0
+[ledger] 0x6c60e0 _TClassFactory_VAlphaShapeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x479050 CCToolTip::Show -> NG (attempt 1)
+[ledger] 0x724b80 ToolTipManager::ddtor -> NG (attempt 1)
+[ledger] 0x7dce3b _com_error::sub_7DCE3B -> NG (attempt 1)
+[ledger] 0x5f6220 DisplayClass::checkScreenBounds -> NG (attempt 1)
+[ledger] 0x40b270 VectorClass::Cleanup5 -> NG (attempt 1)
+[ledger] 0x40b7f0 _VectorClass_PAVBombClass::Remove -> NG (attempt 1)
+[ledger] 0x40ba50 _VectorClass_PAVTechnoClass::ddtor -> NG (attempt 1)
+[ledger] 0x40bd70 sub_40BD70 -> NG (attempt 1)
+[ledger] 0x40c380 _VectorClass_PAVLightConvertClass::Remove -> NG (attempt 1)
+[ledger] 0x40c970 _VectorClass_PAVIsometricTileClass::Remove -> NG (attempt 1)
+[ledger] 0x40cdc0 _VectorClass_PAVObjectClass::ddtor -> NG (attempt 1)
+[ledger] 0x40d690 _VectorClass_PAVMixFileClass::Remove -> NG (attempt 1)
+[ledger] 0x40e940 _VectorClass_PAVScriptClass::Remove -> NG (attempt 1)
+[ledger] 0x40f010 _VectorClass_PAVVoxelAnimClass::Remove -> NG (attempt 1)
+[ledger] 0x40f730 _VectorClass_PAVWarheadTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x40fd00 _VectorClass_PAVWeaponTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x41df30 _VectorClass_PAVAirstrikeClass::Remove -> NG (attempt 1)
+[ledger] 0x4204c0 _VectorClass_PAVAlphaLightingRemapClass::ddtor -> NG (attempt 1)
+[ledger] 0x42d6f0 _VectorClass_I::Clear_0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 15,
+  "branch_polarity": 1,
+  "const_fold": 2,
+  "codegen_shape": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p99\batch_report.json

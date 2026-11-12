@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@ToolTipManager@@QAEHD@Z",
+ "sym_key": "ToolTipManager::ddtor",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8a442404563c018bf17505e8000000008b460485c0740e8b068d4e185156ff50105ec2040033c05ec20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?initString@ToolTipClass@@QAEHXZ",
+   "sym_key": "ToolTipClass::initString"
+  }
+ ]
+}
