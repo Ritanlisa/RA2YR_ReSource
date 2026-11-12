@@ -1,0 +1,11 @@
+{
+ "addr": "0x459E50",
+ "name": "BuildingClass::StubReturnFalse14",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x459E50",
+ "bytes_hex": "32c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

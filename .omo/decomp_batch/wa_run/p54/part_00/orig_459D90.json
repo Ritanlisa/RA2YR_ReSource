@@ -1,0 +1,11 @@
+{
+ "addr": "0x459D90",
+ "name": "TechnoClass::MissionStubReturnZero4",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x459D90",
+ "bytes_hex": "b001c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
