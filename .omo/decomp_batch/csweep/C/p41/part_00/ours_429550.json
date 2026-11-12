@@ -1,0 +1,27 @@
+{
+ "symbol": "?COMStub_429550@ApplicationClass@@QAGHPAI@Z",
+ "sym_key": "ApplicationClass::COMStub_429550",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "518b4424005068000000006800000000e80000000059c20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?IID_ISwizzle@@3U_GUID_era@@A",
+   "sym_key": "IID_ISwizzle"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?SwizzleManagerClass__Process@@YGHHPAX0@Z",
+   "sym_key": "SwizzleManagerClass__Process"
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p41\part_00
+=== convert (20 addrs) ===
+[conv] 0x6cfc40 sub_6CFC40 -> _addr_6C
+[conv] 0x77b8d0 sub_77B8D0 -> _addr_77
+[conv] 0x77ca30 sub_77CA30 -> _addr_77
+[conv] 0x77cf10 sub_77CF10 -> _addr_77
+[conv] 0x77cf70 sub_77CF70 -> _addr_77
+[conv] 0x77cfa0 sub_77CFA0 -> _addr_77
+[conv] 0x77cfd0 sub_77CFD0 -> _addr_77
+[conv] 0x77d000 sub_77D000 -> _addr_77
+[conv] 0x77d030 sub_77D030 -> _addr_77
+[conv] 0x77d060 sub_77D060 -> _addr_77
+[conv] 0x77d090 sub_77D090 -> _addr_77
+[conv] 0x77d0c0 sub_77D0C0 -> _addr_77
+[conv] 0x77d1a0 sub_77D1A0 -> _addr_77
+[conv] 0x77d9f0 sub_77D9F0 -> _addr_77
+[conv] 0x77da20 sub_77DA20 -> _addr_77
+[conv] 0x7d4d0e __tzset -> _addr_7D
+[conv] 0x41b5c0 AircraftClass::CheckPassengerCount -> AircraftClass
+[conv] 0x41d780 AirstrikeClass::Seek -> AirstrikeClass
+[conv] 0x429550 ApplicationClass::COMStub_429550 -> ApplicationClass
+[conv] 0x4325a0 BufferIOFileClass::SetSize -> BufferIOFileClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6C                 rc=0
+[era] _addr_77                 rc=0
+[era] _addr_7D                 rc=0
+[era] AircraftClass            rc=2
+[era] AirstrikeClass           rc=0
+[era] ApplicationClass         rc=0
+[era] BufferIOFileClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x6cfc40   MISMATCH         sub_6CFC40
+[diff] 0x77b8d0   MISMATCH         sub_77B8D0
+[diff] 0x77ca30   MISMATCH         sub_77CA30
+[diff] 0x77cf10   MISMATCH         sub_77CF10
+[diff] 0x77cf70   MISMATCH         sub_77CF70
+[diff] 0x77cfa0   MISMATCH         sub_77CFA0
+[diff] 0x77cfd0   MISMATCH         sub_77CFD0
+[diff] 0x77d000   MISMATCH         sub_77D000
+[diff] 0x77d030   MISMATCH         sub_77D030
+[diff] 0x77d060   MISMATCH         sub_77D060
+[diff] 0x77d090   MISMATCH         sub_77D090
+[diff] 0x77d0c0   MISMATCH         sub_77D0C0
+[diff] 0x77d1a0   MISMATCH         sub_77D1A0
+[diff] 0x77d9f0   MISMATCH         sub_77D9F0
+[diff] 0x77da20   MISMATCH         sub_77DA20
+[diff] 0x7d4d0e   MISMATCH         __tzset
+[diff] 0x41d780   MISMATCH         AirstrikeClass::Seek
+[diff] 0x429550   MISMATCH         ApplicationClass::COMStub_429550
+[diff] 0x4325a0   MATCH            BufferIOFileClass::SetSize
+[ledger] 0x6cfc40 sub_6CFC40 -> NG (attempt 1)
+[ledger] 0x77b8d0 sub_77B8D0 -> NG (attempt 1)
+[ledger] 0x77ca30 sub_77CA30 -> NG (attempt 1)
+[ledger] 0x77cf10 sub_77CF10 -> NG (attempt 1)
+[ledger] 0x77cf70 sub_77CF70 -> NG (attempt 1)
+[ledger] 0x77cfa0 sub_77CFA0 -> NG (attempt 1)
+[ledger] 0x77cfd0 sub_77CFD0 -> NG (attempt 1)
+[ledger] 0x77d000 sub_77D000 -> NG (attempt 1)
+[ledger] 0x77d030 sub_77D030 -> NG (attempt 1)
+[ledger] 0x77d060 sub_77D060 -> NG (attempt 1)
+[ledger] 0x77d090 sub_77D090 -> NG (attempt 1)
+[ledger] 0x77d0c0 sub_77D0C0 -> NG (attempt 1)
+[ledger] 0x77d1a0 sub_77D1A0 -> NG (attempt 1)
+[ledger] 0x77d9f0 sub_77D9F0 -> NG (attempt 1)
+[ledger] 0x77da20 sub_77DA20 -> NG (attempt 1)
+[ledger] 0x7d4d0e __tzset -> NG (attempt 1)
+[ledger] 0x41b5c0 AircraftClass::CheckPassengerCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41d780 AirstrikeClass::Seek -> NG (attempt 1)
+[ledger] 0x429550 ApplicationClass::COMStub_429550 -> NG (attempt 1)
+[ledger] 0x4325a0 BufferIOFileClass::SetSize -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 1,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "codegen_shape": 15,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 5.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p41\batch_report.json

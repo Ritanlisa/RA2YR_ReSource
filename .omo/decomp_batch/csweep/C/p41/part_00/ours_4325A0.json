@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetSize@BufferIOFileClass@@QAEHXZ",
+ "sym_key": "BufferIOFileClass::SetSize",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8a412584c0740b8a412984c074048b4148c3e900000000",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?GetFileSize@CCFileClass@@QAEHXZ",
+   "sym_key": "CCFileClass::GetFileSize"
+  }
+ ]
+}

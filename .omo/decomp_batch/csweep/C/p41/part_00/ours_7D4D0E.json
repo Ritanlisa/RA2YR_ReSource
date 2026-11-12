@@ -1,0 +1,27 @@
+{
+ "symbol": "?__tzset@@YAXXZ",
+ "sym_key": "Unnamed::__tzset",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "6a0be800000000e8000000006a0be80000000083c408c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?_tzset_lk@@YAHXZ",
+   "sym_key": "_tzset_lk"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}
