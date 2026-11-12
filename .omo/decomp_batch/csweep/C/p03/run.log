@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c8428 LockResource -> _addr_7C
+[conv] 0x7c8434 FindResourceA -> _addr_7C
+[conv] 0x7c843a GetVolumeInformationA -> _addr_7C
+[conv] 0x7c8440 FreeLibrary -> _addr_7C
+[conv] 0x7c8446 LoadLibraryA -> _addr_7C
+[conv] 0x7c844c FreeConsole -> _addr_7C
+[conv] 0x7c8452 AllocConsole -> _addr_7C
+[conv] 0x7c8458 ExitProcess -> _addr_7C
+[conv] 0x7c845e IsBadReadPtr -> _addr_7C
+[conv] 0x7c8464 IsBadCodePtr -> _addr_7C
+[conv] 0x7c846a lstrcatA -> _addr_7C
+[conv] 0x7c8476 GetModuleFileNameA -> _addr_7C
+[conv] 0x7c847c GetCurrentProcess -> _addr_7C
+[conv] 0x7c8482 WriteFile -> _addr_7C
+[conv] 0x7c8488 FlushInstructionCache -> _addr_7C
+[conv] 0x7c848e VirtualProtect -> _addr_7C
+[conv] 0x7c8494 VirtualQuery -> _addr_7C
+[conv] 0x7c849a GetTickCount -> _addr_7C
+[conv] 0x7c84a0 GetSystemTime -> _addr_7C
+[conv] 0x7c84a6 GlobalMemoryStatus -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c8428   MISMATCH         LockResource
+[diff] 0x7c8434   MISMATCH         FindResourceA
+[diff] 0x7c843a   MISMATCH         GetVolumeInformationA
+[diff] 0x7c8440   MISMATCH         FreeLibrary
+[diff] 0x7c8446   MISMATCH         LoadLibraryA
+[diff] 0x7c844c   MISMATCH         FreeConsole
+[diff] 0x7c8452   MISMATCH         AllocConsole
+[diff] 0x7c8458   MISMATCH         ExitProcess
+[diff] 0x7c845e   MISMATCH         IsBadReadPtr
+[diff] 0x7c8464   MISMATCH         IsBadCodePtr
+[diff] 0x7c846a   MISMATCH         lstrcatA
+[diff] 0x7c8476   MISMATCH         GetModuleFileNameA
+[diff] 0x7c847c   MISMATCH         GetCurrentProcess
+[diff] 0x7c849a   MISMATCH         GetTickCount
+[ledger] 0x7c8428 LockResource -> NG (attempt 1)
+[ledger] 0x7c8434 FindResourceA -> NG (attempt 1)
+[ledger] 0x7c843a GetVolumeInformationA -> NG (attempt 1)
+[ledger] 0x7c8440 FreeLibrary -> NG (attempt 1)
+[ledger] 0x7c8446 LoadLibraryA -> NG (attempt 1)
+[ledger] 0x7c844c FreeConsole -> NG (attempt 1)
+[ledger] 0x7c8452 AllocConsole -> NG (attempt 1)
+[ledger] 0x7c8458 ExitProcess -> NG (attempt 1)
+[ledger] 0x7c845e IsBadReadPtr -> NG (attempt 1)
+[ledger] 0x7c8464 IsBadCodePtr -> NG (attempt 1)
+[ledger] 0x7c846a lstrcatA -> NG (attempt 1)
+[ledger] 0x7c8476 GetModuleFileNameA -> NG (attempt 1)
+[ledger] 0x7c847c GetCurrentProcess -> NG (attempt 1)
+[ledger] 0x7c8482 WriteFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8488 FlushInstructionCache -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c848e VirtualProtect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8494 VirtualQuery -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c849a GetTickCount -> NG (attempt 1)
+[ledger] 0x7c84a0 GetSystemTime -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c84a6 GlobalMemoryStatus -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "codegen_shape": 10,
+  "branch_order": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p03\batch_report.json

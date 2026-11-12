@@ -90299,6 +90299,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c8428": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1228]",
+  "name": "LockResource",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "LockResource",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c842e": {
   "attempts": 7,
   "clean": false,
@@ -90306,6 +90317,116 @@
   "name": "LoadResource",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "LoadResource",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8434": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e122c]",
+  "name": "FindResourceA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "FindResourceA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c843a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e121c]",
+  "name": "GetVolumeInformationA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetVolumeInformationA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8440": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1224]",
+  "name": "FreeLibrary",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "FreeLibrary",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8446": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1220]",
+  "name": "LoadLibraryA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "LoadLibraryA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c844c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1210]",
+  "name": "FreeConsole",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "FreeConsole",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8452": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1218]",
+  "name": "AllocConsole",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "AllocConsole",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8458": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1214]",
+  "name": "ExitProcess",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ExitProcess",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c845e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e115c]",
+  "name": "IsBadReadPtr",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IsBadReadPtr",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8464": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e11b4]",
+  "name": "IsBadCodePtr",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IsBadCodePtr",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c846a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1160]",
+  "name": "lstrcatA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "lstrcatA",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -90319,6 +90440,105 @@
   "orig_name": "lstrlenA",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8476": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e11a8]",
+  "name": "GetModuleFileNameA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetModuleFileNameA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c847c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e11a4]",
+  "name": "GetCurrentProcess",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "GetCurrentProcess",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8482": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "WriteFile",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WriteFile",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8488": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "FlushInstructionCache",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FlushInstructionCache",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c848e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "VirtualProtect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VirtualProtect",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8494": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "VirtualQuery",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VirtualQuery",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c849a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1138]",
+  "name": "GetTickCount",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "GetTickCount",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c84a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "GetSystemTime",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GetSystemTime",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c84a6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "GlobalMemoryStatus",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GlobalMemoryStatus",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7c84b2": {

@@ -1,0 +1,15 @@
+{
+ "symbol": "?LoadLibraryA@@YGPAXPBD@Z",
+ "sym_key": "Unnamed::LoadLibraryA",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e800000000c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?__imp_LoadLibraryA@@YGPAXPBX@Z",
+   "sym_key": "__imp_LoadLibraryA"
+  }
+ ]
+}

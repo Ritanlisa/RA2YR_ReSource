@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetVolumeInformationA@@YGHPBDPADKPAK221K@Z",
+ "sym_key": "Unnamed::GetVolumeInformationA",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "8b4424208b4c241c8b542418508b442418518b4c2418528b542418508b442418518b4c2418525051e800000000c22000",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?__imp_GetVolumeInformationA@@YGHPBX0H0000H@Z",
+   "sym_key": "__imp_GetVolumeInformationA"
+  }
+ ]
+}

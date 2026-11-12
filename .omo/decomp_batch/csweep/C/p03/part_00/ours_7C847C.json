@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetCurrentProcess@@YGPAXXZ",
+ "sym_key": "Unnamed::GetCurrentProcess",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?__imp_GetCurrentProcess@@YGPAXXZ",
+   "sym_key": "__imp_GetCurrentProcess"
+  }
+ ]
+}
