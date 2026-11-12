@@ -1,0 +1,45 @@
+{
+ "symbol": "?SyncMatrixTransformState@MechLocomotionClass@@QAGHH@Z",
+ "sym_key": "MechLocomotionClass::SyncMatrixTransformState",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b0d182800008948148b151c2800008950188b0d202800008b502089481c3b1518280000751e8b48248b151c2800003bca75118b50288b0d202800003bd17504c6402c00c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B36E0",
+ "name": "IPersistStream::SetField",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B36E0",
+ "bytes_hex": "83f9ff7503b001c3c1e1058a81aee3a800c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

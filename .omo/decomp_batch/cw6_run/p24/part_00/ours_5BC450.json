@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetTextBufferEntry@@YIHH@Z",
+ "sym_key": "Unnamed::GetTextBufferEntry",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "8b048d00000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF168@@3PAIA",
+   "sym_key": "DataGlobal_ABF168"
+  }
+ ]
+}

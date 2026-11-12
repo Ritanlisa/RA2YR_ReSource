@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C9700",
+ "name": "Scenario::ResetDisplayArrays",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C9700",
+ "bytes_hex": "8bd15733c0b908000000bf58f9ab00a3f4f9ab00f3aba3f8f9ab008bc25fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

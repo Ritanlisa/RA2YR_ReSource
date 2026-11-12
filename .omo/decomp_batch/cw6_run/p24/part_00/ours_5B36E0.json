@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetField@IPersistStream@@QAIDH@Z",
+ "sym_key": "IPersistStream::SetField",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "83faff7503b001c3c1e2058a8200000000c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E3AE@@3PAEA",
+   "sym_key": "DataGlobal_A8E3AE"
+  }
+ ]
+}

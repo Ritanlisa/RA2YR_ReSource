@@ -42996,11 +42996,16 @@
   "this_as_id": false
  },
  "0x5affe0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "JumpjetLocomotionClass::GetRenderCoordinate_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "JumpjetLocomotionClass::GetRenderCoordinate_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5b0060": {
   "attempts": 1,
@@ -43010,15 +43015,15 @@
   "status": "NG"
  },
  "0x5b0120": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 mov edx, dword ptr [0xabee10]",
   "name": "MechLocomotionClass::SyncMatrixTransformState",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "JumpjetLocomotionClass::SyncMatrixTransformState",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5b01a0": {
@@ -43034,15 +43039,15 @@
   "this_as_id": false
  },
  "0x5b1960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e9aa0]",
   "name": "MechLocomotionClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "MechLocomotionClass::ddtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5b19d0": {
@@ -43294,7 +43299,7 @@
   "this_as_id": false
  },
  "0x5b2930": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43306,11 +43311,16 @@
   "this_as_id": false
  },
  "0x5b2950": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov ax, word ptr [ecx]",
   "name": "Math::Sub16",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Math::Sub16",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5b2970": {
   "attempts": 1,
@@ -43767,15 +43777,15 @@
   "this_as_id": false
  },
  "0x5b36e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 cmp ecx, -1",
   "name": "IPersistStream::SetField",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "IPersistStream::SetField",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5b3700": {
@@ -43791,7 +43801,7 @@
   "this_as_id": false
  },
  "0x5b3950": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FromNameIndex",
@@ -44333,14 +44343,14 @@
   "this_as_id": false
  },
  "0x5bc450": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [ecx*4 + 0xabf168]",
   "name": "GetTextBufferEntry",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "GetTextBufferEntry",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5bcc20": {
@@ -44580,14 +44590,14 @@
   "this_as_id": false
  },
  "0x5bdc00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "sub_5BDC00",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_5BDC00",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5be970": {
@@ -44602,14 +44612,14 @@
   "this_as_id": false
  },
  "0x5be990": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+13 mov eax, dword ptr [ecx*4 + 0x82d02c]",
   "name": "Render_Render_5BE990",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Render_Render_5BE990",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5beab0": {
@@ -44841,15 +44851,15 @@
   "this_as_id": false
  },
  "0x5bf8b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0xabf3f4]",
   "name": "ObjectClass::sub_5BF8B0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "sub_5BF8B0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c02e0": {
@@ -44962,15 +44972,15 @@
   "this_as_id": false
  },
  "0x5c09a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [0xabf3f8]",
   "name": "ObjectClass::MainWindowProc_Helper_5C09A0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MainWindowProc_Helper_5C09A0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c0aa0": {
@@ -44998,15 +45008,15 @@
   "this_as_id": false
  },
  "0x5c0ad0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x5c0b06",
   "name": "_VectorClass_PBD::CompareVector",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "TacticalClass::CompareVector",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c0bf0": {
@@ -45638,15 +45648,15 @@
   "status": "OK"
  },
  "0x5c5130": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x5c5166",
   "name": "_VectorClass_PAUMPlayerScoreType::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "MPCooperative::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c5250": {
@@ -45686,15 +45696,15 @@
   "this_as_id": false
  },
  "0x5c5390": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x5c53c6",
   "name": "_VectorClass_PAUNodeNameType::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "DynamicVectorClass_ptr_NodeNameType::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c54b0": {
@@ -45722,39 +45732,39 @@
   "this_as_id": false
  },
  "0x5c55c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_PAUNodeNameType::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "DynamicVectorClass_ptr_NodeNameType::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c55f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x5c5626",
   "name": "_VectorClass_PAVCoopCampaignClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "CoopCampaignVector::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c5710": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x5c571e",
   "name": "_VectorClass_PAVCoopCampaignClass::Read",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CoopCampaignVector::Read",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c5750": {
@@ -46243,7 +46253,7 @@
   "this_as_id": false
  },
  "0x5c8470": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -46489,15 +46499,15 @@
   "this_as_id": false
  },
  "0x5c9700": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+3 xor eax, eax",
   "name": "Scenario::ResetDisplayArrays",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Scenario::ResetDisplayArrays",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c9ae0": {

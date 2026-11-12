@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B0120",
+ "name": "JumpjetLocomotionClass::SyncMatrixTransformState",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B0120",
+ "bytes_hex": "8b4424048b1510eeab008d48148950148b1514eeab008951048b1518eeab008951088b48203b0d10eeab00751e8b50248b0d14eeab003bd175118b48288b1518eeab003bca7504c6402c00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

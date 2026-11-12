@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C09A0",
+ "name": "MainWindowProc_Helper_5C09A0",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C09A0",
+ "bytes_hex": "8b0df8f3ab0085c974058b01ff6028c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

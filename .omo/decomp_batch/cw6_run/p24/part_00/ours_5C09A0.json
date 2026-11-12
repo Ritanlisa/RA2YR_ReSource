@@ -1,0 +1,15 @@
+{
+ "symbol": "?MainWindowProc_Helper_5C09A0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::MainWindowProc_Helper_5C09A0",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "51a1002e000085c074088b0850ff512859c38b44240059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

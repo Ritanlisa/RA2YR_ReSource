@@ -1,0 +1,27 @@
+{
+ "symbol": "?ResetDisplayArrays@Scenario@@QAEPAXXZ",
+ "sym_key": "Scenario::ResetDisplayArrays",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "8bd157b90800000033c0bf60330000c705fc33000000000000f3aba3003400008bc25fc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

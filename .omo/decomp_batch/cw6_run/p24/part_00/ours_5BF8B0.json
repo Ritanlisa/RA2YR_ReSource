@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5BF8B0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_5BF8B0",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "a1fc2d0000518b4008508b10ff5260c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

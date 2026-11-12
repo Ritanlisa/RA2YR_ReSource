@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x5affe0 JumpjetLocomotionClass::GetRenderCoordinate_0 -> JumpjetLocomotionClass
+[conv] 0x5b0120 MechLocomotionClass::SyncMatrixTransformState -> MechLocomotionClass
+[conv] 0x5b1960 MechLocomotionClass::ddtor -> MechLocomotionClass
+[conv] 0x5b2930 Movement::Check -> Movement
+[conv] 0x5b2950 Math::Sub16 -> Math
+[conv] 0x5b36e0 IPersistStream::SetField -> IPersistStream
+[conv] 0x5b3950 FromNameIndex -> _addr_5B
+[conv] 0x5bc450 GetTextBufferEntry -> _addr_5B
+[conv] 0x5bdc00 sub_5BDC00 -> _addr_5B
+[conv] 0x5be990 Render_Render_5BE990 -> Render_Render
+[conv] 0x5bf8b0 ObjectClass::sub_5BF8B0 -> ObjectClass
+[conv] 0x5c09a0 ObjectClass::MainWindowProc_Helper_5C09A0 -> ObjectClass
+[conv] 0x5c0ad0 _VectorClass_PBD::CompareVector -> _VectorClass_PBD
+[conv] 0x5c5130 _VectorClass_PAUMPlayerScoreType::AddRef -> _VectorClass_PAUMPlayerScoreType
+[conv] 0x5c5390 _VectorClass_PAUNodeNameType::AddRef -> _VectorClass_PAUNodeNameType
+[conv] 0x5c55c0 _DynamicVectorClass_PAUNodeNameType::GetSize -> _DynamicVectorClass_PAUNodeNameType
+[conv] 0x5c55f0 _VectorClass_PAVCoopCampaignClass::AddRef -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5c5710 _VectorClass_PAVCoopCampaignClass::Read -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5c8470 ObjectClass::sub_5C8470 -> ObjectClass
+[conv] 0x5c9700 Scenario::ResetDisplayArrays -> Scenario
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] MechLocomotionClass      rc=0
+[era] Movement                 rc=2
+[era] Math                     rc=2
+[era] IPersistStream           rc=0
+[era] _addr_5B                 rc=2
+[era] Render_Render            rc=0
+[era] ObjectClass              rc=2
+[era] _VectorClass_PBD         rc=0
+[era] _VectorClass_PAUMPlayerScoreType rc=0
+[era] _VectorClass_PAUNodeNameType rc=0
+[era] _DynamicVectorClass_PAUNodeNameType rc=0
+[era] _VectorClass_PAVCoopCampaignClass rc=0
+[era] Scenario                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5b0120   MISMATCH         MechLocomotionClass::SyncMatrixTransformState
+[diff] 0x5b1960   MISMATCH         MechLocomotionClass::ddtor
+[diff] 0x5b36e0   MISMATCH         IPersistStream::SetField
+[diff] 0x5bc450   MISMATCH         GetTextBufferEntry
+[diff] 0x5bdc00   MISMATCH         sub_5BDC00
+[diff] 0x5be990   MISMATCH         Render_Render_5BE990
+[diff] 0x5bf8b0   MISMATCH         ObjectClass::sub_5BF8B0
+[diff] 0x5c09a0   MISMATCH         ObjectClass::MainWindowProc_Helper_5C09A0
+[diff] 0x5c0ad0   MISMATCH         _VectorClass_PBD::CompareVector
+[diff] 0x5c5130   MISMATCH         _VectorClass_PAUMPlayerScoreType::AddRef
+[diff] 0x5c5390   MISMATCH         _VectorClass_PAUNodeNameType::AddRef
+[diff] 0x5c55c0   MISMATCH         _DynamicVectorClass_PAUNodeNameType::GetSize
+[diff] 0x5c55f0   MISMATCH         _VectorClass_PAVCoopCampaignClass::AddRef
+[diff] 0x5c5710   MISMATCH         _VectorClass_PAVCoopCampaignClass::Read
+[diff] 0x5c9700   MISMATCH         Scenario::ResetDisplayArrays
+[ledger] 0x5affe0 JumpjetLocomotionClass::GetRenderCoordinate_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b0120 MechLocomotionClass::SyncMatrixTransformState -> NG (attempt 2)
+[ledger] 0x5b1960 MechLocomotionClass::ddtor -> NG (attempt 2)
+[ledger] 0x5b2930 Movement::Check -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b2950 Math::Sub16 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5b36e0 IPersistStream::SetField -> NG (attempt 2)
+[ledger] 0x5b3950 FromNameIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bc450 GetTextBufferEntry -> NG (attempt 2)
+[ledger] 0x5bdc00 sub_5BDC00 -> NG (attempt 2)
+[ledger] 0x5be990 Render_Render_5BE990 -> NG (attempt 2)
+[ledger] 0x5bf8b0 ObjectClass::sub_5BF8B0 -> NG (attempt 2)
+[ledger] 0x5c09a0 ObjectClass::MainWindowProc_Helper_5C09A0 -> NG (attempt 2)
+[ledger] 0x5c0ad0 _VectorClass_PBD::CompareVector -> NG (attempt 2)
+[ledger] 0x5c5130 _VectorClass_PAUMPlayerScoreType::AddRef -> NG (attempt 2)
+[ledger] 0x5c5390 _VectorClass_PAUNodeNameType::AddRef -> NG (attempt 2)
+[ledger] 0x5c55c0 _DynamicVectorClass_PAUNodeNameType::GetSize -> NG (attempt 2)
+[ledger] 0x5c55f0 _VectorClass_PAVCoopCampaignClass::AddRef -> NG (attempt 2)
+[ledger] 0x5c5710 _VectorClass_PAVCoopCampaignClass::Read -> NG (attempt 2)
+[ledger] 0x5c8470 ObjectClass::sub_5C8470 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c9700 Scenario::ResetDisplayArrays -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 15
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "extern_reloc": 1,
+  "const_fold": 1,
+  "codegen_shape": 4,
+  "branch_polarity": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p24\batch_report.json
