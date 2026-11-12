@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F18E0",
+ "name": "TeamTypeClass::GetTransportWaypoint",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F18E0",
+ "bytes_hex": "518b81d800000083f8ff75108b4424088b0dc8e9b000890859c204008b0d30b2a8008d5424005052e8b3a3f9ff8b088b442408890859c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

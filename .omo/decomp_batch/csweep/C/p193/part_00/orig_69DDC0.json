@@ -1,0 +1,11 @@
+{
+ "addr": "0x69DDC0",
+ "name": "ShapeButtonClass::Destructor",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69DDC0",
+ "bytes_hex": "53568bf133db8a465cc70688807e003ac3741c8b46583bc3741550e85dad120083c404895e58885e5c895e14895e188bcee89a35e4ff5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

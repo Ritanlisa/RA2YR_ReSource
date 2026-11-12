@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@ConnectionClass@@QAEPAID@Z",
+ "sym_key": "ConnectionClass::QueryInterface",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4620c7060000000050e8000000008b460483c40485c074078b086a0150ff11f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

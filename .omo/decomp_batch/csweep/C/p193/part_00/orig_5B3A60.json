@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B3A60",
+ "name": "AbstractClass::getWeaponRange",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B3A60",
+ "bytes_hex": "568bf1c706c0dc7e00c74604a4dc7e00c746089cdc7e00c7460c94dc7e00e8fd000400f644240801740956e8ad50210083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

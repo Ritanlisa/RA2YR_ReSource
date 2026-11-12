@@ -1,0 +1,21 @@
+{
+ "symbol": "?getWeaponRange@AbstractClass@@QAEPAID@Z",
+ "sym_key": "AbstractClass::getWeaponRange",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "568bf133c0890689460489460889460ce800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Dtor@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Dtor"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

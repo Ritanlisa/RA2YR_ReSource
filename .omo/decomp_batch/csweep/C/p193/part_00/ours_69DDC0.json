@@ -1,0 +1,21 @@
+{
+ "symbol": "?Destructor@ShapeButtonClass@@QAEHXZ",
+ "sym_key": "ShapeButtonClass::Destructor",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8a465c891e3ac3741c8b46583bc3741550e80000000083c404895e58885e5c895e14895e188bcee8000000005e5bc3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Dtor@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Dtor"
+  }
+ ]
+}

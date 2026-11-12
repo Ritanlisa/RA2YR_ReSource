@@ -1,0 +1,11 @@
+{
+ "addr": "0x48DB80",
+ "name": "HouseClass::FindHouseIndexByName",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48DB80",
+ "bytes_hex": "538bd9565785db742333ffbe601b7e008b065350e887b1330083c40885c0741383c6044781fe741b7e007ce45f5e83c8ff5bc38bc75f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

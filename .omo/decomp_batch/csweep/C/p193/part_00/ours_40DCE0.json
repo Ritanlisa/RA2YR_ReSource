@@ -1,0 +1,45 @@
+{
+ "symbol": "?Lookup@StringTable@@QAEHXZ",
+ "sym_key": "StringTable::Lookup",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "538bd98b0d00000000568b0357505133ffbe00000000e80000000083c40885c0741e83c6084781fe000000007d1d8b138b065250e80000000083c40885c075e28b04fd000000005f5e5bc35f5e33c05bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816EE0@@3PAXA",
+   "sym_key": "DataGlobal_816EE0"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816EE0@@3PAXA",
+   "sym_key": "DataGlobal_816EE0"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_817130@@3IA",
+   "sym_key": "DataGlobal_817130"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816EE4@@3PAIA",
+   "sym_key": "DataGlobal_816EE4"
+  }
+ ]
+}

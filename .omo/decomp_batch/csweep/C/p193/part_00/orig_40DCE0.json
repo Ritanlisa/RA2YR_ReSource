@@ -1,0 +1,11 @@
+{
+ "addr": "0x40DCE0",
+ "name": "StringTable::Lookup",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40DCE0",
+ "bytes_hex": "5356578bd933ffbee06e81008b065350e82bb03b0083c40885c0741283c6084781fe307181007ce45f5e33c05bc38b04fde46e81005f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

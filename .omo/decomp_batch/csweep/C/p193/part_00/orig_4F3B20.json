@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F3B20",
+ "name": "GraphicMenuItem_Destru::QueryInterface",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F3B20",
+ "bytes_hex": "568bf1578b7e0cc70690a67e0085ff74108bcfe848ca0d0057e8ff4f2d0083c404f644240c01740956e8ef4f2d0083c4048bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

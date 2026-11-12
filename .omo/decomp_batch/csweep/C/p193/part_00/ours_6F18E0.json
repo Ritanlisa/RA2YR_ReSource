@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetTransportWaypoint@TeamTypeClass@@QAEPAIPAH@Z",
+ "sym_key": "TeamTypeClass::GetTransportWaypoint",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "51894c24008b89d800000083f9ff75108b4424088b0d88010000890859c204008d542400518b0d0000000052e8000000008b088b442408890859c20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  }
+ ]
+}

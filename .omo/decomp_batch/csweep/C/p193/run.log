@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p193\part_00
+=== convert (20 addrs) ===
+[conv] 0x474ff0 ObjectTypeClass::ReadDouble2 -> ObjectTypeClass
+[conv] 0x475060 ObjectTypeClass::ReadBool3 -> ObjectTypeClass
+[conv] 0x4f3b20 GraphicMenuItem::QueryInterface -> GraphicMenuItem
+[conv] 0x48c650 ConnectionClass::QueryInterface -> ConnectionClass
+[conv] 0x4b4fb0 DropListClass::SetFocus -> DropListClass
+[conv] 0x6c6640 StaticButtonClass::SetText -> StaticButtonClass
+[conv] 0x40dce0 StringTable::Lookup -> StringTable
+[conv] 0x45dd50 ObjectClass::sub_45DD50 -> ObjectClass
+[conv] 0x48db80 HouseClass::FindHouseIndexByName -> HouseClass
+[conv] 0x48dff0 ObjectTypeClass::loadTypeMember_48DFF0 -> ObjectTypeClass
+[conv] 0x48e050 AnimTypeClass::LookupByName -> AnimTypeClass
+[conv] 0x5b3910 ObjectClass::LookupWaypointName -> ObjectClass
+[conv] 0x5e8d00 WOLobby::FindPlayerIndex -> WOLobby
+[conv] 0x6f18a0 TechnoClass::GetWaypointCoords -> TechnoClass
+[conv] 0x6f18e0 TeamTypeClass::GetTransportWaypoint -> TeamTypeClass
+[conv] 0x7d295c _write_string_0 -> _addr_7D
+[conv] 0x50d290 TActionClass::executeAttackAction -> TActionClass
+[conv] 0x7bcf50 MapClass::isCellShrouded -> MapClass
+[conv] 0x5b3a60 AbstractClass::getWeaponRange -> AbstractClass
+[conv] 0x69ddc0 ShapeButtonClass::Destructor -> ShapeButtonClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectTypeClass          rc=2
+[era] GraphicMenuItem          rc=0
+[era] ConnectionClass          rc=0
+[era] DropListClass            rc=2
+[era] StaticButtonClass        rc=2
+[era] StringTable              rc=0
+[era] ObjectClass              rc=2
+[era] HouseClass               rc=0
+[era] AnimTypeClass            rc=0
+[era] WOLobby                  rc=2
+[era] TechnoClass              rc=0
+[era] TeamTypeClass            rc=0
+[era] _addr_7D                 rc=0
+[era] TActionClass             rc=2
+[era] MapClass                 rc=0
+[era] AbstractClass            rc=0
+[era] ShapeButtonClass         rc=0
+=== diffasm byte-compare ===
+[diff] 0x48dff0   MISMATCH         ObjectTypeClass::loadTypeMember_48DFF0
+[diff] 0x4f3b20   MISMATCH         GraphicMenuItem::QueryInterface
+[diff] 0x48c650   MISMATCH         ConnectionClass::QueryInterface
+[diff] 0x40dce0   MISMATCH         StringTable::Lookup
+[diff] 0x5b3910   MISMATCH         ObjectClass::LookupWaypointName
+[diff] 0x48db80   MISMATCH         HouseClass::FindHouseIndexByName
+[diff] 0x48e050   MISMATCH         AnimTypeClass::LookupByName
+[diff] 0x6f18a0   MISMATCH         TechnoClass::GetWaypointCoords
+[diff] 0x6f18e0   MISMATCH         TeamTypeClass::GetTransportWaypoint
+[diff] 0x7d295c   MISMATCH         _write_string_0
+[diff] 0x7bcf50   MISMATCH         MapClass::isCellShrouded
+[diff] 0x5b3a60   MISMATCH         AbstractClass::getWeaponRange
+[diff] 0x69ddc0   MISMATCH         ShapeButtonClass::Destructor
+[ledger] 0x474ff0 ObjectTypeClass::ReadDouble2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x475060 ObjectTypeClass::ReadBool3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f3b20 GraphicMenuItem::QueryInterface -> NG (attempt 1)
+[ledger] 0x48c650 ConnectionClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4b4fb0 DropListClass::SetFocus -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c6640 StaticButtonClass::SetText -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40dce0 StringTable::Lookup -> NG (attempt 1)
+[ledger] 0x45dd50 ObjectClass::sub_45DD50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48db80 HouseClass::FindHouseIndexByName -> NG (attempt 1)
+[ledger] 0x48dff0 ObjectTypeClass::loadTypeMember_48DFF0 -> NG (attempt 1)
+[ledger] 0x48e050 AnimTypeClass::LookupByName -> NG (attempt 1)
+[ledger] 0x5b3910 ObjectClass::LookupWaypointName -> NG (attempt 1)
+[ledger] 0x5e8d00 WOLobby::FindPlayerIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f18a0 TechnoClass::GetWaypointCoords -> NG (attempt 1)
+[ledger] 0x6f18e0 TeamTypeClass::GetTransportWaypoint -> NG (attempt 1)
+[ledger] 0x7d295c _write_string_0 -> NG (attempt 1)
+[ledger] 0x50d290 TActionClass::executeAttackAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bcf50 MapClass::isCellShrouded -> NG (attempt 1)
+[ledger] 0x5b3a60 AbstractClass::getWeaponRange -> NG (attempt 1)
+[ledger] 0x69ddc0 ShapeButtonClass::Destructor -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "codegen_shape": 3,
+  "branch_order": 4,
+  "eval_order": 2,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p193\batch_report.json
