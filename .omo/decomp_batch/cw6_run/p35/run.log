@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p35\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c2740 ObjectClass::WinMain_Helper_6C2740 -> ObjectClass
+[conv] 0x6c28c0 ObjectClass::WinMain_Helper_6C28C0 -> ObjectClass
+[conv] 0x6c2a40 ObjectClass::WinMain_Helper_6C2A40 -> ObjectClass
+[conv] 0x6c2bc0 ObjectClass::WinMain_Helper_6C2BC0 -> ObjectClass
+[conv] 0x6c2d40 ObjectClass::WinMain_Helper_6C2D40 -> ObjectClass
+[conv] 0x6c2ec0 ObjectClass::WinMain_Helper_6C2EC0 -> ObjectClass
+[conv] 0x6c3040 ObjectClass::WinMain_Helper_6C3040 -> ObjectClass
+[conv] 0x6c31c0 ObjectClass::WinMain_Helper_6C31C0 -> ObjectClass
+[conv] 0x6c3340 ObjectClass::WinMain_Helper_6C3340 -> ObjectClass
+[conv] 0x6c34c0 ObjectClass::WinMain_Helper_6C34C0 -> ObjectClass
+[conv] 0x6c3640 ObjectClass::WinMain_Helper_6C3640 -> ObjectClass
+[conv] 0x6c37c0 ObjectClass::WinMain_Helper_6C37C0 -> ObjectClass
+[conv] 0x6c3940 ObjectClass::WinMain_Helper_6C3940 -> ObjectClass
+[conv] 0x6c3ac0 ObjectClass::WinMain_Helper_6C3AC0 -> ObjectClass
+[conv] 0x6c3c40 ObjectClass::WinMain_Helper_6C3C40 -> ObjectClass
+[conv] 0x6c3dc0 ObjectClass::WinMain_Helper_6C3DC0 -> ObjectClass
+[conv] 0x6c3f40 ObjectClass::WinMain_Helper_6C3F40 -> ObjectClass
+[conv] 0x6c40c0 ObjectClass::WinMain_Helper_6C40C0 -> ObjectClass
+[conv] 0x6c4240 ObjectClass::WinMain_Helper_6C4240 -> ObjectClass
+[conv] 0x6c43c0 ObjectClass::WinMain_Helper_6C43C0 -> ObjectClass
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c2740   MISMATCH         ObjectClass::WinMain_Helper_6C2740
+[diff] 0x6c28c0   MISMATCH         ObjectClass::WinMain_Helper_6C28C0
+[diff] 0x6c2a40   MISMATCH         ObjectClass::WinMain_Helper_6C2A40
+[diff] 0x6c2bc0   MISMATCH         ObjectClass::WinMain_Helper_6C2BC0
+[diff] 0x6c2d40   MISMATCH         ObjectClass::WinMain_Helper_6C2D40
+[diff] 0x6c2ec0   MISMATCH         ObjectClass::WinMain_Helper_6C2EC0
+[diff] 0x6c3040   MISMATCH         ObjectClass::WinMain_Helper_6C3040
+[diff] 0x6c31c0   MISMATCH         ObjectClass::WinMain_Helper_6C31C0
+[diff] 0x6c3340   MISMATCH         ObjectClass::WinMain_Helper_6C3340
+[diff] 0x6c34c0   MISMATCH         ObjectClass::WinMain_Helper_6C34C0
+[diff] 0x6c3640   MISMATCH         ObjectClass::WinMain_Helper_6C3640
+[diff] 0x6c37c0   MISMATCH         ObjectClass::WinMain_Helper_6C37C0
+[diff] 0x6c3940   MISMATCH         ObjectClass::WinMain_Helper_6C3940
+[diff] 0x6c3ac0   MISMATCH         ObjectClass::WinMain_Helper_6C3AC0
+[diff] 0x6c3c40   MISMATCH         ObjectClass::WinMain_Helper_6C3C40
+[diff] 0x6c3dc0   MISMATCH         ObjectClass::WinMain_Helper_6C3DC0
+[diff] 0x6c3f40   MISMATCH         ObjectClass::WinMain_Helper_6C3F40
+[diff] 0x6c40c0   MISMATCH         ObjectClass::WinMain_Helper_6C40C0
+[diff] 0x6c4240   MISMATCH         ObjectClass::WinMain_Helper_6C4240
+[diff] 0x6c43c0   MISMATCH         ObjectClass::WinMain_Helper_6C43C0
+[ledger] 0x6c2740 ObjectClass::WinMain_Helper_6C2740 -> NG (attempt 2)
+[ledger] 0x6c28c0 ObjectClass::WinMain_Helper_6C28C0 -> NG (attempt 2)
+[ledger] 0x6c2a40 ObjectClass::WinMain_Helper_6C2A40 -> NG (attempt 2)
+[ledger] 0x6c2bc0 ObjectClass::WinMain_Helper_6C2BC0 -> NG (attempt 2)
+[ledger] 0x6c2d40 ObjectClass::WinMain_Helper_6C2D40 -> NG (attempt 2)
+[ledger] 0x6c2ec0 ObjectClass::WinMain_Helper_6C2EC0 -> NG (attempt 2)
+[ledger] 0x6c3040 ObjectClass::WinMain_Helper_6C3040 -> NG (attempt 2)
+[ledger] 0x6c31c0 ObjectClass::WinMain_Helper_6C31C0 -> NG (attempt 2)
+[ledger] 0x6c3340 ObjectClass::WinMain_Helper_6C3340 -> NG (attempt 2)
+[ledger] 0x6c34c0 ObjectClass::WinMain_Helper_6C34C0 -> NG (attempt 2)
+[ledger] 0x6c3640 ObjectClass::WinMain_Helper_6C3640 -> NG (attempt 2)
+[ledger] 0x6c37c0 ObjectClass::WinMain_Helper_6C37C0 -> NG (attempt 2)
+[ledger] 0x6c3940 ObjectClass::WinMain_Helper_6C3940 -> NG (attempt 2)
+[ledger] 0x6c3ac0 ObjectClass::WinMain_Helper_6C3AC0 -> NG (attempt 2)
+[ledger] 0x6c3c40 ObjectClass::WinMain_Helper_6C3C40 -> NG (attempt 2)
+[ledger] 0x6c3dc0 ObjectClass::WinMain_Helper_6C3DC0 -> NG (attempt 2)
+[ledger] 0x6c3f40 ObjectClass::WinMain_Helper_6C3F40 -> NG (attempt 2)
+[ledger] 0x6c40c0 ObjectClass::WinMain_Helper_6C40C0 -> NG (attempt 2)
+[ledger] 0x6c4240 ObjectClass::WinMain_Helper_6C4240 -> NG (attempt 2)
+[ledger] 0x6c43c0 ObjectClass::WinMain_Helper_6C43C0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p35\batch_report.json
