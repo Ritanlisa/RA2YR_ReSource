@@ -1,0 +1,57 @@
+{
+ "symbol": "?GetUnitType@TaskForceClass@@QAEDPAD@Z",
+ "sym_key": "TaskForceClass::GetUnitType",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "83ec20558b6c2428568bf155e80000000084c075085e5d83c420c20400535733ff8d9ea4000000578d442414680000000050e8000000008b869c00000083c40c3bf87c128d4c24108d562451528bcde800000000eb188bcbe800000000508d4424148d4e2450518bcde8000000004783c30883ff067cb08b969800000033c0a0000000006a005283c62450568bcde8000000005f5b5eb0015d83c420c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?WriteINI@AbstractTypeClass@@QAEDPAX@Z",
+   "sym_key": "AbstractTypeClass::WriteINI"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "??_C@_02MECO@?$CFd?$AA@",
+   "sym_key": "??_C@_02MECO@?$CFd?$AA@"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Check@TaskForceClass@@QAEPADXZ",
+   "sym_key": "TaskForceClass::Check"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Group@@3EA",
+   "sym_key": "g_INI_Key_Group"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  }
+ ]
+}

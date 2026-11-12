@@ -1,0 +1,45 @@
+{
+ "symbol": "?StartGame@MPCooperative@@QAEDHPAPAXPAXHFHHPAD2@Z",
+ "sym_key": "MPCooperative::StartGame",
+ "size": 214,
+ "link_base": 0,
+ "bytes_hex": "83ec1c568bf18b464085c0750ce800000000c68640030000018b4e4085c975278b442424894c242885c074128a4c24356685c9740950e80000000083c40432c05e83c41cc224008d5424045752e8000000008b7c24288b4424083bc77407c68640030000018d44242c8d4c240c50e8000000008b4c24488b5424448b442420518b4c2420528b542420508b44241b51528b564050508b4424288b08515752e80000000083c42889be3c03000085ffc744242c00000000741433c08a4424396685c0740957e80000000083c4045fb0015e83c41cc22400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Create@MovieClass@@QAE_NXZ",
+   "sym_key": "MovieClass::Create"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?GetSectionID@Movie@@QAEDPAX@Z",
+   "sym_key": "Movie::GetSectionID"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Copy@DynamicVectorClass@@QAEPAIPAX@Z",
+   "sym_key": "DynamicVectorClass::Copy"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?DecodeCampaignPlayerName@@YADHHHPAXHHHH00@Z",
+   "sym_key": "DecodeCampaignPlayerName"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

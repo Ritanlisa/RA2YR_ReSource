@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E85F0",
+ "name": "TeamTypeClass::FindOrCreateTaskForce",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E85F0",
+ "bytes_hex": "56578bf9576874748100e821070e0083c40885c07468576894768100e80f070e0083c40885c07456a1e0e8a80033f685c07e23a1d4e8a800578b0cb083c12451e8eb060e0083c40885c07426a1e0e8a800463bf07cdd68d4000000e8c7070e0083c40485c07417578bc8e821f8ffff5f5ec38b15d4e8a8005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

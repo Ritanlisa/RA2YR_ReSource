@@ -1,0 +1,11 @@
+{
+ "addr": "0x644630",
+ "name": "WarheadTypeClass::applyDamage",
+ "size": 161,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x644630",
+ "bytes_hex": "5356578bd9687474810053e8e046180083c40885c0747d8bfb83c9ff33c0f2aef7d149746fa1783da80033f685c07e23a16c3da8008b0cb083c1245153e8ae46180083c40885c07425a1783da800463bf07cdd6810030000e88a47180083c40485c07410538bc8e804faffffeb088bc65f5e5bc333c08b35783da80033c985f67e128b156c3da8003902740f4183c2043bce7cf45f5e83c8ff5bc35f5e8bc15bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

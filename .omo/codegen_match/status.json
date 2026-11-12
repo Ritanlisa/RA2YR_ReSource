@@ -666,7 +666,7 @@
   "this_as_id": false
  },
  "0x406670": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": "+0 mov eax, dword ptr [0x87e2a0]",
   "name": "sub_406670",
@@ -12612,7 +12612,7 @@
   "status": "NG"
  },
  "0x475260": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+15 mov esi, dword ptr [esp + 0x90]",
@@ -16742,7 +16742,7 @@
   "this_as_id": false
  },
  "0x49e740": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 push ebx",
@@ -17782,14 +17782,14 @@
   "this_as_id": false
  },
  "0x4a2ab0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CStreamClass::StreamRead",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CStreamClass::StreamRead",
-  "rule_violations": 13,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -32257,7 +32257,7 @@
   "this_as_id": false
  },
  "0x524cb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 push esi",
@@ -44921,15 +44921,15 @@
   "status": "NG"
  },
  "0x5c2040": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "MPCooperative::StartGame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MPCooperative::StartGame",
-  "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c21a0": {
@@ -46805,7 +46805,7 @@
   "this_as_id": false
  },
  "0x5d0190": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": "+28 mov eax, dword ptr [edi + 0x64]",
@@ -52605,7 +52605,7 @@
   "this_as_id": false
  },
  "0x62a8e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+10 je 0x62a976",
@@ -55556,7 +55556,7 @@
   "this_as_id": false
  },
  "0x644630": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 push ebx",
@@ -56479,7 +56479,7 @@
   "this_as_id": false
  },
  "0x655a90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -64845,7 +64845,7 @@
   "this_as_id": false
  },
  "0x6bf690": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65825,7 +65825,7 @@
   "this_as_id": false
  },
  "0x6c2c90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66048,7 +66048,7 @@
   "this_as_id": false
  },
  "0x6c3890": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70404,19 +70404,19 @@
   "this_as_id": false
  },
  "0x6e8510": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+8 push edi",
   "name": "TaskForceClass::GetUnitType",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TaskForceClass::GetUnitType",
-  "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e85f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 push esi",
@@ -84205,7 +84205,7 @@
   "this_as_id": false
  },
  "0x772fa0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 push esi",
@@ -85632,7 +85632,7 @@
   "this_as_id": false
  },
  "0x786dc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": "+4 mov ebx, ecx",
@@ -87465,7 +87465,7 @@
   "status": "NG"
  },
  "0x7b5d70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+1 mov ebx, ecx",
@@ -87527,7 +87527,7 @@
   "this_as_id": false
  },
  "0x7b68e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -90094,7 +90094,7 @@
   "this_as_id": false
  },
  "0x7d5ac0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__setenvp",

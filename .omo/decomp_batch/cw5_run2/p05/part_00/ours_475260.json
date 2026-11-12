@@ -1,0 +1,51 @@
+{
+ "symbol": "?ReadHouseNamesToBitmask@HouseClass@@QAEHPAE0H@Z",
+ "sym_key": "HouseClass::ReadHouseNamesToBitmask",
+ "size": 134,
+ "link_base": 0,
+ "bytes_hex": "8b54240881ec800000008d442400566880000000508b84249000000068000000005250e80000000085c074498d4c240468000000005133f6e80000000083c40885c074258bc8e800000000ba010000008bc8d3e268000000006a000bf2e80000000083c40885c075db8bc65e81c480000000c20c008b8424900000005e81c480000000c20c00",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?FindByName@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::FindByName"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  }
+ ]
+}

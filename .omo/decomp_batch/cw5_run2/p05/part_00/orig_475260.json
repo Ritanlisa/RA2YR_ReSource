@@ -1,0 +1,11 @@
+{
+ "addr": "0x475260",
+ "name": "HouseClass::ReadHouseNamesToBitmask",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x475260",
+ "bytes_hex": "8b54240881ec800000008d442400568bb424900000006880000000508b84249000000068649f88005250e881370b0085c0743d8d4c240468707f81005133f6e81e4a350083c40885c074258bc8e8be6e0900ba010000008bc8d3e268707f81006a000bf2e8f949350083c40885c075db8bc65e81c480000000c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x49E740",
+ "name": "SmallFunc_49E740",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49E740",
+ "bytes_hex": "538bd98a436084c0750ce8b1f3ffff8a436084c074618b4b5c56578b7c24106a00518b078bcfff50088b435c33f685c07e3d5533ed6802010000e898a632008b570483c4048904b28b47048b04b085c074118b4b588b5429045250e8e9bc320083c4088b435c4683c54c3bf07cc75d5f5eb0015bc2040032c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

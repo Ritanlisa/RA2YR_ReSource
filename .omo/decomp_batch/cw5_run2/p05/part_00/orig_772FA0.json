@@ -1,0 +1,11 @@
+{
+ "addr": "0x772FA0",
+ "name": "InfantryTypeClass::Find",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x772FA0",
+ "bytes_hex": "56578bf9576874748100e8715d050083c40885c07468576894768100e85f5d050083c40885c07456a17875880033f685c07e23a16c758800578b0cb083c12451e83b5d050083c40885c07426a178758800463bf07cdd6860010000e8175e050083c40485c07417578bc8e861ecffff5f5ec38b156c7588005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

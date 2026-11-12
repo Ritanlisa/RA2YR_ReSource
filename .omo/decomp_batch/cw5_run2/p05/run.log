@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x6bf690 _TClassFactory_VSuperClass::ddtor -> _TClassFactory_VSuperClass
+[conv] 0x6c2c90 _TClassFactory_VInfantryTypeClass::GetClassIdentifier -> _TClassFactory_VInfantryTypeClass
+[conv] 0x6c3890 _TClassFactory_VInfantryClass::ddtor -> _TClassFactory_VInfantryClass
+[conv] 0x475260 HouseClass::ReadHouseNamesToBitmask -> HouseClass
+[conv] 0x49e740 ObjectClass::SmallFunc_49E740 -> ObjectClass
+[conv] 0x524cb0 KeywordType::FindOrCreate2 -> KeywordType
+[conv] 0x6e85f0 TeamTypeClass::FindOrCreateTaskForce -> TeamTypeClass
+[conv] 0x772fa0 InfantryTypeClass::Find -> InfantryTypeClass
+[conv] 0x7b68e0 WideString::Reassign_Alt -> WideString
+[conv] 0x655a90 TacticalClass::FreeResources -> TacticalClass
+[conv] 0x62a8e0 ParasiteClass::CanInfect -> ParasiteClass
+[conv] 0x6e8510 TaskForceClass::GetUnitType -> TaskForceClass
+[conv] 0x644630 WarheadTypeClass::applyDamage -> WarheadTypeClass
+[conv] 0x5d0190 ObjectClass::sub_5D0190 -> ObjectClass
+[conv] 0x786dc0 ObjectClass::sub_786DC0 -> ObjectClass
+[conv] 0x4a2ab0 CStreamClass::StreamRead -> CStreamClass
+[conv] 0x406670 sub_406670 -> _addr_40
+[conv] 0x5c2040 MPCooperative::StartGame -> MPCooperative
+[conv] 0x7b5d70 String::CopyTruncated -> String
+[conv] 0x7d5ac0 __setenvp -> _addr_7D
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VSuperClass rc=2
+[era] _TClassFactory_VInfantryTypeClass rc=2
+[era] _TClassFactory_VInfantryClass rc=2
+[era] HouseClass               rc=0
+[era] ObjectClass              rc=0
+[era] KeywordType              rc=0
+[era] TeamTypeClass            rc=0
+[era] InfantryTypeClass        rc=0
+[era] WideString               rc=2
+[era] TacticalClass            rc=2
+[era] ParasiteClass            rc=0
+[era] TaskForceClass           rc=0
+[era] WarheadTypeClass         rc=0
+[era] CStreamClass             rc=2
+[era] _addr_40                 rc=0
+[era] MPCooperative            rc=0
+[era] String                   rc=0
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x475260   MISMATCH         HouseClass::ReadHouseNamesToBitmask
+[diff] 0x49e740   MISMATCH         ObjectClass::SmallFunc_49E740
+[diff] 0x5d0190   MISMATCH         ObjectClass::sub_5D0190
+[diff] 0x786dc0   MISMATCH         ObjectClass::sub_786DC0
+[diff] 0x524cb0   MISMATCH         KeywordType::FindOrCreate2
+[diff] 0x6e85f0   MISMATCH         TeamTypeClass::FindOrCreateTaskForce
+[diff] 0x772fa0   MISMATCH         InfantryTypeClass::Find
+[diff] 0x62a8e0   MISMATCH         ParasiteClass::CanInfect
+[diff] 0x6e8510   MISMATCH         TaskForceClass::GetUnitType
+[diff] 0x644630   MISMATCH         WarheadTypeClass::applyDamage
+[diff] 0x406670   MISMATCH         sub_406670
+[diff] 0x5c2040   MISMATCH         MPCooperative::StartGame
+[diff] 0x7b5d70   MISMATCH         String::CopyTruncated
+[ledger] 0x6bf690 _TClassFactory_VSuperClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c2c90 _TClassFactory_VInfantryTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c3890 _TClassFactory_VInfantryClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x475260 HouseClass::ReadHouseNamesToBitmask -> NG (attempt 5)
+[ledger] 0x49e740 ObjectClass::SmallFunc_49E740 -> NG (attempt 5)
+[ledger] 0x524cb0 KeywordType::FindOrCreate2 -> NG (attempt 5)
+[ledger] 0x6e85f0 TeamTypeClass::FindOrCreateTaskForce -> NG (attempt 5)
+[ledger] 0x772fa0 InfantryTypeClass::Find -> NG (attempt 5)
+[ledger] 0x7b68e0 WideString::Reassign_Alt -> COMPILE_FAIL (attempt 5)
+[ledger] 0x655a90 TacticalClass::FreeResources -> COMPILE_FAIL (attempt 5)
+[ledger] 0x62a8e0 ParasiteClass::CanInfect -> NG (attempt 5)
+[ledger] 0x6e8510 TaskForceClass::GetUnitType -> NG (attempt 5)
+[ledger] 0x644630 WarheadTypeClass::applyDamage -> NG (attempt 13)
+[ledger] 0x5d0190 ObjectClass::sub_5D0190 -> NG (attempt 5)
+[ledger] 0x786dc0 ObjectClass::sub_786DC0 -> NG (attempt 5)
+[ledger] 0x4a2ab0 CStreamClass::StreamRead -> COMPILE_FAIL (attempt 5)
+[ledger] 0x406670 sub_406670 -> NG (attempt 5)
+[ledger] 0x5c2040 MPCooperative::StartGame -> NG (attempt 5)
+[ledger] 0x7b5d70 String::CopyTruncated -> NG (attempt 5)
+[ledger] 0x7d5ac0 __setenvp -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "regalloc": 2,
+  "branch_polarity": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p05\batch_report.json

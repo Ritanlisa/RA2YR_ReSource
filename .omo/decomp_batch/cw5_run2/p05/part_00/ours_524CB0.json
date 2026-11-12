@@ -1,0 +1,117 @@
+{
+ "symbol": "?FindOrCreate2@KeywordType@@QAEHXZ",
+ "sym_key": "KeywordType::FindOrCreate2",
+ "size": 202,
+ "link_base": 0,
+ "bytes_hex": "33c033c9a0000000008a0d00000000565051e80000000083c40885c00f84a400000033d233c08a1500000000a0000000005250e80000000083c40885c00f8483000000a10000000033f685c076588b150000000033c98a0d000000008b025183c02450e80000000083c40885c0742ca100000000463bf0732d8b150000000033c98a0d000000008b04b25183c02450e80000000083c40885c075d48b0d000000008b04b15ec368d00e0000e80000000083c40485c0740f33c98a0d00000000e8000000005ec333c05ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_Str_none@@3EA",
+   "sym_key": "g_Str_none"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenProgress@@3IA",
+   "sym_key": "g_LoadScreenProgress"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenProgress@@3IA",
+   "sym_key": "g_LoadScreenProgress"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?Constructor@InfantryTypeClass@@QAEPAV1@XZ",
+   "sym_key": "InfantryTypeClass::Constructor"
+  }
+ ]
+}
