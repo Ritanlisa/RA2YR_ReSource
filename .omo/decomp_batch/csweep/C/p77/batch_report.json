@@ -1,0 +1,457 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x410720",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x887730]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_410720",
+   "emitted": "sub_410720",
+   "unit": "_addr_41",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x412770",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x889e48]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_412770",
+   "emitted": "sub_412770",
+   "unit": "_addr_41",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x41c7b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x889f58]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_41C7B0",
+   "emitted": "sub_41C7B0",
+   "unit": "_addr_41",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x41d180",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x889ff8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_41D180",
+   "emitted": "sub_41D180",
+   "unit": "_addr_41",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x41e270",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x88a078]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_41E270",
+   "emitted": "sub_41E270",
+   "unit": "_addr_41",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x420800",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89a130]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_420800",
+   "emitted": "sub_420800",
+   "unit": "_addr_42",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x421dc0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89a1c0]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_421DC0",
+   "emitted": "sub_421DC0",
+   "unit": "_addr_42",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x427430",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89a250]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_427430",
+   "emitted": "sub_427430",
+   "unit": "_addr_42",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x429120",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89a2d0]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_429120",
+   "emitted": "sub_429120",
+   "unit": "_addr_42",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4296a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89c2d8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4296A0",
+   "emitted": "sub_4296A0",
+   "unit": "_addr_42",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x42e540",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89c370]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_42E540",
+   "emitted": "sub_42E540",
+   "unit": "_addr_42",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4300b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89c470]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4300B0",
+   "emitted": "sub_4300B0",
+   "unit": "_addr_43",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x438450",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89c6f8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_438450",
+   "emitted": "sub_438450",
+   "unit": "_addr_43",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4395b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89c778]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4395B0",
+   "emitted": "sub_4395B0",
+   "unit": "_addr_43",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x43a270",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89c7e8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_43A270",
+   "emitted": "sub_43A270",
+   "unit": "_addr_43",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x43b050",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89c888]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_43B050",
+   "emitted": "sub_43B050",
+   "unit": "_addr_43",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x45b0b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89ddb8]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_45B0B0",
+   "emitted": "sub_45B0B0",
+   "unit": "_addr_45",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x4661e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89de70]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4661E0",
+   "emitted": "sub_4661E0",
+   "unit": "_addr_46",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x46bae0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89def0]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_46BAE0",
+   "emitted": "sub_46BAE0",
+   "unit": "_addr_46",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  },
+  {
+   "addr": "0x46ca80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89df60]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_46CA80",
+   "emitted": "sub_46CA80",
+   "unit": "_addr_46",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51,
+   "clean": false
+  }
+ ]
+}
