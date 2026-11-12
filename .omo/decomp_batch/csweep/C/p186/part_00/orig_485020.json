@@ -1,0 +1,11 @@
+{
+ "addr": "0x485020",
+ "name": "Building::GetNthOfType",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x485020",
+ "bytes_hex": "568bf18b4e44e8f58c170083f8ff750433c05ec38b0decf4b0008b148133c08a861e0100005e8bc88b82b8000000410fafc1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

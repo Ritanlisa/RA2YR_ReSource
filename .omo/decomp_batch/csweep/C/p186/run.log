@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p186\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cbce1 __ltow -> _addr_7C
+[conv] 0x7cbd13 __ultow -> _addr_7C
+[conv] 0x4f6950 VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x48dc90 MapClass::UnselectAll_ClearLimboLaunchers -> MapClass
+[conv] 0x5ef290 NullModemConnClass::j_vt00 -> NullModemConnClass
+[conv] 0x60aa60 sub_60AA60 -> _addr_60
+[conv] 0x431d90 ObjectClass::sub_431D90 -> ObjectClass
+[conv] 0x43ae10 StaticButtonClass::ReleaseBuffer -> StaticButtonClass
+[conv] 0x465af0 BuildingTypeClass::IsPowered -> BuildingTypeClass
+[conv] 0x485020 Building::GetNthOfType -> Building
+[conv] 0x48dbe0 ScenarioClass::FindTerrainTypeIndex -> ScenarioClass
+[conv] 0x4c32a0 EditClass::GetSelected -> EditClass
+[conv] 0x6429a0 sub_6429A0 -> _addr_64
+[conv] 0x65c2a0 RAMFileClass::WinMain_Helper_65C2A0 -> RAMFileClass
+[conv] 0x7ddc78 _write_string_1 -> _addr_7D
+[conv] 0x408560 sub_408560 -> _addr_40
+[conv] 0x5c0280 VQMovieHandle::checkLOS -> VQMovieHandle
+[conv] 0x5fe530 OverlayTypeClass::GetType -> OverlayTypeClass
+[conv] 0x6d6a90 sub_6D6A90 -> _addr_6D
+[conv] 0x5ced70 MSPCXAnim::QueryInterface -> MSPCXAnim
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=2
+[era] MapClass                 rc=0
+[era] NullModemConnClass       rc=0
+[era] _addr_60                 rc=0
+[era] ObjectClass              rc=0
+[era] StaticButtonClass        rc=2
+[era] BuildingTypeClass        rc=0
+[era] Building                 rc=0
+[era] ScenarioClass            rc=0
+[era] EditClass                rc=0
+[era] _addr_64                 rc=0
+[era] RAMFileClass             rc=0
+[era] _addr_7D                 rc=0
+[era] _addr_40                 rc=2
+[era] VQMovieHandle            rc=0
+[era] OverlayTypeClass         rc=0
+[era] _addr_6D                 rc=0
+[era] MSPCXAnim                rc=0
+=== diffasm byte-compare ===
+[diff] 0x48dc90   MISMATCH         MapClass::UnselectAll_ClearLimboLaunchers
+[diff] 0x5ef290   MISMATCH         NullModemConnClass::j_vt00
+[diff] 0x60aa60   MISMATCH         sub_60AA60
+[diff] 0x431d90   MISMATCH         ObjectClass::sub_431D90
+[diff] 0x465af0   MISMATCH         BuildingTypeClass::IsPowered
+[diff] 0x485020   MISMATCH         Building::GetNthOfType
+[diff] 0x48dbe0   MISMATCH         ScenarioClass::FindTerrainTypeIndex
+[diff] 0x4c32a0   MISMATCH         EditClass::GetSelected
+[diff] 0x6429a0   MISMATCH         sub_6429A0
+[diff] 0x65c2a0   MISMATCH         RAMFileClass::WinMain_Helper_65C2A0
+[diff] 0x7ddc78   MISMATCH         _write_string_1
+[diff] 0x5c0280   MISMATCH         VQMovieHandle::checkLOS
+[diff] 0x5fe530   MISMATCH         OverlayTypeClass::GetType
+[diff] 0x6d6a90   MATCH            sub_6D6A90
+[diff] 0x5ced70   MISMATCH         MSPCXAnim::QueryInterface
+[ledger] 0x7cbce1 __ltow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cbd13 __ultow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f6950 VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48dc90 MapClass::UnselectAll_ClearLimboLaunchers -> NG (attempt 1)
+[ledger] 0x5ef290 NullModemConnClass::j_vt00 -> NG (attempt 1)
+[ledger] 0x60aa60 sub_60AA60 -> NG (attempt 1)
+[ledger] 0x431d90 ObjectClass::sub_431D90 -> NG (attempt 1)
+[ledger] 0x43ae10 StaticButtonClass::ReleaseBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x465af0 BuildingTypeClass::IsPowered -> NG (attempt 1)
+[ledger] 0x485020 Building::GetNthOfType -> NG (attempt 1)
+[ledger] 0x48dbe0 ScenarioClass::FindTerrainTypeIndex -> NG (attempt 1)
+[ledger] 0x4c32a0 EditClass::GetSelected -> NG (attempt 1)
+[ledger] 0x6429a0 sub_6429A0 -> NG (attempt 1)
+[ledger] 0x65c2a0 RAMFileClass::WinMain_Helper_65C2A0 -> NG (attempt 1)
+[ledger] 0x7ddc78 _write_string_1 -> NG (attempt 1)
+[ledger] 0x408560 sub_408560 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c0280 VQMovieHandle::checkLOS -> NG (attempt 1)
+[ledger] 0x5fe530 OverlayTypeClass::GetType -> NG (attempt 1)
+[ledger] 0x6d6a90 sub_6D6A90 -> OK (attempt 1)
+[ledger] 0x5ced70 MSPCXAnim::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 14,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "ret_norm": 2,
+  "const_fold": 5,
+  "extern_reloc": 1,
+  "regalloc": 2,
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 6.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p186\batch_report.json

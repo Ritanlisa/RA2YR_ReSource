@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetSelected@EditClass@@QAEHXZ",
+ "sym_key": "EditClass::GetSelected",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "83ec108b410c8b5110894424008b41188b491489542404894c24086a01ba040000008d4c240489442410e80000000083c410c3",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?DrawBuildingTilesSHP@@YIHPAXHD@Z",
+   "sym_key": "DrawBuildingTilesSHP"
+  }
+ ]
+}

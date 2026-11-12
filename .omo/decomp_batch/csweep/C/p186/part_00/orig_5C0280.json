@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C0280",
+ "name": "AbstractClass::checkLOS",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C0280",
+ "bytes_hex": "8a44240484c08b4110741485c074218b0085c0741b8bc8e8749b1900c2040085c0740d8b0085c074078bc8e8a09b1900c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

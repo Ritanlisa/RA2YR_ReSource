@@ -1,0 +1,11 @@
+{
+ "addr": "0x465AF0",
+ "name": "BuildingTypeClass::IsPowered",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x465AF0",
+ "bytes_hex": "568bf18a866217000084c074248b86000e000085c0741a50e83030360083c404c786000e000000000000c686040e0000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?UnselectAll_ClearLimboLaunchers@MapClass@@QAEHXZ",
+ "sym_key": "MapClass::UnselectAll_ClearLimboLaunchers",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "a0e400000084c07419a1d80000008b00508b08ff9150010000a0e400000084c075e733c9e800000000a160000000b90000000085c074225356be08000000b3fdba030000008b0185c0740320580c83c1044a75f14e75e95e5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?SetCurrent@Selection@@QAEXXZ",
+   "sym_key": "Selection::SetCurrent"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_VisibilitySystem@@3HA",
+   "sym_key": "g_VisibilitySystem"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_VisibilitySystem@@3HA",
+   "sym_key": "g_VisibilitySystem"
+  }
+ ]
+}

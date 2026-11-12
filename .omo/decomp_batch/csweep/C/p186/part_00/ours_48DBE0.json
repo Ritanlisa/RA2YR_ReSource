@@ -1,0 +1,33 @@
+{
+ "symbol": "?FindTerrainTypeIndex@ScenarioClass@@QAEHXZ",
+ "sym_key": "ScenarioClass::FindTerrainTypeIndex",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "5356be00000000578bd9565333ffe80000000083c40885c0741a83c6704781fe000000007d145653e80000000083c40885c075e68bc75f5e5bc35f5e83c8ff5bc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "??_C@_09CBGA@TEMPERATE?$AA@",
+   "sym_key": "??_C@_09CBGA@TEMPERATE?$AA@"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1E18@@3NA",
+   "sym_key": "DataGlobal_7E1E18"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

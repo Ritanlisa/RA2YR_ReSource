@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FE530",
+ "name": "OverlayTypeClass::GetType",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FE530",
+ "bytes_hex": "568bf168b0000000e8daa81c0083c40485c074198b4c24086aff51568bc8e82ddeffff85c07406b0015ec2080032c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

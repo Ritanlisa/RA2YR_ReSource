@@ -1,0 +1,21 @@
+{
+ "symbol": "?checkLOS@VQMovieHandle@@QAEXD@Z",
+ "sym_key": "VQMovieHandle::checkLOS",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8a442404568b711084c0741a85f674168b0e85c97405e8000000008b0e85c97405e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?processConstruction@AbstractClass@@QAEDXZ",
+   "sym_key": "AbstractClass::processConstruction"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?checkBuildProgress@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::checkBuildProgress"
+  }
+ ]
+}

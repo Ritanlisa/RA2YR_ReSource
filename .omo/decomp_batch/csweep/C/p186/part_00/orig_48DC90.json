@@ -1,0 +1,11 @@
+{
+ "addr": "0x48DC90",
+ "name": "MapClass::UnselectAll_ClearLimboLaunchers",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48DC90",
+ "bytes_hex": "a1c8eca80085c07418a1bceca8008b088b11ff9250010000a1c8eca80085c075e833c9e848402a00b9b0c38900e99e33faff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_431D90@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::sub_431D90",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8a46303ac37419395e38741125ff00000050e80000000083c404895e38885e308b4638885e3480e400885e28894638885e295e5bc3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

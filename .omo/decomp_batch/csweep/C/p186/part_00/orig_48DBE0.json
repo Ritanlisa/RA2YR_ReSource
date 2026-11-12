@@ -1,0 +1,11 @@
+{
+ "addr": "0x48DBE0",
+ "name": "ScenarioClass::FindTerrainTypeIndex",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48DBE0",
+ "bytes_hex": "5356578bd933ffbe781b7e005653e82db1330083c40885c0741383c6704781fe181e7e007ce65f5e83c8ff5bc38bc75f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

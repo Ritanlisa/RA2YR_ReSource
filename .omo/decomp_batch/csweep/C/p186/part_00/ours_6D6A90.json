@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_6D6A90@@YG_JPAI@Z",
+ "sym_key": "Unnamed::sub_6D6A90",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "83ec08568b74241056b900000000e8000000008b0e8b5604894c24048d4c2404518bc88954240ce8000000005e83c408c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_60AA60@@YGHPAXH@Z",
+ "sym_key": "Unnamed::sub_60AA60",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "a10000000050e8000000008b15000000008bc8e80000000084c074158b0d000000006a006a0068ee04000051e800000000b801000000c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?GetParent@@YGPAXPAX@Z",
+   "sym_key": "GetParent"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?IsValidActionDialog@@YI_NHH@Z",
+   "sym_key": "IsValidActionDialog"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

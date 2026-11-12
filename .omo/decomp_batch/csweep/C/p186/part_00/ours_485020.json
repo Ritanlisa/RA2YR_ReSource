@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetNthOfType@Building@@QAEHXZ",
+ "sym_key": "Building::GetNthOfType",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e44e80000000083f8ff750433c05ec38b0dd80700008b148133c08a868c0200005e8bc88b82b8000000410fafc1c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?FindBuildingByTiberiumType@@YIHH@Z",
+   "sym_key": "FindBuildingByTiberiumType"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

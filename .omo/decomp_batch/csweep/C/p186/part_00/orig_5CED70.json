@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CED70",
+ "name": "MSPCXAnim::QueryInterface",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CED70",
+ "bytes_hex": "568bf18b4e24c7062cea7e0085c974068b016a01ff108a442408c706e8e87e00a801740956e8a39d1f0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

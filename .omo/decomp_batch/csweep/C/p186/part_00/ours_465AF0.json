@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsPowered@BuildingTypeClass@@QAEHXZ",
+ "sym_key": "BuildingTypeClass::IsPowered",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "518b442400568bf1578b8e4c18000033c881e1ff00000033c184c074268bbef002000085ff741a57e80000000083c404c786f002000000000000c686f4020000008bc75f5e59c3",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?j_vt00@NullModemConnClass@@QAEPAID@Z",
+ "sym_key": "NullModemConnClass::j_vt00",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4650c7060000000050e80000000083c4048bcee800000000f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?dtor@ConnectionClass@@QAEXXZ",
+   "sym_key": "ConnectionClass::dtor"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
