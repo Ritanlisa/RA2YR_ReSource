@@ -1,0 +1,2815 @@
+{
+ "note": "Snapshot block repair manifest (CW6 125 CF bad blocks). Snapshot dir decompile-results/ is gitignored; backups live under .omo/snapshot_fix_backup/.",
+ "snapshot_root": "decompile-results/full_export/src",
+ "ida_source": "live IDA MCP 127.0.0.1:13337 / gamemd.exe.i64",
+ "generated_at": "2026-11-12 23:17:54",
+ "n_targets": 125,
+ "files": {
+  "AITriggerTypeClass.cpp": {
+   "sha_before": "b71385b834867f60b1e99c1724f27c413348b247b3eb83dee540cf572cc50da3",
+   "sha_after": "4fe9125eb0fcfa3b32f230ca391b70be0d9382be7175406025440a1a5f1a0163",
+   "backup": ".omo/snapshot_fix_backup/files/AITriggerTypeClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "AbstractClass.cpp": {
+   "sha_before": "d9a769546a9dea87ff278d3e47da6bbd8a5d5e018bbc36f86c804e3e868e18ad",
+   "sha_after": "6fd3c1206298d777bb6b40665c494a9843ca1b4f030af5fa6924fcfcb68661bc",
+   "backup": ".omo/snapshot_fix_backup/files/AbstractClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "AnimTypeClass.cpp": {
+   "sha_before": "19addec1c3527ae701c0b91b86ff9a96e70174d5ae025c517c20b3d8c35888f9",
+   "sha_after": "90ad287a029f94e299a2de91753120c8317306e3a66224c1244a859e149a3a82",
+   "backup": ".omo/snapshot_fix_backup/files/AnimTypeClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "BlowStraw.cpp": {
+   "sha_before": "257270bd391cee335b22184bae3dfba13f6557e7df701596cadf53580c275340",
+   "sha_after": "6249ea10ddbd9349250a2218ec6ac5e859a4e113a26ec02240f04a5d4c8e0944",
+   "backup": ".omo/snapshot_fix_backup/files/BlowStraw.cpp.bak",
+   "n_blocks": 1
+  },
+  "BuildingClass.cpp": {
+   "sha_before": "21f09348a91f6a35ba2be6715ebfd45da5579bc38c9b516902340e3f3df98a97",
+   "sha_after": "e43ffaa2fed4209dabc104acf95f9369e57bcac047461dd54ada0e4f51daf351",
+   "backup": ".omo/snapshot_fix_backup/files/BuildingClass.cpp.bak",
+   "n_blocks": 6
+  },
+  "BuildingLightClass.cpp": {
+   "sha_before": "2a0bf6e40f3a369cb47bba4dc73ade6b20f4579f37d4953adb8741323bf7329e",
+   "sha_after": "ee62091684406e45fa8ba7620a94743c5ded4353dd1b9434a43d170972f3bd54",
+   "backup": ".omo/snapshot_fix_backup/files/BuildingLightClass.cpp.bak",
+   "n_blocks": 2
+  },
+  "BuildingTypeClass.cpp": {
+   "sha_before": "f0819449a3cb9682fa59089f072d14789fe61a2183a4d6f888324197576073a3",
+   "sha_after": "50976b201c98750013dd95cdc1defc9443612042bc9da3f09062b4b0884e91ff",
+   "backup": ".omo/snapshot_fix_backup/files/BuildingTypeClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "CaptureManagerClass.cpp": {
+   "sha_before": "9f0cb4af992ea32d8c90047fb7927d05ae9c6cc389843f6a8675ef506540fb7a",
+   "sha_after": "e6eb76b71b5a7d02d33730bb44205262eb824bca841a484fe712614c45744433",
+   "backup": ".omo/snapshot_fix_backup/files/CaptureManagerClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "Cell.cpp": {
+   "sha_before": "f26a2e103ae562558f5cbfc37d7b21180f9cc847b277c77f9c79c896bc1db9f0",
+   "sha_after": "bbac774bd855491e6d00e80a62abc21be59e8d02cd5de8e8d741f9dce1fc6916",
+   "backup": ".omo/snapshot_fix_backup/files/Cell.cpp.bak",
+   "n_blocks": 3
+  },
+  "CellClass.cpp": {
+   "sha_before": "17b804db258646f5202f75e78e41d3cacf2f04ab3ec2e80e4e519ff32109d717",
+   "sha_after": "2defd1494de9035a3f65295a3a0330e333b0cf0aed8e23bf0da7be837210e45e",
+   "backup": ".omo/snapshot_fix_backup/files/CellClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "CountdownTimer.cpp": {
+   "sha_before": "7d965aa20cb53f1e3a4ece2d56052837d4db9bfe20507141c1f526640c505526",
+   "sha_after": "b26340c9d19b966a8a8ff84514b14109f20056d79e85ddd4dc1c7e8ed705cab7",
+   "backup": ".omo/snapshot_fix_backup/files/CountdownTimer.cpp.bak",
+   "n_blocks": 1
+  },
+  "CrateClass.cpp": {
+   "sha_before": "48eea89db2a952cbbe63a5305a39aabf268558cc0503fffa44a1e5cd14343ef5",
+   "sha_after": "b96c097090441db6114c8f4240cd5c8fb2930de137914e5af473436ab190c271",
+   "backup": ".omo/snapshot_fix_backup/files/CrateClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "CreateTeamCommand.cpp": {
+   "sha_before": "0e302e96807cbd8d297fa5906a6db8d83b1fe1975dc7841a53dab9a1be3e9010",
+   "sha_after": "76366677fd29406f99ab33125ed73bed5c2e12f44c4626e2186be3f05b9dfbd7",
+   "backup": ".omo/snapshot_fix_backup/files/CreateTeamCommand.cpp.bak",
+   "n_blocks": 1
+  },
+  "DSurface.cpp": {
+   "sha_before": "46dfc2d9fa85e4d3c56084f8974e41bd3f3c47d1d527d8289c62293a5a66cc26",
+   "sha_after": "126a11aafa276a8a89c045a2e660b8640f6fa7bb999da10aaf58152fe076903b",
+   "backup": ".omo/snapshot_fix_backup/files/DSurface.cpp.bak",
+   "n_blocks": 1
+  },
+  "DisplayClass.cpp": {
+   "sha_before": "27b6228b6aaa157b156b0b44262a3c28f2b0bd913d4a951aa3a7d2b7e4f91074",
+   "sha_after": "4db7c304c9aad29d61e3b1608916ab0bb42207d48f6ca9f74c92e68e20aebf07",
+   "backup": ".omo/snapshot_fix_backup/files/DisplayClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "DynamicVectorClass.cpp": {
+   "sha_before": "62f5fc0635cb4c4772766b919c07ee4c6df3d1ff256a15386035226f83fa166e",
+   "sha_after": "ab1bc36ded1f39fe7b5f05c6caeaa7e8cb3f2a96cd401c567d17fc12b0cfb76a",
+   "backup": ".omo/snapshot_fix_backup/files/DynamicVectorClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "ExplosionClass.cpp": {
+   "sha_before": "d5b4108ba6232803fee1b6a105cc5a07fe5103149e8c1b6602eff53f2758e382",
+   "sha_after": "09c1bfb24706184464b9743fee8a6d69b6a4c23eea7c96881ed9afb725eba410",
+   "backup": ".omo/snapshot_fix_backup/files/ExplosionClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "FactoryClass.cpp": {
+   "sha_before": "a41fc2c1775fb0ef59f7dae86606222f1444d0e875a444a0e96113a911a77029",
+   "sha_after": "3d39b8cc189dc2c5eac4c17e50e152e235e4fab823512444a3e894e2f05635c1",
+   "backup": ".omo/snapshot_fix_backup/files/FactoryClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "FlyLocomotionClass.cpp": {
+   "sha_before": "305a7bb9ac39379f49b285119152fcd28535527ac8170e8d95941ff857fdb16c",
+   "sha_after": "380092c57d7db6f19f76dce80fd74897b60923636574c08787baaf68b4e759eb",
+   "backup": ".omo/snapshot_fix_backup/files/FlyLocomotionClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "FootClass.cpp": {
+   "sha_before": "89cddf71947742eef28377e138817e0e999510ed45fa3d35214f7d947a7d70d4",
+   "sha_after": "aedbc3ca2549ef887b419a6e19c0ceb6438e539231bef1cee1bb2ade8976296d",
+   "backup": ".omo/snapshot_fix_backup/files/FootClass.cpp.bak",
+   "n_blocks": 2
+  },
+  "FrameSnapshot.cpp": {
+   "sha_before": "01e74fe3a8bcc86db4f4a7dfb84909138516e950358abfe7e372947f4da8be3d",
+   "sha_after": "2daa26faed320e262809ff153113b9cab4e33d4ac39cc97f5fae16d727385488",
+   "backup": ".omo/snapshot_fix_backup/files/FrameSnapshot.cpp.bak",
+   "n_blocks": 1
+  },
+  "GameMode.cpp": {
+   "sha_before": "261bdbffba356de95b32740c370c4bc85cee293f95f81fa9f39cdca88d70874e",
+   "sha_after": "d6f1774d0b407e0b8d27459f98efd2db9eab9c0b9518e14826035ca37d17b721",
+   "backup": ".omo/snapshot_fix_backup/files/GameMode.cpp.bak",
+   "n_blocks": 1
+  },
+  "Helper.cpp": {
+   "sha_before": "1f0e6ca25dbb3f2c81691c51524a87752a5f584a8d9390e401c53a65eb770702",
+   "sha_after": "b77e17be86aa7b9a300fd4ab522ceccda6891d21a6127c034a20676329cb4f1b",
+   "backup": ".omo/snapshot_fix_backup/files/Helper.cpp.bak",
+   "n_blocks": 1
+  },
+  "HotkeyOptions.cpp": {
+   "sha_before": "4c90446c17a0f49c70e7fbead7c0842d93f75b7d6d6af3d7af6042a3eff8a200",
+   "sha_after": "0791e9e516fa519d084004a7e510ab53e8f46e9b30d4e68026c9dd5bebe30d9a",
+   "backup": ".omo/snapshot_fix_backup/files/HotkeyOptions.cpp.bak",
+   "n_blocks": 1
+  },
+  "House.cpp": {
+   "sha_before": "cf13a2ba3caefa3f7073854753c7f19e59506294304e9d56b9d8f761707d9639",
+   "sha_after": "fbbc0f1d9fced1700e4018566025540fc2337f960006510e2df994bb76f4c388",
+   "backup": ".omo/snapshot_fix_backup/files/House.cpp.bak",
+   "n_blocks": 1
+  },
+  "HouseClass.cpp": {
+   "sha_before": "5f8a776e19b429db83363ef69f62675d04497cba0d5fb7fb5883c19aba58d5c5",
+   "sha_after": "b6be98dc8571caffedf08dcc3b8a1d8aef4f80dd11403887522e8458fd9dcc1e",
+   "backup": ".omo/snapshot_fix_backup/files/HouseClass.cpp.bak",
+   "n_blocks": 6
+  },
+  "InfantryClass.cpp": {
+   "sha_before": "20bf2c9e323b6a089eb21912909b89b8bafe15925101b1d69780f942e6d0474c",
+   "sha_after": "0def290c857da4ab91ffd913b8ea7b536acfe9482e024b0ab7ca3148cdec692e",
+   "backup": ".omo/snapshot_fix_backup/files/InfantryClass.cpp.bak",
+   "n_blocks": 2
+  },
+  "JumpjetLocomotion.cpp": {
+   "sha_before": "4117f67611a95906bb5446b89a9968559c0a792dd0262fee6e0b9fe031a04e0e",
+   "sha_after": "b562d610af8f1405e7b15d0ffaf5c0d9a4080345bd092cd7bd3b84ff23086f52",
+   "backup": ".omo/snapshot_fix_backup/files/JumpjetLocomotion.cpp.bak",
+   "n_blocks": 1
+  },
+  "JumpjetLocomotionClass.cpp": {
+   "sha_before": "9a1e90e3950825eda18f8f3e2b8e3c93ce8113514f53c8e01966109c4ae6f96c",
+   "sha_after": "8d316d211494c350ef815ada8afe90ebb88622920cb1b52d07e4031ed5447fb3",
+   "backup": ".omo/snapshot_fix_backup/files/JumpjetLocomotionClass.cpp.bak",
+   "n_blocks": 6
+  },
+  "Lightning.cpp": {
+   "sha_before": "9a5c445a5b3160f71354f11edae470a1a5c34b336ff3c330bd128c6c332459d4",
+   "sha_after": "9047d0be9b2bcefb5027e8f087b8ac313c2231884daa35fecc3ffece55d5a5a8",
+   "backup": ".omo/snapshot_fix_backup/files/Lightning.cpp.bak",
+   "n_blocks": 1
+  },
+  "LightningStorm.cpp": {
+   "sha_before": "3ffae0199645217487d9820214bd9ffe286f3cf234e86bd409597475c757460f",
+   "sha_after": "75f72126a6e8193c519430953e62eb69d03caed05387c8a339188aeab6fa2a7b",
+   "backup": ".omo/snapshot_fix_backup/files/LightningStorm.cpp.bak",
+   "n_blocks": 1
+  },
+  "LocomotionClass.cpp": {
+   "sha_before": "c1797acba0c0fabcd37ac4f751a53d7f8253debcaa3f797af7cd1a487838868e",
+   "sha_after": "bf39c8757f37e4ae9349f304a69bb19a3b024721161922e8d70d424aa9346b48",
+   "backup": ".omo/snapshot_fix_backup/files/LocomotionClass.cpp.bak",
+   "n_blocks": 2
+  },
+  "MixFile.cpp": {
+   "sha_before": "2f94aec2273e18b0f832eecf0fda96846f7da71308780121d93a26595dd6eb82",
+   "sha_after": "257dd444c4ec464a7b044f536327dc9b2462574f3fb8cf64314166912d32579c",
+   "backup": ".omo/snapshot_fix_backup/files/MixFile.cpp.bak",
+   "n_blocks": 1
+  },
+  "MixFileClass.cpp": {
+   "sha_before": "539c842a34412102dcfad295eddad4d10d24651516266bef46b8d34f529a2d28",
+   "sha_after": "dc9aeb37e46b53caa3a9222e68eedb70a250a0258190f27f29df10198de218fd",
+   "backup": ".omo/snapshot_fix_backup/files/MixFileClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "ModemGuest.cpp": {
+   "sha_before": "7c7ad51597cedd2796bbe83594673b00b0200438352c71486df1b3b9de119fbb",
+   "sha_after": "e001eaa59f6592b081a9f7790cdbe69270a62f740dcbd17bfc61f170a1d5da1c",
+   "backup": ".omo/snapshot_fix_backup/files/ModemGuest.cpp.bak",
+   "n_blocks": 1
+  },
+  "MouseClass.cpp": {
+   "sha_before": "7c01b553ae0ef465107d191f77eea0b0c396e890f533f5950075ba08fa01d1ec",
+   "sha_after": "40ef2bcbd20c3c6f62c3dd2be1b7aeec70b828c0d3f956013d0cf0d5622106c9",
+   "backup": ".omo/snapshot_fix_backup/files/MouseClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "Movement.cpp": {
+   "sha_before": "1f186283f1fc24e06ac0999d80c2e4dcc43e6e83bf04b5a5ec310c70431a121e",
+   "sha_after": "88299fb2bd86c3b3eeefdee9a9c3eeb985149218ce95fbd41cd32c97a7a5bb94",
+   "backup": ".omo/snapshot_fix_backup/files/Movement.cpp.bak",
+   "n_blocks": 1
+  },
+  "Network_Process.cpp": {
+   "sha_before": "67c90ba4711215b94f35022e1294a194ce9a781983c5702e14c8c5446253f387",
+   "sha_after": "4bea6eb5c975c68bcd5f3fdb7e3b6df70eea694e16d94933083f02870b72072a",
+   "backup": ".omo/snapshot_fix_backup/files/Network_Process.cpp.bak",
+   "n_blocks": 1
+  },
+  "ObjectClass.cpp": {
+   "sha_before": "260a4eb48321623cbb900bec04c4b96d6f8c67078e6024a591c7dfd684d1a0c7",
+   "sha_after": "e8ba8c12c754ac83c7590a77c009e4a915145ea50fb639969db4a3c0a0621b7e",
+   "backup": ".omo/snapshot_fix_backup/files/ObjectClass.cpp.bak",
+   "n_blocks": 2
+  },
+  "ParticleClass.cpp": {
+   "sha_before": "3d3c5281b8cf6bc4f3612cfede85eb7c68383ddd2537c1343fe5dcbece299c42",
+   "sha_after": "1f4dff1853d1c4fc88ef4c8b81490ab959faba2dc6347dff656885157b410d7b",
+   "backup": ".omo/snapshot_fix_backup/files/ParticleClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "PlayerClass.cpp": {
+   "sha_before": "65e19a2cccc1ab1a45352b900166fea10dae626c22d8b693dab637d153c89390",
+   "sha_after": "1a221bcf4ac8ddc2ab9b28018159a7b372b3a275ae8e21e94983788dcf59dd99",
+   "backup": ".omo/snapshot_fix_backup/files/PlayerClass.cpp.bak",
+   "n_blocks": 2
+  },
+  "ProgressTimer.cpp": {
+   "sha_before": "09e1df3553300ae495fb71e59a5fd54593defb973737aa4d947a99d63abeadbb",
+   "sha_after": "a5bbe517ba61a702f44f4cc4416b438ef39e21a8a37f6cdfbe2155fd72e21e69",
+   "backup": ".omo/snapshot_fix_backup/files/ProgressTimer.cpp.bak",
+   "n_blocks": 1
+  },
+  "RadBeam.cpp": {
+   "sha_before": "7cb2e4fb6a642046961dc33556e273a1e5dde94e4d754d3c696c48db53ed5833",
+   "sha_after": "6dc7d6182d40bed9f7702351bd9168454beddca6d7c77a242c5a33844ad506ae",
+   "backup": ".omo/snapshot_fix_backup/files/RadBeam.cpp.bak",
+   "n_blocks": 1
+  },
+  "Random.cpp": {
+   "sha_before": "3b8752cb91a5eaaaa7c5eacda99be503f1e8cece0145f3e02e236a32c0380687",
+   "sha_after": "3b8752cb91a5eaaaa7c5eacda99be503f1e8cece0145f3e02e236a32c0380687",
+   "backup": ".omo/snapshot_fix_backup/files/Random.cpp.bak",
+   "n_blocks": 1
+  },
+  "Rules.cpp": {
+   "sha_before": "02d3a5194f0ca7d90993f35bf79ab71b58bb812a0e59248cf7b8061e771f1dd6",
+   "sha_after": "4a4da41c2b582131467ab961118717260fa7264d0d3f818c7f9b775f86df2cc3",
+   "backup": ".omo/snapshot_fix_backup/files/Rules.cpp.bak",
+   "n_blocks": 1
+  },
+  "RulesClass.cpp": {
+   "sha_before": "d30803bc3a4576efd00334eb284e2f30e6a2fb07c8d8c53b014803da155b6352",
+   "sha_after": "4c94ab6166ea0856197d92c851a6ac636a8df3ed672ae2db1143929fdf468d2c",
+   "backup": ".omo/snapshot_fix_backup/files/RulesClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "SaveGame.cpp": {
+   "sha_before": "f2a147fd3b47ec85cdf6bb7fe4d83d075b87da623d573cc9ea27874a8abf87be",
+   "sha_after": "a9da62078920f8419cf05c997165fabb59d1fb2f884e25c07642249137e92a46",
+   "backup": ".omo/snapshot_fix_backup/files/SaveGame.cpp.bak",
+   "n_blocks": 1
+  },
+  "Scenario.cpp": {
+   "sha_before": "19a7d80ca1c828666803a41c4e58b421b846f2b086738cfb6f8fc2b30d87ab84",
+   "sha_after": "3f120f62145bfe4ab1484039515160c8673f693c4a58ebfc9f633eda8c52f2c8",
+   "backup": ".omo/snapshot_fix_backup/files/Scenario.cpp.bak",
+   "n_blocks": 1
+  },
+  "ScenarioClass.cpp": {
+   "sha_before": "25516eab228d419b5341848a90d9ba5a6fa944850f339a14eb942533434d3786",
+   "sha_after": "f5fe0525fd3706e4f22194ca0a1182d38d48132f5450b121fe17349eb48cd0a2",
+   "backup": ".omo/snapshot_fix_backup/files/ScenarioClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "Sidebar.cpp": {
+   "sha_before": "341f63e20125e7273a0c8c7e481dc40d29acc1200006d5b7174d99721fbef889",
+   "sha_after": "f72f72fd90d12aa69055f7f7b1977679dedf1b84c7a48f5d7c199ceb952f22f0",
+   "backup": ".omo/snapshot_fix_backup/files/Sidebar.cpp.bak",
+   "n_blocks": 1
+  },
+  "SmallFunc.cpp": {
+   "sha_before": "e246b222f21fef93239a93efea7ba474ebae8fc9e0985a7b499da45e40a8c1e9",
+   "sha_after": "98d9195403d034a49815fc3f6be434181c464a95c4c61dabaf7e17ebfbd6d814",
+   "backup": ".omo/snapshot_fix_backup/files/SmallFunc.cpp.bak",
+   "n_blocks": 1
+  },
+  "SuperClass.cpp": {
+   "sha_before": "b34e95d1bb57689991b3a4b17b7118afa114f3b2aa70ae4adef6629ba577a7af",
+   "sha_after": "dae5610e1f6349ab9f65801c1159bd16146c69300d24930c3151c211e50d28f6",
+   "backup": ".omo/snapshot_fix_backup/files/SuperClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "System.cpp": {
+   "sha_before": "08ef00c53724e866c53a504a97c3184329386bd5bf51d1b459729f78903c70c5",
+   "sha_after": "f60bcbc36b307fe7b56e02c4f0dec8c59613a32802dd7e74d5665d68b844cea0",
+   "backup": ".omo/snapshot_fix_backup/files/System.cpp.bak",
+   "n_blocks": 1
+  },
+  "TActionClass.cpp": {
+   "sha_before": "afaf59c80e67e262ad306f049c694eed29c0b22080de543ebdb9ccd68acac991",
+   "sha_after": "9c989a7d8d4937ad78b8e280013818133745c2499b99f206dbec6e651c3f7c9e",
+   "backup": ".omo/snapshot_fix_backup/files/TActionClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "TabCameoListClass.cpp": {
+   "sha_before": "40e5f18eeec30717320ed9f31bcc16cb314e59ae605c8a9f844b3464d076acc1",
+   "sha_after": "d80c616d974db855c04b1593fd81851c292355a9d5258b804b508977e27b6364",
+   "backup": ".omo/snapshot_fix_backup/files/TabCameoListClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "Tactical.cpp": {
+   "sha_before": "f0bcfa5bd66b7aafb18b0ed6153797cecbc780de445bcb69965ae12da70d4288",
+   "sha_after": "314fdfdc5ec9981b1bb56f2b956f6cc3fb47cf148e43d1c9867534c5f61f85d3",
+   "backup": ".omo/snapshot_fix_backup/files/Tactical.cpp.bak",
+   "n_blocks": 1
+  },
+  "TeamClass.cpp": {
+   "sha_before": "93d0d0f1d4ff01317d83c3c1968a872c044dedc0aa972ad3f7ed7bbff6c7d223",
+   "sha_after": "0d3ecaa3edf4b9ebccd00c94a9861756c5e4ec444f4f4557904a742c2794f0e7",
+   "backup": ".omo/snapshot_fix_backup/files/TeamClass.cpp.bak",
+   "n_blocks": 2
+  },
+  "TechnoClass.cpp": {
+   "sha_before": "0f95d070448f46685bf1ec617bbb8918bc588b22b4eb9fad74b04580d0312c3a",
+   "sha_after": "6f36af579b0b7b4811fe41a504c7e2e6eed96f9ce6314119f90318f714356caa",
+   "backup": ".omo/snapshot_fix_backup/files/TechnoClass.cpp.bak",
+   "n_blocks": 10
+  },
+  "Timeout.cpp": {
+   "sha_before": "c6dad131d6efd92f7cfb5a7740a83ca8ed6ec80cd26c94131841ea0bab913dc4",
+   "sha_after": "df259f8a6b8545a762eebda46b0d7f24d88c9e744b1e107b7b60c2218908ca74",
+   "backup": ".omo/snapshot_fix_backup/files/Timeout.cpp.bak",
+   "n_blocks": 1
+  },
+  "TypeList.cpp": {
+   "sha_before": "67b0214f32f1d8198d4c13cd543dd2b9b1d341301c2858ebcaca554a2f1662e4",
+   "sha_after": "e729672e7bb152f66a9e966098bb5b7bcab05b3f0378f5961c9cdb158c9b49d4",
+   "backup": ".omo/snapshot_fix_backup/files/TypeList.cpp.bak",
+   "n_blocks": 5
+  },
+  "UnitClass.cpp": {
+   "sha_before": "dde4dd6a20096e0c5ea9baa622a138c6d466e801566a54555b83100937e76392",
+   "sha_after": "50fd2daef628d2b3b9c02c103e1d0876ff626d92beaed337dd19c834a5285639",
+   "backup": ".omo/snapshot_fix_backup/files/UnitClass.cpp.bak",
+   "n_blocks": 5
+  },
+  "VoxelAnimClass.cpp": {
+   "sha_before": "fc2fcddf2a26c162452572b3b255fab502b91ddb0dca4acfe7fcb9a9bf7351be",
+   "sha_after": "e8fb54d855f25c2c0d8f47e16740bb5215262538e8ea9f10de47b5ab1b30ee8a",
+   "backup": ".omo/snapshot_fix_backup/files/VoxelAnimClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "WarheadTypeClass.cpp": {
+   "sha_before": "9a069c1b29a93bcd06fb5d4b2b08d3f458512cd358c0acbdca24057e79177265",
+   "sha_after": "aceed9af618503faf0083f7e7b272a52b01d38c2228298b1d59173c0e7710ebc",
+   "backup": ".omo/snapshot_fix_backup/files/WarheadTypeClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "Weapon_Update_Update.cpp": {
+   "sha_before": "291a59b43572569720bbbb6f1b1d82b0039e0a5377fa097a0426ecb8dfc9eec8",
+   "sha_after": "cd593307d5171a2118bede19119198be8328aaabc7dedb3f7ebef514989a6b9b",
+   "backup": ".omo/snapshot_fix_backup/files/Weapon_Update_Update.cpp.bak",
+   "n_blocks": 1
+  },
+  "WinModemClass.cpp": {
+   "sha_before": "27c19fa7271bf6b69f5101d3c6b917ec6d7f398614bd92dba7c052429f4d8be5",
+   "sha_after": "0a43981b126bd1b3272f0018caa0c950183cce3a1a3a0e4bb3eabe362ff2ce78",
+   "backup": ".omo/snapshot_fix_backup/files/WinModemClass.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_41.cpp": {
+   "sha_before": "ab8d7cb37c8f7bd8ef487acd86640b5928e73e80bf4ea7838115298acc41f27c",
+   "sha_after": "8e3b26a8f2b6b0594c8193a7b046e1542a3caf53668a774a0f3ff55ad451cd6b",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_41.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_48.cpp": {
+   "sha_before": "279b1bbafa8ba4baddaac8c64da58dacb87d336001736b9fb414b7d35d40c5a9",
+   "sha_after": "687a395f621e5262a4985c8736998dd916523fc67ac1b0c338cf1dbc452e71d5",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_48.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_4C.cpp": {
+   "sha_before": "edb3dee9ea8a0e984301e98d849b2809a8da77b645f0bb4643b4d048670bc644",
+   "sha_after": "eede615b1e32bf7da0a2195a9cae0ed103d9fd05db18c3d5f94c94cb67ed990f",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_4C.cpp.bak",
+   "n_blocks": 2
+  },
+  "_addr_51.cpp": {
+   "sha_before": "9e4cd4260750acfd835af2cbfd111613cc4f9878c83caa92da4798f3b3b9a251",
+   "sha_after": "3e4f354ad499ae1fb74957610921936b86fa96e3ae2bdd108bd45744492c2d78",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_51.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_54.cpp": {
+   "sha_before": "206cad097298f39553949182f39acf5ccccda13bf68dd6a928047215b5c7954c",
+   "sha_after": "c47bdef9337fbd359f0a5ea3e64997e144b8a1f10639aa374a313247b77aa6eb",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_54.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_55.cpp": {
+   "sha_before": "835f6a2aefa0a0b551f7534409c12504d2ba6196a48161e2a53410e3f431e791",
+   "sha_after": "41f7481fda3d7456c6e47ff1bdae5334ba9235c8b55f59f7d86c490d23871cb9",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_55.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_57.cpp": {
+   "sha_before": "81083716c891a84b4f1fb02d3b4493b0457fed821e8967ecc69fbdb1aac738cb",
+   "sha_after": "4eecb9fa7812be568788ccbd5cf5094cbcfdd7ac3a9c0e4219bb8765b69e4c86",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_57.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_5A.cpp": {
+   "sha_before": "78ef6e06ccaf61e9425cfd56ba6f47ca67f95b06917ac1f3096a3cfb3a9c085a",
+   "sha_after": "30c6f73b9acfd3eac893a00f9908288cb757cda63fa5e5b2d923a86be921f06e",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_5A.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_62.cpp": {
+   "sha_before": "352e28bc80be3c76e1e3076c17baf0207184cb96f9ec3aba383c44d9b887e889",
+   "sha_after": "0e5fdea10749b2e0c2c87bbf7606d852a56ebe98b96ab084f2b19e33f3a878cf",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_62.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_64.cpp": {
+   "sha_before": "1af263454f4644650519aa0a5105538bc16a3453c6940d837b4b571e0ad39bde",
+   "sha_after": "4453b36c112614c221b5199400eecfe4a001e5a9bb0cfe1fa6f15f222e0dde5a",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_64.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_66.cpp": {
+   "sha_before": "d9e6e5fac72fb05586d3b1379670b4e5df5ba92eaa3a470506652dde3fe3fd85",
+   "sha_after": "242171a8c0bbb73b0aa4019abc4fa6e6f4cdc4736ffebd3837c9fa01b0f34003",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_66.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_6E.cpp": {
+   "sha_before": "112d0e6c1cba44fe8a129ea7ff15275830731fffad32d7eb253a864443fdbe0b",
+   "sha_after": "9d2b2d7e18df7c5591724932220b5fa8597081d1410b603f6d976e04c96d071f",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_6E.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_72.cpp": {
+   "sha_before": "f84e7016772fcc2696fb1e22643aece90cc0d7426db29251e3351c6f63b0fe14",
+   "sha_after": "cae48620f35a707d4e48ef2ea52577c77ada4e07a4f9aa3bc603897f1db0b94f",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_72.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_75.cpp": {
+   "sha_before": "6196350afdf357c38ea1cb30b7e27e25ab86f6fbcb1977d01f7b387e3c46d969",
+   "sha_after": "ed7b13987c20cdbeb9b074525a6c6fb4ebedf8f2bfc6da28163edd0a1e914612",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_75.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_77.cpp": {
+   "sha_before": "28907f447ff3f64a6352918a63f77a4e0fcba47ae78c0b3de0c508ebb2687433",
+   "sha_after": "8cabbb72e1c7f19d5beec40216e03fa564bc9aacf7e270af26fbef8df0518014",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_77.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_79.cpp": {
+   "sha_before": "fe9acf26900e4c3d2ae13b6ccc3a0d59709566bd4e02034fd0a973db2a990ef7",
+   "sha_after": "4d73c3f350f263afa9f8a8be2ecda87fd7e1943c8372326398f890b31f2e755d",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_79.cpp.bak",
+   "n_blocks": 1
+  },
+  "_addr_7B.cpp": {
+   "sha_before": "e191f69a03afee7fa5ff9c2ea560a8a923f9a53012f616091b27f6609e6f8a5f",
+   "sha_after": "e191f69a03afee7fa5ff9c2ea560a8a923f9a53012f616091b27f6609e6f8a5f",
+   "backup": ".omo/snapshot_fix_backup/files/_addr_7B.cpp.bak",
+   "n_blocks": 1
+  }
+ },
+ "entries": [
+  {
+   "addr": "0x41dd10",
+   "file": "_addr_41.cpp",
+   "name_old": "sub_41DD10",
+   "name_new": "sub_41DD10",
+   "size": "0x11",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 689,
+   "new_len": 694,
+   "old_sha": "1cf1f676a3a47d11365883e09dc723f38f5f92729be108eb3cb925f2c463339b",
+   "new_sha": "b89f4c09ab070c2f7346e6795d12965985d16539f8975247efa62dca17d3cb22",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_41__0041DD10.txt"
+  },
+  {
+   "addr": "0x41f0d0",
+   "file": "AITriggerTypeClass.cpp",
+   "name_old": "AITriggerTypeClass::IronCurtainCharged",
+   "name_new": "AITriggerTypeClass::IronCurtainCharged",
+   "size": "0xab",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3675,
+   "new_len": 3735,
+   "old_sha": "9e0c327af652cd9d6c9bf300203e12427ab7f5d03c6382941b8b241d048edc6a",
+   "new_sha": "e262c1bbb0f4dd895fc56b2ce88b1a0bcfd7ee238a5fed89a02394cd8b91a43f",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/AITriggerTypeClass__0041F0D0.txt"
+  },
+  {
+   "addr": "0x4265b0",
+   "file": "Cell.cpp",
+   "name_old": "Cell::GetHeight",
+   "name_new": "Cell::GetHeight",
+   "size": "0x63",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 2171,
+   "new_len": 2169,
+   "old_sha": "ad1dcfd6e43a91c461efecb59ab29551c11630e2c923ed7d016dc46c8581653d",
+   "new_sha": "f1b28bbfcc8cfce6e78559fcc49859f95ad898ee3b8f01414bd16ab1ed714417",
+   "asm_old": 3,
+   "asm_new": 3,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Cell__004265B0.txt"
+  },
+  {
+   "addr": "0x427d00",
+   "file": "AnimTypeClass.cpp",
+   "name_old": "AnimTypeClass::LoadFromINI",
+   "name_new": "AnimTypeClass::LoadFromINI",
+   "size": "0xaf6",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 20826,
+   "new_len": 60955,
+   "old_sha": "9734e2077b56416886fdf4eb42d5625eae7e4d1e42bb6605e20117942942de9b",
+   "new_sha": "1c780d47aef0f7443f6d62dbff3dea38068954bfc2eea226539d71c6b03e637e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/AnimTypeClass__00427D00.txt"
+  },
+  {
+   "addr": "0x430f70",
+   "file": "PlayerClass.cpp",
+   "name_old": "PlayerClass::FindNearestWaypoint",
+   "name_new": "PlayerClass::FindNearestWaypoint",
+   "size": "0xed",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 5493,
+   "new_len": 5520,
+   "old_sha": "21abd5bfca82d79c7bf0fc574192c384577589a91f21fc5cd92e9730a593c105",
+   "new_sha": "f2a5532371ab15bd07f5655328d73cd9bf7ac619471db7bb285fe93b6f831f67",
+   "asm_old": 12,
+   "asm_new": 12,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/PlayerClass__00430F70.txt"
+  },
+  {
+   "addr": "0x435820",
+   "file": "BuildingLightClass.cpp",
+   "name_old": "BuildingLightClass::CTOR",
+   "name_new": "BuildingLightClass::CTOR",
+   "size": "0x330",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 16076,
+   "new_len": 15660,
+   "old_sha": "877252cd4a48cf3edfdb7c36a45c1b835e12940a6d7fd08d954b349f852ea886",
+   "new_sha": "c9084a433d9abc2f173555e8bd7abe5d8b79a0a49b974e844a2cc9b22730c2a4",
+   "asm_old": 13,
+   "asm_new": 13,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingLightClass__00435820.txt"
+  },
+  {
+   "addr": "0x4371d0",
+   "file": "Helper.cpp",
+   "name_old": "Helper::ProcessData",
+   "name_new": "Helper::ProcessData",
+   "size": "0xb2",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3556,
+   "new_len": 3592,
+   "old_sha": "f13d18d60b3f3c750fa2c7bcc9e6a1414793cb8379dd3275c1081ce8089fe2ca",
+   "new_sha": "104699b6cf3d493c2eb63560153892a4710065c895a32e8af00f469707a6bc81",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Helper__004371D0.txt"
+  },
+  {
+   "addr": "0x43fb20",
+   "file": "BuildingClass.cpp",
+   "name_old": "BuildingClass::ProcessSpreadEffect",
+   "name_new": "BuildingClass::ProcessSpreadEffect",
+   "size": "0xa5b",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 35396,
+   "new_len": 48897,
+   "old_sha": "906b709e3e824b91df960ddc0e1e73139b024a0f37d7f3e765b55505279f2921",
+   "new_sha": "b19ba4748929fc85553ec3e0d9ead8f5ed21dc5806fc6146d38909649f94f1ab",
+   "asm_old": 3,
+   "asm_new": 3,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingClass__0043FB20.txt"
+  },
+  {
+   "addr": "0x448160",
+   "file": "FootClass.cpp",
+   "name_old": "FootClass::ProcessPrimarySelect",
+   "name_new": "FootClass::ProcessPrimarySelect",
+   "size": "0xfb",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 5130,
+   "new_len": 5088,
+   "old_sha": "733cdae8d41f24dd35fe60984fc755829e5ba3664b9534e7f508e3ed7096e6e8",
+   "new_sha": "e70d0f25719632348fdf43811a4b6de8c34894476d205672b217e9cf4046c01e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/FootClass__00448160.txt"
+  },
+  {
+   "addr": "0x451330",
+   "file": "BuildingClass.cpp",
+   "name_old": "BuildingClass::GetCrewCount",
+   "name_new": "BuildingClass::GetCrewCount",
+   "size": "0x9e",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3405,
+   "new_len": 3283,
+   "old_sha": "a27c428614ea2357f7361969f6773f259f388415aa008ec7ea416ee35e8518be",
+   "new_sha": "dfb9402a57d444ae855e077d6ce516b7189bd3e5f899c9cb4edf3d0359440608",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingClass__00451330.txt"
+  },
+  {
+   "addr": "0x452360",
+   "file": "BuildingClass.cpp",
+   "name_old": "BuildingClass::PowerOff",
+   "name_new": "BuildingClass::PowerOff",
+   "size": "0xaa",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3107,
+   "new_len": 3084,
+   "old_sha": "d5d009606520ccadfdb1896a164365e2c3442cbc74fd18f3bb5d8f0f38115acd",
+   "new_sha": "e3c2195331777428ef3cc6617bcb9c9a0dadc8a1de97376129c45cf9a98e5de8",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingClass__00452360.txt"
+  },
+  {
+   "addr": "0x459470",
+   "file": "BuildingClass.cpp",
+   "name_old": "BuildingClass::UpdateDamageAnim",
+   "name_new": "BuildingClass::UpdateDamageAnim",
+   "size": "0x141",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 6278,
+   "new_len": 6137,
+   "old_sha": "1bf1e2e3fd128b80039b0178a681ec4fa56402308136b53332e0cc44d80f2400",
+   "new_sha": "fceb40506430a290f6d81cd05bc1c3e27d6135fbee94e549946eef1a5b5dcbe9",
+   "asm_old": 2,
+   "asm_new": 2,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingClass__00459470.txt"
+  },
+  {
+   "addr": "0x472640",
+   "file": "CaptureManagerClass.cpp",
+   "name_old": "CaptureManagerClass::NeedsToDrawLinks",
+   "name_new": "CaptureManagerClass::NeedsToDrawLinks",
+   "size": "0x77",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3335,
+   "new_len": 3315,
+   "old_sha": "1927c2bb71b7327c6af2a3f04c90ac25734c4cab1054ac63f4ae57110bb1b1bf",
+   "new_sha": "e9a6c6933ae6783733a8dd551faae9fb4f088694acd70ad424b487a47ee1014f",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/CaptureManagerClass__00472640.txt"
+  },
+  {
+   "addr": "0x477db0",
+   "file": "DynamicVectorClass.cpp",
+   "name_old": "DynamicVectorClass::Construct",
+   "name_new": "DynamicVectorClass::Construct",
+   "size": "0x5d",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 2242,
+   "new_len": 2176,
+   "old_sha": "4fb0c5e7fa41ce673917c98653c296f8abdc360512dad5974f464125d7844318",
+   "new_sha": "e9410ded30d99900ba45524e21be6a769209581aa553864f0d3c5ff2522c43a8",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/DynamicVectorClass__00477DB0.txt"
+  },
+  {
+   "addr": "0x481a00",
+   "file": "CrateClass.cpp",
+   "name_old": "CrateClass::ProcessPickup",
+   "name_new": "CrateClass::ProcessPickup",
+   "size": "0x1994",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 19162,
+   "new_len": 124380,
+   "old_sha": "68f71e203f0d0c88205ab6862b21e79e5711cce17f8e6eaa536685e4b4c60047",
+   "new_sha": "8fd5c45a0c1e0b01e386e5d3a933baec3bd40a9273f14585234bde3dbc16c155",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/CrateClass__00481A00.txt"
+  },
+  {
+   "addr": "0x484180",
+   "file": "Tactical.cpp",
+   "name_old": "Tactical::CalculateTacticalLighting",
+   "name_new": "Tactical::CalculateTacticalLighting",
+   "size": "0x4f8",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 19478,
+   "new_len": 19350,
+   "old_sha": "c975e83239a469cf09c655e7c38dae5b68d5c2cce58de4c501ac31ef094016f0",
+   "new_sha": "28a99bfe52325c81de24f22fe0a9ea3e0203a644b18cd4656cf9a5c21ed7ecdd",
+   "asm_old": 7,
+   "asm_new": 7,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Tactical__00484180.txt"
+  },
+  {
+   "addr": "0x486ff0",
+   "file": "Cell.cpp",
+   "name_old": "Cell::IsBuildableAdvanced",
+   "name_new": "Cell::IsBuildableAdvanced",
+   "size": "0xb6",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 4664,
+   "new_len": 4710,
+   "old_sha": "8c03aa48fb14adb4cc1334fd19cd583b3ea8cf6fc531e2a048201a902ea43d38",
+   "new_sha": "82c6b63c767c257faa0604bbcc56bebc761b2ad080d077bd713e41579e5a2d8d",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Cell__00486FF0.txt"
+  },
+  {
+   "addr": "0x48c8b0",
+   "file": "_addr_48.cpp",
+   "name_old": "MainGameFrame",
+   "name_new": "MainGameFrame",
+   "size": "0x3d2",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 19588,
+   "new_len": 20007,
+   "old_sha": "c9cf06dbf18b7e784660a7954c54fc21fbcad32635e9c68d5334601781cf6bc8",
+   "new_sha": "6f1998bafd45ef4f1c4fc61e24c36126c0dc56e795b143e353a65884cde98bb1",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_48__0048C8B0.txt"
+  },
+  {
+   "addr": "0x4a2600",
+   "file": "CountdownTimer.cpp",
+   "name_old": "CountdownTimer::UpdateDisplay",
+   "name_new": "CountdownTimer::UpdateDisplay",
+   "size": "0x171",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 7994,
+   "new_len": 8026,
+   "old_sha": "7d965aa20cb53f1e3a4ece2d56052837d4db9bfe20507141c1f526640c505526",
+   "new_sha": "e049c8a9df72af70da9d1e97d6daa25e400999a51ca16ae4c728ee179e0a08c3",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/CountdownTimer__004A2600.txt"
+  },
+  {
+   "addr": "0x4ab9b0",
+   "file": "PlayerClass.cpp",
+   "name_old": "PlayerClass::ExecuteCommand",
+   "name_new": "PlayerClass::ExecuteCommand",
+   "size": "0x8fa",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 33127,
+   "new_len": 43445,
+   "old_sha": "b5114ad5588eafc92c08f2104c4f7728c5598afa065e2fe2eb1a1b4958feb8f2",
+   "new_sha": "9b01bcab91bd8989130f226d87e48e4b9356e46399f37e37eae05af86289696b",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/PlayerClass__004AB9B0.txt"
+  },
+  {
+   "addr": "0x4adff0",
+   "file": "HouseClass.cpp",
+   "name_old": "HouseClass::RevealShroudForAllies",
+   "name_new": "HouseClass::RevealShroudForAllies",
+   "size": "0xb8",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3701,
+   "new_len": 3771,
+   "old_sha": "f09da2a8aec3f93d0b2fd04b6052815ef1e8a58f653ffc86a86ea288830ad4d1",
+   "new_sha": "d0e473f1167fcfdbd3a944d9a140290b317dc798b44b927cf857bcc29f1cffa9",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/HouseClass__004ADFF0.txt"
+  },
+  {
+   "addr": "0x4af540",
+   "file": "LocomotionClass.cpp",
+   "name_old": "LocomotionClass::Initialize",
+   "name_new": "LocomotionClass::Initialize",
+   "size": "0x9a",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3561,
+   "new_len": 3327,
+   "old_sha": "dffda5fbee8441c9c102ac2e7ff425889cc1289b010b7caf7c65def569c823c4",
+   "new_sha": "514e90b604a2fa667d841db1b9b93916c0367d84a98d6de937a584f6e19c13e4",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/LocomotionClass__004AF540.txt"
+  },
+  {
+   "addr": "0x4b2630",
+   "file": "JumpjetLocomotion.cpp",
+   "name_old": "JumpjetLocomotion::Update",
+   "name_new": "JumpjetLocomotion::Update",
+   "size": "0x2137",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 15428,
+   "new_len": 154955,
+   "old_sha": "778bd21b3a1cbe3e3fae017456e23d1e42f1590ea8953827ea7dd5573c50e9c2",
+   "new_sha": "2275fcb63eac9736e9645b77f9cf503ceed33ad6f21993e5fba2a81ec333206c",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/JumpjetLocomotion__004B2630.txt"
+  },
+  {
+   "addr": "0x4b4d70",
+   "file": "Timeout.cpp",
+   "name_old": "Timeout::GetRemaining",
+   "name_new": "Timeout::GetRemaining",
+   "size": "0x1c",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1109,
+   "new_len": 1131,
+   "old_sha": "c6dad131d6efd92f7cfb5a7740a83ca8ed6ec80cd26c94131841ea0bab913dc4",
+   "new_sha": "3ed8b4ff669a1526a87a46d1540fe0d599bb0b191ed425014bbbdaade201e77e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Timeout__004B4D70.txt"
+  },
+  {
+   "addr": "0x4bb000",
+   "file": "DSurface.cpp",
+   "name_old": "DSurface::RestoreIfLost",
+   "name_new": "DSurface::RestoreIfLost",
+   "size": "0x74",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3281,
+   "new_len": 3323,
+   "old_sha": "8a7a1b1c2d4f332c5e82af0fa1b17feefcc3ced1e07ab00e83ee229eeab03702",
+   "new_sha": "b421876399e820e3ba805694936b099d11cf64b8ea9264813fbfea38462eb415",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/DSurface__004BB000.txt"
+  },
+  {
+   "addr": "0x4c1f20",
+   "file": "Lightning.cpp",
+   "name_old": "Lightning::Draw",
+   "name_new": "Lightning::Draw",
+   "size": "0x86f",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 30157,
+   "new_len": 37807,
+   "old_sha": "9a5c445a5b3160f71354f11edae470a1a5c34b336ff3c330bd128c6c332459d4",
+   "new_sha": "aa78e727c9249f3a2eea4845b5f9197befa195c1cbb3acc420fce6357effde4d",
+   "asm_old": 16,
+   "asm_new": 16,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Lightning__004C1F20.txt"
+  },
+  {
+   "addr": "0x4c54e0",
+   "file": "_addr_4C.cpp",
+   "name_old": "ApplyEMPPulseEffect",
+   "name_new": "ApplyEMPPulseEffect",
+   "size": "0x3d9",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 18399,
+   "new_len": 18172,
+   "old_sha": "931b6349ea4a3e8b4ddf2ad22bcc3ec79c4d64f14569c158c8dd3041cccfc72d",
+   "new_sha": "476fbe87df9fdc4a0b2c0f57e528b1b985b58cddde3cd94ee1128aced19dd29e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_4C__004C54E0.txt"
+  },
+  {
+   "addr": "0x4c91c0",
+   "file": "FrameSnapshot.cpp",
+   "name_old": "FrameSnapshot::Init",
+   "name_new": "FrameSnapshot::Init",
+   "size": "0x1c",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 919,
+   "new_len": 930,
+   "old_sha": "a0d159d77307a9f5f0cc62d5ab877bf2d7b74eebea63d9529a48720de7cbc4f0",
+   "new_sha": "bf7da72803bf428b76b4f20d0b55c1d13692597642c97a3338d7437bafb5708b",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/FrameSnapshot__004C91C0.txt"
+  },
+  {
+   "addr": "0x4c93d0",
+   "file": "ProgressTimer.cpp",
+   "name_old": "ProgressTimer::GetValue",
+   "name_new": "ProgressTimer::GetValue",
+   "size": "0x99",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 4470,
+   "new_len": 4406,
+   "old_sha": "09e1df3553300ae495fb71e59a5fd54593defb973737aa4d947a99d63abeadbb",
+   "new_sha": "c4ce00e8f31d8e96bd6ca28a7045111ab7bf09236b710089124d1ce383c824f3",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/ProgressTimer__004C93D0.txt"
+  },
+  {
+   "addr": "0x4c95d0",
+   "file": "_addr_4C.cpp",
+   "name_old": "sub_4C95D0",
+   "name_new": "sub_4C95D0",
+   "size": "0xa1",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 4230,
+   "new_len": 4167,
+   "old_sha": "6940670892fba94b1a7beecc435b9556461a18bec14f3ae3eeedd7c35924288f",
+   "new_sha": "f7a9b22f21b27411b00240ba2ad3d15adef86fcca8e4ee40ba94f0834f2fe526",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_4C__004C95D0.txt"
+  },
+  {
+   "addr": "0x4c9b20",
+   "file": "FactoryClass.cpp",
+   "name_old": "FactoryClass::UpdateProduction",
+   "name_new": "FactoryClass::UpdateProduction",
+   "size": "0x122",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 7157,
+   "new_len": 7183,
+   "old_sha": "f00f3e4451894f75eb87f6f58e71e82199f51825a622f0d6e44e27c85e302dae",
+   "new_sha": "096f135a814ad2ca71cf28e032248ebdee236615011efef646990c0c8b4004b6",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/FactoryClass__004C9B20.txt"
+  },
+  {
+   "addr": "0x4cfe80",
+   "file": "FlyLocomotionClass.cpp",
+   "name_old": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget",
+   "name_new": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget",
+   "size": "0x2f2",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 15718,
+   "new_len": 15704,
+   "old_sha": "b2ea99ba78918841050cdb76960b0e7f8d7447e01c2c2261b39444602a056d1e",
+   "new_sha": "3ab2a744250988210131403720f3215fe69591fcc6ae1636a8e0d5f648415d8b",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/FlyLocomotionClass__004CFE80.txt"
+  },
+  {
+   "addr": "0x4dbad0",
+   "file": "FootClass.cpp",
+   "name_old": "FootClass::BeginPowerUpdate",
+   "name_new": "FootClass::BeginPowerUpdate",
+   "size": "0x2c2",
+   "kinds_old": [
+    "QMARK",
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 14674,
+   "new_len": 14941,
+   "old_sha": "fff068518385656465cd420c8c8d747ffc11e1115a4de7595ef9df62ca50a579",
+   "new_sha": "30e8ed0b9806417f9525cd0be91204ae9721be8938b5c1058e3cecc1c5e1ff19",
+   "asm_old": 34,
+   "asm_new": 34,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/FootClass__004DBAD0.txt"
+  },
+  {
+   "addr": "0x4fbf60",
+   "file": "HouseClass.cpp",
+   "name_old": "HouseClass::DroppedFlag",
+   "name_new": "HouseClass::DroppedFlag",
+   "size": "0xfc",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 5744,
+   "new_len": 5687,
+   "old_sha": "3aa298d1ca922783f506665aa00fda02a3cca27eb774b9aa892b17003fdbab70",
+   "new_sha": "cd90ec6e1213dd83fd662b50b264e1f285ab6c60857be2524949163e8af1f4e8",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/HouseClass__004FBF60.txt"
+  },
+  {
+   "addr": "0x4fc9e0",
+   "file": "HouseClass.cpp",
+   "name_old": "HouseClass::CheckWinCondition",
+   "name_new": "HouseClass::CheckWinCondition",
+   "size": "0x1e7",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 9815,
+   "new_len": 9795,
+   "old_sha": "ad35fdcf386fc10dbeb19bc757bf98bf4d3df9a0fdb7d626fd5b5bc2c0d355eb",
+   "new_sha": "0f4d54c665e32aec4fdbe3a0d3498461514d361f222d39d178c3660f8e6f0764",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/HouseClass__004FC9E0.txt"
+  },
+  {
+   "addr": "0x502a80",
+   "file": "HouseClass.cpp",
+   "name_old": "HouseClass::RegisterGain_0",
+   "name_new": "HouseClass::RegisterGain_0",
+   "size": "0x28c",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 12694,
+   "new_len": 12721,
+   "old_sha": "4c2fa3fb7917b2b77aa630a86669fc41167e85829970d3197e3772b00efca941",
+   "new_sha": "22a21eb93adca555038bf3cfb26b6fe50741b593d7cde2b16190ff7ffc194dca",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/HouseClass__00502A80.txt"
+  },
+  {
+   "addr": "0x5098f0",
+   "file": "HouseClass.cpp",
+   "name_old": "HouseClass::UpdateAITryFireSW",
+   "name_new": "HouseClass::UpdateAITryFireSW",
+   "size": "0x1f8",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 11344,
+   "new_len": 11567,
+   "old_sha": "86f9e8eded3eaf5bd87589f9a58c721645e2adeda4da629c253c0ec94c961270",
+   "new_sha": "a7cf2ab3b4de1690a3e917600c74f68785febbf6bbbb3c63a30becccb7ad107e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/HouseClass__005098F0.txt"
+  },
+  {
+   "addr": "0x50a150",
+   "file": "HouseClass.cpp",
+   "name_old": "HouseClass::Fire_PsyDom",
+   "name_new": "HouseClass::Fire_PsyDom",
+   "size": "0x1f1",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 10303,
+   "new_len": 10289,
+   "old_sha": "4dfbbebee3a330627c60bf83a82af85cdb5f1f4be0c81692bed2c79bb08dc7e2",
+   "new_sha": "fd7e3424a05eb84f25e692d5436ae413a246bafc9426c91521b7653c15bb1299",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/HouseClass__0050A150.txt"
+  },
+  {
+   "addr": "0x50b760",
+   "file": "BuildingTypeClass.cpp",
+   "name_old": "BuildingTypeClass::ProcessData",
+   "name_new": "BuildingTypeClass::ProcessData",
+   "size": "0xdb",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 4555,
+   "new_len": 4547,
+   "old_sha": "46476396d177c43b3ed2c0c126ee7fe29b0fab7fca5f14a0cac6a50e4ec12949",
+   "new_sha": "c983adff90c0f4974fd2a62a8a8bb380c06fe9133a22430beab236faa848a1e8",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingTypeClass__0050B760.txt"
+  },
+  {
+   "addr": "0x50db00",
+   "file": "House.cpp",
+   "name_old": "House::ChooseHouseEnemy",
+   "name_new": "House::ChooseHouseEnemy",
+   "size": "0x3ea",
+   "kinds_old": [
+    "QMARK",
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 19166,
+   "new_len": 19096,
+   "old_sha": "8c029dad0d391eb4071c903ce517cca1f89dc4622083cdeb91323b5c2106bf82",
+   "new_sha": "4319b0c8df4d8433018a5921cea836d7cc86e2d8e10f6495d31b0d33c9338cde",
+   "asm_old": 36,
+   "asm_new": 36,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/House__0050DB00.txt"
+  },
+  {
+   "addr": "0x513d20",
+   "file": "BuildingLightClass.cpp",
+   "name_old": "BuildingLightClass::UpdateOscillation",
+   "name_new": "BuildingLightClass::UpdateOscillation",
+   "size": "0x211",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 11102,
+   "new_len": 10309,
+   "old_sha": "bffda04a96f0e064a3648f8883331b31b52b2fca04f4e49abd74f3bada184e0b",
+   "new_sha": "a212fc84ff1b1870748d08a4053578cb5b5420bad7074eeab266015b312a0760",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingLightClass__00513D20.txt"
+  },
+  {
+   "addr": "0x514c30",
+   "file": "JumpjetLocomotionClass.cpp",
+   "name_old": "JumpjetLocomotionClass::HasScoreDisplayChanged",
+   "name_new": "JumpjetLocomotionClass::HasScoreDisplayChanged",
+   "size": "0x4b",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1755,
+   "new_len": 1792,
+   "old_sha": "7c07190f5fcc94c8213b2cb8608cb15945060c0f266133529ece977e4f4832c5",
+   "new_sha": "2926b34687c0e0571e9ef612af59775b75dbc9976e0d8bdc9ab916a6a40fe672",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/JumpjetLocomotionClass__00514C30.txt"
+  },
+  {
+   "addr": "0x514cb0",
+   "file": "JumpjetLocomotionClass.cpp",
+   "name_old": "JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0",
+   "name_new": "JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0",
+   "size": "0x5c",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 2288,
+   "new_len": 2343,
+   "old_sha": "2ae20c65bcc2072373d805e465c46246f5370ba87dc4d45a61b405c5438fed79",
+   "new_sha": "76304feda9c323001c8256ceffe7b43c95f3461c8a4428faaffc01663c24c86d",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/JumpjetLocomotionClass__00514CB0.txt"
+  },
+  {
+   "addr": "0x514d10",
+   "file": "JumpjetLocomotionClass.cpp",
+   "name_old": "JumpjetLocomotionClass::HasScoreDisplayChanged_514D10",
+   "name_new": "JumpjetLocomotionClass::HasScoreDisplayChanged_514D10",
+   "size": "0x71",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 2671,
+   "new_len": 2659,
+   "old_sha": "fb89c7898ea6190ec7e9b0f7d21b3a66d9e5c71d0e0e67751b1940df3596b624",
+   "new_sha": "42405b29fa33c6269d86629c684136aaa7aae3ac6c29c1e164ae0551d7c58edf",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/JumpjetLocomotionClass__00514D10.txt"
+  },
+  {
+   "addr": "0x516320",
+   "file": "JumpjetLocomotionClass.cpp",
+   "name_old": "JumpjetLocomotionClass::HasScoreDisplayChanged_516320",
+   "name_new": "JumpjetLocomotionClass::HasScoreDisplayChanged_516320",
+   "size": "0x4d",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1791,
+   "new_len": 1834,
+   "old_sha": "4ba543830da0a1490a6d246d06b21938a6ece120f41dbb6232aa4e637ffbcb74",
+   "new_sha": "ee47d27acf7da987433b24dc652caa3e1ab858e3f08b5e71d2f1b924956d9990",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/JumpjetLocomotionClass__00516320.txt"
+  },
+  {
+   "addr": "0x517110",
+   "file": "_addr_51.cpp",
+   "name_old": "sub_517110",
+   "name_new": "sub_517110",
+   "size": "0xa9",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3539,
+   "new_len": 3561,
+   "old_sha": "c38e82f542cef358c85fa9d89cf5c10b0d21a4e847157fc55bf2209e96809a43",
+   "new_sha": "df572849f5219c0c973e853a66afeea9b13847eeccdc7dadcb79e7367313dc97",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_51__00517110.txt"
+  },
+  {
+   "addr": "0x519630",
+   "file": "InfantryClass.cpp",
+   "name_old": "InfantryClass::RepairBridge",
+   "name_new": "InfantryClass::RepairBridge",
+   "size": "0x13db",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 15697,
+   "new_len": 96061,
+   "old_sha": "edfe424d3f949d2ff1eaa675777c1020b8d23fe8d7e9e58a746416cb6f0cc731",
+   "new_sha": "0a772d0deec06fcff7c2a571197f930b15372cfe28923d73765ee4d5f78aa84e",
+   "asm_old": 0,
+   "asm_new": 20,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/InfantryClass__00519630.txt"
+  },
+  {
+   "addr": "0x522fe0",
+   "file": "InfantryClass.cpp",
+   "name_old": "InfantryClass::CreateDeployLocomotor",
+   "name_new": "InfantryClass::CreateDeployLocomotor",
+   "size": "0x262",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 11147,
+   "new_len": 11038,
+   "old_sha": "eb007cf94c99ee1f72059cac3eb7d42ce9e9f5e9d248c545d340076bcdca7a49",
+   "new_sha": "b1b701538430c48d71d31ae93f32d64f1a9d80f0c2492304f7da98a2922417b1",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/InfantryClass__00522FE0.txt"
+  },
+  {
+   "addr": "0x530460",
+   "file": "MixFile.cpp",
+   "name_old": "MixFile::LoadAll",
+   "name_new": "MixFile::LoadAll",
+   "size": "0xe33",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 18998,
+   "new_len": 67004,
+   "old_sha": "7a1d082f13e9b3a8ed767166aeb63e9233fbd454da20bcd5924a07dff856eeaa",
+   "new_sha": "576ef303870aa55dbe2cc9135aa7f843a81ac06252860c13edf9dc3c7df11982",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/MixFile__00530460.txt"
+  },
+  {
+   "addr": "0x53a140",
+   "file": "LightningStorm.cpp",
+   "name_old": "LightningStorm::Strike",
+   "name_new": "LightningStorm::Strike",
+   "size": "0x1b4",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 7575,
+   "new_len": 7730,
+   "old_sha": "207e822ed41ccbfea9f5b5bfa33dad750bf5c7382a77b4ca1e47aedd2f6f9a1a",
+   "new_sha": "471158c97911d788812f0418ff27b26bc1adc6b04c580a5b7f0bf82992315385",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/LightningStorm__0053A140.txt"
+  },
+  {
+   "addr": "0x53cbe0",
+   "file": "ExplosionClass.cpp",
+   "name_old": "ExplosionClass::ProcessFrame",
+   "name_new": "ExplosionClass::ProcessFrame",
+   "size": "0x72d",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 34718,
+   "new_len": 38431,
+   "old_sha": "d5b4108ba6232803fee1b6a105cc5a07fe5103149e8c1b6602eff53f2758e382",
+   "new_sha": "89ba8078a10965b0e92f9b9ba4ea84f0bb4174d75b8b0f451b326327af739130",
+   "asm_old": 118,
+   "asm_new": 118,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/ExplosionClass__0053CBE0.txt"
+  },
+  {
+   "addr": "0x54e360",
+   "file": "_addr_54.cpp",
+   "name_old": "sub_54E360",
+   "name_new": "sub_54E360",
+   "size": "0x4f",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1857,
+   "new_len": 1858,
+   "old_sha": "49244998069d0f8c3df0299e1fc343af129053c83456430ac40b252d0d9abfe8",
+   "new_sha": "27aafa4a732fe026939325dc5fda39764595ae10e1da3b431ddda0c38cd7ad1b",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_54__0054E360.txt"
+  },
+  {
+   "addr": "0x55f1e0",
+   "file": "_addr_55.cpp",
+   "name_old": "DrawHUD",
+   "name_new": "DrawHUD",
+   "size": "0x4a5",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 24417,
+   "new_len": 23270,
+   "old_sha": "074eba619700ef86855a690087cc1e3c8e015d1635a3ccaea24832a85d026aac",
+   "new_sha": "2b51fb1423fe4cdcbdb634fff78c3e30a87168a8400417626c789de2e0d757b9",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_55__0055F1E0.txt"
+  },
+  {
+   "addr": "0x576ba0",
+   "file": "CellClass.cpp",
+   "name_old": "CellClass::PropagateTerrainVariant5",
+   "name_new": "CellClass::PropagateTerrainVariant5",
+   "size": "0xd4a",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 18455,
+   "new_len": 71937,
+   "old_sha": "830c3c9eb2819c03d7bec96f2548c67a0f673d0ba342ec129444c86eefb26e54",
+   "new_sha": "6c68d890736eabea993295d9889f2fcecac651a1c4704b5a2e65b8e992396a18",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/CellClass__00576BA0.txt"
+  },
+  {
+   "addr": "0x57acf0",
+   "file": "_addr_57.cpp",
+   "name_old": "GenerateMapClassCliffTransitions",
+   "name_new": "GenerateMapClassCliffTransitions",
+   "size": "0x518",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 24415,
+   "new_len": 25155,
+   "old_sha": "2a29e2c805daa37e5a858064c32a18f7205fd7a35f4cdd1925dfdb034cf06153",
+   "new_sha": "16e1f695d2b125e10d72a2631978a90824215b418ee0bdb746a9864fc10d45c9",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_57__0057ACF0.txt"
+  },
+  {
+   "addr": "0x5980c0",
+   "file": "Random.cpp",
+   "name_old": "Random::Gaussian",
+   "name_new": "Random::Gaussian",
+   "size": "0x9b",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 3680,
+   "new_len": 3678,
+   "old_sha": "b2933026cec606025992220cd72075b475647799a98a5303288c883a832ab1ff",
+   "new_sha": "fa9b5cf3358e013374a304190dde8aad1447e7f66b61536b425e3f6c7dc52b6c",
+   "asm_old": 22,
+   "asm_new": 22,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Random__005980C0.txt"
+  },
+  {
+   "addr": "0x5a2f50",
+   "file": "_addr_5A.cpp",
+   "name_old": "SmoothTerrainMap",
+   "name_new": "SmoothTerrainMap",
+   "size": "0x4a0",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 25342,
+   "new_len": 25001,
+   "old_sha": "a4c4421528cc6ec09d68763d2c66c68d9e3ac7811370bc05765a6c295c2e14ec",
+   "new_sha": "9c11f8ce3b004069256a3fe9df8cb4c94669562fdc584bbfc197d3fbfcd9da33",
+   "asm_old": 106,
+   "asm_new": 106,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_5A__005A2F50.txt"
+  },
+  {
+   "addr": "0x5ac400",
+   "file": "TypeList.cpp",
+   "name_old": "TypeList::BuildingTypeConstructor",
+   "name_new": "TypeList::BuildingTypeConstructor",
+   "size": "0x22",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1113,
+   "new_len": 1213,
+   "old_sha": "9ecf1edc4096390bde979dbab6ef66ca17b6695b88d07c4ae242abaeabc7bb61",
+   "new_sha": "e2fb18de9d9f9813ac7970fdd6956eb2f65e34f43e76359400db1fa88be38eb3",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TypeList__005AC400.txt"
+  },
+  {
+   "addr": "0x5b20f0",
+   "file": "Movement.cpp",
+   "name_old": "Movement::CalcVelocity",
+   "name_new": "Movement::CalcVelocity",
+   "size": "0x835",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 32654,
+   "new_len": 41913,
+   "old_sha": "dda81d54e660fd51aa5a483cf03cd8f4e48b848c3904bbc3fdf3b6d939e8b7f1",
+   "new_sha": "cb257853aa9a6d6506dfa493254b87ba33ce1cacc19eea339efe47a692e5fcd7",
+   "asm_old": 44,
+   "asm_new": 44,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Movement__005B20F0.txt"
+  },
+  {
+   "addr": "0x5b4590",
+   "file": "MixFileClass.cpp",
+   "name_old": "MixFileClass::LinkIntoPool",
+   "name_new": "MixFileClass::LinkIntoPool",
+   "size": "0x2d",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1350,
+   "new_len": 1434,
+   "old_sha": "23fa5b8dd32c2af228708d11534a6194ab99f872fbec4d6ebf93f80db5926942",
+   "new_sha": "7d27b0a84deba5defc3fcc4d623fd0be676fd4b0d7bc4060633908ef594fc8a2",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/MixFileClass__005B4590.txt"
+  },
+  {
+   "addr": "0x5b4630",
+   "file": "BlowStraw.cpp",
+   "name_old": "BlowStraw::Constructor_MixFileClass",
+   "name_new": "BlowStraw::Constructor_MixFileClass",
+   "size": "0xaf",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 4594,
+   "new_len": 4775,
+   "old_sha": "c6fb40a86b6ed3ebcc96fd6e0003f094baf0062fdd69d0a29a2eadd663e598f7",
+   "new_sha": "755147cb96e7fcce1044a8b3ebb36d4c37d12450f1b8336359dcb177daaf947b",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BlowStraw__005B4630.txt"
+  },
+  {
+   "addr": "0x5b4ee0",
+   "file": "ModemGuest.cpp",
+   "name_old": "ModemGuest::InitDialog",
+   "name_new": "ModemGuest::InitDialog",
+   "size": "0x80a",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 27012,
+   "new_len": 37677,
+   "old_sha": "1ea571a27c604b7978a5b9c8152b1c1be6e5b831e5cbc5693b99feeda9890fb4",
+   "new_sha": "d952f7747806e52ba2142b5571bcec3866cce756b56bba1758de7867b365c72d",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/ModemGuest__005B4EE0.txt"
+  },
+  {
+   "addr": "0x5f4520",
+   "file": "ObjectClass.cpp",
+   "name_old": "ObjectClass::HandleSelection",
+   "name_new": "ObjectClass::HandleSelection",
+   "size": "0x205",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 10959,
+   "new_len": 11071,
+   "old_sha": "bcadb07b16579ca4043ae7ab005fad033701772636e0562861c74805ad5904b7",
+   "new_sha": "084deb4af236af6c7843b3c91377de88e9cd01d5fd5cc497e4f0bea9e9d7323a",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/ObjectClass__005F4520.txt"
+  },
+  {
+   "addr": "0x5fb320",
+   "file": "HotkeyOptions.cpp",
+   "name_old": "HotkeyOptions::DlgProc",
+   "name_new": "HotkeyOptions::DlgProc",
+   "size": "0xbc9",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 17763,
+   "new_len": 59967,
+   "old_sha": "04137fcdb8d0a93b91a574d1c7359895fe169b610dfb54a41aab3720f759f9bf",
+   "new_sha": "2aa0366513274b691d8168ac54e2eb9cdf853a528846febf718a81337f25f648",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/HotkeyOptions__005FB320.txt"
+  },
+  {
+   "addr": "0x6211d0",
+   "file": "_addr_62.cpp",
+   "name_old": "DrawTextRendererTextAligned",
+   "name_new": "DrawTextRendererTextAligned",
+   "size": "0x1c5",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 8500,
+   "new_len": 8537,
+   "old_sha": "ee0ec96e751b45c46296142223d0de12324f3aff26dbdf9f0cce5f88fe95d837",
+   "new_sha": "bafa6fe17f03972346867acf380b75307a9e2d85e1bbfab5a09d31f3091fd6ab",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_62__006211D0.txt"
+  },
+  {
+   "addr": "0x62b5e0",
+   "file": "ParticleClass.cpp",
+   "name_old": "ParticleClass::Construct",
+   "name_new": "ParticleClass::Construct",
+   "size": "0x53f",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [],
+   "old_len": 23629,
+   "new_len": 20791,
+   "old_sha": "d623fd8aedd3508782f4f628854099acc88eb9ce2ca4a0c9872797a5ff438a6b",
+   "new_sha": "5e112738b1954a65cebd098a1b3232dede6a1142b72888d336184b6d08cdbaa1",
+   "asm_old": 49,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/ParticleClass__0062B5E0.txt"
+  },
+  {
+   "addr": "0x63a0d0",
+   "file": "System.cpp",
+   "name_old": "System_Get",
+   "name_new": "System_Get",
+   "size": "0x4f",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1599,
+   "new_len": 1687,
+   "old_sha": "fe75393e1dda287b36caa5c0b74dcd241023ee2356d92aeb0c20f2393e21e01d",
+   "new_sha": "9ae12e2e88b30c696f280f3c8cbc22767fe12d35c3e17c8a986b2cf47ce43eca",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/System__0063A0D0.txt"
+  },
+  {
+   "addr": "0x648710",
+   "file": "_addr_64.cpp",
+   "name_old": "QueueNetworkProcessor",
+   "name_new": "QueueNetworkProcessor",
+   "size": "0x158f",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 19760,
+   "new_len": 102639,
+   "old_sha": "5805be6b6faa0cf1780e01b6dc3fe9a3a18a3675c4f6f2bc7418a328db2a4796",
+   "new_sha": "4d1c9ebbe34ea1f695483437c41729db8c6c7803833dd1fc7fe6af831fa64551",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_64__00648710.txt"
+  },
+  {
+   "addr": "0x64d990",
+   "file": "Network_Process.cpp",
+   "name_old": "Network_Process_64D990",
+   "name_new": "Network_Process_64D990",
+   "size": "0x49",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 2305,
+   "new_len": 1849,
+   "old_sha": "4fda9ae045055dac72fca45911c2b45cbc7b1aee222db49c58da570ae3da24a7",
+   "new_sha": "59aea1d43e2347de58617c0cb7d36dfea90ea0323803212ce6c5d1e000ce11ba",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Network_Process__0064D990.txt"
+  },
+  {
+   "addr": "0x6593f0",
+   "file": "RadBeam.cpp",
+   "name_old": "RadBeam::InitState",
+   "name_new": "RadBeam::InitState",
+   "size": "0x71",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 2448,
+   "new_len": 2629,
+   "old_sha": "b4ee3027f1edaea29f7bbd0eaf0699862e8e97cfc3041a8e6863da3837f27d37",
+   "new_sha": "21f9054fbc80f71952a1e47ea65e74ef48cc9710d1e2b9d7344c92cc0326faf4",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/RadBeam__006593F0.txt"
+  },
+  {
+   "addr": "0x659ee0",
+   "file": "Weapon_Update_Update.cpp",
+   "name_old": "Weapon_Update_Update_659EE0",
+   "name_new": "Weapon_Update_Update_659EE0",
+   "size": "0x108",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 6174,
+   "new_len": 6157,
+   "old_sha": "a62d44b65ebc57bf85a3770e4a92ca6148e57eea72e1dfbeceedd1658b7c4e23",
+   "new_sha": "650f040c3a0f6cebf5f49ac272fffa964119bd6385d4d94188521136dfda3da7",
+   "asm_old": 7,
+   "asm_new": 7,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Weapon_Update_Update__00659EE0.txt"
+  },
+  {
+   "addr": "0x662240",
+   "file": "_addr_66.cpp",
+   "name_old": "sub_662240",
+   "name_new": "sub_662240",
+   "size": "0x7f",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 2655,
+   "new_len": 2646,
+   "old_sha": "13a6b41c709615538f899b044d27ac9c2c6a4fe16788e8a86847ccb78cb3334a",
+   "new_sha": "2695e1943c60b6ccb64213aefdb14696064beabbb039e95775b0429d7dd06e9f",
+   "asm_old": 7,
+   "asm_new": 7,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_66__00662240.txt"
+  },
+  {
+   "addr": "0x6632e0",
+   "file": "JumpjetLocomotionClass.cpp",
+   "name_old": "JumpjetLocomotionClass::ComputeFloatExpression_3",
+   "name_new": "JumpjetLocomotionClass::ComputeFloatExpression_3",
+   "size": "0xda",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 4365,
+   "new_len": 4244,
+   "old_sha": "d376e96c3bf3606136b1cc740e9a2683aac30f68910370b2793084358d1a3b6f",
+   "new_sha": "55f92395f62ad5d1ee902d289baa1761d2f42148f78308f0a47aba728ef68b26",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/JumpjetLocomotionClass__006632E0.txt"
+  },
+  {
+   "addr": "0x6691e0",
+   "file": "Rules.cpp",
+   "name_old": "Rules::ReadMiscINI",
+   "name_new": "Rules::ReadMiscINI",
+   "size": "0x2720",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 21788,
+   "new_len": 213439,
+   "old_sha": "188bed1fdbe5268e837bb5efa1f247b3810888767e07e82a53665cafa12ba13e",
+   "new_sha": "c36298efbf4b1a279675da2169b02872852ce1fad318102912ae95dda01af216",
+   "asm_old": 0,
+   "asm_new": 6,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Rules__006691E0.txt"
+  },
+  {
+   "addr": "0x66d530",
+   "file": "RulesClass.cpp",
+   "name_old": "RulesClass::LoadFromINI",
+   "name_new": "RulesClass::LoadFromINI",
+   "size": "0x4969",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 22870,
+   "new_len": 431517,
+   "old_sha": "2d96eed94e705e9eecfb0efe1d05bf52d4b36792c49e9ae71e5954ddd8421720",
+   "new_sha": "c38f9be056b2cd833ccaa2f3183d082bc4dd5af9f20d99490b9612152d50548c",
+   "asm_old": 0,
+   "asm_new": 12,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/RulesClass__0066D530.txt"
+  },
+  {
+   "addr": "0x67a390",
+   "file": "TypeList.cpp",
+   "name_old": "TypeList::VoxelAnimConstructor",
+   "name_new": "TypeList::VoxelAnimConstructor",
+   "size": "0x22",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1108,
+   "new_len": 1208,
+   "old_sha": "0152c26a4200f4ee4e4ba6e58121d1fb107a362152adf4bc9fdeb2ab918f4834",
+   "new_sha": "c9474b17df94249b2de7fac87d455c1dce0e76b8141af6cb470afd9cb9c03f3a",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TypeList__0067A390.txt"
+  },
+  {
+   "addr": "0x67a4f0",
+   "file": "TypeList.cpp",
+   "name_old": "TypeList::Construct",
+   "name_new": "TypeList::Construct",
+   "size": "0x22",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 985,
+   "new_len": 1085,
+   "old_sha": "4d75c5ccd9c163afe473b562fb823f4d440422f508811a1b3c6b88e0ed1060b6",
+   "new_sha": "acc62d1d844e4da27fbbf7d0ce6e9cea278bffc76e5e1d53c8038810026f9219",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TypeList__0067A4F0.txt"
+  },
+  {
+   "addr": "0x67a600",
+   "file": "TypeList.cpp",
+   "name_old": "TypeList::ConstructSmudge",
+   "name_new": "TypeList::ConstructSmudge",
+   "size": "0x22",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1081,
+   "new_len": 1181,
+   "old_sha": "78c8d3d672af7ea99b2af55bc503bc7dfa677a5812ecd1f2238ed9371c7a5db3",
+   "new_sha": "e203356106a1c2401699a3c14581fbba590beb142137dbee4b8d27027aeed09b",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TypeList__0067A600.txt"
+  },
+  {
+   "addr": "0x67a820",
+   "file": "TypeList.cpp",
+   "name_old": "TypeList::InfantryConstructor",
+   "name_new": "TypeList::InfantryConstructor",
+   "size": "0x22",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1101,
+   "new_len": 1201,
+   "old_sha": "76dad245d3e9aeaf4e6cdb1dd16777fcebc66740f8c1d45678e8608b0b993cb7",
+   "new_sha": "fbc782294d6826e6e537b9f59e10ba196599b132449200eff27f60df0e06a1bc",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TypeList__0067A820.txt"
+  },
+  {
+   "addr": "0x67d300",
+   "file": "SaveGame.cpp",
+   "name_old": "SaveGame::Start",
+   "name_new": "SaveGame::Start",
+   "size": "0x113b",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 16032,
+   "new_len": 93202,
+   "old_sha": "8649769f56010495e2fa890c12dd2349dfcc502f0b570fbe1c9778a600dad89e",
+   "new_sha": "02c20652375b572fdc62442113a1434206510fff65c2af6843dd57ceebc0919a",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/SaveGame__0067D300.txt"
+  },
+  {
+   "addr": "0x685dc0",
+   "file": "Scenario.cpp",
+   "name_old": "Scenario::EndGame",
+   "name_new": "Scenario::EndGame",
+   "size": "0x615",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 29625,
+   "new_len": 30533,
+   "old_sha": "4f0aacf894db41d69a1812929bcc1ad6bae7231e0a1023e7494b9e60c1bd2330",
+   "new_sha": "2b558b91796bc76945d8d93f0400e4769514440eb803fa5d68c7425d3d5acfff",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Scenario__00685DC0.txt"
+  },
+  {
+   "addr": "0x693060",
+   "file": "MouseClass.cpp",
+   "name_old": "MouseClass::GetHotspot",
+   "name_new": "MouseClass::GetHotspot",
+   "size": "0x35",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 1161,
+   "new_len": 1158,
+   "old_sha": "635970eccd60d2a1b7f32b3b0afd612334d8880832e003066dd619cd23f9648c",
+   "new_sha": "c6bfa7f0a54a12c09be6c99251d735a3d528fe1b6583ce8806d48270fdc53894",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/MouseClass__00693060.txt"
+  },
+  {
+   "addr": "0x69ec50",
+   "file": "LocomotionClass.cpp",
+   "name_old": "LocomotionClass::Process",
+   "name_new": "LocomotionClass::Process",
+   "size": "0x9a",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3562,
+   "new_len": 3328,
+   "old_sha": "cdd8fcde7be9d5dcd439d2485288980e706afdeeab84c2e66c56a203f8b025c8",
+   "new_sha": "bbdcb4210ae7a09ce7807d9b3c53714d7ca0435c480180085f66a863054cbb5a",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/LocomotionClass__0069EC50.txt"
+  },
+  {
+   "addr": "0x69fb20",
+   "file": "JumpjetLocomotionClass.cpp",
+   "name_old": "JumpjetLocomotionClass::ComputeAudio3DRotation_1",
+   "name_new": "JumpjetLocomotionClass::ComputeAudio3DRotation_1",
+   "size": "0xb2",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3669,
+   "new_len": 3651,
+   "old_sha": "ad353e569e4ef9b749e98ac5212649310a99d09cf51ca1ed3d7d4f96bae1c4e7",
+   "new_sha": "edb57c8ba56101da22bcb7ee8f0554f3c4d03c4747387c844bbd2e3ace452a48",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/JumpjetLocomotionClass__0069FB20.txt"
+  },
+  {
+   "addr": "0x6a6a00",
+   "file": "CreateTeamCommand.cpp",
+   "name_old": "CreateTeamCommand::performAction_245",
+   "name_new": "CreateTeamCommand::performAction_245",
+   "size": "0xf0",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 4637,
+   "new_len": 4635,
+   "old_sha": "d52172f1b4fa5eb6e75f8b756a45e52fe2725e9c04cc12cf06be4035dc954840",
+   "new_sha": "967d2e4f103b2339a0d2fb72e24848897a79a3fa9f7525e950c79e1705ed2e10",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/CreateTeamCommand__006A6A00.txt"
+  },
+  {
+   "addr": "0x6a8710",
+   "file": "TabCameoListClass.cpp",
+   "name_old": "TabCameoListClass::AddCameo_ReplaceItAll",
+   "name_new": "TabCameoListClass::AddCameo_ReplaceItAll",
+   "size": "0xda",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 4876,
+   "new_len": 4915,
+   "old_sha": "40e5f18eeec30717320ed9f31bcc16cb314e59ae605c8a9f844b3464d076acc1",
+   "new_sha": "a1e34e18357ce7d7757b2b7add30e3e6597c3352be797b6dc4324a375fc411e0",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TabCameoListClass__006A8710.txt"
+  },
+  {
+   "addr": "0x6a9540",
+   "file": "Sidebar.cpp",
+   "name_old": "Sidebar::UpdateProductionDisplay",
+   "name_new": "Sidebar::UpdateProductionDisplay",
+   "size": "0x1072",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 18351,
+   "new_len": 83378,
+   "old_sha": "261a8351d406e5a9cdafd786bee29260ebcf8487b3a7896dafb18323575e5408",
+   "new_sha": "70e57bdb8293cf9513c32d46586306a6e4f3d7039e45c83de994ef7b2d25b2b3",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Sidebar__006A9540.txt"
+  },
+  {
+   "addr": "0x6ac5f0",
+   "file": "TActionClass.cpp",
+   "name_old": "TActionClass::executeHarvestAction",
+   "name_new": "TActionClass::executeHarvestAction",
+   "size": "0x143",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 7565,
+   "new_len": 7667,
+   "old_sha": "e5e8b66ecf4d441b9cd1b47157528f487598bfc72c10edb35c73e994183704be",
+   "new_sha": "ea82fe6176ffac065a8aa92b36651b6e7202f314df5d4b4c3b551e2f233a0691",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TActionClass__006AC5F0.txt"
+  },
+  {
+   "addr": "0x6b0db0",
+   "file": "BuildingClass.cpp",
+   "name_old": "BuildingClass::ProcessEnterUnit",
+   "name_new": "BuildingClass::ProcessEnterUnit",
+   "size": "0x265",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 12158,
+   "new_len": 12144,
+   "old_sha": "adf19b5f559a5ba3bab7cbb0147fedfc8ff443453d7b57e77e040e4367812e2b",
+   "new_sha": "302c0a0423a3f2b931175f05f8e6d18bc1342cb7eb43b88b2467a066dc982460",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingClass__006B0DB0.txt"
+  },
+  {
+   "addr": "0x6b5f80",
+   "file": "Cell.cpp",
+   "name_old": "Cell::IsWalkable",
+   "name_new": "Cell::IsWalkable",
+   "size": "0xf8",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 5411,
+   "new_len": 5377,
+   "old_sha": "54348bff7dce075d81ff338d41ee97ebf8f2881f6d6e008f2af694d91983f007",
+   "new_sha": "57f8bac3c01b4ecc790c06c802a21d90ffcfcae9c41b2abc28d9cc2ef22b4ea2",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/Cell__006B5F80.txt"
+  },
+  {
+   "addr": "0x6b7c60",
+   "file": "UnitClass.cpp",
+   "name_old": "UnitClass::ClearTargetRef",
+   "name_new": "UnitClass::ClearTargetRef",
+   "size": "0xce",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 4769,
+   "new_len": 4763,
+   "old_sha": "71788b18df6785d8a248d29d0f650daab37641ad0476dafcf938af61f3824595",
+   "new_sha": "939f6bce237800cc42513ce80fb740611cb2f474ea85a2b82854ebd04f6dd80e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/UnitClass__006B7C60.txt"
+  },
+  {
+   "addr": "0x6b8ca0",
+   "file": "GameMode.cpp",
+   "name_old": "GameMode::ReadFlagsFromINI",
+   "name_new": "GameMode::ReadFlagsFromINI",
+   "size": "0x23e",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 12811,
+   "new_len": 12881,
+   "old_sha": "25746a24855f3bf70009f20440d732be025627efe924d36275cb717919fd9d35",
+   "new_sha": "5b20685bc75a345bb41d17f084dd1ce892b1dbc2337eca2292eec5da0aef548e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/GameMode__006B8CA0.txt"
+  },
+  {
+   "addr": "0x6ce0b0",
+   "file": "SuperClass.cpp",
+   "name_old": "SuperClass::Reset",
+   "name_new": "SuperClass::Reset",
+   "size": "0xf0",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 5821,
+   "new_len": 5625,
+   "old_sha": "8eef8c7467b8de6e4d518ffdf590a1d523b3eb08ef60b3e26ace27d30e1f0093",
+   "new_sha": "478dab6c2fc8acb193074b112e835a0235855d787d07a79075c54bb0806bbda2",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/SuperClass__006CE0B0.txt"
+  },
+  {
+   "addr": "0x6da230",
+   "file": "DisplayClass.cpp",
+   "name_old": "DisplayClass::GetCoordDelta",
+   "name_new": "DisplayClass::GetCoordDelta",
+   "size": "0x11c",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 5054,
+   "new_len": 5046,
+   "old_sha": "f8a89c0fea60ac1b41bd7fc00a00d3ac4001cf8d0883d8f6dc1de3737bfbc82d",
+   "new_sha": "b6911eda257abb1e138cc209acefc443ad924d3039221eb3f693aeb6a9a093d4",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/DisplayClass__006DA230.txt"
+  },
+  {
+   "addr": "0x6e1530",
+   "file": "ScenarioClass.cpp",
+   "name_old": "ScenarioClass::PrepareTextDisplay",
+   "name_new": "ScenarioClass::PrepareTextDisplay",
+   "size": "0xb3",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3630,
+   "new_len": 3655,
+   "old_sha": "718e4847e98f226412a23753f93e904c43f8e522efb60465fde4dc079e2c49f5",
+   "new_sha": "77890e2bac3240179037bcbc0b4464473700c2d0dc0fd242981cd13ae1ae26f5",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/ScenarioClass__006E1530.txt"
+  },
+  {
+   "addr": "0x6ef700",
+   "file": "_addr_6E.cpp",
+   "name_old": "DeployTeamMembersAtStart",
+   "name_new": "DeployTeamMembersAtStart",
+   "size": "0x2e0",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 13548,
+   "new_len": 14559,
+   "old_sha": "de81d5f56059c47dc3a5173d2090b46902543a65bad898c6af77a0777e63500e",
+   "new_sha": "c463a44c41425d2cc1521d0f64c82cb54a7f96d356c3e9bd960b5077c3896448",
+   "asm_old": 0,
+   "asm_new": 10,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_6E__006EF700.txt"
+  },
+  {
+   "addr": "0x6efa10",
+   "file": "TeamClass.cpp",
+   "name_old": "TeamClass::SelectDeploymentTarget",
+   "name_new": "TeamClass::SelectDeploymentTarget",
+   "size": "0x260",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 12451,
+   "new_len": 12411,
+   "old_sha": "4e99a53ea4740a1be3212925be285522856c76a78b029261e14fa6b92542ef69",
+   "new_sha": "93ed0b29df949322334f559ca28efddfdc77b721ac9f61f734e40b086c442d07",
+   "asm_old": 9,
+   "asm_new": 9,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TeamClass__006EFA10.txt"
+  },
+  {
+   "addr": "0x6f0130",
+   "file": "TeamClass.cpp",
+   "name_old": "TeamClass::CheckMemberSuperWeapon",
+   "name_new": "TeamClass::CheckMemberSuperWeapon",
+   "size": "0x272",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 11404,
+   "new_len": 12494,
+   "old_sha": "6edb0c9d2c78062ab901e39cad6d76e3cfd209b4ed21fdafbcf20cd48baef995",
+   "new_sha": "f74a61f9c56c3bfeff7c2dc656f8244f38860e39e87ed1d9926b7c14f16d7e99",
+   "asm_old": 0,
+   "asm_new": 4,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TeamClass__006F0130.txt"
+  },
+  {
+   "addr": "0x6f19b0",
+   "file": "SmallFunc.cpp",
+   "name_old": "SmallFunc_6F19B0",
+   "name_new": "SmallFunc_6F19B0",
+   "size": "0xf9",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 5600,
+   "new_len": 5628,
+   "old_sha": "3172670edcce2512d7a482c19c9622204ecc126b99cf077b4f6ea8420f101514",
+   "new_sha": "f2a44beef0ed37eaccf2df101e26ec54856936b15963eb564bf7888037595622",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/SmallFunc__006F19B0.txt"
+  },
+  {
+   "addr": "0x6f7ca0",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::EvaluateTarget",
+   "name_new": "TechnoClass::EvaluateTarget",
+   "size": "0xcbb",
+   "kinds_old": [
+    "QMARK",
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 34472,
+   "new_len": 55802,
+   "old_sha": "de8f3956dabd75798557f59924fc062dc6fb4a672793785acec36ae7fc80dfe7",
+   "new_sha": "a5851d98bbae818f34806541d2024a746e24aca676387e938b6423b765e6a498",
+   "asm_old": 27,
+   "asm_new": 27,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__006F7CA0.txt"
+  },
+  {
+   "addr": "0x6f8df0",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::SelectAutoTarget_Start_AU",
+   "name_new": "TechnoClass::SelectAutoTarget_Start_AU",
+   "size": "0xfbf",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 15964,
+   "new_len": 75546,
+   "old_sha": "755e7f1608a6f0e03e906b1435211ae1833d5dc954a4c0741ae713c0581fae7a",
+   "new_sha": "e3f7aca4e934d3d5c64a658121f3797c69a77d1188957409b70dcd5031c4fa78",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__006F8DF0.txt"
+  },
+  {
+   "addr": "0x6fdd50",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::FireWeapon",
+   "name_new": "TechnoClass::FireWeapon",
+   "size": "0x1bff",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 15946,
+   "new_len": 130704,
+   "old_sha": "ba7a641a4a9597b57a88873b549c3cb6b7e1284d4bcb42a3477242287823a3d0",
+   "new_sha": "ea1296ca623af13dbbeffa4861bf06de26ac7f6eff40e63c5730ba4f055a3328",
+   "asm_old": 0,
+   "asm_new": 157,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__006FDD50.txt"
+  },
+  {
+   "addr": "0x70b280",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::ComputeAimVector",
+   "name_new": "TechnoClass::ComputeAimVector",
+   "size": "0x2f0",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 15155,
+   "new_len": 15456,
+   "old_sha": "5fe8cc12deb018adf324da4470d3a0ecce395fa70958cd5e62d17b54ee73a3e9",
+   "new_sha": "7c5068ca12a0239a38520f5f9d0ea37260736f07c3a112f54e307c4019329573",
+   "asm_old": 87,
+   "asm_new": 87,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__0070B280.txt"
+  },
+  {
+   "addr": "0x70fbd0",
+   "file": "UnitClass.cpp",
+   "name_old": "UnitClass::IsDeactivated",
+   "name_new": "UnitClass::IsDeactivated",
+   "size": "0x7",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 395,
+   "new_len": 401,
+   "old_sha": "b38f25d0a6e59b5603a0162443e6e6ac0b50eb3266b5bf31442f08af6df02bf3",
+   "new_sha": "6c1f5e7c3a40013b182323d7f7c9853ec128d71af556d952ac12c3a825df4470",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/UnitClass__0070FBD0.txt"
+  },
+  {
+   "addr": "0x711eb0",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::GetMember388",
+   "name_new": "TechnoClass::GetMember388",
+   "size": "0x7",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 424,
+   "new_len": 407,
+   "old_sha": "9cac4d7e5b420eac442a0891a3eeff8565117a58f4ac18a0aabe9123e3615b21",
+   "new_sha": "58b2743ee6e1f739cb4f0ba9627fa2d0614d53ccce6f1b3ac820dae0e70db4ee",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__00711EB0.txt"
+  },
+  {
+   "addr": "0x711ec0",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::GetBuildCost",
+   "name_new": "TechnoClass::GetBuildCost",
+   "size": "0x1f",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 962,
+   "new_len": 957,
+   "old_sha": "9b3a7947212a0af1937f07b08dc0fe74839d79c3060e2c4505c1d8958d53bdd1",
+   "new_sha": "7e273709db20dbdc628857fdcb46e565ef3ee5c47360fd130772040ee1ba139e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__00711EC0.txt"
+  },
+  {
+   "addr": "0x717800",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::GetSightRange",
+   "name_new": "TechnoClass::GetSightRange",
+   "size": "0x17",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 803,
+   "new_len": 759,
+   "old_sha": "373942ddaf4a30062ceab8922e3757e9b5234bee4dbeb38627d5468d24b7ccb5",
+   "new_sha": "40e9219b4c1066f72392d047faed7946ffe0bf7f16210ed1cd2baf8d2a3e8796",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__00717800.txt"
+  },
+  {
+   "addr": "0x71bdf0",
+   "file": "ObjectClass.cpp",
+   "name_old": "ObjectClass::ProcessFoggedState",
+   "name_new": "ObjectClass::ProcessFoggedState",
+   "size": "0x1c0",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 8353,
+   "new_len": 8364,
+   "old_sha": "07c8d1d07a235eea1ca20a831c68c043ff7f8401859d7b262b33b33eb49a5602",
+   "new_sha": "6f77764a0c43d1af05238f55ecc214b56c551759526cee9a8b159aaa8a915370",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/ObjectClass__0071BDF0.txt"
+  },
+  {
+   "addr": "0x722af0",
+   "file": "BuildingClass.cpp",
+   "name_old": "BuildingClass::AddOccupancy",
+   "name_new": "BuildingClass::AddOccupancy",
+   "size": "0x143",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 6607,
+   "new_len": 6592,
+   "old_sha": "bfdfc01b58b87b5e6f2587376f9d54a7b9ffac86d2d6c64367fd0eb70e4be86d",
+   "new_sha": "1287dfe20b672da9537cb71dbf8e1499d5a31c40f0624d8ad7bfa220cd149945",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingClass__00722AF0.txt"
+  },
+  {
+   "addr": "0x722f00",
+   "file": "_addr_72.cpp",
+   "name_old": "RebuildBuildingOccupancy",
+   "name_new": "RebuildBuildingOccupancy",
+   "size": "0x356",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 17323,
+   "new_len": 17323,
+   "old_sha": "223f81e5e6373377ccbe1843b557d4b46dabfca184571e7dfa3af26e83d17388",
+   "new_sha": "17fb58c00fee2757f6de2ead57560de3801c337b2cecb663d2ffee442a17c473",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_72__00722F00.txt"
+  },
+  {
+   "addr": "0x7258d0",
+   "file": "AbstractClass.cpp",
+   "name_old": "AbstractClass::AnnounceExpiredPointer",
+   "name_new": "AbstractClass::AnnounceExpiredPointer",
+   "size": "0x33e",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 22454,
+   "new_len": 21364,
+   "old_sha": "fd3e84893122be8f0eeb5968c8fc7fcb40a06e3118f3fb0247dbc0202fd73570",
+   "new_sha": "25c101eccefe6c4ed8f7026aef1529ebb26d653a1f8d062c95ff7f78c533fc4e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/AbstractClass__007258D0.txt"
+  },
+  {
+   "addr": "0x736990",
+   "file": "UnitClass.cpp",
+   "name_old": "UnitClass::UpdateRotation_TurretFacing_EMP",
+   "name_new": "UnitClass::UpdateRotation_TurretFacing_EMP",
+   "size": "0x27f",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 11748,
+   "new_len": 11585,
+   "old_sha": "d8a3adbaf4ebea14e423808504314963116676a2939684996ec54c0d8c2820a5",
+   "new_sha": "c135eb57af3c055098f9af96334c7827aa55c3322ee55d4db692b9919ad69d1c",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/UnitClass__00736990.txt"
+  },
+  {
+   "addr": "0x738680",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::CreateDeathAnim",
+   "name_new": "TechnoClass::CreateDeathAnim",
+   "size": "0x204",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 9089,
+   "new_len": 8944,
+   "old_sha": "ee5b78b01ee4dcd9d82cb854bab4199980b0ed9ac03fff30ab99cb633810542f",
+   "new_sha": "38563b42d954b86bd7de50a5c3ee0465a8f17f3301b86999ff3796de21a53095",
+   "asm_old": 1,
+   "asm_new": 1,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__00738680.txt"
+  },
+  {
+   "addr": "0x739ec0",
+   "file": "BuildingClass.cpp",
+   "name_old": "BuildingClass::ProcessSell",
+   "name_new": "BuildingClass::ProcessSell",
+   "size": "0x11ef",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 16254,
+   "new_len": 84796,
+   "old_sha": "13ae4d50cb7c1fe2ad81c35e2ce9bdfe8417dd9228b28e9daf71ee76d2be088a",
+   "new_sha": "c7580725eaee2327732a783425b7ebfc4666573f18a9b006ec8669fcaebf161a",
+   "asm_old": 0,
+   "asm_new": 3,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/BuildingClass__00739EC0.txt",
+   "note": "Hex-Rays failed at self-recursive call; fixed callee BuildingClass::SellEffects 0x480cb0 type __userpurge@<eax>(int this@<ecx>, CellStruct) -> int __thiscall(BuildingClass *this, int cell) (by-value struct param triggered Hex-Rays failure)"
+  },
+  {
+   "addr": "0x73cec0",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::Draw",
+   "name_new": "TechnoClass::Draw",
+   "size": "0x589",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 25344,
+   "new_len": 26271,
+   "old_sha": "06b33b46fbd561ecedb7367177598b58f23be2f6cf5dc16c93b6be852d08e56b",
+   "new_sha": "d7f231f73204017f8427f9cafd94364fd36fef03f1da0d2e858fd62f5b086f92",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__0073CEC0.txt"
+  },
+  {
+   "addr": "0x741970",
+   "file": "UnitClass.cpp",
+   "name_old": "UnitClass::AssignDestination_SyncLog",
+   "name_new": "UnitClass::AssignDestination_SyncLog",
+   "size": "0x1817",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 16478,
+   "new_len": 124524,
+   "old_sha": "4d8d525f14f80cc0b49f996ed4946e0d34c650c7860d26e11d7c78af4d215a51",
+   "new_sha": "93bdb746c4894d1b1173cc36c1b29978dd13eada2b1b9ed87712675e0015357a",
+   "asm_old": 0,
+   "asm_new": 9,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/UnitClass__00741970.txt"
+  },
+  {
+   "addr": "0x7464e0",
+   "file": "TechnoClass.cpp",
+   "name_old": "TechnoClass::TransferTurret",
+   "name_new": "TechnoClass::TransferTurret",
+   "size": "0xc4",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 3878,
+   "new_len": 3877,
+   "old_sha": "7483fc4ebc6e90f19b2f08b7b461d2b7d829f786e6a683bebba2cb52fb3abc24",
+   "new_sha": "b68c2ab733cdfca55bd437a5c336897bc6fa3d60a27b4974fc56d5fa2cf72dc7",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/TechnoClass__007464E0.txt"
+  },
+  {
+   "addr": "0x7468c0",
+   "file": "UnitClass.cpp",
+   "name_old": "UnitClass::CheckForNearbyEnemies",
+   "name_new": "UnitClass::CheckForNearbyEnemies",
+   "size": "0x25e",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 11523,
+   "new_len": 11268,
+   "old_sha": "7f73545ae583b55a9708d24dec6b19de1d2ec3909c4d6e2f4b8adfbe7168a19b",
+   "new_sha": "bf0549a11470d86ab05136269ef2b80be8f011fd52cd1c77b1f10d6f6c07ad8e",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/UnitClass__007468C0.txt"
+  },
+  {
+   "addr": "0x749f30",
+   "file": "VoxelAnimClass.cpp",
+   "name_old": "VoxelAnimClass::Update",
+   "name_new": "VoxelAnimClass::Update",
+   "size": "0xa27",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 35186,
+   "new_len": 48127,
+   "old_sha": "c793d159982a7694ba73a1e42db5f0fbb351fe12a0f7568ffdce1a8e59adcaac",
+   "new_sha": "cfd6f805ce0858bf0bac013f62513ad3928bac1de1e9597186393954234e6b03",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/VoxelAnimClass__00749F30.txt"
+  },
+  {
+   "addr": "0x750440",
+   "file": "_addr_75.cpp",
+   "name_old": "LoadVocFromINI",
+   "name_new": "LoadVocFromINI",
+   "size": "0x4de",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 26540,
+   "new_len": 26489,
+   "old_sha": "ec15699ec213d78b449fc23b52ea07e3d91d94a34007e9e8533290b99ccda31e",
+   "new_sha": "dde67a4e9dfafdf61f3f5ad273689901aec6763c854570a8df3abdbe75697287",
+   "asm_old": 12,
+   "asm_new": 12,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_75__00750440.txt"
+  },
+  {
+   "addr": "0x772080",
+   "file": "WarheadTypeClass.cpp",
+   "name_old": "WarheadTypeClass::ReadINI",
+   "name_new": "WeaponTypeClass::ReadINI",
+   "size": "0x965",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 21312,
+   "new_len": 56228,
+   "old_sha": "ba9e4206c31878e441faba06fc2e9058741e25c266fb76885d43c2a2334c81bf",
+   "new_sha": "fa9055b812ae11bed929c9a94db4bae4cfb4d4d7ba83d4614e0a1df8df03eff9",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/WarheadTypeClass__00772080.txt"
+  },
+  {
+   "addr": "0x774cd0",
+   "file": "WinModemClass.cpp",
+   "name_old": "WinModemClass::LoadTypeData",
+   "name_new": "WinModemClass::LoadTypeData",
+   "size": "0x277",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 12168,
+   "new_len": 12073,
+   "old_sha": "c22e1f1b7a3878d1a9642a488ecddf21cfb3ea21289f974ffb31beb94613a0fc",
+   "new_sha": "a2de7b3705856cd67cdf436568cce3f943b5ad43a6dd4c8e1b1db484edc7abd8",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/WinModemClass__00774CD0.txt"
+  },
+  {
+   "addr": "0x7775c0",
+   "file": "_addr_77.cpp",
+   "name_old": "MainWindowProc",
+   "name_new": "MainWindowProc",
+   "size": "0x4bd",
+   "kinds_old": [
+    "QMARK"
+   ],
+   "kinds_new": [],
+   "old_len": 24542,
+   "new_len": 24434,
+   "old_sha": "46a2811c6194e60c05a3d007d21ef8789ffe9cd8912f55e7e4cfdd08d1056742",
+   "new_sha": "282d40d20e5f733479312f8edc6afbdf57a86b507173d32fe34ddc0c93ca45e9",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_77__007775C0.txt"
+  },
+  {
+   "addr": "0x799ea0",
+   "file": "_addr_79.cpp",
+   "name_old": "OptionsDlgProcWOL",
+   "name_new": "OptionsDlgProcWOL",
+   "size": "0xeff",
+   "kinds_old": [
+    "TRUNC"
+   ],
+   "kinds_new": [],
+   "old_len": 19128,
+   "new_len": 81643,
+   "old_sha": "c02e19b72d02ecdb36bc081606f0defd86c41140b5a18a18602965f919486273",
+   "new_sha": "0be7ff10ef2dc2d3c509ad96486726c1bc3836e5054ac16c77b24a70f50edb1d",
+   "asm_old": 0,
+   "asm_new": 0,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_79__00799EA0.txt"
+  },
+  {
+   "addr": "0x7b0cb0",
+   "file": "_addr_7B.cpp",
+   "name_old": "sub_7B0CB0",
+   "name_new": "sub_7B0CB0",
+   "size": "0x21",
+   "kinds_old": [
+    "ASMBODY"
+   ],
+   "kinds_new": [
+    "ASMBODY"
+   ],
+   "old_len": 751,
+   "new_len": 749,
+   "old_sha": "ca418e850358f48fca596c166337c144eaf9345fdbc9892c00eebaf3f7b71291",
+   "new_sha": "9d5802fb8ee414a0cc65813ba8badc39dfdd5a4319c520cfdaea01fbce169148",
+   "asm_old": 2,
+   "asm_new": 2,
+   "block_backup": ".omo/snapshot_fix_backup/blocks/_addr_7B__007B0CB0.txt"
+  }
+ ]
+}
