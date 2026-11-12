@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindLoadScreenAnim@LoadingScreen@@QAEHXZ",
+ "sym_key": "LoadingScreen::FindLoadScreenAnim",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b8180000000ba0100000085c0750d33c98a0d00000000e900000000",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_AlliedLoad@@3EA",
+   "sym_key": "g_INI_Key_AlliedLoad"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?FindBuildingAnimByName@@YIHPAXH@Z",
+   "sym_key": "FindBuildingAnimByName"
+  }
+ ]
+}

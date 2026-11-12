@@ -1,0 +1,11 @@
+{
+ "addr": "0x76F030",
+ "name": "WDTGame::Constructor",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76F030",
+ "bytes_hex": "568bf1e8f8e3eeff8b442408c706c4717f008b4804518bcee833e4eeff8bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

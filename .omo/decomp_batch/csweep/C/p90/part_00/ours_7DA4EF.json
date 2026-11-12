@@ -1,0 +1,27 @@
+{
+ "symbol": "?_fgetwc@@YAGPAU_iobuf@@@Z",
+ "sym_key": "Unnamed::_fgetwc",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "568b7424085756e80000000056e800000000568bf8e80000000083c40c668bc75f5ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?_lock_file@@YAHPAXZZ",
+   "sym_key": "_lock_file"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?_getwc_lk@@YAHPAXZZ",
+   "sym_key": "_getwc_lk"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?_unlock_file@@YAHPAXZZ",
+   "sym_key": "_unlock_file"
+  }
+ ]
+}

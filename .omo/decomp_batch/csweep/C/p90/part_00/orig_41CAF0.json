@@ -1,0 +1,11 @@
+{
+ "addr": "0x41CAF0",
+ "name": "InitRotorArt",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41CAF0",
+ "bytes_hex": "32d2b9e47f8100e8b475190032d2b9d87f8100a35c9f8800e8a3751900a3609f8800c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

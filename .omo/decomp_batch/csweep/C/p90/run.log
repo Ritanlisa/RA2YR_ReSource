@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p90\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f7780 TechnoClass::CheckCellPassable2 -> TechnoClass
+[conv] 0x4c30b0 DropListClass::Constructor -> DropListClass
+[conv] 0x7cd917 __amsg_exit -> _addr_7C
+[conv] 0x5e23a0 SendMultiplayerStartSignal_Start_5E23A0 -> SendMultiplayerStartSignal_Start
+[conv] 0x7a27d0 SendMultiplayerStartSignal_Start_7A27D0 -> SendMultiplayerStartSignal_Start
+[conv] 0x4ae6f0 DisplayClass::SetSurface -> DisplayClass
+[conv] 0x6811c0 ObjectClass::Map_Save_6811C0 -> ObjectClass
+[conv] 0x740e20 HouseClass::ClearPrimaryFactory -> HouseClass
+[conv] 0x410410 AbstractClass::ProcessPower -> AbstractClass
+[conv] 0x41caf0 InitRotorArt -> _addr_41
+[conv] 0x473ce0 CCFileClass::Reset -> CCFileClass
+[conv] 0x4f69d0 HouseClass::Destroy -> HouseClass
+[conv] 0x642b30 LoadingScreen::FindLoadScreenAnim -> LoadingScreen
+[conv] 0x766f70 rc_ptr::System_Init_766F70 -> rc_ptr
+[conv] 0x76f030 WDTGame::Constructor -> WDTGame
+[conv] 0x7cb428 __lock_file2 -> _addr_7C
+[conv] 0x4a2f10 CStreamClass::Commit -> CStreamClass
+[conv] 0x6b2040 SliderClass::OnRelease -> SliderClass
+[conv] 0x7da4ef _fgetwc -> _addr_7D
+[conv] 0x7cd93c _fast_error_exit -> _addr_7C
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] DropListClass            rc=0
+[era] _addr_7C                 rc=2
+[era] SendMultiplayerStartSignal_Start rc=0
+[era] DisplayClass             rc=0
+[era] ObjectClass              rc=0
+[era] HouseClass               rc=0
+[era] AbstractClass            rc=0
+[era] _addr_41                 rc=0
+[era] CCFileClass              rc=0
+[era] LoadingScreen            rc=0
+[era] rc_ptr                   rc=0
+[era] WDTGame                  rc=0
+[era] CStreamClass             rc=0
+[era] SliderClass              rc=0
+[era] _addr_7D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6f7780   MISMATCH         TechnoClass::CheckCellPassable2
+[diff] 0x4c30b0   MISMATCH         DropListClass::Constructor
+[diff] 0x7cb428   MISMATCH         __lock_file2
+[diff] 0x7cd93c   MISMATCH         _fast_error_exit
+[diff] 0x5e23a0   MISMATCH         SendMultiplayerStartSignal_Start_5E23A0
+[diff] 0x7a27d0   MISMATCH         SendMultiplayerStartSignal_Start_7A27D0
+[diff] 0x4ae6f0   MISMATCH         DisplayClass::SetSurface
+[diff] 0x6811c0   MISMATCH         ObjectClass::Map_Save_6811C0
+[diff] 0x740e20   MISMATCH         HouseClass::ClearPrimaryFactory
+[diff] 0x4f69d0   MISMATCH         HouseClass::Destroy
+[diff] 0x410410   MISMATCH         AbstractClass::ProcessPower
+[diff] 0x41caf0   MATCH            InitRotorArt
+[diff] 0x473ce0   MISMATCH         CCFileClass::Reset
+[diff] 0x642b30   MISMATCH         LoadingScreen::FindLoadScreenAnim
+[diff] 0x766f70   MISMATCH         rc_ptr::System_Init_766F70
+[diff] 0x76f030   MISMATCH         WDTGame::Constructor
+[diff] 0x6b2040   MISMATCH         SliderClass::OnRelease
+[diff] 0x7da4ef   MISMATCH         _fgetwc
+[ledger] 0x6f7780 TechnoClass::CheckCellPassable2 -> NG (attempt 1)
+[ledger] 0x4c30b0 DropListClass::Constructor -> NG (attempt 1)
+[ledger] 0x7cd917 __amsg_exit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e23a0 SendMultiplayerStartSignal_Start_5E23A0 -> NG (attempt 1)
+[ledger] 0x7a27d0 SendMultiplayerStartSignal_Start_7A27D0 -> NG (attempt 1)
+[ledger] 0x4ae6f0 DisplayClass::SetSurface -> NG (attempt 1)
+[ledger] 0x6811c0 ObjectClass::Map_Save_6811C0 -> NG (attempt 1)
+[ledger] 0x740e20 HouseClass::ClearPrimaryFactory -> NG (attempt 1)
+[ledger] 0x410410 AbstractClass::ProcessPower -> NG (attempt 1)
+[ledger] 0x41caf0 InitRotorArt -> OK (attempt 1)
+[ledger] 0x473ce0 CCFileClass::Reset -> NG (attempt 1)
+[ledger] 0x4f69d0 HouseClass::Destroy -> NG (attempt 1)
+[ledger] 0x642b30 LoadingScreen::FindLoadScreenAnim -> NG (attempt 1)
+[ledger] 0x766f70 rc_ptr::System_Init_766F70 -> NG (attempt 1)
+[ledger] 0x76f030 WDTGame::Constructor -> NG (attempt 1)
+[ledger] 0x7cb428 __lock_file2 -> NG (attempt 1)
+[ledger] 0x4a2f10 CStreamClass::Commit -> PENDING (attempt 1)
+[ledger] 0x6b2040 SliderClass::OnRelease -> NG (attempt 1)
+[ledger] 0x7da4ef _fgetwc -> NG (attempt 1)
+[ledger] 0x7cd93c _fast_error_exit -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 1,
+  "MATCH": 1,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 6,
+  "const_fold": 6,
+  "branch_order": 2,
+  "codegen_shape": 1,
+  "branch_polarity": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p90\batch_report.json

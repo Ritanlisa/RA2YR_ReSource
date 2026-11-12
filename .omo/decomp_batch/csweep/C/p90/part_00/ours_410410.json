@@ -1,0 +1,21 @@
+{
+ "symbol": "?ProcessPower@AbstractClass@@QAEHXZ",
+ "sym_key": "AbstractClass::ProcessPower",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b461050e8000000008b4e208b44240433c881e1ff00000033c18b4c240450e8000000005e59c3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  }
+ ]
+}

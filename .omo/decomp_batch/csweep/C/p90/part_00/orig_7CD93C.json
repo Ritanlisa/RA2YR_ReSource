@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CD93C",
+ "name": "_fast_error_exit",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CD93C",
+ "bytes_hex": "833d3082b700017505e8ae850000ff742404e8de8500005968ff000000ff1514127e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

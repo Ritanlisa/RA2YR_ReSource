@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F69D0",
+ "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F69D0",
+ "bytes_hex": "568b7424088d8ed8020000e8702c1d00e81bf52c008b8eec0200005e2bc88bc1c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

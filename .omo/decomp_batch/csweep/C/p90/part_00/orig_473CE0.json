@@ -1,0 +1,11 @@
+{
+ "addr": "0x473CE0",
+ "name": "CCFileClass::Reset",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x473CE0",
+ "bytes_hex": "568bf18d4e5885c974096a006a00e80d70fcff8bcec7466400000000e8bfe8fbff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

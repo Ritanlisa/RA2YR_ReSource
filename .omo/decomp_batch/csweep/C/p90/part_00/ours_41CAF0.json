@@ -1,0 +1,45 @@
+{
+ "symbol": "?InitRotorArt@@YAHXZ",
+ "sym_key": "Unnamed::InitRotorArt",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "32d2b900000000e80000000032d2b900000000a300000000e800000000a300000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_817FE4@@3PADA",
+   "sym_key": "DataGlobal_817FE4"
+  },
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_817FD8@@3PADA",
+   "sym_key": "DataGlobal_817FD8"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889F5C@@3IA",
+   "sym_key": "DataGlobal_889F5C"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889F60@@3IA",
+   "sym_key": "DataGlobal_889F60"
+  }
+ ]
+}

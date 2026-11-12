@@ -1,0 +1,21 @@
+{
+ "symbol": "?Constructor@WDTGame@@QAEPAV1@H@Z",
+ "sym_key": "WDTGame::Constructor",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b442408c706000000008b4804518bcee8000000008b065ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

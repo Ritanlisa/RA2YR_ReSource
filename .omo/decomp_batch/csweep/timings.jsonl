@@ -88,3 +88,4 @@
 {"layer": "C", "part": 87, "n": 20, "seconds": 42.7, "ok": true, "verdicts": {"MISMATCH": 19, "COMPILE_FAIL": 1}}
 {"layer": "C", "part": 88, "n": 20, "seconds": 54.9, "ok": true, "verdicts": {"MISMATCH": 16, "COMPILE_FAIL": 4}}
 {"layer": "C", "part": 89, "n": 20, "seconds": 45.3, "ok": true, "verdicts": {"MISMATCH": 12, "COMPILE_FAIL": 6, "MATCH": 1, "NO_PSEUDO": 1}}
+{"layer": "C", "part": 90, "n": 20, "seconds": 64.1, "ok": true, "verdicts": {"MISMATCH": 17, "COMPILE_FAIL": 1, "MATCH": 1, "OBJ_EXTRACT_FAIL": 1}}

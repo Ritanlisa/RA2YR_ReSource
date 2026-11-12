@@ -1,0 +1,21 @@
+{
+ "symbol": "?Destroy@HouseClass@@QAGHH@Z",
+ "sym_key": "HouseClass::Destroy",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "83ec08568b7424108d8ed8020000e8000000008b4424088b4c24045051ddd8e8000000008b4c241883c40833c125ff00000033c88b86ec0200002bc15e83c408c20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Sum@Float4@@QAENXZ",
+   "sym_key": "Float4::Sum"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

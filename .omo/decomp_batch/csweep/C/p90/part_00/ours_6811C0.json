@@ -1,0 +1,15 @@
+{
+ "symbol": "?Map_Save_6811C0@ObjectClass@@QAEPADPAD@Z",
+ "sym_key": "ObjectClass::Map_Save_6811C0",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b442404c681d403000000680301000081c1d40200005051e80000000083c40cc20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  }
+ ]
+}

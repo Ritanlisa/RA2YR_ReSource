@@ -1,0 +1,11 @@
+{
+ "addr": "0x766F70",
+ "name": "System_Init_766F70",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x766F70",
+ "bytes_hex": "568bf1e8b864efff8b442408c70624707f008b4804518bcee8f364efff8bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

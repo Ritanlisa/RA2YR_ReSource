@@ -1,0 +1,27 @@
+{
+ "symbol": "?SendMultiplayerStartSignal_Start_5E23A0@@YIJPAX@Z",
+ "sym_key": "Unnamed::SendMultiplayerStartSignal_Start_5E23A0",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "e800000000689f05000050e8000000006a006a0068dc04000050e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

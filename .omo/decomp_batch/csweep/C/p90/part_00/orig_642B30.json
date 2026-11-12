@@ -1,0 +1,11 @@
+{
+ "addr": "0x642B30",
+ "name": "LoadingScreen::FindLoadScreenAnim",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x642B30",
+ "bytes_hex": "8b8180000000ba0100000085c0750ab9c06e8300e9079f0400b9b46e8300e9fd9e0400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

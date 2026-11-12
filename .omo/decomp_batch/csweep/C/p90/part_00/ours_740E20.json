@@ -1,0 +1,8 @@
+{
+ "symbol": "?ClearPrimaryFactory@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::ClearPrimaryFactory",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "8b91cc06000083c8ff3bd0750332c0c38981cc0600008b016a0251ff9024010000b001c3",
+ "relocs": []
+}

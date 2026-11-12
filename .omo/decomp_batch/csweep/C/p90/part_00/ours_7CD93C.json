@@ -1,0 +1,33 @@
+{
+ "symbol": "?_fast_error_exit@@YAXK@Z",
+ "sym_key": "Unnamed::_fast_error_exit",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "833d00000000017505e8000000008b44240450e80000000083c40468ff000000e800000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78230@@3IA",
+   "sym_key": "CRTGlobal_B78230"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?_FF_MSGBANNER@@YAHXZ",
+   "sym_key": "_FF_MSGBANNER"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?_NMSG_WRITE@@YAHHZZ",
+   "sym_key": "_NMSG_WRITE"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?ExitProcess@@YGXH@Z",
+   "sym_key": "ExitProcess"
+  }
+ ]
+}

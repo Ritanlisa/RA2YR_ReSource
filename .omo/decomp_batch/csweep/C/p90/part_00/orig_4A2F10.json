@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A2F10",
+ "name": "CStreamClass::Commit",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A2F10",
+ "bytes_hex": "568b7424088b460885c0750a6803400080e8fa9733008b4608508b08ff51245ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

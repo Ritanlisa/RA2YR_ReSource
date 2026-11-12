@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E23A0",
+ "name": "SendMultiplayerStartSignal_Start_5E23A0",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E23A0",
+ "bytes_hex": "e86b371900689f05000050ff15a8147e006a006a0068dc04000050ff15a4147e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

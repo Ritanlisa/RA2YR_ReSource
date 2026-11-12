@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AE6F0",
+ "name": "DisplayClass::SetSurface",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AE6F0",
+ "bytes_hex": "56578b7c240cbe60038a00578bcee88d340a0083c61881fed8038a007ced5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?OnRelease@SliderClass@@QAEHH@Z",
+ "sym_key": "SliderClass::OnRelease",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b41348b0985d2740b4850ff918c000000c204004050ff918c000000c20400",
+ "relocs": []
+}

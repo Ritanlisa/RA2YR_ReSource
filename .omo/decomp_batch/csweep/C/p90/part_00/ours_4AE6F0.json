@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetSurface@DisplayClass@@QAGHPAH@Z",
+ "sym_key": "DisplayClass::SetSurface",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240cbe00000000578bcee80000000081c68002000081fe480000007cea5f5ec20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0360@@3IA",
+   "sym_key": "DataGlobal_8A0360"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Load@LayerClass@@QAEHPAX@Z",
+   "sym_key": "LayerClass::Load"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?stru_8A0390@@3PADA",
+   "sym_key": "stru_8A0390"
+  }
+ ]
+}
