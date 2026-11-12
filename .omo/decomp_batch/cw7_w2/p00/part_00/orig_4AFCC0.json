@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AFCC0",
+ "name": "JumpjetLocomotionClass::GetRenderCoordinate",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AFCC0",
+ "bytes_hex": "8b4424048b1590078a0056578b483c3bca751a8b50408b0d94078a003bd1750d8b48448b1598078a003bca741e8b7424108b483c8b50408b40448bfe890f8957048947088bc65f5ec208008b500881c29c0000008bc28b088b50048b70088b4424108bf8890f8957048977085f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

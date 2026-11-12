@@ -1,0 +1,15 @@
+{
+ "symbol": "?NeighborCoord@@YIPAIPAHPAGD@Z",
+ "sym_key": "Unnamed::NeighborCoord",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "8bc1568a4c2408578b7c240c83e1078b348d00000000668b0a668b520203ce33cf81e1ff000000c1fe1033f903f233f781e6ff00000033f75f89305ec20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  }
+ ]
+}

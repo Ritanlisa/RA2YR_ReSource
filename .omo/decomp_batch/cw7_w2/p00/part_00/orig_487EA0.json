@@ -1,0 +1,11 @@
+{
+ "addr": "0x487EA0",
+ "name": "NeighborCoord",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487EA0",
+ "bytes_hex": "8bc1568b4c240883e107668b348d88f689008d0c8d88f68900660332668b490266034a0266897424085e66894c24068b5424048910c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

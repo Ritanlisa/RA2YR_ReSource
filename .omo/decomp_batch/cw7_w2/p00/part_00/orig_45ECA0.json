@@ -1,0 +1,11 @@
+{
+ "addr": "0x45ECA0",
+ "name": "BuildingTypeClass::GetFoundationHeight",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45ECA0",
+ "bytes_hex": "8a44240484c074218a817015000084c074178b81f00e0000ba010000008b04851093810003c2c204008b81f00e000033d28b04851093810003c2c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

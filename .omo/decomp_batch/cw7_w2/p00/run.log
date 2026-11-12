@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w2\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x425510 AnimClass::CheckEndOfSequence -> AnimClass
+[conv] 0x434840 sub_434840 -> _addr_43
+[conv] 0x453e20 BuildingClass::LoadFromStream -> BuildingClass
+[conv] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> BuildingTypeClass
+[conv] 0x45eca0 BuildingTypeClass::GetFoundationHeight -> BuildingTypeClass
+[conv] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> BuildingTypeClass
+[conv] 0x485590 CellClass::ProcessBridgeRepair -> CellClass
+[conv] 0x485af0 BuildingClass::VisualizePlacement -> BuildingClass
+[conv] 0x487ea0 NeighborCoord -> _addr_48
+[conv] 0x49be40 MPCooperative::WriteCoopSaveINI -> MPCooperative
+[conv] 0x49d120 MPCooperative::ReadCoopSaveINI -> MPCooperative
+[conv] 0x49f2f0 sub_49F2F0 -> _addr_49
+[conv] 0x4a1fb0 CRC32::Compute -> CRC32
+[conv] 0x4afcc0 JumpjetLocomotionClass::GetRenderCoordinate -> JumpjetLocomotionClass
+[conv] 0x4c81d0 sub_4C81D0 -> _addr_4C
+[conv] 0x4c8220 sub_4C8220 -> _addr_4C
+[conv] 0x4c8240 sub_4C8240 -> _addr_4C
+[conv] 0x4c8260 sub_4C8260 -> _addr_4C
+[conv] 0x4c8280 sub_4C8280 -> _addr_4C
+[conv] 0x4c8390 sub_4C8390 -> _addr_4C
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AnimClass                rc=2
+[era] _addr_43                 rc=0
+[era] BuildingClass            rc=2
+[era] BuildingTypeClass        rc=2
+[era] CellClass                rc=2
+[era] _addr_48                 rc=0
+[era] MPCooperative            rc=2
+[era] _addr_49                 rc=0
+[era] CRC32                    rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] _addr_4C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x434840   MISMATCH         sub_434840
+[diff] 0x45eca0   MISMATCH         BuildingTypeClass::GetFoundationHeight
+[diff] 0x487ea0   MISMATCH         NeighborCoord
+[diff] 0x49be40   MISMATCH         MPCooperative::WriteCoopSaveINI
+[diff] 0x49f2f0   MISMATCH         sub_49F2F0
+[diff] 0x4a1fb0   MISMATCH         CRC32::Compute
+[diff] 0x4afcc0   MISMATCH         JumpjetLocomotionClass::GetRenderCoordinate
+[diff] 0x4c81d0   MISMATCH         sub_4C81D0
+[diff] 0x4c8220   MISMATCH         sub_4C8220
+[diff] 0x4c8240   MISMATCH         sub_4C8240
+[diff] 0x4c8260   MISMATCH         sub_4C8260
+[diff] 0x4c8280   MISMATCH         sub_4C8280
+[diff] 0x4c8390   MISMATCH         sub_4C8390
+[ledger] 0x425510 AnimClass::CheckEndOfSequence -> COMPILE_FAIL (attempt 2)
+[ledger] 0x434840 sub_434840 -> NG (attempt 2)
+[ledger] 0x453e20 BuildingClass::LoadFromStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45eca0 BuildingTypeClass::GetFoundationHeight -> NG (attempt 3)
+[ledger] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> COMPILE_FAIL (attempt 3)
+[ledger] 0x485590 CellClass::ProcessBridgeRepair -> COMPILE_FAIL (attempt 4)
+[ledger] 0x485af0 BuildingClass::VisualizePlacement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x487ea0 NeighborCoord -> NG (attempt 2)
+[ledger] 0x49be40 MPCooperative::WriteCoopSaveINI -> NG (attempt 6)
+[ledger] 0x49d120 MPCooperative::ReadCoopSaveINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x49f2f0 sub_49F2F0 -> NG (attempt 2)
+[ledger] 0x4a1fb0 CRC32::Compute -> NG (attempt 2)
+[ledger] 0x4afcc0 JumpjetLocomotionClass::GetRenderCoordinate -> NG (attempt 2)
+[ledger] 0x4c81d0 sub_4C81D0 -> NG (attempt 3)
+[ledger] 0x4c8220 sub_4C8220 -> NG (attempt 2)
+[ledger] 0x4c8240 sub_4C8240 -> NG (attempt 2)
+[ledger] 0x4c8260 sub_4C8260 -> NG (attempt 2)
+[ledger] 0x4c8280 sub_4C8280 -> NG (attempt 2)
+[ledger] 0x4c8390 sub_4C8390 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "cc_mismatch": 2,
+  "branch_polarity": 1,
+  "width_mismatch": 1,
+  "frame_sched": 1,
+  "codegen_shape": 1,
+  "extern_reloc": 1,
+  "const_fold": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w2\p00\batch_report.json

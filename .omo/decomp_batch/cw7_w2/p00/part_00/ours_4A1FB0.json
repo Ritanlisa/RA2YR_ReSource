@@ -1,0 +1,15 @@
+{
+ "symbol": "?Compute@CRC32@@QAIHPAEHH@Z",
+ "sym_key": "CRC32::Compute",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b74240885f6f7d074205733c98bf88a0a81e7ff00000033cfc1e8088b0c8d0000000033c1424e75e25ff7d05ec20800",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?CRC32_Table@@3PAHA",
+   "sym_key": "CRC32_Table"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A1FB0",
+ "name": "CRC32::Compute",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A1FB0",
+ "bytes_hex": "8b442404568bf24a85f6f7d07423538d72018bd033db8a1981e2ff00000033d3c1e8088b1495b4f7810033c2414e75e25bf7d05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

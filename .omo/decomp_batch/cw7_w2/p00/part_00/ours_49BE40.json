@@ -1,0 +1,219 @@
+{
+ "symbol": "?WriteCoopSaveINI@MPCooperative@@QAEDXZ",
+ "sym_key": "MPCooperative::WriteCoopSaveINI",
+ "size": 679,
+ "link_base": 0,
+ "bytes_hex": "81ec7c0100005355578bf933db381f750c5f5db0015b81c47c010000c38b47288d6f283bc3750c5f5db0015b81c47c010000c333c056a0000000008d8c24d400000050e8000000008d4c241c895c2414895c2418e8000000008d4c243851e8000000000fbe54241483c4048d8424d4000000895c244c885c24505353508d4c241cc70200000000e8000000008d8c24d4000000e8000000008a0733f63ac374650fbe0f51e80000000083c40485c0740a8a17889600000000eb3ac686000000003d0fbe07c1f80483f810720432c0eb0b83f80a7c040437eb0204308886010000008a0f83e10f83c602e8000000008886000000008a470146473ac3740881fefd0300007c9b33c0889e00000000a00000000083c9ff8bf833c0f2aef7d12bf98d9424280100008bc18bf78bfac1e902f3a58bc88a450083e103f3a433f63ac38bfd746581fefd0300007d5d0fbec851e80000000083c40485c0740a8a17889600000000eb3ac686000000003d0fbe07c1f80483f810720432c0eb0b83f80a7c040437eb0204308886010000008a0f83e10f83c602e8000000008886000000008a470146473ac3759b33c0889e00000000a00000000083c9ff8bf833c0f2aef7d12bf98d9424280100008bf78be98bfa83c9fff2ae8bcd4fc1e902f3a58bcd83e103f3a48d4c2468e8000000008b44246833d28a15000000008b088d4424685250ff51088b4c24688d4424686a02508b11ff521c8d8c242801000053510fbe4c2418e8000000008d54246853528d4c2418e8000000008d4c2468e8000000008b4424688d8c24c80000008918e8000000008b4c2468c701000000008d4c2468e8000000008d4c2410e8000000008b9424d40000008d8c24bc000000891ae8000000008b8424d40000008d8c24d4000000c70000000000e8000000005e5f5db0015b81c47c010000c3",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_Str_File_coopsave_ini@@3EA",
+   "sym_key": "g_Str_File_coopsave_ini"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Constructor@INISectionList@@QAEPAIXZ",
+   "sym_key": "INISectionList::Constructor"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Node__Init@@YAHPAX@Z",
+   "sym_key": "Node__Init"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?CCINIClass_Vtable@@3PAXA",
+   "sym_key": "CCINIClass_Vtable"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?Load@CCINIClass@@QAEHHDD@Z",
+   "sym_key": "CCINIClass::Load"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Reset@CCFileClass@@QAEHXZ",
+   "sym_key": "CCFileClass::Reset"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?isalnum@@YAHHZZ",
+   "sym_key": "isalnum"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?EncodeDigitHex@@YIDH@Z",
+   "sym_key": "EncodeDigitHex"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 270,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 336,
+   "type": "REL32",
+   "sym": "?isalnum@@YAHHZZ",
+   "sym_key": "isalnum"
+  },
+  {
+   "off": 351,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 359,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 392,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 405,
+   "type": "REL32",
+   "sym": "?EncodeDigitHex@@YIDH@Z",
+   "sym_key": "EncodeDigitHex"
+  },
+  {
+   "off": 411,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 428,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 433,
+   "type": "DIR32",
+   "sym": "?g_IsWindowed@@3EA",
+   "sym_key": "g_IsWindowed"
+  },
+  {
+   "off": 488,
+   "type": "REL32",
+   "sym": "?Construct3@CCFileClass@@QAEPAV1@XZ",
+   "sym_key": "CCFileClass::Construct3"
+  },
+  {
+   "off": 500,
+   "type": "DIR32",
+   "sym": "?g_Str_File_coopsave_ini@@3EA",
+   "sym_key": "g_Str_File_coopsave_ini"
+  },
+  {
+   "off": 546,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 561,
+   "type": "REL32",
+   "sym": "?WriteDigest@INIClass@@QAEHHD@Z",
+   "sym_key": "INIClass::WriteDigest"
+  },
+  {
+   "off": 570,
+   "type": "REL32",
+   "sym": "?Reset@CCFileClass@@QAEHXZ",
+   "sym_key": "CCFileClass::Reset"
+  },
+  {
+   "off": 588,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 598,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 607,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 616,
+   "type": "REL32",
+   "sym": "?DestroyHashTableINIClass@HashTable@@QAEPADXZ",
+   "sym_key": "HashTable::DestroyHashTableINIClass"
+  },
+  {
+   "off": 637,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 657,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 662,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

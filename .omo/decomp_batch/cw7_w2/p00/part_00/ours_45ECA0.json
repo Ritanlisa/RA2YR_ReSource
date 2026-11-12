@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetFoundationHeight@BuildingTypeClass@@QAEHD@Z",
+ "sym_key": "BuildingTypeClass::GetFoundationHeight",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8a44240484c0741b8a817015000084c074118b81f00e00008b04850000000040c204008b89f00e00008b048d00000000c20400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_819310@@3PAIA",
+   "sym_key": "DataGlobal_819310"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_819310@@3PAIA",
+   "sym_key": "DataGlobal_819310"
+  }
+ ]
+}

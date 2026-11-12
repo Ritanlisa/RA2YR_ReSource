@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_49F2F0@@YAHXZ",
+ "sym_key": "Unnamed::sub_49F2F0",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "83c8ffc705000000000000ffffc705000000000100ffffc7050000000001000000c7050000000001000100c70500000000ffff0100c7050000000000000100c70500000000ffff0000a300000000c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F68C@@3IA",
+   "sym_key": "DataGlobal_89F68C"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_CellDirectionOffsets@@3IA",
+   "sym_key": "g_CellDirectionOffsets"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F694@@3IA",
+   "sym_key": "DataGlobal_89F694"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F69C@@3IA",
+   "sym_key": "DataGlobal_89F69C"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_DirectionOffsetPool@@3IA",
+   "sym_key": "g_DirectionOffsetPool"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?Direction_Y_Offsets@@3IA",
+   "sym_key": "Direction_Y_Offsets"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F6A4@@3IA",
+   "sym_key": "DataGlobal_89F6A4"
+  }
+ ]
+}
