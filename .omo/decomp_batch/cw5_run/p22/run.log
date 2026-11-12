@@ -1,0 +1,26 @@
+======================================================================
+PART 1/1  (2 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p22\part_00
+=== convert (2 addrs) ===
+[conv] 0x519630 InfantryClass::RepairBridge -> InfantryClass
+[conv] 0x648710 QueueNetworkProcessor -> _addr_64
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+[era] _addr_64                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x519630 InfantryClass::RepairBridge -> COMPILE_FAIL (attempt 4)
+[ledger] 0x648710 QueueNetworkProcessor -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 2,
+ "verdicts": {
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p22\batch_report.json

@@ -1,0 +1,49 @@
+{
+ "summary": {
+  "total": 2,
+  "verdicts": {
+   "COMPILE_FAIL": 2
+  },
+  "pathologies": {},
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x519630",
+   "batch": "C14",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run\\p22\\part_00\\InfantryClass.cpp(8) : error C2059: syntax error : '...'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "InfantryClass::RepairBridge",
+   "emitted": "InfantryClass::RepairBridge",
+   "unit": "InfantryClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x648710",
+   "batch": "C14",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run\\p22\\part_00\\_addr_64.cpp(8) : error C2059: syntax error : '...'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "QueueNetworkProcessor",
+   "emitted": "QueueNetworkProcessor",
+   "unit": "_addr_64",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 0,
+   "clean": false
+  }
+ ]
+}
