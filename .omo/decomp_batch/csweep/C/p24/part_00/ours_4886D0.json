@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetFocus@CheckListClass@@QAEHI@Z",
+ "sym_key": "CheckListClass::SetFocus",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e800000000c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Clear@ColorListClass@@QAEHI@Z",
+   "sym_key": "ColorListClass::Clear"
+  }
+ ]
+}

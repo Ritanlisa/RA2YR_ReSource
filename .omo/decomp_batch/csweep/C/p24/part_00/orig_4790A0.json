@@ -1,0 +1,11 @@
+{
+ "addr": "0x4790A0",
+ "name": "Game::CheckForGameCD",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4790A0",
+ "bytes_hex": "8bd18b0d14e48900e923f00200",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

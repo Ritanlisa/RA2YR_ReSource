@@ -1,0 +1,11 @@
+{
+ "addr": "0x47AAB0",
+ "name": "FileClass::OpenFileBufferIO",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47AAB0",
+ "bytes_hex": "8b44240450e8b674fbffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

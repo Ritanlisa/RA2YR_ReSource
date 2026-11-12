@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4E2440@@YAKXZ",
+ "sym_key": "Unnamed::sub_4E2440",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "e800000000a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3F14@@3IA",
+   "sym_key": "DataGlobal_8B3F14"
+  }
+ ]
+}

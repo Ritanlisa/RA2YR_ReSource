@@ -1,0 +1,11 @@
+{
+ "addr": "0x703850",
+ "name": "TechnoClass::Vt279Thunk0",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x703850",
+ "bytes_hex": "8b016a00ff905c040000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4080C0",
+ "name": "ThemeClass::RequestBuffer",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4080C0",
+ "bytes_hex": "8b491433d283c110e9a3f0ffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

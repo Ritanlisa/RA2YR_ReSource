@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x703850 TechnoClass::Vt279Thunk0 -> TechnoClass
+[conv] 0x65fb60 ObjectClass::sub_65FB60 -> ObjectClass
+[conv] 0x6ca670 sub_6CA670 -> _addr_6C
+[conv] 0x7b6280 ObjectClass::_1_Timevec_std__QAE_XZ -> ObjectClass
+[conv] 0x4e2440 sub_4E2440 -> _addr_4E
+[conv] 0x4080c0 ThemeClass::RequestBuffer -> ThemeClass
+[conv] 0x4142f0 AircraftClass::AddRef -> AircraftClass
+[conv] 0x414300 AircraftClass::Release -> AircraftClass
+[conv] 0x41c670 TechnoClass::processMoveState -> TechnoClass
+[conv] 0x41c680 TechnoClass::processHarvestState -> TechnoClass
+[conv] 0x41c690 TechnoClass::processDeployState -> TechnoClass
+[conv] 0x41d6e0 AirstrikeClass::Stat -> AirstrikeClass
+[conv] 0x4790a0 Game::CheckForGameCD -> Game
+[conv] 0x47aab0 CDFileClass::OpenFileBufferIO -> CDFileClass
+[conv] 0x4886c0 CheckListClass::SelectItem -> CheckListClass
+[conv] 0x4886d0 CheckListClass::SetFocus -> CheckListClass
+[conv] 0x4b4880 DriveLocomotionClass::DispatchCheckState -> DriveLocomotionClass
+[conv] 0x4b4cb0 DriveLocomotionClass::AddRef -> DriveLocomotionClass
+[conv] 0x4b4cc0 DriveLocomotionClass::Release -> DriveLocomotionClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=2
+[era] _addr_6C                 rc=0
+[era] _addr_4E                 rc=0
+[era] ThemeClass               rc=0
+[era] AircraftClass            rc=0
+[era] AirstrikeClass           rc=0
+[era] Game                     rc=0
+[era] CDFileClass              rc=0
+[era] CheckListClass           rc=0
+[era] DriveLocomotionClass     rc=0
+=== diffasm byte-compare ===
+[diff] 0x703850   MISMATCH         TechnoClass::Vt279Thunk0
+[diff] 0x41c670   MISMATCH         TechnoClass::processMoveState
+[diff] 0x41c680   MISMATCH         TechnoClass::processHarvestState
+[diff] 0x41c690   MISMATCH         TechnoClass::processDeployState
+[diff] 0x65fb60   MISMATCH         ObjectClass::sub_65FB60
+[diff] 0x6ca670   MISMATCH         sub_6CA670
+[diff] 0x4e2440   MISMATCH         sub_4E2440
+[diff] 0x4080c0   MATCH            ThemeClass::RequestBuffer
+[diff] 0x4142f0   MISMATCH         AircraftClass::AddRef
+[diff] 0x414300   MISMATCH         AircraftClass::Release
+[diff] 0x41d6e0   MISMATCH         AirstrikeClass::Stat
+[diff] 0x4790a0   MISMATCH         Game::CheckForGameCD
+[diff] 0x47aab0   MATCH            CDFileClass::OpenFileBufferIO
+[diff] 0x4886c0   MATCH            CheckListClass::SelectItem
+[diff] 0x4886d0   MATCH            CheckListClass::SetFocus
+[diff] 0x4b4880   MISMATCH         DriveLocomotionClass::DispatchCheckState
+[diff] 0x4b4cb0   MISMATCH         DriveLocomotionClass::AddRef
+[diff] 0x4b4cc0   MISMATCH         DriveLocomotionClass::Release
+[ledger] 0x7dc720 0x7dc720 -> PENDING (attempt 1)
+[ledger] 0x703850 TechnoClass::Vt279Thunk0 -> NG (attempt 1)
+[ledger] 0x65fb60 ObjectClass::sub_65FB60 -> NG (attempt 1)
+[ledger] 0x6ca670 sub_6CA670 -> NG (attempt 1)
+[ledger] 0x7b6280 ObjectClass::_1_Timevec_std__QAE_XZ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e2440 sub_4E2440 -> NG (attempt 1)
+[ledger] 0x4080c0 ThemeClass::RequestBuffer -> OK (attempt 1)
+[ledger] 0x4142f0 AircraftClass::AddRef -> NG (attempt 1)
+[ledger] 0x414300 AircraftClass::Release -> NG (attempt 1)
+[ledger] 0x41c670 TechnoClass::processMoveState -> NG (attempt 1)
+[ledger] 0x41c680 TechnoClass::processHarvestState -> NG (attempt 1)
+[ledger] 0x41c690 TechnoClass::processDeployState -> NG (attempt 1)
+[ledger] 0x41d6e0 AirstrikeClass::Stat -> NG (attempt 1)
+[ledger] 0x4790a0 Game::CheckForGameCD -> NG (attempt 1)
+[ledger] 0x47aab0 CDFileClass::OpenFileBufferIO -> OK (attempt 1)
+[ledger] 0x4886c0 CheckListClass::SelectItem -> OK (attempt 1)
+[ledger] 0x4886d0 CheckListClass::SetFocus -> OK (attempt 1)
+[ledger] 0x4b4880 DriveLocomotionClass::DispatchCheckState -> NG (attempt 1)
+[ledger] 0x4b4cb0 DriveLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x4b4cc0 DriveLocomotionClass::Release -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "NO_EXPORT": 1,
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 1,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "const_fold": 4,
+  "regalloc": 1,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 22.2,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p24\batch_report.json

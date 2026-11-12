@@ -1,0 +1,15 @@
+{
+ "symbol": "?processHarvestState@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::processHarvestState",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8b4424040540f9ffff50e800000000c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?AddRef@AircraftClass@@QAEHH@Z",
+   "sym_key": "AircraftClass::AddRef"
+  }
+ ]
+}

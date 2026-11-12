@@ -1,0 +1,15 @@
+{
+ "symbol": "?RequestBuffer@ThemeClass@@QAEHXZ",
+ "sym_key": "ThemeClass::RequestBuffer",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b491433d283c110e900000000",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  }
+ ]
+}

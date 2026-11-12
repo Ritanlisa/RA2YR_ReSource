@@ -1181,6 +1181,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4080c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ThemeClass::RequestBuffer",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ThemeClass::RequestBuffer",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4080d0": {
   "attempts": 1,
   "clean": false,
@@ -4863,6 +4875,30 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4142f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "AircraftClass::AddRef",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AircraftClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x414300": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "AircraftClass::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AircraftClass::Release",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x414a10": {
   "attempts": 1,
   "first_diff": null,
@@ -5536,6 +5572,42 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x41c670": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x6c0",
+  "name": "TechnoClass::processMoveState",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "TechnoClass::processMoveState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x41c680": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x6c0",
+  "name": "TechnoClass::processHarvestState",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "TechnoClass::processHarvestState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x41c690": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub dword ptr [esp + 4], 0x6c0",
+  "name": "TechnoClass::processDeployState",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "TechnoClass::processDeployState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x41c6d0": {
   "attempts": 2,
   "clean": true,
@@ -5867,6 +5939,18 @@
   "orig_name": "AirstrikeClass::AirstrikeClass",
   "rule_violations": 6,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x41d6e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "AirstrikeClass::Stat",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AirstrikeClass::Stat",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x41d7a0": {
@@ -13547,6 +13631,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4790a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, ecx",
+  "name": "Game::CheckForGameCD",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Game::CheckForGameCD",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4790b0": {
   "attempts": 2,
   "clean": false,
@@ -13609,6 +13705,18 @@
   "orig_name": "CDROM::LockVolume",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x47aab0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CDFileClass::OpenFileBufferIO",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "FileClass::OpenFileBufferIO",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x47ada0": {
@@ -14583,6 +14691,30 @@
   "name": "ListClass::COMStub",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "ListClass::COMStub",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4886c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CheckListClass::SelectItem",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CheckListClass::SelectItem",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4886d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CheckListClass::SetFocus",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CheckListClass::SetFocus",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -19967,6 +20099,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4b4880": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 call 0x55abb0",
+  "name": "DriveLocomotionClass::DispatchCheckState",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "JumpjetLocomotionClass::DispatchCheckState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4b4b00": {
   "attempts": 15,
   "clean": false,
@@ -20112,6 +20256,30 @@
   "name": "JumpjetLocomotionClass::Stub5",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4b4cb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+5 call 0x55a950",
+  "name": "DriveLocomotionClass::AddRef",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "DriveLocomotionClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4b4cc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+5 call 0x55a970",
+  "name": "DriveLocomotionClass::Release",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "DriveLocomotionClass::Release",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4b4cd0": {
   "attempts": 1,
@@ -24918,6 +25086,17 @@
   "name": "sub_4E1CE0",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_4E1CE0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e2440": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 call dword ptr [0x7e1530]",
+  "name": "sub_4E2440",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_4E2440",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -59713,6 +59892,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x65fb60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+1 mov ecx, 0x87f7e8",
+  "name": "ObjectClass::sub_65FB60",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_65FB60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x65fb70": {
   "attempts": 2,
   "clean": false,
@@ -69223,6 +69414,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6ca670": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+3 call 0x6ca5a0",
+  "name": "sub_6CA670",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_6CA670",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6ca7b0": {
   "attempts": 1,
   "clean": false,
@@ -73215,6 +73417,18 @@
   "name": "TechnoClass::TransitionEffectState",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x703850": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 call dword ptr [eax + 0x45c]",
+  "name": "TechnoClass::Vt279Thunk0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TechnoClass::Vt279Thunk0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x703860": {
   "attempts": 5,
@@ -90208,6 +90422,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7b6280": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::_1_Timevec_std__QAE_XZ",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "??1_Timevec_std__QAE_XZ",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7b63c0": {
   "attempts": 1,
   "first_diff": "+1 push ebx",
@@ -96644,6 +96870,14 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7dc6fa",
+  "note": "decomp_batch r2: NO_EXPORT",
+  "status": "PENDING"
+ },
+ "0x7dc720": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "0x7dc720",
   "note": "decomp_batch r2: NO_EXPORT",
   "status": "PENDING"
  },
