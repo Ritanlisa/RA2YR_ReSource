@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p47\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c8cb0 sub_6C8CB0 -> _addr_6C
+[conv] 0x6c9420 sub_6C9420 -> _addr_6C
+[conv] 0x6c9680 FloatArray::Get -> FloatArray
+[conv] 0x6c9690 Float::Accumulate -> Float
+[conv] 0x6cac40 sub_6CAC40 -> _addr_6C
+[conv] 0x6ce3b0 sub_6CE3B0 -> _addr_6C
+[conv] 0x6cf9e0 sub_6CF9E0 -> _addr_6C
+[conv] 0x6d1860 sub_6D1860 -> _addr_6D
+[conv] 0x6dcda0 sub_6DCDA0 -> _addr_6D
+[conv] 0x6e4b80 sub_6E4B80 -> _addr_6E
+[conv] 0x6e5900 sub_6E5900 -> _addr_6E
+[conv] 0x6e6870 sub_6E6870 -> _addr_6E
+[conv] 0x6e7ca0 sub_6E7CA0 -> _addr_6E
+[conv] 0x6e88b0 sub_6E88B0 -> _addr_6E
+[conv] 0x6f04a0 sub_6F04A0 -> _addr_6F
+[conv] 0x6f28d0 sub_6F28D0 -> _addr_6F
+[conv] 0x710910 sub_710910 -> _addr_71
+[conv] 0x717e20 sub_717E20 -> _addr_71
+[conv] 0x71a1f0 sub_71A1F0 -> _addr_71
+[conv] 0x71b5d0 sub_71B5D0 -> _addr_71
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6C                 rc=0
+[era] FloatArray               rc=0
+[era] Float                    rc=0
+[era] _addr_6D                 rc=0
+[era] _addr_6E                 rc=0
+[era] _addr_6F                 rc=0
+[era] _addr_71                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c8cb0   MATCH            sub_6C8CB0
+[diff] 0x6c9420   MATCH            sub_6C9420
+[diff] 0x6cac40   MATCH            sub_6CAC40
+[diff] 0x6ce3b0   MATCH            sub_6CE3B0
+[diff] 0x6cf9e0   MATCH            sub_6CF9E0
+[diff] 0x6c9680   MISMATCH         FloatArray::Get
+[diff] 0x6c9690   MISMATCH         Float::Accumulate
+[diff] 0x6d1860   MATCH            sub_6D1860
+[diff] 0x6dcda0   MATCH            sub_6DCDA0
+[diff] 0x6e4b80   MATCH            sub_6E4B80
+[diff] 0x6e5900   MATCH            sub_6E5900
+[diff] 0x6e6870   MATCH            sub_6E6870
+[diff] 0x6e7ca0   MATCH            sub_6E7CA0
+[diff] 0x6e88b0   MATCH            sub_6E88B0
+[diff] 0x6f04a0   MATCH            sub_6F04A0
+[diff] 0x6f28d0   MATCH            sub_6F28D0
+[diff] 0x710910   MATCH            sub_710910
+[diff] 0x717e20   MATCH            sub_717E20
+[diff] 0x71a1f0   MATCH            sub_71A1F0
+[diff] 0x71b5d0   MATCH            sub_71B5D0
+[ledger] 0x6c8cb0 sub_6C8CB0 -> OK (attempt 2)
+[ledger] 0x6c9420 sub_6C9420 -> OK (attempt 2)
+[ledger] 0x6c9680 FloatArray::Get -> NG (attempt 2)
+[ledger] 0x6c9690 Float::Accumulate -> NG (attempt 2)
+[ledger] 0x6cac40 sub_6CAC40 -> OK (attempt 3)
+[ledger] 0x6ce3b0 sub_6CE3B0 -> OK (attempt 2)
+[ledger] 0x6cf9e0 sub_6CF9E0 -> OK (attempt 2)
+[ledger] 0x6d1860 sub_6D1860 -> OK (attempt 2)
+[ledger] 0x6dcda0 sub_6DCDA0 -> OK (attempt 2)
+[ledger] 0x6e4b80 sub_6E4B80 -> OK (attempt 2)
+[ledger] 0x6e5900 sub_6E5900 -> OK (attempt 2)
+[ledger] 0x6e6870 sub_6E6870 -> OK (attempt 2)
+[ledger] 0x6e7ca0 sub_6E7CA0 -> OK (attempt 2)
+[ledger] 0x6e88b0 sub_6E88B0 -> OK (attempt 2)
+[ledger] 0x6f04a0 sub_6F04A0 -> OK (attempt 2)
+[ledger] 0x6f28d0 sub_6F28D0 -> OK (attempt 2)
+[ledger] 0x710910 sub_710910 -> OK (attempt 2)
+[ledger] 0x717e20 sub_717E20 -> OK (attempt 2)
+[ledger] 0x71a1f0 sub_71A1F0 -> OK (attempt 2)
+[ledger] 0x71b5d0 sub_71B5D0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 90.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p47\batch_report.json
