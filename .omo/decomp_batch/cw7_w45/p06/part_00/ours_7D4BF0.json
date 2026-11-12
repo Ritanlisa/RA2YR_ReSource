@@ -1,0 +1,15 @@
+{
+ "symbol": "?_strcpy@@YAXPADPBD@Z",
+ "sym_key": "Unnamed::_strcpy",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "68614c7d00e80000000059c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?JUMPOUT@@YAHHZZ",
+   "sym_key": "JUMPOUT"
+  }
+ ]
+}
