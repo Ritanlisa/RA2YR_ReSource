@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p165\part_00
+=== convert (20 addrs) ===
+[conv] 0x494a10 _BlitTranslucent50NonzeroAlpha_G::CallBlit0_7 -> _BlitTranslucent50NonzeroAlpha_G
+[conv] 0x494ad0 _BlitTranslucent50ZeroAlpha_G::CallBlit0_8 -> _BlitTranslucent50ZeroAlpha_G
+[conv] 0x494b00 _BlitTranslucent50ZeroAlpha_G::CallBlit0_9 -> _BlitTranslucent50ZeroAlpha_G
+[conv] 0x494b30 _BlitTranslucent50ZeroAlpha_G::CallBlit0_10 -> _BlitTranslucent50ZeroAlpha_G
+[conv] 0x494d20 _BlitTransXlatAlphaZRead_G::ddtor -> _BlitTransXlatAlphaZRead_G
+[conv] 0x494e90 _BlitTransZRemapXlatAlphaZRead_G::ddtor -> _BlitTransZRemapXlatAlphaZRead_G
+[conv] 0x494ec0 _BlitTransZRemapXlatAlphaZRead_G::BlitRect -> _BlitTransZRemapXlatAlphaZRead_G
+[conv] 0x494ef0 _BlitTransZRemapXlatAlphaZRead_G::GetSize -> _BlitTransZRemapXlatAlphaZRead_G
+[conv] 0x495060 _BlitTransLucent75AlphaZRead_G::BlitRect -> _BlitTransLucent75AlphaZRead_G
+[conv] 0x495090 _BlitTransLucent75AlphaZRead_G::GetSize -> _BlitTransLucent75AlphaZRead_G
+[conv] 0x4951c0 _BlitTransLucent50AlphaZRead_G::ddtor -> _BlitTransLucent50AlphaZRead_G
+[conv] 0x4951f0 _BlitTransLucent50AlphaZRead_G::BlitRect -> _BlitTransLucent50AlphaZRead_G
+[conv] 0x495220 _BlitTransLucent50AlphaZRead_G::GetSize -> _BlitTransLucent50AlphaZRead_G
+[conv] 0x495360 _BlitTransLucent25AlphaZRead_G::ddtor -> _BlitTransLucent25AlphaZRead_G
+[conv] 0x495390 _BlitTransLucent25AlphaZRead_G::BlitRect -> _BlitTransLucent25AlphaZRead_G
+[conv] 0x4953c0 _BlitTransLucent25AlphaZRead_G::GetSize -> _BlitTransLucent25AlphaZRead_G
+[conv] 0x495500 _BlitTransLucent75AlphaZReadWarp_G::ddtor -> _BlitTransLucent75AlphaZReadWarp_G
+[conv] 0x495530 _BlitTransLucent75AlphaZReadWarp_G::BlitRect -> _BlitTransLucent75AlphaZReadWarp_G
+[conv] 0x4956a0 _BlitTransLucent50AlphaZReadWarp_G::ddtor -> _BlitTransLucent50AlphaZReadWarp_G
+[conv] 0x4956d0 _BlitTransLucent50AlphaZReadWarp_G::BlitRect -> _BlitTransLucent50AlphaZReadWarp_G
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTranslucent50NonzeroAlpha_G rc=0
+[era] _BlitTranslucent50ZeroAlpha_G rc=0
+[era] _BlitTransXlatAlphaZRead_G rc=0
+[era] _BlitTransZRemapXlatAlphaZRead_G rc=0
+[era] _BlitTransLucent75AlphaZRead_G rc=0
+[era] _BlitTransLucent50AlphaZRead_G rc=0
+[era] _BlitTransLucent25AlphaZRead_G rc=0
+[era] _BlitTransLucent75AlphaZReadWarp_G rc=0
+[era] _BlitTransLucent50AlphaZReadWarp_G rc=0
+=== diffasm byte-compare ===
+[diff] 0x494a10   MATCH            _BlitTranslucent50NonzeroAlpha_G::CallBlit0_7
+[diff] 0x494ad0   MATCH            _BlitTranslucent50ZeroAlpha_G::CallBlit0_8
+[diff] 0x494b00   MATCH            _BlitTranslucent50ZeroAlpha_G::CallBlit0_9
+[diff] 0x494b30   MATCH            _BlitTranslucent50ZeroAlpha_G::CallBlit0_10
+[diff] 0x494d20   MATCH            _BlitTransXlatAlphaZRead_G::ddtor
+[diff] 0x494e90   MATCH            _BlitTransZRemapXlatAlphaZRead_G::ddtor
+[diff] 0x494ec0   MATCH            _BlitTransZRemapXlatAlphaZRead_G::BlitRect
+[diff] 0x494ef0   MATCH            _BlitTransZRemapXlatAlphaZRead_G::GetSize
+[diff] 0x495060   MATCH            _BlitTransLucent75AlphaZRead_G::BlitRect
+[diff] 0x495090   MATCH            _BlitTransLucent75AlphaZRead_G::GetSize
+[diff] 0x4951c0   MATCH            _BlitTransLucent50AlphaZRead_G::ddtor
+[diff] 0x4951f0   MATCH            _BlitTransLucent50AlphaZRead_G::BlitRect
+[diff] 0x495220   MATCH            _BlitTransLucent50AlphaZRead_G::GetSize
+[diff] 0x495360   MATCH            _BlitTransLucent25AlphaZRead_G::ddtor
+[diff] 0x495390   MATCH            _BlitTransLucent25AlphaZRead_G::BlitRect
+[diff] 0x4953c0   MATCH            _BlitTransLucent25AlphaZRead_G::GetSize
+[diff] 0x495500   MATCH            _BlitTransLucent75AlphaZReadWarp_G::ddtor
+[diff] 0x495530   MATCH            _BlitTransLucent75AlphaZReadWarp_G::BlitRect
+[diff] 0x4956a0   MATCH            _BlitTransLucent50AlphaZReadWarp_G::ddtor
+[diff] 0x4956d0   MATCH            _BlitTransLucent50AlphaZReadWarp_G::BlitRect
+[ledger] 0x494a10 _BlitTranslucent50NonzeroAlpha_G::CallBlit0_7 -> OK (attempt 1)
+[ledger] 0x494ad0 _BlitTranslucent50ZeroAlpha_G::CallBlit0_8 -> OK (attempt 1)
+[ledger] 0x494b00 _BlitTranslucent50ZeroAlpha_G::CallBlit0_9 -> OK (attempt 1)
+[ledger] 0x494b30 _BlitTranslucent50ZeroAlpha_G::CallBlit0_10 -> OK (attempt 1)
+[ledger] 0x494d20 _BlitTransXlatAlphaZRead_G::ddtor -> OK (attempt 1)
+[ledger] 0x494e90 _BlitTransZRemapXlatAlphaZRead_G::ddtor -> OK (attempt 1)
+[ledger] 0x494ec0 _BlitTransZRemapXlatAlphaZRead_G::BlitRect -> OK (attempt 1)
+[ledger] 0x494ef0 _BlitTransZRemapXlatAlphaZRead_G::GetSize -> OK (attempt 1)
+[ledger] 0x495060 _BlitTransLucent75AlphaZRead_G::BlitRect -> OK (attempt 1)
+[ledger] 0x495090 _BlitTransLucent75AlphaZRead_G::GetSize -> OK (attempt 1)
+[ledger] 0x4951c0 _BlitTransLucent50AlphaZRead_G::ddtor -> OK (attempt 1)
+[ledger] 0x4951f0 _BlitTransLucent50AlphaZRead_G::BlitRect -> OK (attempt 1)
+[ledger] 0x495220 _BlitTransLucent50AlphaZRead_G::GetSize -> OK (attempt 1)
+[ledger] 0x495360 _BlitTransLucent25AlphaZRead_G::ddtor -> OK (attempt 1)
+[ledger] 0x495390 _BlitTransLucent25AlphaZRead_G::BlitRect -> OK (attempt 1)
+[ledger] 0x4953c0 _BlitTransLucent25AlphaZRead_G::GetSize -> OK (attempt 1)
+[ledger] 0x495500 _BlitTransLucent75AlphaZReadWarp_G::ddtor -> OK (attempt 1)
+[ledger] 0x495530 _BlitTransLucent75AlphaZReadWarp_G::BlitRect -> OK (attempt 1)
+[ledger] 0x4956a0 _BlitTransLucent50AlphaZReadWarp_G::ddtor -> OK (attempt 1)
+[ledger] 0x4956d0 _BlitTransLucent50AlphaZReadWarp_G::BlitRect -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p165\batch_report.json
