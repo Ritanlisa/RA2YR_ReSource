@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x4cc800 sub_4CC800 -> _addr_4C
+[conv] 0x4cc820 sub_4CC820 -> _addr_4C
+[conv] 0x4cc840 sub_4CC840 -> _addr_4C
+[conv] 0x4d05d0 sub_4D05D0 -> _addr_4D
+[conv] 0x4d05f0 sub_4D05F0 -> _addr_4D
+[conv] 0x4d0610 sub_4D0610 -> _addr_4D
+[conv] 0x4d2fc0 sub_4D2FC0 -> _addr_4D
+[conv] 0x4d2fe0 sub_4D2FE0 -> _addr_4D
+[conv] 0x4d3000 sub_4D3000 -> _addr_4D
+[conv] 0x4e0f80 sub_4E0F80 -> _addr_4E
+[conv] 0x4e0fa0 sub_4E0FA0 -> _addr_4E
+[conv] 0x4e0fc0 sub_4E0FC0 -> _addr_4E
+[conv] 0x4e1b80 sub_4E1B80 -> _addr_4E
+[conv] 0x4e1ba0 sub_4E1BA0 -> _addr_4E
+[conv] 0x4e1bc0 sub_4E1BC0 -> _addr_4E
+[conv] 0x4e31a0 sub_4E31A0 -> _addr_4E
+[conv] 0x4e31c0 sub_4E31C0 -> _addr_4E
+[conv] 0x4e31e0 sub_4E31E0 -> _addr_4E
+[conv] 0x4e6340 sub_4E6340 -> _addr_4E
+[conv] 0x4e6360 sub_4E6360 -> _addr_4E
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4C                 rc=0
+[era] _addr_4D                 rc=0
+[era] _addr_4E                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4cc800   MATCH            sub_4CC800
+[diff] 0x4cc820   MATCH            sub_4CC820
+[diff] 0x4cc840   MATCH            sub_4CC840
+[diff] 0x4d05d0   MATCH            sub_4D05D0
+[diff] 0x4d05f0   MATCH            sub_4D05F0
+[diff] 0x4d0610   MATCH            sub_4D0610
+[diff] 0x4d2fc0   MATCH            sub_4D2FC0
+[diff] 0x4d2fe0   MATCH            sub_4D2FE0
+[diff] 0x4d3000   MATCH            sub_4D3000
+[diff] 0x4e0f80   MATCH            sub_4E0F80
+[diff] 0x4e0fa0   MATCH            sub_4E0FA0
+[diff] 0x4e0fc0   MATCH            sub_4E0FC0
+[diff] 0x4e1b80   MATCH            sub_4E1B80
+[diff] 0x4e1ba0   MATCH            sub_4E1BA0
+[diff] 0x4e1bc0   MATCH            sub_4E1BC0
+[diff] 0x4e31a0   MATCH            sub_4E31A0
+[diff] 0x4e31c0   MATCH            sub_4E31C0
+[diff] 0x4e31e0   MATCH            sub_4E31E0
+[diff] 0x4e6340   MATCH            sub_4E6340
+[diff] 0x4e6360   MATCH            sub_4E6360
+[ledger] 0x4cc800 sub_4CC800 -> OK (attempt 2)
+[ledger] 0x4cc820 sub_4CC820 -> OK (attempt 2)
+[ledger] 0x4cc840 sub_4CC840 -> OK (attempt 2)
+[ledger] 0x4d05d0 sub_4D05D0 -> OK (attempt 2)
+[ledger] 0x4d05f0 sub_4D05F0 -> OK (attempt 2)
+[ledger] 0x4d0610 sub_4D0610 -> OK (attempt 2)
+[ledger] 0x4d2fc0 sub_4D2FC0 -> OK (attempt 3)
+[ledger] 0x4d2fe0 sub_4D2FE0 -> OK (attempt 2)
+[ledger] 0x4d3000 sub_4D3000 -> OK (attempt 2)
+[ledger] 0x4e0f80 sub_4E0F80 -> OK (attempt 2)
+[ledger] 0x4e0fa0 sub_4E0FA0 -> OK (attempt 2)
+[ledger] 0x4e0fc0 sub_4E0FC0 -> OK (attempt 2)
+[ledger] 0x4e1b80 sub_4E1B80 -> OK (attempt 2)
+[ledger] 0x4e1ba0 sub_4E1BA0 -> OK (attempt 2)
+[ledger] 0x4e1bc0 sub_4E1BC0 -> OK (attempt 2)
+[ledger] 0x4e31a0 sub_4E31A0 -> OK (attempt 3)
+[ledger] 0x4e31c0 sub_4E31C0 -> OK (attempt 2)
+[ledger] 0x4e31e0 sub_4E31E0 -> OK (attempt 2)
+[ledger] 0x4e6340 sub_4E6340 -> OK (attempt 2)
+[ledger] 0x4e6360 sub_4E6360 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p10\batch_report.json
