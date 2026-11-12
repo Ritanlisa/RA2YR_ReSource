@@ -1,0 +1,37 @@
+{
+ "summary": {
+  "total": 1,
+  "verdicts": {
+   "MISMATCH": 1
+  },
+  "pathologies": {
+   "codegen_shape": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x4b9ed0",
+   "batch": "dup_resolve",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "FilePipe_30::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAUButtonFadeEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+======================================================================
+PART 1/1  (1 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_dup0\p00\part_00
+=== convert (1 addrs) ===
+[conv] 0x4b9ed0 _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex -> _DynamicVectorClass_PAUButtonFadeEffect
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAUButtonFadeEffect rc=0
+=== diffasm byte-compare ===
+[diff] 0x4b9ed0   MISMATCH         _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex
+[ledger] 0x4b9ed0 _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex -> NG (attempt 3)
+======================================================================
+{
+ "total": 1,
+ "verdicts": {
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_dup0\p00\batch_report.json

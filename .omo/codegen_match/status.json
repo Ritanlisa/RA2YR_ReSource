@@ -20592,15 +20592,15 @@
   "this_as_id": false
  },
  "0x4b9ed0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
-  "name": "0x4b9ed0",
-  "note": "decomp_batch r2: DUP_SKIP",
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "_DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FilePipe_30::FindItemIndex",
   "rule_violations": 0,
-  "status": "PENDING",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4b9f00": {
