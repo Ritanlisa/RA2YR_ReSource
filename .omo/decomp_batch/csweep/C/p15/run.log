@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c8a82 _BinkDoFrame_4 -> _addr_7C
+[conv] 0x7c8a88 _BinkWait_4 -> _addr_7C
+[conv] 0x7d1518 GetCurrentThread -> _addr_7D
+[conv] 0x7d5719 GetCurrentProcessId -> _addr_7D
+[conv] 0x7dce68 HeapAlloc -> _addr_7D
+[conv] 0x7dce6e GetTimeZoneInformation -> _addr_7D
+[conv] 0x7dce74 GetLocalTime -> _addr_7D
+[conv] 0x7dce7a RtlUnwind -> _addr_7D
+[conv] 0x7dce80 GetCommandLineA -> _addr_7D
+[conv] 0x7dce86 GetVersion -> _addr_7D
+[conv] 0x7dce8c FatalAppExitA -> _addr_7D
+[conv] 0x7dce92 HeapCreate -> _addr_7D
+[conv] 0x7dce98 VirtualFree -> _addr_7D
+[conv] 0x7dce9e VirtualAlloc -> _addr_7D
+[conv] 0x7dcea4 HeapReAlloc -> _addr_7D
+[conv] 0x7dceb0 HeapSize -> _addr_7D
+[conv] 0x7dceb6 LCMapStringA -> _addr_7D
+[conv] 0x7dcebc LCMapStringW -> _addr_7D
+[conv] 0x7dcec2 TlsSetValue -> _addr_7D
+[conv] 0x7dcec8 TlsAlloc -> _addr_7D
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c8a82   MISMATCH         _BinkDoFrame_4
+[diff] 0x7c8a88   MISMATCH         _BinkWait_4
+[diff] 0x7d1518   MISMATCH         GetCurrentThread
+[diff] 0x7d5719   MISMATCH         GetCurrentProcessId
+[diff] 0x7dce80   MISMATCH         GetCommandLineA
+[diff] 0x7dce86   MISMATCH         GetVersion
+[diff] 0x7dce8c   MISMATCH         FatalAppExitA
+[diff] 0x7dceb6   MISMATCH         LCMapStringA
+[diff] 0x7dcebc   MISMATCH         LCMapStringW
+[diff] 0x7dcec2   MISMATCH         TlsSetValue
+[diff] 0x7dcec8   MISMATCH         TlsAlloc
+[ledger] 0x7c8a82 _BinkDoFrame_4 -> NG (attempt 1)
+[ledger] 0x7c8a88 _BinkWait_4 -> NG (attempt 1)
+[ledger] 0x7d1518 GetCurrentThread -> NG (attempt 1)
+[ledger] 0x7d5719 GetCurrentProcessId -> NG (attempt 1)
+[ledger] 0x7dce68 HeapAlloc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dce6e GetTimeZoneInformation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dce74 GetLocalTime -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dce7a RtlUnwind -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dce80 GetCommandLineA -> NG (attempt 1)
+[ledger] 0x7dce86 GetVersion -> NG (attempt 1)
+[ledger] 0x7dce8c FatalAppExitA -> NG (attempt 1)
+[ledger] 0x7dce92 HeapCreate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dce98 VirtualFree -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dce9e VirtualAlloc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dcea4 HeapReAlloc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dceb0 HeapSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dceb6 LCMapStringA -> NG (attempt 1)
+[ledger] 0x7dcebc LCMapStringW -> NG (attempt 1)
+[ledger] 0x7dcec2 TlsSetValue -> NG (attempt 1)
+[ledger] 0x7dcec8 TlsAlloc -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "branch_order": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p15\batch_report.json
