@@ -1,0 +1,39 @@
+{
+ "symbol": "?Destroy@LoadProgressMgr@@QAEXXZ",
+ "sym_key": "LoadProgressMgr::Destroy",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000085c97413e800000000a10000000050e80000000083c404c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?dword_ABC9BC@@3IA",
+   "sym_key": "dword_ABC9BC"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?ReleaseBuffer@LoadProgressMgr@@QAEXXZ",
+   "sym_key": "LoadProgressMgr::ReleaseBuffer"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?dword_ABC9BC@@3IA",
+   "sym_key": "dword_ABC9BC"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?dword_ABC9BC@@3IA",
+   "sym_key": "dword_ABC9BC"
+  }
+ ]
+}

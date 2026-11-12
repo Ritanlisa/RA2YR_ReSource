@@ -1,0 +1,21 @@
+{
+ "symbol": "?Disconnect@CChatEventSink@@QAGHHHPBD@Z",
+ "sym_key": "CChatEventSink::Disconnect",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07c128b44241050e80000000083c40433c0c210008b4c2404e80000000033c0c21000",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?LeaveChannelWOL@@YAXPAX@Z",
+   "sym_key": "LeaveChannelWOL"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

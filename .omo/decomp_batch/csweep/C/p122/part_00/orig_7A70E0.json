@@ -1,0 +1,11 @@
+{
+ "addr": "0x7A70E0",
+ "name": "CComObject_CChatEventSink___ATL::Disconnect",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7A70E0",
+ "bytes_hex": "8b44240885c07d126884ad8400e8eef7c5ff83c40433c0c210008b4c2410e83de6fdff33c0c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
