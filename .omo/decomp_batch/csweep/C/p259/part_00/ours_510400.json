@@ -1,0 +1,21 @@
+{
+ "symbol": "?CopyConstructor@_VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass@@QAEPAID@Z",
+ "sym_key": "_VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::CopyConstructor",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4604c7060000000085c0741b8b4e0cf6c5ff741383c0fc50e80000000083c404c74604000000008b4e0c8a44240880e500c7460800000000a801894e0c740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

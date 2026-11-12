@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p259\part_00
+=== convert (20 addrs) ===
+[conv] 0x4cb580 ObjectClass::sub_4CB580 -> ObjectClass
+[conv] 0x4cb5e0 String::AllocAndCopy -> String
+[conv] 0x4cb640 ObjectClass::sub_4CB640 -> ObjectClass
+[conv] 0x4cb6a0 ObjectClass::sub_4CB6A0 -> ObjectClass
+[conv] 0x4cb700 NetMessage::Pack4 -> NetMessage
+[conv] 0x4e0d80 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::QueryInterface -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e0e20 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Constructor -> _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x510400 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::CopyConstructor -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x5104a0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Constructor_0 -> _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x6e0790 AnimTypeClass::sub_6E0790 -> AnimTypeClass
+[conv] 0x6e07f0 AnimTypeClass::sub_6E07F0 -> AnimTypeClass
+[conv] 0x6e0850 AnimTypeClass::sub_6E0850 -> AnimTypeClass
+[conv] 0x6e43e0 TActionClass::executeWeatherStormAction -> TActionClass
+[conv] 0x6e4460 TActionClass::executeDominatorAction -> TActionClass
+[conv] 0x6e44e0 TActionClass::executeRevealAction -> TActionClass
+[conv] 0x6f2680 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::QueryInterface -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x6f2720 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Constructor -> _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x763ff0 DynamicVector::checkSWTarget -> DynamicVector
+[conv] 0x764050 VectorClass::getSWChargeState -> VectorClass
+[conv] 0x7d3320 __ioterm_0 -> _addr_7D
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] String                   rc=0
+[era] NetMessage               rc=0
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] AnimTypeClass            rc=0
+[era] TActionClass             rc=0
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] DynamicVector            rc=2
+[era] VectorClass              rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4cb580   MISMATCH         ObjectClass::sub_4CB580
+[diff] 0x4cb640   MISMATCH         ObjectClass::sub_4CB640
+[diff] 0x4cb6a0   MISMATCH         ObjectClass::sub_4CB6A0
+[diff] 0x4cb5e0   MISMATCH         String::AllocAndCopy
+[diff] 0x4cb700   MISMATCH         NetMessage::Pack4
+[diff] 0x4e0d80   MISMATCH         _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::QueryInterface
+[diff] 0x4e0e20   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Constructor
+[diff] 0x510400   MISMATCH         _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::CopyConstructor
+[diff] 0x5104a0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Constructor_0
+[diff] 0x6e0790   MISMATCH         AnimTypeClass::sub_6E0790
+[diff] 0x6e07f0   MISMATCH         AnimTypeClass::sub_6E07F0
+[diff] 0x6e0850   MISMATCH         AnimTypeClass::sub_6E0850
+[diff] 0x6e43e0   MISMATCH         TActionClass::executeWeatherStormAction
+[diff] 0x6e4460   MISMATCH         TActionClass::executeDominatorAction
+[diff] 0x6e44e0   MISMATCH         TActionClass::executeRevealAction
+[diff] 0x6f2680   MISMATCH         _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::QueryInterface
+[diff] 0x6f2720   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Constructor
+[ledger] 0x4cb580 ObjectClass::sub_4CB580 -> NG (attempt 1)
+[ledger] 0x4cb5e0 String::AllocAndCopy -> NG (attempt 1)
+[ledger] 0x4cb640 ObjectClass::sub_4CB640 -> NG (attempt 1)
+[ledger] 0x4cb6a0 ObjectClass::sub_4CB6A0 -> NG (attempt 1)
+[ledger] 0x4cb700 NetMessage::Pack4 -> NG (attempt 1)
+[ledger] 0x4e0d80 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4e0e20 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Constructor -> NG (attempt 1)
+[ledger] 0x510400 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::CopyConstructor -> NG (attempt 1)
+[ledger] 0x5104a0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Constructor_0 -> NG (attempt 1)
+[ledger] 0x6e0790 AnimTypeClass::sub_6E0790 -> NG (attempt 1)
+[ledger] 0x6e07f0 AnimTypeClass::sub_6E07F0 -> NG (attempt 1)
+[ledger] 0x6e0850 AnimTypeClass::sub_6E0850 -> NG (attempt 1)
+[ledger] 0x6e43e0 TActionClass::executeWeatherStormAction -> NG (attempt 1)
+[ledger] 0x6e4460 TActionClass::executeDominatorAction -> NG (attempt 1)
+[ledger] 0x6e44e0 TActionClass::executeRevealAction -> NG (attempt 1)
+[ledger] 0x6f2680 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x6f2720 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Constructor -> NG (attempt 1)
+[ledger] 0x763ff0 DynamicVector::checkSWTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x764050 VectorClass::getSWChargeState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d3320 __ioterm_0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "frame_sched": 2,
+  "const_fold": 9
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p259\batch_report.json

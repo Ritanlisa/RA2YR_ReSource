@@ -1,0 +1,33 @@
+{
+ "symbol": "?executeDominatorAction@TActionClass@@QAEDPAHHHH@Z",
+ "sym_key": "TActionClass::executeDominatorAction",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "8b4424045685c08bf0750632c05ec210008b41448d4c240850518b0d00000000e8000000008b008b1500000000894424083b02750632c05ec21000508bcee800000000b0015ec21000",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0E680@@3IA",
+   "sym_key": "DataGlobal_B0E680"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?executeHuntAction@TActionClass@@QAEHH@Z",
+   "sym_key": "TActionClass::executeHuntAction"
+  }
+ ]
+}

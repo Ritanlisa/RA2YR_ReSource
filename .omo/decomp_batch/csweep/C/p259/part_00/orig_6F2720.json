@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F2720",
+ "name": "TeamTypeClass_28::Constructor",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F2720",
+ "bytes_hex": "568bf18b4604c70640487f0085c074228a4e0d84c9741b85c074108b48fc83c0fc4950e8f5630d0083c404c74604000000008a442408c6460d00a801c7460800000000740956e8d2630d0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6E0790@AnimTypeClass@@QAEDHHHH@Z",
+ "sym_key": "AnimTypeClass::sub_6E0790",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "8b8990000000a14002000083ec0c8d542400568bb0a80f0000518b0d0000000052e8000000008b48088b50048b006a006a005152508bd6b932000000e800000000b0015e83c40cc21000",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?GetWorldCoords@Cell@@QAEPAIPAXH@Z",
+   "sym_key": "Cell::GetWorldCoords"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?CreateSmokeEffectAt@@YIDHHHHHDH@Z",
+   "sym_key": "CreateSmokeEffectAt"
+  }
+ ]
+}

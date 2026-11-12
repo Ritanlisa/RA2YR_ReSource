@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E44E0",
+ "name": "TActionClass::executeRevealAction",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E44E0",
+ "bytes_hex": "568b74240885f6750632c05ec210008b41448d4c240850518b0d30b2a800e8bd77faff8b00663b0580e6b000894424087514668b54240a663b1582e6b000750632c05ec21000508bcee8b29ae2ffb0015ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

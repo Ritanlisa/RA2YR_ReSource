@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4CB6A0@ObjectClass@@QAEPADPADH@Z",
+ "sym_key": "ObjectClass::sub_4CB6A0",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "518b442408535556578bd96a045053e8000000006a02c7430406000000e8000000008b6b0489442420c1ed108bd5894308c1ea028bf88d74242c8d0c950000000083c410894c24188bc1c1e902f3a58bc883e103c1e204f3a48d74141c8bd08b4424108bcd83e1038d3c028bd1c1e902f3a58bca8bc383e103f3a45f5ec7430c000000005d5b59c20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
