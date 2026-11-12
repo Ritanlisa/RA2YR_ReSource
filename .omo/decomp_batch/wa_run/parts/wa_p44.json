@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x5d3810",
+  "family": "D_CONST_FP",
+  "name": "MPBattleClass::validateHouse"
+ },
+ {
+  "addr": "0x5d58e0",
+  "family": "D_CONST_FP",
+  "name": "MPBattleClass::allyTeams"
+ },
+ {
+  "addr": "0x5d8a90",
+  "family": "D_CONST_FP",
+  "name": "sub_5D8A90"
+ },
+ {
+  "addr": "0x5d8db0",
+  "family": "D_CONST_FP",
+  "name": "sub_5D8DB0"
+ },
+ {
+  "addr": "0x5da500",
+  "family": "D_CONST_FP",
+  "name": "sub_5DA500"
+ },
+ {
+  "addr": "0x5dad20",
+  "family": "D_CONST_FP",
+  "name": "sub_5DAD20"
+ },
+ {
+  "addr": "0x5e2460",
+  "family": "D_CONST_FP",
+  "name": "sub_5E2460"
+ },
+ {
+  "addr": "0x5ef320",
+  "family": "D_CONST_FP",
+  "name": "sub_5EF320"
+ },
+ {
+  "addr": "0x5f1400",
+  "family": "D_CONST_FP",
+  "name": "sub_5F1400"
+ },
+ {
+  "addr": "0x5f3720",
+  "family": "D_CONST_FP",
+  "name": "sub_5F3720"
+ },
+ {
+  "addr": "0x5f6e10",
+  "family": "D_CONST_FP",
+  "name": "sub_5F6E10"
+ },
+ {
+  "addr": "0x5fa100",
+  "family": "D_CONST_FP",
+  "name": "sub_5FA100"
+ },
+ {
+  "addr": "0x5fc1a0",
+  "family": "D_CONST_FP",
+  "name": "sub_5FC1A0"
+ },
+ {
+  "addr": "0x5fe090",
+  "family": "D_CONST_FP",
+  "name": "sub_5FE090"
+ },
+ {
+  "addr": "0x5feff0",
+  "family": "D_CONST_FP",
+  "name": "sub_5FEFF0"
+ },
+ {
+  "addr": "0x600370",
+  "family": "D_CONST_FP",
+  "name": "sub_600370"
+ },
+ {
+  "addr": "0x621150",
+  "family": "D_CONST_FP",
+  "name": "sub_621150"
+ },
+ {
+  "addr": "0x628fb0",
+  "family": "D_CONST_FP",
+  "name": "sub_628FB0"
+ },
+ {
+  "addr": "0x62b400",
+  "family": "D_CONST_FP",
+  "name": "sub_62B400"
+ },
+ {
+  "addr": "0x62da70",
+  "family": "D_CONST_FP",
+  "name": "sub_62DA70"
+ }
+]

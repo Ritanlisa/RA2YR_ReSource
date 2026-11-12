@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p44\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d3810 MPBattleClass::validateHouse -> MPBattleClass
+[conv] 0x5d58e0 MPBattleClass::allyTeams -> MPBattleClass
+[conv] 0x5d8a90 sub_5D8A90 -> _addr_5D
+[conv] 0x5d8db0 sub_5D8DB0 -> _addr_5D
+[conv] 0x5da500 sub_5DA500 -> _addr_5D
+[conv] 0x5dad20 sub_5DAD20 -> _addr_5D
+[conv] 0x5e2460 sub_5E2460 -> _addr_5E
+[conv] 0x5ef320 sub_5EF320 -> _addr_5E
+[conv] 0x5f1400 sub_5F1400 -> _addr_5F
+[conv] 0x5f3720 sub_5F3720 -> _addr_5F
+[conv] 0x5f6e10 sub_5F6E10 -> _addr_5F
+[conv] 0x5fa100 sub_5FA100 -> _addr_5F
+[conv] 0x5fc1a0 sub_5FC1A0 -> _addr_5F
+[conv] 0x5fe090 sub_5FE090 -> _addr_5F
+[conv] 0x5feff0 sub_5FEFF0 -> _addr_5F
+[conv] 0x600370 sub_600370 -> _addr_60
+[conv] 0x621150 sub_621150 -> _addr_62
+[conv] 0x628fb0 sub_628FB0 -> _addr_62
+[conv] 0x62b400 sub_62B400 -> _addr_62
+[conv] 0x62da70 sub_62DA70 -> _addr_62
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPBattleClass            rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_5E                 rc=0
+[era] _addr_5F                 rc=0
+[era] _addr_60                 rc=0
+[era] _addr_62                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d3810   MATCH            MPBattleClass::validateHouse
+[diff] 0x5d58e0   MATCH            MPBattleClass::allyTeams
+[diff] 0x5d8a90   MATCH            sub_5D8A90
+[diff] 0x5d8db0   MATCH            sub_5D8DB0
+[diff] 0x5da500   MATCH            sub_5DA500
+[diff] 0x5dad20   MATCH            sub_5DAD20
+[diff] 0x5e2460   MATCH            sub_5E2460
+[diff] 0x5ef320   MATCH            sub_5EF320
+[diff] 0x5f1400   MATCH            sub_5F1400
+[diff] 0x5f3720   MATCH            sub_5F3720
+[diff] 0x5f6e10   MATCH            sub_5F6E10
+[diff] 0x5fa100   MATCH            sub_5FA100
+[diff] 0x5fc1a0   MATCH            sub_5FC1A0
+[diff] 0x5fe090   MATCH            sub_5FE090
+[diff] 0x5feff0   MATCH            sub_5FEFF0
+[diff] 0x600370   MATCH            sub_600370
+[diff] 0x621150   MISMATCH         sub_621150
+[diff] 0x628fb0   MATCH            sub_628FB0
+[diff] 0x62b400   MATCH            sub_62B400
+[diff] 0x62da70   MATCH            sub_62DA70
+[ledger] 0x5d3810 MPBattleClass::validateHouse -> OK (attempt 2)
+[ledger] 0x5d58e0 MPBattleClass::allyTeams -> OK (attempt 2)
+[ledger] 0x5d8a90 sub_5D8A90 -> OK (attempt 2)
+[ledger] 0x5d8db0 sub_5D8DB0 -> OK (attempt 2)
+[ledger] 0x5da500 sub_5DA500 -> OK (attempt 2)
+[ledger] 0x5dad20 sub_5DAD20 -> OK (attempt 2)
+[ledger] 0x5e2460 sub_5E2460 -> OK (attempt 3)
+[ledger] 0x5ef320 sub_5EF320 -> OK (attempt 2)
+[ledger] 0x5f1400 sub_5F1400 -> OK (attempt 2)
+[ledger] 0x5f3720 sub_5F3720 -> OK (attempt 2)
+[ledger] 0x5f6e10 sub_5F6E10 -> OK (attempt 2)
+[ledger] 0x5fa100 sub_5FA100 -> OK (attempt 3)
+[ledger] 0x5fc1a0 sub_5FC1A0 -> OK (attempt 2)
+[ledger] 0x5fe090 sub_5FE090 -> OK (attempt 2)
+[ledger] 0x5feff0 sub_5FEFF0 -> OK (attempt 2)
+[ledger] 0x600370 sub_600370 -> OK (attempt 2)
+[ledger] 0x621150 sub_621150 -> NG (attempt 2)
+[ledger] 0x628fb0 sub_628FB0 -> OK (attempt 2)
+[ledger] 0x62b400 sub_62B400 -> OK (attempt 2)
+[ledger] 0x62da70 sub_62DA70 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 95.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p44\batch_report.json
