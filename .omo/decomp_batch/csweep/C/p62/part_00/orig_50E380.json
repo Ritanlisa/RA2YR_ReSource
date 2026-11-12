@@ -1,0 +1,11 @@
+{
+ "addr": "0x50E380",
+ "name": "AbstractClass::getMovementSpeed",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50E380",
+ "bytes_hex": "568bf1e8b88dfefff644240801740956e8a8a72b0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?parseAnimations@WarheadTypeClass@@QAEPADD@Z",
+ "sym_key": "WarheadTypeClass::parseAnimations",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "5153568b7424088bd98bcee800000000f6c301740956e80000000083c4048bc65e5b59c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?parseVerses@WarheadTypeClass@@QAEPADXZ",
+   "sym_key": "WarheadTypeClass::parseVerses"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E0170",
+ "name": "FootClass::Destru_vt08",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E0170",
+ "bytes_hex": "568bf1e81834fffff644240801740956e8b8892e0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

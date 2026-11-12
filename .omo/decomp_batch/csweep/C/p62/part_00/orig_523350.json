@@ -1,0 +1,11 @@
+{
+ "addr": "0x523350",
+ "name": "InfantryClass::ScalarDtor",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x523350",
+ "bytes_hex": "568bf1e8384afffff644240801740956e8d8572a0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

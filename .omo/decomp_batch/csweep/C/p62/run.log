@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p62\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a59a0 Dial8Class::QueryInterface -> Dial8Class
+[conv] 0x4aebb0 TacticalClass_DisplayClass::updateRenderState -> TacticalClass_DisplayClass
+[conv] 0x4aebf0 DisplayClass::Read -> DisplayClass
+[conv] 0x4aec10 Straw::QueryInterface -> Straw
+[conv] 0x4aec80 Pipe::QueryInterface -> Pipe
+[conv] 0x4b57d0 EditClass::QueryInterface -> EditClass
+[conv] 0x4b57f0 ShapeButtonClass::QueryInterface -> ShapeButtonClass
+[conv] 0x4b5810 ToggleClass::QueryInterface -> ToggleClass
+[conv] 0x4e0170 FootClass::Destru_vt08 -> FootClass
+[conv] 0x4e1ad0 LinkClass::Destru_vt00 -> LinkClass
+[conv] 0x4e30d0 GaugeClass::QueryInterface -> GaugeClass
+[conv] 0x4e30f0 TriColorGaugeClass::ScalarDtor -> TriColorGaugeClass
+[conv] 0x4f2810 HouseClass::vt_placeholder_03 -> HouseClass
+[conv] 0x4f2830 HouseClass::vt_placeholder_04 -> HouseClass
+[conv] 0x50e380 AbstractClass::getMovementSpeed -> AbstractClass
+[conv] 0x5172f0 LocomotionClass::ProcessMove -> LocomotionClass
+[conv] 0x523350 InfantryClass::ScalarDtor -> InfantryClass
+[conv] 0x52ae00 WarheadTypeClass::parseAnimations -> WarheadTypeClass
+[conv] 0x52aee0 Base64Pipe::DestroyPipe -> Base64Pipe
+[conv] 0x5430e0 IPXManagerClass::QueryInterface -> IPXManagerClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Dial8Class               rc=0
+[era] TacticalClass_DisplayClass rc=0
+[era] DisplayClass             rc=0
+[era] Straw                    rc=0
+[era] Pipe                     rc=0
+[era] EditClass                rc=0
+[era] ShapeButtonClass         rc=0
+[era] ToggleClass              rc=0
+[era] FootClass                rc=0
+[era] LinkClass                rc=0
+[era] GaugeClass               rc=0
+[era] TriColorGaugeClass       rc=0
+[era] HouseClass               rc=0
+[era] AbstractClass            rc=0
+[era] LocomotionClass          rc=2
+[era] InfantryClass            rc=0
+[era] WarheadTypeClass         rc=0
+[era] Base64Pipe               rc=0
+[era] IPXManagerClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a59a0   MISMATCH         Dial8Class::QueryInterface
+[diff] 0x4aebb0   MISMATCH         TacticalClass_DisplayClass::updateRenderState
+[diff] 0x4aebf0   MISMATCH         DisplayClass::Read
+[diff] 0x4aec10   MISMATCH         Straw::QueryInterface
+[diff] 0x4aec80   MISMATCH         Pipe::QueryInterface
+[diff] 0x4b57d0   MISMATCH         EditClass::QueryInterface
+[diff] 0x4b57f0   MISMATCH         ShapeButtonClass::QueryInterface
+[diff] 0x4b5810   MISMATCH         ToggleClass::QueryInterface
+[diff] 0x4e0170   MISMATCH         FootClass::Destru_vt08
+[diff] 0x4e1ad0   MISMATCH         LinkClass::Destru_vt00
+[diff] 0x4e30d0   MISMATCH         GaugeClass::QueryInterface
+[diff] 0x4e30f0   MISMATCH         TriColorGaugeClass::ScalarDtor
+[diff] 0x4f2810   MISMATCH         HouseClass::vt_placeholder_03
+[diff] 0x4f2830   MISMATCH         HouseClass::vt_placeholder_04
+[diff] 0x50e380   MISMATCH         AbstractClass::getMovementSpeed
+[diff] 0x523350   MISMATCH         InfantryClass::ScalarDtor
+[diff] 0x52ae00   MISMATCH         WarheadTypeClass::parseAnimations
+[diff] 0x52aee0   MISMATCH         Base64Pipe::DestroyPipe
+[diff] 0x5430e0   MISMATCH         IPXManagerClass::QueryInterface
+[ledger] 0x4a59a0 Dial8Class::QueryInterface -> NG (attempt 1)
+[ledger] 0x4aebb0 TacticalClass_DisplayClass::updateRenderState -> NG (attempt 1)
+[ledger] 0x4aebf0 DisplayClass::Read -> NG (attempt 1)
+[ledger] 0x4aec10 Straw::QueryInterface -> NG (attempt 1)
+[ledger] 0x4aec80 Pipe::QueryInterface -> NG (attempt 1)
+[ledger] 0x4b57d0 EditClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4b57f0 ShapeButtonClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4b5810 ToggleClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4e0170 FootClass::Destru_vt08 -> NG (attempt 1)
+[ledger] 0x4e1ad0 LinkClass::Destru_vt00 -> NG (attempt 1)
+[ledger] 0x4e30d0 GaugeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4e30f0 TriColorGaugeClass::ScalarDtor -> NG (attempt 1)
+[ledger] 0x4f2810 HouseClass::vt_placeholder_03 -> NG (attempt 1)
+[ledger] 0x4f2830 HouseClass::vt_placeholder_04 -> NG (attempt 1)
+[ledger] 0x50e380 AbstractClass::getMovementSpeed -> NG (attempt 1)
+[ledger] 0x5172f0 LocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x523350 InfantryClass::ScalarDtor -> NG (attempt 1)
+[ledger] 0x52ae00 WarheadTypeClass::parseAnimations -> NG (attempt 1)
+[ledger] 0x52aee0 Base64Pipe::DestroyPipe -> NG (attempt 1)
+[ledger] 0x5430e0 IPXManagerClass::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 18,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p62\batch_report.json

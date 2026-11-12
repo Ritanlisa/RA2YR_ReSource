@@ -1,0 +1,11 @@
+{
+ "addr": "0x52AE00",
+ "name": "WarheadTypeClass::parseAnimations",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52AE00",
+ "bytes_hex": "568bf1e878fdfffff644240801740956e828dd290083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

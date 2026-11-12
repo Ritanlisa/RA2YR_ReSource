@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E30F0",
+ "name": "COMObject::ScalarDtor",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E30F0",
+ "bytes_hex": "568bf1e898e2fffff644240801740956e8385a2e0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

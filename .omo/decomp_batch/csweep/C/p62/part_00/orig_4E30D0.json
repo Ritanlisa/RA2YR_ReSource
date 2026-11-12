@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E30D0",
+ "name": "GaugeClass::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E30D0",
+ "bytes_hex": "568bf1e8b8e2fffff644240801740956e8585a2e0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

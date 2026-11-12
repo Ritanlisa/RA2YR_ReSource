@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AEC80",
+ "name": "Pipe::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AEC80",
+ "bytes_hex": "568bf1e8f82f1800f644240801740956e8a89e310083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

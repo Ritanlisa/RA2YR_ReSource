@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B57F0",
+ "name": "ShapeButtonClass_Destru::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B57F0",
+ "bytes_hex": "568bf1e8c8851e00f644240801740956e83833310083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

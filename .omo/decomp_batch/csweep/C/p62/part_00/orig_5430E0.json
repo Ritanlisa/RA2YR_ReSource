@@ -1,0 +1,11 @@
+{
+ "addr": "0x5430E0",
+ "name": "IPXManagerClass::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5430E0",
+ "bytes_hex": "568bf1e808d9fffff644240801740956e8485a280083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
