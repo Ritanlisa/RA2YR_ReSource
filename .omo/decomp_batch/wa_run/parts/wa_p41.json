@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x5234c0",
+  "family": "D_CONST_FP",
+  "name": "sub_5234C0"
+ },
+ {
+  "addr": "0x5285b0",
+  "family": "D_CONST_FP",
+  "name": "INIClass::SetDouble"
+ },
+ {
+  "addr": "0x52b7f0",
+  "family": "D_CONST_FP",
+  "name": "sub_52B7F0"
+ },
+ {
+  "addr": "0x539140",
+  "family": "D_CONST_FP",
+  "name": "sub_539140"
+ },
+ {
+  "addr": "0x539380",
+  "family": "D_CONST_FP",
+  "name": "sub_539380"
+ },
+ {
+  "addr": "0x53c850",
+  "family": "D_CONST_FP",
+  "name": "sub_53C850"
+ },
+ {
+  "addr": "0x53f270",
+  "family": "D_CONST_FP",
+  "name": "sub_53F270"
+ },
+ {
+  "addr": "0x53f8d0",
+  "family": "D_CONST_FP",
+  "name": "sub_53F8D0"
+ },
+ {
+  "addr": "0x540710",
+  "family": "D_CONST_FP",
+  "name": "sub_540710"
+ },
+ {
+  "addr": "0x543150",
+  "family": "D_CONST_FP",
+  "name": "sub_543150"
+ },
+ {
+  "addr": "0x543c90",
+  "family": "D_CONST_FP",
+  "name": "sub_543C90"
+ },
+ {
+  "addr": "0x54aa60",
+  "family": "D_CONST_FP",
+  "name": "sub_54AA60"
+ },
+ {
+  "addr": "0x54e080",
+  "family": "D_CONST_FP",
+  "name": "sub_54E080"
+ },
+ {
+  "addr": "0x54e0a0",
+  "family": "D_CONST_FP",
+  "name": "sub_54E0A0"
+ },
+ {
+  "addr": "0x54e0c0",
+  "family": "D_CONST_FP",
+  "name": "sub_54E0C0"
+ },
+ {
+  "addr": "0x54e0e0",
+  "family": "D_CONST_FP",
+  "name": "sub_54E0E0"
+ },
+ {
+  "addr": "0x54ec90",
+  "family": "D_CONST_FP",
+  "name": "sub_54EC90"
+ },
+ {
+  "addr": "0x54ecb0",
+  "family": "D_CONST_FP",
+  "name": "sub_54ECB0"
+ },
+ {
+  "addr": "0x54ecd0",
+  "family": "D_CONST_FP",
+  "name": "sub_54ECD0"
+ },
+ {
+  "addr": "0x54ecf0",
+  "family": "D_CONST_FP",
+  "name": "sub_54ECF0"
+ }
+]
