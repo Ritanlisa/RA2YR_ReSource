@@ -91490,6 +91490,28 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7c86bc": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13bc]",
+  "name": "GetWindowRect",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetWindowRect",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86c2": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13c0]",
+  "name": "GetCursorPos",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetCursorPos",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c86c8": {
   "attempts": 7,
   "clean": false,
@@ -91501,6 +91523,116 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c86ce": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13e0]",
+  "name": "GetAsyncKeyState",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetAsyncKeyState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86d4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13e4]",
+  "name": "ToAscii",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ToAscii",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86da": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13e8]",
+  "name": "MapVirtualKeyA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MapVirtualKeyA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13ec]",
+  "name": "GetSystemMetrics",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetSystemMetrics",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86e6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1398]",
+  "name": "MoveWindow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MoveWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86ec": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1400]",
+  "name": "AdjustWindowRectEx",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AdjustWindowRectEx",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86f2": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1404]",
+  "name": "GetMenu",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetMenu",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86f8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1408]",
+  "name": "AdjustWindowRect",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AdjustWindowRect",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c86fe": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e140c]",
+  "name": "GetSysColor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetSysColor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8704": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1508]",
+  "name": "CreateDialogParamA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateDialogParamA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c870a": {
   "attempts": 3,
   "clean": false,
@@ -91508,6 +91640,94 @@
   "name": "EndPaint",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "EndPaint",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8710": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "BeginPaint",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BeginPaint",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8716": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14fc]",
+  "name": "CharToOemBuffA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CharToOemBuffA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c871c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "TranslateAcceleratorA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TranslateAcceleratorA",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8722": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14f4]",
+  "name": "IsDialogMessageA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IsDialogMessageA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8728": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e150c]",
+  "name": "GetWindowTextA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetWindowTextA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c872e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14e8]",
+  "name": "IsWindowEnabled",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IsWindowEnabled",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8734": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14f0]",
+  "name": "GetNextDlgTabItem",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetNextDlgTabItem",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c873a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14ec]",
+  "name": "GetParent",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetParent",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

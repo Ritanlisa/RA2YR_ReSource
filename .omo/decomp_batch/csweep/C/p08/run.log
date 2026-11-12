@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c86bc GetWindowRect -> _addr_7C
+[conv] 0x7c86c2 GetCursorPos -> _addr_7C
+[conv] 0x7c86ce GetAsyncKeyState -> _addr_7C
+[conv] 0x7c86d4 ToAscii -> _addr_7C
+[conv] 0x7c86da MapVirtualKeyA -> _addr_7C
+[conv] 0x7c86e0 GetSystemMetrics -> _addr_7C
+[conv] 0x7c86e6 MoveWindow -> _addr_7C
+[conv] 0x7c86ec AdjustWindowRectEx -> _addr_7C
+[conv] 0x7c86f2 GetMenu -> _addr_7C
+[conv] 0x7c86f8 AdjustWindowRect -> _addr_7C
+[conv] 0x7c86fe GetSysColor -> _addr_7C
+[conv] 0x7c8704 CreateDialogParamA -> _addr_7C
+[conv] 0x7c8710 BeginPaint -> _addr_7C
+[conv] 0x7c8716 CharToOemBuffA -> _addr_7C
+[conv] 0x7c871c TranslateAcceleratorA -> _addr_7C
+[conv] 0x7c8722 IsDialogMessageA -> _addr_7C
+[conv] 0x7c8728 GetWindowTextA -> _addr_7C
+[conv] 0x7c872e IsWindowEnabled -> _addr_7C
+[conv] 0x7c8734 GetNextDlgTabItem -> _addr_7C
+[conv] 0x7c873a GetParent -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c86bc   MISMATCH         GetWindowRect
+[diff] 0x7c86c2   MISMATCH         GetCursorPos
+[diff] 0x7c86ce   MISMATCH         GetAsyncKeyState
+[diff] 0x7c86d4   MISMATCH         ToAscii
+[diff] 0x7c86da   MISMATCH         MapVirtualKeyA
+[diff] 0x7c86e0   MISMATCH         GetSystemMetrics
+[diff] 0x7c86e6   MISMATCH         MoveWindow
+[diff] 0x7c86ec   MISMATCH         AdjustWindowRectEx
+[diff] 0x7c86f2   MISMATCH         GetMenu
+[diff] 0x7c86f8   MISMATCH         AdjustWindowRect
+[diff] 0x7c86fe   MISMATCH         GetSysColor
+[diff] 0x7c8704   MISMATCH         CreateDialogParamA
+[diff] 0x7c8716   MISMATCH         CharToOemBuffA
+[diff] 0x7c8722   MISMATCH         IsDialogMessageA
+[diff] 0x7c8728   MISMATCH         GetWindowTextA
+[diff] 0x7c872e   MISMATCH         IsWindowEnabled
+[diff] 0x7c8734   MISMATCH         GetNextDlgTabItem
+[diff] 0x7c873a   MISMATCH         GetParent
+[ledger] 0x7c86bc GetWindowRect -> NG (attempt 1)
+[ledger] 0x7c86c2 GetCursorPos -> NG (attempt 1)
+[ledger] 0x7c86ce GetAsyncKeyState -> NG (attempt 1)
+[ledger] 0x7c86d4 ToAscii -> NG (attempt 1)
+[ledger] 0x7c86da MapVirtualKeyA -> NG (attempt 1)
+[ledger] 0x7c86e0 GetSystemMetrics -> NG (attempt 1)
+[ledger] 0x7c86e6 MoveWindow -> NG (attempt 1)
+[ledger] 0x7c86ec AdjustWindowRectEx -> NG (attempt 1)
+[ledger] 0x7c86f2 GetMenu -> NG (attempt 1)
+[ledger] 0x7c86f8 AdjustWindowRect -> NG (attempt 1)
+[ledger] 0x7c86fe GetSysColor -> NG (attempt 1)
+[ledger] 0x7c8704 CreateDialogParamA -> NG (attempt 1)
+[ledger] 0x7c8710 BeginPaint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8716 CharToOemBuffA -> NG (attempt 1)
+[ledger] 0x7c871c TranslateAcceleratorA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8722 IsDialogMessageA -> NG (attempt 1)
+[ledger] 0x7c8728 GetWindowTextA -> NG (attempt 1)
+[ledger] 0x7c872e IsWindowEnabled -> NG (attempt 1)
+[ledger] 0x7c8734 GetNextDlgTabItem -> NG (attempt 1)
+[ledger] 0x7c873a GetParent -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "codegen_shape": 18
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p08\batch_report.json

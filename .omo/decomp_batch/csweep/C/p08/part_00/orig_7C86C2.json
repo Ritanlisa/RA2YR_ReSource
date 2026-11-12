@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C86C2",
+ "name": "GetCursorPos",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C86C2",
+ "bytes_hex": "ff25c0137e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
