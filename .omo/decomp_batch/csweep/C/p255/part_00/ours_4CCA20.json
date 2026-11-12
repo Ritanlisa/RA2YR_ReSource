@@ -1,0 +1,15 @@
+{
+ "symbol": "?StubReturnZero_7@JumpjetLocomotionClass@@QAGHPAI@Z",
+ "sym_key": "JumpjetLocomotionClass::StubReturnZero_7",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568b742410575653e8000000008bf885ff753b85f6742f8b0656ff502c83f80275248b8ec40600008a810d0e000084c074148b53145f80e2015e83ca0133c08953145bc208008b431424008943148bc75f5e5bc20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?StreamClass__ResetPosition@@YGHPAXH@Z",
+   "sym_key": "StreamClass__ResetPosition"
+  }
+ ]
+}

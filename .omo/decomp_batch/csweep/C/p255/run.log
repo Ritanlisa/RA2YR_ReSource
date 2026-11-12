@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p255\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ad7d0 DynamicVector::Add_Alt3 -> DynamicVector
+[conv] 0x5eee40 SkirmishVector::PushBack -> SkirmishVector
+[conv] 0x630250 DynamicVectorClass::PushBackCopy -> DynamicVectorClass
+[conv] 0x63e540 DynamicVectorClass::Append -> DynamicVectorClass
+[conv] 0x63eb80 ScriptActionVector::PushBack -> ScriptActionVector
+[conv] 0x67ad80 DynamicVector::Add2 -> DynamicVector
+[conv] 0x67b100 SmudgeTypeVector::Add -> SmudgeTypeVector
+[conv] 0x67b480 RulesClass::readAI -> RulesClass
+[conv] 0x68c260 ObjectClass::DynamicVector_PushBack -> ObjectClass
+[conv] 0x691160 DynamicVectorClass::PushBack2 -> DynamicVectorClass
+[conv] 0x6c6400 DynamicVector::Add -> DynamicVector
+[conv] 0x717cd0 TypeList::PushBack -> TypeList
+[conv] 0x734390 ObjectClass::SelectFactionThemeMusic_Helper_734390 -> ObjectClass
+[conv] 0x763330 Voxel::freeSectionMemory -> Voxel
+[conv] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> FactoryClass
+[conv] 0x5d0240 ObjectClass::sub_5D0240 -> ObjectClass
+[conv] 0x632b20 ObjectClass::sub_632B20 -> ObjectClass
+[conv] 0x69cb00 _VectorClass_VWstring::ddtor -> _VectorClass_VWstring
+[conv] 0x7514d0 VocClass::FindIndex -> VocClass
+[conv] 0x4cca20 JumpjetLocomotionClass::StubReturnZero_7 -> JumpjetLocomotionClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DynamicVector            rc=0
+[era] SkirmishVector           rc=0
+[era] DynamicVectorClass       rc=0
+[era] ScriptActionVector       rc=0
+[era] SmudgeTypeVector         rc=0
+[era] RulesClass               rc=0
+[era] ObjectClass              rc=2
+[era] TypeList                 rc=2
+[era] Voxel                    rc=0
+[era] FactoryClass             rc=2
+[era] _VectorClass_VWstring    rc=0
+[era] VocClass                 rc=2
+[era] JumpjetLocomotionClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ad7d0   MISMATCH         DynamicVector::Add_Alt3
+[diff] 0x67ad80   MISMATCH         DynamicVector::Add2
+[diff] 0x6c6400   MISMATCH         DynamicVector::Add
+[diff] 0x5eee40   MISMATCH         SkirmishVector::PushBack
+[diff] 0x630250   MISMATCH         DynamicVectorClass::PushBackCopy
+[diff] 0x63e540   MISMATCH         DynamicVectorClass::Append
+[diff] 0x691160   MISMATCH         DynamicVectorClass::PushBack2
+[diff] 0x63eb80   MISMATCH         ScriptActionVector::PushBack
+[diff] 0x67b100   MISMATCH         SmudgeTypeVector::Add
+[diff] 0x67b480   MISMATCH         RulesClass::readAI
+[diff] 0x68c260   MISMATCH         ObjectClass::DynamicVector_PushBack
+[diff] 0x734390   MISMATCH         ObjectClass::SelectFactionThemeMusic_Helper_734390
+[diff] 0x5d0240   MISMATCH         ObjectClass::sub_5D0240
+[diff] 0x763330   MISMATCH         Voxel::freeSectionMemory
+[diff] 0x69cb00   MISMATCH         _VectorClass_VWstring::ddtor
+[diff] 0x4cca20   MISMATCH         JumpjetLocomotionClass::StubReturnZero_7
+[ledger] 0x5ad7d0 DynamicVector::Add_Alt3 -> NG (attempt 1)
+[ledger] 0x5eee40 SkirmishVector::PushBack -> NG (attempt 1)
+[ledger] 0x630250 DynamicVectorClass::PushBackCopy -> NG (attempt 1)
+[ledger] 0x63e540 DynamicVectorClass::Append -> NG (attempt 1)
+[ledger] 0x63eb80 ScriptActionVector::PushBack -> NG (attempt 1)
+[ledger] 0x67ad80 DynamicVector::Add2 -> NG (attempt 1)
+[ledger] 0x67b100 SmudgeTypeVector::Add -> NG (attempt 1)
+[ledger] 0x67b480 RulesClass::readAI -> NG (attempt 1)
+[ledger] 0x68c260 ObjectClass::DynamicVector_PushBack -> NG (attempt 1)
+[ledger] 0x691160 DynamicVectorClass::PushBack2 -> NG (attempt 1)
+[ledger] 0x6c6400 DynamicVector::Add -> NG (attempt 1)
+[ledger] 0x717cd0 TypeList::PushBack -> COMPILE_FAIL (attempt 1)
+[ledger] 0x734390 ObjectClass::SelectFactionThemeMusic_Helper_734390 -> NG (attempt 1)
+[ledger] 0x763330 Voxel::freeSectionMemory -> NG (attempt 1)
+[ledger] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0240 ObjectClass::sub_5D0240 -> NG (attempt 1)
+[ledger] 0x632b20 ObjectClass::sub_632B20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69cb00 _VectorClass_VWstring::ddtor -> NG (attempt 1)
+[ledger] 0x7514d0 VocClass::FindIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cca20 JumpjetLocomotionClass::StubReturnZero_7 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "branch_order": 10,
+  "regalloc": 3,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p255\batch_report.json

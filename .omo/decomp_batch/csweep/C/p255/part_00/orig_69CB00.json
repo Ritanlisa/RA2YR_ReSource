@@ -1,0 +1,11 @@
+{
+ "addr": "0x69CB00",
+ "name": "VectorClass_Wstring::ddtor",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69CB00",
+ "bytes_hex": "578bf933c98b47043bc1743b8a570d84d274343bc1742d8b48fc538d58fc568d3488497812558d690183ee048bcee8bd7b11004d75f35d53e800c0120083c40433c95e5b894f04c6470d00894f085fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_5D0240@ObjectClass@@QAEPAPADPAPADH@Z",
+ "sym_key": "ObjectClass::sub_5D0240",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "5355568b716433c05785f67e3f8b79588b6c241833db8bcf8b178a5a043beb74134083c1043bc67d238b1133db8a5a043beb75ed8b04878b742414508bcee8000000008bc65f5e5d5bc208008b7424146a008bcee8000000008bc65f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::AssignFromPtr"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  }
+ ]
+}
