@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p304\part_00
+=== convert (20 addrs) ===
+[conv] 0x7bbaf0 XSurface::BlitWhole -> XSurface
+[conv] 0x6f1fa0 TeamTypeClass::ProcessTaskForce -> TeamTypeClass
+[conv] 0x7d930f __fpclass -> _addr_7D
+[conv] 0x68be90 ScenarioClass::Write_Waypoints -> ScenarioClass
+[conv] 0x69d8c0 SHA1::ProcessBlock -> SHA1
+[conv] 0x71c070 TerrainClass::ClearCellFlags -> TerrainClass
+[conv] 0x71c110 TerrainClass::SetOccupyBit_PassableTerrain -> TerrainClass
+[conv] 0x5106e0 AngerVector::Construct -> AngerVector
+[conv] 0x58ac70 VectorClass::ConstructSubzone -> VectorClass
+[conv] 0x6cf8f0 VectorClass::sub_6CF8F0 -> VectorClass
+[conv] 0x4a2780 CacheStraw::StreamToBuffer -> CacheStraw
+[conv] 0x5cc250 MSOverlayAnim::Init -> MSOverlayAnim
+[conv] 0x502550 HouseClass::StubReturnNullPointer_0 -> HouseClass
+[conv] 0x4e2a50 GaugeClass::sub_4E2A50 -> GaugeClass
+[conv] 0x68fb10 ObjectClass::sub_68FB10 -> ObjectClass
+[conv] 0x58b070 SubzoneHashVector::Construct -> SubzoneHashVector
+[conv] 0x628240 FileExtension::Constructor -> FileExtension
+[conv] 0x645a70 ParticleTypeClass::Constructor -> ParticleTypeClass
+[conv] 0x4e15a0 InputManager::FindBestHitElement -> InputManager
+[conv] 0x6006b0 sub_6006B0 -> _addr_60
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] XSurface                 rc=2
+[era] TeamTypeClass            rc=0
+[era] _addr_7D                 rc=2
+[era] ScenarioClass            rc=0
+[era] SHA1                     rc=0
+[era] TerrainClass             rc=2
+[era] AngerVector              rc=0
+[era] VectorClass              rc=0
+[era] CacheStraw               rc=0
+[era] MSOverlayAnim            rc=2
+[era] HouseClass               rc=2
+[era] GaugeClass               rc=0
+[era] ObjectClass              rc=2
+[era] SubzoneHashVector        rc=0
+[era] FileExtension            rc=0
+[era] ParticleTypeClass        rc=0
+[era] InputManager             rc=0
+[era] _addr_60                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6f1fa0   MISMATCH         TeamTypeClass::ProcessTaskForce
+[diff] 0x68be90   MISMATCH         ScenarioClass::Write_Waypoints
+[diff] 0x69d8c0   MISMATCH         SHA1::ProcessBlock
+[diff] 0x5106e0   MISMATCH         AngerVector::Construct
+[diff] 0x58ac70   MISMATCH         VectorClass::ConstructSubzone
+[diff] 0x6cf8f0   MISMATCH         VectorClass::sub_6CF8F0
+[diff] 0x4a2780   MISMATCH         CacheStraw::StreamToBuffer
+[diff] 0x4e2a50   MISMATCH         GaugeClass::sub_4E2A50
+[diff] 0x58b070   MISMATCH         SubzoneHashVector::Construct
+[diff] 0x628240   MISMATCH         FileExtension::Constructor
+[diff] 0x645a70   MISMATCH         ParticleTypeClass::Constructor
+[diff] 0x4e15a0   MISMATCH         InputManager::FindBestHitElement
+[diff] 0x6006b0   MISMATCH         sub_6006B0
+[ledger] 0x7bbaf0 XSurface::BlitWhole -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f1fa0 TeamTypeClass::ProcessTaskForce -> NG (attempt 1)
+[ledger] 0x7d930f __fpclass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68be90 ScenarioClass::Write_Waypoints -> NG (attempt 1)
+[ledger] 0x69d8c0 SHA1::ProcessBlock -> NG (attempt 1)
+[ledger] 0x71c070 TerrainClass::ClearCellFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71c110 TerrainClass::SetOccupyBit_PassableTerrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5106e0 AngerVector::Construct -> NG (attempt 1)
+[ledger] 0x58ac70 VectorClass::ConstructSubzone -> NG (attempt 1)
+[ledger] 0x6cf8f0 VectorClass::sub_6CF8F0 -> NG (attempt 1)
+[ledger] 0x4a2780 CacheStraw::StreamToBuffer -> NG (attempt 1)
+[ledger] 0x5cc250 MSOverlayAnim::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x502550 HouseClass::StubReturnNullPointer_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e2a50 GaugeClass::sub_4E2A50 -> NG (attempt 1)
+[ledger] 0x68fb10 ObjectClass::sub_68FB10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58b070 SubzoneHashVector::Construct -> NG (attempt 1)
+[ledger] 0x628240 FileExtension::Constructor -> NG (attempt 1)
+[ledger] 0x645a70 ParticleTypeClass::Constructor -> NG (attempt 1)
+[ledger] 0x4e15a0 InputManager::FindBestHitElement -> NG (attempt 1)
+[ledger] 0x6006b0 sub_6006B0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "codegen_shape": 9,
+  "regalloc": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p304\batch_report.json

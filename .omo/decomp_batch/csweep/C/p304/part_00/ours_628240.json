@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor@FileExtension@@QAEPAIHH@Z",
+ "sym_key": "FileExtension::Constructor",
+ "size": 162,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b7c241033db8b460c895e042401897e080c013bfb89460c885e0c891e746a8b4c24143bcb742f8d57ff85d27c118d41028858fe8858ff881883c0034f75f2894e04891ec746140a000000895e105f5e33c05bc208008d047f50e80000000083c4043bc3741a8d4fff85c97c158d48028859fe8859ff881983c1034f75f2eb0233c0894604c6460c01891ec746140a000000895e105f5e33c05bc20800",
+ "relocs": [
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

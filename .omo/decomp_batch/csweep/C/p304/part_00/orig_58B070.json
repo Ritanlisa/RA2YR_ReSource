@@ -1,0 +1,11 @@
+{
+ "addr": "0x58B070",
+ "name": "SubzoneHashVector::Construct",
+ "size": 148,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58B070",
+ "bytes_hex": "53568b74240c578bf933db3bf3895f04897708c6470c01885f0dc707e0d57e00746a8b5424143bd374218d4eff3bcb7c0f8d420441891888580483c00c4975f58957048bc75f5e5bc208008d0476c1e00250e850dd230083c4043bc374258d56ff3bd37c208d480442891988590483c10c4a75f5894704c6470d018bc75f5e5bc2080033c0894704c6470d018bc75f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

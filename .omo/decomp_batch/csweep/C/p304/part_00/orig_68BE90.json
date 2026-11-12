@@ -1,0 +1,11 @@
+{
+ "addr": "0x68BE90",
+ "name": "ScenarioClass::Write_Waypoints",
+ "size": 146,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x68BE90",
+ "bytes_hex": "a1600e7f0083ec20538b5c24285556578bf16a00508bcbe81499e9ff8b2db0147e0033ff81c632060000668b0e663b0d5854b000750d668b5602663b155a54b0007439578d442414686c7f810050ffd50fbf46020fbf168d048083c40c8d04806a008d0c808d04ca8b15600e7f008d4c24145051528bcbe8b4b6e9ff4783c60481ffbe0200007ca25f5e5d5b83c420c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

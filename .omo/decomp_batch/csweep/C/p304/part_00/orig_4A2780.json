@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A2780",
+ "name": "Delegate::StreamToBuffer",
+ "size": 147,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A2780",
+ "bytes_hex": "515355568bf133c0578b4e0c8944241085c974778b6c241885ed746f8b5c241c85db7e678b7e1c85ff7e373bfb7c028bfb8b46188b560c03c2575055e8cf7832008b46188b54241c8b4e1c03c703d72bcf83c40c2bdf89461889542410894e1c03ef85db74218b46108b4e0c50518bcee8eb70220085c089461cc7461800000000740485db7f9d8b4424105f5e5d5b59c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

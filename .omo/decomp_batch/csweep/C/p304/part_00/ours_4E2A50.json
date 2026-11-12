@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4E2A50@GaugeClass@@QAEHHHHHH@Z",
+ "sym_key": "GaugeClass::sub_4E2A50",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "8b44240c538b5c24148b542408558b6c241c56576a018bf18b4c241c6a0755535051528bcee8000000008b4e34b8ff00000033ff3bc8897e04740a8bce894634e8000000008b4e3433c03bcf7d028bc13b463874098946388b068bceff103bdd897e3c0f9fc1897e40897e44897e04c6463101884e32c64630015f5e5d33c05bc21400",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?Construct@ControlClass@@QAEPAV1@HHHHHHD@Z",
+   "sym_key": "ControlClass::Construct"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?MarkDirty@VectorClass_ptr_ConvertClass@@QAEXXZ",
+   "sym_key": "VectorClass_ptr_ConvertClass::MarkDirty"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindBestHitElement@InputManager@@QAEPAIHH@Z",
+ "sym_key": "InputManager::FindBestHitElement",
+ "size": 141,
+ "link_base": 0,
+ "bytes_hex": "83ec0853bb0004000085c9c744240400030000c7442408000000007467558b6c241456578a411e84c0753e8b710c8b79108b41148b51183bee7c2e03f03bee7d288b7424203bf77c2003fa3bf77d1a8b7c24108bf20faff00faffb3bf77f0a8bd889542410894c24148b01ff50048bc885c975b08b4c24145f5e5d8b015b83c408c2080033c05b83c408c20800",
+ "relocs": []
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?StreamToBuffer@CacheStraw@@QAEHPADH@Z",
+ "sym_key": "CacheStraw::StreamToBuffer",
+ "size": 190,
+ "link_base": 0,
+ "bytes_hex": "51538bd955c7442408000000008b430c85c00f849e0000008b44241085c0894424100f848e0000008b6c241485ed0f8e8200000056578b431c85c07e483bc57c028bc58b73188b7b0c8bc803f78b7c24188bd1c1e902f3a58bca2be883e103f3a48b7b188b7424108b531c8b4c241803f803f02bd003c8897b188974241089531c894c241885ed74218b43108b4b0c50518bcbe80000000085c089431cc7431800000000740485ed7f8c8b4424105f5e5d5b59c208005d33c05b59c20800",
+ "relocs": [
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Invoke@Delegate@@QAEHHPAX@Z",
+   "sym_key": "Delegate::Invoke"
+  }
+ ]
+}

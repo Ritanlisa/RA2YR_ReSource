@@ -1,0 +1,11 @@
+{
+ "addr": "0x645A70",
+ "name": "ParticleTypeClass::Constructor",
+ "size": 148,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x645A70",
+ "bytes_hex": "5356578b7c24108bf133db3bfb895e04897e08c6460c01885e0dc706384e7e00745a8b5424143bd3741e8d4fff3bcb7c128d4202418858fe8858ff881883c0034975f2895604eb348d047f50e85633180083c4043bc3741b8d57ff3bd37c168d4802428859fe8859ff881983c1034a75f2eb0233c0894604c6460d01c7062c027f00c746140a000000895e108bc65f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

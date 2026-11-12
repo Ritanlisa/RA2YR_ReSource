@@ -1,0 +1,11 @@
+{
+ "addr": "0x69D8C0",
+ "name": "SHA1::ProcessBlock",
+ "size": 147,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69D8C0",
+ "bytes_hex": "8b442408538bd9558b085685c9747e8b6c24108b750085f674738b533085d2750583f9407d67b8400000002bc23bc87d028bc1578bc88d7c1a348bd1c1e902f3a58bca83e103f3a48b7d008b4c241803f8897d008b733003f05f8973308b112bd0be4000000089118b43303bc6751e8d43188d4b3450518bcbe8f20100008b432cc743300000000003c689432c5e5d5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

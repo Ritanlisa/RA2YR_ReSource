@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E15A0",
+ "name": "InputManager::FindBestHitElement",
+ "size": 148,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E15A0",
+ "bytes_hex": "83ec14a1e85b7f008b15f45b7f008944240c33c085c98954241089442400746e535556578a411e8b5c242884c0754c8b410c8b79108b51148b71183bd87c3c8d2c023bdd7d358b5c242c3bdf7c2d8d2c373bdd7d268b5c24208bee0faf5c241c0fafea3beb7f1489442414897c24188954241c89742420894c24108b01ff50048bc885c9759e8b4424105f5e5d5b83c414c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
