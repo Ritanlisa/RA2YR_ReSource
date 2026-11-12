@@ -1,0 +1,11 @@
+{
+ "addr": "0x46D330",
+ "name": "MPCooperative::initGame",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46D330",
+ "bytes_hex": "8bc133c9c700ac4a7e00894804890d50e08900c705e8b18100ffffffffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

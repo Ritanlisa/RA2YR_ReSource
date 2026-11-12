@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x45a880 _VectorClass_PAVReestablish::GetSize -> _VectorClass_PAVReestablish
+[conv] 0x45a990 _DynamicVectorClass_PAVReestablish::FindItemIndex -> _DynamicVectorClass_PAVReestablish
+[conv] 0x45ac30 _VectorClass_PAVFoggedObjectClass::GetSize -> _VectorClass_PAVFoggedObjectClass
+[conv] 0x45dd20 ObjectClass::sub_45DD20 -> ObjectClass
+[conv] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> BuildingTypeClass
+[conv] 0x45eca0 BuildingTypeClass::GetFoundationHeight -> BuildingTypeClass
+[conv] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> BuildingTypeClass
+[conv] 0x465d40 BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable -> BuildingClass
+[conv] 0x465e10 _VectorClass_V_TPoint3D_H::AddRef -> _VectorClass_V_TPoint3D_H
+[conv] 0x465f80 _VectorClass_V_TPoint3D_H::GetSize -> _VectorClass_V_TPoint3D_H
+[conv] 0x46b560 BulletClass::PowerDrainProcess -> BulletClass
+[conv] 0x46b660 _VectorClass_PAVBulletClass::Add -> _VectorClass_PAVBulletClass
+[conv] 0x46b780 _VectorClass_PAVBulletClass::GetSize -> _VectorClass_PAVBulletClass
+[conv] 0x46c750 BulletTypeClass::GetClassIdentifier -> BulletTypeClass
+[conv] 0x46cf80 CampaignClass::ddtor -> CampaignClass
+[conv] 0x46d330 MPCooperative::initGame -> MPCooperative
+[conv] 0x470c00 MPCooperative::startGame -> MPCooperative
+[conv] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> CaptureManagerClass
+[conv] 0x472960 CaptureManagerClass::GetClassIdentifier -> CaptureManagerClass
+[conv] 0x472c60 _VectorClass_PAUControlNode::IndexOf -> _VectorClass_PAUControlNode
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVReestablish rc=0
+[era] _DynamicVectorClass_PAVReestablish rc=0
+[era] _VectorClass_PAVFoggedObjectClass rc=0
+[era] ObjectClass              rc=2
+[era] BuildingTypeClass        rc=2
+[era] BuildingClass            rc=0
+[era] _VectorClass_V_TPoint3D_H rc=0
+[era] BulletClass              rc=0
+[era] _VectorClass_PAVBulletClass rc=0
+[era] BulletTypeClass          rc=0
+[era] CampaignClass            rc=0
+[era] MPCooperative            rc=0
+[era] CaptureManagerClass      rc=2
+[era] _VectorClass_PAUControlNode rc=0
+=== diffasm byte-compare ===
+[diff] 0x45a880   MISMATCH         _VectorClass_PAVReestablish::GetSize
+[diff] 0x45a990   MISMATCH         _DynamicVectorClass_PAVReestablish::FindItemIndex
+[diff] 0x45ac30   MISMATCH         _VectorClass_PAVFoggedObjectClass::GetSize
+[diff] 0x465d40   MISMATCH         BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable
+[diff] 0x465e10   MISMATCH         _VectorClass_V_TPoint3D_H::AddRef
+[diff] 0x465f80   MISMATCH         _VectorClass_V_TPoint3D_H::GetSize
+[diff] 0x46b560   MISMATCH         BulletClass::PowerDrainProcess
+[diff] 0x46b660   MISMATCH         _VectorClass_PAVBulletClass::Add
+[diff] 0x46b780   MISMATCH         _VectorClass_PAVBulletClass::GetSize
+[diff] 0x46c750   MISMATCH         BulletTypeClass::GetClassIdentifier
+[diff] 0x46cf80   MISMATCH         CampaignClass::ddtor
+[diff] 0x46d330   MISMATCH         MPCooperative::initGame
+[diff] 0x470c00   MISMATCH         MPCooperative::startGame
+[diff] 0x472960   MISMATCH         CaptureManagerClass::GetClassIdentifier
+[diff] 0x472c60   MISMATCH         _VectorClass_PAUControlNode::IndexOf
+[ledger] 0x45a880 _VectorClass_PAVReestablish::GetSize -> NG (attempt 2)
+[ledger] 0x45a990 _DynamicVectorClass_PAVReestablish::FindItemIndex -> NG (attempt 2)
+[ledger] 0x45ac30 _VectorClass_PAVFoggedObjectClass::GetSize -> NG (attempt 2)
+[ledger] 0x45dd20 ObjectClass::sub_45DD20 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45eca0 BuildingTypeClass::GetFoundationHeight -> COMPILE_FAIL (attempt 2)
+[ledger] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> COMPILE_FAIL (attempt 2)
+[ledger] 0x465d40 BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable -> NG (attempt 2)
+[ledger] 0x465e10 _VectorClass_V_TPoint3D_H::AddRef -> NG (attempt 2)
+[ledger] 0x465f80 _VectorClass_V_TPoint3D_H::GetSize -> NG (attempt 2)
+[ledger] 0x46b560 BulletClass::PowerDrainProcess -> NG (attempt 2)
+[ledger] 0x46b660 _VectorClass_PAVBulletClass::Add -> NG (attempt 2)
+[ledger] 0x46b780 _VectorClass_PAVBulletClass::GetSize -> NG (attempt 2)
+[ledger] 0x46c750 BulletTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x46cf80 CampaignClass::ddtor -> NG (attempt 2)
+[ledger] 0x46d330 MPCooperative::initGame -> NG (attempt 2)
+[ledger] 0x470c00 MPCooperative::startGame -> NG (attempt 2)
+[ledger] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> COMPILE_FAIL (attempt 2)
+[ledger] 0x472960 CaptureManagerClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x472c60 _VectorClass_PAUControlNode::IndexOf -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "branch_polarity": 3,
+  "regalloc": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p04\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x465E10",
+ "name": "VectorClass_TPoint3D_int::AddRef",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x465E10",
+ "bytes_hex": "8b4424045355568b5008578b79083bfa754133f685ff7e328b50048b41048d4a082bd08b188b2c023bdd75278b58048b69fc3bdd751d8b58088b293bdd75144683c10c83c00c3bf77cd95f5e5db0015bc204005f5e5d32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

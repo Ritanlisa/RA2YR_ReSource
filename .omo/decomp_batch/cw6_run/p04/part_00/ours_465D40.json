@@ -1,0 +1,21 @@
+{
+ "symbol": "?Is1x1AndUndeployable_BuildingMassSelectable@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8b810804000085c0741d8b89f00e0000b80100000039048d4c000000750939048d00000000740233c0c3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?aEvaStructureab@@3IA",
+   "sym_key": "aEvaStructureab"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_819310@@3PAIA",
+   "sym_key": "DataGlobal_819310"
+  }
+ ]
+}

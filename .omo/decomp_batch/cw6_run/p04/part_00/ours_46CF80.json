@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@CampaignClass@@QAGHPAI@Z",
+ "sym_key": "CampaignClass::ddtor",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c2080033c9c70048c8daffc740041715d211c74008817500608a0d0000000089480c33c0c20800",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?unk_7E990C@@3EA",
+   "sym_key": "unk_7E990C"
+  }
+ ]
+}

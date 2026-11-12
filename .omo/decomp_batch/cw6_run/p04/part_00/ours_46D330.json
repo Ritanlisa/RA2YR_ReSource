@@ -1,0 +1,21 @@
+{
+ "symbol": "?initGame@MPCooperative@@QAEPAIXZ",
+ "sym_key": "MPCooperative::initGame",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8bc133c98908894804890d00000000c7055c020000ffffffffc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E050@@3IA",
+   "sym_key": "DataGlobal_89E050"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  }
+ ]
+}

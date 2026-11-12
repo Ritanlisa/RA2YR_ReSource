@@ -1,0 +1,11 @@
+{
+ "addr": "0x465D40",
+ "name": "BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x465D40",
+ "bytes_hex": "8b810804000085c074218b81f00e0000b901000000c1e0023988b8928100750b39881093810075038bc1c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

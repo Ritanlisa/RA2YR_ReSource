@@ -1,0 +1,27 @@
+{
+ "symbol": "?startGame@MPCooperative@@QAEPAIXZ",
+ "sym_key": "MPCooperative::startGame",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8bc133c98908c70500000000ffffffff890d00000000890d00000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E008@@3IA",
+   "sym_key": "DataGlobal_89E008"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E020@@3IA",
+   "sym_key": "DataGlobal_89E020"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DFD4@@3IA",
+   "sym_key": "DataGlobal_89DFD4"
+  }
+ ]
+}

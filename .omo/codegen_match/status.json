@@ -10671,15 +10671,15 @@
   "this_as_id": false
  },
  "0x45a880": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x45a88e",
   "name": "_VectorClass_PAVReestablish::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_Reestablish::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x45a8c0": {
@@ -10695,27 +10695,27 @@
   "this_as_id": false
  },
  "0x45a990": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_PAVReestablish::FindItemIndex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_Reestablish::FindItemIndex",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x45ac30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x45ac3e",
   "name": "_VectorClass_PAVFoggedObjectClass::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_FoggedObjectClass::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x45ac70": {
@@ -10861,7 +10861,7 @@
   "this_as_id": false
  },
  "0x45dd20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -10907,7 +10907,7 @@
   "this_as_id": false
  },
  "0x45ec90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -10919,7 +10919,7 @@
   "this_as_id": false
  },
  "0x45eca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -10931,14 +10931,14 @@
   "this_as_id": false
  },
  "0x464af0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BuildingTypeClass::GetSizeInLeptons",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingTypeClass::GetSizeInLeptons",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -11014,15 +11014,15 @@
   "this_as_id": false
  },
  "0x465d40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+8 je 0x465d6b",
   "name": "BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x465d70": {
@@ -11083,15 +11083,15 @@
   "this_as_id": false
  },
  "0x465e10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 jne 0x465e63",
   "name": "_VectorClass_V_TPoint3D_H::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_TPoint3D_int::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x465e70": {
@@ -11102,15 +11102,15 @@
   "status": "NG"
  },
  "0x465f80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+20 mov edx, dword ptr [ecx + 8]",
   "name": "_VectorClass_V_TPoint3D_H::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "VectorClass_TPoint3D_int::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x465fd0": {
@@ -11348,15 +11348,15 @@
   "status": "OK"
  },
  "0x46b560": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e96e0]",
   "name": "BulletClass::PowerDrainProcess",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BulletClass::PowerDrainProcess",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x46b5a0": {
@@ -11405,15 +11405,15 @@
   "this_as_id": false
  },
  "0x46b660": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x46b696",
   "name": "_VectorClass_PAVBulletClass::Add",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_BulletClass::Add",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x46b750": {
@@ -11424,15 +11424,15 @@
   "status": "NG"
  },
  "0x46b780": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x46b78e",
   "name": "_VectorClass_PAVBulletClass::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_BulletClass::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x46b7c0": {
@@ -11595,15 +11595,15 @@
   "status": "NG"
  },
  "0x46c750": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e95d0]",
   "name": "BulletTypeClass::GetClassIdentifier",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BulletTypeClass::GetClassIdentifier",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x46c820": {
@@ -11747,15 +11747,15 @@
   "this_as_id": false
  },
  "0x46cf80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e9900]",
   "name": "CampaignClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CampaignClass::ddtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x46d070": {
@@ -11883,15 +11883,15 @@
   "this_as_id": false
  },
  "0x46d330": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 mov dword ptr [eax], 0x7e4aac",
   "name": "MPCooperative::initGame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MPCooperative::initGame",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x46d350": {
@@ -11978,15 +11978,15 @@
   "this_as_id": false
  },
  "0x470c00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 mov dword ptr [eax], 0x7e4ab8",
   "name": "MPCooperative::startGame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MPCooperative::startGame",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x470c30": {
@@ -12146,7 +12146,7 @@
   "status": "OK"
  },
  "0x4722f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -12182,11 +12182,16 @@
   "this_as_id": false
  },
  "0x472960": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 mov ecx, dword ptr [0x7e9880]",
   "name": "CaptureManagerClass::GetClassIdentifier",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CaptureManagerClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4729a0": {
   "attempts": 5,
@@ -12265,15 +12270,15 @@
   "status": "NG"
  },
  "0x472c60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x472c6e",
   "name": "_VectorClass_PAUControlNode::IndexOf",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CaptureManagerClass::IndexOf",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x472ca0": {
