@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_77B8A0@@YAHXZ",
+ "sym_key": "Unnamed::sub_77B8A0",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "6a00e8000000006800000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "REL32",
+   "sym": "?OleInitialize@@YGJH@Z",
+   "sym_key": "OleInitialize"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?OleUninitialize@@YAHPBX0@Z",
+   "sym_key": "OleUninitialize"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

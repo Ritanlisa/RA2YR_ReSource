@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_64@VeterancyNavCommandClass@@QAGHF@Z",
+ "sym_key": "VeterancyNavCommandClass::performAction_64",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "518a4c2403f6d183e101e80000000059c20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?DrawUnitExperiencePopup@@YIHPAX@Z",
+   "sym_key": "DrawUnitExperiencePopup"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB3E5",
+ "name": "___endstdio",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB3E5",
+ "bytes_hex": "e86bfeffff803dfc81b700007405e909800000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

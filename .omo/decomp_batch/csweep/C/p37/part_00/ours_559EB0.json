@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@LoadOptions@@QAG_NPBD@Z",
+ "sym_key": "LoadOptions::ddtor",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8b44240850e800000000f7d81bc0f7d8c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?DeleteFileA@@YGHPAX@Z",
+   "sym_key": "DeleteFileA"
+  }
+ ]
+}

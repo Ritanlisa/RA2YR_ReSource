@@ -1,0 +1,11 @@
+{
+ "addr": "0x646D70",
+ "name": "Network_Disconnect",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x646D70",
+ "bytes_hex": "833d38b2a80004750ab9c0e9a800e9fdc2efffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,460 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 7,
+   "regalloc": 3,
+   "branch_polarity": 2,
+   "const_fold": 1,
+   "extern_reloc": 6,
+   "cc_mismatch": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x5367f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 34B",
+   "first_diff": {
+    "orig": "+0 mov ecx, dword ptr [esp + 4]",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_44",
+   "emitted": "CombatantSelectCommandClass::performAction_44",
+   "unit": "CombatantSelectCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/1",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 34,
+   "clean": false
+  },
+  {
+   "addr": "0x5369f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 19B",
+   "first_diff": {
+    "orig": "+0 mov ecx, dword ptr [esp + 4]",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_64",
+   "emitted": "VeterancyNavCommandClass::performAction_64",
+   "unit": "VeterancyNavCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x542fc0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 31B",
+   "first_diff": {
+    "orig": "+0 mov ecx, dword ptr [ecx + 0x48]",
+    "ours": "+0 mov eax, dword ptr [ecx + 0x48]"
+   },
+   "pathology": "regalloc",
+   "name": "Network_Init_542FC0",
+   "emitted": "ObjectClass::Network_Init_542FC0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 31,
+   "clean": false
+  },
+  {
+   "addr": "0x5f1f00",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 25B",
+   "first_diff": {
+    "orig": "+5 je 0x5f1f11",
+    "ours": "+5 je 0x14"
+   },
+   "pathology": "branch_polarity",
+   "name": "NullModemClass::Flush",
+   "emitted": "NullModemClass::Flush",
+   "unit": "NullModemClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 1,
+   "orig_size": 20,
+   "ours_size": 25,
+   "clean": false
+  },
+  {
+   "addr": "0x632030",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 20B",
+   "first_diff": {
+    "orig": "+6 add ecx, 0x100",
+    "ours": "+6 add ecx, 0x400"
+   },
+   "pathology": "const_fold",
+   "name": "System_Init_632030",
+   "emitted": "ObjectClass::System_Init_632030",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 20,
+   "clean": false
+  },
+  {
+   "addr": "0x646d70",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 29B",
+   "first_diff": {
+    "orig": "+0 cmp dword ptr [0xa8b238], 4",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "Network_Disconnect",
+   "emitted": "Network_Disconnect",
+   "unit": "Network",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 29,
+   "clean": false
+  },
+  {
+   "addr": "0x77d140",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 17B",
+   "first_diff": {
+    "orig": "+0 mov dword ptr [0xb75e48], 0x7f3f44",
+    "ours": "+0 mov byte ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_77D140",
+   "emitted": "sub_77D140",
+   "unit": "_addr_77",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 17,
+   "clean": false
+  },
+  {
+   "addr": "0x7b0130",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 20B",
+   "first_diff": {
+    "orig": "+0 mov dword ptr [0xb77f58], 0x7f70ec",
+    "ours": "+0 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_7B0130",
+   "emitted": "sub_7B0130",
+   "unit": "_addr_7B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 20,
+   "clean": false
+  },
+  {
+   "addr": "0x7b0170",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 20B",
+   "first_diff": {
+    "orig": "+0 mov dword ptr [0xb77f70], 0x7f70ec",
+    "ours": "+0 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_7B0170",
+   "emitted": "sub_7B0170",
+   "unit": "_addr_7B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 20,
+   "clean": false
+  },
+  {
+   "addr": "0x7b01b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 17B",
+   "first_diff": {
+    "orig": "+0 mov dword ptr [0xb77f68], 0x7f6f24",
+    "ours": "+0 mov byte ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_7B01B0",
+   "emitted": "sub_7B01B0",
+   "unit": "_addr_7B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 17,
+   "clean": false
+  },
+  {
+   "addr": "0x7b01f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 20B",
+   "first_diff": {
+    "orig": "+0 mov dword ptr [0xb77f78], 0x7f6f24",
+    "ours": "+0 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_7B01F0",
+   "emitted": "sub_7B01F0",
+   "unit": "_addr_7B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 20,
+   "clean": false
+  },
+  {
+   "addr": "0x7dadc4",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 21B",
+   "first_diff": {
+    "orig": "+0 push 1",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "__ismbbalnum",
+   "emitted": "__ismbbalnum",
+   "unit": "_addr_7D",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x7dadd8",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 21B",
+   "first_diff": {
+    "orig": "+0 push 1",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "__ismbbalpha",
+   "emitted": "__ismbbalpha",
+   "unit": "_addr_7D",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x7dadec",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 21B",
+   "first_diff": {
+    "orig": "+0 push 3",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "__ismbbgraph",
+   "emitted": "__ismbbgraph",
+   "unit": "_addr_7D",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x7dae00",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 21B",
+   "first_diff": {
+    "orig": "+0 push 3",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "__ismbbprint",
+   "emitted": "__ismbbprint",
+   "unit": "_addr_7D",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x559eb0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 19B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "cc_mismatch",
+   "name": "LoadOptions::ddtor",
+   "emitted": "LoadOptions::ddtor",
+   "unit": "LoadOptions",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 19,
+   "clean": false
+  },
+  {
+   "addr": "0x5430c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 28B",
+   "first_diff": {
+    "orig": "+0 mov ecx, dword ptr [ecx + 0x48]",
+    "ours": "+0 mov eax, dword ptr [ecx + 0x48]"
+   },
+   "pathology": "regalloc",
+   "name": "StartGameWOL_Start",
+   "emitted": "ObjectClass::StartGameWOL_Start",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 28,
+   "clean": false
+  },
+  {
+   "addr": "0x65d670",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 21B",
+   "first_diff": {
+    "orig": "+7 jne 0x65d683",
+    "ours": "+7 jne 0x14"
+   },
+   "pathology": "branch_polarity",
+   "name": "COMClass::ReleaseRef",
+   "emitted": "ReferenceCounted::ReleaseRef",
+   "unit": "ReferenceCounted",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x7cb3e5",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 20B",
+   "first_diff": {
+    "orig": "+5 cmp byte ptr [0xb781fc], 0",
+    "ours": "+5 mov cl, byte ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "___endstdio",
+   "emitted": "___endstdio",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 20,
+   "clean": false
+  },
+  {
+   "addr": "0x77b8a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 21B",
+   "first_diff": {
+    "orig": "+2 call dword ptr [0x7e15d4]",
+    "ours": "+2 call 7"
+   },
+   "pathology": "regalloc",
+   "name": "sub_77B8A0",
+   "emitted": "sub_77B8A0",
+   "unit": "_addr_77",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 21,
+   "clean": false
+  }
+ ]
+}

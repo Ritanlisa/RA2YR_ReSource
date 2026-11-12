@@ -1,0 +1,27 @@
+{
+ "symbol": "?Network_Disconnect@@YAHXZ",
+ "sym_key": "Unnamed::Network_Disconnect",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "51833d0000000004750d8b0d00000000e80000000059c38b44240059c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Disconnect@Network@@QAEHXZ",
+   "sym_key": "Network::Disconnect"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_44@CombatantSelectCommandClass@@QAGHI@Z",
+ "sym_key": "CombatantSelectCommandClass::performAction_44",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "518b4424008bc880e400f7d181e1000100000bc8c1e90851ff150000000059c20800",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?loc_732280@@3PADA",
+   "sym_key": "loc_732280"
+  }
+ ]
+}

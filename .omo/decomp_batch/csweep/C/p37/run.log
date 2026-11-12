@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x5367f0 CombatantSelectCommandClass::performAction_44 -> CombatantSelectCommandClass
+[conv] 0x5369f0 VeterancyNavCommandClass::performAction_64 -> VeterancyNavCommandClass
+[conv] 0x542fc0 ObjectClass::Network_Init_542FC0 -> ObjectClass
+[conv] 0x5f1f00 NullModemClass::Flush -> NullModemClass
+[conv] 0x632030 ObjectClass::System_Init_632030 -> ObjectClass
+[conv] 0x646d70 Network_Disconnect -> Network
+[conv] 0x77d140 sub_77D140 -> _addr_77
+[conv] 0x7b0130 sub_7B0130 -> _addr_7B
+[conv] 0x7b0170 sub_7B0170 -> _addr_7B
+[conv] 0x7b01b0 sub_7B01B0 -> _addr_7B
+[conv] 0x7b01f0 sub_7B01F0 -> _addr_7B
+[conv] 0x7dadc4 __ismbbalnum -> _addr_7D
+[conv] 0x7dadd8 __ismbbalpha -> _addr_7D
+[conv] 0x7dadec __ismbbgraph -> _addr_7D
+[conv] 0x7dae00 __ismbbprint -> _addr_7D
+[conv] 0x559eb0 LoadOptions::ddtor -> LoadOptions
+[conv] 0x5430c0 ObjectClass::StartGameWOL_Start -> ObjectClass
+[conv] 0x65d670 ReferenceCounted::ReleaseRef -> ReferenceCounted
+[conv] 0x7cb3e5 ___endstdio -> _addr_7C
+[conv] 0x77b8a0 sub_77B8A0 -> _addr_77
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CombatantSelectCommandClass rc=0
+[era] VeterancyNavCommandClass rc=0
+[era] ObjectClass              rc=0
+[era] NullModemClass           rc=0
+[era] Network                  rc=0
+[era] _addr_77                 rc=0
+[era] _addr_7B                 rc=0
+[era] _addr_7D                 rc=0
+[era] LoadOptions              rc=0
+[era] ReferenceCounted         rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5367f0   MISMATCH         CombatantSelectCommandClass::performAction_44
+[diff] 0x5369f0   MISMATCH         VeterancyNavCommandClass::performAction_64
+[diff] 0x542fc0   MISMATCH         ObjectClass::Network_Init_542FC0
+[diff] 0x632030   MISMATCH         ObjectClass::System_Init_632030
+[diff] 0x5430c0   MISMATCH         ObjectClass::StartGameWOL_Start
+[diff] 0x5f1f00   MISMATCH         NullModemClass::Flush
+[diff] 0x646d70   MISMATCH         Network_Disconnect
+[diff] 0x77d140   MISMATCH         sub_77D140
+[diff] 0x77b8a0   MISMATCH         sub_77B8A0
+[diff] 0x7b0130   MISMATCH         sub_7B0130
+[diff] 0x7b0170   MISMATCH         sub_7B0170
+[diff] 0x7b01b0   MISMATCH         sub_7B01B0
+[diff] 0x7b01f0   MISMATCH         sub_7B01F0
+[diff] 0x7dadc4   MISMATCH         __ismbbalnum
+[diff] 0x7dadd8   MISMATCH         __ismbbalpha
+[diff] 0x7dadec   MISMATCH         __ismbbgraph
+[diff] 0x7dae00   MISMATCH         __ismbbprint
+[diff] 0x559eb0   MISMATCH         LoadOptions::ddtor
+[diff] 0x65d670   MISMATCH         ReferenceCounted::ReleaseRef
+[diff] 0x7cb3e5   MISMATCH         ___endstdio
+[ledger] 0x5367f0 CombatantSelectCommandClass::performAction_44 -> NG (attempt 1)
+[ledger] 0x5369f0 VeterancyNavCommandClass::performAction_64 -> NG (attempt 1)
+[ledger] 0x542fc0 ObjectClass::Network_Init_542FC0 -> NG (attempt 1)
+[ledger] 0x5f1f00 NullModemClass::Flush -> NG (attempt 1)
+[ledger] 0x632030 ObjectClass::System_Init_632030 -> NG (attempt 1)
+[ledger] 0x646d70 Network_Disconnect -> NG (attempt 1)
+[ledger] 0x77d140 sub_77D140 -> NG (attempt 1)
+[ledger] 0x7b0130 sub_7B0130 -> NG (attempt 1)
+[ledger] 0x7b0170 sub_7B0170 -> NG (attempt 1)
+[ledger] 0x7b01b0 sub_7B01B0 -> NG (attempt 1)
+[ledger] 0x7b01f0 sub_7B01F0 -> NG (attempt 1)
+[ledger] 0x7dadc4 __ismbbalnum -> NG (attempt 1)
+[ledger] 0x7dadd8 __ismbbalpha -> NG (attempt 1)
+[ledger] 0x7dadec __ismbbgraph -> NG (attempt 1)
+[ledger] 0x7dae00 __ismbbprint -> NG (attempt 1)
+[ledger] 0x559eb0 LoadOptions::ddtor -> NG (attempt 1)
+[ledger] 0x5430c0 ObjectClass::StartGameWOL_Start -> NG (attempt 1)
+[ledger] 0x65d670 ReferenceCounted::ReleaseRef -> NG (attempt 1)
+[ledger] 0x7cb3e5 ___endstdio -> NG (attempt 1)
+[ledger] 0x77b8a0 sub_77B8A0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "regalloc": 3,
+  "branch_polarity": 2,
+  "const_fold": 1,
+  "extern_reloc": 6,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p37\batch_report.json

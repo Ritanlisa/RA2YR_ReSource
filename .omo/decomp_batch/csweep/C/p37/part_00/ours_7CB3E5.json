@@ -1,0 +1,27 @@
+{
+ "symbol": "?___endstdio@@YAHXZ",
+ "sym_key": "Unnamed::___endstdio",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "e8000000008a0d0000000084c97405e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?Endstdio_Helper@@YAHXZ",
+   "sym_key": "Endstdio_Helper"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B781FC@@3EA",
+   "sym_key": "CRTGlobal_B781FC"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "__fcloseall",
+   "sym_key": "_fcloseall"
+  }
+ ]
+}

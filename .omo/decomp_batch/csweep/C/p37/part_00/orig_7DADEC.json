@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DADEC",
+ "name": "__ismbbgraph",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DADEC",
+ "bytes_hex": "6a036817010000ff74240ce87200000083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x65D670",
+ "name": "COMClass::ReleaseRef",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65D670",
+ "bytes_hex": "8b410448894104750a85c974068b016a01ff10c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

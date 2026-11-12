@@ -1,0 +1,15 @@
+{
+ "symbol": "?__ismbbgraph@@YAHI@Z",
+ "sym_key": "Unnamed::__ismbbgraph",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b4424046a03681701000050e80000000083c40cc3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?CRTisctype@@YAHEHE@Z",
+   "sym_key": "CRTisctype"
+  }
+ ]
+}

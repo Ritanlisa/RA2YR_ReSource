@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_7B0170@@YAXXZ",
+ "sym_key": "Unnamed::sub_7B0170",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "c7050000000000000000b900000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?dword_B77F70@@3IA",
+   "sym_key": "dword_B77F70"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?dword_B77F70@@3IA",
+   "sym_key": "dword_B77F70"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  }
+ ]
+}

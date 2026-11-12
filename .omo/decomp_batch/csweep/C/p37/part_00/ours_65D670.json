@@ -1,0 +1,8 @@
+{
+ "symbol": "?ReleaseRef@ReferenceCounted@@QAEHXZ",
+ "sym_key": "ReferenceCounted::ReleaseRef",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b410448894104750b85c974078b016a0151ff10c3",
+ "relocs": []
+}
