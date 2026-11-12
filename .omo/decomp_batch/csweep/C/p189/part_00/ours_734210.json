@@ -1,0 +1,45 @@
+{
+ "symbol": "?Map_Reset_734210@@YAKXZ",
+ "sym_key": "Unnamed::Map_Reset_734210",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "e80000000005bff9ffffc70500000000ffffffffa300000000e8000000002d41060000c705000000009cffffffa300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_845554@@3IA",
+   "sym_key": "DataGlobal_845554"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_845550@@3IA",
+   "sym_key": "DataGlobal_845550"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84555C@@3IA",
+   "sym_key": "DataGlobal_84555C"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_845558@@3IA",
+   "sym_key": "DataGlobal_845558"
+  }
+ ]
+}

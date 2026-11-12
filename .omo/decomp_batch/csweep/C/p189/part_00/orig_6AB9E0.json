@@ -1,0 +1,11 @@
+{
+ "addr": "0x6AB9E0",
+ "name": "SelectClass_StripClass_SidebarClass::deselect",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6AB9E0",
+ "bytes_hex": "568bf18b0d68738800e8528b07008b462cc64634006a00b9e8f78700c6403c01e8eb88e4ffc6058f4b880001c60518b5b000015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

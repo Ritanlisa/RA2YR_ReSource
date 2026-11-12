@@ -1,0 +1,11 @@
+{
+ "addr": "0x74FEF0",
+ "name": "INIEntry::LookupByName",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74FEF0",
+ "bytes_hex": "5356578bd933ffbeb86384008b065350e81b8e070083c40885c0741383c6044781fe006484007ce45f5e83c8ff5bc38bc75f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

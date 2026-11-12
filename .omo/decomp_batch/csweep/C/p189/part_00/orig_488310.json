@@ -1,0 +1,11 @@
+{
+ "addr": "0x488310",
+ "name": "CheckListClass::vt_method_488310",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x488310",
+ "bytes_hex": "568bf16a08e8fd0a340083c40485c074168b4c24085089088bcec6400400e86df30c005ec2040033c08bce50e85ff30c005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

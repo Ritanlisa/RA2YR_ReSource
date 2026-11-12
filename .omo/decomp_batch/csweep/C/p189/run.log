@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p189\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f21b0 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::ClearBuffer -> _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x74fef0 INIEntry::LookupByName -> INIEntry
+[conv] 0x763ef0 DynamicVector::checkSuperWeaponStatus -> DynamicVector
+[conv] 0x7b67c0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0_Start -> ObjectClass
+[conv] 0x7ce9e6 _write_char -> _addr_7C
+[conv] 0x6d0ec0 HouseClass::updateFactoryQueue -> HouseClass
+[conv] 0x6f0a70 TeamTypeClass::DestroyAllInstances -> TeamTypeClass
+[conv] 0x438060 BlowPipe::AddRef -> BlowPipe
+[conv] 0x5c1d80 MPCooperative::Write -> MPCooperative
+[conv] 0x6ab9e0 SelectClass_StripClass_SidebarClass::deselect -> SelectClass_StripClass_SidebarClass
+[conv] 0x7cbf14 __control87 -> _addr_7C
+[conv] 0x7cbd45 __i64tow -> _addr_7C
+[conv] 0x7cbd7a __ui64tow -> _addr_7C
+[conv] 0x7b9df0 ObjectClass::sub_7B9DF0 -> ObjectClass
+[conv] 0x4e4e20 GetComboBoxSelectedRaw -> _addr_4E
+[conv] 0x4e6030 GetComboBoxSelectedRaw2 -> _addr_4E
+[conv] 0x734210 Map_Reset_734210 -> Map_Reset
+[conv] 0x488310 CheckListClass::vt_method_488310 -> CheckListClass
+[conv] 0x552060 LCWPipe::Dtor -> LCWPipe
+[conv] 0x552450 LCWStraw::Dtor -> LCWStraw
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] INIEntry                 rc=0
+[era] DynamicVector            rc=0
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+[era] HouseClass               rc=0
+[era] TeamTypeClass            rc=0
+[era] BlowPipe                 rc=0
+[era] MPCooperative            rc=2
+[era] SelectClass_StripClass_SidebarClass rc=0
+[era] _addr_4E                 rc=0
+[era] Map_Reset                rc=0
+[era] CheckListClass           rc=0
+[era] LCWPipe                  rc=0
+[era] LCWStraw                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6f21b0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::ClearBuffer
+[diff] 0x74fef0   MISMATCH         INIEntry::LookupByName
+[diff] 0x763ef0   MISMATCH         DynamicVector::checkSuperWeaponStatus
+[diff] 0x7b9df0   MISMATCH         ObjectClass::sub_7B9DF0
+[diff] 0x7cbf14   MISMATCH         __control87
+[diff] 0x6d0ec0   MISMATCH         HouseClass::updateFactoryQueue
+[diff] 0x6f0a70   MISMATCH         TeamTypeClass::DestroyAllInstances
+[diff] 0x438060   MATCH            BlowPipe::AddRef
+[diff] 0x6ab9e0   MISMATCH         SelectClass_StripClass_SidebarClass::deselect
+[diff] 0x4e4e20   MISMATCH         GetComboBoxSelectedRaw
+[diff] 0x4e6030   MISMATCH         GetComboBoxSelectedRaw2
+[diff] 0x734210   MISMATCH         Map_Reset_734210
+[diff] 0x488310   MISMATCH         CheckListClass::vt_method_488310
+[diff] 0x552060   MISMATCH         LCWPipe::Dtor
+[diff] 0x552450   MISMATCH         LCWStraw::Dtor
+[ledger] 0x6f21b0 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::ClearBuffer -> NG (attempt 1)
+[ledger] 0x74fef0 INIEntry::LookupByName -> NG (attempt 1)
+[ledger] 0x763ef0 DynamicVector::checkSuperWeaponStatus -> NG (attempt 1)
+[ledger] 0x7b67c0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0_Start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ce9e6 _write_char -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d0ec0 HouseClass::updateFactoryQueue -> NG (attempt 1)
+[ledger] 0x6f0a70 TeamTypeClass::DestroyAllInstances -> NG (attempt 1)
+[ledger] 0x438060 BlowPipe::AddRef -> OK (attempt 1)
+[ledger] 0x5c1d80 MPCooperative::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ab9e0 SelectClass_StripClass_SidebarClass::deselect -> NG (attempt 1)
+[ledger] 0x7cbf14 __control87 -> NG (attempt 1)
+[ledger] 0x7cbd45 __i64tow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cbd7a __ui64tow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b9df0 ObjectClass::sub_7B9DF0 -> NG (attempt 1)
+[ledger] 0x4e4e20 GetComboBoxSelectedRaw -> NG (attempt 1)
+[ledger] 0x4e6030 GetComboBoxSelectedRaw2 -> NG (attempt 1)
+[ledger] 0x734210 Map_Reset_734210 -> NG (attempt 1)
+[ledger] 0x488310 CheckListClass::vt_method_488310 -> NG (attempt 1)
+[ledger] 0x552060 LCWPipe::Dtor -> NG (attempt 1)
+[ledger] 0x552450 LCWStraw::Dtor -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 5,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "extern_reloc": 1,
+  "branch_polarity": 1,
+  "codegen_shape": 2,
+  "const_fold": 5
+ },
+ "match_rate_of_decided_pct": 6.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p189\batch_report.json

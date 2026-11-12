@@ -1,0 +1,11 @@
+{
+ "addr": "0x438060",
+ "name": "BlowPipe::AddRef",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x438060",
+ "bytes_hex": "568bf15733ff8b461885c07e158b4e0c85c9740e508d4610508bcee8909c1f008bf88bcec7461800000000e8a09c1f0003c75f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

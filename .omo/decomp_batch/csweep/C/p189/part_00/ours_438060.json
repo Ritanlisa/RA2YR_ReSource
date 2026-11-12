@@ -1,0 +1,21 @@
+{
+ "symbol": "?AddRef@BlowPipe@@QAEHXZ",
+ "sym_key": "BlowPipe::AddRef",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b461885c07e158b4e0c85c9740e508d4610508bcee8000000008bf88bcec7461800000000e80000000003c75f5ec3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Dispatch@Delegate@@QAEHHH@Z",
+   "sym_key": "Delegate::Dispatch"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetRelatedObject@GameClass@@QAEHXZ",
+   "sym_key": "GameClass::GetRelatedObject"
+  }
+ ]
+}

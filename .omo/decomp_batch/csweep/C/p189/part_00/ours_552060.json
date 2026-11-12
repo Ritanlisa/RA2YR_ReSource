@@ -1,0 +1,27 @@
+{
+ "symbol": "?Dtor@LCWPipe@@QAEHXZ",
+ "sym_key": "LCWPipe::Dtor",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4614c7060000000050e8000000008b4e18c746140000000051e80000000083c4088bcec7461800000000e8000000005ec3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Dtor@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::Dtor"
+  }
+ ]
+}

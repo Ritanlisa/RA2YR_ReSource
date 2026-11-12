@@ -1,0 +1,11 @@
+{
+ "addr": "0x734210",
+ "name": "Map_Reset_734210",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x734210",
+ "bytes_hex": "568b3530157e00ffd62d41060000c70554558400ffffffffa350558400ffd62d41060000c7055c5584009cffffffa3585584005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

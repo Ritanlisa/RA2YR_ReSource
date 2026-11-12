@@ -1,0 +1,27 @@
+{
+ "symbol": "?vt_method_488310@CheckListClass@@QAEHH@Z",
+ "sym_key": "CheckListClass::vt_method_488310",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "568bf16a08e80000000083c40485c0750c508bcee8000000005ec204008b4c24085089088bcec6400400e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?AddItem@ListClass@@QAEHH@Z",
+   "sym_key": "ListClass::AddItem"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?AddItem@ListClass@@QAEHH@Z",
+   "sym_key": "ListClass::AddItem"
+  }
+ ]
+}

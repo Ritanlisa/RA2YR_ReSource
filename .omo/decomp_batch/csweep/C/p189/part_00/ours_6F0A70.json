@@ -1,0 +1,27 @@
+{
+ "symbol": "?DestroyAllInstances@TeamTypeClass@@QAEHXZ",
+ "sym_key": "TeamTypeClass::DestroyAllInstances",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "a1800200005633f65785c08bf97e2733c98a0d2c0300008b0cb13b7924751285c9740d8b116a0151ff5220a1800200004e463bf07cd95f5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

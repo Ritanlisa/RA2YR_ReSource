@@ -1,0 +1,15 @@
+{
+ "symbol": "?updateFactoryQueue@HouseClass@@QAEPAGXZ",
+ "sym_key": "HouseClass::updateFactoryQueue",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "51568bf16a008b06c6864555000001ff5038a1a00100008b4c2404898638550000898e3c550000c78640550000070000005e59c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

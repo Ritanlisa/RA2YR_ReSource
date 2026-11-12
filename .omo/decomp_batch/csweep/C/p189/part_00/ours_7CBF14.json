@@ -1,0 +1,21 @@
+{
+ "symbol": "?__control87@@YAIII@Z",
+ "sym_key": "Unnamed::__control87",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "56e8000000008b5424088bf08b44240c8bc823d0f7d123f10bf256e80000000083c4048bc65ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?_abstract_cw@@YAHXZ",
+   "sym_key": "_abstract_cw"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?_hw_cw@@YAHHZZ",
+   "sym_key": "_hw_cw"
+  }
+ ]
+}

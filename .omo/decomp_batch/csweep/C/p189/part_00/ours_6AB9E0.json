@@ -1,0 +1,45 @@
+{
+ "symbol": "?deselect@SelectClass_StripClass_SidebarClass@@QAEHXZ",
+ "sym_key": "SelectClass_StripClass_SidebarClass::deselect",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0d3c000000e8000000008b46346a00240068f80100008946348b462cc6403c01e80000000083c408c6050000000001c60500000000015ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?updateStripPosition@SidebarClass@@QAEHXZ",
+   "sym_key": "SidebarClass::updateStripPosition"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_CameoRenderFlag@@3EA",
+   "sym_key": "g_CameoRenderFlag"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_TooltipActive@@3EA",
+   "sym_key": "g_TooltipActive"
+  }
+ ]
+}

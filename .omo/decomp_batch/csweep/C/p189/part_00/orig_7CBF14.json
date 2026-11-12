@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CBF14",
+ "name": "__control87",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CBF14",
+ "bytes_hex": "558bec51569bd97dfcff75fce8650000008bf08b450cf7d023f08b450823450c0bf056e8e00000005989450c59d96d0c8bc65ec9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

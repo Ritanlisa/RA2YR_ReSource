@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetComboBoxSelectedRaw2@@YIJPAXHJ@Z",
+ "sym_key": "Unnamed::GetComboBoxSelectedRaw2",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b442404565783f8ff8bf28bf975106a006a0068470100005657e8000000006a005068500100005657e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  }
+ ]
+}
