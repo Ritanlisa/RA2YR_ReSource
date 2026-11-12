@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p157\part_00
+=== convert (20 addrs) ===
+[conv] 0x767de0 sub_767DE0 -> _addr_76
+[conv] 0x76a9e0 sub_76A9E0 -> _addr_76
+[conv] 0x76bde0 sub_76BDE0 -> _addr_76
+[conv] 0x76c1e0 sub_76C1E0 -> _addr_76
+[conv] 0x76f3c0 sub_76F3C0 -> _addr_76
+[conv] 0x76f860 sub_76F860 -> _addr_76
+[conv] 0x771ba0 sub_771BA0 -> _addr_77
+[conv] 0x7733a0 sub_7733A0 -> _addr_77
+[conv] 0x777310 sub_777310 -> _addr_77
+[conv] 0x778630 sub_778630 -> _addr_77
+[conv] 0x77b1d0 sub_77B1D0 -> _addr_77
+[conv] 0x77b7d0 sub_77B7D0 -> _addr_77
+[conv] 0x7af1f0 sub_7AF1F0 -> _addr_7A
+[conv] 0x7b0ce0 sub_7B0CE0 -> _addr_7B
+[conv] 0x7b1910 sub_7B1910 -> _addr_7B
+[conv] 0x7b2ce0 sub_7B2CE0 -> _addr_7B
+[conv] 0x5d26c0 Team::ReleaseAll -> Team
+[conv] 0x6b0490 ObjectClass::Event_Process_6B0490 -> ObjectClass
+[conv] 0x740df0 HouseClass::SetPrimaryFactory -> HouseClass
+[conv] 0x473a80 CCFileClass::Construct3 -> CCFileClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_76                 rc=0
+[era] _addr_77                 rc=0
+[era] _addr_7A                 rc=0
+[era] _addr_7B                 rc=0
+[era] Team                     rc=0
+[era] ObjectClass              rc=0
+[era] HouseClass               rc=0
+[era] CCFileClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x767de0   MISMATCH         sub_767DE0
+[diff] 0x76a9e0   MISMATCH         sub_76A9E0
+[diff] 0x76bde0   MISMATCH         sub_76BDE0
+[diff] 0x76c1e0   MISMATCH         sub_76C1E0
+[diff] 0x76f3c0   MISMATCH         sub_76F3C0
+[diff] 0x76f860   MISMATCH         sub_76F860
+[diff] 0x771ba0   MISMATCH         sub_771BA0
+[diff] 0x7733a0   MISMATCH         sub_7733A0
+[diff] 0x777310   MISMATCH         sub_777310
+[diff] 0x778630   MISMATCH         sub_778630
+[diff] 0x77b1d0   MISMATCH         sub_77B1D0
+[diff] 0x77b7d0   MISMATCH         sub_77B7D0
+[diff] 0x7af1f0   MISMATCH         sub_7AF1F0
+[diff] 0x7b0ce0   MISMATCH         sub_7B0CE0
+[diff] 0x7b1910   MISMATCH         sub_7B1910
+[diff] 0x7b2ce0   MISMATCH         sub_7B2CE0
+[diff] 0x5d26c0   MISMATCH         Team::ReleaseAll
+[diff] 0x6b0490   MISMATCH         ObjectClass::Event_Process_6B0490
+[diff] 0x740df0   MISMATCH         HouseClass::SetPrimaryFactory
+[diff] 0x473a80   MISMATCH         CCFileClass::Construct3
+[ledger] 0x767de0 sub_767DE0 -> NG (attempt 1)
+[ledger] 0x76a9e0 sub_76A9E0 -> NG (attempt 1)
+[ledger] 0x76bde0 sub_76BDE0 -> NG (attempt 1)
+[ledger] 0x76c1e0 sub_76C1E0 -> NG (attempt 1)
+[ledger] 0x76f3c0 sub_76F3C0 -> NG (attempt 1)
+[ledger] 0x76f860 sub_76F860 -> NG (attempt 1)
+[ledger] 0x771ba0 sub_771BA0 -> NG (attempt 1)
+[ledger] 0x7733a0 sub_7733A0 -> NG (attempt 1)
+[ledger] 0x777310 sub_777310 -> NG (attempt 1)
+[ledger] 0x778630 sub_778630 -> NG (attempt 1)
+[ledger] 0x77b1d0 sub_77B1D0 -> NG (attempt 1)
+[ledger] 0x77b7d0 sub_77B7D0 -> NG (attempt 1)
+[ledger] 0x7af1f0 sub_7AF1F0 -> NG (attempt 1)
+[ledger] 0x7b0ce0 sub_7B0CE0 -> NG (attempt 1)
+[ledger] 0x7b1910 sub_7B1910 -> NG (attempt 1)
+[ledger] 0x7b2ce0 sub_7B2CE0 -> NG (attempt 1)
+[ledger] 0x5d26c0 Team::ReleaseAll -> NG (attempt 1)
+[ledger] 0x6b0490 ObjectClass::Event_Process_6B0490 -> NG (attempt 1)
+[ledger] 0x740df0 HouseClass::SetPrimaryFactory -> NG (attempt 1)
+[ledger] 0x473a80 CCFileClass::Construct3 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 16,
+  "branch_order": 1,
+  "regalloc": 1,
+  "branch_polarity": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p157\batch_report.json

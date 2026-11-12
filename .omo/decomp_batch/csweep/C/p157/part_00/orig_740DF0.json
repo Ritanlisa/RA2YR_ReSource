@@ -1,0 +1,11 @@
+{
+ "addr": "0x740DF0",
+ "name": "HouseClass::SetPrimaryFactory",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x740DF0",
+ "bytes_hex": "8b44240483f8ff741e83b9cc060000ff75158981cc0600008b016a02ff9024010000b001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

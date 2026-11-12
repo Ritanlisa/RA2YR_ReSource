@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D26C0",
+ "name": "Team::ReleaseAll",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D26C0",
+ "bytes_hex": "56578bf933f68b472885c07e1a538b5c24108b471c538b0cb08b11ff52208b4728463bf07cec5b5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

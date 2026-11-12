@@ -1,0 +1,21 @@
+{
+ "symbol": "?Construct3@CCFileClass@@QAEPAV1@XZ",
+ "sym_key": "CCFileClass::Construct3",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000006a006a008d4e58e800000000c7466400000000c70600000000c74668000000008bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Init@BufferIOFile@@QAEPAV1@XZ",
+   "sym_key": "BufferIOFile::Init"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  }
+ ]
+}
