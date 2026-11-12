@@ -1,0 +1,456 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "const_fold": 19,
+   "branch_polarity": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x48b020",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5144",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_DamageGroup::Constructor_VectorClass_DamageGroup___",
+   "emitted": "_DynamicVectorClass_PAUDamageGroup::Constructor_VectorClass_DamageGroup___",
+   "unit": "_DynamicVectorClass_PAUDamageGroup",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x49b0e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5338",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_ConvertClass::QueryInterface",
+   "emitted": "_VectorClass_PAVConvertClass::QueryInterface",
+   "unit": "_VectorClass_PAVConvertClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x49b130",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5338",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_ConvertClass::Constructor_VectorClass_ConvertClass___",
+   "emitted": "_DynamicVectorClass_PAVConvertClass::Constructor_VectorClass_ConvertClass___",
+   "unit": "_DynamicVectorClass_PAVConvertClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x49ee10",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5c24",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "DynamicVectorClass_PAD::Add",
+   "emitted": "_DynamicVectorClass_PAD::Add",
+   "unit": "_DynamicVectorClass_PAD",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x49efa0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5c24",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "StringVector::QueryInterface",
+   "emitted": "_VectorClass_PAD::QueryInterface",
+   "unit": "_VectorClass_PAD",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x49eff0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5c04",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "DynamicVectorClass_PAD_16::QueryInterface",
+   "emitted": "_VectorClass_PAV_DynamicVectorClass_PAD::QueryInterface",
+   "unit": "_VectorClass_PAV_DynamicVectorClass_PAD",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x49f040",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5c04",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "DynamicVectorClass_PAD::Destructor",
+   "emitted": "_DynamicVectorClass_PAV_DynamicVectorClass_PAD::Destructor",
+   "unit": "_DynamicVectorClass_PAV_DynamicVectorClass_PAD",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4a0e10",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5c84",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_",
+   "emitted": "_DynamicVectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_",
+   "unit": "_DynamicVectorClass_UtagCONNECTDATA",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4a0e60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5d08",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___",
+   "emitted": "_DynamicVectorClass_PAUIConnectionPoint::Constructor_VectorClass_IConnectionPoint___",
+   "unit": "_DynamicVectorClass_PAUIConnectionPoint",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4a14a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5c84",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_UtagCONNECTDATA::QueryInterface",
+   "emitted": "_VectorClass_UtagCONNECTDATA::QueryInterface",
+   "unit": "_VectorClass_UtagCONNECTDATA",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4a14f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5d08",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "ConnectionPointClass_9::QueryInterface",
+   "emitted": "_VectorClass_PAUIConnectionPoint::QueryInterface",
+   "unit": "_VectorClass_PAUIConnectionPoint",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4a4d90",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5dec",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CStreamClass_16::QueryInterface",
+   "emitted": "_VectorClass_PAU_DDSURFACEDESC::QueryInterface",
+   "unit": "_VectorClass_PAU_DDSURFACEDESC",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4a4de0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5dec",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CStreamClass::Constructor_VectorClass__DDSURFACEDESC___",
+   "emitted": "_DynamicVectorClass_PAU_DDSURFACEDESC::Constructor_VectorClass__DDSURFACEDESC___",
+   "unit": "_DynamicVectorClass_PAU_DDSURFACEDESC",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4a8030",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5efc",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "Dial8Class_48::QueryInterface",
+   "emitted": "_VectorClass_PAVDiskLaserClass::QueryInterface",
+   "unit": "_VectorClass_PAVDiskLaserClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4a8080",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e5efc",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "Dial8Class_48::Constructor_VectorClass_DiskLaserClass___",
+   "emitted": "_DynamicVectorClass_PAVDiskLaserClass::Constructor_VectorClass_DiskLaserClass___",
+   "unit": "_DynamicVectorClass_PAVDiskLaserClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4ba160",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e4df8",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "FilePipe_30::Destructor",
+   "emitted": "_DynamicVectorClass_PAVTechnoTypeClass::Destructor",
+   "unit": "_DynamicVectorClass_PAVTechnoTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4ba200",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4ba227",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "FilePipe_30::Destructor_0",
+   "emitted": "_DynamicVectorClass_PAUButtonFadeEffect::Destructor_0",
+   "unit": "_DynamicVectorClass_PAUButtonFadeEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4ba2a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e8520",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "FilePipe_30::Destructor_1",
+   "emitted": "_DynamicVectorClass_PAUCrossDissolveEffect::Destructor_1",
+   "unit": "_DynamicVectorClass_PAUCrossDissolveEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4c2f00",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e86ac",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_EBolt::QueryInterface",
+   "emitted": "_VectorClass_PAVEBolt::QueryInterface",
+   "unit": "_VectorClass_PAVEBolt",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4c2f50",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e86ac",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_EBolt::Constructor_VectorClass_EBolt___",
+   "emitted": "_DynamicVectorClass_PAVEBolt::Constructor_VectorClass_EBolt___",
+   "unit": "_DynamicVectorClass_PAVEBolt",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  }
+ ]
+}

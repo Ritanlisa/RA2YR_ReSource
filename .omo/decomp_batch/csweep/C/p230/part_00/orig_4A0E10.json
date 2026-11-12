@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A0E10",
+ "name": "VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A0E10",
+ "bytes_hex": "568bf18b4604c706845c7e0085c074178a4e0d84c9741050e8107d320083c404c74604000000008a442408c6460d00a801c7460800000000740956e8ed7c320083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
