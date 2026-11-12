@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x764a00",
+  "family": "D_RELOC",
+  "name": "sub_764A00"
+ },
+ {
+  "addr": "0x765dc0",
+  "family": "D_RELOC",
+  "name": "sub_765DC0"
+ },
+ {
+  "addr": "0x765f40",
+  "family": "D_RELOC",
+  "name": "sub_765F40"
+ },
+ {
+  "addr": "0x767160",
+  "family": "D_RELOC",
+  "name": "sub_767160"
+ },
+ {
+  "addr": "0x7672e0",
+  "family": "D_RELOC",
+  "name": "sub_7672E0"
+ },
+ {
+  "addr": "0x767960",
+  "family": "D_RELOC",
+  "name": "sub_767960"
+ },
+ {
+  "addr": "0x767ae0",
+  "family": "D_RELOC",
+  "name": "sub_767AE0"
+ },
+ {
+  "addr": "0x767cf0",
+  "family": "D_RELOC",
+  "name": "sub_767CF0"
+ },
+ {
+  "addr": "0x767e70",
+  "family": "D_RELOC",
+  "name": "sub_767E70"
+ },
+ {
+  "addr": "0x76a8f0",
+  "family": "D_RELOC",
+  "name": "sub_76A8F0"
+ },
+ {
+  "addr": "0x76aa70",
+  "family": "D_RELOC",
+  "name": "sub_76AA70"
+ },
+ {
+  "addr": "0x76bcf0",
+  "family": "D_RELOC",
+  "name": "sub_76BCF0"
+ },
+ {
+  "addr": "0x76be70",
+  "family": "D_RELOC",
+  "name": "sub_76BE70"
+ },
+ {
+  "addr": "0x76c0f0",
+  "family": "D_RELOC",
+  "name": "sub_76C0F0"
+ },
+ {
+  "addr": "0x76c270",
+  "family": "D_RELOC",
+  "name": "sub_76C270"
+ },
+ {
+  "addr": "0x76f020",
+  "family": "D_RELOC",
+  "name": "FileClass::GetState"
+ },
+ {
+  "addr": "0x76f070",
+  "family": "D_RELOC",
+  "name": "FileClass::SetState"
+ },
+ {
+  "addr": "0x76f2d0",
+  "family": "D_RELOC",
+  "name": "sub_76F2D0"
+ },
+ {
+  "addr": "0x76f450",
+  "family": "D_RELOC",
+  "name": "sub_76F450"
+ },
+ {
+  "addr": "0x76f770",
+  "family": "D_RELOC",
+  "name": "sub_76F770"
+ }
+]
