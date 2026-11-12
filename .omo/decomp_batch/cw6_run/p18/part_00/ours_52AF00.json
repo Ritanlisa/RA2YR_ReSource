@@ -1,0 +1,8 @@
+{
+ "symbol": "?findSection@INIClass@@QAEPAV1@HHHHHHH@Z",
+ "sym_key": "INIClass::findSection",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "8b54240833c08951108b54240489510c8b5424108951188b54240c8951148b54241c8951208b54241889511c8b5424148941048941088951248901c21c00",
+ "relocs": []
+}

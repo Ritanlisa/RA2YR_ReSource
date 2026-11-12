@@ -1,0 +1,11 @@
+{
+ "addr": "0x517070",
+ "name": "HoverLocomotionClass::ddtor",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x517070",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d409a7e0089088b15449a7e008950048b0d489a7e008948088b154c9a7e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

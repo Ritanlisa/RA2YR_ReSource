@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x512d60 _VectorClass_PBVInfantryTypeClass::AddType -> _VectorClass_PBVInfantryTypeClass
+[conv] 0x513010 _VectorClass_PBVUnitTypeClass::AddRef -> _VectorClass_PBVUnitTypeClass
+[conv] 0x513130 _VectorClass_PBVUnitTypeClass::Add -> _VectorClass_PBVUnitTypeClass
+[conv] 0x513340 _DynamicVectorClass_PBVUnitTypeClass::Read -> _DynamicVectorClass_PBVUnitTypeClass
+[conv] 0x5133e0 _VectorClass_PBVAircraftTypeClass::AddRef -> _VectorClass_PBVAircraftTypeClass
+[conv] 0x513500 _VectorClass_PBVAircraftTypeClass::IndexOf -> _VectorClass_PBVAircraftTypeClass
+[conv] 0x513710 _DynamicVectorClass_PBVAircraftTypeClass::Read -> _DynamicVectorClass_PBVAircraftTypeClass
+[conv] 0x517070 HoverLocomotionClass::ddtor -> HoverLocomotionClass
+[conv] 0x523300 InfantryClass::GetClassID -> InfantryClass
+[conv] 0x524c70 InfantryTypeClass::GetClassIdentifier -> InfantryTypeClass
+[conv] 0x5250d0 _VectorClass_PBVAnimTypeClass::AddRef -> _VectorClass_PBVAnimTypeClass
+[conv] 0x525400 _DynamicVectorClass_PBVAnimTypeClass::Init -> _DynamicVectorClass_PBVAnimTypeClass
+[conv] 0x52ace0 GenericList::Constructor -> GenericList
+[conv] 0x52af00 INIClass::findSection -> INIClass
+[conv] 0x52af50 INIClass::sectionExists -> INIClass
+[conv] 0x535c00 CreateTeamCommand::Construct -> CreateTeamCommand
+[conv] 0x535fc0 SelectTeamCommand::Construct -> SelectTeamCommand
+[conv] 0x5360b0 AddTeamCommand::Construct -> AddTeamCommand
+[conv] 0x5361a0 CenterTeamCommand::Construct -> CenterTeamCommand
+[conv] 0x536290 TauntCommandClass::Construct -> TauntCommandClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVInfantryTypeClass rc=0
+[era] _VectorClass_PBVUnitTypeClass rc=0
+[era] _DynamicVectorClass_PBVUnitTypeClass rc=0
+[era] _VectorClass_PBVAircraftTypeClass rc=0
+[era] _DynamicVectorClass_PBVAircraftTypeClass rc=0
+[era] HoverLocomotionClass     rc=0
+[era] InfantryClass            rc=0
+[era] InfantryTypeClass        rc=0
+[era] _VectorClass_PBVAnimTypeClass rc=0
+[era] _DynamicVectorClass_PBVAnimTypeClass rc=0
+[era] GenericList              rc=2
+[era] INIClass                 rc=0
+[era] CreateTeamCommand        rc=0
+[era] SelectTeamCommand        rc=2
+[era] AddTeamCommand           rc=2
+[era] CenterTeamCommand        rc=2
+[era] TauntCommandClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x512d60   MISMATCH         _VectorClass_PBVInfantryTypeClass::AddType
+[diff] 0x513010   MISMATCH         _VectorClass_PBVUnitTypeClass::AddRef
+[diff] 0x513130   MISMATCH         _VectorClass_PBVUnitTypeClass::Add
+[diff] 0x513340   MISMATCH         _DynamicVectorClass_PBVUnitTypeClass::Read
+[diff] 0x5133e0   MISMATCH         _VectorClass_PBVAircraftTypeClass::AddRef
+[diff] 0x513500   MISMATCH         _VectorClass_PBVAircraftTypeClass::IndexOf
+[diff] 0x513710   MISMATCH         _DynamicVectorClass_PBVAircraftTypeClass::Read
+[diff] 0x517070   MISMATCH         HoverLocomotionClass::ddtor
+[diff] 0x523300   MISMATCH         InfantryClass::GetClassID
+[diff] 0x524c70   MISMATCH         InfantryTypeClass::GetClassIdentifier
+[diff] 0x5250d0   MISMATCH         _VectorClass_PBVAnimTypeClass::AddRef
+[diff] 0x525400   MISMATCH         _DynamicVectorClass_PBVAnimTypeClass::Init
+[diff] 0x52af00   MISMATCH         INIClass::findSection
+[diff] 0x52af50   MISMATCH         INIClass::sectionExists
+[diff] 0x535c00   MISMATCH         CreateTeamCommand::Construct
+[ledger] 0x512d60 _VectorClass_PBVInfantryTypeClass::AddType -> NG (attempt 2)
+[ledger] 0x513010 _VectorClass_PBVUnitTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x513130 _VectorClass_PBVUnitTypeClass::Add -> NG (attempt 2)
+[ledger] 0x513340 _DynamicVectorClass_PBVUnitTypeClass::Read -> NG (attempt 2)
+[ledger] 0x5133e0 _VectorClass_PBVAircraftTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x513500 _VectorClass_PBVAircraftTypeClass::IndexOf -> NG (attempt 2)
+[ledger] 0x513710 _DynamicVectorClass_PBVAircraftTypeClass::Read -> NG (attempt 2)
+[ledger] 0x517070 HoverLocomotionClass::ddtor -> NG (attempt 2)
+[ledger] 0x523300 InfantryClass::GetClassID -> NG (attempt 2)
+[ledger] 0x524c70 InfantryTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x5250d0 _VectorClass_PBVAnimTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x525400 _DynamicVectorClass_PBVAnimTypeClass::Init -> NG (attempt 2)
+[ledger] 0x52ace0 GenericList::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52af00 INIClass::findSection -> NG (attempt 2)
+[ledger] 0x52af50 INIClass::sectionExists -> NG (attempt 2)
+[ledger] 0x535c00 CreateTeamCommand::Construct -> NG (attempt 2)
+[ledger] 0x535fc0 SelectTeamCommand::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5360b0 AddTeamCommand::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5361a0 CenterTeamCommand::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536290 TauntCommandClass::Construct -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "branch_polarity": 3,
+  "eval_order": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p18\batch_report.json

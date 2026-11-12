@@ -1,0 +1,11 @@
+{
+ "addr": "0x52AF50",
+ "name": "INIClass::sectionExists",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52AF50",
+ "bytes_hex": "8bc1535633c98d70048d50103bd157894e04894e08c7060c1b7e00894a04894a08c7020c1b7e00c700041b7e0074208b5a043bd974198b7a083bf97412895f048b7a048b5a08895f08894a08894a048b7e04897208897a048b7e043bf974038957088956045f5ec70044b77e005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

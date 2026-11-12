@@ -1,0 +1,8 @@
+{
+ "symbol": "?sectionExists@INIClass@@QAEPAIXZ",
+ "sym_key": "INIClass::sectionExists",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b0156578d511033ff8d7104897914893989790889790c893e897918893a89791489398971185f8951085ec3",
+ "relocs": []
+}
