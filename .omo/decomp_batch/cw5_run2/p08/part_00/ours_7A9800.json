@@ -1,0 +1,159 @@
+{
+ "symbol": "?DispatchStub_27@CChatEventSink@@QAGHH@Z",
+ "sym_key": "CChatEventSink::DispatchStub_27",
+ "size": 376,
+ "link_base": 0,
+ "bytes_hex": "8b44240881ec0401000085c05657751da0000000008b0d0000000068fd1f00005033d2e800000000e9350100003d34010400752833c968012000008a0d0000000033d2518b0d00000000e8000000008b54240852508d44241450eb453d33010400751833c968032000008a0d0000000033d2518b0d00000000eb168b0d0000000033d28a150000000068052000005233d2e8000000008d54240c8b4c2408515052e8000000008bbc241c01000083c40c8bcfe8000000008bf085f67438683f05000056e80000000085c0741a8d44240c83c9ff50e8000000005f33c05e81c404010000c2080068b505000056e80000000085c07569b900000000e8000000008bcfe8000000008b0d4002000083ec08dd0500000000dc89c01400008bf0dd1c24e8000000008bc88b44241033c883c40881e1ff0000008d54240c33c16a00506a1656526a006a00b944010000e8000000005f33c05e81c404010000c208008d44240c5083c9ffe8000000005f33c05e81c404010000c20800",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wonline_cpp@@3EA",
+   "sym_key": "g_Str_File_wonline_cpp"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?aTxtPagesent@@3HA",
+   "sym_key": "aTxtPagesent"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wonline_cpp@@3EA",
+   "sym_key": "g_Str_File_wonline_cpp"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?aTxtPagedisable@@3HA",
+   "sym_key": "aTxtPagedisable"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wonline_cpp@@3EA",
+   "sym_key": "g_Str_File_wonline_cpp"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?aTxtPageusergon@@3HA",
+   "sym_key": "aTxtPageusergon"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?aTxtPagefailed@@3HA",
+   "sym_key": "aTxtPagefailed"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wonline_cpp@@3EA",
+   "sym_key": "g_Str_File_wonline_cpp"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "?ShowMessage@Dialog@@QAEPAXH@Z",
+   "sym_key": "Dialog::ShowMessage"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 251,
+   "type": "REL32",
+   "sym": "?GetGameSpeed@SessionClass@@QAEDXZ",
+   "sym_key": "SessionClass::GetGameSpeed"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?GetType@BuildingAnim@@QAEHXZ",
+   "sym_key": "BuildingAnim::GetType"
+  },
+  {
+   "off": 264,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 273,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E27F8@@3NA",
+   "sym_key": "DataGlobal_7E27F8"
+  },
+  {
+   "off": 289,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?g_NetworkRematchObject@@3IA",
+   "sym_key": "g_NetworkRematchObject"
+  },
+  {
+   "off": 333,
+   "type": "REL32",
+   "sym": "?AddMessage@MessageListClass@@QAEHPAXH0HHHD@Z",
+   "sym_key": "MessageListClass::AddMessage"
+  },
+  {
+   "off": 359,
+   "type": "REL32",
+   "sym": "?ShowStatusText@Dialog@@QAEPAXH@Z",
+   "sym_key": "Dialog::ShowStatusText"
+  }
+ ]
+}

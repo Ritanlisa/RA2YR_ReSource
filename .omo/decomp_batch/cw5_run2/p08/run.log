@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x545000 TheatreClass::InitView -> TheatreClass
+[conv] 0x6319c0 ObjectClass::Network_Set -> ObjectClass
+[conv] 0x792cf0 sub_792CF0 -> _addr_79
+[conv] 0x5c1300 ObjectClass::ReadMPMapsINI -> ObjectClass
+[conv] 0x501750 ObjectClass::sub_501750 -> ObjectClass
+[conv] 0x7a9800 CChatEventSink::DispatchStub_27 -> CChatEventSink
+[conv] 0x559ed0 LoadOptions::Read -> LoadOptions
+[conv] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> CComObject_CChatEventSink___ATL
+[conv] 0x41cc20 AircraftTypeClass::LoadTypeData -> AircraftTypeClass
+[conv] 0x6b3cd0 sub_6B3CD0 -> _addr_6B
+[conv] 0x6ba230 HashTable::RemoveEntry -> HashTable
+[conv] 0x7298f0 AnimClass::GetAnimation -> AnimClass
+[conv] 0x765000 sub_765000 -> _addr_76
+[conv] 0x67bb10 ReadINIClassInfantryTypeList -> _addr_67
+[conv] 0x720590 ThemeClass::InitializeThemes -> ThemeClass
+[conv] 0x655560 BuildingClass::ProcessFogCellOccupancy -> BuildingClass
+[conv] 0x4fc9e0 HouseClass::CheckWinCondition -> HouseClass
+[conv] 0x528c00 INIClass::ReadString -> INIClass
+[conv] 0x79ba60 ValidateGameJoinWOL -> _addr_79
+[conv] 0x49e510 INIClass::ClearContents -> INIClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TheatreClass             rc=0
+[era] ObjectClass              rc=2
+[era] _addr_79                 rc=2
+[era] CChatEventSink           rc=0
+[era] LoadOptions              rc=0
+[era] CComObject_CChatEventSink___ATL rc=2
+[era] AircraftTypeClass        rc=0
+[era] _addr_6B                 rc=0
+[era] HashTable                rc=0
+[era] AnimClass                rc=0
+[era] _addr_76                 rc=2
+[era] _addr_67                 rc=2
+[era] ThemeClass               rc=2
+[era] BuildingClass            rc=0
+[era] HouseClass               rc=2
+[era] INIClass                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x545000   MISMATCH         TheatreClass::InitView
+[diff] 0x6319c0   MISMATCH         ObjectClass::Network_Set
+[diff] 0x792cf0   MISMATCH         sub_792CF0
+[diff] 0x7a9800   MISMATCH         CChatEventSink::DispatchStub_27
+[diff] 0x559ed0   MISMATCH         LoadOptions::Read
+[diff] 0x41cc20   MISMATCH         AircraftTypeClass::LoadTypeData
+[diff] 0x6b3cd0   MISMATCH         sub_6B3CD0
+[diff] 0x6ba230   MISMATCH         HashTable::RemoveEntry
+[diff] 0x7298f0   MISMATCH         AnimClass::GetAnimation
+[diff] 0x655560   MISMATCH         BuildingClass::ProcessFogCellOccupancy
+[diff] 0x528c00   MISMATCH         INIClass::ReadString
+[diff] 0x49e510   MISMATCH         INIClass::ClearContents
+[ledger] 0x545000 TheatreClass::InitView -> NG (attempt 5)
+[ledger] 0x6319c0 ObjectClass::Network_Set -> NG (attempt 9)
+[ledger] 0x792cf0 sub_792CF0 -> NG (attempt 5)
+[ledger] 0x5c1300 ObjectClass::ReadMPMapsINI -> COMPILE_FAIL (attempt 9)
+[ledger] 0x501750 ObjectClass::sub_501750 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7a9800 CChatEventSink::DispatchStub_27 -> NG (attempt 5)
+[ledger] 0x559ed0 LoadOptions::Read -> NG (attempt 5)
+[ledger] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> COMPILE_FAIL (attempt 5)
+[ledger] 0x41cc20 AircraftTypeClass::LoadTypeData -> NG (attempt 5)
+[ledger] 0x6b3cd0 sub_6B3CD0 -> NG (attempt 6)
+[ledger] 0x6ba230 HashTable::RemoveEntry -> NG (attempt 5)
+[ledger] 0x7298f0 AnimClass::GetAnimation -> NG (attempt 5)
+[ledger] 0x765000 sub_765000 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x67bb10 ReadINIClassInfantryTypeList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x720590 ThemeClass::InitializeThemes -> COMPILE_FAIL (attempt 5)
+[ledger] 0x655560 BuildingClass::ProcessFogCellOccupancy -> NG (attempt 5)
+[ledger] 0x4fc9e0 HouseClass::CheckWinCondition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x528c00 INIClass::ReadString -> NG (attempt 5)
+[ledger] 0x79ba60 ValidateGameJoinWOL -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49e510 INIClass::ClearContents -> NG (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "signedness": 2,
+  "regalloc": 3,
+  "frame_sched": 5,
+  "codegen_shape": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p08\batch_report.json

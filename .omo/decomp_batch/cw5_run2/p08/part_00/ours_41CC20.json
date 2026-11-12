@@ -1,0 +1,177 @@
+{
+ "symbol": "?LoadTypeData@AircraftTypeClass@@QAEDHN@Z",
+ "sym_key": "AircraftTypeClass::LoadTypeData",
+ "size": 428,
+ "link_base": 0,
+ "bytes_hex": "81ec84000000538bd9e8000000008b4424048b8c248c00000050518bcbe80000000084c0750a5b81c484000000c20c0055568b74240c578bcb8a960a0e00008d7e2452680000000057e8000000008a8e0d0e000088860a0e0000884c24108bcb8b54241052680000000057e8000000008a8e0e0e000088860d0e0000884c24108bcb8b54241052680000000057e80000000088860e0e00008a86fc0d0000506800000000578bcbe8000000008a8e080e00008daef8010000884c2410b9e00100008b5424108886fc0d000052680000000055e8000000008a8e090e00008886080e0000884c2410b9e00100008b54241052680000000055e8000000008d4c24146880000000518886090e00008b86000e00006800000000680000000055b9e001000089442424e80000000085c0740b8d4c2414e800000000eb048b4424108b8e040e00008986000e000051680000000055b9e0010000e8000000008a960b0e00008bcb526800000000578986040e0000e8000000008a8e0c0e000088860b0e0000884c24108bcb8b54241052680000000057e80000000088860c0e00005f5e5db0015b81c484000000c20c00",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?ResetSection@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ResetSection"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?LoadExtras@ObjectTypeClass@@QAEDHH@Z",
+   "sym_key": "ObjectTypeClass::LoadExtras"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81804C@@3PADA",
+   "sym_key": "DataGlobal_81804C"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81803C@@3PADA",
+   "sym_key": "DataGlobal_81803C"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?DataGlobal_818034@@3PADA",
+   "sym_key": "DataGlobal_818034"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?DataGlobal_818028@@3PADA",
+   "sym_key": "DataGlobal_818028"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?DataGlobal_818020@@3PADA",
+   "sym_key": "DataGlobal_818020"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_818014@@3PADA",
+   "sym_key": "DataGlobal_818014"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 275,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 280,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81800C@@3PADA",
+   "sym_key": "DataGlobal_81800C"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 295,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?FindOrCreate@AnimTypeClass@@QAEHXZ",
+   "sym_key": "AnimTypeClass::FindOrCreate"
+  },
+  {
+   "off": 332,
+   "type": "DIR32",
+   "sym": "?DataGlobal_818000@@3PADA",
+   "sym_key": "DataGlobal_818000"
+  },
+  {
+   "off": 338,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 343,
+   "type": "REL32",
+   "sym": "?ReadInt_Overwrite@INIClass@@QAEHPAX0H@Z",
+   "sym_key": "INIClass::ReadInt_Overwrite"
+  },
+  {
+   "off": 357,
+   "type": "DIR32",
+   "sym": "?DataGlobal_817FF8@@3PADA",
+   "sym_key": "DataGlobal_817FF8"
+  },
+  {
+   "off": 369,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 397,
+   "type": "DIR32",
+   "sym": "?DataGlobal_817FF0@@3PADA",
+   "sym_key": "DataGlobal_817FF0"
+  },
+  {
+   "off": 403,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  }
+ ]
+}

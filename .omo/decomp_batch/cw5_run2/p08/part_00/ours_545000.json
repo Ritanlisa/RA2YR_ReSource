@@ -1,0 +1,189 @@
+{
+ "symbol": "?InitView@TheatreClass@@QAEHXZ",
+ "sym_key": "TheatreClass::InitView",
+ "size": 336,
+ "link_base": 0,
+ "bytes_hex": "8b15000000005685d2764f8b0d000000008b0185c074138b086a0150ff118b0d000000008b150000000085d27e2c33c08d72ff4a89350000000085d27e1c8b5481048914818b15000000008b0d00000000403bc272e885d277b768b4010000e80000000083c40485c074318b0d000000006a356a006a0068e803000068e803000068e803000051680000000068000000008bc8e8000000008bf0eb0233f6a1000000008b0d000000003bc8722f8a0d0000000084c9750485c075398b0d0000000085c9762f8b150000000003c86a00516800000000ff520884c074188b0d000000008bc141890d000000008b0d000000008934818b0d0000000068e803000068e803000068e80300006a0068000001006a00c7050000000000000000e800000000b900000000e800000000b900000000e80000000085c05e7415b900000000c7403400000000e80000000085c075ebc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F69C@@3IA",
+   "sym_key": "DataGlobal_87F69C"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F69C@@3IA",
+   "sym_key": "DataGlobal_87F69C"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F69C@@3IA",
+   "sym_key": "DataGlobal_87F69C"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?FileSystem_TEMPERAT_PAL@@3EA",
+   "sym_key": "FileSystem_TEMPERAT_PAL"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?unk_ABBED0@@3EA",
+   "sym_key": "unk_ABBED0"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Constructor@LightConvertClass@@QAEPAV1@HHPAXHHHDHH@Z",
+   "sym_key": "LightConvertClass::Constructor"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F6A0@@3IA",
+   "sym_key": "DataGlobal_87F6A0"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F6A5@@3EA",
+   "sym_key": "DataGlobal_87F6A5"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F6AC@@3IA",
+   "sym_key": "DataGlobal_87F6AC"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F698@@3IA",
+   "sym_key": "DataGlobal_87F698"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F698@@3IA",
+   "sym_key": "DataGlobal_87F698"
+  },
+  {
+   "off": 222,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F69C@@3IA",
+   "sym_key": "DataGlobal_87F69C"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDC84@@3IA",
+   "sym_key": "DataGlobal_ABDC84"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?SetView@TacticalClass@@QAEFHHFFFF@Z",
+   "sym_key": "TacticalClass::SetView"
+  },
+  {
+   "off": 290,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 295,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 300,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 305,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

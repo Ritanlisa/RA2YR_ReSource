@@ -1,0 +1,75 @@
+{
+ "symbol": "?ClearContents@INIClass@@QAEPADXZ",
+ "sym_key": "INIClass::ClearContents",
+ "size": 556,
+ "link_base": 0,
+ "bytes_hex": "83ec085355578bf933ed33db396f580f84090200008b475c563bc5896c24100f8e4d01000033f68b57588bc603c239680c74268b400450e8000000008b4f588b540e4052e8000000008b47588b4c060c51e80000000083c40c8b4758396c30387e63eb0233ed8b54062c8b049a8b481085c97e208b4004458b44a8fc50e8000000008b4f5883c4048b540e2c8b049a3b681072e08b47588b4c062c8b0499508b10ff520c8b47588b4c062c8b049985c074078b106a0150ff128b4758433b5c063872a133ed8b47588b4c06288d44062850ff510c8b47588b4c302085c976668b5406148d4e1433db8b14aa395a107e268b04018b04a88b4804438b4499fc50e8000000008b575883c4048b4416148b04a83b581072e08b4f588b540e148b04aa508b08ff510c8b57588b4416148b04a885c074078b086a0150ff118b4758453b6c0620729a8b57588b4c16108d44161050ff510c8b4424108b4f5c83c64c403bc1894424107d0933db33ede9b7feffff33ed8b57583bd50f84990000008b42fc8d72fc897424148d48ff3bcd7c7f8d34c041894c24108d04708d5c822c8d731883ee4c83eb4c8d4e0451e80000000056e8000000008b0383c4083bc5896ee474128a4ef184c9740b50e80000000083c404892b8b46d0c646f1003bc5896eec896ecc74138a4ed984c9740c50e80000000083c404896ed08b442410c646d90048896ed48944241075978b74241456e80000000083c404896f58c64760005e8bcfe8000000005f5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 256,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 427,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 433,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 458,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 493,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 527,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 545,
+   "type": "REL32",
+   "sym": "?DestroyHashTableINIClass@HashTable@@QAEPADXZ",
+   "sym_key": "HashTable::DestroyHashTableINIClass"
+  }
+ ]
+}
