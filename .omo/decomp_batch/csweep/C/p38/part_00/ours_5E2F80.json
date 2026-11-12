@@ -1,0 +1,27 @@
+{
+ "symbol": "?Skirmish_Setup@@YIHPAX@Z",
+ "sym_key": "Unnamed::Skirmish_Setup",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "33c056a0000000008bf18b08e80000000085c075078bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Find@MultiplayerGameMode@@QAEHXZ",
+   "sym_key": "MultiplayerGameMode::Find"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetFirst@MultiplayerGameMode@@QAEHXZ",
+   "sym_key": "MultiplayerGameMode::GetFirst"
+  }
+ ]
+}

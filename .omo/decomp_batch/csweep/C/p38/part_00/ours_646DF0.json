@@ -1,0 +1,15 @@
+{
+ "symbol": "?Network_Helper_646DF0@@YIKH@Z",
+ "sym_key": "Unnamed::Network_Helper_646DF0",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CDA56",
+ "name": "__unlock",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CDA56",
+ "bytes_hex": "558bec8b4508ff3485a8c28700ff15ec117e005dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

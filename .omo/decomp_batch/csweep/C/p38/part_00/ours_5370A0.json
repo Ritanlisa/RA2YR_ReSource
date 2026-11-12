@@ -1,0 +1,21 @@
+{
+ "symbol": "?performAction_123@BeaconPlacementCommandClass@@QAGHXZ",
+ "sym_key": "BeaconPlacementCommandClass::performAction_123",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0740a83f8057405e800000000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?UI_Create_731A30@@YAHXZ",
+   "sym_key": "UI_Create_731A30"
+  }
+ ]
+}

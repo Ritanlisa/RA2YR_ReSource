@@ -1,0 +1,11 @@
+{
+ "addr": "0x47AA30",
+ "name": "BufferIOFile::Init",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47AA30",
+ "bytes_hex": "568bf1e8e870fbffc6465400c70668167e008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

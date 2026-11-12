@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsReady@BufferIOFileClass@@QAEDH@Z",
+ "sym_key": "BufferIOFileClass::IsReady",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8a412984c0750a6a00e800000000c20400b001c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Open@FileClass@@QAEDH@Z",
+   "sym_key": "FileClass::Open"
+  }
+ ]
+}

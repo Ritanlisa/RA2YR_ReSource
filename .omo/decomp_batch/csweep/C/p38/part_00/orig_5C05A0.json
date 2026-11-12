@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C05A0",
+ "name": "BinkMovieHandle::Pause",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C05A0",
+ "bytes_hex": "8b4424088b5424048b49105052e8fe24e7ffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

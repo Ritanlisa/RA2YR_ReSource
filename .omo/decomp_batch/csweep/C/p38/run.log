@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p38\part_00
+=== convert (20 addrs) ===
+[conv] 0x407020 sub_407020 -> _addr_40
+[conv] 0x41b870 AircraftClass::ProcessPassengerEjection -> AircraftClass
+[conv] 0x5c05a0 BinkMovieHandle::Pause -> BinkMovieHandle
+[conv] 0x5f19c0 EventClass::CheckFlag -> EventClass
+[conv] 0x753a30 sub_753A30 -> _addr_75
+[conv] 0x753ab0 sub_753AB0 -> _addr_75
+[conv] 0x7d86bc unknown_libname_88 -> _addr_7D
+[conv] 0x7d86d1 unknown_libname_89 -> _addr_7D
+[conv] 0x646df0 Network_Helper_646DF0 -> Network_Helper
+[conv] 0x7cda56 __unlock -> _addr_7C
+[conv] 0x5f65d0 IUnknown::DelegateVt69 -> IUnknown
+[conv] 0x5e2f80 Skirmish_Setup -> Skirmish
+[conv] 0x624460 Options::ClearComboBoxes -> Options
+[conv] 0x40d200 sub_40D200 -> _addr_40
+[conv] 0x431f10 BufferIOFileClass::IsReady -> BufferIOFileClass
+[conv] 0x45a050 Stream::GetChecked -> Stream
+[conv] 0x47aa30 BufferIOFile::Init -> BufferIOFile
+[conv] 0x50bd10 HouseClass::ReshroudMap -> HouseClass
+[conv] 0x5370a0 BeaconPlacementCommandClass::performAction_123 -> BeaconPlacementCommandClass
+[conv] 0x5ceb20 MSAnim::StartIfIdle -> MSAnim
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] AircraftClass            rc=2
+[era] BinkMovieHandle          rc=0
+[era] EventClass               rc=0
+[era] _addr_75                 rc=0
+[era] _addr_7D                 rc=2
+[era] Network_Helper           rc=0
+[era] _addr_7C                 rc=0
+[era] IUnknown                 rc=0
+[era] Skirmish                 rc=0
+[era] Options                  rc=0
+[era] BufferIOFileClass        rc=0
+[era] Stream                   rc=2
+[era] BufferIOFile             rc=0
+[era] HouseClass               rc=0
+[era] BeaconPlacementCommandClass rc=0
+[era] MSAnim                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x407020   MISMATCH         sub_407020
+[diff] 0x40d200   MISMATCH         sub_40D200
+[diff] 0x5c05a0   MATCH            BinkMovieHandle::Pause
+[diff] 0x5f19c0   MATCH            EventClass::CheckFlag
+[diff] 0x753a30   MISMATCH         sub_753A30
+[diff] 0x753ab0   MISMATCH         sub_753AB0
+[diff] 0x646df0   MISMATCH         Network_Helper_646DF0
+[diff] 0x7cda56   MISMATCH         __unlock
+[diff] 0x5f65d0   MISMATCH         IUnknown::DelegateVt69
+[diff] 0x5e2f80   MISMATCH         Skirmish_Setup
+[diff] 0x624460   MISMATCH         Options::ClearComboBoxes
+[diff] 0x431f10   MISMATCH         BufferIOFileClass::IsReady
+[diff] 0x47aa30   MISMATCH         BufferIOFile::Init
+[diff] 0x50bd10   MISMATCH         HouseClass::ReshroudMap
+[diff] 0x5370a0   MATCH            BeaconPlacementCommandClass::performAction_123
+[diff] 0x5ceb20   MISMATCH         MSAnim::StartIfIdle
+[ledger] 0x407020 sub_407020 -> NG (attempt 1)
+[ledger] 0x41b870 AircraftClass::ProcessPassengerEjection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c05a0 BinkMovieHandle::Pause -> OK (attempt 1)
+[ledger] 0x5f19c0 EventClass::CheckFlag -> OK (attempt 1)
+[ledger] 0x753a30 sub_753A30 -> NG (attempt 1)
+[ledger] 0x753ab0 sub_753AB0 -> NG (attempt 1)
+[ledger] 0x7d86bc unknown_libname_88 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d86d1 unknown_libname_89 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x646df0 Network_Helper_646DF0 -> NG (attempt 1)
+[ledger] 0x7cda56 __unlock -> NG (attempt 1)
+[ledger] 0x5f65d0 IUnknown::DelegateVt69 -> NG (attempt 1)
+[ledger] 0x5e2f80 Skirmish_Setup -> NG (attempt 1)
+[ledger] 0x624460 Options::ClearComboBoxes -> NG (attempt 1)
+[ledger] 0x40d200 sub_40D200 -> NG (attempt 1)
+[ledger] 0x431f10 BufferIOFileClass::IsReady -> NG (attempt 1)
+[ledger] 0x45a050 Stream::GetChecked -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47aa30 BufferIOFile::Init -> NG (attempt 1)
+[ledger] 0x50bd10 HouseClass::ReshroudMap -> NG (attempt 1)
+[ledger] 0x5370a0 BeaconPlacementCommandClass::performAction_123 -> OK (attempt 1)
+[ledger] 0x5ceb20 MSAnim::StartIfIdle -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 4,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "extern_reloc": 3,
+  "codegen_shape": 4,
+  "const_fold": 2,
+  "branch_order": 1,
+  "width_mismatch": 1,
+  "ret_norm": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 18.8,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p38\batch_report.json

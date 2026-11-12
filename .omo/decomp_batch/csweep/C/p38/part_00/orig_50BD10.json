@@ -1,0 +1,11 @@
+{
+ "addr": "0x50BD10",
+ "name": "HouseClass::ReshroudMap",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50BD10",
+ "bytes_hex": "8a817a57000084c0750b51b9e8f78700e88bbd0600c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

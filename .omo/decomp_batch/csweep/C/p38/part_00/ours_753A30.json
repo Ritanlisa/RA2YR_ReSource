@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_753A30@@YAXXZ",
+ "sym_key": "Unnamed::sub_753A30",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "b900000000e800000000c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D93C@@3IA",
+   "sym_key": "DataGlobal_B2D93C"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D928@@3IA",
+   "sym_key": "DataGlobal_B2D928"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?Surface_Vtable@@3PAXA",
+   "sym_key": "Surface_Vtable"
+  }
+ ]
+}

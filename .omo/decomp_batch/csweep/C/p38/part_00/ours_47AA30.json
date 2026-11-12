@@ -1,0 +1,27 @@
+{
+ "symbol": "?Init@BufferIOFile@@QAEPAV1@XZ",
+ "sym_key": "BufferIOFile::Init",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b4654c706000000002400894654b8000000005ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@BufferIOFileClass@@QAEPAV1@XZ",
+   "sym_key": "BufferIOFileClass::Constructor"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  }
+ ]
+}

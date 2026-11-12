@@ -1,0 +1,15 @@
+{
+ "symbol": "?Pause@BinkMovieHandle@@QAEHHH@Z",
+ "sym_key": "BinkMovieHandle::Pause",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b5424048b49105052e800000000c20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?RenderFrameClipped@BinkMovieHandle@@QAEHHH@Z",
+   "sym_key": "BinkMovieHandle::RenderFrameClipped"
+  }
+ ]
+}

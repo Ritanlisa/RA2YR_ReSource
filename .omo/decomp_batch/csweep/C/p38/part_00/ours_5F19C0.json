@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckFlag@EventClass@@QAEHXZ",
+ "sym_key": "EventClass::CheckFlag",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b413885c074088b4804e800000000b801000000c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?serializeEvent@EventClass@@QAEHXZ",
+   "sym_key": "EventClass::serializeEvent"
+  }
+ ]
+}

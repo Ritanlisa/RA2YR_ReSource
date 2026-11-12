@@ -1,0 +1,21 @@
+{
+ "symbol": "?ReshroudMap@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::ReshroudMap",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b8178570000c1f81084c0750b51b9f8010000e800000000c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Reset@ShroudClass@@QAEHH@Z",
+   "sym_key": "ShroudClass::Reset"
+  }
+ ]
+}

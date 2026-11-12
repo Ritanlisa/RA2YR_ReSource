@@ -1,0 +1,21 @@
+{
+ "symbol": "?__unlock@@YAXH@Z",
+ "sym_key": "Unnamed::__unlock",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b0c850000000051e800000000c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C2A8@@3IA",
+   "sym_key": "DataGlobal_87C2A8"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?LeaveCriticalSection@@YGXH@Z",
+   "sym_key": "LeaveCriticalSection"
+  }
+ ]
+}

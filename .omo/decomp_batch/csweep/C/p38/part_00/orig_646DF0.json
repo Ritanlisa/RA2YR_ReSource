@@ -1,0 +1,11 @@
+{
+ "addr": "0x646DF0",
+ "name": "Network_Helper_646DF0",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x646DF0",
+ "bytes_hex": "568bf1ff1530157e008d0c765e8904cd6ca3af00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x624460",
+ "name": "Options::ClearComboBoxes",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x624460",
+ "bytes_hex": "568bf18d4e08e8f52219008d4e04e8ed2219005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
