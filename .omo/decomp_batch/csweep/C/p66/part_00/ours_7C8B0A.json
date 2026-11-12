@@ -1,0 +1,8 @@
+{
+ "symbol": "?before_type_info__QBEHABV1__Z@ObjectClass@@QAEHPBX@Z",
+ "sym_key": "ObjectClass::before_type_info__QBEHABV1__Z",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "8b44240453568d712483c0098a108a1e8aca3ad3752a84c974168a50018a5e018aca3ad3751a83c00283c60284c975dc33c033c985c00f9fc15e8bc15bc204001bc05e83d8ff33c985c00f9fc18bc15bc20400",
+ "relocs": []
+}

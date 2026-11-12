@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddItem@DropListClass@@QAEDXZ",
+ "sym_key": "DropListClass::AddItem",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "568bf18a464884c074118d86b000000050ff96d4000000c64648005ec3",
+ "relocs": []
+}

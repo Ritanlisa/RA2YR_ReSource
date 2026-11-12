@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6A4DA0@@YAXXZ",
+ "sym_key": "Unnamed::sub_6A4DA0",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8a0d00000000b01084c875150ac8880d0000000033c98a0d00000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07BB1@@3EA",
+   "sym_key": "DataGlobal_B07BB1"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07BB1@@3EA",
+   "sym_key": "DataGlobal_B07BB1"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_SidebarFlag@@3EA",
+   "sym_key": "g_SidebarFlag"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Destructor@ShapeButtonClass@@QAEHXZ",
+   "sym_key": "ShapeButtonClass::Destructor"
+  }
+ ]
+}

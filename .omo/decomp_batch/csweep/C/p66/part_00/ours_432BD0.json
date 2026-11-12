@@ -1,0 +1,15 @@
+{
+ "symbol": "?Check@BinkMovieHandle@@QAEHH@Z",
+ "sym_key": "BinkMovieHandle::Check",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf16a01508b4e0451e80000000083c40cc74630000000005ec20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?BinkGoto@@YAHPAXHHZZ",
+   "sym_key": "BinkGoto"
+  }
+ ]
+}

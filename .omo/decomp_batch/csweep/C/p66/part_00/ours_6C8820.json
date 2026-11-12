@@ -1,0 +1,33 @@
+{
+ "symbol": "?UpdateDelta@Timer@@QAEHXZ",
+ "sym_key": "Timer::UpdateDelta",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "e8000000008b0d00000000c60500000000002bc1a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0BD28@@3IA",
+   "sym_key": "DataGlobal_B0BD28"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0BDB4@@3EA",
+   "sym_key": "DataGlobal_B0BDB4"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0BD48@@3IA",
+   "sym_key": "DataGlobal_B0BD48"
+  }
+ ]
+}

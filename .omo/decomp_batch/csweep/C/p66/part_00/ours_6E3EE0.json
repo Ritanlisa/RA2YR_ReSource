@@ -1,0 +1,21 @@
+{
+ "symbol": "?Dispatch@TriggerTypeClass@@QAEHXZ",
+ "sym_key": "TriggerTypeClass::Dispatch",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8d41f283f861771533c98a8800000000ff248d00000000b802000000c333c0c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "$L1852",
+   "sym_key": "$L1852"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "$L1853",
+   "sym_key": "$L1853"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?___initconout@@YAPAXXZ",
+ "sym_key": "Unnamed::___initconout",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "6a006a006a036a006a0368000000406800000000e800000000a300000000c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "??_C@_07GLCC@CONOUT$?$AA@",
+   "sym_key": "??_C@_07GLCC@CONOUT$?$AA@"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?CreateFileA@@YGPAXHHHHHHH@Z",
+   "sym_key": "CreateFileA"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?hConsoleOutput@@3PAXA",
+   "sym_key": "hConsoleOutput"
+  }
+ ]
+}

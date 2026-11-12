@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1530",
+ "name": "COMObject::ActivateThunk",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1530",
+ "bytes_hex": "8b44240485c074128b1150c6411c01ff5278b801000000c20c0033c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

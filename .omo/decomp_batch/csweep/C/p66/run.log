@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p66\part_00
+=== convert (20 addrs) ===
+[conv] 0x6a4c40 sub_6A4C40 -> _addr_6A
+[conv] 0x6a4c80 sub_6A4C80 -> _addr_6A
+[conv] 0x6a4cc0 sub_6A4CC0 -> _addr_6A
+[conv] 0x6a4d60 sub_6A4D60 -> _addr_6A
+[conv] 0x6a4da0 sub_6A4DA0 -> _addr_6A
+[conv] 0x6c8820 Timer::UpdateDelta -> Timer
+[conv] 0x6cfc20 sub_6CFC20 -> _addr_6C
+[conv] 0x6cfc60 sub_6CFC60 -> _addr_6C
+[conv] 0x72a1c0 TunnelLocomotionClass::ShortFunc_72A1C0 -> TunnelLocomotionClass
+[conv] 0x75a2b0 sub_75A2B0 -> _addr_75
+[conv] 0x7c8b0a ObjectClass::before_type_info__QBEHABV1__Z -> ObjectClass
+[conv] 0x432bd0 BinkMovieHandle::Check -> BinkMovieHandle
+[conv] 0x7de0f1 ___initconin -> _addr_7D
+[conv] 0x7de110 ___initconout -> _addr_7D
+[conv] 0x6e3ee0 TriggerTypeClass::Dispatch -> TriggerTypeClass
+[conv] 0x459f40 IsObjectTypeBuildingType -> _addr_45
+[conv] 0x4b50a0 DropListClass::AddItem -> DropListClass
+[conv] 0x4e1530 GadgetClass::ActivateThunk -> GadgetClass
+[conv] 0x4e1a00 ShpButtonClass::FindNextActive -> ShpButtonClass
+[conv] 0x53f5d0 IPXConnClass::send -> IPXConnClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6A                 rc=0
+[era] Timer                    rc=0
+[era] _addr_6C                 rc=0
+[era] TunnelLocomotionClass    rc=0
+[era] _addr_75                 rc=0
+[era] ObjectClass              rc=0
+[era] BinkMovieHandle          rc=0
+[era] _addr_7D                 rc=0
+[era] TriggerTypeClass         rc=0
+[era] _addr_45                 rc=0
+[era] DropListClass            rc=0
+[era] GadgetClass              rc=0
+[era] ShpButtonClass           rc=0
+[era] IPXConnClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x6a4c40   MISMATCH         sub_6A4C40
+[diff] 0x6a4c80   MISMATCH         sub_6A4C80
+[diff] 0x6a4cc0   MISMATCH         sub_6A4CC0
+[diff] 0x6a4d60   MISMATCH         sub_6A4D60
+[diff] 0x6a4da0   MISMATCH         sub_6A4DA0
+[diff] 0x6c8820   MISMATCH         Timer::UpdateDelta
+[diff] 0x6cfc20   MISMATCH         sub_6CFC20
+[diff] 0x6cfc60   MISMATCH         sub_6CFC60
+[diff] 0x72a1c0   MISMATCH         TunnelLocomotionClass::ShortFunc_72A1C0
+[diff] 0x75a2b0   MISMATCH         sub_75A2B0
+[diff] 0x7c8b0a   MISMATCH         ObjectClass::before_type_info__QBEHABV1__Z
+[diff] 0x432bd0   MISMATCH         BinkMovieHandle::Check
+[diff] 0x7de0f1   MISMATCH         ___initconin
+[diff] 0x7de110   MISMATCH         ___initconout
+[diff] 0x6e3ee0   MISMATCH         TriggerTypeClass::Dispatch
+[diff] 0x459f40   MISMATCH         IsObjectTypeBuildingType
+[diff] 0x4b50a0   MISMATCH         DropListClass::AddItem
+[diff] 0x4e1530   MISMATCH         GadgetClass::ActivateThunk
+[diff] 0x4e1a00   MISMATCH         ShpButtonClass::FindNextActive
+[ledger] 0x6a4c40 sub_6A4C40 -> NG (attempt 1)
+[ledger] 0x6a4c80 sub_6A4C80 -> NG (attempt 1)
+[ledger] 0x6a4cc0 sub_6A4CC0 -> NG (attempt 1)
+[ledger] 0x6a4d60 sub_6A4D60 -> NG (attempt 1)
+[ledger] 0x6a4da0 sub_6A4DA0 -> NG (attempt 1)
+[ledger] 0x6c8820 Timer::UpdateDelta -> NG (attempt 1)
+[ledger] 0x6cfc20 sub_6CFC20 -> NG (attempt 1)
+[ledger] 0x6cfc60 sub_6CFC60 -> NG (attempt 1)
+[ledger] 0x72a1c0 TunnelLocomotionClass::ShortFunc_72A1C0 -> NG (attempt 1)
+[ledger] 0x75a2b0 sub_75A2B0 -> NG (attempt 1)
+[ledger] 0x7c8b0a ObjectClass::before_type_info__QBEHABV1__Z -> NG (attempt 1)
+[ledger] 0x432bd0 BinkMovieHandle::Check -> NG (attempt 1)
+[ledger] 0x7de0f1 ___initconin -> NG (attempt 1)
+[ledger] 0x7de110 ___initconout -> NG (attempt 1)
+[ledger] 0x6e3ee0 TriggerTypeClass::Dispatch -> NG (attempt 1)
+[ledger] 0x459f40 IsObjectTypeBuildingType -> NG (attempt 1)
+[ledger] 0x4b50a0 DropListClass::AddItem -> NG (attempt 1)
+[ledger] 0x4e1530 GadgetClass::ActivateThunk -> NG (attempt 1)
+[ledger] 0x4e1a00 ShpButtonClass::FindNextActive -> NG (attempt 1)
+[ledger] 0x53f5d0 IPXConnClass::send -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "branch_polarity": 8,
+  "codegen_shape": 6,
+  "const_fold": 1,
+  "cc_mismatch": 1,
+  "regalloc": 1,
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p66\batch_report.json

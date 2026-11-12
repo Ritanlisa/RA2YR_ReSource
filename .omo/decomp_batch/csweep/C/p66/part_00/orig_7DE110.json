@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DE110",
+ "name": "___initconout",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DE110",
+ "bytes_hex": "33c050506a03506a03680000004068a4a47f00ff15bc117e00a384dd8700c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

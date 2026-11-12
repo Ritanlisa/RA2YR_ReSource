@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A1C0",
+ "name": "JumpjetLocomotionClass::ShortFunc_72A1C0",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A1C0",
+ "bytes_hex": "568b74240856e8350be3ff85c0750c8b4e1485c97405b8070000005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

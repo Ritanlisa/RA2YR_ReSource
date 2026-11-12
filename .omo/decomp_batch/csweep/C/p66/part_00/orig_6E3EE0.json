@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E3EE0",
+ "name": "TriggerTypeClass::Dispatch",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E3EE0",
+ "bytes_hex": "83c1f233c083f961771433d28a91083f6e00ff2495003f6e00b802000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

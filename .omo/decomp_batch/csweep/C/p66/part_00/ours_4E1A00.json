@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindNextActive@ShpButtonClass@@QAIHPAE@Z",
+ "sym_key": "ShpButtonClass::FindNextActive",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "85c9750333c0c38a411c84c075128b01ff50048bc885c974eb8a411c84c074eeb801000000c3",
+ "relocs": []
+}

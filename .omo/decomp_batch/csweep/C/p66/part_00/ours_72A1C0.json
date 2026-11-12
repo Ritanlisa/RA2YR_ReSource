@@ -1,0 +1,15 @@
+{
+ "symbol": "?ShortFunc_72A1C0@TunnelLocomotionClass@@QAGHH@Z",
+ "sym_key": "TunnelLocomotionClass::ShortFunc_72A1C0",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "568b74240856e80000000085c0750c8b4e1485c97405b8070000005ec20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?JumpjetLocomotionClass__MissionStub11@@YGHPAX@Z",
+   "sym_key": "JumpjetLocomotionClass__MissionStub11"
+  }
+ ]
+}

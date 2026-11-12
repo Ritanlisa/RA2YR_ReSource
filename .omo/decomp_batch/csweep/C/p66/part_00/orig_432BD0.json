@@ -1,0 +1,11 @@
+{
+ "addr": "0x432BD0",
+ "name": "BinkMovieHandle::Check",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x432BD0",
+ "bytes_hex": "8b442404568bf16a01508b4e0451ff15ac157e00c74630000000005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

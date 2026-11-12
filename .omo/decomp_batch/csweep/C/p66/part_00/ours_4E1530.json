@@ -1,0 +1,8 @@
+{
+ "symbol": "?ActivateThunk@GadgetClass@@QAEHHHH@Z",
+ "sym_key": "GadgetClass::ActivateThunk",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b44240485c07503c20c00c6411c018b0950ff5178b801000000c20c00",
+ "relocs": []
+}

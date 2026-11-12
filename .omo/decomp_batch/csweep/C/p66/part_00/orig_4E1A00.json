@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1A00",
+ "name": "COMObject::FindNextActive",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1A00",
+ "bytes_hex": "85c974128a411c84c0750e8b01ff50048bc885c975ee33c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

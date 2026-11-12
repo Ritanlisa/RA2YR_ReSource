@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_75A2B0@@YAHHHPAHH@Z",
+ "sym_key": "Unnamed::sub_75A2B0",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c240c8b542408508b44240851528b88ac00000051e80000000083c410c3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?sub_75A120@@YAHHHPAXH@Z",
+   "sym_key": "sub_75A120"
+  }
+ ]
+}

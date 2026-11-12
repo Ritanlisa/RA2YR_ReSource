@@ -1,0 +1,11 @@
+{
+ "addr": "0x459F40",
+ "name": "IsObjectTypeBuildingType",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x459F40",
+ "bytes_hex": "568bf185f6750433c05ec38b068bceff502c83e806f7d81bc0f7d023c65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
