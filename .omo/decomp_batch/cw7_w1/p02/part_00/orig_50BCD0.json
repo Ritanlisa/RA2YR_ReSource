@@ -1,0 +1,11 @@
+{
+ "addr": "0x50BCD0",
+ "name": "HouseClass::CreateRadarOutage",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50BCD0",
+ "bytes_hex": "a184eda80083ec0c8b542410c6817957000001568db1b00200008981b00200008b4424088946048956085e83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c9e60 FactoryClass::StartProduction -> FactoryClass
+[conv] 0x4c9ea0 ProductionClass::StartTimer -> ProductionClass
+[conv] 0x4caa70 DynamicVector::executeScriptAction -> DynamicVector
+[conv] 0x4de710 FootClass::PopAndProcess -> FootClass
+[conv] 0x4e43c0 ObjectClass::InitGameDropdownColors -> ObjectClass
+[conv] 0x4f2a60 DynamicVector::processWaypointPlanning -> DynamicVector
+[conv] 0x4f9b70 HouseClass::HandleAlliance -> HouseClass
+[conv] 0x4fa350 Sidebar::StartSidebarProduction -> Sidebar
+[conv] 0x4fb840 BuildingPlacement::Activate -> BuildingPlacement
+[conv] 0x4fbe40 HouseClass::IsCellOccupied -> HouseClass
+[conv] 0x4fd060 HouseClass::FindBuildingOfType -> HouseClass
+[conv] 0x5090f0 Radar::IsRadarTargetEligible -> Radar
+[conv] 0x50bc90 HouseClass::CreatePowerOutage -> HouseClass
+[conv] 0x50bcd0 HouseClass::CreateRadarOutage -> HouseClass
+[conv] 0x50e0e0 HouseClass::LostPoweredCenter -> HouseClass
+[conv] 0x510820 HouseClass::processAIEvents -> HouseClass
+[conv] 0x5239d0 InfantryClass::DTOR -> InfantryClass
+[conv] 0x52b170 SortedArray::Find -> SortedArray
+[conv] 0x52b390 HashTable::BinarySearch -> HashTable
+[conv] 0x538280 StopCommandClass::performAction_221 -> StopCommandClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FactoryClass             rc=0
+[era] ProductionClass          rc=0
+[era] DynamicVector            rc=0
+[era] FootClass                rc=2
+[era] ObjectClass              rc=0
+[era] HouseClass               rc=2
+[era] Sidebar                  rc=0
+[era] BuildingPlacement        rc=2
+[era] Radar                    rc=0
+[era] InfantryClass            rc=2
+[era] SortedArray              rc=2
+[era] HashTable                rc=2
+[era] StopCommandClass         rc=2
+=== diffasm byte-compare ===
+[diff] 0x4c9e60   MISMATCH         FactoryClass::StartProduction
+[diff] 0x4c9ea0   MISMATCH         ProductionClass::StartTimer
+[diff] 0x4caa70   MISMATCH         DynamicVector::executeScriptAction
+[diff] 0x4f2a60   MISMATCH         DynamicVector::processWaypointPlanning
+[diff] 0x4e43c0   MISMATCH         ObjectClass::InitGameDropdownColors
+[diff] 0x4fbe40   MISMATCH         HouseClass::IsCellOccupied
+[diff] 0x50bc90   MISMATCH         HouseClass::CreatePowerOutage
+[diff] 0x50bcd0   MISMATCH         HouseClass::CreateRadarOutage
+[diff] 0x510820   MISMATCH         HouseClass::processAIEvents
+[diff] 0x4fa350   MISMATCH         Sidebar::StartSidebarProduction
+[diff] 0x5090f0   MISMATCH         Radar::IsRadarTargetEligible
+[ledger] 0x4c9e60 FactoryClass::StartProduction -> NG (attempt 2)
+[ledger] 0x4c9ea0 ProductionClass::StartTimer -> NG (attempt 12)
+[ledger] 0x4caa70 DynamicVector::executeScriptAction -> NG (attempt 4)
+[ledger] 0x4de710 FootClass::PopAndProcess -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e43c0 ObjectClass::InitGameDropdownColors -> NG (attempt 6)
+[ledger] 0x4f2a60 DynamicVector::processWaypointPlanning -> NG (attempt 4)
+[ledger] 0x4f9b70 HouseClass::HandleAlliance -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4fa350 Sidebar::StartSidebarProduction -> NG (attempt 4)
+[ledger] 0x4fb840 BuildingPlacement::Activate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4fbe40 HouseClass::IsCellOccupied -> NG (attempt 4)
+[ledger] 0x4fd060 HouseClass::FindBuildingOfType -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5090f0 Radar::IsRadarTargetEligible -> NG (attempt 2)
+[ledger] 0x50bc90 HouseClass::CreatePowerOutage -> NG (attempt 3)
+[ledger] 0x50bcd0 HouseClass::CreateRadarOutage -> NG (attempt 2)
+[ledger] 0x50e0e0 HouseClass::LostPoweredCenter -> COMPILE_FAIL (attempt 12)
+[ledger] 0x510820 HouseClass::processAIEvents -> NG (attempt 2)
+[ledger] 0x5239d0 InfantryClass::DTOR -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52b170 SortedArray::Find -> COMPILE_FAIL (attempt 8)
+[ledger] 0x52b390 HashTable::BinarySearch -> COMPILE_FAIL (attempt 8)
+[ledger] 0x538280 StopCommandClass::performAction_221 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "branch_polarity": 2,
+  "extern_reloc": 1,
+  "frame_sched": 3,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p02\batch_report.json

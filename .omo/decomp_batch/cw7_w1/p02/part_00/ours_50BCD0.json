@@ -1,0 +1,15 @@
+{
+ "symbol": "?CreateRadarOutage@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::CreateRadarOutage",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b5424048981b00200008b442404c68179570000018981b40200008991b8020000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

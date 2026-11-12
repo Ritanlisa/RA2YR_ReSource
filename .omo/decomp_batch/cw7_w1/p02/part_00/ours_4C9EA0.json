@@ -1,0 +1,27 @@
+{
+ "symbol": "?StartTimer@ProductionClass@@QAEDD@Z",
+ "sym_key": "ProductionClass::StartTimer",
+ "size": 268,
+ "link_base": 0,
+ "bytes_hex": "55568bf1578b4e5885c9750d8b466885c00f84ed000000eb048b4424108a567084d20f84dc00000085c9bf360000007409397e240f84ca000000837e68ff7409397e240f84bb00000033d285c98856707407e8000000008bd0b8f712da4bf7eac1fa048bc2c1e81f03d083fa017c0f81faff0000007e0cbaff000000eb05ba01000000a1000000008b6c241089462c8b465885c0895638896e3089563474188b46243bc775058b7e60eb0e2bf88b466099f7ff8bf8eb0233ff8b466c83c024508b08ff51183bc77c3b8a4c2410c646710184c974258a4e7084c9751ec6467101c64670018b150000000033c989562c8bc5894e38896e30894e3424015f5e0c015dc204005f5e24005dc20400",
+ "relocs": [
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?CalcProductionSpeed@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::CalcProductionSpeed"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

@@ -1,0 +1,183 @@
+{
+ "symbol": "?StartSidebarProduction@Sidebar@@QAEHPAXHDD@Z",
+ "sym_key": "Sidebar::StartSidebarProduction",
+ "size": 917,
+ "link_base": 0,
+ "bytes_hex": "83ec1453558b6c24245633f6573bee8bf97c2b8b5c24288bd58bcbe80000000083fb06740b83fb07740689742414eb1a8b80080e0000894424148bf0eb0c8b5c2428c7442414000000008d43ff8d4bff83f827894c242089442418774c33d28a9000000000ff2495000000008a44243084c0743a8a87d353000088442413eb2e8a8fd0530000884c2413eb2283fe05751d8a97d853000088542413eb118a87d153000088442413eb05c6442413008b4c24306a005651538bcfe8000000008bd58bcbe8000000008be8576a016a018b55006a0055c644243000ff929400000085c0752a8a44243484c00f84990000008b4500576a016a006a0155ff909400000085c00f8480000000c644241c018b44241883f827774433c98a8800000000ff248d000000008a44243084c074258bb7b8530000eb218bb7ac530000eb1983fe0575108bb7cc530000eb0c8bb7b0530000eb048b74243085f6751b6a74e80000000083c40485c074208bc8e8000000008bf085f674138b463885c074228a467084c0751b83fb0775168bcfe8000000005f5e5db8030000005b83c414c210008b44241883f827773c33d28a9000000000ff2495000000008a44243084c0742589b7b8530000eb1d89b7ac530000eb15837c241405750e89b7cc530000eb0689b7b05300008a467084c074148b465885c0740d8b0850ff91840000003bc574168b5424348bce525755e80000000084c00f849d0000008b44241c8a5e70508bcee80000000084db7561a10000000085c074588a87ec01000084c0744e8b4658508b08ff91840000008b1050ff92880000008b15000000008bc80faf1500000000b889888888f7e2c1ea058d04528d04c0d1e099f7f983f8357c05b8350000008a4c241384c97403894624393d0000000075158b44242c8b4c2428505156b9f8010000e8000000005f5e5d33c05b83c414c210008bcfe8000000008b465033db3bc30f85c1000000395e580f85b80000008bcfe8000000008bcfe8000000008bcfe8000000008b46583bc374068b1050ff522c8bcfe8000000008b46583bc374068b0850ff51408bcfe8000000008bcfe8000000008b166a0156ff52208b44242083f827776333c98a8800000000ff248d000000008a44243084c0744c899fb85300005f5e5db8030000005b83c414c21000899fac5300005f5e5db8030000005b83c414c21000837c241405751b899fcc5300005f5e5db8030000005b83c414c21000899fb05300005f5e5db8030000005b83c414c21000",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__GetByTypeAndIndex@@YIHHH@Z",
+   "sym_key": "TechnoTypeClass__GetByTypeAndIndex"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "$L2163",
+   "sym_key": "$L2163"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "$L2164",
+   "sym_key": "$L2164"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?Dispatch@Sidebar@@QAEDHDHD@Z",
+   "sym_key": "Sidebar::Dispatch"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__GetByTypeAndIndex@@YIHHH@Z",
+   "sym_key": "TechnoTypeClass__GetByTypeAndIndex"
+  },
+  {
+   "off": 282,
+   "type": "DIR32",
+   "sym": "$L2165",
+   "sym_key": "$L2165"
+  },
+  {
+   "off": 289,
+   "type": "DIR32",
+   "sym": "$L2166",
+   "sym_key": "$L2166"
+  },
+  {
+   "off": 349,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 363,
+   "type": "REL32",
+   "sym": "?Construct@TeamTypeClass@@QAEHXZ",
+   "sym_key": "TeamTypeClass::Construct"
+  },
+  {
+   "off": 395,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 427,
+   "type": "DIR32",
+   "sym": "$L2167",
+   "sym_key": "$L2167"
+  },
+  {
+   "off": 434,
+   "type": "DIR32",
+   "sym": "$L2168",
+   "sym_key": "$L2168"
+  },
+  {
+   "off": 520,
+   "type": "REL32",
+   "sym": "?DemandProduction@FactoryClass@@QAE_NHPAXD@Z",
+   "sym_key": "FactoryClass::DemandProduction"
+  },
+  {
+   "off": 543,
+   "type": "REL32",
+   "sym": "?StartTimer@ProductionClass@@QAEDD@Z",
+   "sym_key": "ProductionClass::StartTimer"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 593,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 602,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B558@@3IA",
+   "sym_key": "DataGlobal_A8B558"
+  },
+  {
+   "off": 650,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 668,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 673,
+   "type": "REL32",
+   "sym": "?FindProductionType@Sidebar@@QAEDHHH@Z",
+   "sym_key": "Sidebar::FindProductionType"
+  },
+  {
+   "off": 692,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 721,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 728,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 735,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 755,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 775,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 782,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 807,
+   "type": "DIR32",
+   "sym": "$L2169",
+   "sym_key": "$L2169"
+  },
+  {
+   "off": 814,
+   "type": "DIR32",
+   "sym": "$L2170",
+   "sym_key": "$L2170"
+  }
+ ]
+}

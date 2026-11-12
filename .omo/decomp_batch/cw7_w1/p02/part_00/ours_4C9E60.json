@@ -1,0 +1,15 @@
+{
+ "symbol": "?StartProduction@FactoryClass@@QAEDD@Z",
+ "sym_key": "FactoryClass::StartProduction",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "8a417033d23ac274098b44240422c2c204008a442404c64170013ac20f95c0884171a10000000089412c8b44240489413024018951380c01895134c20400",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

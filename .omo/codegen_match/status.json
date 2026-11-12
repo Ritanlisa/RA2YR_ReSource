@@ -22386,27 +22386,27 @@
   "this_as_id": false
  },
  "0x4c9e60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 sub esp, 0xc",
   "name": "FactoryClass::StartProduction",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FactoryClass::StartProduction",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c9ea0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "ProductionClass::StartTimer",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ProductionClass::StartTimer",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ca120": {
@@ -22579,15 +22579,15 @@
   "this_as_id": false
  },
  "0x4caa70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 je 0x4caafa",
   "name": "DynamicVector::executeScriptAction",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "AbstractClass::executeScriptAction",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4cab20": {
@@ -23849,7 +23849,7 @@
   "status": "OK"
  },
  "0x4de710": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24870,15 +24870,15 @@
   "this_as_id": false
  },
  "0x4e43c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push 0x1db",
   "name": "ObjectClass::InitGameDropdownColors",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "InitGameDropdownColors",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e4580": {
@@ -28762,15 +28762,15 @@
   "status": "NG"
  },
  "0x4f2a60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 je 0x4f2aea",
   "name": "DynamicVector::processWaypointPlanning",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "HouseClass::processWaypointPlanning",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4f2b10": {
@@ -29480,7 +29480,7 @@
   "this_as_id": false
  },
  "0x4f9b70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29504,15 +29504,15 @@
   "this_as_id": false
  },
  "0x4fa350": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 push edi",
   "name": "Sidebar::StartSidebarProduction",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Sidebar::StartSidebarProduction",
   "rule_violations": 14,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4fae50": {
@@ -29528,7 +29528,7 @@
   "this_as_id": false
  },
  "0x4fb840": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29547,15 +29547,15 @@
   "status": "NG"
  },
  "0x4fbe40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x10",
   "name": "HouseClass::IsCellOccupied",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "HouseClass::IsCellOccupied",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4fbf60": {
@@ -29626,7 +29626,7 @@
   "status": "NG"
  },
  "0x4fd060": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29842,15 +29842,15 @@
   "this_as_id": false
  },
  "0x5090f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 test eax, eax",
   "name": "Radar::IsRadarTargetEligible",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Radar::IsRadarTargetEligible",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x509130": {
@@ -30001,27 +30001,27 @@
   "this_as_id": false
  },
  "0x50bc90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 sub esp, 0xc",
   "name": "HouseClass::CreatePowerOutage",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "HouseClass::CreatePowerOutage",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x50bcd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 sub esp, 0xc",
   "name": "HouseClass::CreateRadarOutage",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "HouseClass::CreateRadarOutage",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x50bf60": {
@@ -30257,7 +30257,7 @@
   "status": "OK"
  },
  "0x50e0e0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -31027,15 +31027,15 @@
   "this_as_id": false
  },
  "0x510820": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 jge 0x51084c",
   "name": "HouseClass::processAIEvents",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "HouseClass::processAIEvents",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5108f0": {
@@ -32564,14 +32564,14 @@
   "this_as_id": false
  },
  "0x5239d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "InfantryClass::DTOR",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryTypeClass::DTOR",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -32945,7 +32945,7 @@
   "this_as_id": false
  },
  "0x52b170": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -32969,7 +32969,7 @@
   "this_as_id": false
  },
  "0x52b390": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -34267,7 +34267,7 @@
   "this_as_id": false
  },
  "0x538280": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

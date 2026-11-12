@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsRadarTargetEligible@Radar@@QAE_NXZ",
+ "sym_key": "Radar::IsRadarTargetEligible",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "8b810c02000083f80c720332c0c38b8481100200008b1540020000568b48388bb2900000003bce5e730c837824ff7506b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

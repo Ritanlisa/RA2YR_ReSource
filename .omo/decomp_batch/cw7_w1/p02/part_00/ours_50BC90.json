@@ -1,0 +1,15 @@
+{
+ "symbol": "?CreatePowerOutage@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::CreatePowerOutage",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b5424048981a40200008b442404c68178570000018981a80200008991ac020000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}
