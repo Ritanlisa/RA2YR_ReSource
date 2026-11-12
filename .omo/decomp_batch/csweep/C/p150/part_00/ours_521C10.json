@@ -1,0 +1,15 @@
+{
+ "symbol": "?InitVoiceResponseTimer@InfantryClass@@QAEDXZ",
+ "sym_key": "InfantryClass::InitVoiceResponseTimer",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86c00600008a88bc0e000084c975196a0d56e80000000083c40884c0750ac786d40600002c0100005ec3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__HasVoiceResponse@@YAHPAXH@Z",
+   "sym_key": "TechnoTypeClass__HasVoiceResponse"
+  }
+ ]
+}

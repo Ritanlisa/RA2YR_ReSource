@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_543DA0@@YAXXZ",
+ "sym_key": "Unnamed::sub_543DA0",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "83ec08a100000000c74424040000000083ec088d0c00894c2408df6c2408dc3500000000dd1c24e800000000dd1d0000000083c410c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC550@@3IA",
+   "sym_key": "DataGlobal_ABC550"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1070@@3NA",
+   "sym_key": "DataGlobal_AA1070"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Math__ArcTan@@YANN@Z",
+   "sym_key": "Math__ArcTan"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB118@@3NA",
+   "sym_key": "DataGlobal_ABB118"
+  }
+ ]
+}

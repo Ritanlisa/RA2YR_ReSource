@@ -1,0 +1,11 @@
+{
+ "addr": "0x521C10",
+ "name": "InfantryClass::InitVoiceResponseTimer",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x521C10",
+ "bytes_hex": "568bf18b86c00600008a88bc0e000084c975176a0d8bcee8a4b41e0084c0750ac786d40600002c0100005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

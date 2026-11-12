@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p150\part_00
+=== convert (20 addrs) ===
+[conv] 0x521c10 InfantryClass::InitVoiceResponseTimer -> InfantryClass
+[conv] 0x5235d0 sub_5235D0 -> _addr_52
+[conv] 0x52b900 sub_52B900 -> _addr_52
+[conv] 0x539490 sub_539490 -> _addr_53
+[conv] 0x53c960 sub_53C960 -> _addr_53
+[conv] 0x53f380 sub_53F380 -> _addr_53
+[conv] 0x53f9e0 sub_53F9E0 -> _addr_53
+[conv] 0x540820 sub_540820 -> _addr_54
+[conv] 0x543260 sub_543260 -> _addr_54
+[conv] 0x543da0 sub_543DA0 -> _addr_54
+[conv] 0x54ab70 sub_54AB70 -> _addr_54
+[conv] 0x54e190 sub_54E190 -> _addr_54
+[conv] 0x54eda0 sub_54EDA0 -> _addr_54
+[conv] 0x54fcf0 sub_54FCF0 -> _addr_54
+[conv] 0x552990 sub_552990 -> _addr_55
+[conv] 0x554570 sub_554570 -> _addr_55
+[conv] 0x555cf0 sub_555CF0 -> _addr_55
+[conv] 0x5568d0 sub_5568D0 -> _addr_55
+[conv] 0x558690 sub_558690 -> _addr_55
+[conv] 0x55a610 sub_55A610 -> _addr_55
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=0
+[era] _addr_52                 rc=0
+[era] _addr_53                 rc=0
+[era] _addr_54                 rc=0
+[era] _addr_55                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x521c10   MISMATCH         InfantryClass::InitVoiceResponseTimer
+[diff] 0x5235d0   MISMATCH         sub_5235D0
+[diff] 0x52b900   MISMATCH         sub_52B900
+[diff] 0x539490   MISMATCH         sub_539490
+[diff] 0x53c960   MISMATCH         sub_53C960
+[diff] 0x53f380   MISMATCH         sub_53F380
+[diff] 0x53f9e0   MISMATCH         sub_53F9E0
+[diff] 0x540820   MISMATCH         sub_540820
+[diff] 0x543260   MISMATCH         sub_543260
+[diff] 0x543da0   MISMATCH         sub_543DA0
+[diff] 0x54ab70   MISMATCH         sub_54AB70
+[diff] 0x54e190   MISMATCH         sub_54E190
+[diff] 0x54eda0   MISMATCH         sub_54EDA0
+[diff] 0x54fcf0   MISMATCH         sub_54FCF0
+[diff] 0x552990   MISMATCH         sub_552990
+[diff] 0x554570   MISMATCH         sub_554570
+[diff] 0x555cf0   MISMATCH         sub_555CF0
+[diff] 0x5568d0   MISMATCH         sub_5568D0
+[diff] 0x558690   MISMATCH         sub_558690
+[diff] 0x55a610   MISMATCH         sub_55A610
+[ledger] 0x521c10 InfantryClass::InitVoiceResponseTimer -> NG (attempt 1)
+[ledger] 0x5235d0 sub_5235D0 -> NG (attempt 1)
+[ledger] 0x52b900 sub_52B900 -> NG (attempt 1)
+[ledger] 0x539490 sub_539490 -> NG (attempt 1)
+[ledger] 0x53c960 sub_53C960 -> NG (attempt 1)
+[ledger] 0x53f380 sub_53F380 -> NG (attempt 1)
+[ledger] 0x53f9e0 sub_53F9E0 -> NG (attempt 1)
+[ledger] 0x540820 sub_540820 -> NG (attempt 1)
+[ledger] 0x543260 sub_543260 -> NG (attempt 1)
+[ledger] 0x543da0 sub_543DA0 -> NG (attempt 1)
+[ledger] 0x54ab70 sub_54AB70 -> NG (attempt 1)
+[ledger] 0x54e190 sub_54E190 -> NG (attempt 1)
+[ledger] 0x54eda0 sub_54EDA0 -> NG (attempt 1)
+[ledger] 0x54fcf0 sub_54FCF0 -> NG (attempt 1)
+[ledger] 0x552990 sub_552990 -> NG (attempt 1)
+[ledger] 0x554570 sub_554570 -> NG (attempt 1)
+[ledger] 0x555cf0 sub_555CF0 -> NG (attempt 1)
+[ledger] 0x5568d0 sub_5568D0 -> NG (attempt 1)
+[ledger] 0x558690 sub_558690 -> NG (attempt 1)
+[ledger] 0x55a610 sub_55A610 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 19
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p150\batch_report.json
