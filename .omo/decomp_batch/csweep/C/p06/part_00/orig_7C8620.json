@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8620",
+ "name": "KillTimer",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8620",
+ "bytes_hex": "ff258c147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,439 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 18,
+   "NO_PSEUDO": 1,
+   "COMPILE_FAIL": 1
+  },
+  "pathologies": {
+   "codegen_shape": 18
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x7c85b4",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 18B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e118c]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "GetCurrentDirectoryA",
+   "emitted": "GetCurrentDirectoryA",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85ba",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 13B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e1190]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "HeapDestroy",
+   "emitted": "HeapDestroy",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 13,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85c6",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 13B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e1198]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "ReleaseMutex",
+   "emitted": "ReleaseMutex",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 13,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85cc",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 18B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e14c4]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "GetClientRect",
+   "emitted": "GetClientRect",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85d2",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 13B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e14c0]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "DispatchMessageA",
+   "emitted": "DispatchMessageA",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 13,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85d8",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 13B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e14bc]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TranslateMessage",
+   "emitted": "TranslateMessage",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 13,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85de",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 18B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e14b8]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "ClientToScreen",
+   "emitted": "ClientToScreen",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85e4",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 33B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e14b4]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x14]"
+   },
+   "pathology": "codegen_shape",
+   "name": "SetRect",
+   "emitted": "SetRect",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85ea",
+   "batch": "censusC",
+   "verdict": "NO_PSEUDO",
+   "note": "empty Hex-Rays body (6B disasm)",
+   "first_diff": null,
+   "pathology": null,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 28B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e14ac]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+   },
+   "pathology": "codegen_shape",
+   "name": "PostMessageA",
+   "emitted": "PostMessageA",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 28,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85f6",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 18B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e14a8]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "GetDlgItem",
+   "emitted": "GetDlgItem",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x7c85fc",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 28B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e14a4]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+   },
+   "pathology": "codegen_shape",
+   "name": "SendMessageA",
+   "emitted": "SendMessageA",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 28,
+   "clean": false
+  },
+  {
+   "addr": "0x7c8608",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 23B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e149c]",
+    "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+   },
+   "pathology": "codegen_shape",
+   "name": "InvalidateRect",
+   "emitted": "InvalidateRect",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 23,
+   "clean": false
+  },
+  {
+   "addr": "0x7c860e",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 18B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e1498]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "ShowWindow",
+   "emitted": "ShowWindow",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x7c8614",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\csweep\\C\\p06\\part_00\\include\\_addr_7C_7c8614.hpp(15) : error C2061: syntax error : identifier 'TIMERPROC'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\csweep\\C\\p06\\part_00\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "SetTimer",
+   "emitted": "SetTimer",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x7c861a",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 33B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e1490]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x14]"
+   },
+   "pathology": "codegen_shape",
+   "name": "SendDlgItemMessageA",
+   "emitted": "SendDlgItemMessageA",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x7c8620",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 18B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e148c]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "KillTimer",
+   "emitted": "KillTimer",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x7c8626",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 18B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e1478]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "ValidateRect",
+   "emitted": "ValidateRect",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x7c862c",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 18B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e1474]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "GetWindowLongA",
+   "emitted": "GetWindowLongA",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 18,
+   "clean": false
+  },
+  {
+   "addr": "0x7c8632",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 23B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e1470]",
+    "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+   },
+   "pathology": "codegen_shape",
+   "name": "SetWindowLongA",
+   "emitted": "SetWindowLongA",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 23,
+   "clean": false
+  }
+ ]
+}

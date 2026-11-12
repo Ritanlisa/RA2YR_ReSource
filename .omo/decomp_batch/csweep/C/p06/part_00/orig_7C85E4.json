@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C85E4",
+ "name": "SetRect",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C85E4",
+ "bytes_hex": "ff25b4147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

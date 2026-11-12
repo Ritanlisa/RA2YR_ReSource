@@ -91017,6 +91017,28 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c85b4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e118c]",
+  "name": "GetCurrentDirectoryA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetCurrentDirectoryA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c85ba": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1190]",
+  "name": "HeapDestroy",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "HeapDestroy",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c85c0": {
   "attempts": 1,
   "first_diff": "+0 jmp dword ptr [0x7e1194]",
@@ -91024,12 +91046,207 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7c85c6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1198]",
+  "name": "ReleaseMutex",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ReleaseMutex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c85cc": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14c4]",
+  "name": "GetClientRect",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetClientRect",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c85d2": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14c0]",
+  "name": "DispatchMessageA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DispatchMessageA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c85d8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14bc]",
+  "name": "TranslateMessage",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TranslateMessage",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c85de": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14b8]",
+  "name": "ClientToScreen",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ClientToScreen",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c85e4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14b4]",
+  "name": "SetRect",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetRect",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c85ea": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "0x7c85ea",
+  "note": "decomp_batch r2: NO_PSEUDO",
+  "status": "PENDING"
+ },
+ "0x7c85f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14ac]",
+  "name": "PostMessageA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "PostMessageA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c85f6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14a8]",
+  "name": "GetDlgItem",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetDlgItem",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c85fc": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e14a4]",
+  "name": "SendMessageA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SendMessageA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c8602": {
   "attempts": 1,
   "first_diff": "+0 jmp dword ptr [0x7e14a0]",
   "name": "EnableWindow",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7c8608": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e149c]",
+  "name": "InvalidateRect",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "InvalidateRect",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c860e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1498]",
+  "name": "ShowWindow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ShowWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8614": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "SetTimer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SetTimer",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c861a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1490]",
+  "name": "SendDlgItemMessageA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SendDlgItemMessageA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8620": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e148c]",
+  "name": "KillTimer",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "KillTimer",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8626": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1478]",
+  "name": "ValidateRect",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ValidateRect",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c862c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1474]",
+  "name": "GetWindowLongA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetWindowLongA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8632": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1470]",
+  "name": "SetWindowLongA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetWindowLongA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c8644": {
   "attempts": 7,

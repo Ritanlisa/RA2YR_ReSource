@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C85FC",
+ "name": "SendMessageA",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C85FC",
+ "bytes_hex": "ff25a4147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

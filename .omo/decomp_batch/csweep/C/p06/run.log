@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c85b4 GetCurrentDirectoryA -> _addr_7C
+[conv] 0x7c85ba HeapDestroy -> _addr_7C
+[conv] 0x7c85c6 ReleaseMutex -> _addr_7C
+[conv] 0x7c85cc GetClientRect -> _addr_7C
+[conv] 0x7c85d2 DispatchMessageA -> _addr_7C
+[conv] 0x7c85d8 TranslateMessage -> _addr_7C
+[conv] 0x7c85de ClientToScreen -> _addr_7C
+[conv] 0x7c85e4 SetRect -> _addr_7C
+[conv] 0x7c85f0 PostMessageA -> _addr_7C
+[conv] 0x7c85f6 GetDlgItem -> _addr_7C
+[conv] 0x7c85fc SendMessageA -> _addr_7C
+[conv] 0x7c8608 InvalidateRect -> _addr_7C
+[conv] 0x7c860e ShowWindow -> _addr_7C
+[conv] 0x7c8614 SetTimer -> _addr_7C
+[conv] 0x7c861a SendDlgItemMessageA -> _addr_7C
+[conv] 0x7c8620 KillTimer -> _addr_7C
+[conv] 0x7c8626 ValidateRect -> _addr_7C
+[conv] 0x7c862c GetWindowLongA -> _addr_7C
+[conv] 0x7c8632 SetWindowLongA -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c85b4   MISMATCH         GetCurrentDirectoryA
+[diff] 0x7c85ba   MISMATCH         HeapDestroy
+[diff] 0x7c85c6   MISMATCH         ReleaseMutex
+[diff] 0x7c85cc   MISMATCH         GetClientRect
+[diff] 0x7c85d2   MISMATCH         DispatchMessageA
+[diff] 0x7c85d8   MISMATCH         TranslateMessage
+[diff] 0x7c85de   MISMATCH         ClientToScreen
+[diff] 0x7c85e4   MISMATCH         SetRect
+[diff] 0x7c85f0   MISMATCH         PostMessageA
+[diff] 0x7c85f6   MISMATCH         GetDlgItem
+[diff] 0x7c85fc   MISMATCH         SendMessageA
+[diff] 0x7c8608   MISMATCH         InvalidateRect
+[diff] 0x7c860e   MISMATCH         ShowWindow
+[diff] 0x7c861a   MISMATCH         SendDlgItemMessageA
+[diff] 0x7c8620   MISMATCH         KillTimer
+[diff] 0x7c8626   MISMATCH         ValidateRect
+[diff] 0x7c862c   MISMATCH         GetWindowLongA
+[diff] 0x7c8632   MISMATCH         SetWindowLongA
+[ledger] 0x7c85b4 GetCurrentDirectoryA -> NG (attempt 1)
+[ledger] 0x7c85ba HeapDestroy -> NG (attempt 1)
+[ledger] 0x7c85c6 ReleaseMutex -> NG (attempt 1)
+[ledger] 0x7c85cc GetClientRect -> NG (attempt 1)
+[ledger] 0x7c85d2 DispatchMessageA -> NG (attempt 1)
+[ledger] 0x7c85d8 TranslateMessage -> NG (attempt 1)
+[ledger] 0x7c85de ClientToScreen -> NG (attempt 1)
+[ledger] 0x7c85e4 SetRect -> NG (attempt 1)
+[ledger] 0x7c85ea 0x7c85ea -> PENDING (attempt 1)
+[ledger] 0x7c85f0 PostMessageA -> NG (attempt 1)
+[ledger] 0x7c85f6 GetDlgItem -> NG (attempt 1)
+[ledger] 0x7c85fc SendMessageA -> NG (attempt 1)
+[ledger] 0x7c8608 InvalidateRect -> NG (attempt 1)
+[ledger] 0x7c860e ShowWindow -> NG (attempt 1)
+[ledger] 0x7c8614 SetTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c861a SendDlgItemMessageA -> NG (attempt 1)
+[ledger] 0x7c8620 KillTimer -> NG (attempt 1)
+[ledger] 0x7c8626 ValidateRect -> NG (attempt 1)
+[ledger] 0x7c862c GetWindowLongA -> NG (attempt 1)
+[ledger] 0x7c8632 SetWindowLongA -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "NO_PSEUDO": 1,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 18
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p06\batch_report.json
