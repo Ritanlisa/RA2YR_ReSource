@@ -1,0 +1,11 @@
+{
+ "addr": "0x70DD20",
+ "name": "TechnoClass::GetPoweredWeaponIndex",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70DD20",
+ "bytes_hex": "568bf18b06ff90840000008bc8e84e9b000084c074088b86380100005ec333c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

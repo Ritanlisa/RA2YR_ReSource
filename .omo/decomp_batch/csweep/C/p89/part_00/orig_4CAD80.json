@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CAD80",
+ "name": "BuildingLight::CalcIntensity",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CAD80",
+ "bytes_hex": "dd442404d805c82a7e00d80d78897e00e86bb12f00c1e002b9949085002bc8d901c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

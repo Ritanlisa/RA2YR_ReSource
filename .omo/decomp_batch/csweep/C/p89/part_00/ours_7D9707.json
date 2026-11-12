@@ -1,0 +1,21 @@
+{
+ "symbol": "?__unlock_fhandle@ObjectClass@@QAEXH@Z",
+ "sym_key": "ObjectClass::__unlock_fhandle",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b4424048bc883e01fc1f9058d14c08b048d000000008d4c900c51e800000000c20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78A80@@3PAIA",
+   "sym_key": "CRTGlobal_B78A80"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?LeaveCriticalSection@@YGXPAX@Z",
+   "sym_key": "LeaveCriticalSection"
+  }
+ ]
+}

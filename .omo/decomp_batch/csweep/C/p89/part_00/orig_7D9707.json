@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D9707",
+ "name": "__unlock_fhandle",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D9707",
+ "bytes_hex": "8b4424048bc883e01fc1f9058d04c08b0c8d808ab7008d44810c50ff15ec117e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

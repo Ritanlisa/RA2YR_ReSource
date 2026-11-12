@@ -1,0 +1,15 @@
+{
+ "symbol": "?_rand@@YAHXZ",
+ "sym_key": "Unnamed::_rand",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "e8000000008b48148d14498d1491c1e20403d1c1e2082bd18d8c91c39e26008948148bc1c1e81025ff7f0000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?_getptd@@YAHXZ",
+   "sym_key": "_getptd"
+  }
+ ]
+}

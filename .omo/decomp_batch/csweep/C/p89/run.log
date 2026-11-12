@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p89\part_00
+=== convert (20 addrs) ===
+[conv] 0x7192c0 TeleportLocomotionClass::UpdateFacingDirection_3 -> TeleportLocomotionClass
+[conv] 0x72a0e0 TunnelLocomotionClass::UpdateFacingDirection_4 -> TunnelLocomotionClass
+[conv] 0x75ae00 WalkLocomotionClass::SynchronizeFacingDirection_1 -> WalkLocomotionClass
+[conv] 0x7ca971 __non_rtti_object::_0__non_rtti_object_QAE_PBD_Z -> __non_rtti_object
+[conv] 0x7cb4aa _rand -> _addr_7C
+[conv] 0x474660 ObjectClass::sub_474660 -> ObjectClass
+[conv] 0x773ad0 WebBrowser::unnamed -> WebBrowser
+[conv] 0x7d9707 ObjectClass::__unlock_fhandle -> ObjectClass
+[conv] 0x4cad80 BuildingLight::CalcIntensity -> BuildingLight
+[conv] 0x4cfcf0 FlyLocomotionClass::DispatchVirtualCall_0 -> FlyLocomotionClass
+[conv] 0x4e2af0 TriColorGaugeClass::Check -> TriColorGaugeClass
+[conv] 0x4e2b20 TriColorGaugeClass::SetField -> TriColorGaugeClass
+[conv] 0x5da720 Network::ShutdownInterface -> Network
+[conv] 0x5f6b60 IUnknown::IsBelowScreen -> IUnknown
+[conv] 0x5f6b90 IUnknown::IsHeightAboveThreshold -> IUnknown
+[conv] 0x4036c0 sub_4036C0 -> _addr_40
+[conv] 0x4cfe20 FlyLocomotionClass::ComputeFloatExpression_1 -> FlyLocomotionClass
+[conv] 0x70dd20 TechnoClass::GetPoweredWeaponIndex -> TechnoClass
+[conv] 0x48c3b0 ConnectionClass::IsValid -> ConnectionClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeleportLocomotionClass  rc=0
+[era] TunnelLocomotionClass    rc=0
+[era] WalkLocomotionClass      rc=0
+[era] __non_rtti_object        rc=2
+[era] _addr_7C                 rc=0
+[era] ObjectClass              rc=0
+[era] WebBrowser               rc=0
+[era] BuildingLight            rc=0
+[era] FlyLocomotionClass       rc=0
+[era] TriColorGaugeClass       rc=2
+[era] Network                  rc=0
+[era] IUnknown                 rc=2
+[era] _addr_40                 rc=0
+[era] TechnoClass              rc=0
+[era] ConnectionClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x7192c0   MISMATCH         TeleportLocomotionClass::UpdateFacingDirection_3
+[diff] 0x72a0e0   MISMATCH         TunnelLocomotionClass::UpdateFacingDirection_4
+[diff] 0x75ae00   MISMATCH         WalkLocomotionClass::SynchronizeFacingDirection_1
+[diff] 0x7cb4aa   MISMATCH         _rand
+[diff] 0x474660   MATCH            ObjectClass::sub_474660
+[diff] 0x7d9707   MISMATCH         ObjectClass::__unlock_fhandle
+[diff] 0x773ad0   MISMATCH         WebBrowser::unnamed
+[diff] 0x4cad80   MISMATCH         BuildingLight::CalcIntensity
+[diff] 0x4cfcf0   MISMATCH         FlyLocomotionClass::DispatchVirtualCall_0
+[diff] 0x4cfe20   MISMATCH         FlyLocomotionClass::ComputeFloatExpression_1
+[diff] 0x5da720   MISMATCH         Network::ShutdownInterface
+[diff] 0x4036c0   MISMATCH         sub_4036C0
+[diff] 0x70dd20   MISMATCH         TechnoClass::GetPoweredWeaponIndex
+[ledger] 0x7192c0 TeleportLocomotionClass::UpdateFacingDirection_3 -> NG (attempt 1)
+[ledger] 0x72a0e0 TunnelLocomotionClass::UpdateFacingDirection_4 -> NG (attempt 1)
+[ledger] 0x75ae00 WalkLocomotionClass::SynchronizeFacingDirection_1 -> NG (attempt 1)
+[ledger] 0x7ca971 __non_rtti_object::_0__non_rtti_object_QAE_PBD_Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cb4aa _rand -> NG (attempt 1)
+[ledger] 0x474660 ObjectClass::sub_474660 -> OK (attempt 1)
+[ledger] 0x773ad0 WebBrowser::unnamed -> NG (attempt 1)
+[ledger] 0x7d9707 ObjectClass::__unlock_fhandle -> NG (attempt 1)
+[ledger] 0x4cad80 BuildingLight::CalcIntensity -> NG (attempt 1)
+[ledger] 0x4cfcf0 FlyLocomotionClass::DispatchVirtualCall_0 -> NG (attempt 1)
+[ledger] 0x4e2af0 TriColorGaugeClass::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e2b20 TriColorGaugeClass::SetField -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5da720 Network::ShutdownInterface -> NG (attempt 1)
+[ledger] 0x5f6b60 IUnknown::IsBelowScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f6b90 IUnknown::IsHeightAboveThreshold -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4036c0 sub_4036C0 -> NG (attempt 1)
+[ledger] 0x536e00 0x536e00 -> PENDING (attempt 1)
+[ledger] 0x4cfe20 FlyLocomotionClass::ComputeFloatExpression_1 -> NG (attempt 1)
+[ledger] 0x70dd20 TechnoClass::GetPoweredWeaponIndex -> NG (attempt 1)
+[ledger] 0x48c3b0 ConnectionClass::IsValid -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 6,
+  "MATCH": 1,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "regalloc": 6,
+  "const_fold": 1,
+  "codegen_shape": 4,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 7.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p89\batch_report.json

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_474660@ObjectClass@@QAEDPAEPADH@Z",
+ "sym_key": "ObjectClass::sub_474660",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "db44240c8b4424088b54240483ec08dc0d00000000dd1c245052e800000000c20c00",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1740@@3NA",
+   "sym_key": "DataGlobal_7E1740"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?SetDouble@INIClass@@QAEDPAX0N@Z",
+   "sym_key": "INIClass::SetDouble"
+  }
+ ]
+}

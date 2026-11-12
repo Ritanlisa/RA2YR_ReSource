@@ -1,0 +1,11 @@
+{
+ "addr": "0x773AD0",
+ "name": "WebBrowser::?",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x773AD0",
+ "bytes_hex": "8b4424048b801004000085c0740f6a0850ff1574147e00c7000100000033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

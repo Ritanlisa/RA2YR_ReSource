@@ -1,0 +1,11 @@
+{
+ "addr": "0x5DA720",
+ "name": "Network::ShutdownInterface",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5DA720",
+ "bytes_hex": "8b0d287688005633f63bce66893510d6a80074068b016a01ff108935287688005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?CalcIntensity@BuildingLight@@QAENN@Z",
+ "sym_key": "BuildingLight::CalcIntensity",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "d90500000000dc44240483ec08dc0d00000000dd1c24e800000000668944240c83c4088b4424048d0c8500000000894c2404db442404c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "__real@8@c00a8000000000000000",
+   "sym_key": "_real@8@c00a8000000000000000"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

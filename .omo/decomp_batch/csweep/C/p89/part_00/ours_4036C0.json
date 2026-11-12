@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4036C0@@YIHHH@Z",
+ "sym_key": "Unnamed::sub_4036C0",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "5156ba01000000e8000000008bf085f6740d8b44240450e80000000083c4048bc65e59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?AudioQueue__FindBestChannel@@YIHHH@Z",
+   "sym_key": "AudioQueue__FindBestChannel"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?sub_402440@@YAPAXPAX@Z",
+   "sym_key": "sub_402440"
+  }
+ ]
+}

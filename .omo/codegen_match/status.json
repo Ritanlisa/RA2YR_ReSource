@@ -301,6 +301,17 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x4036c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push esi",
+  "name": "sub_4036C0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_4036C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x403810": {
   "attempts": 1,
   "clean": true,
@@ -14462,6 +14473,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x474660": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_474660",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_474660",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x474940": {
   "attempts": 4,
   "clean": false,
@@ -16858,6 +16881,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ConnectionClass::sendAck",
   "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x48c3b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ConnectionClass::IsValid",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "COMObject::IsValid",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -26134,6 +26169,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4cad80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 fld qword ptr [esp + 4]",
+  "name": "BuildingLight::CalcIntensity",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "BuildingLight::CalcIntensity",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4cadb0": {
   "attempts": 4,
   "first_diff": "+4 fadd dword ptr [0x7e2ac8]",
@@ -26716,6 +26763,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4cfcf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+4 mov ecx, dword ptr [eax + 8]",
+  "name": "FlyLocomotionClass::DispatchVirtualCall_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::DispatchVirtualCall_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4cfd90": {
   "attempts": 1,
   "clean": false,
@@ -26737,6 +26796,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "JumpjetLocomotionClass::DispatchVirtualCall_1",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4cfe20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push esi",
+  "name": "FlyLocomotionClass::ComputeFloatExpression_1",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "JumpjetLocomotionClass::ComputeFloatExpression_1",
+  "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
  },
@@ -28511,6 +28582,30 @@
   "orig_name": "GaugeClass::SetValue",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e2af0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TriColorGaugeClass::Check",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "COMObject::Check",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4e2b20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TriColorGaugeClass::SetField",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "COMObject::SetField",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4e30a0": {
@@ -39165,6 +39260,14 @@
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
+ },
+ "0x536e00": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "0x536e00",
+  "note": "decomp_batch r2: NO_PSEUDO",
+  "status": "PENDING"
  },
  "0x536e30": {
   "attempts": 1,
@@ -58030,6 +58133,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5da720": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov ecx, dword ptr [0x887628]",
+  "name": "Network::ShutdownInterface",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Network::ShutdownInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5dacd0": {
   "attempts": 2,
   "first_diff": null,
@@ -60027,6 +60142,30 @@
   "orig_name": "AbstractClass::COMStub_Return0_105",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5f6b60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "IUnknown::IsBelowScreen",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ObjectClass::IsBelowScreen",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5f6b90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "IUnknown::IsHeightAboveThreshold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ObjectClass::IsHeightAboveThreshold",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5f6bc0": {
@@ -85110,6 +85249,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x70dd20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+3 mov eax, dword ptr [esi]",
+  "name": "TechnoClass::GetPoweredWeaponIndex",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TechnoClass::GetPoweredWeaponIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x70dd50": {
   "attempts": 1,
   "clean": false,
@@ -86326,6 +86477,18 @@
   "name": "TeleportLocomotionClass::ResetMovementState",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "JumpjetLocomotionClass::ResetMovementState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7192c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
+  "name": "TeleportLocomotionClass::UpdateFacingDirection_3",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::UpdateFacingDirection_3",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -89639,6 +89802,18 @@
   "name": "JumpjetLocomotionClass::IsStateInRange",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "JumpjetLocomotionClass::IsStateInRange",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x72a0e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
+  "name": "TunnelLocomotionClass::UpdateFacingDirection_4",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::UpdateFacingDirection_4",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -95422,6 +95597,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x75ae00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
+  "name": "WalkLocomotionClass::SynchronizeFacingDirection_1",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::SynchronizeFacingDirection_1",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x75ae30": {
   "attempts": 5,
   "clean": false,
@@ -99670,6 +99857,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "WebBrowser::Release",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x773ad0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "WebBrowser::unnamed",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "WebBrowser::?",
+  "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
  },
@@ -109239,6 +109438,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x7ca971": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "__non_rtti_object::_0__non_rtti_object_QAE_PBD_Z",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "??0__non_rtti_object_QAE_PBD_Z",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7ca993": {
   "attempts": 1,
   "clean": false,
@@ -109454,6 +109665,17 @@
   "orig_name": "_srand",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7cb4aa": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 call 0x7d140b",
+  "name": "_rand",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "_rand",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7cb4cc": {
@@ -111317,6 +111539,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "__lock_fhandle",
   "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7d9707": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+12 lea eax, [eax + eax*8]",
+  "name": "ObjectClass::__unlock_fhandle",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "__unlock_fhandle",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },

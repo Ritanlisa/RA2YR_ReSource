@@ -1,0 +1,8 @@
+{
+ "symbol": "?DispatchVirtualCall_0@FlyLocomotionClass@@QAGHH@Z",
+ "sym_key": "FlyLocomotionClass::DispatchVirtualCall_0",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b4008508b08ff91c801000033d285c00f9ec24a83e20283c2028bc2c20800",
+ "relocs": []
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "?ShutdownInterface@Network@@QAEHXZ",
+ "sym_key": "Network::ShutdownInterface",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "51a09000000066c70510000000000084c0741aa1900000006a018b0825ff00000050ff11c605900000000059c3c60590000000008b44240059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D600@@3IA",
+   "sym_key": "DataGlobal_A8D600"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  }
+ ]
+}

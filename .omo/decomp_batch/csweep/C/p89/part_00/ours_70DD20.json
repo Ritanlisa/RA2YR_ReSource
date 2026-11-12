@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetPoweredWeaponIndex@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetPoweredWeaponIndex",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff90840000008bc8e80000000084c074088b86380100005ec333c05ec3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?HasPower@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::HasPower"
+  }
+ ]
+}

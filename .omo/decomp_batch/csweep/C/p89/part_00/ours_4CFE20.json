@@ -1,0 +1,15 @@
+{
+ "symbol": "?ComputeFloatExpression_1@FlyLocomotionClass@@QAG_JH@Z",
+ "sym_key": "FlyLocomotionClass::ComputeFloatExpression_1",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "83ec08568b7424108b4608508b08ff9184000000db807806000083ec08dc4e48dd1c24e8000000008b4c240c8bd0c1fa1025ff00000066895424108b74241080e1009983c4080bc10bd65e83c408c20800",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}
