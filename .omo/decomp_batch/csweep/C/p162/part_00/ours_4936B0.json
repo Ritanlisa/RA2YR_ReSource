@@ -1,0 +1,8 @@
+{
+ "symbol": "?sub_4936B0@_BlitTransXlatZReadWrite_G@@QAEHHHHHHHHHH@Z",
+ "sym_key": "_BlitTransXlatZReadWrite_G::sub_4936B0",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "8b54241c6a00528b542420528b542420528b5424208b01528b542420528b542420528b54242052ff5004c22400",
+ "relocs": []
+}
