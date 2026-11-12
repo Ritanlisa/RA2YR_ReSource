@@ -64665,15 +64665,15 @@
   "status": "NG"
  },
  "0x6b58d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e9610]",
   "name": "SmudgeTypeClass::GetClassIdentifier",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SmudgeTypeClass::GetClassIdentifier",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b5f80": {
@@ -64898,15 +64898,15 @@
   "this_as_id": false
  },
  "0x6b7ed0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e9860]",
   "name": "SpawnManagerClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SpawnManagerClass::ddtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b8120": {
@@ -64972,15 +64972,15 @@
   "this_as_id": false
  },
  "0x6b8220": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x6b8256",
   "name": "_VectorClass_PAUSpawnControl_SpawnManagerClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "SpawnManagerClass_25::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b8340": {
@@ -65010,27 +65010,27 @@
   "status": "NG"
  },
  "0x6b84e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x6b8516",
   "name": "_VectorClass_PAVSpawnManagerClass::Add",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_SpawnManagerClass::Add",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b8600": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x6b860e",
   "name": "_VectorClass_PAVSpawnManagerClass::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_SpawnManagerClass::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b8640": {
@@ -65046,15 +65046,15 @@
   "this_as_id": false
  },
  "0x6b8710": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_PAVSpawnManagerClass::FindItemIndex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_SpawnManagerClass::FindItemIndex",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b88d0": {
@@ -65398,15 +65398,15 @@
   "this_as_id": false
  },
  "0x6bb990": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [ecx]",
   "name": "ObjectClass::TopLevelExceptionFilter",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TopLevelExceptionFilter",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6bec60": {
@@ -65453,15 +65453,15 @@
   "this_as_id": false
  },
  "0x6bee40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [eax], 0x7f3768",
   "name": "ClassFactory_CStream::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "ClassFactory_CStream::Construct",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6bef90": {
@@ -65472,15 +65472,15 @@
   "status": "NG"
  },
  "0x6befc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [eax], 0x7f3780",
   "name": "ClassFactory_Wave::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "ClassFactory_Wave::Construct",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6bf110": {
@@ -65496,15 +65496,15 @@
   "this_as_id": false
  },
  "0x6bf140": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, ecx",
   "name": "COMClassFactory::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "COMClassFactory_3::Construct",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6bf1c0": {
@@ -65552,11 +65552,12 @@
   "this_as_id": false
  },
  "0x6bf440": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
-  "name": "COMClassFactory_5::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "name": "0x6bf440",
+  "note": "decomp_batch r2: DUP_SKIP",
+  "status": "PENDING"
  },
  "0x6bf510": {
   "attempts": 3,
@@ -65583,15 +65584,15 @@
   "this_as_id": false
  },
  "0x6bf5c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "COMClassFactory::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "name": "0x6bf5c0",
+  "note": "decomp_batch r2: DUP_SKIP",
   "orig_name": "COMClassFactory_6::Construct",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "PENDING",
   "this_as_id": false
  },
  "0x6bf5d0": {
@@ -65723,15 +65724,15 @@
   "this_as_id": false
  },
  "0x6bfd40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [eax], 0x7f3858",
   "name": "ObjectClass::WinMain_Helper_6BFD40",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6BFD40",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6bfe90": {
@@ -65742,15 +65743,15 @@
   "status": "NG"
  },
  "0x6bfec0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [eax], 0x7f3870",
   "name": "ObjectClass::WinMain_Helper_6BFEC0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6BFEC0",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c0010": {
@@ -65777,15 +65778,15 @@
   "this_as_id": false
  },
  "0x6c0040": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [eax], 0x7f3888",
   "name": "ObjectClass::WinMain_Helper_6C0040",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6C0040",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c0190": {
@@ -65801,11 +65802,16 @@
   "this_as_id": false
  },
  "0x6c01c0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "WinMain_Helper_6C01C0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+9 mov dword ptr [eax], 0x7f38a0",
+  "name": "ObjectClass::WinMain_Helper_6C01C0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "WinMain_Helper_6C01C0",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c0240": {
   "attempts": 7,
@@ -65832,15 +65838,15 @@
   "this_as_id": false
  },
  "0x6c0340": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [eax], 0x7f38b8",
   "name": "ObjectClass::WinMain_Helper_6C0340",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6C0340",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c0490": {
@@ -65856,15 +65862,15 @@
   "this_as_id": false
  },
  "0x6c04c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [eax], 0x7f38d0",
   "name": "ObjectClass::WinMain_Helper_6C04C0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6C04C0",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c0610": {
@@ -65880,15 +65886,15 @@
   "this_as_id": false
  },
  "0x6c0640": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [eax], 0x7f38e8",
   "name": "ObjectClass::WinMain_Helper_6C0640",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6C0640",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c0650": {
@@ -65916,15 +65922,15 @@
   "this_as_id": false
  },
  "0x6c07c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [eax], 0x7f3900",
   "name": "ObjectClass::WinMain_Helper_6C07C0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "WinMain_Helper_6C07C0",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c0910": {

@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p33\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b58d0 SmudgeTypeClass::GetClassIdentifier -> SmudgeTypeClass
+[conv] 0x6b7ed0 SpawnManagerClass::ddtor -> SpawnManagerClass
+[conv] 0x6b8220 _VectorClass_PAUSpawnControl_SpawnManagerClass::AddRef -> _VectorClass_PAUSpawnControl_SpawnManagerClass
+[conv] 0x6b84e0 _VectorClass_PAVSpawnManagerClass::Add -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x6b8600 _VectorClass_PAVSpawnManagerClass::GetSize -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x6b8710 _DynamicVectorClass_PAVSpawnManagerClass::FindItemIndex -> _DynamicVectorClass_PAVSpawnManagerClass
+[conv] 0x6bb990 ObjectClass::TopLevelExceptionFilter -> ObjectClass
+[conv] 0x6bee40 ClassFactory_CStream::Construct -> ClassFactory_CStream
+[conv] 0x6befc0 ClassFactory_Wave::Construct -> ClassFactory_Wave
+[conv] 0x6bf140 COMClassFactory::Construct -> COMClassFactory
+[conv] 0x6bfd40 ObjectClass::WinMain_Helper_6BFD40 -> ObjectClass
+[conv] 0x6bfec0 ObjectClass::WinMain_Helper_6BFEC0 -> ObjectClass
+[conv] 0x6c0040 ObjectClass::WinMain_Helper_6C0040 -> ObjectClass
+[conv] 0x6c01c0 ObjectClass::WinMain_Helper_6C01C0 -> ObjectClass
+[conv] 0x6c0340 ObjectClass::WinMain_Helper_6C0340 -> ObjectClass
+[conv] 0x6c04c0 ObjectClass::WinMain_Helper_6C04C0 -> ObjectClass
+[conv] 0x6c0640 ObjectClass::WinMain_Helper_6C0640 -> ObjectClass
+[conv] 0x6c07c0 ObjectClass::WinMain_Helper_6C07C0 -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SmudgeTypeClass          rc=0
+[era] SpawnManagerClass        rc=0
+[era] _VectorClass_PAUSpawnControl_SpawnManagerClass rc=0
+[era] _VectorClass_PAVSpawnManagerClass rc=0
+[era] _DynamicVectorClass_PAVSpawnManagerClass rc=0
+[era] ObjectClass              rc=0
+[era] ClassFactory_CStream     rc=0
+[era] ClassFactory_Wave        rc=0
+[era] COMClassFactory          rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b58d0   MISMATCH         SmudgeTypeClass::GetClassIdentifier
+[diff] 0x6b7ed0   MISMATCH         SpawnManagerClass::ddtor
+[diff] 0x6b8220   MISMATCH         _VectorClass_PAUSpawnControl_SpawnManagerClass::AddRef
+[diff] 0x6b84e0   MISMATCH         _VectorClass_PAVSpawnManagerClass::Add
+[diff] 0x6b8600   MISMATCH         _VectorClass_PAVSpawnManagerClass::GetSize
+[diff] 0x6b8710   MISMATCH         _DynamicVectorClass_PAVSpawnManagerClass::FindItemIndex
+[diff] 0x6bb990   MISMATCH         ObjectClass::TopLevelExceptionFilter
+[diff] 0x6bfd40   MISMATCH         ObjectClass::WinMain_Helper_6BFD40
+[diff] 0x6bfec0   MISMATCH         ObjectClass::WinMain_Helper_6BFEC0
+[diff] 0x6c0040   MISMATCH         ObjectClass::WinMain_Helper_6C0040
+[diff] 0x6c01c0   MISMATCH         ObjectClass::WinMain_Helper_6C01C0
+[diff] 0x6c0340   MISMATCH         ObjectClass::WinMain_Helper_6C0340
+[diff] 0x6c04c0   MISMATCH         ObjectClass::WinMain_Helper_6C04C0
+[diff] 0x6c0640   MISMATCH         ObjectClass::WinMain_Helper_6C0640
+[diff] 0x6c07c0   MISMATCH         ObjectClass::WinMain_Helper_6C07C0
+[diff] 0x6bee40   MISMATCH         ClassFactory_CStream::Construct
+[diff] 0x6befc0   MISMATCH         ClassFactory_Wave::Construct
+[diff] 0x6bf140   MISMATCH         COMClassFactory::Construct
+[ledger] 0x6b58d0 SmudgeTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x6b7ed0 SpawnManagerClass::ddtor -> NG (attempt 2)
+[ledger] 0x6b8220 _VectorClass_PAUSpawnControl_SpawnManagerClass::AddRef -> NG (attempt 2)
+[ledger] 0x6b84e0 _VectorClass_PAVSpawnManagerClass::Add -> NG (attempt 2)
+[ledger] 0x6b8600 _VectorClass_PAVSpawnManagerClass::GetSize -> NG (attempt 2)
+[ledger] 0x6b8710 _DynamicVectorClass_PAVSpawnManagerClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x6bb990 ObjectClass::TopLevelExceptionFilter -> NG (attempt 2)
+[ledger] 0x6bee40 ClassFactory_CStream::Construct -> NG (attempt 2)
+[ledger] 0x6befc0 ClassFactory_Wave::Construct -> NG (attempt 2)
+[ledger] 0x6bf140 COMClassFactory::Construct -> NG (attempt 2)
+[ledger] 0x6bf440 0x6bf440 -> PENDING (attempt 2)
+[ledger] 0x6bf5c0 0x6bf5c0 -> PENDING (attempt 2)
+[ledger] 0x6bfd40 ObjectClass::WinMain_Helper_6BFD40 -> NG (attempt 2)
+[ledger] 0x6bfec0 ObjectClass::WinMain_Helper_6BFEC0 -> NG (attempt 2)
+[ledger] 0x6c0040 ObjectClass::WinMain_Helper_6C0040 -> NG (attempt 2)
+[ledger] 0x6c01c0 ObjectClass::WinMain_Helper_6C01C0 -> NG (attempt 2)
+[ledger] 0x6c0340 ObjectClass::WinMain_Helper_6C0340 -> NG (attempt 2)
+[ledger] 0x6c04c0 ObjectClass::WinMain_Helper_6C04C0 -> NG (attempt 2)
+[ledger] 0x6c0640 ObjectClass::WinMain_Helper_6C0640 -> NG (attempt 2)
+[ledger] 0x6c07c0 ObjectClass::WinMain_Helper_6C07C0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "DUP_SKIP": 2
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "branch_polarity": 2,
+  "const_fold": 10,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p33\batch_report.json

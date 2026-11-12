@@ -1,0 +1,183 @@
+{
+ "symbol": "?TopLevelExceptionFilter@ObjectClass@@QAEJXZ",
+ "sym_key": "ObjectClass::TopLevelExceptionFilter",
+ "size": 365,
+ "link_base": 0,
+ "bytes_hex": "5156578bf98b078b08894c24088bcfe800000000e800000000a10000000040a30000000075588bcfe8000000006a0068800000006a0233d28a15000000006a006a00680000004052e8000000008bf083feff742a33c0a00000000050e8000000008d4c240833d28a15000000006a0051505256e80000000056e800000000a10000000085c0740f8b5424088b085250ff516c84c0755ea10000000085c0740a8b0850ff516c84c0754ba10000000085c0740d0fbe10508b0aff516c84c07535a10000000085c0740850ff506c84c07524a10000000085c0740a8b1050ff526c84c07511a10000000085c0741150ff506c84c07409a08c00000084c0750de8000000003b0500000000740d8bcfe8000000005f33c05e59c38bcfe800000000e8000000003d8104000074065f33c05e59c3a100000000c605000000000085c0740b83f80275105f33c05e59c3c70500000000ffffffff8b0d0000000085c97405e8000000005fb8010000005e59c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?WinMain_Write_53E6B0@@YAXXZ",
+   "sym_key": "WinMain_Write_53E6B0"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_820E5C@@3IA",
+   "sym_key": "DataGlobal_820E5C"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_820E5C@@3IA",
+   "sym_key": "DataGlobal_820E5C"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?GenerateReport@ExceptionHandler@@QAEPADXZ",
+   "sym_key": "ExceptionHandler::GenerateReport"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?FileName@@3EA",
+   "sym_key": "FileName"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?CreateFileA@@YGPAXHHHHHHH@Z",
+   "sym_key": "CreateFileA"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?Buffer@@3EA",
+   "sym_key": "Buffer"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?lstrlenA@@YGHH@Z",
+   "sym_key": "lstrlenA"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?Buffer@@3EA",
+   "sym_key": "Buffer"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?WriteFile@@YGHHHHPAXH@Z",
+   "sym_key": "WriteFile"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHH@Z",
+   "sym_key": "CloseHandle"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?DSurface_Tile@@3IA",
+   "sym_key": "DSurface_Tile"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?GetCurrentThreadId@@YGKXZ",
+   "sym_key": "GetCurrentThreadId"
+  },
+  {
+   "off": 260,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B730E8@@3IA",
+   "sym_key": "DataGlobal_B730E8"
+  },
+  {
+   "off": 269,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 287,
+   "type": "REL32",
+   "sym": "?sub_4C84E0@@YAHXZ",
+   "sym_key": "sub_4C84E0"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?DataGlobal_820E5C@@3IA",
+   "sym_key": "DataGlobal_820E5C"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?DataGlobal_820E60@@3EA",
+   "sym_key": "DataGlobal_820E60"
+  },
+  {
+   "off": 333,
+   "type": "DIR32",
+   "sym": "?DataGlobal_820E5C@@3IA",
+   "sym_key": "DataGlobal_820E5C"
+  },
+  {
+   "off": 343,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 352,
+   "type": "REL32",
+   "sym": "?Destroy@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::Destroy"
+  }
+ ]
+}
