@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D2C0C",
+ "name": "__ftbuf",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D2C0C",
+ "bytes_hex": "837c2404005674208b74240cf6460d10741656e8d585ffff80660dee8366180083260083660800595ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

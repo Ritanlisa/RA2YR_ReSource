@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p144\part_00
+=== convert (20 addrs) ===
+[conv] 0x769cd0 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::stopAnimation -> _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x7ac970 _DynamicVectorClass_PAUtConnInfoStruct::ClearBuffer -> _DynamicVectorClass_PAUtConnInfoStruct
+[conv] 0x7b42c0 _DynamicVectorClass_PAE::disconnect -> _DynamicVectorClass_PAE
+[conv] 0x7d2c0c __ftbuf -> _addr_7D
+[conv] 0x7d4715 __ltoa -> _addr_7D
+[conv] 0x4068f0 Array::ForEach -> Array
+[conv] 0x5ae4c0 MapSelect::CheckStringNotEmpty -> MapSelect
+[conv] 0x77a4a0 WOLOption::SetValue -> WOLOption
+[conv] 0x516c70 HoverLocomotionClass::DispatchVirtualCall_2 -> HoverLocomotionClass
+[conv] 0x70be50 TechnoClass::CalcOffsetFacing -> TechnoClass
+[conv] 0x5566a0 LinkClass::InsertAfter -> LinkClass
+[conv] 0x557800 ListClass::Destru_vt43 -> ListClass
+[conv] 0x7d2f9e sub_7D2F9E -> _addr_7D
+[conv] 0x7cd42b _remove -> _addr_7C
+[conv] 0x407170 RequestBufferMixer -> _addr_40
+[conv] 0x4b6bb0 HouseClass::RegisterForSwizzleTracking -> HouseClass
+[conv] 0x544c80 CellClass::EnsureFileLoaded -> CellClass
+[conv] 0x5f1f70 NullModemClass::SendPacket -> NullModemClass
+[conv] 0x686700 ScenarioClass::SetFileName -> ScenarioClass
+[conv] 0x751590 VocClass::GetSampleNameByIndex -> VocClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _DynamicVectorClass_PAUtConnInfoStruct rc=0
+[era] _DynamicVectorClass_PAE  rc=0
+[era] _addr_7D                 rc=0
+[era] Array                    rc=2
+[era] MapSelect                rc=0
+[era] WOLOption                rc=0
+[era] HoverLocomotionClass     rc=0
+[era] TechnoClass              rc=0
+[era] LinkClass                rc=2
+[era] ListClass                rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_40                 rc=0
+[era] HouseClass               rc=0
+[era] CellClass                rc=0
+[era] NullModemClass           rc=0
+[era] ScenarioClass            rc=0
+[era] VocClass                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x769cd0   MISMATCH         _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::stopAnimation
+[diff] 0x7ac970   MISMATCH         _DynamicVectorClass_PAUtConnInfoStruct::ClearBuffer
+[diff] 0x7b42c0   MISMATCH         _DynamicVectorClass_PAE::disconnect
+[diff] 0x7d2c0c   MISMATCH         __ftbuf
+[diff] 0x7d4715   MISMATCH         __ltoa
+[diff] 0x7d2f9e   MISMATCH         sub_7D2F9E
+[diff] 0x5ae4c0   MISMATCH         MapSelect::CheckStringNotEmpty
+[diff] 0x77a4a0   MATCH            WOLOption::SetValue
+[diff] 0x516c70   MISMATCH         HoverLocomotionClass::DispatchVirtualCall_2
+[diff] 0x70be50   MISMATCH         TechnoClass::CalcOffsetFacing
+[diff] 0x557800   MISMATCH         ListClass::Destru_vt43
+[diff] 0x7cd42b   MISMATCH         _remove
+[diff] 0x407170   MISMATCH         RequestBufferMixer
+[diff] 0x4b6bb0   MISMATCH         HouseClass::RegisterForSwizzleTracking
+[diff] 0x544c80   MATCH            CellClass::EnsureFileLoaded
+[diff] 0x5f1f70   MISMATCH         NullModemClass::SendPacket
+[diff] 0x686700   MISMATCH         ScenarioClass::SetFileName
+[diff] 0x751590   MISMATCH         VocClass::GetSampleNameByIndex
+[ledger] 0x769cd0 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::stopAnimation -> NG (attempt 1)
+[ledger] 0x7ac970 _DynamicVectorClass_PAUtConnInfoStruct::ClearBuffer -> NG (attempt 1)
+[ledger] 0x7b42c0 _DynamicVectorClass_PAE::disconnect -> NG (attempt 1)
+[ledger] 0x7d2c0c __ftbuf -> NG (attempt 1)
+[ledger] 0x7d4715 __ltoa -> NG (attempt 1)
+[ledger] 0x4068f0 Array::ForEach -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ae4c0 MapSelect::CheckStringNotEmpty -> NG (attempt 1)
+[ledger] 0x77a4a0 WOLOption::SetValue -> OK (attempt 1)
+[ledger] 0x516c70 HoverLocomotionClass::DispatchVirtualCall_2 -> NG (attempt 1)
+[ledger] 0x70be50 TechnoClass::CalcOffsetFacing -> NG (attempt 1)
+[ledger] 0x5566a0 LinkClass::InsertAfter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557800 ListClass::Destru_vt43 -> NG (attempt 1)
+[ledger] 0x7d2f9e sub_7D2F9E -> NG (attempt 1)
+[ledger] 0x7cd42b _remove -> NG (attempt 1)
+[ledger] 0x407170 RequestBufferMixer -> NG (attempt 1)
+[ledger] 0x4b6bb0 HouseClass::RegisterForSwizzleTracking -> NG (attempt 1)
+[ledger] 0x544c80 CellClass::EnsureFileLoaded -> OK (attempt 1)
+[ledger] 0x5f1f70 NullModemClass::SendPacket -> NG (attempt 1)
+[ledger] 0x686700 ScenarioClass::SetFileName -> NG (attempt 1)
+[ledger] 0x751590 VocClass::GetSampleNameByIndex -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 2,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "frame_sched": 2,
+  "codegen_shape": 3,
+  "branch_polarity": 4,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p144\batch_report.json

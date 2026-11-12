@@ -1,0 +1,11 @@
+{
+ "addr": "0x407170",
+ "name": "RequestBufferMixer",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407170",
+ "bytes_hex": "56578bf18bfa8b168b46088b4e0483e2fe3bc18916750be82422000089461889561cc1e710897e085f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

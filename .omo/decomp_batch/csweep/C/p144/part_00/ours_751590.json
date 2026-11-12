@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetSampleNameByIndex@VocClass@@QAIPADH@Z",
+ "sym_key": "VocClass::GetSampleNameByIndex",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "85d27c233b1500000000731ba1000000008b0c908b0985c97405e900000000",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_VocPlayState@@3IA",
+   "sym_key": "g_VocPlayState"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_VocAudioConfig@@3PAXA",
+   "sym_key": "g_VocAudioConfig"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GetSampleName@VocClass@@QAEPADXZ",
+   "sym_key": "VocClass::GetSampleName"
+  }
+ ]
+}

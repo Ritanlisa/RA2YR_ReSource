@@ -1,0 +1,15 @@
+{
+ "symbol": "?RequestBufferMixer@@YIHPAXPAIH@Z",
+ "sym_key": "Unnamed::RequestBufferMixer",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "568bf28b168b460883e2fe89168b56043bc2750fe8000000008b4c2408894618894e1c8b542408c1e2108956085ec20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  }
+ ]
+}

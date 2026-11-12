@@ -1,0 +1,15 @@
+{
+ "symbol": "?__ftbuf@@YAHHH@Z",
+ "sym_key": "Unnamed::__ftbuf",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "8b4424045685c074328b74240cf6460d10742856e8000000008a4e0d83c40480e1eec7461800000000884e0dc70600000000c74608000000005ec38b4424085ec3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?_flush@@YAHPAXZZ",
+   "sym_key": "_flush"
+  }
+ ]
+}

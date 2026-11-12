@@ -1,0 +1,15 @@
+{
+ "symbol": "?__ltoa@@YAPADHPADH@Z",
+ "sym_key": "Unnamed::__ltoa",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8b54240c8b4c240433c083fa0a750585c90f9cc0568b74240c50525651e80000000083c4108bc65ec3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?xtoa@@YAHHPAXHHZZ",
+   "sym_key": "xtoa"
+  }
+ ]
+}

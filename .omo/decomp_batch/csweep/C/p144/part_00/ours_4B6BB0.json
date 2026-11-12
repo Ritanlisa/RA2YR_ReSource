@@ -1,0 +1,21 @@
+{
+ "symbol": "?RegisterForSwizzleTracking@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::RegisterForSwizzleTracking",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "538bd95633f68b431085c07e1b578d7b14576800000000e8000000008b43104683c7043bf07cea5f5e5bc3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

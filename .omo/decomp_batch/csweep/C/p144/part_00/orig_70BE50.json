@@ -1,0 +1,11 @@
+{
+ "addr": "0x70BE50",
+ "name": "TechnoClass::CalcOffsetFacing",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70BE50",
+ "bytes_hex": "568bf18b4e04578d460450ff5110d9864c0200008bf8e895a00b0003c7b99001000099f7f95f5e8bc2c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

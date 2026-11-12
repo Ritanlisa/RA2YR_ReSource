@@ -1,0 +1,15 @@
+{
+ "symbol": "?CalcOffsetFacing@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::CalcOffsetFacing",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b4e04578d460450ff5110d9863c02000083ec088bf8dd1c24e8000000008b4c241083c40833c125ff00000033c1b99001000003c75f99f7f95e8bc259c3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

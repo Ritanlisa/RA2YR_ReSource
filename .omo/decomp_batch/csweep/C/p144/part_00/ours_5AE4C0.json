@@ -1,0 +1,21 @@
+{
+ "symbol": "?CheckStringNotEmpty@MapSelect@@QAEDXZ",
+ "sym_key": "MapSelect::CheckStringNotEmpty",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "568bf16a008d8ec8000000e80000000084c0740e83becc000000ff7405e8000000005ec3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?NotEquals@String@@QAE_NPAX@Z",
+   "sym_key": "String::NotEquals"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

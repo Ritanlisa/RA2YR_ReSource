@@ -1,0 +1,11 @@
+{
+ "addr": "0x77A4A0",
+ "name": "WOLOption::SetValue",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77A4A0",
+ "bytes_hex": "538b5c2408568bf1578bcb8d7e0c57e8cca2030084c0750c538bcfe880a40300c64608015f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

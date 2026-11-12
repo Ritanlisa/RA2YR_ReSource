@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetValue@WOLOption@@QAEEPAPBD@Z",
+ "sym_key": "WOLOption::SetValue",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf1578bcb8d7e0c57e80000000084c0750c538bcfe800000000c64608015f5e5bc20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  }
+ ]
+}

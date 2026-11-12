@@ -1,0 +1,11 @@
+{
+ "addr": "0x686700",
+ "name": "ScenarioClass::SetFileName",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x686700",
+ "bytes_hex": "8b4424045685c08bf1741c6804010000508d865c12000050e8b32a140083c40cc6865f130000005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

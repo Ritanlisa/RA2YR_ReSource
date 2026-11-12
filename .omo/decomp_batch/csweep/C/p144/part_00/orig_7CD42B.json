@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CD42B",
+ "name": "_remove",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CD42B",
+ "bytes_hex": "ff742404ff15e0107e0085c07508ff1500127e00eb0233c085c0740b50e8ce4100005983c8ffc333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

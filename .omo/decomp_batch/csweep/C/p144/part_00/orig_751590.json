@@ -1,0 +1,11 @@
+{
+ "addr": "0x751590",
+ "name": "VocClass::GetSampleNameByIndex",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x751590",
+ "bytes_hex": "85c97c213b0d88d3b1007d19a17cd3b1008b0c888b0985c97405e9c13bcbffb874658400c3b874748100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

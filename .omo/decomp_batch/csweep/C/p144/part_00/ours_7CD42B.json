@@ -1,0 +1,27 @@
+{
+ "symbol": "?_remove@@YAHPBD@Z",
+ "sym_key": "Unnamed::_remove",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e80000000085c07509e80000000085c0750333c0c350e80000000083c40483c8ffc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?DeleteFileA@@YGHPAX@Z",
+   "sym_key": "DeleteFileA"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?_dosmaperr@@YAHHZZ",
+   "sym_key": "_dosmaperr"
+  }
+ ]
+}
