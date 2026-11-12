@@ -1,0 +1,15 @@
+{
+ "symbol": "?CoFileTimeNow@@YGJPAU_FILETIME@@@Z",
+ "sym_key": "Unnamed::CoFileTimeNow",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e800000000c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?__imp_CoFileTimeNow@@YGJPBX@Z",
+   "sym_key": "__imp_CoFileTimeNow"
+  }
+ ]
+}

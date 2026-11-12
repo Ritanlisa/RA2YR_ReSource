@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8944",
+ "name": "_1timeGetTime",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8944",
+ "bytes_hex": "ff2530157e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

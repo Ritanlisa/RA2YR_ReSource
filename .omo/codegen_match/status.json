@@ -92450,6 +92450,50 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c88cc": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1600]",
+  "name": "OleRun",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "OleRun",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c88d2": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "CoCreateInstance",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CoCreateInstance",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c88d8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "OleLoadFromStream",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "OleLoadFromStream",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c88de": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "OleSaveToStream",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "OleSaveToStream",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7c88e4": {
   "attempts": 4,
   "clean": false,
@@ -92457,6 +92501,94 @@
   "name": "CLSIDFromString",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CLSIDFromString",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c88ea": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "StringFromCLSID",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "StringFromCLSID",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c88f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15e8]",
+  "name": "CoFileTimeNow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CoFileTimeNow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c88f6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "StgCreateDocfile",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "StgCreateDocfile",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c88fc": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "StgOpenStorage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "StgOpenStorage",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8902": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "StringFromGUID2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "StringFromGUID2",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8908": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15dc]",
+  "name": "CoDisconnectObject",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CoDisconnectObject",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c890e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "CoRegisterClassObject",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CoRegisterClassObject",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8914": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15d4]",
+  "name": "OleInitialize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "OleInitialize",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -92473,6 +92605,28 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c8920": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15cc]",
+  "name": "CoRevokeClassObject",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CoRevokeClassObject",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8926": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1368]",
+  "name": "SysAllocString",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SysAllocString",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c892c": {
   "attempts": 4,
   "clean": false,
@@ -92480,6 +92634,72 @@
   "name": "SysFreeString",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SysFreeString",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8932": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1360]",
+  "name": "LoadTypeLib",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "LoadTypeLib",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8938": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1384]",
+  "name": "RevokeActiveObject",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RevokeActiveObject",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c893e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "RegisterActiveObject",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RegisterActiveObject",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8944": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1530]",
+  "name": "_1timeGetTime",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "_1timeGetTime",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c894a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e152c]",
+  "name": "timeEndPeriod",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "timeEndPeriod",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8950": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1528]",
+  "name": "timeKillEvent",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "timeKillEvent",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

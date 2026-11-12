@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c88cc OleRun -> _addr_7C
+[conv] 0x7c88d2 CoCreateInstance -> _addr_7C
+[conv] 0x7c88d8 OleLoadFromStream -> _addr_7C
+[conv] 0x7c88de OleSaveToStream -> _addr_7C
+[conv] 0x7c88ea StringFromCLSID -> _addr_7C
+[conv] 0x7c88f0 CoFileTimeNow -> _addr_7C
+[conv] 0x7c88f6 StgCreateDocfile -> _addr_7C
+[conv] 0x7c88fc StgOpenStorage -> _addr_7C
+[conv] 0x7c8902 StringFromGUID2 -> _addr_7C
+[conv] 0x7c8908 CoDisconnectObject -> _addr_7C
+[conv] 0x7c890e CoRegisterClassObject -> _addr_7C
+[conv] 0x7c8914 OleInitialize -> _addr_7C
+[conv] 0x7c8920 CoRevokeClassObject -> _addr_7C
+[conv] 0x7c8926 SysAllocString -> _addr_7C
+[conv] 0x7c8932 LoadTypeLib -> _addr_7C
+[conv] 0x7c8938 RevokeActiveObject -> _addr_7C
+[conv] 0x7c893e RegisterActiveObject -> _addr_7C
+[conv] 0x7c8944 _1timeGetTime -> _addr_7C
+[conv] 0x7c894a timeEndPeriod -> _addr_7C
+[conv] 0x7c8950 timeKillEvent -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c88cc   MISMATCH         OleRun
+[diff] 0x7c88f0   MISMATCH         CoFileTimeNow
+[diff] 0x7c8908   MISMATCH         CoDisconnectObject
+[diff] 0x7c8914   MISMATCH         OleInitialize
+[diff] 0x7c8920   MISMATCH         CoRevokeClassObject
+[diff] 0x7c8926   MISMATCH         SysAllocString
+[diff] 0x7c8932   MISMATCH         LoadTypeLib
+[diff] 0x7c8938   MISMATCH         RevokeActiveObject
+[diff] 0x7c8944   MISMATCH         _1timeGetTime
+[diff] 0x7c894a   MISMATCH         timeEndPeriod
+[diff] 0x7c8950   MISMATCH         timeKillEvent
+[ledger] 0x7c88cc OleRun -> NG (attempt 1)
+[ledger] 0x7c88d2 CoCreateInstance -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c88d8 OleLoadFromStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c88de OleSaveToStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c88ea StringFromCLSID -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c88f0 CoFileTimeNow -> NG (attempt 1)
+[ledger] 0x7c88f6 StgCreateDocfile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c88fc StgOpenStorage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8902 StringFromGUID2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8908 CoDisconnectObject -> NG (attempt 1)
+[ledger] 0x7c890e CoRegisterClassObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8914 OleInitialize -> NG (attempt 1)
+[ledger] 0x7c8920 CoRevokeClassObject -> NG (attempt 1)
+[ledger] 0x7c8926 SysAllocString -> NG (attempt 1)
+[ledger] 0x7c8932 LoadTypeLib -> NG (attempt 1)
+[ledger] 0x7c8938 RevokeActiveObject -> NG (attempt 1)
+[ledger] 0x7c893e RegisterActiveObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8944 _1timeGetTime -> NG (attempt 1)
+[ledger] 0x7c894a timeEndPeriod -> NG (attempt 1)
+[ledger] 0x7c8950 timeKillEvent -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "codegen_shape": 10,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p12\batch_report.json
