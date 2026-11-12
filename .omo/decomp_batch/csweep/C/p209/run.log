@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p209\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e75e0 sub_4E75E0 -> _addr_4E
+[conv] 0x4e76e0 sub_4E76E0 -> _addr_4E
+[conv] 0x4e7760 sub_4E7760 -> _addr_4E
+[conv] 0x4e77e0 sub_4E77E0 -> _addr_4E
+[conv] 0x4e7860 sub_4E7860 -> _addr_4E
+[conv] 0x4e78e0 sub_4E78E0 -> _addr_4E
+[conv] 0x4e7960 sub_4E7960 -> _addr_4E
+[conv] 0x4e79e0 sub_4E79E0 -> _addr_4E
+[conv] 0x4e7a60 sub_4E7A60 -> _addr_4E
+[conv] 0x4e7ae0 sub_4E7AE0 -> _addr_4E
+[conv] 0x4e7b60 sub_4E7B60 -> _addr_4E
+[conv] 0x4e7c60 sub_4E7C60 -> _addr_4E
+[conv] 0x4e7d40 sub_4E7D40 -> _addr_4E
+[conv] 0x4e7f30 sub_4E7F30 -> _addr_4E
+[conv] 0x4e7fb0 sub_4E7FB0 -> _addr_4E
+[conv] 0x4f50f0 sub_4F50F0 -> _addr_4F
+[conv] 0x5226c0 InfantryClass::GetProductionHouse -> InfantryClass
+[conv] 0x539580 sub_539580 -> _addr_53
+[conv] 0x539620 sub_539620 -> _addr_53
+[conv] 0x5396c0 sub_5396C0 -> _addr_53
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4E                 rc=0
+[era] _addr_4F                 rc=0
+[era] InfantryClass            rc=2
+[era] _addr_53                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e75e0   MISMATCH         sub_4E75E0
+[diff] 0x4e76e0   MISMATCH         sub_4E76E0
+[diff] 0x4e7760   MISMATCH         sub_4E7760
+[diff] 0x4e77e0   MISMATCH         sub_4E77E0
+[diff] 0x4e7860   MISMATCH         sub_4E7860
+[diff] 0x4e78e0   MISMATCH         sub_4E78E0
+[diff] 0x4e7960   MISMATCH         sub_4E7960
+[diff] 0x4e79e0   MISMATCH         sub_4E79E0
+[diff] 0x4e7a60   MISMATCH         sub_4E7A60
+[diff] 0x4e7ae0   MISMATCH         sub_4E7AE0
+[diff] 0x4e7b60   MISMATCH         sub_4E7B60
+[diff] 0x4e7c60   MISMATCH         sub_4E7C60
+[diff] 0x4e7d40   MISMATCH         sub_4E7D40
+[diff] 0x4e7f30   MISMATCH         sub_4E7F30
+[diff] 0x4e7fb0   MISMATCH         sub_4E7FB0
+[diff] 0x4f50f0   MISMATCH         sub_4F50F0
+[diff] 0x539580   MISMATCH         sub_539580
+[diff] 0x539620   MISMATCH         sub_539620
+[diff] 0x5396c0   MISMATCH         sub_5396C0
+[ledger] 0x4e75e0 sub_4E75E0 -> NG (attempt 1)
+[ledger] 0x4e76e0 sub_4E76E0 -> NG (attempt 1)
+[ledger] 0x4e7760 sub_4E7760 -> NG (attempt 1)
+[ledger] 0x4e77e0 sub_4E77E0 -> NG (attempt 1)
+[ledger] 0x4e7860 sub_4E7860 -> NG (attempt 1)
+[ledger] 0x4e78e0 sub_4E78E0 -> NG (attempt 1)
+[ledger] 0x4e7960 sub_4E7960 -> NG (attempt 1)
+[ledger] 0x4e79e0 sub_4E79E0 -> NG (attempt 1)
+[ledger] 0x4e7a60 sub_4E7A60 -> NG (attempt 1)
+[ledger] 0x4e7ae0 sub_4E7AE0 -> NG (attempt 1)
+[ledger] 0x4e7b60 sub_4E7B60 -> NG (attempt 1)
+[ledger] 0x4e7c60 sub_4E7C60 -> NG (attempt 1)
+[ledger] 0x4e7d40 sub_4E7D40 -> NG (attempt 1)
+[ledger] 0x4e7f30 sub_4E7F30 -> NG (attempt 1)
+[ledger] 0x4e7fb0 sub_4E7FB0 -> NG (attempt 1)
+[ledger] 0x4f50f0 sub_4F50F0 -> NG (attempt 1)
+[ledger] 0x5226c0 InfantryClass::GetProductionHouse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x539580 sub_539580 -> NG (attempt 1)
+[ledger] 0x539620 sub_539620 -> NG (attempt 1)
+[ledger] 0x5396c0 sub_5396C0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 19
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p209\batch_report.json

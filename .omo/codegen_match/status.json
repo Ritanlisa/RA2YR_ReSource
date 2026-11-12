@@ -39024,6 +39024,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e75e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7620",
+  "name": "sub_4E75E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E75E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e7620": {
   "attempts": 1,
   "clean": false,
@@ -39057,6 +39068,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e76e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7720",
+  "name": "sub_4E76E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E76E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e7720": {
   "attempts": 1,
   "clean": false,
@@ -39064,6 +39086,17 @@
   "name": "sub_4E7720",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4E7720",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7760": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e77a0",
+  "name": "sub_4E7760",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7760",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -39079,6 +39112,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e77e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7820",
+  "name": "sub_4E77E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E77E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e7820": {
   "attempts": 1,
   "clean": false,
@@ -39086,6 +39130,17 @@
   "name": "sub_4E7820",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4E7820",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7860": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e78a0",
+  "name": "sub_4E7860",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7860",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -39101,6 +39156,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e78e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7920",
+  "name": "sub_4E78E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E78E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e7920": {
   "attempts": 1,
   "clean": false,
@@ -39108,6 +39174,17 @@
   "name": "sub_4E7920",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4E7920",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7960": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e79a0",
+  "name": "sub_4E7960",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7960",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -39123,6 +39200,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e79e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7a20",
+  "name": "sub_4E79E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E79E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e7a20": {
   "attempts": 1,
   "clean": false,
@@ -39130,6 +39218,17 @@
   "name": "sub_4E7A20",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4E7A20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7a60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7aa0",
+  "name": "sub_4E7A60",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7A60",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -39145,6 +39244,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e7ae0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7b20",
+  "name": "sub_4E7AE0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7AE0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e7b20": {
   "attempts": 1,
   "clean": false,
@@ -39152,6 +39262,17 @@
   "name": "sub_4E7B20",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4E7B20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7b60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7ba0",
+  "name": "sub_4E7B60",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7B60",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -39185,6 +39306,17 @@
   "name": "sub_4E7C20",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4E7C20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7c60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7ca0",
+  "name": "sub_4E7C60",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7C60",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -39240,6 +39372,17 @@
   "name": "unknown_libname_13",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "unknown_libname_13",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7d40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7d80",
+  "name": "sub_4E7D40",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7D40",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -39376,6 +39519,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e7f30": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7f70",
+  "name": "sub_4E7F30",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7F30",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e7f70": {
   "attempts": 6,
   "clean": false,
@@ -39383,6 +39537,17 @@
   "name": "sub_4E7F70",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4E7F70",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7fb0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4e7ff0",
+  "name": "sub_4E7FB0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4E7FB0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -44838,6 +45003,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4f50f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x4f5130",
+  "name": "sub_4F50F0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4F50F0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4f6910": {
   "attempts": 1,
   "clean": false,
@@ -48587,6 +48763,18 @@
   "name": "InfantryClass::FireAtTargetPos",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryClass::FireAtTargetPos",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5226c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "InfantryClass::GetProductionHouse",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InfantryClass::GetProductionHouse",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -53641,6 +53829,39 @@
   "orig_name": "sub_539570",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x539580": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x5395c0",
+  "name": "sub_539580",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_539580",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x539620": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x539660",
+  "name": "sub_539620",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_539620",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5396c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+2 push 0x539700",
+  "name": "sub_5396C0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5396C0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x539ea0": {
