@@ -1,0 +1,63 @@
+{
+ "symbol": "?UI_Setup_7930A0@@YA_NXZ",
+ "sym_key": "Unnamed::UI_Setup_7930A0",
+ "size": 114,
+ "link_base": 0,
+ "bytes_hex": "538b1d0000000033c05685db577e5d8b150000000085c07c123bc37d0eb91b0000008bf2bf00000000f3a5f6050000000001750a403bc37d3383c26cebd7b80000000085c07425b900000000e80000000033c9508a0d0000000051e80000000083c408f7d81bc05f5e405bc35f5e32c05bc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionFlags@@3PAXA",
+   "sym_key": "g_WOL_ConnectionFlags"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_IsMultiplayerSession@@3EB",
+   "sym_key": "g_IsMultiplayerSession"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_IsMultiplayerSession@@3EB",
+   "sym_key": "g_IsMultiplayerSession"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_IsMultiplayerSession@@3EB",
+   "sym_key": "g_IsMultiplayerSession"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_WebBrowser@@3IB",
+   "sym_key": "g_WebBrowser"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B777D4@@3EA",
+   "sym_key": "DataGlobal_B777D4"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

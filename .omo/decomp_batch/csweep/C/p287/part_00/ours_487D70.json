@@ -1,0 +1,27 @@
+{
+ "symbol": "?AttachObject@CellClass@@QAEDH@Z",
+ "sym_key": "CellClass::AttachObject",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4c24088b86e000000085c9742e85c0740a3bc1740624005ec20400898ee00000008a5114f6c20474340fbf462450e80000000024015e0c01c2040085c07414f6401404740e8b0d00000000518bc8e800000000c786e00000000000000024015e0c01c20400",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?Jumpjet_OccupyCell@FootClass@@QAEPAIH@Z",
+   "sym_key": "FootClass::Jumpjet_OccupyCell"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E748@@3IA",
+   "sym_key": "DataGlobal_89E748"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?Jumpjet_OccupyCell@FootClass@@QAEPAIH@Z",
+   "sym_key": "FootClass::Jumpjet_OccupyCell"
+  }
+ ]
+}

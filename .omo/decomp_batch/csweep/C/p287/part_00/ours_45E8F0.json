@@ -1,0 +1,57 @@
+{
+ "symbol": "?ProcessDataCCFileClass@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::ProcessDataCCFileClass",
+ "size": 151,
+ "link_base": 0,
+ "bytes_hex": "8b0d000000008b4424ec8bd1240081e2ff00000083ec140bc285c95675748b0d0000000032d2e800000000a3000000008d4424086a0050e8000000008b0d000000006a00e8000000008b0d000000000fbf7102668b49046685c97e3653578bd00fbff933c985f67e2233db24008a1c110bc384c074108d58bf33d881e3ff00000033c3880411413bce7cde03d64f75d35f5b5e83c414c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DDBC@@3IA",
+   "sym_key": "DataGlobal_89DDBC"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?aBuildngzSha@@3HA",
+   "sym_key": "aBuildngzSha"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DDBC@@3IA",
+   "sym_key": "DataGlobal_89DDBC"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DDBC@@3IA",
+   "sym_key": "DataGlobal_89DDBC"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?GetSubFile@MixFileClass@@QAEHI@Z",
+   "sym_key": "MixFileClass::GetSubFile"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DDBC@@3IA",
+   "sym_key": "DataGlobal_89DDBC"
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p287\part_00
+=== convert (20 addrs) ===
+[conv] 0x7930a0 UI_Setup_7930A0 -> UI_Setup
+[conv] 0x4109c0 AbstractTypeClass::Dtor -> AbstractTypeClass
+[conv] 0x635120 FactoryClass::ClearObjects -> FactoryClass
+[conv] 0x45e8f0 ObjectClass::ProcessDataCCFileClass -> ObjectClass
+[conv] 0x72e9f0 Map_Load_72E9F0 -> Map_Load
+[conv] 0x72ead0 Map_Load_72EAD0 -> Map_Load
+[conv] 0x7d571f __mbsrchr -> _addr_7D
+[conv] 0x75f540 Color::RGBFromFloat -> Color
+[conv] 0x4ca5a0 FactoryClass::StartProduction_2 -> FactoryClass
+[conv] 0x4aca10 ObjectPlacement::CalcPosition_Wrapper -> ObjectPlacement
+[conv] 0x4c29e0 TechnoClass::sub_4C29E0 -> TechnoClass
+[conv] 0x5fe5a0 OverlayTypeClass::GetLandType -> OverlayTypeClass
+[conv] 0x6edf10 ObjectClass::sub_6EDF10 -> ObjectClass
+[conv] 0x6cf070 sub_6CF070 -> _addr_6C
+[conv] 0x6e1830 ScriptAction::ReadParameter -> ScriptAction
+[conv] 0x66d1f0 RulesClass::readSpecialWeapons -> RulesClass
+[conv] 0x4db9b0 FootClass::vt_entry_504 -> FootClass
+[conv] 0x474740 ObjectTypeClass::ReadSoundList -> ObjectTypeClass
+[conv] 0x477510 GameSetup::FormatToString -> GameSetup
+[conv] 0x487d70 CellClass::AttachObject -> CellClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UI_Setup                 rc=0
+[era] AbstractTypeClass        rc=2
+[era] FactoryClass             rc=2
+[era] ObjectClass              rc=0
+[era] Map_Load                 rc=0
+[era] _addr_7D                 rc=0
+[era] Color                    rc=0
+[era] ObjectPlacement          rc=0
+[era] TechnoClass              rc=0
+[era] OverlayTypeClass         rc=0
+[era] _addr_6C                 rc=2
+[era] ScriptAction             rc=0
+[era] RulesClass               rc=2
+[era] FootClass                rc=2
+[era] ObjectTypeClass          rc=2
+[era] GameSetup                rc=2
+[era] CellClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x7930a0   MISMATCH         UI_Setup_7930A0
+[diff] 0x635120   MISMATCH         FactoryClass::ClearObjects
+[diff] 0x45e8f0   MISMATCH         ObjectClass::ProcessDataCCFileClass
+[diff] 0x6edf10   MISMATCH         ObjectClass::sub_6EDF10
+[diff] 0x72e9f0   MISMATCH         Map_Load_72E9F0
+[diff] 0x72ead0   MISMATCH         Map_Load_72EAD0
+[diff] 0x7d571f   MISMATCH         __mbsrchr
+[diff] 0x75f540   MISMATCH         Color::RGBFromFloat
+[diff] 0x4aca10   MISMATCH         ObjectPlacement::CalcPosition_Wrapper
+[diff] 0x4c29e0   MISMATCH         TechnoClass::sub_4C29E0
+[diff] 0x5fe5a0   MISMATCH         OverlayTypeClass::GetLandType
+[diff] 0x6e1830   MISMATCH         ScriptAction::ReadParameter
+[diff] 0x487d70   MISMATCH         CellClass::AttachObject
+[ledger] 0x7930a0 UI_Setup_7930A0 -> NG (attempt 1)
+[ledger] 0x4109c0 AbstractTypeClass::Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x635120 FactoryClass::ClearObjects -> NG (attempt 1)
+[ledger] 0x45e8f0 ObjectClass::ProcessDataCCFileClass -> NG (attempt 1)
+[ledger] 0x72e9f0 Map_Load_72E9F0 -> NG (attempt 1)
+[ledger] 0x72ead0 Map_Load_72EAD0 -> NG (attempt 1)
+[ledger] 0x7d571f __mbsrchr -> NG (attempt 1)
+[ledger] 0x75f540 Color::RGBFromFloat -> NG (attempt 1)
+[ledger] 0x4ca5a0 FactoryClass::StartProduction_2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aca10 ObjectPlacement::CalcPosition_Wrapper -> NG (attempt 1)
+[ledger] 0x4c29e0 TechnoClass::sub_4C29E0 -> NG (attempt 1)
+[ledger] 0x5fe5a0 OverlayTypeClass::GetLandType -> NG (attempt 1)
+[ledger] 0x6edf10 ObjectClass::sub_6EDF10 -> NG (attempt 1)
+[ledger] 0x6cf070 sub_6CF070 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e1830 ScriptAction::ReadParameter -> NG (attempt 1)
+[ledger] 0x66d1f0 RulesClass::readSpecialWeapons -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4db9b0 FootClass::vt_entry_504 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x474740 ObjectTypeClass::ReadSoundList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x477510 GameSetup::FormatToString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x487d70 CellClass::AttachObject -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "branch_order": 2,
+  "const_fold": 2,
+  "extern_reloc": 2,
+  "codegen_shape": 2,
+  "frame_sched": 2,
+  "signedness": 1,
+  "eval_order": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p287\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FE5A0",
+ "name": "OverlayTypeClass::GetLandType",
+ "size": 115,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FE5A0",
+ "bytes_hex": "83ec088b15a06f8800568b35a46f8800578b7c24148b0703c28b570403d683c01e83c20f894424088954240c33d233c052508b44242052525268e803000052525268000600008d542430508b442448528b1150ff929c0000008b15b8f687008b0d1473880050e86507ebff5f5e83c408c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

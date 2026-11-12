@@ -1,0 +1,33 @@
+{
+ "symbol": "?RGBFromFloat@Color@@QAEPAV1@HM@Z",
+ "sym_key": "Color::RGBFromFloat",
+ "size": 127,
+ "link_base": 0,
+ "bytes_hex": "83ec08d9442410dc2d0000000053555657dd5c24108b6c24148b7c2410558bd957e8000000008bf08b44242833f05581e6ff0000005733f0e8000000008bf88b44243033f85581e7ff00000033f88b44242450e8000000008bc88b44243833c883c41881e1ff000000897b0433c189335f8943085e8bc35d5b83c408c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

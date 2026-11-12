@@ -1,0 +1,11 @@
+{
+ "addr": "0x635120",
+ "name": "FactoryClass::ClearObjects",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x635120",
+ "bytes_hex": "5355568bf15733db8b6e3033ff3beb7e148b46248b0cb851e8003a190083c404473bfd7cec8b56208d4e20ff520c8b561033c03bd37e2683cfff8b4e04403bc28b4c81fc89790888590c7cee899ea800000089beb00000005f5e5d5bc3899ea8000000c786b0000000ffffffff5f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

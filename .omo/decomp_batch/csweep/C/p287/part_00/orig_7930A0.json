@@ -1,0 +1,11 @@
+{
+ "addr": "0x7930A0",
+ "name": "UI_Setup_7930A0",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7930A0",
+ "bytes_hex": "538b1d0079b70033c05685db577e3c8b150879b70085c07c123bc37d0eb91b0000008bf2bfb077b700f3a5f605b077b70001750e4083c26c3bc37cd95f5e32c05bc3b8b077b70085c075065f5e32c05bc3b9403eb700e8452302005068d477b700e81a5c030083c40885c05f5e0f94c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

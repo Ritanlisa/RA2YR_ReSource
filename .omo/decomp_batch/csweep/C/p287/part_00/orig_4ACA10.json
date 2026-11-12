@@ -1,0 +1,11 @@
+{
+ "addr": "0x4ACA10",
+ "name": "ObjectPlacement::CalcPosition_Wrapper",
+ "size": 115,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4ACA10",
+ "bytes_hex": "83ec0cb9e8f78700568b74241856e80d8d0b008b8840010000f6c501741f0fbe881b01000083c1048b56080faf0d40078a003bd17c07b901000000eb0233c98b54241c6a0051528d4c241056518bc8e81c47fdff8bd08b4424148bc88b3289318b72048971045e8b520889510883c40cc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

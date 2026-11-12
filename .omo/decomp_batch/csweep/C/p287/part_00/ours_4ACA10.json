@@ -1,0 +1,33 @@
+{
+ "symbol": "?CalcPosition_Wrapper@ObjectPlacement@@QAGPAHPAH0D@Z",
+ "sym_key": "ObjectPlacement::CalcPosition_Wrapper",
+ "size": 118,
+ "link_base": 0,
+ "bytes_hex": "83ec0cb900000000568b74241c56e8000000008b8840010000f6c501741d0fbe881b01000083c1048b56080faf0d000000003bd1c644241c017305c644241c008b54241c8b4c24206a0052518d54241056528bc8e8000000008b105e8b4c241489118b50048951048b40088941088bc183c40cc21000",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0740@@3IA",
+   "sym_key": "DataGlobal_8A0740"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?CalcPosition@ObjectPlacement@@QAEPAHPAX0DDD@Z",
+   "sym_key": "ObjectPlacement::CalcPosition"
+  }
+ ]
+}

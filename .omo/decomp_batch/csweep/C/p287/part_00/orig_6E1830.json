@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E1830",
+ "name": "ScriptAction::ReadParameter",
+ "size": 115,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E1830",
+ "bytes_hex": "518b01569981e2ff00000003c28bf08b41049981e2ff00000003c2c1fe08c1f808668974240466894424068b4c2404894c240433c9663b3580e6b0007509663b0582e6b00074278d542404b9e8f7870052e81a3fe8ff8bf08bcee891acd9ff85c0750d508bcee8b5acd9ff5e59c38bc15e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

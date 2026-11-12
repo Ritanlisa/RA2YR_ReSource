@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetLandType@OverlayTypeClass@@QAEXPAH0I@Z",
+ "sym_key": "OverlayTypeClass::GetLandType",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "83ec088b44240c568b3500000000518b108b40048d54321e895424088b15040000008d44100f8b118944240cff929c0000006a008b4c24186a006a006a006a0068e80300006a006a006a0068000600008d54242c518b4c244452510fbe15c80000008b0d0000000050e8000000005e83c408c20c00",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHHIPAX0HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

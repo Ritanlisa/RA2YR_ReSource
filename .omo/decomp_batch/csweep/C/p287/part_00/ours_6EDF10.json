@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_6EDF10@ObjectClass@@QAEXHH@Z",
+ "sym_key": "ObjectClass::sub_6EDF10",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "83ec10538bd9568b735485f67445578b7c240c8b068d4c24105156ff504833d281e700ffffff8a50058d44240c0bfa50897c2410e8000000008bb6d805000085f675d05fc68380000000015e5b83c410c20800c68380000000015e5b83c410c20800",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?MapClass__TriggerEVA@@YGHPAX@Z",
+   "sym_key": "MapClass__TriggerEVA"
+  }
+ ]
+}

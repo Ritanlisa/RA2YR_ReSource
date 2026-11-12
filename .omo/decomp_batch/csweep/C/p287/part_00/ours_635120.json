@@ -1,0 +1,15 @@
+{
+ "symbol": "?ClearObjects@FactoryClass@@QAEHXZ",
+ "sym_key": "FactoryClass::ClearObjects",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "5355568bf15733db8b6e3033ff3beb7e148b46248b0cb851e80000000083c404473bfd7cec8b56208d462050ff520c8b561033c03bd37f15899ea8000000c786b0000000ffffffff5f5e5d5bc383cfff8b4e04403bc28b4c81fc89790888590c7cee89beb0000000899ea80000005f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

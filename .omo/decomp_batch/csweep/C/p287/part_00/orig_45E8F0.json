@@ -1,0 +1,11 @@
+{
+ "addr": "0x45E8F0",
+ "name": "ProcessDataCCFileClass",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45E8F0",
+ "bytes_hex": "a1bcdd890083ec1085c056756032d2b9f4938100e8a75715008d4c2404a3bcdd89006a00518bc8e8c4fe23008b0dbcdd89006a00e817fe23008b0dbcdd89000fbf71020fbf490485c97e22578bd08bf933c985f67e118a040a84c074052c4188040a413bce7cef03d64f75e45f5e83c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
