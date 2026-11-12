@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x658910 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::AddRef -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x658aa0 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Read -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x658c20 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::FindItemIndex -> _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x65a240 _VectorClass_PAVRadBeam::Add -> _VectorClass_PAVRadBeam
+[conv] 0x65a360 _VectorClass_PAVRadBeam::GetSize -> _VectorClass_PAVRadBeam
+[conv] 0x65a470 _DynamicVectorClass_PAVRadBeam::FindItemIndex -> _DynamicVectorClass_PAVRadBeam
+[conv] 0x65b470 RadSiteClass::ddtor -> RadSiteClass
+[conv] 0x65bf50 _VectorClass_PAVRadSiteClass::Add -> _VectorClass_PAVRadSiteClass
+[conv] 0x65c070 _VectorClass_PAVRadSiteClass::GetSize -> _VectorClass_PAVRadSiteClass
+[conv] 0x65c180 _DynamicVectorClass_PAVRadSiteClass::FindItemIndex -> _DynamicVectorClass_PAVRadSiteClass
+[conv] 0x65c6d0 ObjectClass::SeedInitRNG -> ObjectClass
+[conv] 0x65c8b0 RandomStraw::AdvanceState -> RandomStraw
+[conv] 0x65ca80 BufferIOFileClass::Construct -> BufferIOFileClass
+[conv] 0x65d430 ComPtr::Constructor -> ComPtr
+[conv] 0x65d460 ComPtr::Release -> ComPtr
+[conv] 0x65fb70 sub_65FB70 -> _addr_65
+[conv] 0x660ad0 ObjectClass::sub_660AD0 -> ObjectClass
+[conv] 0x660ae0 ObjectClass::sub_660AE0 -> ObjectClass
+[conv] 0x660af0 ObjectClass::sub_660AF0 -> ObjectClass
+[conv] 0x660b80 ScriptActionQueue::PushNext -> ScriptActionQueue
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=0
+[era] _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=0
+[era] _VectorClass_PAVRadBeam  rc=0
+[era] _DynamicVectorClass_PAVRadBeam rc=0
+[era] RadSiteClass             rc=0
+[era] _VectorClass_PAVRadSiteClass rc=0
+[era] _DynamicVectorClass_PAVRadSiteClass rc=0
+[era] ObjectClass              rc=2
+[era] RandomStraw              rc=0
+[era] BufferIOFileClass        rc=0
+[era] ComPtr                   rc=0
+[era] _addr_65                 rc=0
+[era] ScriptActionQueue        rc=0
+=== diffasm byte-compare ===
+[diff] 0x658910   MISMATCH         _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::AddRef
+[diff] 0x658aa0   MISMATCH         _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Read
+[diff] 0x658c20   MISMATCH         _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::FindItemIndex
+[diff] 0x65a240   MISMATCH         _VectorClass_PAVRadBeam::Add
+[diff] 0x65a360   MISMATCH         _VectorClass_PAVRadBeam::GetSize
+[diff] 0x65a470   MISMATCH         _DynamicVectorClass_PAVRadBeam::FindItemIndex
+[diff] 0x65b470   MISMATCH         RadSiteClass::ddtor
+[diff] 0x65bf50   MISMATCH         _VectorClass_PAVRadSiteClass::Add
+[diff] 0x65c070   MISMATCH         _VectorClass_PAVRadSiteClass::GetSize
+[diff] 0x65c180   MISMATCH         _DynamicVectorClass_PAVRadSiteClass::FindItemIndex
+[diff] 0x65c6d0   MISMATCH         ObjectClass::SeedInitRNG
+[diff] 0x660ad0   MISMATCH         ObjectClass::sub_660AD0
+[diff] 0x660ae0   MISMATCH         ObjectClass::sub_660AE0
+[diff] 0x660af0   MISMATCH         ObjectClass::sub_660AF0
+[diff] 0x65c8b0   MISMATCH         RandomStraw::AdvanceState
+[diff] 0x65ca80   MISMATCH         BufferIOFileClass::Construct
+[diff] 0x65d430   MISMATCH         ComPtr::Constructor
+[diff] 0x65d460   MISMATCH         ComPtr::Release
+[diff] 0x65fb70   MISMATCH         sub_65FB70
+[diff] 0x660b80   MISMATCH         ScriptActionQueue::PushNext
+[ledger] 0x658910 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::AddRef -> NG (attempt 2)
+[ledger] 0x658aa0 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Read -> NG (attempt 2)
+[ledger] 0x658c20 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x65a240 _VectorClass_PAVRadBeam::Add -> NG (attempt 2)
+[ledger] 0x65a360 _VectorClass_PAVRadBeam::GetSize -> NG (attempt 2)
+[ledger] 0x65a470 _DynamicVectorClass_PAVRadBeam::FindItemIndex -> NG (attempt 2)
+[ledger] 0x65b470 RadSiteClass::ddtor -> NG (attempt 2)
+[ledger] 0x65bf50 _VectorClass_PAVRadSiteClass::Add -> NG (attempt 2)
+[ledger] 0x65c070 _VectorClass_PAVRadSiteClass::GetSize -> NG (attempt 2)
+[ledger] 0x65c180 _DynamicVectorClass_PAVRadSiteClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x65c6d0 ObjectClass::SeedInitRNG -> NG (attempt 2)
+[ledger] 0x65c8b0 RandomStraw::AdvanceState -> NG (attempt 2)
+[ledger] 0x65ca80 BufferIOFileClass::Construct -> NG (attempt 2)
+[ledger] 0x65d430 ComPtr::Constructor -> NG (attempt 2)
+[ledger] 0x65d460 ComPtr::Release -> NG (attempt 2)
+[ledger] 0x65fb70 sub_65FB70 -> NG (attempt 2)
+[ledger] 0x660ad0 ObjectClass::sub_660AD0 -> NG (attempt 2)
+[ledger] 0x660ae0 ObjectClass::sub_660AE0 -> NG (attempt 2)
+[ledger] 0x660af0 ObjectClass::sub_660AF0 -> NG (attempt 2)
+[ledger] 0x660b80 ScriptActionQueue::PushNext -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_polarity": 3,
+  "regalloc": 8,
+  "codegen_shape": 6,
+  "frame_sched": 1,
+  "eval_order": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p29\batch_report.json

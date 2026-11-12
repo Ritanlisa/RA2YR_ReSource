@@ -1,0 +1,8 @@
+{
+ "symbol": "?Construct@BufferIOFileClass@@QAEPAVRawFileClass@@H@Z",
+ "sym_key": "BufferIOFileClass::Construct",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b54240483c8ff89411089411433c089511888410489410889410c6689411c6689411e8941208901c20400",
+ "relocs": []
+}

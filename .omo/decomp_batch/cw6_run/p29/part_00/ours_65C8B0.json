@@ -1,0 +1,21 @@
+{
+ "symbol": "?AdvanceState@RandomStraw@@QAEHXZ",
+ "sym_key": "RandomStraw::AdvanceState",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "8b41045355568d5001578b3989510433f68b8e000000008bd833c883c6048bc1c1f91025ffff00008bd10fafd18be80fafe80fafc1f7d203d58beac1fd10c1e2100bea8b960000000033ea03e833ef83fe108bc58bfb7cb95f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839644@@3PAIA",
+   "sym_key": "DataGlobal_839644"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839690@@3PAIA",
+   "sym_key": "DataGlobal_839690"
+  }
+ ]
+}

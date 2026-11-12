@@ -1,0 +1,11 @@
+{
+ "addr": "0x65CA80",
+ "name": "RawFileClass::Construct",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65CA80",
+ "bytes_hex": "8bc183caff33c98950108950148b54240488480489480889480c8950186689481c6689481e884820c70004097f00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

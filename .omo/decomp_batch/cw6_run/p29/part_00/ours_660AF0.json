@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_660AF0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_660AF0",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "8b01c1e0048b8000000000c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F0998@@3PAIA",
+   "sym_key": "DataGlobal_7F0998"
+  }
+ ]
+}

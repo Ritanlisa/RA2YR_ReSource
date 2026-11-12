@@ -1,0 +1,11 @@
+{
+ "addr": "0x65C8B0",
+ "name": "RandomStraw::AdvanceState",
+ "size": 94,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65C8B0",
+ "bytes_hex": "8b41045355568d5001578b3989510433f68b8e449683008bd833c883c6048bd1c1f91081e2ffff00008bc10fafc10fafca8bea0fafeaf7d003c58be8c1fd10c1e0100be88b869096830033e803e933ef83fe108bc58bfb7cb85f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

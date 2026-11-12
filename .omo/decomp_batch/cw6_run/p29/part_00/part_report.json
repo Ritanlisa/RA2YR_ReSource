@@ -1,0 +1,460 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "branch_polarity": 3,
+   "regalloc": 8,
+   "codegen_shape": 6,
+   "frame_sched": 1,
+   "eval_order": 1,
+   "const_fold": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x658910",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 92B ours 100B",
+   "first_diff": {
+    "orig": "+16 jne 0x658963",
+    "ours": "+16 jne 0x5b"
+   },
+   "pathology": "branch_polarity",
+   "name": "RadarHashVector::AddRef",
+   "emitted": "_VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::AddRef",
+   "unit": "_VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 92,
+   "ours_size": 100,
+   "clean": false
+  },
+  {
+   "addr": "0x658aa0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 80B ours 82B",
+   "first_diff": {
+    "orig": "+20 mov edx, dword ptr [ecx + 8]",
+    "ours": "+20 mov esi, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "RadarHashVector::Read",
+   "emitted": "_VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Read",
+   "unit": "_VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 80,
+   "ours_size": 82,
+   "clean": false
+  },
+  {
+   "addr": "0x658c20",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 64B ours 66B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "RadarHashVector::FindItemIndex",
+   "emitted": "_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 64,
+   "ours_size": 66,
+   "clean": false
+  },
+  {
+   "addr": "0x65a240",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x65a276",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_RadBeam::Add",
+   "emitted": "_VectorClass_PAVRadBeam::Add",
+   "unit": "_VectorClass_PAVRadBeam",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x65a360",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x65a36e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_RadBeam::GetSize",
+   "emitted": "_VectorClass_PAVRadBeam::GetSize",
+   "unit": "_VectorClass_PAVRadBeam",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x65a470",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_RadBeam::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVRadBeam::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVRadBeam",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x65b470",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 52B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e98c0]",
+    "ours": "+16 xor ecx, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "RadSiteClass::ddtor",
+   "emitted": "RadSiteClass::ddtor",
+   "unit": "RadSiteClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x65bf50",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x65bf86",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_RadSiteClass::Add",
+   "emitted": "_VectorClass_PAVRadSiteClass::Add",
+   "unit": "_VectorClass_PAVRadSiteClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x65c070",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x65c07e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_RadSiteClass::GetSize",
+   "emitted": "_VectorClass_PAVRadSiteClass::GetSize",
+   "unit": "_VectorClass_PAVRadSiteClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x65c180",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_RadSiteClass::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVRadSiteClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVRadSiteClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x65c6d0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 170B ours 178B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0x14",
+    "ours": "+0 sub esp, 0x10"
+   },
+   "pathology": "frame_sched",
+   "name": "SeedInitRNG",
+   "emitted": "ObjectClass::SeedInitRNG",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/10",
+   "rule_violations": 1,
+   "orig_size": 170,
+   "ours_size": 178,
+   "clean": false
+  },
+  {
+   "addr": "0x65c8b0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 94B ours 93B",
+   "first_diff": {
+    "orig": "+17 mov ecx, dword ptr [esi + 0x839644]",
+    "ours": "+17 mov ecx, dword ptr [esi]"
+   },
+   "pathology": "regalloc",
+   "name": "RandomStraw::AdvanceState",
+   "emitted": "RandomStraw::AdvanceState",
+   "unit": "RandomStraw",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 94,
+   "ours_size": 93,
+   "clean": false
+  },
+  {
+   "addr": "0x65ca80",
+   "batch": "stale_cw3|CW3-2 return-tail ; strip",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 43B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov edx, dword ptr [esp + 4]"
+   },
+   "pathology": "eval_order",
+   "name": "RawFileClass::Construct",
+   "emitted": "BufferIOFileClass::Construct",
+   "unit": "BufferIOFileClass",
+   "name_placeholder": false,
+   "cls_src": "proto_this",
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 43,
+   "clean": false
+  },
+  {
+   "addr": "0x65d430",
+   "batch": "stale_cw3|CW3-2 return-tail ; strip",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov dword ptr [ecx + 4], 0"
+   },
+   "pathology": "regalloc",
+   "name": "ComPtr::Constructor",
+   "emitted": "ComPtr::Constructor",
+   "unit": "ComPtr",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x65d460",
+   "batch": "stale_cw3|CW3-2 return-tail ; strip",
+   "verdict": "MISMATCH",
+   "note": "orig 28B ours 29B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [ecx]"
+   },
+   "pathology": "regalloc",
+   "name": "ComPtr::Release",
+   "emitted": "ComPtr::Release",
+   "unit": "ComPtr",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 28,
+   "ours_size": 29,
+   "clean": false
+  },
+  {
+   "addr": "0x65fb70",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 10B ours 10B",
+   "first_diff": {
+    "orig": "+3 mov al, byte ptr [ecx + 0x7f09a4]",
+    "ours": "+3 mov al, byte ptr [ecx]"
+   },
+   "pathology": "regalloc",
+   "name": "sub_65FB70",
+   "emitted": "sub_65FB70",
+   "unit": "_addr_65",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 10,
+   "ours_size": 10,
+   "clean": false
+  },
+  {
+   "addr": "0x660ad0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 12B ours 12B",
+   "first_diff": {
+    "orig": "+5 mov eax, dword ptr [eax + 0x7f099c]",
+    "ours": "+5 mov eax, dword ptr [eax]"
+   },
+   "pathology": "regalloc",
+   "name": "sub_660AD0",
+   "emitted": "ObjectClass::sub_660AD0",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 12,
+   "ours_size": 12,
+   "clean": false
+  },
+  {
+   "addr": "0x660ae0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 12B ours 12B",
+   "first_diff": {
+    "orig": "+5 mov eax, dword ptr [eax + 0x7f09a0]",
+    "ours": "+5 mov eax, dword ptr [eax]"
+   },
+   "pathology": "regalloc",
+   "name": "sub_660AE0",
+   "emitted": "ObjectClass::sub_660AE0",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 12,
+   "ours_size": 12,
+   "clean": false
+  },
+  {
+   "addr": "0x660af0",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 12B ours 12B",
+   "first_diff": {
+    "orig": "+5 mov eax, dword ptr [eax + 0x7f0998]",
+    "ours": "+5 mov eax, dword ptr [eax]"
+   },
+   "pathology": "regalloc",
+   "name": "sub_660AF0",
+   "emitted": "ObjectClass::sub_660AF0",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 12,
+   "ours_size": 12,
+   "clean": false
+  },
+  {
+   "addr": "0x660b80",
+   "batch": "stale_cw3|CW3-3 global-array upgrade",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 29B",
+   "first_diff": {
+    "orig": "+6 and eax, 0x80000007",
+    "ours": "+6 and eax, 7"
+   },
+   "pathology": "const_fold",
+   "name": "ScriptActionQueue::PushNext",
+   "emitted": "ScriptActionQueue::PushNext",
+   "unit": "ScriptActionQueue",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 29,
+   "clean": false
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Constructor@ComPtr@@QAEPAV1@XZ",
+ "sym_key": "ComPtr::Constructor",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "c7410400000000c7010000000033c0c3",
+ "relocs": []
+}

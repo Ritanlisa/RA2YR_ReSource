@@ -1,0 +1,11 @@
+{
+ "addr": "0x660B80",
+ "name": "ScriptActionQueue::PushNext",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x660B80",
+ "bytes_hex": "a1884db00040250700008079054883c8f840a3884db0008b09890c85484db000a3d84db000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

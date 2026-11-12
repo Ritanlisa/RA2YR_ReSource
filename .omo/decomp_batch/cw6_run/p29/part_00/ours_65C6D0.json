@@ -1,0 +1,21 @@
+{
+ "symbol": "?SeedInitRNG@ObjectClass@@QAEPAIH@Z",
+ "sym_key": "ObjectClass::SeedInitRNG",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "83ec1053555633f6894c2418897104c741086700000083c10c5789742418894c2410c7442414fa0000008b6c242433db8b93000000008bc633d683c3048bf281e2ffff0000c1fe108bce8bfa0fafce0faffaf7d10fafd603f98bcfc1f910c1e7100bcf8bbb0000000033cf03ca33cd83fb108bf18be87cb88b442410893083c004894424108b4424144889442414740d8b5424188d720189742418eb8d8b44241c5f5e5d8b085b80e100890883c410c20400",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839644@@3PAIA",
+   "sym_key": "DataGlobal_839644"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839690@@3PAIA",
+   "sym_key": "DataGlobal_839690"
+  }
+ ]
+}

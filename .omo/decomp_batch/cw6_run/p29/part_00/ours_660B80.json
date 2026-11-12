@@ -1,0 +1,33 @@
+{
+ "symbol": "?PushNext@ScriptActionQueue@@QAEHXZ",
+ "sym_key": "ScriptActionQueue::PushNext",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "a1000000004083e007a3000000008b09890c8500000000a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04D88@@3IA",
+   "sym_key": "DataGlobal_B04D88"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04D88@@3IA",
+   "sym_key": "DataGlobal_B04D88"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04D48@@3PAIA",
+   "sym_key": "DataGlobal_B04D48"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DD8@@3IA",
+   "sym_key": "DataGlobal_B04DD8"
+  }
+ ]
+}
