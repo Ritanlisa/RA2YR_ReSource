@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetValue@CampaignClass@@QAEDPAH@Z",
+ "sym_key": "CampaignClass::GetValue",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "568bf18a466084c07505e8000000008b4c24088b465c89018a46605ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?LoadFromINI@CampaignClass@@QAEHXZ",
+   "sym_key": "CampaignClass::LoadFromINI"
+  }
+ ]
+}

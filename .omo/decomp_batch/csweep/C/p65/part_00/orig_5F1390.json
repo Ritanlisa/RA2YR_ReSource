@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F1390",
+ "name": "Timer::GetElapsed",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F1390",
+ "bytes_hex": "568bf1578b068b7e0883f8ff740c8d4e04e89a780d002b0603f88bc75f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

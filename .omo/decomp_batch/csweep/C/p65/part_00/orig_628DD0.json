@@ -1,0 +1,11 @@
+{
+ "addr": "0x628DD0",
+ "name": "FileExtension::Check",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x628DD0",
+ "bytes_hex": "8b442404568bf150e893beecff8b4c240c8bc68b118996000100005ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A1D90",
+ "name": "Checksummer::Add_double",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A1D90",
+ "bytes_hex": "8b4424048b542408894424048d4424046a085089542410e834000000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

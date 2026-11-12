@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BA3A0",
+ "name": "WWMouseClass::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BA3A0",
+ "bytes_hex": "568bf1e828e5fffff644240801740956e888e7000083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p65\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ad2f0 ObjectClass::ResetSystemWOL_Reset -> ObjectClass
+[conv] 0x7ad310 ScalarDtor::DeleteAndZero -> ScalarDtor
+[conv] 0x7ad330 Object::DtorWithDelete -> Object
+[conv] 0x7ad350 CChatEventSink::DeleteAndZero -> CChatEventSink
+[conv] 0x7aed20 ComStreamClass::writeData -> ComStreamClass
+[conv] 0x7b1790 IPXInterfaceClass::QueryInterface -> IPXInterfaceClass
+[conv] 0x7ba3a0 WWMouseClass::QueryInterface -> WWMouseClass
+[conv] 0x597a10 Scenario::LoadOrReloadOptions -> Scenario
+[conv] 0x406ea0 sub_406EA0 -> _addr_40
+[conv] 0x408500 sub_408500 -> _addr_40
+[conv] 0x49e4f0 CampaignClass::GetValue -> CampaignClass
+[conv] 0x4a1d90 Checksummer::Add_double -> Checksummer
+[conv] 0x4a8710 sub_4A8710 -> _addr_4A
+[conv] 0x5c02c0 VQMovieHandle::computePathCost -> VQMovieHandle
+[conv] 0x5d3a40 ObjectManager::InitMessageList -> ObjectManager
+[conv] 0x5f1390 Timer::GetElapsed -> Timer
+[conv] 0x628dd0 FileExtension::Check -> FileExtension
+[conv] 0x6528a0 sub_6528A0 -> _addr_65
+[conv] 0x6528f0 sub_6528F0 -> _addr_65
+[conv] 0x6810a0 ObjectClass::Map_Save_6810A0 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] ScalarDtor               rc=2
+[era] Object                   rc=0
+[era] CChatEventSink           rc=2
+[era] ComStreamClass           rc=0
+[era] IPXInterfaceClass        rc=2
+[era] WWMouseClass             rc=0
+[era] Scenario                 rc=0
+[era] _addr_40                 rc=0
+[era] CampaignClass            rc=0
+[era] Checksummer              rc=0
+[era] _addr_4A                 rc=0
+[era] VQMovieHandle            rc=0
+[era] ObjectManager            rc=2
+[era] Timer                    rc=0
+[era] FileExtension            rc=0
+[era] _addr_65                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x7ad2f0   MISMATCH         ObjectClass::ResetSystemWOL_Reset
+[diff] 0x7ad330   MISMATCH         Object::DtorWithDelete
+[diff] 0x7aed20   MISMATCH         ComStreamClass::writeData
+[diff] 0x7ba3a0   MISMATCH         WWMouseClass::QueryInterface
+[diff] 0x597a10   MISMATCH         Scenario::LoadOrReloadOptions
+[diff] 0x406ea0   MISMATCH         sub_406EA0
+[diff] 0x408500   MATCH            sub_408500
+[diff] 0x49e4f0   MATCH            CampaignClass::GetValue
+[diff] 0x4a1d90   MISMATCH         Checksummer::Add_double
+[diff] 0x4a8710   MISMATCH         sub_4A8710
+[diff] 0x5c02c0   MISMATCH         VQMovieHandle::computePathCost
+[diff] 0x5f1390   MISMATCH         Timer::GetElapsed
+[diff] 0x628dd0   MATCH            FileExtension::Check
+[diff] 0x6528a0   MISMATCH         sub_6528A0
+[diff] 0x6528f0   MISMATCH         sub_6528F0
+[ledger] 0x7ad2f0 ObjectClass::ResetSystemWOL_Reset -> NG (attempt 1)
+[ledger] 0x7ad310 ScalarDtor::DeleteAndZero -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ad330 Object::DtorWithDelete -> NG (attempt 1)
+[ledger] 0x7ad350 CChatEventSink::DeleteAndZero -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7aed20 ComStreamClass::writeData -> NG (attempt 1)
+[ledger] 0x7b1790 IPXInterfaceClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ba3a0 WWMouseClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x597a10 Scenario::LoadOrReloadOptions -> NG (attempt 1)
+[ledger] 0x406ea0 sub_406EA0 -> NG (attempt 1)
+[ledger] 0x408500 sub_408500 -> OK (attempt 1)
+[ledger] 0x49e4f0 CampaignClass::GetValue -> OK (attempt 1)
+[ledger] 0x4a1d90 Checksummer::Add_double -> NG (attempt 1)
+[ledger] 0x4a8710 sub_4A8710 -> NG (attempt 1)
+[ledger] 0x5c02c0 VQMovieHandle::computePathCost -> NG (attempt 1)
+[ledger] 0x5d3a40 ObjectManager::InitMessageList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f1390 Timer::GetElapsed -> NG (attempt 1)
+[ledger] 0x628dd0 FileExtension::Check -> OK (attempt 1)
+[ledger] 0x6528a0 sub_6528A0 -> NG (attempt 1)
+[ledger] 0x6528f0 sub_6528F0 -> NG (attempt 1)
+[ledger] 0x6810a0 ObjectClass::Map_Save_6810A0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 5,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "const_fold": 2,
+  "branch_polarity": 5,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p65\batch_report.json

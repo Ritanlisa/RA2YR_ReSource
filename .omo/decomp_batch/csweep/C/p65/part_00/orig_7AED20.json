@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AED20",
+ "name": "ComStreamClass::writeData",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AED20",
+ "bytes_hex": "568bf1e8c8590000f644240801740956e8089e010083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

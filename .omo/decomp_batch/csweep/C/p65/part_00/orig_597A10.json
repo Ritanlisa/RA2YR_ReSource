@@ -1,0 +1,11 @@
+{
+ "addr": "0x597A10",
+ "name": "Scenario::LoadOrReloadOptions",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x597A10",
+ "bytes_hex": "8b44240485c074098b1150ff5204c20400e8ca0dfcff84c00f95c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

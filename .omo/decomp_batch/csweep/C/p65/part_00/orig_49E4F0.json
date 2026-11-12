@@ -1,0 +1,11 @@
+{
+ "addr": "0x49E4F0",
+ "name": "CampaignClass::GetValue",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49E4F0",
+ "bytes_hex": "568bf18a466084c07505e801f6ffff8b4c24088b465c89018a46605ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

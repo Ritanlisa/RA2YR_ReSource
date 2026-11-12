@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_408500@@YIHHPAI@Z",
+ "sym_key": "Unnamed::sub_408500",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "568bf1578bfa8d4e08e8000000008b47108b4e0403c8894e048977145f5ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?InsertAfterDListNode@@YIHHPAX@Z",
+   "sym_key": "InsertAfterDListNode"
+  }
+ ]
+}

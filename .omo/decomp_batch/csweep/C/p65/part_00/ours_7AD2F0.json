@@ -1,0 +1,21 @@
+{
+ "symbol": "?ResetSystemWOL_Reset@ObjectClass@@QAEPAPAXD@Z",
+ "sym_key": "ObjectClass::ResetSystemWOL_Reset",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "568bf156e8000000008a44240c83c404a801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

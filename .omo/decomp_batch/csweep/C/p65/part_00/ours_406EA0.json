@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_406EA0@@YIHPAX@Z",
+ "sym_key": "Unnamed::sub_406EA0",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0d0000000085c9740aba01000000e8000000008bcee800000000e8000000005ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?AudioQueue__DeactivateAllMatching@@YIHHH@Z",
+   "sym_key": "AudioQueue__DeactivateAllMatching"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?UpdateTimers@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::UpdateTimers"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?sub_751040@@YAHXZ",
+   "sym_key": "sub_751040"
+  }
+ ]
+}

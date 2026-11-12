@@ -1,0 +1,15 @@
+{
+ "symbol": "?Check@FileExtension@@QAEHPBDPAH@Z",
+ "sym_key": "FileExtension::Check",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e8000000008b4c240c8bc68b118996000100005ec20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Copy@String@@QAEPADPAX@Z",
+   "sym_key": "String::Copy"
+  }
+ ]
+}

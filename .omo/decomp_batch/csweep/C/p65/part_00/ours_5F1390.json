@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetElapsed@Timer@@QAEHXZ",
+ "sym_key": "Timer::GetElapsed",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b068b7e0883f8ff7409e8000000002b0603f88bc75f5ec3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}
