@@ -1,0 +1,15 @@
+{
+ "symbol": "?__freebuf@@YAHH@Z",
+ "sym_key": "Unnamed::__freebuf",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b460ca8837420a808741c8b460850e8000000006681660cf7fb83c40433c089068946088946045ec3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  }
+ ]
+}

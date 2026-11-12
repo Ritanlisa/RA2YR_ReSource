@@ -1,0 +1,15 @@
+{
+ "symbol": "?FillRect@DSurface@@QAEDHH@Z",
+ "sym_key": "DSurface::FillRect",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18d4c24048b065156ff50788b54241c8b4c24185251508bcee8000000005e83c410c20800",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?FillRectEx@DSurface@@QAEDHHH@Z",
+   "sym_key": "DSurface::FillRectEx"
+  }
+ ]
+}

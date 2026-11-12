@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p145\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d2b54 __freebuf -> _addr_7D
+[conv] 0x765680 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::queryProperty -> _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x769c50 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::initAnimation -> _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76b710 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::ddtor -> _DynamicVectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x41cb20 AircraftTypeClass::ConstructAircraft -> AircraftTypeClass
+[conv] 0x45e880 AbstractClass::addRefCount -> AbstractClass
+[conv] 0x4d03a0 FlyLocomotionClass::ProcessMove -> FlyLocomotionClass
+[conv] 0x5172c0 HoverLocomotionClass::ProcessMove -> HoverLocomotionClass
+[conv] 0x523b10 InfantryTypeClass::ConstructInfantry -> InfantryTypeClass
+[conv] 0x5b1b50 MechLocomotionClass::ProcessMove -> MechLocomotionClass
+[conv] 0x5d5820 Audio::SetSoundFileName -> Audio
+[conv] 0x6635c0 RocketLocomotionClass::ProcessMove -> RocketLocomotionClass
+[conv] 0x747560 UnitTypeClass::ConstructUnit -> UnitTypeClass
+[conv] 0x7589c0 VoxelPalette::Reset -> VoxelPalette
+[conv] 0x7cbf5f __fpreset -> _addr_7C
+[conv] 0x7ad410 ?$CComObject@VCDownloadEventSink@@@ATL::System_Init_7AD410 -> __CComObject_VCDownloadEventSink___ATL
+[conv] 0x4bb5f0 DSurface::FillRect -> DSurface
+[conv] 0x710470 TechnoClass::EnteredOpenTopped -> TechnoClass
+[conv] 0x7bad90 XSurface::DrawRect -> XSurface
+[conv] 0x522c00 InfantryClass::StartBombDeploy -> InfantryClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VWDTTerritory rc=0
+[era] AircraftTypeClass        rc=0
+[era] AbstractClass            rc=0
+[era] FlyLocomotionClass       rc=0
+[era] HoverLocomotionClass     rc=0
+[era] InfantryTypeClass        rc=0
+[era] MechLocomotionClass      rc=0
+[era] Audio                    rc=2
+[era] RocketLocomotionClass    rc=2
+[era] UnitTypeClass            rc=0
+[era] VoxelPalette             rc=0
+[era] _addr_7C                 rc=2
+[era] __CComObject_VCDownloadEventSink___ATL rc=2
+[era] DSurface                 rc=0
+[era] TechnoClass              rc=0
+[era] XSurface                 rc=2
+[era] InfantryClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x7d2b54   MISMATCH         __freebuf
+[diff] 0x765680   MISMATCH         _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::queryProperty
+[diff] 0x769c50   MISMATCH         _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::initAnimation
+[diff] 0x76b710   MISMATCH         _DynamicVectorClass_V_rc_ptr_VWDTTerritory::ddtor
+[diff] 0x41cb20   MISMATCH         AircraftTypeClass::ConstructAircraft
+[diff] 0x45e880   MISMATCH         AbstractClass::addRefCount
+[diff] 0x4d03a0   MISMATCH         FlyLocomotionClass::ProcessMove
+[diff] 0x5172c0   MISMATCH         HoverLocomotionClass::ProcessMove
+[diff] 0x523b10   MISMATCH         InfantryTypeClass::ConstructInfantry
+[diff] 0x5b1b50   MISMATCH         MechLocomotionClass::ProcessMove
+[diff] 0x747560   MISMATCH         UnitTypeClass::ConstructUnit
+[diff] 0x7589c0   MISMATCH         VoxelPalette::Reset
+[diff] 0x4bb5f0   MISMATCH         DSurface::FillRect
+[diff] 0x710470   MISMATCH         TechnoClass::EnteredOpenTopped
+[diff] 0x522c00   MISMATCH         InfantryClass::StartBombDeploy
+[ledger] 0x7d2b54 __freebuf -> NG (attempt 1)
+[ledger] 0x765680 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::queryProperty -> NG (attempt 1)
+[ledger] 0x769c50 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::initAnimation -> NG (attempt 1)
+[ledger] 0x76b710 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::ddtor -> NG (attempt 1)
+[ledger] 0x41cb20 AircraftTypeClass::ConstructAircraft -> NG (attempt 1)
+[ledger] 0x45e880 AbstractClass::addRefCount -> NG (attempt 1)
+[ledger] 0x4d03a0 FlyLocomotionClass::ProcessMove -> NG (attempt 1)
+[ledger] 0x5172c0 HoverLocomotionClass::ProcessMove -> NG (attempt 1)
+[ledger] 0x523b10 InfantryTypeClass::ConstructInfantry -> NG (attempt 1)
+[ledger] 0x5b1b50 MechLocomotionClass::ProcessMove -> NG (attempt 1)
+[ledger] 0x5d5820 Audio::SetSoundFileName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6635c0 RocketLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x747560 UnitTypeClass::ConstructUnit -> NG (attempt 1)
+[ledger] 0x7589c0 VoxelPalette::Reset -> NG (attempt 1)
+[ledger] 0x7cbf5f __fpreset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ad410 ?$CComObject@VCDownloadEventSink@@@ATL::System_Init_7AD410 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bb5f0 DSurface::FillRect -> NG (attempt 1)
+[ledger] 0x710470 TechnoClass::EnteredOpenTopped -> NG (attempt 1)
+[ledger] 0x7bad90 XSurface::DrawRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522c00 InfantryClass::StartBombDeploy -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "regalloc": 3,
+  "const_fold": 8,
+  "codegen_shape": 1,
+  "frame_sched": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p145\batch_report.json

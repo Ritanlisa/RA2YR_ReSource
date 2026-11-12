@@ -1,0 +1,8 @@
+{
+ "symbol": "?StartBombDeploy@InfantryClass@@QAEHD@Z",
+ "sym_key": "InfantryClass::StartBombDeploy",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "8a4424045684c08bf174138b066a006a006a2056ff90580500005ec204008b0e56ff918403000084c0740f8b166a006a006a2056ff92580500005ec20400",
+ "relocs": []
+}

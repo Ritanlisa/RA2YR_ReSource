@@ -7131,6 +7131,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x41cb20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 call 0x7c8e17",
+  "name": "AircraftTypeClass::ConstructAircraft",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "AircraftTypeClass::ConstructAircraft",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x41cb50": {
   "attempts": 1,
   "clean": true,
@@ -13818,6 +13830,18 @@
   "orig_name": "nullsub_6",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x45e880": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 call 0x7c8e17",
+  "name": "AbstractClass::addRefCount",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "AbstractClass::addRefCount",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x45e8b0": {
@@ -26807,6 +26831,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4bb5f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
+  "name": "DSurface::FillRect",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "DSurface::FillRect",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4bbb00": {
   "attempts": 4,
   "first_diff": "+0 sub esp, 0xc",
@@ -29806,6 +29842,18 @@
   "name": "FlyLocomotionClass::StubReturn96",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4d03a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+3 mov dword ptr [esi], 0x7e8ac0",
+  "name": "FlyLocomotionClass::ProcessMove",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "FlyLocomotionClass::ProcessMove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4d03d0": {
   "attempts": 1,
@@ -40954,6 +41002,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5172c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+3 mov dword ptr [esi], 0x7eadc8",
+  "name": "HoverLocomotionClass::ProcessMove",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "HoverLocomotionClass::ProcessMove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5172f0": {
   "attempts": 1,
   "clean": false,
@@ -41461,6 +41521,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x522c00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+9 jne 0x522c17",
+  "name": "InfantryClass::StartBombDeploy",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "InfantryClass::StartBombDeploy",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x522cb0": {
   "attempts": 1,
   "clean": true,
@@ -41727,6 +41799,18 @@
   "orig_name": "InfantryTypeClass::DTOR",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x523b10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 call 0x7c8e17",
+  "name": "InfantryTypeClass::ConstructInfantry",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "InfantryTypeClass::ConstructInfantry",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x523c80": {
@@ -56882,6 +56966,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5b1b50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+3 mov dword ptr [esi], 0x7edc38",
+  "name": "MechLocomotionClass::ProcessMove",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MechLocomotionClass::ProcessMove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5b1b80": {
   "attempts": 1,
   "clean": true,
@@ -63804,6 +63900,18 @@
   "orig_name": "MSFont_18::FindPair8",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5d5820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Audio::SetSoundFileName",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Audio::SetSoundFileName",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5d5850": {
@@ -77646,6 +77754,18 @@
   "name": "RocketLocomotionClass::StubReturn96",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6635c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "RocketLocomotionClass::ProcessMove",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RocketLocomotionClass::ProcessMove",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6635f0": {
   "attempts": 1,
@@ -96197,6 +96317,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x710470": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+1 mov esi, dword ptr [esp + 8]",
+  "name": "TechnoClass::EnteredOpenTopped",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TechnoClass::EnteredOpenTopped",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7104a0": {
   "attempts": 1,
   "first_diff": "+0 mov eax, dword ptr [esp + 4]",
@@ -103740,6 +103872,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x747560": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 call 0x7c8e17",
+  "name": "UnitTypeClass::ConstructUnit",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "UnitTypeClass::ConstructUnit",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x747590": {
   "attempts": 1,
   "first_diff": "+0 mov ecx, dword ptr [ecx + 0x1ec]",
@@ -106365,6 +106509,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7589c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+3 mov eax, dword ptr [esi + 0x18]",
+  "name": "VoxelPalette::Reset",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "VoxelPalette::Reset",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x758e10": {
   "attempts": 1,
   "clean": false,
@@ -108280,6 +108436,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x765680": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::queryProperty",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "COMClass::queryProperty",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7656b0": {
   "attempts": 2,
   "clean": true,
@@ -109616,6 +109784,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x769c50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::initAnimation",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "MSFrameAnim::initAnimation",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x769c80": {
   "attempts": 2,
   "clean": true,
@@ -110153,6 +110333,18 @@
   "name": "WDTState::QueryInterface",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x76b710": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_V_rc_ptr_VWDTTerritory::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "WDTState_4::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x76b740": {
   "attempts": 2,
@@ -114944,6 +115136,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7ad410": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "?$CComObject@VCDownloadEventSink@@@ATL::System_Init_7AD410",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "System_Init_7AD410",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7ad440": {
   "attempts": 1,
   "clean": false,
@@ -117257,6 +117461,18 @@
   "name": "XSurface::entry_40_",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7bad90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "XSurface::DrawRect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "XSurface::DrawRect",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7bb020": {
   "attempts": 1,
@@ -122483,6 +122699,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7cbf5f": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "__fpreset",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__fpreset",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7cbf8a": {
   "attempts": 1,
   "clean": false,
@@ -123283,6 +123510,17 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "_get_int64_arg_0",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7d2b54": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+10 je 0x7d2b7d",
+  "name": "__freebuf",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "__freebuf",
+  "rule_violations": 5,
   "status": "NG",
   "this_as_id": false
  },

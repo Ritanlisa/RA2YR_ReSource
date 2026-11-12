@@ -1,0 +1,15 @@
+{
+ "symbol": "?EnteredOpenTopped@TechnoClass@@QAGDH@Z",
+ "sym_key": "TechnoClass::EnteredOpenTopped",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "568b74240c85f6741c8b0656c6868200000001ff90d00300006a0056e8000000005ec208008a44240c5ec20800",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?ObjectClass__SetDeployState@@YGDHD@Z",
+   "sym_key": "ObjectClass__SetDeployState"
+  }
+ ]
+}

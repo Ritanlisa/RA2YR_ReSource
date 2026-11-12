@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D2B54",
+ "name": "__freebuf",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D2B54",
+ "bytes_hex": "568b7424088b460ca883741da8087419ff7608e87c68ffff6681660cf7fb33c05989068946088946045ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

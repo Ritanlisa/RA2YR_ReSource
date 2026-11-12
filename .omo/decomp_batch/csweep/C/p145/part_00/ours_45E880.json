@@ -1,0 +1,21 @@
+{
+ "symbol": "?addRefCount@AbstractClass@@QAEHH@Z",
+ "sym_key": "AbstractClass::addRefCount",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "568bf16820070000e80000000083c40485c074118b4c240851568bc8e8000000005ec2040033c05ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Construct@BuildingClass@@QAEPAV1@HH@Z",
+   "sym_key": "BuildingClass::Construct"
+  }
+ ]
+}

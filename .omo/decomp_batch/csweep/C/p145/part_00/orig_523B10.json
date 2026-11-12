@@ -1,0 +1,11 @@
+{
+ "addr": "0x523B10",
+ "name": "InfantryTypeClass::ConstructInfantry",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x523B10",
+ "bytes_hex": "568bf168f0060000e8fa522a0083c40485c074118b4c240851568bc8e81f3fffff5ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
