@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c0540 _TClassFactory_VWaypointPathClass::AddRef -> _TClassFactory_VWaypointPathClass
+[conv] 0x6c06c0 _TClassFactory_VTemporalClass::AddRef -> _TClassFactory_VTemporalClass
+[conv] 0x6c0840 _TClassFactory_VAirstrikeClass::AddRef -> _TClassFactory_VAirstrikeClass
+[conv] 0x6c09c0 _TClassFactory_VSpawnManagerClass::AddRef -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c0b40 _TClassFactory_VSlaveManagerClass::AddRef -> _TClassFactory_VSlaveManagerClass
+[conv] 0x6c0cc0 _TClassFactory_VCaptureManagerClass::AddRef -> _TClassFactory_VCaptureManagerClass
+[conv] 0x6c0e40 _TClassFactory_VDiskLaserClass::AddRef -> _TClassFactory_VDiskLaserClass
+[conv] 0x6c0fc0 _TClassFactory_VParasiteClass::AddRef -> _TClassFactory_VParasiteClass
+[conv] 0x6c1140 _TClassFactory_VBombClass::AddRef -> _TClassFactory_VBombClass
+[conv] 0x6c1440 _TClassFactory_VTEventClass::AddRef -> _TClassFactory_VTEventClass
+[conv] 0x6c15c0 _TClassFactory_VVoxelAnimTypeClass::AddRef -> _TClassFactory_VVoxelAnimTypeClass
+[conv] 0x6c1740 _TClassFactory_VVoxelAnimClass::AddRef -> _TClassFactory_VVoxelAnimClass
+[conv] 0x6c18c0 _TClassFactory_VTActionClass::AddRef -> _TClassFactory_VTActionClass
+[conv] 0x6c1a40 _TClassFactory_VTriggerClass::AddRef -> _TClassFactory_VTriggerClass
+[conv] 0x6c1bc0 _TClassFactory_VTriggerTypeClass::AddRef -> _TClassFactory_VTriggerTypeClass
+[conv] 0x6c1d40 _TClassFactory_VScriptClass::AddRef -> _TClassFactory_VScriptClass
+[conv] 0x6c1ec0 _TClassFactory_VScriptTypeClass::AddRef -> _TClassFactory_VScriptTypeClass
+[conv] 0x6c2040 _TClassFactory_VTagClass::AddRef -> _TClassFactory_VTagClass
+[conv] 0x6c21c0 _TClassFactory_VTagTypeClass::AddRef -> _TClassFactory_VTagTypeClass
+[conv] 0x6c24c0 _TClassFactory_VTeamTypeClass::AddRef -> _TClassFactory_VTeamTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VWaypointPathClass rc=0
+[era] _TClassFactory_VTemporalClass rc=0
+[era] _TClassFactory_VAirstrikeClass rc=0
+[era] _TClassFactory_VSpawnManagerClass rc=0
+[era] _TClassFactory_VSlaveManagerClass rc=0
+[era] _TClassFactory_VCaptureManagerClass rc=0
+[era] _TClassFactory_VDiskLaserClass rc=0
+[era] _TClassFactory_VParasiteClass rc=0
+[era] _TClassFactory_VBombClass rc=0
+[era] _TClassFactory_VTEventClass rc=0
+[era] _TClassFactory_VVoxelAnimTypeClass rc=0
+[era] _TClassFactory_VVoxelAnimClass rc=0
+[era] _TClassFactory_VTActionClass rc=0
+[era] _TClassFactory_VTriggerClass rc=0
+[era] _TClassFactory_VTriggerTypeClass rc=0
+[era] _TClassFactory_VScriptClass rc=0
+[era] _TClassFactory_VScriptTypeClass rc=0
+[era] _TClassFactory_VTagClass rc=0
+[era] _TClassFactory_VTagTypeClass rc=0
+[era] _TClassFactory_VTeamTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c0540   MISMATCH         _TClassFactory_VWaypointPathClass::AddRef
+[diff] 0x6c06c0   MISMATCH         _TClassFactory_VTemporalClass::AddRef
+[diff] 0x6c0840   MISMATCH         _TClassFactory_VAirstrikeClass::AddRef
+[diff] 0x6c09c0   MISMATCH         _TClassFactory_VSpawnManagerClass::AddRef
+[diff] 0x6c0b40   MISMATCH         _TClassFactory_VSlaveManagerClass::AddRef
+[diff] 0x6c0cc0   MISMATCH         _TClassFactory_VCaptureManagerClass::AddRef
+[diff] 0x6c0e40   MISMATCH         _TClassFactory_VDiskLaserClass::AddRef
+[diff] 0x6c0fc0   MISMATCH         _TClassFactory_VParasiteClass::AddRef
+[diff] 0x6c1140   MISMATCH         _TClassFactory_VBombClass::AddRef
+[diff] 0x6c1440   MISMATCH         _TClassFactory_VTEventClass::AddRef
+[diff] 0x6c15c0   MISMATCH         _TClassFactory_VVoxelAnimTypeClass::AddRef
+[diff] 0x6c1740   MISMATCH         _TClassFactory_VVoxelAnimClass::AddRef
+[diff] 0x6c18c0   MISMATCH         _TClassFactory_VTActionClass::AddRef
+[diff] 0x6c1a40   MISMATCH         _TClassFactory_VTriggerClass::AddRef
+[diff] 0x6c1bc0   MISMATCH         _TClassFactory_VTriggerTypeClass::AddRef
+[diff] 0x6c1d40   MISMATCH         _TClassFactory_VScriptClass::AddRef
+[diff] 0x6c1ec0   MISMATCH         _TClassFactory_VScriptTypeClass::AddRef
+[diff] 0x6c2040   MISMATCH         _TClassFactory_VTagClass::AddRef
+[diff] 0x6c21c0   MISMATCH         _TClassFactory_VTagTypeClass::AddRef
+[diff] 0x6c24c0   MISMATCH         _TClassFactory_VTeamTypeClass::AddRef
+[ledger] 0x6c0540 _TClassFactory_VWaypointPathClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c06c0 _TClassFactory_VTemporalClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c0840 _TClassFactory_VAirstrikeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c09c0 _TClassFactory_VSpawnManagerClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c0b40 _TClassFactory_VSlaveManagerClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c0cc0 _TClassFactory_VCaptureManagerClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c0e40 _TClassFactory_VDiskLaserClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c0fc0 _TClassFactory_VParasiteClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c1140 _TClassFactory_VBombClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c1440 _TClassFactory_VTEventClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c15c0 _TClassFactory_VVoxelAnimTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c1740 _TClassFactory_VVoxelAnimClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c18c0 _TClassFactory_VTActionClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c1a40 _TClassFactory_VTriggerClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c1bc0 _TClassFactory_VTriggerTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c1d40 _TClassFactory_VScriptClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c1ec0 _TClassFactory_VScriptTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c2040 _TClassFactory_VTagClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c21c0 _TClassFactory_VTagTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c24c0 _TClassFactory_VTeamTypeClass::AddRef -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p31\batch_report.json
