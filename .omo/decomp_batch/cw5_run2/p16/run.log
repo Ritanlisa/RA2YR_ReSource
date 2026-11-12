@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x6a4130 ShipLocomotionClass::StubReturnZero_15 -> ShipLocomotionClass
+[conv] 0x4950c0 _BlitTransLucent50AlphaZRead_G::AddRef -> _BlitTransLucent50AlphaZRead_G
+[conv] 0x497b80 _RLEBlitTransLucent75Alpha_G::AddRef -> _RLEBlitTransLucent75Alpha_G
+[conv] 0x497e60 _RLEBlitTransLucent25Alpha_G::AddRef -> _RLEBlitTransLucent25Alpha_G
+[conv] 0x433040 BinkMovieHandle::RenderFrameToSurface -> BinkMovieHandle
+[conv] 0x75cbe0 WalkLocomotionClass::ProcessMove -> WalkLocomotionClass
+[conv] 0x69e930 MixFileClass::CacheNode_Dtor -> MixFileClass
+[conv] 0x4af540 LocomotionClass::Initialize -> LocomotionClass
+[conv] 0x69ec50 LocomotionClass::Process -> LocomotionClass
+[conv] 0x6b1020 SlaveManagerClass::ShouldWakeUpNow -> SlaveManagerClass
+[conv] 0x69fb20 ShipLocomotionClass::ComputeAudio3DRotation_1 -> ShipLocomotionClass
+[conv] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> BinkMovie
+[conv] 0x6b5f80 Cell::IsWalkable -> Cell
+[conv] 0x75c680 WalkLocomotionClass::BeginMove -> WalkLocomotionClass
+[conv] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> OverlayTypeClass
+[conv] 0x501160 CCINIClass::WriteHouses -> CCINIClass
+[conv] 0x452360 BuildingClass::PowerOff -> BuildingClass
+[conv] 0x451690 BuildingClass::ClearSuperWeaponAnim -> BuildingClass
+[conv] 0x402040 AudioController::Constructor -> AudioController
+[conv] 0x459470 BuildingClass::UpdateDamageAnim -> BuildingClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ShipLocomotionClass      rc=2
+[era] _BlitTransLucent50AlphaZRead_G rc=2
+[era] _RLEBlitTransLucent75Alpha_G rc=2
+[era] _RLEBlitTransLucent25Alpha_G rc=2
+[era] BinkMovieHandle          rc=2
+[era] WalkLocomotionClass      rc=2
+[era] MixFileClass             rc=2
+[era] LocomotionClass          rc=2
+[era] SlaveManagerClass        rc=0
+[era] BinkMovie                rc=2
+[era] Cell                     rc=2
+[era] OverlayTypeClass         rc=2
+[era] CCINIClass               rc=2
+[era] BuildingClass            rc=2
+[era] AudioController          rc=2
+=== diffasm byte-compare ===
+[diff] 0x6b1020   MISMATCH         SlaveManagerClass::ShouldWakeUpNow
+[ledger] 0x6a4130 ShipLocomotionClass::StubReturnZero_15 -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4950c0 _BlitTransLucent50AlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 15)
+[ledger] 0x497b80 _RLEBlitTransLucent75Alpha_G::AddRef -> COMPILE_FAIL (attempt 15)
+[ledger] 0x497e60 _RLEBlitTransLucent25Alpha_G::AddRef -> COMPILE_FAIL (attempt 13)
+[ledger] 0x433040 BinkMovieHandle::RenderFrameToSurface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x75cbe0 WalkLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x69e930 MixFileClass::CacheNode_Dtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4af540 LocomotionClass::Initialize -> COMPILE_FAIL (attempt 8)
+[ledger] 0x69ec50 LocomotionClass::Process -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6b1020 SlaveManagerClass::ShouldWakeUpNow -> NG (attempt 14)
+[ledger] 0x69fb20 ShipLocomotionClass::ComputeAudio3DRotation_1 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6b5f80 Cell::IsWalkable -> COMPILE_FAIL (attempt 16)
+[ledger] 0x75c680 WalkLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x501160 CCINIClass::WriteHouses -> COMPILE_FAIL (attempt 13)
+[ledger] 0x452360 BuildingClass::PowerOff -> COMPILE_FAIL (attempt 13)
+[ledger] 0x451690 BuildingClass::ClearSuperWeaponAnim -> COMPILE_FAIL (attempt 5)
+[ledger] 0x402040 AudioController::Constructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x459470 BuildingClass::UpdateDamageAnim -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p16\batch_report.json

@@ -1,0 +1,27 @@
+{
+ "symbol": "?ShouldWakeUpNow@SlaveManagerClass@@QAE_NXZ",
+ "sym_key": "SlaveManagerClass::ShouldWakeUpNow",
+ "size": 148,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b462485c00f84800000008b4e5c85c975798b881c0200008a91ec01000084d27505b0015e59c38b1050ff92bc01000083b8ec000000057505b0015e59c38b0d400200008b56608b819017000003c20fbe15a00100003bc273318b89801700008b4624c1e9088b106a00518d4c240c5150ff92380300008b008b0d0000000033d23bc10f95c28ac25e59c332c05e59c3",
+ "relocs": [
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B5B8@@3IA",
+   "sym_key": "DataGlobal_B0B5B8"
+  }
+ ]
+}

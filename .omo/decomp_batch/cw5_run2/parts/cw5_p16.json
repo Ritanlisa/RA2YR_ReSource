@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x6a4130",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x4950c0",
+  "family": "B8",
+  "shape": "B8 offset-name spelling split (mNNN vs __pad_H)",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x497b80",
+  "family": "B8",
+  "shape": "B8 offset-name spelling split (mNNN vs __pad_H)",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x497e60",
+  "family": "B8",
+  "shape": "B8 offset-name spelling split (mNNN vs __pad_H)",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x433040",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x75cbe0",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x69e930",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x4af540",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x69ec50",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x6b1020",
+  "family": "B6",
+  "shape": "B6 member exists in registry/base, shell omits it (supply)",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x69fb20",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x6c9c60",
+  "family": "B8",
+  "shape": "B8 offset-name spelling split (mNNN vs __pad_H)",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x6b5f80",
+  "family": "B8",
+  "shape": "B8 offset-name spelling split (mNNN vs __pad_H)",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x75c680",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x5fea50",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x501160",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x452360",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x451690",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x402040",
+  "family": "B9",
+  "shape": "B9 member absent from every source",
+  "errfam": "C2039"
+ },
+ {
+  "addr": "0x459470",
+  "family": "B6",
+  "shape": "B6 member exists in registry/base, shell omits it (supply)",
+  "errfam": "C2039"
+ }
+]

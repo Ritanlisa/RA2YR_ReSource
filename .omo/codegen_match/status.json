@@ -98,7 +98,7 @@
   "this_as_id": false
  },
  "0x402040": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -8429,7 +8429,7 @@
   "this_as_id": false
  },
  "0x433040": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9733,7 +9733,7 @@
   "this_as_id": false
  },
  "0x451690": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9814,7 +9814,7 @@
   "this_as_id": false
  },
  "0x452360": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9990,7 +9990,7 @@
   "status": "OK"
  },
  "0x459470": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -15778,7 +15778,7 @@
   "status": "OK"
  },
  "0x4950c0": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16142,7 +16142,7 @@
   "status": "NG"
  },
  "0x497b80": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16166,7 +16166,7 @@
   "this_as_id": false
  },
  "0x497e60": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19269,7 +19269,7 @@
   "this_as_id": false
  },
  "0x4af540": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29328,7 +29328,7 @@
   "status": "NG"
  },
  "0x501160": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -51339,7 +51339,7 @@
   "this_as_id": false
  },
  "0x5fea50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61971,7 +61971,7 @@
   "this_as_id": false
  },
  "0x69e930": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -62096,7 +62096,7 @@
   "this_as_id": false
  },
  "0x69ec50": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -62189,7 +62189,7 @@
   "this_as_id": false
  },
  "0x69fb20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -62267,7 +62267,7 @@
   "this_as_id": false
  },
  "0x6a4130": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -63150,7 +63150,7 @@
   "this_as_id": false
  },
  "0x6b1020": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+4 mov ecx, dword ptr [esi + 0x24]",
@@ -63923,14 +63923,14 @@
   "this_as_id": false
  },
  "0x6b5f80": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Cell::IsWalkable",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Cell::IsWalkable",
-  "rule_violations": 3,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -67445,14 +67445,14 @@
   "this_as_id": false
  },
  "0x6c9c60": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BinkMovie::CheckKeyframeTransition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BinkMovie::CheckKeyframeTransition",
-  "rule_violations": 17,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -80830,7 +80830,7 @@
   "this_as_id": false
  },
  "0x75c680": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -80928,7 +80928,7 @@
   "status": "OK"
  },
  "0x75cbe0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
