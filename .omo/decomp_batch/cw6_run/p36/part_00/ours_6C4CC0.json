@@ -1,0 +1,8 @@
+{
+ "symbol": "?WinMain_Helper_6C4CC0@ObjectClass@@QAEPAIXZ",
+ "sym_key": "ObjectClass::WinMain_Helper_6C4CC0",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8bc1c7400400000000c70000000000c3",
+ "relocs": []
+}

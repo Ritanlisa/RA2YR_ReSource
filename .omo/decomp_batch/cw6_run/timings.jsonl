@@ -34,3 +34,4 @@
 {"part": 33, "n": 20, "seconds": 41.7, "ok": true, "verdicts": {"MISMATCH": 18, "DUP_SKIP": 2}}
 {"part": 34, "n": 20, "seconds": 29.0, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"part": 35, "n": 20, "seconds": 27.5, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"part": 36, "n": 20, "seconds": 32.5, "ok": true, "verdicts": {"MISMATCH": 20}}
