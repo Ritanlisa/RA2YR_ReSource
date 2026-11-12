@@ -1,0 +1,219 @@
+{
+ "symbol": "?CalcBounds@SidebarClass@@QAGHD@Z",
+ "sym_key": "SidebarClass::CalcBounds",
+ "size": 408,
+ "link_base": 0,
+ "bytes_hex": "8a44240883ec1084c05657747e8d4c2408e8000000008b50048b700c8b48088b388d54168203cf8915000000008a1500000000bfa8000000b89e00000084d2893d00000000890d00000000a30000000074448b0d000000008b15000000008b350000000003ca33d2a3000000008a1500000000893d00000000890d000000008d543282891500000000eb0b8b0d00000000a1000000008b3d0000000055ba1a0000008bb7b8340000c70500000000320000008bafb834000085ed5d7405ba120000008b3d000000002bc72bc28b15000000008d5410f9b81f85eb51f7e2c1ea048d04928d0480d1e085f6a300000000743083fe0175168d540707c705000000002d000000891500000000eb298d443807c705000000002d000000a300000000eb148d540707c705000000002e0000008915000000008d5116c705000000003200000085f6891500000000742b83fe0174038d41218d51275f8915000000008d512183c114891500000000890d000000005e83c410c208008d41278d5114a3000000008d411a5f891500000000a3000000005e83c410c20800",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?calcSidebarRect@SidebarClass@@QAEPAHXZ",
+   "sym_key": "SidebarClass::calcSidebarRect"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_DSurface_ViewBounds@@3IA",
+   "sym_key": "g_DSurface_ViewBounds"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB7C@@3EA",
+   "sym_key": "DataGlobal_A8EB7C"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_886F98@@3IA",
+   "sym_key": "DataGlobal_886F98"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DSurface_SidebarBounds@@3IA",
+   "sym_key": "DSurface_SidebarBounds"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_DSurface_WindowOffset@@3IA",
+   "sym_key": "g_DSurface_WindowOffset"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?DataGlobal_886F98@@3IA",
+   "sym_key": "DataGlobal_886F98"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DSurface_SidebarBounds@@3IA",
+   "sym_key": "DSurface_SidebarBounds"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_DSurface_ViewBounds@@3IA",
+   "sym_key": "g_DSurface_ViewBounds"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DSurface_SidebarBounds@@3IA",
+   "sym_key": "DSurface_SidebarBounds"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B500@@3IA",
+   "sym_key": "DataGlobal_B0B500"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?g_SidebarBounds@@3IA",
+   "sym_key": "g_SidebarBounds"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?g_DSurface_ViewBounds@@3IA",
+   "sym_key": "g_DSurface_ViewBounds"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B504@@3IA",
+   "sym_key": "DataGlobal_B0B504"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B510@@3IA",
+   "sym_key": "DataGlobal_B0B510"
+  },
+  {
+   "off": 262,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B50C@@3IA",
+   "sym_key": "DataGlobal_B0B50C"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B510@@3IA",
+   "sym_key": "DataGlobal_B0B510"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B50C@@3IA",
+   "sym_key": "DataGlobal_B0B50C"
+  },
+  {
+   "off": 295,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B510@@3IA",
+   "sym_key": "DataGlobal_B0B510"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B50C@@3IA",
+   "sym_key": "DataGlobal_B0B50C"
+  },
+  {
+   "off": 314,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B514@@3IA",
+   "sym_key": "DataGlobal_B0B514"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4F4@@3IA",
+   "sym_key": "DataGlobal_B0B4F4"
+  },
+  {
+   "off": 346,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B508@@3IA",
+   "sym_key": "DataGlobal_B0B508"
+  },
+  {
+   "off": 358,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4DC@@3IA",
+   "sym_key": "DataGlobal_B0B4DC"
+  },
+  {
+   "off": 364,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4E8@@3IA",
+   "sym_key": "DataGlobal_B0B4E8"
+  },
+  {
+   "off": 382,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B508@@3IA",
+   "sym_key": "DataGlobal_B0B508"
+  },
+  {
+   "off": 392,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4DC@@3IA",
+   "sym_key": "DataGlobal_B0B4DC"
+  },
+  {
+   "off": 397,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4E8@@3IA",
+   "sym_key": "DataGlobal_B0B4E8"
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "symbol": "?Render_Render@@YIHPAGHGHHHH@Z",
+ "sym_key": "Unnamed::Render_Render",
+ "size": 538,
+ "link_base": 0,
+ "bytes_hex": "83ec2c558b6c24388954242c8bc5992bc2568b74244057d1f8894424248bc6db44242499d95c24142bc28bf9d1f889442424db44242485f6d9542418d9442418d8c9d9442414d84c2414dec1d95c2430ddd8d9442418d9e0d95c24100f8eaf010000d94424148bd653d9e0d95c242c895424288b44242c85ed894424100f8e5d010000d9442414d84c24148b742440896c242481e6ffff0000d95c2430eb048b6c2444d9442410d84c2410d8442430d8742434d82d00000000d80d00000000d90500000000d8c9d8c9d95c24208b5c2420ddd853e800000000d95c242053e800000000d9442420d84c2410d9c1d84c2414dec1d8442418e800000000d9442420d84c2414d9c9d84c24108bd8dee9d844241ce80000000085db7c093bdd7c078d5dffeb0233db85c07c0d8b4c24483bc17c078d41ffeb0233c00faf442450d90500000000d8442410d95c24108b4c243803c3bb1f000000bd3f0000008d0c4183c7028a0180e10025ff0000000bc18bd08bc881e2ffff0000c1ea0b2bda8bd00fafdec1fb08c1e30b81e200f80000c1e90503da8bd183e23f83e13f2beaba1f0000000fafeec1fd0803e98bc883e11f83e01f2bd18bcf0fafd6c1e505c1fa080bdd03d08b4424240bda66895ffe48894424240f85c7feffff8b5424288b6c24448b44244c83fa01d9442414dc05000000008d0c418d72ff0f94c08bd68bf9d95c241484c0895424280f8465feffff8bc65b5f5e5d83c42cc21400",
+ "relocs": [
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?flt_7EAA00@@3MA",
+   "sym_key": "flt_7EAA00"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FAA0@@3MA",
+   "sym_key": "DataGlobal_A9FAA0"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "?ComputeChronosphereDistortion@@YGNM@Z",
+   "sym_key": "ComputeChronosphereDistortion"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?ComputeDistortionVariant@@YGNM@Z",
+   "sym_key": "ComputeDistortionVariant"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 320,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 493,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  }
+ ]
+}

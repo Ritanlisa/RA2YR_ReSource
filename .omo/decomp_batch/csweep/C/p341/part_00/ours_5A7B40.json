@@ -1,0 +1,63 @@
+{
+ "symbol": "?ProcessUpdate@CellClass@@QAEDXZ",
+ "sym_key": "CellClass::ProcessUpdate",
+ "size": 440,
+ "link_base": 0,
+ "bytes_hex": "83ec145355568bf1578b068b56040fbfc80fbffa89542414895424188b150c2700008d1c0f3bda0f8e810100008be92bef3bea0f8d750100008bef2be93bea0f8d690100003b1d102700000f8f5d0100008b5e088d4c18ff0fbfc9894c241c8d2c0f3bea896c24100f8e400100008be92bef3bea0f8d340100002bf93bfa0f8d2a0100008b0d102700008b7c24103bf90f8f180100008b4e0c8b7c241403cf894c24208d79ff0fbfc80fbfff8d2c0f3bea896c24100f8ef30000008be92bef3bea0f8de70000008bef2be93bea0f8ddb0000008b4c24108b2d102700003bcd0f8fc90000008b4c241c8d2c0f3bea896c241c0f8eb60000008be92bef3bea0f8daa0000002bf93bfa0f8da00000008b15102700008b4c241c3bca0f8f8e0000008b4c24148b5424203bca7c0a5f5e5db0015b83c414c38d14038bf83bc27d548d44241066894c241250b9f801000066897c2414e8000000008bd88bcb8b6b38e80000000084c07510a1000000003be87c3d83c0073be87f368b83e400000085c0752c8b5e088b068b4c2418478d14183bfa7cac8b560c8b6e044103d53bca894c24187c925f5e5db0015b83c414c35f5e5d32c05b83c414c3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 330,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 352,
+   "type": "REL32",
+   "sym": "?InBounds@CellClass@@QAE_NXZ",
+   "sym_key": "CellClass::InBounds"
+  },
+  {
+   "off": 361,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA10A4@@3HA",
+   "sym_key": "DataGlobal_AA10A4"
+  }
+ ]
+}

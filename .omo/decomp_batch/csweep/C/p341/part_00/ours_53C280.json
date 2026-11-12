@@ -1,0 +1,51 @@
+{
+ "symbol": "?UpdateLighting@ScenarioClass@@QAEHXZ",
+ "sym_key": "ScenarioClass::UpdateLighting",
+ "size": 175,
+ "link_base": 0,
+ "bytes_hex": "833d0000000001742aa10000000085c07521a1000000006a006aff83caff8b882835000089883035000083c9ffe800000000c3a100000000566a018b90603500008990303500008b0d000000008b816c3500008d04808d04808d1480b81f85eb51c1e203f7e28b81683500008b8964350000c1ea058d0480528d04808d1480b81f85eb51c1e203f7e28d04898bf2c1ee058d04808d0c80b81f85eb51c1e103f7e18bca8bd6c1e905e8000000005ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?NukeFlash_Status@@3IA",
+   "sym_key": "NukeFlash_Status"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?ChronoScreenEffect_Status@@3IA",
+   "sym_key": "ChronoScreenEffect_Status"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?UpdateSurfaceAnimations@@YIHHHHH@Z",
+   "sym_key": "UpdateSurfaceAnimations"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?UpdateSurfaceAnimations@@YIHHHHH@Z",
+   "sym_key": "UpdateSurfaceAnimations"
+  }
+ ]
+}

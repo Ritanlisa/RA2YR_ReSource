@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (19 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p341\part_00
+=== convert (19 addrs) ===
+[conv] 0x5a7b40 CellClass::ProcessUpdate -> CellClass
+[conv] 0x568140 sub_568140 -> _addr_56
+[conv] 0x53c280 ScenarioClass::UpdateLighting -> ScenarioClass
+[conv] 0x549830 ObjectClass::sub_549830 -> ObjectClass
+[conv] 0x404bb0 TechnoClass::sub_404BB0 -> TechnoClass
+[conv] 0x4a1de0 Checksummer::Add_Buffer -> Checksummer
+[conv] 0x5a0700 RandomMap::CellListAlloc -> RandomMap
+[conv] 0x5c6bc0 FillArrayPattern -> _addr_5C
+[conv] 0x7bbe20 IntersectSurfaceRects -> _addr_7B
+[conv] 0x5c8e40 sub_5C8E40 -> _addr_5C
+[conv] 0x4b4920 DriveLocomotionClass::IsAtDestination -> DriveLocomotionClass
+[conv] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> ShipLocomotionClass
+[conv] 0x6a5130 SidebarClass::CalcBounds -> SidebarClass
+[conv] 0x602b90 UI_Helper_602B90 -> UI_Helper
+[conv] 0x5a7070 globalHelper_0A7070 -> _addr_5A
+[conv] 0x53c0a0 Render_Render -> Render
+[conv] 0x42cf80 ObjectClass::sub_42CF80 -> ObjectClass
+[conv] 0x7470d0 UnitTypeClass::UnitTypeClass -> UnitTypeClass
+[conv] 0x6217e0 UI_Helper_6217E0 -> UI_Helper
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CellClass                rc=0
+[era] _addr_56                 rc=0
+[era] ScenarioClass            rc=0
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] Checksummer              rc=2
+[era] RandomMap                rc=2
+[era] _addr_5C                 rc=2
+[era] _addr_7B                 rc=0
+[era] DriveLocomotionClass     rc=2
+[era] ShipLocomotionClass      rc=2
+[era] SidebarClass             rc=0
+[era] UI_Helper                rc=2
+[era] _addr_5A                 rc=2
+[era] Render                   rc=0
+[era] UnitTypeClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x5a7b40   MISMATCH         CellClass::ProcessUpdate
+[diff] 0x568140   MISMATCH         sub_568140
+[diff] 0x53c280   MISMATCH         ScenarioClass::UpdateLighting
+[diff] 0x5c8e40   MISMATCH         sub_5C8E40
+[diff] 0x7bbe20   MISMATCH         IntersectSurfaceRects
+[diff] 0x6a5130   MISMATCH         SidebarClass::CalcBounds
+[diff] 0x53c0a0   MISMATCH         Render_Render
+[ledger] 0x5a7b40 CellClass::ProcessUpdate -> NG (attempt 1)
+[ledger] 0x568140 sub_568140 -> NG (attempt 1)
+[ledger] 0x53c280 ScenarioClass::UpdateLighting -> NG (attempt 1)
+[ledger] 0x549830 ObjectClass::sub_549830 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x404bb0 TechnoClass::sub_404BB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a1de0 Checksummer::Add_Buffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a0700 RandomMap::CellListAlloc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c6bc0 FillArrayPattern -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bbe20 IntersectSurfaceRects -> NG (attempt 1)
+[ledger] 0x5c8e40 sub_5C8E40 -> NG (attempt 1)
+[ledger] 0x4b4920 DriveLocomotionClass::IsAtDestination -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a5130 SidebarClass::CalcBounds -> NG (attempt 1)
+[ledger] 0x602b90 UI_Helper_602B90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a7070 globalHelper_0A7070 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53c0a0 Render_Render -> NG (attempt 1)
+[ledger] 0x42cf80 ObjectClass::sub_42CF80 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7470d0 UnitTypeClass::UnitTypeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6217e0 UI_Helper_6217E0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 19,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "extern_reloc": 1,
+  "branch_polarity": 1,
+  "cc_mismatch": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p341\batch_report.json
