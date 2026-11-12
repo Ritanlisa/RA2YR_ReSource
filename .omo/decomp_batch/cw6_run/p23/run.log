@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x58a3a0 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::FindItemIndex_1 -> _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x58a7e0 _VectorClass_U_HashObject_II::GetSize -> _VectorClass_U_HashObject_II
+[conv] 0x58aa20 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetSize -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x58bb00 Map_Helper_58BB00 -> Map_Helper
+[conv] 0x58bdc0 TileData::Constructor -> TileData
+[conv] 0x58c2a0 Tactical::GetCellData -> Tactical
+[conv] 0x58d0a0 TileSystem::LookupMapTile -> TileSystem
+[conv] 0x5943e0 List::FindByValue -> List
+[conv] 0x5a9920 ObjectClass::sub_5A9920 -> ObjectClass
+[conv] 0x5a9960 ObjectClass::sub_5A9960 -> ObjectClass
+[conv] 0x5a9980 ObjectClass::sub_5A9980 -> ObjectClass
+[conv] 0x5ac230 MapSeed::IsCellInBounds -> MapSeed
+[conv] 0x5ac6a0 _VectorClass_PAVMapRegionClass::Add -> _VectorClass_PAVMapRegionClass
+[conv] 0x5aca60 _VectorClass_PAU_WIN32_FIND_DATAA::AddRef -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5acb80 _VectorClass_PAU_WIN32_FIND_DATAA::GenerateSeed -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5acc90 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::FindItem -> _DynamicVectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5accc0 _VectorClass_V_TRect_H::AddRef -> _VectorClass_V_TRect_H
+[conv] 0x5ace50 _VectorClass_V_TRect_H::Init -> _VectorClass_V_TRect_H
+[conv] 0x5acfc0 _DynamicVectorClass_V_TRect_H::FindItem -> _DynamicVectorClass_V_TRect_H
+[conv] 0x5ad220 _VectorClass_N::GetSize -> _VectorClass_N
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+[era] _VectorClass_U_HashObject_II rc=0
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+[era] Map_Helper               rc=0
+[era] TileData                 rc=2
+[era] Tactical                 rc=0
+[era] TileSystem               rc=0
+[era] List                     rc=0
+[era] ObjectClass              rc=2
+[era] MapSeed                  rc=2
+[era] _VectorClass_PAVMapRegionClass rc=0
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _DynamicVectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _VectorClass_V_TRect_H   rc=0
+[era] _DynamicVectorClass_V_TRect_H rc=0
+[era] _VectorClass_N           rc=0
+=== diffasm byte-compare ===
+[diff] 0x58a3a0   MISMATCH         _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::FindItemIndex_1
+[diff] 0x58a7e0   MISMATCH         _VectorClass_U_HashObject_II::GetSize
+[diff] 0x58aa20   MISMATCH         _VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetSize
+[diff] 0x58bb00   MISMATCH         Map_Helper_58BB00
+[diff] 0x58c2a0   MISMATCH         Tactical::GetCellData
+[diff] 0x58d0a0   MISMATCH         TileSystem::LookupMapTile
+[diff] 0x5943e0   MISMATCH         List::FindByValue
+[diff] 0x5a9920   MATCH            ObjectClass::sub_5A9920
+[diff] 0x5a9960   MATCH            ObjectClass::sub_5A9960
+[diff] 0x5a9980   MISMATCH         ObjectClass::sub_5A9980
+[diff] 0x5ac6a0   MISMATCH         _VectorClass_PAVMapRegionClass::Add
+[diff] 0x5aca60   MISMATCH         _VectorClass_PAU_WIN32_FIND_DATAA::AddRef
+[diff] 0x5acb80   MISMATCH         _VectorClass_PAU_WIN32_FIND_DATAA::GenerateSeed
+[diff] 0x5acc90   MISMATCH         _DynamicVectorClass_PAU_WIN32_FIND_DATAA::FindItem
+[diff] 0x5accc0   MISMATCH         _VectorClass_V_TRect_H::AddRef
+[diff] 0x5ace50   MISMATCH         _VectorClass_V_TRect_H::Init
+[diff] 0x5acfc0   MISMATCH         _DynamicVectorClass_V_TRect_H::FindItem
+[diff] 0x5ad220   MISMATCH         _VectorClass_N::GetSize
+[ledger] 0x58a3a0 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::FindItemIndex_1 -> NG (attempt 2)
+[ledger] 0x58a7e0 _VectorClass_U_HashObject_II::GetSize -> NG (attempt 2)
+[ledger] 0x58aa20 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetSize -> NG (attempt 2)
+[ledger] 0x58bb00 Map_Helper_58BB00 -> NG (attempt 2)
+[ledger] 0x58bdc0 TileData::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58c2a0 Tactical::GetCellData -> NG (attempt 2)
+[ledger] 0x58d0a0 TileSystem::LookupMapTile -> NG (attempt 2)
+[ledger] 0x5943e0 List::FindByValue -> NG (attempt 2)
+[ledger] 0x5a9920 ObjectClass::sub_5A9920 -> OK (attempt 2)
+[ledger] 0x5a9960 ObjectClass::sub_5A9960 -> OK (attempt 2)
+[ledger] 0x5a9980 ObjectClass::sub_5A9980 -> NG (attempt 2)
+[ledger] 0x5ac230 MapSeed::IsCellInBounds -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ac6a0 _VectorClass_PAVMapRegionClass::Add -> NG (attempt 2)
+[ledger] 0x5aca60 _VectorClass_PAU_WIN32_FIND_DATAA::AddRef -> NG (attempt 2)
+[ledger] 0x5acb80 _VectorClass_PAU_WIN32_FIND_DATAA::GenerateSeed -> NG (attempt 2)
+[ledger] 0x5acc90 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::FindItem -> NG (attempt 2)
+[ledger] 0x5accc0 _VectorClass_V_TRect_H::AddRef -> NG (attempt 2)
+[ledger] 0x5ace50 _VectorClass_V_TRect_H::Init -> NG (attempt 2)
+[ledger] 0x5acfc0 _DynamicVectorClass_V_TRect_H::FindItem -> NG (attempt 2)
+[ledger] 0x5ad220 _VectorClass_N::GetSize -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 2,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "signedness": 1,
+  "const_fold": 3,
+  "branch_polarity": 2,
+  "branch_order": 3
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p23\batch_report.json

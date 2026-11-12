@@ -1,0 +1,11 @@
+{
+ "addr": "0x5ACCC0",
+ "name": "MSEngine::AddRef",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5ACCC0",
+ "bytes_hex": "8b4424045355568b5008578b79083bfa754b33f685ff7e3c8b50048b41048d4a082bd08b188b2c023bdd75318b58048b69fc3bdd75278b58088b293bdd751e8b580c8b69043bdd75144683c11083c0103bf77ccf5f5e5db0015bc204005f5e5d32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?sub_5A9980@ObjectClass@@QAEPAIHPAIH0H@Z",
+ "sym_key": "ObjectClass::sub_5A9980",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "8b5424088bc18b4c240489088b0a85c90f95c18848048b4c240c85c98b4c24100f95c28850088b118b4c241485d20f95c285c90f95c188500c884810c21400",
+ "relocs": []
+}

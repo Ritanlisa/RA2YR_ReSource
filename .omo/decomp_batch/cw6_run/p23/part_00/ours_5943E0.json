@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindByValue@List@@QAEHXZ",
+ "sym_key": "List::FindByValue",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "53568b35a819000033d25785f67f065f5e33c05bc38b3d9c1900008bc78b18394b087410423bd67de68b580483c004394b0875f08b04975f5e5bc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

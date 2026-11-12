@@ -1,0 +1,21 @@
+{
+ "symbol": "?LookupMapTile@TileSystem@@QAEHXZ",
+ "sym_key": "TileSystem::LookupMapTile",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8b151827000085d2741b0fbf41020faf05000000000fbf0903c18d0480c1e0048b441038c383c8ffc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  }
+ ]
+}

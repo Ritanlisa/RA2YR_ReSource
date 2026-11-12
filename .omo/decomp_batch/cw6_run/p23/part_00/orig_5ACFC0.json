@@ -1,0 +1,11 @@
+{
+ "addr": "0x5ACFC0",
+ "name": "MSEngine::FindItem",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5ACFC0",
+ "bytes_hex": "5355568b711033c05785f67e338b5424148b49048b3a3939751e8b59048b6a043bdd75148b59088b6a083bdd750a8b590c8b6a0c3bdd740b4083c1103bc67cd683c8ff5f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

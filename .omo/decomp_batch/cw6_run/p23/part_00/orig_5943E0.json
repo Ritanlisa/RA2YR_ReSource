@@ -1,0 +1,11 @@
+{
+ "addr": "0x5943E0",
+ "name": "List::FindByValue",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5943E0",
+ "bytes_hex": "53568b35a0dfab0033c05785f67e178b3d94dfab008bd78b1a394b08740e4083c2043bc67cf15f5e33c05bc38b04875f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

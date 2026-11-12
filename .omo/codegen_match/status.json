@@ -41129,15 +41129,15 @@
   "status": "NG"
  },
  "0x58a3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::FindItemIndex_1",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_W4PassabilityType::FindItemIndex_1",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a630": {
@@ -41153,15 +41153,15 @@
   "this_as_id": false
  },
  "0x58a7e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x58a7ee",
   "name": "_VectorClass_U_HashObject_II::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_UHashObject_uint_uint::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a820": {
@@ -41184,15 +41184,15 @@
   "status": "NG"
  },
  "0x58aa20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x58aa2e",
   "name": "_VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_UHashObject_uint_SubzoneConn::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58aa60": {
@@ -41616,14 +41616,14 @@
   "this_as_id": false
  },
  "0x58bb00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+12 jge 0x58bb22",
   "name": "Map_Helper_58BB00",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/signedness",
   "orig_name": "Map_Helper_58BB00",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58bb30": {
@@ -41650,7 +41650,7 @@
   "this_as_id": false
  },
  "0x58bdc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -41662,11 +41662,16 @@
   "this_as_id": false
  },
  "0x58c2a0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+16 mov ecx, dword ptr [0xabed10]",
   "name": "Tactical::GetCellData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Tactical::GetCellData",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x58c2c0": {
   "attempts": 1,
@@ -41721,15 +41726,15 @@
   "this_as_id": false
  },
  "0x58d0a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [0xabed10]",
   "name": "TileSystem::LookupMapTile",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TileSystem::LookupMapTile",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58ef10": {
@@ -41769,15 +41774,15 @@
   "this_as_id": false
  },
  "0x5943e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+2 mov esi, dword ptr [0xabdfa0]",
   "name": "List::FindByValue",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "List::FindByValue",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x595680": {
@@ -42009,15 +42014,15 @@
   "this_as_id": false
  },
  "0x5a9920": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::sub_5A9920",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5A9920",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "OK",
   "this_as_id": false
  },
  "0x5a9940": {
@@ -42033,27 +42038,27 @@
   "this_as_id": false
  },
  "0x5a9960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::sub_5A9960",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5A9960",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "OK",
   "this_as_id": false
  },
  "0x5a9980": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+14 mov edx, dword ptr [esp + 0xc]",
   "name": "ObjectClass::sub_5A9980",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_5A9980",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5a99b0": {
@@ -42093,7 +42098,7 @@
   "this_as_id": false
  },
  "0x5ac230": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -42239,15 +42244,15 @@
   "this_as_id": false
  },
  "0x5ac6a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x5ac6d6",
   "name": "_VectorClass_PAVMapRegionClass::Add",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_MapRegionClass::Add",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5ac7c0": {
@@ -42301,15 +42306,15 @@
   "status": "NG"
  },
  "0x5aca60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x5aca96",
   "name": "_VectorClass_PAU_WIN32_FIND_DATAA::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "MapSeedClass_18::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5acb50": {
@@ -42320,15 +42325,15 @@
   "status": "NG"
  },
  "0x5acb80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x5acb8e",
   "name": "_VectorClass_PAU_WIN32_FIND_DATAA::GenerateSeed",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "_VectorClass_PAU_WIN32_FIND_DATAA::GenerateSeed",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5acbc0": {
@@ -42344,27 +42349,27 @@
   "this_as_id": false
  },
  "0x5acc90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_PAU_WIN32_FIND_DATAA::FindItem",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MapSeedClass_18::FindItem",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5accc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+5 push ebp",
   "name": "_VectorClass_V_TRect_H::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MSEngine::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5acd30": {
@@ -42375,15 +42380,15 @@
   "status": "NG"
  },
  "0x5ace50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+27 jle 0x5acea0",
   "name": "_VectorClass_V_TRect_H::Init",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "MSEngine::Init",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5aceb0": {
@@ -42406,15 +42411,15 @@
   "status": "NG"
  },
  "0x5acfc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+11 jle 0x5ad000",
   "name": "_DynamicVectorClass_V_TRect_H::FindItem",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "MSEngine::FindItem",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5ad0c0": {
@@ -42442,15 +42447,15 @@
   "this_as_id": false
  },
  "0x5ad220": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+23 jle 0x5ad253",
   "name": "_VectorClass_N::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "VectorClass_N::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5ad270": {

@@ -1,0 +1,11 @@
+{
+ "addr": "0x58D0A0",
+ "name": "TileSystem::LookupMapTile",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58D0A0",
+ "bytes_hex": "8b1510edab0085d2750483c8ffc30fbf41020faf05dcc289000fbf0903c18d0480c1e0048b441038c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

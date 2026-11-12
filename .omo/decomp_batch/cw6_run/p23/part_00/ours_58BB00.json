@@ -1,0 +1,27 @@
+{
+ "symbol": "?Map_Helper_58BB00@@YIPAIPAHH@Z",
+ "sym_key": "Unnamed::Map_Helper_58BB00",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "85d28bc17c1c3b150000000073148b0cd50000000089088b14d500000000895004c3c70000000000c7400400000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABED0C@@3IA",
+   "sym_key": "DataGlobal_ABED0C"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABE328@@3PAIA",
+   "sym_key": "DataGlobal_ABE328"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABE32C@@3PAIA",
+   "sym_key": "DataGlobal_ABE32C"
+  }
+ ]
+}

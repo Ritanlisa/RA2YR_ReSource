@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorClass_V_TRect_H@@QAEDH@Z",
+ "sym_key": "_VectorClass_V_TRect_H::AddRef",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "8b442404538b5908558b5008563bda57755933ff85db7f095f5e5db0015bc204008b50048b41048bf28b082bf03b0c0675398bc82bc88d4c110c8b50048b69f83bd575278b50088b69fc3bd5751d8b500c8b293bd575144783c01083c1103bfb7db68b108b2c063bd574cf5f5e5d32c05bc20400",
+ "relocs": []
+}
