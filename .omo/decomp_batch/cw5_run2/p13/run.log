@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x537530 View3CommandClass::performAction_158 -> View3CommandClass
+[conv] 0x4ac660 BuildingClass::TogglePower -> BuildingClass
+[conv] 0x4ac820 TacticalClass::SetObserverMode -> TacticalClass
+[conv] 0x6403a0 PowerClass::getDrain -> PowerClass
+[conv] 0x707d20 TechnoClass::GetCrew -> TechnoClass
+[conv] 0x6e1530 ScenarioClass::PrepareTextDisplay -> ScenarioClass
+[conv] 0x726400 BuildingClass::ProcessUpgradeEffects -> BuildingClass
+[conv] 0x69b7e0 SessionClass::AssignColor -> SessionClass
+[conv] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> TriggerClass
+[conv] 0x542520 IPXManagerClass::ProcessQueue -> IPXManagerClass
+[conv] 0x5c2de0 MPCooperative::selectTeam -> MPCooperative
+[conv] 0x4d2bc0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x6e1780 TActionClass::PlayAudioAtRandomWP -> TActionClass
+[conv] 0x4adff0 HouseClass::RevealShroudForAllies -> HouseClass
+[conv] 0x6b56d0 SmudgeTypeClass::GetSize -> SmudgeTypeClass
+[conv] 0x4adba0 ScenarioClass::ProcessGame -> ScenarioClass
+[conv] 0x453240 BuildingClass::TraverseBridgeSegments -> BuildingClass
+[conv] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> CStreamClass
+[conv] 0x4a2600 CountdownTimer::UpdateDisplay -> CountdownTimer
+[conv] 0x64a630 ProcessNetworkMessage -> _addr_64
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] View3CommandClass        rc=2
+[era] BuildingClass            rc=2
+[era] TacticalClass            rc=0
+[era] PowerClass               rc=0
+[era] TechnoClass              rc=0
+[era] ScenarioClass            rc=2
+[era] SessionClass             rc=2
+[era] TriggerClass             rc=2
+[era] IPXManagerClass          rc=2
+[era] MPCooperative            rc=2
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] TActionClass             rc=2
+[era] HouseClass               rc=2
+[era] SmudgeTypeClass          rc=2
+[era] CStreamClass             rc=2
+[era] CountdownTimer           rc=2
+[era] _addr_64                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4ac660   MISMATCH         BuildingClass::TogglePower
+[diff] 0x726400   MISMATCH         BuildingClass::ProcessUpgradeEffects
+[diff] 0x4ac820   MISMATCH         TacticalClass::SetObserverMode
+[diff] 0x6403a0   MISMATCH         PowerClass::getDrain
+[diff] 0x707d20   MISMATCH         TechnoClass::GetCrew
+[ledger] 0x537530 View3CommandClass::performAction_158 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ac660 BuildingClass::TogglePower -> NG (attempt 8)
+[ledger] 0x4ac820 TacticalClass::SetObserverMode -> NG (attempt 8)
+[ledger] 0x6403a0 PowerClass::getDrain -> NG (attempt 13)
+[ledger] 0x707d20 TechnoClass::GetCrew -> NG (attempt 13)
+[ledger] 0x6e1530 ScenarioClass::PrepareTextDisplay -> COMPILE_FAIL (attempt 13)
+[ledger] 0x726400 BuildingClass::ProcessUpgradeEffects -> NG (attempt 5)
+[ledger] 0x69b7e0 SessionClass::AssignColor -> COMPILE_FAIL (attempt 16)
+[ledger] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> COMPILE_FAIL (attempt 13)
+[ledger] 0x542520 IPXManagerClass::ProcessQueue -> COMPILE_FAIL (attempt 15)
+[ledger] 0x5c2de0 MPCooperative::selectTeam -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4d2bc0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6e1780 TActionClass::PlayAudioAtRandomWP -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4adff0 HouseClass::RevealShroudForAllies -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6b56d0 SmudgeTypeClass::GetSize -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4adba0 ScenarioClass::ProcessGame -> COMPILE_FAIL (attempt 15)
+[ledger] 0x453240 BuildingClass::TraverseBridgeSegments -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4a2600 CountdownTimer::UpdateDisplay -> COMPILE_FAIL (attempt 13)
+[ledger] 0x64a630 ProcessNetworkMessage -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p13\batch_report.json

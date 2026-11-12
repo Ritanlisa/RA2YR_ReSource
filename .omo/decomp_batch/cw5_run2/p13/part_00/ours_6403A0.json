@@ -1,0 +1,45 @@
+{
+ "symbol": "?getDrain@PowerClass@@QAEDXZ",
+ "sym_key": "PowerClass::getDrain",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "5153e800000000a13c00000033db84c074488b0d00000000c7442404e70300008b91c8b1500085d27505bb0500000068e703000050e8000000008b0d3c00000083c4088d54240452e80000000025ff00000080e3000bc35b59c38ac35b59c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "REL32",
+   "sym": "?Destru_vt34@RadarClass@@QAEDXZ",
+   "sym_key": "RadarClass::Destru_vt34"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?HashTable__Remove@@YAHPAXH@Z",
+   "sym_key": "HashTable__Remove"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?AddAction@CommandClass@@QAEDH@Z",
+   "sym_key": "CommandClass::AddAction"
+  }
+ ]
+}

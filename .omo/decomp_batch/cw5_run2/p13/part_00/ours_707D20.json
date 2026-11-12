@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetCrew@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetCrew",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "56578bf9578b07ff90840000008a88cd0c000084c975055f33c05ec38b971c0200008b82e801000085c074288b0d4002000083f80175088bb17c0f0000eb2183f80275088bb1800f0000eb148bb16c0f0000eb0c8b0d400200008bb1780f00008b523483babc000000ff75098b816c0f00005f5ec38b0757ff90ac02000084c074298b0d000000006a636a0081c168050300e80000000083f80f7d0f8b15400200005f5e8b826c0f0000c38bc65f5ec3",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 158,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}
