@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p49\part_00
+=== convert (20 addrs) ===
+[conv] 0x71cf30 TerrainClass::CheckFrameUpdate -> TerrainClass
+[conv] 0x74aa10 VoxelAnimClass::SaveLoad_Prefix_0 -> VoxelAnimClass
+[conv] 0x74eee0 VeinholeMonsterClass::Update -> VeinholeMonsterClass
+[conv] 0x773d20 WebBrowser::Navigate -> WebBrowser
+[conv] 0x777b60 String::CopyConstant -> String
+[conv] 0x77b920 sub_77B920 -> _addr_77
+[conv] 0x77b960 sub_77B960 -> _addr_77
+[conv] 0x77b9a0 sub_77B9A0 -> _addr_77
+[conv] 0x77b9e0 sub_77B9E0 -> _addr_77
+[conv] 0x77ba20 sub_77BA20 -> _addr_77
+[conv] 0x7c9dbd globalHelper_0C9DBD -> _addr_7C
+[conv] 0x7c9fd9 _strtoul -> _addr_7C
+[conv] 0x7cb9b8 _wcstol -> _addr_7C
+[conv] 0x7cbb76 WideChar::ToLong -> WideChar
+[conv] 0x7d5433 __open -> _addr_7D
+[conv] 0x432c30 BinkMovie::Pause -> BinkMovie
+[conv] 0x4f3a90 State::SetIfChanged -> State
+[conv] 0x4f3ab0 ObjectClass::sub_4F3AB0 -> ObjectClass
+[conv] 0x6406f0 ComPtr::Dtor -> ComPtr
+[conv] 0x68ec00 ScoreScreen::Check -> ScoreScreen
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TerrainClass             rc=0
+[era] VoxelAnimClass           rc=0
+[era] VeinholeMonsterClass     rc=0
+[era] WebBrowser               rc=0
+[era] String                   rc=0
+[era] _addr_77                 rc=0
+[era] _addr_7C                 rc=2
+[era] WideChar                 rc=0
+[era] _addr_7D                 rc=2
+[era] BinkMovie                rc=0
+[era] State                    rc=0
+[era] ObjectClass              rc=0
+[era] ComPtr                   rc=0
+[era] ScoreScreen              rc=0
+=== diffasm byte-compare ===
+[diff] 0x71cf30   MISMATCH         TerrainClass::CheckFrameUpdate
+[diff] 0x74aa10   MISMATCH         VoxelAnimClass::SaveLoad_Prefix_0
+[diff] 0x74eee0   MISMATCH         VeinholeMonsterClass::Update
+[diff] 0x773d20   MISMATCH         WebBrowser::Navigate
+[diff] 0x777b60   MISMATCH         String::CopyConstant
+[diff] 0x77b920   MISMATCH         sub_77B920
+[diff] 0x77b960   MISMATCH         sub_77B960
+[diff] 0x77b9a0   MISMATCH         sub_77B9A0
+[diff] 0x77b9e0   MISMATCH         sub_77B9E0
+[diff] 0x77ba20   MISMATCH         sub_77BA20
+[diff] 0x7c9dbd   MISMATCH         globalHelper_0C9DBD
+[diff] 0x7cb9b8   MISMATCH         _wcstol
+[diff] 0x7cbb76   MISMATCH         WideChar::ToLong
+[diff] 0x432c30   MISMATCH         BinkMovie::Pause
+[diff] 0x4f3a90   MATCH            State::SetIfChanged
+[diff] 0x4f3ab0   MISMATCH         ObjectClass::sub_4F3AB0
+[diff] 0x6406f0   MISMATCH         ComPtr::Dtor
+[diff] 0x68ec00   MISMATCH         ScoreScreen::Check
+[ledger] 0x71cf30 TerrainClass::CheckFrameUpdate -> NG (attempt 1)
+[ledger] 0x74aa10 VoxelAnimClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x74eee0 VeinholeMonsterClass::Update -> NG (attempt 1)
+[ledger] 0x773d20 WebBrowser::Navigate -> NG (attempt 1)
+[ledger] 0x777b60 String::CopyConstant -> NG (attempt 1)
+[ledger] 0x77b920 sub_77B920 -> NG (attempt 1)
+[ledger] 0x77b960 sub_77B960 -> NG (attempt 1)
+[ledger] 0x77b9a0 sub_77B9A0 -> NG (attempt 1)
+[ledger] 0x77b9e0 sub_77B9E0 -> NG (attempt 1)
+[ledger] 0x77ba20 sub_77BA20 -> NG (attempt 1)
+[ledger] 0x7c9dbd globalHelper_0C9DBD -> NG (attempt 1)
+[ledger] 0x7c9fd9 _strtoul -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cb9b8 _wcstol -> NG (attempt 1)
+[ledger] 0x7cbb76 WideChar::ToLong -> NG (attempt 1)
+[ledger] 0x7d5433 __open -> COMPILE_FAIL (attempt 1)
+[ledger] 0x432c30 BinkMovie::Pause -> NG (attempt 1)
+[ledger] 0x4f3a90 State::SetIfChanged -> OK (attempt 1)
+[ledger] 0x4f3ab0 ObjectClass::sub_4F3AB0 -> NG (attempt 1)
+[ledger] 0x6406f0 ComPtr::Dtor -> NG (attempt 1)
+[ledger] 0x68ec00 ScoreScreen::Check -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 2,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "regalloc": 3,
+  "codegen_shape": 6,
+  "extern_reloc": 5,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p49\batch_report.json

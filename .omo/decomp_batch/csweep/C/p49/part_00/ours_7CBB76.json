@@ -1,0 +1,15 @@
+{
+ "symbol": "?ToLong@WideChar@@QAEHHHH@Z",
+ "sym_key": "WideChar::ToLong",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24088b5424046a01505152e80000000083c410c20c00",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?wcstoxl@@YAHHHHHZZ",
+   "sym_key": "wcstoxl"
+  }
+ ]
+}

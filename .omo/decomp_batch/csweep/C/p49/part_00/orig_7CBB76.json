@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CBB76",
+ "name": "WideChar::ToLong",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CBB76",
+ "bytes_hex": "6a01ff742410ff742410ff742410e846feffff83c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?_wcstol@@YAHPBHPAPAHH@Z",
+ "sym_key": "Unnamed::_wcstol",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24088b5424046a00505152e80000000083c410c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?wcstoxl@@YAHPAX0HHZZ",
+   "sym_key": "wcstoxl"
+  }
+ ]
+}

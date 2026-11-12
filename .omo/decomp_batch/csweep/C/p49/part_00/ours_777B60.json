@@ -1,0 +1,33 @@
+{
+ "symbol": "?CopyConstant@String@@QAEPADXZ",
+ "sym_key": "String::CopyConstant",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "33c033c9a0000000008a0d000000006a205051e80000000033c083c40ca000000000c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_Str_gsmallwoo@@3EA",
+   "sym_key": "g_Str_gsmallwoo"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetIfChanged@State@@QAEHH@Z",
+ "sym_key": "State::SetIfChanged",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b4424048a51083ac274098b1150884108ff5210c20400",
+ "relocs": []
+}

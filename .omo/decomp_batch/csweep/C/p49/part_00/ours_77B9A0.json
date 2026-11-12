@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_77B9A0@@YAXXZ",
+ "sym_key": "Unnamed::sub_77B9A0",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "a100000000c705000000000000000050e80000000059c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionHandler@@3PAXA",
+   "sym_key": "g_WOL_ConnectionHandler"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_WOL_ChatState@@3IA",
+   "sym_key": "g_WOL_ChatState"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

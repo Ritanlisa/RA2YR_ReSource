@@ -1,0 +1,11 @@
+{
+ "addr": "0x68EC00",
+ "name": "ScoreScreen::Check",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x68EC00",
+ "bytes_hex": "8b411c83c11c8d54240452ff501083f8ff0f94c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

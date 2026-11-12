@@ -1,0 +1,15 @@
+{
+ "symbol": "?globalHelper_0C9DBD@@YAHHHH@Z",
+ "sym_key": "Unnamed::globalHelper_0C9DBD",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24088b5424046a00505152e80000000083c410c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?strtoxl@@YAHHHHHZZ",
+   "sym_key": "strtoxl"
+  }
+ ]
+}

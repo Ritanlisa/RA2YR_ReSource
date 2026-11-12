@@ -1,0 +1,8 @@
+{
+ "symbol": "?Check@ScoreScreen@@QAE_ND@Z",
+ "sym_key": "ScoreScreen::Check",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "8d411c8d54240452508b08ff511033c983f8ff0f94c18ac1c20400",
+ "relocs": []
+}

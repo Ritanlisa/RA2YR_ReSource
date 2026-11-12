@@ -1,0 +1,11 @@
+{
+ "addr": "0x6406F0",
+ "name": "ComPtr::Dtor",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6406F0",
+ "bytes_hex": "568bf18b0e85c9740c8b016a01ff10c706000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

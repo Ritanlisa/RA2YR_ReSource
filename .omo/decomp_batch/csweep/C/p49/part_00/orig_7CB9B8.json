@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB9B8",
+ "name": "_wcstol",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB9B8",
+ "bytes_hex": "6a00ff742410ff742410ff742410e80400000083c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
