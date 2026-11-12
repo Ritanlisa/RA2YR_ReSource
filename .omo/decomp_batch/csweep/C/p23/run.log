@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c9420 Megawealth::sub_5C9420 -> Megawealth
+[conv] 0x5ca670 MultiplayerSiege::sub_5CA670 -> MultiplayerSiege
+[conv] 0x5cae60 MultiplayerSiegeDefenderTeam::sub_5CAE60 -> MultiplayerSiegeDefenderTeam
+[conv] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> MultiplayerSiegeAttackerTeam
+[conv] 0x5cb3e0 UnholyAlliance::sub_5CB3E0 -> UnholyAlliance
+[conv] 0x759790 ObjectClass::sub_759790 -> ObjectClass
+[conv] 0x7668f0 rc_ptr::System_Init_7668F0 -> rc_ptr
+[conv] 0x766910 rc_ptr::System_Init_766910 -> rc_ptr
+[conv] 0x767300 GameOption_WorldDominationTour::Constructor -> GameOption_WorldDominationTour
+[conv] 0x767ec0 MSFrameAnim::sub_767EC0 -> MSFrameAnim
+[conv] 0x76ab90 WDTTerritory::sub_76AB90 -> WDTTerritory
+[conv] 0x76f060 ComPtr::Territory_Dtor -> ComPtr
+[conv] 0x771890 sub_771890 -> _addr_77
+[conv] 0x771980 Anim_Voices_WorldDominationTour::Write -> Anim_Voices_WorldDominationTour
+[conv] 0x7719c0 Anim_Voices_WorldDominationTour::Open -> Anim_Voices_WorldDominationTour
+[conv] 0x7719d0 Anim_Voices_WorldDominationTour::Close -> Anim_Voices_WorldDominationTour
+[conv] 0x77d1f0 SimpleWonlineDialogControl::ConnectAndLoginWOL_Connect -> SimpleWonlineDialogControl
+[conv] 0x7c9bfd _atoi -> _addr_7C
+[conv] 0x7cd455 __unlink -> _addr_7C
+[conv] 0x7d4596 fgetwc -> _addr_7D
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Megawealth               rc=0
+[era] MultiplayerSiege         rc=0
+[era] MultiplayerSiegeDefenderTeam rc=0
+[era] MultiplayerSiegeAttackerTeam rc=2
+[era] UnholyAlliance           rc=0
+[era] ObjectClass              rc=0
+[era] rc_ptr                   rc=0
+[era] GameOption_WorldDominationTour rc=0
+[era] MSFrameAnim              rc=2
+[era] WDTTerritory             rc=0
+[era] ComPtr                   rc=0
+[era] _addr_77                 rc=2
+[era] Anim_Voices_WorldDominationTour rc=0
+[era] SimpleWonlineDialogControl rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5c9420   MISMATCH         Megawealth::sub_5C9420
+[diff] 0x5ca670   MISMATCH         MultiplayerSiege::sub_5CA670
+[diff] 0x5cae60   MISMATCH         MultiplayerSiegeDefenderTeam::sub_5CAE60
+[diff] 0x5cb3e0   MISMATCH         UnholyAlliance::sub_5CB3E0
+[diff] 0x759790   MISMATCH         ObjectClass::sub_759790
+[diff] 0x7668f0   MISMATCH         rc_ptr::System_Init_7668F0
+[diff] 0x766910   MISMATCH         rc_ptr::System_Init_766910
+[diff] 0x767300   MISMATCH         GameOption_WorldDominationTour::Constructor
+[diff] 0x76ab90   MATCH            WDTTerritory::sub_76AB90
+[diff] 0x76f060   MISMATCH         ComPtr::Territory_Dtor
+[diff] 0x771980   MATCH            Anim_Voices_WorldDominationTour::Write
+[diff] 0x7719c0   MATCH            Anim_Voices_WorldDominationTour::Open
+[diff] 0x7719d0   MATCH            Anim_Voices_WorldDominationTour::Close
+[diff] 0x77d1f0   MATCH            SimpleWonlineDialogControl::ConnectAndLoginWOL_Connect
+[diff] 0x7c9bfd   MISMATCH         _atoi
+[diff] 0x7cd455   MISMATCH         __unlink
+[diff] 0x7d4596   MISMATCH         fgetwc
+[ledger] 0x5c9420 Megawealth::sub_5C9420 -> NG (attempt 1)
+[ledger] 0x5ca670 MultiplayerSiege::sub_5CA670 -> NG (attempt 1)
+[ledger] 0x5cae60 MultiplayerSiegeDefenderTeam::sub_5CAE60 -> NG (attempt 1)
+[ledger] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cb3e0 UnholyAlliance::sub_5CB3E0 -> NG (attempt 1)
+[ledger] 0x759790 ObjectClass::sub_759790 -> NG (attempt 1)
+[ledger] 0x7668f0 rc_ptr::System_Init_7668F0 -> NG (attempt 1)
+[ledger] 0x766910 rc_ptr::System_Init_766910 -> NG (attempt 1)
+[ledger] 0x767300 GameOption_WorldDominationTour::Constructor -> NG (attempt 1)
+[ledger] 0x767ec0 MSFrameAnim::sub_767EC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76ab90 WDTTerritory::sub_76AB90 -> OK (attempt 1)
+[ledger] 0x76f060 ComPtr::Territory_Dtor -> NG (attempt 1)
+[ledger] 0x771890 sub_771890 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x771980 Anim_Voices_WorldDominationTour::Write -> OK (attempt 1)
+[ledger] 0x7719c0 Anim_Voices_WorldDominationTour::Open -> OK (attempt 1)
+[ledger] 0x7719d0 Anim_Voices_WorldDominationTour::Close -> OK (attempt 1)
+[ledger] 0x77d1f0 SimpleWonlineDialogControl::ConnectAndLoginWOL_Connect -> OK (attempt 1)
+[ledger] 0x7c9bfd _atoi -> NG (attempt 1)
+[ledger] 0x7cd455 __unlink -> NG (attempt 1)
+[ledger] 0x7d4596 fgetwc -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 3,
+  "MATCH": 5
+ },
+ "pathologies": {
+  "const_fold": 9,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 29.4,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p23\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?fgetwc@@YAHPAH@Z",
+ "sym_key": "Unnamed::fgetwc",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?_getwc_lk@@YAHPAXZZ",
+   "sym_key": "_getwc_lk"
+  }
+ ]
+}

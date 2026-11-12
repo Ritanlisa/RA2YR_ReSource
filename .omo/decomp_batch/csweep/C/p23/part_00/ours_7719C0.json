@@ -1,0 +1,15 @@
+{
+ "symbol": "?Open@Anim_Voices_WorldDominationTour@@QAEHXZ",
+ "sym_key": "Anim_Voices_WorldDominationTour::Open",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "e800000000f6d81bc040c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?IsPlaying@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsPlaying"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_759790@ObjectClass@@QAEPAUIDirectDraw_era@@XZ",
+ "sym_key": "ObjectClass::sub_759790",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "81c1ac000000e900000000",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?CreateSurfacePalette@Surface@@QAEPAUIDirectDraw_era@@XZ",
+   "sym_key": "Surface::CreateSurfacePalette"
+  }
+ ]
+}

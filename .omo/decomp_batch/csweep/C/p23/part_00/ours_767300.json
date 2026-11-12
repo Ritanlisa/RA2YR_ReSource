@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor@GameOption_WorldDominationTour@@QAEXXZ",
+ "sym_key": "GameOption_WorldDominationTour::Constructor",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c70100000000e900000000",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Constructor@ReferenceCounted@@QAEXXZ",
+   "sym_key": "ReferenceCounted::Constructor"
+  }
+ ]
+}

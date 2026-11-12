@@ -1,0 +1,11 @@
+{
+ "addr": "0x77D1F0",
+ "name": "ConnectAndLoginWOL_Connect",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77D1F0",
+ "bytes_hex": "c70124767f00e9356feaff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

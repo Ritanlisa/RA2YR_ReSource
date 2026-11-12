@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5CB3E0@UnholyAlliance@@QAEXXZ",
+ "sym_key": "UnholyAlliance::sub_5CB3E0",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c70100000000e900000000",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Dtor@MultiplayerGameMode@@QAEXXZ",
+   "sym_key": "MultiplayerGameMode::Dtor"
+  }
+ ]
+}

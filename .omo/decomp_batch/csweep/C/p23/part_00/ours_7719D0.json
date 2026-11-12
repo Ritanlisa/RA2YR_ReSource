@@ -1,0 +1,15 @@
+{
+ "symbol": "?Close@Anim_Voices_WorldDominationTour@@QAEXH@Z",
+ "sym_key": "Anim_Voices_WorldDominationTour::Close",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b491ce800000000c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Update@AudioQueue@@QAEXXZ",
+   "sym_key": "AudioQueue::Update"
+  }
+ ]
+}

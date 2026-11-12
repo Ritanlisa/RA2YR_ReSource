@@ -1,0 +1,21 @@
+{
+ "symbol": "?ConnectAndLoginWOL_Connect@SimpleWonlineDialogControl@@QAEXXZ",
+ "sym_key": "SimpleWonlineDialogControl::ConnectAndLoginWOL_Connect",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c70100000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?vt_SimpleWonlineDialogControl@@3PAXA",
+   "sym_key": "vt_SimpleWonlineDialogControl"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?InitVtable@OwnerDrawControl@@QAEXXZ",
+   "sym_key": "OwnerDrawControl::InitVtable"
+  }
+ ]
+}

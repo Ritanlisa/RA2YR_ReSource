@@ -47067,6 +47067,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5c9420": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7ee5f4",
+  "name": "Megawealth::sub_5C9420",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5C9420",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5c94d0": {
   "attempts": 1,
   "first_diff": "+16 call 0x7c8b3d",
@@ -47291,6 +47303,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5ca670": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7ee6fc",
+  "name": "MultiplayerSiege::sub_5CA670",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5CA670",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5ca680": {
   "attempts": 1,
   "first_diff": null,
@@ -47455,6 +47479,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5cae60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7ee7e4",
+  "name": "MultiplayerSiegeDefenderTeam::sub_5CAE60",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5CAE60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5cae70": {
   "attempts": 3,
   "clean": false,
@@ -47464,6 +47500,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MultiplayerSiegeDefenderTeam::AddRef",
   "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5caf00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerSiegeAttackerTeam::sub_5CAF00",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_5CAF00",
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -47565,6 +47613,18 @@
   "orig_name": "MPBattleClass::isAIAllowed",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5cb3e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7ee814",
+  "name": "UnholyAlliance::sub_5CB3E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5CB3E0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5cb3f0": {
@@ -82472,6 +82532,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x759790": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "resolve:proto_this",
+  "first_diff": "+0 add ecx, 0x204",
+  "name": "ObjectClass::sub_759790",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_759790",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x759830": {
   "attempts": 1,
   "clean": true,
@@ -84193,6 +84265,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7668f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7f7024",
+  "name": "rc_ptr::System_Init_7668F0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "System_Init_7668F0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x766900": {
   "attempts": 3,
   "clean": false,
@@ -84202,6 +84286,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "System_Init_766900",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x766910": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7f7040",
+  "name": "rc_ptr::System_Init_766910",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "System_Init_766910",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -84419,6 +84515,18 @@
   "name": "sub_7672E0",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_7672E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x767300": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7f7060",
+  "name": "GameOption_WorldDominationTour::Constructor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "GameOption_WorldDominationTour::Constructor",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -84688,6 +84796,18 @@
   "orig_name": "sub_767E90",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x767ec0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "resolve:proto_this",
+  "first_diff": null,
+  "name": "MSFrameAnim::sub_767EC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_767EC0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x767f80": {
@@ -85205,6 +85325,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x76ab90": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WDTTerritory::sub_76AB90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_76AB90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x76b080": {
   "attempts": 1,
   "clean": false,
@@ -85590,6 +85722,18 @@
   "orig_name": "FileClass::GetState",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x76f060": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7f71c4",
+  "name": "ComPtr::Territory_Dtor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "ComPtr::Territory_Dtor",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x76f070": {
@@ -86207,6 +86351,29 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x771890": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "sub_771890",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_771890",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x771980": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Anim_Voices_WorldDominationTour::Write",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Territory_WorldDominationTour_8::Write",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x771990": {
   "attempts": 1,
   "clean": false,
@@ -86217,6 +86384,30 @@
   "orig_name": "Territory_WorldDominationTour_8::Seek",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7719c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Anim_Voices_WorldDominationTour::Open",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Territory_WorldDominationTour_8::Open",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7719d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Anim_Voices_WorldDominationTour::Close",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Territory_WorldDominationTour_8::Close",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x7719e0": {
@@ -87849,6 +88040,18 @@
   "orig_name": "unknown_libname_53",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x77d1f0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SimpleWonlineDialogControl::ConnectAndLoginWOL_Connect",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ConnectAndLoginWOL_Connect",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x77d200": {
@@ -94517,6 +94720,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c9bfd": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push dword ptr [esp + 4]",
+  "name": "_atoi",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "_atoi",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7ca090": {
   "attempts": 3,
   "clean": false,
@@ -95040,6 +95254,17 @@
   "name": "ObjectClass::__store_number",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "__store_number",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7cd455": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push dword ptr [esp + 4]",
+  "name": "__unlink",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "__unlink",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -95599,6 +95824,17 @@
   "name": "__getmbcp",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "__getmbcp",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7d4596": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push dword ptr [esp + 4]",
+  "name": "fgetwc",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "fgetwc",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

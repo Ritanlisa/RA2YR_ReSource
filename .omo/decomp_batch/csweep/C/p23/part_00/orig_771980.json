@@ -1,0 +1,11 @@
+{
+ "addr": "0x771980",
+ "name": "Territory_WorldDominationTour_8::Write",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x771980",
+ "bytes_hex": "8b491ce898fcffffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
