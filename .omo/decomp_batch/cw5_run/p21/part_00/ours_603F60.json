@@ -1,0 +1,33 @@
+{
+ "symbol": "?WOLobby_Setup@@YIPAPAGPAPAGPAXJ@Z",
+ "sym_key": "Unnamed::WOLobby_Setup",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568d442404578bfa8bf150e8000000008b4c241c83c4048d54240c894c240c526a0068e904000057c7442420ffffffffe8000000008d4424088bce50e8000000008d4c2408e8000000008bc65f5e83c40cc20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::AssignFromPtr"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  }
+ ]
+}

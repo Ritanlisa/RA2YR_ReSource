@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x530460 MixFile::LoadAll -> MixFile
+[conv] 0x799ea0 OptionsDlgProcWOL -> _addr_79
+[conv] 0x6f8df0 TechnoClass::SelectAutoTarget_Start_AU -> TechnoClass
+[conv] 0x67d300 SaveGame::Start -> SaveGame
+[conv] 0x741970 UnitClass::AssignDestination_SyncLog -> UnitClass
+[conv] 0x6fdd50 TechnoClass::FireWeapon -> TechnoClass
+[conv] 0x6691e0 Rules::ReadMiscINI -> Rules
+[conv] 0x66d530 RulesClass::LoadFromINI -> RulesClass
+[conv] 0x477db0 DynamicVectorClass::Construct -> DynamicVectorClass
+[conv] 0x41f0d0 AITriggerTypeClass::IronCurtainCharged -> AITriggerTypeClass
+[conv] 0x50b760 BuildingTypeClass::ProcessData -> BuildingTypeClass
+[conv] 0x603f60 WOLobby_Setup -> WOLobby
+[conv] 0x4371d0 Helper::ProcessData -> Helper
+[conv] 0x79da90 ExtractChatCommand -> _addr_79
+[conv] 0x770f10 ObjectClass::sub_770F10 -> ObjectClass
+[conv] 0x635490 ObjectClass::Render_Render_635490 -> ObjectClass
+[conv] 0x410800 AbstractTypeClass::Constructor -> AbstractTypeClass
+[conv] 0x7714b0 TechnoClass::TerritorySelectWDT_Delete -> TechnoClass
+[conv] 0x788800 LeaveChannelExWOL -> _addr_78
+[conv] 0x511850 HouseTypeClass::LoadFromINI -> HouseTypeClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MixFile                  rc=2
+[era] _addr_79                 rc=2
+[era] TechnoClass              rc=2
+[era] SaveGame                 rc=2
+[era] UnitClass                rc=2
+[era] Rules                    rc=2
+[era] RulesClass               rc=2
+[era] DynamicVectorClass       rc=2
+[era] AITriggerTypeClass       rc=2
+[era] BuildingTypeClass        rc=2
+[era] WOLobby                  rc=0
+[era] Helper                   rc=2
+[era] ObjectClass              rc=2
+[era] AbstractTypeClass        rc=2
+[era] _addr_78                 rc=2
+[era] HouseTypeClass           rc=2
+=== diffasm byte-compare ===
+[diff] 0x79da90   MISMATCH         ExtractChatCommand
+[diff] 0x7714b0   MISMATCH         TechnoClass::TerritorySelectWDT_Delete
+[diff] 0x603f60   MISMATCH         WOLobby_Setup
+[ledger] 0x530460 MixFile::LoadAll -> COMPILE_FAIL (attempt 4)
+[ledger] 0x799ea0 OptionsDlgProcWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f8df0 TechnoClass::SelectAutoTarget_Start_AU -> COMPILE_FAIL (attempt 4)
+[ledger] 0x67d300 SaveGame::Start -> COMPILE_FAIL (attempt 4)
+[ledger] 0x741970 UnitClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6fdd50 TechnoClass::FireWeapon -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6691e0 Rules::ReadMiscINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x66d530 RulesClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x477db0 DynamicVectorClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41f0d0 AITriggerTypeClass::IronCurtainCharged -> COMPILE_FAIL (attempt 4)
+[ledger] 0x50b760 BuildingTypeClass::ProcessData -> COMPILE_FAIL (attempt 12)
+[ledger] 0x603f60 WOLobby_Setup -> NG (attempt 4)
+[ledger] 0x4371d0 Helper::ProcessData -> COMPILE_FAIL (attempt 13)
+[ledger] 0x79da90 ExtractChatCommand -> NG (attempt 4)
+[ledger] 0x770f10 ObjectClass::sub_770F10 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x635490 ObjectClass::Render_Render_635490 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x410800 AbstractTypeClass::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7714b0 TechnoClass::TerritorySelectWDT_Delete -> NG (attempt 4)
+[ledger] 0x788800 LeaveChannelExWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x511850 HouseTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p21\batch_report.json

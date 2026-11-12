@@ -4131,7 +4131,7 @@
   "this_as_id": false
  },
  "0x410800": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -5927,7 +5927,7 @@
   "status": "NG"
  },
  "0x41f0d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -8911,7 +8911,7 @@
   "status": "OK"
  },
  "0x4371d0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -12867,7 +12867,7 @@
   "this_as_id": false
  },
  "0x477db0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29631,7 +29631,7 @@
   "this_as_id": false
  },
  "0x50b760": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -31037,14 +31037,14 @@
   "this_as_id": false
  },
  "0x511850": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseTypeClass::LoadFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseTypeClass::LoadFromINI",
-  "rule_violations": 79,
+  "rule_violations": 77,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -32829,7 +32829,7 @@
   "this_as_id": false
  },
  "0x530460": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51731,14 +51731,14 @@
   "this_as_id": false
  },
  "0x603f60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+4 mov esi, ecx",
   "name": "WOLobby_Setup",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "WOLobby_Setup",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x606740": {
@@ -53934,7 +53934,7 @@
   "this_as_id": false
  },
  "0x635490": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -59023,7 +59023,7 @@
   "this_as_id": false
  },
  "0x6691e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -59035,7 +59035,7 @@
   "this_as_id": false
  },
  "0x66d530": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -59586,7 +59586,7 @@
   "this_as_id": false
  },
  "0x67d300": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71269,7 +71269,7 @@
   "this_as_id": false
  },
  "0x6f8df0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71336,7 +71336,7 @@
   "this_as_id": false
  },
  "0x6fdd50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -77895,7 +77895,7 @@
   "this_as_id": false
  },
  "0x741970": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -83974,7 +83974,7 @@
   "this_as_id": false
  },
  "0x770f10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83998,15 +83998,15 @@
   "this_as_id": false
  },
  "0x7714b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x10",
   "name": "TechnoClass::TerritorySelectWDT_Delete",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TerritorySelectWDT_Delete",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x771780": {
@@ -85656,7 +85656,7 @@
   "this_as_id": false
  },
  "0x788800": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "LeaveChannelExWOL",
@@ -85828,7 +85828,7 @@
   "this_as_id": false
  },
  "0x799ea0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "OptionsDlgProcWOL",
@@ -85862,14 +85862,14 @@
   "this_as_id": false
  },
  "0x79da90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+2 mov ebx, dword ptr [0x7e14a4]",
   "name": "ExtractChatCommand",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ExtractChatCommand",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x79db50": {

@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x530460",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x799ea0",
+  "family": "NO-ERRORS",
+  "shape": "NO-ERRORS",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6f8df0",
+  "family": "C1",
+  "shape": "C1 asm-token leak (decompile failed body)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x67d300",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x741970",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6fdd50",
+  "family": "C1",
+  "shape": "C1 asm-token leak (decompile failed body)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x6691e0",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x66d530",
+  "family": "C9",
+  "shape": "C9 short ident (param/local lost)",
+  "errfam": "C2065"
+ },
+ {
+  "addr": "0x477db0",
+  "family": "C10",
+  "shape": "C10 '?' placeholder (stale export)",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x41f0d0",
+  "family": "C10",
+  "shape": "C10 '?' placeholder (stale export)",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x50b760",
+  "family": "C10",
+  "shape": "C10 '?' placeholder (stale export)",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x603f60",
+  "family": "C11",
+  "shape": "C11 cast through pseudo-class name colliding with fn",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x4371d0",
+  "family": "C10",
+  "shape": "C10 '?' placeholder (stale export)",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x79da90",
+  "family": "C11",
+  "shape": "C11 cast through pseudo-class name colliding with fn",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x770f10",
+  "family": "C11",
+  "shape": "C11 cast through pseudo-class name colliding with fn",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x635490",
+  "family": "C11",
+  "shape": "C11 cast through pseudo-class name colliding with fn",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x410800",
+  "family": "C12",
+  "shape": "C12 class name shadowed by member name",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x7714b0",
+  "family": "C11",
+  "shape": "C11 cast through pseudo-class name colliding with fn",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x788800",
+  "family": "C11",
+  "shape": "C11 cast through pseudo-class name colliding with fn",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x511850",
+  "family": "C13",
+  "shape": "C13 cast through non-class identifier",
+  "errfam": "C2059"
+ }
+]

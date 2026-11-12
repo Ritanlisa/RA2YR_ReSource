@@ -1,0 +1,11 @@
+{
+ "addr": "0x603F60",
+ "name": "WOLobby_Setup",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x603F60",
+ "bytes_hex": "83ec0c568bf1578bfa8d4c2410e84e271b008b4424188d4c2408516a0068e90400005789442418c744241cffffffffff15a4147e008d5424108bce52e87f271b008d4c2410e8b6271b008bc65f5e83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
