@@ -1,0 +1,21 @@
+{
+ "symbol": "?InsertItem@GadgetGrid@@QAEHH@Z",
+ "sym_key": "GadgetGrid::InsertItem",
+ "size": 237,
+ "link_base": 0,
+ "bytes_hex": "51558b6c240c894c2404568b45008d4c2410575155ff90b80100008b308b55005655ff92f8020000f7c60080000075050fbffeeb0233ff85f6537c08c1fe100fbfdeeb0233db0fbe0d24030000b867666666be13000000f7e98bcac1f9038bc1c1e81f03c88bc799f7f93bc67f028bf00fbe0d28030000b867666666f7e98bca8bc3c1f9038bd15bc1ea1f03ca99f7f983f8137e05b8130000008b54240c8d04808d04868d0c408b44ca088d34ca8b4cca10390172208bd0f6c6ff750485c0752585c97e218b1603c86a00518b1256ff520884c074108b4e108b76048b018d50018911892c865f5e5d59c20400",
+ "relocs": [
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  }
+ ]
+}

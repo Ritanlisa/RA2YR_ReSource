@@ -1,0 +1,45 @@
+{
+ "symbol": "?DispatchPlayerInput@TechnoClass@@QAEDHH@Z",
+ "sym_key": "TechnoClass::DispatchPlayerInput",
+ "size": 241,
+ "link_base": 0,
+ "bytes_hex": "518b44240c5688442404508b4424108bf150e80000000084c075055e59c208008b4c24108b54240480e10081e2ff0000000bca8d442410894c24108b8eac03000050e8000000008a86de03000033c93ac17412398ea4030000750ac78628020000020000008b86d00600003888180e000075383888190e000075308b542410898ef00000000fbe05a0010000898e040100008986f80000008996fc000000898e00010000b0015e59c20800a1000000006a1d518d8868050300e8000000008986f0000000b8010000000fbe0da0010000898ef80000008b4c2410898604010000898efc0000008986000100005e59c20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?DispatchInput@FootClass@@QAEDHH@Z",
+   "sym_key": "FootClass::DispatchInput"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Set_SyncLog@FacingClass@@QAEDPAX@Z",
+   "sym_key": "FacingClass::Set_SyncLog"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

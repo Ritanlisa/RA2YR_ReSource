@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p333\part_00
+=== convert (20 addrs) ===
+[conv] 0x737ba0 TechnoClass::DispatchPlayerInput -> TechnoClass
+[conv] 0x7c94eb _fread -> _addr_7C
+[conv] 0x4135d0 GadgetGrid::RemoveItem -> GadgetGrid
+[conv] 0x6e3b60 ScriptAction::GetActionTypeInfo -> ScriptAction
+[conv] 0x5c17b0 MPCooperative::unnamed -> MPCooperative
+[conv] 0x4134a0 GadgetGrid::InsertItem -> GadgetGrid
+[conv] 0x4091c0 ReadAudioStream -> _addr_40
+[conv] 0x7da638 __ungetwc_lk -> _addr_7D
+[conv] 0x489180 ComputeTechnoClassDamageFalloff -> _addr_48
+[conv] 0x43a350 NeuronClass::NeuronClass -> NeuronClass
+[conv] 0x639cb0 BuildingClass::CheckExitPath -> BuildingClass
+[conv] 0x72e730 UI_Draw_72E730 -> UI_Draw
+[conv] 0x5868a0 ObjectClass::UpdateAreaConnectivityMap -> ObjectClass
+[conv] 0x40b180 VectorClass::Release -> VectorClass
+[conv] 0x50eee0 _VectorClass_UAngerStruct::Release -> _VectorClass_UAngerStruct
+[conv] 0x50f210 _VectorClass_UScoutStruct::Release -> _VectorClass_UScoutStruct
+[conv] 0x5d5410 _VectorClass_UAcceleratorTracker::Release -> _VectorClass_UAcceleratorTracker
+[conv] 0x431700 HouseClass::Render -> HouseClass
+[conv] 0x6b6ea0 SpawnManagerClass::Constructor -> SpawnManagerClass
+[conv] 0x408970 ObjectClass::sub_408970 -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=0
+[era] GadgetGrid               rc=2
+[era] ScriptAction             rc=0
+[era] MPCooperative            rc=2
+[era] _addr_40                 rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_48                 rc=2
+[era] NeuronClass              rc=2
+[era] BuildingClass            rc=0
+[era] UI_Draw                  rc=2
+[era] ObjectClass              rc=2
+[era] VectorClass              rc=2
+[era] _VectorClass_UAngerStruct rc=2
+[era] _VectorClass_UScoutStruct rc=2
+[era] _VectorClass_UAcceleratorTracker rc=2
+[era] HouseClass               rc=0
+[era] SpawnManagerClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x737ba0   MISMATCH         TechnoClass::DispatchPlayerInput
+[diff] 0x7c94eb   MISMATCH         _fread
+[diff] 0x4134a0   MISMATCH         GadgetGrid::InsertItem
+[diff] 0x6e3b60   MISMATCH         ScriptAction::GetActionTypeInfo
+[diff] 0x639cb0   MISMATCH         BuildingClass::CheckExitPath
+[diff] 0x431700   MISMATCH         HouseClass::Render
+[diff] 0x6b6ea0   MISMATCH         SpawnManagerClass::Constructor
+[ledger] 0x737ba0 TechnoClass::DispatchPlayerInput -> NG (attempt 1)
+[ledger] 0x7c94eb _fread -> NG (attempt 1)
+[ledger] 0x4135d0 GadgetGrid::RemoveItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e3b60 ScriptAction::GetActionTypeInfo -> NG (attempt 1)
+[ledger] 0x5c17b0 MPCooperative::unnamed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4134a0 GadgetGrid::InsertItem -> NG (attempt 1)
+[ledger] 0x4091c0 ReadAudioStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7da638 __ungetwc_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x489180 ComputeTechnoClassDamageFalloff -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43a350 NeuronClass::NeuronClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x639cb0 BuildingClass::CheckExitPath -> NG (attempt 1)
+[ledger] 0x72e730 UI_Draw_72E730 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5868a0 ObjectClass::UpdateAreaConnectivityMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40b180 VectorClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50eee0 _VectorClass_UAngerStruct::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f210 _VectorClass_UScoutStruct::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d5410 _VectorClass_UAcceleratorTracker::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x431700 HouseClass::Render -> NG (attempt 1)
+[ledger] 0x6b6ea0 SpawnManagerClass::Constructor -> NG (attempt 1)
+[ledger] 0x408970 ObjectClass::sub_408970 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "regalloc": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p333\batch_report.json

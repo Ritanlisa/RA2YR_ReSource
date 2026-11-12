@@ -1,0 +1,99 @@
+{
+ "symbol": "?Constructor@SpawnManagerClass@@QAEHXZ",
+ "sym_key": "SpawnManagerClass::Constructor",
+ "size": 216,
+ "link_base": 0,
+ "bytes_hex": "515356578bf1e80000000033db8d7e3853538bcfe800000000891fc7464c0a000000895e480fbe05a0010000894650895e580fbe0da00100008b44240c894e5c895e64891e895e04895e08895e0c895e24895e28895e2c0fbe15a0010000895650894654895e58895e68895e6c895e700fbe0da0010000894e5c894660895e64a100000000390500000000722c381d0000000075043bc375388b0d000000003bcb762e8b150000000003c853516800000000ff520884c074188b0d000000008bc141890d000000008b0d000000008934818bc65f5e5b59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractClass@@QAEPAV1@XZ",
+   "sym_key": "AbstractClass::Constructor"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Constructor@SpawnControlVector@@QAEPAV1@HH@Z",
+   "sym_key": "SpawnControlVector::Constructor"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B888@@3IA",
+   "sym_key": "DataGlobal_B0B888"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B890@@3IA",
+   "sym_key": "DataGlobal_B0B890"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B88D@@3EA",
+   "sym_key": "DataGlobal_B0B88D"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B894@@3IA",
+   "sym_key": "DataGlobal_B0B894"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?SpawnManagerClass_Array@@3IA",
+   "sym_key": "SpawnManagerClass_Array"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?SpawnManagerClass_Array@@3IA",
+   "sym_key": "SpawnManagerClass_Array"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B890@@3IA",
+   "sym_key": "DataGlobal_B0B890"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B890@@3IA",
+   "sym_key": "DataGlobal_B0B890"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B884@@3IA",
+   "sym_key": "DataGlobal_B0B884"
+  }
+ ]
+}
