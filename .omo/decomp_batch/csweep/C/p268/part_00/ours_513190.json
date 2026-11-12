@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@UnitTypeVector@@QAEPAV1@HH@Z",
+ "sym_key": "UnitTypeVector::Construct",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "568b4424088bf18b4e0cc746040000000080e10189460883c901c70600000000894e0cc6460c0085c074248b4c240c85c97405894e04eb178d14850000000052e80000000083c404894604c6460c01c70600000000c746140a000000c746100000000033c05ec20800",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?TrimLeft@String@@QAEHPAPBD@Z",
+ "sym_key": "String::TrimLeft",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "5355568b742410578be933db8b550085d274108bfa83c9ff33c033f6f2aef7d149eb0233c93bd97d268b4424148b0085c07505b8000000000fbe0c1a5150e8000000008bf083c40885f6740343ebbd85db7e14536a008bcde8000000005f5e5d5b0fbec0c204008bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Erase@String@@QAEDHH@Z",
+   "sym_key": "String::Erase"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x74D760",
+ "name": "CleanupVeinholeSystem",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74D760",
+ "bytes_hex": "a1a0d2b100535633db8d70ff3bf37c178b0d94d2b1008b0cb13bcb74078b116a01ff52204e79e9a194d2b100891da0d2b1003bc37417381d9dd2b100740f50e899b3070083c404891d94d2b100881d9dd2b100891d98d2b1005e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

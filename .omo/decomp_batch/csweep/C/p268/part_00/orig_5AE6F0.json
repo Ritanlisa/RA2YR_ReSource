@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AE6F0",
+ "name": "Matrix3D::Constructor",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AE6F0",
+ "bytes_hex": "568bf133c0b90000803f89460489460889460c89461089461889461c89462089462489462c8b442408890e894e14894e28508bcee8770a00008b4c240c518bcee82b080000d9442408518bced9e0d91c24e85a0a00008bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

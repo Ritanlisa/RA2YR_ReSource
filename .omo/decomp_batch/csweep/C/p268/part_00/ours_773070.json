@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetWeaponRange@TechnoClass@@QAEHPAX@Z",
+ "sym_key": "TechnoClass::GetWeaponRange",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "8b81a000000083ec0885c074438b90dc02000085d275398a909502000084d27407e800000000eb0ba140020000db80b8160000dd5c24008b4c24048b542400518b4c241052e80000000083c408c204008b81a800000083c408c20400",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?GetFiringDistance@RulesClass@@QAENXZ",
+   "sym_key": "RulesClass::GetFiringDistance"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?ComputeScanRange@TechnoClass@@QAE_JN@Z",
+   "sym_key": "TechnoClass::ComputeScanRange"
+  }
+ ]
+}

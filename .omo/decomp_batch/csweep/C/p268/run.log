@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p268\part_00
+=== convert (20 addrs) ===
+[conv] 0x773070 TechnoClass::GetWeaponRange -> TechnoClass
+[conv] 0x7b51d0 String::TrimLeft -> String
+[conv] 0x47aa50 sub_47AA50 -> _addr_47
+[conv] 0x74d760 ObjectClass::CleanupVeinholeSystem -> ObjectClass
+[conv] 0x5ae6f0 Matrix3D::Constructor -> Matrix3D
+[conv] 0x7d7dc0 __fltout2 -> _addr_7D
+[conv] 0x6f32d0 TechnoClass::CanInitiateSell -> TechnoClass
+[conv] 0x471f90 ObjectClass::RemoveFromPointerList -> ObjectClass
+[conv] 0x49ecd0 CampaignClass::Constructor -> CampaignClass
+[conv] 0x512dc0 InfantryTypeVector::Construct -> InfantryTypeVector
+[conv] 0x513190 UnitTypeVector::Construct -> UnitTypeVector
+[conv] 0x513560 HouseTypeClass::readDefaultAlly -> HouseTypeClass
+[conv] 0x525250 DynamicVectorClass::AnimTypeConstructor -> DynamicVectorClass
+[conv] 0x5ac900 DynamicVectorClass::BuildingTypeConstructor -> DynamicVectorClass
+[conv] 0x5d86d0 GameInit::InitMultiplayerModes -> GameInit
+[conv] 0x6067a0 SkirmishMapGen::LookupDialogHash -> SkirmishMapGen
+[conv] 0x60d2c0 UI_Helper_60D2C0 -> UI_Helper
+[conv] 0x63dec0 VectorClass::ExecuteActionPlanManager_Helper_63DEC0 -> VectorClass
+[conv] 0x67ac70 DynamicVector::Constructor_VoxelAnim -> DynamicVector
+[conv] 0x67aff0 SmudgeTypeVector::Construct -> SmudgeTypeVector
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] String                   rc=0
+[era] _addr_47                 rc=2
+[era] ObjectClass              rc=2
+[era] Matrix3D                 rc=0
+[era] _addr_7D                 rc=2
+[era] CampaignClass            rc=0
+[era] InfantryTypeVector       rc=0
+[era] UnitTypeVector           rc=0
+[era] HouseTypeClass           rc=0
+[era] DynamicVectorClass       rc=2
+[era] GameInit                 rc=0
+[era] SkirmishMapGen           rc=2
+[era] UI_Helper                rc=2
+[era] VectorClass              rc=0
+[era] DynamicVector            rc=0
+[era] SmudgeTypeVector         rc=0
+=== diffasm byte-compare ===
+[diff] 0x773070   MISMATCH         TechnoClass::GetWeaponRange
+[diff] 0x6f32d0   MISMATCH         TechnoClass::CanInitiateSell
+[diff] 0x7b51d0   MISMATCH         String::TrimLeft
+[diff] 0x74d760   MISMATCH         ObjectClass::CleanupVeinholeSystem
+[diff] 0x5ae6f0   MISMATCH         Matrix3D::Constructor
+[diff] 0x49ecd0   MISMATCH         CampaignClass::Constructor
+[diff] 0x512dc0   MISMATCH         InfantryTypeVector::Construct
+[diff] 0x513190   MISMATCH         UnitTypeVector::Construct
+[diff] 0x513560   MISMATCH         HouseTypeClass::readDefaultAlly
+[diff] 0x5d86d0   MISMATCH         GameInit::InitMultiplayerModes
+[diff] 0x63dec0   MISMATCH         VectorClass::ExecuteActionPlanManager_Helper_63DEC0
+[diff] 0x67ac70   MISMATCH         DynamicVector::Constructor_VoxelAnim
+[diff] 0x67aff0   MISMATCH         SmudgeTypeVector::Construct
+[ledger] 0x773070 TechnoClass::GetWeaponRange -> NG (attempt 1)
+[ledger] 0x7b51d0 String::TrimLeft -> NG (attempt 1)
+[ledger] 0x47aa50 sub_47AA50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74d760 ObjectClass::CleanupVeinholeSystem -> NG (attempt 1)
+[ledger] 0x5ae6f0 Matrix3D::Constructor -> NG (attempt 1)
+[ledger] 0x7d7dc0 __fltout2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f32d0 TechnoClass::CanInitiateSell -> NG (attempt 1)
+[ledger] 0x471f90 ObjectClass::RemoveFromPointerList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ecd0 CampaignClass::Constructor -> NG (attempt 1)
+[ledger] 0x512dc0 InfantryTypeVector::Construct -> NG (attempt 1)
+[ledger] 0x513190 UnitTypeVector::Construct -> NG (attempt 1)
+[ledger] 0x513560 HouseTypeClass::readDefaultAlly -> NG (attempt 1)
+[ledger] 0x525250 DynamicVectorClass::AnimTypeConstructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ac900 DynamicVectorClass::BuildingTypeConstructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d86d0 GameInit::InitMultiplayerModes -> NG (attempt 1)
+[ledger] 0x6067a0 SkirmishMapGen::LookupDialogHash -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60d2c0 UI_Helper_60D2C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63dec0 VectorClass::ExecuteActionPlanManager_Helper_63DEC0 -> NG (attempt 1)
+[ledger] 0x67ac70 DynamicVector::Constructor_VoxelAnim -> NG (attempt 1)
+[ledger] 0x67aff0 SmudgeTypeVector::Construct -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 5,
+  "extern_reloc": 1,
+  "const_fold": 4,
+  "branch_order": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p268\batch_report.json

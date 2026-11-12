@@ -1,0 +1,15 @@
+{
+ "symbol": "?readDefaultAlly@HouseTypeClass@@QAEPAIHH@Z",
+ "sym_key": "HouseTypeClass::readDefaultAlly",
+ "size": 111,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b4e0cc746040000000081e10100ffff89460883c901c7060000000085c0894e0c742b8b4c240c85c97405894e04eb1e8d14850000000052e8000000008946048b460c83c40480e4000c0189460cc70600000000c746140a000000c74610000000008bc65ec20800",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

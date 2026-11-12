@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F32D0",
+ "name": "TechnoClass::CanInitiateSell",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F32D0",
+ "bytes_hex": "568bf18b466c85c07e4e8a868100000084c075448a86d503000084c0743a8b06ff502c83f80674308a861b04000084c074268b168bceff92840000008a883002000084c974128b8e1c020000e8cf83e1ff84c00f95c05ec332c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

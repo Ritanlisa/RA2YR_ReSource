@@ -1,0 +1,11 @@
+{
+ "addr": "0x773070",
+ "name": "TechnoClass::GetWeaponRange",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x773070",
+ "bytes_hex": "8b81a000000083ec0885c074438b90dc02000085d275398a889502000084c97407e85a7cd1ffeb0ba1e0718800db80b8160000dd5c24008b4c24048b542400518b4c241052e8d67ad1ff83c408c204008b81a800000083c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
