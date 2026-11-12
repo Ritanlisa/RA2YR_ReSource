@@ -1104,6 +1104,19 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-11-12 (BM)**: 字节匹配反馈通道——反编译产线的 MATCH 函数回填为求解器 strict 证据
+  - **数据**：账本 8,516 判定 / 2,654 OK → clean 门（MATCH + `clean=true` + `rule_violations=0` + `this_as_id=false`）**1,939** →
+    工件复核（part_report 自身复核 MATCH/clean/0 违规）**1,804** → 三通道候选 1,589（owner 514 / member 903 / sig 172）→
+    去重 347 + 冲突 33 + 修复轮 10 + vocab 不可达 29 → **1,170**（owner 503 / member 543 / sig 124）。
+  - **覆盖率（同状态实测）**：`42,565/89,813 = 47.4%` → **`43,088/90,463 = 47.6%`**（unique **+523**、受约束 **+650**、
+    K_min 841→873、`empty_clusters` **7,206 不变**、conflicts 0）；既有簇 295 个 wide/narrow→unique，70 个 unique 因 C10
+    中和集合漂移失去唯一（非 BM 放宽掩码）。任务书 43,057/85,710（50.2%）是旧 solver/anchors 口径，非 like-for-like。
+  - **证明强度**：bm-member = width-pinned（强，指令宽度钉死）；bm-owner = ledger-attribution（中，类名不参与 codegen）；
+    bm-sig = codegen-consistent（中，**裸 int 族全剔**——4B 标量 vs 任意 4B 指针不可区分，实测 243/478 emitted 标量参数被二进制族否证；
+    `return ... this` 的返回类型是 cast 伪影，403 条剔除，否则 T:/RET: 同簇必空）。
+  - **接线**：`minclass_solver.py` FAMILIES/FAMILY_DESC/loader `BM`（strict）+ `anchors/byte_match_types.json`（1,170 recs，
+    含 43 条冲突台账与 10 条修复日志）。报告 = `docs/report_bm.md`；生成器 `.omo/agents/bm/s7_build.py` / `s27_repair.py`。
+
 - **2026-11-12 (CW4)**: 形态层自动试错引擎 + if/else 方向规则回填（A 层 2,608 NG 普查）
   - **引擎**：`tools/decomp_sys/cw4_variants.py`（变体库）+ `run_cw4.py`（选择/试错/逐 part 提交/报告）。
     变体 = 等价源形候选（if/else 4 路、语句/短路交换、常量表达式、微形态、循环、signed 比较），

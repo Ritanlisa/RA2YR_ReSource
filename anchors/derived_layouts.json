@@ -141,9 +141,9 @@
 ]
 },
 "?$VectorClass@PAVTechnoClass@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 10,
+"member_count": 5,
+"extent": 14,
+"clusters": 9,
 "members": [
 [
 0,
@@ -164,14 +164,6 @@
 [
 13,
 1
-],
-[
-16,
-4
-],
-[
-20,
-4
 ]
 ]
 },
@@ -201,7 +193,7 @@
 "AbstractClass": {
 "member_count": 9,
 "extent": 33,
-"clusters": 23,
+"clusters": 22,
 "members": [
 [
 0,
@@ -1984,7 +1976,7 @@
 "AnimFile": {
 "member_count": 9,
 "extent": 3604,
-"clusters": 8,
+"clusters": 9,
 "members": [
 [
 0,
@@ -2165,7 +2157,7 @@
 "?$VectorClass@VCell@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -2385,7 +2377,7 @@
 "?$VectorClass@PAUControlNode@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -2539,9 +2531,9 @@
 ]
 },
 "?$VectorClass@VRGBClass@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 12,
+"member_count": 5,
+"extent": 14,
+"clusters": 11,
 "members": [
 [
 0,
@@ -2562,14 +2554,6 @@
 [
 13,
 1
-],
-[
-16,
-4
-],
-[
-20,
-4
 ]
 ]
 },
@@ -2811,9 +2795,9 @@
 ]
 },
 "?$VectorClass@PAV?$DynamicVectorClass@PAD@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 10,
+"member_count": 5,
+"extent": 14,
+"clusters": 9,
 "members": [
 [
 0,
@@ -2834,14 +2818,6 @@
 [
 13,
 1
-],
-[
-16,
-4
-],
-[
-20,
-4
 ]
 ]
 },
@@ -3181,9 +3157,9 @@
 ]
 },
 "LayerClass": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
+"member_count": 5,
+"extent": 14,
+"clusters": 5,
 "members": [
 [
 0,
@@ -3204,10 +3180,6 @@
 [
 13,
 1
-],
-[
-16,
-4
 ]
 ]
 },
@@ -3598,7 +3570,7 @@
 "?$VectorClass@UDrawRecord@FoggedObjectClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 8,
 "members": [
 [
 0,
@@ -3625,7 +3597,7 @@
 "?$VectorClass@PAVAbstractClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -3828,7 +3800,7 @@
 "?$VectorClass@PAVParticleClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -3915,7 +3887,7 @@
 "?$VectorClass@PAVTagClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -4659,9 +4631,9 @@
 ]
 },
 "?$VectorClass@PBVBuildingTypeClass@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 12,
+"member_count": 5,
+"extent": 14,
+"clusters": 11,
 "members": [
 [
 0,
@@ -4682,14 +4654,6 @@
 [
 13,
 1
-],
-[
-16,
-4
-],
-[
-20,
-4
 ]
 ]
 },
@@ -4941,113 +4905,8 @@
 ]
 },
 "?$VectorClass@PBVAircraftTypeClass@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 12,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-],
-[
-20,
-4
-]
-]
-},
-"?$VectorClass@PBVUnitTypeClass@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 12,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-],
-[
-20,
-4
-]
-]
-},
-"?$VectorClass@PBVInfantryTypeClass@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 12,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-],
-[
-20,
-4
-]
-]
-},
-"?$VectorClass@PBVAnimTypeClass@@": {
-"member_count": 7,
-"extent": 24,
+"member_count": 5,
+"extent": 14,
 "clusters": 11,
 "members": [
 [
@@ -5069,14 +4928,87 @@
 [
 13,
 1
-],
+]
+]
+},
+"?$VectorClass@PBVUnitTypeClass@@": {
+"member_count": 5,
+"extent": 14,
+"clusters": 11,
+"members": [
 [
-16,
+0,
 4
 ],
 [
-20,
+4,
 4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+]
+]
+},
+"?$VectorClass@PBVInfantryTypeClass@@": {
+"member_count": 5,
+"extent": 14,
+"clusters": 11,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+]
+]
+},
+"?$VectorClass@PBVAnimTypeClass@@": {
+"member_count": 5,
+"extent": 14,
+"clusters": 8,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
 ]
 ]
 },
@@ -5136,7 +5068,7 @@
 "CommandClass": {
 "member_count": 1,
 "extent": 4,
-"clusters": 51,
+"clusters": 52,
 "members": [
 [
 0,
@@ -6061,7 +5993,7 @@
 "?$VectorClass@PAVCellClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -7735,9 +7667,9 @@
 ]
 },
 "?$VectorClass@PBVSmudgeTypeClass@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 11,
+"member_count": 5,
+"extent": 14,
+"clusters": 8,
 "members": [
 [
 0,
@@ -7758,21 +7690,13 @@
 [
 13,
 1
-],
-[
-16,
-4
-],
-[
-20,
-4
 ]
 ]
 },
 "?$VectorClass@PBVVoxelAnimTypeClass@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 11,
+"member_count": 5,
+"extent": 14,
+"clusters": 10,
 "members": [
 [
 0,
@@ -7793,14 +7717,6 @@
 [
 13,
 1
-],
-[
-16,
-4
-],
-[
-20,
-4
 ]
 ]
 },
@@ -7861,7 +7777,7 @@
 "?$VectorClass@PAUGlobalPacketType@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -7942,7 +7858,7 @@
 "?$VectorClass@VWstring@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -9451,7 +9367,7 @@
 "?$VectorClass@VWaypointClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -9697,7 +9613,7 @@
 "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -10304,16 +10220,12 @@
 ]
 },
 "UDPInterfaceClass": {
-"member_count": 8,
+"member_count": 7,
 "extent": 76,
 "clusters": 23,
 "members": [
 [
 0,
-4
-],
-[
-4,
 4
 ],
 [
@@ -10490,37 +10402,6 @@
 ],
 [
 12,
-4
-]
-]
-},
-"?$DynamicVectorClass@PAVInfantryClass@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
 4
 ]
 ]
@@ -12392,25 +12273,6 @@
 ]
 ]
 },
-"SimpleDialogControl@OwnerDraw": {
-"member_count": 3,
-"extent": 9,
-"clusters": 5,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-1
-]
-]
-},
 "?$DynamicVectorClass@PAVPlanningNodeClass@@": {
 "member_count": 6,
 "extent": 20,
@@ -12770,6 +12632,37 @@
 ]
 },
 "?$DynamicVectorClass@VCell@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$DynamicVectorClass@PAVInfantryClass@@": {
 "member_count": 6,
 "extent": 20,
 "clusters": 4,
@@ -14654,37 +14547,6 @@
 ]
 },
 "?$TypeList@PBVInfantryTypeClass@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 4,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$TypeList@PBVAnimTypeClass@@": {
 "member_count": 6,
 "extent": 20,
 "clusters": 4,
@@ -17695,33 +17557,6 @@
 ],
 [
 76,
-4
-]
-]
-},
-"?$TypeList@H": {
-"member_count": 5,
-"extent": 20,
-"clusters": 3,
-"members": [
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
 4
 ]
 ]
@@ -23692,7 +23527,7 @@
 ]
 },
 "MouseClass": {
-"member_count": 27,
+"member_count": 26,
 "extent": 332,
 "clusters": 12,
 "members": [
@@ -23758,10 +23593,6 @@
 ],
 [
 256,
-4
-],
-[
-260,
 4
 ],
 [
@@ -23987,32 +23818,12 @@
 ]
 },
 "TabClass": {
-"member_count": 6,
-"extent": 220,
+"member_count": 1,
+"extent": 4,
 "clusters": 11,
 "members": [
 [
 0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-24,
-4
-],
-[
-216,
 4
 ]
 ]
@@ -25560,6 +25371,25 @@
 [
 8,
 4
+]
+]
+},
+"SimpleDialogControl@OwnerDraw": {
+"member_count": 3,
+"extent": 9,
+"clusters": 1,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+1
 ]
 ]
 },
