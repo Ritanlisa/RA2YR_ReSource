@@ -1,0 +1,27 @@
+{
+ "symbol": "?ProcessExpansion@VeinholeMonsterClass@@QAEHHHHHHHH@Z",
+ "sym_key": "VeinholeMonsterClass::ProcessExpansion",
+ "size": 128,
+ "link_base": 0,
+ "bytes_hex": "5156578bf1e8000000008bf885ff75065f5e59c21c008d47fc85c0751f8b5424088bce22d0c786cc00000003000000e8000000008bc75f5e59c21c0083f801750b5fb8050000005e59c21c008b542408c786cc000000020000008b86ec0000008b0d0000000089088bc78996f0000000c786f4000000780000005f5e59c21c00",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?CreateDestructionEffect@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::CreateDestructionEffect"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

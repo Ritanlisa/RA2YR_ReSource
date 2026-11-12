@@ -1,0 +1,75 @@
+{
+ "symbol": "?WOLobby_Load@@YADXZ",
+ "sym_key": "Unnamed::WOLobby_Load",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c0753d813d000000002003000075158b0d00000000ba00000000e800000000a3000000008b0d000000006800000000ba00000000e800000000c6050000000001c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FD51@@3EA",
+   "sym_key": "DataGlobal_B0FD51"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844DBC@@3PAXA",
+   "sym_key": "DataGlobal_844DBC"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FD50@@3EA",
+   "sym_key": "DataGlobal_B0FD50"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FB2C@@3IA",
+   "sym_key": "DataGlobal_B0FB2C"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844DC0@@3PAXA",
+   "sym_key": "DataGlobal_844DC0"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FD58@@3IA",
+   "sym_key": "DataGlobal_B0FD58"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FD54@@3IA",
+   "sym_key": "DataGlobal_B0FD54"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?LoadPaletteSimple@@YIHPAX00@Z",
+   "sym_key": "LoadPaletteSimple"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FD51@@3EA",
+   "sym_key": "DataGlobal_B0FD51"
+  }
+ ]
+}

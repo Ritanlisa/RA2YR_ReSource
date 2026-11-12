@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x6edb50 TeamClass::AssignAttackTarget -> TeamClass
+[conv] 0x6ef610 TeamClass::PlayMemberAnimation -> TeamClass
+[conv] 0x6f1f70 TeamTypeClass::FindFirstInstance -> TeamTypeClass
+[conv] 0x6f7970 TechnoClass::CheckCellPassable3 -> TechnoClass
+[conv] 0x70ece0 TechnoClass::Fire -> TechnoClass
+[conv] 0x711ae0 TechnoTypeClass::DTOR -> TechnoTypeClass
+[conv] 0x71c930 TerrainClass::ApplyCellModifications -> TerrainClass
+[conv] 0x7248c0 TooltipClass::GetText -> TooltipClass
+[conv] 0x724ab0 ToolTipManager::release -> ToolTipManager
+[conv] 0x72bac0 WOLobby_Load -> WOLobby
+[conv] 0x72d120 UI_Show -> UI
+[conv] 0x731d00 Selection::SetCurrent -> Selection
+[conv] 0x736579 InfantryClass::UpdateBehavior -> InfantryClass
+[conv] 0x736d50 TechnoClass::IsC4AnimationActive -> TechnoClass
+[conv] 0x74d5d0 VeinholeMonsterClass::ProcessExpansion -> VeinholeMonsterClass
+[conv] 0x74d670 ObjectClass::IsCellSuitableForPlacement -> ObjectClass
+[conv] 0x74f960 GameClass::ReadVersionFile -> GameClass
+[conv] 0x763a50 Waypoint::FindCell -> Waypoint
+[conv] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> ReferenceCounted
+[conv] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamClass                rc=2
+[era] TeamTypeClass            rc=2
+[era] TechnoClass              rc=2
+[era] TechnoTypeClass          rc=2
+[era] TerrainClass             rc=0
+[era] TooltipClass             rc=2
+[era] ToolTipManager           rc=2
+[era] WOLobby                  rc=0
+[era] UI                       rc=0
+[era] Selection                rc=2
+[era] InfantryClass            rc=2
+[era] VeinholeMonsterClass     rc=0
+[era] ObjectClass              rc=2
+[era] GameClass                rc=2
+[era] Waypoint                 rc=0
+[era] ReferenceCounted         rc=2
+=== diffasm byte-compare ===
+[diff] 0x6f7970   MISMATCH         TechnoClass::CheckCellPassable3
+[diff] 0x736d50   MISMATCH         TechnoClass::IsC4AnimationActive
+[diff] 0x71c930   MISMATCH         TerrainClass::ApplyCellModifications
+[diff] 0x72bac0   MISMATCH         WOLobby_Load
+[diff] 0x72d120   MISMATCH         UI_Show
+[diff] 0x74d5d0   MISMATCH         VeinholeMonsterClass::ProcessExpansion
+[diff] 0x74d670   MISMATCH         ObjectClass::IsCellSuitableForPlacement
+[diff] 0x763a50   MISMATCH         Waypoint::FindCell
+[ledger] 0x6edb50 TeamClass::AssignAttackTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ef610 TeamClass::PlayMemberAnimation -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6f1f70 TeamTypeClass::FindFirstInstance -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f7970 TechnoClass::CheckCellPassable3 -> NG (attempt 4)
+[ledger] 0x70ece0 TechnoClass::Fire -> COMPILE_FAIL (attempt 2)
+[ledger] 0x711ae0 TechnoTypeClass::DTOR -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71c930 TerrainClass::ApplyCellModifications -> NG (attempt 4)
+[ledger] 0x7248c0 TooltipClass::GetText -> COMPILE_FAIL (attempt 14)
+[ledger] 0x724ab0 ToolTipManager::release -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72bac0 WOLobby_Load -> NG (attempt 5)
+[ledger] 0x72d120 UI_Show -> NG (attempt 5)
+[ledger] 0x731d00 Selection::SetCurrent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x736579 InfantryClass::UpdateBehavior -> COMPILE_FAIL (attempt 4)
+[ledger] 0x736d50 TechnoClass::IsC4AnimationActive -> NG (attempt 12)
+[ledger] 0x74d5d0 VeinholeMonsterClass::ProcessExpansion -> NG (attempt 7)
+[ledger] 0x74d670 ObjectClass::IsCellSuitableForPlacement -> NG (attempt 14)
+[ledger] 0x74f960 GameClass::ReadVersionFile -> COMPILE_FAIL (attempt 14)
+[ledger] 0x763a50 Waypoint::FindCell -> NG (attempt 10)
+[ledger] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> COMPILE_FAIL (attempt 6)
+[ledger] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 1,
+  "extern_reloc": 2,
+  "branch_polarity": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p08\batch_report.json

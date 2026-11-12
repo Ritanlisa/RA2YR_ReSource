@@ -1,0 +1,105 @@
+{
+ "symbol": "?ApplyCellModifications@TerrainClass@@QAEDXZ",
+ "sym_key": "TerrainClass::ApplyCellModifications",
+ "size": 319,
+ "link_base": 0,
+ "bytes_hex": "83ec1853568bf1897424108a868100000084c00f85b30000008b06558d4c2410575156ff90b80100008b1833ff8beb8bf3c1fd108bc781e600ffffff83e007b9f80100008a807a0000008ad002d381e2ff000000c0f8100bf203c533c625ff00000033f08d4424145089742418e8000000008a882201000047fec983ff088888220100007cae8b4424188b889c0000008b90a00000008b80a4000000894c241c8d4c241c8954242051b9f801000089442428e8000000008a88240100008b74241880e1bf5f8888240100005d8b168d44240c5056ff92b80100008b08894c24088bcee8000000008d542408b9f8010000528ad8e8000000006aff8bc8e800000000a10000000085c0752d8d442408b9f801000050e8000000008d4c240851b9f8010000e8000000008d542408b9f801000052e8000000008ac35e5b83c418c3",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?Undeploy@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Undeploy"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?AnnounceUpgrade@House@@QAEXH@Z",
+   "sym_key": "House::AnnounceUpgrade"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "?SetRadar@Cell@@QAEDPAX@Z",
+   "sym_key": "Cell::SetRadar"
+  },
+  {
+   "off": 287,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 292,
+   "type": "REL32",
+   "sym": "?Update@Radar@@QAEXPAX@Z",
+   "sym_key": "Radar::Update"
+  },
+  {
+   "off": 301,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "?AddUpgrade@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::AddUpgrade"
+  }
+ ]
+}

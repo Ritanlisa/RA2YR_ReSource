@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindCell@Waypoint@@QAEDPAH@Z",
+ "sym_key": "Waypoint::FindCell",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "8b4138535533ed565785c07e578b5c24148b712c8b039981e2ff00000003c28bf8c1ff088b06c1e808663bc7751a8b43049981e2ff00000003c28b5604c1f808c1ea08663bd0740d8b4138453be87d1483c60cebcf5f89a9900000005e5db0015bc204005f5e5d32c05bc20400",
+ "relocs": []
+}

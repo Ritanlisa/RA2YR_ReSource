@@ -1,0 +1,21 @@
+{
+ "symbol": "?CheckCellPassable3@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::CheckCellPassable3",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "518b442400568bf15750b9f80100008b3ee8000000008b4c2408515056ff97a80300005f5e59c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  }
+ ]
+}

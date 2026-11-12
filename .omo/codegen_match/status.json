@@ -71535,14 +71535,14 @@
   "this_as_id": false
  },
  "0x6edb50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TeamClass::AssignAttackTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TeamClass::AssignAttackTarget",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -71616,7 +71616,7 @@
   "status": "OK"
  },
  "0x6ef610": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71834,7 +71834,7 @@
   "this_as_id": false
  },
  "0x6f1f70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -72125,15 +72125,15 @@
   "this_as_id": false
  },
  "0x6f7970": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "TechnoClass::CheckCellPassable3",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TechnoClass::CheckCellPassable3",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6f79a0": {
@@ -72810,7 +72810,7 @@
   "this_as_id": false
  },
  "0x70ece0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73183,14 +73183,14 @@
   "this_as_id": false
  },
  "0x711ae0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TechnoTypeClass::DTOR",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TechnoTypeClass::DTOR",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -74149,15 +74149,15 @@
   "this_as_id": false
  },
  "0x71c930": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 push edi",
   "name": "TerrainClass::ApplyCellModifications",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TerrainClass::ApplyCellModifications",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x71d150": {
@@ -75470,7 +75470,7 @@
   "this_as_id": false
  },
  "0x7248c0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -75501,7 +75501,7 @@
   "status": "OK"
  },
  "0x724ab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77264,14 +77264,14 @@
   "this_as_id": false
  },
  "0x72bac0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+9 cmp dword ptr [0x8a00a4], 0x320",
   "name": "WOLobby_Load",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "WOLobby_Load",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x72bb90": {
@@ -77662,14 +77662,14 @@
   "this_as_id": false
  },
  "0x72d120": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+9 cmp dword ptr [0x8a00a4], 0x320",
   "name": "UI_Show",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "UI_Show",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x72d170": {
@@ -78304,7 +78304,7 @@
   "this_as_id": false
  },
  "0x731d00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -78700,7 +78700,7 @@
   "this_as_id": false
  },
  "0x736579": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -78731,15 +78731,15 @@
   "status": "NG"
  },
  "0x736d50": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+37 je 0x736daf",
   "name": "TechnoClass::IsC4AnimationActive",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "TechnoClass::IsC4AnimationActive",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x737180": {
@@ -79871,27 +79871,27 @@
   "this_as_id": false
  },
  "0x74d5d0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 0x1c]",
   "name": "VeinholeMonsterClass::ProcessExpansion",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VeinholeMonsterClass::ProcessExpansion",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x74d670": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 sub esp, 8",
   "name": "ObjectClass::IsCellSuitableForPlacement",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "ObjectClass::IsCellSuitableForPlacement",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x74de90": {
@@ -80073,7 +80073,7 @@
   "this_as_id": false
  },
  "0x74f960": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82499,11 +82499,16 @@
   "this_as_id": false
  },
  "0x763a50": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 8",
   "name": "Waypoint::FindCell",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Waypoint::FindCell",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x763c30": {
   "attempts": 2,
@@ -82770,14 +82775,14 @@
   "this_as_id": false
  },
  "0x764b90": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ReferenceCounted::CampaignConstructorWDT",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CampaignConstructorWDT",
-  "rule_violations": 8,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -84478,7 +84483,7 @@
   "this_as_id": false
  },
  "0x76e2f0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

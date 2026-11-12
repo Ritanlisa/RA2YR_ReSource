@@ -1,0 +1,33 @@
+{
+ "symbol": "?IsC4AnimationActive@TechnoClass@@QAE_NXZ",
+ "sym_key": "TechnoClass::IsC4AnimationActive",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf18b86c40600008a88120e000084c97407b0015e83c40cc38b800404000085c0746f8a88c416000084c974658b8e1c020000e80000000084c075568b86b402000085c0744c8b480483c00450ff510c83f801753d33c08a869c0000008b10895424048b4804894c24088b50088d442404b9f80100005089542410e8000000008bc8e800000000f6d81bc05ef7d883c40cc332c05e83c40cc3",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?CheckC4Active@BuildingClass@@QAEDXZ",
+   "sym_key": "BuildingClass::CheckC4Active"
+  }
+ ]
+}

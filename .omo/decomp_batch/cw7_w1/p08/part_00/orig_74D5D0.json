@@ -1,0 +1,11 @@
+{
+ "addr": "0x74D5D0",
+ "name": "VeinholeMonsterClass::ProcessExpansion",
+ "size": 154,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74D5D0",
+ "bytes_hex": "8b44241c8b54241483ec0c568bf18b4c242857508b442428518b4c2428528b542428508b4424285152508bcee88f7deaff8bf883e800745883e80474404874308b54240cc786cc00000002000000a184eda80081c6ec000000b97800000089068bc75f895604894e085e83c40cc21c005fb8050000005e83c40cc21c0032d28bcec786cc00000003000000e87082fdff8bc75f5e83c40cc21c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
