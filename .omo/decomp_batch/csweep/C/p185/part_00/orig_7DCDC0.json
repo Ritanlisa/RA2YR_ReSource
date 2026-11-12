@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DCDC0",
+ "name": "ThrowErrorCOM_Helper",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DCDC0",
+ "bytes_hex": "8b442404568bf183660c008946048b44240cc70698a47f0085c0894608740d807c24100074068b0850ff51048bc65ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

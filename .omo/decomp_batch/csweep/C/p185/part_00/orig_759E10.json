@@ -1,0 +1,11 @@
+{
+ "addr": "0x759E10",
+ "name": "AbstractClass::processConstruction",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x759E10",
+ "bytes_hex": "568bf18a861405000084c0741c8a865005000084c075128b8e000200006a00ba02000000e8c78e0600c68650050000015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

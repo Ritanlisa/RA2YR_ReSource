@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p185\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f7930 TechnoClass::CheckCellPassable -> TechnoClass
+[conv] 0x4e0950 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::ddtor -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x50fd70 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::ddtor -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x53e730 IsMessageDialog -> _addr_53
+[conv] 0x6e4360 TActionClass::executeSpyPlaneAction -> TActionClass
+[conv] 0x6e43a0 TActionClass::executeChronoSphereAction -> TActionClass
+[conv] 0x6f2400 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::ddtor -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x759e10 AbstractClass::processConstruction -> AbstractClass
+[conv] 0x764220 VectorClass::processSpecialAbility -> VectorClass
+[conv] 0x7b6780 ObjectClass::String_Helper -> ObjectClass
+[conv] 0x4263d0 ObjectClass::GetDrawPosition -> ObjectClass
+[conv] 0x494d50 _BlitTransXlatAlphaZRead_G::GetSize -> _BlitTransXlatAlphaZRead_G
+[conv] 0x541370 Network::Send -> Network
+[conv] 0x541480 Network::SendPacketThunk2 -> Network
+[conv] 0x6907a0 ScoreFontClass::Release -> ScoreFontClass
+[conv] 0x6c9850 Straw::Dtor -> Straw
+[conv] 0x7dcdc0 _com_error::ThrowErrorCOM_Helper -> _com_error
+[conv] 0x72e820 Render_Draw -> Render
+[conv] 0x744600 UnitClass::Write -> UnitClass
+[conv] 0x7cbcaf __itow -> _addr_7C
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] _addr_53                 rc=0
+[era] TActionClass             rc=0
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] AbstractClass            rc=0
+[era] VectorClass              rc=0
+[era] ObjectClass              rc=2
+[era] _BlitTransXlatAlphaZRead_G rc=0
+[era] Network                  rc=2
+[era] ScoreFontClass           rc=2
+[era] Straw                    rc=0
+[era] _com_error               rc=0
+[era] Render                   rc=0
+[era] UnitClass                rc=2
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6f7930   MISMATCH         TechnoClass::CheckCellPassable
+[diff] 0x4e0950   MISMATCH         _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::ddtor
+[diff] 0x50fd70   MISMATCH         _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::ddtor
+[diff] 0x53e730   MISMATCH         IsMessageDialog
+[diff] 0x6e4360   MISMATCH         TActionClass::executeSpyPlaneAction
+[diff] 0x6e43a0   MISMATCH         TActionClass::executeChronoSphereAction
+[diff] 0x6f2400   MISMATCH         _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::ddtor
+[diff] 0x759e10   MATCH            AbstractClass::processConstruction
+[diff] 0x764220   MISMATCH         VectorClass::processSpecialAbility
+[diff] 0x4263d0   MISMATCH         ObjectClass::GetDrawPosition
+[diff] 0x494d50   MATCH            _BlitTransXlatAlphaZRead_G::GetSize
+[diff] 0x6c9850   MISMATCH         Straw::Dtor
+[diff] 0x7dcdc0   MISMATCH         _com_error::ThrowErrorCOM_Helper
+[diff] 0x72e820   MATCH            Render_Draw
+[ledger] 0x6f7930 TechnoClass::CheckCellPassable -> NG (attempt 1)
+[ledger] 0x4e0950 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::ddtor -> NG (attempt 1)
+[ledger] 0x50fd70 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x53e730 IsMessageDialog -> NG (attempt 1)
+[ledger] 0x6e4360 TActionClass::executeSpyPlaneAction -> NG (attempt 1)
+[ledger] 0x6e43a0 TActionClass::executeChronoSphereAction -> NG (attempt 1)
+[ledger] 0x6f2400 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x759e10 AbstractClass::processConstruction -> OK (attempt 1)
+[ledger] 0x764220 VectorClass::processSpecialAbility -> NG (attempt 1)
+[ledger] 0x7b6780 ObjectClass::String_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4263d0 ObjectClass::GetDrawPosition -> NG (attempt 1)
+[ledger] 0x494d50 _BlitTransXlatAlphaZRead_G::GetSize -> OK (attempt 1)
+[ledger] 0x541370 Network::Send -> COMPILE_FAIL (attempt 1)
+[ledger] 0x541480 Network::SendPacketThunk2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6907a0 ScoreFontClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c9850 Straw::Dtor -> NG (attempt 1)
+[ledger] 0x7dcdc0 _com_error::ThrowErrorCOM_Helper -> NG (attempt 1)
+[ledger] 0x72e820 Render_Draw -> OK (attempt 1)
+[ledger] 0x744600 UnitClass::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cbcaf __itow -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "MATCH": 3,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "regalloc": 3,
+  "signedness": 2,
+  "width_mismatch": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 21.4,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p185\batch_report.json

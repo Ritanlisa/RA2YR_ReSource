@@ -1,0 +1,11 @@
+{
+ "addr": "0x53E730",
+ "name": "IsMessageDialog",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53E730",
+ "bytes_hex": "538b5c24085556578b7c24188bea8bf16a0157538bd58bcee82300000085c074ef8b4e045f5e5d83f9125b750233c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

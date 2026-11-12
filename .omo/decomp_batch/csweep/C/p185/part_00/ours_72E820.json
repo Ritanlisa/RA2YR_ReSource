@@ -1,0 +1,39 @@
+{
+ "symbol": "?Render_Draw@@YIXHPAHD@Z",
+ "sym_key": "Unnamed::Render_Draw",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b44240456578bf28bf950e8000000008b0d000000008b1500000000a1000000005152508bd68bcfe8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?RenderScoreScreen@@YIXHPAXD@Z",
+   "sym_key": "RenderScoreScreen"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA04@@3IA",
+   "sym_key": "DataGlobal_B0FA04"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_DialogControlPool@@3PAXA",
+   "sym_key": "g_DialogControlPool"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBCC@@3IA",
+   "sym_key": "DataGlobal_B0FBCC"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?UI_Draw_72E730@@YIXHPAXHHH@Z",
+   "sym_key": "UI_Draw_72E730"
+  }
+ ]
+}

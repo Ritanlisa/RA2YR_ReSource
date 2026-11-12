@@ -1,0 +1,15 @@
+{
+ "symbol": "?processConstruction@AbstractClass@@QAEDXZ",
+ "sym_key": "AbstractClass::processConstruction",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568bf18a861405000084c0741c8a865005000084c075128b8e000200006a00ba02000000e800000000c68650050000015ec3",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?ProcessAudioStreamPipeline@@YIHPAXHD@Z",
+   "sym_key": "ProcessAudioStreamPipeline"
+  }
+ ]
+}

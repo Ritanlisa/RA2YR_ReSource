@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsMessageDialog@@YIHPAUtagMSG@@PAXII@Z",
+ "sym_key": "Unnamed::IsMessageDialog",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "538b5c24085556578b7c24188bea8bf16a0157538bd58bcee8000000008bc885c974ed8b46045f83e8125ef7d81bc05d23c15bc20800",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?GameLoopMessagePump@@YIHPAX0HHH@Z",
+   "sym_key": "GameLoopMessagePump"
+  }
+ ]
+}

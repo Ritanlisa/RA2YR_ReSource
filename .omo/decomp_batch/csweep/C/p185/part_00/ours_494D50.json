@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetSize@_BlitTransXlatAlphaZRead_G@@QAEHHHHHHHHH@Z",
+ "sym_key": "_BlitTransXlatAlphaZRead_G::GetSize",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b5424208b01528b5424206a00528b542424528b542424528b542424528b542424528b542424528b54242452ff5008c22000",
+ "relocs": []
+}

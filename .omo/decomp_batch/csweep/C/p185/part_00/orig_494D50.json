@@ -1,0 +1,11 @@
+{
+ "addr": "0x494D50",
+ "name": "BlitTransXlatAlphaZRead_ushort::GetSize",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x494D50",
+ "bytes_hex": "8b5424208b01528b5424206a00528b542424528b542424528b542424528b542424528b542424528b54242452ff5008c22000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F7930",
+ "name": "TechnoClass::CheckCellPassable",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F7930",
+ "bytes_hex": "8b44240453568bf15750b9e8f78700e8ecdde6ff8b1e8bf8578bceff93e402000050578bceff93a80300005f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

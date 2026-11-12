@@ -1,0 +1,15 @@
+{
+ "symbol": "?executeSpyPlaneAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeSpyPlaneAction",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b54240485d274258b819000000085c07c1b3b826402000077138b8a580200008b0c81e800000000b001c2100032c0c21000",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?ResetRechargeTime@SuperClass@@QAEXXZ",
+   "sym_key": "SuperClass::ResetRechargeTime"
+  }
+ ]
+}

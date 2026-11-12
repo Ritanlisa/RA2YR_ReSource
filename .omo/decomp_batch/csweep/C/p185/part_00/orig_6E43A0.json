@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E43A0",
+ "name": "TActionClass::executeChronoSphereAction",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E43A0",
+ "bytes_hex": "8b54240485d274258b819000000085c07c1b3b82640200007f138b8a580200008b0c81e8e89cfeffb001c2100032c0c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

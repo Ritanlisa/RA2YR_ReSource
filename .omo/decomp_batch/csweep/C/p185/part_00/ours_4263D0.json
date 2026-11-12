@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetDrawPosition@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GetDrawPosition",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b0183ec108d542404565251ff50488b48048b50088b308b44240483c23289308948048950085e83c410c3",
+ "relocs": []
+}

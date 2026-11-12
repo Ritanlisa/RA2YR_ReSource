@@ -1,0 +1,11 @@
+{
+ "addr": "0x4263D0",
+ "name": "ObjectClass::GetDrawPosition",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4263D0",
+ "bytes_hex": "8b0183ec0c8d542400565752ff50488b7424188b088b50048b40088bfe83c032890f8957048947088bc65f5e83c40cc21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
