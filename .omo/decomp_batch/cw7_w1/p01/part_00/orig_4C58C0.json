@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C58C0",
+ "name": "EMPulseClass::IterateCellsInRadius",
+ "size": 210,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C58C0",
+ "bytes_hex": "83ec085355568bf18b46288bd88be8f7db0fafe83bd80f8faf000000578bf8f7df3bf80f8f95000000668b4624668b4e266603c76603cb668944241466894c24168b5424146685c0895424107c64663d00027d5e6685c97c596681f900027d528d442410b9e8f7870050e8b1fe090084c0743f0fbf4e240fbf4424100fbf56262bc10fbf4c24122bca8bd10fafd18bc80fafc803d13bd57f198d542410b9e8f7870052e838fe090081a040010000fffff7ff8b4628473bf80f8e6bffffff8b4628433bd80f8e53ffffff5f5e5d5b83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

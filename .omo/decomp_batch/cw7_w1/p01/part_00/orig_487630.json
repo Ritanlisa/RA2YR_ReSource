@@ -1,0 +1,11 @@
+{
+ "addr": "0x487630",
+ "name": "DisplayClass::UpdateDisplayTimer",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487630",
+ "bytes_hex": "83b93001000001750ac78130010000000000008b8130010000488981300100008bd08b812c010000a8087404a810750d85d27f250c1889812c010000c385d27f188b81400100008bd083e22080fa20750824df898140010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

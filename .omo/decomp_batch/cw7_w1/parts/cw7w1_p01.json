@@ -1,0 +1,362 @@
+[
+ {
+  "addr": "0x484050",
+  "name": "Tactical::CreateTacticalLightSurface",
+  "orig_name": "Tactical::CreateTacticalLightSurface",
+  "unit": "Tactical",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p42\\part_00\\Tactical.cpp(34) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p42\\part_00",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x484d60",
+  "name": "InfantryClass::CanMoveThroughCell",
+  "orig_name": "InfantryClass::CanMoveThroughCell",
+  "unit": "InfantryClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p46\\part_00\\InfantryClass.cpp(17) : error C2440: 'initializing' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x486d90",
+  "name": "ObjectClass::sub_486D90",
+  "orig_name": "sub_486D90",
+  "unit": "ObjectClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p23\\part_00\\ObjectClass.cpp(29) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x487630",
+  "name": "DisplayClass::UpdateDisplayTimer",
+  "orig_name": "DisplayClass::UpdateDisplayTimer",
+  "unit": "DisplayClass",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p255\\part_00\\DisplayClass.cpp(15) : error C2440: 'initializing' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p255\\",
+  "file": "",
+  "line": null,
+  "form": "member->void* init (scalar member, ptr local) / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x487690",
+  "name": "DisplayClass::AdvanceFrameCounter",
+  "orig_name": "DisplayClass::AdvanceFrameCounter",
+  "unit": "DisplayClass",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p254\\part_00\\DisplayClass.cpp(19) : error C2440: '=' : cannot convert from 'void *' to 'unsigned char *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x48bf40",
+  "name": "ConnectionClass::sendAck",
+  "orig_name": "ConnectionClass::sendAck",
+  "unit": "ConnectionClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p40\\part_00\\ConnectionClass.cpp(8) : error C2440: '=' : cannot convert from 'unsigned short *' to 'unsigned short'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x49c5a0",
+  "name": "CampaignClass::SaveProgress",
+  "orig_name": "CampaignClass::SaveProgress",
+  "unit": "CampaignClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\part_00\\CampaignClass.cpp(47) : error C2440: '=' : cannot convert from 'void ** ' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p46\\par",
+  "file": "",
+  "line": null,
+  "form": "stale_cw5|CW5-10 uintN_t typedef",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x49e8e0",
+  "name": "INISectionList::Constructor",
+  "orig_name": "INISectionList::Constructor",
+  "unit": "INISectionList",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p259\\part_00\\INISectionList.cpp(12) : error C2440: '=' : cannot convert from 'char *' to 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p259\\part",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4a1c10",
+  "name": "Power::FinalizeDrain",
+  "orig_name": "Power::FinalizeDrain",
+  "unit": "Power",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p261\\part_00\\Power.cpp(8) : error C2440: 'initializing' : cannot convert from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p261",
+  "file": "",
+  "line": null,
+  "form": "member->void* init (scalar member, ptr local) / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4a1ca0",
+  "name": "Power::FlagProcess",
+  "orig_name": "Power::FlagProcess",
+  "unit": "Power",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G0_preCW2_census",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p31\\part_00\\Power.cpp(8) : error C2440: 'initializing' : cannot convert from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p31\\p",
+  "file": "",
+  "line": null,
+  "form": "member->void* init (scalar member, ptr local) / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4a71a0",
+  "name": "DiskLaserClass::Fire",
+  "orig_name": "DiskLaserClass::Fire",
+  "unit": "DiskLaserClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p46\\part_00\\DiskLaserClass.cpp(31) : error C2440: '=' : cannot convert from 'unsigned int' to 'void *'",
+  "file": "",
+  "line": null,
+  "form": "int -> void* / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4a8960",
+  "name": "DisplayClass::SetViewDimensions",
+  "orig_name": "TacticalClass::SetViewDimensions",
+  "unit": "DisplayClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p15\\part_00\\DisplayClass.cpp(59) : error C2440: '=' : cannot convert from 'unsigned int *' to 'char'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p15\\part",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / assign",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4ac310",
+  "name": "DisplayClass::InitViewBounds",
+  "orig_name": "DisplayClass::InitViewBounds",
+  "unit": "DisplayClass",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p08\\part_00\\DisplayClass.cpp(18) : error C2440: '=' : cannot convert from 'int' to 'void *'",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-4 pointer-local store",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x4ac8c0",
+  "name": "BuildingClass::TogglePower2",
+  "orig_name": "BuildingClass::TogglePower2",
+  "unit": "BuildingClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p23\\part_00\\BuildingClass.cpp(30) : error C2440: '=' : cannot convert from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p23\\par",
+  "file": "",
+  "line": null,
+  "form": "int -> void* / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4acac0",
+  "name": "MapClass::ProcessVisibilityFlags",
+  "orig_name": "MapClass::ProcessVisibilityFlags",
+  "unit": "MapClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p40\\part_00\\MapClass.cpp(25) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p40\\part_0",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4acda0",
+  "name": "MapClass::RevealCell",
+  "orig_name": "MapClass::RevealCell",
+  "unit": "MapClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p37\\part_00\\MapClass.cpp(17) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p37\\part_0",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4af720",
+  "name": "DriveLocomotionClass::QueryInterface",
+  "orig_name": "DriveLocomotionClass::QueryInterface",
+  "unit": "DriveLocomotionClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p18\\part_00\\DriveLocomotionClass.cpp(16) : error C2440: '=' : cannot convert from 'void *' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p18\\pa",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4b0c40",
+  "name": "DriveLocomotionClass::SetWaypointTarget",
+  "orig_name": "JumpjetLocomotionClass::SetWaypointTarget",
+  "unit": "DriveLocomotionClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p30\\part_00\\DriveLocomotionClass.cpp(42) : error C2440: '=' : cannot convert from 'void *' to 'class CellClass *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4c3c90",
+  "name": "ObjectClass::sub_4C3C90",
+  "orig_name": "sub_4C3C90",
+  "unit": "ObjectClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p16\\part_00\\ObjectClass.cpp(8) : error C2440: '=' : cannot convert from 'class ObjectClass *' to 'unsigned char'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_r",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ },
+ {
+  "addr": "0x4c58c0",
+  "name": "EMPulseClass::IterateCellsInRadius",
+  "orig_name": "EMPulseClass::IterateCellsInRadius",
+  "unit": "EMPulseClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p27\\part_00\\EMPulseClass.cpp(37) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ]
+ }
+]

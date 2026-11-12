@@ -1,0 +1,57 @@
+{
+ "symbol": "?RevealCell@MapClass@@QAEDPAF@Z",
+ "sym_key": "MapClass::RevealCell",
+ "size": 209,
+ "link_base": 0,
+ "bytes_hex": "83ec0853568b7424148bd956e80000000084c00f84b0000000568bcbe8000000008b882c01000089442408f6c1080f849100000083e1e75789882c0100008b0d0000000050e80000000033ff8bc783e0078a807a000000660fbec866030ec0f810660fbed06603560266894c24108d4c24186689542412518b4424148bcb8944241ce8000000008b5424188b0e3bd18944240c741d8b902c0100005083e2ef89902c0100008b0d00000000e800000000eb048a44240c4783ff087c905f5e5b83c408c204008a4424085e5b83c408c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  }
+ ]
+}

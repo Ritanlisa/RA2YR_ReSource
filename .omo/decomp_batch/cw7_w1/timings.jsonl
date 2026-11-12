@@ -1,1 +1,2 @@
 {"part": 0, "n": 20, "seconds": 25.3, "ok": true, "verdicts": {"COMPILE_FAIL": 8, "MISMATCH": 12}}
+{"part": 1, "n": 20, "seconds": 24.4, "ok": true, "verdicts": {"COMPILE_FAIL": 11, "MISMATCH": 9}}

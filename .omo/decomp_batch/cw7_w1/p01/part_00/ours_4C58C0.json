@@ -1,0 +1,33 @@
+{
+ "symbol": "?IterateCellsInRadius@EMPulseClass@@QAEHXZ",
+ "sym_key": "EMPulseClass::IterateCellsInRadius",
+ "size": 211,
+ "link_base": 0,
+ "bytes_hex": "83ec085355578bf98b47288bd88be8f7db0fafe83bd80f8fb0000000568b7424148bc8f7d93bc8894c24140f8f8e000000668b472681e600ffffff6603c38bc881e1ff0000000bf16681fe0002897424107358663d000273528d542410b9f801000052e80000000084c0743f0fbf4f240fbf4424100fbf57262bc10fbf4c24122bca8bd10fafd18bc80fafc803d13bd57f198d542410b9f801000052e80000000081a040010000fffff7ff8b4424148b4f28403bc1894424140f8e72ffffff8b4728433bd80f8e56ffffff5e5f5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Exists@Cell@@QAE_NPAX@Z",
+   "sym_key": "Cell::Exists"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

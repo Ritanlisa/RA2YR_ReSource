@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AC310",
+ "name": "DisplayClass::InitViewBounds",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AC310",
+ "bytes_hex": "8a81b011000084c075548a81b211000084c0754a8a81b111000084c0754083b9b8110000ff75378b81a811000085c0752d8b442404c681d0110000018b108991d41100008b50048991d81100008b108991dc1100008b40048981e0110000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_486D90@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_486D90",
+ "size": 179,
+ "link_base": 0,
+ "bytes_hex": "83ec08538bd98b4c2410ba010000008b83dc000000d3e285c289542410750a83c8ff5b83c408c2040055568b7424185733ff33edb00184c0744c8bc733c98a4b3683e007894c24100fbe807a00000003c833ce81e1ff00000033f18b4c2412c1f81003c1b9f801000033c625ff00000033f08d4424105089742414e8000000008b54241ceb028bc38590dc000000740bb8010000008bcfd3e00be84783ff080f92c083ff087c8f5f8bc55e5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

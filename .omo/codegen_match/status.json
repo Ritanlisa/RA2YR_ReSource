@@ -13658,7 +13658,7 @@
   "this_as_id": false
  },
  "0x484050": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -13705,15 +13705,15 @@
   "this_as_id": false
  },
  "0x484d60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov ax, word ptr [ecx + 0x116]",
   "name": "InfantryClass::CanMoveThroughCell",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "InfantryClass::CanMoveThroughCell",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x484f10": {
@@ -14005,15 +14005,15 @@
   "status": "NG"
  },
  "0x486d90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "ObjectClass::sub_486D90",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_486D90",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x486ff0": {
@@ -14122,27 +14122,27 @@
   "status": "OK"
  },
  "0x487630": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 cmp dword ptr [ecx + 0x130], 1",
   "name": "DisplayClass::UpdateDisplayTimer",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "DisplayClass::UpdateDisplayTimer",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x487690": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+22 mov eax, dword ptr [ecx + 0x130]",
   "name": "DisplayClass::AdvanceFrameCounter",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "DisplayClass::AdvanceFrameCounter",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4876f0": {
@@ -14889,7 +14889,7 @@
   "this_as_id": false
  },
  "0x48bf40": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16882,7 +16882,7 @@
   "this_as_id": false
  },
  "0x49c5a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16990,7 +16990,7 @@
   "this_as_id": false
  },
  "0x49e8e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -17864,7 +17864,7 @@
   "this_as_id": false
  },
  "0x4a1c10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -17876,11 +17876,16 @@
   "this_as_id": false
  },
  "0x4a1ca0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "Power::FlagProcess",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Power::FlagProcess",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4a1fb0": {
   "attempts": 1,
@@ -18783,7 +18788,7 @@
   "this_as_id": false
  },
  "0x4a71a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19063,7 +19068,7 @@
   "this_as_id": false
  },
  "0x4a8960": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19194,15 +19199,15 @@
   "this_as_id": false
  },
  "0x4ac310": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0x11b0]",
   "name": "DisplayClass::InitViewBounds",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "DisplayClass::InitViewBounds",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ac660": {
@@ -19230,15 +19235,15 @@
   "this_as_id": false
  },
  "0x4ac8c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "BuildingClass::TogglePower2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "BuildingClass::TogglePower2",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ac960": {
@@ -19254,27 +19259,27 @@
   "this_as_id": false
  },
  "0x4acac0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+11 mov ebx, 0x20",
   "name": "MapClass::ProcessVisibilityFlags",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MapClass::ProcessVisibilityFlags",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4acda0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "MapClass::RevealCell",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MapClass::RevealCell",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ad7e0": {
@@ -19530,7 +19535,7 @@
   "this_as_id": false
  },
  "0x4af720": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19652,7 +19657,7 @@
   "this_as_id": false
  },
  "0x4b0c40": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21296,7 +21301,7 @@
   "this_as_id": false
  },
  "0x4c3c90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -21603,15 +21608,15 @@
   "this_as_id": false
  },
  "0x4c58c0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 push esi",
   "name": "EMPulseClass::IterateCellsInRadius",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "EMPulseClass::IterateCellsInRadius",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c59f0": {

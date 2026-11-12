@@ -1,0 +1,51 @@
+{
+ "symbol": "?ProcessVisibilityFlags@MapClass@@QAEHXZ",
+ "sym_key": "MapClass::ProcessVisibilityFlags",
+ "size": 224,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556578bf133ed33ff8d4424108bce50897c2414e80000000084c0742d8d4c241466897c2414518bce66896c241ae8000000008b882c010000f6c110750cf6c1087407838840010000204781ff000200007cb64581fd000200007cabbb00020000bddfffffff33ff8d5424108bce52897c2414e80000000084c0743b8d4424108bce50e800000000f680400100002074268d4c2410518bcee8000000008b88400100008d54241023cd528988400100008bcee8000000004781ff000200007ca84b75a36a006a00e8000000008b066a0156ff50385f5e5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?RevealCell@MapClass@@QAEDPAX@Z",
+   "sym_key": "MapClass::RevealCell"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?HouseClass__RevealShroudForAllies@@YGHDH@Z",
+   "sym_key": "HouseClass__RevealShroudForAllies"
+  }
+ ]
+}

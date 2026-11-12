@@ -1,0 +1,8 @@
+{
+ "symbol": "?AdvanceFrameCounter@DisplayClass@@QAEEXZ",
+ "sym_key": "DisplayClass::AdvanceFrameCounter",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "568bb13001000083feff750ac78130010000000000008b91300100008b8134010000423bd08991300100007e0689813001000085f65e7f188b813001000085c07e0e8b81400100000c20898140010000c3",
+ "relocs": []
+}

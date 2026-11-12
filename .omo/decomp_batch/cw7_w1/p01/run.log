@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x484050 Tactical::CreateTacticalLightSurface -> Tactical
+[conv] 0x484d60 InfantryClass::CanMoveThroughCell -> InfantryClass
+[conv] 0x486d90 ObjectClass::sub_486D90 -> ObjectClass
+[conv] 0x487630 DisplayClass::UpdateDisplayTimer -> DisplayClass
+[conv] 0x487690 DisplayClass::AdvanceFrameCounter -> DisplayClass
+[conv] 0x48bf40 ConnectionClass::sendAck -> ConnectionClass
+[conv] 0x49c5a0 CampaignClass::SaveProgress -> CampaignClass
+[conv] 0x49e8e0 INISectionList::Constructor -> INISectionList
+[conv] 0x4a1c10 Power::FinalizeDrain -> Power
+[conv] 0x4a1ca0 Power::FlagProcess -> Power
+[conv] 0x4a71a0 DiskLaserClass::Fire -> DiskLaserClass
+[conv] 0x4a8960 DisplayClass::SetViewDimensions -> DisplayClass
+[conv] 0x4ac310 DisplayClass::InitViewBounds -> DisplayClass
+[conv] 0x4ac8c0 BuildingClass::TogglePower2 -> BuildingClass
+[conv] 0x4acac0 MapClass::ProcessVisibilityFlags -> MapClass
+[conv] 0x4acda0 MapClass::RevealCell -> MapClass
+[conv] 0x4af720 DriveLocomotionClass::QueryInterface -> DriveLocomotionClass
+[conv] 0x4b0c40 DriveLocomotionClass::SetWaypointTarget -> DriveLocomotionClass
+[conv] 0x4c3c90 ObjectClass::sub_4C3C90 -> ObjectClass
+[conv] 0x4c58c0 EMPulseClass::IterateCellsInRadius -> EMPulseClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Tactical                 rc=2
+[era] InfantryClass            rc=0
+[era] ObjectClass              rc=2
+[era] DisplayClass             rc=2
+[era] ConnectionClass          rc=2
+[era] CampaignClass            rc=2
+[era] INISectionList           rc=2
+[era] Power                    rc=2
+[era] DiskLaserClass           rc=2
+[era] BuildingClass            rc=0
+[era] MapClass                 rc=2
+[era] DriveLocomotionClass     rc=2
+[era] EMPulseClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x484d60   MISMATCH         InfantryClass::CanMoveThroughCell
+[diff] 0x486d90   MISMATCH         ObjectClass::sub_486D90
+[diff] 0x487630   MISMATCH         DisplayClass::UpdateDisplayTimer
+[diff] 0x487690   MISMATCH         DisplayClass::AdvanceFrameCounter
+[diff] 0x4ac310   MISMATCH         DisplayClass::InitViewBounds
+[diff] 0x4ac8c0   MISMATCH         BuildingClass::TogglePower2
+[diff] 0x4acac0   MISMATCH         MapClass::ProcessVisibilityFlags
+[diff] 0x4acda0   MISMATCH         MapClass::RevealCell
+[diff] 0x4c58c0   MISMATCH         EMPulseClass::IterateCellsInRadius
+[ledger] 0x484050 Tactical::CreateTacticalLightSurface -> COMPILE_FAIL (attempt 12)
+[ledger] 0x484d60 InfantryClass::CanMoveThroughCell -> NG (attempt 4)
+[ledger] 0x486d90 ObjectClass::sub_486D90 -> NG (attempt 4)
+[ledger] 0x487630 DisplayClass::UpdateDisplayTimer -> NG (attempt 2)
+[ledger] 0x487690 DisplayClass::AdvanceFrameCounter -> NG (attempt 2)
+[ledger] 0x48bf40 ConnectionClass::sendAck -> COMPILE_FAIL (attempt 14)
+[ledger] 0x49c5a0 CampaignClass::SaveProgress -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49e8e0 INISectionList::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a1c10 Power::FinalizeDrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a1ca0 Power::FlagProcess -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a71a0 DiskLaserClass::Fire -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a8960 DisplayClass::SetViewDimensions -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4ac310 DisplayClass::InitViewBounds -> NG (attempt 3)
+[ledger] 0x4ac8c0 BuildingClass::TogglePower2 -> NG (attempt 7)
+[ledger] 0x4acac0 MapClass::ProcessVisibilityFlags -> NG (attempt 4)
+[ledger] 0x4acda0 MapClass::RevealCell -> NG (attempt 4)
+[ledger] 0x4af720 DriveLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4b0c40 DriveLocomotionClass::SetWaypointTarget -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4c3c90 ObjectClass::sub_4C3C90 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c58c0 EMPulseClass::IterateCellsInRadius -> NG (attempt 12)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "width_mismatch": 1,
+  "codegen_shape": 4,
+  "regalloc": 3,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p01\batch_report.json
