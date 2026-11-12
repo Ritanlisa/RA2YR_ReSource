@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p198\part_00
+=== convert (20 addrs) ===
+[conv] 0x40ee80 sub_40EE80 -> _addr_40
+[conv] 0x40f4d0 sub_40F4D0 -> _addr_40
+[conv] 0x40fb70 sub_40FB70 -> _addr_40
+[conv] 0x41d2c0 sub_41D2C0 -> _addr_41
+[conv] 0x420920 sub_420920 -> _addr_42
+[conv] 0x438590 globalHelper_038590 -> _addr_43
+[conv] 0x471790 sub_471790 -> _addr_47
+[conv] 0x4c1dd0 sub_4C1DD0 -> _addr_4C
+[conv] 0x4c3c50 sub_4C3C50 -> _addr_4C
+[conv] 0x4c9fb0 FactoryClass::GetBuildTimeFrames -> FactoryClass
+[conv] 0x4d31a0 sub_4D31A0 -> _addr_4D
+[conv] 0x4e2650 GaugeClass::SetColor -> GaugeClass
+[conv] 0x4e6520 sub_4E6520 -> _addr_4E
+[conv] 0x4e65a0 sub_4E65A0 -> _addr_4E
+[conv] 0x4e6620 sub_4E6620 -> _addr_4E
+[conv] 0x4e66a0 sub_4E66A0 -> _addr_4E
+[conv] 0x4e6720 sub_4E6720 -> _addr_4E
+[conv] 0x4e67a0 sub_4E67A0 -> _addr_4E
+[conv] 0x4e68a0 sub_4E68A0 -> _addr_4E
+[conv] 0x4e6920 sub_4E6920 -> _addr_4E
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] _addr_41                 rc=0
+[era] _addr_42                 rc=0
+[era] _addr_43                 rc=0
+[era] _addr_47                 rc=0
+[era] _addr_4C                 rc=0
+[era] FactoryClass             rc=0
+[era] _addr_4D                 rc=0
+[era] GaugeClass               rc=0
+[era] _addr_4E                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x40ee80   MISMATCH         sub_40EE80
+[diff] 0x40f4d0   MISMATCH         sub_40F4D0
+[diff] 0x40fb70   MISMATCH         sub_40FB70
+[diff] 0x41d2c0   MISMATCH         sub_41D2C0
+[diff] 0x420920   MISMATCH         sub_420920
+[diff] 0x438590   MISMATCH         globalHelper_038590
+[diff] 0x471790   MISMATCH         sub_471790
+[diff] 0x4c1dd0   MISMATCH         sub_4C1DD0
+[diff] 0x4c3c50   MISMATCH         sub_4C3C50
+[diff] 0x4c9fb0   MATCH            FactoryClass::GetBuildTimeFrames
+[diff] 0x4d31a0   MISMATCH         sub_4D31A0
+[diff] 0x4e2650   MISMATCH         GaugeClass::SetColor
+[diff] 0x4e6520   MISMATCH         sub_4E6520
+[diff] 0x4e65a0   MISMATCH         sub_4E65A0
+[diff] 0x4e6620   MISMATCH         sub_4E6620
+[diff] 0x4e66a0   MISMATCH         sub_4E66A0
+[diff] 0x4e6720   MISMATCH         sub_4E6720
+[diff] 0x4e67a0   MISMATCH         sub_4E67A0
+[diff] 0x4e68a0   MISMATCH         sub_4E68A0
+[diff] 0x4e6920   MISMATCH         sub_4E6920
+[ledger] 0x40ee80 sub_40EE80 -> NG (attempt 1)
+[ledger] 0x40f4d0 sub_40F4D0 -> NG (attempt 1)
+[ledger] 0x40fb70 sub_40FB70 -> NG (attempt 1)
+[ledger] 0x41d2c0 sub_41D2C0 -> NG (attempt 1)
+[ledger] 0x420920 sub_420920 -> NG (attempt 1)
+[ledger] 0x438590 globalHelper_038590 -> NG (attempt 1)
+[ledger] 0x471790 sub_471790 -> NG (attempt 1)
+[ledger] 0x4c1dd0 sub_4C1DD0 -> NG (attempt 1)
+[ledger] 0x4c3c50 sub_4C3C50 -> NG (attempt 1)
+[ledger] 0x4c9fb0 FactoryClass::GetBuildTimeFrames -> OK (attempt 1)
+[ledger] 0x4d31a0 sub_4D31A0 -> NG (attempt 1)
+[ledger] 0x4e2650 GaugeClass::SetColor -> NG (attempt 1)
+[ledger] 0x4e6520 sub_4E6520 -> NG (attempt 1)
+[ledger] 0x4e65a0 sub_4E65A0 -> NG (attempt 1)
+[ledger] 0x4e6620 sub_4E6620 -> NG (attempt 1)
+[ledger] 0x4e66a0 sub_4E66A0 -> NG (attempt 1)
+[ledger] 0x4e6720 sub_4E6720 -> NG (attempt 1)
+[ledger] 0x4e67a0 sub_4E67A0 -> NG (attempt 1)
+[ledger] 0x4e68a0 sub_4E68A0 -> NG (attempt 1)
+[ledger] 0x4e6920 sub_4E6920 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 19
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p198\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetColor@GaugeClass@@QAE_JH@Z",
+ "sym_key": "GaugeClass::SetColor",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "8a412e83ec0884c074088b41148b510ceb068b41188b5110db44240c83c0fe895424008944240c56da713083ec08db442418dec9da44240cdd1c24e8000000008bc825ff000000c1f91066894c24108b4c240c8b74241080e1009983c4080bc10bd65e83c408c20400",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

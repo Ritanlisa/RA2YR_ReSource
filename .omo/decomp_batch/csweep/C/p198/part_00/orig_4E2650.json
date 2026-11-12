@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E2650",
+ "name": "GaugeClass::SetColor",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E2650",
+ "bytes_hex": "518a412e84c074088b41148b510ceb068b41188b5110db44240883c0fe8954240089442408da7130db442408dec9da442400e879382e0059c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

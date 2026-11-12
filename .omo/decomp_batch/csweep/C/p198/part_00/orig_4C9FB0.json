@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C9FB0",
+ "name": "FactoryClass::GetBuildTimeFrames",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C9FB0",
+ "bytes_hex": "8b495833d285c97407e8e2a722008bd0b8f712da4bf7eac1fa048bc2c1e81f03d08bc283f8017d06b801000000c33dff0000007e05b8ff000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

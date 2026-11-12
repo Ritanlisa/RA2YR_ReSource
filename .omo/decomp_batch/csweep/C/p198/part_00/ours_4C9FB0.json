@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetBuildTimeFrames@FactoryClass@@QAEHXZ",
+ "sym_key": "FactoryClass::GetBuildTimeFrames",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "8b495833d285c97407e8000000008bd0b8f712da4bf7eac1fa048bc2c1e81f03d08bc283f8017d06b801000000c33dff0000007e05b8ff000000c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?CalcProductionSpeed@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::CalcProductionSpeed"
+  }
+ ]
+}
