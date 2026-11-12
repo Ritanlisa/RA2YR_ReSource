@@ -1,0 +1,11 @@
+{
+ "addr": "0x473C00",
+ "name": "CCFileClass::GetSize",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x473C00",
+ "bytes_hex": "51568bf18b465885c074068b465c5e59c36a008bcee8f6e2fbff84c075288b168d442404506a006a008bcec744241000000000ff52048bc833d2e8f10714008b4424045e59c38bcee853e9fbff5e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

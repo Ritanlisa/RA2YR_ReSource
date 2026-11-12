@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CEAFF",
+ "name": "__ms_p5_mp_test_fdiv",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CEAFF",
+ "bytes_hex": "688c987f00ff1540127e0085c074156870987f0050ff1550127e0085c074056a00ffd0c3e999ffffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

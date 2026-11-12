@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetSize@CCFileClass@@QAEHXZ",
+ "sym_key": "CCFileClass::GetSize",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b465885c074068b465c5e59c36a008bcee80000000084c0740a8bcee8000000005e59c38b0656c744240800000000ff50048d4c240433d2516a006a008bc8e8000000008b4424045e59c3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?IsReady@File@@QAEDH@Z",
+   "sym_key": "File::IsReady"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?SetSize@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::SetSize"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?LookupFileInfoCache@@YIDPAXPAH110@Z",
+   "sym_key": "LookupFileInfoCache"
+  }
+ ]
+}

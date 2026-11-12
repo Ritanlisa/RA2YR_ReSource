@@ -1,0 +1,21 @@
+{
+ "symbol": "?initLAN@SessionClass@@QAEHHPAH0@Z",
+ "sym_key": "SessionClass::initLAN",
+ "size": 168,
+ "link_base": 0,
+ "bytes_hex": "568bf18a460484c0750633c05ec20c00837e4407750633c05ec20c0068b8000000e80000000083c40485c074268b4c2410578b7c240c8b56146a00575751668b4e20518b4e105152528bc8e8000000005feb0233c08b5644894496288b46448b44862885c075045ec20c008b0850ff51048b56448b4e588b4496288948288b56448b4e5c8b44962889482c8b56448b4e608b4496288948308b464440894644b8010000005ec20c00",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?constructor@IPXConnClass@@QAEPAXHHHFPAXH0H@Z",
+   "sym_key": "IPXConnClass::constructor"
+  }
+ ]
+}

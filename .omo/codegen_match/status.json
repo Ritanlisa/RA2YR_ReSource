@@ -6354,7 +6354,7 @@
   "this_as_id": false
  },
  "0x4219e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+12 je 0x421a6a",
@@ -7958,7 +7958,7 @@
   "status": "NG"
  },
  "0x42f260": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+20 jne 0x42f2de",
@@ -12453,7 +12453,7 @@
   "this_as_id": false
  },
  "0x473c00": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+28 jne 0x473c46",
@@ -13185,7 +13185,7 @@
   "status": "OK"
  },
  "0x479a40": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_479A40",
@@ -32465,7 +32465,7 @@
   "this_as_id": false
  },
  "0x5295a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+30 je 0x5295d3",
@@ -35188,14 +35188,14 @@
   "this_as_id": false
  },
  "0x53fbd0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "IPXGlobalConnClass::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "IPXGlobalConnClass::Flush",
-  "rule_violations": 13,
+  "rule_violations": 8,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -35407,7 +35407,7 @@
   "this_as_id": false
  },
  "0x540dc0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+33 call 0x7c8e17",
@@ -41781,7 +41781,7 @@
   "this_as_id": false
  },
  "0x5ac820": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+12 je 0x5ac8aa",
@@ -46520,14 +46520,14 @@
   "this_as_id": false
  },
  "0x5cd0e0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MSVQAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MSVQAnim::Play",
-  "rule_violations": 3,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -47669,7 +47669,7 @@
   "this_as_id": false
  },
  "0x5d4b20": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -52281,7 +52281,7 @@
   "this_as_id": false
  },
  "0x626690": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+1 mov eax, dword ptr [0xac48f0]",
@@ -60253,7 +60253,7 @@
   "this_as_id": false
  },
  "0x68bdc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -62950,7 +62950,7 @@
   "this_as_id": false
  },
  "0x6acca0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": "+1 push ebp",
   "name": "Map_Handle_6ACCA0",
@@ -65202,7 +65202,7 @@
   "this_as_id": false
  },
  "0x6c0a10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66182,7 +66182,7 @@
   "this_as_id": false
  },
  "0x6c4010": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71599,7 +71599,7 @@
   "this_as_id": false
  },
  "0x70b1d0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 mov al, byte ptr [ecx + 0x3d5]",
@@ -87587,7 +87587,7 @@
   "this_as_id": false
  },
  "0x7b7600": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+11 call 0x7c8b3d",
@@ -89594,7 +89594,7 @@
   "this_as_id": false
  },
  "0x7ceaff": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": "+0 push 0x7f988c",
   "name": "__ms_p5_mp_test_fdiv",
@@ -90224,7 +90224,7 @@
   "this_as_id": false
  },
  "0x7d73f9": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "_TestDefaultLanguage",
@@ -90495,7 +90495,7 @@
   "this_as_id": false
  },
  "0x7d9d7f": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": "+0 push ebp",
   "name": "_mbtowc",

@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetNextActive@FlagSystem@@QAEHXZ",
+ "sym_key": "FlagSystem::GetNextActive",
+ "size": 250,
+ "link_base": 0,
+ "bytes_hex": "5153558b1d30000000568bf1578a460884c0755d8b068b4b083bc173508b068b138d0c408b46048d2cca8b4cca103bc173288b4d048d50018956048bd0c1e20603d08d3c918bcfe80000000084c074298b46048b4d103bc172d88b06c74604000000004089068b4b083bc172b0c64608015f5e5d33c05b59c385ff74f48b353000000057ff560433d28b0ef776088d04528d2cc18b44c110488944241078d28b75048bd88b17c1e30603d852c1e30203f38bcee80000000084c075248b442410488944241078aa8b75048b0781eb040100005003f38bcee80000000084c074dc81fe00ffffff74898b8e000100005f5e5d8b81000100005b59c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_FileExtensionState@@3PAIA",
+   "sym_key": "g_FileExtensionState"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?IsZero@Flag@@QAEHXZ",
+   "sym_key": "Flag::IsZero"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_FileExtensionState@@3PAIA",
+   "sym_key": "g_FileExtensionState"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?Equals@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?Equals@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals"
+  }
+ ]
+}

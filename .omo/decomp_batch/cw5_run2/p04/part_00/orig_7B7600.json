@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B7600",
+ "name": "WideString::Reassign",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B7600",
+ "bytes_hex": "568bf1578b0685c0740950e82d15010083c4048b7c240cc7060000000085ff740c57e8de2d010083c40440eb05b80100000003c050e8dd17010083c404890685ff66c7000000740c8b0e5751e8382e010083c4085f66b801005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

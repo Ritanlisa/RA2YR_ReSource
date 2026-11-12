@@ -1,0 +1,39 @@
+{
+ "symbol": "?__ms_p5_mp_test_fdiv@@YAHXZ",
+ "sym_key": "Unnamed::__ms_p5_mp_test_fdiv",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "6800000000e80000000085c07414680000000050e80000000085c074056a00ffd0c3e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "??_C@_08OBID@KERNEL32?$AA@",
+   "sym_key": "??_C@_08OBID@KERNEL32?$AA@"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?GetModuleHandleA@@YGPAXH@Z",
+   "sym_key": "GetModuleHandleA"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "??_C@_0BK@JEGK@IsProcessorFeaturePresent?$AA@",
+   "sym_key": "??_C@_0BK@JEGK@IsProcessorFeaturePresent?$AA@"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetProcAddress@@YGHHH@Z",
+   "sym_key": "GetProcAddress"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?_ms_p5_test_fdiv@@YAHXZ",
+   "sym_key": "_ms_p5_test_fdiv"
+  }
+ ]
+}
