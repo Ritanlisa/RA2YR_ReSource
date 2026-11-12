@@ -1,0 +1,21 @@
+{
+ "symbol": "?InitListAndCounters@AudioStream@@QAEHXZ",
+ "sym_key": "AudioStream::InitListAndCounters",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "56578bf9578bb7ac000000e8000000008b96f00000008b8e040100004a41578996f0000000898e04010000e8000000008b860401000083c40848898604010000790ac78604010000000000005f5ec3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?LinkedList__Init@@YAHPAX@Z",
+   "sym_key": "LinkedList__Init"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?LinkedList__Init@@YAHPAX@Z",
+   "sym_key": "LinkedList__Init"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x41B7F0",
+ "name": "TechnoClass::HasOnlyOneGarrisonSlot",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41B7F0",
+ "bytes_hex": "8b4424046a008b9040f9ffff8d8840f9ffffff92f803000085c07503c204008b0085c07503c204008b80a000000083b8dc020000017e0533c0c204008a909e02000033c984d20f94c18bc1c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

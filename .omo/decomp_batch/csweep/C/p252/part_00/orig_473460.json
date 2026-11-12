@@ -1,0 +1,11 @@
+{
+ "addr": "0x473460",
+ "name": "HouseClass::SumPowerDrain",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x473460",
+ "bytes_hex": "51538b198b490433c0565785c98944240c74358bf185f6742f33ff85db7e2985f674258b068bceff9084000000db44240cdc8080030000e8642a35008b7630473bfb8944240c7cd75f5e5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

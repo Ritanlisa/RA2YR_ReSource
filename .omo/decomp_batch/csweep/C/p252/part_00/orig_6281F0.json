@@ -1,0 +1,11 @@
+{
+ "addr": "0x6281F0",
+ "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::IsEqualTo",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6281F0",
+ "bytes_hex": "53558b6c240c56578bf98b4d088b47083bc1753033db85c07e2133f68b45048b4f0403c603ce50e874f3eeff84c075148b47084383c6033bd87ce15f5e5db0015bc204005f5e5d32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

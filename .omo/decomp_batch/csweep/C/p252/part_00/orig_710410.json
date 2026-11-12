@@ -1,0 +1,11 @@
+{
+ "addr": "0x710410",
+ "name": "ObjectClass::ClearPointerRefs",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x710410",
+ "bytes_hex": "8b442404568bb12c01000033d23bc6750689912c0100003b81d401000075068991d40100003b81c802000075068991c80200008bb1300100003bc65e750689913001000050e84669eeffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

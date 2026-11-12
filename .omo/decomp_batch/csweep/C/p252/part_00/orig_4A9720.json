@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A9720",
+ "name": "Targeting::Readd",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A9720",
+ "bytes_hex": "568b74240885f657743e83be94000000ff740656e8370000008b068bceff50788bf883ffff742183ff028d147f0f94c151568d0cd560038a00e852820a0084c0740689be940000005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

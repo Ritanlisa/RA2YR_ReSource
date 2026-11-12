@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetDosTimestamp@RawFileClass@@QAEHXZ",
+ "sym_key": "RawFileClass::GetDosTimestamp",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "8b491483ec3c8d4424085051e80000000085c0750483c43cc38d5424048d442400528d4c24205051e8000000008b4424008b54240425ffff000081e2ffff0000c1e0100bc283c43cc3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetFileInformationByHandle@@YGHPAX0@Z",
+   "sym_key": "GetFileInformationByHandle"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?FileTimeToDosDateTime@@YGHPAX00@Z",
+   "sym_key": "FileTimeToDosDateTime"
+  }
+ ]
+}

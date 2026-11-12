@@ -1,0 +1,11 @@
+{
+ "addr": "0x65D1F0",
+ "name": "FileClass::GetDosTimestamp",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65D1F0",
+ "bytes_hex": "8b491483ec3c8d4424085051ff1528117e0085c074318d5424048d442400528d4c24205051ff1524117e008b4424008b54240425ffff000081e2ffff0000c1e0100bc283c43cc333c083c43cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

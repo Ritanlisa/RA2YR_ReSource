@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CB150",
+ "name": "ComputeDistortionVariant",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CB150",
+ "bytes_hex": "d905b0238200d84c2404e8a1ad2f008ac8992bc280e101d1f825ff1f0080790e480d00e0ffff407905050020000084c974113dff1f00007d0ad9048588f08400c20400d9048584f08400c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

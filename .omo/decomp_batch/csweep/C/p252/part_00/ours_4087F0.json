@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4087F0@@YAPAIXZ",
+ "sym_key": "Unnamed::sub_4087F0",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "565768a4000000e8000000008bf0b92900000033c08bfef3ab83c4048d4e04e80000000033d233c98996980000008d463c8948f08970dc8950f889108950f44183c04083f9027ce98bc65f5ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Init@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::Init"
+  }
+ ]
+}

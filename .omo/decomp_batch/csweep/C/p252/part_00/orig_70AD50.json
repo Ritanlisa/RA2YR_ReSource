@@ -1,0 +1,11 @@
+{
+ "addr": "0x70AD50",
+ "name": "TechnoClass::GetCellCoordsV2",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70AD50",
+ "bytes_hex": "83ec0c8b5424148b01528d54240452ff90a80000008bc88b019981e2ff00000003c2c1f80866894424148b41049981e2ff00000003c2c1f80866894424168b4424108b4c2414890883c40cc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

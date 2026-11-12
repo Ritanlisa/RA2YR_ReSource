@@ -1,0 +1,15 @@
+{
+ "symbol": "?ClearPointerRefs@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ClearPointerRefs",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "518b442400568bb12c01000033d23bc6750689912c0100003b81d401000075068991d40100003b81c802000075068991c80200008bb1300100003bc65e7506899130010000e80000000059c3",
+ "relocs": [
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?ResetPointerIfMatch@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::ResetPointerIfMatch"
+  }
+ ]
+}

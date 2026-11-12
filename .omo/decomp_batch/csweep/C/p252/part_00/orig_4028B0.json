@@ -1,0 +1,11 @@
+{
+ "addr": "0x4028B0",
+ "name": "AudioStream::InitListAndCounters",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4028B0",
+ "bytes_hex": "56578bf98bb7ac000000e8914b00008b86f0000000488986f00000008b8604010000408986040100008bcfe8704b00008b86040100004885c08986040100007d0ac78604010000000000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

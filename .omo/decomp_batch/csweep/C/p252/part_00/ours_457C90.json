@@ -1,0 +1,21 @@
+{
+ "symbol": "?IronCurtain@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::IronCurtain",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "518a81df06000033d23ac274298891df0600000fbe05a00100008981280500008b44240089914005000089812c0500008991300500008b5424008b442400528b5424045052e80000000059c3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?IronCurtain@TechnoClass@@QAEHHHD@Z",
+   "sym_key": "TechnoClass::IronCurtain"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasOnlyOneGarrisonSlot@TechnoClass@@QAGPAIH@Z",
+ "sym_key": "TechnoClass::HasOnlyOneGarrisonSlot",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "8b4424046a000540f9ffff508b08ff91f803000085c074298b0085c074238b80a000000083b8dc020000017f128a889e02000084c97508b801000000c2080033c0c20800",
+ "relocs": []
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Readd@Targeting@@QAGHPAH@Z",
+ "sym_key": "Targeting::Readd",
+ "size": 111,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c241485ff745a83bf94000000ff740657e8000000008b0757ff50788bf083feff8bde743483fe020f94c1518d8c766c40110057c1e103e80000000025ff00000081e600ffffff0bc684c07418899f940000005f5e5bc208008bc65f5e5bc208008b4424145f5e5bc20800",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?RemoveTarget@@YGXH@Z",
+   "sym_key": "RemoveTarget"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?RenderStatusText@DisplayClass@@QAE_NHD@Z",
+   "sym_key": "DisplayClass::RenderStatusText"
+  }
+ ]
+}

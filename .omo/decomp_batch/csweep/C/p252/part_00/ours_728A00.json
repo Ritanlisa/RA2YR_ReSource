@@ -1,0 +1,39 @@
+{
+ "symbol": "?SmallFunc_728A00@TunnelLocomotionClass@@QAEHXZ",
+ "sym_key": "TunnelLocomotionClass::SmallFunc_728A00",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000033c08946188b0dd0100000894e1c8b15d41000008956208b0dd8100000894e240fbe15a001000089562889463089463488463889068946045ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Init@LocomotionClass@@QAEPAIXZ",
+   "sym_key": "LocomotionClass::Init"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

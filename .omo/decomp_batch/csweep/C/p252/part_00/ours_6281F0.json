@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsEqualTo@_VectorClass_VHSVClass@@QAEDH@Z",
+ "sym_key": "_VectorClass_VHSVClass::IsEqualTo",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "538b5c24085556578bf98b4b088b47083bc1754433ed85c07f095f5e5db0015bc204008b43048b4f045033f6e80000000085c075238b4708453be87ddd8b530483c6038bce03ca8b5704518bce03cae80000000085c074dd5f5e5d32c05bc20400",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?HashEntryCompare@DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode@@QAEHPAX@Z",
+   "sym_key": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?HashEntryCompare@DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode@@QAEHPAX@Z",
+   "sym_key": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare"
+  }
+ ]
+}

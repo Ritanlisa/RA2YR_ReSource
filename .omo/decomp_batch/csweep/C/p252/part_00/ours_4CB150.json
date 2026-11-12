@@ -1,0 +1,21 @@
+{
+ "symbol": "?ComputeDistortionVariant@@YGNM@Z",
+ "sym_key": "Unnamed::ComputeDistortionVariant",
+ "size": 100,
+ "link_base": 0,
+ "bytes_hex": "83ec08d90500000000d84c240c83ec08dd1c24e8000000008b4c241483c40833c125ff00000033c1992bc2d1f825ff1f00808944240c7d2225ffff0000c744240400000000480d00e0ffff4089442400df6c240083c408c20400db44240c83c408c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8223B0@@3MA",
+   "sym_key": "DataGlobal_8223B0"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

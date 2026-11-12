@@ -1,0 +1,15 @@
+{
+ "symbol": "?SumPowerDrain@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::SumPowerDrain",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec0853558b298b4904565733db33ff3bcb895c241474403beb8bf17e3a85f674368b0656ff9084000000db44241483ec08dc8080030000dd1c24e80000000033c78b763025ff00000083c40833f8433bdd897c24147cc68bc75f5e5d5b8be55dc3",
+ "relocs": [
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

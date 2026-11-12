@@ -1,0 +1,15 @@
+{
+ "symbol": "?Render_Render_759880@TechnoClass@@QAE_NHHH@Z",
+ "sym_key": "TechnoClass::Render_Render_759880",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "8b4424045685c08bd07c083b8108050000720233d28b74240c85f67c083bb10805000072078bb1080500004e8b44241085c07d0383c8ff8b89000200006a005056e80000000033c983f8ff0f94c18ac15ec20c00",
+ "relocs": [
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?SeekAudioStream@@YIHHHHHI@Z",
+   "sym_key": "SeekAudioStream"
+  }
+ ]
+}

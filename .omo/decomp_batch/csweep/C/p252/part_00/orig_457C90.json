@@ -1,0 +1,11 @@
+{
+ "addr": "0x457C90",
+ "name": "BuildingClass::IronCurtain",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x457C90",
+ "bytes_hex": "8a81df06000033d283ec0c3ac27425568891df060000a184eda8008db12805000089914005000089068b4424088946048956085e8b5424188b442414528b5424145052e8d8652b0083c40cc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

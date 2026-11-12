@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p252\part_00
+=== convert (20 addrs) ===
+[conv] 0x4cb150 ComputeDistortionVariant -> _addr_4C
+[conv] 0x53d9f0 sub_53D9F0 -> _addr_53
+[conv] 0x6281f0 _VectorClass_VHSVClass::IsEqualTo -> _VectorClass_VHSVClass
+[conv] 0x710410 TechnoClass::ClearPointerRefs -> TechnoClass
+[conv] 0x728a00 TunnelLocomotionClass::SmallFunc_728A00 -> TunnelLocomotionClass
+[conv] 0x4087f0 sub_4087F0 -> _addr_40
+[conv] 0x475870 ScenarioClass::ReadAndParseString -> ScenarioClass
+[conv] 0x475980 HouseClass::ReadIntFromINI -> HouseClass
+[conv] 0x4759f0 INIClass::ReadStringValue -> INIClass
+[conv] 0x65d1f0 RawFileClass::GetDosTimestamp -> RawFileClass
+[conv] 0x473460 HouseClass::SumPowerDrain -> HouseClass
+[conv] 0x558010 ListClass::RemoveColor -> ListClass
+[conv] 0x41b9f0 AircraftClass::UpdateDocking -> AircraftClass
+[conv] 0x4a9720 Targeting::Readd -> Targeting
+[conv] 0x457c90 BuildingClass::IronCurtain -> BuildingClass
+[conv] 0x759880 TechnoClass::Render_Render_759880 -> TechnoClass
+[conv] 0x41b7f0 TechnoClass::HasOnlyOneGarrisonSlot -> TechnoClass
+[conv] 0x4500a0 BuildingClass::GetAdjustedExitCoords -> BuildingClass
+[conv] 0x70ad50 TechnoClass::GetCellCoordsV2 -> TechnoClass
+[conv] 0x4028b0 AudioStream::InitListAndCounters -> AudioStream
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4C                 rc=0
+[era] _addr_53                 rc=0
+[era] _VectorClass_VHSVClass   rc=0
+[era] TechnoClass              rc=0
+[era] TunnelLocomotionClass    rc=0
+[era] _addr_40                 rc=0
+[era] ScenarioClass            rc=2
+[era] HouseClass               rc=2
+[era] INIClass                 rc=2
+[era] RawFileClass             rc=0
+[era] ListClass                rc=2
+[era] AircraftClass            rc=2
+[era] Targeting                rc=0
+[era] BuildingClass            rc=2
+[era] AudioStream              rc=0
+=== diffasm byte-compare ===
+[diff] 0x4cb150   MISMATCH         ComputeDistortionVariant
+[diff] 0x53d9f0   MISMATCH         sub_53D9F0
+[diff] 0x6281f0   MISMATCH         _VectorClass_VHSVClass::IsEqualTo
+[diff] 0x710410   MISMATCH         TechnoClass::ClearPointerRefs
+[diff] 0x759880   MISMATCH         TechnoClass::Render_Render_759880
+[diff] 0x41b7f0   MISMATCH         TechnoClass::HasOnlyOneGarrisonSlot
+[diff] 0x70ad50   MISMATCH         TechnoClass::GetCellCoordsV2
+[diff] 0x728a00   MISMATCH         TunnelLocomotionClass::SmallFunc_728A00
+[diff] 0x4087f0   MISMATCH         sub_4087F0
+[diff] 0x473460   MISMATCH         HouseClass::SumPowerDrain
+[diff] 0x65d1f0   MISMATCH         RawFileClass::GetDosTimestamp
+[diff] 0x4a9720   MISMATCH         Targeting::Readd
+[diff] 0x457c90   MISMATCH         BuildingClass::IronCurtain
+[diff] 0x4028b0   MISMATCH         AudioStream::InitListAndCounters
+[ledger] 0x4cb150 ComputeDistortionVariant -> NG (attempt 1)
+[ledger] 0x53d9f0 sub_53D9F0 -> NG (attempt 1)
+[ledger] 0x6281f0 _VectorClass_VHSVClass::IsEqualTo -> NG (attempt 1)
+[ledger] 0x710410 TechnoClass::ClearPointerRefs -> NG (attempt 1)
+[ledger] 0x728a00 TunnelLocomotionClass::SmallFunc_728A00 -> NG (attempt 1)
+[ledger] 0x4087f0 sub_4087F0 -> NG (attempt 1)
+[ledger] 0x475870 ScenarioClass::ReadAndParseString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x475980 HouseClass::ReadIntFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4759f0 INIClass::ReadStringValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65d1f0 RawFileClass::GetDosTimestamp -> NG (attempt 1)
+[ledger] 0x473460 HouseClass::SumPowerDrain -> NG (attempt 1)
+[ledger] 0x558010 ListClass::RemoveColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41b9f0 AircraftClass::UpdateDocking -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a9720 Targeting::Readd -> NG (attempt 1)
+[ledger] 0x457c90 BuildingClass::IronCurtain -> NG (attempt 1)
+[ledger] 0x759880 TechnoClass::Render_Render_759880 -> NG (attempt 1)
+[ledger] 0x41b7f0 TechnoClass::HasOnlyOneGarrisonSlot -> NG (attempt 1)
+[ledger] 0x4500a0 BuildingClass::GetAdjustedExitCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70ad50 TechnoClass::GetCellCoordsV2 -> NG (attempt 1)
+[ledger] 0x4028b0 AudioStream::InitListAndCounters -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "const_fold": 1,
+  "regalloc": 4,
+  "ret_norm": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p252\batch_report.json
