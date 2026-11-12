@@ -1,0 +1,27 @@
+{
+ "symbol": "?Init@EventClass@@QAEPADHDHHHPAG@Z",
+ "sym_key": "EventClass::Init",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b44240885c07c3f8a4c240c8b5424108846028a44241488460c8b4424188946108b44241c880e895608668b0866894e14668b500266895616a1000000008946048bc65ec21800c64602ffc606008b0d000000008bc6894e045ec21800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

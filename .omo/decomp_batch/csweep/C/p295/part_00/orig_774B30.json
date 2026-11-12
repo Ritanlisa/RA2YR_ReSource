@@ -1,0 +1,11 @@
+{
+ "addr": "0x774B30",
+ "name": "WinModemClass::ReadBytes",
+ "size": 129,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x774B30",
+ "bytes_hex": "5356578bf133ffe844feffff84c074698b5e588b46542bd8790681c3002000008b4424143bd87e028bd885db7e438b7c2410558beb8b466485c074108b4e548b56248a0c1180f90d7402ffd08b46548b4e24478a14088857ff8b46544025ff1f00004d89465475cd5d5f8bc35e5bc208005f8bc35e5bc208008bc75f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x624140",
+ "name": "HashTable::FindAndMark",
+ "size": 128,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x624140",
+ "bytes_hex": "8b442408568bf1578b4c240c894604a1041bac0085c0894c2410745b8d4c2410ff15181bac008b0d0c1bac00ba010000008bfad3e74f23f8a1001bac008b04b885c074128b4c2410390874128b800402000085c075f28856085f5ec2080085c074f483c00485c074ed8890d40000008856085f5ec20800c64608015f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

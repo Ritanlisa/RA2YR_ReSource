@@ -1,0 +1,21 @@
+{
+ "symbol": "?Constructor@ListClass@@QAEPAV1@HHHHH@Z",
+ "sym_key": "ListClass::Constructor",
+ "size": 129,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b542404558b6c241456578b7c24206a018bf16a078b4c241c57555051528bcee8000000008b4e30b8ff0000003bc8c70600000000740a8bce894630e8000000008b4e3033c085c97d028bc13b4634740d894634560fbe8620010000ff103befc6462d010f9fc1884e2ec6462c01c74638000000008bc65f5e5dc21400",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Construct@ControlClass@@QAEPAV1@HHHHHHD@Z",
+   "sym_key": "ControlClass::Construct"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?MarkDirty@VectorClass_ptr_ConvertClass@@QAEXXZ",
+   "sym_key": "VectorClass_ptr_ConvertClass::MarkDirty"
+  }
+ ]
+}

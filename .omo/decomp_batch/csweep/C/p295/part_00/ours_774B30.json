@@ -1,0 +1,15 @@
+{
+ "symbol": "?ReadBytes@WinModemClass@@QAEHPAEH@Z",
+ "sym_key": "WinModemClass::ReadBytes",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "55568bf1e80000000084c075075e33c05dc208008b46588b6e542bc5b9000000000f99c14981e10020000003c88b4424108be93be87e028be885ed7f078bc55e5dc20800538b5c2410578bfd8b466485c0740e8b56548b4e24803c0a0d7402ffd08b56548b4624434f8a0c02884bff668b56544281e2ff1f000085ff89565475cb5f5b8bc55e5dc20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ReadSerial@WinModemClass@@QAE_NXZ",
+   "sym_key": "WinModemClass::ReadSerial"
+  }
+ ]
+}

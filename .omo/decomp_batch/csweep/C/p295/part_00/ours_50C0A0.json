@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetBuildingDamageMultiplier@HouseClass@@QAENPAH@Z",
+ "sym_key": "HouseClass::GetBuildingDamageMultiplier",
+ "size": 143,
+ "link_base": 0,
+ "bytes_hex": "83ec08568b742410578bf98b0656ff502c83c0fd83f825775c33c98a8800000000ff248d000000008b57345f5ed9823c01000083c408c2040083be080e00000575418b47345f5ed9804401000083c408c204008b4f345f5ed9813401000083c408c204008b57345f5ed9823801000083c408c20400d905000000005f5e83c408c20400dd4424085f5e83c408c20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "$L1867",
+   "sym_key": "$L1867"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "$L1868",
+   "sym_key": "$L1868"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  }
+ ]
+}

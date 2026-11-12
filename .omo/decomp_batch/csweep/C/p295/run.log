@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p295\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e2500 ListClass::Constructor -> ListClass
+[conv] 0x4c6ae0 EventClass::Init -> EventClass
+[conv] 0x4cc9a0 FlyLocomotionClass::LocomotionClass -> FlyLocomotionClass
+[conv] 0x624140 FactionSelectDialogControl_WorldDominationTour::FindAndMark -> FactionSelectDialogControl_WorldDominationTour
+[conv] 0x628170 FileSystem::closeFile -> FileSystem
+[conv] 0x50bd30 TechnoClass::GetDamageMultiplier -> TechnoClass
+[conv] 0x50bdf0 TechnoTypeClass::Dispatch -> TechnoTypeClass
+[conv] 0x50c0a0 HouseClass::GetBuildingDamageMultiplier -> HouseClass
+[conv] 0x452820 Warhead::RemoveFromDamageList -> Warhead
+[conv] 0x71c6b0 TerrainClass::ProcessTick -> TerrainClass
+[conv] 0x454930 BuildingClass::ProcessDamageAnim -> BuildingClass
+[conv] 0x5d25d0 ObjectClass::sub_5D25D0 -> ObjectClass
+[conv] 0x542f30 ObjectClass::sub_542F30 -> ObjectClass
+[conv] 0x60ccc0 ObjectClass::UI_Helper_60CCC0 -> ObjectClass
+[conv] 0x60cdb0 ObjectClass::UI_Helper_60CDB0 -> ObjectClass
+[conv] 0x4c2b40 ObjectClass::sub_4C2B40 -> ObjectClass
+[conv] 0x4c3ad0 sub_4C3AD0 -> _addr_4C
+[conv] 0x774b30 WinModemClass::ReadBytes -> WinModemClass
+[conv] 0x7bf190 TechnoClass::sub_7BF190 -> TechnoClass
+[conv] 0x6096a0 sub_6096A0 -> _addr_60
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ListClass                rc=0
+[era] EventClass               rc=0
+[era] FlyLocomotionClass       rc=2
+[era] FactionSelectDialogControl_WorldDominationTour rc=0
+[era] FileSystem               rc=2
+[era] TechnoClass              rc=2
+[era] TechnoTypeClass          rc=0
+[era] HouseClass               rc=0
+[era] Warhead                  rc=2
+[era] TerrainClass             rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] _addr_4C                 rc=0
+[era] WinModemClass            rc=0
+[era] _addr_60                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4e2500   MISMATCH         ListClass::Constructor
+[diff] 0x4c6ae0   MISMATCH         EventClass::Init
+[diff] 0x624140   MISMATCH         FactionSelectDialogControl_WorldDominationTour::FindAndMark
+[diff] 0x7bf190   MISMATCH         TechnoClass::sub_7BF190
+[diff] 0x50bdf0   MISMATCH         TechnoTypeClass::Dispatch
+[diff] 0x50c0a0   MISMATCH         HouseClass::GetBuildingDamageMultiplier
+[diff] 0x4c2b40   MISMATCH         ObjectClass::sub_4C2B40
+[diff] 0x4c3ad0   MISMATCH         sub_4C3AD0
+[diff] 0x774b30   MISMATCH         WinModemClass::ReadBytes
+[ledger] 0x4e2500 ListClass::Constructor -> NG (attempt 1)
+[ledger] 0x4c6ae0 EventClass::Init -> NG (attempt 1)
+[ledger] 0x4cc9a0 FlyLocomotionClass::LocomotionClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x624140 FactionSelectDialogControl_WorldDominationTour::FindAndMark -> NG (attempt 1)
+[ledger] 0x628170 FileSystem::closeFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50bd30 TechnoClass::GetDamageMultiplier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50bdf0 TechnoTypeClass::Dispatch -> NG (attempt 1)
+[ledger] 0x50c0a0 HouseClass::GetBuildingDamageMultiplier -> NG (attempt 1)
+[ledger] 0x452820 Warhead::RemoveFromDamageList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71c6b0 TerrainClass::ProcessTick -> COMPILE_FAIL (attempt 1)
+[ledger] 0x454930 BuildingClass::ProcessDamageAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d25d0 ObjectClass::sub_5D25D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x542f30 ObjectClass::sub_542F30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60ccc0 ObjectClass::UI_Helper_60CCC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60cdb0 ObjectClass::UI_Helper_60CDB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c2b40 ObjectClass::sub_4C2B40 -> NG (attempt 1)
+[ledger] 0x4c3ad0 sub_4C3AD0 -> NG (attempt 1)
+[ledger] 0x774b30 WinModemClass::ReadBytes -> NG (attempt 1)
+[ledger] 0x7bf190 TechnoClass::sub_7BF190 -> NG (attempt 1)
+[ledger] 0x6096a0 sub_6096A0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "regalloc": 2,
+  "codegen_shape": 4,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p295\batch_report.json

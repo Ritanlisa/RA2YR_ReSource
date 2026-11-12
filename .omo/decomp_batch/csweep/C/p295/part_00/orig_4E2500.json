@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E2500",
+ "name": "ListClass::Constructor",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E2500",
+ "bytes_hex": "8b44240c8b542404558b6c241456578b7c24206a018bf16a078b4c241c57555051528bcee8f7bffaff8b4e30b8ff0000003bc8c70684937e00740b8bce894630ff15cc937e008b4e3033c085c97d028bc13b4634740a8946348b068bceff50483befc6462d010f9fc1884e2ec6462c01c74638000000008bc65f5e5dc21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

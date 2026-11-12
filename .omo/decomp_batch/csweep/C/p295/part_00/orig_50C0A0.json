@@ -1,0 +1,11 @@
+{
+ "addr": "0x50C0A0",
+ "name": "HouseClass::GetBuildingDamageMultiplier",
+ "size": 128,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50C0A0",
+ "bytes_hex": "56578b7c240c8bf18bcf8b07ff502c83c0fd83f825775e33c98a8834c15000ff248d20c150008b56345f5ed98234010000c204008b46345f5ed98038010000c204008b4e345f5ed9813c010000c2040083bf080e000005750e8b56345f5ed98244010000c204008b46345f5ed98040010000c20400d905c82a7e005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

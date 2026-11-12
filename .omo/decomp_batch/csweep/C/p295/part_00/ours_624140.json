@@ -1,0 +1,33 @@
+{
+ "symbol": "?FindAndMark@FactionSelectDialogControl_WorldDominationTour@@QAEHHH@Z",
+ "sym_key": "FactionSelectDialogControl_WorldDominationTour::FindAndMark",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "8b442408568bf1578b4c240c894604a14402000085c0894c241074558d54241052ff15580200008a0d4c020000ba010000008bfad3e78b0d400200004f23c78b048185c074238b4c24108b383bf9740e8b800402000085c0740f390875f283c00474068890d40000008856085f5ec20800c64608015f5ec20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  }
+ ]
+}
