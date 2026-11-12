@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DAE14",
+ "name": "__ismbbpunct",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DAE14",
+ "bytes_hex": "6a026a10ff74240ce84d00000083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

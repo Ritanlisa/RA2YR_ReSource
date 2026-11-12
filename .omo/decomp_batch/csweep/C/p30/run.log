@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cbded __exit -> _addr_7C
+[conv] 0x7dada2 __ismbbkprint -> _addr_7D
+[conv] 0x7dadb3 __ismbbkpunct -> _addr_7D
+[conv] 0x7dae14 __ismbbpunct -> _addr_7D
+[conv] 0x7dae25 __ismbblead -> _addr_7D
+[conv] 0x7dae36 __ismbbtrail -> _addr_7D
+[conv] 0x7dd4f4 __cwprintf -> _addr_7D
+[conv] 0x6beec0 _TClassFactory_VCStreamClass::AddRef -> _TClassFactory_VCStreamClass
+[conv] 0x6bf040 _TClassFactory_VWaveClass::AddRef -> _TClassFactory_VWaveClass
+[conv] 0x6bf340 _TClassFactory_VTerrainClass::AddRef -> _TClassFactory_VTerrainClass
+[conv] 0x6bf4c0 _TClassFactory_VSuperWeaponTypeClass::AddRef -> _TClassFactory_VSuperWeaponTypeClass
+[conv] 0x6bf640 _TClassFactory_VSuperClass::AddRef -> _TClassFactory_VSuperClass
+[conv] 0x6bf7c0 _TClassFactory_VTactical::AddRef -> _TClassFactory_VTactical
+[conv] 0x6bf940 _TClassFactory_VCellClass::AddRef -> _TClassFactory_VCellClass
+[conv] 0x6bfac0 _TClassFactory_VEMPulseClass::AddRef -> _TClassFactory_VEMPulseClass
+[conv] 0x6bfc40 _TClassFactory_VLightSourceClass::AddRef -> _TClassFactory_VLightSourceClass
+[conv] 0x6bfdc0 _TClassFactory_VSideClass::AddRef -> _TClassFactory_VSideClass
+[conv] 0x6bff40 _TClassFactory_VTiberiumClass::AddRef -> _TClassFactory_VTiberiumClass
+[conv] 0x6c00c0 _TClassFactory_VTubeClass::AddRefCOM -> _TClassFactory_VTubeClass
+[conv] 0x6c03c0 _TClassFactory_VBuildingLightClass::AddRef -> _TClassFactory_VBuildingLightClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=2
+[era] _TClassFactory_VCStreamClass rc=0
+[era] _TClassFactory_VWaveClass rc=0
+[era] _TClassFactory_VTerrainClass rc=0
+[era] _TClassFactory_VSuperWeaponTypeClass rc=0
+[era] _TClassFactory_VSuperClass rc=0
+[era] _TClassFactory_VTactical rc=0
+[era] _TClassFactory_VCellClass rc=0
+[era] _TClassFactory_VEMPulseClass rc=0
+[era] _TClassFactory_VLightSourceClass rc=0
+[era] _TClassFactory_VSideClass rc=0
+[era] _TClassFactory_VTiberiumClass rc=0
+[era] _TClassFactory_VTubeClass rc=0
+[era] _TClassFactory_VBuildingLightClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x7cbded   MISMATCH         __exit
+[diff] 0x7dada2   MISMATCH         __ismbbkprint
+[diff] 0x7dadb3   MISMATCH         __ismbbkpunct
+[diff] 0x7dae14   MISMATCH         __ismbbpunct
+[diff] 0x7dae25   MISMATCH         __ismbblead
+[diff] 0x7dae36   MISMATCH         __ismbbtrail
+[diff] 0x6beec0   MISMATCH         _TClassFactory_VCStreamClass::AddRef
+[diff] 0x6bf040   MISMATCH         _TClassFactory_VWaveClass::AddRef
+[diff] 0x6bf340   MISMATCH         _TClassFactory_VTerrainClass::AddRef
+[diff] 0x6bf4c0   MISMATCH         _TClassFactory_VSuperWeaponTypeClass::AddRef
+[diff] 0x6bf640   MISMATCH         _TClassFactory_VSuperClass::AddRef
+[diff] 0x6bf7c0   MISMATCH         _TClassFactory_VTactical::AddRef
+[diff] 0x6bf940   MISMATCH         _TClassFactory_VCellClass::AddRef
+[diff] 0x6bfac0   MISMATCH         _TClassFactory_VEMPulseClass::AddRef
+[diff] 0x6bfc40   MISMATCH         _TClassFactory_VLightSourceClass::AddRef
+[diff] 0x6bfdc0   MISMATCH         _TClassFactory_VSideClass::AddRef
+[diff] 0x6bff40   MISMATCH         _TClassFactory_VTiberiumClass::AddRef
+[diff] 0x6c00c0   MISMATCH         _TClassFactory_VTubeClass::AddRefCOM
+[diff] 0x6c03c0   MISMATCH         _TClassFactory_VBuildingLightClass::AddRef
+[ledger] 0x7cbded __exit -> NG (attempt 1)
+[ledger] 0x7dada2 __ismbbkprint -> NG (attempt 1)
+[ledger] 0x7dadb3 __ismbbkpunct -> NG (attempt 1)
+[ledger] 0x7dae14 __ismbbpunct -> NG (attempt 1)
+[ledger] 0x7dae25 __ismbblead -> NG (attempt 1)
+[ledger] 0x7dae36 __ismbbtrail -> NG (attempt 1)
+[ledger] 0x7dd4f4 __cwprintf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6beec0 _TClassFactory_VCStreamClass::AddRef -> NG (attempt 1)
+[ledger] 0x6bf040 _TClassFactory_VWaveClass::AddRef -> NG (attempt 1)
+[ledger] 0x6bf340 _TClassFactory_VTerrainClass::AddRef -> NG (attempt 1)
+[ledger] 0x6bf4c0 _TClassFactory_VSuperWeaponTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6bf640 _TClassFactory_VSuperClass::AddRef -> NG (attempt 1)
+[ledger] 0x6bf7c0 _TClassFactory_VTactical::AddRef -> NG (attempt 1)
+[ledger] 0x6bf940 _TClassFactory_VCellClass::AddRef -> NG (attempt 1)
+[ledger] 0x6bfac0 _TClassFactory_VEMPulseClass::AddRef -> NG (attempt 1)
+[ledger] 0x6bfc40 _TClassFactory_VLightSourceClass::AddRef -> NG (attempt 1)
+[ledger] 0x6bfdc0 _TClassFactory_VSideClass::AddRef -> NG (attempt 1)
+[ledger] 0x6bff40 _TClassFactory_VTiberiumClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c00c0 _TClassFactory_VTubeClass::AddRefCOM -> NG (attempt 1)
+[ledger] 0x6c03c0 _TClassFactory_VBuildingLightClass::AddRef -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 19
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p30\batch_report.json

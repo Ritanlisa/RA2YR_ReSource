@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DAE36",
+ "name": "__ismbbtrail",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DAE36",
+ "bytes_hex": "6a086a00ff74240ce82b00000083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

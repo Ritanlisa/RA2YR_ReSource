@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DADA2",
+ "name": "__ismbbkprint",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DADA2",
+ "bytes_hex": "6a036a00ff74240ce8bf00000083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
