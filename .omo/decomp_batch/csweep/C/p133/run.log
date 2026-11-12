@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p133\part_00
+=== convert (20 addrs) ===
+[conv] 0x76c0a0 sub_76C0A0 -> _addr_76
+[conv] 0x76f280 sub_76F280 -> _addr_76
+[conv] 0x76f720 sub_76F720 -> _addr_76
+[conv] 0x770080 sub_770080 -> _addr_77
+[conv] 0x771a60 sub_771A60 -> _addr_77
+[conv] 0x773260 sub_773260 -> _addr_77
+[conv] 0x7771d0 sub_7771D0 -> _addr_77
+[conv] 0x7784f0 sub_7784F0 -> _addr_77
+[conv] 0x77b090 sub_77B090 -> _addr_77
+[conv] 0x7af0b0 sub_7AF0B0 -> _addr_7A
+[conv] 0x7b0ba0 sub_7B0BA0 -> _addr_7B
+[conv] 0x7b17d0 sub_7B17D0 -> _addr_7B
+[conv] 0x7b2ba0 sub_7B2BA0 -> _addr_7B
+[conv] 0x437fd0 GameClass::initGameMode -> GameClass
+[conv] 0x4a2ee0 CStreamClass::SetSize -> CStreamClass
+[conv] 0x4a2ff0 CStreamClass::Stat -> CStreamClass
+[conv] 0x55a8c0 IUnknown::ComputeScreenYOffset -> IUnknown
+[conv] 0x597730 MapSeed::ValidateName -> MapSeed
+[conv] 0x6da740 SuperWeaponClass::UpdateAll -> SuperWeaponClass
+[conv] 0x4aec30 BufferStraw::processDisplayMode -> BufferStraw
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_76                 rc=0
+[era] _addr_77                 rc=0
+[era] _addr_7A                 rc=0
+[era] _addr_7B                 rc=0
+[era] GameClass                rc=2
+[era] CStreamClass             rc=2
+[era] IUnknown                 rc=2
+[era] MapSeed                  rc=0
+[era] SuperWeaponClass         rc=2
+[era] BufferStraw              rc=0
+=== diffasm byte-compare ===
+[diff] 0x76c0a0   MISMATCH         sub_76C0A0
+[diff] 0x76f280   MISMATCH         sub_76F280
+[diff] 0x76f720   MISMATCH         sub_76F720
+[diff] 0x770080   MISMATCH         sub_770080
+[diff] 0x771a60   MISMATCH         sub_771A60
+[diff] 0x773260   MISMATCH         sub_773260
+[diff] 0x7771d0   MISMATCH         sub_7771D0
+[diff] 0x7784f0   MISMATCH         sub_7784F0
+[diff] 0x77b090   MISMATCH         sub_77B090
+[diff] 0x7af0b0   MISMATCH         sub_7AF0B0
+[diff] 0x7b0ba0   MISMATCH         sub_7B0BA0
+[diff] 0x7b17d0   MISMATCH         sub_7B17D0
+[diff] 0x7b2ba0   MISMATCH         sub_7B2BA0
+[diff] 0x597730   MISMATCH         MapSeed::ValidateName
+[diff] 0x4aec30   MISMATCH         BufferStraw::processDisplayMode
+[ledger] 0x76c0a0 sub_76C0A0 -> NG (attempt 1)
+[ledger] 0x76f280 sub_76F280 -> NG (attempt 1)
+[ledger] 0x76f720 sub_76F720 -> NG (attempt 1)
+[ledger] 0x770080 sub_770080 -> NG (attempt 1)
+[ledger] 0x771a60 sub_771A60 -> NG (attempt 1)
+[ledger] 0x773260 sub_773260 -> NG (attempt 1)
+[ledger] 0x7771d0 sub_7771D0 -> NG (attempt 1)
+[ledger] 0x7784f0 sub_7784F0 -> NG (attempt 1)
+[ledger] 0x77b090 sub_77B090 -> NG (attempt 1)
+[ledger] 0x7af0b0 sub_7AF0B0 -> NG (attempt 1)
+[ledger] 0x7b0ba0 sub_7B0BA0 -> NG (attempt 1)
+[ledger] 0x7b17d0 sub_7B17D0 -> NG (attempt 1)
+[ledger] 0x7b2ba0 sub_7B2BA0 -> NG (attempt 1)
+[ledger] 0x437fd0 GameClass::initGameMode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2ee0 CStreamClass::SetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2ff0 CStreamClass::Stat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55a8c0 IUnknown::ComputeScreenYOffset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x597730 MapSeed::ValidateName -> NG (attempt 1)
+[ledger] 0x6da740 SuperWeaponClass::UpdateAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aec30 BufferStraw::processDisplayMode -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "const_fold": 14,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p133\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x597730",
+ "name": "MapSeed::ValidateName",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x597730",
+ "bytes_hex": "8b44240485c0740f8b11568d71785650ff52085ec204008d417850e8c010fcff84c00f95c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

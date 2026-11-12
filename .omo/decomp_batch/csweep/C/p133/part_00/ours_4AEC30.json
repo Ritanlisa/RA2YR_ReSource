@@ -1,0 +1,27 @@
+{
+ "symbol": "?processDisplayMode@BufferStraw@@QAEPAHD@Z",
+ "sym_key": "BufferStraw::processDisplayMode",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "568bf18d4e04e8000000008bcee800000000f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Dtor@Straw@@QAEHXZ",
+   "sym_key": "Straw::Dtor"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

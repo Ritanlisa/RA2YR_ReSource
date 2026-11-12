@@ -1,0 +1,15 @@
+{
+ "symbol": "?ValidateName@MapSeed@@QAEDH@Z",
+ "sym_key": "MapSeed::ValidateName",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "8b44240485c0740e0fbe512083c1755150ff12c204008d41755051e80000000083c408c20400",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?ShowSaveLoadDialog@@YA_NHPAX@Z",
+   "sym_key": "ShowSaveLoadDialog"
+  }
+ ]
+}
