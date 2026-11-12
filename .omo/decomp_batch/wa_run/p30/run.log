@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x71d420 sub_71D420 -> _addr_71
+[conv] 0x71d440 sub_71D440 -> _addr_71
+[conv] 0x71e480 sub_71E480 -> _addr_71
+[conv] 0x71e4a0 sub_71E4A0 -> _addr_71
+[conv] 0x71e4c0 sub_71E4C0 -> _addr_71
+[conv] 0x7214e0 sub_7214E0 -> _addr_72
+[conv] 0x723b00 sub_723B00 -> _addr_72
+[conv] 0x723b40 sub_723B40 -> _addr_72
+[conv] 0x725130 sub_725130 -> _addr_72
+[conv] 0x725170 sub_725170 -> _addr_72
+[conv] 0x725e00 sub_725E00 -> _addr_72
+[conv] 0x725e20 sub_725E20 -> _addr_72
+[conv] 0x725e40 sub_725E40 -> _addr_72
+[conv] 0x726ae0 sub_726AE0 -> _addr_72
+[conv] 0x726b00 sub_726B00 -> _addr_72
+[conv] 0x726b20 sub_726B20 -> _addr_72
+[conv] 0x727e30 sub_727E30 -> _addr_72
+[conv] 0x727e50 sub_727E50 -> _addr_72
+[conv] 0x727e70 sub_727E70 -> _addr_72
+[conv] 0x728860 sub_728860 -> _addr_72
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_71                 rc=0
+[era] _addr_72                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x71d420   MATCH            sub_71D420
+[diff] 0x71d440   MATCH            sub_71D440
+[diff] 0x71e480   MATCH            sub_71E480
+[diff] 0x71e4a0   MATCH            sub_71E4A0
+[diff] 0x71e4c0   MATCH            sub_71E4C0
+[diff] 0x7214e0   MATCH            sub_7214E0
+[diff] 0x723b00   MATCH            sub_723B00
+[diff] 0x723b40   MATCH            sub_723B40
+[diff] 0x725130   MATCH            sub_725130
+[diff] 0x725170   MATCH            sub_725170
+[diff] 0x725e00   MATCH            sub_725E00
+[diff] 0x725e20   MATCH            sub_725E20
+[diff] 0x725e40   MATCH            sub_725E40
+[diff] 0x726ae0   MATCH            sub_726AE0
+[diff] 0x726b00   MATCH            sub_726B00
+[diff] 0x726b20   MATCH            sub_726B20
+[diff] 0x727e30   MATCH            sub_727E30
+[diff] 0x727e50   MATCH            sub_727E50
+[diff] 0x727e70   MATCH            sub_727E70
+[diff] 0x728860   MATCH            sub_728860
+[ledger] 0x71d420 sub_71D420 -> OK (attempt 3)
+[ledger] 0x71d440 sub_71D440 -> OK (attempt 2)
+[ledger] 0x71e480 sub_71E480 -> OK (attempt 2)
+[ledger] 0x71e4a0 sub_71E4A0 -> OK (attempt 2)
+[ledger] 0x71e4c0 sub_71E4C0 -> OK (attempt 2)
+[ledger] 0x7214e0 sub_7214E0 -> OK (attempt 3)
+[ledger] 0x723b00 sub_723B00 -> OK (attempt 2)
+[ledger] 0x723b40 sub_723B40 -> OK (attempt 2)
+[ledger] 0x725130 sub_725130 -> OK (attempt 2)
+[ledger] 0x725170 sub_725170 -> OK (attempt 2)
+[ledger] 0x725e00 sub_725E00 -> OK (attempt 2)
+[ledger] 0x725e20 sub_725E20 -> OK (attempt 2)
+[ledger] 0x725e40 sub_725E40 -> OK (attempt 3)
+[ledger] 0x726ae0 sub_726AE0 -> OK (attempt 2)
+[ledger] 0x726b00 sub_726B00 -> OK (attempt 2)
+[ledger] 0x726b20 sub_726B20 -> OK (attempt 2)
+[ledger] 0x727e30 sub_727E30 -> OK (attempt 2)
+[ledger] 0x727e50 sub_727E50 -> OK (attempt 2)
+[ledger] 0x727e70 sub_727E70 -> OK (attempt 2)
+[ledger] 0x728860 sub_728860 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p30\batch_report.json

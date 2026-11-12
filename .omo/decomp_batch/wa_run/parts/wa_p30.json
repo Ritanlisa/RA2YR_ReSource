@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x71d420",
+  "family": "D_CONST_FOLD",
+  "name": "sub_71D420"
+ },
+ {
+  "addr": "0x71d440",
+  "family": "D_CONST_FOLD",
+  "name": "sub_71D440"
+ },
+ {
+  "addr": "0x71e480",
+  "family": "D_CONST_FOLD",
+  "name": "sub_71E480"
+ },
+ {
+  "addr": "0x71e4a0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_71E4A0"
+ },
+ {
+  "addr": "0x71e4c0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_71E4C0"
+ },
+ {
+  "addr": "0x7214e0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_7214E0"
+ },
+ {
+  "addr": "0x723b00",
+  "family": "D_CONST_FOLD",
+  "name": "sub_723B00"
+ },
+ {
+  "addr": "0x723b40",
+  "family": "D_CONST_FOLD",
+  "name": "sub_723B40"
+ },
+ {
+  "addr": "0x725130",
+  "family": "D_CONST_FOLD",
+  "name": "sub_725130"
+ },
+ {
+  "addr": "0x725170",
+  "family": "D_CONST_FOLD",
+  "name": "sub_725170"
+ },
+ {
+  "addr": "0x725e00",
+  "family": "D_CONST_FOLD",
+  "name": "sub_725E00"
+ },
+ {
+  "addr": "0x725e20",
+  "family": "D_CONST_FOLD",
+  "name": "sub_725E20"
+ },
+ {
+  "addr": "0x725e40",
+  "family": "D_CONST_FOLD",
+  "name": "sub_725E40"
+ },
+ {
+  "addr": "0x726ae0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_726AE0"
+ },
+ {
+  "addr": "0x726b00",
+  "family": "D_CONST_FOLD",
+  "name": "sub_726B00"
+ },
+ {
+  "addr": "0x726b20",
+  "family": "D_CONST_FOLD",
+  "name": "sub_726B20"
+ },
+ {
+  "addr": "0x727e30",
+  "family": "D_CONST_FOLD",
+  "name": "sub_727E30"
+ },
+ {
+  "addr": "0x727e50",
+  "family": "D_CONST_FOLD",
+  "name": "sub_727E50"
+ },
+ {
+  "addr": "0x727e70",
+  "family": "D_CONST_FOLD",
+  "name": "sub_727E70"
+ },
+ {
+  "addr": "0x728860",
+  "family": "D_CONST_FOLD",
+  "name": "sub_728860"
+ }
+]

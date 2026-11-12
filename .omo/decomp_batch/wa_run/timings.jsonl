@@ -28,3 +28,4 @@
 {"part": 27, "n": 20, "seconds": 27.1, "ok": true, "verdicts": {"MATCH": 20}}
 {"part": 28, "n": 20, "seconds": 28.8, "ok": true, "verdicts": {"MATCH": 20}}
 {"part": 29, "n": 20, "seconds": 29.3, "ok": true, "verdicts": {"MATCH": 20}}
+{"part": 30, "n": 20, "seconds": 32.9, "ok": true, "verdicts": {"MATCH": 20}}
