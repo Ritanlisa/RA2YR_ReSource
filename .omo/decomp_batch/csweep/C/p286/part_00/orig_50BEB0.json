@@ -1,0 +1,11 @@
+{
+ "addr": "0x50BEB0",
+ "name": "TechnoTypeClass::GetThreatMultiplier",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50BEB0",
+ "bytes_hex": "56578b7c240c8bf18bcf8b07ff502c83c0fd83f825774f33c98a8838bf5000ff248d24bf5000d986905300005f5ec20400d986945300005f5ec20400d986985300005f5ec2040083bf080e000005750bd986a05300005f5ec20400d9869c5300005f5ec20400d905c82a7e005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

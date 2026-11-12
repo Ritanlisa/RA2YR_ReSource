@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetThreatMultiplier@TechnoTypeClass@@QAENPAH@Z",
+ "sym_key": "TechnoTypeClass::GetThreatMultiplier",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "83ec08568b742410578bf98b0656ff502c83c0fd83f825775033c98a8800000000ff248d00000000db87985300005f5e83c408c2040083be080e0000057538db87a05300005f5e83c408c20400db87905300005f5e83c408c20400db87945300005f5e83c408c20400d905000000005f5e83c408c20400dd4424085f5e83c408c20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "$L1866",
+   "sym_key": "$L1866"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "$L1867",
+   "sym_key": "$L1867"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  }
+ ]
+}

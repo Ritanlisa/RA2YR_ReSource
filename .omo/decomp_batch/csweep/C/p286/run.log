@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p286\part_00
+=== convert (20 addrs) ===
+[conv] 0x4fbd00 ObjectClass::sub_4FBD00 -> ObjectClass
+[conv] 0x5cd290 MSVQAnim::GetFrameRect -> MSVQAnim
+[conv] 0x730a10 ObjectClass::SidebarCountAvailableUnits -> ObjectClass
+[conv] 0x77d720 sub_77D720 -> _addr_77
+[conv] 0x7b1fd0 WinsockInterfaceClass::SetAddress -> WinsockInterfaceClass
+[conv] 0x763610 Waypoint::To_String -> Waypoint
+[conv] 0x50beb0 TechnoTypeClass::GetThreatMultiplier -> TechnoTypeClass
+[conv] 0x69e500 FileTreeNode::Destroy -> FileTreeNode
+[conv] 0x4f83c0 HouseClass::GetFactoryProducing -> HouseClass
+[conv] 0x728200 ProcessInfantryClass -> _addr_72
+[conv] 0x465300 BuildingTypeClass::SaveLoad_Prefix_0 -> BuildingTypeClass
+[conv] 0x6457a0 ParticleTypeClass::SaveLoad_Prefix_0 -> ParticleTypeClass
+[conv] 0x7af640 ObjectClass::sub_7AF640 -> ObjectClass
+[conv] 0x7c3430 Audio_Render_7C3430 -> Audio_Render
+[conv] 0x42fcb0 VectorClass::CellConstructor -> VectorClass
+[conv] 0x58aff0 HashVector_UInt::Construct -> HashVector_UInt
+[conv] 0x658d60 VectorClass::PointConstructor -> VectorClass
+[conv] 0x412870 sub_412870 -> _addr_41
+[conv] 0x4e00b0 FootClass::Jumpjet_OccupyCell -> FootClass
+[conv] 0x5bd2e0 ObjectClass::sub_5BD2E0 -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] MSVQAnim                 rc=0
+[era] _addr_77                 rc=0
+[era] WinsockInterfaceClass    rc=2
+[era] Waypoint                 rc=2
+[era] TechnoTypeClass          rc=0
+[era] FileTreeNode             rc=2
+[era] HouseClass               rc=0
+[era] _addr_72                 rc=0
+[era] BuildingTypeClass        rc=2
+[era] ParticleTypeClass        rc=2
+[era] Audio_Render             rc=0
+[era] VectorClass              rc=0
+[era] HashVector_UInt          rc=0
+[era] _addr_41                 rc=0
+[era] FootClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x7af640   MISMATCH         ObjectClass::sub_7AF640
+[diff] 0x5cd290   MISMATCH         MSVQAnim::GetFrameRect
+[diff] 0x77d720   MISMATCH         sub_77D720
+[diff] 0x50beb0   MISMATCH         TechnoTypeClass::GetThreatMultiplier
+[diff] 0x4f83c0   MISMATCH         HouseClass::GetFactoryProducing
+[diff] 0x728200   MISMATCH         ProcessInfantryClass
+[diff] 0x7c3430   MISMATCH         Audio_Render_7C3430
+[diff] 0x42fcb0   MISMATCH         VectorClass::CellConstructor
+[diff] 0x658d60   MISMATCH         VectorClass::PointConstructor
+[diff] 0x58aff0   MISMATCH         HashVector_UInt::Construct
+[diff] 0x412870   MISMATCH         sub_412870
+[diff] 0x4e00b0   MISMATCH         FootClass::Jumpjet_OccupyCell
+[ledger] 0x4fbd00 ObjectClass::sub_4FBD00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cd290 MSVQAnim::GetFrameRect -> NG (attempt 1)
+[ledger] 0x730a10 ObjectClass::SidebarCountAvailableUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77d720 sub_77D720 -> NG (attempt 1)
+[ledger] 0x7b1fd0 WinsockInterfaceClass::SetAddress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x763610 Waypoint::To_String -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50beb0 TechnoTypeClass::GetThreatMultiplier -> NG (attempt 1)
+[ledger] 0x69e500 FileTreeNode::Destroy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f83c0 HouseClass::GetFactoryProducing -> NG (attempt 1)
+[ledger] 0x728200 ProcessInfantryClass -> NG (attempt 1)
+[ledger] 0x465300 BuildingTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6457a0 ParticleTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7af640 ObjectClass::sub_7AF640 -> NG (attempt 1)
+[ledger] 0x7c3430 Audio_Render_7C3430 -> NG (attempt 1)
+[ledger] 0x42fcb0 VectorClass::CellConstructor -> NG (attempt 1)
+[ledger] 0x58aff0 HashVector_UInt::Construct -> NG (attempt 1)
+[ledger] 0x658d60 VectorClass::PointConstructor -> NG (attempt 1)
+[ledger] 0x412870 sub_412870 -> NG (attempt 1)
+[ledger] 0x4e00b0 FootClass::Jumpjet_OccupyCell -> NG (attempt 1)
+[ledger] 0x5bd2e0 ObjectClass::sub_5BD2E0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "frame_sched": 1,
+  "ret_norm": 1,
+  "branch_order": 1,
+  "branch_polarity": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p286\batch_report.json

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_77D720@@YIPAIPAIH@Z",
+ "sym_key": "Unnamed::sub_77D720",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "83ec148b5218568bf152c744240c00000000e8000000008bc8c1e810c1e90888442405884c2406884c24048d4424046a008d4c240c50518d4c2418e8000000008b4424108b54240c8b4c24148946048916894e088bc65e83c414c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?ntohl@@YGKH@Z",
+   "sym_key": "ntohl"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Assign@NetworkAddress@@QAEPAIPAXHF@Z",
+   "sym_key": "NetworkAddress::Assign"
+  }
+ ]
+}

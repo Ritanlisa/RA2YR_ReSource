@@ -1,0 +1,57 @@
+{
+ "symbol": "?GetFactoryProducing@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::GetFactoryProducing",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "a0f0000000535633f6578bf984c07e5d0fbe05e40000008b5c24108b0cb039796c752ce80000000085c0741c0fbe05e40000008b0cb0e8000000008b0850ff91840000003bc374150fbe05e40000000fbe15f0000000463bf27d12ebbe0fbe05e40000005f8b04b05e5bc204005f5e33c05bc20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  }
+ ]
+}

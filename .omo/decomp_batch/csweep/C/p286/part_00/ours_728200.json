@@ -1,0 +1,39 @@
+{
+ "symbol": "?ProcessInfantryClass@@YAXXZ",
+ "sym_key": "Unnamed::ProcessInfantryClass",
+ "size": 114,
+ "link_base": 0,
+ "bytes_hex": "5153558b2d0000000033db85edc7442408ffffffff7e575657a1000000008b34988d4e2451b900000000e8000000008bf857e80000000083c40485c074128b442410408944241066898716010000eb1785f674088b166a0156ff52204d66c78716010000ffff4b433bdd7cad5f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_Tubes_Count@@3IA",
+   "sym_key": "g_Tubes_Count"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_PathClass_State@@3PAXA",
+   "sym_key": "g_PathClass_State"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?InfantryClass__IsInBounds@@YAHH@Z",
+   "sym_key": "InfantryClass__IsInBounds"
+  }
+ ]
+}

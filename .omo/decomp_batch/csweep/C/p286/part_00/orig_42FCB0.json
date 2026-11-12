@@ -1,0 +1,11 @@
+{
+ "addr": "0x42FCB0",
+ "name": "VectorClass::CellConstructor",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42FCB0",
+ "bytes_hex": "56578b7c240c8bf185ffc7460400000000897e08c6460c01c6460d00c706d0387e0074478b44241085c0740f4f894604897c240c8bc65f5ec208008d04bd0000000050e81f91390083c40485c074134f894604897c240cc6460d018bc65f5ec2080033c0c6460d018946048bc65f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x728200",
+ "name": "ProcessInfantryClass",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x728200",
+ "bytes_hex": "5153558b2d48418b0033db85edc7442408ffffffff7e565657a13c418b008b34988d4e2451b9e8f78700e871d5e3ff8bf88bcfe878c8d5ff84c0751a85f674098b166a018bceff52204d66c78716010000ffff4beb108b442410408944241066898716010000433bdd7cae5f5e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

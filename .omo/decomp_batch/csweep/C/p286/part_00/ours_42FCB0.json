@@ -1,0 +1,15 @@
+{
+ "symbol": "?CellConstructor@VectorClass@@QAEPAV1@HH@Z",
+ "sym_key": "VectorClass::CellConstructor",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf185c0c7460400000000894608c6460c01c6460d00c7060000000074398b4c240c85c97409894e048bc65ec20800c1e00250e80000000083c40485c0740d894604c6460d018bc65ec20800c6460d01c74604000000008bc65ec20800",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

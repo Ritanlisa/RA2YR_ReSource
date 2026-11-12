@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CD290",
+ "name": "MSVQAnim::GetFrameRect",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CD290",
+ "bytes_hex": "56578bf9b0018a0d98fbab0033f684c8752f8ad16810d35c000ad08935a0fbab00881598fbab008935a4fbab008935a8fbab008935acfbab00e8bcc41f0083c4048b471c3bc68d48347505b9a0fbab008b44240c8b318bd05f89328b71048972048b71088972088b490c5e894a0cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

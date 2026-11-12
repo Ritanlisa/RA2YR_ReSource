@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F83C0",
+ "name": "HouseClass::GetFactoryProducing",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F83C0",
+ "bytes_hex": "a1403ea80053555633ed33f6578bf985c07e468b5c2414a1343ea8008b0cb039796c752ae8771dfdff85c0741c8b15343ea8008b0cb2e8651dfdff8b108bc8ff92840000003bc37419a1343ea8008b0d403ea800463bf17cc35f8bc55e5d5bc20400a1343ea8005f8b04b05e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

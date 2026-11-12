@@ -1,0 +1,15 @@
+{
+ "symbol": "?Audio_Render_7C3430@@YIFHHHI@Z",
+ "sym_key": "Unnamed::Audio_Render_7C3430",
+ "size": 128,
+ "link_base": 0,
+ "bytes_hex": "56578bf98bf2668b87140700008bc881e1ffff00003bf17d5e85f67c5af687840000000174056685c0744c8b871c0700008a14b0668b4cb00281e2ff00000024000bd08b442410508b44241081e1ffff0000505181e2ffff00008bcf89b720010000e80000000083f8ff750f89b7200100005f5ec2080066b8e9ff5f5ec20800",
+ "relocs": [
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?SeekAudioStream@@YIHHHHHI@Z",
+   "sym_key": "SeekAudioStream"
+  }
+ ]
+}

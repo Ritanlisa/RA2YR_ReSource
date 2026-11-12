@@ -1,0 +1,39 @@
+{
+ "symbol": "?Jumpjet_OccupyCell@FootClass@@QAEPAIH@Z",
+ "sym_key": "FootClass::Jumpjet_OccupyCell",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "56a100000000578bf98b8f640500008db7640500003bc8750b8b44240c5f89065ec20400538b5c24103bd8742856b9f8010000e80000000039b8e0000000751556b9f8010000e800000000c780e000000000000000891e5b5f5ec20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_FootClass_Pool@@3IA",
+   "sym_key": "g_FootClass_Pool"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E00B0",
+ "name": "FootClass::Jumpjet_OccupyCell",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E00B0",
+ "bytes_hex": "a1883d8b005356578bf9668b0d8a3d8b00663987640500008db764050000750666394e0274408b5c2410663bd8750766394c2412742856b9e8f78700e8af56080039b8e0000000751556b9e8f78700e89c560800c780e000000000000000891e5f5e5bc204008b4424105f89065e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
