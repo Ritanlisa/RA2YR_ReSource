@@ -1,0 +1,63 @@
+{
+ "symbol": "?SetupTerritoryNodes@WorldDomination@@QAEXXZ",
+ "sym_key": "WorldDomination::SetupTerritoryNodes",
+ "size": 266,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8b4624891e3bc374078b086a0150ff118b46143bc374078b106a0150ff128b86cc0000005533ed3bc37e37578b86c00000008b3ca83bfb741d8b47043bc374078b086a0150ff1157e80000000057e80000000083c4088b86cc000000453be87ccb5fa1000000005350ff5018a10000000053508b10ff5218a1000000008b15000000006a01538b085250ff51048b46785d3bc374078b086a0150ff118b86c0000000899ebc0000003bc37417389ec9000000740f50e80000000083c404899ec00000008b4630889ec90000003bc3899ec4000000895e2c740f385e39740a8b106a0350ff12895e308d4628885e3950895e34e80000000083c4048bcee8000000005e5bc3",
+ "relocs": [
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?Constructor@ReferenceCounted@@QAEXXZ",
+   "sym_key": "ReferenceCounted::Constructor"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "symbol": "?ReturnToBase@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ReturnToBase",
+ "size": 269,
+ "link_base": 0,
+ "bytes_hex": "83ec18568bf1578b86b402000050e8000000008b0e6a00568bf8ff91f80300008b103bbab4000000776f8b066a006a006a006a0056ff908c0400008b3e6a0056ff97f80300008b088b91a4000000526a006a006a006a0056ff97880400008b869c0000008b8ea00000008b96a4000000894424148b8660020000894c241883c0036a00508d4c241c6a0051b9000000008954242ce8000000008b86a405000085c0755f8b8e1c020000e8000000008b542408dd44240c526a006a016a046800000000680000000050e800000000508d4c242ce8000000008b008b0d000000003bc189442408741b8b3e8d44240850b900000000e8000000006a015056ff97800400005fb8030000005e83c418c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?ComputeDistance@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::ComputeDistance"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?RevealArea2@MapClass@@QAEHPAXHHH@Z",
+   "sym_key": "MapClass::RevealArea2"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?MapHouseRelationIndex@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::MapHouseRelationIndex"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?g_AircraftStatusFlag@@3IA",
+   "sym_key": "g_AircraftStatusFlag"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?g_AircraftStatusFlag@@3IA",
+   "sym_key": "g_AircraftStatusFlag"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?FindOpenNeighbor@CellClass@@QAEPAHHPAXHHHHHH@Z",
+   "sym_key": "CellClass::FindOpenNeighbor"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?g_AircraftStatusFlag@@3IA",
+   "sym_key": "g_AircraftStatusFlag"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

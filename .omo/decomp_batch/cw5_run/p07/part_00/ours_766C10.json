@@ -1,0 +1,33 @@
+{
+ "symbol": "?Release@_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour@@QAEDHPAH@Z",
+ "sym_key": "_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release",
+ "size": 299,
+ "link_base": 0,
+ "bytes_hex": "5153558b6c24105685ed578bd9896c2418750f8b03ff500c5f5e5db0015b59c208008b74241cc7430c0000000085f6742c892e8d4dff83c60485c97c658bfd8bcee8000000008b1683c6084fc7020000000075eb8b44241c8d7004eb458d0ced0400000051e80000000083c40485c0750433f6eb2d89288d55ff83c00485d2894424108bf07c1b8bfd8bcee8000000008b0683c6084fc7000000000075eb8b74241085f6c7430c01000000750a5f5e5d32c05b59c20800833b0074468b43083be87c04894424188b44241833ff85c07e188b0b8b54f9048d0cfe52e8000000008b442418473bf87ce88b430cf6c4ff741185c074078b086a0350ff11c703000000008b7c241c8b4b0c33d2893385ff0f94c233c080e5008ae25f0bc1896b085e89430c5db0015b59c20800",
+ "relocs": [
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

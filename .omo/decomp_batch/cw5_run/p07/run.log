@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x720480 ThemeClass::ReadThemeEntry -> ThemeClass
+[conv] 0x62e4c0 ParticleClass::CreateInstance -> ParticleClass
+[conv] 0x4157c0 TechnoClass::ReturnToBase -> TechnoClass
+[conv] 0x7680c0 WorldDomination::SetupTerritoryNodes -> WorldDomination
+[conv] 0x4e43c0 ObjectClass::InitGameDropdownColors -> ObjectClass
+[conv] 0x766c10 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release -> _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x7d68fb __get_lc_lconv -> _addr_7D
+[conv] 0x7090a0 TechnoClass::VoiceAttack -> TechnoClass
+[conv] 0x4d0180 DamageArea::CheckOccupancyEligibility -> DamageArea
+[conv] 0x74fdc0 GetModuleVersion -> _addr_74
+[conv] 0x5d3a60 MessageListClass::Init -> MessageListClass
+[conv] 0x46ae70 BulletClass::SaveLoad_Prefix -> BulletClass
+[conv] 0x7daf28 ___getlocaleinfo -> _addr_7D
+[conv] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> MSOverlayAnim
+[conv] 0x5cc110 MSFadeAnim::DrawConstructionFrame -> MSFadeAnim
+[conv] 0x779f10 ObjectClass::SavePersonaConfigWOL -> ObjectClass
+[conv] 0x779dd0 ObjectClass::LoadConfigWOL -> ObjectClass
+[conv] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> ObjectClass
+[conv] 0x4a8bf0 MouseClass::SetBounds -> MouseClass
+[conv] 0x5fc380 Object::SpawnAtCell -> Object
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ThemeClass               rc=0
+[era] ParticleClass            rc=2
+[era] TechnoClass              rc=2
+[era] WorldDomination          rc=0
+[era] ObjectClass              rc=2
+[era] _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _addr_7D                 rc=2
+[era] DamageArea               rc=0
+[era] _addr_74                 rc=2
+[era] MessageListClass         rc=2
+[era] BulletClass              rc=0
+[era] MSOverlayAnim            rc=2
+[era] MSFadeAnim               rc=2
+[era] MouseClass               rc=2
+[era] Object                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x720480   MISMATCH         ThemeClass::ReadThemeEntry
+[diff] 0x4157c0   MISMATCH         TechnoClass::ReturnToBase
+[diff] 0x7680c0   MISMATCH         WorldDomination::SetupTerritoryNodes
+[diff] 0x766c10   MISMATCH         _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release
+[diff] 0x4d0180   MISMATCH         DamageArea::CheckOccupancyEligibility
+[diff] 0x46ae70   MISMATCH         BulletClass::SaveLoad_Prefix
+[diff] 0x5fc380   MISMATCH         Object::SpawnAtCell
+[ledger] 0x720480 ThemeClass::ReadThemeEntry -> NG (attempt 4)
+[ledger] 0x62e4c0 ParticleClass::CreateInstance -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4157c0 TechnoClass::ReturnToBase -> NG (attempt 4)
+[ledger] 0x7680c0 WorldDomination::SetupTerritoryNodes -> NG (attempt 4)
+[ledger] 0x4e43c0 ObjectClass::InitGameDropdownColors -> COMPILE_FAIL (attempt 4)
+[ledger] 0x766c10 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release -> NG (attempt 4)
+[ledger] 0x7d68fb __get_lc_lconv -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7090a0 TechnoClass::VoiceAttack -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4d0180 DamageArea::CheckOccupancyEligibility -> NG (attempt 4)
+[ledger] 0x74fdc0 GetModuleVersion -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5d3a60 MessageListClass::Init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46ae70 BulletClass::SaveLoad_Prefix -> NG (attempt 4)
+[ledger] 0x7daf28 ___getlocaleinfo -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5cc110 MSFadeAnim::DrawConstructionFrame -> COMPILE_FAIL (attempt 12)
+[ledger] 0x779f10 ObjectClass::SavePersonaConfigWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x779dd0 ObjectClass::LoadConfigWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a8bf0 MouseClass::SetBounds -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5fc380 Object::SpawnAtCell -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "frame_sched": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p07\batch_report.json

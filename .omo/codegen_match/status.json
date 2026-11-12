@@ -4668,15 +4668,15 @@
   "status": "OK"
  },
  "0x4157c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x14",
   "name": "TechnoClass::ReturnToBase",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TechnoClass::ReturnToBase",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x416d50": {
@@ -11143,15 +11143,15 @@
   "this_as_id": false
  },
  "0x46ae70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "BulletClass::SaveLoad_Prefix",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BulletClass::SaveLoad_Prefix",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x46afb0": {
@@ -18830,7 +18830,7 @@
   "this_as_id": false
  },
  "0x4a8bf0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -22842,15 +22842,15 @@
   "this_as_id": false
  },
  "0x4d0180": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 push ebx",
   "name": "DamageArea::CheckOccupancyEligibility",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "DamageArea::CheckOccupancyEligibility",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4d02b0": {
@@ -24543,7 +24543,7 @@
   "this_as_id": false
  },
  "0x4e43c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -46417,7 +46417,7 @@
   "status": "NG"
  },
  "0x5cc110": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46429,14 +46429,14 @@
   "this_as_id": false
  },
  "0x5cc550": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "MSOverlayAnim::DrawPlacementPreview",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ScenarioClass::DrawPlacementPreview",
-  "rule_violations": 2,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -47645,7 +47645,7 @@
   "this_as_id": false
  },
  "0x5d3a60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51071,15 +51071,15 @@
   "this_as_id": false
  },
  "0x5fc380": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "Object::SpawnAtCell",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Object::SpawnAtCell",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 4,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5fd230": {
@@ -53020,7 +53020,7 @@
   "this_as_id": false
  },
  "0x62e4c0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71539,7 +71539,7 @@
   "status": "NG"
  },
  "0x7090a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73891,15 +73891,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x720480": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+25 setne al",
   "name": "ThemeClass::ReadThemeEntry",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ThemeClass::ReadThemeEntry",
   "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x720590": {
@@ -79160,7 +79160,7 @@
   "this_as_id": false
  },
  "0x74fdc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "GetModuleVersion",
@@ -82125,15 +82125,15 @@
   "this_as_id": false
  },
  "0x766c10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+8 push edi",
   "name": "_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Conflict_WorldDominationTour_12::Release",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x766d30": {
@@ -82600,15 +82600,15 @@
   "this_as_id": false
  },
  "0x7680c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 mov ecx, dword ptr [esi + 0x24]",
   "name": "WorldDomination::SetupTerritoryNodes",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "WorldDomination::SetupTerritoryNodes",
   "rule_violations": 8,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x769330": {
@@ -83444,7 +83444,7 @@
   "this_as_id": false
  },
  "0x76e2f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85010,7 +85010,7 @@
   "this_as_id": false
  },
  "0x779dd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85022,7 +85022,7 @@
   "this_as_id": false
  },
  "0x779f10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90151,7 +90151,7 @@
   "this_as_id": false
  },
  "0x7d68fb": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__get_lc_lconv",
@@ -90561,7 +90561,7 @@
   "this_as_id": false
  },
  "0x7daf28": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "___getlocaleinfo",
