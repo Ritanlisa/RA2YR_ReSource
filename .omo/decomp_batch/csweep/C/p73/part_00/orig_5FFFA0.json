@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FFFA0",
+ "name": "Render_Render_5FFFA0",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FFFA0",
+ "bytes_hex": "a18816ac00568d70ff85f67c118b0d7c16ac008b0cb1e895f8ffff4e79ef5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

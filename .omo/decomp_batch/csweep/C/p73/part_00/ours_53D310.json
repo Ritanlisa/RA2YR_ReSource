@@ -1,0 +1,27 @@
+{
+ "symbol": "?ProcessIonCannonEffect@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::ProcessIonCannonEffect",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "a100000000568d70ff85f67c118b0d000000008b0cb1e8000000004e79ef5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0128@@3IA",
+   "sym_key": "DataGlobal_AA0128"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA011C@@3IA",
+   "sym_key": "DataGlobal_AA011C"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?ProcessFrame@ExplosionClass@@QAEXXZ",
+   "sym_key": "ExplosionClass::ProcessFrame"
+  }
+ ]
+}

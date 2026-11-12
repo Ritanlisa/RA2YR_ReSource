@@ -1,0 +1,21 @@
+{
+ "symbol": "?Render_Render_5FFFA0@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::Render_Render_5FFFA0",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec088d48ff85c97c1c538b5c240456578b7c240c8d7101538bcfe8000000004e75f55f5e5b83c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1688@@3IA",
+   "sym_key": "DataGlobal_AC1688"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?CalculateShading@BuildingLight@@QAEDH@Z",
+   "sym_key": "BuildingLight::CalculateShading"
+  }
+ ]
+}

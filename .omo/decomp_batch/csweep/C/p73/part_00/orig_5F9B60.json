@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F9B60",
+ "name": "ObjectTypeClass::FreeLoaderBuffer",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F9B60",
+ "bytes_hex": "568bf18b0650e8d2ef1c0083c40433c0890689460489460888460c8946105ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

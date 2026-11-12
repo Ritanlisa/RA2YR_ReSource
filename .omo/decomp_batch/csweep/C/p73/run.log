@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p73\part_00
+=== convert (20 addrs) ===
+[conv] 0x5383c0 SetStructureTabCommandClass::performAction_231 -> SetStructureTabCommandClass
+[conv] 0x538400 SetUnitTabCommandClass::performAction_233 -> SetUnitTabCommandClass
+[conv] 0x538420 SetInfantryTabCommandClass::performAction_234 -> SetInfantryTabCommandClass
+[conv] 0x538440 ScreenCaptureCommandClass::performAction_235 -> ScreenCaptureCommandClass
+[conv] 0x538460 PageUserCommandClass::performAction_236 -> PageUserCommandClass
+[conv] 0x538480 CursorPositionCommandClass::performAction_237 -> CursorPositionCommandClass
+[conv] 0x5384a0 DeleteCommandClass::performAction_238 -> DeleteCommandClass
+[conv] 0x53d310 ObjectClass::ProcessIonCannonEffect -> ObjectClass
+[conv] 0x543100 ConnManClass::getPlayerName -> ConnManClass
+[conv] 0x550240 ObjectClass::Helper_550240 -> ObjectClass
+[conv] 0x5ceb60 MSAnim::checkWinningConditions -> MSAnim
+[conv] 0x5d7ff0 InitializerBase@MultiplayerGameMode::_Gfacet_locale_std__UAEPAXI_Z_127 -> InitializerBase_MultiplayerGameMode
+[conv] 0x5d8010 InitializerBase@MultiplayerGameMode::_Gfacet_locale_std__UAEPAXI_Z_128 -> InitializerBase_MultiplayerGameMode
+[conv] 0x5d8030 AbstractClass::updateVisibilityState -> AbstractClass
+[conv] 0x5d8050 AbstractClass::processFogReveal -> AbstractClass
+[conv] 0x5d8070 AbstractClass::checkShroudState -> AbstractClass
+[conv] 0x5d8090 AbstractClass::updateShroudMap -> AbstractClass
+[conv] 0x5f9b60 ObjectTypeClass::FreeLoaderBuffer -> ObjectTypeClass
+[conv] 0x5fffa0 ObjectClass::Render_Render_5FFFA0 -> ObjectClass
+[conv] 0x6244a0 DialogControl_OwnerDraw::Destructor -> DialogControl_OwnerDraw
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SetStructureTabCommandClass rc=0
+[era] SetUnitTabCommandClass   rc=0
+[era] SetInfantryTabCommandClass rc=0
+[era] ScreenCaptureCommandClass rc=2
+[era] PageUserCommandClass     rc=2
+[era] CursorPositionCommandClass rc=2
+[era] DeleteCommandClass       rc=2
+[era] ObjectClass              rc=0
+[era] ConnManClass             rc=0
+[era] MSAnim                   rc=0
+[era] InitializerBase_MultiplayerGameMode rc=2
+[era] AbstractClass            rc=0
+[era] ObjectTypeClass          rc=0
+[era] DialogControl_OwnerDraw  rc=0
+=== diffasm byte-compare ===
+[diff] 0x5383c0   MISMATCH         SetStructureTabCommandClass::performAction_231
+[diff] 0x538400   MISMATCH         SetUnitTabCommandClass::performAction_233
+[diff] 0x538420   MISMATCH         SetInfantryTabCommandClass::performAction_234
+[diff] 0x53d310   MATCH            ObjectClass::ProcessIonCannonEffect
+[diff] 0x550240   MISMATCH         ObjectClass::Helper_550240
+[diff] 0x5fffa0   MISMATCH         ObjectClass::Render_Render_5FFFA0
+[diff] 0x543100   MISMATCH         ConnManClass::getPlayerName
+[diff] 0x5ceb60   MISMATCH         MSAnim::checkWinningConditions
+[diff] 0x5d8030   MISMATCH         AbstractClass::updateVisibilityState
+[diff] 0x5d8050   MISMATCH         AbstractClass::processFogReveal
+[diff] 0x5d8070   MISMATCH         AbstractClass::checkShroudState
+[diff] 0x5d8090   MISMATCH         AbstractClass::updateShroudMap
+[diff] 0x5f9b60   MISMATCH         ObjectTypeClass::FreeLoaderBuffer
+[diff] 0x6244a0   MISMATCH         DialogControl_OwnerDraw::Destructor
+[ledger] 0x5383c0 SetStructureTabCommandClass::performAction_231 -> NG (attempt 1)
+[ledger] 0x538400 SetUnitTabCommandClass::performAction_233 -> NG (attempt 1)
+[ledger] 0x538420 SetInfantryTabCommandClass::performAction_234 -> NG (attempt 1)
+[ledger] 0x538440 ScreenCaptureCommandClass::performAction_235 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538460 PageUserCommandClass::performAction_236 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538480 CursorPositionCommandClass::performAction_237 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5384a0 DeleteCommandClass::performAction_238 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53d310 ObjectClass::ProcessIonCannonEffect -> OK (attempt 1)
+[ledger] 0x543100 ConnManClass::getPlayerName -> NG (attempt 1)
+[ledger] 0x550240 ObjectClass::Helper_550240 -> NG (attempt 1)
+[ledger] 0x5ceb60 MSAnim::checkWinningConditions -> NG (attempt 1)
+[ledger] 0x5d7ff0 InitializerBase@MultiplayerGameMode::_Gfacet_locale_std__UAEPAXI_Z_127 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8010 InitializerBase@MultiplayerGameMode::_Gfacet_locale_std__UAEPAXI_Z_128 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8030 AbstractClass::updateVisibilityState -> NG (attempt 1)
+[ledger] 0x5d8050 AbstractClass::processFogReveal -> NG (attempt 1)
+[ledger] 0x5d8070 AbstractClass::checkShroudState -> NG (attempt 1)
+[ledger] 0x5d8090 AbstractClass::updateShroudMap -> NG (attempt 1)
+[ledger] 0x5f9b60 ObjectTypeClass::FreeLoaderBuffer -> NG (attempt 1)
+[ledger] 0x5fffa0 ObjectClass::Render_Render_5FFFA0 -> NG (attempt 1)
+[ledger] 0x6244a0 DialogControl_OwnerDraw::Destructor -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 6,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 12,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p73\batch_report.json

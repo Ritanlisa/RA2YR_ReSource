@@ -1,0 +1,11 @@
+{
+ "addr": "0x53D310",
+ "name": "ProcessIonCannonEffect",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53D310",
+ "bytes_hex": "a12801aa00568d70ff85f67c118b0d1c01aa008b0cb1e8b5f8ffff4e79ef5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
