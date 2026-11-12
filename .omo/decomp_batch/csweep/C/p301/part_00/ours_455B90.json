@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetFWFlags@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::GetFWFlags",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "83ec0c33c0538a819c000000565733db8b08894c240c8b50048d4c240c895424108b400851b9f801000089442418e8000000008bf833f6568bcfe8000000008bc8e80000000085c074318b90200500008a8ac016000084c974218a888100000084c975178a889000000084c9740d8bceb801000000d1f9d3e00bd883c60283fe087cb45f8bc35e5b83c40cc3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  }
+ ]
+}

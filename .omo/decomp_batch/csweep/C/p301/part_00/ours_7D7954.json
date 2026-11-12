@@ -1,0 +1,21 @@
+{
+ "symbol": "?__RoundMan@@YAHHH@Z",
+ "sym_key": "Unnamed::__RoundMan",
+ "size": 182,
+ "link_base": 0,
+ "bytes_hex": "5153558b6c2414568bdd5781e31f000080c74424100000000079054b83cbe0438bc58b7c24189983e21fb91f00000003c22bcb8bf0ba01000000c1fe05d3e28b0cb7b01f2ac38844241c85d174288d45015057e80000000083c40885c075134d5557e8000000008bd88a44242483c408eb088a44241c8b5c241083caff8ac8d3e28b0cb723ca8d560183fa03890cb77d1db9020000008d3c972bce33c0c1e1028bd1c1e902f3ab8bca83e103f3aa5f5e8bc35d5b59c3",
+ "relocs": [
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?_ZeroTail@@YAHHHZZ",
+   "sym_key": "_ZeroTail"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?_IncMan@@YAHHHZZ",
+   "sym_key": "_IncMan"
+  }
+ ]
+}

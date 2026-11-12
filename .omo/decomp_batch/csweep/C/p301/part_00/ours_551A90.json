@@ -1,0 +1,15 @@
+{
+ "symbol": "?InsertPriorityText@DisplayClass@@QAEHH@Z",
+ "sym_key": "DisplayClass::InsertPriorityText",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e088b46103bc1722d8a460d84c0750a85c9740633c05ec204008b461485c07e0f8b1603c16a005056ff520884c0750633c05ec204008b4610538b5c240c5733ff85c076188b4604538b0cb8e80000000084c075088b4610473bf872e88b4e10493bcf7c1c8d048d080000002bcf55418b560483e804498b6c10fc892c1075f05d8b4e04891cb98b4610405f8946105bb8010000005ec20400",
+ "relocs": [
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?checkScreenBounds@DisplayClass@@QAE_NH@Z",
+   "sym_key": "DisplayClass::checkScreenBounds"
+  }
+ ]
+}

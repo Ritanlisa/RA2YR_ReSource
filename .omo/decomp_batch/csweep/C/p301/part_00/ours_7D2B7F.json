@@ -1,0 +1,45 @@
+{
+ "symbol": "?__stbuf@@YAHH@Z",
+ "sym_key": "Unnamed::__stbuf",
+ "size": 182,
+ "link_base": 0,
+ "bytes_hex": "568b742408578b461050e80000000083c40485c075035f5ec381fe00000000750433ffeb1281fe0000000074055f33c05ec3bf01000000ff050000000066f7460c0c0174055f33c05ec38b04bd0000000085c075396800100000e80000000083c4048904bdd082b70085c0752166814e0c02118d46148946088906b8020000005f894618894604b8010000005ec38b3cbdd082b70066814e0c0211897e08893ec7461800100000c74604001000005fb8010000005ec3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?_isatty@@YAHHZZ",
+   "sym_key": "_isatty"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?File@@3U_iobuf@@A",
+   "sym_key": "File"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87BF90@@3EA",
+   "sym_key": "DataGlobal_87BF90"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B781C0@@3IA",
+   "sym_key": "CRTGlobal_B781C0"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782D0@@3PAIA",
+   "sym_key": "CRTGlobal_B782D0"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  }
+ ]
+}

@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p301\part_00
+=== convert (20 addrs) ===
+[conv] 0x65a750 RadioClass::Release -> RadioClass
+[conv] 0x7767f0 ObjectClass::sub_7767F0 -> ObjectClass
+[conv] 0x71a450 TemporalClass::Constructor -> TemporalClass
+[conv] 0x455b90 BuildingClass::GetFWFlags -> BuildingClass
+[conv] 0x5b4350 ObjectClass::sub_5B4350 -> ObjectClass
+[conv] 0x7bf0b0 TechnoClass::sub_7BF0B0 -> TechnoClass
+[conv] 0x7221b0 ObjectClass::ProcessSpeechEvents -> ObjectClass
+[conv] 0x404140 Voice::DetachChannel -> Voice
+[conv] 0x7c9b72 _atol -> _addr_7C
+[conv] 0x776eb0 ObjectClass::sub_776EB0 -> ObjectClass
+[conv] 0x6375b0 ObjectClass::sub_6375B0 -> ObjectClass
+[conv] 0x5d6be0 MultiplayerGameMode::AssignStartPositions -> MultiplayerGameMode
+[conv] 0x4ff980 BuildingClass::DecrementTypeCounter -> BuildingClass
+[conv] 0x4ffa50 BuildingClass::IncrementOccupantTypeCounter -> BuildingClass
+[conv] 0x7d7954 __RoundMan -> _addr_7D
+[conv] 0x551a90 DisplayClass::InsertPriorityText -> DisplayClass
+[conv] 0x4df1f0 TechnoClass::vt_entry_4B8 -> TechnoClass
+[conv] 0x4f9670 UnitClass::sub_4F9670 -> UnitClass
+[conv] 0x6abad0 HouseClass::RouteFactoryRemoval -> HouseClass
+[conv] 0x7d2b7f __stbuf -> _addr_7D
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RadioClass               rc=0
+[era] ObjectClass              rc=2
+[era] TemporalClass            rc=0
+[era] BuildingClass            rc=0
+[era] TechnoClass              rc=0
+[era] Voice                    rc=2
+[era] _addr_7C                 rc=0
+[era] MultiplayerGameMode      rc=2
+[era] _addr_7D                 rc=0
+[era] DisplayClass             rc=0
+[era] UnitClass                rc=2
+[era] HouseClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x65a750   MISMATCH         RadioClass::Release
+[diff] 0x6375b0   MISMATCH         ObjectClass::sub_6375B0
+[diff] 0x71a450   MISMATCH         TemporalClass::Constructor
+[diff] 0x455b90   MISMATCH         BuildingClass::GetFWFlags
+[diff] 0x4ff980   MISMATCH         BuildingClass::DecrementTypeCounter
+[diff] 0x4ffa50   MISMATCH         BuildingClass::IncrementOccupantTypeCounter
+[diff] 0x7bf0b0   MISMATCH         TechnoClass::sub_7BF0B0
+[diff] 0x4df1f0   MISMATCH         TechnoClass::vt_entry_4B8
+[diff] 0x7c9b72   MISMATCH         _atol
+[diff] 0x7d7954   MISMATCH         __RoundMan
+[diff] 0x7d2b7f   MISMATCH         __stbuf
+[diff] 0x551a90   MISMATCH         DisplayClass::InsertPriorityText
+[diff] 0x6abad0   MISMATCH         HouseClass::RouteFactoryRemoval
+[ledger] 0x65a750 RadioClass::Release -> NG (attempt 1)
+[ledger] 0x7767f0 ObjectClass::sub_7767F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71a450 TemporalClass::Constructor -> NG (attempt 1)
+[ledger] 0x455b90 BuildingClass::GetFWFlags -> NG (attempt 1)
+[ledger] 0x5b4350 ObjectClass::sub_5B4350 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bf0b0 TechnoClass::sub_7BF0B0 -> NG (attempt 1)
+[ledger] 0x7221b0 ObjectClass::ProcessSpeechEvents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x404140 Voice::DetachChannel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c9b72 _atol -> NG (attempt 1)
+[ledger] 0x776eb0 ObjectClass::sub_776EB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6375b0 ObjectClass::sub_6375B0 -> NG (attempt 1)
+[ledger] 0x5d6be0 MultiplayerGameMode::AssignStartPositions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ff980 BuildingClass::DecrementTypeCounter -> NG (attempt 1)
+[ledger] 0x4ffa50 BuildingClass::IncrementOccupantTypeCounter -> NG (attempt 1)
+[ledger] 0x7d7954 __RoundMan -> NG (attempt 1)
+[ledger] 0x551a90 DisplayClass::InsertPriorityText -> NG (attempt 1)
+[ledger] 0x4df1f0 TechnoClass::vt_entry_4B8 -> NG (attempt 1)
+[ledger] 0x4f9670 UnitClass::sub_4F9670 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6abad0 HouseClass::RouteFactoryRemoval -> NG (attempt 1)
+[ledger] 0x7d2b7f __stbuf -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "regalloc": 7,
+  "width_mismatch": 1,
+  "codegen_shape": 4,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p301\batch_report.json

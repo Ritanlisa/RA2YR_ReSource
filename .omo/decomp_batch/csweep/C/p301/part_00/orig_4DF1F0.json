@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DF1F0",
+ "name": "TechnoClass::vt_entry_4B8",
+ "size": 140,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DF1F0",
+ "bytes_hex": "8b81c805000083ec0c85c056742b8b108d4c2404518bc8ff52488bd08b4424148bc88b3289318b72048971045e8b520889510883c40cc204008b89cc05000085c974298b018d54240452ff50488bc88b4424148bd08b3189328b71048972045e8b4908894a0883c40cc204008b442414578bf883c9ff83caff83ceff890f8957048977085f5e83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

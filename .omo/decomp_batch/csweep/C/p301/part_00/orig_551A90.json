@@ -1,0 +1,11 @@
+{
+ "addr": "0x551A90",
+ "name": "DisplayClass::InsertPriorityText",
+ "size": 140,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x551A90",
+ "bytes_hex": "568bf18b4e088b46103bc17c288a460d84c0750485c975178b461485c07e108b1603c16a00508bceff520884c0750633c05ec204008b4610538b5c240c5733ff85c07e188b4604538b0cb8e840470a0084c075088b4610473bf87ce88b4610483bc77c108b4e04483bc78b548104895481087df08b4604891cb88b4610405f8946105bb8010000005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

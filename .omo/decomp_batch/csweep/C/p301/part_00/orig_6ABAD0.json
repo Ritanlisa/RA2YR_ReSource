@@ -1,0 +1,11 @@
+{
+ "addr": "0x6ABAD0",
+ "name": "HouseClass::RouteFactoryRemoval",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6ABAD0",
+ "bytes_hex": "568bf18b4c240883f90f745a83f910745583f901744983f928744483f902743f83f903743a83f906742083f907741b83f939740f83f920740a83f91f740583c8ffeb28b801000000eb218b54240ce8bd49e5ff33c983f8050f94c18bc1eb0cb803000000eb05b8020000008b5424108bc8c1e1052bc8528d14c88d04908d8c8644150000e8070000005ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

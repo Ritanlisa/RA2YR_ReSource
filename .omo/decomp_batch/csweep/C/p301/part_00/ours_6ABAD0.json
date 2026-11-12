@@ -1,0 +1,33 @@
+{
+ "symbol": "?RouteFactoryRemoval@HouseClass@@QAEDHHPAH@Z",
+ "sym_key": "HouseClass::RouteFactoryRemoval",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4c24088d41ff83f838773933d28a9000000000ff249500000000b802000000eb26b803000000eb1f8b54240ce80000000033c983f8050f94c18bc1eb0ab801000000eb0383c8ff8b5424108bc8c1e1052bc8528d14c88d04908d8c8644150000e8000000005ec20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "$L1869",
+   "sym_key": "$L1869"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "$L1870",
+   "sym_key": "$L1870"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?GetHouseTechLevel@@YIHHH@Z",
+   "sym_key": "GetHouseTechLevel"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?RemoveFromProductionQueue@HouseClass@@QAEDPAX@Z",
+   "sym_key": "HouseClass::RemoveFromProductionQueue"
+  }
+ ]
+}

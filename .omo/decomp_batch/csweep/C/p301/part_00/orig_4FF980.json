@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FF980",
+ "name": "BuildingClass::DecrementTypeCounter",
+ "size": 139,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FF980",
+ "bytes_hex": "568b742408578bf98b068bceff502c83f80675728b168bceff928400000085c074118a88ce0c000084c97407b901000000eb0233c98b86200500008b80b80e00004883f827773f33d28a9020fa4f00ff24950cfa4f0084c974088d8788530000eb1e8d8780530000eb168d8778530000eb0e8d877c530000eb068d878453000085c07402ff085f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

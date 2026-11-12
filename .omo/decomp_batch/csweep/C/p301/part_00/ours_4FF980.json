@@ -1,0 +1,21 @@
+{
+ "symbol": "?DecrementTypeCounter@BuildingClass@@QAEPAIPAH@Z",
+ "sym_key": "BuildingClass::DecrementTypeCounter",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c578bf9568b06ff502c83f80675698b0e56ff918400000085c0740e8a88ce0c000084c97404b201eb0232d28b86200500008b88b80e00008d41ff4983f927773733db8a9900000000ff249d0000000084d2741e8d8788530000eb168d8778530000eb0e8d8784530000eb068d877c53000085c07402ff085f5e5bc20400",
+ "relocs": [
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "$L2036",
+   "sym_key": "$L2036"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "$L2037",
+   "sym_key": "$L2037"
+  }
+ ]
+}

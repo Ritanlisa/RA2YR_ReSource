@@ -1,0 +1,11 @@
+{
+ "addr": "0x455B90",
+ "name": "BuildingClass::GetFWFlags",
+ "size": 138,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x455B90",
+ "bytes_hex": "83ec0c81c19c0000005356578b0133db8944240c8b5104895424108b41088d4c240c51b9e8f7870089442418e86ffb10008bf833f6568bcfe843bc02008bc8e84c69020085c074318b90200500008a8ac016000084c974218a888100000084c975178a889000000084c9740d8bceb801000000d1f9d3e00bd883c60283fe087cb45f8bc35e5b83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D7954",
+ "name": "__RoundMan",
+ "size": 140,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D7954",
+ "bytes_hex": "558bec51518b450c5356578d78ff6a20598365fc008d5f016a208bc35e99f7f96a1f8bc88bc399f7fe8b45085e6a01894df88d048889450c2bf25a8bced3e2851074214353ff7508e814ffffff5985c059750e57ff7508e84effffff598945fc598b450c83caff8bced3e26a035921108b45f8403bc17d0c8b55082bc88d3c8233c0f3ab8b45fc5f5e5bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

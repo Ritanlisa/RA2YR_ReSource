@@ -1,0 +1,45 @@
+{
+ "symbol": "?_atol@@YAHPBD@Z",
+ "sym_key": "Unnamed::_atol",
+ "size": 155,
+ "link_base": 0,
+ "bytes_hex": "578b7c2408833d00000000017f128b0d0000000033c08a078a044183e008eb0f33d26a088a1752e80000000083c40885c0740347ebcf33c0538a0755568bf083fe2d8d5f018bee740583fe2b750733c98a0b438bf133ff833d00000000017f0e8b15000000008a047283e004eb0b6a0456e80000000083c40885c074108d04bf33c98a0b438d7c46d08bf1ebca5e83fd2d5d5b8bc77502f7d85fc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?SrcSizeInBytes@@3IA",
+   "sym_key": "SrcSizeInBytes"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C590@@3PAXA",
+   "sym_key": "DataGlobal_87C590"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?_isctype@@YAHHHZZ",
+   "sym_key": "_isctype"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?SrcSizeInBytes@@3IA",
+   "sym_key": "SrcSizeInBytes"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C590@@3PAXA",
+   "sym_key": "DataGlobal_87C590"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?_isctype@@YAHHHZZ",
+   "sym_key": "_isctype"
+  }
+ ]
+}

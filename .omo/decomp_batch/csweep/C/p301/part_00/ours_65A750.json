@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@RadioClass@@QAEPAIXZ",
+ "sym_key": "RadioClass::Release",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "53568bf1e80000000033db6a04899ee4000000c786e800000001000000c686ec00000001889eed000000899ee0000000e80000000083c4048986e4000000c686ed00000001891e895e04895e08895e0c899ee0000000899ed4000000899ed8000000899edc0000008bc65e5bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?Constructor@RadioClass@@QAEPAV1@XZ",
+   "sym_key": "RadioClass::Constructor"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
