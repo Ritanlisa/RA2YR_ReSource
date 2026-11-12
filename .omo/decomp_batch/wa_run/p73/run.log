@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p73\part_00
+=== convert (20 addrs) ===
+[conv] 0x71a210 sub_71A210 -> _addr_71
+[conv] 0x71a390 sub_71A390 -> _addr_71
+[conv] 0x71b5f0 sub_71B5F0 -> _addr_71
+[conv] 0x71b770 sub_71B770 -> _addr_71
+[conv] 0x71d3e0 sub_71D3E0 -> _addr_71
+[conv] 0x71d560 sub_71D560 -> _addr_71
+[conv] 0x71e460 sub_71E460 -> _addr_71
+[conv] 0x71e5e0 sub_71E5E0 -> _addr_71
+[conv] 0x723ae0 sub_723AE0 -> _addr_72
+[conv] 0x723c60 sub_723C60 -> _addr_72
+[conv] 0x725110 sub_725110 -> _addr_72
+[conv] 0x725290 sub_725290 -> _addr_72
+[conv] 0x725de0 sub_725DE0 -> _addr_72
+[conv] 0x725f60 sub_725F60 -> _addr_72
+[conv] 0x726900 TActionClass::executeDetonateAction -> TActionClass
+[conv] 0x726ac0 sub_726AC0 -> _addr_72
+[conv] 0x726c40 sub_726C40 -> _addr_72
+[conv] 0x727e10 sub_727E10 -> _addr_72
+[conv] 0x727f90 sub_727F90 -> _addr_72
+[conv] 0x728840 sub_728840 -> _addr_72
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_71                 rc=0
+[era] _addr_72                 rc=0
+[era] TActionClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x71a210   MATCH            sub_71A210
+[diff] 0x71a390   MISMATCH         sub_71A390
+[diff] 0x71b5f0   MATCH            sub_71B5F0
+[diff] 0x71b770   MISMATCH         sub_71B770
+[diff] 0x71d3e0   MATCH            sub_71D3E0
+[diff] 0x71d560   MISMATCH         sub_71D560
+[diff] 0x71e460   MATCH            sub_71E460
+[diff] 0x71e5e0   MISMATCH         sub_71E5E0
+[diff] 0x723ae0   MATCH            sub_723AE0
+[diff] 0x723c60   MISMATCH         sub_723C60
+[diff] 0x725110   MATCH            sub_725110
+[diff] 0x725290   MISMATCH         sub_725290
+[diff] 0x725de0   MATCH            sub_725DE0
+[diff] 0x725f60   MISMATCH         sub_725F60
+[diff] 0x726ac0   MATCH            sub_726AC0
+[diff] 0x726c40   MISMATCH         sub_726C40
+[diff] 0x727e10   MATCH            sub_727E10
+[diff] 0x727f90   MISMATCH         sub_727F90
+[diff] 0x728840   MATCH            sub_728840
+[diff] 0x726900   MATCH            TActionClass::executeDetonateAction
+[ledger] 0x71a210 sub_71A210 -> OK (attempt 3)
+[ledger] 0x71a390 sub_71A390 -> NG (attempt 2)
+[ledger] 0x71b5f0 sub_71B5F0 -> OK (attempt 2)
+[ledger] 0x71b770 sub_71B770 -> NG (attempt 2)
+[ledger] 0x71d3e0 sub_71D3E0 -> OK (attempt 2)
+[ledger] 0x71d560 sub_71D560 -> NG (attempt 2)
+[ledger] 0x71e460 sub_71E460 -> OK (attempt 2)
+[ledger] 0x71e5e0 sub_71E5E0 -> NG (attempt 3)
+[ledger] 0x723ae0 sub_723AE0 -> OK (attempt 2)
+[ledger] 0x723c60 sub_723C60 -> NG (attempt 2)
+[ledger] 0x725110 sub_725110 -> OK (attempt 2)
+[ledger] 0x725290 sub_725290 -> NG (attempt 2)
+[ledger] 0x725de0 sub_725DE0 -> OK (attempt 2)
+[ledger] 0x725f60 sub_725F60 -> NG (attempt 2)
+[ledger] 0x726900 TActionClass::executeDetonateAction -> OK (attempt 5)
+[ledger] 0x726ac0 sub_726AC0 -> OK (attempt 2)
+[ledger] 0x726c40 sub_726C40 -> NG (attempt 2)
+[ledger] 0x727e10 sub_727E10 -> OK (attempt 2)
+[ledger] 0x727f90 sub_727F90 -> NG (attempt 2)
+[ledger] 0x728840 sub_728840 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "extern_reloc": 9
+ },
+ "match_rate_of_decided_pct": 55.0,
+ "match_rate_of_total_pct": 55.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p73\batch_report.json

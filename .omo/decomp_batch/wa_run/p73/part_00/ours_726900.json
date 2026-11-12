@@ -1,0 +1,8 @@
+{
+ "symbol": "?executeDetonateAction@TActionClass@@QAEXXZ",
+ "sym_key": "TActionClass::executeDetonateAction",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "c6414400c3",
+ "relocs": []
+}

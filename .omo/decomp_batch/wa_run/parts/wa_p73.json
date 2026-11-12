@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x71a210",
+  "family": "D_RELOC",
+  "name": "sub_71A210"
+ },
+ {
+  "addr": "0x71a390",
+  "family": "D_RELOC",
+  "name": "sub_71A390"
+ },
+ {
+  "addr": "0x71b5f0",
+  "family": "D_RELOC",
+  "name": "sub_71B5F0"
+ },
+ {
+  "addr": "0x71b770",
+  "family": "D_RELOC",
+  "name": "sub_71B770"
+ },
+ {
+  "addr": "0x71d3e0",
+  "family": "D_RELOC",
+  "name": "sub_71D3E0"
+ },
+ {
+  "addr": "0x71d560",
+  "family": "D_RELOC",
+  "name": "sub_71D560"
+ },
+ {
+  "addr": "0x71e460",
+  "family": "D_RELOC",
+  "name": "sub_71E460"
+ },
+ {
+  "addr": "0x71e5e0",
+  "family": "D_RELOC",
+  "name": "sub_71E5E0"
+ },
+ {
+  "addr": "0x723ae0",
+  "family": "D_RELOC",
+  "name": "sub_723AE0"
+ },
+ {
+  "addr": "0x723c60",
+  "family": "D_RELOC",
+  "name": "sub_723C60"
+ },
+ {
+  "addr": "0x725110",
+  "family": "D_RELOC",
+  "name": "sub_725110"
+ },
+ {
+  "addr": "0x725290",
+  "family": "D_RELOC",
+  "name": "sub_725290"
+ },
+ {
+  "addr": "0x725de0",
+  "family": "D_RELOC",
+  "name": "sub_725DE0"
+ },
+ {
+  "addr": "0x725f60",
+  "family": "D_RELOC",
+  "name": "sub_725F60"
+ },
+ {
+  "addr": "0x726900",
+  "family": "D_RELOC",
+  "name": "TActionClass::executeDetonateAction"
+ },
+ {
+  "addr": "0x726ac0",
+  "family": "D_RELOC",
+  "name": "sub_726AC0"
+ },
+ {
+  "addr": "0x726c40",
+  "family": "D_RELOC",
+  "name": "sub_726C40"
+ },
+ {
+  "addr": "0x727e10",
+  "family": "D_RELOC",
+  "name": "sub_727E10"
+ },
+ {
+  "addr": "0x727f90",
+  "family": "D_RELOC",
+  "name": "sub_727F90"
+ },
+ {
+  "addr": "0x728840",
+  "family": "D_RELOC",
+  "name": "sub_728840"
+ }
+]

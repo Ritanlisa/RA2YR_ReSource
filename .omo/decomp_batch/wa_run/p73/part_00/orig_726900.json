@@ -1,0 +1,11 @@
+{
+ "addr": "0x726900",
+ "name": "TActionClass::executeDetonateAction",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x726900",
+ "bytes_hex": "c6414400c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
