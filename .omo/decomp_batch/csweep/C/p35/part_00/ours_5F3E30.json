@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasC4@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::HasC4",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff90880000008b0850ff919c000000c3",
+ "relocs": []
+}

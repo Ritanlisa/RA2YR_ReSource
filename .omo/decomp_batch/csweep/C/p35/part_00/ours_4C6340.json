@@ -1,0 +1,8 @@
+{
+ "symbol": "?SaveBlock68@SaveGame@@QAEHH@Z",
+ "sym_key": "SaveGame::SaveBlock68",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8b4424046a006a44518b1050ff5210c20400",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x76A7C0",
+ "name": "MSFrameAnim::drawFrame",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76A7C0",
+ "bytes_hex": "568bf1e8682cefffc706c4717f008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckMirrorState@ParticleClass@@QAE_NH@Z",
+ "sym_key": "ParticleClass::CheckMirrorState",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "e800000000f6d81bc0f7d8c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?UpdateProductionDisplay@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::UpdateProductionDisplay"
+  }
+ ]
+}

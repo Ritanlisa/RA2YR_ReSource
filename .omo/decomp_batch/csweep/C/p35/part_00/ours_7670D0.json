@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor_3@Conflict_WorldDominationTour@@QAEPAIXZ",
+ "sym_key": "Conflict_WorldDominationTour::Constructor_3",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "568bf1e800000000c706000000008bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  }
+ ]
+}

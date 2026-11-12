@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C2CE0",
+ "name": "MPCooperative::SaveSettings",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C2CE0",
+ "bytes_hex": "8b4424088b5424045052e851380100c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

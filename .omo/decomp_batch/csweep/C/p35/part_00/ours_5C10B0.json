@@ -1,0 +1,15 @@
+{
+ "symbol": "?Release@MultiplayerBattleTeam@@QAE_NH@Z",
+ "sym_key": "MultiplayerBattleTeam::Release",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8b44240450e800000000f6d81bc0f7d8c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?SetHouse@PlayerClass@@QAEDH@Z",
+   "sym_key": "PlayerClass::SetHouse"
+  }
+ ]
+}

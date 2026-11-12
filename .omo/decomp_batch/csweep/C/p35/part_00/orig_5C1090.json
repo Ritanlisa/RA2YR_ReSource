@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C1090",
+ "name": "MultiplayerBattleTeam::AddRef",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C1090",
+ "bytes_hex": "8b44240450e8f67b010084c00f95c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

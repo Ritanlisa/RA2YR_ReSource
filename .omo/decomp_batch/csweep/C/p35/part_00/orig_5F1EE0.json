@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F1EE0",
+ "name": "CellClass::GetBridgeIndexThunk",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F1EE0",
+ "bytes_hex": "8b413885c074088b4804e9919be9ff33c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

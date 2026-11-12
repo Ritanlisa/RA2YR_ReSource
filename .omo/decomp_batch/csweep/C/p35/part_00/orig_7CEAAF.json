@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CEAAF",
+ "name": "__setdefaultprecision",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CEAAF",
+ "bytes_hex": "68000003006800000100e88bd4ffff5959c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

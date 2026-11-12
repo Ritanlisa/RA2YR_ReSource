@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p35\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c1090 MultiplayerBattleTeam::AddRef -> MultiplayerBattleTeam
+[conv] 0x5c10b0 MultiplayerBattleTeam::Release -> MultiplayerBattleTeam
+[conv] 0x5c2ce0 MPCooperative::SaveSettings -> MPCooperative
+[conv] 0x5f1ee0 NullModemClass::GetBridgeIndexThunk -> NullModemClass
+[conv] 0x62d6f0 ParticleClass::CheckMirrorState -> ParticleClass
+[conv] 0x661f30 RocketLocomotionClass::sub_661F30 -> RocketLocomotionClass
+[conv] 0x70ccf0 TechnoClass::RevealOwnCell -> TechnoClass
+[conv] 0x765c70 COMClass::releaseInterface -> COMClass
+[conv] 0x7670d0 Conflict_WorldDominationTour::Constructor_3 -> Conflict_WorldDominationTour
+[conv] 0x76a7c0 MSFrameAnim::drawFrame -> MSFrameAnim
+[conv] 0x78abf0 ChatMessageWOL -> _addr_78
+[conv] 0x7c9430 _malloc -> _addr_7C
+[conv] 0x7c978a _atexit -> _addr_7C
+[conv] 0x7ceaaf __setdefaultprecision -> _addr_7C
+[conv] 0x488ee0 ColorListClass::GetColor -> ColorListClass
+[conv] 0x4c6320 LoadGame::LoadBlock68 -> LoadGame
+[conv] 0x4c6340 SaveGame::SaveBlock68 -> SaveGame
+[conv] 0x55ad10 IUnknown::GetSpecialValue -> IUnknown
+[conv] 0x5f3e30 ObjectClass::HasC4 -> ObjectClass
+[conv] 0x6614f0 RulesClass::readGeneralSection -> RulesClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerBattleTeam    rc=0
+[era] MPCooperative            rc=0
+[era] NullModemClass           rc=0
+[era] ParticleClass            rc=0
+[era] RocketLocomotionClass    rc=2
+[era] TechnoClass              rc=0
+[era] COMClass                 rc=0
+[era] Conflict_WorldDominationTour rc=0
+[era] MSFrameAnim              rc=0
+[era] _addr_78                 rc=0
+[era] _addr_7C                 rc=2
+[era] ColorListClass           rc=2
+[era] LoadGame                 rc=0
+[era] SaveGame                 rc=0
+[era] IUnknown                 rc=2
+[era] ObjectClass              rc=0
+[era] RulesClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x5c1090   MISMATCH         MultiplayerBattleTeam::AddRef
+[diff] 0x5c10b0   MISMATCH         MultiplayerBattleTeam::Release
+[diff] 0x5c2ce0   MATCH            MPCooperative::SaveSettings
+[diff] 0x5f1ee0   MISMATCH         NullModemClass::GetBridgeIndexThunk
+[diff] 0x62d6f0   MISMATCH         ParticleClass::CheckMirrorState
+[diff] 0x70ccf0   MISMATCH         TechnoClass::RevealOwnCell
+[diff] 0x765c70   MISMATCH         COMClass::releaseInterface
+[diff] 0x7670d0   MISMATCH         Conflict_WorldDominationTour::Constructor_3
+[diff] 0x76a7c0   MISMATCH         MSFrameAnim::drawFrame
+[diff] 0x78abf0   MATCH            ChatMessageWOL
+[diff] 0x7c9430   MISMATCH         _malloc
+[diff] 0x7ceaaf   MISMATCH         __setdefaultprecision
+[diff] 0x4c6320   MATCH            LoadGame::LoadBlock68
+[diff] 0x4c6340   MATCH            SaveGame::SaveBlock68
+[diff] 0x5f3e30   MISMATCH         ObjectClass::HasC4
+[diff] 0x6614f0   MATCH            RulesClass::readGeneralSection
+[ledger] 0x5c1090 MultiplayerBattleTeam::AddRef -> NG (attempt 1)
+[ledger] 0x5c10b0 MultiplayerBattleTeam::Release -> NG (attempt 1)
+[ledger] 0x5c2ce0 MPCooperative::SaveSettings -> OK (attempt 1)
+[ledger] 0x5f1ee0 NullModemClass::GetBridgeIndexThunk -> NG (attempt 1)
+[ledger] 0x62d6f0 ParticleClass::CheckMirrorState -> NG (attempt 1)
+[ledger] 0x661f30 RocketLocomotionClass::sub_661F30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70ccf0 TechnoClass::RevealOwnCell -> NG (attempt 1)
+[ledger] 0x765c70 COMClass::releaseInterface -> NG (attempt 1)
+[ledger] 0x7670d0 Conflict_WorldDominationTour::Constructor_3 -> NG (attempt 1)
+[ledger] 0x76a7c0 MSFrameAnim::drawFrame -> NG (attempt 1)
+[ledger] 0x78abf0 ChatMessageWOL -> OK (attempt 1)
+[ledger] 0x7c9430 _malloc -> NG (attempt 1)
+[ledger] 0x7c978a _atexit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ceaaf __setdefaultprecision -> NG (attempt 1)
+[ledger] 0x488ee0 ColorListClass::GetColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c6320 LoadGame::LoadBlock68 -> OK (attempt 1)
+[ledger] 0x4c6340 SaveGame::SaveBlock68 -> OK (attempt 1)
+[ledger] 0x55ad10 IUnknown::GetSpecialValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f3e30 ObjectClass::HasC4 -> NG (attempt 1)
+[ledger] 0x6614f0 RulesClass::readGeneralSection -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "MATCH": 5,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "const_fold": 6,
+  "codegen_shape": 3,
+  "branch_polarity": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 31.2,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p35\batch_report.json

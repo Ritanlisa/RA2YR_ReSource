@@ -1,0 +1,27 @@
+{
+ "symbol": "?ChatMessageWOL@@YIFDPAH@Z",
+ "sym_key": "Unnamed::ChatMessageWOL",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "880d0000000052b900000000e800000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77E40@@3EA",
+   "sym_key": "DataGlobal_B77E40"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76230@@3EA",
+   "sym_key": "DataGlobal_B76230"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Reassign@WideString@@QAEFPAX@Z",
+   "sym_key": "WideString::Reassign"
+  }
+ ]
+}

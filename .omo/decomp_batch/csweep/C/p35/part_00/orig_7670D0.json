@@ -1,0 +1,11 @@
+{
+ "addr": "0x7670D0",
+ "name": "Conflict_WorldDominationTour_12::Constructor_3",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7670D0",
+ "bytes_hex": "568bf1e85863efffc70624707f008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

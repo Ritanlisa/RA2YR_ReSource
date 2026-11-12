@@ -1,0 +1,15 @@
+{
+ "symbol": "?__setdefaultprecision@@YAHXZ",
+ "sym_key": "Unnamed::__setdefaultprecision",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "68000003006800000100e80000000083c408c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?_controlfp@@YAHHHZZ",
+   "sym_key": "_controlfp"
+  }
+ ]
+}
