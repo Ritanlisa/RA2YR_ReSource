@@ -1,0 +1,75 @@
+{
+ "symbol": "?SelectTeamProductionBuilding@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::SelectTeamProductionBuilding",
+ "size": 740,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec6853558be933c056578a4528c645790050e8000000008b454483c40485c07f0cc64534005f5e5d5b8be55dc38d7d358d753457568bcde800000000803e00750e33c08a0785c00f848802000089068b068d54241452508b08ff51488b54241033c98a480180e2000bca33d2894c24108a500580e100c7442424ffffff7f0bd18bc2894424108944243033c08a452c8b407885c00f8e220200008b5c243c33c9c7442428040000008944242c33d28a552c8b426c8b340885f60f84e10100008a868100000084c00f85d30100008b0e6a0056ff91f80300008338000f85bf0100008b168d4424485056ff524833d233c98a50058a4d3480e3000bda8d542454895c24108b015251ff50488d4c24608bf88b065156ff50488b108b48042b1783ec088954241c8b57048b40082bca894c24248b4f082bc189442428db442428db442424db44241cd9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8000000008b4c244c8b5424485152ddd8e8000000008bc88b44242833c833d28a552c81e1ff00000033c183c410894424188d4424105250e8000000008b8e200500008bf8478a81a91600000faf7c241884c074098bc7992bc2d1f88bf83b7c24240f8dd900000033c08d4c246c8a453451508b10ff52488b755033d28a50058b4424342400897424200bc2c744241cffffffff85f6894424348944243c74698b0e56ff91840000008a8e900000008b80fc05000084c98944243874428b4e6c85c9743b8b0d0000000085c9750a8a8e8100000084c975278a8e8906000084c9750f8b1656ff522c83f80275128b4424383b44241c7e08897424208944241c8bb6d805000085f675976a048d4424146a028d4c2444508b44242c8d54244c515250e8000000008b008b0d0801000083c4183bc1894424107408897c2424894424308b4424288bc883c004894424288b44242c488944242c0f85f0fdffff8d4c243051b9f8010000e8000000008bcd89453ce8000000005f5e5d5b8be55dc3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?SetLandTypeMap@@YADPAX@Z",
+   "sym_key": "SetLandTypeMap"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?FindClosestEnemy@TeamClass@@QAEDPAX0@Z",
+   "sym_key": "TeamClass::FindClosestEnemy"
+  },
+  {
+   "off": 359,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 376,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 415,
+   "type": "REL32",
+   "sym": "?CellClass__GetTileData@@YGHPAXH@Z",
+   "sym_key": "CellClass__GetTileData"
+  },
+  {
+   "off": 556,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 648,
+   "type": "REL32",
+   "sym": "?WalkPathfindingLine@@YAPAHPAX0H0HH@Z",
+   "sym_key": "WalkPathfindingLine"
+  },
+  {
+   "off": 656,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 713,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 718,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 728,
+   "type": "REL32",
+   "sym": "?UpdateMembers@TeamClass@@QAEXXZ",
+   "sym_key": "TeamClass::UpdateMembers"
+  }
+ ]
+}

@@ -1,0 +1,142 @@
+{
+ "summary": {
+  "total": 7,
+  "verdicts": {
+   "MISMATCH": 1,
+   "COMPILE_FAIL": 6
+  },
+  "pathologies": {
+   "codegen_shape": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 3,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x6ea0d0",
+   "batch": "stale_cw5|CW5-10 uintN_t typedef",
+   "verdict": "MISMATCH",
+   "note": "orig 769B ours 740B",
+   "first_diff": {
+    "orig": "+10 mov ebx, ecx",
+    "ours": "+10 push ebp"
+   },
+   "pathology": "codegen_shape",
+   "name": "SelectTeamProductionBuilding",
+   "emitted": "ObjectClass::SelectTeamProductionBuilding",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "20/27",
+   "rule_violations": 10,
+   "orig_size": 769,
+   "ours_size": 740,
+   "clean": false
+  },
+  {
+   "addr": "0x778710",
+   "batch": "stale_cw5|CW5-10 uintN_t typedef",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\ObjectClass_778710.cpp(9) : error C2440: '=' : cannot convert from 'class ComPtr *' to 'unsigned char'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "LoadAccountInfoWOL",
+   "emitted": "ObjectClass::LoadAccountInfoWOL",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "80/81",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x77e900",
+   "batch": "stale_cw5|CW5-10 uintN_t typedef",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\_addr_77.cpp(11) : error C2440: '=' : cannot convert from 'char ** ' to 'const char ** '; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_0",
+   "first_diff": null,
+   "pathology": null,
+   "name": "AssignWOLPlayerSide",
+   "emitted": "AssignWOLPlayerSide",
+   "unit": "_addr_77",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "51/53",
+   "rule_violations": 1,
+   "clean": false
+  },
+  {
+   "addr": "0x793d20",
+   "batch": "stale_cw5|CW5-10 uintN_t typedef",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\_addr_79.cpp(28) : error C2673: 'NegotiateNetworkConnection' : global functions do not have 'this' pointers; D:\\RA2YR_ReSource\\.omo\\decomp_batch",
+   "first_diff": null,
+   "pathology": null,
+   "name": "NegotiateNetworkConnection",
+   "emitted": "NegotiateNetworkConnection",
+   "unit": "_addr_79",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "95/103",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x796de0",
+   "batch": "stale_cw5|CW5-10 uintN_t typedef",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\Game.cpp(35) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\Game.cpp(35) : err",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Game::CreateAIPlayer",
+   "emitted": "Game::CreateAIPlayer",
+   "unit": "Game",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "19/19",
+   "rule_violations": 3,
+   "clean": false
+  },
+  {
+   "addr": "0x7b7dd0",
+   "batch": "stale_cw5|CW5-10 uintN_t typedef",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\_addr_7B.cpp(25) : error C2664: 'wcscpy' : cannot convert parameter 1 from 'int *' to 'unsigned short *'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "FormatWideString",
+   "emitted": "FormatWideString",
+   "unit": "_addr_7B",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "5/5",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x7cf125",
+   "batch": "stale_cw5|CW5-10 __usercall strip",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\include\\_addr_7C.hpp(15) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\_ad",
+   "first_diff": null,
+   "pathology": null,
+   "name": "_usepowhlp",
+   "emitted": "_usepowhlp",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "clean": false
+  }
+ ]
+}

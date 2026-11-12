@@ -1,0 +1,86 @@
+[
+ {
+  "addr": "0x6ea0d0",
+  "family": "stale_cw5|CW5-10 uintN_t typedef",
+  "name": "ObjectClass::SelectTeamProductionBuilding",
+  "_layer": "D",
+  "_code": "C2146",
+  "_gen": "G3_CW3",
+  "_status": "stale_cw5",
+  "_fix": "CW5-10 uintN_t typedef",
+  "_form": "extern const uintN_t decl (missing typo?)",
+  "_unit": "ObjectClass"
+ },
+ {
+  "addr": "0x778710",
+  "family": "stale_cw5|CW5-10 uintN_t typedef",
+  "name": "ObjectClass::LoadAccountInfoWOL",
+  "_layer": "D",
+  "_code": "C2146",
+  "_gen": "G3_CW3",
+  "_status": "stale_cw5",
+  "_fix": "CW5-10 uintN_t typedef",
+  "_form": "extern const uintN_t decl (missing typo?)",
+  "_unit": "ObjectClass"
+ },
+ {
+  "addr": "0x77e900",
+  "family": "stale_cw5|CW5-10 uintN_t typedef",
+  "name": "AssignWOLPlayerSide",
+  "_layer": "D",
+  "_code": "C2146",
+  "_gen": "G3_CW3",
+  "_status": "stale_cw5",
+  "_fix": "CW5-10 uintN_t typedef",
+  "_form": "extern const uintN_t decl (missing typo?)",
+  "_unit": "_addr_77"
+ },
+ {
+  "addr": "0x793d20",
+  "family": "stale_cw5|CW5-10 uintN_t typedef",
+  "name": "NegotiateNetworkConnection",
+  "_layer": "D",
+  "_code": "C2146",
+  "_gen": "G3_CW3",
+  "_status": "stale_cw5",
+  "_fix": "CW5-10 uintN_t typedef",
+  "_form": "extern const uintN_t decl (missing typo?)",
+  "_unit": "_addr_79"
+ },
+ {
+  "addr": "0x796de0",
+  "family": "stale_cw5|CW5-10 uintN_t typedef",
+  "name": "Game::CreateAIPlayer",
+  "_layer": "D",
+  "_code": "C2146",
+  "_gen": "G3_CW3",
+  "_status": "stale_cw5",
+  "_fix": "CW5-10 uintN_t typedef",
+  "_form": "extern const uintN_t decl (missing typo?)",
+  "_unit": "Game"
+ },
+ {
+  "addr": "0x7b7dd0",
+  "family": "stale_cw5|CW5-10 uintN_t typedef",
+  "name": "FormatWideString",
+  "_layer": "D",
+  "_code": "C2146",
+  "_gen": "G3_CW3",
+  "_status": "stale_cw5",
+  "_fix": "CW5-10 uintN_t typedef",
+  "_form": "extern const uintN_t decl (missing typo?)",
+  "_unit": "_addr_7B"
+ },
+ {
+  "addr": "0x7cf125",
+  "family": "stale_cw5|CW5-10 __usercall strip",
+  "name": "_usepowhlp",
+  "_layer": "D",
+  "_code": "C2143",
+  "_gen": "G3_CW3",
+  "_status": "stale_cw5",
+  "_fix": "CW5-10 __usercall strip",
+  "_form": "__usercall token",
+  "_unit": "_addr_7C"
+ }
+]

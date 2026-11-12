@@ -1,0 +1,44 @@
+======================================================================
+PART 1/1  (7 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p47\part_00
+=== convert (7 addrs) ===
+[conv] 0x6ea0d0 ObjectClass::SelectTeamProductionBuilding -> ObjectClass
+[conv] 0x778710 ObjectClass::LoadAccountInfoWOL -> ObjectClass
+[conv] 0x77e900 AssignWOLPlayerSide -> _addr_77
+[conv] 0x793d20 NegotiateNetworkConnection -> _addr_79
+[conv] 0x796de0 Game::CreateAIPlayer -> Game
+[conv] 0x7b7dd0 FormatWideString -> _addr_7B
+[conv] 0x7cf125 _usepowhlp -> _addr_7C
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_77                 rc=2
+[era] _addr_79                 rc=2
+[era] Game                     rc=2
+[era] _addr_7B                 rc=2
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6ea0d0   MISMATCH         ObjectClass::SelectTeamProductionBuilding
+[ledger] 0x6ea0d0 ObjectClass::SelectTeamProductionBuilding -> NG (attempt 4)
+[ledger] 0x778710 ObjectClass::LoadAccountInfoWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x77e900 AssignWOLPlayerSide -> COMPILE_FAIL (attempt 4)
+[ledger] 0x793d20 NegotiateNetworkConnection -> COMPILE_FAIL (attempt 4)
+[ledger] 0x796de0 Game::CreateAIPlayer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b7dd0 FormatWideString -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cf125 _usepowhlp -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 7,
+ "verdicts": {
+  "MISMATCH": 1,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p47\batch_report.json

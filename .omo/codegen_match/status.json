@@ -71429,15 +71429,15 @@
   "this_as_id": false
  },
  "0x6ea0d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+10 mov ebx, ecx",
   "name": "ObjectClass::SelectTeamProductionBuilding",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SelectTeamProductionBuilding",
   "rule_violations": 10,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ea3e0": {
@@ -86037,7 +86037,7 @@
   "this_as_id": false
  },
  "0x778710": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -86604,7 +86604,7 @@
   "this_as_id": false
  },
  "0x77e900": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "AssignWOLPlayerSide",
@@ -86799,7 +86799,7 @@
   "this_as_id": false
  },
  "0x793d20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "NegotiateNetworkConnection",
@@ -86821,7 +86821,7 @@
   "this_as_id": false
  },
  "0x796de0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -88656,7 +88656,7 @@
   "status": "NG"
  },
  "0x7b7dd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "FormatWideString",
@@ -90748,7 +90748,7 @@
   "this_as_id": false
  },
  "0x7cf125": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "_usepowhlp",
