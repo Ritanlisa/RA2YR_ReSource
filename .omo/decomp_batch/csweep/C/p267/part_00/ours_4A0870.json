@@ -1,0 +1,8 @@
+{
+ "symbol": "?Construct@ConnectionPointClass@@QAEPAIPAHH@Z",
+ "sym_key": "ConnectionPointClass::Construct",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b08894e048b50048956088b4808894e0c8b500c8b44240c33c9895610894618894e14894e20894e24c6462801884e29894e1cc746300a000000894e2c890e8b0850ff51048b065ec20800",
+ "relocs": []
+}

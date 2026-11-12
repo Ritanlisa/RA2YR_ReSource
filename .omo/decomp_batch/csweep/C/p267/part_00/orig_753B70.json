@@ -1,0 +1,11 @@
+{
+ "addr": "0x753B70",
+ "name": "VoxelPaletteClass::LoadFromFile",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x753B70",
+ "bytes_hex": "83ec20568bf1687811b4006878fbb2008d4c240ce8c74d00008d4c240456e89d4e00008bf08b4424048b4c24088b54240ca374fbb2008b442410890d7c31b4008d4c2404891558fbb200a37831b400e8fc4d00008bc65e83c420c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A0870",
+ "name": "ConnectionPointClass::Construct",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A0870",
+ "bytes_hex": "568bf18b4c24088d46048b1189108b51048950048b51088950088b490c89480c8b44240c33c9894618894e14894e20894e24c6462801884e29c7461cc45c7e00c746300a000000894e2cc706e45c7e008b1050ff52048bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

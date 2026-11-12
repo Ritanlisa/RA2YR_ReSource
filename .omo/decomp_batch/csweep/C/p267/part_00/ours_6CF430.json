@@ -1,0 +1,21 @@
+{
+ "symbol": "?Process@SwizzleManagerClass@@QAGHHPBXPAH@Z",
+ "sym_key": "SwizzleManagerClass::Process",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "8b5424105685d257750a5fb8034000805ec210008b44241453b904000000bf000000008bf033dbf3a75b741c8bf0b904000000bf0000000033c0f3a7740a5fb8024000805ec210008b4424108902508b08ff51045f33c05ec21000",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?IID_ISwizzle@@3U_GUID_era@@A",
+   "sym_key": "IID_ISwizzle"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?IID_IUnknown@@3U_GUID_era@@A",
+   "sym_key": "IID_IUnknown"
+  }
+ ]
+}

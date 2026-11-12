@@ -1,0 +1,8 @@
+{
+ "symbol": "?Team_Create@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::Team_Create",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "53558be933c033db568a4536578b80e40000008b889c00000085c97e3dbfa80000008b3407568b0eff512c83f803750a8b86e005000085c07f1933d2438a55368b82e40000003b989c000000730c83c708ebcf5f5e5db0015bc35f5e5d32c05bc3",
+ "relocs": []
+}

@@ -1,0 +1,63 @@
+{
+ "symbol": "?LoadFromFile@VoxelPaletteClass@@QAEHXZ",
+ "sym_key": "VoxelPaletteClass::LoadFromFile",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "83ec0833c0a000000000568bf15068000000008d4c240ce800000000568d4c2408e8000000000fbe4c24048bf08b4424088b118b4c24048915000000008b542404890d000000008d4c2404a300000000891500000000e8000000008bc65e83c408c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_VoxelColorPalette@@3EA",
+   "sym_key": "g_VoxelColorPalette"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB78@@3EA",
+   "sym_key": "DataGlobal_B2FB78"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Init@VoxelPalette@@QAEPAV1@HH@Z",
+   "sym_key": "VoxelPalette::Init"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?ConvertFromFile@VoxelPaletteClass@@QAEHH@Z",
+   "sym_key": "VoxelPaletteClass::ConvertFromFile"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB74@@3IA",
+   "sym_key": "DataGlobal_B2FB74"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB58@@3IA",
+   "sym_key": "DataGlobal_B2FB58"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B4317C@@3IA",
+   "sym_key": "DataGlobal_B4317C"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B43178@@3IA",
+   "sym_key": "DataGlobal_B43178"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Reset@VoxelPalette@@QAEXXZ",
+   "sym_key": "VoxelPalette::Reset"
+  }
+ ]
+}

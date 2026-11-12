@@ -1,0 +1,21 @@
+{
+ "symbol": "?Init@IPXManagerClass@@QAEHHHHHHH@Z",
+ "sym_key": "IPXManagerClass::Init",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f8ff75278b4424188b5424148b4948508b442414528b5424148b4904508b4424145250e800000000c218008b44812885c074248b5424188b4c2414528b542414518b4c2414528b542414518b480452e800000000c2180033c0c21800",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?SetData@EventClass@@QAEHHHHHH@Z",
+   "sym_key": "EventClass::SetData"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?SetData@EventClass@@QAEHHHHHH@Z",
+   "sym_key": "EventClass::SetData"
+  }
+ ]
+}

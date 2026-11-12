@@ -1,0 +1,33 @@
+{
+ "symbol": "?SaveLoad_Prefix_0@AnimClass@@QAGHPAH0@Z",
+ "sym_key": "AnimClass::SaveLoad_Prefix_0",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "568b742408578b96d400000085d2744aa1100000000fbe0d040000008b00488b3c818d0c813b970c03000074124883e90485c07c258b393b970c03000075ee8b5424148986d80000008b442410525056e8000000005f5ec20c008b5424148b442410525056c786d8000000ffffffffe8000000005f5ec20c00",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXPAH1@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXPAH1@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  }
+ ]
+}

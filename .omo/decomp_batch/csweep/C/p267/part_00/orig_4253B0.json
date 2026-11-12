@@ -1,0 +1,11 @@
+{
+ "addr": "0x4253B0",
+ "name": "AnimClass::SaveLoad_Prefix_0",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4253B0",
+ "bytes_hex": "568b742408578b96d400000085d27425a1e054b0004885c07c1b8b0dd454b0008d0c818b393b970c03000074274883e90485c07deec786d8000000ffffffff8b5424148b442410525056e821affeff5f5ec20c008986d8000000ebe3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

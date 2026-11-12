@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p267\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d3170 MSFont::Release -> MSFont
+[conv] 0x632d60 ObjectClass::sub_632D60 -> ObjectClass
+[conv] 0x6cf430 SwizzleManagerClass::Process -> SwizzleManagerClass
+[conv] 0x55c720 LZOStraw::Constructor -> LZOStraw
+[conv] 0x7bc1f0 sub_7BC1F0 -> _addr_7B
+[conv] 0x7bc250 sub_7BC250 -> _addr_7B
+[conv] 0x753b70 VoxelPaletteClass::LoadFromFile -> VoxelPaletteClass
+[conv] 0x4253b0 AnimClass::SaveLoad_Prefix_0 -> AnimClass
+[conv] 0x5bc4d0 UnitClass::sub_5BC4D0 -> UnitClass
+[conv] 0x608380 SaveLoadDialog::LookupDialogHash -> SaveLoadDialog
+[conv] 0x6083e0 SaveLoadDialog::FindDialogTemplate -> SaveLoadDialog
+[conv] 0x608440 HashTable::LookupAndMark -> HashTable
+[conv] 0x60cba0 CampaignScore::LookupDialogHash -> CampaignScore
+[conv] 0x60cc00 CampaignScore::FindDialogTemplate -> CampaignScore
+[conv] 0x7cb1f9 __flush -> _addr_7C
+[conv] 0x4a0870 ConnectionPointClass::Construct -> ConnectionPointClass
+[conv] 0x6e5230 TagClass::Destroy -> TagClass
+[conv] 0x6ef470 ObjectClass::Team_Create -> ObjectClass
+[conv] 0x542fe0 IPXManagerClass::Init -> IPXManagerClass
+[conv] 0x637550 ObjectClass::FlushPlanningQueue -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSFont                   rc=2
+[era] ObjectClass              rc=0
+[era] SwizzleManagerClass      rc=0
+[era] LZOStraw                 rc=0
+[era] _addr_7B                 rc=0
+[era] VoxelPaletteClass        rc=0
+[era] AnimClass                rc=0
+[era] UnitClass                rc=0
+[era] SaveLoadDialog           rc=2
+[era] HashTable                rc=2
+[era] CampaignScore            rc=2
+[era] _addr_7C                 rc=2
+[era] ConnectionPointClass     rc=0
+[era] TagClass                 rc=0
+[era] IPXManagerClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x632d60   MISMATCH         ObjectClass::sub_632D60
+[diff] 0x6ef470   MISMATCH         ObjectClass::Team_Create
+[diff] 0x637550   MISMATCH         ObjectClass::FlushPlanningQueue
+[diff] 0x6cf430   MISMATCH         SwizzleManagerClass::Process
+[diff] 0x55c720   MISMATCH         LZOStraw::Constructor
+[diff] 0x7bc1f0   MISMATCH         sub_7BC1F0
+[diff] 0x7bc250   MISMATCH         sub_7BC250
+[diff] 0x753b70   MISMATCH         VoxelPaletteClass::LoadFromFile
+[diff] 0x4253b0   MISMATCH         AnimClass::SaveLoad_Prefix_0
+[diff] 0x5bc4d0   MATCH            UnitClass::sub_5BC4D0
+[diff] 0x4a0870   MISMATCH         ConnectionPointClass::Construct
+[diff] 0x6e5230   MISMATCH         TagClass::Destroy
+[diff] 0x542fe0   MISMATCH         IPXManagerClass::Init
+[ledger] 0x5d3170 MSFont::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x632d60 ObjectClass::sub_632D60 -> NG (attempt 1)
+[ledger] 0x6cf430 SwizzleManagerClass::Process -> NG (attempt 1)
+[ledger] 0x55c720 LZOStraw::Constructor -> NG (attempt 1)
+[ledger] 0x7bc1f0 sub_7BC1F0 -> NG (attempt 1)
+[ledger] 0x7bc250 sub_7BC250 -> NG (attempt 1)
+[ledger] 0x753b70 VoxelPaletteClass::LoadFromFile -> NG (attempt 1)
+[ledger] 0x4253b0 AnimClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x5bc4d0 UnitClass::sub_5BC4D0 -> OK (attempt 1)
+[ledger] 0x608380 SaveLoadDialog::LookupDialogHash -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6083e0 SaveLoadDialog::FindDialogTemplate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x608440 HashTable::LookupAndMark -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60cba0 CampaignScore::LookupDialogHash -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60cc00 CampaignScore::FindDialogTemplate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cb1f9 __flush -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a0870 ConnectionPointClass::Construct -> NG (attempt 1)
+[ledger] 0x6e5230 TagClass::Destroy -> NG (attempt 1)
+[ledger] 0x6ef470 ObjectClass::Team_Create -> NG (attempt 1)
+[ledger] 0x542fe0 IPXManagerClass::Init -> NG (attempt 1)
+[ledger] 0x637550 ObjectClass::FlushPlanningQueue -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 12,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 3,
+  "cc_mismatch": 1,
+  "regalloc": 1,
+  "codegen_shape": 5,
+  "frame_sched": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 7.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p267\batch_report.json

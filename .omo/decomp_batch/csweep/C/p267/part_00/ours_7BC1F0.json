@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_7BC1F0@@YIDPAH0HH@Z",
+ "sym_key": "Unnamed::sub_7BC1F0",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "51568bf1578bfa8b0656ff50708d4c240883f8018b5424148b4424106a0068e80300006a036a005152508bd78bcec744242400000000e8000000005f5e59c20800",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?BlitterCopySimpleSHP@@YIDPAX0HH0HHHH@Z",
+   "sym_key": "BlitterCopySimpleSHP"
+  }
+ ]
+}

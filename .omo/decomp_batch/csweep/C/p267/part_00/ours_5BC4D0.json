@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_5BC4D0@UnitClass@@QAEDXZ",
+ "sym_key": "UnitClass::sub_5BC4D0",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "53555657bb000000008b0b33ff8da9d00700008d140f8bc5be50000000c60220c7000000000083c06483c2194e75ee4783c50483ff197cdb6a196a506a006a00c6813427000001e80000000083c30481fb000000007cb25f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF168@@3IA",
+   "sym_key": "DataGlobal_ABF168"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?DrawRepeated@Text@@QAEDHHHH@Z",
+   "sym_key": "Text::DrawRepeated"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF188@@3IA",
+   "sym_key": "DataGlobal_ABF188"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x542FE0",
+ "name": "IPXManagerClass::Init",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x542FE0",
+ "bytes_hex": "8b44240483f8ff75278b4424188b5424148b4948508b442414528b5424148b4904508b4424145250e8c38af4ffc218008b44812885c074218b5424188b4c2414528b542414518b4c2414528b542414518b480452e8978af4ffc21800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

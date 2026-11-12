@@ -1,0 +1,21 @@
+{
+ "symbol": "?Constructor@LZOStraw@@QAEPAV1@HH@Z",
+ "sym_key": "LZOStraw::Constructor",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "8b442408538b5c2408568bf15733ff89461c89462003c0897e0450897e08895e0c897e10897e14897e18893ee80000000083c4043bdf89461475148b4e208b7e1c03cf51e80000000083c4048946188b065f5e5bc20800",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
