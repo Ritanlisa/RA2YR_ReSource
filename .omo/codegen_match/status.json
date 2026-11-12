@@ -821,7 +821,7 @@
   "this_as_id": false
  },
  "0x406ee0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_406EE0",
@@ -2457,7 +2457,7 @@
   "this_as_id": false
  },
  "0x40d3c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_40D3C0",
@@ -2468,7 +2468,7 @@
   "this_as_id": false
  },
  "0x40d400": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_40D400",
@@ -8131,14 +8131,14 @@
   "status": "NG"
  },
  "0x42fd30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "EncodeBitmapRGB",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "EncodeBitmapRGB",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x42ff80": {
@@ -9628,7 +9628,7 @@
   "this_as_id": false
  },
  "0x4456d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -32025,14 +32025,14 @@
   "this_as_id": false
  },
  "0x522fe0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryClass::CreateDeployLocomotor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryClass::CreateDeployLocomotor",
-  "rule_violations": 8,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -46635,14 +46635,14 @@
   "this_as_id": false
  },
  "0x5ce640": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MSPCXAnim::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MSPCXAnim::Construct",
-  "rule_violations": 2,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -54419,7 +54419,7 @@
   "this_as_id": false
  },
  "0x63d0f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54442,7 +54442,7 @@
   "this_as_id": false
  },
  "0x63d2d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -56369,7 +56369,7 @@
   "status": "NG"
  },
  "0x653f50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63095,7 +63095,7 @@
   "this_as_id": false
  },
  "0x6b0300": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -75271,15 +75271,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x7276a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+11 mov eax, dword ptr [ebx + 0xa8]",
   "name": "TriggerTypeClass::GetParameter",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TriggerTypeClass::GetParameter",
-  "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x727bb0": {
@@ -82791,15 +82791,15 @@
   "this_as_id": false
  },
  "0x769dc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 mov dword ptr [esi], 0x7f71cc",
   "name": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "Map_WorldDominationTour_20::Constructor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x769de0": {
@@ -85457,14 +85457,14 @@
   "this_as_id": false
  },
  "0x77cf90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, 0xb76e34",
   "name": "unknown_libname_43",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "unknown_libname_43",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x77d0f0": {
@@ -85913,7 +85913,7 @@
   "this_as_id": false
  },
  "0x7a2730": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -86421,14 +86421,14 @@
   "this_as_id": false
  },
  "0x7af4d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, 0xb77f1c",
   "name": "unknown_libname_66",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "unknown_libname_66",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7afad0": {
@@ -90975,7 +90975,7 @@
   "status": "NG"
  },
  "0x7df280": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF280",
@@ -90986,7 +90986,7 @@
   "this_as_id": false
  },
  "0x7df3c2": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF3C2",
@@ -90997,7 +90997,7 @@
   "this_as_id": false
  },
  "0x7df500": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF500",
@@ -91008,7 +91008,7 @@
   "this_as_id": false
  },
  "0x7df640": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF640",

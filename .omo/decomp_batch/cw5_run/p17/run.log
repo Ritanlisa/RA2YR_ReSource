@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ce640 MSPCXAnim::Construct -> MSPCXAnim
+[conv] 0x4456d0 BuildingClass::UpdateSidebar -> BuildingClass
+[conv] 0x6b0300 BuildingClass::FindPlacementCells2 -> BuildingClass
+[conv] 0x7276a0 TriggerTypeClass::GetParameter -> TriggerTypeClass
+[conv] 0x522fe0 InfantryClass::CreateDeployLocomotor -> InfantryClass
+[conv] 0x42fd30 EncodeBitmapRGB -> _addr_42
+[conv] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> ObjectClass
+[conv] 0x63d2d0 ObjectClass::sub_63D2D0 -> ObjectClass
+[conv] 0x7df3c2 Object_Calc_7DF3C2 -> Object_Calc
+[conv] 0x7df500 Object_Calc_7DF500 -> Object_Calc
+[conv] 0x7df640 Object_Calc_7DF640 -> Object_Calc
+[conv] 0x7df280 Object_Calc_7DF280 -> Object_Calc
+[conv] 0x77cf90 unknown_libname_43 -> _addr_77
+[conv] 0x7af4d0 unknown_libname_66 -> _addr_7A
+[conv] 0x7a2730 ObjectClass::Network_Create_7A2730 -> ObjectClass
+[conv] 0x653f50 RadarClass::DrawWrapper -> RadarClass
+[conv] 0x406ee0 sub_406EE0 -> _addr_40
+[conv] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H
+[conv] 0x40d400 sub_40D400 -> _addr_40
+[conv] 0x40d3c0 sub_40D3C0 -> _addr_40
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSPCXAnim                rc=2
+[era] BuildingClass            rc=2
+[era] TriggerTypeClass         rc=0
+[era] InfantryClass            rc=2
+[era] _addr_42                 rc=0
+[era] ObjectClass              rc=2
+[era] Object_Calc              rc=2
+[era] _addr_77                 rc=0
+[era] _addr_7A                 rc=0
+[era] RadarClass               rc=2
+[era] _addr_40                 rc=2
+[era] _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H rc=0
+=== diffasm byte-compare ===
+[diff] 0x7276a0   MISMATCH         TriggerTypeClass::GetParameter
+[diff] 0x42fd30   MISMATCH         EncodeBitmapRGB
+[diff] 0x77cf90   MISMATCH         unknown_libname_43
+[diff] 0x7af4d0   MISMATCH         unknown_libname_66
+[diff] 0x769dc0   MISMATCH         _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor
+[ledger] 0x5ce640 MSPCXAnim::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4456d0 BuildingClass::UpdateSidebar -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6b0300 BuildingClass::FindPlacementCells2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7276a0 TriggerTypeClass::GetParameter -> NG (attempt 4)
+[ledger] 0x522fe0 InfantryClass::CreateDeployLocomotor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x42fd30 EncodeBitmapRGB -> NG (attempt 4)
+[ledger] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x63d2d0 ObjectClass::sub_63D2D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7df3c2 Object_Calc_7DF3C2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7df500 Object_Calc_7DF500 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7df640 Object_Calc_7DF640 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7df280 Object_Calc_7DF280 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x77cf90 unknown_libname_43 -> NG (attempt 5)
+[ledger] 0x7af4d0 unknown_libname_66 -> NG (attempt 5)
+[ledger] 0x7a2730 ObjectClass::Network_Create_7A2730 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x653f50 RadarClass::DrawWrapper -> COMPILE_FAIL (attempt 4)
+[ledger] 0x406ee0 sub_406EE0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> NG (attempt 4)
+[ledger] 0x40d400 sub_40D400 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x40d3c0 sub_40D3C0 -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "regalloc": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p17\batch_report.json
