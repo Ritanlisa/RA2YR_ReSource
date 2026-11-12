@@ -1,0 +1,11 @@
+{
+ "addr": "0x549DD0",
+ "name": "IsometricTileTypeClass::GetTileIndex",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x549DD0",
+ "bytes_hex": "8b5424048b81bc0200003bc2750ac781bc020000000000008b81c802000083f8ff741b568b3554418b00578b3c863bfa5f5e750ac781c8020000ffffffffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

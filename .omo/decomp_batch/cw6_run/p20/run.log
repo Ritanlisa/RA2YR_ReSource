@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x53f0b0 ObjectClass::sub_53F0B0 -> ObjectClass
+[conv] 0x53f2f0 sub_53F2F0 -> _addr_53
+[conv] 0x540c50 ObjectClass::sub_540C50 -> ObjectClass
+[conv] 0x543ab0 IsometricTileClass::nullsub_0 -> IsometricTileClass
+[conv] 0x543e00 sub_543E00 -> _addr_54
+[conv] 0x549d90 IsometricTileTypeClass::GetClassIdentifier -> IsometricTileTypeClass
+[conv] 0x549dd0 IsometricTileTypeClass::GetTileIndex -> IsometricTileTypeClass
+[conv] 0x54a250 _VectorClass_PAG::Get -> _VectorClass_PAG
+[conv] 0x54a370 _VectorClass_PAG::GetSize -> _VectorClass_PAG
+[conv] 0x54a480 _DynamicVectorClass_PAG::FindItem -> _DynamicVectorClass_PAG
+[conv] 0x54a4b0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Add -> _VectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54a5d0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::GetSize -> _VectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54a6e0 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::FindItemIndex -> _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54a990 ObjectClass::sub_54A990 -> ObjectClass
+[conv] 0x54a9e0 ObjectClass::sub_54A9E0 -> ObjectClass
+[conv] 0x54abd0 sub_54ABD0 -> _addr_54
+[conv] 0x54b710 JumpjetLocomotionClass::GetClassIdentifier -> JumpjetLocomotionClass
+[conv] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> JumpjetLocomotionClass
+[conv] 0x54e8f0 _VectorClass_PAUKamikazeControl::AddRef -> _VectorClass_PAUKamikazeControl
+[conv] 0x54ea10 _VectorClass_PAUKamikazeControl::Read -> _VectorClass_PAUKamikazeControl
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_53                 rc=0
+[era] IsometricTileClass       rc=0
+[era] _addr_54                 rc=0
+[era] IsometricTileTypeClass   rc=0
+[era] _VectorClass_PAG         rc=0
+[era] _DynamicVectorClass_PAG  rc=0
+[era] _VectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] _VectorClass_PAUKamikazeControl rc=0
+=== diffasm byte-compare ===
+[diff] 0x53f0b0   MATCH            ObjectClass::sub_53F0B0
+[diff] 0x53f2f0   MISMATCH         sub_53F2F0
+[diff] 0x543ab0   MISMATCH         IsometricTileClass::nullsub_0
+[diff] 0x543e00   MISMATCH         sub_543E00
+[diff] 0x54abd0   MISMATCH         sub_54ABD0
+[diff] 0x549d90   MISMATCH         IsometricTileTypeClass::GetClassIdentifier
+[diff] 0x549dd0   MISMATCH         IsometricTileTypeClass::GetTileIndex
+[diff] 0x54a250   MISMATCH         _VectorClass_PAG::Get
+[diff] 0x54a370   MISMATCH         _VectorClass_PAG::GetSize
+[diff] 0x54a480   MISMATCH         _DynamicVectorClass_PAG::FindItem
+[diff] 0x54a4b0   MISMATCH         _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Add
+[diff] 0x54a5d0   MISMATCH         _VectorClass_PAUTileInsertType_IsometricTileTypeClass::GetSize
+[diff] 0x54a6e0   MISMATCH         _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::FindItemIndex
+[diff] 0x54b710   MISMATCH         JumpjetLocomotionClass::GetClassIdentifier
+[diff] 0x54e8f0   MISMATCH         _VectorClass_PAUKamikazeControl::AddRef
+[diff] 0x54ea10   MISMATCH         _VectorClass_PAUKamikazeControl::Read
+[ledger] 0x53f0b0 ObjectClass::sub_53F0B0 -> OK (attempt 2)
+[ledger] 0x53f2f0 sub_53F2F0 -> NG (attempt 2)
+[ledger] 0x540c50 ObjectClass::sub_540C50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x543ab0 IsometricTileClass::nullsub_0 -> NG (attempt 2)
+[ledger] 0x543e00 sub_543E00 -> NG (attempt 2)
+[ledger] 0x549d90 IsometricTileTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x549dd0 IsometricTileTypeClass::GetTileIndex -> NG (attempt 2)
+[ledger] 0x54a250 _VectorClass_PAG::Get -> NG (attempt 2)
+[ledger] 0x54a370 _VectorClass_PAG::GetSize -> NG (attempt 2)
+[ledger] 0x54a480 _DynamicVectorClass_PAG::FindItem -> NG (attempt 2)
+[ledger] 0x54a4b0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Add -> NG (attempt 2)
+[ledger] 0x54a5d0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x54a6e0 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x54a990 ObjectClass::sub_54A990 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54a9e0 ObjectClass::sub_54A9E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54abd0 sub_54ABD0 -> NG (attempt 2)
+[ledger] 0x54b710 JumpjetLocomotionClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54e8f0 _VectorClass_PAUKamikazeControl::AddRef -> NG (attempt 2)
+[ledger] 0x54ea10 _VectorClass_PAUKamikazeControl::Read -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "regalloc": 1,
+  "extern_reloc": 3,
+  "codegen_shape": 6,
+  "branch_polarity": 3
+ },
+ "match_rate_of_decided_pct": 6.2,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p20\batch_report.json
