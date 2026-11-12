@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x5c9260",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5C9260"
+ },
+ {
+  "addr": "0x5c9280",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5C9280"
+ },
+ {
+  "addr": "0x5c92a0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5C92A0"
+ },
+ {
+  "addr": "0x5c9580",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5C9580"
+ },
+ {
+  "addr": "0x5c95a0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5C95A0"
+ },
+ {
+  "addr": "0x5c95c0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5C95C0"
+ },
+ {
+  "addr": "0x5ca490",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5CA490"
+ },
+ {
+  "addr": "0x5ca4b0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5CA4B0"
+ },
+ {
+  "addr": "0x5ca4d0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5CA4D0"
+ },
+ {
+  "addr": "0x5cac90",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5CAC90"
+ },
+ {
+  "addr": "0x5cacb0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5CACB0"
+ },
+ {
+  "addr": "0x5cacd0",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5CACD0"
+ },
+ {
+  "addr": "0x5cb200",
+  "family": "D_CONST_FOLD",
+  "name": "MPBattleClass::getMinimumPlayers"
+ },
+ {
+  "addr": "0x5cb220",
+  "family": "D_CONST_FOLD",
+  "name": "MPBattleClass::getAlliesLimit"
+ },
+ {
+  "addr": "0x5cb240",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5CB240"
+ },
+ {
+  "addr": "0x5d3850",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5D3850"
+ },
+ {
+  "addr": "0x5d3870",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5D3870"
+ },
+ {
+  "addr": "0x5d3890",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5D3890"
+ },
+ {
+  "addr": "0x5d5920",
+  "family": "D_CONST_FOLD",
+  "name": "MPBattleClass::onAIJoined"
+ },
+ {
+  "addr": "0x5d5940",
+  "family": "D_CONST_FOLD",
+  "name": "sub_5D5940"
+ }
+]

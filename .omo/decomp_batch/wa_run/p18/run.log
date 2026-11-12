@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c9260 sub_5C9260 -> _addr_5C
+[conv] 0x5c9280 sub_5C9280 -> _addr_5C
+[conv] 0x5c92a0 sub_5C92A0 -> _addr_5C
+[conv] 0x5c9580 sub_5C9580 -> _addr_5C
+[conv] 0x5c95a0 sub_5C95A0 -> _addr_5C
+[conv] 0x5c95c0 sub_5C95C0 -> _addr_5C
+[conv] 0x5ca490 sub_5CA490 -> _addr_5C
+[conv] 0x5ca4b0 sub_5CA4B0 -> _addr_5C
+[conv] 0x5ca4d0 sub_5CA4D0 -> _addr_5C
+[conv] 0x5cac90 sub_5CAC90 -> _addr_5C
+[conv] 0x5cacb0 sub_5CACB0 -> _addr_5C
+[conv] 0x5cacd0 sub_5CACD0 -> _addr_5C
+[conv] 0x5cb200 MPBattleClass::getMinimumPlayers -> MPBattleClass
+[conv] 0x5cb220 MPBattleClass::getAlliesLimit -> MPBattleClass
+[conv] 0x5cb240 sub_5CB240 -> _addr_5C
+[conv] 0x5d3850 sub_5D3850 -> _addr_5D
+[conv] 0x5d3870 sub_5D3870 -> _addr_5D
+[conv] 0x5d3890 sub_5D3890 -> _addr_5D
+[conv] 0x5d5920 MPBattleClass::onAIJoined -> MPBattleClass
+[conv] 0x5d5940 sub_5D5940 -> _addr_5D
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+[era] _addr_5D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5c9260   MATCH            sub_5C9260
+[diff] 0x5c9280   MATCH            sub_5C9280
+[diff] 0x5c92a0   MATCH            sub_5C92A0
+[diff] 0x5c9580   MATCH            sub_5C9580
+[diff] 0x5c95a0   MATCH            sub_5C95A0
+[diff] 0x5c95c0   MATCH            sub_5C95C0
+[diff] 0x5ca490   MATCH            sub_5CA490
+[diff] 0x5ca4b0   MATCH            sub_5CA4B0
+[diff] 0x5ca4d0   MATCH            sub_5CA4D0
+[diff] 0x5cac90   MATCH            sub_5CAC90
+[diff] 0x5cacb0   MATCH            sub_5CACB0
+[diff] 0x5cacd0   MATCH            sub_5CACD0
+[diff] 0x5cb240   MATCH            sub_5CB240
+[diff] 0x5cb200   MATCH            MPBattleClass::getMinimumPlayers
+[diff] 0x5cb220   MATCH            MPBattleClass::getAlliesLimit
+[diff] 0x5d5920   MATCH            MPBattleClass::onAIJoined
+[diff] 0x5d3850   MATCH            sub_5D3850
+[diff] 0x5d3870   MATCH            sub_5D3870
+[diff] 0x5d3890   MATCH            sub_5D3890
+[diff] 0x5d5940   MATCH            sub_5D5940
+[ledger] 0x5c9260 sub_5C9260 -> OK (attempt 2)
+[ledger] 0x5c9280 sub_5C9280 -> OK (attempt 3)
+[ledger] 0x5c92a0 sub_5C92A0 -> OK (attempt 2)
+[ledger] 0x5c9580 sub_5C9580 -> OK (attempt 2)
+[ledger] 0x5c95a0 sub_5C95A0 -> OK (attempt 2)
+[ledger] 0x5c95c0 sub_5C95C0 -> OK (attempt 2)
+[ledger] 0x5ca490 sub_5CA490 -> OK (attempt 2)
+[ledger] 0x5ca4b0 sub_5CA4B0 -> OK (attempt 2)
+[ledger] 0x5ca4d0 sub_5CA4D0 -> OK (attempt 2)
+[ledger] 0x5cac90 sub_5CAC90 -> OK (attempt 2)
+[ledger] 0x5cacb0 sub_5CACB0 -> OK (attempt 2)
+[ledger] 0x5cacd0 sub_5CACD0 -> OK (attempt 3)
+[ledger] 0x5cb200 MPBattleClass::getMinimumPlayers -> OK (attempt 2)
+[ledger] 0x5cb220 MPBattleClass::getAlliesLimit -> OK (attempt 2)
+[ledger] 0x5cb240 sub_5CB240 -> OK (attempt 2)
+[ledger] 0x5d3850 sub_5D3850 -> OK (attempt 2)
+[ledger] 0x5d3870 sub_5D3870 -> OK (attempt 2)
+[ledger] 0x5d3890 sub_5D3890 -> OK (attempt 2)
+[ledger] 0x5d5920 MPBattleClass::onAIJoined -> OK (attempt 2)
+[ledger] 0x5d5940 sub_5D5940 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p18\batch_report.json
