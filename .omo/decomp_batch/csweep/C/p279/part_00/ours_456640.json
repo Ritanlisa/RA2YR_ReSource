@@ -1,0 +1,33 @@
+{
+ "symbol": "?UpdateDetectionField@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::UpdateDetectionField",
+ "size": 100,
+ "link_base": 0,
+ "bytes_hex": "83ec085356578bf9b9f80100008b872005000050e8000000008bd833f68b431085c07e398b43048b4cf0048b14f08b870802000003d08b871002000003c18d4c240c51b9f80100008954241089442414e8000000008b4310463bf07cc75f5e5b83c408c3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetField@Diplomacy@@QAEPADH@Z",
+   "sym_key": "Diplomacy::GetField"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?RevealCell@FogOfWar@@QAEXPAX@Z",
+   "sym_key": "FogOfWar::RevealCell"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x49FB70",
+ "name": "Stream::ReadIntArray",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49FB70",
+ "bytes_hex": "53568b74240c578bf96a008b066a048d4f105156ff501085c07c448b57088b066a008d4c24146a04515689542420ff501085c07c2a8b44241033db85c07e1e8b47048b166a006a048d0c985156ff521085c07c0b8b442410433bd87ce233c05f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

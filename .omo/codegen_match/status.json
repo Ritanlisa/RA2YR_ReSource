@@ -747,6 +747,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x404fd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AudioStream::UpdateTimers",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AudioStream::UpdateTimers",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x405130": {
   "attempts": 1,
   "clean": false,
@@ -14920,6 +14932,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x43a770": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "ObjectClass::sub_43A770",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_43A770",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x43a9a0": {
   "attempts": 5,
   "first_diff": null,
@@ -15755,6 +15779,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "BuildingClass::UpdateGapGeneratorField",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x456640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 mov ecx, 0x87f7e8",
+  "name": "BuildingClass::UpdateDetectionField",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "BuildingClass::UpdateDetectionField",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -21581,6 +21617,18 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "CellClass::GetScreenRect",
   "rule_violations": 5,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x480180": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 movsx eax, word ptr [ecx + 0x10c]",
+  "name": "DSurface::Process",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "DSurface::Process",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -29919,6 +29967,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x49fb70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+1 push esi",
+  "name": "Stream::ReadIntArray",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Stream::ReadIntArray",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x49fce0": {
   "attempts": 3,
   "clean": false,
@@ -30083,6 +30143,18 @@
   "orig_name": "sub_49FF20",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x49ff80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "EnumConnectionsClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "EnumConnectionsClass::QueryInterface",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x49fff0": {
@@ -30251,6 +30323,18 @@
   "orig_name": "sub_4A08D0",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4a0920": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "EnumConnectionPointsClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "EnumConnectionPointsClass::QueryInterface",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4a0990": {
@@ -31415,6 +31499,17 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "DDraw::WaitForIdle",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4a4850": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+5 call 0x7c8e17",
+  "name": "sub_4A4850",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_4A4850",
+  "rule_violations": 8,
   "status": "NG",
   "this_as_id": false
  },
@@ -37145,6 +37240,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4c65e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "EventClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "EventClass::Add",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4c66c0": {
   "attempts": 1,
   "clean": false,
@@ -37191,6 +37298,18 @@
   "orig_name": "sub_4C68E0",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4c6be0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "ObjectClass::sub_4C6BE0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_4C6BE0",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c6c50": {
@@ -37791,6 +37910,18 @@
   "name": "FactoryClass::ddtor",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FactoryClass::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4ca3c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+4 push ebx",
+  "name": "FactoryClass::Seek",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "FactoryClass::Seek",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -50343,6 +50474,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5005b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "SidebarClass::MarkTabForRebuild",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "SidebarClass::MarkTabForRebuild",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x500700": {
   "attempts": 1,
   "clean": false,
@@ -53641,6 +53784,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingLightClass::UpdateOscillation",
   "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5142a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "HoverLocomotionClass::ComputeAudio3DRotation_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::ComputeAudio3DRotation_0",
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -67631,6 +67786,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x55bb90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 xor eax, eax",
+  "name": "WriteCompressionBlock",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "WriteCompressionBlock",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x55bc00": {
   "attempts": 3,
   "clean": false,
@@ -71058,6 +71224,18 @@
   "orig_name": "ListNode::Alloc",
   "rule_violations": 3,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5a9a70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "WaypointPath::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WaypointPath::Constructor",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5a9bf0": {
@@ -105074,6 +105252,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6abc60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 cmp ecx, 0xf",
+  "name": "HouseClass::GetStatus",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "HouseClass::GetStatus",
+  "rule_violations": 11,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6abcd0": {
   "attempts": 1,
   "clean": false,
@@ -118461,6 +118651,18 @@
   "name": "sub_6E6A80",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "sub_6E6A80",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e6ab0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+10 je 0x6e6b05",
+  "name": "ScriptAction::GetWaypointCoords",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "ScriptAction::GetWaypointCoords",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -135063,6 +135265,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x75aa90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "VoxelAnimClass::Reset",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VoxelAnimClass::Reset",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x75ab30": {
   "attempts": 2,
   "clean": false,
@@ -135843,6 +136057,18 @@
   "orig_name": "WaveClass::UpdateWave",
   "rule_violations": 2,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x75f7d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+18 call 0x410320",
+  "name": "WaveClass::ProcessWaveTick",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "WaveClass::ProcessWaveTick",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x75f840": {
@@ -153840,6 +154066,17 @@
   "orig_name": "__check_overflow_exit",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7cf64c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "__d_inttype",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__d_inttype",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7cf6b1": {

@@ -1,0 +1,11 @@
+{
+ "addr": "0x456640",
+ "name": "BuildingClass::UpdateDetectionField",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x456640",
+ "bytes_hex": "83ec085356578bf9b9e8f787008b872005000050e827ff1f008bd833f68b431085c07e3b8b4b048b87080200008b14f18d0cf103c28b970c0200008b49048944240c03ca8d54240c894c241052b9e8f78700e839fc1f008b4310463bf07cc55f5e5b83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

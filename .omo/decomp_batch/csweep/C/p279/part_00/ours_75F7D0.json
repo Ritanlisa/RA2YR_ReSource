@@ -1,0 +1,15 @@
+{
+ "symbol": "?ProcessWaveTick@WaveClass@@QAGHPAH0@Z",
+ "sym_key": "WaveClass::ProcessWaveTick",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "8b44240c53568b742410578b7c2410505657e8000000008b068b8f000200006a008d54241c6a045256894c2428ff501085c07c2b8b4c241833db85c976218b8ff40100008b066a006a048d14995256ff501085c07c098b4c2418433bd972df5f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXPAH1@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  }
+ ]
+}

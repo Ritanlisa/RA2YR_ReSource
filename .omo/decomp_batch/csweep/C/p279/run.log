@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p279\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cf64c __d_inttype -> _addr_7C
+[conv] 0x4ca3c0 FactoryClass::Seek -> FactoryClass
+[conv] 0x75f7d0 WaveClass::ProcessWaveTick -> WaveClass
+[conv] 0x49fb70 Stream::ReadIntArray -> Stream
+[conv] 0x404fd0 AudioStream::UpdateTimers -> AudioStream
+[conv] 0x480180 DSurface::Process -> DSurface
+[conv] 0x4c6be0 ObjectClass::sub_4C6BE0 -> ObjectClass
+[conv] 0x5005b0 SidebarClass::MarkTabForRebuild -> SidebarClass
+[conv] 0x49ff80 EnumConnectionsClass::QueryInterface -> EnumConnectionsClass
+[conv] 0x4a0920 EnumConnectionPointsClass::QueryInterface -> EnumConnectionPointsClass
+[conv] 0x456640 BuildingClass::UpdateDetectionField -> BuildingClass
+[conv] 0x4a4850 sub_4A4850 -> _addr_4A
+[conv] 0x43a770 ObjectClass::sub_43A770 -> ObjectClass
+[conv] 0x6e6ab0 ScriptAction::GetWaypointCoords -> ScriptAction
+[conv] 0x4c65e0 EventClass::Add -> EventClass
+[conv] 0x55bb90 WriteCompressionBlock -> _addr_55
+[conv] 0x5a9a70 WaypointPath::Constructor -> WaypointPath
+[conv] 0x6abc60 HouseClass::GetStatus -> HouseClass
+[conv] 0x75aa90 VoxelAnimClass::Reset -> VoxelAnimClass
+[conv] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> HoverLocomotionClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] FactoryClass             rc=0
+[era] WaveClass                rc=0
+[era] Stream                   rc=0
+[era] AudioStream              rc=2
+[era] DSurface                 rc=0
+[era] ObjectClass              rc=0
+[era] SidebarClass             rc=0
+[era] EnumConnectionsClass     rc=2
+[era] EnumConnectionPointsClass rc=2
+[era] BuildingClass            rc=0
+[era] _addr_4A                 rc=0
+[era] ScriptAction             rc=0
+[era] EventClass               rc=2
+[era] _addr_55                 rc=0
+[era] WaypointPath             rc=2
+[era] HouseClass               rc=0
+[era] VoxelAnimClass           rc=2
+[era] HoverLocomotionClass     rc=2
+=== diffasm byte-compare ===
+[diff] 0x4ca3c0   MISMATCH         FactoryClass::Seek
+[diff] 0x75f7d0   MISMATCH         WaveClass::ProcessWaveTick
+[diff] 0x49fb70   MISMATCH         Stream::ReadIntArray
+[diff] 0x480180   MISMATCH         DSurface::Process
+[diff] 0x4c6be0   MISMATCH         ObjectClass::sub_4C6BE0
+[diff] 0x43a770   MISMATCH         ObjectClass::sub_43A770
+[diff] 0x5005b0   MISMATCH         SidebarClass::MarkTabForRebuild
+[diff] 0x456640   MISMATCH         BuildingClass::UpdateDetectionField
+[diff] 0x4a4850   MISMATCH         sub_4A4850
+[diff] 0x6e6ab0   MISMATCH         ScriptAction::GetWaypointCoords
+[diff] 0x55bb90   MISMATCH         WriteCompressionBlock
+[diff] 0x6abc60   MISMATCH         HouseClass::GetStatus
+[ledger] 0x7cf64c __d_inttype -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ca3c0 FactoryClass::Seek -> NG (attempt 1)
+[ledger] 0x75f7d0 WaveClass::ProcessWaveTick -> NG (attempt 1)
+[ledger] 0x49fb70 Stream::ReadIntArray -> NG (attempt 1)
+[ledger] 0x404fd0 AudioStream::UpdateTimers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x480180 DSurface::Process -> NG (attempt 1)
+[ledger] 0x4c6be0 ObjectClass::sub_4C6BE0 -> NG (attempt 1)
+[ledger] 0x5005b0 SidebarClass::MarkTabForRebuild -> NG (attempt 1)
+[ledger] 0x49ff80 EnumConnectionsClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a0920 EnumConnectionPointsClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x456640 BuildingClass::UpdateDetectionField -> NG (attempt 1)
+[ledger] 0x4a4850 sub_4A4850 -> NG (attempt 1)
+[ledger] 0x43a770 ObjectClass::sub_43A770 -> NG (attempt 1)
+[ledger] 0x6e6ab0 ScriptAction::GetWaypointCoords -> NG (attempt 1)
+[ledger] 0x4c65e0 EventClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55bb90 WriteCompressionBlock -> NG (attempt 1)
+[ledger] 0x5a9a70 WaypointPath::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6abc60 HouseClass::GetStatus -> NG (attempt 1)
+[ledger] 0x75aa90 VoxelAnimClass::Reset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "const_fold": 3,
+  "width_mismatch": 1,
+  "codegen_shape": 3,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p279\batch_report.json

@@ -1,0 +1,33 @@
+{
+ "symbol": "?Process@DSurface@@QAEXPAH0@Z",
+ "sym_key": "DSurface::Process",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "8b810c0100006a006a008b891c0100006a016a006a006a01508b442424518b500c8b4808528b50048b005152508b4424348b48048b10a100000000518b0d000000005250a1000000008b116a008b0852e800000000c20800",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F69C@@3IA",
+   "sym_key": "DataGlobal_87F69C"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?GenerateTexture@TerrainClass@@QAEXHHPAXHHHHHHHHDHDDDH@Z",
+   "sym_key": "TerrainClass::GenerateTexture"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?WriteCompressionBlock@@YIHPAEI0PAHH@Z",
+ "sym_key": "Unnamed::WriteCompressionBlock",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "568b742408578bf985d2743d83fa0d761b8b4424148b7c2410508bd78bcee80000000085c0742c5f5ec20c008aca8d460180c111880e8a0f880840474a75f78b7c24102bc68907eb0a8b7c2410c707000000008b07c6043011c644300100c6443002008b0783c00389075f33c05ec20c00",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?CompressLCWBuffer@@YIHPAX0H@Z",
+   "sym_key": "CompressLCWBuffer"
+  }
+ ]
+}

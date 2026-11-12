@@ -1,0 +1,11 @@
+{
+ "addr": "0x480180",
+ "name": "DSurface::Process",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x480180",
+ "bytes_hex": "0fbf810c0100000fbe891b0100006a006a008b5424106a016a006a006a0150518b0a83ec108bc489088b4a048948048b4a088b520c89480889500c8b4424348b48048b10a114738800518b0d9cf687005250a12ceda8008b116a008b0852e80d7b0c00c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

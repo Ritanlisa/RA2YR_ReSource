@@ -1,0 +1,11 @@
+{
+ "addr": "0x55BB90",
+ "name": "WriteCompressionBlock",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55BB90",
+ "bytes_hex": "33c0558b6c24085685d277088b7424108906eb3b83fa0d7722538ada80c31157885d008d7d018a19881f47414a75f78b7424182bfd893e5f5beb148b4424148b742410505655e82500000085c075138b0ec604291103cd41c60100c64101008306035e5dc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

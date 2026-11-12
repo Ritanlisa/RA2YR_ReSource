@@ -1,0 +1,21 @@
+{
+ "symbol": "?MarkTabForRebuild@SidebarClass@@QAEDHDH@Z",
+ "sym_key": "SidebarClass::MarkTabForRebuild",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "8b54240453568ac28d72fffec883fe27774fb20133db8a9e00000000ff249d000000005ec681d0530000015bc20c00837c241405752b5ec681d8530000015bc20c008891d15300008a44241084c0740b5e8891d35300005bc20c008891d25300005e5bc20c00",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "$L1872",
+   "sym_key": "$L1872"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "$L1873",
+   "sym_key": "$L1873"
+  }
+ ]
+}

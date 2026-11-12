@@ -1,0 +1,11 @@
+{
+ "addr": "0x5005B0",
+ "name": "SidebarClass::MarkTabForRebuild",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5005B0",
+ "bytes_hex": "8b442404534883f8277757b20133db8a982c065000ff249d180650008891d15300008a44240c84c0740a8891d35300005bc20c008891d25300005bc20c00837c241005750bc681d8530000015bc20c00c681d4530000015bc20c00c681d0530000015bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

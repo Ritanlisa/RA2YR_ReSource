@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetWaypointCoords@ScriptAction@@QAEPAEPAH@Z",
+ "sym_key": "ScriptAction::GetWaypointCoords",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ff74448b0757ff502c83f80b75258846048b4f24c1f9100fbfc18d04808d04808d14800fbf47245f8d0cd0890e8bc15ec204008d4704c6460434508b10ff521089065f5ec20400c6460400c706000000005f33c05ec20400",
+ "relocs": []
+}

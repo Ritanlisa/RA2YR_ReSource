@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetStatus@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::GetStatus",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "5183f90f746283f910745d83f901744f83f928744a83f902744583f903744083f906742483f907741f83f939741183f920740c83f91f740783c8ff59c20400b80100000059c204008b542400e80000000033c983f8050f94c18bc159c20400b80300000059c20400b80200000059c20400",
+ "relocs": [
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?GetHouseTechLevel@@YIHHH@Z",
+   "sym_key": "GetHouseTechLevel"
+  }
+ ]
+}

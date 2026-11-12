@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E6AB0",
+ "name": "ScriptAction::GetWaypointCoords",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E6AB0",
+ "bytes_hex": "56578b7c240c8bf185ff74498b078bcfff502c83f80b75278846048b7f24897c240c0fbf44240e0fbfd78d04805f8d04808d0c808d04ca89068bc65ec204008d4704c6460434508b08ff511089068bc65f5ec20400c6460400c706000000008bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

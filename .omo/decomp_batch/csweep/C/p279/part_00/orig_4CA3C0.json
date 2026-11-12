@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CA3C0",
+ "name": "FactoryClass::Seek",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CA3C0",
+ "bytes_hex": "8b44240c53568b742410578b7c2410505657e8495ff4ff85c07c448b4f508b166a008d44241c6a045056894c2428ff521085c07c2a8b44241833db85c07e1e8b57448b0e6a006a048d049a5056ff511085c07c098b442418433bd87ce233c05f5e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
