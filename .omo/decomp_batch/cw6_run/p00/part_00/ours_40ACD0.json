@@ -1,0 +1,21 @@
+{
+ "symbol": "?MoveCoordByDirection@@YIFEPAH@Z",
+ "sym_key": "Unnamed::MoveCoordByDirection",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "5356578b7a048b34bd000000008bc6c1f803f6c10174078bdec1fb0203c3f6c10274068bded1fb03c3f6c104740203c6f6c1087402f7d88b3203f081feff7f000089327f1081fe0080ffff7d0ec7020080ffffeb06c702ff7f000081e1ff0000008b0c8d000000008d04395f5e89420485c05b7d0bc7420400000000668b02c383f8587e07c7420458000000668b02c3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816558@@3PAIA",
+   "sym_key": "DataGlobal_816558"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816518@@3PAIA",
+   "sym_key": "DataGlobal_816518"
+  }
+ ]
+}

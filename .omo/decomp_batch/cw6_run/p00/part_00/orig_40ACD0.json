@@ -1,0 +1,11 @@
+{
+ "addr": "0x40ACD0",
+ "name": "MoveCoordByDirection",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40ACD0",
+ "bytes_hex": "8b420456578b3485586581008bc6c1f803f6c10174078bfec1ff0203c7f6c10274068bfed1ff03c7f6c104740203c6f6c1087402f7d88b3a03f88bc7893a5f3dff7f00005e7e08c702ff7f0000eb0d3d0080ffff7d06c7020080ffff8b420481e1ff0000008b0c8d1865810003c1894204790bc7420400000000668b02c383f8587e07c7420458000000668b02c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

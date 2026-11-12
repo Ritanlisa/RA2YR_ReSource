@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsSoundEnabled@Audio@@QAEEXZ",
+ "sym_key": "Audio::IsSoundEnabled",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000033c085c90f95c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  }
+ ]
+}

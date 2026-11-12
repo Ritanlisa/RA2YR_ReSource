@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x401190 sub_401190 -> _addr_40
+[conv] 0x407000 Audio::IsSoundEnabled -> Audio
+[conv] 0x407010 Audio::GetEnabled -> Audio
+[conv] 0x4073b0 SaveGame::CountLinkedList -> SaveGame
+[conv] 0x40acd0 MoveCoordByDirection -> _addr_40
+[conv] 0x40b140 _VectorClass_USubzoneConnectionStruct::AddRef -> _VectorClass_USubzoneConnectionStruct
+[conv] 0x40b700 _VectorClass_PAVBombClass::Add -> _VectorClass_PAVBombClass
+[conv] 0x40b820 _VectorClass_PAVBombClass::GetSize -> _VectorClass_PAVBombClass
+[conv] 0x40b930 _DynamicVectorClass_PAVBombClass::FindItem -> _DynamicVectorClass_PAVBombClass
+[conv] 0x40b960 _VectorClass_PAVTechnoClass::AddRef -> _VectorClass_PAVTechnoClass
+[conv] 0x40ba80 _VectorClass_PAVTechnoClass::GetSize -> _VectorClass_PAVTechnoClass
+[conv] 0x40bb90 _DynamicVectorClass_PAVTechnoClass::Draw -> _DynamicVectorClass_PAVTechnoClass
+[conv] 0x40beb0 _VectorClass_PBVCommandClass::GetAt -> _VectorClass_PBVCommandClass
+[conv] 0x40bfd0 _VectorClass_PBVCommandClass::GetSize -> _VectorClass_PBVCommandClass
+[conv] 0x40c3b0 _VectorClass_PAVLightConvertClass::GetSize -> _VectorClass_PAVLightConvertClass
+[conv] 0x40c4c0 _DynamicVectorClass_PAVLightConvertClass::FindItemIndex -> _DynamicVectorClass_PAVLightConvertClass
+[conv] 0x40c880 _VectorClass_PAVIsometricTileClass::Add -> _VectorClass_PAVIsometricTileClass
+[conv] 0x40c9a0 _VectorClass_PAVIsometricTileClass::GetSize -> _VectorClass_PAVIsometricTileClass
+[conv] 0x40cab0 _DynamicVectorClass_PAVIsometricTileClass::FindItemIndex -> _DynamicVectorClass_PAVIsometricTileClass
+[conv] 0x40cdf0 _VectorClass_PAVObjectClass::Add -> _VectorClass_PAVObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=2
+[era] Audio                    rc=0
+[era] SaveGame                 rc=2
+[era] _VectorClass_USubzoneConnectionStruct rc=0
+[era] _VectorClass_PAVBombClass rc=0
+[era] _DynamicVectorClass_PAVBombClass rc=0
+[era] _VectorClass_PAVTechnoClass rc=0
+[era] _DynamicVectorClass_PAVTechnoClass rc=0
+[era] _VectorClass_PBVCommandClass rc=0
+[era] _VectorClass_PAVLightConvertClass rc=0
+[era] _DynamicVectorClass_PAVLightConvertClass rc=0
+[era] _VectorClass_PAVIsometricTileClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileClass rc=0
+[era] _VectorClass_PAVObjectClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x40acd0   MISMATCH         MoveCoordByDirection
+[diff] 0x407000   MISMATCH         Audio::IsSoundEnabled
+[diff] 0x407010   MISMATCH         Audio::GetEnabled
+[diff] 0x40b140   MISMATCH         _VectorClass_USubzoneConnectionStruct::AddRef
+[diff] 0x40b700   MISMATCH         _VectorClass_PAVBombClass::Add
+[diff] 0x40b820   MISMATCH         _VectorClass_PAVBombClass::GetSize
+[diff] 0x40b930   MISMATCH         _DynamicVectorClass_PAVBombClass::FindItem
+[diff] 0x40b960   MISMATCH         _VectorClass_PAVTechnoClass::AddRef
+[diff] 0x40ba80   MISMATCH         _VectorClass_PAVTechnoClass::GetSize
+[diff] 0x40bb90   MISMATCH         _DynamicVectorClass_PAVTechnoClass::Draw
+[diff] 0x40beb0   MISMATCH         _VectorClass_PBVCommandClass::GetAt
+[diff] 0x40bfd0   MISMATCH         _VectorClass_PBVCommandClass::GetSize
+[diff] 0x40c3b0   MISMATCH         _VectorClass_PAVLightConvertClass::GetSize
+[diff] 0x40c4c0   MISMATCH         _DynamicVectorClass_PAVLightConvertClass::FindItemIndex
+[diff] 0x40c880   MISMATCH         _VectorClass_PAVIsometricTileClass::Add
+[diff] 0x40c9a0   MISMATCH         _VectorClass_PAVIsometricTileClass::GetSize
+[diff] 0x40cab0   MISMATCH         _DynamicVectorClass_PAVIsometricTileClass::FindItemIndex
+[diff] 0x40cdf0   MISMATCH         _VectorClass_PAVObjectClass::Add
+[ledger] 0x401190 sub_401190 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x407000 Audio::IsSoundEnabled -> NG (attempt 2)
+[ledger] 0x407010 Audio::GetEnabled -> NG (attempt 6)
+[ledger] 0x4073b0 SaveGame::CountLinkedList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40acd0 MoveCoordByDirection -> NG (attempt 2)
+[ledger] 0x40b140 _VectorClass_USubzoneConnectionStruct::AddRef -> NG (attempt 2)
+[ledger] 0x40b700 _VectorClass_PAVBombClass::Add -> NG (attempt 2)
+[ledger] 0x40b820 _VectorClass_PAVBombClass::GetSize -> NG (attempt 2)
+[ledger] 0x40b930 _DynamicVectorClass_PAVBombClass::FindItem -> NG (attempt 2)
+[ledger] 0x40b960 _VectorClass_PAVTechnoClass::AddRef -> NG (attempt 2)
+[ledger] 0x40ba80 _VectorClass_PAVTechnoClass::GetSize -> NG (attempt 2)
+[ledger] 0x40bb90 _DynamicVectorClass_PAVTechnoClass::Draw -> NG (attempt 2)
+[ledger] 0x40beb0 _VectorClass_PBVCommandClass::GetAt -> NG (attempt 2)
+[ledger] 0x40bfd0 _VectorClass_PBVCommandClass::GetSize -> NG (attempt 2)
+[ledger] 0x40c3b0 _VectorClass_PAVLightConvertClass::GetSize -> NG (attempt 2)
+[ledger] 0x40c4c0 _DynamicVectorClass_PAVLightConvertClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x40c880 _VectorClass_PAVIsometricTileClass::Add -> NG (attempt 2)
+[ledger] 0x40c9a0 _VectorClass_PAVIsometricTileClass::GetSize -> NG (attempt 2)
+[ledger] 0x40cab0 _DynamicVectorClass_PAVIsometricTileClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x40cdf0 _VectorClass_PAVObjectClass::Add -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 18
+ },
+ "pathologies": {
+  "extern_reloc": 2,
+  "codegen_shape": 11,
+  "branch_polarity": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p00\batch_report.json

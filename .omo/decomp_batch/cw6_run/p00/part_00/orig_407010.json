@@ -1,0 +1,11 @@
+{
+ "addr": "0x407010",
+ "name": "Audio::GetEnabled",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407010",
+ "bytes_hex": "a128e78700c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
