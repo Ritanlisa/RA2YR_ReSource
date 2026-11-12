@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AC630",
+ "name": "WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AC630",
+ "bytes_hex": "568bf18d4e0cc70674787f00e8af8000008bcec70624767f00e8e27ae7fff644240801740956e8e2c4010083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

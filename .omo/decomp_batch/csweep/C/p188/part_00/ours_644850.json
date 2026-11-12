@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_644850@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_644850",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "53568b3500000000578bd933ff8b065053e80000000083c40885c0741da10000000083c604473bf07d168b0e5153e80000000083c40885c075e38bc75f5e5bc35f5e83c8ff5bc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?off_836EE0@@3IA",
+   "sym_key": "off_836EE0"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Railgun@@3_KA",
+   "sym_key": "g_INI_Key_Railgun"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

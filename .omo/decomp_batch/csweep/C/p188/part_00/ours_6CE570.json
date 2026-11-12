@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_6CE570@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_6CE570",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "a10700000053568bd957535033ffbe07000000e80000000083c40885c0741da14c00000083c604473bf07d168b0e5351e80000000083c40885c075e38bc75f5e5bc35f5e83c8ff5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aEvaChronospher_0@@3IA",
+   "sym_key": "aEvaChronospher_0"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?aEvaChronospher_0@@3IA",
+   "sym_key": "aEvaChronospher_0"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?aEvaChronospher_0@@3IA",
+   "sym_key": "aEvaChronospher_0"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

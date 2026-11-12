@@ -1,0 +1,15 @@
+{
+ "symbol": "?IterateNodes@CCINIClass@@QAEHH@Z",
+ "sym_key": "CCINIClass::IterateNodes",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "5681c114010000e8000000008bf085f67421578b7c240c8b065756ff90c80300008b763085f67406f646140475e95f5ec204008bc65ec20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?GetDB@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::GetDB"
+  }
+ ]
+}

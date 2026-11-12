@@ -1,0 +1,11 @@
+{
+ "addr": "0x43E900",
+ "name": "BuildingClass::GetZDrawOffset",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x43E900",
+ "bytes_hex": "568bf18b06ff90d00100008bc8e8ce3729008bb6200500008bc8f7d98a86c516000084c0740a8b86e81100005e03c1c38bc15ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

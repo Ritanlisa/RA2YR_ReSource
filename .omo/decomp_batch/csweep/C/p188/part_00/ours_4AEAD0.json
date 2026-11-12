@@ -1,0 +1,27 @@
+{
+ "symbol": "?ExitMode@DisplayClass@@QAEHXZ",
+ "sym_key": "DisplayClass::ExitMode",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0d0000000085c97405e800000000c7862012000000000000c686d011000000c605b9010000018b066a006a0056ff50485ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?ResetScrollBounds@TacticalClass@@QAEHXZ",
+   "sym_key": "TacticalClass::ResetScrollBounds"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

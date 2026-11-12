@@ -1,0 +1,11 @@
+{
+ "addr": "0x407F40",
+ "name": "Audio::Release",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407F40",
+ "bytes_hex": "568bf18b868800000085c075258b461485c0741e68f8e78700ff15e8117e008b4e14e849a6ffff68f8e78700ff15ec117e005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

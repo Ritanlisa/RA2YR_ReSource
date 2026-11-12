@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p188\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ca530 _sscanf -> _addr_7C
+[conv] 0x43e900 BuildingClass::GetZDrawOffset -> BuildingClass
+[conv] 0x4aead0 DisplayClass::ExitMode -> DisplayClass
+[conv] 0x710550 CCINIClass::IterateNodes -> CCINIClass
+[conv] 0x7bd130 Audio::GetSamplePosition -> Audio
+[conv] 0x726250 TriggerClass::HasCrossesHorizontalLineEvent -> TriggerClass
+[conv] 0x726290 TriggerClass::HasCrossesVerticalLineEvent -> TriggerClass
+[conv] 0x7667a0 Conflict_WorldDominationTour::QueryInterface -> Conflict_WorldDominationTour
+[conv] 0x767c10 History_WorldDominationTour::QueryInterface -> History_WorldDominationTour
+[conv] 0x76f6c0 State_WorldDominationTour::QueryInterface -> State_WorldDominationTour
+[conv] 0x7ac5d0 WonlineStringDialogControl::QueryInterface -> WonlineStringDialogControl
+[conv] 0x7ac630 CreateGameDialogControl::Constructor_WonlineStringDialogControl -> CreateGameDialogControl
+[conv] 0x407f40 Audio::Release -> Audio
+[conv] 0x4a3b40 FindResource -> _addr_4A
+[conv] 0x4105a0 AbstractClass::COMStub_8 -> AbstractClass
+[conv] 0x50e760 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Destroy -> _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x63f810 ObjectClass::sub_63F810 -> ObjectClass
+[conv] 0x644850 ObjectClass::sub_644850 -> ObjectClass
+[conv] 0x6458d0 ObjectClass::sub_6458D0 -> ObjectClass
+[conv] 0x6ce570 ObjectClass::sub_6CE570 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] BuildingClass            rc=0
+[era] DisplayClass             rc=0
+[era] CCINIClass               rc=0
+[era] Audio                    rc=2
+[era] TriggerClass             rc=2
+[era] Conflict_WorldDominationTour rc=0
+[era] History_WorldDominationTour rc=0
+[era] State_WorldDominationTour rc=0
+[era] WonlineStringDialogControl rc=2
+[era] CreateGameDialogControl  rc=0
+[era] _addr_4A                 rc=0
+[era] AbstractClass            rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x43e900   MISMATCH         BuildingClass::GetZDrawOffset
+[diff] 0x4aead0   MISMATCH         DisplayClass::ExitMode
+[diff] 0x710550   MISMATCH         CCINIClass::IterateNodes
+[diff] 0x407f40   MISMATCH         Audio::Release
+[diff] 0x7667a0   MISMATCH         Conflict_WorldDominationTour::QueryInterface
+[diff] 0x767c10   MISMATCH         History_WorldDominationTour::QueryInterface
+[diff] 0x76f6c0   MISMATCH         State_WorldDominationTour::QueryInterface
+[diff] 0x7ac630   MISMATCH         CreateGameDialogControl::Constructor_WonlineStringDialogControl
+[diff] 0x4a3b40   MISMATCH         FindResource
+[diff] 0x4105a0   MISMATCH         AbstractClass::COMStub_8
+[diff] 0x50e760   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Destroy
+[diff] 0x644850   MISMATCH         ObjectClass::sub_644850
+[diff] 0x6458d0   MISMATCH         ObjectClass::sub_6458D0
+[diff] 0x6ce570   MISMATCH         ObjectClass::sub_6CE570
+[ledger] 0x7ca530 _sscanf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43e900 BuildingClass::GetZDrawOffset -> NG (attempt 1)
+[ledger] 0x4aead0 DisplayClass::ExitMode -> NG (attempt 1)
+[ledger] 0x710550 CCINIClass::IterateNodes -> NG (attempt 1)
+[ledger] 0x7bd130 Audio::GetSamplePosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x726250 TriggerClass::HasCrossesHorizontalLineEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x726290 TriggerClass::HasCrossesVerticalLineEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7667a0 Conflict_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x767c10 History_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x76f6c0 State_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x7ac5d0 WonlineStringDialogControl::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ac630 CreateGameDialogControl::Constructor_WonlineStringDialogControl -> NG (attempt 1)
+[ledger] 0x407f40 Audio::Release -> NG (attempt 1)
+[ledger] 0x4a3b40 FindResource -> NG (attempt 1)
+[ledger] 0x4105a0 AbstractClass::COMStub_8 -> NG (attempt 1)
+[ledger] 0x50e760 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x63f810 ObjectClass::sub_63F810 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x644850 ObjectClass::sub_644850 -> NG (attempt 1)
+[ledger] 0x6458d0 ObjectClass::sub_6458D0 -> NG (attempt 1)
+[ledger] 0x6ce570 ObjectClass::sub_6CE570 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 14
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "width_mismatch": 1,
+  "const_fold": 3,
+  "regalloc": 4,
+  "ret_norm": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p188\batch_report.json

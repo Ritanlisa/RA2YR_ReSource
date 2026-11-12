@@ -1,0 +1,39 @@
+{
+ "symbol": "?FindResource@@YIPAXGPBD@Z",
+ "sym_key": "Unnamed::FindResource",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "a10000000081e1ffff0000525150e80000000085c074178b0d000000005051e80000000085c0740650e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?hLibModule@@3PAXA",
+   "sym_key": "hLibModule"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?FindResourceA@@YGPAXPAX00@Z",
+   "sym_key": "FindResourceA"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?hLibModule@@3PAXA",
+   "sym_key": "hLibModule"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?LoadResource@@YGPAXPAX0@Z",
+   "sym_key": "LoadResource"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?LockResource@@YGPAXPAX@Z",
+   "sym_key": "LockResource"
+  }
+ ]
+}

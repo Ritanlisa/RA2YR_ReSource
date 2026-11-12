@@ -1,0 +1,11 @@
+{
+ "addr": "0x710550",
+ "name": "CCINIClass::IterateNodes",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x710550",
+ "bytes_hex": "565781c114010000e8f32ed6ff8bf085f6741c8b7c240c8b06578bceff90c80300008b763085f67406f646140475e85f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

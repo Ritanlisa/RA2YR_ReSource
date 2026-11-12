@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_6458D0@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::sub_6458D0",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "568b3500000000578bf98b065057e80000000083c40885c074148b4e0483c6045157e80000000083c40885c075ec5f5ec3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?off_8370BC@@3IA",
+   "sym_key": "off_8370BC"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

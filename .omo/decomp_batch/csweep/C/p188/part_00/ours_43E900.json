@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetZDrawOffset@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::GetZDrawOffset",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff90d00100008bc8e8000000008bb6200500008bc88a86c516000084c0740a8b86e81100005e2bc1c38bc15ef7d8c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  }
+ ]
+}

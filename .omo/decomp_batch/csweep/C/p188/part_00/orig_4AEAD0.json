@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AEAD0",
+ "name": "DisplayClass::ExitMode",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AEAD0",
+ "bytes_hex": "568bf18b0d2473880085c97405e87eb62200c686cf11000000c686d011000000c6059deda800018b066a006a008bceff50485ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

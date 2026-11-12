@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A3B40",
+ "name": "FindResource",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A3B40",
+ "bytes_hex": "a174f9890081e1ffff0000525150ff152c127e0085c07501c38b0d74f989005051ff1530127e0085c07501c350ff1528127e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

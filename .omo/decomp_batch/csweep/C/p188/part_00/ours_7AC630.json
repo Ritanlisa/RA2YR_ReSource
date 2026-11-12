@@ -1,0 +1,33 @@
+{
+ "symbol": "?Constructor_WonlineStringDialogControl@CreateGameDialogControl@@QAEPAPAXD@Z",
+ "sym_key": "CreateGameDialogControl::Constructor_WonlineStringDialogControl",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "568bf10fbe460c50c70600000000e80000000083c4048bcec70600000000e800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXH@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?vt_SimpleWonlineDialogControl@@3PAXA",
+   "sym_key": "vt_SimpleWonlineDialogControl"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?InitVtable@OwnerDrawControl@@QAEXXZ",
+   "sym_key": "OwnerDrawControl::InitVtable"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
