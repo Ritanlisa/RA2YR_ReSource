@@ -1,0 +1,37 @@
+{
+ "summary": {
+  "total": 1,
+  "verdicts": {
+   "MISMATCH": 1
+  },
+  "pathologies": {
+   "regalloc": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x6bf5c0",
+   "batch": "dup_resolve",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov dword ptr [ecx + 4], 0"
+   },
+   "pathology": "regalloc",
+   "name": "COMClassFactory_6::Construct",
+   "emitted": "COMClassFactory::Construct",
+   "unit": "COMClassFactory",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+======================================================================
+PART 1/1  (1 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_dup2\p00\part_00
+=== convert (1 addrs) ===
+[conv] 0x6bf5c0 COMClassFactory::Construct -> COMClassFactory
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] COMClassFactory          rc=0
+=== diffasm byte-compare ===
+[diff] 0x6bf5c0   MISMATCH         COMClassFactory::Construct
+[ledger] 0x6bf5c0 COMClassFactory::Construct -> NG (attempt 3)
+======================================================================
+{
+ "total": 1,
+ "verdicts": {
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_dup2\p00\batch_report.json

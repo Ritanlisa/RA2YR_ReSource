@@ -65588,15 +65588,15 @@
   "this_as_id": false
  },
  "0x6bf5c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
-  "name": "0x6bf5c0",
-  "note": "decomp_batch r2: DUP_SKIP",
+  "first_diff": "+0 mov eax, ecx",
+  "name": "COMClassFactory::Construct",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "COMClassFactory_6::Construct",
   "rule_violations": 0,
-  "status": "PENDING",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6bf5d0": {
