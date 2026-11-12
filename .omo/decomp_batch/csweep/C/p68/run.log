@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p68\part_00
+=== convert (20 addrs) ===
+[conv] 0x499d00 BlitTransXlat::getOverlayType -> BlitTransXlat
+[conv] 0x499d20 ?$BlitTransZRemapXlat@E::setOverlayFlags -> __BlitTransZRemapXlat_E
+[conv] 0x499d40 _BlitTransRemapDest_E::_Gfacet_locale_std__UAEPAXI_Z_9 -> _BlitTransRemapDest_E
+[conv] 0x499d60 _BlitTransRemapXlat_E::_Gfacet_locale_std__UAEPAXI_Z_10 -> _BlitTransRemapXlat_E
+[conv] 0x499d80 _RLEBlitTransXlat_E::_Gfacet_locale_std__UAEPAXI_Z_11 -> _RLEBlitTransXlat_E
+[conv] 0x499da0 RLEBlitter::clearOverlayFlags -> RLEBlitter
+[conv] 0x499dc0 _RLEBlitTransZRemapXlat_E::_Gfacet_locale_std__UAEPAXI_Z_13 -> _RLEBlitTransZRemapXlat_E
+[conv] 0x499de0 _RLEBlitTransRemapDest_E::_Gfacet_locale_std__UAEPAXI_Z_14 -> _RLEBlitTransRemapDest_E
+[conv] 0x499e00 _RLEBlitTransRemapXlat_E::_Gfacet_locale_std__UAEPAXI_Z_15 -> _RLEBlitTransRemapXlat_E
+[conv] 0x499e20 _RLEBlitTransXlatZRead_E::_Gfacet_locale_std__UAEPAXI_Z_16 -> _RLEBlitTransXlatZRead_E
+[conv] 0x499e60 _RLEBlitTransRemapDestZRead_E::_Gfacet_locale_std__UAEPAXI_Z_18 -> _RLEBlitTransRemapDestZRead_E
+[conv] 0x499e80 _RLEBlitTransRemapXlatZRead_E::_Gfacet_locale_std__UAEPAXI_Z_19 -> _RLEBlitTransRemapXlatZRead_E
+[conv] 0x499ea0 _RLEBlitTransXlatZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_20 -> _RLEBlitTransXlatZReadWrite_E
+[conv] 0x499ec0 _RLEBlitTransZRemapXlatZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_21 -> _RLEBlitTransZRemapXlatZReadWrite_E
+[conv] 0x499ee0 _RLEBlitTransRemapDestZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_22 -> _RLEBlitTransRemapDestZReadWrite_E
+[conv] 0x499f00 _RLEBlitTransRemapXlatZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_23 -> _RLEBlitTransRemapXlatZReadWrite_E
+[conv] 0x499f20 _BlitPlainXlat_G::_Gfacet_locale_std__UAEPAXI_Z_24 -> _BlitPlainXlat_G
+[conv] 0x499f40 _BlitTransZRemapXlat_G::_Gfacet_locale_std__UAEPAXI_Z_25 -> _BlitTransZRemapXlat_G
+[conv] 0x499f60 _BlitTransDarken_G::_Gfacet_locale_std__UAEPAXI_Z_26 -> _BlitTransDarken_G
+[conv] 0x499f80 _BlitTransLucent75_G::_Gfacet_locale_std__UAEPAXI_Z_27 -> _BlitTransLucent75_G
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BlitTransXlat            rc=0
+[era] __BlitTransZRemapXlat_E  rc=2
+[era] _BlitTransRemapDest_E    rc=0
+[era] _BlitTransRemapXlat_E    rc=0
+[era] _RLEBlitTransXlat_E      rc=0
+[era] RLEBlitter               rc=2
+[era] _RLEBlitTransZRemapXlat_E rc=0
+[era] _RLEBlitTransRemapDest_E rc=0
+[era] _RLEBlitTransRemapXlat_E rc=0
+[era] _RLEBlitTransXlatZRead_E rc=0
+[era] _RLEBlitTransRemapDestZRead_E rc=0
+[era] _RLEBlitTransRemapXlatZRead_E rc=0
+[era] _RLEBlitTransXlatZReadWrite_E rc=0
+[era] _RLEBlitTransZRemapXlatZReadWrite_E rc=0
+[era] _RLEBlitTransRemapDestZReadWrite_E rc=0
+[era] _RLEBlitTransRemapXlatZReadWrite_E rc=0
+[era] _BlitPlainXlat_G         rc=0
+[era] _BlitTransZRemapXlat_G   rc=0
+[era] _BlitTransDarken_G       rc=0
+[era] _BlitTransLucent75_G     rc=0
+=== diffasm byte-compare ===
+[diff] 0x499d00   MISMATCH         BlitTransXlat::getOverlayType
+[diff] 0x499d40   MISMATCH         _BlitTransRemapDest_E::_Gfacet_locale_std__UAEPAXI_Z_9
+[diff] 0x499d60   MISMATCH         _BlitTransRemapXlat_E::_Gfacet_locale_std__UAEPAXI_Z_10
+[diff] 0x499d80   MISMATCH         _RLEBlitTransXlat_E::_Gfacet_locale_std__UAEPAXI_Z_11
+[diff] 0x499dc0   MISMATCH         _RLEBlitTransZRemapXlat_E::_Gfacet_locale_std__UAEPAXI_Z_13
+[diff] 0x499de0   MISMATCH         _RLEBlitTransRemapDest_E::_Gfacet_locale_std__UAEPAXI_Z_14
+[diff] 0x499e00   MISMATCH         _RLEBlitTransRemapXlat_E::_Gfacet_locale_std__UAEPAXI_Z_15
+[diff] 0x499e20   MISMATCH         _RLEBlitTransXlatZRead_E::_Gfacet_locale_std__UAEPAXI_Z_16
+[diff] 0x499e60   MISMATCH         _RLEBlitTransRemapDestZRead_E::_Gfacet_locale_std__UAEPAXI_Z_18
+[diff] 0x499e80   MISMATCH         _RLEBlitTransRemapXlatZRead_E::_Gfacet_locale_std__UAEPAXI_Z_19
+[diff] 0x499ea0   MISMATCH         _RLEBlitTransXlatZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_20
+[diff] 0x499ec0   MISMATCH         _RLEBlitTransZRemapXlatZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_21
+[diff] 0x499ee0   MISMATCH         _RLEBlitTransRemapDestZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_22
+[diff] 0x499f00   MISMATCH         _RLEBlitTransRemapXlatZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_23
+[diff] 0x499f20   MISMATCH         _BlitPlainXlat_G::_Gfacet_locale_std__UAEPAXI_Z_24
+[diff] 0x499f40   MISMATCH         _BlitTransZRemapXlat_G::_Gfacet_locale_std__UAEPAXI_Z_25
+[diff] 0x499f60   MISMATCH         _BlitTransDarken_G::_Gfacet_locale_std__UAEPAXI_Z_26
+[diff] 0x499f80   MISMATCH         _BlitTransLucent75_G::_Gfacet_locale_std__UAEPAXI_Z_27
+[ledger] 0x499d00 BlitTransXlat::getOverlayType -> NG (attempt 1)
+[ledger] 0x499d20 ?$BlitTransZRemapXlat@E::setOverlayFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x499d40 _BlitTransRemapDest_E::_Gfacet_locale_std__UAEPAXI_Z_9 -> NG (attempt 1)
+[ledger] 0x499d60 _BlitTransRemapXlat_E::_Gfacet_locale_std__UAEPAXI_Z_10 -> NG (attempt 1)
+[ledger] 0x499d80 _RLEBlitTransXlat_E::_Gfacet_locale_std__UAEPAXI_Z_11 -> NG (attempt 1)
+[ledger] 0x499da0 RLEBlitter::clearOverlayFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x499dc0 _RLEBlitTransZRemapXlat_E::_Gfacet_locale_std__UAEPAXI_Z_13 -> NG (attempt 1)
+[ledger] 0x499de0 _RLEBlitTransRemapDest_E::_Gfacet_locale_std__UAEPAXI_Z_14 -> NG (attempt 1)
+[ledger] 0x499e00 _RLEBlitTransRemapXlat_E::_Gfacet_locale_std__UAEPAXI_Z_15 -> NG (attempt 1)
+[ledger] 0x499e20 _RLEBlitTransXlatZRead_E::_Gfacet_locale_std__UAEPAXI_Z_16 -> NG (attempt 1)
+[ledger] 0x499e60 _RLEBlitTransRemapDestZRead_E::_Gfacet_locale_std__UAEPAXI_Z_18 -> NG (attempt 1)
+[ledger] 0x499e80 _RLEBlitTransRemapXlatZRead_E::_Gfacet_locale_std__UAEPAXI_Z_19 -> NG (attempt 1)
+[ledger] 0x499ea0 _RLEBlitTransXlatZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_20 -> NG (attempt 1)
+[ledger] 0x499ec0 _RLEBlitTransZRemapXlatZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_21 -> NG (attempt 1)
+[ledger] 0x499ee0 _RLEBlitTransRemapDestZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_22 -> NG (attempt 1)
+[ledger] 0x499f00 _RLEBlitTransRemapXlatZReadWrite_E::_Gfacet_locale_std__UAEPAXI_Z_23 -> NG (attempt 1)
+[ledger] 0x499f20 _BlitPlainXlat_G::_Gfacet_locale_std__UAEPAXI_Z_24 -> NG (attempt 1)
+[ledger] 0x499f40 _BlitTransZRemapXlat_G::_Gfacet_locale_std__UAEPAXI_Z_25 -> NG (attempt 1)
+[ledger] 0x499f60 _BlitTransDarken_G::_Gfacet_locale_std__UAEPAXI_Z_26 -> NG (attempt 1)
+[ledger] 0x499f80 _BlitTransLucent75_G::_Gfacet_locale_std__UAEPAXI_Z_27 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "const_fold": 18
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p68\batch_report.json
