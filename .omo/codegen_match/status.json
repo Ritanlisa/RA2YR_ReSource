@@ -33232,6 +33232,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ed950": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov eax, dword ptr [esi + 4]",
+  "name": "VectorClass::Cleanup4",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "VectorClass::Cleanup4",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4ed980": {
   "attempts": 2,
   "clean": false,
@@ -33287,6 +33299,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4edbb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVAircraftTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_AircraftTypeClass::Remove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4edbe0": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -33334,6 +33358,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_UnitTypeClass::Add",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4ede10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVUnitTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_UnitTypeClass::Remove",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -33385,6 +33421,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ee070": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVAnimTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_AnimTypeClass::Remove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4ee0a0": {
   "attempts": 2,
   "clean": false,
@@ -33433,6 +33481,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ee2d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVInfantryTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_InfantryTypeClass::Remove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4ee300": {
   "attempts": 2,
   "clean": false,
@@ -33473,6 +33533,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_BulletTypeClass::Add",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4ee530": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVBulletTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_BulletTypeClass::Remove",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -33524,6 +33596,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ee790": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVVoxelAnimTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::Remove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4ee7c0": {
   "attempts": 2,
   "clean": false,
@@ -33572,6 +33656,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ee9f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVIsometricTileTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_IsometricTileTypeClass::Remove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4eea20": {
   "attempts": 2,
   "clean": false,
@@ -33615,6 +33711,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x4eec50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVParticleTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_ParticleTypeClass::Remove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4eec80": {
   "attempts": 2,
   "clean": false,
@@ -33655,6 +33763,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_ParticleSystemTypeClass::Add",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4eeeb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVParticleSystemTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_ParticleSystemTypeClass::Remove",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -33758,6 +33878,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_AbstractTypeClass::Add",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4ef370": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVAbstractTypeClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_AbstractTypeClass::Remove",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -34144,6 +34276,18 @@
   "name": "HouseClass_24::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x4f29d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAVGraphicMenuItem::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "HouseClass_24::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4f2a00": {
   "attempts": 2,
@@ -36200,6 +36344,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x50ea00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVBuildingTypeClass::Destroy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "_VectorClass_PBVBuildingTypeClass::Destroy",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x50ea30": {
   "attempts": 2,
   "clean": false,
@@ -36247,6 +36403,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_UAngerStruct___16::AddRef",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x50ed10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAUStartingTechnoStruct_HouseClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_UAngerStruct___16::ddtor",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -36298,6 +36466,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x50efd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_UAngerStruct::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_UAngerStruct::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x50f000": {
   "attempts": 2,
   "clean": false,
@@ -36343,6 +36523,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_UScoutStruct::AddRef",
   "rule_violations": 4,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x50f300": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_UScoutStruct::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_UScoutStruct::ddtor",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -36394,6 +36586,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x50f5d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass_PAUBuildChoiceClass_HouseClass::Remove",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Remove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x50f600": {
   "attempts": 2,
   "clean": false,
@@ -36439,6 +36643,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_BuildingType::CompareVectors",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x50f830": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov eax, dword ptr [esi + 4]",
+  "name": "VectorClass::ClearAndFree3",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "VectorClass::ClearAndFree3",
+  "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
  },
@@ -36496,6 +36712,18 @@
   "name": "VectorClass__N::Remove",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
+ },
+ "0x50fa90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
+  "name": "_VectorClass__N::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass__N::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x50fac0": {
   "attempts": 1,
@@ -37236,6 +37464,18 @@
   "name": "TypeList_Infantry::AddRef",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x512d30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_VectorClass_PBVInfantryTypeClass::Cleanup",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Vector::Cleanup",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x512d60": {
   "attempts": 2,

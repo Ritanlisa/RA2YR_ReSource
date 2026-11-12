@@ -101,3 +101,4 @@
 {"layer": "C", "part": 100, "n": 20, "seconds": 45.4, "ok": true, "verdicts": {"MISMATCH": 19, "COMPILE_FAIL": 1}}
 {"layer": "C", "part": 101, "n": 20, "seconds": 60.1, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "C", "part": 102, "n": 20, "seconds": 44.2, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"layer": "C", "part": 103, "n": 20, "seconds": 43.7, "ok": true, "verdicts": {"MISMATCH": 18, "COMPILE_FAIL": 2}}
