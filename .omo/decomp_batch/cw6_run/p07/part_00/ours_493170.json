@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_493170@_BlitTransLucent75ZReadWarp_G@@QAEHPAGPAEHH0HHH@Z",
+ "sym_key": "_BlitTransLucent75ZReadWarp_G::sub_493170",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "8b44240c85c00f8e8d0000008b1500000000538b5c240c55568b742410578b7c24248944241c668b078b6c242025ffff000083c7023be87d398a0384c074338b690425ff000000668b5108668b6c45008b44243066c1ed02668b044623ea66c1e80223c28d144003ea66892e8b15000000008b825c0500004383c6023bf872062bba600500008b44241c488be885ed896c241c75915f5e5d5bc22000",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  }
+ ]
+}

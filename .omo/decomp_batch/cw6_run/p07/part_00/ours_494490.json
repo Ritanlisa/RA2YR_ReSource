@@ -1,0 +1,21 @@
+{
+ "symbol": "?Blit_ZRead_AlphaBlend@_BlitTransXlatWriteAlpha_G@@QAGPAGPAE0HHPAG1H@Z",
+ "sym_key": "_BlitTransXlatWriteAlpha_G::Blit_ZRead_AlphaBlend",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "8b54240c8b44241885d276530fbe0d1401000053568b742410578b7c241c8bda8a164684d28854242474218b4c242481e1ff00000003cf81f9ff0000007c0380c9ff6689080fbe0d140100008b511c83c0023bc272032b41204b75c45f5e5bc22000",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  }
+ ]
+}

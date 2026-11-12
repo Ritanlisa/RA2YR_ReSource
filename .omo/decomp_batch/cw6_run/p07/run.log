@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x493050 _BlitTransLucent25ZRead_G::sub_493050 -> _BlitTransLucent25ZRead_G
+[conv] 0x493170 _BlitTransLucent75ZReadWarp_G::sub_493170 -> _BlitTransLucent75ZReadWarp_G
+[conv] 0x4932a0 _BlitTransLucent50ZReadWarp_G::sub_4932A0 -> _BlitTransLucent50ZReadWarp_G
+[conv] 0x4933d0 _BlitTransLucent25ZReadWarp_G::sub_4933D0 -> _BlitTransLucent25ZReadWarp_G
+[conv] 0x493500 _BlitPlainXlatZReadWrite_G::sub_493500 -> _BlitPlainXlatZReadWrite_G
+[conv] 0x493600 _BlitTransXlatZReadWrite_G::sub_493600 -> _BlitTransXlatZReadWrite_G
+[conv] 0x493710 _BlitTransZRemapXlatZReadWrite_G::sub_493710 -> _BlitTransZRemapXlatZReadWrite_G
+[conv] 0x493830 _BlitTransDarkenZReadWrite_G::sub_493830 -> _BlitTransDarkenZReadWrite_G
+[conv] 0x494490 _BlitTransXlatWriteAlpha_G::Blit_ZRead_AlphaBlend -> _BlitTransXlatWriteAlpha_G
+[conv] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x4963f0 _RLEBlitTransLucent50_G::sub_4963F0 -> _RLEBlitTransLucent50_G
+[conv] 0x49ae80 _VectorClass_PAVConvertClass::Add -> _VectorClass_PAVConvertClass
+[conv] 0x49afa0 _VectorClass_PAVConvertClass::GetSize -> _VectorClass_PAVConvertClass
+[conv] 0x49b0b0 _DynamicVectorClass_PAVConvertClass::FindItemIndex -> _DynamicVectorClass_PAVConvertClass
+[conv] 0x49da60 ObjectClass::sub_49DA60 -> ObjectClass
+[conv] 0x49ea30 _VectorClass_PAD::AddRef -> _VectorClass_PAD
+[conv] 0x49eb20 _DynamicVectorClass_PAD::GetSize -> _DynamicVectorClass_PAD
+[conv] 0x49eb50 _VectorClass_PAV_DynamicVectorClass_PAD::Add -> _VectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x49ec70 _VectorClass_PAV_DynamicVectorClass_PAD::GetSize -> _VectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x49ede0 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::FindItemIndex -> _DynamicVectorClass_PAV_DynamicVectorClass_PAD
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTransLucent25ZRead_G rc=0
+[era] _BlitTransLucent75ZReadWarp_G rc=0
+[era] _BlitTransLucent50ZReadWarp_G rc=0
+[era] _BlitTransLucent25ZReadWarp_G rc=0
+[era] _BlitPlainXlatZReadWrite_G rc=0
+[era] _BlitTransXlatZReadWrite_G rc=0
+[era] _BlitTransZRemapXlatZReadWrite_G rc=0
+[era] _BlitTransDarkenZReadWrite_G rc=0
+[era] _BlitTransXlatWriteAlpha_G rc=0
+[era] _BlitTransXlatMultWriteAlpha_G rc=2
+[era] _RLEBlitTransLucent50_G  rc=2
+[era] _VectorClass_PAVConvertClass rc=0
+[era] _DynamicVectorClass_PAVConvertClass rc=0
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAD         rc=0
+[era] _DynamicVectorClass_PAD  rc=0
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=0
+[era] _DynamicVectorClass_PAV_DynamicVectorClass_PAD rc=0
+=== diffasm byte-compare ===
+[diff] 0x493050   MISMATCH         _BlitTransLucent25ZRead_G::sub_493050
+[diff] 0x493170   MISMATCH         _BlitTransLucent75ZReadWarp_G::sub_493170
+[diff] 0x4932a0   MISMATCH         _BlitTransLucent50ZReadWarp_G::sub_4932A0
+[diff] 0x4933d0   MISMATCH         _BlitTransLucent25ZReadWarp_G::sub_4933D0
+[diff] 0x493500   MISMATCH         _BlitPlainXlatZReadWrite_G::sub_493500
+[diff] 0x493600   MISMATCH         _BlitTransXlatZReadWrite_G::sub_493600
+[diff] 0x493710   MISMATCH         _BlitTransZRemapXlatZReadWrite_G::sub_493710
+[diff] 0x493830   MISMATCH         _BlitTransDarkenZReadWrite_G::sub_493830
+[diff] 0x494490   MISMATCH         _BlitTransXlatWriteAlpha_G::Blit_ZRead_AlphaBlend
+[diff] 0x49ae80   MISMATCH         _VectorClass_PAVConvertClass::Add
+[diff] 0x49afa0   MISMATCH         _VectorClass_PAVConvertClass::GetSize
+[diff] 0x49b0b0   MISMATCH         _DynamicVectorClass_PAVConvertClass::FindItemIndex
+[diff] 0x49da60   MISMATCH         ObjectClass::sub_49DA60
+[diff] 0x49ea30   MISMATCH         _VectorClass_PAD::AddRef
+[diff] 0x49eb20   MISMATCH         _DynamicVectorClass_PAD::GetSize
+[diff] 0x49eb50   MISMATCH         _VectorClass_PAV_DynamicVectorClass_PAD::Add
+[diff] 0x49ec70   MISMATCH         _VectorClass_PAV_DynamicVectorClass_PAD::GetSize
+[diff] 0x49ede0   MISMATCH         _DynamicVectorClass_PAV_DynamicVectorClass_PAD::FindItemIndex
+[ledger] 0x493050 _BlitTransLucent25ZRead_G::sub_493050 -> NG (attempt 2)
+[ledger] 0x493170 _BlitTransLucent75ZReadWarp_G::sub_493170 -> NG (attempt 2)
+[ledger] 0x4932a0 _BlitTransLucent50ZReadWarp_G::sub_4932A0 -> NG (attempt 2)
+[ledger] 0x4933d0 _BlitTransLucent25ZReadWarp_G::sub_4933D0 -> NG (attempt 2)
+[ledger] 0x493500 _BlitPlainXlatZReadWrite_G::sub_493500 -> NG (attempt 2)
+[ledger] 0x493600 _BlitTransXlatZReadWrite_G::sub_493600 -> NG (attempt 2)
+[ledger] 0x493710 _BlitTransZRemapXlatZReadWrite_G::sub_493710 -> NG (attempt 2)
+[ledger] 0x493830 _BlitTransDarkenZReadWrite_G::sub_493830 -> NG (attempt 2)
+[ledger] 0x494490 _BlitTransXlatWriteAlpha_G::Blit_ZRead_AlphaBlend -> NG (attempt 2)
+[ledger] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4963f0 _RLEBlitTransLucent50_G::sub_4963F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49ae80 _VectorClass_PAVConvertClass::Add -> NG (attempt 2)
+[ledger] 0x49afa0 _VectorClass_PAVConvertClass::GetSize -> NG (attempt 2)
+[ledger] 0x49b0b0 _DynamicVectorClass_PAVConvertClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x49da60 ObjectClass::sub_49DA60 -> NG (attempt 2)
+[ledger] 0x49ea30 _VectorClass_PAD::AddRef -> NG (attempt 2)
+[ledger] 0x49eb20 _DynamicVectorClass_PAD::GetSize -> NG (attempt 2)
+[ledger] 0x49eb50 _VectorClass_PAV_DynamicVectorClass_PAD::Add -> NG (attempt 2)
+[ledger] 0x49ec70 _VectorClass_PAV_DynamicVectorClass_PAD::GetSize -> NG (attempt 2)
+[ledger] 0x49ede0 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::FindItemIndex -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "branch_order": 3,
+  "eval_order": 1,
+  "regalloc": 2,
+  "branch_polarity": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p07\batch_report.json
