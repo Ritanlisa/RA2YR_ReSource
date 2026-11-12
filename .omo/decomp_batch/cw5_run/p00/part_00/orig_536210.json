@@ -1,0 +1,11 @@
+{
+ "addr": "0x536210",
+ "name": "CSF::GetTeamString",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x536210",
+ "bytes_hex": "68db18000068b85f820033d2b9a46f8200e83aec1f00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

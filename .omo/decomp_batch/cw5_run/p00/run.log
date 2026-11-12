@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x753e00 Viewport::Clear -> Viewport
+[conv] 0x536950 HealthNavCommandClass::performAction_58 -> HealthNavCommandClass
+[conv] 0x40d310 sub_40D310 -> _addr_40
+[conv] 0x600530 sub_600530 -> _addr_60
+[conv] 0x77ca00 sub_77CA00 -> _addr_77
+[conv] 0x77d0f0 sub_77D0F0 -> _addr_77
+[conv] 0x535df0 SetDefenseTabCommandClass::performAction_8 -> SetDefenseTabCommandClass
+[conv] 0x536210 CenterTeamCommand::GetTeamString -> CenterTeamCommand
+[conv] 0x536840 TypeSelectCommandClass::performAction_47 -> TypeSelectCommandClass
+[conv] 0x536b20 StopCommandClass::performAction_71 -> StopCommandClass
+[conv] 0x536ce0 GuardCommandClass::performAction_88 -> GuardCommandClass
+[conv] 0x536ee0 AllianceCommandClass::performAction_107 -> AllianceCommandClass
+[conv] 0x5370d0 CenterREventCommandClass::performAction_125 -> CenterREventCommandClass
+[conv] 0x5372b0 OptionsCommandClass::performAction_142 -> OptionsCommandClass
+[conv] 0x537600 View4CommandClass::performAction_162 -> View4CommandClass
+[conv] 0x537910 SetView4CommandClass::performAction_180 -> SetView4CommandClass
+[conv] 0x537e90 CursorPositionCommandClass::performAction_194 -> CursorPositionCommandClass
+[conv] 0x69adf0 IsRandMap::Sed -> IsRandMap
+[conv] 0x775d90 sub_775D90 -> _addr_77
+[conv] 0x410e50 StreamObj::Release -> StreamObj
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Viewport                 rc=2
+[era] HealthNavCommandClass    rc=0
+[era] _addr_40                 rc=0
+[era] _addr_60                 rc=0
+[era] _addr_77                 rc=0
+[era] SetDefenseTabCommandClass rc=0
+[era] CenterTeamCommand        rc=0
+[era] TypeSelectCommandClass   rc=0
+[era] StopCommandClass         rc=0
+[era] GuardCommandClass        rc=0
+[era] AllianceCommandClass     rc=0
+[era] CenterREventCommandClass rc=0
+[era] OptionsCommandClass      rc=0
+[era] View4CommandClass        rc=0
+[era] SetView4CommandClass     rc=0
+[era] CursorPositionCommandClass rc=0
+[era] IsRandMap                rc=0
+[era] StreamObj                rc=0
+=== diffasm byte-compare ===
+[diff] 0x536950   MISMATCH         HealthNavCommandClass::performAction_58
+[diff] 0x40d310   MISMATCH         sub_40D310
+[diff] 0x600530   MISMATCH         sub_600530
+[diff] 0x77ca00   MISMATCH         sub_77CA00
+[diff] 0x77d0f0   MISMATCH         sub_77D0F0
+[diff] 0x775d90   MISMATCH         sub_775D90
+[diff] 0x535df0   MISMATCH         SetDefenseTabCommandClass::performAction_8
+[diff] 0x536210   MISMATCH         CenterTeamCommand::GetTeamString
+[diff] 0x536840   MISMATCH         TypeSelectCommandClass::performAction_47
+[diff] 0x536b20   MISMATCH         StopCommandClass::performAction_71
+[diff] 0x536ce0   MISMATCH         GuardCommandClass::performAction_88
+[diff] 0x536ee0   MISMATCH         AllianceCommandClass::performAction_107
+[diff] 0x5370d0   MISMATCH         CenterREventCommandClass::performAction_125
+[diff] 0x5372b0   MISMATCH         OptionsCommandClass::performAction_142
+[diff] 0x537600   MISMATCH         View4CommandClass::performAction_162
+[diff] 0x537910   MISMATCH         SetView4CommandClass::performAction_180
+[diff] 0x537e90   MISMATCH         CursorPositionCommandClass::performAction_194
+[diff] 0x69adf0   MISMATCH         IsRandMap::Sed
+[diff] 0x410e50   MISMATCH         StreamObj::Release
+[ledger] 0x753e00 Viewport::Clear -> COMPILE_FAIL (attempt 12)
+[ledger] 0x536950 HealthNavCommandClass::performAction_58 -> NG (attempt 4)
+[ledger] 0x40d310 sub_40D310 -> NG (attempt 5)
+[ledger] 0x600530 sub_600530 -> NG (attempt 5)
+[ledger] 0x77ca00 sub_77CA00 -> NG (attempt 5)
+[ledger] 0x77d0f0 sub_77D0F0 -> NG (attempt 5)
+[ledger] 0x535df0 SetDefenseTabCommandClass::performAction_8 -> NG (attempt 4)
+[ledger] 0x536210 CenterTeamCommand::GetTeamString -> NG (attempt 4)
+[ledger] 0x536840 TypeSelectCommandClass::performAction_47 -> NG (attempt 4)
+[ledger] 0x536b20 StopCommandClass::performAction_71 -> NG (attempt 4)
+[ledger] 0x536ce0 GuardCommandClass::performAction_88 -> NG (attempt 4)
+[ledger] 0x536ee0 AllianceCommandClass::performAction_107 -> NG (attempt 4)
+[ledger] 0x5370d0 CenterREventCommandClass::performAction_125 -> NG (attempt 4)
+[ledger] 0x5372b0 OptionsCommandClass::performAction_142 -> NG (attempt 4)
+[ledger] 0x537600 View4CommandClass::performAction_162 -> NG (attempt 4)
+[ledger] 0x537910 SetView4CommandClass::performAction_180 -> NG (attempt 4)
+[ledger] 0x537e90 CursorPositionCommandClass::performAction_194 -> NG (attempt 4)
+[ledger] 0x69adf0 IsRandMap::Sed -> NG (attempt 4)
+[ledger] 0x775d90 sub_775D90 -> NG (attempt 5)
+[ledger] 0x410e50 StreamObj::Release -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 19
+ },
+ "pathologies": {
+  "codegen_shape": 10,
+  "extern_reloc": 7,
+  "const_fold": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p00\batch_report.json

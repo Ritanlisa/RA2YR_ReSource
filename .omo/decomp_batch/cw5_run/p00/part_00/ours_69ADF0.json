@@ -1,0 +1,21 @@
+{
+ "symbol": "?Sed@IsRandMap@@QAEHXZ",
+ "sym_key": "IsRandMap::Sed",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "83c158680000000051e80000000083c408f7d81bc040c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?aRandmapSed@@3PADA",
+   "sym_key": "aRandmapSed"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

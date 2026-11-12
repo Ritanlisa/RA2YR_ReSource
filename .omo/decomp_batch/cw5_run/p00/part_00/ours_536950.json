@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_58@HealthNavCommandClass@@QAGHF@Z",
+ "sym_key": "HealthNavCommandClass::performAction_58",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "518a4c2403f6d183e101e80000000059c20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?UpdateUnitHealthTooltip@@YIHPAX@Z",
+   "sym_key": "UpdateUnitHealthTooltip"
+  }
+ ]
+}
