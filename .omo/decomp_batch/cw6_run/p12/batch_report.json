@@ -1,0 +1,458 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "branch_polarity": 7,
+   "codegen_shape": 13
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 7,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x4ea420",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4ea456",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_TriggerClass::Add",
+   "emitted": "_VectorClass_PAVTriggerClass::Add",
+   "unit": "_VectorClass_PAVTriggerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4ea540",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4ea54e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TriggerClass::GetSize",
+   "emitted": "_VectorClass_PAVTriggerClass::GetSize",
+   "unit": "_VectorClass_PAVTriggerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4ea650",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AITriggerTypeClass::FindItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAVTriggerClass::FindItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVTriggerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4ea680",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4ea6b6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_TriggerTypeClass::Add",
+   "emitted": "_VectorClass_PAVTriggerTypeClass::Add",
+   "unit": "_VectorClass_PAVTriggerTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4ea7a0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4ea7ae",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TriggerTypeClass::GetSize",
+   "emitted": "_VectorClass_PAVTriggerTypeClass::GetSize",
+   "unit": "_VectorClass_PAVTriggerTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4eaa00",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4eaa0e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TubeClass::GetSize",
+   "emitted": "_VectorClass_PAVTubeClass::GetSize",
+   "unit": "_VectorClass_PAVTubeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4eab10",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TubeClass::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVTubeClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVTubeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4eab40",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4eab76",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_ParticleSystemClass::Add",
+   "emitted": "_VectorClass_PAVParticleSystemClass::Add",
+   "unit": "_VectorClass_PAVParticleSystemClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4eac60",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4eac6e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_ParticleSystemClass::GetSize",
+   "emitted": "_VectorClass_PAVParticleSystemClass::GetSize",
+   "unit": "_VectorClass_PAVParticleSystemClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4ead70",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_BuildingLightClass::FindItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAVParticleSystemClass::FindItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVParticleSystemClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4eada0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4eadd6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_WaveClass::Add",
+   "emitted": "_VectorClass_PAVWaveClass::Add",
+   "unit": "_VectorClass_PAVWaveClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4eafd0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TubeClass::FindItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAVWaveClass::FindItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVWaveClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb000",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4eb036",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_OverlayClass::Add",
+   "emitted": "_VectorClass_PAVOverlayClass::Add",
+   "unit": "_VectorClass_PAVOverlayClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb120",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4eb12e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_OverlayClass::GetSize",
+   "emitted": "_VectorClass_PAVOverlayClass::GetSize",
+   "unit": "_VectorClass_PAVOverlayClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb230",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TubeClass::FindItemIndex_1",
+   "emitted": "_DynamicVectorClass_PAVOverlayClass::FindItemIndex_1",
+   "unit": "_DynamicVectorClass_PAVOverlayClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb260",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4eb296",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "ParticleSystemClass_16::AddRef",
+   "emitted": "_VectorClass_PAVSmudgeClass::AddRef",
+   "unit": "_VectorClass_PAVSmudgeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb380",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4eb38e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "ParticleSystemClass_16::Init",
+   "emitted": "_VectorClass_PAVSmudgeClass::Init",
+   "unit": "_VectorClass_PAVSmudgeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb490",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "ParticleSystemClass::processParticleFrame",
+   "emitted": "_DynamicVectorClass_PAVSmudgeClass::processParticleFrame",
+   "unit": "_DynamicVectorClass_PAVSmudgeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb4c0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4eb4f6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "ParticleSystemClass_32::AddRef",
+   "emitted": "_VectorClass_PAVTerrainClass::AddRef",
+   "unit": "_VectorClass_PAVTerrainClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb5e0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4eb5ee",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "ParticleSystemClass_32::Init",
+   "emitted": "_VectorClass_PAVTerrainClass::Init",
+   "unit": "_VectorClass_PAVTerrainClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  }
+ ]
+}

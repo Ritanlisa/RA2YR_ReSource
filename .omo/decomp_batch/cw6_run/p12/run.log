@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ea420 _VectorClass_PAVTriggerClass::Add -> _VectorClass_PAVTriggerClass
+[conv] 0x4ea540 _VectorClass_PAVTriggerClass::GetSize -> _VectorClass_PAVTriggerClass
+[conv] 0x4ea650 _DynamicVectorClass_PAVTriggerClass::FindItemIndex_0 -> _DynamicVectorClass_PAVTriggerClass
+[conv] 0x4ea680 _VectorClass_PAVTriggerTypeClass::Add -> _VectorClass_PAVTriggerTypeClass
+[conv] 0x4ea7a0 _VectorClass_PAVTriggerTypeClass::GetSize -> _VectorClass_PAVTriggerTypeClass
+[conv] 0x4eaa00 _VectorClass_PAVTubeClass::GetSize -> _VectorClass_PAVTubeClass
+[conv] 0x4eab10 _DynamicVectorClass_PAVTubeClass::FindItemIndex -> _DynamicVectorClass_PAVTubeClass
+[conv] 0x4eab40 _VectorClass_PAVParticleSystemClass::Add -> _VectorClass_PAVParticleSystemClass
+[conv] 0x4eac60 _VectorClass_PAVParticleSystemClass::GetSize -> _VectorClass_PAVParticleSystemClass
+[conv] 0x4ead70 _DynamicVectorClass_PAVParticleSystemClass::FindItemIndex_0 -> _DynamicVectorClass_PAVParticleSystemClass
+[conv] 0x4eada0 _VectorClass_PAVWaveClass::Add -> _VectorClass_PAVWaveClass
+[conv] 0x4eafd0 _DynamicVectorClass_PAVWaveClass::FindItemIndex_0 -> _DynamicVectorClass_PAVWaveClass
+[conv] 0x4eb000 _VectorClass_PAVOverlayClass::Add -> _VectorClass_PAVOverlayClass
+[conv] 0x4eb120 _VectorClass_PAVOverlayClass::GetSize -> _VectorClass_PAVOverlayClass
+[conv] 0x4eb230 _DynamicVectorClass_PAVOverlayClass::FindItemIndex_1 -> _DynamicVectorClass_PAVOverlayClass
+[conv] 0x4eb260 _VectorClass_PAVSmudgeClass::AddRef -> _VectorClass_PAVSmudgeClass
+[conv] 0x4eb380 _VectorClass_PAVSmudgeClass::Init -> _VectorClass_PAVSmudgeClass
+[conv] 0x4eb490 _DynamicVectorClass_PAVSmudgeClass::processParticleFrame -> _DynamicVectorClass_PAVSmudgeClass
+[conv] 0x4eb4c0 _VectorClass_PAVTerrainClass::AddRef -> _VectorClass_PAVTerrainClass
+[conv] 0x4eb5e0 _VectorClass_PAVTerrainClass::Init -> _VectorClass_PAVTerrainClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVTriggerClass rc=0
+[era] _DynamicVectorClass_PAVTriggerClass rc=0
+[era] _VectorClass_PAVTriggerTypeClass rc=0
+[era] _VectorClass_PAVTubeClass rc=0
+[era] _DynamicVectorClass_PAVTubeClass rc=0
+[era] _VectorClass_PAVParticleSystemClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemClass rc=0
+[era] _VectorClass_PAVWaveClass rc=0
+[era] _DynamicVectorClass_PAVWaveClass rc=0
+[era] _VectorClass_PAVOverlayClass rc=0
+[era] _DynamicVectorClass_PAVOverlayClass rc=0
+[era] _VectorClass_PAVSmudgeClass rc=0
+[era] _DynamicVectorClass_PAVSmudgeClass rc=0
+[era] _VectorClass_PAVTerrainClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4ea420   MISMATCH         _VectorClass_PAVTriggerClass::Add
+[diff] 0x4ea540   MISMATCH         _VectorClass_PAVTriggerClass::GetSize
+[diff] 0x4ea650   MISMATCH         _DynamicVectorClass_PAVTriggerClass::FindItemIndex_0
+[diff] 0x4ea680   MISMATCH         _VectorClass_PAVTriggerTypeClass::Add
+[diff] 0x4ea7a0   MISMATCH         _VectorClass_PAVTriggerTypeClass::GetSize
+[diff] 0x4eaa00   MISMATCH         _VectorClass_PAVTubeClass::GetSize
+[diff] 0x4eab10   MISMATCH         _DynamicVectorClass_PAVTubeClass::FindItemIndex
+[diff] 0x4eab40   MISMATCH         _VectorClass_PAVParticleSystemClass::Add
+[diff] 0x4eac60   MISMATCH         _VectorClass_PAVParticleSystemClass::GetSize
+[diff] 0x4ead70   MISMATCH         _DynamicVectorClass_PAVParticleSystemClass::FindItemIndex_0
+[diff] 0x4eada0   MISMATCH         _VectorClass_PAVWaveClass::Add
+[diff] 0x4eafd0   MISMATCH         _DynamicVectorClass_PAVWaveClass::FindItemIndex_0
+[diff] 0x4eb000   MISMATCH         _VectorClass_PAVOverlayClass::Add
+[diff] 0x4eb120   MISMATCH         _VectorClass_PAVOverlayClass::GetSize
+[diff] 0x4eb230   MISMATCH         _DynamicVectorClass_PAVOverlayClass::FindItemIndex_1
+[diff] 0x4eb260   MISMATCH         _VectorClass_PAVSmudgeClass::AddRef
+[diff] 0x4eb380   MISMATCH         _VectorClass_PAVSmudgeClass::Init
+[diff] 0x4eb490   MISMATCH         _DynamicVectorClass_PAVSmudgeClass::processParticleFrame
+[diff] 0x4eb4c0   MISMATCH         _VectorClass_PAVTerrainClass::AddRef
+[diff] 0x4eb5e0   MISMATCH         _VectorClass_PAVTerrainClass::Init
+[ledger] 0x4ea420 _VectorClass_PAVTriggerClass::Add -> NG (attempt 2)
+[ledger] 0x4ea540 _VectorClass_PAVTriggerClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ea650 _DynamicVectorClass_PAVTriggerClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4ea680 _VectorClass_PAVTriggerTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ea7a0 _VectorClass_PAVTriggerTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4eaa00 _VectorClass_PAVTubeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4eab10 _DynamicVectorClass_PAVTubeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4eab40 _VectorClass_PAVParticleSystemClass::Add -> NG (attempt 2)
+[ledger] 0x4eac60 _VectorClass_PAVParticleSystemClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ead70 _DynamicVectorClass_PAVParticleSystemClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4eada0 _VectorClass_PAVWaveClass::Add -> NG (attempt 2)
+[ledger] 0x4eafd0 _DynamicVectorClass_PAVWaveClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4eb000 _VectorClass_PAVOverlayClass::Add -> NG (attempt 2)
+[ledger] 0x4eb120 _VectorClass_PAVOverlayClass::GetSize -> NG (attempt 2)
+[ledger] 0x4eb230 _DynamicVectorClass_PAVOverlayClass::FindItemIndex_1 -> NG (attempt 2)
+[ledger] 0x4eb260 _VectorClass_PAVSmudgeClass::AddRef -> NG (attempt 2)
+[ledger] 0x4eb380 _VectorClass_PAVSmudgeClass::Init -> NG (attempt 2)
+[ledger] 0x4eb490 _DynamicVectorClass_PAVSmudgeClass::processParticleFrame -> NG (attempt 2)
+[ledger] 0x4eb4c0 _VectorClass_PAVTerrainClass::AddRef -> NG (attempt 2)
+[ledger] 0x4eb5e0 _VectorClass_PAVTerrainClass::Init -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_polarity": 7,
+  "codegen_shape": 13
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p12\batch_report.json
