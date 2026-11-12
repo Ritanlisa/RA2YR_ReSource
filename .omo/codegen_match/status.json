@@ -12560,7 +12560,7 @@
   "this_as_id": false
  },
  "0x474430": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -17616,7 +17616,7 @@
   "this_as_id": false
  },
  "0x4a18f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -18818,14 +18818,14 @@
   "this_as_id": false
  },
  "0x4a8960": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DisplayClass::SetViewDimensions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TacticalClass::SetViewDimensions",
-  "rule_violations": 3,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -18853,7 +18853,7 @@
   "this_as_id": false
  },
  "0x4a8d50": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28629,7 +28629,7 @@
   "this_as_id": false
  },
  "0x4f3b80": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_4F3B80",
@@ -49167,7 +49167,7 @@
   "this_as_id": false
  },
  "0x5e8dc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0xc",
@@ -50295,7 +50295,7 @@
   "this_as_id": false
  },
  "0x5f4730": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 lea eax, [esp]",
@@ -52817,7 +52817,7 @@
   "this_as_id": false
  },
  "0x62bb20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+10 lea ecx, [esi + 0xe8]",
@@ -53694,7 +53694,7 @@
   "status": "OK"
  },
  "0x633d30": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+10 mov edx, dword ptr [0xac4c98]",
@@ -53957,15 +53957,15 @@
   "this_as_id": false
  },
  "0x635a40": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+19 mov dword ptr [esp + 0x10], eax",
   "name": "TeamClass::FindByMemberType",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TeamClass::FindByMemberType",
   "rule_violations": 7,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x635db0": {
@@ -58196,7 +58196,7 @@
   "this_as_id": false
  },
  "0x660840": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -60193,7 +60193,7 @@
   "this_as_id": false
  },
  "0x68ad70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -68770,7 +68770,7 @@
   "this_as_id": false
  },
  "0x6d7560": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 sub esp, 0x98",
@@ -68794,7 +68794,7 @@
   "this_as_id": false
  },
  "0x6d7c00": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70699,7 +70699,7 @@
   "this_as_id": false
  },
  "0x6ee310": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70711,7 +70711,7 @@
   "this_as_id": false
  },
  "0x6ee3f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82077,7 +82077,7 @@
   "this_as_id": false
  },
  "0x766880": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83986,7 +83986,7 @@
   "this_as_id": false
  },
  "0x7712c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85610,7 +85610,7 @@
   "this_as_id": false
  },
  "0x782bb0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": "+3 mov byte ptr [esp + 3], dl",
   "name": "FindBuddyList",
@@ -85960,7 +85960,7 @@
   "this_as_id": false
  },
  "0x7aa870": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

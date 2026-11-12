@@ -1,0 +1,81 @@
+{
+ "symbol": "?GetPlacementScreenRect@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::GetPlacementScreenRect",
+ "size": 266,
+ "link_base": 0,
+ "bytes_hex": "83ec185355568bf18d4c2418578b065156ff90ac0000008b0d000000008d5424145250e8000000008b0656ff506c8bf885ff0f84a30000008d4c241c6a0051e8000000008bf00fbf47028b0e8b5e08992bc28b6e0cd1f82bc88b44241403c8896c24180fbf4704992bc28b5604d1f82bd08b44241003d0a10400000003c289442410a1000000008d34088d3c1e3bc77d4a8b7c241003ef8b3d040000003bfd7d3a0fbe2d080000008b6d0003e83bee762aa10c0000008b74241003c73bc6761b8b4424105f5e5d89088b4c240c89580889500489480c5b83c418c38b4424108b15000000005f5e89108b0d000000008948048b15000000008950088b0d000000005d89480c5b83c418c3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1350@@3IA",
+   "sym_key": "DataGlobal_AC1350"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1354@@3IA",
+   "sym_key": "DataGlobal_AC1354"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1358@@3IA",
+   "sym_key": "DataGlobal_AC1358"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC135C@@3IA",
+   "sym_key": "DataGlobal_AC135C"
+  }
+ ]
+}

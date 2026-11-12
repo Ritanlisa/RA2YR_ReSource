@@ -1,0 +1,165 @@
+{
+ "symbol": "?FindBuddyList@@YIHPAED@Z",
+ "sym_key": "Unnamed::FindBuddyList",
+ "size": 1239,
+ "link_base": 0,
+ "bytes_hex": "83ec7c538b1d280000008854240755568bd157b91b00000033c08d7c242085db89542414895c2418f3ab75075052e98f0400008b153000000033ed85db8bc2896c241c760db91b0000008bf28d7c2420f3a5f64424200174283beb73204583c06c85ed7c113beb730db91b0000008bf08d7c2420f3a5f64424200175dc896c241c8b442414f600010f851202000085ed7c1d3beb73198d446d00b91b0000008d7c24208d04c08d34828b442414f3a58a4c241384c90f849c0000003beb720655e9fc0300008d5c6d008d1cdbc1e3028d7c247783c9ff33c0f2aef7d1498bf14683fe010f84ff0000008b4c24148d515783c9ff8bfaf2aef7d183f901751f4e85f60f8ee1000000528d54247b52e80000000083c40885c00f8dcb0000004583fb940f9cc083c36c84c0751b3b2d280000007313a130000000b91b0000008d7c24208d3418f3a53b6c24187c838b4c24145551e96b0300003beb720655e9600300008d5c6d008d1cdbc1e3028d7c247783c9ff33c0f2aef7d1498bf14683fe0174678b54241483c9ff83c2578bfaf2aef7d183f90175174e85f67e4d8d4424775052e80000000083c40885c07d3b4583fb940f9cc083c36c84c0751c3b2d2800000073148b0d300000008d7c24208d3419b91b000000f3a53b6c24187c8e8b5424145552e9da0200003b6c24187c0655e9c90200008b7424148d5c6d008d1cdbc1e3028d7c247783c9ff33c0f2aef7d1498d7e578bd183c9ff42f2ae83fa01f7d1742583f901741b8b7424148d4c2477518d465750e80000000083c40885c07559eb0e4a85d27f964985c97fa28b7424148d56248d4424445250e80000000083c4084583fb940f9cc083c36c84c075203b2d2800000073188b0d300000008d7c24208d3419b91b000000f3a58b7424143b6c24180f8c69ffffff5556e922020000a12800000033db3bc376118b3530000000b91b0000008d7c2420f3a58a44241384c00f84a90000003beb7f0c8b4c24146a0051e9ea010000895c24188d7c247783c9ff33c0f2aef7d1498bf14683fe010f84170100008b54241483c9ff83c2578bfaf2aef7d183f901751f4e85f60f8ef90000008d4424775250e80000000083c40885c00f8de30000008b4c2418438d416c85c00f9cc184c989442418751f3b1d2800000073178b542418a130000000b91b0000008d7c24208d3410f3a53bdd0f8c76ffffff8b4c24145351e9510100003beb7f0c8b5424146a0052e941010000895c24188d7c247783c9ff33c0f2aef7d1498bf14683fe0174728b44241483c9ff8d505733c08bfaf2aef7d183f90175174e85f67e568d4c24775152e80000000083c40885c07d448b542418438d426c85c00f9cc184c98944241875203b1d2800000073188b4424188b0d300000008d7c24208d3401b91b000000f3a53bdd7c838b5424145352e9b50000003bdd0f8da70000008d2c5b8d6ced00c1e5028d7c247783c9ff33c0f2ae8b442414f7d1498d70578bd18bfe83c9ff33c042f2ae83fa01f7d1741e83f90174148d4c24775156e80000000083c40885c075a4eb0e4a85d27f574985c90f8ff8feffff8b5424148d44244483c2245250e80000000083c4084383fd940f9cc083c56c84c0751c3b1d2800000073148b0d300000008d7c24208d3429b91b000000f3a53b5c241c0f8d4bffffffe963ffffff538b44241850b928000000e8000000000fbec05f5e5d5b83c47cc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 270,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 301,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 418,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 445,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 453,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 565,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 602,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 625,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 633,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 673,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 685,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 795,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 833,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 844,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 958,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 992,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 1004,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 1107,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 1148,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 1171,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 1179,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 1219,
+   "type": "DIR32",
+   "sym": "?g_WOL_UserList@@3IA",
+   "sym_key": "g_WOL_UserList"
+  },
+  {
+   "off": 1224,
+   "type": "REL32",
+   "sym": "?Insert@DynamicClass@@QAEDPAX0@Z",
+   "sym_key": "DynamicClass::Insert"
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "symbol": "?RenderIsometric@TacticalClass@@QAEIPAHPAI@Z",
+ "sym_key": "TacticalClass::RenderIsometric",
+ "size": 718,
+ "link_base": 0,
+ "bytes_hex": "81ec8c000000538bd9558b2d000000008b83b0000000562bc58bac249c000000578d4c24148b7d005103c78d93e40d00008944241c8d4c2448db44241cd95c2418e8000000008b1083ec088954241c8b4004d944241c89442420dd1c24e800000000d94424208bf08b442424dd1c2433f081e6ff00000033f0e8000000008bc88b44242433c883c40881e1ff00000033c16a0050568d4c247ce8000000008b4424748b5424708b4d0c6a00c1e808c1ea086689442416b8898888886689542414f7e903d18b4508c1fa038bca6889888888c1e91f8d740a1199525089742444e8000000008b442410c1fa058d78fe33f881e7ff00000033f88bc2c1e81f897c241c8d5410048954243c33d285f60f8eae0100008bcf33c0c1f910894c2428eb088b4424388b5424188b4c242c03c733c14225ff0000008954241833c88bc2992bc28b542428d1f88944243803c233c125ff00000033c88b44243c85c0894c242c894c24100f8e4d010000894424208d442410b9f801000050e80000000084c00f84110100008d4c241051b9f8010000e8000000008bf08d54247c528bcee8000000008b086a00894c24548b5004895424588b78088b400c8d4c24546a00518bd58d8c24980000008944244ce8000000008b106a00895424688b50048b48088954246c8b400c894c2428894424348d4c245c0fbf442416c1e00805800000009981e2ff00000003c2c1f808c1e008500fbf442418c1e00805800000009981e2ff00000003c2c1f808c1e00850e8000000008b4c24588b54245c8b442460894c2444895424488d4c24148d54244451528bcb89442454e8000000008b4c241483e91e85ff894c24147e2e8b44244085c07e268b44242485c07e1e8b44243085c07e168b8424a40000006a008d4c241850518b0ee80000000066ff4424108b44242066ff4c241248894424200f85bffeffff8b7424348b7c241c397424180f8c5ffeffff5f5e5d5b81c48c000000c20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?TransformMatrix3x4Point@@YIPAMPAX00@Z",
+   "sym_key": "TransformMatrix3x4Point"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  },
+  {
+   "off": 371,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 377,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 395,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 400,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 414,
+   "type": "REL32",
+   "sym": "?GetScreenRect@CellClass@@QAEPAHPAX@Z",
+   "sym_key": "CellClass::GetScreenRect"
+  },
+  {
+   "off": 460,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 556,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 597,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 658,
+   "type": "REL32",
+   "sym": "?CheckCellVisibility@TacticalClass@@QAEDPAX0D@Z",
+   "sym_key": "TacticalClass::CheckCellVisibility"
+  }
+ ]
+}

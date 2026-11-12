@@ -1,0 +1,105 @@
+{
+ "symbol": "?FindByMemberType@TeamClass@@QAEHH@Z",
+ "sym_key": "TeamClass::FindByMemberType",
+ "size": 384,
+ "link_base": 0,
+ "bytes_hex": "83ec10538bd98b4c2418558b432456578b0488894424148b407483f8ff0f85530100008b4b1033ff33ed894c241885c97f0c5f5e5d0bc05b83c410c204008b53048b04aa8b54242439500875338b3857e8000000008bf083c4048d5424108b4e048d46045250895c2418ff51108bb68c00000083feff740f3bc67c0b8b4c2418453be97d45ebb78b8f1c0200008b7130e80000000084c0740ca10000000085c074038b7030a10c00000068000000006a508b04b005f9560000668b0866894c24208a500288542422eb5385ff750d5f5e5d83c8ff5b83c410c204008b8f1c0200008b7130e80000000084c0740ca10000000085c074038b70308b0d0c00000068000000006a648b04b105f9560000668b1066895424208a4002884424228d4c2420e8000000008b0d0000000033d28a54241a33c08a442419d3fa8b0d00000000d3e28b0d00000000d3f88b0d00000000d3e08a0d000000000bd08b44241825ff000000d3e88b0d00000000d3e08b4c24140bc28941745f5e5d5b83c410c20400",
+ "relocs": [
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3EA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 290,
+   "type": "REL32",
+   "sym": "?Lerp@Color@@QAEEEPAX@Z",
+   "sym_key": "Color::Lerp"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 324,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 332,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 359,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  }
+ ]
+}
