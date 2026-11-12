@@ -1,0 +1,11 @@
+{
+ "addr": "0x622800",
+ "name": "Dialog::Show",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x622800",
+ "bytes_hex": "568bf16a0156ff1598147e0056ff15d0147e008b0d70f78700e802cff2ff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

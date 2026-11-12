@@ -1,0 +1,11 @@
+{
+ "addr": "0x70ADA0",
+ "name": "TechnoClass::Vt46Thunk",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70ADA0",
+ "bytes_hex": "568bf18b06ff90840000008b8e1c0200008b106a00518bc8ff92b80000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

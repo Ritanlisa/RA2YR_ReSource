@@ -1,0 +1,11 @@
+{
+ "addr": "0x556600",
+ "name": "LinkedList_flat::MoveNode",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x556600",
+ "bytes_hex": "56578b7c240c8bf13bfe740d8b06ff50248b16578bceff520c8bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?Show@Dialog@@QAEHXZ",
+ "sym_key": "Dialog::Show",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "568bf16a0156e80000000056e8000000008b0d80010000e8000000005ec3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?SetForegroundWindow@@YGHPAX@Z",
+   "sym_key": "SetForegroundWindow"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?PumpMessages@Timer@@QAEPAXXZ",
+   "sym_key": "Timer::PumpMessages"
+  }
+ ]
+}

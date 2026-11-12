@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p76\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b0190 sub_7B0190 -> _addr_7B
+[conv] 0x7b01d0 sub_7B01D0 -> _addr_7B
+[conv] 0x65aa80 RadioClass::ProcessCmd -> RadioClass
+[conv] 0x556600 LinkedList::MoveNode -> LinkedList
+[conv] 0x70ada0 TechnoClass::Vt46Thunk -> TechnoClass
+[conv] 0x622800 Dialog::Show -> Dialog
+[conv] 0x420e40 AlphaShapeClass::SD_vt06 -> AlphaShapeClass
+[conv] 0x464ac0 AbstractClass::CanPlacePath -> AbstractClass
+[conv] 0x403df0 sub_403DF0 -> _addr_40
+[conv] 0x406a30 sub_406A30 -> _addr_40
+[conv] 0x40aea0 sub_40AEA0 -> _addr_40
+[conv] 0x40b460 sub_40B460 -> _addr_40
+[conv] 0x40d0b0 sub_40D0B0 -> _addr_40
+[conv] 0x40dbb0 sub_40DBB0 -> _addr_40
+[conv] 0x40ded0 sub_40DED0 -> _addr_40
+[conv] 0x40e690 sub_40E690 -> _addr_40
+[conv] 0x40ed40 sub_40ED40 -> _addr_40
+[conv] 0x40f3b0 sub_40F3B0 -> _addr_40
+[conv] 0x40fa50 sub_40FA50 -> _addr_40
+[conv] 0x410070 sub_410070 -> _addr_41
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7B                 rc=0
+[era] RadioClass               rc=0
+[era] LinkedList               rc=0
+[era] TechnoClass              rc=0
+[era] Dialog                   rc=0
+[era] AlphaShapeClass          rc=0
+[era] AbstractClass            rc=0
+[era] _addr_40                 rc=0
+[era] _addr_41                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x7b0190   MISMATCH         sub_7B0190
+[diff] 0x7b01d0   MISMATCH         sub_7B01D0
+[diff] 0x65aa80   MISMATCH         RadioClass::ProcessCmd
+[diff] 0x556600   MATCH            LinkedList::MoveNode
+[diff] 0x70ada0   MISMATCH         TechnoClass::Vt46Thunk
+[diff] 0x622800   MISMATCH         Dialog::Show
+[diff] 0x420e40   MISMATCH         AlphaShapeClass::SD_vt06
+[diff] 0x464ac0   MATCH            AbstractClass::CanPlacePath
+[diff] 0x403df0   MISMATCH         sub_403DF0
+[diff] 0x406a30   MISMATCH         sub_406A30
+[diff] 0x40aea0   MISMATCH         sub_40AEA0
+[diff] 0x40b460   MISMATCH         sub_40B460
+[diff] 0x40d0b0   MISMATCH         sub_40D0B0
+[diff] 0x40dbb0   MISMATCH         sub_40DBB0
+[diff] 0x40ded0   MISMATCH         sub_40DED0
+[diff] 0x40e690   MISMATCH         sub_40E690
+[diff] 0x40ed40   MISMATCH         sub_40ED40
+[diff] 0x40f3b0   MISMATCH         sub_40F3B0
+[diff] 0x40fa50   MISMATCH         sub_40FA50
+[diff] 0x410070   MISMATCH         sub_410070
+[ledger] 0x7b0190 sub_7B0190 -> NG (attempt 1)
+[ledger] 0x7b01d0 sub_7B01D0 -> NG (attempt 1)
+[ledger] 0x65aa80 RadioClass::ProcessCmd -> NG (attempt 1)
+[ledger] 0x556600 LinkedList::MoveNode -> OK (attempt 1)
+[ledger] 0x70ada0 TechnoClass::Vt46Thunk -> NG (attempt 1)
+[ledger] 0x622800 Dialog::Show -> NG (attempt 1)
+[ledger] 0x420e40 AlphaShapeClass::SD_vt06 -> NG (attempt 1)
+[ledger] 0x464ac0 AbstractClass::CanPlacePath -> OK (attempt 1)
+[ledger] 0x403df0 sub_403DF0 -> NG (attempt 1)
+[ledger] 0x406a30 sub_406A30 -> NG (attempt 1)
+[ledger] 0x40aea0 sub_40AEA0 -> NG (attempt 1)
+[ledger] 0x40b460 sub_40B460 -> NG (attempt 1)
+[ledger] 0x40d0b0 sub_40D0B0 -> NG (attempt 1)
+[ledger] 0x40dbb0 sub_40DBB0 -> NG (attempt 1)
+[ledger] 0x40ded0 sub_40DED0 -> NG (attempt 1)
+[ledger] 0x40e690 sub_40E690 -> NG (attempt 1)
+[ledger] 0x40ed40 sub_40ED40 -> NG (attempt 1)
+[ledger] 0x40f3b0 sub_40F3B0 -> NG (attempt 1)
+[ledger] 0x40fa50 sub_40FA50 -> NG (attempt 1)
+[ledger] 0x410070 sub_410070 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "branch_polarity": 1,
+  "codegen_shape": 13,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 10.0,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p76\batch_report.json
