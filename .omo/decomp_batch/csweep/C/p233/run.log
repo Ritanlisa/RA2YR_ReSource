@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p233\part_00
+=== convert (20 addrs) ===
+[conv] 0x4eff30 _VectorClass_PAVUnitClass::QueryInterface -> _VectorClass_PAVUnitClass
+[conv] 0x4eff80 _DynamicVectorClass_PAVUnitClass::Constructor_VectorClass_UnitClass___ -> _DynamicVectorClass_PAVUnitClass
+[conv] 0x4effd0 _VectorClass_PAVHouseClass::QueryInterface -> _VectorClass_PAVHouseClass
+[conv] 0x4f0020 _DynamicVectorClass_PAVHouseClass::Constructor_VectorClass_HouseClass___ -> _DynamicVectorClass_PAVHouseClass
+[conv] 0x4f0070 _VectorClass_PAVAnimClass::QueryInterface -> _VectorClass_PAVAnimClass
+[conv] 0x4f00c0 _DynamicVectorClass_PAVAnimClass::Constructor_VectorClass_AnimClass___ -> _DynamicVectorClass_PAVAnimClass
+[conv] 0x4f0110 _VectorClass_PAVFactoryClass::QueryInterface -> _VectorClass_PAVFactoryClass
+[conv] 0x4f0160 _DynamicVectorClass_PAVFactoryClass::Constructor_VectorClass_FactoryClass___ -> _DynamicVectorClass_PAVFactoryClass
+[conv] 0x4f0200 _DynamicVectorClass_PAVCampaignClass::Constructor_VectorClass_CampaignClass___ -> _DynamicVectorClass_PAVCampaignClass
+[conv] 0x4f0250 _VectorClass_PAVSideClass::QueryInterface -> _VectorClass_PAVSideClass
+[conv] 0x4f02a0 _DynamicVectorClass_PAVSideClass::Constructor_VectorClass_SideClass___ -> _DynamicVectorClass_PAVSideClass
+[conv] 0x4f02f0 _VectorClass_PAVHouseTypeClass::QueryInterface -> _VectorClass_PAVHouseTypeClass
+[conv] 0x4f0340 _DynamicVectorClass_PAVHouseTypeClass::Constructor_VectorClass_HouseTypeClass___ -> _DynamicVectorClass_PAVHouseTypeClass
+[conv] 0x4f0390 _VectorClass_PAVTaskForceClass::QueryInterface -> _VectorClass_PAVTaskForceClass
+[conv] 0x4f03e0 _DynamicVectorClass_PAVTaskForceClass::Constructor_VectorClass_TaskForceClass___ -> _DynamicVectorClass_PAVTaskForceClass
+[conv] 0x4f0430 _VectorClass_PAVTeamTypeClass::QueryInterface -> _VectorClass_PAVTeamTypeClass
+[conv] 0x4f0480 _DynamicVectorClass_PAVTeamTypeClass::Constructor_VectorClass_TeamTypeClass___ -> _DynamicVectorClass_PAVTeamTypeClass
+[conv] 0x4f04d0 _VectorClass_PAVScriptTypeClass::QueryInterface -> _VectorClass_PAVScriptTypeClass
+[conv] 0x4f0570 _VectorClass_PAVOverlayTypeClass::QueryInterface -> _VectorClass_PAVOverlayTypeClass
+[conv] 0x4f05c0 _DynamicVectorClass_PAVOverlayTypeClass::Constructor_VectorClass_OverlayTypeClass___ -> _DynamicVectorClass_PAVOverlayTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVUnitClass rc=0
+[era] _DynamicVectorClass_PAVUnitClass rc=0
+[era] _VectorClass_PAVHouseClass rc=0
+[era] _DynamicVectorClass_PAVHouseClass rc=0
+[era] _VectorClass_PAVAnimClass rc=0
+[era] _DynamicVectorClass_PAVAnimClass rc=0
+[era] _VectorClass_PAVFactoryClass rc=0
+[era] _DynamicVectorClass_PAVFactoryClass rc=0
+[era] _DynamicVectorClass_PAVCampaignClass rc=0
+[era] _VectorClass_PAVSideClass rc=0
+[era] _DynamicVectorClass_PAVSideClass rc=0
+[era] _VectorClass_PAVHouseTypeClass rc=0
+[era] _DynamicVectorClass_PAVHouseTypeClass rc=0
+[era] _VectorClass_PAVTaskForceClass rc=0
+[era] _DynamicVectorClass_PAVTaskForceClass rc=0
+[era] _VectorClass_PAVTeamTypeClass rc=0
+[era] _DynamicVectorClass_PAVTeamTypeClass rc=0
+[era] _VectorClass_PAVScriptTypeClass rc=0
+[era] _VectorClass_PAVOverlayTypeClass rc=0
+[era] _DynamicVectorClass_PAVOverlayTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4eff30   MISMATCH         _VectorClass_PAVUnitClass::QueryInterface
+[diff] 0x4eff80   MISMATCH         _DynamicVectorClass_PAVUnitClass::Constructor_VectorClass_UnitClass___
+[diff] 0x4effd0   MISMATCH         _VectorClass_PAVHouseClass::QueryInterface
+[diff] 0x4f0020   MISMATCH         _DynamicVectorClass_PAVHouseClass::Constructor_VectorClass_HouseClass___
+[diff] 0x4f0070   MISMATCH         _VectorClass_PAVAnimClass::QueryInterface
+[diff] 0x4f00c0   MISMATCH         _DynamicVectorClass_PAVAnimClass::Constructor_VectorClass_AnimClass___
+[diff] 0x4f0110   MISMATCH         _VectorClass_PAVFactoryClass::QueryInterface
+[diff] 0x4f0160   MISMATCH         _DynamicVectorClass_PAVFactoryClass::Constructor_VectorClass_FactoryClass___
+[diff] 0x4f0200   MISMATCH         _DynamicVectorClass_PAVCampaignClass::Constructor_VectorClass_CampaignClass___
+[diff] 0x4f0250   MISMATCH         _VectorClass_PAVSideClass::QueryInterface
+[diff] 0x4f02a0   MISMATCH         _DynamicVectorClass_PAVSideClass::Constructor_VectorClass_SideClass___
+[diff] 0x4f02f0   MISMATCH         _VectorClass_PAVHouseTypeClass::QueryInterface
+[diff] 0x4f0340   MISMATCH         _DynamicVectorClass_PAVHouseTypeClass::Constructor_VectorClass_HouseTypeClass___
+[diff] 0x4f0390   MISMATCH         _VectorClass_PAVTaskForceClass::QueryInterface
+[diff] 0x4f03e0   MISMATCH         _DynamicVectorClass_PAVTaskForceClass::Constructor_VectorClass_TaskForceClass___
+[diff] 0x4f0430   MISMATCH         _VectorClass_PAVTeamTypeClass::QueryInterface
+[diff] 0x4f0480   MISMATCH         _DynamicVectorClass_PAVTeamTypeClass::Constructor_VectorClass_TeamTypeClass___
+[diff] 0x4f04d0   MISMATCH         _VectorClass_PAVScriptTypeClass::QueryInterface
+[diff] 0x4f0570   MISMATCH         _VectorClass_PAVOverlayTypeClass::QueryInterface
+[diff] 0x4f05c0   MISMATCH         _DynamicVectorClass_PAVOverlayTypeClass::Constructor_VectorClass_OverlayTypeClass___
+[ledger] 0x4eff30 _VectorClass_PAVUnitClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4eff80 _DynamicVectorClass_PAVUnitClass::Constructor_VectorClass_UnitClass___ -> NG (attempt 1)
+[ledger] 0x4effd0 _VectorClass_PAVHouseClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4f0020 _DynamicVectorClass_PAVHouseClass::Constructor_VectorClass_HouseClass___ -> NG (attempt 1)
+[ledger] 0x4f0070 _VectorClass_PAVAnimClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4f00c0 _DynamicVectorClass_PAVAnimClass::Constructor_VectorClass_AnimClass___ -> NG (attempt 1)
+[ledger] 0x4f0110 _VectorClass_PAVFactoryClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4f0160 _DynamicVectorClass_PAVFactoryClass::Constructor_VectorClass_FactoryClass___ -> NG (attempt 1)
+[ledger] 0x4f0200 _DynamicVectorClass_PAVCampaignClass::Constructor_VectorClass_CampaignClass___ -> NG (attempt 1)
+[ledger] 0x4f0250 _VectorClass_PAVSideClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4f02a0 _DynamicVectorClass_PAVSideClass::Constructor_VectorClass_SideClass___ -> NG (attempt 1)
+[ledger] 0x4f02f0 _VectorClass_PAVHouseTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4f0340 _DynamicVectorClass_PAVHouseTypeClass::Constructor_VectorClass_HouseTypeClass___ -> NG (attempt 1)
+[ledger] 0x4f0390 _VectorClass_PAVTaskForceClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4f03e0 _DynamicVectorClass_PAVTaskForceClass::Constructor_VectorClass_TaskForceClass___ -> NG (attempt 1)
+[ledger] 0x4f0430 _VectorClass_PAVTeamTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4f0480 _DynamicVectorClass_PAVTeamTypeClass::Constructor_VectorClass_TeamTypeClass___ -> NG (attempt 1)
+[ledger] 0x4f04d0 _VectorClass_PAVScriptTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4f0570 _VectorClass_PAVOverlayTypeClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4f05c0 _DynamicVectorClass_PAVOverlayTypeClass::Constructor_VectorClass_OverlayTypeClass___ -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p233\batch_report.json
