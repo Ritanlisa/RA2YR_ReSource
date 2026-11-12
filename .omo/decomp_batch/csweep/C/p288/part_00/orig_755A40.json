@@ -1,0 +1,11 @@
+{
+ "addr": "0x755A40",
+ "name": "InterpolateVoxelAnimPose",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x755A40",
+ "bytes_hex": "8b44240483ec403bd05356578bd97444dd442454518d4c2410c1e004d91c24058831b400c1e2045081c28831b400e81d0befff8bd08d4c241ce8020fefffb90c0000008bf08bfb8bc3f3a55f5e5b83c440c20c008d3440b90c000000c1e60481c68851b4008bfbf3a55f8bc35e5b83c440c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

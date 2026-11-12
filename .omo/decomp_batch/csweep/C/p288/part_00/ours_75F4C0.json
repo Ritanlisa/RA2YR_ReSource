@@ -1,0 +1,21 @@
+{
+ "symbol": "?renderSection@Voxel@@QAEDPAF@Z",
+ "sym_key": "Voxel::renderSection",
+ "size": 132,
+ "link_base": 0,
+ "bytes_hex": "518b442408568bf150b9f8010000e8000000008b8ef00100008d54240c81c624040000525689442414ff511083f8ff8944240475468b4e088b46103bc172258a460d84c0750485c975358b461485c0894424047e268b1603c86a005156ff520884c0741b8b46108b5604894424048d4801894e108b4c240c890c828a4424045e59c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

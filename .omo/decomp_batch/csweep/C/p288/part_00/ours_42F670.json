@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor_Cell@DynamicVector@@QAEPAIHH@Z",
+ "sym_key": "DynamicVector::Constructor_Cell",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf185c0c7460400000000894608c7460c01000000c7461000000000c7060000000074278b4c240c85c97405894e04eb1ac1e00250e80000000083c40485c07500894604c7461001000000c70600000000c746140a000000c746100000000033c05ec20800",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

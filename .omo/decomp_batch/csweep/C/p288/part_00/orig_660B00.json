@@ -1,0 +1,11 @@
+{
+ "addr": "0x660B00",
+ "name": "Map_Load_660B00",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x660B00",
+ "bytes_hex": "51a1b84db000578d78ff85ff7c63568b0dac4db0008b34b985f67451a1a84db0008d54240852b9a84db0008974240cff501083f8ff742d8b0db84db0003bc17d23493bc1890db84db0007d188b0dac4db000408b1481895481fc8b0db84db0003bc17ce856e8d37f160083c4044f799f5e5f59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

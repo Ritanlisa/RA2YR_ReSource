@@ -1,0 +1,99 @@
+{
+ "symbol": "?sub_40B540@@YAHXZ",
+ "sym_key": "Unnamed::sub_40B540",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "5333db5353b900000000891d00000000891d00000000c6050000000001881d00000000891d00000000c705000000000a000000891d00000000e8000000006800000000891d00000000c705000000000a000000891d00000000c7050000000064000000e80000000083c4045bc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5DC@@3IA",
+   "sym_key": "DataGlobal_87F5DC"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5E0@@3IA",
+   "sym_key": "DataGlobal_87F5E0"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5E4@@3EA",
+   "sym_key": "DataGlobal_87F5E4"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5E5@@3EA",
+   "sym_key": "DataGlobal_87F5E5"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5D8@@3IA",
+   "sym_key": "DataGlobal_87F5D8"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5EC@@3IA",
+   "sym_key": "DataGlobal_87F5EC"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5E8@@3IA",
+   "sym_key": "DataGlobal_87F5E8"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?resetEvent@EventClass@@QAEPAIHH@Z",
+   "sym_key": "EventClass::resetEvent"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?sub_40B5C0@@YAHPBX0@Z",
+   "sym_key": "sub_40B5C0"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F604@@3IA",
+   "sym_key": "DataGlobal_87F604"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F600@@3IA",
+   "sym_key": "DataGlobal_87F600"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F608@@3IA",
+   "sym_key": "DataGlobal_87F608"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

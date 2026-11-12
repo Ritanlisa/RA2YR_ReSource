@@ -1,0 +1,81 @@
+{
+ "symbol": "?sub_6D1570@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::sub_6D1570",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "8b0183ec18680000000051ff5030b90000000085c9745c8b1500000000a1000000008b0d000000008954240833d2894424048a1500000000a100000000895424148b1500000000894c24108b0d00000000505289442408894c2414e8000000008b0d0000000083c4088d44240050e80000000083c418c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC40@@3IA",
+   "sym_key": "DataGlobal_B0CC40"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC40@@3IA",
+   "sym_key": "DataGlobal_B0CC40"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC50@@3IA",
+   "sym_key": "DataGlobal_B0CC50"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC4C@@3IA",
+   "sym_key": "DataGlobal_B0CC4C"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC58@@3IA",
+   "sym_key": "DataGlobal_B0CC58"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_Str_Tip_ThumbClosed@@3EA",
+   "sym_key": "g_Str_Tip_ThumbClosed"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC64@@3IA",
+   "sym_key": "DataGlobal_B0CC64"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_TacticalRender@@3IA",
+   "sym_key": "g_TacticalRender"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC54@@3IA",
+   "sym_key": "DataGlobal_B0CC54"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?HashTable__Remove@@YAHPAXH@Z",
+   "sym_key": "HashTable__Remove"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_TacticalRender@@3IA",
+   "sym_key": "g_TacticalRender"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?AddAction@CommandClass@@QAEDH@Z",
+   "sym_key": "CommandClass::AddAction"
+  }
+ ]
+}

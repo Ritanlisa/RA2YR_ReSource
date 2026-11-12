@@ -1,0 +1,39 @@
+{
+ "symbol": "?InterpolateVoxelAnimPose@@YIPAXPAXHHN@Z",
+ "sym_key": "Unnamed::InterpolateVoxelAnimPose",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "83ec3053568b74243c573bd68bd9743cdd442444e8000000008bce8bd0c1e10481c100000000e8000000008bd08d4c240ce800000000b90c0000008bf08bfb8bc3f3a55f5e5b83c430c20c008d3476b90c000000c1e60481c6000000008bfbf3a55f8bc35e5b83c430c20c00",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B43188@@3IA",
+   "sym_key": "DataGlobal_B43188"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?Math__QuaternionSlerp@@YIPAIHH@Z",
+   "sym_key": "Math__QuaternionSlerp"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?ToQuaternionMatrix@@YIPAMPAXPAM@Z",
+   "sym_key": "ToQuaternionMatrix"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45188@@3IA",
+   "sym_key": "DataGlobal_B45188"
+  }
+ ]
+}

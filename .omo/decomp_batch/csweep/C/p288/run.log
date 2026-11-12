@@ -1,0 +1,105 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p288\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b2070 SliderClass::HitTest -> SliderClass
+[conv] 0x755a40 InterpolateVoxelAnimPose -> _addr_75
+[conv] 0x603d30 CacheDialogInvalidate -> _addr_60
+[conv] 0x65fd50 ObjectClass::WinMainSetup_Setup_65FD50 -> ObjectClass
+[conv] 0x660b00 ObjectClass::Map_Load_660B00 -> ObjectClass
+[conv] 0x793b30 sub_793B30 -> _addr_79
+[conv] 0x533f50 Sidebar::ScrollSidebarSkipGame -> Sidebar
+[conv] 0x5117d0 SuperWeaponTypeClass::FindByName -> SuperWeaponTypeClass
+[conv] 0x777bb0 ObjectClass::sub_777BB0 -> ObjectClass
+[conv] 0x6d1570 ObjectClass::sub_6D1570 -> ObjectClass
+[conv] 0x730fe0 TechnoClass::UI_Create_730FE0 -> TechnoClass
+[conv] 0x75f4c0 Voxel::renderSection -> Voxel
+[conv] 0x472330 HouseClass::AssignCivilianToLowPowerTargets -> HouseClass
+[conv] 0x69e7e0 Building::GetFoundationSize -> Building
+[conv] 0x42f670 DynamicVector::Constructor_Cell -> DynamicVector
+[conv] 0x5bea30 MouseClass::loadCursor -> MouseClass
+[conv] 0x6ac8d0 VectorClass::System_Init_6AC8D0 -> VectorClass
+[conv] 0x40b540 sub_40B540 -> _addr_40
+[conv] 0x49b760 String::AssignWideToChar -> String
+[conv] 0x589960 _VectorClass_USubzoneTrackingStruct::ddtor -> _VectorClass_USubzoneTrackingStruct
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SliderClass              rc=0
+[era] _addr_75                 rc=0
+[era] _addr_60                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_79                 rc=0
+[era] Sidebar                  rc=0
+[era] SuperWeaponTypeClass     rc=0
+[era] TechnoClass              rc=0
+[era] Voxel                    rc=0
+[era] HouseClass               rc=2
+[era] Building                 rc=0
+[era] DynamicVector            rc=0
+[era] MouseClass               rc=0
+[era] VectorClass              rc=0
+[era] _addr_40                 rc=0
+[era] String                   rc=0
+[era] _VectorClass_USubzoneTrackingStruct rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b2070   MISMATCH         SliderClass::HitTest
+[diff] 0x755a40   MISMATCH         InterpolateVoxelAnimPose
+[diff] 0x65fd50   MISMATCH         ObjectClass::WinMainSetup_Setup_65FD50
+[diff] 0x660b00   MISMATCH         ObjectClass::Map_Load_660B00
+[diff] 0x6d1570   MISMATCH         ObjectClass::sub_6D1570
+[diff] 0x793b30   MISMATCH         sub_793B30
+[diff] 0x533f50   MISMATCH         Sidebar::ScrollSidebarSkipGame
+[diff] 0x5117d0   MISMATCH         SuperWeaponTypeClass::FindByName
+[diff] 0x730fe0   MISMATCH         TechnoClass::UI_Create_730FE0
+[diff] 0x75f4c0   MISMATCH         Voxel::renderSection
+[diff] 0x69e7e0   MISMATCH         Building::GetFoundationSize
+[diff] 0x42f670   MISMATCH         DynamicVector::Constructor_Cell
+[diff] 0x5bea30   MISMATCH         MouseClass::loadCursor
+[diff] 0x6ac8d0   MISMATCH         VectorClass::System_Init_6AC8D0
+[diff] 0x40b540   MISMATCH         sub_40B540
+[diff] 0x49b760   MISMATCH         String::AssignWideToChar
+[diff] 0x589960   MISMATCH         _VectorClass_USubzoneTrackingStruct::ddtor
+[ledger] 0x6b2070 SliderClass::HitTest -> NG (attempt 1)
+[ledger] 0x755a40 InterpolateVoxelAnimPose -> NG (attempt 1)
+[ledger] 0x603d30 CacheDialogInvalidate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65fd50 ObjectClass::WinMainSetup_Setup_65FD50 -> NG (attempt 1)
+[ledger] 0x660b00 ObjectClass::Map_Load_660B00 -> NG (attempt 1)
+[ledger] 0x793b30 sub_793B30 -> NG (attempt 1)
+[ledger] 0x533f50 Sidebar::ScrollSidebarSkipGame -> NG (attempt 1)
+[ledger] 0x5117d0 SuperWeaponTypeClass::FindByName -> NG (attempt 1)
+[ledger] 0x777bb0 ObjectClass::sub_777BB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d1570 ObjectClass::sub_6D1570 -> NG (attempt 1)
+[ledger] 0x730fe0 TechnoClass::UI_Create_730FE0 -> NG (attempt 1)
+[ledger] 0x75f4c0 Voxel::renderSection -> NG (attempt 1)
+[ledger] 0x472330 HouseClass::AssignCivilianToLowPowerTargets -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69e7e0 Building::GetFoundationSize -> NG (attempt 1)
+[ledger] 0x42f670 DynamicVector::Constructor_Cell -> NG (attempt 1)
+[ledger] 0x5bea30 MouseClass::loadCursor -> NG (attempt 1)
+[ledger] 0x6ac8d0 VectorClass::System_Init_6AC8D0 -> NG (attempt 1)
+[ledger] 0x40b540 sub_40B540 -> NG (attempt 1)
+[ledger] 0x49b760 String::AssignWideToChar -> NG (attempt 1)
+[ledger] 0x589960 _VectorClass_USubzoneTrackingStruct::ddtor -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "frame_sched": 3,
+  "const_fold": 2,
+  "signedness": 1,
+  "codegen_shape": 6,
+  "branch_order": 1,
+  "extern_reloc": 1,
+  "branch_polarity": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p288\batch_report.json

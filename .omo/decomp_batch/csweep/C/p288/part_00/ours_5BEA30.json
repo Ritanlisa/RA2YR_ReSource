@@ -1,0 +1,15 @@
+{
+ "symbol": "?loadCursor@MouseClass@@QAEPAV1@HH@Z",
+ "sym_key": "MouseClass::loadCursor",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b4e0cc746040000000081e10100ffff89460883c901c7060000000085c0894e0c74308b4c240c85c97405894e04eb238d14c50000000052e80000000083c40485c075008946048b460c80e40180cc0189460cc70600000000c746140a000000c64610008bc65ec20800",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "?ScrollSidebarSkipGame@Sidebar@@QAEHXZ",
+ "sym_key": "Sidebar::ScrollSidebarSkipGame",
+ "size": 183,
+ "link_base": 0,
+ "bytes_hex": "a1000000005355565733ff85c08be90f869d000000a1000000008bf58b088bc18b1150ff52048a108a1e8aca3ad3751e84c974168a50018a5e018aca3ad3750e83c00283c60284c975dc33c0eb051bc083d8ff85c0744ba100000000473bf87351a1000000008bf58b04b8508b08ff51048a108a1e8aca3ad3751e84c974168a50018a5e018aca3ad3750e83c00283c60284c975dc33c0eb051bc083d8ff85c075b5a1000000006a008b04b8508b08ff51205f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_CommandClassVector_State@@3IA",
+   "sym_key": "g_CommandClassVector_State"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_CommandClass_Capacity@@3PAXA",
+   "sym_key": "g_CommandClass_Capacity"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_CommandClassVector_State@@3IA",
+   "sym_key": "g_CommandClassVector_State"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_CommandClass_Capacity@@3PAXA",
+   "sym_key": "g_CommandClass_Capacity"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_CommandClass_Capacity@@3PAXA",
+   "sym_key": "g_CommandClass_Capacity"
+  }
+ ]
+}

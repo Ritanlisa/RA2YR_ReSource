@@ -1,0 +1,11 @@
+{
+ "addr": "0x49B760",
+ "name": "String::AssignWideToChar",
+ "size": 117,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49B760",
+ "bytes_hex": "538bd98b4c24085685c9577426e84e9929008bf883c9ff33c0f2aef7d12bf98bc18bf78bfbc1e902f3a58bc883e103f3a4eb03c603008b4c241485c9742de81d9929008bf883c9ff33c08d531cf2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a45f5e5bc208005fc6431c005e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

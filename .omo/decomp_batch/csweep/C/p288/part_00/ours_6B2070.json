@@ -1,0 +1,21 @@
+{
+ "symbol": "?HitTest@SliderClass@@QAEHXZ",
+ "sym_key": "SliderClass::HitTest",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "518a412e84c0741e8b41508b510c03c26a01ba010000008d4c240489442404e80000000059c38b490c6a01894c2404ba010000008d4c2404e80000000059c3",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?DrawBuildingTilesSHP@@YIHPAXHD@Z",
+   "sym_key": "DrawBuildingTilesSHP"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?DrawBuildingTilesSHP@@YIHPAXHD@Z",
+   "sym_key": "DrawBuildingTilesSHP"
+  }
+ ]
+}

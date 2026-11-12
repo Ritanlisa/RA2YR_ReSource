@@ -1,0 +1,11 @@
+{
+ "addr": "0x75F4C0",
+ "name": "Voxel::renderSection",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75F4C0",
+ "bytes_hex": "8b442404568bf150b9e8f78700e8ce62e0ff8b96f001000081c6f0010000894424088d442408508bceff521083f8ff753f8b4e088b46103bc17c228a460d84c0750485c9752a8b461485c07e238b1603c16a00508bceff520884c074138b46108b56048d4801894e108b4c2408890c825ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

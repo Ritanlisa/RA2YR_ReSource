@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_793B30@@YIHPAXDPBD@Z",
+ "sym_key": "Unnamed::sub_793B30",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "81ec0401000066a10000000053578bbc241001000080c2308bd985ff66894424088854240a742383c9ff33c0f2aef7d12bf9568d5424108bc18bf78bfac1e902f3a58bc883e103f3a45e8bcbe800000000b9000000008d4424085068000000008b11ff523c5f5b81c404010000c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "??_C@_02JAK@Z1?$AA@",
+   "sym_key": "??_C@_02JAK@Z1?$AA@"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?ppv@@YAHPBX0@Z",
+   "sym_key": "ppv"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?ppv@@YAHPBX0@Z",
+   "sym_key": "ppv"
+  }
+ ]
+}

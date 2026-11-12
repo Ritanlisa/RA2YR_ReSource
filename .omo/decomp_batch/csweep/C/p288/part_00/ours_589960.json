@@ -1,0 +1,21 @@
+{
+ "symbol": "?ddtor@_VectorClass_USubzoneTrackingStruct@@QAEXXZ",
+ "sym_key": "_VectorClass_USubzoneTrackingStruct::ddtor",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "5153558be933db896c24088b4d043bcb74588b450cf6c4ff74508b41fc56578d79fc8d50ff8d04c03bd38d34817c2d8d6a018b46e083ee243bc3891e7411385e0d740c50e80000000083c404895e044d885e0d895e0875da8b6c241057e80000000083c404895d045f5e8b450c895d0880e40089450c5d5b59c3",
+ "relocs": [
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x69E7E0",
+ "name": "Building::GetFoundationSize",
+ "size": 117,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69E7E0",
+ "bytes_hex": "e89bfdffff85c074400fbf50068b4c24083bca73348d0c498d44c80885c074290fbf080fbf500253560fbf7004570fbf78068b4424108bd8890b895304897308897b0c5f5e5bc208008b4424048b0da077b0008bd0890a8b0da477b000894a048b0da877b000894a088b0dac77b000894a0cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

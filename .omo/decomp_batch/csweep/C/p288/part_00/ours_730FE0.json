@@ -1,0 +1,39 @@
+{
+ "symbol": "?UI_Create_730FE0@TechnoClass@@QAEPAGXZ",
+ "sym_key": "TechnoClass::UI_Create_730FE0",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "a10000000053555685c0577e658b0d000000008be833ffb3018b34b98bc185f6742af646140174248b0656ff90a000000084c074118b0e6a0756ff917403000084c08ad8742c8b0d00000000473bfd7cc884db741da1000000006a00680000803fba002000000fbe8828070000e8000000005f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_ObjectClass_CurrentCount@@3IA",
+   "sym_key": "g_ObjectClass_CurrentCount"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_ObjectClass_CurrentCount@@3IA",
+   "sym_key": "g_ObjectClass_CurrentCount"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  }
+ ]
+}
