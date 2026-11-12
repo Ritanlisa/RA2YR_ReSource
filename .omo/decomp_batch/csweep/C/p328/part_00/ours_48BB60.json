@@ -1,0 +1,81 @@
+{
+ "symbol": "?sub_48BB60@@YI_NH@Z",
+ "sym_key": "Unnamed::sub_48BB60",
+ "size": 240,
+ "link_base": 0,
+ "bytes_hex": "83e1f75380c9f755568b35000000008be9578bfd8bc5c1ff0881e7e800000024000bf885f674788b0d0000000085c9740839390f8494000000a00000000084c0752e8b0d0000000068000000006a085651e8000000008b350000000083c410c7050000000000000000c60500000000018b1d0000000085f67e258bc6992bc2d1f88b14c38d0cc33bd77e048bf0eb0c742983caff8d59082bd003f285f67fdba10000000085c0743e8b085550ff511484c074335f5e5d33c05bc385c974e18bc6992bc2d1f88d04c3a3000000008b490485c974128b115551ff521484c074075f5e5d33c05bc35f5e5db8010000005bc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?NumOfElements@@3IA",
+   "sym_key": "NumOfElements"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_FileSystemPool@@3IA",
+   "sym_key": "g_FileSystemPool"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_FileSystemInitFlag@@3EA",
+   "sym_key": "g_FileSystemInitFlag"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?Base@@3PAXA",
+   "sym_key": "Base"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?CompareFuncInt@@YAHPBX0@Z",
+   "sym_key": "CompareFuncInt"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?NumOfElements@@3IA",
+   "sym_key": "NumOfElements"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_FileSystemPool@@3IA",
+   "sym_key": "g_FileSystemPool"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_FileSystemInitFlag@@3EA",
+   "sym_key": "g_FileSystemInitFlag"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?Base@@3PAXA",
+   "sym_key": "Base"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7883C@@3EA",
+   "sym_key": "DataGlobal_B7883C"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?g_FileSystemPool@@3IA",
+   "sym_key": "g_FileSystemPool"
+  }
+ ]
+}

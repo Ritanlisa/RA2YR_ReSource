@@ -1,0 +1,27 @@
+{
+ "symbol": "?CalcFlashAlpha@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::CalcFlashAlpha",
+ "size": 210,
+ "link_base": 0,
+ "bytes_hex": "8b81b80100008b91c001000083f8ff5674190fbe35a0010000578bfe2bf83bfa5f7c0433d2eb042bc603d08b89c40100005e8d41ff83f8080f878d000000ff248500000000b80c0000006a002bc268abaaaa2ac1e008995250e8000000008bc2c1e81f03c2eb4db800020000eb468d4a14b867666666c1e108f7e98bc2c1f8038bc8c1e91f03c1eb2bb8800000002bc2c1e0089983e23f03c2c1f806eb168d4240c1e0089983e23f03c2c1f806eb05b8000100000faf442404c1f8083dd00700007e0cb8d0070000c204008b442404c20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "$L1891",
+   "sym_key": "$L1891"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  }
+ ]
+}

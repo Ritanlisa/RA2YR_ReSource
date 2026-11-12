@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4B69E0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::sub_4B69E0",
+ "size": 215,
+ "link_base": 0,
+ "bytes_hex": "51535556578bf98a47103c0588442413720a5f5e5d32c05b59c204008b2d000000008b4c24188bb5a4a8040085f6744f33c085f67e4933d28a9590a50400390c82750c8b9db4a80400833c83ff7507403bc67d2bebe883f8ff8bf074258b9db4a8040033d28a95d8ab04008b2c838b14823bd5720d5f5e5d32c05b59c2040083ceff8a442413c647100188442418518b44241c85c90f95c225ff000000885438148b11ff92ac0000008a4f2802c883feff884f2874178b0d0000000033c08a81d8ab04008b0cb0418d04b089085f5e5db0015b59c20400",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  }
+ ]
+}

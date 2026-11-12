@@ -1,0 +1,69 @@
+{
+ "symbol": "?Construct@TaskForceClass@@QAEPAV1@PAD@Z",
+ "sym_key": "TaskForceClass::Construct",
+ "size": 163,
+ "link_base": 0,
+ "bytes_hex": "8b44240453568bf1508b0ee80000000033dbc78698000000ffffffff899e9c000000899ea0000000891e895e04895e08895e0ca1000000008b0d000000003bc8722c381d0000000075043bc375388b0d000000003bcb762e03c853518b0d000000006800000000ff510884c074188b0d000000008b15000000008bc141890d000000008934828d86a4000000b906000000891889580483c0084975f58b065e5bc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::Constructor"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E8D8@@3IA",
+   "sym_key": "DataGlobal_A8E8D8"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogFlags@@3IA",
+   "sym_key": "g_MultiplayerLogFlags"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E8DD@@3EA",
+   "sym_key": "DataGlobal_A8E8DD"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E8E4@@3IA",
+   "sym_key": "DataGlobal_A8E8E4"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E8D0@@3IA",
+   "sym_key": "DataGlobal_A8E8D0"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E8D0@@3IA",
+   "sym_key": "DataGlobal_A8E8D0"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogFlags@@3IA",
+   "sym_key": "g_MultiplayerLogFlags"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogEntry@@3PAXA",
+   "sym_key": "g_MultiplayerLogEntry"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogFlags@@3IA",
+   "sym_key": "g_MultiplayerLogFlags"
+  }
+ ]
+}

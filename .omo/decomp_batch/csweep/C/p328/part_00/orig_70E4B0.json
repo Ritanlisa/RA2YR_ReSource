@@ -1,0 +1,11 @@
+{
+ "addr": "0x70E4B0",
+ "name": "TechnoClass::CalcFlashAlpha",
+ "size": 196,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70E4B0",
+ "bytes_hex": "8b91bc010000568bb1b401000083feff7411a184eda8002bc63bc27d042bd0eb0233d28b89c00100005e8d41ff83f8080f8787000000ff248574e57000b90c000000b8abaaaa2a2bcac1e108f7e98bc28bc8c1e91f03c1eb4db800020000eb46b8800000002bc2c1e0089983e23f03c2c1f806eb318d4240c1e0089983e23f03c2c1f806eb20b800010000eb198d4a14b867666666c1e108f7e98bc2c1f8038bd0c1ea1f03c20faf442404c1f8083dd00700007e0cb8d0070000c204008b442404c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

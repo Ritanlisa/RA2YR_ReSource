@@ -1,0 +1,75 @@
+{
+ "symbol": "?CreatePlanningNode@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::CreatePlanningNode",
+ "size": 206,
+ "link_base": 0,
+ "bytes_hex": "56578bf9689c000000e80000000033c983c4043bc1744783caff89480889480cc6401001884811894804c740180a00000089481488481c88481d89908c00000089909000000089909400000088889800000088889900000089388bf0eb0233f6a0500100008a15580100003ad07c35380d5501000075043ac175448a155c0100003ad17e3a53510fbe1d480100000fbeca0fbed003ca516848010000ff530884c05b741b8a0d580100000fbec1fec1880d580100000fbe0d4c0100008934815657e80000000083c4088bc65f5ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?BuildingClass__SetType@@YAHPAXH@Z",
+   "sym_key": "BuildingClass__SetType"
+  }
+ ]
+}
