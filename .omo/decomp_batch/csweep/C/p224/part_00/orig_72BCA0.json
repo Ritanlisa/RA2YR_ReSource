@@ -1,0 +1,11 @@
+{
+ "addr": "0x72BCA0",
+ "name": "LoginFlowWOL_Load",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72BCA0",
+ "bytes_hex": "a045fdb00084c0753d813da4008a002003000075158b0db44d8400ba44fdb000e80b7cd7ffa398fab0008b0db84d8400684cfdb000ba48fdb000e801f1ffffc60545fdb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

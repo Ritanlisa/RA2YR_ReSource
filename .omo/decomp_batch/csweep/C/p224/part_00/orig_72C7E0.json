@@ -1,0 +1,11 @@
+{
+ "addr": "0x72C7E0",
+ "name": "RunWOLMainLoop_Read_Read",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72C7E0",
+ "bytes_hex": "a0fdfcb00084c0753d813da4008a002003000075158b0d844d8400bafcfcb000e8cb70d7ffa3e8f9b0008b0d884d84006804fdb000ba00fdb000e8c1e5ffffc605fdfcb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

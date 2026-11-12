@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A090",
+ "name": "JumpjetLocomotionClass::ConvertCoordToCell_3",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A090",
+ "bytes_hex": "51a06beda80084c07537668b4c240e668b44240c8d54240066894c240252b9e8f787006689442404e8e3b6e3ff8bc8e82ccfd5ff84c07509b80700000059c2080033c059c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

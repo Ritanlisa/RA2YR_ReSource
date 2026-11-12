@@ -1,0 +1,8 @@
+{
+ "symbol": "?SaveAudioData@SaveGame@@QAE_NH@Z",
+ "sym_key": "SaveGame::SaveAudioData",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "8b44240456578bf985c08bf074348b086a008d5424106a045250c744241c2c010000ff511085c07c198b4c240c8b066a00515756ff501085c07c075fb0015ec204005f32c05ec20400",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A150",
+ "name": "TunnelLocomotionClass::BeginMove",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A150",
+ "bytes_hex": "8b442408568b7424085056e86009e3ff33c93bc17c2d3bf17429c706c0ae7e00c74604f4ad7e008b1584eda800894e30895628894e34c706f05a7f00c74604245a7f005ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

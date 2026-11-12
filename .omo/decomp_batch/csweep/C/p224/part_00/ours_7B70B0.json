@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_7B70B0@ObjectClass@@QAEIPAGH@Z",
+ "sym_key": "ObjectClass::sub_7B70B0",
+ "size": 152,
+ "link_base": 0,
+ "bytes_hex": "53558b6c2410568bf1578b7c2414558b065057e8000000008b0e51e80000000083c4103bc57d528bdd8d34472bd88ac3d1eb53240168200020005688442424e8000000000fbe4c242483c40c8d1c9e85c97433b8200020008bfbd1e9f3ab8b54241413c966f3ab5f66c7046a00005e5db8200020005bc2080066c7046f00005f5e5d5bc2080066c7046f00005f5e5db8200020005bc20800",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "_wcsncpy",
+   "sym_key": "wcsncpy"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?memset32@@YAHPAXHHZZ",
+   "sym_key": "memset32"
+  }
+ ]
+}

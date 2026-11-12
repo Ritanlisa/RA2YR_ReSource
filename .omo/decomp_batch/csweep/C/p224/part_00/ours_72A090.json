@@ -1,0 +1,33 @@
+{
+ "symbol": "?ConvertCoordToCell_3@JumpjetLocomotionClass@@QAEHHPAX@Z",
+ "sym_key": "JumpjetLocomotionClass::ConvertCoordToCell_3",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "a08701000084c0740533c0c208008b4424088d4c240851b9f80100008944240ce8000000008bc8e800000000f6d81bc024f983c007c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?IsBuildableAdvanced@Cell@@QAEDXZ",
+   "sym_key": "Cell::IsBuildableAdvanced"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x69B560",
+ "name": "SaveGame::SaveAudioData",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69B560",
+ "bytes_hex": "568b742408578bf985f674348b066a008d4c24106a045156c744241c2c010000ff501085c07c198b44240c8b166a00505756ff521085c07c075fb0015ec204005f32c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

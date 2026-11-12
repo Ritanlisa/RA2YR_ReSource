@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p224\part_00
+=== convert (20 addrs) ===
+[conv] 0x634550 ScriptAction::GetActionCoordinates -> ScriptAction
+[conv] 0x663800 sub_663800 -> _addr_66
+[conv] 0x72a150 TunnelLocomotionClass::BeginMove -> TunnelLocomotionClass
+[conv] 0x72a090 JumpjetLocomotionClass::ConvertCoordToCell_3 -> JumpjetLocomotionClass
+[conv] 0x72b8e0 DlgProcGameSetup_Setup -> DlgProcGameSetup
+[conv] 0x72bca0 LoginFlowWOL_Load -> LoginFlowWOL
+[conv] 0x72be80 JoinLobbyWOL_Load -> JoinLobbyWOL
+[conv] 0x72c060 GameOptionsScreenWOL_Load -> GameOptionsScreenWOL
+[conv] 0x72c240 CreateAccountWOL_Create -> CreateAccountWOL
+[conv] 0x72c420 CreateAccountWOL_Create_72C420 -> CreateAccountWOL_Create
+[conv] 0x72c600 LoginFlowWOL_Load_72C600 -> LoginFlowWOL_Load
+[conv] 0x72c7e0 RunWOLMainLoop_Read_Read -> RunWOLMainLoop_Read
+[conv] 0x72c9c0 System_Init_72C9C0 -> System_Init
+[conv] 0x72cd60 Network_Load_72CD60 -> Network_Load
+[conv] 0x72cf40 LoadingScreen::Init -> LoadingScreen
+[conv] 0x766a10 GameOption@WorldDominationTour::System_Init_766A10 -> GameOption_WorldDominationTour
+[conv] 0x7b5360 ObjectClass::sub_7B5360 -> ObjectClass
+[conv] 0x7b70b0 ObjectClass::sub_7B70B0 -> ObjectClass
+[conv] 0x65c350 RAMFileClass::nullsub_0_2 -> RAMFileClass
+[conv] 0x69b560 SaveGame::SaveAudioData -> SaveGame
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScriptAction             rc=2
+[era] _addr_66                 rc=0
+[era] TunnelLocomotionClass    rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] DlgProcGameSetup         rc=0
+[era] LoginFlowWOL             rc=0
+[era] JoinLobbyWOL             rc=0
+[era] GameOptionsScreenWOL     rc=0
+[era] CreateAccountWOL         rc=0
+[era] CreateAccountWOL_Create  rc=0
+[era] LoginFlowWOL_Load        rc=0
+[era] RunWOLMainLoop_Read      rc=0
+[era] System_Init              rc=0
+[era] Network_Load             rc=0
+[era] LoadingScreen            rc=0
+[era] GameOption_WorldDominationTour rc=2
+[era] ObjectClass              rc=0
+[era] RAMFileClass             rc=2
+[era] SaveGame                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x663800   MISMATCH         sub_663800
+[diff] 0x72a150   MISMATCH         TunnelLocomotionClass::BeginMove
+[diff] 0x72a090   MISMATCH         JumpjetLocomotionClass::ConvertCoordToCell_3
+[diff] 0x72b8e0   MISMATCH         DlgProcGameSetup_Setup
+[diff] 0x72bca0   MISMATCH         LoginFlowWOL_Load
+[diff] 0x72be80   MISMATCH         JoinLobbyWOL_Load
+[diff] 0x72c060   MISMATCH         GameOptionsScreenWOL_Load
+[diff] 0x72c240   MISMATCH         CreateAccountWOL_Create
+[diff] 0x72c420   MISMATCH         CreateAccountWOL_Create_72C420
+[diff] 0x72c600   MISMATCH         LoginFlowWOL_Load_72C600
+[diff] 0x72c7e0   MISMATCH         RunWOLMainLoop_Read_Read
+[diff] 0x72c9c0   MISMATCH         System_Init_72C9C0
+[diff] 0x72cd60   MISMATCH         Network_Load_72CD60
+[diff] 0x72cf40   MISMATCH         LoadingScreen::Init
+[diff] 0x7b5360   MISMATCH         ObjectClass::sub_7B5360
+[diff] 0x7b70b0   MISMATCH         ObjectClass::sub_7B70B0
+[diff] 0x69b560   MISMATCH         SaveGame::SaveAudioData
+[ledger] 0x634550 ScriptAction::GetActionCoordinates -> COMPILE_FAIL (attempt 1)
+[ledger] 0x663800 sub_663800 -> NG (attempt 1)
+[ledger] 0x72a150 TunnelLocomotionClass::BeginMove -> NG (attempt 1)
+[ledger] 0x72a090 JumpjetLocomotionClass::ConvertCoordToCell_3 -> NG (attempt 1)
+[ledger] 0x72b8e0 DlgProcGameSetup_Setup -> NG (attempt 1)
+[ledger] 0x72bca0 LoginFlowWOL_Load -> NG (attempt 1)
+[ledger] 0x72be80 JoinLobbyWOL_Load -> NG (attempt 1)
+[ledger] 0x72c060 GameOptionsScreenWOL_Load -> NG (attempt 1)
+[ledger] 0x72c240 CreateAccountWOL_Create -> NG (attempt 1)
+[ledger] 0x72c420 CreateAccountWOL_Create_72C420 -> NG (attempt 1)
+[ledger] 0x72c600 LoginFlowWOL_Load_72C600 -> NG (attempt 1)
+[ledger] 0x72c7e0 RunWOLMainLoop_Read_Read -> NG (attempt 1)
+[ledger] 0x72c9c0 System_Init_72C9C0 -> NG (attempt 1)
+[ledger] 0x72cd60 Network_Load_72CD60 -> NG (attempt 1)
+[ledger] 0x72cf40 LoadingScreen::Init -> NG (attempt 1)
+[ledger] 0x766a10 GameOption@WorldDominationTour::System_Init_766A10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b5360 ObjectClass::sub_7B5360 -> NG (attempt 1)
+[ledger] 0x7b70b0 ObjectClass::sub_7B70B0 -> NG (attempt 1)
+[ledger] 0x65c350 RAMFileClass::nullsub_0_2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69b560 SaveGame::SaveAudioData -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 17
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "codegen_shape": 4,
+  "extern_reloc": 11
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p224\batch_report.json

@@ -1,0 +1,21 @@
+{
+ "symbol": "?BeginMove@TunnelLocomotionClass@@QAGHPAH@Z",
+ "sym_key": "TunnelLocomotionClass::BeginMove",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b742408508b0e51e80000000033d23bc27c1e3bf2741a89168956040fbe0da0010000895630894e2889563489168956045ec20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?SwizzleManager__SaveLoad@@YGHPAXPAH@Z",
+   "sym_key": "SwizzleManager__SaveLoad"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}
