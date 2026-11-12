@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F96B0",
+ "name": "TheaterObjectTypeClassSpecificID",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F96B0",
+ "bytes_hex": "83faff53744b8a018a59013c417c063c5a7f02042080fb417c0880fb5a7f0380c3203c67740c3c6e74083c6374043c79751f80fb61740580fb7475158d04d5000000002bc2c1e0048a90ce1b7e008851015bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

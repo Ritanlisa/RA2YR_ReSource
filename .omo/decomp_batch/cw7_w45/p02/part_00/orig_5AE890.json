@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AE890",
+ "name": "Vector::MatrixMulVectorMath",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AE890",
+ "bytes_hex": "d9442408d84904d944240cd84908dec1d9442404d809dec1d8410cd9590cd9442404d84910d9442408d84914dec1d944240cd84918dec1d8411cd9591cd9442404d84920d9442408d84924dec1d944240cd84928dec1d8412cd9592cc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

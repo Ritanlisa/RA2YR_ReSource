@@ -1,0 +1,27 @@
+{
+ "symbol": "?MatrixMulVectorMath@Vector@@QAEHMMM@Z",
+ "sym_key": "Vector::MatrixMulVectorMath",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf1c744240800000000db46048b460889442404d84c2414df6c2404d84c2418dec1d9442410d80edec1da460ce800000000db461089460cd84c2410db4614d84c2414dec1db4618d84c2418dec1da461ce800000000db462089461cd84c2410db4624d84c2414dec1db4628d84c2418dec1da462ce80000000089462c8b4424105e83c408c20c00",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

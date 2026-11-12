@@ -1,0 +1,27 @@
+{
+ "symbol": "?Translate@Matrix3x4@@QAEHM@Z",
+ "sym_key": "Matrix3x4::Translate",
+ "size": 134,
+ "link_base": 0,
+ "bytes_hex": "83ec08d944240c568bf15733ffd80e8b460c897c240c89442408da442408e8000000008b4e108b561c894c2408897c240cdf6c240889542408897c240c89460cd84c2414da442408e80000000089461c8b46208b4e2c89442408897c240cdf6c2408894c2408897c240cd84c2414da442408e80000000089462c8b4424145f5e83c408c20400",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AE980",
+ "name": "Matrix3x4::Translate",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AE980",
+ "bytes_hex": "d9442404d809d8410cd9590cd9442404d84910d8411cd9591cd9442404d84920d8412cd9592cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

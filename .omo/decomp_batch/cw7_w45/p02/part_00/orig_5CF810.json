@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CF810",
+ "name": "CampaignClass::Check",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CF810",
+ "bytes_hex": "8b4424048b511025ffff00003bd07f0533c0c204008b49048b0481c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

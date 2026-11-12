@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x554150",
+  "family": "W45",
+  "code": "C2446",
+  "name": "LoadingScreen::CalcProgressBarRect"
+ },
+ {
+  "addr": "0x556b70",
+  "family": "W45",
+  "code": "C2446",
+  "name": "ObjectClass::Render_Render_556B70"
+ },
+ {
+  "addr": "0x55af40",
+  "family": "W45",
+  "code": "C2562",
+  "name": "RadarClass::SetGlobal"
+ },
+ {
+  "addr": "0x583ad0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "ObjectClass::sub_583AD0"
+ },
+ {
+  "addr": "0x5ae890",
+  "family": "W45",
+  "code": "C2562",
+  "name": "Vector::MatrixMulVectorMath"
+ },
+ {
+  "addr": "0x5ae980",
+  "family": "W45",
+  "code": "C2562",
+  "name": "Matrix3x4::Translate"
+ },
+ {
+  "addr": "0x5ae9b0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "Matrix3x3::ApplyCol0"
+ },
+ {
+  "addr": "0x5ae9e0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "Matrix3x3::ApplyCol1"
+ },
+ {
+  "addr": "0x5cf810",
+  "family": "W45",
+  "code": "C2446",
+  "name": "CampaignClass::Check"
+ },
+ {
+  "addr": "0x5d1b30",
+  "family": "W45",
+  "code": "C2562",
+  "name": "MSEngine::Destruct"
+ },
+ {
+  "addr": "0x5d1fd0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "BSurface::CopyRect"
+ },
+ {
+  "addr": "0x5d3a60",
+  "family": "W45",
+  "code": "C2562",
+  "name": "MessageListClass::Init"
+ },
+ {
+  "addr": "0x5d5ac0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "System_Init"
+ },
+ {
+  "addr": "0x5e9b60",
+  "family": "W45",
+  "code": "C2446",
+  "name": "SelectLobbyCountry"
+ },
+ {
+  "addr": "0x5e9c00",
+  "family": "W45",
+  "code": "C2446",
+  "name": "AssignPlayerColor"
+ },
+ {
+  "addr": "0x5eb060",
+  "family": "W45",
+  "code": "C2446",
+  "name": "Lobby::UpdatePlayerLabels"
+ },
+ {
+  "addr": "0x5edde0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "EnablePlayerSlotControls"
+ },
+ {
+  "addr": "0x5f96b0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "TheaterObjectTypeClassSpecificID"
+ },
+ {
+  "addr": "0x5f9710",
+  "family": "W45",
+  "code": "C2562",
+  "name": "ObjectTypeClass::SetRTTI71"
+ },
+ {
+  "addr": "0x5fa430",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_29"
+ }
+]

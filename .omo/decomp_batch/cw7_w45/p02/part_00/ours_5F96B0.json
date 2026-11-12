@@ -1,0 +1,15 @@
+{
+ "symbol": "?TheaterObjectTypeClassSpecificID@@YIHPADH@Z",
+ "sym_key": "Unnamed::TheaterObjectTypeClassSpecificID",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "515683faff8bf1746e8b442404538a1e24008bcb81e1ff0000000bc18a4e0180fb415b7c133c5a7f0f578d782033f881e7ff00000033c75f80f9417c0880f95a7f0380c1203c67740c3c6e74083c6374043c79752680f961740580f974751c8d04d5000000002bc2c1e0048a90000000008856015e59c38b4424045e59c3",
+ "relocs": [
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1BCE@@3PAEA",
+   "sym_key": "DataGlobal_7E1BCE"
+  }
+ ]
+}

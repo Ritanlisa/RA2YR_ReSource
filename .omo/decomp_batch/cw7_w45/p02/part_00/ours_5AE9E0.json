@@ -1,0 +1,27 @@
+{
+ "symbol": "?ApplyCol1@Matrix3x3@@QAEHM@Z",
+ "sym_key": "Matrix3x3::ApplyCol1",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "568bf1db4608d84c2408da460ce800000000db461889460cd84c2408da461ce800000000db462889461cd84c2408da462ce80000000089462c8b4424085ec20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

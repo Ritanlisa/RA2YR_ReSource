@@ -1,0 +1,39 @@
+{
+ "symbol": "?Destruct@MSEngine@@QAEHXZ",
+ "sym_key": "MSEngine::Destruct",
+ "size": 214,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8b4640891e3bc30f86c00000008b4634578b383bfb74108bcfe80000000057e80000000083c4048b4630558d6e3055ff500c8b462833ff3bc376198b4e1c8b04b93bc374078b106a0150ff128b4628473bf872e78b46188d7e1857ff500c8b4e0883c60856ff510c8b4504895d003bc37411385d0d740c50e80000000083c404895d04885d0d895d088b4704891f3bc35d7411385f0d740c50e80000000083c404895f04885f0d895f088b7e04891e3bfb7411385e0d740c57e80000000083c404895e048bc7885e0d895e085f5e5bc3",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?DestroyData@MSEngine@@QAEXXZ",
+   "sym_key": "MSEngine::DestroyData"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AE9E0",
+ "name": "Matrix3x3::ApplyCol1",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AE9E0",
+ "bytes_hex": "d9442404d84908d8410cd9590cd9442404d84918d8411cd9591cd9442404d84928d8412cd9592cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

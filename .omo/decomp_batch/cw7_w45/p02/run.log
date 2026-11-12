@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x554150 LoadingScreen::CalcProgressBarRect -> LoadingScreen
+[conv] 0x556b70 ObjectClass::Render_Render_556B70 -> ObjectClass
+[conv] 0x55af40 RadarClass::SetGlobal -> RadarClass
+[conv] 0x583ad0 ObjectClass::sub_583AD0 -> ObjectClass
+[conv] 0x5ae890 Vector::MatrixMulVectorMath -> Vector
+[conv] 0x5ae980 Matrix3x4::Translate -> Matrix3x4
+[conv] 0x5ae9b0 Matrix3x3::ApplyCol0 -> Matrix3x3
+[conv] 0x5ae9e0 Matrix3x3::ApplyCol1 -> Matrix3x3
+[conv] 0x5cf810 CampaignClass::Check -> CampaignClass
+[conv] 0x5d1b30 MSEngine::Destruct -> MSEngine
+[conv] 0x5d1fd0 BSurface::CopyRect -> BSurface
+[conv] 0x5d3a60 MessageListClass::Init -> MessageListClass
+[conv] 0x5d5ac0 System_Init -> System
+[conv] 0x5e9b60 SelectLobbyCountry -> _addr_5E
+[conv] 0x5e9c00 AssignPlayerColor -> _addr_5E
+[conv] 0x5eb060 Lobby::UpdatePlayerLabels -> Lobby
+[conv] 0x5edde0 EnablePlayerSlotControls -> _addr_5E
+[conv] 0x5f96b0 TheaterObjectTypeClassSpecificID -> _addr_5F
+[conv] 0x5f9710 ObjectTypeClass::SetRTTI71 -> ObjectTypeClass
+[conv] 0x5fa430 ObjectClass::nullsub_29 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LoadingScreen            rc=2
+[era] ObjectClass              rc=2
+[era] RadarClass               rc=0
+[era] Vector                   rc=0
+[era] Matrix3x4                rc=0
+[era] Matrix3x3                rc=0
+[era] CampaignClass            rc=0
+[era] MSEngine                 rc=0
+[era] BSurface                 rc=2
+[era] MessageListClass         rc=0
+[era] System                   rc=2
+[era] _addr_5E                 rc=2
+[era] Lobby                    rc=0
+[era] _addr_5F                 rc=0
+[era] ObjectTypeClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x5fa430   MATCH            ObjectClass::nullsub_29
+[diff] 0x55af40   MISMATCH         RadarClass::SetGlobal
+[diff] 0x5ae890   MISMATCH         Vector::MatrixMulVectorMath
+[diff] 0x5ae980   MISMATCH         Matrix3x4::Translate
+[diff] 0x5ae9b0   MISMATCH         Matrix3x3::ApplyCol0
+[diff] 0x5ae9e0   MISMATCH         Matrix3x3::ApplyCol1
+[diff] 0x5cf810   MISMATCH         CampaignClass::Check
+[diff] 0x5d1b30   MISMATCH         MSEngine::Destruct
+[diff] 0x5d3a60   MISMATCH         MessageListClass::Init
+[diff] 0x5eb060   MISMATCH         Lobby::UpdatePlayerLabels
+[diff] 0x5f96b0   MISMATCH         TheaterObjectTypeClassSpecificID
+[diff] 0x5f9710   MISMATCH         ObjectTypeClass::SetRTTI71
+[ledger] 0x554150 LoadingScreen::CalcProgressBarRect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x556b70 ObjectClass::Render_Render_556B70 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55af40 RadarClass::SetGlobal -> NG (attempt 6)
+[ledger] 0x583ad0 ObjectClass::sub_583AD0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ae890 Vector::MatrixMulVectorMath -> NG (attempt 2)
+[ledger] 0x5ae980 Matrix3x4::Translate -> NG (attempt 2)
+[ledger] 0x5ae9b0 Matrix3x3::ApplyCol0 -> NG (attempt 2)
+[ledger] 0x5ae9e0 Matrix3x3::ApplyCol1 -> NG (attempt 2)
+[ledger] 0x5cf810 CampaignClass::Check -> NG (attempt 2)
+[ledger] 0x5d1b30 MSEngine::Destruct -> NG (attempt 6)
+[ledger] 0x5d1fd0 BSurface::CopyRect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d3a60 MessageListClass::Init -> NG (attempt 6)
+[ledger] 0x5d5ac0 System_Init -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5e9b60 SelectLobbyCountry -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5e9c00 AssignPlayerColor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5eb060 Lobby::UpdatePlayerLabels -> NG (attempt 6)
+[ledger] 0x5edde0 EnablePlayerSlotControls -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5f96b0 TheaterObjectTypeClassSpecificID -> NG (attempt 3)
+[ledger] 0x5f9710 ObjectTypeClass::SetRTTI71 -> NG (attempt 9)
+[ledger] 0x5fa430 ObjectClass::nullsub_29 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 11,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "frame_sched": 3,
+  "signedness": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 8.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p02\batch_report.json
