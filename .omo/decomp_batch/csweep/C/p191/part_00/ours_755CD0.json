@@ -1,0 +1,15 @@
+{
+ "symbol": "?LoadFileVXL@File@@QAEPAV1@HH@Z",
+ "sym_key": "File::LoadFileVXL",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4c240833c0890689460489460889460c8946108946148946188b44240c50518bcee80000000085c07506c706010000008bc65ec20800",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?SortDepth@Voxel@@QAEHHH@Z",
+   "sym_key": "Voxel::SortDepth"
+  }
+ ]
+}

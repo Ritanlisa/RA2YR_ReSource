@@ -1,0 +1,15 @@
+{
+ "symbol": "?CopyUpper@String@@QAEPADPBD@Z",
+ "sym_key": "String::CopyUpper",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "538b5c240856578bfb83c9ff33c053f2aef7d12bf98bc18bf78bfbc1e902f3a58bc883e103f3a4e80000000083c4048bc35f5e5bc20400",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?_strupr@@YAHPAXZZ",
+   "sym_key": "_strupr"
+  }
+ ]
+}

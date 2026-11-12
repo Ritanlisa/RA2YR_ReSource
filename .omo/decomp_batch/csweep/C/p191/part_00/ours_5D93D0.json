@@ -1,0 +1,57 @@
+{
+ "symbol": "?dispatchEvent@Network@@QAEHXZ",
+ "sym_key": "Network::dispatchEvent",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "33c056a0000000008bf16a0050684c000000b920010000e80000000033c98946048a0d000000006a0151684c000000b920010000e80000000089460c5ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_FirewallSettings@@3EA",
+   "sym_key": "g_INI_Key_FirewallSettings"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?aBootcampselect@@3IA",
+   "sym_key": "aBootcampselect"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?ReadInt_Overwrite@INIClass@@QAEHPAX0H@Z",
+   "sym_key": "INIClass::ReadInt_Overwrite"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_FirewallDelta@@3EA",
+   "sym_key": "g_INI_Key_FirewallDelta"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?aBootcampselect@@3IA",
+   "sym_key": "aBootcampselect"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?ReadInt_Overwrite@INIClass@@QAEHPAX0H@Z",
+   "sym_key": "INIClass::ReadInt_Overwrite"
+  }
+ ]
+}

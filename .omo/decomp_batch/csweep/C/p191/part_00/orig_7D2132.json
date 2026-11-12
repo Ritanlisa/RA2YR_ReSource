@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D2132",
+ "name": "__hextodec",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D2132",
+ "bytes_hex": "833d9cc7870001567e108b7424086a0456e8c9f1ffff5959eb0f8b742408a190c587008a047083e00485c0750683e6df83ee078bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

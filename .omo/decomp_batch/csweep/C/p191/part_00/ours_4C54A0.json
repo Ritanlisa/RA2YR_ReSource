@@ -1,0 +1,33 @@
+{
+ "symbol": "?UpdateAll@LocomotionClass@@QAEPAGXZ",
+ "sym_key": "LocomotionClass::UpdateAll",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "a100000000568d70ff85f67c388b15a00100005357a1000000008b0cb08bc28b79308b592c03fb0fbeda3bdf721285c9740e8b116a0151ff52208b15a00100004e79d25f5b5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A3880@@3IA",
+   "sym_key": "DataGlobal_8A3880"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A3874@@3IA",
+   "sym_key": "DataGlobal_8A3874"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

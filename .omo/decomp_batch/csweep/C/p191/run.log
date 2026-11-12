@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p191\part_00
+=== convert (20 addrs) ===
+[conv] 0x623e00 ObjectClass::Memory_Pop -> ObjectClass
+[conv] 0x408390 sub_408390 -> _addr_40
+[conv] 0x720fd0 Theme::IsPlaying -> Theme
+[conv] 0x4015c0 sub_4015C0 -> _addr_40
+[conv] 0x4f4c30 String::CopyUpper -> String
+[conv] 0x755cd0 File::LoadFileVXL -> File
+[conv] 0x7d2132 __hextodec -> _addr_7D
+[conv] 0x4c54a0 LocomotionClass::UpdateAll -> LocomotionClass
+[conv] 0x549aa0 IsometricTileTypeClass::GetTerrainType -> IsometricTileTypeClass
+[conv] 0x5d93d0 Network::dispatchEvent -> Network
+[conv] 0x6e1180 ObjectClass::sub_6E1180 -> ObjectClass
+[conv] 0x7529a0 StopThemeClass -> _addr_75
+[conv] 0x7d729d _GetLcidFromCountry -> _addr_7D
+[conv] 0x4f9750 BuildingClass::checkRepairEligibility -> BuildingClass
+[conv] 0x46aff0 BulletClass::ValidateTarget -> BulletClass
+[conv] 0x4a2950 CStreamClass::Release -> CStreamClass
+[conv] 0x5f4260 ObjectClass::GetThreatLevel -> ObjectClass
+[conv] 0x622610 ObjectClass::UI_Process -> ObjectClass
+[conv] 0x4399a0 Coord::GetCoords -> Coord
+[conv] 0x41b660 AircraftClass::HandleTargetDestroyed -> AircraftClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _addr_40                 rc=2
+[era] Theme                    rc=0
+[era] String                   rc=0
+[era] File                     rc=0
+[era] _addr_7D                 rc=2
+[era] LocomotionClass          rc=0
+[era] IsometricTileTypeClass   rc=2
+[era] Network                  rc=0
+[era] _addr_75                 rc=0
+[era] BuildingClass            rc=2
+[era] BulletClass              rc=2
+[era] CStreamClass             rc=2
+[era] Coord                    rc=0
+[era] AircraftClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x623e00   MISMATCH         ObjectClass::Memory_Pop
+[diff] 0x6e1180   MISMATCH         ObjectClass::sub_6E1180
+[diff] 0x5f4260   MISMATCH         ObjectClass::GetThreatLevel
+[diff] 0x622610   MISMATCH         ObjectClass::UI_Process
+[diff] 0x720fd0   MISMATCH         Theme::IsPlaying
+[diff] 0x4f4c30   MISMATCH         String::CopyUpper
+[diff] 0x755cd0   MISMATCH         File::LoadFileVXL
+[diff] 0x7d2132   MISMATCH         __hextodec
+[diff] 0x4c54a0   MISMATCH         LocomotionClass::UpdateAll
+[diff] 0x5d93d0   MISMATCH         Network::dispatchEvent
+[diff] 0x7529a0   MISMATCH         StopThemeClass
+[diff] 0x4399a0   MISMATCH         Coord::GetCoords
+[ledger] 0x623e00 ObjectClass::Memory_Pop -> NG (attempt 1)
+[ledger] 0x408390 sub_408390 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x720fd0 Theme::IsPlaying -> NG (attempt 1)
+[ledger] 0x4015c0 sub_4015C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f4c30 String::CopyUpper -> NG (attempt 1)
+[ledger] 0x755cd0 File::LoadFileVXL -> NG (attempt 1)
+[ledger] 0x7d2132 __hextodec -> NG (attempt 1)
+[ledger] 0x4c54a0 LocomotionClass::UpdateAll -> NG (attempt 1)
+[ledger] 0x549aa0 IsometricTileTypeClass::GetTerrainType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d93d0 Network::dispatchEvent -> NG (attempt 1)
+[ledger] 0x6e1180 ObjectClass::sub_6E1180 -> NG (attempt 1)
+[ledger] 0x7529a0 StopThemeClass -> NG (attempt 1)
+[ledger] 0x7d729d _GetLcidFromCountry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f9750 BuildingClass::checkRepairEligibility -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46aff0 BulletClass::ValidateTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2950 CStreamClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f4260 ObjectClass::GetThreatLevel -> NG (attempt 1)
+[ledger] 0x622610 ObjectClass::UI_Process -> NG (attempt 1)
+[ledger] 0x4399a0 Coord::GetCoords -> NG (attempt 1)
+[ledger] 0x41b660 AircraftClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "branch_order": 2,
+  "codegen_shape": 4,
+  "ret_norm": 1,
+  "extern_reloc": 2,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p191\batch_report.json

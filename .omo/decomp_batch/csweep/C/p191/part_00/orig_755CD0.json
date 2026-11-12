@@ -1,0 +1,11 @@
+{
+ "addr": "0x755CD0",
+ "name": "File::LoadFileVXL",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x755CD0",
+ "bytes_hex": "568bf18b4c240833c0880689460489460889460c8946108946148946188b44240c50518bcee8b600000085c07503c606018bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

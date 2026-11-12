@@ -1,0 +1,11 @@
+{
+ "addr": "0x720FD0",
+ "name": "Theme::IsPlaying",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x720FD0",
+ "bytes_hex": "568bf18b4e2c85c974288a461184c07411e8ea70ceff85c075088b4e2ce84e6fceff8b4e2ce87670cefff7d81bc05ef7d8c332c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

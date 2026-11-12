@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F4260",
+ "name": "ObjectClass::GetThreatLevel",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F4260",
+ "bytes_hex": "568bf18b06ff505484c07507b8020000005ec38b168bceff92c80100008b15e071880033c98bb2200400003bc65e0f9dc183c1038bc1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

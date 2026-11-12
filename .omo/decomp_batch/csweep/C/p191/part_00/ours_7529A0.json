@@ -1,0 +1,39 @@
+{
+ "symbol": "?StopThemeClass@@YIXD@Z",
+ "sym_key": "Unnamed::StopThemeClass",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "a1000000005385c08ad97411c7405002000000c70500000000000000008b0d0000000085c97405e80000000084db5b7405e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C4@@3IA",
+   "sym_key": "DataGlobal_B1D4C4"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C4@@3IA",
+   "sym_key": "DataGlobal_B1D4C4"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_InfantryDrawState@@3PAXA",
+   "sym_key": "g_InfantryDrawState"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Release@Audio@@QAEXXZ",
+   "sym_key": "Audio::Release"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?ThemeClass__ClearQueues@@YAHXZ",
+   "sym_key": "ThemeClass__ClearQueues"
+  }
+ ]
+}

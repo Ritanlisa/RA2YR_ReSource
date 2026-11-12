@@ -1,0 +1,11 @@
+{
+ "addr": "0x622610",
+ "name": "UI_Process",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x622610",
+ "bytes_hex": "a1ec48ac0085c07e0848a3ec48ac0085c075238b0d4076880085c974198b01ff501c84c0750b8b0d407688008b11ff5218a1ec48ac00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

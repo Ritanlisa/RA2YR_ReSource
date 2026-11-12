@@ -1,0 +1,11 @@
+{
+ "addr": "0x4399A0",
+ "name": "Coord::GetCoords",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4399A0",
+ "bytes_hex": "53568bf157d94618e853c53800d9461c8bf8e849c53800d946208bd8e83fc538008b4c24108bd1893a5f5e895a045b8942088bc1c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C54A0",
+ "name": "LocomotionClass::UpdateAll",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C54A0",
+ "bytes_hex": "a180388a00568d70ff85f67c288b0d74388a008b0cb18b51308b412c03d0a184eda8003bc27c0b85c974078b016a01ff50204e79d85ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

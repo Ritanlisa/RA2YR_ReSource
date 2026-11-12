@@ -1,0 +1,39 @@
+{
+ "symbol": "?UI_Process@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::UI_Process",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c00f94c185c0760b4885c0a3000000000f94c184c974248b0da800000085c9741a8b0151ff501c84c0750ba1a8000000508b08ff5118a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC48EC@@3IA",
+   "sym_key": "DataGlobal_AC48EC"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC48EC@@3IA",
+   "sym_key": "DataGlobal_AC48EC"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC48EC@@3IA",
+   "sym_key": "DataGlobal_AC48EC"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetCoords@Coord@@QAEPAV1@PAH@Z",
+ "sym_key": "Coord::GetCoords",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "5153558b6c240856578bf9d9451883ec08dd1c24e800000000d9451c8bd88b442418dd1c2433d881e3ff00000033d8e800000000d945208bf08b442418dd1c2433f081e6ff00000033f0e8000000008bc88b44241833c883c40881e1ff000000881f33c18977048947088bc75f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

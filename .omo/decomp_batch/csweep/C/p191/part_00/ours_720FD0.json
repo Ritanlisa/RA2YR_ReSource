@@ -1,0 +1,27 @@
+{
+ "symbol": "?IsPlaying@Theme@@QAE_NXZ",
+ "sym_key": "Theme::IsPlaying",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e2c85c9750432c05ec38a461184c07411e80000000085c075088b4e2ce8000000008b4e2ce800000000f7d81bc05ef7d8c3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?IsBuffering@AudioSample@@QAEHXZ",
+   "sym_key": "AudioSample::IsBuffering"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Release@Audio@@QAEXXZ",
+   "sym_key": "Audio::Release"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?IsSoundPlaying@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsSoundPlaying"
+  }
+ ]
+}

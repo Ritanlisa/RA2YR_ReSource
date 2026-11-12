@@ -1,0 +1,21 @@
+{
+ "symbol": "?Memory_Pop@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Memory_Pop",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "56576a008bf96a00688b01000057e80000000085c08d70ff74156a0056688201000057e8000000008bc64e85c075eb5f33c05ec3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

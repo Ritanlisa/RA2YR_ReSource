@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetThreatLevel@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GetThreatLevel",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff505484c0741e8b0e56ff91c80100008b15400200008bb2200400003bc65e1bc083c004c3b8020000005ec3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}
