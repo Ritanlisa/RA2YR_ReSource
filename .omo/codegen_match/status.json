@@ -80258,15 +80258,15 @@
   "this_as_id": false
  },
  "0x74ff40": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_69",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_69",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x74ff50": {
@@ -80382,15 +80382,15 @@
   "this_as_id": false
  },
  "0x7500e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 fmul qword ptr [0x7e3808]",
   "name": "FootClass::SetField",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "FootClass::SetField",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7500f0": {
@@ -80505,7 +80505,7 @@
   "this_as_id": false
  },
  "0x7510d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80932,14 +80932,14 @@
   "this_as_id": false
  },
  "0x753bf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "sub_753BF0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_753BF0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x753c60": {
@@ -82312,7 +82312,7 @@
   "status": "NG"
  },
  "0x75f610": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82369,14 +82369,14 @@
   "this_as_id": false
  },
  "0x7609e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::FaceDraw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Voxel::FaceDraw",
-  "rule_violations": 0,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -82563,15 +82563,15 @@
   "this_as_id": false
  },
  "0x763720": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_84",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_84",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x763980": {
@@ -85153,7 +85153,7 @@
   "this_as_id": false
  },
  "0x7712c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85365,15 +85365,15 @@
   "this_as_id": false
  },
  "0x772eb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 0xc]",
   "name": "WeaponTypeClass::SaveLoad_Prefix_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "WeaponTypeClass::SaveLoad_Prefix_0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x772fa0": {
@@ -85764,7 +85764,7 @@
   "this_as_id": false
  },
  "0x7759e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "MessageDialogLoopAlt",
@@ -86031,14 +86031,14 @@
   "this_as_id": false
  },
  "0x778170": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": null,
   "name": "nullsub_48",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_48",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7781b0": {
@@ -86535,7 +86535,7 @@
   "this_as_id": false
  },
  "0x77bcb0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "sub_77BCB0",
@@ -87378,7 +87378,7 @@
   "this_as_id": false
  },
  "0x7ad690": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87404,15 +87404,15 @@
   "status": "NG"
  },
  "0x7adf70": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "HashMap::Shrink2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HashMap::Shrink2",
   "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7ae020": {
@@ -87430,15 +87430,15 @@
   "status": "NG"
  },
  "0x7ae460": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "HashMap::Shrink",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HashMap::Shrink",
   "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7ae510": {
@@ -87449,15 +87449,15 @@
   "status": "NG"
  },
  "0x7aec00": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "HashTable::Shrink",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HashTable_flat::Shrink",
   "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7aee90": {
@@ -88692,15 +88692,15 @@
   "this_as_id": false
  },
  "0x7b6760": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 mov esi, ecx",
   "name": "DeleteAndZero::Alt",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "DeleteAndZero::Alt",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7b68e0": {
@@ -88846,7 +88846,7 @@
   "this_as_id": false
  },
  "0x7b9750": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -88858,7 +88858,7 @@
   "this_as_id": false
  },
  "0x7b9a60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -88901,15 +88901,15 @@
   "this_as_id": false
  },
  "0x7ba320": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "WWMouseClass::IsRefCountNegative",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "IsRefCountNegative",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7ba330": {

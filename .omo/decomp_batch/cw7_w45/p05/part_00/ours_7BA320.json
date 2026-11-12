@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsRefCountNegative@WWMouseClass@@QAEHXZ",
+ "sym_key": "WWMouseClass::IsRefCountNegative",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b510c33c085d20f9cc0c3",
+ "relocs": []
+}

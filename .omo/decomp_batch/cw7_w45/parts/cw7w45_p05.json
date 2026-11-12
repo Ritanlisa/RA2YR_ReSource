@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x74ff40",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_69"
+ },
+ {
+  "addr": "0x7500e0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "FootClass::SetField"
+ },
+ {
+  "addr": "0x7510d0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "Audio::InitFromINI"
+ },
+ {
+  "addr": "0x753bf0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "sub_753BF0"
+ },
+ {
+  "addr": "0x75f610",
+  "family": "W45",
+  "code": "C2446",
+  "name": "WaveClass::UpdateWave"
+ },
+ {
+  "addr": "0x7609e0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "Voxel::FaceDraw"
+ },
+ {
+  "addr": "0x763720",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_84"
+ },
+ {
+  "addr": "0x7712c0",
+  "family": "W45",
+  "code": "C2562",
+  "name": "ScoreScreen::RemoveItem"
+ },
+ {
+  "addr": "0x772eb0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "WeaponTypeClass::SaveLoad_Prefix_0"
+ },
+ {
+  "addr": "0x7759e0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "MessageDialogLoopAlt"
+ },
+ {
+  "addr": "0x778170",
+  "family": "W45",
+  "code": "C4716",
+  "name": "nullsub_48"
+ },
+ {
+  "addr": "0x77bcb0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "sub_77BCB0"
+ },
+ {
+  "addr": "0x7ad690",
+  "family": "W45",
+  "code": "C2446",
+  "name": "_CComObject_VCDownloadEventSink_ATL::QueryInterface"
+ },
+ {
+  "addr": "0x7adf70",
+  "family": "W45",
+  "code": "C2562",
+  "name": "HashMap::Shrink2"
+ },
+ {
+  "addr": "0x7ae460",
+  "family": "W45",
+  "code": "C2562",
+  "name": "HashMap::Shrink"
+ },
+ {
+  "addr": "0x7aec00",
+  "family": "W45",
+  "code": "C2562",
+  "name": "HashTable::Shrink"
+ },
+ {
+  "addr": "0x7b6760",
+  "family": "W45",
+  "code": "C2562",
+  "name": "DeleteAndZero::Alt"
+ },
+ {
+  "addr": "0x7b9750",
+  "family": "W45",
+  "code": "C2171",
+  "name": "WWMouseClass::showCursor"
+ },
+ {
+  "addr": "0x7b9a60",
+  "family": "W45",
+  "code": "C2171",
+  "name": "WWMouseClass::captureMouse"
+ },
+ {
+  "addr": "0x7ba320",
+  "family": "W45",
+  "code": "C2562",
+  "name": "WWMouseClass::IsRefCountNegative"
+ }
+]

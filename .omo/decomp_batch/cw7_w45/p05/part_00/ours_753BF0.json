@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_753BF0@@YAPADDDHHDDDD@Z",
+ "sym_key": "Unnamed::sub_753BF0",
+ "size": 203,
+ "link_base": 0,
+ "bytes_hex": "518b4c240c8b54241481e1ff00000053894c24108b4c242481e1ff00000055894c24288b4c24208b6c241881e1ff000000894c242033c98a0d00000000bb000000005657b800000000894c241083eb0233c981e500ffffff8a48ff80e2008bf18a4c241cd3ee83c00383c3020bf58bce81e600ffffff81e1ff0000000bd133c98a48fe8bf98a4c2430d3ef0fbe4c24340bfed3e733c98a48fd8be98a4c2428d3ed8bcf80e1000be90fbe4c242cd3e50fbe4c2418d3e28b4c24100bd70bd53bc1668913728b5f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FE79@@3EA",
+   "sym_key": "DataGlobal_B2FE79"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D5EC@@3EA",
+   "sym_key": "DataGlobal_B2D5EC"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB79@@3EA",
+   "sym_key": "DataGlobal_B2FB79"
+  }
+ ]
+}

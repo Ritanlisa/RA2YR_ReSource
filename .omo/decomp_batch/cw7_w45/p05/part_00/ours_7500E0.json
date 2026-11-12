@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetField@FootClass@@QAEHH@Z",
+ "sym_key": "FootClass::SetField",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "db4424048b442404dc0d00000000d919c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E3808@@3NA",
+   "sym_key": "DataGlobal_7E3808"
+  }
+ ]
+}

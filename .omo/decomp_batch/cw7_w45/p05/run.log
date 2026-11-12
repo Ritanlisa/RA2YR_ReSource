@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x74ff40 ObjectClass::nullsub_69 -> ObjectClass
+[conv] 0x7500e0 FootClass::SetField -> FootClass
+[conv] 0x7510d0 Audio::InitFromINI -> Audio
+[conv] 0x753bf0 sub_753BF0 -> _addr_75
+[conv] 0x75f610 WaveClass::UpdateWave -> WaveClass
+[conv] 0x7609e0 Voxel::FaceDraw -> Voxel
+[conv] 0x763720 ObjectClass::nullsub_84 -> ObjectClass
+[conv] 0x7712c0 ScoreScreen::RemoveItem -> ScoreScreen
+[conv] 0x772eb0 WeaponTypeClass::SaveLoad_Prefix_0 -> WeaponTypeClass
+[conv] 0x7759e0 MessageDialogLoopAlt -> _addr_77
+[conv] 0x778170 nullsub_48 -> _addr_77
+[conv] 0x77bcb0 sub_77BCB0 -> _addr_77
+[conv] 0x7ad690 _CComObject_VCDownloadEventSink_ATL::QueryInterface -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x7adf70 HashMap::Shrink2 -> HashMap
+[conv] 0x7ae460 HashMap::Shrink -> HashMap
+[conv] 0x7aec00 HashTable::Shrink -> HashTable
+[conv] 0x7b6760 DeleteAndZero::Alt -> DeleteAndZero
+[conv] 0x7b9750 WWMouseClass::showCursor -> WWMouseClass
+[conv] 0x7b9a60 WWMouseClass::captureMouse -> WWMouseClass
+[conv] 0x7ba320 WWMouseClass::IsRefCountNegative -> WWMouseClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] FootClass                rc=0
+[era] Audio                    rc=2
+[era] _addr_75                 rc=0
+[era] WaveClass                rc=2
+[era] Voxel                    rc=2
+[era] ScoreScreen              rc=2
+[era] WeaponTypeClass          rc=0
+[era] _addr_77                 rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+[era] HashMap                  rc=0
+[era] HashTable                rc=0
+[era] DeleteAndZero            rc=0
+[era] WWMouseClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x74ff40   MATCH            ObjectClass::nullsub_69
+[diff] 0x763720   MATCH            ObjectClass::nullsub_84
+[diff] 0x7500e0   MISMATCH         FootClass::SetField
+[diff] 0x753bf0   MISMATCH         sub_753BF0
+[diff] 0x772eb0   MISMATCH         WeaponTypeClass::SaveLoad_Prefix_0
+[diff] 0x778170   MATCH            nullsub_48
+[diff] 0x7adf70   MISMATCH         HashMap::Shrink2
+[diff] 0x7ae460   MISMATCH         HashMap::Shrink
+[diff] 0x7aec00   MISMATCH         HashTable::Shrink
+[diff] 0x7b6760   MISMATCH         DeleteAndZero::Alt
+[diff] 0x7ba320   MATCH            WWMouseClass::IsRefCountNegative
+[ledger] 0x74ff40 ObjectClass::nullsub_69 -> OK (attempt 2)
+[ledger] 0x7500e0 FootClass::SetField -> NG (attempt 2)
+[ledger] 0x7510d0 Audio::InitFromINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x753bf0 sub_753BF0 -> NG (attempt 2)
+[ledger] 0x75f610 WaveClass::UpdateWave -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7609e0 Voxel::FaceDraw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x763720 ObjectClass::nullsub_84 -> OK (attempt 2)
+[ledger] 0x7712c0 ScoreScreen::RemoveItem -> COMPILE_FAIL (attempt 6)
+[ledger] 0x772eb0 WeaponTypeClass::SaveLoad_Prefix_0 -> NG (attempt 4)
+[ledger] 0x7759e0 MessageDialogLoopAlt -> COMPILE_FAIL (attempt 6)
+[ledger] 0x778170 nullsub_48 -> OK (attempt 2)
+[ledger] 0x77bcb0 sub_77BCB0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7ad690 _CComObject_VCDownloadEventSink_ATL::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7adf70 HashMap::Shrink2 -> NG (attempt 12)
+[ledger] 0x7ae460 HashMap::Shrink -> NG (attempt 12)
+[ledger] 0x7aec00 HashTable::Shrink -> NG (attempt 12)
+[ledger] 0x7b6760 DeleteAndZero::Alt -> NG (attempt 6)
+[ledger] 0x7b9750 WWMouseClass::showCursor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b9a60 WWMouseClass::captureMouse -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7ba320 WWMouseClass::IsRefCountNegative -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 4,
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "width_mismatch": 1,
+  "regalloc": 1,
+  "cc_mismatch": 1,
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 36.4,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p05\batch_report.json
