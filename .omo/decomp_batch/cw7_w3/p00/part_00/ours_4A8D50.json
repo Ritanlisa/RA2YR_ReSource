@@ -1,0 +1,75 @@
+{
+ "symbol": "?CopyHeader@MIXClass@@QAEFPBX@Z",
+ "sym_key": "MIXClass::CopyHeader",
+ "size": 327,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf1578b868c11000085c07438668b8e86110000668b868211000066038e841100006603c68d542408058611000066894c240a6a00528bce6689442410e8000000000fbec08b4c24148b156800000085c98bf9899686110000750e898e8c1100005f5e83c408c20400a000000000a80175188ad0680000000080ca01881500000000e80000000083c404668b0f33c066a10000000033d253668908668b150000000033c089968c11000066a1000000008d4c24185051e8000000008b086a018bd98d51ffc1fb106689542410ba010000008d43ff2bd166894424120fbfc2992bc28bf8b8010000002bc30fbfc0992bc2d1ffd1f866897c241c668944241e8b54241c8a86841100006603be8211000002c232c189968611000025ff00000066897c241c33c18d4c241c518bce6689442422e8000000005b5f660fbec05e83c408c20400",
+ "relocs": [
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?MarkExitPath@BuildingClass@@QAEDPAX0@Z",
+   "sym_key": "BuildingClass::MarkExitPath"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?stru_8A0390@@3PADA",
+   "sym_key": "stru_8A0390"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?byte_8A0619@@3EA",
+   "sym_key": "byte_8A0619"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?nullsub_11@@YAHPBX0@Z",
+   "sym_key": "nullsub_11"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?byte_8A0619@@3EA",
+   "sym_key": "byte_8A0619"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?word_8A0298@@3GA",
+   "sym_key": "word_8A0298"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?word_8A0298@@3GA",
+   "sym_key": "word_8A0298"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?word_8A0298@@3GA",
+   "sym_key": "word_8A0298"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?CoordList__GetBounds@@YGPAIPAXH@Z",
+   "sym_key": "CoordList__GetBounds"
+  },
+  {
+   "off": 310,
+   "type": "REL32",
+   "sym": "?MarkExitPath@BuildingClass@@QAEDPAX0@Z",
+   "sym_key": "BuildingClass::MarkExitPath"
+  }
+ ]
+}

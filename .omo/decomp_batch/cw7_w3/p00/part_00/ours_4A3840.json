@@ -1,0 +1,8 @@
+{
+ "symbol": "?Append@StructTable@@QAEHPBX@Z",
+ "sym_key": "StructTable::Append",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "8bc18b880080010081f9000400007508b801000000c20400568b742408578d3c49c1e70503f8b918000000f3a58b88008001005f415e89880080010033c0c20400",
+ "relocs": []
+}

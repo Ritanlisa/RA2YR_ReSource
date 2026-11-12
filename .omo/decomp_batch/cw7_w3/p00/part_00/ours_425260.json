@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetField8@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::SetField8",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "51c6819e010000018b44240059c3",
+ "relocs": []
+}

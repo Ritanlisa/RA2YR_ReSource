@@ -1,0 +1,39 @@
+{
+ "symbol": "?LockVolume@CDROM@@QAGDHPAXEKF@Z",
+ "sym_key": "CDROM::LockVolume",
+ "size": 279,
+ "link_base": 0,
+ "bytes_hex": "83ec208b5424385355568b74244057b90600000033c08d7c241881e200ff0000f3ab8bc281e6ff00000025ffff00008b6c243c24008b5c24480fbf7c244833f08b44244025ff000000c7442410050000000bf032c0eb048a44244881e300ff00008d542444f6d81ac06a0024c05204486a1c8844245432c325ff000000897c242433d88d4424208bcb5081e1ffff00006a1c83c94ac74424340d440000894c24308d4c2428516a015589742434e80000000085c07409f644242c017442eb0ee8000000008b4c2434e800000000807c24480875838b5424108b4c24344a89542410e80000000068e8030000e8000000008b44241085c07e1332c0e95cffffff5f5e5db0015b83c420c218005f5e5d32c05b83c420c21800",
+ "relocs": [
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?DeviceIoControl@@YGHPAXH0H0H0H@Z",
+   "sym_key": "DeviceIoControl"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?Sleep@@YGXH@Z",
+   "sym_key": "Sleep"
+  }
+ ]
+}

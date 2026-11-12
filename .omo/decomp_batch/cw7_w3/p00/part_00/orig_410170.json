@@ -1,0 +1,11 @@
+{
+ "addr": "0x410170",
+ "name": "AbstractClass::Constructor",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x410170",
+ "bytes_hex": "8bc133c9c74008bc1f7e00c7400cb41f7e0089481889481c8848208a481480e1f8c74010ffffffffc700501f7e00c74004341f7e00c740082c1f7e00c7400c241f7e00884814c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

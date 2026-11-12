@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A51B0",
+ "name": "BuildingClass::CheckPowerFlags",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A51B0",
+ "bytes_hex": "8a411884c075098a5119b0013ad0740232c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

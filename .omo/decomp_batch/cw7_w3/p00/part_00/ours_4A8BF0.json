@@ -1,0 +1,75 @@
+{
+ "symbol": "?SetBounds@MouseClass@@QAEFPBX@Z",
+ "sym_key": "MouseClass::SetBounds",
+ "size": 305,
+ "link_base": 0,
+ "bytes_hex": "83ec08538bd9568b837c11000085c07437668b8b7a110000668b837811000066038b76110000660383741100008d5424086a0066894c240e528bcb6689442410e8000000000fbec08b4c2414668b150000000085c98bf166899378110000750e898b7c1100005e5b83c408c20400a000000000a80175188ad0680000000080ca01881500000000e80000000083c4045733ff668b3d00000000b97800000033c08d542418f3a566a10000000033c989837c110000668b0d000000005152e8000000008b086a018bd18d41ff6689442410b8010000002bc1c1fa100fbfc04a6689542412992bc28a937a110000d1f86689837811000066038374110000668944241c8a837611000002d08d44241c32d15081e2ff00000033d18bcb6689542422e8000000005f5e660fbec05b83c408c20400",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?SetCellFlagsAlongPath@MapClass@@QAEDPAX0@Z",
+   "sym_key": "MapClass::SetCellFlagsAlongPath"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A03F8@@3IA",
+   "sym_key": "DataGlobal_8A03F8"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?byte_8A0618@@3EA",
+   "sym_key": "byte_8A0618"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?nullsub_10@@YAHPBX0@Z",
+   "sym_key": "nullsub_10"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?byte_8A0618@@3EA",
+   "sym_key": "byte_8A0618"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?word_8A041C@@3GA",
+   "sym_key": "word_8A041C"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?word_8A041C@@3GA",
+   "sym_key": "word_8A041C"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?word_8A041C@@3GA",
+   "sym_key": "word_8A041C"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?CoordList__GetBounds@@YGPAIPAXH@Z",
+   "sym_key": "CoordList__GetBounds"
+  },
+  {
+   "off": 288,
+   "type": "REL32",
+   "sym": "?SetCellFlagsAlongPath@MapClass@@QAEDPAX0@Z",
+   "sym_key": "MapClass::SetCellFlagsAlongPath"
+  }
+ ]
+}

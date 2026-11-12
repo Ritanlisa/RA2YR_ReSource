@@ -1,0 +1,11 @@
+{
+ "addr": "0x425260",
+ "name": "AnimClass::SetField8",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x425260",
+ "bytes_hex": "c6819e01000001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

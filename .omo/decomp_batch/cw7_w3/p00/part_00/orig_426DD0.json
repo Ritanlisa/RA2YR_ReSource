@@ -1,0 +1,11 @@
+{
+ "addr": "0x426DD0",
+ "name": "AnimFile::Check",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x426DD0",
+ "bytes_hex": "8b4424045633f68d14408d844008040000668bb4510e08000033d2668b14418d4472085ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

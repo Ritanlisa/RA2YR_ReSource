@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x406b10 ObjectClass::InitializeAudioSubsystem -> ObjectClass
+[conv] 0x410170 AbstractClass::Constructor -> AbstractClass
+[conv] 0x4202f0 ObjectClass::sub_4202F0 -> ObjectClass
+[conv] 0x425260 BuildingClass::SetField8 -> BuildingClass
+[conv] 0x426dd0 AnimFile::Check -> AnimFile
+[conv] 0x430f30 MapClass::isCellAccessible -> MapClass
+[conv] 0x476ea0 ObjectClass::sub_476EA0 -> ObjectClass
+[conv] 0x47a6f0 CDROM::LockVolume -> CDROM
+[conv] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x494f20 _BlitTransLucent75AlphaZRead_G::AddRef -> _BlitTransLucent75AlphaZRead_G
+[conv] 0x495250 _BlitTransLucent25AlphaZRead_G::AddRef -> _BlitTransLucent25AlphaZRead_G
+[conv] 0x495590 _BlitTransLucent50AlphaZReadWarp_G::AddRef -> _BlitTransLucent50AlphaZReadWarp_G
+[conv] 0x497cf0 _RLEBlitTransLucent50Alpha_G::AddRef -> _RLEBlitTransLucent50Alpha_G
+[conv] 0x4a2350 TabClass::initStripClass -> TabClass
+[conv] 0x4a3840 StructTable::Append -> StructTable
+[conv] 0x4a51b0 BuildingClass::CheckPowerFlags -> BuildingClass
+[conv] 0x4a8bf0 MouseClass::SetBounds -> MouseClass
+[conv] 0x4a8d50 MIXClass::CopyHeader -> MIXClass
+[conv] 0x4a9650 BuildingClass::MarkExitPath -> BuildingClass
+[conv] 0x4b4b00 DriveLocomotionClass::StubReturnZero_2 -> DriveLocomotionClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] AbstractClass            rc=0
+[era] BuildingClass            rc=0
+[era] AnimFile                 rc=0
+[era] MapClass                 rc=0
+[era] CDROM                    rc=0
+[era] _BlitTransXlatMultWriteAlpha_G rc=2
+[era] _BlitTransLucent75AlphaZRead_G rc=2
+[era] _BlitTransLucent25AlphaZRead_G rc=2
+[era] _BlitTransLucent50AlphaZReadWarp_G rc=2
+[era] _RLEBlitTransLucent50Alpha_G rc=2
+[era] TabClass                 rc=0
+[era] StructTable              rc=0
+[era] MouseClass               rc=0
+[era] MIXClass                 rc=0
+[era] DriveLocomotionClass     rc=2
+=== diffasm byte-compare ===
+[diff] 0x406b10   MISMATCH         ObjectClass::InitializeAudioSubsystem
+[diff] 0x476ea0   MATCH            ObjectClass::sub_476EA0
+[diff] 0x410170   MISMATCH         AbstractClass::Constructor
+[diff] 0x425260   MISMATCH         BuildingClass::SetField8
+[diff] 0x4a51b0   MISMATCH         BuildingClass::CheckPowerFlags
+[diff] 0x4a9650   MISMATCH         BuildingClass::MarkExitPath
+[diff] 0x426dd0   MATCH            AnimFile::Check
+[diff] 0x430f30   MISMATCH         MapClass::isCellAccessible
+[diff] 0x47a6f0   MISMATCH         CDROM::LockVolume
+[diff] 0x4a2350   MATCH            TabClass::initStripClass
+[diff] 0x4a3840   MATCH            StructTable::Append
+[diff] 0x4a8bf0   MISMATCH         MouseClass::SetBounds
+[diff] 0x4a8d50   MISMATCH         MIXClass::CopyHeader
+[ledger] 0x406b10 ObjectClass::InitializeAudioSubsystem -> NG (attempt 6)
+[ledger] 0x410170 AbstractClass::Constructor -> NG (attempt 2)
+[ledger] 0x4202f0 ObjectClass::sub_4202F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x425260 BuildingClass::SetField8 -> NG (attempt 6)
+[ledger] 0x426dd0 AnimFile::Check -> OK (attempt 2)
+[ledger] 0x430f30 MapClass::isCellAccessible -> NG (attempt 2)
+[ledger] 0x476ea0 ObjectClass::sub_476EA0 -> OK (attempt 2)
+[ledger] 0x47a6f0 CDROM::LockVolume -> NG (attempt 4)
+[ledger] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> COMPILE_FAIL (attempt 3)
+[ledger] 0x494f20 _BlitTransLucent75AlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 14)
+[ledger] 0x495250 _BlitTransLucent25AlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 12)
+[ledger] 0x495590 _BlitTransLucent50AlphaZReadWarp_G::AddRef -> COMPILE_FAIL (attempt 12)
+[ledger] 0x497cf0 _RLEBlitTransLucent50Alpha_G::AddRef -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4a2350 TabClass::initStripClass -> OK (attempt 2)
+[ledger] 0x4a3840 StructTable::Append -> OK (attempt 2)
+[ledger] 0x4a51b0 BuildingClass::CheckPowerFlags -> NG (attempt 2)
+[ledger] 0x4a8bf0 MouseClass::SetBounds -> NG (attempt 14)
+[ledger] 0x4a8d50 MIXClass::CopyHeader -> NG (attempt 16)
+[ledger] 0x4a9650 BuildingClass::MarkExitPath -> NG (attempt 14)
+[ledger] 0x4b4b00 DriveLocomotionClass::StubReturnZero_2 -> COMPILE_FAIL (attempt 15)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 7,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "regalloc": 3,
+  "codegen_shape": 3,
+  "branch_polarity": 2
+ },
+ "match_rate_of_decided_pct": 30.8,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p00\batch_report.json

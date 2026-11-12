@@ -1,0 +1,279 @@
+{
+ "symbol": "?InitializeAudioSubsystem@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::InitializeAudioSubsystem",
+ "size": 304,
+ "link_base": 0,
+ "bytes_hex": "83ec5c568bf1e800000000b900000000e800000000b900000000c7050000000000000000e800000000b900000000c7050000000000000000e800000000b900000000c7050000000000000000e800000000b900000000c7050000000000000000e800000000b900000000c7050000000000000000e800000000b900000000c7050000000000000000e800000000b900000000c7050000000000000000e80000000085f6c70500000000000000005e747c8b44240050e8000000008b0d0000000083c404e8000000008d4c2404e8000000008d4c2404c74424040400000051e80000000083c4048d54240483c9ffe80000000085c0a300000000740cba100000008bc8e8000000008b1500000000680000000083c2688d4c2404891500000000e8000000008b086a0050ff511483c45cc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?sub_409360@@YAHXZ",
+   "sym_key": "sub_409360"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer1@@3HA",
+   "sym_key": "g_MixerBuffer1"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer2@@3HA",
+   "sym_key": "g_MixerBuffer2"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_SFX@@3IA",
+   "sym_key": "g_MixerChannel_SFX"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer1@@3HA",
+   "sym_key": "g_MixerBuffer1"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer3@@3HA",
+   "sym_key": "g_MixerBuffer3"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Theme@@3IA",
+   "sym_key": "g_MixerChannel_Theme"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer2@@3HA",
+   "sym_key": "g_MixerBuffer2"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer4@@3HA",
+   "sym_key": "g_MixerBuffer4"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Voice@@3IA",
+   "sym_key": "g_MixerChannel_Voice"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer3@@3HA",
+   "sym_key": "g_MixerBuffer3"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer5@@3HA",
+   "sym_key": "g_MixerBuffer5"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Score@@3IA",
+   "sym_key": "g_MixerChannel_Score"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer4@@3HA",
+   "sym_key": "g_MixerBuffer4"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer6@@3HA",
+   "sym_key": "g_MixerBuffer6"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Misc@@3IA",
+   "sym_key": "g_MixerChannel_Misc"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer5@@3HA",
+   "sym_key": "g_MixerBuffer5"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer7@@3HA",
+   "sym_key": "g_MixerBuffer7"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Stream@@3IA",
+   "sym_key": "g_MixerChannel_Stream"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer6@@3HA",
+   "sym_key": "g_MixerBuffer6"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer8@@3HA",
+   "sym_key": "g_MixerBuffer8"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Ambient@@3IA",
+   "sym_key": "g_MixerChannel_Ambient"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer7@@3HA",
+   "sym_key": "g_MixerBuffer7"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?g_MixerState@@3IA",
+   "sym_key": "g_MixerState"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?g_MixerBuffer8@@3HA",
+   "sym_key": "g_MixerBuffer8"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?sub_402940@@YAHPAX@Z",
+   "sym_key": "sub_402940"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816514@@3PAXA",
+   "sym_key": "DataGlobal_816514"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?CreateNode@AudioQueue@@QAEPAIXZ",
+   "sym_key": "AudioQueue::CreateNode"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?ZeroInit32@Struct@@QAEHXZ",
+   "sym_key": "Struct::ZeroInit32"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?sub_4085B0@@YAHPAX@Z",
+   "sym_key": "sub_4085B0"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?CreateAudioChannel@@YIPAHHPAX@Z",
+   "sym_key": "CreateAudioChannel"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?AudioQueue__PreallocateChannels@@YIHPAXH@Z",
+   "sym_key": "AudioQueue__PreallocateChannels"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 270,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816280@@3PADA",
+   "sym_key": "DataGlobal_816280"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_SFX@@3IA",
+   "sym_key": "g_MixerChannel_SFX"
+  },
+  {
+   "off": 288,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A2350",
+ "name": "TabClass::initStripClass",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A2350",
+ "bytes_hex": "8bc133c9890889480488480888480988480a89480cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

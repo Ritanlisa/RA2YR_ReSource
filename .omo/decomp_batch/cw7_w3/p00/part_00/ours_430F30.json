@@ -1,0 +1,8 @@
+{
+ "symbol": "?isCellAccessible@MapClass@@QAEDH@Z",
+ "sym_key": "MapClass::isCellAccessible",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b44240433d28d04408d048183380074104283fa037d0f8b480483c00485c975f0b001c2040032c0c20400",
+ "relocs": []
+}

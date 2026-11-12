@@ -1,0 +1,11 @@
+{
+ "addr": "0x430F30",
+ "name": "MapClass::isCellAccessible",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x430F30",
+ "bytes_hex": "8b54240433c08d14528d0c91833900740e4083c10483f8037cf232c0c20400b001c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
