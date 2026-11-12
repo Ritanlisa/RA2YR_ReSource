@@ -1,0 +1,33 @@
+{
+ "symbol": "?CalcAngle@Math@@QAENNN@Z",
+ "sym_key": "Math::CalcAngle",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "dd44240cd95c240c8a44240cdd44240484c0743d8b4c240c8b44240cdc1d0000000081e1ff00000024000bc8894c240cdfe0f6c440755e8b54240c80e10081e2ff0000000bd18954240cdb44240cc21000d944240cd8f983ec08d83500000000dd1c24ddd8e8000000008bc88b44241433c881e1ff00000033c150e8000000008b542418240081e2ff00000083c40c0bd08954240cdb44240cc21000",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8650B8@@3MA",
+   "sym_key": "DataGlobal_8650B8"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  }
+ ]
+}

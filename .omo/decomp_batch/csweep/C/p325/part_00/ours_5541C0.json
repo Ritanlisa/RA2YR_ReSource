@@ -1,0 +1,33 @@
+{
+ "symbol": "?Render_Render_5541C0@@YIHPAGHHHHDD@Z",
+ "sym_key": "Unnamed::Render_Render_5541C0",
+ "size": 183,
+ "link_base": 0,
+ "bytes_hex": "83ec1c53555633c0578b7c24388954241889442410894424148d442414578d5424145052518b0d00000000e8000000008a44244084c0740a8bef8bf7896c2410eb068b6c24108bf58b4c24148a5c243c8b442434894c24288b4c243089442420f6c301894c241c89742424741c8bc72bc6992bc2d1f803c1f6c3028944241c74082bce03cf894c241c8b5424408b442440555250e8000000008d4c241c8b542418689f0000006a00e8000000005f5e5d5b83c41cc21400",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?Layout@Text@@QAEDPAX00H@Z",
+   "sym_key": "Text::Layout"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?Rect__Inflate@@YGHPAXHH@Z",
+   "sym_key": "Rect__Inflate"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?DSurface__FillRectWithColor@@YIHPAXHHE@Z",
+   "sym_key": "DSurface__FillRectWithColor"
+  }
+ ]
+}
