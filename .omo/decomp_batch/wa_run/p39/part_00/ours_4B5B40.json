@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetSpeedCoordinate@JumpjetLocomotionClass@@QAGPAIPAH@Z",
+ "sym_key": "JumpjetLocomotionClass::GetSpeedCoordinate",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b442404db40208b48248b501c8b442408894c2404d958048910894808c20800",
+ "relocs": []
+}

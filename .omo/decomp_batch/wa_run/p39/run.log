@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p39\part_00
+=== convert (20 addrs) ===
+[conv] 0x48c6e0 sub_48C6E0 -> _addr_48
+[conv] 0x48e2c0 sub_48E2C0 -> _addr_48
+[conv] 0x49b1b0 sub_49B1B0 -> _addr_49
+[conv] 0x49f110 sub_49F110 -> _addr_49
+[conv] 0x49fd80 sub_49FD80 -> _addr_49
+[conv] 0x4a1590 sub_4A1590 -> _addr_4A
+[conv] 0x4a2190 sub_4A2190 -> _addr_4A
+[conv] 0x4a4ed0 sub_4A4ED0 -> _addr_4A
+[conv] 0x4a6a90 sub_4A6A90 -> _addr_4A
+[conv] 0x4a8470 sub_4A8470 -> _addr_4A
+[conv] 0x4af360 sub_4AF360 -> _addr_4A
+[conv] 0x4b58d0 sub_4B58D0 -> _addr_4B
+[conv] 0x4b5b40 JumpjetLocomotionClass::GetSpeedCoordinate -> JumpjetLocomotionClass
+[conv] 0x4b67d0 sub_4B67D0 -> _addr_4B
+[conv] 0x4ba3e0 sub_4BA3E0 -> _addr_4B
+[conv] 0x4c1bb0 sub_4C1BB0 -> _addr_4C
+[conv] 0x4c35d0 sub_4C35D0 -> _addr_4C
+[conv] 0x4c4d30 sub_4C4D30 -> _addr_4C
+[conv] 0x4c5030 sub_4C5030 -> _addr_4C
+[conv] 0x4c5f10 sub_4C5F10 -> _addr_4C
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_48                 rc=0
+[era] _addr_49                 rc=0
+[era] _addr_4A                 rc=0
+[era] _addr_4B                 rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] _addr_4C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x48c6e0   MATCH            sub_48C6E0
+[diff] 0x48e2c0   MATCH            sub_48E2C0
+[diff] 0x49b1b0   MATCH            sub_49B1B0
+[diff] 0x49f110   MATCH            sub_49F110
+[diff] 0x49fd80   MATCH            sub_49FD80
+[diff] 0x4a1590   MATCH            sub_4A1590
+[diff] 0x4a2190   MATCH            sub_4A2190
+[diff] 0x4a4ed0   MATCH            sub_4A4ED0
+[diff] 0x4a6a90   MATCH            sub_4A6A90
+[diff] 0x4a8470   MATCH            sub_4A8470
+[diff] 0x4af360   MATCH            sub_4AF360
+[diff] 0x4b58d0   MATCH            sub_4B58D0
+[diff] 0x4b67d0   MATCH            sub_4B67D0
+[diff] 0x4ba3e0   MATCH            sub_4BA3E0
+[diff] 0x4b5b40   MISMATCH         JumpjetLocomotionClass::GetSpeedCoordinate
+[diff] 0x4c1bb0   MATCH            sub_4C1BB0
+[diff] 0x4c35d0   MATCH            sub_4C35D0
+[diff] 0x4c4d30   MATCH            sub_4C4D30
+[diff] 0x4c5030   MATCH            sub_4C5030
+[diff] 0x4c5f10   MATCH            sub_4C5F10
+[ledger] 0x48c6e0 sub_48C6E0 -> OK (attempt 3)
+[ledger] 0x48e2c0 sub_48E2C0 -> OK (attempt 2)
+[ledger] 0x49b1b0 sub_49B1B0 -> OK (attempt 2)
+[ledger] 0x49f110 sub_49F110 -> OK (attempt 2)
+[ledger] 0x49fd80 sub_49FD80 -> OK (attempt 2)
+[ledger] 0x4a1590 sub_4A1590 -> OK (attempt 2)
+[ledger] 0x4a2190 sub_4A2190 -> OK (attempt 2)
+[ledger] 0x4a4ed0 sub_4A4ED0 -> OK (attempt 2)
+[ledger] 0x4a6a90 sub_4A6A90 -> OK (attempt 2)
+[ledger] 0x4a8470 sub_4A8470 -> OK (attempt 2)
+[ledger] 0x4af360 sub_4AF360 -> OK (attempt 2)
+[ledger] 0x4b58d0 sub_4B58D0 -> OK (attempt 2)
+[ledger] 0x4b5b40 JumpjetLocomotionClass::GetSpeedCoordinate -> NG (attempt 2)
+[ledger] 0x4b67d0 sub_4B67D0 -> OK (attempt 2)
+[ledger] 0x4ba3e0 sub_4BA3E0 -> OK (attempt 2)
+[ledger] 0x4c1bb0 sub_4C1BB0 -> OK (attempt 2)
+[ledger] 0x4c35d0 sub_4C35D0 -> OK (attempt 2)
+[ledger] 0x4c4d30 sub_4C4D30 -> OK (attempt 2)
+[ledger] 0x4c5030 sub_4C5030 -> OK (attempt 2)
+[ledger] 0x4c5f10 sub_4C5F10 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 95.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p39\batch_report.json
