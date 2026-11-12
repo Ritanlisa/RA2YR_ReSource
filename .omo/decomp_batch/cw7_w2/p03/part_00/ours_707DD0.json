@@ -1,0 +1,21 @@
+{
+ "symbol": "?ComputeTotalPowerDrain@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ComputeTotalPowerDrain",
+ "size": 134,
+ "link_base": 0,
+ "bytes_hex": "5356578bf933db8b8f1c0200008b815c0200008d1480a140020000c1e204389c028215000075108b894c0200008b90501400003bca722d8b87f800000085c074238d8ff4000000e8000000008bf085f674128b1656ff92800100008b763003d885f675ee8b0757ff90840000008b0f578bf0ff91c00200008b96740600005f03c25e03c35bc3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?GetDB@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::GetDB"
+  }
+ ]
+}

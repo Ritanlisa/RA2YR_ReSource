@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetRenderCoordinate_2@JumpjetLocomotionClass@@QAGPAIPAH@Z",
+ "sym_key": "JumpjetLocomotionClass::GetRenderCoordinate_2",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec08568b742410578b7e243bf87555a100000000c744240c0000000089442408df6c2408d85e28dfe0f6c44074368b4e2ca1000000003bc8752a8b460833d233c95f8a889c0000008a909d0000008b4424148b710889700889088950045e83c408c20800d94628e800000000db462c8bc88b442418d9580889385f8948045e83c408c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_AsyncMovieState@@3IA",
+   "sym_key": "g_AsyncMovieState"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState1@@3IA",
+   "sym_key": "g_MovieFrameState1"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState2@@3IA",
+   "sym_key": "g_MovieFrameState2"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

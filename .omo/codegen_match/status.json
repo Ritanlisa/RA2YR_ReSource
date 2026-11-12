@@ -69679,15 +69679,15 @@
   "status": "NG"
  },
  "0x6d8530": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 mov edx, 1",
   "name": "DisplayClass::ScrollTacticalView",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "DisplayClass::ScrollTacticalView",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d8630": {
@@ -70295,15 +70295,15 @@
   "this_as_id": false
  },
  "0x6e1980": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x1c",
   "name": "TActionClass::executeGuardAreaAction",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TActionClass::executeGuardAreaAction",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e21d0": {
@@ -72395,15 +72395,15 @@
   "this_as_id": false
  },
  "0x707dd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+13 mov eax, dword ptr [ecx + 0x184]",
   "name": "TechnoClass::ComputeTotalPowerDrain",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TechnoClass::ComputeTotalPowerDrain",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x708b40": {
@@ -77103,7 +77103,7 @@
   "this_as_id": false
  },
  "0x72b2f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77115,7 +77115,7 @@
   "this_as_id": false
  },
  "0x72b310": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -78776,14 +78776,14 @@
   "this_as_id": false
  },
  "0x738d30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "UnitClass::DeployToBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitClass::DeployToBuilding",
-  "rule_violations": 5,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -80887,15 +80887,15 @@
   "this_as_id": false
  },
  "0x753e00": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0x8467e0]",
   "name": "Viewport::Clear",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Viewport::Clear",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x754510": {
@@ -80911,14 +80911,14 @@
   "this_as_id": false
  },
  "0x754740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "sub_754740",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_754740",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x754900": {
@@ -81246,67 +81246,67 @@
   "this_as_id": false
  },
  "0x756dd0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
   "name": "VoxelModel::LoadVXLHeader",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "VoxelModel::LoadVXLHeader",
   "rule_violations": 24,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x756f80": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
   "name": "VoxelModel::ParseSectionData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "VoxelModel::ParseSectionData",
   "rule_violations": 25,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x757360": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
   "name": "ObjectClass::ProcessVoxelDepthSamples",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "ProcessVoxelDepthSamples",
   "rule_violations": 32,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7575a0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x28",
   "name": "VoxelRenderer::DrawSection",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "VoxelRenderer::DrawSection",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x757790": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x28",
   "name": "VoxelRenderer::DrawSectionLines",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "VoxelRenderer::DrawSectionLines",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x757e70": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81318,15 +81318,15 @@
   "this_as_id": false
  },
  "0x758030": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
   "name": "VoxelRenderer::RenderFrame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "VoxelRenderer::RenderFrame",
   "rule_violations": 26,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x758e10": {
@@ -81802,15 +81802,15 @@
   "this_as_id": false
  },
  "0x75ac00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "JumpjetLocomotionClass::GetRenderCoordinate_2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "JumpjetLocomotionClass::GetRenderCoordinate_2",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x75ae30": {
@@ -83381,15 +83381,15 @@
   "this_as_id": false
  },
  "0x767800": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+20 mov eax, dword ptr [eax*4 + 0x848628]",
   "name": "MapSizeGameOption_WorldDominationTour::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MapSizeGameOption_WorldDominationTour::ddtor",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7678f0": {
@@ -84480,14 +84480,14 @@
   "this_as_id": false
  },
  "0x76dad0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::TerritorySelectWDT",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TerritorySelectWDT",
-  "rule_violations": 6,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -86869,15 +86869,15 @@
   "this_as_id": false
  },
  "0x796de0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "Game::CreateAIPlayer",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Game::CreateAIPlayer",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x797640": {
@@ -91382,14 +91382,14 @@
   "this_as_id": false
  },
  "0x7d7754": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+4 cmp eax, dword ptr [0xb78b80]",
   "name": "__isatty",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "__isatty",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7d7840": {

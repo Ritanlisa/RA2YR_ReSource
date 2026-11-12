@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w2\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x6d8530 DisplayClass::ScrollTacticalView -> DisplayClass
+[conv] 0x6e1980 TActionClass::executeGuardAreaAction -> TActionClass
+[conv] 0x707dd0 TechnoClass::ComputeTotalPowerDrain -> TechnoClass
+[conv] 0x72b2f0 LoadingScreen::GetBackgroundImage -> LoadingScreen
+[conv] 0x72b310 LoadingScreen::GetOverlayImage -> LoadingScreen
+[conv] 0x738d30 UnitClass::DeployToBuilding -> UnitClass
+[conv] 0x753e00 Viewport::Clear -> Viewport
+[conv] 0x754740 sub_754740 -> _addr_75
+[conv] 0x756dd0 VoxelModel::LoadVXLHeader -> VoxelModel
+[conv] 0x756f80 VoxelModel::ParseSectionData -> VoxelModel
+[conv] 0x757360 ObjectClass::ProcessVoxelDepthSamples -> ObjectClass
+[conv] 0x7575a0 VoxelRenderer::DrawSection -> VoxelRenderer
+[conv] 0x757790 VoxelRenderer::DrawSectionLines -> VoxelRenderer
+[conv] 0x757e70 VoxelRenderer::ProcessVoxelData -> VoxelRenderer
+[conv] 0x758030 VoxelRenderer::RenderFrame -> VoxelRenderer
+[conv] 0x75ac00 JumpjetLocomotionClass::GetRenderCoordinate_2 -> JumpjetLocomotionClass
+[conv] 0x767800 MapSizeGameOption_WorldDominationTour::ddtor -> MapSizeGameOption_WorldDominationTour
+[conv] 0x76dad0 TechnoClass::TerritorySelectWDT -> TechnoClass
+[conv] 0x796de0 Game::CreateAIPlayer -> Game
+[conv] 0x7d7754 __isatty -> _addr_7D
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DisplayClass             rc=0
+[era] TActionClass             rc=0
+[era] TechnoClass              rc=2
+[era] LoadingScreen            rc=2
+[era] UnitClass                rc=2
+[era] Viewport                 rc=0
+[era] _addr_75                 rc=0
+[era] VoxelModel               rc=0
+[era] ObjectClass              rc=0
+[era] VoxelRenderer            rc=2
+[era] JumpjetLocomotionClass   rc=0
+[era] MapSizeGameOption_WorldDominationTour rc=0
+[era] Game                     rc=0
+[era] _addr_7D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6d8530   MISMATCH         DisplayClass::ScrollTacticalView
+[diff] 0x6e1980   MISMATCH         TActionClass::executeGuardAreaAction
+[diff] 0x707dd0   MISMATCH         TechnoClass::ComputeTotalPowerDrain
+[diff] 0x753e00   MISMATCH         Viewport::Clear
+[diff] 0x754740   MISMATCH         sub_754740
+[diff] 0x756dd0   MISMATCH         VoxelModel::LoadVXLHeader
+[diff] 0x756f80   MISMATCH         VoxelModel::ParseSectionData
+[diff] 0x757360   MISMATCH         ObjectClass::ProcessVoxelDepthSamples
+[diff] 0x7575a0   MISMATCH         VoxelRenderer::DrawSection
+[diff] 0x757790   MISMATCH         VoxelRenderer::DrawSectionLines
+[diff] 0x758030   MISMATCH         VoxelRenderer::RenderFrame
+[diff] 0x75ac00   MISMATCH         JumpjetLocomotionClass::GetRenderCoordinate_2
+[diff] 0x767800   MISMATCH         MapSizeGameOption_WorldDominationTour::ddtor
+[diff] 0x796de0   MISMATCH         Game::CreateAIPlayer
+[diff] 0x7d7754   MISMATCH         __isatty
+[ledger] 0x6d8530 DisplayClass::ScrollTacticalView -> NG (attempt 12)
+[ledger] 0x6e1980 TActionClass::executeGuardAreaAction -> NG (attempt 4)
+[ledger] 0x707dd0 TechnoClass::ComputeTotalPowerDrain -> NG (attempt 4)
+[ledger] 0x72b2f0 LoadingScreen::GetBackgroundImage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x72b310 LoadingScreen::GetOverlayImage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x738d30 UnitClass::DeployToBuilding -> COMPILE_FAIL (attempt 4)
+[ledger] 0x753e00 Viewport::Clear -> NG (attempt 14)
+[ledger] 0x754740 sub_754740 -> NG (attempt 3)
+[ledger] 0x756dd0 VoxelModel::LoadVXLHeader -> NG (attempt 12)
+[ledger] 0x756f80 VoxelModel::ParseSectionData -> NG (attempt 12)
+[ledger] 0x757360 ObjectClass::ProcessVoxelDepthSamples -> NG (attempt 6)
+[ledger] 0x7575a0 VoxelRenderer::DrawSection -> NG (attempt 12)
+[ledger] 0x757790 VoxelRenderer::DrawSectionLines -> NG (attempt 14)
+[ledger] 0x757e70 VoxelRenderer::ProcessVoxelData -> COMPILE_FAIL (attempt 12)
+[ledger] 0x758030 VoxelRenderer::RenderFrame -> NG (attempt 12)
+[ledger] 0x75ac00 JumpjetLocomotionClass::GetRenderCoordinate_2 -> NG (attempt 2)
+[ledger] 0x767800 MapSizeGameOption_WorldDominationTour::ddtor -> NG (attempt 2)
+[ledger] 0x76dad0 TechnoClass::TerritorySelectWDT -> COMPILE_FAIL (attempt 4)
+[ledger] 0x796de0 Game::CreateAIPlayer -> NG (attempt 5)
+[ledger] 0x7d7754 __isatty -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "frame_sched": 8,
+  "const_fold": 1,
+  "extern_reloc": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w2\p03\batch_report.json

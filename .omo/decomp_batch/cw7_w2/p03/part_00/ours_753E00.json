@@ -1,0 +1,171 @@
+{
+ "symbol": "?Clear@Viewport@@QAEHXZ",
+ "sym_key": "Viewport::Clear",
+ "size": 369,
+ "link_base": 0,
+ "bytes_hex": "51a1000000005333d255563bc25789151c000000891500000000742d8915000000008a1500000000b90040000033c08bfa33d2f3ab8a1500000000b9004000008bfaf3abe9fa0000008b2d00000000a1000000008b350000000003c53dff00000077118b1d000000008d0c3381f9ff000000766733dbb9004000008a1d0000000033c08bfbf3ab8b1d00000000a1000000008d0c033bc177428b1500000000c1e008438d941000000000a1000000008bfa81c2000100008d480133c08be9c1e902f3ab8bcd83e1034bf3aa75dd8b2d000000008b1d0000000033d239150000000074608d0c333bf177598b1500000000c1e6088d4201438bd08db42e00000000c1ea02c1e20283e003894424108bca33c08be98bfec1e902f3ab8bcd83e103f3aa8b4c24108d3c328be933c0c1e902f3ab81c6000100008bcd4b83e10385dbf3aa75cab800401c465fa300000000a300000000a300000000b800401cc65e5da30c000000a310000000a3140000005b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?dword_8467E0@@3IA",
+   "sym_key": "dword_8467E0"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D804@@3IA",
+   "sym_key": "DataGlobal_B2D804"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB70@@3IA",
+   "sym_key": "DataGlobal_B2FB70"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?dword_8467E0@@3IA",
+   "sym_key": "dword_8467E0"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_VoxelRenderBuffer@@3EA",
+   "sym_key": "g_VoxelRenderBuffer"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D5E0@@3EA",
+   "sym_key": "DataGlobal_B1D5E0"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB60@@3IA",
+   "sym_key": "DataGlobal_B2FB60"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB68@@3IA",
+   "sym_key": "DataGlobal_B2FB68"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB64@@3IA",
+   "sym_key": "DataGlobal_B2FB64"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB6C@@3IA",
+   "sym_key": "DataGlobal_B2FB6C"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_VoxelRenderBuffer@@3EA",
+   "sym_key": "g_VoxelRenderBuffer"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB6C@@3IA",
+   "sym_key": "DataGlobal_B2FB6C"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB64@@3IA",
+   "sym_key": "DataGlobal_B2FB64"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB60@@3IA",
+   "sym_key": "DataGlobal_B2FB60"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?g_VoxelRenderBuffer@@3EA",
+   "sym_key": "g_VoxelRenderBuffer"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB68@@3IA",
+   "sym_key": "DataGlobal_B2FB68"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB60@@3IA",
+   "sym_key": "DataGlobal_B2FB60"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB6C@@3IA",
+   "sym_key": "DataGlobal_B2FB6C"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B43180@@3IA",
+   "sym_key": "DataGlobal_B43180"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB68@@3IA",
+   "sym_key": "DataGlobal_B2FB68"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D5E0@@3EA",
+   "sym_key": "DataGlobal_B1D5E0"
+  },
+  {
+   "off": 330,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D5E0@@3IA",
+   "sym_key": "DataGlobal_B2D5E0"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D5E4@@3IA",
+   "sym_key": "DataGlobal_B2D5E4"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D5E8@@3IA",
+   "sym_key": "DataGlobal_B2D5E8"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D93C@@3IA",
+   "sym_key": "DataGlobal_B2D93C"
+  },
+  {
+   "off": 357,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D93C@@3IA",
+   "sym_key": "DataGlobal_B2D93C"
+  },
+  {
+   "off": 362,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D93C@@3IA",
+   "sym_key": "DataGlobal_B2D93C"
+  }
+ ]
+}

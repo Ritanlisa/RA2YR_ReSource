@@ -1,0 +1,11 @@
+{
+ "addr": "0x707DD0",
+ "name": "TechnoClass::ComputeTotalPowerDrain",
+ "size": 139,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x707DD0",
+ "bytes_hex": "5356578bf933db8b8f1c0200008b81840100008d1480a1e0718800c1e204389c028215000075108b894c0200008b90501400003bca7c2e8b871801000085c074248d8f14010000e834b6d6ff8bf085f674138b168bceff92800100008b763003d885f675ed8b078bcfff90840000008b178bcf8bf0ff92c00200008bc88b867406000003c15f03c35e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

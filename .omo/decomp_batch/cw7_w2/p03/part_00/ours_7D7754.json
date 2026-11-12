@@ -1,0 +1,21 @@
+{
+ "symbol": "?__isatty@@YAHH@Z",
+ "sym_key": "Unnamed::__isatty",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b0d000000003bc1720333c0c38bc883e01fc1f9058d14c08b048d000000008a44900483e040c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?uNumber@@3IA",
+   "sym_key": "uNumber"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78A80@@3PAIA",
+   "sym_key": "CRTGlobal_B78A80"
+  }
+ ]
+}

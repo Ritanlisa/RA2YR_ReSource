@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@MapSizeGameOption_WorldDominationTour@@QAGHH@Z",
+ "sym_key": "MapSizeGameOption_WorldDominationTour::ddtor",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b44240433c933d28b40048a48128a50138d048a8b048500000000c20800",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_848628@@3PAIA",
+   "sym_key": "DataGlobal_848628"
+  }
+ ]
+}

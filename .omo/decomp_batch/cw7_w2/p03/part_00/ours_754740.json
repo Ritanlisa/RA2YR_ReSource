@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_754740@@YIHHHIH@Z",
+ "sym_key": "Unnamed::sub_754740",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "85c97c2085d27c1c8b44240403c881f9ff0000007f0e8b4c24088d040a3dff0000007e1533c033d28a150000000057b9004000008bfaf3ab5fc20800",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_VoxelRenderBuffer@@3EA",
+   "sym_key": "g_VoxelRenderBuffer"
+  }
+ ]
+}

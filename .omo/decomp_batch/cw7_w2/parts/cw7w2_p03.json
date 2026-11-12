@@ -1,0 +1,344 @@
+[
+ {
+  "addr": "0x6d8530",
+  "name": "DisplayClass::ScrollTacticalView",
+  "orig_name": "DisplayClass::ScrollTacticalView",
+  "unit": "DisplayClass",
+  "layer": "C",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p28\\part_00\\DisplayClass.cpp(10) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p28\\part_00\\DisplayC",
+  "file": "",
+  "line": null,
+  "form": "DataGlobal/IDA-global scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x6e1980",
+  "name": "TActionClass::executeGuardAreaAction",
+  "orig_name": "TActionClass::executeGuardAreaAction",
+  "unit": "TActionClass",
+  "layer": "D",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p37\\part_00\\TActionClass.cpp(17) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p37\\part_00\\TActionC",
+  "file": "",
+  "line": null,
+  "form": "DataGlobal/IDA-global scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x707dd0",
+  "name": "TechnoClass::ComputeTotalPowerDrain",
+  "orig_name": "TechnoClass::ComputeTotalPowerDrain",
+  "unit": "TechnoClass",
+  "layer": "D",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p34\\part_00\\TechnoClass_707dd0.cpp(11) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p34\\part_00\\Te",
+  "file": "",
+  "line": null,
+  "form": "member scalar subscript (->M[i])",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x72b2f0",
+  "name": "LoadingScreen::GetBackgroundImage",
+  "orig_name": "LoadingScreen::GetBackgroundImage",
+  "unit": "LoadingScreen",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\LoadingScreen.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\LoadingScr",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-3 global-array upgrade",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x72b310",
+  "name": "LoadingScreen::GetOverlayImage",
+  "orig_name": "LoadingScreen::GetOverlayImage",
+  "unit": "LoadingScreen",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\LoadingScreen.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p41\\part_00\\LoadingScr",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-3 global-array upgrade",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x738d30",
+  "name": "UnitClass::DeployToBuilding",
+  "orig_name": "UnitClass::DeployToBuilding",
+  "unit": "UnitClass",
+  "layer": "D",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p56\\part_00\\UnitClass.cpp(11) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p56\\part_00\\UnitClass.c",
+  "file": "",
+  "line": null,
+  "form": "member scalar subscript (->M[i])",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x753e00",
+  "name": "Viewport::Clear",
+  "orig_name": "Viewport::Clear",
+  "unit": "Viewport",
+  "layer": "B",
+  "code": "C2109",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p00\\part_00\\Viewport.cpp(34) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p00\\part_00\\Viewport.cpp",
+  "file": "",
+  "line": null,
+  "form": "g_ global scalar subscript",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows"
+  ]
+ },
+ {
+  "addr": "0x754740",
+  "name": "sub_754740",
+  "orig_name": "sub_754740",
+  "unit": "_addr_75",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p42\\part_00\\_addr_75_754740.cpp(17) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p42\\part_00\\_addr_7",
+  "file": "",
+  "line": null,
+  "form": "stale_cw5|CW5-1/2/3/4 call-site args",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x756dd0",
+  "name": "VoxelModel::LoadVXLHeader",
+  "orig_name": "VoxelModel::LoadVXLHeader",
+  "unit": "VoxelModel",
+  "layer": "B",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelModel.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelModel.",
+  "file": "",
+  "line": null,
+  "form": "g_ global scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x756f80",
+  "name": "VoxelModel::ParseSectionData",
+  "orig_name": "VoxelModel::ParseSectionData",
+  "unit": "VoxelModel",
+  "layer": "B",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelModel.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelModel.",
+  "file": "",
+  "line": null,
+  "form": "g_ global scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x757360",
+  "name": "ObjectClass::ProcessVoxelDepthSamples",
+  "orig_name": "ProcessVoxelDepthSamples",
+  "unit": "ObjectClass",
+  "layer": "D",
+  "code": "C2109",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p20\\part_00\\ObjectClass_757360.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p20\\part_00\\Obj",
+  "file": "",
+  "line": null,
+  "form": "g_ global scalar subscript",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows"
+  ]
+ },
+ {
+  "addr": "0x7575a0",
+  "name": "VoxelRenderer::DrawSection",
+  "orig_name": "VoxelRenderer::DrawSection",
+  "unit": "VoxelRenderer",
+  "layer": "B",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p04\\part_00\\VoxelRenderer.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p04\\part_00\\VoxelRen",
+  "file": "",
+  "line": null,
+  "form": "g_ global scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x757790",
+  "name": "VoxelRenderer::DrawSectionLines",
+  "orig_name": "VoxelRenderer::DrawSectionLines",
+  "unit": "VoxelRenderer",
+  "layer": "B",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelRenderer.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelRen",
+  "file": "",
+  "line": null,
+  "form": "g_ global scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x757e70",
+  "name": "VoxelRenderer::ProcessVoxelData",
+  "orig_name": "VoxelRenderer::ProcessVoxelData",
+  "unit": "VoxelRenderer",
+  "layer": "B",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelRenderer.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelRen",
+  "file": "",
+  "line": null,
+  "form": "g_ global scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x758030",
+  "name": "VoxelRenderer::RenderFrame",
+  "orig_name": "VoxelRenderer::RenderFrame",
+  "unit": "VoxelRenderer",
+  "layer": "B",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelRenderer.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p03\\part_00\\VoxelRen",
+  "file": "",
+  "line": null,
+  "form": "g_ global scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x75ac00",
+  "name": "JumpjetLocomotionClass::GetRenderCoordinate_2",
+  "orig_name": "JumpjetLocomotionClass::GetRenderCoordinate_2",
+  "unit": "JumpjetLocomotionClass",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p260\\part_00\\JumpjetLocomotionClass.cpp(19) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p260\\part",
+  "file": "",
+  "line": null,
+  "form": "member scalar subscript (->M[i])",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x767800",
+  "name": "MapSizeGameOption_WorldDominationTour::ddtor",
+  "orig_name": "MapSizeGameOption_WorldDominationTour::ddtor",
+  "unit": "MapSizeGameOption_WorldDominationTour",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p193\\part_00\\MapSizeGameOption_WorldDominationTour.cpp(9) : error C2109: subscript requires array or pointer type",
+  "file": "",
+  "line": null,
+  "form": "local/param scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x76dad0",
+  "name": "TechnoClass::TerritorySelectWDT",
+  "orig_name": "TerritorySelectWDT",
+  "unit": "TechnoClass",
+  "layer": "D",
+  "code": "C2109",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p54\\part_00\\TechnoClass.cpp(15) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p54\\part_00\\TechnoCla",
+  "file": "",
+  "line": null,
+  "form": "member scalar subscript (->M[i])",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x796de0",
+  "name": "Game::CreateAIPlayer",
+  "orig_name": "Game::CreateAIPlayer",
+  "unit": "Game",
+  "layer": "D",
+  "code": "C2109",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\Game.cpp(35) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p47\\part_00\\Game.cpp(35) : err",
+  "file": "",
+  "line": null,
+  "form": "stale_cw5|CW5-10 uintN_t typedef",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x7d7754",
+  "name": "__isatty",
+  "orig_name": "__isatty",
+  "unit": "_addr_7D",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p216\\part_00\\_addr_7D_7d7754.cpp(9) : error C2109: subscript requires array or pointer type",
+  "file": "",
+  "line": null,
+  "form": "local/param scalar subscript",
+  "buckets": [
+   "live_rows"
+  ]
+ }
+]
