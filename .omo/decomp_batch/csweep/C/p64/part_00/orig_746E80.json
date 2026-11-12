@@ -1,0 +1,11 @@
+{
+ "addr": "0x746E80",
+ "name": "C07F5C70::Seek",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746E80",
+ "bytes_hex": "568bf1e8f8e8fefff644240801740956e8a81c080083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

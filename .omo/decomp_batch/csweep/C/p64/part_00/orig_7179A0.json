@@ -1,0 +1,11 @@
+{
+ "addr": "0x7179A0",
+ "name": "TechnoTypeClass::ddtor",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7179A0",
+ "bytes_hex": "568bf1e838a1fffff644240801740956e888110b0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

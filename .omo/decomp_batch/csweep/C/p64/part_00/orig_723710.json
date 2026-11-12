@@ -1,0 +1,11 @@
+{
+ "addr": "0x723710",
+ "name": "TiberiumClass::DrawOre",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x723710",
+ "bytes_hex": "568bf1e868e1fffff644240801740956e818540a0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

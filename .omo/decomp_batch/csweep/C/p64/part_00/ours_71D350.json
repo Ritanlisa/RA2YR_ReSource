@@ -1,0 +1,21 @@
+{
+ "symbol": "?MissionStubReturnZero4@TerrainClass@@QAEPAXD@Z",
+ "sym_key": "TerrainClass::MissionStubReturnZero4",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "568bf1e800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?CleanupMembers@TerrainClass@@QAEHXZ",
+   "sym_key": "TerrainClass::CleanupMembers"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

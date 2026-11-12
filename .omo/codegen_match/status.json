@@ -70447,6 +70447,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6b1390": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "SlaveManagerClass::ProcessOrders",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "SlaveManagerClass::ProcessOrders",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6b13e0": {
   "attempts": 2,
   "clean": true,
@@ -71456,6 +71468,18 @@
   "name": "SpawnManagerClass::StubReturn65",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6b8140": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "SpawnManagerClass::ProcessEvent",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "SpawnManagerClass::ProcessEvent",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6b8190": {
   "attempts": 2,
@@ -76204,6 +76228,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6ce220": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "SuperClass::ProcessEvent",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "SuperClass::ProcessEvent",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6ce240": {
   "attempts": 1,
   "clean": false,
@@ -78437,6 +78473,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6e58b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TagClass::ProcessTrigger",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TagClass::ProcessTrigger",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6e5900": {
   "attempts": 2,
   "clean": true,
@@ -78616,6 +78664,18 @@
   "orig_name": "TagTypeClass::GetAuxField",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6e64c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TagTypeClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TagTypeClass::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e6510": {
@@ -79451,6 +79511,18 @@
   "name": "TeamClass::StubReturn34",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6f0450": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TeamClass::ProcessEvent",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TeamClass::ProcessEvent",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6f04a0": {
   "attempts": 2,
@@ -81041,6 +81113,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x7106e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TechnoClass::ScalarDtor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TechnoClass::ScalarDtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x710700": {
   "attempts": 1,
   "clean": false,
@@ -81363,6 +81447,18 @@
   "orig_name": "UnitClass::processEnterTarget",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x7179a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TechnoTypeClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TechnoTypeClass::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7179c0": {
@@ -82355,6 +82451,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x71d350": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TerrainClass::MissionStubReturnZero4",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TerrainClass::MissionStubReturnZero4",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x71d370": {
   "attempts": 1,
   "clean": true,
@@ -83327,6 +83435,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x723710": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TiberiumClass::DrawOre",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TiberiumClass::DrawOre",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x723760": {
   "attempts": 2,
   "clean": true,
@@ -83714,6 +83834,18 @@
   "orig_name": "Frame::Init",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x724c10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "ToolTipManager::Destructor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "ToolTipClass::Destructor",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x724c60": {
@@ -84463,6 +84595,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x727cd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TriggerTypeClass::Destructor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TextRenderer::Destructor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x727cf0": {
   "attempts": 2,
   "clean": false,
@@ -84861,6 +85005,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x72a210": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TunnelLocomotionClass::ProcessMove",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TunnelLocomotionClass::ProcessMove",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x72a230": {
   "attempts": 1,
   "clean": true,
@@ -84970,6 +85126,18 @@
   "orig_name": "ObjectClass::setTarget",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x72a670": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "TextLabelClass::clearTarget",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "ObjectClass::clearTarget",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x72a690": {
@@ -87417,6 +87585,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x746e80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "UnitClass::Seek",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "C07F5C70::Seek",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x746ea0": {
   "attempts": 1,
   "first_diff": "+5 je 0x746eb6",
@@ -87954,6 +88134,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x74ab50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "VoxelAnimClass::DrawVoxel",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VoxelAnimClass::DrawVoxel",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x74aba0": {
   "attempts": 2,
   "clean": true,
@@ -88406,6 +88598,18 @@
   "name": "AbstractClass::checkBuildingPlacement",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x74f340": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+3 call 0x74c9f0",
+  "name": "VeinholeMonsterClass::SpreadTiberium",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "VeinholeMonsterClass::SpreadTiberium",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x74f390": {
   "attempts": 2,
@@ -91828,6 +92032,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x766a60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "GameOption_WorldDominationTour::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "GameOption_WorldDominationTour::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x766a80": {
   "attempts": 1,
   "clean": false,
@@ -92476,6 +92692,18 @@
   "name": "ObjectClass::Map_Load_7694C0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Map_Load_7694C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x769c00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "Map_WorldDominationTour::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Map_WorldDominationTour::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -93284,6 +93512,18 @@
   "orig_name": "Team_Start_76E2F0",
   "rule_violations": 3,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x76efe0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+3 call 0x76c6e0",
+  "name": "Selection_WorldDominationTour::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "WOL::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x76f000": {

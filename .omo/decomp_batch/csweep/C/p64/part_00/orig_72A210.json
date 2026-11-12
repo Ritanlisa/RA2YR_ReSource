@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A210",
+ "name": "TunnelLocomotionClass::ProcessMove",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A210",
+ "bytes_hex": "568bf1e8d804e3fff644240801740956e818e9090083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

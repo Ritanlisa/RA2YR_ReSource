@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A670",
+ "name": "ObjectClass::clearTarget",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A670",
+ "bytes_hex": "568bf1e8186ddbfff644240801740956e8b8e4090083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

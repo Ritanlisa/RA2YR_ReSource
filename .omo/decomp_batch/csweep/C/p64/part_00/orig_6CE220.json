@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CE220",
+ "name": "SuperClass::ProcessEvent",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CE220",
+ "bytes_hex": "568bf1e8f8cefffff644240801740956e808a90f0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

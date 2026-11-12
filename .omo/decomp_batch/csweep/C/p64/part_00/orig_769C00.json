@@ -1,0 +1,11 @@
+{
+ "addr": "0x769C00",
+ "name": "Map_WorldDominationTour::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x769C00",
+ "bytes_hex": "568bf1e8b8e4fffff644240801740956e828ef050083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

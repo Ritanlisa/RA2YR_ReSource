@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p64\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b1390 SlaveManagerClass::ProcessOrders -> SlaveManagerClass
+[conv] 0x6b8140 SpawnManagerClass::ProcessEvent -> SpawnManagerClass
+[conv] 0x6ce220 SuperClass::ProcessEvent -> SuperClass
+[conv] 0x6e58b0 TagClass::ProcessTrigger -> TagClass
+[conv] 0x6e64c0 TagTypeClass::ddtor -> TagTypeClass
+[conv] 0x6f0450 TeamClass::ProcessEvent -> TeamClass
+[conv] 0x7106e0 TechnoClass::ScalarDtor -> TechnoClass
+[conv] 0x7179a0 TechnoTypeClass::ddtor -> TechnoTypeClass
+[conv] 0x71d350 TerrainClass::MissionStubReturnZero4 -> TerrainClass
+[conv] 0x723710 TiberiumClass::DrawOre -> TiberiumClass
+[conv] 0x724c10 ToolTipManager::Destructor -> ToolTipManager
+[conv] 0x727cd0 TriggerTypeClass::Destructor -> TriggerTypeClass
+[conv] 0x72a210 TunnelLocomotionClass::ProcessMove -> TunnelLocomotionClass
+[conv] 0x72a670 TextLabelClass::clearTarget -> TextLabelClass
+[conv] 0x746e80 UnitClass::Seek -> UnitClass
+[conv] 0x74ab50 VoxelAnimClass::DrawVoxel -> VoxelAnimClass
+[conv] 0x74f340 VeinholeMonsterClass::SpreadTiberium -> VeinholeMonsterClass
+[conv] 0x766a60 GameOption_WorldDominationTour::QueryInterface -> GameOption_WorldDominationTour
+[conv] 0x769c00 Map_WorldDominationTour::QueryInterface -> Map_WorldDominationTour
+[conv] 0x76efe0 Selection_WorldDominationTour::QueryInterface -> Selection_WorldDominationTour
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SlaveManagerClass        rc=0
+[era] SpawnManagerClass        rc=0
+[era] SuperClass               rc=0
+[era] TagClass                 rc=0
+[era] TagTypeClass             rc=0
+[era] TeamClass                rc=0
+[era] TechnoClass              rc=0
+[era] TechnoTypeClass          rc=0
+[era] TerrainClass             rc=0
+[era] TiberiumClass            rc=0
+[era] ToolTipManager           rc=0
+[era] TriggerTypeClass         rc=0
+[era] TunnelLocomotionClass    rc=0
+[era] TextLabelClass           rc=0
+[era] UnitClass                rc=0
+[era] VoxelAnimClass           rc=2
+[era] VeinholeMonsterClass     rc=0
+[era] GameOption_WorldDominationTour rc=0
+[era] Map_WorldDominationTour  rc=0
+[era] Selection_WorldDominationTour rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b1390   MISMATCH         SlaveManagerClass::ProcessOrders
+[diff] 0x6b8140   MISMATCH         SpawnManagerClass::ProcessEvent
+[diff] 0x6ce220   MISMATCH         SuperClass::ProcessEvent
+[diff] 0x6e58b0   MISMATCH         TagClass::ProcessTrigger
+[diff] 0x6e64c0   MISMATCH         TagTypeClass::ddtor
+[diff] 0x6f0450   MISMATCH         TeamClass::ProcessEvent
+[diff] 0x7106e0   MISMATCH         TechnoClass::ScalarDtor
+[diff] 0x7179a0   MISMATCH         TechnoTypeClass::ddtor
+[diff] 0x71d350   MISMATCH         TerrainClass::MissionStubReturnZero4
+[diff] 0x723710   MISMATCH         TiberiumClass::DrawOre
+[diff] 0x724c10   MISMATCH         ToolTipManager::Destructor
+[diff] 0x727cd0   MISMATCH         TriggerTypeClass::Destructor
+[diff] 0x72a210   MISMATCH         TunnelLocomotionClass::ProcessMove
+[diff] 0x72a670   MISMATCH         TextLabelClass::clearTarget
+[diff] 0x746e80   MISMATCH         UnitClass::Seek
+[diff] 0x74f340   MISMATCH         VeinholeMonsterClass::SpreadTiberium
+[diff] 0x766a60   MISMATCH         GameOption_WorldDominationTour::QueryInterface
+[diff] 0x769c00   MISMATCH         Map_WorldDominationTour::QueryInterface
+[diff] 0x76efe0   MISMATCH         Selection_WorldDominationTour::QueryInterface
+[ledger] 0x6b1390 SlaveManagerClass::ProcessOrders -> NG (attempt 1)
+[ledger] 0x6b8140 SpawnManagerClass::ProcessEvent -> NG (attempt 1)
+[ledger] 0x6ce220 SuperClass::ProcessEvent -> NG (attempt 1)
+[ledger] 0x6e58b0 TagClass::ProcessTrigger -> NG (attempt 1)
+[ledger] 0x6e64c0 TagTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x6f0450 TeamClass::ProcessEvent -> NG (attempt 1)
+[ledger] 0x7106e0 TechnoClass::ScalarDtor -> NG (attempt 1)
+[ledger] 0x7179a0 TechnoTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x71d350 TerrainClass::MissionStubReturnZero4 -> NG (attempt 1)
+[ledger] 0x723710 TiberiumClass::DrawOre -> NG (attempt 1)
+[ledger] 0x724c10 ToolTipManager::Destructor -> NG (attempt 1)
+[ledger] 0x727cd0 TriggerTypeClass::Destructor -> NG (attempt 1)
+[ledger] 0x72a210 TunnelLocomotionClass::ProcessMove -> NG (attempt 1)
+[ledger] 0x72a670 TextLabelClass::clearTarget -> NG (attempt 1)
+[ledger] 0x746e80 UnitClass::Seek -> NG (attempt 1)
+[ledger] 0x74ab50 VoxelAnimClass::DrawVoxel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74f340 VeinholeMonsterClass::SpreadTiberium -> NG (attempt 1)
+[ledger] 0x766a60 GameOption_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x769c00 Map_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x76efe0 Selection_WorldDominationTour::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 17,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p64\batch_report.json
