@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CA564",
+ "name": "_swprintf",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CA564",
+ "bytes_hex": "558bec83ec208b4508568945e88945e08d4510c745ec42000000508d45e0ff750cc745e4ffffff7f50e82c7c000083c40cff4de48bf0780b8b45e0802000ff45e0eb0d8d45e0506a00e8db3b00005959ff4de478088b45e0802000eb0d8d45e0506a00e8c13b000059598bc65ec9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

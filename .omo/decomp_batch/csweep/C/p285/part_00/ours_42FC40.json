@@ -1,0 +1,15 @@
+{
+ "symbol": "?Vector_Constructor@BaseNodeClass@@QAEPAV1@HH@Z",
+ "sym_key": "BaseNodeClass::Vector_Constructor",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b4e0cc746040000000081e10100ffff89460883c901c7060000000085c0894e0c74498b4c240c85c97409894e048bc65ec20800c1e00450e80000000083c40485c074158b560c89460480e6018bc680ce0189560c5ec208008b460cc746040000000080e40180cc0189460c8bc65ec20800",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsYellowHP@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::IsYellowHP",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf133c0568a466c8b0e89442408db442408dd5c2408ff9188000000db80a00000008b1540020000dc7c2404dc9a08170000dfe0f6c441754133c08b0e8a466c5689442408db442408dd5c2408ff9188000000db80a00000008b1540020000dc7c2404dc9a00170000dfe0f6c441740ab8010000005e83c408c333c05e83c408c3",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

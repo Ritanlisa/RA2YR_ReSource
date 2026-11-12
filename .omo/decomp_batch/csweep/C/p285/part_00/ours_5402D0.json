@@ -1,0 +1,27 @@
+{
+ "symbol": "?Send@IPXGlobalConnClass@@QAEHXZ",
+ "sym_key": "IPXGlobalConnClass::Send",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5356578bf933db33f68b4f048b412885c07e4d56e8000000008b00a8047438a80275348d4c240ce8000000008d4c24106a008d5424108bc65152508d4424248d4c242850518b4f04c74424280c0000004ee800000000438b4f04463b712872b35f8bc35e5b83c40cc3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetTileIndex@Terrain@@QAEHH@Z",
+   "sym_key": "Terrain::GetTileIndex"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?ExtractEntry@PacketQueue@@QAEHPAX0H000@Z",
+   "sym_key": "PacketQueue::ExtractEntry"
+  }
+ ]
+}

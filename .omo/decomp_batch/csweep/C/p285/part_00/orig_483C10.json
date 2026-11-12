@@ -1,0 +1,11 @@
+{
+ "addr": "0x483C10",
+ "name": "CellClass::SaveLoad_Prefix_0",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x483C10",
+ "bytes_hex": "8b44240c538b5c2408568b74241057505653e8f9c6f8ff85c07c4e8b432885c074458b48108b166a008d44241c6a045056894c2428ff521085c07c2d8b44241833ff85c07e218b53288b0e6a006a048b42048d14b85256ff511085c07c098b442418473bf87cdf33c05f5e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

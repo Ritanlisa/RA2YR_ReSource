@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor_0@RandomMap@@QAEPAIHH@Z",
+ "sym_key": "RandomMap::Constructor_0",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "568b4424088bf18b4e0cc746040000000080e10189460883c901c70600000000894e0cc6460c0085c074398b4c240c85c97409894e0433c05ec20800c1e00450e80000000083c40485c0740d8946048b06c6460c015ec20800c6460c01c74604000000008b065ec20800",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p285\part_00
+=== convert (20 addrs) ===
+[conv] 0x6521c0 Network::RecordEvent -> Network
+[conv] 0x6b2430 sub_6B2430 -> _addr_6B
+[conv] 0x49f550 globalHelper_09F550 -> _addr_49
+[conv] 0x7559d0 sub_7559D0 -> _addr_75
+[conv] 0x69d4b0 _VectorClass_VWstring::QueryInterface -> _VectorClass_VWstring
+[conv] 0x69d520 _DynamicVectorClass_VWstring::QueryInterface -> _DynamicVectorClass_VWstring
+[conv] 0x7ca564 _swprintf -> _addr_7C
+[conv] 0x65cac0 BufferIOFileClass::SetName -> BufferIOFileClass
+[conv] 0x483c10 CellClass::SaveLoad_Prefix_0 -> CellClass
+[conv] 0x42fc40 BaseNodeClass::Vector_Constructor -> BaseNodeClass
+[conv] 0x4a1750 CellClass::Cleanup -> CellClass
+[conv] 0x5ada40 RandomMap::Constructor_0 -> RandomMap
+[conv] 0x483620 BuildingClass::IsTiberiumCollectorEligible -> BuildingClass
+[conv] 0x6e4090 LoadBuildingClass -> _addr_6E
+[conv] 0x70c620 TechnoClass::CheckCliffTransition -> TechnoClass
+[conv] 0x5f5d20 ObjectClass::IsYellowHP -> ObjectClass
+[conv] 0x49d9f0 SideClass::FindByName -> SideClass
+[conv] 0x5402d0 IPXGlobalConnClass::Send -> IPXGlobalConnClass
+[conv] 0x483710 ObjectClass::sub_483710 -> ObjectClass
+[conv] 0x4c6b60 SidebarClass::SetFlashEntry -> SidebarClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Network                  rc=2
+[era] _addr_6B                 rc=0
+[era] _addr_49                 rc=0
+[era] _addr_75                 rc=0
+[era] _VectorClass_VWstring    rc=0
+[era] _DynamicVectorClass_VWstring rc=0
+[era] _addr_7C                 rc=0
+[era] BufferIOFileClass        rc=2
+[era] CellClass                rc=2
+[era] BaseNodeClass            rc=0
+[era] RandomMap                rc=0
+[era] BuildingClass            rc=2
+[era] _addr_6E                 rc=0
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] SideClass                rc=0
+[era] IPXGlobalConnClass       rc=0
+[era] SidebarClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x6b2430   MISMATCH         sub_6B2430
+[diff] 0x49f550   MISMATCH         globalHelper_09F550
+[diff] 0x7559d0   MISMATCH         sub_7559D0
+[diff] 0x69d4b0   MISMATCH         _VectorClass_VWstring::QueryInterface
+[diff] 0x69d520   MISMATCH         _DynamicVectorClass_VWstring::QueryInterface
+[diff] 0x7ca564   MISMATCH         _swprintf
+[diff] 0x483c10   MISMATCH         CellClass::SaveLoad_Prefix_0
+[diff] 0x42fc40   MISMATCH         BaseNodeClass::Vector_Constructor
+[diff] 0x5ada40   MISMATCH         RandomMap::Constructor_0
+[diff] 0x6e4090   MISMATCH         LoadBuildingClass
+[diff] 0x5f5d20   MISMATCH         ObjectClass::IsYellowHP
+[diff] 0x49d9f0   MISMATCH         SideClass::FindByName
+[diff] 0x5402d0   MISMATCH         IPXGlobalConnClass::Send
+[ledger] 0x6521c0 Network::RecordEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b2430 sub_6B2430 -> NG (attempt 1)
+[ledger] 0x49f550 globalHelper_09F550 -> NG (attempt 1)
+[ledger] 0x7559d0 sub_7559D0 -> NG (attempt 1)
+[ledger] 0x69d4b0 _VectorClass_VWstring::QueryInterface -> NG (attempt 1)
+[ledger] 0x69d520 _DynamicVectorClass_VWstring::QueryInterface -> NG (attempt 1)
+[ledger] 0x7ca564 _swprintf -> NG (attempt 1)
+[ledger] 0x65cac0 BufferIOFileClass::SetName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x483c10 CellClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x42fc40 BaseNodeClass::Vector_Constructor -> NG (attempt 1)
+[ledger] 0x4a1750 CellClass::Cleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ada40 RandomMap::Constructor_0 -> NG (attempt 1)
+[ledger] 0x483620 BuildingClass::IsTiberiumCollectorEligible -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e4090 LoadBuildingClass -> NG (attempt 1)
+[ledger] 0x70c620 TechnoClass::CheckCliffTransition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f5d20 ObjectClass::IsYellowHP -> NG (attempt 1)
+[ledger] 0x49d9f0 SideClass::FindByName -> NG (attempt 1)
+[ledger] 0x5402d0 IPXGlobalConnClass::Send -> NG (attempt 1)
+[ledger] 0x483710 ObjectClass::sub_483710 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c6b60 SidebarClass::SetFlashEntry -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "frame_sched": 2,
+  "const_fold": 1,
+  "codegen_shape": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p285\batch_report.json

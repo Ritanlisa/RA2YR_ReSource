@@ -1,0 +1,11 @@
+{
+ "addr": "0x49F550",
+ "name": "globalHelper_09F550",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49F550",
+ "bytes_hex": "83ec0c8b02568bf1578b4c2418528b3ccdd8f689008b0ccddcf6890003c78b7a0403cf8b7a08894c2410b9e8f787008944240c897c2414e8f48a0d008b7c2410b9e8f787002bf88d44240850e8df8a0d008bce03c78b5424085f89118b5424088951048941088bc65e83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

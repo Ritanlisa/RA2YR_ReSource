@@ -1,0 +1,39 @@
+{
+ "symbol": "?LoadBuildingClass@@YGDHHHH@Z",
+ "sym_key": "Unnamed::LoadBuildingClass",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "a10000000053565733ff85c077085f5e32c05bc210008b5c2418a1000000008b34b88a869000000084c074268a467484c0741f8a868100000084c075158b463485c0740e5350e80000000083c40885c07512a100000000473bf872be5f5e32c05bc210006a006a008bcee8000000005f5eb0015bc21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_BuildingProductionState@@3IA",
+   "sym_key": "g_BuildingProductionState"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_BuildingClass_InstanceCount@@3PAXA",
+   "sym_key": "g_BuildingClass_InstanceCount"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?LinkedList__Contains@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Contains"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_BuildingProductionState@@3IA",
+   "sym_key": "g_BuildingProductionState"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?UnloadUnits@BuildingClass@@QAEHDD@Z",
+   "sym_key": "BuildingClass::UnloadUnits"
+  }
+ ]
+}

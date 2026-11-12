@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E4090",
+ "name": "LoadBuildingClass",
+ "size": 112,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E4090",
+ "bytes_hex": "a150eba8005355565732db33ff85c07e428b6c241ca144eba8008b34b88a869000000084c074228a467484c0741b8a868100000084c075118b4e3485c9740a55e8ab12000084c07513a150eba800473bf87cc25f5e8ac35d5bc210006a006a008bcee8e93cd7ff5f5e5db0015bc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

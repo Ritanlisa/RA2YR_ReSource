@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F5D20",
+ "name": "ObjectClass::IsYellowHP",
+ "size": 112,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F5D20",
+ "bytes_hex": "83ec08568bf1db466c8b06dd5c2404ff9088000000db80a00000008b0de0718800dc7c2404dc9908170000dfe0f6c4417537db466c8b168bcedd5c2404ff9288000000db80a0000000a1e0718800dc7c2404dc9800170000dfe0f6c441740ab8010000005e83c408c333c05e83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

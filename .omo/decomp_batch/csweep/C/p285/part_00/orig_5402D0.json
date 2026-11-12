@@ -1,0 +1,11 @@
+{
+ "addr": "0x5402D0",
+ "name": "IPXGlobalConnClass::Send",
+ "size": 112,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5402D0",
+ "bytes_hex": "81ec140400005356578bf933db33f68b4f048b412885c07e4b56e831b4f4ff8b00a8047436a80275328d4c2414e8aee9ffff8d44240c6a008d4c241850518b4f048d54241c568d4424305250c74424240c000000e847b2f4ff4e438b4f04463b71287cb55f8bc35e5b81c414040000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

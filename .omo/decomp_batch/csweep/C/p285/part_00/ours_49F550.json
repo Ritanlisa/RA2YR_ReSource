@@ -1,0 +1,33 @@
+{
+ "symbol": "?globalHelper_09F550@@YIPAHPAH0H@Z",
+ "sym_key": "Unnamed::globalHelper_09F550",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "8b44240453568bf18b1cc5000000008b4a048b04c50000000003d98b0a578b7a0803c15289442414e8000000008d4c24102bf851e80000000003c7895e048b54241089460889168bc65f5e5bc20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F6DC@@3PAIA",
+   "sym_key": "DataGlobal_89F6DC"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F6D8@@3PAIA",
+   "sym_key": "DataGlobal_89F6D8"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  }
+ ]
+}

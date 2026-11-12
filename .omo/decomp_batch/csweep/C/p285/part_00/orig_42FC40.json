@@ -1,0 +1,11 @@
+{
+ "addr": "0x42FC40",
+ "name": "BaseNodeClass::Vector_Constructor",
+ "size": 112,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42FC40",
+ "bytes_hex": "56578b7c240c8bf185ffc7460400000000897e08c6460c01c6460d00c706f0387e0074458b44241085c0740f4f894604897c240c8bc65f5ec208008bc7c1e00450e89191390083c40485c074134f894604897c240cc6460d018bc65f5ec2080033c0c6460d018946048bc65f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x69D4B0",
+ "name": "VectorClass_Wstring::QueryInterface",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69D4B0",
+ "bytes_hex": "578bf98b4704c70794127f0085c0743d8a4f0d84c9743685c0742b8b48fc538d58fc568d3488497812558d690183ee048bcee8097211004d75f35d53e84cb6120083c4045e5bc74704000000008a442408c6470d00a801c7470800000000740957e827b6120083c4048bc75fc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

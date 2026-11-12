@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_7559D0@@YIPAMPAM0PAXN@Z",
+ "sym_key": "Unnamed::sub_7559D0",
+ "size": 111,
+ "link_base": 0,
+ "bytes_hex": "83ec408bc23bc85657751f8b7c244c8d3440c1e60481c600000000b90c000000f3a55f5e83c440c20c00dd442450518bd1c1e004d91c2405000000008d4c240cc1e2045081c200000000e8000000008bd08d4c2418e8000000008b7c244cb90c0000008bf0f3a55f5e83c440c20c00",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B43F10@@3IA",
+   "sym_key": "DataGlobal_B43F10"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B44348@@3PAIA",
+   "sym_key": "DataGlobal_B44348"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B44348@@3PAIA",
+   "sym_key": "DataGlobal_B44348"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Math__QuaternionSlerp@@YIPAIPAX00M@Z",
+   "sym_key": "Math__QuaternionSlerp"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?ToQuaternionMatrix@@YIPAMPAX0@Z",
+   "sym_key": "ToQuaternionMatrix"
+  }
+ ]
+}
