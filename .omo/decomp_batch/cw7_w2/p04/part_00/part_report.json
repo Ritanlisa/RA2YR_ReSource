@@ -1,0 +1,81 @@
+{
+ "summary": {
+  "total": 4,
+  "verdicts": {
+   "COMPILE_FAIL": 4
+  },
+  "pathologies": {},
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x7dae6e",
+   "batch": "batch",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw7_w2\\p04\\part_00\\_addr_7D.cpp(12) : error C2065: '_ctype' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw7_w2\\p04\\part_00\\_addr_7D.cpp(12) : error",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CRTisctype",
+   "emitted": "CRTisctype",
+   "unit": "_addr_7D",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x7df9c0",
+   "batch": "batch",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw7_w2\\p04\\part_00\\Voxel.cpp(84) : error C2105: '--' needs l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw7_w2\\p04\\part_00\\Voxel.cpp(98) : error C2105: '--' needs l",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Voxel::FacePixelBuffer",
+   "emitted": "Voxel::FacePixelBuffer",
+   "unit": "Voxel",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "6/24",
+   "rule_violations": 1,
+   "clean": false
+  },
+  {
+   "addr": "0x7dfae0",
+   "batch": "batch",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw7_w2\\p04\\part_00\\Voxel.cpp(84) : error C2105: '--' needs l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw7_w2\\p04\\part_00\\Voxel.cpp(98) : error C2105: '--' needs l",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Voxel::FacePixelBufferEx",
+   "emitted": "Voxel::FacePixelBufferEx",
+   "unit": "Voxel",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "6/23",
+   "rule_violations": 22,
+   "clean": false
+  },
+  {
+   "addr": "0x7dfc00",
+   "batch": "batch",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw7_w2\\p04\\part_00\\Voxel.cpp(84) : error C2105: '--' needs l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw7_w2\\p04\\part_00\\Voxel.cpp(98) : error C2105: '--' needs l",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Voxel::FacePixelBuffer3",
+   "emitted": "Voxel::FacePixelBuffer3",
+   "unit": "Voxel",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "5/22",
+   "rule_violations": 1,
+   "clean": false
+  }
+ ]
+}
