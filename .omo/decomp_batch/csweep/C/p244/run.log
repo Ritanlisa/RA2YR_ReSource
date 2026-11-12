@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p244\part_00
+=== convert (20 addrs) ===
+[conv] 0x746e30 TechnoClass::checkIronCurtainState -> TechnoClass
+[conv] 0x74f650 _VectorClass_PAVVeinholeMonsterClass::QueryInterface -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x751b90 _VectorClass_PAVVocClass::QueryInterface -> _VectorClass_PAVVocClass
+[conv] 0x751be0 _DynamicVectorClass_PAVVocClass::Constructor_VectorClass_VocClass___ -> _DynamicVectorClass_PAVVocClass
+[conv] 0x753910 _VectorClass_PAVVoxClass::QueryInterface -> _VectorClass_PAVVoxClass
+[conv] 0x753960 _DynamicVectorClass_PAVVoxClass::findItem -> _DynamicVectorClass_PAVVoxClass
+[conv] 0x75a6f0 _VectorClass_PAVMovieHandle::QueryInterface -> _VectorClass_PAVMovieHandle
+[conv] 0x75a740 _DynamicVectorClass_PAVMovieHandle::Constructor_VectorClass_MovieHandle___ -> _DynamicVectorClass_PAVMovieHandle
+[conv] 0x7646c0 _VectorClass_PAVWaypointPathClass::QueryInterface -> _VectorClass_PAVWaypointPathClass
+[conv] 0x764710 _DynamicVectorClass_PAVWaypointPathClass::Constructor_VectorClass_WaypointPathClass___ -> _DynamicVectorClass_PAVWaypointPathClass
+[conv] 0x76a6d0 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::QueryInterface -> _VectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x76a770 _VectorClass_VCentroid_WorldDominationTour::QueryInterface -> _VectorClass_VCentroid_WorldDominationTour
+[conv] 0x7ad370 _VectorClass_PAUtConnInfoStruct::QueryInterface -> _VectorClass_PAUtConnInfoStruct
+[conv] 0x7ad3c0 _DynamicVectorClass_PAUtConnInfoStruct::Constructor_VectorClass_tConnInfoStruct___ -> _DynamicVectorClass_PAUtConnInfoStruct
+[conv] 0x7b2b00 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::QueryInterface -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b2b50 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::closeSession -> _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b4580 _VectorClass_PAE::QueryInterface -> _VectorClass_PAE
+[conv] 0x7b45d0 _DynamicVectorClass_PAE::receivePacket -> _DynamicVectorClass_PAE
+[conv] 0x63f8f0 ObjectClass::sub_63F8F0 -> ObjectClass
+[conv] 0x4d9c10 FootClass::Destru_vt107 -> FootClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] _VectorClass_PAVVeinholeMonsterClass rc=2
+[era] _VectorClass_PAVVocClass rc=0
+[era] _DynamicVectorClass_PAVVocClass rc=0
+[era] _VectorClass_PAVVoxClass rc=0
+[era] _DynamicVectorClass_PAVVoxClass rc=0
+[era] _VectorClass_PAVMovieHandle rc=0
+[era] _DynamicVectorClass_PAVMovieHandle rc=0
+[era] _VectorClass_PAVWaypointPathClass rc=0
+[era] _DynamicVectorClass_PAVWaypointPathClass rc=0
+[era] _VectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _VectorClass_VCentroid_WorldDominationTour rc=0
+[era] _VectorClass_PAUtConnInfoStruct rc=0
+[era] _DynamicVectorClass_PAUtConnInfoStruct rc=0
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _VectorClass_PAE         rc=0
+[era] _DynamicVectorClass_PAE  rc=0
+[era] ObjectClass              rc=0
+[era] FootClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x746e30   MISMATCH         TechnoClass::checkIronCurtainState
+[diff] 0x751b90   MISMATCH         _VectorClass_PAVVocClass::QueryInterface
+[diff] 0x751be0   MISMATCH         _DynamicVectorClass_PAVVocClass::Constructor_VectorClass_VocClass___
+[diff] 0x753910   MISMATCH         _VectorClass_PAVVoxClass::QueryInterface
+[diff] 0x753960   MISMATCH         _DynamicVectorClass_PAVVoxClass::findItem
+[diff] 0x75a6f0   MISMATCH         _VectorClass_PAVMovieHandle::QueryInterface
+[diff] 0x75a740   MISMATCH         _DynamicVectorClass_PAVMovieHandle::Constructor_VectorClass_MovieHandle___
+[diff] 0x7646c0   MISMATCH         _VectorClass_PAVWaypointPathClass::QueryInterface
+[diff] 0x764710   MISMATCH         _DynamicVectorClass_PAVWaypointPathClass::Constructor_VectorClass_WaypointPathClass___
+[diff] 0x76a6d0   MISMATCH         _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::QueryInterface
+[diff] 0x76a770   MISMATCH         _VectorClass_VCentroid_WorldDominationTour::QueryInterface
+[diff] 0x7ad370   MISMATCH         _VectorClass_PAUtConnInfoStruct::QueryInterface
+[diff] 0x7ad3c0   MISMATCH         _DynamicVectorClass_PAUtConnInfoStruct::Constructor_VectorClass_tConnInfoStruct___
+[diff] 0x7b2b00   MISMATCH         _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::QueryInterface
+[diff] 0x7b2b50   MISMATCH         _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::closeSession
+[diff] 0x7b4580   MISMATCH         _VectorClass_PAE::QueryInterface
+[diff] 0x7b45d0   MISMATCH         _DynamicVectorClass_PAE::receivePacket
+[diff] 0x63f8f0   MISMATCH         ObjectClass::sub_63F8F0
+[ledger] 0x746e30 TechnoClass::checkIronCurtainState -> NG (attempt 1)
+[ledger] 0x74f650 _VectorClass_PAVVeinholeMonsterClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x751b90 _VectorClass_PAVVocClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x751be0 _DynamicVectorClass_PAVVocClass::Constructor_VectorClass_VocClass___ -> NG (attempt 1)
+[ledger] 0x753910 _VectorClass_PAVVoxClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x753960 _DynamicVectorClass_PAVVoxClass::findItem -> NG (attempt 1)
+[ledger] 0x75a6f0 _VectorClass_PAVMovieHandle::QueryInterface -> NG (attempt 1)
+[ledger] 0x75a740 _DynamicVectorClass_PAVMovieHandle::Constructor_VectorClass_MovieHandle___ -> NG (attempt 1)
+[ledger] 0x7646c0 _VectorClass_PAVWaypointPathClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x764710 _DynamicVectorClass_PAVWaypointPathClass::Constructor_VectorClass_WaypointPathClass___ -> NG (attempt 1)
+[ledger] 0x76a6d0 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x76a770 _VectorClass_VCentroid_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x7ad370 _VectorClass_PAUtConnInfoStruct::QueryInterface -> NG (attempt 1)
+[ledger] 0x7ad3c0 _DynamicVectorClass_PAUtConnInfoStruct::Constructor_VectorClass_tConnInfoStruct___ -> NG (attempt 1)
+[ledger] 0x7b2b00 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x7b2b50 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::closeSession -> NG (attempt 1)
+[ledger] 0x7b4580 _VectorClass_PAE::QueryInterface -> NG (attempt 1)
+[ledger] 0x7b45d0 _DynamicVectorClass_PAE::receivePacket -> NG (attempt 1)
+[ledger] 0x63f8f0 ObjectClass::sub_63F8F0 -> NG (attempt 1)
+[ledger] 0x4d9c10 FootClass::Destru_vt107 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "eval_order": 1,
+  "const_fold": 16,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p244\batch_report.json

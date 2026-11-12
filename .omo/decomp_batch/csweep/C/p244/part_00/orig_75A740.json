@@ -1,0 +1,11 @@
+{
+ "addr": "0x75A740",
+ "name": "VectorClass_ptr_MovieHandle::Constructor_VectorClass_MovieHandle___",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75A740",
+ "bytes_hex": "568bf18b4604c706a4697f0085c074178a4e0d84c9741050e8e0e3060083c404c74604000000008a442408c6460d00a801c7460800000000740956e8bde3060083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?checkIronCurtainState@TechnoClass@@QAEPAIPAH@Z",
+ "sym_key": "TechnoClass::checkIronCurtainState",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "518b81c4060000894c24008a90a10c000084d2741e8b89a00300008d54240052e8000000008b4c24088b0089018bc159c204008b89880300008d44240050e8000000008b4c24088b0089018bc159c20400",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  }
+ ]
+}

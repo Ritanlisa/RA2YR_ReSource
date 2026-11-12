@@ -1,0 +1,11 @@
+{
+ "addr": "0x746E30",
+ "name": "TechnoClass::checkIronCurtainState",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746E30",
+ "bytes_hex": "518b81c40600008a90a10c000084d2741c8d54240081c1a003000052e87f25d8ff8b088b442408890859c204008d54240081c18803000052e86325d8ff8b088b442408890859c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

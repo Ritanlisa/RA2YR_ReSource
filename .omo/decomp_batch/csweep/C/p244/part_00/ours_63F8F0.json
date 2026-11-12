@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_63F8F0@ObjectClass@@QAE_JH@Z",
+ "sym_key": "ObjectClass::sub_63F8F0",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf1e8000000008b8e341500008b963015000003ca8b962c15000003ca894424083bc8894c24047e0489442404db44240483ec08da742410dc0d00000000dd1c24e8000000008bc825ff000000c1f91066894c24148b4c24108b74241480e1009983c4080bc10bd65e83c40cc20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?CalcFill@PowerBar@@QAEHXZ",
+   "sym_key": "PowerBar::CalcFill"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?dbl_7E3568@@3NA",
+   "sym_key": "dbl_7E3568"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}
