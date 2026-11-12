@@ -1,0 +1,111 @@
+{
+ "symbol": "?EnqueueAsyncIOMovie@@YIXHD@Z",
+ "sym_key": "Unnamed::EnqueueAsyncIOMovie",
+ "size": 188,
+ "link_base": 0,
+ "bytes_hex": "535685c98ada0f8cad0000003b0d000000000f83a1000000a1000000008b0c88a10000000085c00f858c0000008b15000000006a00e8000000008bf085f674798b1500000000a1000000008b0e4a83c0fd525056ff51188b0e680000000056ff5120885e04a100000000390500000000722f8a0d0000000084c9750485c075398b0d0000000085c9762f8b150000000003c86a00516800000000ff520884c074188b0d000000008bc141890d000000008b0d000000008934815e5bc3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF3A0@@3IA",
+   "sym_key": "DataGlobal_ABF3A0"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF394@@3IA",
+   "sym_key": "DataGlobal_ABF394"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?CreateMovie@@YIPAIHPAXPAH@Z",
+   "sym_key": "CreateMovie"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809DC@@3IA",
+   "sym_key": "DataGlobal_8809DC"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809D8@@3IA",
+   "sym_key": "DataGlobal_8809D8"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?sub_5BF360@@YAHPBX0@Z",
+   "sym_key": "sub_5BF360"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45B60@@3IA",
+   "sym_key": "DataGlobal_B45B60"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_AsyncIOState@@3IA",
+   "sym_key": "g_AsyncIOState"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45B65@@3EA",
+   "sym_key": "DataGlobal_B45B65"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45B6C@@3IA",
+   "sym_key": "DataGlobal_B45B6C"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45B58@@3IA",
+   "sym_key": "DataGlobal_B45B58"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45B58@@3IA",
+   "sym_key": "DataGlobal_B45B58"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_AsyncIOState@@3IA",
+   "sym_key": "g_AsyncIOState"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?g_AsyncIOState@@3IA",
+   "sym_key": "g_AsyncIOState"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?AsyncIO_Instance@@3PAXA",
+   "sym_key": "AsyncIO_Instance"
+  }
+ ]
+}

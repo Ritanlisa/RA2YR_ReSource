@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_4DB8A0@TechnoClass@@QAEPAXH@Z",
+ "sym_key": "TechnoClass::sub_4DB8A0",
+ "size": 283,
+ "link_base": 0,
+ "bytes_hex": "83ec0853578bf98b9f7406000085db74068b0353ff50046a076a008d4c2410680000000051c744241800000000e80000000083c41085c07d103d02400080740950e80000000083c4048b44240885c075116803400080e8000000008b44240c83c4048b105750ff520c8b442408c744240c0000000085c0742a8d4424088d4c240c50e80000000085c07d103d02400080740950e80000000083c4048b44240c85c075116803400080e8000000008b44241083c4048b08565350ff510c8bb7740600008b44240c3bf0742285c0898774060000740a8b1050ff52048b44240c85f6740a8b0656ff50088b44240c8b4c24105e85c9740a8b1151ff52088b44240885c074068b0850ff510885db74068b1353ff52085f5b83c408c20400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_CLSID_DriveLocomotion@@3U_GUID_era@@A",
+   "sym_key": "g_CLSID_DriveLocomotion"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?CreateInstanceCOM@@YAHPAX0HH@Z",
+   "sym_key": "CreateInstanceCOM"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?Set@StreamClass@@QAEHPAX@Z",
+   "sym_key": "StreamClass::Set"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

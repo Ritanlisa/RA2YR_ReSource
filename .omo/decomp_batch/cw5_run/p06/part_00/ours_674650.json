@@ -1,0 +1,105 @@
+{
+ "symbol": "?ReadButtonList@SidebarClass@@QAEEXZ",
+ "sym_key": "SidebarClass::ReadButtonList",
+ "size": 208,
+ "link_base": 0,
+ "bytes_hex": "8a8424fbfdffff81ec0802000084c05357bf000000007505bf000000008b5c240c578bcbe80000000085c00f84940000005633f68b15000000008bcee8000000004683fe197ced8b0d000000008d442414680002000050680000000051578bcbe80000000085c0744e8d54241468000000005233ff33f6e80000000083c40885c0742d8bc8e8000000003b050000000074098bd68bc8e8000000006800000000476a0046e80000000083c40885c075d38bcfe80000000024015e5f0c015b81c408020000c35f33c05b81c408020000c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839D1C@@3PADA",
+   "sym_key": "DataGlobal_839D1C"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839D3C@@3PADA",
+   "sym_key": "DataGlobal_839D3C"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?BinarySearchSection@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::BinarySearchSection"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8427CC@@3IA",
+   "sym_key": "DataGlobal_8427CC"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?globalHelper_0CFD20@@YIXHH@Z",
+   "sym_key": "globalHelper_0CFD20"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?aButtonlist@@3HA",
+   "sym_key": "aButtonlist"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?findEntryIndexByName@SidebarClass@@QAEHXZ",
+   "sym_key": "SidebarClass::findEntryIndexByName"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8427CC@@3IA",
+   "sym_key": "DataGlobal_8427CC"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?globalHelper_0CFD20@@YIXHH@Z",
+   "sym_key": "globalHelper_0CFD20"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?globalHelper_0CFDB0@@YIHH@Z",
+   "sym_key": "globalHelper_0CFDB0"
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x409030 WriteAudioStreamToFile -> _addr_40
+[conv] 0x7afad0 Team_Start_7AFAD0 -> Team_Start
+[conv] 0x746420 TechnoClass::CaptureTurret -> TechnoClass
+[conv] 0x5bf390 EnqueueAsyncIOMovie -> _addr_5B
+[conv] 0x690a10 ScoreScreen::LoadScoreFont -> ScoreScreen
+[conv] 0x7d6830 ___init_monetary -> _addr_7D
+[conv] 0x476420 INIClass::GetCoord2 -> INIClass
+[conv] 0x4d02b0 VoxelAnimClass::UpdateMatrix -> VoxelAnimClass
+[conv] 0x6e15f0 ObjectClass::ReadINIEntry -> ObjectClass
+[conv] 0x674650 SidebarClass::ReadButtonList -> SidebarClass
+[conv] 0x6e35f0 ObjectClass::sub_6E35F0 -> ObjectClass
+[conv] 0x436f40 BuildingLightClass::SD_vt13 -> BuildingLightClass
+[conv] 0x731af0 ObjectClass::BlowStraw_29_Get -> ObjectClass
+[conv] 0x7af3d0 ObjectClass::GetRegionStringWOL -> ObjectClass
+[conv] 0x5ce7d0 MSPCXAnim::Load -> MSPCXAnim
+[conv] 0x5d1b30 MSEngine::Destruct -> MSEngine
+[conv] 0x6ce0b0 SuperClass::Reset -> SuperClass
+[conv] 0x7b7f90 ToWideStringCharAlt -> _addr_7B
+[conv] 0x7cc309 __mbstowcs_lk -> _addr_7C
+[conv] 0x4db8a0 TechnoClass::sub_4DB8A0 -> TechnoClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=2
+[era] Team_Start               rc=0
+[era] TechnoClass              rc=0
+[era] _addr_5B                 rc=0
+[era] ScoreScreen              rc=2
+[era] _addr_7D                 rc=2
+[era] INIClass                 rc=0
+[era] VoxelAnimClass           rc=0
+[era] ObjectClass              rc=2
+[era] SidebarClass             rc=0
+[era] BuildingLightClass       rc=0
+[era] MSPCXAnim                rc=2
+[era] MSEngine                 rc=2
+[era] SuperClass               rc=2
+[era] _addr_7B                 rc=2
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7afad0   MISMATCH         Team_Start_7AFAD0
+[diff] 0x746420   MISMATCH         TechnoClass::CaptureTurret
+[diff] 0x4db8a0   MISMATCH         TechnoClass::sub_4DB8A0
+[diff] 0x5bf390   MISMATCH         EnqueueAsyncIOMovie
+[diff] 0x476420   MISMATCH         INIClass::GetCoord2
+[diff] 0x4d02b0   MISMATCH         VoxelAnimClass::UpdateMatrix
+[diff] 0x6e15f0   MISMATCH         ObjectClass::ReadINIEntry
+[diff] 0x731af0   MISMATCH         ObjectClass::BlowStraw_29_Get
+[diff] 0x7af3d0   MISMATCH         ObjectClass::GetRegionStringWOL
+[diff] 0x674650   MISMATCH         SidebarClass::ReadButtonList
+[diff] 0x436f40   MISMATCH         BuildingLightClass::SD_vt13
+[ledger] 0x409030 WriteAudioStreamToFile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7afad0 Team_Start_7AFAD0 -> NG (attempt 4)
+[ledger] 0x746420 TechnoClass::CaptureTurret -> NG (attempt 12)
+[ledger] 0x5bf390 EnqueueAsyncIOMovie -> NG (attempt 5)
+[ledger] 0x690a10 ScoreScreen::LoadScoreFont -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d6830 ___init_monetary -> COMPILE_FAIL (attempt 5)
+[ledger] 0x476420 INIClass::GetCoord2 -> NG (attempt 4)
+[ledger] 0x4d02b0 VoxelAnimClass::UpdateMatrix -> NG (attempt 4)
+[ledger] 0x6e15f0 ObjectClass::ReadINIEntry -> NG (attempt 14)
+[ledger] 0x674650 SidebarClass::ReadButtonList -> NG (attempt 4)
+[ledger] 0x6e35f0 ObjectClass::sub_6E35F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x436f40 BuildingLightClass::SD_vt13 -> NG (attempt 4)
+[ledger] 0x731af0 ObjectClass::BlowStraw_29_Get -> NG (attempt 4)
+[ledger] 0x7af3d0 ObjectClass::GetRegionStringWOL -> NG (attempt 4)
+[ledger] 0x5ce7d0 MSPCXAnim::Load -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d1b30 MSEngine::Destruct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ce0b0 SuperClass::Reset -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7b7f90 ToWideStringCharAlt -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cc309 __mbstowcs_lk -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4db8a0 TechnoClass::sub_4DB8A0 -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 11
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "codegen_shape": 5,
+  "branch_order": 1,
+  "ret_norm": 1,
+  "regalloc": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p06\batch_report.json

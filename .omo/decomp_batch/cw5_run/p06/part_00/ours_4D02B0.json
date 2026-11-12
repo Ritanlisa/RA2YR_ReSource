@@ -1,0 +1,39 @@
+{
+ "symbol": "?UpdateMatrix@VoxelAnimClass@@QAEDXZ",
+ "sym_key": "VoxelAnimClass::UpdateMatrix",
+ "size": 225,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf1578b461c50e8000000008b4e2483c0783bc80f87bb0000008b460c8b88b402000085c9740e8b88fc02000085c90f85a00000008b00c74424080000000085c075085f32c05e83c408c38b088d54240c52680000000050ff118bf085f67c178b7c240c8d44240850e80000000083c404897c2408eb138d4c240851e80000000083c40433ff897c240885f67d1181fe02400080740956e80000000083c40485ff75085f32c05e83c408c38b1757ff522085c08b442408751285c074068b0850ff51085f32c05e83c408c385c074068b1050ff52085fb0015e83c408c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHH@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_822410@@3EA",
+   "sym_key": "DataGlobal_822410"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?Release3COM@@YAHPAX@Z",
+   "sym_key": "Release3COM"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?Release3COM@@YAHPAX@Z",
+   "sym_key": "Release3COM"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}
