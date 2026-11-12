@@ -1371,7 +1371,7 @@
   "this_as_id": false
  },
  "0x40a090": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -9647,14 +9647,14 @@
   "status": "NG"
  },
  "0x448160": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProcessPrimarySelect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "FootClass::ProcessPrimarySelect",
-  "rule_violations": 8,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -9671,7 +9671,7 @@
   "this_as_id": false
  },
  "0x44d7d0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9905,7 +9905,7 @@
   "this_as_id": false
  },
  "0x455820": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -11931,7 +11931,7 @@
   "this_as_id": false
  },
  "0x471c90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -18997,15 +18997,15 @@
   "this_as_id": false
  },
  "0x4ac960": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 push ebx",
   "name": "MapClass::ToggleZoom",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MapClass::ToggleZoom",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4acac0": {
@@ -22770,19 +22770,19 @@
   "this_as_id": false
  },
  "0x4ccb40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "FlyLocomotionClass::ProcessLocomotionStep",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "JumpjetLocomotionClass::ProcessLocomotionStep",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4cd510": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -36425,7 +36425,7 @@
   "this_as_id": false
  },
  "0x54b8d0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -38411,7 +38411,7 @@
   "this_as_id": false
  },
  "0x559d60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -46623,7 +46623,7 @@
   "this_as_id": false
  },
  "0x5ce330": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -47319,14 +47319,14 @@
   "this_as_id": false
  },
  "0x5d2260": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "GameClass::loadScenarioFiles",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "GameClass::loadScenarioFiles",
-  "rule_violations": 0,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -50394,7 +50394,7 @@
   "status": "NG"
  },
  "0x5f60a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -51875,15 +51875,15 @@
   "this_as_id": false
  },
  "0x610bf0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0xac1dcc]",
   "name": "ObjectClass::sub_610BF0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "sub_610BF0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x612b70": {
@@ -54216,7 +54216,7 @@
   "this_as_id": false
  },
  "0x6386e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "ClearFactoryClassProduction",
@@ -60436,15 +60436,15 @@
   "this_as_id": false
  },
  "0x690360": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [0x8a00a0]",
   "name": "Screen::CleanupTransitionObjects",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "Screen::CleanupTransitionObjects",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x690a10": {
@@ -62961,7 +62961,7 @@
   "this_as_id": false
  },
  "0x6acd60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -64648,15 +64648,15 @@
   "this_as_id": false
  },
  "0x6bec60": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0xb73550]",
   "name": "GameClass::Shutdown",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "GameClass::Shutdown",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6bed50": {
@@ -70916,7 +70916,7 @@
   "status": "NG"
  },
  "0x6f19b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "SmallFunc_6F19B0",
@@ -77907,7 +77907,7 @@
   "this_as_id": false
  },
  "0x7438f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

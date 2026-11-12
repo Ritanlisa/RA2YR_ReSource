@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> JumpjetLocomotionClass
+[conv] 0x610bf0 ObjectClass::sub_610BF0 -> ObjectClass
+[conv] 0x5ce330 ObjectClass::sub_5CE330 -> ObjectClass
+[conv] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> ObjectClass
+[conv] 0x690360 Screen::CleanupTransitionObjects -> Screen
+[conv] 0x44d7d0 BuildingClass::GetTargetFacing -> BuildingClass
+[conv] 0x4ac960 MapClass::ToggleZoom -> MapClass
+[conv] 0x471c90 CaptureManagerClass::CanCapture -> CaptureManagerClass
+[conv] 0x559d60 LoadOptions::AddRef -> LoadOptions
+[conv] 0x5d2260 GameClass::loadScenarioFiles -> GameClass
+[conv] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> JumpjetLocomotionClass
+[conv] 0x6bec60 GameClass::Shutdown -> GameClass
+[conv] 0x6f19b0 SmallFunc_6F19B0 -> SmallFunc
+[conv] 0x448160 BuildingClass::ProcessPrimarySelect -> BuildingClass
+[conv] 0x6acd60 Skirmish::EnableSpawnButtons -> Skirmish
+[conv] 0x4ccb40 FlyLocomotionClass::ProcessLocomotionStep -> FlyLocomotionClass
+[conv] 0x6386e0 ClearFactoryClassProduction -> _addr_63
+[conv] 0x7438f0 UnitClass::CanCrushTarget -> UnitClass
+[conv] 0x455820 BuildingClass::ScanCircleForUnits2 -> BuildingClass
+[conv] 0x40a090 TechnoClass::sub_40A090 -> TechnoClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] Screen                   rc=0
+[era] BuildingClass            rc=2
+[era] MapClass                 rc=0
+[era] CaptureManagerClass      rc=2
+[era] LoadOptions              rc=2
+[era] GameClass                rc=2
+[era] SmallFunc                rc=2
+[era] Skirmish                 rc=2
+[era] FlyLocomotionClass       rc=0
+[era] _addr_63                 rc=2
+[era] UnitClass                rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x610bf0   MISMATCH         ObjectClass::sub_610BF0
+[diff] 0x690360   MISMATCH         Screen::CleanupTransitionObjects
+[diff] 0x4ac960   MISMATCH         MapClass::ToggleZoom
+[diff] 0x6bec60   MISMATCH         GameClass::Shutdown
+[diff] 0x4ccb40   MISMATCH         FlyLocomotionClass::ProcessLocomotionStep
+[ledger] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> COMPILE_FAIL (attempt 12)
+[ledger] 0x610bf0 ObjectClass::sub_610BF0 -> NG (attempt 4)
+[ledger] 0x5ce330 ObjectClass::sub_5CE330 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> COMPILE_FAIL (attempt 4)
+[ledger] 0x690360 Screen::CleanupTransitionObjects -> NG (attempt 4)
+[ledger] 0x44d7d0 BuildingClass::GetTargetFacing -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4ac960 MapClass::ToggleZoom -> NG (attempt 12)
+[ledger] 0x471c90 CaptureManagerClass::CanCapture -> COMPILE_FAIL (attempt 4)
+[ledger] 0x559d60 LoadOptions::AddRef -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d2260 GameClass::loadScenarioFiles -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6bec60 GameClass::Shutdown -> NG (attempt 8)
+[ledger] 0x6f19b0 SmallFunc_6F19B0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x448160 BuildingClass::ProcessPrimarySelect -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6acd60 Skirmish::EnableSpawnButtons -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ccb40 FlyLocomotionClass::ProcessLocomotionStep -> NG (attempt 4)
+[ledger] 0x6386e0 ClearFactoryClassProduction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7438f0 UnitClass::CanCrushTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x455820 BuildingClass::ScanCircleForUnits2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40a090 TechnoClass::sub_40A090 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "ret_norm": 1,
+  "regalloc": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run\p11\batch_report.json

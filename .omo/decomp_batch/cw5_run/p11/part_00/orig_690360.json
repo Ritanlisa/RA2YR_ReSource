@@ -1,0 +1,11 @@
+{
+ "addr": "0x690360",
+ "name": "Screen::CleanupTransitionObjects",
+ "size": 153,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x690360",
+ "bytes_hex": "a0a0008a005684c0578bf1c6058455b0000074298b0d0c738800c605a0008a00006a008b01ff50188b0d0c738800a1107388006a016a008b1150ff52048b462c33ff85c07e508b4e208b4608508b0cb98b11ff520c3c0175358b4e208b0cb985c974068b116a01ff128b462c3bf87d1e8d48ff8bc73bf9894e2c7d128b4e20408b1481895481fc8b4e2c3bc17cee8b462c473bf87cb05f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

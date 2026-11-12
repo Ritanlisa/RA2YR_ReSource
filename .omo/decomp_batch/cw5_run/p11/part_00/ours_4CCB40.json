@@ -1,0 +1,63 @@
+{
+ "symbol": "?ProcessLocomotionStep@FlyLocomotionClass@@QAGDH@Z",
+ "sym_key": "FlyLocomotionClass::ProcessLocomotionStep",
+ "size": 328,
+ "link_base": 0,
+ "bytes_hex": "83ec08568b742410578a465184c075368a465084c0752fdd4640dc1d00000000dfe0f6c401751f8b463485c075188b4608508b08ff91840000008b1050ff92bc0000008946348b46088b486c85c976278a4e5184c975208a4e5084c975198b0850ff910002000084c0740c8b4608508b10ff92ec0100008d7efc8bcfe8000000008d4e98e8000000008b0656ff506084c00f84a70000008b4e088a819000000084c00f84960000008b416c85c076698b1500000000c744240c0000000089542408df6c2408d85e18dfe0f6c44074198b461c8b15000000003bc2750c8b5620a1000000003bd074308a465184c075298a465084c075228b0151ff90c801000085c07e158b56208b4e1c8b46185251506a018bcfe8000000008b4e088b416c85c07e078bcfe8000000008bcfe8000000008b1656ff52105f5e83c408c208005f32c05e83c408c20800",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?ProcessRotation@JumpjetLocomotionClass@@QAEXXZ",
+   "sym_key": "JumpjetLocomotionClass::ProcessRotation"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?ApplyScatter@DamageArea@@QAEHXZ",
+   "sym_key": "DamageArea::ApplyScatter"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3C78@@3IA",
+   "sym_key": "DataGlobal_8B3C78"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3C7C@@3IA",
+   "sym_key": "DataGlobal_8B3C7C"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3C80@@3IA",
+   "sym_key": "DataGlobal_8B3C80"
+  },
+  {
+   "off": 276,
+   "type": "REL32",
+   "sym": "?LandFootClassAtPosition@@YIHHHDMHH@Z",
+   "sym_key": "LandFootClassAtPosition"
+  },
+  {
+   "off": 293,
+   "type": "REL32",
+   "sym": "?ProcessDeployMission@FootClass@@QAEDXZ",
+   "sym_key": "FootClass::ProcessDeployMission"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?IsMapCoordVisible@JumpjetLocomotionClass@@QAEDXZ",
+   "sym_key": "JumpjetLocomotionClass::IsMapCoordVisible"
+  }
+ ]
+}

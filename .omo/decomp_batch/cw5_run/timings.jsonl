@@ -9,3 +9,4 @@
 {"part": 8, "n": 20, "seconds": 27.4, "ok": true, "verdicts": {"MISMATCH": 12, "COMPILE_FAIL": 8}}
 {"part": 9, "n": 20, "seconds": 31.1, "ok": true, "verdicts": {"MISMATCH": 6, "COMPILE_FAIL": 14}}
 {"part": 10, "n": 20, "seconds": 57.8, "ok": true, "verdicts": {"COMPILE_FAIL": 13, "MISMATCH": 7}}
+{"part": 11, "n": 20, "seconds": 39.5, "ok": true, "verdicts": {"COMPILE_FAIL": 15, "MISMATCH": 5}}

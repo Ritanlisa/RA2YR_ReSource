@@ -1,0 +1,153 @@
+{
+ "symbol": "?Shutdown@GameClass@@QAEXXZ",
+ "sym_key": "GameClass::Shutdown",
+ "size": 242,
+ "link_base": 0,
+ "bytes_hex": "51a1000000006a006a006a0250c605f401000001e800000000a10000000085c07417e800000000803df4010000017509a10000000085c075e9a10000000083f8ff74126a0050e800000000c70500000000ffffffff6a006800000000e800000000e800000000a1a800000085c074168b0850ff5114a1a800000085c074078b106a0150ff12a000000000c705a80000000000000084c074438b0d0000000085c974328b41fc55568d69fc8d50ff8d04c085d28d34817c12578d7a0183ee248bcee8000000004f75f35f55e80000000083c4045e5dc60500000000006a00e8000000008b4c2400e800000000e80000000059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?PostMessageA@@YGHPAXHHH@Z",
+   "sym_key": "PostMessageA"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAPAXXZ",
+   "sym_key": "MessageLoop"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?dwRegister@@3IA",
+   "sym_key": "dwRegister"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?RevokeActiveObject@@YGJHH@Z",
+   "sym_key": "RevokeActiveObject"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?dwRegister@@3IA",
+   "sym_key": "dwRegister"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?punk@@3PAXA",
+   "sym_key": "punk"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?CoDisconnectObject@@YGJPAXH@Z",
+   "sym_key": "CoDisconnectObject"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?OleUninitialize@@YGXXZ",
+   "sym_key": "OleUninitialize"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0BCF4@@3EA",
+   "sym_key": "DataGlobal_B0BCF4"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0BCF0@@3IA",
+   "sym_key": "DataGlobal_B0BCF0"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 214,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0BCF4@@3EA",
+   "sym_key": "DataGlobal_B0BCF4"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?PostQuitMessage@@YGXH@Z",
+   "sym_key": "PostQuitMessage"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?ShutdownInterface@Network@@QAEHXZ",
+   "sym_key": "Network::ShutdownInterface"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?WinMainSetup@@YAXXZ",
+   "sym_key": "WinMainSetup"
+  }
+ ]
+}
