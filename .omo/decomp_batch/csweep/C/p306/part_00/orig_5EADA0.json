@@ -1,0 +1,11 @@
+{
+ "addr": "0x5EADA0",
+ "name": "RefreshLobbyAll_Get_5EADA0",
+ "size": 155,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5EADA0",
+ "bytes_hex": "535556578be933ffbedcb2a8008bcfe8aca0efff8b8eb42700008bd885c9741c3b0da411ac0074103b0da811ac0074083b0dac11ac0075048b06eb403b0d9c11ac007507b8feffffffeb313b0da011ac007507b8feffffffeb223b0db011ac007507b8feffffffeb13a1b411ac003bc8b8feffffff7405e834c10a00508bd38bcde85aa6efff83c6044781fefcb2a8000f8c77ffffff5f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

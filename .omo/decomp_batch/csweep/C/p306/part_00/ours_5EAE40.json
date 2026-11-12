@@ -1,0 +1,45 @@
+{
+ "symbol": "?RefreshLobbyAll_Setup@ObjectClass@@QAE_NXZ",
+ "sym_key": "ObjectClass::RefreshLobbyAll_Setup",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "535556578be933ffbeac00000057e8000000008b8e942700008b150000000083c4048bd83bcab8feffffff7405e800000000508bd38bcde80000000025ff00000083c6044781fe000000007cc033c95f85c00f95c15e5d8ac15bc3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?GetResourceID4CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID4CSF"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?GetOption2@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetOption2"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?SetupLobbyPlayerSlots@@YI_NPAXHH@Z",
+   "sym_key": "SetupLobbyPlayerSlots"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?AlliesAllowed@@3EA",
+   "sym_key": "AlliesAllowed"
+  }
+ ]
+}

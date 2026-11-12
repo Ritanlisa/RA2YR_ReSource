@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_661B70@ObjectClass@@QAEPAXH@Z",
+ "sym_key": "ObjectClass::sub_661B70",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "83ec18535533db56578d6914885c24106800010000558d4c2418e8000000008d4424148d4c241050e800000000b8000100002bc383f8148bc87605b9140000008d3c2b8bd18d7424148bc7c1e902f3a58bca83e1034381fb00010000f3a472b05f5e5d5b83c418c20400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Process@SHA1@@QAEHHH@Z",
+   "sym_key": "SHA1::Process"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Compute@SHA1@@QAEHPAX@Z",
+   "sym_key": "SHA1::Compute"
+  }
+ ]
+}

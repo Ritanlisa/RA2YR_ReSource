@@ -1,0 +1,75 @@
+{
+ "symbol": "?Create@RadBeam@@QAEHXZ",
+ "sym_key": "RadBeam::Create",
+ "size": 149,
+ "link_base": 0,
+ "bytes_hex": "5156578bf168c8000000e80000000083c40485c0740c568bc8e8000000008bf8eb0233ffa1000000008b0d000000003bc8722e8a0d0000000084c9750485c075388b0d0000000085c9762e03c8a1000000006a00516800000000ff500884c074188b0d000000008bc141890d000000008b0d00000000893c814e8bc7f7de1bf683e60a83c60a89742408db442408dd5f185f5e59c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?InitState@RadBeam@@QAEPAIH@Z",
+   "sym_key": "RadBeam::InitState"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A68@@3IA",
+   "sym_key": "DataGlobal_B04A68"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A70@@3IA",
+   "sym_key": "DataGlobal_B04A70"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A6D@@3EA",
+   "sym_key": "DataGlobal_B04A6D"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A74@@3IA",
+   "sym_key": "DataGlobal_B04A74"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?RadBeam_Array@@3IA",
+   "sym_key": "RadBeam_Array"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?RadBeam_Array@@3IA",
+   "sym_key": "RadBeam_Array"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A70@@3IA",
+   "sym_key": "DataGlobal_B04A70"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A70@@3IA",
+   "sym_key": "DataGlobal_B04A70"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A64@@3IA",
+   "sym_key": "DataGlobal_B04A64"
+  }
+ ]
+}

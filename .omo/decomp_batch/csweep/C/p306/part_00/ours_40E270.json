@@ -1,0 +1,105 @@
+{
+ "symbol": "?sub_40E270@@YAHXZ",
+ "sym_key": "Unnamed::sub_40E270",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "8b0d000000005333db891d00000000891d00000000891d00000000891d00000000891d00000000e800000000a100000000891d00000000506800000000e800000000891d00000000881de8708800881dec708800881df0708800881df4708800881df8708800881dfc708800881d007188006800000000c7050000000000000000e80000000083c40c5bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870DC@@3IA",
+   "sym_key": "DataGlobal_8870DC"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870C4@@3IA",
+   "sym_key": "DataGlobal_8870C4"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870C8@@3IA",
+   "sym_key": "DataGlobal_8870C8"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870D4@@3IA",
+   "sym_key": "DataGlobal_8870D4"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870D8@@3IA",
+   "sym_key": "DataGlobal_8870D8"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870D0@@3IA",
+   "sym_key": "DataGlobal_8870D0"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Constructor@GenericNode@@QAEPAV1@XZ",
+   "sym_key": "GenericNode::Constructor"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870DC@@3IA",
+   "sym_key": "DataGlobal_8870DC"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870CC@@3IA",
+   "sym_key": "DataGlobal_8870CC"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870D0@@3IA",
+   "sym_key": "DataGlobal_8870D0"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?LinkedList__Prepend@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Prepend"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8870CC@@3IA",
+   "sym_key": "DataGlobal_8870CC"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?unknown_libname_9@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_9"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?CCINIClass_Vtable@@3PAXA",
+   "sym_key": "CCINIClass_Vtable"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x408EE0",
+ "name": "BufferedAudioStreamRead",
+ "size": 152,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408EE0",
+ "bytes_hex": "83ec08535556578bfa8be933d2c744241000000000897c2414e8c2020000eb048b7c24148b5d088b44241c3bd87e028bd885db74558b45148bcb85c0740e8b75048bc1c1e902f3a58bc8eb0e8bd18bf78b7d04c1e902f3a58bca83e1038bd3f3a48bcde8780200008b44241c8b7c24148b5424102bc303fb03d385c0897c24148944241c8954241075968b4424105f5e5d5b83c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

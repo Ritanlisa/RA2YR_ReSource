@@ -1,0 +1,51 @@
+{
+ "symbol": "?GetHighPrecision@Timer@@QAENXZ",
+ "sym_key": "Timer::GetHighPrecision",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec0883f8ff568bf1751633d26a008a15000000006a00b900000000e800000000803e00750c33c08a46043d0000f03f7409833d0000000004771ae80000000089442404c744240800000000df6c24045e83c408c38d4c240451e80000000083c40489442404db4424045e83c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82C24C@@3IA",
+   "sym_key": "DataGlobal_82C24C"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABEED4@@3EA",
+   "sym_key": "DataGlobal_ABEED4"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82C24C@@3IA",
+   "sym_key": "DataGlobal_82C24C"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?GetVersionString@@YIPADPAXHHH@Z",
+   "sym_key": "GetVersionString"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82C24C@@3IA",
+   "sym_key": "DataGlobal_82C24C"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?Timer__ReadTSC@@YA_KPAX@Z",
+   "sym_key": "Timer__ReadTSC"
+  }
+ ]
+}

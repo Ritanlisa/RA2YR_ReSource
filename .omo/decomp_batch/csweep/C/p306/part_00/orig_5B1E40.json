@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B1E40",
+ "name": "Timer::GetHighPrecision",
+ "size": 149,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B1E40",
+ "bytes_hex": "a14cc2820083ec0c83f8ff568bf175136a006a00bad4eeab00b94cc28200e8ed42f3ff833e007509817e040000f03f7449833d4cc28200047e408d44240450e8e04121008b4c24088944240cc74424100000000083c404df6c2408894c2408c744240c00000000df6c2408dc0df8517e00dec1dc365e83c40cc3ff1530157e0089442408c744240c00000000df6c24085e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

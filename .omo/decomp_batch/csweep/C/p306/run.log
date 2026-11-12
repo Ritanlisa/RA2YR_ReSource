@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p306\part_00
+=== convert (20 addrs) ===
+[conv] 0x40e1c0 sub_40E1C0 -> _addr_40
+[conv] 0x40e270 sub_40E270 -> _addr_40
+[conv] 0x7b6320 FormatStringInt -> _addr_7B
+[conv] 0x5b1e40 Timer::GetHighPrecision -> Timer
+[conv] 0x659110 RadBeam::Create -> RadBeam
+[conv] 0x610b50 ObjectClass::sub_610B50 -> ObjectClass
+[conv] 0x661b70 ObjectClass::sub_661B70 -> ObjectClass
+[conv] 0x729aa0 FootClass::Process -> FootClass
+[conv] 0x408ee0 BufferedAudioStreamRead -> _addr_40
+[conv] 0x65d5c0 ReadStreamLine -> _addr_65
+[conv] 0x5daf30 ObjectClass::PlayerSkirmishSlotHandler_Handle -> ObjectClass
+[conv] 0x634470 ObjectClass::sub_634470 -> ObjectClass
+[conv] 0x4b56e0 ObjectClass::sub_4B56E0 -> ObjectClass
+[conv] 0x689960 ObjectClass::sub_689960 -> ObjectClass
+[conv] 0x58abd0 Radar::CopyDataArray -> Radar
+[conv] 0x7d3886 __mbsnbcpy -> _addr_7D
+[conv] 0x5b3f50 MixFileClass::sub_5B3F50 -> MixFileClass
+[conv] 0x5eada0 ObjectClass::RefreshLobbyAll_Get_5EADA0 -> ObjectClass
+[conv] 0x5eae40 ObjectClass::RefreshLobbyAll_Setup -> ObjectClass
+[conv] 0x7b2240 IPXInterfaceClass::processPacket -> IPXInterfaceClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] _addr_7B                 rc=2
+[era] Timer                    rc=0
+[era] RadBeam                  rc=0
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] _addr_65                 rc=2
+[era] Radar                    rc=2
+[era] _addr_7D                 rc=2
+[era] MixFileClass             rc=2
+[era] IPXInterfaceClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x40e1c0   MISMATCH         sub_40E1C0
+[diff] 0x40e270   MISMATCH         sub_40E270
+[diff] 0x408ee0   MISMATCH         BufferedAudioStreamRead
+[diff] 0x5b1e40   MISMATCH         Timer::GetHighPrecision
+[diff] 0x659110   MISMATCH         RadBeam::Create
+[diff] 0x610b50   MISMATCH         ObjectClass::sub_610B50
+[diff] 0x661b70   MISMATCH         ObjectClass::sub_661B70
+[diff] 0x634470   MISMATCH         ObjectClass::sub_634470
+[diff] 0x4b56e0   MISMATCH         ObjectClass::sub_4B56E0
+[diff] 0x5eada0   MISMATCH         ObjectClass::RefreshLobbyAll_Get_5EADA0
+[diff] 0x5eae40   MISMATCH         ObjectClass::RefreshLobbyAll_Setup
+[diff] 0x7b2240   MISMATCH         IPXInterfaceClass::processPacket
+[ledger] 0x40e1c0 sub_40E1C0 -> NG (attempt 1)
+[ledger] 0x40e270 sub_40E270 -> NG (attempt 1)
+[ledger] 0x7b6320 FormatStringInt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b1e40 Timer::GetHighPrecision -> NG (attempt 1)
+[ledger] 0x659110 RadBeam::Create -> NG (attempt 1)
+[ledger] 0x610b50 ObjectClass::sub_610B50 -> NG (attempt 1)
+[ledger] 0x661b70 ObjectClass::sub_661B70 -> NG (attempt 1)
+[ledger] 0x729aa0 FootClass::Process -> COMPILE_FAIL (attempt 1)
+[ledger] 0x408ee0 BufferedAudioStreamRead -> NG (attempt 1)
+[ledger] 0x65d5c0 ReadStreamLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5daf30 ObjectClass::PlayerSkirmishSlotHandler_Handle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x634470 ObjectClass::sub_634470 -> NG (attempt 1)
+[ledger] 0x4b56e0 ObjectClass::sub_4B56E0 -> NG (attempt 1)
+[ledger] 0x689960 ObjectClass::sub_689960 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58abd0 Radar::CopyDataArray -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d3886 __mbsnbcpy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b3f50 MixFileClass::sub_5B3F50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eada0 ObjectClass::RefreshLobbyAll_Get_5EADA0 -> NG (attempt 1)
+[ledger] 0x5eae40 ObjectClass::RefreshLobbyAll_Setup -> NG (attempt 1)
+[ledger] 0x7b2240 IPXInterfaceClass::processPacket -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "extern_reloc": 1,
+  "frame_sched": 3,
+  "const_fold": 4,
+  "eval_order": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p306\batch_report.json

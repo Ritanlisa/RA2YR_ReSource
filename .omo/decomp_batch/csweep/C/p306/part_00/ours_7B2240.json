@@ -1,0 +1,15 @@
+{
+ "symbol": "?processPacket@IPXInterfaceClass@@QAEPAEXZ",
+ "sym_key": "IPXInterfaceClass::processPacket",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "8b815cf003005333db3d8000000056751768a0020000e800000000b10183c404884816884815eb5d33f68b9150f003008d420183f87f898150f003007e06899950f003008d04d5000000002bc28d0440c1e005385c0865740e4681fe800000007cc85e33c05bc38d04d5000000002bc28d1440c1e20503d18d4250c6426501ff815cf003003bc374068858178858185e5bc3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
