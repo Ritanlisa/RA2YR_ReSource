@@ -1,0 +1,21 @@
+{
+ "symbol": "?DecFactoryClassCounter@@YIHI@Z",
+ "sym_key": "Unnamed::DecFactoryClassCounter",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "5183f918731c8b048d00000000ba00000000480f98c24a23d089148d0000000059c38b44240059c3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B84@@3PAIA",
+   "sym_key": "DataGlobal_AC4B84"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B84@@3PAIA",
+   "sym_key": "DataGlobal_AC4B84"
+  }
+ ]
+}

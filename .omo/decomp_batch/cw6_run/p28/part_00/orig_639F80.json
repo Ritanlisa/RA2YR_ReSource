@@ -1,0 +1,11 @@
+{
+ "addr": "0x639F80",
+ "name": "DecFactoryClassCounter",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x639F80",
+ "bytes_hex": "85c97c1f83f9187d1a8b048d844bac00ba00000000480f98c24a23d089148d844bac00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@ParticleSystemClass@@QAGHPAI@Z",
+ "sym_key": "ParticleSystemClass::ddtor",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c2080033c9c700c82d270ec740040f9cd111c74008b70900a08a0d0000000089480c33c0c20800",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?unk_7E96CC@@3EA",
+   "sym_key": "unk_7E96CC"
+  }
+ ]
+}

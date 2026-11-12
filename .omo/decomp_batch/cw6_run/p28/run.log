@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x6301a0 ParticleSystemClass::ddtor -> ParticleSystemClass
+[conv] 0x633ae0 ObjectClass::sub_633AE0 -> ObjectClass
+[conv] 0x639f80 DecFactoryClassCounter -> _addr_63
+[conv] 0x63dd40 _VectorClass_PAVPlanningMemberClass::Add -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63de60 _VectorClass_PAVPlanningMemberClass::GetSize -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63e020 _DynamicVectorClass_PAVPlanningMemberClass::FindItemIndex -> _DynamicVectorClass_PAVPlanningMemberClass
+[conv] 0x63e050 _VectorClass_PAVPlanningBranchClass::Add -> _VectorClass_PAVPlanningBranchClass
+[conv] 0x63e170 _VectorClass_PAVPlanningBranchClass::GetSize -> _VectorClass_PAVPlanningBranchClass
+[conv] 0x63e310 _VectorClass_PAVPlanningNodeClass::AddRef -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63e430 _VectorClass_PAVPlanningNodeClass::FindItemIndex -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63e620 _DynamicVectorClass_PAVPlanningNodeClass::Read -> _DynamicVectorClass_PAVPlanningNodeClass
+[conv] 0x63e650 _VectorClass_PAVEventClass::AddRef -> _VectorClass_PAVEventClass
+[conv] 0x63e770 _VectorClass_PAVEventClass::Read -> _VectorClass_PAVEventClass
+[conv] 0x63e8d0 _DynamicVectorClass_PAVEventClass::FindItemIndex_0 -> _DynamicVectorClass_PAVEventClass
+[conv] 0x63ea70 _VectorClass_PAVPlanningTokenClass::GetSize -> _VectorClass_PAVPlanningTokenClass
+[conv] 0x63ec20 _DynamicVectorClass_PAVPlanningTokenClass::FindItemIndex_1 -> _DynamicVectorClass_PAVPlanningTokenClass
+[conv] 0x6447a0 ParticleSystemTypeClass::GetClassIdentifier -> ParticleSystemTypeClass
+[conv] 0x645620 ParticleTypeClass::ddtor -> ParticleTypeClass
+[conv] 0x645ba0 sub_645BA0 -> _addr_64
+[conv] 0x64cd30 sub_64CD30 -> _addr_64
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleSystemClass      rc=0
+[era] ObjectClass              rc=0
+[era] _addr_63                 rc=0
+[era] _VectorClass_PAVPlanningMemberClass rc=0
+[era] _DynamicVectorClass_PAVPlanningMemberClass rc=0
+[era] _VectorClass_PAVPlanningBranchClass rc=0
+[era] _VectorClass_PAVPlanningNodeClass rc=0
+[era] _DynamicVectorClass_PAVPlanningNodeClass rc=0
+[era] _VectorClass_PAVEventClass rc=0
+[era] _DynamicVectorClass_PAVEventClass rc=0
+[era] _VectorClass_PAVPlanningTokenClass rc=0
+[era] _DynamicVectorClass_PAVPlanningTokenClass rc=0
+[era] ParticleSystemTypeClass  rc=0
+[era] ParticleTypeClass        rc=0
+[era] _addr_64                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6301a0   MISMATCH         ParticleSystemClass::ddtor
+[diff] 0x633ae0   MATCH            ObjectClass::sub_633AE0
+[diff] 0x639f80   MISMATCH         DecFactoryClassCounter
+[diff] 0x63dd40   MISMATCH         _VectorClass_PAVPlanningMemberClass::Add
+[diff] 0x63de60   MISMATCH         _VectorClass_PAVPlanningMemberClass::GetSize
+[diff] 0x63e020   MISMATCH         _DynamicVectorClass_PAVPlanningMemberClass::FindItemIndex
+[diff] 0x63e050   MISMATCH         _VectorClass_PAVPlanningBranchClass::Add
+[diff] 0x63e170   MISMATCH         _VectorClass_PAVPlanningBranchClass::GetSize
+[diff] 0x63e310   MISMATCH         _VectorClass_PAVPlanningNodeClass::AddRef
+[diff] 0x63e430   MISMATCH         _VectorClass_PAVPlanningNodeClass::FindItemIndex
+[diff] 0x63e620   MISMATCH         _DynamicVectorClass_PAVPlanningNodeClass::Read
+[diff] 0x63e650   MISMATCH         _VectorClass_PAVEventClass::AddRef
+[diff] 0x63e770   MISMATCH         _VectorClass_PAVEventClass::Read
+[diff] 0x63e8d0   MISMATCH         _DynamicVectorClass_PAVEventClass::FindItemIndex_0
+[diff] 0x63ea70   MISMATCH         _VectorClass_PAVPlanningTokenClass::GetSize
+[diff] 0x63ec20   MISMATCH         _DynamicVectorClass_PAVPlanningTokenClass::FindItemIndex_1
+[diff] 0x6447a0   MISMATCH         ParticleSystemTypeClass::GetClassIdentifier
+[diff] 0x645620   MISMATCH         ParticleTypeClass::ddtor
+[diff] 0x64cd30   MISMATCH         sub_64CD30
+[ledger] 0x6301a0 ParticleSystemClass::ddtor -> NG (attempt 2)
+[ledger] 0x633ae0 ObjectClass::sub_633AE0 -> OK (attempt 2)
+[ledger] 0x639f80 DecFactoryClassCounter -> NG (attempt 2)
+[ledger] 0x63dd40 _VectorClass_PAVPlanningMemberClass::Add -> NG (attempt 2)
+[ledger] 0x63de60 _VectorClass_PAVPlanningMemberClass::GetSize -> NG (attempt 2)
+[ledger] 0x63e020 _DynamicVectorClass_PAVPlanningMemberClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x63e050 _VectorClass_PAVPlanningBranchClass::Add -> NG (attempt 2)
+[ledger] 0x63e170 _VectorClass_PAVPlanningBranchClass::GetSize -> NG (attempt 2)
+[ledger] 0x63e310 _VectorClass_PAVPlanningNodeClass::AddRef -> NG (attempt 2)
+[ledger] 0x63e430 _VectorClass_PAVPlanningNodeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x63e620 _DynamicVectorClass_PAVPlanningNodeClass::Read -> NG (attempt 2)
+[ledger] 0x63e650 _VectorClass_PAVEventClass::AddRef -> NG (attempt 2)
+[ledger] 0x63e770 _VectorClass_PAVEventClass::Read -> NG (attempt 2)
+[ledger] 0x63e8d0 _DynamicVectorClass_PAVEventClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x63ea70 _VectorClass_PAVPlanningTokenClass::GetSize -> NG (attempt 2)
+[ledger] 0x63ec20 _DynamicVectorClass_PAVPlanningTokenClass::FindItemIndex_1 -> NG (attempt 2)
+[ledger] 0x6447a0 ParticleSystemTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x645620 ParticleTypeClass::ddtor -> NG (attempt 2)
+[ledger] 0x645ba0 sub_645BA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64cd30 sub_64CD30 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "MATCH": 1,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 13,
+  "branch_polarity": 4,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 5.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p28\batch_report.json
