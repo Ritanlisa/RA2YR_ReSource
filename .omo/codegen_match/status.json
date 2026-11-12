@@ -95510,6 +95510,39 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7dcece": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1348]",
+  "name": "TlsFree",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TlsFree",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dced4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12b4]",
+  "name": "SetLastError",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SetLastError",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dceda": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12b8]",
+  "name": "TlsGetValue",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TlsGetValue",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7dcee0": {
   "attempts": 9,
   "clean": false,
@@ -95522,12 +95555,111 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7dcee6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12c0]",
+  "name": "RaiseException",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RaiseException",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dceec": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12c4]",
+  "name": "FlushFileBuffers",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "FlushFileBuffers",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7dcef2": {
   "attempts": 2,
   "first_diff": "+0 jmp dword ptr [0x7e12c8]",
   "name": "SetHandleCount",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7dcef8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12cc]",
+  "name": "GetStdHandle",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetStdHandle",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dcefe": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12d0]",
+  "name": "GetFileType",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetFileType",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dcf04": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "GetCPInfo",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GetCPInfo",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7dcf0a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12d8]",
+  "name": "GetACP",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "GetACP",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dcf10": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12dc]",
+  "name": "GetOEMCP",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "GetOEMCP",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dcf16": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "SetConsoleCtrlHandler",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SetConsoleCtrlHandler",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7dcf1c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12e4]",
+  "name": "GetFileAttributesA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetFileAttributesA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7dcf22": {
   "attempts": 9,
@@ -95541,6 +95673,39 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7dcf28": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e12ec]",
+  "name": "UnhandledExceptionFilter",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "UnhandledExceptionFilter",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dcf2e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "FreeEnvironmentStringsA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FreeEnvironmentStringsA",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7dcf34": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "FreeEnvironmentStringsW",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FreeEnvironmentStringsW",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7dcf3a": {
   "attempts": 5,
   "clean": false,
@@ -95548,6 +95713,61 @@
   "name": "GetEnvironmentStrings",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "GetEnvironmentStrings",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7dcf40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "GetEnvironmentStringsW",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GetEnvironmentStringsW",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7dcf46": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1304]",
+  "name": "IsValidLocale",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IsValidLocale",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dcf4c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1308]",
+  "name": "IsValidCodePage",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IsValidCodePage",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dcf52": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e130c]",
+  "name": "GetLocaleInfoA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetLocaleInfoA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dcf58": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "EnumSystemLocalesA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "EnumSystemLocalesA",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false

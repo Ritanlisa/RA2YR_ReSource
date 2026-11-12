@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetACP@@YGIXZ",
+ "sym_key": "Unnamed::GetACP",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?__imp_GetACP@@YGIXZ",
+   "sym_key": "__imp_GetACP"
+  }
+ ]
+}
