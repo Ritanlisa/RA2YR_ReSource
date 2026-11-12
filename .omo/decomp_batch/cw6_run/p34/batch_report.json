@@ -1,0 +1,458 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "const_fold": 19,
+   "regalloc": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 19,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x6c0940",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3918",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C0940",
+   "emitted": "ObjectClass::WinMain_Helper_6C0940",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0ac0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov dword ptr [ecx + 4], 0"
+   },
+   "pathology": "regalloc",
+   "name": "COMClassFactory::CreateInstance",
+   "emitted": "COMClassFactory::CreateInstance",
+   "unit": "COMClassFactory",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0c40",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3948",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C0C40",
+   "emitted": "ObjectClass::WinMain_Helper_6C0C40",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0dc0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3960",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C0DC0",
+   "emitted": "ObjectClass::WinMain_Helper_6C0DC0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0f40",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3978",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C0F40",
+   "emitted": "ObjectClass::WinMain_Helper_6C0F40",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c10c0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3990",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C10C0",
+   "emitted": "ObjectClass::WinMain_Helper_6C10C0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1240",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f39a8",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C1240",
+   "emitted": "ObjectClass::WinMain_Helper_6C1240",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c13c0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f39c0",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C13C0",
+   "emitted": "ObjectClass::WinMain_Helper_6C13C0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1540",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f39d8",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C1540",
+   "emitted": "ObjectClass::WinMain_Helper_6C1540",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c16c0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f39f0",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C16C0",
+   "emitted": "ObjectClass::WinMain_Helper_6C16C0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1840",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3a08",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C1840",
+   "emitted": "ObjectClass::WinMain_Helper_6C1840",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c19c0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3a20",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C19C0",
+   "emitted": "ObjectClass::WinMain_Helper_6C19C0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1b40",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3a38",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C1B40",
+   "emitted": "ObjectClass::WinMain_Helper_6C1B40",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1cc0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3a50",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C1CC0",
+   "emitted": "ObjectClass::WinMain_Helper_6C1CC0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1e40",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3a68",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C1E40",
+   "emitted": "ObjectClass::WinMain_Helper_6C1E40",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1fc0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3a80",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C1FC0",
+   "emitted": "ObjectClass::WinMain_Helper_6C1FC0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2140",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3a98",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C2140",
+   "emitted": "ObjectClass::WinMain_Helper_6C2140",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c22c0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3ab0",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C22C0",
+   "emitted": "ObjectClass::WinMain_Helper_6C22C0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2440",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3ac8",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C2440",
+   "emitted": "ObjectClass::WinMain_Helper_6C2440",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  },
+  {
+   "addr": "0x6c25c0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 16B ours 16B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [eax], 0x7f3ae0",
+    "ours": "+9 mov dword ptr [eax], 0"
+   },
+   "pathology": "const_fold",
+   "name": "WinMain_Helper_6C25C0",
+   "emitted": "ObjectClass::WinMain_Helper_6C25C0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 16,
+   "ours_size": 16,
+   "clean": false
+  }
+ ]
+}
