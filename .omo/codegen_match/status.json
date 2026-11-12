@@ -18843,6 +18843,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x49a9e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent25ZReadWrite_G::Constructor_RLEBlitter_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x49aa40": {
   "attempts": 3,
   "clean": false,
@@ -31886,6 +31898,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4f28c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+9 mov dword ptr [esi], 0x7ea644",
+  "name": "VectorCursor::vt_placeholder_07",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "HouseClass::vt_placeholder_07",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4f28e0": {
   "attempts": 2,
   "clean": false,
@@ -32173,6 +32197,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4f3fd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorCursor_IV_DynamicVectorClass_I::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GraphicMenuAnimItem::Constructor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4f3ff0": {
   "attempts": 6,
   "clean": false,
@@ -32392,6 +32428,18 @@
   "orig_name": "VectorCursor_uint_DynamicVectorClass_uint____13::Count",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4f4c00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "GScreenClass::getHouseHandle",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AbstractClass::getHouseHandle",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4f4c20": {
@@ -36857,6 +36905,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x535cd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x535cf0": {
   "attempts": 1,
   "clean": false,
@@ -36867,6 +36927,18 @@
   "orig_name": "CreateTeamCommand::vt02",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x535d00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CommandClass::performAction_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_1",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x535d20": {
@@ -37113,6 +37185,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x536090": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SelectTeamCommand::performAction_22",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_22",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5360b0": {
   "attempts": 2,
   "clean": false,
@@ -37173,6 +37257,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x536180": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AddTeamCommand::performAction_23",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_23",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5361a0": {
   "attempts": 2,
   "clean": false,
@@ -37221,6 +37317,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x536270": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CenterTeamCommand::performAction_24",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_24",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x536290": {
   "attempts": 2,
   "clean": false,
@@ -37255,6 +37363,18 @@
   "orig_name": "TauntCommandClass::ddtor",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x536580": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TauntCommandClass::performAction_25",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_25",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5365a0": {
@@ -39344,6 +39464,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x537fa0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerDebugCommandClass::performAction_198",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_198",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x537fc0": {
   "attempts": 3,
   "clean": false,
@@ -39352,6 +39484,114 @@
   "name": "MultiplayerSyncCommandClass::performAction_199",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CreateTeamCommand::performAction_199",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x537fe0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "FollowCommandClass::performAction_200",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_200",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x538000": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "View1CommandClass::performAction_201",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_201",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x538020": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "View2CommandClass::performAction_202",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_202",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x538040": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "View3CommandClass::performAction_203",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_203",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x538060": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "View4CommandClass::performAction_204",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_204",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x538080": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SetView1CommandClass::performAction_205",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_205",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5380a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SetView2CommandClass::performAction_206",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_206",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5380c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SetView3CommandClass::performAction_207",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_207",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5380e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SetView4CommandClass::performAction_208",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateTeamCommand::performAction_208",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false

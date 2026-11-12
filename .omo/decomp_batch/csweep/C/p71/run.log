@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p71\part_00
+=== convert (20 addrs) ===
+[conv] 0x49a9e0 _RLEBlitTransLucent25ZReadWrite_G::Constructor_RLEBlitter_1 -> _RLEBlitTransLucent25ZReadWrite_G
+[conv] 0x4f28c0 VectorCursor::vt_placeholder_07 -> VectorCursor
+[conv] 0x4f3fd0 _VectorCursor_IV_DynamicVectorClass_I::Constructor -> _VectorCursor_IV_DynamicVectorClass_I
+[conv] 0x4f4c00 GScreenClass::getHouseHandle -> GScreenClass
+[conv] 0x535cd0 CreateTeamCommand::performAction_0 -> CreateTeamCommand
+[conv] 0x535d00 CommandClass::performAction_1 -> CommandClass
+[conv] 0x536090 SelectTeamCommand::performAction_22 -> SelectTeamCommand
+[conv] 0x536180 AddTeamCommand::performAction_23 -> AddTeamCommand
+[conv] 0x536270 CenterTeamCommand::performAction_24 -> CenterTeamCommand
+[conv] 0x536580 TauntCommandClass::performAction_25 -> TauntCommandClass
+[conv] 0x537fa0 MultiplayerDebugCommandClass::performAction_198 -> MultiplayerDebugCommandClass
+[conv] 0x537fe0 FollowCommandClass::performAction_200 -> FollowCommandClass
+[conv] 0x538000 View1CommandClass::performAction_201 -> View1CommandClass
+[conv] 0x538020 View2CommandClass::performAction_202 -> View2CommandClass
+[conv] 0x538040 View3CommandClass::performAction_203 -> View3CommandClass
+[conv] 0x538060 View4CommandClass::performAction_204 -> View4CommandClass
+[conv] 0x538080 SetView1CommandClass::performAction_205 -> SetView1CommandClass
+[conv] 0x5380a0 SetView2CommandClass::performAction_206 -> SetView2CommandClass
+[conv] 0x5380c0 SetView3CommandClass::performAction_207 -> SetView3CommandClass
+[conv] 0x5380e0 SetView4CommandClass::performAction_208 -> SetView4CommandClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _RLEBlitTransLucent25ZReadWrite_G rc=2
+[era] VectorCursor             rc=0
+[era] _VectorCursor_IV_DynamicVectorClass_I rc=2
+[era] GScreenClass             rc=2
+[era] CreateTeamCommand        rc=2
+[era] CommandClass             rc=2
+[era] SelectTeamCommand        rc=2
+[era] AddTeamCommand           rc=2
+[era] CenterTeamCommand        rc=2
+[era] TauntCommandClass        rc=2
+[era] MultiplayerDebugCommandClass rc=2
+[era] FollowCommandClass       rc=2
+[era] View1CommandClass        rc=2
+[era] View2CommandClass        rc=2
+[era] View3CommandClass        rc=2
+[era] View4CommandClass        rc=2
+[era] SetView1CommandClass     rc=2
+[era] SetView2CommandClass     rc=2
+[era] SetView3CommandClass     rc=2
+[era] SetView4CommandClass     rc=2
+=== diffasm byte-compare ===
+[diff] 0x4f28c0   MISMATCH         VectorCursor::vt_placeholder_07
+[ledger] 0x49a9e0 _RLEBlitTransLucent25ZReadWrite_G::Constructor_RLEBlitter_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f28c0 VectorCursor::vt_placeholder_07 -> NG (attempt 1)
+[ledger] 0x4f3fd0 _VectorCursor_IV_DynamicVectorClass_I::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f4c00 GScreenClass::getHouseHandle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x535cd0 CreateTeamCommand::performAction_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x535d00 CommandClass::performAction_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536090 SelectTeamCommand::performAction_22 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536180 AddTeamCommand::performAction_23 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536270 CenterTeamCommand::performAction_24 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536580 TauntCommandClass::performAction_25 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537fa0 MultiplayerDebugCommandClass::performAction_198 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537fe0 FollowCommandClass::performAction_200 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538000 View1CommandClass::performAction_201 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538020 View2CommandClass::performAction_202 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538040 View3CommandClass::performAction_203 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538060 View4CommandClass::performAction_204 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538080 SetView1CommandClass::performAction_205 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5380a0 SetView2CommandClass::performAction_206 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5380c0 SetView3CommandClass::performAction_207 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5380e0 SetView4CommandClass::performAction_208 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p71\batch_report.json
