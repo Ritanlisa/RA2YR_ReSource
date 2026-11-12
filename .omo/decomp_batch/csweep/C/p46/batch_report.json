@@ -1,0 +1,458 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "extern_reloc": 13,
+   "codegen_shape": 7
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x537220",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1ce1",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_137",
+   "emitted": "SidebarDownCommandClass::performAction_137",
+   "unit": "SidebarDownCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537270",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1d6a",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_140",
+   "emitted": "OptionsCommandClass::performAction_140",
+   "unit": "OptionsCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537290",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1d6c",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_141",
+   "emitted": "OptionsCommandClass::performAction_141",
+   "unit": "OptionsCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x5372f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1e1b",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_145",
+   "emitted": "View1CommandClass::performAction_145",
+   "unit": "View1CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537310",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1e1d",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_146",
+   "emitted": "View1CommandClass::performAction_146",
+   "unit": "View1CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x537330",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1e1f",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_147",
+   "emitted": "View1CommandClass::performAction_147",
+   "unit": "View1CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x5373e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1e3f",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_150",
+   "emitted": "View2CommandClass::performAction_150",
+   "unit": "View2CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537400",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1e41",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_151",
+   "emitted": "View2CommandClass::performAction_151",
+   "unit": "View2CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x537420",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1e43",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_152",
+   "emitted": "View2CommandClass::performAction_152",
+   "unit": "View2CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x5374d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1e63",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_155",
+   "emitted": "View3CommandClass::performAction_155",
+   "unit": "View3CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x5374f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1e65",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_156",
+   "emitted": "View3CommandClass::performAction_156",
+   "unit": "View3CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x537510",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1e67",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_157",
+   "emitted": "View3CommandClass::performAction_157",
+   "unit": "View3CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x5375c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1e87",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_160",
+   "emitted": "View4CommandClass::performAction_160",
+   "unit": "View4CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x5375e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1e89",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_161",
+   "emitted": "View4CommandClass::performAction_161",
+   "unit": "View4CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x5376b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1eab",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_164",
+   "emitted": "SetView1CommandClass::performAction_164",
+   "unit": "SetView1CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x5376d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1ead",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_165",
+   "emitted": "SetView1CommandClass::performAction_165",
+   "unit": "SetView1CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x5376f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1eaf",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_166",
+   "emitted": "SetView1CommandClass::performAction_166",
+   "unit": "SetView1CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537770",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1ec6",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_169",
+   "emitted": "SetView2CommandClass::performAction_169",
+   "unit": "SetView2CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x537790",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 30B",
+   "first_diff": {
+    "orig": "+0 push 0x1ec8",
+    "ours": "+0 xor eax, eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "CreateTeamCommand::performAction_170",
+   "emitted": "SetView2CommandClass::performAction_170",
+   "unit": "SetView2CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 30,
+   "clean": false
+  },
+  {
+   "addr": "0x5377b0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 23B ours 27B",
+   "first_diff": {
+    "orig": "+0 push 0x1eca",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "CreateTeamCommand::performAction_171",
+   "emitted": "SetView2CommandClass::performAction_171",
+   "unit": "SetView2CommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 27,
+   "clean": false
+  }
+ ]
+}

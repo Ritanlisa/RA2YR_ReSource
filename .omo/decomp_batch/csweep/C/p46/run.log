@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p46\part_00
+=== convert (20 addrs) ===
+[conv] 0x537220 SidebarDownCommandClass::performAction_137 -> SidebarDownCommandClass
+[conv] 0x537270 OptionsCommandClass::performAction_140 -> OptionsCommandClass
+[conv] 0x537290 OptionsCommandClass::performAction_141 -> OptionsCommandClass
+[conv] 0x5372f0 View1CommandClass::performAction_145 -> View1CommandClass
+[conv] 0x537310 View1CommandClass::performAction_146 -> View1CommandClass
+[conv] 0x537330 View1CommandClass::performAction_147 -> View1CommandClass
+[conv] 0x5373e0 View2CommandClass::performAction_150 -> View2CommandClass
+[conv] 0x537400 View2CommandClass::performAction_151 -> View2CommandClass
+[conv] 0x537420 View2CommandClass::performAction_152 -> View2CommandClass
+[conv] 0x5374d0 View3CommandClass::performAction_155 -> View3CommandClass
+[conv] 0x5374f0 View3CommandClass::performAction_156 -> View3CommandClass
+[conv] 0x537510 View3CommandClass::performAction_157 -> View3CommandClass
+[conv] 0x5375c0 View4CommandClass::performAction_160 -> View4CommandClass
+[conv] 0x5375e0 View4CommandClass::performAction_161 -> View4CommandClass
+[conv] 0x5376b0 SetView1CommandClass::performAction_164 -> SetView1CommandClass
+[conv] 0x5376d0 SetView1CommandClass::performAction_165 -> SetView1CommandClass
+[conv] 0x5376f0 SetView1CommandClass::performAction_166 -> SetView1CommandClass
+[conv] 0x537770 SetView2CommandClass::performAction_169 -> SetView2CommandClass
+[conv] 0x537790 SetView2CommandClass::performAction_170 -> SetView2CommandClass
+[conv] 0x5377b0 SetView2CommandClass::performAction_171 -> SetView2CommandClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SidebarDownCommandClass  rc=0
+[era] OptionsCommandClass      rc=0
+[era] View1CommandClass        rc=0
+[era] View2CommandClass        rc=0
+[era] View3CommandClass        rc=0
+[era] View4CommandClass        rc=0
+[era] SetView1CommandClass     rc=0
+[era] SetView2CommandClass     rc=0
+=== diffasm byte-compare ===
+[diff] 0x537220   MISMATCH         SidebarDownCommandClass::performAction_137
+[diff] 0x537270   MISMATCH         OptionsCommandClass::performAction_140
+[diff] 0x537290   MISMATCH         OptionsCommandClass::performAction_141
+[diff] 0x5372f0   MISMATCH         View1CommandClass::performAction_145
+[diff] 0x537310   MISMATCH         View1CommandClass::performAction_146
+[diff] 0x537330   MISMATCH         View1CommandClass::performAction_147
+[diff] 0x5373e0   MISMATCH         View2CommandClass::performAction_150
+[diff] 0x537400   MISMATCH         View2CommandClass::performAction_151
+[diff] 0x537420   MISMATCH         View2CommandClass::performAction_152
+[diff] 0x5374d0   MISMATCH         View3CommandClass::performAction_155
+[diff] 0x5374f0   MISMATCH         View3CommandClass::performAction_156
+[diff] 0x537510   MISMATCH         View3CommandClass::performAction_157
+[diff] 0x5375c0   MISMATCH         View4CommandClass::performAction_160
+[diff] 0x5375e0   MISMATCH         View4CommandClass::performAction_161
+[diff] 0x5376b0   MISMATCH         SetView1CommandClass::performAction_164
+[diff] 0x5376d0   MISMATCH         SetView1CommandClass::performAction_165
+[diff] 0x5376f0   MISMATCH         SetView1CommandClass::performAction_166
+[diff] 0x537770   MISMATCH         SetView2CommandClass::performAction_169
+[diff] 0x537790   MISMATCH         SetView2CommandClass::performAction_170
+[diff] 0x5377b0   MISMATCH         SetView2CommandClass::performAction_171
+[ledger] 0x537220 SidebarDownCommandClass::performAction_137 -> NG (attempt 1)
+[ledger] 0x537270 OptionsCommandClass::performAction_140 -> NG (attempt 1)
+[ledger] 0x537290 OptionsCommandClass::performAction_141 -> NG (attempt 1)
+[ledger] 0x5372f0 View1CommandClass::performAction_145 -> NG (attempt 1)
+[ledger] 0x537310 View1CommandClass::performAction_146 -> NG (attempt 1)
+[ledger] 0x537330 View1CommandClass::performAction_147 -> NG (attempt 1)
+[ledger] 0x5373e0 View2CommandClass::performAction_150 -> NG (attempt 1)
+[ledger] 0x537400 View2CommandClass::performAction_151 -> NG (attempt 1)
+[ledger] 0x537420 View2CommandClass::performAction_152 -> NG (attempt 1)
+[ledger] 0x5374d0 View3CommandClass::performAction_155 -> NG (attempt 1)
+[ledger] 0x5374f0 View3CommandClass::performAction_156 -> NG (attempt 1)
+[ledger] 0x537510 View3CommandClass::performAction_157 -> NG (attempt 1)
+[ledger] 0x5375c0 View4CommandClass::performAction_160 -> NG (attempt 1)
+[ledger] 0x5375e0 View4CommandClass::performAction_161 -> NG (attempt 1)
+[ledger] 0x5376b0 SetView1CommandClass::performAction_164 -> NG (attempt 1)
+[ledger] 0x5376d0 SetView1CommandClass::performAction_165 -> NG (attempt 1)
+[ledger] 0x5376f0 SetView1CommandClass::performAction_166 -> NG (attempt 1)
+[ledger] 0x537770 SetView2CommandClass::performAction_169 -> NG (attempt 1)
+[ledger] 0x537790 SetView2CommandClass::performAction_170 -> NG (attempt 1)
+[ledger] 0x5377b0 SetView2CommandClass::performAction_171 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 13,
+  "codegen_shape": 7
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p46\batch_report.json
