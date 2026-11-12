@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x74c1e0",
+  "family": "D_RELOC",
+  "name": "sub_74C1E0"
+ },
+ {
+  "addr": "0x74c360",
+  "family": "D_RELOC",
+  "name": "sub_74C360"
+ },
+ {
+  "addr": "0x74ef00",
+  "family": "D_RELOC",
+  "name": "VeinholeMonsterClass::CheckStatus"
+ },
+ {
+  "addr": "0x750160",
+  "family": "D_RELOC",
+  "name": "sub_750160"
+ },
+ {
+  "addr": "0x7502e0",
+  "family": "D_RELOC",
+  "name": "sub_7502E0"
+ },
+ {
+  "addr": "0x752070",
+  "family": "D_RELOC",
+  "name": "sub_752070"
+ },
+ {
+  "addr": "0x7521f0",
+  "family": "D_RELOC",
+  "name": "sub_7521F0"
+ },
+ {
+  "addr": "0x754960",
+  "family": "D_RELOC",
+  "name": "sub_754960"
+ },
+ {
+  "addr": "0x754ae0",
+  "family": "D_RELOC",
+  "name": "sub_754AE0"
+ },
+ {
+  "addr": "0x758fe0",
+  "family": "D_RELOC",
+  "name": "sub_758FE0"
+ },
+ {
+  "addr": "0x759160",
+  "family": "D_RELOC",
+  "name": "sub_759160"
+ },
+ {
+  "addr": "0x75a8f0",
+  "family": "D_RELOC",
+  "name": "sub_75A8F0"
+ },
+ {
+  "addr": "0x75aa70",
+  "family": "D_RELOC",
+  "name": "sub_75AA70"
+ },
+ {
+  "addr": "0x75cce0",
+  "family": "D_RELOC",
+  "name": "sub_75CCE0"
+ },
+ {
+  "addr": "0x75ce60",
+  "family": "D_RELOC",
+  "name": "sub_75CE60"
+ },
+ {
+  "addr": "0x75e790",
+  "family": "D_RELOC",
+  "name": "sub_75E790"
+ },
+ {
+  "addr": "0x75e910",
+  "family": "D_RELOC",
+  "name": "sub_75E910"
+ },
+ {
+  "addr": "0x7633d0",
+  "family": "D_RELOC",
+  "name": "sub_7633D0"
+ },
+ {
+  "addr": "0x763550",
+  "family": "D_RELOC",
+  "name": "sub_763550"
+ },
+ {
+  "addr": "0x764880",
+  "family": "D_RELOC",
+  "name": "sub_764880"
+ }
+]

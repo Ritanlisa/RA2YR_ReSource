@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p75\part_00
+=== convert (20 addrs) ===
+[conv] 0x74c1e0 sub_74C1E0 -> _addr_74
+[conv] 0x74c360 sub_74C360 -> _addr_74
+[conv] 0x74ef00 VeinholeMonsterClass::CheckStatus -> VeinholeMonsterClass
+[conv] 0x750160 sub_750160 -> _addr_75
+[conv] 0x7502e0 sub_7502E0 -> _addr_75
+[conv] 0x752070 sub_752070 -> _addr_75
+[conv] 0x7521f0 sub_7521F0 -> _addr_75
+[conv] 0x754960 sub_754960 -> _addr_75
+[conv] 0x754ae0 sub_754AE0 -> _addr_75
+[conv] 0x758fe0 sub_758FE0 -> _addr_75
+[conv] 0x759160 sub_759160 -> _addr_75
+[conv] 0x75a8f0 sub_75A8F0 -> _addr_75
+[conv] 0x75aa70 sub_75AA70 -> _addr_75
+[conv] 0x75cce0 sub_75CCE0 -> _addr_75
+[conv] 0x75ce60 sub_75CE60 -> _addr_75
+[conv] 0x75e790 sub_75E790 -> _addr_75
+[conv] 0x75e910 sub_75E910 -> _addr_75
+[conv] 0x7633d0 sub_7633D0 -> _addr_76
+[conv] 0x763550 sub_763550 -> _addr_76
+[conv] 0x764880 sub_764880 -> _addr_76
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_74                 rc=0
+[era] VeinholeMonsterClass     rc=0
+[era] _addr_75                 rc=0
+[era] _addr_76                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x74c1e0   MATCH            sub_74C1E0
+[diff] 0x74c360   MISMATCH         sub_74C360
+[diff] 0x74ef00   MISMATCH         VeinholeMonsterClass::CheckStatus
+[diff] 0x750160   MATCH            sub_750160
+[diff] 0x7502e0   MISMATCH         sub_7502E0
+[diff] 0x752070   MATCH            sub_752070
+[diff] 0x7521f0   MISMATCH         sub_7521F0
+[diff] 0x754960   MATCH            sub_754960
+[diff] 0x754ae0   MISMATCH         sub_754AE0
+[diff] 0x758fe0   MATCH            sub_758FE0
+[diff] 0x759160   MISMATCH         sub_759160
+[diff] 0x75a8f0   MATCH            sub_75A8F0
+[diff] 0x75aa70   MISMATCH         sub_75AA70
+[diff] 0x75cce0   MATCH            sub_75CCE0
+[diff] 0x75ce60   MISMATCH         sub_75CE60
+[diff] 0x75e790   MATCH            sub_75E790
+[diff] 0x75e910   MISMATCH         sub_75E910
+[diff] 0x7633d0   MATCH            sub_7633D0
+[diff] 0x763550   MISMATCH         sub_763550
+[diff] 0x764880   MATCH            sub_764880
+[ledger] 0x74c1e0 sub_74C1E0 -> OK (attempt 2)
+[ledger] 0x74c360 sub_74C360 -> NG (attempt 2)
+[ledger] 0x74ef00 VeinholeMonsterClass::CheckStatus -> NG (attempt 2)
+[ledger] 0x750160 sub_750160 -> OK (attempt 2)
+[ledger] 0x7502e0 sub_7502E0 -> NG (attempt 2)
+[ledger] 0x752070 sub_752070 -> OK (attempt 2)
+[ledger] 0x7521f0 sub_7521F0 -> NG (attempt 2)
+[ledger] 0x754960 sub_754960 -> OK (attempt 2)
+[ledger] 0x754ae0 sub_754AE0 -> NG (attempt 2)
+[ledger] 0x758fe0 sub_758FE0 -> OK (attempt 3)
+[ledger] 0x759160 sub_759160 -> NG (attempt 2)
+[ledger] 0x75a8f0 sub_75A8F0 -> OK (attempt 2)
+[ledger] 0x75aa70 sub_75AA70 -> NG (attempt 2)
+[ledger] 0x75cce0 sub_75CCE0 -> OK (attempt 2)
+[ledger] 0x75ce60 sub_75CE60 -> NG (attempt 2)
+[ledger] 0x75e790 sub_75E790 -> OK (attempt 2)
+[ledger] 0x75e910 sub_75E910 -> NG (attempt 2)
+[ledger] 0x7633d0 sub_7633D0 -> OK (attempt 2)
+[ledger] 0x763550 sub_763550 -> NG (attempt 3)
+[ledger] 0x764880 sub_764880 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "extern_reloc": 9,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p75\batch_report.json
