@@ -44038,7 +44038,7 @@
   "this_as_id": false
  },
  "0x5b77c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf0f8], 0",
   "name": "sub_5B77C0",
@@ -44126,14 +44126,14 @@
   "this_as_id": false
  },
  "0x5bbfe0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5BBFE0",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5BBFE0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5bc000": {
@@ -44192,7 +44192,7 @@
   "this_as_id": false
  },
  "0x5bc160": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf208], 0",
   "name": "sub_5BC160",
@@ -44344,14 +44344,14 @@
   "this_as_id": false
  },
  "0x5bd830": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5BD830",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5BD830",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5bd850": {
@@ -44417,7 +44417,7 @@
   "this_as_id": false
  },
  "0x5bd9b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf2c8], 0",
   "name": "sub_5BD9B0",
@@ -44516,14 +44516,14 @@
   "this_as_id": false
  },
  "0x5beb20": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5BEB20",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5BEB20",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5beb40": {
@@ -44589,11 +44589,15 @@
   "status": "OK"
  },
  "0x5beca0": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf348], 0",
   "name": "sub_5BECA0",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
-  "status": "NG"
+  "orig_name": "sub_5BECA0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5becc0": {
   "attempts": 1,
@@ -44641,11 +44645,15 @@
   "this_as_id": false
  },
  "0x5bf630": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5BF630",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5BF630",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5bf650": {
   "attempts": 2,
@@ -44703,7 +44711,7 @@
   "this_as_id": false
  },
  "0x5bf7b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf3e0], 0",
   "name": "sub_5BF7B0",
@@ -45179,14 +45187,14 @@
   "this_as_id": false
  },
  "0x5c1140": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5C1140",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5C1140",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5c1160": {
@@ -45252,7 +45260,7 @@
   "this_as_id": false
  },
  "0x5c12c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf488], 0",
   "name": "sub_5C12C0",
@@ -45673,14 +45681,14 @@
   "this_as_id": false
  },
  "0x5c5b40": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5C5B40",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5C5B40",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5c5b60": {
@@ -45739,7 +45747,7 @@
   "this_as_id": false
  },
  "0x5c5cc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf508], 0",
   "name": "sub_5C5CC0",
@@ -45796,14 +45804,14 @@
   "this_as_id": false
  },
  "0x5c5ee0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5C5EE0",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5C5EE0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5c5f00": {
@@ -45862,7 +45870,7 @@
   "this_as_id": false
  },
  "0x5c6060": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf588], 0",
   "name": "sub_5C6060",
@@ -46179,14 +46187,14 @@
   "this_as_id": false
  },
  "0x5c9240": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5C9240",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5C9240",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5c9260": {
@@ -46245,7 +46253,7 @@
   "this_as_id": false
  },
  "0x5c93c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf940], 0",
   "name": "sub_5C93C0",
@@ -46285,11 +46293,15 @@
   "this_as_id": false
  },
  "0x5c9560": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5C9560",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5C9560",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5c9580": {
   "attempts": 2,
@@ -46347,7 +46359,7 @@
   "this_as_id": false
  },
  "0x5c96e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0xabf9e0], 0",
   "name": "sub_5C96E0",
@@ -46388,14 +46400,14 @@
   "this_as_id": false
  },
  "0x5ca470": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_5CA470",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5CA470",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5ca490": {
