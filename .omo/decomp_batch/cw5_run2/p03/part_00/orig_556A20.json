@@ -1,0 +1,11 @@
+{
+ "addr": "0x556A20",
+ "name": "ObjectClass::checkLimbo",
+ "size": 164,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x556A20",
+ "bytes_hex": "53568bf1b08033d2578806884601884602895604c746081000000089560c8d461cb9200000008b1d50cbab008d78f483c01049891f8b1d54cbab00895f048b1d58cbab00895f088950f075daa180cbab008b0d88cbab003bc87c2b381585cbab0075043bc275378b0d8ccbab003bca7e2d03c15250a178cbab00b978cbab00ff500884c074188b0d88cbab008bc141890d88cbab008b0d7ccbab008934818bc65f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

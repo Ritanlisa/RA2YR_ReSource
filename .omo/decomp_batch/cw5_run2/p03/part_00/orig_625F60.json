@@ -1,0 +1,11 @@
+{
+ "addr": "0x625F60",
+ "name": "HashTable_flat::FindString",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x625F60",
+ "bytes_hex": "568b710485f657741b8b7c240c6a045657e89a461a0083c40c85c074138b760c85f675e933c05f85c00f95c05ec2080085f68bc6740b8b4e088b118b4c2410891185c05f5e0f95c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

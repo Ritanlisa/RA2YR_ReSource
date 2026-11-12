@@ -1,0 +1,21 @@
+{
+ "symbol": "?DrawMarker@DSurface@@QAEHHH@Z",
+ "sym_key": "DSurface::DrawMarker",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "83ec30568bf18d4c2424e8000000008b0856894c24188b50048954241c8b4808894c24208b500c8b44243cb9060000008944242883c0fd894424088b44244083c0fd895424248944240ca100000000894c2410894c24140fbe088b118d4c2408518d4c241c5150ff52545e83c430c20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?GetViewport@Display@@QAEPAHXZ",
+   "sym_key": "Display::GetViewport"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?__isctype@@YAHHH@Z",
+ "sym_key": "Unnamed::__isctype",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "518b4c24088b442408894424008d510181fa0001000077148b150000000033c0668b044a8b4c240c23c159c38bd153c1fa08568b350000000081e2ff0000008a5c56015e84db5b7c1d240081e1ff0000000bc16a01894424046a008d4424126a00506a01eb1f24006a010bc26633d2894424046a008d4424128ad16a005066895424116a028d4c2414516a01e80000000083c41c85c074148b4424088b54240cc1f81023c225ffff000059c333c059c3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C590@@3PAXA",
+   "sym_key": "DataGlobal_87C590"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C590@@3PAXA",
+   "sym_key": "DataGlobal_87C590"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?__crtGetStringTypeA@@YAHHPAXH0HHHZZ",
+   "sym_key": "__crtGetStringTypeA"
+  }
+ ]
+}

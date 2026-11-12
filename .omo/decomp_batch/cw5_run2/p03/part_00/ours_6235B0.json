@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6235B0@ObjectClass@@QAEXPAG@Z",
+ "sym_key": "ObjectClass::sub_6235B0",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "538bd9568b432885c0741050e80000000083c404c74328000000008b74240c85f67431803e00742c578bfe83c9ff33c0f2aef7d1498d44090250e8000000008943288b0d00000000565150e80000000083c4105f5e5bc20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_Str_Trace__hs@@3_KA",
+   "sym_key": "g_Str_Trace__hs"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  }
+ ]
+}

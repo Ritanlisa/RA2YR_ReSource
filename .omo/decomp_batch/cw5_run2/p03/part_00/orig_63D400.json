@@ -1,0 +1,11 @@
+{
+ "addr": "0x63D400",
+ "name": "DSurface::DrawMarker",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63D400",
+ "bytes_hex": "83ec30568bf1578d4c2408e810d90e008b08894c2428568b5004895424308b4808894c24348b4c24408b500c8b44244489542438894c240cba0600000083c1fd8bfa89542424894c241c8b0d1c7388008d54241c83e8035289442424897c242c8b018d54243052ff50545f5e83c430c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

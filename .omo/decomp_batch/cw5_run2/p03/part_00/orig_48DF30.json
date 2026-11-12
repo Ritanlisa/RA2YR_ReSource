@@ -1,0 +1,11 @@
+{
+ "addr": "0x48DF30",
+ "name": "LookupNameIndex",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48DF30",
+ "bytes_hex": "56578bf985ff743d576874748100e8ddad330083c40885c0742ba1a0f3ab0033f685c07e20a194f3ab008b0cb05157e8bcad330083c40885c07410a1a0f3ab00463bf07ce05f83c8ff5ec38bc65f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

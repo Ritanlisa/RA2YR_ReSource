@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindString@HashTable@@QAE_NPADPAH@Z",
+ "sym_key": "HashTable::FindString",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "568b710485f65775075f32c05ec208008b7c240c6a045657e80000000083c40c85c074178b760c85f674de6a045657e80000000083c40c85c075e98b46088b54241085f68b085f890a5e0f95c0c20800",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "_strncmp",
+   "sym_key": "strncmp"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "_strncmp",
+   "sym_key": "strncmp"
+  }
+ ]
+}

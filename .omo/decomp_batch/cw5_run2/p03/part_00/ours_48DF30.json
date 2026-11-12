@@ -1,0 +1,57 @@
+{
+ "symbol": "?LookupNameIndex@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::LookupNameIndex",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "56578bf985ff75065f83c8ff5ec333c057a00000000050e80000000083c40885c075065f83c8ff5ec3a1a82d000033f685c07f065f83c8ff5ec38b0d9c2d00008b115257e80000000083c40885c07420a1a82d0000463bf07ddaa19c2d00008b0cb05157e80000000083c40885c075e08bc65f5ec3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

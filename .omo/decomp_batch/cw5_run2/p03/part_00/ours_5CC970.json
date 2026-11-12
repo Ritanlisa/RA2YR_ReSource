@@ -1,0 +1,15 @@
+{
+ "symbol": "?Play@MSBinkAnim@@QAEHHH@Z",
+ "sym_key": "MSBinkAnim::Play",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "568b35000000008d41248b4c24086a016a008b1150565051ff52085ec20800",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  }
+ ]
+}
