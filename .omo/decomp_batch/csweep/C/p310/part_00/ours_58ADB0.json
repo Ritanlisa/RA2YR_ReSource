@@ -1,0 +1,15 @@
+{
+ "symbol": "?drawRadarTerrain@RadarClass@@QAEPAV1@HH@Z",
+ "sym_key": "RadarClass::drawRadarTerrain",
+ "size": 174,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bf133db3bfb895e04897e08c7460c01000000895e10891e0f84810000008b4c24143bcb754e8bc7c1e00450e80000000083c4043bc3742a8d4fff85c97c218d480283caff668959fe668919668959026689590488590689510a83c1104f75e58bd8895e04c74610010000008bc65f5e5bc208008d57ff85d27c218d410283caff668958fe668918668958026689580488580689500a83c0104f75e5894e048bc65f5e5bc20800",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

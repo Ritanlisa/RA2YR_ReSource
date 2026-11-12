@@ -1,0 +1,27 @@
+{
+ "symbol": "?writeFile@FileSystem@@QAEPAV1@HPAE@Z",
+ "sym_key": "FileSystem::writeFile",
+ "size": 167,
+ "link_base": 0,
+ "bytes_hex": "535556578b7c24148bf185ffc7460400000000897e08c6460c01c6460d00c7060000000074788b6c241885ed75548bc7c1e00603c7c1e00250e8000000008bd883c40485db74298d4fff8beb85c97c228bcde80000000081c5040100004f75f0895e04c6460d018bc65f5e5d5bc2080033db895e04c6460d018bc65f5e5d5bc208008d57ff8bdd85d27c108bcbe80000000081c3040100004f75f0896e048bc65f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?Zero@Byte@@QAEPAEXZ",
+   "sym_key": "Byte::Zero"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?Zero@Byte@@QAEPAEXZ",
+   "sym_key": "Byte::Zero"
+  }
+ ]
+}

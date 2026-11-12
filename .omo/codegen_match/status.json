@@ -3019,6 +3019,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40b740": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVBombClass::processEvent",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "EventClass::processEvent",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x40b7f0": {
   "attempts": 1,
   "clean": false,
@@ -3077,6 +3089,18 @@
   "orig_name": "MoveFeedback::AddRef",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x40b9a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTechnoClass::dispatchEvent",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "EventClass::dispatchEvent",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x40ba50": {
@@ -3286,6 +3310,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40bef0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVCommandClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_cptr_CommandClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x40bfa0": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -3419,6 +3455,18 @@
   "name": "VectorClass_ptr_LightConvertClass::Add",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x40c2d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVLightConvertClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_LightConvertClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x40c380": {
   "attempts": 1,
@@ -3891,6 +3939,18 @@
   "orig_name": "Buffer::CompareEqual",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x40cd10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_VectorClass_PAVObjectClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ObjectVector::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x40cdc0": {
@@ -4385,6 +4445,18 @@
   "orig_name": "VectorClass_ptr_MixFileClass::Add",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x40d5e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVMixFileClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_MixFileClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x40d690": {
@@ -5313,6 +5385,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40e890": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVScriptClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ScriptClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x40e940": {
   "attempts": 1,
   "clean": false,
@@ -5677,6 +5761,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40ef60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVVoxelAnimClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VoxelAnimClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x40f010": {
   "attempts": 1,
   "clean": false,
@@ -6028,6 +6124,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x40f680": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVWarheadTypeClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_WarheadTypeClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x40f730": {
   "attempts": 1,
   "clean": false,
@@ -6311,6 +6419,18 @@
   "orig_name": "VectorClass_ptr_WeaponTypeClass::Add",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x40fc50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVWeaponTypeClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_WeaponTypeClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x40fd00": {
@@ -9675,6 +9795,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x41de80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVAirstrikeClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AirstrikeClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x41df30": {
   "attempts": 1,
   "clean": false,
@@ -10180,6 +10312,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x420410": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVAlphaLightingRemapClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AITriggerTypeClass_40::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4204c0": {
   "attempts": 1,
   "clean": false,
@@ -10561,6 +10705,18 @@
   "orig_name": "VectorClass_ptr_AlphaShapeClass::Add",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4218a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVAlphaShapeClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AlphaShapeClass::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x421950": {
@@ -12510,6 +12666,18 @@
   "orig_name": "DynamicVectorClass_uint::AddRef",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x42d640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_I::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DynamicVectorClass_uint::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x42d6f0": {
@@ -72796,6 +72964,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x58adb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+2 mov esi, dword ptr [esp + 0xc]",
+  "name": "RadarClass::drawRadarTerrain",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RadarClass::drawRadarTerrain",
+  "rule_violations": 11,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x58af80": {
   "attempts": 1,
   "clean": false,
@@ -86683,6 +86863,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x5e3630": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::Network_Create",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Network_Create",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5e36e0": {
   "attempts": 1,
   "clean": false,
@@ -92906,6 +93098,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x628ed0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+3 mov esi, dword ptr [esp + 0x10]",
+  "name": "FileSystem::writeFile",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "FileSystem::writeFile",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x628f80": {
   "attempts": 1,
   "clean": false,
@@ -95893,6 +96097,17 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "SelectScriptNode",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x638f90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 sub esp, 0x34",
+  "name": "sub_638F90",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "sub_638F90",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -99009,6 +99224,17 @@
   "orig_name": "nullsub_217",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x652110": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "Network_Process_652110",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Network_Process_652110",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6521c0": {
@@ -124776,6 +125002,17 @@
   "orig_name": "TeamClass::ExecuteAction",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6ec250": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0x14",
+  "name": "globalHelper_0EC250",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "globalHelper_0EC250",
+  "rule_violations": 10,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ec370": {

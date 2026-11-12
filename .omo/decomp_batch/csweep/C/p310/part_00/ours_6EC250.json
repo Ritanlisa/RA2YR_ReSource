@@ -1,0 +1,57 @@
+{
+ "symbol": "?globalHelper_0EC250@@YIHHH@Z",
+ "sym_key": "Unnamed::globalHelper_0EC250",
+ "size": 187,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec08a100000000535533ed565785c089542410894c24140f868f000000b3018b0d000000008b34a985f674778b5424108b4e2c3bd1756c8b4e248b5424143991b4000000735d8b465485c074136a006aff508bcee8000000008b465485c075ed885e7e885e7da1000000008b3d00000000dd0500000000dc882819000083ec08dd1c24e8000000008b4c241c889e83000000897e64894e6889466ca10000000083c408453be80f8273ffffff5f5e5d5b8be55dc3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_AIProductionState@@3IA",
+   "sym_key": "g_HouseClass_AIProductionState"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_TeamClassPool@@3PAXA",
+   "sym_key": "g_TeamClassPool"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?LiberateMember_Start@TeamClass@@QAEDHID@Z",
+   "sym_key": "TeamClass::LiberateMember_Start"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAVRulesClass@@A",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E27F8@@3NA",
+   "sym_key": "DataGlobal_7E27F8"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_AIProductionState@@3IA",
+   "sym_key": "g_HouseClass_AIProductionState"
+  }
+ ]
+}

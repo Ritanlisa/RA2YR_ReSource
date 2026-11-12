@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_638F90@@YGHHH@Z",
+ "sym_key": "Unnamed::sub_638F90",
+ "size": 162,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000083ec3085c9560f84870000008d44242450e8000000008b08894c24088b50048954240c8b40088d5424088d4c240489442410e8000000008b48048b106a0883e9046a0883ea0451528d4c2424e8000000008b4c24148b4424188b54243883c0fc8d71fc3bd6722c8b74241c8d4c0e043bd173208b4c243c3bc87c188b5424208d4402083bc8730ca1000000005e83c430c2080033c05e83c430c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_ScriptPool@@3IA",
+   "sym_key": "g_ScriptPool"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetCoords@ScriptAction@@QAEPAIPAX@Z",
+   "sym_key": "ScriptAction::GetCoords"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?ToCoordPixel@@YIPAIPAX0@Z",
+   "sym_key": "ToCoordPixel"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?Set@Rect@@QAEPAV1@HHHH@Z",
+   "sym_key": "Rect::Set"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?g_ScriptPool@@3IA",
+   "sym_key": "g_ScriptPool"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x628ED0",
+ "name": "FileSystem::writeFile",
+ "size": 173,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x628ED0",
+ "bytes_hex": "5355568b742410578bf985f6c7470400000000897708c6470c01c6470d00c707d0f77e00747e8b5c241885db74288d46ff8beb85c07c138d70018bcde80fbdecff81c5040100004e75f0895f048bc75f5e5d5bc208008bc6c1e00603c6c1e00250e8e1fe19008bd883c40485db742c8d46ff8beb85c07c258d70018bcde8cebcecff81c5040100004e75f0895f04c6470d018bc75f5e5d5bc2080033db895f04c6470d018bc75f5e5d5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
