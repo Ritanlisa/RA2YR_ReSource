@@ -1,0 +1,14 @@
+[
+ {
+  "addr": "0x519630",
+  "family": "C14",
+  "shape": "C14 truncated export block",
+  "errfam": "C2059"
+ },
+ {
+  "addr": "0x648710",
+  "family": "C14",
+  "shape": "C14 truncated export block",
+  "errfam": "C2059"
+ }
+]
