@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D8230",
+ "name": "AbstractClass::computeRevealRadius",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D8230",
+ "bytes_hex": "6a40e8e00b1f0083c40485c074288b4c24188b542414518b4c2414528b542414518b4c2414528b54241451528bc8e83d31ffffc2180033c0c21800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

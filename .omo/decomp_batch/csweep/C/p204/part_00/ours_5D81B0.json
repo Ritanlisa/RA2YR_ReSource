@@ -1,0 +1,21 @@
+{
+ "symbol": "?Helper_5D81B0@__Initializer_VMultiplayerManBattle___MultiplayerGameMode@@QAGPAIPAPBH0PAPBD1DH@Z",
+ "sym_key": "__Initializer_VMultiplayerManBattle___MultiplayerGameMode::Helper_5D81B0",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "6a40e80000000083c40485c074288b4c241c8b542418518b4c2418528b542418518b4c2418528b54241851528bc8e800000000c21c0033c0c21c00",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?MPManBattleClass@MPBattleClass@@QAEPAIPAX000DH@Z",
+   "sym_key": "MPBattleClass::MPManBattleClass"
+  }
+ ]
+}

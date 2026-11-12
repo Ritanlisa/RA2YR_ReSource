@@ -1,0 +1,11 @@
+{
+ "addr": "0x510460",
+ "name": "HouseClass::updatePowerState",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x510460",
+ "bytes_hex": "568bf18a4c2408f6c102741b8b46fc83c6fc48f6c101741d56e8bf862b0083c4048bc65ec20400f6c101740956e8ab862b0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

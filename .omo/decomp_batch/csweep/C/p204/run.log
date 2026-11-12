@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p204\part_00
+=== convert (20 addrs) ===
+[conv] 0x49aac0 _RLEBlitTransLucent50Alpha_G::QueryInterface -> _RLEBlitTransLucent50Alpha_G
+[conv] 0x49ab00 _RLEBlitTransLucent25Alpha_G::QueryInterface -> _RLEBlitTransLucent25Alpha_G
+[conv] 0x49ab40 _RLEBlitTransXlatAlphaZRead_G::QueryInterface -> _RLEBlitTransXlatAlphaZRead_G
+[conv] 0x49ab80 _RLEBlitTransZRemapXlatAlphaZRead_G::QueryInterface -> _RLEBlitTransZRemapXlatAlphaZRead_G
+[conv] 0x49abc0 _RLEBlitTransLucent75AlphaZRead_G::QueryInterface -> _RLEBlitTransLucent75AlphaZRead_G
+[conv] 0x49ac00 _RLEBlitTransLucent50AlphaZRead_G::QueryInterface -> _RLEBlitTransLucent50AlphaZRead_G
+[conv] 0x49ac40 _RLEBlitTransLucent25AlphaZRead_G::QueryInterface -> _RLEBlitTransLucent25AlphaZRead_G
+[conv] 0x49ac80 _RLEBlitTransLucent75AlphaZReadWarp_G::QueryInterface -> _RLEBlitTransLucent75AlphaZReadWarp_G
+[conv] 0x49acc0 _RLEBlitTransLucent50AlphaZReadWarp_G::QueryInterface -> _RLEBlitTransLucent50AlphaZReadWarp_G
+[conv] 0x49ad40 _RLEBlitTransXlatAlphaZReadWrite_G::QueryInterface -> _RLEBlitTransXlatAlphaZReadWrite_G
+[conv] 0x49ad80 _RLEBlitTransZRemapXlatAlphaZReadWrite_G::QueryInterface -> _RLEBlitTransZRemapXlatAlphaZReadWrite_G
+[conv] 0x49adc0 _RLEBlitTransLucent75AlphaZReadWrite_G::QueryInterface -> _RLEBlitTransLucent75AlphaZReadWrite_G
+[conv] 0x49ae00 _RLEBlitTransLucent50AlphaZReadWrite_G::QueryInterface -> _RLEBlitTransLucent50AlphaZReadWrite_G
+[conv] 0x49ae40 _RLEBlitTransLucent25AlphaZReadWrite_G::QueryInterface -> _RLEBlitTransLucent25AlphaZReadWrite_G
+[conv] 0x510460 HouseClass::updatePowerState -> HouseClass
+[conv] 0x5d8170 MPBattleClass::MPBattleClass -> MPBattleClass
+[conv] 0x5d81b0 __Initializer_VMultiplayerManBattle___MultiplayerGameMode::Helper_5D81B0 -> __Initializer_VMultiplayerManBattle___MultiplayerGameMode
+[conv] 0x5d81f0 AbstractClass::processRevealArea -> AbstractClass
+[conv] 0x5d8230 AbstractClass::computeRevealRadius -> AbstractClass
+[conv] 0x6f26e0 ObjectClass::Team_Helper_6F26E0 -> ObjectClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _RLEBlitTransLucent50Alpha_G rc=0
+[era] _RLEBlitTransLucent25Alpha_G rc=0
+[era] _RLEBlitTransXlatAlphaZRead_G rc=0
+[era] _RLEBlitTransZRemapXlatAlphaZRead_G rc=0
+[era] _RLEBlitTransLucent75AlphaZRead_G rc=0
+[era] _RLEBlitTransLucent50AlphaZRead_G rc=0
+[era] _RLEBlitTransLucent25AlphaZRead_G rc=0
+[era] _RLEBlitTransLucent75AlphaZReadWarp_G rc=0
+[era] _RLEBlitTransLucent50AlphaZReadWarp_G rc=0
+[era] _RLEBlitTransXlatAlphaZReadWrite_G rc=0
+[era] _RLEBlitTransZRemapXlatAlphaZReadWrite_G rc=0
+[era] _RLEBlitTransLucent75AlphaZReadWrite_G rc=0
+[era] _RLEBlitTransLucent50AlphaZReadWrite_G rc=0
+[era] _RLEBlitTransLucent25AlphaZReadWrite_G rc=0
+[era] HouseClass               rc=0
+[era] MPBattleClass            rc=2
+[era] __Initializer_VMultiplayerManBattle___MultiplayerGameMode rc=0
+[era] AbstractClass            rc=0
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x49aac0   MISMATCH         _RLEBlitTransLucent50Alpha_G::QueryInterface
+[diff] 0x49ab00   MISMATCH         _RLEBlitTransLucent25Alpha_G::QueryInterface
+[diff] 0x49ab40   MISMATCH         _RLEBlitTransXlatAlphaZRead_G::QueryInterface
+[diff] 0x49ab80   MISMATCH         _RLEBlitTransZRemapXlatAlphaZRead_G::QueryInterface
+[diff] 0x49abc0   MISMATCH         _RLEBlitTransLucent75AlphaZRead_G::QueryInterface
+[diff] 0x49ac00   MISMATCH         _RLEBlitTransLucent50AlphaZRead_G::QueryInterface
+[diff] 0x49ac40   MISMATCH         _RLEBlitTransLucent25AlphaZRead_G::QueryInterface
+[diff] 0x49ac80   MISMATCH         _RLEBlitTransLucent75AlphaZReadWarp_G::QueryInterface
+[diff] 0x49acc0   MISMATCH         _RLEBlitTransLucent50AlphaZReadWarp_G::QueryInterface
+[diff] 0x49ad40   MISMATCH         _RLEBlitTransXlatAlphaZReadWrite_G::QueryInterface
+[diff] 0x49ad80   MISMATCH         _RLEBlitTransZRemapXlatAlphaZReadWrite_G::QueryInterface
+[diff] 0x49adc0   MISMATCH         _RLEBlitTransLucent75AlphaZReadWrite_G::QueryInterface
+[diff] 0x49ae00   MISMATCH         _RLEBlitTransLucent50AlphaZReadWrite_G::QueryInterface
+[diff] 0x49ae40   MISMATCH         _RLEBlitTransLucent25AlphaZReadWrite_G::QueryInterface
+[diff] 0x510460   MISMATCH         HouseClass::updatePowerState
+[diff] 0x5d81b0   MISMATCH         __Initializer_VMultiplayerManBattle___MultiplayerGameMode::Helper_5D81B0
+[diff] 0x5d81f0   MISMATCH         AbstractClass::processRevealArea
+[diff] 0x5d8230   MISMATCH         AbstractClass::computeRevealRadius
+[diff] 0x6f26e0   MISMATCH         ObjectClass::Team_Helper_6F26E0
+[ledger] 0x49aac0 _RLEBlitTransLucent50Alpha_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ab00 _RLEBlitTransLucent25Alpha_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ab40 _RLEBlitTransXlatAlphaZRead_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ab80 _RLEBlitTransZRemapXlatAlphaZRead_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49abc0 _RLEBlitTransLucent75AlphaZRead_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ac00 _RLEBlitTransLucent50AlphaZRead_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ac40 _RLEBlitTransLucent25AlphaZRead_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ac80 _RLEBlitTransLucent75AlphaZReadWarp_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49acc0 _RLEBlitTransLucent50AlphaZReadWarp_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ad40 _RLEBlitTransXlatAlphaZReadWrite_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ad80 _RLEBlitTransZRemapXlatAlphaZReadWrite_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49adc0 _RLEBlitTransLucent75AlphaZReadWrite_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ae00 _RLEBlitTransLucent50AlphaZReadWrite_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x49ae40 _RLEBlitTransLucent25AlphaZReadWrite_G::QueryInterface -> NG (attempt 1)
+[ledger] 0x510460 HouseClass::updatePowerState -> NG (attempt 1)
+[ledger] 0x5d8170 MPBattleClass::MPBattleClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d81b0 __Initializer_VMultiplayerManBattle___MultiplayerGameMode::Helper_5D81B0 -> NG (attempt 1)
+[ledger] 0x5d81f0 AbstractClass::processRevealArea -> NG (attempt 1)
+[ledger] 0x5d8230 AbstractClass::computeRevealRadius -> NG (attempt 1)
+[ledger] 0x6f26e0 ObjectClass::Team_Helper_6F26E0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 14,
+  "codegen_shape": 2,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p204\batch_report.json
