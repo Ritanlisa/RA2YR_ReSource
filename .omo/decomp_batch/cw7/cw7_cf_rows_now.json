@@ -1,0 +1,6043 @@
+[
+ {
+  "addr": "0x401190",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_401190",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x401f80",
+  "code": "C2059",
+  "evidence": false,
+  "name": "?EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x402040",
+  "code": "C2039",
+  "evidence": false,
+  "name": "AudioController::Constructor",
+  "unit": "AudioController"
+ },
+ {
+  "addr": "0x4024a0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "AudioSample::ResetState",
+  "unit": "AudioSample"
+ },
+ {
+  "addr": "0x403490",
+  "code": "NONE",
+  "evidence": false,
+  "name": "?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x4060f0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "SetAudioSource",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x406130",
+  "code": "C2446",
+  "evidence": false,
+  "name": "AudioSource::Get",
+  "unit": "AudioSource"
+ },
+ {
+  "addr": "0x406170",
+  "code": "C2440",
+  "evidence": false,
+  "name": "VocClass::Check",
+  "unit": "VocClass"
+ },
+ {
+  "addr": "0x406ee0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_406EE0",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x4072d0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "DListNode::InitEmpty",
+  "unit": "DListNode"
+ },
+ {
+  "addr": "0x4073b0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "SaveGame::CountLinkedList",
+  "unit": "SaveGame"
+ },
+ {
+  "addr": "0x407420",
+  "code": "C2673",
+  "evidence": false,
+  "name": "InsertAfterDListNode",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x407510",
+  "code": "C2562",
+  "evidence": false,
+  "name": "VtableStub::Push_407510",
+  "unit": "VtableStub"
+ },
+ {
+  "addr": "0x407680",
+  "code": "C2673",
+  "evidence": false,
+  "name": "StartAddress",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x408530",
+  "code": "C2562",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_2",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x408600",
+  "code": "C2562",
+  "evidence": false,
+  "name": "AudioNode::Release",
+  "unit": "AudioNode"
+ },
+ {
+  "addr": "0x408eb0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_408EB0",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x4093b0",
+  "code": "C2064",
+  "evidence": false,
+  "name": "Audio::Callback",
+  "unit": "Audio"
+ },
+ {
+  "addr": "0x4095b0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "AudioStreamThreadProc",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x40a090",
+  "code": "C2227",
+  "evidence": false,
+  "name": "TechnoClass::sub_40A090",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x40a7a0",
+  "code": "C2146",
+  "evidence": false,
+  "name": "Audio::GetDirectSound",
+  "unit": "unknown"
+ },
+ {
+  "addr": "0x40a850",
+  "code": "C2660",
+  "evidence": false,
+  "name": "ObjectClass::sub_40A850",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x40a900",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_40A900",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x40d300",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_57",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x40d3c0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_40D3C0",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x40d400",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_40D400",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x40d8e0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "sub_40D8E0",
+  "unit": "_addr_40"
+ },
+ {
+  "addr": "0x40ffff",
+  "code": "C2440",
+  "evidence": false,
+  "name": "Math::InitDegToRad",
+  "unit": "Math"
+ },
+ {
+  "addr": "0x4101c0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "AbstractClass::InitVtables",
+  "unit": "AbstractClass"
+ },
+ {
+  "addr": "0x4101f0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "AbstractClass::DTOR",
+  "unit": "AbstractClass"
+ },
+ {
+  "addr": "0x410800",
+  "code": "C2059",
+  "evidence": false,
+  "name": "AbstractTypeClass::Constructor",
+  "unit": "AbstractTypeClass"
+ },
+ {
+  "addr": "0x410e70",
+  "code": "C2065",
+  "evidence": false,
+  "name": "sub_410E70",
+  "unit": "unknown"
+ },
+ {
+  "addr": "0x411330",
+  "code": "C2198",
+  "evidence": false,
+  "name": "TacticalClass::FillScanlinesTransparent",
+  "unit": "TacticalClass"
+ },
+ {
+  "addr": "0x4114b0",
+  "code": "C2198",
+  "evidence": false,
+  "name": "StreamClass::ReadAndSeek",
+  "unit": "StreamClass"
+ },
+ {
+  "addr": "0x411df0",
+  "code": "C2146",
+  "evidence": false,
+  "name": "InitializeSoundBufferPlayback",
+  "unit": "_addr_41"
+ },
+ {
+  "addr": "0x416d50",
+  "code": "C2227",
+  "evidence": false,
+  "name": "Carryall::MissionStateMachine",
+  "unit": "Carryall"
+ },
+ {
+  "addr": "0x417fd0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "AbstractClass::GetField9",
+  "unit": "AbstractClass"
+ },
+ {
+  "addr": "0x41a5c0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "AircraftClass::GetMissionTimer",
+  "unit": "AircraftClass"
+ },
+ {
+  "addr": "0x41c3f0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "BulletClass::NormalizeZeroVector",
+  "unit": "BulletClass"
+ },
+ {
+  "addr": "0x41c460",
+  "code": "C2562",
+  "evidence": false,
+  "name": "Vector2::NormalizeNonZero",
+  "unit": "Vector2"
+ },
+ {
+  "addr": "0x41d380",
+  "code": "C2380",
+  "evidence": false,
+  "name": "AirstrikeClass::AirstrikeClass",
+  "unit": "AirstrikeClass"
+ },
+ {
+  "addr": "0x41dd10",
+  "code": "C2106",
+  "evidence": true,
+  "name": "ObjectClass::sub_41DD10",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x41f0d0",
+  "code": "C2059",
+  "evidence": true,
+  "name": "AITriggerTypeClass::IronCurtainCharged",
+  "unit": "AITriggerTypeClass"
+ },
+ {
+  "addr": "0x420130",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_53",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x4202f0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::sub_4202F0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x420f40",
+  "code": "C2228",
+  "evidence": false,
+  "name": "UpdateSpotlightsFoo",
+  "unit": "_addr_42"
+ },
+ {
+  "addr": "0x425280",
+  "code": "C4716",
+  "evidence": false,
+  "name": "AnimClass::SaveLoad_Prefix",
+  "unit": "AnimClass"
+ },
+ {
+  "addr": "0x425510",
+  "code": "C2109",
+  "evidence": false,
+  "name": "AnimClass::CheckEndOfSequence",
+  "unit": "AnimClass"
+ },
+ {
+  "addr": "0x4265b0",
+  "code": "C2065",
+  "evidence": true,
+  "name": "Cell::GetHeight",
+  "unit": "Cell"
+ },
+ {
+  "addr": "0x426620",
+  "code": "C2673",
+  "evidence": false,
+  "name": "_4type_info_AAEAAV0_ABV0__Z",
+  "unit": "_addr_42"
+ },
+ {
+  "addr": "0x426990",
+  "code": "C2100",
+  "evidence": false,
+  "name": "ObjectClass::sub_426990",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x426a73",
+  "code": "C2653",
+  "evidence": false,
+  "name": "ObjectClass::UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x426e80",
+  "code": "C2100",
+  "evidence": false,
+  "name": "UnitClass::sub_426E80",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x427940",
+  "code": "C2665",
+  "evidence": false,
+  "name": "LoadBuildingTypeClassTheatreSHP",
+  "unit": "_addr_42"
+ },
+ {
+  "addr": "0x427d00",
+  "code": "C2143",
+  "evidence": true,
+  "name": "AnimTypeClass::LoadFromINI",
+  "unit": "AnimTypeClass"
+ },
+ {
+  "addr": "0x42df90",
+  "code": "C2036",
+  "evidence": false,
+  "name": "Base64Straw::ProcessFrame",
+  "unit": "Base64Straw"
+ },
+ {
+  "addr": "0x430f70",
+  "code": "C2065",
+  "evidence": true,
+  "name": "PlayerClass::FindNearestWaypoint",
+  "unit": "PlayerClass"
+ },
+ {
+  "addr": "0x433040",
+  "code": "C2039",
+  "evidence": false,
+  "name": "BinkMovieHandle::RenderFrameToSurface",
+  "unit": "BinkMovieHandle"
+ },
+ {
+  "addr": "0x433560",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_433560",
+  "unit": "_addr_43"
+ },
+ {
+  "addr": "0x4335a0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_4335A0",
+  "unit": "_addr_43"
+ },
+ {
+  "addr": "0x433ca0",
+  "code": "C2679",
+  "evidence": false,
+  "name": "TextGroup::SetRect",
+  "unit": "TextGroup"
+ },
+ {
+  "addr": "0x435820",
+  "code": "C2440",
+  "evidence": true,
+  "name": "BuildingLightClass::CTOR",
+  "unit": "BuildingLightClass"
+ },
+ {
+  "addr": "0x4371d0",
+  "code": "C2059",
+  "evidence": true,
+  "name": "Helper::ProcessData",
+  "unit": "Helper"
+ },
+ {
+  "addr": "0x43a0d0",
+  "code": "C2102",
+  "evidence": false,
+  "name": "Coord::Scale",
+  "unit": "Coord"
+ },
+ {
+  "addr": "0x43fb20",
+  "code": "C2109",
+  "evidence": true,
+  "name": "BuildingClass::ProcessSpreadEffect",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x4456d0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "BuildingClass::UpdateSidebar",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x448160",
+  "code": "C2039",
+  "evidence": true,
+  "name": "BuildingClass::ProcessPrimarySelect",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x44d7d0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "BuildingClass::GetTargetFacing",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x451330",
+  "code": "C2440",
+  "evidence": true,
+  "name": "BuildingClass::GetCrewCount",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x451690",
+  "code": "C2039",
+  "evidence": false,
+  "name": "BuildingClass::ClearSuperWeaponAnim",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x451e40",
+  "code": "C2562",
+  "evidence": false,
+  "name": "BuildingClass::ClearAnims",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x452360",
+  "code": "C2039",
+  "evidence": true,
+  "name": "BuildingClass::PowerOff",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x453240",
+  "code": "C2036",
+  "evidence": false,
+  "name": "BuildingClass::TraverseBridgeSegments",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x453e20",
+  "code": "C2440",
+  "evidence": false,
+  "name": "BuildingClass::LoadFromStream",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x454ce0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_5",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x455820",
+  "code": "C2039",
+  "evidence": false,
+  "name": "BuildingClass::ScanCircleForUnits2",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x455c20",
+  "code": "C2065",
+  "evidence": false,
+  "name": "TechnoClass::GetScreenCoords",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x459470",
+  "code": "C2039",
+  "evidence": true,
+  "name": "BuildingClass::UpdateDamageAnim",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x459870",
+  "code": "C2059",
+  "evidence": false,
+  "name": "BuildingClass::MissionStubReturnZero",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x459880",
+  "code": "C2059",
+  "evidence": false,
+  "name": "BuildingClass::MissionStubReturnZero2",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x459890",
+  "code": "C2059",
+  "evidence": false,
+  "name": "BuildingClass::MissionStubReturnZero3",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x45dd20",
+  "code": "C2228",
+  "evidence": false,
+  "name": "ObjectClass::sub_45DD20",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x45e750",
+  "code": "C4716",
+  "evidence": false,
+  "name": "nullsub_6",
+  "unit": "_addr_45"
+ },
+ {
+  "addr": "0x45e8b0",
+  "code": "C2146",
+  "evidence": false,
+  "name": "ObjectClass::sub_45E8B0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x45ec90",
+  "code": "C2109",
+  "evidence": false,
+  "name": "BuildingTypeClass::GetFoundationWidth",
+  "unit": "BuildingTypeClass"
+ },
+ {
+  "addr": "0x464af0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "BuildingTypeClass::GetSizeInLeptons",
+  "unit": "BuildingTypeClass"
+ },
+ {
+  "addr": "0x465960",
+  "code": "C2665",
+  "evidence": false,
+  "name": "AbstractClass::LoadTheaterSHP",
+  "unit": "AbstractClass"
+ },
+ {
+  "addr": "0x465cb0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_7",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x468430",
+  "code": "C2660",
+  "evidence": false,
+  "name": "BulletClass::LoseTarget",
+  "unit": "BulletClass"
+ },
+ {
+  "addr": "0x46b960",
+  "code": "C2440",
+  "evidence": false,
+  "name": "BulletClass::AddVector3",
+  "unit": "BulletClass"
+ },
+ {
+  "addr": "0x471c90",
+  "code": "C2227",
+  "evidence": false,
+  "name": "CaptureManagerClass::CanCapture",
+  "unit": "CaptureManagerClass"
+ },
+ {
+  "addr": "0x4722f0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "CaptureManagerClass::GetOriginalOwner",
+  "unit": "CaptureManagerClass"
+ },
+ {
+  "addr": "0x472640",
+  "code": "C2228",
+  "evidence": true,
+  "name": "CaptureManagerClass::NeedsToDrawLinks",
+  "unit": "CaptureManagerClass"
+ },
+ {
+  "addr": "0x473960",
+  "code": "C2036",
+  "evidence": false,
+  "name": "sub_473960",
+  "unit": "_addr_47"
+ },
+ {
+  "addr": "0x474430",
+  "code": "C1004",
+  "evidence": false,
+  "name": "CCINIClass::WriteDigest",
+  "unit": "CCINIClass"
+ },
+ {
+  "addr": "0x474940",
+  "code": "C2109",
+  "evidence": false,
+  "name": "ObjectTypeClass::loadTypeMember_5474940",
+  "unit": "ObjectTypeClass"
+ },
+ {
+  "addr": "0x475540",
+  "code": "C2109",
+  "evidence": false,
+  "name": "SuperWeaponTypeClass::FindOrCreate",
+  "unit": "SuperWeaponTypeClass"
+ },
+ {
+  "addr": "0x476d80",
+  "code": "C4716",
+  "evidence": false,
+  "name": "Hash::ComputeHashSHA1",
+  "unit": "Hash"
+ },
+ {
+  "addr": "0x477740",
+  "code": "C2040",
+  "evidence": false,
+  "name": "VtableStub::Method_477740",
+  "unit": "Pipe"
+ },
+ {
+  "addr": "0x477db0",
+  "code": "C2059",
+  "evidence": true,
+  "name": "DynamicVectorClass::Construct",
+  "unit": "DynamicVectorClass"
+ },
+ {
+  "addr": "0x4790b0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "SetSoundWarning",
+  "unit": "_addr_47"
+ },
+ {
+  "addr": "0x4791f0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "CD::LoadScenarioMixFiles",
+  "unit": "CD"
+ },
+ {
+  "addr": "0x479a40",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_479A40",
+  "unit": "_addr_47"
+ },
+ {
+  "addr": "0x481a00",
+  "code": "C2143",
+  "evidence": true,
+  "name": "CrateClass::ProcessPickup",
+  "unit": "CrateClass"
+ },
+ {
+  "addr": "0x484050",
+  "code": "C2440",
+  "evidence": false,
+  "name": "Tactical::CreateTacticalLightSurface",
+  "unit": "Tactical"
+ },
+ {
+  "addr": "0x484180",
+  "code": "C2297",
+  "evidence": true,
+  "name": "Tactical::CalculateTacticalLighting",
+  "unit": "Tactical"
+ },
+ {
+  "addr": "0x485460",
+  "code": "C2446",
+  "evidence": false,
+  "name": "BuildingClass::CheckAdjacentCells",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x485590",
+  "code": "C2227",
+  "evidence": false,
+  "name": "CellClass::ProcessBridgeRepair",
+  "unit": "CellClass"
+ },
+ {
+  "addr": "0x485af0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "BuildingClass::VisualizePlacement",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x4865d0",
+  "code": "C2143",
+  "evidence": false,
+  "name": "Cell::IsGroundTypeRange",
+  "unit": "Cell"
+ },
+ {
+  "addr": "0x486750",
+  "code": "C2143",
+  "evidence": false,
+  "name": "Cell::IsInRange",
+  "unit": "Cell"
+ },
+ {
+  "addr": "0x486770",
+  "code": "C2143",
+  "evidence": false,
+  "name": "Cell::IsInRange2",
+  "unit": "Cell"
+ },
+ {
+  "addr": "0x486ff0",
+  "code": "C2440",
+  "evidence": true,
+  "name": "Cell::IsBuildableAdvanced",
+  "unit": "Cell"
+ },
+ {
+  "addr": "0x48b410",
+  "code": "C2562",
+  "evidence": false,
+  "name": "ModemConnectionClass::queueSendPacket",
+  "unit": "ModemConnectionClass"
+ },
+ {
+  "addr": "0x48bf40",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ConnectionClass::sendAck",
+  "unit": "ConnectionClass"
+ },
+ {
+  "addr": "0x48c8b0",
+  "code": "C2440",
+  "evidence": true,
+  "name": "ObjectClass::MainGameFrame",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x48ded0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_51",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x48dfd0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "sub_48DFD0",
+  "unit": "_addr_48"
+ },
+ {
+  "addr": "0x48e030",
+  "code": "C2036",
+  "evidence": false,
+  "name": "sub_48E030",
+  "unit": "_addr_48"
+ },
+ {
+  "addr": "0x48e090",
+  "code": "C2036",
+  "evidence": false,
+  "name": "globalHelper_08E090",
+  "unit": "_addr_48"
+ },
+ {
+  "addr": "0x494590",
+  "code": "C2296",
+  "evidence": false,
+  "name": "_BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend",
+  "unit": "_BlitTransXlatMultWriteAlpha_G"
+ },
+ {
+  "addr": "0x494d90",
+  "code": "C2027",
+  "evidence": false,
+  "name": "_BlitTransZRemapXlatAlphaZRead_G::AddRef",
+  "unit": "_BlitTransZRemapXlatAlphaZRead_G"
+ },
+ {
+  "addr": "0x494f20",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_BlitTransLucent75AlphaZRead_G::AddRef",
+  "unit": "_BlitTransLucent75AlphaZRead_G"
+ },
+ {
+  "addr": "0x4950c0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_BlitTransLucent50AlphaZRead_G::AddRef",
+  "unit": "_BlitTransLucent50AlphaZRead_G"
+ },
+ {
+  "addr": "0x495250",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_BlitTransLucent25AlphaZRead_G::AddRef",
+  "unit": "_BlitTransLucent25AlphaZRead_G"
+ },
+ {
+  "addr": "0x495590",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_BlitTransLucent50AlphaZReadWarp_G::AddRef",
+  "unit": "_BlitTransLucent50AlphaZReadWarp_G"
+ },
+ {
+  "addr": "0x4958d0",
+  "code": "C2027",
+  "evidence": false,
+  "name": "_BlitTransXlatAlphaZReadWrite_G::AddRef",
+  "unit": "_BlitTransXlatAlphaZReadWrite_G"
+ },
+ {
+  "addr": "0x496250",
+  "code": "C2100",
+  "evidence": false,
+  "name": "_RLEBlitTransDarken_G::Blit_RLE_Lucent50",
+  "unit": "_RLEBlitTransDarken_G"
+ },
+ {
+  "addr": "0x4963f0",
+  "code": "C2100",
+  "evidence": false,
+  "name": "_RLEBlitTransLucent50_G::sub_4963F0",
+  "unit": "_RLEBlitTransLucent50_G"
+ },
+ {
+  "addr": "0x496820",
+  "code": "C2100",
+  "evidence": false,
+  "name": "_RLEBlitTransDarkenZRead_G::sub_496820",
+  "unit": "_RLEBlitTransDarkenZRead_G"
+ },
+ {
+  "addr": "0x496a80",
+  "code": "C2100",
+  "evidence": false,
+  "name": "_RLEBlitTransLucent50ZRead_G::sub_496A80",
+  "unit": "_RLEBlitTransLucent50ZRead_G"
+ },
+ {
+  "addr": "0x497390",
+  "code": "C2100",
+  "evidence": false,
+  "name": "_RLEBlitTransDarkenZReadWrite_G::sub_497390",
+  "unit": "_RLEBlitTransDarkenZReadWrite_G"
+ },
+ {
+  "addr": "0x497b80",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_RLEBlitTransLucent75Alpha_G::AddRef",
+  "unit": "_RLEBlitTransLucent75Alpha_G"
+ },
+ {
+  "addr": "0x497cf0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_RLEBlitTransLucent50Alpha_G::AddRef",
+  "unit": "_RLEBlitTransLucent50Alpha_G"
+ },
+ {
+  "addr": "0x497e60",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_RLEBlitTransLucent25Alpha_G::AddRef",
+  "unit": "_RLEBlitTransLucent25Alpha_G"
+ },
+ {
+  "addr": "0x4986d0",
+  "code": "C2100",
+  "evidence": false,
+  "name": "_RLEBlitTransLucent50AlphaZRead_G::AddRef",
+  "unit": "_RLEBlitTransLucent50AlphaZRead_G"
+ },
+ {
+  "addr": "0x49a3e0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "_BlitTranslucent50NonzeroAlpha_G::Constructor_Blitter_1",
+  "unit": "_BlitTranslucent50NonzeroAlpha_G"
+ },
+ {
+  "addr": "0x49c5a0",
+  "code": "C2109",
+  "evidence": false,
+  "name": "CampaignClass::SaveProgress",
+  "unit": "CampaignClass"
+ },
+ {
+  "addr": "0x49cc50",
+  "code": "C2143",
+  "evidence": false,
+  "name": "MPCooperative::validateMove",
+  "unit": "MPCooperative"
+ },
+ {
+  "addr": "0x49d120",
+  "code": "C2143",
+  "evidence": false,
+  "name": "MPCooperative::ReadCoopSaveINI",
+  "unit": "MPCooperative"
+ },
+ {
+  "addr": "0x49d680",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ObjectClass::SerializeCampaignOptions",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x49e400",
+  "code": "C2086",
+  "evidence": false,
+  "name": "CampaignClass::FindMission",
+  "unit": "CampaignClass"
+ },
+ {
+  "addr": "0x49e8e0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "INISectionList::Constructor",
+  "unit": "INISectionList"
+ },
+ {
+  "addr": "0x49f5c0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "CopyProtection::CheckLauncher",
+  "unit": "CopyProtection"
+ },
+ {
+  "addr": "0x4a00b0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "EnumConnectionsClass::ddtor",
+  "unit": "EnumConnectionsClass"
+ },
+ {
+  "addr": "0x4a0630",
+  "code": "C2100",
+  "evidence": false,
+  "name": "ConnectionPointClass::Unadvise",
+  "unit": "ConnectionPointClass"
+ },
+ {
+  "addr": "0x4a0a50",
+  "code": "C2446",
+  "evidence": false,
+  "name": "EnumConnectionPointsClass::ddtor",
+  "unit": "EnumConnectionPointsClass"
+ },
+ {
+  "addr": "0x4a18f0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "BuildingClass::CreateCraterAtCell",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x4a1c10",
+  "code": "C2440",
+  "evidence": false,
+  "name": "Power::FinalizeDrain",
+  "unit": "Power"
+ },
+ {
+  "addr": "0x4a1ca0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "Power::FlagProcess",
+  "unit": "Power"
+ },
+ {
+  "addr": "0x4a2600",
+  "code": "C2440",
+  "evidence": true,
+  "name": "CountdownTimer::UpdateDisplay",
+  "unit": "CountdownTimer"
+ },
+ {
+  "addr": "0x4a2ab0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "CStreamClass::StreamRead",
+  "unit": "CStreamClass"
+ },
+ {
+  "addr": "0x4a2cd0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "CStreamClass::CopyStreamToBuffer",
+  "unit": "CStreamClass"
+ },
+ {
+  "addr": "0x4a3c30",
+  "code": "C2064",
+  "evidence": false,
+  "name": "FadePalette",
+  "unit": "_addr_4A"
+ },
+ {
+  "addr": "0x4a3e40",
+  "code": "C2660",
+  "evidence": false,
+  "name": "DDraw::CapabilityCheck",
+  "unit": "DDraw"
+ },
+ {
+  "addr": "0x4a4780",
+  "code": "C2036",
+  "evidence": false,
+  "name": "Surface::CreateSurfacePalette",
+  "unit": "Surface"
+ },
+ {
+  "addr": "0x4a61c0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "TextRenderer::DrawText",
+  "unit": "TextRenderer"
+ },
+ {
+  "addr": "0x4a6360",
+  "code": "C2064",
+  "evidence": false,
+  "name": "RenderTextLabelWordWrap",
+  "unit": "_addr_4A"
+ },
+ {
+  "addr": "0x4a71a0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "DiskLaserClass::Fire",
+  "unit": "DiskLaserClass"
+ },
+ {
+  "addr": "0x4a7340",
+  "code": "C2660",
+  "evidence": false,
+  "name": "DiskLaserClass::Update",
+  "unit": "DiskLaserClass"
+ },
+ {
+  "addr": "0x4a7a30",
+  "code": "C2380",
+  "evidence": false,
+  "name": "DiskLaserClass::DiskLaserClass",
+  "unit": "DiskLaserClass"
+ },
+ {
+  "addr": "0x4a8960",
+  "code": "C2440",
+  "evidence": false,
+  "name": "DisplayClass::SetViewDimensions",
+  "unit": "DisplayClass"
+ },
+ {
+  "addr": "0x4a8eb0",
+  "code": "C2064",
+  "evidence": false,
+  "name": "GetBuildingPlacement",
+  "unit": "_addr_4A"
+ },
+ {
+  "addr": "0x4a95a0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "MapClass::SetCellFlagsAlongPath",
+  "unit": "MapClass"
+ },
+ {
+  "addr": "0x4ab9b0",
+  "code": "C2109",
+  "evidence": true,
+  "name": "DisplayClass::ExecuteCommand",
+  "unit": "DisplayClass"
+ },
+ {
+  "addr": "0x4ad7e0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "MapClass::SaveCellTagsToINI",
+  "unit": "MapClass"
+ },
+ {
+  "addr": "0x4adba0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "ScenarioClass::ProcessGame",
+  "unit": "ScenarioClass"
+ },
+ {
+  "addr": "0x4adff0",
+  "code": "C2036",
+  "evidence": true,
+  "name": "HouseClass::RevealShroudForAllies",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x4aec60",
+  "code": "C2065",
+  "evidence": false,
+  "name": "Surface::Construct",
+  "unit": "Surface"
+ },
+ {
+  "addr": "0x4af540",
+  "code": "C2039",
+  "evidence": true,
+  "name": "LocomotionClass::Initialize",
+  "unit": "LocomotionClass"
+ },
+ {
+  "addr": "0x4af720",
+  "code": "C2100",
+  "evidence": false,
+  "name": "DriveLocomotionClass::QueryInterface",
+  "unit": "DriveLocomotionClass"
+ },
+ {
+  "addr": "0x4afb80",
+  "code": "C2227",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::StubReturnTrue",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x4b0c40",
+  "code": "C2100",
+  "evidence": false,
+  "name": "DriveLocomotionClass::SetWaypointTarget",
+  "unit": "DriveLocomotionClass"
+ },
+ {
+  "addr": "0x4b2630",
+  "code": "C2143",
+  "evidence": true,
+  "name": "JumpjetLocomotion::Update",
+  "unit": "JumpjetLocomotion"
+ },
+ {
+  "addr": "0x4b4b00",
+  "code": "C2108",
+  "evidence": false,
+  "name": "DriveLocomotionClass::StubReturnZero_2",
+  "unit": "DriveLocomotionClass"
+ },
+ {
+  "addr": "0x4b4d70",
+  "code": "C2440",
+  "evidence": true,
+  "name": "Timeout::GetRemaining",
+  "unit": "Timeout"
+ },
+ {
+  "addr": "0x4b62c0",
+  "code": "C2102",
+  "evidence": false,
+  "name": "DropPodLocomotionClass::UpdateMovement",
+  "unit": "DropPodLocomotionClass"
+ },
+ {
+  "addr": "0x4b64e0",
+  "code": "C2065",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::LoadLocomotionFromStream_0",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x4b69d0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_126",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x4ba5a0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "DSurface::Construct",
+  "unit": "DSurface"
+ },
+ {
+  "addr": "0x4bb000",
+  "code": "C2039",
+  "evidence": true,
+  "name": "DSurface::RestoreIfLost",
+  "unit": "DSurface"
+ },
+ {
+  "addr": "0x4c1f20",
+  "code": "C2065",
+  "evidence": true,
+  "name": "Lightning::Draw",
+  "unit": "Lightning"
+ },
+ {
+  "addr": "0x4c3c90",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::sub_4C3C90",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x4c54e0",
+  "code": "C2440",
+  "evidence": true,
+  "name": "ObjectClass::ApplyEMPPulseEffect",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x4c68e0",
+  "code": "C2371",
+  "evidence": false,
+  "name": "ObjectClass::sub_4C68E0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x4c91c0",
+  "code": "C2039",
+  "evidence": true,
+  "name": "FrameSnapshot::Init",
+  "unit": "FrameSnapshot"
+ },
+ {
+  "addr": "0x4c93d0",
+  "code": "C2440",
+  "evidence": true,
+  "name": "ProgressTimer::GetValue",
+  "unit": "ProgressTimer"
+ },
+ {
+  "addr": "0x4c95d0",
+  "code": "C2065",
+  "evidence": true,
+  "name": "ObjectClass::sub_4C95D0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x4c9b20",
+  "code": "C2109",
+  "evidence": true,
+  "name": "FactoryClass::UpdateProduction",
+  "unit": "FactoryClass"
+ },
+ {
+  "addr": "0x4ca130",
+  "code": "C2143",
+  "evidence": false,
+  "name": "ObjectClass::IsCliffWall",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x4caf20",
+  "code": "C2653",
+  "evidence": false,
+  "name": "VoxelAnimClass::ProcessFrame",
+  "unit": "VoxelAnimClass"
+ },
+ {
+  "addr": "0x4cbba0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "FootClass::FindPathWithRetry",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x4cca90",
+  "code": "C2296",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::ComputeFloatExpression",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x4cd510",
+  "code": "C2227",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::IsMapCoordVisible",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x4ce840",
+  "code": "C2227",
+  "evidence": false,
+  "name": "DropPod::ProcessLanding",
+  "unit": "DropPod"
+ },
+ {
+  "addr": "0x4cfe80",
+  "code": "C2227",
+  "evidence": true,
+  "name": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget",
+  "unit": "FlyLocomotionClass"
+ },
+ {
+  "addr": "0x4d1650",
+  "code": "C2065",
+  "evidence": false,
+  "name": "FoggedObjectClass::DestructFoggedObjectClass",
+  "unit": "FoggedObjectClass"
+ },
+ {
+  "addr": "0x4d2bc0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray",
+  "unit": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass"
+ },
+ {
+  "addr": "0x4d2cd0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass::Read",
+  "unit": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass"
+ },
+ {
+  "addr": "0x4d4200",
+  "code": "C2660",
+  "evidence": false,
+  "name": "FootClass::Destru_vt139",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x4d9e70",
+  "code": "C2059",
+  "evidence": false,
+  "name": "FootClass::CheckCohesion",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x4da030",
+  "code": "C2446",
+  "evidence": false,
+  "name": "InfantryClass::ProcessExitQueue",
+  "unit": "InfantryClass"
+ },
+ {
+  "addr": "0x4daf10",
+  "code": "C2660",
+  "evidence": false,
+  "name": "FootClass::UpdateState",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x4dbad0",
+  "code": "C2664",
+  "evidence": true,
+  "name": "FootClass::BeginPowerUpdate",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x4dbda0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "FootClass::CanBeHunted",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x4de710",
+  "code": "C2440",
+  "evidence": false,
+  "name": "FootClass::PopAndProcess",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x4de7b0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "FootClass::IsTargetInRange",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x4e0220",
+  "code": "C2228",
+  "evidence": false,
+  "name": "FoggedObjectClass::PointerToIndex",
+  "unit": "FoggedObjectClass"
+ },
+ {
+  "addr": "0x4e07b0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "FoggedObjectClass::FindItem",
+  "unit": "FoggedObjectClass"
+ },
+ {
+  "addr": "0x4e0ed0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "FootClass::RemoveFromPointerArray",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x4e1340",
+  "code": "C2653",
+  "evidence": false,
+  "name": "ControlClass::Constructor",
+  "unit": "ControlClass"
+ },
+ {
+  "addr": "0x4e1960",
+  "code": "C2562",
+  "evidence": false,
+  "name": "VectorClass_ptr_ConvertClass::MarkDirty",
+  "unit": "GadgetClass"
+ },
+ {
+  "addr": "0x4e4f50",
+  "code": "C2065",
+  "evidence": false,
+  "name": "__cfltcvt_init",
+  "unit": "_addr_4E"
+ },
+ {
+  "addr": "0x4e8090",
+  "code": "C2673",
+  "evidence": false,
+  "name": "unknown_libname_18",
+  "unit": "_addr_4E"
+ },
+ {
+  "addr": "0x4e8270",
+  "code": "C2653",
+  "evidence": false,
+  "name": "HouseClass::initAngerStruct",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x4f1840",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ShowGameDialog",
+  "unit": "_addr_4F"
+ },
+ {
+  "addr": "0x4f1ca0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "ObjectClass::LoadFromINIGraphicMenu",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x4f3b80",
+  "code": "C2228",
+  "evidence": false,
+  "name": "sub_4F3B80",
+  "unit": "_addr_4F"
+ },
+ {
+  "addr": "0x4f4780",
+  "code": "C2109",
+  "evidence": false,
+  "name": "Frame::Present",
+  "unit": "Frame"
+ },
+ {
+  "addr": "0x4f4e53",
+  "code": "C2065",
+  "evidence": false,
+  "name": "sub_4F4E53",
+  "unit": "_addr_4F"
+ },
+ {
+  "addr": "0x4f6eb0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "nullsub_15",
+  "unit": "_addr_4F"
+ },
+ {
+  "addr": "0x4f9b70",
+  "code": "C2100",
+  "evidence": false,
+  "name": "HouseClass::HandleAlliance",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x4fb840",
+  "code": "C2440",
+  "evidence": false,
+  "name": "BuildingPlacement::Activate",
+  "unit": "BuildingPlacement"
+ },
+ {
+  "addr": "0x4fbf60",
+  "code": "C2440",
+  "evidence": true,
+  "name": "HouseClass::DroppedFlag",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x4fc9e0",
+  "code": "C2228",
+  "evidence": true,
+  "name": "HouseClass::CheckWinCondition",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x4fd060",
+  "code": "C2440",
+  "evidence": false,
+  "name": "HouseClass::FindBuildingOfType",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x4feee0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "HouseClass::AIInfantryProduction",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x501160",
+  "code": "C2036",
+  "evidence": false,
+  "name": "CCINIClass::WriteHouses",
+  "unit": "CCINIClass"
+ },
+ {
+  "addr": "0x501750",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ObjectClass::sub_501750",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x502a80",
+  "code": "C2227",
+  "evidence": true,
+  "name": "HouseClass::RegisterGain_0",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x5054b0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "HouseClass::GenerateAIBuildListEnsureSanity",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x505f80",
+  "code": "C2673",
+  "evidence": false,
+  "name": "globalHelper_005F80",
+  "unit": "_addr_50"
+ },
+ {
+  "addr": "0x5095d0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "TeamClass::CountActiveTeamsForType",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x509610",
+  "code": "C2036",
+  "evidence": false,
+  "name": "TriggerClass::ValidateTeamTriggerConditions",
+  "unit": "TriggerClass"
+ },
+ {
+  "addr": "0x5098f0",
+  "code": "C2440",
+  "evidence": true,
+  "name": "HouseClass::UpdateAITryFireSW",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x50a150",
+  "code": "C2036",
+  "evidence": true,
+  "name": "HouseClass::Fire_PsyDom",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x50a5c0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "HouseClass::AIBuildBase",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x50b760",
+  "code": "C2059",
+  "evidence": true,
+  "name": "BuildingTypeClass::ProcessData",
+  "unit": "BuildingTypeClass"
+ },
+ {
+  "addr": "0x50c160",
+  "code": "C2228",
+  "evidence": false,
+  "name": "ObjectClass::sub_50C160",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x50db00",
+  "code": "C2109",
+  "evidence": true,
+  "name": "House::ChooseHouseEnemy",
+  "unit": "House"
+ },
+ {
+  "addr": "0x50e0e0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "HouseClass::LostPoweredCenter",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x50e450",
+  "code": "C2679",
+  "evidence": false,
+  "name": "BuildLocation::InitCandidate",
+  "unit": "BuildLocation"
+ },
+ {
+  "addr": "0x50ff50",
+  "code": "C2446",
+  "evidence": false,
+  "name": "HouseClass::AddCoordTrackingEntry",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x510f60",
+  "code": "C2143",
+  "evidence": false,
+  "name": "BuildingType::IsSpecialType",
+  "unit": "BuildingType"
+ },
+ {
+  "addr": "0x511850",
+  "code": "C2059",
+  "evidence": false,
+  "name": "HouseTypeClass::LoadFromINI",
+  "unit": "HouseTypeClass"
+ },
+ {
+  "addr": "0x512290",
+  "code": "C2446",
+  "evidence": false,
+  "name": "HouseTypeClass::SaveLoad_Prefix",
+  "unit": "HouseTypeClass"
+ },
+ {
+  "addr": "0x5125a0",
+  "code": "C2100",
+  "evidence": false,
+  "name": "HouseTypeClass::QueryInterface",
+  "unit": "HouseTypeClass"
+ },
+ {
+  "addr": "0x513100",
+  "code": "C2562",
+  "evidence": false,
+  "name": "_VectorClass_PBVUnitTypeClass::Destructor",
+  "unit": "_VectorClass_PBVUnitTypeClass"
+ },
+ {
+  "addr": "0x513d20",
+  "code": "C2660",
+  "evidence": true,
+  "name": "BuildingLightClass::UpdateOscillation",
+  "unit": "BuildingLightClass"
+ },
+ {
+  "addr": "0x514c30",
+  "code": "C2446",
+  "evidence": true,
+  "name": "JumpjetLocomotionClass::HasScoreDisplayChanged",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x514cb0",
+  "code": "C2446",
+  "evidence": true,
+  "name": "JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x514d10",
+  "code": "C2109",
+  "evidence": true,
+  "name": "JumpjetLocomotionClass::HasScoreDisplayChanged_514D10",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x516320",
+  "code": "C2227",
+  "evidence": true,
+  "name": "HoverLocomotionClass::HasScoreDisplayChanged_516320",
+  "unit": "HoverLocomotionClass"
+ },
+ {
+  "addr": "0x517110",
+  "code": "C2660",
+  "evidence": true,
+  "name": "ObjectClass::sub_517110",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x519630",
+  "code": "C2059",
+  "evidence": true,
+  "name": "InfantryClass::RepairBridge",
+  "unit": "InfantryClass"
+ },
+ {
+  "addr": "0x51f660",
+  "code": "C2676",
+  "evidence": false,
+  "name": "InfantryClass::ProcessIvanBombResult",
+  "unit": "InfantryClass"
+ },
+ {
+  "addr": "0x522fe0",
+  "code": "C2660",
+  "evidence": true,
+  "name": "InfantryClass::CreateDeployLocomotor",
+  "unit": "InfantryClass"
+ },
+ {
+  "addr": "0x5239d0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "InfantryClass::DTOR",
+  "unit": "InfantryClass"
+ },
+ {
+  "addr": "0x52ace0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "GenericList::Constructor",
+  "unit": "GenericList"
+ },
+ {
+  "addr": "0x52b170",
+  "code": "C2440",
+  "evidence": false,
+  "name": "SortedArray::Find",
+  "unit": "SortedArray"
+ },
+ {
+  "addr": "0x52b390",
+  "code": "C2440",
+  "evidence": false,
+  "name": "HashTable::BinarySearch",
+  "unit": "HashTable"
+ },
+ {
+  "addr": "0x52cb80",
+  "code": "C4716",
+  "evidence": false,
+  "name": "nullsub_18",
+  "unit": "_addr_52"
+ },
+ {
+  "addr": "0x52d640",
+  "code": "C2533",
+  "evidence": false,
+  "name": "CampaignMenu::DlgProc",
+  "unit": "CampaignMenu"
+ },
+ {
+  "addr": "0x52fc20",
+  "code": "C2143",
+  "evidence": false,
+  "name": "TechnoClass::InitRandomSeed",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x530000",
+  "code": "C2079",
+  "evidence": false,
+  "name": "ObjectClass::LoadExpansionMixFiles",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x530460",
+  "code": "C2065",
+  "evidence": true,
+  "name": "MixFile::LoadAll",
+  "unit": "MixFile"
+ },
+ {
+  "addr": "0x532130",
+  "code": "C4716",
+  "evidence": false,
+  "name": "nullsub_19",
+  "unit": "_addr_53"
+ },
+ {
+  "addr": "0x533fd0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "AllocateSurfaceScreenSurfaces",
+  "unit": "_addr_53"
+ },
+ {
+  "addr": "0x535aa0",
+  "code": "C2533",
+  "evidence": false,
+  "name": "INIClass::INIClass",
+  "unit": "INIClass"
+ },
+ {
+  "addr": "0x535b30",
+  "code": "C2533",
+  "evidence": false,
+  "name": "CCINIClass::CCINIClass",
+  "unit": "CCINIClass"
+ },
+ {
+  "addr": "0x535fc0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "SelectTeamCommand::Construct",
+  "unit": "SelectTeamCommand"
+ },
+ {
+  "addr": "0x5360b0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "AddTeamCommand::Construct",
+  "unit": "AddTeamCommand"
+ },
+ {
+  "addr": "0x5361a0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "CenterTeamCommand::Construct",
+  "unit": "CenterTeamCommand"
+ },
+ {
+  "addr": "0x536290",
+  "code": "C2039",
+  "evidence": false,
+  "name": "TauntCommandClass::Construct",
+  "unit": "TauntCommandClass"
+ },
+ {
+  "addr": "0x537530",
+  "code": "C2296",
+  "evidence": false,
+  "name": "View3CommandClass::performAction_158",
+  "unit": "View3CommandClass"
+ },
+ {
+  "addr": "0x537b40",
+  "code": "C2039",
+  "evidence": false,
+  "name": "ScreenCaptureCommandClass::Constructor",
+  "unit": "ScreenCaptureCommandClass"
+ },
+ {
+  "addr": "0x537dd0",
+  "code": "C2533",
+  "evidence": false,
+  "name": "PageUserCommandClass::PageUserCommandClass",
+  "unit": "PageUserCommandClass"
+ },
+ {
+  "addr": "0x537e70",
+  "code": "C2039",
+  "evidence": false,
+  "name": "CursorPositionCommandClass::Constructor",
+  "unit": "CursorPositionCommandClass"
+ },
+ {
+  "addr": "0x537f10",
+  "code": "C2039",
+  "evidence": false,
+  "name": "DeleteCommandClass::Constructor",
+  "unit": "DeleteCommandClass"
+ },
+ {
+  "addr": "0x537fc0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "MultiplayerSyncCommandClass::performAction_199",
+  "unit": "MultiplayerSyncCommandClass"
+ },
+ {
+  "addr": "0x538120",
+  "code": "C2653",
+  "evidence": false,
+  "name": "SidebarUpCommandClass::performAction_210",
+  "unit": "SidebarUpCommandClass"
+ },
+ {
+  "addr": "0x538280",
+  "code": "C2440",
+  "evidence": false,
+  "name": "StopCommandClass::performAction_221",
+  "unit": "StopCommandClass"
+ },
+ {
+  "addr": "0x53a140",
+  "code": "C2440",
+  "evidence": true,
+  "name": "LightningStorm::Strike",
+  "unit": "LightningStorm"
+ },
+ {
+  "addr": "0x53cbe0",
+  "code": "C2275",
+  "evidence": true,
+  "name": "ExplosionClass::ProcessFrame",
+  "unit": "ExplosionClass"
+ },
+ {
+  "addr": "0x53e3c0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "TimerPool::AllocSlot",
+  "unit": "TimerPool"
+ },
+ {
+  "addr": "0x53f1f0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "Multiplayer::Screen",
+  "unit": "Multiplayer"
+ },
+ {
+  "addr": "0x53fbd0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "IPXGlobalConnClass::Flush",
+  "unit": "IPXGlobalConnClass"
+ },
+ {
+  "addr": "0x540670",
+  "code": "C2440",
+  "evidence": false,
+  "name": "IPXGlobalConnClass::QueryInterface",
+  "unit": "IPXGlobalConnClass"
+ },
+ {
+  "addr": "0x540a80",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ObjectClass::Network_Init",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x540c50",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::sub_540C50",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x541040",
+  "code": "C2036",
+  "evidence": false,
+  "name": "IPXManagerClass::send",
+  "unit": "IPXManagerClass"
+ },
+ {
+  "addr": "0x541070",
+  "code": "C2446",
+  "evidence": false,
+  "name": "IPXManagerClass::receivePacket",
+  "unit": "IPXManagerClass"
+ },
+ {
+  "addr": "0x542520",
+  "code": "C2036",
+  "evidence": false,
+  "name": "IPXManagerClass::ProcessQueue",
+  "unit": "IPXManagerClass"
+ },
+ {
+  "addr": "0x547230",
+  "code": "C2446",
+  "evidence": false,
+  "name": "TacticalClass::DrawCellOverlay",
+  "unit": "TacticalClass"
+ },
+ {
+  "addr": "0x54a990",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::sub_54A990",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x54a9e0",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::sub_54A9E0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x54b8d0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x54d0f0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "JumpjetLocomotion::UpdateFacing",
+  "unit": "JumpjetLocomotion"
+ },
+ {
+  "addr": "0x54d9b0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::GetConditionedCoordinate",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x54e360",
+  "code": "C2065",
+  "evidence": true,
+  "name": "ObjectClass::sub_54E360",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x54f6d0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "TechnoClass::sub_54F6D0",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x551e50",
+  "code": "C2230",
+  "evidence": false,
+  "name": "DecompressCoreLCW",
+  "unit": "_addr_55"
+ },
+ {
+  "addr": "0x552b10",
+  "code": "C2446",
+  "evidence": false,
+  "name": "Scenario::ComputeDisplayPosition",
+  "unit": "Scenario"
+ },
+ {
+  "addr": "0x554100",
+  "code": "C2039",
+  "evidence": false,
+  "name": "LoadingScreen::AdjustForResolution",
+  "unit": "LoadingScreen"
+ },
+ {
+  "addr": "0x554150",
+  "code": "C2446",
+  "evidence": false,
+  "name": "LoadingScreen::CalcProgressBarRect",
+  "unit": "LoadingScreen"
+ },
+ {
+  "addr": "0x554370",
+  "code": "C2440",
+  "evidence": false,
+  "name": "LoadProgressMgr::ReleaseBuffer",
+  "unit": "LoadProgressMgr"
+ },
+ {
+  "addr": "0x556620",
+  "code": "C2059",
+  "evidence": false,
+  "name": "ObjectClass::GetWidth",
+  "unit": "LinkClass"
+ },
+ {
+  "addr": "0x556630",
+  "code": "C2059",
+  "evidence": false,
+  "name": "ObjectClass::GetHeight",
+  "unit": "LinkClass"
+ },
+ {
+  "addr": "0x556640",
+  "code": "C2440",
+  "evidence": false,
+  "name": "LinkClass::FindPrev",
+  "unit": "LinkClass"
+ },
+ {
+  "addr": "0x556670",
+  "code": "C2440",
+  "evidence": false,
+  "name": "LinkClass::FindNext",
+  "unit": "LinkClass"
+ },
+ {
+  "addr": "0x556b70",
+  "code": "C2446",
+  "evidence": false,
+  "name": "ObjectClass::Render_Render_556B70",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x559d60",
+  "code": "C2036",
+  "evidence": false,
+  "name": "LoadOptions::AddRef",
+  "unit": "LoadOptions"
+ },
+ {
+  "addr": "0x55a6c0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "LocomotionClass::Init",
+  "unit": "LocomotionClass"
+ },
+ {
+  "addr": "0x55a6f0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "LocomotionClass::Construct",
+  "unit": "LocomotionClass"
+ },
+ {
+  "addr": "0x55a970",
+  "code": "C2660",
+  "evidence": false,
+  "name": "LocomotionClass::ReleaseRef",
+  "unit": "LocomotionClass"
+ },
+ {
+  "addr": "0x55a9b0",
+  "code": "C2100",
+  "evidence": false,
+  "name": "LocomotionClass::QueryInterface",
+  "unit": "LocomotionClass"
+ },
+ {
+  "addr": "0x55af40",
+  "code": "C2562",
+  "evidence": false,
+  "name": "RadarClass::SetGlobal",
+  "unit": "RadarClass"
+ },
+ {
+  "addr": "0x55bc00",
+  "code": "C2100",
+  "evidence": false,
+  "name": "CompressLCWBuffer",
+  "unit": "_addr_55"
+ },
+ {
+  "addr": "0x55f1e0",
+  "code": "C2146",
+  "evidence": true,
+  "name": "ObjectClass::DrawHUD",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x561180",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ObjectClass::Team_Start",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x565800",
+  "code": "C2440",
+  "evidence": false,
+  "name": "MapClass::Destru_vt05",
+  "unit": "MapClass"
+ },
+ {
+  "addr": "0x568300",
+  "code": "C2143",
+  "evidence": false,
+  "name": "LayerClass::CoordinatesLegal",
+  "unit": "LayerClass"
+ },
+ {
+  "addr": "0x568350",
+  "code": "C2143",
+  "evidence": false,
+  "name": "Tactical::IsCellVisible",
+  "unit": "Tactical"
+ },
+ {
+  "addr": "0x56da10",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::GetRegionMap",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x576ba0",
+  "code": "C2143",
+  "evidence": true,
+  "name": "CellClass::PropagateTerrainVariant5",
+  "unit": "CellClass"
+ },
+ {
+  "addr": "0x578460",
+  "code": "C2143",
+  "evidence": false,
+  "name": "LayerClass::IsWithinUsableArea",
+  "unit": "LayerClass"
+ },
+ {
+  "addr": "0x578540",
+  "code": "C2143",
+  "evidence": false,
+  "name": "Type::CheckAmbiguity",
+  "unit": "Type"
+ },
+ {
+  "addr": "0x578880",
+  "code": "C2440",
+  "evidence": false,
+  "name": "MapClass::FastCellLookup",
+  "unit": "MapClass"
+ },
+ {
+  "addr": "0x57acf0",
+  "code": "C2227",
+  "evidence": true,
+  "name": "GenerateMapClassCliffTransitions",
+  "unit": "_addr_57"
+ },
+ {
+  "addr": "0x57cf60",
+  "code": "C2227",
+  "evidence": false,
+  "name": "CellClass::ApplyTileModification3",
+  "unit": "CellClass"
+ },
+ {
+  "addr": "0x583180",
+  "code": "C2664",
+  "evidence": false,
+  "name": "Pathfinding::CrossBridge",
+  "unit": "Pathfinding"
+ },
+ {
+  "addr": "0x583ad0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "ObjectClass::sub_583AD0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x586360",
+  "code": "C2296",
+  "evidence": false,
+  "name": "Cell::IsPassable",
+  "unit": "Cell"
+ },
+ {
+  "addr": "0x5889f0",
+  "code": "C2100",
+  "evidence": false,
+  "name": "globalHelper_0889F0",
+  "unit": "_addr_58"
+ },
+ {
+  "addr": "0x5892d0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_DynamicVectorClass_USubzoneConnectionStruct::GetSize",
+  "unit": "_DynamicVectorClass_USubzoneConnectionStruct"
+ },
+ {
+  "addr": "0x589680",
+  "code": "C2100",
+  "evidence": false,
+  "name": "Init",
+  "unit": "_addr_58"
+ },
+ {
+  "addr": "0x58a630",
+  "code": "C2440",
+  "evidence": false,
+  "name": "_DynamicVectorClass_U_HashObject_II::Constructor",
+  "unit": "_DynamicVectorClass_U_HashObject_II"
+ },
+ {
+  "addr": "0x58bb30",
+  "code": "C2109",
+  "evidence": false,
+  "name": "ScenarioClass::CopyStartPositions",
+  "unit": "ScenarioClass"
+ },
+ {
+  "addr": "0x58bdc0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "TileData::Constructor",
+  "unit": "TileData"
+ },
+ {
+  "addr": "0x58c800",
+  "code": "C2065",
+  "evidence": false,
+  "name": "RandomMap::GenerateTerrain",
+  "unit": "RandomMap"
+ },
+ {
+  "addr": "0x58ef10",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ObjectClass::ResetMapState",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x590970",
+  "code": "C2065",
+  "evidence": false,
+  "name": "RandomMap::CheckCellPlacement",
+  "unit": "RandomMap"
+ },
+ {
+  "addr": "0x591d80",
+  "code": "C2440",
+  "evidence": false,
+  "name": "MapSeed::PlaceCityBuildings",
+  "unit": "MapSeed"
+ },
+ {
+  "addr": "0x595680",
+  "code": "C2533",
+  "evidence": false,
+  "name": "MapSeedClass::Constructor",
+  "unit": "MapSeedClass"
+ },
+ {
+  "addr": "0x595bc0",
+  "code": "C2377",
+  "evidence": false,
+  "name": "CCFileClass::Load",
+  "unit": "CCFileClass"
+ },
+ {
+  "addr": "0x595ce0",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::CleanupRandomMapCache",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5980c0",
+  "code": "C2226",
+  "evidence": true,
+  "name": "Random::Gaussian",
+  "unit": "Random"
+ },
+ {
+  "addr": "0x5a2f50",
+  "code": "C2146",
+  "evidence": true,
+  "name": "ObjectClass::SmoothTerrainMap",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5a7e90",
+  "code": "C2109",
+  "evidence": false,
+  "name": "Object_Helper_5A7E90",
+  "unit": "Object_Helper"
+ },
+ {
+  "addr": "0x5a99f0",
+  "code": "C2143",
+  "evidence": false,
+  "name": "ObjectClass::sub_5A99F0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5ac230",
+  "code": "C2143",
+  "evidence": false,
+  "name": "MapSeed::IsCellInBounds",
+  "unit": "MapSeed"
+ },
+ {
+  "addr": "0x5ac400",
+  "code": "C2059",
+  "evidence": true,
+  "name": "TypeList::BuildingTypeConstructor",
+  "unit": "TypeList"
+ },
+ {
+  "addr": "0x5ae890",
+  "code": "C2562",
+  "evidence": false,
+  "name": "Vector::MatrixMulVectorMath",
+  "unit": "Vector"
+ },
+ {
+  "addr": "0x5ae980",
+  "code": "C2562",
+  "evidence": false,
+  "name": "Matrix3x4::Translate",
+  "unit": "Matrix3x4"
+ },
+ {
+  "addr": "0x5ae9b0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "Matrix3x3::ApplyCol0",
+  "unit": "Matrix3x3"
+ },
+ {
+  "addr": "0x5ae9e0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "Matrix3x3::ApplyCol1",
+  "unit": "Matrix3x3"
+ },
+ {
+  "addr": "0x5aead0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "BuildingClass::processBaseExpansion",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x5aeaf0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "BuildingClass::updateFoundation",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x5aeb20",
+  "code": "C2440",
+  "evidence": false,
+  "name": "BuildingClass::recalcAdjacency",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x5af120",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::sub_5AF120",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5b20f0",
+  "code": "C2446",
+  "evidence": true,
+  "name": "Movement::CalcVelocity",
+  "unit": "Movement"
+ },
+ {
+  "addr": "0x5b3950",
+  "code": "C2036",
+  "evidence": false,
+  "name": "FromNameIndex",
+  "unit": "_addr_5B"
+ },
+ {
+  "addr": "0x5b4270",
+  "code": "C2109",
+  "evidence": false,
+  "name": "HashTree::MarkEntry",
+  "unit": "HashTree"
+ },
+ {
+  "addr": "0x5b43e0",
+  "code": "C2059",
+  "evidence": false,
+  "name": "?do_always_noconv_codecvt_base_std__MBE_NXZ_7",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5b4590",
+  "code": "C2059",
+  "evidence": true,
+  "name": "MixFileClass::LinkIntoPool",
+  "unit": "MixFileClass"
+ },
+ {
+  "addr": "0x5b4630",
+  "code": "C2040",
+  "evidence": true,
+  "name": "MixFileClass::Constructor_MixFileClass",
+  "unit": "MixFileClass"
+ },
+ {
+  "addr": "0x5b4ee0",
+  "code": "C2146",
+  "evidence": true,
+  "name": "ModemGuest::InitDialog",
+  "unit": "ModemGuest"
+ },
+ {
+  "addr": "0x5b57d0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "ObjectClass::sub_5B57D0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5b9550",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ModemGuest::UpdateGuestPlayerInfo",
+  "unit": "ModemGuest"
+ },
+ {
+  "addr": "0x5bb6e0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "Modem::EnumerateDevices",
+  "unit": "Modem"
+ },
+ {
+  "addr": "0x5c0630",
+  "code": "C2440",
+  "evidence": false,
+  "name": "MovieHandle::sub_5C0630",
+  "unit": "MovieHandle"
+ },
+ {
+  "addr": "0x5c1300",
+  "code": "C2109",
+  "evidence": false,
+  "name": "ObjectClass::ReadMPMapsINI",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5c1640",
+  "code": "C2440",
+  "evidence": false,
+  "name": "MPCooperative::MPCooperative_Cleanup",
+  "unit": "MPCooperative"
+ },
+ {
+  "addr": "0x5c1dc0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "MPCooperative::Seek",
+  "unit": "MPCooperative"
+ },
+ {
+  "addr": "0x5c21d0",
+  "code": "C2377",
+  "evidence": false,
+  "name": "CampaignCoop::Setup",
+  "unit": "CampaignCoop"
+ },
+ {
+  "addr": "0x5c2de0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "MPCooperative::selectTeam",
+  "unit": "MPCooperative"
+ },
+ {
+  "addr": "0x5c6dd0",
+  "code": "C2110",
+  "evidence": false,
+  "name": "MultiplyAddBigInteger",
+  "unit": "_addr_5C"
+ },
+ {
+  "addr": "0x5c8470",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::sub_5C8470",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5cae70",
+  "code": "C2440",
+  "evidence": false,
+  "name": "MultiplayerSiegeDefenderTeam::AddRef",
+  "unit": "MultiplayerSiegeDefenderTeam"
+ },
+ {
+  "addr": "0x5cc550",
+  "code": "C2065",
+  "evidence": false,
+  "name": "MSOverlayAnim::DrawPlacementPreview",
+  "unit": "MSOverlayAnim"
+ },
+ {
+  "addr": "0x5cca20",
+  "code": "C2296",
+  "evidence": false,
+  "name": "MSVQAnim::Construct",
+  "unit": "MSVQAnim"
+ },
+ {
+  "addr": "0x5cd0e0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "MSVQAnim::Play",
+  "unit": "MSVQAnim"
+ },
+ {
+  "addr": "0x5ce330",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ObjectClass::sub_5CE330",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5ce640",
+  "code": "C2440",
+  "evidence": false,
+  "name": "MSPCXAnim::Construct",
+  "unit": "MSPCXAnim"
+ },
+ {
+  "addr": "0x5ce7d0",
+  "code": "C2065",
+  "evidence": false,
+  "name": "MSPCXAnim::Load",
+  "unit": "MSPCXAnim"
+ },
+ {
+  "addr": "0x5ce8c0",
+  "code": "C2198",
+  "evidence": false,
+  "name": "MSPCXAnim::Draw",
+  "unit": "MSPCXAnim"
+ },
+ {
+  "addr": "0x5cf760",
+  "code": "C2440",
+  "evidence": false,
+  "name": "CampaignClass::DeleteAndZero",
+  "unit": "CampaignClass"
+ },
+ {
+  "addr": "0x5cf810",
+  "code": "C2446",
+  "evidence": false,
+  "name": "CampaignClass::Check",
+  "unit": "CampaignClass"
+ },
+ {
+  "addr": "0x5cf840",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::sub_5CF840",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5cf8e0",
+  "code": "C2146",
+  "evidence": false,
+  "name": "MSChoiceClass::LoadFromINI",
+  "unit": "MSChoiceClass"
+ },
+ {
+  "addr": "0x5d1b30",
+  "code": "C2562",
+  "evidence": false,
+  "name": "MSEngine::Destruct",
+  "unit": "MSEngine"
+ },
+ {
+  "addr": "0x5d1fd0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "BSurface::CopyRect",
+  "unit": "BSurface"
+ },
+ {
+  "addr": "0x5d39d0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "SessionClass::saveSettings",
+  "unit": "SessionClass"
+ },
+ {
+  "addr": "0x5d3a60",
+  "code": "C2562",
+  "evidence": false,
+  "name": "MessageListClass::Init",
+  "unit": "MessageListClass"
+ },
+ {
+  "addr": "0x5d5ac0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "System_Init",
+  "unit": "System"
+ },
+ {
+  "addr": "0x5d5f30",
+  "code": "C2653",
+  "evidence": false,
+  "name": "MultiplayerGameMode::Find",
+  "unit": "MultiplayerGameMode"
+ },
+ {
+  "addr": "0x5d6440",
+  "code": "C2040",
+  "evidence": false,
+  "name": "ScenarioClass::MissionStubReturnZero3",
+  "unit": "MultiplayerGameMode"
+ },
+ {
+  "addr": "0x5d7550",
+  "code": "C2027",
+  "evidence": false,
+  "name": "sub_5D7550",
+  "unit": "_addr_5D"
+ },
+ {
+  "addr": "0x5d9db0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "DetectPortAllocationPattern",
+  "unit": "_addr_5D"
+ },
+ {
+  "addr": "0x5e2790",
+  "code": "C2660",
+  "evidence": false,
+  "name": "Dialog::ShowStatusText",
+  "unit": "Dialog"
+ },
+ {
+  "addr": "0x5e3ab0",
+  "code": "C2377",
+  "evidence": false,
+  "name": "SendMultiplayerStartSignal",
+  "unit": "_addr_5E"
+ },
+ {
+  "addr": "0x5e68a0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "SkirmishDialog::Show",
+  "unit": "SkirmishDialog"
+ },
+ {
+  "addr": "0x5e8590",
+  "code": "C2653",
+  "evidence": false,
+  "name": "ObjectClass::SkirmishSetup_Setup_5E8590",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5e9240",
+  "code": "C2100",
+  "evidence": false,
+  "name": "NetworkLobby::AssignPlayerSlot",
+  "unit": "NetworkLobby"
+ },
+ {
+  "addr": "0x5e9290",
+  "code": "C2371",
+  "evidence": false,
+  "name": "NetworkLobby::CheckLobbyConditions",
+  "unit": "NetworkLobby"
+ },
+ {
+  "addr": "0x5e9340",
+  "code": "C2660",
+  "evidence": false,
+  "name": "ObjectClass::Audio_Helper",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5e9510",
+  "code": "C2100",
+  "evidence": false,
+  "name": "NetworkLobby::CheckMinPlayers",
+  "unit": "NetworkLobby"
+ },
+ {
+  "addr": "0x5e9b60",
+  "code": "C2446",
+  "evidence": false,
+  "name": "SelectLobbyCountry",
+  "unit": "_addr_5E"
+ },
+ {
+  "addr": "0x5e9c00",
+  "code": "C2446",
+  "evidence": false,
+  "name": "AssignPlayerColor",
+  "unit": "_addr_5E"
+ },
+ {
+  "addr": "0x5e9e70",
+  "code": "C2377",
+  "evidence": false,
+  "name": "SetupSkirmishPlayerSlots",
+  "unit": "_addr_5E"
+ },
+ {
+  "addr": "0x5eacd0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::RefreshLobbyAll_Get_5EACD0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5eb060",
+  "code": "C2446",
+  "evidence": false,
+  "name": "Lobby::UpdatePlayerLabels",
+  "unit": "Lobby"
+ },
+ {
+  "addr": "0x5edde0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "EnablePlayerSlotControls",
+  "unit": "_addr_5E"
+ },
+ {
+  "addr": "0x5f1fa0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "NullModemClass::DetectModem",
+  "unit": "NullModemClass"
+ },
+ {
+  "addr": "0x5f3350",
+  "code": "C2166",
+  "evidence": false,
+  "name": "String::NormalizeNewlines",
+  "unit": "String"
+ },
+ {
+  "addr": "0x5f4520",
+  "code": "C2440",
+  "evidence": true,
+  "name": "ObjectClass::HandleSelection",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5f60a0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "ObjectClass::SetCellOverlayFlag",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5f7a90",
+  "code": "C2109",
+  "evidence": false,
+  "name": "VoxelAnimType::LoadSection",
+  "unit": "VoxelAnimType"
+ },
+ {
+  "addr": "0x5f96b0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "TheaterObjectTypeClassSpecificID",
+  "unit": "_addr_5F"
+ },
+ {
+  "addr": "0x5f9710",
+  "code": "C2562",
+  "evidence": false,
+  "name": "ObjectTypeClass::SetRTTI71",
+  "unit": "ObjectTypeClass"
+ },
+ {
+  "addr": "0x5fa430",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_29",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x5fb320",
+  "code": "C2377",
+  "evidence": true,
+  "name": "HotkeyOptions::DlgProc",
+  "unit": "HotkeyOptions"
+ },
+ {
+  "addr": "0x5fd970",
+  "code": "C2446",
+  "evidence": false,
+  "name": "OverlayClass::HandleAction",
+  "unit": "OverlayClass"
+ },
+ {
+  "addr": "0x5fe020",
+  "code": "C2065",
+  "evidence": false,
+  "name": "OverlayClass::updateOverlayState",
+  "unit": "OverlayClass"
+ },
+ {
+  "addr": "0x5fea50",
+  "code": "C2039",
+  "evidence": false,
+  "name": "OverlayTypeClass::PowerDrainUpdate",
+  "unit": "OverlayTypeClass"
+ },
+ {
+  "addr": "0x600250",
+  "code": "C2039",
+  "evidence": false,
+  "name": "_DynamicVectorClass_PAVSpotLightClass::FindItemIndex",
+  "unit": "_DynamicVectorClass_PAVSpotLightClass"
+ },
+ {
+  "addr": "0x602490",
+  "code": "C2064",
+  "evidence": false,
+  "name": "IsValidActionDialog",
+  "unit": "_addr_60"
+ },
+ {
+  "addr": "0x603870",
+  "code": "C2064",
+  "evidence": false,
+  "name": "GetDialogControlSHP",
+  "unit": "_addr_60"
+ },
+ {
+  "addr": "0x606740",
+  "code": "C2064",
+  "evidence": false,
+  "name": "SetDialogActiveFlag",
+  "unit": "_addr_60"
+ },
+ {
+  "addr": "0x609cf0",
+  "code": "C2064",
+  "evidence": false,
+  "name": "sub_609CF0",
+  "unit": "_addr_60"
+ },
+ {
+  "addr": "0x609e20",
+  "code": "C2064",
+  "evidence": false,
+  "name": "FilterDialogButtonAction",
+  "unit": "_addr_60"
+ },
+ {
+  "addr": "0x60b1d0",
+  "code": "C2064",
+  "evidence": false,
+  "name": "UI_Get_60B1D0",
+  "unit": "UI_Get"
+ },
+ {
+  "addr": "0x60c4a0",
+  "code": "C2065",
+  "evidence": false,
+  "name": "SkirmishDialog::ResizeDialogAndEnum",
+  "unit": "SkirmishDialog"
+ },
+ {
+  "addr": "0x60d380",
+  "code": "C2377",
+  "evidence": false,
+  "name": "Campaign::Screen",
+  "unit": "Campaign"
+ },
+ {
+  "addr": "0x60d440",
+  "code": "C4716",
+  "evidence": false,
+  "name": "nullsub_31",
+  "unit": "_addr_60"
+ },
+ {
+  "addr": "0x610950",
+  "code": "C4235",
+  "evidence": false,
+  "name": "TriggerClass::FindByEventType",
+  "unit": "TriggerClass"
+ },
+ {
+  "addr": "0x612b70",
+  "code": "C2377",
+  "evidence": false,
+  "name": "TabControl::WndProc",
+  "unit": "TabControl"
+ },
+ {
+  "addr": "0x616980",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ButtonOwnerDraw::DlgProc",
+  "unit": "ButtonOwnerDraw"
+ },
+ {
+  "addr": "0x6211d0",
+  "code": "C2100",
+  "evidence": true,
+  "name": "DrawTextRendererTextAligned",
+  "unit": "_addr_62"
+ },
+ {
+  "addr": "0x623120",
+  "code": "C2653",
+  "evidence": false,
+  "name": "Dialog::PumpMessages",
+  "unit": "Dialog"
+ },
+ {
+  "addr": "0x6234b0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "SymbolTable::Rebuild",
+  "unit": "SymbolTable"
+ },
+ {
+  "addr": "0x624130",
+  "code": "C2653",
+  "evidence": false,
+  "name": "OwnerDrawControl::InitVtable",
+  "unit": "OwnerDrawControl"
+ },
+ {
+  "addr": "0x625560",
+  "code": "C2143",
+  "evidence": false,
+  "name": "Options::DestroyComposite",
+  "unit": "Options"
+ },
+ {
+  "addr": "0x6260a0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "ObjectClass::sub_6260A0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6269a0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "ObjectClass::System_Reset",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x627170",
+  "code": "C2440",
+  "evidence": false,
+  "name": "FileSystem::findFile",
+  "unit": "FileSystem"
+ },
+ {
+  "addr": "0x62b5e0",
+  "code": "C2143",
+  "evidence": true,
+  "name": "ParticleClass::Construct",
+  "unit": "ParticleClass"
+ },
+ {
+  "addr": "0x62dc50",
+  "code": "C2227",
+  "evidence": false,
+  "name": "ParticleSystemClass::Constructor",
+  "unit": "ParticleSystemClass"
+ },
+ {
+  "addr": "0x62e380",
+  "code": "C2446",
+  "evidence": false,
+  "name": "ParticleSystemClass::CreateParticle",
+  "unit": "ParticleSystemClass"
+ },
+ {
+  "addr": "0x62e4c0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "ParticleClass::CreateInstance",
+  "unit": "ParticleClass"
+ },
+ {
+  "addr": "0x630ea0",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ObjectClass::UI_Get_630EA0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x633a50",
+  "code": "C2100",
+  "evidence": false,
+  "name": "sub_633A50",
+  "unit": "_addr_63"
+ },
+ {
+  "addr": "0x634290",
+  "code": "C2100",
+  "evidence": false,
+  "name": "Array::FindValue",
+  "unit": "Array"
+ },
+ {
+  "addr": "0x634cc0",
+  "code": "C2109",
+  "evidence": false,
+  "name": "ScriptAction::FindBuildingMatch",
+  "unit": "ScriptAction"
+ },
+ {
+  "addr": "0x634e10",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ScriptAction::PlaceObject",
+  "unit": "ScriptAction"
+ },
+ {
+  "addr": "0x636ce0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "ScriptAction::ClearBuildingState",
+  "unit": "ScriptAction"
+ },
+ {
+  "addr": "0x636f00",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::sub_636F00",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x637060",
+  "code": "C2440",
+  "evidence": false,
+  "name": "TabClass::processTabInput",
+  "unit": "TabClass"
+ },
+ {
+  "addr": "0x6386e0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "ClearFactoryClassProduction",
+  "unit": "_addr_63"
+ },
+ {
+  "addr": "0x639a50",
+  "code": "C2065",
+  "evidence": false,
+  "name": "ScriptAction::ExecutePlacement",
+  "unit": "ScriptAction"
+ },
+ {
+  "addr": "0x63a0d0",
+  "code": "C2059",
+  "evidence": true,
+  "name": "System_Get",
+  "unit": "System"
+ },
+ {
+  "addr": "0x63a440",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_63A440",
+  "unit": "_addr_63"
+ },
+ {
+  "addr": "0x63a4a0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::sub_63A4A0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x63ad30",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::sub_63AD30",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x63b080",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::sub_63B080",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x63d0f0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "ObjectClass::Render_Render_63D0F0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x63d2d0",
+  "code": "C2100",
+  "evidence": false,
+  "name": "ObjectClass::sub_63D2D0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x63f000",
+  "code": "C2446",
+  "evidence": false,
+  "name": "FactoryClass::RemoveItem",
+  "unit": "FactoryClass"
+ },
+ {
+  "addr": "0x63f2e0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "Audio_Process",
+  "unit": "Audio"
+ },
+ {
+  "addr": "0x63fea0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "PowerClass::updatePowerBarAnimation",
+  "unit": "PowerClass"
+ },
+ {
+  "addr": "0x640710",
+  "code": "C2664",
+  "evidence": false,
+  "name": "Skirmish::RenderPreview",
+  "unit": "Skirmish"
+ },
+ {
+  "addr": "0x641b00",
+  "code": "C2146",
+  "evidence": false,
+  "name": "ObjectClass::LoadMapPreviewImage",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6430c0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_6430C0",
+  "unit": "_addr_64"
+ },
+ {
+  "addr": "0x645660",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ParticleTypeClass::SaveLoad_Prefix",
+  "unit": "ParticleTypeClass"
+ },
+ {
+  "addr": "0x645ba0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "sub_645BA0",
+  "unit": "_addr_64"
+ },
+ {
+  "addr": "0x648710",
+  "code": "C2059",
+  "evidence": true,
+  "name": "QueueNetworkProcessor",
+  "unit": "_addr_64"
+ },
+ {
+  "addr": "0x649ca0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "BuildNetworkEventPacket",
+  "unit": "_addr_64"
+ },
+ {
+  "addr": "0x64a630",
+  "code": "C2653",
+  "evidence": false,
+  "name": "ProcessNetworkMessage",
+  "unit": "_addr_64"
+ },
+ {
+  "addr": "0x64a7b0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "ObjectClass::RenderPlayerLatencyBars",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x64ad10",
+  "code": "C2100",
+  "evidence": false,
+  "name": "Network_Process_64AD10",
+  "unit": "Network_Process"
+ },
+ {
+  "addr": "0x64d990",
+  "code": "C2228",
+  "evidence": true,
+  "name": "ObjectClass::Network_Process_64D990",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6523a0",
+  "code": "C2100",
+  "evidence": false,
+  "name": "Network::SendUnreachable",
+  "unit": "Network"
+ },
+ {
+  "addr": "0x652cf0",
+  "code": "C2059",
+  "evidence": false,
+  "name": "RadarClass::Destru_vt05",
+  "unit": "RadarClass"
+ },
+ {
+  "addr": "0x653f50",
+  "code": "C2065",
+  "evidence": false,
+  "name": "RadarClass::DrawWrapper",
+  "unit": "RadarClass"
+ },
+ {
+  "addr": "0x654320",
+  "code": "C2296",
+  "evidence": false,
+  "name": "RadarClass::Destru_vt34",
+  "unit": "RadarClass"
+ },
+ {
+  "addr": "0x654490",
+  "code": "C2446",
+  "evidence": false,
+  "name": "RadarClass::ProcessCellVisibility",
+  "unit": "RadarClass"
+ },
+ {
+  "addr": "0x655a90",
+  "code": "C2039",
+  "evidence": false,
+  "name": "TacticalClass::FreeResources",
+  "unit": "TacticalClass"
+ },
+ {
+  "addr": "0x656e50",
+  "code": "C2446",
+  "evidence": false,
+  "name": "RadarClass::IsActiveMode",
+  "unit": "RadarClass"
+ },
+ {
+  "addr": "0x658330",
+  "code": "C2562",
+  "evidence": false,
+  "name": "TabClass::DrawPower",
+  "unit": "TabClass"
+ },
+ {
+  "addr": "0x6593f0",
+  "code": "C2059",
+  "evidence": true,
+  "name": "RadBeam::InitState",
+  "unit": "RadBeam"
+ },
+ {
+  "addr": "0x659ee0",
+  "code": "C2440",
+  "evidence": true,
+  "name": "ObjectClass::Weapon_Update_Update_659EE0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x65ad50",
+  "code": "C2440",
+  "evidence": false,
+  "name": "Array::Contains",
+  "unit": "Array"
+ },
+ {
+  "addr": "0x65c250",
+  "code": "C2440",
+  "evidence": false,
+  "name": "RAMFileClass::WinMain_Helper_65C250",
+  "unit": "RAMFileClass"
+ },
+ {
+  "addr": "0x65cb50",
+  "code": "C2660",
+  "evidence": false,
+  "name": "RawFileClass::Open2",
+  "unit": "RawFileClass"
+ },
+ {
+  "addr": "0x65cbf0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "RawFileClass::Open",
+  "unit": "RawFileClass"
+ },
+ {
+  "addr": "0x65d660",
+  "code": "C2018",
+  "evidence": false,
+  "name": "ReferenceCounted::Constructor",
+  "unit": "ReferenceCounted"
+ },
+ {
+  "addr": "0x65d8e0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "DeployScriptActionPlane",
+  "unit": "_addr_65"
+ },
+ {
+  "addr": "0x660840",
+  "code": "C2197",
+  "evidence": false,
+  "name": "LoadGame::LoadTriggerEvents",
+  "unit": "LoadGame"
+ },
+ {
+  "addr": "0x6613a0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "ComputeColorSaturation",
+  "unit": "_addr_66"
+ },
+ {
+  "addr": "0x661f50",
+  "code": "C2446",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::HasFieldStateChanged",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x661fb0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::GetCoordinate_0",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x662240",
+  "code": "C2371",
+  "evidence": true,
+  "name": "ObjectClass::sub_662240",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6632e0",
+  "code": "C2228",
+  "evidence": true,
+  "name": "RocketLocomotionClass::ComputeFloatExpression_3",
+  "unit": "RocketLocomotionClass"
+ },
+ {
+  "addr": "0x664440",
+  "code": "C2446",
+  "evidence": false,
+  "name": "EventClass::validateEventType",
+  "unit": "EventClass"
+ },
+ {
+  "addr": "0x6691e0",
+  "code": "C2065",
+  "evidence": true,
+  "name": "Rules::ReadMiscINI",
+  "unit": "Rules"
+ },
+ {
+  "addr": "0x66d530",
+  "code": "C2065",
+  "evidence": true,
+  "name": "RulesClass::LoadFromINI",
+  "unit": "RulesClass"
+ },
+ {
+  "addr": "0x679cc0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "sub_679CC0",
+  "unit": "_addr_67"
+ },
+ {
+  "addr": "0x67a390",
+  "code": "C2059",
+  "evidence": true,
+  "name": "TypeList::VoxelAnimConstructor",
+  "unit": "TypeList"
+ },
+ {
+  "addr": "0x67a4f0",
+  "code": "C2059",
+  "evidence": true,
+  "name": "TypeList::Construct",
+  "unit": "TypeList"
+ },
+ {
+  "addr": "0x67a600",
+  "code": "C2059",
+  "evidence": true,
+  "name": "TypeList::ConstructSmudge",
+  "unit": "TypeList"
+ },
+ {
+  "addr": "0x67a820",
+  "code": "C2059",
+  "evidence": true,
+  "name": "TypeList::InfantryConstructor",
+  "unit": "TypeList"
+ },
+ {
+  "addr": "0x67bb10",
+  "code": "C2446",
+  "evidence": false,
+  "name": "ReadINIClassInfantryTypeList",
+  "unit": "_addr_67"
+ },
+ {
+  "addr": "0x67d300",
+  "code": "C2065",
+  "evidence": true,
+  "name": "SaveGame::Start",
+  "unit": "SaveGame"
+ },
+ {
+  "addr": "0x67ff70",
+  "code": "C2027",
+  "evidence": false,
+  "name": "SaveGame_Start_67FF70",
+  "unit": "SaveGame_Start"
+ },
+ {
+  "addr": "0x6802f0",
+  "code": "C2027",
+  "evidence": false,
+  "name": "SaveGame_Start_6802F0",
+  "unit": "SaveGame_Start"
+ },
+ {
+  "addr": "0x680670",
+  "code": "C2027",
+  "evidence": false,
+  "name": "SaveGame_Start_680670",
+  "unit": "SaveGame_Start"
+ },
+ {
+  "addr": "0x6809f0",
+  "code": "C2027",
+  "evidence": false,
+  "name": "SaveGame_Start_6809F0",
+  "unit": "SaveGame_Start"
+ },
+ {
+  "addr": "0x680df0",
+  "code": "C2027",
+  "evidence": false,
+  "name": "SaveGame_Start_680DF0",
+  "unit": "SaveGame_Start"
+ },
+ {
+  "addr": "0x682150",
+  "code": "C2100",
+  "evidence": false,
+  "name": "Map_Read",
+  "unit": "Map"
+ },
+ {
+  "addr": "0x6824b0",
+  "code": "C2100",
+  "evidence": false,
+  "name": "Map_Read_6824B0",
+  "unit": "Map_Read"
+ },
+ {
+  "addr": "0x685dc0",
+  "code": "C2664",
+  "evidence": true,
+  "name": "Scenario::EndGame",
+  "unit": "Scenario"
+ },
+ {
+  "addr": "0x689470",
+  "code": "C2556",
+  "evidence": false,
+  "name": "ScenarioClass::SaveLoad_Prefix_0",
+  "unit": "ScenarioClass"
+ },
+ {
+  "addr": "0x689a00",
+  "code": "C2100",
+  "evidence": false,
+  "name": "ScenarioClass::GetLocalStateByID",
+  "unit": "ScenarioClass"
+ },
+ {
+  "addr": "0x68ad70",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ScenarioClass::SaveToINI",
+  "unit": "ScenarioClass"
+ },
+ {
+  "addr": "0x68bd80",
+  "code": "C2143",
+  "evidence": false,
+  "name": "ScenarioClass::Is_Waypoint_Valid",
+  "unit": "ScenarioClass"
+ },
+ {
+  "addr": "0x68bf30",
+  "code": "C2100",
+  "evidence": false,
+  "name": "ScenarioClass::Set_Default_Waypoint",
+  "unit": "ScenarioClass"
+ },
+ {
+  "addr": "0x68ca50",
+  "code": "C2664",
+  "evidence": false,
+  "name": "FindBuildingAnimByName",
+  "unit": "_addr_68"
+ },
+ {
+  "addr": "0x68cab0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "Network_Assign",
+  "unit": "Network"
+ },
+ {
+  "addr": "0x6915b0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "TeamClass::Check",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x691970",
+  "code": "C2227",
+  "evidence": false,
+  "name": "ScoreScreenClass::ProcessFrame",
+  "unit": "ScoreScreenClass"
+ },
+ {
+  "addr": "0x691b30",
+  "code": "C4716",
+  "evidence": false,
+  "name": "nullsub_34",
+  "unit": "_addr_69"
+ },
+ {
+  "addr": "0x693060",
+  "code": "C2109",
+  "evidence": true,
+  "name": "ScrollClass::GetHotspot",
+  "unit": "ScrollClass"
+ },
+ {
+  "addr": "0x693b70",
+  "code": "C2660",
+  "evidence": false,
+  "name": "RequestNetworkFile",
+  "unit": "_addr_69"
+ },
+ {
+  "addr": "0x6964c0",
+  "code": "C2065",
+  "evidence": false,
+  "name": "NetworkDialog::Dispatch",
+  "unit": "NetworkDialog"
+ },
+ {
+  "addr": "0x6970a0",
+  "code": "C2086",
+  "evidence": false,
+  "name": "SessionClass::SessionClass",
+  "unit": "SessionClass"
+ },
+ {
+  "addr": "0x697e70",
+  "code": "C2440",
+  "evidence": false,
+  "name": "SessionClass::IsValidHouse",
+  "unit": "SessionClass"
+ },
+ {
+  "addr": "0x6990a0",
+  "code": "C2065",
+  "evidence": false,
+  "name": "TechnoClass::SaveConfigWOL",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x69a340",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_69A340",
+  "unit": "_addr_69"
+ },
+ {
+  "addr": "0x69b700",
+  "code": "C2446",
+  "evidence": false,
+  "name": "Session::GetPlayerOption",
+  "unit": "Session"
+ },
+ {
+  "addr": "0x69b720",
+  "code": "C2446",
+  "evidence": false,
+  "name": "Session::GetPlayerColor",
+  "unit": "Session"
+ },
+ {
+  "addr": "0x69b7e0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "SessionClass::AssignColor",
+  "unit": "SessionClass"
+ },
+ {
+  "addr": "0x69bc20",
+  "code": "C2440",
+  "evidence": false,
+  "name": "IPXConnClass::closeConnection",
+  "unit": "IPXConnClass"
+ },
+ {
+  "addr": "0x69db30",
+  "code": "C2110",
+  "evidence": false,
+  "name": "SHA1::Transform",
+  "unit": "SHA1"
+ },
+ {
+  "addr": "0x69e930",
+  "code": "C2039",
+  "evidence": false,
+  "name": "MixFileClass::CacheNode_Dtor",
+  "unit": "MixFileClass"
+ },
+ {
+  "addr": "0x69ec50",
+  "code": "C2039",
+  "evidence": true,
+  "name": "LocomotionClass::Process",
+  "unit": "LocomotionClass"
+ },
+ {
+  "addr": "0x69f290",
+  "code": "C2227",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::StubReturnTrue_5",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x69fb20",
+  "code": "C2227",
+  "evidence": true,
+  "name": "ShipLocomotionClass::ComputeAudio3DRotation_1",
+  "unit": "ShipLocomotionClass"
+ },
+ {
+  "addr": "0x6a0310",
+  "code": "C2100",
+  "evidence": false,
+  "name": "ShipLocomotionClass::SetWaypointTarget",
+  "unit": "ShipLocomotionClass"
+ },
+ {
+  "addr": "0x6a4130",
+  "code": "C2227",
+  "evidence": false,
+  "name": "ShipLocomotionClass::StubReturnZero_15",
+  "unit": "ShipLocomotionClass"
+ },
+ {
+  "addr": "0x6a6a00",
+  "code": "C2296",
+  "evidence": true,
+  "name": "CreateTeamCommand::performAction_245",
+  "unit": "CreateTeamCommand"
+ },
+ {
+  "addr": "0x6a8710",
+  "code": "C2296",
+  "evidence": true,
+  "name": "TabCameoListClass::AddCameo_ReplaceItAll",
+  "unit": "TabCameoListClass"
+ },
+ {
+  "addr": "0x6a92e0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "ObjectClass::GetSidebarTooltip",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6a9540",
+  "code": "C4716",
+  "evidence": true,
+  "name": "Sidebar::UpdateProductionDisplay",
+  "unit": "Sidebar"
+ },
+ {
+  "addr": "0x6abb60",
+  "code": "C2446",
+  "evidence": false,
+  "name": "HouseClass::RemoveFromProductionQueue",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x6ac5f0",
+  "code": "C2440",
+  "evidence": true,
+  "name": "TActionClass::executeHarvestAction",
+  "unit": "TActionClass"
+ },
+ {
+  "addr": "0x6acd60",
+  "code": "C2227",
+  "evidence": false,
+  "name": "Skirmish::EnableSpawnButtons",
+  "unit": "Skirmish"
+ },
+ {
+  "addr": "0x6af4a0",
+  "code": "C2144",
+  "evidence": false,
+  "name": "SlaveManagerClass::Constructor_SlaveManagerClass",
+  "unit": "SlaveManagerClass"
+ },
+ {
+  "addr": "0x6b0300",
+  "code": "C2039",
+  "evidence": false,
+  "name": "BuildingClass::FindPlacementCells2",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x6b0db0",
+  "code": "C2660",
+  "evidence": true,
+  "name": "BuildingClass::ProcessEnterUnit",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x6b1930",
+  "code": "C2100",
+  "evidence": false,
+  "name": "VectorClass::checkAIResources",
+  "unit": "VectorClass"
+ },
+ {
+  "addr": "0x6b1f50",
+  "code": "C2660",
+  "evidence": false,
+  "name": "SliderClass::SetValue",
+  "unit": "SliderClass"
+ },
+ {
+  "addr": "0x6b4240",
+  "code": "C2673",
+  "evidence": false,
+  "name": "Map_Helper_6B4240",
+  "unit": "Map_Helper"
+ },
+ {
+  "addr": "0x6b56d0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "SmudgeTypeClass::GetSize",
+  "unit": "SmudgeTypeClass"
+ },
+ {
+  "addr": "0x6b5f80",
+  "code": "C2106",
+  "evidence": true,
+  "name": "Cell::IsWalkable",
+  "unit": "Cell"
+ },
+ {
+  "addr": "0x6b6230",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ShowAudioSettingsDialog",
+  "unit": "_addr_6B"
+ },
+ {
+  "addr": "0x6b7c60",
+  "code": "C2562",
+  "evidence": true,
+  "name": "UnitClass::ClearTargetRef",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x6b8b10",
+  "code": "C4716",
+  "evidence": false,
+  "name": "nullsub_37",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6b8b20",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_38",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6b8ca0",
+  "code": "C2664",
+  "evidence": true,
+  "name": "GameMode::ReadFlagsFromINI",
+  "unit": "GameMode"
+ },
+ {
+  "addr": "0x6bf510",
+  "code": "C2380",
+  "evidence": false,
+  "name": "_TClassFactory_VSuperWeaponTypeClass::ddtor",
+  "unit": "_TClassFactory_VSuperWeaponTypeClass"
+ },
+ {
+  "addr": "0x6bf690",
+  "code": "C2227",
+  "evidence": false,
+  "name": "_TClassFactory_VSuperClass::ddtor",
+  "unit": "_TClassFactory_VSuperClass"
+ },
+ {
+  "addr": "0x6c0a10",
+  "code": "C2227",
+  "evidence": false,
+  "name": "_TClassFactory_VSpawnManagerClass::ddtor",
+  "unit": "_TClassFactory_VSpawnManagerClass"
+ },
+ {
+  "addr": "0x6c2c90",
+  "code": "C2227",
+  "evidence": false,
+  "name": "_TClassFactory_VInfantryTypeClass::GetClassIdentifier",
+  "unit": "_TClassFactory_VInfantryTypeClass"
+ },
+ {
+  "addr": "0x6c3890",
+  "code": "C2227",
+  "evidence": false,
+  "name": "_TClassFactory_VInfantryClass::ddtor",
+  "unit": "_TClassFactory_VInfantryClass"
+ },
+ {
+  "addr": "0x6c4010",
+  "code": "C2227",
+  "evidence": false,
+  "name": "_TClassFactory_VDriveLocomotionClass::ddtor",
+  "unit": "_TClassFactory_VDriveLocomotionClass"
+ },
+ {
+  "addr": "0x6c4c10",
+  "code": "C2380",
+  "evidence": false,
+  "name": "_TClassFactory_VTeleportLocomotionClass::ddtor",
+  "unit": "_TClassFactory_VTeleportLocomotionClass"
+ },
+ {
+  "addr": "0x6c5090",
+  "code": "C2380",
+  "evidence": false,
+  "name": "_TClassFactory_VBulletClass::ddtor",
+  "unit": "_TClassFactory_VBulletClass"
+ },
+ {
+  "addr": "0x6c6740",
+  "code": "C2143",
+  "evidence": false,
+  "name": "StaticButtonClass::HitTest",
+  "unit": "StaticButtonClass"
+ },
+ {
+  "addr": "0x6c6d00",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::Audio_Read_6C6D00",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6c6de0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::Audio_Read_6C6DE0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6c8ff0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "DlgProcScoreScreen",
+  "unit": "_addr_6C"
+ },
+ {
+  "addr": "0x6c9780",
+  "code": "C2110",
+  "evidence": false,
+  "name": "ObjectClass::sub_6C9780",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6c9940",
+  "code": "C2065",
+  "evidence": false,
+  "name": "ObjectClass::sub_6C9940",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6c9c60",
+  "code": "C2039",
+  "evidence": false,
+  "name": "BinkMovie::CheckKeyframeTransition",
+  "unit": "BinkMovie"
+ },
+ {
+  "addr": "0x6c9f00",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_40",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6cb920",
+  "code": "C2227",
+  "evidence": false,
+  "name": "SuperClass::ClickFire",
+  "unit": "SuperClass"
+ },
+ {
+  "addr": "0x6cc070",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_231",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6cdff0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "SuperClass::ExecuteAction",
+  "unit": "SuperClass"
+ },
+ {
+  "addr": "0x6ce0b0",
+  "code": "C2440",
+  "evidence": true,
+  "name": "SuperClass::Reset",
+  "unit": "SuperClass"
+ },
+ {
+  "addr": "0x6cfcc0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "SidebarClass::findEntryIndexByName",
+  "unit": "SidebarClass"
+ },
+ {
+  "addr": "0x6d02b0",
+  "code": "C2109",
+  "evidence": false,
+  "name": "TabClass::LoadButtonSHPs",
+  "unit": "TabClass"
+ },
+ {
+  "addr": "0x6d0fb0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_6D0FB0",
+  "unit": "_addr_6D"
+ },
+ {
+  "addr": "0x6d5c50",
+  "code": "C2664",
+  "evidence": false,
+  "name": "TechnoClass::RenderRadarBlips",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x6d6410",
+  "code": "C2296",
+  "evidence": false,
+  "name": "Terrain::ClimbCheck",
+  "unit": "Terrain"
+ },
+ {
+  "addr": "0x6d7840",
+  "code": "C2100",
+  "evidence": false,
+  "name": "TacticalClass::DrawMap",
+  "unit": "TacticalClass"
+ },
+ {
+  "addr": "0x6d7c00",
+  "code": "C2679",
+  "evidence": false,
+  "name": "TacticalClass::DrawTerrain",
+  "unit": "TacticalClass"
+ },
+ {
+  "addr": "0x6d8640",
+  "code": "C2146",
+  "evidence": false,
+  "name": "ClampCoordMap",
+  "unit": "_addr_6D"
+ },
+ {
+  "addr": "0x6d9ef0",
+  "code": "C2065",
+  "evidence": false,
+  "name": "TacticalClass::AddToDrawQueue",
+  "unit": "TacticalClass"
+ },
+ {
+  "addr": "0x6da230",
+  "code": "C2109",
+  "evidence": true,
+  "name": "DisplayClass::GetCoordDelta",
+  "unit": "DisplayClass"
+ },
+ {
+  "addr": "0x6da7d0",
+  "code": "C2679",
+  "evidence": false,
+  "name": "Tactical::AddCellToDrawList",
+  "unit": "Tactical"
+ },
+ {
+  "addr": "0x6dbb60",
+  "code": "C2296",
+  "evidence": false,
+  "name": "Tactical::DrawOverlay",
+  "unit": "Tactical"
+ },
+ {
+  "addr": "0x6e0290",
+  "code": "C2036",
+  "evidence": false,
+  "name": "ObjectClass::sub_6E0290",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6e1530",
+  "code": "C2036",
+  "evidence": true,
+  "name": "ScenarioClass::PrepareTextDisplay",
+  "unit": "ScenarioClass"
+ },
+ {
+  "addr": "0x6e1780",
+  "code": "C2100",
+  "evidence": false,
+  "name": "TActionClass::PlayAudioAtRandomWP",
+  "unit": "TActionClass"
+ },
+ {
+  "addr": "0x6e2970",
+  "code": "C2446",
+  "evidence": false,
+  "name": "BuildingLightClass::FindAllTargets",
+  "unit": "BuildingLightClass"
+ },
+ {
+  "addr": "0x6e35f0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ObjectClass::sub_6E35F0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6e37f0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::sub_6E37F0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6e57c0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "TechnoClass::HasAnyMission",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x6e6e20",
+  "code": "C2296",
+  "evidence": false,
+  "name": "BuildingLoadQueue::GetNext",
+  "unit": "BuildingLoadQueue"
+ },
+ {
+  "addr": "0x6e6f20",
+  "code": "C2296",
+  "evidence": false,
+  "name": "BuildingLoadQueue::Find",
+  "unit": "BuildingLoadQueue"
+ },
+ {
+  "addr": "0x6e6ff0",
+  "code": "C2018",
+  "evidence": false,
+  "name": "BuildingLoadQueue::FindObject",
+  "unit": "BuildingLoadQueue"
+ },
+ {
+  "addr": "0x6e7330",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::System_Read_6E7330",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6e7a80",
+  "code": "C2018",
+  "evidence": false,
+  "name": "BuildingLoadQueue::FindBuilding",
+  "unit": "BuildingLoadQueue"
+ },
+ {
+  "addr": "0x6ea3e0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "TeamClass::UpdateReadinessState",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x6ea870",
+  "code": "C2446",
+  "evidence": false,
+  "name": "TeamClass::LiberateMember_Start",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x6eae60",
+  "code": "C2446",
+  "evidence": false,
+  "name": "TeamClass::ExecuteAction",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x6edb50",
+  "code": "C2440",
+  "evidence": false,
+  "name": "TeamClass::AssignAttackTarget",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x6ee310",
+  "code": "C2228",
+  "evidence": false,
+  "name": "TeamClass::SelectAreaAttackTarget",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x6ee3f0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "TeamClass::ProcessTeamMovement",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x6ef610",
+  "code": "C2440",
+  "evidence": false,
+  "name": "TeamClass::PlayMemberAnimation",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x6ef700",
+  "code": "C2146",
+  "evidence": true,
+  "name": "ObjectClass::DeployTeamMembersAtStart",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x6ef9e0",
+  "code": "C2296",
+  "evidence": false,
+  "name": "TechnoClass::IsDeployed",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x6efa10",
+  "code": "C2440",
+  "evidence": true,
+  "name": "TeamClass::SelectDeploymentTarget",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x6f0130",
+  "code": "C2440",
+  "evidence": true,
+  "name": "TeamClass::CheckMemberSuperWeapon",
+  "unit": "TeamClass"
+ },
+ {
+  "addr": "0x6f19b0",
+  "code": "C2227",
+  "evidence": true,
+  "name": "SmallFunc_6F19B0",
+  "unit": "SmallFunc"
+ },
+ {
+  "addr": "0x6f1f70",
+  "code": "C2440",
+  "evidence": false,
+  "name": "TeamTypeClass::FindFirstInstance",
+  "unit": "TeamTypeClass"
+ },
+ {
+  "addr": "0x6f79a0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "TechnoClass::GetBridgeDamageMult",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x6f7ca0",
+  "code": "C2065",
+  "evidence": true,
+  "name": "TechnoClass::EvaluateTarget",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x6f8df0",
+  "code": "C2065",
+  "evidence": true,
+  "name": "TechnoClass::SelectAutoTarget_Start_AU",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x6fda00",
+  "code": "C2664",
+  "evidence": false,
+  "name": "TechnoClass::GetFiringAngle",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x6fdd50",
+  "code": "C2143",
+  "evidence": true,
+  "name": "TechnoClass::FireWeapon",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x703590",
+  "code": "C2679",
+  "evidence": false,
+  "name": "MapClass::FindPlacementCellsAlt",
+  "unit": "MapClass"
+ },
+ {
+  "addr": "0x703860",
+  "code": "C2143",
+  "evidence": false,
+  "name": "TechnoClass::UpdatePowerDrain",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x703e70",
+  "code": "C2664",
+  "evidence": false,
+  "name": "TechnoClass::ScanNeighborCells",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x7049c0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "DrawTacticalMapLine",
+  "unit": "_addr_70"
+ },
+ {
+  "addr": "0x706640",
+  "code": "C2146",
+  "evidence": false,
+  "name": "TechnoClass::UpdateState",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x7090a0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "TechnoClass::VoiceAttack",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x70b280",
+  "code": "C2664",
+  "evidence": true,
+  "name": "TechnoClass::ComputeAimVector",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x70e920",
+  "code": "C2036",
+  "evidence": false,
+  "name": "UpdateTimedStateMachine",
+  "unit": "_addr_70"
+ },
+ {
+  "addr": "0x70ece0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "TechnoClass::Fire",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x70fbd0",
+  "code": "C2059",
+  "evidence": true,
+  "name": "UnitClass::IsDeactivated",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x711840",
+  "code": "C2446",
+  "evidence": false,
+  "name": "TechnoTypeClass::Construct",
+  "unit": "TechnoTypeClass"
+ },
+ {
+  "addr": "0x711ae0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "TechnoTypeClass::DTOR",
+  "unit": "TechnoTypeClass"
+ },
+ {
+  "addr": "0x711eb0",
+  "code": "C2059",
+  "evidence": true,
+  "name": "TechnoTypeClass::GetMember388",
+  "unit": "TechnoTypeClass"
+ },
+ {
+  "addr": "0x711ec0",
+  "code": "C2059",
+  "evidence": true,
+  "name": "TechnoTypeClass::GetBuildCost",
+  "unit": "TechnoTypeClass"
+ },
+ {
+  "addr": "0x717800",
+  "code": "C2059",
+  "evidence": true,
+  "name": "TechnoTypeClass::GetSightRange",
+  "unit": "TechnoTypeClass"
+ },
+ {
+  "addr": "0x7179c0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_86",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x717db0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "TechnoTypeClass::RemoveItem",
+  "unit": "TechnoTypeClass"
+ },
+ {
+  "addr": "0x718080",
+  "code": "C2296",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::ShortFunc_718080",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x71a760",
+  "code": "C2660",
+  "evidence": false,
+  "name": "TemporalClass::ProcessTimeWarp",
+  "unit": "TemporalClass"
+ },
+ {
+  "addr": "0x71ab60",
+  "code": "C2446",
+  "evidence": false,
+  "name": "ObjectClass::UnlinkFromFactory",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x71abc0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "FactoryClass::CompleteItem",
+  "unit": "FactoryClass"
+ },
+ {
+  "addr": "0x71bdf0",
+  "code": "C2377",
+  "evidence": true,
+  "name": "ObjectClass::ProcessFoggedState",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x71e6a0",
+  "code": "C2380",
+  "evidence": false,
+  "name": "TActionClass::TActionClass",
+  "unit": "TActionClass"
+ },
+ {
+  "addr": "0x71ff20",
+  "code": "C2065",
+  "evidence": false,
+  "name": "TextButtonClass::sub_71FF20",
+  "unit": "TextButtonClass"
+ },
+ {
+  "addr": "0x71ffe0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "TextButtonClass::checkWeaponCooldown",
+  "unit": "TextButtonClass"
+ },
+ {
+  "addr": "0x720590",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ThemeClass::InitializeThemes",
+  "unit": "ThemeClass"
+ },
+ {
+  "addr": "0x722af0",
+  "code": "C2440",
+  "evidence": true,
+  "name": "BuildingClass::AddOccupancy",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x722f00",
+  "code": "C2377",
+  "evidence": true,
+  "name": "ObjectClass::RebuildBuildingOccupancy",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7236d0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "nullsub_158",
+  "unit": "_addr_72"
+ },
+ {
+  "addr": "0x723b60",
+  "code": "C2520",
+  "evidence": false,
+  "name": "sub_723B60",
+  "unit": "_addr_72"
+ },
+ {
+  "addr": "0x7248c0",
+  "code": "C2100",
+  "evidence": false,
+  "name": "TooltipClass::GetText",
+  "unit": "TooltipClass"
+ },
+ {
+  "addr": "0x724ab0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ToolTipManager::release",
+  "unit": "ToolTipManager"
+ },
+ {
+  "addr": "0x7258d0",
+  "code": "C2446",
+  "evidence": true,
+  "name": "AbstractClass::AnnounceExpiredPointer",
+  "unit": "AbstractClass"
+ },
+ {
+  "addr": "0x726fb0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "HouseClass::FindType24",
+  "unit": "HouseClass"
+ },
+ {
+  "addr": "0x7271d0",
+  "code": "C2036",
+  "evidence": false,
+  "name": "sub_7271D0",
+  "unit": "_addr_72"
+ },
+ {
+  "addr": "0x727cf0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "String::Trim",
+  "unit": "String"
+ },
+ {
+  "addr": "0x728540",
+  "code": "C2446",
+  "evidence": false,
+  "name": "ObjectClass::sub_728540",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x72b2f0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "LoadingScreen::GetBackgroundImage",
+  "unit": "LoadingScreen"
+ },
+ {
+  "addr": "0x72b310",
+  "code": "C2440",
+  "evidence": false,
+  "name": "LoadingScreen::GetOverlayImage",
+  "unit": "LoadingScreen"
+ },
+ {
+  "addr": "0x72d460",
+  "code": "C2446",
+  "evidence": false,
+  "name": "CampaignScore::LoadScreenAssets",
+  "unit": "CampaignScore"
+ },
+ {
+  "addr": "0x72d730",
+  "code": "C2036",
+  "evidence": false,
+  "name": "Game::LoadMultiplayerScoreAssets",
+  "unit": "Game"
+ },
+ {
+  "addr": "0x72f350",
+  "code": "C2673",
+  "evidence": false,
+  "name": "House_Load",
+  "unit": "House"
+ },
+ {
+  "addr": "0x731d00",
+  "code": "C2440",
+  "evidence": false,
+  "name": "Selection::SetCurrent",
+  "unit": "Selection"
+ },
+ {
+  "addr": "0x732210",
+  "code": "C2673",
+  "evidence": false,
+  "name": "SelectFactionThemeMusic_Helper",
+  "unit": "SelectFactionThemeMusic"
+ },
+ {
+  "addr": "0x733cd0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::sub_733CD0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x735090",
+  "code": "C2562",
+  "evidence": false,
+  "name": "CopyWideToChar",
+  "unit": "_addr_73"
+ },
+ {
+  "addr": "0x736579",
+  "code": "C2227",
+  "evidence": false,
+  "name": "InfantryClass::UpdateBehavior",
+  "unit": "InfantryClass"
+ },
+ {
+  "addr": "0x736990",
+  "code": "C2660",
+  "evidence": true,
+  "name": "UnitClass::UpdateRotation_TurretFacing_EMP",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x737180",
+  "code": "C2143",
+  "evidence": false,
+  "name": "TechnoClass::UpdateInfantryIdleWander",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x738680",
+  "code": "C2143",
+  "evidence": true,
+  "name": "TechnoClass::CreateDeathAnim",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x738d30",
+  "code": "C2109",
+  "evidence": false,
+  "name": "UnitClass::DeployToBuilding",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x739ec0",
+  "code": "C2143",
+  "evidence": true,
+  "name": "BuildingClass::ProcessSell",
+  "unit": "BuildingClass"
+ },
+ {
+  "addr": "0x73cec0",
+  "code": "C2146",
+  "evidence": true,
+  "name": "TechnoClass::Draw",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x73e5e0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "VoxelTypeClass::ReadINI",
+  "unit": "VoxelTypeClass"
+ },
+ {
+  "addr": "0x740810",
+  "code": "C2660",
+  "evidence": false,
+  "name": "UnitClass::ProcessAIDecision",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x741970",
+  "code": "C2065",
+  "evidence": true,
+  "name": "UnitClass::AssignDestination_SyncLog",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x7438f0",
+  "code": "C2227",
+  "evidence": false,
+  "name": "UnitClass::CanCrushTarget",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x7464e0",
+  "code": "C2109",
+  "evidence": true,
+  "name": "TechnoClass::TransferTurret",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x7468c0",
+  "code": "C2660",
+  "evidence": true,
+  "name": "UnitClass::CheckForNearbyEnemies",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x748010",
+  "code": "C2665",
+  "evidence": false,
+  "name": "UnitTypeClass::LoadFromINI2",
+  "unit": "UnitTypeClass"
+ },
+ {
+  "addr": "0x749010",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_143",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x749b20",
+  "code": "C2227",
+  "evidence": false,
+  "name": "VoxelAnimClass::DrawVoxelFrame",
+  "unit": "VoxelAnimClass"
+ },
+ {
+  "addr": "0x749f30",
+  "code": "C2019",
+  "evidence": true,
+  "name": "VoxelAnimClass::Update",
+  "unit": "VoxelAnimClass"
+ },
+ {
+  "addr": "0x74de90",
+  "code": "C2673",
+  "evidence": false,
+  "name": "InitializeVeinholeSystem",
+  "unit": "_addr_74"
+ },
+ {
+  "addr": "0x74f620",
+  "code": "C2653",
+  "evidence": false,
+  "name": "ObjectClass::DestroyVeinholeMonster_Destroy",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x74f960",
+  "code": "C2440",
+  "evidence": false,
+  "name": "GameClass::ReadVersionFile",
+  "unit": "GameClass"
+ },
+ {
+  "addr": "0x74fdc0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "GetModuleVersion",
+  "unit": "_addr_74"
+ },
+ {
+  "addr": "0x74ff40",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_69",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x74ff50",
+  "code": "C2296",
+  "evidence": false,
+  "name": "VeterancyStruct::Accumulate",
+  "unit": "VeterancyStruct"
+ },
+ {
+  "addr": "0x74ffc0",
+  "code": "C2146",
+  "evidence": false,
+  "name": "Crate::IsRookie",
+  "unit": "Crate"
+ },
+ {
+  "addr": "0x7500e0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "FootClass::SetField",
+  "unit": "FootClass"
+ },
+ {
+  "addr": "0x750440",
+  "code": "C2146",
+  "evidence": true,
+  "name": "ObjectClass::LoadVocFromINI",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7510d0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "Audio::InitFromINI",
+  "unit": "Audio"
+ },
+ {
+  "addr": "0x751ea0",
+  "code": "C2079",
+  "evidence": false,
+  "name": "sub_751EA0",
+  "unit": "_addr_75"
+ },
+ {
+  "addr": "0x753bf0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "sub_753BF0",
+  "unit": "_addr_75"
+ },
+ {
+  "addr": "0x755db0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "Voxel::SortDepth",
+  "unit": "Voxel"
+ },
+ {
+  "addr": "0x757e70",
+  "code": "C2039",
+  "evidence": false,
+  "name": "VoxelRenderer::ProcessVoxelData",
+  "unit": "VoxelRenderer"
+ },
+ {
+  "addr": "0x75ab30",
+  "code": "C2296",
+  "evidence": false,
+  "name": "JumpjetLocomotionClass::SmallStub_75AB30",
+  "unit": "JumpjetLocomotionClass"
+ },
+ {
+  "addr": "0x75c680",
+  "code": "C2039",
+  "evidence": false,
+  "name": "WalkLocomotionClass::BeginMove",
+  "unit": "WalkLocomotionClass"
+ },
+ {
+  "addr": "0x75cbe0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "WalkLocomotionClass::ProcessMove",
+  "unit": "WalkLocomotionClass"
+ },
+ {
+  "addr": "0x75e690",
+  "code": "C2039",
+  "evidence": false,
+  "name": "WarheadTypeClass::checkImmunity",
+  "unit": "WarheadTypeClass"
+ },
+ {
+  "addr": "0x75e6a0",
+  "code": "C2039",
+  "evidence": false,
+  "name": "WarheadTypeClass::calculateDamage",
+  "unit": "WarheadTypeClass"
+ },
+ {
+  "addr": "0x75f610",
+  "code": "C2446",
+  "evidence": false,
+  "name": "WaveClass::UpdateWave",
+  "unit": "WaveClass"
+ },
+ {
+  "addr": "0x7609e0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "Voxel::FaceDraw",
+  "unit": "Voxel"
+ },
+ {
+  "addr": "0x762af0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "Voxel::TransformMatrix",
+  "unit": "Voxel"
+ },
+ {
+  "addr": "0x763720",
+  "code": "C4716",
+  "evidence": false,
+  "name": "ObjectClass::nullsub_84",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x764b90",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ReferenceCounted::CampaignConstructorWDT",
+  "unit": "ReferenceCounted"
+ },
+ {
+  "addr": "0x765000",
+  "code": "C2664",
+  "evidence": false,
+  "name": "sub_765000",
+  "unit": "_addr_76"
+ },
+ {
+  "addr": "0x766880",
+  "code": "C2228",
+  "evidence": false,
+  "name": "rc_ptr::System_Init_766880",
+  "unit": "rc_ptr"
+ },
+ {
+  "addr": "0x769330",
+  "code": "C2660",
+  "evidence": false,
+  "name": "Surface::PixelToIndex",
+  "unit": "Surface"
+ },
+ {
+  "addr": "0x76dad0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "TechnoClass::TerritorySelectWDT",
+  "unit": "TechnoClass"
+ },
+ {
+  "addr": "0x76e2f0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::Team_Start_76E2F0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x76f970",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ReferenceCounted::Constructor",
+  "unit": "ReferenceCounted"
+ },
+ {
+  "addr": "0x7712c0",
+  "code": "C2562",
+  "evidence": false,
+  "name": "ScoreScreen::RemoveItem",
+  "unit": "ScoreScreen"
+ },
+ {
+  "addr": "0x772080",
+  "code": "C2143",
+  "evidence": true,
+  "name": "WeaponTypeClass::ReadINI",
+  "unit": "WeaponTypeClass"
+ },
+ {
+  "addr": "0x772eb0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "WeaponTypeClass::SaveLoad_Prefix_0",
+  "unit": "WeaponTypeClass"
+ },
+ {
+  "addr": "0x773600",
+  "code": "C2065",
+  "evidence": false,
+  "name": "WebBrowser::LoadURLFromRegistry",
+  "unit": "WebBrowser"
+ },
+ {
+  "addr": "0x773e90",
+  "code": "C2377",
+  "evidence": false,
+  "name": "WebBrowser::ShowDialog",
+  "unit": "WebBrowser"
+ },
+ {
+  "addr": "0x7740a0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "WebBrowser::GoForward",
+  "unit": "WebBrowser"
+ },
+ {
+  "addr": "0x774cd0",
+  "code": "C2109",
+  "evidence": true,
+  "name": "WinModemClass::LoadTypeData",
+  "unit": "WinModemClass"
+ },
+ {
+  "addr": "0x7759e0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "MessageDialogLoopAlt",
+  "unit": "_addr_77"
+ },
+ {
+  "addr": "0x7775c0",
+  "code": "C2446",
+  "evidence": true,
+  "name": "MainWindowProc",
+  "unit": "_addr_77"
+ },
+ {
+  "addr": "0x778170",
+  "code": "C4716",
+  "evidence": false,
+  "name": "nullsub_48",
+  "unit": "_addr_77"
+ },
+ {
+  "addr": "0x778710",
+  "code": "C2440",
+  "evidence": false,
+  "name": "ObjectClass::LoadAccountInfoWOL",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x779f10",
+  "code": "C2228",
+  "evidence": false,
+  "name": "ObjectClass::SavePersonaConfigWOL",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x77a080",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ObjectClass::SaveProfileWOL",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x77bcb0",
+  "code": "C2446",
+  "evidence": false,
+  "name": "sub_77BCB0",
+  "unit": "_addr_77"
+ },
+ {
+  "addr": "0x77ca60",
+  "code": "C2653",
+  "evidence": false,
+  "name": "sub_77CA60",
+  "unit": "_addr_77"
+ },
+ {
+  "addr": "0x77e900",
+  "code": "C2440",
+  "evidence": false,
+  "name": "AssignWOLPlayerSide",
+  "unit": "_addr_77"
+ },
+ {
+  "addr": "0x7806c0",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ObjectClass::PopulateWOLLobbyListBox",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x787010",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ObjectClass::LoginFlowWOL",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x788800",
+  "code": "C2673",
+  "evidence": false,
+  "name": "LeaveChannelExWOL",
+  "unit": "_addr_78"
+ },
+ {
+  "addr": "0x788b00",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ObjectClass::CreateAccountWOL",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x78ebc0",
+  "code": "C2146",
+  "evidence": false,
+  "name": "DlgProcGameSetup",
+  "unit": "_addr_78"
+ },
+ {
+  "addr": "0x78f200",
+  "code": "C2064",
+  "evidence": false,
+  "name": "ObjectClass::BuildWOLPlayerTooltip",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7937b0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "CComObject_CChatEventSink___ATL::DispatchConnectionPairs",
+  "unit": "CComObject_CChatEventSink___ATL"
+ },
+ {
+  "addr": "0x793d20",
+  "code": "C2673",
+  "evidence": false,
+  "name": "NegotiateNetworkConnection",
+  "unit": "_addr_79"
+ },
+ {
+  "addr": "0x797640",
+  "code": "C2673",
+  "evidence": false,
+  "name": "LoginWOL",
+  "unit": "_addr_79"
+ },
+ {
+  "addr": "0x7982d0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_7982D0",
+  "unit": "_addr_79"
+ },
+ {
+  "addr": "0x799ea0",
+  "code": "C2065",
+  "evidence": true,
+  "name": "OptionsDlgProcWOL",
+  "unit": "_addr_79"
+ },
+ {
+  "addr": "0x79ba60",
+  "code": "C2673",
+  "evidence": false,
+  "name": "ValidateGameJoinWOL",
+  "unit": "_addr_79"
+ },
+ {
+  "addr": "0x79d110",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ObjectClass::SendGameListWOL",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x79dfe0",
+  "code": "C2146",
+  "evidence": false,
+  "name": "GameSetupDlgProcWOL",
+  "unit": "_addr_79"
+ },
+ {
+  "addr": "0x7a16b0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "HandleWOLMatchMessage",
+  "unit": "_addr_7A"
+ },
+ {
+  "addr": "0x7a2730",
+  "code": "C2065",
+  "evidence": false,
+  "name": "ObjectClass::Network_Create_7A2730",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7aa870",
+  "code": "C2064",
+  "evidence": false,
+  "name": "CChatEventSink::HandleChatChannelList",
+  "unit": "CChatEventSink"
+ },
+ {
+  "addr": "0x7abd40",
+  "code": "C2064",
+  "evidence": false,
+  "name": "CChatEventSink::DispatchStub_34",
+  "unit": "CChatEventSink"
+ },
+ {
+  "addr": "0x7ad690",
+  "code": "C2446",
+  "evidence": false,
+  "name": "_CComObject_VCDownloadEventSink_ATL::QueryInterface",
+  "unit": "_CComObject_VCDownloadEventSink_ATL"
+ },
+ {
+  "addr": "0x7adf70",
+  "code": "C2562",
+  "evidence": false,
+  "name": "HashMap::Shrink2",
+  "unit": "HashMap"
+ },
+ {
+  "addr": "0x7ae460",
+  "code": "C2562",
+  "evidence": false,
+  "name": "HashMap::Shrink",
+  "unit": "HashMap"
+ },
+ {
+  "addr": "0x7aec00",
+  "code": "C2562",
+  "evidence": false,
+  "name": "HashTable::Shrink",
+  "unit": "HashTable"
+ },
+ {
+  "addr": "0x7b0220",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ComStreamClass::seekToPosition",
+  "unit": "ComStreamClass"
+ },
+ {
+  "addr": "0x7b0cb0",
+  "code": "C2400",
+  "evidence": true,
+  "name": "sub_7B0CB0",
+  "unit": "_addr_7B"
+ },
+ {
+  "addr": "0x7b13d0",
+  "code": "C2079",
+  "evidence": false,
+  "name": "IPXInterfaceClass::SendPacket",
+  "unit": "IPXInterfaceClass"
+ },
+ {
+  "addr": "0x7b2630",
+  "code": "C2440",
+  "evidence": false,
+  "name": "WinsockInterfaceClass::ConfigureBuffers",
+  "unit": "WinsockInterfaceClass"
+ },
+ {
+  "addr": "0x7b2ff0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "UDPInterfaceClass::Flush",
+  "unit": "UDPInterfaceClass"
+ },
+ {
+  "addr": "0x7b3310",
+  "code": "C2440",
+  "evidence": false,
+  "name": "UDPInterfaceClass::CheckStatus",
+  "unit": "UDPInterfaceClass"
+ },
+ {
+  "addr": "0x7b33d0",
+  "code": "C2296",
+  "evidence": false,
+  "name": "UDPInterfaceClass::GetStatistics",
+  "unit": "UDPInterfaceClass"
+ },
+ {
+  "addr": "0x7b6760",
+  "code": "C2562",
+  "evidence": false,
+  "name": "DeleteAndZero::Alt",
+  "unit": "DeleteAndZero"
+ },
+ {
+  "addr": "0x7b68e0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "WideString::Reassign_Alt",
+  "unit": "WideString"
+ },
+ {
+  "addr": "0x7b6ee0",
+  "code": "C2228",
+  "evidence": false,
+  "name": "ObjectClass::sub_7B6EE0",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7b7dd0",
+  "code": "C2664",
+  "evidence": false,
+  "name": "FormatWideString",
+  "unit": "_addr_7B"
+ },
+ {
+  "addr": "0x7b7f90",
+  "code": "C2664",
+  "evidence": false,
+  "name": "ToWideStringCharAlt",
+  "unit": "_addr_7B"
+ },
+ {
+  "addr": "0x7b8610",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_7B8610",
+  "unit": "_addr_7B"
+ },
+ {
+  "addr": "0x7b8a00",
+  "code": "C2377",
+  "evidence": false,
+  "name": "WWMouseClass::AddRef",
+  "unit": "WWMouseClass"
+ },
+ {
+  "addr": "0x7b9750",
+  "code": "C2171",
+  "evidence": false,
+  "name": "WWMouseClass::showCursor",
+  "unit": "WWMouseClass"
+ },
+ {
+  "addr": "0x7b9a60",
+  "code": "C2171",
+  "evidence": false,
+  "name": "WWMouseClass::captureMouse",
+  "unit": "WWMouseClass"
+ },
+ {
+  "addr": "0x7b9d70",
+  "code": "C2040",
+  "evidence": false,
+  "name": "WWMouseClass::checkStatus",
+  "unit": "WWMouseClass"
+ },
+ {
+  "addr": "0x7b9d80",
+  "code": "C2040",
+  "evidence": false,
+  "name": "WWMouseClass::checkVisible",
+  "unit": "WWMouseClass"
+ },
+ {
+  "addr": "0x7ba320",
+  "code": "C2562",
+  "evidence": false,
+  "name": "WWMouseClass::IsRefCountNegative",
+  "unit": "WWMouseClass"
+ },
+ {
+  "addr": "0x7bbab0",
+  "code": "C2660",
+  "evidence": false,
+  "name": "XSurface::Fill",
+  "unit": "XSurface"
+ },
+ {
+  "addr": "0x7bcaf0",
+  "code": "C2065",
+  "evidence": false,
+  "name": "sub_7BCAF0",
+  "unit": "_addr_7B"
+ },
+ {
+  "addr": "0x7bcfb0",
+  "code": "C2198",
+  "evidence": false,
+  "name": "TacticalMap::FillScanlinesOpaque",
+  "unit": "TacticalMap"
+ },
+ {
+  "addr": "0x7be670",
+  "code": "C2440",
+  "evidence": false,
+  "name": "UnitClass::Audio_Render_7BE670",
+  "unit": "UnitClass"
+ },
+ {
+  "addr": "0x7c04e0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "Audio_Process_7C04E0",
+  "unit": "Audio_Process"
+ },
+ {
+  "addr": "0x7c06b0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "Audio_Process_7C06B0",
+  "unit": "Audio_Process"
+ },
+ {
+  "addr": "0x7c19f0",
+  "code": "C2673",
+  "evidence": false,
+  "name": "Audio_Process_7C19F0",
+  "unit": "Audio_Process"
+ },
+ {
+  "addr": "0x7c2590",
+  "code": "C2653",
+  "evidence": false,
+  "name": "RenderAudioVideoFrame",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7c3230",
+  "code": "C2673",
+  "evidence": false,
+  "name": "Render_Render_7C3230",
+  "unit": "Render_Render"
+ },
+ {
+  "addr": "0x7c3690",
+  "code": "C2673",
+  "evidence": false,
+  "name": "Render_Render_7C3690",
+  "unit": "Render_Render"
+ },
+ {
+  "addr": "0x7c3840",
+  "code": "C2673",
+  "evidence": false,
+  "name": "sub_7C3840",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7c3860",
+  "code": "C2673",
+  "evidence": false,
+  "name": "Audio_Render_7C3860",
+  "unit": "Audio_Render"
+ },
+ {
+  "addr": "0x7c3950",
+  "code": "C2673",
+  "evidence": false,
+  "name": "Audio_Process_7C3950",
+  "unit": "Audio_Process"
+ },
+ {
+  "addr": "0x7c5ee0",
+  "code": "C2065",
+  "evidence": false,
+  "name": "sub_7C5EE0",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7c5f3d",
+  "code": "C2275",
+  "evidence": false,
+  "name": "Event_Process_7C5F3D",
+  "unit": "Event_Process"
+ },
+ {
+  "addr": "0x7c5fff",
+  "code": "C2143",
+  "evidence": false,
+  "name": "Event_Process_7C5FFF",
+  "unit": "Event_Process"
+ },
+ {
+  "addr": "0x7c61cf",
+  "code": "C2440",
+  "evidence": false,
+  "name": "globalHelper_0C61CF",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7c8e25",
+  "code": "C2061",
+  "evidence": false,
+  "name": "_bsearch",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7c8f5e",
+  "code": "C2143",
+  "evidence": false,
+  "name": "__cfltcvt_init_13",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7c8fd2",
+  "code": "C2377",
+  "evidence": false,
+  "name": "ObjectClass::CIpow_Helper",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7c91a5",
+  "code": "C2143",
+  "evidence": false,
+  "name": "CIpow_Helper_Helper",
+  "unit": "CIpow_Helper"
+ },
+ {
+  "addr": "0x7c91d0",
+  "code": "C2043",
+  "evidence": false,
+  "name": "_strncpy",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7c92d0",
+  "code": "C2143",
+  "evidence": false,
+  "name": "__alldiv",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7ca090",
+  "code": "C2110",
+  "evidence": false,
+  "name": "_memcpy",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7ca650",
+  "code": "C2146",
+  "evidence": false,
+  "name": "ObjectClass::__alloca_probe",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7caef1",
+  "code": "C2143",
+  "evidence": false,
+  "name": "PMDtoOffset_YAHPAXABUPMD___Z",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cbb8d",
+  "code": "C2628",
+  "evidence": false,
+  "name": "__mbsnccnt",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cbdaf",
+  "code": "C2064",
+  "evidence": false,
+  "name": "__cinit",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cc186",
+  "code": "C2143",
+  "evidence": false,
+  "name": "__abnormal_termination",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cc1b2",
+  "code": "C2065",
+  "evidence": false,
+  "name": "__NLG_Notify",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cc309",
+  "code": "C2100",
+  "evidence": false,
+  "name": "__mbstowcs_lk",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cc682",
+  "code": "C2440",
+  "evidence": false,
+  "name": "_wcsstr",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7ccf1d",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::__store_str",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7cda90",
+  "code": "C2043",
+  "evidence": false,
+  "name": "_strcmp",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cde75",
+  "code": "C2440",
+  "evidence": false,
+  "name": "__setlocale_get_all",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cf0ae",
+  "code": "C2143",
+  "evidence": false,
+  "name": "__ffexpm1",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cf0f1",
+  "code": "C2143",
+  "evidence": false,
+  "name": "_isintTOS",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cf125",
+  "code": "C2143",
+  "evidence": false,
+  "name": "_usepowhlp",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7cf390",
+  "code": "C2143",
+  "evidence": false,
+  "name": "__twoToTOS",
+  "unit": "_addr_7C"
+ },
+ {
+  "addr": "0x7d12e6",
+  "code": "C2065",
+  "evidence": false,
+  "name": "_strncnt",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d1512",
+  "code": "C2653",
+  "evidence": false,
+  "name": "GetCurrentThreadId::_0",
+  "unit": "GetCurrentThreadId"
+ },
+ {
+  "addr": "0x7d30d1",
+  "code": "C2143",
+  "evidence": false,
+  "name": "__commit",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d461e",
+  "code": "C2064",
+  "evidence": false,
+  "name": "___wtomb_environ",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d4bf0",
+  "code": "C4716",
+  "evidence": false,
+  "name": "_strcpy",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d5ac0",
+  "code": "C2440",
+  "evidence": false,
+  "name": "__setenvp",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d5ef8",
+  "code": "C2064",
+  "evidence": false,
+  "name": "__FF_MSGBANNER",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d6830",
+  "code": "C2100",
+  "evidence": false,
+  "name": "___init_monetary",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d68fb",
+  "code": "C2371",
+  "evidence": false,
+  "name": "__get_lc_lconv",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d72d4",
+  "code": "C2143",
+  "evidence": false,
+  "name": "_CountryEnumProc_4",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d7374",
+  "code": "C2064",
+  "evidence": false,
+  "name": "_ProcessCodePage",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d73f9",
+  "code": "C2064",
+  "evidence": false,
+  "name": "_TestDefaultLanguage",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d7491",
+  "code": "C2065",
+  "evidence": false,
+  "name": "_crtGetLocaleInfoA_16",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d75e0",
+  "code": "C2143",
+  "evidence": false,
+  "name": "_memset",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d7a22",
+  "code": "C2100",
+  "evidence": false,
+  "name": "ObjectClass::__ShrMan",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7d7ee0",
+  "code": "C2296",
+  "evidence": false,
+  "name": "unknown_libname_76",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d8496",
+  "code": "C2377",
+  "evidence": false,
+  "name": "unknown_libname_78",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d8d3b",
+  "code": "C2296",
+  "evidence": false,
+  "name": "__set_exp",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d8da4",
+  "code": "C2296",
+  "evidence": false,
+  "name": "__set_bexp",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d92cd",
+  "code": "C2296",
+  "evidence": false,
+  "name": "__finite",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d92e1",
+  "code": "C2296",
+  "evidence": false,
+  "name": "__isnan",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7d9fac",
+  "code": "C2377",
+  "evidence": false,
+  "name": "sub_7D9FAC",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7da9a2",
+  "code": "C2065",
+  "evidence": false,
+  "name": "_strncnt_0",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7dae6e",
+  "code": "C2065",
+  "evidence": false,
+  "name": "CRTisctype",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7daf28",
+  "code": "C2371",
+  "evidence": false,
+  "name": "___getlocaleinfo",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7db207",
+  "code": "C2296",
+  "evidence": false,
+  "name": "ObjectClass::__I10_OUTPUT",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7db68b",
+  "code": "C2100",
+  "evidence": false,
+  "name": "__raise_exc",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7dbc68",
+  "code": "C2143",
+  "evidence": false,
+  "name": "__clrfp",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7dc378",
+  "code": "C2143",
+  "evidence": false,
+  "name": "__mbschr",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7dc468",
+  "code": "C2100",
+  "evidence": false,
+  "name": "ObjectClass::__setmode_lk",
+  "unit": "ObjectClass"
+ },
+ {
+  "addr": "0x7dcee0",
+  "code": "C2653",
+  "evidence": false,
+  "name": "GetCurrentThread::_0",
+  "unit": "GetCurrentThread"
+ },
+ {
+  "addr": "0x7dcf22",
+  "code": "C2653",
+  "evidence": false,
+  "name": "GetCurrentProcessId::_0",
+  "unit": "GetCurrentProcessId"
+ },
+ {
+  "addr": "0x7dcf3a",
+  "code": "C2143",
+  "evidence": false,
+  "name": "GetEnvironmentStrings",
+  "unit": "_addr_7D"
+ },
+ {
+  "addr": "0x7df280",
+  "code": "C2044",
+  "evidence": false,
+  "name": "Object_Calc_7DF280",
+  "unit": "Object_Calc"
+ },
+ {
+  "addr": "0x7df3c2",
+  "code": "C2044",
+  "evidence": false,
+  "name": "Object_Calc_7DF3C2",
+  "unit": "Object_Calc"
+ },
+ {
+  "addr": "0x7df500",
+  "code": "C2044",
+  "evidence": false,
+  "name": "Object_Calc_7DF500",
+  "unit": "Object_Calc"
+ },
+ {
+  "addr": "0x7df640",
+  "code": "C2044",
+  "evidence": false,
+  "name": "Object_Calc_7DF640",
+  "unit": "Object_Calc"
+ },
+ {
+  "addr": "0x7df7c0",
+  "code": "C2105",
+  "evidence": false,
+  "name": "Audio_Process_7DF7C0",
+  "unit": "Audio_Process"
+ },
+ {
+  "addr": "0x7df8c0",
+  "code": "C2105",
+  "evidence": false,
+  "name": "Audio_Process_7DF8C0",
+  "unit": "Audio_Process"
+ },
+ {
+  "addr": "0x7df9c0",
+  "code": "C2105",
+  "evidence": false,
+  "name": "Voxel::FacePixelBuffer",
+  "unit": "Voxel"
+ },
+ {
+  "addr": "0x7dfae0",
+  "code": "C2105",
+  "evidence": false,
+  "name": "Voxel::FacePixelBufferEx",
+  "unit": "Voxel"
+ },
+ {
+  "addr": "0x7dfc00",
+  "code": "C2105",
+  "evidence": false,
+  "name": "Voxel::FacePixelBuffer3",
+  "unit": "Voxel"
+ },
+ {
+  "addr": "0x7dfd00",
+  "code": "C2105",
+  "evidence": false,
+  "name": "Audio_Process_7DFD00",
+  "unit": "Audio_Process"
+ }
+]

@@ -1,0 +1,213 @@
+{
+ "W1": {
+  "verdicts": {
+   "COMPILE_FAIL": 116,
+   "MISMATCH": 85,
+   "MATCH": 4
+  },
+  "matches": [
+   [
+    "0x636570",
+    "ScriptAction::Check"
+   ],
+   [
+    "0x69e010",
+    "SidebarClass::updateFlashTimer"
+   ],
+   [
+    "0x76ff20",
+    "Trigger::executeActions"
+   ],
+   [
+    "0x7b9d90",
+    "WWMouseClass::processFrame"
+   ]
+  ]
+ },
+ "W2": {
+  "verdicts": {
+   "COMPILE_FAIL": 28,
+   "MISMATCH": 55,
+   "MATCH": 1
+  },
+  "matches": [
+   [
+    "0x512570",
+    "HouseTypeClass::LoadHouse"
+   ]
+  ]
+ },
+ "W3": {
+  "verdicts": {
+   "MISMATCH": 31,
+   "COMPILE_FAIL": 45,
+   "MATCH": 13
+  },
+  "matches": [
+   [
+    "0x426dd0",
+    "AnimFile::Check"
+   ],
+   [
+    "0x476ea0",
+    "ObjectClass::sub_476EA0"
+   ],
+   [
+    "0x4a2350",
+    "TabClass::initStripClass"
+   ],
+   [
+    "0x4a3840",
+    "StructTable::Append"
+   ],
+   [
+    "0x588c40",
+    "CellClass::initCellData"
+   ],
+   [
+    "0x5b2930",
+    "Movement::Check"
+   ],
+   [
+    "0x5b2950",
+    "Math::Sub16"
+   ],
+   [
+    "0x645d00",
+    "Function::_645D00"
+   ],
+   [
+    "0x656580",
+    "Diplomacy::GetField"
+   ],
+   [
+    "0x659550",
+    "TechnoClass::drawPassengerPips"
+   ],
+   [
+    "0x68bcc0",
+    "ScenarioClass::Get_Waypoint_Location"
+   ],
+   [
+    "0x68bf50",
+    "ScenarioClass::Set_Waypoint"
+   ],
+   [
+    "0x69bbf0",
+    "ObjectClass::Network_Disconnect_69BBF0"
+   ]
+  ]
+ },
+ "W45": {
+  "verdicts": {
+   "COMPILE_FAIL": 53,
+   "MISMATCH": 44,
+   "MATCH": 24
+  },
+  "matches": [
+   [
+    "0x40d300",
+    "ObjectClass::nullsub_57"
+   ],
+   [
+    "0x420130",
+    "ObjectClass::nullsub_53"
+   ],
+   [
+    "0x454ce0",
+    "ObjectClass::nullsub_5"
+   ],
+   [
+    "0x45e750",
+    "nullsub_6"
+   ],
+   [
+    "0x465cb0",
+    "ObjectClass::nullsub_7"
+   ],
+   [
+    "0x48ded0",
+    "ObjectClass::nullsub_51"
+   ],
+   [
+    "0x4b69d0",
+    "ObjectClass::nullsub_126"
+   ],
+   [
+    "0x4f6eb0",
+    "nullsub_15"
+   ],
+   [
+    "0x52cb80",
+    "nullsub_18"
+   ],
+   [
+    "0x532130",
+    "nullsub_19"
+   ],
+   [
+    "0x5fa430",
+    "ObjectClass::nullsub_29"
+   ],
+   [
+    "0x60d440",
+    "nullsub_31"
+   ],
+   [
+    "0x691b30",
+    "nullsub_34"
+   ],
+   [
+    "0x6b8b10",
+    "ObjectClass::nullsub_37"
+   ],
+   [
+    "0x6b8b20",
+    "ObjectClass::nullsub_38"
+   ],
+   [
+    "0x6c9f00",
+    "ObjectClass::nullsub_40"
+   ],
+   [
+    "0x6cc070",
+    "ObjectClass::nullsub_231"
+   ],
+   [
+    "0x7179c0",
+    "ObjectClass::nullsub_86"
+   ],
+   [
+    "0x7236d0",
+    "nullsub_158"
+   ],
+   [
+    "0x749010",
+    "ObjectClass::nullsub_143"
+   ],
+   [
+    "0x74ff40",
+    "ObjectClass::nullsub_69"
+   ],
+   [
+    "0x763720",
+    "ObjectClass::nullsub_84"
+   ],
+   [
+    "0x778170",
+    "nullsub_48"
+   ],
+   [
+    "0x7ba320",
+    "WWMouseClass::IsRefCountNegative"
+   ]
+  ]
+ },
+ "W6": {
+  "verdicts": {
+   "COMPILE_FAIL": 26,
+   "MISMATCH": 9
+  },
+  "matches": []
+ }
+}

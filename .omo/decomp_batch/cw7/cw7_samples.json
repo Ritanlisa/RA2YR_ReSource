@@ -1,0 +1,113 @@
+{
+ "W1": [
+  {
+   "addr": "0x406170",
+   "code": "C2440",
+   "form": "ptr<->int other / type cast",
+   "name": "VocClass::Check",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p160\\part_00\\VocClass.cpp(8) : error C2440: 'type cast' : cannot convert from 'double' to 'int *'"
+  },
+  {
+   "addr": "0x408a70",
+   "code": "C2440",
+   "form": "ptr->ptr type mismatch / assign",
+   "name": "AudioMixer::SetupChannels",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix251\\p00\\part_00\\AudioMixer.cpp(25) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix251\\p00\\par"
+  },
+  {
+   "addr": "0x40d8e0",
+   "code": "C2440",
+   "form": "stale_cw5|CW5-10 MEMORY rewrite",
+   "name": "sub_40D8E0",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p01\\part_00\\_addr_40_40d8e0.cpp(7) : error C2440: 'initializing' : cannot convert from 'unsigned char' to 'char *'"
+  },
+  {
+   "addr": "0x40ffff",
+   "code": "C2440",
+   "form": "value cast / type cast",
+   "name": "Math::InitDegToRad",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p205\\part_00\\Math.cpp(10) : error C2440: 'type cast' : cannot convert from 'void' to 'int'"
+  },
+  {
+   "addr": "0x4112d0",
+   "code": "C2440",
+   "form": "member->void* init (scalar member, ptr local) / initializing",
+   "name": "MapClass::isLocationShrouded",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p14\\part_00\\MapClass.cpp(12) : error C2440: 'initializing' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p14\\part_0"
+  }
+ ],
+ "W2": [
+  {
+   "addr": "0x425510",
+   "code": "C2109",
+   "form": "member scalar subscript (->M[i])",
+   "name": "AnimClass::CheckEndOfSequence",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p41\\part_00\\AnimClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p41\\part_00\\AnimClass.cp"
+  },
+  {
+   "addr": "0x434840",
+   "code": "C2109",
+   "form": "local/param scalar subscript",
+   "name": "sub_434840",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p264\\part_00\\_addr_43.cpp(11) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p264\\part_00\\_addr_43.c"
+  },
+  {
+   "addr": "0x45ec90",
+   "code": "C2109",
+   "form": "stale_cw5|CW5-5/6/7/8 member view",
+   "name": "BuildingTypeClass::GetFoundationWidth",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\BuildingTypeClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\Buildi"
+  },
+  {
+   "addr": "0x45eca0",
+   "code": "C2109",
+   "form": "stale_cw3|CW3-3 global-array upgrade",
+   "name": "BuildingTypeClass::GetFoundationHeight",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\BuildingTypeClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\Buildi"
+  },
+  {
+   "addr": "0x464af0",
+   "code": "C2109",
+   "form": "stale_cw5|CW5-8/9/12 shell supply",
+   "name": "BuildingTypeClass::GetSizeInLeptons",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\BuildingTypeClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\Buildi"
+  }
+ ],
+ "W3": [
+  {
+   "addr": "0x406b10",
+   "code": "C2106",
+   "form": "unclassified",
+   "name": "ObjectClass::InitializeAudioSubsystem",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p20\\part_00\\ObjectClass_406b10.cpp(54) : error C2106: '=' : left operand must be l-value"
+  },
+  {
+   "addr": "0x426dd0",
+   "code": "C2296",
+   "form": "char*/char[] operand",
+   "name": "AnimFile::Check",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p214\\part_00\\AnimFile.cpp(8) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p214\\part_00\\Anim"
+  },
+  {
+   "addr": "0x47a6f0",
+   "code": "C2296",
+   "form": "void* operand (mask/merge)",
+   "name": "CDROM::LockVolume",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p44\\part_00\\CDROM.cpp(11) : error C2296: '&' : illegal, left operand has type 'void *'"
+  },
+  {
+   "addr": "0x494590",
+   "code": "C2296",
+   "form": "stale_cw3|CW3-1 param proto merge",
+   "name": "_BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p07\\part_00\\_BlitTransXlatMultWriteAlpha_G.cpp(22) : error C2296: '*' : illegal, left operand has type 'unsigned short *'"
+  },
+  {
+   "addr": "0x4a9650",
+   "code": "C2296",
+   "form": "typed pointer operand (mask/merge)",
+   "name": "BuildingClass::MarkExitPath",
+   "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p14\\part_00\\BuildingClass.cpp(25) : error C2296: '&' : illegal, left operand has type 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p14\\"
+  }
+ ]
+}

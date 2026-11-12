@@ -1105,6 +1105,27 @@ def run_function(addr, reg, views, idx):
     # ident declaration pass so late-declared names are known.
     passes.pass_scalar_subscript(ctx)
 
+    # CW7/W6: a free function whose FINAL body still says `this` -- the
+    # member-call pass bound a qualified callee (`AudioStream::X();`) to the
+    # hidden ECX receiver.  Bind it explicitly: __fastcall + `void *this_`
+    # (ECX == arg1, no stack-arity change) and rewrite the body.  This is
+    # the C2673 family ("global functions do not have 'this' pointers").
+    if sig.get("free") and not sig.get("free_this"):
+        _body = "\n".join(ctx.lines)
+        if re.search(r"\bthis\b", _body):
+            sig["cc"] = "__fastcall"
+            sig["params"].insert(0, ("void *", "this_"))
+            sig["param_names"].insert(0, "this_")
+            if sig.get("params_spelled") is not None and \
+                    sig["params_spelled"] is not sig["params"]:
+                sig["params_spelled"].insert(0, ("void *", "this_"))
+            ctx.lines = [re.sub(r"\bthis\b", "this_", ln)
+                         for ln in ctx.lines]
+            sig["free_this"] = True
+            ctx.note("free_this_late",
+                     "free body used `this` (member-call receiver) -> "
+                     "__fastcall + explicit void *this_ (C2673)")
+
     # CW7/W4-lite: return-truth arbitration (declaration layer only -- the
     # body bytes are untouched).  C4716 (`must return a value`) and C2562
     # (`void function returning a value`) are the two cheap forms.

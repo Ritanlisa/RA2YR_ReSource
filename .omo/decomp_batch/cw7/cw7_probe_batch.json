@@ -1,0 +1,296 @@
+[
+ {
+  "addr": "0x408a70",
+  "name": "AudioMixer::SetupChannels",
+  "orig_name": "AudioMixer::SetupChannels",
+  "unit": "AudioMixer",
+  "layer": "A",
+  "code": "C2440",
+  "gen": "G_R5toR8",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix251\\p00\\part_00\\AudioMixer.cpp(25) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_fix251\\p00\\par",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ],
+  "family": "W1",
+  "batch": "W1"
+ },
+ {
+  "addr": "0x47d210",
+  "name": "CellClass::SetWallOwner",
+  "orig_name": "CellClass::SetWallOwner",
+  "unit": "CellClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p03\\part_00\\CellClass_47d210.cpp(19) : error C2440: '=' : cannot convert from 'char *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p03\\part_00\\C",
+  "file": "",
+  "line": null,
+  "form": "ptr<->int other / assign",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows",
+   "c2440_live_rows"
+  ],
+  "family": "W1",
+  "batch": "W1"
+ },
+ {
+  "addr": "0x426270",
+  "name": "AnimClass::UpdateDamageRadius",
+  "orig_name": "AnimClass::UpdateDamageRadius",
+  "unit": "AnimClass",
+  "layer": "D",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p34\\part_00\\AnimClass.cpp(9) : error C2440: 'initializing' : cannot convert from 'void *' to 'class CellClass *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_r",
+  "file": "",
+  "line": null,
+  "form": "ptr->ptr type mismatch / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ],
+  "family": "W1",
+  "batch": "W1"
+ },
+ {
+  "addr": "0x4112d0",
+  "name": "MapClass::isLocationShrouded",
+  "orig_name": "MapClass::isLocationShrouded",
+  "unit": "MapClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p14\\part_00\\MapClass.cpp(12) : error C2440: 'initializing' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p14\\part_0",
+  "file": "",
+  "line": null,
+  "form": "member->void* init (scalar member, ptr local) / initializing",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ],
+  "family": "W1",
+  "batch": "W1"
+ },
+ {
+  "addr": "0x44f640",
+  "name": "BuildingClass::GetFactoryPosition",
+  "orig_name": "BuildingClass::GetFactoryPosition",
+  "unit": "BuildingClass",
+  "layer": "C",
+  "code": "C2440",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p23\\part_00\\BuildingClass.cpp(30) : error C2440: '=' : cannot convert from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p23\\par",
+  "file": "",
+  "line": null,
+  "form": "int -> void* / assign",
+  "buckets": [
+   "live_rows",
+   "c2440_live_rows"
+  ],
+  "family": "W1",
+  "batch": "W1"
+ },
+ {
+  "addr": "0x425510",
+  "name": "AnimClass::CheckEndOfSequence",
+  "orig_name": "AnimClass::CheckEndOfSequence",
+  "unit": "AnimClass",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p41\\part_00\\AnimClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p41\\part_00\\AnimClass.cp",
+  "file": "",
+  "line": null,
+  "form": "member scalar subscript (->M[i])",
+  "buckets": [
+   "live_rows"
+  ],
+  "family": "W2",
+  "batch": "W2"
+ },
+ {
+  "addr": "0x434840",
+  "name": "sub_434840",
+  "orig_name": "sub_434840",
+  "unit": "_addr_43",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p264\\part_00\\_addr_43.cpp(11) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p264\\part_00\\_addr_43.c",
+  "file": "",
+  "line": null,
+  "form": "local/param scalar subscript",
+  "buckets": [
+   "live_rows"
+  ],
+  "family": "W2",
+  "batch": "W2"
+ },
+ {
+  "addr": "0x49be40",
+  "name": "MPCooperative::WriteCoopSaveINI",
+  "orig_name": "MPCooperative::WriteCoopSaveINI",
+  "unit": "MPCooperative",
+  "layer": "D",
+  "code": "C2109",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p09\\part_00\\MPCooperative.cpp(65) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p09\\part_00\\MPCoope",
+  "file": "",
+  "line": null,
+  "form": "g_ global scalar subscript",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows"
+  ],
+  "family": "W2",
+  "batch": "W2"
+ },
+ {
+  "addr": "0x45eca0",
+  "name": "BuildingTypeClass::GetFoundationHeight",
+  "orig_name": "BuildingTypeClass::GetFoundationHeight",
+  "unit": "BuildingTypeClass",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\BuildingTypeClass.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p04\\part_00\\Buildi",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-3 global-array upgrade",
+  "buckets": [
+   "refail_rows"
+  ],
+  "family": "W2",
+  "batch": "W2"
+ },
+ {
+  "addr": "0x4e7e20",
+  "name": "unknown_libname_15",
+  "orig_name": "unknown_libname_15",
+  "unit": "_addr_4E",
+  "layer": "A",
+  "code": "C2109",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p10\\part_00\\_addr_4E_4e7e20.cpp(11) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p10\\part_00\\_addr_4",
+  "file": "",
+  "line": null,
+  "form": "stale_cw5|CW5-10 uintN_t typedef",
+  "buckets": [
+   "refail_rows"
+  ],
+  "family": "W2",
+  "batch": "W2"
+ },
+ {
+  "addr": "0x406b10",
+  "name": "ObjectClass::InitializeAudioSubsystem",
+  "orig_name": "InitializeAudioSubsystem",
+  "unit": "ObjectClass",
+  "layer": "D",
+  "code": "C2106",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p20\\part_00\\ObjectClass_406b10.cpp(54) : error C2106: '=' : left operand must be l-value",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows"
+  ],
+  "family": "W3",
+  "batch": "W3"
+ },
+ {
+  "addr": "0x426dd0",
+  "name": "AnimFile::Check",
+  "orig_name": "AnimFile::Check",
+  "unit": "AnimFile",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p214\\part_00\\AnimFile.cpp(8) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p214\\part_00\\Anim",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ],
+  "family": "W3",
+  "batch": "W3"
+ },
+ {
+  "addr": "0x4a9650",
+  "name": "BuildingClass::MarkExitPath",
+  "orig_name": "BuildingClass::MarkExitPath",
+  "unit": "BuildingClass",
+  "layer": "C",
+  "code": "C2296",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p14\\part_00\\BuildingClass.cpp(25) : error C2296: '&' : illegal, left operand has type 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p14\\",
+  "file": "",
+  "line": null,
+  "form": "typed pointer operand (mask/merge)",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows"
+  ],
+  "family": "W3",
+  "batch": "W3"
+ },
+ {
+  "addr": "0x47a6f0",
+  "name": "CDROM::LockVolume",
+  "orig_name": "CDROM::LockVolume",
+  "unit": "CDROM",
+  "layer": "D",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p44\\part_00\\CDROM.cpp(11) : error C2296: '&' : illegal, left operand has type 'void *'",
+  "file": "",
+  "line": null,
+  "form": "void* operand (mask/merge)",
+  "buckets": [
+   "live_rows"
+  ],
+  "family": "W3",
+  "batch": "W3"
+ },
+ {
+  "addr": "0x7d7ee0",
+  "name": "unknown_libname_76",
+  "orig_name": "unknown_libname_76",
+  "unit": "_addr_7D",
+  "layer": "B",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p02\\part_00\\_addr_7D.cpp(12) : error C2296: '>>' : illegal, left operand has type 'double'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p02\\part_00\\_addr_",
+  "file": "",
+  "line": null,
+  "form": "double operand (mask/merge)",
+  "buckets": [
+   "live_rows"
+  ],
+  "family": "W3",
+  "batch": "W3"
+ }
+]

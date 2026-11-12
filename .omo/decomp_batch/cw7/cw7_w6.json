@@ -1,0 +1,212 @@
+[
+ {
+  "addr": "0x401190",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_401190"
+ },
+ {
+  "addr": "0x4095b0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "AudioStreamThreadProc"
+ },
+ {
+  "addr": "0x40a900",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_40A900"
+ },
+ {
+  "addr": "0x40d3c0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_40D3C0"
+ },
+ {
+  "addr": "0x40d400",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_40D400"
+ },
+ {
+  "addr": "0x426620",
+  "family": "W6",
+  "code": "C2673",
+  "name": "_4type_info_AAEAAV0_ABV0__Z"
+ },
+ {
+  "addr": "0x433560",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_433560"
+ },
+ {
+  "addr": "0x4335a0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_4335A0"
+ },
+ {
+  "addr": "0x479a40",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_479A40"
+ },
+ {
+  "addr": "0x4e8090",
+  "family": "W6",
+  "code": "C2673",
+  "name": "unknown_libname_18"
+ },
+ {
+  "addr": "0x505f80",
+  "family": "W6",
+  "code": "C2673",
+  "name": "globalHelper_005F80"
+ },
+ {
+  "addr": "0x5d9db0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "DetectPortAllocationPattern"
+ },
+ {
+  "addr": "0x63a440",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_63A440"
+ },
+ {
+  "addr": "0x6430c0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_6430C0"
+ },
+ {
+  "addr": "0x6613a0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "ComputeColorSaturation"
+ },
+ {
+  "addr": "0x69a340",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_69A340"
+ },
+ {
+  "addr": "0x6b4240",
+  "family": "W6",
+  "code": "C2673",
+  "name": "Map_Helper_6B4240"
+ },
+ {
+  "addr": "0x6d0fb0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_6D0FB0"
+ },
+ {
+  "addr": "0x72f350",
+  "family": "W6",
+  "code": "C2673",
+  "name": "House_Load"
+ },
+ {
+  "addr": "0x732210",
+  "family": "W6",
+  "code": "C2673",
+  "name": "SelectFactionThemeMusic_Helper"
+ },
+ {
+  "addr": "0x74de90",
+  "family": "W6",
+  "code": "C2673",
+  "name": "InitializeVeinholeSystem"
+ },
+ {
+  "addr": "0x788800",
+  "family": "W6",
+  "code": "C2673",
+  "name": "LeaveChannelExWOL"
+ },
+ {
+  "addr": "0x793d20",
+  "family": "W6",
+  "code": "C2673",
+  "name": "NegotiateNetworkConnection"
+ },
+ {
+  "addr": "0x797640",
+  "family": "W6",
+  "code": "C2673",
+  "name": "LoginWOL"
+ },
+ {
+  "addr": "0x7982d0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_7982D0"
+ },
+ {
+  "addr": "0x79ba60",
+  "family": "W6",
+  "code": "C2673",
+  "name": "ValidateGameJoinWOL"
+ },
+ {
+  "addr": "0x7b8610",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_7B8610"
+ },
+ {
+  "addr": "0x7c04e0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "Audio_Process_7C04E0"
+ },
+ {
+  "addr": "0x7c06b0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "Audio_Process_7C06B0"
+ },
+ {
+  "addr": "0x7c19f0",
+  "family": "W6",
+  "code": "C2673",
+  "name": "Audio_Process_7C19F0"
+ },
+ {
+  "addr": "0x7c3230",
+  "family": "W6",
+  "code": "C2673",
+  "name": "Render_Render_7C3230"
+ },
+ {
+  "addr": "0x7c3690",
+  "family": "W6",
+  "code": "C2673",
+  "name": "Render_Render_7C3690"
+ },
+ {
+  "addr": "0x7c3840",
+  "family": "W6",
+  "code": "C2673",
+  "name": "sub_7C3840"
+ },
+ {
+  "addr": "0x7c3860",
+  "family": "W6",
+  "code": "C2673",
+  "name": "Audio_Render_7C3860"
+ },
+ {
+  "addr": "0x7c3950",
+  "family": "W6",
+  "code": "C2673",
+  "name": "Audio_Process_7C3950"
+ }
+]
