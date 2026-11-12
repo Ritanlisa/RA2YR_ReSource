@@ -22224,6 +22224,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x477e10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_H::Resize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "_DynamicVectorClass_H::Resize",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x477ec0": {
   "attempts": 1,
   "clean": false,
@@ -22309,6 +22321,18 @@
   "name": "TypeList_TechnoType::GetIndex",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x478140": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVTechnoTypeClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FilePipe_30::Release",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4781f0": {
   "attempts": 2,
@@ -30747,6 +30771,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x49b000": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVConvertClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ConvertClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x49b0b0": {
   "attempts": 2,
   "clean": false,
@@ -31302,6 +31338,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x49ea70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAD::Remove",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DynamicVectorClass_PAD::Remove",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x49eb20": {
   "attempts": 2,
   "clean": false,
@@ -31384,6 +31432,18 @@
   "orig_name": "CampaignClass::Constructor",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x49ed30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAV_DynamicVectorClass_PAD::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DynamicVectorClass_PAD::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x49ede0": {
@@ -32425,6 +32485,18 @@
   "orig_name": "ConnectionPointClass_9::Unadvise",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4a13c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAUIConnectionPoint::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "EnumConnectionPointsClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4a1470": {
@@ -33484,6 +33556,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4a4cb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAU_DDSURFACEDESC::CopyItems",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CStreamClass::CopyItems",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4a4d60": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -34370,6 +34454,18 @@
   "orig_name": "Dial8Class_48::Write",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4a7f00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVDiskLaserClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Dial8Class_48::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4a7fb0": {
@@ -36985,6 +37081,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4b9e20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAUButtonFadeEffect::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FilePipe_30::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4b9ed0": {
   "attempts": 3,
   "clean": false,
@@ -37050,6 +37158,18 @@
   "orig_name": "VectorClass_ptr_CrossDissolveEffect::Get",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4ba080": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAUCrossDissolveEffect::SetCapacity_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FilePipe_30::SetCapacity_0",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4ba130": {
@@ -37918,6 +38038,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4c2e20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVEBolt::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_EBolt::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4c2ed0": {
   "attempts": 2,
   "clean": false,
@@ -38376,6 +38508,18 @@
   "orig_name": "VectorClass_ptr_EgoClass::GetCapacity",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4c4b80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVEgoClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_EgoClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4c4c30": {
@@ -38940,6 +39084,18 @@
   "name": "VectorClass_ptr_EMPulseClass::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x4c5d40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVEMPulseClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_EMPulseClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4c5df0": {
   "attempts": 2,
@@ -43070,6 +43226,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e04a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+12 je 0x4e052a",
+  "name": "DynamicVector::completeMission",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "AbstractClass::completeMission",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e0550": {
   "attempts": 2,
   "clean": false,
@@ -43140,6 +43308,18 @@
   "orig_name": "FoggedObjectClass_42::Write",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e0700": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "FoggedObjectClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FoggedObjectClass_42::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4e07b0": {
@@ -47734,6 +47914,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e9380": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+12 je 0x4e940a",
+  "name": "DynamicVector::COMStub_2",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "HouseClass::COMStub_2",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e9430": {
   "attempts": 1,
   "clean": false,
@@ -47804,6 +47996,18 @@
   "orig_name": "VectorClass_Building::GetCapacity",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e95e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVBuildingClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ParticleSystemClass_32::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4e9690": {
@@ -47878,6 +48082,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e9840": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVSuperClass::ResizeAndCopy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_SuperPtr::ResizeAndCopy",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4e98f0": {
   "attempts": 2,
   "clean": false,
@@ -47943,6 +48159,18 @@
   "orig_name": "VectorClass_ptr_AITriggerTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e9aa0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVAITriggerTypeClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AITriggerTypeClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4e9b50": {
@@ -48015,6 +48243,18 @@
   "orig_name": "VectorClass_ptr_BuildingLightClass::GetCapacity",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e9d00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVBuildingLightClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_BuildingLightClass::SetCapacity",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4e9db0": {

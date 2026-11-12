@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p319\part_00
+=== convert (20 addrs) ===
+[conv] 0x477e10 _DynamicVectorClass_H::Resize -> _DynamicVectorClass_H
+[conv] 0x478140 _DynamicVectorClass_PAVTechnoTypeClass::Release -> _DynamicVectorClass_PAVTechnoTypeClass
+[conv] 0x49b000 _DynamicVectorClass_PAVConvertClass::SetCapacity -> _DynamicVectorClass_PAVConvertClass
+[conv] 0x49ea70 _DynamicVectorClass_PAD::Remove -> _DynamicVectorClass_PAD
+[conv] 0x49ed30 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::SetCapacity -> _DynamicVectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x4a13c0 _DynamicVectorClass_PAUIConnectionPoint::SetCapacity -> _DynamicVectorClass_PAUIConnectionPoint
+[conv] 0x4a4cb0 _DynamicVectorClass_PAU_DDSURFACEDESC::CopyItems -> _DynamicVectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a7f00 _DynamicVectorClass_PAVDiskLaserClass::SetCapacity -> _DynamicVectorClass_PAVDiskLaserClass
+[conv] 0x4b9e20 _DynamicVectorClass_PAUButtonFadeEffect::SetCapacity -> _DynamicVectorClass_PAUButtonFadeEffect
+[conv] 0x4ba080 _DynamicVectorClass_PAUCrossDissolveEffect::SetCapacity_0 -> _DynamicVectorClass_PAUCrossDissolveEffect
+[conv] 0x4c2e20 _DynamicVectorClass_PAVEBolt::SetCapacity -> _DynamicVectorClass_PAVEBolt
+[conv] 0x4c4b80 _DynamicVectorClass_PAVEgoClass::SetCapacity -> _DynamicVectorClass_PAVEgoClass
+[conv] 0x4c5d40 _DynamicVectorClass_PAVEMPulseClass::SetCapacity -> _DynamicVectorClass_PAVEMPulseClass
+[conv] 0x4e04a0 DynamicVector::completeMission -> DynamicVector
+[conv] 0x4e0700 FoggedObjectClass::SetCapacity -> FoggedObjectClass
+[conv] 0x4e9380 DynamicVector::COMStub_2 -> DynamicVector
+[conv] 0x4e95e0 _DynamicVectorClass_PAVBuildingClass::SetCapacity -> _DynamicVectorClass_PAVBuildingClass
+[conv] 0x4e9840 _DynamicVectorClass_PAVSuperClass::ResizeAndCopy -> _DynamicVectorClass_PAVSuperClass
+[conv] 0x4e9aa0 _DynamicVectorClass_PAVAITriggerTypeClass::SetCapacity -> _DynamicVectorClass_PAVAITriggerTypeClass
+[conv] 0x4e9d00 _DynamicVectorClass_PAVBuildingLightClass::SetCapacity -> _DynamicVectorClass_PAVBuildingLightClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_H    rc=2
+[era] _DynamicVectorClass_PAVTechnoTypeClass rc=2
+[era] _DynamicVectorClass_PAVConvertClass rc=2
+[era] _DynamicVectorClass_PAD  rc=2
+[era] _DynamicVectorClass_PAV_DynamicVectorClass_PAD rc=2
+[era] _DynamicVectorClass_PAUIConnectionPoint rc=2
+[era] _DynamicVectorClass_PAU_DDSURFACEDESC rc=2
+[era] _DynamicVectorClass_PAVDiskLaserClass rc=2
+[era] _DynamicVectorClass_PAUButtonFadeEffect rc=2
+[era] _DynamicVectorClass_PAUCrossDissolveEffect rc=2
+[era] _DynamicVectorClass_PAVEBolt rc=2
+[era] _DynamicVectorClass_PAVEgoClass rc=2
+[era] _DynamicVectorClass_PAVEMPulseClass rc=2
+[era] DynamicVector            rc=0
+[era] FoggedObjectClass        rc=2
+[era] _DynamicVectorClass_PAVBuildingClass rc=2
+[era] _DynamicVectorClass_PAVSuperClass rc=2
+[era] _DynamicVectorClass_PAVAITriggerTypeClass rc=2
+[era] _DynamicVectorClass_PAVBuildingLightClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x4e04a0   MISMATCH         DynamicVector::completeMission
+[diff] 0x4e9380   MISMATCH         DynamicVector::COMStub_2
+[ledger] 0x477e10 _DynamicVectorClass_H::Resize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x478140 _DynamicVectorClass_PAVTechnoTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49b000 _DynamicVectorClass_PAVConvertClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ea70 _DynamicVectorClass_PAD::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ed30 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a13c0 _DynamicVectorClass_PAUIConnectionPoint::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a4cb0 _DynamicVectorClass_PAU_DDSURFACEDESC::CopyItems -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a7f00 _DynamicVectorClass_PAVDiskLaserClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b9e20 _DynamicVectorClass_PAUButtonFadeEffect::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ba080 _DynamicVectorClass_PAUCrossDissolveEffect::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c2e20 _DynamicVectorClass_PAVEBolt::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c4b80 _DynamicVectorClass_PAVEgoClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c5d40 _DynamicVectorClass_PAVEMPulseClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e04a0 DynamicVector::completeMission -> NG (attempt 1)
+[ledger] 0x4e0700 FoggedObjectClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9380 DynamicVector::COMStub_2 -> NG (attempt 1)
+[ledger] 0x4e95e0 _DynamicVectorClass_PAVBuildingClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9840 _DynamicVectorClass_PAVSuperClass::ResizeAndCopy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9aa0 _DynamicVectorClass_PAVAITriggerTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9d00 _DynamicVectorClass_PAVBuildingLightClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "branch_polarity": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p319\batch_report.json
