@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D2F41",
+ "name": "Exception::Destructor",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D2F41",
+ "bytes_hex": "83790800c7010c997f007409ff7104e8e85bffff59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_429400@ApplicationClass@@QAGHH@Z",
+ "sym_key": "ApplicationClass::sub_429400",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b5424085268000000008b0850ff11c20800",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E36C0@@3EA",
+   "sym_key": "DataGlobal_7E36C0"
+  }
+ ]
+}

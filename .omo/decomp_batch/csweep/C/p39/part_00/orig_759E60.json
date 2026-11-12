@@ -1,0 +1,11 @@
+{
+ "addr": "0x759E60",
+ "name": "DSurface::FlipIfNeeded",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x759E60",
+ "bytes_hex": "8a811405000084c0740b8b8900020000e9eb8d0600c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

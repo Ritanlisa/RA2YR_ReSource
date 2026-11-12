@@ -1,0 +1,15 @@
+{
+ "symbol": "?globalHelper_003DD0@@YIJPAXE@Z",
+ "sym_key": "Unnamed::globalHelper_003DD0",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "81e2ff000000526a0068e604000051e800000000c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?FlipIfNeeded@DSurface@@QAEDXZ",
+ "sym_key": "DSurface::FlipIfNeeded",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8a811405000084c0740b8b8900020000e900000000",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Flip@DSurface@@QAEHXZ",
+   "sym_key": "DSurface::Flip"
+  }
+ ]
+}

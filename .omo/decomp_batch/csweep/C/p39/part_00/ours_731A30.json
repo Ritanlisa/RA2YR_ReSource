@@ -1,0 +1,27 @@
+{
+ "symbol": "?UI_Create_731A30@@YAHXZ",
+ "sym_key": "Unnamed::UI_Create_731A30",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0750c6affb900000000e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?MuteSWLaunches@@3IA",
+   "sym_key": "MuteSWLaunches"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?ToggleZoom@MapClass@@QAEHH@Z",
+   "sym_key": "MapClass::ToggleZoom"
+  }
+ ]
+}

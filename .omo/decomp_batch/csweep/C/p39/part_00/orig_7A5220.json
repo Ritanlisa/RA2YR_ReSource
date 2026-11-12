@@ -1,0 +1,11 @@
+{
+ "addr": "0x7A5220",
+ "name": "CComObject_CChatEventSink___ATL::DispatchStub_20",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7A5220",
+ "bytes_hex": "8b44240885c07c098b4c240ce80f05feff33c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

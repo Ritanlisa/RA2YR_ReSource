@@ -1,0 +1,107 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p39\part_00
+=== convert (20 addrs) ===
+[conv] 0x683030 COMObject::ValidatePtr -> COMObject
+[conv] 0x6aba40 SBGadgetClass@SidebarClass::checkHealth -> SBGadgetClass_SidebarClass
+[conv] 0x731a30 UI_Create_731A30 -> UI_Create
+[conv] 0x759e60 DSurface::FlipIfNeeded -> DSurface
+[conv] 0x771950 Anim_Voices_WorldDominationTour::ddtor -> Anim_Voices_WorldDominationTour
+[conv] 0x778180 Network_Append -> Network
+[conv] 0x7a5220 CChatEventSink::DispatchStub_20 -> CChatEventSink
+[conv] 0x7b0090 sub_7B0090 -> _addr_7B
+[conv] 0x7b00d0 sub_7B00D0 -> _addr_7B
+[conv] 0x7cbf49 __controlfp -> _addr_7C
+[conv] 0x7d2f41 Exception::Destructor -> Exception
+[conv] 0x7d7c31 Fassign_Helper_7D7D1C_Helper -> Fassign_Helper_7D7D1C
+[conv] 0x7d8f3b __scalb -> _addr_7D
+[conv] 0x603db0 Diplomacy_Helper -> Diplomacy
+[conv] 0x603dd0 globalHelper_003DD0 -> _addr_60
+[conv] 0x429400 ApplicationClass::sub_429400 -> ApplicationClass
+[conv] 0x429480 ApplicationClass::sub_429480 -> ApplicationClass
+[conv] 0x522d00 SlaveManagerClass::Check -> SlaveManagerClass
+[conv] 0x70efe0 TechnoClass::GetMaxSpeed -> TechnoClass
+[conv] 0x40ad60 sub_40AD60 -> _addr_40
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] COMObject                rc=0
+[era] SBGadgetClass_SidebarClass rc=0
+[era] UI_Create                rc=0
+[era] DSurface                 rc=0
+[era] Anim_Voices_WorldDominationTour rc=0
+[era] Network                  rc=2
+[era] CChatEventSink           rc=0
+[era] _addr_7B                 rc=0
+[era] _addr_7C                 rc=0
+[era] Exception                rc=0
+[era] Fassign_Helper_7D7D1C    rc=0
+[era] _addr_7D                 rc=0
+[era] Diplomacy                rc=0
+[era] _addr_60                 rc=0
+[era] ApplicationClass         rc=0
+[era] SlaveManagerClass        rc=0
+[era] TechnoClass              rc=0
+[era] _addr_40                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x683030   MISMATCH         COMObject::ValidatePtr
+[diff] 0x6aba40   MATCH            SBGadgetClass@SidebarClass::checkHealth
+[diff] 0x731a30   MATCH            UI_Create_731A30
+[diff] 0x759e60   MISMATCH         DSurface::FlipIfNeeded
+[diff] 0x771950   MISMATCH         Anim_Voices_WorldDominationTour::ddtor
+[diff] 0x7a5220   MISMATCH         CChatEventSink::DispatchStub_20
+[diff] 0x7b0090   MISMATCH         sub_7B0090
+[diff] 0x7b00d0   MISMATCH         sub_7B00D0
+[diff] 0x7cbf49   MISMATCH         __controlfp
+[diff] 0x7d2f41   MISMATCH         Exception::Destructor
+[diff] 0x7d7c31   MISMATCH         Fassign_Helper_7D7D1C_Helper
+[diff] 0x7d8f3b   MISMATCH         __scalb
+[diff] 0x603db0   MISMATCH         Diplomacy_Helper
+[diff] 0x603dd0   MISMATCH         globalHelper_003DD0
+[diff] 0x429400   MISMATCH         ApplicationClass::sub_429400
+[diff] 0x429480   MISMATCH         ApplicationClass::sub_429480
+[diff] 0x522d00   MISMATCH         SlaveManagerClass::Check
+[diff] 0x70efe0   MISMATCH         TechnoClass::GetMaxSpeed
+[diff] 0x40ad60   MISMATCH         sub_40AD60
+[ledger] 0x683030 COMObject::ValidatePtr -> NG (attempt 1)
+[ledger] 0x6aba40 SBGadgetClass@SidebarClass::checkHealth -> OK (attempt 1)
+[ledger] 0x731a30 UI_Create_731A30 -> OK (attempt 1)
+[ledger] 0x759e60 DSurface::FlipIfNeeded -> NG (attempt 1)
+[ledger] 0x771950 Anim_Voices_WorldDominationTour::ddtor -> NG (attempt 1)
+[ledger] 0x778180 Network_Append -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a5220 CChatEventSink::DispatchStub_20 -> NG (attempt 1)
+[ledger] 0x7b0090 sub_7B0090 -> NG (attempt 1)
+[ledger] 0x7b00d0 sub_7B00D0 -> NG (attempt 1)
+[ledger] 0x7cbf49 __controlfp -> NG (attempt 1)
+[ledger] 0x7d2f41 Exception::Destructor -> NG (attempt 1)
+[ledger] 0x7d7c31 Fassign_Helper_7D7D1C_Helper -> NG (attempt 1)
+[ledger] 0x7d8f3b __scalb -> NG (attempt 1)
+[ledger] 0x603db0 Diplomacy_Helper -> NG (attempt 1)
+[ledger] 0x603dd0 globalHelper_003DD0 -> NG (attempt 1)
+[ledger] 0x429400 ApplicationClass::sub_429400 -> NG (attempt 1)
+[ledger] 0x429480 ApplicationClass::sub_429480 -> NG (attempt 1)
+[ledger] 0x522d00 SlaveManagerClass::Check -> NG (attempt 1)
+[ledger] 0x70efe0 TechnoClass::GetMaxSpeed -> NG (attempt 1)
+[ledger] 0x40ad60 sub_40AD60 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "MATCH": 2,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "branch_polarity": 3,
+  "branch_order": 1,
+  "const_fold": 2,
+  "codegen_shape": 6,
+  "frame_sched": 1,
+  "regalloc": 2,
+  "cc_mismatch": 2
+ },
+ "match_rate_of_decided_pct": 10.5,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p39\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?DispatchStub_20@CChatEventSink@@QAGHHPBD@Z",
+ "sym_key": "CChatEventSink::DispatchStub_20",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07c0d8b44240c50e80000000083c40433c0c20c00",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?LeaveChannelWOL@@YAXPAX@Z",
+   "sym_key": "LeaveChannelWOL"
+  }
+ ]
+}

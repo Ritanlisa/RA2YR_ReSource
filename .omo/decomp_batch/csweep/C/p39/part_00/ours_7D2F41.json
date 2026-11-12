@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destructor@Exception@@QAEXXZ",
+ "sym_key": "Exception::Destructor",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b4108c7010000000085c0740a8b410450e80000000059c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

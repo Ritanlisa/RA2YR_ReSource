@@ -1,0 +1,11 @@
+{
+ "addr": "0x771950",
+ "name": "Territory_WorldDominationTour_8::ddtor",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x771950",
+ "bytes_hex": "568bf1837e10ff750b8d4e14e8df72f5ff8946105ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

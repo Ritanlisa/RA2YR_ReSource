@@ -1,0 +1,21 @@
+{
+ "symbol": "?checkHealth@SBGadgetClass_SidebarClass@@QAGHHH@Z",
+ "sym_key": "SBGadgetClass_SidebarClass::checkHealth",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "6a006a00b900000000e800000000b801000000c20c00",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?SetCursor@Mouse@@QAEDHD@Z",
+   "sym_key": "Mouse::SetCursor"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x683030",
+ "name": "COMObject::ValidatePtr",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x683030",
+ "bytes_hex": "568bf1833e00750a6803400080e8de9615008b065ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

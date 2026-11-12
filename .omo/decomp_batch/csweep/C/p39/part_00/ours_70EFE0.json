@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetMaxSpeed@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetMaxSpeed",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff908400000085c074078b8078060000c333c0c3",
+ "relocs": []
+}

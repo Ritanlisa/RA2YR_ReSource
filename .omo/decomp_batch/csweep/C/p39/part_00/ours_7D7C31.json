@@ -1,0 +1,21 @@
+{
+ "symbol": "?Fassign_Helper_7D7D1C_Helper@@YAHHH@Z",
+ "sym_key": "Unnamed::Fassign_Helper_7D7D1C_Helper",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b4c240468000000005051e80000000083c40cc3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D3D8@@3EA",
+   "sym_key": "DataGlobal_87D3D8"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?_ld12cvt@@YAHHHPAXZZ",
+   "sym_key": "_ld12cvt"
+  }
+ ]
+}

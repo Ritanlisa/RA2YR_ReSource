@@ -1,0 +1,11 @@
+{
+ "addr": "0x522D00",
+ "name": "SlaveManagerClass::Check",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x522D00",
+ "bytes_hex": "83b9ac0000000a740c8b016a006a0aff90e8010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

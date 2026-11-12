@@ -1,0 +1,15 @@
+{
+ "symbol": "?__scalb@@YANNH@Z",
+ "sym_key": "Unnamed::__scalb",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24088b542404505152e80000000083c40cc3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "_ldexp",
+   "sym_key": "ldexp"
+  }
+ ]
+}
