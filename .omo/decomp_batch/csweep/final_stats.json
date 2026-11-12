@@ -1,0 +1,325 @@
+{
+ "n": 6839,
+ "verdicts": {
+  "MATCH": 376,
+  "MISMATCH": 5105,
+  "COMPILE_FAIL": 1331,
+  "NO_EXPORT": 3,
+  "OBJ_EXTRACT_FAIL": 3,
+  "NO_PSEUDO": 19,
+  "DUP_SKIP": 2
+ },
+ "size_bands": {
+  "0-9": {
+   "MATCH": 21,
+   "MISMATCH": 270,
+   "COMPILE_FAIL": 80,
+   "NO_EXPORT": 2,
+   "OBJ_EXTRACT_FAIL": 1,
+   "NO_PSEUDO": 7
+  },
+  "10-19": {
+   "MATCH": 66,
+   "MISMATCH": 264,
+   "COMPILE_FAIL": 24,
+   "NO_EXPORT": 1,
+   "NO_PSEUDO": 1
+  },
+  "20-29": {
+   "MATCH": 30,
+   "COMPILE_FAIL": 43,
+   "MISMATCH": 395,
+   "NO_PSEUDO": 2
+  },
+  "30-39": {
+   "MISMATCH": 1059,
+   "COMPILE_FAIL": 122,
+   "DUP_SKIP": 1,
+   "MATCH": 21,
+   "NO_PSEUDO": 5,
+   "OBJ_EXTRACT_FAIL": 1
+  },
+  "40-49": {
+   "MISMATCH": 1065,
+   "MATCH": 159,
+   "COMPILE_FAIL": 61
+  },
+  "50-74": {
+   "MISMATCH": 1031,
+   "MATCH": 63,
+   "COMPILE_FAIL": 190,
+   "NO_PSEUDO": 2
+  },
+  "75-99": {
+   "MISMATCH": 355,
+   "COMPILE_FAIL": 137,
+   "MATCH": 14,
+   "NO_PSEUDO": 1,
+   "OBJ_EXTRACT_FAIL": 1
+  },
+  "100-149": {
+   "COMPILE_FAIL": 191,
+   "MISMATCH": 436,
+   "MATCH": 2,
+   "DUP_SKIP": 1
+  },
+  "150-199": {
+   "MISMATCH": 97,
+   "COMPILE_FAIL": 365,
+   "NO_PSEUDO": 1
+  },
+  "200-299": {
+   "MISMATCH": 95,
+   "COMPILE_FAIL": 78
+  },
+  "300-399": {
+   "MISMATCH": 26,
+   "COMPILE_FAIL": 21
+  },
+  "400-489": {
+   "MISMATCH": 12,
+   "COMPILE_FAIL": 19
+  }
+ },
+ "cf_codes": {
+  "C2036": 319,
+  "C2440": 148,
+  "C2109": 124,
+  "C2065": 80,
+  "C2100": 77,
+  "C2653": 60,
+  "C2446": 60,
+  "C2664": 54,
+  "C2061": 51,
+  "C2059": 46,
+  "C2039": 46,
+  "C2660": 40,
+  "C2227": 26,
+  "C2143": 22,
+  "C2296": 20,
+  "C2064": 19,
+  "C2228": 16,
+  "C2146": 14,
+  "C2533": 10,
+  "C2380": 10,
+  "C2661": 9,
+  "C2198": 9,
+  "C2019": 8,
+  "C2040": 7,
+  "C2679": 4,
+  "C2400": 4,
+  "C2297": 4,
+  "C2450": 4,
+  "C2079": 4,
+  "C2371": 3
+ },
+ "pending_kinds": {
+  "NO_EXPORT": 3,
+  "OBJ_EXTRACT_FAIL": 3,
+  "NO_PSEUDO": 19,
+  "DUP_SKIP": 2
+ },
+ "match_classes_top": [
+  [
+   "",
+   134
+  ],
+  [
+   "ObjectClass",
+   21
+  ],
+  [
+   "unknown",
+   10
+  ],
+  [
+   "TechnoClass",
+   4
+  ],
+  [
+   "Anim_Voices_WorldDominationTour",
+   4
+  ],
+  [
+   "RulesClass",
+   4
+  ],
+  [
+   "MPCooperative",
+   3
+  ],
+  [
+   "_BlitPlainXlat_E",
+   3
+  ],
+  [
+   "_BlitTransLucent50ZReadWrite_G",
+   3
+  ],
+  [
+   "_BlitTransLucent25ZReadWrite_G",
+   3
+  ],
+  [
+   "_BlitPlainXlatAlpha_G",
+   3
+  ],
+  [
+   "_BlitTransZRemapXlatAlpha_G",
+   3
+  ],
+  [
+   "_BlitTransLucent75Alpha_G",
+   3
+  ],
+  [
+   "_BlitTransLucent50Alpha_G",
+   3
+  ],
+  [
+   "_BlitTransXlatWriteAlpha_G",
+   3
+  ]
+ ],
+ "ng_classes_top": [
+  [
+   "",
+   1938
+  ],
+  [
+   "unknown",
+   501
+  ],
+  [
+   "ObjectClass",
+   139
+  ],
+  [
+   "TechnoClass",
+   73
+  ],
+  [
+   "VectorClass",
+   63
+  ],
+  [
+   "HouseClass",
+   46
+  ],
+  [
+   "BuildingClass",
+   37
+  ],
+  [
+   "DynamicVector",
+   36
+  ],
+  [
+   "AbstractClass",
+   33
+  ],
+  [
+   "JumpjetLocomotionClass",
+   19
+  ],
+  [
+   "MPBattleClass",
+   17
+  ],
+  [
+   "FootClass",
+   17
+  ],
+  [
+   "CellClass",
+   17
+  ],
+  [
+   "IUnknown",
+   16
+  ],
+  [
+   "Network",
+   16
+  ]
+ ],
+ "match_size_hist": {
+  "5": 18,
+  "8": 3,
+  "10": 9,
+  "11": 10,
+  "13": 21,
+  "14": 1,
+  "15": 3,
+  "16": 4,
+  "17": 3,
+  "18": 11,
+  "19": 4,
+  "20": 2,
+  "21": 2,
+  "22": 4,
+  "23": 4,
+  "24": 2,
+  "25": 5,
+  "26": 1,
+  "27": 1,
+  "28": 3,
+  "29": 6,
+  "30": 1,
+  "31": 3,
+  "32": 5,
+  "33": 1,
+  "34": 1,
+  "35": 1,
+  "36": 1,
+  "37": 2,
+  "38": 4,
+  "39": 2,
+  "40": 4,
+  "42": 1,
+  "43": 2,
+  "44": 2,
+  "45": 143,
+  "46": 1,
+  "47": 3,
+  "48": 3,
+  "50": 3,
+  "51": 1,
+  "52": 2,
+  "53": 1,
+  "56": 2,
+  "58": 45,
+  "59": 3,
+  "62": 1,
+  "63": 1,
+  "68": 2,
+  "70": 1,
+  "72": 1,
+  "75": 9,
+  "78": 1,
+  "80": 1,
+  "82": 1,
+  "86": 1,
+  "92": 1,
+  "101": 1,
+  "108": 1
+ },
+ "ng_pathology": {
+  "codegen_shape": 1906,
+  "branch_order": 149,
+  "regalloc": 849,
+  "width_mismatch": 48,
+  "const_fold": 1496,
+  "ret_norm": 42,
+  "extern_reloc": 204,
+  "branch_polarity": 192,
+  "frame_sched": 126,
+  "eval_order": 27,
+  "signedness": 41,
+  "cc_mismatch": 25
+ },
+ "viol": {
+  "rule_violations_gt0": 639,
+  "viol_total": 1564
+ }
+}
