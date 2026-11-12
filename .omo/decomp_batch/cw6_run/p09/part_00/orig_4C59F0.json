@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C59F0",
+ "name": "EMPulseClass::ddtor",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C59F0",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d40997e0089088b1544997e008950048b0d48997e008948088b154c997e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

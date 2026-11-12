@@ -1,0 +1,447 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 19,
+   "DUP_SKIP": 1
+  },
+  "pathologies": {
+   "extern_reloc": 1,
+   "branch_order": 1,
+   "regalloc": 1,
+   "branch_polarity": 6,
+   "codegen_shape": 10
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x4b6200",
+   "batch": "stale_cw5|CW5-10 GUID constants",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 69B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e9a70]",
+    "ours": "+16 mov edx, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "DropPodLocomotionClass::ddtor",
+   "emitted": "DropPodLocomotionClass::ddtor",
+   "unit": "DropPodLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4b6400",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 49B",
+   "first_diff": {
+    "orig": "+25 je 0x4b6429",
+    "ours": "+25 jne 0x23"
+   },
+   "pathology": "branch_order",
+   "name": "JumpjetLocomotionClass::StubReturnZero_4",
+   "emitted": "JumpjetLocomotionClass::StubReturnZero_4",
+   "unit": "JumpjetLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 49,
+   "clean": false
+  },
+  {
+   "addr": "0x4b6bf0",
+   "batch": "stale_cw5|CW5-5 global object array",
+   "verdict": "MISMATCH",
+   "note": "orig 60B ours 66B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push ebp"
+   },
+   "pathology": "regalloc",
+   "name": "sub_4B6BF0",
+   "emitted": "ObjectClass::sub_4B6BF0",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 2,
+   "orig_size": 60,
+   "ours_size": 66,
+   "clean": false
+  },
+  {
+   "addr": "0x4b9ca0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4b9cd6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_CrossDissolveEffect::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAUButtonFadeEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4b9ed0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "DUP_SKIP",
+   "note": "duplicate _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex in part",
+   "first_diff": null,
+   "pathology": null,
+   "clean": false
+  },
+  {
+   "addr": "0x4b9f00",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4b9f36",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_CrossDissolveEffect::AddRef",
+   "emitted": "_VectorClass_PAUCrossDissolveEffect::AddRef",
+   "unit": "_VectorClass_PAUCrossDissolveEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4ba130",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "FilePipe_30::FindItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAUCrossDissolveEffect::FindItemIndex_0",
+   "unit": "_DynamicVectorClass_PAUCrossDissolveEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4c2ca0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4c2cd6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_EBolt::Add",
+   "emitted": "_VectorClass_PAVEBolt::Add",
+   "unit": "_VectorClass_PAVEBolt",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4c2dc0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4c2dce",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_EBolt::GetSize",
+   "emitted": "_VectorClass_PAVEBolt::GetSize",
+   "unit": "_VectorClass_PAVEBolt",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4c2ed0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_EBolt::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVEBolt::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVEBolt",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4c4a00",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4c4a36",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_EgoClass::Add",
+   "emitted": "_VectorClass_PAVEgoClass::Add",
+   "unit": "_VectorClass_PAVEgoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4c4b20",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4c4b2e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_EgoClass::GetSize",
+   "emitted": "_VectorClass_PAVEgoClass::GetSize",
+   "unit": "_VectorClass_PAVEgoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4c4c30",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_EgoClass::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVEgoClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVEgoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4c59f0",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 52B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e9940]",
+    "ours": "+16 xor ecx, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "EMPulseClass::ddtor",
+   "emitted": "EMPulseClass::ddtor",
+   "unit": "EMPulseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x4c5bc0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4c5bf6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_EMPulseClass::Add",
+   "emitted": "_VectorClass_PAVEMPulseClass::Add",
+   "unit": "_VectorClass_PAVEMPulseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4c5ce0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4c5cee",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_EMPulseClass::GetSize",
+   "emitted": "_VectorClass_PAVEMPulseClass::GetSize",
+   "unit": "_VectorClass_PAVEMPulseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x4c5df0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_EMPulseClass::FindItemIndex",
+   "emitted": "_DynamicVectorClass_PAVEMPulseClass::FindItemIndex",
+   "unit": "_DynamicVectorClass_PAVEMPulseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x4ca230",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 52B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e9820]",
+    "ours": "+16 xor ecx, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "FactoryClass::ddtor",
+   "emitted": "FactoryClass::ddtor",
+   "unit": "FactoryClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x4ca8f0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x4ca926",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "FactoryClass_33::AddRef",
+   "emitted": "_VectorClass_PBVTechnoTypeClass::AddRef",
+   "unit": "_VectorClass_PBVTechnoTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x4caa10",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x4caa1e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "FactoryClass_33::Read",
+   "emitted": "_VectorClass_PBVTechnoTypeClass::Read",
+   "unit": "_VectorClass_PBVTechnoTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  }
+ ]
+}

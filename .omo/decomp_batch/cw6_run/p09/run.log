@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x4b6200 DropPodLocomotionClass::ddtor -> DropPodLocomotionClass
+[conv] 0x4b6400 JumpjetLocomotionClass::StubReturnZero_4 -> JumpjetLocomotionClass
+[conv] 0x4b6bf0 ObjectClass::sub_4B6BF0 -> ObjectClass
+[conv] 0x4b9ca0 _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex -> _DynamicVectorClass_PAUButtonFadeEffect
+[conv] 0x4b9f00 _VectorClass_PAUCrossDissolveEffect::AddRef -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4ba130 _DynamicVectorClass_PAUCrossDissolveEffect::FindItemIndex_0 -> _DynamicVectorClass_PAUCrossDissolveEffect
+[conv] 0x4c2ca0 _VectorClass_PAVEBolt::Add -> _VectorClass_PAVEBolt
+[conv] 0x4c2dc0 _VectorClass_PAVEBolt::GetSize -> _VectorClass_PAVEBolt
+[conv] 0x4c2ed0 _DynamicVectorClass_PAVEBolt::FindItemIndex -> _DynamicVectorClass_PAVEBolt
+[conv] 0x4c4a00 _VectorClass_PAVEgoClass::Add -> _VectorClass_PAVEgoClass
+[conv] 0x4c4b20 _VectorClass_PAVEgoClass::GetSize -> _VectorClass_PAVEgoClass
+[conv] 0x4c4c30 _DynamicVectorClass_PAVEgoClass::FindItemIndex -> _DynamicVectorClass_PAVEgoClass
+[conv] 0x4c59f0 EMPulseClass::ddtor -> EMPulseClass
+[conv] 0x4c5bc0 _VectorClass_PAVEMPulseClass::Add -> _VectorClass_PAVEMPulseClass
+[conv] 0x4c5ce0 _VectorClass_PAVEMPulseClass::GetSize -> _VectorClass_PAVEMPulseClass
+[conv] 0x4c5df0 _DynamicVectorClass_PAVEMPulseClass::FindItemIndex -> _DynamicVectorClass_PAVEMPulseClass
+[conv] 0x4ca230 FactoryClass::ddtor -> FactoryClass
+[conv] 0x4ca8f0 _VectorClass_PBVTechnoTypeClass::AddRef -> _VectorClass_PBVTechnoTypeClass
+[conv] 0x4caa10 _VectorClass_PBVTechnoTypeClass::Read -> _VectorClass_PBVTechnoTypeClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DropPodLocomotionClass   rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] ObjectClass              rc=0
+[era] _DynamicVectorClass_PAUButtonFadeEffect rc=0
+[era] _VectorClass_PAUCrossDissolveEffect rc=0
+[era] _DynamicVectorClass_PAUCrossDissolveEffect rc=0
+[era] _VectorClass_PAVEBolt    rc=0
+[era] _DynamicVectorClass_PAVEBolt rc=0
+[era] _VectorClass_PAVEgoClass rc=0
+[era] _DynamicVectorClass_PAVEgoClass rc=0
+[era] EMPulseClass             rc=0
+[era] _VectorClass_PAVEMPulseClass rc=0
+[era] _DynamicVectorClass_PAVEMPulseClass rc=0
+[era] FactoryClass             rc=0
+[era] _VectorClass_PBVTechnoTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4b6200   MISMATCH         DropPodLocomotionClass::ddtor
+[diff] 0x4b6400   MISMATCH         JumpjetLocomotionClass::StubReturnZero_4
+[diff] 0x4b6bf0   MISMATCH         ObjectClass::sub_4B6BF0
+[diff] 0x4b9ca0   MISMATCH         _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex
+[diff] 0x4b9f00   MISMATCH         _VectorClass_PAUCrossDissolveEffect::AddRef
+[diff] 0x4ba130   MISMATCH         _DynamicVectorClass_PAUCrossDissolveEffect::FindItemIndex_0
+[diff] 0x4c2ca0   MISMATCH         _VectorClass_PAVEBolt::Add
+[diff] 0x4c2dc0   MISMATCH         _VectorClass_PAVEBolt::GetSize
+[diff] 0x4c2ed0   MISMATCH         _DynamicVectorClass_PAVEBolt::FindItemIndex
+[diff] 0x4c4a00   MISMATCH         _VectorClass_PAVEgoClass::Add
+[diff] 0x4c4b20   MISMATCH         _VectorClass_PAVEgoClass::GetSize
+[diff] 0x4c4c30   MISMATCH         _DynamicVectorClass_PAVEgoClass::FindItemIndex
+[diff] 0x4c59f0   MISMATCH         EMPulseClass::ddtor
+[diff] 0x4c5bc0   MISMATCH         _VectorClass_PAVEMPulseClass::Add
+[diff] 0x4c5ce0   MISMATCH         _VectorClass_PAVEMPulseClass::GetSize
+[diff] 0x4c5df0   MISMATCH         _DynamicVectorClass_PAVEMPulseClass::FindItemIndex
+[diff] 0x4ca230   MISMATCH         FactoryClass::ddtor
+[diff] 0x4ca8f0   MISMATCH         _VectorClass_PBVTechnoTypeClass::AddRef
+[diff] 0x4caa10   MISMATCH         _VectorClass_PBVTechnoTypeClass::Read
+[ledger] 0x4b6200 DropPodLocomotionClass::ddtor -> NG (attempt 2)
+[ledger] 0x4b6400 JumpjetLocomotionClass::StubReturnZero_4 -> NG (attempt 2)
+[ledger] 0x4b6bf0 ObjectClass::sub_4B6BF0 -> NG (attempt 2)
+[ledger] 0x4b9ca0 _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4b9ed0 0x4b9ed0 -> PENDING (attempt 2)
+[ledger] 0x4b9f00 _VectorClass_PAUCrossDissolveEffect::AddRef -> NG (attempt 2)
+[ledger] 0x4ba130 _DynamicVectorClass_PAUCrossDissolveEffect::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4c2ca0 _VectorClass_PAVEBolt::Add -> NG (attempt 2)
+[ledger] 0x4c2dc0 _VectorClass_PAVEBolt::GetSize -> NG (attempt 2)
+[ledger] 0x4c2ed0 _DynamicVectorClass_PAVEBolt::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4c4a00 _VectorClass_PAVEgoClass::Add -> NG (attempt 2)
+[ledger] 0x4c4b20 _VectorClass_PAVEgoClass::GetSize -> NG (attempt 2)
+[ledger] 0x4c4c30 _DynamicVectorClass_PAVEgoClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4c59f0 EMPulseClass::ddtor -> NG (attempt 2)
+[ledger] 0x4c5bc0 _VectorClass_PAVEMPulseClass::Add -> NG (attempt 2)
+[ledger] 0x4c5ce0 _VectorClass_PAVEMPulseClass::GetSize -> NG (attempt 2)
+[ledger] 0x4c5df0 _DynamicVectorClass_PAVEMPulseClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4ca230 FactoryClass::ddtor -> NG (attempt 2)
+[ledger] 0x4ca8f0 _VectorClass_PBVTechnoTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x4caa10 _VectorClass_PBVTechnoTypeClass::Read -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "DUP_SKIP": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "branch_order": 1,
+  "regalloc": 1,
+  "branch_polarity": 6,
+  "codegen_shape": 10
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p09\batch_report.json

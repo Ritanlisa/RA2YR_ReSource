@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CA230",
+ "name": "FactoryClass::ddtor",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CA230",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d20987e0089088b1524987e008950048b0d28987e008948088b152c987e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
