@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p68\part_00
+=== convert (20 addrs) ===
+[conv] 0x644a40 sub_644A40 -> _addr_64
+[conv] 0x644bc0 sub_644BC0 -> _addr_64
+[conv] 0x646ad0 sub_646AD0 -> _addr_64
+[conv] 0x646c50 sub_646C50 -> _addr_64
+[conv] 0x6526d0 sub_6526D0 -> _addr_65
+[conv] 0x652850 sub_652850 -> _addr_65
+[conv] 0x658ed0 sub_658ED0 -> _addr_65
+[conv] 0x659050 sub_659050 -> _addr_65
+[conv] 0x65a590 sub_65A590 -> _addr_65
+[conv] 0x65a710 sub_65A710 -> _addr_65
+[conv] 0x65afa0 sub_65AFA0 -> _addr_65
+[conv] 0x65b120 sub_65B120 -> _addr_65
+[conv] 0x65b4f0 RadSiteClass::SetRadLevel -> RadSiteClass
+[conv] 0x65d710 sub_65D710 -> _addr_65
+[conv] 0x65d890 sub_65D890 -> _addr_65
+[conv] 0x65f380 sub_65F380 -> _addr_65
+[conv] 0x65f500 sub_65F500 -> _addr_65
+[conv] 0x65f7f0 sub_65F7F0 -> _addr_65
+[conv] 0x65f970 sub_65F970 -> _addr_65
+[conv] 0x661d00 sub_661D00 -> _addr_66
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_64                 rc=0
+[era] _addr_65                 rc=0
+[era] RadSiteClass             rc=0
+[era] _addr_66                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x644a40   MATCH            sub_644A40
+[diff] 0x644bc0   MISMATCH         sub_644BC0
+[diff] 0x646ad0   MATCH            sub_646AD0
+[diff] 0x646c50   MISMATCH         sub_646C50
+[diff] 0x6526d0   MATCH            sub_6526D0
+[diff] 0x652850   MISMATCH         sub_652850
+[diff] 0x658ed0   MATCH            sub_658ED0
+[diff] 0x659050   MISMATCH         sub_659050
+[diff] 0x65a590   MATCH            sub_65A590
+[diff] 0x65a710   MISMATCH         sub_65A710
+[diff] 0x65afa0   MATCH            sub_65AFA0
+[diff] 0x65b120   MISMATCH         sub_65B120
+[diff] 0x65d710   MATCH            sub_65D710
+[diff] 0x65d890   MISMATCH         sub_65D890
+[diff] 0x65f380   MATCH            sub_65F380
+[diff] 0x65f500   MISMATCH         sub_65F500
+[diff] 0x65f7f0   MATCH            sub_65F7F0
+[diff] 0x65f970   MISMATCH         sub_65F970
+[diff] 0x65b4f0   MISMATCH         RadSiteClass::SetRadLevel
+[diff] 0x661d00   MATCH            sub_661D00
+[ledger] 0x644a40 sub_644A40 -> OK (attempt 3)
+[ledger] 0x644bc0 sub_644BC0 -> NG (attempt 2)
+[ledger] 0x646ad0 sub_646AD0 -> OK (attempt 2)
+[ledger] 0x646c50 sub_646C50 -> NG (attempt 2)
+[ledger] 0x6526d0 sub_6526D0 -> OK (attempt 2)
+[ledger] 0x652850 sub_652850 -> NG (attempt 2)
+[ledger] 0x658ed0 sub_658ED0 -> OK (attempt 2)
+[ledger] 0x659050 sub_659050 -> NG (attempt 2)
+[ledger] 0x65a590 sub_65A590 -> OK (attempt 2)
+[ledger] 0x65a710 sub_65A710 -> NG (attempt 2)
+[ledger] 0x65afa0 sub_65AFA0 -> OK (attempt 2)
+[ledger] 0x65b120 sub_65B120 -> NG (attempt 2)
+[ledger] 0x65b4f0 RadSiteClass::SetRadLevel -> NG (attempt 2)
+[ledger] 0x65d710 sub_65D710 -> OK (attempt 2)
+[ledger] 0x65d890 sub_65D890 -> NG (attempt 2)
+[ledger] 0x65f380 sub_65F380 -> OK (attempt 2)
+[ledger] 0x65f500 sub_65F500 -> NG (attempt 2)
+[ledger] 0x65f7f0 sub_65F7F0 -> OK (attempt 2)
+[ledger] 0x65f970 sub_65F970 -> NG (attempt 3)
+[ledger] 0x661d00 sub_661D00 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "extern_reloc": 9,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p68\batch_report.json

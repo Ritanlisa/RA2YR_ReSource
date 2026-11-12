@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x644a40",
+  "family": "D_RELOC",
+  "name": "sub_644A40"
+ },
+ {
+  "addr": "0x644bc0",
+  "family": "D_RELOC",
+  "name": "sub_644BC0"
+ },
+ {
+  "addr": "0x646ad0",
+  "family": "D_RELOC",
+  "name": "sub_646AD0"
+ },
+ {
+  "addr": "0x646c50",
+  "family": "D_RELOC",
+  "name": "sub_646C50"
+ },
+ {
+  "addr": "0x6526d0",
+  "family": "D_RELOC",
+  "name": "sub_6526D0"
+ },
+ {
+  "addr": "0x652850",
+  "family": "D_RELOC",
+  "name": "sub_652850"
+ },
+ {
+  "addr": "0x658ed0",
+  "family": "D_RELOC",
+  "name": "sub_658ED0"
+ },
+ {
+  "addr": "0x659050",
+  "family": "D_RELOC",
+  "name": "sub_659050"
+ },
+ {
+  "addr": "0x65a590",
+  "family": "D_RELOC",
+  "name": "sub_65A590"
+ },
+ {
+  "addr": "0x65a710",
+  "family": "D_RELOC",
+  "name": "sub_65A710"
+ },
+ {
+  "addr": "0x65afa0",
+  "family": "D_RELOC",
+  "name": "sub_65AFA0"
+ },
+ {
+  "addr": "0x65b120",
+  "family": "D_RELOC",
+  "name": "sub_65B120"
+ },
+ {
+  "addr": "0x65b4f0",
+  "family": "D_RELOC",
+  "name": "RadSiteClass::SetRadLevel"
+ },
+ {
+  "addr": "0x65d710",
+  "family": "D_RELOC",
+  "name": "sub_65D710"
+ },
+ {
+  "addr": "0x65d890",
+  "family": "D_RELOC",
+  "name": "sub_65D890"
+ },
+ {
+  "addr": "0x65f380",
+  "family": "D_RELOC",
+  "name": "sub_65F380"
+ },
+ {
+  "addr": "0x65f500",
+  "family": "D_RELOC",
+  "name": "sub_65F500"
+ },
+ {
+  "addr": "0x65f7f0",
+  "family": "D_RELOC",
+  "name": "sub_65F7F0"
+ },
+ {
+  "addr": "0x65f970",
+  "family": "D_RELOC",
+  "name": "sub_65F970"
+ },
+ {
+  "addr": "0x661d00",
+  "family": "D_RELOC",
+  "name": "sub_661D00"
+ }
+]
