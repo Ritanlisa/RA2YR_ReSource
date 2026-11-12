@@ -1,0 +1,11 @@
+{
+ "addr": "0x7104C0",
+ "name": "TechnoClass::MarkPassengersAsExited",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7104C0",
+ "bytes_hex": "81c114010000e8852fd6ff33c93bc17418b2043bc174068888820000008b40303bc1740584501475eac3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

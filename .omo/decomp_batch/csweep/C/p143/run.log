@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p143\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b81c0 _DynamicVectorClass_PAVSpawnManagerClass::Destroy -> _DynamicVectorClass_PAVSpawnManagerClass
+[conv] 0x6ca7c0 _DynamicVectorClass_PAVSubTitle::Destroy -> _DynamicVectorClass_PAVSubTitle
+[conv] 0x6cf4f0 _DynamicVectorClass_VSwizzlePointerClass::ClearBuffer -> _DynamicVectorClass_VSwizzlePointerClass
+[conv] 0x6d1e80 Tactical::sub_6D1E80 -> Tactical
+[conv] 0x6dc4e0 VectorClass_UDirtyAreaStruct::Destroy -> VectorClass_UDirtyAreaStruct
+[conv] 0x6dc580 _DynamicVectorClass_PAVShadowControlClass::Destroy_0 -> _DynamicVectorClass_PAVShadowControlClass
+[conv] 0x6e47f0 Tactical::ClearBuffer -> Tactical
+[conv] 0x6e64e0 _DynamicVectorClass_PAVTagTypeClass::Destroy -> _DynamicVectorClass_PAVTagTypeClass
+[conv] 0x6e6a80 sub_6E6A80 -> _addr_6E
+[conv] 0x7104c0 TechnoClass::MarkPassengersAsExited -> TechnoClass
+[conv] 0x71b240 _DynamicVectorClass_PAVTemporalClass::Destroy -> _DynamicVectorClass_PAVTemporalClass
+[conv] 0x71cfd0 TerrainClass::ProcessFrameStep -> TerrainClass
+[conv] 0x7212b0 _DynamicVectorClass_PAUThemeControl::Destroy -> _DynamicVectorClass_PAUThemeControl
+[conv] 0x723730 _DynamicVectorClass_PAVTiberiumClass::Destroy -> _DynamicVectorClass_PAVTiberiumClass
+[conv] 0x724c30 _DynamicVectorClass_PBVToolTip::ddtor -> _DynamicVectorClass_PBVToolTip
+[conv] 0x74f360 IRTTITypeInfo::ClearBuffer -> IRTTITypeInfo
+[conv] 0x7518d0 _DynamicVectorClass_PAVVocClass::Destroy -> _DynamicVectorClass_PAVVocClass
+[conv] 0x753650 _DynamicVectorClass_PAVVoxClass::getItem -> _DynamicVectorClass_PAVVoxClass
+[conv] 0x75a430 _DynamicVectorClass_PAVMovieHandle::Destroy -> _DynamicVectorClass_PAVMovieHandle
+[conv] 0x763f90 _DynamicVectorClass_PAVWaypointPathClass::Destroy -> _DynamicVectorClass_PAVWaypointPathClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVSpawnManagerClass rc=0
+[era] _DynamicVectorClass_PAVSubTitle rc=0
+[era] _DynamicVectorClass_VSwizzlePointerClass rc=0
+[era] Tactical                 rc=2
+[era] VectorClass_UDirtyAreaStruct rc=0
+[era] _DynamicVectorClass_PAVShadowControlClass rc=0
+[era] _DynamicVectorClass_PAVTagTypeClass rc=0
+[era] _addr_6E                 rc=0
+[era] TechnoClass              rc=0
+[era] _DynamicVectorClass_PAVTemporalClass rc=0
+[era] TerrainClass             rc=0
+[era] _DynamicVectorClass_PAUThemeControl rc=0
+[era] _DynamicVectorClass_PAVTiberiumClass rc=0
+[era] _DynamicVectorClass_PBVToolTip rc=0
+[era] IRTTITypeInfo            rc=0
+[era] _DynamicVectorClass_PAVVocClass rc=0
+[era] _DynamicVectorClass_PAVVoxClass rc=0
+[era] _DynamicVectorClass_PAVMovieHandle rc=0
+[era] _DynamicVectorClass_PAVWaypointPathClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b81c0   MISMATCH         _DynamicVectorClass_PAVSpawnManagerClass::Destroy
+[diff] 0x6ca7c0   MISMATCH         _DynamicVectorClass_PAVSubTitle::Destroy
+[diff] 0x6cf4f0   MISMATCH         _DynamicVectorClass_VSwizzlePointerClass::ClearBuffer
+[diff] 0x6d1e80   MISMATCH         Tactical::sub_6D1E80
+[diff] 0x6e47f0   MISMATCH         Tactical::ClearBuffer
+[diff] 0x6dc4e0   MISMATCH         VectorClass_UDirtyAreaStruct::Destroy
+[diff] 0x6dc580   MISMATCH         _DynamicVectorClass_PAVShadowControlClass::Destroy_0
+[diff] 0x6e64e0   MISMATCH         _DynamicVectorClass_PAVTagTypeClass::Destroy
+[diff] 0x6e6a80   MISMATCH         sub_6E6A80
+[diff] 0x7104c0   MISMATCH         TechnoClass::MarkPassengersAsExited
+[diff] 0x71b240   MISMATCH         _DynamicVectorClass_PAVTemporalClass::Destroy
+[diff] 0x71cfd0   MISMATCH         TerrainClass::ProcessFrameStep
+[diff] 0x7212b0   MISMATCH         _DynamicVectorClass_PAUThemeControl::Destroy
+[diff] 0x723730   MISMATCH         _DynamicVectorClass_PAVTiberiumClass::Destroy
+[diff] 0x724c30   MISMATCH         _DynamicVectorClass_PBVToolTip::ddtor
+[diff] 0x74f360   MISMATCH         IRTTITypeInfo::ClearBuffer
+[diff] 0x7518d0   MISMATCH         _DynamicVectorClass_PAVVocClass::Destroy
+[diff] 0x753650   MISMATCH         _DynamicVectorClass_PAVVoxClass::getItem
+[diff] 0x75a430   MISMATCH         _DynamicVectorClass_PAVMovieHandle::Destroy
+[diff] 0x763f90   MISMATCH         _DynamicVectorClass_PAVWaypointPathClass::Destroy
+[ledger] 0x6b81c0 _DynamicVectorClass_PAVSpawnManagerClass::Destroy -> NG (attempt 1)
+[ledger] 0x6ca7c0 _DynamicVectorClass_PAVSubTitle::Destroy -> NG (attempt 1)
+[ledger] 0x6cf4f0 _DynamicVectorClass_VSwizzlePointerClass::ClearBuffer -> NG (attempt 1)
+[ledger] 0x6d1e80 Tactical::sub_6D1E80 -> NG (attempt 1)
+[ledger] 0x6dc4e0 VectorClass_UDirtyAreaStruct::Destroy -> NG (attempt 1)
+[ledger] 0x6dc580 _DynamicVectorClass_PAVShadowControlClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x6e47f0 Tactical::ClearBuffer -> NG (attempt 1)
+[ledger] 0x6e64e0 _DynamicVectorClass_PAVTagTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x6e6a80 sub_6E6A80 -> NG (attempt 1)
+[ledger] 0x7104c0 TechnoClass::MarkPassengersAsExited -> NG (attempt 1)
+[ledger] 0x71b240 _DynamicVectorClass_PAVTemporalClass::Destroy -> NG (attempt 1)
+[ledger] 0x71cfd0 TerrainClass::ProcessFrameStep -> NG (attempt 1)
+[ledger] 0x7212b0 _DynamicVectorClass_PAUThemeControl::Destroy -> NG (attempt 1)
+[ledger] 0x723730 _DynamicVectorClass_PAVTiberiumClass::Destroy -> NG (attempt 1)
+[ledger] 0x724c30 _DynamicVectorClass_PBVToolTip::ddtor -> NG (attempt 1)
+[ledger] 0x74f360 IRTTITypeInfo::ClearBuffer -> NG (attempt 1)
+[ledger] 0x7518d0 _DynamicVectorClass_PAVVocClass::Destroy -> NG (attempt 1)
+[ledger] 0x753650 _DynamicVectorClass_PAVVoxClass::getItem -> NG (attempt 1)
+[ledger] 0x75a430 _DynamicVectorClass_PAVMovieHandle::Destroy -> NG (attempt 1)
+[ledger] 0x763f90 _DynamicVectorClass_PAVWaypointPathClass::Destroy -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 13,
+  "codegen_shape": 3,
+  "const_fold": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p143\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?MarkPassengersAsExited@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::MarkPassengersAsExited",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "33c08a81f40000008bc8e80000000033d23bc27414b1048890820000008b40303bc2740584481475eec3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?GetDB@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::GetDB"
+  }
+ ]
+}

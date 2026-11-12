@@ -1,0 +1,11 @@
+{
+ "addr": "0x71CFD0",
+ "name": "TerrainClass::ProcessFrameStep",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71CFD0",
+ "bytes_hex": "8b44240856578b7c240c508bf157e84d82edff39bec8000000750ac786c8000000000000005f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

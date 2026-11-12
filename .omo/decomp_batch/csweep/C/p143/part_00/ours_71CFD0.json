@@ -1,0 +1,15 @@
+{
+ "symbol": "?ProcessFrameStep@TerrainClass@@QAEHHH@Z",
+ "sym_key": "TerrainClass::ProcessFrameStep",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b8ec80000008b5424083bca750ac786c8000000000000005ec20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Unlink@Object@@QAEHXZ",
+   "sym_key": "Object::Unlink"
+  }
+ ]
+}

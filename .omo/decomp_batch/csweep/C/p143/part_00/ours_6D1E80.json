@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_6D1E80@Tactical@@QAEXXZ",
+ "sym_key": "Tactical::sub_6D1E80",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "33c0890189410489410889410ca300000000e900000000",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?DTOR@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::DTOR"
+  }
+ ]
+}

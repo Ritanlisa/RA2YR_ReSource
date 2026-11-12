@@ -141,3 +141,4 @@
 {"layer": "C", "part": 140, "n": 20, "seconds": 47.5, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "C", "part": 141, "n": 20, "seconds": 46.8, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "C", "part": 142, "n": 20, "seconds": 49.8, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"layer": "C", "part": 143, "n": 20, "seconds": 52.8, "ok": true, "verdicts": {"MISMATCH": 20}}
