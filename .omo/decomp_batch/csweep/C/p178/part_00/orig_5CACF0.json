@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CACF0",
+ "name": "MPBattleClass::isValidMap",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CACF0",
+ "bytes_hex": "dd0580faab00dc25a8faab0083ec08dd1c24e84900f0ffdc0da0faab0083c408dc0d38177e00e8e5b11f00a3f8faab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

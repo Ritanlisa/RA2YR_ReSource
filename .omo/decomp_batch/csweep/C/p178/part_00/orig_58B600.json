@@ -1,0 +1,11 @@
+{
+ "addr": "0x58B600",
+ "name": "Camera::UpdateTilt",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58B600",
+ "bytes_hex": "dd05a8dfab00dc2588ecab0083ec08dd1c24e839f7f3ffdc0d68e3ab0083c408dc0d38177e00e8d5a82300a300edab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
