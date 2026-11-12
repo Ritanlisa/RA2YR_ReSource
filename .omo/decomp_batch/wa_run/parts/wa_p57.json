@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x4af4e0",
+  "family": "D_RELOC",
+  "name": "sub_4AF4E0"
+ },
+ {
+  "addr": "0x4af500",
+  "family": "D_RELOC",
+  "name": "sub_4AF500"
+ },
+ {
+  "addr": "0x4b58f0",
+  "family": "D_RELOC",
+  "name": "sub_4B58F0"
+ },
+ {
+  "addr": "0x4b5a70",
+  "family": "D_RELOC",
+  "name": "sub_4B5A70"
+ },
+ {
+  "addr": "0x4b67f0",
+  "family": "D_RELOC",
+  "name": "sub_4B67F0"
+ },
+ {
+  "addr": "0x4b6970",
+  "family": "D_RELOC",
+  "name": "sub_4B6970"
+ },
+ {
+  "addr": "0x4ba400",
+  "family": "D_RELOC",
+  "name": "sub_4BA400"
+ },
+ {
+  "addr": "0x4ba580",
+  "family": "D_RELOC",
+  "name": "sub_4BA580"
+ },
+ {
+  "addr": "0x4bbc90",
+  "family": "D_RELOC",
+  "name": "DDraw::GetStatus"
+ },
+ {
+  "addr": "0x4c1bd0",
+  "family": "D_RELOC",
+  "name": "sub_4C1BD0"
+ },
+ {
+  "addr": "0x4c1d50",
+  "family": "D_RELOC",
+  "name": "sub_4C1D50"
+ },
+ {
+  "addr": "0x4c35f0",
+  "family": "D_RELOC",
+  "name": "sub_4C35F0"
+ },
+ {
+  "addr": "0x4c3770",
+  "family": "D_RELOC",
+  "name": "sub_4C3770"
+ },
+ {
+  "addr": "0x4c4d50",
+  "family": "D_RELOC",
+  "name": "sub_4C4D50"
+ },
+ {
+  "addr": "0x4c4ed0",
+  "family": "D_RELOC",
+  "name": "sub_4C4ED0"
+ },
+ {
+  "addr": "0x4c5050",
+  "family": "D_RELOC",
+  "name": "sub_4C5050"
+ },
+ {
+  "addr": "0x4c51d0",
+  "family": "D_RELOC",
+  "name": "sub_4C51D0"
+ },
+ {
+  "addr": "0x4c5f30",
+  "family": "D_RELOC",
+  "name": "sub_4C5F30"
+ },
+ {
+  "addr": "0x4c60b0",
+  "family": "D_RELOC",
+  "name": "sub_4C60B0"
+ },
+ {
+  "addr": "0x4c63b0",
+  "family": "D_RELOC",
+  "name": "sub_4C63B0"
+ }
+]

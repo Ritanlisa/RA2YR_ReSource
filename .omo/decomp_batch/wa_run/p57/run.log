@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p57\part_00
+=== convert (20 addrs) ===
+[conv] 0x4af4e0 sub_4AF4E0 -> _addr_4A
+[conv] 0x4af500 sub_4AF500 -> _addr_4A
+[conv] 0x4b58f0 sub_4B58F0 -> _addr_4B
+[conv] 0x4b5a70 sub_4B5A70 -> _addr_4B
+[conv] 0x4b67f0 sub_4B67F0 -> _addr_4B
+[conv] 0x4b6970 sub_4B6970 -> _addr_4B
+[conv] 0x4ba400 sub_4BA400 -> _addr_4B
+[conv] 0x4ba580 sub_4BA580 -> _addr_4B
+[conv] 0x4bbc90 DDraw::GetStatus -> DDraw
+[conv] 0x4c1bd0 sub_4C1BD0 -> _addr_4C
+[conv] 0x4c1d50 sub_4C1D50 -> _addr_4C
+[conv] 0x4c35f0 sub_4C35F0 -> _addr_4C
+[conv] 0x4c3770 sub_4C3770 -> _addr_4C
+[conv] 0x4c4d50 sub_4C4D50 -> _addr_4C
+[conv] 0x4c4ed0 sub_4C4ED0 -> _addr_4C
+[conv] 0x4c5050 sub_4C5050 -> _addr_4C
+[conv] 0x4c51d0 sub_4C51D0 -> _addr_4C
+[conv] 0x4c5f30 sub_4C5F30 -> _addr_4C
+[conv] 0x4c60b0 sub_4C60B0 -> _addr_4C
+[conv] 0x4c63b0 sub_4C63B0 -> _addr_4C
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4A                 rc=0
+[era] _addr_4B                 rc=0
+[era] DDraw                    rc=0
+[era] _addr_4C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4af4e0   MISMATCH         sub_4AF4E0
+[diff] 0x4af500   MISMATCH         sub_4AF500
+[diff] 0x4b58f0   MATCH            sub_4B58F0
+[diff] 0x4b5a70   MISMATCH         sub_4B5A70
+[diff] 0x4b67f0   MATCH            sub_4B67F0
+[diff] 0x4b6970   MISMATCH         sub_4B6970
+[diff] 0x4ba400   MATCH            sub_4BA400
+[diff] 0x4ba580   MISMATCH         sub_4BA580
+[diff] 0x4bbc90   MATCH            DDraw::GetStatus
+[diff] 0x4c1bd0   MATCH            sub_4C1BD0
+[diff] 0x4c1d50   MISMATCH         sub_4C1D50
+[diff] 0x4c35f0   MATCH            sub_4C35F0
+[diff] 0x4c3770   MISMATCH         sub_4C3770
+[diff] 0x4c4d50   MATCH            sub_4C4D50
+[diff] 0x4c4ed0   MISMATCH         sub_4C4ED0
+[diff] 0x4c5050   MATCH            sub_4C5050
+[diff] 0x4c51d0   MISMATCH         sub_4C51D0
+[diff] 0x4c5f30   MATCH            sub_4C5F30
+[diff] 0x4c60b0   MISMATCH         sub_4C60B0
+[diff] 0x4c63b0   MATCH            sub_4C63B0
+[ledger] 0x4af4e0 sub_4AF4E0 -> NG (attempt 2)
+[ledger] 0x4af500 sub_4AF500 -> NG (attempt 2)
+[ledger] 0x4b58f0 sub_4B58F0 -> OK (attempt 2)
+[ledger] 0x4b5a70 sub_4B5A70 -> NG (attempt 3)
+[ledger] 0x4b67f0 sub_4B67F0 -> OK (attempt 2)
+[ledger] 0x4b6970 sub_4B6970 -> NG (attempt 2)
+[ledger] 0x4ba400 sub_4BA400 -> OK (attempt 2)
+[ledger] 0x4ba580 sub_4BA580 -> NG (attempt 2)
+[ledger] 0x4bbc90 DDraw::GetStatus -> OK (attempt 4)
+[ledger] 0x4c1bd0 sub_4C1BD0 -> OK (attempt 3)
+[ledger] 0x4c1d50 sub_4C1D50 -> NG (attempt 2)
+[ledger] 0x4c35f0 sub_4C35F0 -> OK (attempt 2)
+[ledger] 0x4c3770 sub_4C3770 -> NG (attempt 2)
+[ledger] 0x4c4d50 sub_4C4D50 -> OK (attempt 2)
+[ledger] 0x4c4ed0 sub_4C4ED0 -> NG (attempt 2)
+[ledger] 0x4c5050 sub_4C5050 -> OK (attempt 2)
+[ledger] 0x4c51d0 sub_4C51D0 -> NG (attempt 2)
+[ledger] 0x4c5f30 sub_4C5F30 -> OK (attempt 2)
+[ledger] 0x4c60b0 sub_4C60B0 -> NG (attempt 2)
+[ledger] 0x4c63b0 sub_4C63B0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "MATCH": 10
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "extern_reloc": 9
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p57\batch_report.json
