@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p40\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c6390 sub_4C6390 -> _addr_4C
+[conv] 0x4c96d0 sub_4C96D0 -> _addr_4C
+[conv] 0x4cad00 Math::ArcTan2 -> Math
+[conv] 0x4cb9e0 sub_4CB9E0 -> _addr_4C
+[conv] 0x4cbf40 sub_4CBF40 -> _addr_4C
+[conv] 0x4cc7c0 sub_4CC7C0 -> _addr_4C
+[conv] 0x4ccac0 FlyLocomotionClass::ComputeFloatExpression_0 -> FlyLocomotionClass
+[conv] 0x4d0590 sub_4D0590 -> _addr_4D
+[conv] 0x4d2f80 sub_4D2F80 -> _addr_4D
+[conv] 0x4e0f40 sub_4E0F40 -> _addr_4E
+[conv] 0x4e1b40 sub_4E1B40 -> _addr_4E
+[conv] 0x4e3160 sub_4E3160 -> _addr_4E
+[conv] 0x4e6300 sub_4E6300 -> _addr_4E
+[conv] 0x4f0f20 sub_4F0F20 -> _addr_4F
+[conv] 0x4f4060 sub_4F4060 -> _addr_4F
+[conv] 0x4f4f30 sub_4F4F30 -> _addr_4F
+[conv] 0x510b30 sub_510B30 -> _addr_51
+[conv] 0x511230 sub_511230 -> _addr_51
+[conv] 0x513a40 sub_513A40 -> _addr_51
+[conv] 0x517870 sub_517870 -> _addr_51
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4C                 rc=0
+[era] Math                     rc=0
+[era] FlyLocomotionClass       rc=0
+[era] _addr_4D                 rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_4F                 rc=0
+[era] _addr_51                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4c6390   MATCH            sub_4C6390
+[diff] 0x4c96d0   MATCH            sub_4C96D0
+[diff] 0x4cb9e0   MATCH            sub_4CB9E0
+[diff] 0x4cbf40   MATCH            sub_4CBF40
+[diff] 0x4cc7c0   MATCH            sub_4CC7C0
+[diff] 0x4cad00   MISMATCH         Math::ArcTan2
+[diff] 0x4ccac0   MISMATCH         FlyLocomotionClass::ComputeFloatExpression_0
+[diff] 0x4d0590   MATCH            sub_4D0590
+[diff] 0x4d2f80   MATCH            sub_4D2F80
+[diff] 0x4e0f40   MATCH            sub_4E0F40
+[diff] 0x4e1b40   MATCH            sub_4E1B40
+[diff] 0x4e3160   MATCH            sub_4E3160
+[diff] 0x4e6300   MATCH            sub_4E6300
+[diff] 0x4f0f20   MATCH            sub_4F0F20
+[diff] 0x4f4060   MATCH            sub_4F4060
+[diff] 0x4f4f30   MATCH            sub_4F4F30
+[diff] 0x510b30   MATCH            sub_510B30
+[diff] 0x511230   MATCH            sub_511230
+[diff] 0x513a40   MATCH            sub_513A40
+[diff] 0x517870   MATCH            sub_517870
+[ledger] 0x4c6390 sub_4C6390 -> OK (attempt 3)
+[ledger] 0x4c96d0 sub_4C96D0 -> OK (attempt 2)
+[ledger] 0x4cad00 Math::ArcTan2 -> NG (attempt 4)
+[ledger] 0x4cb9e0 sub_4CB9E0 -> OK (attempt 2)
+[ledger] 0x4cbf40 sub_4CBF40 -> OK (attempt 2)
+[ledger] 0x4cc7c0 sub_4CC7C0 -> OK (attempt 3)
+[ledger] 0x4ccac0 FlyLocomotionClass::ComputeFloatExpression_0 -> NG (attempt 2)
+[ledger] 0x4d0590 sub_4D0590 -> OK (attempt 2)
+[ledger] 0x4d2f80 sub_4D2F80 -> OK (attempt 2)
+[ledger] 0x4e0f40 sub_4E0F40 -> OK (attempt 2)
+[ledger] 0x4e1b40 sub_4E1B40 -> OK (attempt 2)
+[ledger] 0x4e3160 sub_4E3160 -> OK (attempt 2)
+[ledger] 0x4e6300 sub_4E6300 -> OK (attempt 2)
+[ledger] 0x4f0f20 sub_4F0F20 -> OK (attempt 2)
+[ledger] 0x4f4060 sub_4F4060 -> OK (attempt 2)
+[ledger] 0x4f4f30 sub_4F4F30 -> OK (attempt 2)
+[ledger] 0x510b30 sub_510B30 -> OK (attempt 2)
+[ledger] 0x511230 sub_511230 -> OK (attempt 2)
+[ledger] 0x513a40 sub_513A40 -> OK (attempt 2)
+[ledger] 0x517870 sub_517870 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 90.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p40\batch_report.json

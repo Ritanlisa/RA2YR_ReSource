@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CCAC0",
+ "name": "JumpjetLocomotionClass::ComputeFloatExpression_0",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CCAC0",
+ "bytes_hex": "8b442404dd4044dc1d00287e00dfe0f6c440740532c0c20400b001c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

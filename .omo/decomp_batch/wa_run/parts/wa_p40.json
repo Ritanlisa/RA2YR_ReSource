@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x4c6390",
+  "family": "D_CONST_FP",
+  "name": "sub_4C6390"
+ },
+ {
+  "addr": "0x4c96d0",
+  "family": "D_CONST_FP",
+  "name": "sub_4C96D0"
+ },
+ {
+  "addr": "0x4cad00",
+  "family": "D_CONST_FP",
+  "name": "Math::ArcTan2"
+ },
+ {
+  "addr": "0x4cb9e0",
+  "family": "D_CONST_FP",
+  "name": "sub_4CB9E0"
+ },
+ {
+  "addr": "0x4cbf40",
+  "family": "D_CONST_FP",
+  "name": "sub_4CBF40"
+ },
+ {
+  "addr": "0x4cc7c0",
+  "family": "D_CONST_FP",
+  "name": "sub_4CC7C0"
+ },
+ {
+  "addr": "0x4ccac0",
+  "family": "D_CONST_FP",
+  "name": "FlyLocomotionClass::ComputeFloatExpression_0"
+ },
+ {
+  "addr": "0x4d0590",
+  "family": "D_CONST_FP",
+  "name": "sub_4D0590"
+ },
+ {
+  "addr": "0x4d2f80",
+  "family": "D_CONST_FP",
+  "name": "sub_4D2F80"
+ },
+ {
+  "addr": "0x4e0f40",
+  "family": "D_CONST_FP",
+  "name": "sub_4E0F40"
+ },
+ {
+  "addr": "0x4e1b40",
+  "family": "D_CONST_FP",
+  "name": "sub_4E1B40"
+ },
+ {
+  "addr": "0x4e3160",
+  "family": "D_CONST_FP",
+  "name": "sub_4E3160"
+ },
+ {
+  "addr": "0x4e6300",
+  "family": "D_CONST_FP",
+  "name": "sub_4E6300"
+ },
+ {
+  "addr": "0x4f0f20",
+  "family": "D_CONST_FP",
+  "name": "sub_4F0F20"
+ },
+ {
+  "addr": "0x4f4060",
+  "family": "D_CONST_FP",
+  "name": "sub_4F4060"
+ },
+ {
+  "addr": "0x4f4f30",
+  "family": "D_CONST_FP",
+  "name": "sub_4F4F30"
+ },
+ {
+  "addr": "0x510b30",
+  "family": "D_CONST_FP",
+  "name": "sub_510B30"
+ },
+ {
+  "addr": "0x511230",
+  "family": "D_CONST_FP",
+  "name": "sub_511230"
+ },
+ {
+  "addr": "0x513a40",
+  "family": "D_CONST_FP",
+  "name": "sub_513A40"
+ },
+ {
+  "addr": "0x517870",
+  "family": "D_CONST_FP",
+  "name": "sub_517870"
+ }
+]
