@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_68C330@@YAHXZ",
+ "sym_key": "Unnamed::sub_68C330",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000c6050000000001a200000000a300000000c705000000000a000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_68C370@@YAHPBX0@Z",
+   "sym_key": "sub_68C370"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B054D8@@3IA",
+   "sym_key": "DataGlobal_B054D8"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B054DC@@3EA",
+   "sym_key": "DataGlobal_B054DC"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B054DD@@3EA",
+   "sym_key": "DataGlobal_B054DD"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B054E4@@3IA",
+   "sym_key": "DataGlobal_B054E4"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_AnimClass_SaveState@@3IA",
+   "sym_key": "g_AnimClass_SaveState"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

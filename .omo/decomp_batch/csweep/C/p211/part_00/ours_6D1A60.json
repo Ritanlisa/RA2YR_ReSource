@@ -1,0 +1,69 @@
+{
+ "symbol": "?sub_6D1A60@@YAHXZ",
+ "sym_key": "Unnamed::sub_6D1A60",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000c6050000000001a200000000c7050000000000000000c705000000000a000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_6D1AA0@@YAHPBX0@Z",
+   "sym_key": "sub_6D1AA0"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_CraterPool@@3PAXA",
+   "sym_key": "g_CraterPool"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE80@@3IA",
+   "sym_key": "DataGlobal_B0CE80"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE84@@3EA",
+   "sym_key": "DataGlobal_B0CE84"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE85@@3EA",
+   "sym_key": "DataGlobal_B0CE85"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE78@@3IA",
+   "sym_key": "DataGlobal_B0CE78"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_19@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_19"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE8C@@3IA",
+   "sym_key": "DataGlobal_B0CE8C"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_CraterCreationState@@3IA",
+   "sym_key": "g_CraterCreationState"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

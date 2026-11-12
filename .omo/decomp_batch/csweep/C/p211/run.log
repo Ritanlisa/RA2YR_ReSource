@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p211\part_00
+=== convert (20 addrs) ===
+[conv] 0x68c330 sub_68C330 -> _addr_68
+[conv] 0x6af120 sub_6AF120 -> _addr_6A
+[conv] 0x6b23b0 sub_6B23B0 -> _addr_6B
+[conv] 0x6b6c10 sub_6B6C10 -> _addr_6B
+[conv] 0x6bb260 sub_6BB260 -> _addr_6B
+[conv] 0x6d1a60 sub_6D1A60 -> _addr_6D
+[conv] 0x6d1b10 sub_6D1B10 -> _addr_6D
+[conv] 0x6dcf80 sub_6DCF80 -> _addr_6D
+[conv] 0x6e4d60 sub_6E4D60 -> _addr_6E
+[conv] 0x6e5ae0 sub_6E5AE0 -> _addr_6E
+[conv] 0x717840 LoadTheaterClassMIX_Load_717840 -> LoadTheaterClassMIX_Load
+[conv] 0x71e620 sub_71E620 -> _addr_71
+[conv] 0x721640 sub_721640 -> _addr_72
+[conv] 0x7252d0 sub_7252D0 -> _addr_72
+[conv] 0x725350 sub_725350 -> _addr_72
+[conv] 0x7253d0 sub_7253D0 -> _addr_72
+[conv] 0x725450 sub_725450 -> _addr_72
+[conv] 0x7254d0 sub_7254D0 -> _addr_72
+[conv] 0x725550 sub_725550 -> _addr_72
+[conv] 0x7255d0 sub_7255D0 -> _addr_72
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_68                 rc=0
+[era] _addr_6A                 rc=0
+[era] _addr_6B                 rc=0
+[era] _addr_6D                 rc=0
+[era] _addr_6E                 rc=0
+[era] LoadTheaterClassMIX_Load rc=0
+[era] _addr_71                 rc=0
+[era] _addr_72                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x68c330   MISMATCH         sub_68C330
+[diff] 0x6af120   MISMATCH         sub_6AF120
+[diff] 0x6b23b0   MISMATCH         sub_6B23B0
+[diff] 0x6b6c10   MISMATCH         sub_6B6C10
+[diff] 0x6bb260   MISMATCH         sub_6BB260
+[diff] 0x6d1a60   MISMATCH         sub_6D1A60
+[diff] 0x6d1b10   MISMATCH         sub_6D1B10
+[diff] 0x6dcf80   MISMATCH         sub_6DCF80
+[diff] 0x6e4d60   MISMATCH         sub_6E4D60
+[diff] 0x6e5ae0   MISMATCH         sub_6E5AE0
+[diff] 0x717840   MISMATCH         LoadTheaterClassMIX_Load_717840
+[diff] 0x71e620   MISMATCH         sub_71E620
+[diff] 0x721640   MISMATCH         sub_721640
+[diff] 0x7252d0   MISMATCH         sub_7252D0
+[diff] 0x725350   MISMATCH         sub_725350
+[diff] 0x7253d0   MISMATCH         sub_7253D0
+[diff] 0x725450   MISMATCH         sub_725450
+[diff] 0x7254d0   MISMATCH         sub_7254D0
+[diff] 0x725550   MISMATCH         sub_725550
+[diff] 0x7255d0   MISMATCH         sub_7255D0
+[ledger] 0x68c330 sub_68C330 -> NG (attempt 1)
+[ledger] 0x6af120 sub_6AF120 -> NG (attempt 1)
+[ledger] 0x6b23b0 sub_6B23B0 -> NG (attempt 1)
+[ledger] 0x6b6c10 sub_6B6C10 -> NG (attempt 1)
+[ledger] 0x6bb260 sub_6BB260 -> NG (attempt 1)
+[ledger] 0x6d1a60 sub_6D1A60 -> NG (attempt 1)
+[ledger] 0x6d1b10 sub_6D1B10 -> NG (attempt 1)
+[ledger] 0x6dcf80 sub_6DCF80 -> NG (attempt 1)
+[ledger] 0x6e4d60 sub_6E4D60 -> NG (attempt 1)
+[ledger] 0x6e5ae0 sub_6E5AE0 -> NG (attempt 1)
+[ledger] 0x717840 LoadTheaterClassMIX_Load_717840 -> NG (attempt 1)
+[ledger] 0x71e620 sub_71E620 -> NG (attempt 1)
+[ledger] 0x721640 sub_721640 -> NG (attempt 1)
+[ledger] 0x7252d0 sub_7252D0 -> NG (attempt 1)
+[ledger] 0x725350 sub_725350 -> NG (attempt 1)
+[ledger] 0x7253d0 sub_7253D0 -> NG (attempt 1)
+[ledger] 0x725450 sub_725450 -> NG (attempt 1)
+[ledger] 0x7254d0 sub_7254D0 -> NG (attempt 1)
+[ledger] 0x725550 sub_725550 -> NG (attempt 1)
+[ledger] 0x7255d0 sub_7255D0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 19,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p211\batch_report.json

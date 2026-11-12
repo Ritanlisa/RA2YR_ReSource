@@ -1,0 +1,33 @@
+{
+ "symbol": "?LoadTheaterClassMIX_Load_717840@@YAHXZ",
+ "sym_key": "Unnamed::LoadTheaterClassMIX_Load_717840",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "a1000000005733ff85c07630568b0d000000008b34b98a96d00d00008d8ed00d000084d27410e8000000008986f00d0000a100000000473bf872d25e5fc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB10@@3IA",
+   "sym_key": "DataGlobal_A8EB10"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB04@@3IA",
+   "sym_key": "DataGlobal_A8EB04"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?MapHandler@FileExtension@@QAEHXZ",
+   "sym_key": "FileExtension::MapHandler"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB10@@3IA",
+   "sym_key": "DataGlobal_A8EB10"
+  }
+ ]
+}

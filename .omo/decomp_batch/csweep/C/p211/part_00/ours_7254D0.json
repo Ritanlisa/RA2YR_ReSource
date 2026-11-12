@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_7254D0@@YAHXZ",
+ "sym_key": "Unnamed::sub_7254D0",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a2bcf5b000a2c0f5b000c605c4f5b00001a2c5f5b000a300000000c605ccf5b0000aa2c8f5b000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_725510@@YAHPBX0@Z",
+   "sym_key": "sub_725510"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}
