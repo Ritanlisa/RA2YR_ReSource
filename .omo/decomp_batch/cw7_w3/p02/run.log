@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b2950 Math::Sub16 -> Math
+[conv] 0x5c8470 ObjectClass::sub_5C8470 -> ObjectClass
+[conv] 0x5cca20 MSVQAnim::Construct -> MSVQAnim
+[conv] 0x5f15c0 ObjectClass::sub_5F15C0 -> ObjectClass
+[conv] 0x5f7a90 VoxelAnimType::LoadSection -> VoxelAnimType
+[conv] 0x6260f0 ObjectClass::sub_6260F0 -> ObjectClass
+[conv] 0x6269a0 ObjectClass::System_Reset -> ObjectClass
+[conv] 0x635f20 ScriptAction::Constructor -> ScriptAction
+[conv] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> ObjectClass
+[conv] 0x63d2d0 ObjectClass::sub_63D2D0 -> ObjectClass
+[conv] 0x641b00 ObjectClass::LoadMapPreviewImage -> ObjectClass
+[conv] 0x6429e0 ObjectClass::sub_6429E0 -> ObjectClass
+[conv] 0x645d00 Function::_645D00 -> Function
+[conv] 0x654320 RadarClass::Destru_vt34 -> RadarClass
+[conv] 0x656580 Diplomacy::GetField -> Diplomacy
+[conv] 0x659550 TechnoClass::drawPassengerPips -> TechnoClass
+[conv] 0x65c910 ObjectClass::sub_65C910 -> ObjectClass
+[conv] 0x689790 ObjectClass::sub_689790 -> ObjectClass
+[conv] 0x689a30 ObjectClass::sub_689A30 -> ObjectClass
+[conv] 0x68bcc0 ScenarioClass::Get_Waypoint_Location -> ScenarioClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Math                     rc=0
+[era] ObjectClass              rc=2
+[era] MSVQAnim                 rc=2
+[era] VoxelAnimType            rc=2
+[era] ScriptAction             rc=0
+[era] Function                 rc=0
+[era] RadarClass               rc=2
+[era] Diplomacy                rc=0
+[era] TechnoClass              rc=0
+[era] ScenarioClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x5b2950   MATCH            Math::Sub16
+[diff] 0x5f15c0   MISMATCH         ObjectClass::sub_5F15C0
+[diff] 0x6260f0   MISMATCH         ObjectClass::sub_6260F0
+[diff] 0x6429e0   MISMATCH         ObjectClass::sub_6429E0
+[diff] 0x65c910   MISMATCH         ObjectClass::sub_65C910
+[diff] 0x689790   MISMATCH         ObjectClass::sub_689790
+[diff] 0x689a30   MISMATCH         ObjectClass::sub_689A30
+[diff] 0x635f20   MISMATCH         ScriptAction::Constructor
+[diff] 0x645d00   MATCH            Function::_645D00
+[diff] 0x656580   MATCH            Diplomacy::GetField
+[diff] 0x659550   MATCH            TechnoClass::drawPassengerPips
+[diff] 0x68bcc0   MATCH            ScenarioClass::Get_Waypoint_Location
+[ledger] 0x5b2950 Math::Sub16 -> OK (attempt 11)
+[ledger] 0x5c8470 ObjectClass::sub_5C8470 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cca20 MSVQAnim::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f15c0 ObjectClass::sub_5F15C0 -> NG (attempt 2)
+[ledger] 0x5f7a90 VoxelAnimType::LoadSection -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6260f0 ObjectClass::sub_6260F0 -> NG (attempt 4)
+[ledger] 0x6269a0 ObjectClass::System_Reset -> COMPILE_FAIL (attempt 4)
+[ledger] 0x635f20 ScriptAction::Constructor -> NG (attempt 2)
+[ledger] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x63d2d0 ObjectClass::sub_63D2D0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x641b00 ObjectClass::LoadMapPreviewImage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6429e0 ObjectClass::sub_6429E0 -> NG (attempt 2)
+[ledger] 0x645d00 Function::_645D00 -> OK (attempt 2)
+[ledger] 0x654320 RadarClass::Destru_vt34 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x656580 Diplomacy::GetField -> OK (attempt 2)
+[ledger] 0x659550 TechnoClass::drawPassengerPips -> OK (attempt 2)
+[ledger] 0x65c910 ObjectClass::sub_65C910 -> NG (attempt 5)
+[ledger] 0x689790 ObjectClass::sub_689790 -> NG (attempt 3)
+[ledger] 0x689a30 ObjectClass::sub_689A30 -> NG (attempt 3)
+[ledger] 0x68bcc0 ScenarioClass::Get_Waypoint_Location -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 5,
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 41.7,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w3\p02\batch_report.json

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_65C910@ObjectClass@@QAEHHH@Z",
+ "sym_key": "ObjectClass::sub_65C910",
+ "size": 227,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b5424148b44241053568bf13bc2897424108bca8bd88944241c0f84b80000007e088bda8bc88954241c2bcb578bf9b91f000000897c2410781049b801000000d3e085c7750485c97ff04183caffd3e28d47013bc7f7d28954240c7e788b0e55894c24208b4e048b7c24208d510189560433f68b86000000008bd933c183c6048bc825ffff0000c1f9108bd18be80fafd10fafe8f7d20fafc103d58beac1fd10c1e2100bea8b960000000033ea03e833ef83fe108bcd8bfb7cb98b7424108b54241423ce3bca8bc17e068b742418eb948b5c24245d03c35f5e5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839644@@3PAIA",
+   "sym_key": "DataGlobal_839644"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839690@@3PAIA",
+   "sym_key": "DataGlobal_839690"
+  }
+ ]
+}

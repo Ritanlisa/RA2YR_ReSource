@@ -1,0 +1,11 @@
+{
+ "addr": "0x659550",
+ "name": "RadBeam::drawPassengerPips",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x659550",
+ "bytes_hex": "8a442404884158c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

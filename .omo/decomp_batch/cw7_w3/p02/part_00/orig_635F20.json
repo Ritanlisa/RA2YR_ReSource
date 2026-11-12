@@ -1,0 +1,11 @@
+{
+ "addr": "0x635F20",
+ "name": "ScriptAction::Constructor",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x635F20",
+ "bytes_hex": "8bc183caff33c989480889480cc6401001884811c7400444fe7e00c740180a00000089481488481c88481d8888980000008888990000008b4c240489908c0000008990900000008990940000008908c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

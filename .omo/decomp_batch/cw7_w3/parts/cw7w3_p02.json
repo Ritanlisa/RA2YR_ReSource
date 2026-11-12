@@ -1,0 +1,344 @@
+[
+ {
+  "addr": "0x5b2950",
+  "name": "Math::Sub16",
+  "orig_name": "Math::Sub16",
+  "unit": "Math",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\Math.cpp(8) : error C2296: '&' : illegal, left operand has type 'unsigned short *'",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-4 pointer-local store",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x5c8470",
+  "name": "ObjectClass::sub_5C8470",
+  "orig_name": "sub_5C8470",
+  "unit": "ObjectClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\ObjectClass_5c8470.cpp(8) : error C2296: '&' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p24\\part_00\\",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-3 idx consumption",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x5cca20",
+  "name": "MSVQAnim::Construct",
+  "orig_name": "MSVQAnim::Construct",
+  "unit": "MSVQAnim",
+  "layer": "D",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p48\\part_00\\MSVQAnim.cpp(44) : error C2296: '*' : illegal, left operand has type 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p48\\part_00\\MSVQAni",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x5f15c0",
+  "name": "ObjectClass::sub_5F15C0",
+  "orig_name": "sub_5F15C0",
+  "unit": "ObjectClass",
+  "layer": "A",
+  "code": "C2106",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p262\\part_00\\ObjectClass_5f15c0.cpp(10) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p262\\part_00\\Object",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x5f7a90",
+  "name": "VoxelAnimType::LoadSection",
+  "orig_name": "VoxelAnimType::LoadSection",
+  "unit": "VoxelAnimType",
+  "layer": "D",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p52\\part_00\\VoxelAnimType.cpp(40) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p52\\part_00\\",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x6260f0",
+  "name": "ObjectClass::sub_6260F0",
+  "orig_name": "sub_6260F0",
+  "unit": "ObjectClass",
+  "layer": "C",
+  "code": "C2106",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p10\\part_00\\ObjectClass.cpp(13) : error C2106: '=' : left operand must be l-value",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x6269a0",
+  "name": "ObjectClass::System_Reset",
+  "orig_name": "System_Reset",
+  "unit": "ObjectClass",
+  "layer": "D",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p40\\part_00\\ObjectClass.cpp(18) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p40\\part_00\\Ob",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x635f20",
+  "name": "ScriptAction::Constructor",
+  "orig_name": "ScriptAction::Constructor",
+  "unit": "ScriptAction",
+  "layer": "A",
+  "code": "C2106",
+  "gen": "G0_preCW2_census",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p30\\part_00\\ScriptAction.cpp(10) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p30\\part_00\\ScriptAction.c",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x63d0f0",
+  "name": "ObjectClass::Render_Render_63D0F0",
+  "orig_name": "Render_Render_63D0F0",
+  "unit": "ObjectClass",
+  "layer": "B",
+  "code": "C2296",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p17\\part_00\\ObjectClass.cpp(32) : error C2296: '>>' : illegal, left operand has type 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p17\\part_00\\Obj",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows"
+  ]
+ },
+ {
+  "addr": "0x63d2d0",
+  "name": "ObjectClass::sub_63D2D0",
+  "orig_name": "sub_63D2D0",
+  "unit": "ObjectClass",
+  "layer": "B",
+  "code": "C2296",
+  "gen": "G5_CW5",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p17\\part_00\\ObjectClass.cpp(32) : error C2296: '>>' : illegal, left operand has type 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw5_run2\\p17\\part_00\\Obj",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows",
+   "g5_live_rows"
+  ]
+ },
+ {
+  "addr": "0x641b00",
+  "name": "ObjectClass::LoadMapPreviewImage",
+  "orig_name": "LoadMapPreviewImage",
+  "unit": "ObjectClass",
+  "layer": "D",
+  "code": "C2106",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p51\\part_00\\ObjectClass.cpp(122) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p51\\part_00\\ObjectClass.cp",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x6429e0",
+  "name": "sub_6429E0",
+  "orig_name": "sub_6429E0",
+  "unit": "ObjectClass",
+  "layer": "A",
+  "code": "C2106",
+  "gen": "G0_preCW2_census",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p30\\part_00\\ObjectClass_6429e0.cpp(11) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p30\\part_00\\ObjectCl",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x645d00",
+  "name": "Function::_645D00",
+  "orig_name": "Function::645D00",
+  "unit": "Function",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p36\\part_00\\Function_645d00.cpp(7) : error C2296: '*' : illegal, left operand has type 'char [1]'",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x654320",
+  "name": "RadarClass::Destru_vt34",
+  "orig_name": "RadarClass::Destru_vt34",
+  "unit": "RadarClass",
+  "layer": "D",
+  "code": "C2296",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p44\\part_00\\RadarClass.cpp(10) : error C2296: '&' : illegal, left operand has type 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p44\\part_00\\Radar",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x656580",
+  "name": "Diplomacy::GetField",
+  "orig_name": "Diplomacy::GetField",
+  "unit": "Diplomacy",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p159\\part_00\\Diplomacy.cpp(8) : error C2296: '*' : illegal, left operand has type 'char [1]'",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x659550",
+  "name": "TechnoClass::drawPassengerPips",
+  "orig_name": "RadBeam::drawPassengerPips",
+  "unit": "TechnoClass",
+  "layer": "A",
+  "code": "C2106",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p36\\part_00\\TechnoClass_659550.cpp(7) : error C2106: '=' : left operand must be l-value",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x65c910",
+  "name": "ObjectClass::sub_65C910",
+  "orig_name": "sub_65C910",
+  "unit": "ObjectClass",
+  "layer": "B",
+  "code": "C2106",
+  "gen": "G3_CW3",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p00\\part_00\\ObjectClass_65c910.cpp(78) : error C2106: '=' : left operand must be l-value",
+  "file": "",
+  "line": null,
+  "form": "unclassified",
+  "buckets": [
+   "live_rows"
+  ]
+ },
+ {
+  "addr": "0x689790",
+  "name": "ObjectClass::sub_689790",
+  "orig_name": "sub_689790",
+  "unit": "ObjectClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\ObjectClass.cpp(21) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\Obje",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-1 param proto merge",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x689a30",
+  "name": "ObjectClass::sub_689A30",
+  "orig_name": "sub_689A30",
+  "unit": "ObjectClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\ObjectClass.cpp(21) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw6_run\\p31\\part_00\\Obje",
+  "file": "",
+  "line": null,
+  "form": "stale_cw3|CW3-1 param proto merge",
+  "buckets": [
+   "refail_rows"
+  ]
+ },
+ {
+  "addr": "0x68bcc0",
+  "name": "ScenarioClass::Get_Waypoint_Location",
+  "orig_name": "ScenarioClass::Get_Waypoint_Location",
+  "unit": "ScenarioClass",
+  "layer": "A",
+  "code": "C2296",
+  "gen": "G2_asweep_preCW4",
+  "evidence": false,
+  "msg": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p140\\part_00\\ScenarioClass.cpp(8) : error C2296: '*' : illegal, left operand has type 'char [1]'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p140\\part_00",
+  "file": "",
+  "line": null,
+  "form": "char*/char[] operand",
+  "buckets": [
+   "live_rows"
+  ]
+ }
+]

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Sub16@Math@@QAEPAIPAHPAG@Z",
+ "sym_key": "Math::Sub16",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "668b018b4c2408662b0166894424088b4424048b5424088910c20800",
+ "relocs": []
+}

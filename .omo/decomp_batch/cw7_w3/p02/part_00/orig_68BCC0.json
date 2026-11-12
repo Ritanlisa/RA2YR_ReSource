@@ -1,0 +1,11 @@
+{
+ "addr": "0x68BCC0",
+ "name": "ScenarioClass::Get_Waypoint_Location",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x68BCC0",
+ "bytes_hex": "8b4424088b8c81320600008b4424048908c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

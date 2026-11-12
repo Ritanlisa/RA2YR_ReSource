@@ -1,0 +1,11 @@
+{
+ "addr": "0x656580",
+ "name": "Diplomacy::GetField",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x656580",
+ "bytes_hex": "8b4424048b80f00e000005c50000008d14408d04d1c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

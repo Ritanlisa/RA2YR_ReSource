@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetField@Diplomacy@@QAEPADH@Z",
+ "sym_key": "Diplomacy::GetField",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b80f00e000005c50000008d14408d04d1c20400",
+ "relocs": []
+}
