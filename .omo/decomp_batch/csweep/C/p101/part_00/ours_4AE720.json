@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetSurface@DisplayClass@@QAGHPAH@Z",
+ "sym_key": "DisplayClass::GetSurface",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240cbe00000000578bcee80000000085c07c1a81c68002000081fe480000007d0c578bcee80000000085c07de65f5ec20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0360@@3IA",
+   "sym_key": "DataGlobal_8A0360"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Save@LayerClass@@QAEHPAX@Z",
+   "sym_key": "LayerClass::Save"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?stru_8A0390@@3PADA",
+   "sym_key": "stru_8A0390"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Save@LayerClass@@QAEHPAX@Z",
+   "sym_key": "LayerClass::Save"
+  }
+ ]
+}

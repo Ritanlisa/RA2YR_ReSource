@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AE720",
+ "name": "DisplayClass::GetSurface",
+ "size": 39,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AE720",
+ "bytes_hex": "56578b7c240cbe60038a00578bcee8ed330a0085c07c0b83c61881fed8038a007ce95f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

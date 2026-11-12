@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p101\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a1330 VectorClass::CleanupTyped -> VectorClass
+[conv] 0x4a4c20 _VectorClass_PAU_DDSURFACEDESC::ddtor -> _VectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a7e70 _VectorClass_PAVDiskLaserClass::ddtor -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4ae720 DisplayClass::GetSurface -> DisplayClass
+[conv] 0x4b9d90 VectorClass_ptr_CrossDissolveEffect::Destroy -> VectorClass_ptr_CrossDissolveEffect
+[conv] 0x4b9ff0 _VectorClass_PAUCrossDissolveEffect::ddtor -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4c2d90 _VectorClass_PAVEBolt::Remove -> _VectorClass_PAVEBolt
+[conv] 0x4c4af0 _VectorClass_PAVEgoClass::Remove -> _VectorClass_PAVEgoClass
+[conv] 0x4c5cb0 _VectorClass_PAVEMPulseClass::Remove -> _VectorClass_PAVEMPulseClass
+[conv] 0x4d07f0 sub_4D07F0 -> _addr_4D
+[conv] 0x4d2b20 _VectorClass_UDrawRecord_FoggedObjectClass::ddtor -> _VectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4e0410 VectorClass::ddtor -> VectorClass
+[conv] 0x4e0670 _VectorClass_PAVFootClass::ddtor -> _VectorClass_PAVFootClass
+[conv] 0x4e92f0 VectorClass::vt_03 -> VectorClass
+[conv] 0x4e9550 _VectorClass_PAVBuildingClass::Set -> _VectorClass_PAVBuildingClass
+[conv] 0x4e97b0 _VectorClass_PAVSuperClass::Remove -> _VectorClass_PAVSuperClass
+[conv] 0x4e9a10 _VectorClass_PAVAITriggerTypeClass::Remove -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4e9c70 _VectorClass_PAVBuildingLightClass::Remove -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4e9ed0 ParticleSystemClass::vt_03 -> ParticleSystemClass
+[conv] 0x4ea130 _VectorClass_PAVTeamClass::Remove -> _VectorClass_PAVTeamClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=0
+[era] _VectorClass_PAU_DDSURFACEDESC rc=0
+[era] _VectorClass_PAVDiskLaserClass rc=0
+[era] DisplayClass             rc=0
+[era] VectorClass_ptr_CrossDissolveEffect rc=0
+[era] _VectorClass_PAUCrossDissolveEffect rc=0
+[era] _VectorClass_PAVEBolt    rc=0
+[era] _VectorClass_PAVEgoClass rc=0
+[era] _VectorClass_PAVEMPulseClass rc=0
+[era] _addr_4D                 rc=0
+[era] _VectorClass_UDrawRecord_FoggedObjectClass rc=0
+[era] _VectorClass_PAVFootClass rc=0
+[era] _VectorClass_PAVBuildingClass rc=0
+[era] _VectorClass_PAVSuperClass rc=0
+[era] _VectorClass_PAVAITriggerTypeClass rc=0
+[era] _VectorClass_PAVBuildingLightClass rc=0
+[era] ParticleSystemClass      rc=0
+[era] _VectorClass_PAVTeamClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a1330   MISMATCH         VectorClass::CleanupTyped
+[diff] 0x4e0410   MISMATCH         VectorClass::ddtor
+[diff] 0x4e92f0   MISMATCH         VectorClass::vt_03
+[diff] 0x4a4c20   MISMATCH         _VectorClass_PAU_DDSURFACEDESC::ddtor
+[diff] 0x4a7e70   MISMATCH         _VectorClass_PAVDiskLaserClass::ddtor
+[diff] 0x4ae720   MISMATCH         DisplayClass::GetSurface
+[diff] 0x4b9d90   MISMATCH         VectorClass_ptr_CrossDissolveEffect::Destroy
+[diff] 0x4b9ff0   MISMATCH         _VectorClass_PAUCrossDissolveEffect::ddtor
+[diff] 0x4c2d90   MISMATCH         _VectorClass_PAVEBolt::Remove
+[diff] 0x4c4af0   MISMATCH         _VectorClass_PAVEgoClass::Remove
+[diff] 0x4c5cb0   MISMATCH         _VectorClass_PAVEMPulseClass::Remove
+[diff] 0x4d07f0   MISMATCH         sub_4D07F0
+[diff] 0x4d2b20   MISMATCH         _VectorClass_UDrawRecord_FoggedObjectClass::ddtor
+[diff] 0x4e0670   MISMATCH         _VectorClass_PAVFootClass::ddtor
+[diff] 0x4e9550   MISMATCH         _VectorClass_PAVBuildingClass::Set
+[diff] 0x4e97b0   MISMATCH         _VectorClass_PAVSuperClass::Remove
+[diff] 0x4e9a10   MISMATCH         _VectorClass_PAVAITriggerTypeClass::Remove
+[diff] 0x4e9c70   MISMATCH         _VectorClass_PAVBuildingLightClass::Remove
+[diff] 0x4e9ed0   MISMATCH         ParticleSystemClass::vt_03
+[diff] 0x4ea130   MISMATCH         _VectorClass_PAVTeamClass::Remove
+[ledger] 0x4a1330 VectorClass::CleanupTyped -> NG (attempt 1)
+[ledger] 0x4a4c20 _VectorClass_PAU_DDSURFACEDESC::ddtor -> NG (attempt 1)
+[ledger] 0x4a7e70 _VectorClass_PAVDiskLaserClass::ddtor -> NG (attempt 1)
+[ledger] 0x4ae720 DisplayClass::GetSurface -> NG (attempt 1)
+[ledger] 0x4b9d90 VectorClass_ptr_CrossDissolveEffect::Destroy -> NG (attempt 1)
+[ledger] 0x4b9ff0 _VectorClass_PAUCrossDissolveEffect::ddtor -> NG (attempt 1)
+[ledger] 0x4c2d90 _VectorClass_PAVEBolt::Remove -> NG (attempt 1)
+[ledger] 0x4c4af0 _VectorClass_PAVEgoClass::Remove -> NG (attempt 1)
+[ledger] 0x4c5cb0 _VectorClass_PAVEMPulseClass::Remove -> NG (attempt 1)
+[ledger] 0x4d07f0 sub_4D07F0 -> NG (attempt 1)
+[ledger] 0x4d2b20 _VectorClass_UDrawRecord_FoggedObjectClass::ddtor -> NG (attempt 1)
+[ledger] 0x4e0410 VectorClass::ddtor -> NG (attempt 1)
+[ledger] 0x4e0670 _VectorClass_PAVFootClass::ddtor -> NG (attempt 1)
+[ledger] 0x4e92f0 VectorClass::vt_03 -> NG (attempt 1)
+[ledger] 0x4e9550 _VectorClass_PAVBuildingClass::Set -> NG (attempt 1)
+[ledger] 0x4e97b0 _VectorClass_PAVSuperClass::Remove -> NG (attempt 1)
+[ledger] 0x4e9a10 _VectorClass_PAVAITriggerTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x4e9c70 _VectorClass_PAVBuildingLightClass::Remove -> NG (attempt 1)
+[ledger] 0x4e9ed0 ParticleSystemClass::vt_03 -> NG (attempt 1)
+[ledger] 0x4ea130 _VectorClass_PAVTeamClass::Remove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "width_mismatch": 3,
+  "regalloc": 14,
+  "branch_order": 1,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p101\batch_report.json
