@@ -1,0 +1,8 @@
+{
+ "symbol": "?SwapReference@COMObject@@QAEPAHH@Z",
+ "sym_key": "COMObject::SwapReference",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf1578b3e3bf8741685c0890674068b0850ff510485ff74068b1757ff52088b065f5ec20400",
+ "relocs": []
+}

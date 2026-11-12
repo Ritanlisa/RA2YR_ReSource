@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p146\part_00
+=== convert (20 addrs) ===
+[conv] 0x523370 InfantryClass::checkBridgeClearance -> InfantryClass
+[conv] 0x5233a0 COMObject::SwapReference -> COMObject
+[conv] 0x623310 Network_Start -> Network
+[conv] 0x403e20 sub_403E20 -> _addr_40
+[conv] 0x406a60 sub_406A60 -> _addr_40
+[conv] 0x408b10 sub_408B10 -> _addr_40
+[conv] 0x40aed0 sub_40AED0 -> _addr_40
+[conv] 0x40b490 sub_40B490 -> _addr_40
+[conv] 0x40c6d0 sub_40C6D0 -> _addr_40
+[conv] 0x40d0e0 sub_40D0E0 -> _addr_40
+[conv] 0x40dbe0 sub_40DBE0 -> _addr_40
+[conv] 0x40df00 sub_40DF00 -> _addr_40
+[conv] 0x40ed70 sub_40ED70 -> _addr_40
+[conv] 0x40f3e0 sub_40F3E0 -> _addr_40
+[conv] 0x40fa80 sub_40FA80 -> _addr_40
+[conv] 0x4100a0 sub_4100A0 -> _addr_41
+[conv] 0x410750 sub_410750 -> _addr_41
+[conv] 0x4127a0 sub_4127A0 -> _addr_41
+[conv] 0x413c00 sub_413C00 -> _addr_41
+[conv] 0x41c7e0 sub_41C7E0 -> _addr_41
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=0
+[era] COMObject                rc=0
+[era] Network                  rc=0
+[era] _addr_40                 rc=0
+[era] _addr_41                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x523370   MATCH            InfantryClass::checkBridgeClearance
+[diff] 0x5233a0   MISMATCH         COMObject::SwapReference
+[diff] 0x623310   MISMATCH         Network_Start
+[diff] 0x403e20   MISMATCH         sub_403E20
+[diff] 0x406a60   MISMATCH         sub_406A60
+[diff] 0x408b10   MISMATCH         sub_408B10
+[diff] 0x40aed0   MISMATCH         sub_40AED0
+[diff] 0x40b490   MISMATCH         sub_40B490
+[diff] 0x40c6d0   MISMATCH         sub_40C6D0
+[diff] 0x40d0e0   MISMATCH         sub_40D0E0
+[diff] 0x40dbe0   MISMATCH         sub_40DBE0
+[diff] 0x40df00   MISMATCH         sub_40DF00
+[diff] 0x40ed70   MISMATCH         sub_40ED70
+[diff] 0x40f3e0   MISMATCH         sub_40F3E0
+[diff] 0x40fa80   MISMATCH         sub_40FA80
+[diff] 0x4100a0   MISMATCH         sub_4100A0
+[diff] 0x410750   MISMATCH         sub_410750
+[diff] 0x4127a0   MISMATCH         sub_4127A0
+[diff] 0x413c00   MISMATCH         sub_413C00
+[diff] 0x41c7e0   MISMATCH         sub_41C7E0
+[ledger] 0x523370 InfantryClass::checkBridgeClearance -> OK (attempt 1)
+[ledger] 0x5233a0 COMObject::SwapReference -> NG (attempt 1)
+[ledger] 0x623310 Network_Start -> NG (attempt 1)
+[ledger] 0x403e20 sub_403E20 -> NG (attempt 1)
+[ledger] 0x406a60 sub_406A60 -> NG (attempt 1)
+[ledger] 0x408b10 sub_408B10 -> NG (attempt 1)
+[ledger] 0x40aed0 sub_40AED0 -> NG (attempt 1)
+[ledger] 0x40b490 sub_40B490 -> NG (attempt 1)
+[ledger] 0x40c6d0 sub_40C6D0 -> NG (attempt 1)
+[ledger] 0x40d0e0 sub_40D0E0 -> NG (attempt 1)
+[ledger] 0x40dbe0 sub_40DBE0 -> NG (attempt 1)
+[ledger] 0x40df00 sub_40DF00 -> NG (attempt 1)
+[ledger] 0x40ed70 sub_40ED70 -> NG (attempt 1)
+[ledger] 0x40f3e0 sub_40F3E0 -> NG (attempt 1)
+[ledger] 0x40fa80 sub_40FA80 -> NG (attempt 1)
+[ledger] 0x4100a0 sub_4100A0 -> NG (attempt 1)
+[ledger] 0x410750 sub_410750 -> NG (attempt 1)
+[ledger] 0x4127a0 sub_4127A0 -> NG (attempt 1)
+[ledger] 0x413c00 sub_413C00 -> NG (attempt 1)
+[ledger] 0x41c7e0 sub_41C7E0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "MISMATCH": 19
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 16
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p146\batch_report.json

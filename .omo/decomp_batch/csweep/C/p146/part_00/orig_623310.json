@@ -1,0 +1,11 @@
+{
+ "addr": "0x623310",
+ "name": "Network_Start",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x623310",
+ "bytes_hex": "56578bf168b00500008bfa56ff15a8147e00576a0068b204000050ff15a4147e0056ff156c147e005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

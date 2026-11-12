@@ -1,0 +1,27 @@
+{
+ "symbol": "?Network_Start@@YIHPAXJ@Z",
+ "sym_key": "Unnamed::Network_Start",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "56578bf168b00500008bfa56e800000000576a0068b204000050e80000000056e8000000005f5ec3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?UpdateWindow@@YGHPAX@Z",
+   "sym_key": "UpdateWindow"
+  }
+ ]
+}

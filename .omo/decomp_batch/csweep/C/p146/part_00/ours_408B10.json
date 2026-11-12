@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_408B10@@YIDPAIPAH@Z",
+ "sym_key": "Unnamed::sub_408B10",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "568bf1578bfa8d4e04e8000000008b068b56144089068b471c03d08956148977308b46105f24fd8946105ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?InsertBeforeLinkedList@@YIHPAX0@Z",
+   "sym_key": "InsertBeforeLinkedList"
+  }
+ ]
+}
