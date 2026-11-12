@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DCF88",
+ "name": "SetEndOfFile",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DCF88",
+ "bytes_hex": "ff2534137e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

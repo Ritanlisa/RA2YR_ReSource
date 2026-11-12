@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x7dcf5e GetUserDefaultLCID -> _addr_7D
+[conv] 0x7dcf64 SetStdHandle -> _addr_7D
+[conv] 0x7dcf6a GetStringTypeA -> _addr_7D
+[conv] 0x7dcf70 GetStringTypeW -> _addr_7D
+[conv] 0x7dcf76 CompareStringA -> _addr_7D
+[conv] 0x7dcf82 SetEnvironmentVariableA -> _addr_7D
+[conv] 0x7dcf88 SetEndOfFile -> _addr_7D
+[conv] 0x7dcf8e GetLocaleInfoW -> _addr_7D
+[conv] 0x7dcf94 lstrlenW -> _addr_7D
+[conv] 0x7dcf9a LocalFree -> _addr_7D
+[conv] 0x7dcfa0 GetErrorInfo -> _addr_7D
+[conv] 0x7dcfa6 SetErrorInfo -> _addr_7D
+[conv] 0x7dcfac VariantChangeType -> _addr_7D
+[conv] 0x7dcfb2 CreateErrorInfo -> _addr_7D
+[conv] 0x7dcfb8 VariantClear -> _addr_7D
+[conv] 0x7de1c2 ReadConsoleInputA -> _addr_7D
+[conv] 0x7de1c8 SetConsoleMode -> _addr_7D
+[conv] 0x7de1ce GetConsoleMode -> _addr_7D
+[conv] 0x7de1d4 PeekConsoleInputA -> _addr_7D
+[conv] 0x7de1da GetNumberOfConsoleInputEvents -> _addr_7D
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7dcf5e   MISMATCH         GetUserDefaultLCID
+[diff] 0x7dcf64   MISMATCH         SetStdHandle
+[diff] 0x7dcf6a   MISMATCH         GetStringTypeA
+[diff] 0x7dcf82   MISMATCH         SetEnvironmentVariableA
+[diff] 0x7dcf88   MISMATCH         SetEndOfFile
+[diff] 0x7dcf8e   MISMATCH         GetLocaleInfoW
+[diff] 0x7dcf94   MISMATCH         lstrlenW
+[diff] 0x7dcf9a   MISMATCH         LocalFree
+[diff] 0x7dcfa0   MISMATCH         GetErrorInfo
+[diff] 0x7dcfa6   MISMATCH         SetErrorInfo
+[diff] 0x7dcfb2   MISMATCH         CreateErrorInfo
+[diff] 0x7dcfb8   MISMATCH         VariantClear
+[diff] 0x7de1c8   MISMATCH         SetConsoleMode
+[diff] 0x7de1ce   MISMATCH         GetConsoleMode
+[diff] 0x7de1da   MISMATCH         GetNumberOfConsoleInputEvents
+[ledger] 0x7dcf5e GetUserDefaultLCID -> NG (attempt 1)
+[ledger] 0x7dcf64 SetStdHandle -> NG (attempt 1)
+[ledger] 0x7dcf6a GetStringTypeA -> NG (attempt 1)
+[ledger] 0x7dcf70 GetStringTypeW -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dcf76 CompareStringA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dcf82 SetEnvironmentVariableA -> NG (attempt 1)
+[ledger] 0x7dcf88 SetEndOfFile -> NG (attempt 1)
+[ledger] 0x7dcf8e GetLocaleInfoW -> NG (attempt 1)
+[ledger] 0x7dcf94 lstrlenW -> NG (attempt 1)
+[ledger] 0x7dcf9a LocalFree -> NG (attempt 1)
+[ledger] 0x7dcfa0 GetErrorInfo -> NG (attempt 1)
+[ledger] 0x7dcfa6 SetErrorInfo -> NG (attempt 1)
+[ledger] 0x7dcfac VariantChangeType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dcfb2 CreateErrorInfo -> NG (attempt 1)
+[ledger] 0x7dcfb8 VariantClear -> NG (attempt 1)
+[ledger] 0x7de1c2 ReadConsoleInputA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7de1c8 SetConsoleMode -> NG (attempt 1)
+[ledger] 0x7de1ce GetConsoleMode -> NG (attempt 1)
+[ledger] 0x7de1d4 PeekConsoleInputA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7de1da GetNumberOfConsoleInputEvents -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "codegen_shape": 14
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p17\batch_report.json

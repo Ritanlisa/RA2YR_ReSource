@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DE1DA",
+ "name": "GetNumberOfConsoleInputEvents",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DE1DA",
+ "bytes_hex": "ff2554137e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
