@@ -1,0 +1,99 @@
+{
+ "symbol": "?SetTileType14@CellClass@@QAGDPAGH@Z",
+ "sym_key": "CellClass::SetTileType14",
+ "size": 299,
+ "link_base": 0,
+ "bytes_hex": "8b4c240c538bc1568b74241083e007578b1c8500000000668b7e02668b148500000000668b36c1fb1003fb03f233f833f181e7ff00000081e6ff00000033c733ce8bd033d181e2ff00000033ca0fbfc00fbfd1c1e00903c2894c24183d00000400730d8b15000000008b048285c0750ba100000000890d000000008a884001000084c97d238a881e01000080f909721880f90c771380f90ec6801e0100000d7507c6801e0100000f8b70388b1500000000a1000000002bf2463bf074083b350000000075406a008d44241c6a0150e8000000008b0d0000000025ff00000081e600ffffff0bc63bc1751b8b15000000006a006aff6aff8d4411018d4c24245051e8000000008b1500000000a1000000006a006aff8d4c02026aff8d5424245152e8000000005f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_Cell_BuildabilityLUT@@3IA",
+   "sym_key": "g_Cell_BuildabilityLUT"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1548@@3IA",
+   "sym_key": "DataGlobal_AA1548"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0740@@3IA",
+   "sym_key": "DataGlobal_AA0740"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?Cell__UpdateTileType@@YGDPAXHH@Z",
+   "sym_key": "Cell__UpdateTileType"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundConfig@@3IA",
+   "sym_key": "g_TerrainSoundConfig"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?g_Cell_BuildabilityLUT@@3IA",
+   "sym_key": "g_Cell_BuildabilityLUT"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?Cell__SetTileType@@YGDPAXHHHH@Z",
+   "sym_key": "Cell__SetTileType"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundConfig@@3IA",
+   "sym_key": "g_TerrainSoundConfig"
+  },
+  {
+   "off": 268,
+   "type": "DIR32",
+   "sym": "?g_Cell_BuildabilityLUT@@3IA",
+   "sym_key": "g_Cell_BuildabilityLUT"
+  },
+  {
+   "off": 289,
+   "type": "REL32",
+   "sym": "?Cell__SetTileType@@YGDPAXHHHH@Z",
+   "sym_key": "Cell__SetTileType"
+  }
+ ]
+}

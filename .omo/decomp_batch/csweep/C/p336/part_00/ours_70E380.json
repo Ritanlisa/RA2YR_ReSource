@@ -1,0 +1,27 @@
+{
+ "symbol": "?InvulnerabilityIntensity_SetContext@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::InvulnerabilityIntensity_SetContext",
+ "size": 277,
+ "link_base": 0,
+ "bytes_hex": "8b81980100008b91a401000083f8ff5674190fbe35a0010000578bfe2bf83bfa5f7c0433d2eb042bc603d08b89a80100005e8d41ff83f8080f87d0000000ff248500000000b90c0000002bcac1e108eb7bb800020000e99c0000008d04526a00c1e0032bc268676666668d04808d8482fc030000995250e8000000008bc2c1e81fc1fa03eb6f6bd24db8000400002bc29983e20703c2c1f803eb5c8bc26bc04d05300300009983e20f03c2c1f804eb47b833000000eb408d0452c1e0032bc28d0c808d148ab9000c00002bcab8abaaaa2af7e98bc28bc8c1e91f03c1eb198d4a14b867666666c1e108f7e98bc2c1f8038bd0c1ea1f03c20faf442404c1f8083dd00700007e0cb8d0070000c204008b442404c20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "$L1899",
+   "sym_key": "$L1899"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  }
+ ]
+}

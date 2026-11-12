@@ -1,0 +1,87 @@
+{
+ "symbol": "?sub_491100@ObjectClass@@QAEHDDHDFDF@Z",
+ "sym_key": "ObjectClass::sub_491100",
+ "size": 379,
+ "link_base": 0,
+ "bytes_hex": "83ec188b0d0000000033c03bc8894424040f865e010000538b5c2428558b6c242456578b7c242c8b0d000000008b0c81894c2424837904020f8520010000660fbe54242c8bb17001000066895424340fbe4424300fbe4c24380fbe54244089442418894c241c89542420c744241000010000668b16668b4c24348bc281e700ffffff66d3ea8b4c241825ff00000080e30081e500ffffff0bc383c602d2e28a0d0000000081e2ff000000d3ea668b4c243c0bd78bfa8bd066d3ea8b4c241cd2e28a0d0000000081e2ff000000d3ea668b4c24440bea8bd066d3ea8b4c24202400d2e28a0d0000000081e2ff000000d3ea8b0d000000000bd08bc7d3e28b0d00000000d3e08b0d000000000bd08bc5d3e00bd08b4424108bda4866895efe894424100f854bffffff8b0d000000008b74242481e1ffff0000898e800100008b1500000000c1ea108bce899684010000e8000000008bcee8000000008b4424148b0d00000000403bc1894424140f82b6feffff5f5e5d5b83c418c21c00",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89ED08@@3IA",
+   "sym_key": "DataGlobal_89ED08"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89ECFC@@3IA",
+   "sym_key": "DataGlobal_89ECFC"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 262,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Gray127@@3IA",
+   "sym_key": "g_DDraw_Gray127"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Gray127@@3IA",
+   "sym_key": "g_DDraw_Gray127"
+  },
+  {
+   "off": 335,
+   "type": "REL32",
+   "sym": "?RegisterAll@COMClass@@QAEHXZ",
+   "sym_key": "COMClass::RegisterAll"
+  },
+  {
+   "off": 342,
+   "type": "REL32",
+   "sym": "?InitTables@ConvertClass@@QAEPAIXZ",
+   "sym_key": "ConvertClass::InitTables"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89ED08@@3IA",
+   "sym_key": "DataGlobal_89ED08"
+  }
+ ]
+}

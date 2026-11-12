@@ -1,0 +1,45 @@
+{
+ "symbol": "?FromQuaternionAxisAngle@@YIPAMPAM0M@Z",
+ "sym_key": "Unnamed::FromQuaternionAxisAngle",
+ "size": 229,
+ "link_base": 0,
+ "bytes_hex": "83ec148b4204568bf1894424048b4a088b02894c24088bc8894c240c83ec08d9442414d84c2414d9442410d84c241089442418dec1d944240cd84c240cdec1dd1c24e800000000dc150000000083c408dfe0f6c440741c8b5424108b4424048b4c24088954240cddd889442404894c2408eb1cd944240cd8f1d95c240cd9442404d8f1d95c2404d87c2408d95c2408d90500000000d84c241c83ec08dd1c24e800000000dd5c2418d9442424dc0d00000000dd1c24e800000000dd442418d9442414d8c983c4088bc6d91ed9442404d8c9d95e04d84c2408d95e08d95e0c5e83c414c20400",
+ "relocs": [
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?flt_7E5168@@3MA",
+   "sym_key": "flt_7E5168"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?Math__SinCos@@YANN@Z",
+   "sym_key": "Math__SinCos"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?Math__ArcTan2@@YANN@Z",
+   "sym_key": "Math__ArcTan2"
+  }
+ ]
+}

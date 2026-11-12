@@ -1,0 +1,51 @@
+{
+ "symbol": "?IsCoordValidMap@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::IsCoordValidMap",
+ "size": 273,
+ "link_base": 0,
+ "bytes_hex": "56578bf96a01b9000000008d472450e80000000084c00f84ee0000008b8740010000f6c4050f85df000000a10000000085c00f84830000008bb7e400000085f674428b0e56ff512c83f80674128b763085f674308b1656ff522c83f80675ee8b466c85c07e1e8bb6200500008a869a0c000084c0750e8a860117000084c00f8486000000a10000000085c0742e8bb7e400000085f674248b0656ff502c83f82474098b763085f67412ebec8b8ec80000008a81b102000084c0754f8b87ec0000008d14c08a04950000000084c0743b837f44ff75358a871c01000084c0752b33c08a473885c07c1b3b050000000073138b0d000000008b14818a820603000084c074075fb0015ec204005f32c05ec20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89EA60@@3PAEA",
+   "sym_key": "DataGlobal_89EA60"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?g_TechnoClassCount@@3IA",
+   "sym_key": "g_TechnoClassCount"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  }
+ ]
+}

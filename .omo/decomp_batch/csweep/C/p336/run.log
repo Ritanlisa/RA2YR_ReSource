@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p336\part_00
+=== convert (20 addrs) ===
+[conv] 0x56f690 globalHelper_06F690 -> _addr_56
+[conv] 0x572b80 CellClass::SetTileType13 -> CellClass
+[conv] 0x5aee50 ObjectClass::sub_5AEE50 -> ObjectClass
+[conv] 0x5ae750 Math::BuildRotationMatrix -> Math
+[conv] 0x56f7a0 globalHelper_06F7A0 -> _addr_56
+[conv] 0x572c90 CellClass::SetTileType14 -> CellClass
+[conv] 0x5aec40 ObjectClass::sub_5AEC40 -> ObjectClass
+[conv] 0x637640 ObjectClass::Team_Remove -> ObjectClass
+[conv] 0x7c6620 sub_7C6620 -> _addr_7C
+[conv] 0x7d52b8 _gmtime -> _addr_7D
+[conv] 0x646480 FromQuaternionAxisAngle -> _addr_64
+[conv] 0x70e380 TechnoClass::InvulnerabilityIntensity_SetContext -> TechnoClass
+[conv] 0x4a65c0 sub_4A65C0 -> _addr_4A
+[conv] 0x4a66d0 globalHelper_0A66D0 -> _addr_4A
+[conv] 0x491100 ObjectClass::sub_491100 -> ObjectClass
+[conv] 0x7be830 Audio_Process_7BE830 -> Audio_Process
+[conv] 0x6b5260 SmudgeTypeClass::SmudgeTypeClass -> SmudgeTypeClass
+[conv] 0x764110 VectorClass::resetSWCharge -> VectorClass
+[conv] 0x501640 HouseClass::CanDetect -> HouseClass
+[conv] 0x4838e0 ObjectClass::IsCoordValidMap -> ObjectClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_56                 rc=0
+[era] CellClass                rc=0
+[era] ObjectClass              rc=2
+[era] Math                     rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_64                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_4A                 rc=0
+[era] Audio_Process            rc=0
+[era] SmudgeTypeClass          rc=2
+[era] VectorClass              rc=0
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x56f690   MISMATCH         globalHelper_06F690
+[diff] 0x56f7a0   MISMATCH         globalHelper_06F7A0
+[diff] 0x572b80   MISMATCH         CellClass::SetTileType13
+[diff] 0x572c90   MISMATCH         CellClass::SetTileType14
+[diff] 0x637640   MISMATCH         ObjectClass::Team_Remove
+[diff] 0x491100   MISMATCH         ObjectClass::sub_491100
+[diff] 0x4838e0   MISMATCH         ObjectClass::IsCoordValidMap
+[diff] 0x646480   MISMATCH         FromQuaternionAxisAngle
+[diff] 0x70e380   MISMATCH         TechnoClass::InvulnerabilityIntensity_SetContext
+[diff] 0x4a65c0   MISMATCH         sub_4A65C0
+[diff] 0x4a66d0   MISMATCH         globalHelper_0A66D0
+[diff] 0x7be830   MISMATCH         Audio_Process_7BE830
+[diff] 0x764110   MISMATCH         VectorClass::resetSWCharge
+[ledger] 0x56f690 globalHelper_06F690 -> NG (attempt 1)
+[ledger] 0x572b80 CellClass::SetTileType13 -> NG (attempt 1)
+[ledger] 0x5aee50 ObjectClass::sub_5AEE50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ae750 Math::BuildRotationMatrix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56f7a0 globalHelper_06F7A0 -> NG (attempt 1)
+[ledger] 0x572c90 CellClass::SetTileType14 -> NG (attempt 1)
+[ledger] 0x5aec40 ObjectClass::sub_5AEC40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x637640 ObjectClass::Team_Remove -> NG (attempt 1)
+[ledger] 0x7c6620 sub_7C6620 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d52b8 _gmtime -> COMPILE_FAIL (attempt 1)
+[ledger] 0x646480 FromQuaternionAxisAngle -> NG (attempt 1)
+[ledger] 0x70e380 TechnoClass::InvulnerabilityIntensity_SetContext -> NG (attempt 1)
+[ledger] 0x4a65c0 sub_4A65C0 -> NG (attempt 1)
+[ledger] 0x4a66d0 globalHelper_0A66D0 -> NG (attempt 1)
+[ledger] 0x491100 ObjectClass::sub_491100 -> NG (attempt 1)
+[ledger] 0x7be830 Audio_Process_7BE830 -> NG (attempt 1)
+[ledger] 0x6b5260 SmudgeTypeClass::SmudgeTypeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x764110 VectorClass::resetSWCharge -> NG (attempt 1)
+[ledger] 0x501640 HouseClass::CanDetect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4838e0 ObjectClass::IsCoordValidMap -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "regalloc": 6,
+  "cc_mismatch": 2,
+  "codegen_shape": 2,
+  "frame_sched": 2,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p336\batch_report.json
