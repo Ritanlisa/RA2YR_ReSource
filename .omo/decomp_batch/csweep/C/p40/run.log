@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p40\part_00
+=== convert (20 addrs) ===
+[conv] 0x40afa0 sub_40AFA0 -> _addr_40
+[conv] 0x40d190 sub_40D190 -> _addr_40
+[conv] 0x40ff10 sub_40FF10 -> _addr_40
+[conv] 0x4e7d10 sub_4E7D10 -> _addr_4E
+[conv] 0x4e7dc0 sub_4E7DC0 -> _addr_4E
+[conv] 0x4e7e30 sub_4E7E30 -> _addr_4E
+[conv] 0x4e8030 sub_4E8030 -> _addr_4E
+[conv] 0x4e80f0 sub_4E80F0 -> _addr_4E
+[conv] 0x51f620 InfantryClass::FindIdleMovePosition -> InfantryClass
+[conv] 0x51f640 InfantryClass::FindIdleAITarget -> InfantryClass
+[conv] 0x565060 COMStub_565060 -> COMStub
+[conv] 0x58b740 sub_58B740 -> _addr_58
+[conv] 0x642980 sub_642980 -> _addr_64
+[conv] 0x6528d0 sub_6528D0 -> _addr_65
+[conv] 0x652920 sub_652920 -> _addr_65
+[conv] 0x6a4c60 sub_6A4C60 -> _addr_6A
+[conv] 0x6a4ca0 sub_6A4CA0 -> _addr_6A
+[conv] 0x6a4d40 sub_6A4D40 -> _addr_6A
+[conv] 0x6a4d80 sub_6A4D80 -> _addr_6A
+[conv] 0x6cfc00 sub_6CFC00 -> _addr_6C
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] _addr_4E                 rc=2
+[era] InfantryClass            rc=0
+[era] COMStub                  rc=0
+[era] _addr_58                 rc=0
+[era] _addr_64                 rc=0
+[era] _addr_65                 rc=0
+[era] _addr_6A                 rc=0
+[era] _addr_6C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x40afa0   MISMATCH         sub_40AFA0
+[diff] 0x40d190   MISMATCH         sub_40D190
+[diff] 0x40ff10   MISMATCH         sub_40FF10
+[diff] 0x4e7d10   MISMATCH         sub_4E7D10
+[diff] 0x4e7dc0   MISMATCH         sub_4E7DC0
+[diff] 0x4e7e30   MISMATCH         sub_4E7E30
+[diff] 0x4e80f0   MISMATCH         sub_4E80F0
+[diff] 0x51f620   MATCH            InfantryClass::FindIdleMovePosition
+[diff] 0x51f640   MISMATCH         InfantryClass::FindIdleAITarget
+[diff] 0x565060   MISMATCH         COMStub_565060
+[diff] 0x58b740   MISMATCH         sub_58B740
+[diff] 0x642980   MISMATCH         sub_642980
+[diff] 0x6528d0   MISMATCH         sub_6528D0
+[diff] 0x652920   MISMATCH         sub_652920
+[diff] 0x6a4c60   MISMATCH         sub_6A4C60
+[diff] 0x6a4ca0   MISMATCH         sub_6A4CA0
+[diff] 0x6a4d40   MISMATCH         sub_6A4D40
+[diff] 0x6a4d80   MISMATCH         sub_6A4D80
+[diff] 0x6cfc00   MISMATCH         sub_6CFC00
+[ledger] 0x40afa0 sub_40AFA0 -> NG (attempt 1)
+[ledger] 0x40d190 sub_40D190 -> NG (attempt 1)
+[ledger] 0x40ff10 sub_40FF10 -> NG (attempt 1)
+[ledger] 0x4e7d10 sub_4E7D10 -> NG (attempt 1)
+[ledger] 0x4e7dc0 sub_4E7DC0 -> NG (attempt 1)
+[ledger] 0x4e7e30 sub_4E7E30 -> NG (attempt 1)
+[ledger] 0x4e8030 sub_4E8030 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e80f0 sub_4E80F0 -> NG (attempt 1)
+[ledger] 0x51f620 InfantryClass::FindIdleMovePosition -> OK (attempt 1)
+[ledger] 0x51f640 InfantryClass::FindIdleAITarget -> NG (attempt 1)
+[ledger] 0x565060 COMStub_565060 -> NG (attempt 1)
+[ledger] 0x58b740 sub_58B740 -> NG (attempt 1)
+[ledger] 0x642980 sub_642980 -> NG (attempt 1)
+[ledger] 0x6528d0 sub_6528D0 -> NG (attempt 1)
+[ledger] 0x652920 sub_652920 -> NG (attempt 1)
+[ledger] 0x6a4c60 sub_6A4C60 -> NG (attempt 1)
+[ledger] 0x6a4ca0 sub_6A4CA0 -> NG (attempt 1)
+[ledger] 0x6a4d40 sub_6A4D40 -> NG (attempt 1)
+[ledger] 0x6a4d80 sub_6A4D80 -> NG (attempt 1)
+[ledger] 0x6cfc00 sub_6CFC00 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 1,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 11,
+  "codegen_shape": 6,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 5.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p40\batch_report.json

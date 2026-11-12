@@ -1,0 +1,33 @@
+{
+ "symbol": "?COMStub_565060@@YAHXZ",
+ "sym_key": "Unnamed::COMStub_565060",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b0d00000000e8000000006800000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Construct@CellClass@@QAEPAIXZ",
+   "sym_key": "CellClass::Construct"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?unknown_libname_22@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_22"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

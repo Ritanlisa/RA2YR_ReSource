@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_58B740@@YAHXZ",
+ "sym_key": "Unnamed::sub_58B740",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "33c98a0d00000000e8000000006800000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDFD8@@3EA",
+   "sym_key": "DataGlobal_ABDFD8"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Constructor@MapResourceClass@@QAEHXZ",
+   "sym_key": "MapResourceClass::Constructor"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?unknown_libname_23@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_23"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

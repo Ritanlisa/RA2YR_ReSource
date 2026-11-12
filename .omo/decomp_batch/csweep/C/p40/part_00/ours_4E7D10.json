@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4E7D10@@YAHXZ",
+ "sym_key": "Unnamed::sub_4E7D10",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "a10000000050e8000000006800000000e80000000083c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_MixFile_LoadCount@@3IA",
+   "sym_key": "g_MixFile_LoadCount"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?sub_6616B0@@YAPAVStraw@@H@Z",
+   "sym_key": "sub_6616B0"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?unknown_libname_13@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_13"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

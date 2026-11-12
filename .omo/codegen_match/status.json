@@ -1724,6 +1724,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x40afa0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x87e8b8",
+  "name": "sub_40AFA0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_40AFA0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x40afc0": {
   "attempts": 1,
   "clean": false,
@@ -2559,6 +2570,17 @@
   "name": "sub_40D170",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_40D170",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x40d190": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x87f7e8",
+  "name": "sub_40D190",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_40D190",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -3989,6 +4011,17 @@
   "name": "_DynamicVectorClass_PAVWeaponTypeClass::FindItemIndex",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_WeaponTypeClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x40ff10": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0x887598",
+  "name": "sub_40FF10",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_40FF10",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -26221,6 +26254,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e7d10": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xa8e7b0",
+  "name": "sub_4E7D10",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_4E7D10",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e7d30": {
   "attempts": 1,
   "clean": false,
@@ -26228,6 +26272,17 @@
   "name": "unknown_libname_13",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "unknown_libname_13",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7dc0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xa8ece0",
+  "name": "sub_4E7DC0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4E7DC0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -26261,6 +26316,17 @@
   "name": "unknown_libname_15",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "unknown_libname_15",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e7e30": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xa83d10",
+  "name": "sub_4E7E30",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4E7E30",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -26320,6 +26386,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e8030": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "sub_4E8030",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_4E8030",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4e8050": {
   "attempts": 1,
   "clean": false,
@@ -26349,6 +26426,17 @@
   "name": "unknown_libname_19",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "unknown_libname_19",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4e80f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xa8e8e8",
+  "name": "sub_4E80F0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_4E80F0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -33308,6 +33396,30 @@
   "orig_name": "InfantryClass::RepairBridge",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x51f620": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "InfantryClass::FindIdleMovePosition",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "InfantryClass::FindIdleMovePosition",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x51f640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+15 call 0x4d6aa0",
+  "name": "InfantryClass::FindIdleAITarget",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "InfantryClass::FindIdleAITarget",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x51f660": {
@@ -41610,6 +41722,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x565060": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xabdc50",
+  "name": "COMStub_565060",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "COMStub_565060",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x565080": {
   "attempts": 1,
   "clean": true,
@@ -43216,6 +43339,17 @@
   "orig_name": "sub_58B720",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x58b740": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xabdfd8",
+  "name": "sub_58B740",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_58B740",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x58b760": {
@@ -58359,6 +58493,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x642980": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xac4f58",
+  "name": "sub_642980",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_642980",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6429e0": {
   "attempts": 2,
   "clean": false,
@@ -59355,6 +59500,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6528d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb04978",
+  "name": "sub_6528D0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_6528D0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x652910": {
   "attempts": 1,
   "clean": true,
@@ -59365,6 +59521,17 @@
   "orig_name": "ScreenEffect::StubReturnVoid",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x652920": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb04910",
+  "name": "sub_652920",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_652920",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x652940": {
@@ -65952,6 +66119,50 @@
   "name": "sub_6A4BF0",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_6A4BF0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a4c60": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb07df8",
+  "name": "sub_6A4C60",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_6A4C60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a4ca0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb0b3a0",
+  "name": "sub_6A4CA0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_6A4CA0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a4d40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb0b328",
+  "name": "sub_6A4D40",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_6A4D40",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a4d80": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb0b408",
+  "name": "sub_6A4D80",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_6A4D80",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -72794,6 +73005,17 @@
   "name": "sub_6CFB80",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_6CFB80",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6cfc00": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov ecx, 0xb0ccb0",
+  "name": "sub_6CFC00",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_6CFC00",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
