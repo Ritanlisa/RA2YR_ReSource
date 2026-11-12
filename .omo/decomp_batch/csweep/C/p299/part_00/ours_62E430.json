@@ -1,0 +1,39 @@
+{
+ "symbol": "?CreateFireAtSW@ObjectClass@@QAEHHH@Z",
+ "sym_key": "ObjectClass::CreateFireAtSW",
+ "size": 174,
+ "link_base": 0,
+ "bytes_hex": "83ec085356578bf96838010000e8000000008bf083c40485f675095f5e5b83c408c20800576800000000e8000000008b4c242083c404dd442410508b4424245051e800000000508bcee8000000008bd885db75095f5e5b83c408c208008b8fc00000008b87c80000003bc18db7bc0000007c218a460d84c0750485c975258b461485c07e1e8b1603c16a005056ff520884c0740f8b46108b56048d4801894e10891c825f8bc35e5b83c408c20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4A58@@3IA",
+   "sym_key": "DataGlobal_AC4A58"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?COERCE_FLOAT@@YAHPAXZZ",
+   "sym_key": "COERCE_FLOAT"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?Construct@ParticleClass@@QAEHHHPAX0H@Z",
+   "sym_key": "ParticleClass::Construct"
+  }
+ ]
+}

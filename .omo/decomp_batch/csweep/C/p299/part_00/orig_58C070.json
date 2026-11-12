@@ -1,0 +1,11 @@
+{
+ "addr": "0x58C070",
+ "name": "TileNode::Cleanup",
+ "size": 135,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58C070",
+ "bytes_hex": "5153568bf133db8b0e3bcb74088b016a01ff10891e8b1590dfab008d4c240851b990dfab008974240cff521083f8ff742d8b0da0dfab003bc17d23493bc1890da0dfab007d188b0d94dfab00408b1481895481fc8b0da0dfab003bc17ce88b462cc74628d0387e003bc37411385e35740c50e856ca230083c404895e2c885e35895e305e5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

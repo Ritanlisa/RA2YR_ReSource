@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B1E50",
+ "name": "SliderClass::Draw",
+ "size": 135,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B1E50",
+ "bytes_hex": "568bf18b4c2408578b46308b7e482bc73bc87c028bc8518bcee83207e3ff85c0745e8a462e5384c074058b5e14eb038b5e18db4630895c2410db442410db4648d8f2d8c9e86740110083f8048bf87f05bf04000000db4634897e4cd8f2d8c9e84c4011008bcb5b2bcfddd83bc1ddd87c028bc18946505fb8010000005ec204005f33c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

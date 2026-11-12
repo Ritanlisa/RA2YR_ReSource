@@ -1,0 +1,15 @@
+{
+ "symbol": "?loadBuildingProperty_b_5478850@BuildingTypeClass@@QAEPAIHH@Z",
+ "sym_key": "BuildingTypeClass::loadBuildingProperty_b_5478850",
+ "size": 143,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b7c241033db8b460c895e04250100ffff897e080c013bfb89460c891e74638b4c24143bcb75408d0c7f51e80000000083c4043bc3741a8d57ff85d27c118d48028859fe8859ff881983c1034f75f28bd88b460c895e0480e4000c0189460c8bc65f5e5bc208008d57ff85d27c118d41028858fe8858ff881883c0034f75f2894e048bc65f5e5bc20800",
+ "relocs": [
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

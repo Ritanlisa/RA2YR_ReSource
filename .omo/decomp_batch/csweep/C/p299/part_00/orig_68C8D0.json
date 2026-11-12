@@ -1,0 +1,11 @@
+{
+ "addr": "0x68C8D0",
+ "name": "ColorScheme::Destructor",
+ "size": 135,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x68C8D0",
+ "bytes_hex": "51568bf18b860403000085c0740950e804cb130083c4048b8e0c030000c786040300000000000085c974068b016a01ff108d4c2404c7860c030000000000008b15d054b00051b9d054b00089742408ff521083f8ff5e742d8b0de054b0003bc17d23493bc1890de054b0007d188b0dd454b000408b1481895481fc8b0de054b0003bc17ce859c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

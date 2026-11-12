@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D9FF0",
+ "name": "PlayerClass::ProcessOccupancyUpdate",
+ "size": 136,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D9FF0",
+ "bytes_hex": "83ec10568bf18b86900d000085c0750a8b86940d000085c074678b96900d00008b86980d00008b8e9c0d000053578bbe940d00003bd07e068bda8bd08bc33bf97e068bdf8bf98bcb2bc22bcf4041894424148b442420894c24188d4c240c50518bce89542414897c2418e86105000033c033c98986900d00005f898e940d00005b5e83c410c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

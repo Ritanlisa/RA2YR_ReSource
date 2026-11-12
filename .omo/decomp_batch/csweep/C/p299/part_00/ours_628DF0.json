@@ -1,0 +1,15 @@
+{
+ "symbol": "?ConstructHSV@VectorClass@@QAEPAV1@HH@Z",
+ "sym_key": "VectorClass::ConstructHSV",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bf133db3bfb895e04897e08c6460c01885e0d891e745c8b4c24143bcb75398d047f50e80000000083c4043bc3741a8d4fff85c97c118d48028859fe8859ff881983c1034f75f28bd8895e04c6460d018bc65f5e5bc208008d57ff85d27c118d41028858fe8858ff881883c0034f75f2894e048bc65f5e5bc20800",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

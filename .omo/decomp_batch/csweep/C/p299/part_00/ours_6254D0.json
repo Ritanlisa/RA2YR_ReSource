@@ -1,0 +1,21 @@
+{
+ "symbol": "?ReadOptionValue@Options@@QAEDXZ",
+ "sym_key": "Options::ReadOptionValue",
+ "size": 135,
+ "link_base": 0,
+ "bytes_hex": "51538bd9558b038b4b048d04403bc17e065d32c05b59c38bc1992bc2d1f883f80a8be87d05bd0a0000003be97c065d32c05b59c38d4cad0056c1e10251e8000000008b730883c40485f68944240c741a8b0b578bf88d0c89c1e1028bd1c1e902f3a58bca83e103f3a45f8b430850e8000000008b4c241083c404896b04894b085e5db0015b59c3",
+ "relocs": [
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?ProcessOccupancyUpdate@PlayerClass@@QAEHPAX@Z",
+ "sym_key": "PlayerClass::ProcessOccupancyUpdate",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18b96900d000085d275138b86940d000085c0750933c05e83c410c204008b86980d00008b8e9c0d0000538b9e940d0000573bd08bfb7e08558bea8bd08bc55d3bf97e048bf98bcb2bc22bcf4041894424148b442420894c24188d4c240c50518bce89542414897c2418e80000000033c05f8986900d00008986940d00005b5e83c410c20400",
+ "relocs": [
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?ProcessOccupancy@BuildingClass@@QAEHPAX0@Z",
+   "sym_key": "BuildingClass::ProcessOccupancy"
+  }
+ ]
+}

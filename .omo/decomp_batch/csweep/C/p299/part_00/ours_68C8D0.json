@@ -1,0 +1,51 @@
+{
+ "symbol": "?Destructor@ColorScheme@@QAEHXZ",
+ "sym_key": "ColorScheme::Destructor",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b860403000085c0740950e80000000083c4048b860c030000c786040300000000000085c074078b086a0150ff11c7860c030000000000008d4c24040fbe150000000089742404518b026800000000ff501083f8ff5e74348b15100000008b0a3bc17d2849890a8b15100000003b027d1b0fbe0d04000000408b14818d0c818951fc8b0d100000003b017ce559c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  }
+ ]
+}

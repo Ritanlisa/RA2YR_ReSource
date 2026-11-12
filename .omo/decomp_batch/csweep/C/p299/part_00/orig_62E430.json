@@ -1,0 +1,11 @@
+{
+ "addr": "0x62E430",
+ "name": "CreateFireAtSW",
+ "size": 135,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x62E430",
+ "bytes_hex": "56578bf16838010000e8d9a9190083c40485c0746b8b4c24108b54240c5668584aac0051528bc8e884d1ffff8bf885ff744e8b8ec40000008b86cc00000081c6bc0000003bc17c228a460d84c0750485c975268b461485c07e1f8b1603c16a00508bceff520884c0740f8b46108b56048d4801894e10893c828bc75f5ec208005f33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

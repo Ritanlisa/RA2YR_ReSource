@@ -1,0 +1,27 @@
+{
+ "symbol": "?Draw@SliderClass@@QAEHH@Z",
+ "sym_key": "SliderClass::Draw",
+ "size": 181,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf18b4c24108b56488b46302bc23bc87c028bc8518bcee80000000085c075075e83c408c204008a462e84c074098b461489442410eb078b4e18894c2410db4630535557dd5c24108b5c24148b6c24105355e8000000008bc88b44242433c883c40881e1ff00000033c183f8048bf87f05bf040000005355897e4ce8000000008bc88b44242433c883c40881e1ff00000033c18b4c241c2bcf5f5d3bc15b7c028bc1894650b8010000005e83c408c20400",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?GetValue@GaugeClass@@QAEHH@Z",
+   "sym_key": "GaugeClass::GetValue"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

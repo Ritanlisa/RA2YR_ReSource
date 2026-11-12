@@ -1,0 +1,51 @@
+{
+ "symbol": "?Cleanup@TileNode@@QAEHXZ",
+ "sym_key": "TileNode::Cleanup",
+ "size": 135,
+ "link_base": 0,
+ "bytes_hex": "5153568bf133db578b063bc374098b086a0150ff11891ea1981900008d54240c52689819000089742414ff501083f8ff742d8b0da81900003bc17d23493bc1890da81900007d188b0d9c190000408b1481895481fc8b0da81900003bc17ce88b7e2c895e283bfb7411385e35740c57e80000000083c404895e2c8bc7885e35895e305f5e5b59c3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

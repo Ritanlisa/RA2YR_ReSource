@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p299\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ea920 GetPlayerSide -> _addr_5E
+[conv] 0x6b1e50 SliderClass::Draw -> SliderClass
+[conv] 0x62e430 ObjectClass::CreateFireAtSW -> ObjectClass
+[conv] 0x58c070 TileNode::Cleanup -> TileNode
+[conv] 0x68c8d0 ColorScheme::Destructor -> ColorScheme
+[conv] 0x712040 TechnoTypeClass::SelectArtOrAlt -> TechnoTypeClass
+[conv] 0x478850 BuildingTypeClass::loadBuildingProperty_b_5478850 -> BuildingTypeClass
+[conv] 0x628df0 VectorClass::ConstructHSV -> VectorClass
+[conv] 0x659a30 ObjectClass::sub_659A30 -> ObjectClass
+[conv] 0x6d9ff0 PlayerClass::ProcessOccupancyUpdate -> PlayerClass
+[conv] 0x540f00 Network::sendData -> Network
+[conv] 0x6248a0 Options::EnsureCapacity -> Options
+[conv] 0x6254d0 Options::ReadOptionValue -> Options
+[conv] 0x4777b0 DynamicVectorClass::Copy -> DynamicVectorClass
+[conv] 0x50e830 TeamTypeVector::CopyConstruct -> TeamTypeVector
+[conv] 0x513740 TypeList::CopyConstructor -> TypeList
+[conv] 0x513860 HouseTypeClass::readAllowedUnits -> HouseTypeClass
+[conv] 0x5255f0 TypeList::AnimTypeCopy -> TypeList
+[conv] 0x5ad660 TypeList::BuildingTypeCopy -> TypeList
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5E                 rc=2
+[era] SliderClass              rc=0
+[era] ObjectClass              rc=0
+[era] TileNode                 rc=0
+[era] ColorScheme              rc=0
+[era] TechnoTypeClass          rc=2
+[era] BuildingTypeClass        rc=0
+[era] VectorClass              rc=0
+[era] PlayerClass              rc=0
+[era] Network                  rc=0
+[era] Options                  rc=0
+[era] DynamicVectorClass       rc=0
+[era] TeamTypeVector           rc=0
+[era] TypeList                 rc=2
+[era] HouseTypeClass           rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b1e50   MISMATCH         SliderClass::Draw
+[diff] 0x62e430   MISMATCH         ObjectClass::CreateFireAtSW
+[diff] 0x659a30   MISMATCH         ObjectClass::sub_659A30
+[diff] 0x58c070   MISMATCH         TileNode::Cleanup
+[diff] 0x68c8d0   MISMATCH         ColorScheme::Destructor
+[diff] 0x478850   MISMATCH         BuildingTypeClass::loadBuildingProperty_b_5478850
+[diff] 0x628df0   MISMATCH         VectorClass::ConstructHSV
+[diff] 0x6d9ff0   MISMATCH         PlayerClass::ProcessOccupancyUpdate
+[diff] 0x540f00   MISMATCH         Network::sendData
+[diff] 0x6248a0   MISMATCH         Options::EnsureCapacity
+[diff] 0x6254d0   MISMATCH         Options::ReadOptionValue
+[diff] 0x4777b0   MISMATCH         DynamicVectorClass::Copy
+[diff] 0x50e830   MISMATCH         TeamTypeVector::CopyConstruct
+[diff] 0x513860   MISMATCH         HouseTypeClass::readAllowedUnits
+[ledger] 0x5ea920 GetPlayerSide -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1e50 SliderClass::Draw -> NG (attempt 1)
+[ledger] 0x62e430 ObjectClass::CreateFireAtSW -> NG (attempt 1)
+[ledger] 0x58c070 TileNode::Cleanup -> NG (attempt 1)
+[ledger] 0x68c8d0 ColorScheme::Destructor -> NG (attempt 1)
+[ledger] 0x712040 TechnoTypeClass::SelectArtOrAlt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x478850 BuildingTypeClass::loadBuildingProperty_b_5478850 -> NG (attempt 1)
+[ledger] 0x628df0 VectorClass::ConstructHSV -> NG (attempt 1)
+[ledger] 0x659a30 ObjectClass::sub_659A30 -> NG (attempt 1)
+[ledger] 0x6d9ff0 PlayerClass::ProcessOccupancyUpdate -> NG (attempt 1)
+[ledger] 0x540f00 Network::sendData -> NG (attempt 1)
+[ledger] 0x6248a0 Options::EnsureCapacity -> NG (attempt 1)
+[ledger] 0x6254d0 Options::ReadOptionValue -> NG (attempt 1)
+[ledger] 0x4777b0 DynamicVectorClass::Copy -> NG (attempt 1)
+[ledger] 0x4779e0 0x4779e0 -> PENDING (attempt 1)
+[ledger] 0x50e830 TeamTypeVector::CopyConstruct -> NG (attempt 1)
+[ledger] 0x513740 TypeList::CopyConstructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513860 HouseTypeClass::readAllowedUnits -> NG (attempt 1)
+[ledger] 0x5255f0 TypeList::AnimTypeCopy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ad660 TypeList::BuildingTypeCopy -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 14,
+  "DUP_SKIP": 1
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "const_fold": 1,
+  "eval_order": 1,
+  "regalloc": 3,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p299\batch_report.json
