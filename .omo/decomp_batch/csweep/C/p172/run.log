@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p172\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ba5e0 XSurface::DrawLine -> XSurface
+[conv] 0x63b050 ObjectClass::Team_Load_63B050 -> ObjectClass
+[conv] 0x744180 TechnoClass::AreBuildingFlagsClear -> TechnoClass
+[conv] 0x5e2ef0 SetDialogPlayerName -> _addr_5E
+[conv] 0x473ae0 CCFileClass::Write -> CCFileClass
+[conv] 0x4389b0 ObjectClass::CleanupAudioAndRefs -> ObjectClass
+[conv] 0x43ad00 Buffer::Init -> Buffer
+[conv] 0x4f1b20 Timer::GetRemainingMs -> Timer
+[conv] 0x4fcdc0 TActionClass::executeBuildAction -> TActionClass
+[conv] 0x722ab0 CellClass::ClearCrateStateForAll -> CellClass
+[conv] 0x771850 Anim@Voices@WorldDominationTour::sub_771850 -> Anim_Voices_WorldDominationTour
+[conv] 0x7b7d90 WideString::IsASCII -> WideString
+[conv] 0x7cea1b _write_multi_char -> _addr_7C
+[conv] 0x7d292b _write_multi_char_0 -> _addr_7D
+[conv] 0x7d475a __i64toa -> _addr_7D
+[conv] 0x5caf70 ObjectClass::sub_5CAF70 -> ObjectClass
+[conv] 0x40afd0 Array::ForEachReverse -> Array
+[conv] 0x5471b0 HouseClass::GetCameoTypeIndex -> HouseClass
+[conv] 0x6352d0 ObjectClass::sub_6352D0 -> ObjectClass
+[conv] 0x635310 ObjectClass::sub_635310 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] XSurface                 rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=0
+[era] _addr_5E                 rc=0
+[era] CCFileClass              rc=2
+[era] Buffer                   rc=0
+[era] Timer                    rc=0
+[era] TActionClass             rc=0
+[era] CellClass                rc=0
+[era] Anim_Voices_WorldDominationTour rc=0
+[era] WideString               rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+[era] Array                    rc=2
+[era] HouseClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x63b050   MISMATCH         ObjectClass::Team_Load_63B050
+[diff] 0x4389b0   MISMATCH         ObjectClass::CleanupAudioAndRefs
+[diff] 0x6352d0   MISMATCH         ObjectClass::sub_6352D0
+[diff] 0x635310   MISMATCH         ObjectClass::sub_635310
+[diff] 0x744180   MISMATCH         TechnoClass::AreBuildingFlagsClear
+[diff] 0x5e2ef0   MISMATCH         SetDialogPlayerName
+[diff] 0x43ad00   MISMATCH         Buffer::Init
+[diff] 0x4f1b20   MISMATCH         Timer::GetRemainingMs
+[diff] 0x4fcdc0   MISMATCH         TActionClass::executeBuildAction
+[diff] 0x722ab0   MISMATCH         CellClass::ClearCrateStateForAll
+[diff] 0x771850   MISMATCH         Anim@Voices@WorldDominationTour::sub_771850
+[diff] 0x7b7d90   MISMATCH         WideString::IsASCII
+[diff] 0x7cea1b   MISMATCH         _write_multi_char
+[diff] 0x7d292b   MISMATCH         _write_multi_char_0
+[diff] 0x7d475a   MISMATCH         __i64toa
+[diff] 0x5471b0   MISMATCH         HouseClass::GetCameoTypeIndex
+[ledger] 0x7ba5e0 XSurface::DrawLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63b050 ObjectClass::Team_Load_63B050 -> NG (attempt 1)
+[ledger] 0x744180 TechnoClass::AreBuildingFlagsClear -> NG (attempt 1)
+[ledger] 0x5e2ef0 SetDialogPlayerName -> NG (attempt 1)
+[ledger] 0x473ae0 CCFileClass::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4389b0 ObjectClass::CleanupAudioAndRefs -> NG (attempt 1)
+[ledger] 0x43ad00 Buffer::Init -> NG (attempt 1)
+[ledger] 0x4f1b20 Timer::GetRemainingMs -> NG (attempt 1)
+[ledger] 0x4fcdc0 TActionClass::executeBuildAction -> NG (attempt 1)
+[ledger] 0x722ab0 CellClass::ClearCrateStateForAll -> NG (attempt 1)
+[ledger] 0x771850 Anim@Voices@WorldDominationTour::sub_771850 -> NG (attempt 1)
+[ledger] 0x7b7d90 WideString::IsASCII -> NG (attempt 1)
+[ledger] 0x7cea1b _write_multi_char -> NG (attempt 1)
+[ledger] 0x7d292b _write_multi_char_0 -> NG (attempt 1)
+[ledger] 0x7d475a __i64toa -> NG (attempt 1)
+[ledger] 0x5caf70 ObjectClass::sub_5CAF70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40afd0 Array::ForEachReverse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5471b0 HouseClass::GetCameoTypeIndex -> NG (attempt 1)
+[ledger] 0x6352d0 ObjectClass::sub_6352D0 -> NG (attempt 1)
+[ledger] 0x635310 ObjectClass::sub_635310 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 4,
+  "MISMATCH": 16
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "codegen_shape": 5,
+  "branch_polarity": 3,
+  "const_fold": 2,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p172\batch_report.json

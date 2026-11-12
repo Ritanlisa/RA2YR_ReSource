@@ -1,0 +1,11 @@
+{
+ "addr": "0x4389B0",
+ "name": "ObjectClass::CleanupAudioAndRefs",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4389B0",
+ "bytes_hex": "53568bf133db8b462c3bc374098958388b462c8858688d4e3cc6465801895e24895e2c895e28e8f5d5fcff895e545e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

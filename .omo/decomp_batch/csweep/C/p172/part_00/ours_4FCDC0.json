@@ -1,0 +1,21 @@
+{
+ "symbol": "?executeBuildAction@TActionClass@@QAEDXZ",
+ "sym_key": "TActionClass::executeBuildAction",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8a81f801000084c075128a81f701000084c075086a00e800000000c383b998020000ff750ea0a00100000fbed0899198020000c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?CheckWinCondition@HouseClass@@QAEDD@Z",
+   "sym_key": "HouseClass::CheckWinCondition"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

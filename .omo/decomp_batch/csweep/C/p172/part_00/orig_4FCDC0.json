@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FCDC0",
+ "name": "TActionClass::executeBuildAction",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FCDC0",
+ "bytes_hex": "8a81f801000084c075128a81f701000084c075086a00e805fcffffc383b998020000ff750ba184eda800898198020000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

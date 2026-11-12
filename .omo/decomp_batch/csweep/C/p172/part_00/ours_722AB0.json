@@ -1,0 +1,33 @@
+{
+ "symbol": "?ClearCrateStateForAll@CellClass@@QAEHXZ",
+ "sym_key": "CellClass::ClearCrateStateForAll",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "e8000000008b15b80c000033c985d27e2856bafcffffff8b35d807000083c204418b34328bb6f8000000c60406008b35b80c00003bce7cdf5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?PosToIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::PosToIndex"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

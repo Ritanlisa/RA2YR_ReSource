@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetRemainingMs@Timer@@QAEHXZ",
+ "sym_key": "Timer::GetRemainingMs",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b068b7e0883f8ff75058bc75f5ec3e8000000008b168bc82bca3bcf7c055f33c05ec38bc75f2bc15ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

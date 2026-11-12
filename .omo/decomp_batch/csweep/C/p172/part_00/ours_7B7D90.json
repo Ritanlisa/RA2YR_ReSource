@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsASCII@WideString@@QAEDXZ",
+ "sym_key": "WideString::IsASCII",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0685c0742b50e80000000083c40433d285c07e1c8b0e6681390001730f4283c1023bd07d0b668139000172f124005ec324015e0c01c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

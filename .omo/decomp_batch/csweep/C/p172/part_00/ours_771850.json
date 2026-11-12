@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_771850@Anim_Voices_WorldDominationTour@@QAEPAIH@Z",
+ "sym_key": "Anim_Voices_WorldDominationTour::sub_771850",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db895e04895e08885e0ce8000000008946108b44240c89461c895e18891e8bc65e5bc20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

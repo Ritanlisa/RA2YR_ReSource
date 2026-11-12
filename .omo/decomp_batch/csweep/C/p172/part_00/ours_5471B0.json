@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetCameoTypeIndex@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::GetCameoTypeIndex",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff909c0000008bc885c9741f568b71040faf318b44240833d2f7f65e8b4c911085c974070fbe412ac2040033c0c20400",
+ "relocs": []
+}

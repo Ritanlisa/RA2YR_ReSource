@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E2EF0",
+ "name": "SetDialogPlayerName",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E2EF0",
+ "bytes_hex": "568bf285f674275768ec06000051ff15a8147e008d4e208bf8e832421d00506a0068b204000057ff15a4147e005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

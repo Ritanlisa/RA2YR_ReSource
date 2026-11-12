@@ -1,0 +1,11 @@
+{
+ "addr": "0x43AD00",
+ "name": "Buffer::Init",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x43AD00",
+ "bytes_hex": "8b442404568bf18b4c240c85c08906894e04c6460800751385c97e0f51e8f5e0380083c4048906c64608018bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x722AB0",
+ "name": "CellClass::ClearCrateStateForAll",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x722AB0",
+ "bytes_hex": "e80b87d0ff8b15f8f4b00033c985d27e1f8b15ecf4b000418b548afc8b92f8000000c60402008b15f8f4b0003bca7ce1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

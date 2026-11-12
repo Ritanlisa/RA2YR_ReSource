@@ -1,0 +1,15 @@
+{
+ "symbol": "?_write_multi_char@@YAHHPAIPAH0@Z",
+ "sym_key": "Unnamed::_write_multi_char",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "8b442408535556578d78ff85c07e258b7424208b5c241c8b6c2414565355e8000000008b0e83c40c83f9ff74078bc74f85c07fe75f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?write_char@@YAHHPAX0ZZ",
+   "sym_key": "write_char"
+  }
+ ]
+}

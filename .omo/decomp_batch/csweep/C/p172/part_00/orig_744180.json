@@ -1,0 +1,11 @@
+{
+ "addr": "0x744180",
+ "name": "TechnoClass::AreBuildingFlagsClear",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x744180",
+ "bytes_hex": "568db1500300008bcee8820fd6ff84c0751a8bcee8970fd6ff84c0750f8bcee80c10d6ff84c07504b0015ec332c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

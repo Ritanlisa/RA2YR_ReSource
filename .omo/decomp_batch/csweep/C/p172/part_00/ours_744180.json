@@ -1,0 +1,27 @@
+{
+ "symbol": "?AreBuildingFlagsClear@TechnoClass@@QAE_NXZ",
+ "sym_key": "TechnoClass::AreBuildingFlagsClear",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "568bb1500300008bcee80000000084c0751d8bcee80000000084c075128bcee80000000084c07507b8010000005ec333c05ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?IsVisible@Window@@QAE_NXZ",
+   "sym_key": "Window::IsVisible"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?CheckFlag24@BuildingClass@@QAE_NXZ",
+   "sym_key": "BuildingClass::CheckFlag24"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?CheckPowerFlags@BuildingClass@@QAEDXZ",
+   "sym_key": "BuildingClass::CheckPowerFlags"
+  }
+ ]
+}

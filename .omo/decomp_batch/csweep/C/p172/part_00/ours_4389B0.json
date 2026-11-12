@@ -1,0 +1,15 @@
+{
+ "symbol": "?CleanupAudioAndRefs@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::CleanupAudioAndRefs",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "53568bf133c033db8a462c3bc3740b89583833c08a462c88586833c9c64658018a4e3c885e36885e2c885e28e800000000895e545e5bc3",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Stop@AudioFile@@QAEHXZ",
+   "sym_key": "AudioFile::Stop"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?__i64toa@@YAPAD_JPADH@Z",
+ "sym_key": "Unnamed::__i64toa",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408558b6c241056578b7c242033f683ff0a752053e80000000083c40485c07f1385ed7f0d7c0485db7307be01000000eb0233f6568b74242057565553e80000000083c4148bc65f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?SHIDWORD@@YAHHZZ",
+   "sym_key": "SHIDWORD"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?x64toa_20@@YAHHHPAXHHZZ",
+   "sym_key": "x64toa_20"
+  }
+ ]
+}
