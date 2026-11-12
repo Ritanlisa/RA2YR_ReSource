@@ -1,0 +1,228 @@
+{
+ "n": 20,
+ "flip_up": 20,
+ "flip_down": 0,
+ "same": 0,
+ "rows": [
+  {
+   "addr": "0x403d50",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_403D50",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x403d70",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_403D70",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x403d90",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_403D90",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x406990",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_406990",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x4069b0",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_4069B0",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x4069d0",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_4069D0",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40ae00",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40AE00",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40ae20",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40AE20",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40ae40",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40AE40",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40b3c0",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40B3C0",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40b3e0",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40B3E0",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40b400",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40B400",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40c600",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40C600",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40c620",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40C620",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40c640",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40C640",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40d010",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40D010",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40d030",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40D030",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40d050",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40D050",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40db10",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40DB10",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  },
+  {
+   "addr": "0x40db30",
+   "off": "MISMATCH",
+   "on": "MATCH",
+   "name": "sub_40DB30",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": true,
+   "off_note": "orig 19B ours 21B",
+   "on_note": "19B"
+  }
+ ]
+}

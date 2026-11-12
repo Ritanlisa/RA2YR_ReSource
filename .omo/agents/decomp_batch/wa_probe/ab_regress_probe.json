@@ -1,0 +1,17 @@
+{
+ "n": 1,
+ "flip_up": 0,
+ "flip_down": 0,
+ "same": 1,
+ "rows": [
+  {
+   "addr": "0x5378e0",
+   "off": "MISMATCH",
+   "on": "MISMATCH",
+   "name": "SetView4CommandClass::performAction_178",
+   "off_rv": 0,
+   "on_rv": 0,
+   "on_clean": false
+  }
+ ]
+}
