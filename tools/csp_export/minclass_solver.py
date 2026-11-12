@@ -157,7 +157,7 @@ FAMILY_DESC = {
     "IM2": "import param types: parameter-side twin of IMP -- Win32/BINK SDK-contract PARAMETER semantics at proven import-call sites (form A `call ds:__imp_X` direct / form B IAT-range label / form C `call reg` linear back-scan with IDA-annotation agreement, machinery reused verbatim from .omo/agents/imp); pushed actual args collected backward (stdcall right-to-left, push nearest the call = param 0; walk stops at label/jump/ret/call, esp writes, `[esp]`-disp-0 rewrites) -> S:ADDR:NAME / P:FN:K / G:HEX / EAX:FN:SITE arg-origin entities typed (char*/wchar_t*/int/unsigned int per SDK signature; strict, 100% deterministic contract, no guessing; evidence array of anchors/imp2_param_types.json, 240 recs via=imp2-API-aK; ent S/G format aligned with C8/GI/CR, P/EAX aligned with RA/RU spelling)",
     "YVP": "YRpp virtual-function param types: per-class full primary-vtable reconstruction from YRpp headers (225 files, 583 classes parsed / 501 resolved; primary base = first declared base, MSVC single-primary layout; secondary COM-iface virtuals excluded by name set; override matching by (name, arity); slot numbering = vtable_slot_authority primary table) -> GS:slot:k:addr entities (strict tier; 8 emission gates: authority alignment / slot_count==len(seq) / non-dtor / arity-mismatch exclusion / own-addr-mismatch exclusion / vocab mapping / entity-level agreement / P-channel authority-placement agreement killing ICF-folded shared stubs; n=20 layered validation 20/20 incl intfam symbol pairs, full pinned n=411 semantic agreement 96.4% -- dominant divergence = YRpp 'int' vs solver 'unsigned int' spelling; evidence anchors/yrpp_vparams.json, 4,172 recs via=yrpp-param, same YRpp-header source as C22/C25)",
     "V2B": "vera20k round-2 wide-domain receiver types: same strict mining as V2K ('Class::Method @ 0xADDR' / 'Class__Method @ 0xADDR', FUN_/sub_/nullsub/j_ excluded, pattern addr == vera entry addr or our fn start, top-frequency qualified name per address, class prefix canonized via class_name_align + canon universe) with attribution widened from T-only to R:<addr>:ecx receiver entities (primary) + T:<addr> wide residual, v1-covered T excluded; wide-domain filter R/T domain > 8, pinned (domain=1) and narrow entities untouched (HEURISTIC tier per full-pool 615 accuracy 92.2%; gate --allow-heuristics; evidence anchors/vera20k_types_v2.json, 126 recs via=vera-rclass)",
-    "BM": "byte-match closing witness: a function whose mechanical C++ translation compiles BYTE-IDENTICAL to the original binary (diffasm MATCH) is a closing witness for the codegen-visible part of its declared types. Three channels -- bm-owner T:FN -> emitted class of a class-scoped definition (cls_src=name_prefix excluded; ledger-aligned emitted name after audit fixes), bm-member M:FN:this:0xOFF -> declared width of this->NAME in the unit own hpp emitted as the IG granularity family (plain mov pins width, not signedness; arrays/vfptr skipped), bm-sig P:FN:k / RET:FN -> emitted signature types excluding bare int-family (4-byte scalar and any 4-byte pointer are codegen-indistinguishable; 243/478 emitted scalar params were contradicted by binary-derived families). Quality gate: ledger status=OK + clean=true + rule_violations=0 + this_as_id=false, AND the source part_report row itself re-checks MATCH/clean/0 violations (161B this-as-id class excluded); every token must exist in the solver universe; rows already covered by another family are deduped; rows disjoint with another family are excluded to the conflict ledger inside the file. Evidence anchors/byte_match_types.json (1,170 recs: bm-owner 503 / bm-member 543 / bm-sig 124; conflict ledger + repair log in meta), generator .omo/agents/bm/s7_build.py",
+    "BM": "byte-match closing witness: a function whose mechanical C++ translation compiles BYTE-IDENTICAL to the original binary (diffasm MATCH) is a closing witness for the codegen-visible part of its declared types. Three channels -- bm-owner T:FN -> emitted class of a class-scoped definition (cls_src=name_prefix excluded; ledger-aligned emitted name after audit fixes), bm-member M:FN:this:0xOFF -> declared width of this->NAME in the unit own hpp emitted as the IG granularity family (plain mov pins width, not signedness; arrays/vfptr skipped), bm-sig P:FN:k / RET:FN -> emitted signature types excluding bare int-family (4-byte scalar and any 4-byte pointer are codegen-indistinguishable; 243/478 emitted scalar params were contradicted by binary-derived families). Quality gate: ledger status=OK + clean=true + rule_violations=0 + this_as_id=false, AND the source part_report row itself re-checks MATCH/clean/0 violations (161B this-as-id class excluded); every token must exist in the solver universe; rows already covered by another family are deduped; rows disjoint with another family are excluded to the conflict ledger inside the file. Evidence anchors/byte_match_types.json (1,219 recs: bm-owner 538 / bm-member 551 / bm-sig 130; round 1 1,170 + round-2 incremental append of the W-A harvest's new OK entries, +49 = owner 35 / member 8 / sig 6; conflict ledger + repair log in meta), generators .omo/agents/bm/s7_build.py (round 1) and .omo/agents/bm/s35_bm2.py (round 2)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -3622,18 +3622,20 @@ def main():
     except Exception as _e_s2:
         census["S2"] = census.get("S2", 0)
         print("[S2] skipped: %r" % _e_s2, flush=True)
-    # BM：字节匹配闭环证据（byte_match_types.json，1,170 evidence / 3 通道）。反编译
+    # BM：字节匹配闭环证据（byte_match_types.json，1,219 evidence / 3 通道）。反编译
     # 产线已证明函数翻译编译后与原版逐字节相同（diffasm MATCH）——字节全等是签名/
-    # 成员宽度/类归属的终审：bm-owner 514→503（class-scoped emitted 类，name_prefix
-    # 排除、phantom 类剔除）、bm-member 903→543（unit 自有 hpp 声明宽度，IG 粒度语义：
-    # 普通 mov 只钉宽度不钉符号）、bm-sig 172→124（签名类型，裸 int 族排除——4 字节
+    # 成员宽度/类归属的终审：bm-owner 514→503→538（class-scoped emitted 类，name_prefix
+    # 排除、phantom 类剔除）、bm-member 903→543→551（unit 自有 hpp 声明宽度，IG 粒度语义：
+    # 普通 mov 只钉宽度不钉符号）、bm-sig 172→124→130（签名类型，裸 int 族排除——4 字节
     # 标量与任意 4 字节指针在 codegen 上不可区分，实测 243/478 emitted 标量参数被
     # 二进制族否证；`return this` 的返回类型是 cast 伪影，一并排除）。
     # clean 门：账本 OK+clean+rule_violations=0+this_as_id=false，且源 part_report
     # 行自身复核 MATCH/clean/0 违规（161B this-as-id 类被挡）；与既有族去重 347、
     # 冲突剔除 33（台账在文件 meta 内）；repair 轮把仍会令簇变空的事实再剔 10。
     # 实体拼写 T:%X / M:%X:this:0x%X / P:%X:k / RET:%X 与 solver 同形。
-    # 生成器 .omo/agents/bm/s7_build.py（s27_repair.py 为冲突修复轮）。
+    # 生成器 .omo/agents/bm/s7_build.py（s27_repair.py 为冲突修复轮）；第二轮 =
+    # s35_bm2.py 增量（W-A 收割 1,252 新 OK 地址，同比复检 MATCH+clean，追加 49 条，
+    # 1 dedupe + 3 conflict 剔除；实测 empty_clusters 不变、conflicts=0、无簇损失）。
     try:
         census["BM"] = _load_type_family("anchors/byte_match_types.json", "BM")
         print("[BM] byte-match closing-witness types: %d" % census["BM"], flush=True)

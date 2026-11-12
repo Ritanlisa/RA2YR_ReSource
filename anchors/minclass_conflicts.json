@@ -153,15 +153,15 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 873,
-  "K_upper": 873,
-  "lower_bound": 873,
-  "constrained_clusters": 90463,
-  "free_clusters": 119488,
+  "K": 875,
+  "K_upper": 875,
+  "lower_bound": 875,
+  "constrained_clusters": 90501,
+  "free_clusters": 119467,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 2234,
-  "entities": 214496
+  "entities": 214513
  },
  "family_table": [],
  "conflicts": [],

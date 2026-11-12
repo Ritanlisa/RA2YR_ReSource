@@ -246,7 +246,7 @@ cmake --build build_linux
 ### 当前在途与待办
 
 - **CW5（已完成，2026-11-12）**：残 871 CF 三族工单（`report_cw5_prep.md`）——靶集 442 件（F7 212 + F10 133 + F8 97）**0 → 197 编译（44.6%，196 MISMATCH + 1 MATCH）**，账本 **OK 2,653→2,654 / NG 3,746→3,942 / CF 2,086→1,889**。落地：CW5-1/2/3/4（调用点实参、CRT 表、间接 fn-ptr、const 槽）+ CW5-5/6/7（全局数组元素、成员层级反查、成员链/vfptr 偏移真值）+ **CW5-8 壳供给（壳生成器读 registry 合并成员 + `class_layouts.parent` 继承链，∩ 本单元 body 名字）** + CW5-10（F8 残留标识符：MEMORY/GUID/asc_/algn_/`?` 以外/`__usercall`/`__m64`/`WCHAR`/`int32_t`/`HKEY_*`）+ CW5-12（伪类碰撞：extern + 壳改名 `_Helper`）。**未做：CW5-11（C9 参数/局部名映射，C9 4/20 的主残因）、CW5-9 全量拼写归一**。六规则红线：同 442 集违规条目 **1,195→1,170**、函数 **190→185**（净降）；零回归 **30/30 历史 MATCH**（R5-75 中 0x402330 的 CF 经二分证实为 CW3 期 `dcd4b0ec9` 回归，非 CW5）。剩余 245 CF 归因见 `report_cw5.md` §6：C2440 长尾 31 / C2664 长尾 28 / 成员名缺失（B9 16 无源）/ 快照坏 12 件（`?`/asm/截断，需 IDA 重导出）。
-- **W-A 收割（已完成，2026-11-12）**：三桶全量重跑（D_CONST_FOLD 736 + D_CONST_FP 273 + D_RELOC 555 = 1,564 件，全部核验为当前 NG）→ **1,252 件翻 MATCH（80.0%）**，账本 **OK 2,654→3,906 / NG 3,942→2,690**（CF 1,889 / PENDING 31 不变），非目标条目变动 **0**；1,252 新 OK 全部 `clean=true / rule_violations=0 / this_as_id=false`。零回归 = 穷举扫描 2,654 历史 OK **无 FP 字面量（触发面空集）** + 30 抽样 29/30（1 件 `0x5378e0` 证明为 censusA 期陈旧账本条目：pass off/on 同差 + 无 FP 字面量）。残余 312 件归因见报告（D_RELOC 仍残 262 件 `extern_reloc` = W1 领土）。**BM 第二轮提示**：G1 clean 池 1,939→3,191，但新 MATCH 为常数叶子函数（median 19B），可提取证据结构性稀少（owner ≤35 / member ≤15 / sig ≈0）——收益按 s7_build 实测，勿把 +1,252 当 BM 增量。报告 = `.omo/agents/decomp_batch/report_wa_harvest.md`；驱动/验证 = `run_wa.py` / `wa_harvest_regress.py`。
+- **W-A 收割（已完成，2026-11-12）**：三桶全量重跑（D_CONST_FOLD 736 + D_CONST_FP 273 + D_RELOC 555 = 1,564 件，全部核验为当前 NG）→ **1,252 件翻 MATCH（80.0%）**，账本 **OK 2,654→3,906 / NG 3,942→2,690**（CF 1,889 / PENDING 31 不变），非目标条目变动 **0**；1,252 新 OK 全部 `clean=true / rule_violations=0 / this_as_id=false`。零回归 = 穷举扫描 2,654 历史 OK **无 FP 字面量（触发面空集）** + 30 抽样 29/30（1 件 `0x5378e0` 证明为 censusA 期陈旧账本条目：pass off/on 同差 + 无 FP 字面量）。残余 312 件归因见报告（D_RELOC 仍残 262 件 `extern_reloc` = W1 领土）。**BM 第二轮提示**：G1 clean 池 1,939→3,191，但新 MATCH 为常数叶子函数（median 19B），可提取证据结构性稀少（owner ≤35 / member ≤15 / sig ≈0）——收益按 s7_build 实测，勿把 +1,252 当 BM 增量（**已实测：+49 = owner 35 / member 8 / sig 6，覆盖率 47.6%→47.7%，见 BM 条第二轮**）。报告 = `.omo/agents/decomp_batch/report_wa_harvest.md`；驱动/验证 = `run_wa.py` / `wa_harvest_regress.py`。
 - **待办**：W1（diffasm reloc 符号键映射；W-A 收割后 D_RELOC 仍残 **262 件 extern_reloc**，另普查遗留 45 行“账本 NG 但工件 MATCH”的陈旧行待复核）/ W2（FP 常量物化 **已被 W-A 收割，见 report_wa_harvest.md**）/ W4（签名与类型确定性 226 件），W1/W4 是 CW4 证伪后的确定性修复主线（对应形态分桶 L0-L2）；规则违规残债 ~482 函数（CW3 自检口径）；形态层残余 492 件结构级（STRUCTURAL 446 + FRAME 46 非 CRT，自动试错 ROI <10%，需逐件 IDA 取证）+ 72 件 CRT 内件（VC6 CRT 版本差异，建议移出形态战场）。完整分桶与 ROI 见 `report_shape_census.md`。
 
 ## ⚠️ 当前活跃方向 2：数据段字节级对齐（data-first 战略，2026-11-11 首战完成）
@@ -1119,6 +1119,14 @@ python tools/type_infer/auto_name.py
     `return ... this` 的返回类型是 cast 伪影，403 条剔除，否则 T:/RET: 同簇必空）。
   - **接线**：`minclass_solver.py` FAMILIES/FAMILY_DESC/loader `BM`（strict）+ `anchors/byte_match_types.json`（1,170 recs，
     含 43 条冲突台账与 10 条修复日志）。报告 = `docs/report_bm.md`；生成器 `.omo/agents/bm/s7_build.py` / `s27_repair.py`。
+  - **第二轮（W-A 增量回填，同日晚）**：范围 = W-A 收割 1,252 个新 OK 地址（clean 池 1,939→3,191）∩ 当时 clean 门 − 首轮已收录地址
+    （交集 0）→ 增量提取（复用 s7 全部 G1–G7 门，读冻结账本快照防 CW6 并发 torn read）**+49 strict 证据**
+    （owner 35 / member 8 / sig 6；1 dedupe + 3 conflict（RET bool vs int 族）剔除；追加式，首轮 1,170 行逐字段不变）。
+    实测（同命令同 anchors 状态 before/after）：**`43,088/90,463 = 47.6%` → `43,201/90,501 = 47.7%`**（unique **+113**、受约束 +38、
+    wide **20,078→19,990**、narrow 27,297→27,310、K_min 873→875、`empty_clusters` **7,206 不变**、conflicts 0）；88 个既有簇域收窄、
+    0 变宽、0 丢失，历史已判定（domain=1）簇类赋值 **0 改动**，77 个类代表变化全部是宽域→唯一域；双跑产物 sha256 一致。
+    收益结构性稀疏（W-A 池 = median 19B 常数叶子，1,217/1,252 自由函数、无 `this->`、签名几乎全 void/裸 int 族），与 W-A 报告预登记上限一致；
+    任务书 43,595/50.4% 同属旧快照口径。生成器 = `.omo/agents/bm/s35_bm2.py`；报告 = `.omo/agents/speed/report_bm2.md`。
 
 - **2026-11-12 (CW4)**: 形态层自动试错引擎 + if/else 方向规则回填（A 层 2,608 NG 普查）
   - **引擎**：`tools/decomp_sys/cw4_variants.py`（变体库）+ `run_cw4.py`（选择/试错/逐 part 提交/报告）。

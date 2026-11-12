@@ -109711,9 +109711,11 @@
 ]
 },
 "T:4BBC90": {
-"class": "BuildingClass",
+"class": "DDraw",
 "obs": [],
-"ents": []
+"ents": [
+"T:4BBC90"
+]
 },
 "R:487950:ecx": {
 "class": "CellClass",
@@ -145082,14 +145084,16 @@
 "ents": []
 },
 "R:4865B0:ecx": {
-"class": "Value",
+"class": "CellClass",
 "obs": [
 [
 56,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4865B0"
+]
 },
 "T:578D80": {
 "class": "IPersistStream",
@@ -147580,24 +147584,28 @@
 "ents": []
 },
 "R:486670:ecx": {
-"class": "Value",
+"class": "CellClass",
 "obs": [
 [
 56,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:486670"
+]
 },
 "R:486650:ecx": {
-"class": "Value",
+"class": "CellClass",
 "obs": [
 [
 56,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:486650"
+]
 },
 "T:5A6D80": {
 "class": "BuildingClass",
@@ -155033,14 +155041,17 @@
 ]
 },
 "R:4F4C20:ecx": {
-"class": "CreditsScreen",
+"class": "Byte",
 "obs": [
 [
 0,
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:4F4C20",
+"RET:4F4C20"
+]
 },
 "T:4F4D80": {
 "class": "BuildingClass",
@@ -181267,14 +181278,16 @@
 "ents": []
 },
 "R:717AD0:ecx": {
-"class": "AudioPool",
+"class": "ObjectTypeClass",
 "obs": [
 [
 12,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:717AD0"
+]
 },
 "R:717AB0:ecx": {
 "class": "ObjectTypeClass",
@@ -186509,14 +186522,16 @@
 "ents": []
 },
 "R:76F070:ecx": {
-"class": "ArmorType",
+"class": "RawFileClass",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:76F070"
+]
 },
 "R:76FF30:ecx": {
 "class": "WDTObject",
@@ -191989,7 +192004,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:4A3C00"
+]
 },
 "R:6267A0:ecx": {
 "class": "BuildingClass",
@@ -217713,14 +217730,19 @@
 ]
 },
 "GS:2:1:0x628BB0": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x628BB0"
+]
 },
 "P:628BB0:1": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"P:628BB0:1",
+"S:628BB0:+0x8"
+]
 },
 "GS:2:0:0x627F90": {
 "class": "int",
@@ -217798,14 +217820,18 @@
 ]
 },
 "GS:2:1:0x6288F0": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x6288F0"
+]
 },
 "P:6288F0:1": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"P:6288F0:1"
+]
 },
 "GS:2:0:0x6282E0": {
 "class": "int",
@@ -248682,14 +248708,18 @@
 "ents": []
 },
 "M:4865B0:this:0x38": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"M:4865B0:this:0x38"
+]
 },
 "RET:4865B0": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"RET:4865B0"
+]
 },
 "M:4865D0:this:0x38": {
 "class": "int",
@@ -248702,24 +248732,32 @@
 "ents": []
 },
 "M:486650:this:0x38": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"M:486650:this:0x38"
+]
 },
 "RET:486650": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"RET:486650"
+]
 },
 "M:486670:this:0x38": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"M:486670:this:0x38"
+]
 },
 "RET:486670": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"RET:486670"
+]
 },
 "M:4866D0:this:0x38": {
 "class": "int",
@@ -257862,32 +257900,44 @@
 "M:633E50:this:0x18": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"M:633E50:this:0x18"
+]
 },
 "RET:633E50": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"RET:633E50"
+]
 },
 "M:633E60:this:0x10": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"M:633E60:this:0x10"
+]
 },
 "RET:633E60": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"RET:633E60"
+]
 },
 "M:634700:this:0x30": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"M:634700:this:0x30"
+]
 },
 "RET:634700": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"RET:634700"
+]
 },
 "M:634800:this:0x38": {
 "class": "int",
@@ -262980,14 +263030,14 @@
 "ents": []
 },
 "M:717AD0:this:0xC": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
 "ents": [
 "M:717AD0:this:0xC"
 ]
 },
 "RET:717AD0": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
 "ents": [
 "RET:717AD0"
@@ -264882,7 +264932,9 @@
 "M:76F070:this:0x4": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"M:76F070:this:0x4"
+]
 },
 "M:76F080:this:0x4": {
 "class": "int",
@@ -312720,6 +312772,13 @@
 "EAX:4666C0:4666C5"
 ]
 },
+"EAX:4666E0:4671C5": {
+"class": "double",
+"obs": [],
+"ents": [
+"EAX:4666E0:4671C5"
+]
+},
 "EAX:4666E0:467468": {
 "class": "VectorClass",
 "obs": [],
@@ -329397,9 +329456,11 @@
 ]
 },
 "EAX:4F4C20:4F4C25": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:4F4C20:4F4C25"
+]
 },
 "EAX:4F5130:4F5164": {
 "class": "int",
@@ -345376,9 +345437,11 @@
 ]
 },
 "EAX:57B440:57B739": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:57B440:57B739"
+]
 },
 "EAX:57B440:57B774": {
 "class": "int",
@@ -349054,9 +349117,11 @@
 ]
 },
 "EAX:59A6C0:59A89B": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:59A6C0:59A89B"
+]
 },
 "EAX:59A6C0:59A8B2": {
 "class": "int",
@@ -349150,9 +349215,11 @@
 ]
 },
 "EAX:59B6D0:59B6EF": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:59B6D0:59B6EF"
+]
 },
 "EAX:59B6D0:59B706": {
 "class": "int",
@@ -350207,9 +350274,11 @@
 ]
 },
 "EAX:5A33F0:5A3417": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A33F0:5A3417"
+]
 },
 "EAX:5A33F0:5A3496": {
 "class": "int",
@@ -350262,9 +350331,11 @@
 ]
 },
 "EAX:5A38C0:5A3922": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A38C0:5A3922"
+]
 },
 "EAX:5A3AE0:5A3B5D": {
 "class": "int",
@@ -350494,14 +350565,18 @@
 ]
 },
 "EAX:5A4B60:5A4DB4": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A4B60:5A4DB4"
+]
 },
 "EAX:5A4B60:5A4DBF": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A4B60:5A4DBF"
+]
 },
 "EAX:5A4B60:5A4E73": {
 "class": "int",
@@ -350694,19 +350769,25 @@
 ]
 },
 "EAX:5A6510:5A67A2": {
-"class": "BuildingClass",
+"class": "CellClass",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A6510:5A67A2"
+]
 },
 "EAX:5A6510:5A67AB": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A6510:5A67AB"
+]
 },
 "EAX:5A6510:5A67B6": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A6510:5A67B6"
+]
 },
 "EAX:5A6510:5A67DA": {
 "class": "unsigned int",
@@ -350839,14 +350920,18 @@
 ]
 },
 "EAX:5A7250:5A73EB": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7250:5A73EB"
+]
 },
 "EAX:5A7250:5A73F6": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7250:5A73F6"
+]
 },
 "EAX:5A7440:5A7579": {
 "class": "BuildingClass",
@@ -350880,14 +350965,18 @@
 ]
 },
 "EAX:5A7440:5A75F1": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7440:5A75F1"
+]
 },
 "EAX:5A7440:5A75FC": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7440:5A75FC"
+]
 },
 "EAX:5A76E0:5A783D": {
 "class": "int",
@@ -350895,14 +350984,18 @@
 "ents": []
 },
 "EAX:5A76E0:5A787E": {
-"class": "BuildingClass",
+"class": "CellClass",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A76E0:5A787E"
+]
 },
 "EAX:5A76E0:5A7887": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A76E0:5A7887"
+]
 },
 "EAX:5A76E0:5A7892": {
 "class": "int",
@@ -350912,9 +351005,11 @@
 ]
 },
 "EAX:5A76E0:5A789D": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A76E0:5A789D"
+]
 },
 "EAX:5A78D0:5A79D8": {
 "class": "int",
@@ -350938,14 +351033,18 @@
 ]
 },
 "EAX:5A7B40:5A7C97": {
-"class": "BuildingClass",
+"class": "CellClass",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7B40:5A7C97"
+]
 },
 "EAX:5A7B40:5A7CA3": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7B40:5A7CA3"
+]
 },
 "EAX:5A7D00:5A7DD9": {
 "class": "int",
@@ -368371,14 +368470,18 @@
 ]
 },
 "EAX:6288F0:62893A": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:6288F0:62893A"
+]
 },
 "EAX:6288F0:62896C": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:6288F0:62896C"
+]
 },
 "EAX:6288F0:6289BE": {
 "class": "IPersistStream",
@@ -368400,24 +368503,32 @@
 ]
 },
 "EAX:628B00:628B3C": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:628B00:628B3C"
+]
 },
 "EAX:628B00:628B76": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:628B00:628B76"
+]
 },
 "EAX:628BB0:628BFA": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:628BB0:628BFA"
+]
 },
 "EAX:628BB0:628C2C": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:628BB0:628C2C"
+]
 },
 "EAX:628BB0:628C76": {
 "class": "IPersistStream",
@@ -368451,14 +368562,18 @@
 ]
 },
 "EAX:628ED0:628F0C": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:628ED0:628F0C"
+]
 },
 "EAX:628ED0:628F4D": {
-"class": "BuildingClass",
+"class": "Byte",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:628ED0:628F4D"
+]
 },
 "EAX:6291D0:6291EF": {
 "class": "int",
@@ -369474,12 +369589,16 @@
 "EAX:633E50:633E53": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:633E50:633E53"
+]
 },
 "EAX:633E60:633E63": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:633E60:633E63"
+]
 },
 "EAX:633FA0:63403E": {
 "class": "char*",
@@ -369577,7 +369696,9 @@
 "EAX:634700:634703": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:634700:634703"
+]
 },
 "EAX:634800:634803": {
 "class": "int",
@@ -384390,6 +384511,13 @@
 "obs": [],
 "ents": []
 },
+"EAX:6A8B30:6A8DD3": {
+"class": "Char",
+"obs": [],
+"ents": [
+"EAX:6A8B30:6A8DD3"
+]
+},
 "EAX:6A8B30:6A8DF6": {
 "class": "int",
 "obs": [],
@@ -393888,6 +394016,13 @@
 "EAX:6F7220:6F746B"
 ]
 },
+"EAX:6F7220:6F7491": {
+"class": "double",
+"obs": [],
+"ents": [
+"EAX:6F7220:6F7491"
+]
+},
 "EAX:6F7220:6F74E1": {
 "class": "BuildingClass",
 "obs": [],
@@ -394516,6 +394651,13 @@
 "EAX:6FD800:6FD914"
 ]
 },
+"EAX:6FDA00:6FDAC9": {
+"class": "double",
+"obs": [],
+"ents": [
+"EAX:6FDA00:6FDAC9"
+]
+},
 "EAX:6FDA00:6FDB0A": {
 "class": "unsigned char",
 "obs": [],
@@ -394596,6 +394738,13 @@
 "obs": [],
 "ents": [
 "EAX:6FDD50:6FE61D"
+]
+},
+"EAX:6FDD50:6FECCC": {
+"class": "double",
+"obs": [],
+"ents": [
+"EAX:6FDD50:6FECCC"
 ]
 },
 "EAX:6FDD50:6FF4A7": {
@@ -396918,9 +397067,11 @@
 "ents": []
 },
 "EAX:712170:7152DA": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:712170:7152DA"
+]
 },
 "EAX:712170:7152FE": {
 "class": "int",
@@ -396933,9 +397084,11 @@
 "ents": []
 },
 "EAX:712170:71538C": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:712170:71538C"
+]
 },
 "EAX:712170:7153B4": {
 "class": "int",
@@ -397324,7 +397477,7 @@
 "ents": []
 },
 "EAX:717AD0:717AD3": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
 "ents": [
 "EAX:717AD0:717AD3"
@@ -410574,6 +410727,13 @@
 "EAX:772080:77296C"
 ]
 },
+"EAX:7729F0:772A24": {
+"class": "double",
+"obs": [],
+"ents": [
+"EAX:7729F0:772A24"
+]
+},
 "EAX:772A50:772A64": {
 "class": "int",
 "obs": [],
@@ -410642,6 +410802,13 @@
 "obs": [],
 "ents": [
 "EAX:773030:77304C"
+]
+},
+"EAX:773070:773091": {
+"class": "double",
+"obs": [],
+"ents": [
+"EAX:773070:773091"
 ]
 },
 "EAX:7730E0:7730E5": {
@@ -429671,6 +429838,20 @@
 "obs": [],
 "ents": [
 "EAX:4165C0:4165F1"
+]
+},
+"EAX:4165C0:416694": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"EAX:4165C0:416694"
+]
+},
+"EAX:4165C0:41669A": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"EAX:4165C0:41669A"
 ]
 },
 "EAX:4166C0:416728": {
@@ -462921,9 +463102,11 @@
 ]
 },
 "EAX:57B440:57B73E": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:57B440:57B73E"
+]
 },
 "EAX:57B440:57B779": {
 "class": "int",
@@ -465198,9 +465381,11 @@
 ]
 },
 "EAX:59A6C0:59A8A0": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:59A6C0:59A8A0"
+]
 },
 "EAX:59A6C0:59A8B7": {
 "class": "int",
@@ -465273,9 +465458,11 @@
 ]
 },
 "EAX:59B6D0:59B6F4": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:59B6D0:59B6F4"
+]
 },
 "EAX:59B6D0:59B70B": {
 "class": "int",
@@ -466136,9 +466323,11 @@
 ]
 },
 "EAX:5A33F0:5A341C": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A33F0:5A341C"
+]
 },
 "EAX:5A33F0:5A349B": {
 "class": "int",
@@ -466191,9 +466380,11 @@
 ]
 },
 "EAX:5A38C0:5A3927": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A38C0:5A3927"
+]
 },
 "EAX:5A3AE0:5A3B62": {
 "class": "int",
@@ -466416,14 +466607,18 @@
 ]
 },
 "EAX:5A4B60:5A4DB9": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A4B60:5A4DB9"
+]
 },
 "EAX:5A4B60:5A4DC4": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A4B60:5A4DC4"
+]
 },
 "EAX:5A4B60:5A4E78": {
 "class": "int",
@@ -466574,19 +466769,25 @@
 ]
 },
 "EAX:5A6510:5A67A7": {
-"class": "BuildingClass",
+"class": "CellClass",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A6510:5A67A7"
+]
 },
 "EAX:5A6510:5A67B0": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A6510:5A67B0"
+]
 },
 "EAX:5A6510:5A67BB": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A6510:5A67BB"
+]
 },
 "EAX:5A6510:5A67DF": {
 "class": "unsigned int",
@@ -466722,14 +466923,18 @@
 ]
 },
 "EAX:5A7250:5A73F0": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7250:5A73F0"
+]
 },
 "EAX:5A7250:5A73FB": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7250:5A73FB"
+]
 },
 "EAX:5A7440:5A7584": {
 "class": "BuildingClass",
@@ -466763,14 +466968,18 @@
 ]
 },
 "EAX:5A7440:5A75F6": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7440:5A75F6"
+]
 },
 "EAX:5A7440:5A7601": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7440:5A7601"
+]
 },
 "EAX:5A76E0:5A7842": {
 "class": "int",
@@ -466778,14 +466987,18 @@
 "ents": []
 },
 "EAX:5A76E0:5A7883": {
-"class": "BuildingClass",
+"class": "CellClass",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A76E0:5A7883"
+]
 },
 "EAX:5A76E0:5A788C": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A76E0:5A788C"
+]
 },
 "EAX:5A76E0:5A7897": {
 "class": "int",
@@ -466795,9 +467008,11 @@
 ]
 },
 "EAX:5A76E0:5A78A2": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A76E0:5A78A2"
+]
 },
 "EAX:5A78D0:5A79DD": {
 "class": "int",
@@ -466821,14 +467036,18 @@
 ]
 },
 "EAX:5A7B40:5A7C9C": {
-"class": "BuildingClass",
+"class": "CellClass",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7B40:5A7C9C"
+]
 },
 "EAX:5A7B40:5A7CA8": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:5A7B40:5A7CA8"
+]
 },
 "EAX:5A7D00:5A7DDE": {
 "class": "int",
@@ -483701,6 +483920,13 @@
 "EAX:6A8B30:6A8D77"
 ]
 },
+"EAX:6A8B30:6A8DD8": {
+"class": "Char",
+"obs": [],
+"ents": [
+"EAX:6A8B30:6A8DD8"
+]
+},
 "EAX:6A8B30:6A8E09": {
 "class": "int",
 "obs": [],
@@ -491544,6 +491770,20 @@
 "obs": [],
 "ents": [
 "EAX:6F5190:6F52E8"
+]
+},
+"EAX:6F5190:6F5359": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"EAX:6F5190:6F5359"
+]
+},
+"EAX:6F5190:6F535F": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"EAX:6F5190:6F535F"
 ]
 },
 "EAX:6F5190:6F536C": {
@@ -499752,9 +499992,11 @@
 "ents": []
 },
 "EAX:712170:7152DF": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:712170:7152DF"
+]
 },
 "EAX:712170:715303": {
 "class": "int",
@@ -499767,9 +500009,11 @@
 "ents": []
 },
 "EAX:712170:715391": {
-"class": "int",
+"class": "unsigned char",
 "obs": [],
-"ents": []
+"ents": [
+"EAX:712170:715391"
+]
 },
 "EAX:712170:7153B9": {
 "class": "int",
@@ -515046,6 +515290,20 @@
 "RET:65ACB0"
 ]
 },
+"RET:459E50": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"RET:459E50"
+]
+},
+"RET:4DEBB0": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"RET:4DEBB0"
+]
+},
 "EAX:416AF0:416CE2": {
 "class": "int",
 "obs": [],
@@ -516397,6 +516655,13 @@
 "RET:4E19F0"
 ]
 },
+"EAX:4C54E0:4C55C1": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"EAX:4C54E0:4C55C1"
+]
+},
 "EAX:4CCFD0:4CD0CD": {
 "class": "int",
 "obs": [],
@@ -517006,6 +517271,13 @@
 "EAX:543B10:543B65"
 ]
 },
+"EAX:54AEC0:54AF28": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"EAX:54AEC0:54AF28"
+]
+},
 "EAX:54AEC0:54B166": {
 "class": "HouseClass",
 "obs": [],
@@ -517123,6 +517395,13 @@
 "obs": [],
 "ents": [
 "EAX:54D0F0:54D554"
+]
+},
+"EAX:54E3B0:54E3D2": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"EAX:54E3B0:54E3D2"
 ]
 },
 "EAX:556700:556722": {
@@ -517634,6 +517913,34 @@
 "obs": [],
 "ents": [
 "EAX:6F5090:6F516C"
+]
+},
+"RET:41C020": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"RET:41C020"
+]
+},
+"RET:426430": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"RET:426430"
+]
+},
+"RET:5227F0": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"RET:5227F0"
+]
+},
+"RET:746750": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"RET:746750"
 ]
 },
 "EAX:6F6CA0:6F6E49": {
@@ -563908,24 +564215,28 @@
 "ents": []
 },
 "R:633E50:ecx": {
-"class": "OwnerDrawControl",
+"class": "ObjectClass",
 "obs": [
 [
 24,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:633E50"
+]
 },
 "R:633E60:ecx": {
-"class": "SyncDelay",
+"class": "ObjectClass",
 "obs": [
 [
 16,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:633E60"
+]
 },
 "R:6342E0:ecx": {
 "class": "ArmorType",
@@ -563972,14 +564283,16 @@
 "ents": []
 },
 "R:634700:ecx": {
-"class": "IdleOrderEntry",
+"class": "ObjectClass",
 "obs": [
 [
 48,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:634700"
+]
 },
 "R:6347A0:ecx": {
 "class": "StringList",
@@ -576169,14 +576482,16 @@
 "ents": []
 },
 "R:726900:ecx": {
-"class": "AudioOptionsClass",
+"class": "TActionClass",
 "obs": [
 [
 68,
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:726900"
+]
 },
 "R:726910:ecx": {
 "class": "Property",
@@ -580788,14 +581103,16 @@
 "ents": []
 },
 "R:76F020:ecx": {
-"class": "ArmorType",
+"class": "RawFileClass",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:76F020"
+]
 },
 "M:76F0B0:this:0x4": {
 "class": "int",
@@ -638530,9 +638847,11 @@
 "ents": []
 },
 "S:531A00:+0x24": {
-"class": "BuildingClass",
+"class": "CreditsScreen",
 "obs": [],
-"ents": []
+"ents": [
+"S:531A00:+0x24"
+]
 },
 "S:533D20:+0x8": {
 "class": "INIClass",
@@ -740890,6 +741209,125 @@
 "obs": [],
 "ents": [
 "M:7C3670:this:0x710"
+]
+},
+"RET:41BFF0": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"RET:41BFF0"
+]
+},
+"RET:459D90": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"RET:459D90"
+]
+},
+"T:48ACF0": {
+"class": "Game",
+"obs": [],
+"ents": [
+"T:48ACF0"
+]
+},
+"RET:48ACF0": {
+"class": "double",
+"obs": [],
+"ents": [
+"RET:48ACF0"
+]
+},
+"RET:4C9C60": {
+"class": "Char",
+"obs": [],
+"ents": [
+"RET:4C9C60"
+]
+},
+"M:4C9C60:this:0x42": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"M:4C9C60:this:0x42"
+]
+},
+"M:578AC0:this:0xD80": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"M:578AC0:this:0xD80"
+]
+},
+"T:5CB1C0": {
+"class": "MPBattleClass",
+"obs": [],
+"ents": [
+"T:5CB1C0"
+]
+},
+"T:5CB1E0": {
+"class": "MPBattleClass",
+"obs": [],
+"ents": [
+"T:5CB1E0"
+]
+},
+"T:5CB200": {
+"class": "MPBattleClass",
+"obs": [],
+"ents": [
+"T:5CB200"
+]
+},
+"T:5CB220": {
+"class": "MPBattleClass",
+"obs": [],
+"ents": [
+"T:5CB220"
+]
+},
+"T:5D3810": {
+"class": "MPBattleClass",
+"obs": [],
+"ents": [
+"T:5D3810"
+]
+},
+"T:5D3830": {
+"class": "MPBattleClass",
+"obs": [],
+"ents": [
+"T:5D3830"
+]
+},
+"T:5D58E0": {
+"class": "MPBattleClass",
+"obs": [],
+"ents": [
+"T:5D58E0"
+]
+},
+"T:5D5900": {
+"class": "MPBattleClass",
+"obs": [],
+"ents": [
+"T:5D5900"
+]
+},
+"T:5D5920": {
+"class": "MPBattleClass",
+"obs": [],
+"ents": [
+"T:5D5920"
+]
+},
+"M:726900:this:0x44": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"M:726900:this:0x44"
 ]
 },
 "P:4379A0:2": {

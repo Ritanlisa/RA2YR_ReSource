@@ -688,7 +688,81 @@
      "void*"
     ]
    }
-  ]
+  ],
+  "round2": {
+   "generated": "2026-11-12T19:20:13",
+   "tool": ".omo/agents/bm/s35_bm2.py",
+   "scope": {
+    "wa_parts": 79,
+    "wa_match_rows": 1252,
+    "wa_match_in_clean_pool": 1252,
+    "already_collected": 0,
+    "new_addrs": 1252
+   },
+   "gate": {
+    "picked": 1252,
+    "candidate_recs": 53,
+    "dedupe_dropped": 1,
+    "conflict_excluded": 3,
+    "internal_conflict_excluded": 0,
+    "conflict_repair_dropped": 0,
+    "final": 49,
+    "per_channel": {
+     "bm-owner": 35,
+     "bm-sig": 6,
+     "bm-member": 8
+    },
+    "pre_gate_drops": {
+     "member-array": 3,
+     "member-vfptr": 3,
+     "owner-free": 1217,
+     "param-int-family": 9,
+     "ret-int-family": 6,
+     "ret-returns-this": 2,
+     "sig-small": 7
+    }
+   },
+   "conflict_excluded_ledger": [
+    {
+     "ent": "RET:4865B0",
+     "bm_types": [
+      "bool"
+     ],
+     "existing_types": [
+      "int",
+      "unsigned int"
+     ],
+     "via": "bm-sig",
+     "fn": "0x004865B0"
+    },
+    {
+     "ent": "RET:486650",
+     "bm_types": [
+      "bool"
+     ],
+     "existing_types": [
+      "int",
+      "unsigned int"
+     ],
+     "via": "bm-sig",
+     "fn": "0x00486650"
+    },
+    {
+     "ent": "RET:486670",
+     "bm_types": [
+      "bool"
+     ],
+     "existing_types": [
+      "int",
+      "unsigned int"
+     ],
+     "via": "bm-sig",
+     "fn": "0x00486670"
+    }
+   ],
+   "invariant": "no ent duplicates round-1 evidence (checked before append)"
+  },
+  "evidence_total": 1219
  },
  "evidence": [
   {
@@ -16999,6 +17073,659 @@
    "cc": "cdecl",
    "param": "p0",
    "proof": "codegen-consistent"
+  },
+  {
+   "fn": "0x0041BE60",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:41BE60",
+   "types": [
+    "IUnknown"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x0041BE70",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:41BE70",
+   "types": [
+    "IUnknown"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x0041BFF0",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:41BFF0",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x0041BFF0",
+   "size": 5,
+   "src": "bm2",
+   "ent": "RET:41BFF0",
+   "types": [
+    "unsigned char"
+   ],
+   "via": "bm-sig",
+   "tier": "strict",
+   "cc": "stdcall",
+   "proof": "codegen-consistent"
+  },
+  {
+   "fn": "0x0041C070",
+   "size": 7,
+   "src": "bm2",
+   "ent": "T:41C070",
+   "types": [
+    "FootClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x004263A0",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:4263A0",
+   "types": [
+    "ObjectClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00426430",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:426430",
+   "types": [
+    "ObjectClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00426430",
+   "size": 5,
+   "src": "bm2",
+   "ent": "RET:426430",
+   "types": [
+    "unsigned char"
+   ],
+   "via": "bm-sig",
+   "tier": "strict",
+   "cc": "stdcall",
+   "proof": "codegen-consistent"
+  },
+  {
+   "fn": "0x004264C0",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:4264C0",
+   "types": [
+    "ObjectClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x004264D0",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:4264D0",
+   "types": [
+    "IUnknown"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00459D90",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:459D90",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00459D90",
+   "size": 5,
+   "src": "bm2",
+   "ent": "RET:459D90",
+   "types": [
+    "unsigned char"
+   ],
+   "via": "bm-sig",
+   "tier": "strict",
+   "cc": "stdcall",
+   "proof": "codegen-consistent"
+  },
+  {
+   "fn": "0x00459E50",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:459E50",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00459E50",
+   "size": 5,
+   "src": "bm2",
+   "ent": "RET:459E50",
+   "types": [
+    "unsigned char"
+   ],
+   "via": "bm-sig",
+   "tier": "strict",
+   "cc": "stdcall",
+   "proof": "codegen-consistent"
+  },
+  {
+   "fn": "0x004865B0",
+   "size": 26,
+   "src": "bm2",
+   "ent": "T:4865B0",
+   "types": [
+    "CellClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00486650",
+   "size": 26,
+   "src": "bm2",
+   "ent": "T:486650",
+   "types": [
+    "CellClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00486670",
+   "size": 26,
+   "src": "bm2",
+   "ent": "T:486670",
+   "types": [
+    "CellClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x0048ACF0",
+   "size": 18,
+   "src": "bm2",
+   "ent": "T:48ACF0",
+   "types": [
+    "RulesClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x0048ACF0",
+   "size": 18,
+   "src": "bm2",
+   "ent": "RET:48ACF0",
+   "types": [
+    "double"
+   ],
+   "via": "bm-sig",
+   "tier": "strict",
+   "cc": null,
+   "proof": "codegen-consistent"
+  },
+  {
+   "fn": "0x004A3C00",
+   "size": 4,
+   "src": "bm2",
+   "ent": "T:4A3C00",
+   "types": [
+    "CreditsScreen"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x004BBC90",
+   "size": 6,
+   "src": "bm2",
+   "ent": "T:4BBC90",
+   "types": [
+    "DDraw"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x004C9C60",
+   "size": 8,
+   "src": "bm2",
+   "ent": "T:4C9C60",
+   "types": [
+    "FactoryClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "signals_cls",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x004C9C60",
+   "size": 8,
+   "src": "bm2",
+   "ent": "RET:4C9C60",
+   "types": [
+    "char"
+   ],
+   "via": "bm-sig",
+   "tier": "strict",
+   "cc": null,
+   "proof": "codegen-consistent"
+  },
+  {
+   "fn": "0x004C9C60",
+   "size": 8,
+   "src": "bm2",
+   "ent": "M:4C9C60:this:0x42",
+   "types": [
+    "char",
+    "unsigned char"
+   ],
+   "via": "bm-member",
+   "tier": "strict",
+   "member": "m042",
+   "decl_ty": "unsigned char",
+   "proof": "width-pinned"
+  },
+  {
+   "fn": "0x004F4C20",
+   "size": 6,
+   "src": "bm2",
+   "ent": "T:4F4C20",
+   "types": [
+    "Byte"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00578AC0",
+   "size": 7,
+   "src": "bm2",
+   "ent": "T:578AC0",
+   "types": [
+    "MapClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00578AC0",
+   "size": 7,
+   "src": "bm2",
+   "ent": "M:578AC0:this:0xD80",
+   "types": [
+    "char",
+    "unsigned char"
+   ],
+   "via": "bm-member",
+   "tier": "strict",
+   "member": "mD80",
+   "decl_ty": "unsigned char",
+   "proof": "width-pinned"
+  },
+  {
+   "fn": "0x005CB1C0",
+   "size": 19,
+   "src": "bm2",
+   "ent": "T:5CB1C0",
+   "types": [
+    "MPBattleClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x005CB1E0",
+   "size": 19,
+   "src": "bm2",
+   "ent": "T:5CB1E0",
+   "types": [
+    "MPBattleClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x005CB200",
+   "size": 19,
+   "src": "bm2",
+   "ent": "T:5CB200",
+   "types": [
+    "MPBattleClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x005CB220",
+   "size": 19,
+   "src": "bm2",
+   "ent": "T:5CB220",
+   "types": [
+    "MPBattleClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x005D3810",
+   "size": 19,
+   "src": "bm2",
+   "ent": "T:5D3810",
+   "types": [
+    "MPBattleClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x005D3830",
+   "size": 19,
+   "src": "bm2",
+   "ent": "T:5D3830",
+   "types": [
+    "MPBattleClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x005D58E0",
+   "size": 19,
+   "src": "bm2",
+   "ent": "T:5D58E0",
+   "types": [
+    "MPBattleClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x005D5900",
+   "size": 19,
+   "src": "bm2",
+   "ent": "T:5D5900",
+   "types": [
+    "MPBattleClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x005D5920",
+   "size": 19,
+   "src": "bm2",
+   "ent": "T:5D5920",
+   "types": [
+    "MPBattleClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00633E50",
+   "size": 4,
+   "src": "bm2",
+   "ent": "T:633E50",
+   "types": [
+    "ObjectClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00633E50",
+   "size": 4,
+   "src": "bm2",
+   "ent": "M:633E50:this:0x18",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "bm-member",
+   "tier": "strict",
+   "member": "nextArrayIndex",
+   "decl_ty": "int",
+   "proof": "width-pinned"
+  },
+  {
+   "fn": "0x00633E60",
+   "size": 4,
+   "src": "bm2",
+   "ent": "T:633E60",
+   "types": [
+    "ObjectClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00633E60",
+   "size": 4,
+   "src": "bm2",
+   "ent": "M:633E60:this:0x10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "bm-member",
+   "tier": "strict",
+   "member": "uniqueId",
+   "decl_ty": "int",
+   "proof": "width-pinned"
+  },
+  {
+   "fn": "0x00634700",
+   "size": 4,
+   "src": "bm2",
+   "ent": "T:634700",
+   "types": [
+    "ObjectClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00634700",
+   "size": 4,
+   "src": "bm2",
+   "ent": "M:634700:this:0x30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "bm-member",
+   "tier": "strict",
+   "member": "nextObject",
+   "decl_ty": "int",
+   "proof": "width-pinned"
+  },
+  {
+   "fn": "0x00717AD0",
+   "size": 4,
+   "src": "bm2",
+   "ent": "T:717AD0",
+   "types": [
+    "ObjectTypeClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00726900",
+   "size": 5,
+   "src": "bm2",
+   "ent": "T:726900",
+   "types": [
+    "TActionClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "backfill",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x00726900",
+   "size": 5,
+   "src": "bm2",
+   "ent": "M:726900:this:0x44",
+   "types": [
+    "char",
+    "unsigned char"
+   ],
+   "via": "bm-member",
+   "tier": "strict",
+   "member": "TActionClass_field_44",
+   "decl_ty": "unsigned char",
+   "proof": "width-pinned"
+  },
+  {
+   "fn": "0x0076F020",
+   "size": 4,
+   "src": "bm2",
+   "ent": "T:76F020",
+   "types": [
+    "RawFileClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "proto_this",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x0076F020",
+   "size": 4,
+   "src": "bm2",
+   "ent": "M:76F020:this:0x4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "bm-member",
+   "tier": "strict",
+   "member": "FilePointer",
+   "decl_ty": "int",
+   "proof": "width-pinned"
+  },
+  {
+   "fn": "0x0076F070",
+   "size": 4,
+   "src": "bm2",
+   "ent": "T:76F070",
+   "types": [
+    "RawFileClass"
+   ],
+   "via": "bm-owner",
+   "tier": "strict",
+   "cls_src": "proto_this",
+   "proof": "ledger-attribution"
+  },
+  {
+   "fn": "0x0076F070",
+   "size": 4,
+   "src": "bm2",
+   "ent": "M:76F070:this:0x4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "bm-member",
+   "tier": "strict",
+   "member": "FilePointer",
+   "decl_ty": "int",
+   "proof": "width-pinned"
   }
  ]
 }
