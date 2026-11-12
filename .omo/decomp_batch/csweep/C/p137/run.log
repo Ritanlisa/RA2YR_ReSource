@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p137\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a7d20 _DynamicVectorClass_PAVDiskLaserClass::ClearBuffer -> _DynamicVectorClass_PAVDiskLaserClass
+[conv] 0x4b9be0 _DynamicVectorClass_PAUButtonFadeEffect::Clear -> _DynamicVectorClass_PAUButtonFadeEffect
+[conv] 0x4b9c40 _DynamicVectorClass_PAUCrossDissolveEffect::Clear_0 -> _DynamicVectorClass_PAUCrossDissolveEffect
+[conv] 0x4c2c40 _DynamicVectorClass_PAVEBolt::Destroy -> _DynamicVectorClass_PAVEBolt
+[conv] 0x4c49a0 _DynamicVectorClass_PAVEgoClass::Destroy -> _DynamicVectorClass_PAVEgoClass
+[conv] 0x4c5b60 _DynamicVectorClass_PAVEMPulseClass::Destroy -> _DynamicVectorClass_PAVEMPulseClass
+[conv] 0x4ca890 DynamicVector::processScriptEvent -> DynamicVector
+[conv] 0x4d2930 DynamicVector::getMissionState -> DynamicVector
+[conv] 0x4e0190 DynamicVector::updateMission -> DynamicVector
+[conv] 0x4e01f0 FoggedObjectClass::ClearBuffer -> FoggedObjectClass
+[conv] 0x4e82f0 _DynamicVectorClass_PAVBuildingClass::ClearBuffer -> _DynamicVectorClass_PAVBuildingClass
+[conv] 0x4e8350 _DynamicVectorClass_PAVSuperClass::Destroy -> _DynamicVectorClass_PAVSuperClass
+[conv] 0x4e83b0 _DynamicVectorClass_PAVAITriggerTypeClass::Destroy -> _DynamicVectorClass_PAVAITriggerTypeClass
+[conv] 0x4e8410 _DynamicVectorClass_PAVBuildingLightClass::Destroy -> _DynamicVectorClass_PAVBuildingLightClass
+[conv] 0x4e8470 _DynamicVectorClass_PAVParticleClass::GetClassIdentifier -> _DynamicVectorClass_PAVParticleClass
+[conv] 0x4e84d0 _DynamicVectorClass_PAVTeamClass::Destroy -> _DynamicVectorClass_PAVTeamClass
+[conv] 0x4e8540 _DynamicVectorClass_PAVTriggerClass::Destroy_0 -> _DynamicVectorClass_PAVTriggerClass
+[conv] 0x4e85a0 _DynamicVectorClass_PAVTriggerTypeClass::Destroy_1 -> _DynamicVectorClass_PAVTriggerTypeClass
+[conv] 0x4e8600 _DynamicVectorClass_PAVTubeClass::Destroy -> _DynamicVectorClass_PAVTubeClass
+[conv] 0x4e8660 _DynamicVectorClass_PAVParticleSystemClass::Destroy_0 -> _DynamicVectorClass_PAVParticleSystemClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVDiskLaserClass rc=0
+[era] _DynamicVectorClass_PAUButtonFadeEffect rc=0
+[era] _DynamicVectorClass_PAUCrossDissolveEffect rc=0
+[era] _DynamicVectorClass_PAVEBolt rc=0
+[era] _DynamicVectorClass_PAVEgoClass rc=0
+[era] _DynamicVectorClass_PAVEMPulseClass rc=0
+[era] DynamicVector            rc=0
+[era] FoggedObjectClass        rc=2
+[era] _DynamicVectorClass_PAVBuildingClass rc=0
+[era] _DynamicVectorClass_PAVSuperClass rc=0
+[era] _DynamicVectorClass_PAVAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVBuildingLightClass rc=0
+[era] _DynamicVectorClass_PAVParticleClass rc=0
+[era] _DynamicVectorClass_PAVTeamClass rc=0
+[era] _DynamicVectorClass_PAVTriggerClass rc=0
+[era] _DynamicVectorClass_PAVTriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVTubeClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a7d20   MISMATCH         _DynamicVectorClass_PAVDiskLaserClass::ClearBuffer
+[diff] 0x4b9be0   MISMATCH         _DynamicVectorClass_PAUButtonFadeEffect::Clear
+[diff] 0x4b9c40   MISMATCH         _DynamicVectorClass_PAUCrossDissolveEffect::Clear_0
+[diff] 0x4c2c40   MISMATCH         _DynamicVectorClass_PAVEBolt::Destroy
+[diff] 0x4c49a0   MISMATCH         _DynamicVectorClass_PAVEgoClass::Destroy
+[diff] 0x4c5b60   MISMATCH         _DynamicVectorClass_PAVEMPulseClass::Destroy
+[diff] 0x4ca890   MISMATCH         DynamicVector::processScriptEvent
+[diff] 0x4d2930   MISMATCH         DynamicVector::getMissionState
+[diff] 0x4e0190   MISMATCH         DynamicVector::updateMission
+[diff] 0x4e82f0   MISMATCH         _DynamicVectorClass_PAVBuildingClass::ClearBuffer
+[diff] 0x4e8350   MISMATCH         _DynamicVectorClass_PAVSuperClass::Destroy
+[diff] 0x4e83b0   MISMATCH         _DynamicVectorClass_PAVAITriggerTypeClass::Destroy
+[diff] 0x4e8410   MISMATCH         _DynamicVectorClass_PAVBuildingLightClass::Destroy
+[diff] 0x4e8470   MISMATCH         _DynamicVectorClass_PAVParticleClass::GetClassIdentifier
+[diff] 0x4e84d0   MISMATCH         _DynamicVectorClass_PAVTeamClass::Destroy
+[diff] 0x4e8540   MISMATCH         _DynamicVectorClass_PAVTriggerClass::Destroy_0
+[diff] 0x4e85a0   MISMATCH         _DynamicVectorClass_PAVTriggerTypeClass::Destroy_1
+[diff] 0x4e8600   MISMATCH         _DynamicVectorClass_PAVTubeClass::Destroy
+[diff] 0x4e8660   MISMATCH         _DynamicVectorClass_PAVParticleSystemClass::Destroy_0
+[ledger] 0x4a7d20 _DynamicVectorClass_PAVDiskLaserClass::ClearBuffer -> NG (attempt 1)
+[ledger] 0x4b9be0 _DynamicVectorClass_PAUButtonFadeEffect::Clear -> NG (attempt 1)
+[ledger] 0x4b9c40 _DynamicVectorClass_PAUCrossDissolveEffect::Clear_0 -> NG (attempt 1)
+[ledger] 0x4c2c40 _DynamicVectorClass_PAVEBolt::Destroy -> NG (attempt 1)
+[ledger] 0x4c49a0 _DynamicVectorClass_PAVEgoClass::Destroy -> NG (attempt 1)
+[ledger] 0x4c5b60 _DynamicVectorClass_PAVEMPulseClass::Destroy -> NG (attempt 1)
+[ledger] 0x4ca890 DynamicVector::processScriptEvent -> NG (attempt 1)
+[ledger] 0x4d2930 DynamicVector::getMissionState -> NG (attempt 1)
+[ledger] 0x4e0190 DynamicVector::updateMission -> NG (attempt 1)
+[ledger] 0x4e01f0 FoggedObjectClass::ClearBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e82f0 _DynamicVectorClass_PAVBuildingClass::ClearBuffer -> NG (attempt 1)
+[ledger] 0x4e8350 _DynamicVectorClass_PAVSuperClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e83b0 _DynamicVectorClass_PAVAITriggerTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8410 _DynamicVectorClass_PAVBuildingLightClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8470 _DynamicVectorClass_PAVParticleClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x4e84d0 _DynamicVectorClass_PAVTeamClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8540 _DynamicVectorClass_PAVTriggerClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e85a0 _DynamicVectorClass_PAVTriggerTypeClass::Destroy_1 -> NG (attempt 1)
+[ledger] 0x4e8600 _DynamicVectorClass_PAVTubeClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8660 _DynamicVectorClass_PAVParticleSystemClass::Destroy_0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 16,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p137\batch_report.json
