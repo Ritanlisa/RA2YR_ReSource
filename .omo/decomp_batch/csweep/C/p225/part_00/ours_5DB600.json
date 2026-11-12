@@ -1,0 +1,45 @@
+{
+ "symbol": "?PlayerSkirmishSlotHandler_Handle_5DB600@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::PlayerSkirmishSlotHandler_Handle_5DB600",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "8bd133c0575083c228b971000000bf3800000050526a01f3aba2fcd7a80068c7010000a2fed7a8006838000000b900000000c6053800000008c6056700000004e8000000005fc3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D600@@3IA",
+   "sym_key": "DataGlobal_A8D600"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D600@@3IA",
+   "sym_key": "DataGlobal_A8D600"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D600@@3IA",
+   "sym_key": "DataGlobal_A8D600"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D600@@3IA",
+   "sym_key": "DataGlobal_A8D600"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?SendMessage@Network@@QAEHHHHHHH@Z",
+   "sym_key": "Network::SendMessage"
+  }
+ ]
+}

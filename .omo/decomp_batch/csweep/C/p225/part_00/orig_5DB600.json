@@ -1,0 +1,11 @@
+{
+ "addr": "0x5DB600",
+ "name": "PlayerSkirmishSlotHandler_Handle_5DB600",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5DB600",
+ "bytes_hex": "8bd157b97100000033c0bf38d6a8006a00f3ab83c2286a0066ab526a0168c70100006838d6a800aab9c0e9a800c70538d6a80008000000c70567d6a80004000000e8aa5af6ff5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

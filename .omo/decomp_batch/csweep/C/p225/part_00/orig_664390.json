@@ -1,0 +1,11 @@
+{
+ "addr": "0x664390",
+ "name": "Network::handleDisconnect",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x664390",
+ "bytes_hex": "5356578bf933f68b471085c07e218b5c24108b4704538b0cb04151e87049160083c40885c074118b4710463bf07ce35f5e6633c05bc204008b57045f8b04b25e5b668b4025c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

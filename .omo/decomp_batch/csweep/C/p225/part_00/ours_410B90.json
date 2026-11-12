@@ -1,0 +1,39 @@
+{
+ "symbol": "?WriteINI@AbstractTypeClass@@QAEDPAD@Z",
+ "sym_key": "AbstractTypeClass::WriteINI",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf1576a008b7e248bcb57e8000000008b466833c98a0d000000005051578bcbe8000000008b4e408d464085c9741233d2508a15000000008bcb5257e8000000005f5eb0015bc20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Name@@3EA",
+   "sym_key": "g_INI_Key_Name"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_UIName@@3EA",
+   "sym_key": "g_INI_Key_UIName"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

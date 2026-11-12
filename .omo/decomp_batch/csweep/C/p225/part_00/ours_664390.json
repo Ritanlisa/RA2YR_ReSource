@@ -1,0 +1,21 @@
+{
+ "symbol": "?handleDisconnect@Network@@QAEFPAX@Z",
+ "sym_key": "Network::handleDisconnect",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "53568bf15733ff8b461085c07f095f5e6633c05bc204008b46048b5c2410538b084151e80000000083c40885c0741d8b4610473bf87dd78b5604538b04ba4050e80000000083c40885c075e38b4e048b14b95f5e5b668b4225c20400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B54E0",
+ "name": "DropListClass::RemoveItem",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B54E0",
+ "bytes_hex": "538b5c240856578b7c24148bf15753e82cc502008b96a80000008b86b00000008d8eb00000000fbf520403d75253ff50648b56148b46508d4e5003d35752ff50645f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

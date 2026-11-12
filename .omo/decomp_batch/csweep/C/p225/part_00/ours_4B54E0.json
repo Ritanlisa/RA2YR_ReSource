@@ -1,0 +1,15 @@
+{
+ "symbol": "?RemoveItem@DropListClass@@QAEHHH@Z",
+ "sym_key": "DropListClass::RemoveItem",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "538b5c240856578b7c24148bf15753e8000000008b86a80000008d96b00000000fbf480403cf515352ff96140100008b56148b4e508d465003d3575250ff51645f5e5bc20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Set@Rect_Point@@QAEHHH@Z",
+   "sym_key": "Rect_Point::Set"
+  }
+ ]
+}

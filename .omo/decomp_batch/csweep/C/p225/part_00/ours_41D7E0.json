@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetWarheadSound@Warhead@@QAE_NH@Z",
+ "sym_key": "Warhead::GetWarheadSound",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "568bf18b464c055001000050e80000000083c40484c074058b4648eb038b46448a4e3c84c9750e8b4e4003c8a1000000003bc87e118b5424088b46503bd0750633c05ec20400b8010000005ec20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

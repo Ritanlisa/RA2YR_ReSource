@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetGlobalToByID@ScenarioClass@@QAEDID@Z",
+ "sym_key": "ScenarioClass::SetGlobalToByID",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "8b4424045783f8328bf9720632c05fc208008d0c8053568d14c88a4c24148a9c97281d00008db497281d00003ad974130fbec9890e8bc8c687aa34000001e8000000008ac35e5b5fc20800",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?UpdateAllTypes@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::UpdateAllTypes"
+  }
+ ]
+}

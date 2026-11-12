@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F69C0",
+ "name": "ObjectClass::CoordToCell",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F69C0",
+ "bytes_hex": "83ec108b018d5424046a0052ff504c8bc88b019981e2ff00000003c2c1f80866894424008b41049981e2ff00000003c2c1f80866894424028b4424148b4c2400890883c410c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

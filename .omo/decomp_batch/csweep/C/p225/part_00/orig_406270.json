@@ -1,0 +1,11 @@
+{
+ "addr": "0x406270",
+ "name": "AudioMixer::RequestOrEndBuffer",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x406270",
+ "bytes_hex": "8b411c83f803752081fa004000007607ba00400000eb0685d27d0233d281c108010000e9d80e000081fa004000007607ba00400000eb0685d27d0233d281c108010000e9980e0000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

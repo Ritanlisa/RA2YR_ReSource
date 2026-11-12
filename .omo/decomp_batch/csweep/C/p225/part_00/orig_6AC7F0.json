@@ -1,0 +1,11 @@
+{
+ "addr": "0x6AC7F0",
+ "name": "ObjectClass::DestructWithRadar",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6AC7F0",
+ "bytes_hex": "538bd956578db3ec530000bf040000006860d2400081ee940f00006a4b6a3456e8bbe7d5ff4f75e88bcbe8e163fafff644241001740953e811c3110083c4045f8bc35e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

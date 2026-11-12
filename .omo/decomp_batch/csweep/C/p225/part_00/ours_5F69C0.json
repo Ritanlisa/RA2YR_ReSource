@@ -1,0 +1,8 @@
+{
+ "symbol": "?CoordToCell@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::CoordToCell",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b0183ec108d5424046a005251ff504c8b54240033c98a48058b44240080e2000bca890883c410c3",
+ "relocs": []
+}

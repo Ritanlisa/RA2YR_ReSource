@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p225\part_00
+=== convert (20 addrs) ===
+[conv] 0x410b90 AbstractTypeClass::WriteINI -> AbstractTypeClass
+[conv] 0x5be9e0 TabClass::Read -> TabClass
+[conv] 0x6938f0 ScrollClass::Read -> ScrollClass
+[conv] 0x6ac7f0 SidebarClass::DestructWithRadar -> SidebarClass
+[conv] 0x455d50 BuildingClass::AssignDestination_SyncLog -> BuildingClass
+[conv] 0x4a08d0 ConnectionPointClass::sub_4A08D0 -> ConnectionPointClass
+[conv] 0x4b54e0 DropListClass::RemoveItem -> DropListClass
+[conv] 0x701140 TechnoClass::CheckHealthDiff -> TechnoClass
+[conv] 0x41d7e0 Warhead::GetWarheadSound -> Warhead
+[conv] 0x5bcc90 TextBuffer::Init -> TextBuffer
+[conv] 0x5db600 ObjectClass::PlayerSkirmishSlotHandler_Handle_5DB600 -> ObjectClass
+[conv] 0x5f1f20 ObjectClass::sub_5F1F20 -> ObjectClass
+[conv] 0x664390 Network::handleDisconnect -> Network
+[conv] 0x689670 ScenarioClass::SetGlobalToByID -> ScenarioClass
+[conv] 0x689910 ScenarioClass::SetLocalToByID -> ScenarioClass
+[conv] 0x793cd0 ObjectClass::sub_793CD0 -> ObjectClass
+[conv] 0x4018c0 sub_4018C0 -> _addr_40
+[conv] 0x5f69c0 IUnknown::CoordToCell -> IUnknown
+[conv] 0x406270 AudioMixer::RequestOrEndBuffer -> AudioMixer
+[conv] 0x527c10 INIClass::SetRect -> INIClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractTypeClass        rc=0
+[era] TabClass                 rc=0
+[era] ScrollClass              rc=0
+[era] SidebarClass             rc=0
+[era] BuildingClass            rc=2
+[era] ConnectionPointClass     rc=0
+[era] DropListClass            rc=0
+[era] TechnoClass              rc=2
+[era] Warhead                  rc=0
+[era] TextBuffer               rc=2
+[era] ObjectClass              rc=2
+[era] Network                  rc=0
+[era] ScenarioClass            rc=2
+[era] _addr_40                 rc=0
+[era] IUnknown                 rc=0
+[era] AudioMixer               rc=0
+[era] INIClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x410b90   MISMATCH         AbstractTypeClass::WriteINI
+[diff] 0x5be9e0   MISMATCH         TabClass::Read
+[diff] 0x6938f0   MISMATCH         ScrollClass::Read
+[diff] 0x6ac7f0   MISMATCH         SidebarClass::DestructWithRadar
+[diff] 0x4a08d0   MISMATCH         ConnectionPointClass::sub_4A08D0
+[diff] 0x4b54e0   MISMATCH         DropListClass::RemoveItem
+[diff] 0x41d7e0   MISMATCH         Warhead::GetWarheadSound
+[diff] 0x5db600   MISMATCH         ObjectClass::PlayerSkirmishSlotHandler_Handle_5DB600
+[diff] 0x664390   MISMATCH         Network::handleDisconnect
+[diff] 0x689670   MISMATCH         ScenarioClass::SetGlobalToByID
+[diff] 0x4018c0   MISMATCH         sub_4018C0
+[diff] 0x5f69c0   MISMATCH         IUnknown::CoordToCell
+[diff] 0x406270   MISMATCH         AudioMixer::RequestOrEndBuffer
+[ledger] 0x410b90 AbstractTypeClass::WriteINI -> NG (attempt 1)
+[ledger] 0x5be9e0 TabClass::Read -> NG (attempt 1)
+[ledger] 0x6938f0 ScrollClass::Read -> NG (attempt 1)
+[ledger] 0x6ac7f0 SidebarClass::DestructWithRadar -> NG (attempt 1)
+[ledger] 0x455d50 BuildingClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a08d0 ConnectionPointClass::sub_4A08D0 -> NG (attempt 1)
+[ledger] 0x4b54e0 DropListClass::RemoveItem -> NG (attempt 1)
+[ledger] 0x701140 TechnoClass::CheckHealthDiff -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41d7e0 Warhead::GetWarheadSound -> NG (attempt 1)
+[ledger] 0x5bcc90 TextBuffer::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5db600 ObjectClass::PlayerSkirmishSlotHandler_Handle_5DB600 -> NG (attempt 1)
+[ledger] 0x5f1f20 ObjectClass::sub_5F1F20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x664390 Network::handleDisconnect -> NG (attempt 1)
+[ledger] 0x689670 ScenarioClass::SetGlobalToByID -> NG (attempt 1)
+[ledger] 0x689910 ScenarioClass::SetLocalToByID -> COMPILE_FAIL (attempt 1)
+[ledger] 0x793cd0 ObjectClass::sub_793CD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4018c0 sub_4018C0 -> NG (attempt 1)
+[ledger] 0x5f69c0 IUnknown::CoordToCell -> NG (attempt 1)
+[ledger] 0x406270 AudioMixer::RequestOrEndBuffer -> NG (attempt 1)
+[ledger] 0x527c10 INIClass::SetRect -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "regalloc": 3,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p225\batch_report.json

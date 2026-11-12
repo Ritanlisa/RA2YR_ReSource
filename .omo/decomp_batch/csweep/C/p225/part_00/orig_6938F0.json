@@ -1,0 +1,11 @@
+{
+ "addr": "0x6938F0",
+ "name": "ScrollClass::Read",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6938F0",
+ "bytes_hex": "538bd956578db3ec530000bf040000006860d2400081ee940f00006a4b6a3456e8bb76d7ff4f75e88bcbe8e1f2fbfff644241001740953e81152130083c4045f8bc35e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

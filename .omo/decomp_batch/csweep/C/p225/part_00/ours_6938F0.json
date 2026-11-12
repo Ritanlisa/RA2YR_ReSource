@@ -1,0 +1,33 @@
+{
+ "symbol": "?Read@ScrollClass@@QAEPADD@Z",
+ "sym_key": "ScrollClass::Read",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "538bd956578db3ec530000bf0400000081ee940f000068000000006a4b6a348bcee8000000004f75e78bcbe800000000f644241001740953e80000000083c4045f8bc35e5bc20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?nullsub_56@@YAHPBX0@Z",
+   "sym_key": "nullsub_56"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?ForEachReverse@Array@@QAEHHHPAX@Z",
+   "sym_key": "Array::ForEachReverse"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?Destruct@RadarClass@@QAEHXZ",
+   "sym_key": "RadarClass::Destruct"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

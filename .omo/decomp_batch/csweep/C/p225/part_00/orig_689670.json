@@ -1,0 +1,11 @@
+{
+ "addr": "0x689670",
+ "name": "ScenarioClass::SetGlobalToByID",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x689670",
+ "bytes_hex": "8b4424045783f8328bf973368d0c808d140753568a9ccab01c00008db4cab01c00008a4c24143ad97410880e8bc8c687aa34000001e846c105008ac35e5b5fc2080032c05fc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
