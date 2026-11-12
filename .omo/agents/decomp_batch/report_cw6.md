@@ -45,7 +45,7 @@
 | 驱动 | `tools/decomp_sys/run_wa.py --batch cw6_stale_targets.json --run cw6_run --tag cw6`（20 件/part，part 完成即 `git commit`，失败重试 3 次） |
 | part 数 | 48（p00–p47；末 part 7 件） |
 | 每 part 提交内容 | `<run>/pXX/`（cpp/hpp/obj/part_report/batch_report/run.log）+ part 批文件 + `results.jsonl` + `timings.jsonl` + `status.json` |
-| 提交数 | **52** = 48 part + 1（`cw6_p42` 提交重试，见 §9）+ 3（DUP_SKIP 单件重跑） |
+| 提交数 | **52** = 48 part + 1（`cw6_p42` 提交重试，见 §9）+ 3（DUP_SKIP 单件重跑）。同一 git 区间 `9437b23be..HEAD` 内另有 1 个**外来 commit**（`40096c301`，并发 BM 会话），不属本轮 |
 | 分析脚本 | `cw6_analyze.py`（转化矩阵/账本对账）、`cw6_regress.py`（零回归）、`cw6_workorder.py`（残墙工单） |
 | 实测工件 | `cw6_prep/cw6_result.json`、`cw6_prep/cw6_regress.json` |
 
@@ -293,8 +293,13 @@ C2440 210（live 192 + evidence 18，见备弹四态优先级）单列：备弹�
 2. **预投影的两条假设被证伪**（§2.3）：CW5-10 `uintN_t` 对 C2146 只有 25.8%，`__usercall` strip 0/6。
    下一轮若沿用备弹 §6.1 的 W20（类型/声明供给），必须以本轮的新首错分布为输入，不能沿用旧口径。
 3. **`cw6_p42` 的首次提交失败（rc=128）**：part 工件已生成并落盘，`git add` 成功但 `git commit` 返回 128
-   （未捕获 stderr，原因未取到）；随后手工同内容提交成功（`515857181`）。账本/`results.jsonl`
-   在 `cw6_p43` 的提交里一并入库，故无数据丢失；但**这是驱动的一个已知脆弱点**（未做 stderr 捕获）。
+   （`run_wa.commit_part` 未捕获 stderr，原因未取到）；随后手工同内容提交成功（`515857181`）。
+   **最可能原因 = 并发会话的 git index 竞争**（本轮窗口内存在外来 commit `40096c301`
+   "minclass: BM round 2"，由另一会话提交，改动 `anchors/*`/`minclass_solver.py`/`AGENTS.md`）；
+   该推断与"重试即成功"一致，但因未留 stderr **不能确证**。账本/`results.jsonl` 已在 `cw6_p43`
+   的提交里一并入库，无数据丢失。**这是驱动的已知脆弱点**（无 stderr 捕获）。
+   并发会话**不影响本轮账本对账**：`status.json` 的前/后快照逐地址比对是文件级证据，
+   与 git 提交时序无关（§3.3 目标集外 0 变动）。
 4. **3 件 DUP_SKIP**（同 part 内两个地址 emit 同一个 `Class::method`）：首轮按 `DUP_SKIP` 记账会把
    账本写成 PENDING（`record_ledger` 对未知 verdict 的兜底），本轮已用单件 part 重跑收口为 MISMATCH
    （`0x4b9ed0` / `0x6bf440` / `0x6bf5c0`）。最终 PENDING 31 不变。**下一轮若批量重跑需注意此坑**。
