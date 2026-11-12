@@ -1,0 +1,33 @@
+{
+ "symbol": "?WriteAudioStreamToFile@@YIHHPAHHPAD@Z",
+ "sym_key": "Unnamed::WriteAudioStreamToFile",
+ "size": 197,
+ "link_base": 0,
+ "bytes_hex": "515355568bda578bf933d2e8000000008b44241c85c075088d4424138944241c8b4c241c8b6c2418c701000000008b47083bc57e028bc585c0747d8b4f145385c9506a0174198b570452e8000000008bf083c41085f60f94c085f67c19eb1e8b470450e8000000008bf083c41085f60f94c085f67d07c747240000048084c0752083feff74288bd68bcfe8000000008b44241c2bee8b0803ce85ed89087419eb8d5f5e5db8020000005b59c208005f5e5d33c05b59c208005f5e5db8010000005b59c20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?ReadAudioStream@@YIHPAXH@Z",
+   "sym_key": "ReadAudioStream"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Audio_Write_7C95D3@@YAIPAXHH0@Z",
+   "sym_key": "Audio_Write_7C95D3"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Audio_Write@@YAIPAXHH0@Z",
+   "sym_key": "Audio_Write"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?ReadAudioStream@@YIHPAXH@Z",
+   "sym_key": "ReadAudioStream"
+  }
+ ]
+}

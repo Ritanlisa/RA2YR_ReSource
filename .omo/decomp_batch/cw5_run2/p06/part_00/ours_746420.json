@@ -1,0 +1,33 @@
+{
+ "symbol": "?CaptureTurret@TechnoClass@@QAEHPAH@Z",
+ "sym_key": "TechnoClass::CaptureTurret",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bf18b977402000085d20f84930000008b87ec0200008b8ff402000083f8ffc74424100000000074150fbe1da0010000558beb2be83be95d7d102bc303c885c97408c7442410010000008996740200008972246a078bcec7877402000000000000e8000000008b44241085c074358b9e7c0300008b06436a0756899e7c030000ff90180300000fbe0da00100008b542410898eec0200008996f00200008986f40200008b0757ff90840000008b8888060000518bcee8000000005f5e5bc20400",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?SetTurret@UnitClass@@QAEHI@Z",
+   "sym_key": "UnitClass::SetTurret"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?SetTurret@UnitClass@@QAEHI@Z",
+   "sym_key": "UnitClass::SetTurret"
+  }
+ ]
+}

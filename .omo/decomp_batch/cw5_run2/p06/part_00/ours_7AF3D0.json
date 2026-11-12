@@ -1,0 +1,201 @@
+{
+ "symbol": "?GetRegionStringWOL@ObjectClass@@QAEPAPADXZ",
+ "sym_key": "ObjectClass::GetRegionStringWOL",
+ "size": 230,
+ "link_base": 0,
+ "bytes_hex": "a01400000056a8018bf175230c016800000000b910000000a214000000e8000000006800000000e80000000083c404a014000000a80275230c026800000000b918000000a214000000e8000000006800000000e80000000083c4048a0d14000000b00484c875240ac86800000000880d14000000b96c000000e8000000006800000000e80000000083c40483fe017507b8100000005ec383fe027507b8180000005ec383fe037507b86c0000005ec38a0d14000000b00884c875240ac86800000000880d14000000b900000000e8000000006800000000e80000000083c404b8000000005ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "??_C@_02GHFJ@NA?$AA@",
+   "sym_key": "??_C@_02GHFJ@NA?$AA@"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?unknown_libname_68@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_68"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "??_C@_02OKNO@EU?$AA@",
+   "sym_key": "??_C@_02OKNO@EU?$AA@"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?unknown_libname_67@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_67"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "??_C@_02EPAG@AS?$AA@",
+   "sym_key": "??_C@_02EPAG@AS?$AA@"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?unknown_libname_66@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_66"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "??_C@_02CNFA@XX?$AA@",
+   "sym_key": "??_C@_02CNFA@XX?$AA@"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?unknown_libname_65@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_65"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77EB0@@3IA",
+   "sym_key": "DataGlobal_B77EB0"
+  }
+ ]
+}

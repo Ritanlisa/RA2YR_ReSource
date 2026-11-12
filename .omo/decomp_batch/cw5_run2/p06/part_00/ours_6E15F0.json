@@ -1,0 +1,51 @@
+{
+ "symbol": "?ReadINIEntry@ObjectClass@@QAEDHHHH@Z",
+ "sym_key": "ObjectClass::ReadINIEntry",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "83ec40a100000000b900000000c64424200085c9c780f41100000000000074176a1f8d5424045152e80000000083c40cc644241f00eb05c644240000a100000000578d4c24048db8f81100003bcf740d56b9080000008d742408f3a55eb9f8010000e800000000b0015f83c440c21000",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?PreDraw@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::PreDraw"
+  }
+ ]
+}

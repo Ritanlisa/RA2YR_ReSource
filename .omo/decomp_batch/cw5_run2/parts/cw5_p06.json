@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x409030",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x7afad0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x746420",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x5bf390",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x690a10",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x7d6830",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x476420",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4d02b0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x6e15f0",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x674650",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x6e35f0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x436f40",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x731af0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x7af3d0",
+  "family": "A1",
+  "shape": "A1 registry stub pointer slot vs scalar arg",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x5ce7d0",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x5d1b30",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x6ce0b0",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x7b7f90",
+  "family": "A2",
+  "shape": "A2 CRT/Win32 call-site arg typing",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x7cc309",
+  "family": "A4",
+  "shape": "A4 const-loss void* slot",
+  "errfam": "C2664"
+ },
+ {
+  "addr": "0x4db8a0",
+  "family": "A3",
+  "shape": "A3 indirect fn-ptr call (arg vs cast param)",
+  "errfam": "C2664"
+ }
+]

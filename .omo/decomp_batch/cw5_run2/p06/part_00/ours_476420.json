@@ -1,0 +1,75 @@
+{
+ "symbol": "?GetCoord2@INIClass@@QAEPAHPAHPAE10@Z",
+ "sym_key": "INIClass::GetCoord2",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "8b54240c81ec000200008d4424006800020000508b84241002000068000000005250e80000000085c0745e56578d4c2408680000000051e80000000050e80000000068000000006a008bf0e80000000050e80000000068000000006a008bf8e80000000050e8000000008bc88b84243002000083c42489780489305f8948085e81c400020000c210008b8c24100200008b8424040200008b1189108b51048950048b490889480881c400020000c21000",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  }
+ ]
+}
