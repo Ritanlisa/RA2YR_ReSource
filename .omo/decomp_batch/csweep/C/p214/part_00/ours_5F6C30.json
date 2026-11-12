@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsPlayerOwnedAndCheck@IUnknown@@QAEEXZ",
+ "sym_key": "IUnknown::IsPlayerOwnedAndCheck",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0d000000008b065156ff90c800000084c074118b166a0156ff92d000000085c075025ec38b0656ff908800000033c95e8a883002000024000bc88ac1c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  }
+ ]
+}

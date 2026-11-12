@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CEBE8",
+ "name": "__fassign",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CEBE8",
+ "bytes_hex": "558bec5151837d0800ff7510741b8d45f850e8c29000008b450c59598b4df889088b4dfc894804c9c38d451050e8029100008b450c59598b4d108908c9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

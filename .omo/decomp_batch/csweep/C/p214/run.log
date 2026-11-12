@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p214\part_00
+=== convert (20 addrs) ===
+[conv] 0x77c780 sub_77C780 -> _addr_77
+[conv] 0x77c7e0 sub_77C7E0 -> _addr_77
+[conv] 0x77c8a0 sub_77C8A0 -> _addr_77
+[conv] 0x77c900 sub_77C900 -> _addr_77
+[conv] 0x77c960 sub_77C960 -> _addr_77
+[conv] 0x77c9c0 sub_77C9C0 -> _addr_77
+[conv] 0x77ce70 sub_77CE70 -> _addr_77
+[conv] 0x77ced0 sub_77CED0 -> _addr_77
+[conv] 0x7cebe8 __fassign -> _addr_7C
+[conv] 0x5e9b20 GetComboBoxSelectedDefault -> _addr_5E
+[conv] 0x7767b0 sub_7767B0 -> _addr_77
+[conv] 0x4036f0 sub_4036F0 -> _addr_40
+[conv] 0x5f6c30 IUnknown::IsPlayerOwnedAndCheck -> IUnknown
+[conv] 0x4d9920 FootClass::SelectAutoTarget_Cloaked -> FootClass
+[conv] 0x4ffd90 ObjectClass::sub_4FFD90 -> ObjectClass
+[conv] 0x5581a0 GaugeClass::sub_5581A0 -> GaugeClass
+[conv] 0x642e00 UI_Render -> UI
+[conv] 0x7d45df __mbsnbicoll -> _addr_7D
+[conv] 0x69bcc0 sub_69BCC0 -> _addr_69
+[conv] 0x69e9f0 ObjectClass::sub_69E9F0 -> ObjectClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=2
+[era] _addr_7C                 rc=0
+[era] _addr_5E                 rc=0
+[era] _addr_40                 rc=0
+[era] IUnknown                 rc=0
+[era] FootClass                rc=0
+[era] ObjectClass              rc=2
+[era] GaugeClass               rc=0
+[era] UI                       rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_69                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x77c780   MISMATCH         sub_77C780
+[diff] 0x77c7e0   MISMATCH         sub_77C7E0
+[diff] 0x77c8a0   MISMATCH         sub_77C8A0
+[diff] 0x77c900   MISMATCH         sub_77C900
+[diff] 0x77c960   MISMATCH         sub_77C960
+[diff] 0x77c9c0   MISMATCH         sub_77C9C0
+[diff] 0x77ce70   MISMATCH         sub_77CE70
+[diff] 0x77ced0   MISMATCH         sub_77CED0
+[diff] 0x7cebe8   MISMATCH         __fassign
+[diff] 0x5e9b20   MISMATCH         GetComboBoxSelectedDefault
+[diff] 0x4036f0   MATCH            sub_4036F0
+[diff] 0x5f6c30   MISMATCH         IUnknown::IsPlayerOwnedAndCheck
+[diff] 0x4d9920   MISMATCH         FootClass::SelectAutoTarget_Cloaked
+[diff] 0x4ffd90   MATCH            ObjectClass::sub_4FFD90
+[diff] 0x5581a0   MISMATCH         GaugeClass::sub_5581A0
+[diff] 0x642e00   MISMATCH         UI_Render
+[diff] 0x69bcc0   MISMATCH         sub_69BCC0
+[ledger] 0x77c780 sub_77C780 -> NG (attempt 1)
+[ledger] 0x77c7e0 sub_77C7E0 -> NG (attempt 1)
+[ledger] 0x77c8a0 sub_77C8A0 -> NG (attempt 1)
+[ledger] 0x77c900 sub_77C900 -> NG (attempt 1)
+[ledger] 0x77c960 sub_77C960 -> NG (attempt 1)
+[ledger] 0x77c9c0 sub_77C9C0 -> NG (attempt 1)
+[ledger] 0x77ce70 sub_77CE70 -> NG (attempt 1)
+[ledger] 0x77ced0 sub_77CED0 -> NG (attempt 1)
+[ledger] 0x7cebe8 __fassign -> NG (attempt 1)
+[ledger] 0x5e9b20 GetComboBoxSelectedDefault -> NG (attempt 1)
+[ledger] 0x7767b0 sub_7767B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4036f0 sub_4036F0 -> OK (attempt 1)
+[ledger] 0x5f6c30 IUnknown::IsPlayerOwnedAndCheck -> NG (attempt 1)
+[ledger] 0x4d9920 FootClass::SelectAutoTarget_Cloaked -> NG (attempt 1)
+[ledger] 0x4ffd90 ObjectClass::sub_4FFD90 -> OK (attempt 1)
+[ledger] 0x5581a0 GaugeClass::sub_5581A0 -> NG (attempt 1)
+[ledger] 0x642e00 UI_Render -> NG (attempt 1)
+[ledger] 0x7d45df __mbsnbicoll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69bcc0 sub_69BCC0 -> NG (attempt 1)
+[ledger] 0x69e9f0 ObjectClass::sub_69E9F0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 3,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "signedness": 8,
+  "codegen_shape": 3,
+  "regalloc": 1,
+  "const_fold": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 11.8,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p214\batch_report.json

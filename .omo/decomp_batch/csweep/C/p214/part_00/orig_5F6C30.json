@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6C30",
+ "name": "ObjectClass::IsPlayerOwnedAndCheck",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6C30",
+ "bytes_hex": "568bf18b0d4c3da8008b06518bceff90c800000084c074148b166a018bceff92d000000085c0750432c05ec38b068bceff90880000008a80300200005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

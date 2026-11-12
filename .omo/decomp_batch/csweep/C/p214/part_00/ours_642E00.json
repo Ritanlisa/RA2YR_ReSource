@@ -1,0 +1,15 @@
+{
+ "symbol": "?UI_Render@@YGPAIPAH0@Z",
+ "sym_key": "Unnamed::UI_Render",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "83ec108d4424006a0050e8000000008b480c8b50088b44241483c20683c10689108b442418890883c410c20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  }
+ ]
+}

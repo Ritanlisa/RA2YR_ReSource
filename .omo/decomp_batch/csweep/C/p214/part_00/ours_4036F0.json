@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4036F0@@YIHHH@Z",
+ "sym_key": "Unnamed::sub_4036F0",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "5356578bda81c1f8000000e8000000008bf085f68bfe74208bcee80000000083fbff8bf07405395f0c75078bcfe80000000085f68bfe75e05f5e33c05bc3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Destructor@AudioStream@@QAEXXZ",
+   "sym_key": "AudioStream::Destructor"
+  }
+ ]
+}

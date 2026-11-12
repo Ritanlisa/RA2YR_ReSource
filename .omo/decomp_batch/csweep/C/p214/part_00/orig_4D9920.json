@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D9920",
+ "name": "FootClass::SelectAutoTarget_Cloaked",
+ "size": 63,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D9920",
+ "bytes_hex": "568bf18a868806000084c08b442408740424fd0c018b4c24108b54240c5152508bcee8a9f421008a8e8806000084c9740a85c075068886880600005ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

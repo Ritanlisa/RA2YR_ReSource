@@ -1,0 +1,21 @@
+{
+ "symbol": "?__fassign@@YAPAHHPAHH@Z",
+ "sym_key": "Unnamed::__fassign",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec0885c074278b4424148d4c24005051e8000000008b4424188b5424088b4c240c83c408891089480483c408c38b5424148d4424145250e8000000008b4424188b4c241c83c408890883c408c3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Fassign_Helper@@YAHHH@Z",
+   "sym_key": "Fassign_Helper"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?Fassign_Helper_7D7D1C@@YAHHH@Z",
+   "sym_key": "Fassign_Helper_7D7D1C"
+  }
+ ]
+}
