@@ -12042,6 +12042,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x434ad0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+5 mov dword ptr [esi], 0x7e3a80",
+  "name": "BitTextClass::LoadFont",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "BitTextClass::LoadFont",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x434bf0": {
   "attempts": 3,
   "clean": false,
@@ -24171,12 +24183,36 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x497720": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent50ZReadWrite_G::CallBlit0_0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x497760": {
   "attempts": 11,
   "first_diff": "+5 mov edx, dword ptr [esp + 0x1c]",
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x497880": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent25ZReadWrite_G::CallBlit0_1",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4978c0": {
   "attempts": 8,
@@ -24185,12 +24221,36 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4979d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransXlatAlpha_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransXlatAlpha_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x497a10": {
   "attempts": 8,
   "first_diff": "+0 push ecx",
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x497b40": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransZRemapXlatAlpha_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransZRemapXlatAlpha_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x497b80": {
   "attempts": 15,
@@ -24202,6 +24262,18 @@
   "orig_name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
   "rule_violations": 3,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x497cb0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent75Alpha_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent75Alpha_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x497cf0": {
@@ -24216,6 +24288,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x497e20": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent50Alpha_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent50Alpha_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x497e60": {
   "attempts": 13,
   "clean": false,
@@ -24226,6 +24310,18 @@
   "orig_name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
   "rule_violations": 3,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x497f90": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent25Alpha_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent25Alpha_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x497fd0": {
@@ -24263,6 +24359,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x498690": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent75AlphaZRead_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent75AlphaZRead_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4986d0": {
   "attempts": 13,
   "clean": false,
@@ -24275,12 +24383,36 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x498880": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent50AlphaZRead_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent50AlphaZRead_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4988c0": {
   "attempts": 10,
   "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x498a80": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent25AlphaZRead_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent25AlphaZRead_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x498ac0": {
   "attempts": 8,
@@ -24289,6 +24421,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x498c90": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent75AlphaZReadWarp_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x498cd0": {
   "attempts": 10,
   "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
@@ -24296,12 +24440,36 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x498e90": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent50AlphaZReadWarp_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x498ed0": {
   "attempts": 8,
   "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x4990a0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent25AlphaZReadWarp_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4990e0": {
   "attempts": 8,
@@ -24324,12 +24492,36 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x499610": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransZRemapXlatAlphaZReadWrite_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x499650": {
   "attempts": 8,
   "first_diff": "+5 push ebx",
   "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x499820": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent75AlphaZReadWrite_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x499860": {
   "attempts": 8,
@@ -24338,12 +24530,36 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x499a50": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent50AlphaZReadWrite_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x499a90": {
   "attempts": 8,
   "first_diff": "+5 push ebx",
   "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x499c60": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_RLEBlitTransLucent25AlphaZReadWrite_G::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x499ca0": {
   "attempts": 1,
@@ -90173,6 +90389,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x69f080": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+17 jne 0x69f0b4",
+  "name": "JumpjetLocomotionClass::CheckPiggybackState_0",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "JumpjetLocomotionClass::CheckPiggybackState_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x69f1b0": {
   "attempts": 1,
   "first_diff": "+0 sub esp, 8",
@@ -117315,6 +117543,18 @@
   "name": "JumpjetLocomotionClass::StubReturnZero_23",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "JumpjetLocomotionClass::StubReturnZero_23",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x75c8e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+17 jne 0x75c914",
+  "name": "JumpjetLocomotionClass::CheckBaseClassState_0",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "JumpjetLocomotionClass::CheckBaseClassState_0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

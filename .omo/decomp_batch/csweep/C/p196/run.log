@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p196\part_00
+=== convert (20 addrs) ===
+[conv] 0x497720 _RLEBlitTransLucent50ZReadWrite_G::CallBlit0_0 -> _RLEBlitTransLucent50ZReadWrite_G
+[conv] 0x497880 _RLEBlitTransLucent25ZReadWrite_G::CallBlit0_1 -> _RLEBlitTransLucent25ZReadWrite_G
+[conv] 0x4979d0 _RLEBlitTransXlatAlpha_G::Release -> _RLEBlitTransXlatAlpha_G
+[conv] 0x497b40 _RLEBlitTransZRemapXlatAlpha_G::Release -> _RLEBlitTransZRemapXlatAlpha_G
+[conv] 0x497cb0 _RLEBlitTransLucent75Alpha_G::Release -> _RLEBlitTransLucent75Alpha_G
+[conv] 0x497e20 _RLEBlitTransLucent50Alpha_G::Release -> _RLEBlitTransLucent50Alpha_G
+[conv] 0x497f90 _RLEBlitTransLucent25Alpha_G::Release -> _RLEBlitTransLucent25Alpha_G
+[conv] 0x498690 _RLEBlitTransLucent75AlphaZRead_G::Release -> _RLEBlitTransLucent75AlphaZRead_G
+[conv] 0x498880 _RLEBlitTransLucent50AlphaZRead_G::Release -> _RLEBlitTransLucent50AlphaZRead_G
+[conv] 0x498a80 _RLEBlitTransLucent25AlphaZRead_G::Release -> _RLEBlitTransLucent25AlphaZRead_G
+[conv] 0x498c90 _RLEBlitTransLucent75AlphaZReadWarp_G::Release -> _RLEBlitTransLucent75AlphaZReadWarp_G
+[conv] 0x498e90 _RLEBlitTransLucent50AlphaZReadWarp_G::Release -> _RLEBlitTransLucent50AlphaZReadWarp_G
+[conv] 0x4990a0 _RLEBlitTransLucent25AlphaZReadWarp_G::Release -> _RLEBlitTransLucent25AlphaZReadWarp_G
+[conv] 0x499610 _RLEBlitTransZRemapXlatAlphaZReadWrite_G::Release -> _RLEBlitTransZRemapXlatAlphaZReadWrite_G
+[conv] 0x499820 _RLEBlitTransLucent75AlphaZReadWrite_G::Release -> _RLEBlitTransLucent75AlphaZReadWrite_G
+[conv] 0x499a50 _RLEBlitTransLucent50AlphaZReadWrite_G::Release -> _RLEBlitTransLucent50AlphaZReadWrite_G
+[conv] 0x499c60 _RLEBlitTransLucent25AlphaZReadWrite_G::Release -> _RLEBlitTransLucent25AlphaZReadWrite_G
+[conv] 0x69f080 JumpjetLocomotionClass::CheckPiggybackState_0 -> JumpjetLocomotionClass
+[conv] 0x75c8e0 JumpjetLocomotionClass::CheckBaseClassState_0 -> JumpjetLocomotionClass
+[conv] 0x434ad0 BitTextClass::LoadFont -> BitTextClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _RLEBlitTransLucent50ZReadWrite_G rc=0
+[era] _RLEBlitTransLucent25ZReadWrite_G rc=0
+[era] _RLEBlitTransXlatAlpha_G rc=0
+[era] _RLEBlitTransZRemapXlatAlpha_G rc=0
+[era] _RLEBlitTransLucent75Alpha_G rc=0
+[era] _RLEBlitTransLucent50Alpha_G rc=0
+[era] _RLEBlitTransLucent25Alpha_G rc=0
+[era] _RLEBlitTransLucent75AlphaZRead_G rc=0
+[era] _RLEBlitTransLucent50AlphaZRead_G rc=0
+[era] _RLEBlitTransLucent25AlphaZRead_G rc=0
+[era] _RLEBlitTransLucent75AlphaZReadWarp_G rc=0
+[era] _RLEBlitTransLucent50AlphaZReadWarp_G rc=0
+[era] _RLEBlitTransLucent25AlphaZReadWarp_G rc=0
+[era] _RLEBlitTransZRemapXlatAlphaZReadWrite_G rc=0
+[era] _RLEBlitTransLucent75AlphaZReadWrite_G rc=0
+[era] _RLEBlitTransLucent50AlphaZReadWrite_G rc=0
+[era] _RLEBlitTransLucent25AlphaZReadWrite_G rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] BitTextClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x497720   MATCH            _RLEBlitTransLucent50ZReadWrite_G::CallBlit0_0
+[diff] 0x497880   MATCH            _RLEBlitTransLucent25ZReadWrite_G::CallBlit0_1
+[diff] 0x4979d0   MATCH            _RLEBlitTransXlatAlpha_G::Release
+[diff] 0x497b40   MATCH            _RLEBlitTransZRemapXlatAlpha_G::Release
+[diff] 0x497cb0   MATCH            _RLEBlitTransLucent75Alpha_G::Release
+[diff] 0x497e20   MATCH            _RLEBlitTransLucent50Alpha_G::Release
+[diff] 0x497f90   MATCH            _RLEBlitTransLucent25Alpha_G::Release
+[diff] 0x498690   MATCH            _RLEBlitTransLucent75AlphaZRead_G::Release
+[diff] 0x498880   MATCH            _RLEBlitTransLucent50AlphaZRead_G::Release
+[diff] 0x498a80   MATCH            _RLEBlitTransLucent25AlphaZRead_G::Release
+[diff] 0x498c90   MATCH            _RLEBlitTransLucent75AlphaZReadWarp_G::Release
+[diff] 0x498e90   MATCH            _RLEBlitTransLucent50AlphaZReadWarp_G::Release
+[diff] 0x4990a0   MATCH            _RLEBlitTransLucent25AlphaZReadWarp_G::Release
+[diff] 0x499610   MATCH            _RLEBlitTransZRemapXlatAlphaZReadWrite_G::Release
+[diff] 0x499820   MATCH            _RLEBlitTransLucent75AlphaZReadWrite_G::Release
+[diff] 0x499a50   MATCH            _RLEBlitTransLucent50AlphaZReadWrite_G::Release
+[diff] 0x499c60   MATCH            _RLEBlitTransLucent25AlphaZReadWrite_G::Release
+[diff] 0x69f080   MISMATCH         JumpjetLocomotionClass::CheckPiggybackState_0
+[diff] 0x75c8e0   MISMATCH         JumpjetLocomotionClass::CheckBaseClassState_0
+[diff] 0x434ad0   MISMATCH         BitTextClass::LoadFont
+[ledger] 0x497720 _RLEBlitTransLucent50ZReadWrite_G::CallBlit0_0 -> OK (attempt 1)
+[ledger] 0x497880 _RLEBlitTransLucent25ZReadWrite_G::CallBlit0_1 -> OK (attempt 1)
+[ledger] 0x4979d0 _RLEBlitTransXlatAlpha_G::Release -> OK (attempt 1)
+[ledger] 0x497b40 _RLEBlitTransZRemapXlatAlpha_G::Release -> OK (attempt 1)
+[ledger] 0x497cb0 _RLEBlitTransLucent75Alpha_G::Release -> OK (attempt 1)
+[ledger] 0x497e20 _RLEBlitTransLucent50Alpha_G::Release -> OK (attempt 1)
+[ledger] 0x497f90 _RLEBlitTransLucent25Alpha_G::Release -> OK (attempt 1)
+[ledger] 0x498690 _RLEBlitTransLucent75AlphaZRead_G::Release -> OK (attempt 1)
+[ledger] 0x498880 _RLEBlitTransLucent50AlphaZRead_G::Release -> OK (attempt 1)
+[ledger] 0x498a80 _RLEBlitTransLucent25AlphaZRead_G::Release -> OK (attempt 1)
+[ledger] 0x498c90 _RLEBlitTransLucent75AlphaZReadWarp_G::Release -> OK (attempt 1)
+[ledger] 0x498e90 _RLEBlitTransLucent50AlphaZReadWarp_G::Release -> OK (attempt 1)
+[ledger] 0x4990a0 _RLEBlitTransLucent25AlphaZReadWarp_G::Release -> OK (attempt 1)
+[ledger] 0x499610 _RLEBlitTransZRemapXlatAlphaZReadWrite_G::Release -> OK (attempt 1)
+[ledger] 0x499820 _RLEBlitTransLucent75AlphaZReadWrite_G::Release -> OK (attempt 1)
+[ledger] 0x499a50 _RLEBlitTransLucent50AlphaZReadWrite_G::Release -> OK (attempt 1)
+[ledger] 0x499c60 _RLEBlitTransLucent25AlphaZReadWrite_G::Release -> OK (attempt 1)
+[ledger] 0x69f080 JumpjetLocomotionClass::CheckPiggybackState_0 -> NG (attempt 1)
+[ledger] 0x75c8e0 JumpjetLocomotionClass::CheckBaseClassState_0 -> NG (attempt 1)
+[ledger] 0x434ad0 BitTextClass::LoadFont -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 85.0,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p196\batch_report.json
