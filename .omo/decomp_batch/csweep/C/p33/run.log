@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p33\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c4740 _TClassFactory_VWalkLocomotionClass::AddRef -> _TClassFactory_VWalkLocomotionClass
+[conv] 0x6c48c0 _TClassFactory_VDropPodLocomotionClass::AddRef -> _TClassFactory_VDropPodLocomotionClass
+[conv] 0x6c4a40 _TClassFactory_VFlyLocomotionClass::AddRef -> _TClassFactory_VFlyLocomotionClass
+[conv] 0x6c4bc0 _TClassFactory_VTeleportLocomotionClass::AddRef -> _TClassFactory_VTeleportLocomotionClass
+[conv] 0x6c4d40 _TClassFactory_VMechLocomotionClass::AddRef -> _TClassFactory_VMechLocomotionClass
+[conv] 0x6c4ec0 _TClassFactory_VShipLocomotionClass::AddRef -> _TClassFactory_VShipLocomotionClass
+[conv] 0x6c5040 _TClassFactory_VBulletClass::AddRef -> _TClassFactory_VBulletClass
+[conv] 0x6c51c0 _TClassFactory_VFactoryClass::AddRef -> _TClassFactory_VFactoryClass
+[conv] 0x6c5340 _TClassFactory_VWarheadTypeClass::AddRef -> _TClassFactory_VWarheadTypeClass
+[conv] 0x6c54c0 _TClassFactory_VWeaponTypeClass::AddRef -> _TClassFactory_VWeaponTypeClass
+[conv] 0x6c57c0 _TClassFactory_VParticleTypeClass::AddRef -> _TClassFactory_VParticleTypeClass
+[conv] 0x6c5940 _TClassFactory_VParticleSystemClass::AddRef -> _TClassFactory_VParticleSystemClass
+[conv] 0x6c5ac0 _TClassFactory_VParticleSystemTypeClass::AddRef -> _TClassFactory_VParticleSystemTypeClass
+[conv] 0x6c5c40 _TClassFactory_VAITriggerTypeClass::AddRef -> _TClassFactory_VAITriggerTypeClass
+[conv] 0x6c5dc0 _TClassFactory_VNeuronClass::AddRef -> _TClassFactory_VNeuronClass
+[conv] 0x6c5f40 _TClassFactory_VFoggedObjectClass::AddRef -> _TClassFactory_VFoggedObjectClass
+[conv] 0x6c60c0 _TClassFactory_VAlphaShapeClass::AddRef -> _TClassFactory_VAlphaShapeClass
+[conv] 0x7ac690 _CComObject_VCChatEventSink_ATL::AddRef -> _CComObject_VCChatEventSink_ATL
+[conv] 0x7ac800 _CComObject_VCNetUtilEventSink_ATL::AddRef -> _CComObject_VCNetUtilEventSink_ATL
+[conv] 0x7ad620 _CComObject_VCDownloadEventSink_ATL::AddRef -> _CComObject_VCDownloadEventSink_ATL
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VWalkLocomotionClass rc=0
+[era] _TClassFactory_VDropPodLocomotionClass rc=0
+[era] _TClassFactory_VFlyLocomotionClass rc=0
+[era] _TClassFactory_VTeleportLocomotionClass rc=0
+[era] _TClassFactory_VMechLocomotionClass rc=0
+[era] _TClassFactory_VShipLocomotionClass rc=0
+[era] _TClassFactory_VBulletClass rc=0
+[era] _TClassFactory_VFactoryClass rc=0
+[era] _TClassFactory_VWarheadTypeClass rc=0
+[era] _TClassFactory_VWeaponTypeClass rc=0
+[era] _TClassFactory_VParticleTypeClass rc=0
+[era] _TClassFactory_VParticleSystemClass rc=0
+[era] _TClassFactory_VParticleSystemTypeClass rc=0
+[era] _TClassFactory_VAITriggerTypeClass rc=0
+[era] _TClassFactory_VNeuronClass rc=0
+[era] _TClassFactory_VFoggedObjectClass rc=0
+[era] _TClassFactory_VAlphaShapeClass rc=0
+[era] _CComObject_VCChatEventSink_ATL rc=0
+[era] _CComObject_VCNetUtilEventSink_ATL rc=0
+[era] _CComObject_VCDownloadEventSink_ATL rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c4740   MISMATCH         _TClassFactory_VWalkLocomotionClass::AddRef
+[diff] 0x6c48c0   MISMATCH         _TClassFactory_VDropPodLocomotionClass::AddRef
+[diff] 0x6c4a40   MISMATCH         _TClassFactory_VFlyLocomotionClass::AddRef
+[diff] 0x6c4bc0   MISMATCH         _TClassFactory_VTeleportLocomotionClass::AddRef
+[diff] 0x6c4d40   MISMATCH         _TClassFactory_VMechLocomotionClass::AddRef
+[diff] 0x6c4ec0   MISMATCH         _TClassFactory_VShipLocomotionClass::AddRef
+[diff] 0x6c5040   MISMATCH         _TClassFactory_VBulletClass::AddRef
+[diff] 0x6c51c0   MISMATCH         _TClassFactory_VFactoryClass::AddRef
+[diff] 0x6c5340   MISMATCH         _TClassFactory_VWarheadTypeClass::AddRef
+[diff] 0x6c54c0   MISMATCH         _TClassFactory_VWeaponTypeClass::AddRef
+[diff] 0x6c57c0   MISMATCH         _TClassFactory_VParticleTypeClass::AddRef
+[diff] 0x6c5940   MISMATCH         _TClassFactory_VParticleSystemClass::AddRef
+[diff] 0x6c5ac0   MISMATCH         _TClassFactory_VParticleSystemTypeClass::AddRef
+[diff] 0x6c5c40   MISMATCH         _TClassFactory_VAITriggerTypeClass::AddRef
+[diff] 0x6c5dc0   MISMATCH         _TClassFactory_VNeuronClass::AddRef
+[diff] 0x6c5f40   MISMATCH         _TClassFactory_VFoggedObjectClass::AddRef
+[diff] 0x6c60c0   MISMATCH         _TClassFactory_VAlphaShapeClass::AddRef
+[diff] 0x7ac690   MISMATCH         _CComObject_VCChatEventSink_ATL::AddRef
+[diff] 0x7ac800   MISMATCH         _CComObject_VCNetUtilEventSink_ATL::AddRef
+[diff] 0x7ad620   MISMATCH         _CComObject_VCDownloadEventSink_ATL::AddRef
+[ledger] 0x6c4740 _TClassFactory_VWalkLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c48c0 _TClassFactory_VDropPodLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c4a40 _TClassFactory_VFlyLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c4bc0 _TClassFactory_VTeleportLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c4d40 _TClassFactory_VMechLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c4ec0 _TClassFactory_VShipLocomotionClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c5040 _TClassFactory_VBulletClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c51c0 _TClassFactory_VFactoryClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c5340 _TClassFactory_VWarheadTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c54c0 _TClassFactory_VWeaponTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c57c0 _TClassFactory_VParticleTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c5940 _TClassFactory_VParticleSystemClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c5ac0 _TClassFactory_VParticleSystemTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c5c40 _TClassFactory_VAITriggerTypeClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c5dc0 _TClassFactory_VNeuronClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c5f40 _TClassFactory_VFoggedObjectClass::AddRef -> NG (attempt 1)
+[ledger] 0x6c60c0 _TClassFactory_VAlphaShapeClass::AddRef -> NG (attempt 1)
+[ledger] 0x7ac690 _CComObject_VCChatEventSink_ATL::AddRef -> NG (attempt 1)
+[ledger] 0x7ac800 _CComObject_VCNetUtilEventSink_ATL::AddRef -> NG (attempt 1)
+[ledger] 0x7ad620 _CComObject_VCDownloadEventSink_ATL::AddRef -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p33\batch_report.json
