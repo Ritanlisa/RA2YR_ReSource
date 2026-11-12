@@ -1,0 +1,11 @@
+{
+ "addr": "0x68C2B0",
+ "name": "Multiplayer::CopyDataArray",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x68C2B0",
+ "bytes_hex": "558b6c2408568bf13bf55774678b06ff500c8b7d0885ff897e08744d8d0cbd0000000051e83ecb130083c40485c074074f897c2410eb0233c085c089460474348b4e0833c085c9c6460d017e278b55048b4e048b14828914818b4e08403bc17cec8bc65f5e5dc20400c7460400000000c6460d008bc65f5e5dc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

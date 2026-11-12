@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p293\part_00
+=== convert (20 addrs) ===
+[conv] 0x42d490 GetCellNeighborCoord -> _addr_42
+[conv] 0x69b760 SessionClass::AssignSide -> SessionClass
+[conv] 0x7dc0f6 ___multtenpow12 -> _addr_7D
+[conv] 0x7c1d90 Audio_Helper_7C1D90 -> Audio_Helper
+[conv] 0x477b60 IntVector::Copy -> IntVector
+[conv] 0x5d31d0 MSFont::AddRef -> MSFont
+[conv] 0x41d300 AbstractClass::Create -> AbstractClass
+[conv] 0x5519b0 VectorClass_ptr_IsometricTileClass::RenderStatusText -> VectorClass_ptr_IsometricTileClass
+[conv] 0x68c2b0 Multiplayer::CopyDataArray -> Multiplayer
+[conv] 0x7d94c4 __set_osfhnd -> _addr_7D
+[conv] 0x5e96a0 NetworkLobby::CheckPlayerNameValid -> NetworkLobby
+[conv] 0x5e9720 NetworkLobby::CheckPlayerNames -> NetworkLobby
+[conv] 0x483690 BuildingClass::IsTiberiumSiloEligible -> BuildingClass
+[conv] 0x4e25d0 GaugeClass::GetRange -> GaugeClass
+[conv] 0x5fbf80 GameOptionsClass::UnlockMovieIfNeeded_MoviesList -> GameOptionsClass
+[conv] 0x738890 TechnoClass::ValidateMoveType -> TechnoClass
+[conv] 0x6ec3d0 HouseClass::FindBestBuildingToRepair -> HouseClass
+[conv] 0x405040 AudioStream::UpdateCountdowners -> AudioStream
+[conv] 0x5e7460 Scenario::PreGameInit -> Scenario
+[conv] 0x58be20 ObjectClass::sub_58BE20 -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_42                 rc=0
+[era] SessionClass             rc=0
+[era] _addr_7D                 rc=2
+[era] Audio_Helper             rc=0
+[era] IntVector                rc=0
+[era] MSFont                   rc=2
+[era] AbstractClass            rc=0
+[era] VectorClass_ptr_IsometricTileClass rc=0
+[era] Multiplayer              rc=0
+[era] NetworkLobby             rc=2
+[era] BuildingClass            rc=0
+[era] GaugeClass               rc=0
+[era] GameOptionsClass         rc=2
+[era] TechnoClass              rc=0
+[era] HouseClass               rc=0
+[era] AudioStream              rc=2
+[era] Scenario                 rc=0
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x42d490   MISMATCH         GetCellNeighborCoord
+[diff] 0x69b760   MISMATCH         SessionClass::AssignSide
+[diff] 0x7dc0f6   MISMATCH         ___multtenpow12
+[diff] 0x7c1d90   MISMATCH         Audio_Helper_7C1D90
+[diff] 0x477b60   MISMATCH         IntVector::Copy
+[diff] 0x41d300   MISMATCH         AbstractClass::Create
+[diff] 0x5519b0   MISMATCH         VectorClass_ptr_IsometricTileClass::RenderStatusText
+[diff] 0x68c2b0   MISMATCH         Multiplayer::CopyDataArray
+[diff] 0x483690   MISMATCH         BuildingClass::IsTiberiumSiloEligible
+[diff] 0x4e25d0   MISMATCH         GaugeClass::GetRange
+[diff] 0x738890   MISMATCH         TechnoClass::ValidateMoveType
+[diff] 0x6ec3d0   MISMATCH         HouseClass::FindBestBuildingToRepair
+[diff] 0x5e7460   MISMATCH         Scenario::PreGameInit
+[diff] 0x58be20   MISMATCH         ObjectClass::sub_58BE20
+[ledger] 0x42d490 GetCellNeighborCoord -> NG (attempt 1)
+[ledger] 0x69b760 SessionClass::AssignSide -> NG (attempt 1)
+[ledger] 0x7dc0f6 ___multtenpow12 -> NG (attempt 1)
+[ledger] 0x7c1d90 Audio_Helper_7C1D90 -> NG (attempt 1)
+[ledger] 0x477b60 IntVector::Copy -> NG (attempt 1)
+[ledger] 0x5d31d0 MSFont::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41d300 AbstractClass::Create -> NG (attempt 1)
+[ledger] 0x5519b0 VectorClass_ptr_IsometricTileClass::RenderStatusText -> NG (attempt 1)
+[ledger] 0x68c2b0 Multiplayer::CopyDataArray -> NG (attempt 1)
+[ledger] 0x7d94c4 __set_osfhnd -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e96a0 NetworkLobby::CheckPlayerNameValid -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9720 NetworkLobby::CheckPlayerNames -> COMPILE_FAIL (attempt 1)
+[ledger] 0x483690 BuildingClass::IsTiberiumSiloEligible -> NG (attempt 1)
+[ledger] 0x4e25d0 GaugeClass::GetRange -> NG (attempt 1)
+[ledger] 0x5fbf80 GameOptionsClass::UnlockMovieIfNeeded_MoviesList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x738890 TechnoClass::ValidateMoveType -> NG (attempt 1)
+[ledger] 0x6ec3d0 HouseClass::FindBestBuildingToRepair -> NG (attempt 1)
+[ledger] 0x405040 AudioStream::UpdateCountdowners -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e7460 Scenario::PreGameInit -> NG (attempt 1)
+[ledger] 0x58be20 ObjectClass::sub_58BE20 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "codegen_shape": 6,
+  "width_mismatch": 1,
+  "regalloc": 2,
+  "signedness": 1,
+  "branch_order": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p293\batch_report.json

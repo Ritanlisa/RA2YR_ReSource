@@ -1,0 +1,87 @@
+{
+ "symbol": "?PreGameInit@Scenario@@QAEHXZ",
+ "sym_key": "Scenario::PreGameInit",
+ "size": 153,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000033c0a054b2a800898154120000a10000000050b900000000c7050000000000000000a300000000e800000000a10000000033d28a1568b2a800680000000089108b0d00000000a060b2a8008bd183e001c7050000000002000000c1fa08c1e00f83e2770bc28b150000000083e201c1e20b0bc28bd180e20083e13f0bc224c00bc880c9c0890d00000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?Game_PlayerCount@@3IA",
+   "sym_key": "Game_PlayerCount"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "??_C@_0BP@KEDC@Pregame?5setup?5for?5?$CFd?5players?4?6?$AA@",
+   "sym_key": "??_C@_0BP@KEDC@Pregame?5setup?5for?5?$CFd?5players?4?6?$AA@"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_ScenarioLoadFlags@@3IA",
+   "sym_key": "g_ScenarioLoadFlags"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXH@Z",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptions@@3IA",
+   "sym_key": "g_GameModeOptions"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_GameTypeFlags@@3IA",
+   "sym_key": "g_GameTypeFlags"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?HarvesterTruce@@3IA",
+   "sym_key": "HarvesterTruce"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?nullsub_37@@YAHPAX@Z",
+   "sym_key": "nullsub_37"
+  }
+ ]
+}

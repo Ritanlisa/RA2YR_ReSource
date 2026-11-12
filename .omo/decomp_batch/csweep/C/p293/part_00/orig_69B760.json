@@ -1,0 +1,11 @@
+{
+ "addr": "0x69B760",
+ "name": "SessionClass::AssignSide",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69B760",
+ "bytes_hex": "8b4424045683f8fe8bf175448a44240c84c07426a130b2a8006a096a008d8818020000e85810fcff898684010000c78688010000feffffffeb26c7868401000000000000c78688010000feffffffeb10898684010000c78688010000ffffffff8b8e840100008b9688010000898e740100008996780100005ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

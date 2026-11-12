@@ -1,0 +1,15 @@
+{
+ "symbol": "?CopyDataArray@Multiplayer@@QAEPAV1@PAH@Z",
+ "sym_key": "Multiplayer::CopyDataArray",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf13bf7745a0fbe463056ff108b470885c0894608750d89460488460d8bc65f5ec204008d0c850000000051e80000000083c40485c0750085c089460474218b4e0833c085c9c6460d017e148b57048b4e048b14828914818b4e08403bc17cec8bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

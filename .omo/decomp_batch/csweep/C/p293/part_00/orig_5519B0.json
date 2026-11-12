@@ -1,0 +1,11 @@
+{
+ "addr": "0x5519B0",
+ "name": "DisplayClass::RenderStatusText",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5519B0",
+ "bytes_hex": "8a4424085684c08bf174148b44240850e8cb000000f7d81bc05ef7d8c208008b4e088b46103bc17c318a460d84c0750485c975178b461485c07e108b1603c16a00508bceff520884c0750f32c033d284c00f95c28ac25ec208008b46108b56048d4801894e108b4c2408890c82b00133d25e84c00f95c28ac2c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetRange@GaugeClass@@QAE_JH@Z",
+ "sym_key": "GaugeClass::GetRange",
+ "size": 168,
+ "link_base": 0,
+ "bytes_hex": "8a412e83ec0884c05674138b4424108b710c8b51142bc64889442410eb118b4424108b71108b51182bc6488944241083c2fe85c0895424047c2d3bc27e0489542410db44241083ec08da74240cda4930dd1c24e8000000008bc883c408c1f91066894c2408eb25db44240483ec08dc3d00000000da4930dd1c24e8000000008bd083c408c1fa1066895424088b4c24048b74240825ff00000080e100990bc10bd65e83c408c20400",
+ "relocs": [
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

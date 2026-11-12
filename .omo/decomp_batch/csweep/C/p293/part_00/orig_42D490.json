@@ -1,0 +1,11 @@
+{
+ "addr": "0x42D490",
+ "name": "GetCellNeighborCoord",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42D490",
+ "bytes_hex": "8b4424045683f8088bf1754352b9e8f78700e8f98213000fbf801601000083f8ff74148b0d3c418b008b14818b422889068bc65ec2040033c06689442408668944240a8b44240889068bc65ec20400668b0a66030c8588f68900668b04858af689006603420266894c2408668944240a8b4c2408890e8bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

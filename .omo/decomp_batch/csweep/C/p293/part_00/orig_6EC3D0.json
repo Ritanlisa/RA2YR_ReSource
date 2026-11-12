@@ -1,0 +1,11 @@
+{
+ "addr": "0x6EC3D0",
+ "name": "HouseClass::FindBestBuildingToRepair",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6EC3D0",
+ "bytes_hex": "5355568b715483cbff8bee85f67468578b068bceff90840000008bb8fc05000085f674428a869000000084c074388b466c85c07431a1ace7a80085c0750a8a868100000084c0751e8a868906000084c0750c8b168bceff522c83f80275083bfb7e048bee8bdf8bb6d805000085f675a05f8bc55e5d5bc38bc55e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

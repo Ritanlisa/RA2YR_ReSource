@@ -1,0 +1,11 @@
+{
+ "addr": "0x41D300",
+ "name": "AbstractClass::Create",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41D300",
+ "bytes_hex": "568bf1e8682effffc706a8297e00c746048c297e00c7460884297e00c7460c7c297e00a1c09f88008b0dc89f88003bc87c2e8a0dc59f880084c9750485c075388b0dcc9f880085c97e2e03c8a1b89f88006a0051b9b89f8800ff500884c074188b0dc89f88008bc141890dc89f88008b0dbc9f88008934818bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

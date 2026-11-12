@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C1D90",
+ "name": "Audio_Helper_7C1D90",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C1D90",
+ "bytes_hex": "515355568bc28bf18944240c40578bae640100008bbe6807000024fe8b5d002bf803df50536a0556ff564083c41085c0740b5f5e5db8fcffffff5b59c3c7867401000000000000c7450c0a000000897d1089ae680100008b45048986640100006683bee80000000373098b4c2410c6440b01805f5e5d83c8ff5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

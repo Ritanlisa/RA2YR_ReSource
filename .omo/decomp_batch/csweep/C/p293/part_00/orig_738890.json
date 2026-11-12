@@ -1,0 +1,11 @@
+{
+ "addr": "0x738890",
+ "name": "TechnoClass::ValidateMoveType",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x738890",
+ "bytes_hex": "538b5c2410568bf1578b7c24148b065357ff50748b4c24103bc8741a83f8038bc8740c83f809741883f8107509eb11b901000000eb0f83f91b740583f91d7505b9050000003bfe751283f902740583f90575085f5e32c05bc20c008a869802000084c074085f5e32c05bc20c005357518bcee8d9ebd9ff5f5e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

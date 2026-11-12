@@ -1,0 +1,15 @@
+{
+ "symbol": "?ValidateMoveType@TechnoClass@@QAEDHPAHH@Z",
+ "sym_key": "TechnoClass::ValidateMoveType",
+ "size": 124,
+ "link_base": 0,
+ "bytes_hex": "538b5c241056578b7c24148bf153578b0656ff50748b4c24103bc8741883f8038bc87507b901000000eb1983f809740f83f810740a83f91b740583f91d7505b9050000003bfe751283f902740583f90575085f5e32c05bc20c008a869802000084c074085f5e32c05bc20c005357518bcee8000000005f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?ValidateMove@FootClass@@QAEDHPAXD@Z",
+   "sym_key": "FootClass::ValidateMove"
+  }
+ ]
+}

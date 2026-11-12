@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E7460",
+ "name": "Scenario::PreGameInit",
+ "size": 126,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E7460",
+ "bytes_hex": "a130b2a8008b0d54b2a800898854120000a184daa8005068601a8300c70584eda80000000000a34cb5a800e850f4e1ffa060b2a8008a0d1db3a8008b1568b2a80083e001c1e00483e101891560eba8008b1560e9a8000bc1c1e00b80e67783c4080bc2c7054cb2a800020000000cc0b960e9a800a360e9a800e932160d00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

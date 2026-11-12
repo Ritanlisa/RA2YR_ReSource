@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E25D0",
+ "name": "GaugeClass::GetRange",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E25D0",
+ "bytes_hex": "518a412e84c074178b510c83c8ff2bc28b54240803d08b411489542408eb158b411083caff2bd08b44240803c2894424088b41188b54240883e80285d2894424007d1cc744240800000000db442408da742400da4930e8d5382e0059c20400394424087e0489442408db442408da742400da4930e8b7382e0059c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

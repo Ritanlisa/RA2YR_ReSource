@@ -1,0 +1,39 @@
+{
+ "symbol": "?IsTiberiumSiloEligible@BuildingClass@@QAE_NXZ",
+ "sym_key": "BuildingClass::IsTiberiumSiloEligible",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "51a10000000056578bf98b0851e80000000083c40485c07d5b8b4f44e8000000008bf083feff744c8b8ffc0000005399894c240c33db8a5c240e2bc2d1f83bd85b763184c9752d8b15000000008b04b2dd8080020000dc1d00000000dfe0f6c40175118b8fe400000033c085c95f5e0f94c059c35f32c05e59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?SLOBYTE@@YAHPAXZZ",
+   "sym_key": "SLOBYTE"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?FindBuildingByTiberiumType@@YIHH@Z",
+   "sym_key": "FindBuildingByTiberiumType"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?BuildingClass_InstanceArray@@3PAVBuildingClass@@A",
+   "sym_key": "BuildingClass_InstanceArray"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E3810@@3NA",
+   "sym_key": "DataGlobal_7E3810"
+  }
+ ]
+}

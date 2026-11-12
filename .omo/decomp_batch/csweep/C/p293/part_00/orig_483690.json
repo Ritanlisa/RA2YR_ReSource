@@ -1,0 +1,11 @@
+{
+ "addr": "0x483690",
+ "name": "BuildingClass::IsTiberiumSiloEligible",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x483690",
+ "bytes_hex": "a130b2a800568bf157f6008075055f32c05ec38b4e44e875a617008bf883ffff75055f32c05ec38bc733c98a8e1e010000992bc2d1f83bc87f055f32c05ec38a861c01000084c074055f32c05ec38b15ecf4b0008b04badd80a0000000dc1d10387e00dfe0f6c40174055f32c05ec38b86e40000005f85c00f94c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

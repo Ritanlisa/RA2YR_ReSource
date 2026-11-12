@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_58BE20@ObjectClass@@QAEPAIH@Z",
+ "sym_key": "ObjectClass::sub_58BE20",
+ "size": 151,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec1c53568b3500000000570faff64e33ff897c24148bd98d460189442410df6c2410dd5c2420b9c8340000e80000000089442418897c241cdf6c241883ec08dc4c2428dc0d00000000dd1c24e800000000668944241883c4088b4c24103bce77c58b15182700008d0489c1e00403c266393875066639780274ac8d0c895fc1e1048bc35e8b141189135b8be55dc20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

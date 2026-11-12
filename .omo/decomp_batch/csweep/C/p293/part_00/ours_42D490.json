@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetCellNeighborCoord@@YIPAIPAHPAFH@Z",
+ "sym_key": "Unnamed::GetCellNeighborCoord",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "8b4424045683f8088bf1753752b9f8010000e8000000000fbf801601000083f8ff750cc706000000008bc65ec204008b0d7c0300008b14818b422889068bc65ec204000fbe807a0000008b4c240857668b3a668b520203f833f981e7ff000000c1f81033cf03d033d18bc681e2ff0000005f33d189165ec20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  }
+ ]
+}

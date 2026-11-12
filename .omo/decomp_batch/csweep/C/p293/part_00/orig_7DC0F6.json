@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DC0F6",
+ "name": "___multtenpow12",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DC0F6",
+ "bytes_hex": "558bec83ec0c53bb20d7870033c983eb60394d0c74637d108b450cbb80d88700f7d889450c83eb60394d1075068b4508668908394d0c744156578b450c83c354c17d0c0383e0073bc174278d044066813c8300808d3483720c8d7df4a5a5a5ff4df68d75f456ff7508e872fdffff595933c9394d0c75c35f5e5bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

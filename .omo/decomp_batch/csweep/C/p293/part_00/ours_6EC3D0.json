@@ -1,0 +1,15 @@
+{
+ "symbol": "?FindBestBuildingToRepair@HouseClass@@QAEPAIXZ",
+ "sym_key": "HouseClass::FindBestBuildingToRepair",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "5355568b715483cbff8bee85f675065e5d33c05bc3578b0656ff90840000008bb8fc0500008a869000000084c074378b466c85c07430a10000000085c0750a8a868100000084c0751d8a868906000084c0750b8b0e56ff512c83f80275083bfb7e048bee8bdf8bb6d805000085f675a65f8bc55e5d5bc3",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  }
+ ]
+}
