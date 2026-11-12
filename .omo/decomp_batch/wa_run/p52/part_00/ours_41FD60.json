@@ -1,0 +1,39 @@
+{
+ "symbol": "?RegisterSuccess@AITriggerTypeClass@@QAEHXZ",
+ "sym_key": "AITriggerTypeClass::RegisterSuccess",
+ "size": 191,
+ "link_base": 0,
+ "bytes_hex": "8b910801000033c0dd050000000083ec083bd07e41568bb104010000ddd88954240489442408df6c24048974240489442408df6c24045ed8f1dc2500000000dec9dc1500000000dfe0f6c4017408ddd8dd0500000000a140020000dd80c0000000dc81b8000000dec1dd91b8000000dc99c0000000dfe0f6c401740c8b81c00000008981b8000000dd81b8000000dc99c8000000dfe0f6c441750c8b81c80000008981b80000008b8104010000404289810401000089910801000083c408c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

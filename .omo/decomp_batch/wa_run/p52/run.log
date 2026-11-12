@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p52\part_00
+=== convert (20 addrs) ===
+[conv] 0x4126b0 sub_4126B0 -> _addr_41
+[conv] 0x412830 sub_412830 -> _addr_41
+[conv] 0x413b10 sub_413B10 -> _addr_41
+[conv] 0x413c90 sub_413C90 -> _addr_41
+[conv] 0x41be60 IUnknown::LandingCheckStub -> IUnknown
+[conv] 0x41be70 IUnknown::StubReturnFalse2 -> IUnknown
+[conv] 0x41bff0 TechnoClass::vt_entry_434 -> TechnoClass
+[conv] 0x41c070 FootClass::CheckDockState -> FootClass
+[conv] 0x41c6f0 sub_41C6F0 -> _addr_41
+[conv] 0x41c870 sub_41C870 -> _addr_41
+[conv] 0x41d0c0 sub_41D0C0 -> _addr_41
+[conv] 0x41d240 sub_41D240 -> _addr_41
+[conv] 0x41d260 sub_41D260 -> _addr_41
+[conv] 0x41e1b0 sub_41E1B0 -> _addr_41
+[conv] 0x41e330 sub_41E330 -> _addr_41
+[conv] 0x41fd60 AITriggerTypeClass::RegisterSuccess -> AITriggerTypeClass
+[conv] 0x420740 sub_420740 -> _addr_42
+[conv] 0x4208c0 sub_4208C0 -> _addr_42
+[conv] 0x421d00 sub_421D00 -> _addr_42
+[conv] 0x421e80 sub_421E80 -> _addr_42
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_41                 rc=0
+[era] IUnknown                 rc=0
+[era] TechnoClass              rc=0
+[era] FootClass                rc=0
+[era] AITriggerTypeClass       rc=0
+[era] _addr_42                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4126b0   MATCH            sub_4126B0
+[diff] 0x412830   MISMATCH         sub_412830
+[diff] 0x413b10   MATCH            sub_413B10
+[diff] 0x413c90   MISMATCH         sub_413C90
+[diff] 0x41c6f0   MATCH            sub_41C6F0
+[diff] 0x41c870   MISMATCH         sub_41C870
+[diff] 0x41d0c0   MATCH            sub_41D0C0
+[diff] 0x41d240   MISMATCH         sub_41D240
+[diff] 0x41d260   MISMATCH         sub_41D260
+[diff] 0x41e1b0   MATCH            sub_41E1B0
+[diff] 0x41e330   MISMATCH         sub_41E330
+[diff] 0x41be60   MATCH            IUnknown::LandingCheckStub
+[diff] 0x41be70   MATCH            IUnknown::StubReturnFalse2
+[diff] 0x41bff0   MATCH            TechnoClass::vt_entry_434
+[diff] 0x41c070   MATCH            FootClass::CheckDockState
+[diff] 0x41fd60   MISMATCH         AITriggerTypeClass::RegisterSuccess
+[diff] 0x420740   MATCH            sub_420740
+[diff] 0x4208c0   MISMATCH         sub_4208C0
+[diff] 0x421d00   MATCH            sub_421D00
+[diff] 0x421e80   MISMATCH         sub_421E80
+[ledger] 0x4126b0 sub_4126B0 -> OK (attempt 2)
+[ledger] 0x412830 sub_412830 -> NG (attempt 2)
+[ledger] 0x413b10 sub_413B10 -> OK (attempt 2)
+[ledger] 0x413c90 sub_413C90 -> NG (attempt 2)
+[ledger] 0x41be60 IUnknown::LandingCheckStub -> OK (attempt 2)
+[ledger] 0x41be70 IUnknown::StubReturnFalse2 -> OK (attempt 2)
+[ledger] 0x41bff0 TechnoClass::vt_entry_434 -> OK (attempt 2)
+[ledger] 0x41c070 FootClass::CheckDockState -> OK (attempt 4)
+[ledger] 0x41c6f0 sub_41C6F0 -> OK (attempt 2)
+[ledger] 0x41c870 sub_41C870 -> NG (attempt 2)
+[ledger] 0x41d0c0 sub_41D0C0 -> OK (attempt 2)
+[ledger] 0x41d240 sub_41D240 -> NG (attempt 2)
+[ledger] 0x41d260 sub_41D260 -> NG (attempt 2)
+[ledger] 0x41e1b0 sub_41E1B0 -> OK (attempt 2)
+[ledger] 0x41e330 sub_41E330 -> NG (attempt 2)
+[ledger] 0x41fd60 AITriggerTypeClass::RegisterSuccess -> NG (attempt 12)
+[ledger] 0x420740 sub_420740 -> OK (attempt 2)
+[ledger] 0x4208c0 sub_4208C0 -> NG (attempt 3)
+[ledger] 0x421d00 sub_421D00 -> OK (attempt 2)
+[ledger] 0x421e80 sub_421E80 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "extern_reloc": 7,
+  "const_fold": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 55.0,
+ "match_rate_of_total_pct": 55.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p52\batch_report.json

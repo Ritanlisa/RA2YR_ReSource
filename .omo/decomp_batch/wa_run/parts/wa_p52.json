@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x4126b0",
+  "family": "D_RELOC",
+  "name": "sub_4126B0"
+ },
+ {
+  "addr": "0x412830",
+  "family": "D_RELOC",
+  "name": "sub_412830"
+ },
+ {
+  "addr": "0x413b10",
+  "family": "D_RELOC",
+  "name": "sub_413B10"
+ },
+ {
+  "addr": "0x413c90",
+  "family": "D_RELOC",
+  "name": "sub_413C90"
+ },
+ {
+  "addr": "0x41be60",
+  "family": "D_RELOC",
+  "name": "AircraftClass::LandingCheckStub"
+ },
+ {
+  "addr": "0x41be70",
+  "family": "D_RELOC",
+  "name": "AircraftClass::StubReturnFalse2"
+ },
+ {
+  "addr": "0x41bff0",
+  "family": "D_RELOC",
+  "name": "TechnoClass::vt_entry_434"
+ },
+ {
+  "addr": "0x41c070",
+  "family": "D_RELOC",
+  "name": "AircraftClass::CheckDockState"
+ },
+ {
+  "addr": "0x41c6f0",
+  "family": "D_RELOC",
+  "name": "sub_41C6F0"
+ },
+ {
+  "addr": "0x41c870",
+  "family": "D_RELOC",
+  "name": "sub_41C870"
+ },
+ {
+  "addr": "0x41d0c0",
+  "family": "D_RELOC",
+  "name": "sub_41D0C0"
+ },
+ {
+  "addr": "0x41d240",
+  "family": "D_RELOC",
+  "name": "sub_41D240"
+ },
+ {
+  "addr": "0x41d260",
+  "family": "D_RELOC",
+  "name": "sub_41D260"
+ },
+ {
+  "addr": "0x41e1b0",
+  "family": "D_RELOC",
+  "name": "sub_41E1B0"
+ },
+ {
+  "addr": "0x41e330",
+  "family": "D_RELOC",
+  "name": "sub_41E330"
+ },
+ {
+  "addr": "0x41fd60",
+  "family": "D_RELOC",
+  "name": "AITriggerTypeClass::RegisterSuccess"
+ },
+ {
+  "addr": "0x420740",
+  "family": "D_RELOC",
+  "name": "sub_420740"
+ },
+ {
+  "addr": "0x4208c0",
+  "family": "D_RELOC",
+  "name": "sub_4208C0"
+ },
+ {
+  "addr": "0x421d00",
+  "family": "D_RELOC",
+  "name": "sub_421D00"
+ },
+ {
+  "addr": "0x421e80",
+  "family": "D_RELOC",
+  "name": "sub_421E80"
+ }
+]

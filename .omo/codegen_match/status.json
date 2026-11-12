@@ -4436,14 +4436,14 @@
   "this_as_id": false
  },
  "0x4126b0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_4126B0",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_4126B0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x4126d0": {
@@ -4502,7 +4502,7 @@
   "this_as_id": false
  },
  "0x412830": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0x889e38], 0",
   "name": "sub_412830",
@@ -4610,14 +4610,14 @@
   "this_as_id": false
  },
  "0x413b10": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_413B10",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_413B10",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x413b30": {
@@ -4683,7 +4683,7 @@
   "this_as_id": false
  },
  "0x413c90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0x889eb8], 0",
   "name": "sub_413C90",
@@ -4841,18 +4841,28 @@
   "this_as_id": false
  },
  "0x41be60": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": true,
+  "cls_src": "backfill",
   "first_diff": "+2 ret 4",
-  "name": "AircraftClass::LandingCheckStub",
-  "note": "decomp_batch r2: MISMATCH/regalloc",
-  "status": "NG"
+  "name": "IUnknown::LandingCheckStub",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AircraftClass::LandingCheckStub",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x41be70": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": true,
+  "cls_src": "backfill",
   "first_diff": "+2 ret 4",
-  "name": "AircraftClass::StubReturnFalse2",
-  "note": "decomp_batch r2: MISMATCH/regalloc",
-  "status": "NG"
+  "name": "IUnknown::StubReturnFalse2",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AircraftClass::StubReturnFalse2",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x41be80": {
   "attempts": 1,
@@ -5042,11 +5052,16 @@
   "this_as_id": false
  },
  "0x41bff0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": true,
+  "cls_src": "backfill",
   "first_diff": "+0 xor al, al",
   "name": "TechnoClass::vt_entry_434",
-  "note": "decomp_batch r2: MISMATCH/codegen_shape",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TechnoClass::vt_entry_434",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x41c000": {
   "attempts": 1,
@@ -5123,11 +5138,16 @@
   "this_as_id": false
  },
  "0x41c070": {
-  "attempts": 3,
+  "attempts": 4,
+  "clean": true,
+  "cls_src": "backfill",
   "first_diff": "+0 mov al, byte ptr [ecx + 0x6b6]",
-  "name": "AircraftClass::CheckDockState",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "FootClass::CheckDockState",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AircraftClass::CheckDockState",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x41c080": {
   "attempts": 1,
@@ -5369,14 +5389,14 @@
   "this_as_id": false
  },
  "0x41c6f0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_41C6F0",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_41C6F0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x41c710": {
@@ -5427,7 +5447,7 @@
   "status": "OK"
  },
  "0x41c870": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0x889f48], 0",
   "name": "sub_41C870",
@@ -5591,14 +5611,14 @@
   "this_as_id": false
  },
  "0x41d0c0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_41D0C0",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_41D0C0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x41d0e0": {
@@ -5657,7 +5677,7 @@
   "this_as_id": false
  },
  "0x41d240": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0x889fe8], 0",
   "name": "sub_41D240",
@@ -5668,7 +5688,7 @@
   "this_as_id": false
  },
  "0x41d260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+2 mov dword ptr [0x889f70], eax",
   "name": "sub_41D260",
@@ -5861,14 +5881,14 @@
   "this_as_id": false
  },
  "0x41e1b0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_41E1B0",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_41E1B0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x41e1d0": {
@@ -5938,7 +5958,7 @@
   "this_as_id": false
  },
  "0x41e330": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0x88a068], 0",
   "name": "sub_41E330",
@@ -6023,11 +6043,16 @@
   "this_as_id": false
  },
  "0x41fd60": {
-  "attempts": 11,
-  "first_diff": "+7 fld qword ptr [0x7e2800]",
+  "attempts": 12,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ecx",
   "name": "AITriggerTypeClass::RegisterSuccess",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
-  "status": "NG"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AITriggerTypeClass::RegisterSuccess",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x41fe20": {
   "attempts": 10,
@@ -6189,14 +6214,14 @@
   "this_as_id": false
  },
  "0x420740": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_420740",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_420740",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x420760": {
@@ -6255,11 +6280,15 @@
   "this_as_id": false
  },
  "0x4208c0": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": "+5 mov dword ptr [0x89a120], 0",
   "name": "sub_4208C0",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
-  "status": "NG"
+  "orig_name": "sub_4208C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x420d40": {
   "attempts": 1,
@@ -6455,14 +6484,14 @@
   "this_as_id": false
  },
  "0x421d00": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+0 fld qword ptr [0x7e1718]",
   "name": "sub_421D00",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_421D00",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x421d20": {
@@ -6528,7 +6557,7 @@
   "this_as_id": false
  },
  "0x421e80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+5 mov dword ptr [0x89a1b0], 0",
   "name": "sub_421E80",
