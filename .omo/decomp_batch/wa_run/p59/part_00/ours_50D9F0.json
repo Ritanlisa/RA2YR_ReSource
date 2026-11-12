@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetUnitSelfHealStep@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::GetUnitSelfHealStep",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "a1400200008b403c0faf8168010000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

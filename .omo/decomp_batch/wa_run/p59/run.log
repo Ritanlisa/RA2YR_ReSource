@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p59\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e6320 sub_4E6320 -> _addr_4E
+[conv] 0x4e64a0 sub_4E64A0 -> _addr_4E
+[conv] 0x4e81a0 sub_4E81A0 -> _addr_4E
+[conv] 0x4e81c0 sub_4E81C0 -> _addr_4E
+[conv] 0x4f0f40 sub_4F0F40 -> _addr_4F
+[conv] 0x4f10c0 sub_4F10C0 -> _addr_4F
+[conv] 0x4f4080 sub_4F4080 -> _addr_4F
+[conv] 0x4f4200 sub_4F4200 -> _addr_4F
+[conv] 0x4f42a0 GScreenClass::Add -> GScreenClass
+[conv] 0x4f42e0 GScreenClass::Get -> GScreenClass
+[conv] 0x4f4c20 Byte::Zero -> Byte
+[conv] 0x4f4f50 sub_4F4F50 -> _addr_4F
+[conv] 0x4f50d0 sub_4F50D0 -> _addr_4F
+[conv] 0x50d9e0 HouseClass::GetInfSelfHealStep -> HouseClass
+[conv] 0x50d9f0 HouseClass::GetUnitSelfHealStep -> HouseClass
+[conv] 0x50da10 ObjectClass::GlobalHelper_0E4440_Helper -> ObjectClass
+[conv] 0x50da20 TActionClass::executeHuntAction -> TActionClass
+[conv] 0x50da50 ObjectClass::GlobalHelper_0E44C0_Helper -> ObjectClass
+[conv] 0x50dff0 ObjectClass::GlobalHelper_0E4540_Helper -> ObjectClass
+[conv] 0x510b50 sub_510B50 -> _addr_51
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4E                 rc=0
+[era] _addr_4F                 rc=0
+[era] GScreenClass             rc=0
+[era] Byte                     rc=0
+[era] HouseClass               rc=0
+[era] ObjectClass              rc=0
+[era] TActionClass             rc=0
+[era] _addr_51                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e6320   MATCH            sub_4E6320
+[diff] 0x4e64a0   MISMATCH         sub_4E64A0
+[diff] 0x4e81a0   MISMATCH         sub_4E81A0
+[diff] 0x4e81c0   MISMATCH         sub_4E81C0
+[diff] 0x4f0f40   MATCH            sub_4F0F40
+[diff] 0x4f10c0   MISMATCH         sub_4F10C0
+[diff] 0x4f4080   MATCH            sub_4F4080
+[diff] 0x4f4200   MISMATCH         sub_4F4200
+[diff] 0x4f4f50   MATCH            sub_4F4F50
+[diff] 0x4f50d0   MISMATCH         sub_4F50D0
+[diff] 0x4f42a0   MISMATCH         GScreenClass::Add
+[diff] 0x4f42e0   MISMATCH         GScreenClass::Get
+[diff] 0x4f4c20   MATCH            Byte::Zero
+[diff] 0x50d9e0   MISMATCH         HouseClass::GetInfSelfHealStep
+[diff] 0x50d9f0   MISMATCH         HouseClass::GetUnitSelfHealStep
+[diff] 0x50da10   MISMATCH         ObjectClass::GlobalHelper_0E4440_Helper
+[diff] 0x50da50   MISMATCH         ObjectClass::GlobalHelper_0E44C0_Helper
+[diff] 0x50dff0   MISMATCH         ObjectClass::GlobalHelper_0E4540_Helper
+[diff] 0x50da20   MISMATCH         TActionClass::executeHuntAction
+[diff] 0x510b50   MATCH            sub_510B50
+[ledger] 0x4e6320 sub_4E6320 -> OK (attempt 2)
+[ledger] 0x4e64a0 sub_4E64A0 -> NG (attempt 3)
+[ledger] 0x4e81a0 sub_4E81A0 -> NG (attempt 2)
+[ledger] 0x4e81c0 sub_4E81C0 -> NG (attempt 2)
+[ledger] 0x4f0f40 sub_4F0F40 -> OK (attempt 2)
+[ledger] 0x4f10c0 sub_4F10C0 -> NG (attempt 2)
+[ledger] 0x4f4080 sub_4F4080 -> OK (attempt 2)
+[ledger] 0x4f4200 sub_4F4200 -> NG (attempt 2)
+[ledger] 0x4f42a0 GScreenClass::Add -> NG (attempt 2)
+[ledger] 0x4f42e0 GScreenClass::Get -> NG (attempt 2)
+[ledger] 0x4f4c20 Byte::Zero -> OK (attempt 4)
+[ledger] 0x4f4f50 sub_4F4F50 -> OK (attempt 3)
+[ledger] 0x4f50d0 sub_4F50D0 -> NG (attempt 2)
+[ledger] 0x50d9e0 HouseClass::GetInfSelfHealStep -> NG (attempt 2)
+[ledger] 0x50d9f0 HouseClass::GetUnitSelfHealStep -> NG (attempt 2)
+[ledger] 0x50da10 ObjectClass::GlobalHelper_0E4440_Helper -> NG (attempt 2)
+[ledger] 0x50da20 TActionClass::executeHuntAction -> NG (attempt 2)
+[ledger] 0x50da50 ObjectClass::GlobalHelper_0E44C0_Helper -> NG (attempt 2)
+[ledger] 0x50dff0 ObjectClass::GlobalHelper_0E4540_Helper -> NG (attempt 2)
+[ledger] 0x510b50 sub_510B50 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 6,
+  "MISMATCH": 14
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "const_fold": 2,
+  "width_mismatch": 4
+ },
+ "match_rate_of_decided_pct": 30.0,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p59\batch_report.json

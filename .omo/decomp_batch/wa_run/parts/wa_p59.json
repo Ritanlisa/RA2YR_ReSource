@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x4e6320",
+  "family": "D_RELOC",
+  "name": "sub_4E6320"
+ },
+ {
+  "addr": "0x4e64a0",
+  "family": "D_RELOC",
+  "name": "sub_4E64A0"
+ },
+ {
+  "addr": "0x4e81a0",
+  "family": "D_RELOC",
+  "name": "sub_4E81A0"
+ },
+ {
+  "addr": "0x4e81c0",
+  "family": "D_RELOC",
+  "name": "sub_4E81C0"
+ },
+ {
+  "addr": "0x4f0f40",
+  "family": "D_RELOC",
+  "name": "sub_4F0F40"
+ },
+ {
+  "addr": "0x4f10c0",
+  "family": "D_RELOC",
+  "name": "sub_4F10C0"
+ },
+ {
+  "addr": "0x4f4080",
+  "family": "D_RELOC",
+  "name": "sub_4F4080"
+ },
+ {
+  "addr": "0x4f4200",
+  "family": "D_RELOC",
+  "name": "sub_4F4200"
+ },
+ {
+  "addr": "0x4f42a0",
+  "family": "D_RELOC",
+  "name": "GScreenClass::Add"
+ },
+ {
+  "addr": "0x4f42e0",
+  "family": "D_RELOC",
+  "name": "GScreenClass::Get"
+ },
+ {
+  "addr": "0x4f4c20",
+  "family": "D_RELOC",
+  "name": "Byte::Zero"
+ },
+ {
+  "addr": "0x4f4f50",
+  "family": "D_RELOC",
+  "name": "sub_4F4F50"
+ },
+ {
+  "addr": "0x4f50d0",
+  "family": "D_RELOC",
+  "name": "sub_4F50D0"
+ },
+ {
+  "addr": "0x50d9e0",
+  "family": "D_RELOC",
+  "name": "HouseClass::GetInfSelfHealStep"
+ },
+ {
+  "addr": "0x50d9f0",
+  "family": "D_RELOC",
+  "name": "HouseClass::GetUnitSelfHealStep"
+ },
+ {
+  "addr": "0x50da10",
+  "family": "D_RELOC",
+  "name": "ObjectClass::GlobalHelper_0E4440_Helper"
+ },
+ {
+  "addr": "0x50da20",
+  "family": "D_RELOC",
+  "name": "TActionClass::executeHuntAction"
+ },
+ {
+  "addr": "0x50da50",
+  "family": "D_RELOC",
+  "name": "ObjectClass::GlobalHelper_0E44C0_Helper"
+ },
+ {
+  "addr": "0x50dff0",
+  "family": "D_RELOC",
+  "name": "ObjectClass::GlobalHelper_0E4540_Helper"
+ },
+ {
+  "addr": "0x510b50",
+  "family": "D_RELOC",
+  "name": "sub_510B50"
+ }
+]

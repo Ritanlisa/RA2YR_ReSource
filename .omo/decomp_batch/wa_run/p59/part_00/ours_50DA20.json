@@ -1,0 +1,15 @@
+{
+ "symbol": "?executeHuntAction@TActionClass@@QAEHH@Z",
+ "sym_key": "TActionClass::executeHuntAction",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b4424048981f45400000fbe15a00100008991fc540000c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?GlobalHelper_0E44C0_Helper@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GlobalHelper_0E44C0_Helper",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "0fbe05b4030000c781fc5400009cffffff8981f45400000fbe15b40300008991f8540000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

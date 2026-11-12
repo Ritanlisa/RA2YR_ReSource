@@ -1,0 +1,11 @@
+{
+ "addr": "0x50DA20",
+ "name": "TActionClass::executeHuntAction",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50DA20",
+ "bytes_hex": "8b4424048981f45400008b1584eda8008991fc540000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
