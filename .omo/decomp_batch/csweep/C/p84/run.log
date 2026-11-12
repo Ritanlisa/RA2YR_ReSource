@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p84\part_00
+=== convert (20 addrs) ===
+[conv] 0x683180 sub_683180 -> _addr_68
+[conv] 0x68cc40 sub_68CC40 -> _addr_68
+[conv] 0x6912c0 sub_6912C0 -> _addr_69
+[conv] 0x692160 sub_692160 -> _addr_69
+[conv] 0x6955f0 sub_6955F0 -> _addr_69
+[conv] 0x696e30 sub_696E30 -> _addr_69
+[conv] 0x69eb50 sub_69EB50 -> _addr_69
+[conv] 0x6a4470 sub_6A4470 -> _addr_6A
+[conv] 0x6a4b30 sub_6A4B30 -> _addr_6A
+[conv] 0x6aca80 sub_6ACA80 -> _addr_6A
+[conv] 0x6af020 sub_6AF020 -> _addr_6A
+[conv] 0x6b22b0 sub_6B22B0 -> _addr_6B
+[conv] 0x6b4950 sub_6B4950 -> _addr_6B
+[conv] 0x6b5180 sub_6B5180 -> _addr_6B
+[conv] 0x6b6b10 sub_6B6B10 -> _addr_6B
+[conv] 0x6bb180 sub_6BB180 -> _addr_6B
+[conv] 0x6c69d0 sub_6C69D0 -> _addr_6C
+[conv] 0x6c8d90 sub_6C8D90 -> _addr_6C
+[conv] 0x6c9500 sub_6C9500 -> _addr_6C
+[conv] 0x6cad20 sub_6CAD20 -> _addr_6C
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_68                 rc=0
+[era] _addr_69                 rc=0
+[era] _addr_6A                 rc=0
+[era] _addr_6B                 rc=0
+[era] _addr_6C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x683180   MISMATCH         sub_683180
+[diff] 0x68cc40   MISMATCH         sub_68CC40
+[diff] 0x6912c0   MISMATCH         sub_6912C0
+[diff] 0x692160   MISMATCH         sub_692160
+[diff] 0x6955f0   MISMATCH         sub_6955F0
+[diff] 0x696e30   MISMATCH         sub_696E30
+[diff] 0x69eb50   MISMATCH         sub_69EB50
+[diff] 0x6a4470   MISMATCH         sub_6A4470
+[diff] 0x6a4b30   MISMATCH         sub_6A4B30
+[diff] 0x6aca80   MISMATCH         sub_6ACA80
+[diff] 0x6af020   MISMATCH         sub_6AF020
+[diff] 0x6b22b0   MISMATCH         sub_6B22B0
+[diff] 0x6b4950   MISMATCH         sub_6B4950
+[diff] 0x6b5180   MISMATCH         sub_6B5180
+[diff] 0x6b6b10   MISMATCH         sub_6B6B10
+[diff] 0x6bb180   MISMATCH         sub_6BB180
+[diff] 0x6c69d0   MISMATCH         sub_6C69D0
+[diff] 0x6c8d90   MISMATCH         sub_6C8D90
+[diff] 0x6c9500   MISMATCH         sub_6C9500
+[diff] 0x6cad20   MISMATCH         sub_6CAD20
+[ledger] 0x683180 sub_683180 -> NG (attempt 1)
+[ledger] 0x68cc40 sub_68CC40 -> NG (attempt 1)
+[ledger] 0x6912c0 sub_6912C0 -> NG (attempt 1)
+[ledger] 0x692160 sub_692160 -> NG (attempt 1)
+[ledger] 0x6955f0 sub_6955F0 -> NG (attempt 1)
+[ledger] 0x696e30 sub_696E30 -> NG (attempt 1)
+[ledger] 0x69eb50 sub_69EB50 -> NG (attempt 1)
+[ledger] 0x6a4470 sub_6A4470 -> NG (attempt 1)
+[ledger] 0x6a4b30 sub_6A4B30 -> NG (attempt 1)
+[ledger] 0x6aca80 sub_6ACA80 -> NG (attempt 1)
+[ledger] 0x6af020 sub_6AF020 -> NG (attempt 1)
+[ledger] 0x6b22b0 sub_6B22B0 -> NG (attempt 1)
+[ledger] 0x6b4950 sub_6B4950 -> NG (attempt 1)
+[ledger] 0x6b5180 sub_6B5180 -> NG (attempt 1)
+[ledger] 0x6b6b10 sub_6B6B10 -> NG (attempt 1)
+[ledger] 0x6bb180 sub_6BB180 -> NG (attempt 1)
+[ledger] 0x6c69d0 sub_6C69D0 -> NG (attempt 1)
+[ledger] 0x6c8d90 sub_6C8D90 -> NG (attempt 1)
+[ledger] 0x6c9500 sub_6C9500 -> NG (attempt 1)
+[ledger] 0x6cad20 sub_6CAD20 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p84\batch_report.json
