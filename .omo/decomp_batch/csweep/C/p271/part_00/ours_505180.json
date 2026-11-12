@@ -1,0 +1,45 @@
+{
+ "symbol": "?checkBuildLimit@TechnoClass@@QAEXXZ",
+ "sym_key": "TechnoClass::checkBuildLimit",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b0d000000008a86ec01000085c9740d84c075098b4c2404e8000000008b861457000085c0751f578b3d000000008bcec7050000000000000000e800000000893d000000005f5e59c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?CanDetect@HouseClass@@QAEDXZ",
+   "sym_key": "HouseClass::CanDetect"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?GenerateAIBuildListEnsureSanity@HouseClass@@QAEXXZ",
+   "sym_key": "HouseClass::GenerateAIBuildListEnsureSanity"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  }
+ ]
+}

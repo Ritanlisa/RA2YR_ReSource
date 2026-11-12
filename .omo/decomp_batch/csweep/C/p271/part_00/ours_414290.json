@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@AircraftClass@@QAEHPAHPAXPAPAX@Z",
+ "sym_key": "AircraftClass::QueryInterface",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "e80000000085c07d49568b74240c57b904000000bf0000000033c08b44240cf3a75f5e752585c074178b54240c8d88c000000050890a8b08ff510433c0c20c008b54240cc702000000008b0850ff510433c0c20c00",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?QueryInterface@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::QueryInterface"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?IID_IFlyControl@@3U_GUID_era@@A",
+   "sym_key": "IID_IFlyControl"
+  }
+ ]
+}

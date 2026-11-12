@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_405430@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_405430",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf18b865801000085c074534885c08986580100007d0ac78658010000000000008b865801000085c075348a461c83f802752c8bcee80000000089442404df6c2404dc8640010000e8000000008944240489542408df6c2404dd9e400100005e83c408c3",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

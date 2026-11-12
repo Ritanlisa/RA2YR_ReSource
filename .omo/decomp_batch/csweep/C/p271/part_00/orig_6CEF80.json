@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CEF80",
+ "name": "SuperWeaponTypeClass::SD_vt27",
+ "size": 94,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CEF80",
+ "bytes_hex": "56578bf983bfb40000000a75468b74241085f674348b068bceff502c83f80675288b168bceff522c83e8068b0d4c3da800f7d81bc051f7d023c68b881c020000e88baae2ff84c0750a5fb8460000005ec208008b87bc0000005f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

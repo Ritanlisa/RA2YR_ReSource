@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C6C50",
+ "name": "Network::initConnection",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C6C50",
+ "bytes_hex": "8b44240483ec0885c0568bf17c398846028d4424048d4c241050518b4c241cc60629e8298107008b5424048a4424188956088846078b0d84eda8008bc6894e035e83c408c20c00c64602ffc606008b1584eda8008bc68956035e83c408c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

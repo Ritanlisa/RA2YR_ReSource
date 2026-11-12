@@ -1,0 +1,45 @@
+{
+ "symbol": "?DispatchVirtualCall_8@WalkLocomotionClass@@QAGHH@Z",
+ "sym_key": "WalkLocomotionClass::DispatchVirtualCall_8",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b0d000000008948188b150000000089501c8b0d000000008b50248948203b1500000000752e8b48288b15000000003bca75218b502c8b0d000000003bd1751432c98848308848328b4008508b08ff914c050000c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_AsyncMovieState@@3IA",
+   "sym_key": "g_AsyncMovieState"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState1@@3IA",
+   "sym_key": "g_MovieFrameState1"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState2@@3IA",
+   "sym_key": "g_MovieFrameState2"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_AsyncMovieState@@3IA",
+   "sym_key": "g_AsyncMovieState"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState1@@3IA",
+   "sym_key": "g_MovieFrameState1"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState2@@3IA",
+   "sym_key": "g_MovieFrameState2"
+  }
+ ]
+}

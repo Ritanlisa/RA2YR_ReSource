@@ -1,0 +1,11 @@
+{
+ "addr": "0x45F1D0",
+ "name": "TacticalClass::initTacticalMap",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45F1D0",
+ "bytes_hex": "8a81681700005684c0744e8b74240885f674468b81f414000085c0752b8b01ff909c00000085c08906742e0fbf4006992bc2d1f883f8037e208b4c240c83c0035e8901b001c2080089060fbf4006992bc28b54240cd1f8890232c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

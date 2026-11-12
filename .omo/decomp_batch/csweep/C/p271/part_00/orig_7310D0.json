@@ -1,0 +1,11 @@
+{
+ "addr": "0x7310D0",
+ "name": "SidebarClearReferences",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7310D0",
+ "bytes_hex": "538b1d88eca800555733ff8be985db7e4a56a17ceca8008b34b885f67437a138b2a8008b8e1c02000085c075088a81ed010000eb05e8e6a5ddff84c074178b86140200008d55ff3bc2750ac78614020000ffffffff473bfb7cb85e5f5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?initConnection@Network@@QAEPADHPAHD@Z",
+ "sym_key": "Network::initConnection",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "8b4424045685c08bf17c2f8846028d44240c8d4c240850518b4c2414c60629e8000000000fbe542410895608a0000000008846038bc65ec20c00c64602ffc606008a0d000000008bc6884e035ec20c00",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?CopyAddress@Network@@QAEPADPAXH@Z",
+   "sym_key": "Network::CopyAddress"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

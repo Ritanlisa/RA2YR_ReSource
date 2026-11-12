@@ -1,0 +1,11 @@
+{
+ "addr": "0x505180",
+ "name": "TechnoClass::checkBuildLimit",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x505180",
+ "bytes_hex": "568bf18b0d38b2a8008a86ec01000085c9751484c0750e8a86ed01000084c0750432c0eb02b00184c0750985c97405e88cc4ffff8b861457000085c0751f578b3dace7a8008bcec705ace7a80000000000e8da020000893dace7a8005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

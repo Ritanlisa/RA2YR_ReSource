@@ -1,0 +1,27 @@
+{
+ "symbol": "?SmallFunc_6CF1D0@SwizzleManagerClass@@QAEXXZ",
+ "sym_key": "SwizzleManagerClass::SmallFunc_6CF1D0",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db891ee8000000008b4620895e1c3bc37411385e29740c50e80000000083c404895e208b4608885e293bc3895e24895e047411385e11740c50e80000000083c404895e08885e11895e0c5e5bc3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?ConvertNodes@SwizzleManagerClass@@QAEHXZ",
+   "sym_key": "SwizzleManagerClass::ConvertNodes"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

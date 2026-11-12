@@ -1,0 +1,8 @@
+{
+ "symbol": "?initTacticalMap@TacticalClass@@QAEDPAH0@Z",
+ "sym_key": "TacticalClass::initTacticalMap",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "8a81681700005684c074238b74240885f6741b8b81f414000085c0741789068b4c240c0fbf4006992bc2d1f8890132c05ec208008b1151ff929c00000085c0890674eb0fbf4006992bc2d1f883f8037edd8b4c240c83c0035e8901b001c20800",
+ "relocs": []
+}

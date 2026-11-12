@@ -1,0 +1,11 @@
+{
+ "addr": "0x414290",
+ "name": "AircraftClass::QueryInterface",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x414290",
+ "bytes_hex": "538b5c2408558b6c2414568b742414555653e8b9bfffff85c07d3e57b904000000bf409b7e0033c0f3a75f752285db74198d83c0060000538945008b0b33f6ff51048bc65e5d5bc20c0033c08945008b0b5333f6ff51048bc65e5d5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

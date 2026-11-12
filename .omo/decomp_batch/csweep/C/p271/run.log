@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p271\part_00
+=== convert (20 addrs) ===
+[conv] 0x5bd240 sub_5BD240 -> _addr_5B
+[conv] 0x6cf1d0 SwizzleManagerClass::SmallFunc_6CF1D0 -> SwizzleManagerClass
+[conv] 0x6cef80 SuperWeaponTypeClass::SD_vt27 -> SuperWeaponTypeClass
+[conv] 0x405430 ObjectClass::sub_405430 -> ObjectClass
+[conv] 0x7310d0 ObjectClass::SidebarClearReferences -> ObjectClass
+[conv] 0x45f1d0 TacticalClass::initTacticalMap -> TacticalClass
+[conv] 0x75ada0 WalkLocomotionClass::DispatchVirtualCall_8 -> WalkLocomotionClass
+[conv] 0x478db0 CCToolTip::Release -> CCToolTip
+[conv] 0x505180 TechnoClass::checkBuildLimit -> TechnoClass
+[conv] 0x4baec0 DSurface::CanLock -> DSurface
+[conv] 0x4754b0 OverlayTypeClass::ReadINIString -> OverlayTypeClass
+[conv] 0x476fc0 ObjectTypeClass::loadTypeMember_476FC0 -> ObjectTypeClass
+[conv] 0x477050 AnimTypeClass::ReadINIString -> AnimTypeClass
+[conv] 0x752700 VoxClass::FindAndPlay -> VoxClass
+[conv] 0x53e4f0 ObjectClass::WinMain_Helper_53E4F0 -> ObjectClass
+[conv] 0x4c3dd0 ObjectClass::sub_4C3DD0 -> ObjectClass
+[conv] 0x414290 AircraftClass::QueryInterface -> AircraftClass
+[conv] 0x4c6c50 Network::initConnection -> Network
+[conv] 0x603e40 sub_603E40 -> _addr_60
+[conv] 0x6e1440 ObjectClass::Render -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=2
+[era] SwizzleManagerClass      rc=0
+[era] SuperWeaponTypeClass     rc=0
+[era] ObjectClass              rc=2
+[era] TacticalClass            rc=0
+[era] WalkLocomotionClass      rc=0
+[era] CCToolTip                rc=2
+[era] TechnoClass              rc=0
+[era] DSurface                 rc=2
+[era] OverlayTypeClass         rc=2
+[era] ObjectTypeClass          rc=2
+[era] AnimTypeClass            rc=2
+[era] VoxClass                 rc=2
+[era] AircraftClass            rc=0
+[era] Network                  rc=0
+[era] _addr_60                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6cf1d0   MISMATCH         SwizzleManagerClass::SmallFunc_6CF1D0
+[diff] 0x6cef80   MISMATCH         SuperWeaponTypeClass::SD_vt27
+[diff] 0x405430   MISMATCH         ObjectClass::sub_405430
+[diff] 0x7310d0   MISMATCH         ObjectClass::SidebarClearReferences
+[diff] 0x4c3dd0   MISMATCH         ObjectClass::sub_4C3DD0
+[diff] 0x45f1d0   MISMATCH         TacticalClass::initTacticalMap
+[diff] 0x75ada0   MISMATCH         WalkLocomotionClass::DispatchVirtualCall_8
+[diff] 0x505180   MISMATCH         TechnoClass::checkBuildLimit
+[diff] 0x414290   MISMATCH         AircraftClass::QueryInterface
+[diff] 0x4c6c50   MISMATCH         Network::initConnection
+[ledger] 0x5bd240 sub_5BD240 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf1d0 SwizzleManagerClass::SmallFunc_6CF1D0 -> NG (attempt 1)
+[ledger] 0x6cef80 SuperWeaponTypeClass::SD_vt27 -> NG (attempt 1)
+[ledger] 0x405430 ObjectClass::sub_405430 -> NG (attempt 1)
+[ledger] 0x7310d0 ObjectClass::SidebarClearReferences -> NG (attempt 1)
+[ledger] 0x45f1d0 TacticalClass::initTacticalMap -> NG (attempt 1)
+[ledger] 0x75ada0 WalkLocomotionClass::DispatchVirtualCall_8 -> NG (attempt 1)
+[ledger] 0x478db0 CCToolTip::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x505180 TechnoClass::checkBuildLimit -> NG (attempt 1)
+[ledger] 0x4baec0 DSurface::CanLock -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4754b0 OverlayTypeClass::ReadINIString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x476fc0 ObjectTypeClass::loadTypeMember_476FC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x477050 AnimTypeClass::ReadINIString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x752700 VoxClass::FindAndPlay -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53e4f0 ObjectClass::WinMain_Helper_53E4F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c3dd0 ObjectClass::sub_4C3DD0 -> NG (attempt 1)
+[ledger] 0x414290 AircraftClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x4c6c50 Network::initConnection -> NG (attempt 1)
+[ledger] 0x603e40 sub_603E40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e1440 ObjectClass::Render -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "branch_order": 2,
+  "branch_polarity": 1,
+  "extern_reloc": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p271\batch_report.json

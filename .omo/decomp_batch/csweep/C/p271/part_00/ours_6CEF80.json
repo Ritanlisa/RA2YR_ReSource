@@ -1,0 +1,21 @@
+{
+ "symbol": "?SD_vt27@SuperWeaponTypeClass@@QAEHHH@Z",
+ "sym_key": "SuperWeaponTypeClass::SD_vt27",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "56578bf983bfb40000000a74088b47245f5ec208008b74241085f6743b8b0656ff502c83f80675308b0e56ff512c83f8068d861c0200007405b81c0200008b15000000008b0852e80000000084c074088b47245f5ec208005fb8460000005ec20800",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  }
+ ]
+}

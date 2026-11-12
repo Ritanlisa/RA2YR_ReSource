@@ -1,0 +1,33 @@
+{
+ "symbol": "?SidebarClearReferences@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::SidebarClearReferences",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "538b1d00000000555733ff8be985db7e4a56a1000000008b34b885f67437a1000000008b8e1c02000085c07407e800000000eb068a81ed01000084c074178b86140200008d4dff3bc1750ac78614020000ffffffff473bfb7cb85e5f5d5bc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_SidebarState@@3IA",
+   "sym_key": "g_SidebarState"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_TechnoClass_Count@@3PAXA",
+   "sym_key": "g_TechnoClass_Count"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  }
+ ]
+}
