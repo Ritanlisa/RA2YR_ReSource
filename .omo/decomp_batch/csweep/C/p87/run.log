@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p87\part_00
+=== convert (20 addrs) ===
+[conv] 0x767220 sub_767220 -> _addr_76
+[conv] 0x767a20 sub_767A20 -> _addr_76
+[conv] 0x767db0 sub_767DB0 -> _addr_76
+[conv] 0x76a9b0 sub_76A9B0 -> _addr_76
+[conv] 0x76bdb0 sub_76BDB0 -> _addr_76
+[conv] 0x76f390 sub_76F390 -> _addr_76
+[conv] 0x76f830 sub_76F830 -> _addr_76
+[conv] 0x770190 sub_770190 -> _addr_77
+[conv] 0x771b70 sub_771B70 -> _addr_77
+[conv] 0x773370 sub_773370 -> _addr_77
+[conv] 0x7772e0 sub_7772E0 -> _addr_77
+[conv] 0x778600 sub_778600 -> _addr_77
+[conv] 0x77b1a0 sub_77B1A0 -> _addr_77
+[conv] 0x77b7a0 sub_77B7A0 -> _addr_77
+[conv] 0x7af1c0 sub_7AF1C0 -> _addr_7A
+[conv] 0x7b18e0 sub_7B18E0 -> _addr_7B
+[conv] 0x7b2cb0 sub_7B2CB0 -> _addr_7B
+[conv] 0x4cfda0 FlyLocomotionClass::DispatchVirtualCall_1 -> FlyLocomotionClass
+[conv] 0x5f1c30 ObjectTypeClass::CreateInstance -> ObjectTypeClass
+[conv] 0x5f35a0 NullModemClass::ddtor -> NullModemClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_76                 rc=0
+[era] _addr_77                 rc=0
+[era] _addr_7A                 rc=0
+[era] _addr_7B                 rc=0
+[era] FlyLocomotionClass       rc=0
+[era] ObjectTypeClass          rc=2
+[era] NullModemClass           rc=0
+=== diffasm byte-compare ===
+[diff] 0x767220   MISMATCH         sub_767220
+[diff] 0x767a20   MISMATCH         sub_767A20
+[diff] 0x767db0   MISMATCH         sub_767DB0
+[diff] 0x76a9b0   MISMATCH         sub_76A9B0
+[diff] 0x76bdb0   MISMATCH         sub_76BDB0
+[diff] 0x76f390   MISMATCH         sub_76F390
+[diff] 0x76f830   MISMATCH         sub_76F830
+[diff] 0x770190   MISMATCH         sub_770190
+[diff] 0x771b70   MISMATCH         sub_771B70
+[diff] 0x773370   MISMATCH         sub_773370
+[diff] 0x7772e0   MISMATCH         sub_7772E0
+[diff] 0x778600   MISMATCH         sub_778600
+[diff] 0x77b1a0   MISMATCH         sub_77B1A0
+[diff] 0x77b7a0   MISMATCH         sub_77B7A0
+[diff] 0x7af1c0   MISMATCH         sub_7AF1C0
+[diff] 0x7b18e0   MISMATCH         sub_7B18E0
+[diff] 0x7b2cb0   MISMATCH         sub_7B2CB0
+[diff] 0x4cfda0   MISMATCH         FlyLocomotionClass::DispatchVirtualCall_1
+[diff] 0x5f35a0   MISMATCH         NullModemClass::ddtor
+[ledger] 0x767220 sub_767220 -> NG (attempt 1)
+[ledger] 0x767a20 sub_767A20 -> NG (attempt 1)
+[ledger] 0x767db0 sub_767DB0 -> NG (attempt 1)
+[ledger] 0x76a9b0 sub_76A9B0 -> NG (attempt 1)
+[ledger] 0x76bdb0 sub_76BDB0 -> NG (attempt 1)
+[ledger] 0x76f390 sub_76F390 -> NG (attempt 1)
+[ledger] 0x76f830 sub_76F830 -> NG (attempt 1)
+[ledger] 0x770190 sub_770190 -> NG (attempt 1)
+[ledger] 0x771b70 sub_771B70 -> NG (attempt 1)
+[ledger] 0x773370 sub_773370 -> NG (attempt 1)
+[ledger] 0x7772e0 sub_7772E0 -> NG (attempt 1)
+[ledger] 0x778600 sub_778600 -> NG (attempt 1)
+[ledger] 0x77b1a0 sub_77B1A0 -> NG (attempt 1)
+[ledger] 0x77b7a0 sub_77B7A0 -> NG (attempt 1)
+[ledger] 0x7af1c0 sub_7AF1C0 -> NG (attempt 1)
+[ledger] 0x7b18e0 sub_7B18E0 -> NG (attempt 1)
+[ledger] 0x7b2cb0 sub_7B2CB0 -> NG (attempt 1)
+[ledger] 0x4cfda0 FlyLocomotionClass::DispatchVirtualCall_1 -> NG (attempt 1)
+[ledger] 0x5f1c30 ObjectTypeClass::CreateInstance -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f35a0 NullModemClass::ddtor -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 17,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p87\batch_report.json
