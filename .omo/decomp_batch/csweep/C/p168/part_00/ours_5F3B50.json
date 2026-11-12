@@ -1,0 +1,15 @@
+{
+ "symbol": "?Init@ObjectClass@@QAEPAV1@H@Z",
+ "sym_key": "ObjectClass::Init",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000033c0890689460489460889460c8bc65ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?InitVtables@AbstractClass@@QAEPAV1@H@Z",
+   "sym_key": "AbstractClass::InitVtables"
+  }
+ ]
+}

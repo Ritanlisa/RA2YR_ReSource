@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FA440",
+ "name": "AudioSettings::SetFlag70",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FA440",
+ "bytes_hex": "8a442404884146a2223da8008a41463c01b860c482007405b85cc482005068742f8300e878c4e0ff83c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

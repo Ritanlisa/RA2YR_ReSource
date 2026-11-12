@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetActionCoordsCopy@ScenarioClass@@QAEPAIPAH@Z",
+ "sym_key": "ScenarioClass::GetActionCoordsCopy",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8bd18d4c240056e8000000008b48048b50088b308b44241489308948048950085e83c40cc20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  }
+ ]
+}

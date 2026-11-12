@@ -1,0 +1,27 @@
+{
+ "symbol": "?_isalpha@@YAHH@Z",
+ "sym_key": "Unnamed::_isalpha",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "833d00000000017e138b442404680301000050e80000000083c408c38b4c24048b1500000000668b044a2503010000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?SrcSizeInBytes@@3IA",
+   "sym_key": "SrcSizeInBytes"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?_isctype@@YAHHHZZ",
+   "sym_key": "_isctype"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C590@@3PAXA",
+   "sym_key": "DataGlobal_87C590"
+  }
+ ]
+}

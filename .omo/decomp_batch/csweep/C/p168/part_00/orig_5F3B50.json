@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F3B50",
+ "name": "ObjectClass::Init",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F3B50",
+ "bytes_hex": "8b442404568bf150e863c6e1ffc70660f07e00c7460444f07e00c746083cf07e00c7460c34f07e008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

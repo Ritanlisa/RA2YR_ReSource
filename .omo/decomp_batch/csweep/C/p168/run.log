@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p168\part_00
+=== convert (20 addrs) ===
+[conv] 0x407a60 AudioStream::ProcessCallback -> AudioStream
+[conv] 0x432690 BinkMovie::Close -> BinkMovie
+[conv] 0x449410 BuildingClass::GetBoundingSizeExt -> BuildingClass
+[conv] 0x48bf10 ModemConnectionClass::ZeroInitAndSetup -> ModemConnectionClass
+[conv] 0x4f42f0 GScreenClass::MarkForRedraw -> GScreenClass
+[conv] 0x5f3b50 ObjectClass::Init -> ObjectClass
+[conv] 0x5fa440 AudioSettings::SetFlag70 -> AudioSettings
+[conv] 0x5fa470 AudioSettings::SetFlag68 -> AudioSettings
+[conv] 0x633b90 ScenarioClass::GetActionCoordsCopy -> ScenarioClass
+[conv] 0x7c990e _isalpha -> _addr_7C
+[conv] 0x7c9a31 _isalnum -> _addr_7C
+[conv] 0x7c9a5f _isprint -> _addr_7C
+[conv] 0x7c9a8d _isgraph -> _addr_7C
+[conv] 0x514c80 HoverLocomotionClass::ComputeFloatExpression_2 -> HoverLocomotionClass
+[conv] 0x535c40 CreateTeamCommand::Release -> CreateTeamCommand
+[conv] 0x535c90 CreateTeamCommand::Read -> CreateTeamCommand
+[conv] 0x536000 SelectTeamCommand::Release -> SelectTeamCommand
+[conv] 0x536050 SelectTeamCommand::Read -> SelectTeamCommand
+[conv] 0x5360f0 AddTeamCommand::Release -> AddTeamCommand
+[conv] 0x5361e0 CenterTeamCommand::Release -> CenterTeamCommand
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioStream              rc=0
+[era] BinkMovie                rc=0
+[era] BuildingClass            rc=0
+[era] ModemConnectionClass     rc=0
+[era] GScreenClass             rc=2
+[era] ObjectClass              rc=0
+[era] AudioSettings            rc=0
+[era] ScenarioClass            rc=0
+[era] _addr_7C                 rc=0
+[era] HoverLocomotionClass     rc=0
+[era] CreateTeamCommand        rc=0
+[era] SelectTeamCommand        rc=0
+[era] AddTeamCommand           rc=0
+[era] CenterTeamCommand        rc=0
+=== diffasm byte-compare ===
+[diff] 0x407a60   MISMATCH         AudioStream::ProcessCallback
+[diff] 0x432690   MISMATCH         BinkMovie::Close
+[diff] 0x449410   MISMATCH         BuildingClass::GetBoundingSizeExt
+[diff] 0x48bf10   MATCH            ModemConnectionClass::ZeroInitAndSetup
+[diff] 0x5f3b50   MISMATCH         ObjectClass::Init
+[diff] 0x5fa440   MISMATCH         AudioSettings::SetFlag70
+[diff] 0x5fa470   MISMATCH         AudioSettings::SetFlag68
+[diff] 0x633b90   MISMATCH         ScenarioClass::GetActionCoordsCopy
+[diff] 0x7c990e   MISMATCH         _isalpha
+[diff] 0x7c9a31   MISMATCH         _isalnum
+[diff] 0x7c9a5f   MISMATCH         _isprint
+[diff] 0x7c9a8d   MISMATCH         _isgraph
+[diff] 0x514c80   MISMATCH         HoverLocomotionClass::ComputeFloatExpression_2
+[diff] 0x535c40   MISMATCH         CreateTeamCommand::Release
+[diff] 0x535c90   MISMATCH         CreateTeamCommand::Read
+[diff] 0x536000   MISMATCH         SelectTeamCommand::Release
+[diff] 0x536050   MISMATCH         SelectTeamCommand::Read
+[diff] 0x5360f0   MISMATCH         AddTeamCommand::Release
+[diff] 0x5361e0   MISMATCH         CenterTeamCommand::Release
+[ledger] 0x407a60 AudioStream::ProcessCallback -> NG (attempt 1)
+[ledger] 0x432690 BinkMovie::Close -> NG (attempt 1)
+[ledger] 0x449410 BuildingClass::GetBoundingSizeExt -> NG (attempt 1)
+[ledger] 0x48bf10 ModemConnectionClass::ZeroInitAndSetup -> OK (attempt 1)
+[ledger] 0x4f42f0 GScreenClass::MarkForRedraw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f3b50 ObjectClass::Init -> NG (attempt 1)
+[ledger] 0x5fa440 AudioSettings::SetFlag70 -> NG (attempt 1)
+[ledger] 0x5fa470 AudioSettings::SetFlag68 -> NG (attempt 1)
+[ledger] 0x633b90 ScenarioClass::GetActionCoordsCopy -> NG (attempt 1)
+[ledger] 0x7c990e _isalpha -> NG (attempt 1)
+[ledger] 0x7c9a31 _isalnum -> NG (attempt 1)
+[ledger] 0x7c9a5f _isprint -> NG (attempt 1)
+[ledger] 0x7c9a8d _isgraph -> NG (attempt 1)
+[ledger] 0x514c80 HoverLocomotionClass::ComputeFloatExpression_2 -> NG (attempt 1)
+[ledger] 0x535c40 CreateTeamCommand::Release -> NG (attempt 1)
+[ledger] 0x535c90 CreateTeamCommand::Read -> NG (attempt 1)
+[ledger] 0x536000 SelectTeamCommand::Release -> NG (attempt 1)
+[ledger] 0x536050 SelectTeamCommand::Read -> NG (attempt 1)
+[ledger] 0x5360f0 AddTeamCommand::Release -> NG (attempt 1)
+[ledger] 0x5361e0 CenterTeamCommand::Release -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "MATCH": 1,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "ret_norm": 1,
+  "codegen_shape": 10,
+  "extern_reloc": 4,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 5.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p168\batch_report.json

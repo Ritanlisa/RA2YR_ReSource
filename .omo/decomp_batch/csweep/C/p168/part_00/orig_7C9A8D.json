@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C9A8D",
+ "name": "_isgraph",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C9A8D",
+ "bytes_hex": "833d9cc78700017e116817010000ff742408e86d7800005959c38b4424048b0d90c58700668b04412517010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

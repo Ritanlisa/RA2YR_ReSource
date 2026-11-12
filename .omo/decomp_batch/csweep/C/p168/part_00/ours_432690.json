@@ -1,0 +1,15 @@
+{
+ "symbol": "?Close@BinkMovie@@QAEPAIPAD@Z",
+ "sym_key": "BinkMovie::Close",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "568bf133c0890689460489460c89462088462d8b44240850c74628ffffffffc6462c01e8000000008bc65ec20400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?InitFromFile@BinkMovie@@QAEDPAX@Z",
+   "sym_key": "BinkMovie::InitFromFile"
+  }
+ ]
+}

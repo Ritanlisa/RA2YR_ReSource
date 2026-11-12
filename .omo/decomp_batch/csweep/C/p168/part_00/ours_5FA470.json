@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetFlag68@AudioSettings@@QAEXD@Z",
+ "sym_key": "AudioSettings::SetFlag68",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8a442404884144a200000000e800000000c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D20@@3EA",
+   "sym_key": "DataGlobal_A83D20"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

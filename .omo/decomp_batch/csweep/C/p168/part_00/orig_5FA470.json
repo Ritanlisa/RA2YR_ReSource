@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FA470",
+ "name": "AudioSettings::SetFlag68",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FA470",
+ "bytes_hex": "8a442404884144a2203da8008a41443c01b860c482007405b85cc482005068882f8300e848c4e0ff83c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

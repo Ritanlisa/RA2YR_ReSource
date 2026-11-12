@@ -1,0 +1,11 @@
+{
+ "addr": "0x633B90",
+ "name": "ScenarioClass::GetActionCoordsCopy",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x633B90",
+ "bytes_hex": "83ec0c8bd18d4c24005657e8200000008b088b50048b70088b4424188bf8890f8957048977085f5e83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

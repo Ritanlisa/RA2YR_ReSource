@@ -1,0 +1,11 @@
+{
+ "addr": "0x432690",
+ "name": "BinkMovie::Close",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x432690",
+ "bytes_hex": "568bf133c0880689460489460c89462088462d8b44240850c74628ffffffffc6462c01e8980000008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
