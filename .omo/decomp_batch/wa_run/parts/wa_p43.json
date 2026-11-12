@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x5af000",
+  "family": "D_CONST_FP",
+  "name": "ObjectClass::sub_5AF000"
+ },
+ {
+  "addr": "0x5afd10",
+  "family": "D_CONST_FP",
+  "name": "sub_5AFD10"
+ },
+ {
+  "addr": "0x5b1bd0",
+  "family": "D_CONST_FP",
+  "name": "sub_5B1BD0"
+ },
+ {
+  "addr": "0x5b1f30",
+  "family": "D_CONST_FP",
+  "name": "sub_5B1F30"
+ },
+ {
+  "addr": "0x5b2bc0",
+  "family": "D_CONST_FP",
+  "name": "sub_5B2BC0"
+ },
+ {
+  "addr": "0x5b47f0",
+  "family": "D_CONST_FP",
+  "name": "sub_5B47F0"
+ },
+ {
+  "addr": "0x5b7620",
+  "family": "D_CONST_FP",
+  "name": "sub_5B7620"
+ },
+ {
+  "addr": "0x5bbfc0",
+  "family": "D_CONST_FP",
+  "name": "sub_5BBFC0"
+ },
+ {
+  "addr": "0x5bd730",
+  "family": "D_CONST_FP",
+  "name": "Matrix::Scale"
+ },
+ {
+  "addr": "0x5bd810",
+  "family": "D_CONST_FP",
+  "name": "sub_5BD810"
+ },
+ {
+  "addr": "0x5beb00",
+  "family": "D_CONST_FP",
+  "name": "sub_5BEB00"
+ },
+ {
+  "addr": "0x5bf610",
+  "family": "D_CONST_FP",
+  "name": "sub_5BF610"
+ },
+ {
+  "addr": "0x5c1120",
+  "family": "D_CONST_FP",
+  "name": "sub_5C1120"
+ },
+ {
+  "addr": "0x5c5b20",
+  "family": "D_CONST_FP",
+  "name": "sub_5C5B20"
+ },
+ {
+  "addr": "0x5c5ec0",
+  "family": "D_CONST_FP",
+  "name": "sub_5C5EC0"
+ },
+ {
+  "addr": "0x5c9220",
+  "family": "D_CONST_FP",
+  "name": "sub_5C9220"
+ },
+ {
+  "addr": "0x5c9540",
+  "family": "D_CONST_FP",
+  "name": "sub_5C9540"
+ },
+ {
+  "addr": "0x5ca450",
+  "family": "D_CONST_FP",
+  "name": "sub_5CA450"
+ },
+ {
+  "addr": "0x5cac50",
+  "family": "D_CONST_FP",
+  "name": "sub_5CAC50"
+ },
+ {
+  "addr": "0x5cb1c0",
+  "family": "D_CONST_FP",
+  "name": "MPBattleClass::onPlayerDisconnect"
+ }
+]

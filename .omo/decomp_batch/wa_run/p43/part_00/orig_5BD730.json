@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BD730",
+ "name": "Matrix::Scale",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BD730",
+ "bytes_hex": "8b41085633f685c07675578b410433d285c076620fafc6d944240c8b790c03c28d0440c1e004d84c380c8d44380cd9188bc68b790c0faf4104d944240c03c28d0440c1e004d84c381c8d44381cd9188bc68b790c0faf4104d944240c03c28d0440c1e00442d84c382c8d44382cd9188b41043bd0729e8b4108463bf0728d5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

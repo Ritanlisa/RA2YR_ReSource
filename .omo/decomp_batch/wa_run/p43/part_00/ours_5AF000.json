@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_5AF000@ObjectClass@@QAEXHH@Z",
+ "sym_key": "ObjectClass::sub_5AF000",
+ "size": 301,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf133c033c98a46048a4e0889442404db442404894c2404dd5c240cdb442404dd5c2404db442418db44241cd9c0dc4c240cd9c2dc4c2404dec1dc1d00000000dfe0f6c4407507b801000000eb0233c0d9c0dc4c2404d9c2dc4c240c884604dee9dc1d00000000dfe0f6c4407507b801000000eb0233c033d28846088a561433c08a461889542418db44241889442418db442418d9c2d8cad9c4d8cadec1dc1d00000000dfe0f6c4407507b801000000eb0233c0d9c2d8c9d9c4d8cb884614dee9dc1d00000000dfe0ddd8f6c440ddd87507b801000000eb0233c033c933d28a4e248a5628894c2418884618db44241889542418db442418d9c2d8cad9c4d8cadec1e800000000d9cad8cad9cbd8c9884624deebd9cae800000000ddd88846285eddd883c410c20800",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 263,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 283,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

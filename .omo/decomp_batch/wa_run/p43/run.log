@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p43\part_00
+=== convert (20 addrs) ===
+[conv] 0x5af000 ObjectClass::sub_5AF000 -> ObjectClass
+[conv] 0x5afd10 sub_5AFD10 -> _addr_5A
+[conv] 0x5b1bd0 sub_5B1BD0 -> _addr_5B
+[conv] 0x5b1f30 sub_5B1F30 -> _addr_5B
+[conv] 0x5b2bc0 sub_5B2BC0 -> _addr_5B
+[conv] 0x5b47f0 sub_5B47F0 -> _addr_5B
+[conv] 0x5b7620 sub_5B7620 -> _addr_5B
+[conv] 0x5bbfc0 sub_5BBFC0 -> _addr_5B
+[conv] 0x5bd730 Matrix::Scale -> Matrix
+[conv] 0x5bd810 sub_5BD810 -> _addr_5B
+[conv] 0x5beb00 sub_5BEB00 -> _addr_5B
+[conv] 0x5bf610 sub_5BF610 -> _addr_5B
+[conv] 0x5c1120 sub_5C1120 -> _addr_5C
+[conv] 0x5c5b20 sub_5C5B20 -> _addr_5C
+[conv] 0x5c5ec0 sub_5C5EC0 -> _addr_5C
+[conv] 0x5c9220 sub_5C9220 -> _addr_5C
+[conv] 0x5c9540 sub_5C9540 -> _addr_5C
+[conv] 0x5ca450 sub_5CA450 -> _addr_5C
+[conv] 0x5cac50 sub_5CAC50 -> _addr_5C
+[conv] 0x5cb1c0 MPBattleClass::onPlayerDisconnect -> MPBattleClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _addr_5A                 rc=0
+[era] _addr_5B                 rc=0
+[era] Matrix                   rc=0
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x5af000   MISMATCH         ObjectClass::sub_5AF000
+[diff] 0x5afd10   MATCH            sub_5AFD10
+[diff] 0x5b1bd0   MATCH            sub_5B1BD0
+[diff] 0x5b1f30   MATCH            sub_5B1F30
+[diff] 0x5b2bc0   MATCH            sub_5B2BC0
+[diff] 0x5b47f0   MATCH            sub_5B47F0
+[diff] 0x5b7620   MATCH            sub_5B7620
+[diff] 0x5bbfc0   MATCH            sub_5BBFC0
+[diff] 0x5bd810   MATCH            sub_5BD810
+[diff] 0x5beb00   MATCH            sub_5BEB00
+[diff] 0x5bf610   MATCH            sub_5BF610
+[diff] 0x5bd730   MISMATCH         Matrix::Scale
+[diff] 0x5c1120   MATCH            sub_5C1120
+[diff] 0x5c5b20   MATCH            sub_5C5B20
+[diff] 0x5c5ec0   MATCH            sub_5C5EC0
+[diff] 0x5c9220   MATCH            sub_5C9220
+[diff] 0x5c9540   MATCH            sub_5C9540
+[diff] 0x5ca450   MATCH            sub_5CA450
+[diff] 0x5cac50   MATCH            sub_5CAC50
+[diff] 0x5cb1c0   MATCH            MPBattleClass::onPlayerDisconnect
+[ledger] 0x5af000 ObjectClass::sub_5AF000 -> NG (attempt 2)
+[ledger] 0x5afd10 sub_5AFD10 -> OK (attempt 3)
+[ledger] 0x5b1bd0 sub_5B1BD0 -> OK (attempt 2)
+[ledger] 0x5b1f30 sub_5B1F30 -> OK (attempt 2)
+[ledger] 0x5b2bc0 sub_5B2BC0 -> OK (attempt 2)
+[ledger] 0x5b47f0 sub_5B47F0 -> OK (attempt 2)
+[ledger] 0x5b7620 sub_5B7620 -> OK (attempt 3)
+[ledger] 0x5bbfc0 sub_5BBFC0 -> OK (attempt 2)
+[ledger] 0x5bd730 Matrix::Scale -> NG (attempt 2)
+[ledger] 0x5bd810 sub_5BD810 -> OK (attempt 2)
+[ledger] 0x5beb00 sub_5BEB00 -> OK (attempt 2)
+[ledger] 0x5bf610 sub_5BF610 -> OK (attempt 2)
+[ledger] 0x5c1120 sub_5C1120 -> OK (attempt 2)
+[ledger] 0x5c5b20 sub_5C5B20 -> OK (attempt 2)
+[ledger] 0x5c5ec0 sub_5C5EC0 -> OK (attempt 2)
+[ledger] 0x5c9220 sub_5C9220 -> OK (attempt 2)
+[ledger] 0x5c9540 sub_5C9540 -> OK (attempt 2)
+[ledger] 0x5ca450 sub_5CA450 -> OK (attempt 2)
+[ledger] 0x5cac50 sub_5CAC50 -> OK (attempt 2)
+[ledger] 0x5cb1c0 MPBattleClass::onPlayerDisconnect -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "MATCH": 18
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 90.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p43\batch_report.json
