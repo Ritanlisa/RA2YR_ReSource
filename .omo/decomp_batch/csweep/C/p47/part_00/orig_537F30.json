@@ -1,0 +1,11 @@
+{
+ "addr": "0x537F30",
+ "name": "DeleteCommandClass::Release",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x537F30",
+ "bytes_hex": "689f19000068b85f820033d2b9447b8200e81acf1f00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

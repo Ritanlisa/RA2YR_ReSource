@@ -1,0 +1,11 @@
+{
+ "addr": "0x537F70",
+ "name": "DeleteCommandClass::Read",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x537F70",
+ "bytes_hex": "68a319000068b85f820033d2b9507b8200e8dace1f00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

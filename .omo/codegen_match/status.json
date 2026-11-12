@@ -36698,12 +36698,60 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x537830": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1ee1",
+  "name": "SetView3CommandClass::performAction_174",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_174",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537850": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1ee3",
+  "name": "SetView3CommandClass::performAction_175",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_175",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537870": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1ee5",
+  "name": "SetView3CommandClass::performAction_176",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_176",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5378e0": {
   "attempts": 1,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_178",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5378f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1efc",
+  "name": "SetView4CommandClass::performAction_179",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_179",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x537910": {
   "attempts": 5,
@@ -36717,6 +36765,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x537930": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1f00",
+  "name": "SetView4CommandClass::performAction_181",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_181",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5379a0": {
   "attempts": 1,
   "clean": false,
@@ -36725,6 +36785,42 @@
   "name": "FollowCommandClass::performAction_183",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "CreateTeamCommand::performAction_183",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5379b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1f17",
+  "name": "FollowCommandClass::performAction_184",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_184",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5379d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1f19",
+  "name": "FollowCommandClass::performAction_185",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateTeamCommand::performAction_185",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5379f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1f1b",
+  "name": "FollowCommandClass::performAction_186",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_186",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -36841,6 +36937,42 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x537b60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1f87",
+  "name": "ScreenCaptureCommandClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ScreenCaptureCommandClass::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537b80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1f88",
+  "name": "ScreenCaptureCommandClass::Release",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "ScreenCaptureCommandClass::Release",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537ba0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1f89",
+  "name": "ScreenCaptureCommandClass::Execute",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "ScreenCaptureCommandClass::Execute",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x537dd0": {
   "attempts": 1,
   "clean": false,
@@ -36859,6 +36991,42 @@
   "name": "PageUserCommandClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x537df0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1d8b",
+  "name": "PageUserCommandClass::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "PageUserCommandClass::Release",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537e10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1d8d",
+  "name": "PageUserCommandClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "PageUserCommandClass::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537e30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x1d8f",
+  "name": "PageUserCommandClass::Read",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "PageUserCommandClass::Read",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x537e50": {
   "attempts": 1,
@@ -36904,6 +37072,30 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x537eb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x2028",
+  "name": "CursorPositionCommandClass::performAction_195",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_195",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537ed0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x2029",
+  "name": "CursorPositionCommandClass::performAction_196",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_196",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x537ef0": {
   "attempts": 2,
   "clean": false,
@@ -36934,6 +37126,42 @@
   "name": "DeleteCommandClass::AddRef",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x537f30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x199f",
+  "name": "DeleteCommandClass::Release",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "DeleteCommandClass::Release",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537f50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x19a1",
+  "name": "DeleteCommandClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DeleteCommandClass::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x537f70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x19a3",
+  "name": "DeleteCommandClass::Read",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "DeleteCommandClass::Read",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x537f90": {
   "attempts": 4,
@@ -41855,6 +42083,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "LoadOptions::Read",
   "rule_violations": 10,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x55a050": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push 0x4c0",
+  "name": "LoadOptions::Write",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "LoadOptions::Write",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },

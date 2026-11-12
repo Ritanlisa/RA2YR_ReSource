@@ -45,3 +45,4 @@
 {"layer": "C", "part": 44, "n": 20, "seconds": 44.6, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "C", "part": 45, "n": 20, "seconds": 49.1, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "C", "part": 46, "n": 20, "seconds": 45.8, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"layer": "C", "part": 47, "n": 20, "seconds": 51.1, "ok": true, "verdicts": {"MISMATCH": 20}}

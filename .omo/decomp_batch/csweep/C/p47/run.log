@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p47\part_00
+=== convert (20 addrs) ===
+[conv] 0x537830 SetView3CommandClass::performAction_174 -> SetView3CommandClass
+[conv] 0x537850 SetView3CommandClass::performAction_175 -> SetView3CommandClass
+[conv] 0x537870 SetView3CommandClass::performAction_176 -> SetView3CommandClass
+[conv] 0x5378f0 SetView4CommandClass::performAction_179 -> SetView4CommandClass
+[conv] 0x537930 SetView4CommandClass::performAction_181 -> SetView4CommandClass
+[conv] 0x5379b0 FollowCommandClass::performAction_184 -> FollowCommandClass
+[conv] 0x5379d0 FollowCommandClass::performAction_185 -> FollowCommandClass
+[conv] 0x5379f0 FollowCommandClass::performAction_186 -> FollowCommandClass
+[conv] 0x537b60 ScreenCaptureCommandClass::ddtor -> ScreenCaptureCommandClass
+[conv] 0x537b80 ScreenCaptureCommandClass::Release -> ScreenCaptureCommandClass
+[conv] 0x537ba0 ScreenCaptureCommandClass::Execute -> ScreenCaptureCommandClass
+[conv] 0x537df0 PageUserCommandClass::Release -> PageUserCommandClass
+[conv] 0x537e10 PageUserCommandClass::ddtor -> PageUserCommandClass
+[conv] 0x537e30 PageUserCommandClass::Read -> PageUserCommandClass
+[conv] 0x537eb0 CursorPositionCommandClass::performAction_195 -> CursorPositionCommandClass
+[conv] 0x537ed0 CursorPositionCommandClass::performAction_196 -> CursorPositionCommandClass
+[conv] 0x537f30 DeleteCommandClass::Release -> DeleteCommandClass
+[conv] 0x537f50 DeleteCommandClass::ddtor -> DeleteCommandClass
+[conv] 0x537f70 DeleteCommandClass::Read -> DeleteCommandClass
+[conv] 0x55a050 LoadOptions::Write -> LoadOptions
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SetView3CommandClass     rc=0
+[era] SetView4CommandClass     rc=0
+[era] FollowCommandClass       rc=0
+[era] ScreenCaptureCommandClass rc=0
+[era] PageUserCommandClass     rc=0
+[era] CursorPositionCommandClass rc=0
+[era] DeleteCommandClass       rc=0
+[era] LoadOptions              rc=0
+=== diffasm byte-compare ===
+[diff] 0x537830   MISMATCH         SetView3CommandClass::performAction_174
+[diff] 0x537850   MISMATCH         SetView3CommandClass::performAction_175
+[diff] 0x537870   MISMATCH         SetView3CommandClass::performAction_176
+[diff] 0x5378f0   MISMATCH         SetView4CommandClass::performAction_179
+[diff] 0x537930   MISMATCH         SetView4CommandClass::performAction_181
+[diff] 0x5379b0   MISMATCH         FollowCommandClass::performAction_184
+[diff] 0x5379d0   MISMATCH         FollowCommandClass::performAction_185
+[diff] 0x5379f0   MISMATCH         FollowCommandClass::performAction_186
+[diff] 0x537b60   MISMATCH         ScreenCaptureCommandClass::ddtor
+[diff] 0x537b80   MISMATCH         ScreenCaptureCommandClass::Release
+[diff] 0x537ba0   MISMATCH         ScreenCaptureCommandClass::Execute
+[diff] 0x537df0   MISMATCH         PageUserCommandClass::Release
+[diff] 0x537e10   MISMATCH         PageUserCommandClass::ddtor
+[diff] 0x537e30   MISMATCH         PageUserCommandClass::Read
+[diff] 0x537eb0   MISMATCH         CursorPositionCommandClass::performAction_195
+[diff] 0x537ed0   MISMATCH         CursorPositionCommandClass::performAction_196
+[diff] 0x537f30   MISMATCH         DeleteCommandClass::Release
+[diff] 0x537f50   MISMATCH         DeleteCommandClass::ddtor
+[diff] 0x537f70   MISMATCH         DeleteCommandClass::Read
+[diff] 0x55a050   MISMATCH         LoadOptions::Write
+[ledger] 0x537830 SetView3CommandClass::performAction_174 -> NG (attempt 1)
+[ledger] 0x537850 SetView3CommandClass::performAction_175 -> NG (attempt 1)
+[ledger] 0x537870 SetView3CommandClass::performAction_176 -> NG (attempt 1)
+[ledger] 0x5378f0 SetView4CommandClass::performAction_179 -> NG (attempt 1)
+[ledger] 0x537930 SetView4CommandClass::performAction_181 -> NG (attempt 1)
+[ledger] 0x5379b0 FollowCommandClass::performAction_184 -> NG (attempt 1)
+[ledger] 0x5379d0 FollowCommandClass::performAction_185 -> NG (attempt 1)
+[ledger] 0x5379f0 FollowCommandClass::performAction_186 -> NG (attempt 1)
+[ledger] 0x537b60 ScreenCaptureCommandClass::ddtor -> NG (attempt 1)
+[ledger] 0x537b80 ScreenCaptureCommandClass::Release -> NG (attempt 1)
+[ledger] 0x537ba0 ScreenCaptureCommandClass::Execute -> NG (attempt 1)
+[ledger] 0x537df0 PageUserCommandClass::Release -> NG (attempt 1)
+[ledger] 0x537e10 PageUserCommandClass::ddtor -> NG (attempt 1)
+[ledger] 0x537e30 PageUserCommandClass::Read -> NG (attempt 1)
+[ledger] 0x537eb0 CursorPositionCommandClass::performAction_195 -> NG (attempt 1)
+[ledger] 0x537ed0 CursorPositionCommandClass::performAction_196 -> NG (attempt 1)
+[ledger] 0x537f30 DeleteCommandClass::Release -> NG (attempt 1)
+[ledger] 0x537f50 DeleteCommandClass::ddtor -> NG (attempt 1)
+[ledger] 0x537f70 DeleteCommandClass::Read -> NG (attempt 1)
+[ledger] 0x55a050 LoadOptions::Write -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 13,
+  "codegen_shape": 7
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p47\batch_report.json
