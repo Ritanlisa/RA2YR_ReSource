@@ -1,0 +1,57 @@
+{
+ "symbol": "?InitCameoGrid@SidebarClass@@QAEHH@Z",
+ "sym_key": "SidebarClass::InitCameoGrid",
+ "size": 324,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec0c8941388b150000000056578bbac8b1500033f63bfeb81a0000007405b8120000008b15000000008b3d000000002bd72bd0a1000000008d5402f9b81f85eb51f7e28bc233d2c1e8043bc689442410895424180f8edb000000535589742410c74424140200000033ffeb048b5424208b4424108d2c388b41388d04408d04808d4485008d34c5000000002bf08d04f5807eb000c74024ca0000008b71388bdec1e3052bde8d1cde8d349e8b1d000000000fafdf8b34b52000000003f389700c8b1d000000008b71380fafda8bd6c1e2052bd64783ff028d14d68d14968b149524000000896830c740143c000000c74018300000008d541a0189482c8950100f8c67ffffff8b7424148b4424208974241083c60240897424148b7424188bd03bd6895424200f8c3dffffff5d5b5f5e83c40cc204008bc65f5e83c40cc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_SidebarBounds@@3IA",
+   "sym_key": "g_SidebarBounds"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_DSurface_ViewBounds@@3IA",
+   "sym_key": "g_DSurface_ViewBounds"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B4FC@@3IA",
+   "sym_key": "DataGlobal_B0B4FC"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?stru_880D2C@@3PADA",
+   "sym_key": "stru_880D2C"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B500@@3IA",
+   "sym_key": "DataGlobal_B0B500"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?stru_880D2C@@3PADA",
+   "sym_key": "stru_880D2C"
+  }
+ ]
+}
