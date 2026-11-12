@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c62f0 _VectorClass_K::GetSize -> _VectorClass_K
+[conv] 0x6c6450 _DynamicVectorClass_K::FindItemIndex -> _DynamicVectorClass_K
+[conv] 0x6c96e0 ObjectClass::sub_6C96E0 -> ObjectClass
+[conv] 0x6ca820 _VectorClass_PAVSubTitle::Add -> _VectorClass_PAVSubTitle
+[conv] 0x6ca910 _DynamicVectorClass_PAVSubTitle::FindItemIndex -> _DynamicVectorClass_PAVSubTitle
+[conv] 0x6caaf0 _VectorClass_PAVSubTitle::GetSize -> _VectorClass_PAVSubTitle
+[conv] 0x6cdeb0 SuperClass::ddtor -> SuperClass
+[conv] 0x6ce7c0 SuperWeaponTypeClass::SD_vt03 -> SuperWeaponTypeClass
+[conv] 0x6cf410 SwizzleManagerClass::Clear -> SwizzleManagerClass
+[conv] 0x6cf490 SwizzleManagerClass::Add -> SwizzleManagerClass
+[conv] 0x6cf6c0 _VectorClass_VSwizzlePointerClass::Init -> _VectorClass_VSwizzlePointerClass
+[conv] 0x6cf820 _DynamicVectorClass_VSwizzlePointerClass::FindItem -> _DynamicVectorClass_VSwizzlePointerClass
+[conv] 0x6d9ef0 TacticalClass::AddToDrawQueue -> TacticalClass
+[conv] 0x6dbce0 Tactical::ddtor -> Tactical
+[conv] 0x6dc430 GetCoordDataMap -> _addr_6D
+[conv] 0x6dc9d0 _VectorClass_PAVShadowControlClass::AddRef -> _VectorClass_PAVShadowControlClass
+[conv] 0x6dcaf0 _VectorClass_PAVShadowControlClass::GetSize -> _VectorClass_PAVShadowControlClass
+[conv] 0x6dcc00 _DynamicVectorClass_PAVShadowControlClass::FindItemIndex_0 -> _DynamicVectorClass_PAVShadowControlClass
+[conv] 0x6e0250 ObjectClass::sub_6E0250 -> ObjectClass
+[conv] 0x6e0270 ObjectClass::sub_6E0270 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_K           rc=0
+[era] _DynamicVectorClass_K    rc=0
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAVSubTitle rc=0
+[era] _DynamicVectorClass_PAVSubTitle rc=0
+[era] SuperClass               rc=0
+[era] SuperWeaponTypeClass     rc=0
+[era] SwizzleManagerClass      rc=0
+[era] _VectorClass_VSwizzlePointerClass rc=0
+[era] _DynamicVectorClass_VSwizzlePointerClass rc=0
+[era] TacticalClass            rc=2
+[era] Tactical                 rc=0
+[era] _addr_6D                 rc=0
+[era] _VectorClass_PAVShadowControlClass rc=0
+[era] _DynamicVectorClass_PAVShadowControlClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c62f0   MISMATCH         _VectorClass_K::GetSize
+[diff] 0x6c6450   MISMATCH         _DynamicVectorClass_K::FindItemIndex
+[diff] 0x6c96e0   MISMATCH         ObjectClass::sub_6C96E0
+[diff] 0x6e0250   MISMATCH         ObjectClass::sub_6E0250
+[diff] 0x6e0270   MISMATCH         ObjectClass::sub_6E0270
+[diff] 0x6ca820   MISMATCH         _VectorClass_PAVSubTitle::Add
+[diff] 0x6caaf0   MISMATCH         _VectorClass_PAVSubTitle::GetSize
+[diff] 0x6ca910   MISMATCH         _DynamicVectorClass_PAVSubTitle::FindItemIndex
+[diff] 0x6cdeb0   MISMATCH         SuperClass::ddtor
+[diff] 0x6ce7c0   MISMATCH         SuperWeaponTypeClass::SD_vt03
+[diff] 0x6cf410   MATCH            SwizzleManagerClass::Clear
+[diff] 0x6cf490   MATCH            SwizzleManagerClass::Add
+[diff] 0x6cf6c0   MISMATCH         _VectorClass_VSwizzlePointerClass::Init
+[diff] 0x6cf820   MISMATCH         _DynamicVectorClass_VSwizzlePointerClass::FindItem
+[diff] 0x6dbce0   MISMATCH         Tactical::ddtor
+[diff] 0x6dc430   MISMATCH         GetCoordDataMap
+[diff] 0x6dc9d0   MISMATCH         _VectorClass_PAVShadowControlClass::AddRef
+[diff] 0x6dcaf0   MISMATCH         _VectorClass_PAVShadowControlClass::GetSize
+[diff] 0x6dcc00   MISMATCH         _DynamicVectorClass_PAVShadowControlClass::FindItemIndex_0
+[ledger] 0x6c62f0 _VectorClass_K::GetSize -> NG (attempt 2)
+[ledger] 0x6c6450 _DynamicVectorClass_K::FindItemIndex -> NG (attempt 2)
+[ledger] 0x6c96e0 ObjectClass::sub_6C96E0 -> NG (attempt 2)
+[ledger] 0x6ca820 _VectorClass_PAVSubTitle::Add -> NG (attempt 2)
+[ledger] 0x6ca910 _DynamicVectorClass_PAVSubTitle::FindItemIndex -> NG (attempt 2)
+[ledger] 0x6caaf0 _VectorClass_PAVSubTitle::GetSize -> NG (attempt 2)
+[ledger] 0x6cdeb0 SuperClass::ddtor -> NG (attempt 2)
+[ledger] 0x6ce7c0 SuperWeaponTypeClass::SD_vt03 -> NG (attempt 2)
+[ledger] 0x6cf410 SwizzleManagerClass::Clear -> OK (attempt 2)
+[ledger] 0x6cf490 SwizzleManagerClass::Add -> OK (attempt 2)
+[ledger] 0x6cf6c0 _VectorClass_VSwizzlePointerClass::Init -> NG (attempt 2)
+[ledger] 0x6cf820 _DynamicVectorClass_VSwizzlePointerClass::FindItem -> NG (attempt 2)
+[ledger] 0x6d9ef0 TacticalClass::AddToDrawQueue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6dbce0 Tactical::ddtor -> NG (attempt 2)
+[ledger] 0x6dc430 GetCoordDataMap -> NG (attempt 2)
+[ledger] 0x6dc9d0 _VectorClass_PAVShadowControlClass::AddRef -> NG (attempt 2)
+[ledger] 0x6dcaf0 _VectorClass_PAVShadowControlClass::GetSize -> NG (attempt 2)
+[ledger] 0x6dcc00 _DynamicVectorClass_PAVShadowControlClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x6e0250 ObjectClass::sub_6E0250 -> NG (attempt 2)
+[ledger] 0x6e0270 ObjectClass::sub_6E0270 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "MATCH": 2,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 12,
+  "branch_polarity": 2,
+  "regalloc": 1,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 10.5,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p37\batch_report.json

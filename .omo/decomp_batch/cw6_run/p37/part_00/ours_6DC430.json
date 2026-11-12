@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetCoordDataMap@@YGHH@Z",
+ "sym_key": "Unnamed::GetCoordDataMap",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8b4424048d04408b048500000000c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CEC8@@3PAIA",
+   "sym_key": "DataGlobal_B0CEC8"
+  }
+ ]
+}

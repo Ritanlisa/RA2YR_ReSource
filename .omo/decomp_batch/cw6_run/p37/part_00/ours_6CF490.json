@@ -1,0 +1,8 @@
+{
+ "symbol": "?Add@SwizzleManagerClass@@QAGHHPAI@Z",
+ "sym_key": "SwizzleManagerClass::Add",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8b4c240885c9740f8b44240c85c07407890833c0c20c00b803400080c20c00",
+ "relocs": []
+}

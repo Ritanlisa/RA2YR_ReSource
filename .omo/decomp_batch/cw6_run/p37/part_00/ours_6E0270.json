@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_6E0270@ObjectClass@@QAEDHHHH@Z",
+ "sym_key": "ObjectClass::sub_6E0270",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8a81900000008b0d00000000888156a20400b001c21000",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  }
+ ]
+}
