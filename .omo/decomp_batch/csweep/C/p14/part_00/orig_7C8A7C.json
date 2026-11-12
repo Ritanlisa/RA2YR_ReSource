@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8A7C",
+ "name": "_BinkCopyToBuffer_28",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8A7C",
+ "bytes_hex": "ff25b8157e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

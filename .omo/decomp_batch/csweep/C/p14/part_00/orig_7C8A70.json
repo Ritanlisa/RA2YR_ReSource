@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8A70",
+ "name": "_BinkPause_8",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8A70",
+ "bytes_hex": "ff25b0157e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

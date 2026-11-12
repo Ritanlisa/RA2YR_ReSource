@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c89da DirectSoundCreate -> _addr_7C
+[conv] 0x7c89e0 VerQueryValueA -> _addr_7C
+[conv] 0x7c89e6 GetFileVersionInfoA -> _addr_7C
+[conv] 0x7c89ec GetFileVersionInfoSizeA -> _addr_7C
+[conv] 0x7c8a1c ImmAssociateContext -> _addr_7C
+[conv] 0x7c8a22 ImmGetContext -> _addr_7C
+[conv] 0x7c8a28 ImmNotifyIME -> _addr_7C
+[conv] 0x7c8a2e ImmGetCandidateListA -> _addr_7C
+[conv] 0x7c8a34 ImmGetCompositionStringA -> _addr_7C
+[conv] 0x7c8a3a ImmSetOpenStatus -> _addr_7C
+[conv] 0x7c8a40 _BinkClose_4 -> _addr_7C
+[conv] 0x7c8a46 _BinkDDSurfaceType_4 -> _addr_7C
+[conv] 0x7c8a4c _BinkSetVolume_8 -> _addr_7C
+[conv] 0x7c8a52 _BinkGetError_0 -> _addr_7C
+[conv] 0x7c8a5e _BinkSetSoundSystem_8 -> _addr_7C
+[conv] 0x7c8a64 _BinkOpenDirectSound_4 -> _addr_7C
+[conv] 0x7c8a6a _BinkGoto_12 -> _addr_7C
+[conv] 0x7c8a70 _BinkPause_8 -> _addr_7C
+[conv] 0x7c8a76 _BinkNextFrame_4 -> _addr_7C
+[conv] 0x7c8a7c _BinkCopyToBuffer_28 -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c89e6   MISMATCH         GetFileVersionInfoA
+[diff] 0x7c89ec   MISMATCH         GetFileVersionInfoSizeA
+[diff] 0x7c8a1c   MISMATCH         ImmAssociateContext
+[diff] 0x7c8a22   MISMATCH         ImmGetContext
+[diff] 0x7c8a28   MISMATCH         ImmNotifyIME
+[diff] 0x7c8a34   MISMATCH         ImmGetCompositionStringA
+[diff] 0x7c8a3a   MISMATCH         ImmSetOpenStatus
+[diff] 0x7c8a40   MISMATCH         _BinkClose_4
+[diff] 0x7c8a46   MISMATCH         _BinkDDSurfaceType_4
+[diff] 0x7c8a4c   MISMATCH         _BinkSetVolume_8
+[diff] 0x7c8a52   MISMATCH         _BinkGetError_0
+[diff] 0x7c8a5e   MISMATCH         _BinkSetSoundSystem_8
+[diff] 0x7c8a64   MISMATCH         _BinkOpenDirectSound_4
+[diff] 0x7c8a6a   MISMATCH         _BinkGoto_12
+[diff] 0x7c8a70   MISMATCH         _BinkPause_8
+[diff] 0x7c8a76   MISMATCH         _BinkNextFrame_4
+[diff] 0x7c8a7c   MISMATCH         _BinkCopyToBuffer_28
+[ledger] 0x7c89da DirectSoundCreate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c89e0 VerQueryValueA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c89e6 GetFileVersionInfoA -> NG (attempt 1)
+[ledger] 0x7c89ec GetFileVersionInfoSizeA -> NG (attempt 1)
+[ledger] 0x7c8a1c ImmAssociateContext -> NG (attempt 1)
+[ledger] 0x7c8a22 ImmGetContext -> NG (attempt 1)
+[ledger] 0x7c8a28 ImmNotifyIME -> NG (attempt 1)
+[ledger] 0x7c8a2e ImmGetCandidateListA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8a34 ImmGetCompositionStringA -> NG (attempt 1)
+[ledger] 0x7c8a3a ImmSetOpenStatus -> NG (attempt 1)
+[ledger] 0x7c8a40 _BinkClose_4 -> NG (attempt 1)
+[ledger] 0x7c8a46 _BinkDDSurfaceType_4 -> NG (attempt 1)
+[ledger] 0x7c8a4c _BinkSetVolume_8 -> NG (attempt 1)
+[ledger] 0x7c8a52 _BinkGetError_0 -> NG (attempt 1)
+[ledger] 0x7c8a5e _BinkSetSoundSystem_8 -> NG (attempt 1)
+[ledger] 0x7c8a64 _BinkOpenDirectSound_4 -> NG (attempt 1)
+[ledger] 0x7c8a6a _BinkGoto_12 -> NG (attempt 1)
+[ledger] 0x7c8a70 _BinkPause_8 -> NG (attempt 1)
+[ledger] 0x7c8a76 _BinkNextFrame_4 -> NG (attempt 1)
+[ledger] 0x7c8a7c _BinkCopyToBuffer_28 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 17
+ },
+ "pathologies": {
+  "codegen_shape": 16,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p14\batch_report.json

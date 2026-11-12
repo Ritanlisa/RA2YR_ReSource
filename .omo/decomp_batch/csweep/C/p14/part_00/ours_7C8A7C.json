@@ -1,0 +1,15 @@
+{
+ "symbol": "?_BinkCopyToBuffer_28@@YAHHHHHHHH@Z",
+ "sym_key": "Unnamed::_BinkCopyToBuffer_28",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b44241c8b4c24188b542414508b442414518b4c2414528b542414508b442414515250e80000000083c41cc3",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?BinkCopyToBuffer@@YAHHHHHHHHZZ",
+   "sym_key": "BinkCopyToBuffer"
+  }
+ ]
+}

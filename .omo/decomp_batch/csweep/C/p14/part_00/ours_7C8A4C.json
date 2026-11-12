@@ -1,0 +1,15 @@
+{
+ "symbol": "?_BinkSetVolume_8@@YAHHH@Z",
+ "sym_key": "Unnamed::_BinkSetVolume_8",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b4c24045051e80000000083c408c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?BinkSetVolume@@YAHHHZZ",
+   "sym_key": "BinkSetVolume"
+  }
+ ]
+}

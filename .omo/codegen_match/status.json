@@ -92946,6 +92946,50 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c89da": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "DirectSoundCreate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DirectSoundCreate",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c89e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "VerQueryValueA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VerQueryValueA",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c89e6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1520]",
+  "name": "GetFileVersionInfoA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetFileVersionInfoA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c89ec": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e151c]",
+  "name": "GetFileVersionInfoSizeA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetFileVersionInfoSizeA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c89f2": {
   "attempts": 6,
   "first_diff": "+0 jmp dword ptr [0x7e1034]",
@@ -92999,12 +93043,188 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c8a1c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10b4]",
+  "name": "ImmAssociateContext",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ImmAssociateContext",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a22": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10b8]",
+  "name": "ImmGetContext",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ImmGetContext",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a28": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10bc]",
+  "name": "ImmNotifyIME",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ImmNotifyIME",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a2e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "ImmGetCandidateListA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ImmGetCandidateListA",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c8a34": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10c4]",
+  "name": "ImmGetCompositionStringA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ImmGetCompositionStringA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a3a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10c8]",
+  "name": "ImmSetOpenStatus",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ImmSetOpenStatus",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15a4]",
+  "name": "_BinkClose_4",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_BinkClose_4",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a46": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15a8]",
+  "name": "_BinkDDSurfaceType_4",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_BinkDDSurfaceType_4",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a4c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15a0]",
+  "name": "_BinkSetVolume_8",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_BinkSetVolume_8",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a52": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1598]",
+  "name": "_BinkGetError_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "_BinkGetError_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c8a58": {
   "attempts": 2,
   "first_diff": "+0 jmp dword ptr [0x7e159c]",
   "name": "_BinkOpen_8",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7c8a5e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1590]",
+  "name": "_BinkSetSoundSystem_8",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_BinkSetSoundSystem_8",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a64": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1594]",
+  "name": "_BinkOpenDirectSound_4",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_BinkOpenDirectSound_4",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a6a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15ac]",
+  "name": "_BinkGoto_12",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_BinkGoto_12",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a70": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15b0]",
+  "name": "_BinkPause_8",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_BinkPause_8",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a76": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15b4]",
+  "name": "_BinkNextFrame_4",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_BinkNextFrame_4",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8a7c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15b8]",
+  "name": "_BinkCopyToBuffer_28",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "_BinkCopyToBuffer_28",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c8b29": {
   "attempts": 1,
