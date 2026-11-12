@@ -1,0 +1,33 @@
+{
+ "symbol": "?WorldToScreen@Coord@@QAEPAVMouseClass@@PAH0D@Z",
+ "sym_key": "Coord::WorldToScreen",
+ "size": 194,
+ "link_base": 0,
+ "bytes_hex": "8b44240853558bd98b28568b70048b8390140000c1e0082bc65703c583ec0889442420db442420d80d00000000da8b88140000dd1c24e8000000008b8b981400008bf8c1e1082bf18b44242403f533f88974242081e7ff000000db44242033f8d80d00000000da8b88140000dd1c24e8000000008b4c242483c40833c125ff00000033c88a44241c84c0742685ff7d0233ff8b83a41400003bf87c038d78ff85c97d0233c98b9ba81400003bcb7c038d4bff8b44241489385f5e5d8948045bc20c00",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?flt_7F0424@@3MA",
+   "sym_key": "flt_7F0424"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?flt_7F0424@@3MA",
+   "sym_key": "flt_7F0424"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

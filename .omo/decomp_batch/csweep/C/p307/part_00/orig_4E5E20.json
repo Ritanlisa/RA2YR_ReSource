@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E5E20",
+ "name": "SetupLobbyPlayerSlotDialog",
+ "size": 161,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E5E20",
+ "bytes_hex": "565783cfff85d27507b86d070000eb5b83fa017507b86e070000eb4f83fa027507b86f070000eb4383fa037507b870070000eb3783fa047507b871070000eb2b83fa057507b872070000eb1f83fa067507b873070000eb138bc283e807f7d81bc0258bf8ffff05740700008b3538b2a80083fe03740583fe04751b8b149590daa8008b35b411ac003bd6750a397a6b7505bf04000000578bd0e8120000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

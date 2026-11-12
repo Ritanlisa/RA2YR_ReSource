@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor@DynamicVectorArray@@QAEPAV1@HHH@Z",
+ "sym_key": "DynamicVectorArray::Constructor",
+ "size": 151,
+ "link_base": 0,
+ "bytes_hex": "5556578b7c24148b4424188b6c24108bf18d0c7f894604897e088d14cd04000000896e0c52e80000000033c983c4043bc1743d538d5fff8d5004893885db8954241c8bc27c25b301ba0a00000089480489480888580c88480d890889501489481083c0184f75e68b54241c8bc25beb0233c08b5608890633c03bd17e120fbe565040892c0a8b560883c1183bc27cee8bc65f5e5dc20c00",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "?SetupLobbyPlayerSlotDialog@@YI_NPAXH@Z",
+ "sym_key": "Unnamed::SetupLobbyPlayerSlotDialog",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "565783cfff85d2744e8d42ff83f8057731ff248500000000b86e070000eb3db86f070000eb36b870070000eb2fb871070000eb28b872070000eb21b873070000eb1a8bc283e807f7d81bc0258bf8ffff0574070000eb05b86d0700008b350000000083fe03740583fe04751b8b1495000000008b35000000003bd6750a397a6b7505bf04000000578bd0e8000000005f5ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "$L1867",
+   "sym_key": "$L1867"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?SetupLobbyPlayerSlots@@YI_NPAXHH@Z",
+   "sym_key": "SetupLobbyPlayerSlots"
+  }
+ ]
+}

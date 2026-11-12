@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_793710@@YIFPAXHHHH@Z",
+ "sym_key": "Unnamed::sub_793710",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "538b5c240855568b742410578bfa8b6c241c8d041f33c625ff00000033f083fd01741d8bc78bf7992bc2d1f80fafc581e60100008079054e83cefe4603d803f3e8000000006681fe0004668bc6730466b800045f5e5d5bc20c00",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p307\part_00
+=== convert (20 addrs) ===
+[conv] 0x5af080 Matrix3D::RotateZ -> Matrix3D
+[conv] 0x5af1a0 Matrix2D::Rotate -> Matrix2D
+[conv] 0x5ef010 ObjectClass::Map_Helper_5EF010 -> ObjectClass
+[conv] 0x4c1600 ObjectClass::sub_4C1600 -> ObjectClass
+[conv] 0x58d120 ObjectClass::sub_58D120 -> ObjectClass
+[conv] 0x60c930 ObjectClass::UI_Helper_60C930 -> ObjectClass
+[conv] 0x628070 DynamicVectorArray::Constructor -> DynamicVectorArray
+[conv] 0x6557f0 Coord::WorldToScreen -> Coord
+[conv] 0x793710 sub_793710 -> _addr_79
+[conv] 0x5aef60 Matrix3x3::RotateX -> Matrix3x3
+[conv] 0x4385d0 BombClass::AbstractClass -> BombClass
+[conv] 0x777f90 ObjectClass::sub_777F90 -> ObjectClass
+[conv] 0x7bd170 UnitClass::Audio_Render_7BD170 -> UnitClass
+[conv] 0x763730 WaypointPathClass::Init -> WaypointPathClass
+[conv] 0x4261d0 TechnoClass::FindBuildingClass -> TechnoClass
+[conv] 0x6274f0 ObjectClass::sub_6274F0 -> ObjectClass
+[conv] 0x4e5e20 SetupLobbyPlayerSlotDialog -> _addr_4E
+[conv] 0x4c3a20 sub_4C3A20 -> _addr_4C
+[conv] 0x47a920 DriveControlCD -> _addr_47
+[conv] 0x6f27f0 VectorClass::Team_Helper_6F27F0 -> VectorClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Matrix3D                 rc=2
+[era] Matrix2D                 rc=2
+[era] ObjectClass              rc=2
+[era] DynamicVectorArray       rc=0
+[era] Coord                    rc=0
+[era] _addr_79                 rc=0
+[era] Matrix3x3                rc=2
+[era] BombClass                rc=2
+[era] UnitClass                rc=2
+[era] WaypointPathClass        rc=0
+[era] TechnoClass              rc=2
+[era] _addr_4E                 rc=0
+[era] _addr_4C                 rc=0
+[era] _addr_47                 rc=2
+[era] VectorClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ef010   MISMATCH         ObjectClass::Map_Helper_5EF010
+[diff] 0x58d120   MISMATCH         ObjectClass::sub_58D120
+[diff] 0x628070   MISMATCH         DynamicVectorArray::Constructor
+[diff] 0x6557f0   MISMATCH         Coord::WorldToScreen
+[diff] 0x793710   MISMATCH         sub_793710
+[diff] 0x763730   MISMATCH         WaypointPathClass::Init
+[diff] 0x4e5e20   MISMATCH         SetupLobbyPlayerSlotDialog
+[diff] 0x4c3a20   MISMATCH         sub_4C3A20
+[diff] 0x6f27f0   MISMATCH         VectorClass::Team_Helper_6F27F0
+[ledger] 0x5af080 Matrix3D::RotateZ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5af1a0 Matrix2D::Rotate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ef010 ObjectClass::Map_Helper_5EF010 -> NG (attempt 1)
+[ledger] 0x4c1600 ObjectClass::sub_4C1600 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58d120 ObjectClass::sub_58D120 -> NG (attempt 1)
+[ledger] 0x60c930 ObjectClass::UI_Helper_60C930 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x628070 DynamicVectorArray::Constructor -> NG (attempt 1)
+[ledger] 0x6557f0 Coord::WorldToScreen -> NG (attempt 1)
+[ledger] 0x793710 sub_793710 -> NG (attempt 1)
+[ledger] 0x5aef60 Matrix3x3::RotateX -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4385d0 BombClass::AbstractClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x777f90 ObjectClass::sub_777F90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bd170 UnitClass::Audio_Render_7BD170 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x763730 WaypointPathClass::Init -> NG (attempt 1)
+[ledger] 0x4261d0 TechnoClass::FindBuildingClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6274f0 ObjectClass::sub_6274F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e5e20 SetupLobbyPlayerSlotDialog -> NG (attempt 1)
+[ledger] 0x4c3a20 sub_4C3A20 -> NG (attempt 1)
+[ledger] 0x47a920 DriveControlCD -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f27f0 VectorClass::Team_Helper_6F27F0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 3,
+  "regalloc": 3,
+  "const_fold": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p307\batch_report.json
