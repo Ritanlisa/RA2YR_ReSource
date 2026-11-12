@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindItemIndex@_DynamicVectorClass_UtagCONNECTDATA@@QAEHPAH@Z",
+ "sym_key": "_DynamicVectorClass_UtagCONNECTDATA::FindItemIndex",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "8b5110535533c0565785d27e218b7424148b49048b7e0439790475088b198b2e3bdd740d403bc27d0583c108ebe983c8ff5f5e5d5bc20400",
+ "relocs": []
+}

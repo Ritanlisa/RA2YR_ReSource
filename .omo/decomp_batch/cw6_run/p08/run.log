@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x49ef40 _VectorClass_PAD::Add -> _VectorClass_PAD
+[conv] 0x49f3a0 sub_49F3A0 -> _addr_49
+[conv] 0x49f9b0 CounterClass::Construct -> CounterClass
+[conv] 0x4a0f80 _VectorClass_UtagCONNECTDATA::AddRef -> _VectorClass_UtagCONNECTDATA
+[conv] 0x4a10d0 _VectorClass_UtagCONNECTDATA::GetSize -> _VectorClass_UtagCONNECTDATA
+[conv] 0x4a1200 _DynamicVectorClass_UtagCONNECTDATA::FindItemIndex -> _DynamicVectorClass_UtagCONNECTDATA
+[conv] 0x4a1240 _VectorClass_PAUIConnectionPoint::AddRef -> _VectorClass_PAUIConnectionPoint
+[conv] 0x4a1360 _VectorClass_PAUIConnectionPoint::Advise -> _VectorClass_PAUIConnectionPoint
+[conv] 0x4a1470 _DynamicVectorClass_PAUIConnectionPoint::FindItem -> _DynamicVectorClass_PAUIConnectionPoint
+[conv] 0x4a4c50 _VectorClass_PAU_DDSURFACEDESC::Read -> _VectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a7c30 DiskLaserClass::ddtor -> DiskLaserClass
+[conv] 0x4a7d80 _VectorClass_PAVDiskLaserClass::AddRef -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4a7ea0 _VectorClass_PAVDiskLaserClass::Read -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4a7fb0 _DynamicVectorClass_PAVDiskLaserClass::FindItem -> _DynamicVectorClass_PAVDiskLaserClass
+[conv] 0x4ac310 DisplayClass::InitViewBounds -> DisplayClass
+[conv] 0x4aea20 sub_4AEA20 -> _addr_4A
+[conv] 0x4af930 JumpjetLocomotionClass::StubReturnZero_0 -> JumpjetLocomotionClass
+[conv] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> JumpjetLocomotionClass
+[conv] 0x4b4780 JumpjetLocomotion::TransformCoords -> JumpjetLocomotion
+[conv] 0x4b4830 DriveLocomotionClass::ddtor -> DriveLocomotionClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAD         rc=0
+[era] _addr_49                 rc=0
+[era] CounterClass             rc=0
+[era] _VectorClass_UtagCONNECTDATA rc=0
+[era] _DynamicVectorClass_UtagCONNECTDATA rc=0
+[era] _VectorClass_PAUIConnectionPoint rc=0
+[era] _DynamicVectorClass_PAUIConnectionPoint rc=0
+[era] _VectorClass_PAU_DDSURFACEDESC rc=0
+[era] DiskLaserClass           rc=0
+[era] _VectorClass_PAVDiskLaserClass rc=0
+[era] _DynamicVectorClass_PAVDiskLaserClass rc=0
+[era] DisplayClass             rc=2
+[era] _addr_4A                 rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] JumpjetLocomotion        rc=0
+[era] DriveLocomotionClass     rc=0
+=== diffasm byte-compare ===
+[diff] 0x49ef40   MISMATCH         _VectorClass_PAD::Add
+[diff] 0x49f3a0   MISMATCH         sub_49F3A0
+[diff] 0x49f9b0   MISMATCH         CounterClass::Construct
+[diff] 0x4a0f80   MISMATCH         _VectorClass_UtagCONNECTDATA::AddRef
+[diff] 0x4a10d0   MISMATCH         _VectorClass_UtagCONNECTDATA::GetSize
+[diff] 0x4a1200   MISMATCH         _DynamicVectorClass_UtagCONNECTDATA::FindItemIndex
+[diff] 0x4a1240   MISMATCH         _VectorClass_PAUIConnectionPoint::AddRef
+[diff] 0x4a1360   MISMATCH         _VectorClass_PAUIConnectionPoint::Advise
+[diff] 0x4a1470   MISMATCH         _DynamicVectorClass_PAUIConnectionPoint::FindItem
+[diff] 0x4a4c50   MISMATCH         _VectorClass_PAU_DDSURFACEDESC::Read
+[diff] 0x4a7c30   MISMATCH         DiskLaserClass::ddtor
+[diff] 0x4a7d80   MISMATCH         _VectorClass_PAVDiskLaserClass::AddRef
+[diff] 0x4a7ea0   MISMATCH         _VectorClass_PAVDiskLaserClass::Read
+[diff] 0x4a7fb0   MISMATCH         _DynamicVectorClass_PAVDiskLaserClass::FindItem
+[diff] 0x4aea20   MISMATCH         sub_4AEA20
+[diff] 0x4af930   MISMATCH         JumpjetLocomotionClass::StubReturnZero_0
+[diff] 0x4b4780   MISMATCH         JumpjetLocomotion::TransformCoords
+[diff] 0x4b4830   MISMATCH         DriveLocomotionClass::ddtor
+[ledger] 0x49ef40 _VectorClass_PAD::Add -> NG (attempt 2)
+[ledger] 0x49f3a0 sub_49F3A0 -> NG (attempt 2)
+[ledger] 0x49f9b0 CounterClass::Construct -> NG (attempt 2)
+[ledger] 0x4a0f80 _VectorClass_UtagCONNECTDATA::AddRef -> NG (attempt 2)
+[ledger] 0x4a10d0 _VectorClass_UtagCONNECTDATA::GetSize -> NG (attempt 2)
+[ledger] 0x4a1200 _DynamicVectorClass_UtagCONNECTDATA::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4a1240 _VectorClass_PAUIConnectionPoint::AddRef -> NG (attempt 2)
+[ledger] 0x4a1360 _VectorClass_PAUIConnectionPoint::Advise -> NG (attempt 2)
+[ledger] 0x4a1470 _DynamicVectorClass_PAUIConnectionPoint::FindItem -> NG (attempt 2)
+[ledger] 0x4a4c50 _VectorClass_PAU_DDSURFACEDESC::Read -> NG (attempt 2)
+[ledger] 0x4a7c30 DiskLaserClass::ddtor -> NG (attempt 2)
+[ledger] 0x4a7d80 _VectorClass_PAVDiskLaserClass::AddRef -> NG (attempt 2)
+[ledger] 0x4a7ea0 _VectorClass_PAVDiskLaserClass::Read -> NG (attempt 2)
+[ledger] 0x4a7fb0 _DynamicVectorClass_PAVDiskLaserClass::FindItem -> NG (attempt 2)
+[ledger] 0x4ac310 DisplayClass::InitViewBounds -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4aea20 sub_4AEA20 -> NG (attempt 2)
+[ledger] 0x4af930 JumpjetLocomotionClass::StubReturnZero_0 -> NG (attempt 2)
+[ledger] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4b4780 JumpjetLocomotion::TransformCoords -> NG (attempt 2)
+[ledger] 0x4b4830 DriveLocomotionClass::ddtor -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "regalloc": 2,
+  "branch_polarity": 3,
+  "branch_order": 3,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p08\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x49F9B0",
+ "name": "CounterClass::Construct",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49F9B0",
+ "bytes_hex": "8bc133c9894804894808c6400c0188480dc700545c7e00894810c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

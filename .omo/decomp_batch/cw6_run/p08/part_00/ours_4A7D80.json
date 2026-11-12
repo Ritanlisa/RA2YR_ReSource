@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorClass_PAVDiskLaserClass@@QAEDH@Z",
+ "sym_key": "_VectorClass_PAVDiskLaserClass::AddRef",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "53568b7108578b7c24103b7708752e33d285f67f085f5eb0015bc204008b41048b4f042bc88b383b3c0175114283c0043bd67de18b388b1c013bfb74ef5f5e32c05bc20400",
+ "relocs": []
+}

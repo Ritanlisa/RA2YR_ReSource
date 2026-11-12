@@ -17136,15 +17136,15 @@
   "status": "NG"
  },
  "0x49ef40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x49ef4e",
   "name": "_VectorClass_PAD::Add",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "StringVector::Add",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x49ef80": {
@@ -17265,14 +17265,14 @@
   "this_as_id": false
  },
  "0x49f3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, 0xffffff00",
   "name": "sub_49F3A0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_49F3A0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x49f5c0": {
@@ -17300,15 +17300,15 @@
   "this_as_id": false
  },
  "0x49f9b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+17 mov dword ptr [eax], 0x7e5c54",
   "name": "CounterClass::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "CounterClass::Construct",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x49fa00": {
@@ -17641,27 +17641,27 @@
   "this_as_id": false
  },
  "0x4a0f80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 jne 0x4a0fc9",
   "name": "_VectorClass_UtagCONNECTDATA::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_UtagCONNECTDATA::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a10d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+27 jle 0x4a110c",
   "name": "_VectorClass_UtagCONNECTDATA::GetSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "VectorClass_UtagCONNECTDATA::GetSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a1120": {
@@ -17677,39 +17677,39 @@
   "this_as_id": false
  },
  "0x4a1200": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+11 jle 0x4a122c",
   "name": "_DynamicVectorClass_UtagCONNECTDATA::FindItemIndex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "VectorClass_UtagCONNECTDATA::FindItemIndex",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a1240": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x4a1276",
   "name": "_VectorClass_PAUIConnectionPoint::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "ConnectionPointClass_9::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a1360": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x4a136e",
   "name": "_VectorClass_PAUIConnectionPoint::Advise",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ConnectionPointClass_9::Advise",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a13a0": {
@@ -17725,15 +17725,15 @@
   "this_as_id": false
  },
  "0x4a1470": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_PAUIConnectionPoint::FindItem",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "EnumConnectionPointsClass::FindItem",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a1540": {
@@ -18272,15 +18272,15 @@
   "status": "NG"
  },
  "0x4a4c50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x4a4c5e",
   "name": "_VectorClass_PAU_DDSURFACEDESC::Read",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CStreamClass_16::Read",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a4c90": {
@@ -18840,15 +18840,15 @@
   "this_as_id": false
  },
  "0x4a7c30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e9890]",
   "name": "DiskLaserClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "DiskLaserClass::ddtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a7c70": {
@@ -18890,27 +18890,27 @@
   "this_as_id": false
  },
  "0x4a7d80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+13 jne 0x4a7db6",
   "name": "_VectorClass_PAVDiskLaserClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "Dial8Class_48::AddRef",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a7ea0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jne 0x4a7eae",
   "name": "_VectorClass_PAVDiskLaserClass::Read",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Dial8Class_48::Read",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a7ee0": {
@@ -18926,15 +18926,15 @@
   "this_as_id": false
  },
  "0x4a7fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "_DynamicVectorClass_PAVDiskLaserClass::FindItem",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Dial8Class_48::FindItem",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a7fe0": {
@@ -19189,7 +19189,7 @@
   "this_as_id": false
  },
  "0x4ac310": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19309,14 +19309,14 @@
   "this_as_id": false
  },
  "0x4aea20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "sub_4AEA20",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "sub_4AEA20",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4aeb10": {
@@ -19544,15 +19544,15 @@
   "status": "NG"
  },
  "0x4af930": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+25 je 0x4af959",
   "name": "JumpjetLocomotionClass::StubReturnZero_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "JumpjetLocomotionClass::StubReturnZero_0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4af970": {
@@ -19599,11 +19599,16 @@
   "this_as_id": false
  },
  "0x4afb80": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "JumpjetLocomotionClass::StubReturnTrue",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4afc90": {
   "attempts": 1,
@@ -19673,15 +19678,15 @@
   "status": "OK"
  },
  "0x4b4780": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x58]",
   "name": "JumpjetLocomotion::TransformCoords",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "JumpjetLocomotion::TransformCoords",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4b4820": {
@@ -19697,15 +19702,15 @@
   "this_as_id": false
  },
  "0x4b4830": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 mov ecx, dword ptr [0x7e9a30]",
   "name": "DriveLocomotionClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "DriveLocomotionClass::ddtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4b4870": {

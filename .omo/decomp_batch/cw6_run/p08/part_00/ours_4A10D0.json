@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetSize@_VectorClass_UtagCONNECTDATA@@QAEHPAH@Z",
+ "sym_key": "_VectorClass_UtagCONNECTDATA::GetSize",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "8a410c53555684c05775095f5e5d33c05bc204008b510833c085d27e218b7424148b49048b7e0439790475088b198b2e3bdd740d403bc27d0583c108ebe983c8ff5f5e5d5bc20400",
+ "relocs": []
+}

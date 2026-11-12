@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A1200",
+ "name": "VectorClass_UtagCONNECTDATA::FindItemIndex",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A1200",
+ "bytes_hex": "8b5110535533c0565785d27e1f8b7424148b49048b7e0439790475088b198b2e3bdd740b4083c1083bc27ceb83c8ff5f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

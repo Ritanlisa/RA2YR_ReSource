@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A10D0",
+ "name": "VectorClass_UtagCONNECTDATA::GetSize",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A10D0",
+ "bytes_hex": "8a410c53555684c05775095f5e5d33c05bc204008b510833c085d27e1f8b7424148b49048b7e0439790475088b198b2e3bdd740b4083c1083bc27ceb83c8ff5f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
