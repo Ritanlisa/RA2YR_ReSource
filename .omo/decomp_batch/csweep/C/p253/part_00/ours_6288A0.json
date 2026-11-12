@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddRef@_VectorClass_U_HashObject_VHashString_PAVSchemeNode@@QAEDH@Z",
+ "sym_key": "_VectorClass_U_HashObject_VHashString_PAVSchemeNode::AddRef",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b4108568b72083bc65e740532c0c2040085c07e108b42048b49045051e80000000083c408b001c20400",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?j_Stub_InfiniteLoop@@YAXHH@Z",
+   "sym_key": "j_Stub_InfiniteLoop"
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p253\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a9840 DisplayClass::SetCoordVisible -> DisplayClass
+[conv] 0x4fc060 HouseClass::PickedUpFlag -> HouseClass
+[conv] 0x5ef100 NullModemClass::initConnection -> NullModemClass
+[conv] 0x4294b0 ApplicationClass::sub_4294B0 -> ApplicationClass
+[conv] 0x4a2e00 CStreamClass::Read -> CStreamClass
+[conv] 0x6ca4a0 sub_6CA4A0 -> _addr_6C
+[conv] 0x7335f0 TechnoClass::IsCapturableByPlayer -> TechnoClass
+[conv] 0x7c8c9c _shortsort -> _addr_7C
+[conv] 0x67c690 Stream::ReadOLEObjects -> Stream
+[conv] 0x642b60 LoadingScreen::GetColorScheme -> LoadingScreen
+[conv] 0x7be5d0 AllocCallback::Dispatch -> AllocCallback
+[conv] 0x775b50 sub_775B50 -> _addr_77
+[conv] 0x505310 BuildingClass::FindBySWType -> BuildingClass
+[conv] 0x6288a0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::AddRef -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x71de40 TerrainTypeClass::SingletonGetter -> TerrainTypeClass
+[conv] 0x783520 sub_783520 -> _addr_78
+[conv] 0x783570 sub_783570 -> _addr_78
+[conv] 0x6c9600 AbstractClass::GetTotalValue -> AbstractClass
+[conv] 0x632d10 PKPipe::RelinkNode -> PKPipe
+[conv] 0x474690 ObjectTypeClass::ReadBool -> ObjectTypeClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DisplayClass             rc=0
+[era] HouseClass               rc=0
+[era] NullModemClass           rc=0
+[era] ApplicationClass         rc=2
+[era] CStreamClass             rc=2
+[era] _addr_6C                 rc=2
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=2
+[era] Stream                   rc=0
+[era] LoadingScreen            rc=2
+[era] AllocCallback            rc=2
+[era] _addr_77                 rc=2
+[era] BuildingClass            rc=2
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] TerrainTypeClass         rc=2
+[era] _addr_78                 rc=0
+[era] AbstractClass            rc=0
+[era] PKPipe                   rc=0
+[era] ObjectTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a9840   MISMATCH         DisplayClass::SetCoordVisible
+[diff] 0x4fc060   MATCH            HouseClass::PickedUpFlag
+[diff] 0x5ef100   MISMATCH         NullModemClass::initConnection
+[diff] 0x7335f0   MISMATCH         TechnoClass::IsCapturableByPlayer
+[diff] 0x67c690   MISMATCH         Stream::ReadOLEObjects
+[diff] 0x6288a0   MISMATCH         _VectorClass_U_HashObject_VHashString_PAVSchemeNode::AddRef
+[diff] 0x783520   MISMATCH         sub_783520
+[diff] 0x783570   MISMATCH         sub_783570
+[diff] 0x6c9600   MISMATCH         AbstractClass::GetTotalValue
+[diff] 0x632d10   MISMATCH         PKPipe::RelinkNode
+[ledger] 0x4a9840 DisplayClass::SetCoordVisible -> NG (attempt 1)
+[ledger] 0x4fc060 HouseClass::PickedUpFlag -> OK (attempt 1)
+[ledger] 0x5ef100 NullModemClass::initConnection -> NG (attempt 1)
+[ledger] 0x4294b0 ApplicationClass::sub_4294B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2e00 CStreamClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ca4a0 sub_6CA4A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7335f0 TechnoClass::IsCapturableByPlayer -> NG (attempt 1)
+[ledger] 0x7c8c9c _shortsort -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67c690 Stream::ReadOLEObjects -> NG (attempt 1)
+[ledger] 0x642b60 LoadingScreen::GetColorScheme -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7be5d0 AllocCallback::Dispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x775b50 sub_775B50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x505310 BuildingClass::FindBySWType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6288a0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::AddRef -> NG (attempt 1)
+[ledger] 0x71de40 TerrainTypeClass::SingletonGetter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x783520 sub_783520 -> NG (attempt 1)
+[ledger] 0x783570 sub_783570 -> NG (attempt 1)
+[ledger] 0x6c9600 AbstractClass::GetTotalValue -> NG (attempt 1)
+[ledger] 0x632d10 PKPipe::RelinkNode -> NG (attempt 1)
+[ledger] 0x474690 ObjectTypeClass::ReadBool -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "MATCH": 1,
+  "COMPILE_FAIL": 10
+ },
+ "pathologies": {
+  "eval_order": 1,
+  "regalloc": 3,
+  "branch_polarity": 2,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 10.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p253\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FC060",
+ "name": "HouseClass::PickedUpFlag",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FC060",
+ "bytes_hex": "56578b7c240c8bf185ff743b8a878100000084c075318b4424108b8edc53000050518bcee8b7fdffff8b56348bcf8b82b800000050e8564d240089bedc5300005fb0015ec208005f32c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

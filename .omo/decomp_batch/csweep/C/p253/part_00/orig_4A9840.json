@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A9840",
+ "name": "DisplayClass::SetCoordVisible",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A9840",
+ "bytes_hex": "8b4424088a4c240c8b0085c0750984c9752632c0c20c0084c9751d8b4c2404518b0d24738800e8c509230033d283f8ff0f95c28ac2c20c008b0d24738800508b44240850e8a7ec2200b001c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

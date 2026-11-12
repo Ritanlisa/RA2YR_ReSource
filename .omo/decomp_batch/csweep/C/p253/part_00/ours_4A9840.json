@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetCoordVisible@DisplayClass@@QAG_NPAIPAH@Z",
+ "sym_key": "DisplayClass::SetCoordVisible",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b0085c074218b4c240c85c975198b4c2404518b0d00000000e80000000083f8ff0f95c0c20c008b5424048b0d000000005052e800000000b001c20c00",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?GetCoordDelta@DisplayClass@@QAEHH@Z",
+   "sym_key": "DisplayClass::GetCoordDelta"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?ScrollTacticalView@DisplayClass@@QAEHHH@Z",
+   "sym_key": "DisplayClass::ScrollTacticalView"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?RelinkNode@PKPipe@@QAEXH@Z",
+ "sym_key": "PKPipe::RelinkNode",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "568b742408578bf9397718743e85f674168b460885c0740f8b086a0050ff510cc74608000000008b471885c07407c740080000000085f689771874068d57148956088d4714897f1c8947045f5ec20400",
+ "relocs": []
+}

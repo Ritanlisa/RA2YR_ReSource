@@ -1,0 +1,21 @@
+{
+ "symbol": "?ReadOLEObjects@Stream@@QAEJXZ",
+ "sym_key": "Stream::ReadOLEObjects",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf1576a008b068d4c240c6a045156ff500c85c07c298b44240833ff85c07e1d8d54240c52680000000056e80000000085c07c0b8b442408473bf87ce333c05f5e83c408c3",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?IID_IUnknown@@3U_GUID_era@@A",
+   "sym_key": "IID_IUnknown"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?OleLoadFromStream@@YGJPAX00@Z",
+   "sym_key": "OleLoadFromStream"
+  }
+ ]
+}

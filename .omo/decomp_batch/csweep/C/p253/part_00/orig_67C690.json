@@ -1,0 +1,11 @@
+{
+ "addr": "0x67C690",
+ "name": "Stream::ReadOLEObjects",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x67C690",
+ "bytes_hex": "83ec0853568bf1576a008d4c24108b066a045156ff500c85c07c2c8b44240c33db85c07e208b3df8157e008d5424105268907c7f0056ffd785c07c0b8b44240c433bd87ce633c05f5e5b83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

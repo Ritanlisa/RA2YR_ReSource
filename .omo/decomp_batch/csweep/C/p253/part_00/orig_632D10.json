@@ -1,0 +1,11 @@
+{
+ "addr": "0x632D10",
+ "name": "LinkedList_flat::RelinkNode",
+ "size": 79,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x632D10",
+ "bytes_hex": "568b742408578bf9397718743d85f674158b4e0885c9740e8b016a00ff500cc74608000000008b471885c07407c740080000000085f689771874068d4f14894e088d5714897f1c8957045f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

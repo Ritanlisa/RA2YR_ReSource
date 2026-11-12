@@ -1,0 +1,21 @@
+{
+ "symbol": "?initConnection@NullModemClass@@QAEPAV1@HHHF@Z",
+ "sym_key": "NullModemClass::initConnection",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b542408566a008bf168b00400008b4c24186aff6a3c508b44241c5152508bcee8000000008b461cc7060000000083c00bc7464cffffffff50e80000000083c4048946508b065ec21000",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?initConnection@IPXConnClass@@QAEPAXHHHFHHHH@Z",
+   "sym_key": "IPXConnClass::initConnection"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

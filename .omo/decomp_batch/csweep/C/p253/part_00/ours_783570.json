@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_783570@@YAEPBD0@Z",
+ "sym_key": "Unnamed::sub_783570",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c578bfe83c9ff33c08b5c2414f2aef7d1498bfb8bd183c9ff42f2ae83fa01f7d1750a495f85c95e5b0f9fc0c383f901740e5653e80000000083c4085f5e5bc34a5f85d20f9fc0485e24015b05ff000000c3",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

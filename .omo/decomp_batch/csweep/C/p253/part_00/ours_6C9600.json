@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetTotalValue@AbstractClass@@QAEHXZ",
+ "sym_key": "AbstractClass::GetTotalValue",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f8515356578b3d0000000033d28bf18954240c2bf9bb04000000d906dc1d00000000dfe0f6c44175238b043783ec08db80b8000000d80eda442414dd1c24e8000000008bd083c4088954240c83c6044b75c85f5e8bc25b8be55dc3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?BuildingClass_InstanceArray@@3PAVBuildingClass@@A",
+   "sym_key": "BuildingClass_InstanceArray"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

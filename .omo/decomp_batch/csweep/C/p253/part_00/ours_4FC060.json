@@ -1,0 +1,21 @@
+{
+ "symbol": "?PickedUpFlag@HouseClass@@QAEDHD@Z",
+ "sym_key": "HouseClass::PickedUpFlag",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ff743b8a878100000084c075318b4424108b8edc53000050518bcee8000000008b56348bcf8b82b800000050e80000000089bedc5300005fb0015ec208005f32c05ec20800",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?IsCellOccupied@HouseClass@@QAEDHD@Z",
+   "sym_key": "HouseClass::IsCellOccupied"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?SetPrimaryFactory@HouseClass@@QAEDH@Z",
+   "sym_key": "HouseClass::SetPrimaryFactory"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6C9600",
+ "name": "AbstractClass::GetTotalValue",
+ "size": 79,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6C9600",
+ "bytes_hex": "515356578b3decf4b00033d28bf18954240c2bf9bb04000000d906d81d48177e00dfe0f6c441751a8b0437db80b8000000d80eda44240ce8c4c80f008bd08954240c83c6044b75d15f5e8bc25b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
