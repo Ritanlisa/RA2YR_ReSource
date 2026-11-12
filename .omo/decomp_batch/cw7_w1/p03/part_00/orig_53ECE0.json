@@ -1,0 +1,11 @@
+{
+ "addr": "0x53ECE0",
+ "name": "NetworkAddress::Assign",
+ "size": 63,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53ECE0",
+ "bytes_hex": "8b5424088bc1568b328d4804897004668b52045e668951048b0d4081820083f901750b8b4c24048b118910c20c00668b4c240cc70000000000668908c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

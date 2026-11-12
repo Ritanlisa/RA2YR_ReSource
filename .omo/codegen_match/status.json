@@ -34370,15 +34370,15 @@
   "this_as_id": false
  },
  "0x538980": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+11 je 0x5389fe",
   "name": "SortedArray::FindPair",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "SortedArray::FindPair",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x538b30": {
@@ -35126,7 +35126,7 @@
   "this_as_id": false
  },
  "0x53e3c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -35196,15 +35196,15 @@
   "this_as_id": false
  },
  "0x53ece0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+7 mov esi, dword ptr [edx]",
   "name": "NetworkAddress::Assign",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "NetworkAddress::Assign",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x53ed20": {
@@ -35648,7 +35648,7 @@
   "status": "NG"
  },
  "0x540670": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -35869,27 +35869,27 @@
   "this_as_id": false
  },
  "0x540fc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 xor eax, eax",
   "name": "Network::GetClass",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Network::GetClass",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x541000": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 xor eax, eax",
   "name": "Network::FindPlayerByID",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Network::FindPlayerByID",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x541040": {
@@ -37440,15 +37440,15 @@
   "this_as_id": false
  },
  "0x54fe60": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "TimerClass::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TimerClass::Construct",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x550000": {
@@ -37688,7 +37688,7 @@
   "this_as_id": false
  },
  "0x551e50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "DecompressCoreLCW",
@@ -37848,7 +37848,7 @@
   "this_as_id": false
  },
  "0x554370": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -38316,14 +38316,19 @@
   "status": "COMPILE_FAIL"
  },
  "0x556640": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "LinkedList_flat::FindPrev",
+  "name": "LinkClass::FindPrev",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "LinkedList_flat::FindPrev",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x556670": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -38470,14 +38475,14 @@
   "this_as_id": false
  },
  "0x556b70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::Render_Render_556B70",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Render_Render_556B70",
-  "rule_violations": 0,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -39542,14 +39547,14 @@
   "this_as_id": false
  },
  "0x55c0e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "DecodeBlockLCW",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "DecodeBlockLCW",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x55c9e0": {
@@ -40093,7 +40098,7 @@
   "this_as_id": false
  },
  "0x568350": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -40398,15 +40403,15 @@
   "this_as_id": false
  },
  "0x578710": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "MapClass::SpiralSearch",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MapClass::SpiralSearch",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x578850": {
@@ -40422,7 +40427,7 @@
   "this_as_id": false
  },
  "0x578880": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -40477,14 +40482,14 @@
   "status": "NG"
  },
  "0x578e60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "CreateMapObject",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CreateMapObject",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x57acf0": {
@@ -40558,7 +40563,7 @@
   "this_as_id": false
  },
  "0x583ad0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -41151,7 +41156,7 @@
   "this_as_id": false
  },
  "0x58a630": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -41637,14 +41642,14 @@
   "this_as_id": false
  },
  "0x58bb30": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ScenarioClass::CopyStartPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ScenarioClass::CopyStartPositions",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

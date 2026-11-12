@@ -1,0 +1,11 @@
+{
+ "addr": "0x538980",
+ "name": "SortedArray::FindPair",
+ "size": 151,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x538980",
+ "bytes_hex": "538bd955568b4b045785c974718b43108b74241485c074118b008b163bc275095f5e5db0015bc204008a430c84c0751e6820bc48006a08518b0b51e88801290083c410c7431000000000c6430c018b4b048b2e8b3b85c97e258bc1992bc2d1f88b34c78d14c73bf57e048bc8eb0c74178d7a0883caff2bd003ca85c97fdb5f5e5d32c05bc2040085d274f35f5e8953105db0015bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

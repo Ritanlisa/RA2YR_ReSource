@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindPair@SortedArray@@QAEDPAH@Z",
+ "sym_key": "SortedArray::FindPair",
+ "size": 169,
+ "link_base": 0,
+ "bytes_hex": "538bd955568b4b045785c975095f5e5d32c05bc204008b43108b74241485c074088b008b163bc274778a430c84c0751e68000000006a08518b0b51e80000000083c410c7431000000000c6430c018b4b048b2e8b3b85c97f095f5e5d32c05bc204008bc1992bc2d1f88b34c78d14c73bf57e048bc8eb0c74178d7a0883caff2bd003ca85c97fdb5f5e5d32c05bc2040085d275095f5e5d32c05bc204008953105f5e5db0015bc20400",
+ "relocs": [
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?CompareFuncInt@@YAHPBX0@Z",
+   "sym_key": "CompareFuncInt"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  }
+ ]
+}

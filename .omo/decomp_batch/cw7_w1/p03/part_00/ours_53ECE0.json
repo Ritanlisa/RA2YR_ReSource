@@ -1,0 +1,15 @@
+{
+ "symbol": "?Assign@NetworkAddress@@QAEPAIPAHHF@Z",
+ "sym_key": "NetworkAddress::Assign",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "8b5424088bc1568b48048b328931668b5204668951048b0d0000000083f9015e750b8b4c24048b118910c20c00668b4c240cc70000000000668908c20c00",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_828140@@3IA",
+   "sym_key": "DataGlobal_828140"
+  }
+ ]
+}

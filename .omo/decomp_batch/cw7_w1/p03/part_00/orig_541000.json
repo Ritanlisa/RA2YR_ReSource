@@ -1,0 +1,11 @@
+{
+ "addr": "0x541000",
+ "name": "Network::FindPlayerByID",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x541000",
+ "bytes_hex": "53568b714433c05785f67e168b7c24108d51288b1a397b6474104083c2043bc67cf15f5e33c05bc204008b4481285f5e83c04c5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

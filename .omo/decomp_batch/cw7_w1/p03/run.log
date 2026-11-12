@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x538980 SortedArray::FindPair -> SortedArray
+[conv] 0x53e3c0 TimerPool::AllocSlot -> TimerPool
+[conv] 0x53ece0 NetworkAddress::Assign -> NetworkAddress
+[conv] 0x540670 IPXGlobalConnClass::QueryInterface -> IPXGlobalConnClass
+[conv] 0x540fc0 Network::GetClass -> Network
+[conv] 0x541000 Network::FindPlayerByID -> Network
+[conv] 0x54fe60 TimerClass::Construct -> TimerClass
+[conv] 0x551e50 DecompressCoreLCW -> _addr_55
+[conv] 0x554370 LoadProgressMgr::ReleaseBuffer -> LoadProgressMgr
+[conv] 0x556640 LinkClass::FindPrev -> LinkClass
+[conv] 0x556670 LinkClass::FindNext -> LinkClass
+[conv] 0x556b70 ObjectClass::Render_Render_556B70 -> ObjectClass
+[conv] 0x55c0e0 DecodeBlockLCW -> _addr_55
+[conv] 0x568350 Tactical::IsCellVisible -> Tactical
+[conv] 0x578710 MapClass::SpiralSearch -> MapClass
+[conv] 0x578880 MapClass::FastCellLookup -> MapClass
+[conv] 0x578e60 CreateMapObject -> _addr_57
+[conv] 0x583ad0 ObjectClass::sub_583AD0 -> ObjectClass
+[conv] 0x58a630 _DynamicVectorClass_U_HashObject_II::Constructor -> _DynamicVectorClass_U_HashObject_II
+[conv] 0x58bb30 ScenarioClass::CopyStartPositions -> ScenarioClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SortedArray              rc=0
+[era] TimerPool                rc=2
+[era] NetworkAddress           rc=0
+[era] IPXGlobalConnClass       rc=2
+[era] Network                  rc=0
+[era] TimerClass               rc=0
+[era] _addr_55                 rc=2
+[era] LoadProgressMgr          rc=2
+[era] LinkClass                rc=2
+[era] ObjectClass              rc=2
+[era] Tactical                 rc=2
+[era] MapClass                 rc=2
+[era] _addr_57                 rc=0
+[era] _DynamicVectorClass_U_HashObject_II rc=2
+[era] ScenarioClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x538980   MISMATCH         SortedArray::FindPair
+[diff] 0x53ece0   MISMATCH         NetworkAddress::Assign
+[diff] 0x540fc0   MISMATCH         Network::GetClass
+[diff] 0x541000   MISMATCH         Network::FindPlayerByID
+[diff] 0x54fe60   MISMATCH         TimerClass::Construct
+[diff] 0x55c0e0   MISMATCH         DecodeBlockLCW
+[diff] 0x578710   MISMATCH         MapClass::SpiralSearch
+[diff] 0x578e60   MISMATCH         CreateMapObject
+[ledger] 0x538980 SortedArray::FindPair -> NG (attempt 8)
+[ledger] 0x53e3c0 TimerPool::AllocSlot -> COMPILE_FAIL (attempt 3)
+[ledger] 0x53ece0 NetworkAddress::Assign -> NG (attempt 2)
+[ledger] 0x540670 IPXGlobalConnClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x540fc0 Network::GetClass -> NG (attempt 2)
+[ledger] 0x541000 Network::FindPlayerByID -> NG (attempt 2)
+[ledger] 0x54fe60 TimerClass::Construct -> NG (attempt 14)
+[ledger] 0x551e50 DecompressCoreLCW -> COMPILE_FAIL (attempt 4)
+[ledger] 0x554370 LoadProgressMgr::ReleaseBuffer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x556640 LinkClass::FindPrev -> COMPILE_FAIL (attempt 2)
+[ledger] 0x556670 LinkClass::FindNext -> COMPILE_FAIL (attempt 2)
+[ledger] 0x556b70 ObjectClass::Render_Render_556B70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55c0e0 DecodeBlockLCW -> NG (attempt 4)
+[ledger] 0x568350 Tactical::IsCellVisible -> COMPILE_FAIL (attempt 2)
+[ledger] 0x578710 MapClass::SpiralSearch -> NG (attempt 14)
+[ledger] 0x578880 MapClass::FastCellLookup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x578e60 CreateMapObject -> NG (attempt 4)
+[ledger] 0x583ad0 ObjectClass::sub_583AD0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58a630 _DynamicVectorClass_U_HashObject_II::Constructor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58bb30 ScenarioClass::CopyStartPositions -> COMPILE_FAIL (attempt 15)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "regalloc": 4,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w1\p03\batch_report.json
