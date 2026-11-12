@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p140\part_00
+=== convert (20 addrs) ===
+[conv] 0x53c4c0 _DynamicVectorClass_PBVAnimClass::ClearBuffer -> _DynamicVectorClass_PBVAnimClass
+[conv] 0x54a190 _DynamicVectorClass_PAG::ClearBuffer -> _DynamicVectorClass_PAG
+[conv] 0x54a1f0 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Destroy -> _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54e890 _DynamicVectorClass_PAUKamikazeControl::ClearBuffer -> _DynamicVectorClass_PAUKamikazeControl
+[conv] 0x5512d0 _DynamicVectorClass_PAVLaserDrawClass::Destroy -> _DynamicVectorClass_PAVLaserDrawClass
+[conv] 0x555200 _DynamicVectorClass_PAVLightSourceClass::Destroy -> _DynamicVectorClass_PAVLightSourceClass
+[conv] 0x555260 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Destroy_0 -> _DynamicVectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x556eb0 _DynamicVectorClass_PAVLineTrail::initList -> _DynamicVectorClass_PAVLineTrail
+[conv] 0x5581e0 _DynamicVectorClass_PBG::scrollList -> _DynamicVectorClass_PBG
+[conv] 0x55a150 _DynamicVectorClass_PAVFileEntryClass::vt03 -> _DynamicVectorClass_PAVFileEntryClass
+[conv] 0x588c90 DynamicVector::CleanupSubzone -> DynamicVector
+[conv] 0x588f00 _DynamicVectorClass_W4PassabilityType::Destroy -> _DynamicVectorClass_W4PassabilityType
+[conv] 0x588f60 _DynamicVectorClass_U_HashObject_II::Destroy_0 -> _DynamicVectorClass_U_HashObject_II
+[conv] 0x588fd0 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::Destroy_1 -> _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x5ac3a0 VectorClass_ptr_MapRegionClass::Destroy -> VectorClass_ptr_MapRegionClass
+[conv] 0x5ac4c0 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::ClearBuffer -> _DynamicVectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ac520 _DynamicVectorClass_V_TRect_H::ClearBuffer -> _DynamicVectorClass_V_TRect_H
+[conv] 0x5ac5a0 DynamicVector::checkCellBounds -> DynamicVector
+[conv] 0x5ac5f0 _DynamicVectorClass_N::Destroy -> _DynamicVectorClass_N
+[conv] 0x5c0a70 DynamicVector::ClearVector -> DynamicVector
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PBVAnimClass rc=0
+[era] _DynamicVectorClass_PAG  rc=0
+[era] _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] _DynamicVectorClass_PAUKamikazeControl rc=0
+[era] _DynamicVectorClass_PAVLaserDrawClass rc=0
+[era] _DynamicVectorClass_PAVLightSourceClass rc=0
+[era] _DynamicVectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _DynamicVectorClass_PAVLineTrail rc=0
+[era] _DynamicVectorClass_PBG  rc=0
+[era] _DynamicVectorClass_PAVFileEntryClass rc=0
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_W4PassabilityType rc=0
+[era] _DynamicVectorClass_U_HashObject_II rc=0
+[era] _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+[era] VectorClass_ptr_MapRegionClass rc=0
+[era] _DynamicVectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _DynamicVectorClass_V_TRect_H rc=0
+[era] _DynamicVectorClass_N    rc=0
+=== diffasm byte-compare ===
+[diff] 0x53c4c0   MISMATCH         _DynamicVectorClass_PBVAnimClass::ClearBuffer
+[diff] 0x54a190   MISMATCH         _DynamicVectorClass_PAG::ClearBuffer
+[diff] 0x54a1f0   MISMATCH         _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Destroy
+[diff] 0x54e890   MISMATCH         _DynamicVectorClass_PAUKamikazeControl::ClearBuffer
+[diff] 0x5512d0   MISMATCH         _DynamicVectorClass_PAVLaserDrawClass::Destroy
+[diff] 0x555200   MISMATCH         _DynamicVectorClass_PAVLightSourceClass::Destroy
+[diff] 0x555260   MISMATCH         _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Destroy_0
+[diff] 0x556eb0   MISMATCH         _DynamicVectorClass_PAVLineTrail::initList
+[diff] 0x5581e0   MISMATCH         _DynamicVectorClass_PBG::scrollList
+[diff] 0x55a150   MISMATCH         _DynamicVectorClass_PAVFileEntryClass::vt03
+[diff] 0x588c90   MISMATCH         DynamicVector::CleanupSubzone
+[diff] 0x5ac5a0   MISMATCH         DynamicVector::checkCellBounds
+[diff] 0x5c0a70   MISMATCH         DynamicVector::ClearVector
+[diff] 0x588f00   MISMATCH         _DynamicVectorClass_W4PassabilityType::Destroy
+[diff] 0x588f60   MISMATCH         _DynamicVectorClass_U_HashObject_II::Destroy_0
+[diff] 0x588fd0   MISMATCH         _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::Destroy_1
+[diff] 0x5ac3a0   MISMATCH         VectorClass_ptr_MapRegionClass::Destroy
+[diff] 0x5ac4c0   MISMATCH         _DynamicVectorClass_PAU_WIN32_FIND_DATAA::ClearBuffer
+[diff] 0x5ac520   MISMATCH         _DynamicVectorClass_V_TRect_H::ClearBuffer
+[diff] 0x5ac5f0   MISMATCH         _DynamicVectorClass_N::Destroy
+[ledger] 0x53c4c0 _DynamicVectorClass_PBVAnimClass::ClearBuffer -> NG (attempt 1)
+[ledger] 0x54a190 _DynamicVectorClass_PAG::ClearBuffer -> NG (attempt 1)
+[ledger] 0x54a1f0 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x54e890 _DynamicVectorClass_PAUKamikazeControl::ClearBuffer -> NG (attempt 1)
+[ledger] 0x5512d0 _DynamicVectorClass_PAVLaserDrawClass::Destroy -> NG (attempt 1)
+[ledger] 0x555200 _DynamicVectorClass_PAVLightSourceClass::Destroy -> NG (attempt 1)
+[ledger] 0x555260 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x556eb0 _DynamicVectorClass_PAVLineTrail::initList -> NG (attempt 1)
+[ledger] 0x5581e0 _DynamicVectorClass_PBG::scrollList -> NG (attempt 1)
+[ledger] 0x55a150 _DynamicVectorClass_PAVFileEntryClass::vt03 -> NG (attempt 1)
+[ledger] 0x588c90 DynamicVector::CleanupSubzone -> NG (attempt 1)
+[ledger] 0x588f00 _DynamicVectorClass_W4PassabilityType::Destroy -> NG (attempt 1)
+[ledger] 0x588f60 _DynamicVectorClass_U_HashObject_II::Destroy_0 -> NG (attempt 1)
+[ledger] 0x588fd0 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::Destroy_1 -> NG (attempt 1)
+[ledger] 0x5ac3a0 VectorClass_ptr_MapRegionClass::Destroy -> NG (attempt 1)
+[ledger] 0x5ac4c0 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::ClearBuffer -> NG (attempt 1)
+[ledger] 0x5ac520 _DynamicVectorClass_V_TRect_H::ClearBuffer -> NG (attempt 1)
+[ledger] 0x5ac5a0 DynamicVector::checkCellBounds -> NG (attempt 1)
+[ledger] 0x5ac5f0 _DynamicVectorClass_N::Destroy -> NG (attempt 1)
+[ledger] 0x5c0a70 DynamicVector::ClearVector -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 16,
+  "const_fold": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p140\batch_report.json
