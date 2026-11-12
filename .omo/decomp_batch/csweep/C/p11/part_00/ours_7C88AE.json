@@ -1,0 +1,15 @@
+{
+ "symbol": "?RegCreateKeyExA@@YGJPAXPBDKPADKKHPAPAXPAK@Z",
+ "sym_key": "Unnamed::RegCreateKeyExA",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8b4424248b4c24208b54241c508b44241c518b4c241c528b54241c508b44241c518b4c241c528b54241c505152e800000000c22400",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?__imp_RegCreateKeyExA@@YGJPBX0H0HHH00@Z",
+   "sym_key": "__imp_RegCreateKeyExA"
+  }
+ ]
+}

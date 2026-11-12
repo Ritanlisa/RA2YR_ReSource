@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C88AE",
+ "name": "RegCreateKeyExA",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C88AE",
+ "bytes_hex": "ff2518107e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

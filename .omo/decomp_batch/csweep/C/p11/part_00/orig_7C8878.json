@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8878",
+ "name": "SetViewportOrgEx",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8878",
+ "bytes_hex": "ff2598107e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

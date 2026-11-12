@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c8848 CreateSolidBrush -> _addr_7C
+[conv] 0x7c884e GetTextColor -> _addr_7C
+[conv] 0x7c8854 GetBkColor -> _addr_7C
+[conv] 0x7c8860 GetStockObject -> _addr_7C
+[conv] 0x7c8866 RestoreDC -> _addr_7C
+[conv] 0x7c886c DPtoLP -> _addr_7C
+[conv] 0x7c8872 SetWindowOrgEx -> _addr_7C
+[conv] 0x7c8878 SetViewportOrgEx -> _addr_7C
+[conv] 0x7c887e ModifyWorldTransform -> _addr_7C
+[conv] 0x7c8884 SetGraphicsMode -> _addr_7C
+[conv] 0x7c888a SaveDC -> _addr_7C
+[conv] 0x7c8890 RegCloseKey -> _addr_7C
+[conv] 0x7c8896 RegQueryValueExA -> _addr_7C
+[conv] 0x7c88a2 RegDeleteValueA -> _addr_7C
+[conv] 0x7c88a8 RegSetValueExA -> _addr_7C
+[conv] 0x7c88ae RegCreateKeyExA -> _addr_7C
+[conv] 0x7c88b4 RegEnumKeyExA -> _addr_7C
+[conv] 0x7c88ba RegDeleteKeyA -> _addr_7C
+[conv] 0x7c88c0 RegQueryInfoKeyA -> _addr_7C
+[conv] 0x7c88c6 FindExecutableA -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c8848   MISMATCH         CreateSolidBrush
+[diff] 0x7c884e   MISMATCH         GetTextColor
+[diff] 0x7c8854   MISMATCH         GetBkColor
+[diff] 0x7c8860   MISMATCH         GetStockObject
+[diff] 0x7c8866   MISMATCH         RestoreDC
+[diff] 0x7c886c   MISMATCH         DPtoLP
+[diff] 0x7c8872   MISMATCH         SetWindowOrgEx
+[diff] 0x7c8878   MISMATCH         SetViewportOrgEx
+[diff] 0x7c887e   MISMATCH         ModifyWorldTransform
+[diff] 0x7c8884   MISMATCH         SetGraphicsMode
+[diff] 0x7c888a   MISMATCH         SaveDC
+[diff] 0x7c8890   MISMATCH         RegCloseKey
+[diff] 0x7c8896   MISMATCH         RegQueryValueExA
+[diff] 0x7c88a2   MISMATCH         RegDeleteValueA
+[diff] 0x7c88a8   MISMATCH         RegSetValueExA
+[diff] 0x7c88ae   MISMATCH         RegCreateKeyExA
+[diff] 0x7c88ba   MISMATCH         RegDeleteKeyA
+[diff] 0x7c88c6   MISMATCH         FindExecutableA
+[ledger] 0x7c8848 CreateSolidBrush -> NG (attempt 1)
+[ledger] 0x7c884e GetTextColor -> NG (attempt 1)
+[ledger] 0x7c8854 GetBkColor -> NG (attempt 1)
+[ledger] 0x7c8860 GetStockObject -> NG (attempt 1)
+[ledger] 0x7c8866 RestoreDC -> NG (attempt 1)
+[ledger] 0x7c886c DPtoLP -> NG (attempt 1)
+[ledger] 0x7c8872 SetWindowOrgEx -> NG (attempt 1)
+[ledger] 0x7c8878 SetViewportOrgEx -> NG (attempt 1)
+[ledger] 0x7c887e ModifyWorldTransform -> NG (attempt 1)
+[ledger] 0x7c8884 SetGraphicsMode -> NG (attempt 1)
+[ledger] 0x7c888a SaveDC -> NG (attempt 1)
+[ledger] 0x7c8890 RegCloseKey -> NG (attempt 1)
+[ledger] 0x7c8896 RegQueryValueExA -> NG (attempt 1)
+[ledger] 0x7c88a2 RegDeleteValueA -> NG (attempt 1)
+[ledger] 0x7c88a8 RegSetValueExA -> NG (attempt 1)
+[ledger] 0x7c88ae RegCreateKeyExA -> NG (attempt 1)
+[ledger] 0x7c88b4 RegEnumKeyExA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c88ba RegDeleteKeyA -> NG (attempt 1)
+[ledger] 0x7c88c0 RegQueryInfoKeyA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c88c6 FindExecutableA -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "codegen_shape": 18
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p11\batch_report.json
