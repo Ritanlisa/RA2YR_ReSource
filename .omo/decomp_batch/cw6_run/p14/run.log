@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ec8e0 _VectorClass_PAVHouseTypeClass::GetSize -> _VectorClass_PAVHouseTypeClass
+[conv] 0x4ec9f0 _DynamicVectorClass_PAVHouseTypeClass::FindItemIndex -> _DynamicVectorClass_PAVHouseTypeClass
+[conv] 0x4eca20 _VectorClass_PAVTaskForceClass::Add -> _VectorClass_PAVTaskForceClass
+[conv] 0x4ecb40 _VectorClass_PAVTaskForceClass::GetSize -> _VectorClass_PAVTaskForceClass
+[conv] 0x4ecc50 _DynamicVectorClass_PAVTaskForceClass::FindItemIndex_0 -> _DynamicVectorClass_PAVTaskForceClass
+[conv] 0x4ecc80 _VectorClass_PAVTeamTypeClass::Add -> _VectorClass_PAVTeamTypeClass
+[conv] 0x4ecda0 _VectorClass_PAVTeamTypeClass::GetSize -> _VectorClass_PAVTeamTypeClass
+[conv] 0x4eceb0 _DynamicVectorClass_PAVTeamTypeClass::FindItemIndex_1 -> _DynamicVectorClass_PAVTeamTypeClass
+[conv] 0x4ecee0 _VectorClass_PAVScriptTypeClass::Add -> _VectorClass_PAVScriptTypeClass
+[conv] 0x4ed000 _VectorClass_PAVScriptTypeClass::GetSize -> _VectorClass_PAVScriptTypeClass
+[conv] 0x4ed110 _DynamicVectorClass_PAVScriptTypeClass::FindItemIndex -> _DynamicVectorClass_PAVScriptTypeClass
+[conv] 0x4ed140 _VectorClass_PAVOverlayTypeClass::Add -> _VectorClass_PAVOverlayTypeClass
+[conv] 0x4ed260 _VectorClass_PAVOverlayTypeClass::GetSize -> _VectorClass_PAVOverlayTypeClass
+[conv] 0x4ed370 _DynamicVectorClass_PAVOverlayTypeClass::FindItemIndex_0 -> _DynamicVectorClass_PAVOverlayTypeClass
+[conv] 0x4ed3a0 _VectorClass_PAVSmudgeTypeClass::Add -> _VectorClass_PAVSmudgeTypeClass
+[conv] 0x4ed4c0 _VectorClass_PAVSmudgeTypeClass::GetSize -> _VectorClass_PAVSmudgeTypeClass
+[conv] 0x4ed720 _VectorClass_PAVTerrainTypeClass::GetSize -> _VectorClass_PAVTerrainTypeClass
+[conv] 0x4ed830 _DynamicVectorClass_PAVTerrainTypeClass::FindItemIndex_0 -> _DynamicVectorClass_PAVTerrainTypeClass
+[conv] 0x4ed860 _VectorClass_PAVBuildingTypeClass::Add -> _VectorClass_PAVBuildingTypeClass
+[conv] 0x4ed980 _VectorClass_PAVBuildingTypeClass::GetSize -> _VectorClass_PAVBuildingTypeClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVHouseTypeClass rc=0
+[era] _DynamicVectorClass_PAVHouseTypeClass rc=0
+[era] _VectorClass_PAVTaskForceClass rc=0
+[era] _DynamicVectorClass_PAVTaskForceClass rc=0
+[era] _VectorClass_PAVTeamTypeClass rc=0
+[era] _DynamicVectorClass_PAVTeamTypeClass rc=0
+[era] _VectorClass_PAVScriptTypeClass rc=0
+[era] _DynamicVectorClass_PAVScriptTypeClass rc=0
+[era] _VectorClass_PAVOverlayTypeClass rc=0
+[era] _DynamicVectorClass_PAVOverlayTypeClass rc=0
+[era] _VectorClass_PAVSmudgeTypeClass rc=0
+[era] _VectorClass_PAVTerrainTypeClass rc=0
+[era] _DynamicVectorClass_PAVTerrainTypeClass rc=0
+[era] _VectorClass_PAVBuildingTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4ec8e0   MISMATCH         _VectorClass_PAVHouseTypeClass::GetSize
+[diff] 0x4ec9f0   MISMATCH         _DynamicVectorClass_PAVHouseTypeClass::FindItemIndex
+[diff] 0x4eca20   MISMATCH         _VectorClass_PAVTaskForceClass::Add
+[diff] 0x4ecb40   MISMATCH         _VectorClass_PAVTaskForceClass::GetSize
+[diff] 0x4ecc50   MISMATCH         _DynamicVectorClass_PAVTaskForceClass::FindItemIndex_0
+[diff] 0x4ecc80   MISMATCH         _VectorClass_PAVTeamTypeClass::Add
+[diff] 0x4ecda0   MISMATCH         _VectorClass_PAVTeamTypeClass::GetSize
+[diff] 0x4eceb0   MISMATCH         _DynamicVectorClass_PAVTeamTypeClass::FindItemIndex_1
+[diff] 0x4ecee0   MISMATCH         _VectorClass_PAVScriptTypeClass::Add
+[diff] 0x4ed000   MISMATCH         _VectorClass_PAVScriptTypeClass::GetSize
+[diff] 0x4ed110   MISMATCH         _DynamicVectorClass_PAVScriptTypeClass::FindItemIndex
+[diff] 0x4ed140   MISMATCH         _VectorClass_PAVOverlayTypeClass::Add
+[diff] 0x4ed260   MISMATCH         _VectorClass_PAVOverlayTypeClass::GetSize
+[diff] 0x4ed370   MISMATCH         _DynamicVectorClass_PAVOverlayTypeClass::FindItemIndex_0
+[diff] 0x4ed3a0   MISMATCH         _VectorClass_PAVSmudgeTypeClass::Add
+[diff] 0x4ed4c0   MISMATCH         _VectorClass_PAVSmudgeTypeClass::GetSize
+[diff] 0x4ed720   MISMATCH         _VectorClass_PAVTerrainTypeClass::GetSize
+[diff] 0x4ed830   MISMATCH         _DynamicVectorClass_PAVTerrainTypeClass::FindItemIndex_0
+[diff] 0x4ed860   MISMATCH         _VectorClass_PAVBuildingTypeClass::Add
+[diff] 0x4ed980   MISMATCH         _VectorClass_PAVBuildingTypeClass::GetSize
+[ledger] 0x4ec8e0 _VectorClass_PAVHouseTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ec9f0 _DynamicVectorClass_PAVHouseTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4eca20 _VectorClass_PAVTaskForceClass::Add -> NG (attempt 2)
+[ledger] 0x4ecb40 _VectorClass_PAVTaskForceClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ecc50 _DynamicVectorClass_PAVTaskForceClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4ecc80 _VectorClass_PAVTeamTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ecda0 _VectorClass_PAVTeamTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4eceb0 _DynamicVectorClass_PAVTeamTypeClass::FindItemIndex_1 -> NG (attempt 2)
+[ledger] 0x4ecee0 _VectorClass_PAVScriptTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ed000 _VectorClass_PAVScriptTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ed110 _DynamicVectorClass_PAVScriptTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x4ed140 _VectorClass_PAVOverlayTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ed260 _VectorClass_PAVOverlayTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ed370 _DynamicVectorClass_PAVOverlayTypeClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4ed3a0 _VectorClass_PAVSmudgeTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ed4c0 _VectorClass_PAVSmudgeTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ed720 _VectorClass_PAVTerrainTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x4ed830 _DynamicVectorClass_PAVTerrainTypeClass::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x4ed860 _VectorClass_PAVBuildingTypeClass::Add -> NG (attempt 2)
+[ledger] 0x4ed980 _VectorClass_PAVBuildingTypeClass::GetSize -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 14,
+  "branch_polarity": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p14\batch_report.json
