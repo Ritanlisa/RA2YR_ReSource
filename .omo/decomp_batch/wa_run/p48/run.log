@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p48\part_00
+=== convert (20 addrs) ===
+[conv] 0x71d3c0 sub_71D3C0 -> _addr_71
+[conv] 0x71e440 sub_71E440 -> _addr_71
+[conv] 0x723ac0 sub_723AC0 -> _addr_72
+[conv] 0x723b20 sub_723B20 -> _addr_72
+[conv] 0x7250f0 sub_7250F0 -> _addr_72
+[conv] 0x725150 sub_725150 -> _addr_72
+[conv] 0x725dc0 sub_725DC0 -> _addr_72
+[conv] 0x726aa0 sub_726AA0 -> _addr_72
+[conv] 0x727df0 sub_727DF0 -> _addr_72
+[conv] 0x728820 sub_728820 -> _addr_72
+[conv] 0x72a280 sub_72A280 -> _addr_72
+[conv] 0x72a6e0 sub_72A6E0 -> _addr_72
+[conv] 0x7307b0 sub_7307B0 -> _addr_73
+[conv] 0x734460 sub_734460 -> _addr_73
+[conv] 0x7351b0 sub_7351B0 -> _addr_73
+[conv] 0x746f10 sub_746F10 -> _addr_74
+[conv] 0x7491d0 sub_7491D0 -> _addr_74
+[conv] 0x74aba0 sub_74ABA0 -> _addr_74
+[conv] 0x74c1c0 sub_74C1C0 -> _addr_74
+[conv] 0x74fff0 VeinholeClass::GetState -> VeinholeClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_71                 rc=0
+[era] _addr_72                 rc=0
+[era] _addr_73                 rc=0
+[era] _addr_74                 rc=0
+[era] VeinholeClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x71d3c0   MATCH            sub_71D3C0
+[diff] 0x71e440   MATCH            sub_71E440
+[diff] 0x723ac0   MATCH            sub_723AC0
+[diff] 0x723b20   MISMATCH         sub_723B20
+[diff] 0x7250f0   MATCH            sub_7250F0
+[diff] 0x725150   MISMATCH         sub_725150
+[diff] 0x725dc0   MATCH            sub_725DC0
+[diff] 0x726aa0   MATCH            sub_726AA0
+[diff] 0x727df0   MATCH            sub_727DF0
+[diff] 0x728820   MATCH            sub_728820
+[diff] 0x72a280   MATCH            sub_72A280
+[diff] 0x72a6e0   MATCH            sub_72A6E0
+[diff] 0x7307b0   MATCH            sub_7307B0
+[diff] 0x734460   MATCH            sub_734460
+[diff] 0x7351b0   MATCH            sub_7351B0
+[diff] 0x746f10   MATCH            sub_746F10
+[diff] 0x7491d0   MATCH            sub_7491D0
+[diff] 0x74aba0   MATCH            sub_74ABA0
+[diff] 0x74c1c0   MATCH            sub_74C1C0
+[diff] 0x74fff0   MISMATCH         VeinholeClass::GetState
+[ledger] 0x71d3c0 sub_71D3C0 -> OK (attempt 2)
+[ledger] 0x71e440 sub_71E440 -> OK (attempt 2)
+[ledger] 0x723ac0 sub_723AC0 -> OK (attempt 2)
+[ledger] 0x723b20 sub_723B20 -> NG (attempt 2)
+[ledger] 0x7250f0 sub_7250F0 -> OK (attempt 2)
+[ledger] 0x725150 sub_725150 -> NG (attempt 2)
+[ledger] 0x725dc0 sub_725DC0 -> OK (attempt 2)
+[ledger] 0x726aa0 sub_726AA0 -> OK (attempt 2)
+[ledger] 0x727df0 sub_727DF0 -> OK (attempt 3)
+[ledger] 0x728820 sub_728820 -> OK (attempt 2)
+[ledger] 0x72a280 sub_72A280 -> OK (attempt 2)
+[ledger] 0x72a6e0 sub_72A6E0 -> OK (attempt 2)
+[ledger] 0x7307b0 sub_7307B0 -> OK (attempt 2)
+[ledger] 0x734460 sub_734460 -> OK (attempt 2)
+[ledger] 0x7351b0 sub_7351B0 -> OK (attempt 2)
+[ledger] 0x746f10 sub_746F10 -> OK (attempt 2)
+[ledger] 0x7491d0 sub_7491D0 -> OK (attempt 2)
+[ledger] 0x74aba0 sub_74ABA0 -> OK (attempt 2)
+[ledger] 0x74c1c0 sub_74C1C0 -> OK (attempt 2)
+[ledger] 0x74fff0 VeinholeClass::GetState -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 85.0,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p48\batch_report.json

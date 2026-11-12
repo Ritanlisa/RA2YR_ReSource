@@ -1,0 +1,102 @@
+[
+ {
+  "addr": "0x71d3c0",
+  "family": "D_CONST_FP",
+  "name": "sub_71D3C0"
+ },
+ {
+  "addr": "0x71e440",
+  "family": "D_CONST_FP",
+  "name": "sub_71E440"
+ },
+ {
+  "addr": "0x723ac0",
+  "family": "D_CONST_FP",
+  "name": "sub_723AC0"
+ },
+ {
+  "addr": "0x723b20",
+  "family": "D_CONST_FP",
+  "name": "sub_723B20"
+ },
+ {
+  "addr": "0x7250f0",
+  "family": "D_CONST_FP",
+  "name": "sub_7250F0"
+ },
+ {
+  "addr": "0x725150",
+  "family": "D_CONST_FP",
+  "name": "sub_725150"
+ },
+ {
+  "addr": "0x725dc0",
+  "family": "D_CONST_FP",
+  "name": "sub_725DC0"
+ },
+ {
+  "addr": "0x726aa0",
+  "family": "D_CONST_FP",
+  "name": "sub_726AA0"
+ },
+ {
+  "addr": "0x727df0",
+  "family": "D_CONST_FP",
+  "name": "sub_727DF0"
+ },
+ {
+  "addr": "0x728820",
+  "family": "D_CONST_FP",
+  "name": "sub_728820"
+ },
+ {
+  "addr": "0x72a280",
+  "family": "D_CONST_FP",
+  "name": "sub_72A280"
+ },
+ {
+  "addr": "0x72a6e0",
+  "family": "D_CONST_FP",
+  "name": "sub_72A6E0"
+ },
+ {
+  "addr": "0x7307b0",
+  "family": "D_CONST_FP",
+  "name": "sub_7307B0"
+ },
+ {
+  "addr": "0x734460",
+  "family": "D_CONST_FP",
+  "name": "sub_734460"
+ },
+ {
+  "addr": "0x7351b0",
+  "family": "D_CONST_FP",
+  "name": "sub_7351B0"
+ },
+ {
+  "addr": "0x746f10",
+  "family": "D_CONST_FP",
+  "name": "sub_746F10"
+ },
+ {
+  "addr": "0x7491d0",
+  "family": "D_CONST_FP",
+  "name": "sub_7491D0"
+ },
+ {
+  "addr": "0x74aba0",
+  "family": "D_CONST_FP",
+  "name": "sub_74ABA0"
+ },
+ {
+  "addr": "0x74c1c0",
+  "family": "D_CONST_FP",
+  "name": "sub_74C1C0"
+ },
+ {
+  "addr": "0x74fff0",
+  "family": "D_CONST_FP",
+  "name": "VeinholeClass::GetState"
+ }
+]
