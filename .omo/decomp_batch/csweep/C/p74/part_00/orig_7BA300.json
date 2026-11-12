@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BA300",
+ "name": "WWMouseClass::updateHotspot",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BA300",
+ "bytes_hex": "8a442404568bf1a801c706787b7f00740956e826e8000083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

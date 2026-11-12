@@ -1,0 +1,15 @@
+{
+ "symbol": "?executeLightningAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeLightningAction",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8bc18b4c240485c9750532c0c210008b809000000050e800000000b001c21000",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?CreateRadarOutage@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::CreateRadarOutage"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x76F140",
+ "name": "VectorCursor::drawCursor",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76F140",
+ "bytes_hex": "8a442404568bf1a801c706ec727f00740956e8e699050083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

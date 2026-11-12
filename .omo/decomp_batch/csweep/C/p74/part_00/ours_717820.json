@@ -1,0 +1,15 @@
+{
+ "symbol": "?loadTypeMember_5717820@TechnoTypeClass@@QAEDXZ",
+ "sym_key": "TechnoTypeClass::loadTypeMember_5717820",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "518b442400568bf1578bd08bbee80d00008d8ee80d000033d781e2ff00000033c284c0740be8000000008986f00d00005f5e59c3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?MapHandler@FileExtension@@QAEHXZ",
+   "sym_key": "FileExtension::MapHandler"
+  }
+ ]
+}

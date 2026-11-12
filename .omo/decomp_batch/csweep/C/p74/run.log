@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p74\part_00
+=== convert (20 addrs) ===
+[conv] 0x6244c0 SimpleDialogControl_OwnerDraw::Destructor_0 -> SimpleDialogControl_OwnerDraw
+[conv] 0x631f40 GameClass::saveGameState -> GameClass
+[conv] 0x65c610 FileClass::processAITrigger -> FileClass
+[conv] 0x65d6a0 ReferenceCounted::initInterface -> ReferenceCounted
+[conv] 0x690fe0 ScoreAnimClass::Constructor_ScoreAnimClass -> ScoreAnimClass
+[conv] 0x691000 ScoreTimeClass::Constructor_ScoreAnimClass_0 -> ScoreTimeClass
+[conv] 0x691020 ScorePrintClass::Constructor_ScoreAnimClass_1 -> ScorePrintClass
+[conv] 0x6e3b40 TActionClass::executeLightningAction -> TActionClass
+[conv] 0x6f2ab0 sub_6F2AB0 -> _addr_6F
+[conv] 0x717820 TechnoTypeClass::loadTypeMember_5717820 -> TechnoTypeClass
+[conv] 0x765770 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1 -> _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x7669f0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint -> _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x76f100 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor -> _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x76f120 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::updateCursor -> _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76f140 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::drawCursor -> _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim
+[conv] 0x7ba300 MouseClass::updateHotspot -> MouseClass
+[conv] 0x7bc640 _BlitPlain_E::_Gfacet_locale_std__UAEPAXI_Z_148 -> _BlitPlain_E
+[conv] 0x7bc660 _BlitPlain_G::_Gfacet_locale_std__UAEPAXI_Z_149 -> _BlitPlain_G
+[conv] 0x7bc680 _BlitTrans_E::_Gfacet_locale_std__UAEPAXI_Z_150 -> _BlitTrans_E
+[conv] 0x7bc6a0 _BlitTrans_G::_Gfacet_locale_std__UAEPAXI_Z_151 -> _BlitTrans_G
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SimpleDialogControl_OwnerDraw rc=0
+[era] GameClass                rc=0
+[era] FileClass                rc=2
+[era] ReferenceCounted         rc=2
+[era] ScoreAnimClass           rc=0
+[era] ScoreTimeClass           rc=0
+[era] ScorePrintClass          rc=0
+[era] TActionClass             rc=0
+[era] _addr_6F                 rc=0
+[era] TechnoTypeClass          rc=0
+[era] _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry rc=0
+[era] _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim rc=0
+[era] MouseClass               rc=0
+[era] _BlitPlain_E             rc=2
+[era] _BlitPlain_G             rc=2
+[era] _BlitTrans_E             rc=2
+[era] _BlitTrans_G             rc=2
+=== diffasm byte-compare ===
+[diff] 0x6244c0   MISMATCH         SimpleDialogControl_OwnerDraw::Destructor_0
+[diff] 0x631f40   MISMATCH         GameClass::saveGameState
+[diff] 0x690fe0   MISMATCH         ScoreAnimClass::Constructor_ScoreAnimClass
+[diff] 0x691000   MISMATCH         ScoreTimeClass::Constructor_ScoreAnimClass_0
+[diff] 0x691020   MISMATCH         ScorePrintClass::Constructor_ScoreAnimClass_1
+[diff] 0x6e3b40   MATCH            TActionClass::executeLightningAction
+[diff] 0x6f2ab0   MISMATCH         sub_6F2AB0
+[diff] 0x717820   MISMATCH         TechnoTypeClass::loadTypeMember_5717820
+[diff] 0x765770   MISMATCH         _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1
+[diff] 0x7669f0   MISMATCH         _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint
+[diff] 0x76f100   MISMATCH         _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor
+[diff] 0x76f120   MISMATCH         _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::updateCursor
+[diff] 0x76f140   MISMATCH         _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::drawCursor
+[diff] 0x7ba300   MISMATCH         MouseClass::updateHotspot
+[ledger] 0x6244c0 SimpleDialogControl_OwnerDraw::Destructor_0 -> NG (attempt 1)
+[ledger] 0x631f40 GameClass::saveGameState -> NG (attempt 1)
+[ledger] 0x65c610 FileClass::processAITrigger -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65d6a0 ReferenceCounted::initInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690fe0 ScoreAnimClass::Constructor_ScoreAnimClass -> NG (attempt 1)
+[ledger] 0x691000 ScoreTimeClass::Constructor_ScoreAnimClass_0 -> NG (attempt 1)
+[ledger] 0x691020 ScorePrintClass::Constructor_ScoreAnimClass_1 -> NG (attempt 1)
+[ledger] 0x6e3b40 TActionClass::executeLightningAction -> OK (attempt 1)
+[ledger] 0x6f2ab0 sub_6F2AB0 -> NG (attempt 1)
+[ledger] 0x717820 TechnoTypeClass::loadTypeMember_5717820 -> NG (attempt 1)
+[ledger] 0x765770 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1 -> NG (attempt 1)
+[ledger] 0x7669f0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint -> NG (attempt 1)
+[ledger] 0x76f100 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor -> NG (attempt 1)
+[ledger] 0x76f120 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::updateCursor -> NG (attempt 1)
+[ledger] 0x76f140 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::drawCursor -> NG (attempt 1)
+[ledger] 0x7ba300 MouseClass::updateHotspot -> NG (attempt 1)
+[ledger] 0x7bc640 _BlitPlain_E::_Gfacet_locale_std__UAEPAXI_Z_148 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bc660 _BlitPlain_G::_Gfacet_locale_std__UAEPAXI_Z_149 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bc680 _BlitTrans_E::_Gfacet_locale_std__UAEPAXI_Z_150 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bc6a0 _BlitTrans_G::_Gfacet_locale_std__UAEPAXI_Z_151 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 6,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 12,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p74\batch_report.json
