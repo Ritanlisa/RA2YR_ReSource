@@ -1,0 +1,8 @@
+{
+ "symbol": "?CopyWideToChar@@YIHPAEPADH@Z",
+ "sym_key": "Unnamed::CopyWideToChar",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "66833a005356742e8b74240c8b44240c85f6741a33db24008a1a83c2020bc388014183feff74014e66833a0075e25ec601005bc204008b44240c5ec601005bc20400",
+ "relocs": []
+}

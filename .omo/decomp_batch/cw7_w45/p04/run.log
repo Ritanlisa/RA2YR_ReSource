@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x6abb60 HouseClass::RemoveFromProductionQueue -> HouseClass
+[conv] 0x6b8b10 ObjectClass::nullsub_37 -> ObjectClass
+[conv] 0x6b8b20 ObjectClass::nullsub_38 -> ObjectClass
+[conv] 0x6c9f00 ObjectClass::nullsub_40 -> ObjectClass
+[conv] 0x6cc070 ObjectClass::nullsub_231 -> ObjectClass
+[conv] 0x6cdff0 SuperClass::ExecuteAction -> SuperClass
+[conv] 0x6e2970 BuildingLightClass::FindAllTargets -> BuildingLightClass
+[conv] 0x6ea870 TeamClass::LiberateMember_Start -> TeamClass
+[conv] 0x6eae60 TeamClass::ExecuteAction -> TeamClass
+[conv] 0x711840 TechnoTypeClass::Construct -> TechnoTypeClass
+[conv] 0x7179c0 ObjectClass::nullsub_86 -> ObjectClass
+[conv] 0x717db0 TechnoTypeClass::RemoveItem -> TechnoTypeClass
+[conv] 0x71ab60 ObjectClass::UnlinkFromFactory -> ObjectClass
+[conv] 0x7236d0 nullsub_158 -> _addr_72
+[conv] 0x727cf0 String::Trim -> String
+[conv] 0x728540 ObjectClass::sub_728540 -> ObjectClass
+[conv] 0x72d460 CampaignScore::LoadScreenAssets -> CampaignScore
+[conv] 0x733cd0 ObjectClass::sub_733CD0 -> ObjectClass
+[conv] 0x735090 CopyWideToChar -> _addr_73
+[conv] 0x749010 ObjectClass::nullsub_143 -> ObjectClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] ObjectClass              rc=2
+[era] SuperClass               rc=2
+[era] BuildingLightClass       rc=0
+[era] TeamClass                rc=2
+[era] TechnoTypeClass          rc=2
+[era] _addr_72                 rc=0
+[era] String                   rc=0
+[era] CampaignScore            rc=2
+[era] _addr_73                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6abb60   MISMATCH         HouseClass::RemoveFromProductionQueue
+[diff] 0x6b8b10   MATCH            ObjectClass::nullsub_37
+[diff] 0x6b8b20   MATCH            ObjectClass::nullsub_38
+[diff] 0x6c9f00   MATCH            ObjectClass::nullsub_40
+[diff] 0x6cc070   MATCH            ObjectClass::nullsub_231
+[diff] 0x7179c0   MATCH            ObjectClass::nullsub_86
+[diff] 0x749010   MATCH            ObjectClass::nullsub_143
+[diff] 0x6e2970   MISMATCH         BuildingLightClass::FindAllTargets
+[diff] 0x717db0   MISMATCH         TechnoTypeClass::RemoveItem
+[diff] 0x7236d0   MATCH            nullsub_158
+[diff] 0x727cf0   MISMATCH         String::Trim
+[diff] 0x735090   MISMATCH         CopyWideToChar
+[ledger] 0x6abb60 HouseClass::RemoveFromProductionQueue -> NG (attempt 4)
+[ledger] 0x6b8b10 ObjectClass::nullsub_37 -> OK (attempt 2)
+[ledger] 0x6b8b20 ObjectClass::nullsub_38 -> OK (attempt 2)
+[ledger] 0x6c9f00 ObjectClass::nullsub_40 -> OK (attempt 2)
+[ledger] 0x6cc070 ObjectClass::nullsub_231 -> OK (attempt 2)
+[ledger] 0x6cdff0 SuperClass::ExecuteAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e2970 BuildingLightClass::FindAllTargets -> NG (attempt 15)
+[ledger] 0x6ea870 TeamClass::LiberateMember_Start -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6eae60 TeamClass::ExecuteAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x711840 TechnoTypeClass::Construct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7179c0 ObjectClass::nullsub_86 -> OK (attempt 2)
+[ledger] 0x717db0 TechnoTypeClass::RemoveItem -> NG (attempt 2)
+[ledger] 0x71ab60 ObjectClass::UnlinkFromFactory -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7236d0 nullsub_158 -> OK (attempt 3)
+[ledger] 0x727cf0 String::Trim -> NG (attempt 2)
+[ledger] 0x728540 ObjectClass::sub_728540 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72d460 CampaignScore::LoadScreenAssets -> COMPILE_FAIL (attempt 4)
+[ledger] 0x733cd0 ObjectClass::sub_733CD0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x735090 CopyWideToChar -> NG (attempt 2)
+[ledger] 0x749010 ObjectClass::nullsub_143 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "MATCH": 7,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "const_fold": 1,
+  "branch_order": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 58.3,
+ "match_rate_of_total_pct": 35.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw7_w45\p04\batch_report.json

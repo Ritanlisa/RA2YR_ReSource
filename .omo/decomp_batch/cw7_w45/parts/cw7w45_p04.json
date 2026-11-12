@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x6abb60",
+  "family": "W45",
+  "code": "C2446",
+  "name": "HouseClass::RemoveFromProductionQueue"
+ },
+ {
+  "addr": "0x6b8b10",
+  "family": "W45",
+  "code": "C4716",
+  "name": "nullsub_37"
+ },
+ {
+  "addr": "0x6b8b20",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_38"
+ },
+ {
+  "addr": "0x6c9f00",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_40"
+ },
+ {
+  "addr": "0x6cc070",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_231"
+ },
+ {
+  "addr": "0x6cdff0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "SuperClass::ExecuteAction"
+ },
+ {
+  "addr": "0x6e2970",
+  "family": "W45",
+  "code": "C2446",
+  "name": "BuildingLightClass::FindAllTargets"
+ },
+ {
+  "addr": "0x6ea870",
+  "family": "W45",
+  "code": "C2446",
+  "name": "TeamClass::LiberateMember_Start"
+ },
+ {
+  "addr": "0x6eae60",
+  "family": "W45",
+  "code": "C2446",
+  "name": "TeamClass::ExecuteAction"
+ },
+ {
+  "addr": "0x711840",
+  "family": "W45",
+  "code": "C2446",
+  "name": "TechnoTypeClass::Construct"
+ },
+ {
+  "addr": "0x7179c0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_86"
+ },
+ {
+  "addr": "0x717db0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "TechnoTypeClass::RemoveItem"
+ },
+ {
+  "addr": "0x71ab60",
+  "family": "W45",
+  "code": "C2446",
+  "name": "ObjectClass::UnlinkFromFactory"
+ },
+ {
+  "addr": "0x7236d0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "nullsub_158"
+ },
+ {
+  "addr": "0x727cf0",
+  "family": "W45",
+  "code": "C2446",
+  "name": "String::Trim"
+ },
+ {
+  "addr": "0x728540",
+  "family": "W45",
+  "code": "C2446",
+  "name": "ObjectClass::sub_728540"
+ },
+ {
+  "addr": "0x72d460",
+  "family": "W45",
+  "code": "C2446",
+  "name": "CampaignScore::LoadScreenAssets"
+ },
+ {
+  "addr": "0x733cd0",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::sub_733CD0"
+ },
+ {
+  "addr": "0x735090",
+  "family": "W45",
+  "code": "C2562",
+  "name": "CopyWideToChar"
+ },
+ {
+  "addr": "0x749010",
+  "family": "W45",
+  "code": "C4716",
+  "name": "ObjectClass::nullsub_143"
+ }
+]

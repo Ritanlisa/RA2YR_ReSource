@@ -1,0 +1,57 @@
+{
+ "symbol": "?RemoveFromProductionQueue@HouseClass@@QAEDPAH@Z",
+ "sym_key": "HouseClass::RemoveFromProductionQueue",
+ "size": 198,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c56578bf985ed74478bcde80000000085c0743c8bcde80000000085c074318b0850ff512c83f80675268bcde8000000008bf085f674128b1656ff522c33c983f8060f94c1f7d923f18bcee8000000008b475432db85c0c7442414000000007e538d7764392e751855e80000000083c404c70600000000b301c74604000000008b4424148b4f544083c6343bc1894424147cd184db741d6a006800000000c7473c01000000e80000000083c408c6050000000001c6473d005f5e8ac35d5bc20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?ClearGlobals@Selection@@QAEHXZ",
+   "sym_key": "Selection::ClearGlobals"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?BuildingClass__AbandonProduction@@YAHH@Z",
+   "sym_key": "BuildingClass__AbandonProduction"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?g_CameoRenderFlag@@3EA",
+   "sym_key": "g_CameoRenderFlag"
+  }
+ ]
+}

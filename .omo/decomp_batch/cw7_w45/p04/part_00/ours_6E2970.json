@@ -1,0 +1,39 @@
+{
+ "symbol": "?FindAllTargets@BuildingLightClass@@QAEDHHHH@Z",
+ "sym_key": "BuildingLightClass::FindAllTargets",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "a15000000053555732db33ff85c08be977085f5d32c05bc2100056a1440000008b34b88b466c85c07e628a869000000084c074588a467484c074518a868100000084c075478b8e200500008a814b15000084c074378b860006000085c0742d8b463485c074268b54241c5250e80000000083c40884c074148b85900000008b8e0006000050e800000000b301a150000000473bf872855e5f8ac35d5bc21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?LinkedList__Contains@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Contains"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?FindTarget@BuildingLightClass@@QAEPAIPAX@Z",
+   "sym_key": "BuildingLightClass::FindTarget"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

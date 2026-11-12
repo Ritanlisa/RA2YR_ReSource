@@ -1,0 +1,11 @@
+{
+ "addr": "0x727CF0",
+ "name": "String::Trim",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x727CF0",
+ "bytes_hex": "8bd15385d2745c8a025784c08bda74313c2077088a43014384c075f43bda74218bfb83c9ff33c056f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a45e8bfa83c9ff33c0f2aef7d1495f497812803b00740d803c11207707c60411004979ee8bc25bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

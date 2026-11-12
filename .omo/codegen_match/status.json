@@ -63581,15 +63581,15 @@
   "this_as_id": false
  },
  "0x6abb60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "HouseClass::RemoveFromProductionQueue",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "HouseClass::RemoveFromProductionQueue",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6abc40": {
@@ -65282,22 +65282,27 @@
   "this_as_id": false
  },
  "0x6b8b10": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": true,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "nullsub_37",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "name": "ObjectClass::nullsub_37",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_37",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x6b8b20": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_38",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_38",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6b8ca0": {
@@ -68369,15 +68374,15 @@
   "status": "OK"
  },
  "0x6c9f00": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_40",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_40",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6ca7f0": {
@@ -68612,15 +68617,15 @@
   "this_as_id": false
  },
  "0x6cc070": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_231",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_231",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6cc260": {
@@ -68719,7 +68724,7 @@
   "this_as_id": false
  },
  "0x6cdff0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70378,15 +70383,15 @@
   "this_as_id": false
  },
  "0x6e2970": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0xa8eb50]",
   "name": "BuildingLightClass::FindAllTargets",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "BuildingLightClass::FindAllTargets",
   "rule_violations": 8,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e3120": {
@@ -71556,7 +71561,7 @@
   "this_as_id": false
  },
  "0x6ea870": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71568,7 +71573,7 @@
   "this_as_id": false
  },
  "0x6eae60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -73240,14 +73245,14 @@
   "this_as_id": false
  },
  "0x711840": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TechnoTypeClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TechnoTypeClass::Construct",
-  "rule_violations": 21,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -73427,15 +73432,15 @@
   "this_as_id": false
  },
  "0x7179c0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_86",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_86",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7179d0": {
@@ -73625,15 +73630,15 @@
   "status": "NG"
  },
  "0x717db0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 jge 0x717ddc",
   "name": "TechnoTypeClass::RemoveItem",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "TechnoTypeClass::RemoveItem",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x717e20": {
@@ -73967,7 +73972,7 @@
   "this_as_id": false
  },
  "0x71ab60": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -75201,11 +75206,15 @@
   "this_as_id": false
  },
  "0x7236d0": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": true,
   "first_diff": null,
   "name": "nullsub_158",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "nullsub_158",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x7236e0": {
   "attempts": 5,
@@ -76329,11 +76338,16 @@
   "status": "OK"
  },
  "0x727cf0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 je 0x727d53",
   "name": "String::Trim",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "String::Trim",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x727d60": {
   "attempts": 1,
@@ -76438,7 +76452,7 @@
   "status": "OK"
  },
  "0x728540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77823,7 +77837,7 @@
   "this_as_id": false
  },
  "0x72d460": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -78415,14 +78429,14 @@
   "status": "NG"
  },
  "0x733cd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
   "name": "ObjectClass::sub_733CD0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_733CD0",
-  "rule_violations": 4,
+  "rule_violations": 15,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -78628,14 +78642,14 @@
   "this_as_id": false
  },
  "0x735090": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+4 push esi",
   "name": "CopyWideToChar",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "CopyWideToChar",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7350c0": {
@@ -79366,15 +79380,15 @@
   "this_as_id": false
  },
  "0x749010": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::nullsub_143",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_143",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x749020": {

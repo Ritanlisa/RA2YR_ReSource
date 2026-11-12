@@ -1,0 +1,11 @@
+{
+ "addr": "0x735090",
+ "name": "CopyWideToChar",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x735090",
+ "bytes_hex": "66833a0056741c8b74240885f674148a0283c20288014183feff74014e66833a0075e8c601005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
