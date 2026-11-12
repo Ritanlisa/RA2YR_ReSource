@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4062C0@ObjectClass@@QAEHHH@Z",
+ "sym_key": "ObjectClass::sub_4062C0",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "538b5c240856578b7c24148bf15753ba004000008d8eb8000000e8000000005753ba004000008d8edd000000e8000000005753ba004000008d8e02010000e8000000005f5e5bc20800",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?SetRateMixerSample@@YIHPAXHIH@Z",
+   "sym_key": "SetRateMixerSample"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?SetRateMixerSample@@YIHPAXHIH@Z",
+   "sym_key": "SetRateMixerSample"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?SetRateMixerSample@@YIHPAXHIH@Z",
+   "sym_key": "SetRateMixerSample"
+  }
+ ]
+}

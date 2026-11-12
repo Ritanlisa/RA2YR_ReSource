@@ -1,0 +1,11 @@
+{
+ "addr": "0x404D80",
+ "name": "Audio::ReleaseChannelRefs",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x404D80",
+ "bytes_hex": "53578bf933db8b87a800000085c07e2d568d77288b0ee8f5d1ffffc706000000008b87a80000004383c6043bd87ce5c787a8000000000000005e5f5bc3c787a8000000000000005f5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

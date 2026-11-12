@@ -1,0 +1,11 @@
+{
+ "addr": "0x48B070",
+ "name": "E4Recv_48B070::sub_48B070",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48B070",
+ "bytes_hex": "8b442404568bf133d23bc2895604894608c6460c0188560dc70644517e0074248b4c240c3bca7409894e048bc65ec20800c1e00250e86ddd330083c404894604c6460d018bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

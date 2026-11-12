@@ -1,0 +1,11 @@
+{
+ "addr": "0x464A70",
+ "name": "AbstractClass::queryInterface",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x464A70",
+ "bytes_hex": "83ec0c8b442414568b08894c24048d4c24048b500451b9e8f787008954240c8b400889442410e8e53511008b4c24148b7424048bd189328b7424088972045e8942088bc183c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

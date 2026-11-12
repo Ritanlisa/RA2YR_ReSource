@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p245\part_00
+=== convert (20 addrs) ===
+[conv] 0x402600 AudioChannel::DeactivatePlay -> AudioChannel
+[conv] 0x5cd240 MSVQAnim::Stop -> MSVQAnim
+[conv] 0x404dd0 Audio::FlushChannel -> Audio
+[conv] 0x4062c0 ObjectClass::sub_4062C0 -> ObjectClass
+[conv] 0x404d80 Audio::ReleaseChannelRefs -> Audio
+[conv] 0x40bd00 EventClass::resetEvent -> EventClass
+[conv] 0x42dc50 VectorClassUInt::Constructor -> VectorClassUInt
+[conv] 0x45ad80 VectorClass::ConstructorWithVtable -> VectorClass
+[conv] 0x45ae50 VectorClass_ReestablishPtr::Construct -> VectorClass_ReestablishPtr
+[conv] 0x464a70 AbstractClass::queryInterface -> AbstractClass
+[conv] 0x473140 CaptureManagerClass::Constructor_473140 -> CaptureManagerClass
+[conv] 0x478790 TypeList::TechnoTypeConstructor -> TypeList
+[conv] 0x488080 CellClass::clearOccupationFlags -> CellClass
+[conv] 0x48b070 VectorClass::sub_48B070 -> VectorClass
+[conv] 0x49f090 CampaignClass::Constructor_0 -> CampaignClass
+[conv] 0x4a4e30 VectorClass::sub_4A4E30 -> VectorClass
+[conv] 0x4ba2f0 LoadScreen::InitVtable -> LoadScreen
+[conv] 0x4ba340 LoadScreen::Constructor -> LoadScreen
+[conv] 0x4cabf0 TechnoTypeVector::Constructor -> TechnoTypeVector
+[conv] 0x4d0440 ObjectVector::Construct -> ObjectVector
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioChannel             rc=0
+[era] MSVQAnim                 rc=2
+[era] Audio                    rc=2
+[era] ObjectClass              rc=0
+[era] EventClass               rc=0
+[era] VectorClassUInt          rc=0
+[era] VectorClass              rc=0
+[era] VectorClass_ReestablishPtr rc=0
+[era] AbstractClass            rc=0
+[era] CaptureManagerClass      rc=0
+[era] TypeList                 rc=2
+[era] CellClass                rc=0
+[era] CampaignClass            rc=0
+[era] LoadScreen               rc=0
+[era] TechnoTypeVector         rc=0
+[era] ObjectVector             rc=0
+=== diffasm byte-compare ===
+[diff] 0x402600   MISMATCH         AudioChannel::DeactivatePlay
+[diff] 0x404dd0   MISMATCH         Audio::FlushChannel
+[diff] 0x404d80   MISMATCH         Audio::ReleaseChannelRefs
+[diff] 0x4062c0   MISMATCH         ObjectClass::sub_4062C0
+[diff] 0x40bd00   MISMATCH         EventClass::resetEvent
+[diff] 0x42dc50   MISMATCH         VectorClassUInt::Constructor
+[diff] 0x45ad80   MISMATCH         VectorClass::ConstructorWithVtable
+[diff] 0x48b070   MISMATCH         VectorClass::sub_48B070
+[diff] 0x4a4e30   MISMATCH         VectorClass::sub_4A4E30
+[diff] 0x45ae50   MISMATCH         VectorClass_ReestablishPtr::Construct
+[diff] 0x464a70   MISMATCH         AbstractClass::queryInterface
+[diff] 0x473140   MISMATCH         CaptureManagerClass::Constructor_473140
+[diff] 0x488080   MISMATCH         CellClass::clearOccupationFlags
+[diff] 0x49f090   MISMATCH         CampaignClass::Constructor_0
+[diff] 0x4ba2f0   MISMATCH         LoadScreen::InitVtable
+[diff] 0x4ba340   MISMATCH         LoadScreen::Constructor
+[diff] 0x4cabf0   MISMATCH         TechnoTypeVector::Constructor
+[diff] 0x4d0440   MISMATCH         ObjectVector::Construct
+[ledger] 0x402600 AudioChannel::DeactivatePlay -> NG (attempt 1)
+[ledger] 0x5cd240 MSVQAnim::Stop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x404dd0 Audio::FlushChannel -> NG (attempt 1)
+[ledger] 0x4062c0 ObjectClass::sub_4062C0 -> NG (attempt 1)
+[ledger] 0x404d80 Audio::ReleaseChannelRefs -> NG (attempt 1)
+[ledger] 0x40bd00 EventClass::resetEvent -> NG (attempt 1)
+[ledger] 0x42dc50 VectorClassUInt::Constructor -> NG (attempt 1)
+[ledger] 0x45ad80 VectorClass::ConstructorWithVtable -> NG (attempt 1)
+[ledger] 0x45ae50 VectorClass_ReestablishPtr::Construct -> NG (attempt 1)
+[ledger] 0x464a70 AbstractClass::queryInterface -> NG (attempt 1)
+[ledger] 0x473140 CaptureManagerClass::Constructor_473140 -> NG (attempt 1)
+[ledger] 0x478790 TypeList::TechnoTypeConstructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x488080 CellClass::clearOccupationFlags -> NG (attempt 1)
+[ledger] 0x48b070 VectorClass::sub_48B070 -> NG (attempt 1)
+[ledger] 0x49f090 CampaignClass::Constructor_0 -> NG (attempt 1)
+[ledger] 0x4a4e30 VectorClass::sub_4A4E30 -> NG (attempt 1)
+[ledger] 0x4ba2f0 LoadScreen::InitVtable -> NG (attempt 1)
+[ledger] 0x4ba340 LoadScreen::Constructor -> NG (attempt 1)
+[ledger] 0x4cabf0 TechnoTypeVector::Constructor -> NG (attempt 1)
+[ledger] 0x4d0440 ObjectVector::Construct -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 8,
+  "branch_order": 1,
+  "regalloc": 7,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p245\batch_report.json

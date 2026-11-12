@@ -1,0 +1,8 @@
+{
+ "symbol": "?DeactivatePlay@AudioChannel@@QAEHXZ",
+ "sym_key": "AudioChannel::DeactivatePlay",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86d4000000ff5028f686a40000000174268b86a40000008b8ed400000024fe568986a4000000ff51148b86a40000000c048986a40000008b96d400000056ff522c5ec3",
+ "relocs": []
+}

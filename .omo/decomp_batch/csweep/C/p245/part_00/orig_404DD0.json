@@ -1,0 +1,11 @@
+{
+ "addr": "0x404DD0",
+ "name": "Audio::FlushChannel",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x404DD0",
+ "bytes_hex": "568bf1e878260000c78638010000000000008a4618a880741656e84e3d3c00a18ce2870083c40448a38ce287005ec38b0da8e287008bd6e824270000a18ce28700485ea38ce28700c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

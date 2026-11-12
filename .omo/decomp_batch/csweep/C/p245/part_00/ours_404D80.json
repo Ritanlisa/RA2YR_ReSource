@@ -1,0 +1,15 @@
+{
+ "symbol": "?ReleaseChannelRefs@Audio@@QAEHXZ",
+ "sym_key": "Audio::ReleaseChannelRefs",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "53578bf933db8b87a800000085c07f09899fa80000005f5bc3560fbe77288b0ee800000000c706000000008b87a80000004383c6043bd87ce5c787a8000000000000005e5f5bc3",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?Decrement@RefCount@@QAEHXZ",
+   "sym_key": "RefCount::Decrement"
+  }
+ ]
+}

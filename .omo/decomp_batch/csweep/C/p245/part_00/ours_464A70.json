@@ -1,0 +1,15 @@
+{
+ "symbol": "?queryInterface@AbstractClass@@QAEPAIPAIPAH@Z",
+ "sym_key": "AbstractClass::queryInterface",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18d5424088b08578b780452894c2410e8000000008b4c240c897e04894608890e8bc65f5ec20800",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?clearOccupationFlags@CellClass@@QAEPAIHH@Z",
+ "sym_key": "CellClass::clearOccupationFlags",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf133d23bc2c7460c0100000089560489460888560c891674248b4c240c3bca7409894e048bc65ec20800c1e00250e80000000083c404894604c6460c018bc65ec20800",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

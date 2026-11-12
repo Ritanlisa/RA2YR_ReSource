@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@VectorClass_ReestablishPtr@@QAEPAIHH@Z",
+ "sym_key": "VectorClass_ReestablishPtr::Construct",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b4e0cc746040000000081e10100ffff89460883c901c7060000000085c0894e0c74308b4c240c85c97409894e0433c05ec208008d14850000000052e8000000008946048b460c80e40183c40480cc0189460c8b065ec20800",
+ "relocs": [
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

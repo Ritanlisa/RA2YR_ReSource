@@ -1,0 +1,11 @@
+{
+ "addr": "0x402600",
+ "name": "AudioChannel::DeactivatePlay",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x402600",
+ "bytes_hex": "568bf18b86d4000000ff5028f686a40000000174288b8ea400000083e1fe898ea40000008b96d40000008bceff52148b86a40000000c048986a40000008b96d40000008bce5eff622c",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
