@@ -90828,6 +90828,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6e58d0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_6E58D0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6E58D0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6e5900": {
   "attempts": 2,
   "clean": true,
@@ -91183,6 +91194,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6e6840": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_6E6840",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6E6840",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6e6870": {
   "attempts": 2,
   "clean": true,
@@ -91385,6 +91407,17 @@
   "orig_name": "BuildingLoadQueue::FindBuilding",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6e7c70": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_6E7C70",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6E7C70",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e7ca0": {
@@ -91621,6 +91654,17 @@
   "name": "TaskForceClass::ExecuteAction",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TaskForceClass::ExecuteAction",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e8880": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_6E8880",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6E8880",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -92027,6 +92071,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6f0470": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_6F0470",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6F0470",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6f04a0": {
   "attempts": 2,
   "clean": true,
@@ -92322,6 +92377,17 @@
   "name": "_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::FindItem",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "TeamTypeClass_28::FindItem",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6f28a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_6F28A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6F28A0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -93797,6 +93863,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7108e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_7108E0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_7108E0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x710910": {
   "attempts": 2,
   "clean": true,
@@ -94344,6 +94421,17 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "TechnoTypeClass::RemoveItem",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x717df0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_717DF0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_717DF0",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -94986,6 +95074,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x71b5a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_71B5A0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_71B5A0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x71b5d0": {
   "attempts": 2,
   "clean": true,
@@ -95240,6 +95339,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x71d390": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_71D390",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_71D390",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x71d3c0": {
   "attempts": 2,
   "clean": true,
@@ -95417,6 +95527,17 @@
   "name": "TerrainTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x71e410": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_71E410",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_71E410",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x71e440": {
   "attempts": 2,
@@ -95809,6 +95930,17 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x720230": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_720230",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_720230",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x720260": {
   "attempts": 2,
   "clean": false,
@@ -96084,6 +96216,17 @@
   "name": "_DynamicVectorClass_PAUThemeControl::FindItemIndex",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_ThemeControl::FindItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x721430": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_721430",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_721430",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -96418,6 +96561,17 @@
   "name": "_DynamicVectorClass_PAVTiberiumClass::FindItemIndex",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TiberiumClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x723a90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_723A90",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_723A90",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -96911,6 +97065,17 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7250c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_7250C0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_7250C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7250f0": {
   "attempts": 2,
   "clean": true,
@@ -97064,6 +97229,17 @@
   "orig_name": "AbstractClass::AnnounceExpiredPointer",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x725d90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_725D90",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_725D90",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x725dc0": {
@@ -97325,6 +97501,17 @@
   "name": "TriggerClass::StubReturn38",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x726a70": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_726A70",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_726A70",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x726aa0": {
   "attempts": 2,
@@ -97629,6 +97816,17 @@
   "name": "WideString::Trim",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
+ },
+ "0x727dc0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_727DC0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_727DC0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x727df0": {
   "attempts": 3,
@@ -98112,6 +98310,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x72a250": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_72A250",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_72A250",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x72a280": {
   "attempts": 2,
   "clean": true,
@@ -98255,6 +98464,17 @@
   "orig_name": "sub_72A690",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x72a6b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 call 0x7c8fb0",
+  "name": "sub_72A6B0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_72A6B0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x72a6e0": {
