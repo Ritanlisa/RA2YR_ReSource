@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4AA380@@YGXPAE@Z",
+ "sym_key": "Unnamed::sub_4AA380",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "a1000000008d04408b04c5000000004885c07cfcc20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82003C@@3IA",
+   "sym_key": "DataGlobal_82003C"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0370@@3PAIA",
+   "sym_key": "DataGlobal_8A0370"
+  }
+ ]
+}

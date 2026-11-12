@@ -1,0 +1,11 @@
+{
+ "addr": "0x63AC70",
+ "name": "BuildingClass::CheckBuildability",
+ "size": 182,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63AC70",
+ "bytes_hex": "83ec0853558b2dc8eca800565733ff85ed8bd90f8e92000000a1bceca8008b0cb885c9744b8a511480e20188542413743fe87ab00c008bf085f674348b869400000085c07f31742f8b46048d4e048d542414895c241452ff501083f8ff74258b76148d4eff3bc1742883c6fe3bc6742e473bfd7d36eba25f5e5db8010000005b83c408c35f5e5db8050000005b83c408c35f5e5db8020000005b83c408c35f5e5db8030000005b83c408c35f5e5d83c8ff5b83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

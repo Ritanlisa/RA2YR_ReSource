@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p326\part_00
+=== convert (20 addrs) ===
+[conv] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> WarheadTypeClass
+[conv] 0x5b46e0 AbstractClass::getWeaponSpeed -> AbstractClass
+[conv] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> ReferenceCounted
+[conv] 0x5d36a0 sub_5D36A0 -> _addr_5D
+[conv] 0x4e48e0 MapSkirmishDialogPlayerToControl -> _addr_4E
+[conv] 0x5c62b0 EncodeVarInt -> _addr_5C
+[conv] 0x5549a0 ObjectClass::Map_Reset_5549A0 -> ObjectClass
+[conv] 0x7d8ba4 unknown_libname_93 -> _addr_7D
+[conv] 0x478220 INIClass::parseKeyValue -> INIClass
+[conv] 0x732050 TechnoClass::GatherAllBuildings -> TechnoClass
+[conv] 0x635210 ObjectClass::sub_635210 -> ObjectClass
+[conv] 0x63ac70 BuildingClass::CheckBuildability -> BuildingClass
+[conv] 0x5ad130 _VectorClass_N::Release -> _VectorClass_N
+[conv] 0x405a00 ObjectClass::sub_405A00 -> ObjectClass
+[conv] 0x44f6e0 ObjectClass::sub_44F6E0 -> ObjectClass
+[conv] 0x4a0c20 VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x4aa380 sub_4AA380 -> _addr_4A
+[conv] 0x5e95e0 ObjectClass::Event_Helper -> ObjectClass
+[conv] 0x65b1e0 RadSiteClass::RadSiteClass -> RadSiteClass
+[conv] 0x7c9c08 __atoi64 -> _addr_7C
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WarheadTypeClass         rc=2
+[era] AbstractClass            rc=0
+[era] ReferenceCounted         rc=2
+[era] _addr_5D                 rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_5C                 rc=0
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=2
+[era] INIClass                 rc=2
+[era] TechnoClass              rc=0
+[era] BuildingClass            rc=0
+[era] _VectorClass_N           rc=2
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=2
+[era] _addr_4A                 rc=0
+[era] RadSiteClass             rc=2
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5b46e0   MISMATCH         AbstractClass::getWeaponSpeed
+[diff] 0x5d36a0   MISMATCH         sub_5D36A0
+[diff] 0x4e48e0   MISMATCH         MapSkirmishDialogPlayerToControl
+[diff] 0x5c62b0   MISMATCH         EncodeVarInt
+[diff] 0x5549a0   MISMATCH         ObjectClass::Map_Reset_5549A0
+[diff] 0x635210   MISMATCH         ObjectClass::sub_635210
+[diff] 0x405a00   MISMATCH         ObjectClass::sub_405A00
+[diff] 0x44f6e0   MISMATCH         ObjectClass::sub_44F6E0
+[diff] 0x732050   MISMATCH         TechnoClass::GatherAllBuildings
+[diff] 0x63ac70   MISMATCH         BuildingClass::CheckBuildability
+[diff] 0x4aa380   MISMATCH         sub_4AA380
+[diff] 0x7c9c08   MISMATCH         __atoi64
+[ledger] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b46e0 AbstractClass::getWeaponSpeed -> NG (attempt 1)
+[ledger] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d36a0 sub_5D36A0 -> NG (attempt 1)
+[ledger] 0x4e48e0 MapSkirmishDialogPlayerToControl -> NG (attempt 1)
+[ledger] 0x5c62b0 EncodeVarInt -> NG (attempt 1)
+[ledger] 0x5549a0 ObjectClass::Map_Reset_5549A0 -> NG (attempt 1)
+[ledger] 0x7d8ba4 unknown_libname_93 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x478220 INIClass::parseKeyValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x732050 TechnoClass::GatherAllBuildings -> NG (attempt 1)
+[ledger] 0x635210 ObjectClass::sub_635210 -> NG (attempt 1)
+[ledger] 0x63ac70 BuildingClass::CheckBuildability -> NG (attempt 1)
+[ledger] 0x5ad130 _VectorClass_N::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x405a00 ObjectClass::sub_405A00 -> NG (attempt 1)
+[ledger] 0x44f6e0 ObjectClass::sub_44F6E0 -> NG (attempt 1)
+[ledger] 0x4a0c20 VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aa380 sub_4AA380 -> NG (attempt 1)
+[ledger] 0x5e95e0 ObjectClass::Event_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65b1e0 RadSiteClass::RadSiteClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c9c08 __atoi64 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "codegen_shape": 5,
+  "branch_order": 1,
+  "frame_sched": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p326\batch_report.json

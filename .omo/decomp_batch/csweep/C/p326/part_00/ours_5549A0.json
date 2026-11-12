@@ -1,0 +1,105 @@
+{
+ "symbol": "?Map_Reset_5549A0@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::Map_Reset_5549A0",
+ "size": 217,
+ "link_base": 0,
+ "bytes_hex": "8b0d280400005385c9c6050000000000bb01000000745e568b351c0400008b0685c074138b085350ff51208b351c0400008b0d2804000085c90f94c285c97e3049b8000000000f94c285c9890d280400007e1d8b5486048914868b0d280400008b351c040000403bc17ce885c90f94c284d274aa5ea15804000085c07453a14c0400008b0851e8000000008b0d5804000083c40485c90f94c085c97e3033c08bd1493bd3890d58040000742585c97ece8b0d4c040000408b1481895481fc8b0d580400003bc17ce885c90f94c084c074ad881d000000005bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_829AE4@@3EA",
+   "sym_key": "DataGlobal_829AE4"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?DataGlobal_829AE4@@3EA",
+   "sym_key": "DataGlobal_829AE4"
+  }
+ ]
+}

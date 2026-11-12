@@ -1,0 +1,27 @@
+{
+ "symbol": "?CheckBuildability@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::CheckBuildability",
+ "size": 164,
+ "link_base": 0,
+ "bytes_hex": "51a1000000005355565733ff85c08be98bd87f095f5e5d83c8ff5b59c3a1000000008b04b885c07448f6401401744250e8000000008bf083c40485f674338b869400000085c07d308b4e048d46048d542410896c24105250ff511083f8ff74238b76148d4eff3bc1742483c6fe3bc67428473bfb7d9eeba55f5e5db8010000005b59c35f5e5db8050000005b59c35f5e5db8020000005b59c35f5e5db8030000005b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_ObjectClass_CurrentCount@@3IA",
+   "sym_key": "g_ObjectClass_CurrentCount"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  }
+ ]
+}

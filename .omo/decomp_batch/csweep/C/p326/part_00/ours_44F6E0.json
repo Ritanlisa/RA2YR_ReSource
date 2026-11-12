@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_44F6E0@ObjectClass@@QAEPAIPAIH@Z",
+ "sym_key": "ObjectClass::sub_44F6E0",
+ "size": 162,
+ "link_base": 0,
+ "bytes_hex": "8b0183ec0c8d5424005356575251bb06000000bf05000000ff50488b088b70048b442420c1e908c1ee0885c0740983f802750633ffeb0233db0fbe051c030000550fbfe92be80fbe0524030000992bc2d1f83be87e02f7db0fbe15200300000fbe05280300000fbfee2bea992bc2d1f83be85d7e02f7df8b44242003cb33c803f781e1ff0000005f33c133f081e6ff00000033f08b44241889305e5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5549A0",
+ "name": "Map_Reset_5549A0",
+ "size": 180,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5549A0",
+ "bytes_hex": "8b1520caab00c605e49a82000085d2744e568b3514caab008b0e85c974138b016a01ff50208b3514caab008b1520caab0085d27e274a33c085d2891520caab007e1a8b4c8604890c868b1520caab008b3514caab00403bc27ce885d275ba5ea150caab0085c074448b1544caab008b0250e8274127008b0d50caab0083c40485c97e274933c085c9890d50caab007e1a8b0d44caab00408b1481895481fc8b0d50caab003bc17ce885c975bcc605e49a820001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

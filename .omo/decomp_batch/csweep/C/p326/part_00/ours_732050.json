@@ -1,0 +1,27 @@
+{
+ "symbol": "?GatherAllBuildings@TechnoClass@@QAEPAIXZ",
+ "sym_key": "TechnoClass::GatherAllBuildings",
+ "size": 164,
+ "link_base": 0,
+ "bytes_hex": "515355566a18e80000000033db83c4043bc3741d895804895808c6400c0188580d8918c740140a0000008958108bf0eb0233f6a10000000033ed3bc38944240c7f078bc65e5d5b59c357a1000000008b3ca83bfb743df647140174378b4e088b46103bc1721e385e0d75043bcb75248b46143bc37e1d8b1603c1535056ff520884c0740f8b46108b56048d4801894e10893c828b442410453be87cae8bc65f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_ObjectClass_CurrentCount@@3IA",
+   "sym_key": "g_ObjectClass_CurrentCount"
+  }
+ ]
+}

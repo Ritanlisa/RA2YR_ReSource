@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E48E0",
+ "name": "MapSkirmishDialogPlayerToControl",
+ "size": 180,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E48E0",
+ "bytes_hex": "a1b8b3a80056578b3db4b3a80083f8fe7505bffeffffff85d27507b8a2060000eb5b83fa017507b822050000eb4f83fa027507b823050000eb4383fa037507b824050000eb3783fa047507b825050000eb2b83fa057507b826050000eb1f83fa067507b827050000eb138bc283e807f7d81bc025d7faffff05280500008b3538b2a80083fe03740583fe04751c8b149590daa8008b35b411ac003bd6750b837a6bff7505bf08000000578bd0e80f0000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_635210@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_635210",
+ "size": 211,
+ "link_base": 0,
+ "bytes_hex": "81ecfc000000538bd955568b83a80000005785c0c783b0000000ffffffff0f84a20000008d7338b91b0000008d7c243033c0f3a58b8ba40000008a433033ed89442410c1f91066a585c0888c249e0000007e7333d2b91b0000008a53368dbc24a00000008b34aa8d542430f3a58d4c2418e8000000008b308b78048b40088d9424a00000008d4c242489442414e8000000008bc88b013bf075103b7904750b8b5424148b71083bd674168b442410453be87ca05f5e5d5b81c4fc000000c2040089abb00000005f5e5d5b81c4fc000000c20400",
+ "relocs": [
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  }
+ ]
+}

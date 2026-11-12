@@ -1,0 +1,51 @@
+{
+ "symbol": "?MapSkirmishDialogPlayerToControl@@YIHPAXH@Z",
+ "sym_key": "Unnamed::MapSkirmishDialogPlayerToControl",
+ "size": 165,
+ "link_base": 0,
+ "bytes_hex": "a10000000056578b3d0000000083f8fe7505bffeffffff85d2744e8d42ff83f8057731ff248500000000b822050000eb3db823050000eb36b824050000eb2fb825050000eb28b826050000eb21b827050000eb1a8bc283e807f7d81bc025d7faffff0528050000eb05b8a20600008b350000000083fe03740583fe04751c8b1495000000008b35000000003bd6750b837a6bff7505bf08000000578bd0e8000000005f5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B3B8@@3IA",
+   "sym_key": "DataGlobal_A8B3B8"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B3B4@@3IA",
+   "sym_key": "DataGlobal_A8B3B4"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "$L1867",
+   "sym_key": "$L1867"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?SetupSkirmishSpawnLocations@@YIHPAXHH@Z",
+   "sym_key": "SetupSkirmishSpawnLocations"
+  }
+ ]
+}

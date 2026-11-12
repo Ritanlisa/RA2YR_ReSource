@@ -1,0 +1,15 @@
+{
+ "symbol": "?getWeaponSpeed@AbstractClass@@QAEPAID@Z",
+ "sym_key": "AbstractClass::getWeaponSpeed",
+ "size": 160,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db891e8b46083bc374268b48043bcb741f8b50083bd374183bcb74e7894a048b48048b5008895108895808895804ebd383fef0895e10742433c98a4e143bcb741b8b46183bc374148948048b4e1833c08a4614894808895e18885e1483fefc895e0474208b4e083bcb74198b460c3bc374128948048b56088b460c894208895e0c895e08f644240c01740956e80000000083c4048bc65e5bc20400",
+ "relocs": [
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

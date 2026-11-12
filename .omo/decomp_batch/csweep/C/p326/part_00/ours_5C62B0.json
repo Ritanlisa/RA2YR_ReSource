@@ -1,0 +1,15 @@
+{
+ "symbol": "?EncodeVarInt@@YIHHPAEH@Z",
+ "sym_key": "Unnamed::EncodeVarInt",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "8b4c240481ec040100005356578bfae80000000083f87fc60702765ab204b9180000008bf0d3ee85f6750a83e908feca83f9f875ee80ca80be04000000885701bb01000000b9180000008bd0d3ea85d2750983e9084e83f9f875ef85f6741f8d0cf5f8ffffff8bd0d3ea4383e9084e88143b75f2eb08884701bb010000008bc88d74240c8bd18d7c3b01c1e902f3a58bca8d44030183e103f3a45f5e5b81c404010000c20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?EncodeVarInt_Helper@@YIHH@Z",
+   "sym_key": "EncodeVarInt_Helper"
+  }
+ ]
+}
