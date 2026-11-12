@@ -1,0 +1,8 @@
+{
+ "symbol": "?sub_491670@_BlitTransRemapDest_E@@QAEDPAEPADHHHHHH@Z",
+ "sym_key": "_BlitTransRemapDest_E::sub_491670",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b44240c85c07e278b54240453568b742410578bf88a064684c0740c8b590433c08a028a04038802424f75e95f5e5bc22000",
+ "relocs": []
+}

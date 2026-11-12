@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_492C00@_BlitTransZRemapXlatZRead_G@@QAEPAGPAGPAEHH0HHH@Z",
+ "sym_key": "_BlitTransZRemapXlatZRead_G::sub_492C00",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "518b51048b442418895424008b54241085d27e7353558b6c2414568b3500000000578b7c241889542428668b108b5c242481e2ffff000083c0023bda7d268a550084d2741f8b74241081e2ff00000033db8a1c328b5108668b145a6689178b35000000008b965c0500004583c7023bc272062b86600500008b5424284a8954242875a75f5e5d5b59c22000",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  }
+ ]
+}

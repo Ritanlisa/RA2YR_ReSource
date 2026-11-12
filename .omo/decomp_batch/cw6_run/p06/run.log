@@ -1,0 +1,105 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x48e090 globalHelper_08E090 -> _addr_48
+[conv] 0x48e480 sub_48E480 -> _addr_48
+[conv] 0x4912b0 _BlitTransXlat_G::sub_4912B0 -> _BlitTransXlat_G
+[conv] 0x491670 _BlitTransRemapDest_E::sub_491670 -> _BlitTransRemapDest_E
+[conv] 0x491740 _BlitTransRemapXlat_E::sub_491740 -> _BlitTransRemapXlat_E
+[conv] 0x491820 _RLEBlitTransXlat_E::sub_491820 -> _RLEBlitTransXlat_E
+[conv] 0x4918e0 _RLEBlitTransZRemapXlat_E::sub_4918E0 -> _RLEBlitTransZRemapXlat_E
+[conv] 0x4919b0 _RLEBlitTransRemapDest_E::sub_4919B0 -> _RLEBlitTransRemapDest_E
+[conv] 0x491a70 _RLEBlitTransRemapXlat_E::sub_491A70 -> _RLEBlitTransRemapXlat_E
+[conv] 0x4924c0 _BlitPlainXlat_G::sub_4924C0 -> _BlitPlainXlat_G
+[conv] 0x492590 _BlitTransZRemapXlat_G::sub_492590 -> _BlitTransZRemapXlat_G
+[conv] 0x492670 _BlitTransDarken_G::sub_492670 -> _BlitTransDarken_G
+[conv] 0x492830 _BlitTransLucent50_G::sub_492830 -> _BlitTransLucent50_G
+[conv] 0x492920 _BlitTransLucent25_G::sub_492920 -> _BlitTransLucent25_G
+[conv] 0x492a10 _BlitPlainXlatZRead_G::sub_492A10 -> _BlitPlainXlatZRead_G
+[conv] 0x492b00 _BlitTransXlatZRead_G::sub_492B00 -> _BlitTransXlatZRead_G
+[conv] 0x492c00 _BlitTransZRemapXlatZRead_G::sub_492C00 -> _BlitTransZRemapXlatZRead_G
+[conv] 0x492d20 _BlitTransDarkenZRead_G::sub_492D20 -> _BlitTransDarkenZRead_G
+[conv] 0x492e10 _BlitTransLucent75ZRead_G::sub_492E10 -> _BlitTransLucent75ZRead_G
+[conv] 0x492f30 _BlitTransLucent50ZRead_G::sub_492F30 -> _BlitTransLucent50ZRead_G
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_48                 rc=2
+[era] _BlitTransXlat_G         rc=0
+[era] _BlitTransRemapDest_E    rc=0
+[era] _BlitTransRemapXlat_E    rc=0
+[era] _RLEBlitTransXlat_E      rc=0
+[era] _RLEBlitTransZRemapXlat_E rc=0
+[era] _RLEBlitTransRemapDest_E rc=0
+[era] _RLEBlitTransRemapXlat_E rc=0
+[era] _BlitPlainXlat_G         rc=0
+[era] _BlitTransZRemapXlat_G   rc=0
+[era] _BlitTransDarken_G       rc=0
+[era] _BlitTransLucent50_G     rc=0
+[era] _BlitTransLucent25_G     rc=0
+[era] _BlitPlainXlatZRead_G    rc=0
+[era] _BlitTransXlatZRead_G    rc=0
+[era] _BlitTransZRemapXlatZRead_G rc=0
+[era] _BlitTransDarkenZRead_G  rc=0
+[era] _BlitTransLucent75ZRead_G rc=0
+[era] _BlitTransLucent50ZRead_G rc=0
+=== diffasm byte-compare ===
+[diff] 0x48e480   MISMATCH         sub_48E480
+[diff] 0x4912b0   MISMATCH         _BlitTransXlat_G::sub_4912B0
+[diff] 0x491670   MATCH            _BlitTransRemapDest_E::sub_491670
+[diff] 0x491740   MISMATCH         _BlitTransRemapXlat_E::sub_491740
+[diff] 0x491820   MISMATCH         _RLEBlitTransXlat_E::sub_491820
+[diff] 0x4918e0   MISMATCH         _RLEBlitTransZRemapXlat_E::sub_4918E0
+[diff] 0x4919b0   MISMATCH         _RLEBlitTransRemapDest_E::sub_4919B0
+[diff] 0x491a70   MISMATCH         _RLEBlitTransRemapXlat_E::sub_491A70
+[diff] 0x4924c0   MISMATCH         _BlitPlainXlat_G::sub_4924C0
+[diff] 0x492590   MISMATCH         _BlitTransZRemapXlat_G::sub_492590
+[diff] 0x492670   MISMATCH         _BlitTransDarken_G::sub_492670
+[diff] 0x492830   MISMATCH         _BlitTransLucent50_G::sub_492830
+[diff] 0x492920   MISMATCH         _BlitTransLucent25_G::sub_492920
+[diff] 0x492a10   MISMATCH         _BlitPlainXlatZRead_G::sub_492A10
+[diff] 0x492b00   MISMATCH         _BlitTransXlatZRead_G::sub_492B00
+[diff] 0x492c00   MISMATCH         _BlitTransZRemapXlatZRead_G::sub_492C00
+[diff] 0x492d20   MISMATCH         _BlitTransDarkenZRead_G::sub_492D20
+[diff] 0x492e10   MISMATCH         _BlitTransLucent75ZRead_G::sub_492E10
+[diff] 0x492f30   MISMATCH         _BlitTransLucent50ZRead_G::sub_492F30
+[ledger] 0x48e090 globalHelper_08E090 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48e480 sub_48E480 -> NG (attempt 4)
+[ledger] 0x4912b0 _BlitTransXlat_G::sub_4912B0 -> NG (attempt 2)
+[ledger] 0x491670 _BlitTransRemapDest_E::sub_491670 -> OK (attempt 2)
+[ledger] 0x491740 _BlitTransRemapXlat_E::sub_491740 -> NG (attempt 2)
+[ledger] 0x491820 _RLEBlitTransXlat_E::sub_491820 -> NG (attempt 2)
+[ledger] 0x4918e0 _RLEBlitTransZRemapXlat_E::sub_4918E0 -> NG (attempt 2)
+[ledger] 0x4919b0 _RLEBlitTransRemapDest_E::sub_4919B0 -> NG (attempt 2)
+[ledger] 0x491a70 _RLEBlitTransRemapXlat_E::sub_491A70 -> NG (attempt 2)
+[ledger] 0x4924c0 _BlitPlainXlat_G::sub_4924C0 -> NG (attempt 2)
+[ledger] 0x492590 _BlitTransZRemapXlat_G::sub_492590 -> NG (attempt 2)
+[ledger] 0x492670 _BlitTransDarken_G::sub_492670 -> NG (attempt 2)
+[ledger] 0x492830 _BlitTransLucent50_G::sub_492830 -> NG (attempt 2)
+[ledger] 0x492920 _BlitTransLucent25_G::sub_492920 -> NG (attempt 2)
+[ledger] 0x492a10 _BlitPlainXlatZRead_G::sub_492A10 -> NG (attempt 2)
+[ledger] 0x492b00 _BlitTransXlatZRead_G::sub_492B00 -> NG (attempt 2)
+[ledger] 0x492c00 _BlitTransZRemapXlatZRead_G::sub_492C00 -> NG (attempt 2)
+[ledger] 0x492d20 _BlitTransDarkenZRead_G::sub_492D20 -> NG (attempt 2)
+[ledger] 0x492e10 _BlitTransLucent75ZRead_G::sub_492E10 -> NG (attempt 2)
+[ledger] 0x492f30 _BlitTransLucent50ZRead_G::sub_492F30 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 18,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "branch_order": 5,
+  "regalloc": 3,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 5.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p06\batch_report.json

@@ -1,0 +1,8 @@
+{
+ "symbol": "?sub_4919B0@_RLEBlitTransRemapDest_E@@QAEHPAE0HHHHHHHH@Z",
+ "sym_key": "_RLEBlitTransRemapDest_E::sub_4919B0",
+ "size": 128,
+ "link_base": 0,
+ "bytes_hex": "8b4424105355568b7424105785c08be97f0a8b7c241c8b5c2418eb238b5c24188a0b4384c9740348eb0733d28a132bc24385c07feb8b7c241cf7d803f02bf885ff7e368a0b4384c974118b450433d28a164f468a0c02884effeb1a33d224008a130bc24325ff0000008bd081e2ff0000002bfa03f285ff7fca5f5e5d5bc22800",
+ "relocs": []
+}

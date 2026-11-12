@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_492A10@_BlitPlainXlatZRead_G@@QAEPAGPAGPAEHH0HHH@Z",
+ "sym_key": "_BlitPlainXlatZRead_G::sub_492A10",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "8b54240c8b44241485d27e61538b5c2408558b6c2418568b3500000000578b7c241889542424668b1083c00281e2ffff00003bea7d148b710433d28a17668b14566689138b35000000008b965c0500004783c3023bc272062b86600500008b5424244a8954242475bd5f5e5d5bc22000",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  }
+ ]
+}
