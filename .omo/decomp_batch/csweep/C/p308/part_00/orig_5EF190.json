@@ -1,0 +1,11 @@
+{
+ "addr": "0x5EF190",
+ "name": "VectorClass_cptr_MultiMission::j_vt09",
+ "size": 163,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5EF190",
+ "bytes_hex": "558be9837d4cff750633c05dc218008b45508b54240c538b5c240c568bca5766c700bdda6689500266c74004afde8b7d508bc18bf383c706c1e902f3a58bc883e103f3a48b75508d4a068bc133ff03c633f685d2894c2418894424147e1c8bc633c98a0c1fc1e81f03c1473bfa8d34707cec8b4c24188b44241489308b555083c104c604110d8b455041518b0d202db70050e8495a18005f5e5bb8010000005dc21800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

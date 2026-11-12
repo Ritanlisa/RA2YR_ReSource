@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C9CC2",
+ "name": "_strtok",
+ "size": 164,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C9CC2",
+ "bytes_hex": "558bec83ec2053568b750c57e8387700006a0889450c5933c08d7de06a07f3ab5f8a16b3010fb6ca8bc123cfc1e803d2e38d4405e008184684d275e58b550885d275068b450c8b50188a026a010fb6f08bce5b23cfd3e3c1ee038a4c35e084d9740784c0740342ebe08bda8a0284c0741e0fb6f08bce6a0123cf58d3e0c1ee038a4c35e084c1750342ebe0802200428b450c5f5e8950188bc32bc2f7d81bc023c35bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

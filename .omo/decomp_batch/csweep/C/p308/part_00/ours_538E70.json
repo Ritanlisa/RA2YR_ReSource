@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_538E70@ObjectClass@@QAEFHHH@Z",
+ "sym_key": "ObjectClass::sub_538E70",
+ "size": 230,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec24db450853568b74241c57dd5c2428894c241033db8bc325ff0000807907480d00ffffff408b4c24108d144103c28d5424148bf88d442414508bcfe8000000008a4802668b10884c2418668954240c8b4424188b54241c25ff00000080e2008944242083ec08db4424280bd0884c241689542424dc4c2430dd1c24e80000000033c683c40825ff00000033f081feff0000007c05beff00000085f60f9ec0488d4c242423c6518d4c241088442412e800000000668b1033c98a48022400430bc881fb00010000668917884f020f8c43ffffff5f5e668bc25b8be55dc20c00",
+ "relocs": [
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?ComputeColorSaturation@@YIHIHH@Z",
+   "sym_key": "ComputeColorSaturation"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?ConvertToRGB@Color@@QAEHH@Z",
+   "sym_key": "Color::ConvertToRGB"
+  }
+ ]
+}

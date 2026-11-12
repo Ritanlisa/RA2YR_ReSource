@@ -1,0 +1,21 @@
+{
+ "symbol": "?j_vt09@NullModemConnClass@@QAEHPAEHHHHH@Z",
+ "sym_key": "NullModemConnClass::j_vt09",
+ "size": 152,
+ "link_base": 0,
+ "bytes_hex": "558be9837d4cff750633c05dc218008b4d508b44240c538b5c240c66c701bdda6689410266c74104afde568bc8578b7d508bd18bf383c706c1e902f3a58bca83e103f3a48b4d5033f68d54080633c985c0895424187e1833d28bf98a141ec1ef1f03d7463bf08d0c4a7cec8b542418890a8b5550c644100a0d8b0d0000000083c00b508b455050e8000000005f5e5bb8010000005dc21800",
+ "relocs": [
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?WriteSerial@WinModemClass@@QAEHPAXH@Z",
+   "sym_key": "WinModemClass::WriteSerial"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?computePath@WaypointPathClass@@QAEPAIHPAH@Z",
+ "sym_key": "WaypointPathClass::computePath",
+ "size": 185,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b7c241033db8b460c895e04250100ffff897e080c013bfb89460c891e0f84890000008b4424143bc375628d0c7f8d148d0400000052e80000000083c4043bc374328d57ff8d480489388bc185d27c26891889580489580883c00c4f75f28b460c894e0480e4000c0189460c8bc65f5e5bc2080033c9894e048b4e0c80e5008bc683c9015f894e0c5e5bc208008d57ff8d480489388bc185d27c0e891889580489580883c00c4f75f2894e048bc65f5e5bc20800",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

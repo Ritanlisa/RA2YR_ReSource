@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E53D0",
+ "name": "FillLobbyFactionComboBox",
+ "size": 164,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E53D0",
+ "bytes_hex": "565785d2bffeffffff7507b8a3060000eb5b83fa017507b8a4060000eb4f83fa027507b8a5060000eb4383fa037507b8a6060000eb3783fa047507b8a7060000eb2b83fa057507b8a8060000eb1f83fa067507b8aa060000eb138bc283e807f7d81bc02554f9ffff05ab0600008b3538b2a80083fe03740583fe04751c8b149590daa8008b35b411ac003bd6750b837a6bff7505bf08000000578bd0e80f0000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

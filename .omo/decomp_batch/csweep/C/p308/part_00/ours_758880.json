@@ -1,0 +1,33 @@
+{
+ "symbol": "?ClearDepth@VoxelRenderer@@QAIHPAMH@Z",
+ "sym_key": "VoxelRenderer::ClearDepth",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "5355568bf2578b7c2414d94608d94604d906d9c0d8c9d9c2d8cb83ec088b1cbd00000000c744241c0000000033eddec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e800000000d90500000000ded983c408dfe0f6c441750c5f5e5db8ff0000005bc204008b3cbd0000000033c985ff7e388d5304d942fcd80ed94204d84e08dec1d902d84e04dec1d9442414d9c1ded9dfe0f6c4417508d95c24148be9eb02ddd84183c20c3bcf7ccb5f8bc55e5d5bc20400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8469E0@@3PAIA",
+   "sym_key": "DataGlobal_8469E0"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?flt_7F6964@@3MA",
+   "sym_key": "flt_7F6964"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8469F4@@3PAIA",
+   "sym_key": "DataGlobal_8469F4"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_74BBF0@ObjectClass@@QAEPAIH@Z",
+ "sym_key": "ObjectClass::sub_74BBF0",
+ "size": 164,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c56578bf933db33c08b4f048d770c885f10885f14c7471801000000891ec74708ffffffff8a450422cb0bc18947048b55088d450c8957083bf074558bcb56ff510c8b45143bc38946087514895e04885e0d8b55008bc789175f5e5d5bc2040050e80000000083c4043bc389460474218b4e0833c03bcbc6460d017e148b4d108b56048a0c01880c028b4e08403bc17cec8b55008bc789175f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

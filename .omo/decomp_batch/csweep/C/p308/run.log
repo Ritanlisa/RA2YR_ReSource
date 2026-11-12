@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p308\part_00
+=== convert (20 addrs) ===
+[conv] 0x659e30 ObjectClass::Weapon_Update_Update -> ObjectClass
+[conv] 0x647040 ObjectClass::UI_Create -> ObjectClass
+[conv] 0x6470f0 ObjectClass::UI_Add -> ObjectClass
+[conv] 0x6bafa0 ObjectClass::Render_Load_6BAFA0 -> ObjectClass
+[conv] 0x5ef190 NullModemConnClass::j_vt09 -> NullModemConnClass
+[conv] 0x4e53d0 FillLobbyFactionComboBox -> _addr_4E
+[conv] 0x7c9cc2 _strtok -> _addr_7C
+[conv] 0x74bca0 ObjectClass::sub_74BCA0 -> ObjectClass
+[conv] 0x4e0a00 VectorClass::sub_4E0A00 -> VectorClass
+[conv] 0x4cb3d0 globalHelper_0CB3D0 -> _addr_4C
+[conv] 0x752cb0 ObjectClass::sub_752CB0 -> ObjectClass
+[conv] 0x63cf10 HouseClass::sub_63CF10 -> HouseClass
+[conv] 0x63cfc0 HouseClass::sub_63CFC0 -> HouseClass
+[conv] 0x764760 WaypointPathClass::computePath -> WaypointPathClass
+[conv] 0x552be0 Scenario::ComputeDialogPos -> Scenario
+[conv] 0x74bbf0 ObjectClass::sub_74BBF0 -> ObjectClass
+[conv] 0x538e70 ObjectClass::sub_538E70 -> ObjectClass
+[conv] 0x429780 WalkPathClassPath -> _addr_42
+[conv] 0x758880 VoxelRenderer::ClearDepth -> VoxelRenderer
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] NullModemConnClass       rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_7C                 rc=0
+[era] VectorClass              rc=0
+[era] _addr_4C                 rc=0
+[era] HouseClass               rc=0
+[era] WaypointPathClass        rc=0
+[era] Scenario                 rc=2
+[era] _addr_42                 rc=0
+[era] VoxelRenderer            rc=0
+=== diffasm byte-compare ===
+[diff] 0x6bafa0   MISMATCH         ObjectClass::Render_Load_6BAFA0
+[diff] 0x752cb0   MISMATCH         ObjectClass::sub_752CB0
+[diff] 0x74bbf0   MISMATCH         ObjectClass::sub_74BBF0
+[diff] 0x538e70   MISMATCH         ObjectClass::sub_538E70
+[diff] 0x5ef190   MISMATCH         NullModemConnClass::j_vt09
+[diff] 0x4e53d0   MISMATCH         FillLobbyFactionComboBox
+[diff] 0x7c9cc2   MISMATCH         _strtok
+[diff] 0x4e0a00   MISMATCH         VectorClass::sub_4E0A00
+[diff] 0x4cb3d0   MISMATCH         globalHelper_0CB3D0
+[diff] 0x63cf10   MISMATCH         HouseClass::sub_63CF10
+[diff] 0x63cfc0   MISMATCH         HouseClass::sub_63CFC0
+[diff] 0x764760   MISMATCH         WaypointPathClass::computePath
+[diff] 0x429780   MISMATCH         WalkPathClassPath
+[diff] 0x758880   MISMATCH         VoxelRenderer::ClearDepth
+[ledger] 0x659e30 ObjectClass::Weapon_Update_Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x647040 ObjectClass::UI_Create -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6470f0 ObjectClass::UI_Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bafa0 ObjectClass::Render_Load_6BAFA0 -> NG (attempt 1)
+[ledger] 0x5ef190 NullModemConnClass::j_vt09 -> NG (attempt 1)
+[ledger] 0x7cf479 0x7cf479 -> PENDING (attempt 1)
+[ledger] 0x4e53d0 FillLobbyFactionComboBox -> NG (attempt 1)
+[ledger] 0x7c9cc2 _strtok -> NG (attempt 1)
+[ledger] 0x74bca0 ObjectClass::sub_74BCA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e0a00 VectorClass::sub_4E0A00 -> NG (attempt 1)
+[ledger] 0x4cb3d0 globalHelper_0CB3D0 -> NG (attempt 1)
+[ledger] 0x752cb0 ObjectClass::sub_752CB0 -> NG (attempt 1)
+[ledger] 0x63cf10 HouseClass::sub_63CF10 -> NG (attempt 1)
+[ledger] 0x63cfc0 HouseClass::sub_63CFC0 -> NG (attempt 1)
+[ledger] 0x764760 WaypointPathClass::computePath -> NG (attempt 1)
+[ledger] 0x552be0 Scenario::ComputeDialogPos -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74bbf0 ObjectClass::sub_74BBF0 -> NG (attempt 1)
+[ledger] 0x538e70 ObjectClass::sub_538E70 -> NG (attempt 1)
+[ledger] 0x429780 WalkPathClassPath -> NG (attempt 1)
+[ledger] 0x758880 VoxelRenderer::ClearDepth -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 14,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "regalloc": 2,
+  "branch_order": 1,
+  "codegen_shape": 6,
+  "const_fold": 1,
+  "frame_sched": 1,
+  "eval_order": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p308\batch_report.json

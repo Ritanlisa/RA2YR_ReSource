@@ -1,0 +1,33 @@
+{
+ "symbol": "?WalkPathClassPath@@YIPAIPAH0H0@Z",
+ "sym_key": "Unnamed::WalkPathClassPath",
+ "size": 155,
+ "link_base": 0,
+ "bytes_hex": "518b442408558be98b0a85c0894c24047e7f53568b742414578b7c241c8bd88b0783f808752d8d442410b90000000050e8000000000fbf801601000083f8ff750433c9eb358b0d000000008b14818b4a28eb278b0485000000008d140833d681e2ff000000c1f810c1f91033f203c133c625ff00000033f08bce83c7044b894c2410759b5f5e894d008bc55b5d59c20800894d008bc55d59c20800",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_PathClass_State@@3PAXA",
+   "sym_key": "g_PathClass_State"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  }
+ ]
+}

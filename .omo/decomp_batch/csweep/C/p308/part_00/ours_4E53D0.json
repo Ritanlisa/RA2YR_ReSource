@@ -1,0 +1,39 @@
+{
+ "symbol": "?FillLobbyFactionComboBox@@YIHPAXH@Z",
+ "sym_key": "Unnamed::FillLobbyFactionComboBox",
+ "size": 149,
+ "link_base": 0,
+ "bytes_hex": "565785d2bffeffffff744e8d42ff83f8057731ff248500000000b8a4060000eb3db8a5060000eb36b8a6060000eb2fb8a7060000eb28b8a8060000eb21b8aa060000eb1a8bc283e807f7d81bc02554f9ffff05ab060000eb05b8a30600008b350000000083fe03740583fe04751c8b1495000000008b35000000003bd6750b837a6bff7505bf08000000578bd0e8000000005f5ec3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "$L1864",
+   "sym_key": "$L1864"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?SetupLobbyFactionSlots@@YIHPAXHH@Z",
+   "sym_key": "SetupLobbyFactionSlots"
+  }
+ ]
+}

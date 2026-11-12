@@ -1,0 +1,11 @@
+{
+ "addr": "0x758880",
+ "name": "VoxelRenderer::ClearDepth",
+ "size": 167,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x758880",
+ "bytes_hex": "515355568bf1578bfad94608d94604d906d9c0d8c9d9c2d8cb83ec088b1cbde0698400c74424180000000033eddec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e87d23d7ffd81d64697f0083c408dfe0f6c401740b5f5e5db8ff0000005b59c38b3cbdf469840033c985ff7e348d5304d942fcd80ed94204d84e08dec1d902d84e04dec1d8542410dfe0f6c4417508d95c24108be9eb02ddd84183c20c3bcf7ccf5f8bc55e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
