@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C6150",
+ "name": "MPBattleClass::MPManBattleClass",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C6150",
+ "bytes_hex": "8b4424188b542410568bf18b4c2418508b442414518b4c2414528b5424145051528bcee8e8f90000c7060ce57e008bc65ec21800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

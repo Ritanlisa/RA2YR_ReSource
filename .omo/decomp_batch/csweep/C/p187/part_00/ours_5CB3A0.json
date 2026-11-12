@@ -1,0 +1,15 @@
+{
+ "symbol": "?MPUnholyAllianceClass@MPBattleClass@@QAEPAIPAPBH0PAPBD1DH@Z",
+ "sym_key": "MPBattleClass::MPUnholyAllianceClass",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b4424188b542410568bf18b4c2418508b442414518b4c2414528b5424145051528bcee800000000c7060000000033c05ec21800",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Construct@MultiplayerGameMode@@QAEPAXPAX000DH@Z",
+   "sym_key": "MultiplayerGameMode::Construct"
+  }
+ ]
+}

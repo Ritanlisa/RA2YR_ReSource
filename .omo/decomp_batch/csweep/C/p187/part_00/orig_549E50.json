@@ -1,0 +1,11 @@
+{
+ "addr": "0x549E50",
+ "name": "Map_Get_549E50",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x549E50",
+ "bytes_hex": "568bf18b86a400000085c0750f8a86f402000084c07405e8b4d1ffff8b86a80200008b4c24088b54240c5e8b04888d0490c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

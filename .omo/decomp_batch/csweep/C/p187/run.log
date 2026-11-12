@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p187\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f4a70 TechnoClass::UpdateProdWithSound -> TechnoClass
+[conv] 0x4f30e0 GraphicMenuAnimItem::QueryInterface -> GraphicMenuAnimItem
+[conv] 0x5f5c20 IUnknown::Fire -> IUnknown
+[conv] 0x70f850 TechnoClass::SetIdleState -> TechnoClass
+[conv] 0x4326c0 BinkMovie::Open -> BinkMovie
+[conv] 0x549e50 ObjectClass::Map_Get_549E50 -> ObjectClass
+[conv] 0x5c0dd0 MPBattleClass::initGame -> MPBattleClass
+[conv] 0x5c5ce0 MPBattleClass::MPFreeForAllClass -> MPBattleClass
+[conv] 0x5c6150 MPBattleClass::MPManBattleClass -> MPBattleClass
+[conv] 0x5c93e0 MPBattleClass::MPMegawealthClass -> MPBattleClass
+[conv] 0x5ca630 MPBattleClass::MPSiegeClass -> MPBattleClass
+[conv] 0x5cb3a0 MPBattleClass::MPUnholyAllianceClass -> MPBattleClass
+[conv] 0x6343c0 ScriptAction::GetCoords -> ScriptAction
+[conv] 0x645b60 ObjectClass::sub_645B60 -> ObjectClass
+[conv] 0x727190 ObjectClass::sub_727190 -> ObjectClass
+[conv] 0x7465b0 TechnoClass::updateParasiteState -> TechnoClass
+[conv] 0x7465f0 TechnoClass::detachParasites -> TechnoClass
+[conv] 0x6d1bb0 sub_6D1BB0 -> _addr_6D
+[conv] 0x5f1bf0 Stream::WriteBlock -> Stream
+[conv] 0x5f3560 NullModemClass::Release -> NullModemClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] GraphicMenuAnimItem      rc=0
+[era] IUnknown                 rc=0
+[era] BinkMovie                rc=0
+[era] ObjectClass              rc=0
+[era] MPBattleClass            rc=0
+[era] ScriptAction             rc=2
+[era] _addr_6D                 rc=0
+[era] Stream                   rc=2
+[era] NullModemClass           rc=0
+=== diffasm byte-compare ===
+[diff] 0x6f4a70   MISMATCH         TechnoClass::UpdateProdWithSound
+[diff] 0x70f850   MISMATCH         TechnoClass::SetIdleState
+[diff] 0x7465b0   MATCH            TechnoClass::updateParasiteState
+[diff] 0x7465f0   MATCH            TechnoClass::detachParasites
+[diff] 0x4f30e0   MISMATCH         GraphicMenuAnimItem::QueryInterface
+[diff] 0x5f5c20   MISMATCH         IUnknown::Fire
+[diff] 0x4326c0   MISMATCH         BinkMovie::Open
+[diff] 0x549e50   MISMATCH         ObjectClass::Map_Get_549E50
+[diff] 0x645b60   MISMATCH         ObjectClass::sub_645B60
+[diff] 0x727190   MISMATCH         ObjectClass::sub_727190
+[diff] 0x5c0dd0   MISMATCH         MPBattleClass::initGame
+[diff] 0x5c5ce0   MISMATCH         MPBattleClass::MPFreeForAllClass
+[diff] 0x5c6150   MISMATCH         MPBattleClass::MPManBattleClass
+[diff] 0x5c93e0   MISMATCH         MPBattleClass::MPMegawealthClass
+[diff] 0x5ca630   MISMATCH         MPBattleClass::MPSiegeClass
+[diff] 0x5cb3a0   MISMATCH         MPBattleClass::MPUnholyAllianceClass
+[diff] 0x6d1bb0   MISMATCH         sub_6D1BB0
+[diff] 0x5f3560   MISMATCH         NullModemClass::Release
+[ledger] 0x6f4a70 TechnoClass::UpdateProdWithSound -> NG (attempt 1)
+[ledger] 0x4f30e0 GraphicMenuAnimItem::QueryInterface -> NG (attempt 1)
+[ledger] 0x5f5c20 IUnknown::Fire -> NG (attempt 1)
+[ledger] 0x70f850 TechnoClass::SetIdleState -> NG (attempt 1)
+[ledger] 0x4326c0 BinkMovie::Open -> NG (attempt 1)
+[ledger] 0x549e50 ObjectClass::Map_Get_549E50 -> NG (attempt 1)
+[ledger] 0x5c0dd0 MPBattleClass::initGame -> NG (attempt 1)
+[ledger] 0x5c5ce0 MPBattleClass::MPFreeForAllClass -> NG (attempt 1)
+[ledger] 0x5c6150 MPBattleClass::MPManBattleClass -> NG (attempt 1)
+[ledger] 0x5c93e0 MPBattleClass::MPMegawealthClass -> NG (attempt 1)
+[ledger] 0x5ca630 MPBattleClass::MPSiegeClass -> NG (attempt 1)
+[ledger] 0x5cb3a0 MPBattleClass::MPUnholyAllianceClass -> NG (attempt 1)
+[ledger] 0x6343c0 ScriptAction::GetCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x645b60 ObjectClass::sub_645B60 -> NG (attempt 1)
+[ledger] 0x727190 ObjectClass::sub_727190 -> NG (attempt 1)
+[ledger] 0x7465b0 TechnoClass::updateParasiteState -> OK (attempt 1)
+[ledger] 0x7465f0 TechnoClass::detachParasites -> OK (attempt 1)
+[ledger] 0x6d1bb0 sub_6D1BB0 -> NG (attempt 1)
+[ledger] 0x5f1bf0 Stream::WriteBlock -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f3560 NullModemClass::Release -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 2,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 3,
+  "cc_mismatch": 1,
+  "const_fold": 7,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p187\batch_report.json

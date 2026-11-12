@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F4A70",
+ "name": "TechnoClass::UpdateProdWithSound",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F4A70",
+ "bytes_hex": "8b442404568bf150e8d30df0ff84c0741c8a861804000084c0740c8b166a0d8bceff9274020000b0015ec2040032c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?updateParasiteState@TechnoClass@@QAEHD@Z",
+ "sym_key": "TechnoClass::updateParasiteState",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "a100000000568bf1508b8e1c020000e80000000084c074128a44240884c0750a8b86c40600005ec204008b86180500005ec20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  }
+ ]
+}

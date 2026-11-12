@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C93E0",
+ "name": "MPBattleClass::MPMegawealthClass",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C93E0",
+ "bytes_hex": "8b4424188b542410568bf18b4c2418508b442414518b4c2414528b5424145051528bcee858c70000c706f4e57e008bc65ec21800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

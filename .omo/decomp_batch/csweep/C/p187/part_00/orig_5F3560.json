@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F3560",
+ "name": "NullModemClass::Release",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F3560",
+ "bytes_hex": "568bf18b463c85c0750633c05ec210008b5424108b4e386a00528b5424148b01528b54241452ff500885c07503ff46685ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

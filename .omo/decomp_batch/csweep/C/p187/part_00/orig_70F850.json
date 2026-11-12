@@ -1,0 +1,11 @@
+{
+ "addr": "0x70F850",
+ "name": "TechnoClass::SetIdleState",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70F850",
+ "bytes_hex": "568bf16a016a008b06ff90800400008b166a008bceff92c80300008b066a058bcec7861802000000000000ff90f00100005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

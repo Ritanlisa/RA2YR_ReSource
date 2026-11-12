@@ -1,0 +1,11 @@
+{
+ "addr": "0x7465B0",
+ "name": "TechnoClass::updateParasiteState",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7465B0",
+ "bytes_hex": "a14c3da800568bf1508b8e1c020000e88c34dbff84c074128a44240884c0750a8b86c40600005ec204008b86180500005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

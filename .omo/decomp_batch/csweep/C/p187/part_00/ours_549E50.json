@@ -1,0 +1,15 @@
+{
+ "symbol": "?Map_Get_549E50@ObjectClass@@QAEHHH@Z",
+ "sym_key": "ObjectClass::Map_Get_549E50",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86a400000085c0750f8a86f402000084c07405e8000000008b86a80200008b4c24085e8b14888b4424088d0482c20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?LoadFileData@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::LoadFileData"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetIdleState@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::SetIdleState",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568bf16a016a008b0656ff90800400008b0e6a0056ff91c80300008b066a0556c7861802000000000000ff90f00100005ec3",
+ "relocs": []
+}
