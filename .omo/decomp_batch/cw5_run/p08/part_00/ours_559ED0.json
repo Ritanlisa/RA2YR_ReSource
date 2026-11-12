@@ -1,0 +1,183 @@
+{
+ "symbol": "?Read@LoadOptions@@QAGDPAH@Z",
+ "sym_key": "LoadOptions::Read",
+ "size": 463,
+ "link_base": 0,
+ "bytes_hex": "51a00000000053558b6c240884c057750d85ed75095f5d32c05b59c2080033c08d7d2ca0000000005057e80000000083c40885c075095f5d32c05b59c208008d4c240ce8000000008d54240c8bcfe8000000008ad884db75075f5d5b59c208008d4c240c51e8000000008b0d0000000083c4048d54240c3bc1527527e8000000005033c0a00000000050e80000000083c40c33c98a0d00000000c681b501000000eb25e8000000005033c0a00000000050e80000000083c40c33c98a0d00000000c681b50100000133d2568a15000000008d4c2410889ab4010000e80000000033c98a0d000000008981200100008d4c2410e80000000033d28d4c24108a15000000008982a8010000e80000000033c933d28a0d000000008981b80100008a150000000083c9ff33c081c200010000f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a48d4c2410e80000000033c9508a0d0000000081c12801000051e80000000033c083c9ffa00000000083c4088d900001000033c08bfaf2aef7d14975218dbd3001000083c9fff2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a48b551833c98a0d0000000033c05e5f8991b0010000a0000000008b4d145d8988ac010000b0015b59c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?MultiByteStr@@3EA",
+   "sym_key": "MultiByteStr"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Reset@GameState@@QAEPAV1@XZ",
+   "sym_key": "GameState::Reset"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?LoadOptions_Load@@YIDPAXH@Z",
+   "sym_key": "LoadOptions_Load"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?ReadPointerFromECX3@@YAHPAX@Z",
+   "sym_key": "ReadPointerFromECX3"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83D560@@3IA",
+   "sym_key": "DataGlobal_83D560"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?_raw_name_type_info__QBEPBDXZ@@YAHPAXZZ",
+   "sym_key": "_raw_name_type_info__QBEPBDXZ"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?_raw_name_type_info__QBEPBDXZ@@YAHPAXZZ",
+   "sym_key": "_raw_name_type_info__QBEPBDXZ"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?GetFlag99@LoadOptions@@QAEHXZ",
+   "sym_key": "LoadOptions::GetFlag99"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 243,
+   "type": "REL32",
+   "sym": "?GetFlag98@LoadOptions@@QAEHXZ",
+   "sym_key": "LoadOptions::GetFlag98"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "?GetFlag252@LoadOptions@@QAEHXZ",
+   "sym_key": "LoadOptions::GetFlag252"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 288,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 332,
+   "type": "REL32",
+   "sym": "?GetData@LoadOptions@@QAEPADXZ",
+   "sym_key": "LoadOptions::GetData"
+  },
+  {
+   "off": 341,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 353,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 427,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 442,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  }
+ ]
+}

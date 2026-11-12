@@ -1,0 +1,81 @@
+{
+ "symbol": "?RemoveEntry@HashTable@@QAEXPBD@Z",
+ "sym_key": "HashTable::RemoveEntry",
+ "size": 471,
+ "link_base": 0,
+ "bytes_hex": "81ec100300008b84241403000053558be956508d4c2410e8000000008b450433db3bc3895c24180f84910100008d4c240c51ff55188b4d0cba01000000d3e28b4d004a23c28b34813bf30f846e0100008d54240c8bce52e80000000084c0751e8bb6080300003bf30f84500100008d44240c8bce50e80000000084c074e283c604573bf3740bb9c10000008d7c241cf3a58b45043bc30f841201000048895c2418894424148d4c2410df6c241451da7508d95c2418ff55188b4d0cba01000000d3e28bf08b45004a23f28b3cb03bfb0f84d90000008d4c2410518bcfe80000000084c0745a8b55008b3cb285ff8b9f08030000740f57e80000000057e80000000083c4088b4500d9442414891cb0dc5520dfe0f6c4017404b101eb0232c9dc5d20dfe0f6c4407404b001eb0232c08b75044e84c9897504756c84c07471eb668bb7080300003bf3744e8d4c2410518bcee80000000084c0751c8bfe8bb6080300003bf374328d5424108bce52e80000000084c074e48b8608030000568987080300008b5d044b895d04e80000000056e80000000083c408d9442414dc5d20dfe0f6c441740955e80000000083c4048b44241c5f85c074078b086a0150ff118d54240c52e80000000083c4045e5d5b81c410030000c20400",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 337,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 365,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 394,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 400,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 423,
+   "type": "REL32",
+   "sym": "?HashTable__RebuildEx@@YAHPAX@Z",
+   "sym_key": "HashTable__RebuildEx"
+  },
+  {
+   "off": 452,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "symbol": "?sub_792CF0@@YGHPAXHHPAD@Z",
+ "sym_key": "Unnamed::sub_792CF0",
+ "size": 224,
+ "link_base": 0,
+ "bytes_hex": "8b442408563d100100000f8eb70000002d110100000f848100000083e80274622d84030000756f8b7424086a016a0068a904000056e800000000a1000000006a00506a4556e8000000008bcee80000000068a907000056e8000000006a008bf06a0068d504000056e8000000006a006a0068d304000056e80000000033c05ec210008b7424086a0556e8000000006a4556e80000000033c05ec210008b0d0000000051e800000000ba010000008b4c2408e8000000008b0d00000000e80000000033c05ec2100074cd83c0fe83f82977c533d28a9000000000ff249500000000",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?uElapse@@3IA",
+   "sym_key": "uElapse"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?SetTimer@@YGIPAXHHH@Z",
+   "sym_key": "SetTimer"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?LookupAndMark@HashTable@@QAEHXZ",
+   "sym_key": "HashTable::LookupAndMark"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?PostMessageA@@YGHHHHH@Z",
+   "sym_key": "PostMessageA"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?PostMessageA@@YGHHHHH@Z",
+   "sym_key": "PostMessageA"
+  },
+  {
+   "off": 138,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?KillTimer@@YGHPAXH@Z",
+   "sym_key": "KillTimer"
+  },
+  {
+   "off": 158,
+   "type": "DIR32",
+   "sym": "?Handles@@3PAXA",
+   "sym_key": "Handles"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?SetEvent@@YGHPAX@Z",
+   "sym_key": "SetEvent"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?CloseDialog@@YIDPAXH@Z",
+   "sym_key": "CloseDialog"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?aNetstatus@@3HA",
+   "sym_key": "aNetstatus"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?ShowDialog@WebBrowser@@QAEPAXXZ",
+   "sym_key": "WebBrowser::ShowDialog"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "$L2024",
+   "sym_key": "$L2024"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "$L2025",
+   "sym_key": "$L2025"
+  }
+ ]
+}

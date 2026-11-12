@@ -1,0 +1,75 @@
+{
+ "symbol": "?GetAnimation@AnimClass@@QAEHPAH@Z",
+ "sym_key": "AnimClass::GetAnimation",
+ "size": 427,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53568b742418578b460c059c0000008b08894c24108b5004895424148b78088d44241050e8000000008bd88b460c3bfb8b087c786a006a0050ff91200100008b460c508b10ff9284000000db801c07000083ec08dc3d00000000dd1c24e8000000008bc88b4424240fbe15a001000033c883c40881e1ff00000089562833c18b4c241c894e2c8b4e0c8946308946348b116a006a0051ff9244050000c74618060000005f5e5b83c40cc204008b54241c5250ff91c80100008bf88b460c508b08ff91380500008b154002000089442410db44241083ec08dc4a20dd1c24e8000000008bc88b44242433c883c40881e1ff00000033c183f8057f05b8050000008b4c240c03c83bcb894c240c7e04895c240c8b460c8d4c241451508b10ff92b401000083ffce7f788b460c508b10ff92c801000083f8ce7e678b460c6a008d5424108b889c000000a140020000894c24108b8874010000e80000000068c8010000e80000000083c40485c074338b4e0c6a006a0068000600008b919c0000006a018954241c8b15400200008d4c241c6a00518b8a94020000518bc8e8000000005f5e5b83c40cc20400",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "__real@8@40058000000000000000",
+   "sym_key": "_real@8@40058000000000000000"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 331,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 346,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  },
+  {
+   "off": 356,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 393,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 414,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  }
+ ]
+}

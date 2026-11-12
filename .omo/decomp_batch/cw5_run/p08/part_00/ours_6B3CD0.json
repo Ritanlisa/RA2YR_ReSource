@@ -1,0 +1,117 @@
+{
+ "symbol": "?sub_6B3CD0@@YIDHDHI@Z",
+ "sym_key": "Unnamed::sub_6B3CD0",
+ "size": 398,
+ "link_base": 0,
+ "bytes_hex": "83ec14a10000000053555633f6573bc6885424138bd989350000000074198a0d0000000084c9740f50e80000000083c4048935000000008b6c242889350000000055c6050000000000e8000000000fbff58b44242cc7442414010000008bc88bd0d1e983e20483e104d1e20bca83e0030bc8a1000000008b15000000002bf08bc5894c2418c1f8100fbff82bfa8974241c8d470250578944242889442434e80000000083c40885c00f85c80000008d46023bf08bee0f8d840000008b4c24148b44241885c1745d8b1500000000a1000000000fafd703d58d0cd08a44d00484c074088a44241384c074638b318d045b8d14808bc203c63db400000089017e042bc289018a542413c641050157558bcbe80000000084c075088a44241384c0742d8b74241c8b4c24148d4602458d14093be8895424147c848b4c2420894c242c8b4c242c473bf97d2ae964ffffff8b150000000052e80000000083c404c705000000000000000032c05f5e5d5b83c414c208008b6c24288b54242c8a4c241355e8000000005f5e5d5b83c414c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B654@@3IA",
+   "sym_key": "DataGlobal_B0B654"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_SlaveMgrPool@@3IA",
+   "sym_key": "g_SlaveMgrPool"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B65D@@3EA",
+   "sym_key": "DataGlobal_B0B65D"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B654@@3IA",
+   "sym_key": "DataGlobal_B0B654"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B658@@3IA",
+   "sym_key": "DataGlobal_B0B658"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B65D@@3EA",
+   "sym_key": "DataGlobal_B0B65D"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?InitializeBuildabilityGrid@@YGHH@Z",
+   "sym_key": "InitializeBuildabilityGrid"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759A8@@3IA",
+   "sym_key": "DataGlobal_8759A8"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759AC@@3IA",
+   "sym_key": "DataGlobal_8759AC"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?__OFSUB__@@YAHHHZZ",
+   "sym_key": "__OFSUB__"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759A4@@3IA",
+   "sym_key": "DataGlobal_8759A4"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?g_SlaveManagerPool@@3PAXA",
+   "sym_key": "g_SlaveManagerPool"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?FlowTerrainCompute@@YIDPAXDHH@Z",
+   "sym_key": "FlowTerrainCompute"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?g_SlaveManagerPool@@3PAXA",
+   "sym_key": "g_SlaveManagerPool"
+  },
+  {
+   "off": 341,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 350,
+   "type": "DIR32",
+   "sym": "?g_SlaveManagerPool@@3PAXA",
+   "sym_key": "g_SlaveManagerPool"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "?ProcessBuildingClassConstruction@@YIDDHH@Z",
+   "sym_key": "ProcessBuildingClassConstruction"
+  }
+ ]
+}

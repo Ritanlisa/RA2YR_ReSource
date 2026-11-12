@@ -1,0 +1,105 @@
+{
+ "symbol": "?Network_Set@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::Network_Set",
+ "size": 300,
+ "link_base": 0,
+ "bytes_hex": "558be968e50500008b450050e80000000085c0745e8b4d0883c170516a1568b304000050e8000000008b550883c27052e80000000083c40485c074118b450883c07050e80000000083c404eb2668f5020000681c01000033d2b910010000e8000000008b4d085083c17051e80000000083c4088bcde8000000008b550068df05000052e80000000085c074178b4d0881c19a000000516a1568b504000050e8000000008bcde8000000008b5500686406000052e80000000085c0742e6a006a0068f000000050e80000000083f801751a56578b7d088d750cb91c000000f3a55f5e8bcde8000000005dc38b4508c700000000008b4d0883c8ff8941048b55088942088b4d08c7410c000000008b55088942108b4508c74014030000008b4d08c64120008bcde8000000005dc3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "__wcsupr",
+   "sym_key": "_wcsupr"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83665C@@3IA",
+   "sym_key": "DataGlobal_83665C"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83665C@@3IA",
+   "sym_key": "DataGlobal_83665C"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBXH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 228,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
