@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_69BD00@@YGHH@Z",
+ "sym_key": "Unnamed::sub_69BD00",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "a100000000535533db565785c077095f5e5d33c05bc204008b6c2414a1000000008b34ad000000008b0c98e8000000008bce8bf8e8000000005057e80000000083c40885c07413a100000000433bd872cb5f5e5d33c05bc204005f5e8bc35d5bc20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?Game_PlayerCount@@3IA",
+   "sym_key": "Game_PlayerCount"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IB",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAD@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAD@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?Game_PlayerCount@@3IA",
+   "sym_key": "Game_PlayerCount"
+  }
+ ]
+}

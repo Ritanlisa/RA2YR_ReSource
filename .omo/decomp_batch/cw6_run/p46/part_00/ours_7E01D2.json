@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_7E01D2@@YAXPAE00H@Z",
+ "sym_key": "Unnamed::sub_7E01D2",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "8b4c24108b44241055568b742410578b7c24188d2c098b4c2410240033d28a110bd033c08a0680e2000bc24146478a90000000004d8857ff75e25f5e5dc3",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F91C@@3PAEA",
+   "sym_key": "DataGlobal_A8F91C"
+  }
+ ]
+}

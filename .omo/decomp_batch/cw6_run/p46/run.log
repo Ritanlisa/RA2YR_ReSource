@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p46\part_00
+=== convert (20 addrs) ===
+[conv] 0x7e0001 sub_7E0001 -> _addr_7E
+[conv] 0x7e0170 ObfuscateDataBlock -> _addr_7E
+[conv] 0x7e01d2 sub_7E01D2 -> _addr_7E
+[conv] 0x46da20 sub_46DA20 -> _addr_46
+[conv] 0x664440 EventClass::validateEventType -> EventClass
+[conv] 0x69bd00 sub_69BD00 -> _addr_69
+[conv] 0x49c5a0 CampaignClass::SaveProgress -> CampaignClass
+[conv] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> ObjectClass
+[conv] 0x533fd0 AllocateSurfaceScreenSurfaces -> _addr_53
+[conv] 0x5c1dc0 MPCooperative::Seek -> MPCooperative
+[conv] 0x5e9b60 SelectLobbyCountry -> _addr_5E
+[conv] 0x5e9c00 AssignPlayerColor -> _addr_5E
+[conv] 0x5edde0 EnablePlayerSlotControls -> _addr_5E
+[conv] 0x640710 Skirmish::RenderPreview -> Skirmish
+[conv] 0x64a7b0 ObjectClass::RenderPlayerLatencyBars -> ObjectClass
+[conv] 0x64ad10 Network_Process_64AD10 -> Network_Process
+[conv] 0x6523a0 Network::SendUnreachable -> Network
+[conv] 0x658330 TabClass::DrawPower -> TabClass
+[conv] 0x693b70 RequestNetworkFile -> _addr_69
+[conv] 0x6c8ff0 DlgProcScoreScreen -> _addr_6C
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7E                 rc=0
+[era] _addr_46                 rc=0
+[era] EventClass               rc=2
+[era] _addr_69                 rc=2
+[era] CampaignClass            rc=2
+[era] ObjectClass              rc=2
+[era] _addr_53                 rc=2
+[era] MPCooperative            rc=2
+[era] _addr_5E                 rc=2
+[era] Skirmish                 rc=2
+[era] Network_Process          rc=2
+[era] Network                  rc=2
+[era] TabClass                 rc=2
+[era] _addr_6C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7e0001   MISMATCH         sub_7E0001
+[diff] 0x7e0170   MISMATCH         ObfuscateDataBlock
+[diff] 0x7e01d2   MISMATCH         sub_7E01D2
+[diff] 0x46da20   MISMATCH         sub_46DA20
+[diff] 0x69bd00   MISMATCH         sub_69BD00
+[ledger] 0x7e0001 sub_7E0001 -> NG (attempt 2)
+[ledger] 0x7e0170 ObfuscateDataBlock -> NG (attempt 2)
+[ledger] 0x7e01d2 sub_7E01D2 -> NG (attempt 2)
+[ledger] 0x46da20 sub_46DA20 -> NG (attempt 5)
+[ledger] 0x664440 EventClass::validateEventType -> COMPILE_FAIL (attempt 12)
+[ledger] 0x69bd00 sub_69BD00 -> NG (attempt 4)
+[ledger] 0x49c5a0 CampaignClass::SaveProgress -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> COMPILE_FAIL (attempt 4)
+[ledger] 0x533fd0 AllocateSurfaceScreenSurfaces -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c1dc0 MPCooperative::Seek -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e9b60 SelectLobbyCountry -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e9c00 AssignPlayerColor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5edde0 EnablePlayerSlotControls -> COMPILE_FAIL (attempt 4)
+[ledger] 0x640710 Skirmish::RenderPreview -> COMPILE_FAIL (attempt 4)
+[ledger] 0x64a7b0 ObjectClass::RenderPlayerLatencyBars -> COMPILE_FAIL (attempt 4)
+[ledger] 0x64ad10 Network_Process_64AD10 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6523a0 Network::SendUnreachable -> COMPILE_FAIL (attempt 4)
+[ledger] 0x658330 TabClass::DrawPower -> COMPILE_FAIL (attempt 4)
+[ledger] 0x693b70 RequestNetworkFile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c8ff0 DlgProcScoreScreen -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 15
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "frame_sched": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p46\batch_report.json

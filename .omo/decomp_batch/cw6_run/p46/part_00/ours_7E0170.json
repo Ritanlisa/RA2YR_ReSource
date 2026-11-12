@@ -1,0 +1,45 @@
+{
+ "symbol": "?ObfuscateDataBlock@@YAXPAH0H@Z",
+ "sym_key": "Unnamed::ObfuscateDataBlock",
+ "size": 154,
+ "link_base": 0,
+ "bytes_hex": "8b44240c5355568b7424108d68fe578b7c2418d1ed8b1e6a085383c602e8000000008bcb33d281e1ffff00006a088a91000000008bca0bc833c080e1008ac70bc851e800000000c1eb0881e3ffff000033c924006a108a8b000000000bc851e800000000890783c41883c7044d75a6668b0e8d47018ad188178bd181e2ffff0000405f5e8a92000000005d8850ff33d28ad5c640010088105bc3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?__ROR4__@@YAHHHZZ",
+   "sym_key": "__ROR4__"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F91C@@3PAEA",
+   "sym_key": "DataGlobal_A8F91C"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__ROR4__@@YAHHHZZ",
+   "sym_key": "__ROR4__"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F91C@@3PAEA",
+   "sym_key": "DataGlobal_A8F91C"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?__ROR4__@@YAHHHZZ",
+   "sym_key": "__ROR4__"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F91C@@3PAEA",
+   "sym_key": "DataGlobal_A8F91C"
+  }
+ ]
+}

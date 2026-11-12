@@ -11931,14 +11931,14 @@
   "this_as_id": false
  },
  "0x46da20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "sub_46DA20",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "sub_46DA20",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x46dc90": {
@@ -16877,7 +16877,7 @@
   "this_as_id": false
  },
  "0x49c5a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28666,7 +28666,7 @@
   "this_as_id": false
  },
  "0x4f1ca0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -33255,7 +33255,7 @@
   "this_as_id": false
  },
  "0x533fd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "AllocateSurfaceScreenSurfaces",
@@ -45447,7 +45447,7 @@
   "this_as_id": false
  },
  "0x5c1dc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49915,7 +49915,7 @@
   "this_as_id": false
  },
  "0x5e9b60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "SelectLobbyCountry",
@@ -49926,7 +49926,7 @@
   "this_as_id": false
  },
  "0x5e9c00": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "AssignPlayerColor",
@@ -49991,7 +49991,7 @@
   "this_as_id": false
  },
  "0x5edde0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "EnablePlayerSlotControls",
@@ -55863,7 +55863,7 @@
   "this_as_id": false
  },
  "0x640710": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -56742,7 +56742,7 @@
   "this_as_id": false
  },
  "0x64a7b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -56754,7 +56754,7 @@
   "this_as_id": false
  },
  "0x64ad10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Network_Process_64AD10",
@@ -56817,7 +56817,7 @@
   "this_as_id": false
  },
  "0x6523a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -57228,7 +57228,7 @@
   "this_as_id": false
  },
  "0x658330": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -59537,7 +59537,7 @@
   "this_as_id": false
  },
  "0x664440": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -61676,7 +61676,7 @@
   "this_as_id": false
  },
  "0x693b70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "RequestNetworkFile",
@@ -62250,14 +62250,14 @@
   "this_as_id": false
  },
  "0x69bd00": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+13 jle 0x69bd48",
   "name": "sub_69BD00",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/signedness",
   "orig_name": "sub_69BD00",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69c4d0": {
@@ -67992,13 +67992,13 @@
   "this_as_id": false
  },
  "0x6c8ff0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "DlgProcScoreScreen",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DlgProcScoreScreen",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -92165,14 +92165,14 @@
   "this_as_id": false
  },
  "0x7e0001": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "sub_7E0001",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_7E0001",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7e00a6": {
@@ -92187,21 +92187,25 @@
   "this_as_id": false
  },
  "0x7e0170": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+0 push ebp",
   "name": "ObfuscateDataBlock",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ObfuscateDataBlock",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7e01d2": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "sub_7E01D2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_7E01D2",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  }
 }
