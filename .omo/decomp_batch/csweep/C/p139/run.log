@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p139\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e8f60 _DynamicVectorClass_PAVBulletTypeClass::Destroy_1 -> _DynamicVectorClass_PAVBulletTypeClass
+[conv] 0x4e8fc0 _DynamicVectorClass_PAVVoxelAnimTypeClass::Destroy -> _DynamicVectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4e9020 _DynamicVectorClass_PAVIsometricTileTypeClass::Destroy_0 -> _DynamicVectorClass_PAVIsometricTileTypeClass
+[conv] 0x4e9080 _DynamicVectorClass_PAVParticleTypeClass::Destroy -> _DynamicVectorClass_PAVParticleTypeClass
+[conv] 0x4e90e0 _DynamicVectorClass_PAVParticleSystemTypeClass::Destroy_0 -> _DynamicVectorClass_PAVParticleSystemTypeClass
+[conv] 0x4e9140 _DynamicVectorClass_PAVSuperWeaponTypeClass::Destroy_1 -> _DynamicVectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4e91a0 _DynamicVectorClass_PAVAbstractTypeClass::Destroy_0 -> _DynamicVectorClass_PAVAbstractTypeClass
+[conv] 0x4f2850 DynamicVector::vt_placeholder_05 -> DynamicVector
+[conv] 0x50e4a0 _DynamicVectorClass_PBVBuildingTypeClass::ddtor -> _DynamicVectorClass_PBVBuildingTypeClass
+[conv] 0x50e500 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::Destroy -> _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50e5d0 DynamicVector::getTargetCoordinates -> DynamicVector
+[conv] 0x50e640 VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy_0 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x50e6a0 _DynamicVectorClass_PBVTeamTypeClass::Destroy -> _DynamicVectorClass_PBVTeamTypeClass
+[conv] 0x50e700 _DynamicVectorClass__N::Destroy -> _DynamicVectorClass__N
+[conv] 0x5128a0 _DynamicVectorClass_PBVInfantryTypeClass::ddtor -> _DynamicVectorClass_PBVInfantryTypeClass
+[conv] 0x512900 _DynamicVectorClass_PBVUnitTypeClass::ddtor -> _DynamicVectorClass_PBVUnitTypeClass
+[conv] 0x512990 _DynamicVectorClass_PBVAircraftTypeClass::ddtor -> _DynamicVectorClass_PBVAircraftTypeClass
+[conv] 0x51aa10 InfantryClass::HandleTargetDestroyed -> InfantryClass
+[conv] 0x524ed0 _DynamicVectorClass_PBVAnimTypeClass::GetClassIdentifier -> _DynamicVectorClass_PBVAnimTypeClass
+[conv] 0x5384c0 DynamicVector::performAction_239 -> DynamicVector
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVBulletTypeClass rc=0
+[era] _DynamicVectorClass_PAVVoxelAnimTypeClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileTypeClass rc=0
+[era] _DynamicVectorClass_PAVParticleTypeClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemTypeClass rc=0
+[era] _DynamicVectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _DynamicVectorClass_PAVAbstractTypeClass rc=0
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PBVBuildingTypeClass rc=0
+[era] _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass rc=0
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] _DynamicVectorClass_PBVTeamTypeClass rc=0
+[era] _DynamicVectorClass__N   rc=0
+[era] _DynamicVectorClass_PBVInfantryTypeClass rc=0
+[era] _DynamicVectorClass_PBVUnitTypeClass rc=0
+[era] _DynamicVectorClass_PBVAircraftTypeClass rc=0
+[era] InfantryClass            rc=2
+[era] _DynamicVectorClass_PBVAnimTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e8f60   MISMATCH         _DynamicVectorClass_PAVBulletTypeClass::Destroy_1
+[diff] 0x4e8fc0   MISMATCH         _DynamicVectorClass_PAVVoxelAnimTypeClass::Destroy
+[diff] 0x4e9020   MISMATCH         _DynamicVectorClass_PAVIsometricTileTypeClass::Destroy_0
+[diff] 0x4e9080   MISMATCH         _DynamicVectorClass_PAVParticleTypeClass::Destroy
+[diff] 0x4e90e0   MISMATCH         _DynamicVectorClass_PAVParticleSystemTypeClass::Destroy_0
+[diff] 0x4e9140   MISMATCH         _DynamicVectorClass_PAVSuperWeaponTypeClass::Destroy_1
+[diff] 0x4e91a0   MISMATCH         _DynamicVectorClass_PAVAbstractTypeClass::Destroy_0
+[diff] 0x4f2850   MISMATCH         DynamicVector::vt_placeholder_05
+[diff] 0x50e5d0   MISMATCH         DynamicVector::getTargetCoordinates
+[diff] 0x5384c0   MISMATCH         DynamicVector::performAction_239
+[diff] 0x50e4a0   MISMATCH         _DynamicVectorClass_PBVBuildingTypeClass::ddtor
+[diff] 0x50e500   MISMATCH         _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::Destroy
+[diff] 0x50e640   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy_0
+[diff] 0x50e6a0   MISMATCH         _DynamicVectorClass_PBVTeamTypeClass::Destroy
+[diff] 0x50e700   MISMATCH         _DynamicVectorClass__N::Destroy
+[diff] 0x5128a0   MISMATCH         _DynamicVectorClass_PBVInfantryTypeClass::ddtor
+[diff] 0x512900   MISMATCH         _DynamicVectorClass_PBVUnitTypeClass::ddtor
+[diff] 0x512990   MISMATCH         _DynamicVectorClass_PBVAircraftTypeClass::ddtor
+[diff] 0x524ed0   MISMATCH         _DynamicVectorClass_PBVAnimTypeClass::GetClassIdentifier
+[ledger] 0x4e8f60 _DynamicVectorClass_PAVBulletTypeClass::Destroy_1 -> NG (attempt 1)
+[ledger] 0x4e8fc0 _DynamicVectorClass_PAVVoxelAnimTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e9020 _DynamicVectorClass_PAVIsometricTileTypeClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e9080 _DynamicVectorClass_PAVParticleTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e90e0 _DynamicVectorClass_PAVParticleSystemTypeClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e9140 _DynamicVectorClass_PAVSuperWeaponTypeClass::Destroy_1 -> NG (attempt 1)
+[ledger] 0x4e91a0 _DynamicVectorClass_PAVAbstractTypeClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4f2850 DynamicVector::vt_placeholder_05 -> NG (attempt 1)
+[ledger] 0x50e4a0 _DynamicVectorClass_PBVBuildingTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x50e500 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::Destroy -> NG (attempt 1)
+[ledger] 0x50e5d0 DynamicVector::getTargetCoordinates -> NG (attempt 1)
+[ledger] 0x50e640 VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x50e6a0 _DynamicVectorClass_PBVTeamTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x50e700 _DynamicVectorClass__N::Destroy -> NG (attempt 1)
+[ledger] 0x5128a0 _DynamicVectorClass_PBVInfantryTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x512900 _DynamicVectorClass_PBVUnitTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x512990 _DynamicVectorClass_PBVAircraftTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x51aa10 InfantryClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x524ed0 _DynamicVectorClass_PBVAnimTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x5384c0 DynamicVector::performAction_239 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 15,
+  "const_fold": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p139\batch_report.json
