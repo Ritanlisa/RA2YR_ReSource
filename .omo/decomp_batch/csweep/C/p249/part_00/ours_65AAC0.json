@@ -1,0 +1,15 @@
+{
+ "symbol": "?ExecuteAction@RadioClass@@QAEHHD@Z",
+ "sym_key": "RadioClass::ExecuteAction",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b86e800000033c985c07e2b8a54240c578b7c240c8b86e4000000393c88750b84d27407c70488000000008b86e8000000413bc87cdf5f5ec20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Unlink@Object@@QAEHXZ",
+   "sym_key": "Object::Unlink"
+  }
+ ]
+}

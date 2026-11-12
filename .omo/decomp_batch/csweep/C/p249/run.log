@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p249\part_00
+=== convert (20 addrs) ===
+[conv] 0x549ae0 IsometricTileTypeClass::GetHeight -> IsometricTileTypeClass
+[conv] 0x5c60d0 ShowConfirmDialog -> _addr_5C
+[conv] 0x65b530 RadSiteClass::Add -> RadSiteClass
+[conv] 0x7d2ed8 exception::_0exception_QAE_ABV0__Z -> exception
+[conv] 0x51df10 InfantryClass::CancelMovement -> InfantryClass
+[conv] 0x720020 TextButtonClass::getCurrentWeapon -> TextButtonClass
+[conv] 0x71ab10 TemporalClass::GetWarpPerStep -> TemporalClass
+[conv] 0x404e20 PollNextAudioQueue -> _addr_40
+[conv] 0x5a9a20 ListNode::Alloc -> ListNode
+[conv] 0x5c5d40 FreeForAll::Read -> FreeForAll
+[conv] 0x5e8d40 RefreshLobbyAll_Helper -> RefreshLobbyAll
+[conv] 0x625db0 File::FindByPrefix -> File
+[conv] 0x6261b0 ObjectClass::sub_6261B0 -> ObjectClass
+[conv] 0x65aac0 RadioClass::ExecuteAction -> RadioClass
+[conv] 0x660000 ObjectClass::Render_Render_660000 -> ObjectClass
+[conv] 0x749150 Array::ByteSwap -> Array
+[conv] 0x4a51f0 RateScaler::Init -> RateScaler
+[conv] 0x558740 LoadOptions::LoadOptions -> LoadOptions
+[conv] 0x6e2a50 ObjectClass::sub_6E2A50 -> ObjectClass
+[conv] 0x719f30 JumpjetLocomotionClass::StubReturnTrue_7 -> JumpjetLocomotionClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IsometricTileTypeClass   rc=2
+[era] _addr_5C                 rc=0
+[era] RadSiteClass             rc=2
+[era] exception                rc=0
+[era] InfantryClass            rc=2
+[era] TextButtonClass          rc=0
+[era] TemporalClass            rc=2
+[era] _addr_40                 rc=0
+[era] ListNode                 rc=0
+[era] FreeForAll               rc=0
+[era] RefreshLobbyAll          rc=2
+[era] File                     rc=0
+[era] ObjectClass              rc=0
+[era] RadioClass               rc=0
+[era] Array                    rc=0
+[era] RateScaler               rc=2
+[era] LoadOptions              rc=2
+[era] JumpjetLocomotionClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x5c60d0   MISMATCH         ShowConfirmDialog
+[diff] 0x7d2ed8   MISMATCH         exception::_0exception_QAE_ABV0__Z
+[diff] 0x720020   MISMATCH         TextButtonClass::getCurrentWeapon
+[diff] 0x404e20   MISMATCH         PollNextAudioQueue
+[diff] 0x5a9a20   MISMATCH         ListNode::Alloc
+[diff] 0x5c5d40   MISMATCH         FreeForAll::Read
+[diff] 0x625db0   MISMATCH         File::FindByPrefix
+[diff] 0x6261b0   MISMATCH         ObjectClass::sub_6261B0
+[diff] 0x660000   MISMATCH         ObjectClass::Render_Render_660000
+[diff] 0x6e2a50   MISMATCH         ObjectClass::sub_6E2A50
+[diff] 0x65aac0   MISMATCH         RadioClass::ExecuteAction
+[diff] 0x749150   MISMATCH         Array::ByteSwap
+[diff] 0x719f30   MISMATCH         JumpjetLocomotionClass::StubReturnTrue_7
+[ledger] 0x549ae0 IsometricTileTypeClass::GetHeight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c60d0 ShowConfirmDialog -> NG (attempt 1)
+[ledger] 0x65b530 RadSiteClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d2ed8 exception::_0exception_QAE_ABV0__Z -> NG (attempt 1)
+[ledger] 0x51df10 InfantryClass::CancelMovement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x720020 TextButtonClass::getCurrentWeapon -> NG (attempt 1)
+[ledger] 0x71ab10 TemporalClass::GetWarpPerStep -> COMPILE_FAIL (attempt 1)
+[ledger] 0x404e20 PollNextAudioQueue -> NG (attempt 1)
+[ledger] 0x5a9a20 ListNode::Alloc -> NG (attempt 1)
+[ledger] 0x5c5d40 FreeForAll::Read -> NG (attempt 1)
+[ledger] 0x5e8d40 RefreshLobbyAll_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x625db0 File::FindByPrefix -> NG (attempt 1)
+[ledger] 0x6261b0 ObjectClass::sub_6261B0 -> NG (attempt 1)
+[ledger] 0x65aac0 RadioClass::ExecuteAction -> NG (attempt 1)
+[ledger] 0x660000 ObjectClass::Render_Render_660000 -> NG (attempt 1)
+[ledger] 0x749150 Array::ByteSwap -> NG (attempt 1)
+[ledger] 0x4a51f0 RateScaler::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x558740 LoadOptions::LoadOptions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e2a50 ObjectClass::sub_6E2A50 -> NG (attempt 1)
+[ledger] 0x719f30 JumpjetLocomotionClass::StubReturnTrue_7 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "regalloc": 4,
+  "branch_order": 1,
+  "const_fold": 2,
+  "codegen_shape": 3,
+  "branch_polarity": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p249\batch_report.json

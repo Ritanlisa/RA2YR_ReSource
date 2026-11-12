@@ -1,0 +1,11 @@
+{
+ "addr": "0x749150",
+ "name": "Array::ByteSwap",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x749150",
+ "bytes_hex": "5355578bf933ed39af0408000074328b870008000033db3bc57e26568bf78b0650e8f8f7070089068b87000800004383c6043bd87ce889af040800005e5f5d5bc389af040800005f5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

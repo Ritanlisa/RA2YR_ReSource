@@ -1,0 +1,15 @@
+{
+ "symbol": "?_0exception_QAE_ABV0__Z@exception@@QAEPAV1@PBX@Z",
+ "sym_key": "exception::_0exception_QAE_ABV0__Z",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c8bd957c703000000008b460885c089430874468b7e0483c9ff33c0f2aef7d151e8000000008bd083c40485d2895304742e8b7e0483c9ff33c0f2aef7d12bf98bc18bf78bfac1e902f3a58bc88bc383e103f3a45f5e5bc204008b4e04894b045f8bc35e5bc20400",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturnTrue_7@JumpjetLocomotionClass@@QAG_NH@Z",
+ "sym_key": "JumpjetLocomotionClass::StubReturnTrue_7",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b4eec8d46ec50ff511084c075338b463085c0742c8b461cf6c4ff75248b46f48a887c02000084c975178b4e2085c975108a88ad06000084c97506b0015ec2080032c05ec20800",
+ "relocs": []
+}

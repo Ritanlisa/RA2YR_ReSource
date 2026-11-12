@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_6E2A50@ObjectClass@@QAEDHHHH@Z",
+ "sym_key": "ObjectClass::sub_6E2A50",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "5356578bf98b474c85c07442a10000000033f685c08bd876358b0d00000000558b04b18b6f4c8b50243bd5751385c0740e8b086a0150ff51208b0d000000004e463bf37cdb5d5f5eb0015bc210005f5eb0015bc21000",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_GameObjectCleanup@@3IA",
+   "sym_key": "g_GameObjectCleanup"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_TagClassCount@@3PAXA",
+   "sym_key": "g_TagClassCount"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?g_TagClassCount@@3PAXA",
+   "sym_key": "g_TagClassCount"
+  }
+ ]
+}

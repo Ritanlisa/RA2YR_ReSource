@@ -1,0 +1,11 @@
+{
+ "addr": "0x720020",
+ "name": "AbstractClass::getCurrentWeapon",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x720020",
+ "bytes_hex": "8b442404568bf18b16894638ff52488a44240c84c0742f8b463885c074288b4e3c57e88960d8ff8bf88b46386a00508bcfe87a3ed1ff83c0088946148b4f1c83c1025f894e185ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

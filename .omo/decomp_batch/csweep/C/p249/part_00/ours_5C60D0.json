@@ -1,0 +1,51 @@
+{
+ "symbol": "?ShowConfirmDialog@@YAHPAGH@Z",
+ "sym_key": "Unnamed::ShowConfirmDialog",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "a1000000005633c96a6c668b0d000000005033d2e8000000008b0d000000006a6c5133c9668b0d0000000033d28bf0e8000000008b5424088b4c2408526a006a005650e800000000f7d81bc05e40c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aDRa2mdpostMpla@@3HA",
+   "sym_key": "aDRa2mdpostMpla"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_Str_TXT_CANCEL@@3GA",
+   "sym_key": "g_Str_TXT_CANCEL"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?aDRa2mdpostMpla@@3HA",
+   "sym_key": "aDRa2mdpostMpla"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_Str_TXT_OK@@3GA",
+   "sym_key": "g_Str_TXT_OK"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?ShowMessageBox@Dialog@@QAEJPAX0HHH@Z",
+   "sym_key": "Dialog::ShowMessageBox"
+  }
+ ]
+}

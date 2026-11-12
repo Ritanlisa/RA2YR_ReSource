@@ -1,0 +1,11 @@
+{
+ "addr": "0x404E20",
+ "name": "PollNextAudioQueue",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x404E20",
+ "bytes_hex": "51535533ed5685c957894c2410bb38de87007e2433ff8bf38bcee88125000085c0751d4783c60c83ff0a7cec8b4424104583c3783be87cdc5f5e5d33c05b59c35f5e5d055cffffff5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

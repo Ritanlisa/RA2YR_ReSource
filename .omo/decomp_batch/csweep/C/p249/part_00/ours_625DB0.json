@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindByPrefix@File@@QAE_NPADPAE@Z",
+ "sym_key": "File::FindByPrefix",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "568b710485f65774588b7c240c6a045657e80000000083c40c85c074178b760c85f6743d6a045657e80000000083c40c85c075e98b46088b5424105f8a088b442408880a33c985f60f95c133c85e81e1ff00000033c8f7d91bc9f7d98ac1c208005f32c05ec20800",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "_strncmp",
+   "sym_key": "strncmp"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "_strncmp",
+   "sym_key": "strncmp"
+  }
+ ]
+}

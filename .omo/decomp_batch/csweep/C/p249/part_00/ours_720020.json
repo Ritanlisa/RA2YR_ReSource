@@ -1,0 +1,21 @@
+{
+ "symbol": "?getCurrentWeapon@TextButtonClass@@QAEDHD@Z",
+ "sym_key": "TextButtonClass::getCurrentWeapon",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b0e894638ff51488b4c240c8b4424088bd1240081e2ff0000000bc284c9742c8b463885c07425578bcee8000000008bf88b46386a0050e80000000083c0088946148b4f1c83c1025f894e185ec20800",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHPAXH@Z",
+   "sym_key": "Text__MeasureWidth"
+  }
+ ]
+}

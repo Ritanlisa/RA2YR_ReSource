@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C60D0",
+ "name": "ShowConfirmDialog",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C60D0",
+ "bytes_hex": "51566a008bf16a006a6c6834e1820033d2b9d05f8200c74424143c088200e86ded160033d2b9b05f8200506a6c6834e18200e859ed16008d4c24105056e87ed30000f7d81bc05e4059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

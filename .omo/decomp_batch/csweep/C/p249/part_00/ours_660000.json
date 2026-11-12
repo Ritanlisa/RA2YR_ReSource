@@ -1,0 +1,39 @@
+{
+ "symbol": "?Render_Render_660000@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Render_Render_660000",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "a1100000005333db85c07e4b5556578b0d040000008b14998b4a308b723883f9ff74130fbe3da00100008bef2be93bee7d082bcf03f185f67f078a4a3c84c9740e52e800000000a11000000083c404433bd87cbb5f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DA8@@3IA",
+   "sym_key": "DataGlobal_B04DA8"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DA8@@3IA",
+   "sym_key": "DataGlobal_B04DA8"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?RenderGradientTrapezoid@@YADPAX@Z",
+   "sym_key": "RenderGradientTrapezoid"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DA8@@3IA",
+   "sym_key": "DataGlobal_B04DA8"
+  }
+ ]
+}

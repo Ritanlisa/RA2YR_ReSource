@@ -1,0 +1,11 @@
+{
+ "addr": "0x65AAC0",
+ "name": "RadioClass::ExecuteAction",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65AAC0",
+ "bytes_hex": "538b5c240c56578b7c2410538bf157e85ca7f9ff8b86e800000033c985c07e258b86e40000008b14888d04883bd7750a84db7406c700000000008b86e8000000413bc87cdb5f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

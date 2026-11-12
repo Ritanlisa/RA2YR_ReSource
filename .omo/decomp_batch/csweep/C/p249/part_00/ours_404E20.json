@@ -1,0 +1,21 @@
+{
+ "symbol": "?PollNextAudioQueue@@YIHH@Z",
+ "sym_key": "Unnamed::PollNextAudioQueue",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "51535533ed5685c957894c2410bb000000007e3133ff8bf38bcee80000000085c075174783c60c83ff0a7cec8b4424104583c3783be87d0debda5f5e5d055cffffff5b59c35f5e5d33c05b59c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87DE38@@3IA",
+   "sym_key": "DataGlobal_87DE38"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  }
+ ]
+}

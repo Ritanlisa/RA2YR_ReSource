@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_6261B0@ObjectClass@@QAEEHHH@Z",
+ "sym_key": "ObjectClass::sub_6261B0",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "538b5c240c558b6c240c56578bf933f68b44241c803c060074238bc625ff0000807907480d00ffffff408d0c4303c18bcf5055e80000000025ff00000083c7034681fe000100007cc75f5e5d5bc20c00",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Lerp@Color@@QAEEEPAX@Z",
+   "sym_key": "Color::Lerp"
+  }
+ ]
+}
