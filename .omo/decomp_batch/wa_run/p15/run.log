@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x55adc0 sub_55ADC0 -> _addr_55
+[conv] 0x55ade0 sub_55ADE0 -> _addr_55
+[conv] 0x55ae00 sub_55AE00 -> _addr_55
+[conv] 0x55ca70 sub_55CA70 -> _addr_55
+[conv] 0x55ca90 sub_55CA90 -> _addr_55
+[conv] 0x55cab0 sub_55CAB0 -> _addr_55
+[conv] 0x55f7f0 sub_55F7F0 -> _addr_55
+[conv] 0x55f810 sub_55F810 -> _addr_55
+[conv] 0x55f830 sub_55F830 -> _addr_55
+[conv] 0x58b1a0 sub_58B1A0 -> _addr_58
+[conv] 0x58b1c0 sub_58B1C0 -> _addr_58
+[conv] 0x58b1e0 sub_58B1E0 -> _addr_58
+[conv] 0x58b3b0 sub_58B3B0 -> _addr_58
+[conv] 0x58b3d0 sub_58B3D0 -> _addr_58
+[conv] 0x58b3f0 sub_58B3F0 -> _addr_58
+[conv] 0x58b5a0 sub_58B5A0 -> _addr_58
+[conv] 0x58b5c0 sub_58B5C0 -> _addr_58
+[conv] 0x58b5e0 sub_58B5E0 -> _addr_58
+[conv] 0x5adb90 sub_5ADB90 -> _addr_5A
+[conv] 0x5adbb0 sub_5ADBB0 -> _addr_5A
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_55                 rc=0
+[era] _addr_58                 rc=0
+[era] _addr_5A                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x55adc0   MATCH            sub_55ADC0
+[diff] 0x55ade0   MATCH            sub_55ADE0
+[diff] 0x55ae00   MATCH            sub_55AE00
+[diff] 0x55ca70   MATCH            sub_55CA70
+[diff] 0x55ca90   MATCH            sub_55CA90
+[diff] 0x55cab0   MATCH            sub_55CAB0
+[diff] 0x55f7f0   MATCH            sub_55F7F0
+[diff] 0x55f810   MATCH            sub_55F810
+[diff] 0x55f830   MATCH            sub_55F830
+[diff] 0x58b1a0   MATCH            sub_58B1A0
+[diff] 0x58b1c0   MATCH            sub_58B1C0
+[diff] 0x58b1e0   MATCH            sub_58B1E0
+[diff] 0x58b3b0   MATCH            sub_58B3B0
+[diff] 0x58b3d0   MATCH            sub_58B3D0
+[diff] 0x58b3f0   MATCH            sub_58B3F0
+[diff] 0x58b5a0   MATCH            sub_58B5A0
+[diff] 0x58b5c0   MATCH            sub_58B5C0
+[diff] 0x58b5e0   MATCH            sub_58B5E0
+[diff] 0x5adb90   MATCH            sub_5ADB90
+[diff] 0x5adbb0   MATCH            sub_5ADBB0
+[ledger] 0x55adc0 sub_55ADC0 -> OK (attempt 2)
+[ledger] 0x55ade0 sub_55ADE0 -> OK (attempt 2)
+[ledger] 0x55ae00 sub_55AE00 -> OK (attempt 2)
+[ledger] 0x55ca70 sub_55CA70 -> OK (attempt 2)
+[ledger] 0x55ca90 sub_55CA90 -> OK (attempt 2)
+[ledger] 0x55cab0 sub_55CAB0 -> OK (attempt 2)
+[ledger] 0x55f7f0 sub_55F7F0 -> OK (attempt 3)
+[ledger] 0x55f810 sub_55F810 -> OK (attempt 2)
+[ledger] 0x55f830 sub_55F830 -> OK (attempt 2)
+[ledger] 0x58b1a0 sub_58B1A0 -> OK (attempt 2)
+[ledger] 0x58b1c0 sub_58B1C0 -> OK (attempt 2)
+[ledger] 0x58b1e0 sub_58B1E0 -> OK (attempt 2)
+[ledger] 0x58b3b0 sub_58B3B0 -> OK (attempt 2)
+[ledger] 0x58b3d0 sub_58B3D0 -> OK (attempt 3)
+[ledger] 0x58b3f0 sub_58B3F0 -> OK (attempt 2)
+[ledger] 0x58b5a0 sub_58B5A0 -> OK (attempt 2)
+[ledger] 0x58b5c0 sub_58B5C0 -> OK (attempt 2)
+[ledger] 0x58b5e0 sub_58B5E0 -> OK (attempt 2)
+[ledger] 0x5adb90 sub_5ADB90 -> OK (attempt 2)
+[ledger] 0x5adbb0 sub_5ADBB0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\wa_run\p15\batch_report.json
