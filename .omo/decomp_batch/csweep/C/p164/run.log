@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p164\part_00
+=== convert (20 addrs) ===
+[conv] 0x494020 _BlitTransZRemapXlatAlpha_G::BlitRect -> _BlitTransZRemapXlatAlpha_G
+[conv] 0x494050 _BlitTransZRemapXlatAlpha_G::GetSize -> _BlitTransZRemapXlatAlpha_G
+[conv] 0x494150 _BlitTransLucent75Alpha_G::ddtor -> _BlitTransLucent75Alpha_G
+[conv] 0x494180 _BlitTransLucent75Alpha_G::BlitRect -> _BlitTransLucent75Alpha_G
+[conv] 0x4941b0 _BlitTransLucent75Alpha_G::GetSize -> _BlitTransLucent75Alpha_G
+[conv] 0x4942a0 _BlitTransLucent50Alpha_G::ddtor -> _BlitTransLucent50Alpha_G
+[conv] 0x4942d0 _BlitTransLucent50Alpha_G::BlitRect -> _BlitTransLucent50Alpha_G
+[conv] 0x494300 _BlitTransLucent50Alpha_G::GetSize -> _BlitTransLucent50Alpha_G
+[conv] 0x494430 _BlitTransLucent25Alpha_G::BlitRect -> _BlitTransLucent25Alpha_G
+[conv] 0x494460 _BlitTransLucent25Alpha_G::GetSize -> _BlitTransLucent25Alpha_G
+[conv] 0x494500 _BlitTransXlatWriteAlpha_G::CallBlit0 -> _BlitTransXlatWriteAlpha_G
+[conv] 0x494530 _BlitTransXlatWriteAlpha_G::CallBlit0_0 -> _BlitTransXlatWriteAlpha_G
+[conv] 0x494560 _BlitTransXlatWriteAlpha_G::CallBlit0_1 -> _BlitTransXlatWriteAlpha_G
+[conv] 0x494600 _BlitTransXlatMultWriteAlpha_G::CallBlit0 -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x494630 _BlitTransXlatMultWriteAlpha_G::CallBlit0_0 -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x494660 _BlitTransXlatMultWriteAlpha_G::CallBlit0_1 -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x494890 _BlitTranslucentWriteAlpha_G::CallBlit0_2 -> _BlitTranslucentWriteAlpha_G
+[conv] 0x4948c0 _BlitTranslucentWriteAlpha_G::CallBlit0_3 -> _BlitTranslucentWriteAlpha_G
+[conv] 0x4949b0 _BlitTranslucent50NonzeroAlpha_G::CallBlit0_5 -> _BlitTranslucent50NonzeroAlpha_G
+[conv] 0x4949e0 _BlitTranslucent50NonzeroAlpha_G::CallBlit0_6 -> _BlitTranslucent50NonzeroAlpha_G
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTransZRemapXlatAlpha_G rc=0
+[era] _BlitTransLucent75Alpha_G rc=0
+[era] _BlitTransLucent50Alpha_G rc=0
+[era] _BlitTransLucent25Alpha_G rc=2
+[era] _BlitTransXlatWriteAlpha_G rc=0
+[era] _BlitTransXlatMultWriteAlpha_G rc=0
+[era] _BlitTranslucentWriteAlpha_G rc=0
+[era] _BlitTranslucent50NonzeroAlpha_G rc=0
+=== diffasm byte-compare ===
+[diff] 0x494020   MATCH            _BlitTransZRemapXlatAlpha_G::BlitRect
+[diff] 0x494050   MATCH            _BlitTransZRemapXlatAlpha_G::GetSize
+[diff] 0x494150   MATCH            _BlitTransLucent75Alpha_G::ddtor
+[diff] 0x494180   MATCH            _BlitTransLucent75Alpha_G::BlitRect
+[diff] 0x4941b0   MATCH            _BlitTransLucent75Alpha_G::GetSize
+[diff] 0x4942a0   MATCH            _BlitTransLucent50Alpha_G::ddtor
+[diff] 0x4942d0   MATCH            _BlitTransLucent50Alpha_G::BlitRect
+[diff] 0x494300   MATCH            _BlitTransLucent50Alpha_G::GetSize
+[diff] 0x494460   MATCH            _BlitTransLucent25Alpha_G::GetSize
+[diff] 0x494500   MATCH            _BlitTransXlatWriteAlpha_G::CallBlit0
+[diff] 0x494530   MATCH            _BlitTransXlatWriteAlpha_G::CallBlit0_0
+[diff] 0x494560   MATCH            _BlitTransXlatWriteAlpha_G::CallBlit0_1
+[diff] 0x494600   MATCH            _BlitTransXlatMultWriteAlpha_G::CallBlit0
+[diff] 0x494630   MATCH            _BlitTransXlatMultWriteAlpha_G::CallBlit0_0
+[diff] 0x494660   MATCH            _BlitTransXlatMultWriteAlpha_G::CallBlit0_1
+[diff] 0x494890   MATCH            _BlitTranslucentWriteAlpha_G::CallBlit0_2
+[diff] 0x4948c0   MATCH            _BlitTranslucentWriteAlpha_G::CallBlit0_3
+[diff] 0x4949b0   MATCH            _BlitTranslucent50NonzeroAlpha_G::CallBlit0_5
+[diff] 0x4949e0   MATCH            _BlitTranslucent50NonzeroAlpha_G::CallBlit0_6
+[ledger] 0x494020 _BlitTransZRemapXlatAlpha_G::BlitRect -> OK (attempt 1)
+[ledger] 0x494050 _BlitTransZRemapXlatAlpha_G::GetSize -> OK (attempt 1)
+[ledger] 0x494150 _BlitTransLucent75Alpha_G::ddtor -> OK (attempt 1)
+[ledger] 0x494180 _BlitTransLucent75Alpha_G::BlitRect -> OK (attempt 1)
+[ledger] 0x4941b0 _BlitTransLucent75Alpha_G::GetSize -> OK (attempt 1)
+[ledger] 0x4942a0 _BlitTransLucent50Alpha_G::ddtor -> OK (attempt 1)
+[ledger] 0x4942d0 _BlitTransLucent50Alpha_G::BlitRect -> OK (attempt 1)
+[ledger] 0x494300 _BlitTransLucent50Alpha_G::GetSize -> OK (attempt 1)
+[ledger] 0x494430 _BlitTransLucent25Alpha_G::BlitRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x494460 _BlitTransLucent25Alpha_G::GetSize -> OK (attempt 1)
+[ledger] 0x494500 _BlitTransXlatWriteAlpha_G::CallBlit0 -> OK (attempt 1)
+[ledger] 0x494530 _BlitTransXlatWriteAlpha_G::CallBlit0_0 -> OK (attempt 1)
+[ledger] 0x494560 _BlitTransXlatWriteAlpha_G::CallBlit0_1 -> OK (attempt 1)
+[ledger] 0x494600 _BlitTransXlatMultWriteAlpha_G::CallBlit0 -> OK (attempt 1)
+[ledger] 0x494630 _BlitTransXlatMultWriteAlpha_G::CallBlit0_0 -> OK (attempt 1)
+[ledger] 0x494660 _BlitTransXlatMultWriteAlpha_G::CallBlit0_1 -> OK (attempt 1)
+[ledger] 0x494890 _BlitTranslucentWriteAlpha_G::CallBlit0_2 -> OK (attempt 1)
+[ledger] 0x4948c0 _BlitTranslucentWriteAlpha_G::CallBlit0_3 -> OK (attempt 1)
+[ledger] 0x4949b0 _BlitTranslucent50NonzeroAlpha_G::CallBlit0_5 -> OK (attempt 1)
+[ledger] 0x4949e0 _BlitTranslucent50NonzeroAlpha_G::CallBlit0_6 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p164\batch_report.json

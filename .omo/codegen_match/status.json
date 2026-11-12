@@ -21598,6 +21598,30 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x494020": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlatAlpha_G::BlitRect",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransZRemapXlatAlpha_ushort::BlitRect",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x494050": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransZRemapXlatAlpha_G::GetSize",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransZRemapXlatAlpha_ushort::GetSize",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x494080": {
   "attempts": 8,
   "first_diff": "+0 mov eax, dword ptr [esp + 0x1c]",
@@ -21605,12 +21629,84 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x494150": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent75Alpha_G::ddtor",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent75Alpha_ushort::ddtor",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x494180": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransLucent75Alpha_G::BlitRect",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent75Alpha_ushort::BlitRect",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4941b0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransLucent75Alpha_G::GetSize",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent75Alpha_ushort::GetSize",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4941e0": {
   "attempts": 8,
   "first_diff": "+4 xor edx, edx",
   "name": "BlitTransLucent50Alpha_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x4942a0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransLucent50Alpha_G::ddtor",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent50Alpha_ushort::ddtor",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4942d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransLucent50Alpha_G::BlitRect",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent50Alpha_ushort::BlitRect",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x494300": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransLucent50Alpha_G::GetSize",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent50Alpha_ushort::GetSize",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x494330": {
   "attempts": 10,
@@ -21626,6 +21722,30 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x494430": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransLucent25Alpha_G::BlitRect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BlitTransLucent25Alpha_ushort::BlitRect",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x494460": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransLucent25Alpha_G::GetSize",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent25Alpha_ushort::GetSize",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x494490": {
   "attempts": 2,
   "clean": false,
@@ -21638,6 +21758,42 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x494500": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransXlatWriteAlpha_G::CallBlit0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent25Alpha_ushort::CallBlit0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x494530": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransXlatWriteAlpha_G::CallBlit0_0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent25Alpha_ushort::CallBlit0_0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x494560": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTransXlatWriteAlpha_G::CallBlit0_1",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransLucent25Alpha_ushort::CallBlit0_1",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x494590": {
   "attempts": 3,
   "clean": false,
@@ -21648,6 +21804,66 @@
   "orig_name": "BlitTransXlatAlphaZRead_ushort::Blit_ZRead_AlphaBlend",
   "rule_violations": 2,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x494600": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransXlatMultWriteAlpha_G::CallBlit0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlphaZRead_ushort::CallBlit0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x494630": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransXlatMultWriteAlpha_G::CallBlit0_0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlphaZRead_ushort::CallBlit0_0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x494660": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_BlitTransXlatMultWriteAlpha_G::CallBlit0_1",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlphaZRead_ushort::CallBlit0_1",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x494890": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTranslucentWriteAlpha_G::CallBlit0_2",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlphaZRead_ushort::CallBlit0_2",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4948c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTranslucentWriteAlpha_G::CallBlit0_3",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlphaZRead_ushort::CallBlit0_3",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x4948f0": {
@@ -21667,6 +21883,30 @@
   "orig_name": "BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50",
   "rule_violations": 3,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4949b0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTranslucent50NonzeroAlpha_G::CallBlit0_5",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlphaZRead_ushort::CallBlit0_5",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4949e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_BlitTranslucent50NonzeroAlpha_G::CallBlit0_6",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BlitTransXlatAlphaZRead_ushort::CallBlit0_6",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x494a40": {
