@@ -1,2 +1,3 @@
 {"part": 0, "n": 20, "seconds": 33.5, "ok": true, "verdicts": {"MATCH": 20}}
 {"part": 1, "n": 20, "seconds": 28.1, "ok": true, "verdicts": {"MATCH": 20}}
+{"part": 2, "n": 20, "seconds": 30.3, "ok": true, "verdicts": {"MATCH": 19, "MISMATCH": 1}}
