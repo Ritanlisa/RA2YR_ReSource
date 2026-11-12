@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p312\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e0360 _VectorClass_PAVAbstractClass::Release -> _VectorClass_PAVAbstractClass
+[conv] 0x4e05c0 _VectorClass_PAVFootClass::Release -> _VectorClass_PAVFootClass
+[conv] 0x4e9240 HouseClass::vt_02 -> HouseClass
+[conv] 0x4e94a0 _VectorClass_PAVBuildingClass::Release -> _VectorClass_PAVBuildingClass
+[conv] 0x4e9700 _VectorClass_PAVSuperClass::Release -> _VectorClass_PAVSuperClass
+[conv] 0x4e9960 _VectorClass_PAVAITriggerTypeClass::Release -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4e9bc0 _VectorClass_PAVBuildingLightClass::Release -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4e9e20 ParticleSystemClass::vt_02 -> ParticleSystemClass
+[conv] 0x4ea080 _VectorClass_PAVTeamClass::Release -> _VectorClass_PAVTeamClass
+[conv] 0x4ea2e0 _VectorClass_PAUThemeControl::Remove -> _VectorClass_PAUThemeControl
+[conv] 0x4ea6c0 _VectorClass_PAVTriggerTypeClass::Release -> _VectorClass_PAVTriggerTypeClass
+[conv] 0x4ea920 _VectorClass_PAVTubeClass::Release -> _VectorClass_PAVTubeClass
+[conv] 0x4eab80 _VectorClass_PAVParticleSystemClass::Release -> _VectorClass_PAVParticleSystemClass
+[conv] 0x4eade0 _VectorClass_PAVWaveClass::Release -> _VectorClass_PAVWaveClass
+[conv] 0x4eb040 _VectorClass_PAVOverlayClass::Release -> _VectorClass_PAVOverlayClass
+[conv] 0x4eb2a0 _VectorClass_PAVSmudgeClass::Release -> _VectorClass_PAVSmudgeClass
+[conv] 0x4eb500 _VectorClass_PAVTerrainClass::Release -> _VectorClass_PAVTerrainClass
+[conv] 0x4eb760 _VectorClass_PAVAircraftClass::Release -> _VectorClass_PAVAircraftClass
+[conv] 0x4eb9c0 _VectorClass_PAVUnitClass::Release -> _VectorClass_PAVUnitClass
+[conv] 0x4ebc20 _VectorClass_PAVHouseClass::Release -> _VectorClass_PAVHouseClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVAbstractClass rc=2
+[era] _VectorClass_PAVFootClass rc=2
+[era] HouseClass               rc=0
+[era] _VectorClass_PAVBuildingClass rc=2
+[era] _VectorClass_PAVSuperClass rc=2
+[era] _VectorClass_PAVAITriggerTypeClass rc=2
+[era] _VectorClass_PAVBuildingLightClass rc=2
+[era] ParticleSystemClass      rc=2
+[era] _VectorClass_PAVTeamClass rc=2
+[era] _VectorClass_PAUThemeControl rc=2
+[era] _VectorClass_PAVTriggerTypeClass rc=2
+[era] _VectorClass_PAVTubeClass rc=2
+[era] _VectorClass_PAVParticleSystemClass rc=2
+[era] _VectorClass_PAVWaveClass rc=2
+[era] _VectorClass_PAVOverlayClass rc=2
+[era] _VectorClass_PAVSmudgeClass rc=2
+[era] _VectorClass_PAVTerrainClass rc=2
+[era] _VectorClass_PAVAircraftClass rc=2
+[era] _VectorClass_PAVUnitClass rc=2
+[era] _VectorClass_PAVHouseClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x4e9240   MISMATCH         HouseClass::vt_02
+[ledger] 0x4e0360 _VectorClass_PAVAbstractClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e05c0 _VectorClass_PAVFootClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9240 HouseClass::vt_02 -> NG (attempt 1)
+[ledger] 0x4e94a0 _VectorClass_PAVBuildingClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9700 _VectorClass_PAVSuperClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9960 _VectorClass_PAVAITriggerTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9bc0 _VectorClass_PAVBuildingLightClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9e20 ParticleSystemClass::vt_02 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea080 _VectorClass_PAVTeamClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea2e0 _VectorClass_PAUThemeControl::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea6c0 _VectorClass_PAVTriggerTypeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea920 _VectorClass_PAVTubeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eab80 _VectorClass_PAVParticleSystemClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eade0 _VectorClass_PAVWaveClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb040 _VectorClass_PAVOverlayClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb2a0 _VectorClass_PAVSmudgeClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb500 _VectorClass_PAVTerrainClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb760 _VectorClass_PAVAircraftClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb9c0 _VectorClass_PAVUnitClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebc20 _VectorClass_PAVHouseClass::Release -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p312\batch_report.json
