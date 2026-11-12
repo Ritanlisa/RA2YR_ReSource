@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c8956 timeSetEvent -> _addr_7C
+[conv] 0x7c895c timeBeginPeriod -> _addr_7C
+[conv] 0x7c8962 htonl -> _addr_7C
+[conv] 0x7c8968 htons -> _addr_7C
+[conv] 0x7c8974 ntohs -> _addr_7C
+[conv] 0x7c897a WSAGetLastError -> _addr_7C
+[conv] 0x7c8980 gethostbyname -> _addr_7C
+[conv] 0x7c8986 ntoainet -> _addr_7C
+[conv] 0x7c898c getsockopt -> _addr_7C
+[conv] 0x7c8992 closesocket -> _addr_7C
+[conv] 0x7c8998 bind -> _addr_7C
+[conv] 0x7c899e socket -> _addr_7C
+[conv] 0x7c89a4 setsockopt -> _addr_7C
+[conv] 0x7c89aa recvfrom -> _addr_7C
+[conv] 0x7c89b6 WSACleanup -> _addr_7C
+[conv] 0x7c89bc WSAAsyncSelect -> _addr_7C
+[conv] 0x7c89c2 EnumProtocolsA -> _addr_7C
+[conv] 0x7c89c8 WSAStartup -> _addr_7C
+[conv] 0x7c89ce gethostname -> _addr_7C
+[conv] 0x7c89d4 DirectDrawCreate -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c895c   MISMATCH         timeBeginPeriod
+[diff] 0x7c8962   MISMATCH         htonl
+[diff] 0x7c8968   MISMATCH         htons
+[diff] 0x7c8974   MISMATCH         ntohs
+[diff] 0x7c897a   MISMATCH         WSAGetLastError
+[diff] 0x7c8980   MISMATCH         gethostbyname
+[diff] 0x7c898c   MISMATCH         getsockopt
+[diff] 0x7c8992   MISMATCH         closesocket
+[diff] 0x7c8998   MISMATCH         bind
+[diff] 0x7c899e   MISMATCH         socket
+[diff] 0x7c89a4   MISMATCH         setsockopt
+[diff] 0x7c89aa   MISMATCH         recvfrom
+[diff] 0x7c89b6   MISMATCH         WSACleanup
+[diff] 0x7c89ce   MISMATCH         gethostname
+[diff] 0x7c89d4   MISMATCH         DirectDrawCreate
+[ledger] 0x7c8956 timeSetEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c895c timeBeginPeriod -> NG (attempt 1)
+[ledger] 0x7c8962 htonl -> NG (attempt 1)
+[ledger] 0x7c8968 htons -> NG (attempt 1)
+[ledger] 0x7c8974 ntohs -> NG (attempt 1)
+[ledger] 0x7c897a WSAGetLastError -> NG (attempt 1)
+[ledger] 0x7c8980 gethostbyname -> NG (attempt 1)
+[ledger] 0x7c8986 ntoainet -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c898c getsockopt -> NG (attempt 1)
+[ledger] 0x7c8992 closesocket -> NG (attempt 1)
+[ledger] 0x7c8998 bind -> NG (attempt 1)
+[ledger] 0x7c899e socket -> NG (attempt 1)
+[ledger] 0x7c89a4 setsockopt -> NG (attempt 1)
+[ledger] 0x7c89aa recvfrom -> NG (attempt 1)
+[ledger] 0x7c89b6 WSACleanup -> NG (attempt 1)
+[ledger] 0x7c89bc WSAAsyncSelect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c89c2 EnumProtocolsA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c89c8 WSAStartup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c89ce gethostname -> NG (attempt 1)
+[ledger] 0x7c89d4 DirectDrawCreate -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 15
+ },
+ "pathologies": {
+  "codegen_shape": 13,
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p13\batch_report.json

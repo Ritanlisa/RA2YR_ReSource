@@ -92704,6 +92704,50 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c8956": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "timeSetEvent",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "timeSetEvent",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c895c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1538]",
+  "name": "timeBeginPeriod",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "timeBeginPeriod",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8962": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1550]",
+  "name": "htonl",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "htonl",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8968": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1548]",
+  "name": "htons",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "htons",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c896e": {
   "attempts": 8,
   "clean": false,
@@ -92715,6 +92759,116 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c8974": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e155c]",
+  "name": "ntohs",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ntohs",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c897a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1574]",
+  "name": "WSAGetLastError",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "WSAGetLastError",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8980": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1588]",
+  "name": "gethostbyname",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "gethostbyname",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8986": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "ntoainet",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ntoainet",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c898c": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1540]",
+  "name": "getsockopt",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "getsockopt",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8992": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1584]",
+  "name": "closesocket",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "closesocket",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c8998": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1580]",
+  "name": "bind",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "bind",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c899e": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e157c]",
+  "name": "socket",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "socket",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c89a4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1554]",
+  "name": "setsockopt",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "setsockopt",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c89aa": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e154c]",
+  "name": "recvfrom",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "recvfrom",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7c89b0": {
   "attempts": 4,
   "clean": false,
@@ -92722,6 +92876,72 @@
   "name": "sendto",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sendto",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c89b6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1570]",
+  "name": "WSACleanup",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "WSACleanup",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c89bc": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "WSAAsyncSelect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WSAAsyncSelect",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c89c2": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "EnumProtocolsA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "EnumProtocolsA",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c89c8": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "WSAStartup",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WSAStartup",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7c89ce": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1560]",
+  "name": "gethostname",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "gethostname",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c89d4": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1048]",
+  "name": "DirectDrawCreate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DirectDrawCreate",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

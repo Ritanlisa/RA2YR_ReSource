@@ -1,0 +1,15 @@
+{
+ "symbol": "?DirectDrawCreate@@YGJPAU_GUID_era@@PAPAUIDirectDraw_era@@PAVIUnknown@@@Z",
+ "sym_key": "Unnamed::DirectDrawCreate",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24088b542404505152e800000000c20c00",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?__imp_DirectDrawCreate@@YGJPBX00@Z",
+   "sym_key": "__imp_DirectDrawCreate"
+  }
+ ]
+}

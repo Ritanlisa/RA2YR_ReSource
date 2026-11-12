@@ -1,0 +1,15 @@
+{
+ "symbol": "?WSAGetLastError@@YGHXZ",
+ "sym_key": "Unnamed::WSAGetLastError",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?__imp_WSAGetLastError@@YGHXZ",
+   "sym_key": "__imp_WSAGetLastError"
+  }
+ ]
+}

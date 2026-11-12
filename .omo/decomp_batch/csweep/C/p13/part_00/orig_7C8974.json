@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8974",
+ "name": "ntohs",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8974",
+ "bytes_hex": "ff255c157e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

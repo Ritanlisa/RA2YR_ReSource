@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C89AA",
+ "name": "recvfrom",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C89AA",
+ "bytes_hex": "ff254c157e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

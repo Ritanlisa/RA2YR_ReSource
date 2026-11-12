@@ -1,0 +1,15 @@
+{
+ "symbol": "?ntohs@@YGGG@Z",
+ "sym_key": "Unnamed::ntohs",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b44240425ffff000050e80000000025ff0000008b4c240480e1000bc1c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?__imp_ntohs@@YGGH@Z",
+   "sym_key": "__imp_ntohs"
+  }
+ ]
+}
