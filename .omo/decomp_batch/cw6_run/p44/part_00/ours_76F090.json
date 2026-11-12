@@ -1,0 +1,8 @@
+{
+ "symbol": "?processTrigger@Trigger@@QAEPAV1@HH@Z",
+ "sym_key": "Trigger::processTrigger",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b542408894104895108c7010000000033c0c20800",
+ "relocs": []
+}

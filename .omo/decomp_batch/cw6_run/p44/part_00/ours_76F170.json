@@ -1,0 +1,8 @@
+{
+ "symbol": "?ddtor@_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry@@QAEPAIXZ",
+ "sym_key": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b4108488941088b01c3",
+ "relocs": []
+}

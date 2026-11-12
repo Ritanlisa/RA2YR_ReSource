@@ -1,0 +1,11 @@
+{
+ "addr": "0x76F170",
+ "name": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76F170",
+ "bytes_hex": "8bc1ff4808c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

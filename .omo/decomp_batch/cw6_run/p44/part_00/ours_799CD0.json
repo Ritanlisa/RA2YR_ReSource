@@ -1,0 +1,51 @@
+{
+ "symbol": "?RunWOLMainLoop_Helper@@YA_JXZ",
+ "sym_key": "Unnamed::RunWOLMainLoop_Helper",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "57b94300000033c0bf00000000f3abb943000000bf00000000f3abc6050000000001a300000000a300000000a300000000a30000000033d25fc3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_WOL_ProcessIdle@@3IB",
+   "sym_key": "g_WOL_ProcessIdle"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B73BE8@@3IA",
+   "sym_key": "DataGlobal_B73BE8"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A210@@3EA",
+   "sym_key": "DataGlobal_84A210"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_WOL_AuthPool@@3IA",
+   "sym_key": "g_WOL_AuthPool"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_WOL_ChatState@@3IA",
+   "sym_key": "g_WOL_ChatState"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_WOL_ChannelState@@3IA",
+   "sym_key": "g_WOL_ChannelState"
+  }
+ ]
+}

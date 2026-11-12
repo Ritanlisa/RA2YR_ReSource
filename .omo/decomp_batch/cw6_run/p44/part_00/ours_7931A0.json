@@ -1,0 +1,39 @@
+{
+ "symbol": "?FindFlagged@GameSettings@@QAEPADXZ",
+ "sym_key": "GameSettings::FindFlagged",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "538b1d0000000033c05685db577e388b150000000085c07c123bc37d0eb91b0000008bf2bf00000000f3a5f6050000000001750a403bc37d0e83c26cebd75f5eb8000000005bc35f5e33c05bc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionFlags@@3PAXA",
+   "sym_key": "g_WOL_ConnectionFlags"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_IsMultiplayerSession@@3EB",
+   "sym_key": "g_IsMultiplayerSession"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_IsMultiplayerSession@@3EB",
+   "sym_key": "g_IsMultiplayerSession"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_IsMultiplayerSession@@3EB",
+   "sym_key": "g_IsMultiplayerSession"
+  }
+ ]
+}

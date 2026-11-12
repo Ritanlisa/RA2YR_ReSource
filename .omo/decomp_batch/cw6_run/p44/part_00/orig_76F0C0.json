@@ -1,0 +1,11 @@
+{
+ "addr": "0x76F0C0",
+ "name": "VectorCursor::Construct",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76F0C0",
+ "bytes_hex": "8b5424088bc18b4c2404894804895008c700d8727f00c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

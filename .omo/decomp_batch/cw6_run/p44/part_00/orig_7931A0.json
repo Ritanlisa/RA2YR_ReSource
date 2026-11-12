@@ -1,0 +1,11 @@
+{
+ "addr": "0x7931A0",
+ "name": "GameSettings::FindFlagged",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7931A0",
+ "bytes_hex": "538b1d0079b70033c05685db577e2d8b150879b70085c07c123bc37d0eb91b0000008bf2bfb077b700f3a5f605b077b70001750e4083c26c3bc37cd95f5e33c05bc35f5eb8b077b7005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

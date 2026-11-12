@@ -1,0 +1,462 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 4,
+   "regalloc": 10,
+   "cc_mismatch": 2,
+   "extern_reloc": 1,
+   "branch_order": 1,
+   "branch_polarity": 2
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 2,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x76a250",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 51B ours 68B",
+   "first_diff": {
+    "orig": "+6 jne 0x76a25e",
+    "ours": "+6 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "Map_WorldDominationTour_28::Read",
+   "emitted": "_VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Read",
+   "unit": "_VectorClass_PAUAnimationPalette_Map_WorldDominationTour",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 51,
+   "ours_size": 68,
+   "clean": false
+  },
+  {
+   "addr": "0x76a360",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 38B ours 54B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "MSFrameAnim::resetAnimation",
+   "emitted": "_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::resetAnimation",
+   "unit": "_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 38,
+   "ours_size": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x76a520",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 80B ours 82B",
+   "first_diff": {
+    "orig": "+20 mov edx, dword ptr [ecx + 8]",
+    "ours": "+20 mov esi, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "Map_WorldDominationTour_43::Read",
+   "emitted": "_VectorClass_VCentroid_WorldDominationTour::Read",
+   "unit": "_VectorClass_VCentroid_WorldDominationTour",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 80,
+   "ours_size": 82,
+   "clean": false
+  },
+  {
+   "addr": "0x76a5a0",
+   "batch": "stale_cw5|CW5-8/9/12 shell supply",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 10B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "Map_WorldDominationTour_38::Release",
+   "emitted": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Release",
+   "unit": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 10,
+   "clean": false
+  },
+  {
+   "addr": "0x76a5b0",
+   "batch": "stale_cw5|CW5-8/9/12 shell supply",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 10B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor",
+   "emitted": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor",
+   "unit": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 10,
+   "clean": false
+  },
+  {
+   "addr": "0x76f090",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 25B ours 25B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [esp + 8]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "cc_mismatch",
+   "name": "Trigger::processTrigger",
+   "emitted": "Trigger::processTrigger",
+   "unit": "Trigger",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 25,
+   "ours_size": 25,
+   "clean": false
+  },
+  {
+   "addr": "0x76f0c0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 25B ours 25B",
+   "first_diff": {
+    "orig": "+0 mov edx, dword ptr [esp + 8]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "cc_mismatch",
+   "name": "VectorCursor::Construct",
+   "emitted": "VectorCursor::Construct",
+   "unit": "VectorCursor",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 25,
+   "ours_size": 25,
+   "clean": false
+  },
+  {
+   "addr": "0x76f160",
+   "batch": "stale_cw5|CW5-8/9/12 shell supply",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 10B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "Count::Release",
+   "emitted": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::Release",
+   "unit": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 10,
+   "clean": false
+  },
+  {
+   "addr": "0x76f170",
+   "batch": "stale_cw5|CW5-8/9/12 shell supply",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 10B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor",
+   "emitted": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor",
+   "unit": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 10,
+   "clean": false
+  },
+  {
+   "addr": "0x76f180",
+   "batch": "stale_cw5|CW5-8/9/12 shell supply",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 10B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "VectorCursor::Release",
+   "emitted": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Release",
+   "unit": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 10,
+   "clean": false
+  },
+  {
+   "addr": "0x76f190",
+   "batch": "stale_cw5|CW5-8/9/12 shell supply",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 10B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor",
+   "emitted": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor",
+   "unit": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 10,
+   "clean": false
+  },
+  {
+   "addr": "0x76f1a0",
+   "batch": "stale_cw5|CW5-8/9/12 shell supply",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 10B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "CampaignProperties_WorldDominationTour_22::Release",
+   "emitted": "_VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::Release",
+   "unit": "_VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 10,
+   "clean": false
+  },
+  {
+   "addr": "0x76f1b0",
+   "batch": "stale_cw5|CW5-8/9/12 shell supply",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 10B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [ecx + 8]"
+   },
+   "pathology": "regalloc",
+   "name": "CampaignProperties_WorldDominationTour_22::ddtor",
+   "emitted": "_VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::ddtor",
+   "unit": "_VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 10,
+   "clean": false
+  },
+  {
+   "addr": "0x7719e0",
+   "batch": "stale_cw3|CW3-2 vftable regex",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 28B",
+   "first_diff": {
+    "orig": "+15 mov dword ptr [ecx], 0x7e37cc",
+    "ours": "+15 mov dword ptr [ecx], eax"
+   },
+   "pathology": "regalloc",
+   "name": "sub_7719E0",
+   "emitted": "DynamicVectorClass_uint::sub_7719E0",
+   "unit": "DynamicVectorClass_uint",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 28,
+   "clean": false
+  },
+  {
+   "addr": "0x772c90",
+   "batch": "stale_cw3|CW3-1 param proto merge",
+   "verdict": "MISMATCH",
+   "note": "orig 56B ours 52B",
+   "first_diff": {
+    "orig": "+16 mov ecx, dword ptr [0x7e9830]",
+    "ours": "+16 xor ecx, ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "WeaponTypeClass::GetClassIdentifier",
+   "emitted": "WeaponTypeClass::GetClassIdentifier",
+   "unit": "WeaponTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/2",
+   "rule_violations": 0,
+   "orig_size": 56,
+   "ours_size": 52,
+   "clean": false
+  },
+  {
+   "addr": "0x775b10",
+   "batch": "stale_cw5|CW5-10 undeclared g_/s_/p_",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 6B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [0xb72f44]",
+    "ours": "+0 mov eax, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "Dialog::GetCurrent",
+   "emitted": "Dialog::GetCurrent",
+   "unit": "Dialog",
+   "name_placeholder": false,
+   "cls_src": "name_prefix",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 6,
+   "clean": false
+  },
+  {
+   "addr": "0x7931a0",
+   "batch": "stale_cw5|CW5-10 uintN_t typedef",
+   "verdict": "MISMATCH",
+   "note": "orig 75B ours 77B",
+   "first_diff": {
+    "orig": "+13 jle 0x7931dc",
+    "ours": "+13 jle 0x47"
+   },
+   "pathology": "branch_order",
+   "name": "GameSettings::FindFlagged",
+   "emitted": "GameSettings::FindFlagged",
+   "unit": "GameSettings",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 75,
+   "ours_size": 77,
+   "clean": false
+  },
+  {
+   "addr": "0x799cd0",
+   "batch": "stale_cw5|CW5-10 uintN_t typedef",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 58B",
+   "first_diff": {
+    "orig": "+25 xor edx, edx",
+    "ours": "+25 rep stosd dword ptr es:[edi], eax"
+   },
+   "pathology": "codegen_shape",
+   "name": "RunWOLMainLoop_Helper",
+   "emitted": "RunWOLMainLoop_Helper",
+   "unit": "RunWOLMainLoop",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "8/8",
+   "rule_violations": 0,
+   "orig_size": 62,
+   "ours_size": 58,
+   "clean": false
+  },
+  {
+   "addr": "0x7ad090",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x7ad0c6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "WonlineStringDialogControl_12::AddRef",
+   "emitted": "_VectorClass_PAUtConnInfoStruct::AddRef",
+   "unit": "_VectorClass_PAUtConnInfoStruct",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  },
+  {
+   "addr": "0x7b28a0",
+   "batch": "stale_cw3|CW3-2 template shell",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 69B",
+   "first_diff": {
+    "orig": "+13 jne 0x7b28d6",
+    "ours": "+13 jne 0x3d"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Add",
+   "emitted": "_VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Add",
+   "unit": "_VectorClass_PAUWinsockBufferType_WinsockInterfaceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 2,
+   "orig_size": 62,
+   "ours_size": 69,
+   "clean": false
+  }
+ ]
+}
