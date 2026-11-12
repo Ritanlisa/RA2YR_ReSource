@@ -1,0 +1,33 @@
+{
+ "symbol": "?UpdateAllTypes@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::UpdateAllTypes",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "a1000000005633f65785c08bf9761ba100000000578b0cb08b4928e800000000a100000000463bf072e55f5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameObjectCleanup@@3IA",
+   "sym_key": "g_GameObjectCleanup"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_TagClassCount@@3PAXA",
+   "sym_key": "g_TagClassCount"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?NotifyGlobalChanged@TriggerClass@@QAEXH@Z",
+   "sym_key": "TriggerClass::NotifyGlobalChanged"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_GameObjectCleanup@@3IA",
+   "sym_key": "g_GameObjectCleanup"
+  }
+ ]
+}

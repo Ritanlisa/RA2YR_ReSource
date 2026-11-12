@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetSizeMax@AbstractClass@@QAEHXZ",
+ "sym_key": "AbstractClass::GetSizeMax",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "51568b74240485f67508b8034000805e59c38b442404508b08ff513083c004c7460400000000890633c05e59c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4103E0",
+ "name": "ObjectClass::GetSizeMax",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4103E0",
+ "bytes_hex": "568b74240c85f67509b8034000805ec208008b4c24088b01ff503083c0048906c746040000000033c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?String_Helper_7B7660@ObjectClass@@QAEDGI@Z",
+ "sym_key": "ObjectClass::String_Helper_7B7660",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0650e8000000008b4c241083c4043bc8720632c05ec208008b16668b4424085e6689044ab001c20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

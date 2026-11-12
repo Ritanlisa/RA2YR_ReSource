@@ -1,0 +1,21 @@
+{
+ "symbol": "?__itoa@@YAPADHPADH@Z",
+ "sym_key": "Unnamed::__itoa",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b4c240c8b44240483f90a56751a85c07d168b74240c6a016a0a5650e80000000083c4108bc65ec38b74240c6a00515650e80000000083c4108bc65ec3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?xtoa@@YAHHPAXHHZZ",
+   "sym_key": "xtoa"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?xtoa@@YAHHPAXHHZZ",
+   "sym_key": "xtoa"
+  }
+ ]
+}

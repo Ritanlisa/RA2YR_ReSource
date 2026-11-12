@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E5820",
+ "name": "TriggerActionQueue::ProcessAll",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E5820",
+ "bytes_hex": "a130e7b0005633f65785c08bf97e1ba124e7b000578b0cb08b4928e8900b0400a130e7b000463bf07ce55f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6AC840",
+ "name": "System_Init_6AC840",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6AC840",
+ "bytes_hex": "8b442404568bf150e84389ebff32c08886cc1100008886cd1100008886ce110000c70614617e008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

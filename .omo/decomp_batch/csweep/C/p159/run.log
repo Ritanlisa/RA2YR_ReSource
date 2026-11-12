@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p159\part_00
+=== convert (20 addrs) ===
+[conv] 0x67a060 RulesClass::readVehicleTypes -> RulesClass
+[conv] 0x6ac840 DisplayClass::System_Init_6AC840 -> DisplayClass
+[conv] 0x6e57f0 HouseClass::UpdateAllTypes -> HouseClass
+[conv] 0x6e5820 TriggerActionQueue::ProcessAll -> TriggerActionQueue
+[conv] 0x771a00 VectorClass::sub_771A00 -> VectorClass
+[conv] 0x781cc0 sub_781CC0 -> _addr_78
+[conv] 0x7b7660 ObjectClass::String_Helper_7B7660 -> ObjectClass
+[conv] 0x7c99b4 _isxdigit -> _addr_7C
+[conv] 0x7d468c __itoa -> _addr_7D
+[conv] 0x4103e0 AbstractClass::GetSizeMax -> AbstractClass
+[conv] 0x4104f0 AbstractClass::GetCoordsEx -> AbstractClass
+[conv] 0x410540 AbstractClass::GetCoords -> AbstractClass
+[conv] 0x41bdd0 IUnknown::GetCoordsThunk1 -> IUnknown
+[conv] 0x41be00 IUnknown::GetCoordsThunk2 -> IUnknown
+[conv] 0x41be30 IUnknown::GetCoordsThunk3 -> IUnknown
+[conv] 0x491300 _BlitTransXlat_G::sub_491300 -> _BlitTransXlat_G
+[conv] 0x491360 _BlitTransXlat_G::sub_491360 -> _BlitTransXlat_G
+[conv] 0x491430 _BlitPlainXlat_E::ddtor -> _BlitPlainXlat_E
+[conv] 0x491460 _BlitPlainXlat_E::Release -> _BlitPlainXlat_E
+[conv] 0x491490 _BlitPlainXlat_E::Convert -> _BlitPlainXlat_E
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RulesClass               rc=0
+[era] DisplayClass             rc=0
+[era] HouseClass               rc=0
+[era] TriggerActionQueue       rc=0
+[era] VectorClass              rc=0
+[era] _addr_78                 rc=2
+[era] ObjectClass              rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+[era] AbstractClass            rc=0
+[era] IUnknown                 rc=0
+[era] _BlitTransXlat_G         rc=0
+[era] _BlitPlainXlat_E         rc=0
+=== diffasm byte-compare ===
+[diff] 0x67a060   MISMATCH         RulesClass::readVehicleTypes
+[diff] 0x6ac840   MISMATCH         DisplayClass::System_Init_6AC840
+[diff] 0x6e57f0   MISMATCH         HouseClass::UpdateAllTypes
+[diff] 0x6e5820   MISMATCH         TriggerActionQueue::ProcessAll
+[diff] 0x771a00   MISMATCH         VectorClass::sub_771A00
+[diff] 0x7b7660   MISMATCH         ObjectClass::String_Helper_7B7660
+[diff] 0x7c99b4   MISMATCH         _isxdigit
+[diff] 0x7d468c   MISMATCH         __itoa
+[diff] 0x4103e0   MISMATCH         AbstractClass::GetSizeMax
+[diff] 0x4104f0   MISMATCH         AbstractClass::GetCoordsEx
+[diff] 0x410540   MISMATCH         AbstractClass::GetCoords
+[diff] 0x41bdd0   MISMATCH         IUnknown::GetCoordsThunk1
+[diff] 0x41be00   MISMATCH         IUnknown::GetCoordsThunk2
+[diff] 0x41be30   MISMATCH         IUnknown::GetCoordsThunk3
+[diff] 0x491300   MATCH            _BlitTransXlat_G::sub_491300
+[diff] 0x491360   MATCH            _BlitTransXlat_G::sub_491360
+[diff] 0x491430   MATCH            _BlitPlainXlat_E::ddtor
+[diff] 0x491460   MATCH            _BlitPlainXlat_E::Release
+[diff] 0x491490   MATCH            _BlitPlainXlat_E::Convert
+[ledger] 0x67a060 RulesClass::readVehicleTypes -> NG (attempt 1)
+[ledger] 0x6ac840 DisplayClass::System_Init_6AC840 -> NG (attempt 1)
+[ledger] 0x6e57f0 HouseClass::UpdateAllTypes -> NG (attempt 1)
+[ledger] 0x6e5820 TriggerActionQueue::ProcessAll -> NG (attempt 1)
+[ledger] 0x771a00 VectorClass::sub_771A00 -> NG (attempt 1)
+[ledger] 0x781cc0 sub_781CC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b7660 ObjectClass::String_Helper_7B7660 -> NG (attempt 1)
+[ledger] 0x7c99b4 _isxdigit -> NG (attempt 1)
+[ledger] 0x7d468c __itoa -> NG (attempt 1)
+[ledger] 0x4103e0 AbstractClass::GetSizeMax -> NG (attempt 1)
+[ledger] 0x4104f0 AbstractClass::GetCoordsEx -> NG (attempt 1)
+[ledger] 0x410540 AbstractClass::GetCoords -> NG (attempt 1)
+[ledger] 0x41bdd0 IUnknown::GetCoordsThunk1 -> NG (attempt 1)
+[ledger] 0x41be00 IUnknown::GetCoordsThunk2 -> NG (attempt 1)
+[ledger] 0x41be30 IUnknown::GetCoordsThunk3 -> NG (attempt 1)
+[ledger] 0x491300 _BlitTransXlat_G::sub_491300 -> OK (attempt 1)
+[ledger] 0x491360 _BlitTransXlat_G::sub_491360 -> OK (attempt 1)
+[ledger] 0x491430 _BlitPlainXlat_E::ddtor -> OK (attempt 1)
+[ledger] 0x491460 _BlitPlainXlat_E::Release -> OK (attempt 1)
+[ledger] 0x491490 _BlitPlainXlat_E::Convert -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 1,
+  "MATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "ret_norm": 1,
+  "signedness": 2,
+  "const_fold": 1,
+  "extern_reloc": 1,
+  "codegen_shape": 1,
+  "frame_sched": 5
+ },
+ "match_rate_of_decided_pct": 26.3,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p159\batch_report.json

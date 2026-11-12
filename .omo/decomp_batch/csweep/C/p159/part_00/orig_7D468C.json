@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D468C",
+ "name": "__itoa",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D468C",
+ "bytes_hex": "558bec837d100a750c837d08007d066a016a0aeb056a00ff7510ff750cff7508e8080000008b450c83c4105dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
