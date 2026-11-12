@@ -1,0 +1,11 @@
+{
+ "addr": "0x53D550",
+ "name": "WinMainSetup_Setup",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53D550",
+ "bytes_hex": "56bec8ffa9008b0e85c974068b016a01ff10c7060000000083c60481fe0801aa007ce35ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

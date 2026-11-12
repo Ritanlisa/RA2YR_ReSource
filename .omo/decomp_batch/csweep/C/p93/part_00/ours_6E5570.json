@@ -1,0 +1,27 @@
+{
+ "symbol": "?Map_Reset_6E5570@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Map_Reset_6E5570",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0761d8b0d000000008b0985c9740d8b116a0151ff5220a10000000085c077e3c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameObjectCleanup@@3IA",
+   "sym_key": "g_GameObjectCleanup"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_TagClassCount@@3PAXA",
+   "sym_key": "g_TagClassCount"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_GameObjectCleanup@@3IA",
+   "sym_key": "g_GameObjectCleanup"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetLeaderIndex@TeamClass@@QAEHXZ",
+ "sym_key": "TeamClass::GetLeaderIndex",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b891c020000568b7130e80000000084c0740ea10000000085c074058b40305ec38bc65ec3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  }
+ ]
+}

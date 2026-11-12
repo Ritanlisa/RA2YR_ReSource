@@ -1,0 +1,15 @@
+{
+ "symbol": "?dtor@ConnectionClass@@QAEXXZ",
+ "sym_key": "ConnectionClass::dtor",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4620c7060000000050e8000000008b760483c40485f674078b0e6a0156ff115ec3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Attach@LinkClass@@QAEPAIH@Z",
+ "sym_key": "LinkClass::Attach",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "568bf18b06ff108b442408508b08ff511889700c8946088b4604c7460c000000005ec20400",
+ "relocs": []
+}

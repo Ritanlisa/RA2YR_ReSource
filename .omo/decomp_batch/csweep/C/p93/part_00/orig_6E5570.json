@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E5570",
+ "name": "Map_Reset_6E5570",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E5570",
+ "bytes_hex": "a130e7b00085c07e1ba124e7b0008b0885c974078b116a01ff5220a130e7b00085c07fe5c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

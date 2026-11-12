@@ -1,0 +1,15 @@
+{
+ "symbol": "?ActivateEffect@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ActivateEffect",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "518b44240085c07414c681d8010000010fbe05a00100008981dc0100008b1151ff929c04000059c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

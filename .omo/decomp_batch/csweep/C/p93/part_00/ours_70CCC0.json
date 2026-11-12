@@ -1,0 +1,21 @@
+{
+ "symbol": "?RadarUpdateOff@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::RadarUpdateOff",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b860c0200008b8e08020000505156b9f8010000e8000000008b442404c786e8030000000000005e59c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?RemoveGapCellCoverage@BuildingClass@@QAEXHHH@Z",
+   "sym_key": "BuildingClass::RemoveGapCellCoverage"
+  }
+ ]
+}

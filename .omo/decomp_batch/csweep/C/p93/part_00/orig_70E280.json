@@ -1,0 +1,11 @@
+{
+ "addr": "0x70E280",
+ "name": "TechnoClass::ActivateEffect",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70E280",
+ "bytes_hex": "8b44240485c07412c681d801000001a184eda8008981dc0100008b11ff929c040000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

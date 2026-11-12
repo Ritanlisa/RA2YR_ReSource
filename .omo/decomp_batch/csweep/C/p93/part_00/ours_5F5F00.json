@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetLandHeight@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GetLandHeight",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff90bc0100008a8e8c0000005e0fbe801b010000f6d91bc983e10403c1c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x43A5D0",
+ "name": "Power::Update",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x43A5D0",
+ "bytes_hex": "56578b7c240c8bf157e8325efdffa184eda8008b56302bc28bcf50e8607706005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

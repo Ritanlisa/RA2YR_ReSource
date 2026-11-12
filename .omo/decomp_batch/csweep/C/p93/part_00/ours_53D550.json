@@ -1,0 +1,21 @@
+{
+ "symbol": "?WinMainSetup_Setup@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::WinMainSetup_Setup",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "518b442400568b35000000008b0e85c974078b016a0151ff10c7060000000083c60481fe000000007ce25e59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FFC8@@3IA",
+   "sym_key": "DataGlobal_A9FFC8"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0108@@3NA",
+   "sym_key": "DataGlobal_AA0108"
+  }
+ ]
+}

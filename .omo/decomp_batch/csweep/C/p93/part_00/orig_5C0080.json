@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C0080",
+ "name": "Entity_Load",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C0080",
+ "bytes_hex": "a1f4f3ab0085c0740332c0c3890df4f3ab008b0952e8969b1900c705f4f3ab0000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

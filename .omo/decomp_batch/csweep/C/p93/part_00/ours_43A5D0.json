@@ -1,0 +1,27 @@
+{
+ "symbol": "?Update@NeuronClass@@QAEHPAH@Z",
+ "sym_key": "NeuronClass::Update",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000000fbe05a00100002b463050e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

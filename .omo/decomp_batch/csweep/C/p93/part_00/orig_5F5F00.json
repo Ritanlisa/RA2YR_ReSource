@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F5F00",
+ "name": "ObjectClass::GetLandHeight",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F5F00",
+ "bytes_hex": "568bf18b06ff90bc0100008a8e8c0000005e0fbe901b010000f6d91bc983e10403ca8bc1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

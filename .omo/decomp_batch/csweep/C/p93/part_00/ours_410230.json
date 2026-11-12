@@ -1,0 +1,21 @@
+{
+ "symbol": "?GenerateUniqueID@AbstractClass@@QAGHH@Z",
+ "sym_key": "AbstractClass::GenerateUniqueID",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000085c9740fe8000000008b4c240489410cc208008b54240433c0c7420c00000000c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?updateAITimer@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::updateAITimer"
+  }
+ ]
+}

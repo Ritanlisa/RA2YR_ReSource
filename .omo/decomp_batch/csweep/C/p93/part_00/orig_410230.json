@@ -1,0 +1,11 @@
+{
+ "addr": "0x410230",
+ "name": "AbstractClass::GenerateUniqueID",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x410230",
+ "bytes_hex": "8b0d30b2a80085c9750c8b4c240433c089410cc20400e865ba27008b54240489420cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

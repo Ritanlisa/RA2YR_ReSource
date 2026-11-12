@@ -1,0 +1,11 @@
+{
+ "addr": "0x6C87F0",
+ "name": "InitSkirmishSettings",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6C87F0",
+ "bytes_hex": "83ec088d4c2404e844040000a328bdb0008b442404a32cbdb000c605b4bdb0000183c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

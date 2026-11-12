@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p93\part_00
+=== convert (20 addrs) ===
+[conv] 0x48bee0 ConnectionClass::dtor -> ConnectionClass
+[conv] 0x5566d0 LinkClass::Attach -> LinkClass
+[conv] 0x410230 AbstractClass::GenerateUniqueID -> AbstractClass
+[conv] 0x5c0080 Entity_Load -> Entity
+[conv] 0x6339b0 TeamClass::GetLeaderIndex -> TeamClass
+[conv] 0x65fdd0 Map_Helper_65FDD0 -> Map_Helper
+[conv] 0x6c87f0 InitSkirmishSettings -> _addr_6C
+[conv] 0x70cc90 TechnoClass::RadarUpdateOn -> TechnoClass
+[conv] 0x70ccc0 TechnoClass::RadarUpdateOff -> TechnoClass
+[conv] 0x7ce049 __strcats -> _addr_7C
+[conv] 0x429420 ApplicationClass::sub_429420 -> ApplicationClass
+[conv] 0x429450 ApplicationClass::sub_429450 -> ApplicationClass
+[conv] 0x4c5470 ObjectClass::sub_4C5470 -> ObjectClass
+[conv] 0x53d550 ObjectClass::WinMainSetup_Setup -> ObjectClass
+[conv] 0x5f5f00 ObjectClass::GetLandHeight -> ObjectClass
+[conv] 0x6e5570 ObjectClass::Map_Reset_6E5570 -> ObjectClass
+[conv] 0x70e280 TechnoClass::ActivateEffect -> TechnoClass
+[conv] 0x40eb50 sub_40EB50 -> _addr_40
+[conv] 0x40ebd0 sub_40EBD0 -> _addr_40
+[conv] 0x43a5d0 NeuronClass::Update -> NeuronClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ConnectionClass          rc=0
+[era] LinkClass                rc=0
+[era] AbstractClass            rc=0
+[era] Entity                   rc=0
+[era] TeamClass                rc=0
+[era] Map_Helper               rc=0
+[era] _addr_6C                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=0
+[era] ApplicationClass         rc=0
+[era] ObjectClass              rc=0
+[era] _addr_40                 rc=0
+[era] NeuronClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x48bee0   MISMATCH         ConnectionClass::dtor
+[diff] 0x5566d0   MISMATCH         LinkClass::Attach
+[diff] 0x410230   MISMATCH         AbstractClass::GenerateUniqueID
+[diff] 0x5c0080   MISMATCH         Entity_Load
+[diff] 0x6339b0   MATCH            TeamClass::GetLeaderIndex
+[diff] 0x65fdd0   MISMATCH         Map_Helper_65FDD0
+[diff] 0x6c87f0   MISMATCH         InitSkirmishSettings
+[diff] 0x70cc90   MISMATCH         TechnoClass::RadarUpdateOn
+[diff] 0x70ccc0   MISMATCH         TechnoClass::RadarUpdateOff
+[diff] 0x70e280   MISMATCH         TechnoClass::ActivateEffect
+[diff] 0x7ce049   MISMATCH         __strcats
+[diff] 0x429420   MISMATCH         ApplicationClass::sub_429420
+[diff] 0x429450   MISMATCH         ApplicationClass::sub_429450
+[diff] 0x4c5470   MISMATCH         ObjectClass::sub_4C5470
+[diff] 0x53d550   MISMATCH         ObjectClass::WinMainSetup_Setup
+[diff] 0x5f5f00   MISMATCH         ObjectClass::GetLandHeight
+[diff] 0x6e5570   MISMATCH         ObjectClass::Map_Reset_6E5570
+[diff] 0x40eb50   MISMATCH         sub_40EB50
+[diff] 0x40ebd0   MISMATCH         sub_40EBD0
+[diff] 0x43a5d0   MISMATCH         NeuronClass::Update
+[ledger] 0x48bee0 ConnectionClass::dtor -> NG (attempt 1)
+[ledger] 0x5566d0 LinkClass::Attach -> NG (attempt 1)
+[ledger] 0x410230 AbstractClass::GenerateUniqueID -> NG (attempt 1)
+[ledger] 0x5c0080 Entity_Load -> NG (attempt 1)
+[ledger] 0x6339b0 TeamClass::GetLeaderIndex -> OK (attempt 1)
+[ledger] 0x65fdd0 Map_Helper_65FDD0 -> NG (attempt 1)
+[ledger] 0x6c87f0 InitSkirmishSettings -> NG (attempt 1)
+[ledger] 0x70cc90 TechnoClass::RadarUpdateOn -> NG (attempt 1)
+[ledger] 0x70ccc0 TechnoClass::RadarUpdateOff -> NG (attempt 1)
+[ledger] 0x7ce049 __strcats -> NG (attempt 1)
+[ledger] 0x429420 ApplicationClass::sub_429420 -> NG (attempt 1)
+[ledger] 0x429450 ApplicationClass::sub_429450 -> NG (attempt 1)
+[ledger] 0x4c5470 ObjectClass::sub_4C5470 -> NG (attempt 1)
+[ledger] 0x53d550 ObjectClass::WinMainSetup_Setup -> NG (attempt 1)
+[ledger] 0x5f5f00 ObjectClass::GetLandHeight -> NG (attempt 1)
+[ledger] 0x6e5570 ObjectClass::Map_Reset_6E5570 -> NG (attempt 1)
+[ledger] 0x70e280 TechnoClass::ActivateEffect -> NG (attempt 1)
+[ledger] 0x40eb50 sub_40EB50 -> NG (attempt 1)
+[ledger] 0x40ebd0 sub_40EBD0 -> NG (attempt 1)
+[ledger] 0x43a5d0 NeuronClass::Update -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "ret_norm": 1,
+  "branch_order": 1,
+  "extern_reloc": 1,
+  "signedness": 2,
+  "codegen_shape": 6,
+  "regalloc": 6,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p93\batch_report.json

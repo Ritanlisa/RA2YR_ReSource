@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_429450@ApplicationClass@@QAGHPAPAG@Z",
+ "sym_key": "ApplicationClass::sub_429450",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "51568b74240485f6750ab8034000805e59c208006800000000e800000000890633c05e59c20800",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?aSun@@3PADA",
+   "sym_key": "aSun"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?SysAllocString@@YGPAGH@Z",
+   "sym_key": "SysAllocString"
+  }
+ ]
+}
