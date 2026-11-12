@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E8DA0",
+ "name": "NetworkShare::GetField",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E8DA0",
+ "bytes_hex": "a178daa800890d8cdaa8008b1089148d90daa800c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

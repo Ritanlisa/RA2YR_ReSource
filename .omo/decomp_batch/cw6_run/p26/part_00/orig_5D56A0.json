@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D56A0",
+ "name": "MSFont_18::FindPair8",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D56A0",
+ "bytes_hex": "8b5110535533c0565785d27e1f8b7424148b49048b3e3939750a8b59048b6e043bdd740b4083c1083bc27cea83c8ff5f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

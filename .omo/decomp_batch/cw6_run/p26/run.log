@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d2a10 _DynamicVectorClass_PAVMSAnim::FindItemIndex_0 -> _DynamicVectorClass_PAVMSAnim
+[conv] 0x5d2a40 _VectorClass_PAVMSSfx::Add -> _VectorClass_PAVMSSfx
+[conv] 0x5d2b60 _VectorClass_PAVMSSfx::GetSize -> _VectorClass_PAVMSSfx
+[conv] 0x5d39d0 SessionClass::saveSettings -> SessionClass
+[conv] 0x5d5150 _VectorClass_PAUHWND::AddRef -> _VectorClass_PAUHWND
+[conv] 0x5d5270 _VectorClass_PAUHWND::Create -> _VectorClass_PAUHWND
+[conv] 0x5d5380 _DynamicVectorClass_PAUHWND::FindItem -> _DynamicVectorClass_PAUHWND
+[conv] 0x5d53b0 _VectorClass_UAcceleratorTracker::AddRef -> _VectorClass_UAcceleratorTracker
+[conv] 0x5d5530 _VectorClass_UAcceleratorTracker::GetSize -> _VectorClass_UAcceleratorTracker
+[conv] 0x5d56a0 _DynamicVectorClass_UAcceleratorTracker::FindPair8 -> _DynamicVectorClass_UAcceleratorTracker
+[conv] 0x5d6790 MultiplayerGameMode::ClearFlag -> MultiplayerGameMode
+[conv] 0x5d7580 ObjectClass::sub_5D7580 -> ObjectClass
+[conv] 0x5d82f0 _VectorClass_PAVMultiplayerTeam::Add -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x5d8410 _VectorClass_PAVMultiplayerTeam::GetSize -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x5d8550 _VectorClass_PAVMultiplayerGameMode::assignHouses -> _VectorClass_PAVMultiplayerGameMode
+[conv] 0x5e2ba0 Network::processQueue -> Network
+[conv] 0x5e8da0 NetworkShare::GetField -> NetworkShare
+[conv] 0x5eec10 _VectorClass_PBVMultiMission::AddRef -> _VectorClass_PBVMultiMission
+[conv] 0x5eed30 _VectorClass_PBVMultiMission::GetSize -> _VectorClass_PBVMultiMission
+[conv] 0x5eee90 _DynamicVectorClass_PBVMultiMission::FindItemIndex -> _DynamicVectorClass_PBVMultiMission
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVMSAnim rc=0
+[era] _VectorClass_PAVMSSfx    rc=0
+[era] SessionClass             rc=2
+[era] _VectorClass_PAUHWND     rc=0
+[era] _DynamicVectorClass_PAUHWND rc=0
+[era] _VectorClass_UAcceleratorTracker rc=0
+[era] _DynamicVectorClass_UAcceleratorTracker rc=0
+[era] MultiplayerGameMode      rc=2
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAVMultiplayerTeam rc=0
+[era] _VectorClass_PAVMultiplayerGameMode rc=0
+[era] Network                  rc=2
+[era] NetworkShare             rc=0
+[era] _VectorClass_PBVMultiMission rc=0
+[era] _DynamicVectorClass_PBVMultiMission rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d2a10   MISMATCH         _DynamicVectorClass_PAVMSAnim::FindItemIndex_0
+[diff] 0x5d2a40   MISMATCH         _VectorClass_PAVMSSfx::Add
+[diff] 0x5d2b60   MISMATCH         _VectorClass_PAVMSSfx::GetSize
+[diff] 0x5d5150   MISMATCH         _VectorClass_PAUHWND::AddRef
+[diff] 0x5d5270   MISMATCH         _VectorClass_PAUHWND::Create
+[diff] 0x5d5380   MISMATCH         _DynamicVectorClass_PAUHWND::FindItem
+[diff] 0x5d53b0   MISMATCH         _VectorClass_UAcceleratorTracker::AddRef
+[diff] 0x5d5530   MISMATCH         _VectorClass_UAcceleratorTracker::GetSize
+[diff] 0x5d56a0   MISMATCH         _DynamicVectorClass_UAcceleratorTracker::FindPair8
+[diff] 0x5d7580   MISMATCH         ObjectClass::sub_5D7580
+[diff] 0x5d82f0   MISMATCH         _VectorClass_PAVMultiplayerTeam::Add
+[diff] 0x5d8410   MISMATCH         _VectorClass_PAVMultiplayerTeam::GetSize
+[diff] 0x5d8550   MISMATCH         _VectorClass_PAVMultiplayerGameMode::assignHouses
+[diff] 0x5e8da0   MISMATCH         NetworkShare::GetField
+[diff] 0x5eec10   MISMATCH         _VectorClass_PBVMultiMission::AddRef
+[diff] 0x5eed30   MISMATCH         _VectorClass_PBVMultiMission::GetSize
+[diff] 0x5eee90   MISMATCH         _DynamicVectorClass_PBVMultiMission::FindItemIndex
+[ledger] 0x5d2a10 _DynamicVectorClass_PAVMSAnim::FindItemIndex_0 -> NG (attempt 2)
+[ledger] 0x5d2a40 _VectorClass_PAVMSSfx::Add -> NG (attempt 2)
+[ledger] 0x5d2b60 _VectorClass_PAVMSSfx::GetSize -> NG (attempt 2)
+[ledger] 0x5d39d0 SessionClass::saveSettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d5150 _VectorClass_PAUHWND::AddRef -> NG (attempt 2)
+[ledger] 0x5d5270 _VectorClass_PAUHWND::Create -> NG (attempt 2)
+[ledger] 0x5d5380 _DynamicVectorClass_PAUHWND::FindItem -> NG (attempt 2)
+[ledger] 0x5d53b0 _VectorClass_UAcceleratorTracker::AddRef -> NG (attempt 2)
+[ledger] 0x5d5530 _VectorClass_UAcceleratorTracker::GetSize -> NG (attempt 2)
+[ledger] 0x5d56a0 _DynamicVectorClass_UAcceleratorTracker::FindPair8 -> NG (attempt 2)
+[ledger] 0x5d6790 MultiplayerGameMode::ClearFlag -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d7580 ObjectClass::sub_5D7580 -> NG (attempt 2)
+[ledger] 0x5d82f0 _VectorClass_PAVMultiplayerTeam::Add -> NG (attempt 2)
+[ledger] 0x5d8410 _VectorClass_PAVMultiplayerTeam::GetSize -> NG (attempt 2)
+[ledger] 0x5d8550 _VectorClass_PAVMultiplayerGameMode::assignHouses -> NG (attempt 2)
+[ledger] 0x5e2ba0 Network::processQueue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e8da0 NetworkShare::GetField -> NG (attempt 2)
+[ledger] 0x5eec10 _VectorClass_PBVMultiMission::AddRef -> NG (attempt 2)
+[ledger] 0x5eed30 _VectorClass_PBVMultiMission::GetSize -> NG (attempt 2)
+[ledger] 0x5eee90 _DynamicVectorClass_PBVMultiMission::FindItemIndex -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "branch_polarity": 5,
+  "branch_order": 2,
+  "const_fold": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p26\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D53B0",
+ "name": "VectorClass_UAcceleratorTracker::AddRef",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D53B0",
+ "bytes_hex": "8b4424045355568b5008578b79083bfa753733f685ff7e288b50048b41048d4a042bd08b188b2c023bdd751d8b58048b293bdd75144683c10883c0083bf77ce35f5e5db0015bc204005f5e5d32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

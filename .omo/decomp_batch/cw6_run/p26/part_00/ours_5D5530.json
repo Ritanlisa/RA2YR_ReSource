@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetSize@_VectorClass_UAcceleratorTracker@@QAEHPAH@Z",
+ "sym_key": "_VectorClass_UAcceleratorTracker::GetSize",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "8a410c53555684c05775095f5e5d33c05bc204008b510833c085d27e218b7424148b49048b3e3939750a8b59048b6e043bdd740d403bc27d0583c108ebe883c8ff5f5e5d5bc20400",
+ "relocs": []
+}
