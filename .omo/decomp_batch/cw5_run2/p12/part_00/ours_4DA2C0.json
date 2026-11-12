@@ -1,0 +1,117 @@
+{
+ "symbol": "?ProcessMovement@FootClass@@QAEHXZ",
+ "sym_key": "FootClass::ProcessMovement",
+ "size": 456,
+ "link_base": 0,
+ "bytes_hex": "83ec3855568bf133ed578b86bc0000003bc5742583f801750e39aea4050000750e89aebc00000039aea4050000740ac786bc000000010000008b86d405000066896c240c3bc566896c240e0f84950000008d4c2418518b4824e8000000008b10a1000000003bd0747d8b068d4c242c535156ff504833d28b0e8a50058b4424102400560bd08bfa897c2418ff91840000008b96d40500008b987c0600008d4c2420518b4a24e8000000008b8e1c0200008be8e8000000008b4c24148d542414dd442428516a006a0153525550e800000000508d4c2444e8000000008b0033ed894424105beb048b7c240c8b0d000000008b44240c3bc175638b168d4424385056ff52488b0e33d28a500581e700ffffff0bd75689542418ff91840000008b8e1c0200008bb87c060000e8000000008b4c24108d542414dd44242451556a015752680000000050e800000000508d4c2444e8000000008b008944240c8b3e8d4c240c51b9f8010000e8000000006a015056ff97800400008bcec786bc00000001000000e800000000dd0500000000dc481083ec08dd1c24e8000000008b74242c8b150000000083c40833c625ff0000008d8a680503006a025533f0e80000000003c65f5e5d83c438c3",
+ "relocs": [
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@TechnoClass@@QAEPAIPAX@Z",
+   "sym_key": "TechnoClass::GetWaypointCoords"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_FootClass_Pool@@3IA",
+   "sym_key": "g_FootClass_Pool"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@TechnoClass@@QAEPAIPAX@Z",
+   "sym_key": "TechnoClass::GetWaypointCoords"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?checkTurning@FootClass@@QAEIXZ",
+   "sym_key": "FootClass::checkTurning"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?FindOpenNeighbor@CellClass@@QAEPAHHPAXHHHHHH@Z",
+   "sym_key": "CellClass::FindOpenNeighbor"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?g_FootClass_Pool@@3IA",
+   "sym_key": "g_FootClass_Pool"
+  },
+  {
+   "off": 298,
+   "type": "REL32",
+   "sym": "?checkTurning@FootClass@@QAEIXZ",
+   "sym_key": "FootClass::checkTurning"
+  },
+  {
+   "off": 321,
+   "type": "DIR32",
+   "sym": "?g_FootClass_Pool@@3IA",
+   "sym_key": "g_FootClass_Pool"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 337,
+   "type": "REL32",
+   "sym": "?FindOpenNeighbor@CellClass@@QAEPAHHPAXHHHHHH@Z",
+   "sym_key": "CellClass::FindOpenNeighbor"
+  },
+  {
+   "off": 355,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 360,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 387,
+   "type": "REL32",
+   "sym": "?GetMissionControl@MissionClass@@QAEPADXZ",
+   "sym_key": "MissionClass::GetMissionControl"
+  },
+  {
+   "off": 393,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E27F8@@3NA",
+   "sym_key": "DataGlobal_7E27F8"
+  },
+  {
+   "off": 407,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 417,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 443,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x6fda00 TechnoClass::GetFiringAngle -> TechnoClass
+[conv] 0x703e70 TechnoClass::ScanNeighborCells -> TechnoClass
+[conv] 0x691970 ScoreScreenClass::ProcessFrame -> ScoreScreenClass
+[conv] 0x4da2c0 FootClass::ProcessMovement -> FootClass
+[conv] 0x502a80 HouseClass::RegisterGain_0 -> HouseClass
+[conv] 0x4dbad0 FootClass::BeginPowerUpdate -> FootClass
+[conv] 0x6d5c50 TechnoClass::RenderRadarBlips -> TechnoClass
+[conv] 0x70b280 TechnoClass::ComputeAimVector -> TechnoClass
+[conv] 0x4cfe80 FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget -> FlyLocomotionClass
+[conv] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> TechnoClass
+[conv] 0x4feee0 HouseClass::AIInfantryProduction -> HouseClass
+[conv] 0x7258d0 AbstractClass::AnnounceExpiredPointer -> AbstractClass
+[conv] 0x57acf0 GenerateMapClassCliffTransitions -> _addr_57
+[conv] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> JumpjetLocomotion
+[conv] 0x5eb060 Lobby::UpdatePlayerLabels -> Lobby
+[conv] 0x4ce840 DropPod::ProcessLanding -> DropPod
+[conv] 0x58bb30 ScenarioClass::CopyStartPositions -> ScenarioClass
+[conv] 0x6a8220 SidebarClass::InitCameoGrid -> SidebarClass
+[conv] 0x6a89e0 ObjectClass::sub_6A89E0 -> ObjectClass
+[conv] 0x72d730 Game::LoadMultiplayerScoreAssets -> Game
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ScoreScreenClass         rc=2
+[era] FootClass                rc=2
+[era] HouseClass               rc=2
+[era] FlyLocomotionClass       rc=2
+[era] AbstractClass            rc=2
+[era] _addr_57                 rc=2
+[era] JumpjetLocomotion        rc=2
+[era] Lobby                    rc=2
+[era] DropPod                  rc=2
+[era] ScenarioClass            rc=2
+[era] SidebarClass             rc=0
+[era] ObjectClass              rc=0
+[era] Game                     rc=2
+=== diffasm byte-compare ===
+[diff] 0x4da2c0   MISMATCH         FootClass::ProcessMovement
+[diff] 0x6a8220   MISMATCH         SidebarClass::InitCameoGrid
+[diff] 0x6a89e0   MISMATCH         ObjectClass::sub_6A89E0
+[ledger] 0x6fda00 TechnoClass::GetFiringAngle -> COMPILE_FAIL (attempt 5)
+[ledger] 0x703e70 TechnoClass::ScanNeighborCells -> COMPILE_FAIL (attempt 5)
+[ledger] 0x691970 ScoreScreenClass::ProcessFrame -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4da2c0 FootClass::ProcessMovement -> NG (attempt 5)
+[ledger] 0x502a80 HouseClass::RegisterGain_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4dbad0 FootClass::BeginPowerUpdate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d5c50 TechnoClass::RenderRadarBlips -> COMPILE_FAIL (attempt 5)
+[ledger] 0x70b280 TechnoClass::ComputeAimVector -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4cfe80 FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4feee0 HouseClass::AIInfantryProduction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7258d0 AbstractClass::AnnounceExpiredPointer -> COMPILE_FAIL (attempt 5)
+[ledger] 0x57acf0 GenerateMapClassCliffTransitions -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5eb060 Lobby::UpdatePlayerLabels -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ce840 DropPod::ProcessLanding -> COMPILE_FAIL (attempt 5)
+[ledger] 0x58bb30 ScenarioClass::CopyStartPositions -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6a8220 SidebarClass::InitCameoGrid -> NG (attempt 14)
+[ledger] 0x6a89e0 ObjectClass::sub_6A89E0 -> NG (attempt 5)
+[ledger] 0x72d730 Game::LoadMultiplayerScoreAssets -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p12\batch_report.json
