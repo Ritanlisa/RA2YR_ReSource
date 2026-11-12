@@ -1,0 +1,11 @@
+{
+ "addr": "0x401910",
+ "name": "AudioStream::ReleaseSubsystem",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x401910",
+ "bytes_hex": "568bf18b8e10010000c786180100000000000085c974108b016a01ff10c78610010000000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

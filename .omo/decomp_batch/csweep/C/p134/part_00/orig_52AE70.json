@@ -1,0 +1,11 @@
+{
+ "addr": "0x52AE70",
+ "name": "Delegate::ClearVectorAndStraw",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52AE70",
+ "bytes_hex": "568bf18d4e0ce8d5fff0ff8bcee8cee91900f644240801740956e8aedc290083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

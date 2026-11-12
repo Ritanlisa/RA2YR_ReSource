@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DEE50",
+ "name": "FootClass::vt_entry_530",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DEE50",
+ "bytes_hex": "518d5424008b01528b542414528b542414528b54241452c7442410ffffffffff902c05000059c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

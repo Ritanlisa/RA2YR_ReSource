@@ -1,0 +1,27 @@
+{
+ "symbol": "?unadviseConnection@_ValueGameOption_E_WorldDominationTour@@QAEPAPAXD@Z",
+ "sym_key": "_ValueGameOption_E_WorldDominationTour::unadviseConnection",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "568bf18d461450e80000000083c4048bcee800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?Constructor@GameOption_WorldDominationTour@@QAEXXZ",
+   "sym_key": "GameOption_WorldDominationTour::Constructor"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

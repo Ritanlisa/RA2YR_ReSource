@@ -1,0 +1,15 @@
+{
+ "symbol": "?SelectItem@EditClass@@QAEHPAHH@Z",
+ "sym_key": "EditClass::SelectItem",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf1508b4c241049894634894e38e8000000008b0e83c40489463c56ff51485ec20800",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C2CB0",
+ "name": "MPCooperative::ValidateSettings",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C2CB0",
+ "bytes_hex": "568bf1e808fa010085c0750eb9c60b0000e87a2c1b0085c0740a6a01508bcee8fcf4ffffb0015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Close@SerialPort@@QAEHXZ",
+ "sym_key": "SerialPort::Close",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "51568bf1837e5cff7418e8000000008b465c50e800000000c7465cffffffff5e59c38b4424045e59c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHPAX@Z",
+   "sym_key": "CloseHandle"
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p134\part_00
+=== convert (20 addrs) ===
+[conv] 0x4aeca0 BufferPipe::initDisplay -> BufferPipe
+[conv] 0x52ae70 CacheStraw::ClearVectorAndStraw -> CacheStraw
+[conv] 0x5c2cb0 MPCooperative::ValidateSettings -> MPCooperative
+[conv] 0x766b90 _ValueGameOption_E_WorldDominationTour::unadviseConnection -> _ValueGameOption_E_WorldDominationTour
+[conv] 0x4cfcc0 FlyLocomotionClass::BeginMove -> FlyLocomotionClass
+[conv] 0x5b19a0 MechLocomotionClass::BeginMove -> MechLocomotionClass
+[conv] 0x6e4790 ScriptAction::CopyStringField -> ScriptAction
+[conv] 0x4758c0 MapClass::loadTheaterINI -> MapClass
+[conv] 0x401910 AudioStream::ReleaseSubsystem -> AudioStream
+[conv] 0x4dee50 FootClass::vt_entry_530 -> FootClass
+[conv] 0x732110 sub_732110 -> _addr_73
+[conv] 0x625ab0 ResultNode::CleanupList -> ResultNode
+[conv] 0x6a4ce0 sub_6A4CE0 -> _addr_6A
+[conv] 0x6cfba0 sub_6CFBA0 -> _addr_6C
+[conv] 0x48ab90 TechnoClass::ComputeScanRange -> TechnoClass
+[conv] 0x774950 SerialPort::Close -> SerialPort
+[conv] 0x4c30e0 EditClass::SelectItem -> EditClass
+[conv] 0x7bb020 XSurface::FillRect -> XSurface
+[conv] 0x40dd20 AbstractClass::IsTechno -> AbstractClass
+[conv] 0x521c60 InfantryClass::SetMissionOnCondition -> InfantryClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BufferPipe               rc=0
+[era] CacheStraw               rc=0
+[era] MPCooperative            rc=0
+[era] _ValueGameOption_E_WorldDominationTour rc=0
+[era] FlyLocomotionClass       rc=0
+[era] MechLocomotionClass      rc=0
+[era] ScriptAction             rc=0
+[era] MapClass                 rc=2
+[era] AudioStream              rc=0
+[era] FootClass                rc=0
+[era] _addr_73                 rc=2
+[era] ResultNode               rc=2
+[era] _addr_6A                 rc=0
+[era] _addr_6C                 rc=0
+[era] TechnoClass              rc=2
+[era] SerialPort               rc=0
+[era] EditClass                rc=0
+[era] XSurface                 rc=2
+[era] AbstractClass            rc=0
+[era] InfantryClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x4aeca0   MISMATCH         BufferPipe::initDisplay
+[diff] 0x52ae70   MISMATCH         CacheStraw::ClearVectorAndStraw
+[diff] 0x5c2cb0   MATCH            MPCooperative::ValidateSettings
+[diff] 0x766b90   MISMATCH         _ValueGameOption_E_WorldDominationTour::unadviseConnection
+[diff] 0x4cfcc0   MISMATCH         FlyLocomotionClass::BeginMove
+[diff] 0x5b19a0   MISMATCH         MechLocomotionClass::BeginMove
+[diff] 0x6e4790   MISMATCH         ScriptAction::CopyStringField
+[diff] 0x401910   MISMATCH         AudioStream::ReleaseSubsystem
+[diff] 0x4dee50   MISMATCH         FootClass::vt_entry_530
+[diff] 0x6a4ce0   MISMATCH         sub_6A4CE0
+[diff] 0x6cfba0   MISMATCH         sub_6CFBA0
+[diff] 0x774950   MISMATCH         SerialPort::Close
+[diff] 0x4c30e0   MISMATCH         EditClass::SelectItem
+[diff] 0x40dd20   MISMATCH         AbstractClass::IsTechno
+[diff] 0x521c60   MISMATCH         InfantryClass::SetMissionOnCondition
+[ledger] 0x4aeca0 BufferPipe::initDisplay -> NG (attempt 1)
+[ledger] 0x52ae70 CacheStraw::ClearVectorAndStraw -> NG (attempt 1)
+[ledger] 0x5c2cb0 MPCooperative::ValidateSettings -> OK (attempt 1)
+[ledger] 0x766b90 _ValueGameOption_E_WorldDominationTour::unadviseConnection -> NG (attempt 1)
+[ledger] 0x4cfcc0 FlyLocomotionClass::BeginMove -> NG (attempt 1)
+[ledger] 0x5b19a0 MechLocomotionClass::BeginMove -> NG (attempt 1)
+[ledger] 0x6e4790 ScriptAction::CopyStringField -> NG (attempt 1)
+[ledger] 0x4758c0 MapClass::loadTheaterINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x401910 AudioStream::ReleaseSubsystem -> NG (attempt 1)
+[ledger] 0x4dee50 FootClass::vt_entry_530 -> NG (attempt 1)
+[ledger] 0x732110 sub_732110 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x625ab0 ResultNode::CleanupList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a4ce0 sub_6A4CE0 -> NG (attempt 1)
+[ledger] 0x6cfba0 sub_6CFBA0 -> NG (attempt 1)
+[ledger] 0x48ab90 TechnoClass::ComputeScanRange -> COMPILE_FAIL (attempt 1)
+[ledger] 0x774950 SerialPort::Close -> NG (attempt 1)
+[ledger] 0x4c30e0 EditClass::SelectItem -> NG (attempt 1)
+[ledger] 0x7bb020 XSurface::FillRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40dd20 AbstractClass::IsTechno -> NG (attempt 1)
+[ledger] 0x521c60 InfantryClass::SetMissionOnCondition -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "MATCH": 1,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "const_fold": 5,
+  "regalloc": 3,
+  "codegen_shape": 3,
+  "ret_norm": 1,
+  "branch_polarity": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 6.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p134\batch_report.json

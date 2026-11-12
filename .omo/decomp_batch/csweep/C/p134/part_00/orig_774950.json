@@ -1,0 +1,11 @@
+{
+ "addr": "0x774950",
+ "name": "SerialPort::Close",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x774950",
+ "bytes_hex": "568bf1837e5cff741e68a4978400e87d1fc9ff8b465c83c40450ff15e0117e00c7465cffffffff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

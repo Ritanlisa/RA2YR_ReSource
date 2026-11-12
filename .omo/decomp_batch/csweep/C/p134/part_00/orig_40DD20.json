@@ -1,0 +1,11 @@
+{
+ "addr": "0x40DD20",
+ "name": "AbstractClass::IsTechno",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40DD20",
+ "bytes_hex": "568bf185f6741e8b06ff502c4883f80e771333c98a8854dd4000ff248d4cdd40008bc65ec333c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

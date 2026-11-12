@@ -1,0 +1,11 @@
+{
+ "addr": "0x521C60",
+ "name": "InfantryClass::SetMissionOnCondition",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x521C60",
+ "bytes_hex": "8b4424044874118b016a006a006a09ff9058050000c204008b116a006a006a0aff9258050000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B19A0",
+ "name": "MechLocomotionClass::BeginMove",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B19A0",
+ "bytes_hex": "8b442408568b7424085056e81091faff85c07c1185f6740dc70638dc7e00c746046cdb7e005ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

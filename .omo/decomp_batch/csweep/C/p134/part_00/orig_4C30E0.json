@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C30E0",
+ "name": "DropListClass::SelectItem",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C30E0",
+ "bytes_hex": "8b442404568bf1508b4c241049894634894e38e80d7330008b1683c4048bce89463cff52485ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

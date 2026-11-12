@@ -1,0 +1,21 @@
+{
+ "symbol": "?CopyStringField@ScriptAction@@QAEPADPAD@Z",
+ "sym_key": "ScriptAction::CopyStringField",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c0750a8b442404c60000c2040033c9568b7424088ac86a1f5156e80000000083c40cc6461f008bc65ec20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  }
+ ]
+}

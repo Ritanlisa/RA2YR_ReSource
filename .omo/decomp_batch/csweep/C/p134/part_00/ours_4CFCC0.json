@@ -1,0 +1,15 @@
+{
+ "symbol": "?BeginMove@FlyLocomotionClass@@QAGHPAH@Z",
+ "sym_key": "FlyLocomotionClass::BeginMove",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b742408508b0e51e80000000085c07c1185f6740dc70600000000c74604000000005ec20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?SwizzleManager__SaveLoad@@YGHPAXPAH@Z",
+   "sym_key": "SwizzleManager__SaveLoad"
+  }
+ ]
+}

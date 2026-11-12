@@ -1,0 +1,27 @@
+{
+ "symbol": "?ValidateSettings@MPCooperative@@QAEDXZ",
+ "sym_key": "MPCooperative::ValidateSettings",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000085c0750eb9c60b0000e80000000085c0740a6a01508bcee800000000b0015ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?FindGameUI@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindGameUI"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Setup@CampaignCoop@@QAEPAXHH@Z",
+   "sym_key": "CampaignCoop::Setup"
+  }
+ ]
+}

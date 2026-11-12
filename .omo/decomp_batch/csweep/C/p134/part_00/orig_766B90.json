@@ -1,0 +1,11 @@
+{
+ "addr": "0x766B90",
+ "name": "COMClass::unadviseConnection",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x766B90",
+ "bytes_hex": "568bf18d4e14e855db04008bcee85e070000f644240801740956e88e1f060083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

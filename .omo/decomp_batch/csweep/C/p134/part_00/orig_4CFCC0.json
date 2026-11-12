@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CFCC0",
+ "name": "FlyLocomotionClass::BeginMove",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CFCC0",
+ "bytes_hex": "8b442408568b7424085056e8f0ad080085c07c1185f6740dc706c08a7e00c74604f4897e005ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
