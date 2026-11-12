@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D4C50",
+ "name": "MPBattleClass::onDialogDestroyed",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D4C50",
+ "bytes_hex": "33c068904c5d00a394fcab00a398fcab00c6059cfcab0001a29dfcab00c70590fcab008cec7e00c705a4fcab000a000000a3a0fcab00e8ff4a1f0059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

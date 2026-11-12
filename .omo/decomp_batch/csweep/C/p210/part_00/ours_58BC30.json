@@ -1,0 +1,69 @@
+{
+ "symbol": "?sub_58BC30@@YAHXZ",
+ "sym_key": "Unnamed::sub_58BC30",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000c6050000000001a200000000c7050000000000000000c705000000000a000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_58BC70@@YAHPBX0@Z",
+   "sym_key": "sub_58BC70"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_RandomMap_TerrainState@@3IA",
+   "sym_key": "g_RandomMap_TerrainState"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDF98@@3IA",
+   "sym_key": "DataGlobal_ABDF98"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDF9C@@3EA",
+   "sym_key": "DataGlobal_ABDF9C"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDF9D@@3EA",
+   "sym_key": "DataGlobal_ABDF9D"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_RandomMap_BuildObject@@3IA",
+   "sym_key": "g_RandomMap_BuildObject"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_12@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_12"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDFA4@@3IA",
+   "sym_key": "DataGlobal_ABDFA4"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_RandomMap_TileData@@3IA",
+   "sym_key": "g_RandomMap_TileData"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

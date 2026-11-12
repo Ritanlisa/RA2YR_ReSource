@@ -1,0 +1,69 @@
+{
+ "symbol": "?sub_65F9B0@@YAHXZ",
+ "sym_key": "Unnamed::sub_65F9B0",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "33c06800000000a300000000a300000000c6050000000001a200000000c7050000000000000000c705000000000a000000a300000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?sub_65F9F0@@YAHPBX0@Z",
+   "sym_key": "sub_65F9F0"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_TriggerPool@@3PAXA",
+   "sym_key": "g_TriggerPool"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DB0@@3IA",
+   "sym_key": "DataGlobal_B04DB0"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DB4@@3EA",
+   "sym_key": "DataGlobal_B04DB4"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DB5@@3EA",
+   "sym_key": "DataGlobal_B04DB5"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DA8@@3IA",
+   "sym_key": "DataGlobal_B04DA8"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_16@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_16"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04DBC@@3IA",
+   "sym_key": "DataGlobal_B04DBC"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_TriggerEventState@@3IA",
+   "sym_key": "g_TriggerEventState"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}
