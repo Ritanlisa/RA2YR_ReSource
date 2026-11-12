@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C4E90",
+ "name": "MPCooperative::spawnUnits",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C4E90",
+ "bytes_hex": "8b44241cc700000000008b414085c08b442408741a85c074118a4c241184c9740950e8863c200083c404b001c21c0085c074118a4c241184c9740950e86c3c200083c40432c0c21c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

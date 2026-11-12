@@ -1,0 +1,21 @@
+{
+ "symbol": "?spawnUnits@MPCooperative@@QAEDHPAXHFHHPAH@Z",
+ "sym_key": "MPCooperative::spawnUnits",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "8b44241cc700000000008b414085c08b442408741d85c0741433c98a4c24116685c9740950e80000000083c404b001c21c0085c0741433d28a5424116685d2740950e80000000083c40432c0c21c00",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

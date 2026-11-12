@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p238\part_00
+=== convert (20 addrs) ===
+[conv] 0x58ab80 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x5ac650 _TypeList_PBVBuildingTypeClass::Add -> _TypeList_PBVBuildingTypeClass
+[conv] 0x5ad390 _VectorClass_PAVMapRegionClass::QueryInterface -> _VectorClass_PAVMapRegionClass
+[conv] 0x5ad430 _VectorClass_PAU_WIN32_FIND_DATAA::QueryInterface -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ad480 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::Constructor_VectorClass__WIN32_FIND_DATAA___ -> _DynamicVectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ad4d0 _VectorClass_V_TRect_H::QueryInterface -> _VectorClass_V_TRect_H
+[conv] 0x5ad520 _DynamicVectorClass_V_TRect_H::Constructor -> _DynamicVectorClass_V_TRect_H
+[conv] 0x5ad570 _DynamicVectorClass_PAVCellClass::Destruct -> _DynamicVectorClass_PAVCellClass
+[conv] 0x5ad5c0 _VectorClass_N::QueryInterface -> _VectorClass_N
+[conv] 0x5c0d30 VectorClass::processDeathEvent -> VectorClass
+[conv] 0x5c0d80 DynamicVector::DestroyVector -> DynamicVector
+[conv] 0x5c4e90 MPCooperative::spawnUnits -> MPCooperative
+[conv] 0x5c4fc0 DynamicVector::saveGameState -> DynamicVector
+[conv] 0x5c5850 VectorClass::verifyGameIntegrity -> VectorClass
+[conv] 0x5c58a0 VectorClass::processVote -> VectorClass
+[conv] 0x5c58f0 _DynamicVectorClass_PAUNodeNameType::Add -> _DynamicVectorClass_PAUNodeNameType
+[conv] 0x5c5940 _VectorClass_PAVCoopCampaignClass::QueryInterface -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5c5990 DynamicVector::tallyVotes -> DynamicVector
+[conv] 0x5d16c0 _VectorClass_VPoint2D::QueryInterface -> _VectorClass_VPoint2D
+[conv] 0x5d1760 _VectorClass_PAVMSTextEntry::QueryInterface -> _VectorClass_PAVMSTextEntry
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+[era] _TypeList_PBVBuildingTypeClass rc=0
+[era] _VectorClass_PAVMapRegionClass rc=0
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _DynamicVectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _VectorClass_V_TRect_H   rc=0
+[era] _DynamicVectorClass_V_TRect_H rc=0
+[era] _DynamicVectorClass_PAVCellClass rc=0
+[era] _VectorClass_N           rc=0
+[era] VectorClass              rc=2
+[era] DynamicVector            rc=2
+[era] MPCooperative            rc=0
+[era] _DynamicVectorClass_PAUNodeNameType rc=0
+[era] _VectorClass_PAVCoopCampaignClass rc=0
+[era] _VectorClass_VPoint2D    rc=0
+[era] _VectorClass_PAVMSTextEntry rc=0
+=== diffasm byte-compare ===
+[diff] 0x58ab80   MISMATCH         _VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface
+[diff] 0x5ac650   MISMATCH         _TypeList_PBVBuildingTypeClass::Add
+[diff] 0x5ad390   MISMATCH         _VectorClass_PAVMapRegionClass::QueryInterface
+[diff] 0x5ad430   MISMATCH         _VectorClass_PAU_WIN32_FIND_DATAA::QueryInterface
+[diff] 0x5ad480   MISMATCH         _DynamicVectorClass_PAU_WIN32_FIND_DATAA::Constructor_VectorClass__WIN32_FIND_DATAA___
+[diff] 0x5ad4d0   MISMATCH         _VectorClass_V_TRect_H::QueryInterface
+[diff] 0x5ad520   MISMATCH         _DynamicVectorClass_V_TRect_H::Constructor
+[diff] 0x5ad570   MISMATCH         _DynamicVectorClass_PAVCellClass::Destruct
+[diff] 0x5ad5c0   MISMATCH         _VectorClass_N::QueryInterface
+[diff] 0x5c4e90   MISMATCH         MPCooperative::spawnUnits
+[diff] 0x5c58f0   MISMATCH         _DynamicVectorClass_PAUNodeNameType::Add
+[diff] 0x5c5940   MISMATCH         _VectorClass_PAVCoopCampaignClass::QueryInterface
+[diff] 0x5d16c0   MISMATCH         _VectorClass_VPoint2D::QueryInterface
+[diff] 0x5d1760   MISMATCH         _VectorClass_PAVMSTextEntry::QueryInterface
+[ledger] 0x58ab80 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface -> NG (attempt 1)
+[ledger] 0x5ac650 _TypeList_PBVBuildingTypeClass::Add -> NG (attempt 1)
+[ledger] 0x5ad390 _VectorClass_PAVMapRegionClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x5ad430 _VectorClass_PAU_WIN32_FIND_DATAA::QueryInterface -> NG (attempt 1)
+[ledger] 0x5ad480 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::Constructor_VectorClass__WIN32_FIND_DATAA___ -> NG (attempt 1)
+[ledger] 0x5ad4d0 _VectorClass_V_TRect_H::QueryInterface -> NG (attempt 1)
+[ledger] 0x5ad520 _DynamicVectorClass_V_TRect_H::Constructor -> NG (attempt 1)
+[ledger] 0x5ad570 _DynamicVectorClass_PAVCellClass::Destruct -> NG (attempt 1)
+[ledger] 0x5ad5c0 _VectorClass_N::QueryInterface -> NG (attempt 1)
+[ledger] 0x5c0d30 VectorClass::processDeathEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c0d80 DynamicVector::DestroyVector -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c4e90 MPCooperative::spawnUnits -> NG (attempt 1)
+[ledger] 0x5c4fc0 DynamicVector::saveGameState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c5850 VectorClass::verifyGameIntegrity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c58a0 VectorClass::processVote -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c58f0 _DynamicVectorClass_PAUNodeNameType::Add -> NG (attempt 1)
+[ledger] 0x5c5940 _VectorClass_PAVCoopCampaignClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x5c5990 DynamicVector::tallyVotes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d16c0 _VectorClass_VPoint2D::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d1760 _VectorClass_PAVMSTextEntry::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "const_fold": 13,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p238\batch_report.json

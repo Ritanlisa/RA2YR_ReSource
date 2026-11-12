@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AD480",
+ "name": "MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AD480",
+ "bytes_hex": "568bf18b4604c7062cd97e0085c074178a4e0d84c9741050e8a0b6210083c404c74604000000008a442408c6460d00a801c7460800000000740956e87db6210083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
