@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckBaseClassState@JumpjetLocomotionClass@@QAG_NH@Z",
+ "sym_key": "JumpjetLocomotionClass::CheckBaseClassState",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b4eec8d46ec50ff511084c075108b461485c07409b8010000005ec2080033c05ec20800",
+ "relocs": []
+}

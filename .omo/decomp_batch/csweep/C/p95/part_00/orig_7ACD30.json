@@ -1,0 +1,11 @@
+{
+ "addr": "0x7ACD30",
+ "name": "Array::CleanupArrayWOL",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7ACD30",
+ "bytes_hex": "568bf15733ff833e007e128b46088d0cb8e8aa7900008b06473bf87ceec706000000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Render_Render_759850@TechnoClass@@QAE_NHH@Z",
+ "sym_key": "TechnoClass::Render_Render_759850",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07d0383c8ff8b5424048b89000200006a0150e80000000033c983f8ff0f94c18ac1c20800",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Audio_Render_7C3430@@YIHHHHI@Z",
+   "sym_key": "Audio_Render_7C3430"
+  }
+ ]
+}

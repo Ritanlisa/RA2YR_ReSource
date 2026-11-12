@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4A2030@ObjectClass@@QAEHPAEH@Z",
+ "sym_key": "ObjectClass::sub_4A2030",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "538b5c240856578b7c24148bf157538d4e0ce80000000057538bcee8000000005f5e5bc20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Dispatch@Delegate@@QAEHHH@Z",
+   "sym_key": "Delegate::Dispatch"
+  }
+ ]
+}

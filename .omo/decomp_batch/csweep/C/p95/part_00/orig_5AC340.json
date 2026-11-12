@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AC340",
+ "name": "Scalar::Dtor",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AC340",
+ "bytes_hex": "568bf18b460850e8f1c721008a44240c83c404a801740956e8e0c7210083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

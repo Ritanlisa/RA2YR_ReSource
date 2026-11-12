@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E61F0",
+ "name": "Debug::AccumFlags",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E61F0",
+ "bytes_hex": "568bb1a00000005733ff85f674138bcee8db0f04008bb6a80000000bf885f675ed8bc75f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

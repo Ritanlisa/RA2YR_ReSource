@@ -1,0 +1,15 @@
+{
+ "symbol": "?Get@DynamicStringArray@@QAEDPAPADH@Z",
+ "sym_key": "DynamicStringArray::Get",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07c1b3b0173178b49088d14818b4c240452e80000000024010c01c208002400c20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  }
+ ]
+}

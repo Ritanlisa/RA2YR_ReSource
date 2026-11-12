@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B7180",
+ "name": "WideString::GetChar",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B7180",
+ "bytes_hex": "568bf18b0650e87a3201008b4c240c83c4043bc8730a8b165e668b044ac2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

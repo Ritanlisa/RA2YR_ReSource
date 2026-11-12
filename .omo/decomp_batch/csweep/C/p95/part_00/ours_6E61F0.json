@@ -1,0 +1,15 @@
+{
+ "symbol": "?AccumFlags@Debug@@QAEHXZ",
+ "sym_key": "Debug::AccumFlags",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "568bb1a00000005733ff85f674138bcee8000000008bb6a80000000bf885f675ed8bc75f5ec3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?GetFlags@TriggerTypeClass@@QAEHXZ",
+   "sym_key": "TriggerTypeClass::GetFlags"
+  }
+ ]
+}

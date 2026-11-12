@@ -1,0 +1,15 @@
+{
+ "symbol": "?CleanupArrayWOL@Array@@QAEHXZ",
+ "sym_key": "Array::CleanupArrayWOL",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "51568bf15733ff833e0076208b46088d0cb851e8000000008b0683c404473bf872eac706000000005f5e59c38b442408c706000000005f5e59c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

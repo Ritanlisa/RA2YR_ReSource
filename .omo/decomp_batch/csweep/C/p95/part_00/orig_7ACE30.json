@@ -1,0 +1,11 @@
+{
+ "addr": "0x7ACE30",
+ "name": "DynamicStringArray::Get",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7ACE30",
+ "bytes_hex": "8b44240885c07c193b017d158b49088d14818b4c240452e8f47a0000b001c2080032c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?Check@SHAPipe@@QAEHHH@Z",
+ "sym_key": "SHAPipe::Check",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "538b5c240856578b7c24148bf157538d4e0ce80000000057538bcee8000000005f5e5bc20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Process@SHA1@@QAEHHH@Z",
+   "sym_key": "SHA1::Process"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Dispatch@Delegate@@QAEHHH@Z",
+   "sym_key": "Delegate::Dispatch"
+  }
+ ]
+}

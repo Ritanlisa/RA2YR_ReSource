@@ -1,0 +1,108 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p95\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e61f0 Debug::AccumFlags -> Debug
+[conv] 0x759850 TechnoClass::Render_Render_759850 -> TechnoClass
+[conv] 0x7acd30 Array::CleanupArrayWOL -> Array
+[conv] 0x7ace30 DynamicStringArray::Get -> DynamicStringArray
+[conv] 0x7b7180 WideString::GetChar -> WideString
+[conv] 0x4b6440 JumpjetLocomotionClass::CheckBaseClassState -> JumpjetLocomotionClass
+[conv] 0x4a2030 ObjectClass::sub_4A2030 -> ObjectClass
+[conv] 0x4c1b50 Vector::TwoDMagnitudeMath -> Vector
+[conv] 0x5ac340 Scalar::Dtor -> Scalar
+[conv] 0x5f0040 Network::CleanupOnDisconnect -> Network
+[conv] 0x69e9b0 SHAPipe::Check -> SHAPipe
+[conv] 0x6beee0 _TClassFactory_VCStreamClass::Release -> _TClassFactory_VCStreamClass
+[conv] 0x6bf060 _TClassFactory_VWaveClass::Release -> _TClassFactory_VWaveClass
+[conv] 0x6bf1e0 _TClassFactory_VTerrainTypeClass::Release -> _TClassFactory_VTerrainTypeClass
+[conv] 0x6bf360 _TClassFactory_VTerrainClass::Release -> _TClassFactory_VTerrainClass
+[conv] 0x6bf4e0 _TClassFactory_VSuperWeaponTypeClass::Release -> _TClassFactory_VSuperWeaponTypeClass
+[conv] 0x6bf660 _TClassFactory_VSuperClass::Release -> _TClassFactory_VSuperClass
+[conv] 0x6bf7e0 _TClassFactory_VTactical::Release -> _TClassFactory_VTactical
+[conv] 0x6bfae0 _TClassFactory_VEMPulseClass::GetClassName -> _TClassFactory_VEMPulseClass
+[conv] 0x6bfc60 _TClassFactory_VLightSourceClass::GetClassName -> _TClassFactory_VLightSourceClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Debug                    rc=0
+[era] TechnoClass              rc=0
+[era] Array                    rc=0
+[era] DynamicStringArray       rc=0
+[era] WideString               rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] ObjectClass              rc=0
+[era] Vector                   rc=0
+[era] Scalar                   rc=0
+[era] Network                  rc=0
+[era] SHAPipe                  rc=0
+[era] _TClassFactory_VCStreamClass rc=0
+[era] _TClassFactory_VWaveClass rc=0
+[era] _TClassFactory_VTerrainTypeClass rc=0
+[era] _TClassFactory_VTerrainClass rc=0
+[era] _TClassFactory_VSuperWeaponTypeClass rc=0
+[era] _TClassFactory_VSuperClass rc=0
+[era] _TClassFactory_VTactical rc=0
+[era] _TClassFactory_VEMPulseClass rc=0
+[era] _TClassFactory_VLightSourceClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6e61f0   MATCH            Debug::AccumFlags
+[diff] 0x759850   MISMATCH         TechnoClass::Render_Render_759850
+[diff] 0x7acd30   MISMATCH         Array::CleanupArrayWOL
+[diff] 0x7ace30   MISMATCH         DynamicStringArray::Get
+[diff] 0x7b7180   MISMATCH         WideString::GetChar
+[diff] 0x4b6440   MISMATCH         JumpjetLocomotionClass::CheckBaseClassState
+[diff] 0x4a2030   MATCH            ObjectClass::sub_4A2030
+[diff] 0x4c1b50   MISMATCH         Vector::TwoDMagnitudeMath
+[diff] 0x5ac340   MISMATCH         Scalar::Dtor
+[diff] 0x5f0040   MISMATCH         Network::CleanupOnDisconnect
+[diff] 0x69e9b0   MATCH            SHAPipe::Check
+[diff] 0x6beee0   MISMATCH         _TClassFactory_VCStreamClass::Release
+[diff] 0x6bf060   MISMATCH         _TClassFactory_VWaveClass::Release
+[diff] 0x6bf1e0   MISMATCH         _TClassFactory_VTerrainTypeClass::Release
+[diff] 0x6bf360   MISMATCH         _TClassFactory_VTerrainClass::Release
+[diff] 0x6bf4e0   MISMATCH         _TClassFactory_VSuperWeaponTypeClass::Release
+[diff] 0x6bf660   MISMATCH         _TClassFactory_VSuperClass::Release
+[diff] 0x6bf7e0   MISMATCH         _TClassFactory_VTactical::Release
+[diff] 0x6bfae0   MISMATCH         _TClassFactory_VEMPulseClass::GetClassName
+[diff] 0x6bfc60   MISMATCH         _TClassFactory_VLightSourceClass::GetClassName
+[ledger] 0x6e61f0 Debug::AccumFlags -> OK (attempt 1)
+[ledger] 0x759850 TechnoClass::Render_Render_759850 -> NG (attempt 1)
+[ledger] 0x7acd30 Array::CleanupArrayWOL -> NG (attempt 1)
+[ledger] 0x7ace30 DynamicStringArray::Get -> NG (attempt 1)
+[ledger] 0x7b7180 WideString::GetChar -> NG (attempt 1)
+[ledger] 0x4b6440 JumpjetLocomotionClass::CheckBaseClassState -> NG (attempt 1)
+[ledger] 0x4a2030 ObjectClass::sub_4A2030 -> OK (attempt 1)
+[ledger] 0x4c1b50 Vector::TwoDMagnitudeMath -> NG (attempt 1)
+[ledger] 0x5ac340 Scalar::Dtor -> NG (attempt 1)
+[ledger] 0x5f0040 Network::CleanupOnDisconnect -> NG (attempt 1)
+[ledger] 0x69e9b0 SHAPipe::Check -> OK (attempt 1)
+[ledger] 0x6beee0 _TClassFactory_VCStreamClass::Release -> NG (attempt 1)
+[ledger] 0x6bf060 _TClassFactory_VWaveClass::Release -> NG (attempt 1)
+[ledger] 0x6bf1e0 _TClassFactory_VTerrainTypeClass::Release -> NG (attempt 1)
+[ledger] 0x6bf360 _TClassFactory_VTerrainClass::Release -> NG (attempt 1)
+[ledger] 0x6bf4e0 _TClassFactory_VSuperWeaponTypeClass::Release -> NG (attempt 1)
+[ledger] 0x6bf660 _TClassFactory_VSuperClass::Release -> NG (attempt 1)
+[ledger] 0x6bf7e0 _TClassFactory_VTactical::Release -> NG (attempt 1)
+[ledger] 0x6bfae0 _TClassFactory_VEMPulseClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6bfc60 _TClassFactory_VLightSourceClass::GetClassName -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 3,
+  "MISMATCH": 17
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "regalloc": 10,
+  "branch_order": 1,
+  "const_fold": 2,
+  "branch_polarity": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 15.0,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p95\batch_report.json

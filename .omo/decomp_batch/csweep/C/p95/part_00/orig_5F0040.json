@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F0040",
+ "name": "Network::CleanupOnDisconnect",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F0040",
+ "bytes_hex": "f605f8d5a800027513833d38b2a80001750ab970eaa800e814310000b970eaa800e90a1b0000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

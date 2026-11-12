@@ -1,0 +1,45 @@
+{
+ "symbol": "?CleanupOnDisconnect@Network@@QAEHXZ",
+ "sym_key": "Network::CleanupOnDisconnect",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "f60500000000027513833d0000000001750ab900000000e800000000b900000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_NetworkEventPending@@3HA",
+   "sym_key": "g_NetworkEventPending"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Negotiate@NullModemClass@@QAEDXZ",
+   "sym_key": "NullModemClass::Negotiate"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?DetachAndFree@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::DetachAndFree"
+  }
+ ]
+}

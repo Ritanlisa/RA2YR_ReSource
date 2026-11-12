@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C1B50",
+ "name": "Vector::TwoDMagnitudeMath",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C1B50",
+ "bytes_hex": "db4104db0183ec08d9c0d8c9d9c2d8cbdec1dd1c24ddd8ddd8e8d290000083c408e98a433000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
