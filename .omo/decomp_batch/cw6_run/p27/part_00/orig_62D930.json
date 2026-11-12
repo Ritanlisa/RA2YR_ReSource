@@ -1,0 +1,11 @@
+{
+ "addr": "0x62D930",
+ "name": "ParticleClass::GetClassIdentifier",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x62D930",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0d00977e0089088b1504977e008950048b0d08977e008948088b150c977e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

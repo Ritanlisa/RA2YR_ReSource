@@ -1,0 +1,11 @@
+{
+ "addr": "0x624110",
+ "name": "SimpleDialogControl::Constructor",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x624110",
+ "bytes_hex": "8bc133c9894804884808c70038f77e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

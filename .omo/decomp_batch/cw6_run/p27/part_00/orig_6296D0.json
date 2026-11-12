@@ -1,0 +1,11 @@
+{
+ "addr": "0x6296D0",
+ "name": "ParasiteClass::ddtor",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6296D0",
+ "bytes_hex": "8b44240885c07508b803400080c208008b0da0987e0089088b15a4987e008950048b0da8987e008948088b15ac987e0089500c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

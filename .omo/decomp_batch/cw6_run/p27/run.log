@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f96b0 TheaterObjectTypeClassSpecificID -> _addr_5F
+[conv] 0x5f9b80 _VectorClass_PAVObjectTypeClass::Add -> _VectorClass_PAVObjectTypeClass
+[conv] 0x5f9ca0 _VectorClass_PAVObjectTypeClass::GetSize -> _VectorClass_PAVObjectTypeClass
+[conv] 0x5f9db0 _DynamicVectorClass_PAVObjectTypeClass::FindItemIndex -> _DynamicVectorClass_PAVObjectTypeClass
+[conv] 0x5fdf10 OverlayClass::ddtor -> OverlayClass
+[conv] 0x5fec30 OverlayTypeClass::GetClassIdentifier -> OverlayTypeClass
+[conv] 0x600020 _VectorClass_PAVSpotLightClass::Add -> _VectorClass_PAVSpotLightClass
+[conv] 0x600140 _VectorClass_PAVSpotLightClass::GetSize -> _VectorClass_PAVSpotLightClass
+[conv] 0x600250 _DynamicVectorClass_PAVSpotLightClass::FindItemIndex -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x624080 ObjectClass::sub_624080 -> ObjectClass
+[conv] 0x624110 SimpleDialogControl::Constructor -> SimpleDialogControl
+[conv] 0x626070 ObjectClass::sub_626070 -> ObjectClass
+[conv] 0x627e10 _VectorClass_PAVColorScheme::Add -> _VectorClass_PAVColorScheme
+[conv] 0x628040 _DynamicVectorClass_PAVColorScheme::FindItemIndex -> _DynamicVectorClass_PAVColorScheme
+[conv] 0x628740 FileSystem::readFile -> FileSystem
+[conv] 0x6296d0 ParasiteClass::ddtor -> ParasiteClass
+[conv] 0x62b0d0 _VectorClass_PAVParasiteClass::Add -> _VectorClass_PAVParasiteClass
+[conv] 0x62b1f0 _VectorClass_PAVParasiteClass::GetSize -> _VectorClass_PAVParasiteClass
+[conv] 0x62b300 _DynamicVectorClass_PAVParasiteClass::FindItemIndex -> _DynamicVectorClass_PAVParasiteClass
+[conv] 0x62d930 ParticleClass::GetClassIdentifier -> ParticleClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5F                 rc=2
+[era] _VectorClass_PAVObjectTypeClass rc=0
+[era] _DynamicVectorClass_PAVObjectTypeClass rc=0
+[era] OverlayClass             rc=0
+[era] OverlayTypeClass         rc=0
+[era] _VectorClass_PAVSpotLightClass rc=0
+[era] _DynamicVectorClass_PAVSpotLightClass rc=2
+[era] ObjectClass              rc=0
+[era] SimpleDialogControl      rc=0
+[era] _VectorClass_PAVColorScheme rc=0
+[era] _DynamicVectorClass_PAVColorScheme rc=0
+[era] FileSystem               rc=0
+[era] ParasiteClass            rc=0
+[era] _VectorClass_PAVParasiteClass rc=0
+[era] _DynamicVectorClass_PAVParasiteClass rc=0
+[era] ParticleClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f9b80   MISMATCH         _VectorClass_PAVObjectTypeClass::Add
+[diff] 0x5f9ca0   MISMATCH         _VectorClass_PAVObjectTypeClass::GetSize
+[diff] 0x5f9db0   MISMATCH         _DynamicVectorClass_PAVObjectTypeClass::FindItemIndex
+[diff] 0x5fdf10   MISMATCH         OverlayClass::ddtor
+[diff] 0x5fec30   MISMATCH         OverlayTypeClass::GetClassIdentifier
+[diff] 0x600020   MISMATCH         _VectorClass_PAVSpotLightClass::Add
+[diff] 0x600140   MISMATCH         _VectorClass_PAVSpotLightClass::GetSize
+[diff] 0x624080   MISMATCH         ObjectClass::sub_624080
+[diff] 0x626070   MATCH            ObjectClass::sub_626070
+[diff] 0x624110   MISMATCH         SimpleDialogControl::Constructor
+[diff] 0x627e10   MISMATCH         _VectorClass_PAVColorScheme::Add
+[diff] 0x628040   MISMATCH         _DynamicVectorClass_PAVColorScheme::FindItemIndex
+[diff] 0x628740   MISMATCH         FileSystem::readFile
+[diff] 0x6296d0   MISMATCH         ParasiteClass::ddtor
+[diff] 0x62b0d0   MISMATCH         _VectorClass_PAVParasiteClass::Add
+[diff] 0x62b1f0   MISMATCH         _VectorClass_PAVParasiteClass::GetSize
+[diff] 0x62b300   MISMATCH         _DynamicVectorClass_PAVParasiteClass::FindItemIndex
+[diff] 0x62d930   MISMATCH         ParticleClass::GetClassIdentifier
+[ledger] 0x5f96b0 TheaterObjectTypeClassSpecificID -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f9b80 _VectorClass_PAVObjectTypeClass::Add -> NG (attempt 2)
+[ledger] 0x5f9ca0 _VectorClass_PAVObjectTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x5f9db0 _DynamicVectorClass_PAVObjectTypeClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x5fdf10 OverlayClass::ddtor -> NG (attempt 2)
+[ledger] 0x5fec30 OverlayTypeClass::GetClassIdentifier -> NG (attempt 2)
+[ledger] 0x600020 _VectorClass_PAVSpotLightClass::Add -> NG (attempt 2)
+[ledger] 0x600140 _VectorClass_PAVSpotLightClass::GetSize -> NG (attempt 2)
+[ledger] 0x600250 _DynamicVectorClass_PAVSpotLightClass::FindItemIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x624080 ObjectClass::sub_624080 -> NG (attempt 2)
+[ledger] 0x624110 SimpleDialogControl::Constructor -> NG (attempt 2)
+[ledger] 0x626070 ObjectClass::sub_626070 -> OK (attempt 2)
+[ledger] 0x627e10 _VectorClass_PAVColorScheme::Add -> NG (attempt 2)
+[ledger] 0x628040 _DynamicVectorClass_PAVColorScheme::FindItemIndex -> NG (attempt 2)
+[ledger] 0x628740 FileSystem::readFile -> NG (attempt 2)
+[ledger] 0x6296d0 ParasiteClass::ddtor -> NG (attempt 2)
+[ledger] 0x62b0d0 _VectorClass_PAVParasiteClass::Add -> NG (attempt 2)
+[ledger] 0x62b1f0 _VectorClass_PAVParasiteClass::GetSize -> NG (attempt 2)
+[ledger] 0x62b300 _DynamicVectorClass_PAVParasiteClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x62d930 ParticleClass::GetClassIdentifier -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 17,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 4,
+  "codegen_shape": 9,
+  "regalloc": 3,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p27\batch_report.json
