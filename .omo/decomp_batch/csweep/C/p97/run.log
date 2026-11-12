@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p97\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c1ee0 _TClassFactory_VScriptTypeClass::GetClassName -> _TClassFactory_VScriptTypeClass
+[conv] 0x6c2060 _TClassFactory_VTagClass::GetClassName -> _TClassFactory_VTagClass
+[conv] 0x6c21e0 _TClassFactory_VTagTypeClass::GetClassName -> _TClassFactory_VTagTypeClass
+[conv] 0x6c2360 _TClassFactory_VTeamClass::GetClassName -> _TClassFactory_VTeamClass
+[conv] 0x6c24e0 _TClassFactory_VTeamTypeClass::GetClassName -> _TClassFactory_VTeamTypeClass
+[conv] 0x6c2660 _TClassFactory_VTaskForceClass::GetClassName -> _TClassFactory_VTaskForceClass
+[conv] 0x6c27e0 _TClassFactory_VUnitTypeClass::GetClassName -> _TClassFactory_VUnitTypeClass
+[conv] 0x6c2960 _TClassFactory_VBuildingTypeClass::GetClassName -> _TClassFactory_VBuildingTypeClass
+[conv] 0x6c2c60 _TClassFactory_VInfantryTypeClass::GetClassName -> _TClassFactory_VInfantryTypeClass
+[conv] 0x6c2de0 _TClassFactory_VBulletTypeClass::GetClassName -> _TClassFactory_VBulletTypeClass
+[conv] 0x6c2f60 _TClassFactory_VIsometricTileTypeClass::GetClassName -> _TClassFactory_VIsometricTileTypeClass
+[conv] 0x6c30e0 _TClassFactory_VOverlayTypeClass::GetClassName -> _TClassFactory_VOverlayTypeClass
+[conv] 0x6c3260 _TClassFactory_VSmudgeTypeClass::GetClassName -> _TClassFactory_VSmudgeTypeClass
+[conv] 0x6c33e0 _TClassFactory_VUnitClass::GetClassName -> _TClassFactory_VUnitClass
+[conv] 0x6c3560 _TClassFactory_VBuildingClass::GetClassName -> _TClassFactory_VBuildingClass
+[conv] 0x6c36e0 _TClassFactory_VAircraftClass::GetClassName -> _TClassFactory_VAircraftClass
+[conv] 0x6c3860 _TClassFactory_VInfantryClass::GetClassName -> _TClassFactory_VInfantryClass
+[conv] 0x6c39e0 _TClassFactory_VAnimClass::GetClassName -> _TClassFactory_VAnimClass
+[conv] 0x6c3ce0 _TClassFactory_VHouseTypeClass::GetClassName -> _TClassFactory_VHouseTypeClass
+[conv] 0x6c3e60 _TClassFactory_VHouseClass::GetClassName -> _TClassFactory_VHouseClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VScriptTypeClass rc=0
+[era] _TClassFactory_VTagClass rc=0
+[era] _TClassFactory_VTagTypeClass rc=0
+[era] _TClassFactory_VTeamClass rc=0
+[era] _TClassFactory_VTeamTypeClass rc=0
+[era] _TClassFactory_VTaskForceClass rc=0
+[era] _TClassFactory_VUnitTypeClass rc=0
+[era] _TClassFactory_VBuildingTypeClass rc=0
+[era] _TClassFactory_VInfantryTypeClass rc=0
+[era] _TClassFactory_VBulletTypeClass rc=0
+[era] _TClassFactory_VIsometricTileTypeClass rc=0
+[era] _TClassFactory_VOverlayTypeClass rc=0
+[era] _TClassFactory_VSmudgeTypeClass rc=0
+[era] _TClassFactory_VUnitClass rc=0
+[era] _TClassFactory_VBuildingClass rc=0
+[era] _TClassFactory_VAircraftClass rc=0
+[era] _TClassFactory_VInfantryClass rc=0
+[era] _TClassFactory_VAnimClass rc=0
+[era] _TClassFactory_VHouseTypeClass rc=0
+[era] _TClassFactory_VHouseClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c1ee0   MISMATCH         _TClassFactory_VScriptTypeClass::GetClassName
+[diff] 0x6c2060   MISMATCH         _TClassFactory_VTagClass::GetClassName
+[diff] 0x6c21e0   MISMATCH         _TClassFactory_VTagTypeClass::GetClassName
+[diff] 0x6c2360   MISMATCH         _TClassFactory_VTeamClass::GetClassName
+[diff] 0x6c24e0   MISMATCH         _TClassFactory_VTeamTypeClass::GetClassName
+[diff] 0x6c2660   MISMATCH         _TClassFactory_VTaskForceClass::GetClassName
+[diff] 0x6c27e0   MISMATCH         _TClassFactory_VUnitTypeClass::GetClassName
+[diff] 0x6c2960   MISMATCH         _TClassFactory_VBuildingTypeClass::GetClassName
+[diff] 0x6c2c60   MISMATCH         _TClassFactory_VInfantryTypeClass::GetClassName
+[diff] 0x6c2de0   MISMATCH         _TClassFactory_VBulletTypeClass::GetClassName
+[diff] 0x6c2f60   MISMATCH         _TClassFactory_VIsometricTileTypeClass::GetClassName
+[diff] 0x6c30e0   MISMATCH         _TClassFactory_VOverlayTypeClass::GetClassName
+[diff] 0x6c3260   MISMATCH         _TClassFactory_VSmudgeTypeClass::GetClassName
+[diff] 0x6c33e0   MISMATCH         _TClassFactory_VUnitClass::GetClassName
+[diff] 0x6c3560   MISMATCH         _TClassFactory_VBuildingClass::GetClassName
+[diff] 0x6c36e0   MISMATCH         _TClassFactory_VAircraftClass::GetClassName
+[diff] 0x6c3860   MISMATCH         _TClassFactory_VInfantryClass::GetClassName
+[diff] 0x6c39e0   MISMATCH         _TClassFactory_VAnimClass::GetClassName
+[diff] 0x6c3ce0   MISMATCH         _TClassFactory_VHouseTypeClass::GetClassName
+[diff] 0x6c3e60   MISMATCH         _TClassFactory_VHouseClass::GetClassName
+[ledger] 0x6c1ee0 _TClassFactory_VScriptTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c2060 _TClassFactory_VTagClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c21e0 _TClassFactory_VTagTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c2360 _TClassFactory_VTeamClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c24e0 _TClassFactory_VTeamTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c2660 _TClassFactory_VTaskForceClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c27e0 _TClassFactory_VUnitTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c2960 _TClassFactory_VBuildingTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c2c60 _TClassFactory_VInfantryTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c2de0 _TClassFactory_VBulletTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c2f60 _TClassFactory_VIsometricTileTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c30e0 _TClassFactory_VOverlayTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c3260 _TClassFactory_VSmudgeTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c33e0 _TClassFactory_VUnitClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c3560 _TClassFactory_VBuildingClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c36e0 _TClassFactory_VAircraftClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c3860 _TClassFactory_VInfantryClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c39e0 _TClassFactory_VAnimClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c3ce0 _TClassFactory_VHouseTypeClass::GetClassName -> NG (attempt 1)
+[ledger] 0x6c3e60 _TClassFactory_VHouseClass::GetClassName -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p97\batch_report.json

@@ -95,3 +95,4 @@
 {"layer": "C", "part": 94, "n": 20, "seconds": 44.8, "ok": true, "verdicts": {"MISMATCH": 11, "MATCH": 2, "COMPILE_FAIL": 6, "NO_PSEUDO": 1}}
 {"layer": "C", "part": 95, "n": 20, "seconds": 46.9, "ok": true, "verdicts": {"MATCH": 3, "MISMATCH": 17}}
 {"layer": "C", "part": 96, "n": 20, "seconds": 40.5, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"layer": "C", "part": 97, "n": 20, "seconds": 40.5, "ok": true, "verdicts": {"MISMATCH": 20}}
