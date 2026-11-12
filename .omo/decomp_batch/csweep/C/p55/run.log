@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p55\part_00
+=== convert (20 addrs) ===
+[conv] 0x5361c0 CenterTeamCommand::AddRef -> CenterTeamCommand
+[conv] 0x5362b0 TauntCommandClass::AddRef -> TauntCommandClass
+[conv] 0x540610 IPXGlobalConnClass::Release -> IPXGlobalConnClass
+[conv] 0x5bd5a0 String::Release -> String
+[conv] 0x5e8740 Render_Setup -> Render
+[conv] 0x653830 RadarClass::CheckResult3 -> RadarClass
+[conv] 0x6d6ad0 CellClass::GetByte284 -> CellClass
+[conv] 0x798120 sub_798120 -> _addr_79
+[conv] 0x7c8aee _9type_info_QBEHABV0__Z -> _addr_7C
+[conv] 0x7d386a ___initmbctable -> _addr_7D
+[conv] 0x47b130 FileFind::CloseHandle -> FileFind
+[conv] 0x6d2120 Coord::ScaleToScreenY -> Coord
+[conv] 0x711ee0 TechnoTypeClass::ComputeBuildTime -> TechnoTypeClass
+[conv] 0x732ca0 UI_Create_732CA0 -> UI_Create
+[conv] 0x557fb0 ListClass::ScrollDown -> ListClass
+[conv] 0x70dd50 TechnoClass::GetVt252Byte -> TechnoClass
+[conv] 0x731a50 UI_Create_731A50 -> UI_Create
+[conv] 0x731a70 UI_Create_731A70 -> UI_Create
+[conv] 0x7c8ab7 ObjectClass::_Gtype_info_UAEPAXI_Z -> ObjectClass
+[conv] 0x7ca993 ObjectClass::sub_7CA993 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CenterTeamCommand        rc=0
+[era] TauntCommandClass        rc=0
+[era] IPXGlobalConnClass       rc=2
+[era] String                   rc=0
+[era] Render                   rc=2
+[era] RadarClass               rc=0
+[era] CellClass                rc=0
+[era] _addr_79                 rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=0
+[era] FileFind                 rc=0
+[era] Coord                    rc=2
+[era] TechnoTypeClass          rc=2
+[era] UI_Create                rc=2
+[era] ListClass                rc=2
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x5361c0   MISMATCH         CenterTeamCommand::AddRef
+[diff] 0x5362b0   MISMATCH         TauntCommandClass::AddRef
+[diff] 0x5bd5a0   MISMATCH         String::Release
+[diff] 0x653830   MISMATCH         RadarClass::CheckResult3
+[diff] 0x6d6ad0   MISMATCH         CellClass::GetByte284
+[diff] 0x7d386a   MISMATCH         ___initmbctable
+[diff] 0x47b130   MISMATCH         FileFind::CloseHandle
+[diff] 0x732ca0   MISMATCH         UI_Create_732CA0
+[diff] 0x731a50   MISMATCH         UI_Create_731A50
+[diff] 0x731a70   MATCH            UI_Create_731A70
+[diff] 0x70dd50   MISMATCH         TechnoClass::GetVt252Byte
+[diff] 0x7c8ab7   MISMATCH         ObjectClass::_Gtype_info_UAEPAXI_Z
+[diff] 0x7ca993   MISMATCH         ObjectClass::sub_7CA993
+[ledger] 0x5361c0 CenterTeamCommand::AddRef -> NG (attempt 1)
+[ledger] 0x5362b0 TauntCommandClass::AddRef -> NG (attempt 1)
+[ledger] 0x540610 IPXGlobalConnClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bd5a0 String::Release -> NG (attempt 1)
+[ledger] 0x5e8740 Render_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x653830 RadarClass::CheckResult3 -> NG (attempt 1)
+[ledger] 0x6d6ad0 CellClass::GetByte284 -> NG (attempt 1)
+[ledger] 0x798120 sub_798120 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8aee _9type_info_QBEHABV0__Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d386a ___initmbctable -> NG (attempt 1)
+[ledger] 0x47b130 FileFind::CloseHandle -> NG (attempt 1)
+[ledger] 0x6d2120 Coord::ScaleToScreenY -> COMPILE_FAIL (attempt 1)
+[ledger] 0x711ee0 TechnoTypeClass::ComputeBuildTime -> COMPILE_FAIL (attempt 1)
+[ledger] 0x732ca0 UI_Create_732CA0 -> NG (attempt 1)
+[ledger] 0x557fb0 ListClass::ScrollDown -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70dd50 TechnoClass::GetVt252Byte -> NG (attempt 1)
+[ledger] 0x731a50 UI_Create_731A50 -> NG (attempt 1)
+[ledger] 0x731a70 UI_Create_731A70 -> OK (attempt 1)
+[ledger] 0x7c8ab7 ObjectClass::_Gtype_info_UAEPAXI_Z -> NG (attempt 1)
+[ledger] 0x7ca993 ObjectClass::sub_7CA993 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 7,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "codegen_shape": 6,
+  "regalloc": 1,
+  "cc_mismatch": 1,
+  "branch_polarity": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 7.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p55\batch_report.json

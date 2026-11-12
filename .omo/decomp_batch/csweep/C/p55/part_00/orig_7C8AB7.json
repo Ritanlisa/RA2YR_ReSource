@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8AB7",
+ "name": "??_Gtype_info_UAEPAXI_Z",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8AB7",
+ "bytes_hex": "568bf1e8cffffffff644240801740756e871000000598bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

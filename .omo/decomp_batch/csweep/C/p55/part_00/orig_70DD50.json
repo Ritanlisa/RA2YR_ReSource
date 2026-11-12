@@ -1,0 +1,11 @@
+{
+ "addr": "0x70DD50",
+ "name": "TechnoClass::GetVt252Byte",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70DD50",
+ "bytes_hex": "8b01ff90f003000085c0740d8b0085c074078a8050010000c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

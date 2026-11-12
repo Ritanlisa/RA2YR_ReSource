@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetByte284@CellClass@@QAGHPAH@Z",
+ "sym_key": "CellClass::GetByte284",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b442408b90000000050e80000000033c98a881c0100008bc1c20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5361C0",
+ "name": "CenterTeamCommand::AddRef",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5361C0",
+ "bytes_hex": "8b41045068a071820068b4f5a800e8212d290083c40cb8b4f5a800c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

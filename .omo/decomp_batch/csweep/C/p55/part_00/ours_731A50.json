@@ -1,0 +1,27 @@
+{
+ "symbol": "?UI_Create_731A50@@YIHD@Z",
+ "sym_key": "Unnamed::UI_Create_731A50",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "51a1000000005385c08ad975168b44240450e80000000083c404b2018acbe8000000005b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?MuteSWLaunches@@3PAIA",
+   "sym_key": "MuteSWLaunches"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?UI_Create_731A50_Create@@YADPAX@Z",
+   "sym_key": "UI_Create_731A50_Create"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?UI_Create_731A50_Create_63A120@@YIHDD@Z",
+   "sym_key": "UI_Create_731A50_Create_63A120"
+  }
+ ]
+}

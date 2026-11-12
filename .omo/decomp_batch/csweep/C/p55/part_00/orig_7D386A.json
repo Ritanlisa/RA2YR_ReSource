@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D386A",
+ "name": "___initmbctable",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D386A",
+ "bytes_hex": "833db88bb7000075126afde808fcffff59c705b88bb70001000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

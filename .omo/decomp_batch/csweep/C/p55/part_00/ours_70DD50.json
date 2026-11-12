@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetVt252Byte@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::GetVt252Byte",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b0151ff90f003000085c07405833800750232c0c3",
+ "relocs": []
+}

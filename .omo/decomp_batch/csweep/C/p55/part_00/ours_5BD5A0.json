@@ -1,0 +1,15 @@
+{
+ "symbol": "?Release@String@@QAEHXZ",
+ "sym_key": "String::Release",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "56578bf98b770c85f6740956e80000000083c404c7470c000000008bc65f5ec3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

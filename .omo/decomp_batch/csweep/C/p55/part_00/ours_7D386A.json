@@ -1,0 +1,27 @@
+{
+ "symbol": "?___initmbctable@@YAHXZ",
+ "sym_key": "Unnamed::___initmbctable",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "51a10000000085c075166afde80000000083c404c705000000000100000059c38b44240059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BB8@@3IA",
+   "sym_key": "CRTGlobal_B78BB8"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?_setmbcp@@YAHHZZ",
+   "sym_key": "_setmbcp"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BB8@@3IA",
+   "sym_key": "CRTGlobal_B78BB8"
+  }
+ ]
+}

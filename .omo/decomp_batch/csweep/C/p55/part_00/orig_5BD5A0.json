@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BD5A0",
+ "name": "String::Release",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BD5A0",
+ "bytes_hex": "568bf18b460c85c0740950e88db5200083c404c7460c000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

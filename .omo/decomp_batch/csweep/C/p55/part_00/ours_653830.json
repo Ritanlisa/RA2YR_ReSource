@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckResult3@RadarClass@@QAG_NHH@Z",
+ "sym_key": "RadarClass::CheckResult3",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24088b54240450518b4c241452e800000000f6d81bc0f7d8c20c00",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?vt_entry_94@DisplayClass@@QAEDPAXHD@Z",
+   "sym_key": "DisplayClass::vt_entry_94"
+  }
+ ]
+}

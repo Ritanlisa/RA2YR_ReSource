@@ -1,0 +1,11 @@
+{
+ "addr": "0x5362B0",
+ "name": "TauntCommandClass::AddRef",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5362B0",
+ "bytes_hex": "8b41045068f871820068b4f5a800e8312c290083c40cb8b4f5a800c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
