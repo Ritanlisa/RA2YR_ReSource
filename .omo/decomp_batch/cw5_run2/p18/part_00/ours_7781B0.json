@@ -1,0 +1,15 @@
+{
+ "symbol": "?EditControl_Helper@@YIHF@Z",
+ "sym_key": "Unnamed::EditControl_Helper",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "33c083ec088ac56685c0740a33d28ad589542400eb070fbfc189442400578d4c24086a01518d7c240c83c9ff33c08d54240cf2aef7d14951525050e800000000488b4c24085ff7d81bc0f7d023c183c408c3",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?MultiByteToWideChar@@YGHHHPAX00H@Z",
+   "sym_key": "MultiByteToWideChar"
+  }
+ ]
+}

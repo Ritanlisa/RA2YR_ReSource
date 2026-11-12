@@ -1,0 +1,11 @@
+{
+ "addr": "0x6BF5D0",
+ "name": "VectorClass_K_38::QueryInterface",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6BF5D0",
+ "bytes_hex": "8b44240c5385c07509b8034000805bc20c008b54240c5657b904000000bf907c7f008bf233dbc700000000008b5c2410f3a774128bf2b904000000bfa07c7f0033d2f3a7750289188b085f85c95e7509b8024000805bc20c008b0353ff500433c05bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

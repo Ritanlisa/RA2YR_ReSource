@@ -1,0 +1,21 @@
+{
+ "symbol": "?CreateTClassFactory_VoxelAnimClass@_TClassFactory_VVoxelAnimClass@@QAGHPBX0@Z",
+ "sym_key": "_TClassFactory_VVoxelAnimClass::CreateTClassFactory_VoxelAnimClass",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "8b44240c5385c07509b8034000805bc20c008b5424105657b904000000bf000000008bf233dbc700000000008b5c2414f3a774128bf2b904000000bf0000000033d2f3a7750289188b085f85c95e7509b8024000805bc20c008b0353ff500433c05bc20c00",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?IID_IUnknown@@3U_GUID_era@@A",
+   "sym_key": "IID_IUnknown"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F7CA0@@3EA",
+   "sym_key": "DataGlobal_7F7CA0"
+  }
+ ]
+}

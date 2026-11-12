@@ -2910,7 +2910,7 @@
   "this_as_id": false
  },
  "0x40e060": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": "+0 push ebx",
   "name": "sub_40E060",
@@ -3834,7 +3834,7 @@
   "this_as_id": false
  },
  "0x410260": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov eax, dword ptr [esp + 0xc]",
@@ -6890,14 +6890,14 @@
   "status": "OK"
  },
  "0x4265b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "Cell::GetHeight",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Cell::GetHeight",
-  "rule_violations": 2,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -19281,7 +19281,7 @@
   "this_as_id": false
  },
  "0x4af720": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21704,7 +21704,7 @@
   "this_as_id": false
  },
  "0x4c68e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -46599,7 +46599,7 @@
   "this_as_id": false
  },
  "0x5cd4d0": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 mov eax, dword ptr [0x89c4b8]",
@@ -53720,7 +53720,7 @@
   "status": "NG"
  },
  "0x633f20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 push ebx",
@@ -56656,14 +56656,14 @@
   "this_as_id": false
  },
  "0x658de0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": "+26 mov dword ptr [esi], 0x7f044c",
+  "first_diff": "+2 push edi",
   "name": "RadarHashVector::Construct",
-  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "RadarHashVector::Construct",
-  "rule_violations": 9,
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -58618,7 +58618,7 @@
   "this_as_id": false
  },
  "0x662240": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -64833,7 +64833,7 @@
   "this_as_id": false
  },
  "0x6bf5d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
@@ -65130,7 +65130,7 @@
   "this_as_id": false
  },
  "0x6c0650": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
@@ -65432,7 +65432,7 @@
   "this_as_id": false
  },
  "0x6c16d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
@@ -65734,7 +65734,7 @@
   "this_as_id": false
  },
  "0x6c2750": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
@@ -66036,7 +66036,7 @@
   "this_as_id": false
  },
  "0x6c37d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
@@ -66345,7 +66345,7 @@
   "this_as_id": false
  },
  "0x6c4850": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
@@ -66690,7 +66690,7 @@
   "this_as_id": false
  },
  "0x6c5a50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+18 mov edx, dword ptr [esp + 0xc]",
@@ -73723,7 +73723,7 @@
   "this_as_id": false
  },
  "0x71ff20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -81899,7 +81899,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x765b60": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov ecx, dword ptr [esi + 4]",
@@ -84865,7 +84865,7 @@
   "this_as_id": false
  },
  "0x7781b0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": "+0 sub esp, 8",
   "name": "EditControl_Helper",
@@ -85380,7 +85380,7 @@
   "this_as_id": false
  },
  "0x77c840": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": "+10 jle 0x77c863",
   "name": "sub_77C840",

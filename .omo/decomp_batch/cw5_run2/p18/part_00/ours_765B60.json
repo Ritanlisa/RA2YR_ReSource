@@ -1,0 +1,15 @@
+{
+ "symbol": "?QueryInterface@_VectorClass_V_rc_ptr_VConflict_WorldDominationTour@@QAEPAID@Z",
+ "sym_key": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour::QueryInterface",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "568bf18b460cc7060000000085c07412f6c4ff740d8b086a0350ff11c706000000008b4e0c8a44240880e500c7460800000000a801894e0c740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7781B0",
+ "name": "EditControl_Helper",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7781B0",
+ "bytes_hex": "83ec08f6c5ff74148bc1884c2401c1e80888442400c644240200eb09884c2400c644240100578d4c24086a01518d7c240c83c9ff33c08d54240cf2aef7d14951525050ff15c4117e00488b4c24085ff7d81bc0f7d023c183c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
