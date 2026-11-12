@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c05d0 BinkMovieHandle::AdjustSurfaceFormat -> BinkMovieHandle
+[conv] 0x69e9e0 SHA1::ComputeThunk -> SHA1
+[conv] 0x710460 TechnoClass::FreeCaptureManager -> TechnoClass
+[conv] 0x752ca0 __F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ -> _addr_75
+[conv] 0x753510 __F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ_1 -> _addr_75
+[conv] 0x7b7d80 Pipe::GetField -> Pipe
+[conv] 0x40a940 ObjectClass::sub_40A940 -> ObjectClass
+[conv] 0x40d220 sub_40D220 -> _addr_40
+[conv] 0x410210 AbstractClass::Dispatch -> AbstractClass
+[conv] 0x5371b0 SidebarUpCommandClass::performAction_133 -> SidebarUpCommandClass
+[conv] 0x537240 SidebarDownCommandClass::performAction_138 -> SidebarDownCommandClass
+[conv] 0x6ba120 UI_Init_6BA120 -> UI_Init
+[conv] 0x6ca680 sub_6CA680 -> _addr_6C
+[conv] 0x7b71b0 WideString::Length -> WideString
+[conv] 0x7cb85c _iswalpha -> _addr_7C
+[conv] 0x7cb897 _iswxdigit -> _addr_7C
+[conv] 0x7cb8c4 _iswalnum -> _addr_7C
+[conv] 0x7cb8d5 _iswprint -> _addr_7C
+[conv] 0x7cbddc _exit -> _addr_7C
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BinkMovieHandle          rc=0
+[era] SHA1                     rc=0
+[era] TechnoClass              rc=0
+[era] _addr_75                 rc=0
+[era] Pipe                     rc=0
+[era] ObjectClass              rc=0
+[era] _addr_40                 rc=0
+[era] AbstractClass            rc=0
+[era] SidebarUpCommandClass    rc=0
+[era] SidebarDownCommandClass  rc=0
+[era] UI_Init                  rc=0
+[era] _addr_6C                 rc=0
+[era] WideString               rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5c05d0   MATCH            BinkMovieHandle::AdjustSurfaceFormat
+[diff] 0x69e9e0   MATCH            SHA1::ComputeThunk
+[diff] 0x710460   MISMATCH         TechnoClass::FreeCaptureManager
+[diff] 0x752ca0   MISMATCH         __F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ
+[diff] 0x753510   MISMATCH         __F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ_1
+[diff] 0x7b7d80   MISMATCH         Pipe::GetField
+[diff] 0x40a940   MISMATCH         ObjectClass::sub_40A940
+[diff] 0x40d220   MATCH            sub_40D220
+[diff] 0x410210   MISMATCH         AbstractClass::Dispatch
+[diff] 0x5371b0   MATCH            SidebarUpCommandClass::performAction_133
+[diff] 0x537240   MATCH            SidebarDownCommandClass::performAction_138
+[diff] 0x6ba120   MATCH            UI_Init_6BA120
+[diff] 0x6ca680   MISMATCH         sub_6CA680
+[diff] 0x7b71b0   MISMATCH         WideString::Length
+[diff] 0x7cb85c   MISMATCH         _iswalpha
+[diff] 0x7cb897   MISMATCH         _iswxdigit
+[diff] 0x7cb8c4   MISMATCH         _iswalnum
+[diff] 0x7cb8d5   MISMATCH         _iswprint
+[diff] 0x7cbddc   MISMATCH         _exit
+[ledger] 0x5c05d0 BinkMovieHandle::AdjustSurfaceFormat -> OK (attempt 1)
+[ledger] 0x69e9e0 SHA1::ComputeThunk -> OK (attempt 1)
+[ledger] 0x710460 TechnoClass::FreeCaptureManager -> NG (attempt 1)
+[ledger] 0x752ca0 __F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ -> NG (attempt 1)
+[ledger] 0x753510 __F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ_1 -> NG (attempt 1)
+[ledger] 0x7b7d80 Pipe::GetField -> NG (attempt 1)
+[ledger] 0x40a940 ObjectClass::sub_40A940 -> NG (attempt 1)
+[ledger] 0x40d220 sub_40D220 -> OK (attempt 1)
+[ledger] 0x410210 AbstractClass::Dispatch -> NG (attempt 1)
+[ledger] 0x5371b0 SidebarUpCommandClass::performAction_133 -> OK (attempt 1)
+[ledger] 0x537240 SidebarDownCommandClass::performAction_138 -> OK (attempt 1)
+[ledger] 0x537e50 0x537e50 -> PENDING (attempt 1)
+[ledger] 0x6ba120 UI_Init_6BA120 -> OK (attempt 1)
+[ledger] 0x6ca680 sub_6CA680 -> NG (attempt 1)
+[ledger] 0x7b71b0 WideString::Length -> NG (attempt 1)
+[ledger] 0x7cb85c _iswalpha -> NG (attempt 1)
+[ledger] 0x7cb897 _iswxdigit -> NG (attempt 1)
+[ledger] 0x7cb8c4 _iswalnum -> NG (attempt 1)
+[ledger] 0x7cb8d5 _iswprint -> NG (attempt 1)
+[ledger] 0x7cbddc _exit -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 6,
+  "MISMATCH": 13,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "branch_polarity": 2,
+  "const_fold": 1,
+  "regalloc": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 31.6,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p29\batch_report.json

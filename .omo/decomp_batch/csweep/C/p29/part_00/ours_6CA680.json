@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_6CA680@@YIIPAGH@Z",
+ "sym_key": "Unnamed::sub_6CA680",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "568bf251e80000000083c40485c074038946045ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?sub_6CA5A0@@YAIPAX@Z",
+   "sym_key": "sub_6CA5A0"
+  }
+ ]
+}

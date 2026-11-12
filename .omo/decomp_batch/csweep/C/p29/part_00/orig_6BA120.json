@@ -1,0 +1,11 @@
+{
+ "addr": "0x6BA120",
+ "name": "UI_Init_6BA120",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6BA120",
+ "bytes_hex": "8b4424046a016a0150e8d2fbffffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

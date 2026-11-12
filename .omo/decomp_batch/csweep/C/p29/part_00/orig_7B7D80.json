@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B7D80",
+ "name": "Pipe::GetField",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B7D80",
+ "bytes_hex": "8b016a0a6a0050e82c3c010083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

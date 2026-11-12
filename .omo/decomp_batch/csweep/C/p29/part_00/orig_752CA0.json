@@ -1,0 +1,11 @@
+{
+ "addr": "0x752CA0",
+ "name": "??__F?m_badAllocExceptionPtr___ExceptionPtr__0V?$shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x752CA0",
+ "bytes_hex": "8b0dd8d4b10085c97405e99152cbffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

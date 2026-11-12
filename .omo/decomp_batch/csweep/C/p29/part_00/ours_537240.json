@@ -1,0 +1,21 @@
+{
+ "symbol": "?performAction_138@SidebarDownCommandClass@@QAGDXZ",
+ "sym_key": "SidebarDownCommandClass::performAction_138",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "6aff6a00b900000000e800000000c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?performAction_245@CreateTeamCommand@@QAEDDH@Z",
+   "sym_key": "CreateTeamCommand::performAction_245"
+  }
+ ]
+}

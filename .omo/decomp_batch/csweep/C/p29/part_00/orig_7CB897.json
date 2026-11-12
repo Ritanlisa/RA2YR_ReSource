@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB897",
+ "name": "_iswxdigit",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB897",
+ "bytes_hex": "6880000000ff742408e87b8000005959c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

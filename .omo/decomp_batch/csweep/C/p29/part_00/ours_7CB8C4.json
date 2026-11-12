@@ -1,0 +1,15 @@
+{
+ "symbol": "?_iswalnum@@YAHG@Z",
+ "sym_key": "Unnamed::_iswalnum",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b442404680701000025ffff000050e80000000083c408c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?iswctype@@YAHHHZZ",
+   "sym_key": "iswctype"
+  }
+ ]
+}

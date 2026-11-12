@@ -1,0 +1,11 @@
+{
+ "addr": "0x410210",
+ "name": "INoticeSink::Dispatch",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x410210",
+ "bytes_hex": "8b4424048b50fc8d48fcff522cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

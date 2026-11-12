@@ -1,0 +1,11 @@
+{
+ "addr": "0x69E9E0",
+ "name": "SHA1::ComputeThunk",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69E9E0",
+ "bytes_hex": "8b44240483c10c50e8f3efffffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

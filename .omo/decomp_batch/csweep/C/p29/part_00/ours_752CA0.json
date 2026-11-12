@@ -1,0 +1,21 @@
+{
+ "symbol": "?__F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ@@YAXXZ",
+ "sym_key": "Unnamed::__F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000085c97405e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4D8@@3IA",
+   "sym_key": "DataGlobal_B1D4D8"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Release@Audio@@QAEXXZ",
+   "sym_key": "Audio::Release"
+  }
+ ]
+}

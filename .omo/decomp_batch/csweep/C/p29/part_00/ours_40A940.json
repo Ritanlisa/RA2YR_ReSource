@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_40A940@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_40A940",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b0d1001000084c90fbec174068b0950ff5148c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  }
+ ]
+}

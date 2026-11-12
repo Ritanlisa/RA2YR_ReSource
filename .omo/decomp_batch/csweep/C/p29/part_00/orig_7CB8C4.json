@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB8C4",
+ "name": "_iswalnum",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB8C4",
+ "bytes_hex": "6807010000ff742408e84e8000005959c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
