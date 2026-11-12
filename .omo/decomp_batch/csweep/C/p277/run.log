@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p277\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c28d0 _TClassFactory_VBuildingTypeClass::CreateTClassFactory_BuildingTypeClass -> _TClassFactory_VBuildingTypeClass
+[conv] 0x6c2a50 _TClassFactory_VAircraftTypeClass::CreateTClassFactory_AircraftTypeClass -> _TClassFactory_VAircraftTypeClass
+[conv] 0x6c2bd0 _TClassFactory_VInfantryTypeClass::CreateTClassFactory_InfantryTypeClass -> _TClassFactory_VInfantryTypeClass
+[conv] 0x6c2d50 _TClassFactory_VBulletTypeClass::CreateTClassFactory_BulletTypeClass -> _TClassFactory_VBulletTypeClass
+[conv] 0x6c2ed0 _TClassFactory_VIsometricTileTypeClass::CreateTClassFactory_IsometricTileTypeClass -> _TClassFactory_VIsometricTileTypeClass
+[conv] 0x6c3050 _TClassFactory_VOverlayTypeClass::CreateTClassFactory_OverlayTypeClass -> _TClassFactory_VOverlayTypeClass
+[conv] 0x6c31d0 _TClassFactory_VSmudgeTypeClass::CreateTClassFactory_SmudgeTypeClass -> _TClassFactory_VSmudgeTypeClass
+[conv] 0x6c3350 _TClassFactory_VUnitClass::CreateTClassFactory_UnitClass -> _TClassFactory_VUnitClass
+[conv] 0x6c34d0 _TClassFactory_VBuildingClass::CreateTClassFactory_BuildingClass -> _TClassFactory_VBuildingClass
+[conv] 0x6c3650 _TClassFactory_VAircraftClass::CreateTClassFactory_AircraftClass -> _TClassFactory_VAircraftClass
+[conv] 0x6c3950 _TClassFactory_VAnimClass::CreateTClassFactory_AnimClass -> _TClassFactory_VAnimClass
+[conv] 0x6c3ad0 _TClassFactory_VAnimTypeClass::CreateTClassFactory_AnimTypeClass -> _TClassFactory_VAnimTypeClass
+[conv] 0x6c3c50 _TClassFactory_VHouseTypeClass::CreateTClassFactory_HouseTypeClass -> _TClassFactory_VHouseTypeClass
+[conv] 0x6c3dd0 _TClassFactory_VHouseClass::CreateTClassFactory_HouseClass -> _TClassFactory_VHouseClass
+[conv] 0x6c3f50 _TClassFactory_VDriveLocomotionClass::CreateTClassFactory_DriveLocomotionClass -> _TClassFactory_VDriveLocomotionClass
+[conv] 0x6c40d0 _TClassFactory_VJumpjetLocomotionClass::CreateTClassFactory_JumpjetLocomotionClass -> _TClassFactory_VJumpjetLocomotionClass
+[conv] 0x6c4250 _TClassFactory_VHoverLocomotionClass::CreateTClassFactory_HoverLocomotionClass -> _TClassFactory_VHoverLocomotionClass
+[conv] 0x6c43d0 _TClassFactory_VRocketLocomotionClass::CreateTClassFactory_RocketLocomotionClass -> _TClassFactory_VRocketLocomotionClass
+[conv] 0x6c4550 _TClassFactory_VTunnelLocomotionClass::CreateTClassFactory_TunnelLocomotionClass -> _TClassFactory_VTunnelLocomotionClass
+[conv] 0x6c46d0 _TClassFactory_VWalkLocomotionClass::CreateTClassFactory_WalkLocomotionClass -> _TClassFactory_VWalkLocomotionClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VBuildingTypeClass rc=0
+[era] _TClassFactory_VAircraftTypeClass rc=0
+[era] _TClassFactory_VInfantryTypeClass rc=0
+[era] _TClassFactory_VBulletTypeClass rc=0
+[era] _TClassFactory_VIsometricTileTypeClass rc=0
+[era] _TClassFactory_VOverlayTypeClass rc=0
+[era] _TClassFactory_VSmudgeTypeClass rc=0
+[era] _TClassFactory_VUnitClass rc=0
+[era] _TClassFactory_VBuildingClass rc=0
+[era] _TClassFactory_VAircraftClass rc=0
+[era] _TClassFactory_VAnimClass rc=0
+[era] _TClassFactory_VAnimTypeClass rc=0
+[era] _TClassFactory_VHouseTypeClass rc=0
+[era] _TClassFactory_VHouseClass rc=0
+[era] _TClassFactory_VDriveLocomotionClass rc=0
+[era] _TClassFactory_VJumpjetLocomotionClass rc=0
+[era] _TClassFactory_VHoverLocomotionClass rc=0
+[era] _TClassFactory_VRocketLocomotionClass rc=0
+[era] _TClassFactory_VTunnelLocomotionClass rc=0
+[era] _TClassFactory_VWalkLocomotionClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c28d0   MISMATCH         _TClassFactory_VBuildingTypeClass::CreateTClassFactory_BuildingTypeClass
+[diff] 0x6c2a50   MISMATCH         _TClassFactory_VAircraftTypeClass::CreateTClassFactory_AircraftTypeClass
+[diff] 0x6c2bd0   MISMATCH         _TClassFactory_VInfantryTypeClass::CreateTClassFactory_InfantryTypeClass
+[diff] 0x6c2d50   MISMATCH         _TClassFactory_VBulletTypeClass::CreateTClassFactory_BulletTypeClass
+[diff] 0x6c2ed0   MISMATCH         _TClassFactory_VIsometricTileTypeClass::CreateTClassFactory_IsometricTileTypeClass
+[diff] 0x6c3050   MISMATCH         _TClassFactory_VOverlayTypeClass::CreateTClassFactory_OverlayTypeClass
+[diff] 0x6c31d0   MISMATCH         _TClassFactory_VSmudgeTypeClass::CreateTClassFactory_SmudgeTypeClass
+[diff] 0x6c3350   MISMATCH         _TClassFactory_VUnitClass::CreateTClassFactory_UnitClass
+[diff] 0x6c34d0   MISMATCH         _TClassFactory_VBuildingClass::CreateTClassFactory_BuildingClass
+[diff] 0x6c3650   MISMATCH         _TClassFactory_VAircraftClass::CreateTClassFactory_AircraftClass
+[diff] 0x6c3950   MISMATCH         _TClassFactory_VAnimClass::CreateTClassFactory_AnimClass
+[diff] 0x6c3ad0   MISMATCH         _TClassFactory_VAnimTypeClass::CreateTClassFactory_AnimTypeClass
+[diff] 0x6c3c50   MISMATCH         _TClassFactory_VHouseTypeClass::CreateTClassFactory_HouseTypeClass
+[diff] 0x6c3dd0   MISMATCH         _TClassFactory_VHouseClass::CreateTClassFactory_HouseClass
+[diff] 0x6c3f50   MISMATCH         _TClassFactory_VDriveLocomotionClass::CreateTClassFactory_DriveLocomotionClass
+[diff] 0x6c40d0   MISMATCH         _TClassFactory_VJumpjetLocomotionClass::CreateTClassFactory_JumpjetLocomotionClass
+[diff] 0x6c4250   MISMATCH         _TClassFactory_VHoverLocomotionClass::CreateTClassFactory_HoverLocomotionClass
+[diff] 0x6c43d0   MISMATCH         _TClassFactory_VRocketLocomotionClass::CreateTClassFactory_RocketLocomotionClass
+[diff] 0x6c4550   MISMATCH         _TClassFactory_VTunnelLocomotionClass::CreateTClassFactory_TunnelLocomotionClass
+[diff] 0x6c46d0   MISMATCH         _TClassFactory_VWalkLocomotionClass::CreateTClassFactory_WalkLocomotionClass
+[ledger] 0x6c28d0 _TClassFactory_VBuildingTypeClass::CreateTClassFactory_BuildingTypeClass -> NG (attempt 1)
+[ledger] 0x6c2a50 _TClassFactory_VAircraftTypeClass::CreateTClassFactory_AircraftTypeClass -> NG (attempt 1)
+[ledger] 0x6c2bd0 _TClassFactory_VInfantryTypeClass::CreateTClassFactory_InfantryTypeClass -> NG (attempt 1)
+[ledger] 0x6c2d50 _TClassFactory_VBulletTypeClass::CreateTClassFactory_BulletTypeClass -> NG (attempt 1)
+[ledger] 0x6c2ed0 _TClassFactory_VIsometricTileTypeClass::CreateTClassFactory_IsometricTileTypeClass -> NG (attempt 1)
+[ledger] 0x6c3050 _TClassFactory_VOverlayTypeClass::CreateTClassFactory_OverlayTypeClass -> NG (attempt 1)
+[ledger] 0x6c31d0 _TClassFactory_VSmudgeTypeClass::CreateTClassFactory_SmudgeTypeClass -> NG (attempt 1)
+[ledger] 0x6c3350 _TClassFactory_VUnitClass::CreateTClassFactory_UnitClass -> NG (attempt 1)
+[ledger] 0x6c34d0 _TClassFactory_VBuildingClass::CreateTClassFactory_BuildingClass -> NG (attempt 1)
+[ledger] 0x6c3650 _TClassFactory_VAircraftClass::CreateTClassFactory_AircraftClass -> NG (attempt 1)
+[ledger] 0x6c3950 _TClassFactory_VAnimClass::CreateTClassFactory_AnimClass -> NG (attempt 1)
+[ledger] 0x6c3ad0 _TClassFactory_VAnimTypeClass::CreateTClassFactory_AnimTypeClass -> NG (attempt 1)
+[ledger] 0x6c3c50 _TClassFactory_VHouseTypeClass::CreateTClassFactory_HouseTypeClass -> NG (attempt 1)
+[ledger] 0x6c3dd0 _TClassFactory_VHouseClass::CreateTClassFactory_HouseClass -> NG (attempt 1)
+[ledger] 0x6c3f50 _TClassFactory_VDriveLocomotionClass::CreateTClassFactory_DriveLocomotionClass -> NG (attempt 1)
+[ledger] 0x6c40d0 _TClassFactory_VJumpjetLocomotionClass::CreateTClassFactory_JumpjetLocomotionClass -> NG (attempt 1)
+[ledger] 0x6c4250 _TClassFactory_VHoverLocomotionClass::CreateTClassFactory_HoverLocomotionClass -> NG (attempt 1)
+[ledger] 0x6c43d0 _TClassFactory_VRocketLocomotionClass::CreateTClassFactory_RocketLocomotionClass -> NG (attempt 1)
+[ledger] 0x6c4550 _TClassFactory_VTunnelLocomotionClass::CreateTClassFactory_TunnelLocomotionClass -> NG (attempt 1)
+[ledger] 0x6c46d0 _TClassFactory_VWalkLocomotionClass::CreateTClassFactory_WalkLocomotionClass -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p277\batch_report.json
