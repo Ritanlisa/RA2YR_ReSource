@@ -1,0 +1,39 @@
+{
+ "symbol": "?ddtor@RocketLocomotionClass@@QAGHPAI@Z",
+ "sym_key": "RocketLocomotionClass::ddtor",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c208008b15000000008bc889118b15040000008951048b15080000008951088b150c00000089510c33c98a0d0000000089480c33c0c20800",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_CLSID_ShipLocomotion@@3U_GUID_era@@A",
+   "sym_key": "g_CLSID_ShipLocomotion"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_CLSID_ShipLocomotion@@3U_GUID_era@@A",
+   "sym_key": "g_CLSID_ShipLocomotion"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_CLSID_ShipLocomotion@@3U_GUID_era@@A",
+   "sym_key": "g_CLSID_ShipLocomotion"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_CLSID_ShipLocomotion@@3U_GUID_era@@A",
+   "sym_key": "g_CLSID_ShipLocomotion"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?unk_7E9ADC@@3EA",
+   "sym_key": "unk_7E9ADC"
+  }
+ ]
+}

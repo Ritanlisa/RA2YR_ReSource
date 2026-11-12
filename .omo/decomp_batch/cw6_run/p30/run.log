@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x660bb0 ObjectClass::UI_Create_734120_Create -> ObjectClass
+[conv] 0x660be0 ObjectClass::UI_Create_734120_Create_660BE0 -> ObjectClass
+[conv] 0x660ce0 _VectorClass_PAVRadarEventClass::Add -> _VectorClass_PAVRadarEventClass
+[conv] 0x660e00 _VectorClass_PAVRadarEventClass::GetSize -> _VectorClass_PAVRadarEventClass
+[conv] 0x6615d0 sub_6615D0 -> _addr_66
+[conv] 0x661640 sub_661640 -> _addr_66
+[conv] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> JumpjetLocomotionClass
+[conv] 0x6633d0 RocketLocomotionClass::ddtor -> RocketLocomotionClass
+[conv] 0x6638e0 ObjectClass::sub_6638E0 -> ObjectClass
+[conv] 0x664810 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::AddRef -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67a470 AnimTypeList::Constructor -> AnimTypeList
+[conv] 0x67a740 UnitTypeList::Constructor -> UnitTypeList
+[conv] 0x67a8b0 RulesClass::readParticles -> RulesClass
+[conv] 0x67aaf0 _VectorClass_PBVVoxelAnimTypeClass::AddRef -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67ac10 _VectorClass_PBVVoxelAnimTypeClass::IndexOf -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67add0 _DynamicVectorClass_PBVVoxelAnimTypeClass::GetSize -> _DynamicVectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67ae70 _VectorClass_PBVSmudgeTypeClass::AddRef -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x67af90 _VectorClass_PBVSmudgeTypeClass::AddSmudge -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x67b150 _DynamicVectorClass_PBVSmudgeTypeClass::TypeList_vt04 -> _DynamicVectorClass_PBVSmudgeTypeClass
+[conv] 0x67b1f0 _VectorClass_PBVTerrainTypeClass::AddRef -> _VectorClass_PBVTerrainTypeClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _VectorClass_PAVRadarEventClass rc=0
+[era] _addr_66                 rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] RocketLocomotionClass    rc=0
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] AnimTypeList             rc=0
+[era] UnitTypeList             rc=0
+[era] RulesClass               rc=0
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _DynamicVectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PBVSmudgeTypeClass rc=0
+[era] _DynamicVectorClass_PBVSmudgeTypeClass rc=0
+[era] _VectorClass_PBVTerrainTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x660bb0   MISMATCH         ObjectClass::UI_Create_734120_Create
+[diff] 0x660be0   MISMATCH         ObjectClass::UI_Create_734120_Create_660BE0
+[diff] 0x6638e0   MISMATCH         ObjectClass::sub_6638E0
+[diff] 0x660ce0   MISMATCH         _VectorClass_PAVRadarEventClass::Add
+[diff] 0x660e00   MISMATCH         _VectorClass_PAVRadarEventClass::GetSize
+[diff] 0x6615d0   MISMATCH         sub_6615D0
+[diff] 0x661640   MISMATCH         sub_661640
+[diff] 0x6633d0   MISMATCH         RocketLocomotionClass::ddtor
+[diff] 0x664810   MISMATCH         _VectorClass_PAUConnectionListStruct_OwnerTalkClass::AddRef
+[diff] 0x67a470   MISMATCH         AnimTypeList::Constructor
+[diff] 0x67a740   MISMATCH         UnitTypeList::Constructor
+[diff] 0x67a8b0   MISMATCH         RulesClass::readParticles
+[diff] 0x67aaf0   MISMATCH         _VectorClass_PBVVoxelAnimTypeClass::AddRef
+[diff] 0x67ac10   MISMATCH         _VectorClass_PBVVoxelAnimTypeClass::IndexOf
+[diff] 0x67add0   MISMATCH         _DynamicVectorClass_PBVVoxelAnimTypeClass::GetSize
+[diff] 0x67ae70   MISMATCH         _VectorClass_PBVSmudgeTypeClass::AddRef
+[diff] 0x67af90   MISMATCH         _VectorClass_PBVSmudgeTypeClass::AddSmudge
+[diff] 0x67b150   MISMATCH         _DynamicVectorClass_PBVSmudgeTypeClass::TypeList_vt04
+[diff] 0x67b1f0   MISMATCH         _VectorClass_PBVTerrainTypeClass::AddRef
+[ledger] 0x660bb0 ObjectClass::UI_Create_734120_Create -> NG (attempt 2)
+[ledger] 0x660be0 ObjectClass::UI_Create_734120_Create_660BE0 -> NG (attempt 2)
+[ledger] 0x660ce0 _VectorClass_PAVRadarEventClass::Add -> NG (attempt 2)
+[ledger] 0x660e00 _VectorClass_PAVRadarEventClass::GetSize -> NG (attempt 2)
+[ledger] 0x6615d0 sub_6615D0 -> NG (attempt 2)
+[ledger] 0x661640 sub_661640 -> NG (attempt 2)
+[ledger] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6633d0 RocketLocomotionClass::ddtor -> NG (attempt 2)
+[ledger] 0x6638e0 ObjectClass::sub_6638E0 -> NG (attempt 2)
+[ledger] 0x664810 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::AddRef -> NG (attempt 2)
+[ledger] 0x67a470 AnimTypeList::Constructor -> NG (attempt 2)
+[ledger] 0x67a740 UnitTypeList::Constructor -> NG (attempt 2)
+[ledger] 0x67a8b0 RulesClass::readParticles -> NG (attempt 2)
+[ledger] 0x67aaf0 _VectorClass_PBVVoxelAnimTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x67ac10 _VectorClass_PBVVoxelAnimTypeClass::IndexOf -> NG (attempt 2)
+[ledger] 0x67add0 _DynamicVectorClass_PBVVoxelAnimTypeClass::GetSize -> NG (attempt 2)
+[ledger] 0x67ae70 _VectorClass_PBVSmudgeTypeClass::AddRef -> NG (attempt 2)
+[ledger] 0x67af90 _VectorClass_PBVSmudgeTypeClass::AddSmudge -> NG (attempt 2)
+[ledger] 0x67b150 _DynamicVectorClass_PBVSmudgeTypeClass::TypeList_vt04 -> NG (attempt 2)
+[ledger] 0x67b1f0 _VectorClass_PBVTerrainTypeClass::AddRef -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 7,
+  "extern_reloc": 2,
+  "branch_polarity": 5,
+  "codegen_shape": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p30\batch_report.json

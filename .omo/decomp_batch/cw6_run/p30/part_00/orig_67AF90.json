@@ -1,0 +1,11 @@
+{
+ "addr": "0x67AF90",
+ "name": "SmudgeTypeVector::AddSmudge",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x67AF90",
+ "bytes_hex": "8a410c5684c0750633c05ec204008b510833c085d27e158b7424088b49048b363931740b4083c1043bc27cf483c8ff5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
