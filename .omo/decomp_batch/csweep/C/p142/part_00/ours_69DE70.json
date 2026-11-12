@@ -1,0 +1,15 @@
+{
+ "symbol": "?FreeConfig@ScenarioClass@@QAEXXZ",
+ "sym_key": "ScenarioClass::FreeConfig",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db385e5c741c8b46583bc3741550e80000000083c404895e58885e5c895e14895e185e5bc3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
