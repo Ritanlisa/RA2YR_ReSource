@@ -1,0 +1,21 @@
+{
+ "symbol": "?ReleaseInfiltrators@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::ReleaseInfiltrators",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "568bf1e800000000a140020000ddd8dc9800170000f6c441740e8b0656ff90c801000083f8f67d138bb66c02000085f674098b0e56ff91f80000005ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?GetHealthRatio@BuildingClass@@QAENXZ",
+   "sym_key": "BuildingClass::GetHealthRatio"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

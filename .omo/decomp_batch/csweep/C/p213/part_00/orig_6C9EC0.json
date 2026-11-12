@@ -1,0 +1,11 @@
+{
+ "addr": "0x6C9EC0",
+ "name": "BinkMovie::VtableDispatch",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6C9EC0",
+ "bytes_hex": "568bf18b4c240833c0890e898604080000894424088b018d5424086a0252ff500866817c2408fffe740d686c228400e8ecc9d3ff83c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

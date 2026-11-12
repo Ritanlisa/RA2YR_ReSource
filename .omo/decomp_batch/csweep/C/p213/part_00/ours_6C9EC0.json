@@ -1,0 +1,15 @@
+{
+ "symbol": "?VtableDispatch@BinkMovie@@QAEPAIH@Z",
+ "sym_key": "BinkMovie::VtableDispatch",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18d54240833c96a028906898e04080000894c240c8b085250ff510866817c2408fffe74078bcee8000000008b065ec20400",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

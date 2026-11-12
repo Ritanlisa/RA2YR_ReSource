@@ -1,0 +1,11 @@
+{
+ "addr": "0x723E60",
+ "name": "ToggleClass::Construct",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x723E60",
+ "bytes_hex": "8b4424148b54240c568bf18b4c24146a016a05508b442418518b4c24185250518bcee899a6d6ff33c0c70618817e0088462c88462d8946308bc65ec21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

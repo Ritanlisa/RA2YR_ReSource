@@ -1,0 +1,21 @@
+{
+ "symbol": "?Init@ShapeButtonClass@@QAEPAEXZ",
+ "sym_key": "ShapeButtonClass::Init",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "5333db56535353538bf153e800000000885e34895e38895e3c885e40895e44895e48885e4c0fbe05d4000000894650885e55885e5c891e5e33c05bc3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Construct@ToggleClass@@QAEPAV1@HHHHH@Z",
+   "sym_key": "ToggleClass::Construct"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  }
+ ]
+}

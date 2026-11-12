@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p213\part_00
+=== convert (20 addrs) ===
+[conv] 0x452630 BuildingClass::CheckHealthForRepair -> BuildingClass
+[conv] 0x6c9ec0 BinkMovie::VtableDispatch -> BinkMovie
+[conv] 0x7692f0 ObjectClass::ConstructWDTSelection_Create_76EEB0_Create -> ObjectClass
+[conv] 0x70d7a0 InfantryClass::ReleaseInfiltrators -> InfantryClass
+[conv] 0x582d30 ObjectClass::SmallFunc_582D30 -> ObjectClass
+[conv] 0x69dcf0 ShapeButtonClass::Init -> ShapeButtonClass
+[conv] 0x723e60 ToggleClass::Construct -> ToggleClass
+[conv] 0x7414a0 TechnoClass::GetAverageDamageScore -> TechnoClass
+[conv] 0x7cf77f ___sbh_heap_init -> _addr_7C
+[conv] 0x5f5d90 ObjectClass::IsGreenHP -> ObjectClass
+[conv] 0x408230 AudioTimer::DecrementAll -> AudioTimer
+[conv] 0x49b720 Array::Cleanup -> Array
+[conv] 0x5d82b0 AbstractClass::checkRevealCell -> AbstractClass
+[conv] 0x661590 Map_Append -> Map
+[conv] 0x77c370 sub_77C370 -> _addr_77
+[conv] 0x77c5a0 sub_77C5A0 -> _addr_77
+[conv] 0x77c600 sub_77C600 -> _addr_77
+[conv] 0x77c660 sub_77C660 -> _addr_77
+[conv] 0x77c6c0 sub_77C6C0 -> _addr_77
+[conv] 0x77c720 sub_77C720 -> _addr_77
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=0
+[era] BinkMovie                rc=0
+[era] ObjectClass              rc=0
+[era] InfantryClass            rc=0
+[era] ShapeButtonClass         rc=0
+[era] ToggleClass              rc=0
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=2
+[era] AudioTimer               rc=2
+[era] Array                    rc=0
+[era] AbstractClass            rc=0
+[era] Map                      rc=0
+[era] _addr_77                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x452630   MISMATCH         BuildingClass::CheckHealthForRepair
+[diff] 0x6c9ec0   MISMATCH         BinkMovie::VtableDispatch
+[diff] 0x7692f0   MISMATCH         ObjectClass::ConstructWDTSelection_Create_76EEB0_Create
+[diff] 0x582d30   MISMATCH         ObjectClass::SmallFunc_582D30
+[diff] 0x5f5d90   MISMATCH         ObjectClass::IsGreenHP
+[diff] 0x70d7a0   MISMATCH         InfantryClass::ReleaseInfiltrators
+[diff] 0x69dcf0   MISMATCH         ShapeButtonClass::Init
+[diff] 0x723e60   MISMATCH         ToggleClass::Construct
+[diff] 0x7414a0   MISMATCH         TechnoClass::GetAverageDamageScore
+[diff] 0x49b720   MISMATCH         Array::Cleanup
+[diff] 0x5d82b0   MISMATCH         AbstractClass::checkRevealCell
+[diff] 0x661590   MISMATCH         Map_Append
+[diff] 0x77c370   MISMATCH         sub_77C370
+[diff] 0x77c5a0   MISMATCH         sub_77C5A0
+[diff] 0x77c600   MISMATCH         sub_77C600
+[diff] 0x77c660   MISMATCH         sub_77C660
+[diff] 0x77c6c0   MISMATCH         sub_77C6C0
+[diff] 0x77c720   MISMATCH         sub_77C720
+[ledger] 0x452630 BuildingClass::CheckHealthForRepair -> NG (attempt 1)
+[ledger] 0x6c9ec0 BinkMovie::VtableDispatch -> NG (attempt 1)
+[ledger] 0x7692f0 ObjectClass::ConstructWDTSelection_Create_76EEB0_Create -> NG (attempt 1)
+[ledger] 0x70d7a0 InfantryClass::ReleaseInfiltrators -> NG (attempt 1)
+[ledger] 0x582d30 ObjectClass::SmallFunc_582D30 -> NG (attempt 1)
+[ledger] 0x69dcf0 ShapeButtonClass::Init -> NG (attempt 1)
+[ledger] 0x723e60 ToggleClass::Construct -> NG (attempt 1)
+[ledger] 0x7414a0 TechnoClass::GetAverageDamageScore -> NG (attempt 1)
+[ledger] 0x7cf77f ___sbh_heap_init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f5d90 ObjectClass::IsGreenHP -> NG (attempt 1)
+[ledger] 0x408230 AudioTimer::DecrementAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49b720 Array::Cleanup -> NG (attempt 1)
+[ledger] 0x5d82b0 AbstractClass::checkRevealCell -> NG (attempt 1)
+[ledger] 0x661590 Map_Append -> NG (attempt 1)
+[ledger] 0x77c370 sub_77C370 -> NG (attempt 1)
+[ledger] 0x77c5a0 sub_77C5A0 -> NG (attempt 1)
+[ledger] 0x77c600 sub_77C600 -> NG (attempt 1)
+[ledger] 0x77c660 sub_77C660 -> NG (attempt 1)
+[ledger] 0x77c6c0 sub_77C6C0 -> NG (attempt 1)
+[ledger] 0x77c720 sub_77C720 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "branch_order": 3,
+  "codegen_shape": 3,
+  "const_fold": 2,
+  "width_mismatch": 1,
+  "regalloc": 3,
+  "signedness": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p213\batch_report.json

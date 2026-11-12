@@ -1,0 +1,11 @@
+{
+ "addr": "0x7414A0",
+ "name": "TechnoClass::GetAverageDamageScore",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7414A0",
+ "bytes_hex": "568bf18b86c40600008a880e0e000084c975128a880f0e000084c97508dd0500287e005ec38d8e3c030000e88081f8ff8b86c40600005edab000080000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

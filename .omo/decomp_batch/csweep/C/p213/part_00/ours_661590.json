@@ -1,0 +1,21 @@
+{
+ "symbol": "?Map_Append@@YGHPAEHH@Z",
+ "sym_key": "Unnamed::Map_Append",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "568b74240c85f675178b4424108b4c2408505651e80000000083c0025ec20c008b5424108b4c24088d4602525051e80000000083c0026689065ec20c00",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Map_Append_661530@@YGHPAXPAEH@Z",
+   "sym_key": "Map_Append_661530"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Map_Append_661530@@YGHPAXPAEH@Z",
+   "sym_key": "Map_Append_661530"
+  }
+ ]
+}

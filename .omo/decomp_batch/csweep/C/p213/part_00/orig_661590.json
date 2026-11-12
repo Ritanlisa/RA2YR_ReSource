@@ -1,0 +1,11 @@
+{
+ "addr": "0x661590",
+ "name": "Map_Append",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x661590",
+ "bytes_hex": "568b74240c85f6741d8b4424108d5602508b44240c5250e884ffffff83c0026689065ec20c008b5424108b442408526a0050e869ffffff83c0025ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

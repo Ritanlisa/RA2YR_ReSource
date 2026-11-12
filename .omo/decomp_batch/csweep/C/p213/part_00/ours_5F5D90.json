@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsGreenHP@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::IsGreenHP",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "83ec08db416c8b0151dd5c2404ff9088000000db80a00000008b0d40020000dc7c2400dc9900170000dfe0f6c4417509b80100000083c408c333c083c408c3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

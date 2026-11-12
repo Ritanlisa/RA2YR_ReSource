@@ -1,0 +1,21 @@
+{
+ "symbol": "?Cleanup@Array@@QAEHXZ",
+ "sym_key": "Array::Cleanup",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "53568bf18b5e3c85db74378b46405733ff85c07e1b8b463c8b04b885c0740950e80000000083c4048b4640473bf87ce58b4e3c51e80000000083c4048bc35f5e5bc38bc35e5bc3",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

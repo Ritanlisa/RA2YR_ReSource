@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckHealthForRepair@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::CheckHealthForRepair",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf18b466c85c0742a8b86200500008a887a15000084c9740d8b0656ff908000000084c0740424005ec38bcee8000000005ec333c05ec3",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?CheckHealthDiff@InfantryClass@@QAE_NXZ",
+   "sym_key": "InfantryClass::CheckHealthDiff"
+  }
+ ]
+}

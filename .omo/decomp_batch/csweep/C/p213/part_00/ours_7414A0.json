@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetAverageDamageScore@TechnoClass@@QAENXZ",
+ "sym_key": "TechnoClass::GetAverageDamageScore",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec088b81c40600008a900e0e000084d275188a900f0e000084d2750e3edd0500000000dd45f88be55dc381c13c030000e800000000ddd8dab000080000dd45f88be55dc3",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?Sum@Float4@@QAENXZ",
+   "sym_key": "Float4::Sum"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?ConstructWDTSelection_Create_76EEB0_Create@ObjectClass@@QAEHPAH0@Z",
+ "sym_key": "ObjectClass::ConstructWDTSelection_Create_76EEB0_Create",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "568bf133c08a461885c074258b44240c6a006a016a0050e8000000008a4e1883c41068e0930400518b4c2410e80000000033c98a4e1c5e85c974088b116a0151ff5204c20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?TerritorySelectWDT_Delete@@YAXPAXHHH@Z",
+   "sym_key": "TerritorySelectWDT_Delete"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?ProcessEvents@MSEngine@@QAEHDH@Z",
+   "sym_key": "MSEngine::ProcessEvents"
+  }
+ ]
+}

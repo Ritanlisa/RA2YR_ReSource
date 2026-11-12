@@ -1,0 +1,11 @@
+{
+ "addr": "0x452630",
+ "name": "BuildingClass::CheckHealthForRepair",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x452630",
+ "bytes_hex": "568bf18b466c85c0750432c05ec38b86200500008a887a15000084c9750432c05ec38b168bceff928000000084c0740432c05ec38bcee8d5ea2a005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

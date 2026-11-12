@@ -1,0 +1,11 @@
+{
+ "addr": "0x69DCF0",
+ "name": "ShapeButtonClass::Init",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69DCF0",
+ "bytes_hex": "5333db56535353538bf153e860610800885e34895e38895e3c885e40895e44895e48885e4ca1c4f68700894650885e55885e5cc70688807e008bc65e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

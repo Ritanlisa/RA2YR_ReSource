@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F5D90",
+ "name": "ObjectClass::IsGreenHP",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F5D90",
+ "bytes_hex": "83ec08db416c8b01dd5c2400ff9088000000db80a00000008b0de0718800dc7c2400dc9900170000dfe0f6c4417509b80100000083c408c333c083c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

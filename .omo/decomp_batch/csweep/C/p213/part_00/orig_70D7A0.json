@@ -1,0 +1,11 @@
+{
+ "addr": "0x70D7A0",
+ "name": "InfantryClass::ReleaseInfiltrators",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70D7A0",
+ "bytes_hex": "568bf1e8b884eeffa1e0718800dc9800170000dfe0f6c441740f8b168bceff92c801000083f8f67d128b8e1003000085c974088b01ff90f80000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

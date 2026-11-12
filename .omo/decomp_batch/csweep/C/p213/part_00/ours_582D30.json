@@ -1,0 +1,15 @@
+{
+ "symbol": "?SmallFunc_582D30@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::SmallFunc_582D30",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8b466085c07e2a558b6c24105733ff8b465403c78a480884c9740955508bcee8000000008b46604383c7103bd87ce05f5d5e5bc20400",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?RenderBlips@RadarClass@@QAEHPAXH@Z",
+   "sym_key": "RadarClass::RenderBlips"
+  }
+ ]
+}
