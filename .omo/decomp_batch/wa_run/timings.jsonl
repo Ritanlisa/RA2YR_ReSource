@@ -31,3 +31,4 @@
 {"part": 30, "n": 20, "seconds": 32.9, "ok": true, "verdicts": {"MATCH": 20}}
 {"part": 31, "n": 20, "seconds": 31.8, "ok": true, "verdicts": {"MATCH": 20}}
 {"part": 32, "n": 20, "seconds": 30.2, "ok": true, "verdicts": {"MATCH": 20}}
+{"part": 33, "n": 20, "seconds": 28.3, "ok": true, "verdicts": {"MATCH": 20}}
