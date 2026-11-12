@@ -1,0 +1,11 @@
+{
+ "addr": "0x74FD20",
+ "name": "Network::GetMaxPacketSize",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74FD20",
+ "bytes_hex": "8b542404b902000000b8506184003b10731383e808493d406184007df1a154618400c204008b04cd44618400c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

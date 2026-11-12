@@ -1,0 +1,21 @@
+{
+ "symbol": "?processDeath@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::processDeath",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "a110000000538b1d0400000055568b31578d78ff8bce8d14bb81e1ffff00008b0233ed668ba8f80000003be9750e8beec1ed106639a8fa00000074084f780d83ea04ebdb8b04bb5f5e5d5bc35f5e5d33c05bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D290@@3IA",
+   "sym_key": "DataGlobal_B1D290"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D290@@3IA",
+   "sym_key": "DataGlobal_B1D290"
+  }
+ ]
+}

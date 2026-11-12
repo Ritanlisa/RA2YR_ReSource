@@ -1,0 +1,11 @@
+{
+ "addr": "0x75A790",
+ "name": "AnimSystem::Init",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75A790",
+ "bytes_hex": "5333d28acab30183e1078bc2d2e3c1f8038a88a85bb400f6d322cb4283fa128888a85bb4007cdca0a85bb4005b0c40a2a85bb400c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

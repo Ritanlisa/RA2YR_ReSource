@@ -1,0 +1,27 @@
+{
+ "symbol": "?Init@AnimSystem@@QAEDXZ",
+ "sym_key": "AnimSystem::Init",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "5633c08bc8b201c1f9038db1000000008bc883e107d2e28a0ef6d222ca4083f812880e7cdea0000000005e0c40a200000000c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45BA8@@3PAEA",
+   "sym_key": "DataGlobal_B45BA8"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45BA8@@3PAEA",
+   "sym_key": "DataGlobal_B45BA8"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45BA8@@3PAEA",
+   "sym_key": "DataGlobal_B45BA8"
+  }
+ ]
+}

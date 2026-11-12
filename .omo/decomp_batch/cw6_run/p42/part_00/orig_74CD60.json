@@ -1,0 +1,11 @@
+{
+ "addr": "0x74CD60",
+ "name": "ObjectClass::processDeath",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74CD60",
+ "bytes_hex": "a1a0d2b1005356578d50ff85d27c338b1d94d2b100668b398d34938b0605f8000000663938750a668b4002663b4102740a4a83ee0485d27c09ebe08b04935f5e5bc35f5e33c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

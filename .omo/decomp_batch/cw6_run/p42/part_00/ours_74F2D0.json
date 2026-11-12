@@ -1,0 +1,8 @@
+{
+ "symbol": "?ddtor@VeinholeMonsterClass@@QAGHPAI@Z",
+ "sym_key": "VeinholeMonsterClass::ddtor",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c20800c7006ad09251c7400432c6d211c74008b90b0060c7400c08c809ed33c0c20800",
+ "relocs": []
+}

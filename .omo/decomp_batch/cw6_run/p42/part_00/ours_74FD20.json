@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetMaxPacketSize@Network@@QAGHI@Z",
+ "sym_key": "Network::GetMaxPacketSize",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "8b542408568b3500000000b9020000003bd6b800000000730f83e808493d000000007c0f3b1072f18b04cd000000005ec20800a1000000005ec20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_846150@@3EA",
+   "sym_key": "DataGlobal_846150"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_846150@@3EA",
+   "sym_key": "DataGlobal_846150"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_846140@@3IA",
+   "sym_key": "DataGlobal_846140"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_846144@@3PAIA",
+   "sym_key": "DataGlobal_846144"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_846154@@3IA",
+   "sym_key": "DataGlobal_846154"
+  }
+ ]
+}

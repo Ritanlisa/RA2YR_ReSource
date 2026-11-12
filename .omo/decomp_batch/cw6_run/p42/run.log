@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p42\part_00
+=== convert (20 addrs) ===
+[conv] 0x74cd60 ObjectClass::processDeath -> ObjectClass
+[conv] 0x74f2d0 VeinholeMonsterClass::ddtor -> VeinholeMonsterClass
+[conv] 0x74f3c0 _VectorClass_PAVVeinholeMonsterClass::AddRef -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x74f730 ObjectClass::sub_74F730 -> ObjectClass
+[conv] 0x74fd20 Network::GetMaxPacketSize -> Network
+[conv] 0x74ff50 VeterancyStruct::Accumulate -> VeterancyStruct
+[conv] 0x751930 _VectorClass_PAVVocClass::Add -> _VectorClass_PAVVocClass
+[conv] 0x751a50 _VectorClass_PAVVocClass::GetSize -> _VectorClass_PAVVocClass
+[conv] 0x751b60 _DynamicVectorClass_PAVVocClass::FindItemIndex -> _DynamicVectorClass_PAVVocClass
+[conv] 0x7537d0 _VectorClass_PAVVoxClass::GetSize -> _VectorClass_PAVVoxClass
+[conv] 0x7538e0 _DynamicVectorClass_PAVVoxClass::getItemWithIndex -> _DynamicVectorClass_PAVVoxClass
+[conv] 0x754740 sub_754740 -> _addr_75
+[conv] 0x755ac0 sub_755AC0 -> _addr_75
+[conv] 0x755bf0 sub_755BF0 -> _addr_75
+[conv] 0x7564e0 ObjectClass::sub_7564E0 -> ObjectClass
+[conv] 0x759760 TechnoClass::sub_759760 -> TechnoClass
+[conv] 0x75a490 _VectorClass_PAVMovieHandle::Add -> _VectorClass_PAVMovieHandle
+[conv] 0x75a5b0 _VectorClass_PAVMovieHandle::GetSize -> _VectorClass_PAVMovieHandle
+[conv] 0x75a6c0 _DynamicVectorClass_PAVMovieHandle::FindItemIndex -> _DynamicVectorClass_PAVMovieHandle
+[conv] 0x75a790 AnimSystem::Init -> AnimSystem
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] VeinholeMonsterClass     rc=0
+[era] _VectorClass_PAVVeinholeMonsterClass rc=0
+[era] Network                  rc=0
+[era] VeterancyStruct          rc=2
+[era] _VectorClass_PAVVocClass rc=0
+[era] _DynamicVectorClass_PAVVocClass rc=0
+[era] _VectorClass_PAVVoxClass rc=0
+[era] _DynamicVectorClass_PAVVoxClass rc=0
+[era] _addr_75                 rc=2
+[era] TechnoClass              rc=0
+[era] _VectorClass_PAVMovieHandle rc=0
+[era] _DynamicVectorClass_PAVMovieHandle rc=0
+[era] AnimSystem               rc=0
+=== diffasm byte-compare ===
+[diff] 0x74cd60   MISMATCH         ObjectClass::processDeath
+[diff] 0x74f730   MISMATCH         ObjectClass::sub_74F730
+[diff] 0x7564e0   MISMATCH         ObjectClass::sub_7564E0
+[diff] 0x74f2d0   MISMATCH         VeinholeMonsterClass::ddtor
+[diff] 0x74f3c0   MISMATCH         _VectorClass_PAVVeinholeMonsterClass::AddRef
+[diff] 0x74fd20   MISMATCH         Network::GetMaxPacketSize
+[diff] 0x751930   MISMATCH         _VectorClass_PAVVocClass::Add
+[diff] 0x751a50   MISMATCH         _VectorClass_PAVVocClass::GetSize
+[diff] 0x751b60   MISMATCH         _DynamicVectorClass_PAVVocClass::FindItemIndex
+[diff] 0x7537d0   MISMATCH         _VectorClass_PAVVoxClass::GetSize
+[diff] 0x7538e0   MISMATCH         _DynamicVectorClass_PAVVoxClass::getItemWithIndex
+[diff] 0x755ac0   MISMATCH         sub_755AC0
+[diff] 0x755bf0   MISMATCH         sub_755BF0
+[diff] 0x759760   MATCH            TechnoClass::sub_759760
+[diff] 0x75a490   MISMATCH         _VectorClass_PAVMovieHandle::Add
+[diff] 0x75a5b0   MISMATCH         _VectorClass_PAVMovieHandle::GetSize
+[diff] 0x75a6c0   MISMATCH         _DynamicVectorClass_PAVMovieHandle::FindItemIndex
+[diff] 0x75a790   MISMATCH         AnimSystem::Init
+[ledger] 0x74cd60 ObjectClass::processDeath -> NG (attempt 2)
+[ledger] 0x74f2d0 VeinholeMonsterClass::ddtor -> NG (attempt 2)
+[ledger] 0x74f3c0 _VectorClass_PAVVeinholeMonsterClass::AddRef -> NG (attempt 2)
+[ledger] 0x74f730 ObjectClass::sub_74F730 -> NG (attempt 2)
+[ledger] 0x74fd20 Network::GetMaxPacketSize -> NG (attempt 2)
+[ledger] 0x74ff50 VeterancyStruct::Accumulate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x751930 _VectorClass_PAVVocClass::Add -> NG (attempt 2)
+[ledger] 0x751a50 _VectorClass_PAVVocClass::GetSize -> NG (attempt 2)
+[ledger] 0x751b60 _DynamicVectorClass_PAVVocClass::FindItemIndex -> NG (attempt 2)
+[ledger] 0x7537d0 _VectorClass_PAVVoxClass::GetSize -> NG (attempt 2)
+[ledger] 0x7538e0 _DynamicVectorClass_PAVVoxClass::getItemWithIndex -> NG (attempt 2)
+[ledger] 0x754740 sub_754740 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x755ac0 sub_755AC0 -> NG (attempt 2)
+[ledger] 0x755bf0 sub_755BF0 -> NG (attempt 2)
+[ledger] 0x7564e0 ObjectClass::sub_7564E0 -> NG (attempt 2)
+[ledger] 0x759760 TechnoClass::sub_759760 -> OK (attempt 2)
+[ledger] 0x75a490 _VectorClass_PAVMovieHandle::Add -> NG (attempt 2)
+[ledger] 0x75a5b0 _VectorClass_PAVMovieHandle::GetSize -> NG (attempt 2)
+[ledger] 0x75a6c0 _DynamicVectorClass_PAVMovieHandle::FindItemIndex -> NG (attempt 2)
+[ledger] 0x75a790 AnimSystem::Init -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 2,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "regalloc": 3,
+  "branch_polarity": 3,
+  "codegen_shape": 8,
+  "cc_mismatch": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw6_run\p42\batch_report.json
