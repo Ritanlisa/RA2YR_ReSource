@@ -1,0 +1,27 @@
+{
+ "symbol": "?AddMessageListPlayerMessage@@YIHPAHH@Z",
+ "sym_key": "Unnamed::AddMessageListPlayerMessage",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "83faff7505baf0000000568b350000000085f6b80300000074068b86d8ee0c006a0152684640000050516a006a00b944010000e8000000005ec3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAVAnimClass@@A",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_NetworkRematchObject@@3IA",
+   "sym_key": "g_NetworkRematchObject"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?AddMessage@MessageListClass@@QAEHPAXH0HHHD@Z",
+   "sym_key": "MessageListClass::AddMessage"
+  }
+ ]
+}

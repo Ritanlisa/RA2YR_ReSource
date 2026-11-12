@@ -1,0 +1,21 @@
+{
+ "symbol": "?Helper_4C5370@EMPulseClass@@QAEHXZ",
+ "sym_key": "EMPulseClass::Helper_4C5370",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008b0d0000000033c08906894e2489462889462c89463089460489460889460c5ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractClass@@QAEPAV1@XZ",
+   "sym_key": "AbstractClass::Constructor"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A3838@@3IA",
+   "sym_key": "DataGlobal_8A3838"
+  }
+ ]
+}

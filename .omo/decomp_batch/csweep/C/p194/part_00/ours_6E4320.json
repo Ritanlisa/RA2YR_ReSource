@@ -1,0 +1,15 @@
+{
+ "symbol": "?executeNukeAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeNukeAction",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "8b54240485d2742d8b819000000085c07c23568bb2640200003bc65e77178b49488b9258020000518b0c82e800000000b001c2100032c0c21000",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?SetRechargeTime@SuperClass@@QAEHH@Z",
+   "sym_key": "SuperClass::SetRechargeTime"
+  }
+ ]
+}

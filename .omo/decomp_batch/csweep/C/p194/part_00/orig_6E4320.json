@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E4320",
+ "name": "TActionClass::executeNukeAction",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E4320",
+ "bytes_hex": "8b54240485d2742d8b819000000085c07c23568bb2640200003bc65e7f178b49488b9258020000518b0c82e8307ffeffb001c2100032c0c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

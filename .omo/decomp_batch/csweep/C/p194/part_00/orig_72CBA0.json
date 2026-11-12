@@ -1,0 +1,11 @@
+{
+ "addr": "0x72CBA0",
+ "name": "ShowUIMessage_Show",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72CBA0",
+ "bytes_hex": "a07cfcb00084c0752fba73fcb000b940558400e8186dd7ffba74fcb000b9305584006878fcb000a3d0fab000e80fe2ffffc6057cfcb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

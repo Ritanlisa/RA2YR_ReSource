@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_6E3F70@ObjectClass@@QAEPAIPAI@Z",
+ "sym_key": "ObjectClass::sub_6E3F70",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "8b819000000083ec0c8d4c240050518b0d00000000e8000000008b4c24108b1089118b50048951048b40088941088bc183c40cc20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?GetWorldCoords@Cell@@QAEPAIPAXH@Z",
+   "sym_key": "Cell::GetWorldCoords"
+  }
+ ]
+}

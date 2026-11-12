@@ -1,0 +1,21 @@
+{
+ "symbol": "?__CxxThrowException_8@@YGXPAXPAH@Z",
+ "sym_key": "Unnamed::__CxxThrowException_8",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "83ec208b4424245657b908000000be000000008d7c2408f3a58b4c2430894424208b4424188d54241c894c24248b4c240c528b54240c505152e8000000005f5e83c420c20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F9928@@3EA",
+   "sym_key": "DataGlobal_7F9928"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?RaiseException@@YGXHHHPAX@Z",
+   "sym_key": "RaiseException"
+  }
+ ]
+}

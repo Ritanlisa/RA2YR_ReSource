@@ -1601,6 +1601,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4083d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Mixer::RequestAllBuffers",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Mixer::RequestAllBuffers",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4084e0": {
   "attempts": 1,
   "first_diff": null,
@@ -21346,6 +21358,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4918a0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransXlat_E::sub_4918A0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4918A0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4918e0": {
   "attempts": 2,
   "clean": false,
@@ -21356,6 +21380,18 @@
   "orig_name": "sub_4918E0",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x491970": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransZRemapXlat_E::sub_491970",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_491970",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x4919b0": {
@@ -21370,6 +21406,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x491a30": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransRemapDest_E::sub_491A30",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_491A30",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x491a70": {
   "attempts": 2,
   "clean": false,
@@ -21380,6 +21428,18 @@
   "orig_name": "sub_491A70",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x491b00": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransRemapXlat_E::sub_491B00",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_491B00",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x491b40": {
@@ -21413,6 +21473,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x491d50": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransZRemapXlatZRead_E::sub_491D50",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_491D50",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x491d90": {
   "attempts": 4,
   "clean": false,
@@ -21423,6 +21495,18 @@
   "orig_name": "sub_491D90",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x491e60": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransRemapDestZRead_E::sub_491E60",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_491E60",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x491ea0": {
@@ -21437,6 +21521,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x491f90": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransRemapXlatZRead_E::sub_491F90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_491F90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x491fd0": {
   "attempts": 4,
   "clean": false,
@@ -21447,6 +21543,18 @@
   "orig_name": "sub_491FD0",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4920c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_RLEBlitTransXlatZReadWrite_E::sub_4920C0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4920C0",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x492100": {
@@ -31703,6 +31811,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4c5370": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 mov eax, dword ptr [0x8a3838]",
+  "name": "EMPulseClass::Helper_4C5370",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "Helper_4C5370",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4c5470": {
   "attempts": 1,
   "clean": false,
@@ -32054,6 +32174,17 @@
   "orig_name": "sub_4C60D0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4c60f0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+1 xor eax, eax",
+  "name": "sub_4C60F0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4C60F0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c6130": {
@@ -91737,6 +91868,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x6b2160": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "SliderClass::SetRange",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SliderClass::SetRange",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6b21a0": {
   "attempts": 1,
   "clean": false,
@@ -101115,12 +101258,36 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6e3f70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+13 push esi",
+  "name": "ObjectClass::sub_6E3F70",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_6E3F70",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6e4150": {
   "attempts": 6,
   "first_diff": "+0 sub esp, 8",
   "name": "TActionClass::executeGeneticMutatorAction",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x6e4320": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+28 jg 0x6e4355",
+  "name": "TActionClass::executeNukeAction",
+  "note": "decomp_batch r2: MISMATCH/signedness",
+  "orig_name": "TActionClass::executeNukeAction",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6e4360": {
   "attempts": 1,
@@ -111117,6 +111284,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x72cba0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+24 mov edx, 0xb0fc74",
+  "name": "ShowUIMessage_Show",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ShowUIMessage_Show",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x72cc60": {
   "attempts": 1,
   "clean": true,
@@ -111843,6 +112021,17 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "SidebarHasAvailableUnit",
   "rule_violations": 5,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x730a90": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+26 mov eax, dword ptr [esi + 0x16054]",
+  "name": "AddMessageListPlayerMessage",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "AddMessageListPlayerMessage",
+  "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
@@ -115276,6 +115465,18 @@
   "orig_name": "?do_always_noconv_codecvt_base_std__MBE_NXZ_22",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x7533b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+31 mov edx, dword ptr [esi]",
+  "name": "SaveGame::WriteMagicHeader",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "SaveGame::WriteMagicHeader",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7534e0": {
@@ -127334,6 +127535,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x7b6720": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WideString::AssignFromPtr",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WideString::AssignFromPtr",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7b6760": {
   "attempts": 6,
   "clean": false,
@@ -128353,6 +128566,18 @@
   "orig_name": "Audio_Render_7BE670",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7bea40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+11 jne 0x7bea77",
+  "name": "TechnoClass::sub_7BEA40",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "sub_7BEA40",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7bf220": {
@@ -134439,6 +134664,17 @@
   "name": "ObjectClass::what_exception__UBEPBDXZ",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "?what_exception__UBEPBDXZ",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7d2f64": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "__CxxThrowException_8",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "__CxxThrowException_8",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

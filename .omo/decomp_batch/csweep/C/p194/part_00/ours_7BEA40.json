@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_7BEA40@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::sub_7BEA40",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000083f8ff752c56e8000000008a8ea40100008b86a001000083c4048986dc060000f6c10875098b400c8986a001000083c8ff5ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?ProcessStream@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::ProcessStream"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?sub_7BEFE0@@YADH@Z",
+   "sym_key": "sub_7BEFE0"
+  }
+ ]
+}

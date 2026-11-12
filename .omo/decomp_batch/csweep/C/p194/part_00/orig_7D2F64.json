@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D2F64",
+ "name": "__CxxThrowException_8",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D2F64",
+ "bytes_hex": "558bec83ec208b450856576a0859be28997f008d7de0f3a58945f88b450c8945fc8d45f450ff75f0ff75e4ff75e0ff15c0127e005f5ec9c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

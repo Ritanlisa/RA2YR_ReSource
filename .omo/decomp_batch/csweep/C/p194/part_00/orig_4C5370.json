@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C5370",
+ "name": "Helper_4C5370",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C5370",
+ "bytes_hex": "568bf1e8f8adf4ffa138388a00c706a8877e0089462433c089462889462c894630c746048c877e00c7460884877e00c7460c7c877e008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x730A90",
+ "name": "AddMessageListPlayerMessage",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x730A90",
+ "bytes_hex": "83faff7505baf0000000568b354c3da80085f6b80300000074068b86546001006a0152684640000050516a006a00b960bca800e8d830eaff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

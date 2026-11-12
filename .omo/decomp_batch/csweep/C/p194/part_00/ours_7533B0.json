@@ -1,0 +1,8 @@
+{
+ "symbol": "?WriteMagicHeader@SaveGame@@QAEHXZ",
+ "sym_key": "SaveGame::WriteMagicHeader",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "51568bf16a008d4c24088b066a045156c744241453786f56ff501085c07c178b066a008d5424086a045256c744241445786f56ff50105e59c3",
+ "relocs": []
+}

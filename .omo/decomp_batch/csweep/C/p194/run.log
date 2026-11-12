@@ -1,0 +1,106 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p194\part_00
+=== convert (20 addrs) ===
+[conv] 0x72cba0 ShowUIMessage_Show -> ShowUIMessage
+[conv] 0x7bea40 TechnoClass::sub_7BEA40 -> TechnoClass
+[conv] 0x6b2160 SliderClass::SetRange -> SliderClass
+[conv] 0x7533b0 SaveGame::WriteMagicHeader -> SaveGame
+[conv] 0x4083d0 Mixer::RequestAllBuffers -> Mixer
+[conv] 0x7b6720 WideString::AssignFromPtr -> WideString
+[conv] 0x4c5370 EMPulseClass::Helper_4C5370 -> EMPulseClass
+[conv] 0x4c60f0 sub_4C60F0 -> _addr_4C
+[conv] 0x6e3f70 ObjectClass::sub_6E3F70 -> ObjectClass
+[conv] 0x6e4320 TActionClass::executeNukeAction -> TActionClass
+[conv] 0x730a90 AddMessageListPlayerMessage -> _addr_73
+[conv] 0x7d2f64 __CxxThrowException_8 -> _addr_7D
+[conv] 0x4918a0 _RLEBlitTransXlat_E::sub_4918A0 -> _RLEBlitTransXlat_E
+[conv] 0x491970 _RLEBlitTransZRemapXlat_E::sub_491970 -> _RLEBlitTransZRemapXlat_E
+[conv] 0x491a30 _RLEBlitTransRemapDest_E::sub_491A30 -> _RLEBlitTransRemapDest_E
+[conv] 0x491b00 _RLEBlitTransRemapXlat_E::sub_491B00 -> _RLEBlitTransRemapXlat_E
+[conv] 0x491d50 _RLEBlitTransZRemapXlatZRead_E::sub_491D50 -> _RLEBlitTransZRemapXlatZRead_E
+[conv] 0x491e60 _RLEBlitTransRemapDestZRead_E::sub_491E60 -> _RLEBlitTransRemapDestZRead_E
+[conv] 0x491f90 _RLEBlitTransRemapXlatZRead_E::sub_491F90 -> _RLEBlitTransRemapXlatZRead_E
+[conv] 0x4920c0 _RLEBlitTransXlatZReadWrite_E::sub_4920C0 -> _RLEBlitTransXlatZReadWrite_E
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ShowUIMessage            rc=0
+[era] TechnoClass              rc=0
+[era] SliderClass              rc=2
+[era] SaveGame                 rc=0
+[era] Mixer                    rc=2
+[era] WideString               rc=2
+[era] EMPulseClass             rc=0
+[era] _addr_4C                 rc=0
+[era] ObjectClass              rc=0
+[era] TActionClass             rc=0
+[era] _addr_73                 rc=0
+[era] _addr_7D                 rc=0
+[era] _RLEBlitTransXlat_E      rc=0
+[era] _RLEBlitTransZRemapXlat_E rc=0
+[era] _RLEBlitTransRemapDest_E rc=0
+[era] _RLEBlitTransRemapXlat_E rc=0
+[era] _RLEBlitTransZRemapXlatZRead_E rc=0
+[era] _RLEBlitTransRemapDestZRead_E rc=0
+[era] _RLEBlitTransRemapXlatZRead_E rc=0
+[era] _RLEBlitTransXlatZReadWrite_E rc=0
+=== diffasm byte-compare ===
+[diff] 0x72cba0   MISMATCH         ShowUIMessage_Show
+[diff] 0x7bea40   MISMATCH         TechnoClass::sub_7BEA40
+[diff] 0x7533b0   MISMATCH         SaveGame::WriteMagicHeader
+[diff] 0x4c5370   MISMATCH         EMPulseClass::Helper_4C5370
+[diff] 0x4c60f0   MISMATCH         sub_4C60F0
+[diff] 0x6e3f70   MISMATCH         ObjectClass::sub_6E3F70
+[diff] 0x6e4320   MISMATCH         TActionClass::executeNukeAction
+[diff] 0x730a90   MISMATCH         AddMessageListPlayerMessage
+[diff] 0x7d2f64   MISMATCH         __CxxThrowException_8
+[diff] 0x4918a0   MATCH            _RLEBlitTransXlat_E::sub_4918A0
+[diff] 0x491970   MATCH            _RLEBlitTransZRemapXlat_E::sub_491970
+[diff] 0x491a30   MATCH            _RLEBlitTransRemapDest_E::sub_491A30
+[diff] 0x491b00   MATCH            _RLEBlitTransRemapXlat_E::sub_491B00
+[diff] 0x491d50   MATCH            _RLEBlitTransZRemapXlatZRead_E::sub_491D50
+[diff] 0x491e60   MATCH            _RLEBlitTransRemapDestZRead_E::sub_491E60
+[diff] 0x491f90   MATCH            _RLEBlitTransRemapXlatZRead_E::sub_491F90
+[diff] 0x4920c0   MATCH            _RLEBlitTransXlatZReadWrite_E::sub_4920C0
+[ledger] 0x72cba0 ShowUIMessage_Show -> NG (attempt 1)
+[ledger] 0x7bea40 TechnoClass::sub_7BEA40 -> NG (attempt 1)
+[ledger] 0x6b2160 SliderClass::SetRange -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7533b0 SaveGame::WriteMagicHeader -> NG (attempt 1)
+[ledger] 0x4083d0 Mixer::RequestAllBuffers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b6720 WideString::AssignFromPtr -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c5370 EMPulseClass::Helper_4C5370 -> NG (attempt 1)
+[ledger] 0x4c60f0 sub_4C60F0 -> NG (attempt 1)
+[ledger] 0x6e3f70 ObjectClass::sub_6E3F70 -> NG (attempt 1)
+[ledger] 0x6e4320 TActionClass::executeNukeAction -> NG (attempt 1)
+[ledger] 0x730a90 AddMessageListPlayerMessage -> NG (attempt 1)
+[ledger] 0x7d2f64 __CxxThrowException_8 -> NG (attempt 1)
+[ledger] 0x4918a0 _RLEBlitTransXlat_E::sub_4918A0 -> OK (attempt 1)
+[ledger] 0x491970 _RLEBlitTransZRemapXlat_E::sub_491970 -> OK (attempt 1)
+[ledger] 0x491a30 _RLEBlitTransRemapDest_E::sub_491A30 -> OK (attempt 1)
+[ledger] 0x491b00 _RLEBlitTransRemapXlat_E::sub_491B00 -> OK (attempt 1)
+[ledger] 0x491d50 _RLEBlitTransZRemapXlatZRead_E::sub_491D50 -> OK (attempt 1)
+[ledger] 0x491e60 _RLEBlitTransRemapDestZRead_E::sub_491E60 -> OK (attempt 1)
+[ledger] 0x491f90 _RLEBlitTransRemapXlatZRead_E::sub_491F90 -> OK (attempt 1)
+[ledger] 0x4920c0 _RLEBlitTransXlatZReadWrite_E::sub_4920C0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 3,
+  "MATCH": 8
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "branch_polarity": 1,
+  "regalloc": 2,
+  "extern_reloc": 1,
+  "signedness": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 47.1,
+ "match_rate_of_total_pct": 40.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p194\batch_report.json

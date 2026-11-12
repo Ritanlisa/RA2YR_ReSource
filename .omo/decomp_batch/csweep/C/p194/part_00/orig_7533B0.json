@@ -1,0 +1,11 @@
+{
+ "addr": "0x7533B0",
+ "name": "SaveGame::WriteMagicHeader",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7533B0",
+ "bytes_hex": "51568bf16a008d4c24088b066a045156c744241453786f56ff501085c07c178b166a008d4424086a045056c744241445786f56ff52105e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
