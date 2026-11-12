@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetKeyStateSafe@EventClass@@QAEFXZ",
+ "sym_key": "EventClass::GetKeyStateSafe",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "518b54240033c0a0ae00000080e2000bc2568bf0a1ac00000085c0751981e1ff00000051e80000000025ff00000081e600ffffff0bc65e59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0398@@3IA",
+   "sym_key": "DataGlobal_AA0398"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0398@@3IA",
+   "sym_key": "DataGlobal_AA0398"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?GetKeyState@@YGFH@Z",
+   "sym_key": "GetKeyState"
+  }
+ ]
+}

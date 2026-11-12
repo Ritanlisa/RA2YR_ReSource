@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x50a150 HouseClass::Fire_PsyDom -> HouseClass
+[conv] 0x738680 TechnoClass::CreateDeathAnim -> TechnoClass
+[conv] 0x4ad7e0 MapClass::SaveCellTagsToINI -> MapClass
+[conv] 0x52fc20 TechnoClass::InitRandomSeed -> TechnoClass
+[conv] 0x737180 TechnoClass::UpdateInfantryIdleWander -> TechnoClass
+[conv] 0x703860 TechnoClass::UpdatePowerDrain -> TechnoClass
+[conv] 0x70e920 UpdateTimedStateMachine -> _addr_70
+[conv] 0x7049c0 DrawTacticalMapLine -> _addr_70
+[conv] 0x484180 Tactical::CalculateTacticalLighting -> Tactical
+[conv] 0x6632e0 RocketLocomotionClass::ComputeFloatExpression_3 -> RocketLocomotionClass
+[conv] 0x53ec70 EventClass::GetKeyStateSafe -> EventClass
+[conv] 0x7aa6a0 CChatEventSink::DispatchStub_18 -> CChatEventSink
+[conv] 0x652cf0 RadarClass::Destru_vt05 -> RadarClass
+[conv] 0x4a95a0 MapClass::SetCellFlagsAlongPath -> MapClass
+[conv] 0x4a9650 BuildingClass::MarkExitPath -> BuildingClass
+[conv] 0x720140 TextButtonClass::fireWeapon -> TextButtonClass
+[conv] 0x431800 HouseClass::ProcessData -> HouseClass
+[conv] 0x74d670 ObjectClass::IsCellSuitableForPlacement -> ObjectClass
+[conv] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> ObjectClass
+[conv] 0x6ea3e0 TeamClass::UpdateReadinessState -> TeamClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] TechnoClass              rc=2
+[era] MapClass                 rc=2
+[era] _addr_70                 rc=2
+[era] Tactical                 rc=2
+[era] RocketLocomotionClass    rc=2
+[era] EventClass               rc=0
+[era] CChatEventSink           rc=0
+[era] RadarClass               rc=2
+[era] BuildingClass            rc=2
+[era] TextButtonClass          rc=0
+[era] ObjectClass              rc=2
+[era] TeamClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x431800   MISMATCH         HouseClass::ProcessData
+[diff] 0x53ec70   MISMATCH         EventClass::GetKeyStateSafe
+[diff] 0x7aa6a0   MISMATCH         CChatEventSink::DispatchStub_18
+[diff] 0x720140   MISMATCH         TextButtonClass::fireWeapon
+[ledger] 0x50a150 HouseClass::Fire_PsyDom -> COMPILE_FAIL (attempt 5)
+[ledger] 0x738680 TechnoClass::CreateDeathAnim -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ad7e0 MapClass::SaveCellTagsToINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52fc20 TechnoClass::InitRandomSeed -> COMPILE_FAIL (attempt 5)
+[ledger] 0x737180 TechnoClass::UpdateInfantryIdleWander -> COMPILE_FAIL (attempt 5)
+[ledger] 0x703860 TechnoClass::UpdatePowerDrain -> COMPILE_FAIL (attempt 5)
+[ledger] 0x70e920 UpdateTimedStateMachine -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7049c0 DrawTacticalMapLine -> COMPILE_FAIL (attempt 5)
+[ledger] 0x484180 Tactical::CalculateTacticalLighting -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6632e0 RocketLocomotionClass::ComputeFloatExpression_3 -> COMPILE_FAIL (attempt 14)
+[ledger] 0x53ec70 EventClass::GetKeyStateSafe -> NG (attempt 5)
+[ledger] 0x7aa6a0 CChatEventSink::DispatchStub_18 -> NG (attempt 5)
+[ledger] 0x652cf0 RadarClass::Destru_vt05 -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4a95a0 MapClass::SetCellFlagsAlongPath -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4a9650 BuildingClass::MarkExitPath -> COMPILE_FAIL (attempt 13)
+[ledger] 0x720140 TextButtonClass::fireWeapon -> NG (attempt 13)
+[ledger] 0x431800 HouseClass::ProcessData -> NG (attempt 22)
+[ledger] 0x74d670 ObjectClass::IsCellSuitableForPlacement -> COMPILE_FAIL (attempt 13)
+[ledger] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ea3e0 TeamClass::UpdateReadinessState -> COMPILE_FAIL (attempt 13)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "ret_norm": 1,
+  "frame_sched": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw5_run2\p14\batch_report.json

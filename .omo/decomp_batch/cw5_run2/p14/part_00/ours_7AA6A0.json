@@ -1,0 +1,27 @@
+{
+ "symbol": "?DispatchStub_18@CChatEventSink@@QAGHHH@Z",
+ "sym_key": "CChatEventSink::DispatchStub_18",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "a140000000f6c4ff751a8b44240885c07c128b44240c83c9ff506800000000e80000000033c0c20c00",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77D80@@3IA",
+   "sym_key": "DataGlobal_B77D80"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?aHs_2@@3PADA",
+   "sym_key": "aHs_2"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?ShowMessage@Dialog@@QAEPAXHH@Z",
+   "sym_key": "Dialog::ShowMessage"
+  }
+ ]
+}
