@@ -87100,6 +87100,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6955b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6955B0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6955B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6955f0": {
   "attempts": 1,
   "clean": false,
@@ -87265,6 +87276,17 @@
   "orig_name": "sub_696DD0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x696df0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_696DF0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_696DF0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x696e30": {
@@ -88862,6 +88884,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6a4430": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6A4430",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6A4430",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6a4470": {
   "attempts": 1,
   "clean": false,
@@ -89065,6 +89098,17 @@
   "orig_name": "sub_6A4AD0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6a4af0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6A4AF0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6A4AF0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6a4b30": {
@@ -89673,6 +89717,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6aca40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6ACA40",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6ACA40",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6aca80": {
   "attempts": 1,
   "clean": false,
@@ -89856,6 +89911,17 @@
   "orig_name": "sub_6AEFC0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6aefe0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6AEFE0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6AEFE0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6af020": {
@@ -90378,6 +90444,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6b2270": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6B2270",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6B2270",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6b22b0": {
   "attempts": 1,
   "clean": false,
@@ -90649,6 +90726,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6b4910": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6B4910",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6B4910",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6b4950": {
   "attempts": 1,
   "clean": false,
@@ -90896,6 +90984,17 @@
   "orig_name": "sub_6B5120",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6b5140": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6B5140",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6B5140",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b5180": {
@@ -91163,6 +91262,17 @@
   "orig_name": "sub_6B6AB0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6b6ad0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6B6AD0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6B6AD0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b6b10": {
@@ -91594,6 +91704,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6b89c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6B89C0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6B89C0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6b8a00": {
   "attempts": 2,
   "first_diff": "+0 fild dword ptr [0xb0b918]",
@@ -91886,6 +92007,17 @@
   "orig_name": "sub_6BB120",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6bb140": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6BB140",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6BB140",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6bb180": {
@@ -96048,6 +96180,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6c6990": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6C6990",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6C6990",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c69d0": {
   "attempts": 1,
   "clean": false,
@@ -96508,6 +96651,17 @@
   "orig_name": "sub_6C94A0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6c94c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6C94C0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6C94C0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c9500": {
@@ -96993,6 +97147,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6cace0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6CACE0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6CACE0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6cad20": {
   "attempts": 1,
   "clean": false,
@@ -97433,6 +97598,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6ce450": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6CE450",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6CE450",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6ce490": {
   "attempts": 1,
   "clean": false,
@@ -97869,6 +98045,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6cfa80": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6CFA80",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6CFA80",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6cfac0": {
   "attempts": 1,
   "clean": false,
@@ -98250,6 +98437,17 @@
   "orig_name": "sub_6D18E0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6d1900": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6D1900",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6D1900",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d1940": {
@@ -99131,6 +99329,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6dce40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6DCE40",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6DCE40",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6dce80": {
   "attempts": 1,
   "clean": false,
@@ -99724,6 +99933,17 @@
   "orig_name": "sub_6E4C00",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6e4c20": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+18 call 0x4cad50",
+  "name": "sub_6E4C20",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_6E4C20",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e4c60": {
