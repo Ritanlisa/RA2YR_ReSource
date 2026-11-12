@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p138\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e8720 _DynamicVectorClass_PAVOverlayClass::Destroy_1 -> _DynamicVectorClass_PAVOverlayClass
+[conv] 0x4e8780 _DynamicVectorClass_PAVSmudgeClass::initParticleArray -> _DynamicVectorClass_PAVSmudgeClass
+[conv] 0x4e87e0 _DynamicVectorClass_PAVTerrainClass::Destroy -> _DynamicVectorClass_PAVTerrainClass
+[conv] 0x4e8840 _DynamicVectorClass_PAVAircraftClass::ReleaseBuffer -> _DynamicVectorClass_PAVAircraftClass
+[conv] 0x4e88a0 _DynamicVectorClass_PAVUnitClass::Destroy -> _DynamicVectorClass_PAVUnitClass
+[conv] 0x4e8900 _DynamicVectorClass_PAVHouseClass::Destroy_0 -> _DynamicVectorClass_PAVHouseClass
+[conv] 0x4e8960 _DynamicVectorClass_PAVAnimClass::Destroy_0 -> _DynamicVectorClass_PAVAnimClass
+[conv] 0x4e89c0 _DynamicVectorClass_PAVFactoryClass::Destroy_1 -> _DynamicVectorClass_PAVFactoryClass
+[conv] 0x4e8a20 _DynamicVectorClass_PAVCampaignClass::Destroy -> _DynamicVectorClass_PAVCampaignClass
+[conv] 0x4e8a80 _DynamicVectorClass_PAVSideClass::Destroy_0 -> _DynamicVectorClass_PAVSideClass
+[conv] 0x4e8b40 _DynamicVectorClass_PAVTaskForceClass::Destroy_0 -> _DynamicVectorClass_PAVTaskForceClass
+[conv] 0x4e8ba0 _DynamicVectorClass_PAVTeamTypeClass::Destroy_1 -> _DynamicVectorClass_PAVTeamTypeClass
+[conv] 0x4e8c00 _DynamicVectorClass_PAVScriptTypeClass::Destroy -> _DynamicVectorClass_PAVScriptTypeClass
+[conv] 0x4e8c60 _DynamicVectorClass_PAVOverlayTypeClass::Destroy_0 -> _DynamicVectorClass_PAVOverlayTypeClass
+[conv] 0x4e8cc0 _DynamicVectorClass_PAVSmudgeTypeClass::Destroy -> _DynamicVectorClass_PAVSmudgeTypeClass
+[conv] 0x4e8d20 _DynamicVectorClass_PAVTerrainTypeClass::Destroy_0 -> _DynamicVectorClass_PAVTerrainTypeClass
+[conv] 0x4e8d80 _DynamicVectorClass_PAVBuildingTypeClass::Destroy_1 -> _DynamicVectorClass_PAVBuildingTypeClass
+[conv] 0x4e8de0 _DynamicVectorClass_PAVAircraftTypeClass::Destroy -> _DynamicVectorClass_PAVAircraftTypeClass
+[conv] 0x4e8e40 _DynamicVectorClass_PAVUnitTypeClass::Destroy_0 -> _DynamicVectorClass_PAVUnitTypeClass
+[conv] 0x4e8ea0 _DynamicVectorClass_PAVAnimTypeClass::Destroy -> _DynamicVectorClass_PAVAnimTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVOverlayClass rc=0
+[era] _DynamicVectorClass_PAVSmudgeClass rc=0
+[era] _DynamicVectorClass_PAVTerrainClass rc=0
+[era] _DynamicVectorClass_PAVAircraftClass rc=0
+[era] _DynamicVectorClass_PAVUnitClass rc=0
+[era] _DynamicVectorClass_PAVHouseClass rc=0
+[era] _DynamicVectorClass_PAVAnimClass rc=0
+[era] _DynamicVectorClass_PAVFactoryClass rc=0
+[era] _DynamicVectorClass_PAVCampaignClass rc=0
+[era] _DynamicVectorClass_PAVSideClass rc=0
+[era] _DynamicVectorClass_PAVTaskForceClass rc=0
+[era] _DynamicVectorClass_PAVTeamTypeClass rc=0
+[era] _DynamicVectorClass_PAVScriptTypeClass rc=0
+[era] _DynamicVectorClass_PAVOverlayTypeClass rc=0
+[era] _DynamicVectorClass_PAVSmudgeTypeClass rc=0
+[era] _DynamicVectorClass_PAVTerrainTypeClass rc=0
+[era] _DynamicVectorClass_PAVBuildingTypeClass rc=0
+[era] _DynamicVectorClass_PAVAircraftTypeClass rc=0
+[era] _DynamicVectorClass_PAVUnitTypeClass rc=0
+[era] _DynamicVectorClass_PAVAnimTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e8720   MISMATCH         _DynamicVectorClass_PAVOverlayClass::Destroy_1
+[diff] 0x4e8780   MISMATCH         _DynamicVectorClass_PAVSmudgeClass::initParticleArray
+[diff] 0x4e87e0   MISMATCH         _DynamicVectorClass_PAVTerrainClass::Destroy
+[diff] 0x4e8840   MISMATCH         _DynamicVectorClass_PAVAircraftClass::ReleaseBuffer
+[diff] 0x4e88a0   MISMATCH         _DynamicVectorClass_PAVUnitClass::Destroy
+[diff] 0x4e8900   MISMATCH         _DynamicVectorClass_PAVHouseClass::Destroy_0
+[diff] 0x4e8960   MISMATCH         _DynamicVectorClass_PAVAnimClass::Destroy_0
+[diff] 0x4e89c0   MISMATCH         _DynamicVectorClass_PAVFactoryClass::Destroy_1
+[diff] 0x4e8a20   MISMATCH         _DynamicVectorClass_PAVCampaignClass::Destroy
+[diff] 0x4e8a80   MISMATCH         _DynamicVectorClass_PAVSideClass::Destroy_0
+[diff] 0x4e8b40   MISMATCH         _DynamicVectorClass_PAVTaskForceClass::Destroy_0
+[diff] 0x4e8ba0   MISMATCH         _DynamicVectorClass_PAVTeamTypeClass::Destroy_1
+[diff] 0x4e8c00   MISMATCH         _DynamicVectorClass_PAVScriptTypeClass::Destroy
+[diff] 0x4e8c60   MISMATCH         _DynamicVectorClass_PAVOverlayTypeClass::Destroy_0
+[diff] 0x4e8cc0   MISMATCH         _DynamicVectorClass_PAVSmudgeTypeClass::Destroy
+[diff] 0x4e8d20   MISMATCH         _DynamicVectorClass_PAVTerrainTypeClass::Destroy_0
+[diff] 0x4e8d80   MISMATCH         _DynamicVectorClass_PAVBuildingTypeClass::Destroy_1
+[diff] 0x4e8de0   MISMATCH         _DynamicVectorClass_PAVAircraftTypeClass::Destroy
+[diff] 0x4e8e40   MISMATCH         _DynamicVectorClass_PAVUnitTypeClass::Destroy_0
+[diff] 0x4e8ea0   MISMATCH         _DynamicVectorClass_PAVAnimTypeClass::Destroy
+[ledger] 0x4e8720 _DynamicVectorClass_PAVOverlayClass::Destroy_1 -> NG (attempt 1)
+[ledger] 0x4e8780 _DynamicVectorClass_PAVSmudgeClass::initParticleArray -> NG (attempt 1)
+[ledger] 0x4e87e0 _DynamicVectorClass_PAVTerrainClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8840 _DynamicVectorClass_PAVAircraftClass::ReleaseBuffer -> NG (attempt 1)
+[ledger] 0x4e88a0 _DynamicVectorClass_PAVUnitClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8900 _DynamicVectorClass_PAVHouseClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e8960 _DynamicVectorClass_PAVAnimClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e89c0 _DynamicVectorClass_PAVFactoryClass::Destroy_1 -> NG (attempt 1)
+[ledger] 0x4e8a20 _DynamicVectorClass_PAVCampaignClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8a80 _DynamicVectorClass_PAVSideClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e8b40 _DynamicVectorClass_PAVTaskForceClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e8ba0 _DynamicVectorClass_PAVTeamTypeClass::Destroy_1 -> NG (attempt 1)
+[ledger] 0x4e8c00 _DynamicVectorClass_PAVScriptTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8c60 _DynamicVectorClass_PAVOverlayTypeClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e8cc0 _DynamicVectorClass_PAVSmudgeTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8d20 _DynamicVectorClass_PAVTerrainTypeClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e8d80 _DynamicVectorClass_PAVBuildingTypeClass::Destroy_1 -> NG (attempt 1)
+[ledger] 0x4e8de0 _DynamicVectorClass_PAVAircraftTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8e40 _DynamicVectorClass_PAVUnitTypeClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e8ea0 _DynamicVectorClass_PAVAnimTypeClass::Destroy -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "regalloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p138\batch_report.json

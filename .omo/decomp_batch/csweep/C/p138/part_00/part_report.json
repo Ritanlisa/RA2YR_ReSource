@@ -1,0 +1,455 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "regalloc": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x4e8720",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_TubeClass::Destroy_1",
+   "emitted": "_DynamicVectorClass_PAVOverlayClass::Destroy_1",
+   "unit": "_DynamicVectorClass_PAVOverlayClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8780",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "ParticleSystemClass::initParticleArray",
+   "emitted": "_DynamicVectorClass_PAVSmudgeClass::initParticleArray",
+   "unit": "_DynamicVectorClass_PAVSmudgeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e87e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "ParticleSystemClass_32::Destroy",
+   "emitted": "_DynamicVectorClass_PAVTerrainClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVTerrainClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8840",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "ParticleSystemClass_32::ReleaseBuffer",
+   "emitted": "_DynamicVectorClass_PAVAircraftClass::ReleaseBuffer",
+   "unit": "_DynamicVectorClass_PAVAircraftClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e88a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_UnitClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVUnitClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVUnitClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8900",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_UnitClass::Destroy_0",
+   "emitted": "_DynamicVectorClass_PAVHouseClass::Destroy_0",
+   "unit": "_DynamicVectorClass_PAVHouseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8960",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_TeamClass::Destroy_0",
+   "emitted": "_DynamicVectorClass_PAVAnimClass::Destroy_0",
+   "unit": "_DynamicVectorClass_PAVAnimClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e89c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_TeamClass::Destroy_1",
+   "emitted": "_DynamicVectorClass_PAVFactoryClass::Destroy_1",
+   "unit": "_DynamicVectorClass_PAVFactoryClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8a20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_CampaignClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVCampaignClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVCampaignClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8a80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_CampaignClass::Destroy_0",
+   "emitted": "_DynamicVectorClass_PAVSideClass::Destroy_0",
+   "unit": "_DynamicVectorClass_PAVSideClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8b40",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_HouseTypeClass::Destroy_0",
+   "emitted": "_DynamicVectorClass_PAVTaskForceClass::Destroy_0",
+   "unit": "_DynamicVectorClass_PAVTaskForceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8ba0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_HouseTypeClass::Destroy_1",
+   "emitted": "_DynamicVectorClass_PAVTeamTypeClass::Destroy_1",
+   "unit": "_DynamicVectorClass_PAVTeamTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8c00",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_ScriptTypeClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVScriptTypeClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVScriptTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8c60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_ScriptTypeClass::Destroy_0",
+   "emitted": "_DynamicVectorClass_PAVOverlayTypeClass::Destroy_0",
+   "unit": "_DynamicVectorClass_PAVOverlayTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8cc0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_SmudgeTypeClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVSmudgeTypeClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVSmudgeTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8d20",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_SmudgeTypeClass::Destroy_0",
+   "emitted": "_DynamicVectorClass_PAVTerrainTypeClass::Destroy_0",
+   "unit": "_DynamicVectorClass_PAVTerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8d80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_SmudgeTypeClass::Destroy_1",
+   "emitted": "_DynamicVectorClass_PAVBuildingTypeClass::Destroy_1",
+   "unit": "_DynamicVectorClass_PAVBuildingTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8de0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_AircraftTypeClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVAircraftTypeClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVAircraftTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8e40",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_AircraftTypeClass::Destroy_0",
+   "emitted": "_DynamicVectorClass_PAVUnitTypeClass::Destroy_0",
+   "unit": "_DynamicVectorClass_PAVUnitTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  },
+  {
+   "addr": "0x4e8ea0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 59B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_AnimTypeClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVAnimTypeClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 59,
+   "clean": false
+  }
+ ]
+}
