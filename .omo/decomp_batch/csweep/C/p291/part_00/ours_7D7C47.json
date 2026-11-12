@@ -1,0 +1,15 @@
+{
+ "symbol": "?__ld12told@@YAHPAGH@Z",
+ "sym_key": "Unnamed::__ld12told",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "8b4c2404535556668b410a8b5106578b69028bf825ff7f00008bf08d4424146a405033db81e70080ffff8954241ce80000000083c40885c07408b90000008046eb048b4c24146681feff7f7505bb010000008b4424180bf75f6689700889480489285e8bc35d5bc3",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?_RoundMan@@YAHHHZZ",
+   "sym_key": "_RoundMan"
+  }
+ ]
+}

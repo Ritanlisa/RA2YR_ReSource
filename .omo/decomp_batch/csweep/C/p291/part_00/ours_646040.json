@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_646040@@YIPAIPAIPAM1@Z",
+ "sym_key": "Unnamed::sub_646040",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "83ec108b442414568bf1d900d9e0d9542418d94004d9e0d95c24088d4c2418d95c2404d94008d9e0d95c240cd9400c8d442404d95c241050e8000000008b08890e8b50048956048b4808894e088b500c89560c8bc65e83c410c20400",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?QuaternionMathMultiply@@YIPAMPAX00@Z",
+   "sym_key": "QuaternionMathMultiply"
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p291\part_00
+=== convert (20 addrs) ===
+[conv] 0x452670 BuildingClass::CanAcceptType -> BuildingClass
+[conv] 0x52b4f0 HashTable::BinarySearchAlt -> HashTable
+[conv] 0x52b620 SortedArray::BinarySearch -> SortedArray
+[conv] 0x55f6e0 SortedVector::BinarySearch -> SortedVector
+[conv] 0x7107e0 SortedStateVector::BinarySearch -> SortedStateVector
+[conv] 0x724fc0 CommandClass::BinarySearchAction -> CommandClass
+[conv] 0x458a00 UnitClass::IsCellBlockedByBridge -> UnitClass
+[conv] 0x64ac90 Network::syncGameState -> Network
+[conv] 0x67a090 TypeList::CopyFull -> TypeList
+[conv] 0x67a110 TypeList::CopyAircraft -> TypeList
+[conv] 0x67a190 RulesClass::readAircraftTypes -> RulesClass
+[conv] 0x67a210 RulesClass::readSuperWeaponTypes -> RulesClass
+[conv] 0x67a290 TypeList::CopyInfantry -> TypeList
+[conv] 0x67a310 RulesClass::readBuildingTypes -> RulesClass
+[conv] 0x47c5a0 Object::FindObjectCell -> Object
+[conv] 0x447e90 BuildingClass::TogglePrimaryFactory -> BuildingClass
+[conv] 0x451750 BuildingClass::PlayUpgradeAnim -> BuildingClass
+[conv] 0x646040 sub_646040 -> _addr_64
+[conv] 0x7d7c47 __ld12told -> _addr_7D
+[conv] 0x485250 ObjectClass::SetTriggerTarget -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] HashTable                rc=2
+[era] SortedArray              rc=2
+[era] SortedVector             rc=0
+[era] SortedStateVector        rc=0
+[era] CommandClass             rc=0
+[era] UnitClass                rc=2
+[era] Network                  rc=0
+[era] TypeList                 rc=2
+[era] RulesClass               rc=0
+[era] Object                   rc=0
+[era] _addr_64                 rc=0
+[era] _addr_7D                 rc=0
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x452670   MISMATCH         BuildingClass::CanAcceptType
+[diff] 0x447e90   MISMATCH         BuildingClass::TogglePrimaryFactory
+[diff] 0x55f6e0   MISMATCH         SortedVector::BinarySearch
+[diff] 0x7107e0   MISMATCH         SortedStateVector::BinarySearch
+[diff] 0x724fc0   MISMATCH         CommandClass::BinarySearchAction
+[diff] 0x64ac90   MISMATCH         Network::syncGameState
+[diff] 0x67a190   MISMATCH         RulesClass::readAircraftTypes
+[diff] 0x67a210   MISMATCH         RulesClass::readSuperWeaponTypes
+[diff] 0x67a310   MISMATCH         RulesClass::readBuildingTypes
+[diff] 0x47c5a0   MISMATCH         Object::FindObjectCell
+[diff] 0x646040   MISMATCH         sub_646040
+[diff] 0x7d7c47   MISMATCH         __ld12told
+[diff] 0x485250   MISMATCH         ObjectClass::SetTriggerTarget
+[ledger] 0x452670 BuildingClass::CanAcceptType -> NG (attempt 1)
+[ledger] 0x52b4f0 HashTable::BinarySearchAlt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52b620 SortedArray::BinarySearch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55f6e0 SortedVector::BinarySearch -> NG (attempt 1)
+[ledger] 0x7107e0 SortedStateVector::BinarySearch -> NG (attempt 1)
+[ledger] 0x724fc0 CommandClass::BinarySearchAction -> NG (attempt 1)
+[ledger] 0x458a00 UnitClass::IsCellBlockedByBridge -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64ac90 Network::syncGameState -> NG (attempt 1)
+[ledger] 0x67a090 TypeList::CopyFull -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67a110 TypeList::CopyAircraft -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67a190 RulesClass::readAircraftTypes -> NG (attempt 1)
+[ledger] 0x67a210 RulesClass::readSuperWeaponTypes -> NG (attempt 1)
+[ledger] 0x67a290 TypeList::CopyInfantry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67a310 RulesClass::readBuildingTypes -> NG (attempt 1)
+[ledger] 0x47c5a0 Object::FindObjectCell -> NG (attempt 1)
+[ledger] 0x447e90 BuildingClass::TogglePrimaryFactory -> NG (attempt 1)
+[ledger] 0x451750 BuildingClass::PlayUpgradeAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x646040 sub_646040 -> NG (attempt 1)
+[ledger] 0x7d7c47 __ld12told -> NG (attempt 1)
+[ledger] 0x485250 ObjectClass::SetTriggerTarget -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "regalloc": 4,
+  "branch_polarity": 4,
+  "ret_norm": 1,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p291\batch_report.json

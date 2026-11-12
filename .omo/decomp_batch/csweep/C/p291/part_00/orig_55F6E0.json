@@ -1,0 +1,11 @@
+{
+ "addr": "0x55F6E0",
+ "name": "SortedVector::BinarySearch",
+ "size": 121,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55F6E0",
+ "bytes_hex": "568bf18b460485c075045ec204008a4e0c84c9751e6820bc48006a08508b0650e84394260083c410c7461000000000c6460c018b4c240853578b3e8b198b4e0485c97e258bc1992bc2d1f88b34c78d14c73bf37e048bc8eb0c74168d7a0883caff2bd003ca85c97fdb5f5b33c05ec204005f5b8bc25ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

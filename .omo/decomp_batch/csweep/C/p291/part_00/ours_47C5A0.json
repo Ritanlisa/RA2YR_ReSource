@@ -1,0 +1,27 @@
+{
+ "symbol": "?FindObjectCell@Object@@QAEHPAHD@Z",
+ "sym_key": "Object::FindObjectCell",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "a10000000056578bf985c0742e8bb7e400000085f674248b0656ff502c83f80274128b763085f674128b0e56ff512c83f80275ee8bc65f5ec208008b5424108b44240c6a0052508bcfe80000000085c07539a10000000085c0742e8bb7e400000085f674248b0e56ff512c83f82474c48b763085f674128b1656ff522c83f82475ee8bc65f5ec2080033c05f5ec20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  }
+ ]
+}

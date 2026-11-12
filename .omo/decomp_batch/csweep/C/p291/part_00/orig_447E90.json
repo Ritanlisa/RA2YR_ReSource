@@ -1,0 +1,11 @@
+{
+ "addr": "0x447E90",
+ "name": "BuildingClass::TogglePrimaryFactory",
+ "size": 121,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x447E90",
+ "bytes_hex": "8b812005000083ec0c8a90cb1600005684d274148b5424188b01528d54240852ff90a8000000eb328a90a916000084d275168a90ab16000084d2750c8b118d44240450ff5248eb128b4424188b11508d44240850ff92a80000008bc88b4424148bd08b3189328b71048972045e8b4908894a0883c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

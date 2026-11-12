@@ -1,0 +1,15 @@
+{
+ "symbol": "?CanAcceptType@BuildingClass@@QAE_NHH@Z",
+ "sym_key": "BuildingClass::CanAcceptType",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "8b442408568bf1573b861c02000075538b8e200500008b7c240c83c1248d97880e00005152e80000000083c40885c0753283bffc160000ff751f8b8e2005000033c08a86020700003b81e0140000721a85c07e0f83f8037f0a8a860207000084c074075f32c05ec208005fb0015ec20800",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

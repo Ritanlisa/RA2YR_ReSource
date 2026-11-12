@@ -1,0 +1,15 @@
+{
+ "symbol": "?readBuildingTypes@RulesClass@@QAEPAV1@PAH@Z",
+ "sym_key": "RulesClass::readBuildingTypes",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf13bf774558b0656ff500c8b470885c0894608743a8d0c850000000051e80000000083c40489460485c0742e8b4e0833c085c9c6460d017e218b57048b4e048b14828914818b4e08403bc17ceceb0bc7460400000000c6460d008b47108946108b4f14894e148b57188956188bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

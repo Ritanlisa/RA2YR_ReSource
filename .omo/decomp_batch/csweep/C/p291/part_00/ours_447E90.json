@@ -1,0 +1,8 @@
+{
+ "symbol": "?TogglePrimaryFactory@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::TogglePrimaryFactory",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "8b812005000083ec108a90cb16000084d275218a90a916000084d275178a90ab16000084d2750d8b018d5424045251ff5048eb138b5424008b01528d5424085251ff90a80000008b4c24008b1089118b50048951048b40088941088bc183c410c3",
+ "relocs": []
+}

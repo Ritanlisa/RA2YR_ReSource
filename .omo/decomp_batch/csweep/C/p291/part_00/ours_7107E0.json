@@ -1,0 +1,21 @@
+{
+ "symbol": "?BinarySearch@SortedStateVector@@QAEIPAH@Z",
+ "sym_key": "SortedStateVector::BinarySearch",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b460485c074698a4e0c84c9751e68000000006a08508b0650e80000000083c410c7461000000000c6460c018b4c24108b3e8b198b4e0485c97e358bc1992bc2d1f88b14c73bd37f0f741583caff8d7cc7082bd003caeb028bc885c97e12ebdb8bc1992bc2d1f88d04c75f5e5bc204005f5e33c05bc20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?sub_710860@@YAHPBX0@Z",
+   "sym_key": "sub_710860"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  }
+ ]
+}

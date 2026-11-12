@@ -1,0 +1,11 @@
+{
+ "addr": "0x47C5A0",
+ "name": "Object::FindObjectCell",
+ "size": 121,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x47C5A0",
+ "bytes_hex": "a0a0e9a80056578bf984c0741d8bb7e400000085f674138b068bceff502c83f802744b8b763085f675ed8b4c24108b54240c6a0051528bcfe8f3fdffff85c07528a0a0e9a80084c0741d8bb7e400000085f674138b068bceff502c83f82474128b763085f675ed33c05f5ec2080085f674b88bc65f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

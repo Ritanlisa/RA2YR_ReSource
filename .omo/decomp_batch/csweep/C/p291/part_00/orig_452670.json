@@ -1,0 +1,11 @@
+{
+ "addr": "0x452670",
+ "name": "BuildingClass::CanAcceptType",
+ "size": 121,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x452670",
+ "bytes_hex": "8b44240856578bf93b871c02000075358b8f200500008b74240c83c1248d96880e00005152e88666370083c40885c075148b86fc16000083f8ff741085c07e0583f8037e235f32c05ec208008b8f200500000fbe87020700003b81e01400007d075fb0015ec208008a870207000084c075d35fb0015ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

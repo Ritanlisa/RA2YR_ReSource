@@ -1,0 +1,11 @@
+{
+ "addr": "0x67A310",
+ "name": "RulesClass::readBuildingTypes",
+ "size": 121,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x67A310",
+ "bytes_hex": "56578b7c240c8bf13bf774548b06ff500c8b470885c0894608743a8d0c850000000051e8dfea140083c40489460485c0742e8b4e0833c085c9c6460d017e218b57048b4e048b14828914818b4e08403bc17ceceb0bc7460400000000c6460d008b47108946108b4f14894e148b57188956188bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
