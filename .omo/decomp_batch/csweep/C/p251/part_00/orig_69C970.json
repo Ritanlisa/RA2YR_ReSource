@@ -1,0 +1,11 @@
+{
+ "addr": "0x69C970",
+ "name": "VectorClass_Wstring::AddRef",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69C970",
+ "bytes_hex": "538b5c240856578bf98b4b088b47083bc1753133f685c07e238b4b048d04b50000000003c8518b4f0403c8e8c07e110084c075108b4708463bf07cdd5f5eb0015bc204005f5e32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

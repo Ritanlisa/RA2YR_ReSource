@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A5240",
+ "name": "Timer::StartDouble",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A5240",
+ "bytes_hex": "83ec10568bf18a461884c075078a461984c07431dd442418dc0df8277e00c6461801dd16e8970c32008b0d84eda8008d5608c6461900890a8b4c2408894a0489420889420c5e83c410c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

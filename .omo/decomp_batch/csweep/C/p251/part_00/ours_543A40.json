@@ -1,0 +1,15 @@
+{
+ "symbol": "?COMStub_53@AbstractClass@@QAEDXZ",
+ "sym_key": "AbstractClass::COMStub_53",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c08bf1743b8a868100000084c075318b0656ff90500100008b0e6a0156ff91dc0000008b166a0056ff9224010000c6868100000001c6868000000000b0015ec332c05ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  }
+ ]
+}

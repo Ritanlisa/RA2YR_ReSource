@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetObject@FactoryClass@@QAEDH@Z",
+ "sym_key": "FactoryClass::SetObject",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "568bf156e8000000008b44240c33c989465c8b54240c8b801c020000894e6489467083c4040fbe05a001000089462cb801000000894e38895630894e34c74624360000008986b00000008846745ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?BuildingClass__AbandonProduction@@YAHH@Z",
+   "sym_key": "BuildingClass__AbandonProduction"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x72B390",
+ "name": "LoadingScreen::ReleaseAnimObjects",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72B390",
+ "bytes_hex": "578bf98b0d88fbb00085c974108b016a01ff10c70588fbb00000000000a184fbb00085c0741350e881d7090083c404c70584fbb000000000006888fbb000ba84fbb0008bcfe806faffff5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

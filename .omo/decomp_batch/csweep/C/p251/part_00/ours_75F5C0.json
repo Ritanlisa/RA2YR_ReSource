@@ -1,0 +1,27 @@
+{
+ "symbol": "?CalcInverseAlpha@TacticalClass@@QAEPAV1@HM@Z",
+ "sym_key": "TacticalClass::CalcInverseAlpha",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "83ec08d9442410dc2d000000005356578bf1dd5c240c8b7c24108b5c240c5753e8000000005753668944242ce800000000668944241c8b44242c8b4c241c83c4108906894e048bc65f5e5b83c408c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

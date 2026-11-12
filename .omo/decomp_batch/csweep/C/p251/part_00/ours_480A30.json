@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetCoords@CellClass@@QAEPAHPAH@Z",
+ "sym_key": "CellClass::GetCoords",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "83ec088d442400568b712450c744240880000000c744240c80000000e8000000000fbfd68bc88b442410c1e20881c280000000894808c1fe1089100fbfd6c1e20881c2800000005e89500483c408c20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  }
+ ]
+}

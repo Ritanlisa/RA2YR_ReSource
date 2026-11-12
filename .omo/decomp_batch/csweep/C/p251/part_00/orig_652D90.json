@@ -1,0 +1,11 @@
+{
+ "addr": "0x652D90",
+ "name": "RadarClass::Destru_vt50",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x652D90",
+ "bytes_hex": "a0f948b0005333db3ac37414a1e048b00050e8965d170083c404881df948b000a0f848b000891de048b0003ac374158b0dac48b00051e8725d170083c404881df848b000891dac48b0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

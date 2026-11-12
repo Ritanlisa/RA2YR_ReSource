@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C9E10",
+ "name": "FactoryClass::SetObject",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C9E10",
+ "bytes_hex": "83ec0c568bf1e8d50100008b44241433c98946588d562c8b801c020000894e6089466ca184eda80089028b442408894e38894204b001894a08c746243600000088465d8846705e83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

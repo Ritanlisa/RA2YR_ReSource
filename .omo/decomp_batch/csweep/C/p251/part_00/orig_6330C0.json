@@ -1,0 +1,11 @@
+{
+ "addr": "0x6330C0",
+ "name": "PKStrawClass::RelayBlowfishKey",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6330C0",
+ "bytes_hex": "568bf1578b7c240c397e18743a85ff74158b4f0885c9740e8b016a00ff5004c74708000000008b461885c07407c74008000000008d4e14897e1885ff89761c894e0474038977085f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

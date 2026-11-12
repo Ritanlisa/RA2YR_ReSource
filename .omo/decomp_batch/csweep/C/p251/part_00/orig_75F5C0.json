@@ -1,0 +1,11 @@
+{
+ "addr": "0x75F5C0",
+ "name": "TacticalClass::CalcInverseAlpha",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75F5C0",
+ "bytes_hex": "d9442408dc2d18177e00538b5c24085556db03578bfa8bf1d84c2418db07d8cadec1e819690600db43048be8d84c2418db4704d8cadec1e804690600892e8946048bc65f5e5dddd85bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

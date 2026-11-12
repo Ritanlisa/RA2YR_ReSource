@@ -1,0 +1,15 @@
+{
+ "symbol": "?checkPointer@AbstractClass@@QAEPAIPAH@Z",
+ "sym_key": "AbstractClass::checkPointer",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "8b0183ec1051ff909c00000085c074248d4c24006a0051e8000000008b48088b500c8b442414890889480489500883c410c204008b44241433c933d2890889480489500883c410c20400",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  }
+ ]
+}

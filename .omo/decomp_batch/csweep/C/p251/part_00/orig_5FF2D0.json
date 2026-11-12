@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FF2D0",
+ "name": "BuildingLightQueue::RemoveEntry",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FF2D0",
+ "bytes_hex": "518b157816ac008d442400894c240050b97816ac00ff521083f8ff742d8b0d8816ac003bc17d23493bc1890d8816ac007d188b0d7c16ac00408b1481895481fc8b0d8816ac003bc17ce859c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

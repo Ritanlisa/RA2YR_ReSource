@@ -1,0 +1,21 @@
+{
+ "symbol": "?AddRef@_VectorClass_VWstring@@QAEDH@Z",
+ "sym_key": "_VectorClass_VWstring::AddRef",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf18b4b08578b46083bc1754133ff85c07f085f5eb0015bc204008b43048b4e0450e80000000084c075238b4608473bf87de08b4b048d04bd0000000003c8518b4e0403c8e80000000084c074dd5f5e32c05bc20400",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?SetCapacity@VectorClass_Wstring@@QAE_NPAX@Z",
+   "sym_key": "VectorClass_Wstring::SetCapacity"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?SetCapacity@VectorClass_Wstring@@QAE_NPAX@Z",
+   "sym_key": "VectorClass_Wstring::SetCapacity"
+  }
+ ]
+}

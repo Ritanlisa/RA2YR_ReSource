@@ -1,0 +1,11 @@
+{
+ "addr": "0x72B820",
+ "name": "Palette::LoadFile",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72B820",
+ "bytes_hex": "578bf98b0da0fbb00085c974108b016a01ff10c705a0fbb00000000000a19cfbb00085c0741350e8f1d2090083c404c7059cfbb0000000000068a0fbb000ba9cfbb0008bcfe876f5ffff5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

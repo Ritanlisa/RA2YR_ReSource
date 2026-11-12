@@ -1,0 +1,11 @@
+{
+ "addr": "0x45EBD0",
+ "name": "AbstractClass::checkPointer",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45EBD0",
+ "bytes_hex": "8b0183ec20ff909c00000085c074238d4c24106a00518bc8e8f3fb23008b10895424008b4804894c24048b48088b500ceb0433c933d28b442424568bf0890e894e048956085e83c420c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

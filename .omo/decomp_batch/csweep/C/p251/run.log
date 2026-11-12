@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p251\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e42d0 TActionClass::executeIronCurtainAction -> TActionClass
+[conv] 0x4a5240 Timer::StartDouble -> Timer
+[conv] 0x69c970 _VectorClass_VWstring::AddRef -> _VectorClass_VWstring
+[conv] 0x521d30 InfantryClass::GetTransformMatrix -> InfantryClass
+[conv] 0x5d4ed0 DialogQueue::RemoveEntry -> DialogQueue
+[conv] 0x5ff2d0 BuildingLightQueue::RemoveEntry -> BuildingLightQueue
+[conv] 0x6330c0 PKStrawClass::RelayBlowfishKey -> PKStrawClass
+[conv] 0x50c050 TechnoClass::GetTargetSpeedMultiplier -> TechnoClass
+[conv] 0x44eb10 BuildingClass::GetCrew -> BuildingClass
+[conv] 0x5bd1f0 Debug::Printf -> Debug
+[conv] 0x652d90 RadarClass::Destru_vt50 -> RadarClass
+[conv] 0x75f5c0 TacticalClass::CalcInverseAlpha -> TacticalClass
+[conv] 0x45ebd0 AbstractClass::checkPointer -> AbstractClass
+[conv] 0x7b66d0 WideString::Assign -> WideString
+[conv] 0x72b390 LoadingScreen::ReleaseAnimObjects -> LoadingScreen
+[conv] 0x72b820 Palette::LoadFile -> Palette
+[conv] 0x5b5960 ObjectClass::sub_5B5960 -> ObjectClass
+[conv] 0x543a40 AbstractClass::COMStub_53 -> AbstractClass
+[conv] 0x480a30 CellClass::GetCoords -> CellClass
+[conv] 0x4c9e10 FactoryClass::SetObject -> FactoryClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TActionClass             rc=2
+[era] Timer                    rc=0
+[era] _VectorClass_VWstring    rc=0
+[era] InfantryClass            rc=0
+[era] DialogQueue              rc=0
+[era] BuildingLightQueue       rc=0
+[era] PKStrawClass             rc=0
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] Debug                    rc=2
+[era] RadarClass               rc=0
+[era] TacticalClass            rc=0
+[era] AbstractClass            rc=0
+[era] WideString               rc=0
+[era] LoadingScreen            rc=0
+[era] Palette                  rc=0
+[era] ObjectClass              rc=2
+[era] CellClass                rc=0
+[era] FactoryClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a5240   MISMATCH         Timer::StartDouble
+[diff] 0x69c970   MISMATCH         _VectorClass_VWstring::AddRef
+[diff] 0x521d30   MISMATCH         InfantryClass::GetTransformMatrix
+[diff] 0x5d4ed0   MISMATCH         DialogQueue::RemoveEntry
+[diff] 0x5ff2d0   MISMATCH         BuildingLightQueue::RemoveEntry
+[diff] 0x6330c0   MISMATCH         PKStrawClass::RelayBlowfishKey
+[diff] 0x652d90   MISMATCH         RadarClass::Destru_vt50
+[diff] 0x75f5c0   MISMATCH         TacticalClass::CalcInverseAlpha
+[diff] 0x45ebd0   MISMATCH         AbstractClass::checkPointer
+[diff] 0x543a40   MISMATCH         AbstractClass::COMStub_53
+[diff] 0x7b66d0   MISMATCH         WideString::Assign
+[diff] 0x72b390   MISMATCH         LoadingScreen::ReleaseAnimObjects
+[diff] 0x72b820   MISMATCH         Palette::LoadFile
+[diff] 0x480a30   MISMATCH         CellClass::GetCoords
+[diff] 0x4c9e10   MISMATCH         FactoryClass::SetObject
+[ledger] 0x6e42d0 TActionClass::executeIronCurtainAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a5240 Timer::StartDouble -> NG (attempt 1)
+[ledger] 0x69c970 _VectorClass_VWstring::AddRef -> NG (attempt 1)
+[ledger] 0x521d30 InfantryClass::GetTransformMatrix -> NG (attempt 1)
+[ledger] 0x5d4ed0 DialogQueue::RemoveEntry -> NG (attempt 1)
+[ledger] 0x5ff2d0 BuildingLightQueue::RemoveEntry -> NG (attempt 1)
+[ledger] 0x6330c0 PKStrawClass::RelayBlowfishKey -> NG (attempt 1)
+[ledger] 0x50c050 TechnoClass::GetTargetSpeedMultiplier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44eb10 BuildingClass::GetCrew -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bd1f0 Debug::Printf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x652d90 RadarClass::Destru_vt50 -> NG (attempt 1)
+[ledger] 0x75f5c0 TacticalClass::CalcInverseAlpha -> NG (attempt 1)
+[ledger] 0x45ebd0 AbstractClass::checkPointer -> NG (attempt 1)
+[ledger] 0x7b66d0 WideString::Assign -> NG (attempt 1)
+[ledger] 0x72b390 LoadingScreen::ReleaseAnimObjects -> NG (attempt 1)
+[ledger] 0x72b820 Palette::LoadFile -> NG (attempt 1)
+[ledger] 0x5b5960 ObjectClass::sub_5B5960 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x543a40 AbstractClass::COMStub_53 -> NG (attempt 1)
+[ledger] 0x480a30 CellClass::GetCoords -> NG (attempt 1)
+[ledger] 0x4c9e10 FactoryClass::SetObject -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 15
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "frame_sched": 3,
+  "width_mismatch": 1,
+  "branch_polarity": 1,
+  "const_fold": 2,
+  "extern_reloc": 2,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p251\batch_report.json

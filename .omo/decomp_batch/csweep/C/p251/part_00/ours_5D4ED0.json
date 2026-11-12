@@ -1,0 +1,45 @@
+{
+ "symbol": "?RemoveEntry@DialogQueue@@QAEHXZ",
+ "sym_key": "DialogQueue::RemoveEntry",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "510fbe0583360000894c24008d4c2400516883360000ff501083f8ff74388a0d873600000fbed13bc27d2bfec9880d873600000fbec93bc17d1c0fbe1584360000408d0c828b14828951fc0fbe0d873600003bc17ce459c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

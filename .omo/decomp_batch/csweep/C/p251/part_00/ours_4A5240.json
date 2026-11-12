@@ -1,0 +1,27 @@
+{
+ "symbol": "?StartDouble@Timer@@QAEDN@Z",
+ "sym_key": "Timer::StartDouble",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b461884c0750bc1e80884c088442404745ddd44240cdc0d00000000c7461801000000dd54240c8b4424108b4c240cdd1e5051e8000000008b56188bc88b44240c83c40833c881e1ff00000033c180e6000fbe0da00100008956188b54240c89442404894e0889560c8946108946145e59c20800",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "__real@8@4008e100000000000000",
+   "sym_key": "_real@8@4008e100000000000000"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

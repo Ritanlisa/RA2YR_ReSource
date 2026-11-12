@@ -1,0 +1,11 @@
+{
+ "addr": "0x543A40",
+ "name": "AbstractClass::COMStub_53",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x543A40",
+ "bytes_hex": "a0a0e9a8005684c08bf1743c8a868100000084c075328b06ff90500100008b166a018bceff92dc0000008b066a008bceff9024010000c6868100000001c6868000000000b0015ec332c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

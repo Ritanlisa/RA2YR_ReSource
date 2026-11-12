@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D4ED0",
+ "name": "DialogQueue::RemoveEntry",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D4ED0",
+ "bytes_hex": "518b1590fcab00894c24008d442400b990fcab0050ff521083f8ff742d8b0da0fcab003bc17d23493bc1890da0fcab007d188b0d94fcab00408b1481895481fc8b0da0fcab003bc17ce859c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

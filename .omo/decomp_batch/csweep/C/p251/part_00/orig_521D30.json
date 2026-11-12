@@ -1,0 +1,11 @@
+{
+ "addr": "0x521D30",
+ "name": "InfantryClass::GetTransformMatrix",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x521D30",
+ "bytes_hex": "83ec0c33c033d25356578b3983ec0c33f68bdc89038b44242c508953048d54241c52897308ff97b00000008bc88b44241c8bd05f8b3189328b71048972045e8b49085b894a0883c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

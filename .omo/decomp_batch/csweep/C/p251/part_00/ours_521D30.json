@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTransformMatrix@InfantryClass@@QAEPAIPAHH@Z",
+ "sym_key": "InfantryClass::GetTransformMatrix",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "8b54240883ec0c8b016a006a006a00528d5424105251ff90b00000008b4c24108b1089118b50048951048b40088941088bc183c40cc20800",
+ "relocs": []
+}
