@@ -1,0 +1,21 @@
+{
+ "symbol": "?SaveToPipe@INIClass@@QAEHH@Z",
+ "sym_key": "INIClass::SaveToPipe",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "83ec108b54241433c08941048941088944240489442408894424008d442400565089542414e8000000008d4c24048bf0e8000000008bc65e83c410c20400",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?WriteToString@INIClass@@QAEHH@Z",
+   "sym_key": "INIClass::WriteToString"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?Destructor@FilePipe@@QAEHXZ",
+   "sym_key": "FilePipe::Destructor"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_6EA080@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::sub_6EA080",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "53568bf1bb010000008b4654895e7885c0889e81000000c6467a007424b900ff0000854e78750a8b968000000085d274068898890600008b80d805000085c075e133c08a462850e80000000083c404889e840000005e5bc3",
+ "relocs": [
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?SetLandTypeMap@@YADPAX@Z",
+   "sym_key": "SetLandTypeMap"
+  }
+ ]
+}

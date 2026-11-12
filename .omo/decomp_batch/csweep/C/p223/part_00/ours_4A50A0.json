@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4A50A0@@YIHH@Z",
+ "sym_key": "Unnamed::sub_4A50A0",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "56578bf1e8000000008bf883ffff75048bceeb0fe8000000002bc73bc67d0a8bce2bc885c975e433c05f5ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

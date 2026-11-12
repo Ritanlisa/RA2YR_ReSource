@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5AF310@ObjectClass@@QAENH@Z",
+ "sym_key": "ObjectClass::sub_5AF310",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "83ec1c33c08d54240c8944240c52894424148bd18d4c240489442418e8000000008b08894c2418d9400483c41cc20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?TransformMatrix3x4Point@@YIPAMPAX00@Z",
+   "sym_key": "TransformMatrix3x4Point"
+  }
+ ]
+}

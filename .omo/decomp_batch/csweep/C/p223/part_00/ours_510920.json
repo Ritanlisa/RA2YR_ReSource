@@ -1,0 +1,15 @@
+{
+ "symbol": "?Construct@BoolVector@@QAEPAV1@IH@Z",
+ "sym_key": "BoolVector::Construct",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf133d23bc2895604894608c6460c0188560d891674218b4c240c3bca7409894e048bc65ec2080050e80000000083c404894604c6460d018bc65ec20800",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

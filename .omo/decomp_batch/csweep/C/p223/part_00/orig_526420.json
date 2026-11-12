@@ -1,0 +1,11 @@
+{
+ "addr": "0x526420",
+ "name": "INIClass::SaveToPipe",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x526420",
+ "bytes_hex": "83ec148b54241833c08941048941088944240489442408884424108d442400565089542414c7442408a04d7e00e81e0000008d4c24048bf0e8c33f29008bc65e83c414c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

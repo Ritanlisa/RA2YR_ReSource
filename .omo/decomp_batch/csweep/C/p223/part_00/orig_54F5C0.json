@@ -1,0 +1,11 @@
+{
+ "addr": "0x54F5C0",
+ "name": "Mouse::IsButtonDown",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54F5C0",
+ "bytes_hex": "568b74240881e6ff0000006683fe0174066683fe0275176a17ff15ec137e0083f801750a664e66f7de1bf683c6028bce81e1ffff0000e895f6feff66f7d81bc05ef7d8c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

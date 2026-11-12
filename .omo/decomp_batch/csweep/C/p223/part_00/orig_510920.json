@@ -1,0 +1,11 @@
+{
+ "addr": "0x510920",
+ "name": "BoolVector::Construct",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x510920",
+ "bytes_hex": "8b442404568bf133d23bc2895604894608c6460c0188560dc7065caa7e0074218b4c240c3bca7409894e048bc65ec2080050e8c0842b0083c404894604c6460d018bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

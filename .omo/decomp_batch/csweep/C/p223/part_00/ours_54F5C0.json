@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsButtonDown@Mouse@@QAGHE@Z",
+ "sym_key": "Mouse::IsButtonDown",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "538a5c240c80fb01885c240c740580fb0275196a17e80000000083f801750d3ad8b1020f95c02ac8884c240c8b4c240c81e1ff000000e80000000066f7d81bc05bf7d8c20800",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?GetSystemMetrics@@YGHH@Z",
+   "sym_key": "GetSystemMetrics"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?GetKeyState@Mouse@@QAEFXZ",
+   "sym_key": "Mouse::GetKeyState"
+  }
+ ]
+}

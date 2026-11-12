@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p223\part_00
+=== convert (20 addrs) ===
+[conv] 0x6ea080 ObjectClass::sub_6EA080 -> ObjectClass
+[conv] 0x4a50a0 sub_4A50A0 -> _addr_4A
+[conv] 0x526420 INIClass::SaveToPipe -> INIClass
+[conv] 0x528170 INIClass::ReadDouble3 -> INIClass
+[conv] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> CampaignScore
+[conv] 0x54f5c0 Mouse::IsButtonDown -> Mouse
+[conv] 0x5171c0 HoverLocomotionClass::DispatchVirtualCall_3 -> HoverLocomotionClass
+[conv] 0x5b1a50 MechLocomotionClass::DispatchVirtualCall_5 -> MechLocomotionClass
+[conv] 0x71a090 TeleportLocomotionClass::DispatchVirtualCall_7 -> TeleportLocomotionClass
+[conv] 0x75ca30 WalkLocomotionClass::DispatchVirtualCall_10 -> WalkLocomotionClass
+[conv] 0x402940 ObjectClass::sub_402940 -> ObjectClass
+[conv] 0x5c3f30 MPCooperative::Cleanup -> MPCooperative
+[conv] 0x7d9f66 __CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z -> _addr_7D
+[conv] 0x4053e0 ObjectClass::sub_4053E0 -> ObjectClass
+[conv] 0x4301c0 sub_4301C0 -> _addr_43
+[conv] 0x510920 BoolVector::Construct -> BoolVector
+[conv] 0x5af2c0 ObjectClass::sub_5AF2C0 -> ObjectClass
+[conv] 0x5af310 ObjectClass::sub_5AF310 -> ObjectClass
+[conv] 0x5af360 ObjectClass::sub_5AF360 -> ObjectClass
+[conv] 0x5b3ac0 sub_5B3AC0 -> _addr_5B
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _addr_4A                 rc=0
+[era] INIClass                 rc=2
+[era] CampaignScore            rc=2
+[era] Mouse                    rc=0
+[era] HoverLocomotionClass     rc=0
+[era] MechLocomotionClass      rc=0
+[era] TeleportLocomotionClass  rc=0
+[era] WalkLocomotionClass      rc=0
+[era] MPCooperative            rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_43                 rc=0
+[era] BoolVector               rc=0
+[era] _addr_5B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6ea080   MISMATCH         ObjectClass::sub_6EA080
+[diff] 0x402940   MISMATCH         ObjectClass::sub_402940
+[diff] 0x4053e0   MISMATCH         ObjectClass::sub_4053E0
+[diff] 0x5af2c0   MISMATCH         ObjectClass::sub_5AF2C0
+[diff] 0x5af310   MISMATCH         ObjectClass::sub_5AF310
+[diff] 0x5af360   MISMATCH         ObjectClass::sub_5AF360
+[diff] 0x4a50a0   MISMATCH         sub_4A50A0
+[diff] 0x526420   MISMATCH         INIClass::SaveToPipe
+[diff] 0x54f5c0   MISMATCH         Mouse::IsButtonDown
+[diff] 0x5171c0   MISMATCH         HoverLocomotionClass::DispatchVirtualCall_3
+[diff] 0x5b1a50   MISMATCH         MechLocomotionClass::DispatchVirtualCall_5
+[diff] 0x71a090   MISMATCH         TeleportLocomotionClass::DispatchVirtualCall_7
+[diff] 0x75ca30   MISMATCH         WalkLocomotionClass::DispatchVirtualCall_10
+[diff] 0x4301c0   MISMATCH         sub_4301C0
+[diff] 0x510920   MISMATCH         BoolVector::Construct
+[diff] 0x5b3ac0   MISMATCH         sub_5B3AC0
+[ledger] 0x6ea080 ObjectClass::sub_6EA080 -> NG (attempt 1)
+[ledger] 0x4a50a0 sub_4A50A0 -> NG (attempt 1)
+[ledger] 0x526420 INIClass::SaveToPipe -> NG (attempt 1)
+[ledger] 0x528170 INIClass::ReadDouble3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54f5c0 Mouse::IsButtonDown -> NG (attempt 1)
+[ledger] 0x5171c0 HoverLocomotionClass::DispatchVirtualCall_3 -> NG (attempt 1)
+[ledger] 0x5b1a50 MechLocomotionClass::DispatchVirtualCall_5 -> NG (attempt 1)
+[ledger] 0x71a090 TeleportLocomotionClass::DispatchVirtualCall_7 -> NG (attempt 1)
+[ledger] 0x75ca30 WalkLocomotionClass::DispatchVirtualCall_10 -> NG (attempt 1)
+[ledger] 0x402940 ObjectClass::sub_402940 -> NG (attempt 1)
+[ledger] 0x5c3f30 MPCooperative::Cleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d9f66 __CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4053e0 ObjectClass::sub_4053E0 -> NG (attempt 1)
+[ledger] 0x4301c0 sub_4301C0 -> NG (attempt 1)
+[ledger] 0x510920 BoolVector::Construct -> NG (attempt 1)
+[ledger] 0x5af2c0 ObjectClass::sub_5AF2C0 -> NG (attempt 1)
+[ledger] 0x5af310 ObjectClass::sub_5AF310 -> NG (attempt 1)
+[ledger] 0x5af360 ObjectClass::sub_5AF360 -> NG (attempt 1)
+[ledger] 0x5b3ac0 sub_5B3AC0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "codegen_shape": 2,
+  "frame_sched": 4,
+  "branch_polarity": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p223\batch_report.json

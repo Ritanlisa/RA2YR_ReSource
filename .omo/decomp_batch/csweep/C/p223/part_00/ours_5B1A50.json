@@ -1,0 +1,8 @@
+{
+ "symbol": "?DispatchVirtualCall_5@MechLocomotionClass@@QAGHPAH@Z",
+ "sym_key": "MechLocomotionClass::DispatchVirtualCall_5",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "8b44240883ec1885c07536568b7424208d4c24108b065156ff50188b108b7608895424048b4804894c24088b50088d4c24048954240c8b065156ff90f40000005e83c418c20800",
+ "relocs": []
+}
