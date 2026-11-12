@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8596",
+ "name": "ResetEvent",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8596",
+ "bytes_hex": "ff2578117e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

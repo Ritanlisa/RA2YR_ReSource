@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8590",
+ "name": "GetCommMask",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8590",
+ "bytes_hex": "ff2574117e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

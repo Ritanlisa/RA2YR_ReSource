@@ -3,3 +3,4 @@
 {"layer": "C", "part": 2, "n": 20, "seconds": 19.0, "ok": true, "verdicts": {"MISMATCH": 16, "COMPILE_FAIL": 4}}
 {"layer": "C", "part": 3, "n": 20, "seconds": 18.4, "ok": true, "verdicts": {"MISMATCH": 14, "COMPILE_FAIL": 6}}
 {"layer": "C", "part": 4, "n": 20, "seconds": 19.3, "ok": true, "verdicts": {"COMPILE_FAIL": 7, "MISMATCH": 13}}
+{"layer": "C", "part": 5, "n": 20, "seconds": 20.0, "ok": true, "verdicts": {"COMPILE_FAIL": 9, "MISMATCH": 11}}
