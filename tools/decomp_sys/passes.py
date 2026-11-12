@@ -479,6 +479,241 @@ def _balanced_close(text, start):
     return -1
 
 
+# ------------------------------------------------ CW5-F10: member resolution
+#
+# CW5-7 (B5): the member NAME of these residual accesses can not be looked
+# up by exact class (the base global is a bare `DataGlobal_*` scalar) and
+# `global_member_offset` honestly refuses ambiguous names (`uniqueId` lives
+# on 110 classes, `spawnStatus` on 35).  Two extra tiers:
+#   1. the offset is ENCODED in the name (`AudioStream_field_0xAC`,
+#      `LoadGame_field_0x04`, `__pad_38`, `__tail_10`, `q004`, `m_3`);
+#   2. the name is a class-hierarchy member: the SHALLOWEST declaring class
+#      wins (`uniqueId`/`abstractFlags`/`referenceCount` -> AbstractClass,
+#      `spawnStatus`/`nextObject`/`bombVisible` -> ObjectClass).  All
+#      shallowest candidates must agree on ONE offset.
+
+_CW5_INLINE_FIELD = re.compile(
+    r"^(?P<cls>[A-Za-z_]\w*)_field_(?:0x)?(?P<off>[0-9A-Fa-f]+)$")
+_CW5_OFF_NAME = re.compile(
+    r"^(?:m|m_|__pad_?|__tail_?|field_?|alignmentPadding|q|u32_|u16_|u8_)"
+    r"(?P<off>[0-9A-Fa-f]{1,6})$")
+
+
+def _cw5_inline_member(reg, mem):
+    """(offset, type) encoded in the member name, or None."""
+    m = _CW5_INLINE_FIELD.match(mem or "")
+    if m:
+        off = int(m.group("off"), 16)
+        typ = None
+        ck = reg.class_key(m.group("cls"))
+        if ck:
+            rec = reg.member_at(ck, off)[0]
+            if rec:
+                typ = rec.get("type")
+        return off, typ
+    m = _CW5_OFF_NAME.match(mem or "")
+    if m:
+        return int(m.group("off"), 16), None
+    v = re.match(r"^vfptr(\d*)$", mem or "")
+    if v:
+        return 4 * int(v.group(1) or 0), "void*"
+    return None
+
+
+def _cw5_member_cands(reg, mem):
+    """[(class, offset, type)] for every table claiming member MEM."""
+    try:
+        reg.member_at("AbstractClass", 0)     # force lazy table loading
+    except Exception:                          # noqa: BLE001
+        pass
+    cands = []
+    for _cls, rec in (getattr(reg, "classes", {}) or {}).items():
+        for o_s, mrec in (rec.get("members") or {}).items():
+            if mrec.get("name") == mem:
+                cands.append((_cls, int(o_s), mrec.get("type")))
+    ml = getattr(reg, "_ml", None) or {}
+    for _cls, grp in ml.items():
+        for o_s, mrec in grp.items():
+            if mrec.get("name") == mem:
+                cands.append((_cls, int(o_s), mrec.get("type")))
+    cl = getattr(reg, "_cl", None) or {}
+    for _cls, lay in cl.items():
+        for o_s, mrec in (lay.get("offsets") or {}).items():
+            if mrec.get("ida_name") == mem:
+                cands.append((_cls, int(o_s), mrec.get("type")))
+    return cands
+
+
+def _cw5_shallow_member(reg, mem):
+    """(offset, type, shallowest_class) for a hierarchy member name."""
+    if not mem:
+        return None
+    cands = _cw5_member_cands(reg, mem)
+    cl = getattr(reg, "_cl", None) or {}
+    if not cands:
+        return None
+    depth_cache = {}
+
+    def depth(c):
+        if c in depth_cache:
+            return depth_cache[c]
+        d = 0
+        cur = c
+        seen = set()
+        while cur and cur not in seen:
+            seen.add(cur)
+            lay = cl.get(cur) or {}
+            par = lay.get("parent")
+            if not par:
+                break
+            d += 1
+            cur = par
+        depth_cache[c] = d
+        return d
+
+    best = min(depth(c) for c, _o, _t in cands)
+    picks = [(o, t, c) for c, o, t in cands if depth(c) == best]
+    offs = set(o for o, _t, _c in picks)
+    if len(offs) != 1:
+        return None
+    typ = next((t for _o, t, _c in picks if t), None)
+    return picks[0][0], typ, picks[0][2]
+
+
+_CW5_DIS_DISP = re.compile(
+    r"\[\s*\w+\s*\+\s*(?:0x([0-9A-Fa-f]+)|([0-9A-Fa-f]+)h)\s*\]")
+
+
+def _cw5_disasm_offsets(ctx):
+    """Every [reg+disp] displacement this function's disassembly touches."""
+    if hasattr(ctx, "_cw5_dis_offs"):
+        return ctx._cw5_dis_offs
+    s = set()
+    for dl in (getattr(ctx.ex, "disasm_lines", []) or []):
+        for m in _CW5_DIS_DISP.finditer(dl):
+            s.add(int(m.group(1) or m.group(2), 16))
+    ctx._cw5_dis_offs = s
+    return s
+
+
+def _cw5_disasm_member(ctx, mem):
+    """Offset proven by THIS function's disassembly among the candidates."""
+    cands = _cw5_member_cands(ctx.reg, mem)
+    if not cands:
+        return None
+    by_off = {}
+    for _c, o, t in cands:
+        if t and o not in by_off:
+            by_off[o] = t
+        else:
+            by_off.setdefault(o, None)
+    hits = [o for o in by_off if o in _cw5_disasm_offsets(ctx)]
+    if len(hits) != 1:
+        return None
+    return hits[0], by_off[hits[0]]
+
+
+_CW5_DIS_SYM = re.compile(r"\b[A-Za-z_]\w*_([0-9A-F]{5,8})\b")
+_CW5_IDA_GLOBAL = re.compile(
+    r"^(?:stru|dword|word|byte|qword|flt|dbl|unk|off)_([0-9A-Fa-f]{5,8})$")
+
+
+def _cw5_global_addr(reg, base):
+    """Address of a named global (registry record, else the IDA-plate name)."""
+    rec = ((getattr(reg, "reg", {}) or {}).get("globals") or {}).get(base)
+    if isinstance(rec, dict) and rec.get("addr"):
+        try:
+            return int(str(rec["addr"]), 16)
+        except (TypeError, ValueError):
+            return None
+    m = _CW5_IDA_GLOBAL.match(base or "")
+    if m:
+        return int(m.group(1), 16)
+    return None
+
+
+def _cw5_disasm_addrs(ctx):
+    """Every absolute address symbol/immediate the disassembly names."""
+    if hasattr(ctx, "_cw5_dis_addrs"):
+        return ctx._cw5_dis_addrs
+    s = set()
+    for dl in (getattr(ctx.ex, "disasm_lines", []) or []):
+        for m in _CW5_DIS_SYM.finditer(dl):
+            s.add(int(m.group(1), 16))
+        for m in re.finditer(r"\b0x([0-9A-Fa-f]{6,8})\b", dl):
+            s.add(int(m.group(1), 16))
+    ctx._cw5_dis_addrs = s
+    return s
+
+
+def _cw5_abs_member(ctx, base_addr, mem):
+    """Offset proven by `base + off` appearing as an absolute in disasm."""
+    if not base_addr:
+        return None
+    cands = _cw5_member_cands(ctx.reg, mem)
+    inline = _cw5_inline_member(ctx.reg, mem)
+    offs = {}
+    for _c, o, t in cands:
+        offs.setdefault(o, t)
+    if inline is not None:
+        offs.setdefault(inline[0], inline[1])
+    if not offs:
+        return None
+    addrs = _cw5_disasm_addrs(ctx)
+    hits = [o for o in offs if (base_addr + o) in addrs]
+    if len(hits) != 1:
+        return None
+    return hits[0], offs[hits[0]]
+
+
+def _cw5_member_tiered(reg, mem, ctx=None):
+    """Offset/type for a member name via the CW5 extra tiers.
+
+    Order: name-encoded offset -> narrowest hierarchy class (all agreeing)
+    -> `base+off` absolute in this function's disassembly -> unique
+    candidate offset in a [reg+disp] operand.
+    """
+    r = _cw5_inline_member(reg, mem)
+    if r is not None:
+        return r
+    s = _cw5_shallow_member(reg, mem)
+    if s is not None:
+        return (s[0], s[1])
+    if ctx is not None:
+        return _cw5_disasm_member(ctx, mem)
+    return None
+
+
+def _cw5_class_size(reg, cls):
+    if not cls:
+        return 0
+    return (reg.classes.get(cls) or {}).get("size") or 0
+
+
+def _cw5_elem_class(reg, base):
+    """Element class of a global object-array from its NAME.
+
+    `g_ScenarioClass_Instance` -> ScenarioClass / `HouseClass_Player` ->
+    HouseClass / `X_Array` -> X.  Longest declarable prefix wins.
+    """
+    c = base
+    for pre in ("g_", "s_"):
+        if c.startswith(pre):
+            c = c[len(pre):]
+            break
+    c = re.sub(r"_(?:Array|array|Player|Instance|List)$", "", c)
+    c = re.sub(r"_\d+$", "", c)
+    ck = reg.class_key(c)
+    if ck:
+        return ck
+    for i in range(len(c), 3, -1):
+        ck = reg.class_key(c[:i])
+        if ck:
+            return ck
+    return None
+
+
+
 def pass_struct_globals(ctx):
     text = "\n".join(ctx.lines)
     if not hasattr(ctx, "used_globals"):
@@ -712,7 +947,15 @@ def pass_struct_globals(ctx):
                 r = inh(owner, mem)
                 if r is not None and r[0] is not None:
                     return (r[0], (r[1] or {}).get("type"))
-        return None
+        # CW5-7: name-encoded offsets (`AudioStream_field_0xAC`,
+        # `LoadGame_field_0x04`, `__tail_10`, `m_3`, `q004`), the
+        # hierarchy shallowest-class tier (`spawnStatus`/`bombVisible` ->
+        # ObjectClass), then `base + off` absolute evidence in the disasm
+        # (`DataGlobal_B1D290.uniqueId` -> `dword_B1D2A0`).
+        hit = _cw5_member_tiered(ctx.reg, mem, ctx)
+        if hit is not None:
+            return hit
+        return _cw5_abs_member(ctx, _global_addr(base), mem)
 
     def _named_mem_sub(m):
         nonlocal changed
@@ -740,6 +983,11 @@ def pass_struct_globals(ctx):
                 "global", "%s.%s[%s]" % (base, mem, idx_expr[:40]),
                 "named member view -> ((%s *)(%s + 0x%X))[idx] (reverse "
                 "index/owner class)" % (sp, addr, off), True))
+            if ty is None:
+                # CW5-7: an offset-encoded name with an index is a BYTE
+                # carrier in the til (`__pad_38[24]`, `m_3[1]`) -- the
+                # element scale is 1, not sizeof(int).
+                return "((char *)(%s + 0x%X))[%s]" % (addr, off, idx_expr)
             return "((%s *)(%s + 0x%X))[%s]" % (sp, addr, off, idx_expr)
         ctx.sites.append(Site(
             "global", "%s.%s" % (base, mem),
@@ -845,6 +1093,338 @@ def pass_struct_globals(ctx):
             "global", "%d sites" % changed,
             "struct-global member forms -> char* arithmetic", True))
         ctx.lines = text.split("\n")
+
+
+# --------------------------------------------- CW5-F10: global object arrays
+#
+# CW5-5 (B1): `g_X_Instance[374].NeedsSaveOrLink` -- the global's registry
+# type is `void *` (IDA's own type was lost), so `G[i].M` is C2036
+# ('void *' : unknown size).  The access is rewritten to the offset-true
+# form `(*(T *)((char *)G + i * SIZE + OFF))`, where OFF comes from the
+# member tiers above and SIZE is the element stride.
+#
+# SIZE evidence: the shallowest declaring class's binary size.  Verified
+# against the original disassembly:
+#   g_ScenarioClass_Instance[374].NeedsSaveOrLink -> [edx+34B8h]
+#     = 374*36 + 32     (AbstractClass size 36)
+#   g_ScenarioClass_Instance[122].vfptr3 / uniqueId -> [eax+1134h] /
+#     [eax+1138h] = 122*36 + 12 / 16
+# (IDA typed the global `AbstractClass *`; the registry lost that.)
+
+_CW5_GARR_MEM = re.compile(
+    r"(?<![\w.>])(?P<base>[A-Za-z_]\w*)\s*\[(?P<idx>[^\[\]]{1,60})\]"
+    r"\s*\.\s*(?P<mem>[A-Za-z_]\w*)(?P<idx2>\[[^\[\]]*\])?")
+
+
+def pass_global_array_members(ctx):
+    text = "\n".join(ctx.lines)
+    if "." not in text:
+        return
+    locals_ = set(ctx.sig.get("param_names") or [])
+    for m in _LOCAL_DECL.finditer(text):
+        locals_.add(m.group(1))
+    reg = ctx.reg
+    abs_size = _cw5_class_size(reg, "AbstractClass") or 36
+    changed = 0
+
+    def repl(m):
+        nonlocal changed
+        base = m.group("base")
+        idx = m.group("idx").strip()
+        mem = m.group("mem")
+        idx2 = m.group("idx2")
+        if base == "this" or base in locals_ or base.startswith("stru_"):
+            return m.group(0)
+        gty = (getattr(ctx, "used_globals", None) or {}).get(base)
+        if gty is None:
+            return m.group(0)
+        if gty.endswith("[]"):
+            return m.group(0)          # already element-typed
+        if gty.endswith("*"):
+            core = _cw5_core(gty)
+            if core and reg.class_key(core):
+                return m.group(0)      # typed class pointer: shell owns it
+        elem_cls = _cw5_elem_class(reg, base)
+        sh = _cw5_shallow_member(reg, mem)
+        if sh is not None:
+            off, ty = sh[0], sh[1]
+            size = _cw5_class_size(reg, sh[2]) or \
+                _cw5_class_size(reg, elem_cls)
+            # the global's element type IS the shallowest declaring class
+            # (IDA typed `g_ScenarioClass_Instance` as `AbstractClass *`);
+            # declaring it so also types the bare `v2 = G;` assignments.
+            if sh[2]:
+                ctx.used_globals[base] = "%s *" % sh[2]
+        else:
+            hit = _cw5_inline_member(reg, mem)
+            if hit is None:
+                hit = _cw5_abs_member(ctx, _cw5_global_addr(reg, base), mem)
+            if hit is None:
+                return m.group(0)
+            off, ty = hit
+            size = _cw5_class_size(reg, elem_cls)
+            if not size and re.match(r"^vfptr\d*$", mem):
+                size = abs_size
+        if not size:
+            return m.group(0)
+        sp = spell_type(ty) if ty else None
+        if sp is not None and sp not in WIDTH_OF and not sp.endswith("*"):
+            sp = "int"
+        addr = "((char *)%s + (%s) * %d)" % (base, idx, size)
+        changed += 1
+        ctx.sites.append(Site(
+            "global", "%s[%s].%s" % (base, idx[:20], mem),
+            "global object-array element -> offset-true access "
+            "(stride %d, member +0x%X)" % (size, off), True))
+        if idx2:
+            inner = idx2[1:-1]
+            if ty is None:
+                return "((char *)(%s + 0x%X))[%s]" % (addr, off, inner)
+            return "((%s *)(%s + 0x%X))[%s]" % (sp or "int", addr, off, inner)
+        if ty is None:
+            return "(*(int *)(%s + 0x%X))" % (addr, off)
+        return "(*(%s *)(%s + 0x%X))" % (sp, addr, off)
+
+    text2 = _CW5_GARR_MEM.sub(repl, text)
+    if changed:
+        ctx.lines = text2.split("\n")
+
+
+# ------------------------------------------- CW5-F10: member chain / vfptr
+#
+# CW5-6 (B2+B3): `this->Owner->pathDirections` -- the registry says the
+# member `Owner` is a scalar (`unsigned char`, type debt) while the body
+# uses it as a pointer.  The member's OFFSET is sound, so the access is
+# re-spelled offset-true:
+#     BASE->M->X  ->  (*(TY *)((char *)(*(void **)((char *)BASE + OFF_M))
+#                               + OFF_X))
+# `*(void **)((char *)this + N)` loads the very dword `this->M` loads, and
+# the second hop folds into one displacement -- same bytes as the typed
+# original.  No shell member is required (this also covers derived classes
+# whose shell drops an inherited member).
+#
+# CW5-6a (B2): `EXPR->vfptr` == the vtable pointer at offset 0:
+#     EXPR->vfptr  ->  (*(void ***)(EXPR))
+
+_CW5_CHAIN2 = re.compile(
+    r"(?<![\w.>])(?P<base>this|[A-Za-z_]\w*)\s*->\s*(?P<mem>[A-Za-z_]\w*)"
+    r"\s*->\s*(?P<mem2>[A-Za-z_]\w*)(?P<arr>\s*\[[^\[\]]*\])?")
+
+_CW5_PSEUDO_ARROW = re.compile(
+    r"(?<![\w.>])(?P<base>_E(?:AX|BX|CX|DX|SI|DI|BP|SP)|_EA)\s*->\s*"
+    r"(?P<mem>[A-Za-z_]\w*)(?P<arr>\s*\[[^\[\]]*\])?")
+
+_CW5_VFPTR_REF = re.compile(r"->vfptr\b(?!\d|_)")
+
+
+def _cw5_class_of_base(ctx, base, syms):
+    if base == "this":
+        return ctx.sig.get("cls")
+    ty = syms.get(base)
+    if ty is None:
+        ty = (getattr(ctx, "used_globals", None) or {}).get(base)
+    if not ty:
+        return None
+    core = _cw5_core(ty)
+    return ctx.reg.class_key(core) if core else None
+
+
+def _cw5_member_load(reg, cls, mem):
+    """(offset, type) of member MEM on CLS (registry + inherited + synth)."""
+    if not cls:
+        return None
+    r = reg.member_offset_by_ida_name(cls, mem)
+    if r is None or r[0] is None:
+        inh = getattr(reg, "member_offset_inherited", None)
+        if inh is not None:
+            r = inh(cls, mem)
+    if r is not None and r[0] is not None:
+        return r[0], (r[1] or {}).get("type")
+    # explicit parent-chain walk: the derived shells drop inherited members
+    # and member_lookup parks only SOME of them with `inherited_from`
+    # (ShipLocomotionClass::Owner -> LocomotionClass::Owner @0x8).
+    cl = getattr(reg, "_cl", None) or {}
+    cur = (cl.get(cls) or {}).get("parent")
+    seen = set()
+    while cur and cur not in seen:
+        seen.add(cur)
+        rr = reg.member_offset_by_ida_name(cur, mem)
+        if rr is not None and rr[0] is not None:
+            return rr[0], (rr[1] or {}).get("type")
+        cur = (cl.get(cur) or {}).get("parent")
+    return _cw5_inline_member(reg, mem)
+
+
+def _cw5_value_read(ty, addr, arr):
+    """Offset-true value/element read at `addr` for a member of type `ty`."""
+    if arr:
+        inner = arr.strip()[1:-1]
+        if ty and ty.endswith("*"):
+            return "((%s)(%s))[%s]" % (ty, addr, inner)
+        if ty and re.search(r"\[\s*\d*\s*\]$", ty):
+            elem = re.sub(r"\[\s*\d*\s*\]$", "", ty).strip() or "int"
+            return "((%s *)(%s))[%s]" % (elem, addr, inner)
+        return "((int *)(%s))[%s]" % (addr, inner)
+    if ty and ty.endswith("*"):
+        return "(*(%s *)(%s))" % (ty, addr)
+    if ty and re.search(r"\[\s*\d*\s*\]$", ty):
+        # array member read without an index: decays to its first element
+        elem = re.sub(r"\[\s*\d*\s*\]$", "", ty).strip() or "int"
+        return "((%s *)(%s))" % (elem, addr)
+    if ty and (ty in WIDTH_OF or ty in _CW5_INT32_TYS or
+               ty in _CW5_SMALL_INT_TYS):
+        return "(*(%s *)(%s))" % (ty, addr)
+    # unknown / foreign struct: first dword (the IDA cast pun semantics)
+    return "(*(int *)(%s))" % addr
+
+
+def pass_member_chain_reads(ctx):
+    text = "\n".join(ctx.lines)
+    if "->" not in text:
+        return
+    syms = _cw5_sym_types(ctx, text)
+    reg = ctx.reg
+    n = 0
+
+    def repl(m):
+        nonlocal n
+        base, mem, mem2 = m.group("base"), m.group("mem"), m.group("mem2")
+        arr = m.group("arr") or ""
+        tail = text[m.end():m.end() + 3]
+        if re.match(r"\s*(?:->|\.|\()", tail):
+            return m.group(0)      # chained / called: not a value read
+        cls = _cw5_class_of_base(ctx, base, syms)
+        mo = _cw5_member_load(reg, cls, mem)
+        if mo is None:
+            return m.group(0)
+        moff, mty = mo
+        if mty:
+            mk = _cw5_ty_kind(mty)
+            core = _cw5_core(mty)
+            if mk == "ptr" and core != "void" and reg.class_key(core):
+                return m.group(0)  # already a typed class pointer
+        inner = "(*(void **)((char *)(%s) + 0x%X))" % (base, moff)
+        if mem2 == "vfptr":
+            n += 1
+            return "(*(void ***)%s)" % inner
+        sh = _cw5_member_tiered(reg, mem2, ctx)
+        if sh is None:
+            return m.group(0)
+        off, ty = sh
+        n += 1
+        ctx.sites.append(Site(
+            "member_chain", "%s->%s->%s" % (base, mem, mem2),
+            "offset-true chain read (M +0x%X, X +0x%X)" % (moff, off), True))
+        return _cw5_value_read(ty, "%s + 0x%X" % (inner, off), arr)
+
+    text2 = _CW5_CHAIN2.sub(repl, text)
+
+    # single-hop pseudo-register receivers (`_ESI->isOnMap`)
+    def repl2(m):
+        nonlocal n
+        base, mem = m.group("base"), m.group("mem")
+        arr = m.group("arr") or ""
+        tail = text2[m.end():m.end() + 3]
+        if re.match(r"\s*(?:->|\.|\()", tail):
+            return m.group(0)
+        sh = _cw5_member_tiered(reg, mem, ctx)
+        if sh is None:
+            return m.group(0)
+        off, ty = sh
+        n += 1
+        return _cw5_value_read(ty, "(char *)(%s) + 0x%X" % (base, off), arr)
+
+    text2 = _CW5_PSEUDO_ARROW.sub(repl2, text2)
+
+    if n:
+        ctx.lines = text2.split("\n")
+        ctx.sites.append(Site(
+            "member_chain", "%d chain(s)" % n,
+            "member chain re-spelled offset-true (scalar-typed member used "
+            "as a pointer)", True))
+
+
+def pass_arrow_vfptr(ctx):
+    """B2: `EXPR->vfptr` -> `(*(void ***)(EXPR))` (vtable ptr at offset 0)."""
+    text = "\n".join(ctx.lines)
+    if "->vfptr" not in text:
+        return
+    out = []
+    pos = 0
+    i = 0
+    n = 0
+    while True:
+        m = _CW5_VFPTR_REF.search(text, i)
+        if not m:
+            break
+        j = m.start() - 1
+        while j >= 0 and text[j] in " \t\r\n":
+            j -= 1
+        bs = -1
+        if j >= 0 and text[j] == ")":
+            gs = _balanced_open(text, j)
+            if gs >= 0:
+                bs = gs
+        elif j >= 0 and (text[j].isalnum() or text[j] == "_"):
+            k = j
+            while k >= 0:
+                ch = text[k]
+                if ch.isalnum() or ch == "_":
+                    k -= 1
+                    continue
+                if ch == ">" and k >= 1 and text[k - 1] == "-":
+                    k -= 2
+                    while k >= 0 and text[k] in " \t\r\n":
+                        k -= 1
+                    # a chain may start with a closing group `(...)`
+                    if k >= 0 and text[k] == ")":
+                        g2 = _balanced_open(text, k)
+                        if g2 >= 0:
+                            k = g2 - 1
+                        continue
+                    continue
+                if ch == ".":
+                    k -= 1
+                    while k >= 0 and text[k] in " \t\r\n":
+                        k -= 1
+                    continue
+                if ch == "]":
+                    depth = 0
+                    while k >= 0:
+                        if text[k] == "]":
+                            depth += 1
+                        elif text[k] == "[":
+                            depth -= 1
+                            if depth == 0:
+                                break
+                        k -= 1
+                    k -= 1
+                    while k >= 0 and text[k] in " \t\r\n":
+                        k -= 1
+                    continue
+                break
+            bs = k + 1
+        if bs < 0 or bs >= m.start():
+            i = m.end()
+            continue
+        base = text[bs:m.start()].strip()
+        if not base or base in ("this",):
+            # `this->vfptr` is the object's own vtable slot: leave it (the
+            # shell owns a vfptr view for it)
+            i = m.end()
+            continue
+        out.append(text[pos:bs])
+        out.append("(*(void ***)(%s))" % base)
+        pos = m.end()
+        i = m.end()
+        n += 1
+    out.append(text[pos:])
+    if n:
+        ctx.lines = "".join(out).split("\n")
+        ctx.sites.append(Site(
+            "member_chain", "%d vfptr ref(s)" % n,
+            "EXPR->vfptr -> (*(void ***)(EXPR)) (vtable pointer at 0)", True))
+
 
 
 # ---------------------------------------------------------------- pass: this-ptr math

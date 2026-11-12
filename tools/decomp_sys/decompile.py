@@ -918,6 +918,13 @@ def run_function(addr, reg, views, idx):
     passes.pass_param_rename(ctx)
     passes.pass_globals(ctx)
     passes.pass_struct_globals(ctx)
+    # CW5-5: `g_X_Instance[i].M` on a void*-typed global -> offset-true
+    # element access (stride from the member's shallowest declaring class)
+    passes.pass_global_array_members(ctx)
+    # CW5-6: scalar-typed members used as pointers (`this->Owner->X`) and
+    # `EXPR->vfptr` -> offset-true / vtable-pointer spellings
+    passes.pass_member_chain_reads(ctx)
+    passes.pass_arrow_vfptr(ctx)
     passes.pass_thislike_param(ctx)
     passes.pass_this_ptr_math(ctx)
     passes.pass_intrinsics_abs(ctx)
