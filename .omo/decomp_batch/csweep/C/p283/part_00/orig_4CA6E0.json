@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CA6E0",
+ "name": "HouseClass::UpdateTeamProductionSpeed",
+ "size": 109,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CA6E0",
+ "bytes_hex": "a1403ea800535733ff85c08bd97e5b56a1343ea8008b34b8395e6c75428b4e5833d285c97407e895a022008bd0b8f712da4bf7eac1fa048bcac1e91f03d183fa017d07ba01000000eb0d81faff0000007e05baff0000003b56387403895638a1403ea800473bf87ca75e5f5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x775690",
+ "name": "ScreenDialogToClient",
+ "size": 108,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x775690",
+ "bytes_hex": "83ec10568bf2575651ff15bc137e008bf885ff75065f5e83c410c38b0d5035b7008d4424085051ff15c4147e00a15035b7008d5424085250ff15b8147e008b168b4e088b4424082bd02bc88b44240c89168b5604894e088b4e0c2bd02bc88bc7895604894e0c5f5e83c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

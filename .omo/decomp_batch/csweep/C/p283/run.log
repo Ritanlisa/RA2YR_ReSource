@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p283\part_00
+=== convert (20 addrs) ===
+[conv] 0x4022c0 AudioController::AdvanceQueue -> AudioController
+[conv] 0x478720 TypeList::Copy -> TypeList
+[conv] 0x4b5830 ObjectClass::sub_4B5830 -> ObjectClass
+[conv] 0x512bd0 HouseTypeClass::readStartInfantry -> HouseTypeClass
+[conv] 0x512fa0 VectorClass::CopyConstructor -> VectorClass
+[conv] 0x513370 HouseTypeClass::readBaseDefense -> HouseTypeClass
+[conv] 0x525060 VectorClass::CopyDefault -> VectorClass
+[conv] 0x67aa80 VectorClass::CopyAssign -> VectorClass
+[conv] 0x67ae00 VectorClass::CopySmudge -> VectorClass
+[conv] 0x67b180 VectorClass::CopyBuilding -> VectorClass
+[conv] 0x67bfa0 ObjectClass::System_Load_67BFA0 -> ObjectClass
+[conv] 0x6f2780 ObjectClass::Team_Helper_6F2780 -> ObjectClass
+[conv] 0x557b70 ListClass::OnKeyDown -> ListClass
+[conv] 0x452410 BuildingClass::EnableStuff -> BuildingClass
+[conv] 0x5fd270 OverlayClass::CheckState -> OverlayClass
+[conv] 0x642bb0 Render_Render_642BB0 -> Render_Render
+[conv] 0x775690 ScreenDialogToClient -> _addr_77
+[conv] 0x44d760 BuildingClass::PushScriptAction -> BuildingClass
+[conv] 0x480110 BuildingClass::CalcDrawPos -> BuildingClass
+[conv] 0x4ca6e0 HouseClass::UpdateTeamProductionSpeed -> HouseClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioController          rc=0
+[era] TypeList                 rc=2
+[era] ObjectClass              rc=0
+[era] HouseTypeClass           rc=0
+[era] VectorClass              rc=0
+[era] ListClass                rc=0
+[era] BuildingClass            rc=2
+[era] OverlayClass             rc=0
+[era] Render_Render            rc=0
+[era] _addr_77                 rc=0
+[era] HouseClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x4022c0   MATCH            AudioController::AdvanceQueue
+[diff] 0x4b5830   MISMATCH         ObjectClass::sub_4B5830
+[diff] 0x67bfa0   MISMATCH         ObjectClass::System_Load_67BFA0
+[diff] 0x6f2780   MISMATCH         ObjectClass::Team_Helper_6F2780
+[diff] 0x512bd0   MISMATCH         HouseTypeClass::readStartInfantry
+[diff] 0x513370   MISMATCH         HouseTypeClass::readBaseDefense
+[diff] 0x512fa0   MISMATCH         VectorClass::CopyConstructor
+[diff] 0x525060   MISMATCH         VectorClass::CopyDefault
+[diff] 0x67aa80   MISMATCH         VectorClass::CopyAssign
+[diff] 0x67ae00   MISMATCH         VectorClass::CopySmudge
+[diff] 0x67b180   MISMATCH         VectorClass::CopyBuilding
+[diff] 0x557b70   MISMATCH         ListClass::OnKeyDown
+[diff] 0x480110   MISMATCH         BuildingClass::CalcDrawPos
+[diff] 0x5fd270   MISMATCH         OverlayClass::CheckState
+[diff] 0x642bb0   MISMATCH         Render_Render_642BB0
+[diff] 0x775690   MISMATCH         ScreenDialogToClient
+[diff] 0x4ca6e0   MISMATCH         HouseClass::UpdateTeamProductionSpeed
+[ledger] 0x4022c0 AudioController::AdvanceQueue -> OK (attempt 1)
+[ledger] 0x478720 TypeList::Copy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b5830 ObjectClass::sub_4B5830 -> NG (attempt 1)
+[ledger] 0x512bd0 HouseTypeClass::readStartInfantry -> NG (attempt 1)
+[ledger] 0x512fa0 VectorClass::CopyConstructor -> NG (attempt 1)
+[ledger] 0x513370 HouseTypeClass::readBaseDefense -> NG (attempt 1)
+[ledger] 0x525060 VectorClass::CopyDefault -> NG (attempt 1)
+[ledger] 0x67aa80 VectorClass::CopyAssign -> NG (attempt 1)
+[ledger] 0x67ae00 VectorClass::CopySmudge -> NG (attempt 1)
+[ledger] 0x67b180 VectorClass::CopyBuilding -> NG (attempt 1)
+[ledger] 0x67bfa0 ObjectClass::System_Load_67BFA0 -> NG (attempt 1)
+[ledger] 0x6f2780 ObjectClass::Team_Helper_6F2780 -> NG (attempt 1)
+[ledger] 0x557b70 ListClass::OnKeyDown -> NG (attempt 1)
+[ledger] 0x452410 BuildingClass::EnableStuff -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fd270 OverlayClass::CheckState -> NG (attempt 1)
+[ledger] 0x642bb0 Render_Render_642BB0 -> NG (attempt 1)
+[ledger] 0x775690 ScreenDialogToClient -> NG (attempt 1)
+[ledger] 0x44d760 BuildingClass::PushScriptAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x480110 BuildingClass::CalcDrawPos -> NG (attempt 1)
+[ledger] 0x4ca6e0 HouseClass::UpdateTeamProductionSpeed -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 16
+ },
+ "pathologies": {
+  "branch_polarity": 10,
+  "const_fold": 1,
+  "codegen_shape": 1,
+  "extern_reloc": 1,
+  "regalloc": 2,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 5.9,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p283\batch_report.json

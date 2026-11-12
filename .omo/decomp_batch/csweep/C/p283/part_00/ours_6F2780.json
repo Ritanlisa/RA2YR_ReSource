@@ -1,0 +1,15 @@
+{
+ "symbol": "?Team_Helper_6F2780@ObjectClass@@QAEPAIPAH@Z",
+ "sym_key": "ObjectClass::Team_Helper_6F2780",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf13bf774628b0656ff500c8b470885c089460875138946048b460c80e4005f89460c8bc65ec204008d0c850000000051e80000000083c40489460485c074288b560c8b4e0833c022f083ca0185c989560c7e148b4f048b56048b0c81890c828b4e08403bc17cec8bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

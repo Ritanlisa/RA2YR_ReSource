@@ -1,0 +1,11 @@
+{
+ "addr": "0x642BB0",
+ "name": "Render_Render_642BB0",
+ "size": 108,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x642BB0",
+ "bytes_hex": "8b1538b2a8008b4c240433c0568b3578daa80083fa03740583fa0475268b148e578b7a6b83ffff5f75196afeb938b2a800e82a7705008b0dd454b0005e8b0481c2040085c97c2183f9087d1c8b0c8ee81c43050050b938b2a800e8017705008b15d454b0008b04825ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

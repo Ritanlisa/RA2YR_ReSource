@@ -1,0 +1,39 @@
+{
+ "symbol": "?ScreenDialogToClient@@YIHPAXPAVtagRECT@@@Z",
+ "sym_key": "Unnamed::ScreenDialogToClient",
+ "size": 107,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf2575651e8000000008bf885ff744f8b0d000000008d4424085051e800000000a1000000008d5424085250e8000000008b168b4e088b4424082bd02bc88b44240c89168b5604894e088b4e0c2bd02bc88bc7895604894e0c5f5e83c410c35f33c05e83c410c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  }
+ ]
+}

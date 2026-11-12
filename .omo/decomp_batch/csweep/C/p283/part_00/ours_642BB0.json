@@ -1,0 +1,51 @@
+{
+ "symbol": "?Render_Render_642BB0@@YGHI@Z",
+ "sym_key": "Unnamed::Render_Render_642BB0",
+ "size": 94,
+ "link_base": 0,
+ "bytes_hex": "8b0d000000008b4424048b150000000083f903740583f90475208b0c82568b716b83feff5e75136afee8000000008b15000000008b0482c2040083f808731a8b0c82e80000000050e8000000008b0d000000008b0481c2040033c0c20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IB",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?SessionClass__GetPlayerColorScheme@@YGIH@Z",
+   "sym_key": "SessionClass__GetPlayerColorScheme"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?GetPlayerColor@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetPlayerColor"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?SessionClass__GetPlayerColorScheme@@YGIH@Z",
+   "sym_key": "SessionClass__GetPlayerColorScheme"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  }
+ ]
+}

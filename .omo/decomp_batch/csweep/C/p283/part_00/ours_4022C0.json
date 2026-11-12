@@ -1,0 +1,15 @@
+{
+ "symbol": "?AdvanceQueue@AudioController@@QAEHXZ",
+ "sym_key": "AudioController::AdvanceQueue",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b86b00000003bc7741bffd03bc7745189be7401000089be7801000089be700100005f5ec38b8e6c0100003bcf742ce8000000003bc789866c010000741d8b480c5f898e700100008b401089867401000089867801000033c05ec389be740100005f33c05ec3",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?GetNext@Queue@@QAEHXZ",
+   "sym_key": "Queue::GetNext"
+  }
+ ]
+}

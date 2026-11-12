@@ -1,0 +1,33 @@
+{
+ "symbol": "?UpdateTeamProductionSpeed@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::UpdateTeamProductionSpeed",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "0fbe05f0000000535733ff8bd985c07e5f560fbe05e40000008b34b8395e6c75428b4e5833d285c97407e8000000008bd0b8f712da4bf7eac1fa048bcac1e91f03d183fa017c0f81faff0000007e0cbaff000000eb05ba010000003b563874038956380fbe05f0000000473bf87ca35e5f5bc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?CalcProductionSpeed@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::CalcProductionSpeed"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  }
+ ]
+}

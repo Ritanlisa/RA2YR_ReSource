@@ -1,0 +1,11 @@
+{
+ "addr": "0x480110",
+ "name": "BuildingClass::CalcDrawPos",
+ "size": 109,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x480110",
+ "bytes_hex": "83ec08568bf18d4c24048b5644e89edb17008b108b48048a8640010000a88074138a861e01000083e9103c0972123c11770eeb09817e44ef000000750383e90f0fbe861b0100008b35a46f880083c21e8d04408d04802bf08b44241003ce5e83c10f891089480483c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

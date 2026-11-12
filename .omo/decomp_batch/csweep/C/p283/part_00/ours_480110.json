@@ -1,0 +1,33 @@
+{
+ "symbol": "?CalcDrawPos@BuildingClass@@QAEPAIPAH@Z",
+ "sym_key": "BuildingClass::CalcDrawPos",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "83ec0853568bf1578d4c240c8b5644e8000000008b188b78048b864401000050e80000000083c40485c07c0b817e44ef0000007519eb148b86fc00000083ef10c1e8103c0972073c11770383ef0f8b8e7c02000051e8000000008b0d040000008d044083c40483c31e8d14808b4424182bca03cf5f83c10f89185e8948045b83c408c20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?globalHelper_0FDCC0@@YIPAIPAXH@Z",
+   "sym_key": "globalHelper_0FDCC0"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?SLOBYTE@@YAHPAXZZ",
+   "sym_key": "SLOBYTE"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?SHIBYTE@@YAHHZZ",
+   "sym_key": "SHIBYTE"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

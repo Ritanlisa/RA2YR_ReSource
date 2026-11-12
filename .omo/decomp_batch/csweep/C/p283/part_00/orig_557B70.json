@@ -1,0 +1,11 @@
+{
+ "addr": "0x557B70",
+ "name": "CheckListClass::OnKeyDown",
+ "size": 108,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x557B70",
+ "bytes_hex": "568bf18b46448b4e502bc1b9000000000f98c14923c88b44240885c07d0433c0eb063bc17e028bc13b867001000074368986700100008b068bceff50488a465484c074198b86700100008b96180100008d8e1801000050ff928c000000b8010000005ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
