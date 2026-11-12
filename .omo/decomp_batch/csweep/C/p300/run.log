@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p300\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c4f30 MPCooperative::processTurnEnd -> MPCooperative
+[conv] 0x67c1f0 TypeList::CopyVoxelAnim -> TypeList
+[conv] 0x67c280 SmudgeTypeList::Copy -> SmudgeTypeList
+[conv] 0x717d20 DynamicVectorClass::CopyParticle -> DynamicVectorClass
+[conv] 0x75e6b0 Voxel_Section::Constructor -> Voxel_Section
+[conv] 0x4df280 TechnoClass::sub_4DF280 -> TechnoClass
+[conv] 0x68c9c0 System_Read_68C9C0 -> System_Read
+[conv] 0x7b4ac0 ObjectClass::sub_7B4AC0 -> ObjectClass
+[conv] 0x53ffa0 IPXGlobalConnClass::GetTileData -> IPXGlobalConnClass
+[conv] 0x6b9450 ObjectClass::sub_6B9450 -> ObjectClass
+[conv] 0x589e20 RadarClass::updateRadarCells -> RadarClass
+[conv] 0x468000 BulletClass::GetAnimFrame -> BulletClass
+[conv] 0x59d480 sub_59D480 -> _addr_59
+[conv] 0x46b280 BulletClass::InitScalable -> BulletClass
+[conv] 0x426300 AnimClass::ProcessAreaEffect -> AnimClass
+[conv] 0x521850 InfantryClass::ClearCellPassability -> InfantryClass
+[conv] 0x6c67f0 StaticButtonClass::OnClick -> StaticButtonClass
+[conv] 0x410dc0 ObjectClass::sub_410DC0 -> ObjectClass
+[conv] 0x7bca50 ObjectClass::sub_7BCA50 -> ObjectClass
+[conv] 0x474a90 BuildingTypeClass::FindAnimByName -> BuildingTypeClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPCooperative            rc=0
+[era] TypeList                 rc=2
+[era] SmudgeTypeList           rc=0
+[era] DynamicVectorClass       rc=0
+[era] Voxel_Section            rc=0
+[era] TechnoClass              rc=0
+[era] System_Read              rc=2
+[era] ObjectClass              rc=2
+[era] IPXGlobalConnClass       rc=0
+[era] RadarClass               rc=0
+[era] BulletClass              rc=2
+[era] _addr_59                 rc=0
+[era] AnimClass                rc=0
+[era] InfantryClass            rc=0
+[era] StaticButtonClass        rc=0
+[era] BuildingTypeClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c4f30   MISMATCH         MPCooperative::processTurnEnd
+[diff] 0x67c280   MISMATCH         SmudgeTypeList::Copy
+[diff] 0x717d20   MISMATCH         DynamicVectorClass::CopyParticle
+[diff] 0x75e6b0   MISMATCH         Voxel_Section::Constructor
+[diff] 0x4df280   MISMATCH         TechnoClass::sub_4DF280
+[diff] 0x7b4ac0   MISMATCH         ObjectClass::sub_7B4AC0
+[diff] 0x6b9450   MISMATCH         ObjectClass::sub_6B9450
+[diff] 0x410dc0   MISMATCH         ObjectClass::sub_410DC0
+[diff] 0x7bca50   MISMATCH         ObjectClass::sub_7BCA50
+[diff] 0x53ffa0   MISMATCH         IPXGlobalConnClass::GetTileData
+[diff] 0x589e20   MISMATCH         RadarClass::updateRadarCells
+[diff] 0x46b280   MISMATCH         BulletClass::InitScalable
+[diff] 0x59d480   MISMATCH         sub_59D480
+[diff] 0x426300   MISMATCH         AnimClass::ProcessAreaEffect
+[diff] 0x521850   MISMATCH         InfantryClass::ClearCellPassability
+[diff] 0x6c67f0   MISMATCH         StaticButtonClass::OnClick
+[ledger] 0x5c4f30 MPCooperative::processTurnEnd -> NG (attempt 1)
+[ledger] 0x67c1f0 TypeList::CopyVoxelAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67c280 SmudgeTypeList::Copy -> NG (attempt 1)
+[ledger] 0x717d20 DynamicVectorClass::CopyParticle -> NG (attempt 1)
+[ledger] 0x75e6b0 Voxel_Section::Constructor -> NG (attempt 1)
+[ledger] 0x4df280 TechnoClass::sub_4DF280 -> NG (attempt 1)
+[ledger] 0x68c9c0 System_Read_68C9C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4ac0 ObjectClass::sub_7B4AC0 -> NG (attempt 1)
+[ledger] 0x53ffa0 IPXGlobalConnClass::GetTileData -> NG (attempt 1)
+[ledger] 0x6b9450 ObjectClass::sub_6B9450 -> NG (attempt 1)
+[ledger] 0x589e20 RadarClass::updateRadarCells -> NG (attempt 1)
+[ledger] 0x468000 BulletClass::GetAnimFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59d480 sub_59D480 -> NG (attempt 1)
+[ledger] 0x46b280 BulletClass::InitScalable -> NG (attempt 1)
+[ledger] 0x426300 AnimClass::ProcessAreaEffect -> NG (attempt 1)
+[ledger] 0x521850 InfantryClass::ClearCellPassability -> NG (attempt 1)
+[ledger] 0x6c67f0 StaticButtonClass::OnClick -> NG (attempt 1)
+[ledger] 0x410dc0 ObjectClass::sub_410DC0 -> NG (attempt 1)
+[ledger] 0x7bca50 ObjectClass::sub_7BCA50 -> NG (attempt 1)
+[ledger] 0x474a90 BuildingTypeClass::FindAnimByName -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 5,
+  "width_mismatch": 1,
+  "frame_sched": 2,
+  "signedness": 2,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\csweep\C\p300\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x53FFA0",
+ "name": "IPXGlobalConnClass::GetTileData",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53FFA0",
+ "bytes_hex": "8b49048b4424043941387c7850e82ebaf4ff85c0746ef6000275698b5008538b580c83ea1085d27e1d8bca55568be9578b7c24188d7310c1e902f3a58bcd83e103f3a45f5e5d8b4c241089118b4c2418668b530e6689118b50148b4424148b0a89088b4a048948048b52088950088b44241c85c074058b4b048908b8010000005bc2180033c0c21800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

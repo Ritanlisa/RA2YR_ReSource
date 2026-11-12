@@ -1,0 +1,39 @@
+{
+ "symbol": "?ProcessAreaEffect@AnimClass@@QAGDPAH@Z",
+ "sym_key": "AnimClass::ProcessAreaEffect",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bcfe80000000057b9f80100008ad8e800000000578bf0e8000000008b15000000008b4f0803c23bc1b0010fbecb76238a9624010000d2e0f6d022c2a81c888624010000752ac74654ffffffff5f5e5bc208008a9628010000d2e0f6d022c2a81c8886280100007507c74658ffffffff5f5e5bc20800",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?OffsetToDirection@Input@@QAEDXZ",
+   "sym_key": "Input::OffsetToDirection"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?Map_MaxHeight@@3IA",
+   "sym_key": "Map_MaxHeight"
+  }
+ ]
+}

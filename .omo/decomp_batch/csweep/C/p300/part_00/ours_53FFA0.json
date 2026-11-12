@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetTileData@IPXGlobalConnClass@@QAEHHPAXPAH1PAG1@Z",
+ "sym_key": "IPXGlobalConnClass::GetTileData",
+ "size": 137,
+ "link_base": 0,
+ "bytes_hex": "8b49048b442404394138727850e80000000085c0746ef6000275698b5008538b580c83ea1085d27e1d8bca55568be9578b7c24188d7310c1e902f3a58bcd83e103f3a45f5e5d8b4c241089118b4c2418668b530e6689118b40148b4c24148b1089118b50048951048b40088941088b44241c85c074058b4b048908b8010000005bc2180033c0c21800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?GetTileType@Terrain@@QAEHH@Z",
+   "sym_key": "Terrain::GetTileType"
+  }
+ ]
+}

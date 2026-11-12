@@ -1,0 +1,11 @@
+{
+ "addr": "0x589E20",
+ "name": "RadarClass::updateRadarCells",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x589E20",
+ "bytes_hex": "8b4424048b09538d0440568b5c2410578b54c1108d34c18b4cc1048d42ff85c07c0c8b3b3b39745983c10c4879f68b4e083bd17c228a460d84c0750485c975398b461485c07e328b1603c16a00508bceff520884c074228b46108d48018d14408b4604894e108d0c908b1389118b43048941048b53088951085f5eb0015bc208005f5e32c05bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

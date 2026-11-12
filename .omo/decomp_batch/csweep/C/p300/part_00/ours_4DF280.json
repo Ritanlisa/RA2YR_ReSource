@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4DF280@TechnoClass@@QAEXH@Z",
+ "sym_key": "TechnoClass::sub_4DF280",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18b86cc05000085c074438b088d5424085250ff51488b54240433c98a480580e2000bca8d442404894c240450b900000000e8000000008986c8050000c786cc050000000000005e83c410c20400c786c805000000000000c786cc050000000000005e83c410c20400",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

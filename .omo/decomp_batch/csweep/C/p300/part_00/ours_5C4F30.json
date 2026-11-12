@@ -1,0 +1,21 @@
+{
+ "symbol": "?processTurnEnd@MPCooperative@@QAEPAV1@PAH@Z",
+ "sym_key": "MPCooperative::processTurnEnd",
+ "size": 137,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b7c241033db8b460c895e042401895e080c013bf789460c885e0c891e744fe8000000008b47083bc3894608743a8d0c850000000051e80000000083c4043bc389460474298b4e0833c03bcbc6460c017e1c8b57048b4e048b14828914818b4e08403bc17ceceb06895e04885e0c8b47108946108b4f14894e14891e8bc65f5e5bc20400",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?ddtor@MPCooperative@@QAEXXZ",
+   "sym_key": "MPCooperative::ddtor"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x426300",
+ "name": "AnimClass::ProcessAreaEffect",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x426300",
+ "bytes_hex": "5356578b7c24108bcfe892ad050057b9e8f787008bd8e815f4130057b9e8f787008bf0e8581d15008b0db4a1890003c88b47083bc87f29b2018bcbd2e28a8e28010000f6d222ca8ac1888e28010000a81c7530c74658ffffffff5f5e5bc20400b0018bcbd2e08a8e24010000f6d022c88ac1888e24010000a81c7507c74654ffffffff5f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x67C280",
+ "name": "SmudgeTypeList::Copy",
+ "size": 136,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x67C280",
+ "bytes_hex": "5356578b7c24108bf133db3bf7895e04895e08c6460c01885e0dc7067c0d7f00744cff15880d7f008b47083bc38946087436c1e00250e85ccb140083c4043bc389460474298b4e0833c03bcbc6460d017e1c8b4f048b56048b0c81890c828b4e08403bc17ceceb06895e04885e0d8b57108956108b4714894614c7061c0d7f008bc65f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

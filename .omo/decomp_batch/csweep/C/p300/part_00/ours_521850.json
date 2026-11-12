@@ -1,0 +1,39 @@
+{
+ "symbol": "?ClearCellPassability@InfantryClass@@QAGDPAH@Z",
+ "sym_key": "InfantryClass::ClearCellPassability",
+ "size": 142,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bcfe80000000057b9f80100008ad8e800000000578bf0e8000000000fbe0d500600008b570803c13bc2b8010000008acb7e2ad3e033c980e2008a8e24010000f7d023c10bc2a81c8886240100007531c74654ffffffff5f5e5bc20800d3e033c980e2008a8e28010000f7d023c10bc2a81c8886280100007507c74658ffffffff5f5e5bc20800",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?OffsetToDirection@Input@@QAEDXZ",
+   "sym_key": "Input::OffsetToDirection"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

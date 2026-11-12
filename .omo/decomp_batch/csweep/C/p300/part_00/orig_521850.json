@@ -1,0 +1,11 @@
+{
+ "addr": "0x521850",
+ "name": "InfantryClass::ClearCellPassability",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x521850",
+ "bytes_hex": "5356578b7c24108bcfe842f8f5ff57b9e8f787008bd8e8c53e040057b9e8f787008bf0e8086805008b0d34f2a80003c88b47083bc87f29b2018bcbd2e28a8e28010000f6d222ca8ac1888e28010000a81c7530c74658ffffffff5f5e5bc20400b0018bcbd2e08a8e24010000f6d022c88ac1888e24010000a81c7507c74654ffffffff5f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

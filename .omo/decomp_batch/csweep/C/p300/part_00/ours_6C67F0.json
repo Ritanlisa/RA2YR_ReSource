@@ -1,0 +1,39 @@
+{
+ "symbol": "?OnClick@StaticButtonClass@@QAEPAHI@Z",
+ "sym_key": "StaticButtonClass::OnClick",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "83ec1c568bf18b463085c0747a8b4e34578b7e0cf6c501740a8b4614992bc2d1f803f8f6c50274078b46148d7c07ff8bcee8000000000fbe15040000008b4e10897c240c894c24108b3c82a1000000008b76340fbe088b118d4c24145150ff52788b4c2428566a008d542414575250a10000000050518d4c2424e8000000005f5e83c41cc2040033c05e83c41cc20400",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?GetType@BuildingAnim@@QAEHXZ",
+   "sym_key": "BuildingAnim::GetType"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?DrawText@TextRenderer@@QAEPAHHHPAXHHHH@Z",
+   "sym_key": "TextRenderer::DrawText"
+  }
+ ]
+}
