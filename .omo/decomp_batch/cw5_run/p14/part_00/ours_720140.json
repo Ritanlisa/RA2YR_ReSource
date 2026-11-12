@@ -1,0 +1,45 @@
+{
+ "symbol": "?fireWeapon@TextButtonClass@@QAEPAHH@Z",
+ "sym_key": "TextButtonClass::fireWeapon",
+ "size": 210,
+ "link_base": 0,
+ "bytes_hex": "83ec1c56578bf1e8000000008bf88b463885c00f84af0000008b467885c074208b86b000000085c0750f8b8eb4000000b80050000085c9740bb800600000eb048b4424288b0d100000008b0985c9747885ff7e043bf97c0233ff0fbe15040000008b3cba85ff74608b4e148b560cd1f98d4c11ff8b56108b763c420bf0a100000000894c240c895424100fbe0881e601ffffff8b118d4c2414515083ce01ff52786a01566a008d54241857528b54243c50a1000000008d4c242050e8000000005f5e83c41cc204008bc75f5e83c41cc20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?GetType@BuildingAnim@@QAEHXZ",
+   "sym_key": "BuildingAnim::GetType"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?globalHelper_0A6010@@YIPAHPAXHH0HHHHH@Z",
+   "sym_key": "globalHelper_0A6010"
+  }
+ ]
+}

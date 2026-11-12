@@ -1,0 +1,11 @@
+{
+ "addr": "0x53EC70",
+ "name": "EventClass::GetKeyStateSafe",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53EC70",
+ "bytes_hex": "a14404aa0085c0750851ff15a8137e00c381e1ff000000668b044d6801aa00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
