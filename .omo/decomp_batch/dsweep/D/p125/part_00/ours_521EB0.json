@@ -1,0 +1,105 @@
+{
+ "symbol": "?CheckDeployPath@InfantryClass@@QAEDXZ",
+ "sym_key": "InfantryClass::CheckDeployPath",
+ "size": 619,
+ "link_base": 0,
+ "bytes_hex": "83ec18538bd955568b83a405000033f685c05774328b83e00500008d8be005000033d283f8ff741f83f8087411464283c10483fa187d078b0183f8ff75ea83fe040f8d920100008b83c00600008b88dc0f000085c90f847e0100008bab740600008d4c241455e8000000000fbe442414833800750d6803400080e80000000083c4040fbe4c24148b018d4c241c51508b10ff520cb904000000bf000000008d74241c33d2f3a78bc28d4c24140f95c089442418e8000000008b44241833ff3bc70f85130100000fbe4c24148b45003bc789390f84010100008b93740600008d4c241452e8000000003bc77d103d02400080740950e80000000083c4040fbe4424148b003bc70f84ce0000008b0850ff511c84c00f85af0000006a07578d542418680000000052897c2420e80000000083c4103bc77d103d02400080740950e80000000083c4048b4424103bc775116803400080e8000000008b44241483c4048b085350ff510c8b442410897c24183bc774228d5424108d4c241852e8000000003bc77d103d02400080740950e80000000083c4048b4424188d4c241450e8000000008d4c241851e8000000000fbe54241883c4048b023bc775298b4424103bc774178b0850ff51080fbe5424148b023bc774068b0850ff51085f5e5d32c05b83c418c38b4d00c783e0050000ffffffff8b105150ff520c8b4424108b8b7406000050e8000000008b9ba40500008d54241c52538b0bff51488bf08b45003bc7750d6803400080e80000000083c4048b56088b4500528b56048b08528b165250ff51448b4424103bc774068b0850ff51080fbe5424148b023bc774068b0850ff51085f5e5db0015b83c418c3",
+ "relocs": [
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?updateOccupiedBuilding@InfantryClass@@QAEPAV1@PAX@Z",
+   "sym_key": "InfantryClass::updateOccupiedBuilding"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?g_CLSID_JumpjetLocomotion@@3U_GUID_era@@A",
+   "sym_key": "g_CLSID_JumpjetLocomotion"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?Release_Alt@ComPtr@@QAEHXZ",
+   "sym_key": "ComPtr::Release_Alt"
+  },
+  {
+   "off": 228,
+   "type": "REL32",
+   "sym": "?Set@StreamClass@@QAEHPAX@Z",
+   "sym_key": "StreamClass::Set"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 289,
+   "type": "DIR32",
+   "sym": "?g_CLSID_WalkLocomotion@@3U_GUID_era@@A",
+   "sym_key": "g_CLSID_WalkLocomotion"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?CreateInstanceCOM@@YAHPAX0HH@Z",
+   "sym_key": "CreateInstanceCOM"
+  },
+  {
+   "off": 319,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 380,
+   "type": "REL32",
+   "sym": "?Set@StreamClass@@QAEHPAX@Z",
+   "sym_key": "StreamClass::Set"
+  },
+  {
+   "off": 397,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 414,
+   "type": "REL32",
+   "sym": "?SwapReference@COMObject@@QAEPAHH@Z",
+   "sym_key": "COMObject::SwapReference"
+  },
+  {
+   "off": 424,
+   "type": "REL32",
+   "sym": "?Release2COM@@YAHPAX@Z",
+   "sym_key": "Release2COM"
+  },
+  {
+   "off": 515,
+   "type": "REL32",
+   "sym": "?checkBridgeClearance@InfantryClass@@QAEPAV1@H@Z",
+   "sym_key": "InfantryClass::checkBridgeClearance"
+  },
+  {
+   "off": 551,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

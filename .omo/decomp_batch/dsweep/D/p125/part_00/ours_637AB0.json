@@ -1,0 +1,81 @@
+{
+ "symbol": "?ResetProductionState@SidebarClass@@QAEHXZ",
+ "sym_key": "SidebarClass::ResetProductionState",
+ "size": 562,
+ "link_base": 0,
+ "bytes_hex": "83ec14894c240c33c08b0d64060000894424083bc8894c24100f8e0f020000535556578b0d340600008b1c088b8b1c0200008b7130e80000000084c0740ca17300000085c074038b70303974241c0f85b801000053e8000000008bf883c40485ff0f84a50100008a879800000084c0744f8b879400000083f8ff743d8b57088b048285c074338b5030c780b4000000ffffffff85d27e18b9fcffffff8b702483c1044a8b340ec74674ffffffff75edc780ac000000ffffffffc68798000000008b878c0000008b6f148bf046f7de1bf623f03bf57d168b47088b0cb085c974076a01e800000000463bf57cea85dbc7878c000000ffffffff0f840e0100008b0b53ff91840100008bf083fe0574368b93b40200008d4c241052e8000000008a400483fe01740983fe0b0f85dd0000003c0b741183fe0b0f85d000000084c00f85c800000053e8000000008be883c40485ed0f84b50000008b451485c00f8eaa0000008b858c00000083f8ff740885c00f8e970000008a451c84c00f858c0000008b036a016a1c53ff90e80100000fbe8c2488000000518bcde800000000b91b0000008bf08d7c24186a6ff3a566a5a4e80000000083c40485c07405c60000eb0233c0b91b0000008d7424188bf889442414f3a5668b9424840000006689506c8b8c2484000000c1f91088486e8b4424148038047504c6401d028d542414b90000000052e800000000c6451c018b4c24188b542420413bca894c24188d048d000000000f8cfbfdffff5f5e5d8bc15b83c414c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?Reset@TeamClass@@QAEDD@Z",
+   "sym_key": "TeamClass::Reset"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 326,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 409,
+   "type": "REL32",
+   "sym": "?CompleteCurrentItem@FactoryClass@@QAEHH@Z",
+   "sym_key": "FactoryClass::CompleteCurrentItem"
+  },
+  {
+   "off": 432,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 510,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 516,
+   "type": "REL32",
+   "sym": "?addToList@SidebarClass@@QAEDPAX@Z",
+   "sym_key": "SidebarClass::addToList"
+  }
+ ]
+}

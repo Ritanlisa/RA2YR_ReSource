@@ -1,0 +1,69 @@
+{
+ "symbol": "?ConvertMatrixToQuaternion@@YIPAMPAM0@Z",
+ "sym_key": "Unnamed::ConvertMatrixToQuaternion",
+ "size": 336,
+ "link_base": 0,
+ "bytes_hex": "83ec2053568bf233db578bf9d94614d84628c74424280a000000c744241800000000c744241000000000c744241400000000895c2420c744242405000000d954240cd806dc1500000000dfe0f6c440741a891f895f04895f08c7470c0000803f8bc75f5e5bddd883c420c3dc1500000000dfe0f6c4417468ddd8d906d94614ded9dfe0f6c4417505bb010000008b449c20d90486d94628ded9dfe0f6c4417505bb020000008b4c9c2083ec08d9048ed8642414dc0500000000dd1c24e800000000d9c0dc0d0000000083c408d95c9c18dc3d00000000d94624d86618dec9eb50dc050000000083ec08dd1c24e800000000d9c0dc0d0000000083c408d95c240cdc3d00000000d94624d86618d8c9d95c2418d94608d86620d8c9d95c2410d94610d86604d8c9d95c2414ddd8d944240cd94424108b5424188bc7d95f04d9442414d95f088917d95f0c5f5e5b83c420c3",
+ "relocs": [
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  }
+ ]
+}

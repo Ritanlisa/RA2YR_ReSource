@@ -1,0 +1,99 @@
+{
+ "symbol": "?HandleOverload@CaptureManagerClass@@QAEDXZ",
+ "sym_key": "CaptureManagerClass::HandleOverload",
+ "size": 539,
+ "link_base": 0,
+ "bytes_hex": "83ec1c33c05355568bf18b4c2418578a464080e1000bc184c00f84f40100008b464485c07e04488946448b464c85c00f8fda0100008b1d400200008b7e3433c08b8bec0e0000894424183b3976228b93f80e00008d6aff85ed76118d51048b0a83c204403bf97e043bc572f2894424188b93240f00008b0c82894e4c8b15400200008b8a080f00008b048185c08944241c7f0cc64641005f5e5d5b83c41cc38b4648c746440a0000008b0d400200006a008b106a008b89a80f00006a006a00518d4c24306a005150ff926c0100008a464184c075288b56488b0d400200006a008b829c0000008d542414894424148b8958020000e800000000c6464101c7442414050000008b15000000008b464868c80000006838ffffff8bb8a00000008ba8a40000008d8a68050300e8000000008b15000000008bd88b464868c80000006838ffffff8b889c000000894c24188d8a18020000e8000000008b4c241003df03c183c564680001000089442424895c2428896c242ce80000000083c40485c074248b0d400200006a0068000000006a008d54242c6a00528b9120100000528bc8e8000000008b44241448894424140f8551ffffff8b44241885c07e578b4e488a919000000084d2744a83f801c74424188fc2753c7408c74424188fc2f53c8b15000000006a646a008d8a18020000e800000000d944241883f8327d02d9e08b4e485f5e5dd999300300005b83c41cc34889464c5f5e5d5b83c41cc3",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 341,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 374,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?dword_89E138@@3IA",
+   "sym_key": "dword_89E138"
+  },
+  {
+   "off": 417,
+   "type": "REL32",
+   "sym": "?Constructor@ParticleSystemClass@@QAEHHPAXH00H@Z",
+   "sym_key": "ParticleSystemClass::Constructor"
+  },
+  {
+   "off": 480,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 495,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}

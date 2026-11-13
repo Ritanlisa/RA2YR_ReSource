@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p125\part_00
+=== convert (20 addrs) ===
+[conv] 0x4228e0 AnimClass::Destruct -> AnimClass
+[conv] 0x62a260 ParasiteClass::DeployUnit -> ParasiteClass
+[conv] 0x78a6b0 ObjectClass::HandlePageWOL -> ObjectClass
+[conv] 0x4ddf90 FootClass::ProcessMissionState -> FootClass
+[conv] 0x471a50 CaptureManagerClass::HandleOverload -> CaptureManagerClass
+[conv] 0x6249a0 DynamicArray::Resize -> DynamicArray
+[conv] 0x704000 TechnoClass::IsValidBuildingPlacement -> TechnoClass
+[conv] 0x521eb0 InfantryClass::CheckDeployPath -> InfantryClass
+[conv] 0x5f9e80 Checksummer::HashString -> Checksummer
+[conv] 0x641ee0 PreviewClass::ReadPreview -> PreviewClass
+[conv] 0x637ab0 SidebarClass::ResetProductionState -> SidebarClass
+[conv] 0x70d1d0 TechnoClass::ShouldScanArea -> TechnoClass
+[conv] 0x77d4c0 ObjectClass::IsBuddyOrIgnoreWOL -> ObjectClass
+[conv] 0x5257c0 INIClass::ClearSection -> INIClass
+[conv] 0x796b90 LobbyDlgProcWOL -> _addr_79
+[conv] 0x646730 ConvertMatrixToQuaternion -> _addr_64
+[conv] 0x4311c0 Network::SendBeaconDelete -> Network
+[conv] 0x5835d0 FindCliffSeedCell -> _addr_58
+[conv] 0x5cce90 MSVQAnim::Load -> MSVQAnim
+[conv] 0x7d6aa2 ObjectClass::___init_ctype -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AnimClass                rc=2
+[era] ParasiteClass            rc=2
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] CaptureManagerClass      rc=0
+[era] DynamicArray             rc=2
+[era] TechnoClass              rc=2
+[era] InfantryClass            rc=0
+[era] Checksummer              rc=2
+[era] PreviewClass             rc=2
+[era] SidebarClass             rc=0
+[era] INIClass                 rc=2
+[era] _addr_79                 rc=0
+[era] _addr_64                 rc=0
+[era] Network                  rc=2
+[era] _addr_58                 rc=2
+[era] MSVQAnim                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x77d4c0   MISMATCH         ObjectClass::IsBuddyOrIgnoreWOL
+[diff] 0x471a50   MISMATCH         CaptureManagerClass::HandleOverload
+[diff] 0x521eb0   MISMATCH         InfantryClass::CheckDeployPath
+[diff] 0x637ab0   MISMATCH         SidebarClass::ResetProductionState
+[diff] 0x796b90   MISMATCH         LobbyDlgProcWOL
+[diff] 0x646730   MISMATCH         ConvertMatrixToQuaternion
+[ledger] 0x4228e0 AnimClass::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62a260 ParasiteClass::DeployUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78a6b0 ObjectClass::HandlePageWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ddf90 FootClass::ProcessMissionState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x471a50 CaptureManagerClass::HandleOverload -> NG (attempt 1)
+[ledger] 0x6249a0 DynamicArray::Resize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x704000 TechnoClass::IsValidBuildingPlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x521eb0 InfantryClass::CheckDeployPath -> NG (attempt 1)
+[ledger] 0x5f9e80 Checksummer::HashString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x641ee0 PreviewClass::ReadPreview -> COMPILE_FAIL (attempt 1)
+[ledger] 0x637ab0 SidebarClass::ResetProductionState -> NG (attempt 1)
+[ledger] 0x70d1d0 TechnoClass::ShouldScanArea -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77d4c0 ObjectClass::IsBuddyOrIgnoreWOL -> NG (attempt 1)
+[ledger] 0x5257c0 INIClass::ClearSection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x796b90 LobbyDlgProcWOL -> NG (attempt 1)
+[ledger] 0x646730 ConvertMatrixToQuaternion -> NG (attempt 1)
+[ledger] 0x4311c0 Network::SendBeaconDelete -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5835d0 FindCliffSeedCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cce90 MSVQAnim::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d6aa2 ObjectClass::___init_ctype -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "branch_polarity": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p125\batch_report.json

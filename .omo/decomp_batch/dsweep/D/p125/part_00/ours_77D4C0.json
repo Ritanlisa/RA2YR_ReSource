@@ -1,0 +1,177 @@
+{
+ "symbol": "?IsBuddyOrIgnoreWOL@ObjectClass@@QAE_NXZ",
+ "sym_key": "ObjectClass::IsBuddyOrIgnoreWOL",
+ "size": 575,
+ "link_base": 0,
+ "bytes_hex": "51a00000000053555684c0578be97509a00000000084c0740eb913010000e80000000085c075085f5e5db0015b59c3a10000000033db33f685c07e3a33ff85ff7c0c3bf07d08a1000000008d1c38b900000000e8000000008d4b245150e80000000083c40885c0a100000000740b4683c76c3bf07cc883ceff33c985f67d085f5e5db0015b59c33bf07d0e8d04768d14c0a1000000008d0c90a00000000084c0a0000000000f846101000084c00f84ae00000085c9742485ed75085f5e5d32c05b59c38d552e83c12e5251e80000000083c40885c00f84140100008b1d000000008d44241050e80000000083c40433ff85db0f8eff00000083c52485ff7c1b3b3d0000000073138b0d000000008d14b98d4c241052e8000000008d4c24108bf5e8000000008a108aca3a16751c84c974148a50018aca3a5601750e83c00283c60284c975e033c0eb051bc083d8ff85c00f848c000000473bfb0f8d98000000eb9a85ed0f849b0000008b1d000000008d54241052e80000000083c40433ff85db7e7583c52485ff7c1a3b3d000000007312a1000000008d0cb8518d4c2414e8000000008d4c24108bf5e8000000008a108aca3a16751c84c974148a50018aca3a5601750e83c00283c60284c975e033c0eb051bc083d8ff85c07407473bfb7d17eba38d44241050e80000000083c4045f5e5db0015b59c38d4c241051e80000000083c4045f5e5d32c05b59c384c0742785c9742385ed741f83c52e83c12e5551e80000000083c40885c0750b5f5e5db8010000005b59c35f5e5d33c05b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76AF0@@3EA",
+   "sym_key": "DataGlobal_B76AF0"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B73AD0@@3EA",
+   "sym_key": "DataGlobal_B73AD0"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionFlags@@3PAXA",
+   "sym_key": "g_WOL_ConnectionFlags"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_WebBrowser@@3IB",
+   "sym_key": "g_WebBrowser"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionFlags@@3PAXA",
+   "sym_key": "g_WOL_ConnectionFlags"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76AF0@@3EA",
+   "sym_key": "DataGlobal_B76AF0"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B73AD0@@3EA",
+   "sym_key": "DataGlobal_B73AD0"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginQueue@@3PAXA",
+   "sym_key": "g_WOL_LoginQueue"
+  },
+  {
+   "off": 278,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 289,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 373,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 395,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 402,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginQueue@@3PAXA",
+   "sym_key": "g_WOL_LoginQueue"
+  },
+  {
+   "off": 415,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 426,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 488,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 509,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 545,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}
