@@ -1,0 +1,57 @@
+{
+ "symbol": "?LoadTypeData@DisplayClass@@QAEHXZ",
+ "sym_key": "DisplayClass::LoadTypeData",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "83ec20568bf1e8000000008b0d0000000032d2e80000000032d2b900000000a36c000000e8000000008d4c2414a300000000e8000000008b08894c24048b5004895424088b4808894c240c8b500c8b0e8d442404505689542418ff91a80000005e83c420c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Destru_vt05@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::Destru_vt05"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?aPlaceShp@@3HA",
+   "sym_key": "aPlaceShp"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_820074@@3PADA",
+   "sym_key": "DataGlobal_820074"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?stru_8A0390@@3PADA",
+   "sym_key": "stru_8A0390"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A072C@@3IA",
+   "sym_key": "DataGlobal_8A072C"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?GetViewport@Display@@QAEPAHXZ",
+   "sym_key": "Display::GetViewport"
+  }
+ ]
+}

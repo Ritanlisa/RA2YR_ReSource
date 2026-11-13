@@ -1,0 +1,45 @@
+{
+ "symbol": "?Update@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::Update",
+ "size": 103,
+ "link_base": 0,
+ "bytes_hex": "53578bf933db8b876402000085c07e54568b87580200008b3498a1000000003bf80f94c1518bcee80000000084c074283b3d0000000075208b4628508b10ff52406a00b939000000e80000000050b9f8010000e8000000008b8764020000433bd87cae5e5f5bc3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?UpdateSuperWeaponReadyState@SuperWeapon@@QAEDD@Z",
+   "sym_key": "SuperWeapon::UpdateSuperWeaponReadyState"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?GetStatus@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::GetStatus"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?ActivateTab@Sidebar@@QAEHH@Z",
+   "sym_key": "Sidebar::ActivateTab"
+  }
+ ]
+}

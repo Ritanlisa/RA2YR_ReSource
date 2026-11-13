@@ -1,0 +1,87 @@
+{
+ "symbol": "?SmallFunc_5D9360@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::SmallFunc_5D9360",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "51568bf168640000008d4c2408e8000000008b0633c98a0d000000006a005051684c000000b920010000e8000000008b560833c0a0000000006a005250684c000000b920010000e8000000008d4c24046a0051b920010000e8000000008d4c2404e8000000005e59c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?aBootcampselect@@3IA",
+   "sym_key": "aBootcampselect"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Construct@RawFileClass@@QAEPAV1@H@Z",
+   "sym_key": "RawFileClass::Construct"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_FirewallSettings@@3EA",
+   "sym_key": "g_INI_Key_FirewallSettings"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?aBootcampselect@@3IA",
+   "sym_key": "aBootcampselect"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_FirewallDelta@@3EA",
+   "sym_key": "g_INI_Key_FirewallDelta"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?aBootcampselect@@3IA",
+   "sym_key": "aBootcampselect"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?WriteDigest@INIClass@@QAEHHD@Z",
+   "sym_key": "INIClass::WriteDigest"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  }
+ ]
+}

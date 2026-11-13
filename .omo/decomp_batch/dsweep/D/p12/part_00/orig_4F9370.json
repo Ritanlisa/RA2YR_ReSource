@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F9370",
+ "name": "HouseClass::Update",
+ "size": 104,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F9370",
+ "bytes_hex": "53578bf933db8b876402000085c07e55568b87580200008b3498a14c3da8003bf80f94c1518bcee804291d0084c074293b3d4c3da80075218b4e288b11ff52406a008bd0b939000000e8a2281b0050b9e8f78700e8d7cc1a008b8764020000433bd87cad5e5f5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

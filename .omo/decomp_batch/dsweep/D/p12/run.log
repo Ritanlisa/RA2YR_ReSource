@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a8850 DisplayClass::LoadTypeData -> DisplayClass
+[conv] 0x5e2fa0 ObjectClass::Event_Handle -> ObjectClass
+[conv] 0x542ec0 IPXManagerClass::Flush -> IPXManagerClass
+[conv] 0x6728b0 RulesClass::LoadAnimTypes -> RulesClass
+[conv] 0x672920 CCINIClass::LoadUnitTypes -> CCINIClass
+[conv] 0x672990 WarheadTypeClass::LoadType -> WarheadTypeClass
+[conv] 0x672a00 RulesClass::readColors -> RulesClass
+[conv] 0x672a70 CCINIClass::ReadBuildingSettings -> CCINIClass
+[conv] 0x791aa0 ObjectClass::UI_Setup_791AA0 -> ObjectClass
+[conv] 0x456fb0 globalHelper_056FB0 -> _addr_45
+[conv] 0x5d9360 ObjectClass::SmallFunc_5D9360 -> ObjectClass
+[conv] 0x62d7a0 ParticleClass::LoadParticleData -> ParticleClass
+[conv] 0x488f00 ColorListClass::QueryInterface -> ColorListClass
+[conv] 0x765f60 Team_Create_765F60 -> Team_Create
+[conv] 0x767b00 Team_Create_767B00 -> Team_Create
+[conv] 0x65ca00 BufferIOFileClass::Dtor -> BufferIOFileClass
+[conv] 0x41cdb0 AircraftTypeClass::PowerDrainUpdate -> AircraftTypeClass
+[conv] 0x789630 sub_789630 -> _addr_78
+[conv] 0x7d140b __getptd -> _addr_7D
+[conv] 0x4f9370 HouseClass::Update -> HouseClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DisplayClass             rc=0
+[era] ObjectClass              rc=2
+[era] IPXManagerClass          rc=2
+[era] RulesClass               rc=2
+[era] CCINIClass               rc=2
+[era] WarheadTypeClass         rc=2
+[era] _addr_45                 rc=2
+[era] ParticleClass            rc=0
+[era] ColorListClass           rc=0
+[era] Team_Create              rc=2
+[era] BufferIOFileClass        rc=2
+[era] AircraftTypeClass        rc=0
+[era] _addr_78                 rc=2
+[era] _addr_7D                 rc=2
+[era] HouseClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a8850   MISMATCH         DisplayClass::LoadTypeData
+[diff] 0x5e2fa0   MISMATCH         ObjectClass::Event_Handle
+[diff] 0x5d9360   MISMATCH         ObjectClass::SmallFunc_5D9360
+[diff] 0x62d7a0   MISMATCH         ParticleClass::LoadParticleData
+[diff] 0x488f00   MISMATCH         ColorListClass::QueryInterface
+[diff] 0x41cdb0   MISMATCH         AircraftTypeClass::PowerDrainUpdate
+[diff] 0x4f9370   MISMATCH         HouseClass::Update
+[ledger] 0x4a8850 DisplayClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x5e2fa0 ObjectClass::Event_Handle -> NG (attempt 1)
+[ledger] 0x542ec0 IPXManagerClass::Flush -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6728b0 RulesClass::LoadAnimTypes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672920 CCINIClass::LoadUnitTypes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672990 WarheadTypeClass::LoadType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672a00 RulesClass::readColors -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672a70 CCINIClass::ReadBuildingSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x791aa0 ObjectClass::UI_Setup_791AA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x456fb0 globalHelper_056FB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d9360 ObjectClass::SmallFunc_5D9360 -> NG (attempt 1)
+[ledger] 0x62d7a0 ParticleClass::LoadParticleData -> NG (attempt 1)
+[ledger] 0x488f00 ColorListClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x765f60 Team_Create_765F60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x767b00 Team_Create_767B00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65ca00 BufferIOFileClass::Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41cdb0 AircraftTypeClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x789630 sub_789630 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d140b __getptd -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f9370 HouseClass::Update -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "codegen_shape": 5,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p12\batch_report.json

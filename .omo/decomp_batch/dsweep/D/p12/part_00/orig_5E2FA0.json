@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E2FA0",
+ "name": "Event_Handle",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E2FA0",
+ "bytes_hex": "5657e8792b190083f86b7544e85f2b19008b3d90147e008bf06a006a00688801000068eb06000056ffd783f8ff74336a0050689901000068eb06000056ffd785c0741f8b108bc8ff92940000005f5ec38b0d3cb2a80085c974088b01ff90940000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

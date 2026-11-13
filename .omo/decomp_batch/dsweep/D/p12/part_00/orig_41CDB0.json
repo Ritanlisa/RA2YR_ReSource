@@ -1,0 +1,11 @@
+{
+ "addr": "0x41CDB0",
+ "name": "AircraftTypeClass::PowerDrainUpdate",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41CDB0",
+ "bytes_hex": "56578b7c240c8bf157e8e2a32f008a86080e00008bcf50e8d44e08008a8e090e0000518bcfe8c64e08008a960a0e00008bcf52e8b84e08008a860d0e00008bcf50e8aa4e08008a8e0e0e0000518bcfe89c4e08008b96f80d00008bcf52e83e4f08005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

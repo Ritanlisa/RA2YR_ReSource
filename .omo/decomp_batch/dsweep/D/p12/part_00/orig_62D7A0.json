@@ -1,0 +1,11 @@
+{
+ "addr": "0x62D7A0",
+ "name": "ParticleClass::LoadParticleData",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x62D7A0",
+ "bytes_hex": "8b442408568b7424085056e8d086fcff85c07c4f85f674278d4c240c518bcee88c63fcffc70654f97e00c7460438f97e00c7460830f97e00c7460c28f97e008d96ac000000526810c1b000e8501a0a0081c624010000566810c1b000e83f1a0a0033c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

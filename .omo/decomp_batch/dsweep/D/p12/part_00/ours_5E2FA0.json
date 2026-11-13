@@ -1,0 +1,39 @@
+{
+ "symbol": "?Event_Handle@ObjectClass@@QAEIXZ",
+ "sym_key": "ObjectClass::Event_Handle",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000083f86b75578bcee8000000006a006a008bf0688801000068eb06000056e80000000083f8ff74226a0050689901000068eb06000056e80000000085c0740b8b0850ff91940000005ec38b0d0000000085c974098b1151ff92940000005ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?GetCurrentType@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::GetCurrentType"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJHHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJHHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  }
+ ]
+}

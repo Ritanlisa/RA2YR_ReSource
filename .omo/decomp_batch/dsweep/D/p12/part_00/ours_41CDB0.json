@@ -1,0 +1,51 @@
+{
+ "symbol": "?PowerDrainUpdate@AircraftTypeClass@@QAEEPAH@Z",
+ "sym_key": "AircraftTypeClass::PowerDrainUpdate",
+ "size": 145,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf157e80000000033c924008a8e080e00000bc8518bcfe8000000008b44240c33d28a96090e000024000bd08bcf52e8000000008b4c240c33c08a860a0e000080e1000bc18bcf50e80000000033d224008a960d0e00008bcf0bd052e8000000008b4c240c33c08a860e0e000080e1000bc18bcf50e8000000008b96f80d000052e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?ProcessPower@BuildingTypeClass@@QAEHPAX@Z",
+   "sym_key": "BuildingTypeClass::ProcessPower"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}
