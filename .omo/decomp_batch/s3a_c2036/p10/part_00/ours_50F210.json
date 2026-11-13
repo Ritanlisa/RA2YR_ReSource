@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@_VectorClass_UScoutStruct@@QAEDHPAD@Z",
+ "sym_key": "_VectorClass_UScoutStruct::Release",
+ "size": 276,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db578bf10f84f20000008b6c2418c7460c0000000085ed8bfd741d8d4bff8bc585c97c498bcbc70000000000c640040083c0084975f0eb358d14dd0000000052e80000000083c40485c0741f8d53ff8bc885d27c128bd3c70100000000c641040083c1084a75f08bf8eb0233ff85ffc7460c01000000747b8b460485c0744f8b6e083bdd7d028beb33d285ed7e218b46048d0cd50000000003c1423bd58b18891c398b400489440f047ce38b5c24148b460cf6c4ff74138b4e0451e80000000083c404c74604000000008b6c24188b4e0c33d285ed0f94c233c080e5008ae2897e040bc1895e0889460c5f5e5db0015bc208005f5e5d32c05bc208008b168bceff520c5f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

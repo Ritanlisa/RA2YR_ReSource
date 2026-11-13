@@ -1,0 +1,93 @@
+{
+ "symbol": "?Fire_PsyDom@HouseClass@@QAEDD@Z",
+ "sym_key": "HouseClass::Fire_PsyDom",
+ "size": 516,
+ "link_base": 0,
+ "bytes_hex": "83ec1c55568be9e80000000033c98ac88a6c24298bc184c00f85de01000083bd00560000ff0f84d10100008b0d4a06000033f68ad1668bf132d0c74424100000000081e2ff000000894c240833c20fbf95f05400003bd60f859f010000668b85f254000033c9668b0d520600000fbfd03bd10f8584010000a10000000053578b7c24308d48ff894c24248b1500000000c7442414000000008b048a8a908100000084d20f85db0000008b0850ff91bc01000089442420a100000000c744241c260000008d58028b5424208a0b81e700ffffff8a422602c18d4c242825ff000000510bf8b900000000897c242ce8000000008bb0e400000085f67458f646140474528b1656ff92f000000085c074223bc5743a8b48308b45303bc8743083f9ff740fb801000000d3e0858588570000751c8b0e56ff915001000084c0750f8bcee80000000084c07404ff4424148b763085f675a88b44241c83c304488944241c0f8561ffffff8b4424148b5424188b4c24243bc27e0f8b542420894424188b42248944241049894c24240f89fbfeffff8b4424185f85c05b74630fbf54240833c9668b0d4a0600003bd175120fbf54240a33c9668b0d520600003bd1743f8d4424086a0150b900000000e800000000660fb6c084c074268b8d540200008d85540200008d5424285250ff51108d4c240851508bcde800000000660fbec05e5d83c41cc20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?PsyDom__IsActive@@YA_NXZ",
+   "sym_key": "PsyDom__IsActive"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3DD0@@3IA",
+   "sym_key": "DataGlobal_8B3DD0"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3DC4@@3IA",
+   "sym_key": "DataGlobal_8B3DC4"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABD490@@3IA",
+   "sym_key": "DataGlobal_ABD490"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 320,
+   "type": "REL32",
+   "sym": "?CanBePermaMC@TechnoClass@@QAE_NXZ",
+   "sym_key": "TechnoClass::CanBePermaMC"
+  },
+  {
+   "off": 419,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 437,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 453,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 458,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 500,
+   "type": "REL32",
+   "sym": "?FireSuperWeaponHouseClass@SuperWeapon@@QAEDHH@Z",
+   "sym_key": "SuperWeapon::FireSuperWeaponHouseClass"
+  }
+ ]
+}
