@@ -1,0 +1,39 @@
+{
+ "symbol": "?RemoveItemByValue@LogicClass@@QAGXHH@Z",
+ "sym_key": "LogicClass::RemoveItemByValue",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "56578b7c241085ff74518b0757ff502c83f82c75468b150000000033f685d2763a8b0d000000003b3cb1752a3bf27d254a8bc63bf289150000000073188b5481048914818b15000000008b0d00000000403bc272e84e463bf27ccc5f5ec20c00",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_ScenarioUpdateState@@3IA",
+   "sym_key": "g_ScenarioUpdateState"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B40CC@@3IA",
+   "sym_key": "DataGlobal_8B40CC"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_ScenarioUpdateState@@3IA",
+   "sym_key": "g_ScenarioUpdateState"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_ScenarioUpdateState@@3IA",
+   "sym_key": "g_ScenarioUpdateState"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B40CC@@3IA",
+   "sym_key": "DataGlobal_8B40CC"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x55B880",
+ "name": "Array::RemoveItemByValue",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55B880",
+ "bytes_hex": "578b7c240885ff74548b078bcfff502c83f82c75488b0dd8408b0033d285c97e3c568b35cc408b003b3c96752a3bd17d25498bc23bd1890dd8408b007d188b4c8604890c868b0dd8408b008b35cc408b00403bc17ce84a423bd17ccc5e5fc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

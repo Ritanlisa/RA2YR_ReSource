@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x52a2f0 ObjectClass::sub_52A2F0 -> ObjectClass
+[conv] 0x52a940 INIClass::SaveTimeField -> INIClass
+[conv] 0x52d430 ReadModConfigINI -> _addr_52
+[conv] 0x5301a0 MixFileClass::Bootstrap -> MixFileClass
+[conv] 0x531a00 CreditsScreen::DlgProc -> CreditsScreen
+[conv] 0x5349c0 LoadTheaterClassMIX -> _addr_53
+[conv] 0x534fa0 MixFile::LoadSide -> MixFile
+[conv] 0x537bc0 ScreenCaptureCommandClass::MakeScreenshot -> ScreenCaptureCommandClass
+[conv] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> ObjectClass
+[conv] 0x53de00 InitializeAudioStreaming -> _addr_53
+[conv] 0x542f30 ObjectClass::sub_542F30 -> ObjectClass
+[conv] 0x547020 MapClass::LoadFileData -> MapClass
+[conv] 0x549830 ObjectClass::sub_549830 -> ObjectClass
+[conv] 0x54f200 EventClass::Enqueue -> EventClass
+[conv] 0x550080 ObjectClass::sub_550080 -> ObjectClass
+[conv] 0x55b880 LogicClass::RemoveItemByValue -> LogicClass
+[conv] 0x55cc20 ScreenCapture::Frame -> ScreenCapture
+[conv] 0x55e420 Chat::ProcessMessages -> Chat
+[conv] 0x561400 VideoSettingsDialogProc -> _addr_56
+[conv] 0x565aa0 MapClass::InitCellVector -> MapClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] INIClass                 rc=2
+[era] _addr_52                 rc=0
+[era] MixFileClass             rc=2
+[era] CreditsScreen            rc=2
+[era] _addr_53                 rc=2
+[era] MixFile                  rc=2
+[era] ScreenCaptureCommandClass rc=2
+[era] MapClass                 rc=2
+[era] EventClass               rc=2
+[era] LogicClass               rc=0
+[era] ScreenCapture            rc=2
+[era] Chat                     rc=2
+[era] _addr_56                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x549830   MISMATCH         ObjectClass::sub_549830
+[diff] 0x52d430   MISMATCH         ReadModConfigINI
+[diff] 0x55b880   MISMATCH         LogicClass::RemoveItemByValue
+[ledger] 0x52a2f0 ObjectClass::sub_52A2F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52a940 INIClass::SaveTimeField -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52d430 ReadModConfigINI -> NG (attempt 2)
+[ledger] 0x5301a0 MixFileClass::Bootstrap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x531a00 CreditsScreen::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5349c0 LoadTheaterClassMIX -> COMPILE_FAIL (attempt 2)
+[ledger] 0x534fa0 MixFile::LoadSide -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537bc0 ScreenCaptureCommandClass::MakeScreenshot -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53de00 InitializeAudioStreaming -> COMPILE_FAIL (attempt 2)
+[ledger] 0x542f30 ObjectClass::sub_542F30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x547020 MapClass::LoadFileData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x549830 ObjectClass::sub_549830 -> NG (attempt 2)
+[ledger] 0x54f200 EventClass::Enqueue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x550080 ObjectClass::sub_550080 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55b880 LogicClass::RemoveItemByValue -> NG (attempt 2)
+[ledger] 0x55cc20 ScreenCapture::Frame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55e420 Chat::ProcessMessages -> COMPILE_FAIL (attempt 2)
+[ledger] 0x561400 VideoSettingsDialogProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x565aa0 MapClass::InitCellVector -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "codegen_shape": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p08\batch_report.json

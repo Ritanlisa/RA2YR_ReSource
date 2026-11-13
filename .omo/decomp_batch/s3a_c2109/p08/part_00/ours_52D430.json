@@ -1,0 +1,93 @@
+{
+ "symbol": "?ReadModConfigINI@@YGHPAXIIPAH@Z",
+ "sym_key": "Unnamed::ReadModConfigINI",
+ "size": 318,
+ "link_base": 0,
+ "bytes_hex": "8b44240881ec800000003d1001000056765b3d1101000075488b842490000000663d02007406663da4047535a90000ffff752e8bb4248800000068a304000056e8000000006a006a00688801000050e8000000005056e80000000056e80000000033c05e81c480000000c21000744283f853751c8b84249400000050e80000000083c40433c05e81c480000000c2100083f87b75108b8c249000000051e80000000083c40433c05e81c480000000c210008bb4248800000053578bcee80000000068a304000056e8000000008bd833f68bbc249c0000008b471085c07e438b0d000000008d54240c33c06880000000a000000000528b5704680000000050518b0cb2e8000000008d44240c506a00688001000053e8000000008b4710463bf07cbd6a006a00688601000053e8000000005f5b33c05e81c480000000c21000",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?EndDialog@@YGHPAXH@Z",
+   "sym_key": "EndDialog"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?DestroyWindow@@YGHPAX@Z",
+   "sym_key": "DestroyWindow"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?System_Read_776880@@YAHPAX@Z",
+   "sym_key": "System_Read_776880"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?System_Read_7768A0@@YAHPAX@Z",
+   "sym_key": "System_Read_7768A0"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?RestoreParent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::RestoreParent"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_General@@3_KA",
+   "sym_key": "g_INI_Key_General"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Name@@3EA",
+   "sym_key": "g_INI_Key_Name"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}
