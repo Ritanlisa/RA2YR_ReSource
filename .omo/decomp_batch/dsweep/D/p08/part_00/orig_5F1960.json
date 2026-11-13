@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F1960",
+ "name": "ObjectClass::FreeResources",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F1960",
+ "bytes_hex": "568bf15733ff8b4e383bcf74098b016a01ff10897e388b46503bc7740c50e8ba711d0083c404897e508b46043bc7740c50e8a7711d0083c404897e048b460c3bc7740c50e894711d0083c404897e0c897e3c5fb8010000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

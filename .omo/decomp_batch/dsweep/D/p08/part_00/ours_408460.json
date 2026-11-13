@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_408460@ObjectClass@@QAEPAIXZ",
+ "sym_key": "ObjectClass::sub_408460",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "5356578bd96a20e8000000008bf0b90800000033c08bfef3ab8b0633ff83c40489388b4e18897e04897e1089398d4e08e80000000053895e04e8000000008b1683c4043bc7890274068b065f5e5bc33bf7740956e80000000083c4045f5e33c05bc3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?Init@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::Init"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

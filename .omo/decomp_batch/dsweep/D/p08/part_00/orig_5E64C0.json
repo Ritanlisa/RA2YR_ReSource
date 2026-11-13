@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E64C0",
+ "name": "SessionClass::initPlayers",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E64C0",
+ "bytes_hex": "83f9ff7506b808000000c356e84f0000008b0d3cb2a8008bf085c974138b01ff909800000083f8ff74063bc67d028bf0833d38b2a80004751ee87274190084c0740783e6fe8bc65ec3e83274190084c07405be020000008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

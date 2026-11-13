@@ -1,0 +1,11 @@
+{
+ "addr": "0x521760",
+ "name": "InfantryClass::ParachuteTo",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x521760",
+ "bytes_hex": "8b442404568bf150e8d3410d0084c074438b8e1c020000e8b49ffeff84c074108b166a006a058bceff92e8010000eb0e8b066a006a0f8bceff90e80100008b166a006a016a218bceff9258050000b0015ec2040032c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "?initPlayers@SessionClass@@QAEIXZ",
+ "sym_key": "SessionClass::initPlayers",
+ "size": 103,
+ "link_base": 0,
+ "bytes_hex": "56578bf983ffff75085fb8080000005ec38bcfe8000000008bf0a10000000085c074148b0850ff919800000083f8ff74063bc67d028bf0833d000000000475228bcfe80000000084c074078bc65f24fe5ec38bcfe80000000084c0b80200000075028bc65f5ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?ReadPlayerCountMap@@YIHH@Z",
+   "sym_key": "ReadPlayerCountMap"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?IsLobbyFeature@Network@@QAEDXZ",
+   "sym_key": "Network::IsLobbyFeature"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?IsMultiplayerActive@Network@@QAE_NXZ",
+   "sym_key": "Network::IsMultiplayerActive"
+  }
+ ]
+}

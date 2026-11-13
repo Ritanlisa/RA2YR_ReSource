@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D98C0",
+ "name": "FootClass::Destroyed",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D98C0",
+ "bytes_hex": "51568bf18b8e1c020000e8211e030084c074438b068bceff90840000008a88540d000084c9752f8b168d442404508bceff92b80100008b0851b907000000e86d61180084c0740f6aff83caffb920268200e8ea8d27005e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

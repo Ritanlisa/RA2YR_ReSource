@@ -1,0 +1,33 @@
+{
+ "symbol": "?StartOrResumeProduction@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::StartOrResumeProduction",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "518a4424035684c08bf1742ba10000000085c07522a00000000084c075196a00e8000000008b066a006a1256ff90e801000024005e59c36a018bcee8000000008b0e6a006a0556ff91e801000024005e59c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_ArmageddonMode@@3_NA",
+   "sym_key": "g_ArmageddonMode"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?StartProduction@BuildingClass@@QAEHH@Z",
+   "sym_key": "BuildingClass::StartProduction"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?StartProduction@BuildingClass@@QAEHH@Z",
+   "sym_key": "BuildingClass::StartProduction"
+  }
+ ]
+}

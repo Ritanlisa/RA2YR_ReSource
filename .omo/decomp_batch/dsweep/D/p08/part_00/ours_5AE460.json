@@ -1,0 +1,15 @@
+{
+ "symbol": "?ReleaseSubobjectsAndDestruct@CampaignClass@@QAEHXZ",
+ "sym_key": "CampaignClass::ReleaseSubobjectsAndDestruct",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86b400000085c074118b086a0150ff11c786b4000000000000008b86b000000085c074118b106a0150ff12c786b0000000000000008b86ac00000085c074118b086a0150ff11c786ac000000000000000fbe4e32e8000000005ec3",
+ "relocs": [
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Destruct@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::Destruct"
+  }
+ ]
+}

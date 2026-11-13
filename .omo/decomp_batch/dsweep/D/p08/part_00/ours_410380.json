@@ -1,0 +1,21 @@
+{
+ "symbol": "?SaveLoad_Prefix_0@AbstractClass@@QAGHPAHH@Z",
+ "sym_key": "AbstractClass::SaveLoad_Prefix_0",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "578b7c241085ff7509b8034000805fc20c008b076a008d4c24146a045157ff500c85c07c308b5424105355568b74241856526800000000e8000000008b068b5e1c8b2f6a0056ff5030505657ff550c895e1c5e5d5b5fc20c00",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?SwizzleManagerClass__Here_I_Am@@YGHHHH@Z",
+   "sym_key": "SwizzleManagerClass__Here_I_Am"
+  }
+ ]
+}

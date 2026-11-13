@@ -1,0 +1,21 @@
+{
+ "symbol": "?ParachuteTo@InfantryClass@@QAEDH@Z",
+ "sym_key": "InfantryClass::ParachuteTo",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000084c074428b8e1c020000e80000000084c0740f8b066a006a0556ff90e8010000eb0d8b0e6a006a0f56ff91e80100008b166a006a016a2156ff925805000024015e0c01c2040024005ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?ParachuteDrop@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::ParachuteDrop"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  }
+ ]
+}

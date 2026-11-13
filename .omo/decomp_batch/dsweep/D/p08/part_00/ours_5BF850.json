@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_5BF850@@YAHXZ",
+ "sym_key": "Unnamed::sub_5BF850",
+ "size": 107,
+ "link_base": 0,
+ "bytes_hex": "83ec08a1000000005355568b7008576a00568b0eff515c8bf8a100000000568b188b68288b50248b0689542414ff90800000008b0e5056ff51748b165689442418ff52708bc88b4424106a0055508b44242099f7f9506a0053e80000000083c4188bc75f5e5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_BigIntPool@@3IA",
+   "sym_key": "g_BigIntPool"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_BigIntPool@@3IA",
+   "sym_key": "g_BigIntPool"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?Render_Load_759EB0@@YA_NPAXHHHHH@Z",
+   "sym_key": "Render_Load_759EB0"
+  }
+ ]
+}

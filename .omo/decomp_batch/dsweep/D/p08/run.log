@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f1960 ObjectClass::FreeResources -> ObjectClass
+[conv] 0x410380 AbstractClass::SaveLoad_Prefix_0 -> AbstractClass
+[conv] 0x521760 InfantryClass::ParachuteTo -> InfantryClass
+[conv] 0x5281c0 INIClass::ReadDouble2 -> INIClass
+[conv] 0x76d470 TechnoClass::sub_76D470 -> TechnoClass
+[conv] 0x7b6880 WideString::Assign_Alt -> WideString
+[conv] 0x5e64c0 SessionClass::initPlayers -> SessionClass
+[conv] 0x5ae460 CampaignClass::ReleaseSubobjectsAndDestruct -> CampaignClass
+[conv] 0x4d98c0 FootClass::Destroyed -> FootClass
+[conv] 0x71f820 TEventClass::ProcessEvent -> TEventClass
+[conv] 0x408460 ObjectClass::sub_408460 -> ObjectClass
+[conv] 0x44d700 BuildingClass::GetAmmoCountScaled -> BuildingClass
+[conv] 0x4dbfd0 FootClass::vt_entry_4E0 -> FootClass
+[conv] 0x767820 GameOption@WorldDominationTour::ConstructorWDTFlagOption_Create -> GameOption_WorldDominationTour
+[conv] 0x44d6a0 TechnoClass::StartOrResumeProduction -> TechnoClass
+[conv] 0x7ba530 FileStraw::Release -> FileStraw
+[conv] 0x7d2a74 __close -> _addr_7D
+[conv] 0x5bf850 sub_5BF850 -> _addr_5B
+[conv] 0x7cc2ac _mbstowcs -> _addr_7C
+[conv] 0x7cc447 _wcstombs -> _addr_7C
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] AbstractClass            rc=0
+[era] InfantryClass            rc=0
+[era] INIClass                 rc=2
+[era] TechnoClass              rc=2
+[era] WideString               rc=0
+[era] SessionClass             rc=0
+[era] CampaignClass            rc=0
+[era] FootClass                rc=0
+[era] TEventClass              rc=0
+[era] BuildingClass            rc=2
+[era] GameOption_WorldDominationTour rc=2
+[era] FileStraw                rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_5B                 rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f1960   MISMATCH         ObjectClass::FreeResources
+[diff] 0x408460   MISMATCH         ObjectClass::sub_408460
+[diff] 0x410380   MISMATCH         AbstractClass::SaveLoad_Prefix_0
+[diff] 0x521760   MISMATCH         InfantryClass::ParachuteTo
+[diff] 0x44d6a0   MISMATCH         TechnoClass::StartOrResumeProduction
+[diff] 0x7b6880   MATCH            WideString::Assign_Alt
+[diff] 0x5e64c0   MISMATCH         SessionClass::initPlayers
+[diff] 0x5ae460   MISMATCH         CampaignClass::ReleaseSubobjectsAndDestruct
+[diff] 0x4d98c0   MISMATCH         FootClass::Destroyed
+[diff] 0x4dbfd0   MISMATCH         FootClass::vt_entry_4E0
+[diff] 0x71f820   MISMATCH         TEventClass::ProcessEvent
+[diff] 0x5bf850   MISMATCH         sub_5BF850
+[diff] 0x7cc2ac   MISMATCH         _mbstowcs
+[diff] 0x7cc447   MISMATCH         _wcstombs
+[ledger] 0x5f1960 ObjectClass::FreeResources -> NG (attempt 1)
+[ledger] 0x410380 AbstractClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x521760 InfantryClass::ParachuteTo -> NG (attempt 1)
+[ledger] 0x5281c0 INIClass::ReadDouble2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76d470 TechnoClass::sub_76D470 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b6880 WideString::Assign_Alt -> OK (attempt 1)
+[ledger] 0x5e64c0 SessionClass::initPlayers -> NG (attempt 1)
+[ledger] 0x5ae460 CampaignClass::ReleaseSubobjectsAndDestruct -> NG (attempt 1)
+[ledger] 0x4d98c0 FootClass::Destroyed -> NG (attempt 1)
+[ledger] 0x71f820 TEventClass::ProcessEvent -> NG (attempt 1)
+[ledger] 0x408460 ObjectClass::sub_408460 -> NG (attempt 1)
+[ledger] 0x44d700 BuildingClass::GetAmmoCountScaled -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dbfd0 FootClass::vt_entry_4E0 -> NG (attempt 1)
+[ledger] 0x767820 GameOption@WorldDominationTour::ConstructorWDTFlagOption_Create -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44d6a0 TechnoClass::StartOrResumeProduction -> NG (attempt 1)
+[ledger] 0x7ba530 FileStraw::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d2a74 __close -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bf850 sub_5BF850 -> NG (attempt 1)
+[ledger] 0x7cc2ac _mbstowcs -> NG (attempt 1)
+[ledger] 0x7cc447 _wcstombs -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 6,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "const_fold": 1,
+  "codegen_shape": 7,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p08\batch_report.json

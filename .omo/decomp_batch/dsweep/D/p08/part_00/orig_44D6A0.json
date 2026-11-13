@@ -1,0 +1,11 @@
+{
+ "addr": "0x44D6A0",
+ "name": "TechnoClass::StartOrResumeProduction",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x44D6A0",
+ "bytes_hex": "8a4424045684c08bf17431a1ace7a80085c07528a06beda80084c0751f6a00e8bca0ffff8b16b8120000006a00508bceff92e801000032c05ec208006a018bcee89ba0ffff8b16b8050000006a00508bceff92e801000032c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

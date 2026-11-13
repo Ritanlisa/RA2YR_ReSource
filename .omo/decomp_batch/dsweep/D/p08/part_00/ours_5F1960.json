@@ -1,0 +1,27 @@
+{
+ "symbol": "?FreeResources@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::FreeResources",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "53568bf133c033db8a46383bc3740a8b086a0150ff11885e388b46503bc3740c50e80000000083c404895e508b46043bc3740c50e80000000083c404895e048b460c3bc3740c50e80000000083c404895e0c895e3c5eb8010000005bc3",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

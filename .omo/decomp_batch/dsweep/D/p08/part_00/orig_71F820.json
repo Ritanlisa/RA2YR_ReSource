@@ -1,0 +1,11 @@
+{
+ "addr": "0x71F820",
+ "name": "TEventClass::ProcessEvent",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71F820",
+ "bytes_hex": "56578b7c240c8bf157e8e20bcfff8b462885c074128b480483c00450ff5110508bcfe80925d8ff8b562c8bcf52e8fe24d8ff8b463085c074128b480483c00450ff5110508bcfe8e524d8ff8b56348bcf52e8da24d8ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
