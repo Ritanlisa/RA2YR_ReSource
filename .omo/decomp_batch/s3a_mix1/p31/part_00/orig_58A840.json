@@ -1,0 +1,11 @@
+{
+ "addr": "0x58A840",
+ "name": "VectorClass_W4PassabilityType::Constructor_0",
+ "size": 163,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58A840",
+ "bytes_hex": "8a44240453568bf1a80274598b46fc558d6efc8d0c40488d34ce7831578d780133db8b46ec83ee183bc3c706e0d57e007411385e0d740c50e8c0e2230083c404895e044f885e0d895e0875d65ff644241001740955e8a3e2230083c4048bc55d5e5bc204008b460433db3bc3c706e0d57e007411385e0d740c50e87ee2230083c404895e048a44240c885e0da801895e08740956e864e2230083c4048bc65e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

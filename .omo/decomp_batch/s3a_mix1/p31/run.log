@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x585930 ObjectClass::FloodFillConnectedCells -> ObjectClass
+[conv] 0x586fc0 FootClass::FindNearestApproachableCell -> FootClass
+[conv] 0x58a840 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::Constructor_0 -> _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x58ab30 _VectorClass_U_HashObject_II::QueryInterface -> _VectorClass_U_HashObject_II
+[conv] 0x58ab80 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x58ad10 VectorClass_USubzoneTrackingStruct::SetCapacity -> VectorClass_USubzoneTrackingStruct
+[conv] 0x58c800 RandomMap::GenerateTerrain -> RandomMap
+[conv] 0x590970 RandomMap::CheckCellPlacement -> RandomMap
+[conv] 0x590fd0 RandomMap::CheckNeighborhoodCompatibility -> RandomMap
+[conv] 0x593030 ObjectClass::PlaceMapSeedCityBlockDiagonal -> ObjectClass
+[conv] 0x593550 MapSeed::PlaceCityBlock2 -> MapSeed
+[conv] 0x593af0 ObjectClass::PlaceMapSeedCityBlockVariant2 -> ObjectClass
+[conv] 0x596300 SkirmishMapGen::DlgProc -> SkirmishMapGen
+[conv] 0x597430 ObjectClass::Team_Start_597430 -> ObjectClass
+[conv] 0x59ad10 RandomMap::ArrangeBuildingGrid -> RandomMap
+[conv] 0x59afa0 RandomMap::FillTerrainProgressively -> RandomMap
+[conv] 0x59c920 TiberiumClass::Grow -> TiberiumClass
+[conv] 0x59d510 Tiberium::ProcessGrowth -> Tiberium
+[conv] 0x5a35f0 ObjectClass::GenerateTerrainHeightMap -> ObjectClass
+[conv] 0x5ad4d0 _VectorClass_V_TRect_H::QueryInterface -> _VectorClass_V_TRect_H
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+[era] _VectorClass_U_HashObject_II rc=0
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+[era] VectorClass_USubzoneTrackingStruct rc=2
+[era] RandomMap                rc=2
+[era] MapSeed                  rc=2
+[era] SkirmishMapGen           rc=2
+[era] TiberiumClass            rc=2
+[era] Tiberium                 rc=2
+[era] _VectorClass_V_TRect_H   rc=0
+=== diffasm byte-compare ===
+[diff] 0x58a840   MISMATCH         _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::Constructor_0
+[diff] 0x58ab30   MISMATCH         _VectorClass_U_HashObject_II::QueryInterface
+[diff] 0x58ab80   MISMATCH         _VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface
+[diff] 0x59ad10   MISMATCH         RandomMap::ArrangeBuildingGrid
+[diff] 0x5ad4d0   MISMATCH         _VectorClass_V_TRect_H::QueryInterface
+[ledger] 0x585930 ObjectClass::FloodFillConnectedCells -> COMPILE_FAIL (attempt 2)
+[ledger] 0x586fc0 FootClass::FindNearestApproachableCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58a840 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::Constructor_0 -> NG (attempt 2)
+[ledger] 0x58ab30 _VectorClass_U_HashObject_II::QueryInterface -> NG (attempt 3)
+[ledger] 0x58ab80 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface -> NG (attempt 3)
+[ledger] 0x58ad10 VectorClass_USubzoneTrackingStruct::SetCapacity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58c800 RandomMap::GenerateTerrain -> COMPILE_FAIL (attempt 5)
+[ledger] 0x590970 RandomMap::CheckCellPlacement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x590fd0 RandomMap::CheckNeighborhoodCompatibility -> COMPILE_FAIL (attempt 2)
+[ledger] 0x593030 ObjectClass::PlaceMapSeedCityBlockDiagonal -> COMPILE_FAIL (attempt 2)
+[ledger] 0x593550 MapSeed::PlaceCityBlock2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x593af0 ObjectClass::PlaceMapSeedCityBlockVariant2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x596300 SkirmishMapGen::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x597430 ObjectClass::Team_Start_597430 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x59ad10 RandomMap::ArrangeBuildingGrid -> NG (attempt 2)
+[ledger] 0x59afa0 RandomMap::FillTerrainProgressively -> COMPILE_FAIL (attempt 2)
+[ledger] 0x59c920 TiberiumClass::Grow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x59d510 Tiberium::ProcessGrowth -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a35f0 ObjectClass::GenerateTerrainHeightMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ad4d0 _VectorClass_V_TRect_H::QueryInterface -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "const_fold": 2,
+  "frame_sched": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p31\batch_report.json

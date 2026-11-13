@@ -91453,7 +91453,7 @@
   "this_as_id": false
  },
  "0x585930": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -91630,7 +91630,7 @@
   "this_as_id": false
  },
  "0x586fc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -92611,15 +92611,15 @@
   "this_as_id": false
  },
  "0x58a840": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+5 push esi",
   "name": "_DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::Constructor_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "VectorClass_W4PassabilityType::Constructor_0",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a8f0": {
@@ -92690,27 +92690,27 @@
   "this_as_id": false
  },
  "0x58ab30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed5c0",
   "name": "_VectorClass_U_HashObject_II::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "VectorClass_UHashObject_uint_uint::QueryInterface",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58ab80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed5e0",
   "name": "_VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "VectorClass_UHashObject_uint_SubzoneConn::QueryInterface",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58abd0": {
@@ -92738,7 +92738,7 @@
   "this_as_id": false
  },
  "0x58ad10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93604,7 +93604,7 @@
   "this_as_id": false
  },
  "0x58c800": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93836,7 +93836,7 @@
   "this_as_id": false
  },
  "0x590970": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93848,7 +93848,7 @@
   "this_as_id": false
  },
  "0x590fd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93920,7 +93920,7 @@
   "this_as_id": false
  },
  "0x593030": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93932,7 +93932,7 @@
   "this_as_id": false
  },
  "0x593550": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93944,14 +93944,14 @@
   "this_as_id": false
  },
  "0x593af0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::PlaceMapSeedCityBlockVariant2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "PlaceMapSeedCityBlockVariant2",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94157,7 +94157,7 @@
   "this_as_id": false
  },
  "0x596300": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -94205,7 +94205,7 @@
   "this_as_id": false
  },
  "0x597430": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94468,19 +94468,19 @@
   "this_as_id": false
  },
  "0x59ad10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 sub esp, 0x50",
   "name": "RandomMap::ArrangeBuildingGrid",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "RandomMap::ArrangeBuildingGrid",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x59afa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94586,7 +94586,7 @@
   "this_as_id": false
  },
  "0x59c920": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94609,7 +94609,7 @@
   "this_as_id": false
  },
  "0x59d510": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94842,7 +94842,7 @@
   "this_as_id": false
  },
  "0x5a35f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -96000,15 +96000,15 @@
   "this_as_id": false
  },
  "0x5ad4d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed970",
+  "first_diff": "+14 je 0x5ad4f7",
   "name": "_VectorClass_V_TRect_H::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "MSEngine::QueryInterface",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5ad520": {
