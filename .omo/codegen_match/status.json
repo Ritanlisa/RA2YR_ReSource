@@ -185928,7 +185928,7 @@
   "this_as_id": false
  },
  "0x761640": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185951,7 +185951,7 @@
   "this_as_id": false
  },
  "0x762070": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186217,7 +186217,7 @@
   "this_as_id": false
  },
  "0x763690": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186955,7 +186955,7 @@
   "this_as_id": false
  },
  "0x765380": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -186990,15 +186990,15 @@
   "this_as_id": false
  },
  "0x765600": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 lea ecx, [esi + 0x48]",
   "name": "Campaign_WorldDominationTour::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Campaign_WorldDominationTour::QueryInterface",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x765680": {
@@ -187074,7 +187074,7 @@
   "this_as_id": false
  },
  "0x765770": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7f6f9c",
@@ -187488,7 +187488,7 @@
   "this_as_id": false
  },
  "0x7665d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -187627,15 +187627,15 @@
   "this_as_id": false
  },
  "0x766960": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7f701c",
   "name": "Conflict_WorldDominationTour::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "Conflict_WorldDominationTour_12::Constructor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x766990": {
@@ -187663,7 +187663,7 @@
   "this_as_id": false
  },
  "0x7669f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7f702c",
@@ -188960,7 +188960,7 @@
   "this_as_id": false
  },
  "0x769d70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": "+12 mov dword ptr [eax], 0x7f71cc",
   "name": "Map_Load_769D70",
@@ -188983,7 +188983,7 @@
   "this_as_id": false
  },
  "0x769dc0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7f71cc",
@@ -190244,19 +190244,19 @@
   "this_as_id": false
  },
  "0x76d3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::sub_76D3A0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_76D3A0",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x76d470": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -190292,7 +190292,7 @@
   "this_as_id": false
  },
  "0x76ded0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -190304,7 +190304,7 @@
   "this_as_id": false
  },
  "0x76df50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -190626,19 +190626,19 @@
   "this_as_id": false
  },
  "0x76f100": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": "+9 mov dword ptr [esi], 0x7f72c4",
+  "first_diff": "+26 mov eax, esi",
   "name": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "VectorCursor::initCursor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x76f120": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+9 mov dword ptr [esi], 0x7f72d8",
@@ -190650,15 +190650,15 @@
   "this_as_id": false
  },
  "0x76f140": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": "+9 mov dword ptr [esi], 0x7f72ec",
+  "first_diff": "+26 mov eax, esi",
   "name": "_VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::drawCursor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "VectorCursor::drawCursor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x76f160": {
@@ -191221,7 +191221,7 @@
   "this_as_id": false
  },
  "0x76ff40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -192167,7 +192167,7 @@
   "status": "OK"
  },
  "0x7730f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

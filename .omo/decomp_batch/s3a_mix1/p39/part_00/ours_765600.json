@@ -1,0 +1,57 @@
+{
+ "symbol": "?QueryInterface@Campaign_WorldDominationTour@@QAEPAPAXD@Z",
+ "sym_key": "Campaign_WorldDominationTour::QueryInterface",
+ "size": 124,
+ "link_base": 0,
+ "bytes_hex": "568bf18d4648c7060000000050e8000000008b461c83c40485c0c746180000000074158a4e2584c9740e8b086a0350ff11c7461c000000008d4e10c6462500c7462000000000c70100000000e8000000008d4e08c70100000000e8000000008bcee800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_rc_ptr_WorldDominationTour_Conflict@@3PAXA",
+   "sym_key": "vt_VectorClass_rc_ptr_WorldDominationTour_Conflict"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_History@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_History"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_CampaignProperties@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_CampaignProperties"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?Constructor@ReferenceCounted@@QAEXXZ",
+   "sym_key": "ReferenceCounted::Constructor"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

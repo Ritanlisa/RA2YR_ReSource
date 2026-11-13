@@ -1,0 +1,21 @@
+{
+ "symbol": "?initCursor@_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry@@QAEPAID@Z",
+ "sym_key": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8a442404568bf1a801c70600000000740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry@@3PAXA",
+   "sym_key": "vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

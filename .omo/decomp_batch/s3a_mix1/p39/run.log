@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p39\part_00
+=== convert (20 addrs) ===
+[conv] 0x761640 Voxel::SectionProject -> Voxel
+[conv] 0x762070 Voxel::LightRender -> Voxel
+[conv] 0x763690 String::To_Waypoint -> String
+[conv] 0x765380 ObjectClass::FindWDTTerritoryClass_Find -> ObjectClass
+[conv] 0x765600 Campaign_WorldDominationTour::QueryInterface -> Campaign_WorldDominationTour
+[conv] 0x765770 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1 -> _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> ObjectClass
+[conv] 0x766960 Conflict_WorldDominationTour::Constructor -> Conflict_WorldDominationTour
+[conv] 0x7669f0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint -> _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x769d70 Map_Load_769D70 -> Map_Load
+[conv] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H
+[conv] 0x76d3a0 TechnoClass::sub_76D3A0 -> TechnoClass
+[conv] 0x76d470 TechnoClass::sub_76D470 -> TechnoClass
+[conv] 0x76ded0 TechnoClass::sub_76DED0 -> TechnoClass
+[conv] 0x76df50 TechnoClass::sub_76DF50 -> TechnoClass
+[conv] 0x76f100 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor -> _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x76f120 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::updateCursor -> _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76f140 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::drawCursor -> _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim
+[conv] 0x76ff40 rc_ptr::FindTerritoryWOL -> rc_ptr
+[conv] 0x7730f0 WeaponTypeClass::ddtor -> WeaponTypeClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Voxel                    rc=2
+[era] String                   rc=2
+[era] ObjectClass              rc=2
+[era] Campaign_WorldDominationTour rc=0
+[era] _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=2
+[era] Conflict_WorldDominationTour rc=0
+[era] _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] Map_Load                 rc=2
+[era] _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H rc=2
+[era] TechnoClass              rc=2
+[era] _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry rc=0
+[era] _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=2
+[era] _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim rc=0
+[era] rc_ptr                   rc=2
+[era] WeaponTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x765600   MISMATCH         Campaign_WorldDominationTour::QueryInterface
+[diff] 0x766960   MISMATCH         Conflict_WorldDominationTour::Constructor
+[diff] 0x76f100   MISMATCH         _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor
+[diff] 0x76f140   MISMATCH         _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::drawCursor
+[ledger] 0x761640 Voxel::SectionProject -> COMPILE_FAIL (attempt 2)
+[ledger] 0x762070 Voxel::LightRender -> COMPILE_FAIL (attempt 2)
+[ledger] 0x763690 String::To_Waypoint -> COMPILE_FAIL (attempt 2)
+[ledger] 0x765380 ObjectClass::FindWDTTerritoryClass_Find -> COMPILE_FAIL (attempt 2)
+[ledger] 0x765600 Campaign_WorldDominationTour::QueryInterface -> NG (attempt 2)
+[ledger] 0x765770 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> COMPILE_FAIL (attempt 4)
+[ledger] 0x766960 Conflict_WorldDominationTour::Constructor -> NG (attempt 3)
+[ledger] 0x7669f0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint -> COMPILE_FAIL (attempt 3)
+[ledger] 0x769d70 Map_Load_769D70 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x76d3a0 TechnoClass::sub_76D3A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76d470 TechnoClass::sub_76D470 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76ded0 TechnoClass::sub_76DED0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76df50 TechnoClass::sub_76DF50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76f100 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor -> NG (attempt 3)
+[ledger] 0x76f120 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::updateCursor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76f140 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::drawCursor -> NG (attempt 3)
+[ledger] 0x76ff40 rc_ptr::FindTerritoryWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7730f0 WeaponTypeClass::ddtor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p39\batch_report.json
