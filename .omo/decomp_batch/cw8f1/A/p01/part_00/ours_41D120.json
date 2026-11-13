@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_41D120@@YAXXZ",
+ "sym_key": "Unnamed::sub_41D120",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "dd0500000000dc0d00000000dd1d04000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?dbl_7E2930@@3NA",
+   "sym_key": "dbl_7E2930"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?dbl_7E1730@@3NA",
+   "sym_key": "dbl_7E1730"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  }
+ ]
+}
