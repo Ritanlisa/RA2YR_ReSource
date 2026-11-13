@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x4371d0 Helper::ProcessData -> Helper
+[conv] 0x437290 sub_437290 -> _addr_43
+[conv] 0x437a10 BlitterRLEBlitSHP -> _addr_43
+[conv] 0x438e70 AbstractClass::Initialize -> AbstractClass
+[conv] 0x43a7e0 AbstractClass::Construct -> AbstractClass
+[conv] 0x43b150 TechnoClass::DetectNearbyAlliedThreat -> TechnoClass
+[conv] 0x43b680 BuildingClass::ctor -> BuildingClass
+[conv] 0x43bcf0 BuildingClass::Dtor -> BuildingClass
+[conv] 0x43ef90 BuildingClass::GetProductionFrame -> BuildingClass
+[conv] 0x43fb20 BuildingClass::ProcessSpreadEffect -> BuildingClass
+[conv] 0x440580 BuildingClass::Unlimbo_UnitDeliveryFix -> BuildingClass
+[conv] 0x4415f0 BuildingClass::ProcessDemolish -> BuildingClass
+[conv] 0x447780 BuildingClass::StartProduction -> BuildingClass
+[conv] 0x449c30 BuildingClass::finalizeAnimation -> BuildingClass
+[conv] 0x44b780 BuildingClass::ProcessRepair -> BuildingClass
+[conv] 0x44d7d0 BuildingClass::GetTargetFacing -> BuildingClass
+[conv] 0x44e440 BuildingClass::ProcessPowerPlantEffect -> BuildingClass
+[conv] 0x44ebf0 BuildingClass::Disappear_PrismForward -> BuildingClass
+[conv] 0x44f5c0 BuildingClass::CanBeSoldCheck -> BuildingClass
+[conv] 0x44f820 Scenario::ReadTeams -> Scenario
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Helper                   rc=2
+[era] _addr_43                 rc=2
+[era] AbstractClass            rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] Scenario                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4371d0 Helper::ProcessData -> COMPILE_FAIL (attempt 16)
+[ledger] 0x437290 sub_437290 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x437a10 BlitterRLEBlitSHP -> COMPILE_FAIL (attempt 3)
+[ledger] 0x438e70 AbstractClass::Initialize -> COMPILE_FAIL (attempt 5)
+[ledger] 0x43a7e0 AbstractClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x43b150 TechnoClass::DetectNearbyAlliedThreat -> COMPILE_FAIL (attempt 5)
+[ledger] 0x43b680 BuildingClass::ctor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x43bcf0 BuildingClass::Dtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x43ef90 BuildingClass::GetProductionFrame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x43fb20 BuildingClass::ProcessSpreadEffect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x440580 BuildingClass::Unlimbo_UnitDeliveryFix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4415f0 BuildingClass::ProcessDemolish -> COMPILE_FAIL (attempt 3)
+[ledger] 0x447780 BuildingClass::StartProduction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x449c30 BuildingClass::finalizeAnimation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x44b780 BuildingClass::ProcessRepair -> COMPILE_FAIL (attempt 5)
+[ledger] 0x44d7d0 BuildingClass::GetTargetFacing -> COMPILE_FAIL (attempt 15)
+[ledger] 0x44e440 BuildingClass::ProcessPowerPlantEffect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x44ebf0 BuildingClass::Disappear_PrismForward -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44f5c0 BuildingClass::CanBeSoldCheck -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44f820 Scenario::ReadTeams -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p02\batch_report.json
