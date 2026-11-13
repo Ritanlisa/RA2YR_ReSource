@@ -1,0 +1,69 @@
+{
+ "symbol": "?GetIDsOfNames@CChatEventSink@@QAGHHPAD@Z",
+ "sym_key": "CChatEventSink::GetIDsOfNames",
+ "size": 143,
+ "link_base": 0,
+ "bytes_hex": "8b44240881ec0008000085c07d0b33c081c400080000c20c008b84240c0800005650e8000000008b0d000000008bf05156e80000000083c40c85c0742e6aff8bd08d4c2408e8000000008d54240483c9ff52e800000000a100000000506a00e80000000083c40885c075d256e8000000008b0d0000000083c4045183c9ffe80000000033c05e81c400080000c20c00",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?_strdup@@YAHPAXZZ",
+   "sym_key": "_strdup"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?asc_83F328@@3PAGA",
+   "sym_key": "asc_83F328"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?BulkCharToWide@@YIEPAX0H@Z",
+   "sym_key": "BulkCharToWide"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?ShowMessage@Dialog@@QAEPAXH@Z",
+   "sym_key": "Dialog::ShowMessage"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?asc_83F328@@3PAGA",
+   "sym_key": "asc_83F328"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?asc_830174@@3PAGA",
+   "sym_key": "asc_830174"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?ShowMessage@Dialog@@QAEPAXH@Z",
+   "sym_key": "Dialog::ShowMessage"
+  }
+ ]
+}

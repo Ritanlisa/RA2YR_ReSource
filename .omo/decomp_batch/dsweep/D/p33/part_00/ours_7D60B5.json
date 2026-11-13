@@ -1,0 +1,117 @@
+{
+ "symbol": "?___init_time@@YAHXZ",
+ "sym_key": "Unnamed::___init_time",
+ "size": 165,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c0746968ac0000006a01e8000000008bf083c40885f67507b8010000005ec356e80000000083c40485c0741656e80000000056e80000000083c408b8010000005ec3a10000000089350000000050e8000000008b0d0000000051e80000000083c40889350000000033c05ec38b1500000000c705000000000000000052e800000000a10000000050e80000000083c408c705000000000000000033c05ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782AC@@3IA",
+   "sym_key": "CRTGlobal_B782AC"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "_calloc",
+   "sym_key": "calloc"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?_get_lc_time@@YAHHZZ",
+   "sym_key": "_get_lc_time"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?_free_lc_time@@YAHPAXZZ",
+   "sym_key": "_free_lc_time"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78504@@3IA",
+   "sym_key": "CRTGlobal_B78504"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C1E0@@3PAXA",
+   "sym_key": "DataGlobal_87C1E0"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?_free_lc_time@@YAHPAXZZ",
+   "sym_key": "_free_lc_time"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78504@@3IA",
+   "sym_key": "CRTGlobal_B78504"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78504@@3IA",
+   "sym_key": "CRTGlobal_B78504"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78504@@3IA",
+   "sym_key": "CRTGlobal_B78504"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C1E0@@3PAXA",
+   "sym_key": "DataGlobal_87C1E0"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C1E8@@3PAXA",
+   "sym_key": "DataGlobal_87C1E8"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?_free_lc_time@@YAHPAXZZ",
+   "sym_key": "_free_lc_time"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78504@@3IA",
+   "sym_key": "CRTGlobal_B78504"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78504@@3IA",
+   "sym_key": "CRTGlobal_B78504"
+  }
+ ]
+}

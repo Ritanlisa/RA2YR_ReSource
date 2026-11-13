@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_5E2E40@@YGHPAXHHPAD@Z",
+ "sym_key": "Unnamed::sub_5E2E40",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "8b44240883f82b7f4483f80f741b83f814746c83f82b756f8b4c2410e800000000b801000000c21000568b7424088bcee8000000008bcee8000000006a0056e800000000b8010000005ec210003d1101000075338b54240c0fbfc24883f806772633c98a8800000000ff248d000000008b4c240481e2ffff0000e800000000b801000000c2100033c0c21000",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Resize@Dialog@@QAEJXZ",
+   "sym_key": "Dialog::Resize"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?DrawBackground@Dialog@@QAEXXZ",
+   "sym_key": "Dialog::DrawBackground"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?StopBink@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::StopBink"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?ValidateRect@@YGHPAXH@Z",
+   "sym_key": "ValidateRect"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "$L1886",
+   "sym_key": "$L1886"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "$L1887",
+   "sym_key": "$L1887"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?CloseDialog@@YIDPAXH@Z",
+   "sym_key": "CloseDialog"
+  }
+ ]
+}

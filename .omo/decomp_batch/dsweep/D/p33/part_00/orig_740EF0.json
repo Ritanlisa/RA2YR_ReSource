@@ -1,0 +1,11 @@
+{
+ "addr": "0x740EF0",
+ "name": "TechnoClass::EnterRepairBuilding",
+ "size": 144,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x740EF0",
+ "bytes_hex": "568bf18b0de07188006a008b0681c1500800006a00518bceff90280500008b16c686d20600000085c07540a1e07188006a0105500800006a00508bceff922805000085c0740e8b166a016a008bceff92840400008bcee8b52ae7ffdd4010dc0df8277e00e8a74f08005ec3506a028bceff927802000083f80175d98b066a006a078bceff90e8010000b8010000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

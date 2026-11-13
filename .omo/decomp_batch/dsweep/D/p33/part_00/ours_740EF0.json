@@ -1,0 +1,39 @@
+{
+ "symbol": "?EnterRepairBuilding@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::EnterRepairBuilding",
+ "size": 167,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b0d400200006a008b0681c1500800006a005156ff90280500008b0ec686d20600000085c0752a8b15400200006a0181c250080000505256ff912805000085c0741e8b066a016a0056ff9084040000eb0f506a0256ff917802000083f801742e8bcee800000000dd0500000000dc481083ec08dd1c24e8000000008b4c240c83c40833c125ff0000005e33c159c38b0e6a006a0756ff91e8010000b8010000005e59c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?GetMissionControl@MissionClass@@QAEPADXZ",
+   "sym_key": "MissionClass::GetMissionControl"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E27F8@@3NA",
+   "sym_key": "DataGlobal_7E27F8"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

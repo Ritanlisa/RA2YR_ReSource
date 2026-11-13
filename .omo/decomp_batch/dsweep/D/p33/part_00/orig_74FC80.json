@@ -1,0 +1,11 @@
+{
+ "addr": "0x74FC80",
+ "name": "GameClass::ReadVersionString",
+ "size": 146,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74FC80",
+ "bytes_hex": "83ec245355568bf157685c6384008d4c2414e8e9cdf0ff33db8d4c241053e84dcff0ff84c074578d6e2a6a10558d4c2418e82ad0f0ff8bfd83c9ff33c0885e39f2aef7d149b20d3854312975348bfd83c9ff33c0f2aef7d1498bfd885c312983c9fff2aef7d1493854312974e08d4c2410e80acdf0ff5f5e5d5b83c424c3885e2a8d4c2410e8f6ccf0ff5f5e5d5b83c424c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x406D40",
+ "name": "Audio::Shutdown",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x406D40",
+ "bytes_hex": "8b0d28e787005633f63bce740aba01000000e8d9c9ffffe814e1ffffe83f140000e8dab53400e8d5bd3400e830d2ffffe80b0a00008b0d24e787003bce740be8fca7ffff893524e787008b0d34e787003bce740c8b016a01ff10893534e787008b0d38e787003bce740c8b116a01ff12893538e787008b0d28e787003bce740be8fbc5ffff893528e787005ee9bfbbffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

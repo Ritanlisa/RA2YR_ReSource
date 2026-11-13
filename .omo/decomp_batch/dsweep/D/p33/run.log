@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p33\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c6540 StaticButtonClass::sub_6C6540 -> StaticButtonClass
+[conv] 0x5f4410 IUnknown::MoveToDirection -> IUnknown
+[conv] 0x7b88d0 WWMouseClass::loadCursorImages -> WWMouseClass
+[conv] 0x740ef0 TechnoClass::EnterRepairBuilding -> TechnoClass
+[conv] 0x5c2100 MPCooperative::EndGame -> MPCooperative
+[conv] 0x45edd0 HouseClass::addPointer -> HouseClass
+[conv] 0x5e2e40 sub_5E2E40 -> _addr_5E
+[conv] 0x6e5fe0 ObjectClass::SaveTriggerTagsToINI -> ObjectClass
+[conv] 0x7a55f0 CChatEventSink::GetIDsOfNames -> CChatEventSink
+[conv] 0x7d60b5 ___init_time -> _addr_7D
+[conv] 0x406d40 Audio::Shutdown -> Audio
+[conv] 0x72d830 Game::shutdownGame -> Game
+[conv] 0x74fc80 GameClass::ReadVersionString -> GameClass
+[conv] 0x5f65f0 ObjectClass::Destroy -> ObjectClass
+[conv] 0x484f50 ObjectClass::sub_484F50 -> ObjectClass
+[conv] 0x74a970 VoxelAnimClass::SaveLoad_Prefix -> VoxelAnimClass
+[conv] 0x7cee45 __cftog -> _addr_7C
+[conv] 0x5b59b0 ModemGame::AdvanceTauntCommand -> ModemGame
+[conv] 0x758a30 VoxelPaletteClass::ConvertFromFile -> VoxelPaletteClass
+[conv] 0x758ad0 ObjectClass::sub_758AD0 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] StaticButtonClass        rc=0
+[era] IUnknown                 rc=0
+[era] WWMouseClass             rc=0
+[era] TechnoClass              rc=0
+[era] MPCooperative            rc=0
+[era] HouseClass               rc=2
+[era] _addr_5E                 rc=0
+[era] ObjectClass              rc=2
+[era] CChatEventSink           rc=0
+[era] _addr_7D                 rc=0
+[era] Audio                    rc=0
+[era] Game                     rc=2
+[era] GameClass                rc=0
+[era] VoxelAnimClass           rc=0
+[era] _addr_7C                 rc=2
+[era] ModemGame                rc=2
+[era] VoxelPaletteClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c6540   MISMATCH         StaticButtonClass::sub_6C6540
+[diff] 0x5f4410   MISMATCH         IUnknown::MoveToDirection
+[diff] 0x7b88d0   MISMATCH         WWMouseClass::loadCursorImages
+[diff] 0x740ef0   MISMATCH         TechnoClass::EnterRepairBuilding
+[diff] 0x5c2100   MISMATCH         MPCooperative::EndGame
+[diff] 0x5e2e40   MISMATCH         sub_5E2E40
+[diff] 0x5f65f0   MISMATCH         ObjectClass::Destroy
+[diff] 0x484f50   MISMATCH         ObjectClass::sub_484F50
+[diff] 0x758ad0   MISMATCH         ObjectClass::sub_758AD0
+[diff] 0x7a55f0   MISMATCH         CChatEventSink::GetIDsOfNames
+[diff] 0x7d60b5   MISMATCH         ___init_time
+[diff] 0x406d40   MISMATCH         Audio::Shutdown
+[diff] 0x74fc80   MISMATCH         GameClass::ReadVersionString
+[diff] 0x74a970   MISMATCH         VoxelAnimClass::SaveLoad_Prefix
+[diff] 0x758a30   MISMATCH         VoxelPaletteClass::ConvertFromFile
+[ledger] 0x6c6540 StaticButtonClass::sub_6C6540 -> NG (attempt 1)
+[ledger] 0x5f4410 IUnknown::MoveToDirection -> NG (attempt 1)
+[ledger] 0x7b88d0 WWMouseClass::loadCursorImages -> NG (attempt 1)
+[ledger] 0x740ef0 TechnoClass::EnterRepairBuilding -> NG (attempt 1)
+[ledger] 0x5c2100 MPCooperative::EndGame -> NG (attempt 1)
+[ledger] 0x45edd0 HouseClass::addPointer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e2e40 sub_5E2E40 -> NG (attempt 1)
+[ledger] 0x6e5fe0 ObjectClass::SaveTriggerTagsToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a55f0 CChatEventSink::GetIDsOfNames -> NG (attempt 1)
+[ledger] 0x7d60b5 ___init_time -> NG (attempt 1)
+[ledger] 0x406d40 Audio::Shutdown -> NG (attempt 1)
+[ledger] 0x72d830 Game::shutdownGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74fc80 GameClass::ReadVersionString -> NG (attempt 1)
+[ledger] 0x5f65f0 ObjectClass::Destroy -> NG (attempt 1)
+[ledger] 0x484f50 ObjectClass::sub_484F50 -> NG (attempt 1)
+[ledger] 0x74a970 VoxelAnimClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x7cee45 __cftog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b59b0 ModemGame::AdvanceTauntCommand -> COMPILE_FAIL (attempt 1)
+[ledger] 0x758a30 VoxelPaletteClass::ConvertFromFile -> NG (attempt 1)
+[ledger] 0x758ad0 ObjectClass::sub_758AD0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "frame_sched": 1,
+  "regalloc": 2,
+  "signedness": 1,
+  "extern_reloc": 2,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p33\batch_report.json

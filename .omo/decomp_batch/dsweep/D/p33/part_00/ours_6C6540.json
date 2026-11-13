@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_6C6540@StaticButtonClass@@QAEPAIHPAGHHHHH@Z",
+ "sym_key": "StaticButtonClass::sub_6C6540",
+ "size": 141,
+ "link_base": 0,
+ "bytes_hex": "8b442414538b5c24205556578b7c24286a008bf16a008b4c2428535750518bcee8000000006a006a008d4e24e8000000008b4424188b54241c6a00508bcec7463000000000895634c70600000000e80000000083ffff740583fbff75278bcee80000000083ffff8be8750e8b4e306a0051e80000000089461483fbff75068b551c8956148b065f5e5d5bc21c00",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?Construct@GadgetClass@@QAEPAIHHHHHD@Z",
+   "sym_key": "GadgetClass::Construct"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?vt_StaticButtonClass@@3PAXA",
+   "sym_key": "vt_StaticButtonClass"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Draw@StaticButtonClass@@QAEXPAXD@Z",
+   "sym_key": "StaticButtonClass::Draw"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHPAXH@Z",
+   "sym_key": "Text__MeasureWidth"
+  }
+ ]
+}

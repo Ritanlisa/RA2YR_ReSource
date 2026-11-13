@@ -1,0 +1,63 @@
+{
+ "symbol": "?loadCursorImages@WWMouseClass@@QAEHXZ",
+ "sym_key": "WWMouseClass::loadCursorImages",
+ "size": 129,
+ "link_base": 0,
+ "bytes_hex": "568bf1576810270000c70600000000a10000000050e8000000003d0201000075078bcee800000000a10000000033ff3bc67506893d000000008b0d0000000051e8000000008b4e443bcf740a8b116a0151ff12897e448b4e583bcf740a8b016a0151ff10897e588b4e6c3bcf740a8b116a0151ff12897e6cc706000000005f5ec3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?vt_WWMouseClass@@3PAXA",
+   "sym_key": "vt_WWMouseClass"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?WaitForSingleObject@@YGKPAXH@Z",
+   "sym_key": "WaitForSingleObject"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78164@@3IA",
+   "sym_key": "DataGlobal_B78164"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78164@@3IA",
+   "sym_key": "DataGlobal_B78164"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?ReleaseMutex@@YGHPAX@Z",
+   "sym_key": "ReleaseMutex"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?vt_Mouse@@3PAXA",
+   "sym_key": "vt_Mouse"
+  }
+ ]
+}

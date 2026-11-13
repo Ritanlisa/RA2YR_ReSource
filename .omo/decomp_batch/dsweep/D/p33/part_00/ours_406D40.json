@@ -1,0 +1,123 @@
+{
+ "symbol": "?Shutdown@Audio@@QAEHXZ",
+ "sym_key": "Audio::Shutdown",
+ "size": 177,
+ "link_base": 0,
+ "bytes_hex": "51a10000000053568b7424085733ff3bc78bd974078bcee8000000008bcee8000000008bcbe800000000e800000000e8000000008b44240c50e80000000083c404e800000000a1000000003bc7740f50e80000000083c404893d00000000a1000000003bc7740d8b086a0150ff11893d00000000a1000000003bc7740d8b106a0150ff12893d000000008b0d000000003bcf740be800000000893d0000000053e8000000008b44241083c4045f5e5b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?StopAllVoices@AudioQueue@@QAEPAXXZ",
+   "sym_key": "AudioQueue::StopAllVoices"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?CleanupChannels@AudioStream@@QAEXXZ",
+   "sym_key": "AudioStream::CleanupChannels"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?HaltVoices@AudioQueue@@QAEHXZ",
+   "sym_key": "AudioQueue::HaltVoices"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Audio_Cleanup@@YAXXZ",
+   "sym_key": "Audio_Cleanup"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?Audio_Cleanup_752B40@@YAXXZ",
+   "sym_key": "Audio_Cleanup_752B40"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?sub_403FA0@@YAXPAX@Z",
+   "sym_key": "sub_403FA0"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?sub_407780@@YAXXZ",
+   "sym_key": "sub_407780"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_AudioFileData@@3PAXA",
+   "sym_key": "g_AudioFileData"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?sub_401580@@YAXPAX@Z",
+   "sym_key": "sub_401580"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_AudioFileData@@3PAXA",
+   "sym_key": "g_AudioFileData"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_MixFile_AUDIO@@3IA",
+   "sym_key": "g_MixFile_AUDIO"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_MixFile_AUDIO@@3IA",
+   "sym_key": "g_MixFile_AUDIO"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_MixFile_THEME@@3IA",
+   "sym_key": "g_MixFile_THEME"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_MixFile_THEME@@3IA",
+   "sym_key": "g_MixFile_THEME"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?DestroyAll@AudioStream@@QAEXXZ",
+   "sym_key": "AudioStream::DestroyAll"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?sub_402990@@YAXPAX@Z",
+   "sym_key": "sub_402990"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C2100",
+ "name": "MPCooperative::EndGame",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C2100",
+ "bytes_hex": "5153558be956578b4d4085c9750a32c05f5e5d5b59c20c008d44241050e89e9bedff8b44242083ec70b91c0000008bfc8d707083ec70f3a5b91c0000008bf08bfcf3a58b8c24fc0000008bb424f8000000518b4d4056e8f5aaedff8ad88b4424103bc6750a8a854003000084c07418e84c05020085c0740f508bcde880030000c68540030000005f5e8ac35d5b59c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

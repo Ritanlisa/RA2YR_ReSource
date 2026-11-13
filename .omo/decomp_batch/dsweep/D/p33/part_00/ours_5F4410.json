@@ -1,0 +1,33 @@
+{
+ "symbol": "?MoveToDirection@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::MoveToDirection",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "83ec1053568bf1576a00568b06ff90240100008b5c240c8b8ea40000008bc3894c24188b8ea000000083e0078b3e0fbe14458f0000000fbe04458e00000003d18b8e9c00000003c18d4c241051b9f80100008954241889442414e8000000006a016a006aff535056ff97ac01000085c0750e8b168d4424105056ff92b40100008b0e6a0156ff91240100005f5e5b83c410c3",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  }
+ ]
+}

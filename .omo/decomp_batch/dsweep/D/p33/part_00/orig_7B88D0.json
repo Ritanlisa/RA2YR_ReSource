@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B88D0",
+ "name": "WWMouseClass::loadCursorImages",
+ "size": 144,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B88D0",
+ "bytes_hex": "568bf1576810270000c7062c7b7f00a16881b70050ff15dc117e003d02010000751768fd040000681ce6840068dce58400e8dadfc4ff83c40ca16481b70033ff3bc67506893d6481b7008b0d6881b70051ff1598117e008b4e443bcf74098b116a01ff12897e448b4e583bcf74098b016a01ff10897e588b4e6c3bcf74098b116a01ff12897e6cc706787b7f005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

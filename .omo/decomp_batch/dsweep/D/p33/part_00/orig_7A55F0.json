@@ -1,0 +1,11 @@
+{
+ "addr": "0x7A55F0",
+ "name": "CComObject_CChatEventSink___ATL::GetIDsOfNames",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7A55F0",
+ "bytes_hex": "8b44240881ec0008000085c07d0b33c081c400080000c20c008b84240c0800005650e8f1fd02008bf06828f3830056e89e46020083c40c85c074316aff8bd08d4c2408e828faf8ff8b1528ef7e008d4c24045152e8b7d0e3ff6828f383006a00e86d46020083c41085c075cf56e8863d0200a128ef7e00687401830050e88ed0e3ff83c40c33c05e81c400080000c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
