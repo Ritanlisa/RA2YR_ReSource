@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BBEE0",
+ "name": "FileFind::ReleaseAllHandles",
+ "size": 140,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BBEE0",
+ "bytes_hex": "568bf15733ff8b063bc7740b50e84bcc200083c404893e8b46043bc7740c50e839cc200083c404897e048b46083bc7740c50e826cc200083c404897e088b460c3bc7740c50e813cc200083c404897e0c8b46103bc7740c50e800cc200083c404897e108b46143bc7740c50e8edcb200083c404897e148b46183bc7740c50e8dacb200083c404897e185f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

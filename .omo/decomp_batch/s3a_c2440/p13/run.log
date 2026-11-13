@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x5a6510 ScatterMapSeedBuildings2 -> _addr_5A
+[conv] 0x5a82e0 ObjectClass::ScatterMapSeedBuildings -> ObjectClass
+[conv] 0x5a9a70 WaypointPath::Constructor -> WaypointPath
+[conv] 0x5ad130 _VectorClass_N::Release -> _VectorClass_N
+[conv] 0x5ad290 _DynamicVectorClass_N::SetCapacity -> _DynamicVectorClass_N
+[conv] 0x5ae500 ObjectClass::sub_5AE500 -> ObjectClass
+[conv] 0x5aead0 BuildingClass::processBaseExpansion -> BuildingClass
+[conv] 0x5aeaf0 BuildingClass::updateFoundation -> BuildingClass
+[conv] 0x5aeb20 BuildingClass::recalcAdjacency -> BuildingClass
+[conv] 0x5af120 ObjectClass::sub_5AF120 -> ObjectClass
+[conv] 0x5b1d90 ObjectClass::sub_5B1D90 -> ObjectClass
+[conv] 0x5b67f0 ApplyGameOptions -> _addr_5B
+[conv] 0x5bac60 ModemHost::StartGame -> ModemHost
+[conv] 0x5bbee0 FileFind::ReleaseAllHandles -> FileFind
+[conv] 0x5bcc90 TextBuffer::Init -> TextBuffer
+[conv] 0x5bfaa0 LoadVQMovie -> _addr_5B
+[conv] 0x5bff00 MovieContext::Cleanup -> MovieContext
+[conv] 0x5c0630 MovieHandle::sub_5C0630 -> MovieHandle
+[conv] 0x5c0b10 VectorClass::checkCombatFlags -> VectorClass
+[conv] 0x5c1470 MPCooperative::ctor -> MPCooperative
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5A                 rc=2
+[era] ObjectClass              rc=2
+[era] WaypointPath             rc=2
+[era] _VectorClass_N           rc=0
+[era] _DynamicVectorClass_N    rc=0
+[era] BuildingClass            rc=2
+[era] _addr_5B                 rc=2
+[era] ModemHost                rc=2
+[era] FileFind                 rc=0
+[era] TextBuffer               rc=2
+[era] MovieContext             rc=0
+[era] MovieHandle              rc=2
+[era] VectorClass              rc=0
+[era] MPCooperative            rc=2
+=== diffasm byte-compare ===
+[diff] 0x5ad130   MISMATCH         _VectorClass_N::Release
+[diff] 0x5ad290   MISMATCH         _DynamicVectorClass_N::SetCapacity
+[diff] 0x5bbee0   MISMATCH         FileFind::ReleaseAllHandles
+[diff] 0x5bff00   MISMATCH         MovieContext::Cleanup
+[diff] 0x5c0b10   MISMATCH         VectorClass::checkCombatFlags
+[ledger] 0x5a6510 ScatterMapSeedBuildings2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a82e0 ObjectClass::ScatterMapSeedBuildings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a9a70 WaypointPath::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ad130 _VectorClass_N::Release -> NG (attempt 2)
+[ledger] 0x5ad290 _DynamicVectorClass_N::SetCapacity -> NG (attempt 2)
+[ledger] 0x5ae500 ObjectClass::sub_5AE500 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5aead0 BuildingClass::processBaseExpansion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5aeaf0 BuildingClass::updateFoundation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5aeb20 BuildingClass::recalcAdjacency -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5af120 ObjectClass::sub_5AF120 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b1d90 ObjectClass::sub_5B1D90 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b67f0 ApplyGameOptions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bac60 ModemHost::StartGame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bbee0 FileFind::ReleaseAllHandles -> NG (attempt 2)
+[ledger] 0x5bcc90 TextBuffer::Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bfaa0 LoadVQMovie -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bff00 MovieContext::Cleanup -> NG (attempt 2)
+[ledger] 0x5c0630 MovieHandle::sub_5C0630 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c0b10 VectorClass::checkCombatFlags -> NG (attempt 2)
+[ledger] 0x5c1470 MPCooperative::ctor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p13\batch_report.json
