@@ -1,0 +1,105 @@
+{
+ "symbol": "?FillComboBoxRandomOnly@@YI_NPAXH@Z",
+ "sym_key": "Unnamed::FillComboBoxRandomOnly",
+ "size": 300,
+ "link_base": 0,
+ "bytes_hex": "515355565251e8000000008bf06a0056e80000000085c06a006a00684b010000560f9444241ce8000000006a076a0068de04000056e8000000008b0d0000000033c0a00000000068140100005033d2e800000000506a0068c204000056e8000000006afe50685101000056e800000000a10000000033db85c08be87e5a578b0d000000008b3c9985ff74468a8fa501000084c9743c8b8fb800000083f9fd7e3183f9097f2c8b4f60668339007423516a0068c204000056e8000000008b97b80000005250685101000056e8000000008bc5433bd87ca85f6a006a0068f104000056e8000000006a006a00684e01000056e80000000024008b4c240c81e1ff0000000bc18a4c240c84c975136a0556e800000000f7d81bc05e5d5bf7d859c333d25e85c00f95c25d8ac25b59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?aGuiRandomex@@3HA",
+   "sym_key": "aGuiRandomex"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_Str_File_GDlgSupp_cpp@@3EA",
+   "sym_key": "g_Str_File_GDlgSupp_cpp"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeArray@@3IA",
+   "sym_key": "g_SuperWeaponTypeArray"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeCount@@3PAXA",
+   "sym_key": "g_SuperWeaponTypeCount"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  }
+ ]
+}

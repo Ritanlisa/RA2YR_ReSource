@@ -1,0 +1,45 @@
+{
+ "symbol": "?SelectRandomTarget@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::SelectRandomTarget",
+ "size": 277,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b86dc02000085c074548b0656ff90840000008b884004000085c975095f5e05300400005bc3b900000000e8000000008b0e568bf8ff91840000008bc88bc781c13004000033d28b1ef771108b41048b0c905156ff93540300005f5e5bc38b86d401000085c075548b1656ff92840000008b882404000085c975095f5e05140400005bc3b900000000e8000000008bf88b0656ff90840000008bc88bc781c11404000033d28b1ef771108b49048b14915256ff93540300005f5e5bc38b0656ff90840000008b885c04000085c97438b900000000e8000000008b0e568bf8ff91840000008bc88bc733d28b1ef7b15c0400008b81500400008b0c905156ff93540300005f5e5bc35f5e054c0400005bc3",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  }
+ ]
+}

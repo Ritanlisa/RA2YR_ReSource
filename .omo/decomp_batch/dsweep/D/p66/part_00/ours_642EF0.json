@@ -1,0 +1,45 @@
+{
+ "symbol": "?MeasureBuilding2@TextRenderer@@QAGPAHPAH0HD@Z",
+ "sym_key": "TextRenderer::MeasureBuilding2",
+ "size": 228,
+ "link_base": 0,
+ "bytes_hex": "83ec20535556578d4424146a0050e8000000008b48088b780c8a44244433ed33f683c70684c0894c2410742033c9e8000000008bd885db74138b1353ff527c8be88b0353ff90800000008bf08b4c2434e800000000894424348d5c2414c74424440f00000033c9668b0d00000000e800000000668b088b44244466890b83c302488944244475de8d5424146a0052e8000000008b4c24348b511c8b4c241003c18b4c24383bfe8d44281a89017e028bf78b44243c3bf289307f028bf28b54244089308b195f83c30a5e89198b0883c1045d83fa0189085b7e050fafca890883c420c21400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?FindDefault@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindDefault"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_Str_W@@3GA",
+   "sym_key": "g_Str_W"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?CharToWideString@@YIPADPAE@Z",
+   "sym_key": "CharToWideString"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  }
+ ]
+}

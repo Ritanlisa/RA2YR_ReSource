@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p66\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c34f0 MPCooperative::ReceiveMessage -> MPCooperative
+[conv] 0x5c35f0 MPCooperative::HandleEvent -> MPCooperative
+[conv] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> FlagGameOption_WorldDominationTour
+[conv] 0x457ce0 BuildingClass::CanRepair -> BuildingClass
+[conv] 0x6f5090 TechnoClass::CompleteProduction -> TechnoClass
+[conv] 0x5d49a0 TacticalMap::DrawCursor -> TacticalMap
+[conv] 0x4c83e0 DialogFunc -> _addr_4C
+[conv] 0x4e3a00 FillComboBoxRandomOnly -> _addr_4E
+[conv] 0x642ef0 TextRenderer::MeasureBuilding2 -> TextRenderer
+[conv] 0x7cd680 __strnicmp -> _addr_7C
+[conv] 0x729370 AnimClass::ProcessSequence -> AnimClass
+[conv] 0x7b5230 String::TrimRight -> String
+[conv] 0x6f1e20 TriggerClass::EvaluateObjectForTrigger -> TriggerClass
+[conv] 0x6f3820 TechnoClass::CanTargetHouse -> TechnoClass
+[conv] 0x6ea500 TeamClass::AddMember -> TeamClass
+[conv] 0x623730 ObjectClass::sub_623730 -> ObjectClass
+[conv] 0x524b60 InfantryTypeClass::SaveLoad_Prefix -> InfantryTypeClass
+[conv] 0x708eb0 TechnoClass::SelectRandomTarget -> TechnoClass
+[conv] 0x541260 Network::SendToPlayer -> Network
+[conv] 0x41db40 WTFMode::ResetUnitFlags -> WTFMode
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPCooperative            rc=2
+[era] FlagGameOption_WorldDominationTour rc=2
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=0
+[era] TacticalMap              rc=2
+[era] _addr_4C                 rc=0
+[era] _addr_4E                 rc=0
+[era] TextRenderer             rc=0
+[era] _addr_7C                 rc=0
+[era] AnimClass                rc=2
+[era] String                   rc=0
+[era] TriggerClass             rc=2
+[era] TeamClass                rc=2
+[era] ObjectClass              rc=2
+[era] InfantryTypeClass        rc=0
+[era] Network                  rc=2
+[era] WTFMode                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x6f5090   MISMATCH         TechnoClass::CompleteProduction
+[diff] 0x6f3820   MISMATCH         TechnoClass::CanTargetHouse
+[diff] 0x708eb0   MISMATCH         TechnoClass::SelectRandomTarget
+[diff] 0x4c83e0   MISMATCH         DialogFunc
+[diff] 0x4e3a00   MISMATCH         FillComboBoxRandomOnly
+[diff] 0x642ef0   MISMATCH         TextRenderer::MeasureBuilding2
+[diff] 0x7cd680   MISMATCH         __strnicmp
+[diff] 0x7b5230   MISMATCH         String::TrimRight
+[diff] 0x524b60   MISMATCH         InfantryTypeClass::SaveLoad_Prefix
+[ledger] 0x5c34f0 MPCooperative::ReceiveMessage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c35f0 MPCooperative::HandleEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x457ce0 BuildingClass::CanRepair -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f5090 TechnoClass::CompleteProduction -> NG (attempt 1)
+[ledger] 0x5d49a0 TacticalMap::DrawCursor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c83e0 DialogFunc -> NG (attempt 1)
+[ledger] 0x4e3a00 FillComboBoxRandomOnly -> NG (attempt 1)
+[ledger] 0x642ef0 TextRenderer::MeasureBuilding2 -> NG (attempt 1)
+[ledger] 0x7cd680 __strnicmp -> NG (attempt 1)
+[ledger] 0x729370 AnimClass::ProcessSequence -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b5230 String::TrimRight -> NG (attempt 1)
+[ledger] 0x6f1e20 TriggerClass::EvaluateObjectForTrigger -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f3820 TechnoClass::CanTargetHouse -> NG (attempt 1)
+[ledger] 0x6ea500 TeamClass::AddMember -> COMPILE_FAIL (attempt 1)
+[ledger] 0x623730 ObjectClass::sub_623730 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x524b60 InfantryTypeClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x708eb0 TechnoClass::SelectRandomTarget -> NG (attempt 1)
+[ledger] 0x541260 Network::SendToPlayer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41db40 WTFMode::ResetUnitFlags -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 4,
+  "frame_sched": 1,
+  "branch_order": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p66\batch_report.json

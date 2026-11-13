@@ -1,0 +1,159 @@
+{
+ "symbol": "?DialogFunc@@YGHPAXIIJ@Z",
+ "sym_key": "Unnamed::DialogFunc",
+ "size": 259,
+ "link_base": 0,
+ "bytes_hex": "8b4424083d11010000761d3d160200000f85e80000008b44241050e80000000025ff000000c21000754a8b44240c663d7d0475208b0d000000008b1500000000a1000000006a30515250e80000000033c0c21000663d81040f85a00000008b0d00000000688104000051e80000000033c0c2100083f81075218b1500000000688104000052e8000000008b0d00000000e80000000033c0c210003d10010000755d8b0d00000000e8000000008b0d0000000033c0a00000000050688404000051e8000000008b150000000052e8000000008b150000000085d2740b8b0d00000000e800000000a1000000006a0150e8000000008b0d00000000e80000000033c0c21000",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Window__ClampToScreen@@YGDJ@Z",
+   "sym_key": "Window__ClampToScreen"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?aBummer@@3HA",
+   "sym_key": "aBummer"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?aSorryYouCanOnl@@3HA",
+   "sym_key": "aSorryYouCanOnl"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?MessageBoxA@@YGHPAXHHH@Z",
+   "sym_key": "MessageBoxA"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?EndDialog@@YGHPAXH@Z",
+   "sym_key": "EndDialog"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?EndDialog@@YGHPAXH@Z",
+   "sym_key": "EndDialog"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?RemoveObjectArray@Object@@QAEPAPAXXZ",
+   "sym_key": "Object::RemoveObjectArray"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?aWmInitdialog@@3HA",
+   "sym_key": "aWmInitdialog"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?Buffer@@3EA",
+   "sym_key": "Buffer"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?SetDlgItemTextA@@YGHPAXHH@Z",
+   "sym_key": "SetDlgItemTextA"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXPAX@Z",
+   "sym_key": "SetFocus"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?SetDialogParent@@YIHPAX0@Z",
+   "sym_key": "SetDialogParent"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 239,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?hDlg@@3PAXA",
+   "sym_key": "hDlg"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "?AllocSlot@TimerPool@@QAEPAIXZ",
+   "sym_key": "TimerPool::AllocSlot"
+  }
+ ]
+}

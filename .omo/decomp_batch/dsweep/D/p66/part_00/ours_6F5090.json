@@ -1,0 +1,75 @@
+{
+ "symbol": "?CompleteProduction@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::CompleteProduction",
+ "size": 227,
+ "link_base": 0,
+ "bytes_hex": "8b4424f083ec1083f80256578bf18bf80f85c50000008b8e7402000085c9740c8b412885c07405e8000000008b068d4c240c5156ff50488b0e33d28a50058b4424082400560bd08954240cff91200400008b4e3485c974138b15100200006a006a0052566a22e8000000008b869c03000085c0751f8d4424086a0150b9f8010000e80000000084c0740ac7869c030000010000008a861e04000084c075278d4c240851b9f8010000e800000000f6802c01000010740fa1000000008b165056ff92980100008d4c240851b9f8010000e8000000008bc8e8000000008bc75f5e83c410c3",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?CompleteItem@FactoryClass@@QAEPAIXZ",
+   "sym_key": "FactoryClass::CompleteItem"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?Update_0@TeamClass@@QAEDHHHDH@Z",
+   "sym_key": "TeamClass::Update_0"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?CreateIdleAnim@BuildingClass@@QAEXXZ",
+   "sym_key": "BuildingClass::CreateIdleAnim"
+  }
+ ]
+}
