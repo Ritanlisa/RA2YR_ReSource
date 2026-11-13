@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p168\part_00
+=== convert (20 addrs) ===
+[conv] 0x44efb0 BuildingClass::ValidateFoundation -> BuildingClass
+[conv] 0x414bb0 TechnoClass::SmokeUpdate -> TechnoClass
+[conv] 0x5a28c0 Terrain::PlaceTiberiumTrees -> Terrain
+[conv] 0x684620 Scenario::LoadWithProgress -> Scenario
+[conv] 0x7171a0 BuildingTypeClass::ProcessPower -> BuildingTypeClass
+[conv] 0x500b40 HouseClass::ReadFromINI -> HouseClass
+[conv] 0x4fc0b0 HouseClass::DefeatPlayer -> HouseClass
+[conv] 0x5e7eb0 MapPreview::Upload -> MapPreview
+[conv] 0x6f64a0 TechnoClass::DrawHealthBar -> TechnoClass
+[conv] 0x51d0d0 InfantryClass::FindMoveTarget -> InfantryClass
+[conv] 0x54ca90 JumpjetLocomotion::Land -> JumpjetLocomotion
+[conv] 0x501ac0 HouseClass::GenerateAttackCoords -> HouseClass
+[conv] 0x77a9f0 ObjectClass::FillPersonaInfoWOL -> ObjectClass
+[conv] 0x700600 TechnoClass::HandleCursor -> TechnoClass
+[conv] 0x44f820 Scenario::ReadTeams -> Scenario
+[conv] 0x653100 RadarClass::Destru_vt16 -> RadarClass
+[conv] 0x591740 ObjectClass::PlaceMapSeedCityArea -> ObjectClass
+[conv] 0x65e010 MoveScriptTypeClassToWaypoint -> _addr_65
+[conv] 0x434cd0 Font::Print -> Font
+[conv] 0x7b3aa0 UDPInterfaceClass::ProcessSocketIO -> UDPInterfaceClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=0
+[era] TechnoClass              rc=2
+[era] Terrain                  rc=2
+[era] Scenario                 rc=2
+[era] BuildingTypeClass        rc=2
+[era] HouseClass               rc=2
+[era] MapPreview               rc=2
+[era] InfantryClass            rc=2
+[era] JumpjetLocomotion        rc=2
+[era] ObjectClass              rc=2
+[era] RadarClass               rc=2
+[era] _addr_65                 rc=2
+[era] Font                     rc=2
+[era] UDPInterfaceClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x44efb0   MISMATCH         BuildingClass::ValidateFoundation
+[ledger] 0x44efb0 BuildingClass::ValidateFoundation -> NG (attempt 1)
+[ledger] 0x414bb0 TechnoClass::SmokeUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a28c0 Terrain::PlaceTiberiumTrees -> COMPILE_FAIL (attempt 1)
+[ledger] 0x684620 Scenario::LoadWithProgress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7171a0 BuildingTypeClass::ProcessPower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x500b40 HouseClass::ReadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fc0b0 HouseClass::DefeatPlayer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e7eb0 MapPreview::Upload -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f64a0 TechnoClass::DrawHealthBar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51d0d0 InfantryClass::FindMoveTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54ca90 JumpjetLocomotion::Land -> COMPILE_FAIL (attempt 1)
+[ledger] 0x501ac0 HouseClass::GenerateAttackCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77a9f0 ObjectClass::FillPersonaInfoWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x700600 TechnoClass::HandleCursor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44f820 Scenario::ReadTeams -> COMPILE_FAIL (attempt 1)
+[ledger] 0x653100 RadarClass::Destru_vt16 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x591740 ObjectClass::PlaceMapSeedCityArea -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65e010 MoveScriptTypeClassToWaypoint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x434cd0 Font::Print -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b3aa0 UDPInterfaceClass::ProcessSocketIO -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 1,
+  "COMPILE_FAIL": 19
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p168\batch_report.json
