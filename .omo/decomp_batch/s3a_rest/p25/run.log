@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x5018c0 HouseClass::NotifyPowerStateChange -> HouseClass
+[conv] 0x501ac0 HouseClass::GenerateAttackCoords -> HouseClass
+[conv] 0x502550 HouseClass::StubReturnNullPointer_0 -> HouseClass
+[conv] 0x5025f0 HouseClass::RegisterGain -> HouseClass
+[conv] 0x5051e0 HouseClass::FirstBuildableFromArray -> HouseClass
+[conv] 0x505310 BuildingClass::FindBySWType -> BuildingClass
+[conv] 0x505360 HouseClass::PrerequisitesForTechnoTypeAreListed -> HouseClass
+[conv] 0x505fd0 globalHelper_005FD0 -> _addr_50
+[conv] 0x5060b0 HouseClass::ScanBuildLocation -> HouseClass
+[conv] 0x507b80 ObjectClass::CollectSuperWeaponBuildingTypes -> ObjectClass
+[conv] 0x508150 HouseClass::ComputePowerDistribution -> HouseClass
+[conv] 0x508df0 HouseClass::CanTogglePower -> HouseClass
+[conv] 0x508f60 HouseClass::ToggleGapGeneratorReveal -> HouseClass
+[conv] 0x5092f0 TechnoClass::sub_5092F0 -> TechnoClass
+[conv] 0x5093c0 ObjectClass::sub_5093C0 -> ObjectClass
+[conv] 0x509cd0 HouseClass::Fire_ParaDrop -> HouseClass
+[conv] 0x50a350 HouseClass::FireSuperWeaponAtBestTarget -> HouseClass
+[conv] 0x50b370 HouseClass::ShouldDisableCameo -> HouseClass
+[conv] 0x50bd30 TechnoClass::GetDamageMultiplier -> TechnoClass
+[conv] 0x50c050 TechnoClass::GetTargetSpeedMultiplier -> TechnoClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] BuildingClass            rc=2
+[era] _addr_50                 rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5018c0 HouseClass::NotifyPowerStateChange -> COMPILE_FAIL (attempt 2)
+[ledger] 0x501ac0 HouseClass::GenerateAttackCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x502550 HouseClass::StubReturnNullPointer_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5025f0 HouseClass::RegisterGain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5051e0 HouseClass::FirstBuildableFromArray -> COMPILE_FAIL (attempt 2)
+[ledger] 0x505310 BuildingClass::FindBySWType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x505360 HouseClass::PrerequisitesForTechnoTypeAreListed -> COMPILE_FAIL (attempt 2)
+[ledger] 0x505fd0 globalHelper_005FD0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5060b0 HouseClass::ScanBuildLocation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x507b80 ObjectClass::CollectSuperWeaponBuildingTypes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x508150 HouseClass::ComputePowerDistribution -> COMPILE_FAIL (attempt 2)
+[ledger] 0x508df0 HouseClass::CanTogglePower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x508f60 HouseClass::ToggleGapGeneratorReveal -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5092f0 TechnoClass::sub_5092F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5093c0 ObjectClass::sub_5093C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x509cd0 HouseClass::Fire_ParaDrop -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50a350 HouseClass::FireSuperWeaponAtBestTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50b370 HouseClass::ShouldDisableCameo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50bd30 TechnoClass::GetDamageMultiplier -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50c050 TechnoClass::GetTargetSpeedMultiplier -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p25\batch_report.json
