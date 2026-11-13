@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_5BF8C0@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::sub_5BF8C0",
+ "size": 132,
+ "link_base": 0,
+ "bytes_hex": "83ec20b90f000000e80000000084c0756f8b0d00000000568d442414575051e800000000a1000000008d5424185250e800000000a1fc2d00008b74241c6a016a008b48388b50408b783c03ce8b7034894c24148b4c2420897c241803ce8954241c894c24108b0d000000008d70248b40088b1156508d4424185051ff52085f5e83c420c3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?TestBitArray@@YI_NH@Z",
+   "sym_key": "TestBitArray"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  }
+ ]
+}

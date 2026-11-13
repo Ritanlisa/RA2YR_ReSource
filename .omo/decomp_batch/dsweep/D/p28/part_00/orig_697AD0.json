@@ -1,0 +1,11 @@
+{
+ "addr": "0x697AD0",
+ "name": "BulkData::InitMissionHashing",
+ "size": 133,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x697AD0",
+ "bytes_hex": "51535556578be9e8a41e0000ff1530157e0089442410e86562dfff8bd08d4c2410e88a63fbff6800ef8300e8114113008bf083c40485f6742e8bfe83c9ff33c033dbf2aef7d149741e0fbe14338d4c2410e85a63fbff8bfe83c9ff33c043f2aef7d1493bd972e28b4424105068d4ee8300898544010000e894edd6ff83c4085f5e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

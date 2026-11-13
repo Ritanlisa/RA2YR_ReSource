@@ -1,0 +1,11 @@
+{
+ "addr": "0x726790",
+ "name": "TriggerClass::FireTrigger",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x726790",
+ "bytes_hex": "56578b7c240c8bf157e8729cceff8b462483c004508b08ff5110508bcfe89eb5d7ff8b462885c074128b500483c00450ff5210508bcfe885b5d7ff8a46308bcf50e8cab4d7ff8a4e44518bcfe8bfb4d7ff8b56348b463c83faff74128b0d84eda8002bca3bc87d042bc1eb0233c0508bcfe84ab5d7ff8b56408bcf52e83fb5d7ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?InitMissionHashing@BulkData@@QAEXXZ",
+ "sym_key": "BulkData::InitMissionHashing",
+ "size": 127,
+ "link_base": 0,
+ "bytes_hex": "51535556578be9e800000000e8000000008bcd89442410e8000000008bd08d4c2410e8000000006800000000e8000000008bd883c40485db742e8bfb83c9ff33c033f6f2aef7d149741e0fbe141e8d4c241046e8000000008bfb83c9ff33c0f2aef7d1493bf172e28b4424108bcd898544010000e8000000005f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?LoadMissionList@SessionClass@@QAEPADXZ",
+   "sym_key": "SessionClass::LoadMissionList"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?CheckAvailable@DiskSpace@@QAEKXZ",
+   "sym_key": "DiskSpace::CheckAvailable"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?ComputeHash@@YIHPAXH@Z",
+   "sym_key": "ComputeHash"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?aPath@@3PADA",
+   "sym_key": "aPath"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Object_Init_7CBC11@@YAPADPAD@Z",
+   "sym_key": "Object_Init_7CBC11"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?ComputeHash@@YIHPAXH@Z",
+   "sym_key": "ComputeHash"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

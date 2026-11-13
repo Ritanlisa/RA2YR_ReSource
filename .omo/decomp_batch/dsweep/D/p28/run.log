@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x71e140 TerrainTypeClass::PowerDrainUpdate -> TerrainTypeClass
+[conv] 0x405ac0 ObjectClass::sub_405AC0 -> ObjectClass
+[conv] 0x5cee60 MSEngine::Destructor -> MSEngine
+[conv] 0x5d8fd0 CCFileClass::WriteINIString -> CCFileClass
+[conv] 0x7b1bc0 WinsockInterfaceClass::Receive -> WinsockInterfaceClass
+[conv] 0x780a00 FormatLocaleStringWOL -> _addr_78
+[conv] 0x5e70d0 SkirmishSetup_Setup_5E70D0 -> SkirmishSetup_Setup
+[conv] 0x4a0540 ConnectionPointClass::Release -> ConnectionPointClass
+[conv] 0x4db810 TechnoClass::SetPositionAnimated -> TechnoClass
+[conv] 0x697ad0 BulkData::InitMissionHashing -> BulkData
+[conv] 0x4cfa70 LocomotionClass::CheckBridgeBlock -> LocomotionClass
+[conv] 0x5cedd0 DynamicVector::Map_Delete_5CEDD0 -> DynamicVector
+[conv] 0x720b20 Theme::QueueSong -> Theme
+[conv] 0x46c6a0 BulletTypeClass::SaveLoad_Prefix -> BulletTypeClass
+[conv] 0x726790 TriggerClass::FireTrigger -> TriggerClass
+[conv] 0x722a20 ObjectClass::sub_722A20 -> ObjectClass
+[conv] 0x723510 ObjectClass::sub_723510 -> ObjectClass
+[conv] 0x7d6eff _GetLcidFromLangCountry -> _addr_7D
+[conv] 0x49f920 sub_49F920 -> _addr_49
+[conv] 0x5bf8c0 ObjectClass::sub_5BF8C0 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TerrainTypeClass         rc=0
+[era] ObjectClass              rc=2
+[era] MSEngine                 rc=2
+[era] CCFileClass              rc=2
+[era] WinsockInterfaceClass    rc=2
+[era] _addr_78                 rc=0
+[era] SkirmishSetup_Setup      rc=0
+[era] ConnectionPointClass     rc=2
+[era] TechnoClass              rc=2
+[era] BulkData                 rc=0
+[era] LocomotionClass          rc=2
+[era] DynamicVector            rc=0
+[era] Theme                    rc=2
+[era] BulletTypeClass          rc=0
+[era] TriggerClass             rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_49                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x71e140   MISMATCH         TerrainTypeClass::PowerDrainUpdate
+[diff] 0x405ac0   MISMATCH         ObjectClass::sub_405AC0
+[diff] 0x5bf8c0   MISMATCH         ObjectClass::sub_5BF8C0
+[diff] 0x780a00   MISMATCH         FormatLocaleStringWOL
+[diff] 0x5e70d0   MISMATCH         SkirmishSetup_Setup_5E70D0
+[diff] 0x697ad0   MISMATCH         BulkData::InitMissionHashing
+[diff] 0x5cedd0   MISMATCH         DynamicVector::Map_Delete_5CEDD0
+[diff] 0x46c6a0   MISMATCH         BulletTypeClass::SaveLoad_Prefix
+[diff] 0x726790   MISMATCH         TriggerClass::FireTrigger
+[ledger] 0x71e140 TerrainTypeClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x405ac0 ObjectClass::sub_405AC0 -> NG (attempt 1)
+[ledger] 0x5cee60 MSEngine::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8fd0 CCFileClass::WriteINIString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b1bc0 WinsockInterfaceClass::Receive -> COMPILE_FAIL (attempt 1)
+[ledger] 0x780a00 FormatLocaleStringWOL -> NG (attempt 1)
+[ledger] 0x5e70d0 SkirmishSetup_Setup_5E70D0 -> NG (attempt 1)
+[ledger] 0x4a0540 ConnectionPointClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4db810 TechnoClass::SetPositionAnimated -> COMPILE_FAIL (attempt 1)
+[ledger] 0x697ad0 BulkData::InitMissionHashing -> NG (attempt 1)
+[ledger] 0x4cfa70 LocomotionClass::CheckBridgeBlock -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cedd0 DynamicVector::Map_Delete_5CEDD0 -> NG (attempt 1)
+[ledger] 0x720b20 Theme::QueueSong -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46c6a0 BulletTypeClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x726790 TriggerClass::FireTrigger -> NG (attempt 1)
+[ledger] 0x722a20 ObjectClass::sub_722A20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x723510 ObjectClass::sub_723510 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d6eff _GetLcidFromLangCountry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49f920 sub_49F920 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bf8c0 ObjectClass::sub_5BF8C0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "branch_order": 2,
+  "frame_sched": 1,
+  "regalloc": 2,
+  "eval_order": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p28\batch_report.json

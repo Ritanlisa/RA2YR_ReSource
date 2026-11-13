@@ -1,0 +1,39 @@
+{
+ "symbol": "?Map_Delete_5CEDD0@DynamicVector@@QAEPADXZ",
+ "sym_key": "DynamicVector::Map_Delete_5CEDD0",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "53568bf15733db8d7e28895e0457895e08c7460c01000000c70600000000c746140a000000895e10e8000000008b0683c4048bce895e30895e34c6463801885e39c7462c00000000c746400a000000895e3c895e48895e4cc6465001885e51c7464400000000c746580a000000895e54ff500c8bcfe8000000008b56048b4e2c52ff510c8b065f5e5bc3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_MapStage@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_MapStage"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_MSAnimEntry@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_MSAnimEntry"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_MSSfxEntry@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_MSSfxEntry"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?Alt2@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt2"
+  }
+ ]
+}

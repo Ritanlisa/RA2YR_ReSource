@@ -1,0 +1,75 @@
+{
+ "symbol": "?SaveLoad_Prefix@BulletTypeClass@@QAGHPAH@Z",
+ "sym_key": "BulletTypeClass::SaveLoad_Prefix",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b7424085056e80000000085c07c6585f6741e8d4c240c518bcee8000000008b16b800000000890289460489460889460c8b0ee8000000008b0ee8000000008d86d2020000506800000000e8000000008d8eb0020000516800000000e80000000081c6b1020000566800000000e80000000033c05ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?ObjectTypeClass__LoadCleanup@@YGHPAXPAH@Z",
+   "sym_key": "ObjectTypeClass__LoadCleanup"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Construct@ObjectTypeClass@@QAEPAIH@Z",
+   "sym_key": "ObjectTypeClass::Construct"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?vt_BulletTypeClass_4@@3PAXA",
+   "sym_key": "vt_BulletTypeClass_4"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?LoadAnim@VoxelAnimType@@QAEHXZ",
+   "sym_key": "VoxelAnimType::LoadAnim"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Load2DArt@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::Load2DArt"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

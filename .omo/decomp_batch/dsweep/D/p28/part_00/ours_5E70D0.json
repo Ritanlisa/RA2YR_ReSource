@@ -1,0 +1,33 @@
+{
+ "symbol": "?SkirmishSetup_Setup_5E70D0@@YIIPAXH@Z",
+ "sym_key": "Unnamed::SkirmishSetup_Setup_5E70D0",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "51558bea578bf985ed75075f83c8ff5d59c3535633f633db5656688b010000685305000057e80000000085c0894424107e226a00566899010000685305000057e8000000003bc575028bde8b442410463bf07cde6a00536886010000685305000057e8000000006a00536897010000685305000057e8000000008bc35e5b5f5d59c3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?FireTrigger@TriggerClass@@QAEHPAH@Z",
+ "sym_key": "TriggerClass::FireTrigger",
+ "size": 153,
+ "link_base": 0,
+ "bytes_hex": "56578bf1e8000000008b462483c004508b08ff51108b7c240c5057e8000000008b462885c074118b500483c00450ff52105057e8000000008b4e3033c881e1ff00000033c8518bcfe8000000008a56448bcf8854240c8b44240c50e8000000008b46348b4e3c83f8ff74188b15540a0000538bda2bd83bd95b7c0433c9eb042bc203c85157e8000000008b4e405157e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

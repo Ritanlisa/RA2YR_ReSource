@@ -1,0 +1,11 @@
+{
+ "addr": "0x71E140",
+ "name": "TerrainTypeClass::PowerDrainUpdate",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71E140",
+ "bytes_hex": "56578b7c240c8bf157e8922acfff8b86940200008bcf50e8f43bd8ff8a8eb0020000518bcfe8363bd8ff8a96b10200008bcf52e8283bd8ff8a86b20200008bcf50e81a3bd8ff8b8e98020000518bcfe8bc3bd8ff8a96b30200008bcf52e8fe3ad8ff8b86a00200008bcf50e8a03bd8ff8b8ea4020000518bcfe8b23bd8ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

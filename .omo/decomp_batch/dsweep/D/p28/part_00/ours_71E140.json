@@ -1,0 +1,69 @@
+{
+ "symbol": "?PowerDrainUpdate@TerrainTypeClass@@QAEHPAH@Z",
+ "sym_key": "TerrainTypeClass::PowerDrainUpdate",
+ "size": 179,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf157e8000000008b869402000050e8000000008b4c240c33d28a96b002000080e1000bca518bcfe8000000008b8eb00200008b44240c33c881e1ff00000033c18bcf50e8000000008b96b00200008bcf33d081e2ff00000033d052e8000000008b869802000050e8000000008b8eb00200008b44240c33c881e1ff00000033c8518bcfe800000000d986a0020000e80000000050e8000000008b96a40200008bcf52e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::ProcessPower"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?Add_float@Checksummer@@QAEHPAX@Z",
+   "sym_key": "Checksummer::Add_float"
+  }
+ ]
+}

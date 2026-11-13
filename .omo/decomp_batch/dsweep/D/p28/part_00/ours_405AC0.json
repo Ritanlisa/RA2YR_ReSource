@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_405AC0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_405AC0",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "5356578bf98bb7c00000008bcee8000000008bd88b462483785c21723733d28bcfe8000000008b4624f6401088740e85db750a8b8e6802000085c974328b485c8b50585152b900000000e80000000083f821730f8bd38bcfe8000000005f5e33c05bc389863c010000899e480100005f5e33c05bc3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?SelectRandom@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::SelectRandom"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?BindChannelAudioStream@@YIXPAXPAH@Z",
+   "sym_key": "BindChannelAudioStream"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?BindChannelAudioStream@@YIXPAXPAH@Z",
+   "sym_key": "BindChannelAudioStream"
+  }
+ ]
+}

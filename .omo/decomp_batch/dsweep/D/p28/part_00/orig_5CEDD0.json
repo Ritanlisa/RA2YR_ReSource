@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CEDD0",
+ "name": "Map_Delete_5CEDD0",
+ "size": 134,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CEDD0",
+ "bytes_hex": "5355568bf133db578d6e28895e048bcd895e08c6460c01885e0dc70694ea7e00c746140a000000895e10e821581e008d7e2cb80a0000008bce895f04895f08c6470c01885f0dc70774ea7e00894714895f10895e48895e4cc6465001885e51c7464454ea7e00894658895e548b06ff500c8bcde8f8641e008b178bcfff520c8bc65f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
