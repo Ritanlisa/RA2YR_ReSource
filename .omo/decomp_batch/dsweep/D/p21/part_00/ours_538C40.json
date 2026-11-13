@@ -1,0 +1,75 @@
+{
+ "symbol": "?sub_538C40@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_538C40",
+ "size": 118,
+ "link_base": 0,
+ "bytes_hex": "83ec60518d4c2410e8000000006a008d4c2410e80000000084c0742e6a018d4c2410e800000000680000010068000000008d4c2414e8000000008d4c240ce800000000c60500000000008b44240c8d4c2400c70000000000e8000000008b4c240cc701000000008d4c240ce80000000083c460c20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Load@FileClass@@QAEHPAX@Z",
+   "sym_key": "FileClass::Load"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F91C@@3EA",
+   "sym_key": "DataGlobal_A8F91C"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Read@CCFileClass@@QAEIPAXH@Z",
+   "sym_key": "CCFileClass::Read"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Reset@CCFileClass@@QAEHXZ",
+   "sym_key": "CCFileClass::Reset"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F91C@@3EA",
+   "sym_key": "DataGlobal_A9F91C"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

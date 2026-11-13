@@ -1,0 +1,69 @@
+{
+ "symbol": "?sub_5595F0@ObjectClass@@QAEHPAD@Z",
+ "sym_key": "ObjectClass::sub_5595F0",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "83ec60538bd956578d4c2418e8000000008b7c24708b7308e8000000005650680000000057e80000000083c4108d4c241857e8000000006a008d4c241ce8000000003c0174cf8b4424188d4c240cc70000000000e8000000008b4c2418c701000000008d4c2418e8000000005f5e5b83c460c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Construct3@CCFileClass@@QAEPAV1@XZ",
+   "sym_key": "CCFileClass::Construct3"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "_rand",
+   "sym_key": "rand"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "??_C@_0O@BGCN@SAVE?$CF04lX?4?$CF3s?$AA@",
+   "sym_key": "??_C@_0O@BGCN@SAVE?$CF04lX?4?$CF3s?$AA@"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?SetFileName@FileClass@@QAEHPAX@Z",
+   "sym_key": "FileClass::SetFileName"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c2990 _TClassFactory_VBuildingTypeClass::GetClassIdentifier -> _TClassFactory_VBuildingTypeClass
+[conv] 0x6c2b10 _TClassFactory_VAircraftTypeClass::GetClassIdentifier -> _TClassFactory_VAircraftTypeClass
+[conv] 0x6c2e10 _TClassFactory_VBulletTypeClass::GetClassIdentifier -> _TClassFactory_VBulletTypeClass
+[conv] 0x6c3110 _TClassFactory_VOverlayTypeClass::GetClassIdentifier -> _TClassFactory_VOverlayTypeClass
+[conv] 0x6c3290 _TClassFactory_VSmudgeTypeClass::GetClassIdentifier -> _TClassFactory_VSmudgeTypeClass
+[conv] 0x6c3b90 _TClassFactory_VAnimTypeClass::GetClassIdentifier -> _TClassFactory_VAnimTypeClass
+[conv] 0x6c3d10 _TClassFactory_VHouseTypeClass::GetClassIdentifier -> _TClassFactory_VHouseTypeClass
+[conv] 0x6c3e90 _TClassFactory_VHouseClass::ddtor -> _TClassFactory_VHouseClass
+[conv] 0x6c5390 _TClassFactory_VWarheadTypeClass::GetClassIdentifier -> _TClassFactory_VWarheadTypeClass
+[conv] 0x6c5810 _TClassFactory_VParticleTypeClass::GetClassIdentifier -> _TClassFactory_VParticleTypeClass
+[conv] 0x6c5b10 _TClassFactory_VParticleSystemTypeClass::GetClassIdentifier -> _TClassFactory_VParticleSystemTypeClass
+[conv] 0x6c5c90 _TClassFactory_VAITriggerTypeClass::GetClassIdentifier -> _TClassFactory_VAITriggerTypeClass
+[conv] 0x7baf10 XSurface::GetPixelAtCoords -> XSurface
+[conv] 0x5595f0 ObjectClass::sub_5595F0 -> ObjectClass
+[conv] 0x522700 InfantryClass::CaptureAttackerInfo -> InfantryClass
+[conv] 0x4f3ee0 GraphicMenuShortcutItem::AddRef -> GraphicMenuShortcutItem
+[conv] 0x41e540 AITriggerTypeClass::LoadTypeData -> AITriggerTypeClass
+[conv] 0x6ca730 sub_6CA730 -> _addr_6C
+[conv] 0x516bf0 HoverLocomotionClass::ClearLocomotionDirty_0 -> HoverLocomotionClass
+[conv] 0x538c40 ObjectClass::sub_538C40 -> ObjectClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VBuildingTypeClass rc=2
+[era] _TClassFactory_VAircraftTypeClass rc=2
+[era] _TClassFactory_VBulletTypeClass rc=0
+[era] _TClassFactory_VOverlayTypeClass rc=2
+[era] _TClassFactory_VSmudgeTypeClass rc=2
+[era] _TClassFactory_VAnimTypeClass rc=0
+[era] _TClassFactory_VHouseTypeClass rc=0
+[era] _TClassFactory_VHouseClass rc=2
+[era] _TClassFactory_VWarheadTypeClass rc=2
+[era] _TClassFactory_VParticleTypeClass rc=0
+[era] _TClassFactory_VParticleSystemTypeClass rc=0
+[era] _TClassFactory_VAITriggerTypeClass rc=0
+[era] XSurface                 rc=2
+[era] ObjectClass              rc=0
+[era] InfantryClass            rc=0
+[era] GraphicMenuShortcutItem  rc=2
+[era] AITriggerTypeClass       rc=0
+[era] _addr_6C                 rc=0
+[era] HoverLocomotionClass     rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c2e10   MISMATCH         _TClassFactory_VBulletTypeClass::GetClassIdentifier
+[diff] 0x6c3b90   MISMATCH         _TClassFactory_VAnimTypeClass::GetClassIdentifier
+[diff] 0x6c3d10   MISMATCH         _TClassFactory_VHouseTypeClass::GetClassIdentifier
+[diff] 0x6c5810   MISMATCH         _TClassFactory_VParticleTypeClass::GetClassIdentifier
+[diff] 0x6c5b10   MISMATCH         _TClassFactory_VParticleSystemTypeClass::GetClassIdentifier
+[diff] 0x6c5c90   MISMATCH         _TClassFactory_VAITriggerTypeClass::GetClassIdentifier
+[diff] 0x5595f0   MISMATCH         ObjectClass::sub_5595F0
+[diff] 0x538c40   MISMATCH         ObjectClass::sub_538C40
+[diff] 0x522700   MISMATCH         InfantryClass::CaptureAttackerInfo
+[diff] 0x41e540   MISMATCH         AITriggerTypeClass::LoadTypeData
+[diff] 0x6ca730   MISMATCH         sub_6CA730
+[diff] 0x516bf0   MISMATCH         HoverLocomotionClass::ClearLocomotionDirty_0
+[ledger] 0x6c2990 _TClassFactory_VBuildingTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2b10 _TClassFactory_VAircraftTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2e10 _TClassFactory_VBulletTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6c3110 _TClassFactory_VOverlayTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3290 _TClassFactory_VSmudgeTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3b90 _TClassFactory_VAnimTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6c3d10 _TClassFactory_VHouseTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6c3e90 _TClassFactory_VHouseClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5390 _TClassFactory_VWarheadTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5810 _TClassFactory_VParticleTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6c5b10 _TClassFactory_VParticleSystemTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6c5c90 _TClassFactory_VAITriggerTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x7baf10 XSurface::GetPixelAtCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5595f0 ObjectClass::sub_5595F0 -> NG (attempt 1)
+[ledger] 0x522700 InfantryClass::CaptureAttackerInfo -> NG (attempt 1)
+[ledger] 0x4f3ee0 GraphicMenuShortcutItem::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41e540 AITriggerTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x6ca730 sub_6CA730 -> NG (attempt 1)
+[ledger] 0x516bf0 HoverLocomotionClass::ClearLocomotionDirty_0 -> NG (attempt 1)
+[ledger] 0x538c40 ObjectClass::sub_538C40 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "const_fold": 8,
+  "frame_sched": 3,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p21\batch_report.json

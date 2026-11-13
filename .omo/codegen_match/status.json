@@ -10615,6 +10615,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x41e540": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+42 mov dword ptr [esi + 4], 0x7e2a34",
+  "name": "AITriggerTypeClass::LoadTypeData",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "AITriggerTypeClass::LoadTypeData",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x41e5c0": {
   "attempts": 1,
   "clean": false,
@@ -55120,6 +55132,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4f3ee0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "GraphicMenuShortcutItem::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GraphicMenuShortcutItem::AddRef",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4f3f60": {
   "attempts": 1,
   "clean": false,
@@ -60414,6 +60438,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x516bf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+47 lea ecx, [edx + 0x218]",
+  "name": "HoverLocomotionClass::ClearLocomotionDirty_0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "JumpjetLocomotionClass::ClearLocomotionDirty_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x516c70": {
   "attempts": 1,
   "clean": false,
@@ -61176,6 +61212,18 @@
   "orig_name": "InfantryClass::GetProductionHouse",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x522700": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+10 je 0x522772",
+  "name": "InfantryClass::CaptureAttackerInfo",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "InfantryClass::CaptureAttackerInfo",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x522780": {
@@ -66713,6 +66761,18 @@
   "name": "sub_538C20",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x538c40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0x6c",
+  "name": "ObjectClass::sub_538C40",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "sub_538C40",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x538cc0": {
   "attempts": 1,
@@ -74685,6 +74745,18 @@
   "orig_name": "Options::PrepareSaveLoadDlg",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5595f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0x6c",
+  "name": "ObjectClass::sub_5595F0",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "sub_5595F0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x559d30": {
@@ -125236,6 +125308,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c2990": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_TClassFactory_VBuildingTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TClassFactory_BuildingTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c2a10": {
   "attempts": 1,
   "clean": false,
@@ -125294,6 +125378,18 @@
   "orig_name": "TClassFactory_AircraftTypeClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c2b10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_TClassFactory_VAircraftTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TClassFactory_AircraftTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6c2b90": {
@@ -125423,6 +125519,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c2e10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VBulletTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_BulletTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c2e90": {
   "attempts": 1,
   "clean": false,
@@ -125543,6 +125651,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c3110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_TClassFactory_VOverlayTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TClassFactory_OverlayTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c3190": {
   "attempts": 1,
   "clean": false,
@@ -125601,6 +125721,18 @@
   "orig_name": "TClassFactory_SmudgeTypeClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c3290": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_TClassFactory_VSmudgeTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TClassFactory_SmudgeTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6c3310": {
@@ -125982,6 +126114,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c3b90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VAnimTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_AnimTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c3c10": {
   "attempts": 1,
   "clean": false,
@@ -126038,6 +126182,18 @@
   "name": "_TClassFactory_VHouseTypeClass::GetClassName",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TClassFactory_HouseTypeClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c3d10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VHouseTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_HouseTypeClass::GetClassIdentifier",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -126100,6 +126256,18 @@
   "orig_name": "TClassFactory_HouseClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c3e90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_TClassFactory_VHouseClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TClassFactory_HouseClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6c3f10": {
@@ -127093,6 +127261,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c5390": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_TClassFactory_VWarheadTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TClassFactory_WarheadTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c5410": {
   "attempts": 1,
   "clean": false,
@@ -127292,6 +127472,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c5810": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VParticleTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_ParticleTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c5890": {
   "attempts": 1,
   "clean": false,
@@ -127424,6 +127616,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c5b10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VParticleSystemTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_ParticleSystemTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c5b90": {
   "attempts": 1,
   "clean": false,
@@ -127480,6 +127684,18 @@
   "name": "_TClassFactory_VAITriggerTypeClass::GetClassName",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TClassFactory_AITriggerTypeClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c5c90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VAITriggerTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_AITriggerTypeClass::GetClassIdentifier",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -128908,6 +129124,17 @@
   "orig_name": "sub_6CA6A0",
   "rule_violations": 3,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6ca730": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0xc",
+  "name": "sub_6CA730",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "sub_6CA730",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ca7b0": {
@@ -166181,6 +166408,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "XSurface::SetPixel",
   "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7baf10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "XSurface::GetPixelAtCoords",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "XSurface::GetPixelAtCoords",
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

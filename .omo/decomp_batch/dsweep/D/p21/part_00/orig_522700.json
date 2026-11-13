@@ -1,0 +1,11 @@
+{
+ "addr": "0x522700",
+ "name": "InfantryClass::CaptureAttackerInfo",
+ "size": 119,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x522700",
+ "bytes_hex": "568b742408578bf985f674668b068bceff502c83f80f755a568bcfe860bb1e008b168bceff92c400000084c08b0674276a018bceff90cc0000008987180500008b166a018bceff92d000000089871c0500005f5ec204008bceff90880000008987180500008b168bceff523c89871c0500005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

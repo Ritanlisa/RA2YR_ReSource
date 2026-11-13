@@ -1,0 +1,39 @@
+{
+ "symbol": "?ClearLocomotionDirty_0@HoverLocomotionClass@@QAGHPAE@Z",
+ "sym_key": "HoverLocomotionClass::ClearLocomotionDirty_0",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "568b742408568b06ff506084c0744f8b4e088b81ac00000085c0744283f807743dc64664018b15000000006a1e6a148d8a68050300e800000000894668a1000000006a636a008d8818020000e80000000083f8327d088b4e68f7d9894e688b1656ff521084c074068b0656ff504856e8000000005ec20800",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?StreamClass__ClearDirty@@YGHPAX@Z",
+   "sym_key": "StreamClass__ClearDirty"
+  }
+ ]
+}

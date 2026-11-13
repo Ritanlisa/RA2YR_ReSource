@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_6CA730@@YIHPAGPAVObjectClass@@@Z",
+ "sym_key": "Unnamed::sub_6CA730",
+ "size": 124,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556578bf16a3a8bea56e8000000008bf86a0a6a005666c7070000e8000000008d77026a3a568ad8e8000000008bf86a0a6a005666c7070000e8000000006a0a83c7026a005788442447e8000000000fbe4c2447884424488b44244825ff0000000fbed350515255e80000000083c4445f5e5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "_wcschr",
+   "sym_key": "wcschr"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?WideChar__ToLong@@YAHHHH@Z",
+   "sym_key": "WideChar__ToLong"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "_wcschr",
+   "sym_key": "wcschr"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?WideChar__ToLong@@YAHHHH@Z",
+   "sym_key": "WideChar__ToLong"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?WideChar__ToLong@@YAHHHH@Z",
+   "sym_key": "WideChar__ToLong"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?sub_6C9940@@YAHPAXHHH@Z",
+   "sym_key": "sub_6C9940"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x516BF0",
+ "name": "JumpjetLocomotionClass::ClearLocomotionDirty_0",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x516BF0",
+ "bytes_hex": "568b742408568b06ff506084c0744f8b4e088b81ac00000085c0744283f807743dc64664018b1530b2a8006a1e6a148d8a18020000e8b65b1400894668a130b2a8006a636a008d8818020000e89f5b140083f8327d088b4e68f7d9894e688b1656ff521084c074068b0656ff504856e8ac3c04005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

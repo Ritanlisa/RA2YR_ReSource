@@ -1,0 +1,15 @@
+{
+ "symbol": "?CaptureAttackerInfo@InfantryClass@@QAEXPAH@Z",
+ "sym_key": "InfantryClass::CaptureAttackerInfo",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "568b742408578bf985f674648b0656ff502c83f80f75598bcfe8000000008b0e56ff91c400000084c08b060f94c184c9741e56ff90880000008987180500008b1656ff523c89871c0500005f5ec204006a0156ff90cc0000008987180500008b066a0156ff90d000000089871c0500005f5ec20400",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?ActivateEffect@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::ActivateEffect"
+  }
+ ]
+}
