@@ -1,0 +1,93 @@
+{
+ "symbol": "?CleanupDeploy@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::CleanupDeploy",
+ "size": 476,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53568bf133db389e810000000f85ba0100008b0656ff908400000085c00f84a90100008b0e56ff91840000003898ee0500007415a1000000008b16506a01535356ff928c040000eb0d8b0e5353535356ff918c0400008b86a00000008b969c0000008b8ea40000008944240c8b86600200008954240853894c24148d500383c0fd52508d442414b9f801000050e8000000008b0e56ff91840000003898d10c000074098b1656ff92180400008b0656ff90840000003998f8050000740b56b900000000e8000000008b0e555756ff91840000003898e4050000742a33c98a8ef4000000e8000000008bf83bfb74178b175357ff92c80300008b7f303bfb7406f647140475e98b8e1c0200005356e8000000008b0656ff90c002000085c07e4f3bf3741ff646140474198d8e6005000051b9f8010000e8000000008be83beb7511eb2c8b1656ff92bc0100008be83beb741d8bbe0c0500008b0656f7dfff503857508bcde800000000899e0c0500008b86e80300005f3bc35d74098b0e56ff91980400008b8e8c040000e8000000008b8ea8040000c786a004000001000000899ea4040000e8000000008b8ec4040000889ebc040000899ec0040000e800000000889ed8040000899edc0400008bcee8000000005e5b83c40cc3",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?RevealArea2@MapClass@@QAEHPAXHHH@Z",
+   "sym_key": "MapClass::RevealArea2"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5D8@@3IA",
+   "sym_key": "DataGlobal_87F5D8"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?RemoveFromDynamicVector@TechnoClass@@QAEHD@Z",
+   "sym_key": "TechnoClass::RemoveFromDynamicVector"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?GetDB@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::GetDB"
+  },
+  {
+   "off": 273,
+   "type": "REL32",
+   "sym": "?RegisterGain@HouseClass@@QAEPAIHD@Z",
+   "sym_key": "HouseClass::RegisterGain"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 313,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 359,
+   "type": "REL32",
+   "sym": "?SetThreatBounds@CellClass@@QAEHHH@Z",
+   "sym_key": "CellClass::SetThreatBounds"
+  },
+  {
+   "off": 397,
+   "type": "REL32",
+   "sym": "?ReleaseChannel@Mixer@@QAEHXZ",
+   "sym_key": "Mixer::ReleaseChannel"
+  },
+  {
+   "off": 424,
+   "type": "REL32",
+   "sym": "?ReleaseChannel@Mixer@@QAEHXZ",
+   "sym_key": "Mixer::ReleaseChannel"
+  },
+  {
+   "off": 447,
+   "type": "REL32",
+   "sym": "?ReleaseChannel@Mixer@@QAEHXZ",
+   "sym_key": "Mixer::ReleaseChannel"
+  },
+  {
+   "off": 466,
+   "type": "REL32",
+   "sym": "?ProcessCmd@RadioClass@@QAEHXZ",
+   "sym_key": "RadioClass::ProcessCmd"
+  }
+ ]
+}

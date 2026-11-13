@@ -1,0 +1,177 @@
+{
+ "symbol": "?RenderLoop@BinkMovie@@QAE_NHHH@Z",
+ "sym_key": "BinkMovie::RenderLoop",
+ "size": 553,
+ "link_base": 0,
+ "bytes_hex": "83ec18a100000000c7442404000000008944240053df6c2404568bf1d81d00000000dfe0f6c4407540d90500000000d80d000000008b0d0000000083ec08890d00000000dd1c24e8000000008bc88b44242c8b560433c881e1ff00000033c15052e80000000083c4108b0d000000008a462c85c90f84a000000084c0757f8bcee8000000008b46046a0050c6462c01e8000000008b460c8b0d0000000083c4083bc175458b15000000008d4c24105152e8000000008b0d000000008d4424105051e8000000008b56148b5c24148b46108b4e0c03d36a01528b54241803c250518bcee800000000eb318b56148b4e106a015251508bcee800000000eb1d3c0175198bcee8000000008b56046a0152c6462c00e80000000083c4088a462d84c075218b460450e80000000083c4048944240885c00f94c084c0884424080f84d200000055578b7c242c8b4e0451e8000000008b4e2083c40432db85c9885e2d741e8b56048b46240faf420c50e8000000008ad884db7408578bcee8000000008b0f6a006a0057ff515c85c08944242c74428b1757ff52748be88b0757ff90800000008b4e0884db740681c9000000808b542430518b4c2438518b4e0452508b44243c555051e8000000008b1783c41c57ff5260578bcee8000000008b4604508b480c894e30e8000000008b560452e80000000083c40885c00f844bffffff240133c90c015f85c05d5e0f95c18ac15b83c418c20c008b44240833c985c00f95c15e8ac15b83c418c20c00",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C490@@3IA",
+   "sym_key": "DataGlobal_89C490"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB9C@@3MA",
+   "sym_key": "DataGlobal_A8EB9C"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?flt_7E3A70@@3MA",
+   "sym_key": "flt_7E3A70"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB9C@@3MA",
+   "sym_key": "DataGlobal_A8EB9C"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB9C@@3MA",
+   "sym_key": "DataGlobal_A8EB9C"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C490@@3IA",
+   "sym_key": "DataGlobal_89C490"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?BinkSetVolume@@YAHPAXHZZ",
+   "sym_key": "BinkSetVolume"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Active@@3IA",
+   "sym_key": "g_DDraw_Active"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?BinkPause@@YAHHHZZ",
+   "sym_key": "BinkPause"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?RenderSingleFrame@BinkMovie@@QAEHHHHD@Z",
+   "sym_key": "BinkMovie::RenderSingleFrame"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?RenderSingleFrame@BinkMovie@@QAEHHHHD@Z",
+   "sym_key": "BinkMovie::RenderSingleFrame"
+  },
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "?BinkPause@@YAHHHZZ",
+   "sym_key": "BinkPause"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?BinkWait@@YAHPAXZZ",
+   "sym_key": "BinkWait"
+  },
+  {
+   "off": 333,
+   "type": "REL32",
+   "sym": "?BinkDoFrame@@YAHPAXZZ",
+   "sym_key": "BinkDoFrame"
+  },
+  {
+   "off": 364,
+   "type": "REL32",
+   "sym": "?CheckKeyframeTransition@BinkMovie@@QAEDI@Z",
+   "sym_key": "BinkMovie::CheckKeyframeTransition"
+  },
+  {
+   "off": 378,
+   "type": "REL32",
+   "sym": "?AdjustSurfaceFormat@BinkMovie@@QAEHH@Z",
+   "sym_key": "BinkMovie::AdjustSurfaceFormat"
+  },
+  {
+   "off": 453,
+   "type": "REL32",
+   "sym": "?BinkCopyToBuffer@@YAHPAXHHHHHHZZ",
+   "sym_key": "BinkCopyToBuffer"
+  },
+  {
+   "off": 470,
+   "type": "REL32",
+   "sym": "?BlitToTarget@BinkMovie@@QAEPAIH@Z",
+   "sym_key": "BinkMovie::BlitToTarget"
+  },
+  {
+   "off": 485,
+   "type": "REL32",
+   "sym": "?BinkNextFrame@@YAHHZZ",
+   "sym_key": "BinkNextFrame"
+  },
+  {
+   "off": 494,
+   "type": "REL32",
+   "sym": "?BinkWait@@YAHPAXZZ",
+   "sym_key": "BinkWait"
+  }
+ ]
+}

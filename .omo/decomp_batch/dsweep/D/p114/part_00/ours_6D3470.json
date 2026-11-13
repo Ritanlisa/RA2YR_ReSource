@@ -1,0 +1,81 @@
+{
+ "symbol": "?DrawBuildingShadow@ObjectClass@@QAEHPAH0D@Z",
+ "sym_key": "ObjectClass::DrawBuildingShadow",
+ "size": 358,
+ "link_base": 0,
+ "bytes_hex": "8a44240c83ec1c84c056578bf17407b900000000eb2b8b4c24288b410885c07e0c8b410c85c07e05e8000000008b44242c8bc88b500885d27e0c8b500c85d27e05e8000000005333ff8d9ee40000008b0b6a008b4124c1e8100fbfc0c1e00805800000009981e2ff00000003c2c1f808c1e008500fbf4124c1e00805800000008d4c24149981e2ff00000003c2c1f808c1e00850e8000000008b4c240c8d5424348d44242c5250894c243ce8000000008b48048b108b86b0000000c74424203c0000002bd0a10400000083ea1ec74424241e000000895424188b96b40000002bc203c18d4c24188944241ce8000000008b86e00000004783c3043bf80f8c4dffffffa1000000005b85c074528d7480fb8bf8c1e6028b0d000000006a008d4424346a008b1431508954243cba000000008d4c2420e8000000008bc88b11895424308b410885c07e108b510c85d27e098d4c2430e80000000083ee144f75b75f5e83c41cc20c00",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?DrawBuildings@TacticalClass@@QAEPAXXZ",
+   "sym_key": "TacticalClass::DrawBuildings"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?DrawBuildings@TacticalClass@@QAEPAXXZ",
+   "sym_key": "TacticalClass::DrawBuildings"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?DrawBuildings@TacticalClass@@QAEPAXXZ",
+   "sym_key": "TacticalClass::DrawBuildings"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?g_CraterCreationState@@3IA",
+   "sym_key": "g_CraterCreationState"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?g_CraterPool@@3PAXA",
+   "sym_key": "g_CraterPool"
+  },
+  {
+   "off": 300,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 309,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "?DrawBuildings@TacticalClass@@QAEPAXXZ",
+   "sym_key": "TacticalClass::DrawBuildings"
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "symbol": "?FindPassableNeighbor@MapClass@@QAEHXZ",
+ "sym_key": "MapClass::FindPassableNeighbor",
+ "size": 486,
+ "link_base": 0,
+ "bytes_hex": "83ec18b90000000053e800000000b900000000e8000000008bd885db0f84bd0100005556578b43388b0d000000003bc10f828d01000083c1283bc10f83820100006a048bcbe8000000006a028bcb8bf0e8000000008b4e388be88b4338896c241c3bc10f85ae0000008a8b1a0100008a961a0100003aca0f869a00000050e8000000008b4b38894424183bc10f84850000008b1500000000668b7e248b048a33d28a961a010000668b76268b88e40200008bea8bc599f7f98bc5662bfa99f7f98b4c2410662bf00fbfc68bd033d181e2ff00000033ca894c2410894c24148b0d0000000085c974180faf05000000000fbfd703c28d0480c1e0048b4c0838eb0383c9ff6aff518b4c24208d54241ce8000000008b6c241c8b43388b4d383bc10f859e0000008a8b1a0100008a951a0100003aca0f868a00000050e8000000008b5b388bc83bcb747b8b1500000000668b75248b049a33db8a9d1a0100008bb8e40200008bc399f7ff8bc3662bf299f7ff668b5526662bd00fbfc28b5424208bf833fa81e7ff00000033d789542420895424248b150000000085d274180faf05000000000fbff603c68d0480c1e0048b541038eb0383caff6aff528d54242ce800000000b900000000e8000000008bd885db0f854efeffff5f5e5d5b83c418c38bc35b83c418c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_TerrainBuildConfig@@3IA",
+   "sym_key": "g_TerrainBuildConfig"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?SelectTerrainTileVariant@@YGHH@Z",
+   "sym_key": "SelectTerrainTileVariant"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?PlaceMapSeedClassBuildings@@YIHHPAXHH@Z",
+   "sym_key": "PlaceMapSeedClassBuildings"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?SelectTerrainTileVariant@@YGHH@Z",
+   "sym_key": "SelectTerrainTileVariant"
+  },
+  {
+   "off": 330,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  },
+  {
+   "off": 404,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 415,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 447,
+   "type": "REL32",
+   "sym": "?PlaceMapSeedClassBuildings@@YIHHPAXHH@Z",
+   "sym_key": "PlaceMapSeedClassBuildings"
+  },
+  {
+   "off": 452,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 457,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

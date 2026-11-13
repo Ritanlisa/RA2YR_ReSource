@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p114\part_00
+=== convert (20 addrs) ===
+[conv] 0x52a2f0 ObjectClass::sub_52A2F0 -> ObjectClass
+[conv] 0x432e40 BinkMovie::RenderLoop -> BinkMovie
+[conv] 0x5cdee0 MSPrintAnim::Draw -> MSPrintAnim
+[conv] 0x6f6ac0 TechnoClass::CleanupDeploy -> TechnoClass
+[conv] 0x507b80 ObjectClass::CollectSuperWeaponBuildingTypes -> ObjectClass
+[conv] 0x507d70 HouseClass::CollectInfantryBuildCandidates -> HouseClass
+[conv] 0x77f520 sub_77F520 -> _addr_77
+[conv] 0x6efc70 ObjectClass::ProcessAISuperWeaponSelection -> ObjectClass
+[conv] 0x74ad80 VoxelAnimTypeClass::Constructor -> VoxelAnimTypeClass
+[conv] 0x56e990 Cell::UpdateTileType -> Cell
+[conv] 0x6d3470 ObjectClass::DrawBuildingShadow -> ObjectClass
+[conv] 0x5353d0 FindRadarClosestEnemy -> _addr_53
+[conv] 0x5a17f0 MapClass::FindPassableNeighbor -> MapClass
+[conv] 0x644be0 BuildingTypeClass::Construct -> BuildingTypeClass
+[conv] 0x5a76e0 MapSeedClass::ValidateRectBounds -> MapSeedClass
+[conv] 0x43ef90 BuildingClass::GetProductionFrame -> BuildingClass
+[conv] 0x5ce0c0 ObjectClass::sub_5CE0C0 -> ObjectClass
+[conv] 0x65f520 ScenarioClass::ShowMissionBriefing -> ScenarioClass
+[conv] 0x6fcdb0 TechnoClass::AssignTarget_SyncLog -> TechnoClass
+[conv] 0x5a7250 IsAreaClearMap -> _addr_5A
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] BinkMovie                rc=0
+[era] MSPrintAnim              rc=2
+[era] TechnoClass              rc=2
+[era] HouseClass               rc=0
+[era] _addr_77                 rc=2
+[era] VoxelAnimTypeClass       rc=2
+[era] Cell                     rc=2
+[era] _addr_53                 rc=0
+[era] MapClass                 rc=0
+[era] BuildingTypeClass        rc=2
+[era] MapSeedClass             rc=0
+[era] BuildingClass            rc=2
+[era] ScenarioClass            rc=2
+[era] _addr_5A                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6d3470   MISMATCH         ObjectClass::DrawBuildingShadow
+[diff] 0x432e40   MISMATCH         BinkMovie::RenderLoop
+[diff] 0x6f6ac0   MISMATCH         TechnoClass::CleanupDeploy
+[diff] 0x507d70   MISMATCH         HouseClass::CollectInfantryBuildCandidates
+[diff] 0x5353d0   MISMATCH         FindRadarClosestEnemy
+[diff] 0x5a17f0   MISMATCH         MapClass::FindPassableNeighbor
+[diff] 0x5a76e0   MISMATCH         MapSeedClass::ValidateRectBounds
+[ledger] 0x52a2f0 ObjectClass::sub_52A2F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x432e40 BinkMovie::RenderLoop -> NG (attempt 1)
+[ledger] 0x5cdee0 MSPrintAnim::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f6ac0 TechnoClass::CleanupDeploy -> NG (attempt 1)
+[ledger] 0x507b80 ObjectClass::CollectSuperWeaponBuildingTypes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x507d70 HouseClass::CollectInfantryBuildCandidates -> NG (attempt 1)
+[ledger] 0x77f520 sub_77F520 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6efc70 ObjectClass::ProcessAISuperWeaponSelection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74ad80 VoxelAnimTypeClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56e990 Cell::UpdateTileType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d3470 ObjectClass::DrawBuildingShadow -> NG (attempt 1)
+[ledger] 0x5353d0 FindRadarClosestEnemy -> NG (attempt 1)
+[ledger] 0x5a17f0 MapClass::FindPassableNeighbor -> NG (attempt 1)
+[ledger] 0x644be0 BuildingTypeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a76e0 MapSeedClass::ValidateRectBounds -> NG (attempt 1)
+[ledger] 0x43ef90 BuildingClass::GetProductionFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ce0c0 ObjectClass::sub_5CE0C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65f520 ScenarioClass::ShowMissionBriefing -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fcdb0 TechnoClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a7250 IsAreaClearMap -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "branch_polarity": 1,
+  "frame_sched": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p114\batch_report.json
