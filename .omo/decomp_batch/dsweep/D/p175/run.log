@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p175\part_00
+=== convert (20 addrs) ===
+[conv] 0x7192f0 TeleportLocomotionClass::Deploy -> TeleportLocomotionClass
+[conv] 0x789b60 ObjectClass::CreateGameWOL -> ObjectClass
+[conv] 0x78d120 OnlineLobbyDlgProcWOL -> _addr_78
+[conv] 0x4aae90 DisplayClass::HandlePlayerAction -> DisplayClass
+[conv] 0x681840 ObjectClass::ScenarioPropertyReadCOM -> ObjectClass
+[conv] 0x514310 HoverLocomotionClass::DeployAnimation -> HoverLocomotionClass
+[conv] 0x568e40 Terrain::PlaceCliffs -> Terrain
+[conv] 0x6b2f30 ProcessBuildingClassConstruction -> _addr_6B
+[conv] 0x569760 TechnoClass::DestroyCliffMap -> TechnoClass
+[conv] 0x664d20 HouseClass::InitTypeVectors -> HouseClass
+[conv] 0x48d1e0 Network::Dispatch -> Network
+[conv] 0x6b7230 SpawnManagerClass::ProcessExitQueue -> SpawnManagerClass
+[conv] 0x412b40 AircraftTrackerClass::FillCurrentVector -> AircraftTrackerClass
+[conv] 0x596300 SkirmishMapGen::DlgProc -> SkirmishMapGen
+[conv] 0x4509d0 BuildingClass::UpdateAnimFrames -> BuildingClass
+[conv] 0x4d85d0 FootClass::UpdateAI -> FootClass
+[conv] 0x547370 InitCoordinateOffsetsMap -> _addr_54
+[conv] 0x4ace70 DisplayClass::LoadMapData -> DisplayClass
+[conv] 0x5082c0 HouseClass::FindAutoBuildLocation -> HouseClass
+[conv] 0x4415f0 BuildingClass::ProcessDemolish -> BuildingClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeleportLocomotionClass  rc=2
+[era] ObjectClass              rc=2
+[era] _addr_78                 rc=2
+[era] DisplayClass             rc=2
+[era] HoverLocomotionClass     rc=2
+[era] Terrain                  rc=2
+[era] _addr_6B                 rc=2
+[era] TechnoClass              rc=2
+[era] HouseClass               rc=2
+[era] Network                  rc=2
+[era] SpawnManagerClass        rc=2
+[era] AircraftTrackerClass     rc=2
+[era] SkirmishMapGen           rc=2
+[era] BuildingClass            rc=2
+[era] FootClass                rc=2
+[era] _addr_54                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x547370   MISMATCH         InitCoordinateOffsetsMap
+[ledger] 0x7192f0 TeleportLocomotionClass::Deploy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x789b60 ObjectClass::CreateGameWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78d120 OnlineLobbyDlgProcWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aae90 DisplayClass::HandlePlayerAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x681840 ObjectClass::ScenarioPropertyReadCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x514310 HoverLocomotionClass::DeployAnimation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x568e40 Terrain::PlaceCliffs -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b2f30 ProcessBuildingClassConstruction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x569760 TechnoClass::DestroyCliffMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x664d20 HouseClass::InitTypeVectors -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48d1e0 Network::Dispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b7230 SpawnManagerClass::ProcessExitQueue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x412b40 AircraftTrackerClass::FillCurrentVector -> COMPILE_FAIL (attempt 1)
+[ledger] 0x596300 SkirmishMapGen::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4509d0 BuildingClass::UpdateAnimFrames -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d85d0 FootClass::UpdateAI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x547370 InitCoordinateOffsetsMap -> NG (attempt 1)
+[ledger] 0x4ace70 DisplayClass::LoadMapData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5082c0 HouseClass::FindAutoBuildLocation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4415f0 BuildingClass::ProcessDemolish -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p175\batch_report.json

@@ -1,0 +1,1491 @@
+{
+ "symbol": "?InitCoordinateOffsetsMap@@YIHH@Z",
+ "sym_key": "Unnamed::InitCoordinateOffsetsMap",
+ "size": 1425,
+ "link_base": 0,
+ "bytes_hex": "538bd9578a83e102000084c075055f33c05bc38a0d00000000b00184c80f853a0500008ad1b9ff7fff7f0ad0a10000000056881500000000890d00000000890d00000000890d00000000890d00000000890d00000000890d00000000890d00000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000890d00000000a300000000a300000000890d00000000890d00000000890d00000000890d00000000890d00000000890d00000000890d00000000890d00000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000ba0000ffffbefffffeff891500000000891500000000893500000000891500000000891500000000893500000000befffffdffba0000fdffbffefffdffa300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000890d00000000a300000000a300000000890d00000000890d00000000890d00000000890d00000000890d00000000893500000000891500000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000890d00000000893500000000891500000000890d00000000893500000000891500000000890d00000000891500000000890d00000000891500000000c705000000000100fdff893500000000893d00000000890d00000000891500000000893500000000893d00000000c70500000000fdfffeffa300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000890d00000000891500000000893500000000893d00000000890d00000000893500000000893d00000000890d00000000893d00000000890d00000000893d00000000891500000000890d00000000a300000000a300000000891500000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000890d00000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000890d00000000890d00000000890d00000000890d00000000890d00000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a300000000a3000000006800000000a300000000a300000000a300000000a300000000a300000000a300000000890d00000000890d00000000e80000000083c4045e8b93940200008b0d000000008b398bc22bc783f828721083c10481f9000000007cea5f33c05bc38d04405f5b8d04c534adab00c3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABBEB8@@3EA",
+   "sym_key": "DataGlobal_ABBEB8"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA105C@@3PAIA",
+   "sym_key": "DataGlobal_AA105C"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABBEB8@@3EA",
+   "sym_key": "DataGlobal_ABBEB8"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD48@@3IA",
+   "sym_key": "DataGlobal_ABAD48"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD60@@3IA",
+   "sym_key": "DataGlobal_ABAD60"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD78@@3IA",
+   "sym_key": "DataGlobal_ABAD78"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD90@@3IA",
+   "sym_key": "DataGlobal_ABAD90"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADA8@@3IA",
+   "sym_key": "DataGlobal_ABADA8"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADC0@@3IA",
+   "sym_key": "DataGlobal_ABADC0"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADD8@@3IA",
+   "sym_key": "DataGlobal_ABADD8"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD34@@3IA",
+   "sym_key": "DataGlobal_ABAD34"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD38@@3IA",
+   "sym_key": "DataGlobal_ABAD38"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD3C@@3IA",
+   "sym_key": "DataGlobal_ABAD3C"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD40@@3IA",
+   "sym_key": "DataGlobal_ABAD40"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD44@@3IA",
+   "sym_key": "DataGlobal_ABAD44"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD4C@@3IA",
+   "sym_key": "DataGlobal_ABAD4C"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD50@@3IA",
+   "sym_key": "DataGlobal_ABAD50"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD54@@3IA",
+   "sym_key": "DataGlobal_ABAD54"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD58@@3IA",
+   "sym_key": "DataGlobal_ABAD58"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD5C@@3IA",
+   "sym_key": "DataGlobal_ABAD5C"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD64@@3IA",
+   "sym_key": "DataGlobal_ABAD64"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD68@@3IA",
+   "sym_key": "DataGlobal_ABAD68"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD6C@@3IA",
+   "sym_key": "DataGlobal_ABAD6C"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD70@@3IA",
+   "sym_key": "DataGlobal_ABAD70"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD74@@3IA",
+   "sym_key": "DataGlobal_ABAD74"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD7C@@3IA",
+   "sym_key": "DataGlobal_ABAD7C"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD80@@3IA",
+   "sym_key": "DataGlobal_ABAD80"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD84@@3IA",
+   "sym_key": "DataGlobal_ABAD84"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD88@@3IA",
+   "sym_key": "DataGlobal_ABAD88"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD8C@@3IA",
+   "sym_key": "DataGlobal_ABAD8C"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD94@@3IA",
+   "sym_key": "DataGlobal_ABAD94"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD98@@3IA",
+   "sym_key": "DataGlobal_ABAD98"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD9C@@3IA",
+   "sym_key": "DataGlobal_ABAD9C"
+  },
+  {
+   "off": 214,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADA0@@3IA",
+   "sym_key": "DataGlobal_ABADA0"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADA4@@3IA",
+   "sym_key": "DataGlobal_ABADA4"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADAC@@3IA",
+   "sym_key": "DataGlobal_ABADAC"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADB0@@3IA",
+   "sym_key": "DataGlobal_ABADB0"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADB4@@3IA",
+   "sym_key": "DataGlobal_ABADB4"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADB8@@3IA",
+   "sym_key": "DataGlobal_ABADB8"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADBC@@3IA",
+   "sym_key": "DataGlobal_ABADBC"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADC4@@3IA",
+   "sym_key": "DataGlobal_ABADC4"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADC8@@3IA",
+   "sym_key": "DataGlobal_ABADC8"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADCC@@3IA",
+   "sym_key": "DataGlobal_ABADCC"
+  },
+  {
+   "off": 264,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADD0@@3IA",
+   "sym_key": "DataGlobal_ABADD0"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADD4@@3IA",
+   "sym_key": "DataGlobal_ABADD4"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADDC@@3IA",
+   "sym_key": "DataGlobal_ABADDC"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADE0@@3IA",
+   "sym_key": "DataGlobal_ABADE0"
+  },
+  {
+   "off": 284,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADE4@@3IA",
+   "sym_key": "DataGlobal_ABADE4"
+  },
+  {
+   "off": 289,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADE8@@3IA",
+   "sym_key": "DataGlobal_ABADE8"
+  },
+  {
+   "off": 294,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADEC@@3IA",
+   "sym_key": "DataGlobal_ABADEC"
+  },
+  {
+   "off": 300,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADF0@@3IA",
+   "sym_key": "DataGlobal_ABADF0"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADF4@@3IA",
+   "sym_key": "DataGlobal_ABADF4"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADF8@@3IA",
+   "sym_key": "DataGlobal_ABADF8"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE08@@3IA",
+   "sym_key": "DataGlobal_ABAE08"
+  },
+  {
+   "off": 322,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE20@@3IA",
+   "sym_key": "DataGlobal_ABAE20"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE38@@3IA",
+   "sym_key": "DataGlobal_ABAE38"
+  },
+  {
+   "off": 334,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE50@@3IA",
+   "sym_key": "DataGlobal_ABAE50"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE68@@3IA",
+   "sym_key": "DataGlobal_ABAE68"
+  },
+  {
+   "off": 346,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE80@@3IA",
+   "sym_key": "DataGlobal_ABAE80"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE98@@3IA",
+   "sym_key": "DataGlobal_ABAE98"
+  },
+  {
+   "off": 358,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEB0@@3IA",
+   "sym_key": "DataGlobal_ABAEB0"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABADFC@@3IA",
+   "sym_key": "DataGlobal_ABADFC"
+  },
+  {
+   "off": 368,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE00@@3IA",
+   "sym_key": "DataGlobal_ABAE00"
+  },
+  {
+   "off": 373,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE04@@3IA",
+   "sym_key": "DataGlobal_ABAE04"
+  },
+  {
+   "off": 378,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE0C@@3IA",
+   "sym_key": "DataGlobal_ABAE0C"
+  },
+  {
+   "off": 383,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE10@@3IA",
+   "sym_key": "DataGlobal_ABAE10"
+  },
+  {
+   "off": 388,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE14@@3IA",
+   "sym_key": "DataGlobal_ABAE14"
+  },
+  {
+   "off": 393,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE18@@3IA",
+   "sym_key": "DataGlobal_ABAE18"
+  },
+  {
+   "off": 398,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE1C@@3IA",
+   "sym_key": "DataGlobal_ABAE1C"
+  },
+  {
+   "off": 403,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE24@@3IA",
+   "sym_key": "DataGlobal_ABAE24"
+  },
+  {
+   "off": 408,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE28@@3IA",
+   "sym_key": "DataGlobal_ABAE28"
+  },
+  {
+   "off": 413,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE2C@@3IA",
+   "sym_key": "DataGlobal_ABAE2C"
+  },
+  {
+   "off": 418,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE30@@3IA",
+   "sym_key": "DataGlobal_ABAE30"
+  },
+  {
+   "off": 423,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE34@@3IA",
+   "sym_key": "DataGlobal_ABAE34"
+  },
+  {
+   "off": 428,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE3C@@3IA",
+   "sym_key": "DataGlobal_ABAE3C"
+  },
+  {
+   "off": 433,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE40@@3IA",
+   "sym_key": "DataGlobal_ABAE40"
+  },
+  {
+   "off": 438,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE44@@3IA",
+   "sym_key": "DataGlobal_ABAE44"
+  },
+  {
+   "off": 443,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE48@@3IA",
+   "sym_key": "DataGlobal_ABAE48"
+  },
+  {
+   "off": 459,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF14@@3IA",
+   "sym_key": "DataGlobal_ABAF14"
+  },
+  {
+   "off": 465,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF18@@3IA",
+   "sym_key": "DataGlobal_ABAF18"
+  },
+  {
+   "off": 471,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF1C@@3IA",
+   "sym_key": "DataGlobal_ABAF1C"
+  },
+  {
+   "off": 477,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF2C@@3IA",
+   "sym_key": "DataGlobal_ABAF2C"
+  },
+  {
+   "off": 483,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF30@@3IA",
+   "sym_key": "DataGlobal_ABAF30"
+  },
+  {
+   "off": 489,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF34@@3IA",
+   "sym_key": "DataGlobal_ABAF34"
+  },
+  {
+   "off": 509,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE4C@@3IA",
+   "sym_key": "DataGlobal_ABAE4C"
+  },
+  {
+   "off": 514,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE54@@3IA",
+   "sym_key": "DataGlobal_ABAE54"
+  },
+  {
+   "off": 519,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE58@@3IA",
+   "sym_key": "DataGlobal_ABAE58"
+  },
+  {
+   "off": 524,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE5C@@3IA",
+   "sym_key": "DataGlobal_ABAE5C"
+  },
+  {
+   "off": 529,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE60@@3IA",
+   "sym_key": "DataGlobal_ABAE60"
+  },
+  {
+   "off": 534,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE64@@3IA",
+   "sym_key": "DataGlobal_ABAE64"
+  },
+  {
+   "off": 539,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE6C@@3IA",
+   "sym_key": "DataGlobal_ABAE6C"
+  },
+  {
+   "off": 544,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE70@@3IA",
+   "sym_key": "DataGlobal_ABAE70"
+  },
+  {
+   "off": 549,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE74@@3IA",
+   "sym_key": "DataGlobal_ABAE74"
+  },
+  {
+   "off": 554,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE78@@3IA",
+   "sym_key": "DataGlobal_ABAE78"
+  },
+  {
+   "off": 559,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE7C@@3IA",
+   "sym_key": "DataGlobal_ABAE7C"
+  },
+  {
+   "off": 564,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE84@@3IA",
+   "sym_key": "DataGlobal_ABAE84"
+  },
+  {
+   "off": 569,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE88@@3IA",
+   "sym_key": "DataGlobal_ABAE88"
+  },
+  {
+   "off": 574,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE8C@@3IA",
+   "sym_key": "DataGlobal_ABAE8C"
+  },
+  {
+   "off": 579,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE90@@3IA",
+   "sym_key": "DataGlobal_ABAE90"
+  },
+  {
+   "off": 584,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE94@@3IA",
+   "sym_key": "DataGlobal_ABAE94"
+  },
+  {
+   "off": 589,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAE9C@@3IA",
+   "sym_key": "DataGlobal_ABAE9C"
+  },
+  {
+   "off": 594,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEA0@@3IA",
+   "sym_key": "DataGlobal_ABAEA0"
+  },
+  {
+   "off": 599,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEA4@@3IA",
+   "sym_key": "DataGlobal_ABAEA4"
+  },
+  {
+   "off": 604,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEA8@@3IA",
+   "sym_key": "DataGlobal_ABAEA8"
+  },
+  {
+   "off": 609,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEAC@@3IA",
+   "sym_key": "DataGlobal_ABAEAC"
+  },
+  {
+   "off": 614,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEB4@@3IA",
+   "sym_key": "DataGlobal_ABAEB4"
+  },
+  {
+   "off": 619,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEB8@@3IA",
+   "sym_key": "DataGlobal_ABAEB8"
+  },
+  {
+   "off": 624,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEBC@@3IA",
+   "sym_key": "DataGlobal_ABAEBC"
+  },
+  {
+   "off": 629,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEC0@@3IA",
+   "sym_key": "DataGlobal_ABAEC0"
+  },
+  {
+   "off": 634,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEC4@@3IA",
+   "sym_key": "DataGlobal_ABAEC4"
+  },
+  {
+   "off": 640,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEC8@@3IA",
+   "sym_key": "DataGlobal_ABAEC8"
+  },
+  {
+   "off": 645,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAECC@@3IA",
+   "sym_key": "DataGlobal_ABAECC"
+  },
+  {
+   "off": 650,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAED0@@3IA",
+   "sym_key": "DataGlobal_ABAED0"
+  },
+  {
+   "off": 656,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEE0@@3IA",
+   "sym_key": "DataGlobal_ABAEE0"
+  },
+  {
+   "off": 662,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEF8@@3IA",
+   "sym_key": "DataGlobal_ABAEF8"
+  },
+  {
+   "off": 668,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF10@@3IA",
+   "sym_key": "DataGlobal_ABAF10"
+  },
+  {
+   "off": 674,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF28@@3IA",
+   "sym_key": "DataGlobal_ABAF28"
+  },
+  {
+   "off": 680,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF40@@3IA",
+   "sym_key": "DataGlobal_ABAF40"
+  },
+  {
+   "off": 686,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF44@@3IA",
+   "sym_key": "DataGlobal_ABAF44"
+  },
+  {
+   "off": 692,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF48@@3IA",
+   "sym_key": "DataGlobal_ABAF48"
+  },
+  {
+   "off": 697,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAED4@@3IA",
+   "sym_key": "DataGlobal_ABAED4"
+  },
+  {
+   "off": 702,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAED8@@3IA",
+   "sym_key": "DataGlobal_ABAED8"
+  },
+  {
+   "off": 707,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEDC@@3IA",
+   "sym_key": "DataGlobal_ABAEDC"
+  },
+  {
+   "off": 712,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEE4@@3IA",
+   "sym_key": "DataGlobal_ABAEE4"
+  },
+  {
+   "off": 717,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEE8@@3IA",
+   "sym_key": "DataGlobal_ABAEE8"
+  },
+  {
+   "off": 722,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEEC@@3IA",
+   "sym_key": "DataGlobal_ABAEEC"
+  },
+  {
+   "off": 727,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEF0@@3IA",
+   "sym_key": "DataGlobal_ABAEF0"
+  },
+  {
+   "off": 732,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEF4@@3IA",
+   "sym_key": "DataGlobal_ABAEF4"
+  },
+  {
+   "off": 737,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAEFC@@3IA",
+   "sym_key": "DataGlobal_ABAEFC"
+  },
+  {
+   "off": 742,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF00@@3IA",
+   "sym_key": "DataGlobal_ABAF00"
+  },
+  {
+   "off": 747,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF04@@3IA",
+   "sym_key": "DataGlobal_ABAF04"
+  },
+  {
+   "off": 752,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF08@@3IA",
+   "sym_key": "DataGlobal_ABAF08"
+  },
+  {
+   "off": 757,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF0C@@3IA",
+   "sym_key": "DataGlobal_ABAF0C"
+  },
+  {
+   "off": 762,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF20@@3IA",
+   "sym_key": "DataGlobal_ABAF20"
+  },
+  {
+   "off": 767,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF24@@3IA",
+   "sym_key": "DataGlobal_ABAF24"
+  },
+  {
+   "off": 772,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF38@@3IA",
+   "sym_key": "DataGlobal_ABAF38"
+  },
+  {
+   "off": 777,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF3C@@3IA",
+   "sym_key": "DataGlobal_ABAF3C"
+  },
+  {
+   "off": 782,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF4C@@3IA",
+   "sym_key": "DataGlobal_ABAF4C"
+  },
+  {
+   "off": 787,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF50@@3IA",
+   "sym_key": "DataGlobal_ABAF50"
+  },
+  {
+   "off": 792,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF54@@3IA",
+   "sym_key": "DataGlobal_ABAF54"
+  },
+  {
+   "off": 798,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF58@@3IA",
+   "sym_key": "DataGlobal_ABAF58"
+  },
+  {
+   "off": 804,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF5C@@3IA",
+   "sym_key": "DataGlobal_ABAF5C"
+  },
+  {
+   "off": 810,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF60@@3IA",
+   "sym_key": "DataGlobal_ABAF60"
+  },
+  {
+   "off": 816,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF70@@3IA",
+   "sym_key": "DataGlobal_ABAF70"
+  },
+  {
+   "off": 822,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF74@@3IA",
+   "sym_key": "DataGlobal_ABAF74"
+  },
+  {
+   "off": 828,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF78@@3IA",
+   "sym_key": "DataGlobal_ABAF78"
+  },
+  {
+   "off": 834,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF88@@3IA",
+   "sym_key": "DataGlobal_ABAF88"
+  },
+  {
+   "off": 840,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF8C@@3IA",
+   "sym_key": "DataGlobal_ABAF8C"
+  },
+  {
+   "off": 846,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFA0@@3IA",
+   "sym_key": "DataGlobal_ABAFA0"
+  },
+  {
+   "off": 852,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFA4@@3IA",
+   "sym_key": "DataGlobal_ABAFA4"
+  },
+  {
+   "off": 858,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFA8@@3IA",
+   "sym_key": "DataGlobal_ABAFA8"
+  },
+  {
+   "off": 868,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFAC@@3IA",
+   "sym_key": "DataGlobal_ABAFAC"
+  },
+  {
+   "off": 874,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFB0@@3IA",
+   "sym_key": "DataGlobal_ABAFB0"
+  },
+  {
+   "off": 880,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFB8@@3IA",
+   "sym_key": "DataGlobal_ABAFB8"
+  },
+  {
+   "off": 886,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFBC@@3IA",
+   "sym_key": "DataGlobal_ABAFBC"
+  },
+  {
+   "off": 892,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFC0@@3IA",
+   "sym_key": "DataGlobal_ABAFC0"
+  },
+  {
+   "off": 898,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFC4@@3IA",
+   "sym_key": "DataGlobal_ABAFC4"
+  },
+  {
+   "off": 904,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFC8@@3IA",
+   "sym_key": "DataGlobal_ABAFC8"
+  },
+  {
+   "off": 913,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF64@@3IA",
+   "sym_key": "DataGlobal_ABAF64"
+  },
+  {
+   "off": 918,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF68@@3IA",
+   "sym_key": "DataGlobal_ABAF68"
+  },
+  {
+   "off": 923,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF6C@@3IA",
+   "sym_key": "DataGlobal_ABAF6C"
+  },
+  {
+   "off": 928,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF7C@@3IA",
+   "sym_key": "DataGlobal_ABAF7C"
+  },
+  {
+   "off": 933,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF80@@3IA",
+   "sym_key": "DataGlobal_ABAF80"
+  },
+  {
+   "off": 938,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF84@@3IA",
+   "sym_key": "DataGlobal_ABAF84"
+  },
+  {
+   "off": 943,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF90@@3IA",
+   "sym_key": "DataGlobal_ABAF90"
+  },
+  {
+   "off": 948,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF94@@3IA",
+   "sym_key": "DataGlobal_ABAF94"
+  },
+  {
+   "off": 953,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF98@@3IA",
+   "sym_key": "DataGlobal_ABAF98"
+  },
+  {
+   "off": 958,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAF9C@@3IA",
+   "sym_key": "DataGlobal_ABAF9C"
+  },
+  {
+   "off": 963,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFB4@@3IA",
+   "sym_key": "DataGlobal_ABAFB4"
+  },
+  {
+   "off": 968,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFCC@@3IA",
+   "sym_key": "DataGlobal_ABAFCC"
+  },
+  {
+   "off": 974,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFD0@@3IA",
+   "sym_key": "DataGlobal_ABAFD0"
+  },
+  {
+   "off": 980,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFD4@@3IA",
+   "sym_key": "DataGlobal_ABAFD4"
+  },
+  {
+   "off": 986,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFD8@@3IA",
+   "sym_key": "DataGlobal_ABAFD8"
+  },
+  {
+   "off": 992,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFDC@@3IA",
+   "sym_key": "DataGlobal_ABAFDC"
+  },
+  {
+   "off": 998,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFE8@@3IA",
+   "sym_key": "DataGlobal_ABAFE8"
+  },
+  {
+   "off": 1004,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFF0@@3IA",
+   "sym_key": "DataGlobal_ABAFF0"
+  },
+  {
+   "off": 1010,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFF4@@3IA",
+   "sym_key": "DataGlobal_ABAFF4"
+  },
+  {
+   "off": 1016,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB000@@3IA",
+   "sym_key": "DataGlobal_ABB000"
+  },
+  {
+   "off": 1022,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB004@@3IA",
+   "sym_key": "DataGlobal_ABB004"
+  },
+  {
+   "off": 1028,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB018@@3IA",
+   "sym_key": "DataGlobal_ABB018"
+  },
+  {
+   "off": 1034,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB01C@@3IA",
+   "sym_key": "DataGlobal_ABB01C"
+  },
+  {
+   "off": 1040,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB034@@3IA",
+   "sym_key": "DataGlobal_ABB034"
+  },
+  {
+   "off": 1046,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB048@@3IA",
+   "sym_key": "DataGlobal_ABB048"
+  },
+  {
+   "off": 1051,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFE0@@3IA",
+   "sym_key": "DataGlobal_ABAFE0"
+  },
+  {
+   "off": 1056,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFE4@@3IA",
+   "sym_key": "DataGlobal_ABAFE4"
+  },
+  {
+   "off": 1062,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFEC@@3IA",
+   "sym_key": "DataGlobal_ABAFEC"
+  },
+  {
+   "off": 1067,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFF8@@3IA",
+   "sym_key": "DataGlobal_ABAFF8"
+  },
+  {
+   "off": 1072,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAFFC@@3IA",
+   "sym_key": "DataGlobal_ABAFFC"
+  },
+  {
+   "off": 1077,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB008@@3IA",
+   "sym_key": "DataGlobal_ABB008"
+  },
+  {
+   "off": 1082,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB00C@@3IA",
+   "sym_key": "DataGlobal_ABB00C"
+  },
+  {
+   "off": 1087,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB010@@3IA",
+   "sym_key": "DataGlobal_ABB010"
+  },
+  {
+   "off": 1092,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB014@@3IA",
+   "sym_key": "DataGlobal_ABB014"
+  },
+  {
+   "off": 1097,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB020@@3IA",
+   "sym_key": "DataGlobal_ABB020"
+  },
+  {
+   "off": 1102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB024@@3IA",
+   "sym_key": "DataGlobal_ABB024"
+  },
+  {
+   "off": 1107,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB028@@3IA",
+   "sym_key": "DataGlobal_ABB028"
+  },
+  {
+   "off": 1112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB02C@@3IA",
+   "sym_key": "DataGlobal_ABB02C"
+  },
+  {
+   "off": 1118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB030@@3IA",
+   "sym_key": "DataGlobal_ABB030"
+  },
+  {
+   "off": 1123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB038@@3IA",
+   "sym_key": "DataGlobal_ABB038"
+  },
+  {
+   "off": 1128,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB03C@@3IA",
+   "sym_key": "DataGlobal_ABB03C"
+  },
+  {
+   "off": 1133,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB040@@3IA",
+   "sym_key": "DataGlobal_ABB040"
+  },
+  {
+   "off": 1138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB044@@3IA",
+   "sym_key": "DataGlobal_ABB044"
+  },
+  {
+   "off": 1143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB04C@@3IA",
+   "sym_key": "DataGlobal_ABB04C"
+  },
+  {
+   "off": 1148,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB050@@3IA",
+   "sym_key": "DataGlobal_ABB050"
+  },
+  {
+   "off": 1153,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB054@@3IA",
+   "sym_key": "DataGlobal_ABB054"
+  },
+  {
+   "off": 1158,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB058@@3IA",
+   "sym_key": "DataGlobal_ABB058"
+  },
+  {
+   "off": 1163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB05C@@3IA",
+   "sym_key": "DataGlobal_ABB05C"
+  },
+  {
+   "off": 1169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB060@@3IA",
+   "sym_key": "DataGlobal_ABB060"
+  },
+  {
+   "off": 1175,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB078@@3IA",
+   "sym_key": "DataGlobal_ABB078"
+  },
+  {
+   "off": 1181,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB090@@3IA",
+   "sym_key": "DataGlobal_ABB090"
+  },
+  {
+   "off": 1187,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0A8@@3IA",
+   "sym_key": "DataGlobal_ABB0A8"
+  },
+  {
+   "off": 1193,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0C0@@3IA",
+   "sym_key": "DataGlobal_ABB0C0"
+  },
+  {
+   "off": 1198,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB064@@3IA",
+   "sym_key": "DataGlobal_ABB064"
+  },
+  {
+   "off": 1203,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB068@@3IA",
+   "sym_key": "DataGlobal_ABB068"
+  },
+  {
+   "off": 1208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB06C@@3IA",
+   "sym_key": "DataGlobal_ABB06C"
+  },
+  {
+   "off": 1213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB070@@3IA",
+   "sym_key": "DataGlobal_ABB070"
+  },
+  {
+   "off": 1218,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB074@@3IA",
+   "sym_key": "DataGlobal_ABB074"
+  },
+  {
+   "off": 1223,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB07C@@3IA",
+   "sym_key": "DataGlobal_ABB07C"
+  },
+  {
+   "off": 1228,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB080@@3IA",
+   "sym_key": "DataGlobal_ABB080"
+  },
+  {
+   "off": 1233,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB084@@3IA",
+   "sym_key": "DataGlobal_ABB084"
+  },
+  {
+   "off": 1238,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB088@@3IA",
+   "sym_key": "DataGlobal_ABB088"
+  },
+  {
+   "off": 1243,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB08C@@3IA",
+   "sym_key": "DataGlobal_ABB08C"
+  },
+  {
+   "off": 1248,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB094@@3IA",
+   "sym_key": "DataGlobal_ABB094"
+  },
+  {
+   "off": 1253,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB098@@3IA",
+   "sym_key": "DataGlobal_ABB098"
+  },
+  {
+   "off": 1258,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB09C@@3IA",
+   "sym_key": "DataGlobal_ABB09C"
+  },
+  {
+   "off": 1263,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0A0@@3IA",
+   "sym_key": "DataGlobal_ABB0A0"
+  },
+  {
+   "off": 1268,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0A4@@3IA",
+   "sym_key": "DataGlobal_ABB0A4"
+  },
+  {
+   "off": 1273,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0AC@@3IA",
+   "sym_key": "DataGlobal_ABB0AC"
+  },
+  {
+   "off": 1278,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0B0@@3IA",
+   "sym_key": "DataGlobal_ABB0B0"
+  },
+  {
+   "off": 1283,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0B4@@3IA",
+   "sym_key": "DataGlobal_ABB0B4"
+  },
+  {
+   "off": 1288,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0B8@@3IA",
+   "sym_key": "DataGlobal_ABB0B8"
+  },
+  {
+   "off": 1293,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0BC@@3IA",
+   "sym_key": "DataGlobal_ABB0BC"
+  },
+  {
+   "off": 1298,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0C4@@3IA",
+   "sym_key": "DataGlobal_ABB0C4"
+  },
+  {
+   "off": 1303,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0C8@@3IA",
+   "sym_key": "DataGlobal_ABB0C8"
+  },
+  {
+   "off": 1308,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0CC@@3IA",
+   "sym_key": "DataGlobal_ABB0CC"
+  },
+  {
+   "off": 1313,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0D0@@3IA",
+   "sym_key": "DataGlobal_ABB0D0"
+  },
+  {
+   "off": 1318,
+   "type": "DIR32",
+   "sym": "?nullsub_20@@YAHPBX0@Z",
+   "sym_key": "nullsub_20"
+  },
+  {
+   "off": 1323,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0D4@@3IA",
+   "sym_key": "DataGlobal_ABB0D4"
+  },
+  {
+   "off": 1328,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0DC@@3IA",
+   "sym_key": "DataGlobal_ABB0DC"
+  },
+  {
+   "off": 1333,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0E0@@3IA",
+   "sym_key": "DataGlobal_ABB0E0"
+  },
+  {
+   "off": 1338,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0E4@@3IA",
+   "sym_key": "DataGlobal_ABB0E4"
+  },
+  {
+   "off": 1343,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0E8@@3IA",
+   "sym_key": "DataGlobal_ABB0E8"
+  },
+  {
+   "off": 1348,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0EC@@3IA",
+   "sym_key": "DataGlobal_ABB0EC"
+  },
+  {
+   "off": 1354,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0D8@@3IA",
+   "sym_key": "DataGlobal_ABB0D8"
+  },
+  {
+   "off": 1360,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB0F0@@3IA",
+   "sym_key": "DataGlobal_ABB0F0"
+  },
+  {
+   "off": 1365,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 1381,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA102C@@3IA",
+   "sym_key": "DataGlobal_AA102C"
+  },
+  {
+   "off": 1401,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1040@@3IA",
+   "sym_key": "DataGlobal_AA1040"
+  }
+ ]
+}
