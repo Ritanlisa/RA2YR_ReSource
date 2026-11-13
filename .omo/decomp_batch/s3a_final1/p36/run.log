@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p36\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c04e0 Audio_Process_7C04E0 -> Audio_Process
+[conv] 0x7c06b0 Audio_Process_7C06B0 -> Audio_Process
+[conv] 0x7c19f0 Audio_Process_7C19F0 -> Audio_Process
+[conv] 0x7c1d40 Audio_Render_7C1D40 -> Audio_Render
+[conv] 0x7c3230 Render_Render_7C3230 -> Render_Render
+[conv] 0x7c34b0 SeekAudioStream -> _addr_7C
+[conv] 0x7c3690 Render_Render_7C3690 -> Render_Render
+[conv] 0x7c3860 Audio_Render_7C3860 -> Audio_Render
+[conv] 0x7c3950 Audio_Process_7C3950 -> Audio_Process
+[conv] 0x7c61cf globalHelper_0C61CF -> _addr_7C
+[conv] 0x7c970c __onexit -> _addr_7C
+[conv] 0x7c979c ___onexitinit -> _addr_7C
+[conv] 0x7ca75b _fclose -> _addr_7C
+[conv] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> _addr_7C
+[conv] 0x7cb33d ObjectClass::___initstdio -> ObjectClass
+[conv] 0x7cb3f9 __lock_file -> _addr_7C
+[conv] 0x7cb44b __unlock_file -> _addr_7C
+[conv] 0x7cb80b _fgetc -> _addr_7C
+[conv] 0x7cbc32 _getenv -> _addr_7C
+[conv] 0x7cc186 __abnormal_termination -> _addr_7C
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio_Process            rc=2
+[era] Audio_Render             rc=2
+[era] Render_Render            rc=2
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7c04e0 Audio_Process_7C04E0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c06b0 Audio_Process_7C06B0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c19f0 Audio_Process_7C19F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c1d40 Audio_Render_7C1D40 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c3230 Render_Render_7C3230 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c34b0 SeekAudioStream -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c3690 Render_Render_7C3690 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c3860 Audio_Render_7C3860 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c3950 Audio_Process_7C3950 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c61cf globalHelper_0C61CF -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7c970c __onexit -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7c979c ___onexitinit -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ca75b _fclose -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cb33d ObjectClass::___initstdio -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cb3f9 __lock_file -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cb44b __unlock_file -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cb80b _fgetc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cbc32 _getenv -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cc186 __abnormal_termination -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p36\batch_report.json
