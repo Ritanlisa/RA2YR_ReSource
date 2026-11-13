@@ -1,0 +1,141 @@
+{
+ "symbol": "?ProcessTile@MapClass@@QAEHXZ",
+ "sym_key": "MapClass::ProcessTile",
+ "size": 275,
+ "link_base": 0,
+ "bytes_hex": "5153558be933db57899d04030000899d08030000a1182700003bc3740f50e80000000083c404891d18270000a1a81900008d78ff3bfb0f8ca0000000568b0d9c1900008b34b93bf30f84860000008b063bc374098b106a0150ff12891e8b0d981900008d44241050689819000089742418ff511083f8ff742d8b0da81900003bc17d23493bc1890da81900007d188b0d9c190000408b1481895481fc8b0da81900003bc17ce88b462cc74628000000003bc37411385e35740c50e80000000083c404895e2c56885e35895e30e80000000083c4044f0f8962ffffff5e6a01b9f8010000891d1c270000e8000000008bcde80000000068f4020000b9f8010000e8000000008b4c240c53e8000000005f5d5b59c3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 158,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_Cell@@3PAXA",
+   "sym_key": "vt_VectorClass_Cell"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?PostProcessReveal@MapClass@@QAEHD@Z",
+   "sym_key": "MapClass::PostProcessReveal"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 256,
+   "type": "REL32",
+   "sym": "?ProcessCellVisibility@Shroud@@QAEHPAX@Z",
+   "sym_key": "Shroud::ProcessCellVisibility"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "?RecreateSurface@RadarClass@@QAEHH@Z",
+   "sym_key": "RadarClass::RecreateSurface"
+  }
+ ]
+}

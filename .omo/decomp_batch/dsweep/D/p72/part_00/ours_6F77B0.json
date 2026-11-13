@@ -1,0 +1,27 @@
+{
+ "symbol": "?ValidateTarget@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::ValidateTarget",
+ "size": 209,
+ "link_base": 0,
+ "bytes_hex": "83ec24538b5c240c568bf185db0f84b00000008b068d4c2414575156ff50488b4c24108b108b0651568954241cff90f80300008b3885ff74528a873401000084c074488b168d4424185056ff52488b088b5004c1e908c1ea0866894c240c668954240e8b44240c8d4c241051b9f801000089442414e8000000008b108d4c24245150ff52488b10895424148b0656ff505484c0740b8b0b8d5424245253ff5148578d44241853508bcee8000000008b4c241425ff00000080e1005f5e0bc15b83c424c38b4424105e24015b0c0183c424c3",
+ "relocs": [
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?CheckTargetLOS@TechnoClass@@QAEDPAX00@Z",
+   "sym_key": "TechnoClass::CheckTargetLOS"
+  }
+ ]
+}

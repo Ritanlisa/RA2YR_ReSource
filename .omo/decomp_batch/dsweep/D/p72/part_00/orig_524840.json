@@ -1,0 +1,11 @@
+{
+ "addr": "0x524840",
+ "name": "InfantryTypeClass::PowerDrainUpdate",
+ "size": 276,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x524840",
+ "bytes_hex": "56578b7c240c8bf157e852291f008b86fc0d00008bcf50e8f4d4f7ff8b8e3c0e000068e8050000518bcfe871d5f7ff8b96400e00008bcf52e8d3d4f7ff8b86440e00008bcf50e8c5d4f7ff8b8e980e0000518bcfe8b7d4f7ff8b96600e00008bcf52e8a9d4f7ff8b867c0e00008bcf50e89bd4f7ff8a8ebc0e0000518bcfe8ddd3f7ff8a96bd0e00008bcf52e8cfd3f7ff8a86be0e00008bcf50e8c1d3f7ff8a8ebf0e0000518bcfe8b3d3f7ff8a96c00e00008bcf52e8a5d3f7ff8a86c10e00008bcf50e897d3f7ff8a8ec20e0000518bcfe889d3f7ff8a96c30e00008bcf52e87bd3f7ff8a86c40e00008bcf50e86dd3f7ff8a8ec50e0000518bcfe85fd3f7ff8a96c60e00008bcf52e851d3f7ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

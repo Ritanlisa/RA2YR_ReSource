@@ -1,0 +1,81 @@
+{
+ "symbol": "?sub_58C5A0@@YIPAIPAIHH@Z",
+ "sym_key": "Unnamed::sub_58C5A0",
+ "size": 296,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec2ca100000000530fafc08b1d0000000056578954241c894c241889442414c744241001000000eb048b44241433ff89442420897c24248d70ffdf6c2420dd5c2430b900000000e80000000089442428897c242cdf6c242883ec08dc4c2438dc0d00000000dd1c24e80000000083c4083bc677ce8b4c24108b3d0000000083f9648d34800f9cc2c1e60403f7b9140000008bfbf3a58b4c24104184d2894c2410745b53b900000000e80000000066833b008bf0750b66837b02000f8469ffffff6a008d46246a0050b900000000e8000000003b44241c0f854dffffff8bcee80000000084c00f843effffff8b450883f8ff741d3943387418e92cffffff8b442418c700000000005f5e5b8be55dc204008b4424188b0b5f5e89085b8be55dc20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "symbol": "?System_Init_770430@TechnoClass@@QAEXXZ",
+ "sym_key": "TechnoClass::System_Init_770430",
+ "size": 261,
+ "link_base": 0,
+ "bytes_hex": "515356578bf933db399fd00300007e17b101e8000000008b8fc00300008d87c003000050ff510c8db7ac030000e8000000008b8f9c0300008b54240c3bcb89068997b0030000899fb40300007405e8000000008b8fc4030000553bcb899fc0030000742a399fd003000074228b41fc8d69fc6800000000506a04e80000000055e80000000083c404899fc4030000899fd0030000899fc8030000bd020000008b46ec83ee183bc3891e7411385e0d740c50e80000000083c404895e044d885e0d895e0875da0fbe9f730300008db780030000bf060000005d81ee9400000068000000006a066a188bce81eb94000000e80000000053e80000000083c4044f75d85f5e5b59c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?StopThemeClass@@YIXD@Z",
+   "sym_key": "StopThemeClass"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Destructor@AudioSample@@QAEXXZ",
+   "sym_key": "AudioSample::Destructor"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?ForEachReverse@Array@@QAEHHHPAX@Z",
+   "sym_key": "Array::ForEachReverse"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?sub_771A00@@YAHPBX0@Z",
+   "sym_key": "sub_771A00"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?ForEachReverse@Array@@QAEHHHPAX@Z",
+   "sym_key": "Array::ForEachReverse"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

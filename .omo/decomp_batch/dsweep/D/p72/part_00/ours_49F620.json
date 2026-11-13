@@ -1,0 +1,153 @@
+{
+ "symbol": "?NotifyLauncher@CopyProtection@@QAEDXZ",
+ "sym_key": "CopyProtection::NotifyLauncher",
+ "size": 273,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000083ec1c5657e8000000006a00680004000068000400008d4424146a0050e800000000e8000000008bf881c760ea0000e8000000003bc70f83bc0000008b0d00000000516a016a02e8000000008bf085f6751550e800000000e8000000003bc70f8393000000ebd556e80000000056e8000000008b0d00000000e8000000008b0d00000000e800000000e8000000008bf081c610270000e8000000003bc67759bfefbe00006a0157578d5424146a0052e80000000085c07406397c240c74126a00e800000000e8000000003bc6772aebd48b4424146a006a006a006a00681f000f0050e80000000085c0a30000000074085fb0015e83c41cc38b0d00000000e8000000005f32c05e83c41cc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?aCopyprotection_1@@3HA",
+   "sym_key": "aCopyprotection_1"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?PeekMessageA@@YGHPAXHHHH@Z",
+   "sym_key": "PeekMessageA"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?aD6e7fc9764f94d@@3HA",
+   "sym_key": "aD6e7fc9764f94d"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?OpenEventA@@YGPAXHHH@Z",
+   "sym_key": "OpenEventA"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?Sleep@@YGXH@Z",
+   "sym_key": "Sleep"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?SetEvent@@YGHH@Z",
+   "sym_key": "SetEvent"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHH@Z",
+   "sym_key": "CloseHandle"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?aLauncherNotifi@@3HA",
+   "sym_key": "aLauncherNotifi"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?aWaitingForMess@@3HA",
+   "sym_key": "aWaitingForMess"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?PeekMessageA@@YGHPAXHHHH@Z",
+   "sym_key": "PeekMessageA"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?Sleep@@YGXH@Z",
+   "sym_key": "Sleep"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?MapViewOfFileEx@@YGPAXPAXHHHHH@Z",
+   "sym_key": "MapViewOfFileEx"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?lpBaseAddress@@3PAXA",
+   "sym_key": "lpBaseAddress"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?aFailedToNotify@@3HA",
+   "sym_key": "aFailedToNotify"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

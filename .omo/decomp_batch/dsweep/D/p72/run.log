@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p72\part_00
+=== convert (20 addrs) ===
+[conv] 0x5904b0 PlaceCabhutMap -> _addr_59
+[conv] 0x56b780 CellClass::CreateOverlay -> CellClass
+[conv] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> CellClass
+[conv] 0x770430 TechnoClass::System_Init_770430 -> TechnoClass
+[conv] 0x599530 MapClass::ProcessTile -> MapClass
+[conv] 0x4a3a10 sub_4A3A10 -> _addr_4A
+[conv] 0x49f620 CopyProtection::NotifyLauncher -> CopyProtection
+[conv] 0x524840 InfantryTypeClass::PowerDrainUpdate -> InfantryTypeClass
+[conv] 0x58c5a0 sub_58C5A0 -> _addr_58
+[conv] 0x623610 DialogClass::CopyTemplateStruct -> DialogClass
+[conv] 0x5fede0 OverlayTypeClass::GetCategory -> OverlayTypeClass
+[conv] 0x5cd570 MSAnim::sub_5CD570 -> MSAnim
+[conv] 0x7a0f40 Event_Handle_7A0F40 -> Event_Handle
+[conv] 0x786270 ObjectClass::Event_Process_786270 -> ObjectClass
+[conv] 0x707f60 TechnoClass::CheckPlacementTileMatch -> TechnoClass
+[conv] 0x4ca770 FactoryClass::CopyTo -> FactoryClass
+[conv] 0x70fee0 TechnoClass::EjectPassengers -> TechnoClass
+[conv] 0x625c00 ObjectClass::Event_Process_625C00 -> ObjectClass
+[conv] 0x6f77b0 TechnoClass::ValidateTarget -> TechnoClass
+[conv] 0x7b84f0 WinMain_Helper_7B84F0 -> WinMain_Helper
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_59                 rc=2
+[era] CellClass                rc=2
+[era] TechnoClass              rc=2
+[era] MapClass                 rc=0
+[era] _addr_4A                 rc=2
+[era] CopyProtection           rc=0
+[era] InfantryTypeClass        rc=0
+[era] _addr_58                 rc=0
+[era] DialogClass              rc=2
+[era] OverlayTypeClass         rc=2
+[era] MSAnim                   rc=2
+[era] Event_Handle             rc=2
+[era] ObjectClass              rc=2
+[era] FactoryClass             rc=0
+[era] WinMain_Helper           rc=2
+=== diffasm byte-compare ===
+[diff] 0x770430   MISMATCH         TechnoClass::System_Init_770430
+[diff] 0x707f60   MISMATCH         TechnoClass::CheckPlacementTileMatch
+[diff] 0x6f77b0   MISMATCH         TechnoClass::ValidateTarget
+[diff] 0x599530   MISMATCH         MapClass::ProcessTile
+[diff] 0x49f620   MISMATCH         CopyProtection::NotifyLauncher
+[diff] 0x524840   MISMATCH         InfantryTypeClass::PowerDrainUpdate
+[diff] 0x58c5a0   MISMATCH         sub_58C5A0
+[diff] 0x4ca770   MISMATCH         FactoryClass::CopyTo
+[ledger] 0x5904b0 PlaceCabhutMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56b780 CellClass::CreateOverlay -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> COMPILE_FAIL (attempt 1)
+[ledger] 0x770430 TechnoClass::System_Init_770430 -> NG (attempt 1)
+[ledger] 0x599530 MapClass::ProcessTile -> NG (attempt 1)
+[ledger] 0x4a3a10 sub_4A3A10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49f620 CopyProtection::NotifyLauncher -> NG (attempt 1)
+[ledger] 0x524840 InfantryTypeClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x58c5a0 sub_58C5A0 -> NG (attempt 1)
+[ledger] 0x623610 DialogClass::CopyTemplateStruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fede0 OverlayTypeClass::GetCategory -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cd570 MSAnim::sub_5CD570 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a0f40 Event_Handle_7A0F40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x786270 ObjectClass::Event_Process_786270 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x707f60 TechnoClass::CheckPlacementTileMatch -> NG (attempt 1)
+[ledger] 0x4ca770 FactoryClass::CopyTo -> NG (attempt 1)
+[ledger] 0x70fee0 TechnoClass::EjectPassengers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x625c00 ObjectClass::Event_Process_625C00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f77b0 TechnoClass::ValidateTarget -> NG (attempt 1)
+[ledger] 0x7b84f0 WinMain_Helper_7B84F0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "extern_reloc": 1,
+  "const_fold": 2,
+  "frame_sched": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p72\batch_report.json
