@@ -1,0 +1,57 @@
+{
+ "symbol": "?ConstructWDTSelection_Create_76F500@rc_ptr@@QAEPAV1@XZ",
+ "sym_key": "rc_ptr::ConstructWDTSelection_Create_76F500",
+ "size": 94,
+ "link_base": 0,
+ "bytes_hex": "53568bd96a14e8000000008bf083c40485f6742e578d7e088bcfc7460400000000c70600000000e800000000c70700000000c7461000000000c706000000005feb0233f68bcbe800000000568bcbc70300000000e8000000008bc35e5bc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?vt_ReferenceCounted@@3PAXA",
+   "sym_key": "vt_ReferenceCounted"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTState@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTState"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?vt_WorldDominationTour_State@@3PAXA",
+   "sym_key": "vt_WorldDominationTour_State"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_State@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_State"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

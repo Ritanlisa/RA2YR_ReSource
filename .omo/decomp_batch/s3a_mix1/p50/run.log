@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p50\part_00
+=== convert (20 addrs) ===
+[conv] 0x72fa10 LoadingScreen::LoadSHPs -> LoadingScreen
+[conv] 0x72fbc0 Sides::MixFileYuriFiles3 -> Sides
+[conv] 0x730f30 ObjectClass::UI_Create_730F30 -> ObjectClass
+[conv] 0x731840 SquadClass::ProcessMove -> SquadClass
+[conv] 0x7327d0 MoveFeedback::ProcessCommand -> MoveFeedback
+[conv] 0x7331b0 ObjectClass::sub_7331B0 -> ObjectClass
+[conv] 0x74d7c0 ObjectClass::UpdateVeinholeMonster -> ObjectClass
+[conv] 0x75f650 WaveClass::LoadWaveData -> WaveClass
+[conv] 0x765f60 Team_Create_765F60 -> Team_Create
+[conv] 0x766dc0 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_1 -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x767b00 Team_Create_767B00 -> Team_Create
+[conv] 0x76ba70 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Release -> _DynamicVectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x76c290 ObjectClass::ConstructWDTSelection -> ObjectClass
+[conv] 0x76cda0 TechnoClass::ShowWDTTerritorySelection -> TechnoClass
+[conv] 0x76f470 ActivateScreenWDT_Create -> ActivateScreenWDT
+[conv] 0x76f500 rc_ptr::ConstructWDTSelection_Create_76F500 -> rc_ptr
+[conv] 0x7c8d20 __strcmpi -> _addr_7C
+[conv] 0x7ce06e ___lc_strtolc -> _addr_7C
+[conv] 0x7cef29 __shift -> _addr_7C
+[conv] 0x7d3320 __ioterm_0 -> _addr_7D
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LoadingScreen            rc=2
+[era] Sides                    rc=2
+[era] ObjectClass              rc=2
+[era] SquadClass               rc=2
+[era] MoveFeedback             rc=2
+[era] WaveClass                rc=2
+[era] Team_Create              rc=2
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] _DynamicVectorClass_V_rc_ptr_VWDTTerritory rc=2
+[era] TechnoClass              rc=2
+[era] ActivateScreenWDT        rc=2
+[era] rc_ptr                   rc=0
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x76f500   MISMATCH         rc_ptr::ConstructWDTSelection_Create_76F500
+[ledger] 0x72fa10 LoadingScreen::LoadSHPs -> COMPILE_FAIL (attempt 3)
+[ledger] 0x72fbc0 Sides::MixFileYuriFiles3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x730f30 ObjectClass::UI_Create_730F30 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x731840 SquadClass::ProcessMove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7327d0 MoveFeedback::ProcessCommand -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7331b0 ObjectClass::sub_7331B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74d7c0 ObjectClass::UpdateVeinholeMonster -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75f650 WaveClass::LoadWaveData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x765f60 Team_Create_765F60 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x766dc0 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x767b00 Team_Create_767B00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76ba70 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Release -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76c290 ObjectClass::ConstructWDTSelection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76cda0 TechnoClass::ShowWDTTerritorySelection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76f470 ActivateScreenWDT_Create -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76f500 rc_ptr::ConstructWDTSelection_Create_76F500 -> NG (attempt 3)
+[ledger] 0x7c8d20 __strcmpi -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ce06e ___lc_strtolc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cef29 __shift -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d3320 __ioterm_0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p50\batch_report.json
