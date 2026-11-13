@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p64\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ade20 Map_Delete_5ADE20 -> Map_Delete
+[conv] 0x4c84e0 sub_4C84E0 -> _addr_4C
+[conv] 0x465450 BulletTypeClass::ReadArmor -> BulletTypeClass
+[conv] 0x690910 ScoreFontClass::DrawFoundationChar -> ScoreFontClass
+[conv] 0x7dde80 __wcsnicmp -> _addr_7D
+[conv] 0x682f00 SetBufferParamsCOM -> _addr_68
+[conv] 0x77ded0 ReadWOLAccountINI -> _addr_77
+[conv] 0x682780 GameOptions_Load -> GameOptions
+[conv] 0x7cacc0 FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> _addr_7C
+[conv] 0x7d2fc8 __putwc_lk -> _addr_7D
+[conv] 0x4b53e0 EditClass::sub_4B53E0 -> EditClass
+[conv] 0x4f3c40 ObjectClass::sub_4F3C40 -> ObjectClass
+[conv] 0x58c4a0 ObjectClass::sub_58C4A0 -> ObjectClass
+[conv] 0x466560 BulletClass::Dtor -> BulletClass
+[conv] 0x6e2290 TActionClass::executeEscortAction -> TActionClass
+[conv] 0x7cca34 String_Helper_7CCA34 -> String_Helper
+[conv] 0x56b8a0 CellClass::DecompressRawCellData -> CellClass
+[conv] 0x6431c0 sub_6431C0 -> _addr_64
+[conv] 0x683eb0 ScenarioClass::CleanupTemporary -> ScenarioClass
+[conv] 0x7264c0 TriggerClass::RegisterEvent -> TriggerClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Map_Delete               rc=2
+[era] _addr_4C                 rc=0
+[era] BulletTypeClass          rc=2
+[era] ScoreFontClass           rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_68                 rc=0
+[era] _addr_77                 rc=0
+[era] GameOptions              rc=2
+[era] _addr_7C                 rc=2
+[era] EditClass                rc=2
+[era] ObjectClass              rc=2
+[era] BulletClass              rc=2
+[era] TActionClass             rc=0
+[era] String_Helper            rc=0
+[era] CellClass                rc=2
+[era] _addr_64                 rc=0
+[era] ScenarioClass            rc=0
+[era] TriggerClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x4c84e0   MISMATCH         sub_4C84E0
+[diff] 0x7dde80   MISMATCH         __wcsnicmp
+[diff] 0x682f00   MISMATCH         SetBufferParamsCOM
+[diff] 0x77ded0   MISMATCH         ReadWOLAccountINI
+[diff] 0x6e2290   MISMATCH         TActionClass::executeEscortAction
+[diff] 0x7cca34   MISMATCH         String_Helper_7CCA34
+[diff] 0x6431c0   MISMATCH         sub_6431C0
+[diff] 0x683eb0   MISMATCH         ScenarioClass::CleanupTemporary
+[diff] 0x7264c0   MISMATCH         TriggerClass::RegisterEvent
+[ledger] 0x5ade20 Map_Delete_5ADE20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c84e0 sub_4C84E0 -> NG (attempt 1)
+[ledger] 0x465450 BulletTypeClass::ReadArmor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690910 ScoreFontClass::DrawFoundationChar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dde80 __wcsnicmp -> NG (attempt 1)
+[ledger] 0x682f00 SetBufferParamsCOM -> NG (attempt 1)
+[ledger] 0x77ded0 ReadWOLAccountINI -> NG (attempt 1)
+[ledger] 0x682780 GameOptions_Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cacc0 FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d2fc8 __putwc_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b53e0 EditClass::sub_4B53E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f3c40 ObjectClass::sub_4F3C40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58c4a0 ObjectClass::sub_58C4A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x466560 BulletClass::Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e2290 TActionClass::executeEscortAction -> NG (attempt 1)
+[ledger] 0x7cca34 String_Helper_7CCA34 -> NG (attempt 1)
+[ledger] 0x56b8a0 CellClass::DecompressRawCellData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6431c0 sub_6431C0 -> NG (attempt 1)
+[ledger] 0x683eb0 ScenarioClass::CleanupTemporary -> NG (attempt 1)
+[ledger] 0x7264c0 TriggerClass::RegisterEvent -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "frame_sched": 3,
+  "extern_reloc": 1,
+  "codegen_shape": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p64\batch_report.json
