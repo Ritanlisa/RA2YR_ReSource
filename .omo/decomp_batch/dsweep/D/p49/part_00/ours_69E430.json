@@ -1,0 +1,99 @@
+{
+ "symbol": "?LoadSHPFile@ObjectClass@@QAEPAXPAD@Z",
+ "sym_key": "ObjectClass::LoadSHPFile",
+ "size": 218,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec6053568bf133db8bc84085c9a3000000007407b801000000eb0233c08b54246c88461452e8000000008b1683c40481e2ffff00008d4c241450894608885e10895e0c8916895e04e800000000538d4c2418e80000000084c0740c6a08568d4c241ce800000000a1000000008b4e085051e8000000008b1683c40881caffff000089168b1500000000895618885e1ca1000000003bc3740389701c8b442414893500000000885e208d4c2408c70000000000e8000000008b4c2414c701000000008d4c2414e8000000008bc65e5b83c460c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83F870@@3IA",
+   "sym_key": "DataGlobal_83F870"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83F870@@3IA",
+   "sym_key": "DataGlobal_83F870"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?_strdup@@YAHPAXZZ",
+   "sym_key": "_strdup"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?Read@CCFileClass@@QAEIPAXH@Z",
+   "sym_key": "CCFileClass::Read"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?aNullShp@@3HA",
+   "sym_key": "aNullShp"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077B0@@3IA",
+   "sym_key": "DataGlobal_B077B0"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077B0@@3IA",
+   "sym_key": "DataGlobal_B077B0"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077B0@@3IA",
+   "sym_key": "DataGlobal_B077B0"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

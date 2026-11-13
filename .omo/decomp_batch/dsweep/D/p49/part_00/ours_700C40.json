@@ -1,0 +1,15 @@
+{
+ "symbol": "?CanReceivePassengers@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::CanReceivePassengers",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "568bf18b8e1c020000e80000000084c074098b0656ff907c03000032c05ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  }
+ ]
+}

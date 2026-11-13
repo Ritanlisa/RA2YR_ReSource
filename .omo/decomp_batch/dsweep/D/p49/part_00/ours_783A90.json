@@ -1,0 +1,195 @@
+{
+ "symbol": "?GetNumberBitmapWOL@Bitmap@@QAEHXZ",
+ "sym_key": "Bitmap::GetNumberBitmapWOL",
+ "size": 249,
+ "link_base": 0,
+ "bytes_hex": "83f9090f87ed000000ff248d0000000033c06a00a000000000506800000000e80000000083c40cc333c96a008a0d00000000516800000000e80000000083c40cc38b15000000006a00526800000000e80000000083c40cc3a1000000006a00506800000000e80000000083c40cc38b0d000000006a00516800000000e80000000083c40cc38b15000000006a00526800000000e80000000083c40cc3a1000000006a00506800000000e80000000083c40cc38b0d000000006a00516800000000e80000000083c40cc38b15000000006a00526800000000e80000000083c40cc3a1000000006a00506800000000e80000000083c40cc333c0c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "$L1885",
+   "sym_key": "$L1885"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_Str_File_number0_pcx@@3EA",
+   "sym_key": "g_Str_File_number0_pcx"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_Str_File_number1_pcx@@3EA",
+   "sym_key": "g_Str_File_number1_pcx"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?aNumber2Pcx@@3HA",
+   "sym_key": "aNumber2Pcx"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?aNumber3Pcx@@3HA",
+   "sym_key": "aNumber3Pcx"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?aNumber4Pcx@@3HA",
+   "sym_key": "aNumber4Pcx"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?aNumber5Pcx@@3HA",
+   "sym_key": "aNumber5Pcx"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?aNumber6Pcx@@3HA",
+   "sym_key": "aNumber6Pcx"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?aNumber7Pcx@@3HA",
+   "sym_key": "aNumber7Pcx"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?aNumber8Pcx@@3HA",
+   "sym_key": "aNumber8Pcx"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?aNumber9Pcx@@3HA",
+   "sym_key": "aNumber9Pcx"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXHH@Z",
+   "sym_key": "HashTable__Find"
+  }
+ ]
+}

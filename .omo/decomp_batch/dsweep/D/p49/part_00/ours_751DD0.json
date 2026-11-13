@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_751DD0@@YIDPAXPBDPAI@Z",
+ "sym_key": "Unnamed::sub_751DD0",
+ "size": 182,
+ "link_base": 0,
+ "bytes_hex": "83ec1433c05355568b7424248be9578bdab9240000008bfe53f3abe80000000089068d4424188d4c2414508d542414518d442430525053e80000000085c074578b4424288b4c24140faf4424108bd00fafd185c9899688000000740c5f5e5d32c05b83c414c204000faf44241889868c0000008d46486a408d4c2420508d542428518d4644525083c6046a405653e80000000085c075138bcde80000000032c05f5e5d5b83c414c204005f5e5db0015b83c414c20400",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?GetDriveTypeA@@YGIPAX@Z",
+   "sym_key": "GetDriveTypeA"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?GetDiskFreeSpaceA@@YGHPAX0000@Z",
+   "sym_key": "GetDiskFreeSpaceA"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?GetVolumeInformationA@@YGHPAX0H0000H@Z",
+   "sym_key": "GetVolumeInformationA"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

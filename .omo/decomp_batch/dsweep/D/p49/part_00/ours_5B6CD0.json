@@ -1,0 +1,63 @@
+{
+ "symbol": "?Surface_Lock@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Surface_Lock",
+ "size": 200,
+ "link_base": 0,
+ "bytes_hex": "81ecf8000000568bf157b93e0000008b565833c08d7c2408f3ab8b4e548b4650898c24dc0000008bcec7442408650000008984248e000000899424d8000000e8000000008bce898424e0000000e8000000008bce89442426e80000000033c98944242aa0000000008a0d00000000884424208bf983c9ff33c0f2aef7d12bf98d54240c8bc18bf78bfa8a1500000000c1e902f3a58bc86a0183e1038d44240cf3a48b0d0000000068fa000000894c242950b90000000088542431e8000000005f5e81c4f8000000c3",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?GetEntry@GameOptions@@QAEHXZ",
+   "sym_key": "GameOptions::GetEntry"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?GetField2@NetworkBuffer@@QAEHXZ",
+   "sym_key": "NetworkBuffer::GetField2"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?GetField3@NetworkBuffer@@QAEHXZ",
+   "sym_key": "NetworkBuffer::GetField3"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_EventDispatchState@@3IA",
+   "sym_key": "g_EventDispatchState"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_GameSetupBuffer@@3EA",
+   "sym_key": "g_GameSetupBuffer"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?g_TauntCommandState@@3HA",
+   "sym_key": "g_TauntCommandState"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_CommandExecState@@3PAXA",
+   "sym_key": "g_CommandExecState"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?WriteBlock@Stream@@QAEHHHH@Z",
+   "sym_key": "Stream::WriteBlock"
+  }
+ ]
+}

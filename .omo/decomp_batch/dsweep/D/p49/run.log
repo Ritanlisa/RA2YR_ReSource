@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p49\part_00
+=== convert (20 addrs) ===
+[conv] 0x783a90 Bitmap::GetNumberBitmapWOL -> Bitmap
+[conv] 0x770fe0 ObjectClass::sub_770FE0 -> ObjectClass
+[conv] 0x763e20 WaypointPathClass::ProcessEvent -> WaypointPathClass
+[conv] 0x477440 GameSetup::ParseCoordTriple -> GameSetup
+[conv] 0x69e430 ObjectClass::LoadSHPFile -> ObjectClass
+[conv] 0x6ce800 SuperWeaponTypeClass::SaveLoad_Prefix -> SuperWeaponTypeClass
+[conv] 0x7d2da6 ObjectClass::__getstream -> ObjectClass
+[conv] 0x700c40 TechnoClass::CanReceivePassengers -> TechnoClass
+[conv] 0x7b6be0 WideString::AssignConcat -> WideString
+[conv] 0x5b6cd0 ObjectClass::Surface_Lock -> ObjectClass
+[conv] 0x42ed60 HouseClass::SaveTriggerNodeData -> HouseClass
+[conv] 0x751dd0 sub_751DD0 -> _addr_75
+[conv] 0x4deae0 FootClass::DeployAction -> FootClass
+[conv] 0x776a70 SaveWOLLobbySettings -> _addr_77
+[conv] 0x642ff0 sub_642FF0 -> _addr_64
+[conv] 0x7ab0a0 CChatEventSink::DispatchStub_42 -> CChatEventSink
+[conv] 0x7ab260 CChatEventSink::DispatchStub_43 -> CChatEventSink
+[conv] 0x7b83e0 UI_Setup_7B83E0 -> UI_Setup
+[conv] 0x7b5ca0 ObjectClass::sub_7B5CA0 -> ObjectClass
+[conv] 0x63d560 BuildingClass::DrawSelectionBlip -> BuildingClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Bitmap                   rc=0
+[era] ObjectClass              rc=2
+[era] WaypointPathClass        rc=0
+[era] GameSetup                rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] TechnoClass              rc=0
+[era] WideString               rc=2
+[era] HouseClass               rc=2
+[era] _addr_75                 rc=0
+[era] FootClass                rc=2
+[era] _addr_77                 rc=2
+[era] _addr_64                 rc=2
+[era] CChatEventSink           rc=2
+[era] UI_Setup                 rc=0
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x783a90   MISMATCH         Bitmap::GetNumberBitmapWOL
+[diff] 0x770fe0   MISMATCH         ObjectClass::sub_770FE0
+[diff] 0x69e430   MISMATCH         ObjectClass::LoadSHPFile
+[diff] 0x5b6cd0   MISMATCH         ObjectClass::Surface_Lock
+[diff] 0x7b5ca0   MISMATCH         ObjectClass::sub_7B5CA0
+[diff] 0x763e20   MISMATCH         WaypointPathClass::ProcessEvent
+[diff] 0x700c40   MISMATCH         TechnoClass::CanReceivePassengers
+[diff] 0x751dd0   MISMATCH         sub_751DD0
+[diff] 0x7b83e0   MISMATCH         UI_Setup_7B83E0
+[ledger] 0x783a90 Bitmap::GetNumberBitmapWOL -> NG (attempt 1)
+[ledger] 0x770fe0 ObjectClass::sub_770FE0 -> NG (attempt 1)
+[ledger] 0x763e20 WaypointPathClass::ProcessEvent -> NG (attempt 1)
+[ledger] 0x477440 GameSetup::ParseCoordTriple -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69e430 ObjectClass::LoadSHPFile -> NG (attempt 1)
+[ledger] 0x6ce800 SuperWeaponTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d2da6 ObjectClass::__getstream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x700c40 TechnoClass::CanReceivePassengers -> NG (attempt 1)
+[ledger] 0x7b6be0 WideString::AssignConcat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b6cd0 ObjectClass::Surface_Lock -> NG (attempt 1)
+[ledger] 0x42ed60 HouseClass::SaveTriggerNodeData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x751dd0 sub_751DD0 -> NG (attempt 1)
+[ledger] 0x4deae0 FootClass::DeployAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x776a70 SaveWOLLobbySettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x642ff0 sub_642FF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ab0a0 CChatEventSink::DispatchStub_42 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ab260 CChatEventSink::DispatchStub_43 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b83e0 UI_Setup_7B83E0 -> NG (attempt 1)
+[ledger] 0x7b5ca0 ObjectClass::sub_7B5CA0 -> NG (attempt 1)
+[ledger] 0x63d560 BuildingClass::DrawSelectionBlip -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "branch_order": 3,
+  "codegen_shape": 1,
+  "regalloc": 1,
+  "frame_sched": 3,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p49\batch_report.json
