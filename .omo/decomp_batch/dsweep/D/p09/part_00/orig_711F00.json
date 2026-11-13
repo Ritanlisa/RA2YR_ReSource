@@ -1,0 +1,11 @@
+{
+ "addr": "0x711F00",
+ "name": "TechnoTypeClass::ComputeValueSimple",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x711F00",
+ "bytes_hex": "83ec0856578b7c24148bf185ff743f568bcfe8d99edfffd95c240c568bcfe88d9fdfff8b068bced95c2408ff90ac00000089442414db442414d84c2408d84c240ce8ba3f0b005f5e83c408c204008b168bceff92ac0000005f5e83c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

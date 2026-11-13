@@ -1,0 +1,33 @@
+{
+ "symbol": "?ProcessPowerTimer@BaseClass@@QAEHPAI@Z",
+ "sym_key": "BaseClass::ProcessPowerTimer",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "53568bf18b461450e8000000008b461433db85c07e41558b6c24105733ff8b4e088b140f52e8000000008b4608668b4c0704518bcde8000000008b56088bcd668b44170650e8000000008b46144383c7103bd87cc95f5d5e5bc20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Add_WORD@Checksummer@@QAEHF@Z",
+   "sym_key": "Checksummer::Add_WORD"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?Add_WORD@Checksummer@@QAEHF@Z",
+   "sym_key": "Checksummer::Add_WORD"
+  }
+ ]
+}

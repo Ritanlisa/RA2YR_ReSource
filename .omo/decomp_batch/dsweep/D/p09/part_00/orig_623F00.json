@@ -1,0 +1,11 @@
+{
+ "addr": "0x623F00",
+ "name": "GetListBoxItemText",
+ "size": 94,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x623F00",
+ "bytes_hex": "53558b2da4147e0056578bfa6a008bd957688a01000053ffd58bf085f67f098b4c2414e81814190083c60256e8e64e1a0083c4048bf0565768b704000053ffd58bf88b4c241456e88409190056e8eb4b1a0083c4048bc75f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

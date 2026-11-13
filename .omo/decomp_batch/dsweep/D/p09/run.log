@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x40b010 ObjectClass::sub_40B010 -> ObjectClass
+[conv] 0x76f500 rc_ptr::ConstructWDTSelection_Create_76F500 -> rc_ptr
+[conv] 0x7db087 ___add_12 -> _addr_7D
+[conv] 0x54e690 ObjectClass::sub_54E690 -> ObjectClass
+[conv] 0x623f00 GetListBoxItemText -> _addr_62
+[conv] 0x623fc0 OptionsDlgProcWOL_Assign -> OptionsDlgProcWOL
+[conv] 0x764b30 rc_ptr::Audio_Create -> rc_ptr
+[conv] 0x623e40 GetDialogText -> _addr_62
+[conv] 0x623f60 UI_Assign_623F60 -> UI_Assign
+[conv] 0x624020 MainLobbyDlgProcWOL_Assign -> MainLobbyDlgProcWOL
+[conv] 0x65d190 RawFileClass::Delete -> RawFileClass
+[conv] 0x401fc0 ObjectClass::sub_401FC0 -> ObjectClass
+[conv] 0x42f180 BaseClass::ProcessPowerTimer -> BaseClass
+[conv] 0x684290 ObjectClass::UpdateMouse -> ObjectClass
+[conv] 0x679ee0 LoadArtINI -> _addr_67
+[conv] 0x711f00 TechnoTypeClass::ComputeValueSimple -> TechnoTypeClass
+[conv] 0x4081a0 AudioQueue::HaltVoices -> AudioQueue
+[conv] 0x62ce40 ParticleClass::Dispatch -> ParticleClass
+[conv] 0x623ea0 GetEditControlText -> _addr_62
+[conv] 0x402550 AudioStream::Destructor -> AudioStream
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] rc_ptr                   rc=2
+[era] _addr_7D                 rc=0
+[era] _addr_62                 rc=0
+[era] OptionsDlgProcWOL        rc=0
+[era] UI_Assign                rc=0
+[era] MainLobbyDlgProcWOL      rc=0
+[era] RawFileClass             rc=2
+[era] BaseClass                rc=0
+[era] _addr_67                 rc=0
+[era] TechnoTypeClass          rc=0
+[era] AudioQueue               rc=0
+[era] ParticleClass            rc=2
+[era] AudioStream              rc=0
+=== diffasm byte-compare ===
+[diff] 0x40b010   MISMATCH         ObjectClass::sub_40B010
+[diff] 0x54e690   MISMATCH         ObjectClass::sub_54E690
+[diff] 0x401fc0   MISMATCH         ObjectClass::sub_401FC0
+[diff] 0x764b30   MISMATCH         rc_ptr::Audio_Create
+[diff] 0x7db087   MISMATCH         ___add_12
+[diff] 0x623f00   MISMATCH         GetListBoxItemText
+[diff] 0x623e40   MISMATCH         GetDialogText
+[diff] 0x623ea0   MISMATCH         GetEditControlText
+[diff] 0x623fc0   MISMATCH         OptionsDlgProcWOL_Assign
+[diff] 0x623f60   MISMATCH         UI_Assign_623F60
+[diff] 0x624020   MISMATCH         MainLobbyDlgProcWOL_Assign
+[diff] 0x42f180   MISMATCH         BaseClass::ProcessPowerTimer
+[diff] 0x679ee0   MISMATCH         LoadArtINI
+[diff] 0x711f00   MISMATCH         TechnoTypeClass::ComputeValueSimple
+[diff] 0x4081a0   MISMATCH         AudioQueue::HaltVoices
+[diff] 0x402550   MISMATCH         AudioStream::Destructor
+[ledger] 0x40b010 ObjectClass::sub_40B010 -> NG (attempt 1)
+[ledger] 0x76f500 rc_ptr::ConstructWDTSelection_Create_76F500 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7db087 ___add_12 -> NG (attempt 1)
+[ledger] 0x54e690 ObjectClass::sub_54E690 -> NG (attempt 1)
+[ledger] 0x623f00 GetListBoxItemText -> NG (attempt 1)
+[ledger] 0x623fc0 OptionsDlgProcWOL_Assign -> NG (attempt 1)
+[ledger] 0x764b30 rc_ptr::Audio_Create -> NG (attempt 1)
+[ledger] 0x623e40 GetDialogText -> NG (attempt 1)
+[ledger] 0x623f60 UI_Assign_623F60 -> NG (attempt 1)
+[ledger] 0x624020 MainLobbyDlgProcWOL_Assign -> NG (attempt 1)
+[ledger] 0x65d190 RawFileClass::Delete -> COMPILE_FAIL (attempt 1)
+[ledger] 0x401fc0 ObjectClass::sub_401FC0 -> NG (attempt 1)
+[ledger] 0x42f180 BaseClass::ProcessPowerTimer -> NG (attempt 1)
+[ledger] 0x684290 ObjectClass::UpdateMouse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x679ee0 LoadArtINI -> NG (attempt 1)
+[ledger] 0x711f00 TechnoTypeClass::ComputeValueSimple -> NG (attempt 1)
+[ledger] 0x4081a0 AudioQueue::HaltVoices -> NG (attempt 1)
+[ledger] 0x62ce40 ParticleClass::Dispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x623ea0 GetEditControlText -> NG (attempt 1)
+[ledger] 0x402550 AudioStream::Destructor -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 7,
+  "const_fold": 1,
+  "regalloc": 4,
+  "frame_sched": 1,
+  "branch_order": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p09\batch_report.json

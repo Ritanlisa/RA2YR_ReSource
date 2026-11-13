@@ -1,0 +1,11 @@
+{
+ "addr": "0x623E40",
+ "name": "GetDialogText",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x623E40",
+ "bytes_hex": "5355576a008bd96a006a0e8bea53ff15a4147e008bf885ff7f0d8bcde8df14190033c05f5d5bc38d47025650e8a64f1a0083c4048bf047565768b504000053ff15a4147e008bcd8bf856e8410a190056e8a84c1a0083c4048bc75e5f5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

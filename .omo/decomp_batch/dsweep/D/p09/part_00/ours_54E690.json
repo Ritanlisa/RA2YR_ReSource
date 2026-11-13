@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_54E690@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::sub_54E690",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "5356578bf933c08a471c8bf04e781433c98a4f108b14b152e80000000083c4044e79ec8b4f0c8d770c33c0568a47148bf8ff510c8b1633db535756ff52088b4604c706000000003bc37411385e0d740c50e80000000083c404895e04885e0d895e085f5e5bc3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_KamikazeControl@@3PAXA",
+   "sym_key": "vt_VectorClass_KamikazeControl"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "symbol": "?HaltVoices@AudioQueue@@QAEHPAVVoice@@@Z",
+ "sym_key": "AudioQueue::HaltVoices",
+ "size": 103,
+ "link_base": 0,
+ "bytes_hex": "8a0d8c0000005684c90fbec17455b980000000e8000000008bf085f67443578b7c240c8b868800000085c075228b461485c0741b6868000000e8000000008bcfe8000000006868000000e8000000008bcee8000000008bf085f675c75f5ec204008bc65ec20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?EnterCriticalSection@@YGXPAX@Z",
+   "sym_key": "EnterCriticalSection"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Stop@Voice@@QAEPAXXZ",
+   "sym_key": "Voice::Stop"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?LeaveCriticalSection@@YGXPAX@Z",
+   "sym_key": "LeaveCriticalSection"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  }
+ ]
+}

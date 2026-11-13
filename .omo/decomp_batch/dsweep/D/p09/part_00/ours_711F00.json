@@ -1,0 +1,27 @@
+{
+ "symbol": "?ComputeValueSimple@TechnoTypeClass@@QAEHH@Z",
+ "sym_key": "TechnoTypeClass::ComputeValueSimple",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "83ec0856578b7c24148bf185ff75118b0656ff90ac0000005f5e83c408c20400568bcfe800000000d95c240c568bcfe8000000008b0e56d95c240cff91ac0000008944241483ec08db44241cd84c2410d84c2414dd1c24e8000000008b4c241c83c40833c125ff0000005f33c15e83c408c20400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Dispatch@TechnoTypeClass@@QAENPAX@Z",
+   "sym_key": "TechnoTypeClass::Dispatch"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?GetThreatMultiplier@TechnoTypeClass@@QAENPAX@Z",
+   "sym_key": "TechnoTypeClass::GetThreatMultiplier"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

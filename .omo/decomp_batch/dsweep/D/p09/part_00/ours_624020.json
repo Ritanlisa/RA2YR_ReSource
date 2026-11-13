@@ -1,0 +1,45 @@
+{
+ "symbol": "?MainLobbyDlgProcWOL_Assign@@YIJPAXIPAPAX@Z",
+ "sym_key": "Unnamed::MainLobbyDlgProcWOL_Assign",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "535556578bfa6a008bd957684901000053e8000000008bf08b6c241485f67f078bcde8000000008d44360450e80000000083c4048bf0565768c304000053e8000000008bcd8bf856e80000000056e80000000083c4048bc75f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Ptr@SafeDelete@@QAEXXZ",
+   "sym_key": "SafeDelete::Ptr"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXPAX@Z",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

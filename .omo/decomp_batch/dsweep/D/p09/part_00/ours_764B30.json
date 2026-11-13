@@ -1,0 +1,51 @@
+{
+ "symbol": "?Audio_Create@rc_ptr@@QAIPAVrc_ptr_base@@PAHPAPBD@Z",
+ "sym_key": "rc_ptr::Audio_Create",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "538b5c240856578b43108bfa85c08bf17513e800000000c706000000008bc65f5e5bc204006a4ce80000000083c40485c0740f535750e80000000083c40c8bf8eb0233ff8bcee8000000008bcec7060000000057e8000000008bc65f5e5bc20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_Campaign@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_Campaign"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?CampaignConstructorWDT@@YAPADPAX00@Z",
+   "sym_key": "CampaignConstructorWDT"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_Campaign@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_Campaign"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

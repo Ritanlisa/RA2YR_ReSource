@@ -1,0 +1,11 @@
+{
+ "addr": "0x623EA0",
+ "name": "GetEditControlText",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x623EA0",
+ "bytes_hex": "5355576a008bd96a006a0e8bea53ff15a4147e008bf885ff7f0d8bcde87f31190033c05f5d5bc38d443f045650e8454f1a0083c4048bf047565768b304000053ff15a4147e008bcd8bf856e89029190056e8474c1a0083c4048bc75e5f5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

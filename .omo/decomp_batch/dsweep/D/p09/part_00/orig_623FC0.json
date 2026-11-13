@@ -1,0 +1,11 @@
+{
+ "addr": "0x623FC0",
+ "name": "OptionsDlgProcWOL_Assign",
+ "size": 94,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x623FC0",
+ "bytes_hex": "53558b2da4147e0056578bfa6a008bd957684901000053ffd58bf085f67f098b4c2414e85813190083c60256e8264e1a0083c4048bf0565768bd04000053ffd58bf88b4c241456e8c408190056e82b4b1a0083c4048bc75f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

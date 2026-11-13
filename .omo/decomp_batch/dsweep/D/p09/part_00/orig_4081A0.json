@@ -1,0 +1,11 @@
+{
+ "addr": "0x4081A0",
+ "name": "AudioQueue::HaltVoices",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4081A0",
+ "bytes_hex": "a11ce887005685c07454b910e88700e80cf2ffff8bf085f67444538b1dec117e00578b3de8117e008b868800000085c0751d8b461485c0741668f8e78700ffd78b4e14e8c8a3ffff68f8e78700ffd38bcee8eaf1ffff8bf085f675cc5f5b5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

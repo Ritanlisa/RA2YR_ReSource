@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_40B010@ObjectClass@@QAEPAPAXH@Z",
+ "sym_key": "ObjectClass::sub_40B010",
+ "size": 100,
+ "link_base": 0,
+ "bytes_hex": "538a5c2408568bf1f6c30274398b46fc558d6efc8d34864885c07c14578d780183ee0456e80000000083c4044f75f15ff6c301740955e80000000083c4048bc55d5e5bc2040056e80000000083c404f6c301740956e80000000083c4048bc65e5bc20400",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

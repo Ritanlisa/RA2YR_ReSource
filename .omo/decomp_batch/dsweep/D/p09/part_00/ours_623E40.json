@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetDialogText@@YIJPAXPAVString@@@Z",
+ "sym_key": "Unnamed::GetDialogText",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "5355576a008bd96a006a0e8bea53e8000000008bf885ff7f0d8bcde80000000033c05f5d5bc38d47025650e80000000083c4048bf047565768b504000053e8000000008bcd8bf856e80000000056e80000000083c4048bc75e5f5d5bc3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Alt2@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt2"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Assign_Alt@String@@QAEPAPAXPAX@Z",
+   "sym_key": "String::Assign_Alt"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

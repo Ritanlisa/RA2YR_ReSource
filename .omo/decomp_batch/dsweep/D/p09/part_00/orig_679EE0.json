@@ -1,0 +1,11 @@
+{
+ "addr": "0x679EE0",
+ "name": "LoadArtINI",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x679EE0",
+ "bytes_hex": "83ec6c6a006a00b980718800e8cfb8eaff8d4c24006854628200e8f19adfff8d442400b9807188006a006a0050e8dea2dfff8d4c2458c7442400b0167e00c744246400000000e8250fdcff8d4c2400c744240068167e00e8447cdbff83c46cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

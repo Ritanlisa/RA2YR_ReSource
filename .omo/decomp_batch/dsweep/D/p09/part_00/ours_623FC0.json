@@ -1,0 +1,45 @@
+{
+ "symbol": "?OptionsDlgProcWOL_Assign@@YIJPAXIPAPAX@Z",
+ "sym_key": "Unnamed::OptionsDlgProcWOL_Assign",
+ "size": 94,
+ "link_base": 0,
+ "bytes_hex": "535556578bfa6a008bd957684901000053e8000000008bf08b6c241485f67f078bcde80000000083c60256e80000000083c4048bf0565768bd04000053e8000000008bcd8bf856e80000000056e80000000083c4048bc75f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Alt2@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt2"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?Assign_Alt@String@@QAEPAPAXPAX@Z",
+   "sym_key": "String::Assign_Alt"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

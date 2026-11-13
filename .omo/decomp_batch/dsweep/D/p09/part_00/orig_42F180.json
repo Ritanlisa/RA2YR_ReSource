@@ -1,0 +1,11 @@
+{
+ "addr": "0x42F180",
+ "name": "BaseClass::ProcessPowerTimer",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42F180",
+ "bytes_hex": "538b5c240855568bf18bcb8b461450e8bc2b07008b461433ed85c07e3d5733ff8b4e088b14398bcb52e8a22b07008b4608668b4c3804518bcbe8722b07008b56088bcb668b443a0650e8622b07008b46144583c7103be87cc75f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

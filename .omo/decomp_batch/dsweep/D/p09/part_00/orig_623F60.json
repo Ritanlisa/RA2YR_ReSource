@@ -1,0 +1,11 @@
+{
+ "addr": "0x623F60",
+ "name": "UI_Assign_623F60",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x623F60",
+ "bytes_hex": "53558b2da4147e0056578bfa6a008bd957688a01000053ffd58bf085f67f098b4c2414e8b83019008d44360450e8854e1a0083c4048bf0565768b604000053ffd58bf88b4c241456e8d328190056e88a4b1a0083c4048bc75f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
