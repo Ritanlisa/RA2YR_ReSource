@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ef8a0 _VectorClass_PAVTeamClass::QueryInterface -> _VectorClass_PAVTeamClass
+[conv] 0x4ef8f0 _DynamicVectorClass_PAVTeamClass::Constructor_VectorClass_TeamClass___ -> _DynamicVectorClass_PAVTeamClass
+[conv] 0x4ef940 _VectorClass_PAUThemeControl::Add -> _VectorClass_PAUThemeControl
+[conv] 0x4ef990 _VectorClass_PAVTriggerClass::QueryInterface -> _VectorClass_PAVTriggerClass
+[conv] 0x4ef9e0 _DynamicVectorClass_PAVTriggerClass::Constructor_VectorClass_TriggerClass___ -> _DynamicVectorClass_PAVTriggerClass
+[conv] 0x4efa30 _VectorClass_PAVTriggerTypeClass::QueryInterface -> _VectorClass_PAVTriggerTypeClass
+[conv] 0x4efa80 _DynamicVectorClass_PAVTriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___ -> _DynamicVectorClass_PAVTriggerTypeClass
+[conv] 0x4efad0 _VectorClass_PAVTubeClass::QueryInterface -> _VectorClass_PAVTubeClass
+[conv] 0x4efb20 _DynamicVectorClass_PAVTubeClass::Constructor_VectorClass_TubeClass___ -> _DynamicVectorClass_PAVTubeClass
+[conv] 0x4efb70 _VectorClass_PAVParticleSystemClass::QueryInterface -> _VectorClass_PAVParticleSystemClass
+[conv] 0x4efbc0 _DynamicVectorClass_PAVParticleSystemClass::Constructor_VectorClass_ParticleSystemClass___ -> _DynamicVectorClass_PAVParticleSystemClass
+[conv] 0x4efc10 _VectorClass_PAVWaveClass::QueryInterface -> _VectorClass_PAVWaveClass
+[conv] 0x4efc60 _DynamicVectorClass_PAVWaveClass::Constructor_VectorClass_WaveClass___ -> _DynamicVectorClass_PAVWaveClass
+[conv] 0x4efcb0 _VectorClass_PAVOverlayClass::QueryInterface -> _VectorClass_PAVOverlayClass
+[conv] 0x4efd00 _DynamicVectorClass_PAVOverlayClass::Constructor_VectorClass_OverlayClass___ -> _DynamicVectorClass_PAVOverlayClass
+[conv] 0x4efd50 _VectorClass_PAVSmudgeClass::QueryInterface -> _VectorClass_PAVSmudgeClass
+[conv] 0x4efda0 _DynamicVectorClass_PAVSmudgeClass::finalizeParticles -> _DynamicVectorClass_PAVSmudgeClass
+[conv] 0x4efdf0 _VectorClass_PAVTerrainClass::QueryInterface -> _VectorClass_PAVTerrainClass
+[conv] 0x4efe40 _DynamicVectorClass_PAVTerrainClass::Constructor_VectorClass_TerrainClass___ -> _DynamicVectorClass_PAVTerrainClass
+[conv] 0x4efe90 _VectorClass_PAVAircraftClass::QueryInterface -> _VectorClass_PAVAircraftClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVTeamClass rc=0
+[era] _DynamicVectorClass_PAVTeamClass rc=0
+[era] _VectorClass_PAUThemeControl rc=0
+[era] _VectorClass_PAVTriggerClass rc=0
+[era] _DynamicVectorClass_PAVTriggerClass rc=0
+[era] _VectorClass_PAVTriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVTriggerTypeClass rc=0
+[era] _VectorClass_PAVTubeClass rc=0
+[era] _DynamicVectorClass_PAVTubeClass rc=0
+[era] _VectorClass_PAVParticleSystemClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemClass rc=0
+[era] _VectorClass_PAVWaveClass rc=0
+[era] _DynamicVectorClass_PAVWaveClass rc=0
+[era] _VectorClass_PAVOverlayClass rc=0
+[era] _DynamicVectorClass_PAVOverlayClass rc=0
+[era] _VectorClass_PAVSmudgeClass rc=0
+[era] _DynamicVectorClass_PAVSmudgeClass rc=0
+[era] _VectorClass_PAVTerrainClass rc=0
+[era] _DynamicVectorClass_PAVTerrainClass rc=0
+[era] _VectorClass_PAVAircraftClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4ef8a0   MISMATCH         _VectorClass_PAVTeamClass::QueryInterface
+[diff] 0x4ef8f0   MISMATCH         _DynamicVectorClass_PAVTeamClass::Constructor_VectorClass_TeamClass___
+[diff] 0x4ef940   MISMATCH         _VectorClass_PAUThemeControl::Add
+[diff] 0x4ef990   MISMATCH         _VectorClass_PAVTriggerClass::QueryInterface
+[diff] 0x4ef9e0   MISMATCH         _DynamicVectorClass_PAVTriggerClass::Constructor_VectorClass_TriggerClass___
+[diff] 0x4efa30   MISMATCH         _VectorClass_PAVTriggerTypeClass::QueryInterface
+[diff] 0x4efa80   MISMATCH         _DynamicVectorClass_PAVTriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___
+[diff] 0x4efad0   MISMATCH         _VectorClass_PAVTubeClass::QueryInterface
+[diff] 0x4efb20   MISMATCH         _DynamicVectorClass_PAVTubeClass::Constructor_VectorClass_TubeClass___
+[diff] 0x4efb70   MISMATCH         _VectorClass_PAVParticleSystemClass::QueryInterface
+[diff] 0x4efbc0   MISMATCH         _DynamicVectorClass_PAVParticleSystemClass::Constructor_VectorClass_ParticleSystemClass___
+[diff] 0x4efc10   MISMATCH         _VectorClass_PAVWaveClass::QueryInterface
+[diff] 0x4efc60   MISMATCH         _DynamicVectorClass_PAVWaveClass::Constructor_VectorClass_WaveClass___
+[diff] 0x4efcb0   MISMATCH         _VectorClass_PAVOverlayClass::QueryInterface
+[diff] 0x4efd00   MISMATCH         _DynamicVectorClass_PAVOverlayClass::Constructor_VectorClass_OverlayClass___
+[diff] 0x4efd50   MISMATCH         _VectorClass_PAVSmudgeClass::QueryInterface
+[diff] 0x4efda0   MISMATCH         _DynamicVectorClass_PAVSmudgeClass::finalizeParticles
+[diff] 0x4efdf0   MISMATCH         _VectorClass_PAVTerrainClass::QueryInterface
+[diff] 0x4efe40   MISMATCH         _DynamicVectorClass_PAVTerrainClass::Constructor_VectorClass_TerrainClass___
+[diff] 0x4efe90   MISMATCH         _VectorClass_PAVAircraftClass::QueryInterface
+[ledger] 0x4ef8a0 _VectorClass_PAVTeamClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4ef8f0 _DynamicVectorClass_PAVTeamClass::Constructor_VectorClass_TeamClass___ -> NG (attempt 2)
+[ledger] 0x4ef940 _VectorClass_PAUThemeControl::Add -> NG (attempt 2)
+[ledger] 0x4ef990 _VectorClass_PAVTriggerClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4ef9e0 _DynamicVectorClass_PAVTriggerClass::Constructor_VectorClass_TriggerClass___ -> NG (attempt 2)
+[ledger] 0x4efa30 _VectorClass_PAVTriggerTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4efa80 _DynamicVectorClass_PAVTriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___ -> NG (attempt 4)
+[ledger] 0x4efad0 _VectorClass_PAVTubeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4efb20 _DynamicVectorClass_PAVTubeClass::Constructor_VectorClass_TubeClass___ -> NG (attempt 2)
+[ledger] 0x4efb70 _VectorClass_PAVParticleSystemClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4efbc0 _DynamicVectorClass_PAVParticleSystemClass::Constructor_VectorClass_ParticleSystemClass___ -> NG (attempt 2)
+[ledger] 0x4efc10 _VectorClass_PAVWaveClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4efc60 _DynamicVectorClass_PAVWaveClass::Constructor_VectorClass_WaveClass___ -> NG (attempt 2)
+[ledger] 0x4efcb0 _VectorClass_PAVOverlayClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4efd00 _DynamicVectorClass_PAVOverlayClass::Constructor_VectorClass_OverlayClass___ -> NG (attempt 2)
+[ledger] 0x4efd50 _VectorClass_PAVSmudgeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4efda0 _DynamicVectorClass_PAVSmudgeClass::finalizeParticles -> NG (attempt 2)
+[ledger] 0x4efdf0 _VectorClass_PAVTerrainClass::QueryInterface -> NG (attempt 4)
+[ledger] 0x4efe40 _DynamicVectorClass_PAVTerrainClass::Constructor_VectorClass_TerrainClass___ -> NG (attempt 2)
+[ledger] 0x4efe90 _VectorClass_PAVAircraftClass::QueryInterface -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_polarity": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p08\batch_report.json
