@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x692300 Tactical::MouseOver -> Tactical
+[conv] 0x692b60 Viewport::ProcessScroll -> Viewport
+[conv] 0x697e70 SessionClass::IsValidHouse -> SessionClass
+[conv] 0x6980c0 ScenarioClass::LoadNetworkConfig -> ScenarioClass
+[conv] 0x69ac30 ScenarioClass::CheckExists -> ScenarioClass
+[conv] 0x69ae10 GameClass::initPlayerData -> GameClass
+[conv] 0x69b170 ObjectClass::ParseAndApplyAlliances -> ObjectClass
+[conv] 0x69bc20 IPXConnClass::closeConnection -> IPXConnClass
+[conv] 0x69bd60 SessionClass::SetupNetwork -> SessionClass
+[conv] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> JumpjetLocomotionClass
+[conv] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> ShipLocomotionClass
+[conv] 0x6a5840 SidebarClass::LoadAssets -> SidebarClass
+[conv] 0x6a7780 SidebarClass::UpdateStrips -> SidebarClass
+[conv] 0x6aad00 SelectClass_StripClass_SidebarClass::ProcessInput -> SelectClass_StripClass_SidebarClass
+[conv] 0x6acd60 Skirmish::EnableSpawnButtons -> Skirmish
+[conv] 0x6acee0 DialogSkirmishFunc_UpdateMultiEngineer -> DialogSkirmishFunc
+[conv] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> SlaveManagerClass
+[conv] 0x6afd60 ObjectClass::ProcessDeployAction -> ObjectClass
+[conv] 0x6b4240 Map_Helper_6B4240 -> Map_Helper
+[conv] 0x6b7010 SpawnManagerClass::Constructor_SpawnManagerClass -> SpawnManagerClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Tactical                 rc=2
+[era] Viewport                 rc=2
+[era] SessionClass             rc=2
+[era] ScenarioClass            rc=2
+[era] GameClass                rc=2
+[era] ObjectClass              rc=2
+[era] IPXConnClass             rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ShipLocomotionClass      rc=2
+[era] SidebarClass             rc=2
+[era] SelectClass_StripClass_SidebarClass rc=2
+[era] Skirmish                 rc=2
+[era] DialogSkirmishFunc       rc=2
+[era] SlaveManagerClass        rc=2
+[era] Map_Helper               rc=2
+[era] SpawnManagerClass        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x692300 Tactical::MouseOver -> COMPILE_FAIL (attempt 5)
+[ledger] 0x692b60 Viewport::ProcessScroll -> COMPILE_FAIL (attempt 5)
+[ledger] 0x697e70 SessionClass::IsValidHouse -> COMPILE_FAIL (attempt 16)
+[ledger] 0x6980c0 ScenarioClass::LoadNetworkConfig -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69ac30 ScenarioClass::CheckExists -> COMPILE_FAIL (attempt 5)
+[ledger] 0x69ae10 GameClass::initPlayerData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69b170 ObjectClass::ParseAndApplyAlliances -> COMPILE_FAIL (attempt 5)
+[ledger] 0x69bc20 IPXConnClass::closeConnection -> COMPILE_FAIL (attempt 7)
+[ledger] 0x69bd60 SessionClass::SetupNetwork -> COMPILE_FAIL (attempt 5)
+[ledger] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6a5840 SidebarClass::LoadAssets -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6a7780 SidebarClass::UpdateStrips -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6aad00 SelectClass_StripClass_SidebarClass::ProcessInput -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6acd60 Skirmish::EnableSpawnButtons -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6acee0 DialogSkirmishFunc_UpdateMultiEngineer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6afd60 ObjectClass::ProcessDeployAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b4240 Map_Helper_6B4240 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6b7010 SpawnManagerClass::Constructor_SpawnManagerClass -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p24\batch_report.json
