@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x70d7e0 FootClass::ProcessEnterTransport -> FootClass
+[conv] 0x70d990 TechnoClass::OnEnterCell -> TechnoClass
+[conv] 0x70e5a0 ObjectClass::UpdateTechnoIdleTimer -> ObjectClass
+[conv] 0x70ece0 TechnoClass::Fire -> TechnoClass
+[conv] 0x70fd70 TechnoClass::LinkToBridge -> TechnoClass
+[conv] 0x70fee0 TechnoClass::EjectPassengers -> TechnoClass
+[conv] 0x710000 FootClass::FootClass_ImbueLocomotor -> FootClass
+[conv] 0x7104f0 FootClass::UpdatePassengerCoords -> FootClass
+[conv] 0x710af0 TechnoTypeClass::ReadINI -> TechnoTypeClass
+[conv] 0x711ae0 TechnoTypeClass::DTOR -> TechnoTypeClass
+[conv] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> TeleportLocomotionClass
+[conv] 0x71bb90 TerrainClass::Construct -> TerrainClass
+[conv] 0x722af0 BuildingClass::AddOccupancy -> BuildingClass
+[conv] 0x7241a0 Tooltip::Enable -> Tooltip
+[conv] 0x724ad0 ToolTipClass::initString -> ToolTipClass
+[conv] 0x72a4a0 TextLabelClass::DrawTypewriterText -> TextLabelClass
+[conv] 0x72b2f0 LoadingScreen::GetBackgroundImage -> LoadingScreen
+[conv] 0x72b310 LoadingScreen::GetOverlayImage -> LoadingScreen
+[conv] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> CampaignScore
+[conv] 0x72dfb0 InitLoadingScreenResources -> _addr_72
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] TechnoTypeClass          rc=2
+[era] TeleportLocomotionClass  rc=2
+[era] TerrainClass             rc=2
+[era] BuildingClass            rc=2
+[era] Tooltip                  rc=2
+[era] ToolTipClass             rc=2
+[era] TextLabelClass           rc=2
+[era] LoadingScreen            rc=2
+[era] CampaignScore            rc=2
+[era] _addr_72                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x70d7e0 FootClass::ProcessEnterTransport -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70d990 TechnoClass::OnEnterCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70e5a0 ObjectClass::UpdateTechnoIdleTimer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70ece0 TechnoClass::Fire -> COMPILE_FAIL (attempt 4)
+[ledger] 0x70fd70 TechnoClass::LinkToBridge -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70fee0 TechnoClass::EjectPassengers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x710000 FootClass::FootClass_ImbueLocomotor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7104f0 FootClass::UpdatePassengerCoords -> COMPILE_FAIL (attempt 3)
+[ledger] 0x710af0 TechnoTypeClass::ReadINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x711ae0 TechnoTypeClass::DTOR -> COMPILE_FAIL (attempt 6)
+[ledger] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71bb90 TerrainClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x722af0 BuildingClass::AddOccupancy -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7241a0 Tooltip::Enable -> COMPILE_FAIL (attempt 3)
+[ledger] 0x724ad0 ToolTipClass::initString -> COMPILE_FAIL (attempt 3)
+[ledger] 0x72a4a0 TextLabelClass::DrawTypewriterText -> COMPILE_FAIL (attempt 3)
+[ledger] 0x72b2f0 LoadingScreen::GetBackgroundImage -> COMPILE_FAIL (attempt 5)
+[ledger] 0x72b310 LoadingScreen::GetOverlayImage -> COMPILE_FAIL (attempt 5)
+[ledger] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x72dfb0 InitLoadingScreenResources -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p20\batch_report.json
