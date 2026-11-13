@@ -1,0 +1,51 @@
+{
+ "symbol": "?ParsePathDirections@ObjectClass@@QAEDHPAH@Z",
+ "sym_key": "ObjectClass::ParsePathDirections",
+ "size": 585,
+ "link_base": 0,
+ "bytes_hex": "83ec288b44242c5355568b50088b08578b780c8b40148d5aff33ed33f685db894c242cc7442414ffffffff895c2424c7442420ffffffff894424288974241cc644243c0089742410894c2418894c24300f8ce501000083fa010f84dc01000085db0f8ea10100008b5c24408a44243c84c00f85ee0000008d142e8b04978ad02b54241483e2078954243c8b5424143bc2753d8b54243c4583fa02740583fa0675138b54241483faff740a83fa08740583f808751b03f5bd01000000a801894424147508c7442414ffffffff894c24188d142e83f808c644243c01c7442410010000008b0c978954241c894c2420753b8d542430b9f801000052e8000000000fbf801601000083f8ff750b33c9894c2430e9d20000008b0d7c0300008b14818b4a28894c2430e9bd0000000fbe807a0000008b4c24308d14018b4c242c33d181e2ff00000033ca8b542432c1f81003c233c125ff00000033c8894c242c894c2430e9820000008b44241c8b54241003d08b442420390497746b8b4424288b5424108d4c241851528d0cb08b442448558d14b7515250e80000000003f08b4c2418bd01000000c644243c008b04b783e0078a807a0000008ad003d133d381e2ff000000c0f810c1e91033da03c133c325ff00000033d88bcb894c24308b04b789442414eb04ff4424108b4424248d142e3bd07d168b4424108b54241c03c28b5424243bc20f8c63feffff8a44243c84c0742f8b5424288b4c24108d44241850518d04b28b542448558d0cb7505152e8000000005f5e5d5b83c428c208008a44242c5f5e5d5b83c428c20800",
+ "relocs": [
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 301,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 405,
+   "type": "REL32",
+   "sym": "?GeneratePathWaypoints@@YGHPAX0HHH0@Z",
+   "sym_key": "GeneratePathWaypoints"
+  },
+  {
+   "off": 433,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 557,
+   "type": "REL32",
+   "sym": "?GeneratePathWaypoints@@YGHPAX0HHH0@Z",
+   "sym_key": "GeneratePathWaypoints"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p118\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e1de0 GameOptions::GameSpeedChanged -> GameOptions
+[conv] 0x5a7440 IsMapClassAreaUniform -> _addr_5A
+[conv] 0x74f760 VersionInfo::Read -> VersionInfo
+[conv] 0x690160 Screen::TransitionLoop -> Screen
+[conv] 0x414080 AircraftClass::Destruct -> AircraftClass
+[conv] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> WWMouseClass
+[conv] 0x636310 Sidebar::CancelSidebarProductionQueue -> Sidebar
+[conv] 0x6d4e20 Tactical::DisplayTacticalOverlayText -> Tactical
+[conv] 0x588750 ScanBuildingPlacementCells -> _addr_58
+[conv] 0x724200 ObjectClass::HandleToolTipMessage -> ObjectClass
+[conv] 0x6b6c90 SpawnManagerClass::SpawnManagerClass -> SpawnManagerClass
+[conv] 0x739ac0 UnitClass::SimpleDeployerDeploy -> UnitClass
+[conv] 0x7d6f86 _LangCountryEnumProc_4 -> _addr_7D
+[conv] 0x5f3b80 ObjectClass::Dtor -> ObjectClass
+[conv] 0x5e6230 ProcessComboBoxAddString -> _addr_5E
+[conv] 0x42b210 ObjectClass::ParsePathDirections -> ObjectClass
+[conv] 0x7c9dd4 ObjectClass::_strtoxl -> ObjectClass
+[conv] 0x728c00 TunnelLocomotionClass::ProcessFormationPosition -> TunnelLocomotionClass
+[conv] 0x517d90 InfantryClass::Destruct -> InfantryClass
+[conv] 0x7d86e6 unknown_libname_90 -> _addr_7D
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GameOptions              rc=2
+[era] _addr_5A                 rc=2
+[era] VersionInfo              rc=2
+[era] Screen                   rc=2
+[era] AircraftClass            rc=2
+[era] WWMouseClass             rc=2
+[era] Sidebar                  rc=0
+[era] Tactical                 rc=0
+[era] _addr_58                 rc=2
+[era] ObjectClass              rc=2
+[era] SpawnManagerClass        rc=2
+[era] UnitClass                rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_5E                 rc=2
+[era] TunnelLocomotionClass    rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x636310   MISMATCH         Sidebar::CancelSidebarProductionQueue
+[diff] 0x6d4e20   MISMATCH         Tactical::DisplayTacticalOverlayText
+[diff] 0x724200   MISMATCH         ObjectClass::HandleToolTipMessage
+[diff] 0x42b210   MISMATCH         ObjectClass::ParsePathDirections
+[diff] 0x739ac0   MISMATCH         UnitClass::SimpleDeployerDeploy
+[ledger] 0x4e1de0 GameOptions::GameSpeedChanged -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a7440 IsMapClassAreaUniform -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74f760 VersionInfo::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690160 Screen::TransitionLoop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x414080 AircraftClass::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> COMPILE_FAIL (attempt 1)
+[ledger] 0x636310 Sidebar::CancelSidebarProductionQueue -> NG (attempt 1)
+[ledger] 0x6d4e20 Tactical::DisplayTacticalOverlayText -> NG (attempt 1)
+[ledger] 0x588750 ScanBuildingPlacementCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x724200 ObjectClass::HandleToolTipMessage -> NG (attempt 1)
+[ledger] 0x6b6c90 SpawnManagerClass::SpawnManagerClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x739ac0 UnitClass::SimpleDeployerDeploy -> NG (attempt 1)
+[ledger] 0x7d6f86 _LangCountryEnumProc_4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f3b80 ObjectClass::Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e6230 ProcessComboBoxAddString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42b210 ObjectClass::ParsePathDirections -> NG (attempt 1)
+[ledger] 0x7c9dd4 ObjectClass::_strtoxl -> COMPILE_FAIL (attempt 1)
+[ledger] 0x728c00 TunnelLocomotionClass::ProcessFormationPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x517d90 InfantryClass::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d86e6 unknown_libname_90 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "ret_norm": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p118\batch_report.json

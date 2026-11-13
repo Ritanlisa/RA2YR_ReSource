@@ -1,0 +1,69 @@
+{
+ "symbol": "?HandleToolTipMessage@ObjectClass@@QAEXH@Z",
+ "sym_key": "ObjectClass::HandleToolTipMessage",
+ "size": 324,
+ "link_base": 0,
+ "bytes_hex": "568bf1807e0c010f85330100008b4424088b400405edfeffff3df50000000f871c01000033c98a8800000000ff248d0000000033d268504954548a560852e8000000008a460484c00f85e70000005355578d7e1057e80000000033c0578a460850e8000000008b864402000033ed85c07e418b9e3802000033c98a0f8bf98b038b48043bf97c1e8b500c03d13bfa77158b500833c98a4e143bca7c098b401003c23bc876128b864402000083c304453be87ccb33c0eb098b86380200008b04a885c00f95c1884e048bcee8000000005f5d84c05b746a8b963002000033c08a46086a0052685049545450e8000000005ec2040033c968504954548a4e0851e8000000008b962802000033c08a46086a0052685049545450e800000000eb1033c968504954548a4e0851e8000000008a460484c0740b0fbe56208d46185056ff125ec20400",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "$L2009",
+   "sym_key": "$L2009"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "$L2010",
+   "sym_key": "$L2010"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?KillTimer@@YGHPAXH@Z",
+   "sym_key": "KillTimer"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?GetCursorPos@@YGHPAX@Z",
+   "sym_key": "GetCursorPos"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?ScreenToClient@@YGHPAX0@Z",
+   "sym_key": "ScreenToClient"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?initString@ToolTipClass@@QAEHXZ",
+   "sym_key": "ToolTipClass::initString"
+  },
+  {
+   "off": 235,
+   "type": "REL32",
+   "sym": "?SetTimer@@YGIPAXH0H@Z",
+   "sym_key": "SetTimer"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?KillTimer@@YGHPAXH@Z",
+   "sym_key": "KillTimer"
+  },
+  {
+   "off": 280,
+   "type": "REL32",
+   "sym": "?SetTimer@@YGIPAXH0H@Z",
+   "sym_key": "SetTimer"
+  },
+  {
+   "off": 298,
+   "type": "REL32",
+   "sym": "?KillTimer@@YGHPAXH@Z",
+   "sym_key": "KillTimer"
+  }
+ ]
+}

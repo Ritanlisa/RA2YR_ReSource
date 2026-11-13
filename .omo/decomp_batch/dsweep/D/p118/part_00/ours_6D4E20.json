@@ -1,0 +1,177 @@
+{
+ "symbol": "?DisplayTacticalOverlayText@Tactical@@QAEXPAH@Z",
+ "sym_key": "Tactical::DisplayTacticalOverlayText",
+ "size": 539,
+ "link_base": 0,
+ "bytes_hex": "a1f009000083ec3085c0535556578bf10f85fb0100008b44244485c0740d50e80000000083c40485c0750d83bea4000000ff0f84d9010000a100000000500fbe088b11ff928400000084c00f84c00100008bbea400000083ffff0f84b10100008b1d4a26000085db0f84a30100008b353a26000085f60f84950100000fbf46063bc70f8e890100000fbf56048b0d00000000a1000000000fbf6e022bca33d22bc52bca6a006a00996a006a002bc26a0068e80300006a00d1f86a00894424486a006a008d4424506800000000d1e950894c245c8b0d0000000057568bd3e8000000008b44244485c00f842301000050e80000000083c40485c00f84120100008b0d00000000beff000000894c24208b0d00000000894c2418894c24108b0d00000000baff000000d3fe8b0d00000000a1000000008b3d000000008b2d040000008bd88944241cd3e68b0d0000000050d3fa8b0d000000008d44242c50896c242cd3e28b0d000000000bf2baff000000d3fa8b0d00000000d3e28d4c241c518bcf0bf28b54245052e8000000008b4424108b542414894424308bc32bc28b4c241c992bc28b5424188bd88b442420d1fb03da8b54241003ca896c2434894c24388d0c28894c243c8b4c24282bc16a01992bc28bcf8be88b442428d1fd03e8e8000000008d5424308bcf52e800000000568bcfe8000000008b4424448b0d000000006a006a005553500fbe115257e8000000005f5e5d5b83c430c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?g_DSurface_WindowOffset@@3IA",
+   "sym_key": "g_DSurface_WindowOffset"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHHIPAX0HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?g_DSurface_WindowOffset@@3IA",
+   "sym_key": "g_DSurface_WindowOffset"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 299,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 330,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 339,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 356,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 371,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 392,
+   "type": "REL32",
+   "sym": "?Layout@Text@@QAEDPAX00H@Z",
+   "sym_key": "Text::Layout"
+  },
+  {
+   "off": 478,
+   "type": "REL32",
+   "sym": "?Swap@Char@@QAEDD@Z",
+   "sym_key": "Char::Swap"
+  },
+  {
+   "off": 490,
+   "type": "REL32",
+   "sym": "?SetRect@TextGroup@@QAEPAIPAX@Z",
+   "sym_key": "TextGroup::SetRect"
+  },
+  {
+   "off": 498,
+   "type": "REL32",
+   "sym": "?Set@Property@@QAEFF@Z",
+   "sym_key": "Property::Set"
+  },
+  {
+   "off": 508,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 525,
+   "type": "REL32",
+   "sym": "?FontRenderer__DrawText@@YGHPAX0PAHHHHH@Z",
+   "sym_key": "FontRenderer__DrawText"
+  }
+ ]
+}
