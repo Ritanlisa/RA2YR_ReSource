@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x4039c0 sub_4039C0 -> _addr_40
+[conv] 0x40b740 _VectorClass_PAVBombClass::processEvent -> _VectorClass_PAVBombClass
+[conv] 0x40b880 _DynamicVectorClass_PAVBombClass::validateEvent -> _DynamicVectorClass_PAVBombClass
+[conv] 0x40b9a0 _VectorClass_PAVTechnoClass::dispatchEvent -> _VectorClass_PAVTechnoClass
+[conv] 0x40bae0 _DynamicVectorClass_PAVTechnoClass::checkCondition -> _DynamicVectorClass_PAVTechnoClass
+[conv] 0x40bef0 _VectorClass_PBVCommandClass::Release -> _VectorClass_PBVCommandClass
+[conv] 0x40c2d0 _VectorClass_PAVLightConvertClass::Release -> _VectorClass_PAVLightConvertClass
+[conv] 0x40c410 _DynamicVectorClass_PAVLightConvertClass::clearEvents -> _DynamicVectorClass_PAVLightConvertClass
+[conv] 0x40ca00 _DynamicVectorClass_PAVIsometricTileClass::SetCapacity -> _DynamicVectorClass_PAVIsometricTileClass
+[conv] 0x40cc20 LogicClass::Constructor_VectorClass_ObjectClass___ -> LogicClass
+[conv] 0x40cd10 _VectorClass_PAVObjectClass::Release -> _VectorClass_PAVObjectClass
+[conv] 0x40d5e0 _VectorClass_PAVMixFileClass::Release -> _VectorClass_PAVMixFileClass
+[conv] 0x40d720 _DynamicVectorClass_PAVMixFileClass::selectCursor -> _DynamicVectorClass_PAVMixFileClass
+[conv] 0x40e890 _VectorClass_PAVScriptClass::Release -> _VectorClass_PAVScriptClass
+[conv] 0x40e9d0 _DynamicVectorClass_PAVScriptClass::SetCapacity -> _DynamicVectorClass_PAVScriptClass
+[conv] 0x40ef60 _VectorClass_PAVVoxelAnimClass::Release -> _VectorClass_PAVVoxelAnimClass
+[conv] 0x40f0a0 _DynamicVectorClass_PAVVoxelAnimClass::SetCapacity -> _DynamicVectorClass_PAVVoxelAnimClass
+[conv] 0x40f680 _VectorClass_PAVWarheadTypeClass::Release -> _VectorClass_PAVWarheadTypeClass
+[conv] 0x40f7c0 _DynamicVectorClass_PAVWarheadTypeClass::SetCapacity -> _DynamicVectorClass_PAVWarheadTypeClass
+[conv] 0x40fc50 _VectorClass_PAVWeaponTypeClass::Release -> _VectorClass_PAVWeaponTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=2
+[era] _VectorClass_PAVBombClass rc=0
+[era] _DynamicVectorClass_PAVBombClass rc=0
+[era] _VectorClass_PAVTechnoClass rc=0
+[era] _DynamicVectorClass_PAVTechnoClass rc=0
+[era] _VectorClass_PBVCommandClass rc=0
+[era] _VectorClass_PAVLightConvertClass rc=0
+[era] _DynamicVectorClass_PAVLightConvertClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileClass rc=0
+[era] LogicClass               rc=2
+[era] _VectorClass_PAVObjectClass rc=0
+[era] _VectorClass_PAVMixFileClass rc=0
+[era] _DynamicVectorClass_PAVMixFileClass rc=0
+[era] _VectorClass_PAVScriptClass rc=0
+[era] _DynamicVectorClass_PAVScriptClass rc=0
+[era] _VectorClass_PAVVoxelAnimClass rc=0
+[era] _DynamicVectorClass_PAVVoxelAnimClass rc=0
+[era] _VectorClass_PAVWarheadTypeClass rc=0
+[era] _DynamicVectorClass_PAVWarheadTypeClass rc=0
+[era] _VectorClass_PAVWeaponTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x40b740   MISMATCH         _VectorClass_PAVBombClass::processEvent
+[diff] 0x40b880   MISMATCH         _DynamicVectorClass_PAVBombClass::validateEvent
+[diff] 0x40b9a0   MISMATCH         _VectorClass_PAVTechnoClass::dispatchEvent
+[diff] 0x40bae0   MISMATCH         _DynamicVectorClass_PAVTechnoClass::checkCondition
+[diff] 0x40bef0   MISMATCH         _VectorClass_PBVCommandClass::Release
+[diff] 0x40c2d0   MISMATCH         _VectorClass_PAVLightConvertClass::Release
+[diff] 0x40c410   MISMATCH         _DynamicVectorClass_PAVLightConvertClass::clearEvents
+[diff] 0x40ca00   MISMATCH         _DynamicVectorClass_PAVIsometricTileClass::SetCapacity
+[diff] 0x40cd10   MISMATCH         _VectorClass_PAVObjectClass::Release
+[diff] 0x40d5e0   MISMATCH         _VectorClass_PAVMixFileClass::Release
+[diff] 0x40d720   MISMATCH         _DynamicVectorClass_PAVMixFileClass::selectCursor
+[diff] 0x40e890   MISMATCH         _VectorClass_PAVScriptClass::Release
+[diff] 0x40e9d0   MISMATCH         _DynamicVectorClass_PAVScriptClass::SetCapacity
+[diff] 0x40ef60   MISMATCH         _VectorClass_PAVVoxelAnimClass::Release
+[diff] 0x40f0a0   MISMATCH         _DynamicVectorClass_PAVVoxelAnimClass::SetCapacity
+[diff] 0x40f680   MISMATCH         _VectorClass_PAVWarheadTypeClass::Release
+[diff] 0x40f7c0   MISMATCH         _DynamicVectorClass_PAVWarheadTypeClass::SetCapacity
+[diff] 0x40fc50   MISMATCH         _VectorClass_PAVWeaponTypeClass::Release
+[ledger] 0x4039c0 sub_4039C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40b740 _VectorClass_PAVBombClass::processEvent -> NG (attempt 2)
+[ledger] 0x40b880 _DynamicVectorClass_PAVBombClass::validateEvent -> NG (attempt 2)
+[ledger] 0x40b9a0 _VectorClass_PAVTechnoClass::dispatchEvent -> NG (attempt 2)
+[ledger] 0x40bae0 _DynamicVectorClass_PAVTechnoClass::checkCondition -> NG (attempt 2)
+[ledger] 0x40bef0 _VectorClass_PBVCommandClass::Release -> NG (attempt 2)
+[ledger] 0x40c2d0 _VectorClass_PAVLightConvertClass::Release -> NG (attempt 2)
+[ledger] 0x40c410 _DynamicVectorClass_PAVLightConvertClass::clearEvents -> NG (attempt 2)
+[ledger] 0x40ca00 _DynamicVectorClass_PAVIsometricTileClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x40cc20 LogicClass::Constructor_VectorClass_ObjectClass___ -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40cd10 _VectorClass_PAVObjectClass::Release -> NG (attempt 2)
+[ledger] 0x40d5e0 _VectorClass_PAVMixFileClass::Release -> NG (attempt 2)
+[ledger] 0x40d720 _DynamicVectorClass_PAVMixFileClass::selectCursor -> NG (attempt 2)
+[ledger] 0x40e890 _VectorClass_PAVScriptClass::Release -> NG (attempt 2)
+[ledger] 0x40e9d0 _DynamicVectorClass_PAVScriptClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x40ef60 _VectorClass_PAVVoxelAnimClass::Release -> NG (attempt 2)
+[ledger] 0x40f0a0 _DynamicVectorClass_PAVVoxelAnimClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x40f680 _VectorClass_PAVWarheadTypeClass::Release -> NG (attempt 2)
+[ledger] 0x40f7c0 _DynamicVectorClass_PAVWarheadTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x40fc50 _VectorClass_PAVWeaponTypeClass::Release -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 18
+ },
+ "pathologies": {
+  "codegen_shape": 18
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p00\batch_report.json
