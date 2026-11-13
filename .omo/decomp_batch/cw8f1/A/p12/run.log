@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x543e30 sub_543E30 -> _addr_54
+[conv] 0x549dd0 IsometricTileTypeClass::GetTileIndex -> IsometricTileTypeClass
+[conv] 0x54aa30 sub_54AA30 -> _addr_54
+[conv] 0x54ac00 sub_54AC00 -> _addr_54
+[conv] 0x54df50 JumpjetLocomotionClass::AddRef -> JumpjetLocomotionClass
+[conv] 0x54df60 JumpjetLocomotionClass::Release -> JumpjetLocomotionClass
+[conv] 0x54fbb0 sub_54FBB0 -> _addr_54
+[conv] 0x54fd80 sub_54FD80 -> _addr_54
+[conv] 0x5517a0 sub_5517A0 -> _addr_55
+[conv] 0x551970 sub_551970 -> _addr_55
+[conv] 0x552850 sub_552850 -> _addr_55
+[conv] 0x552a20 sub_552A20 -> _addr_55
+[conv] 0x554430 sub_554430 -> _addr_55
+[conv] 0x554600 sub_554600 -> _addr_55
+[conv] 0x555bb0 sub_555BB0 -> _addr_55
+[conv] 0x555d80 sub_555D80 -> _addr_55
+[conv] 0x556790 sub_556790 -> _addr_55
+[conv] 0x556960 sub_556960 -> _addr_55
+[conv] 0x558550 sub_558550 -> _addr_55
+[conv] 0x558720 sub_558720 -> _addr_55
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_54                 rc=0
+[era] IsometricTileTypeClass   rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] _addr_55                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x543e30   MATCH            sub_543E30
+[diff] 0x54aa30   MATCH            sub_54AA30
+[diff] 0x54ac00   MATCH            sub_54AC00
+[diff] 0x54fbb0   MATCH            sub_54FBB0
+[diff] 0x54fd80   MATCH            sub_54FD80
+[diff] 0x549dd0   MATCH            IsometricTileTypeClass::GetTileIndex
+[diff] 0x54df50   MATCH            JumpjetLocomotionClass::AddRef
+[diff] 0x54df60   MATCH            JumpjetLocomotionClass::Release
+[diff] 0x5517a0   MATCH            sub_5517A0
+[diff] 0x551970   MATCH            sub_551970
+[diff] 0x552850   MATCH            sub_552850
+[diff] 0x552a20   MATCH            sub_552A20
+[diff] 0x554430   MATCH            sub_554430
+[diff] 0x554600   MATCH            sub_554600
+[diff] 0x555bb0   MATCH            sub_555BB0
+[diff] 0x555d80   MATCH            sub_555D80
+[diff] 0x556790   MATCH            sub_556790
+[diff] 0x556960   MATCH            sub_556960
+[diff] 0x558550   MATCH            sub_558550
+[diff] 0x558720   MATCH            sub_558720
+[ledger] 0x543e30 sub_543E30 -> OK (attempt 3)
+[ledger] 0x549dd0 IsometricTileTypeClass::GetTileIndex -> OK (attempt 3)
+[ledger] 0x54aa30 sub_54AA30 -> OK (attempt 2)
+[ledger] 0x54ac00 sub_54AC00 -> OK (attempt 3)
+[ledger] 0x54df50 JumpjetLocomotionClass::AddRef -> OK (attempt 2)
+[ledger] 0x54df60 JumpjetLocomotionClass::Release -> OK (attempt 2)
+[ledger] 0x54fbb0 sub_54FBB0 -> OK (attempt 2)
+[ledger] 0x54fd80 sub_54FD80 -> OK (attempt 3)
+[ledger] 0x5517a0 sub_5517A0 -> OK (attempt 2)
+[ledger] 0x551970 sub_551970 -> OK (attempt 3)
+[ledger] 0x552850 sub_552850 -> OK (attempt 2)
+[ledger] 0x552a20 sub_552A20 -> OK (attempt 3)
+[ledger] 0x554430 sub_554430 -> OK (attempt 2)
+[ledger] 0x554600 sub_554600 -> OK (attempt 3)
+[ledger] 0x555bb0 sub_555BB0 -> OK (attempt 2)
+[ledger] 0x555d80 sub_555D80 -> OK (attempt 3)
+[ledger] 0x556790 sub_556790 -> OK (attempt 2)
+[ledger] 0x556960 sub_556960 -> OK (attempt 3)
+[ledger] 0x558550 sub_558550 -> OK (attempt 2)
+[ledger] 0x558720 sub_558720 -> OK (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p12\batch_report.json
