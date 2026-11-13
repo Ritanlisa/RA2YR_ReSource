@@ -1,0 +1,45 @@
+{
+ "symbol": "?ComputeSpeedFactorEx@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ComputeSpeedFactorEx",
+ "size": 258,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf157560fbe860d020000ff108b8e1802000050e8000000000fbe8e300e0000dd5c240c56ff118944240883ec08db442410dc8e80050000dc4c2414dd1c24e8000000008bc88b44241033c86a0081e1ff0000005633c8894c2418e80000000083c41084c07432db4424088b150000000083ec08dc8a78060000dd1c24e8000000008bc88b44241033c883c40881e1ff00000033c8894c24088b9674050000c7442410000000008954240c83ec08df6c2414da4c2410dd1c24e8000000008bf88b44241033f883c40881e7ff00000033f8560fbe86b0000000ff1083f801751683becc060000ff740d8bc75f992bc25ed1f883c40cc38bc75f5e83c40cc3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?GetTargetSpeedMultiplier@TechnoClass@@QAENH@Z",
+   "sym_key": "TechnoClass::GetTargetSpeedMultiplier"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__HasVoiceResponse@@YAHPAXH@Z",
+   "sym_key": "TechnoTypeClass__HasVoiceResponse"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DB1A0",
+ "name": "TechnoClass::ComputeSpeedFactorEx",
+ "size": 166,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DB1A0",
+ "bytes_hex": "83ec0c568bf1578b06ff90840000008b8e1c02000050e8950e03008b168bcedd5c240cff928c03000089442408db442408dc4c240cdc8e80050000e820ad2e006a008bce8944240ce8e31e230084c07418db442408a1e0718800dc8878060000e8fbac2e0089442408db442408dc8e78050000e8e8ac2e008b168bce8bf8ff522c83f80175188b86cc06000083f8ff8bc7740d992bc25fd1f85e83c40cc38bc75f5e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
