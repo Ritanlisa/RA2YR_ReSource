@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_5408F0@IPXManagerClass@@QAEPADHHHHHH@Z",
+ "sym_key": "IPXManagerClass::sub_5408F0",
+ "size": 268,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db57c70600000000a1000000003bc3740d8b086a0150ff11891d000000006810f30300e80000000083c4043bc374098bc8e800000000eb0233c08bc8a300000000e80000000084c07406c6460401eb03885e04a1000000003bc374078b106a0150ff128b442410668b5424248b4c2418891d000000008946088946188b44241c6689562089461489461c8b442420894e0c8b4c24108bd0c1fa0832d18d7e2881e2ff000000885e0533ca895e2432c1895e4425ff000000895e5433c1b907000000668946228b44241489461033c0f3ab83c8ff895e488986a800000089465c895e4c895e50899ea0000000899ea4000000c7465802000000c746603c0000008bc65f5e5bc21800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?vt_IPXManagerClass@@3PAXA",
+   "sym_key": "vt_IPXManagerClass"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?Construct@IPXInterfaceClass@@QAEPAIXZ",
+   "sym_key": "IPXInterfaceClass::Construct"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Init@WinsockInterface@@QAEDXZ",
+   "sym_key": "WinsockInterface::Init"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  }
+ ]
+}

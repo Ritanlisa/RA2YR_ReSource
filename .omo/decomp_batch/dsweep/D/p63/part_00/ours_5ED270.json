@@ -1,0 +1,99 @@
+{
+ "symbol": "?sub_5ED270@@YIDPAXHH@Z",
+ "sym_key": "Unnamed::sub_5ED270",
+ "size": 223,
+ "link_base": 0,
+ "bytes_hex": "51535556578bf98bf28b4c24188d41fe83f804772fff2485000000008b2d00000000eb338b2d00000000eb2b8b2d00000000eb238b2d00000000eb1b8b2d00000000eb1333c083f9078b0d000000000f95c04823c18be85657e8000000006a005089442418e80000000033db535368460100005657e80000000085c0894424187e3d535368500100005657e8000000003bc5741c8b442418433bd87d226a005368500100005657e8000000003bc575e46a0053684e0100005657e8000000008b4c24106a0551e8000000008bd68bcf6a0055e8000000005f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "$L1894",
+   "sym_key": "$L1894"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?PlayerSkirmishSlotHandler@@YIDPAXHHH@Z",
+   "sym_key": "PlayerSkirmishSlotHandler"
+  }
+ ]
+}

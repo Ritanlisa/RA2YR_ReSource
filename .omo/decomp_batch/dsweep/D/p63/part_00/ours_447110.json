@@ -1,0 +1,33 @@
+{
+ "symbol": "?ToggleSellMode@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::ToggleSellMode",
+ "size": 256,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b86ec06000085c00f84a30000008b44240483f8ff75108b0656ff908401000083f813745ceb4485c075118b0e56ff918401000083f81374485e59c383f80175408b1656ff928401000083f8130f84a60000008b8ee006000033c881e1ff00000033c184c00f858e0000008b166a006a1356ff92e80100008b0656ff90ec0100008b8e1c020000e80000000084c074698b0d000000006a00680000803fba002000000fbe890c070000e8000000005e59c38b8e200500008b54240433c080e2008a81c01600000bc284c0742d8b961c0200008b015251ff90840000008b8e1c020000e8000000008b0656ff90d40000008b0e56ff91f80000005e59c3",
+ "relocs": [
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  }
+ ]
+}

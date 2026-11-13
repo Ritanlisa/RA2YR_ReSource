@@ -1,0 +1,87 @@
+{
+ "symbol": "?PlaceGrowth@VeinholeMonsterClass@@QAEXXZ",
+ "sym_key": "VeinholeMonsterClass::PlaceGrowth",
+ "size": 266,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355568da9f800000057894c241855b9f8010000e8000000008bf833db6aff8bcfc7475c7e000000889f1e010000e80000000033f6568bcfe8000000008bce81e10100008079054983c9fe417409c74044ffffffffeb07c740447e0000004688981e01000083fe087ccb8b742418c7442410feffffffbffeffffff668b5500668b45028b4c241003d733d603c181e2ff0000008d4c241433f25133c6b9f801000025ff00000033f089742418e8000000008bd88bcbe8000000006aff8bcbe8000000004783ff027eb28b4424104083f802894424107e9f8b7424188bcee80000000055b9f8010000e80000000055b9f8010000e800000000c68600010000015f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?AnnounceUpgrade@House@@QAEXH@Z",
+   "sym_key": "House::AnnounceUpgrade"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?VisualizePlacement@BuildingClass@@QAEXXZ",
+   "sym_key": "BuildingClass::VisualizePlacement"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?AnnounceUpgrade@House@@QAEXH@Z",
+   "sym_key": "House::AnnounceUpgrade"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?Reset@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::Reset"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?SetRadar@Cell@@QAEDPAX@Z",
+   "sym_key": "Cell::SetRadar"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?Update@Radar@@QAEXPAX@Z",
+   "sym_key": "Radar::Update"
+  }
+ ]
+}

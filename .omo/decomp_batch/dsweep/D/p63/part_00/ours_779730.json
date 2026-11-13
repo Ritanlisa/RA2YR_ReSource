@@ -1,0 +1,111 @@
+{
+ "symbol": "?ReadWOLLobbyPlayerOption@@YADXZ",
+ "sym_key": "Unnamed::ReadWOLLobbyPlayerOption",
+ "size": 244,
+ "link_base": 0,
+ "bytes_hex": "81ec8c00000033c0a0000000008d4c24345650e80000000033f68d4c243856e80000000084c0751b8d4c2438c744243800000000e80000000032c05e81c48c000000c38d4c2420538d542418b8000000005152894424208944242c897424148974241889742424897424288974243089742434e80000000083c40833c0894424308d4c243c5689442438518d4c2410c744241c0000000089442440c744241000000000e8000000008d54243c52e80000000083c40433c0a0000000008d4c24086a01506800000000e8000000008d4c24088ad8e8000000008d4c243cc744243c00000000e8000000008ac35b5e81c48c000000c3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wolinfoMD_ini@@3EA",
+   "sym_key": "g_Str_File_wolinfoMD_ini"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Constructor@BufferIOFile@@QAEPAV1@PAX@Z",
+   "sym_key": "BufferIOFile::Constructor"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?IsReady@File@@QAEDH@Z",
+   "sym_key": "File::IsReady"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?vt_GenericNode@@3PAXA",
+   "sym_key": "vt_GenericNode"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?LinkedList__Prepend@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Prepend"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?vt_List_INIClass_INISection@@3PAXA",
+   "sym_key": "vt_List_INIClass_INISection"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?vt_INIClass@@3PAXA",
+   "sym_key": "vt_INIClass"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?Open@FileStraw@@QAEHHD@Z",
+   "sym_key": "FileStraw::Open"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?CCFileClass__Close@@YAHPAX@Z",
+   "sym_key": "CCFileClass__Close"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_AutoLogin@@3EA",
+   "sym_key": "g_INI_Key_AutoLogin"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?off_84A11C@@3IA",
+   "sym_key": "off_84A11C"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?DestroyHashTableINIClass@HashTable@@QAEPADXZ",
+   "sym_key": "HashTable::DestroyHashTableINIClass"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

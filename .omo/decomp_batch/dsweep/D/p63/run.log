@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p63\part_00
+=== convert (20 addrs) ===
+[conv] 0x47ae10 CDFileClass::OpenWithCDSearch -> CDFileClass
+[conv] 0x5ed270 sub_5ED270 -> _addr_5E
+[conv] 0x74e930 VeinholeMonsterClass::PlaceGrowth -> VeinholeMonsterClass
+[conv] 0x7b72f0 EditControl::GrowBuffer -> EditControl
+[conv] 0x7a2230 Game_Setup -> Game
+[conv] 0x655990 RadarClass::Process -> RadarClass
+[conv] 0x783b80 ObjectClass::Render_Find -> ObjectClass
+[conv] 0x4dbed0 FootClass::LiberateMember -> FootClass
+[conv] 0x727fd0 TubeClass::Construct -> TubeClass
+[conv] 0x786ef0 ObjectClass::LoginFlowWOL_Open -> ObjectClass
+[conv] 0x62af70 ParasiteClass::UpdateParasite -> ParasiteClass
+[conv] 0x734d30 WinMain::ShutdownCleanup -> WinMain
+[conv] 0x5ce3a0 ObjectClass::sub_5CE3A0 -> ObjectClass
+[conv] 0x779730 ReadWOLLobbyPlayerOption -> _addr_77
+[conv] 0x779940 ReadWOLLobbyHouseOption -> _addr_77
+[conv] 0x7b6f40 WString::TrimRight -> WString
+[conv] 0x776570 ObjectClass::sub_776570 -> ObjectClass
+[conv] 0x58bf70 RandomMap::TerrainTileDataConstructor -> RandomMap
+[conv] 0x5408f0 IPXManagerClass::sub_5408F0 -> IPXManagerClass
+[conv] 0x447110 BuildingClass::ToggleSellMode -> BuildingClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CDFileClass              rc=2
+[era] _addr_5E                 rc=0
+[era] VeinholeMonsterClass     rc=0
+[era] EditControl              rc=2
+[era] Game                     rc=0
+[era] RadarClass               rc=2
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] TubeClass                rc=2
+[era] ParasiteClass            rc=0
+[era] WinMain                  rc=2
+[era] _addr_77                 rc=0
+[era] WString                  rc=0
+[era] RandomMap                rc=2
+[era] IPXManagerClass          rc=0
+[era] BuildingClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ed270   MISMATCH         sub_5ED270
+[diff] 0x74e930   MISMATCH         VeinholeMonsterClass::PlaceGrowth
+[diff] 0x7a2230   MISMATCH         Game_Setup
+[diff] 0x783b80   MISMATCH         ObjectClass::Render_Find
+[diff] 0x62af70   MISMATCH         ParasiteClass::UpdateParasite
+[diff] 0x779730   MISMATCH         ReadWOLLobbyPlayerOption
+[diff] 0x779940   MISMATCH         ReadWOLLobbyHouseOption
+[diff] 0x7b6f40   MISMATCH         WString::TrimRight
+[diff] 0x5408f0   MISMATCH         IPXManagerClass::sub_5408F0
+[diff] 0x447110   MISMATCH         BuildingClass::ToggleSellMode
+[ledger] 0x47ae10 CDFileClass::OpenWithCDSearch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ed270 sub_5ED270 -> NG (attempt 1)
+[ledger] 0x74e930 VeinholeMonsterClass::PlaceGrowth -> NG (attempt 1)
+[ledger] 0x7b72f0 EditControl::GrowBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a2230 Game_Setup -> NG (attempt 1)
+[ledger] 0x655990 RadarClass::Process -> COMPILE_FAIL (attempt 1)
+[ledger] 0x783b80 ObjectClass::Render_Find -> NG (attempt 1)
+[ledger] 0x4dbed0 FootClass::LiberateMember -> COMPILE_FAIL (attempt 1)
+[ledger] 0x727fd0 TubeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x786ef0 ObjectClass::LoginFlowWOL_Open -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62af70 ParasiteClass::UpdateParasite -> NG (attempt 1)
+[ledger] 0x734d30 WinMain::ShutdownCleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ce3a0 ObjectClass::sub_5CE3A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x779730 ReadWOLLobbyPlayerOption -> NG (attempt 1)
+[ledger] 0x779940 ReadWOLLobbyHouseOption -> NG (attempt 1)
+[ledger] 0x7b6f40 WString::TrimRight -> NG (attempt 1)
+[ledger] 0x776570 ObjectClass::sub_776570 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58bf70 RandomMap::TerrainTileDataConstructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5408f0 IPXManagerClass::sub_5408F0 -> NG (attempt 1)
+[ledger] 0x447110 BuildingClass::ToggleSellMode -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 3,
+  "frame_sched": 3,
+  "branch_order": 2,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p63\batch_report.json

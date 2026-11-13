@@ -1,0 +1,11 @@
+{
+ "addr": "0x74E930",
+ "name": "VeinholeMonsterClass::PlaceGrowth",
+ "size": 244,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74E930",
+ "bytes_hex": "83ec0c5355568da9f800000057894c241855b9e8f78700e8546ee1ff8bf033db6aff8bcec746447e000000889e1e010000e84ae9d2ff33ff578bcee8a02ed3ff8bcf81e10100008079054983c9fe417409c74044ffffffffeb07c740447e0000004788981e01000083ff087ccbbbfeffffffbefeffffff668b5500668b45026603d66603c3668954241066894424128b4c24108d542414894c241452b9e8f78700e8ca6de1ff8bf88bcfe81171d3ff6aff8bcfe8c8e8d2ff4683fe027eb94383fb027eae8b7424188bcee8b1fcffff55b9e8f78700e856eae1ff55b9e8f78700e83b5be3ffc68600010000015f5e5d5b83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

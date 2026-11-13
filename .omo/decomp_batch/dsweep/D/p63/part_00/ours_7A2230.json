@@ -1,0 +1,87 @@
+{
+ "symbol": "?Game_Setup@@YIXPAXPAD11@Z",
+ "sym_key": "Unnamed::Game_Setup",
+ "size": 226,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53558be933db563beb570f84c50000003bd30f84bd0000008b7c24203bfb0f84b10000008b7424243bf30f84a50000008d442420895c242050680000000052895c2430895c241ce8000000008d4c243051680000000057e8000000008d54242852680000000056e80000000083c42433ffbe000000008b0ee8000000005055e80000000083c40885c0740e83c6044781fe000000007d3eebdd8b4424208d4c241453518d5424208d8c7ff3362a005289442420c1e102895c2424e8000000008b4424248b4c24108904bd00000000890cbd000000005f5e5d5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "??_C@_02MBFK@?$CFX?$AA@",
+   "sym_key": "??_C@_02MBFK@?$CFX?$AA@"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?sscanf@@YAHPAXH0ZZ",
+   "sym_key": "sscanf"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "??_C@_02MBFK@?$CFX?$AA@",
+   "sym_key": "??_C@_02MBFK@?$CFX?$AA@"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?sscanf@@YAHPAXH0ZZ",
+   "sym_key": "sscanf"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "??_C@_02MBFK@?$CFX?$AA@",
+   "sym_key": "??_C@_02MBFK@?$CFX?$AA@"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?sscanf@@YAHPAXH0ZZ",
+   "sym_key": "sscanf"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAD@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?Assign@NetworkID@@QAEFPAXHF@Z",
+   "sym_key": "NetworkID::Assign"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DC2C@@3PAIA",
+   "sym_key": "DataGlobal_A8DC2C"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E230@@3PAIA",
+   "sym_key": "DataGlobal_A8E230"
+  }
+ ]
+}
