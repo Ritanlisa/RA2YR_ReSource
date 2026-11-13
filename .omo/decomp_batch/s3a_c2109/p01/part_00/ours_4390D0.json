@@ -1,0 +1,8 @@
+{
+ "symbol": "?RemoveFromDynamicVector@TechnoClass@@QAEHD@Z",
+ "sym_key": "TechnoClass::RemoveFromDynamicVector",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "8b4118568d71188d4c24085156ff501083f8ff74238b4e103bc17d1c493bc1894e107d148b5604408d0c828b14828951fc8b4e103bc17cec5ec20400",
+ "relocs": []
+}

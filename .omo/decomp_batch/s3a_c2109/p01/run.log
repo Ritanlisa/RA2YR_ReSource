@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x42a6d0 Tactical::ConstructTacticalSurface -> Tactical
+[conv] 0x42cf80 ObjectClass::sub_42CF80 -> ObjectClass
+[conv] 0x42ed60 HouseClass::SaveTriggerNodeData -> HouseClass
+[conv] 0x431450 Network::SendBeacon -> Network
+[conv] 0x4390d0 TechnoClass::RemoveFromDynamicVector -> TechnoClass
+[conv] 0x44ebf0 BuildingClass::Disappear_PrismForward -> BuildingClass
+[conv] 0x44f5c0 BuildingClass::CanBeSoldCheck -> BuildingClass
+[conv] 0x44fec0 BuildingClass::ReadConstructionData -> BuildingClass
+[conv] 0x451750 BuildingClass::PlayUpgradeAnim -> BuildingClass
+[conv] 0x452480 BuildingClass::Deactivate -> BuildingClass
+[conv] 0x453840 BuildingClass::RenderExitPosition -> BuildingClass
+[conv] 0x4549b0 Animation::UpdateBuildingAnimations -> Animation
+[conv] 0x455f10 TechnoClass::MarkBuildingFoundationCells -> TechnoClass
+[conv] 0x45e970 BuildingTypeClass::LoadRepairAnimations -> BuildingTypeClass
+[conv] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> BuildingTypeClass
+[conv] 0x45f040 AbstractClass::LoadTypeFile -> AbstractClass
+[conv] 0x45f230 BuildingTypeClass::LoadAnimations -> BuildingTypeClass
+[conv] 0x45fa90 BuildingTypeClass::LoadVoxel -> BuildingTypeClass
+[conv] 0x465450 BulletTypeClass::ReadArmor -> BulletTypeClass
+[conv] 0x465cc0 BulletTypeClass::ReadTrailerAnim -> BulletTypeClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Tactical                 rc=0
+[era] ObjectClass              rc=2
+[era] HouseClass               rc=2
+[era] Network                  rc=2
+[era] TechnoClass              rc=0
+[era] BuildingClass            rc=2
+[era] Animation                rc=2
+[era] BuildingTypeClass        rc=2
+[era] AbstractClass            rc=2
+[era] BulletTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x42a6d0   MISMATCH         Tactical::ConstructTacticalSurface
+[diff] 0x4390d0   MISMATCH         TechnoClass::RemoveFromDynamicVector
+[diff] 0x455f10   MISMATCH         TechnoClass::MarkBuildingFoundationCells
+[ledger] 0x42a6d0 Tactical::ConstructTacticalSurface -> NG (attempt 2)
+[ledger] 0x42cf80 ObjectClass::sub_42CF80 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x42ed60 HouseClass::SaveTriggerNodeData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x431450 Network::SendBeacon -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4390d0 TechnoClass::RemoveFromDynamicVector -> NG (attempt 2)
+[ledger] 0x44ebf0 BuildingClass::Disappear_PrismForward -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44f5c0 BuildingClass::CanBeSoldCheck -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44fec0 BuildingClass::ReadConstructionData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x451750 BuildingClass::PlayUpgradeAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x452480 BuildingClass::Deactivate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x453840 BuildingClass::RenderExitPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4549b0 Animation::UpdateBuildingAnimations -> COMPILE_FAIL (attempt 2)
+[ledger] 0x455f10 TechnoClass::MarkBuildingFoundationCells -> NG (attempt 2)
+[ledger] 0x45e970 BuildingTypeClass::LoadRepairAnimations -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45f040 AbstractClass::LoadTypeFile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45f230 BuildingTypeClass::LoadAnimations -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45fa90 BuildingTypeClass::LoadVoxel -> COMPILE_FAIL (attempt 2)
+[ledger] 0x465450 BulletTypeClass::ReadArmor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x465cc0 BulletTypeClass::ReadTrailerAnim -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 17
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "codegen_shape": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p01\batch_report.json

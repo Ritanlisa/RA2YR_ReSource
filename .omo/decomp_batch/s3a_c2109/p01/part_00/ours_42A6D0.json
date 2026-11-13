@@ -1,0 +1,57 @@
+{
+ "symbol": "?ConstructTacticalSurface@Tactical@@QAEPADXZ",
+ "sym_key": "Tactical::ConstructTacticalSurface",
+ "size": 568,
+ "link_base": 0,
+ "bytes_hex": "83ec0cb8010000005355568bf133db83c9ff57881e885e01885e02884603c746040000803f894608895e18895e1c895e20895e24894e28894e2c894638895e3c894e6c66895e7066895e728d7e74bd030000005333c9e800000000891fc747140a000000895f1083c7184d75e66a14e8000000008bf883c4043bfb74446804000400895f0cc74710ffffffff891fc7470400000100e8000000008b4f0489470883c40433c03bcb7c1ab9fcffffff8b570883c10440891c118b57043bc276efeb0233ff6a14897e14e8000000008bf883c4043bfb744468449c0000895f0cc74710ffffffff891fc7470410270000e8000000008b4f0489470883c40433c03bcb7c1ab9fcffffff8b570883c10440891c118b57043bc276efeb0233ff6804001000897e68e80000000083c4043bc3741e8d4808ba0000010089590489198959fc83c1104a75f2899800001000eb0233c06804001800894610e80000000083c4043bc37408899800001800eb0233c089460c8998000018008b461033c98998000010008b461439187c0e8b500841895c8afc8b103bca7ef289188b466833c9bafcffffff8b780883c20441891c3a8b383bcf76f089188d46748d8eb900000089442414894c24108d6e4cc744241803000000895df4895d00895d0c8b1050ff520c8b7c24108b542414b9fa00000033c0f3ab8b4c24108b442418899d280c000083c50483c21881c1e80300004889542414894c24108944241874048bc2ebb36800710200e80000000083c4048946648bc65f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Constructor@VectorClassUInt@@QAEPAV1@H@Z",
+   "sym_key": "VectorClassUInt::Constructor"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 239,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 293,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 345,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 548,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
