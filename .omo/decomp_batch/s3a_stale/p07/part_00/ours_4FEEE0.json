@@ -1,0 +1,159 @@
+{
+ "symbol": "?AIInfantryProduction@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::AIInfantryProduction",
+ "size": 688,
+ "link_base": 0,
+ "bytes_hex": "81ecd004000053558be9896c241483bd54560000ff0f85870200005657b96400000033c08d7c24306a64f3ab8d8424c401000068ffffff7f50e8000000008b0d8002000083c40c33c033ff85c90f8e9b0000008a5c241b33c98a0d2c0300008b348185f674778b56248a8aab00000084c974078a4e7984c9740e8a4e7784c9755c8a4e7884c97555396e2c75506a006a008d4c2428e8000000000fbe4424208d4c2420518bcec70000000000e8000000000fbe542420c702000000008b44242485c0741584db741150e80000000083c404c7442424000000008bc732db8b0d80020000403bc18bf80f8c69ffffffa0a800000033ff84c07e510fbe059c0000008b34b885f674378b8ec00600008b91f80d00008b44943085c07e23558bcee80000000084c074178b86c00600008b88f80d00008d448c308b4c8c304989080fbe15a8000000473bfa7caf83c8ff33db8944242889442414a10000000033f685c0c7442410ffffff7f0f86a40000008b6cb43085ed0f8e86000000a1000000008b7c241c6a006a008b0cb0518bcfe80000000085c0746a8b1500000000578b04b2508b08ff91840000008b54241c8bf80fbf4a248d422450ff51183bf87f428b44242883f8ff74043bc57d06896c242833db8b44241489b49c500300004383f8ff740f8b5424108b84b4c00100003bc2730f8b84b4c00100008974241489442410a100000000463bf00f8260ffffff8b6c241c8b15400200008b8d5c02000068feffff7f6a008b82f4130000db04888b0d0000000081c168050300dc0d00000000dd5c2430e800000000894424105fdb44240c5edc0d00000000dc5c2420dfe0f6c401753485db743a8b15000000004b536a008d8a18020000e8000000008b8484480300008985545600005db80f0000005b81c4d0040000c38b4c240c898d545600005db80f0000005b81c4d0040000c3",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?memset32@@YAHPAXHHZZ",
+   "sym_key": "memset32"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?Constructor@TechnoTypeVector@@QAEPAV1@HH@Z",
+   "sym_key": "TechnoTypeVector::Constructor"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_TechnoTypeClass_const@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_TechnoTypeClass_const"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?UpdateProductionQueue@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::UpdateProductionQueue"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_TechnoTypeClass_const@@3PAXA",
+   "sym_key": "vt_VectorClass_TechnoTypeClass_const"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 287,
+   "type": "REL32",
+   "sym": "?CanBeRecruited@FootClass@@QAEDH@Z",
+   "sym_key": "FootClass::CanBeRecruited"
+  },
+  {
+   "off": 321,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 344,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenProgress@@3IA",
+   "sym_key": "g_LoadScreenProgress"
+  },
+  {
+   "off": 379,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 398,
+   "type": "REL32",
+   "sym": "?CanBuild@HouseClass@@QAEHHDD@Z",
+   "sym_key": "HouseClass::CanBuild"
+  },
+  {
+   "off": 408,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 513,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenProgress@@3IA",
+   "sym_key": "g_LoadScreenProgress"
+  },
+  {
+   "off": 532,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 560,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 572,
+   "type": "DIR32",
+   "sym": "__real@8@3ff8a3d70a3d70a3d800",
+   "sym_key": "_real@8@3ff8a3d70a3d70a3d800"
+  },
+  {
+   "off": 581,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 597,
+   "type": "DIR32",
+   "sym": "__real@8@3fe08000000200000000",
+   "sym_key": "_real@8@3fe08000000200000000"
+  },
+  {
+   "off": 618,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 633,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}

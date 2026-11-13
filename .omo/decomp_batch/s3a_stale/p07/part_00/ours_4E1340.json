@@ -1,0 +1,27 @@
+{
+ "symbol": "?Constructor@ControlClass@@QAEPAV1@H@Z",
+ "sym_key": "ControlClass::Constructor",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "33c0c701000000008941048941088b4424048b500c89510c8b50108951108b50148951148b50188951188a501c88511c8a501d88511d8a501e88511e8b4020894120c70100000000b800000000c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?vt_LinkClass@@3PAXA",
+   "sym_key": "vt_LinkClass"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?vt_GadgetClass@@3PAXA",
+   "sym_key": "vt_GadgetClass"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?vt_GadgetClass@@3PAXA",
+   "sym_key": "vt_GadgetClass"
+  }
+ ]
+}

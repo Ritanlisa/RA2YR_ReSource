@@ -1,0 +1,57 @@
+{
+ "symbol": "?UpdateLobbyGraphicsWOL@@YIPAPAXPAXHH@Z",
+ "sym_key": "Unnamed::UpdateLobbyGraphicsWOL",
+ "size": 177,
+ "link_base": 0,
+ "bytes_hex": "85d2744e8d42ff83f8057731ff248500000000ba55070000eb3dba56070000eb36ba57070000eb2fba58070000eb28ba59070000eb21ba5a070000eb1a83ea07f7da1bd281e2a4f8ffff81c25b070000eb05ba54070000565251e8000000008bf033c08b4c240885c9741583f90175278b0d0000000050a1000000005051eb0f8b1500000000a1000000006a005250e80000000083c40c33c983fefd0f95c183c90274098bd08bcee8000000005ec20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "$L1931",
+   "sym_key": "$L1931"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?off_844B1C@@3IA",
+   "sym_key": "off_844B1C"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?off_844B18@@3IA",
+   "sym_key": "off_844B18"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHHHH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?CacheDialogInvalidate@@YIPAPAXHPAX@Z",
+   "sym_key": "CacheDialogInvalidate"
+  }
+ ]
+}

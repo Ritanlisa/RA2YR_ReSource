@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1340",
+ "name": "ControlClass::Constructor",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1340",
+ "bytes_hex": "8bc133c98948048948088b4c2404c70044937e008b510c89500c8b51108950108b51148950148b51188950188a511c88501c8a511d88501d8a511e88501e8b4920894820c700bc927e00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

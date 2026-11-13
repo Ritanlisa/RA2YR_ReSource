@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e0220 FoggedObjectClass::PointerToIndex -> FoggedObjectClass
+[conv] 0x4e07b0 FoggedObjectClass::FindItem -> FoggedObjectClass
+[conv] 0x4e0a00 VectorClass::sub_4E0A00 -> VectorClass
+[conv] 0x4e1340 ControlClass::Constructor -> ControlClass
+[conv] 0x4e34a0 UpdateLobbyGraphicsWOL -> _addr_4E
+[conv] 0x4e8270 HouseClass::initAngerStruct -> HouseClass
+[conv] 0x4f1840 ShowGameDialog -> _addr_4F
+[conv] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> ObjectClass
+[conv] 0x4f28c0 VectorCursor::vt_placeholder_07 -> VectorCursor
+[conv] 0x4f3b80 sub_4F3B80 -> _addr_4F
+[conv] 0x4f9b70 HouseClass::HandleAlliance -> HouseClass
+[conv] 0x4faf00 SuperWeapon::EvaluateAITarget -> SuperWeapon
+[conv] 0x4fb0e0 HouseClass::CompleteProduction -> HouseClass
+[conv] 0x4fc9e0 HouseClass::CheckWinCondition -> HouseClass
+[conv] 0x4feee0 HouseClass::AIInfantryProduction -> HouseClass
+[conv] 0x501750 ObjectClass::sub_501750 -> ObjectClass
+[conv] 0x502a80 HouseClass::RegisterGain_0 -> HouseClass
+[conv] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> HouseClass
+[conv] 0x505f80 globalHelper_005F80 -> _addr_50
+[conv] 0x5095d0 TeamClass::CountActiveTeamsForType -> TeamClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FoggedObjectClass        rc=2
+[era] VectorClass              rc=0
+[era] ControlClass             rc=0
+[era] _addr_4E                 rc=0
+[era] HouseClass               rc=2
+[era] _addr_4F                 rc=2
+[era] ObjectClass              rc=2
+[era] VectorCursor             rc=0
+[era] SuperWeapon              rc=2
+[era] _addr_50                 rc=2
+[era] TeamClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x4e0a00   MISMATCH         VectorClass::sub_4E0A00
+[diff] 0x4e1340   MISMATCH         ControlClass::Constructor
+[diff] 0x4e34a0   MISMATCH         UpdateLobbyGraphicsWOL
+[diff] 0x4fc9e0   MISMATCH         HouseClass::CheckWinCondition
+[diff] 0x4feee0   MISMATCH         HouseClass::AIInfantryProduction
+[diff] 0x4f28c0   MATCH            VectorCursor::vt_placeholder_07
+[ledger] 0x4e0220 FoggedObjectClass::PointerToIndex -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e07b0 FoggedObjectClass::FindItem -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e0a00 VectorClass::sub_4E0A00 -> NG (attempt 3)
+[ledger] 0x4e1340 ControlClass::Constructor -> NG (attempt 2)
+[ledger] 0x4e34a0 UpdateLobbyGraphicsWOL -> NG (attempt 2)
+[ledger] 0x4e8270 HouseClass::initAngerStruct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f1840 ShowGameDialog -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f28c0 VectorCursor::vt_placeholder_07 -> OK (attempt 3)
+[ledger] 0x4f3b80 sub_4F3B80 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f9b70 HouseClass::HandleAlliance -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4faf00 SuperWeapon::EvaluateAITarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fb0e0 HouseClass::CompleteProduction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fc9e0 HouseClass::CheckWinCondition -> NG (attempt 6)
+[ledger] 0x4feee0 HouseClass::AIInfantryProduction -> NG (attempt 6)
+[ledger] 0x501750 ObjectClass::sub_501750 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x502a80 HouseClass::RegisterGain_0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> COMPILE_FAIL (attempt 7)
+[ledger] 0x505f80 globalHelper_005F80 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5095d0 TeamClass::CountActiveTeamsForType -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 5,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 2,
+  "branch_order": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 16.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p07\batch_report.json
