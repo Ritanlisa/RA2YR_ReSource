@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p111\part_00
+=== convert (20 addrs) ===
+[conv] 0x468bb0 BulletClass::CheckBulletCollision -> BulletClass
+[conv] 0x5c1470 MPCooperative::ctor -> MPCooperative
+[conv] 0x67b550 ReadINIClassBuildingTypeList -> _addr_67
+[conv] 0x67b720 BuildingClass::LoadBuildingTypes -> BuildingClass
+[conv] 0x67b8f0 HouseTypeClass::ReadCountryName -> HouseTypeClass
+[conv] 0x67bdd0 RulesClass::LoadTypeList -> RulesClass
+[conv] 0x5ebc00 DisableCampaignSlots -> _addr_5E
+[conv] 0x52a760 INIClass::ReadTimeString -> INIClass
+[conv] 0x46da70 ObjectClass::sub_46DA70 -> ObjectClass
+[conv] 0x7311c0 TacticalClass::SetObserverView -> TacticalClass
+[conv] 0x6fd620 TechnoClass::CreateFireBeamEffect -> TechnoClass
+[conv] 0x56c020 CellClass::CreateBuildingCrater -> CellClass
+[conv] 0x5dc170 NetworkLobby::ValidateSerialNumber -> NetworkLobby
+[conv] 0x5283d0 INIClass::ReadDouble_Overwrite -> INIClass
+[conv] 0x63a8e0 ScriptAction::HitTest -> ScriptAction
+[conv] 0x44fec0 BuildingClass::ReadConstructionData -> BuildingClass
+[conv] 0x42ccd0 sub_42CCD0 -> _addr_42
+[conv] 0x6da380 TacticalClass::IsOccupiedByTechno -> TacticalClass
+[conv] 0x6ebf50 TeamClass::ProcessMemberPositions -> TeamClass
+[conv] 0x53f650 IPXConnClass::receive -> IPXConnClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BulletClass              rc=2
+[era] MPCooperative            rc=2
+[era] _addr_67                 rc=2
+[era] BuildingClass            rc=2
+[era] HouseTypeClass           rc=2
+[era] RulesClass               rc=2
+[era] _addr_5E                 rc=2
+[era] INIClass                 rc=2
+[era] ObjectClass              rc=2
+[era] TacticalClass            rc=2
+[era] TechnoClass              rc=0
+[era] CellClass                rc=0
+[era] NetworkLobby             rc=2
+[era] ScriptAction             rc=2
+[era] _addr_42                 rc=0
+[era] TeamClass                rc=2
+[era] IPXConnClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x6fd620   MISMATCH         TechnoClass::CreateFireBeamEffect
+[diff] 0x56c020   MISMATCH         CellClass::CreateBuildingCrater
+[diff] 0x42ccd0   MISMATCH         sub_42CCD0
+[ledger] 0x468bb0 BulletClass::CheckBulletCollision -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c1470 MPCooperative::ctor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67b550 ReadINIClassBuildingTypeList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67b720 BuildingClass::LoadBuildingTypes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67b8f0 HouseTypeClass::ReadCountryName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67bdd0 RulesClass::LoadTypeList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ebc00 DisableCampaignSlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52a760 INIClass::ReadTimeString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46da70 ObjectClass::sub_46DA70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7311c0 TacticalClass::SetObserverView -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fd620 TechnoClass::CreateFireBeamEffect -> NG (attempt 1)
+[ledger] 0x56c020 CellClass::CreateBuildingCrater -> NG (attempt 1)
+[ledger] 0x5dc170 NetworkLobby::ValidateSerialNumber -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5283d0 INIClass::ReadDouble_Overwrite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63a8e0 ScriptAction::HitTest -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44fec0 BuildingClass::ReadConstructionData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42ccd0 sub_42CCD0 -> NG (attempt 1)
+[ledger] 0x6da380 TacticalClass::IsOccupiedByTechno -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ebf50 TeamClass::ProcessMemberPositions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53f650 IPXConnClass::receive -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p111\batch_report.json

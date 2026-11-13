@@ -1,0 +1,81 @@
+{
+ "symbol": "?CreateFireBeamEffect@TechnoClass@@QAEPADPAEH@Z",
+ "sym_key": "TechnoClass::CreateFireBeamEffect",
+ "size": 365,
+ "link_base": 0,
+ "bytes_hex": "83ec285556578bf9b901000000e8000000006a006a006a008d4c24288bf08b076a005157c744242400000000ff90b00000008b108d4c241c895424108b68048b075157ff90ac0000008b10895424188b48043be975068b6c240ceb348d4424108d4c240c5051e8000000008b108d4c241c8954241c8b78048d4424185051e8000000008b108954240c8b48042bf98bef8b7c243885ff7416f647140274108b078d4c241c5157ff90a4000000eb0b8b178d44241c5057ff52588b08894c24288b50048954242c8b400889442430a1400200008d542410c744241400000000668b88301800005256894c241ce8000000008d4424305056e8000000006a0f56e80000000068000044406a0056e8000000008d4c24385156e8000000005556e8000000008b44247083c43483f80275346a0156e8000000006a0156e80000000083c41085ff741df64714017417897e048a4714a8018d87100500007505b81005000089308bc65f5e5d83c428c20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Create@RadBeam@@QAEHXZ",
+   "sym_key": "RadBeam::Create"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?TechnoClass__drawPipScale@@YAHPAX0@Z",
+   "sym_key": "TechnoClass__drawPipScale"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?TechnoClass__drawSpawnPips@@YAHPAX0@Z",
+   "sym_key": "TechnoClass__drawSpawnPips"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?TechnoClass__drawAmmoPips@@YAHPAXH@Z",
+   "sym_key": "TechnoClass__drawAmmoPips"
+  },
+  {
+   "off": 268,
+   "type": "REL32",
+   "sym": "?TechnoClass__drawTiberiumPips@@YAHPAXHH@Z",
+   "sym_key": "TechnoClass__drawTiberiumPips"
+  },
+  {
+   "off": 279,
+   "type": "REL32",
+   "sym": "?TechnoClass__drawSelectionBox@@YAHPAXH@Z",
+   "sym_key": "TechnoClass__drawSelectionBox"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?TechnoClass__drawHealthBar@@YAHPAXH@Z",
+   "sym_key": "TechnoClass__drawHealthBar"
+  },
+  {
+   "off": 306,
+   "type": "REL32",
+   "sym": "?TechnoClass__drawMindControlPips@@YAHPAXH@Z",
+   "sym_key": "TechnoClass__drawMindControlPips"
+  },
+  {
+   "off": 314,
+   "type": "REL32",
+   "sym": "?TechnoClass__drawPassengerPips@@YAHPAXH@Z",
+   "sym_key": "TechnoClass__drawPassengerPips"
+  }
+ ]
+}
