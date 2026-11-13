@@ -1,0 +1,63 @@
+{
+ "symbol": "?CanCrushTarget@UnitClass@@QAE_NPAE@Z",
+ "sym_key": "UnitClass::CanCrushTarget",
+ "size": 408,
+ "link_base": 0,
+ "bytes_hex": "83ec245355568bf18b9ec40600008a83280d000084c075156a1156e8000000008bd883c40884db0f84580100008b6c243485ed0f844c010000568bcde80000000084c00f843c0100008b45008d4c2418575155ff50480fbe96200100008bf88d4424285056ff128b48048b57042bca8b50088b00894c24108b4f08c7442418000000002bd18b0f2bc1895424388944241483ec08df6c241cdb442440db442418d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8000000008b4c24208b54241c5152ddd8e80000000033c383c41025ff00000033d8a1000000005f3b98281700000f8f980000008b8e1c020000e8000000008bd884db74218b0d000000008b81e8170000f6c4ff75108b9ec40600008a832d0d000084c074668b8e1c02000083b984010000027457e80000000084c0751b8b1d000000008b861c0200000fbe934814000039904c02000072338b961c0200008b4d005255ff91c80000008bd833c084db0f94c033c35e25ff0000005d33d833c085db0f95c05b83c424c2040080e30033c085db5e5d0f95c05b83c424c20400",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__HasVoiceResponse@@YAHPAXH@Z",
+   "sym_key": "TechnoTypeClass__HasVoiceResponse"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?IsCrushable@ObjectClass@@QAE_NPAX@Z",
+   "sym_key": "ObjectClass::IsCrushable"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 313,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

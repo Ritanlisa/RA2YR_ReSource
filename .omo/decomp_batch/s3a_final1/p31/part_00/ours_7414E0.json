@@ -1,0 +1,57 @@
+{
+ "symbol": "?ApproachTarget_DisallowMoving@UnitClass@@QAEPAXD@Z",
+ "sym_key": "UnitClass::ApproachTarget_DisallowMoving",
+ "size": 406,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b8e1c020000e80000000084c00f859c0000008b86b402000085c00f848e0000008b8ea405000085c90f85800000008a48148b96c406000080e101f6d91bc923c88a82280d000084c08bf9750f6a1156e80000000083c40884c074538b86b40200008bce50e8000000008b0d000000003b81281700007d3785ff7433568bcfe80000000084c074278b96c40600008a822d0d000084c00f85c20000008b8e1c020000e80000000084c00f84af0000008b86c40600008a886a0d000084c9745b0fbe8e900b00008b96b40200008b3e5256ff115056ff97f80300008b0085c0743a8b80a000000085c074308a88c002000084c974268a44240c84c075130fbe86001200008b8eb40200006a015156ff108b86b40200005f5ec204008b96c40600008a82290d000084c0745a8b8eb402000085c974508b861c0200008a90ec01000084d2740a8a860c05000084c07536f6411402743056e80000000084c074268a44240c84c075130fbe8e001200008b96b40200006a015256ff118b86b40200005f5ec204006a008bcee8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__HasVoiceResponse@@YAHPAXH@Z",
+   "sym_key": "TechnoTypeClass__HasVoiceResponse"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?DistanceTo@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::DistanceTo"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?IsCrushable@ObjectClass@@QAE_NPAX@Z",
+   "sym_key": "ObjectClass::IsCrushable"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 346,
+   "type": "REL32",
+   "sym": "?IsCrushable@ObjectClass@@QAE_NPAX@Z",
+   "sym_key": "ObjectClass::IsCrushable"
+  },
+  {
+   "off": 397,
+   "type": "REL32",
+   "sym": "?CalculateApproachPath@FootClass@@QAEPAXD@Z",
+   "sym_key": "FootClass::CalculateApproachPath"
+  }
+ ]
+}

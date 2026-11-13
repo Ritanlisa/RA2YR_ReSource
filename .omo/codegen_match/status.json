@@ -177047,7 +177047,7 @@
   "this_as_id": false
  },
  "0x7311c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -177279,7 +177279,7 @@
   "this_as_id": false
  },
  "0x731d00": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -177380,7 +177380,7 @@
   "this_as_id": false
  },
  "0x732210": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "SelectFactionThemeMusic_Helper",
@@ -177502,7 +177502,7 @@
   "status": "OK"
  },
  "0x732d10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -177600,7 +177600,7 @@
   "this_as_id": false
  },
  "0x733cd0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -177612,7 +177612,7 @@
   "this_as_id": false
  },
  "0x733e10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "SelectFactionThemeMusic",
@@ -177929,7 +177929,7 @@
   "this_as_id": false
  },
  "0x734d30": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178257,26 +178257,26 @@
   "this_as_id": false
  },
  "0x736579": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 enter 1, 0",
   "name": "InfantryClass::UpdateBehavior",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "InfantryClass::UpdateBehavior",
   "rule_violations": 9,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x736990": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "UnitClass::UpdateRotation_TurretFacing_EMP",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitClass::UpdateRotation_TurretFacing_EMP",
-  "rule_violations": 10,
+  "rule_violations": 13,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -178408,7 +178408,7 @@
   "this_as_id": false
  },
  "0x738970": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178443,7 +178443,7 @@
   "this_as_id": false
  },
  "0x7393c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178575,7 +178575,7 @@
   "this_as_id": false
  },
  "0x73e5e0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178587,7 +178587,7 @@
   "this_as_id": false
  },
  "0x73efc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -178623,7 +178623,7 @@
   "this_as_id": false
  },
  "0x740810": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -178733,7 +178733,7 @@
   "this_as_id": false
  },
  "0x740fd0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178781,19 +178781,19 @@
   "this_as_id": false
  },
  "0x7414e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+17 jne 0x741599",
   "name": "UnitClass::ApproachTarget_DisallowMoving",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "UnitClass::ApproachTarget_DisallowMoving",
   "rule_violations": 11,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7416a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178853,15 +178853,15 @@
   "this_as_id": false
  },
  "0x7438f0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 push esi",
   "name": "UnitClass::CanCrushTarget",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "UnitClass::CanCrushTarget",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x743a50": {
@@ -178889,7 +178889,7 @@
   "this_as_id": false
  },
  "0x744100": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -179167,7 +179167,7 @@
   "status": "NG"
  },
  "0x7468c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
