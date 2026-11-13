@@ -1,0 +1,303 @@
+{
+ "symbol": "?ControlDialogHandler@@YIDHPAXPAI@Z",
+ "sym_key": "Unnamed::ControlDialogHandler",
+ "size": 1926,
+ "link_base": 0,
+ "bytes_hex": "83ec0856894c24088d442404578d4c240c50518bfa6800000000c744241400000000e8000000008b44241483c40c85c074058b706ceb0233f657e80000000081fe940000000f847a05000081fe030100000f85840000003d2b0700000f856a0200008b15000000008b0d0000000081f9200300008b82b8340000722585c00f858f0000006a10e80000000083c40485c00f8436020000c70068000000e9ac00000085c00f848c0000006a10e80000000083c40485c00f8411020000c70017000000c7400482000000c74008a8010000c7400ce6000000e97e06000081fec70b00000f85800000003d2b0700000f85da010000a1000000008b0d0000000081f9200300008b80b8340000722285c00f8471ffffff6a10e80000000083c40485c00f84a7010000c70067000000eb9485c00f8574ffffff6a10e80000000083c40485c00f8485010000c70018000000c740048e000000c74008a8010000c7400cdc000000e9f205000081febc000000756b8d88d1f8ffff83f95f0f87ba03000033d28a9100000000ff249500000000a1000000003d800200000f84e30100003d000400000f85240100006a10e80000000083c40485c00f8412010000c7003c000000c7400462000000c740081c020000c7400c8f000000e97f05000081febd0000000f846c01000081fec2000000757e3d2f07000074628bc881e932070000743b83e95b0f84ae020000490f84250200003d8c0700000f85b2000000a1000000003d800200000f84690300003d200300000f8521030000e9270300006a10e80000000083c40485c00f8480000000c7006e000000e991010000a1000000003d800200000f8536ffffffe91401000081fec900000075583d2f0700000f84b70000008bc881e9320700000f848900000083e95b74644974413d8c0700007530a1000000003d800200000f84e70200003d2003000074073d0004000075126a10e80000000083c40485c00f85a70200005f32c05e83c408c20400a1000000003d800200000f849e0100003d200300000f8556010000e95c010000a1000000003d800200000f84000200003d200300000f85b8010000e9be010000a1000000003d800200000f84dc0000003d200300000f8594000000e99a000000a1000000003d80020000743e3d200300000f8550feffffe956feffff8d88d1f8ffff83f95f0f87d701000033d28a9100000000ff249500000000a1000000003d800200000f851dfeffff6a10e80000000083c40485c00f843affffffc70034000000c740044e000000c740088c010000c7400c8f000000e9a7030000a1000000003d8002000074443d20030000740b3d000400000f85fcfeffff6a10e80000000083c40485c00f84eafeffffc700b4000000c74004d7000000c740080a010000c7400c16000000e9570300006a10e80000000083c40485c00f84b8feffffc7006e000000c74004d7000000c740080a010000c7400c15000000e925030000a1000000003d8002000074443d20030000740b3d000400000f857afeffff6a10e80000000083c40485c00f8468feffffc700aa000000c74004be000000c740084b000000c7400c14000000e9d50200006a10e80000000083c40485c00f8436feffffc70050000000c74004be000000c740084b000000c7400c14000000e9a3020000a1000000003d8002000074443d20030000740b3d000400000f85f8fdffff6a10e80000000083c40485c00f84e6fdffffc70027010000c74004be000000c740084b000000c7400c14000000e9530200006a10e80000000083c40485c00f84b4fdffffc700e4000000c74004be000000c740084b000000c7400c14000000e9210200003d8c0700000f8589fdffffa1000000003d8002000074443d20030000740b3d000400000f856bfdffff6a10e80000000083c40485c00f8459fdffffc700ae010000c74004be000000c740084b000000c7400c14000000e9c60100006a10e80000000083c40485c00f8427fdffffc7005a010000c74004be000000c740084b000000c7400c14000000e994010000813d00000000200300000f82f7fcffff3dea06000075246a10e80000000083c40485c00f84defcffffc7008d000000c740043a000000e94b0100003dec0600000f84210100003d1e0700000f8faa00000074763d0f050000743d3d700600000f85a2fcffff6a10e80000000083c40485c00f8490fcffffc70035010000c7400423010000c740088d000000c7400c14000000e9fd0000006a10e80000000083c40485c00f845efcffffc700b1000000c7400409010000c7400810010000c7400c16000000e9cb0000006a10e80000000083c40485c00f842cfcffffc700b1000000c7400423010000c740088d000000c7400c14000000e9990000002da70700007436480f85fefbffff6a10e80000000083c40485c00f84ecfbffffc7000a000000c74004f9010000c7400862020000c7400c14000000eb5c6a10e80000000083c40485c00f84bdfbffffc7000a000000c74004c6000000c7400862020000c7400c14000000eb2d6a10e80000000083c40485c00f848efbffffc7008d000000c740046c010000c740085c010000c7400c880000008b4c24148b105089118b50048951048b50088951088b500c89510ce80000000083c404b0015f5e83c408c20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_DialogHashMap_Base@@3PAXA",
+   "sym_key": "g_DialogHashMap_Base"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?HashTable__Get@@YAHPAX00@Z",
+   "sym_key": "HashTable__Get"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?GetDlgCtrlID@@YGHPAX@Z",
+   "sym_key": "GetDlgCtrlID"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 243,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 278,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 312,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 386,
+   "type": "DIR32",
+   "sym": "$L2126",
+   "sym_key": "$L2126"
+  },
+  {
+   "off": 393,
+   "type": "DIR32",
+   "sym": "$L2127",
+   "sym_key": "$L2127"
+  },
+  {
+   "off": 398,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 427,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 539,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 573,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 600,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 669,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 701,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 727,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 759,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 791,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 823,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 869,
+   "type": "DIR32",
+   "sym": "$L2128",
+   "sym_key": "$L2128"
+  },
+  {
+   "off": 876,
+   "type": "DIR32",
+   "sym": "$L2129",
+   "sym_key": "$L2129"
+  },
+  {
+   "off": 881,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 899,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 947,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 979,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1029,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1077,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 1109,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1159,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1207,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 1239,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1289,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1348,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 1380,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1430,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1479,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 1503,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1581,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1631,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1681,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1745,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1792,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1839,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1909,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

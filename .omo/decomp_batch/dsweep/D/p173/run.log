@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p173\part_00
+=== convert (20 addrs) ===
+[conv] 0x5a3ae0 RandomMap::PlaceResources -> RandomMap
+[conv] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> InfantryClass
+[conv] 0x47b3a0 Isometric::InitTables -> Isometric
+[conv] 0x608500 ControlDialogHandler -> _addr_60
+[conv] 0x43d290 BuildingClass::Draw -> BuildingClass
+[conv] 0x52ec00 CampaignSelect::DlgProc -> CampaignSelect
+[conv] 0x79fc40 ObjectClass::JoinLobbyWOL -> ObjectClass
+[conv] 0x4d74e0 FootClass::ValidateMove -> FootClass
+[conv] 0x67c6e0 Power::UpdateAll -> Power
+[conv] 0x77f900 CreateGameDialogControl::ProcessIdle -> CreateGameDialogControl
+[conv] 0x614190 ListBox::EditSubclassProc -> ListBox
+[conv] 0x6886b0 GenerateScenarioUnits -> _addr_68
+[conv] 0x454db0 BuildingClass::CleanupOccupation -> BuildingClass
+[conv] 0x558dd0 SaveLoadDialog::DlgProc -> SaveLoadDialog
+[conv] 0x6ae6e0 Skirmish::SetupGame -> Skirmish
+[conv] 0x63be60 BuildingClass::DrawActionLines -> BuildingClass
+[conv] 0x68f060 Screen::TransitionRender -> Screen
+[conv] 0x587410 CellClass::CheckConnectivity -> CellClass
+[conv] 0x781480 ObjectClass::GameListRenderWOL -> ObjectClass
+[conv] 0x45f230 BuildingTypeClass::LoadAnimations -> BuildingTypeClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RandomMap                rc=2
+[era] InfantryClass            rc=2
+[era] Isometric                rc=0
+[era] _addr_60                 rc=0
+[era] BuildingClass            rc=2
+[era] CampaignSelect           rc=2
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] Power                    rc=2
+[era] CreateGameDialogControl  rc=2
+[era] ListBox                  rc=2
+[era] _addr_68                 rc=2
+[era] SaveLoadDialog           rc=2
+[era] Skirmish                 rc=2
+[era] Screen                   rc=2
+[era] CellClass                rc=2
+[era] BuildingTypeClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x47b3a0   MISMATCH         Isometric::InitTables
+[diff] 0x608500   MISMATCH         ControlDialogHandler
+[diff] 0x43d290   MISMATCH         BuildingClass::Draw
+[ledger] 0x5a3ae0 RandomMap::PlaceResources -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47b3a0 Isometric::InitTables -> NG (attempt 1)
+[ledger] 0x608500 ControlDialogHandler -> NG (attempt 1)
+[ledger] 0x43d290 BuildingClass::Draw -> NG (attempt 1)
+[ledger] 0x52ec00 CampaignSelect::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79fc40 ObjectClass::JoinLobbyWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d74e0 FootClass::ValidateMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67c6e0 Power::UpdateAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77f900 CreateGameDialogControl::ProcessIdle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x614190 ListBox::EditSubclassProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6886b0 GenerateScenarioUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x454db0 BuildingClass::CleanupOccupation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x558dd0 SaveLoadDialog::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ae6e0 Skirmish::SetupGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63be60 BuildingClass::DrawActionLines -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68f060 Screen::TransitionRender -> COMPILE_FAIL (attempt 1)
+[ledger] 0x587410 CellClass::CheckConnectivity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x781480 ObjectClass::GameListRenderWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45f230 BuildingTypeClass::LoadAnimations -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p173\batch_report.json

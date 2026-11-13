@@ -19394,6 +19394,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x43d290": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x38",
+  "name": "BuildingClass::Draw",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "BuildingClass::Draw",
+  "rule_violations": 26,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x43e7b0": {
   "attempts": 1,
   "clean": false,
@@ -20746,6 +20758,18 @@
   "orig_name": "nullsub_5",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x454db0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildingClass::CleanupOccupation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildingClass::CleanupOccupation",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4555d0": {
@@ -22863,6 +22887,18 @@
   "orig_name": "TacticalClass::initTacticalMap",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x45f230": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildingTypeClass::LoadAnimations",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildingTypeClass::LoadAnimations",
+  "rule_violations": 42,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x45fa90": {
@@ -28651,6 +28687,18 @@
   "orig_name": "sub_47B340",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x47b3a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+14 push esi",
+  "name": "Isometric::InitTables",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Isometric::InitTables",
+  "rule_violations": 7,
+  "status": "NG",
   "this_as_id": false
  },
  "0x47bb60": {
@@ -51139,6 +51187,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4d74e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "FootClass::ValidateMove",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FootClass::ValidateMove",
+  "rule_violations": 9,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4d7d50": {
   "attempts": 1,
   "clean": false,
@@ -69756,6 +69816,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x51aa40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "InfantryClass::AssignDestination_SyncLog",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InfantryClass::AssignDestination_SyncLog",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x51b1f0": {
   "attempts": 1,
   "clean": false,
@@ -72869,6 +72941,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_52D870",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x52ec00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": null,
+  "name": "CampaignSelect::DlgProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CampaignSelect::DlgProc",
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -86029,6 +86113,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x558dd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "SaveLoadDialog::DlgProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SaveLoadDialog::DlgProc",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5595f0": {
   "attempts": 1,
   "clean": false,
@@ -90352,6 +90448,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x587410": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CellClass::CheckConnectivity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CellClass::CheckConnectivity",
+  "rule_violations": 16,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x587c50": {
   "attempts": 1,
   "clean": false,
@@ -93435,6 +93543,18 @@
   "orig_name": "CellClass::Reset",
   "rule_violations": 11,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5a3ae0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "RandomMap::PlaceResources",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RandomMap::PlaceResources",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5a4280": {
@@ -116077,6 +116197,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x608500": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+21 mov ecx, 0xac1b00",
+  "name": "ControlDialogHandler",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ControlDialogHandler",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6096a0": {
   "attempts": 1,
   "clean": false,
@@ -116751,6 +116882,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TabControl::WndProc",
   "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x614190": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": null,
+  "name": "ListBox::EditSubclassProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ListBox::EditSubclassProc",
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -123249,6 +123392,18 @@
   "orig_name": "BuildingClass::IsIdleWithNoCaptives",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x63be60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildingClass::DrawActionLines",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildingClass::DrawActionLines",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x63c690": {
@@ -134431,6 +134586,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x67c6e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Power::UpdateAll",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Power::UpdateAll",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x67cef0": {
   "attempts": 1,
   "clean": false,
@@ -135943,6 +136110,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6886b0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "GenerateScenarioUnits",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GenerateScenarioUnits",
+  "rule_violations": 9,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x688ed0": {
   "attempts": 1,
   "clean": false,
@@ -136659,6 +136837,18 @@
   "orig_name": "ScoreScreen::AccumulateScoreStats",
   "rule_violations": 4,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x68f060": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Screen::TransitionRender",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Screen::TransitionRender",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x68f8a0": {
@@ -142534,6 +142724,18 @@
   "orig_name": "Skirmish::Setup_DlgProc",
   "rule_violations": 5,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6ae6e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Skirmish::SetupGame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Skirmish::SetupGame",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6aef10": {
@@ -193343,6 +193545,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x77f900": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CreateGameDialogControl::ProcessIdle",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Game::ProcessIdle",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x780110": {
   "attempts": 1,
   "clean": false,
@@ -193464,6 +193678,18 @@
   "orig_name": "sub_7813E0",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x781480": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::GameListRenderWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GameListRenderWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x781cc0": {
@@ -194744,6 +194970,18 @@
   "orig_name": "sub_79F0A0",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x79fc40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::JoinLobbyWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JoinLobbyWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7a0430": {
