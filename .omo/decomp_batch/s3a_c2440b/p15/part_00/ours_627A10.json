@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_627A10@ObjectClass@@QAEPAIPBD@Z",
+ "sym_key": "ObjectClass::sub_627A10",
+ "size": 259,
+ "link_base": 0,
+ "bytes_hex": "81ec040100008b8424080100005355568bf157508d4c241889742414e8000000008b760c8d4c241451ff560499f77e088b068d14528b74d0108d2cd04e782a8bdec1e30603dec1e3028b7d048d4c241403fb518bcfe80000000084c0750f4e81eb0401000085f67de033ffeb0681c7000100008b9424180100008b4c24108b3752e8000000008bc88b860001000085c0894c241074588b681033db85ed7e258b86000100008b40048b3c9885ff74108bcfe80000000057e80000000083c404433bdd7cdb8b860001000085c074078b086a0150ff118b4424105f8986000100005e8b005d5b81c404010000c20400898e000100005f5e5d33c05b81c404010000c20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?CopyUpper@String@@QAEPADPAX@Z",
+   "sym_key": "String::CopyUpper"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Equals@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?Load@MIXFile@@QAEPAIPAX@Z",
+   "sym_key": "MIXFile::Load"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?Destructor@ColorScheme@@QAEHXZ",
+   "sym_key": "ColorScheme::Destructor"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

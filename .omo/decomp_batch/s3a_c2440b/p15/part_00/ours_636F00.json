@@ -1,0 +1,8 @@
+{
+ "symbol": "?sub_636F00@ObjectClass@@QAEHHH@Z",
+ "sym_key": "ObjectClass::sub_636F00",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "8b41085356578b398b4c24148b0c8833c08b711085f67e1e8b49048bd18b19393b74174083c2043bc67d0b8b1a393b75f283f8ff750433c0eb038b04818b50048b442410b91b0000008bf28bf883c26cf3a5668b0a5f6689486c8a52025e88506e5bc20800",
+ "relocs": []
+}
