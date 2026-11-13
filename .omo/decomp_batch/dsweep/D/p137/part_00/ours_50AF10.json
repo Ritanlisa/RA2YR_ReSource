@@ -1,0 +1,129 @@
+{
+ "symbol": "?UpdateSuperWeaponsOwnedHouseClass@SuperWeapon@@QAEDXZ",
+ "sym_key": "SuperWeapon::UpdateSuperWeaponsOwnedHouseClass",
+ "size": 697,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b442408558be98b0d00000000578bd133d081e2ff00000033c285c90f848e0200008b15000000008b8d640200003bd50f9444240b33c033ff85c9897c240c0f8e6b020000535633c9eb048b7c24148b85580200008b04018a486d84c90f842d0200008a486084c974078a486e84c9740e8a85f201000084c00f84110200008a85f201000032db84c0885c24120f85e80000008b0d5000000033c03bc8894424180f86d40000008b0d440000008b34818a8e8100000084c90f85a40000008a8e9000000084c90f84960000008b861c02000083c004508b10ff52108bf88b45048d4d1051ff50103bf8756f8b8eec050000ba030000008b0185c074238b7c241439b8f0160000740839b8f4160000750f84dbc64424120175068a9e6006000083c1044a75d18bcee8000000008b7c24143bc7740b8bcee8000000003bc7750f84dbc644241201752f8a9e6006000084db74088a44241284c0751d8b4424188b7c24148b0d50000000403bc1894424180f8232ffffffeb048b7c24148b95580200008b04ba8b48288a81e700000084c0740ea01300000084c07505c6442412008b95a45300008b85a85300003bd089542418894424147d1f85c0741b85d27415db442418da742414dc1d00000000dfe0f6c401740232db8b1151ff52406a00b939000000e8000000008bf08a44241284c074578a85f201000084c0754d84db75288b85580200008b0cb8e80000000084c0747e8b8d580200006a018b0cb9e80000000084c07516eb688b95580200006a008b0cbae80000000084c074540fbe05b01300003bc77430eb358b8d580200008b0cb9e80000000084c07435a10000000085c0742c8a44241384c0741d0fbe15b01300003bd77507c605b0130000ff56b9f8010000e800000000c685f9010000018bb5640200008d47018bd08d0cbd040000003bd6895424140f8c9dfdffff5e5b5f5d83c40cc3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?SWAvailable@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::SWAvailable"
+  },
+  {
+   "off": 314,
+   "type": "REL32",
+   "sym": "?SW2Available@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::SW2Available"
+  },
+  {
+   "off": 359,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 405,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 460,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 487,
+   "type": "REL32",
+   "sym": "?GetStatus@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::GetStatus"
+  },
+  {
+   "off": 525,
+   "type": "REL32",
+   "sym": "?GetField10@SuperWeapon@@QAEDXZ",
+   "sym_key": "SuperWeapon::GetField10"
+  },
+  {
+   "off": 545,
+   "type": "REL32",
+   "sym": "?SetOnHold@SuperClass@@QAEDD@Z",
+   "sym_key": "SuperClass::SetOnHold"
+  },
+  {
+   "off": 567,
+   "type": "REL32",
+   "sym": "?SetOnHold@SuperClass@@QAEDD@Z",
+   "sym_key": "SuperClass::SetOnHold"
+  },
+  {
+   "off": 578,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 598,
+   "type": "REL32",
+   "sym": "?Lose@SuperClass@@QAEDXZ",
+   "sym_key": "SuperClass::Lose"
+  },
+  {
+   "off": 607,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 626,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 636,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 643,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 648,
+   "type": "REL32",
+   "sym": "?ActivateTab@Sidebar@@QAEHH@Z",
+   "sym_key": "Sidebar::ActivateTab"
+  }
+ ]
+}

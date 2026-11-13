@@ -1,0 +1,243 @@
+{
+ "symbol": "?InitSkirmishDialogControls@@YIJPAXH@Z",
+ "sym_key": "Unnamed::InitSkirmishDialogControls",
+ "size": 737,
+ "link_base": 0,
+ "bytes_hex": "83ec105355568bf133c033c9a05cb2a8008a0d68b2a80033db8be88a1d70b2a800894c241085d20f84c50100008d4c240ce800000000a100000000c744240c0000000083f804753a833d0000000003753133d28d4c24148a15000000008b12e8000000008b40048d4c240c50e8000000008d4c2414c744241400000000e8000000008b44240c85c00f84c0000000684405000056e8000000006a0050e80000000068d406000056e8000000006a0050e8000000008b4c240cf7413c000002007513680204000056e8000000006a0050e8000000008b54240c8b423cf6c4807513684f05000056e8000000006a0050e8000000008b44240c8b483cf6c5047513684e05000056e8000000006a0050e8000000008b4c240cf6413c20751368e803000056e8000000006a0050e8000000008b54240c8b423cf6c4017513684d05000056e8000000006a0050e80000000068000006006a016806040000682905000056e800000000a10000000033c933d2668b8888140000668b9080140000c1e1100bca516a016806040000680204000056e800000000a1000000008b888c140000516a0068ab040000680204000056e800000000a10000000033d233c9668b9098140000668b8890140000c1e2100bd1526a016806040000684f05000056e8000000008d4c240cc744240c00000000e8000000008b4c2410ba060000002bd1526a016805040000682905000056e800000000556a016805040000680204000056e800000000536a016805040000684f05000056e80000000033c0c744240c00000000a062b2a8006a008b4c84105168f1000000684e05000056e80000000033d28a1563b2a8006a008b4494105068f1000000689a06000056e80000000033c98a0d64b2a8006a008b548c105268f1000000689d06000056e800000000a10000000025ff0000006a008b4c84105168f100000068e803000056e80000000033d28a1561b2a8006a008b4494105068f1000000684d05000056e8000000005e5d5b83c410c3",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?g_GameDifficulty@@3EA",
+   "sym_key": "g_GameDifficulty"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?FindWDTTerritoryClass@@YIPAVrc_ptr_base@@PAXH@Z",
+   "sym_key": "FindWDTTerritoryClass"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 239,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 262,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 270,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 322,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 330,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 353,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 358,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 400,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 405,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 430,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 435,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 477,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 494,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 524,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 543,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 562,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 600,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 631,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 662,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 667,
+   "type": "DIR32",
+   "sym": "?MCVRedeploy@@3IA",
+   "sym_key": "MCVRedeploy"
+  },
+  {
+   "off": 695,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 726,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  }
+ ]
+}

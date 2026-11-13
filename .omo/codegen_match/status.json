@@ -9289,6 +9289,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x417cc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": null,
+  "name": "AircraftClass::GetActionOnObject",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AircraftClass::GetActionOnObject",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x417f80": {
   "attempts": 1,
   "clean": false,
@@ -27845,6 +27857,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x47f250": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "RenderFogOfWarOverlay",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RenderFogOfWarOverlay",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x47f510": {
   "attempts": 1,
   "clean": false,
@@ -39764,6 +39787,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4a53b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+61 xor ecx, ecx",
+  "name": "Dial8Class::Constructor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Dial8Class::Constructor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4a5660": {
   "attempts": 1,
   "clean": false,
@@ -48923,6 +48958,18 @@
   "orig_name": "ObjectClass::Construct",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4d0980": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "FoggedObjectClass::InitBuildingFog",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FoggedObjectClass::InitBuildingFog",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4d0c40": {
@@ -63592,6 +63639,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x50af10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov al, byte ptr [0xa8e9a0]",
+  "name": "SuperWeapon::UpdateSuperWeaponsOwnedHouseClass",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SuperWeapon::UpdateSuperWeaponsOwnedHouseClass",
+  "rule_violations": 8,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x50b1d0": {
   "attempts": 1,
   "clean": false,
@@ -70683,6 +70742,18 @@
   "name": "ObjectClass::LoadExpansionMixFiles",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LoadExpansionMixFiles",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5301a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "MixFileClass::Bootstrap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MixFileClass::Bootstrap",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -79259,6 +79330,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::Set",
   "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x54bd30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::UpdateFootMoveToState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UpdateFootMoveToState",
+  "rule_violations": 10,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -104866,6 +104949,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5dbb60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Game::BuildGameSettingsPacket",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Game::BuildGameSettingsPacket",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5dbe20": {
   "attempts": 1,
   "clean": false,
@@ -105362,6 +105457,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5e3010": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0x1c",
+  "name": "InitSkirmishDialogControls",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "InitSkirmishDialogControls",
+  "rule_violations": 6,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5e35a0": {
   "attempts": 1,
   "clean": false,
@@ -105528,6 +105634,17 @@
   "orig_name": "Scenario::PreGameInit",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5e7bf0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "LoadScenarioClassByIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "LoadScenarioClassByIndex",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5e84d0": {
@@ -110342,6 +110459,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LoadBuildingTypeClassSHPs",
   "rule_violations": 12,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5fe770": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "OverlayTypeClass::LoadFromINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "OverlayTypeClass::LoadFromINI",
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -126485,6 +126614,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x663030": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TechnoClass::CalculateDamage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TechnoClass::CalculateDamage",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6632e0": {
   "attempts": 14,
   "clean": false,
@@ -132552,6 +132693,18 @@
   "name": "NetworkDialog::InitModemSettings",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "NetworkDialog::InitModemSettings",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x696200": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::InitializeModemPortSelect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InitializeModemPortSelect",
   "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -153838,6 +153991,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6ed7e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Mission::AssignTeamMemberMissions",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Mission::AssignTeamMemberMissions",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6edb50": {
   "attempts": 4,
   "clean": false,
@@ -153987,6 +154152,17 @@
   "orig_name": "TeamClass::SelectBestMember",
   "rule_violations": 3,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6eebd0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 sub esp, 0x7c",
+  "name": "DamageMapClassArea",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "DamageMapClassArea",
+  "rule_violations": 9,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6eeea0": {
@@ -155348,6 +155524,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TechnoClass::EvaluateTarget",
   "rule_violations": 25,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6f8960": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "SelectTechnoClassAreaTarget",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SelectTechnoClassAreaTarget",
+  "rule_violations": 9,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -156785,6 +156972,18 @@
   "orig_name": "TacticalClass::StubReturnTrue3",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x70d990": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TechnoClass::OnEnterCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TechnoClass::OnEnterCell",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x70dc50": {
@@ -186112,6 +186311,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7896a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0x38",
+  "name": "PopulateWOLUserList",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "PopulateWOLUserList",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x789960": {
   "attempts": 1,
   "clean": false,
@@ -192146,6 +192356,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7ba610": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "XSurface::DrawLineEx",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "XSurface::DrawLineEx",
+  "rule_violations": 8,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7ba8c0": {
   "attempts": 1,
   "clean": false,
@@ -193125,6 +193347,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Audio_Render_7C1150",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c1730": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+3 lea eax, [esp + 0x18]",
+  "name": "Buffer::AllocateCodecFrameBuffers",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Buffer::AllocateCodecFrameBuffers",
+  "rule_violations": 5,
   "status": "NG",
   "this_as_id": false
  },

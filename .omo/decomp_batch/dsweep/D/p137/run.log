@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p137\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ba610 XSurface::DrawLineEx -> XSurface
+[conv] 0x6ed7e0 Mission::AssignTeamMemberMissions -> Mission
+[conv] 0x4a53b0 Dial8Class::Constructor -> Dial8Class
+[conv] 0x663030 TechnoClass::CalculateDamage -> TechnoClass
+[conv] 0x6f8960 SelectTechnoClassAreaTarget -> _addr_6F
+[conv] 0x47f250 RenderFogOfWarOverlay -> _addr_47
+[conv] 0x5dbb60 Game::BuildGameSettingsPacket -> Game
+[conv] 0x6eebd0 DamageMapClassArea -> _addr_6E
+[conv] 0x4d0980 FoggedObjectClass::InitBuildingFog -> FoggedObjectClass
+[conv] 0x417cc0 AircraftClass::GetActionOnObject -> AircraftClass
+[conv] 0x5301a0 MixFileClass::Bootstrap -> MixFileClass
+[conv] 0x5e3010 InitSkirmishDialogControls -> _addr_5E
+[conv] 0x70d990 TechnoClass::OnEnterCell -> TechnoClass
+[conv] 0x54bd30 TechnoClass::UpdateFootMoveToState -> TechnoClass
+[conv] 0x7c1730 Buffer::AllocateCodecFrameBuffers -> Buffer
+[conv] 0x50af10 SuperWeapon::UpdateSuperWeaponsOwnedHouseClass -> SuperWeapon
+[conv] 0x5fe770 OverlayTypeClass::LoadFromINI -> OverlayTypeClass
+[conv] 0x5e7bf0 LoadScenarioClassByIndex -> _addr_5E
+[conv] 0x7896a0 PopulateWOLUserList -> _addr_78
+[conv] 0x696200 ObjectClass::InitializeModemPortSelect -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] XSurface                 rc=2
+[era] Mission                  rc=2
+[era] Dial8Class               rc=0
+[era] TechnoClass              rc=2
+[era] _addr_6F                 rc=2
+[era] _addr_47                 rc=2
+[era] Game                     rc=2
+[era] _addr_6E                 rc=0
+[era] FoggedObjectClass        rc=2
+[era] AircraftClass            rc=2
+[era] MixFileClass             rc=2
+[era] _addr_5E                 rc=2
+[era] Buffer                   rc=0
+[era] SuperWeapon              rc=0
+[era] OverlayTypeClass         rc=2
+[era] _addr_78                 rc=0
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a53b0   MISMATCH         Dial8Class::Constructor
+[diff] 0x6eebd0   MISMATCH         DamageMapClassArea
+[diff] 0x5e3010   MISMATCH         InitSkirmishDialogControls
+[diff] 0x7c1730   MISMATCH         Buffer::AllocateCodecFrameBuffers
+[diff] 0x50af10   MISMATCH         SuperWeapon::UpdateSuperWeaponsOwnedHouseClass
+[diff] 0x7896a0   MISMATCH         PopulateWOLUserList
+[ledger] 0x7ba610 XSurface::DrawLineEx -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ed7e0 Mission::AssignTeamMemberMissions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a53b0 Dial8Class::Constructor -> NG (attempt 1)
+[ledger] 0x663030 TechnoClass::CalculateDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f8960 SelectTechnoClassAreaTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47f250 RenderFogOfWarOverlay -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dbb60 Game::BuildGameSettingsPacket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6eebd0 DamageMapClassArea -> NG (attempt 1)
+[ledger] 0x4d0980 FoggedObjectClass::InitBuildingFog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x417cc0 AircraftClass::GetActionOnObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5301a0 MixFileClass::Bootstrap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e3010 InitSkirmishDialogControls -> NG (attempt 1)
+[ledger] 0x70d990 TechnoClass::OnEnterCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54bd30 TechnoClass::UpdateFootMoveToState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c1730 Buffer::AllocateCodecFrameBuffers -> NG (attempt 1)
+[ledger] 0x50af10 SuperWeapon::UpdateSuperWeaponsOwnedHouseClass -> NG (attempt 1)
+[ledger] 0x5fe770 OverlayTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e7bf0 LoadScenarioClassByIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7896a0 PopulateWOLUserList -> NG (attempt 1)
+[ledger] 0x696200 ObjectClass::InitializeModemPortSelect -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "frame_sched": 3,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p137\batch_report.json
