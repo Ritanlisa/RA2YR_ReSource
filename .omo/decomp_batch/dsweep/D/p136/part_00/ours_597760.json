@@ -1,0 +1,381 @@
+{
+ "symbol": "?Release@MapSeedClass@@QAEDPADPAH@Z",
+ "sym_key": "MapSeedClass::Release",
+ "size": 686,
+ "link_base": 0,
+ "bytes_hex": "81eca0000000538b9c24a8000000565733ff8bf13bdf750e5f5e32c05b81c4a0000000c208008bcee800000000538d4c245ce8000000000fbe44242c8d4c24288d54241c897c241c897c2428897c2410897c2414897c2420897c242451893852897c2438e8000000000fbe4c24148b9c24bc00000033c08944243c83c40889442438897c24188944243c897c244488442440897c24483bdfc7010000000074108d96f00000005352e80000000083c4080fbe4c240c5368180200006824010000e8000000008b4664570fbe4c24105068e40100006824010000e8000000008b4e6833d28a15000000005751520fbe4c24186824010000e8000000008b4650570fbe4c24105068d80100006824010000e8000000008b4e74575168d00100000fbe4c24186824010000e8000000008b563c570fbe4c24105268c80100006824010000e8000000008b463833c98a0d000000005750510fbe4c24186824010000e8000000008b564833c0a000000000570fbe4c241052506824010000e8000000008b4e70575168bc0100000fbe4c24186824010000e8000000008b5644570fbe4c24105268b00100006824010000e8000000008b466c570fbe4c24105068a00100006824010000e8000000008b4e4c575168940100000fbe4c24186824010000e8000000008b565433c0a000000000570fbe4c241052506824010000e8000000008b4e58575168840100000fbe4c24186824010000e8000000008b565c570fbe4c24105268780100006824010000e8000000008b4660570fbe4c24105068680100006824010000e8000000008b4e405751685c0100000fbe4c24186824010000e8000000008d5424588d4c240c52e8000000008d4c240ce8000000008b4424588d4c244cc70000000000e8000000008b4c2458c701000000008d4c2458e8000000005f5eb0015b81c4a0000000c20800",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?LinkedList__Prepend@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Prepend"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?vt_INIClass@@3PAXA",
+   "sym_key": "vt_INIClass"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?SetWideAsHex@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetWideAsHex"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Height@@3EA",
+   "sym_key": "g_INI_Key_Height"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 262,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 282,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 292,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 297,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 312,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 317,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 322,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 333,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Theater@@3EA",
+   "sym_key": "g_INI_Key_Theater"
+  },
+  {
+   "off": 346,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 351,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 361,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Time@@3EA",
+   "sym_key": "g_INI_Key_Time"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 379,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 389,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 399,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 404,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 419,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 424,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 429,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 444,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 449,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 454,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 464,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 474,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 479,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 489,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Tiberium@@3EA",
+   "sym_key": "g_INI_Key_Tiberium"
+  },
+  {
+   "off": 502,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 507,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 517,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 527,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 532,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 547,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 557,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 572,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 577,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 582,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 592,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 602,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 607,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX00H@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 621,
+   "type": "REL32",
+   "sym": "?SaveToPipe@INIClass@@QAEHH@Z",
+   "sym_key": "INIClass::SaveToPipe"
+  },
+  {
+   "off": 630,
+   "type": "REL32",
+   "sym": "?DestroyHashTableINIClass@HashTable@@QAEPADXZ",
+   "sym_key": "HashTable::DestroyHashTableINIClass"
+  },
+  {
+   "off": 644,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 649,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 659,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 668,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

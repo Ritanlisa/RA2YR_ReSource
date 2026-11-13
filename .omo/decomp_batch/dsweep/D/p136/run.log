@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p136\part_00
+=== convert (20 addrs) ===
+[conv] 0x6dd300 ScriptAction::Serialize -> ScriptAction
+[conv] 0x5d6d80 TechnoClass::ComputeMultiEngineerAdjustment -> TechnoClass
+[conv] 0x597760 MapSeedClass::Release -> MapSeedClass
+[conv] 0x5a0160 TiberiumClass::Spread -> TiberiumClass
+[conv] 0x451890 BuildingClass::PlayAnim -> BuildingClass
+[conv] 0x60f4b0 InitializeDialogControls -> _addr_60
+[conv] 0x721a50 TiberiumClass::LoadFromINI -> TiberiumClass
+[conv] 0x4d8fb0 FootClass::MissionDispatch -> FootClass
+[conv] 0x431450 Network::SendBeacon -> Network
+[conv] 0x679a10 SideClass::LoadAllFromINI -> SideClass
+[conv] 0x4d82b0 FootClass::ValidatePlacement -> FootClass
+[conv] 0x583820 Pathfinding::CheckCliff -> Pathfinding
+[conv] 0x7339b0 SelectUnitsByTheme -> _addr_73
+[conv] 0x69a980 SessionClass::ParseGameInfo -> SessionClass
+[conv] 0x7a4c10 CChatEventSink::unnamed -> CChatEventSink
+[conv] 0x5dfe00 SendNetworkPlayerOptions -> _addr_5D
+[conv] 0x759260 Stream::InitializeBinkAudio -> Stream
+[conv] 0x6bac40 HashTable::RemoveHashTableEntry -> HashTable
+[conv] 0x7ae950 HashTable::FindWOLHashTableEntry -> HashTable
+[conv] 0x4d0c40 FoggedObjectClass::InitTerrainFog -> FoggedObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScriptAction             rc=2
+[era] TechnoClass              rc=2
+[era] MapSeedClass             rc=0
+[era] TiberiumClass            rc=2
+[era] BuildingClass            rc=2
+[era] _addr_60                 rc=2
+[era] FootClass                rc=2
+[era] Network                  rc=2
+[era] SideClass                rc=2
+[era] Pathfinding              rc=2
+[era] _addr_73                 rc=2
+[era] SessionClass             rc=2
+[era] CChatEventSink           rc=2
+[era] _addr_5D                 rc=0
+[era] Stream                   rc=2
+[era] HashTable                rc=0
+[era] FoggedObjectClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x597760   MISMATCH         MapSeedClass::Release
+[diff] 0x5a0160   MISMATCH         TiberiumClass::Spread
+[diff] 0x5dfe00   MISMATCH         SendNetworkPlayerOptions
+[diff] 0x6bac40   MISMATCH         HashTable::RemoveHashTableEntry
+[diff] 0x7ae950   MISMATCH         HashTable::FindWOLHashTableEntry
+[ledger] 0x6dd300 ScriptAction::Serialize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d6d80 TechnoClass::ComputeMultiEngineerAdjustment -> COMPILE_FAIL (attempt 1)
+[ledger] 0x597760 MapSeedClass::Release -> NG (attempt 1)
+[ledger] 0x5a0160 TiberiumClass::Spread -> NG (attempt 1)
+[ledger] 0x451890 BuildingClass::PlayAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60f4b0 InitializeDialogControls -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721a50 TiberiumClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d8fb0 FootClass::MissionDispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x431450 Network::SendBeacon -> COMPILE_FAIL (attempt 1)
+[ledger] 0x679a10 SideClass::LoadAllFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d82b0 FootClass::ValidatePlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x583820 Pathfinding::CheckCliff -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7339b0 SelectUnitsByTheme -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69a980 SessionClass::ParseGameInfo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a4c10 CChatEventSink::unnamed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dfe00 SendNetworkPlayerOptions -> NG (attempt 1)
+[ledger] 0x759260 Stream::InitializeBinkAudio -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bac40 HashTable::RemoveHashTableEntry -> NG (attempt 1)
+[ledger] 0x7ae950 HashTable::FindWOLHashTableEntry -> NG (attempt 1)
+[ledger] 0x4d0c40 FoggedObjectClass::InitTerrainFog -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "regalloc": 1,
+  "width_mismatch": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p136\batch_report.json

@@ -1,0 +1,105 @@
+{
+ "symbol": "?Spread@TiberiumClass@@QAGDHHHHHHDD@Z",
+ "sym_key": "TiberiumClass::Spread",
+ "size": 705,
+ "link_base": 0,
+ "bytes_hex": "83ec1c8b4c242453555657e8000000008be88b44243833db896c24103bc3895c24280f8e5b0200008b7c244c6a18e8000000008bf083c4043bf3741f53538bcee800000000c70600000000c746140a000000895e1089742414eb04895c24148b45108b4c2414895c241c8d04408941148b45103bc30f8edb0100008b3500000000eb0233db32c9895c24248b54241c8b4504c1e20283e10703c281e700ffffff8d148d88f6890089542420668b0a668b52026603500266030866895424208b4424200fbfd20fbfc925ff0000000bf88d04113bc6897c24180f86500100008bd92bda3bde0f83440100008bda2bd93bde0f83380100003b05000000000f872c0100008b44243c3bc80f8c200100008b5c244403c33bc80f8d120100008b4424403bd00f8c060100008b5c244803c33bd00f8df8000000a1000000000fafc203c18b0d000000008d34808a44244cc1e60403f184c08b6e38740d8b4c2434493be97504b301eb0232db8d542418b90000000052e80000000085ed89442420740884db0f849d0000008bc8e80000000084c0751584db0f848a0000008b4c2420e80000000084c0747d8b5c24148b4b088b43103bc172218a430d84c0750485c975298b431485c07e228b1303c16a005053ff520884c074138b43108b53048d4801894b108b4c2418890c828a44244c8b54243484c089563874268b4c2420e80000000084c074198d442418b90000000050e8000000008a4c245088881b0100003b6c243475778b35000000008b6c24108b4c24244183f908894c24240f8c4bfeffff8b44241c8b4d10403bc18944241c0f8c2ffeffff33db3beb74088b55006a0155ff128b4424148b4c2438894424108b4424288b6c2410403bc1894424280f8ca9fdffff3beb74088b45006a0155ff105f5e5db0015b83c41cc224008b44241085c074078b086a0150ff1185db74078b136a0153ff125f5e5d32c05b83c41cc22400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?CellListAlloc@RandomMap@@QAEPAIXZ",
+   "sym_key": "RandomMap::CellListAlloc"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?CellConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::CellConstructor"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_Cell@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_Cell"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 322,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 365,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 371,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 394,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 415,
+   "type": "REL32",
+   "sym": "?IsGroundTypeRange@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsGroundTypeRange"
+  },
+  {
+   "off": 509,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 522,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 528,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 550,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  }
+ ]
+}

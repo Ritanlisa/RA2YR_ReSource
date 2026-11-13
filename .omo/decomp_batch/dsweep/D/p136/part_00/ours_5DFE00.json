@@ -1,0 +1,273 @@
+{
+ "symbol": "?SendNetworkPlayerOptions@@YIDPAHH@Z",
+ "sym_key": "Unnamed::SendNetworkPlayerOptions",
+ "size": 709,
+ "link_base": 0,
+ "bytes_hex": "8b0181ecc401000085c0535556578bea0f85150100008a150000000084d20f850701000066a10000000050e80000000083c40485c00f84e3000000a00000000084c0742833c9668b0d00000000e80000000033c98a0d000000005051e80000000083c40885c00f85b200000033c9668b0d00000000e80000000033d28a15000000005052e80000000083c40885c07416a10000000085c0750d5f5e5db0015b81c4c4010000c3b97100000033c08d7c2410f3ab33c9c744241001000000668b0d00000000e8000000008bf883c9ff33c08d542414f2aef7d12bf96a008bc18bf78bfa6a00c1e902f3a58bc85583e1036a01f3a48a0d000000008b54244f83e10183e2fe0bca8d442420894c244f8b0d0000000068c701000050e8000000005f5e5db0015b81c4c4010000c383f8020f85840100008d590433c9668b0d00000000e8000000005053e80000000083c40885c00f856101000033c9668b0d0000000051e80000000083c40485c00f8447010000a00000000084c00f853a010000833d00000000020f822d010000b97100000033c08d7c24108d542414f3aba00000000083c9ff8bf833c0c744241003000000f2aef7d12bf98bc18bf78bfa8d542428c1e902f3a58bc833c083e103f3a433c98a0d000000008bf983c9fff2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a48b0d00000000e8000000008b0d000000008944243fe80000000033c989442443668b0d00000000e8000000008b150000000089442447a10000000033c9894424633bc2a1000000000f94c185c0894c246774658b15000000008b0283786bff7408c7442467000000006a006a00556a018d4c242068c7010000518b0d00000000e8000000008b15000000008b0ae8000000005053e80000000083c40885c07518b2018acae800000000a10000000085c074068b0850ff51605f5e5db0015b81c4c4010000c35f5e5d32c05b81c4c4010000c3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D60C@@3_NA",
+   "sym_key": "DataGlobal_A8D60C"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_CurrentPlayerName@@3GA",
+   "sym_key": "g_CurrentPlayerName"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_NetworkQuitFlag@@3EA",
+   "sym_key": "g_NetworkQuitFlag"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_CurrentPlayerName@@3GA",
+   "sym_key": "g_CurrentPlayerName"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_GameSetupBuffer@@3EA",
+   "sym_key": "g_GameSetupBuffer"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_CurrentPlayerName@@3GA",
+   "sym_key": "g_CurrentPlayerName"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?g_GameSetupBuffer@@3EA",
+   "sym_key": "g_GameSetupBuffer"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_BounceClassInit@@3IA",
+   "sym_key": "g_BounceClassInit"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?g_CurrentPlayerName@@3GA",
+   "sym_key": "g_CurrentPlayerName"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?g_NetworkQuitFlag@@3EA",
+   "sym_key": "g_NetworkQuitFlag"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?SendMessage@Network@@QAEHHHHHHH@Z",
+   "sym_key": "Network::SendMessage"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?g_CurrentPlayerName@@3GA",
+   "sym_key": "g_CurrentPlayerName"
+  },
+  {
+   "off": 321,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 328,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?g_CurrentPlayerName@@3GA",
+   "sym_key": "g_CurrentPlayerName"
+  },
+  {
+   "off": 354,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 370,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D60C@@3_NA",
+   "sym_key": "DataGlobal_A8D60C"
+  },
+  {
+   "off": 384,
+   "type": "DIR32",
+   "sym": "?g_NetworkSettingsState@@3IA",
+   "sym_key": "g_NetworkSettingsState"
+  },
+  {
+   "off": 413,
+   "type": "DIR32",
+   "sym": "?g_GameSetupBuffer@@3EA",
+   "sym_key": "g_GameSetupBuffer"
+  },
+  {
+   "off": 466,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFF7C@@3EA",
+   "sym_key": "DataGlobal_ABFF7C"
+  },
+  {
+   "off": 501,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 506,
+   "type": "REL32",
+   "sym": "?GetPlayerOption@Session@@QAEHXZ",
+   "sym_key": "Session::GetPlayerOption"
+  },
+  {
+   "off": 512,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 521,
+   "type": "REL32",
+   "sym": "?GetPlayerColor@Session@@QAEHXZ",
+   "sym_key": "Session::GetPlayerColor"
+  },
+  {
+   "off": 534,
+   "type": "DIR32",
+   "sym": "?g_CurrentPlayerName@@3GA",
+   "sym_key": "g_CurrentPlayerName"
+  },
+  {
+   "off": 539,
+   "type": "REL32",
+   "sym": "?Hash@WideString@@QAEHXZ",
+   "sym_key": "WideString::Hash"
+  },
+  {
+   "off": 545,
+   "type": "DIR32",
+   "sym": "?g_MPCooperativeState@@3IA",
+   "sym_key": "g_MPCooperativeState"
+  },
+  {
+   "off": 554,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerCount@@3IA",
+   "sym_key": "g_NetworkPlayerCount"
+  },
+  {
+   "off": 567,
+   "type": "DIR32",
+   "sym": "?Game_PlayerCount@@3IA",
+   "sym_key": "Game_PlayerCount"
+  },
+  {
+   "off": 584,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IA",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 623,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 628,
+   "type": "REL32",
+   "sym": "?SendMessage@Network@@QAEHHHHHHH@Z",
+   "sym_key": "Network::SendMessage"
+  },
+  {
+   "off": 634,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IA",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 641,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 648,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 664,
+   "type": "REL32",
+   "sym": "?CheckGameSettingsChanged@@YIDDD@Z",
+   "sym_key": "CheckGameSettingsChanged"
+  },
+  {
+   "off": 669,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  }
+ ]
+}
