@@ -1,0 +1,11 @@
+{
+ "addr": "0x459C20",
+ "name": "BuildingClass::ProcessUpgradeTargeting",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x459C20",
+ "bytes_hex": "578bf98b8f1802000085c974698b01ff502c83f80b755f568bb71802000085f6750433c0eb128b168bceff522c83e80bf7d81bc0f7d023c68b88ec0000005e83f90575328b87200500008a88ed05000084c974228a88ec05000084c974188b807c05000083f8ff740d8b17508bcfff92540300005fc38bcfe863f12a005fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

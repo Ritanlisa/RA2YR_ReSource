@@ -1,0 +1,51 @@
+{
+ "symbol": "?DestroyOnBridgeCollapse@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::DestroyOnBridgeCollapse",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "0fbe05a800000083ec0c535733ff8bd985c07e69560fbe059c0000008d54240c6a008b34b852568b0eff514c50b9f8010000e8000000008bc8e8000000008a8e9000000084c9742885c074243bc375208b8ea405000085c974043bc875128b066a016a01680000000056ff90740100000fbe05a8000000473bf87c995e5f5b83c40cc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?ProcessUpgradeTargeting@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::ProcessUpgradeTargeting",
+ "size": 123,
+ "link_base": 0,
+ "bytes_hex": "51578bf98b873805000085c0745f8b0850ff512c83f80b7554568bb73805000085f674138b1656ff522c83e80bf7d81bc0f7d023c6eb0233c08b88ec0000005e83f90575288b87200500008b88cc04000085c974188b807404000083f8ff740d8b0f5057ff91540300005f59c38bcfe8000000008b4424045f59c3",
+ "relocs": [
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?TechnoClass__PickAlternateTarget@@YIXPAX@Z",
+   "sym_key": "TechnoClass__PickAlternateTarget"
+  }
+ ]
+}

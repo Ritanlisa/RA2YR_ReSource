@@ -1,0 +1,11 @@
+{
+ "addr": "0x4576F0",
+ "name": "BuildingClass::DestroyOnBridgeCollapse",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4576F0",
+ "bytes_hex": "a1f83da80083ec0c535733ff8bd985c07e6756a1ec3da8006a008b34b88d442410508bce8b16ff524c50b9e8f78700e80ce010008bc8e8f54d02008a8e9000000084c9742985c074253bc375218b8ea405000085c974043bc875138b166a016a016848c889008bceff9274010000a1f83da800473bf87c9b5e5f5b83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
