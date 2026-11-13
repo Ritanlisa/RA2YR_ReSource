@@ -1,0 +1,129 @@
+{
+ "symbol": "?WinMain_Create@@YIEPAX0D@Z",
+ "sym_key": "Unnamed::WinMain_Create",
+ "size": 376,
+ "link_base": 0,
+ "bytes_hex": "518a442408535556578b3d0000000033db890d00000000891500000000a200000000895c2418897c24106838270000e8000000008bf083c4043bf374798b4c2418899e1c270000898e18270000899e20270000899e24270000899e28270000c7862c27000050000000c786302700001900000033ff8daed00700008d0c378bc5ba50000000c60120891883c06483c1194a75f24783c50483ff197cdf6a196a5053538bcec6863427000001e8000000008b7c2410eb0233f68b4c2418893783c7044181ff00000000894c2418897c24100f8c54ffffffa1000000008bd8a3000000008b0b33ff8da9d00700008d140f8bc5be50000000c60220c7000000000083c06483c2194e75ee4783c50483ff197cdb6a196a506a006a00c6813427000001e80000000083c30481fb000000007cb2a0000000005f5e5d84c05b7437a00000000084c0742ea10000000085c07505e8000000008b15000000006a0152c6050000000001e800000000a10000000050e80000000059c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF168@@3IA",
+   "sym_key": "DataGlobal_ABF168"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF230@@3IA",
+   "sym_key": "DataGlobal_ABF230"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?hWndParent@@3PAXA",
+   "sym_key": "hWndParent"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF238@@3EA",
+   "sym_key": "DataGlobal_ABF238"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?DrawRepeated@Text@@QAEDHHHH@Z",
+   "sym_key": "Text::DrawRepeated"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF188@@3IA",
+   "sym_key": "DataGlobal_ABF188"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF168@@3IA",
+   "sym_key": "DataGlobal_ABF168"
+  },
+  {
+   "off": 222,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF23C@@3IA",
+   "sym_key": "DataGlobal_ABF23C"
+  },
+  {
+   "off": 289,
+   "type": "REL32",
+   "sym": "?DrawRepeated@Text@@QAEDHHHH@Z",
+   "sym_key": "Text::DrawRepeated"
+  },
+  {
+   "off": 298,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF188@@3IA",
+   "sym_key": "DataGlobal_ABF188"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF239@@3EA",
+   "sym_key": "DataGlobal_ABF239"
+  },
+  {
+   "off": 318,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF238@@3EA",
+   "sym_key": "DataGlobal_ABF238"
+  },
+  {
+   "off": 327,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF240@@3IA",
+   "sym_key": "DataGlobal_ABF240"
+  },
+  {
+   "off": 336,
+   "type": "REL32",
+   "sym": "?CreateDebugOutput@@YAHXZ",
+   "sym_key": "CreateDebugOutput"
+  },
+  {
+   "off": 342,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF240@@3IA",
+   "sym_key": "DataGlobal_ABF240"
+  },
+  {
+   "off": 351,
+   "type": "DIR32",
+   "sym": "?g_MiscFlag@@3EA",
+   "sym_key": "g_MiscFlag"
+  },
+  {
+   "off": 357,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 362,
+   "type": "DIR32",
+   "sym": "?hWndParent@@3PAXA",
+   "sym_key": "hWndParent"
+  },
+  {
+   "off": 368,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXPAX@Z",
+   "sym_key": "SetFocus"
+  }
+ ]
+}

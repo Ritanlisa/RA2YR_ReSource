@@ -1,0 +1,87 @@
+{
+ "symbol": "?InitRandomOffsets@CellClass@@QAEHHH@Z",
+ "sym_key": "CellClass::InitRandomOffsets",
+ "size": 362,
+ "link_base": 0,
+ "bytes_hex": "83ec08a00000000053568bf184c057897424100f8595000000a100000000c60500000000015533ffc700ffffffff8b2d00000000c7442410000000008b0d00000000e8000000008bf0a00000000083e607ba000000008b4a048b1a8d0ccf03cbbb000000000f99c34b83e34003cb83f9407c0383e94039348d00000000740d33c983c2088ac83bd17d10ebca8b4424104083f840894424107ca289750083c5044781fd000000007c8b8b7424145d0fbf46248b4c24188bd8c1fb108ad38944240c32d181e2ff00000033ca8a961a01000084d2745a8b4424188b0d000000008b3481568b16ff929c00000085c075095f5e5b83c408c208008b0656ff909c0000008b0e8b3856ff919c0000008b5424108bc80fbe821a01000099f7ff2bd80fbfc399f779048bc80fbf44240c99f7ff837c241c047e1983e10783e0075f5e8d04c85b8b04850000000083c408c2080083e10383e003c1e1020bc85f5e5b8b048d0000000083c408c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E7C7@@3EA",
+   "sym_key": "DataGlobal_89E7C7"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E620@@3IA",
+   "sym_key": "DataGlobal_89E620"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E7C7@@3EA",
+   "sym_key": "DataGlobal_89E7C7"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E620@@3IA",
+   "sym_key": "DataGlobal_89E620"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81CD28@@3EA",
+   "sym_key": "DataGlobal_81CD28"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81CCE8@@3EA",
+   "sym_key": "DataGlobal_81CCE8"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E620@@3IA",
+   "sym_key": "DataGlobal_89E620"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E720@@3NA",
+   "sym_key": "DataGlobal_89E720"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  },
+  {
+   "off": 325,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E620@@3IA",
+   "sym_key": "DataGlobal_89E620"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81CCA8@@3PAIA",
+   "sym_key": "DataGlobal_81CCA8"
+  }
+ ]
+}

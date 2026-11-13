@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p96\part_00
+=== convert (20 addrs) ===
+[conv] 0x52d430 ReadModConfigINI -> _addr_52
+[conv] 0x673e80 RulesClass::ReadPowerupsSection -> RulesClass
+[conv] 0x5eaee0 ObjectClass::RefreshLobbyAll_Play_5EAEE0 -> ObjectClass
+[conv] 0x486a70 CellClass::CreateFoggedObjects -> CellClass
+[conv] 0x7c0530 Audio_Process_7C0530 -> Audio_Process
+[conv] 0x4814f0 CellClass::InitRandomOffsets -> CellClass
+[conv] 0x6c9d40 BinkMovie::ProcessKeyframe -> BinkMovie
+[conv] 0x4d3590 FootClass::Destruct -> FootClass
+[conv] 0x6bb760 sub_6BB760 -> _addr_6B
+[conv] 0x6dd000 TActionClass::ctor -> TActionClass
+[conv] 0x6e4de0 TagClass::GetType -> TagClass
+[conv] 0x79c3a0 ObjectClass::Network_Cleanup -> ObjectClass
+[conv] 0x6da5c0 BuildingClass::ProcessOccupancy -> BuildingClass
+[conv] 0x7b0dd0 IPXInterfaceClass::initSocket -> IPXInterfaceClass
+[conv] 0x7283c0 ScenarioClass::LoadWaypoints -> ScenarioClass
+[conv] 0x652e90 RadarClass::Destru_vt53 -> RadarClass
+[conv] 0x7d6d2a ___get_qualified_locale -> _addr_7D
+[conv] 0x631380 ObjectClass::UI_Pop -> ObjectClass
+[conv] 0x5bc180 WinMain_Create -> WinMain
+[conv] 0x4ddc60 FootClass::ValidateTargetCell -> FootClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_52                 rc=2
+[era] RulesClass               rc=2
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] Audio_Process            rc=0
+[era] BinkMovie                rc=2
+[era] FootClass                rc=2
+[era] _addr_6B                 rc=2
+[era] TActionClass             rc=2
+[era] TagClass                 rc=0
+[era] BuildingClass            rc=2
+[era] IPXInterfaceClass        rc=2
+[era] ScenarioClass            rc=2
+[era] RadarClass               rc=0
+[era] _addr_7D                 rc=2
+[era] WinMain                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x631380   MISMATCH         ObjectClass::UI_Pop
+[diff] 0x4814f0   MISMATCH         CellClass::InitRandomOffsets
+[diff] 0x7c0530   MISMATCH         Audio_Process_7C0530
+[diff] 0x6e4de0   MISMATCH         TagClass::GetType
+[diff] 0x652e90   MISMATCH         RadarClass::Destru_vt53
+[diff] 0x5bc180   MISMATCH         WinMain_Create
+[ledger] 0x52d430 ReadModConfigINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x673e80 RulesClass::ReadPowerupsSection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eaee0 ObjectClass::RefreshLobbyAll_Play_5EAEE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x486a70 CellClass::CreateFoggedObjects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c0530 Audio_Process_7C0530 -> NG (attempt 1)
+[ledger] 0x4814f0 CellClass::InitRandomOffsets -> NG (attempt 1)
+[ledger] 0x6c9d40 BinkMovie::ProcessKeyframe -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d3590 FootClass::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bb760 sub_6BB760 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dd000 TActionClass::ctor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e4de0 TagClass::GetType -> NG (attempt 1)
+[ledger] 0x79c3a0 ObjectClass::Network_Cleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6da5c0 BuildingClass::ProcessOccupancy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b0dd0 IPXInterfaceClass::initSocket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7283c0 ScenarioClass::LoadWaypoints -> COMPILE_FAIL (attempt 1)
+[ledger] 0x652e90 RadarClass::Destru_vt53 -> NG (attempt 1)
+[ledger] 0x7d6d2a ___get_qualified_locale -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631380 ObjectClass::UI_Pop -> NG (attempt 1)
+[ledger] 0x5bc180 WinMain_Create -> NG (attempt 1)
+[ledger] 0x4ddc60 FootClass::ValidateTargetCell -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 2,
+  "regalloc": 1,
+  "branch_polarity": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p96\batch_report.json

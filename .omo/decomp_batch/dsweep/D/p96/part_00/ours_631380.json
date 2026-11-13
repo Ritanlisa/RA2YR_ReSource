@@ -1,0 +1,177 @@
+{
+ "symbol": "?UI_Pop@ObjectClass@@QAEPAIXZ",
+ "sym_key": "ObjectClass::UI_Pop",
+ "size": 411,
+ "link_base": 0,
+ "bytes_hex": "83ec7c5356578bf968b0000000e8000000008bf033db83c4043bf30f847101000066895e70889e9a000000891ec74604ffffffffc74608ffffffff895e0cc74610ffffffffc7461403000000885e208b075350e8000000008b0d0000000051e8000000008d54240c5652e80000000083c40884c00f84fe000000a1000000008b0d000000003bc8722b381d0000000075043bc375378b0d000000003bcb762d03c8a10000000053516800000000ff500884c074188b0d000000008bc141890d000000008b0d000000008934818b57088bcf80e20183ca01895708e8000000008b150000000033c03bd37e188b0d00000000393174114083c1043bc27d06393175f4eb0383c8ff83f8ffa3000000007e718b0768e005000050e8000000003bc374138b0d000000005351688601000050e8000000008b1768e505000052e8000000003bc3743c8b0d000000008b15000000008b0c9181c19a000000515368b404000050e8000000008b176a0552e8000000005f5e5b83c47cc356e80000000083c4048b076a0550e8000000005f5e5b83c47cc35f5e33c05b83c47cc3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?UpdateWindow@@YGHPAX@Z",
+   "sym_key": "UpdateWindow"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?UI_Pop_631500_Pop@@YA_NHH@Z",
+   "sym_key": "UI_Pop_631500_Pop"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB3C@@3IA",
+   "sym_key": "DataGlobal_A8DB3C"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB41@@3EA",
+   "sym_key": "DataGlobal_A8DB41"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?dword_A8DB48@@3IA",
+   "sym_key": "dword_A8DB48"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB34@@3IA",
+   "sym_key": "DataGlobal_A8DB34"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB34@@3IA",
+   "sym_key": "DataGlobal_A8DB34"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?PopulateList@PhoneEditor@@QAEXXZ",
+   "sym_key": "PhoneEditor::PopulateList"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 266,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 291,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 304,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 317,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 327,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 333,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 365,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 378,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  }
+ ]
+}
