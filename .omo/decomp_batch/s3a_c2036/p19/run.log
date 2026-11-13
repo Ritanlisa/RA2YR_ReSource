@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b1850 _DynamicVectorClass_PAVSlaveManagerClass::SetCapacity -> _DynamicVectorClass_PAVSlaveManagerClass
+[conv] 0x6b56d0 SmudgeTypeClass::GetSize -> SmudgeTypeClass
+[conv] 0x6b59a0 StandardCreateUnitAtCoords -> _addr_6B
+[conv] 0x6b5c90 TimedCreateUnitAtCoords -> _addr_6B
+[conv] 0x6b8400 _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::Release -> _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass
+[conv] 0x6b8520 _VectorClass_PAVSpawnManagerClass::Release -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x6b8660 _DynamicVectorClass_PAVSpawnManagerClass::SetCapacity -> _DynamicVectorClass_PAVSpawnManagerClass
+[conv] 0x6bb8e0 ObjectClass::WinMainSetup_Setup_6BB8E0 -> ObjectClass
+[conv] 0x6c6210 _VectorClass_K::Release -> _VectorClass_K
+[conv] 0x6c6350 _DynamicVectorClass_K::SetCapacity -> _DynamicVectorClass_K
+[conv] 0x6ca860 _DynamicVectorClass_PAVSubTitle::SetCapacity -> _DynamicVectorClass_PAVSubTitle
+[conv] 0x6caa10 _VectorClass_PAVSubTitle::Release -> _VectorClass_PAVSubTitle
+[conv] 0x6cf720 _DynamicVectorClass_VSwizzlePointerClass::SetCapacity -> _DynamicVectorClass_VSwizzlePointerClass
+[conv] 0x6cfe20 TabClass::Constructor -> TabClass
+[conv] 0x6d04d0 ObjectClass::SidebarUpdateAll -> ObjectClass
+[conv] 0x6d0a20 TabClass::DrawTabs -> TabClass
+[conv] 0x6d5030 RadarClass::DrawBlips -> RadarClass
+[conv] 0x6dad60 ObjectClass::RenderRallyPointLines -> ObjectClass
+[conv] 0x6dca10 _VectorClass_PAVShadowControlClass::Release -> _VectorClass_PAVShadowControlClass
+[conv] 0x6e0290 ObjectClass::sub_6E0290 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVSlaveManagerClass rc=0
+[era] SmudgeTypeClass          rc=2
+[era] _addr_6B                 rc=2
+[era] _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass rc=0
+[era] _VectorClass_PAVSpawnManagerClass rc=0
+[era] _DynamicVectorClass_PAVSpawnManagerClass rc=0
+[era] ObjectClass              rc=2
+[era] _VectorClass_K           rc=0
+[era] _DynamicVectorClass_K    rc=0
+[era] _DynamicVectorClass_PAVSubTitle rc=0
+[era] _VectorClass_PAVSubTitle rc=0
+[era] _DynamicVectorClass_VSwizzlePointerClass rc=0
+[era] TabClass                 rc=2
+[era] RadarClass               rc=0
+[era] _VectorClass_PAVShadowControlClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b1850   MISMATCH         _DynamicVectorClass_PAVSlaveManagerClass::SetCapacity
+[diff] 0x6b8400   MISMATCH         _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::Release
+[diff] 0x6b8520   MISMATCH         _VectorClass_PAVSpawnManagerClass::Release
+[diff] 0x6b8660   MISMATCH         _DynamicVectorClass_PAVSpawnManagerClass::SetCapacity
+[diff] 0x6c6210   MISMATCH         _VectorClass_K::Release
+[diff] 0x6c6350   MISMATCH         _DynamicVectorClass_K::SetCapacity
+[diff] 0x6ca860   MISMATCH         _DynamicVectorClass_PAVSubTitle::SetCapacity
+[diff] 0x6caa10   MISMATCH         _VectorClass_PAVSubTitle::Release
+[diff] 0x6cf720   MISMATCH         _DynamicVectorClass_VSwizzlePointerClass::SetCapacity
+[diff] 0x6d5030   MISMATCH         RadarClass::DrawBlips
+[diff] 0x6dca10   MISMATCH         _VectorClass_PAVShadowControlClass::Release
+[ledger] 0x6b1850 _DynamicVectorClass_PAVSlaveManagerClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x6b56d0 SmudgeTypeClass::GetSize -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6b59a0 StandardCreateUnitAtCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b5c90 TimedCreateUnitAtCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b8400 _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::Release -> NG (attempt 2)
+[ledger] 0x6b8520 _VectorClass_PAVSpawnManagerClass::Release -> NG (attempt 2)
+[ledger] 0x6b8660 _DynamicVectorClass_PAVSpawnManagerClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x6bb8e0 ObjectClass::WinMainSetup_Setup_6BB8E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c6210 _VectorClass_K::Release -> NG (attempt 2)
+[ledger] 0x6c6350 _DynamicVectorClass_K::SetCapacity -> NG (attempt 2)
+[ledger] 0x6ca860 _DynamicVectorClass_PAVSubTitle::SetCapacity -> NG (attempt 2)
+[ledger] 0x6caa10 _VectorClass_PAVSubTitle::Release -> NG (attempt 2)
+[ledger] 0x6cf720 _DynamicVectorClass_VSwizzlePointerClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x6cfe20 TabClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d04d0 ObjectClass::SidebarUpdateAll -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d0a20 TabClass::DrawTabs -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d5030 RadarClass::DrawBlips -> NG (attempt 2)
+[ledger] 0x6dad60 ObjectClass::RenderRallyPointLines -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6dca10 _VectorClass_PAVShadowControlClass::Release -> NG (attempt 2)
+[ledger] 0x6e0290 ObjectClass::sub_6E0290 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "regalloc": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p19\batch_report.json
