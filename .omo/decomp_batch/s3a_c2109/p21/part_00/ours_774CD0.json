@@ -1,0 +1,129 @@
+{
+ "symbol": "?LoadTypeData@WinModemClass@@QAEHHPADHH@Z",
+ "sym_key": "WinModemClass::LoadTypeData",
+ "size": 565,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53555633f657894c241889742410e800000000e8000000008b6c24288b5c24248bcd33c08bd18bfbc1e902f3ab8bca83e103f3aae80000000089442424e800000000894424148b7c24188b476885c0740affd085c00f85cd010000a1440a000085c00f84b20100008bc5b9000000002bc68d141e0f98c14923c18bcf5052e80000000085c0740f03f089742410e800000000894424248b4424148b7c242083f8ff8bcf7411e8000000002b4424143bc77d508bcf2bc885c974483bf57d446a0d53e80000000083c40885c00f8475ffffff8b7c242c83ffff74248b4424248bcf83f8ff7411e8000000002b4424243bc77d0c8bcf2bc885c90f8548ffffff8b7c242033c0c6442bff0066a1000000005053e8000000008be883c40885ed742b803b417522807b0154751c6a0d53e80000000083c40885c0740d6a0d53e80000000083c4088be885ed75408a033c0d74083c0a0f85810000006a0d53e8000000006a0a538be8e80000000083c41085ed740885c074113bc5730d6a0a53e80000000083c4088be885ed744f8a45003c0d74043c0a750345ebf23beb74308b5424288bcb2bcd8bf503ca8bfb8bd18bc3c1e902f3a58bca2bc583e103f3a48b4c24108b7c242003c8894c24108bf185ed74098b6c2428e964feffff6a0d53e80000000083c40885c0740e6a0d53e80000000083c408c600008b74241483feff7427e8000000008bc82bce3bcf7d0e8bc75f5e5d2bc15b83c40cc210005f5e5d33c05b83c40cc210008bc75f5e5d5b83c40cc21000",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?ReadBytes@WinModemClass@@QAEHPAXH@Z",
+   "sym_key": "WinModemClass::ReadBytes"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 270,
+   "type": "DIR32",
+   "sym": "?DataGlobal_832678@@3GA",
+   "sym_key": "DataGlobal_832678"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "_strstr",
+   "sym_key": "strstr"
+  },
+  {
+   "off": 305,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 320,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 351,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 480,
+   "type": "REL32",
+   "sym": "_strrchr",
+   "sym_key": "strrchr"
+  },
+  {
+   "off": 495,
+   "type": "REL32",
+   "sym": "_strrchr",
+   "sym_key": "strrchr"
+  },
+  {
+   "off": 515,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

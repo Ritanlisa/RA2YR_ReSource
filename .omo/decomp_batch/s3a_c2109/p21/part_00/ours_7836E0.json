@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_7836E0@@YAEPBXPAH@Z",
+ "sym_key": "Unnamed::sub_7836E0",
+ "size": 291,
+ "link_base": 0,
+ "bytes_hex": "8b44240881ecd80000008b500853558bac24e400000056578b4d083bca741733c05f85c90f95c0f7d824fe5e5d405b81c4d8000000c38b5d048b70048bfb83c9ff33c0f2aef7d1498bfe8bd183c9ff42f2ae83fa01f7d1743083f90174195356e80000000083c40885c0742f5f5e5d5b81c4d8000000c34a85d27e0d5f5e5d0cff5b81c4d8000000c34985c97e0d5f5e5db0015b81c4d8000000c3b91b00000033c08d7c247c8b1d00000000f3ab8b1500000000b91b0000008d7c2410f3ab8b450085c07c183bc37d148d0440b91b0000008d7c247c8d04c08d3482f3a58b8c24f00000008b0185c07c183bc37d148d0440b91b0000008d7c24108d04c08d3482f3a58d4c24348d9424a00000005152e80000000083c4085f5e5d5b81c4d8000000c3",
+ "relocs": [
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionFlags@@3PAXA",
+   "sym_key": "g_WOL_ConnectionFlags"
+  },
+  {
+   "off": 273,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

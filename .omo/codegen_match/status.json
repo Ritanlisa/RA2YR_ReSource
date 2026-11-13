@@ -192495,7 +192495,7 @@
   "status": "OK"
  },
  "0x773bc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -192754,15 +192754,15 @@
   "this_as_id": false
  },
  "0x774cd0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x34",
   "name": "WinModemClass::LoadTypeData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "WinModemClass::LoadTypeData",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x774f50": {
@@ -192778,7 +192778,7 @@
   "this_as_id": false
  },
  "0x775110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -192998,7 +192998,7 @@
   "this_as_id": false
  },
  "0x775bc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -193181,7 +193181,7 @@
   "this_as_id": false
  },
  "0x7768f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "LoadWOLSettings",
@@ -193203,7 +193203,7 @@
   "this_as_id": false
  },
  "0x776b40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveWOLUISettings",
@@ -193531,7 +193531,7 @@
   "this_as_id": false
  },
  "0x777bb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -195555,7 +195555,7 @@
   "this_as_id": false
  },
  "0x77d350": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -195567,7 +195567,7 @@
   "this_as_id": false
  },
  "0x77d3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -195940,7 +195940,7 @@
   "this_as_id": false
  },
  "0x77ef90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "RequestChannelList2WOL",
@@ -196264,25 +196264,25 @@
   "this_as_id": false
  },
  "0x7835c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_7835C0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_7835C0",
-  "rule_violations": 4,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7836e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 8]",
   "name": "sub_7836E0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_7836E0",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x783800": {
@@ -196357,7 +196357,7 @@
   "this_as_id": false
  },
  "0x785740": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196405,7 +196405,7 @@
   "this_as_id": false
  },
  "0x786390": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "LoginFlowWOL_Reset",
@@ -196452,7 +196452,7 @@
   "this_as_id": false
  },
  "0x786ef0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196487,7 +196487,7 @@
   "this_as_id": false
  },
  "0x788180": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FindLobbyIDWOL",
@@ -196600,7 +196600,7 @@
   "this_as_id": false
  },
  "0x78a470": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196612,7 +196612,7 @@
   "this_as_id": false
  },
  "0x78a6b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196624,7 +196624,7 @@
   "this_as_id": false
  },
  "0x78a8f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196843,7 +196843,7 @@
   "this_as_id": false
  },
  "0x792f10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

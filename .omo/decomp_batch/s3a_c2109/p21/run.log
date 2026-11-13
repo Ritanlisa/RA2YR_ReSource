@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x773bc0 WebBrowser::Clone -> WebBrowser
+[conv] 0x774cd0 WinModemClass::LoadTypeData -> WinModemClass
+[conv] 0x775110 WinModemClass::Dial -> WinModemClass
+[conv] 0x775bc0 DialogClass::Reposition -> DialogClass
+[conv] 0x7768f0 LoadWOLSettings -> _addr_77
+[conv] 0x776b40 SaveWOLUISettings -> _addr_77
+[conv] 0x777bb0 ObjectClass::sub_777BB0 -> ObjectClass
+[conv] 0x77d350 ObjectClass::sub_77D350 -> ObjectClass
+[conv] 0x77d3a0 ObjectClass::sub_77D3A0 -> ObjectClass
+[conv] 0x77ef90 RequestChannelList2WOL -> _addr_77
+[conv] 0x7835c0 sub_7835C0 -> _addr_78
+[conv] 0x7836e0 sub_7836E0 -> _addr_78
+[conv] 0x785740 ObjectClass::LeaveChannelWOL -> ObjectClass
+[conv] 0x786390 LoginFlowWOL_Reset -> LoginFlowWOL
+[conv] 0x786ef0 ObjectClass::LoginFlowWOL_Open -> ObjectClass
+[conv] 0x788180 FindLobbyIDWOL -> _addr_78
+[conv] 0x78a470 ObjectClass::HandleOnlineWOL -> ObjectClass
+[conv] 0x78a6b0 ObjectClass::HandlePageWOL -> ObjectClass
+[conv] 0x78a8f0 ObjectClass::HandleReplyWOL -> ObjectClass
+[conv] 0x792f10 Network::SyncPlayerList -> Network
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WebBrowser               rc=2
+[era] WinModemClass            rc=2
+[era] DialogClass              rc=2
+[era] _addr_77                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_78                 rc=2
+[era] LoginFlowWOL             rc=2
+[era] Network                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x774cd0   MISMATCH         WinModemClass::LoadTypeData
+[diff] 0x7836e0   MISMATCH         sub_7836E0
+[ledger] 0x773bc0 WebBrowser::Clone -> COMPILE_FAIL (attempt 2)
+[ledger] 0x774cd0 WinModemClass::LoadTypeData -> NG (attempt 6)
+[ledger] 0x775110 WinModemClass::Dial -> COMPILE_FAIL (attempt 2)
+[ledger] 0x775bc0 DialogClass::Reposition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7768f0 LoadWOLSettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x776b40 SaveWOLUISettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x777bb0 ObjectClass::sub_777BB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77d350 ObjectClass::sub_77D350 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77d3a0 ObjectClass::sub_77D3A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77ef90 RequestChannelList2WOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7835c0 sub_7835C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7836e0 sub_7836E0 -> NG (attempt 2)
+[ledger] 0x785740 ObjectClass::LeaveChannelWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x786390 LoginFlowWOL_Reset -> COMPILE_FAIL (attempt 2)
+[ledger] 0x786ef0 ObjectClass::LoginFlowWOL_Open -> COMPILE_FAIL (attempt 2)
+[ledger] 0x788180 FindLobbyIDWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x78a470 ObjectClass::HandleOnlineWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x78a6b0 ObjectClass::HandlePageWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x78a8f0 ObjectClass::HandleReplyWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x792f10 Network::SyncPlayerList -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p21\batch_report.json
