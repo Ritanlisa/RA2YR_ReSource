@@ -1,0 +1,33 @@
+{
+ "symbol": "?TransferTurret@TechnoClass@@QAEHPAH@Z",
+ "sym_key": "TechnoClass::TransferTurret",
+ "size": 210,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c5785f68bf90f84b20000008b9f7402000085db0f84a40000008b87ec0200008b8ff402000083f8ffc74424100000000074148b15540a0000558bea2be83be95d7d102bc203c885c97408c744241001000000899e740200008b8774020000897024c78774020000000000008b8e7402000085c9740c8b412885c07405e8000000008b44241085c074348b9eb80300008b06436a0056899eb8030000ff90180300008b0d540a00008b542410898eec0200008996f00200008986f40200006a008bcfe8000000005f5e5bc20400",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?CompleteItem@FactoryClass@@QAEPAIXZ",
+   "sym_key": "FactoryClass::CompleteItem"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?SetTurret@UnitClass@@QAEHI@Z",
+   "sym_key": "UnitClass::SetTurret"
+  }
+ ]
+}

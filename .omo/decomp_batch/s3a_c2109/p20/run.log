@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x7436e0 ObjectClass::ReadFootINI -> ObjectClass
+[conv] 0x7464e0 TechnoClass::TransferTurret -> TechnoClass
+[conv] 0x747620 UnitTypeClass::LoadFromINI -> UnitTypeClass
+[conv] 0x74ce50 VeinholeMonsterClass::UpdateGrowth -> VeinholeMonsterClass
+[conv] 0x74d450 Game_Load_Load -> Game_Load
+[conv] 0x74fae0 ObjectClass::GetModuleInternalVersion -> ObjectClass
+[conv] 0x7510d0 Audio::InitFromINI -> Audio
+[conv] 0x751c30 Map_Load_751C30 -> Map_Load
+[conv] 0x752b70 PlayTauntClass -> _addr_75
+[conv] 0x753000 ObjectClass::InitFromINIEVA -> ObjectClass
+[conv] 0x757120 ObjectClass::RenderVoxels -> ObjectClass
+[conv] 0x7581f0 ObjectClass::ProcessVoxelColorSamples -> ObjectClass
+[conv] 0x75fa90 Voxel::ShadowCalc -> Voxel
+[conv] 0x7602e0 Surface::RenderToSurfaceVoxel -> Surface
+[conv] 0x764a20 ObjectClass::sub_764A20 -> ObjectClass
+[conv] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> ObjectClass
+[conv] 0x76e750 ObjectClass::Team_Start_76E750 -> ObjectClass
+[conv] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> TechnoClass
+[conv] 0x771710 TechnoClass::sub_771710 -> TechnoClass
+[conv] 0x7738a0 ObjectClass::sub_7738A0 -> ObjectClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] UnitTypeClass            rc=2
+[era] VeinholeMonsterClass     rc=2
+[era] Game_Load                rc=2
+[era] Audio                    rc=2
+[era] Map_Load                 rc=2
+[era] _addr_75                 rc=2
+[era] Voxel                    rc=2
+[era] Surface                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x7464e0   MISMATCH         TechnoClass::TransferTurret
+[ledger] 0x7436e0 ObjectClass::ReadFootINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7464e0 TechnoClass::TransferTurret -> NG (attempt 12)
+[ledger] 0x747620 UnitTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74ce50 VeinholeMonsterClass::UpdateGrowth -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74d450 Game_Load_Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74fae0 ObjectClass::GetModuleInternalVersion -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7510d0 Audio::InitFromINI -> COMPILE_FAIL (attempt 7)
+[ledger] 0x751c30 Map_Load_751C30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x752b70 PlayTauntClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x753000 ObjectClass::InitFromINIEVA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x757120 ObjectClass::RenderVoxels -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7581f0 ObjectClass::ProcessVoxelColorSamples -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75fa90 Voxel::ShadowCalc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7602e0 Surface::RenderToSurfaceVoxel -> COMPILE_FAIL (attempt 2)
+[ledger] 0x764a20 ObjectClass::sub_764A20 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76e750 ObjectClass::Team_Start_76E750 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x771710 TechnoClass::sub_771710 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7738a0 ObjectClass::sub_7738A0 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p20\batch_report.json
