@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x52fc20 TechnoClass::InitRandomSeed -> TechnoClass
+[conv] 0x530000 ObjectClass::LoadExpansionMixFiles -> ObjectClass
+[conv] 0x533fd0 AllocateSurfaceScreenSurfaces -> _addr_53
+[conv] 0x535aa0 INIClass::INIClass -> INIClass
+[conv] 0x535b30 CCINIClass::CCINIClass -> CCINIClass
+[conv] 0x535fc0 SelectTeamCommand::Construct -> SelectTeamCommand
+[conv] 0x5360b0 AddTeamCommand::Construct -> AddTeamCommand
+[conv] 0x5361a0 CenterTeamCommand::Construct -> CenterTeamCommand
+[conv] 0x536290 TauntCommandClass::Construct -> TauntCommandClass
+[conv] 0x537530 View3CommandClass::performAction_158 -> View3CommandClass
+[conv] 0x537b40 ScreenCaptureCommandClass::Constructor -> ScreenCaptureCommandClass
+[conv] 0x537dd0 PageUserCommandClass::PageUserCommandClass -> PageUserCommandClass
+[conv] 0x537e70 CursorPositionCommandClass::Constructor -> CursorPositionCommandClass
+[conv] 0x537f10 DeleteCommandClass::Constructor -> DeleteCommandClass
+[conv] 0x537fc0 MultiplayerSyncCommandClass::performAction_199 -> MultiplayerSyncCommandClass
+[conv] 0x538120 SidebarUpCommandClass::performAction_210 -> SidebarUpCommandClass
+[conv] 0x53cbe0 ExplosionClass::ProcessFrame -> ExplosionClass
+[conv] 0x53fbd0 IPXGlobalConnClass::Flush -> IPXGlobalConnClass
+[conv] 0x540a80 ObjectClass::Network_Init -> ObjectClass
+[conv] 0x540c50 ObjectClass::sub_540C50 -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] _addr_53                 rc=2
+[era] INIClass                 rc=2
+[era] CCINIClass               rc=2
+[era] SelectTeamCommand        rc=2
+[era] AddTeamCommand           rc=2
+[era] CenterTeamCommand        rc=2
+[era] TauntCommandClass        rc=2
+[era] View3CommandClass        rc=2
+[era] ScreenCaptureCommandClass rc=2
+[era] PageUserCommandClass     rc=2
+[era] CursorPositionCommandClass rc=2
+[era] DeleteCommandClass       rc=2
+[era] MultiplayerSyncCommandClass rc=2
+[era] SidebarUpCommandClass    rc=2
+[era] ExplosionClass           rc=2
+[era] IPXGlobalConnClass       rc=2
+=== diffasm byte-compare ===
+[ledger] 0x52fc20 TechnoClass::InitRandomSeed -> COMPILE_FAIL (attempt 6)
+[ledger] 0x530000 ObjectClass::LoadExpansionMixFiles -> COMPILE_FAIL (attempt 6)
+[ledger] 0x533fd0 AllocateSurfaceScreenSurfaces -> COMPILE_FAIL (attempt 5)
+[ledger] 0x535aa0 INIClass::INIClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x535b30 CCINIClass::CCINIClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x535fc0 SelectTeamCommand::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5360b0 AddTeamCommand::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5361a0 CenterTeamCommand::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x536290 TauntCommandClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x537530 View3CommandClass::performAction_158 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x537b40 ScreenCaptureCommandClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x537dd0 PageUserCommandClass::PageUserCommandClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537e70 CursorPositionCommandClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x537f10 DeleteCommandClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x537fc0 MultiplayerSyncCommandClass::performAction_199 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x538120 SidebarUpCommandClass::performAction_210 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53cbe0 ExplosionClass::ProcessFrame -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53fbd0 IPXGlobalConnClass::Flush -> COMPILE_FAIL (attempt 14)
+[ledger] 0x540a80 ObjectClass::Network_Init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x540c50 ObjectClass::sub_540C50 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p09\batch_report.json
