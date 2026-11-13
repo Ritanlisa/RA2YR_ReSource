@@ -1,0 +1,99 @@
+{
+ "symbol": "?ReadBuildingSettings@BuildingClass@@QAEHPAE0H@Z",
+ "sym_key": "BuildingClass::ReadBuildingSettings",
+ "size": 264,
+ "link_base": 0,
+ "bytes_hex": "8b54240881ec800000008d4424006880000000508b84248c00000068000000005250e80000000085c075108b84248c00000081c480000000c20c0056578d4c240868000000005133ffe8000000008bf083c40885f60f84a0000000803e000f84970000008b15000000005256e80000000083c40885c0750681cf00000080a1000000005056e80000000083c40885c0750681cf000000408b0d000000005156e80000000083c40885c0750681cf000000208b15000000005256e80000000083c40885c0750681cf000000108bcee80000000083f8ff740bba010000008bc8d3e20bfa68000000006a00e8000000008bf083c40885f60f8560ffffff8bc75f5e81c480000000c20c00",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?aPower@@3HA",
+   "sym_key": "aPower"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?aFactory@@3HA",
+   "sym_key": "aFactory"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?aBarracks@@3HA",
+   "sym_key": "aBarracks"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?aRadar@@3HA",
+   "sym_key": "aRadar"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?FindIndexByName@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindIndexByName"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  }
+ ]
+}

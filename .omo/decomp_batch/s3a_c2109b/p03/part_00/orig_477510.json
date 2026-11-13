@@ -1,0 +1,11 @@
+{
+ "addr": "0x477510",
+ "name": "GameSetup::FormatToString",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x477510",
+ "bytes_hex": "81ec00020000a0649f8800568bf15788442408b97f00000033c08d7c2409f3ab8b8c241c0200008b94241802000066abaa8b8424140200005152508d4c241468b089810051e89a1935008b8424240200008b8c242002000083c4148d5424085250518bcee8e7100b005f5e81c400020000c21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

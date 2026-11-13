@@ -1,0 +1,123 @@
+{
+ "symbol": "?sub_479BA0@@YIDPAXH@Z",
+ "sym_key": "Unnamed::sub_479BA0",
+ "size": 369,
+ "link_base": 0,
+ "bytes_hex": "83ec14535589542408560fbef283c64157568d44241868000000008be95032dbe80000000083c40c8d4c241451e80000000083e802740c83f803753bbf00000080eb05bf000000c0568d542420680000000052e80000000083c40c8d44241c6a006a006a036a006a035750e8000000008bf083feff75118bcde80000000032c05f5e5d5b83c414c333ff8d4c2410575157575757681800090056e80000000085c0753ee8000000008bcde80000000068f4010000e8000000004783ff140f8d9e0000008d5424106a00526a006a006a006a00681800090056e80000000085c074c28d4424106a00506a006a006a006a00682000090056e80000000085c074568d4c24146a00516a006a008d5424206a01526804482d0056c644243000e80000000085c074308d4424106a00506a006a006a006a006808482d0056e80000000085c0741256b301e8000000008ac35f5e5d5b83c414c3e8000000008bcde80000000056e8000000008ac35f5e5d5b83c414c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "??_C@_04POLC@?$CFc?3?2?$AA@",
+   "sym_key": "??_C@_04POLC@?$CFc?3?2?$AA@"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?GetDriveTypeA@@YGIPAX@Z",
+   "sym_key": "GetDriveTypeA"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "??_C@_07NGPH@?2?2?4?2?$CFc?3?$AA@",
+   "sym_key": "??_C@_07NGPH@?2?2?4?2?$CFc?3?$AA@"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?CreateFileA@@YGPAXPAXHHHHHH@Z",
+   "sym_key": "CreateFileA"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?DeviceIoControl@@YGHHHHHHHPAXH@Z",
+   "sym_key": "DeviceIoControl"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?Sleep@@YGXH@Z",
+   "sym_key": "Sleep"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?DeviceIoControl@@YGHHHHHHHPAXH@Z",
+   "sym_key": "DeviceIoControl"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?DeviceIoControl@@YGHHHHHHHPAXH@Z",
+   "sym_key": "DeviceIoControl"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?DeviceIoControl@@YGHHHHHHHPAXH@Z",
+   "sym_key": "DeviceIoControl"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?DeviceIoControl@@YGHHHHHHHPAXH@Z",
+   "sym_key": "DeviceIoControl"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHH@Z",
+   "sym_key": "CloseHandle"
+  },
+  {
+   "off": 342,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 349,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHH@Z",
+   "sym_key": "CloseHandle"
+  }
+ ]
+}

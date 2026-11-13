@@ -1,0 +1,33 @@
+{
+ "symbol": "?FormatToString@GameSetup@@QAEDPAEPADHHH@Z",
+ "sym_key": "GameSetup::FormatToString",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "81ec00020000a000000000568b9424140200008bf15788442408b97f00000033c08d7c2409f3ab8b8c241c0200008b8424140200005152508d4c2414680000000051e8000000008b8424240200008b8c242002000083c4148d5424085250518bcee8000000005f5e81c400020000c21400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "??_C@_08POMI@?$CFd?0?$CFd?0?$CFd?$AA@",
+   "sym_key": "??_C@_08POMI@?$CFd?0?$CFd?0?$CFd?$AA@"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

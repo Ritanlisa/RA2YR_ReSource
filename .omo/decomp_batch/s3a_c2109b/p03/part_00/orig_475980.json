@@ -1,0 +1,11 @@
+{
+ "addr": "0x475980",
+ "name": "HouseClass::ReadIntFromINI",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x475980",
+ "bytes_hex": "8b54240881ec800000008d4424006880000000508b84248c00000068649f88005250e869300b0085c074128d4c2400e8cc81010081c480000000c20c008b84248c00000081c480000000c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

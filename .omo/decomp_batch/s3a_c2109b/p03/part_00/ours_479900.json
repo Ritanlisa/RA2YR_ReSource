@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_479900@@YIHPAXD@Z",
+ "sym_key": "Unnamed::sub_479900",
+ "size": 145,
+ "link_base": 0,
+ "bytes_hex": "83ec100fbec253568d704157568d44241068000000008bd950e80000000083c40c8d4c240c51e80000000083e802741d83f80374118bcbe80000000083c8ff5f5e5b83c410c3bf00000080eb05bf000000c0568d542418680000000052e80000000083c40c8d4424146a006a006a036a006a035750e8000000008bf083feff75078bcbe8000000008bc65f5e5b83c410c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "??_C@_04POLC@?$CFc?3?2?$AA@",
+   "sym_key": "??_C@_04POLC@?$CFc?3?2?$AA@"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?GetDriveTypeA@@YGIPAX@Z",
+   "sym_key": "GetDriveTypeA"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "??_C@_07NGPH@?2?2?4?2?$CFc?3?$AA@",
+   "sym_key": "??_C@_07NGPH@?2?2?4?2?$CFc?3?$AA@"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?CreateFileA@@YGPAXPAXHHHHHH@Z",
+   "sym_key": "CreateFileA"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

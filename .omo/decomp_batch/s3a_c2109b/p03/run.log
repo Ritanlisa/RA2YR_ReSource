@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x4757d0 INIClass::GetBool -> INIClass
+[conv] 0x475870 ScenarioClass::ReadAndParseString -> ScenarioClass
+[conv] 0x4758f0 Scenario::FindBuildingTypeByName -> Scenario
+[conv] 0x475980 HouseClass::ReadIntFromINI -> HouseClass
+[conv] 0x475a60 BuildingClass::ReadBuildingSettings -> BuildingClass
+[conv] 0x475d70 INIClass::ReadIntList -> INIClass
+[conv] 0x476340 ParticleSystemTypeClass::ReadXYZFromINI -> ParticleSystemTypeClass
+[conv] 0x4764f0 INIClass::ReadTechnoTypeList -> INIClass
+[conv] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> INIClass
+[conv] 0x476b20 INIClass::ReadRGBColorList -> INIClass
+[conv] 0x476fc0 ObjectTypeClass::loadTypeMember_476FC0 -> ObjectTypeClass
+[conv] 0x477050 AnimTypeClass::ReadINIString -> AnimTypeClass
+[conv] 0x477440 GameSetup::ParseCoordTriple -> GameSetup
+[conv] 0x477510 GameSetup::FormatToString -> GameSetup
+[conv] 0x477590 ObjectTypeClass::loadTypeMember_5477590 -> ObjectTypeClass
+[conv] 0x478220 INIClass::parseKeyValue -> INIClass
+[conv] 0x479900 sub_479900 -> _addr_47
+[conv] 0x479ba0 sub_479BA0 -> _addr_47
+[conv] 0x479d60 sub_479D60 -> _addr_47
+[conv] 0x479ef0 sub_479EF0 -> _addr_47
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] ScenarioClass            rc=0
+[era] Scenario                 rc=0
+[era] HouseClass               rc=0
+[era] BuildingClass            rc=0
+[era] ParticleSystemTypeClass  rc=2
+[era] ObjectTypeClass          rc=0
+[era] AnimTypeClass            rc=0
+[era] GameSetup                rc=0
+[era] _addr_47                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4757d0   MISMATCH         INIClass::GetBool
+[diff] 0x476b20   MISMATCH         INIClass::ReadRGBColorList
+[diff] 0x475870   MATCH            ScenarioClass::ReadAndParseString
+[diff] 0x4758f0   MATCH            Scenario::FindBuildingTypeByName
+[diff] 0x475980   MATCH            HouseClass::ReadIntFromINI
+[diff] 0x475a60   MISMATCH         BuildingClass::ReadBuildingSettings
+[diff] 0x476fc0   MISMATCH         ObjectTypeClass::loadTypeMember_476FC0
+[diff] 0x477590   MISMATCH         ObjectTypeClass::loadTypeMember_5477590
+[diff] 0x477050   MISMATCH         AnimTypeClass::ReadINIString
+[diff] 0x477440   MISMATCH         GameSetup::ParseCoordTriple
+[diff] 0x477510   MISMATCH         GameSetup::FormatToString
+[diff] 0x479900   MISMATCH         sub_479900
+[diff] 0x479ba0   MISMATCH         sub_479BA0
+[ledger] 0x4757d0 INIClass::GetBool -> NG (attempt 3)
+[ledger] 0x475870 ScenarioClass::ReadAndParseString -> OK (attempt 3)
+[ledger] 0x4758f0 Scenario::FindBuildingTypeByName -> OK (attempt 3)
+[ledger] 0x475980 HouseClass::ReadIntFromINI -> OK (attempt 3)
+[ledger] 0x475a60 BuildingClass::ReadBuildingSettings -> NG (attempt 3)
+[ledger] 0x475d70 INIClass::ReadIntList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x476340 ParticleSystemTypeClass::ReadXYZFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4764f0 INIClass::ReadTechnoTypeList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x476b20 INIClass::ReadRGBColorList -> NG (attempt 3)
+[ledger] 0x476fc0 ObjectTypeClass::loadTypeMember_476FC0 -> NG (attempt 3)
+[ledger] 0x477050 AnimTypeClass::ReadINIString -> NG (attempt 3)
+[ledger] 0x477440 GameSetup::ParseCoordTriple -> NG (attempt 3)
+[ledger] 0x477510 GameSetup::FormatToString -> NG (attempt 3)
+[ledger] 0x477590 ObjectTypeClass::loadTypeMember_5477590 -> NG (attempt 3)
+[ledger] 0x478220 INIClass::parseKeyValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x479900 sub_479900 -> NG (attempt 3)
+[ledger] 0x479ba0 sub_479BA0 -> NG (attempt 3)
+[ledger] 0x479d60 sub_479D60 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x479ef0 sub_479EF0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "MATCH": 3,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "regalloc": 2,
+  "frame_sched": 2,
+  "codegen_shape": 3,
+  "width_mismatch": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 23.1,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p03\batch_report.json
