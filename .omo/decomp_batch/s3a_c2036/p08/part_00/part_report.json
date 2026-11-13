@@ -1,0 +1,455 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x4ece00",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_HouseTypeClass::SetCapacity_1",
+   "emitted": "_DynamicVectorClass_PAVTeamTypeClass::SetCapacity_1",
+   "unit": "_DynamicVectorClass_PAVTeamTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ecf20",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_ScriptTypeClass::Release",
+   "emitted": "_VectorClass_PAVScriptTypeClass::Release",
+   "unit": "_VectorClass_PAVScriptTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ed060",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_ScriptTypeClass::SetCapacity",
+   "emitted": "_DynamicVectorClass_PAVScriptTypeClass::SetCapacity",
+   "unit": "_DynamicVectorClass_PAVScriptTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ed180",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_OverlayTypeClass::Release",
+   "emitted": "_VectorClass_PAVOverlayTypeClass::Release",
+   "unit": "_VectorClass_PAVOverlayTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ed2c0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_ScriptTypeClass::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVOverlayTypeClass::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVOverlayTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ed3e0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_SmudgeTypeClass::Release",
+   "emitted": "_VectorClass_PAVSmudgeTypeClass::Release",
+   "unit": "_VectorClass_PAVSmudgeTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ed520",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_SmudgeTypeClass::SetCapacity",
+   "emitted": "_DynamicVectorClass_PAVSmudgeTypeClass::SetCapacity",
+   "unit": "_DynamicVectorClass_PAVSmudgeTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ed640",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TerrainTypeClass::Release",
+   "emitted": "_VectorClass_PAVTerrainTypeClass::Release",
+   "unit": "_VectorClass_PAVTerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ed780",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_SmudgeTypeClass::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVTerrainTypeClass::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVTerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ed8a0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_BuildingTypeClass::Release",
+   "emitted": "_VectorClass_PAVBuildingTypeClass::Release",
+   "unit": "_VectorClass_PAVBuildingTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ed9e0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_SmudgeTypeClass::SetCapacity_1",
+   "emitted": "_DynamicVectorClass_PAVBuildingTypeClass::SetCapacity_1",
+   "unit": "_DynamicVectorClass_PAVBuildingTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4edd60",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_UnitTypeClass::Release",
+   "emitted": "_VectorClass_PAVUnitTypeClass::Release",
+   "unit": "_VectorClass_PAVUnitTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4edea0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AircraftTypeClass::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVUnitTypeClass::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVUnitTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4edfc0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AnimTypeClass::Release",
+   "emitted": "_VectorClass_PAVAnimTypeClass::Release",
+   "unit": "_VectorClass_PAVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee100",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AnimTypeClass::SetCapacity",
+   "emitted": "_DynamicVectorClass_PAVAnimTypeClass::SetCapacity",
+   "unit": "_DynamicVectorClass_PAVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee220",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_InfantryTypeClass::Release",
+   "emitted": "_VectorClass_PAVInfantryTypeClass::Release",
+   "unit": "_VectorClass_PAVInfantryTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee360",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AnimTypeClass::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVInfantryTypeClass::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVInfantryTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee480",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_BulletTypeClass::Release",
+   "emitted": "_VectorClass_PAVBulletTypeClass::Release",
+   "unit": "_VectorClass_PAVBulletTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee5c0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AnimTypeClass::SetCapacity_1",
+   "emitted": "_DynamicVectorClass_PAVBulletTypeClass::SetCapacity_1",
+   "unit": "_DynamicVectorClass_PAVBulletTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ee6e0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_VoxelAnimTypeClass::Release",
+   "emitted": "_VectorClass_PAVVoxelAnimTypeClass::Release",
+   "unit": "_VectorClass_PAVVoxelAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x4ece00",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ecf20",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ed060",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ed180",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ed2c0",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ed3e0",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ed520",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ed640",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ed780",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ed8a0",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ed9e0",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4edd60",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4edea0",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4edfc0",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ee100",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ee220",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ee360",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ee480",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ee5c0",
+  "family": "C2036"
+ },
+ {
+  "addr": "0x4ee6e0",
+  "family": "C2036"
+ }
+]
