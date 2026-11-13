@@ -1,0 +1,201 @@
+{
+ "symbol": "?ReadSettings@Skirmish@@QAEEPAX@Z",
+ "sym_key": "Skirmish::ReadSettings",
+ "size": 454,
+ "link_base": 0,
+ "bytes_hex": "535556578b7c24148bf16805040000578b6e3ce8000000006a008bd86a00684701000053e8000000006a0050685001000053e8000000003be889463c740ac705e81d0000010000008b6e38680704000057e8000000006a008bd86a00684701000053e8000000006a0050685001000053e8000000003be8894638740ac705e81d0000010000008b6e40680804000057e8000000006a008bd86a00684701000053e8000000006a0050685001000053e8000000003be8894640740ac705e81d0000010000008b6e4868ea03000057e8000000006a008bd86a00684701000053e8000000006a0050685001000053e8000000003be8894648740ac705e81d0000010000008b6e64680604000057e8000000006a008bd86a00684701000053e8000000006a0050685001000053e8000000003be8894664894668740ac705e81d0000010000008b5e5068eb03000057e80000000033ed5555680004000050e8000000003bd88946507516392de81d000075188bcee8000000005f5e5d5bc20400c705e81d0000010000008b463c8bce50e8000000008b0d5c1b00003bcd8bf9740ee80000000057e80000000083c4048bce892d5c1b0000892de81d0000e8000000005f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 268,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 333,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 348,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 361,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 370,
+   "type": "REL32",
+   "sym": "?ClampValues@SettingsClass@@QAEHXZ",
+   "sym_key": "SettingsClass::ClampValues"
+  },
+  {
+   "off": 383,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 398,
+   "type": "REL32",
+   "sym": "?RandomizeSettings@Skirmish@@QAEHPAX@Z",
+   "sym_key": "Skirmish::RandomizeSettings"
+  },
+  {
+   "off": 404,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 415,
+   "type": "REL32",
+   "sym": "?Dtor@ComPtr@@QAEHXZ",
+   "sym_key": "ComPtr::Dtor"
+  },
+  {
+   "off": 421,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 432,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 438,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 443,
+   "type": "REL32",
+   "sym": "?ClampValues@SettingsClass@@QAEHXZ",
+   "sym_key": "SettingsClass::ClampValues"
+  }
+ ]
+}

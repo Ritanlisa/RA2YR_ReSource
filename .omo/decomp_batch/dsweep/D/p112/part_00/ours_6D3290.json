@@ -1,0 +1,75 @@
+{
+ "symbol": "?DrawBuildingAnimFrame@ObjectClass@@QAEHPAH0D@Z",
+ "sym_key": "ObjectClass::DrawBuildingAnimFrame",
+ "size": 342,
+ "link_base": 0,
+ "bytes_hex": "83ec10538a5c2420565784db8bf174076800000000eb2d8b4424208b480885c97e0f8b480c85c97e08508bcee8000000008b4424248b480885c97e0f8b480c85c97e08508bcee8000000008b86e000000085c00f8e9600000084db0f858e00000033ff8d9ee40000008b038d4c2428510fbf4024c1e00805800000009981e2ff00000003c28d542424c1f808c1e0085289442430e8000000008b48048b008b96b0000000c74424143c0000002bc28b150400000083e81ec74424181e0000008944240c8b86b40000002bd08d44240c03d1508bce89542414e8000000008b86e00000004783c3043bf80f8c7affffffa10000000085c074558d7c80fb8bd8c1e7028b0d000000006a008d44242c6a008b14395089542434ba000000008d4c2418e8000000008bc88b11895424288b410885c07e138b510c85d27e0c8d4424288bce50e80000000083ef144b75b45f5e5b83c410c20c00",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?DrawBuildingsInView@TacticalClass@@QAEPAHPAX@Z",
+   "sym_key": "TacticalClass::DrawBuildingsInView"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?DrawBuildingsInView@TacticalClass@@QAEPAHPAX@Z",
+   "sym_key": "TacticalClass::DrawBuildingsInView"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?DrawBuildingsInView@TacticalClass@@QAEPAHPAX@Z",
+   "sym_key": "TacticalClass::DrawBuildingsInView"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?g_CraterCreationState@@3IA",
+   "sym_key": "g_CraterCreationState"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?g_CraterPool@@3PAXA",
+   "sym_key": "g_CraterPool"
+  },
+  {
+   "off": 280,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 289,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 323,
+   "type": "REL32",
+   "sym": "?DrawBuildingsInView@TacticalClass@@QAEPAHPAX@Z",
+   "sym_key": "TacticalClass::DrawBuildingsInView"
+  }
+ ]
+}

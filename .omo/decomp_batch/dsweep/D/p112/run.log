@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p112\part_00
+=== convert (20 addrs) ===
+[conv] 0x6fbdc0 TechnoClass::ShouldBeCloaked -> TechnoClass
+[conv] 0x6f3d60 TechnoClass::GetTurretOffset -> TechnoClass
+[conv] 0x6e3410 TActionClass::CreateNukeEffect -> TActionClass
+[conv] 0x7d6624 ObjectClass::___init_numeric -> ObjectClass
+[conv] 0x56b5a0 CellClass::LoadTerrainTiles -> CellClass
+[conv] 0x500300 CellClass::ScanOccupiers -> CellClass
+[conv] 0x66cf70 RulesClass::ReadCountryList -> RulesClass
+[conv] 0x6e2c40 TActionClass::SpawnMeteorShower -> TActionClass
+[conv] 0x638840 TechnoClass::RemoveBuildingFromScripts -> TechnoClass
+[conv] 0x6b1b20 SliderClass::Constructor -> SliderClass
+[conv] 0x785ea0 ObjectClass::RunWOLMainLoop_Delete -> ObjectClass
+[conv] 0x596c70 Skirmish::ReadSettings -> Skirmish
+[conv] 0x6d3290 ObjectClass::DrawBuildingAnimFrame -> ObjectClass
+[conv] 0x5adf20 SessionClass::LoadGameSession -> SessionClass
+[conv] 0x7d0844 __read_lk -> _addr_7D
+[conv] 0x759c30 VQAClass::AdvanceFrame -> VQAClass
+[conv] 0x52cb90 Credits::Screen -> Credits
+[conv] 0x63d630 DrawTacticalWaypoint -> _addr_63
+[conv] 0x5558e0 Map_Calc -> Map
+[conv] 0x659ac0 ProjectileTrail::ComputeRenderData -> ProjectileTrail
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] TActionClass             rc=2
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] RulesClass               rc=2
+[era] SliderClass              rc=2
+[era] Skirmish                 rc=0
+[era] SessionClass             rc=2
+[era] _addr_7D                 rc=2
+[era] VQAClass                 rc=0
+[era] Credits                  rc=2
+[era] _addr_63                 rc=0
+[era] Map                      rc=2
+[era] ProjectileTrail          rc=2
+=== diffasm byte-compare ===
+[diff] 0x638840   MISMATCH         TechnoClass::RemoveBuildingFromScripts
+[diff] 0x6e3410   MISMATCH         TActionClass::CreateNukeEffect
+[diff] 0x6d3290   MISMATCH         ObjectClass::DrawBuildingAnimFrame
+[diff] 0x596c70   MISMATCH         Skirmish::ReadSettings
+[diff] 0x759c30   MISMATCH         VQAClass::AdvanceFrame
+[diff] 0x63d630   MISMATCH         DrawTacticalWaypoint
+[ledger] 0x6fbdc0 TechnoClass::ShouldBeCloaked -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f3d60 TechnoClass::GetTurretOffset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e3410 TActionClass::CreateNukeEffect -> NG (attempt 1)
+[ledger] 0x7d6624 ObjectClass::___init_numeric -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56b5a0 CellClass::LoadTerrainTiles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x500300 CellClass::ScanOccupiers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x66cf70 RulesClass::ReadCountryList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e2c40 TActionClass::SpawnMeteorShower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x638840 TechnoClass::RemoveBuildingFromScripts -> NG (attempt 1)
+[ledger] 0x6b1b20 SliderClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x785ea0 ObjectClass::RunWOLMainLoop_Delete -> COMPILE_FAIL (attempt 1)
+[ledger] 0x596c70 Skirmish::ReadSettings -> NG (attempt 1)
+[ledger] 0x6d3290 ObjectClass::DrawBuildingAnimFrame -> NG (attempt 1)
+[ledger] 0x5adf20 SessionClass::LoadGameSession -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d0844 __read_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x759c30 VQAClass::AdvanceFrame -> NG (attempt 1)
+[ledger] 0x52cb90 Credits::Screen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63d630 DrawTacticalWaypoint -> NG (attempt 1)
+[ledger] 0x5558e0 Map_Calc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x659ac0 ProjectileTrail::ComputeRenderData -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "frame_sched": 5,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p112\batch_report.json

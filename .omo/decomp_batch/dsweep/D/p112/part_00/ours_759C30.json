@@ -1,0 +1,123 @@
+{
+ "symbol": "?AdvanceFrame@VQAClass@@QAEDPAE@Z",
+ "sym_key": "VQAClass::AdvanceFrame",
+ "size": 447,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec0855568bf18be8c60000578a864d05000084c075768b96040500008b8efc010000e80000000083be0c050000ff744e8d4424188d4c240c50518b8e800000008d542418e8000000008b44241883f801740583f80475278b8e41010000e800000000837c24180175158b8efc0100006800000000ba00000000e8000000008bcee800000000c6864d0500000180be4c05000001752df60500000000027524a10000000085c0751b833d00000000010f85c00000008bcec6864c05000000e800000000a100000000ba010000003bc20f85a00000008a864c05000084c00f85920000008b8efc0100006a00e8000000008bf885ff7d2d83fff57c1983fff67e0583ffff750f5fc64500005e32c05d83c408c204005fc64500015e32c05d83c408c204008a862405000084c074128d8e00020000e800000000c6862405000000833e0074138b8efc010000e8000000008b0e50e8000000008b864405000085c07402ffd047b00189be000500005f5e5d83c408c204008a861005000084c0741c8a864c05000084c075128b8efc0100006a00ba02000000e800000000c6864c050000018bcec6050000000001e8000000005f5e32c05d83c408c20400",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Render_Render_7C3690@@YIHPAX0@Z",
+   "sym_key": "Render_Render_7C3690"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?Render_Render_7C3710@@YIHPAEPAX11@Z",
+   "sym_key": "Render_Render_7C3710"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?BuildIndexTable@Voxel@@QAEDXZ",
+   "sym_key": "Voxel::BuildIndexTable"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?CopySHPFrameToSurface@@YAHPBX0@Z",
+   "sym_key": "CopySHPFrameToSurface"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?sub_7C6B70@@YAHPBX0@Z",
+   "sym_key": "sub_7C6B70"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?Render_Render_7C3230@@YIHPAXHH@Z",
+   "sym_key": "Render_Render_7C3230"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?g_NetworkEventPending@@3HA",
+   "sym_key": "g_NetworkEventPending"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EDA0@@3IA",
+   "sym_key": "DataGlobal_A8EDA0"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Active@@3IA",
+   "sym_key": "g_DDraw_Active"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Active@@3IA",
+   "sym_key": "g_DDraw_Active"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?ProcessAudioStreamPipeline@@YIHPAXHD@Z",
+   "sym_key": "ProcessAudioStreamPipeline"
+  },
+  {
+   "off": 312,
+   "type": "REL32",
+   "sym": "?CreateSurfacePalette@Surface@@QAEPAUIDirectDraw_era@@XZ",
+   "sym_key": "Surface::CreateSurfacePalette"
+  },
+  {
+   "off": 335,
+   "type": "REL32",
+   "sym": "?ComputeTime@MovieClass@@QAEIXZ",
+   "sym_key": "MovieClass::ComputeTime"
+  },
+  {
+   "off": 343,
+   "type": "REL32",
+   "sym": "?CheckKeyframeTransition@BinkMovie@@QAEDI@Z",
+   "sym_key": "BinkMovie::CheckKeyframeTransition"
+  },
+  {
+   "off": 411,
+   "type": "REL32",
+   "sym": "?ProcessAudioStreamPipeline@@YIHPAXHD@Z",
+   "sym_key": "ProcessAudioStreamPipeline"
+  },
+  {
+   "off": 426,
+   "type": "DIR32",
+   "sym": "?byte_B45BA4@@3EA",
+   "sym_key": "byte_B45BA4"
+  },
+  {
+   "off": 432,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

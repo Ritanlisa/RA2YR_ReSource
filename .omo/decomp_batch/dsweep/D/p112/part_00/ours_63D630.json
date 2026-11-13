@@ -1,0 +1,63 @@
+{
+ "symbol": "?DrawTacticalWaypoint@@YIXHHHHHHI@Z",
+ "sym_key": "Unnamed::DrawTacticalWaypoint",
+ "size": 336,
+ "link_base": 0,
+ "bytes_hex": "83ec308b442434538b5c244456578b7c24488bf02bc78944240c894424488b44244483ec08db4424142bc3895424208944244c894c241cdb44244cd9c0d8c9d9c2d8cbdec1dd1c24ddd8ddd8e800000000dd5c24148b4c24188b5424145152e80000000083c41083f8250f8cd70000008d043e55992bc28d4c24308bf0d1fee8000000008b088d56f7894c24488b78048b58088b680ca1000000008954244c8b5424188b08528d542450528d5424505250ff51548b44244c8b54241c40528d54245089442450a100000000528d5424508b085250ff51108d46f6897c24248b4c244889442444894c24208b0d00000000895c2428896c242c0fbf41026a006a00996a006a006a002bc268e80300006a00d1f86a006a008d5424442bf06800040000528b9424800000008d44247050528b15000000004e518b0d000000008974247ce8000000005d5f5e5b83c430c21400",
+ "relocs": [
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?GetViewport@Display@@QAEPAHXZ",
+   "sym_key": "Display::GetViewport"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF294@@3IA",
+   "sym_key": "DataGlobal_ABF294"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F6C8@@3IA",
+   "sym_key": "DataGlobal_87F6C8"
+  },
+  {
+   "off": 313,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 322,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHHIPAX0HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}
