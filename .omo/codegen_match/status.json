@@ -51980,7 +51980,7 @@
   "this_as_id": false
  },
  "0x4d8fb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -64150,7 +64150,7 @@
   "this_as_id": false
  },
  "0x4f4c00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -64803,7 +64803,7 @@
   "this_as_id": false
  },
  "0x4f9700": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -64815,7 +64815,7 @@
   "this_as_id": false
  },
  "0x4f9750": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65617,7 +65617,7 @@
   "this_as_id": false
  },
  "0x501160": {
-  "attempts": 16,
+  "attempts": 17,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66240,7 +66240,7 @@
   "this_as_id": false
  },
  "0x509610": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66252,7 +66252,7 @@
   "this_as_id": false
  },
  "0x509700": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 push ebx",
@@ -70914,7 +70914,7 @@
   "this_as_id": false
  },
  "0x51f250": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -72553,14 +72553,14 @@
   "this_as_id": false
  },
  "0x525a60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "INIClass::LoadFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "INIClass::LoadFile",
-  "rule_violations": 52,
+  "rule_violations": 36,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -73731,7 +73731,7 @@
   "this_as_id": false
  },
  "0x52b9b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -76692,7 +76692,7 @@
   "this_as_id": false
  },
  "0x5377d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -78586,7 +78586,7 @@
   "this_as_id": false
  },
  "0x53a300": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -78661,7 +78661,7 @@
   "this_as_id": false
  },
  "0x53ae50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81047,7 +81047,7 @@
   "this_as_id": false
  },
  "0x542520": {
-  "attempts": 16,
+  "attempts": 17,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82731,7 +82731,7 @@
   "this_as_id": false
  },
  "0x54b1c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82912,7 +82912,7 @@
   "this_as_id": false
  },
  "0x54d6d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87095,7 +87095,7 @@
   "this_as_id": false
  },
  "0x558810": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -88261,7 +88261,7 @@
   "this_as_id": false
  },
  "0x55afb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89010,7 +89010,7 @@
   "this_as_id": false
  },
  "0x560bf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ChangeVideoMode",
@@ -91339,7 +91339,7 @@
   "this_as_id": false
  },
  "0x583820": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

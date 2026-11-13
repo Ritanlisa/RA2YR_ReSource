@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p46\part_00
+=== convert (20 addrs) ===
+[conv] 0x4d8fb0 FootClass::MissionDispatch -> FootClass
+[conv] 0x4f4c00 GScreenClass::getHouseHandle -> GScreenClass
+[conv] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> FactoryClass
+[conv] 0x4f9750 BuildingClass::checkRepairEligibility -> BuildingClass
+[conv] 0x501160 CCINIClass::WriteHouses -> CCINIClass
+[conv] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> TriggerClass
+[conv] 0x509700 HouseClass::UpdateBuildState -> HouseClass
+[conv] 0x51f250 InfantryClass::ProcessUpdate -> InfantryClass
+[conv] 0x525a60 INIClass::LoadFile -> INIClass
+[conv] 0x52b9b0 BINK::Background_Setup -> BINK
+[conv] 0x5377d0 SetView2CommandClass::performAction_172 -> SetView2CommandClass
+[conv] 0x53a300 LightningStorm::Strike2 -> LightningStorm
+[conv] 0x53ae50 SuperClass::LaunchPsychicDominator -> SuperClass
+[conv] 0x542520 IPXManagerClass::ProcessQueue -> IPXManagerClass
+[conv] 0x54b1c0 JumpjetLocomotionClass::SmoothObjectPlacement -> JumpjetLocomotionClass
+[conv] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> JumpjetLocomotionClass
+[conv] 0x558810 ObjectClass::ShowSaveLoadDialog -> ObjectClass
+[conv] 0x55afb0 Scenario::Update -> Scenario
+[conv] 0x560bf0 ChangeVideoMode -> _addr_56
+[conv] 0x583820 Pathfinding::CheckCliff -> Pathfinding
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] GScreenClass             rc=2
+[era] FactoryClass             rc=2
+[era] BuildingClass            rc=2
+[era] CCINIClass               rc=2
+[era] TriggerClass             rc=2
+[era] HouseClass               rc=0
+[era] InfantryClass            rc=2
+[era] INIClass                 rc=2
+[era] BINK                     rc=2
+[era] SetView2CommandClass     rc=2
+[era] LightningStorm           rc=2
+[era] SuperClass               rc=2
+[era] IPXManagerClass          rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] Scenario                 rc=2
+[era] _addr_56                 rc=2
+[era] Pathfinding              rc=2
+=== diffasm byte-compare ===
+[diff] 0x509700   MISMATCH         HouseClass::UpdateBuildState
+[ledger] 0x4d8fb0 FootClass::MissionDispatch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f4c00 GScreenClass::getHouseHandle -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f9750 BuildingClass::checkRepairEligibility -> COMPILE_FAIL (attempt 3)
+[ledger] 0x501160 CCINIClass::WriteHouses -> COMPILE_FAIL (attempt 17)
+[ledger] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> COMPILE_FAIL (attempt 15)
+[ledger] 0x509700 HouseClass::UpdateBuildState -> NG (attempt 4)
+[ledger] 0x51f250 InfantryClass::ProcessUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x525a60 INIClass::LoadFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52b9b0 BINK::Background_Setup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5377d0 SetView2CommandClass::performAction_172 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x53a300 LightningStorm::Strike2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x53ae50 SuperClass::LaunchPsychicDominator -> COMPILE_FAIL (attempt 3)
+[ledger] 0x542520 IPXManagerClass::ProcessQueue -> COMPILE_FAIL (attempt 17)
+[ledger] 0x54b1c0 JumpjetLocomotionClass::SmoothObjectPlacement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> COMPILE_FAIL (attempt 3)
+[ledger] 0x558810 ObjectClass::ShowSaveLoadDialog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55afb0 Scenario::Update -> COMPILE_FAIL (attempt 3)
+[ledger] 0x560bf0 ChangeVideoMode -> COMPILE_FAIL (attempt 3)
+[ledger] 0x583820 Pathfinding::CheckCliff -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p46\batch_report.json
