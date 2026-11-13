@@ -71487,7 +71487,7 @@
   "this_as_id": false
  },
  "0x522340": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71554,7 +71554,7 @@
   "this_as_id": false
  },
  "0x522600": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71578,7 +71578,7 @@
   "this_as_id": false
  },
  "0x5226c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71614,7 +71614,7 @@
   "this_as_id": false
  },
  "0x5227f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71777,7 +71777,7 @@
   "this_as_id": false
  },
  "0x522e70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -72055,7 +72055,7 @@
   "this_as_id": false
  },
  "0x5236a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -72162,7 +72162,7 @@
   "this_as_id": false
  },
  "0x5240a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -72210,7 +72210,7 @@
   "this_as_id": false
  },
  "0x5247b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -72258,7 +72258,7 @@
   "this_as_id": false
  },
  "0x524960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -72399,7 +72399,7 @@
   "this_as_id": false
  },
  "0x524fc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -72490,7 +72490,7 @@
   "this_as_id": false
  },
  "0x525250": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -72561,7 +72561,7 @@
   "this_as_id": false
  },
  "0x5255f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -72708,7 +72708,7 @@
   "this_as_id": false
  },
  "0x526b10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -72811,14 +72811,14 @@
   "this_as_id": false
  },
  "0x5276d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "INIClass::ReadInt_Overwrite",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "INIClass::ReadInt_Overwrite",
-  "rule_violations": 4,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -72883,14 +72883,14 @@
   "this_as_id": false
  },
  "0x527cc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "INIClass::ParseValue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "INIClass::ParseValue",
-  "rule_violations": 2,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -72931,7 +72931,7 @@
   "this_as_id": false
  },
  "0x528220": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -72943,14 +72943,14 @@
   "this_as_id": false
  },
  "0x5283d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "INIClass::ReadDouble_Overwrite",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "INIClass::ReadDouble_Overwrite",
-  "rule_violations": 9,
+  "rule_violations": 11,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -72998,7 +72998,7 @@
   "this_as_id": false
  },
  "0x528a10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73034,19 +73034,19 @@
   "this_as_id": false
  },
  "0x528f00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "INIClass::ParseValue_Wide",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "INIClass::ParseValue_Wide",
-  "rule_violations": 2,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x529160": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
