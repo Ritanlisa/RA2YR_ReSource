@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p169\part_00
+=== convert (20 addrs) ===
+[conv] 0x62bd50 ParasiteClass::Update -> ParasiteClass
+[conv] 0x5910f0 MapSeed::PlaceCityBlock -> MapSeed
+[conv] 0x743a50 UnitClass::Scatter -> UnitClass
+[conv] 0x5e1ca0 GameLobby::DlgProc -> GameLobby
+[conv] 0x4cefb0 LandFootClassAtPosition -> _addr_4C
+[conv] 0x630310 DecodeFrameSHP -> _addr_63
+[conv] 0x42c290 Pathfinding::AStar -> Pathfinding
+[conv] 0x795650 ObjectClass::QueryNATPortWOL -> ObjectClass
+[conv] 0x704350 TechnoClass::GetDrawHeight -> TechnoClass
+[conv] 0x56c510 Terrain::ConnectivityGraph -> Terrain
+[conv] 0x442d90 BuildingClass::EjectCrew -> BuildingClass
+[conv] 0x4fe3e0 HouseClass::AutoBuild -> HouseClass
+[conv] 0x769550 LoadWDTMapAsset -> _addr_76
+[conv] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> SlaveManagerClass
+[conv] 0x640a40 Tactical::Radar_Render -> Tactical
+[conv] 0x7a0690 ObjectClass::RequestMatchWOL -> ObjectClass
+[conv] 0x6297f0 ParasiteClass::DeploySquad -> ParasiteClass
+[conv] 0x425670 TechnoClass::ConstructionPositionTracker -> TechnoClass
+[conv] 0x518f90 InfantryClass::Draw -> InfantryClass
+[conv] 0x592440 RandomMap::CheckPlacementArea -> RandomMap
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParasiteClass            rc=2
+[era] MapSeed                  rc=2
+[era] UnitClass                rc=2
+[era] GameLobby                rc=2
+[era] _addr_4C                 rc=2
+[era] _addr_63                 rc=2
+[era] Pathfinding              rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] Terrain                  rc=2
+[era] BuildingClass            rc=2
+[era] HouseClass               rc=2
+[era] _addr_76                 rc=2
+[era] SlaveManagerClass        rc=2
+[era] Tactical                 rc=2
+[era] InfantryClass            rc=2
+[era] RandomMap                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x62bd50 ParasiteClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5910f0 MapSeed::PlaceCityBlock -> COMPILE_FAIL (attempt 1)
+[ledger] 0x743a50 UnitClass::Scatter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e1ca0 GameLobby::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cefb0 LandFootClassAtPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x630310 DecodeFrameSHP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42c290 Pathfinding::AStar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x795650 ObjectClass::QueryNATPortWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x704350 TechnoClass::GetDrawHeight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56c510 Terrain::ConnectivityGraph -> COMPILE_FAIL (attempt 1)
+[ledger] 0x442d90 BuildingClass::EjectCrew -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fe3e0 HouseClass::AutoBuild -> COMPILE_FAIL (attempt 1)
+[ledger] 0x769550 LoadWDTMapAsset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> COMPILE_FAIL (attempt 1)
+[ledger] 0x640a40 Tactical::Radar_Render -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a0690 ObjectClass::RequestMatchWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6297f0 ParasiteClass::DeploySquad -> COMPILE_FAIL (attempt 1)
+[ledger] 0x425670 TechnoClass::ConstructionPositionTracker -> COMPILE_FAIL (attempt 1)
+[ledger] 0x518f90 InfantryClass::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x592440 RandomMap::CheckPlacementArea -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p169\batch_report.json
