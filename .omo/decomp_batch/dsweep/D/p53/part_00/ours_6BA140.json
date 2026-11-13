@@ -1,0 +1,93 @@
+{
+ "symbol": "?Find@HashTable@@QAEHPBDPAX@Z",
+ "sym_key": "HashTable::Find",
+ "size": 238,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf1508d4c240ce800000000a000000000a80175228ad0680000000080ca01c7050000000000000000881500000000e80000000083c404c70500000000000000008b460485c00f848a0000008d4c240851ff56188a4e0cba01000000d3e28b0e4a23c28b348185f6746c8d5424088bce52e80000000084c0751a8bb60803000085f674528d4424088bce50e80000000084c074e683c6045785f6740cb9c1000000bf00000000f3a58b7c241085ff740cb9c0000000be00000000f3a58b35000000008d4c240c51e80000000083c4048bc65f5ec208008d54240852e80000000083c40433c05ec20800",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?byte_B0B930@@3EA",
+   "sym_key": "byte_B0B930"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?nullsub_39@@YAHPBX0@Z",
+   "sym_key": "nullsub_39"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?dword_B0B948@@3IA",
+   "sym_key": "dword_B0B948"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?byte_B0B930@@3EA",
+   "sym_key": "byte_B0B930"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?dword_B0B948@@3IA",
+   "sym_key": "dword_B0B948"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?dword_B0B948@@3IA",
+   "sym_key": "dword_B0B948"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?unk_B0B94C@@3EA",
+   "sym_key": "unk_B0B94C"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?dword_B0B948@@3IA",
+   "sym_key": "dword_B0B948"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

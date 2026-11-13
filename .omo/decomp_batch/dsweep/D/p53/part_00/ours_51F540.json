@@ -1,0 +1,27 @@
+{
+ "symbol": "?ProcessEnterOrRepair@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::ProcessEnterOrRepair",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "568bf18b8e1c020000e80000000084c0755d8b86b402000085c074538b0850ff512c83f80675488b86c00600008b486c85c975178b485c85c974348b8eb402000056e80000000084c074248b86b40200008b166a015056ff92800400008b0e6a0856ff91f0010000b8010000005ec38bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?CanRepair@BuildingClass@@QAE_NH@Z",
+   "sym_key": "BuildingClass::CanRepair"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?InfantryClass__ProcessDeploy@@YIHPAX@Z",
+   "sym_key": "InfantryClass__ProcessDeploy"
+  }
+ ]
+}

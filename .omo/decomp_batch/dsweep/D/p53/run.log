@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p53\part_00
+=== convert (20 addrs) ===
+[conv] 0x459ca0 TechnoClass::ProcessDataCellClass -> TechnoClass
+[conv] 0x7b7980 ObjectClass::UI_Helper_7B7980 -> ObjectClass
+[conv] 0x76ff40 rc_ptr::FindTerritoryWOL -> rc_ptr
+[conv] 0x51f540 InfantryClass::ProcessEnterOrRepair -> InfantryClass
+[conv] 0x521dd0 InfantryClass::CheckAndApplyBomb -> InfantryClass
+[conv] 0x72eb50 Render_Render_72EB50 -> Render_Render
+[conv] 0x4a3110 CStreamClass::ddtor -> CStreamClass
+[conv] 0x7b6cb0 WideString::ConcatAlloc -> WideString
+[conv] 0x73efc0 UnitClass::DeployIntoBuilding -> UnitClass
+[conv] 0x5f5850 TechnoClass::UpdateProductionDisplay -> TechnoClass
+[conv] 0x775700 CreateDialogIndirect -> _addr_77
+[conv] 0x6f1ab0 TeamTypeClass::ReadScriptData -> TeamTypeClass
+[conv] 0x6ba140 HashTable::Find -> HashTable
+[conv] 0x5f6360 ObjectClass::DistanceTo -> ObjectClass
+[conv] 0x6eca70 TeamClass::SelectAttackTarget -> TeamClass
+[conv] 0x6e8340 ScriptTypeClass::ReadINI -> ScriptTypeClass
+[conv] 0x770970 ObjectClass::sub_770970 -> ObjectClass
+[conv] 0x770a50 ObjectClass::sub_770A50 -> ObjectClass
+[conv] 0x7b8090 FormatWideStringPrefix -> _addr_7B
+[conv] 0x6dbd20 Tactical::InitMap -> Tactical
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] ObjectClass              rc=0
+[era] rc_ptr                   rc=2
+[era] InfantryClass            rc=0
+[era] Render_Render            rc=0
+[era] CStreamClass             rc=2
+[era] WideString               rc=0
+[era] UnitClass                rc=2
+[era] _addr_77                 rc=2
+[era] TeamTypeClass            rc=2
+[era] HashTable                rc=0
+[era] TeamClass                rc=0
+[era] ScriptTypeClass          rc=2
+[era] _addr_7B                 rc=2
+[era] Tactical                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x459ca0   MISMATCH         TechnoClass::ProcessDataCellClass
+[diff] 0x5f5850   MISMATCH         TechnoClass::UpdateProductionDisplay
+[diff] 0x7b7980   MISMATCH         ObjectClass::UI_Helper_7B7980
+[diff] 0x5f6360   MISMATCH         ObjectClass::DistanceTo
+[diff] 0x770970   MISMATCH         ObjectClass::sub_770970
+[diff] 0x770a50   MISMATCH         ObjectClass::sub_770A50
+[diff] 0x51f540   MISMATCH         InfantryClass::ProcessEnterOrRepair
+[diff] 0x521dd0   MISMATCH         InfantryClass::CheckAndApplyBomb
+[diff] 0x72eb50   MATCH            Render_Render_72EB50
+[diff] 0x7b6cb0   MISMATCH         WideString::ConcatAlloc
+[diff] 0x6ba140   MISMATCH         HashTable::Find
+[diff] 0x6eca70   MISMATCH         TeamClass::SelectAttackTarget
+[ledger] 0x459ca0 TechnoClass::ProcessDataCellClass -> NG (attempt 1)
+[ledger] 0x7b7980 ObjectClass::UI_Helper_7B7980 -> NG (attempt 1)
+[ledger] 0x76ff40 rc_ptr::FindTerritoryWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51f540 InfantryClass::ProcessEnterOrRepair -> NG (attempt 1)
+[ledger] 0x521dd0 InfantryClass::CheckAndApplyBomb -> NG (attempt 1)
+[ledger] 0x72eb50 Render_Render_72EB50 -> OK (attempt 1)
+[ledger] 0x4a3110 CStreamClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b6cb0 WideString::ConcatAlloc -> NG (attempt 1)
+[ledger] 0x73efc0 UnitClass::DeployIntoBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f5850 TechnoClass::UpdateProductionDisplay -> NG (attempt 1)
+[ledger] 0x775700 CreateDialogIndirect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f1ab0 TeamTypeClass::ReadScriptData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ba140 HashTable::Find -> NG (attempt 1)
+[ledger] 0x5f6360 ObjectClass::DistanceTo -> NG (attempt 1)
+[ledger] 0x6eca70 TeamClass::SelectAttackTarget -> NG (attempt 1)
+[ledger] 0x6e8340 ScriptTypeClass::ReadINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x770970 ObjectClass::sub_770970 -> NG (attempt 1)
+[ledger] 0x770a50 ObjectClass::sub_770A50 -> NG (attempt 1)
+[ledger] 0x7b8090 FormatWideStringPrefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dbd20 Tactical::InitMap -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 8,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "regalloc": 4,
+  "branch_polarity": 4,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 8.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p53\batch_report.json

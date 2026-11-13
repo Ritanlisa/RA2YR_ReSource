@@ -1,0 +1,11 @@
+{
+ "addr": "0x72EB50",
+ "name": "Render_Render_72EB50",
+ "size": 211,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72EB50",
+ "bytes_hex": "8b0dd44c8400ba95fcb000e8704dd7ff8b0dd84c8400ba96fcb000a3c4fab000e85b4dd7ff8b0ddc4c8400ba97fcb000a3dcf9b000e8464dd7ff8b0de04c8400ba98fcb000a3c0fab000e8314dd7ff8b0de44c8400ba99fcb000a350fbb000e81c4dd7ff8b0de84c8400ba9afcb000a304fab000e8074dd7ff8b0dec4c8400ba9bfcb000a3f8fab000e8f24cd7ff8b0df04c8400ba9cfcb000a374fab000e8dd4cd7ff8b0df44c8400ba9dfcb000a338fab000e8c84cd7ff8b0df84c8400ba9efcb000a3e8fab000e8b34cd7ffa354fab000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

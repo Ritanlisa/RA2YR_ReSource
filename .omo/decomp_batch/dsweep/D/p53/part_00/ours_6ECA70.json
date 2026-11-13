@@ -1,0 +1,45 @@
+{
+ "symbol": "?SelectAttackTarget@TeamClass@@QAEDHD@Z",
+ "sym_key": "TeamClass::SelectAttackTarget",
+ "size": 242,
+ "link_base": 0,
+ "bytes_hex": "8a44240883ec0884c056578bf974748b4424148b4804518b0d00000000e8000000008bf085f674518b16568b02ff502c83f80b75448b8e400100008b118d4c2408c1ea0880e201c74424080000000088542418c744240c000000008b44241850518bcee8000000008bf085f6740b8b1656ff522c83f806740233f6568bcfe8000000008b473c85c074508b775485f674498b0656ff90840000008b888406000085c97e278b86fc02000085c07f1d8bb6d805000085f674228b0e56ff91840000008b888406000085c97fd98bcfe8000000005f5e83c408c208006a008bcfe800000000c68780000000015f5e83c408c20800",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?GetCellFromArray@ScenarioClass@@QAEPAXH@Z",
+   "sym_key": "ScenarioClass::GetCellFromArray"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?FindObjectCell@Object@@QAEHPAXD@Z",
+   "sym_key": "Object::FindObjectCell"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?SelectMember@TeamClass@@QAEDH@Z",
+   "sym_key": "TeamClass::SelectMember"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?AttackCoordinator@TeamClass@@QAEDXZ",
+   "sym_key": "TeamClass::AttackCoordinator"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?SelectMember@TeamClass@@QAEDH@Z",
+   "sym_key": "TeamClass::SelectMember"
+  }
+ ]
+}

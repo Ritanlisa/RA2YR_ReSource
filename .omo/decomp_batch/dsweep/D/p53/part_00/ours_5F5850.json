@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdateProductionDisplay@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::UpdateProductionDisplay",
+ "size": 196,
+ "link_base": 0,
+ "bytes_hex": "5153568bf18b868000000085c00f85ab0000008b44240883f8028bd8751a8b467485c00f84950000008b0656ff90340100005eb0015b59c38b0e5756ff512c83f80675148b96240500008b82580e000085c0740485db742a8bcee8000000008bf885ff741d8b0757ff90c00200008b0f57ff51388b168d44240c5056ff92b801000083fb015f740583fb03751d8b467485c075168b0e56c7467401000000ff91340100005eb0015b59c385db75108b467485c07409895e745eb0015b59c35e32c05b59c3",
+ "relocs": [
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?IsTechnoType@AbstractClass@@QAEPAXXZ",
+   "sym_key": "AbstractClass::IsTechnoType"
+  }
+ ]
+}

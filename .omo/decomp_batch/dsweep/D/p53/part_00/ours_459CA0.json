@@ -1,0 +1,51 @@
+{
+ "symbol": "?ProcessDataCellClass@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::ProcessDataCellClass",
+ "size": 205,
+ "link_base": 0,
+ "bytes_hex": "83ec088b81240500008b1153568bb0d40e00008d4424085051ff92b80100008b008bc885f6894c24080f8496000000c1f8108bd8eb048b4c240866813eff7f750866817e02ff7f747c8bc680e10083c6048a400202c325ff0000000bc18d4c240c51b9000000008944240c89442410e80000000084c074be8d54240cb90000000052e8000000008b88e400000085c975a58d44240cb90000000050e8000000006a016aff6a006aff6a006a006a008bc8e80000000084c00f8479ffffff5eb0015b83c408c35e32c05b83c408c3",
+ "relocs": [
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?IsBuildable@Cell@@QAE_NHDDHHHD@Z",
+   "sym_key": "Cell::IsBuildable"
+  }
+ ]
+}
