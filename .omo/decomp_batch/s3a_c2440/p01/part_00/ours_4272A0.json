@@ -1,0 +1,33 @@
+{
+ "symbol": "?QueryInterface@AnimFile@@QAEPAXD@Z",
+ "sym_key": "AnimFile::QueryInterface",
+ "size": 136,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db578a8689000000c706000000003ac374188b8e840000008d8684000000508b11ff5234889e890000008b860c0e0000899e840000003bc3740d8b086a0150ff11899e0c0e00008dbe100e00003bfb740d8b1752e80000000083c404891f8a442410889e88000000a801c70600000000740956e80000000083c4048bc65f5e5bc20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?vt_AnimFile@@3PAXA",
+   "sym_key": "vt_AnimFile"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?vt_Animate@@3PAXA",
+   "sym_key": "vt_Animate"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

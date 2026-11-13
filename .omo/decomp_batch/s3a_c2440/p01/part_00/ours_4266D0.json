@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4266D0@AnimFile@@QAEXXZ",
+ "sym_key": "AnimFile::sub_4266D0",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db578a8689000000c706000000003ac374188b8e840000008d8684000000508b11ff5234889e890000008b860c0e0000899e840000003bc3740d8b086a0150ff11899e0c0e00008dbe100e00003bfb740d8b1752e80000000083c404891f889e88000000c706000000005f5e5bc3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?vt_AnimFile@@3PAXA",
+   "sym_key": "vt_AnimFile"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?vt_Animate@@3PAXA",
+   "sym_key": "vt_Animate"
+  }
+ ]
+}

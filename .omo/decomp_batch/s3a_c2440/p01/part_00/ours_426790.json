@@ -1,0 +1,15 @@
+{
+ "symbol": "?Release@AnimFile@@QAEXXZ",
+ "sym_key": "AnimFile::Release",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db57389e8900000074188b8e840000008d8684000000508b11ff5234889e890000008b860c0e0000899e840000003bc3740d8b086a0150ff11899e0c0e00008dbe100e00003bfb740d8b1752e80000000083c404891f889e880000005f5e5bc3",
+ "relocs": [
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

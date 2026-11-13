@@ -1,0 +1,15 @@
+{
+ "symbol": "?InitContext@FontRenderer@@QAEHPAH@Z",
+ "sym_key": "FontRenderer::InitContext",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24106a006a008b078bf157ff505c89460c8b0f57ff5174d1e88946108b0757c744241400000000ff507c8b178bd8574bff92800000008b4e3c8b56388d78ff8d46300bc80bca8b56340bca741f8d542410525050e80000000025ff00000081e700ffffff0bc75f5e5bc204008b4c2410897e3c89088bc7c7463400000000895e385f5e5bc20400",
+ "relocs": [
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?sub_434840@@YGDPAX00@Z",
+   "sym_key": "sub_434840"
+  }
+ ]
+}

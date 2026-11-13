@@ -1,0 +1,11 @@
+{
+ "addr": "0x4348F0",
+ "name": "FontRenderer::InitContext",
+ "size": 157,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4348F0",
+ "bytes_hex": "83ec1056578b7c241c8bf133c933c08b1751508bcfff525c89460c8b078bcfff5074d1e88946108b178bcfc744240800000000c744240c00000000ff527c488bcf894424108b07ff90800000008b56388b7e3c0bd78b7e348d4e300bd7488b39894424140bd7751f8b54240889463c89118b4c240c8b542410894e348956385f5e83c410c204008d4424085051518bcee8bbfeffff5f5e83c410c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

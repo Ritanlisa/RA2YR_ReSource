@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x40ffff Math::InitDegToRad -> Math
+[conv] 0x4128f0 sub_4128F0 -> _addr_41
+[conv] 0x4151e0 AircraftClass::ProcessLanding -> AircraftClass
+[conv] 0x416af0 FootClass::MissionMoveCarryallLand -> FootClass
+[conv] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> TechnoClass
+[conv] 0x4202f0 ObjectClass::sub_4202F0 -> ObjectClass
+[conv] 0x421ea0 AnimClass::ctor -> AnimClass
+[conv] 0x4261d0 TechnoClass::FindBuildingClass -> TechnoClass
+[conv] 0x4266d0 AnimFile::sub_4266D0 -> AnimFile
+[conv] 0x426790 AnimFile::Release -> AnimFile
+[conv] 0x4272a0 AnimFile::QueryInterface -> AnimFile
+[conv] 0x429500 ApplicationClass::sub_429500 -> ApplicationClass
+[conv] 0x429a90 BuildingClass::UpdatePowerAnimation -> BuildingClass
+[conv] 0x42c1c0 MapClass::AllocArrays -> MapClass
+[conv] 0x430ba0 ObjectClass::PlacePlayerBeacon -> ObjectClass
+[conv] 0x432c70 BinkMovie::Play -> BinkMovie
+[conv] 0x434700 ObjectClass::sub_434700 -> ObjectClass
+[conv] 0x4348f0 FontRenderer::InitContext -> FontRenderer
+[conv] 0x435820 BuildingLightClass::CTOR -> BuildingLightClass
+[conv] 0x437290 sub_437290 -> _addr_43
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Math                     rc=2
+[era] _addr_41                 rc=2
+[era] AircraftClass            rc=2
+[era] FootClass                rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] AnimClass                rc=2
+[era] AnimFile                 rc=0
+[era] ApplicationClass         rc=2
+[era] BuildingClass            rc=2
+[era] MapClass                 rc=2
+[era] BinkMovie                rc=2
+[era] FontRenderer             rc=0
+[era] BuildingLightClass       rc=2
+[era] _addr_43                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4266d0   MISMATCH         AnimFile::sub_4266D0
+[diff] 0x426790   MISMATCH         AnimFile::Release
+[diff] 0x4272a0   MISMATCH         AnimFile::QueryInterface
+[diff] 0x4348f0   MISMATCH         FontRenderer::InitContext
+[ledger] 0x40ffff Math::InitDegToRad -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4128f0 sub_4128F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4151e0 AircraftClass::ProcessLanding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x416af0 FootClass::MissionMoveCarryallLand -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4202f0 ObjectClass::sub_4202F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x421ea0 AnimClass::ctor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4261d0 TechnoClass::FindBuildingClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4266d0 AnimFile::sub_4266D0 -> NG (attempt 2)
+[ledger] 0x426790 AnimFile::Release -> NG (attempt 2)
+[ledger] 0x4272a0 AnimFile::QueryInterface -> NG (attempt 2)
+[ledger] 0x429500 ApplicationClass::sub_429500 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x429a90 BuildingClass::UpdatePowerAnimation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x42c1c0 MapClass::AllocArrays -> COMPILE_FAIL (attempt 2)
+[ledger] 0x430ba0 ObjectClass::PlacePlayerBeacon -> COMPILE_FAIL (attempt 2)
+[ledger] 0x432c70 BinkMovie::Play -> COMPILE_FAIL (attempt 2)
+[ledger] 0x434700 ObjectClass::sub_434700 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4348f0 FontRenderer::InitContext -> NG (attempt 2)
+[ledger] 0x435820 BuildingLightClass::CTOR -> COMPILE_FAIL (attempt 4)
+[ledger] 0x437290 sub_437290 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "ret_norm": 2,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p01\batch_report.json

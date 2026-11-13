@@ -1,0 +1,11 @@
+{
+ "addr": "0x4272A0",
+ "name": "AnimFile::QueryInterface",
+ "size": 128,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4272A0",
+ "bytes_hex": "53568bf133db8a8689000000c70684357e003ac374118b8e840000008b01ff5034889e890000008b8e0c0e0000899e840000003bcb740c8b116a01ff12899e0c0e00008b86100e00003bc3740f50e84a183a0083c404899e100e00008a44240c889e88000000a801c706a8357e00740956e827183a0083c4048bc65e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
