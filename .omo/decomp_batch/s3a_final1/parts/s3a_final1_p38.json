@@ -1,0 +1,26 @@
+[
+ {
+  "addr": "0x7d6d2a",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x7d9ef8",
+  "family": "C2227"
+ },
+ {
+  "addr": "0x7da512",
+  "family": "C2227"
+ },
+ {
+  "addr": "0x7dabac",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x7dae9f",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x7dcd9c",
+  "family": "C2440"
+ }
+]

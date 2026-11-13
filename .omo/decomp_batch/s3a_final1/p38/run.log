@@ -1,0 +1,34 @@
+======================================================================
+PART 1/1  (6 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p38\part_00
+=== convert (6 addrs) ===
+[conv] 0x7d6d2a ___get_qualified_locale -> _addr_7D
+[conv] 0x7d9ef8 _ungetc_0 -> _addr_7D
+[conv] 0x7da512 __getwc_lk -> _addr_7D
+[conv] 0x7dabac ObjectClass::_copy_environ -> ObjectClass
+[conv] 0x7dae9f ___crtMessageBoxA -> _addr_7D
+[conv] 0x7dcd9c ThrowErrorCOM -> _addr_7D
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7d6d2a ___get_qualified_locale -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d9ef8 _ungetc_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7da512 __getwc_lk -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dabac ObjectClass::_copy_environ -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7dae9f ___crtMessageBoxA -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7dcd9c ThrowErrorCOM -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 6,
+ "verdicts": {
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p38\batch_report.json
