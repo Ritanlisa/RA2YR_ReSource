@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x6722f0 RulesClass::LoadCountries -> RulesClass
+[conv] 0x672360 CCINIClass::LoadBuildingTypes -> CCINIClass
+[conv] 0x6723d0 RulesClass::readRadiation -> RulesClass
+[conv] 0x672660 RulesClass::LoadBuildingTypes -> RulesClass
+[conv] 0x6726d0 CCINIClass::LoadTypeList -> CCINIClass
+[conv] 0x672740 RulesClass::ReadSideData -> RulesClass
+[conv] 0x6727d0 FactoryClass::LoadType -> FactoryClass
+[conv] 0x672840 ObjectClass::ReadBuildingTypesBuildingTypeClass -> ObjectClass
+[conv] 0x6728b0 RulesClass::LoadAnimTypes -> RulesClass
+[conv] 0x672920 CCINIClass::LoadUnitTypes -> CCINIClass
+[conv] 0x672990 WarheadTypeClass::LoadType -> WarheadTypeClass
+[conv] 0x672a00 RulesClass::readColors -> RulesClass
+[conv] 0x672a70 CCINIClass::ReadBuildingSettings -> CCINIClass
+[conv] 0x673e80 RulesClass::ReadPowerupsSection -> RulesClass
+[conv] 0x674550 RulesClass::ReadMovies -> RulesClass
+[conv] 0x67b500 SmallFunc_67B500 -> SmallFunc
+[conv] 0x67b550 ReadINIClassBuildingTypeList -> _addr_67
+[conv] 0x67b720 BuildingClass::LoadBuildingTypes -> BuildingClass
+[conv] 0x67b8f0 HouseTypeClass::ReadCountryName -> HouseTypeClass
+[conv] 0x67bac0 GetINIClassInt -> _addr_67
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RulesClass               rc=2
+[era] CCINIClass               rc=2
+[era] FactoryClass             rc=2
+[era] ObjectClass              rc=2
+[era] WarheadTypeClass         rc=2
+[era] SmallFunc                rc=2
+[era] _addr_67                 rc=2
+[era] BuildingClass            rc=2
+[era] HouseTypeClass           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6722f0 RulesClass::LoadCountries -> COMPILE_FAIL (attempt 2)
+[ledger] 0x672360 CCINIClass::LoadBuildingTypes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6723d0 RulesClass::readRadiation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x672660 RulesClass::LoadBuildingTypes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6726d0 CCINIClass::LoadTypeList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x672740 RulesClass::ReadSideData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6727d0 FactoryClass::LoadType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x672840 ObjectClass::ReadBuildingTypesBuildingTypeClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6728b0 RulesClass::LoadAnimTypes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x672920 CCINIClass::LoadUnitTypes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x672990 WarheadTypeClass::LoadType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x672a00 RulesClass::readColors -> COMPILE_FAIL (attempt 2)
+[ledger] 0x672a70 CCINIClass::ReadBuildingSettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x673e80 RulesClass::ReadPowerupsSection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x674550 RulesClass::ReadMovies -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67b500 SmallFunc_67B500 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67b550 ReadINIClassBuildingTypeList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67b720 BuildingClass::LoadBuildingTypes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67b8f0 HouseTypeClass::ReadCountryName -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67bac0 GetINIClassInt -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p15\batch_report.json
