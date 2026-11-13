@@ -1,0 +1,98 @@
+{
+ "summary": {
+  "total": 5,
+  "verdicts": {
+   "COMPILE_FAIL": 5
+  },
+  "pathologies": {},
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x6bb9a0",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p184\\part_00\\include\\era_types.h(307) : error C2371: 'WCHAR' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p184\\part_",
+   "first_diff": null,
+   "pathology": null,
+   "name": "WinMain",
+   "emitted": "WinMain",
+   "unit": "_addr_6B",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "478/643",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x4b6c30",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p184\\part_00\\include\\LoadScreen.hpp(106) : error C2377: 'DWORD' : redefinition; typedef cannot be overloaded with any other symbol; D:\\RA2YR_ReSource\\.omo\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "LoadScreen::RenderLoop",
+   "emitted": "LoadScreen::RenderLoop",
+   "unit": "LoadScreen",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "165/202",
+   "rule_violations": 111,
+   "clean": false
+  },
+  {
+   "addr": "0x64dea0",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p184\\part_00\\Multiplay.cpp(9) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p184\\part_00\\Multiplay.",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Multiplay::LogToSYNC_NOMPDEBUG",
+   "emitted": "Multiplay::LogToSYNC_NOMPDEBUG",
+   "unit": "Multiplay",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "256/270",
+   "rule_violations": 35,
+   "clean": false
+  },
+  {
+   "addr": "0x675210",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p184\\part_00\\RulesClass.cpp(22) : error C2039: 'm13BC' : is not a member of 'RulesClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p184\\part_00\\RulesCl",
+   "first_diff": null,
+   "pathology": null,
+   "name": "RulesClass::SaveLoad_Prefix_0",
+   "emitted": "RulesClass::SaveLoad_Prefix_0",
+   "unit": "RulesClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "1457/1457",
+   "rule_violations": 54,
+   "clean": false
+  },
+  {
+   "addr": "0x618d40",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p184\\part_00\\include\\Options.hpp(91) : error C2377: 'LONG' : redefinition; typedef cannot be overloaded with any other symbol; D:\\RA2YR_ReSource\\.omo\\decom",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Options::DialogProc",
+   "emitted": "Options::DialogProc",
+   "unit": "Options",
+   "name_placeholder": false,
+   "cls_src": "name_prefix",
+   "this_as_id": false,
+   "sites": "185/206",
+   "rule_violations": 65,
+   "clean": false
+  }
+ ]
+}

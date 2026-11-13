@@ -1,0 +1,35 @@
+======================================================================
+PART 1/1  (5 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p184\part_00
+=== convert (5 addrs) ===
+[conv] 0x6bb9a0 WinMain -> _addr_6B
+[conv] 0x4b6c30 LoadScreen::RenderLoop -> LoadScreen
+[conv] 0x64dea0 Multiplay::LogToSYNC_NOMPDEBUG -> Multiplay
+[conv] 0x675210 RulesClass::SaveLoad_Prefix_0 -> RulesClass
+[conv] 0x618d40 Options::DialogProc -> Options
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6B                 rc=2
+[era] LoadScreen               rc=2
+[era] Multiplay                rc=2
+[era] RulesClass               rc=2
+[era] Options                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6bb9a0 WinMain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b6c30 LoadScreen::RenderLoop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64dea0 Multiplay::LogToSYNC_NOMPDEBUG -> COMPILE_FAIL (attempt 1)
+[ledger] 0x675210 RulesClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x618d40 Options::DialogProc -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 5,
+ "verdicts": {
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p184\batch_report.json

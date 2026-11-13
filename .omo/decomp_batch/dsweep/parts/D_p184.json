@@ -1,0 +1,62 @@
+[
+ {
+  "addr": "0x6bb9a0",
+  "name": "WinMain",
+  "cls": "unknown",
+  "size": 10261,
+  "family": "censusD",
+  "layer": "D",
+  "reason": "indirect-heavy",
+  "n_calls": 560,
+  "n_indirect": 97,
+  "n_ds": 30
+ },
+ {
+  "addr": "0x4b6c30",
+  "name": "LoadScreen::RenderLoop",
+  "cls": "LoadScreen",
+  "size": 10849,
+  "family": "censusD",
+  "layer": "D",
+  "reason": "indirect-heavy",
+  "n_calls": 192,
+  "n_indirect": 59,
+  "n_ds": 31
+ },
+ {
+  "addr": "0x64dea0",
+  "name": "Multiplay::LogToSYNC_NOMPDEBUG",
+  "cls": "Multiplay",
+  "size": 11242,
+  "family": "censusD",
+  "layer": "D",
+  "reason": "indirect-heavy",
+  "n_calls": 491,
+  "n_indirect": 131,
+  "n_ds": 2
+ },
+ {
+  "addr": "0x675210",
+  "name": "RulesClass::SaveLoad_Prefix_0",
+  "cls": "RulesClass",
+  "size": 13883,
+  "family": "censusD",
+  "layer": "D",
+  "reason": "indirect-heavy",
+  "n_calls": 689,
+  "n_indirect": 311,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x618d40",
+  "name": "Options::DialogProc",
+  "cls": "unknown",
+  "size": 14268,
+  "family": "censusD",
+  "layer": "D",
+  "reason": "indirect-heavy",
+  "n_calls": 300,
+  "n_indirect": 53,
+  "n_ds": 103
+ }
+]
