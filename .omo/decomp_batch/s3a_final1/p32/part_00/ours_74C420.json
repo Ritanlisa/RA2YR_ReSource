@@ -1,0 +1,147 @@
+{
+ "symbol": "?Construct@VeinholeMonsterClass@@QAEPAV1@H@Z",
+ "sym_key": "VeinholeMonsterClass::Construct",
+ "size": 355,
+ "link_base": 0,
+ "bytes_hex": "8b4424045356578bf950e800000000a1540a000033db899fc00000008987b8000000c70700000000895f04895f08895f0ca1000000008b0d000000003bc8722c381d0000000075043bc375388b0d000000003bcb762e03c853518b0d000000006800000000ff510884c074188b0d000000008b15000000008bc141890d00000000893c82a1000000008b88dc000000c1e10351e80000000083c4043bc3750233c06a148987b4000000e8000000008bf083c4043bf3744f8b15000000008b82dc000000895e0c894604c74610ffffffff8d048504000000891e50e8000000008b4e0489460883c40433c03bcb7c1ab9fcffffff8b560883c10440891c118b56043bc276efeb0233f689b7b000000033c0b9fcffffff8b560883c10440891c118b163bc276f0891ea1000000003bc375158bcfe80000000050e80000000083c404a3000000008bcfe80000000050e80000000083c4048987c40000008b075f5e5bc20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Init@ObjectClass@@QAEPAV1@H@Z",
+   "sym_key": "ObjectClass::Init"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?vt_VeinholeMonsterClass_4@@3PAXA",
+   "sym_key": "vt_VeinholeMonsterClass_4"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D298@@3IA",
+   "sym_key": "DataGlobal_B1D298"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_VeinholePool@@3IA",
+   "sym_key": "g_VeinholePool"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D29D@@3EA",
+   "sym_key": "DataGlobal_B1D29D"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D2A4@@3IA",
+   "sym_key": "DataGlobal_B1D2A4"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D290@@3IA",
+   "sym_key": "DataGlobal_B1D290"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D290@@3IA",
+   "sym_key": "DataGlobal_B1D290"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_VeinholePool@@3IA",
+   "sym_key": "g_VeinholePool"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_VoxelDrawState@@3PAXA",
+   "sym_key": "g_VoxelDrawState"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_VeinholePool@@3IA",
+   "sym_key": "g_VeinholePool"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_VeinholeMonsterPool@@3PAXA",
+   "sym_key": "g_VeinholeMonsterPool"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 313,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 321,
+   "type": "DIR32",
+   "sym": "?g_VeinholeMonsterPool@@3PAXA",
+   "sym_key": "g_VeinholeMonsterPool"
+  },
+  {
+   "off": 328,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 334,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

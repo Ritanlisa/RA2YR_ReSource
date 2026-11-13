@@ -1,0 +1,255 @@
+{
+ "symbol": "?InitializeVeinholeSystem@@YIEPAXD@Z",
+ "sym_key": "Unnamed::InitializeVeinholeSystem",
+ "size": 626,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556578ada894c2414e8000000008bf884db897c24100f844b010000a10000000033db8d70ff3bf37c158b0d000000008b14b152e80000000083c4044e79eba1000000003bc3740f50e80000000083c404891d00000000a1000000008d68ff8b0d000000008b91dc000000c1e20352e80000000083c4043bc3750233c08b0d000000006a148b14a98982b4000000e8000000008bf083c4043bf3744ea1000000008b80dc000000895e0c894604c74610ffffffff8d0c8504000000891e51e8000000008b4e0489460883c40433c03bcb7c1ab9fcffffff8b560883c10440891c118b56043bc276efeb0233f6a100000000578b0ca889b1b0000000e8000000008b150000000083c4048b0caa8981c40000008b15000000008bcf33c08b14aa8bbac40000008bd1c1e902f3ab8bcabafcffffff83e103f3aaa1000000008b0ca88b81b000000033c98b700883c20441891c328b303bce76f08b7c24104d89180f89fafeffffeb0233dba1000000003bc3750e57e80000000083c404a300000000b900000000e800000000b900000000e8000000003bc3bdff7fffff741c8b9040010000b90000000023d5899040010000e8000000003bc375e48bcf8b3d000000008bd133c0c1e902f3ab8bca83e103f3aaa1000000008d70ff3bf37c2a8b0d000000008b04b18a880001000084c9740b8b4c2414e800000000eb0950e80000000083c4044e79d6b900000000e800000000b900000000e8000000008bd885db7443be7e000000397344751b8d4b24e8000000008b1500000000803c10007507c74344ffffffff8b8b4001000023cd898b40010000b900000000e8000000008bd885db75c25f5e8ac35d5b83c408c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_VeinholePool@@3IA",
+   "sym_key": "g_VeinholePool"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_VoxelDrawState@@3PAXA",
+   "sym_key": "g_VoxelDrawState"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?System_Init_74E8A0@@YAXH@Z",
+   "sym_key": "System_Init_74E8A0"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_VeinholeMonsterPool@@3PAXA",
+   "sym_key": "g_VeinholeMonsterPool"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_VeinholeMonsterPool@@3PAXA",
+   "sym_key": "g_VeinholeMonsterPool"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?g_VeinholePool@@3IA",
+   "sym_key": "g_VeinholePool"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_VoxelDrawState@@3PAXA",
+   "sym_key": "g_VoxelDrawState"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 241,
+   "type": "DIR32",
+   "sym": "?g_VoxelDrawState@@3PAXA",
+   "sym_key": "g_VoxelDrawState"
+  },
+  {
+   "off": 256,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 262,
+   "type": "DIR32",
+   "sym": "?g_VoxelDrawState@@3PAXA",
+   "sym_key": "g_VoxelDrawState"
+  },
+  {
+   "off": 280,
+   "type": "DIR32",
+   "sym": "?g_VoxelDrawState@@3PAXA",
+   "sym_key": "g_VoxelDrawState"
+  },
+  {
+   "off": 317,
+   "type": "DIR32",
+   "sym": "?g_VoxelDrawState@@3PAXA",
+   "sym_key": "g_VoxelDrawState"
+  },
+  {
+   "off": 366,
+   "type": "DIR32",
+   "sym": "?g_VeinholeMonsterPool@@3PAXA",
+   "sym_key": "g_VeinholeMonsterPool"
+  },
+  {
+   "off": 376,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 384,
+   "type": "DIR32",
+   "sym": "?g_VeinholeMonsterPool@@3PAXA",
+   "sym_key": "g_VeinholeMonsterPool"
+  },
+  {
+   "off": 389,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 394,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 399,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 404,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 424,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 437,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 449,
+   "type": "DIR32",
+   "sym": "?g_VeinholeMonsterPool@@3PAXA",
+   "sym_key": "g_VeinholeMonsterPool"
+  },
+  {
+   "off": 470,
+   "type": "DIR32",
+   "sym": "?g_VeinholePool@@3IA",
+   "sym_key": "g_VeinholePool"
+  },
+  {
+   "off": 483,
+   "type": "DIR32",
+   "sym": "?g_VoxelDrawState@@3PAXA",
+   "sym_key": "g_VoxelDrawState"
+  },
+  {
+   "off": 505,
+   "type": "REL32",
+   "sym": "?Reset@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::Reset"
+  },
+  {
+   "off": 513,
+   "type": "REL32",
+   "sym": "?ProcessVeinholeMonster@@YAXH@Z",
+   "sym_key": "ProcessVeinholeMonster"
+  },
+  {
+   "off": 524,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 529,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 534,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 539,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 563,
+   "type": "REL32",
+   "sym": "?PosToIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::PosToIndex"
+  },
+  {
+   "off": 569,
+   "type": "DIR32",
+   "sym": "?g_VeinholeMonsterPool@@3PAXA",
+   "sym_key": "g_VeinholeMonsterPool"
+  },
+  {
+   "off": 601,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 606,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x747620 UnitTypeClass::LoadFromINI -> UnitTypeClass
+[conv] 0x749b70 VoxelAnimClass::ProcessAnim -> VoxelAnimClass
+[conv] 0x74c420 VeinholeMonsterClass::Construct -> VeinholeMonsterClass
+[conv] 0x74c5b0 VeinholeMonsterClass::Constructor -> VeinholeMonsterClass
+[conv] 0x74c9f0 VeinholeMonsterClass::DestroyVeinholeMonster -> VeinholeMonsterClass
+[conv] 0x74d490 TacticalClass::Render -> TacticalClass
+[conv] 0x74de90 InitializeVeinholeSystem -> _addr_74
+[conv] 0x74e1c0 ObjectClass::ProcessVeinholeMonster -> ObjectClass
+[conv] 0x74e6b0 RulesClass::Reset -> RulesClass
+[conv] 0x74fdc0 GetModuleVersion -> _addr_74
+[conv] 0x750ac0 ComputeAudioPosition -> _addr_75
+[conv] 0x7513f0 Audio::LoadSoundINI -> Audio
+[conv] 0x752290 Audio_Init_752290 -> Audio_Init
+[conv] 0x752370 ThemeClass::ClearQueues -> ThemeClass
+[conv] 0x752480 UpdateThemeManager -> _addr_75
+[conv] 0x752700 VoxClass::FindAndPlay -> VoxClass
+[conv] 0x752a40 ClearThemeQueuePlaylist -> _addr_75
+[conv] 0x752ad0 Audio_Init_752AD0 -> Audio_Init
+[conv] 0x754cb0 Voxel::Projection_Setup -> Voxel
+[conv] 0x759260 Stream::InitializeBinkAudio -> Stream
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitTypeClass            rc=2
+[era] VoxelAnimClass           rc=2
+[era] VeinholeMonsterClass     rc=2
+[era] TacticalClass            rc=2
+[era] _addr_74                 rc=2
+[era] ObjectClass              rc=2
+[era] RulesClass               rc=2
+[era] _addr_75                 rc=2
+[era] Audio                    rc=2
+[era] Audio_Init               rc=2
+[era] ThemeClass               rc=2
+[era] VoxClass                 rc=2
+[era] Voxel                    rc=2
+[era] Stream                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x74c420   MISMATCH         VeinholeMonsterClass::Construct
+[diff] 0x74de90   MISMATCH         InitializeVeinholeSystem
+[ledger] 0x747620 UnitTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x749b70 VoxelAnimClass::ProcessAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74c420 VeinholeMonsterClass::Construct -> NG (attempt 2)
+[ledger] 0x74c5b0 VeinholeMonsterClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74c9f0 VeinholeMonsterClass::DestroyVeinholeMonster -> COMPILE_FAIL (attempt 5)
+[ledger] 0x74d490 TacticalClass::Render -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74de90 InitializeVeinholeSystem -> NG (attempt 7)
+[ledger] 0x74e1c0 ObjectClass::ProcessVeinholeMonster -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74e6b0 RulesClass::Reset -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74fdc0 GetModuleVersion -> COMPILE_FAIL (attempt 8)
+[ledger] 0x750ac0 ComputeAudioPosition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7513f0 Audio::LoadSoundINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x752290 Audio_Init_752290 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x752370 ThemeClass::ClearQueues -> COMPILE_FAIL (attempt 5)
+[ledger] 0x752480 UpdateThemeManager -> COMPILE_FAIL (attempt 5)
+[ledger] 0x752700 VoxClass::FindAndPlay -> COMPILE_FAIL (attempt 5)
+[ledger] 0x752a40 ClearThemeQueuePlaylist -> COMPILE_FAIL (attempt 5)
+[ledger] 0x752ad0 Audio_Init_752AD0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x754cb0 Voxel::Projection_Setup -> COMPILE_FAIL (attempt 5)
+[ledger] 0x759260 Stream::InitializeBinkAudio -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p32\batch_report.json
