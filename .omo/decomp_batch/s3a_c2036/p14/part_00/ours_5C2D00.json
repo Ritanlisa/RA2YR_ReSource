@@ -1,0 +1,57 @@
+{
+ "symbol": "?MPCooperative_Play@@YGHHHH@Z",
+ "sym_key": "Unnamed::MPCooperative_Play",
+ "size": 229,
+ "link_base": 0,
+ "bytes_hex": "518b44240c33d2538b5c24148b481033c085c9895424047e10803c1800740142403bc17cf489542404a100000000555733ed33ff85c0762e5633f68b0d000000008b118b0c1685c9740ae80000000084c0740145a1000000004783c6103bf872da8b5424105ea1000000005f3bd55d7c268b80e4110000803c1800744e8b4c24108b51103bc273438a4c03014084c9743a3bc272f3eb348b90e41100008d88860000004a526a00e800000000803c180074198b0d000000008b89e41100004033d2f7f18bc2803c180075f38b54240cc60418018b0d000000005b8994818011000059c20c00",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?HouseClass_Count@@3IA",
+   "sym_key": "HouseClass_Count"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?HouseClass_Count@@3IA",
+   "sym_key": "HouseClass_Count"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  }
+ ]
+}

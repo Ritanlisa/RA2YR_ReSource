@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x5be6d0 MouseClass::DrawCursor -> MouseClass
+[conv] 0x5c07d0 CreateMovie -> _addr_5C
+[conv] 0x5c2d00 MPCooperative_Play -> MPCooperative
+[conv] 0x5c2ef0 MPCooperative::GetPlayerCount -> MPCooperative
+[conv] 0x5c5510 _DynamicVectorClass_PAUNodeNameType::Remove -> _DynamicVectorClass_PAUNodeNameType
+[conv] 0x5c5630 _VectorClass_PAVCoopCampaignClass::Release -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5d0b20 _VectorClass_PAVMSTextEntry::Release -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d0c60 _DynamicVectorClass_PAVMSTextEntry::AllocCopyData_4B -> _DynamicVectorClass_PAVMSTextEntry
+[conv] 0x5d0d80 _VectorClass_PAVMapSelection::Release -> _VectorClass_PAVMapSelection
+[conv] 0x5d0ec0 _DynamicVectorClass_PAVMapSelection::AllocCopyData_4B_0 -> _DynamicVectorClass_PAVMapSelection
+[conv] 0x5d0fe0 _VectorClass_PAVMapStage::AllocCopyData_4B -> _VectorClass_PAVMapStage
+[conv] 0x5d1120 _DynamicVectorClass_PAVMapStage::Release -> _DynamicVectorClass_PAVMapStage
+[conv] 0x5d1240 _VectorClass_PAVMSAnimEntry::Release -> _VectorClass_PAVMSAnimEntry
+[conv] 0x5d1380 _DynamicVectorClass_PAVMSAnimEntry::AllocCopyData_4B_0 -> _DynamicVectorClass_PAVMSAnimEntry
+[conv] 0x5d15e0 _DynamicVectorClass_PAVMSSfxEntry::AllocCopyData_4B_1 -> _DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x5d1e70 DSurface::RenderToSurface -> DSurface
+[conv] 0x5d2820 _VectorClass_PAVMSAnim::SetCapacity -> _VectorClass_PAVMSAnim
+[conv] 0x5d2a80 _VectorClass_PAVMSSfx::Release -> _VectorClass_PAVMSSfx
+[conv] 0x5d2bc0 _DynamicVectorClass_PAVMSSfx::SetCapacity -> _DynamicVectorClass_PAVMSSfx
+[conv] 0x5d5190 _VectorClass_PAUHWND::Release -> _VectorClass_PAUHWND
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MouseClass               rc=2
+[era] _addr_5C                 rc=2
+[era] MPCooperative            rc=2
+[era] _DynamicVectorClass_PAUNodeNameType rc=0
+[era] _VectorClass_PAVCoopCampaignClass rc=0
+[era] _VectorClass_PAVMSTextEntry rc=0
+[era] _DynamicVectorClass_PAVMSTextEntry rc=0
+[era] _VectorClass_PAVMapSelection rc=0
+[era] _DynamicVectorClass_PAVMapSelection rc=0
+[era] _VectorClass_PAVMapStage rc=0
+[era] _DynamicVectorClass_PAVMapStage rc=0
+[era] _VectorClass_PAVMSAnimEntry rc=0
+[era] _DynamicVectorClass_PAVMSAnimEntry rc=0
+[era] _DynamicVectorClass_PAVMSSfxEntry rc=0
+[era] DSurface                 rc=0
+[era] _VectorClass_PAVMSAnim   rc=0
+[era] _VectorClass_PAVMSSfx    rc=0
+[era] _DynamicVectorClass_PAVMSSfx rc=0
+[era] _VectorClass_PAUHWND     rc=0
+=== diffasm byte-compare ===
+[diff] 0x5c2d00   MISMATCH         MPCooperative_Play
+[diff] 0x5c5510   MISMATCH         _DynamicVectorClass_PAUNodeNameType::Remove
+[diff] 0x5c5630   MISMATCH         _VectorClass_PAVCoopCampaignClass::Release
+[diff] 0x5d0b20   MISMATCH         _VectorClass_PAVMSTextEntry::Release
+[diff] 0x5d0c60   MISMATCH         _DynamicVectorClass_PAVMSTextEntry::AllocCopyData_4B
+[diff] 0x5d0d80   MISMATCH         _VectorClass_PAVMapSelection::Release
+[diff] 0x5d0ec0   MISMATCH         _DynamicVectorClass_PAVMapSelection::AllocCopyData_4B_0
+[diff] 0x5d0fe0   MISMATCH         _VectorClass_PAVMapStage::AllocCopyData_4B
+[diff] 0x5d1120   MISMATCH         _DynamicVectorClass_PAVMapStage::Release
+[diff] 0x5d1240   MISMATCH         _VectorClass_PAVMSAnimEntry::Release
+[diff] 0x5d1380   MISMATCH         _DynamicVectorClass_PAVMSAnimEntry::AllocCopyData_4B_0
+[diff] 0x5d15e0   MISMATCH         _DynamicVectorClass_PAVMSSfxEntry::AllocCopyData_4B_1
+[diff] 0x5d1e70   MISMATCH         DSurface::RenderToSurface
+[diff] 0x5d2820   MISMATCH         _VectorClass_PAVMSAnim::SetCapacity
+[diff] 0x5d2a80   MISMATCH         _VectorClass_PAVMSSfx::Release
+[diff] 0x5d2bc0   MISMATCH         _DynamicVectorClass_PAVMSSfx::SetCapacity
+[diff] 0x5d5190   MISMATCH         _VectorClass_PAUHWND::Release
+[ledger] 0x5be6d0 MouseClass::DrawCursor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c07d0 CreateMovie -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c2d00 MPCooperative_Play -> NG (attempt 2)
+[ledger] 0x5c2ef0 MPCooperative::GetPlayerCount -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c5510 _DynamicVectorClass_PAUNodeNameType::Remove -> NG (attempt 2)
+[ledger] 0x5c5630 _VectorClass_PAVCoopCampaignClass::Release -> NG (attempt 2)
+[ledger] 0x5d0b20 _VectorClass_PAVMSTextEntry::Release -> NG (attempt 2)
+[ledger] 0x5d0c60 _DynamicVectorClass_PAVMSTextEntry::AllocCopyData_4B -> NG (attempt 2)
+[ledger] 0x5d0d80 _VectorClass_PAVMapSelection::Release -> NG (attempt 2)
+[ledger] 0x5d0ec0 _DynamicVectorClass_PAVMapSelection::AllocCopyData_4B_0 -> NG (attempt 2)
+[ledger] 0x5d0fe0 _VectorClass_PAVMapStage::AllocCopyData_4B -> NG (attempt 2)
+[ledger] 0x5d1120 _DynamicVectorClass_PAVMapStage::Release -> NG (attempt 2)
+[ledger] 0x5d1240 _VectorClass_PAVMSAnimEntry::Release -> NG (attempt 2)
+[ledger] 0x5d1380 _DynamicVectorClass_PAVMSAnimEntry::AllocCopyData_4B_0 -> NG (attempt 2)
+[ledger] 0x5d15e0 _DynamicVectorClass_PAVMSSfxEntry::AllocCopyData_4B_1 -> NG (attempt 2)
+[ledger] 0x5d1e70 DSurface::RenderToSurface -> NG (attempt 2)
+[ledger] 0x5d2820 _VectorClass_PAVMSAnim::SetCapacity -> NG (attempt 2)
+[ledger] 0x5d2a80 _VectorClass_PAVMSSfx::Release -> NG (attempt 2)
+[ledger] 0x5d2bc0 _DynamicVectorClass_PAVMSSfx::SetCapacity -> NG (attempt 2)
+[ledger] 0x5d5190 _VectorClass_PAUHWND::Release -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 17
+ },
+ "pathologies": {
+  "codegen_shape": 16,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p14\batch_report.json
