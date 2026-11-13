@@ -1,0 +1,11 @@
+{
+ "addr": "0x752340",
+ "name": "Audio_Cleanup",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x752340",
+ "bytes_hex": "e82b0000008b0dccd4b10085c9741ae8ec5bcbff8b0dccd4b100e83157cbffc705ccd4b10000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

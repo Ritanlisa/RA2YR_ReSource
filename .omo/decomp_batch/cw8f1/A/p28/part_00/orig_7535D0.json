@@ -1,0 +1,11 @@
+{
+ "addr": "0x7535D0",
+ "name": "WTFMode_Cleanup",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7535D0",
+ "bytes_hex": "a1c4d4b10085c07411c7405002000000c705c4d4b100000000008b0dccd4b10085c97405e84749cbffe872edffffc70528d4b10000000000c705d8d3b10000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

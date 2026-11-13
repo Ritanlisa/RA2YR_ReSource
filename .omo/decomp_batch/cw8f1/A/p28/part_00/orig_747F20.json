@@ -1,0 +1,11 @@
+{
+ "addr": "0x747F20",
+ "name": "UnitTypeClass::GetGameplayValue",
+ "size": 12,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x747F20",
+ "bytes_hex": "a1e07188008b80cc160000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

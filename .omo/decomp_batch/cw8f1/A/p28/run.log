@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x747f20 UnitTypeClass::GetGameplayValue -> UnitTypeClass
+[conv] 0x7491a0 sub_7491A0 -> _addr_74
+[conv] 0x749370 sub_749370 -> _addr_74
+[conv] 0x74aa10 VoxelAnimClass::SaveLoad_Prefix_0 -> VoxelAnimClass
+[conv] 0x74ab70 sub_74AB70 -> _addr_74
+[conv] 0x74ad40 sub_74AD40 -> _addr_74
+[conv] 0x74c190 sub_74C190 -> _addr_74
+[conv] 0x74c360 sub_74C360 -> _addr_74
+[conv] 0x74ef00 VeinholeMonsterClass::CheckStatus -> VeinholeMonsterClass
+[conv] 0x750110 sub_750110 -> _addr_75
+[conv] 0x7502e0 sub_7502E0 -> _addr_75
+[conv] 0x7521f0 sub_7521F0 -> _addr_75
+[conv] 0x752340 Audio_Cleanup -> Audio
+[conv] 0x752b40 Audio_Cleanup_752B40 -> Audio_Cleanup
+[conv] 0x7535d0 WTFMode_Cleanup -> WTFMode
+[conv] 0x754910 sub_754910 -> _addr_75
+[conv] 0x754ae0 sub_754AE0 -> _addr_75
+[conv] 0x7559d0 sub_7559D0 -> _addr_75
+[conv] 0x758f90 sub_758F90 -> _addr_75
+[conv] 0x759160 sub_759160 -> _addr_75
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitTypeClass            rc=0
+[era] _addr_74                 rc=0
+[era] VoxelAnimClass           rc=0
+[era] VeinholeMonsterClass     rc=0
+[era] _addr_75                 rc=0
+[era] Audio                    rc=0
+[era] Audio_Cleanup            rc=0
+[era] WTFMode                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x747f20   MATCH            UnitTypeClass::GetGameplayValue
+[diff] 0x7491a0   MATCH            sub_7491A0
+[diff] 0x749370   MATCH            sub_749370
+[diff] 0x74ab70   MATCH            sub_74AB70
+[diff] 0x74ad40   MATCH            sub_74AD40
+[diff] 0x74c190   MATCH            sub_74C190
+[diff] 0x74c360   MATCH            sub_74C360
+[diff] 0x74aa10   MATCH            VoxelAnimClass::SaveLoad_Prefix_0
+[diff] 0x74ef00   MATCH            VeinholeMonsterClass::CheckStatus
+[diff] 0x750110   MATCH            sub_750110
+[diff] 0x7502e0   MATCH            sub_7502E0
+[diff] 0x7521f0   MATCH            sub_7521F0
+[diff] 0x754910   MATCH            sub_754910
+[diff] 0x754ae0   MATCH            sub_754AE0
+[diff] 0x7559d0   MATCH            sub_7559D0
+[diff] 0x758f90   MATCH            sub_758F90
+[diff] 0x759160   MATCH            sub_759160
+[diff] 0x752340   MATCH            Audio_Cleanup
+[diff] 0x752b40   MATCH            Audio_Cleanup_752B40
+[diff] 0x7535d0   MATCH            WTFMode_Cleanup
+[ledger] 0x747f20 UnitTypeClass::GetGameplayValue -> OK (attempt 3)
+[ledger] 0x7491a0 sub_7491A0 -> OK (attempt 2)
+[ledger] 0x749370 sub_749370 -> OK (attempt 3)
+[ledger] 0x74aa10 VoxelAnimClass::SaveLoad_Prefix_0 -> OK (attempt 2)
+[ledger] 0x74ab70 sub_74AB70 -> OK (attempt 2)
+[ledger] 0x74ad40 sub_74AD40 -> OK (attempt 3)
+[ledger] 0x74c190 sub_74C190 -> OK (attempt 2)
+[ledger] 0x74c360 sub_74C360 -> OK (attempt 3)
+[ledger] 0x74ef00 VeinholeMonsterClass::CheckStatus -> OK (attempt 3)
+[ledger] 0x750110 sub_750110 -> OK (attempt 2)
+[ledger] 0x7502e0 sub_7502E0 -> OK (attempt 3)
+[ledger] 0x7521f0 sub_7521F0 -> OK (attempt 3)
+[ledger] 0x752340 Audio_Cleanup -> OK (attempt 3)
+[ledger] 0x752b40 Audio_Cleanup_752B40 -> OK (attempt 2)
+[ledger] 0x7535d0 WTFMode_Cleanup -> OK (attempt 2)
+[ledger] 0x754910 sub_754910 -> OK (attempt 2)
+[ledger] 0x754ae0 sub_754AE0 -> OK (attempt 3)
+[ledger] 0x7559d0 sub_7559D0 -> OK (attempt 2)
+[ledger] 0x758f90 sub_758F90 -> OK (attempt 2)
+[ledger] 0x759160 sub_759160 -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p28\batch_report.json
