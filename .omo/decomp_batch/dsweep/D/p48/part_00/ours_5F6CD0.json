@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsCrushable@TechnoClass@@QAE_NPAPAH@Z",
+ "sym_key": "TechnoClass::IsCrushable",
+ "size": 192,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ff745f8b0757ff90840000008a88290d000084c9744c85f67448f646140174428b0e56ff91840000008a882a0d000084c9752f8b1656ff522c83f80674248b8f1c02000056e80000000084c075148b0656ff906001000084c075075fb0015ec204008b0e56ff91880000008a882d02000084c9743b85f67437f646140174318b86a402000085c075278b8f1c02000056e80000000084c075178b1656ff926001000084c0750a5fb8010000005ec204005f33c05ec20400",
+ "relocs": [
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  }
+ ]
+}

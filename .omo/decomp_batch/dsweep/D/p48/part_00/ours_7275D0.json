@@ -1,0 +1,111 @@
+{
+ "symbol": "?Process@TriggerClass@@QAEHXZ",
+ "sym_key": "TriggerClass::Process",
+ "size": 233,
+ "link_base": 0,
+ "bytes_hex": "51a10000000053558be950e80000000033db8944240885c00f8ec700000056578b0d0000000053518bcde80000000033d28bf08a15000000005652e80000000083c40885c00f848200000033c056a00000000050e80000000083c40885c0746da10000000033ff85c076478b0d00000000568b1183c22452e80000000083c40885c07423a100000000473bf87324a100000000568b0cb883c12451e80000000083c40885c075dd8b15000000008b04baeb1d68b4000000e80000000083c40485c0740a568bc8e800000000eb0233c08b085550ff51648b4c2410433bd90f8c3dffffff5f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?aTriggers@@3HA",
+   "sym_key": "aTriggers"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?aTriggers@@3HA",
+   "sym_key": "aTriggers"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_Str_none@@3EA",
+   "sym_key": "g_Str_none"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogBuffer@@3IA",
+   "sym_key": "g_MultiplayerLogBuffer"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B417C@@3IA",
+   "sym_key": "DataGlobal_8B417C"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogBuffer@@3IA",
+   "sym_key": "g_MultiplayerLogBuffer"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B417C@@3IA",
+   "sym_key": "DataGlobal_8B417C"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B417C@@3IA",
+   "sym_key": "DataGlobal_8B417C"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?Construct@TriggerTypeClass@@QAEPAV1@PAX@Z",
+   "sym_key": "TriggerTypeClass::Construct"
+  }
+ ]
+}

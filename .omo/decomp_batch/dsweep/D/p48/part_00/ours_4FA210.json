@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_4FA210@ObjectClass@@QAEHHH@Z",
+ "sym_key": "ObjectClass::sub_4FA210",
+ "size": 190,
+ "link_base": 0,
+ "bytes_hex": "8b4424085356578bd1508d4c2418e8000000008b7424108b7c24148d4c241433db3bf1895e04895e08c6460c01885e0dc70600000000744f8bcee8000000008b4424143bc38946087508895e04885e0deb358d14850000000052e80000000083c4043bc3894604741e8b4e0833c03bcbc6460d017e118b4e048b14878914818b4e08403bc172ef8b4424148b4c24143bfb894610894e14c70600000000c744241400000000740f385c2414740957e80000000083c4048bc65f5e5bc20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?AISelectTeamHouseClass@@YIHPAXHH@Z",
+   "sym_key": "AISelectTeamHouseClass"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_TeamTypeClass_const@@3PAXA",
+   "sym_key": "vt_VectorClass_TeamTypeClass_const"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?ClearAndFree3@VectorClass@@QAEXXZ",
+   "sym_key": "VectorClass::ClearAndFree3"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_TeamTypeClass_const@@3PAXA",
+   "sym_key": "vt_TypeList_TeamTypeClass_const"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_TeamTypeClass_const@@3PAXA",
+   "sym_key": "vt_VectorClass_TeamTypeClass_const"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

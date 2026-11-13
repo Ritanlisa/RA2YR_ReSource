@@ -1,0 +1,15 @@
+{
+ "symbol": "?CanDamageTarget@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::CanDamageTarget",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "51538b5c2404568bf157538b3e56ff97e40200005056ff97f80300008b3085f6742c8b0353ff502c83f82475218b0d400200008a81e917000084c0750a8a863801000084c074075f5eb0015b59c35f5e32c05b59c3",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

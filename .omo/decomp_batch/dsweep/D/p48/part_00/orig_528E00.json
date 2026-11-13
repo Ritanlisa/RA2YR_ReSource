@@ -1,0 +1,11 @@
+{
+ "addr": "0x528E00",
+ "name": "INIClass::SetWideAsHex",
+ "size": 199,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x528E00",
+ "bytes_hex": "515355568b74241c32db894c240c85f60f84a800000056e8e9152a00c1e0034050e8f1ff29008be883c40885ed0f848b000000c6450000668b066685c08bdd745e576a1025ffff00005350e83cb82a00bf707f810083c9ff33c083c40cf2aef7d12bf98bf78bd18bfb83c9fff2ae8bca4fc1e902f3a58bca83e103f3a48bfd83c9fff2ae8b442420f7d183c002498944242003cd668b008bd96685c075a45f8b4424188b4c24145550518b4c2418e8adf7ffff558ad8e882fc290083c4045e8ac35d5b59c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

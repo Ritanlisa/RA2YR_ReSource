@@ -1,0 +1,39 @@
+{
+ "symbol": "?saveConfig@ArtConfig@@QAEPADPAPBD@Z",
+ "sym_key": "ArtConfig::saveConfig",
+ "size": 230,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf15733ff8b86cc00000085c07e428b86c0000000538b08e80000000084c0751e8b86cc000000473bf87d258b8ec0000000538b0cb9e80000000084c074e28b96c00000008b04ba5f5e5b8b4004c20400558bcbe8000000008be885ed74786a08e8000000008bf883c40485ff740d538bcfe800000000896f04eb0233ff8b96c40000008b86cc0000003bc27c318a86c900000084c0750485d2753b8b8ed000000085c97e318b9ebc0000008d86bc00000003ca6a005150ff530884c074188b86cc0000008b96c00000008d4801898ecc000000893c828bc55d5f5e5bc20400",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?Load@PaletteClass@@QAEPAIXZ",
+   "sym_key": "PaletteClass::Load"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::AssignFromPtr"
+  }
+ ]
+}

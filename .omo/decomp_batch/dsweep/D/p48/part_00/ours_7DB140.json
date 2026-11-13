@@ -1,0 +1,45 @@
+{
+ "symbol": "?___mtold12@@YAFPADHH@Z",
+ "sym_key": "Unnamed::___mtold12",
+ "size": 189,
+ "link_base": 0,
+ "bytes_hex": "53558b6c2410568b74241833c0573be8bf4e400000890689460489460874408b5c24148b065689442420e80000000056e8000000008d4c24245156e80000000056e8000000000fbe138d442430895424305056e80000000083c41c434d75c48b460885c075298b0e8b46048bd98bd0c1eb10c1e010c1ea1081c7f0ff00000bd8c1e11085d2895608895e04890e74d78b4608bb0080000085c3751656e8000000008b460883c40481c7ffff000085c374ea66897e0a668bc75f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?__shl_12@@YAHPAXZZ",
+   "sym_key": "__shl_12"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?__shl_12@@YAHPAXZZ",
+   "sym_key": "__shl_12"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?__add_12@@YAHPAX0ZZ",
+   "sym_key": "__add_12"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?__shl_12@@YAHPAXZZ",
+   "sym_key": "__shl_12"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?__add_12@@YAHPAX0ZZ",
+   "sym_key": "__add_12"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?__shl_12@@YAHPAXZZ",
+   "sym_key": "__shl_12"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p48\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f6cd0 TechnoClass::IsCrushable -> TechnoClass
+[conv] 0x76eeb0 TechnoClass::ConstructWDTSelection_Create_76EEB0 -> TechnoClass
+[conv] 0x7691e0 ArtConfig::saveConfig -> ArtConfig
+[conv] 0x5cc8a0 MSBinkAnim::Load -> MSBinkAnim
+[conv] 0x70ef00 TechnoClass::CanDamageTarget -> TechnoClass
+[conv] 0x4f10e0 OpenGameUI -> _addr_4F
+[conv] 0x6ca5a0 ObjectClass::sub_6CA5A0 -> ObjectClass
+[conv] 0x685120 ObjectClass::Game_Load -> ObjectClass
+[conv] 0x7275d0 TriggerClass::Process -> TriggerClass
+[conv] 0x4f4320 GScreenClass::Vtable -> GScreenClass
+[conv] 0x770c10 Map_Remove -> Map
+[conv] 0x42c1c0 MapClass::AllocArrays -> MapClass
+[conv] 0x76ea20 ScoreText::ShowAlt -> ScoreText
+[conv] 0x4fa210 ObjectClass::sub_4FA210 -> ObjectClass
+[conv] 0x528e00 INIClass::SetWideAsHex -> INIClass
+[conv] 0x5e9ce0 AssignPlayerSide -> _addr_5E
+[conv] 0x7db140 ___mtold12 -> _addr_7D
+[conv] 0x6ec9a0 TeamClass::SelectWaypointTarget -> TeamClass
+[conv] 0x5edef0 GetPlayerTypeString -> _addr_5E
+[conv] 0x70be80 TechnoClass::ShouldSelfHealOneStep -> TechnoClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ArtConfig                rc=0
+[era] MSBinkAnim               rc=2
+[era] _addr_4F                 rc=2
+[era] ObjectClass              rc=2
+[era] TriggerClass             rc=0
+[era] GScreenClass             rc=2
+[era] Map                      rc=0
+[era] MapClass                 rc=2
+[era] ScoreText                rc=2
+[era] INIClass                 rc=0
+[era] _addr_5E                 rc=2
+[era] _addr_7D                 rc=0
+[era] TeamClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f6cd0   MISMATCH         TechnoClass::IsCrushable
+[diff] 0x70ef00   MISMATCH         TechnoClass::CanDamageTarget
+[diff] 0x7691e0   MISMATCH         ArtConfig::saveConfig
+[diff] 0x4fa210   MISMATCH         ObjectClass::sub_4FA210
+[diff] 0x7275d0   MISMATCH         TriggerClass::Process
+[diff] 0x770c10   MISMATCH         Map_Remove
+[diff] 0x528e00   MISMATCH         INIClass::SetWideAsHex
+[diff] 0x7db140   MISMATCH         ___mtold12
+[diff] 0x6ec9a0   MISMATCH         TeamClass::SelectWaypointTarget
+[ledger] 0x5f6cd0 TechnoClass::IsCrushable -> NG (attempt 1)
+[ledger] 0x76eeb0 TechnoClass::ConstructWDTSelection_Create_76EEB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7691e0 ArtConfig::saveConfig -> NG (attempt 1)
+[ledger] 0x5cc8a0 MSBinkAnim::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70ef00 TechnoClass::CanDamageTarget -> NG (attempt 1)
+[ledger] 0x4f10e0 OpenGameUI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ca5a0 ObjectClass::sub_6CA5A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x685120 ObjectClass::Game_Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7275d0 TriggerClass::Process -> NG (attempt 1)
+[ledger] 0x4f4320 GScreenClass::Vtable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x770c10 Map_Remove -> NG (attempt 1)
+[ledger] 0x42c1c0 MapClass::AllocArrays -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76ea20 ScoreText::ShowAlt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fa210 ObjectClass::sub_4FA210 -> NG (attempt 1)
+[ledger] 0x528e00 INIClass::SetWideAsHex -> NG (attempt 1)
+[ledger] 0x5e9ce0 AssignPlayerSide -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7db140 ___mtold12 -> NG (attempt 1)
+[ledger] 0x6ec9a0 TeamClass::SelectWaypointTarget -> NG (attempt 1)
+[ledger] 0x5edef0 GetPlayerTypeString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70be80 TechnoClass::ShouldSelfHealOneStep -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "codegen_shape": 3,
+  "regalloc": 2,
+  "extern_reloc": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p48\batch_report.json
