@@ -1,0 +1,69 @@
+{
+ "symbol": "?sub_4E3690@@YIPAPAXPAXH@Z",
+ "sym_key": "Unnamed::sub_4E3690",
+ "size": 290,
+ "link_base": 0,
+ "bytes_hex": "53568bf25785f68bf9744e8d46ff83f8057731ff248500000000b8db060000eb3db8dc060000eb36b8dd060000eb2fb8de060000eb28b8df060000eb21b8e0060000eb1a8bc683e807f7d81bc0251ef9ffff05e1060000eb05b8da0600005057e80000000085f68bd8744e8d46ff83f8057731ff248500000000be10050000eb3dbe13050000eb36be1e050000eb2fbe14050000eb28be1f050000eb21be20050000eb1a83ee07f7de1bf681e6defaffff81c621050000eb05bea10600006a006a0068470100005657e8000000006a005068500100005657e80000000083f8fd7c0583f8097e28a10000000085c0741a8b0850ff51288bc8e8000000008bd08bcbe8000000005f5e5bc3b8feffffff8bc8e8000000008bcb8bd05f5e5be900000000",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "$L1903",
+   "sym_key": "$L1903"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "$L1904",
+   "sym_key": "$L1904"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?FindDefault@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindDefault"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?CacheDialogInvalidate@@YIPAPAXHH@Z",
+   "sym_key": "CacheDialogInvalidate"
+  },
+  {
+   "off": 274,
+   "type": "REL32",
+   "sym": "?FindDefault@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindDefault"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?CacheDialogInvalidate@@YIPAPAXHH@Z",
+   "sym_key": "CacheDialogInvalidate"
+  }
+ ]
+}

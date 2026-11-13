@@ -1,0 +1,81 @@
+{
+ "symbol": "?ConvertHouseUnits@TActionClass@@QAEDHHPAHH@Z",
+ "sym_key": "TActionClass::ConvertHouseUnits",
+ "size": 326,
+ "link_base": 0,
+ "bytes_hex": "5355568bb1900000008b4c241832db85c975085e5d32c05bc2100081fe252300007507e800000000eb2683feff75085e5d32c05bc210008bcee80000000084c08bce7407e800000000eb05e8000000008be885ed75085e5d32c05bc21000a1640600005733ff85c07e63a1340600008b34b88b4424148b8e1c0200003bc8754385f674298b1656ff522c83f806751e8bb62005000085f674148a867315000084c075208a867415000084c07516a1340600006a00558b04b8508b08ff91d4030000b301a164060000473bf87c9d33ff85c07e6a8b15340600008b4424148b34ba3986e8150000754b85f674478b0e56ff512c83f806753c8b862c33000085c074328a887315000084c9750a8a887415000084c9741e8b15340600006a00558b04ba508b08ff91d40300008bcee800000000b301a164060000473bf87c965f5e8ac35d5bc21000",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?GetField11@Property@@QAEHXZ",
+   "sym_key": "Property::GetField11"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?IsSpecialType@BuildingType@@QAE_NXZ",
+   "sym_key": "BuildingType::IsSpecialType"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?FindOwnerHouse@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindOwnerHouse"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?FindOwner@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::FindOwner"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?UpdateBuildingAnimations@Animation@@QAEXXZ",
+   "sym_key": "Animation::UpdateBuildingAnimations"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

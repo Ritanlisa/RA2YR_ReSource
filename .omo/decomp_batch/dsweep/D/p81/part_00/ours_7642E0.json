@@ -1,0 +1,33 @@
+{
+ "symbol": "?AllocateCoordArray@DynamicVector@@QAEDHPAH@Z",
+ "sym_key": "DynamicVector::AllocateCoordArray",
+ "size": 340,
+ "link_base": 0,
+ "bytes_hex": "83ec08538b5c24105556578bf985db0f841f0100008b742420c6470c0085f689742410743b8d43ff8d6e0485c0891e896c24147c27895c24106a006a006a008bcde8000000008b44241083c50c488944241075e58b6c2414897424108bf5eb4e8d0c5b8d148d0400000052e80000000083c40485c07435891883c004894424148bf08d43ff85c07c258beb6a006a006a008bcee80000000083c60c4d75ed8b742414c744241000000000eb0233f685f6c6470c01750c5f5e5d32c05b83c408c208008b470485c074578b6f083bdd7d028beb85ed7e2e33d28b5f048bc203c38d0c3283c20c4d8b1889198b58048959048b400889410875e08b4c24208b5c241c894c24108a470d84c074158b4f0485c974076a03e800000000c74704000000008b44241089770485c00f94c2895f0888570deb070fbe473057ff108b47088b4f103bc17d038947105f5e5db0015b83c408c20800",
+ "relocs": [
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Set@Coord3D@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord3D::Set"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "?processCleanup@AbstractClass@@QAEPADD@Z",
+   "sym_key": "AbstractClass::processCleanup"
+  }
+ ]
+}

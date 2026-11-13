@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p81\part_00
+=== convert (20 addrs) ===
+[conv] 0x526e80 INIClass::ReadBase64Data -> INIClass
+[conv] 0x5d6000 sub_5D6000 -> _addr_5D
+[conv] 0x65cdd0 RawFileClass::Write2 -> RawFileClass
+[conv] 0x52a4d0 ObjectClass::sub_52A4D0 -> ObjectClass
+[conv] 0x7b2e50 UDPInterfaceClass::sub_7B2E50 -> UDPInterfaceClass
+[conv] 0x4e3690 sub_4E3690 -> _addr_4E
+[conv] 0x5d90e0 Network::QueryAddress -> Network
+[conv] 0x7642e0 DynamicVector::AllocateCoordArray -> DynamicVector
+[conv] 0x6f5ef0 DrawTacticalLine3D -> _addr_6F
+[conv] 0x610810 sub_610810 -> _addr_61
+[conv] 0x7bf240 sub_7BF240 -> _addr_7B
+[conv] 0x78da30 sub_78DA30 -> _addr_78
+[conv] 0x7d5dc6 ___crtGetEnvironmentStringsA -> _addr_7D
+[conv] 0x77dfd0 SaveCCINI -> _addr_77
+[conv] 0x46c560 BulletTypeClass::ProcessPower -> BulletTypeClass
+[conv] 0x46ccd0 CampaignClass::GetMapData -> CampaignClass
+[conv] 0x5d9220 Network::WaitForPacket -> Network
+[conv] 0x77da50 SidebarClass::FindProductionData -> SidebarClass
+[conv] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> JumpjetLocomotionClass
+[conv] 0x6e0b60 TActionClass::ConvertHouseUnits -> TActionClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] _addr_5D                 rc=2
+[era] RawFileClass             rc=2
+[era] ObjectClass              rc=2
+[era] UDPInterfaceClass        rc=2
+[era] _addr_4E                 rc=0
+[era] Network                  rc=2
+[era] DynamicVector            rc=0
+[era] _addr_6F                 rc=2
+[era] _addr_61                 rc=2
+[era] _addr_7B                 rc=0
+[era] _addr_78                 rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_77                 rc=0
+[era] BulletTypeClass          rc=0
+[era] CampaignClass            rc=2
+[era] SidebarClass             rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] TActionClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e3690   MISMATCH         sub_4E3690
+[diff] 0x7642e0   MISMATCH         DynamicVector::AllocateCoordArray
+[diff] 0x7bf240   MISMATCH         sub_7BF240
+[diff] 0x77dfd0   MISMATCH         SaveCCINI
+[diff] 0x46c560   MISMATCH         BulletTypeClass::ProcessPower
+[diff] 0x6e0b60   MISMATCH         TActionClass::ConvertHouseUnits
+[ledger] 0x526e80 INIClass::ReadBase64Data -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d6000 sub_5D6000 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65cdd0 RawFileClass::Write2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52a4d0 ObjectClass::sub_52A4D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b2e50 UDPInterfaceClass::sub_7B2E50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e3690 sub_4E3690 -> NG (attempt 1)
+[ledger] 0x5d90e0 Network::QueryAddress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7642e0 DynamicVector::AllocateCoordArray -> NG (attempt 1)
+[ledger] 0x6f5ef0 DrawTacticalLine3D -> COMPILE_FAIL (attempt 1)
+[ledger] 0x610810 sub_610810 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bf240 sub_7BF240 -> NG (attempt 1)
+[ledger] 0x78da30 sub_78DA30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d5dc6 ___crtGetEnvironmentStringsA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77dfd0 SaveCCINI -> NG (attempt 1)
+[ledger] 0x46c560 BulletTypeClass::ProcessPower -> NG (attempt 1)
+[ledger] 0x46ccd0 CampaignClass::GetMapData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d9220 Network::WaitForPacket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77da50 SidebarClass::FindProductionData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e0b60 TActionClass::ConvertHouseUnits -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 3,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p81\batch_report.json

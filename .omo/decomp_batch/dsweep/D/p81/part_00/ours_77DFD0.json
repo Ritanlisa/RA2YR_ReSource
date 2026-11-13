@@ -1,0 +1,315 @@
+{
+ "symbol": "?SaveCCINI@@YIXPAX@Z",
+ "sym_key": "Unnamed::SaveCCINI",
+ "size": 328,
+ "link_base": 0,
+ "bytes_hex": "83ec24568bf168000000008d4c2408e800000000a1000000008b0d000000006a0050680000000051b900000000e8000000008b1500000000a1000000006a0052680000000050b900000000e8000000008b0d000000008b15000000006a0051680000000052b900000000e800000000a1000000008b0d000000006a0050680000000051b900000000e8000000008b1500000000a1000000006a0052680000000050b900000000e8000000008b0d000000008b15000000006a0051680000000052b900000000e800000000a1000000008b0d000000006a0050680000000051b900000000e8000000008a1500000000a10000000052680000000050b900000000e8000000008a0d000000008b1500000000a100000000515250b900000000e8000000008d4c24046a0051b900000000e8000000008bcee8000000008d4c2404e8000000005e83c424c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?aRa2mdIni@@3PADA",
+   "sym_key": "aRa2mdIni"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Construct@RawFileClass@@QAEPAV1@H@Z",
+   "sym_key": "RawFileClass::Construct"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76234@@3IA",
+   "sym_key": "DataGlobal_B76234"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_WOnline@@3_KA",
+   "sym_key": "g_INI_Key_WOnline"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A534@@3PADA",
+   "sym_key": "DataGlobal_84A534"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B779F0@@3IA",
+   "sym_key": "DataGlobal_B779F0"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_WOnline@@3_KA",
+   "sym_key": "g_INI_Key_WOnline"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A520@@3PADA",
+   "sym_key": "DataGlobal_84A520"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B779BC@@3IA",
+   "sym_key": "DataGlobal_B779BC"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_WOnline@@3_KA",
+   "sym_key": "g_INI_Key_WOnline"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A514@@3PADA",
+   "sym_key": "DataGlobal_84A514"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7690C@@3IA",
+   "sym_key": "DataGlobal_B7690C"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_WOnline@@3_KA",
+   "sym_key": "g_INI_Key_WOnline"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A508@@3PADA",
+   "sym_key": "DataGlobal_84A508"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77784@@3IA",
+   "sym_key": "DataGlobal_B77784"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_WOnline@@3_KA",
+   "sym_key": "g_INI_Key_WOnline"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A500@@3PADA",
+   "sym_key": "DataGlobal_84A500"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B779DC@@3IA",
+   "sym_key": "DataGlobal_B779DC"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_WOnline@@3_KA",
+   "sym_key": "g_INI_Key_WOnline"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A4F0@@3PADA",
+   "sym_key": "DataGlobal_84A4F0"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B779C0@@3IA",
+   "sym_key": "DataGlobal_B779C0"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_WOnline@@3_KA",
+   "sym_key": "g_INI_Key_WOnline"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A4E0@@3PADA",
+   "sym_key": "DataGlobal_84A4E0"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 228,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76AF0@@3EA",
+   "sym_key": "DataGlobal_B76AF0"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_WOnline@@3_KA",
+   "sym_key": "g_INI_Key_WOnline"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A4D0@@3PADA",
+   "sym_key": "DataGlobal_84A4D0"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 256,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 262,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B73AD0@@3EA",
+   "sym_key": "DataGlobal_B73AD0"
+  },
+  {
+   "off": 268,
+   "type": "DIR32",
+   "sym": "?aDisplayclan@@3HA",
+   "sym_key": "aDisplayclan"
+  },
+  {
+   "off": 273,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_WOnline@@3_KA",
+   "sym_key": "g_INI_Key_WOnline"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 298,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?WriteDigest@INIClass@@QAEHHD@Z",
+   "sym_key": "INIClass::WriteDigest"
+  },
+  {
+   "off": 310,
+   "type": "REL32",
+   "sym": "?SaveObserverMode@Config@@QAEXXZ",
+   "sym_key": "Config::SaveObserverMode"
+  },
+  {
+   "off": 319,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  }
+ ]
+}
