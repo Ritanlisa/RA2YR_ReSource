@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetAudioFileName@@YIPADHPBD@Z",
+ "sym_key": "Unnamed::SetAudioFileName",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "568bf16a50528d86a400000050e80000000083c40cc686f3000000005ec3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  }
+ ]
+}

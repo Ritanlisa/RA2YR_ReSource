@@ -1,0 +1,11 @@
+{
+ "addr": "0x408080",
+ "name": "SetAudioFileName",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408080",
+ "bytes_hex": "568bf16a50528d86a400000050e83e113c0083c40cc686f3000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

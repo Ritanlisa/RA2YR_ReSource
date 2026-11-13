@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_40DA50@@YAHXZ",
+ "sym_key": "Unnamed::sub_40DA50",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "33c0c7050000000080020000a300000000a300000000c7050000000090010000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenBounds@@3IA",
+   "sym_key": "g_CreditsScreenBounds"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DSurface_WindowBounds@@3IA",
+   "sym_key": "DSurface_WindowBounds"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_886FB4@@3IA",
+   "sym_key": "DataGlobal_886FB4"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenConfig@@3IA",
+   "sym_key": "g_CreditsScreenConfig"
+  }
+ ]
+}

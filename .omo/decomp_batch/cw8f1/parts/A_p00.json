@@ -1,0 +1,142 @@
+[
+ {
+  "addr": "0x403ce0",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x403eb0",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x405be0",
+  "family": "cw8f1",
+  "size": 18,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x406730",
+  "family": "cw8f1",
+  "size": 11,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x406740",
+  "family": "cw8f1",
+  "size": 11,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x406af0",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x408080",
+  "family": "cw8f1",
+  "size": 30,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x40ad90",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x40af60",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x40b350",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x40b520",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x40c590",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x40c760",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x40cfa0",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x40d170",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x40da50",
+  "family": "cw8f1",
+  "size": 33,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x40daa0",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x40dc70",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x40ddc0",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x40df90",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ }
+]

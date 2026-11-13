@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x403ce0 sub_403CE0 -> _addr_40
+[conv] 0x403eb0 sub_403EB0 -> _addr_40
+[conv] 0x405be0 AudioController::Init -> AudioController
+[conv] 0x406730 sub_406730 -> _addr_40
+[conv] 0x406740 ___setargv -> _addr_40
+[conv] 0x406af0 sub_406AF0 -> _addr_40
+[conv] 0x408080 SetAudioFileName -> _addr_40
+[conv] 0x40ad90 sub_40AD90 -> _addr_40
+[conv] 0x40af60 sub_40AF60 -> _addr_40
+[conv] 0x40b350 sub_40B350 -> _addr_40
+[conv] 0x40b520 sub_40B520 -> _addr_40
+[conv] 0x40c590 EventClass::getEventCount -> EventClass
+[conv] 0x40c760 sub_40C760 -> _addr_40
+[conv] 0x40cfa0 sub_40CFA0 -> _addr_40
+[conv] 0x40d170 sub_40D170 -> _addr_40
+[conv] 0x40da50 sub_40DA50 -> _addr_40
+[conv] 0x40daa0 sub_40DAA0 -> _addr_40
+[conv] 0x40dc70 sub_40DC70 -> _addr_40
+[conv] 0x40ddc0 sub_40DDC0 -> _addr_40
+[conv] 0x40df90 sub_40DF90 -> _addr_40
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] AudioController          rc=0
+[era] EventClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x403ce0   MATCH            sub_403CE0
+[diff] 0x403eb0   MATCH            sub_403EB0
+[diff] 0x406730   MATCH            sub_406730
+[diff] 0x406740   MATCH            ___setargv
+[diff] 0x406af0   MATCH            sub_406AF0
+[diff] 0x408080   MATCH            SetAudioFileName
+[diff] 0x40ad90   MATCH            sub_40AD90
+[diff] 0x40af60   MATCH            sub_40AF60
+[diff] 0x40b350   MATCH            sub_40B350
+[diff] 0x40b520   MATCH            sub_40B520
+[diff] 0x40c760   MATCH            sub_40C760
+[diff] 0x40cfa0   MATCH            sub_40CFA0
+[diff] 0x40d170   MATCH            sub_40D170
+[diff] 0x40da50   MATCH            sub_40DA50
+[diff] 0x40daa0   MATCH            sub_40DAA0
+[diff] 0x40dc70   MATCH            sub_40DC70
+[diff] 0x40ddc0   MATCH            sub_40DDC0
+[diff] 0x40df90   MATCH            sub_40DF90
+[diff] 0x405be0   MATCH            AudioController::Init
+[diff] 0x40c590   MATCH            EventClass::getEventCount
+[ledger] 0x403ce0 sub_403CE0 -> OK (attempt 3)
+[ledger] 0x403eb0 sub_403EB0 -> OK (attempt 5)
+[ledger] 0x405be0 AudioController::Init -> OK (attempt 3)
+[ledger] 0x406730 sub_406730 -> OK (attempt 4)
+[ledger] 0x406740 ___setargv -> OK (attempt 4)
+[ledger] 0x406af0 sub_406AF0 -> OK (attempt 4)
+[ledger] 0x408080 SetAudioFileName -> OK (attempt 3)
+[ledger] 0x40ad90 sub_40AD90 -> OK (attempt 3)
+[ledger] 0x40af60 sub_40AF60 -> OK (attempt 4)
+[ledger] 0x40b350 sub_40B350 -> OK (attempt 3)
+[ledger] 0x40b520 sub_40B520 -> OK (attempt 3)
+[ledger] 0x40c590 EventClass::getEventCount -> OK (attempt 2)
+[ledger] 0x40c760 sub_40C760 -> OK (attempt 3)
+[ledger] 0x40cfa0 sub_40CFA0 -> OK (attempt 2)
+[ledger] 0x40d170 sub_40D170 -> OK (attempt 3)
+[ledger] 0x40da50 sub_40DA50 -> OK (attempt 3)
+[ledger] 0x40daa0 sub_40DAA0 -> OK (attempt 2)
+[ledger] 0x40dc70 sub_40DC70 -> OK (attempt 3)
+[ledger] 0x40ddc0 sub_40DDC0 -> OK (attempt 2)
+[ledger] 0x40df90 sub_40DF90 -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p00\batch_report.json

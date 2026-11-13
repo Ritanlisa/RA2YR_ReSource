@@ -1,0 +1,11 @@
+{
+ "addr": "0x406740",
+ "name": "___setargv",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x406740",
+ "bytes_hex": "c7050861810001000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
