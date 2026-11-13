@@ -1,0 +1,37 @@
+======================================================================
+PART 1/1  (5 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p32\part_00
+=== convert (5 addrs) ===
+[conv] 0x7cbec1 __lockexit -> _addr_7C
+[conv] 0x7cbeca __unlockexit -> _addr_7C
+[conv] 0x7d13f8 __initptd -> _addr_7D
+[conv] 0x7da4ef _fgetwc -> _addr_7D
+[conv] 0x7dd413 __ungetch -> _addr_7D
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x7cbec1   MATCH            __lockexit
+[diff] 0x7cbeca   MATCH            __unlockexit
+[diff] 0x7d13f8   MATCH            __initptd
+[diff] 0x7da4ef   MATCH            _fgetwc
+[diff] 0x7dd413   MATCH            __ungetch
+[ledger] 0x7cbec1 __lockexit -> OK (attempt 2)
+[ledger] 0x7cbeca __unlockexit -> OK (attempt 2)
+[ledger] 0x7d13f8 __initptd -> OK (attempt 2)
+[ledger] 0x7da4ef _fgetwc -> OK (attempt 2)
+[ledger] 0x7dd413 __ungetch -> OK (attempt 3)
+======================================================================
+{
+ "total": 5,
+ "verdicts": {
+  "MATCH": 5
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p32\batch_report.json

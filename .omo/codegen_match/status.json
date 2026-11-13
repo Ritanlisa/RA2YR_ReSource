@@ -167657,25 +167657,25 @@
   "this_as_id": false
  },
  "0x7cbec1": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+2 call 0x7cd9f5",
   "name": "__lockexit",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "__lockexit",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7cbeca": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+2 call 0x7cda56",
   "name": "__unlockexit",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "__unlockexit",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7cbed3": {
@@ -168627,14 +168627,14 @@
   "this_as_id": false
  },
  "0x7d13f8": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": "+4 mov dword ptr [eax + 0x50], 0x87cb20",
   "name": "__initptd",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "__initptd",
   "rule_violations": 2,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7d1512": {
@@ -170229,14 +170229,14 @@
   "this_as_id": false
  },
  "0x7da4ef": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+7 call 0x7cb3f9",
   "name": "_fgetwc",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "_fgetwc",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7da638": {
@@ -171434,14 +171434,14 @@
   "this_as_id": false
  },
  "0x7dd413": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "first_diff": "+9 cmp dword ptr [0x87dd70], -1",
   "name": "__ungetch",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "__ungetch",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7dd434": {

@@ -1,0 +1,15 @@
+{
+ "symbol": "?__initptd@@YAHH@Z",
+ "sym_key": "Unnamed::__initptd",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8b442404c7405000000000c7401401000000c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB20@@3EA",
+   "sym_key": "DataGlobal_87CB20"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+[
+ {
+  "addr": "0x7cbec1",
+  "family": "cw8f1",
+  "size": 9,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x7cbeca",
+  "family": "cw8f1",
+  "size": 9,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x7d13f8",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x7da4ef",
+  "family": "cw8f1",
+  "size": 35,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x7dd413",
+  "family": "cw8f1",
+  "size": 33,
+  "cls": "D_RELOC",
+  "rsub": null
+ }
+]
