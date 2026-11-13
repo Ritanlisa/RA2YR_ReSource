@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> JumpjetLocomotionClass
+[conv] 0x54e260 ObjectClass::sub_54E260 -> ObjectClass
+[conv] 0x54e3b0 UnitClass::GetExitCell -> UnitClass
+[conv] 0x54f200 EventClass::Enqueue -> EventClass
+[conv] 0x550080 ObjectClass::sub_550080 -> ObjectClass
+[conv] 0x556c00 ObjectClass::Render_Render_556C00 -> ObjectClass
+[conv] 0x557eb0 ListClass::Draw -> ListClass
+[conv] 0x5584f0 sub_5584F0 -> _addr_55
+[conv] 0x55a7d0 IUnknown::ComputeRotation -> IUnknown
+[conv] 0x55a8c0 IUnknown::ComputeScreenYOffset -> IUnknown
+[conv] 0x55ad10 IUnknown::GetSpecialValue -> IUnknown
+[conv] 0x55cc20 ScreenCapture::Frame -> ScreenCapture
+[conv] 0x55e420 Chat::ProcessMessages -> Chat
+[conv] 0x55fdb0 ScreenDlgProcOptions -> _addr_55
+[conv] 0x565800 MapClass::Destru_vt05 -> MapClass
+[conv] 0x565aa0 MapClass::InitCellVector -> MapClass
+[conv] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> MapClass
+[conv] 0x5683c0 MapClass::FillRevealBuffer -> MapClass
+[conv] 0x5687f0 MapClass::ApplyOverlayReveal -> MapClass
+[conv] 0x56c510 Terrain::ConnectivityGraph -> Terrain
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] EventClass               rc=2
+[era] ListClass                rc=2
+[era] _addr_55                 rc=2
+[era] IUnknown                 rc=2
+[era] ScreenCapture            rc=0
+[era] Chat                     rc=2
+[era] MapClass                 rc=2
+[era] Terrain                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x55cc20   MISMATCH         ScreenCapture::Frame
+[ledger] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54e260 ObjectClass::sub_54E260 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54e3b0 UnitClass::GetExitCell -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54f200 EventClass::Enqueue -> COMPILE_FAIL (attempt 4)
+[ledger] 0x550080 ObjectClass::sub_550080 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x556c00 ObjectClass::Render_Render_556C00 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x557eb0 ListClass::Draw -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5584f0 sub_5584F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55a7d0 IUnknown::ComputeRotation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55a8c0 IUnknown::ComputeScreenYOffset -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55ad10 IUnknown::GetSpecialValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55cc20 ScreenCapture::Frame -> NG (attempt 4)
+[ledger] 0x55e420 Chat::ProcessMessages -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55fdb0 ScreenDlgProcOptions -> COMPILE_FAIL (attempt 5)
+[ledger] 0x565800 MapClass::Destru_vt05 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x565aa0 MapClass::InitCellVector -> COMPILE_FAIL (attempt 4)
+[ledger] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5683c0 MapClass::FillRevealBuffer -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5687f0 MapClass::ApplyOverlayReveal -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56c510 Terrain::ConnectivityGraph -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p13\batch_report.json

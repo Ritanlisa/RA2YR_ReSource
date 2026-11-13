@@ -83032,7 +83032,7 @@
   "this_as_id": false
  },
  "0x54d9b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83394,7 +83394,7 @@
   "this_as_id": false
  },
  "0x54e260": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83418,7 +83418,7 @@
   "this_as_id": false
  },
  "0x54e3b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83861,7 +83861,7 @@
   "this_as_id": false
  },
  "0x54f200": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84179,7 +84179,7 @@
   "this_as_id": false
  },
  "0x550080": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -86284,7 +86284,7 @@
   "this_as_id": false
  },
  "0x556c00": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -86733,7 +86733,7 @@
   "status": "NG"
  },
  "0x557eb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -86992,7 +86992,7 @@
   "this_as_id": false
  },
  "0x5584f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_5584F0",
@@ -87760,7 +87760,7 @@
   "this_as_id": false
  },
  "0x55a7d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87772,7 +87772,7 @@
   "this_as_id": false
  },
  "0x55a8c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -88153,7 +88153,7 @@
   "this_as_id": false
  },
  "0x55ad10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -88746,15 +88746,15 @@
   "this_as_id": false
  },
  "0x55cc20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [0xa8ed61]",
   "name": "ScreenCapture::Frame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "ScreenCapture::Frame",
   "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x55cf10": {
@@ -88829,7 +88829,7 @@
   "this_as_id": false
  },
  "0x55e420": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89081,7 +89081,7 @@
   "this_as_id": false
  },
  "0x55fdb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "ScreenDlgProcOptions",
@@ -89483,7 +89483,7 @@
   "this_as_id": false
  },
  "0x565800": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89507,7 +89507,7 @@
   "this_as_id": false
  },
  "0x565aa0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89538,14 +89538,14 @@
   "this_as_id": false
  },
  "0x565c10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MapClass::UpdateTerrainAndWaypoints",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::UpdateTerrainAndWaypoints",
-  "rule_violations": 102,
+  "rule_violations": 89,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -89656,7 +89656,7 @@
   "this_as_id": false
  },
  "0x5683c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89668,7 +89668,7 @@
   "this_as_id": false
  },
  "0x5687f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89978,7 +89978,7 @@
   "this_as_id": false
  },
  "0x56c510": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
