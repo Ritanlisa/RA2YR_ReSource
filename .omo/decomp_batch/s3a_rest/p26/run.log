@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x50c340 HouseClass::FindBuildLocation -> HouseClass
+[conv] 0x50cbf0 HouseClass::FindSWBuilding -> HouseClass
+[conv] 0x50d610 Scenario::ProcessSidebarUnits -> Scenario
+[conv] 0x50e010 TechnoClass::Find -> TechnoClass
+[conv] 0x510220 DynamicVector::updateThreatMap -> DynamicVector
+[conv] 0x510ed0 BuildingType::FindOwnerHouse -> BuildingType
+[conv] 0x512170 HouseTypeClass::ProcessPower -> HouseTypeClass
+[conv] 0x5132f0 DynamicVectorClass::PushBack -> DynamicVectorClass
+[conv] 0x513740 TypeList::CopyConstructor -> TypeList
+[conv] 0x513c20 LocomotionClass::ProcessData -> LocomotionClass
+[conv] 0x513f40 TechnoClass::BuildTransform -> TechnoClass
+[conv] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> HoverLocomotionClass
+[conv] 0x514d90 HoverLocomotionClass::SetMovementTarget -> HoverLocomotionClass
+[conv] 0x514f70 MovementAI::MainFootClass -> MovementAI
+[conv] 0x515ed0 TechnoClass::UpdateFootFacing -> TechnoClass
+[conv] 0x5163b0 MovementAI::MarkOccupiedPathCell -> MovementAI
+[conv] 0x5164d0 MovementAI::StepFootClass -> MovementAI
+[conv] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> HoverLocomotionClass
+[conv] 0x516e10 HoverLocomotionClass::TryMoveToAdjacentCell -> HoverLocomotionClass
+[conv] 0x5172f0 LocomotionClass::ProcessMove -> LocomotionClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] Scenario                 rc=2
+[era] TechnoClass              rc=2
+[era] DynamicVector            rc=2
+[era] BuildingType             rc=2
+[era] HouseTypeClass           rc=2
+[era] DynamicVectorClass       rc=2
+[era] TypeList                 rc=2
+[era] LocomotionClass          rc=2
+[era] HoverLocomotionClass     rc=2
+[era] MovementAI               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x50c340 HouseClass::FindBuildLocation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50cbf0 HouseClass::FindSWBuilding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50d610 Scenario::ProcessSidebarUnits -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50e010 TechnoClass::Find -> COMPILE_FAIL (attempt 2)
+[ledger] 0x510220 DynamicVector::updateThreatMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x510ed0 BuildingType::FindOwnerHouse -> COMPILE_FAIL (attempt 2)
+[ledger] 0x512170 HouseTypeClass::ProcessPower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5132f0 DynamicVectorClass::PushBack -> COMPILE_FAIL (attempt 2)
+[ledger] 0x513740 TypeList::CopyConstructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x513c20 LocomotionClass::ProcessData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x513f40 TechnoClass::BuildTransform -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x514d90 HoverLocomotionClass::SetMovementTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x514f70 MovementAI::MainFootClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x515ed0 TechnoClass::UpdateFootFacing -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5163b0 MovementAI::MarkOccupiedPathCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5164d0 MovementAI::StepFootClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> COMPILE_FAIL (attempt 2)
+[ledger] 0x516e10 HoverLocomotionClass::TryMoveToAdjacentCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5172f0 LocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p26\batch_report.json
