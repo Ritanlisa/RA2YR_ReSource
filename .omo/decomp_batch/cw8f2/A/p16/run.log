@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ad570 _DynamicVectorClass_PAVCellClass::Destruct -> _DynamicVectorClass_PAVCellClass
+[conv] 0x5ad5c0 _VectorClass_N::QueryInterface -> _VectorClass_N
+[conv] 0x5ad610 _DynamicVectorClass_N::Constructor_VectorClass_double_ -> _DynamicVectorClass_N
+[conv] 0x5aff50 MechLocomotionClass::sub_5AFF50 -> MechLocomotionClass
+[conv] 0x5b1b50 MechLocomotionClass::ProcessMove -> MechLocomotionClass
+[conv] 0x5c0e10 MultiplayerBattle::sub_5C0E10 -> MultiplayerBattle
+[conv] 0x5c0fe0 MultiplayerBattle::initAI -> MultiplayerBattle
+[conv] 0x5c58f0 _DynamicVectorClass_PAUNodeNameType::Add -> _DynamicVectorClass_PAUNodeNameType
+[conv] 0x5c5940 _VectorClass_PAVCoopCampaignClass::QueryInterface -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5c5d20 FreeForAll::sub_5C5D20 -> FreeForAll
+[conv] 0x5c5e40 FreeForAll::executeTriggerActions -> FreeForAll
+[conv] 0x5c6190 MultiplayerManBattle::sub_5C6190 -> MultiplayerManBattle
+[conv] 0x5c61a0 MultiplayerManBattle::QueryInterface -> MultiplayerManBattle
+[conv] 0x5c9420 Megawealth::sub_5C9420 -> Megawealth
+[conv] 0x5c9440 Megawealth::QueryInterface -> Megawealth
+[conv] 0x5ca670 MultiplayerSiege::sub_5CA670 -> MultiplayerSiege
+[conv] 0x5cabd0 MultiplayerSiege::QueryInterface -> MultiplayerSiege
+[conv] 0x5cae60 MultiplayerSiegeDefenderTeam::sub_5CAE60 -> MultiplayerSiegeDefenderTeam
+[conv] 0x5caf10 MultiplayerSiegeDefenderTeam::QueryInterface -> MultiplayerSiegeDefenderTeam
+[conv] 0x5cb3e0 UnholyAlliance::sub_5CB3E0 -> UnholyAlliance
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVCellClass rc=0
+[era] _VectorClass_N           rc=0
+[era] _DynamicVectorClass_N    rc=0
+[era] MechLocomotionClass      rc=0
+[era] MultiplayerBattle        rc=2
+[era] _DynamicVectorClass_PAUNodeNameType rc=0
+[era] _VectorClass_PAVCoopCampaignClass rc=0
+[era] FreeForAll               rc=2
+[era] MultiplayerManBattle     rc=2
+[era] Megawealth               rc=0
+[era] MultiplayerSiege         rc=2
+[era] MultiplayerSiegeDefenderTeam rc=0
+[era] UnholyAlliance           rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ad570   MISMATCH         _DynamicVectorClass_PAVCellClass::Destruct
+[diff] 0x5ad5c0   MISMATCH         _VectorClass_N::QueryInterface
+[diff] 0x5ad610   MISMATCH         _DynamicVectorClass_N::Constructor_VectorClass_double_
+[diff] 0x5aff50   MISMATCH         MechLocomotionClass::sub_5AFF50
+[diff] 0x5b1b50   MISMATCH         MechLocomotionClass::ProcessMove
+[diff] 0x5c0e10   MISMATCH         MultiplayerBattle::sub_5C0E10
+[diff] 0x5c0fe0   MISMATCH         MultiplayerBattle::initAI
+[diff] 0x5c58f0   MISMATCH         _DynamicVectorClass_PAUNodeNameType::Add
+[diff] 0x5c5940   MISMATCH         _VectorClass_PAVCoopCampaignClass::QueryInterface
+[diff] 0x5c5d20   MISMATCH         FreeForAll::sub_5C5D20
+[diff] 0x5c5e40   MISMATCH         FreeForAll::executeTriggerActions
+[diff] 0x5c6190   MISMATCH         MultiplayerManBattle::sub_5C6190
+[diff] 0x5c61a0   MISMATCH         MultiplayerManBattle::QueryInterface
+[diff] 0x5c9420   MATCH            Megawealth::sub_5C9420
+[diff] 0x5c9440   MISMATCH         Megawealth::QueryInterface
+[diff] 0x5ca670   MISMATCH         MultiplayerSiege::sub_5CA670
+[diff] 0x5cabd0   MISMATCH         MultiplayerSiege::QueryInterface
+[diff] 0x5cae60   MATCH            MultiplayerSiegeDefenderTeam::sub_5CAE60
+[diff] 0x5caf10   MATCH            MultiplayerSiegeDefenderTeam::QueryInterface
+[diff] 0x5cb3e0   MATCH            UnholyAlliance::sub_5CB3E0
+[ledger] 0x5ad570 _DynamicVectorClass_PAVCellClass::Destruct -> NG (attempt 2)
+[ledger] 0x5ad5c0 _VectorClass_N::QueryInterface -> NG (attempt 2)
+[ledger] 0x5ad610 _DynamicVectorClass_N::Constructor_VectorClass_double_ -> NG (attempt 4)
+[ledger] 0x5aff50 MechLocomotionClass::sub_5AFF50 -> NG (attempt 4)
+[ledger] 0x5b1b50 MechLocomotionClass::ProcessMove -> NG (attempt 2)
+[ledger] 0x5c0e10 MultiplayerBattle::sub_5C0E10 -> NG (attempt 2)
+[ledger] 0x5c0fe0 MultiplayerBattle::initAI -> NG (attempt 2)
+[ledger] 0x5c58f0 _DynamicVectorClass_PAUNodeNameType::Add -> NG (attempt 2)
+[ledger] 0x5c5940 _VectorClass_PAVCoopCampaignClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x5c5d20 FreeForAll::sub_5C5D20 -> NG (attempt 2)
+[ledger] 0x5c5e40 FreeForAll::executeTriggerActions -> NG (attempt 2)
+[ledger] 0x5c6190 MultiplayerManBattle::sub_5C6190 -> NG (attempt 2)
+[ledger] 0x5c61a0 MultiplayerManBattle::QueryInterface -> NG (attempt 2)
+[ledger] 0x5c9420 Megawealth::sub_5C9420 -> OK (attempt 2)
+[ledger] 0x5c9440 Megawealth::QueryInterface -> NG (attempt 2)
+[ledger] 0x5ca670 MultiplayerSiege::sub_5CA670 -> NG (attempt 2)
+[ledger] 0x5cabd0 MultiplayerSiege::QueryInterface -> NG (attempt 4)
+[ledger] 0x5cae60 MultiplayerSiegeDefenderTeam::sub_5CAE60 -> OK (attempt 2)
+[ledger] 0x5caf10 MultiplayerSiegeDefenderTeam::QueryInterface -> OK (attempt 2)
+[ledger] 0x5cb3e0 UnholyAlliance::sub_5CB3E0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "branch_polarity": 5,
+  "const_fold": 10,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p16\batch_report.json

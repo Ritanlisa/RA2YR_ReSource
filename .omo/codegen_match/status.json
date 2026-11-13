@@ -79155,36 +79155,36 @@
   "this_as_id": false
  },
  "0x5ad570": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed480",
+  "first_diff": "+14 je 0x5ad597",
   "name": "_DynamicVectorClass_PAVCellClass::Destruct",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "CellClassVector::Destruct",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x5ad5c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7eda4c",
+  "first_diff": "+14 je 0x5ad5e7",
   "name": "_VectorClass_N::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_N::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x5ad610": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7eda4c",
+  "first_diff": "+14 je 0x5ad637",
   "name": "_DynamicVectorClass_N::Constructor_VectorClass_double_",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_N::Constructor_VectorClass_double_",
   "rule_violations": 0,
   "status": "NG",
@@ -80096,7 +80096,7 @@
   "this_as_id": false
  },
  "0x5aff50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov dword ptr [ecx], 0x7edc38",
@@ -80266,7 +80266,7 @@
   "status": "OK"
  },
  "0x5b1b50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7edc38",
@@ -83547,7 +83547,7 @@
   "this_as_id": false
  },
  "0x5c0e10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov dword ptr [ecx], 0x7ee184",
@@ -83854,7 +83854,7 @@
   "this_as_id": false
  },
  "0x5c0fe0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7ee184",
@@ -84744,24 +84744,24 @@
   "this_as_id": false
  },
  "0x5c58f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ee390",
+  "first_diff": "+14 je 0x5c5917",
   "name": "_DynamicVectorClass_PAUNodeNameType::Add",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "DynamicVectorClass_ptr_NodeNameType::Add",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x5c5940": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ee3b0",
+  "first_diff": "+14 je 0x5c5967",
   "name": "_VectorClass_PAVCoopCampaignClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "CoopCampaignVector::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
@@ -84978,7 +84978,7 @@
   "this_as_id": false
  },
  "0x5c5d20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov dword ptr [ecx], 0x7ee424",
@@ -85038,7 +85038,7 @@
   "this_as_id": false
  },
  "0x5c5e40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7ee424",
@@ -85250,7 +85250,7 @@
   "this_as_id": false
  },
  "0x5c6190": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov dword ptr [ecx], 0x7ee50c",
@@ -85262,7 +85262,7 @@
   "this_as_id": false
  },
  "0x5c61a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7ee50c",
@@ -85779,15 +85779,15 @@
   "this_as_id": false
  },
  "0x5c9420": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": "+0 mov dword ptr [ecx], 0x7ee5f4",
   "name": "Megawealth::sub_5C9420",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5C9420",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5c9430": {
@@ -85803,12 +85803,12 @@
   "this_as_id": false
  },
  "0x5c9440": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": "+3 mov dword ptr [esi], 0x7ee5f4",
+  "first_diff": "+30 mov eax, esi",
   "name": "Megawealth::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Megawealth::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
@@ -86184,7 +86184,7 @@
   "this_as_id": false
  },
  "0x5ca670": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov dword ptr [ecx], 0x7ee6fc",
@@ -86239,7 +86239,7 @@
   "this_as_id": false
  },
  "0x5cabd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7ee6fc",
@@ -86407,15 +86407,15 @@
   "this_as_id": false
  },
  "0x5cae60": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": "+0 mov dword ptr [ecx], 0x7ee7e4",
   "name": "MultiplayerSiegeDefenderTeam::sub_5CAE60",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5CAE60",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5cae70": {
@@ -86443,15 +86443,15 @@
   "this_as_id": false
  },
  "0x5caf10": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": "+3 mov dword ptr [esi], 0x7ee7e4",
   "name": "MultiplayerSiegeDefenderTeam::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "MultiplayerSiegeDefenderTeam::QueryInterface",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5caf40": {
@@ -86649,15 +86649,15 @@
   "this_as_id": false
  },
  "0x5cb3e0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": "+0 mov dword ptr [ecx], 0x7ee814",
   "name": "UnholyAlliance::sub_5CB3E0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5CB3E0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5cb3f0": {

@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_5AFF50@MechLocomotionClass@@QAEXXZ",
+ "sym_key": "MechLocomotionClass::sub_5AFF50",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "c70100000000c7410400000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?vt_MechLocomotionClass@@3PAXA",
+   "sym_key": "vt_MechLocomotionClass"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?vt_MechLocomotionClass@@3PAXA",
+   "sym_key": "vt_MechLocomotionClass"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Construct@LocomotionClass@@QAEXXZ",
+   "sym_key": "LocomotionClass::Construct"
+  }
+ ]
+}
