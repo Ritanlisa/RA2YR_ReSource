@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdateAreaConnectivityMap@ObjectClass@@QAEXPAH@Z",
+ "sym_key": "ObjectClass::UpdateAreaConnectivityMap",
+ "size": 155,
+ "link_base": 0,
+ "bytes_hex": "83ec088b44240c5355578b7c2418894c2410240133db8b2f8b57088bcd0c0103ca894424183be9895c24187d57568b77048b570c03d63bf27d3d66896c241085db66897424127c148b4c241c6a008d4424206a0a50ff510884c0740e8b5424108d049d000000004389108b47048b570c4603c23bf07cc88b0f8b57084503ca3be97cab5e8b4c24108d54241852e8000000005f5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?Update_Pathfinding_2@LayerClass@@QAEXH@Z",
+   "sym_key": "LayerClass::Update_Pathfinding_2"
+  }
+ ]
+}

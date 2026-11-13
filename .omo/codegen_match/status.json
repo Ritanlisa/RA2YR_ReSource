@@ -89668,14 +89668,14 @@
   "this_as_id": false
  },
  "0x56b0f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::sub_56B0F0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_56B0F0",
-  "rule_violations": 6,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -89870,14 +89870,14 @@
   "this_as_id": false
  },
  "0x56c510": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Terrain::ConnectivityGraph",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Terrain::ConnectivityGraph",
-  "rule_violations": 22,
+  "rule_violations": 21,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -90552,15 +90552,15 @@
   "this_as_id": false
  },
  "0x578100": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x14",
   "name": "CellSystem::UpdateVisibility",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "CellSystem::UpdateVisibility",
-  "rule_violations": 8,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 7,
+  "status": "NG",
   "this_as_id": false
  },
  "0x578290": {
@@ -90763,7 +90763,7 @@
   "this_as_id": false
  },
  "0x579620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -91242,14 +91242,14 @@
   "this_as_id": false
  },
  "0x581f90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Subzone::BuildGraph",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Subzone::BuildGraph",
-  "rule_violations": 52,
+  "rule_violations": 51,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -91372,7 +91372,7 @@
   "this_as_id": false
  },
  "0x5840c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -91562,15 +91562,15 @@
   "this_as_id": false
  },
  "0x5868a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x18",
   "name": "ObjectClass::UpdateAreaConnectivityMap",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "UpdateAreaConnectivityMap",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x586990": {
@@ -92700,14 +92700,14 @@
   "this_as_id": false
  },
  "0x58abd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Radar::CopyDataArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Radar::CopyDataArray",
-  "rule_violations": 7,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -93369,14 +93369,14 @@
   "this_as_id": false
  },
  "0x58b820": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::ComputeMapCameraBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ComputeMapCameraBounds",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -93392,15 +93392,15 @@
   "this_as_id": false
  },
  "0x58bb30": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "ScenarioClass::CopyStartPositions",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "ScenarioClass::CopyStartPositions",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x58bc20": {
@@ -93740,15 +93740,15 @@
   "this_as_id": false
  },
  "0x58ebc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 sub esp, 0xc",
   "name": "ObjectClass::BuildRandomMapTiles",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "BuildRandomMapTiles",
-  "rule_violations": 21,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 19,
+  "status": "NG",
   "this_as_id": false
  },
  "0x58ef10": {
@@ -93788,25 +93788,25 @@
   "this_as_id": false
  },
  "0x5902c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "Object_Helper",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Object_Helper",
-  "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5904b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "PlaceCabhutMap",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "PlaceCabhutMap",
-  "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5905d0": {
@@ -93954,26 +93954,26 @@
   "this_as_id": false
  },
  "0x594190": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_594190",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
   "orig_name": "sub_594190",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "PENDING",
   "this_as_id": false
  },
  "0x5942f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+3 push ebx",
   "name": "ObjectClass::sub_5942F0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_5942F0",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5943e0": {
@@ -94167,7 +94167,7 @@
   "this_as_id": false
  },
  "0x596e50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94781,14 +94781,14 @@
   "this_as_id": false
  },
  "0x5a28c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Terrain::PlaceTiberiumTrees",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Terrain::PlaceTiberiumTrees",
-  "rule_violations": 23,
+  "rule_violations": 20,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94876,13 +94876,13 @@
   "this_as_id": false
  },
  "0x5a45e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ScatterTerrainTrees",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ScatterTerrainTrees",
-  "rule_violations": 29,
+  "rule_violations": 25,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94920,14 +94920,14 @@
   "this_as_id": false
  },
  "0x5a5360": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Pathfinding::ExpandNode",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Pathfinding::ExpandNode",
-  "rule_violations": 33,
+  "rule_violations": 28,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94989,14 +94989,14 @@
   "this_as_id": false
  },
  "0x5a6c10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+9 push ebp",
   "name": "PlaceMapSeedClassBuildings",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "PlaceMapSeedClassBuildings",
-  "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5a6d80": {

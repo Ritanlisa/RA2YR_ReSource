@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x56b0f0 ObjectClass::sub_56B0F0 -> ObjectClass
+[conv] 0x56c510 Terrain::ConnectivityGraph -> Terrain
+[conv] 0x578100 CellSystem::UpdateVisibility -> CellSystem
+[conv] 0x579620 Terrain::SelectTileType -> Terrain
+[conv] 0x581f90 Subzone::BuildGraph -> Subzone
+[conv] 0x5840c0 ObjectClass::CheckMapReachability -> ObjectClass
+[conv] 0x5868a0 ObjectClass::UpdateAreaConnectivityMap -> ObjectClass
+[conv] 0x58abd0 Radar::CopyDataArray -> Radar
+[conv] 0x58b820 ObjectClass::ComputeMapCameraBounds -> ObjectClass
+[conv] 0x58bb30 ScenarioClass::CopyStartPositions -> ScenarioClass
+[conv] 0x58ebc0 ObjectClass::BuildRandomMapTiles -> ObjectClass
+[conv] 0x5902c0 Object_Helper -> Object
+[conv] 0x5904b0 PlaceCabhutMap -> _addr_59
+[conv] 0x594190 sub_594190 -> _addr_59
+[conv] 0x5942f0 ObjectClass::sub_5942F0 -> ObjectClass
+[conv] 0x596e50 RandomMap::SetupDialog -> RandomMap
+[conv] 0x5a28c0 Terrain::PlaceTiberiumTrees -> Terrain
+[conv] 0x5a45e0 ScatterTerrainTrees -> _addr_5A
+[conv] 0x5a5360 Pathfinding::ExpandNode -> Pathfinding
+[conv] 0x5a6c10 PlaceMapSeedClassBuildings -> _addr_5A
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Terrain                  rc=2
+[era] CellSystem               rc=0
+[era] Subzone                  rc=2
+[era] Radar                    rc=2
+[era] ScenarioClass            rc=0
+[era] Object                   rc=0
+[era] _addr_59                 rc=0
+[era] RandomMap                rc=2
+[era] _addr_5A                 rc=2
+[era] Pathfinding              rc=2
+=== diffasm byte-compare ===
+[diff] 0x5868a0   MISMATCH         ObjectClass::UpdateAreaConnectivityMap
+[diff] 0x58ebc0   MISMATCH         ObjectClass::BuildRandomMapTiles
+[diff] 0x5942f0   MISMATCH         ObjectClass::sub_5942F0
+[diff] 0x578100   MISMATCH         CellSystem::UpdateVisibility
+[diff] 0x58bb30   MISMATCH         ScenarioClass::CopyStartPositions
+[diff] 0x5902c0   MISMATCH         Object_Helper
+[diff] 0x5904b0   MISMATCH         PlaceCabhutMap
+[diff] 0x5a6c10   MISMATCH         PlaceMapSeedClassBuildings
+[ledger] 0x56b0f0 ObjectClass::sub_56B0F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56c510 Terrain::ConnectivityGraph -> COMPILE_FAIL (attempt 2)
+[ledger] 0x578100 CellSystem::UpdateVisibility -> NG (attempt 2)
+[ledger] 0x579620 Terrain::SelectTileType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x581f90 Subzone::BuildGraph -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5840c0 ObjectClass::CheckMapReachability -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5868a0 ObjectClass::UpdateAreaConnectivityMap -> NG (attempt 2)
+[ledger] 0x58abd0 Radar::CopyDataArray -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58b820 ObjectClass::ComputeMapCameraBounds -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58bb30 ScenarioClass::CopyStartPositions -> NG (attempt 16)
+[ledger] 0x58ebc0 ObjectClass::BuildRandomMapTiles -> NG (attempt 2)
+[ledger] 0x5902c0 Object_Helper -> NG (attempt 2)
+[ledger] 0x5904b0 PlaceCabhutMap -> NG (attempt 2)
+[ledger] 0x594190 sub_594190 -> PENDING (attempt 2)
+[ledger] 0x5942f0 ObjectClass::sub_5942F0 -> NG (attempt 2)
+[ledger] 0x596e50 RandomMap::SetupDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a28c0 Terrain::PlaceTiberiumTrees -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a45e0 ScatterTerrainTrees -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a5360 Pathfinding::ExpandNode -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a6c10 PlaceMapSeedClassBuildings -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 8,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "frame_sched": 5,
+  "extern_reloc": 1,
+  "codegen_shape": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p09\batch_report.json

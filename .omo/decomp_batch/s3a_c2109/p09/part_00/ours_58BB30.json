@@ -1,0 +1,111 @@
+{
+ "symbol": "?CopyStartPositions@ScenarioClass@@QAEPAXXZ",
+ "sym_key": "ScenarioClass::CopyStartPositions",
+ "size": 218,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c00f84cc0000008b0d14270000565789883c1100008b3d0000000033f68a873c11000084c0766b5355b840110000bdc0110000ba8a6100003d401100007c163b35142700007d0e8b882a1d00008b982e1d0000eb0433c933db890c388b0d0000000083c21083c504895c01048b3d000000008b0a33db894c2ffc8b0d000000004683c0088a993c1100008bf93bf37ca85d5b8b15dc19000089972c110000a1000000008b0dd81900005f8988301100008b1500000000a1982600005e8982341100008b0d00000000a1d8260000898138110000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

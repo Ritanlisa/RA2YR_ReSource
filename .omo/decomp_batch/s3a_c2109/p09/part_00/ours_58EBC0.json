@@ -1,0 +1,219 @@
+{
+ "symbol": "?BuildRandomMapTiles@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::BuildRandomMapTiles",
+ "size": 776,
+ "link_base": 0,
+ "bytes_hex": "a1a819000083ec1053555633db33f63bc3577e44bf0f270000a19c1900008b04b083c028508b08ff510c8b159c1900008b04b289580c8b0d9c1900008b04b189784083c0404689780489580889580ca1a81900003bf07cc18b0d000000000fafc98d41ff3bc30f8c7c0100008b350c2700008d0480c1e0048944241489442418894c24108b15182700008b14028bca8954241cc1f9100fbfe90fbffa8d0c2f3bce0f8e1f0100008bdf2bdd3bde0f8d110100008bdd2bdf3bde0f8d050100003b0d102700000f8ff90000008b0d182700008b5c013885db0f8ce70000003b1da81900000f8ddb000000a19c1900008b04988b480c4189480c8b0d9c1900008b04998b48308d70288b40383bc172258a460d84c0750485c975318b461485c07e2a8b1603c16a005056ff520884c074138b54241c8b46108d4801894e108b4e048914818b54241889542414a19c1900008b04988b484885c97511b90100000089784089684489484889484c8b48408b58488bd103d33bfa7c088bd72bd1428950483bf97d0d8b50482bcf03d18978408950488b48448b504c03d13bea7c088bd52bd14289504c3be97d0d8b504c2bcd03d189684489504c8b350c2700008b44241433dbeb0233db8b54241083e85083fa01894424140f94c14a8944241884c9895424100f849cfeffffdb05501a000083ec08dc0d00000000dc0500000000da0d601b0000da0d641b0000dcc0dd1c24e8000000008be88b44242433e883c40881e5ff00000033e8a1a819000033ff3bf80f8dcb0000008b0d9c1900008b34b98a4e1a84c975278a4e1484c97520396e0c771bc6461a018b159c1900008b0cbae80000000084c07508a1a819000047ebbe3bf374b38b063bc374098b086a0150ff11891ea1981900008d54241052689819000089742418ff501083f8ff742d8b0da81900003bc17d23493bc1890da81900007d188b0d9c190000408b1481895481fc8b0da81900003bc17ce88b462cc74628000000003bc374138a4e3584c9740c50e80000000083c404895e2c56c6463500895e30e80000000083c404e926ffffff5f5e5d5b83c410c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 331,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 440,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 490,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 499,
+   "type": "DIR32",
+   "sym": "__real@8@3ff7a3d70a3d70a3d800",
+   "sym_key": "_real@8@3ff7a3d70a3d70a3d800"
+  },
+  {
+   "off": 505,
+   "type": "DIR32",
+   "sym": "__real@8@3ffaccccccccccccd000",
+   "sym_key": "_real@8@3ffaccccccccccccd000"
+  },
+  {
+   "off": 511,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 517,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 527,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 551,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 567,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 599,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 607,
+   "type": "REL32",
+   "sym": "?BuildNodes@TileSystem@@QAEDXZ",
+   "sym_key": "TileSystem::BuildNodes"
+  },
+  {
+   "off": 616,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 643,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 653,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 671,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 684,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 692,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 706,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 720,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_Cell@@3PAXA",
+   "sym_key": "vt_VectorClass_Cell"
+  },
+  {
+   "off": 737,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 756,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

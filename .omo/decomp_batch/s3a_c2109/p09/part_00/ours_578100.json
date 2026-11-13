@@ -1,0 +1,87 @@
+{
+ "symbol": "?UpdateVisibility@CellSystem@@QAEHXZ",
+ "sym_key": "CellSystem::UpdateVisibility",
+ "size": 361,
+ "link_base": 0,
+ "bytes_hex": "83ec105556578bf98b87f40000008b973c010000898710010000c7870c010000010000008d48ffc1e00b898f140100008bcf8d441004898718010000e8000000008bf085f67462bddcfffffff686400100002074478b862c0100008b964001000024e723d589862c010000899640010000c68638010000018b0d0000000056e80000000080be20010000fe750f8b0d000000006a015156e8000000008bcfe8000000008bf085f675a38b87f40000008b8f3c010000898710010000c7870c010000010000008d50ffc1e00b8997140100008d5408048bcf899718010000e8000000008bf085f674788b6c240c8b068d4c24105156ff504833d281e500ffffff8a50058d44240c0bea6a0050896c2414e80000000033c98a8e200100000fbed03bd17430888620010000c68638010000018b0d0000000056e80000000080be20010000fe750ea1000000006a015056e8000000008bcfe8000000008bf085f6758c8bc65f5e5d83c410c3",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?CellClass__SpiralFindClosest@@YGHHHD@Z",
+   "sym_key": "CellClass__SpiralFindClosest"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAXH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 306,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 312,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 335,
+   "type": "REL32",
+   "sym": "?CellClass__SpiralFindClosest@@YGHHHD@Z",
+   "sym_key": "CellClass__SpiralFindClosest"
+  },
+  {
+   "off": 342,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

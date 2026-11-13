@@ -1,0 +1,75 @@
+{
+ "symbol": "?PlaceCabhutMap@@YGDPAH@Z",
+ "sym_key": "Unnamed::PlaceCabhutMap",
+ "size": 323,
+ "link_base": 0,
+ "bytes_hex": "83ec188b44241c5355568b58048b700c8d48048d500c8d741e01573bde8be8894c2418895424147c0c5f5e5d32c05b83c418c2040083c008894424108b4424108b7d008b008d4407013bf87d508d4c242c66897c242c51b90000000066895c2432e8000000008bf0837e44ff75158bcee80000000084c0740a8b86e400000085c074338b4424108b5500478b088d540a013bfa7cb88b5424148b4c24188b018b32438d4430013bd87c925f5e5d32c05b83c418c20400b900000000e8000000008bc8e8000000008b0d000000008bf8e80000000068200700008bd8e80000000083c40485c074148b0d00000000578b14998bc852e800000000eb0233c00fbf56260fbf4e24c1e208c1e10881c28000000081c180000000895424208d54241c894c241c8b086a005250c744243000000000ff91d80000005f5e5db0015b83c418c20400",
+ "relocs": [
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?aNeutral@@3PADA",
+   "sym_key": "aNeutral"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?FindByName@SuperWeaponTypeClass@@QAEHXZ",
+   "sym_key": "SuperWeaponTypeClass::FindByName"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?FindOwner@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::FindOwner"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?FindIndexByName@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindIndexByName"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?Construct@BuildingClass@@QAEPAV1@HH@Z",
+   "sym_key": "BuildingClass::Construct"
+  }
+ ]
+}
