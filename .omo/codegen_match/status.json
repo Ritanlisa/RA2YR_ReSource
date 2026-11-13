@@ -10694,6 +10694,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x41da20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+11 je 0x41da4f",
+  "name": "AirstrikeClass::ReassignTarget",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "AirstrikeClass::ReassignTarget",
+  "rule_violations": 5,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x41db40": {
   "attempts": 1,
   "clean": false,
@@ -26089,6 +26101,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4818e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::UpdateTiberiumGrowth",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ObjectClass::UpdateTiberiumGrowth",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x481a00": {
   "attempts": 3,
   "clean": false,
@@ -28491,6 +28515,18 @@
   "name": "TechnoTypeClass::GetByTypeAndIndex",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TechnoTypeClass::GetByTypeAndIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x48dd50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x28",
+  "name": "DiskSpace::CheckAvailable",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "DiskSpace::CheckAvailable",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -45629,6 +45665,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4cf950": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TechnoClass::GetData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TechnoClass::GetData",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4cfa70": {
   "attempts": 1,
   "clean": false,
@@ -48028,6 +48076,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e0b10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4e0c30": {
   "attempts": 1,
   "clean": true,
@@ -49244,6 +49304,18 @@
   "rule_violations": 8,
   "status": "NG",
   "this_as_id": false
+ },
+ "0x4e42a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "GameSetup::GetColorTooltip",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GameSetup::GetColorTooltip",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": true
  },
  "0x4e43c0": {
   "attempts": 6,
@@ -57198,6 +57270,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4f1720": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Options::InitDialogControls",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Options::InitDialogControls",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4f1840": {
   "attempts": 4,
   "clean": false,
@@ -61344,6 +61428,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x50fe20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass__N_18::SetCapacity",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x50ff40": {
   "attempts": 1,
   "clean": true,
@@ -63304,6 +63400,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5163b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MovementAI::MarkOccupiedPathCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MovementAI::MarkOccupiedPathCell",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x516bf0": {
   "attempts": 1,
   "clean": false,
@@ -63864,6 +63972,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryClass::ProcessIvanBombResult",
   "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x51f6e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "InfantryClass::ProcessIvanBomb",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InfantryClass::ProcessIvanBomb",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -80428,6 +80548,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x567110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+52 mov ecx, dword ptr [esi + 0xf8]",
+  "name": "CellClass::BuildPathfindingGraph",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CellClass::BuildPathfindingGraph",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x567f70": {
   "attempts": 3,
   "clean": false,
@@ -83550,6 +83682,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x597260": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 mov eax, dword ptr [esi*4 + 0x82b0bc]",
+  "name": "Skirmish::RandomizeSettings",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Skirmish::RandomizeSettings",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5975e0": {
   "attempts": 2,
   "first_diff": "+15 jl 0x5975f6",
@@ -85149,6 +85293,18 @@
   "orig_name": "Map_Delete_5ADE20",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5ae100": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 push ebp",
+  "name": "ScenarioClass::Load",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "ScenarioClass::Load",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5ae460": {
@@ -93750,6 +93906,18 @@
   "name": "MSChoiceClass::LoadFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MSChoiceClass::LoadFromINI",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5d0070": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "SessionClass::loadSettings",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SessionClass::loadSettings",
   "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -148617,6 +148785,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x71ca70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CCINIClass::LoadTypeFromINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CCINIClass::LoadTypeFromINI",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x71cb90": {
   "attempts": 1,
   "clean": false,
@@ -155611,6 +155791,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_731130",
   "rule_violations": 6,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7313a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+17 mov ecx, 0x87f7e8",
+  "name": "TacticalClass::ResetView",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TacticalClass::ResetView",
+  "rule_violations": 5,
   "status": "NG",
   "this_as_id": false
  },
@@ -164494,6 +164686,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x765840": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 push edi",
+  "name": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Campaign_WorldDominationTour_16::Release",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x765960": {
   "attempts": 1,
   "clean": false,
@@ -166285,6 +166489,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x769e30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 push edi",
+  "name": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Map_WorldDominationTour_20::Release",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x769f50": {
   "attempts": 1,
   "clean": false,
@@ -166903,6 +167119,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_rc_ptr_WDTTerritory::AddRef",
   "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x76b8c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 push edi",
+  "name": "_VectorClass_V_rc_ptr_VWDTTerritory::Release",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "VectorClass_rc_ptr_WDTTerritory::Release",
+  "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
  },
@@ -184908,6 +185136,17 @@
   "name": "_strcmp",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "_strcmp",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7cdd5a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "__setlocale_set_cat",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__setlocale_set_cat",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false

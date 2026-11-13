@@ -1,0 +1,147 @@
+{
+ "symbol": "?ResetView@TacticalClass@@QAEHXZ",
+ "sym_key": "TacticalClass::ResetView",
+ "size": 273,
+ "link_base": 0,
+ "bytes_hex": "51558be9576a00b900000000e8000000006a006a00b900000000e8000000006a00b900000000e8000000006a00b900000000e8000000006a00b900000000e800000000a16407000085c07427a1340700008b0085c07413f6401404740d8b90140200008d4dff3bd174098b4c2408e800000000a16406000033ff85c07e6d568b15340600008b34ba85f674548a868100000084c0754a8b8e140200008d45ff3bc8753da1000000008b8e1c02000085c07407e800000000eb068a81ed01000084c0741d8a868300000084c075138b1656ff924c010000c7050000000000000000a164060000473bf87c955e8b4c2408e8000000006a016800000000e80000000083c408c70500000000010000005f5d59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?SetObserverMode@TacticalClass@@QAEDH@Z",
+   "sym_key": "TacticalClass::SetObserverMode"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?SetDisplayMode@TacticalClass@@QAEPAIPAXD@Z",
+   "sym_key": "TacticalClass::SetDisplayMode"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?TogglePower2@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::TogglePower2"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?TogglePower@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::TogglePower"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?ToggleZoom@MapClass@@QAEHH@Z",
+   "sym_key": "MapClass::ToggleZoom"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?UpdateAll@SuperWeaponClass@@QAEHXZ",
+   "sym_key": "SuperWeaponClass::UpdateAll"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?InterpolateView@TacticalClass@@QAEXXZ",
+   "sym_key": "TacticalClass::InterpolateView"
+  },
+  {
+   "off": 247,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 252,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  }
+ ]
+}

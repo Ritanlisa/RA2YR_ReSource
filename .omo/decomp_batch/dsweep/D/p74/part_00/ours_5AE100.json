@@ -1,0 +1,153 @@
+{
+ "symbol": "?Load@ScenarioClass@@QAEDH@Z",
+ "sym_key": "ScenarioClass::Load",
+ "size": 293,
+ "link_base": 0,
+ "bytes_hex": "51538b5c240c568bf153e80000000084c00f84060100008d835c12000057508d4c2418c705aa0d000000000000e8000000008d4c2414510fbe4e14e8000000008d5424148bf852e80000000083c4048bcee8000000006a008d4f08e80000000084c00f84a500000068bc070000b900000000e80000000050b900000000e8000000008b47588b08e8000000008bf885ff747b8bcee800000000578d4c2410e8000000008d4c240c510fbe4e14e8000000008d54240c8bf852e80000000083c4048d47048d4c241450e8000000008d4c2414e80000000085c074268d4c2414e800000000508bcbe8000000000fbe4e145751e80000000083c408668983a03500008d54241452e80000000083c4048bcee8000000005f5eb0015b59c204005e32c05b59c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?LoadMovieDisplay@CampaignClass@@QAEDH@Z",
+   "sym_key": "CampaignClass::LoadMovieDisplay"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@CampaignClass@@QAEHPAX@Z",
+   "sym_key": "CampaignClass::DeleteAndZero"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?NotEquals@String@@QAE_NPAX@Z",
+   "sym_key": "String::NotEquals"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?unk_A83D10@@3EA",
+   "sym_key": "unk_A83D10"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?Find@StringList@@QAEHPAX@Z",
+   "sym_key": "StringList::Find"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?unk_A83D10@@3EA",
+   "sym_key": "unk_A83D10"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?Play@ThemeClass@@QAEHH@Z",
+   "sym_key": "ThemeClass::Play"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?Find@StringTable@@QAEHPAX@Z",
+   "sym_key": "StringTable::Find"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::AssignFromPtr"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?SetFileName@ScenarioClass@@QAEPADPAX@Z",
+   "sym_key": "ScenarioClass::SetFileName"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?Network_Load@@YAHHH@Z",
+   "sym_key": "Network_Load"
+  },
+  {
+   "off": 262,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?ReleaseSubobjectsAndDestruct@CampaignClass@@QAEHXZ",
+   "sym_key": "CampaignClass::ReleaseSubobjectsAndDestruct"
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "symbol": "?CheckAvailable@DiskSpace@@QAEKXZ",
+ "sym_key": "DiskSpace::CheckAvailable",
+ "size": 250,
+ "link_base": 0,
+ "bytes_hex": "83ec3056578bf1e80000000033c0a00000000050e80000000085c00f848d00000033c98a0d000000005150e8000000008bf885ff74738bcee8000000008d5424288d442430528d4c242450516a00ffd784c074558b5424248b44242089542418c744241c00000000df6c241889442418c744241c0000000083ec08dc0d00000000df6c2420dec1dc0d00000000dd1c24e80000000083c4088bce8bf8e8000000008bc75f5e83c430c3e8000000008bcee8000000008d4c24148d542410518d442410528d4c241050516a00e80000000085c075065f5e83c430c38b7c24088bce0faf7c240cc1ef0a0faf7c2410e8000000008bc75f5e83c430c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?ModuleName@@3EA",
+   "sym_key": "ModuleName"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetModuleHandleA@@YGPAXH@Z",
+   "sym_key": "GetModuleHandleA"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?ProcName@@3EA",
+   "sym_key": "ProcName"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetProcAddress@@YGHHH@Z",
+   "sym_key": "GetProcAddress"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?dbl_7E51F8@@3NA",
+   "sym_key": "dbl_7E51F8"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?dbl_7E51F0@@3NA",
+   "sym_key": "dbl_7E51F0"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?GetDiskFreeSpaceA@@YGHHPAX000@Z",
+   "sym_key": "GetDiskFreeSpaceA"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

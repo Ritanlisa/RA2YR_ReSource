@@ -1,0 +1,81 @@
+{
+ "symbol": "?BuildPathfindingGraph@CellClass@@QAEPAIXZ",
+ "sym_key": "CellClass::BuildPathfindingGraph",
+ "size": 280,
+ "link_base": 0,
+ "bytes_hex": "5355568bf133db578b46683bc3740c50e80000000083c404895e688b46703bc3740c50e80000000083c404895e708b86f40000008b8efc0000008d7c08010fafff897e6c8d14bd0000000052e80000000083c4043bc374178d57ff8bc885d27c10c6010788590183c1044f75f4eb0233c08946688b466c8d0480d1e050e80000000083c4048d8eec00000089467051b928010000e80000000033c08dbe880000008d4801b801000000d3e083c7188be80fafe88b86f40000000faf86fc000000c1e00299f7fd89078bc183f8037cd2538bcee8000000008bcee8000000008bcee800000000bf020000008daebc0000008b550055ff520c8bc78bce504fe80000000083ed183bfb7de7b928010000e8000000005f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?setOverlayType@CellClass@@QAEHH@Z",
+   "sym_key": "CellClass::setOverlayType"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?PostProcessReveal@MapClass@@QAEHD@Z",
+   "sym_key": "MapClass::PostProcessReveal"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?ProcessRegion@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::ProcessRegion"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?ConnectivityGraph@Terrain@@QAEHXZ",
+   "sym_key": "Terrain::ConnectivityGraph"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?BuildGraph@Subzone@@QAEHH@Z",
+   "sym_key": "Subzone::BuildGraph"
+  },
+  {
+   "off": 266,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?AllocArrays@MapClass@@QAEPAIXZ",
+   "sym_key": "MapClass::AllocArrays"
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p74\part_00
+=== convert (20 addrs) ===
+[conv] 0x567110 CellClass::BuildPathfindingGraph -> CellClass
+[conv] 0x51f6e0 InfantryClass::ProcessIvanBomb -> InfantryClass
+[conv] 0x5d0070 SessionClass::loadSettings -> SessionClass
+[conv] 0x765840 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Release -> _VectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x769e30 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Release -> _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76b8c0 _VectorClass_V_rc_ptr_VWDTTerritory::Release -> _VectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x597260 Skirmish::RandomizeSettings -> Skirmish
+[conv] 0x4e42a0 GameSetup::GetColorTooltip -> GameSetup
+[conv] 0x7313a0 TacticalClass::ResetView -> TacticalClass
+[conv] 0x4cf950 TechnoClass::GetData -> TechnoClass
+[conv] 0x4818e0 ObjectClass::UpdateTiberiumGrowth -> ObjectClass
+[conv] 0x5163b0 MovementAI::MarkOccupiedPathCell -> MovementAI
+[conv] 0x7cdd5a __setlocale_set_cat -> _addr_7C
+[conv] 0x71ca70 CCINIClass::LoadTypeFromINI -> CCINIClass
+[conv] 0x41da20 AirstrikeClass::ReassignTarget -> AirstrikeClass
+[conv] 0x5ae100 ScenarioClass::Load -> ScenarioClass
+[conv] 0x4f1720 Options::InitDialogControls -> Options
+[conv] 0x48dd50 DiskSpace::CheckAvailable -> DiskSpace
+[conv] 0x4e0b10 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::SetCapacity -> _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x50fe20 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::SetCapacity -> _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CellClass                rc=0
+[era] InfantryClass            rc=2
+[era] SessionClass             rc=2
+[era] _VectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VWDTTerritory rc=0
+[era] Skirmish                 rc=0
+[era] GameSetup                rc=2
+[era] TacticalClass            rc=0
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] MovementAI               rc=2
+[era] _addr_7C                 rc=2
+[era] CCINIClass               rc=2
+[era] AirstrikeClass           rc=0
+[era] ScenarioClass            rc=0
+[era] Options                  rc=2
+[era] DiskSpace                rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=2
+[era] _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x567110   MISMATCH         CellClass::BuildPathfindingGraph
+[diff] 0x765840   MISMATCH         _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Release
+[diff] 0x769e30   MISMATCH         _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Release
+[diff] 0x76b8c0   MISMATCH         _VectorClass_V_rc_ptr_VWDTTerritory::Release
+[diff] 0x597260   MISMATCH         Skirmish::RandomizeSettings
+[diff] 0x7313a0   MISMATCH         TacticalClass::ResetView
+[diff] 0x41da20   MISMATCH         AirstrikeClass::ReassignTarget
+[diff] 0x5ae100   MISMATCH         ScenarioClass::Load
+[diff] 0x48dd50   MISMATCH         DiskSpace::CheckAvailable
+[ledger] 0x567110 CellClass::BuildPathfindingGraph -> NG (attempt 1)
+[ledger] 0x51f6e0 InfantryClass::ProcessIvanBomb -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0070 SessionClass::loadSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765840 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Release -> NG (attempt 1)
+[ledger] 0x769e30 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Release -> NG (attempt 1)
+[ledger] 0x76b8c0 _VectorClass_V_rc_ptr_VWDTTerritory::Release -> NG (attempt 1)
+[ledger] 0x597260 Skirmish::RandomizeSettings -> NG (attempt 1)
+[ledger] 0x4e42a0 GameSetup::GetColorTooltip -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7313a0 TacticalClass::ResetView -> NG (attempt 1)
+[ledger] 0x4cf950 TechnoClass::GetData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4818e0 ObjectClass::UpdateTiberiumGrowth -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5163b0 MovementAI::MarkOccupiedPathCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cdd5a __setlocale_set_cat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71ca70 CCINIClass::LoadTypeFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41da20 AirstrikeClass::ReassignTarget -> NG (attempt 1)
+[ledger] 0x5ae100 ScenarioClass::Load -> NG (attempt 1)
+[ledger] 0x4f1720 Options::InitDialogControls -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48dd50 DiskSpace::CheckAvailable -> NG (attempt 1)
+[ledger] 0x4e0b10 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50fe20 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "codegen_shape": 4,
+  "branch_polarity": 1,
+  "regalloc": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p74\batch_report.json
