@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x710af0 TechnoTypeClass::ReadINI -> TechnoTypeClass
+[conv] 0x711ae0 TechnoTypeClass::DTOR -> TechnoTypeClass
+[conv] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> TeleportLocomotionClass
+[conv] 0x71bb90 TerrainClass::Construct -> TerrainClass
+[conv] 0x722af0 BuildingClass::AddOccupancy -> BuildingClass
+[conv] 0x7241a0 Tooltip::Enable -> Tooltip
+[conv] 0x724ad0 ToolTipClass::initString -> ToolTipClass
+[conv] 0x72a4a0 TextLabelClass::DrawTypewriterText -> TextLabelClass
+[conv] 0x72b2f0 LoadingScreen::GetBackgroundImage -> LoadingScreen
+[conv] 0x72b310 LoadingScreen::GetOverlayImage -> LoadingScreen
+[conv] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> CampaignScore
+[conv] 0x72dfb0 InitLoadingScreenResources -> _addr_72
+[conv] 0x731d00 Selection::SetCurrent -> Selection
+[conv] 0x732d10 TacticalClass::CollectSelectedIDs -> TacticalClass
+[conv] 0x733cd0 ObjectClass::sub_733CD0 -> ObjectClass
+[conv] 0x733e10 SelectFactionThemeMusic -> _addr_73
+[conv] 0x734d30 WinMain::ShutdownCleanup -> WinMain
+[conv] 0x7393c0 TechnoClass::Deploy -> TechnoClass
+[conv] 0x740fd0 TechnoClass::CheckUnitFireConstraints -> TechnoClass
+[conv] 0x74c9f0 VeinholeMonsterClass::DestroyVeinholeMonster -> VeinholeMonsterClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoTypeClass          rc=2
+[era] TeleportLocomotionClass  rc=2
+[era] TerrainClass             rc=2
+[era] BuildingClass            rc=2
+[era] Tooltip                  rc=2
+[era] ToolTipClass             rc=2
+[era] TextLabelClass           rc=2
+[era] LoadingScreen            rc=2
+[era] CampaignScore            rc=2
+[era] _addr_72                 rc=2
+[era] Selection                rc=2
+[era] TacticalClass            rc=2
+[era] ObjectClass              rc=2
+[era] _addr_73                 rc=2
+[era] WinMain                  rc=2
+[era] TechnoClass              rc=2
+[era] VeinholeMonsterClass     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x710af0 TechnoTypeClass::ReadINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x711ae0 TechnoTypeClass::DTOR -> COMPILE_FAIL (attempt 7)
+[ledger] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71bb90 TerrainClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x722af0 BuildingClass::AddOccupancy -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7241a0 Tooltip::Enable -> COMPILE_FAIL (attempt 4)
+[ledger] 0x724ad0 ToolTipClass::initString -> COMPILE_FAIL (attempt 4)
+[ledger] 0x72a4a0 TextLabelClass::DrawTypewriterText -> COMPILE_FAIL (attempt 4)
+[ledger] 0x72b2f0 LoadingScreen::GetBackgroundImage -> COMPILE_FAIL (attempt 6)
+[ledger] 0x72b310 LoadingScreen::GetOverlayImage -> COMPILE_FAIL (attempt 6)
+[ledger] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> COMPILE_FAIL (attempt 4)
+[ledger] 0x72dfb0 InitLoadingScreenResources -> COMPILE_FAIL (attempt 4)
+[ledger] 0x731d00 Selection::SetCurrent -> COMPILE_FAIL (attempt 5)
+[ledger] 0x732d10 TacticalClass::CollectSelectedIDs -> COMPILE_FAIL (attempt 4)
+[ledger] 0x733cd0 ObjectClass::sub_733CD0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x733e10 SelectFactionThemeMusic -> COMPILE_FAIL (attempt 4)
+[ledger] 0x734d30 WinMain::ShutdownCleanup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7393c0 TechnoClass::Deploy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x740fd0 TechnoClass::CheckUnitFireConstraints -> COMPILE_FAIL (attempt 4)
+[ledger] 0x74c9f0 VeinholeMonsterClass::DestroyVeinholeMonster -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p20\batch_report.json
