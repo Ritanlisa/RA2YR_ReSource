@@ -1,0 +1,33 @@
+{
+ "symbol": "?Constructor@DropListClass@@QAEHXZ",
+ "sym_key": "DropListClass::Constructor",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "568bf1c70600000000e80000000085c074078bcee8000000008bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?vt_EditClass@@3PAXA",
+   "sym_key": "vt_EditClass"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?IsPrimaryInstance@COMObject@@QAEHXZ",
+   "sym_key": "COMObject::IsPrimaryInstance"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?DeactivateGlobal@COMObject@@QAEFXZ",
+   "sym_key": "COMObject::DeactivateGlobal"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Dtor@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Dtor"
+  }
+ ]
+}

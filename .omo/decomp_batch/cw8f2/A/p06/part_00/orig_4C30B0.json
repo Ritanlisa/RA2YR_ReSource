@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C30B0",
+ "name": "DropListClass::Constructor",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C30B0",
+ "bytes_hex": "568bf1c706a4817e00e832e9010084c074078bcee807e901008bcee8c0e201005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

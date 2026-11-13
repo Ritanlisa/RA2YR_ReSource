@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A4DE0",
+ "name": "CStreamClass::Constructor_VectorClass__DDSURFACEDESC___",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A4DE0",
+ "bytes_hex": "568bf18b4604c706ec5d7e0085c074178a4e0d84c9741050e8403d320083c404c74604000000008a442408c6460d00a801c7460800000000740956e81d3d320083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

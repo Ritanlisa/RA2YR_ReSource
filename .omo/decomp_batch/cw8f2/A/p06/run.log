@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x49f040 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::Destructor -> _DynamicVectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x49fce0 CounterClass::QueryInterface -> CounterClass
+[conv] 0x4a0e10 _DynamicVectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_ -> _DynamicVectorClass_UtagCONNECTDATA
+[conv] 0x4a0e60 _DynamicVectorClass_PAUIConnectionPoint::Constructor_VectorClass_IConnectionPoint___ -> _DynamicVectorClass_PAUIConnectionPoint
+[conv] 0x4a14a0 _VectorClass_UtagCONNECTDATA::QueryInterface -> _VectorClass_UtagCONNECTDATA
+[conv] 0x4a14f0 _VectorClass_PAUIConnectionPoint::QueryInterface -> _VectorClass_PAUIConnectionPoint
+[conv] 0x4a4d90 _VectorClass_PAU_DDSURFACEDESC::QueryInterface -> _VectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a4de0 _DynamicVectorClass_PAU_DDSURFACEDESC::Constructor_VectorClass__DDSURFACEDESC___ -> _DynamicVectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a8030 _VectorClass_PAVDiskLaserClass::QueryInterface -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4a8080 _DynamicVectorClass_PAVDiskLaserClass::Constructor_VectorClass_DiskLaserClass___ -> _DynamicVectorClass_PAVDiskLaserClass
+[conv] 0x4ba160 _DynamicVectorClass_PAVTechnoTypeClass::Destructor -> _DynamicVectorClass_PAVTechnoTypeClass
+[conv] 0x4ba250 _VectorClass_PAUCrossDissolveEffect::Add -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4ba2a0 _DynamicVectorClass_PAUCrossDissolveEffect::Destructor_1 -> _DynamicVectorClass_PAUCrossDissolveEffect
+[conv] 0x4c2f00 _VectorClass_PAVEBolt::QueryInterface -> _VectorClass_PAVEBolt
+[conv] 0x4c2f50 _DynamicVectorClass_PAVEBolt::Constructor_VectorClass_EBolt___ -> _DynamicVectorClass_PAVEBolt
+[conv] 0x4c30b0 DropListClass::Constructor -> DropListClass
+[conv] 0x4c4c60 _VectorClass_PAVEgoClass::QueryInterface -> _VectorClass_PAVEgoClass
+[conv] 0x4c4cb0 _DynamicVectorClass_PAVEgoClass::Constructor_VectorClass_EgoClass___ -> _DynamicVectorClass_PAVEgoClass
+[conv] 0x4c5e20 _VectorClass_PAVEMPulseClass::QueryInterface -> _VectorClass_PAVEMPulseClass
+[conv] 0x4c5e70 _DynamicVectorClass_PAVEMPulseClass::Constructor_VectorClass_EMPulseClass___ -> _DynamicVectorClass_PAVEMPulseClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAV_DynamicVectorClass_PAD rc=2
+[era] CounterClass             rc=0
+[era] _DynamicVectorClass_UtagCONNECTDATA rc=0
+[era] _DynamicVectorClass_PAUIConnectionPoint rc=0
+[era] _VectorClass_UtagCONNECTDATA rc=0
+[era] _VectorClass_PAUIConnectionPoint rc=0
+[era] _VectorClass_PAU_DDSURFACEDESC rc=0
+[era] _DynamicVectorClass_PAU_DDSURFACEDESC rc=0
+[era] _VectorClass_PAVDiskLaserClass rc=0
+[era] _DynamicVectorClass_PAVDiskLaserClass rc=0
+[era] _DynamicVectorClass_PAVTechnoTypeClass rc=0
+[era] _VectorClass_PAUCrossDissolveEffect rc=0
+[era] _DynamicVectorClass_PAUCrossDissolveEffect rc=0
+[era] _VectorClass_PAVEBolt    rc=0
+[era] _DynamicVectorClass_PAVEBolt rc=0
+[era] DropListClass            rc=0
+[era] _VectorClass_PAVEgoClass rc=0
+[era] _DynamicVectorClass_PAVEgoClass rc=0
+[era] _VectorClass_PAVEMPulseClass rc=0
+[era] _DynamicVectorClass_PAVEMPulseClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x49fce0   MATCH            CounterClass::QueryInterface
+[diff] 0x4a0e10   MISMATCH         _DynamicVectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_
+[diff] 0x4a0e60   MISMATCH         _DynamicVectorClass_PAUIConnectionPoint::Constructor_VectorClass_IConnectionPoint___
+[diff] 0x4a14a0   MISMATCH         _VectorClass_UtagCONNECTDATA::QueryInterface
+[diff] 0x4a14f0   MISMATCH         _VectorClass_PAUIConnectionPoint::QueryInterface
+[diff] 0x4a4d90   MISMATCH         _VectorClass_PAU_DDSURFACEDESC::QueryInterface
+[diff] 0x4a4de0   MISMATCH         _DynamicVectorClass_PAU_DDSURFACEDESC::Constructor_VectorClass__DDSURFACEDESC___
+[diff] 0x4a8030   MISMATCH         _VectorClass_PAVDiskLaserClass::QueryInterface
+[diff] 0x4a8080   MISMATCH         _DynamicVectorClass_PAVDiskLaserClass::Constructor_VectorClass_DiskLaserClass___
+[diff] 0x4ba160   MISMATCH         _DynamicVectorClass_PAVTechnoTypeClass::Destructor
+[diff] 0x4ba250   MISMATCH         _VectorClass_PAUCrossDissolveEffect::Add
+[diff] 0x4ba2a0   MISMATCH         _DynamicVectorClass_PAUCrossDissolveEffect::Destructor_1
+[diff] 0x4c2f00   MISMATCH         _VectorClass_PAVEBolt::QueryInterface
+[diff] 0x4c2f50   MISMATCH         _DynamicVectorClass_PAVEBolt::Constructor_VectorClass_EBolt___
+[diff] 0x4c30b0   MISMATCH         DropListClass::Constructor
+[diff] 0x4c4c60   MISMATCH         _VectorClass_PAVEgoClass::QueryInterface
+[diff] 0x4c4cb0   MISMATCH         _DynamicVectorClass_PAVEgoClass::Constructor_VectorClass_EgoClass___
+[diff] 0x4c5e20   MISMATCH         _VectorClass_PAVEMPulseClass::QueryInterface
+[diff] 0x4c5e70   MISMATCH         _DynamicVectorClass_PAVEMPulseClass::Constructor_VectorClass_EMPulseClass___
+[ledger] 0x49f040 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::Destructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49fce0 CounterClass::QueryInterface -> OK (attempt 4)
+[ledger] 0x4a0e10 _DynamicVectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_ -> NG (attempt 2)
+[ledger] 0x4a0e60 _DynamicVectorClass_PAUIConnectionPoint::Constructor_VectorClass_IConnectionPoint___ -> NG (attempt 2)
+[ledger] 0x4a14a0 _VectorClass_UtagCONNECTDATA::QueryInterface -> NG (attempt 2)
+[ledger] 0x4a14f0 _VectorClass_PAUIConnectionPoint::QueryInterface -> NG (attempt 2)
+[ledger] 0x4a4d90 _VectorClass_PAU_DDSURFACEDESC::QueryInterface -> NG (attempt 2)
+[ledger] 0x4a4de0 _DynamicVectorClass_PAU_DDSURFACEDESC::Constructor_VectorClass__DDSURFACEDESC___ -> NG (attempt 2)
+[ledger] 0x4a8030 _VectorClass_PAVDiskLaserClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4a8080 _DynamicVectorClass_PAVDiskLaserClass::Constructor_VectorClass_DiskLaserClass___ -> NG (attempt 2)
+[ledger] 0x4ba160 _DynamicVectorClass_PAVTechnoTypeClass::Destructor -> NG (attempt 2)
+[ledger] 0x4ba250 _VectorClass_PAUCrossDissolveEffect::Add -> NG (attempt 4)
+[ledger] 0x4ba2a0 _DynamicVectorClass_PAUCrossDissolveEffect::Destructor_1 -> NG (attempt 2)
+[ledger] 0x4c2f00 _VectorClass_PAVEBolt::QueryInterface -> NG (attempt 2)
+[ledger] 0x4c2f50 _DynamicVectorClass_PAVEBolt::Constructor_VectorClass_EBolt___ -> NG (attempt 2)
+[ledger] 0x4c30b0 DropListClass::Constructor -> NG (attempt 2)
+[ledger] 0x4c4c60 _VectorClass_PAVEgoClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4c4cb0 _DynamicVectorClass_PAVEgoClass::Constructor_VectorClass_EgoClass___ -> NG (attempt 2)
+[ledger] 0x4c5e20 _VectorClass_PAVEMPulseClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4c5e70 _DynamicVectorClass_PAVEMPulseClass::Constructor_VectorClass_EMPulseClass___ -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MATCH": 1,
+  "MISMATCH": 18
+ },
+ "pathologies": {
+  "branch_polarity": 17,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 5.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p06\batch_report.json

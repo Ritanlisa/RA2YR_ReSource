@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A8080",
+ "name": "Dial8Class_48::Constructor_VectorClass_DiskLaserClass___",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A8080",
+ "bytes_hex": "568bf18b4604c706fc5e7e0085c074178a4e0d84c9741050e8a00a320083c404c74604000000008a442408c6460d00a801c7460800000000740956e87d0a320083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
