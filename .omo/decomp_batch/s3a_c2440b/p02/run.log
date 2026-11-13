@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x445f80 BuildingClass::CreateUnits -> BuildingClass
+[conv] 0x447ac0 BuildingClass::GetExitCoords -> BuildingClass
+[conv] 0x448260 BuildingClass::drawFrame -> BuildingClass
+[conv] 0x449c30 BuildingClass::finalizeAnimation -> BuildingClass
+[conv] 0x44b780 BuildingClass::ProcessRepair -> BuildingClass
+[conv] 0x4500f0 TechnoClass::ProcessAutoProduction -> TechnoClass
+[conv] 0x453e20 BuildingClass::LoadFromStream -> BuildingClass
+[conv] 0x4545d0 BuildingClass::ProcessAnimationStates -> BuildingClass
+[conv] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> TechnoClass
+[conv] 0x456fb0 globalHelper_056FB0 -> _addr_45
+[conv] 0x4593a0 BuildingClass::RemoveLimpet -> BuildingClass
+[conv] 0x46b960 BulletClass::AddVector3 -> BulletClass
+[conv] 0x46d8b0 ObjectClass::sub_46D8B0 -> ObjectClass
+[conv] 0x46f6d0 Count::SetupAllCountriesLobby -> Count
+[conv] 0x471d40 CaptureManagerClass::CaptureUnit -> CaptureManagerClass
+[conv] 0x473750 CarryoverClass::sub_473750 -> CarryoverClass
+[conv] 0x473ae0 CCFileClass::Write -> CCFileClass
+[conv] 0x473c50 CCFileClass::Open -> CCFileClass
+[conv] 0x473e50 CCFileClass::Destru_vt14 -> CCFileClass
+[conv] 0x473f00 CCFileClass::Destru_vt15 -> CCFileClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] _addr_45                 rc=2
+[era] BulletClass              rc=2
+[era] ObjectClass              rc=2
+[era] Count                    rc=2
+[era] CaptureManagerClass      rc=2
+[era] CarryoverClass           rc=2
+[era] CCFileClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x445f80 BuildingClass::CreateUnits -> COMPILE_FAIL (attempt 3)
+[ledger] 0x447ac0 BuildingClass::GetExitCoords -> COMPILE_FAIL (attempt 3)
+[ledger] 0x448260 BuildingClass::drawFrame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x449c30 BuildingClass::finalizeAnimation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x44b780 BuildingClass::ProcessRepair -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4500f0 TechnoClass::ProcessAutoProduction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x453e20 BuildingClass::LoadFromStream -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4545d0 BuildingClass::ProcessAnimationStates -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x456fb0 globalHelper_056FB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4593a0 BuildingClass::RemoveLimpet -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46b960 BulletClass::AddVector3 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46d8b0 ObjectClass::sub_46D8B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46f6d0 Count::SetupAllCountriesLobby -> COMPILE_FAIL (attempt 3)
+[ledger] 0x471d40 CaptureManagerClass::CaptureUnit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473750 CarryoverClass::sub_473750 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473ae0 CCFileClass::Write -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473c50 CCFileClass::Open -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473e50 CCFileClass::Destru_vt14 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473f00 CCFileClass::Destru_vt15 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p02\batch_report.json
