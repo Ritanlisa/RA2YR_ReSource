@@ -1,0 +1,8 @@
+{
+ "symbol": "?send@IPXManagerClass@@QAEHH@Z",
+ "sym_key": "IPXManagerClass::send",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "8b514433c05685d2577e248b79148b74240c83c1143977647418403bc27d108b790483c10439776475f05f5ec2040083c8ff5f5ec20400",
+ "relocs": []
+}

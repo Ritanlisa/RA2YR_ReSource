@@ -1,0 +1,99 @@
+{
+ "symbol": "?performAction_69@PrevObjectCommandClass@@QAGPAEXZ",
+ "sym_key": "PrevObjectCommandClass::performAction_69",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "516a00b900000000e8000000006a006a00b900000000e8000000006a00b900000000e8000000006a00b900000000e800000000a10000000085c07409a1000000008b00eb0233c05650e8000000008bf085f6742f8b4c2404e8000000008b0e56ff914c0100008b4c2404e8000000006a016800000000e80000000083c4085e59c2040033c05e59c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?SetObserverMode@TacticalClass@@QAEDH@Z",
+   "sym_key": "TacticalClass::SetObserverMode"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?SetDisplayMode@TacticalClass@@QAEPAIPAXD@Z",
+   "sym_key": "TacticalClass::SetDisplayMode"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?TogglePower2@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::TogglePower2"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?TogglePower@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::TogglePower"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_ObjectClass_CurrentCount@@3IA",
+   "sym_key": "g_ObjectClass_CurrentCount"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?sub_4AA380@@YGPAEPAX@Z",
+   "sym_key": "sub_4AA380"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?UnselectAll_ClearLimboLaunchers@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::UnselectAll_ClearLimboLaunchers"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?InterpolateView@TacticalClass@@QAEXXZ",
+   "sym_key": "TacticalClass::InterpolateView"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}

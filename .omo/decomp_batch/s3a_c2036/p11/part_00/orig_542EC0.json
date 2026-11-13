@@ -1,0 +1,11 @@
+{
+ "addr": "0x542EC0",
+ "name": "IPXManagerClass::Flush",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x542EC0",
+ "bytes_hex": "568bf15733ff8b464485c07e2153558b6c24148d5e288b03558b4804e8bf8bf4ff8b46444783c3043bf87cea5d5b8b464885c0740a8b48046a01e8a18bf4ff8b464c85c0740a8b48046a01e8908bf4ff8b765085f6740a8b4e046a01e87f8bf4ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

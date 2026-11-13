@@ -1,0 +1,33 @@
+{
+ "symbol": "?Flush@IPXManagerClass@@QAEHD@Z",
+ "sym_key": "IPXManagerClass::Flush",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b464485c0762153558b6c24148d5e148b03558b4804e8000000008b46444783c3043bf872ea5d5b8b464885c0740a8b48046a01e8000000008b464c85c0740a8b48046a01e8000000008b765085f6740a8b4e046a01e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?SetRedraw@Rect@@QAEHD@Z",
+   "sym_key": "Rect::SetRedraw"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?SetRedraw@Rect@@QAEHD@Z",
+   "sym_key": "Rect::SetRedraw"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?SetRedraw@Rect@@QAEHD@Z",
+   "sym_key": "Rect::SetRedraw"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?SetRedraw@Rect@@QAEHD@Z",
+   "sym_key": "Rect::SetRedraw"
+  }
+ ]
+}

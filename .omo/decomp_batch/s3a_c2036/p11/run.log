@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x513420 _VectorClass_PBVAircraftTypeClass::SetCapacity -> _VectorClass_PBVAircraftTypeClass
+[conv] 0x513610 _DynamicVectorClass_PBVAircraftTypeClass::Release -> _DynamicVectorClass_PBVAircraftTypeClass
+[conv] 0x51f250 InfantryClass::ProcessUpdate -> InfantryClass
+[conv] 0x525110 _VectorClass_PBVAnimTypeClass::Release -> _VectorClass_PBVAnimTypeClass
+[conv] 0x525300 _DynamicVectorClass_PBVAnimTypeClass::Release -> _DynamicVectorClass_PBVAnimTypeClass
+[conv] 0x525a60 INIClass::LoadFile -> INIClass
+[conv] 0x52b9b0 BINK::Background_Setup -> BINK
+[conv] 0x536610 NextObjectCommandClass::performAction_30 -> NextObjectCommandClass
+[conv] 0x536a80 PrevObjectCommandClass::performAction_69 -> PrevObjectCommandClass
+[conv] 0x5377d0 SetView2CommandClass::performAction_172 -> SetView2CommandClass
+[conv] 0x538560 _VectorClass_PAVCCINIClass::Remove -> _VectorClass_PAVCCINIClass
+[conv] 0x53a300 LightningStorm::Strike2 -> LightningStorm
+[conv] 0x53ae50 SuperClass::LaunchPsychicDominator -> SuperClass
+[conv] 0x53c560 _VectorClass_PBVAnimClass::Release -> _VectorClass_PBVAnimClass
+[conv] 0x53c6a0 _DynamicVectorClass_PBVAnimClass::SetCapacity -> _DynamicVectorClass_PBVAnimClass
+[conv] 0x541040 IPXManagerClass::send -> IPXManagerClass
+[conv] 0x542450 IPXManagerClass::GetQueueSize -> IPXManagerClass
+[conv] 0x542520 IPXManagerClass::ProcessQueue -> IPXManagerClass
+[conv] 0x542ec0 IPXManagerClass::Flush -> IPXManagerClass
+[conv] 0x54a290 _VectorClass_PAG::Release -> _VectorClass_PAG
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVAircraftTypeClass rc=0
+[era] _DynamicVectorClass_PBVAircraftTypeClass rc=0
+[era] InfantryClass            rc=2
+[era] _VectorClass_PBVAnimTypeClass rc=0
+[era] _DynamicVectorClass_PBVAnimTypeClass rc=0
+[era] INIClass                 rc=2
+[era] BINK                     rc=2
+[era] NextObjectCommandClass   rc=0
+[era] PrevObjectCommandClass   rc=0
+[era] SetView2CommandClass     rc=2
+[era] _VectorClass_PAVCCINIClass rc=0
+[era] LightningStorm           rc=2
+[era] SuperClass               rc=2
+[era] _VectorClass_PBVAnimClass rc=0
+[era] _DynamicVectorClass_PBVAnimClass rc=0
+[era] IPXManagerClass          rc=2
+[era] _VectorClass_PAG         rc=0
+=== diffasm byte-compare ===
+[diff] 0x513420   MISMATCH         _VectorClass_PBVAircraftTypeClass::SetCapacity
+[diff] 0x513610   MISMATCH         _DynamicVectorClass_PBVAircraftTypeClass::Release
+[diff] 0x525110   MISMATCH         _VectorClass_PBVAnimTypeClass::Release
+[diff] 0x525300   MISMATCH         _DynamicVectorClass_PBVAnimTypeClass::Release
+[diff] 0x536610   MISMATCH         NextObjectCommandClass::performAction_30
+[diff] 0x536a80   MISMATCH         PrevObjectCommandClass::performAction_69
+[diff] 0x538560   MISMATCH         _VectorClass_PAVCCINIClass::Remove
+[diff] 0x53c560   MISMATCH         _VectorClass_PBVAnimClass::Release
+[diff] 0x53c6a0   MISMATCH         _DynamicVectorClass_PBVAnimClass::SetCapacity
+[diff] 0x541040   MISMATCH         IPXManagerClass::send
+[diff] 0x542450   MISMATCH         IPXManagerClass::GetQueueSize
+[diff] 0x542ec0   MISMATCH         IPXManagerClass::Flush
+[diff] 0x54a290   MISMATCH         _VectorClass_PAG::Release
+[ledger] 0x513420 _VectorClass_PBVAircraftTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x513610 _DynamicVectorClass_PBVAircraftTypeClass::Release -> NG (attempt 2)
+[ledger] 0x51f250 InfantryClass::ProcessUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x525110 _VectorClass_PBVAnimTypeClass::Release -> NG (attempt 2)
+[ledger] 0x525300 _DynamicVectorClass_PBVAnimTypeClass::Release -> NG (attempt 2)
+[ledger] 0x525a60 INIClass::LoadFile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52b9b0 BINK::Background_Setup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536610 NextObjectCommandClass::performAction_30 -> NG (attempt 2)
+[ledger] 0x536a80 PrevObjectCommandClass::performAction_69 -> NG (attempt 2)
+[ledger] 0x5377d0 SetView2CommandClass::performAction_172 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538560 _VectorClass_PAVCCINIClass::Remove -> NG (attempt 2)
+[ledger] 0x53a300 LightningStorm::Strike2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53ae50 SuperClass::LaunchPsychicDominator -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53c560 _VectorClass_PBVAnimClass::Release -> NG (attempt 2)
+[ledger] 0x53c6a0 _DynamicVectorClass_PBVAnimClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x541040 IPXManagerClass::send -> NG (attempt 2)
+[ledger] 0x542450 IPXManagerClass::GetQueueSize -> NG (attempt 2)
+[ledger] 0x542520 IPXManagerClass::ProcessQueue -> COMPILE_FAIL (attempt 16)
+[ledger] 0x542ec0 IPXManagerClass::Flush -> NG (attempt 2)
+[ledger] 0x54a290 _VectorClass_PAG::Release -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "regalloc": 2,
+  "branch_order": 1,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p11\batch_report.json

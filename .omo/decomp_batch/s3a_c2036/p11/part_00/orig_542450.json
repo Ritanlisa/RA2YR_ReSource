@@ -1,0 +1,11 @@
+{
+ "addr": "0x542450",
+ "name": "IPXManagerClass::GetQueueSize",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x542450",
+ "bytes_hex": "55568bf15733ed33ff8b464485c07e20538d5e288b038b4804e81296f4ff3bc576028be88b46444783c3043bf87ce55b8b765085f6740c8b4e04e8f195f4ff3bc577028bc55f5e5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

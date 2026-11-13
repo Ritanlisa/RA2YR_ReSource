@@ -1,0 +1,11 @@
+{
+ "addr": "0x541040",
+ "name": "IPXManagerClass::send",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x541040",
+ "bytes_hex": "8b514433c05685d2577e168b74240c83c1288b39397764740b4083c1043bc27cf183c8ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

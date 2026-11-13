@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetQueueSize@IPXManagerClass@@QAEIXZ",
+ "sym_key": "IPXManagerClass::GetQueueSize",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "55568bf15733ed33ff8b464485c07620538d5e148b038b4804e8000000003bc576028be88b46444783c3043bf872e55b8b765085f6740c8b4e04e8000000003bc577028bc55f5e5dc3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?GetBridgeIndex@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::GetBridgeIndex"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?GetBridgeIndex@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::GetBridgeIndex"
+  }
+ ]
+}
