@@ -1,0 +1,11 @@
+{
+ "addr": "0x6ECE60",
+ "name": "TeamClass::AssignMemberToCoordinator",
+ "size": 175,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6ECE60",
+ "bytes_hex": "8a44240883ec0884c0578bf9741b8b4424108b4804518b0d30b2a800e85feef9ff508bcfe8c7c1ffff8b4f3c85c974618b11ff522c83f80b7557568b773c85f6750433c0eb128b068bceff502c83e80bf7d81bc0f7d023c68d4c24086a00518bc8c744241000000000c744241400000000e8caf6d8ff85c05e740f508bcfe86dc1ffff8bcfe8a6e5ffff5f83c408c208008b473c85c075eb6a008bcfe84fc1ffffc68780000000015f83c408c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,63 @@
+{
+ "symbol": "?CreateOneOf@TeamClass@@QAEHPAV1@@Z",
+ "sym_key": "TeamClass::CreateOneOf",
+ "size": 189,
+ "link_base": 0,
+ "bytes_hex": "5356578bf1e8000000008b7c241085ff75388bbec400000085ff752e8b8ec8000000e80000000084c075085f5e33c05bc204008b8ec8000000e8000000008bf885ff75065f5e5bc20400a10000000085c0753b8b9eb800000085db7c31a10000000085c07428568bcfe8000000003b86b800000072085f5e33c05bc20400399edc00000072085f5e33c05bc204008bcee80000000068a0000000e80000000083c40485c075065f5e5bc204006a0057568bc8e8000000005f5e5bc20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?IsSpecialType@BuildingType@@QAE_NXZ",
+   "sym_key": "BuildingType::IsSpecialType"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?FindOwnerHouse@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindOwnerHouse"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?CountActiveTeamsForType@TeamClass@@QAEHPAX@Z",
+   "sym_key": "TeamClass::CountActiveTeamsForType"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?Construct@MissionClass@@QAEPAVTeamClass@@PAXHH@Z",
+   "sym_key": "MissionClass::Construct"
+  }
+ ]
+}

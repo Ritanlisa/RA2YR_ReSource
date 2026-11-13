@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F09C0",
+ "name": "TeamClass::CreateOneOf",
+ "size": 174,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F09C0",
+ "bytes_hex": "56578bf1687c2e8400e8125fd1ff8b7c241083c40485ff752a8bbec400000085ff75208b8ec8000000e87205e2ff84c074368b8ec8000000e8d304e2ff8bf885ff7425a1ace7a80085c075338b86b800000085c07c298b0d38b2a80085c9750f3986dc0000007c175f33c05ec20400568bcfe8998be1ff3b86b80000007de98d46645068582e8400e8935ed1ff68a0000000e8c0830d0083c40c85c074ca6a0057568bc8e82780ffff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

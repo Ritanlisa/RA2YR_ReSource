@@ -1,0 +1,99 @@
+{
+ "symbol": "?CleanupCampaignResources@@YADXZ",
+ "sym_key": "Unnamed::CleanupCampaignResources",
+ "size": 207,
+ "link_base": 0,
+ "bytes_hex": "83ec70a100000000538b5c24048bc833cbc64424080081e1ff00000033d9a8020f85a20000005657b91b00000033c08d7c241050f3ab8d5424146a6f52b900000000c644241c13e8000000006a008d4424146a6f50b900000000e800000000a1000000008b3d0000000083f8ff7410e8000000008bc8a1000000002bc803f98bd08b350000000033d381e2ff00000033da83f8ff7411e8000000008b0d000000008bd82bd903f32bf783fe1e7311b900000000e800000000a100000000ebc05f8ac35e5b83c470c38ac35b83c470c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_NetworkEventPending@@3HA",
+   "sym_key": "g_NetworkEventPending"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?WriteBlock@Stream@@QAEHHHH@Z",
+   "sym_key": "Stream::WriteBlock"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?WriteBlock@Stream@@QAEHHHH@Z",
+   "sym_key": "Stream::WriteBlock"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?ReadPacket@Stream@@QAEHXZ",
+   "sym_key": "Stream::ReadPacket"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  }
+ ]
+}

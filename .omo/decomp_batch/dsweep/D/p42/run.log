@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p42\part_00
+=== convert (20 addrs) ===
+[conv] 0x561350 sub_561350 -> _addr_56
+[conv] 0x6f09c0 TeamClass::CreateOneOf -> TeamClass
+[conv] 0x752290 Audio_Init_752290 -> Audio_Init
+[conv] 0x4a2880 CStreamClass::sub_4A2880 -> CStreamClass
+[conv] 0x5f0070 CleanupCampaignResources -> _addr_5F
+[conv] 0x521b60 InfantryClass::CanInitiateDeploy -> InfantryClass
+[conv] 0x54b980 HouseClass::Set -> HouseClass
+[conv] 0x6ece60 TeamClass::AssignMemberToCoordinator -> TeamClass
+[conv] 0x6bb8e0 ObjectClass::WinMainSetup_Setup_6BB8E0 -> ObjectClass
+[conv] 0x473e50 CCFileClass::Destru_vt14 -> CCFileClass
+[conv] 0x63b0a0 ObjectClass::Render_Render_63B0A0 -> ObjectClass
+[conv] 0x682240 Map_Read_682240 -> Map_Read
+[conv] 0x47a560 sub_47A560 -> _addr_47
+[conv] 0x7cfe1c ObjectClass::___sbh_alloc_new_region -> ObjectClass
+[conv] 0x5c00e0 ObjectClass::sub_5C00E0 -> ObjectClass
+[conv] 0x5c03d0 VQMovieHandle::getPathDirection -> VQMovieHandle
+[conv] 0x793a70 sub_793A70 -> _addr_79
+[conv] 0x7b9690 WWMouseClass::renderDragSelectionRect -> WWMouseClass
+[conv] 0x50d610 Scenario::ProcessSidebarUnits -> Scenario
+[conv] 0x6edca0 TeamClass::SyncMemberFacing -> TeamClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_56                 rc=0
+[era] TeamClass                rc=0
+[era] Audio_Init               rc=2
+[era] CStreamClass             rc=2
+[era] _addr_5F                 rc=0
+[era] InfantryClass            rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] CCFileClass              rc=2
+[era] Map_Read                 rc=2
+[era] _addr_47                 rc=2
+[era] VQMovieHandle            rc=0
+[era] _addr_79                 rc=2
+[era] WWMouseClass             rc=0
+[era] Scenario                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x561350   MISMATCH         sub_561350
+[diff] 0x6f09c0   MISMATCH         TeamClass::CreateOneOf
+[diff] 0x6ece60   MISMATCH         TeamClass::AssignMemberToCoordinator
+[diff] 0x6edca0   MISMATCH         TeamClass::SyncMemberFacing
+[diff] 0x5f0070   MISMATCH         CleanupCampaignResources
+[diff] 0x63b0a0   MISMATCH         ObjectClass::Render_Render_63B0A0
+[diff] 0x5c00e0   MISMATCH         ObjectClass::sub_5C00E0
+[diff] 0x5c03d0   MISMATCH         VQMovieHandle::getPathDirection
+[diff] 0x7b9690   MISMATCH         WWMouseClass::renderDragSelectionRect
+[ledger] 0x561350 sub_561350 -> NG (attempt 1)
+[ledger] 0x6f09c0 TeamClass::CreateOneOf -> NG (attempt 1)
+[ledger] 0x752290 Audio_Init_752290 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2880 CStreamClass::sub_4A2880 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f0070 CleanupCampaignResources -> NG (attempt 1)
+[ledger] 0x521b60 InfantryClass::CanInitiateDeploy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54b980 HouseClass::Set -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ece60 TeamClass::AssignMemberToCoordinator -> NG (attempt 1)
+[ledger] 0x6bb8e0 ObjectClass::WinMainSetup_Setup_6BB8E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x473e50 CCFileClass::Destru_vt14 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63b0a0 ObjectClass::Render_Render_63B0A0 -> NG (attempt 1)
+[ledger] 0x682240 Map_Read_682240 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47a560 sub_47A560 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cfe1c ObjectClass::___sbh_alloc_new_region -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c00e0 ObjectClass::sub_5C00E0 -> NG (attempt 1)
+[ledger] 0x5c03d0 VQMovieHandle::getPathDirection -> NG (attempt 1)
+[ledger] 0x793a70 sub_793A70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b9690 WWMouseClass::renderDragSelectionRect -> NG (attempt 1)
+[ledger] 0x50d610 Scenario::ProcessSidebarUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6edca0 TeamClass::SyncMemberFacing -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "regalloc": 4,
+  "ret_norm": 2,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p42\batch_report.json

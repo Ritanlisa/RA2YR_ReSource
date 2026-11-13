@@ -1,0 +1,27 @@
+{
+ "symbol": "?SyncMemberFacing@TeamClass@@QAEXHH@Z",
+ "sym_key": "TeamClass::SyncMemberFacing",
+ "size": 201,
+ "link_base": 0,
+ "bytes_hex": "83ec08568b715485f6894c2408c6442407010f84a300000053558b6c2418578bdd8b867406000085c0750d6803400080e80000000083c4048b8674060000508b08ff511084c07407c644241300eb4f8b7b048d54241c528d8e88030000e80000000033c981e7ffff0000668b08c1e70d3bcf742a8b867406000085c0750d6803400080e80000000083c4048b867406000081e500ffffff55508b10ff524c8bb6d805000085f60f8575ffffff8a4424135f5d5b84c0740b8b4c2408c68180000000015e83c408c20800",
+ "relocs": [
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

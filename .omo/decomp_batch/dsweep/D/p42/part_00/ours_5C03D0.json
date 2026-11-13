@@ -1,0 +1,75 @@
+{
+ "symbol": "?getPathDirection@VQMovieHandle@@QAEDHH@Z",
+ "sym_key": "VQMovieHandle::getPathDirection",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "a1fc2d000083ec1485c00f849a000000a1000000006a0050ff50188b44241c8b4c241c8b542400508b442420518b4c2420528b5424286a0050a100000000515250e80000000083c420b90f000000e80000000084c075538b15000000008d4c2404565152e8000000008b0d000000008d4424085051e800000000a1fc2d00008b4c24086a016a008b50348d702403d18b0d000000008954240c8b40088b1156508d4424145051ff52085e83c414c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Frame__Present@@YAHHHHHHHHPAX@Z",
+   "sym_key": "Frame__Present"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?TestBitArray@@YI_NH@Z",
+   "sym_key": "TestBitArray"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  }
+ ]
+}

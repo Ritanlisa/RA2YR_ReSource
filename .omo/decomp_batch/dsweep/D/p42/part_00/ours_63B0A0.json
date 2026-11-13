@@ -1,0 +1,105 @@
+{
+ "symbol": "?Render_Render_63B0A0@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::Render_Render_63B0A0",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "a0d40000005333db55563ac357881de0000000741c381ddd0000007414a1d400000050e80000000083c404881dd40000008b2d0000000033f63beb881ddd000000881dd80000007e2d8b0d000000008b3cb18b57048b028b088b891c020000e80000000084c0740957e80000000083c404463bf57cd38b2d6406000033f63beb7e248b15340600008b3cb28b8f1c020000e80000000084c074078bcfe800000000463bf57cdc5f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B40@@3IA",
+   "sym_key": "DataGlobal_AC4B40"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B34@@3IA",
+   "sym_key": "DataGlobal_AC4B34"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?RenderScenarioActionLines@@YAHPAX@Z",
+   "sym_key": "RenderScenarioActionLines"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?ProcessIdleAction@ScriptAction@@QAEDXZ",
+   "sym_key": "ScriptAction::ProcessIdleAction"
+  }
+ ]
+}

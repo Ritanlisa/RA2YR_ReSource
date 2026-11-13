@@ -1,0 +1,39 @@
+{
+ "symbol": "?renderDragSelectionRect@WWMouseClass@@QAEHXZ",
+ "sym_key": "WWMouseClass::renderDragSelectionRect",
+ "size": 163,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec20565768102700008bf150e8000000003d0201000075078bcee8000000008b565085d276668b4e5485c9765f8b462485c074588b7e4485ff7451538b5e2c558b6e4803eb8b5e30896c24208b6e4c89542428895424186a018d5424146a0003eb528d54242cc744241c00000000c744242000000000894c2438896c2430894c24288b08575250ff51085d5ba10000000050e8000000005f5e83c420c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?WaitForSingleObject@@YGKPAXH@Z",
+   "sym_key": "WaitForSingleObject"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?ReleaseMutex@@YGHPAX@Z",
+   "sym_key": "ReleaseMutex"
+  }
+ ]
+}
