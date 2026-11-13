@@ -1,0 +1,11 @@
+{
+ "addr": "0x72CDB0",
+ "name": "Network_Destroy",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72CDB0",
+ "bytes_hex": "a0e5fcb0005333db3ac3745e381de4fcb0007422568b35acfab0003bf374108bcee82a17f7ff56e861bd090083c404881de4fcb0005ea1e8fcb000891dacfab0003bc3740f50e842bd090083c404891de8fcb0008b0decfcb0003bcb740c8b016a01ff10891decfcb000881de5fcb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

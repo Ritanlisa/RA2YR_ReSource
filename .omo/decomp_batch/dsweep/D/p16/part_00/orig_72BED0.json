@@ -1,0 +1,11 @@
+{
+ "addr": "0x72BED0",
+ "name": "JoinLobbyWOL_Destroy",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72BED0",
+ "bytes_hex": "a039fdb0005333db3ac3745e381d38fdb0007422568b359cfab0003bf374108bcee80a26f7ff56e841cc090083c404881d38fdb0005ea13cfdb000891d9cfab0003bc3740f50e822cc090083c404891d3cfdb0008b0d40fdb0003bcb740c8b016a01ff10891d40fdb000881d39fdb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

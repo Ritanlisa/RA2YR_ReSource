@@ -1,0 +1,11 @@
+{
+ "addr": "0x72C650",
+ "name": "LoginFlowWOL_Destroy_72C650",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72C650",
+ "bytes_hex": "a009fdb0005333db3ac3745e381d08fdb0007422568b350cfbb0003bf374108bcee88a1ef7ff56e8c1c4090083c404881d08fdb0005ea10cfdb000891d0cfbb0003bc3740f50e8a2c4090083c404891d0cfdb0008b0d10fdb0003bcb740c8b016a01ff10891d10fdb000881d09fdb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

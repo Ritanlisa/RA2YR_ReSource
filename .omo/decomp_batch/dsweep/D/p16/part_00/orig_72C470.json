@@ -1,0 +1,11 @@
+{
+ "addr": "0x72C470",
+ "name": "CreateAccountWOL_Create_72C470",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72C470",
+ "bytes_hex": "a015fdb0005333db3ac3745e381d14fdb0007422568b3564fab0003bf374108bcee86a20f7ff56e8a1c6090083c404881d14fdb0005ea118fdb000891d64fab0003bc3740f50e882c6090083c404891d18fdb0008b0d1cfdb0003bcb740c8b016a01ff10891d1cfdb000881d15fdb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

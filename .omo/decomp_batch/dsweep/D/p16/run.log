@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x72bcf0 ObjectClass::LoginFlowWOL_Destroy -> ObjectClass
+[conv] 0x72bed0 ObjectClass::JoinLobbyWOL_Destroy -> ObjectClass
+[conv] 0x72c0b0 ObjectClass::GameOptionsScreenWOL_Destroy -> ObjectClass
+[conv] 0x72c470 ObjectClass::CreateAccountWOL_Create_72C470 -> ObjectClass
+[conv] 0x72c650 ObjectClass::LoginFlowWOL_Destroy_72C650 -> ObjectClass
+[conv] 0x72c830 ObjectClass::RunWOLMainLoop_Read_Read_72C830 -> ObjectClass
+[conv] 0x72ca10 ObjectClass::System_Init_72CA10 -> ObjectClass
+[conv] 0x72cdb0 ObjectClass::Network_Destroy -> ObjectClass
+[conv] 0x72cf90 ObjectClass::CleanupFileTree -> ObjectClass
+[conv] 0x6bef10 _TClassFactory_VCStreamClass::ddtor -> _TClassFactory_VCStreamClass
+[conv] 0x6bfb10 _TClassFactory_VEMPulseClass::ddtor -> _TClassFactory_VEMPulseClass
+[conv] 0x6bfc90 _TClassFactory_VLightSourceClass::ddtor -> _TClassFactory_VLightSourceClass
+[conv] 0x6c0590 _TClassFactory_VWaypointPathClass::ddtor -> _TClassFactory_VWaypointPathClass
+[conv] 0x6c0710 _TClassFactory_VTemporalClass::ddtor -> _TClassFactory_VTemporalClass
+[conv] 0x6c0890 _TClassFactory_VAirstrikeClass::ddtor -> _TClassFactory_VAirstrikeClass
+[conv] 0x6c0b90 _TClassFactory_VSlaveManagerClass::ddtor -> _TClassFactory_VSlaveManagerClass
+[conv] 0x6c0d10 _TClassFactory_VCaptureManagerClass::ddtor -> _TClassFactory_VCaptureManagerClass
+[conv] 0x6c0e90 _TClassFactory_VDiskLaserClass::ddtor -> _TClassFactory_VDiskLaserClass
+[conv] 0x6c1010 _TClassFactory_VParasiteClass::ddtor -> _TClassFactory_VParasiteClass
+[conv] 0x6c1190 _TClassFactory_VBombClass::ddtor -> _TClassFactory_VBombClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _TClassFactory_VCStreamClass rc=0
+[era] _TClassFactory_VEMPulseClass rc=0
+[era] _TClassFactory_VLightSourceClass rc=2
+[era] _TClassFactory_VWaypointPathClass rc=2
+[era] _TClassFactory_VTemporalClass rc=2
+[era] _TClassFactory_VAirstrikeClass rc=0
+[era] _TClassFactory_VSlaveManagerClass rc=2
+[era] _TClassFactory_VCaptureManagerClass rc=0
+[era] _TClassFactory_VDiskLaserClass rc=2
+[era] _TClassFactory_VParasiteClass rc=2
+[era] _TClassFactory_VBombClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x72bcf0   MISMATCH         ObjectClass::LoginFlowWOL_Destroy
+[diff] 0x72bed0   MISMATCH         ObjectClass::JoinLobbyWOL_Destroy
+[diff] 0x72c0b0   MISMATCH         ObjectClass::GameOptionsScreenWOL_Destroy
+[diff] 0x72c470   MISMATCH         ObjectClass::CreateAccountWOL_Create_72C470
+[diff] 0x72c650   MISMATCH         ObjectClass::LoginFlowWOL_Destroy_72C650
+[diff] 0x72c830   MISMATCH         ObjectClass::RunWOLMainLoop_Read_Read_72C830
+[diff] 0x72ca10   MISMATCH         ObjectClass::System_Init_72CA10
+[diff] 0x72cdb0   MISMATCH         ObjectClass::Network_Destroy
+[diff] 0x72cf90   MISMATCH         ObjectClass::CleanupFileTree
+[diff] 0x6bef10   MISMATCH         _TClassFactory_VCStreamClass::ddtor
+[diff] 0x6bfb10   MISMATCH         _TClassFactory_VEMPulseClass::ddtor
+[diff] 0x6c0890   MISMATCH         _TClassFactory_VAirstrikeClass::ddtor
+[diff] 0x6c0d10   MISMATCH         _TClassFactory_VCaptureManagerClass::ddtor
+[ledger] 0x72bcf0 ObjectClass::LoginFlowWOL_Destroy -> NG (attempt 1)
+[ledger] 0x72bed0 ObjectClass::JoinLobbyWOL_Destroy -> NG (attempt 1)
+[ledger] 0x72c0b0 ObjectClass::GameOptionsScreenWOL_Destroy -> NG (attempt 1)
+[ledger] 0x72c470 ObjectClass::CreateAccountWOL_Create_72C470 -> NG (attempt 1)
+[ledger] 0x72c650 ObjectClass::LoginFlowWOL_Destroy_72C650 -> NG (attempt 1)
+[ledger] 0x72c830 ObjectClass::RunWOLMainLoop_Read_Read_72C830 -> NG (attempt 1)
+[ledger] 0x72ca10 ObjectClass::System_Init_72CA10 -> NG (attempt 1)
+[ledger] 0x72cdb0 ObjectClass::Network_Destroy -> NG (attempt 1)
+[ledger] 0x72cf90 ObjectClass::CleanupFileTree -> NG (attempt 1)
+[ledger] 0x6bef10 _TClassFactory_VCStreamClass::ddtor -> NG (attempt 1)
+[ledger] 0x6bfb10 _TClassFactory_VEMPulseClass::ddtor -> NG (attempt 1)
+[ledger] 0x6bfc90 _TClassFactory_VLightSourceClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c0590 _TClassFactory_VWaypointPathClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c0710 _TClassFactory_VTemporalClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c0890 _TClassFactory_VAirstrikeClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c0b90 _TClassFactory_VSlaveManagerClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c0d10 _TClassFactory_VCaptureManagerClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c0e90 _TClassFactory_VDiskLaserClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c1010 _TClassFactory_VParasiteClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c1190 _TClassFactory_VBombClass::ddtor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "const_fold": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p16\batch_report.json

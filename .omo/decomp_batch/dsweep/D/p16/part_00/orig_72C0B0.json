@@ -1,0 +1,11 @@
+{
+ "addr": "0x72C0B0",
+ "name": "GameOptionsScreenWOL_Destroy",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72C0B0",
+ "bytes_hex": "a02dfdb0005333db3ac3745e381d2cfdb0007422568b354cfab0003bf374108bcee82a24f7ff56e861ca090083c404881d2cfdb0005ea130fdb000891d4cfab0003bc3740f50e842ca090083c404891d30fdb0008b0d34fdb0003bcb740c8b016a01ff10891d34fdb000881d2dfdb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

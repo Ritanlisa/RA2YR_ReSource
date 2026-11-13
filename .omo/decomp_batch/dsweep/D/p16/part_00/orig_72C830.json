@@ -1,0 +1,11 @@
+{
+ "addr": "0x72C830",
+ "name": "RunWOLMainLoop_Read_Read_72C830",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72C830",
+ "bytes_hex": "a0fdfcb0005333db3ac3745e381dfcfcb0007422568b35e8f9b0003bf374108bcee8aa1cf7ff56e8e1c2090083c404881dfcfcb0005ea100fdb000891de8f9b0003bc3740f50e8c2c2090083c404891d00fdb0008b0d04fdb0003bcb740c8b016a01ff10891d04fdb000881dfdfcb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
