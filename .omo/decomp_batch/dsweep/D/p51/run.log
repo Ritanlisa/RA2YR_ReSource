@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p51\part_00
+=== convert (20 addrs) ===
+[conv] 0x58bea0 ObjectClass::sub_58BEA0 -> ObjectClass
+[conv] 0x60b350 ObjectClass::UI_Get_60B350 -> ObjectClass
+[conv] 0x4b4e10 DropListClass::sub_4B4E10 -> DropListClass
+[conv] 0x70a990 TechnoClass::DrawVeterancy -> TechnoClass
+[conv] 0x44d5d0 BuildingClass::CaptureBuilding -> BuildingClass
+[conv] 0x7acd60 DynamicArray::Remove -> DynamicArray
+[conv] 0x421730 AlphaShapeClass::SDDTOR -> AlphaShapeClass
+[conv] 0x428ea0 AnimTypeClass::ddtor -> AnimTypeClass
+[conv] 0x43a9c0 NeuronClass::Reset -> NeuronClass
+[conv] 0x6b4dd0 UnitTypeClass::ReadINIEntry -> UnitTypeClass
+[conv] 0x652c00 RadarClass::Destruct -> RadarClass
+[conv] 0x6918a0 ScriptTypeClass::GetEvent -> ScriptTypeClass
+[conv] 0x70fd70 TechnoClass::LinkToBridge -> TechnoClass
+[conv] 0x443b90 BuildingClass::AssignTarget_SyncLog -> BuildingClass
+[conv] 0x7c8d20 __strcmpi -> _addr_7C
+[conv] 0x7e01fb sub_7E01FB -> _addr_7E
+[conv] 0x7d8c6b __87except -> _addr_7D
+[conv] 0x763200 WaveClass::ddtor -> WaveClass
+[conv] 0x6a4f20 RadarClass::UI_Init -> RadarClass
+[conv] 0x5bd490 Text::DrawRepeated -> Text
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] DropListClass            rc=0
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] DynamicArray             rc=0
+[era] AlphaShapeClass          rc=0
+[era] AnimTypeClass            rc=0
+[era] NeuronClass              rc=0
+[era] UnitTypeClass            rc=2
+[era] RadarClass               rc=2
+[era] ScriptTypeClass          rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_7E                 rc=0
+[era] _addr_7D                 rc=0
+[era] WaveClass                rc=0
+[era] Text                     rc=0
+=== diffasm byte-compare ===
+[diff] 0x58bea0   MISMATCH         ObjectClass::sub_58BEA0
+[diff] 0x60b350   MISMATCH         ObjectClass::UI_Get_60B350
+[diff] 0x4b4e10   MISMATCH         DropListClass::sub_4B4E10
+[diff] 0x7acd60   MISMATCH         DynamicArray::Remove
+[diff] 0x421730   MISMATCH         AlphaShapeClass::SDDTOR
+[diff] 0x428ea0   MISMATCH         AnimTypeClass::ddtor
+[diff] 0x43a9c0   MISMATCH         NeuronClass::Reset
+[diff] 0x7e01fb   MISMATCH         sub_7E01FB
+[diff] 0x7d8c6b   MISMATCH         __87except
+[diff] 0x763200   MISMATCH         WaveClass::ddtor
+[diff] 0x5bd490   MISMATCH         Text::DrawRepeated
+[ledger] 0x58bea0 ObjectClass::sub_58BEA0 -> NG (attempt 1)
+[ledger] 0x60b350 ObjectClass::UI_Get_60B350 -> NG (attempt 1)
+[ledger] 0x4b4e10 DropListClass::sub_4B4E10 -> NG (attempt 1)
+[ledger] 0x70a990 TechnoClass::DrawVeterancy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44d5d0 BuildingClass::CaptureBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7acd60 DynamicArray::Remove -> NG (attempt 1)
+[ledger] 0x421730 AlphaShapeClass::SDDTOR -> NG (attempt 1)
+[ledger] 0x428ea0 AnimTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x43a9c0 NeuronClass::Reset -> NG (attempt 1)
+[ledger] 0x6b4dd0 UnitTypeClass::ReadINIEntry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x652c00 RadarClass::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6918a0 ScriptTypeClass::GetEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70fd70 TechnoClass::LinkToBridge -> COMPILE_FAIL (attempt 1)
+[ledger] 0x443b90 BuildingClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8d20 __strcmpi -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7e01fb sub_7E01FB -> NG (attempt 1)
+[ledger] 0x7d8c6b __87except -> NG (attempt 1)
+[ledger] 0x763200 WaveClass::ddtor -> NG (attempt 1)
+[ledger] 0x6a4f20 RadarClass::UI_Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bd490 Text::DrawRepeated -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "cc_mismatch": 1,
+  "regalloc": 3,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p51\batch_report.json

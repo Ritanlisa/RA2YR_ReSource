@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_4B4E10@DropListClass@@QAEHHPAGHHHHHHHH@Z",
+ "sym_key": "DropListClass::sub_4B4E10",
+ "size": 192,
+ "link_base": 0,
+ "bytes_hex": "8b442410538b5c2420558b6c24208b54241056578b7c24246a076a128bf18b4c2424535557508b44242c51525056e80000000083c4288b4c243003fb894e4c6a006a006a0055578b7c244c578d4e506a00c6464800e8000000008b5424348b4424208b4c24305752500fbf57020fbf470403d3518b4c243403c55250516a008d8ec0020000e8000000008bcec70600000000e8000000008b501c8d86b0000000425650895618ff96340100008d46505650ff96d40000008b065f5e5d5bc22800",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?sub_4C2FC0@@YAPAVEditClass@@PAXH0HHHHHHH@Z",
+   "sym_key": "sub_4C2FC0"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Constructor@ShapeButtonClass@@QAEPAV1@HHHHHHD@Z",
+   "sym_key": "ShapeButtonClass::Constructor"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?Construct@ListClass@@QAEPAV1@HHHHHHHH@Z",
+   "sym_key": "ListClass::Construct"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?vt_DropListClass@@3PAXA",
+   "sym_key": "vt_DropListClass"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  }
+ ]
+}

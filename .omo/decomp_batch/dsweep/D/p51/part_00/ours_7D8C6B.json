@@ -1,0 +1,51 @@
+{
+ "symbol": "?__87except@@YAHHHPAG@Z",
+ "sym_key": "Unnamed::__87except",
+ "size": 231,
+ "link_base": 0,
+ "bytes_hex": "8b44240c83ec2853558b6c24385633f657668b308b450083f80189742444742b83c0fe85c07507bf04000000eb3e4885c07507bf11000000eb324885c07507bf12000000eb264885c07507bf08000000eb1a83c0fe85c07509c7450001000000eb3983f8017534bf100000008d5d18565357e80000000083c40c85c0751d8b54243c8d4d085351528d442450578d4c24205051e80000000083c4180fbfd652e8000000008b450083c40483f808751150e80000000083c4045f5e5d5b83c428c38b0d0000000085c9750ce80000000085c0750c8b450050e80000000083c4045f5e5d5b83c428c3",
+ "relocs": [
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?_handle_exc@@YAHHHPAXZZ",
+   "sym_key": "_handle_exc"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?_raise_exc@@YAHHHHHHHZZ",
+   "sym_key": "_raise_exc"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?_ctrlfp@@YAHHZZ",
+   "sym_key": "_ctrlfp"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?_set_errno@@YAHHZZ",
+   "sym_key": "_set_errno"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D700@@3IA",
+   "sym_key": "DataGlobal_87D700"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?ReturnNull5@@YAHXZ",
+   "sym_key": "ReturnNull5"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?_set_errno@@YAHHZZ",
+   "sym_key": "_set_errno"
+  }
+ ]
+}

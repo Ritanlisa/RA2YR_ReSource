@@ -1,0 +1,99 @@
+{
+ "symbol": "?Reset@NeuronClass@@QAEPAID@Z",
+ "sym_key": "NeuronClass::Reset",
+ "size": 209,
+ "link_base": 0,
+ "bytes_hex": "51568bf133c08d542404c7060000000089460489460889460c0fbe050000000089742404528b086800000000ff511083f8ff74308b0d100000003bc17d26493bc1890d100000007d1b0fbe0d04000000408b14818d0c818951fc8b0d100000003bc17ce50fbe05000000008d542404897424048b08526800000000ff511083f8ff74308b0d100000003bc17d26493bc1890d100000007d1b0fbe0d04000000408b14818d0c818951fc8b0d100000003bc17ce58bcee800000000f644240c01740956e80000000083c4048b065e59c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?vt_NeuronClass_4@@3PAXA",
+   "sym_key": "vt_NeuronClass_4"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5D8@@3IA",
+   "sym_key": "DataGlobal_B0F5D8"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5D8@@3IA",
+   "sym_key": "DataGlobal_B0F5D8"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5D8@@3IA",
+   "sym_key": "DataGlobal_B0F5D8"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5D8@@3IA",
+   "sym_key": "DataGlobal_B0F5D8"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5D8@@3IA",
+   "sym_key": "DataGlobal_B0F5D8"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F5D8@@3IA",
+   "sym_key": "DataGlobal_B0F5D8"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?DTOR@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::DTOR"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "symbol": "?SDDTOR@AlphaShapeClass@@QAEPAID@Z",
+ "sym_key": "AlphaShapeClass::SDDTOR",
+ "size": 197,
+ "link_base": 0,
+ "bytes_hex": "51568bf133c08974240489460489460889460c8d442404c706000000008b0d00000000506800000000ff511083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e88b0de00e00008d4424045068e00e00008974240cff511083f8ff742d8b0d980200003bc17d23493bc1890d980200007d188b0de40e0000408b1481895481fc8b0d980200003bc17ce88bcee800000000f644240c01740956e80000000083c4048b065e59c20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?vt_AlphaShapeClass_4@@3PAXA",
+   "sym_key": "vt_AlphaShapeClass_4"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A0F0@@3IA",
+   "sym_key": "DataGlobal_88A0F0"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A0F0@@3IA",
+   "sym_key": "DataGlobal_88A0F0"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_AlphaShapeLimit@@3IA",
+   "sym_key": "g_AlphaShapeLimit"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_AlphaShapeLimit@@3IA",
+   "sym_key": "g_AlphaShapeLimit"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A0F4@@3IA",
+   "sym_key": "DataGlobal_88A0F4"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_AlphaShapeLimit@@3IA",
+   "sym_key": "g_AlphaShapeLimit"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?DTOR@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::DTOR"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

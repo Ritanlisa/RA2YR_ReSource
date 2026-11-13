@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_58BEA0@ObjectClass@@QAEPAIH@Z",
+ "sym_key": "ObjectClass::sub_58BEA0",
+ "size": 227,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec205355894c240c568b74241033db5733ed8b3d00000000895c241c0fafff4f8d470189442418df6c2418dd5c2428b9c8340000e80000000089442420895c2424df6c242083ec08dc0d00000000dc4c2430dd1c24e80000000033c683c40825ff00000033f03bf777c58b0d182700008d04b6c1e00403c166391875066639580274ac8d14b645c1e20481fdc80000008b040a894424107f1f8d4c241051b9f8010000e8000000008bc8e80000000084c07515e95affffff8b44241489185f5e5d5b8be55dc204008b4424148b5424105f5e89105d5b8be55dc20400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  }
+ ]
+}

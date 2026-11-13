@@ -1,0 +1,81 @@
+{
+ "symbol": "?UI_Get_60B350@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::UI_Get_60B350",
+ "size": 230,
+ "link_base": 0,
+ "bytes_hex": "83ec245355568bf1575689742414e800000000b9000000008bf8e8000000008ad88d4424145057e8000000008d4c24245156e80000000084db743ca1ac1100008b4c241c8b150c1400006a000fbf68040fbf58028b442418552bc88b42042bc581e99300000053505156e8000000005f5e5d5b83c424c3a1841200008b4c241c8b7424146a000fbf58020fbf68048bc1552bc6532d20030000992bc2ba00000000d1f80f98c24a23c233d22bc8a1e41300002bce8b70048b780ca1e813000081e99c0000008b40042bc6f7f7480fafc703c68b74241c505156e8000000005f5e5d5b83c424c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?GetParent@@YGPAXPAX@Z",
+   "sym_key": "GetParent"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GetGameSpeed@SessionClass@@QAEDXZ",
+   "sym_key": "SessionClass::GetGameSpeed"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?MoveWindow@@YGHPAXHHHHH@Z",
+   "sym_key": "MoveWindow"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?MoveWindow@@YGHPAXHHHHH@Z",
+   "sym_key": "MoveWindow"
+  }
+ ]
+}

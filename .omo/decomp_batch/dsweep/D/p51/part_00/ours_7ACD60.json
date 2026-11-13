@@ -1,0 +1,27 @@
+{
+ "symbol": "?Remove@DynamicArray@@QAEDH@Z",
+ "sym_key": "DynamicArray::Remove",
+ "size": 207,
+ "link_base": 0,
+ "bytes_hex": "538bd98b0385c0750632c05bc2040055568b7424105785f67d0233f63bf07c038d70ff8b43088d3cb50000000003c750e8000000008b0b8b43082bce03f88d74b00483c4048d0c8dfcffffff8bd1c1e902f3a58bca83e103f3a48b038b4b044889038d04403bc17f5d8bc1992bc2d1f883f80a8be87d05bd0a0000003be97d468d0cad0000000051e8000000008b730883c40485f68944241474158b0b8bf8c1e1028bd1c1e902f3a58bca83e103f3a48b430850e8000000008b4c241883c404894b08896b045f5e5db0015bc20400",
+ "relocs": [
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
