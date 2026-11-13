@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_404BB0@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::sub_404BB0",
+ "size": 458,
+ "link_base": 0,
+ "bytes_hex": "515355568bf1578b7e388b866c0200008b8e740200008b5f103bc10f85090100008bcb33ed83e101894c2410751283be700200000175215f5e5d83c8ff5b59c38b474c85c074113986700200007c095f5e5d83c8ff5b59c38b873801000085c0741ff6461808751948b900000000506a00e8000000008986ec010000bd010000008b4710a80474388b97340100008b8f3c0100008b87380100002bd13bc2736d8d8caeec01000089018b97340100002b973c0100004583c104403bc272e9eb4da802743b8b867002000085c074088b8678020000eb2f8b87340100008b8f3c0100002bc18b8f38010000485051b900000000e800000000898678020000eb068b87380100008984aeec010000458b867002000089ae6c02000040c7867402000000000000898670020000f6c302741b8b873801000085c0742f8a4618240875248b8e7402000085c9771a8b8e740200005f8b848eec01000041898e740200005e5d5b59c384c0740433c0eb05b8010000008b966c020000b9000000004a5250e8000000008b9e6c0200008bbc86ec0100008d9486ec0100004b3bc38bc873168bc28b50044189108b966c02000083c0044a3bca72ec8b866c0200004889866c0200008bc75f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 243,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 376,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}

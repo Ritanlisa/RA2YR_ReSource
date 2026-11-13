@@ -1,0 +1,135 @@
+{
+ "symbol": "?Mission_Enter@AircraftClass@@QAEHHHHH@Z",
+ "sym_key": "AircraftClass::Mission_Enter",
+ "size": 953,
+ "link_base": 0,
+ "bytes_hex": "83ec3853568b742444578b8658930b008a88fc0d000084c974108bcee8000000005f5e5b83c438c210008b86a841010083f804772fff2485000000008b8698a6090085c074698b3e508bcee8000000006a015056ff9780040000c786bc000000010000008bcee800000000dd0500000000dc481083ec08dd1c24e8000000008b7424508b0d0000000083c40833c625ff00000081c1680503006a026a0033f0e80000000003c65f5e5b83c438c210008b0e6a016a0056ff9184040000eba68b8698a6090085c00f84030200008b4c24488b10518b4c2450518b4c245c518b4c245c518d4c243c565150ff524c8bf88b867406000085c0750d6803400080e80000000083c4048b86740600008b0f51508b10ff524483c408c786bc00000002000000b8010000005f5e5b83c438c210008b8698a6090085c074588b108d4c24385150ff52488b8ea00000008b50048b188bbea40000002bca8b969c0000002bd36a0051528d4c242ce8000000008b108d4c2418895424188b40048944241ce80000000085d27f637c0d3d00010000735aeb048b7c24480fbe8e860600008b9620050000a100000000518b8c9010020000e8000000008b8e200500008b1500000000508b848a1002000050e8000000008b4c245c8b54245883c4085152508b44245850578bcee8000000008b867406000085c0750d6803400080e80000000083c4048b8674060000508b08ff511084c00f848d0100008b86a405000085c074348b108d4c2420565150ff524c8b388b58048b168d4424105056c1ef08c1eb08ff92b8010000663b38750a663b58020f844f0100008b86a405000085c074348b088d542420565250ff514c8b54244833c98a480580e2000bca8d442448894c24486a01508bcee80000000084c00f84f9000000c786bc000000040000005f5eb8010000005b83c438c210008b86780a0b0085c0750d6803400080e80000000083c4048b86780a0b00508b08ff511084c0750d8b166a016a0056ff92840400005f5eb8010000005b83c438c210008b86780a0b0085c0750d6803400080e80000000083c4048b86780a0b00508b08ff511084c00f848c0000008b86a405000085c074308b108d4c2420565150ff524c8b388b58048b168d4424145056c1ef08c1eb08ff92b8010000663b387506663b580274528b86a405000085c074528b088d542420565250ff514c8b54244833c98a480580e2000bca8d44240c894c240c6a01508bcee80000000084c07522c786bc000000000000005f5eb8010000005b83c438c21000c786bc000000030000005f5eb8010000005b83c438c21000",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?MissionStateMachine@Carryall@@QAEHXZ",
+   "sym_key": "Carryall::MissionStateMachine"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "$L2362",
+   "sym_key": "$L2362"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?FindNearbyCell@InfantryClass@@QAEPAXH@Z",
+   "sym_key": "InfantryClass::FindNearbyCell"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?GetMissionControl@MissionClass@@QAEPADXZ",
+   "sym_key": "MissionClass::GetMissionControl"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E27F8@@3NA",
+   "sym_key": "DataGlobal_7E27F8"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 360,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 382,
+   "type": "REL32",
+   "sym": "?Length@Coord@@QAE_JXZ",
+   "sym_key": "Coord::Length"
+  },
+  {
+   "off": 419,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 432,
+   "type": "REL32",
+   "sym": "?GetElement@Array@@QAEHH@Z",
+   "sym_key": "Array::GetElement"
+  },
+  {
+   "off": 444,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 458,
+   "type": "REL32",
+   "sym": "?VectorClass__GetAtChecked@@YAHPAXH@Z",
+   "sym_key": "VectorClass__GetAtChecked"
+  },
+  {
+   "off": 485,
+   "type": "REL32",
+   "sym": "?ValidateFoundation_0@BuildingClass@@QAEDHHPAXHH@Z",
+   "sym_key": "BuildingClass::ValidateFoundation_0"
+  },
+  {
+   "off": 505,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 644,
+   "type": "REL32",
+   "sym": "?IsOccupied@Cell@@QAEDPAXD@Z",
+   "sym_key": "Cell::IsOccupied"
+  },
+  {
+   "off": 696,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 762,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 897,
+   "type": "REL32",
+   "sym": "?IsOccupied@Cell@@QAEDPAXD@Z",
+   "sym_key": "Cell::IsOccupied"
+  }
+ ]
+}

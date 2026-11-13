@@ -525,7 +525,7 @@
   "this_as_id": false
  },
  "0x402990": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -584,7 +584,7 @@
   "this_as_id": false
  },
  "0x403210": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -1065,15 +1065,15 @@
   "this_as_id": false
  },
  "0x404bb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "TechnoClass::sub_404BB0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_404BB0",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x404d80": {
@@ -1655,7 +1655,7 @@
   "this_as_id": false
  },
  "0x406760": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -2812,7 +2812,7 @@
   "this_as_id": false
  },
  "0x408970": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -3000,13 +3000,13 @@
   "this_as_id": false
  },
  "0x4091c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ReadAudioStream",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ReadAudioStream",
-  "rule_violations": 5,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -3083,7 +3083,7 @@
   "this_as_id": false
  },
  "0x409470": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -3271,14 +3271,14 @@
   "this_as_id": false
  },
  "0x40aa70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::ProcessAudioChannelMovement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ProcessAudioChannelMovement",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -8206,7 +8206,7 @@
   "this_as_id": false
  },
  "0x410a60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9417,15 +9417,15 @@
   "this_as_id": false
  },
  "0x4166c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x6c4]",
   "name": "AircraftClass::Mission_Enter",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AircraftClass::Mission_Enter",
-  "rule_violations": 24,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 22,
+  "status": "NG",
   "this_as_id": false
  },
  "0x416af0": {
@@ -11862,15 +11862,15 @@
   "status": "NG"
  },
  "0x41ec90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "AITriggerTypeClass::CivilianHouseOwns",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AITriggerTypeClass::CivilianHouseOwns",
-  "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x41ee90": {
@@ -11958,7 +11958,7 @@
   "this_as_id": false
  },
  "0x41fb10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -13218,7 +13218,7 @@
   "this_as_id": false
  },
  "0x425510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -13254,7 +13254,7 @@
   "this_as_id": false
  },
  "0x4255b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -13848,26 +13848,26 @@
   "this_as_id": false
  },
  "0x426ed0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "UnitClass::sub_426ED0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_426ED0",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x426fd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "UnitClass::sub_426FD0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_426FD0",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -14096,7 +14096,7 @@
   "this_as_id": false
  },
  "0x427a80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -14108,7 +14108,7 @@
   "this_as_id": false
  },
  "0x427b50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -14216,7 +14216,7 @@
   "this_as_id": false
  },
  "0x428c30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -14600,7 +14600,7 @@
   "this_as_id": false
  },
  "0x4294b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

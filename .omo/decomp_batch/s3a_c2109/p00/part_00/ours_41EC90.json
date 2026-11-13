@@ -1,0 +1,99 @@
+{
+ "symbol": "?CivilianHouseOwns@AITriggerTypeClass@@QAE_NHH@Z",
+ "sym_key": "AITriggerTypeClass::CivilianHouseOwns",
+ "size": 377,
+ "link_base": 0,
+ "bytes_hex": "51a1180000005356578bf933f685c0897c240c0f8657010000b900000000e8000000008b0d0c0000008b118b52343982bc000000742ca118000000463bf00f832c010000b900000000e8000000008b0d0c0000008b14b18b52343982bc00000075d48b1cb185db0f84030100008bb73c0300005585f674738b0656ff50408b0e568bf833edff512c83c0fd83f825771d33d28a9000000000ff249500000000578d8b8c550000e8000000008be88b7c24108bc5eb38578d8b50550000e8000000008b7c2410eb26578d8b78550000e8000000008b7c2410eb14578d8b64550000e8000000008b7c2410eb0233c08b8f4c0300005d83f9057777ff248d000000008b8f480300005f3bc15e0f9cc05b59c208008b8f480300005f3bc15e0f9ec05b59c208008b8f480300005f3bc15e0f94c05b59c208008b8f480300005f3bc15e0f9dc05b59c208008b8f480300005f3bc15e0f9fc05b59c208008b974803000033c93bc25f0f95c15e8ac15b59c208005f5e32c05b59c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Civilian@@3EA",
+   "sym_key": "g_INI_Key_Civilian"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Find@HouseTypeClass@@QAEHXZ",
+   "sym_key": "HouseTypeClass::Find"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Civilian@@3EA",
+   "sym_key": "g_INI_Key_Civilian"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?Find@HouseTypeClass@@QAEHXZ",
+   "sym_key": "HouseTypeClass::Find"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "$L2062",
+   "sym_key": "$L2062"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "$L2063",
+   "sym_key": "$L2063"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "$L2064",
+   "sym_key": "$L2064"
+  }
+ ]
+}
