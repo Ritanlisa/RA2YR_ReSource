@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x5bd240 sub_5BD240 -> _addr_5B
+[conv] 0x5bd2e0 ObjectClass::sub_5BD2E0 -> ObjectClass
+[conv] 0x5c0640 Render_Play -> Render
+[conv] 0x5c1300 ObjectClass::ReadMPMapsINI -> ObjectClass
+[conv] 0x5c2710 MPCooperative::SyncState -> MPCooperative
+[conv] 0x5c3f30 MPCooperative::Cleanup -> MPCooperative
+[conv] 0x5c3f80 MPCooperative::SetGameMode -> MPCooperative
+[conv] 0x5c4110 MPCooperative::ProcessChat -> MPCooperative
+[conv] 0x5c5d90 FreeForAll::Write -> FreeForAll
+[conv] 0x5c9850 sub_5C9850 -> _addr_5C
+[conv] 0x5ca800 MultiplayerSiege::ProcessTurn -> MultiplayerSiege
+[conv] 0x5caac0 MultiplayerSiege::GetResult -> MultiplayerSiege
+[conv] 0x5cf5f0 SessionClass::Destruct -> SessionClass
+[conv] 0x5d0070 SessionClass::loadSettings -> SessionClass
+[conv] 0x5d1c90 ObjectClass::UI_Load_5D1C90 -> ObjectClass
+[conv] 0x5d1fd0 BSurface::CopyRect -> BSurface
+[conv] 0x5d2650 ObjectClass::sub_5D2650 -> ObjectClass
+[conv] 0x5d3ba0 MessageListClass::AddMessage -> MessageListClass
+[conv] 0x5d62c0 MultiplayerGameMode::AssignPlayerIndex -> MultiplayerGameMode
+[conv] 0x5dab80 ObjectClass::sub_5DAB80 -> ObjectClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=2
+[era] ObjectClass              rc=2
+[era] Render                   rc=2
+[era] MPCooperative            rc=2
+[era] FreeForAll               rc=2
+[era] _addr_5C                 rc=2
+[era] MultiplayerSiege         rc=2
+[era] SessionClass             rc=2
+[era] BSurface                 rc=2
+[era] MessageListClass         rc=2
+[era] MultiplayerGameMode      rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5bd240 sub_5BD240 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bd2e0 ObjectClass::sub_5BD2E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c0640 Render_Play -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c1300 ObjectClass::ReadMPMapsINI -> COMPILE_FAIL (attempt 11)
+[ledger] 0x5c2710 MPCooperative::SyncState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c3f30 MPCooperative::Cleanup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c3f80 MPCooperative::SetGameMode -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c4110 MPCooperative::ProcessChat -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c5d90 FreeForAll::Write -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c9850 sub_5C9850 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ca800 MultiplayerSiege::ProcessTurn -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5caac0 MultiplayerSiege::GetResult -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cf5f0 SessionClass::Destruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d0070 SessionClass::loadSettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d1c90 ObjectClass::UI_Load_5D1C90 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d1fd0 BSurface::CopyRect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5d2650 ObjectClass::sub_5D2650 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d3ba0 MessageListClass::AddMessage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d62c0 MultiplayerGameMode::AssignPlayerIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5dab80 ObjectClass::sub_5DAB80 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p11\batch_report.json
