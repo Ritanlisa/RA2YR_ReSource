@@ -1,0 +1,33 @@
+{
+ "symbol": "?Entity_Load@@YIDPAPADPAE@Z",
+ "sym_key": "Unnamed::Entity_Load",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0740332c0c3890d000000008b0952e800000000c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_BigIntPool@@3IA",
+   "sym_key": "g_BigIntPool"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_BigIntPool@@3IA",
+   "sym_key": "g_BigIntPool"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?AdvanceFrame@VQAClass@@QAEDPAX@Z",
+   "sym_key": "VQAClass::AdvanceFrame"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_BigIntPool@@3IA",
+   "sym_key": "g_BigIntPool"
+  }
+ ]
+}

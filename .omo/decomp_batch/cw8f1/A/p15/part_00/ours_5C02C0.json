@@ -1,0 +1,27 @@
+{
+ "symbol": "?computePathCost@VQMovieHandle@@QAEDXZ",
+ "sym_key": "VQMovieHandle::computePathCost",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "890d002e00008b49106a006affb201e800000000c705002e000000000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?RenderMovieFrame@@YIDPAXDHD@Z",
+   "sym_key": "RenderMovieFrame"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?InitFromFile@BinkMovieHandle@@QAEHXZ",
+ "sym_key": "BinkMovieHandle::InitFromFile",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "890d002e00008b4910e800000000c705002e000000000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Play@BinkMovie@@QAEHXZ",
+   "sym_key": "BinkMovie::Play"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C02F0",
+ "name": "AbstractClass::processPathNode",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C02F0",
+ "bytes_hex": "8b4110538b108a9a5005000084db5b752c8a504584d274258b15f4f3ab0085d2751b83c114a3f4f3ab00518b08e80e991900c705f4f3ab0000000000c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?processPathNode@VQMovieHandle@@QAEDXZ",
+ "sym_key": "VQMovieHandle::processPathNode",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "8b4110538b108a9a5005000084db5b752c8a504584d274258b15fc2d000085d2751b83c114a3fc2d0000518b08e800000000c705fc2d000000000000c332c0c3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?AdvanceFrame@VQAClass@@QAEDPAX@Z",
+   "sym_key": "VQAClass::AdvanceFrame"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

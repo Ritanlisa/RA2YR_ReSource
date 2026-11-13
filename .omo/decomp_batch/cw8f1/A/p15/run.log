@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x5bd7e0 sub_5BD7E0 -> _addr_5B
+[conv] 0x5bd9b0 sub_5BD9B0 -> _addr_5B
+[conv] 0x5bead0 sub_5BEAD0 -> _addr_5B
+[conv] 0x5beca0 sub_5BECA0 -> _addr_5B
+[conv] 0x5bf5e0 sub_5BF5E0 -> _addr_5B
+[conv] 0x5bf7b0 sub_5BF7B0 -> _addr_5B
+[conv] 0x5c0080 Entity_Load -> Entity
+[conv] 0x5c02c0 VQMovieHandle::computePathCost -> VQMovieHandle
+[conv] 0x5c02f0 VQMovieHandle::processPathNode -> VQMovieHandle
+[conv] 0x5c0550 BinkMovieHandle::InitFromFile -> BinkMovieHandle
+[conv] 0x5c10f0 sub_5C10F0 -> _addr_5C
+[conv] 0x5c12c0 sub_5C12C0 -> _addr_5C
+[conv] 0x5c5af0 sub_5C5AF0 -> _addr_5C
+[conv] 0x5c5cc0 sub_5C5CC0 -> _addr_5C
+[conv] 0x5c6060 sub_5C6060 -> _addr_5C
+[conv] 0x5c93c0 sub_5C93C0 -> _addr_5C
+[conv] 0x5c9510 sub_5C9510 -> _addr_5C
+[conv] 0x5c96e0 sub_5C96E0 -> _addr_5C
+[conv] 0x5ca420 sub_5CA420 -> _addr_5C
+[conv] 0x5ca5f0 sub_5CA5F0 -> _addr_5C
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=0
+[era] Entity                   rc=0
+[era] VQMovieHandle            rc=0
+[era] BinkMovieHandle          rc=0
+[era] _addr_5C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5bd7e0   MATCH            sub_5BD7E0
+[diff] 0x5bd9b0   MATCH            sub_5BD9B0
+[diff] 0x5bead0   MATCH            sub_5BEAD0
+[diff] 0x5beca0   MATCH            sub_5BECA0
+[diff] 0x5bf5e0   MATCH            sub_5BF5E0
+[diff] 0x5bf7b0   MATCH            sub_5BF7B0
+[diff] 0x5c0080   MATCH            Entity_Load
+[diff] 0x5c02c0   MATCH            VQMovieHandle::computePathCost
+[diff] 0x5c02f0   MATCH            VQMovieHandle::processPathNode
+[diff] 0x5c0550   MATCH            BinkMovieHandle::InitFromFile
+[diff] 0x5c10f0   MATCH            sub_5C10F0
+[diff] 0x5c12c0   MATCH            sub_5C12C0
+[diff] 0x5c5af0   MATCH            sub_5C5AF0
+[diff] 0x5c5cc0   MATCH            sub_5C5CC0
+[diff] 0x5c6060   MATCH            sub_5C6060
+[diff] 0x5c93c0   MATCH            sub_5C93C0
+[diff] 0x5c9510   MATCH            sub_5C9510
+[diff] 0x5c96e0   MATCH            sub_5C96E0
+[diff] 0x5ca420   MATCH            sub_5CA420
+[diff] 0x5ca5f0   MATCH            sub_5CA5F0
+[ledger] 0x5bd7e0 sub_5BD7E0 -> OK (attempt 2)
+[ledger] 0x5bd9b0 sub_5BD9B0 -> OK (attempt 3)
+[ledger] 0x5bead0 sub_5BEAD0 -> OK (attempt 2)
+[ledger] 0x5beca0 sub_5BECA0 -> OK (attempt 4)
+[ledger] 0x5bf5e0 sub_5BF5E0 -> OK (attempt 2)
+[ledger] 0x5bf7b0 sub_5BF7B0 -> OK (attempt 3)
+[ledger] 0x5c0080 Entity_Load -> OK (attempt 2)
+[ledger] 0x5c02c0 VQMovieHandle::computePathCost -> OK (attempt 2)
+[ledger] 0x5c02f0 VQMovieHandle::processPathNode -> OK (attempt 2)
+[ledger] 0x5c0550 BinkMovieHandle::InitFromFile -> OK (attempt 2)
+[ledger] 0x5c10f0 sub_5C10F0 -> OK (attempt 2)
+[ledger] 0x5c12c0 sub_5C12C0 -> OK (attempt 3)
+[ledger] 0x5c5af0 sub_5C5AF0 -> OK (attempt 2)
+[ledger] 0x5c5cc0 sub_5C5CC0 -> OK (attempt 3)
+[ledger] 0x5c6060 sub_5C6060 -> OK (attempt 3)
+[ledger] 0x5c93c0 sub_5C93C0 -> OK (attempt 3)
+[ledger] 0x5c9510 sub_5C9510 -> OK (attempt 2)
+[ledger] 0x5c96e0 sub_5C96E0 -> OK (attempt 3)
+[ledger] 0x5ca420 sub_5CA420 -> OK (attempt 2)
+[ledger] 0x5ca5f0 sub_5CA5F0 -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p15\batch_report.json
