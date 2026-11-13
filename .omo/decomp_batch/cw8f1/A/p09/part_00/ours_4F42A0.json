@@ -1,0 +1,15 @@
+{
+ "symbol": "?Add@GScreenClass@@QAEXXZ",
+ "sym_key": "GScreenClass::Add",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EF54@@3IA",
+   "sym_key": "DataGlobal_A8EF54"
+  }
+ ]
+}
