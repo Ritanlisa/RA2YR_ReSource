@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p103\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e50c0 FillComboBoxAllianceSlots -> _addr_4E
+[conv] 0x50b1d0 SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass -> SuperWeapon
+[conv] 0x5a1c70 ObjectClass::sub_5A1C70 -> ObjectClass
+[conv] 0x531f60 MainMenu::DlgProc -> MainMenu
+[conv] 0x76ed10 Team_Start_76ED10 -> Team_Start
+[conv] 0x753000 ObjectClass::InitFromINIEVA -> ObjectClass
+[conv] 0x4e2690 GaugeClass::HandleClick -> GaugeClass
+[conv] 0x41ec90 AITriggerTypeClass::CivilianHouseOwns -> AITriggerTypeClass
+[conv] 0x6b0880 BuildingClass::CheckBridge -> BuildingClass
+[conv] 0x4123a0 fptc -> _addr_41
+[conv] 0x68c050 ObjectClass::Map_Setup -> ObjectClass
+[conv] 0x76cbf0 TechnoClass::ConstructWDTSelection_Create_76CBF0 -> TechnoClass
+[conv] 0x4289d0 AnimTypeClass::PowerDrainUpdate -> AnimTypeClass
+[conv] 0x526b10 HashTableSection::FindSection -> HashTableSection
+[conv] 0x643400 LoadScreen::RenderProgressBackground -> LoadScreen
+[conv] 0x5c07d0 CreateMovie -> _addr_5C
+[conv] 0x48c3e0 ModemConnectionClass::serviceSendQueue -> ModemConnectionClass
+[conv] 0x775bc0 DialogClass::Reposition -> DialogClass
+[conv] 0x56b3f0 MapClass::DecompressCellData -> MapClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4E                 rc=2
+[era] SuperWeapon              rc=0
+[era] ObjectClass              rc=2
+[era] MainMenu                 rc=0
+[era] Team_Start               rc=2
+[era] GaugeClass               rc=2
+[era] AITriggerTypeClass       rc=2
+[era] BuildingClass            rc=2
+[era] _addr_41                 rc=2
+[era] TechnoClass              rc=2
+[era] AnimTypeClass            rc=2
+[era] HashTableSection         rc=2
+[era] LoadScreen               rc=0
+[era] _addr_5C                 rc=2
+[era] ModemConnectionClass     rc=0
+[era] DialogClass              rc=2
+[era] MapClass                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x50b1d0   MISMATCH         SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass
+[diff] 0x5a1c70   MISMATCH         ObjectClass::sub_5A1C70
+[diff] 0x531f60   MISMATCH         MainMenu::DlgProc
+[diff] 0x643400   MISMATCH         LoadScreen::RenderProgressBackground
+[diff] 0x48c3e0   MISMATCH         ModemConnectionClass::serviceSendQueue
+[diff] 0x56b3f0   MISMATCH         MapClass::DecompressCellData
+[ledger] 0x4e50c0 FillComboBoxAllianceSlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50b1d0 SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass -> NG (attempt 1)
+[ledger] 0x5a1c70 ObjectClass::sub_5A1C70 -> NG (attempt 1)
+[ledger] 0x531f60 MainMenu::DlgProc -> NG (attempt 1)
+[ledger] 0x76ed10 Team_Start_76ED10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x753000 ObjectClass::InitFromINIEVA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e2690 GaugeClass::HandleClick -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41ec90 AITriggerTypeClass::CivilianHouseOwns -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b0880 BuildingClass::CheckBridge -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4123a0 fptc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68c050 ObjectClass::Map_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76cbf0 TechnoClass::ConstructWDTSelection_Create_76CBF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4289d0 AnimTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x526b10 HashTableSection::FindSection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x643400 LoadScreen::RenderProgressBackground -> NG (attempt 1)
+[ledger] 0x5c07d0 CreateMovie -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e66f0 0x5e66f0 -> PENDING (attempt 1)
+[ledger] 0x48c3e0 ModemConnectionClass::serviceSendQueue -> NG (attempt 1)
+[ledger] 0x775bc0 DialogClass::Reposition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56b3f0 MapClass::DecompressCellData -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 6,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 1,
+  "cc_mismatch": 1,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p103\batch_report.json

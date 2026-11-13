@@ -1,0 +1,81 @@
+{
+ "symbol": "?UpdateSuperWeaponsUnavailableHouseClass@SuperWeapon@@QAEDXZ",
+ "sym_key": "SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass",
+ "size": 396,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b44240855568bf18b8ed407000033c881e1ff00000033c184c00f85630100008b866402000033ed85c00f8e53010000578b96580200008b04aa8a486d84c9740b8a486e84c90f84270100008b467832d248785f8b4e6c8d0c818b3980bf9000000000740980bf8100000000740a4883e90485c07de4eb3b8b8fec05000033d28b0185c0741039a8f0160000741139a8f416000074094283c10483fa037ce18bcfe8000000003bc574078bcfe800000000b2018b86580200008b0ca88b412880b8e700000000740da01300000084c00f849e00000084d20f84960000008b96a45300008b86a85300003bd089542410894424147d2485c0742085d27415db442410da742414dc1d00000000dfe0f6c4017407c644240c01eb05c644240c00a1000000008b54240c3bf0520f94c0506a00e8000000003b35000000007536556a1fb9f8010000e8000000008b8e580200008b14a98b4228508b08ff51406a00b939000000e80000000050b9f8010000e8000000008b8664020000453be80f8caffeffff5f5e5d83c40cc3",
+ "relocs": [
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?SWAvailable@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::SWAvailable"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?SW2Available@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::SW2Available"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 266,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 290,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?StartTimer@SuperClass@@QAEDHDD@Z",
+   "sym_key": "SuperClass::StartTimer"
+  },
+  {
+   "off": 314,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 324,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 329,
+   "type": "REL32",
+   "sym": "?AddCameo@SidebarClass@@QAEDHH@Z",
+   "sym_key": "SidebarClass::AddCameo"
+  },
+  {
+   "off": 359,
+   "type": "REL32",
+   "sym": "?GetStatus@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::GetStatus"
+  },
+  {
+   "off": 365,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 370,
+   "type": "REL32",
+   "sym": "?ActivateTab@Sidebar@@QAEHH@Z",
+   "sym_key": "Sidebar::ActivateTab"
+  }
+ ]
+}

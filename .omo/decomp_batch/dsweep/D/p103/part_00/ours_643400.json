@@ -1,0 +1,105 @@
+{
+ "symbol": "?RenderProgressBackground@LoadScreen@@QAEXNNPAHH@Z",
+ "sym_key": "LoadScreen::RenderProgressBackground",
+ "size": 380,
+ "link_base": 0,
+ "bytes_hex": "83ec2c535556578d44242c6a008be950e8000000008b5424448b48088b400c894c24108d72038b542440894424288b442454894c24248b4c24548d7a038b5424545051528974242c897c2428e8000000008b44245485c0740c8b880c030000894c2440eb19ba01000000b900000000e8000000008b1500000000895424408b4d7485c97404894c24408a4d718b5c245084c974688d4c2454518d8808030000e800000000668b108a0d0000000033db8ade81e2ff000000d3fb8b0d00000000d3e333c98a48028bc18a0d00000000d3e88b0d00000000d3e08a0d00000000d3ea8b0d000000000bd8d3e28d4c241c0bda538b5c245451538b03ff5058db44241083ec08897c241c89742420dc4c2450dd1c24e80000000083c4088b4d54dd4424406a006a006a006a006a0068e80300006a006a006a008d54243868000400008d44247052506a00c744247c00000000c78424800000000000000051e80000000050e80000000083c4048bd08bcbe8000000005f5e5d5b83c42cc21800",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Rect__Inflate@@YGHPAXHH@Z",
+   "sym_key": "Rect__Inflate"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?DataGlobal_836ED8@@3PADA",
+   "sym_key": "DataGlobal_836ED8"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?FindBuildingAnimByName@@YIHPAXH@Z",
+   "sym_key": "FindBuildingAnimByName"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_FileSystem_THEATER_PAL@@3PAXA",
+   "sym_key": "g_FileSystem_THEATER_PAL"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?ConvertToRGB@Color@@QAEHH@Z",
+   "sym_key": "Color::ConvertToRGB"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 348,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 354,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 366,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHPAXI00HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

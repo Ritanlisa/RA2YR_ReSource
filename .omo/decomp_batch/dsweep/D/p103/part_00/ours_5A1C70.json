@@ -1,0 +1,171 @@
+{
+ "symbol": "?sub_5A1C70@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_5A1C70",
+ "size": 413,
+ "link_base": 0,
+ "bytes_hex": "83ec08a118270000558be95685c057896c2410742da1000000000fafc085c08bc8761f33c08b351827000083caff895406388b35182700008954063c83c0504975e3a1a81900008d78ff85ff7c208b0d9c1900008b34b985f674108bcee80000000056e80000000083c4044f79e0a100000000c7051c270000000000000fafc085c0766433f68be88b15182700008d4c240c51b9f80100008b043289442410e8000000008bf8a118270000837c3038ff752c66833c3000750866837c300200741d8bcfe80000000084c0750b8bcfe80000000084c074078bcfe80000000083c6504d75a48b6c2410a1a819000033ff85c07e578b159c1900008b34ba8a461484c0743d33c08a453c83f803740983f804740432c0eb02b0018b560cb9401f00003bca1bd233c9f7da84c00f94c18d540a048bce52e8000000008bcee800000000a1a8190000473bf87ca9a1000000000fafc085c0763e33f68bf8a11827000003c6837838ff75276683380075076683780200741a50b9f8010000e8000000008bc8e80000000085c07404c6401a0083c6504f75c65f5e5d83c408c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?Cleanup@TileNode@@QAEXXZ",
+   "sym_key": "TileNode::Cleanup"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?IsGroundTypeRange@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsGroundTypeRange"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?IsShore@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsShore"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?GenerateTerrain@RandomMap@@QAEHXZ",
+   "sym_key": "RandomMap::GenerateTerrain"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 309,
+   "type": "REL32",
+   "sym": "?CollectTerrainCells@RandomMap@@QAEDH@Z",
+   "sym_key": "RandomMap::CollectTerrainCells"
+  },
+  {
+   "off": 316,
+   "type": "REL32",
+   "sym": "?PlaceRandomMapTerrain@RandomMap@@QAEDXZ",
+   "sym_key": "RandomMap::PlaceRandomMapTerrain"
+  },
+  {
+   "off": 321,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 331,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 347,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 379,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 386,
+   "type": "REL32",
+   "sym": "?GenerateTerrain@RandomMap@@QAEHXZ",
+   "sym_key": "RandomMap::GenerateTerrain"
+  }
+ ]
+}

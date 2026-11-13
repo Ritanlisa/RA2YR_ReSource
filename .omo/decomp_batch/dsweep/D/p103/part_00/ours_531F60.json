@@ -1,0 +1,93 @@
+{
+ "symbol": "?DlgProc@MainMenu@@QAGHPAXHHH@Z",
+ "sym_key": "MainMenu::DlgProc",
+ "size": 406,
+ "link_base": 0,
+ "bytes_hex": "8b44241481ec00010000568bb4240c010000578bbc2418010000508bd78bcee80000000085c00f855f0100006a0856e8000000008b8c241401000083f90f0f842b01000081f911010000747981f9970400000f8531010000681d07000056e80000000068000000008bf0e80000000083c4048bc8e80000000033d268571700008a1500000000b9000000008bf8e80000000057508d4c2410680000000051e80000000083c4108d542408526a0068b204000056e8000000005f33c05e81c400010000c214006681ff84067513c700020000005f33c05e81c400010000c214006681ff86067513c700040000005f33c05e81c400010000c214008bcf81e1ffff000081f9780500007f4b743681f9ee030000741b81f95c050000756ec700050000005f33c05e81c400010000c21400c700060000005f33c05e81c400010000c21400c700030000005f33c05e81c400010000c2140081f983060000752dc700010000005f33c05e81c400010000c21400681a07000056e8000000006a006a0068f004000050e80000000033c05f5e81c400010000c21400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_CoordScatterManager@@3IA",
+   "sym_key": "g_CoordScatterManager"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?GetModuleInternalVersion@@YAPADPAX@Z",
+   "sym_key": "GetModuleInternalVersion"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?CharToWideString@@YIPADPAE@Z",
+   "sym_key": "CharToWideString"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Init_CPP@@3EA",
+   "sym_key": "g_Str_File_Init_CPP"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82696C@@3PADA",
+   "sym_key": "DataGlobal_82696C"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGHHH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?DataGlobal_826960@@3PAXA",
+   "sym_key": "DataGlobal_826960"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 374,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 389,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

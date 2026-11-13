@@ -1,0 +1,93 @@
+{
+ "symbol": "?serviceSendQueue@ModemConnectionClass@@QAEHXZ",
+ "sym_key": "ModemConnectionClass::serviceSendQueue",
+ "size": 487,
+ "link_base": 0,
+ "bytes_hex": "83ec0c535556578bf933f6897424108b4f048b412885c07e6156e8000000008bd8f60302744b8b43148a480284c9752ba1000000008b2d0000000083f8ff740de8000000002b050000000003e88b4b042be98b4f0455e8000000008b4f046a008bc66a006a00506a006a004ee8000000008b4f04463b7128729f8b4f0433c0894424148b492885c9894c24187f0d5f5e5db8010000005b83c40cc3bb010000008b4f0450e8000000008bf0f606020f85fb000000a1000000008b2d0000000083f8ff740de8000000002b050000000003e88b46088b4f288bd52bd03bd10f86cc0000008a5e208b0d0000000081e3ff00000024000bd833c03bf98b170f94c033c15325ff00000033c18b4e18508b461c518b4e10508b461451508bcfff52248b460c896e0885c0740e8b4708bb0100000040894708eb238b4e14896e04bb0100000038590275138b068bd033d081e2fd00000033d083ca0289168b460c4089460c8b4f2c83f9ff741b3bc176178b06895c24108bc833c881e1fb00000033c883c904890e8b473083f8ff74238b56088b6e042bd53bd076178b06895c24108bc833c881e1fb00000033c883c904890e8b4424148b4c2418403bc1894424140f8cdcfeffff8b44241085c0750a5f5e8bc35d5b83c40cc38bcfe8000000005f5e5d33c05b83c40cc3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GetTileIndex@Terrain@@QAEHH@Z",
+   "sym_key": "Terrain::GetTileIndex"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?initQueue@ConnectionClass@@QAEII@Z",
+   "sym_key": "ConnectionClass::initQueue"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?ExtractEntry@PacketQueue@@QAEHPAX0H000@Z",
+   "sym_key": "PacketQueue::ExtractEntry"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?GetTileIndex@Terrain@@QAEHH@Z",
+   "sym_key": "Terrain::GetTileIndex"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EA0C@@3IA",
+   "sym_key": "DataGlobal_A8EA0C"
+  },
+  {
+   "off": 473,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
