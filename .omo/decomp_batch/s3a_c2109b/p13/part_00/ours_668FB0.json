@@ -1,0 +1,249 @@
+{
+ "symbol": "?LoadSpecialWeapons@RulesClass@@QAEEXZ",
+ "sym_key": "RulesClass::LoadSpecialWeapons",
+ "size": 546,
+ "link_base": 0,
+ "bytes_hex": "a10000000081ec8400000056578b7c24088bf1508bcfe80000000085c00f84f40100008b1500000000a100000000538b9e8c0f00008d4c2410688000000051680000000052508bcfe80000000085c0740b8d4c2410e800000000eb028bc38b9e900f00008d4c241089868c0f00008b1500000000a100000000688000000051680000000052508bcfe80000000085c0740b8d4c2410e800000000eb028bc38b9e940f00008d4c24108986900f00008b1500000000a100000000688000000051680000000052508bcfe80000000085c0740b8d4c2410e800000000eb028bc38b9e980f00008d4c24108986940f00008b1500000000a100000000688000000051680000000052508bcfe80000000085c0740b8d4c2410e800000000eb028bc38b9e9c0f00008d4c24108986980f00008b1500000000a100000000688000000051680000000052508bcfe80000000085c0740b8d4c2410e800000000eb028bc38b9ea00f00008d4c241089869c0f00008b1500000000a100000000688000000051680000000052508bcfe80000000085c0740b8d4c2410e800000000eb028bc38b9ea40f00008d4c24108986a00f00008b1500000000a100000000688000000051680000000052508bcfe80000000085c0740b8d4c2410e800000000eb028bc38986a40f0000a10000000033f65b85c0761a8b0d00000000578b04b1508b10ff5264a100000000463bf072e624015f0c015e81c484000000c35f33c05e81c484000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aSpecialweapons@@3HA",
+   "sym_key": "aSpecialweapons"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?BinarySearchSection@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::BinarySearchSection"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?aNukewarhead@@3HA",
+   "sym_key": "aNukewarhead"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?aSpecialweapons@@3HA",
+   "sym_key": "aSpecialweapons"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?FindOrCreate@WarheadTypeClass@@QAEHXZ",
+   "sym_key": "WarheadTypeClass::FindOrCreate"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?aNukeprojectile@@3HA",
+   "sym_key": "aNukeprojectile"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?aSpecialweapons@@3HA",
+   "sym_key": "aSpecialweapons"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?FindOrCreate@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::FindOrCreate"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?aNukedown@@3HA",
+   "sym_key": "aNukedown"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?aSpecialweapons@@3HA",
+   "sym_key": "aSpecialweapons"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 214,
+   "type": "REL32",
+   "sym": "?FindOrCreate@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::FindOrCreate"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?aMutatewarhead@@3HA",
+   "sym_key": "aMutatewarhead"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?aSpecialweapons@@3HA",
+   "sym_key": "aSpecialweapons"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 278,
+   "type": "REL32",
+   "sym": "?FindOrCreate@WarheadTypeClass@@QAEHXZ",
+   "sym_key": "WarheadTypeClass::FindOrCreate"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "?aMutateexplosio@@3HA",
+   "sym_key": "aMutateexplosio"
+  },
+  {
+   "off": 309,
+   "type": "DIR32",
+   "sym": "?aSpecialweapons@@3HA",
+   "sym_key": "aSpecialweapons"
+  },
+  {
+   "off": 320,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 329,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 342,
+   "type": "REL32",
+   "sym": "?FindOrCreate@WarheadTypeClass@@QAEHXZ",
+   "sym_key": "WarheadTypeClass::FindOrCreate"
+  },
+  {
+   "off": 368,
+   "type": "DIR32",
+   "sym": "?aEmpulsewarhead@@3HA",
+   "sym_key": "aEmpulsewarhead"
+  },
+  {
+   "off": 373,
+   "type": "DIR32",
+   "sym": "?aSpecialweapons@@3HA",
+   "sym_key": "aSpecialweapons"
+  },
+  {
+   "off": 384,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 393,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 406,
+   "type": "REL32",
+   "sym": "?FindOrCreate@WarheadTypeClass@@QAEHXZ",
+   "sym_key": "WarheadTypeClass::FindOrCreate"
+  },
+  {
+   "off": 432,
+   "type": "DIR32",
+   "sym": "?aEmpulseproject@@3HA",
+   "sym_key": "aEmpulseproject"
+  },
+  {
+   "off": 437,
+   "type": "DIR32",
+   "sym": "?aSpecialweapons@@3HA",
+   "sym_key": "aSpecialweapons"
+  },
+  {
+   "off": 448,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 457,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 470,
+   "type": "REL32",
+   "sym": "?FindOrCreate@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::FindOrCreate"
+  },
+  {
+   "off": 485,
+   "type": "DIR32",
+   "sym": "?g_WarheadTypePool@@3IA",
+   "sym_key": "g_WarheadTypePool"
+  },
+  {
+   "off": 498,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8874C4@@3IA",
+   "sym_key": "DataGlobal_8874C4"
+  },
+  {
+   "off": 513,
+   "type": "DIR32",
+   "sym": "?g_WarheadTypePool@@3IA",
+   "sym_key": "g_WarheadTypePool"
+  }
+ ]
+}

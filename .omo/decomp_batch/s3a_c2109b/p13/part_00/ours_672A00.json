@@ -1,0 +1,57 @@
+{
+ "symbol": "?readColors@RulesClass@@QAEEXZ",
+ "sym_key": "RulesClass::readColors",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "83ec2433c0a0000000005356578b7c240c508b0fe8000000008bd833f685db7e3f33c9568a0d00000000518b0fe8000000008d5424106a205268000000005033c0a0000000008bcf50e80000000085c074098d4c2410e800000000463bf37cc133c05f85db5e5b0f9fc083c424c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Particles@@3EA",
+   "sym_key": "g_INI_Key_Particles"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Particles@@3EA",
+   "sym_key": "g_INI_Key_Particles"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Particles@@3EA",
+   "sym_key": "g_INI_Key_Particles"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Process@NetworkEventClass@@QAEPAIXZ",
+   "sym_key": "NetworkEventClass::Process"
+  }
+ ]
+}

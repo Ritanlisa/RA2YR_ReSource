@@ -1,0 +1,11 @@
+{
+ "addr": "0x672920",
+ "name": "CCINIClass::LoadUnitTypes",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x672920",
+ "bytes_hex": "83ec205356578b7c243068e8d083008bcfe82a40ebff8bd833f685db7e388d44240c6a205068649f88005668e8d083008bcfe86943ebff5068e8d083008bcfe8ac60ebff85c074098d4c240ce8ef8f0d00463bf37cc833c05f85db5e5b0f9fc083c420c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

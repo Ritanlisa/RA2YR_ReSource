@@ -1,0 +1,11 @@
+{
+ "addr": "0x672740",
+ "name": "RulesClass::ReadSideData",
+ "size": 130,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x672740",
+ "bytes_hex": "a1c80c7f0081ec8000000053568bb4248c00000057508bcee80342ebff8bd833ff85db7e4a8b0dc80c7f0057518bcee84c45ebff8d54240c68800000005268649f880050a1c80c7f00508bcee87f62ebff85c0740b8d4c240ce882f10700eb0233c08b10568bc8ff5264473bfb7cb633c05f85db5e5b0f9fc081c480000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x672A70",
+ "name": "CCINIClass::ReadBuildingSettings",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x672A70",
+ "bytes_hex": "83ec205356578b7c24306800d183008bcfe8da3eebff8bd833f685db7e388d44240c6a205068649f8800566800d183008bcfe81942ebff506800d183008bcfe85c5febff85c074098d4c240ce8cf1dfdff463bf37cc833c05f85db5e5b0f9fc083c420c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?SmallFunc_67B500@@YIHPAPAPAEPAE1H@Z",
+ "sym_key": "Unnamed::SmallFunc_67B500",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "81ec800000008d4424006880000000508b84248c00000068000000005052e80000000085c074128d4c2400e80000000081c480000000c208008b84248800000081c480000000c20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?FindOrCreate@WarheadTypeClass@@QAEHXZ",
+   "sym_key": "WarheadTypeClass::FindOrCreate"
+  }
+ ]
+}

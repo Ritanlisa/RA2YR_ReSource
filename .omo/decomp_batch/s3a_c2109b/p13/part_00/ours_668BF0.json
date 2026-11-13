@@ -1,0 +1,531 @@
+{
+ "symbol": "?Addition@RulesClass@@QAEHXZ",
+ "sym_key": "RulesClass::Addition",
+ "size": 841,
+ "link_base": 0,
+ "bytes_hex": "81ec300400008b44242c5355568b308be957896c2410e8000000006a0068000000008bcee80000000085c0746b8b0e680000000033ffe80000000085c0894424147e5581c5741800008b0e576800000000e8000000006a006a006a008d4c24488bd8e80000000050538d4c24406800000000518bcee8000000008a5002668b008bcd4783c5036689018b4424143bf88851027cb58b6c24108b0e6800000000e8000000008bd833ff85db7e388b0e576800000000e8000000008d4c24186a205168000000005068000000008bcee80000000085c074098d4c2418e800000000473bfb7cc88bcde8000000008b15000000008b0e52e8000000008bd833ff85db7e3ba1000000008b0e5750e8000000008b15000000008d4c24186a2051680000000050528bcee80000000085c074098d4c2418e800000000473bfb7cc58b0e6800000000e8000000008bd833ff85db7e388b0e576800000000e8000000008d4c24186a205168000000005068000000008bcee80000000085c074098d4c2418e800000000473bfb7cc88b0e33d28a150000000052e8000000008bd833ff85db7e3f8b0e33c0a0000000005750e8000000008d4c24186a2033d2518a1500000000680000000050528bcee80000000085c074098d4c2418e800000000473bfb7cc18b0e6800000000e8000000008bd833ff85db7e388b0e576800000000e8000000008d4c24186a205168000000005068000000008bcee80000000085c074098d4c2418e800000000473bfb7cc88b0e6800000000e8000000008bd833ff85db7e388b0e576800000000e8000000008d5424186a205268000000005068000000008bcee80000000085c074098d4c2418e800000000473bfb7cc88bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde80000000056e8000000008bcee8000000008bcee8000000008bcee80000000055e80000000083c4048bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008bcde80000000056e80000000083c4048bcde8000000005f5e5d5b81c430040000c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?ReadColors@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::ReadColors"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E50@@3PADA",
+   "sym_key": "DataGlobal_839E50"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Exists@INIEntry@@QAEHPAXH@Z",
+   "sym_key": "INIEntry::Exists"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E50@@3PADA",
+   "sym_key": "DataGlobal_839E50"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E50@@3PADA",
+   "sym_key": "DataGlobal_839E50"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?SixBitTo16Bit@Palette@@QAEPAEDDD@Z",
+   "sym_key": "Palette::SixBitTo16Bit"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E50@@3PADA",
+   "sym_key": "DataGlobal_839E50"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?GetCoord@INIClass@@QAEHHPAX00@Z",
+   "sym_key": "INIClass::GetCoord"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E28@@3PADA",
+   "sym_key": "DataGlobal_839E28"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E28@@3PADA",
+   "sym_key": "DataGlobal_839E28"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E28@@3PADA",
+   "sym_key": "DataGlobal_839E28"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?Create@WeaponTypeClass@@QAEPAEXZ",
+   "sym_key": "WeaponTypeClass::Create"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?ReadDataList@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::ReadDataList"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?aOverlaytypes@@3HA",
+   "sym_key": "aOverlaytypes"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?aOverlaytypes@@3HA",
+   "sym_key": "aOverlaytypes"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 273,
+   "type": "DIR32",
+   "sym": "?aOverlaytypes@@3HA",
+   "sym_key": "aOverlaytypes"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "?FindOrCreate2@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindOrCreate2"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DEC@@3PADA",
+   "sym_key": "DataGlobal_839DEC"
+  },
+  {
+   "off": 324,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DEC@@3PADA",
+   "sym_key": "DataGlobal_839DEC"
+  },
+  {
+   "off": 345,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 357,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DEC@@3PADA",
+   "sym_key": "DataGlobal_839DEC"
+  },
+  {
+   "off": 370,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 383,
+   "type": "REL32",
+   "sym": "?Process@WeaponTypeClass@@QAEHXZ",
+   "sym_key": "WeaponTypeClass::Process"
+  },
+  {
+   "off": 398,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Warheads@@3EA",
+   "sym_key": "g_INI_Key_Warheads"
+  },
+  {
+   "off": 404,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 421,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Warheads@@3EA",
+   "sym_key": "g_INI_Key_Warheads"
+  },
+  {
+   "off": 428,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 443,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Warheads@@3EA",
+   "sym_key": "g_INI_Key_Warheads"
+  },
+  {
+   "off": 448,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 457,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 470,
+   "type": "REL32",
+   "sym": "?FindOrCreate@WarheadTypeClass@@QAEHXZ",
+   "sym_key": "WarheadTypeClass::FindOrCreate"
+  },
+  {
+   "off": 482,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DB8@@3PADA",
+   "sym_key": "DataGlobal_839DB8"
+  },
+  {
+   "off": 487,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 503,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DB8@@3PADA",
+   "sym_key": "DataGlobal_839DB8"
+  },
+  {
+   "off": 508,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 520,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 526,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DB8@@3PADA",
+   "sym_key": "DataGlobal_839DB8"
+  },
+  {
+   "off": 533,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 546,
+   "type": "REL32",
+   "sym": "?FindOrCreate@FactoryClass@@QAEHXZ",
+   "sym_key": "FactoryClass::FindOrCreate"
+  },
+  {
+   "off": 558,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DCC@@3PADA",
+   "sym_key": "DataGlobal_839DCC"
+  },
+  {
+   "off": 563,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 579,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DCC@@3PADA",
+   "sym_key": "DataGlobal_839DCC"
+  },
+  {
+   "off": 584,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 596,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 602,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839DCC@@3PADA",
+   "sym_key": "DataGlobal_839DCC"
+  },
+  {
+   "off": 609,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 622,
+   "type": "REL32",
+   "sym": "?FindOrCreate@TerrainTypeClass@@QAEHXZ",
+   "sym_key": "TerrainTypeClass::FindOrCreate"
+  },
+  {
+   "off": 634,
+   "type": "REL32",
+   "sym": "?LoadBuildingTypes@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::LoadBuildingTypes"
+  },
+  {
+   "off": 641,
+   "type": "REL32",
+   "sym": "?LoadBuildingTypes@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::LoadBuildingTypes"
+  },
+  {
+   "off": 648,
+   "type": "REL32",
+   "sym": "?readRadiation@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::readRadiation"
+  },
+  {
+   "off": 655,
+   "type": "REL32",
+   "sym": "?readCrateRules@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::readCrateRules"
+  },
+  {
+   "off": 662,
+   "type": "REL32",
+   "sym": "?LoadAnimTypes@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::LoadAnimTypes"
+  },
+  {
+   "off": 669,
+   "type": "REL32",
+   "sym": "?LoadUnitTypes@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::LoadUnitTypes"
+  },
+  {
+   "off": 676,
+   "type": "REL32",
+   "sym": "?readColors@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::readColors"
+  },
+  {
+   "off": 683,
+   "type": "REL32",
+   "sym": "?ReadBuildingSettings@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::ReadBuildingSettings"
+  },
+  {
+   "off": 690,
+   "type": "REL32",
+   "sym": "?readDifficulty@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::readDifficulty"
+  },
+  {
+   "off": 697,
+   "type": "REL32",
+   "sym": "?ReadMultiplayerDialogSettings@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::ReadMultiplayerDialogSettings"
+  },
+  {
+   "off": 704,
+   "type": "REL32",
+   "sym": "?ReadMultiplayerDefaults@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::ReadMultiplayerDefaults"
+  },
+  {
+   "off": 711,
+   "type": "REL32",
+   "sym": "?ReadPowerupsSection@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::ReadPowerupsSection"
+  },
+  {
+   "off": 718,
+   "type": "REL32",
+   "sym": "?LoadSpeedTypes@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::LoadSpeedTypes"
+  },
+  {
+   "off": 725,
+   "type": "REL32",
+   "sym": "?ReadIQSection@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::ReadIQSection"
+  },
+  {
+   "off": 732,
+   "type": "REL32",
+   "sym": "?LoadFromINI@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::LoadFromINI"
+  },
+  {
+   "off": 738,
+   "type": "REL32",
+   "sym": "?SideClass__LoadAllFromINI@@YGDPAX@Z",
+   "sym_key": "SideClass__LoadAllFromINI"
+  },
+  {
+   "off": 745,
+   "type": "REL32",
+   "sym": "?ReadDifficultyModifiers@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ReadDifficultyModifiers"
+  },
+  {
+   "off": 752,
+   "type": "REL32",
+   "sym": "?ReadDifficultyModifiers@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ReadDifficultyModifiers"
+  },
+  {
+   "off": 759,
+   "type": "REL32",
+   "sym": "?ReadDifficultyModifiers@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ReadDifficultyModifiers"
+  },
+  {
+   "off": 765,
+   "type": "REL32",
+   "sym": "?ReadCrateRulesINI@@YAHPAX@Z",
+   "sym_key": "ReadCrateRulesINI"
+  },
+  {
+   "off": 775,
+   "type": "REL32",
+   "sym": "?ReadCombatINI@Rules@@QAEHXZ",
+   "sym_key": "Rules::ReadCombatINI"
+  },
+  {
+   "off": 782,
+   "type": "REL32",
+   "sym": "?ReadCountryList@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::ReadCountryList"
+  },
+  {
+   "off": 789,
+   "type": "REL32",
+   "sym": "?readAudioVisual@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::readAudioVisual"
+  },
+  {
+   "off": 796,
+   "type": "REL32",
+   "sym": "?readSpecialWeapons@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::readSpecialWeapons"
+  },
+  {
+   "off": 803,
+   "type": "REL32",
+   "sym": "?ReadMiscINI@Rules@@QAEHXZ",
+   "sym_key": "Rules::ReadMiscINI"
+  },
+  {
+   "off": 810,
+   "type": "REL32",
+   "sym": "?LoadSpecialWeapons@RulesClass@@QAEHXZ",
+   "sym_key": "RulesClass::LoadSpecialWeapons"
+  },
+  {
+   "off": 816,
+   "type": "REL32",
+   "sym": "?SmallFunc_721D10@@YADPAX@Z",
+   "sym_key": "SmallFunc_721D10"
+  },
+  {
+   "off": 826,
+   "type": "REL32",
+   "sym": "?ReadButtonList@SidebarClass@@QAEHXZ",
+   "sym_key": "SidebarClass::ReadButtonList"
+  }
+ ]
+}

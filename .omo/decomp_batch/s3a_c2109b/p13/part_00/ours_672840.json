@@ -1,0 +1,57 @@
+{
+ "symbol": "?ReadBuildingTypesBuildingTypeClass@ObjectClass@@QAEEXZ",
+ "sym_key": "ObjectClass::ReadBuildingTypesBuildingTypeClass",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec245356578b7c240c508b0fe8000000008bd833f685db7e3b8b0d0000000056518b0fe8000000008d5424106a2052680000000050a100000000508bcfe80000000085c074098d4c2410e800000000463bf37cc533c05f85db5e5b0f9fc083c424c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aOverlaytypes@@3HA",
+   "sym_key": "aOverlaytypes"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?aOverlaytypes@@3HA",
+   "sym_key": "aOverlaytypes"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?aOverlaytypes@@3HA",
+   "sym_key": "aOverlaytypes"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?FindOrCreate2@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindOrCreate2"
+  }
+ ]
+}
