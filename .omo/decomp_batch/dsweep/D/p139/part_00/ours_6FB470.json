@@ -1,0 +1,213 @@
+{
+ "symbol": "?RemoveShroud@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::RemoveShroud",
+ "size": 844,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec2885c0578bf90f843403000033c924008a8f690200000bc184c00f84200300008b876c02000085c075168b1757ff92840000000fbe80d20c000089876c0200008b8fa000000053558baf9c000000568bb7a4000000894c24208bcec6876902000000e8000000008bce8944241ce8000000008bd86a009968777777775250e8000000008b8f6c020000b8feffffff2bc18bf28944243489442424894424148b44241c992bf36a008bd868777777775253894c2428894c243889542440e8000000008bca8b54241c8b4424302bcac1e9178bd381e100010000f7da83d00033d2f7d82bc38b5c2430894c241cb9040000001bd3e8000000008b4c241cc1e00803e98b4c241403c59981e2ff00000003c28bd6c1fa048bd88b442420c1e208c1ee1781e60001000003c203f08b44241883c002c1fb08c1ee083bc8897424208944241c0f8dcd0100008b6c24348b7424243bf00f8db00100008b5424180fafc98d4201894c24248bd00fafd08b4424288954242c894424188bc60fafc603c13bc20f8d640100008b4c24148b07578d140b8b4c242433d503ce81e2ff00000033ea33cd81e1ff00000033e9896c2414ff503c8bc8e80000000084c00f85df0000008b15000000008b8f1c02000052e80000000084c00f85c5000000a1000000008a88f501000084c90f85b20000008d4c241051b9f8010000e8000000008b8834010000498988340100008b15000000008b828c30030085c00f84820000008d442410b9f801000050e8000000008b883401000085c97f698d4c241051b9f8010000e8000000008b88300100008d5424104952898830010000b9f8010000e8000000008b883001000085c97f348d442410b9f801000050e8000000008b882c01000083c90889882c0100008d4c241051b9f8010000e80000000083882c010000108b1757ff523c8bc8e80000000084c07525a1000000008b8f1c02000050e80000000084c075108b0d000000008a81f501000084c074158d542410b9f801000052e800000000ff883c0100008b44241c463bf07d0d8b4c24248b54242ce977feffff8b7424348b4c2414413bc8894c24140f8c3bfeffffa1000000005e5d5b85c07407c6804002000000b9f8010000e8000000006a0268f8010000e80000000083c4085f83c428c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAVAnimClass@@A",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "__aullshr",
+   "sym_key": "_aullshr"
+  },
+  {
+   "off": 442,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 456,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAVAnimClass@@A",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 468,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 481,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAVAnimClass@@A",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 505,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 510,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 529,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAVAnimClass@@A",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 558,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 578,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 583,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 606,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 611,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 630,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 636,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 661,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 666,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 686,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 695,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAVAnimClass@@A",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 707,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 717,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAVAnimClass@@A",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 736,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 742,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 796,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAVAnimClass@@A",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 815,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 820,
+   "type": "REL32",
+   "sym": "?Render@FogOfWar@@QAEHXZ",
+   "sym_key": "FogOfWar::Render"
+  },
+  {
+   "off": 827,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 832,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}

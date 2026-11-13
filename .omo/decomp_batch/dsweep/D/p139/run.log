@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p139\part_00
+=== convert (20 addrs) ===
+[conv] 0x53d580 ZBuffer::RenderSprite -> ZBuffer
+[conv] 0x40a340 Buffer::CreateDirectSound -> Buffer
+[conv] 0x5e32d0 CheckGameSettingsChanged -> _addr_5E
+[conv] 0x5c3220 MPCooperative::GetMapData -> MPCooperative
+[conv] 0x61eca0 RenderDialogSurface -> _addr_61
+[conv] 0x6dd5b0 ScriptAction::ParseScriptActionParams -> ScriptAction
+[conv] 0x707480 Surface::BlitTechnoTo -> Surface
+[conv] 0x6fb470 TechnoClass::RemoveShroud -> TechnoClass
+[conv] 0x441f60 BuildingClass::AfterDestruction -> BuildingClass
+[conv] 0x7ccffc __store_winword -> _addr_7C
+[conv] 0x7d544a __sopen -> _addr_7D
+[conv] 0x5f7db0 VoxelAnimType::LoadBarrel -> VoxelAnimType
+[conv] 0x7a1060 ObjectClass::ProcessPingRequestsWOL -> ObjectClass
+[conv] 0x5ee6f0 AssignRandomMapStartPositions -> _addr_5E
+[conv] 0x4dc060 FootClass::CheckTargetCell -> FootClass
+[conv] 0x732d10 TacticalClass::CollectSelectedIDs -> TacticalClass
+[conv] 0x4d5070 FootClass::FindMovePosition -> FootClass
+[conv] 0x48c040 ModemConnectionClass::receivePacket -> ModemConnectionClass
+[conv] 0x451b40 BuildingClass::StopAnim -> BuildingClass
+[conv] 0x5958e0 RandomMap::CleanupRandomMapData -> RandomMap
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ZBuffer                  rc=2
+[era] Buffer                   rc=0
+[era] _addr_5E                 rc=2
+[era] MPCooperative            rc=0
+[era] _addr_61                 rc=2
+[era] ScriptAction             rc=2
+[era] Surface                  rc=2
+[era] TechnoClass              rc=0
+[era] BuildingClass            rc=2
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=2
+[era] VoxelAnimType            rc=2
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] TacticalClass            rc=2
+[era] ModemConnectionClass     rc=2
+[era] RandomMap                rc=2
+=== diffasm byte-compare ===
+[diff] 0x40a340   MISMATCH         Buffer::CreateDirectSound
+[diff] 0x5c3220   MISMATCH         MPCooperative::GetMapData
+[diff] 0x6fb470   MISMATCH         TechnoClass::RemoveShroud
+[diff] 0x7ccffc   MISMATCH         __store_winword
+[ledger] 0x53d580 ZBuffer::RenderSprite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40a340 Buffer::CreateDirectSound -> NG (attempt 1)
+[ledger] 0x5e32d0 CheckGameSettingsChanged -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c3220 MPCooperative::GetMapData -> NG (attempt 1)
+[ledger] 0x61eca0 RenderDialogSurface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dd5b0 ScriptAction::ParseScriptActionParams -> COMPILE_FAIL (attempt 1)
+[ledger] 0x707480 Surface::BlitTechnoTo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fb470 TechnoClass::RemoveShroud -> NG (attempt 1)
+[ledger] 0x441f60 BuildingClass::AfterDestruction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ccffc __store_winword -> NG (attempt 1)
+[ledger] 0x7d544a __sopen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f7db0 VoxelAnimType::LoadBarrel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a1060 ObjectClass::ProcessPingRequestsWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ee6f0 AssignRandomMapStartPositions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dc060 FootClass::CheckTargetCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x732d10 TacticalClass::CollectSelectedIDs -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d5070 FootClass::FindMovePosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48c040 ModemConnectionClass::receivePacket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x451b40 BuildingClass::StopAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5958e0 RandomMap::CleanupRandomMapData -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p139\batch_report.json

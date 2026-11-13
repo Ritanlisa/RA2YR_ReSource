@@ -1,0 +1,69 @@
+{
+ "symbol": "?CreateDirectSound@Buffer@@QAEHXZ",
+ "sym_key": "Buffer::CreateDirectSound",
+ "size": 556,
+ "link_base": 0,
+ "bytes_hex": "83ec10535556578bf9897c24108b87680100008b9f580100008b701485f675098bb7ac00000083c6448b0b8bd6e8000000008b43648d6b6433c93bc174378b53508b460c3bd075218b434c8b56083bc275178b53548b46103bd0750d8b038988a0010000e9cc0000008b13c782a0010000010000008b45003bc1740d8b0850ff5108c7450000000000668b46108d7b44660faf460c25ffff0000b9080000000faf4608f3a58d1440b81f85eb51f7e2c1ea058b742410c7442418140000008d04d5ff030000c744241ce80000009981e2ff0300008bce03c2c1f80ac1e00a89436ce800000000a10c0100008b7b6c6a008d54241c8b08550fbec05250ff510c85c0741b8bcec7450000000000e8000000005f5e5db8000004805b83c410c38d0cbd00000000894b688bcee8000000008b7c241033c98b536c894b2cc1e202894b0889533c8b450051508b10ff52348b45008d73348d542414568b085250ff51108b44241433d2f7736c8bcf89430ce8000000008b4b688943108b4424148d7b308943148b4500894b40568b105750ff52108b3f8b43688b4b0c2bc733f6898bd80000008bcb89433889b3d000000089b3d400000089bbdc000000e8000000008b0389b3cc0000008b90700100008953288b88700100008b5368894b208b80740100008bcb89432489432ce80000000085c074238b4c2410e8000000008b6d006a0156568b550055ff523085c075085f5e5d5b83c410c38b4c2410e8000000005f5e5db8000004805b83c410c3",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?AudioStream__CheckFormatChanged@@YIHHPAX@Z",
+   "sym_key": "AudioStream__CheckFormatChanged"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 269,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 367,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 443,
+   "type": "REL32",
+   "sym": "?InitializePlayback@AudioBuffer@@QAEPAIXZ",
+   "sym_key": "AudioBuffer::InitializePlayback"
+  },
+  {
+   "off": 491,
+   "type": "REL32",
+   "sym": "?ProcessAudioStream@@YIHPAXH@Z",
+   "sym_key": "ProcessAudioStream"
+  },
+  {
+   "off": 504,
+   "type": "REL32",
+   "sym": "?UpdateVolumeSettings@Buffer@@QAEHXZ",
+   "sym_key": "Buffer::UpdateVolumeSettings"
+  },
+  {
+   "off": 539,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
