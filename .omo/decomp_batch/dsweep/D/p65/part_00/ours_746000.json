@@ -1,0 +1,81 @@
+{
+ "symbol": "?IsPlacementValid@BuildingTypeClass@@QAE_NPAF0@Z",
+ "sym_key": "BuildingTypeClass::IsPlacementValid",
+ "size": 243,
+ "link_base": 0,
+ "bytes_hex": "558be956578b4500ff90c801000085c00f8cd50000008b7424148b7c24106a006a006a006a005657b9f8010000e80000000084c00f84b1000000668b0f663b0e7512668b5702663b560275085f5e32c05dc208000fbf47020fbf4e022bc85351e8000000000fbf178bd80fbf062bc250e80000000083c4083bc37f028bc383f8015b75085f5e32c05dc2080083f80c7d5a6a0157b9f8010000e80000000084c074496a0156b9f8010000e80000000084c0743856b9f8010000e8000000008b80400100006a00c1e8082401b928010000506a00555657e80000000033c983f80f0f9fc15f5e8ac15dc208005f5eb0015dc20800",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?CheckTileMatch@MapSeed@@QAE_NPAX0HDDD@Z",
+   "sym_key": "MapSeed::CheckTileMatch"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?CalcDistance@Pathfinding@@QAEHPAX0HHHH@Z",
+   "sym_key": "Pathfinding::CalcDistance"
+  }
+ ]
+}

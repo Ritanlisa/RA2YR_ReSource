@@ -1,0 +1,75 @@
+{
+ "symbol": "?Math_ComputeFacingAngle@@YIDDHHHNPAH@Z",
+ "sym_key": "Unnamed::Math_ComputeFacingAngle",
+ "size": 314,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec148b451053568b750c578ad98b4d148bfa894424108d5510894c24148bc18b4d10528b5508505156528bd78acbe80000000084c00f84e900000084db743bdd4510dc250000000083ec08dc0d00000000dd1c24e8000000008bc88b451833ce83c40881e1ff00000033ce890824010c015f5e5b8be55dc214008b4424148b4c24108d542418528b550850514256528bd732c9e8000000008a44240fdd451084c07439d9e0dc250000000083ec08dc0d00000000dd1c24e8000000008b4d1833c625ff00000083c40833f08bc6893124010c015f5e5b8be55dc21400dc250000000083ec08dc0d00000000dd1c24e8000000008bc88b44241833c883c40881e1ff00000033c18b4d188bd0240133d681e2ff00000033f20c0189315f5e5b8be55dc214008b4424105f5e24005b8be55dc21400",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?SolveMathTrajectory@@YIDDHHHNH@Z",
+   "sym_key": "SolveMathTrajectory"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2820@@3NA",
+   "sym_key": "DataGlobal_7E2820"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "__real@8@c00ca2f83d7b47678000",
+   "sym_key": "_real@8@c00ca2f83d7b47678000"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?SolveMathTrajectory@@YIDDHHHNH@Z",
+   "sym_key": "SolveMathTrajectory"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2820@@3NA",
+   "sym_key": "DataGlobal_7E2820"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "__real@8@c00ca2f83d7b47678000",
+   "sym_key": "_real@8@c00ca2f83d7b47678000"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2820@@3NA",
+   "sym_key": "DataGlobal_7E2820"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "__real@8@c00ca2f83d7b47678000",
+   "sym_key": "_real@8@c00ca2f83d7b47678000"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

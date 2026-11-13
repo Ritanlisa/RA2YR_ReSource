@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p65\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b82e0 Game_Set -> Game
+[conv] 0x500200 BuildingPlacement::FindPosition -> BuildingPlacement
+[conv] 0x7b24e0 WinsockInterfaceClass::Connect -> WinsockInterfaceClass
+[conv] 0x403210 ObjectClass::sub_403210 -> ObjectClass
+[conv] 0x63ab60 Map_Process_63AB60 -> Map_Process
+[conv] 0x63d810 DrawTacticalLine2D -> _addr_63
+[conv] 0x4a0b20 EnumConnectionPointsClass::_vt06 -> EnumConnectionPointsClass
+[conv] 0x452260 BuildingClass::AnnounceReady -> BuildingClass
+[conv] 0x6295b0 ParasiteClass::LoadParasite -> ParasiteClass
+[conv] 0x674550 RulesClass::ReadMovies -> RulesClass
+[conv] 0x577c90 TActionClass::executeRepairAction -> TActionClass
+[conv] 0x72d9a0 InitializeGameLoading -> _addr_72
+[conv] 0x53b460 globalHelper_03B460 -> _addr_53
+[conv] 0x425410 AnimClass::ProcessPower -> AnimClass
+[conv] 0x543780 IsometricTileClass::IsometricTileClass -> IsometricTileClass
+[conv] 0x48a8d0 Math_ComputeFacingAngle -> _addr_48
+[conv] 0x77db90 Lobby::BuildPlayerList -> Lobby
+[conv] 0x62e280 ParticleSystemClass::CreateBuildingLight -> ParticleSystemClass
+[conv] 0x746000 BuildingTypeClass::IsPlacementValid -> BuildingTypeClass
+[conv] 0x4dfa70 TechnoClass::FindClosestInfantry -> TechnoClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Game                     rc=2
+[era] BuildingPlacement        rc=2
+[era] WinsockInterfaceClass    rc=0
+[era] ObjectClass              rc=2
+[era] Map_Process              rc=0
+[era] _addr_63                 rc=0
+[era] EnumConnectionPointsClass rc=2
+[era] BuildingClass            rc=0
+[era] ParasiteClass            rc=2
+[era] RulesClass               rc=2
+[era] TActionClass             rc=2
+[era] _addr_72                 rc=2
+[era] _addr_53                 rc=2
+[era] AnimClass                rc=2
+[era] IsometricTileClass       rc=2
+[era] _addr_48                 rc=0
+[era] Lobby                    rc=2
+[era] ParticleSystemClass      rc=2
+[era] BuildingTypeClass        rc=0
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b24e0   MISMATCH         WinsockInterfaceClass::Connect
+[diff] 0x63ab60   MISMATCH         Map_Process_63AB60
+[diff] 0x63d810   MISMATCH         DrawTacticalLine2D
+[diff] 0x452260   MISMATCH         BuildingClass::AnnounceReady
+[diff] 0x48a8d0   MISMATCH         Math_ComputeFacingAngle
+[diff] 0x746000   MISMATCH         BuildingTypeClass::IsPlacementValid
+[ledger] 0x7b82e0 Game_Set -> COMPILE_FAIL (attempt 1)
+[ledger] 0x500200 BuildingPlacement::FindPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b24e0 WinsockInterfaceClass::Connect -> NG (attempt 1)
+[ledger] 0x403210 ObjectClass::sub_403210 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63ab60 Map_Process_63AB60 -> NG (attempt 1)
+[ledger] 0x63d810 DrawTacticalLine2D -> NG (attempt 1)
+[ledger] 0x4a0b20 EnumConnectionPointsClass::_vt06 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x452260 BuildingClass::AnnounceReady -> NG (attempt 1)
+[ledger] 0x6295b0 ParasiteClass::LoadParasite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x674550 RulesClass::ReadMovies -> COMPILE_FAIL (attempt 1)
+[ledger] 0x577c90 TActionClass::executeRepairAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72d9a0 InitializeGameLoading -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53b460 globalHelper_03B460 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x425410 AnimClass::ProcessPower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x543780 IsometricTileClass::IsometricTileClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48a8d0 Math_ComputeFacingAngle -> NG (attempt 1)
+[ledger] 0x77db90 Lobby::BuildPlayerList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62e280 ParticleSystemClass::CreateBuildingLight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x746000 BuildingTypeClass::IsPlacementValid -> NG (attempt 1)
+[ledger] 0x4dfa70 TechnoClass::FindClosestInfantry -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "frame_sched": 2,
+  "ret_norm": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p65\batch_report.json

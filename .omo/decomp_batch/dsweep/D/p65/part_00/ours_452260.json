@@ -1,0 +1,51 @@
+{
+ "symbol": "?AnnounceReady@BuildingClass@@QAEXXZ",
+ "sym_key": "BuildingClass::AnnounceReady",
+ "size": 264,
+ "link_base": 0,
+ "bytes_hex": "568bf18b866006000085c00f85f50000008b860405000085c00f85e70000008b8e1c020000b8010000008986600600008986800000008881785700008b961c0200008882795700008b8e1c0200008881fc0100008b8e1406000085c98986ec06000074076a00e800000000558bae200500008a85be16000084c074096a008bcee800000000538b9e5c0500005733ff8b96200500008a843a8c0f000084c0740b8b0b85c97405e80000000083c74483c30481ff940500007cd68b86200500005f5b8b88b80e000085c9741f33d281e500ffffff8a90ce0c00006a000bd552518b8e1c020000e8000000008b8e1c020000e80000000084c05d740c6affb900000000e8000000005ec3",
+ "relocs": [
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?EnableOnce@Trigger@@QAEDD@Z",
+   "sym_key": "Trigger::EnableOnce"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?RepairPlacement@BuildingClass@@QAEHD@Z",
+   "sym_key": "BuildingClass::RepairPlacement"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?Method_425270@VtableStub@@QAEXXZ",
+   "sym_key": "VtableStub::Method_425270"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?UpdateProduction@HouseClass@@QAEHHHH@Z",
+   "sym_key": "HouseClass::UpdateProduction"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?aEvaBuildingonl@@3IA",
+   "sym_key": "aEvaBuildingonl"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?FindAndPlay@VoxClass@@QAEXH@Z",
+   "sym_key": "VoxClass::FindAndPlay"
+  }
+ ]
+}

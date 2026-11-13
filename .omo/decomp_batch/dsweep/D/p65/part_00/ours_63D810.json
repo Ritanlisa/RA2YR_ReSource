@@ -1,0 +1,75 @@
+{
+ "symbol": "?DrawTacticalLine2D@@YIDHHHHHHD@Z",
+ "sym_key": "Unnamed::DrawTacticalLine2D",
+ "size": 244,
+ "link_base": 0,
+ "bytes_hex": "83ec108b442420538bda568b542420572bc28bf150e8000000008b4c242c8b5424242bca8bf851e80000000083c40833d23bc78b7c24200f9fc24a33c98a0d0000000023d68b7424288bc28b1500000000894c24108b0d000000008954240c8b150000000003f803f08d44240c894c241489542418508d54242c8d4c2424897c24248974242ce80000000084c0745a8a44243084c07433e800000000f7d88b0d00000000c1f8058b1183e00f5068000000008d44243053508d4424305051ff52485f5e5b83c410c21400a1000000008d54242853528b088d5424285250ff51305f5e5b83c410c214005f5e32c05b83c410c21400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_DSurface_WindowOffset@@3IA",
+   "sym_key": "g_DSurface_WindowOffset"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?ClipLine@@YIDPAX00@Z",
+   "sym_key": "ClipLine"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?unk_836880@@3EA",
+   "sym_key": "unk_836880"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  }
+ ]
+}
