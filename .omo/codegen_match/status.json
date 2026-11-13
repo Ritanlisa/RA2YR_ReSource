@@ -192356,7 +192356,7 @@
   "this_as_id": false
  },
  "0x773600": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -192524,7 +192524,7 @@
   "status": "OK"
  },
  "0x773bc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -192759,7 +192759,7 @@
   "this_as_id": false
  },
  "0x774bc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -192771,7 +192771,7 @@
   "this_as_id": false
  },
  "0x774c70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -192807,7 +192807,7 @@
   "this_as_id": false
  },
  "0x775110": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -193004,7 +193004,7 @@
   "this_as_id": false
  },
  "0x775b50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_775B50",
@@ -193094,7 +193094,7 @@
   "this_as_id": false
  },
  "0x776230": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_776230",
@@ -193221,7 +193221,7 @@
   "this_as_id": false
  },
  "0x776a70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveWOLLobbySettings",
@@ -193243,7 +193243,7 @@
   "this_as_id": false
  },
  "0x776cd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_776CD0",
@@ -193560,7 +193560,7 @@
   "this_as_id": false
  },
  "0x777bb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -193572,7 +193572,7 @@
   "this_as_id": false
  },
  "0x777c30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "InitWindowCreation",
@@ -194056,7 +194056,7 @@
   "this_as_id": false
  },
  "0x77a4d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -195865,7 +195865,7 @@
   "this_as_id": false
  },
  "0x77e1d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -195877,7 +195877,7 @@
   "this_as_id": false
  },
  "0x77e300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196688,7 +196688,7 @@
   "this_as_id": false
  },
  "0x78d120": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "OnlineLobbyDlgProcWOL",
@@ -197217,7 +197217,7 @@
   "this_as_id": false
  },
  "0x797c20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197376,13 +197376,13 @@
   "this_as_id": false
  },
  "0x799ea0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "OptionsDlgProcWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "OptionsDlgProcWOL",
-  "rule_violations": 0,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -197456,7 +197456,7 @@
   "this_as_id": false
  },
  "0x79c3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197515,7 +197515,7 @@
   "this_as_id": false
  },
  "0x79ce70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197814,7 +197814,7 @@
   "this_as_id": false
  },
  "0x7a2330": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

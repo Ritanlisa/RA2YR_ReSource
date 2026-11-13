@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p40\part_00
+=== convert (20 addrs) ===
+[conv] 0x773600 WebBrowser::LoadURLFromRegistry -> WebBrowser
+[conv] 0x773bc0 WebBrowser::Clone -> WebBrowser
+[conv] 0x774bc0 AsyncIO::WaitCompletion -> AsyncIO
+[conv] 0x774c70 WinModemClass::WriteSerial -> WinModemClass
+[conv] 0x775110 WinModemClass::Dial -> WinModemClass
+[conv] 0x775b50 sub_775B50 -> _addr_77
+[conv] 0x776230 sub_776230 -> _addr_77
+[conv] 0x776a70 SaveWOLLobbySettings -> _addr_77
+[conv] 0x776cd0 sub_776CD0 -> _addr_77
+[conv] 0x777bb0 ObjectClass::sub_777BB0 -> ObjectClass
+[conv] 0x777c30 InitWindowCreation -> _addr_77
+[conv] 0x77a4d0 WOLPersona::FormatDateTime -> WOLPersona
+[conv] 0x77e1d0 ObjectClass::FillPlayerListWOL -> ObjectClass
+[conv] 0x77e300 ObjectClass::FillBuddyListExWOL -> ObjectClass
+[conv] 0x78d120 OnlineLobbyDlgProcWOL -> _addr_78
+[conv] 0x797c20 ObjectClass::InitVersionStringsWOL -> ObjectClass
+[conv] 0x799ea0 OptionsDlgProcWOL -> _addr_79
+[conv] 0x79c3a0 ObjectClass::Network_Cleanup -> ObjectClass
+[conv] 0x79ce70 ObjectClass::RefreshChannelListWOL -> ObjectClass
+[conv] 0x7a2330 Game::SetupWOLTournament -> Game
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WebBrowser               rc=2
+[era] AsyncIO                  rc=2
+[era] WinModemClass            rc=2
+[era] _addr_77                 rc=2
+[era] ObjectClass              rc=2
+[era] WOLPersona               rc=2
+[era] _addr_78                 rc=2
+[era] _addr_79                 rc=2
+[era] Game                     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x773600 WebBrowser::LoadURLFromRegistry -> COMPILE_FAIL (attempt 6)
+[ledger] 0x773bc0 WebBrowser::Clone -> COMPILE_FAIL (attempt 4)
+[ledger] 0x774bc0 AsyncIO::WaitCompletion -> COMPILE_FAIL (attempt 2)
+[ledger] 0x774c70 WinModemClass::WriteSerial -> COMPILE_FAIL (attempt 2)
+[ledger] 0x775110 WinModemClass::Dial -> COMPILE_FAIL (attempt 4)
+[ledger] 0x775b50 sub_775B50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x776230 sub_776230 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x776a70 SaveWOLLobbySettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x776cd0 sub_776CD0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x777bb0 ObjectClass::sub_777BB0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x777c30 InitWindowCreation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77a4d0 WOLPersona::FormatDateTime -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77e1d0 ObjectClass::FillPlayerListWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77e300 ObjectClass::FillBuddyListExWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x78d120 OnlineLobbyDlgProcWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x797c20 ObjectClass::InitVersionStringsWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x799ea0 OptionsDlgProcWOL -> COMPILE_FAIL (attempt 6)
+[ledger] 0x79c3a0 ObjectClass::Network_Cleanup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x79ce70 ObjectClass::RefreshChannelListWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a2330 Game::SetupWOLTournament -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p40\batch_report.json
