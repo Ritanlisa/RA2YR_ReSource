@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> SuperWeaponClass
+[conv] 0x6eb380 FootClass::LinkToTransporter -> FootClass
+[conv] 0x6eb490 TeamClass::AttackCoordinator -> TeamClass
+[conv] 0x6ebad0 TeamClass::UpdateMembers -> TeamClass
+[conv] 0x6ec3a0 TeamClass::WakeUpAllMembers -> TeamClass
+[conv] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> TeamClass
+[conv] 0x6ecfb0 TeamClass::Create -> TeamClass
+[conv] 0x6edb50 TeamClass::AssignAttackTarget -> TeamClass
+[conv] 0x6ee5c0 TeamClass::SelectBestMember -> TeamClass
+[conv] 0x6ee800 ObjectClass::SelectTeamMembers -> ObjectClass
+[conv] 0x6ef610 TeamClass::PlayMemberAnimation -> TeamClass
+[conv] 0x6efa10 TeamClass::SelectDeploymentTarget -> TeamClass
+[conv] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> TeamClass
+[conv] 0x6f0ab0 AISelectTeamHouseClass -> _addr_6F
+[conv] 0x6f1f70 TeamTypeClass::FindFirstInstance -> TeamTypeClass
+[conv] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> TechnoClass
+[conv] 0x706ed0 RenderTechnoClassVoxel -> _addr_70
+[conv] 0x707480 Surface::BlitTechnoTo -> Surface
+[conv] 0x70a990 TechnoClass::DrawVeterancy -> TechnoClass
+[conv] 0x70c620 TechnoClass::CheckCliffTransition -> TechnoClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SuperWeaponClass         rc=2
+[era] FootClass                rc=2
+[era] TeamClass                rc=2
+[era] ObjectClass              rc=2
+[era] _addr_6F                 rc=2
+[era] TeamTypeClass            rc=2
+[era] TechnoClass              rc=2
+[era] _addr_70                 rc=2
+[era] Surface                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6eb380 FootClass::LinkToTransporter -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6eb490 TeamClass::AttackCoordinator -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ebad0 TeamClass::UpdateMembers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ec3a0 TeamClass::WakeUpAllMembers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ecfb0 TeamClass::Create -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6edb50 TeamClass::AssignAttackTarget -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ee5c0 TeamClass::SelectBestMember -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ee800 ObjectClass::SelectTeamMembers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ef610 TeamClass::PlayMemberAnimation -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6efa10 TeamClass::SelectDeploymentTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6f0ab0 AISelectTeamHouseClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f1f70 TeamTypeClass::FindFirstInstance -> COMPILE_FAIL (attempt 5)
+[ledger] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> COMPILE_FAIL (attempt 3)
+[ledger] 0x706ed0 RenderTechnoClassVoxel -> COMPILE_FAIL (attempt 3)
+[ledger] 0x707480 Surface::BlitTechnoTo -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70a990 TechnoClass::DrawVeterancy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70c620 TechnoClass::CheckCliffTransition -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p19\batch_report.json
