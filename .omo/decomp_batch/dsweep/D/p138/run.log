@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p138\part_00
+=== convert (20 addrs) ===
+[conv] 0x5a35f0 ObjectClass::GenerateTerrainHeightMap -> ObjectClass
+[conv] 0x5b7090 Game::StartModemMultiplayer -> Game
+[conv] 0x6c9f10 ObjectClass::ParseMovieSubtitles -> ObjectClass
+[conv] 0x5b5bc0 Dialog::InitializeGameSettings -> Dialog
+[conv] 0x7bf470 FillAudioStreamBuffer -> _addr_7B
+[conv] 0x7a2330 Game::SetupWOLTournament -> Game
+[conv] 0x6ed200 ObjectClass::AssignTeamProductionFacilities -> ObjectClass
+[conv] 0x79cba0 RemoveWOLPlayerLogin -> _addr_79
+[conv] 0x5e7920 ExchangeMultiplayerGameInfo -> _addr_5E
+[conv] 0x6e4f60 TagClass::Destructor -> TagClass
+[conv] 0x4db3c0 ObjectClass::LoadFromStream_Common -> ObjectClass
+[conv] 0x6efe60 SuperWeapon::DispatchTeam -> SuperWeapon
+[conv] 0x5bb290 ObjectClass::GenerateRandomMapPreview -> ObjectClass
+[conv] 0x4bb830 DSurface::FillRectWithFlags -> DSurface
+[conv] 0x756590 Voxel::ProcessColor -> Voxel
+[conv] 0x47dd70 CellClass::UpdateAnimations -> CellClass
+[conv] 0x4ccfd0 FlyLocomotionClass::ComputeMoveToPosition -> FlyLocomotionClass
+[conv] 0x7416a0 TechnoClass::ProcessSpecialUnitDeployCrush -> TechnoClass
+[conv] 0x79c8d0 ObjectClass::QueueWOLAuthRequest -> ObjectClass
+[conv] 0x69ae90 Multiplayer::ShowProgress -> Multiplayer
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Game                     rc=2
+[era] Dialog                   rc=0
+[era] _addr_7B                 rc=2
+[era] _addr_79                 rc=2
+[era] _addr_5E                 rc=0
+[era] TagClass                 rc=2
+[era] SuperWeapon              rc=2
+[era] DSurface                 rc=0
+[era] Voxel                    rc=0
+[era] CellClass                rc=2
+[era] FlyLocomotionClass       rc=2
+[era] TechnoClass              rc=2
+[era] Multiplayer              rc=2
+=== diffasm byte-compare ===
+[diff] 0x4db3c0   MISMATCH         ObjectClass::LoadFromStream_Common
+[diff] 0x5b5bc0   MISMATCH         Dialog::InitializeGameSettings
+[diff] 0x5e7920   MISMATCH         ExchangeMultiplayerGameInfo
+[diff] 0x4bb830   MISMATCH         DSurface::FillRectWithFlags
+[diff] 0x756590   MISMATCH         Voxel::ProcessColor
+[ledger] 0x5a35f0 ObjectClass::GenerateTerrainHeightMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b7090 Game::StartModemMultiplayer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c9f10 ObjectClass::ParseMovieSubtitles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b5bc0 Dialog::InitializeGameSettings -> NG (attempt 1)
+[ledger] 0x7bf470 FillAudioStreamBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a2330 Game::SetupWOLTournament -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ed200 ObjectClass::AssignTeamProductionFacilities -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79cba0 RemoveWOLPlayerLogin -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e7920 ExchangeMultiplayerGameInfo -> NG (attempt 1)
+[ledger] 0x6e4f60 TagClass::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4db3c0 ObjectClass::LoadFromStream_Common -> NG (attempt 1)
+[ledger] 0x6efe60 SuperWeapon::DispatchTeam -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bb290 ObjectClass::GenerateRandomMapPreview -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bb830 DSurface::FillRectWithFlags -> NG (attempt 1)
+[ledger] 0x756590 Voxel::ProcessColor -> NG (attempt 1)
+[ledger] 0x47dd70 CellClass::UpdateAnimations -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ccfd0 FlyLocomotionClass::ComputeMoveToPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7416a0 TechnoClass::ProcessSpecialUnitDeployCrush -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79c8d0 ObjectClass::QueueWOLAuthRequest -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69ae90 Multiplayer::ShowProgress -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "frame_sched": 2,
+  "const_fold": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p138\batch_report.json

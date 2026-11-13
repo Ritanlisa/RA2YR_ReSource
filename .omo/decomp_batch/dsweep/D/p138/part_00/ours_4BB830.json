@@ -1,0 +1,99 @@
+{
+ "symbol": "?FillRectWithFlags@DSurface@@QAEDHHPAE0@Z",
+ "sym_key": "DSurface::FillRectWithFlags",
+ "size": 845,
+ "link_base": 0,
+ "bytes_hex": "83ec7c538b5c2424568bf18b03ff507083f8020f8c2a0300008b460885c00f8e1f0300008b460c85c00f8e140300008b0b8d5424645253ff51786a006a00568bd08d8c2480000000e8000000008b08894c245c8b5004895424608b48088b400c894c244c85c9894424280f8ed302000085c00f8ecb0200008b0d00000000beff000000d3ee8b0d00000000b8ff000000d3e68b0d00000000d3e88b0d000000008974243cd3e08b0d00000000894424088944241cb8ff000000d3e88b0d00000000d3e08d4c245c8944242c8d44246450e8000000008b50048b008b0b525053ff515c85c0894424300f84550200008b84249000000083f8647605b864000000558be8c1e5082be8b81f85eb51f7e58b8c2490000000578bfab8ff000000c1ef052bc76a008944244033c08a41018a0d00000000d3e8681f85eb516a0055897c243cc74424280000000089442438e8000000008b4424288b0d0000000080e2000bc233d2d3e08a0d00000000894424288b8424940000008a50028bea33d2d3ed8b8c24900000008a108b44242880e1000be98b0d00000000d3e58a0d00000000d3ea8bc880e1000bd18b0d00000000d3e20bea0be88b44243085c0896c2428896c24600f8e690100008b1353c744242400000000ff5274998bcd8b6c241081e6ffff00002bc281e1ffff00008bd68bf18954241423f58bea81e5ffff00008bd123d58b5c24100fafd70faff7895424408b54243481e2ffff000081e3ffff0000d1f80faf4424188954244c23d10faf54242c8b4c2438895424508b54243c896c24588b6c24148d0c418bf9895c245c897c241c81e2ffff000033c0668b018d4f028bf823fb8b5c24240faffa03fec1ef0823fb8b5c2444897c24488bf823fd8b6c24400faffa03fd8b6c2448c1ef0823fb25ffff00000bef8b7c244c23c78b7c24500fafc203c78bf9c1e8080be88b44241c897c241c6689288b4424208b6c2454403bc5894424207d0e8b6c24588b5c245c896c2414eb818b6c24608b4424288b4c24248b54241081e5ff00000024000be88b4424148bf381e1ff00000080e20081e6ff00000024008b7c242c8b5c24300bca0bf08b442418894c24108b4c243040896c24283bc1894424180f8c97feffff8b0b53ff51605f5d5eb0015b83c47cc210005e32c05b83c47cc21000",
+ "relocs": [
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?Copy@CellStruct@@QAEPAIPAX@Z",
+   "sym_key": "CellStruct::Copy"
+  },
+  {
+   "off": 303,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 334,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  },
+  {
+   "off": 344,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 359,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 403,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 411,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 426,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  }
+ ]
+}

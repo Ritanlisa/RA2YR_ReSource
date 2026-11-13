@@ -1,0 +1,369 @@
+{
+ "symbol": "?ExchangeMultiplayerGameInfo@@YIXPAX@Z",
+ "sym_key": "Unnamed::ExchangeMultiplayerGameInfo",
+ "size": 652,
+ "link_base": 0,
+ "bytes_hex": "81ec2c03000056576a018bf18b0d0000000068881300006aff6a32e8000000008bcee800000000b97100000033c08d7c2470f3ab8bcec74424701a000000e800000000bf03000000393d0000000075258b0d000000006a006a0068000000006a018d84248000000068c701000050e800000000eb29e80000000085c0742b8d4824e8000000008d4c2470506a0168c7010000518b0d00000000e80000000085c07507e800000000eb9f8b0d00000000e80000000085c07414e8000000008b0d00000000e80000000085c075ec8bcee8000000008b0d000000008b1500000000a100000000890d000000008bce891500000000a300000000e8000000008bd78d8c24340200006a00e80000000084c00f845201000053558bcee8000000008d94243c0200008d4c242c52e8000000008d4c242ce8000000008bd853e80000000083c4048bf88d4c242c5357e8000000008b2f8bcee80000000033c08d4c241c89442414894424188d47045350e80000000033c08d4c245068002000006a018944243089442418e8000000008d4c2410518d4c2454e8000000008d542d0052e80000000083c4048bd88d4c24505553e8000000008bcee8000000008b0d0000000085c974108be9e80000000055e80000000083c4046a04e80000000083c40485c0740b50e80000000083c404eb0233c08bcba300000000e8000000008bcee8000000006a006a0050e8000000008bcee80000000053e80000000057e8000000008b0d0000000083c4086a0168580200006aff6a1ee8000000008d4c2450e8000000008d4c241ce8000000008d4c2410e8000000008d4c242ce8000000005d5b5f5e81c42c030000c38bcee8000000008b0d000000006a0168580200006aff6a1ee8000000005f5e81c42c030000c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?SetConnectionParams@Network@@QAEHHHHD@Z",
+   "sym_key": "Network::SetConnectionParams"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?g_NetworkRematchObject@@3IA",
+   "sym_key": "g_NetworkRematchObject"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?SendMessage@Network@@QAEHHHHHHH@Z",
+   "sym_key": "Network::SendMessage"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?GameSettings__FindFlagged@@YAPADXZ",
+   "sym_key": "GameSettings__FindFlagged"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?CharToWideString@@YIPADPAX@Z",
+   "sym_key": "CharToWideString"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?SendToPlayer@Network@@QAEHHHHPAX@Z",
+   "sym_key": "Network::SendToPlayer"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?GetQueueCount@Network@@QAEHXZ",
+   "sym_key": "Network::GetQueueCount"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?GetQueueCount@Network@@QAEHXZ",
+   "sym_key": "Network::GetQueueCount"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8BB24@@3IA",
+   "sym_key": "DataGlobal_A8BB24"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?g_NetworkRematchObject@@3IA",
+   "sym_key": "g_NetworkRematchObject"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8BB20@@3IA",
+   "sym_key": "DataGlobal_A8BB20"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D80C@@3IA",
+   "sym_key": "DataGlobal_A8D80C"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 243,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D808@@3IA",
+   "sym_key": "DataGlobal_A8D808"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?RequestNetworkFile@@YIDPAXHH@Z",
+   "sym_key": "RequestNetworkFile"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 298,
+   "type": "REL32",
+   "sym": "?Construct@RawFileClass@@QAEPAV1@H@Z",
+   "sym_key": "RawFileClass::Construct"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "?GetFileSize@CCFileClass@@QAEHXZ",
+   "sym_key": "CCFileClass::GetFileSize"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 331,
+   "type": "REL32",
+   "sym": "?Read@FileClass@@QAEKPAXH@Z",
+   "sym_key": "FileClass::Read"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 364,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 390,
+   "type": "REL32",
+   "sym": "?Constructor@LZOStraw@@QAEPAV1@HH@Z",
+   "sym_key": "LZOStraw::Constructor"
+  },
+  {
+   "off": 404,
+   "type": "REL32",
+   "sym": "?Set@Delegate@@QAEXH@Z",
+   "sym_key": "Delegate::Set"
+  },
+  {
+   "off": 414,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 430,
+   "type": "REL32",
+   "sym": "?Decompress@LCW@@QAEHPAXH@Z",
+   "sym_key": "LCW::Decompress"
+  },
+  {
+   "off": 437,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 443,
+   "type": "DIR32",
+   "sym": "?g_UIControlState@@3PAXA",
+   "sym_key": "g_UIControlState"
+  },
+  {
+   "off": 454,
+   "type": "REL32",
+   "sym": "?Dtor@ComPtr@@QAEHXZ",
+   "sym_key": "ComPtr::Dtor"
+  },
+  {
+   "off": 460,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 470,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 483,
+   "type": "REL32",
+   "sym": "?unknown_libname_27@@YAHPAX@Z",
+   "sym_key": "unknown_libname_27"
+  },
+  {
+   "off": 497,
+   "type": "DIR32",
+   "sym": "?g_UIControlState@@3PAXA",
+   "sym_key": "g_UIControlState"
+  },
+  {
+   "off": 502,
+   "type": "REL32",
+   "sym": "?RenderPaletteImage@ModemGame@@QAEHXZ",
+   "sym_key": "ModemGame::RenderPaletteImage"
+  },
+  {
+   "off": 509,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 519,
+   "type": "REL32",
+   "sym": "?InvalidateRect@@YGHHHH@Z",
+   "sym_key": "InvalidateRect"
+  },
+  {
+   "off": 526,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 532,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 538,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 544,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 563,
+   "type": "REL32",
+   "sym": "?SetConnectionParams@Network@@QAEHHHHD@Z",
+   "sym_key": "Network::SetConnectionParams"
+  },
+  {
+   "off": 572,
+   "type": "REL32",
+   "sym": "?Destructor@LZOStraw@@QAEHXZ",
+   "sym_key": "LZOStraw::Destructor"
+  },
+  {
+   "off": 581,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 590,
+   "type": "REL32",
+   "sym": "?Dtor@Straw@@QAEHXZ",
+   "sym_key": "Straw::Dtor"
+  },
+  {
+   "off": 599,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  },
+  {
+   "off": 617,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 623,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 639,
+   "type": "REL32",
+   "sym": "?SetConnectionParams@Network@@QAEHHHHD@Z",
+   "sym_key": "Network::SetConnectionParams"
+  }
+ ]
+}
