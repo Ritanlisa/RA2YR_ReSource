@@ -1,0 +1,111 @@
+{
+ "symbol": "?SetText@MSPrintAnim@@QAE_NHPAH@Z",
+ "sym_key": "MSPrintAnim::SetText",
+ "size": 689,
+ "link_base": 0,
+ "bytes_hex": "83ec1c535556578b7c24348bf133ed892f896f04896f08896f0c8b46108b5e1883f8ff740ee8000000002b46103bc37d0a2bd83bdd0f856a020000807e0c010f85600200008b5e2ce8000000008946108b4424308d4e1c894614895e18e800000000394624761a837e280276148a4e4833c05f5e84c95d5b0f94c083c41cc20800807e300175198b4c24308b1d000000008d46386a018b115550535051ff52088b46048b5e208a4e498b5608894424288b46243bd8895c2418884c24138954242c0f87c00100008d7e1c538bcfe800000000668be881e5ffff00006685ed896c241c0f84550100008a44241384c00f84bd000000578d4c2428e80000000033ff53578d4c242ce8000000008b4638578d4c2428897c241889442424e8000000006685c0745d578d4c2428e800000000663d0a00744d8d5e348b0b578b298d4c2428e80000000025ffff00005053ff55048b4c241403c847894c2414578d4c2428e8000000006685c07410578d4c2428e800000000663d0a0075be8b6c241c8b5c24188b46408b5424208b4c24142bc22bc18b4c2428992bc2c644241300d1f803c889464c894c24288d4c2424e8000000006683fd0a744c8a463084c0740a8b46242bc383f8027205b8020000008b4c24288b56346a01508b4424348b128d7e34508bd9518b4c2440555157ff52108b1755578b02ff500403c38b5c241889442428eb298b4e048b463c8b7e08894c24288b4c242c8a564903c82bc7894c242c03c18b4e44885424133bc177168b4624433bd8895c2418774be98afeffffff4628eb418b7e208d5e1c578bcbe8000000006685c0741c578bcbe800000000663d0a00740e478bcb57e8000000006685c075e4578bcbe800000000663d0a00750147897e208b7c24348d463889078b4e3c894f048b56408957088b464489470c8b4624408946245f5e5d32c05b83c41cc20800",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?GetCharAt@MSPrintAnim@@QAEGH@Z",
+   "sym_key": "MSPrintAnim::GetCharAt"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::AssignFromPtr"
+  },
+  {
+   "off": 263,
+   "type": "REL32",
+   "sym": "?Erase@WideString@@QAEFHH@Z",
+   "sym_key": "WideString::Erase"
+  },
+  {
+   "off": 284,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 322,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 353,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 368,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 429,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 588,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 601,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 616,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 629,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  }
+ ]
+}

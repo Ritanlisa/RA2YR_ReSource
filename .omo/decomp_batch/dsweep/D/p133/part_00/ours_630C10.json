@@ -1,0 +1,159 @@
+{
+ "symbol": "?PhoneEditorDialogProc@@YGHPAXIII@Z",
+ "sym_key": "Unnamed::PhoneEditorDialogProc",
+ "size": 474,
+ "link_base": 0,
+ "bytes_hex": "8b442410538b5c240c568b742414578b7c241050568bd38bcfe80000000085c00f85ae0100006a0857e80000000081fb110100008bf80f85960100006681fee00576286681fee4050f8584010000f7c60000ffff0f857801000057e80000000083c40433c05f5e5bc210008bc625ffff0000480f8441010000480f842b0100008b0f2dde05000068e0050000510f849e000000e80000000085c00f84320100006a006a00688801000050e80000000083f8ffa3000000000f8e150100008b0d000000003bc17d23493bc1890d000000007d188b0d00000000408b1481895481fc8b0d000000003bc17ce88bcfc6470801e800000000833d00000000ff0f85d00000008b0768e505000050e80000000085c00f84bb00000068000000006a0068b404000050e8000000005f5e33c05bc21000e8000000008bf085f60f84920000006a006a00688b01000056e80000000085c07e7f6a006a00688801000056e80000000083f8ffa3000000007e668b1768e505000052e8000000008b0d000000008bf0a1000000008b148181c29a000000526a0068b404000056e80000000056e8000000005f5e33c05bc21000c74704020000005f5e33c05bc21000f7c60000ffff750957e80000000083c404c747040100000033c05f5e5bc21000",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?UI_Pop_631500@@YAXH@Z",
+   "sym_key": "UI_Pop_631500"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?PopulateList@PhoneEditor@@QAEXXZ",
+   "sym_key": "PhoneEditor::PopulateList"
+  },
+  {
+   "off": 247,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 280,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 293,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 306,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 331,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 350,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 358,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 373,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 379,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 386,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 409,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 415,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXH@Z",
+   "sym_key": "SetFocus"
+  },
+  {
+   "off": 452,
+   "type": "REL32",
+   "sym": "?UI_Get_630EA0@@YADH@Z",
+   "sym_key": "UI_Get_630EA0"
+  }
+ ]
+}

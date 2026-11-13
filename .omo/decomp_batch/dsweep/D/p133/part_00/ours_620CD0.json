@@ -1,0 +1,129 @@
+{
+ "symbol": "?ComputeHashModPrime@@YIHPAH0H@Z",
+ "sym_key": "Unnamed::ComputeHashModPrime",
+ "size": 781,
+ "link_base": 0,
+ "bytes_hex": "83ec5c53558b2d000000008bda8b1500000000568bf1b8740000008bca57d3f88bcdbff8000000d3e08b0d00000000d3ff8b0d00000000d3e78b0d000000000bc7bf27000000d3ff8b0d00000000d3e78bca0bc7bf39000000d3ff8bcdbd7b00000089442428d3e78b0d00000000d3fd8b0d00000000d3e58b0d000000000bfdbd13000000d3fd8b0d00000000d3e58bca0bfdbdba000000897c2418bf57000000d3ff8b0d00000000d3e78b0d00000000d3fd8b0d00000000d3e58b0d000000000bfdbd1e000000d3fd8b0d00000000d3e58bcaba990000000bfd897c2420bf47000000d3ff8b0d00000000d3e78b0d00000000d3fa8b0d00000000d3e28b0d000000000bfaba18000000d3fa8b0d00000000d3e20bfa897c24248b3b8b5424708b4b042bfa2bca4f498d6c1202894c241c85d2896c24140f8ec30100008b53088b5b0c035c241403d5508d4424308d6c3aff8bd12bd78d5c0bff89542414508d0c3a8b16894c2438894c24408d4dff897c243c894c24348d4c243c5156ff52308b168d4c243c8b442418896c243c508d442448515056895c2450895c2458897c2454ff52308b16895c24508b4c241c8b4424204150894c245c8d4c24508d442458515056897c245c897c2464ff52308d4bff8b068b542410894c24608b4c242403d789542468518d5424608d4c2468525156896c246c896c2474ff503047b8010000008b4c24704b4d3bc80f8ef10000008b542410c7442414020000008d043a89442410eb048b4424108b5424288b0e89442430894424388d45ff52894424308d4424308d542438505256897c2444ff51308b068d54243c8b4c2418896c243c518d4c2448525156895c2450895c2458897c2454ff50308b0e895c24508b5424148b44241c03d08d44244c895424588b542420528d542458505256897c245c897c2464ff51308d43ff8b168b4c2410894424608b442424894c2468508d4c24608d442468515056896c246c896c2474ff5230478b5424108b4c2414428bc14b41895424108b542470894c24144d493bca0f8c30ffffff5f5e5d5b83c45cc204008bc25f5e5d5b83c45cc20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  }
+ ]
+}

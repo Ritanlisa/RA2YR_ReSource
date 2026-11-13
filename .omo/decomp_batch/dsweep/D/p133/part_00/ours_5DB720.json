@@ -1,0 +1,327 @@
+{
+ "symbol": "?CheckNetworkGameTimeout@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::CheckNetworkGameTimeout",
+ "size": 666,
+ "link_base": 0,
+ "bytes_hex": "a10000000081ecc80100005355bd01000000563bc5578bd98bf50f86ca000000a10000000068100000008b0cb051e80000000083c40885c00f849e000000a00c0000000fbe3d140000003cff7410e8000000000fbe150c0000002bc203f8a1000000008b0cb02b793581ff2c010000766b8bcbe8000000008b15000000008b04b250e8000000008b0d00000000a10000000083c4048d14b1526800000000ff501083f8ff740e506800000000e80000000083c4088bcbe8000000003b35000000007f198b4c2410e8000000006a006a00ba0100000033c9e800000000a100000000463bf00f8236ffffff833d00000000010f8698010000bb050000008b0d000000008b14a98b423485c0752ca00c0000000fbe35140000003cff7410e8000000000fbe0d0c0000002bc103f08b15000000008b04aa897034a00c0000000fbe35140000003cff0fbec87410e8000000000fbe0d0c0000002bc103f08b15000000008b04aa2b703481fe680100000f87b20000000fbe351400000083f9ff7410e8000000000fbe0d0c0000002bc103f08b15000000008b04aa2b703481fe2c0100000f86da0000008a483884c90f85cf000000b97100000033c08d7c24148d742418f3aba00000000083c9ff8bf833c0f2aef7d12bf9897424108bc18bf78b7c24106a00c1e902f3a58bc86a0083e103f3a4895c241c8b0caa83c1288d54241c516a0068c701000052b900000000e800000000e800000000a1000000008b0ca8c6413801eb5c50e8000000008b15000000008b0d0000000083c4048d04aa506800000000ff511083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e88b4c2410e800000000a100000000453be80f826dfeffff5f5e5d5b81c4c8010000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerList@@3IA",
+   "sym_key": "g_NetworkPlayerList"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerConfig@@3IB",
+   "sym_key": "g_NetworkPlayerConfig"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D600@@3IA",
+   "sym_key": "DataGlobal_A8D600"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "_wcscmp",
+   "sym_key": "wcscmp"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerConfig@@3IB",
+   "sym_key": "g_NetworkPlayerConfig"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerConfig@@3IB",
+   "sym_key": "g_NetworkPlayerConfig"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerConfig@@3IB",
+   "sym_key": "g_NetworkPlayerConfig"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DA5C@@3IA",
+   "sym_key": "DataGlobal_A8DA5C"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DA5C@@3IA",
+   "sym_key": "DataGlobal_A8DA5C"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DA5C@@3IA",
+   "sym_key": "DataGlobal_A8DA5C"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?Network_Check@@YADPAXH@Z",
+   "sym_key": "Network_Check"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?UpdatePlayerList@NetworkLobby@@QAEHXZ",
+   "sym_key": "NetworkLobby::UpdatePlayerList"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?g_NetworkSetupConfig@@3IA",
+   "sym_key": "g_NetworkSetupConfig"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?DisplayPlayers@GameSetup@@QAEXXZ",
+   "sym_key": "GameSetup::DisplayPlayers"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?SendNetworkHeartbeat@@YIHHHHH@Z",
+   "sym_key": "SendNetworkHeartbeat"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerList@@3IA",
+   "sym_key": "g_NetworkPlayerList"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?g_GameSetupConfig@@3IA",
+   "sym_key": "g_GameSetupConfig"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?g_GameSetupFlags@@3IB",
+   "sym_key": "g_GameSetupFlags"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 292,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?g_GameSetupFlags@@3IB",
+   "sym_key": "g_GameSetupFlags"
+  },
+  {
+   "off": 313,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 320,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 332,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 339,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 349,
+   "type": "DIR32",
+   "sym": "?g_GameSetupFlags@@3IB",
+   "sym_key": "g_GameSetupFlags"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 391,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 401,
+   "type": "DIR32",
+   "sym": "?g_GameSetupFlags@@3IB",
+   "sym_key": "g_GameSetupFlags"
+  },
+  {
+   "off": 452,
+   "type": "DIR32",
+   "sym": "?g_GameSetupBuffer@@3EA",
+   "sym_key": "g_GameSetupBuffer"
+  },
+  {
+   "off": 521,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 526,
+   "type": "REL32",
+   "sym": "?SendMessage@Network@@QAEHHHHHHH@Z",
+   "sym_key": "Network::SendMessage"
+  },
+  {
+   "off": 531,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 536,
+   "type": "DIR32",
+   "sym": "?g_GameSetupFlags@@3IB",
+   "sym_key": "g_GameSetupFlags"
+  },
+  {
+   "off": 551,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 557,
+   "type": "DIR32",
+   "sym": "?g_GameSetupFlags@@3IB",
+   "sym_key": "g_GameSetupFlags"
+  },
+  {
+   "off": 563,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DA44@@3IA",
+   "sym_key": "DataGlobal_A8DA44"
+  },
+  {
+   "off": 575,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DA44@@3IA",
+   "sym_key": "DataGlobal_A8DA44"
+  },
+  {
+   "off": 589,
+   "type": "DIR32",
+   "sym": "?g_GameSetupConfig@@3IA",
+   "sym_key": "g_GameSetupConfig"
+  },
+  {
+   "off": 602,
+   "type": "DIR32",
+   "sym": "?g_GameSetupConfig@@3IA",
+   "sym_key": "g_GameSetupConfig"
+  },
+  {
+   "off": 610,
+   "type": "DIR32",
+   "sym": "?g_GameSetupFlags@@3IB",
+   "sym_key": "g_GameSetupFlags"
+  },
+  {
+   "off": 624,
+   "type": "DIR32",
+   "sym": "?g_GameSetupConfig@@3IA",
+   "sym_key": "g_GameSetupConfig"
+  },
+  {
+   "off": 637,
+   "type": "REL32",
+   "sym": "?DisplayPlayers@GameSetup@@QAEXXZ",
+   "sym_key": "GameSetup::DisplayPlayers"
+  },
+  {
+   "off": 642,
+   "type": "DIR32",
+   "sym": "?g_GameSetupConfig@@3IA",
+   "sym_key": "g_GameSetupConfig"
+  }
+ ]
+}

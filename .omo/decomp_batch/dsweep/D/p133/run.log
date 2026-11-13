@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p133\part_00
+=== convert (20 addrs) ===
+[conv] 0x5a19e0 ProcessRandomMapCellAdjacency -> _addr_5A
+[conv] 0x77ed00 SetupLobbyPlayerSlot -> _addr_77
+[conv] 0x74dc00 VeinholeClass::SelectGrowthPosition -> VeinholeClass
+[conv] 0x603aa0 IsDialogWindowClass -> _addr_60
+[conv] 0x620cd0 ComputeHashModPrime -> _addr_62
+[conv] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> JumpjetLocomotionClass
+[conv] 0x76c6e0 Selection@WorldDominationTour::SelectionInitializeWOL -> Selection_WorldDominationTour
+[conv] 0x5f7090 ObjectTypeClass::ConstructFull -> ObjectTypeClass
+[conv] 0x7d4d24 __tzset_lk -> _addr_7D
+[conv] 0x630c10 PhoneEditorDialogProc -> _addr_63
+[conv] 0x60c540 Control::CheckControlTypeDialog -> Control
+[conv] 0x5df180 SkirmishDialogProc -> _addr_5D
+[conv] 0x686890 ScenarioClass::SetupAlliances -> ScenarioClass
+[conv] 0x568bb0 MapClass::PostProcessReveal -> MapClass
+[conv] 0x6263d0 FileExtension::MapHandler -> FileExtension
+[conv] 0x418e20 InfantryClass::FindNearbyCell -> InfantryClass
+[conv] 0x5db720 ObjectClass::CheckNetworkGameTimeout -> ObjectClass
+[conv] 0x55c350 LZOPipe::Read -> LZOPipe
+[conv] 0x768f50 ArtConfig::ParseLayoutEntry -> ArtConfig
+[conv] 0x5cdc50 MSPrintAnim::SetText -> MSPrintAnim
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5A                 rc=0
+[era] _addr_77                 rc=0
+[era] VeinholeClass            rc=0
+[era] _addr_60                 rc=2
+[era] _addr_62                 rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] Selection_WorldDominationTour rc=2
+[era] ObjectTypeClass          rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_63                 rc=0
+[era] Control                  rc=2
+[era] _addr_5D                 rc=0
+[era] ScenarioClass            rc=2
+[era] MapClass                 rc=0
+[era] FileExtension            rc=2
+[era] InfantryClass            rc=2
+[era] ObjectClass              rc=0
+[era] LZOPipe                  rc=2
+[era] ArtConfig                rc=2
+[era] MSPrintAnim              rc=0
+=== diffasm byte-compare ===
+[diff] 0x5a19e0   MISMATCH         ProcessRandomMapCellAdjacency
+[diff] 0x77ed00   MISMATCH         SetupLobbyPlayerSlot
+[diff] 0x74dc00   MISMATCH         VeinholeClass::SelectGrowthPosition
+[diff] 0x620cd0   MISMATCH         ComputeHashModPrime
+[diff] 0x630c10   MISMATCH         PhoneEditorDialogProc
+[diff] 0x5df180   MISMATCH         SkirmishDialogProc
+[diff] 0x568bb0   MISMATCH         MapClass::PostProcessReveal
+[diff] 0x5db720   MISMATCH         ObjectClass::CheckNetworkGameTimeout
+[diff] 0x5cdc50   MISMATCH         MSPrintAnim::SetText
+[ledger] 0x5a19e0 ProcessRandomMapCellAdjacency -> NG (attempt 1)
+[ledger] 0x77ed00 SetupLobbyPlayerSlot -> NG (attempt 1)
+[ledger] 0x74dc00 VeinholeClass::SelectGrowthPosition -> NG (attempt 1)
+[ledger] 0x603aa0 IsDialogWindowClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x620cd0 ComputeHashModPrime -> NG (attempt 1)
+[ledger] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76c6e0 Selection@WorldDominationTour::SelectionInitializeWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f7090 ObjectTypeClass::ConstructFull -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d4d24 __tzset_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x630c10 PhoneEditorDialogProc -> NG (attempt 1)
+[ledger] 0x60c540 Control::CheckControlTypeDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5df180 SkirmishDialogProc -> NG (attempt 1)
+[ledger] 0x686890 ScenarioClass::SetupAlliances -> COMPILE_FAIL (attempt 1)
+[ledger] 0x568bb0 MapClass::PostProcessReveal -> NG (attempt 1)
+[ledger] 0x6263d0 FileExtension::MapHandler -> COMPILE_FAIL (attempt 1)
+[ledger] 0x418e20 InfantryClass::FindNearbyCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5db720 ObjectClass::CheckNetworkGameTimeout -> NG (attempt 1)
+[ledger] 0x55c350 LZOPipe::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x768f50 ArtConfig::ParseLayoutEntry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cdc50 MSPrintAnim::SetText -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "const_fold": 1,
+  "frame_sched": 4,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p133\batch_report.json
