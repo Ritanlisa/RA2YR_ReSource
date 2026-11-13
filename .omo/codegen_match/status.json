@@ -90662,7 +90662,7 @@
   "this_as_id": false
  },
  "0x578880": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90811,7 +90811,7 @@
   "this_as_id": false
  },
  "0x57a430": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "RecursiveCellClassNeighbourUpdate",
@@ -91122,7 +91122,7 @@
   "this_as_id": false
  },
  "0x57f6a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91134,7 +91134,7 @@
   "this_as_id": false
  },
  "0x57fbc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91146,7 +91146,7 @@
   "this_as_id": false
  },
  "0x5800d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91158,7 +91158,7 @@
   "this_as_id": false
  },
  "0x580600": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91337,7 +91337,7 @@
   "this_as_id": false
  },
  "0x583ad0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -91687,7 +91687,7 @@
   "this_as_id": false
  },
  "0x588750": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ScanBuildingPlacementCells",
@@ -92173,7 +92173,7 @@
   "this_as_id": false
  },
  "0x589740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93473,7 +93473,7 @@
   "this_as_id": false
  },
  "0x58bf70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93556,7 +93556,7 @@
   "this_as_id": false
  },
  "0x58c4a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93668,7 +93668,7 @@
   "this_as_id": false
  },
  "0x58d1c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93680,7 +93680,7 @@
   "this_as_id": false
  },
  "0x58d410": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93704,7 +93704,7 @@
   "this_as_id": false
  },
  "0x58e5d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93716,7 +93716,7 @@
   "this_as_id": false
  },
  "0x58e740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93728,14 +93728,14 @@
   "this_as_id": false
  },
  "0x58e9b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RandomMap::PlaceRandomMapTerrain",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::PlaceRandomMapTerrain",
-  "rule_violations": 4,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -93764,14 +93764,14 @@
   "this_as_id": false
  },
  "0x58f0c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RandomMap::CollectBorderCells",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::CollectBorderCells",
-  "rule_violations": 14,
+  "rule_violations": 13,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -93846,7 +93846,7 @@
   "this_as_id": false
  },
  "0x5910f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93870,7 +93870,7 @@
   "this_as_id": false
  },
  "0x591d80": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93882,14 +93882,14 @@
   "this_as_id": false
  },
  "0x592440": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RandomMap::CheckPlacementArea",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::CheckPlacementArea",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
