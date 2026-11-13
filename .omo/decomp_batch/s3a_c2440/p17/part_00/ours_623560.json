@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetTooltip@GadgetClass@@QAEXPAH@Z",
+ "sym_key": "GadgetClass::SetTooltip",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "56578d792885ff74118b0750e80000000083c404c707000000008b74240c85f67421833e00741c56e8000000008d4c000251e80000000056508907e80000000083c4105f5ec20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}
