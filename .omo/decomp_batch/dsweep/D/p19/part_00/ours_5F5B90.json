@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetOrCreateResHandle@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GetOrCreateResHandle",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "51568bf18a0d00000000b00184c875218ad168000000000ad0c70500000000ff7fff7f881500000000e80000000083c4048b0656ff908800000085c07508b8000000005e59c38b0e56ff91880000008b4c24048b105150ff92900000005e59c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?byte_AC1398@@3EA",
+   "sym_key": "byte_AC1398"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?nullsub_205@@YAHPBX0@Z",
+   "sym_key": "nullsub_205"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?dword_AC139C@@3IA",
+   "sym_key": "dword_AC139C"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?byte_AC1398@@3EA",
+   "sym_key": "byte_AC1398"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?dword_AC139C@@3IA",
+   "sym_key": "dword_AC139C"
+  }
+ ]
+}

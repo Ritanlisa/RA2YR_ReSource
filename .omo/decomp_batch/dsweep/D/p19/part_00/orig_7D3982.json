@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D3982",
+ "name": "_towupper",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D3982",
+ "bytes_hex": "5333db391da082b70075178b442408663d6100725d663d7a00775705e0ff00005bc356bea48bb7005756ff15c8117e00391da08bb7008b3dcc117e00740e56ffd76a13e82ba0ffff596a015bff742410e81f00000085db5989442410740a6a13e86fa0ffff59eb0356ffd7668b4424105f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x46FB50",
+ "name": "Lobby::EnableStartButton",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46FB50",
+ "bytes_hex": "538b1da8147e0056578bf968d106000057ffd38bf068c005000057ffd385f68bf8744da184daa8008b0d80d5a8003bc17d186a00568b35a0147e00ffd685ff742f6a0157ffd65f5e5bc38b0d8cdaa8008a8100e0890084c0740d6a0056ff15a0147e005f5e5bc36a0156ff15a0147e005f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

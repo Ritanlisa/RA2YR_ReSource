@@ -1,0 +1,69 @@
+{
+ "symbol": "?EnableStartButton@Lobby@@QAEPAXXZ",
+ "sym_key": "Lobby::EnableStartButton",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "56578bf968d106000057e80000000068c0050000578bf0e80000000085f68bf87449a1000000008b0d000000003bc172268b0d000000008a810000000084c0740b6a0056e8000000005f5ec36a0156e8000000005f5ec36a0056e80000000085ff74086a0157e8000000005f5ec3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?Game_PlayerCount@@3IA",
+   "sym_key": "Game_PlayerCount"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_CampaignScoreFlags@@3IA",
+   "sym_key": "g_CampaignScoreFlags"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerCount@@3IA",
+   "sym_key": "g_NetworkPlayerCount"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptionState@@3IA",
+   "sym_key": "g_GameModeOptionState"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d3982 _towupper -> _addr_7D
+[conv] 0x46fb50 Lobby::EnableStartButton -> Lobby
+[conv] 0x6e1c40 SuperClass::Get -> SuperClass
+[conv] 0x6bf090 _TClassFactory_VWaveClass::ddtor -> _TClassFactory_VWaveClass
+[conv] 0x6bf390 _TClassFactory_VTerrainClass::ddtor -> _TClassFactory_VTerrainClass
+[conv] 0x6bf810 _TClassFactory_VTactical::ddtor -> _TClassFactory_VTactical
+[conv] 0x6bf990 _TClassFactory_VCellClass::ddtor -> _TClassFactory_VCellClass
+[conv] 0x6c1790 _TClassFactory_VVoxelAnimClass::ddtor -> _TClassFactory_VVoxelAnimClass
+[conv] 0x6c1910 _TClassFactory_VTActionClass::ddtor -> _TClassFactory_VTActionClass
+[conv] 0x6c3a10 _TClassFactory_VAnimClass::ddtor -> _TClassFactory_VAnimClass
+[conv] 0x6c4190 _TClassFactory_VJumpjetLocomotionClass::ddtor -> _TClassFactory_VJumpjetLocomotionClass
+[conv] 0x6c5690 _TClassFactory_VParticleClass::ddtor -> _TClassFactory_VParticleClass
+[conv] 0x6c5990 _TClassFactory_VParticleSystemClass::ddtor -> _TClassFactory_VParticleSystemClass
+[conv] 0x5f5b90 ObjectClass::GetOrCreateResHandle -> ObjectClass
+[conv] 0x45aea0 StreamClass::Set2 -> StreamClass
+[conv] 0x45af20 StreamClass::Set -> StreamClass
+[conv] 0x4d0490 ComPtr::ReleaseAndSet -> ComPtr
+[conv] 0x680f70 Game::validateScenario -> Game
+[conv] 0x7cf6ed __heap_term -> _addr_7C
+[conv] 0x744100 TechnoClass::SelectAITarget -> TechnoClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=0
+[era] Lobby                    rc=0
+[era] SuperClass               rc=0
+[era] _TClassFactory_VWaveClass rc=2
+[era] _TClassFactory_VTerrainClass rc=2
+[era] _TClassFactory_VTactical rc=2
+[era] _TClassFactory_VCellClass rc=0
+[era] _TClassFactory_VVoxelAnimClass rc=2
+[era] _TClassFactory_VTActionClass rc=2
+[era] _TClassFactory_VAnimClass rc=2
+[era] _TClassFactory_VJumpjetLocomotionClass rc=2
+[era] _TClassFactory_VParticleClass rc=2
+[era] _TClassFactory_VParticleSystemClass rc=2
+[era] ObjectClass              rc=0
+[era] StreamClass              rc=2
+[era] ComPtr                   rc=2
+[era] Game                     rc=2
+[era] _addr_7C                 rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x7d3982   MISMATCH         _towupper
+[diff] 0x46fb50   MISMATCH         Lobby::EnableStartButton
+[diff] 0x6e1c40   MISMATCH         SuperClass::Get
+[diff] 0x6bf990   MISMATCH         _TClassFactory_VCellClass::ddtor
+[diff] 0x5f5b90   MISMATCH         ObjectClass::GetOrCreateResHandle
+[ledger] 0x7d3982 _towupper -> NG (attempt 1)
+[ledger] 0x46fb50 Lobby::EnableStartButton -> NG (attempt 1)
+[ledger] 0x6e1c40 SuperClass::Get -> NG (attempt 1)
+[ledger] 0x6bf090 _TClassFactory_VWaveClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bf390 _TClassFactory_VTerrainClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bf810 _TClassFactory_VTactical::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bf990 _TClassFactory_VCellClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c1790 _TClassFactory_VVoxelAnimClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c1910 _TClassFactory_VTActionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3a10 _TClassFactory_VAnimClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4190 _TClassFactory_VJumpjetLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5690 _TClassFactory_VParticleClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5990 _TClassFactory_VParticleSystemClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f5b90 ObjectClass::GetOrCreateResHandle -> NG (attempt 1)
+[ledger] 0x45aea0 StreamClass::Set2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45af20 StreamClass::Set -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d0490 ComPtr::ReleaseAndSet -> COMPILE_FAIL (attempt 1)
+[ledger] 0x680f70 Game::validateScenario -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cf6ed __heap_term -> COMPILE_FAIL (attempt 1)
+[ledger] 0x744100 TechnoClass::SelectAITarget -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 15
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "regalloc": 1,
+  "branch_polarity": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p19\batch_report.json

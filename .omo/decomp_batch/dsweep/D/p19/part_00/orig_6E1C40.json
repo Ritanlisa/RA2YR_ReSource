@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E1C40",
+ "name": "SuperClass::Get",
+ "size": 117,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E1C40",
+ "bytes_hex": "56578b7c240c8bf16a006a008b86900000008b8f580200006a008b0c81e8fe98feff8b96900000008b87580200008b0c90c6416000a14c3da8003bc775308b9690000000b9e8f78700526a1fe86f46fcff8b96900000006a00b91f000000e8bd9ffcff50b9e8f78700e8f243fcff5fb0015ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

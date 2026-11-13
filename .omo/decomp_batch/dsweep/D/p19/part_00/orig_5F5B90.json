@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F5B90",
+ "name": "ObjectClass::GetOrCreateResHandle",
+ "size": 117,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F5B90",
+ "bytes_hex": "51568bf18a0d9813ac00b00184c8752f8ad168105c5f000ad0b8ff7f00006689442408668944240a8b44240888159813ac00a39c13ac00e8be3b1d0083c4048b168bceff928800000085c0750ab89c13ac005e59c204008b068bceff90880000008b4c240c8b10518bc8ff92900000005e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
