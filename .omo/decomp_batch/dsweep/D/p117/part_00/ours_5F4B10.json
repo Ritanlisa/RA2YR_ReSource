@@ -1,0 +1,69 @@
+{
+ "symbol": "?CalcDrawRect@ObjectClass@@QAEEXZ",
+ "sym_key": "ObjectClass::CalcDrawRect",
+ "size": 403,
+ "link_base": 0,
+ "bytes_hex": "83ec24a1f0090000535533db8be93bc3896c24107521a1000000003bc374188a4c240b84c97508399d80000000743e399d8000000075368b45008d4c24285155899d80000000ff90ac0000008b0d000000008d5424145250e80000000084c075148b450055ff502c83f81874085d24005b83c424c38b0d000000008b1500000000894c240c8b4c2428568b35000000008b4108578b3d04000000895c2420895c2424895c2428895c242c8bda85c00f8e910000008b690c85ed0f8e820000008bee85ed767c8b2d0000000085ed76728b293bd573062bd58bdd03f283fe017c618b51043bfa7d0f2bfa8b54241403d78b790489542414837c2414017c4403e88d14333bd57e088b112bc303c28bf083fe017c2e8b510c8b410403c28b5424148d2c3a3be87f048bc2eb022bc783f8017c10897c242489742428895c24208944242c8b6c24188b4424248b5424208941048b4424288941088b44242c891189410ca1000000003bd0760e8bf28b54241c2bc603d08954241c8b55008d44241c515055ff92140100005f24015e5d0c015b83c424c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_DSurface_WindowOffset@@3IA",
+   "sym_key": "g_DSurface_WindowOffset"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?g_DSurface_WindowOffset@@3IA",
+   "sym_key": "g_DSurface_WindowOffset"
+  },
+  {
+   "off": 353,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

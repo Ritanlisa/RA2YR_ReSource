@@ -1,0 +1,51 @@
+{
+ "symbol": "?SearchEnemies@Cell@@QAEHH@Z",
+ "sym_key": "Cell::SearchEnemies",
+ "size": 519,
+ "link_base": 0,
+ "bytes_hex": "83ec1c535556578bf98bb7e400000085f60f84800000008a5c24308b068b6e306a016a006aff6aff5756ff90ac01000083f807743084db741d85f67454f646140174138b0e56ff91840000008a88940d000084c9750f85f674378b1656ff522c83f802752c8b4e6c8b15000000008b066a00894c24348b8aa80f00006a016a016a00518d5424446a005256ff906c01000085ed8bf575840fbf47248bc889442430c1f9100fbfd10fbfc0c1e208be800000006a00c1e00803d603c652508d4c242ce8000000008d4c2418897424188974241ce8000000008b5c243089442414b8feffffff89442410bdfeffffff896c2418668b4f26668b572403cd03d033cb8d44243081e1ff0000005033d9b90000000033d381e2ff00000033da895c2434e8000000003bc70f84b10000008bb0e400000085f60f84a30000008b4614c1e8028ac883e001f6d180e1018944243084c9757c8b867406000085c0750d6803400080e80000000083c4048b5424148b8674060000528b5424288b08528b5424285250ff91a000000084c074438b066a016a006aff6aff5756ff90ac01000083f807752c8b4e6c8b15000000008b066a00894c24348b8aa80f00006a016a016a00518d5424446a005256ff906c0100008b763085f60f8561ffffff8b6c24188b4424104583fd03896c24180f8c02ffffff4083f803894424100f8cebfeffff5f5e5d5b83c41cc20400",
+ "relocs": [
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JXZ",
+   "sym_key": "Isometric::InitTables"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 288,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 354,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 423,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

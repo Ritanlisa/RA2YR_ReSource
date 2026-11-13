@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p117\part_00
+=== convert (20 addrs) ===
+[conv] 0x6267a0 FileSystem::InitExtensionState -> FileSystem
+[conv] 0x409de0 AudioController::LoadThemeBank -> AudioController
+[conv] 0x59b740 RandomMap::PlaceShoreObjects -> RandomMap
+[conv] 0x72aa40 LoadMouseClassResources -> _addr_72
+[conv] 0x4e4c20 FillColorComboBoxUI -> _addr_4E
+[conv] 0x4e5700 FillComboBoxSides -> _addr_4E
+[conv] 0x5c6fe0 BigInt::ArrayArithmetic -> BigInt
+[conv] 0x744270 TechnoClass::CanBeTargeted -> TechnoClass
+[conv] 0x77f320 RequestChannelListExWOL -> _addr_77
+[conv] 0x4a42f0 InitializeDDraw -> _addr_4A
+[conv] 0x789960 ObjectClass::ValidateJoinWOL -> ObjectClass
+[conv] 0x78f000 SessionClass::BuildLaunchString -> SessionClass
+[conv] 0x5af980 MultiplyMatrix3x4 -> _addr_5A
+[conv] 0x6033f0 BinkMovie::HandleKeyboard -> BinkMovie
+[conv] 0x524960 InfantryTypeClass::LoadTypeData -> InfantryTypeClass
+[conv] 0x5f4b10 ObjectClass::CalcDrawRect -> ObjectClass
+[conv] 0x58f0c0 RandomMap::CollectBorderCells -> RandomMap
+[conv] 0x7bab90 XSurface::WalkLine -> XSurface
+[conv] 0x627b20 ColorSchemeClass::LoadAllSchemes -> ColorSchemeClass
+[conv] 0x487a10 Cell::SearchEnemies -> Cell
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FileSystem               rc=2
+[era] AudioController          rc=0
+[era] RandomMap                rc=2
+[era] _addr_72                 rc=0
+[era] _addr_4E                 rc=2
+[era] BigInt                   rc=0
+[era] TechnoClass              rc=2
+[era] _addr_77                 rc=2
+[era] _addr_4A                 rc=2
+[era] ObjectClass              rc=2
+[era] SessionClass             rc=2
+[era] _addr_5A                 rc=0
+[era] BinkMovie                rc=2
+[era] InfantryTypeClass        rc=2
+[era] XSurface                 rc=2
+[era] ColorSchemeClass         rc=2
+[era] Cell                     rc=0
+=== diffasm byte-compare ===
+[diff] 0x409de0   MISMATCH         AudioController::LoadThemeBank
+[diff] 0x59b740   MISMATCH         RandomMap::PlaceShoreObjects
+[diff] 0x72aa40   MISMATCH         LoadMouseClassResources
+[diff] 0x5c6fe0   MISMATCH         BigInt::ArrayArithmetic
+[diff] 0x5f4b10   MISMATCH         ObjectClass::CalcDrawRect
+[diff] 0x5af980   MISMATCH         MultiplyMatrix3x4
+[diff] 0x487a10   MISMATCH         Cell::SearchEnemies
+[ledger] 0x6267a0 FileSystem::InitExtensionState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x409de0 AudioController::LoadThemeBank -> NG (attempt 1)
+[ledger] 0x59b740 RandomMap::PlaceShoreObjects -> NG (attempt 1)
+[ledger] 0x72aa40 LoadMouseClassResources -> NG (attempt 1)
+[ledger] 0x4e4c20 FillColorComboBoxUI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e5700 FillComboBoxSides -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c6fe0 BigInt::ArrayArithmetic -> NG (attempt 1)
+[ledger] 0x744270 TechnoClass::CanBeTargeted -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77f320 RequestChannelListExWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a42f0 InitializeDDraw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x789960 ObjectClass::ValidateJoinWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78f000 SessionClass::BuildLaunchString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5af980 MultiplyMatrix3x4 -> NG (attempt 1)
+[ledger] 0x6033f0 BinkMovie::HandleKeyboard -> COMPILE_FAIL (attempt 1)
+[ledger] 0x524960 InfantryTypeClass::LoadTypeData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f4b10 ObjectClass::CalcDrawRect -> NG (attempt 1)
+[ledger] 0x58f0c0 RandomMap::CollectBorderCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bab90 XSurface::WalkLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x627b20 ColorSchemeClass::LoadAllSchemes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x487a10 Cell::SearchEnemies -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "codegen_shape": 3,
+  "const_fold": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p117\batch_report.json
