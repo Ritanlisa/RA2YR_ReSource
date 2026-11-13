@@ -156946,15 +156946,15 @@
   "this_as_id": false
  },
  "0x6d02b0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x118",
   "name": "TabClass::LoadButtonSHPs",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "SidebarClass::LoadButtonSHPs",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d03a0": {
@@ -157077,14 +157077,14 @@
   "this_as_id": false
  },
  "0x6d0f10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+7 push edi",
   "name": "sub_6D0F10",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_6D0F10",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d0fb0": {
@@ -157739,7 +157739,7 @@
   "status": "PENDING"
  },
  "0x6d4b50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -158265,7 +158265,7 @@
   "status": "NG"
  },
  "0x6da230": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158330,7 +158330,7 @@
   "this_as_id": false
  },
  "0x6da5c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158460,7 +158460,7 @@
   "this_as_id": false
  },
  "0x6dbd20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159048,7 +159048,7 @@
   "this_as_id": false
  },
  "0x6dd5b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -159319,15 +159319,15 @@
   "this_as_id": false
  },
  "0x6e1530": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 mov ecx, dword ptr [0xa8b230]",
   "name": "ScenarioClass::PrepareTextDisplay",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "ScenarioClass::PrepareTextDisplay",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e15f0": {
@@ -159603,7 +159603,7 @@
   "this_as_id": false
  },
  "0x6e2c40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -160904,7 +160904,7 @@
   "this_as_id": false
  },
  "0x6e5b60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -160947,31 +160947,31 @@
   "status": "NG"
  },
  "0x6e5ed0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 mov eax, dword ptr [0x7f4550]",
   "name": "CCINIClass::ProcessSection",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CCINIClass::ProcessSection",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e5fe0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0x7f4550]",
   "name": "ObjectClass::SaveTriggerTagsToINI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SaveTriggerTagsToINI",
   "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e6080": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -160983,7 +160983,7 @@
   "this_as_id": false
  },
  "0x6e6160": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -161793,7 +161793,7 @@
   "this_as_id": false
  },
  "0x6e85b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -163936,7 +163936,7 @@
   "this_as_id": false
  },
  "0x6f4960": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164487,7 +164487,7 @@
   "this_as_id": false
  },
  "0x6fd210": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165528,7 +165528,7 @@
   "this_as_id": false
  },
  "0x70aa60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -166630,7 +166630,7 @@
   "this_as_id": false
  },
  "0x70f1d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -167380,7 +167380,7 @@
   "this_as_id": false
  },
  "0x7162f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

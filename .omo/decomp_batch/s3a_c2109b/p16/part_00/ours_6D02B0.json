@@ -1,0 +1,117 @@
+{
+ "symbol": "?LoadButtonSHPs@TabClass@@QAEHXZ",
+ "sym_key": "TabClass::LoadButtonSHPs",
+ "size": 197,
+ "link_base": 0,
+ "bytes_hex": "81ec08010000558be98b4c24085657e8000000008b3500000000c644240f0033ff578d442418680000000050e80000000083c40c8d54240f8d4c2414e8000000008a4c240f8906888f0000000083c6044781fe000000007cc8a1000000008b352c1400005f0fbf4802890d000000000fbf5004a1281400008915000000008b15000000008b368b40080fafd02bf28b15181400008935000000008bf08b52042bf1893500000000891500000000a300000000c78520550000000000005e5d81c408010000c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?LoadAssets@SidebarClass@@QAEPAXXZ",
+   "sym_key": "SidebarClass::LoadAssets"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0C148@@3IA",
+   "sym_key": "DataGlobal_B0C148"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "??_C@_0P@ODHJ@Button?$CF02d?4SHP?$AA@",
+   "sym_key": "??_C@_0P@ODHJ@Button?$CF02d?4SHP?$AA@"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CBDC@@3PAEA",
+   "sym_key": "DataGlobal_B0CBDC"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0C1AC@@3EA",
+   "sym_key": "DataGlobal_B0C1AC"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0C148@@3IA",
+   "sym_key": "DataGlobal_B0C148"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD38@@3IA",
+   "sym_key": "DataGlobal_B0CD38"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CB50@@3IA",
+   "sym_key": "DataGlobal_B0CB50"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CB54@@3IA",
+   "sym_key": "DataGlobal_B0CB54"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC2C@@3IA",
+   "sym_key": "DataGlobal_B0CC2C"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD10@@3IA",
+   "sym_key": "DataGlobal_B0CD10"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC24@@3IA",
+   "sym_key": "DataGlobal_B0CC24"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC38@@3IA",
+   "sym_key": "DataGlobal_B0CC38"
+  }
+ ]
+}

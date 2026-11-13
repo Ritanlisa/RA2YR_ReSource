@@ -1,0 +1,147 @@
+{
+ "symbol": "?ProcessSection@CCINIClass@@QAEHXZ",
+ "sym_key": "CCINIClass::ProcessSection",
+ "size": 304,
+ "link_base": 0,
+ "bytes_hex": "83ec1c538bd955578b0b6810000000e8000000008bf833ed85ff897c240c0f8e03010000568b0b556810000000e8000000008bf08d4424146a185068000000005668100000008bcbe80000000085c00f8ec100000033c9568a0d0000000051e80000000083c40885c00f848500000033d2568a150000000052e80000000083c40885c0746fa10000000033ff85c07647a100000000568b0883c12451e80000000083c40885c07424a100000000473bf873258b1500000000568b04ba83c02450e80000000083c40885c075dc8b0d000000008b3cb9eb1f68a4000000e80000000083c40485c0740c568bc8e8000000008bf8eb0233ff56e80000000083c40457506800000000e8000000008b175357ff52648b7c2410453bef0f8c06ffffff5e5f5d5b83c41cc38bc75f5d5b83c41cc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?aChemlauncher@@3IA",
+   "sym_key": "aChemlauncher"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?aChemlauncher@@3IA",
+   "sym_key": "aChemlauncher"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?aChemlauncher@@3IA",
+   "sym_key": "aChemlauncher"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_Str_none@@3EA",
+   "sym_key": "g_Str_none"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerCleanup@@3IA",
+   "sym_key": "g_MultiplayerCleanup"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0E784@@3IA",
+   "sym_key": "DataGlobal_B0E784"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerCleanup@@3IA",
+   "sym_key": "g_MultiplayerCleanup"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0E784@@3IA",
+   "sym_key": "DataGlobal_B0E784"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0E784@@3IA",
+   "sym_key": "DataGlobal_B0E784"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?Construct@TagTypeClass@@QAEPADPAX@Z",
+   "sym_key": "TagTypeClass::Construct"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?sub_412610@@YAHPAX@Z",
+   "sym_key": "sub_412610"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 263,
+   "type": "REL32",
+   "sym": "?SwizzleManagerClass__Here_I_Am@@YGHHHH@Z",
+   "sym_key": "SwizzleManagerClass__Here_I_Am"
+  }
+ ]
+}

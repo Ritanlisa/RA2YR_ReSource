@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E5FE0",
+ "name": "SaveTriggerTagsToINI",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E5FE0",
+ "bytes_hex": "a150457f0083ec205356578bf150e86d09e4ff8bd833ff85db7e3c8b0d50457f0057518bcee8b60ce4ff8d54240c8bce6a205268649f880050a150457f0050e8ec29e4ff8d4c240c6a00518bcee88ef7e3ff473bfb7cc48b1550457f006a00528bcee879f7e3ffa190e7b00033ff85c07e18a184e7b000568b0cb88b11ff5268a190e7b000473bf87ce85f5e5b83c420c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
