@@ -76,7 +76,7 @@
   "this_as_id": false
  },
  "0x4011c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "LoadAudioFile",
@@ -164,7 +164,7 @@
   "this_as_id": false
  },
  "0x401980": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -320,7 +320,7 @@
   "status": "NG"
  },
  "0x4023f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -577,7 +577,7 @@
   "this_as_id": false
  },
  "0x402f60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -670,7 +670,7 @@
   "this_as_id": false
  },
  "0x403530": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -782,7 +782,7 @@
   "this_as_id": false
  },
  "0x403870": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -1014,7 +1014,7 @@
   "this_as_id": false
  },
  "0x403fa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_403FA0",
@@ -1063,14 +1063,14 @@
   "status": "NG"
  },
  "0x4048b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::PrefetchAudioSamples",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "PrefetchAudioSamples",
-  "rule_violations": 10,
+  "rule_violations": 9,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -1122,7 +1122,7 @@
   "this_as_id": false
  },
  "0x404e70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -1201,7 +1201,7 @@
   "status": "NG"
  },
  "0x405190": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -1372,7 +1372,7 @@
   "this_as_id": false
  },
  "0x405fd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -1384,7 +1384,7 @@
   "this_as_id": false
  },
  "0x406060": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -1723,7 +1723,7 @@
   "this_as_id": false
  },
  "0x4068f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -2075,7 +2075,7 @@
   "this_as_id": false
  },
  "0x407100": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetupSampleAudioMixer",
@@ -2312,7 +2312,7 @@
   "this_as_id": false
  },
  "0x407550": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_407550",
@@ -2345,7 +2345,7 @@
   "this_as_id": false
  },
  "0x407860": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -2393,15 +2393,15 @@
   "this_as_id": false
  },
  "0x407a90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "AudioSample::Destructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "AudioSample::Destructor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x407b40": {
@@ -2728,7 +2728,7 @@
   "this_as_id": false
  },
  "0x408560": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_408560",
@@ -3075,7 +3075,7 @@
   "this_as_id": false
  },
  "0x4093c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_4093C0",
@@ -3121,7 +3121,7 @@
   "this_as_id": false
  },
  "0x409880": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ProcessAudioStream",

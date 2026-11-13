@@ -1,0 +1,11 @@
+{
+ "addr": "0x407A90",
+ "name": "AudioSample::Destructor",
+ "size": 170,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407A90",
+ "bytes_hex": "538b1dec117e00568bf1578b3de8117e00397604741568f8e78700ffd78bcee89cf9ffff68f8e78700ffd38b868800000085c0751d8b461485c0741668f8e78700ffd78b4e14e8d5aaffff68f8e78700ffd38b4e3485c9740ce882130000c74634000000008b4e3885c9740ce86f130000c74638000000008b4e3085c97405e82c0d00008b4e1485c97405e880a9ffff8b4e7c85c974068b016a01ff1056e80a103c0083c4045f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
