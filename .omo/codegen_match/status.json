@@ -94012,14 +94012,14 @@
   "this_as_id": false
  },
  "0x594870": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::PlaceRandomWaypoints",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "PlaceRandomWaypoints",
-  "rule_violations": 7,
+  "rule_violations": 10,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94096,7 +94096,7 @@
   "this_as_id": false
  },
  "0x5958e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94655,7 +94655,7 @@
   "this_as_id": false
  },
  "0x5a0410": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94667,7 +94667,7 @@
   "this_as_id": false
  },
  "0x5a0700": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94955,7 +94955,7 @@
   "this_as_id": false
  },
  "0x5a6510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ScatterMapSeedBuildings2",
@@ -95135,7 +95135,7 @@
   "this_as_id": false
  },
  "0x5a82e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -95276,7 +95276,7 @@
   "this_as_id": false
  },
  "0x5a9a70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -96432,7 +96432,7 @@
   "this_as_id": false
  },
  "0x5ae500": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -96634,7 +96634,7 @@
   "this_as_id": false
  },
  "0x5aead0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -96646,7 +96646,7 @@
   "this_as_id": false
  },
  "0x5aeaf0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -96658,7 +96658,7 @@
   "this_as_id": false
  },
  "0x5aeb20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -96742,7 +96742,7 @@
   "this_as_id": false
  },
  "0x5af120": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -97429,7 +97429,7 @@
   "this_as_id": false
  },
  "0x5b1d90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -98847,7 +98847,7 @@
   "this_as_id": false
  },
  "0x5b67f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ApplyGameOptions",
@@ -99342,7 +99342,7 @@
   "this_as_id": false
  },
  "0x5bac60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -99745,7 +99745,7 @@
   "this_as_id": false
  },
  "0x5bcc90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -100774,7 +100774,7 @@
   "this_as_id": false
  },
  "0x5bfaa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "LoadVQMovie",
@@ -101073,7 +101073,7 @@
   "status": "OK"
  },
  "0x5c0630": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -101829,7 +101829,7 @@
   "this_as_id": false
  },
  "0x5c1470": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -101841,7 +101841,7 @@
   "this_as_id": false
  },
  "0x5c1640": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
