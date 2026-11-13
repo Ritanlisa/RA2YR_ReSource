@@ -8,3 +8,4 @@
 {"part": 7, "n": 20, "seconds": 52.9, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
 {"part": 8, "n": 20, "seconds": 50.1, "ok": true, "verdicts": {"COMPILE_FAIL": 17, "MISMATCH": 3}}
 {"part": 9, "n": 20, "seconds": 67.5, "ok": true, "verdicts": {"COMPILE_FAIL": 11, "MISMATCH": 8, "OBJ_EXTRACT_FAIL": 1}}
+{"part": 10, "n": 20, "seconds": 48.1, "ok": true, "verdicts": {"MISMATCH": 6, "COMPILE_FAIL": 14}}

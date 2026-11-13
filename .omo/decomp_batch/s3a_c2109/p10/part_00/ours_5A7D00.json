@@ -1,0 +1,69 @@
+{
+ "symbol": "?Map_Helper_5A7D00@@YIDHPAGDD@Z",
+ "sym_key": "Unnamed::Map_Helper_5A7D00",
+ "size": 402,
+ "link_base": 0,
+ "bytes_hex": "83ec14a1000000005355568b3488578bfa568b0689742414897c2424ff909c00000085c08944241c0f84580100008b86e802000033db85c00f8e480100008b2d000000008b7424288b4c2410c7442414000000008b81e402000085c00f8e06010000668b47026603c30fbfc08bd033d681e2ff00000033f20fbfce897424188d14013bd50f8eb70000008bf92bf83bfd0f8dab0000002bc13bc50f8da10000003b15000000000f87950000008d442418b90000000050e8000000008bcb8be88b5424108b44241c0faf8ae4020000034c24148b7c881085ff745f8bcde80000000084c0751155e80000000083c40485c00f84840000000fbe572a33c98a8d1c0100003bca75748a44242884c0742b8b4c24188bc1c1f8100fbfc00faf05000000000fbfc903c18d1480a100000000c1e2048a4c024684c975418b2d00000000eb088a44242c84c075318b4c24108b4424148b7c2420408b91e4020000894424143bc20f82fafeffff8b542410433b9ae80200007311e9cefeffff5f5e5d32c05b83c414c208005f5e5db0015b83c414c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?sub_4863A0@@YAHPAXZZ",
+   "sym_key": "sub_4863A0"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 298,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  }
+ ]
+}

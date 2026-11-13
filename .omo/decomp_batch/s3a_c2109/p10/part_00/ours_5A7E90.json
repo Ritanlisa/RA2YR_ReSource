@@ -1,0 +1,39 @@
+{
+ "symbol": "?Object_Helper_5A7E90@@YIHHPAG@Z",
+ "sym_key": "Unnamed::Object_Helper_5A7E90",
+ "size": 292,
+ "link_base": 0,
+ "bytes_hex": "83ec14a10000000053578bda8b3c88895c241057897c24108b0fff919c00000085c0894424180f84f20000008d87e802000089442408c7442408000000008b0085c00f8ed600000055568b7424208b87e402000033ed85c00f86a7000000668b13668b43028b4c241003d533d603c181e2ff0000008b1d0000000033f233c625ff00000033f08bce8974241cc1f9100fbfc10fbfce8d14013bd37e568bf92bf83bfb7d4a2bc13bc37d443b1500000000773c8d54241cb90000000052e8000000008b7c24148b5424208b8fe40200000faf4c241003cd8b5c8a1085db7414c74038ffff0000c6801a01000000eb048b7c24148b87e40200008b5c2418453be80f8259ffffff8b4c24108b87e8020000413bc8894c24100f8c32ffffff5e5d5f5b83c414c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

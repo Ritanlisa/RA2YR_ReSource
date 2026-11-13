@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x5a7070 globalHelper_0A7070 -> _addr_5A
+[conv] 0x5a7250 IsAreaClearMap -> _addr_5A
+[conv] 0x5a7440 IsMapClassAreaUniform -> _addr_5A
+[conv] 0x5a7d00 Map_Helper_5A7D00 -> Map_Helper
+[conv] 0x5a7e90 Object_Helper_5A7E90 -> Object_Helper
+[conv] 0x5a7fa0 DrawIsoTile -> _addr_5A
+[conv] 0x5b3e90 ObjectClass::sub_5B3E90 -> ObjectClass
+[conv] 0x5b4270 HashTree::MarkEntry -> HashTree
+[conv] 0x5b4350 ObjectClass::sub_5B4350 -> ObjectClass
+[conv] 0x5b4430 LookupFileInfoCache -> _addr_5B
+[conv] 0x5b6020 ModemGame::ProcessPacket -> ModemGame
+[conv] 0x5b6da0 ObjectClass::sub_5B6DA0 -> ObjectClass
+[conv] 0x5b6eb0 ObjectClass::UI_Setup -> ObjectClass
+[conv] 0x5b8ce0 GameOptions::ReadSettings -> GameOptions
+[conv] 0x5b9250 ObjectClass::sub_5B9250 -> ObjectClass
+[conv] 0x5b9a60 SkirmishDialog::HandleGameStart -> SkirmishDialog
+[conv] 0x5ba060 ModemGuest::ProcessPacket -> ModemGuest
+[conv] 0x5ba970 NetworkGameSetup::SendGameSetupPacket -> NetworkGameSetup
+[conv] 0x5baa80 ObjectClass::sub_5BAA80 -> ObjectClass
+[conv] 0x5bd1f0 Debug::Printf -> Debug
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5A                 rc=0
+[era] Map_Helper               rc=0
+[era] Object_Helper            rc=0
+[era] ObjectClass              rc=2
+[era] HashTree                 rc=2
+[era] _addr_5B                 rc=2
+[era] ModemGame                rc=2
+[era] GameOptions              rc=2
+[era] SkirmishDialog           rc=2
+[era] ModemGuest               rc=2
+[era] NetworkGameSetup         rc=2
+[era] Debug                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x5a7070   MISMATCH         globalHelper_0A7070
+[diff] 0x5a7250   MISMATCH         IsAreaClearMap
+[diff] 0x5a7440   MISMATCH         IsMapClassAreaUniform
+[diff] 0x5a7fa0   MISMATCH         DrawIsoTile
+[diff] 0x5a7d00   MISMATCH         Map_Helper_5A7D00
+[diff] 0x5a7e90   MISMATCH         Object_Helper_5A7E90
+[ledger] 0x5a7070 globalHelper_0A7070 -> NG (attempt 2)
+[ledger] 0x5a7250 IsAreaClearMap -> NG (attempt 2)
+[ledger] 0x5a7440 IsMapClassAreaUniform -> NG (attempt 2)
+[ledger] 0x5a7d00 Map_Helper_5A7D00 -> NG (attempt 2)
+[ledger] 0x5a7e90 Object_Helper_5A7E90 -> NG (attempt 5)
+[ledger] 0x5a7fa0 DrawIsoTile -> NG (attempt 2)
+[ledger] 0x5b3e90 ObjectClass::sub_5B3E90 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b4270 HashTree::MarkEntry -> COMPILE_FAIL (attempt 14)
+[ledger] 0x5b4350 ObjectClass::sub_5B4350 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b4430 LookupFileInfoCache -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b6020 ModemGame::ProcessPacket -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b6da0 ObjectClass::sub_5B6DA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b6eb0 ObjectClass::UI_Setup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b8ce0 GameOptions::ReadSettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b9250 ObjectClass::sub_5B9250 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b9a60 SkirmishDialog::HandleGameStart -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ba060 ModemGuest::ProcessPacket -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ba970 NetworkGameSetup::SendGameSetupPacket -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5baa80 ObjectClass::sub_5BAA80 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bd1f0 Debug::Printf -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "regalloc": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p10\batch_report.json

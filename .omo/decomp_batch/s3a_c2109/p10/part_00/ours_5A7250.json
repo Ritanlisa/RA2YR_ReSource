@@ -1,0 +1,69 @@
+{
+ "symbol": "?IsAreaClearMap@@YIDPAHDD@Z",
+ "sym_key": "Unnamed::IsAreaClearMap",
+ "size": 499,
+ "link_base": 0,
+ "bytes_hex": "83ec1053558be98854240b8b0d00000000568b5d008b45040fbff30fbfd0578d3c323bf9897c24140f86b60100008bfe2bfa3bf90f83aa0100008bfa2bfe3bf90f839e0100008b7424148b3d000000003bf70f878c0100008b75088d741eff0fbff6897424188d3c323bf9897c24140f866f0100008bfe2bfa3bf90f83630100002bd63bd10f83590100008b15000000008b7424143bf20f87470100008b550c03d08954241c4a0fbff30fbfd28d3c323bf9897c24140f86280100008bfe2bfa3bf90f831c0100008bfa2bfe3bf90f83100100008b7424148b3d000000003bf70f87fe0000008b7424188d3c323bf9897c24180f86eb0000008bfe2bfa3bf90f83df0000002bd63bd10f83d50000008b0d000000008b5424183bd10f87c30000008b4c241c894424183bc10f8da10000008b4d088bfb03cb3bd97d7d8b4c24188bd733d081e2ff00000033c28d54241433c85281e1ff00000033c1b90000000089442418e8000000008bf056e80000000083c40484c0741d8a44241384c0746456e80000000083c40484c074088a44242484c0744f8bcee8000000008ad881e3ff00000084db743c8b45088b5d004703c33bf88b4424147c838b4c24188b550c8b7d044103d7894c24183bca0f8c5fffffff80e3015f83cb015e8bc35d5b83c410c2040080e3005f5e8ac35d5b83c410c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 273,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 357,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 365,
+   "type": "REL32",
+   "sym": "?sub_4866D0@@YA_NPAX@Z",
+   "sym_key": "sub_4866D0"
+  },
+  {
+   "off": 386,
+   "type": "REL32",
+   "sym": "?sub_4866F0@@YA_NPAX@Z",
+   "sym_key": "sub_4866F0"
+  },
+  {
+   "off": 408,
+   "type": "REL32",
+   "sym": "?InBounds@CellClass@@QAE_NXZ",
+   "sym_key": "CellClass::InBounds"
+  }
+ ]
+}
