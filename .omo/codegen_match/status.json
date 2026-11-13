@@ -91167,7 +91167,7 @@
   "this_as_id": false
  },
  "0x57dd50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CreateCliffRampMap",
@@ -91178,7 +91178,7 @@
   "this_as_id": false
  },
  "0x57e2a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CreateCliffStraightMap",
@@ -91189,7 +91189,7 @@
   "this_as_id": false
  },
  "0x57e7a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CreateCliffBridgeMap",
@@ -91200,7 +91200,7 @@
   "this_as_id": false
  },
  "0x57ed00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CreateCliffStraightBridgeMap",
@@ -91331,14 +91331,14 @@
   "this_as_id": false
  },
  "0x581140": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "LayerClass::DestroyCliff",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LayerClass::DestroyCliff",
-  "rule_violations": 22,
+  "rule_violations": 16,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -91367,7 +91367,7 @@
   "this_as_id": false
  },
  "0x5824a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91391,7 +91391,7 @@
   "this_as_id": false
  },
  "0x582d70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91427,7 +91427,7 @@
   "this_as_id": false
  },
  "0x5835d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FindCliffSeedCell",
@@ -91462,7 +91462,7 @@
   "this_as_id": false
  },
  "0x583c60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91497,26 +91497,26 @@
   "this_as_id": false
  },
  "0x584550": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Radar::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Radar::Update",
-  "rule_violations": 47,
+  "rule_violations": 46,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x584e50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::UpdateCellConnectivityGraph",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UpdateCellConnectivityGraph",
-  "rule_violations": 16,
+  "rule_violations": 14,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -91706,7 +91706,7 @@
   "status": "NG"
  },
  "0x586bf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "MarkCliffEdgePassability",
@@ -91741,7 +91741,7 @@
   "this_as_id": false
  },
  "0x587180": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91753,7 +91753,7 @@
   "this_as_id": false
  },
  "0x587410": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91765,7 +91765,7 @@
   "this_as_id": false
  },
  "0x587c50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -92112,7 +92112,7 @@
   "this_as_id": false
  },
  "0x589060": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93645,7 +93645,7 @@
   "this_as_id": false
  },
  "0x58c320": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93657,7 +93657,7 @@
   "this_as_id": false
  },
  "0x58c3b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93805,7 +93805,7 @@
   "this_as_id": false
  },
  "0x58d620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93923,7 +93923,7 @@
   "this_as_id": false
  },
  "0x5905d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

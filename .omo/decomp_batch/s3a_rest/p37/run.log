@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x57dd50 CreateCliffRampMap -> _addr_57
+[conv] 0x57e2a0 CreateCliffStraightMap -> _addr_57
+[conv] 0x57e7a0 CreateCliffBridgeMap -> _addr_57
+[conv] 0x57ed00 CreateCliffStraightBridgeMap -> _addr_57
+[conv] 0x581140 LayerClass::DestroyCliff -> LayerClass
+[conv] 0x5824a0 Radar::ProcessSubzone -> Radar
+[conv] 0x582d70 RadarClass::RenderBlips -> RadarClass
+[conv] 0x5835d0 FindCliffSeedCell -> _addr_58
+[conv] 0x583c60 ObjectClass::CollectMatchingTileCells -> ObjectClass
+[conv] 0x584550 Radar::Update -> Radar
+[conv] 0x584e50 ObjectClass::UpdateCellConnectivityGraph -> ObjectClass
+[conv] 0x586bf0 MarkCliffEdgePassability -> _addr_58
+[conv] 0x587180 CellClass::SetTerrainType -> CellClass
+[conv] 0x587410 CellClass::CheckConnectivity -> CellClass
+[conv] 0x587c50 ObjectClass::DiagnoseMapCheck -> ObjectClass
+[conv] 0x589060 VectorClass::InitCellVe_vt00 -> VectorClass
+[conv] 0x58c320 ObjectClass::sub_58C320 -> ObjectClass
+[conv] 0x58c3b0 ObjectClass::sub_58C3B0 -> ObjectClass
+[conv] 0x58d620 TileSystem::BuildNodes -> TileSystem
+[conv] 0x5905d0 RandomMap::AllocateArea -> RandomMap
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_57                 rc=2
+[era] LayerClass               rc=2
+[era] Radar                    rc=2
+[era] RadarClass               rc=2
+[era] _addr_58                 rc=2
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] VectorClass              rc=2
+[era] TileSystem               rc=2
+[era] RandomMap                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x57dd50 CreateCliffRampMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57e2a0 CreateCliffStraightMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57e7a0 CreateCliffBridgeMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57ed00 CreateCliffStraightBridgeMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x581140 LayerClass::DestroyCliff -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5824a0 Radar::ProcessSubzone -> COMPILE_FAIL (attempt 2)
+[ledger] 0x582d70 RadarClass::RenderBlips -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5835d0 FindCliffSeedCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x583c60 ObjectClass::CollectMatchingTileCells -> COMPILE_FAIL (attempt 2)
+[ledger] 0x584550 Radar::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x584e50 ObjectClass::UpdateCellConnectivityGraph -> COMPILE_FAIL (attempt 2)
+[ledger] 0x586bf0 MarkCliffEdgePassability -> COMPILE_FAIL (attempt 2)
+[ledger] 0x587180 CellClass::SetTerrainType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x587410 CellClass::CheckConnectivity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x587c50 ObjectClass::DiagnoseMapCheck -> COMPILE_FAIL (attempt 2)
+[ledger] 0x589060 VectorClass::InitCellVe_vt00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58c320 ObjectClass::sub_58C320 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58c3b0 ObjectClass::sub_58C3B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58d620 TileSystem::BuildNodes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5905d0 RandomMap::AllocateArea -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p37\batch_report.json
