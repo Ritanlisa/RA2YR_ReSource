@@ -1,0 +1,11 @@
+{
+ "addr": "0x633BC0",
+ "name": "GetScenarioClassActionCoords",
+ "size": 150,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x633BC0",
+ "bytes_hex": "8a0283ec0c3c04568bf1756e8a421284c074148d4a0ee845320b0085c0745b8b108d4c2404eb348a421c84c074148d4a18e82a320b0085c074408b108d4c2404eb198a421784c074318d4a13e80f320b0085c074258b108d4c2404518bc8ff52588b088bd6890a8b4804894a048b40088942088bc65e83c40cc3578bfe83c8ff83c9ff890783caff8bc6894f048957085f5e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

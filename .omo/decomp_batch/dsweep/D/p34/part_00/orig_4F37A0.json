@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F37A0",
+ "name": "GraphicMenuImageItem::ddtor",
+ "size": 149,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F37A0",
+ "bytes_hex": "83ec6c5356578b7c247c8bf157e85e03000083c6348d4c240c56e87102f8ff8b106a008bc8ff52148d4c24648ad8c744240cb0167e00c744247000000000e86d76f4ff8d4c240cc744240c68167e00e88ce3f3ff84db74346a30e818562d0083c40485c074268b15107388008d4f186a015152568bc8e815940d0085c0740d68e0930400508bcfe8c4e50d005f5e5b83c46cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,63 @@
+{
+ "symbol": "?FindWDTTerritoryClass@rc_ptr@@QAIPAVrc_ptr_base@@PAH@Z",
+ "sym_key": "rc_ptr::FindWDTTerritoryClass",
+ "size": 149,
+ "link_base": 0,
+ "bytes_hex": "83ec1853568bf1578b0d040000008d4424145233db5051895c242ce8000000008b44242083c40c8d54241452ff500484c074148b4c24188b44241c8b51048b7cc20483c708eb178d4c240ce800000000c744240c00000000b3018d7c240c8bcee800000000c706000000008b4f04518bcee800000000f6c30174118d4c240cc744240c00000000e8000000008bc65f5e5b83c418c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?stru_B77F68@@3PADA",
+   "sym_key": "stru_B77F68"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?FindWDTTerritoryClass_Find@@YAPAIPAX00@Z",
+   "sym_key": "FindWDTTerritoryClass_Find"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  }
+ ]
+}

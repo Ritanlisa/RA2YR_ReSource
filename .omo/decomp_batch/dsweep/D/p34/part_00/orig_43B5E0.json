@@ -1,0 +1,11 @@
+{
+ "addr": "0x43B5E0",
+ "name": "HouseClass::PsiWarn",
+ "size": 147,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x43B5E0",
+ "bytes_hex": "83ec18538bd98b4c242456578bf2e8bdc6feff8b0d54418b008b168b3c818d442418508bceff52488b08894c240c68c80100008b5004895424148b400889442418e8f1d7380083c40485c0741e6a006a0068000600006a018d4c241c6a0051578bc8e85968feff8bf0eb0233f68b5424288bce52e83796feff8bce53e83f96feffc6869d010000018bc65f5e5b83c418c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

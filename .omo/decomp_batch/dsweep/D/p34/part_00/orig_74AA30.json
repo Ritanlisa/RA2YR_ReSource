@@ -1,0 +1,11 @@
+{
+ "addr": "0x74AA30",
+ "name": "VoxelAnimClass::GetFrameCount",
+ "size": 149,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74AA30",
+ "bytes_hex": "56578b7c240c8bf157e812b8eaff8b86000100008bcf50e80473d5ff8b860401000083c004508b08ff5110508bcfe8ed72d5ff8b860801000085c074128b500483c00450ff5210508bcfe8d172d5ff8b860c01000083c004508b08ff5110508bcfe8ba72d5ff8a96100100008bcf52e8fc71d5ff8a863c0100008bcf50e8ee71d5ff8b8e40010000518bcfe89072d5ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

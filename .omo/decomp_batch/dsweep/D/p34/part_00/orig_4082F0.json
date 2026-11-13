@@ -1,0 +1,11 @@
+{
+ "addr": "0x4082F0",
+ "name": "ProcessAudioTimer",
+ "size": 151,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4082F0",
+ "bytes_hex": "a11ce887005685c00f8487000000b910e88700e8b8f0ffff8bf085f67477558b2dec117e00578b3de8117e008b868000000085c074508b86800000004885c08986800000007d0ac78680000000000000008b868000000085c0752b8b461485c0742468f8e78700ffd78b460ca802740724fd0c0189460c8b4e14e8e1a2ffff68f8e78700ffd58bcee863f0ffff8bf085f675995f5d5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

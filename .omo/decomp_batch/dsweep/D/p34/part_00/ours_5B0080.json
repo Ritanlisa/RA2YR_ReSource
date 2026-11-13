@@ -1,0 +1,27 @@
+{
+ "symbol": "?ConvertCoordToCell_1@MechLocomotionClass@@QAGHHHH@Z",
+ "sym_key": "MechLocomotionClass::ConvertCoordToCell_1",
+ "size": 137,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b4608508b08ff917c03000084c075708b4608508b10ff928003000084c075608b4608508b08ff91d401000084c075508b4608508b10ff92d801000084c075408b44240c8b4c24108b5424148946148d44240c894e1850b9f801000089561ce8000000008b8840010000f6c501740db93c000000e80000000001461cc6462c015ec21000",
+ "relocs": [
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?ScaleToScreenY@Coord@@QAE_JXZ",
+   "sym_key": "Coord::ScaleToScreenY"
+  }
+ ]
+}

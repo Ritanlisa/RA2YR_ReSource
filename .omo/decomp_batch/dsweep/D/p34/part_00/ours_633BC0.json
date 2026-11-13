@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAHPAE@Z",
+ "sym_key": "Unnamed::GetScenarioClassActionCoords",
+ "size": 118,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf2578bf9803e0475558a461284c0741f8d4e0ee80000000085c0751f8a461c84c0740c8d4e18e80000000085c0750c8d4e13e80000000085c074238b088d5424085250ff51588b08890f8b50048957048b40088947088bc75f5e83c40cc383c8ff89078947048947088bc75f5e83c40cc3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?GetNext@BuildingLoadQueue@@QAEPAXXZ",
+   "sym_key": "BuildingLoadQueue::GetNext"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetNext@BuildingLoadQueue@@QAEPAXXZ",
+   "sym_key": "BuildingLoadQueue::GetNext"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?GetNext@BuildingLoadQueue@@QAEPAXXZ",
+   "sym_key": "BuildingLoadQueue::GetNext"
+  }
+ ]
+}

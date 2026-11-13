@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B0390",
+ "name": "FindWDTTerritoryClass",
+ "size": 150,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B0390",
+ "bytes_hex": "83ec185356578bf18b0d6c7fb7008d44241433db5250895c2428e8d14ffbff8d4c24148b542414ff520484c074178b4424188b54241c8b48048b7cd1048d04d183c708eb1a8d4c240ce852d0eaffc744240ca4bf7e00bb010000008d7c240c8bcee83ad0eaffc706a4bf7e008b4704508bcee879d0eafff6c30174118d4c240cc744240ca4bf7e00e843d0eaff8bc65f5e5b83c418c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

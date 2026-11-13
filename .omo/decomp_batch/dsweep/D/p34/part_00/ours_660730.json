@@ -1,0 +1,39 @@
+{
+ "symbol": "?Render_Render_660730@ObjectClass@@QAEHPAH@Z",
+ "sym_key": "ObjectClass::Render_Render_660730",
+ "size": 161,
+ "link_base": 0,
+ "bytes_hex": "83ec44568bf18d4c2418e80000000033c0518a46108d4c241c8944240cdb44240cd91c24e80000000033c98d5424048a4e0c52894c240c8d54241cdb44240c8d4c2410d95c2408e8000000008b0883ec08894c240c8b5004d944240c89542410dd1c24e800000000d94424108bf0dd1c24e8000000008b4c24548bd083c408f7da893189710cf7de89711089711c8951088941188941048951145e83c444c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Identity@Matrix3x4@@QAEHXZ",
+   "sym_key": "Matrix3x4::Identity"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Rotate@Matrix2D@@QAEXM@Z",
+   "sym_key": "Matrix2D::Rotate"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?TransformMatrix3x4Point@@YIPAMPAX00@Z",
+   "sym_key": "TransformMatrix3x4Point"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "symbol": "?sub_631640@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::sub_631640",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "568bf168e00500008b0650e80000000085c00f84830000006a006a00688801000050e80000000083f8ffa3000000007e6a8b0d000000003bc17d23493bc1890d000000007d188b0d00000000408b1481895481fc8b0d000000003bc17ce88b46088bce24010c01894608e800000000833d00000000ff75238b0e68e505000051e80000000085c0741268000000006a0068b404000050e8000000005ec3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?PopulateList@PhoneEditor@@QAEXXZ",
+   "sym_key": "PhoneEditor::PopulateList"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

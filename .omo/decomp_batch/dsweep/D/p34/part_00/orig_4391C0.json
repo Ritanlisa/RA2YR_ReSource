@@ -1,0 +1,11 @@
+{
+ "addr": "0x4391C0",
+ "name": "SaveGame::LoadArrayData",
+ "size": 149,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4391C0",
+ "bytes_hex": "5153568b742410578bf96a008b0e8d5424108b47106a0452568944241cff511085c07c6a8b44240c33db85c07e1e8b4f048b066a006a048d14995256ff501085c07c4b8b44240c433bd87ce28b47288b0e6a008d5424106a0452568944241cff511085c07c288b4c240c33db85c97e1e8b4f1c8b066a006a048d14995256ff501085c07c098b4c240c433bd97ce25f5e5b59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

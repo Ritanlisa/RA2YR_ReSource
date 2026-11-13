@@ -1,0 +1,87 @@
+{
+ "symbol": "?CleanupFactoryClass@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::CleanupFactoryClass",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "51a0780100005355560fbec85733ff33db894c241084c07e430fbe156c0100008b349a8bcee8000000008b6e1085ed7e138b46048bce8b04b84750e8000000003bfd7ced8bcee8000000008b442410433bd8c6461c007d0433ffebbda06c0100005f5e5d84c0c60578010000005b741fa07501000084c074168b0d6c01000051e80000000083c404c6056c01000000c6057001000000c605750100000059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?ClearObjects@FactoryClass@@QAEHXZ",
+   "sym_key": "FactoryClass::ClearObjects"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?PlaceObject@ScriptAction@@QAEHPAX@Z",
+   "sym_key": "ScriptAction::PlaceObject"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?FindSquadMember@ScriptAction@@QAEHXZ",
+   "sym_key": "ScriptAction::FindSquadMember"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  }
+ ]
+}

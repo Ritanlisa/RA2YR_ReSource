@@ -1,0 +1,45 @@
+{
+ "symbol": "?PsiWarn@HouseClass@@QAIPAPAXHHHPAX@Z",
+ "sym_key": "HouseClass::PsiWarn",
+ "size": 148,
+ "link_base": 0,
+ "bytes_hex": "83ec188b4c242456578bfae8000000008b0d000000008b34818b4424248d4c24148b105150ff52488b10895424088b4804894c240c8b500868c801000089542414e80000000083c40485c0741e6a006a0068000600006a018d4c24186a0051568bc8e8000000008bf0eb0233f68b5424285256e80000000083c4088bce57e800000000c6869d010000018bc65f5e83c418c20c00",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?FindIndex@AnimTypeClass@@QAEHXZ",
+   "sym_key": "AnimTypeClass::FindIndex"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeCount@@3IA",
+   "sym_key": "g_AnimTypeCount"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?BuildingClass__SetField95@@YAHPAXH@Z",
+   "sym_key": "BuildingClass__SetField95"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?Method_424CA0@Function@@QAEHH@Z",
+   "sym_key": "Function::Method_424CA0"
+  }
+ ]
+}

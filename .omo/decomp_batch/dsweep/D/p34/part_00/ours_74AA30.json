@@ -1,0 +1,57 @@
+{
+ "symbol": "?GetFrameCount@VoxelAnimClass@@QAEEPAH@Z",
+ "sym_key": "VoxelAnimClass::GetFrameCount",
+ "size": 162,
+ "link_base": 0,
+ "bytes_hex": "56578bf1e8000000008b860001000050e8000000008b860401000083c004508b08ff511050e8000000008b860801000085c074108b500483c00450ff521050e8000000008b860c01000083c004508b08ff511050e8000000008b96100100008b44240c8b7c240c33d081e2ff0000008bcf33c250e8000000008b8e6c01000033c881e1ff00000033c8518bcfe8000000008b964001000052e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ProcessPower@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::ProcessPower"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

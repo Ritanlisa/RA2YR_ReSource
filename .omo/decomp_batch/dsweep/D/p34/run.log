@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p34\part_00
+=== convert (20 addrs) ===
+[conv] 0x76bf00 ReferenceCounted::Audio_Create_76BF00 -> ReferenceCounted
+[conv] 0x43b5e0 HouseClass::PsiWarn -> HouseClass
+[conv] 0x770e70 ObjectClass::sub_770E70 -> ObjectClass
+[conv] 0x637920 ObjectClass::CleanupFactoryClass -> ObjectClass
+[conv] 0x578ad0 Cell::IsPassableAllied -> Cell
+[conv] 0x4391c0 SaveGame::LoadArrayData -> SaveGame
+[conv] 0x660730 ObjectClass::Render_Render_660730 -> ObjectClass
+[conv] 0x5b0080 MechLocomotionClass::ConvertCoordToCell_1 -> MechLocomotionClass
+[conv] 0x7cc752 __Getmonths -> _addr_7C
+[conv] 0x4f37a0 GraphicMenuImageItem::ddtor -> GraphicMenuImageItem
+[conv] 0x74aa30 VoxelAnimClass::GetFrameCount -> VoxelAnimClass
+[conv] 0x633bc0 GetScenarioClassActionCoords -> _addr_63
+[conv] 0x49fbe0 CounterClass::Load -> CounterClass
+[conv] 0x7b0390 rc_ptr::FindWDTTerritoryClass -> rc_ptr
+[conv] 0x6586d0 ObjectClass::ShowDiplomacyDialog -> ObjectClass
+[conv] 0x4082f0 ProcessAudioTimer -> _addr_40
+[conv] 0x631640 ObjectClass::sub_631640 -> ObjectClass
+[conv] 0x425150 AnimClass::ClearTargetReferences -> AnimClass
+[conv] 0x4de670 FootClass::RemovePassenger -> FootClass
+[conv] 0x5d2530 DDraw::HandleSuspend -> DDraw
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ReferenceCounted         rc=2
+[era] HouseClass               rc=0
+[era] ObjectClass              rc=2
+[era] Cell                     rc=0
+[era] SaveGame                 rc=0
+[era] MechLocomotionClass      rc=0
+[era] _addr_7C                 rc=2
+[era] GraphicMenuImageItem     rc=0
+[era] VoxelAnimClass           rc=0
+[era] _addr_63                 rc=0
+[era] CounterClass             rc=2
+[era] rc_ptr                   rc=0
+[era] _addr_40                 rc=0
+[era] AnimClass                rc=2
+[era] FootClass                rc=2
+[era] DDraw                    rc=0
+=== diffasm byte-compare ===
+[diff] 0x43b5e0   MISMATCH         HouseClass::PsiWarn
+[diff] 0x637920   MISMATCH         ObjectClass::CleanupFactoryClass
+[diff] 0x660730   MISMATCH         ObjectClass::Render_Render_660730
+[diff] 0x631640   MISMATCH         ObjectClass::sub_631640
+[diff] 0x578ad0   MISMATCH         Cell::IsPassableAllied
+[diff] 0x4391c0   MISMATCH         SaveGame::LoadArrayData
+[diff] 0x5b0080   MISMATCH         MechLocomotionClass::ConvertCoordToCell_1
+[diff] 0x4f37a0   MISMATCH         GraphicMenuImageItem::ddtor
+[diff] 0x74aa30   MISMATCH         VoxelAnimClass::GetFrameCount
+[diff] 0x633bc0   MISMATCH         GetScenarioClassActionCoords
+[diff] 0x7b0390   MISMATCH         rc_ptr::FindWDTTerritoryClass
+[diff] 0x4082f0   MISMATCH         ProcessAudioTimer
+[diff] 0x5d2530   MISMATCH         DDraw::HandleSuspend
+[ledger] 0x76bf00 ReferenceCounted::Audio_Create_76BF00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43b5e0 HouseClass::PsiWarn -> NG (attempt 1)
+[ledger] 0x770e70 ObjectClass::sub_770E70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x637920 ObjectClass::CleanupFactoryClass -> NG (attempt 1)
+[ledger] 0x578ad0 Cell::IsPassableAllied -> NG (attempt 1)
+[ledger] 0x4391c0 SaveGame::LoadArrayData -> NG (attempt 1)
+[ledger] 0x660730 ObjectClass::Render_Render_660730 -> NG (attempt 1)
+[ledger] 0x5b0080 MechLocomotionClass::ConvertCoordToCell_1 -> NG (attempt 1)
+[ledger] 0x7cc752 __Getmonths -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f37a0 GraphicMenuImageItem::ddtor -> NG (attempt 1)
+[ledger] 0x74aa30 VoxelAnimClass::GetFrameCount -> NG (attempt 1)
+[ledger] 0x633bc0 GetScenarioClassActionCoords -> NG (attempt 1)
+[ledger] 0x49fbe0 CounterClass::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b0390 rc_ptr::FindWDTTerritoryClass -> NG (attempt 1)
+[ledger] 0x6586d0 ObjectClass::ShowDiplomacyDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4082f0 ProcessAudioTimer -> NG (attempt 1)
+[ledger] 0x631640 ObjectClass::sub_631640 -> NG (attempt 1)
+[ledger] 0x425150 AnimClass::ClearTargetReferences -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4de670 FootClass::RemovePassenger -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2530 DDraw::HandleSuspend -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "ret_norm": 2,
+  "cc_mismatch": 1,
+  "regalloc": 3,
+  "frame_sched": 2,
+  "eval_order": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p34\batch_report.json

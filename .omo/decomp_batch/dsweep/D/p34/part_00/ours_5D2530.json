@@ -1,0 +1,57 @@
+{
+ "symbol": "?HandleSuspend@DDraw@@QAEDXZ",
+ "sym_key": "DDraw::HandleSuspend",
+ "size": 148,
+ "link_base": 0,
+ "bytes_hex": "518b442400568bf1578b0d440a00008bd133d081e2ff00000033c283f90174708bcee8000000008b462833ff85c07e148b461c8b04b8508b08ff51088b4628473bf87ceca1440a000085c0751f8bcee80000000068f4010000e800000000e800000000a1440a000085c074e18bcee8000000008b462833ff85c07e148b561c8b04ba508b08ff510c8b4628473bf87cec5f5e59c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?Sleep@@YGXH@Z",
+   "sym_key": "Sleep"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAPAXXZ",
+   "sym_key": "MessageLoop"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?IsPassableAllied@Cell@@QAGDHPAF@Z",
+ "sym_key": "Cell::IsPassableAllied",
+ "size": 148,
+ "link_base": 0,
+ "bytes_hex": "8b4c240c0fbf41020fbf11c1e00903c23d00000400730d8b15000000008b048285c0750c8b01a300000000b800000000568bb0e400000085f65774518b7c24103bfe74368b0e56ff512c83f806752b8b96200500008a82b716000084c0741b8b8e1c02000057e80000000084c08bce7512e80000000084c075138b763085f6740cebbde8000000005f5ec20c005fb0015ec20c00",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?IsPoweredOn@BuildingClass@@QAE_NXZ",
+   "sym_key": "BuildingClass::IsPoweredOn"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?MakeTraversable@BuildingClass@@QAEDXZ",
+   "sym_key": "BuildingClass::MakeTraversable"
+  }
+ ]
+}

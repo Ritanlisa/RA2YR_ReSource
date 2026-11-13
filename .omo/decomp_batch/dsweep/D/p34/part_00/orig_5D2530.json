@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D2530",
+ "name": "DDraw::HandleSuspend",
+ "size": 151,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D2530",
+ "bytes_hex": "a080eda800563c01578bf10f848300000068e8058300e89543e3ff8b462883c40433ff85c07e138b461c8b0cb88b11ff52088b4628473bf87ceda080eda80084c075288b3df0117e0068d0058300e85d43e3ff83c40468f4010000ffd7e8be270000a080eda80084c074de68b0058300e83b43e3ff8b462883c40433ff85c07e138b461c8b0cb88b11ff520c8b4628473bf87ced5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

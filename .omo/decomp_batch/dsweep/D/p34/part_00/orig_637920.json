@@ -1,0 +1,11 @@
+{
+ "addr": "0x637920",
+ "name": "CleanupFactoryClass",
+ "size": 148,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x637920",
+ "bytes_hex": "51a1a84cac00535733ff33db3bc7894424087e475556eb0233ffa19c4cac008b34988bcee8d7d7ffff8b6e1085ed7e138b4e048b14b98bce52e8b2d4ffff473bfd7ced8bcee846d0ffff8b442410433bd8c6461c007cc15e33ff5da19c4cac00893da84cac003bc774198a0da54cac0084c9740f50e8a311190083c404893d9c4cac00893da04cac005fc605a54cac00005b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
