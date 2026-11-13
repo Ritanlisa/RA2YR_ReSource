@@ -1,0 +1,117 @@
+{
+ "symbol": "?Dtor@BulletClass@@QAEEXZ",
+ "sym_key": "BulletClass::Dtor",
+ "size": 234,
+ "link_base": 0,
+ "bytes_hex": "5153568bf133dbba01000000c70600000000895e04895e08c7460c00000000e800000000399e5801000074498b0d000000008d44240850680000000089742410ff511083f8ff742d8b0d100000003bc17d23493bc1890d100000007d188b0d04000000408b1481895481fc8b0d100000003bc17ce8381d4000000074078bcee8000000008d442408899eac000000899eb0000000899e540100008b0d4409000050684409000089742410ff511083f8ff742d8b0d840900003bc17d23493bc1890d840900007d188b0d54090000408b1481895481fc8b0d840900003bc17ce88bcee8000000005e5b59c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?vt_BulletClass_4@@3PAXA",
+   "sym_key": "vt_BulletClass_4"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?vt_BulletClass_4@@3PAXA",
+   "sym_key": "vt_BulletClass_4"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?Undeploy@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Undeploy"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?Dtor@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Dtor"
+  }
+ ]
+}

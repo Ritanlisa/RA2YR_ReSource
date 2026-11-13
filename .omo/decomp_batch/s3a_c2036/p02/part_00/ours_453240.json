@@ -1,0 +1,63 @@
+{
+ "symbol": "?TraverseBridgeSegments@BuildingClass@@QAEDXZ",
+ "sym_key": "BuildingClass::TraverseBridgeSegments",
+ "size": 372,
+ "link_base": 0,
+ "bytes_hex": "83ec1c5355568bf15756b9f8010000e80000000085c0894424100f84480100008bc8e8000000008bc88944241085c0894c241c0f842f0100008b80d8090000894424108b907039000085d20f84170100008b89b00700008d44242050e8000000008b0033dbc1e80c408b0ed1e883e0038b7424108bf88944241883e707894c24148be981e600ffffff8a877a0000008ad002d181e2ff000000c0f810c1e9100bf203c133c625ff00000033f0668bc589742410663bf08974242475120fbf4c24128bc5c1e8103bc80f84810000008d542424b9f801000052e8000000008bc8e8000000008bd885db74698b83200500008a88be16000084c975458a88bf16000084c9744f8b442424668b0cbd88f68900668b14bd8af6890003c833ce8be881e1ff00000033f18b4c242603d133d681e2ff00000033f289742410e974ffffff8b4424186a000c048bcb50e80000000085db75198b44241c508b10ff92f80000005f5e5d5b83c41cc38a4424105f5e5d5b83c41cc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 331,
+   "type": "REL32",
+   "sym": "?DemolishBridgeAnim@BuildingClass@@QAEDHD@Z",
+   "sym_key": "BuildingClass::DemolishBridgeAnim"
+  }
+ ]
+}
