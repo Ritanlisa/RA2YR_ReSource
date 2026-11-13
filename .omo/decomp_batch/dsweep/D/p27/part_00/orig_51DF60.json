@@ -1,0 +1,11 @@
+{
+ "addr": "0x51DF60",
+ "name": "InfantryClass::FireWeaponWithCleanup",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x51DF60",
+ "bytes_hex": "8b442408568bf1578b4c240c50518bcec6868d06000000e8d4fd1d008bf885ff745a8a868100000084c075508b96c00600008a82bf0e000084c074408b86fc02000085c075368b068bcec786d40600002c010000ff908401000083f801740f8b168bceff928401000083f80f750e8b066a006a058bceff90e80100008bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x645820",
+ "name": "NetworkEventClass::Process",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x645820",
+ "bytes_hex": "56578bf9576874748100e8f134180083c40885c07468576894768100e8df34180083c40885c07456a1a83da80033f685c07e23a19c3da800578b0cb083c12451e8bb34180083c40885c07426a1a83da800463bf07cdd6818030000e89735180083c40485c07417578bc8e851f3ffff5f5ec38b159c3da8005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?FireWeaponWithCleanup@InfantryClass@@QAEHHH@Z",
+ "sym_key": "InfantryClass::FireWeaponWithCleanup",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "568bf157c6868d06000000e8000000008bf885ff74548a868100000084c0754a8b86c00600008b486885c9743d8b865802000085c075338b0656c786d40600002c010000ff908401000083f801740e8b0e56ff918401000083f80f750d8b166a006a0556ff92e80100008bc75f5ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?FireWeapon@TechnoClass@@QAEPAVBulletClass@@XZ",
+   "sym_key": "TechnoClass::FireWeapon"
+  }
+ ]
+}

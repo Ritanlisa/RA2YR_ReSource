@@ -9970,6 +9970,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x41cef0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "KeywordClass::FindOrCreate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "KeywordClass::FindOrCreate",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x41cf80": {
   "attempts": 1,
   "clean": false,
@@ -12682,6 +12694,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x428b80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "AnimTypeClass::FindOrCreate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AnimTypeClass::FindOrCreate",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x428c10": {
   "attempts": 1,
   "clean": true,
@@ -14847,6 +14871,18 @@
   "orig_name": "sub_431D90",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x431e80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "BufferIOFileClass::SetName",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BufferIOFileClass::SetName",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x431f10": {
@@ -19610,6 +19646,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4653c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "BuildingTypeClass::FindOrCreate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "BuildingTypeClass::FindOrCreate",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x465910": {
   "attempts": 1,
   "clean": true,
@@ -20583,6 +20631,18 @@
   "name": "BulletTypeClass::GetClassIdentifier",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BulletTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x46c790": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "ObjectTypeClass::FindOrCreate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ObjectTypeClass::FindOrCreate",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -59666,6 +59726,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x512680": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "WeaponTypeClass::Create",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "WeaponTypeClass::Create",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x512710": {
   "attempts": 5,
   "first_diff": null,
@@ -61104,6 +61176,18 @@
   "orig_name": "InfantryClass::CancelMovement",
   "rule_violations": 2,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x51df60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
+  "name": "InfantryClass::FireWeaponWithCleanup",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "InfantryClass::FireWeaponWithCleanup",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x51f190": {
@@ -98097,6 +98181,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5fec70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildingTypeClass::FindOrCreate2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildingTypeClass::FindOrCreate2",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5fed00": {
   "attempts": 4,
   "first_diff": "+0 push ecx",
@@ -106491,6 +106587,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x644890": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "BuildingTypeClass::LoadOrGet",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "BuildingTypeClass::LoadOrGet",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x644920": {
   "attempts": 5,
   "first_diff": null,
@@ -106696,6 +106804,18 @@
   "orig_name": "ParticleTypeClass::SaveLoad_Prefix_0",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x645820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "NetworkEventClass::Process",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "NetworkEventClass::Process",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6458b0": {
@@ -122055,6 +122175,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6b5910": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "FactoryClass::FindOrCreate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FactoryClass::FindOrCreate",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6b5f80": {
   "attempts": 16,
   "clean": false,
@@ -130978,6 +131110,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6ceef0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "WeaponTypeClass::Process",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WeaponTypeClass::Process",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6cef80": {
   "attempts": 1,
   "clean": false,
@@ -134823,6 +134967,18 @@
   "name": "TagTypeClass::HasZoneEntryByEvent",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "TagTypeClass::HasZoneEntryByEvent",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6e6310": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "TagTypeClass::FindOrCreate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TagTypeClass::FindOrCreate",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -141130,6 +141286,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x71e2a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TerrainTypeClass::FindOrCreate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TerrainTypeClass::FindOrCreate",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x71e330": {
   "attempts": 5,
   "first_diff": null,
@@ -144318,6 +144486,18 @@
   "name": "TriggerTypeClass::GetParameter",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TriggerTypeClass::GetParameter",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x727aa0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "TagTypeClass::FindOrCreateTriggerType",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TagTypeClass::FindOrCreateTriggerType",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -149225,6 +149405,18 @@
   "note": "decomp_batch r2: NO_PSEUDO",
   "status": "PENDING"
  },
+ "0x7480d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildingTypeClass::FindOrCreateAlt",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildingTypeClass::FindOrCreateAlt",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x748160": {
   "attempts": 5,
   "first_diff": null,
@@ -149827,6 +150019,18 @@
   "orig_name": "VoxelAnimTypeClass::GetData",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x74b960": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "UnitTypeClass::FindOrCreate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "UnitTypeClass::FindOrCreate",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x74b9f0": {
@@ -153993,6 +154197,18 @@
   "name": "WarheadTypeClass::vt_03",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "WarheadTypeClass::vt_03",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x75e3b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "WarheadTypeClass::FindOrCreate",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "WarheadTypeClass::FindOrCreate",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -159179,6 +159395,17 @@
   "orig_name": "sub_770250",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x770ce0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+8 jne 0x770d26",
+  "name": "Map_Remove_770CE0",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "Map_Remove_770CE0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x770d70": {
@@ -174999,6 +175226,17 @@
   "orig_name": "__close",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7d2ad1": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+12 cmp eax, -1",
+  "name": "__close_lk",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "__close_lk",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7d2b54": {

@@ -1,0 +1,81 @@
+{
+ "symbol": "?Map_Remove_770CE0@@YIDHHPAPAD@Z",
+ "sym_key": "Unnamed::Map_Remove_770CE0",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "83ec0883f9036a0275448d4c2404e80000000033d28d4c24048a150000000050e8000000008b4c240c50e8000000008d44240450e8000000008d4c240451e80000000083c408b00183c408c204008d4c2408e80000000033d28d4c24008a150000000050e8000000008b4c240c50e8000000008d54240052e8000000008d44240850e80000000083c408b00183c408c20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?FormatStringInt@@YIPAPADPAXHH@Z",
+   "sym_key": "FormatStringInt"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_Str_WWD_Soviet@@3EA",
+   "sym_key": "g_Str_WWD_Soviet"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?ProcessStringAndCopy@@YIPAPADPAXPBDPAPAD@Z",
+   "sym_key": "ProcessStringAndCopy"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?FormatStringInt@@YIPAPADPAXHH@Z",
+   "sym_key": "FormatStringInt"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_Str_WWD_Allied@@3EA",
+   "sym_key": "g_Str_WWD_Allied"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?ProcessStringAndCopy@@YIPAPADPAXPBDPAPAD@Z",
+   "sym_key": "ProcessStringAndCopy"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x644890",
+ "name": "BuildingTypeClass::LoadOrGet",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x644890",
+ "bytes_hex": "56578bf9576874748100e88144180083c40885c07468576894768100e86f44180083c40885c07456a1783da80033f685c07e23a16c3da800578b0cb083c12451e84b44180083c40885c07426a1783da800463bf07cdd6810030000e82745180083c40485c07417578bc8e8a1f7ffff5f5ec38b156c3da8005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

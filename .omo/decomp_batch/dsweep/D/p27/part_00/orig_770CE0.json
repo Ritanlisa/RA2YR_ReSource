@@ -1,0 +1,11 @@
+{
+ "addr": "0x770CE0",
+ "name": "Map_Remove_770CE0",
+ "size": 130,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x770CE0",
+ "bytes_hex": "83ec0883f9036a02753c8d4c2408e82d560400bafc9184008d4c240050e8be5604008b4c240c50e8343c04008d4c2400e8db3904008d4c2404e8d2390400b00183c408c204008d4c2404e8f1550400baf09184008d4c240450e8825604008b4c240c50e8f83b04008d4c2404e89f3904008d4c2400e896390400b00183c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

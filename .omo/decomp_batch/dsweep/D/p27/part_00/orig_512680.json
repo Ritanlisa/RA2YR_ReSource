@@ -1,0 +1,11 @@
+{
+ "addr": "0x512680",
+ "name": "WeaponTypeClass::Create",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x512680",
+ "bytes_hex": "56578bf9576874748100e891662b0083c40885c07468576894768100e87f662b0083c40885c07456a1a83ca80033f685c07e23a19c3ca800578b0cb083c12451e85b662b0083c40885c07426a1a83ca800463bf07cdd68b0010000e837672b0083c40485c07417578bc8e801edffff5f5ec38b159c3ca8005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

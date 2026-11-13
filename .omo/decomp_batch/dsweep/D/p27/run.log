@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x770ce0 Map_Remove_770CE0 -> Map_Remove
+[conv] 0x51df60 InfantryClass::FireWeaponWithCleanup -> InfantryClass
+[conv] 0x41cef0 KeywordClass::FindOrCreate -> KeywordClass
+[conv] 0x428b80 AnimTypeClass::FindOrCreate -> AnimTypeClass
+[conv] 0x4653c0 BuildingTypeClass::FindOrCreate -> BuildingTypeClass
+[conv] 0x46c790 ObjectTypeClass::FindOrCreate -> ObjectTypeClass
+[conv] 0x512680 WeaponTypeClass::Create -> WeaponTypeClass
+[conv] 0x5fec70 BuildingTypeClass::FindOrCreate2 -> BuildingTypeClass
+[conv] 0x644890 BuildingTypeClass::LoadOrGet -> BuildingTypeClass
+[conv] 0x645820 NetworkEventClass::Process -> NetworkEventClass
+[conv] 0x6b5910 FactoryClass::FindOrCreate -> FactoryClass
+[conv] 0x6ceef0 WeaponTypeClass::Process -> WeaponTypeClass
+[conv] 0x6e6310 TagTypeClass::FindOrCreate -> TagTypeClass
+[conv] 0x71e2a0 TerrainTypeClass::FindOrCreate -> TerrainTypeClass
+[conv] 0x727aa0 TagTypeClass::FindOrCreateTriggerType -> TagTypeClass
+[conv] 0x7480d0 BuildingTypeClass::FindOrCreateAlt -> BuildingTypeClass
+[conv] 0x74b960 UnitTypeClass::FindOrCreate -> UnitTypeClass
+[conv] 0x75e3b0 WarheadTypeClass::FindOrCreate -> WarheadTypeClass
+[conv] 0x431e80 BufferIOFileClass::SetName -> BufferIOFileClass
+[conv] 0x7d2ad1 __close_lk -> _addr_7D
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Map_Remove               rc=0
+[era] InfantryClass            rc=0
+[era] KeywordClass             rc=2
+[era] AnimTypeClass            rc=0
+[era] BuildingTypeClass        rc=2
+[era] ObjectTypeClass          rc=0
+[era] WeaponTypeClass          rc=2
+[era] NetworkEventClass        rc=0
+[era] FactoryClass             rc=2
+[era] TagTypeClass             rc=0
+[era] TerrainTypeClass         rc=2
+[era] UnitTypeClass            rc=0
+[era] WarheadTypeClass         rc=0
+[era] BufferIOFileClass        rc=2
+[era] _addr_7D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x770ce0   MISMATCH         Map_Remove_770CE0
+[diff] 0x51df60   MISMATCH         InfantryClass::FireWeaponWithCleanup
+[diff] 0x428b80   MISMATCH         AnimTypeClass::FindOrCreate
+[diff] 0x4653c0   MISMATCH         BuildingTypeClass::FindOrCreate
+[diff] 0x644890   MISMATCH         BuildingTypeClass::LoadOrGet
+[diff] 0x46c790   MISMATCH         ObjectTypeClass::FindOrCreate
+[diff] 0x512680   MISMATCH         WeaponTypeClass::Create
+[diff] 0x645820   MISMATCH         NetworkEventClass::Process
+[diff] 0x6e6310   MISMATCH         TagTypeClass::FindOrCreate
+[diff] 0x727aa0   MISMATCH         TagTypeClass::FindOrCreateTriggerType
+[diff] 0x74b960   MISMATCH         UnitTypeClass::FindOrCreate
+[diff] 0x75e3b0   MISMATCH         WarheadTypeClass::FindOrCreate
+[diff] 0x7d2ad1   MISMATCH         __close_lk
+[ledger] 0x770ce0 Map_Remove_770CE0 -> NG (attempt 1)
+[ledger] 0x51df60 InfantryClass::FireWeaponWithCleanup -> NG (attempt 1)
+[ledger] 0x41cef0 KeywordClass::FindOrCreate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x428b80 AnimTypeClass::FindOrCreate -> NG (attempt 1)
+[ledger] 0x4653c0 BuildingTypeClass::FindOrCreate -> NG (attempt 1)
+[ledger] 0x46c790 ObjectTypeClass::FindOrCreate -> NG (attempt 1)
+[ledger] 0x512680 WeaponTypeClass::Create -> NG (attempt 1)
+[ledger] 0x5fec70 BuildingTypeClass::FindOrCreate2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x644890 BuildingTypeClass::LoadOrGet -> NG (attempt 1)
+[ledger] 0x645820 NetworkEventClass::Process -> NG (attempt 1)
+[ledger] 0x6b5910 FactoryClass::FindOrCreate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ceef0 WeaponTypeClass::Process -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e6310 TagTypeClass::FindOrCreate -> NG (attempt 1)
+[ledger] 0x71e2a0 TerrainTypeClass::FindOrCreate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x727aa0 TagTypeClass::FindOrCreateTriggerType -> NG (attempt 1)
+[ledger] 0x7480d0 BuildingTypeClass::FindOrCreateAlt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74b960 UnitTypeClass::FindOrCreate -> NG (attempt 1)
+[ledger] 0x75e3b0 WarheadTypeClass::FindOrCreate -> NG (attempt 1)
+[ledger] 0x431e80 BufferIOFileClass::SetName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d2ad1 __close_lk -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 12
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p27\batch_report.json
