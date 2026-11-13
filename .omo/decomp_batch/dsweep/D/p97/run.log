@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p97\part_00
+=== convert (20 addrs) ===
+[conv] 0x7291f0 InfantryClass::ProcessTunnelMovement -> InfantryClass
+[conv] 0x74ed60 SaveGame::LoadVeinholeData -> SaveGame
+[conv] 0x486e70 BuildingClass::CreatePlacementCrater -> BuildingClass
+[conv] 0x75e510 WarheadTypeClass::Destructor -> WarheadTypeClass
+[conv] 0x72e2d0 DrawScoreScreenStats -> _addr_72
+[conv] 0x597430 ObjectClass::Team_Start_597430 -> ObjectClass
+[conv] 0x456e00 BuildingClass::AcquireTarget -> BuildingClass
+[conv] 0x65eab0 globalHelper_05EAB0 -> _addr_65
+[conv] 0x5e2820 DrawDialogText -> _addr_5E
+[conv] 0x724730 HashTable::Remove -> HashTable
+[conv] 0x4585c0 BuildingClass::AnimateUnloadUnits -> BuildingClass
+[conv] 0x479d60 sub_479D60 -> _addr_47
+[conv] 0x479ef0 sub_479EF0 -> _addr_47
+[conv] 0x60f320 Dialog::SubclassEditControl -> Dialog
+[conv] 0x42ddb0 Base64Pipe::ProcessBitmapStream -> Base64Pipe
+[conv] 0x70adc0 TechnoClass::RevealAreaSmall -> TechnoClass
+[conv] 0x7d482c _signal -> _addr_7D
+[conv] 0x636b50 TeamClass::Cleanup -> TeamClass
+[conv] 0x43cea0 BuildingClass::DrawFactoryProduction -> BuildingClass
+[conv] 0x41af80 ObjectClass::SaveAircraftToINI -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+[era] SaveGame                 rc=2
+[era] BuildingClass            rc=2
+[era] WarheadTypeClass         rc=2
+[era] _addr_72                 rc=0
+[era] ObjectClass              rc=2
+[era] _addr_65                 rc=2
+[era] _addr_5E                 rc=0
+[era] HashTable                rc=2
+[era] _addr_47                 rc=2
+[era] Dialog                   rc=2
+[era] Base64Pipe               rc=0
+[era] TechnoClass              rc=0
+[era] _addr_7D                 rc=2
+[era] TeamClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x486e70   MISMATCH         BuildingClass::CreatePlacementCrater
+[diff] 0x456e00   MISMATCH         BuildingClass::AcquireTarget
+[diff] 0x4585c0   MISMATCH         BuildingClass::AnimateUnloadUnits
+[diff] 0x72e2d0   MISMATCH         DrawScoreScreenStats
+[diff] 0x42ddb0   MISMATCH         Base64Pipe::ProcessBitmapStream
+[diff] 0x70adc0   MISMATCH         TechnoClass::RevealAreaSmall
+[ledger] 0x7291f0 InfantryClass::ProcessTunnelMovement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74ed60 SaveGame::LoadVeinholeData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x486e70 BuildingClass::CreatePlacementCrater -> NG (attempt 1)
+[ledger] 0x75e510 WarheadTypeClass::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72e2d0 DrawScoreScreenStats -> NG (attempt 1)
+[ledger] 0x597430 ObjectClass::Team_Start_597430 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x456e00 BuildingClass::AcquireTarget -> NG (attempt 1)
+[ledger] 0x65eab0 globalHelper_05EAB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e2820 DrawDialogText -> PENDING (attempt 1)
+[ledger] 0x724730 HashTable::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4585c0 BuildingClass::AnimateUnloadUnits -> NG (attempt 1)
+[ledger] 0x479d60 sub_479D60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x479ef0 sub_479EF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60f320 Dialog::SubclassEditControl -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42ddb0 Base64Pipe::ProcessBitmapStream -> NG (attempt 1)
+[ledger] 0x70adc0 TechnoClass::RevealAreaSmall -> NG (attempt 1)
+[ledger] 0x7d482c _signal -> COMPILE_FAIL (attempt 1)
+[ledger] 0x636b50 TeamClass::Cleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43cea0 BuildingClass::DrawFactoryProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41af80 ObjectClass::SaveAircraftToINI -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 6,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 1,
+  "regalloc": 1,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p97\batch_report.json

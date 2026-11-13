@@ -1,0 +1,93 @@
+{
+ "symbol": "?RevealAreaSmall@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::RevealAreaSmall",
+ "size": 436,
+ "link_base": 0,
+ "bytes_hex": "8b4424fc83ec0c568bf1578b8e9c03000033c881e1ff00000033c184c00f848b0100008b961c0200008b42348a88a601000084c9740da10000000085c00f856b0100008b8e9c0000008b86a4000000894c24088b0d4002000033d2f7b1bc1600008b8ee80300008d0480d1e03bc17e05c6442410008b1653568986e8030000ff9284000000db86e803000083ec08dc0d00000000dc0500000000da88e8050000dd1c24e8000000008bf88b44241c33f881e7ff00000033f88b865401000050897c241ce80000000083c40c84c075178b8e5401000051e80000000083c40484c00f84900000008b1656ff92840000008bd88b865401000050e80000000083c40484c0740a8a83a102000084c075278b8e5401000051e80000000083c40484c074558a83a102000084c0750a8a83b302000084c074418b0d40020000dd8180060000dc1d00000000dfe0f6c4407528db44241083ec08dc8980060000dd1c24e8000000008bf88b44241c33f883c40881e7ff00000033f885ff8bc75b74318b969c0000008b4424108b4c24106a016a01895424108b961c0200006a005051528d4424205750b9f8010000e8000000005f5e83c40cc3",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E3808@@3NA",
+   "sym_key": "DataGlobal_7E3808"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHH@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHH@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHH@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 278,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHH@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 323,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 351,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 421,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 426,
+   "type": "REL32",
+   "sym": "?RevealArea0@MapClass@@QAEHPAXH0DDDDD@Z",
+   "sym_key": "MapClass::RevealArea0"
+  }
+ ]
+}

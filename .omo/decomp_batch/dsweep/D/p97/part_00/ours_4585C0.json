@@ -1,0 +1,33 @@
+{
+ "symbol": "?AnimateUnloadUnits@BuildingClass@@QAEXH@Z",
+ "sym_key": "BuildingClass::AnimateUnloadUnits",
+ "size": 339,
+ "link_base": 0,
+ "bytes_hex": "83ec1453558b6c2420568bf15785ed8bbe94060000c7869c060000000000000f84da0000004f85ff0f8ceb0000008d04fd88150000894424108b4c24288b9620050000518b4c241403d18d4c241852e8000000008b0e8b008d542418894424285256ff91ac0000008b008b5c242803d868c8010000895c242ce8000000008bd883c40485db74308b4d006a0055ff91f80300008b006a006a0068000600008b88140100006a018d5424386a0052518bcbe800000000eb0233c0c7800001000038ffffff8b86880600008b55008b0cb85155ff92e00000008b96880600008b04ba508b08ff91f80000008b4c24104f83e90885ff894c24100f8d3cffffffeb1a4f85ff7c158b96880600008b04ba508b08ff91f80000004f79eb8b96840600008b9e8c0600008dbe8406000057ff520c8b076a005357ff50088b0e56ff91bc010000508bcee8000000005f5e5d5b83c414c20400",
+ "relocs": [
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?ToScreen@World@@QAEPAIPAX0@Z",
+   "sym_key": "World::ToScreen"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 325,
+   "type": "REL32",
+   "sym": "?UpdateThreatBounds@BuildingClass@@QAEXPAX@Z",
+   "sym_key": "BuildingClass::UpdateThreatBounds"
+  }
+ ]
+}
