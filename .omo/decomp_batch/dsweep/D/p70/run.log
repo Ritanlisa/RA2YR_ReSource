@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p70\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a0760 ConnectionPointClass::GetConnectionInterface -> ConnectionPointClass
+[conv] 0x48b0e0 CommBufferClass::sub_48B0E0 -> CommBufferClass
+[conv] 0x5ca9b0 MultiplayerSiege::CheckStatus -> MultiplayerSiege
+[conv] 0x796fc0 ObjectClass::Network_Init_796FC0 -> ObjectClass
+[conv] 0x625af0 File::LoadPaletteData -> File
+[conv] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> JumpjetLocomotionClass
+[conv] 0x68f8a0 ObjectClass::sub_68F8A0 -> ObjectClass
+[conv] 0x6d1660 ObjectClass::House_Play_6D1660 -> ObjectClass
+[conv] 0x5fb050 GameSettings::ParseNetworkAddress -> GameSettings
+[conv] 0x728af0 TunnelLocomotionClass::SyncMovementPosition -> TunnelLocomotionClass
+[conv] 0x4adee0 HouseClass::ResetObjectOrders -> HouseClass
+[conv] 0x779830 ReadWOLGameOption -> _addr_77
+[conv] 0x779a40 ReadWOLLobbyOption -> _addr_77
+[conv] 0x5d0470 Audio::ParseVolume -> Audio
+[conv] 0x549b70 IsometricTileTypeClass::ProcessPower -> IsometricTileTypeClass
+[conv] 0x4df3a0 FootClass::UpdateAttackMove_SelectNewTarget -> FootClass
+[conv] 0x627a10 ObjectClass::sub_627A10 -> ObjectClass
+[conv] 0x4aac10 TacticalClass_DisplayClass::ProcessTacticalMouseInput -> TacticalClass_DisplayClass
+[conv] 0x6a4780 SideClass::SaveLoad_Prefix -> SideClass
+[conv] 0x6e1a70 TActionClass::executeScatterAction -> TActionClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ConnectionPointClass     rc=2
+[era] CommBufferClass          rc=2
+[era] MultiplayerSiege         rc=0
+[era] ObjectClass              rc=2
+[era] File                     rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] GameSettings             rc=0
+[era] TunnelLocomotionClass    rc=0
+[era] HouseClass               rc=2
+[era] _addr_77                 rc=0
+[era] Audio                    rc=2
+[era] IsometricTileTypeClass   rc=0
+[era] FootClass                rc=0
+[era] TacticalClass_DisplayClass rc=2
+[era] SideClass                rc=2
+[era] TActionClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ca9b0   MISMATCH         MultiplayerSiege::CheckStatus
+[diff] 0x5fb050   MISMATCH         GameSettings::ParseNetworkAddress
+[diff] 0x728af0   MISMATCH         TunnelLocomotionClass::SyncMovementPosition
+[diff] 0x779830   MISMATCH         ReadWOLGameOption
+[diff] 0x779a40   MISMATCH         ReadWOLLobbyOption
+[diff] 0x549b70   MISMATCH         IsometricTileTypeClass::ProcessPower
+[diff] 0x4df3a0   MISMATCH         FootClass::UpdateAttackMove_SelectNewTarget
+[diff] 0x6e1a70   MISMATCH         TActionClass::executeScatterAction
+[ledger] 0x4a0760 ConnectionPointClass::GetConnectionInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48b0e0 CommBufferClass::sub_48B0E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ca9b0 MultiplayerSiege::CheckStatus -> NG (attempt 1)
+[ledger] 0x796fc0 ObjectClass::Network_Init_796FC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x625af0 File::LoadPaletteData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68f8a0 ObjectClass::sub_68F8A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d1660 ObjectClass::House_Play_6D1660 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fb050 GameSettings::ParseNetworkAddress -> NG (attempt 1)
+[ledger] 0x728af0 TunnelLocomotionClass::SyncMovementPosition -> NG (attempt 1)
+[ledger] 0x4adee0 HouseClass::ResetObjectOrders -> COMPILE_FAIL (attempt 1)
+[ledger] 0x779830 ReadWOLGameOption -> NG (attempt 1)
+[ledger] 0x779a40 ReadWOLLobbyOption -> NG (attempt 1)
+[ledger] 0x5d0470 Audio::ParseVolume -> COMPILE_FAIL (attempt 1)
+[ledger] 0x549b70 IsometricTileTypeClass::ProcessPower -> NG (attempt 1)
+[ledger] 0x4df3a0 FootClass::UpdateAttackMove_SelectNewTarget -> NG (attempt 1)
+[ledger] 0x627a10 ObjectClass::sub_627A10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aac10 TacticalClass_DisplayClass::ProcessTacticalMouseInput -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a4780 SideClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e1a70 TActionClass::executeScatterAction -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "frame_sched": 3,
+  "regalloc": 1,
+  "codegen_shape": 2,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p70\batch_report.json

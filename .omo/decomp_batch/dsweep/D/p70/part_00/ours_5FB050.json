@@ -1,0 +1,93 @@
+{
+ "symbol": "?ParseNetworkAddress@GameSettings@@QAEPADXZ",
+ "sym_key": "GameSettings::ParseNetworkAddress",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "83ec18568bf15766817e4affff75108b0d00000000681388ffffe80000000083c65883c9ff8bfe33c033d2f2aef7d183f9010f84b500000051e8000000008bd08bfe83c9ff33c0f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a48b0d0000000033f65152e80000000083c40c85c0747a8d54240b52680000000050e8000000008b0d000000008a44241751884434206a0046e80000000083c41485c075d283fe047c47508d5424108d44241452508d4c2420c7442418ffffffffc7050000000001000000e8000000008b085f890d000000008b50048915000000008b4008a3000000005e83c418c38bc25f5e83c418c3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GetField@Network@@QAEHF@Z",
+   "sym_key": "Network::GetField"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?asc_826598@@3PAGA",
+   "sym_key": "asc_826598"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "??_C@_02JDLK@?$CFx?$AA@",
+   "sym_key": "??_C@_02JDLK@?$CFx?$AA@"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?sscanf@@YAHPAXH0ZZ",
+   "sym_key": "sscanf"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?asc_826598@@3PAGA",
+   "sym_key": "asc_826598"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D5FC@@3IA",
+   "sym_key": "DataGlobal_A8D5FC"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?Assign@NetworkAddress@@QAEPAIPAXHF@Z",
+   "sym_key": "NetworkAddress::Assign"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D600@@3IA",
+   "sym_key": "DataGlobal_A8D600"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D604@@3IA",
+   "sym_key": "DataGlobal_A8D604"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D608@@3IA",
+   "sym_key": "DataGlobal_A8D608"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?SyncMovementPosition@TunnelLocomotionClass@@QAGHHHH@Z",
+ "sym_key": "TunnelLocomotionClass::SyncMovementPosition",
+ "size": 276,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568b7424148b4608508b08ff917c03000084c00f85f10000008b4608508b10ff928003000084c00f85dd0000008b4608508b08ff91d401000084c00f85c90000008b4608508b10ff92d801000084c00f85b50000008b46088b4c2418538b5c2420558b6c2428578bf9895c2414894c2410896c24188b0850ff91880000008b108d4c2410518d4c24285150ff526c8b108956188b4804894e1c8b5008895620a1d01000003bf875103b1dd410000075083b2dd810000074418b4608508b08ff91c801000085c07d318b461483f803742983f805742483f801741f83f806741a83f80274158b46086a00508b10ff9224010000c74614040000008b46145f5d5b85c07507c74614010000005e83c40cc21000",
+ "relocs": [
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

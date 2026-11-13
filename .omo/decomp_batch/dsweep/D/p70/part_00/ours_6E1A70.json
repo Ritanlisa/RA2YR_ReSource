@@ -1,0 +1,93 @@
+{
+ "symbol": "?executeScatterAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeScatterAction",
+ "size": 244,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec148a904002000084d27408b00183c414c210008b8990000000568d54240c518b0d0000000052e8000000008b008d4c240451b9f801000089442408e8000000008b8840010000f6c501751e8d542404b9f801000052e8000000008b8840010000f6c504750433f6eb05be040000008d442404b9f801000050e8000000000fbe801b0100008b0d0000000003c60fafc8992bc28b542406d1f82bd0894c24140fbfca8b5424042bd00fbfc2c1e10881c180000000c1e008894c24108b0d4002000005800000008944240c8b912c0600008d44240c5250e800000000b9f8010000e800000000b0015e83c414c21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0E6E0@@3IA",
+   "sym_key": "DataGlobal_B0E6E0"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?TActionClass_Helper@@YGHPAXH@Z",
+   "sym_key": "TActionClass_Helper"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?UpdateVisibility@CellSystem@@QAEHXZ",
+   "sym_key": "CellSystem::UpdateVisibility"
+  }
+ ]
+}

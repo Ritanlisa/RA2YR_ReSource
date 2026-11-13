@@ -1,0 +1,45 @@
+{
+ "symbol": "?CheckStatus@MultiplayerSiege@@QAGDH@Z",
+ "sym_key": "MultiplayerSiege::CheckStatus",
+ "size": 283,
+ "link_base": 0,
+ "bytes_hex": "56576a0ce80000000083c40485c0740b8bc8e8000000008bf8eb0233ff8b74240c8b4e088b46103bc17c228b460cf6c4ff750485c975258b461485c07e1e8b1603c16a005056ff520884c0740f8b46108b56048d4801894e10893c826a0ce80000000083c40485c0740b8bc8e8000000008bf8eb0233ff8b4e088b46103bc17c228b460cf6c4ff750485c975258b461485c07e1e8b1603c16a005056ff520884c0740f8b46108b56048d4801894e10893c826a0ce80000000083c40485c0740b8bc8e8000000008bf8eb0233ff8b4e088b46103bc17c288b460cc1f80884c0750485c975318b461485c08944240c7e228b1603c16a005056ff520884c074178b46108b56048944240c8d4801894e10893c828a44240c5f5ec20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Constructor@MPCombatTeam@@QAEPAPAGXZ",
+   "sym_key": "MPCombatTeam::Constructor"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?MPTeam@MPCombatTeam@@QAEPAPAGXZ",
+   "sym_key": "MPCombatTeam::MPTeam"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?Constructor2@MPCombatTeam@@QAEPAPAGXZ",
+   "sym_key": "MPCombatTeam::Constructor2"
+  }
+ ]
+}
