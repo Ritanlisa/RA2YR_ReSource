@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x5a28c0 Terrain::PlaceTiberiumTrees -> Terrain
+[conv] 0x5a6510 ScatterMapSeedBuildings2 -> _addr_5A
+[conv] 0x5a82e0 ObjectClass::ScatterMapSeedBuildings -> ObjectClass
+[conv] 0x5a9a70 WaypointPath::Constructor -> WaypointPath
+[conv] 0x5ae500 ObjectClass::sub_5AE500 -> ObjectClass
+[conv] 0x5aead0 BuildingClass::processBaseExpansion -> BuildingClass
+[conv] 0x5aeaf0 BuildingClass::updateFoundation -> BuildingClass
+[conv] 0x5aeb20 BuildingClass::recalcAdjacency -> BuildingClass
+[conv] 0x5af120 ObjectClass::sub_5AF120 -> ObjectClass
+[conv] 0x5b17b0 BuildingClass::UpdateMovingPosition -> BuildingClass
+[conv] 0x5b1d90 ObjectClass::sub_5B1D90 -> ObjectClass
+[conv] 0x5b67f0 ApplyGameOptions -> _addr_5B
+[conv] 0x5bac60 ModemHost::StartGame -> ModemHost
+[conv] 0x5bcc90 TextBuffer::Init -> TextBuffer
+[conv] 0x5bfaa0 LoadVQMovie -> _addr_5B
+[conv] 0x5c0630 MovieHandle::sub_5C0630 -> MovieHandle
+[conv] 0x5c1470 MPCooperative::ctor -> MPCooperative
+[conv] 0x5c1640 MPCooperative::MPCooperative_Cleanup -> MPCooperative
+[conv] 0x5c17b0 MPCooperative::unnamed -> MPCooperative
+[conv] 0x5c1a10 MPCooperative::CopyTo -> MPCooperative
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Terrain                  rc=2
+[era] _addr_5A                 rc=2
+[era] ObjectClass              rc=2
+[era] WaypointPath             rc=2
+[era] BuildingClass            rc=2
+[era] _addr_5B                 rc=2
+[era] ModemHost                rc=2
+[era] TextBuffer               rc=2
+[era] MovieHandle              rc=2
+[era] MPCooperative            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5a28c0 Terrain::PlaceTiberiumTrees -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a6510 ScatterMapSeedBuildings2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5a82e0 ObjectClass::ScatterMapSeedBuildings -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5a9a70 WaypointPath::Constructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ae500 ObjectClass::sub_5AE500 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5aead0 BuildingClass::processBaseExpansion -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5aeaf0 BuildingClass::updateFoundation -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5aeb20 BuildingClass::recalcAdjacency -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5af120 ObjectClass::sub_5AF120 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5b17b0 BuildingClass::UpdateMovingPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b1d90 ObjectClass::sub_5B1D90 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b67f0 ApplyGameOptions -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5bac60 ModemHost::StartGame -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5bcc90 TextBuffer::Init -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5bfaa0 LoadVQMovie -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c0630 MovieHandle::sub_5C0630 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5c1470 MPCooperative::ctor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c1640 MPCooperative::MPCooperative_Cleanup -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5c17b0 MPCooperative::unnamed -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c1a10 MPCooperative::CopyTo -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p16\batch_report.json

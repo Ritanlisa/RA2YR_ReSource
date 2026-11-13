@@ -94899,7 +94899,7 @@
   "this_as_id": false
  },
  "0x5a28c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -95073,7 +95073,7 @@
   "this_as_id": false
  },
  "0x5a6510": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "ScatterMapSeedBuildings2",
@@ -95253,7 +95253,7 @@
   "this_as_id": false
  },
  "0x5a82e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -95394,7 +95394,7 @@
   "this_as_id": false
  },
  "0x5a9a70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -96550,7 +96550,7 @@
   "this_as_id": false
  },
  "0x5ae500": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -96752,7 +96752,7 @@
   "this_as_id": false
  },
  "0x5aead0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -96764,7 +96764,7 @@
   "this_as_id": false
  },
  "0x5aeaf0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -96776,7 +96776,7 @@
   "this_as_id": false
  },
  "0x5aeb20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -96860,7 +96860,7 @@
   "this_as_id": false
  },
  "0x5af120": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -97290,7 +97290,7 @@
   "this_as_id": false
  },
  "0x5b17b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -97547,7 +97547,7 @@
   "this_as_id": false
  },
  "0x5b1d90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -98970,7 +98970,7 @@
   "this_as_id": false
  },
  "0x5b67f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "ApplyGameOptions",
@@ -99465,7 +99465,7 @@
   "this_as_id": false
  },
  "0x5bac60": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -99868,7 +99868,7 @@
   "this_as_id": false
  },
  "0x5bcc90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -100897,7 +100897,7 @@
   "this_as_id": false
  },
  "0x5bfaa0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "LoadVQMovie",
@@ -101196,7 +101196,7 @@
   "status": "OK"
  },
  "0x5c0630": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -101952,19 +101952,19 @@
   "this_as_id": false
  },
  "0x5c1470": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MPCooperative::ctor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MPCooperative::ctor",
-  "rule_violations": 10,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5c1640": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -101976,7 +101976,7 @@
   "this_as_id": false
  },
  "0x5c17b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -102012,7 +102012,7 @@
   "this_as_id": false
  },
  "0x5c1a10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
