@@ -1,0 +1,45 @@
+{
+ "symbol": "?CreateNode@AudioQueue@@QAEPAIXZ",
+ "sym_key": "AudioQueue::CreateNode",
+ "size": 142,
+ "link_base": 0,
+ "bytes_hex": "5356578bd96a60e8000000008bf0b91800000033c08bfef3ab83c4048bcee8000000008b461056c70000000000895e08ff531485c0742185f674218b4e0856ff51188b46085683600cfee80000000083c40433c05f5e5bc385f675065f5e33c05bc38b4b0cbf010000000bcf8bd6894b0c8b0d00000000e800000000f64320027406893d000000008b065f5e5bc3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?InitEmpty@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::InitEmpty"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_815E98@@3PAXA",
+   "sym_key": "DataGlobal_815E98"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?InsertAfterDListNode@@YIHHPAX@Z",
+   "sym_key": "InsertAfterDListNode"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87DE28@@3IA",
+   "sym_key": "DataGlobal_87DE28"
+  }
+ ]
+}

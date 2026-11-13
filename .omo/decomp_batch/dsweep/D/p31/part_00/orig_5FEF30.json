@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FEF30",
+ "name": "OverlayTypeClass::ddtor",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FEF30",
+ "bytes_hex": "51568bf1b201c70600f67e00c74604e4f57e00c74608dcf57e00c7460cd4f57e00e87a6912008b15803da8008d44240450b9803da80089742408ff521083f8ff742d8b0d903da8003bc17d23493bc1890d903da8007d188b0d843da800408b1481895481fc8b0d903da8003bc17ce88bcee85a84fffff644240c01740956e88a9b1c0083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

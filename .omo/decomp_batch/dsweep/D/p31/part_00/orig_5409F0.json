@@ -1,0 +1,11 @@
+{
+ "addr": "0x5409F0",
+ "name": "IPXManagerClass::processPacket",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5409F0",
+ "bytes_hex": "5355568bf133db8a4605c7066cc17e003ac37408e8a7ebffff885e058b4e483bcb74098b016a01ff10895e488b4e4c3bcb74098b116a01ff12895e4c8b4e503bcb74098b016a01ff10895e508b464433ed3bc37e2b578d7e288b0f3bcb74068b116a01ff12891f8b46444583c7043be87ce7895e44c706d4c17e005f5e5d5bc3895e44c706d4c17e005e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

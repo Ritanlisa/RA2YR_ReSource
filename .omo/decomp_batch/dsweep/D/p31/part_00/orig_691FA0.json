@@ -1,0 +1,11 @@
+{
+ "addr": "0x691FA0",
+ "name": "ScriptTypeClass::ddtor",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x691FA0",
+ "bytes_hex": "51568bf1b201c70608107f00c74604ec0f7f00c74608e40f7f00c7460cdc0f7f00e80a3909008b15c8418b008d44240450b9c8418b0089742408ff521083f8ff742d8b0dd8418b003bc17d23493bc1890dd8418b007d188b0dcc418b00408b1481895481fc8b0dd8418b003bc17ce88bcee8aae9d7fff644240c01740956e81a6b130083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

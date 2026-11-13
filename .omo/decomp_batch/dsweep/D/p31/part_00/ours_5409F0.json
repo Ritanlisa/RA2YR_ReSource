@@ -1,0 +1,33 @@
+{
+ "symbol": "?processPacket@IPXManagerClass@@QAEHXZ",
+ "sym_key": "IPXManagerClass::processPacket",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "515355568bf133db8a4605c706000000003ac374108b44240c50e80000000083c404885e058b46483bc3740a8b086a0150ff11895e488b464c3bc3740a8b106a0150ff12895e4c8b46503bc3740a8b086a0150ff11895e508b464433ed3bc37f0e895e44c706000000005e5d5b59c3578d7e288b073bc374078b106a0150ff12891f8b46444583c7043be87ce6895e44c706000000005f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?vt_IPXManagerClass@@3PAXA",
+   "sym_key": "vt_IPXManagerClass"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Network_Helper@@YAHPAX@Z",
+   "sym_key": "Network_Helper"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?vt_ConnManClass@@3PAXA",
+   "sym_key": "vt_ConnManClass"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?vt_ConnManClass@@3PAXA",
+   "sym_key": "vt_ConnManClass"
+  }
+ ]
+}

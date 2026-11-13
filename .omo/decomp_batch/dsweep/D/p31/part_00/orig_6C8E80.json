@@ -1,0 +1,11 @@
+{
+ "addr": "0x6C8E80",
+ "name": "Map_Load_6C8E80",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6C8E80",
+ "bytes_hex": "83ec10a130b2a8008b88b8340000e86d4406008b0da4008a008b15a8008a00894c24088b0d0c7388008954240c8d542400c744240000000000c744240400000000e82a5b06008b150c7388006a00b101e8abb8e2ff6a00baf08f6c00b903010000e89a44f4ff8b0d0c7388008d542400e8fb5a06008b150c7388006a00b101e87cb8e2ffe84744060083c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

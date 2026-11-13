@@ -1,0 +1,11 @@
+{
+ "addr": "0x4393F0",
+ "name": "BombClass::CopyTo",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4393F0",
+ "bytes_hex": "51568bf18d4e3cc706103d7e00c74604f43c7e00c74608ec3c7e00c7460ce43c7e00e8e9c7fcff8b1568c689008d44240450b968c6890089742408ff521083f8ff742d8b0d78c689003bc17d23493bc1890d78c689007d188b0d6cc68900408b1481895481fc8b0d78c689003bc17ce88bcee8896dfdfff644240c01740956e8c9f6380083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

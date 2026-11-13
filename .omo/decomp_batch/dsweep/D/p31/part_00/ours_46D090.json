@@ -1,0 +1,69 @@
+{
+ "symbol": "?DTOR@CampaignClass@@QAEPAPAXD@Z",
+ "sym_key": "CampaignClass::DTOR",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "51568bf1b800000000ba01000000890689460489460889460ce8000000008b0d000000008d4424045068000000008974240cff511083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e88bcee800000000f644240c01740956e80000000083c4048bc65e59c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?vt_CampaignClass_4@@3PAXA",
+   "sym_key": "vt_CampaignClass_4"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CF8@@3IA",
+   "sym_key": "DataGlobal_A83CF8"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CF8@@3IA",
+   "sym_key": "DataGlobal_A83CF8"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeInitState@@3IA",
+   "sym_key": "g_UnitTypeInitState"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeInitState@@3IA",
+   "sym_key": "g_UnitTypeInitState"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_CampaignTypeArray@@3PAXA",
+   "sym_key": "g_CampaignTypeArray"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeInitState@@3IA",
+   "sym_key": "g_UnitTypeInitState"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?Dtor@AbstractTypeClass@@QAEHXZ",
+   "sym_key": "AbstractTypeClass::Dtor"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

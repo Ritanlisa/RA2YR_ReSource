@@ -1,0 +1,69 @@
+{
+ "symbol": "?CopyTo@BombClass@@QAEPAID@Z",
+ "sym_key": "BombClass::CopyTo",
+ "size": 132,
+ "link_base": 0,
+ "bytes_hex": "51568bf1b8000000000fbe4e33890689460489460889460ce8000000008b0d000000008d4424045068000000008974240cff511083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e88bcee800000000f644240c01740956e80000000083c4048bc65e59c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?vt_BombClass_4@@3PAXA",
+   "sym_key": "vt_BombClass_4"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Release@AudioFileClass@@QAEPAIXZ",
+   "sym_key": "AudioFileClass::Release"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C668@@3IA",
+   "sym_key": "DataGlobal_89C668"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C668@@3IA",
+   "sym_key": "DataGlobal_89C668"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C678@@3IA",
+   "sym_key": "DataGlobal_89C678"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C678@@3IA",
+   "sym_key": "DataGlobal_89C678"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C66C@@3IA",
+   "sym_key": "DataGlobal_89C66C"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C678@@3IA",
+   "sym_key": "DataGlobal_89C678"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?DTOR@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::DTOR"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

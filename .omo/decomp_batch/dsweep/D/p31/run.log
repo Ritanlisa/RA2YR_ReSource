@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x46d090 CampaignClass::DTOR -> CampaignClass
+[conv] 0x540e70 SessionClass::initInternet -> SessionClass
+[conv] 0x5fef30 OverlayTypeClass::ddtor -> OverlayTypeClass
+[conv] 0x644960 ParticleSystemTypeClass::ddtor -> ParticleSystemTypeClass
+[conv] 0x691ee0 ScriptClass::ProcessEvent -> ScriptClass
+[conv] 0x691fa0 ScriptTypeClass::ddtor -> ScriptTypeClass
+[conv] 0x748190 UnitTypeClass::ddtor -> UnitTypeClass
+[conv] 0x520260 TechnoClass::sub_520260 -> TechnoClass
+[conv] 0x65c4b0 RAMFileClass::validateTeamConfig -> RAMFileClass
+[conv] 0x5576a0 ListClass::AddItem -> ListClass
+[conv] 0x5b94c0 ObjectClass::sub_5B94C0 -> ObjectClass
+[conv] 0x5409f0 IPXManagerClass::processPacket -> IPXManagerClass
+[conv] 0x7d3374 _calloc -> _addr_7D
+[conv] 0x5c9720 Map_Load_5C9720 -> Map_Load
+[conv] 0x6c8e80 Map_Load_6C8E80 -> Map_Load
+[conv] 0x4393f0 BombClass::CopyTo -> BombClass
+[conv] 0x70d8f0 TechnoClass::PlaceAtCell -> TechnoClass
+[conv] 0x5fa590 Audio::SetVoiceVolume -> Audio
+[conv] 0x402af0 AudioQueue::CreateNode -> AudioQueue
+[conv] 0x473b10 CCFileClass::Read -> CCFileClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CampaignClass            rc=0
+[era] SessionClass             rc=2
+[era] OverlayTypeClass         rc=0
+[era] ParticleSystemTypeClass  rc=0
+[era] ScriptClass              rc=0
+[era] ScriptTypeClass          rc=0
+[era] UnitTypeClass            rc=2
+[era] TechnoClass              rc=2
+[era] RAMFileClass             rc=2
+[era] ListClass                rc=0
+[era] ObjectClass              rc=2
+[era] IPXManagerClass          rc=0
+[era] _addr_7D                 rc=2
+[era] Map_Load                 rc=0
+[era] BombClass                rc=0
+[era] Audio                    rc=2
+[era] AudioQueue               rc=0
+[era] CCFileClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x46d090   MISMATCH         CampaignClass::DTOR
+[diff] 0x5fef30   MISMATCH         OverlayTypeClass::ddtor
+[diff] 0x644960   MISMATCH         ParticleSystemTypeClass::ddtor
+[diff] 0x691ee0   MISMATCH         ScriptClass::ProcessEvent
+[diff] 0x691fa0   MISMATCH         ScriptTypeClass::ddtor
+[diff] 0x520260   MISMATCH         TechnoClass::sub_520260
+[diff] 0x5576a0   MISMATCH         ListClass::AddItem
+[diff] 0x5409f0   MISMATCH         IPXManagerClass::processPacket
+[diff] 0x5c9720   MISMATCH         Map_Load_5C9720
+[diff] 0x6c8e80   MISMATCH         Map_Load_6C8E80
+[diff] 0x4393f0   MISMATCH         BombClass::CopyTo
+[diff] 0x402af0   MISMATCH         AudioQueue::CreateNode
+[ledger] 0x46d090 CampaignClass::DTOR -> NG (attempt 1)
+[ledger] 0x540e70 SessionClass::initInternet -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fef30 OverlayTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x644960 ParticleSystemTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x691ee0 ScriptClass::ProcessEvent -> NG (attempt 1)
+[ledger] 0x691fa0 ScriptTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x748190 UnitTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x520260 TechnoClass::sub_520260 -> NG (attempt 1)
+[ledger] 0x65c4b0 RAMFileClass::validateTeamConfig -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5576a0 ListClass::AddItem -> NG (attempt 1)
+[ledger] 0x5b94c0 ObjectClass::sub_5B94C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5409f0 IPXManagerClass::processPacket -> NG (attempt 1)
+[ledger] 0x7d3374 _calloc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c9720 Map_Load_5C9720 -> NG (attempt 1)
+[ledger] 0x6c8e80 Map_Load_6C8E80 -> NG (attempt 1)
+[ledger] 0x4393f0 BombClass::CopyTo -> NG (attempt 1)
+[ledger] 0x70d8f0 TechnoClass::PlaceAtCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fa590 Audio::SetVoiceVolume -> COMPILE_FAIL (attempt 1)
+[ledger] 0x402af0 AudioQueue::CreateNode -> NG (attempt 1)
+[ledger] 0x473b10 CCFileClass::Read -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "regalloc": 8,
+  "const_fold": 1,
+  "frame_sched": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p31\batch_report.json

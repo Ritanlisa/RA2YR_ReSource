@@ -1,0 +1,69 @@
+{
+ "symbol": "?ddtor@OverlayTypeClass@@QAEPAPAXD@Z",
+ "sym_key": "OverlayTypeClass::ddtor",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "51568bf1b800000000ba01000000890689460489460889460ce8000000008b0d300000008d4424045068300000008974240cff511083f8ff74388a0d400000000fbed13bc27d2bfec9880d400000000fbec93bc17d1c0fbe1534000000408b0a8b1481895481fc0fbe0d400000003bc17ce48bcee800000000f644240c01740956e80000000083c4048bc65e59c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?vt_OverlayTypeClass_4@@3PAXA",
+   "sym_key": "vt_OverlayTypeClass_4"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?Destruct@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::Destruct"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

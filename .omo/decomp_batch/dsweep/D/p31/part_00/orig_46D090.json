@@ -1,0 +1,11 @@
+{
+ "addr": "0x46D090",
+ "name": "CampaignClass::DTOR",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46D090",
+ "bytes_hex": "51568bf1b201c706284a7e00c746040c4a7e00c74608044a7e00c7460cfc497e00e81a882b008b15f83ca8008d44240450b9f83ca80089742408ff521083f8ff742d8b0d083da8003bc17d23493bc1890d083da8007d188b0dfc3ca800408b1481895481fc8b0d083da8003bc17ce88bcee8ba38fafff644240c01740956e82aba350083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

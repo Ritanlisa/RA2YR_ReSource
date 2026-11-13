@@ -1,0 +1,93 @@
+{
+ "symbol": "?Map_Load_6C8E80@@YAXHHH@Z",
+ "sym_key": "Unnamed::Map_Load_6C8E80",
+ "size": 164,
+ "link_base": 0,
+ "bytes_hex": "83ec08a1000000005355568b88b834000057e8000000008b0d040000008b3500000000894c24148b0d000000008d542410c744241000000000e8000000008b5424108b7c24248b5c24208b6c241ca100000000566a00526a0057535550e80000000083c4206a00e8000000008b0d000000008d542410e8000000008b4c24108b1500000000566a00516a0057535552e80000000083c420e8000000005f5e5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?LoadCampaignScoreAssetsGame@CampaignScore@@QAEDXZ",
+   "sym_key": "CampaignScore::LoadCampaignScoreAssetsGame"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Map_Load_72E9F0@@YIXPAX0@Z",
+   "sym_key": "Map_Load_72E9F0"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?Frame__Present@@YAHPAXHHHHHH0@Z",
+   "sym_key": "Frame__Present"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?Campaign__Screen@@YGJH@Z",
+   "sym_key": "Campaign__Screen"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?Map_Load_72E9F0@@YIXPAX0@Z",
+   "sym_key": "Map_Load_72E9F0"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?Frame__Present@@YAHPAXHHHHHH0@Z",
+   "sym_key": "Frame__Present"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?FileSystem__CleanupTrees@@YAXXZ",
+   "sym_key": "FileSystem__CleanupTrees"
+  }
+ ]
+}

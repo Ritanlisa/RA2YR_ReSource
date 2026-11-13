@@ -1,0 +1,69 @@
+{
+ "symbol": "?ddtor@ParticleSystemTypeClass@@QAEPAPAXD@Z",
+ "sym_key": "ParticleSystemTypeClass::ddtor",
+ "size": 137,
+ "link_base": 0,
+ "bytes_hex": "51568bf1b800000000ba010000008906894604894608894614e8000000000fbe05180000008d4c240489742404516818000000ff501083f8ff74308b0d280000003bc17d26493bc1890d280000007d1b0fbe151c000000408d0c828b14828951fc8b0d280000003bc17ce58bcee800000000f644240c01740956e80000000083c4048bc65e59c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?vt_ParticleSystemTypeClass_4@@3PAXA",
+   "sym_key": "vt_ParticleSystemTypeClass_4"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?Destruct@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::Destruct"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

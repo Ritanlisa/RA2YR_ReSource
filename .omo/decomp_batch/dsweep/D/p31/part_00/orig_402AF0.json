@@ -1,0 +1,11 @@
+{
+ "addr": "0x402AF0",
+ "name": "AudioQueue::CreateNode",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x402AF0",
+ "bytes_hex": "5356578bd96a60e81b633c008bf0b91800000033c08bfef3ab83c4048bcee8bd470000c74610000000008bce895e0cff531485c0742285f674228b460c8bceff50188b460c5683600cfee8fe5f3c0083c40433c05f5e5bc385f675065f5e33c05bc38b4b0cbf010000000bcf8bd6894b0c8b0d985e8100e8b4480000f64308027406893d28de87008bc65f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

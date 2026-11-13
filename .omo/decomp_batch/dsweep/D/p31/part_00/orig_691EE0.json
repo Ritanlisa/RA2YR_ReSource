@@ -1,0 +1,11 @@
+{
+ "addr": "0x691EE0",
+ "name": "ScriptClass::ProcessEvent",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x691EE0",
+ "bytes_hex": "51568bf1b201c706780f7f00c746045c0f7f00c74608540f7f00c7460c4c0f7f00e8ca3909008b15b07288008d44240450b9b072880089742408ff521083f8ff742d8b0dc07288003bc17d23493bc1890dc07288007d188b0db4728800408b1481895481fc8b0dc07288003bc17ce88bcee89ae2d7fff644240c01740956e8da6b130083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

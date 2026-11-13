@@ -1,0 +1,11 @@
+{
+ "addr": "0x5576A0",
+ "name": "ListClass::AddItem",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5576A0",
+ "bytes_hex": "538b5c2408578bf985db74788b4f3c8b4744568d77343bc17c228a460d84c0750485c975268b461485c07e1f8b1603c16a00508bceff520884c0740f8b46108b56048d4801894e10891c828b078bcfff50488b4f448b47503bc85e7e0a8b178bcfff928c0000008a475484c074168b57448b87180100008d8f1801000052ff90880000008b47445f485bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
