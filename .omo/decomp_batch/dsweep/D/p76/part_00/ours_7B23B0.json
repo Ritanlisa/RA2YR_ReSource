@@ -1,0 +1,39 @@
+{
+ "symbol": "?WriteBuffer@WinsockInterfaceClass@@QAEFPBXI0IDDF@Z",
+ "sym_key": "WinsockInterfaceClass::WriteBuffer",
+ "size": 280,
+ "link_base": 0,
+ "bytes_hex": "8b442414535556578be950e8000000008b7424148bd88b442418538bc88d7b208bd155c1e902f3a58bca83e103f3a48b4c24288b7424248943108a4424308bd18bfbc1e902c6431400884318f3a5668b4424348bca83e103f3a46689431a8b4d00ff51548a44242484c074428b45408b4d483bc87c218a4d4584c9750485c075258b4d4c85c97e1e03c86a008d55385152ffd084c0740f8b45488b553c8d4801894d48891c828b8570f00300eb408b45288b4d303bc87c218a4d2d84c9750485c075258b4d3485c97e1e03c86a00518d4d2051ffd084c0740f8b45308b4d248d5001895530891c818b856cf003008b55005055ff52386a026a0050a10000000050e8000000008b0d80010000e8000000005f5e5d5bc21c00",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?AllocBuffer@AudioQueue@@QAEPAED@Z",
+   "sym_key": "AudioQueue::AllocBuffer"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 264,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 269,
+   "type": "REL32",
+   "sym": "?Process@EventQueue@@QAEFXZ",
+   "sym_key": "EventQueue::Process"
+  }
+ ]
+}

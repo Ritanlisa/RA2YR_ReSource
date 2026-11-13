@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p76\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f7660 TechnoClass::IsInRange -> TechnoClass
+[conv] 0x5fc000 GameOptionsClass::PopulateMovieList -> GameOptionsClass
+[conv] 0x682880 ReadStringCOM -> _addr_68
+[conv] 0x7a2110 sub_7A2110 -> _addr_7A
+[conv] 0x725c70 ObjectClass::ProcessExpiredPointers -> ObjectClass
+[conv] 0x54e3b0 UnitClass::GetExitCell -> UnitClass
+[conv] 0x56bac0 CellClass::DecompressTerrainData -> CellClass
+[conv] 0x586990 LayerClass::Update_Pathfinding_2 -> LayerClass
+[conv] 0x49f420 RandomCoordScatter -> _addr_49
+[conv] 0x53af40 ObjectClass::UpdatePsyDom -> ObjectClass
+[conv] 0x7b23b0 WinsockInterfaceClass::WriteBuffer -> WinsockInterfaceClass
+[conv] 0x46f8f0 Skirmish::SetupAllSpawnLocations -> Skirmish
+[conv] 0x5b5ef0 CellClass::LockSurface -> CellClass
+[conv] 0x6b0750 FactoryClass::GetBridgeCell -> FactoryClass
+[conv] 0x6ae2c0 ObjectClass::ShowSkirmishSetupScreen -> ObjectClass
+[conv] 0x661190 Color::ScaleRGB -> Color
+[conv] 0x5116a0 HouseTypeClass::Dtor -> HouseTypeClass
+[conv] 0x6743d0 RulesClass::readDifficulty -> RulesClass
+[conv] 0x730400 LoadingScreen::FreeResources -> LoadingScreen
+[conv] 0x730530 LoadingScreen::FreeResources2 -> LoadingScreen
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] GameOptionsClass         rc=2
+[era] _addr_68                 rc=2
+[era] _addr_7A                 rc=0
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] CellClass                rc=2
+[era] LayerClass               rc=0
+[era] _addr_49                 rc=2
+[era] WinsockInterfaceClass    rc=0
+[era] Skirmish                 rc=2
+[era] FactoryClass             rc=2
+[era] Color                    rc=0
+[era] HouseTypeClass           rc=0
+[era] RulesClass               rc=2
+[era] LoadingScreen            rc=0
+=== diffasm byte-compare ===
+[diff] 0x6f7660   MISMATCH         TechnoClass::IsInRange
+[diff] 0x7a2110   MISMATCH         sub_7A2110
+[diff] 0x725c70   MISMATCH         ObjectClass::ProcessExpiredPointers
+[diff] 0x5b5ef0   MISMATCH         CellClass::LockSurface
+[diff] 0x586990   MISMATCH         LayerClass::Update_Pathfinding_2
+[diff] 0x7b23b0   MISMATCH         WinsockInterfaceClass::WriteBuffer
+[diff] 0x661190   MISMATCH         Color::ScaleRGB
+[diff] 0x5116a0   MISMATCH         HouseTypeClass::Dtor
+[diff] 0x730400   MISMATCH         LoadingScreen::FreeResources
+[diff] 0x730530   MATCH            LoadingScreen::FreeResources2
+[ledger] 0x6f7660 TechnoClass::IsInRange -> NG (attempt 1)
+[ledger] 0x5fc000 GameOptionsClass::PopulateMovieList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x682880 ReadStringCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a2110 sub_7A2110 -> NG (attempt 1)
+[ledger] 0x725c70 ObjectClass::ProcessExpiredPointers -> NG (attempt 1)
+[ledger] 0x54e3b0 UnitClass::GetExitCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56bac0 CellClass::DecompressTerrainData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x586990 LayerClass::Update_Pathfinding_2 -> NG (attempt 1)
+[ledger] 0x49f420 RandomCoordScatter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53af40 ObjectClass::UpdatePsyDom -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b23b0 WinsockInterfaceClass::WriteBuffer -> NG (attempt 1)
+[ledger] 0x46f8f0 Skirmish::SetupAllSpawnLocations -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b5ef0 CellClass::LockSurface -> NG (attempt 1)
+[ledger] 0x6b0750 FactoryClass::GetBridgeCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ae2c0 ObjectClass::ShowSkirmishSetupScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x661190 Color::ScaleRGB -> NG (attempt 1)
+[ledger] 0x5116a0 HouseTypeClass::Dtor -> NG (attempt 1)
+[ledger] 0x6743d0 RulesClass::readDifficulty -> COMPILE_FAIL (attempt 1)
+[ledger] 0x730400 LoadingScreen::FreeResources -> NG (attempt 1)
+[ledger] 0x730530 LoadingScreen::FreeResources2 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 10,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "signedness": 1,
+  "codegen_shape": 2,
+  "regalloc": 4
+ },
+ "match_rate_of_decided_pct": 10.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p76\batch_report.json

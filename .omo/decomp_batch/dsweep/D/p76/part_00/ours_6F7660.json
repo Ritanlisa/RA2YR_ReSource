@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsInRange@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::IsInRange",
+ "size": 210,
+ "link_base": 0,
+ "bytes_hex": "83ec1c568bf1568b06ff90e003000084c00f84b40000008b0e56ff91f00300008b108b82ac00000085c00f849b000000d98024010000d8a0280100008b068d4c2404575156dd5c2418ff50488b308b78048b44240c8d4c241851508b10c1ee08c1ef08ff52488b0833d2c1e908894c24088a50058b44240c2bf1240083ec080bc22bf80fbfd70fbfc689542414db44241489442414db442414d9c0d8c9d9c2d8cbdec1dd1c24ddd8ddd8e8000000008b4c241c8b5424185152ddd8e80000000083c41032c05f5e83c41cc332c05e83c41cc3",
+ "relocs": [
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

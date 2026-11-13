@@ -1,0 +1,153 @@
+{
+ "symbol": "?LockSurface@CellClass@@QAEKD@Z",
+ "sym_key": "CellClass::LockSurface",
+ "size": 293,
+ "link_base": 0,
+ "bytes_hex": "81ecf8000000568bf157b900000000e800000000807e0901752ba00c0000000fbe3d140000003cff7410e8000000000fbe0d0c0000002bc103f80fbf560c2bfa83ff1e770a80bc240401000001753156e800000000a00c00000083c4040fbe3d140000003cff7410e8000000000fbe0d0c0000002bc103f866897e0cc64609008a0d0c0000000fbe3d1400000080f9ff0fbec17410e8000000000fbe150c0000002bc203f82b7e1c83ff28766db93e00000033c08d7c2408f3abb900000000c744240869000000e8000000006a008d4c240c898424a6000000a00000000068fa00000051b9000000008844242ce8000000008a0d0c0000000fbe3d1400000080f9ff0fbec17410e8000000000fbe150c0000002bc203f8897e1c5f5e81c4f8000000c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?ReadPacket@Stream@@QAEHXZ",
+   "sym_key": "Stream::ReadPacket"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?Surface_Lock@@YAHPAX@Z",
+   "sym_key": "Surface_Lock"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?GetBridgeIndexThunk@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::GetBridgeIndexThunk"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?g_EventDispatchState@@3IA",
+   "sym_key": "g_EventDispatchState"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?WriteBlock@Stream@@QAEHHHH@Z",
+   "sym_key": "Stream::WriteBlock"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  }
+ ]
+}
