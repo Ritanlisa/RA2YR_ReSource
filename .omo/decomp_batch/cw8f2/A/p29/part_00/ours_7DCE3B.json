@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_7DCE3B@_com_error@@QAEPAXXZ",
+ "sym_key": "_com_error::sub_7DCE3B",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4608c7060000000085c074068b0850ff51088b760c85f6740656e8000000005ec3",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?LocalFree@@YGPAXPAX@Z",
+   "sym_key": "LocalFree"
+  }
+ ]
+}

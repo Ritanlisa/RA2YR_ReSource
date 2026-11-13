@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (18 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p29\part_00
+=== convert (18 addrs) ===
+[conv] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H
+[conv] 0x76a6d0 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::QueryInterface -> _VectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x76a720 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::setScale -> _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x76a770 _VectorClass_VCentroid_WorldDominationTour::QueryInterface -> _VectorClass_VCentroid_WorldDominationTour
+[conv] 0x76f060 ComPtr::Territory_Dtor -> ComPtr
+[conv] 0x76f100 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor -> _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x76f120 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::updateCursor -> _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76f140 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::drawCursor -> _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim
+[conv] 0x76f6c0 State_WorldDominationTour::QueryInterface -> State_WorldDominationTour
+[conv] 0x7784a0 CCToolTip::QueryInterface -> CCToolTip
+[conv] 0x7ad370 _VectorClass_PAUtConnInfoStruct::QueryInterface -> _VectorClass_PAUtConnInfoStruct
+[conv] 0x7ad3c0 _DynamicVectorClass_PAUtConnInfoStruct::Constructor_VectorClass_tConnInfoStruct___ -> _DynamicVectorClass_PAUtConnInfoStruct
+[conv] 0x7b2b00 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::QueryInterface -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b2b50 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::closeSession -> _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b4580 _VectorClass_PAE::QueryInterface -> _VectorClass_PAE
+[conv] 0x7b45d0 _DynamicVectorClass_PAE::receivePacket -> _DynamicVectorClass_PAE
+[conv] 0x7ba300 MouseClass::updateHotspot -> MouseClass
+[conv] 0x7dce3b _com_error::sub_7DCE3B -> _com_error
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H rc=2
+[era] _VectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _VectorClass_VCentroid_WorldDominationTour rc=0
+[era] ComPtr                   rc=0
+[era] _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry rc=2
+[era] _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=2
+[era] _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim rc=2
+[era] State_WorldDominationTour rc=0
+[era] CCToolTip                rc=0
+[era] _VectorClass_PAUtConnInfoStruct rc=0
+[era] _DynamicVectorClass_PAUtConnInfoStruct rc=0
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _VectorClass_PAE         rc=0
+[era] _DynamicVectorClass_PAE  rc=0
+[era] MouseClass               rc=0
+[era] _com_error               rc=0
+=== diffasm byte-compare ===
+[diff] 0x76a6d0   MISMATCH         _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::QueryInterface
+[diff] 0x76a720   MISMATCH         _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::setScale
+[diff] 0x76a770   MISMATCH         _VectorClass_VCentroid_WorldDominationTour::QueryInterface
+[diff] 0x76f060   MATCH            ComPtr::Territory_Dtor
+[diff] 0x76f6c0   MISMATCH         State_WorldDominationTour::QueryInterface
+[diff] 0x7784a0   MISMATCH         CCToolTip::QueryInterface
+[diff] 0x7ad370   MISMATCH         _VectorClass_PAUtConnInfoStruct::QueryInterface
+[diff] 0x7ad3c0   MISMATCH         _DynamicVectorClass_PAUtConnInfoStruct::Constructor_VectorClass_tConnInfoStruct___
+[diff] 0x7b2b00   MISMATCH         _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::QueryInterface
+[diff] 0x7b2b50   MISMATCH         _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::closeSession
+[diff] 0x7b4580   MISMATCH         _VectorClass_PAE::QueryInterface
+[diff] 0x7b45d0   MISMATCH         _DynamicVectorClass_PAE::receivePacket
+[diff] 0x7ba300   MISMATCH         MouseClass::updateHotspot
+[diff] 0x7dce3b   MISMATCH         _com_error::sub_7DCE3B
+[ledger] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x76a6d0 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::QueryInterface -> NG (attempt 2)
+[ledger] 0x76a720 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::setScale -> NG (attempt 4)
+[ledger] 0x76a770 _VectorClass_VCentroid_WorldDominationTour::QueryInterface -> NG (attempt 2)
+[ledger] 0x76f060 ComPtr::Territory_Dtor -> OK (attempt 2)
+[ledger] 0x76f100 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::initCursor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76f120 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::updateCursor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76f140 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::drawCursor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76f6c0 State_WorldDominationTour::QueryInterface -> NG (attempt 2)
+[ledger] 0x7784a0 CCToolTip::QueryInterface -> NG (attempt 2)
+[ledger] 0x7ad370 _VectorClass_PAUtConnInfoStruct::QueryInterface -> NG (attempt 2)
+[ledger] 0x7ad3c0 _DynamicVectorClass_PAUtConnInfoStruct::Constructor_VectorClass_tConnInfoStruct___ -> NG (attempt 2)
+[ledger] 0x7b2b00 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x7b2b50 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::closeSession -> NG (attempt 2)
+[ledger] 0x7b4580 _VectorClass_PAE::QueryInterface -> NG (attempt 2)
+[ledger] 0x7b45d0 _DynamicVectorClass_PAE::receivePacket -> NG (attempt 2)
+[ledger] 0x7ba300 MouseClass::updateHotspot -> NG (attempt 2)
+[ledger] 0x7dce3b _com_error::sub_7DCE3B -> NG (attempt 2)
+======================================================================
+{
+ "total": 18,
+ "verdicts": {
+  "COMPILE_FAIL": 4,
+  "MISMATCH": 13,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 7,
+  "const_fold": 4,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.6,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p29\batch_report.json
