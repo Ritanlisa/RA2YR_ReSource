@@ -23,3 +23,4 @@
 {"layer": "D", "part": 22, "n": 20, "seconds": 65.0, "ok": true, "verdicts": {"MISMATCH": 10, "COMPILE_FAIL": 10}}
 {"layer": "D", "part": 23, "n": 20, "seconds": 81.4, "ok": true, "verdicts": {"MISMATCH": 12, "COMPILE_FAIL": 8}}
 {"layer": "D", "part": 24, "n": 20, "seconds": 53.6, "ok": true, "verdicts": {"MISMATCH": 3, "COMPILE_FAIL": 17}}
+{"layer": "D", "part": 25, "n": 20, "seconds": 47.1, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 2}}
