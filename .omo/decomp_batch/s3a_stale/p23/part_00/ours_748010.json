@@ -1,0 +1,57 @@
+{
+ "symbol": "?LoadFromINI2@UnitTypeClass@@QAGHH@Z",
+ "sym_key": "UnitTypeClass::LoadFromINI2",
+ "size": 143,
+ "link_base": 0,
+ "bytes_hex": "8b44240881ec08010000568bb424100100005056e80000000085c07c6885f6741c8d4c2407518bcee800000000b800000000890689460489460889460c8bcee8000000008bcee8000000008b86580e000085c0742e8b96600e00006800000000526a008d4424146a0050e80000000083c41432d28d4c2408e8000000008986580e000033c05e81c408010000c20800",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__SaveLoad_Prefix@@YGHPAXH@Z",
+   "sym_key": "TechnoTypeClass__SaveLoad_Prefix"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Construct@TechnoTypeClass@@QAEPAV1@H@Z",
+   "sym_key": "TechnoTypeClass::Construct"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?vt_UnitTypeClass_4@@3PAXA",
+   "sym_key": "vt_UnitTypeClass_4"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?LoadAnim@VoxelAnimType@@QAEHXZ",
+   "sym_key": "VoxelAnimType::LoadAnim"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Load2DArt@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::Load2DArt"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?Ext@@YAHPBX0@Z",
+   "sym_key": "Ext"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH0HZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  }
+ ]
+}

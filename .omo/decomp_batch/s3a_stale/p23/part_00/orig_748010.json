@@ -1,0 +1,11 @@
+{
+ "addr": "0x748010",
+ "name": "UnitTypeClass::LoadFromINI2",
+ "size": 154,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x748010",
+ "bytes_hex": "8b44240881ec08010000568bb424100100005056e8c7e2fcff85c07c7385f674278d4c2407518bcee80398fcffc70618627f00c74604fc617f00c74608f4617f00c7460cec617f008bcee8b100ebff8bcee80a10ebff8b86580e000085c0742e8d965e0e0000684c838100526a008d4424146a0050e8661f080083c41432d28d4c2408e818c0e6ff8986580e000033c05e81c408010000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

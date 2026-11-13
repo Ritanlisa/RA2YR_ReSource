@@ -1,0 +1,135 @@
+{
+ "symbol": "?UpdateInfantryIdleWander@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::UpdateInfantryIdleWander",
+ "size": 731,
+ "link_base": 0,
+ "bytes_hex": "83ec145355568bf18d4c2418578b065156ff90b80100008b8ef00000008b0083f95a894424147c77b867666666f7e9d1fa8bc2c1e81f03d08bc18bfab90500000099f7f983fa04754c8b15000000006a026a008d8a68050300e8000000008d04408d0480d1e08986f00000008b0d000000008b442410898ef8000000b9010000008bf8898e040100008986fc000000898e000100008bc75f5e5d5b83c414c38bc1b91e00000099f7f983fa1d75238b15000000006a026a008d8a18020000e8000000008d04408d0480d1e08986f00000008b0d000000008b5424108dbe7c060000b80100000085ff898ef80000008986040100008996fc000000898600010000750d6803400080e80000000083c4048b07578b08ff511084c00f85be0000008b96cc0600008a82180e000084c00f84b2000000c744241000000000b3078b7c2410fec38a54241680e30781e700ffffff8ac383e0078b0c8500000000c1f91002ca8d54241c81e1ff000000520bf9b900000000897c2420e8000000008ba8e400000085ed741c8b450055ff502c83f80175108b8dc40600008a81180e000084c075108b4424104083f808894424107d39eb8f8b85a405000085c075218b85b402000085c075178b55006a015655ff9280040000c786dc060000ffffffff5f5e5d5b83c414c38b7c24108b86ac05000085c075ea8b86bc02000085c075e083bedc060000ff7420a1000000006a026a008d8818020000e80000000085c074088b9edc060000eb1d8b0d000000006a076a0081c118020000e8000000008bd8899edc0600008a5424148bc383e00781e700ffffff8a0c850000000002ca8b14850000000081e1ff0000008d44241c0bcf8b7c2416c1fa1003d75033d181e2ff00000033d1b90000000089542420e8000000008b2e8d4c241451b9000000008bf8e8000000008bce89442410e8000000008b5424106a015250535756ff95ac01000085c00f850cffffff8b066a015756ff90800400005f5e5d5b83c414c3",
+ "relocs": [
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 344,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 367,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 376,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 519,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 534,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 567,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 597,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 606,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 643,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 652,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 664,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 671,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 682,
+   "type": "REL32",
+   "sym": "?GetLandHeight@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetLandHeight"
+  }
+ ]
+}

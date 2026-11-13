@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x728540 ObjectClass::sub_728540 -> ObjectClass
+[conv] 0x72d460 CampaignScore::LoadScreenAssets -> CampaignScore
+[conv] 0x732210 SelectFactionThemeMusic_Helper -> SelectFactionThemeMusic
+[conv] 0x736579 InfantryClass::UpdateBehavior -> InfantryClass
+[conv] 0x736990 UnitClass::UpdateRotation_TurretFacing_EMP -> UnitClass
+[conv] 0x737180 TechnoClass::UpdateInfantryIdleWander -> TechnoClass
+[conv] 0x738680 TechnoClass::CreateDeathAnim -> TechnoClass
+[conv] 0x739ec0 BuildingClass::ProcessSell -> BuildingClass
+[conv] 0x73cec0 TechnoClass::Draw -> TechnoClass
+[conv] 0x73e5e0 VoxelTypeClass::ReadINI -> VoxelTypeClass
+[conv] 0x740810 UnitClass::ProcessAIDecision -> UnitClass
+[conv] 0x7438f0 UnitClass::CanCrushTarget -> UnitClass
+[conv] 0x7468c0 UnitClass::CheckForNearbyEnemies -> UnitClass
+[conv] 0x748010 UnitTypeClass::LoadFromINI2 -> UnitTypeClass
+[conv] 0x749b20 VoxelAnimClass::DrawVoxelFrame -> VoxelAnimClass
+[conv] 0x749f30 VoxelAnimClass::Update -> VoxelAnimClass
+[conv] 0x74de90 InitializeVeinholeSystem -> _addr_74
+[conv] 0x74f620 ObjectClass::DestroyVeinholeMonster_Destroy -> ObjectClass
+[conv] 0x74fdc0 GetModuleVersion -> _addr_74
+[conv] 0x74ff50 VeterancyStruct::Accumulate -> VeterancyStruct
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] CampaignScore            rc=2
+[era] SelectFactionThemeMusic  rc=2
+[era] InfantryClass            rc=2
+[era] UnitClass                rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] VoxelTypeClass           rc=2
+[era] UnitTypeClass            rc=0
+[era] VoxelAnimClass           rc=2
+[era] _addr_74                 rc=2
+[era] VeterancyStruct          rc=2
+=== diffasm byte-compare ===
+[diff] 0x737180   MISMATCH         TechnoClass::UpdateInfantryIdleWander
+[diff] 0x748010   MISMATCH         UnitTypeClass::LoadFromINI2
+[ledger] 0x728540 ObjectClass::sub_728540 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x72d460 CampaignScore::LoadScreenAssets -> COMPILE_FAIL (attempt 5)
+[ledger] 0x732210 SelectFactionThemeMusic_Helper -> COMPILE_FAIL (attempt 3)
+[ledger] 0x736579 InfantryClass::UpdateBehavior -> COMPILE_FAIL (attempt 5)
+[ledger] 0x736990 UnitClass::UpdateRotation_TurretFacing_EMP -> COMPILE_FAIL (attempt 4)
+[ledger] 0x737180 TechnoClass::UpdateInfantryIdleWander -> NG (attempt 6)
+[ledger] 0x738680 TechnoClass::CreateDeathAnim -> COMPILE_FAIL (attempt 6)
+[ledger] 0x739ec0 BuildingClass::ProcessSell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x73cec0 TechnoClass::Draw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x73e5e0 VoxelTypeClass::ReadINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x740810 UnitClass::ProcessAIDecision -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7438f0 UnitClass::CanCrushTarget -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7468c0 UnitClass::CheckForNearbyEnemies -> COMPILE_FAIL (attempt 4)
+[ledger] 0x748010 UnitTypeClass::LoadFromINI2 -> NG (attempt 4)
+[ledger] 0x749b20 VoxelAnimClass::DrawVoxelFrame -> COMPILE_FAIL (attempt 6)
+[ledger] 0x749f30 VoxelAnimClass::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x74de90 InitializeVeinholeSystem -> COMPILE_FAIL (attempt 6)
+[ledger] 0x74f620 ObjectClass::DestroyVeinholeMonster_Destroy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74fdc0 GetModuleVersion -> COMPILE_FAIL (attempt 7)
+[ledger] 0x74ff50 VeterancyStruct::Accumulate -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p23\batch_report.json
