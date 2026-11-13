@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x55f1e0 ObjectClass::DrawHUD -> ObjectClass
+[conv] 0x561180 ObjectClass::Team_Start -> ObjectClass
+[conv] 0x568300 LayerClass::CoordinatesLegal -> LayerClass
+[conv] 0x568350 Tactical::IsCellVisible -> Tactical
+[conv] 0x56da10 ObjectClass::GetRegionMap -> ObjectClass
+[conv] 0x576ba0 CellClass::PropagateTerrainVariant5 -> CellClass
+[conv] 0x578460 LayerClass::IsWithinUsableArea -> LayerClass
+[conv] 0x578540 Type::CheckAmbiguity -> Type
+[conv] 0x57acf0 GenerateMapClassCliffTransitions -> _addr_57
+[conv] 0x57cf60 CellClass::ApplyTileModification3 -> CellClass
+[conv] 0x583180 Pathfinding::CrossBridge -> Pathfinding
+[conv] 0x586360 Cell::IsPassable -> Cell
+[conv] 0x5889f0 globalHelper_0889F0 -> _addr_58
+[conv] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x589680 Init -> _addr_58
+[conv] 0x58bdc0 TileData::Constructor -> TileData
+[conv] 0x58ef10 ObjectClass::ResetMapState -> ObjectClass
+[conv] 0x595680 MapSeedClass::Constructor -> MapSeedClass
+[conv] 0x595bc0 CCFileClass::Load -> CCFileClass
+[conv] 0x595ce0 ObjectClass::CleanupRandomMapCache -> ObjectClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] LayerClass               rc=2
+[era] Tactical                 rc=2
+[era] CellClass                rc=2
+[era] Type                     rc=2
+[era] _addr_57                 rc=2
+[era] Pathfinding              rc=2
+[era] Cell                     rc=2
+[era] _addr_58                 rc=2
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=2
+[era] TileData                 rc=2
+[era] MapSeedClass             rc=2
+[era] CCFileClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x55f1e0 ObjectClass::DrawHUD -> COMPILE_FAIL (attempt 4)
+[ledger] 0x561180 ObjectClass::Team_Start -> COMPILE_FAIL (attempt 4)
+[ledger] 0x568300 LayerClass::CoordinatesLegal -> COMPILE_FAIL (attempt 2)
+[ledger] 0x568350 Tactical::IsCellVisible -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56da10 ObjectClass::GetRegionMap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x576ba0 CellClass::PropagateTerrainVariant5 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x578460 LayerClass::IsWithinUsableArea -> COMPILE_FAIL (attempt 13)
+[ledger] 0x578540 Type::CheckAmbiguity -> COMPILE_FAIL (attempt 10)
+[ledger] 0x57acf0 GenerateMapClassCliffTransitions -> COMPILE_FAIL (attempt 6)
+[ledger] 0x57cf60 CellClass::ApplyTileModification3 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x583180 Pathfinding::CrossBridge -> COMPILE_FAIL (attempt 6)
+[ledger] 0x586360 Cell::IsPassable -> COMPILE_FAIL (attempt 13)
+[ledger] 0x5889f0 globalHelper_0889F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> COMPILE_FAIL (attempt 3)
+[ledger] 0x589680 Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58bdc0 TileData::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x58ef10 ObjectClass::ResetMapState -> COMPILE_FAIL (attempt 6)
+[ledger] 0x595680 MapSeedClass::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x595bc0 CCFileClass::Load -> COMPILE_FAIL (attempt 4)
+[ledger] 0x595ce0 ObjectClass::CleanupRandomMapCache -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p11\batch_report.json

@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x55f1e0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x561180",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x568300",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x568350",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x56da10",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x576ba0",
+  "family": "stale_adhoc"
+ },
+ {
+  "addr": "0x578460",
+  "family": "stale_cw3_B"
+ },
+ {
+  "addr": "0x578540",
+  "family": "stale_adhoc"
+ },
+ {
+  "addr": "0x57acf0",
+  "family": "stale_B3"
+ },
+ {
+  "addr": "0x57cf60",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x583180",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x586360",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x5889f0",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x5892d0",
+  "family": "stale_stale_cw5|CW5-8/9/12 shell supply"
+ },
+ {
+  "addr": "0x589680",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x58bdc0",
+  "family": "stale_stale_cw5|CW5-8/9/12 shell supply"
+ },
+ {
+  "addr": "0x58ef10",
+  "family": "stale_C7"
+ },
+ {
+  "addr": "0x595680",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x595bc0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x595ce0",
+  "family": "stale_batch"
+ }
+]

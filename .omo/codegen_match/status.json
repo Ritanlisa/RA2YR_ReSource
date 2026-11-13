@@ -88841,7 +88841,7 @@
   "this_as_id": false
  },
  "0x55f1e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89115,7 +89115,7 @@
   "this_as_id": false
  },
  "0x561180": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89632,7 +89632,7 @@
   "this_as_id": false
  },
  "0x568300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89644,7 +89644,7 @@
   "this_as_id": false
  },
  "0x568350": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -90088,7 +90088,7 @@
   "this_as_id": false
  },
  "0x56da10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90569,14 +90569,14 @@
   "this_as_id": false
  },
  "0x576ba0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CellClass::PropagateTerrainVariant5",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::PropagateTerrainVariant5",
-  "rule_violations": 0,
+  "rule_violations": 21,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -90703,7 +90703,7 @@
   "this_as_id": false
  },
  "0x578460": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90715,11 +90715,16 @@
   "this_as_id": false
  },
  "0x578540": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Type::CheckAmbiguity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Type::CheckAmbiguity",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5785f0": {
   "attempts": 1,
@@ -90952,7 +90957,7 @@
   "this_as_id": false
  },
  "0x57acf0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "GenerateMapClassCliffTransitions",
@@ -91116,7 +91121,7 @@
   "this_as_id": false
  },
  "0x57cf60": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -91398,7 +91403,7 @@
   "this_as_id": false
  },
  "0x583180": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -91604,7 +91609,7 @@
   "this_as_id": false
  },
  "0x586360": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -91830,7 +91835,7 @@
   "this_as_id": false
  },
  "0x5889f0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_0889F0",
@@ -92167,7 +92172,7 @@
   "this_as_id": false
  },
  "0x5892d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -92246,7 +92251,7 @@
   "this_as_id": false
  },
  "0x589680": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Init",
@@ -93545,7 +93550,7 @@
   "this_as_id": false
  },
  "0x58bdc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93860,7 +93865,7 @@
   "this_as_id": false
  },
  "0x58ef10": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94168,14 +94173,14 @@
   "this_as_id": false
  },
  "0x595680": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MapSeedClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MapSeedClass::Constructor",
-  "rule_violations": 3,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94216,7 +94221,7 @@
   "this_as_id": false
  },
  "0x595bc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94228,7 +94233,7 @@
   "this_as_id": false
  },
  "0x595ce0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
