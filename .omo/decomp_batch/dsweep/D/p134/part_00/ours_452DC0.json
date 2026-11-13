@@ -1,0 +1,129 @@
+{
+ "symbol": "?DemolishBridge@BuildingClass@@QAEXXZ",
+ "sym_key": "BuildingClass::DemolishBridge",
+ "size": 664,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec2885c0535556578bf90f857a0200008b87200500008a88be16000084c90f84660200008b7424206aff6a00568bcfe80000000085c0894424100f844a0200008b0850ff918401000083f8130f84380200008b0d0000000033db85c9895c24140f8624020000a1000000008b10389abf160000751b4383c0043bd90f83050200008b1080babf1600000074e9895c24143bd90f83f20100008b078d4c242c5157ff504833d283e6078a50058b44241824008d34b588f689000bc28974241c8a4e028d6e028944241824008a54241a896c242002ca8d54242481e1ff000000520bc88be9b9f8010000896c2428e8000000008bc8e8000000003b4424100f84ba000000eb048b5c2414a1000000008b0f578b34988b1eff513c5056ff938c0000000fbf542424c1e20881c2800000008bf08b4424188954242c0fbf5424262400c744243400000000894424188b0ec1e208c1e80781c28000000040d1e825ff00000089542430508d4424305056ff91d800000084c00f84ea0000008b5424208a4c24268b74241c81e500ffffff8a1a8d44242402cb5081e1ff0000000be9b9f8010000896c2428e8000000008bc8e8000000003b4424100f8548ffffff8b0f8d54242c5257ff51488b5424208b7c242033c980e2008a4805bd7e0000000bca894c24248d442424b9f801000050e8000000008bd88bcbe80000000083f8ff74096a0c8bcbe800000000396b44750953e80000000083c404668b0e8b542424668b460203ca33cf8d54242481e1ff0000005233f98b4c242a03c1b9f801000033c725ff00000033f8897c2428e8000000008bc8e8000000003b44241075865f5e5d5b83c428c385f674088b066a0156ff50208b4c24206a00518bcfe8000000005f5e5d5b83c428c3895c24145f5e5d5b83c428c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?FindBridgeSegment@BuildingClass@@QAEHHDH@Z",
+   "sym_key": "BuildingClass::FindBridgeSegment"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_TriggerClassCount@@3IA",
+   "sym_key": "g_TriggerClassCount"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 243,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  },
+  {
+   "off": 420,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 429,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 436,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 493,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 499,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 508,
+   "type": "REL32",
+   "sym": "?FindByCellHash@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::FindByCellHash"
+  },
+  {
+   "off": 522,
+   "type": "REL32",
+   "sym": "?ReduceTiberium@CellClass@@QAEHH@Z",
+   "sym_key": "CellClass::ReduceTiberium"
+  },
+  {
+   "off": 533,
+   "type": "REL32",
+   "sym": "?Helper_486E30@@YAHPAX@Z",
+   "sym_key": "Helper_486E30"
+  },
+  {
+   "off": 575,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 593,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 600,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 640,
+   "type": "REL32",
+   "sym": "?DemolishBridgeAnim@BuildingClass@@QAEDHD@Z",
+   "sym_key": "BuildingClass::DemolishBridgeAnim"
+  }
+ ]
+}

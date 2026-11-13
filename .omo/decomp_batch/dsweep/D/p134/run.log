@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p134\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f3ad0 TechnoClass::ComputeTransform -> TechnoClass
+[conv] 0x783800 WOLobby::BuildPlayerList -> WOLobby
+[conv] 0x587180 CellClass::SetTerrainType -> CellClass
+[conv] 0x781d20 WOLobby::BuildStateList -> WOLobby
+[conv] 0x697840 ObjectManager::CleanupArrays -> ObjectManager
+[conv] 0x4723b0 CaptureManagerClass::DecideUnitFate -> CaptureManagerClass
+[conv] 0x50ba00 ObjectClass::ComputeSessionColorVector -> ObjectClass
+[conv] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> TechnoClass
+[conv] 0x740b60 TechnoClass::FindBestMovementDirection -> TechnoClass
+[conv] 0x7adcd0 HashTable::Insert -> HashTable
+[conv] 0x79ce70 ObjectClass::RefreshChannelListWOL -> ObjectClass
+[conv] 0x6832c0 ScenarioClass::Constructor -> ScenarioClass
+[conv] 0x6f6ca0 TechnoClass::FinishDeploy -> TechnoClass
+[conv] 0x6d5730 TechnoClass::RenderBridgeRadarBlips -> TechnoClass
+[conv] 0x452dc0 BuildingClass::DemolishBridge -> BuildingClass
+[conv] 0x5b9c90 RandomMap::RegenerateRandomMapPreview -> RandomMap
+[conv] 0x7d9038 __nextafter -> _addr_7D
+[conv] 0x4faa10 HouseClass::CancelProduction -> HouseClass
+[conv] 0x6ed4d0 TechnoClass::ProcessBorderTower -> TechnoClass
+[conv] 0x5c1a10 MPCooperative::CopyTo -> MPCooperative
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] WOLobby                  rc=0
+[era] CellClass                rc=2
+[era] ObjectManager            rc=2
+[era] CaptureManagerClass      rc=2
+[era] ObjectClass              rc=2
+[era] HashTable                rc=0
+[era] ScenarioClass            rc=0
+[era] BuildingClass            rc=0
+[era] RandomMap                rc=2
+[era] _addr_7D                 rc=2
+[era] HouseClass               rc=0
+[era] MPCooperative            rc=2
+=== diffasm byte-compare ===
+[diff] 0x783800   MISMATCH         WOLobby::BuildPlayerList
+[diff] 0x781d20   MISMATCH         WOLobby::BuildStateList
+[diff] 0x7adcd0   MISMATCH         HashTable::Insert
+[diff] 0x6832c0   MISMATCH         ScenarioClass::Constructor
+[diff] 0x452dc0   MISMATCH         BuildingClass::DemolishBridge
+[diff] 0x4faa10   MISMATCH         HouseClass::CancelProduction
+[ledger] 0x6f3ad0 TechnoClass::ComputeTransform -> COMPILE_FAIL (attempt 1)
+[ledger] 0x783800 WOLobby::BuildPlayerList -> NG (attempt 1)
+[ledger] 0x587180 CellClass::SetTerrainType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x781d20 WOLobby::BuildStateList -> NG (attempt 1)
+[ledger] 0x697840 ObjectManager::CleanupArrays -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4723b0 CaptureManagerClass::DecideUnitFate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50ba00 ObjectClass::ComputeSessionColorVector -> COMPILE_FAIL (attempt 1)
+[ledger] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x740b60 TechnoClass::FindBestMovementDirection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7adcd0 HashTable::Insert -> NG (attempt 1)
+[ledger] 0x79ce70 ObjectClass::RefreshChannelListWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6832c0 ScenarioClass::Constructor -> NG (attempt 1)
+[ledger] 0x6f6ca0 TechnoClass::FinishDeploy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d5730 TechnoClass::RenderBridgeRadarBlips -> COMPILE_FAIL (attempt 1)
+[ledger] 0x452dc0 BuildingClass::DemolishBridge -> NG (attempt 1)
+[ledger] 0x5b9c90 RandomMap::RegenerateRandomMapPreview -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d9038 __nextafter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4faa10 HouseClass::CancelProduction -> NG (attempt 1)
+[ledger] 0x6ed4d0 TechnoClass::ProcessBorderTower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c1a10 MPCooperative::CopyTo -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "extern_reloc": 2,
+  "width_mismatch": 1,
+  "codegen_shape": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p134\batch_report.json

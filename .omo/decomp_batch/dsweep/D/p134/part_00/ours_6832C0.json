@@ -1,0 +1,171 @@
+{
+ "symbol": "?Constructor@ScenarioClass@@QAEHXZ",
+ "sym_key": "ScenarioClass::Constructor",
+ "size": 651,
+ "link_base": 0,
+ "bytes_hex": "53558be95633db570fbe85180200005350e80000000083c408e800000000898514060000899d1c060000e800000000898520060000899d28060000a1540a0000899df41100008985ec110000889dfc110000a1540a0000899d2412000089851c1200008b0d540a0000898d28120000899d30120000a1540a0000899d3c1200008985341200008b15540a0000899540120000899d48120000a1540a0000899d5412000089854c120000a1540a00008db5e034000053538bce8985c8340000899dd0340000e800000000891e8db5fc340000bf0a00000053538bce899df034000089bdf4340000e800000000891e8db51835000053538bce89bd10350000899d0c350000e8000000008bcd89bd2c350000899d28350000891ee8000000008bcd899d3c360000899dc8340000e8000000008b8534060000c7855812000001000000c785d8340000ffffffff885d04899d14010000b9be0200008b1500000000891083c0044975f28b8564130000680000000050e8000000008b8de0130000680000000051e800000000bf0000000083c9ff33c06800000000f2aef7d12bf98bd18bf78bbd60120000c1e902f3a58bca83e103f3a4bf0000000083c9fff2aef7d12bf98bc18bf78bbd581c0000c1e902f3a58bc833c083e103f3a4bf0000000083c9fff2aef7d12bf98bd18bf78bbdc0130000c1e902f3a58bca83e103f3a48b855814000050e80000000083c41833f68dbd301d000083fe32885fd87317381f7413881f8bcec785b434000001000000e8000000004683c72983fe327cd833f68dbd2c25000083fe64885fd87317381f7413881f8bcec785b434000001000000e8000000004683c72983fe647cd85f899d94340000899d9a340000899d9e340000899da23400008bc55e5d5bc3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?SeedInitRNG@@YAPAIHH@Z",
+   "sym_key": "SeedInitRNG"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?TechnoTypeConstructor@TypeList@@QAEPAIHH@Z",
+   "sym_key": "TypeList::TechnoTypeConstructor"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?Construct@VectorClass@@QAEPAIHH@Z",
+   "sym_key": "VectorClass::Construct"
+  },
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?Construct@VectorClass@@QAEPAIHH@Z",
+   "sym_key": "VectorClass::Construct"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?InitTimer@ScenarioClass@@QAEPAGXZ",
+   "sym_key": "ScenarioClass::InitTimer"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?ResetIntroFlags@ScenarioClass@@QAEIXZ",
+   "sym_key": "ScenarioClass::ResetIntroFlags"
+  },
+  {
+   "off": 346,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B05458@@3IA",
+   "sym_key": "DataGlobal_B05458"
+  },
+  {
+   "off": 365,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 371,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 382,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 388,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 393,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 403,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 436,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 474,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 517,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 559,
+   "type": "REL32",
+   "sym": "?UpdateAllTypes@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::UpdateAllTypes"
+  },
+  {
+   "off": 607,
+   "type": "REL32",
+   "sym": "?ProcessAll@TriggerActionQueue@@QAEHXZ",
+   "sym_key": "TriggerActionQueue::ProcessAll"
+  }
+ ]
+}

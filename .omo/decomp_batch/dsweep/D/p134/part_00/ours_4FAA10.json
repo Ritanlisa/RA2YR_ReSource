@@ -1,0 +1,81 @@
+{
+ "symbol": "?CancelProduction@HouseClass@@QAEHPAXHDD@Z",
+ "sym_key": "HouseClass::CancelProduction",
+ "size": 359,
+ "link_base": 0,
+ "bytes_hex": "53558b6c241056578b7c241485ed8bd97c238bd58bcfe80000000083ff06740b83ff07740633c08bc8eb0c8b80080e00008bc8eb0233c98d47ff83f8270f871801000033d28a9000000000ff2495000000008a44241c84c074258bb3b8530000eb218bb3ac530000eb1983f90575108bb3cc530000eb0c8bb3b0530000eb048b74241c85f60f84d00000008b465085c07e0485ed7d0485c974078b465885c0742a8b465885c075075f5e5d5bc210008b0850ff91880000008b1050ff52403be874095f5e5d33c05bc21000565557b9f8010000e80000000083ff07740583ff0675216a00b9f8010000c6059c13000000c605a013000000c605a4130000ffe80000000056e8000000008b4e5033c083c4043bc874108bcee8000000005f5e5d33c05bc210008a4c241c84c974178983b85300008b066a0156ff50205f5e5d33c05bc210008983b45300008b066a0156ff50205f5e5d33c05bc210005f5e5db8030000005bc21000",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__GetByTypeAndIndex@@YIHHH@Z",
+   "sym_key": "TechnoTypeClass__GetByTypeAndIndex"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "$L2041",
+   "sym_key": "$L2041"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "$L2042",
+   "sym_key": "$L2042"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?RouteFactoryRemoval@HouseClass@@QAEDHHPAX@Z",
+   "sym_key": "HouseClass::RouteFactoryRemoval"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?SetBounds@Mouse@@QAEHPAX@Z",
+   "sym_key": "Mouse::SetBounds"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?BuildingClass__AbandonProduction@@YAHH@Z",
+   "sym_key": "BuildingClass__AbandonProduction"
+  },
+  {
+   "off": 280,
+   "type": "REL32",
+   "sym": "?StartProduction_2@FactoryClass@@QAEDXZ",
+   "sym_key": "FactoryClass::StartProduction_2"
+  }
+ ]
+}
