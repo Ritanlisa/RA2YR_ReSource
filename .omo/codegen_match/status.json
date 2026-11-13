@@ -9486,6 +9486,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x41aa80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": null,
+  "name": "AircraftClass::AssignDestination_SyncLog",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AircraftClass::AssignDestination_SyncLog",
+  "rule_violations": 18,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x41adc0": {
   "attempts": 1,
   "clean": false,
@@ -13493,6 +13505,18 @@
   "orig_name": "AbstractClass::getMapCoords",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x426a90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "AnimFile::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AnimFile::ddtor",
+  "rule_violations": 7,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x426dd0": {
@@ -28144,6 +28168,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x47ec90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x20",
+  "name": "BuildingPlacement::RenderBuildingPlacementPreview",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "BuildingPlacement::RenderBuildingPlacementPreview",
+  "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x47efe0": {
   "attempts": 1,
   "clean": false,
@@ -36672,6 +36708,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x49b930": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::UpdateScoreScreenStatistics",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UpdateScoreScreenStatistics",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x49bc80": {
   "attempts": 1,
   "clean": false,
@@ -43848,6 +43896,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4b9890": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "DisplayBuildingInfoPanel",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DisplayBuildingInfoPanel",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4b9bd0": {
   "attempts": 1,
   "clean": true,
@@ -48742,6 +48801,18 @@
   "orig_name": "JumpjetLocomotionClass::ProcessLocomotionStep",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4ccc80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "FlyLocomotionClass::UpdateFootLocomotion",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::UpdateFootLocomotion",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4ccfd0": {
@@ -61198,6 +61269,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4f2300": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::ProcessGraphicMenu",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ProcessGraphicMenu",
+  "rule_violations": 9,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4f2640": {
   "attempts": 1,
   "clean": false,
@@ -63050,6 +63133,18 @@
   "orig_name": "HouseClass::SDDTORAllAndTriggers",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4fb9b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "AbstractClass::RemoveObjectFromHouse",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AbstractClass::RemoveObjectFromHouse",
+  "rule_violations": 62,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4fbd00": {
@@ -76028,6 +76123,18 @@
   "name": "0x53b560",
   "note": "decomp_batch r2: NO_PSEUDO",
   "status": "PENDING"
+ },
+ "0x53b780": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0x1c",
+  "name": "ObjectClass::ApplyChronoScreenColorShift",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "ApplyChronoScreenColorShift",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x53bad0": {
   "attempts": 1,
@@ -97694,6 +97801,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5c2710": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "MPCooperative::SyncState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MPCooperative::SyncState",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5c2a60": {
   "attempts": 1,
   "clean": false,
@@ -104415,6 +104534,18 @@
   "orig_name": "GameConfig::Constructor",
   "rule_violations": 14,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5d6890": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::FindStartingCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ObserverClass::FindStartingCell",
+  "rule_violations": 20,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5d6be0": {
@@ -155169,6 +155300,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6e8a90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+35 mov dword ptr [esi + 0x34], ebx",
+  "name": "TeamClass::Construct",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "MissionClass::Construct",
+  "rule_violations": 6,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6e8de0": {
   "attempts": 1,
   "clean": false,
@@ -155748,6 +155891,18 @@
   "orig_name": "TeamClass::ScoreMember",
   "rule_violations": 2,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6ef110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 mov ebx, ecx",
+  "name": "ObjectClass::DispatchTeamOrders",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DispatchTeamOrders",
+  "rule_violations": 21,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ef450": {
@@ -175544,6 +175699,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x756860": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0x68",
+  "name": "ObjectClass::InitializeTileAudioOcclusion",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "InitializeTileAudioOcclusion",
+  "rule_violations": 18,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x756bb0": {
   "attempts": 1,
   "clean": false,
@@ -187662,6 +187829,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x77e430": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Game::EncodeGameSetupState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Game::EncodeGameSetupState",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x77e780": {
   "attempts": 2,
   "clean": true,
@@ -189504,6 +189683,18 @@
   "name": "CChatEventSink::DispatchStub_41",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_41",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7a9200": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CChatEventSink::DispatchStub_28",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_28",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -206260,6 +206451,50 @@
   "name": "WriteConsoleA",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "WriteConsoleA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7de200": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "ConvertRGB24to556",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "ConvertRGB24to556",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7de53a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "ConvertRGB24toRGB565",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "ConvertRGB24toRGB565",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7de87a": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "ConvertRGB24to655",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "ConvertRGB24to655",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7debba": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "ConvertRGB24to565",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "ConvertRGB24to565",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

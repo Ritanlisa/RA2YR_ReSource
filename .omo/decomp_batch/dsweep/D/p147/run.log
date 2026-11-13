@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p147\part_00
+=== convert (20 addrs) ===
+[conv] 0x426a90 AnimFile::ddtor -> AnimFile
+[conv] 0x7de200 ConvertRGB24to556 -> _addr_7D
+[conv] 0x4f2300 ObjectClass::ProcessGraphicMenu -> ObjectClass
+[conv] 0x4b9890 DisplayBuildingInfoPanel -> _addr_4B
+[conv] 0x41aa80 AircraftClass::AssignDestination_SyncLog -> AircraftClass
+[conv] 0x7de53a ConvertRGB24toRGB565 -> _addr_7D
+[conv] 0x7de87a ConvertRGB24to655 -> _addr_7D
+[conv] 0x7debba ConvertRGB24to565 -> _addr_7D
+[conv] 0x6ef110 ObjectClass::DispatchTeamOrders -> ObjectClass
+[conv] 0x6e8a90 TeamClass::Construct -> TeamClass
+[conv] 0x5c2710 MPCooperative::SyncState -> MPCooperative
+[conv] 0x49b930 TechnoClass::UpdateScoreScreenStatistics -> TechnoClass
+[conv] 0x47ec90 BuildingPlacement::RenderBuildingPlacementPreview -> BuildingPlacement
+[conv] 0x4ccc80 FlyLocomotionClass::UpdateFootLocomotion -> FlyLocomotionClass
+[conv] 0x756860 ObjectClass::InitializeTileAudioOcclusion -> ObjectClass
+[conv] 0x53b780 ObjectClass::ApplyChronoScreenColorShift -> ObjectClass
+[conv] 0x4fb9b0 AbstractClass::RemoveObjectFromHouse -> AbstractClass
+[conv] 0x7a9200 CChatEventSink::DispatchStub_28 -> CChatEventSink
+[conv] 0x5d6890 MultiplayerGameMode::FindStartingCell -> MultiplayerGameMode
+[conv] 0x77e430 Game::EncodeGameSetupState -> Game
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AnimFile                 rc=2
+[era] _addr_7D                 rc=0
+[era] ObjectClass              rc=2
+[era] _addr_4B                 rc=2
+[era] AircraftClass            rc=2
+[era] TeamClass                rc=0
+[era] MPCooperative            rc=2
+[era] TechnoClass              rc=2
+[era] BuildingPlacement        rc=0
+[era] FlyLocomotionClass       rc=2
+[era] AbstractClass            rc=2
+[era] CChatEventSink           rc=2
+[era] MultiplayerGameMode      rc=2
+[era] Game                     rc=2
+=== diffasm byte-compare ===
+[diff] 0x7de200   MISMATCH         ConvertRGB24to556
+[diff] 0x7de53a   MISMATCH         ConvertRGB24toRGB565
+[diff] 0x7de87a   MISMATCH         ConvertRGB24to655
+[diff] 0x7debba   MISMATCH         ConvertRGB24to565
+[diff] 0x6ef110   MISMATCH         ObjectClass::DispatchTeamOrders
+[diff] 0x756860   MISMATCH         ObjectClass::InitializeTileAudioOcclusion
+[diff] 0x53b780   MISMATCH         ObjectClass::ApplyChronoScreenColorShift
+[diff] 0x6e8a90   MISMATCH         TeamClass::Construct
+[diff] 0x47ec90   MISMATCH         BuildingPlacement::RenderBuildingPlacementPreview
+[ledger] 0x426a90 AnimFile::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7de200 ConvertRGB24to556 -> NG (attempt 1)
+[ledger] 0x4f2300 ObjectClass::ProcessGraphicMenu -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b9890 DisplayBuildingInfoPanel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41aa80 AircraftClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7de53a ConvertRGB24toRGB565 -> NG (attempt 1)
+[ledger] 0x7de87a ConvertRGB24to655 -> NG (attempt 1)
+[ledger] 0x7debba ConvertRGB24to565 -> NG (attempt 1)
+[ledger] 0x6ef110 ObjectClass::DispatchTeamOrders -> NG (attempt 1)
+[ledger] 0x6e8a90 TeamClass::Construct -> NG (attempt 1)
+[ledger] 0x5c2710 MPCooperative::SyncState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49b930 TechnoClass::UpdateScoreScreenStatistics -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47ec90 BuildingPlacement::RenderBuildingPlacementPreview -> NG (attempt 1)
+[ledger] 0x4ccc80 FlyLocomotionClass::UpdateFootLocomotion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x756860 ObjectClass::InitializeTileAudioOcclusion -> NG (attempt 1)
+[ledger] 0x53b780 ObjectClass::ApplyChronoScreenColorShift -> NG (attempt 1)
+[ledger] 0x4fb9b0 AbstractClass::RemoveObjectFromHouse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a9200 CChatEventSink::DispatchStub_28 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d6890 MultiplayerGameMode::FindStartingCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77e430 Game::EncodeGameSetupState -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "extern_reloc": 4,
+  "codegen_shape": 1,
+  "width_mismatch": 1,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p147\batch_report.json

@@ -1,0 +1,99 @@
+{
+ "symbol": "?InitializeTileAudioOcclusion@ObjectClass@@QAEHHPAM@Z",
+ "sym_key": "ObjectClass::InitializeTileAudioOcclusion",
+ "size": 718,
+ "link_base": 0,
+ "bytes_hex": "83ec605355568b74247033d233db8b46048a51148b4910578d044033ffd946248b04818b4e0803c1897c2418dc05000000008d0c808d2cc88b4424788b4c2474d820d80d000000008a9caaa10000008b44aa0480e100894424240bd933c9dd5c24448a8caaa00000008b5424488b4424445250894c2418e800000000d905000000008bac24800000006689442444d84628d94504d8e9d80d00000000dd1c24ddd8e800000000db4640d945006689442446d8c1dd1c24ddd8e8000000008bc88b842480000000db464433c881e1ff00000033c1894640d94504d8c1dd1c24ddd8e800000000db4424188bc88b44242433c8dd5c243c8b6c244081e1ff00000033c155894424288946448b54244052e80000000066894424548b4424445550e8000000008b4c244c55516689842480000000e800000000d94634d8662866894424668bc325ff00000083c4188944247cdb44247cd8f9d80d00000000dd1c24ddd8e8000000008b6e3c8b4c24448b5640668944246a8b44244683c40885ed894c247889542428894424140f843501000084db0f842d0100008b542474895424748b542410897c243c85d2894c2430894424340f84d500000089542420eb048b4c24788b542424833cbaff0f84890000008b7c242881e1ffff00008bd0c1f808c1e90881e200ff0000660fb6f00bca8b54241c33c003f28a4424798d54244c03f88bd98b4d0081e6ffff000081e7ffff00005255897c245489742458ff51288d4c24548944242c8b45004751897c24588b7c241c5589742460ff50288b54242c85c08b4424140f94c185d20f94c2889300000000888b000000008b742446668b4c244466014c24788b54242003c64783fa01894424140f94c14a897c241884c9895424200f8435ffffff8b5424108b4424608b4c24308b74243403c88b442462894c247803c68b74243c894424148d3c168b5424744a897c2418895424740f85ddfeffff8bc25f5e5d5b83c460c20800",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "__real@8@40068000000000000000",
+   "sym_key": "_real@8@40068000000000000000"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2224@@3MA",
+   "sym_key": "DataGlobal_7E2224"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F695C@@3MA",
+   "sym_key": "DataGlobal_7F695C"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2224@@3MA",
+   "sym_key": "DataGlobal_7E2224"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 287,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 306,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 343,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2224@@3MA",
+   "sym_key": "DataGlobal_7E2224"
+  },
+  {
+   "off": 353,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 590,
+   "type": "DIR32",
+   "sym": "?g_VoxelRenderBuffer@@3PADA",
+   "sym_key": "g_VoxelRenderBuffer"
+  },
+  {
+   "off": 596,
+   "type": "DIR32",
+   "sym": "?g_VoxelDepthBuffer@@3PAEA",
+   "sym_key": "g_VoxelDepthBuffer"
+  }
+ ]
+}
