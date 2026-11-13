@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsSameType@GScreenClass@@QAG_NH@Z",
+ "sym_key": "GScreenClass::IsSameType",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b442404508b08ff51180fbe157003000033c93bd00f94c18ac1c20800",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

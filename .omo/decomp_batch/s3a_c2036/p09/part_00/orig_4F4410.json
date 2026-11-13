@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F4410",
+ "name": "Hash::InsertOrdered",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F4410",
+ "bytes_hex": "8b01568b74240856ff502c84c0740632c05ec20400a154efa80085c0740e8b16508bceff5210b0015ec20400893554efa800b0015ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

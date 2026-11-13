@@ -1,0 +1,21 @@
+{
+ "symbol": "?InsertOrdered@GScreenClass@@QAEDH@Z",
+ "sym_key": "GScreenClass::InsertOrdered",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "8b01538b5c24085351ff502c84c07413a07003000084c0740a8b0b0fbed05253ff5110881d70030000b0015bc20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

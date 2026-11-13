@@ -1,0 +1,81 @@
+{
+ "symbol": "?Vtable@GScreenClass@@QAEHPAH00@Z",
+ "sym_key": "GScreenClass::Vtable",
+ "size": 197,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec085355568bf18b085750ff512c8b5c24208903a100000000508b10ff52308b6c2424894500a19411000085c074438b0850ff515c85c074088b166a0056ff5238a1000000008b0d0000000089442420a194110000890d00000000508b10ff52288b7c241c89078b442420a300000000eb2a8b0d00000000e8000000008b7c241c25ffff0000890774128b0d00000000e80000000025ffff000089078b0b8b068b5500894c24108d4c241089542414515756ff50285f5e5d5b83c408c20c00",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_BinkMoviePlayer@@3IA",
+   "sym_key": "g_BinkMoviePlayer"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?Process@EventQueue@@QAEFXZ",
+   "sym_key": "EventQueue::Process"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?g_BinkMoviePlayer@@3IA",
+   "sym_key": "g_BinkMoviePlayer"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?Read@EventQueue@@QAEFXZ",
+   "sym_key": "EventQueue::Read"
+  }
+ ]
+}

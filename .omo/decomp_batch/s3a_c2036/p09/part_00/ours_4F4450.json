@@ -1,0 +1,15 @@
+{
+ "symbol": "?SelectObject@GScreenClass@@QAEDH@Z",
+ "sym_key": "GScreenClass::SelectObject",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b01568b7424085651ff502c84c0740f8b0e56ff5124a27003000024010c015ec20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}

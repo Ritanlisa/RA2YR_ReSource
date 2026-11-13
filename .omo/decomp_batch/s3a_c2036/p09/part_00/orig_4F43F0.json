@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F43F0",
+ "name": "COMObject::IsSameType",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F43F0",
+ "bytes_hex": "8b4c24048b01ff50188b1554efa80033c93bd00f94c18ac1c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F42B0",
+ "name": "COMObject::DtorSequence",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F42B0",
+ "bytes_hex": "568bf18b06ff501c8b168bceff52205ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

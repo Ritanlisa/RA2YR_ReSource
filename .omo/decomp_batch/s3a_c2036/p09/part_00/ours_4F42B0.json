@@ -1,0 +1,8 @@
+{
+ "symbol": "?DtorSequence@GScreenClass@@QAEHH@Z",
+ "sym_key": "GScreenClass::DtorSequence",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff501c8b0e56ff51205ec20400",
+ "relocs": []
+}

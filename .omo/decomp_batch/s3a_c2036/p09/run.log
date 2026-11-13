@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ee820 _DynamicVectorClass_PAVVoxelAnimTypeClass::SetCapacity -> _DynamicVectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4ee940 _VectorClass_PAVIsometricTileTypeClass::Release -> _VectorClass_PAVIsometricTileTypeClass
+[conv] 0x4eea80 _DynamicVectorClass_PAVIsometricTileTypeClass::SetCapacity_0 -> _DynamicVectorClass_PAVIsometricTileTypeClass
+[conv] 0x4eeba0 _VectorClass_PAVParticleTypeClass::Release -> _VectorClass_PAVParticleTypeClass
+[conv] 0x4eece0 _DynamicVectorClass_PAVParticleTypeClass::SetCapacity -> _DynamicVectorClass_PAVParticleTypeClass
+[conv] 0x4eee00 _VectorClass_PAVParticleSystemTypeClass::Release -> _VectorClass_PAVParticleSystemTypeClass
+[conv] 0x4eef40 _DynamicVectorClass_PAVParticleSystemTypeClass::SetCapacity_0 -> _DynamicVectorClass_PAVParticleSystemTypeClass
+[conv] 0x4ef060 _VectorClass_PAVSuperWeaponTypeClass::Release -> _VectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4ef1a0 _DynamicVectorClass_PAVSuperWeaponTypeClass::SetCapacity_1 -> _DynamicVectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4ef2c0 _VectorClass_PAVAbstractTypeClass::Release -> _VectorClass_PAVAbstractTypeClass
+[conv] 0x4ef400 _DynamicVectorClass_PAVAbstractTypeClass::SetCapacity -> _DynamicVectorClass_PAVAbstractTypeClass
+[conv] 0x4f42b0 GScreenClass::DtorSequence -> GScreenClass
+[conv] 0x4f4320 GScreenClass::Vtable -> GScreenClass
+[conv] 0x4f43f0 GScreenClass::IsSameType -> GScreenClass
+[conv] 0x4f4410 GScreenClass::InsertOrdered -> GScreenClass
+[conv] 0x4f4450 GScreenClass::SelectObject -> GScreenClass
+[conv] 0x4f4c00 GScreenClass::getHouseHandle -> GScreenClass
+[conv] 0x4f54a0 HouseClass::Construct -> HouseClass
+[conv] 0x4f7140 HouseClass::Destruct -> HouseClass
+[conv] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> FactoryClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PAVIsometricTileTypeClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileTypeClass rc=0
+[era] _VectorClass_PAVParticleTypeClass rc=0
+[era] _DynamicVectorClass_PAVParticleTypeClass rc=0
+[era] _VectorClass_PAVParticleSystemTypeClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemTypeClass rc=0
+[era] _VectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _DynamicVectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _VectorClass_PAVAbstractTypeClass rc=0
+[era] _DynamicVectorClass_PAVAbstractTypeClass rc=0
+[era] GScreenClass             rc=2
+[era] HouseClass               rc=2
+[era] FactoryClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x4ee820   MISMATCH         _DynamicVectorClass_PAVVoxelAnimTypeClass::SetCapacity
+[diff] 0x4ee940   MISMATCH         _VectorClass_PAVIsometricTileTypeClass::Release
+[diff] 0x4eea80   MISMATCH         _DynamicVectorClass_PAVIsometricTileTypeClass::SetCapacity_0
+[diff] 0x4eeba0   MISMATCH         _VectorClass_PAVParticleTypeClass::Release
+[diff] 0x4eece0   MISMATCH         _DynamicVectorClass_PAVParticleTypeClass::SetCapacity
+[diff] 0x4eee00   MISMATCH         _VectorClass_PAVParticleSystemTypeClass::Release
+[diff] 0x4eef40   MISMATCH         _DynamicVectorClass_PAVParticleSystemTypeClass::SetCapacity_0
+[diff] 0x4ef060   MISMATCH         _VectorClass_PAVSuperWeaponTypeClass::Release
+[diff] 0x4ef1a0   MISMATCH         _DynamicVectorClass_PAVSuperWeaponTypeClass::SetCapacity_1
+[diff] 0x4ef2c0   MISMATCH         _VectorClass_PAVAbstractTypeClass::Release
+[diff] 0x4ef400   MISMATCH         _DynamicVectorClass_PAVAbstractTypeClass::SetCapacity
+[diff] 0x4f42b0   MISMATCH         GScreenClass::DtorSequence
+[diff] 0x4f4320   MISMATCH         GScreenClass::Vtable
+[diff] 0x4f43f0   MISMATCH         GScreenClass::IsSameType
+[diff] 0x4f4410   MISMATCH         GScreenClass::InsertOrdered
+[diff] 0x4f4450   MISMATCH         GScreenClass::SelectObject
+[ledger] 0x4ee820 _DynamicVectorClass_PAVVoxelAnimTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4ee940 _VectorClass_PAVIsometricTileTypeClass::Release -> NG (attempt 2)
+[ledger] 0x4eea80 _DynamicVectorClass_PAVIsometricTileTypeClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x4eeba0 _VectorClass_PAVParticleTypeClass::Release -> NG (attempt 2)
+[ledger] 0x4eece0 _DynamicVectorClass_PAVParticleTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4eee00 _VectorClass_PAVParticleSystemTypeClass::Release -> NG (attempt 2)
+[ledger] 0x4eef40 _DynamicVectorClass_PAVParticleSystemTypeClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x4ef060 _VectorClass_PAVSuperWeaponTypeClass::Release -> NG (attempt 2)
+[ledger] 0x4ef1a0 _DynamicVectorClass_PAVSuperWeaponTypeClass::SetCapacity_1 -> NG (attempt 2)
+[ledger] 0x4ef2c0 _VectorClass_PAVAbstractTypeClass::Release -> NG (attempt 2)
+[ledger] 0x4ef400 _DynamicVectorClass_PAVAbstractTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4f42b0 GScreenClass::DtorSequence -> NG (attempt 2)
+[ledger] 0x4f4320 GScreenClass::Vtable -> NG (attempt 2)
+[ledger] 0x4f43f0 GScreenClass::IsSameType -> NG (attempt 2)
+[ledger] 0x4f4410 GScreenClass::InsertOrdered -> NG (attempt 2)
+[ledger] 0x4f4450 GScreenClass::SelectObject -> NG (attempt 2)
+[ledger] 0x4f4c00 GScreenClass::getHouseHandle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f54a0 HouseClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f7140 HouseClass::Destruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "codegen_shape": 13,
+  "extern_reloc": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p09\batch_report.json
