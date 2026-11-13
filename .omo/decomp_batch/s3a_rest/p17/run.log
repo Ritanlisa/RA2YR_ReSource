@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> DriveLocomotionClass
+[conv] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> DriveLocomotionClass
+[conv] 0x4b0ad0 JumpjetLocomotion::MoveTo -> JumpjetLocomotion
+[conv] 0x4b0df0 ObjectClass::sub_4B0DF0 -> ObjectClass
+[conv] 0x4b4d00 DriveLocomotionClass::ProcessMove -> DriveLocomotionClass
+[conv] 0x4b4fb0 DropListClass::SetFocus -> DropListClass
+[conv] 0x4b53e0 EditClass::sub_4B53E0 -> EditClass
+[conv] 0x4b5530 DropListClass::OnKeyDown -> DropListClass
+[conv] 0x4b5ab0 DropPodLocomotionClass::SmallFunc_4B5AB0 -> DropPodLocomotionClass
+[conv] 0x4b5b70 DropPodLocomotionClass::ILoco_Process -> DropPodLocomotionClass
+[conv] 0x4b6040 DropPodLocomotionClass::UpdateMovementPosition -> DropPodLocomotionClass
+[conv] 0x4b6470 DropPodLocomotionClass::QueryInterface -> DropPodLocomotionClass
+[conv] 0x4b66a0 DropPodLocomotionClass::AddRef -> DropPodLocomotionClass
+[conv] 0x4b66b0 DropPodLocomotionClass::Release -> DropPodLocomotionClass
+[conv] 0x4b66f0 DropPodLocomotionClass::ProcessMove -> DropPodLocomotionClass
+[conv] 0x4b6ab0 ObjectClass::sub_4B6AB0 -> ObjectClass
+[conv] 0x4b6c30 LoadScreen::RenderLoop -> LoadScreen
+[conv] 0x4ba770 DSurface::CreatePrimary -> DSurface
+[conv] 0x4bac60 DSurface::CreateBackBuffer -> DSurface
+[conv] 0x4bad80 DSurface::Lock -> DSurface
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DriveLocomotionClass     rc=2
+[era] JumpjetLocomotion        rc=2
+[era] ObjectClass              rc=2
+[era] DropListClass            rc=2
+[era] EditClass                rc=2
+[era] DropPodLocomotionClass   rc=2
+[era] LoadScreen               rc=2
+[era] DSurface                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b0ad0 JumpjetLocomotion::MoveTo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b0df0 ObjectClass::sub_4B0DF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b4d00 DriveLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b4fb0 DropListClass::SetFocus -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b53e0 EditClass::sub_4B53E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b5530 DropListClass::OnKeyDown -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b5ab0 DropPodLocomotionClass::SmallFunc_4B5AB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b5b70 DropPodLocomotionClass::ILoco_Process -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b6040 DropPodLocomotionClass::UpdateMovementPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b6470 DropPodLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b66a0 DropPodLocomotionClass::AddRef -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b66b0 DropPodLocomotionClass::Release -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b66f0 DropPodLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b6ab0 ObjectClass::sub_4B6AB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b6c30 LoadScreen::RenderLoop -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ba770 DSurface::CreatePrimary -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4bac60 DSurface::CreateBackBuffer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4bad80 DSurface::Lock -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p17\batch_report.json

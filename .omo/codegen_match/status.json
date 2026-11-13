@@ -43816,7 +43816,7 @@
   "this_as_id": false
  },
  "0x4b04d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43828,7 +43828,7 @@
   "this_as_id": false
  },
  "0x4b0500": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -43840,7 +43840,7 @@
   "this_as_id": false
  },
  "0x4b0ad0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -43864,7 +43864,7 @@
   "this_as_id": false
  },
  "0x4b0df0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -44192,7 +44192,7 @@
   "status": "OK"
  },
  "0x4b4d00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -44363,7 +44363,7 @@
   "this_as_id": false
  },
  "0x4b4fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -44442,14 +44442,14 @@
   "this_as_id": false
  },
  "0x4b53e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "EditClass::sub_4B53E0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_4B53E0",
-  "rule_violations": 24,
+  "rule_violations": 26,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -44466,7 +44466,7 @@
   "this_as_id": false
  },
  "0x4b5530": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -44759,7 +44759,7 @@
   "this_as_id": false
  },
  "0x4b5ab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -44790,19 +44790,19 @@
   "this_as_id": false
  },
  "0x4b5b70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DropPodLocomotionClass::ILoco_Process",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DroppodLocomotionClass::ILoco_Process",
-  "rule_violations": 4,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4b6040": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -44898,7 +44898,7 @@
   "this_as_id": false
  },
  "0x4b6470": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -45054,7 +45054,7 @@
   "this_as_id": false
  },
  "0x4b66a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -45066,7 +45066,7 @@
   "this_as_id": false
  },
  "0x4b66b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -45097,7 +45097,7 @@
   "status": "OK"
  },
  "0x4b66f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -45337,7 +45337,7 @@
   "this_as_id": false
  },
  "0x4b6ab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -45397,14 +45397,14 @@
   "this_as_id": false
  },
  "0x4b6c30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "LoadScreen::RenderLoop",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LoadScreen::RenderLoop",
-  "rule_violations": 111,
+  "rule_violations": 110,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -45928,7 +45928,7 @@
   "this_as_id": false
  },
  "0x4ba770": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -45940,14 +45940,14 @@
   "this_as_id": false
  },
  "0x4bac60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DSurface::CreateBackBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DSurface::CreateBackBuffer",
-  "rule_violations": 2,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -45966,14 +45966,14 @@
   "status": "OK"
  },
  "0x4bad80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DSurface::Lock",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DSurface::Lock",
-  "rule_violations": 2,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
