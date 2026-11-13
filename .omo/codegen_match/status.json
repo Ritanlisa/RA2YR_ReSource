@@ -71101,7 +71101,7 @@
   "this_as_id": false
  },
  "0x5206b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -72768,7 +72768,7 @@
   "this_as_id": false
  },
  "0x527b90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -72816,7 +72816,7 @@
   "this_as_id": false
  },
  "0x527f20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73868,7 +73868,7 @@
   "this_as_id": false
  },
  "0x52d870": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_52D870",
@@ -73990,7 +73990,7 @@
   "this_as_id": false
  },
  "0x530460": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -74455,7 +74455,7 @@
   "this_as_id": false
  },
  "0x535d90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -74510,7 +74510,7 @@
   "this_as_id": false
  },
  "0x535e50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -79490,7 +79490,7 @@
   "this_as_id": false
  },
  "0x53e4f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -79502,7 +79502,7 @@
   "this_as_id": false
  },
  "0x53e550": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82996,7 +82996,7 @@
   "this_as_id": false
  },
  "0x54db50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83322,15 +83322,15 @@
   "this_as_id": false
  },
  "0x54e360": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, ecx",
   "name": "ObjectClass::sub_54E360",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_54E360",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x54e3b0": {
@@ -84131,7 +84131,7 @@
   "this_as_id": false
  },
  "0x550260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85243,7 +85243,7 @@
   "this_as_id": false
  },
  "0x554af0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89598,7 +89598,7 @@
   "this_as_id": false
  },
  "0x568e40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89610,7 +89610,7 @@
   "this_as_id": false
  },
  "0x569760": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -89718,7 +89718,7 @@
   "this_as_id": false
  },
  "0x56b5a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89730,7 +89730,7 @@
   "this_as_id": false
  },
  "0x56b780": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89754,7 +89754,7 @@
   "this_as_id": false
  },
  "0x56b9a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89766,7 +89766,7 @@
   "this_as_id": false
  },
  "0x56bac0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -90892,7 +90892,7 @@
   "this_as_id": false
  },
  "0x57b790": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_54E360@ObjectClass@@QAEPAIH@Z",
+ "sym_key": "ObjectClass::sub_54E360",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "518bc1ba010000008b0d540a0000890833c989480888481088481489501889480c88502088481c8b15540a00008b4c24008910894804c740086400000059c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

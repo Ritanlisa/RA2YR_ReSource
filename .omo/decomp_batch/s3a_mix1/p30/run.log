@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x5206b0 TechnoClass::FireTechnoAtTarget -> TechnoClass
+[conv] 0x527b90 INIClass::ReadDouble -> INIClass
+[conv] 0x527f20 INIClass::GetRect -> INIClass
+[conv] 0x52d870 sub_52D870 -> _addr_52
+[conv] 0x530460 MixFile::LoadAll -> MixFile
+[conv] 0x535d90 SetStructureTabCommandClass::performAction_6 -> SetStructureTabCommandClass
+[conv] 0x535e50 SetDefenseTabCommandClass::performAction_11 -> SetDefenseTabCommandClass
+[conv] 0x53e4f0 ObjectClass::WinMain_Helper_53E4F0 -> ObjectClass
+[conv] 0x53e550 ObjectClass::WinMain_Write -> ObjectClass
+[conv] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> JumpjetLocomotionClass
+[conv] 0x54e360 ObjectClass::sub_54E360 -> ObjectClass
+[conv] 0x550260 TacticalClass::RenderCells -> TacticalClass
+[conv] 0x554af0 TacticalClass::ScrollView -> TacticalClass
+[conv] 0x568e40 Terrain::PlaceCliffs -> Terrain
+[conv] 0x569760 TechnoClass::DestroyCliffMap -> TechnoClass
+[conv] 0x56b5a0 CellClass::LoadTerrainTiles -> CellClass
+[conv] 0x56b780 CellClass::CreateOverlay -> CellClass
+[conv] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> CellClass
+[conv] 0x56bac0 CellClass::DecompressTerrainData -> CellClass
+[conv] 0x57b790 MapClass::TriggerEVA -> MapClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] INIClass                 rc=2
+[era] _addr_52                 rc=2
+[era] MixFile                  rc=2
+[era] SetStructureTabCommandClass rc=2
+[era] SetDefenseTabCommandClass rc=2
+[era] ObjectClass              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] TacticalClass            rc=2
+[era] Terrain                  rc=2
+[era] CellClass                rc=2
+[era] MapClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x54e360   MISMATCH         ObjectClass::sub_54E360
+[ledger] 0x5206b0 TechnoClass::FireTechnoAtTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x527b90 INIClass::ReadDouble -> COMPILE_FAIL (attempt 2)
+[ledger] 0x527f20 INIClass::GetRect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52d870 sub_52D870 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x530460 MixFile::LoadAll -> COMPILE_FAIL (attempt 6)
+[ledger] 0x535d90 SetStructureTabCommandClass::performAction_6 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x535e50 SetDefenseTabCommandClass::performAction_11 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53e4f0 ObjectClass::WinMain_Helper_53E4F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53e550 ObjectClass::WinMain_Write -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54e360 ObjectClass::sub_54E360 -> NG (attempt 2)
+[ledger] 0x550260 TacticalClass::RenderCells -> COMPILE_FAIL (attempt 2)
+[ledger] 0x554af0 TacticalClass::ScrollView -> COMPILE_FAIL (attempt 2)
+[ledger] 0x568e40 Terrain::PlaceCliffs -> COMPILE_FAIL (attempt 2)
+[ledger] 0x569760 TechnoClass::DestroyCliffMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56b5a0 CellClass::LoadTerrainTiles -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56b780 CellClass::CreateOverlay -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56bac0 CellClass::DecompressTerrainData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57b790 MapClass::TriggerEVA -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p30\batch_report.json
