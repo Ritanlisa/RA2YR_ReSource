@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f1fa0 NullModemClass::DetectModem -> NullModemClass
+[conv] 0x5f3350 String::NormalizeNewlines -> String
+[conv] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> ObjectClass
+[conv] 0x5fb320 HotkeyOptions::DlgProc -> HotkeyOptions
+[conv] 0x5fd970 OverlayClass::HandleAction -> OverlayClass
+[conv] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> OverlayTypeClass
+[conv] 0x600250 _DynamicVectorClass_PAVSpotLightClass::FindItemIndex -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x602490 IsValidActionDialog -> _addr_60
+[conv] 0x603870 GetDialogControlSHP -> _addr_60
+[conv] 0x606740 SetDialogActiveFlag -> _addr_60
+[conv] 0x609cf0 sub_609CF0 -> _addr_60
+[conv] 0x609e20 FilterDialogButtonAction -> _addr_60
+[conv] 0x60b1d0 UI_Get_60B1D0 -> UI_Get
+[conv] 0x60d380 Campaign::Screen -> Campaign
+[conv] 0x610950 TriggerClass::FindByEventType -> TriggerClass
+[conv] 0x612b70 TabControl::WndProc -> TabControl
+[conv] 0x6153e0 BinkMovie::WndProc -> BinkMovie
+[conv] 0x616980 ButtonOwnerDraw::DlgProc -> ButtonOwnerDraw
+[conv] 0x61d950 TabControl::DlgProc -> TabControl
+[conv] 0x6211d0 DrawTextRendererTextAligned -> _addr_62
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] NullModemClass           rc=2
+[era] String                   rc=2
+[era] ObjectClass              rc=2
+[era] HotkeyOptions            rc=2
+[era] OverlayClass             rc=2
+[era] OverlayTypeClass         rc=2
+[era] _DynamicVectorClass_PAVSpotLightClass rc=2
+[era] _addr_60                 rc=2
+[era] UI_Get                   rc=2
+[era] Campaign                 rc=2
+[era] TriggerClass             rc=2
+[era] TabControl               rc=2
+[era] BinkMovie                rc=2
+[era] ButtonOwnerDraw          rc=2
+[era] _addr_62                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6211d0   MISMATCH         DrawTextRendererTextAligned
+[ledger] 0x5f1fa0 NullModemClass::DetectModem -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5f3350 String::NormalizeNewlines -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5fb320 HotkeyOptions::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5fd970 OverlayClass::HandleAction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 6)
+[ledger] 0x600250 _DynamicVectorClass_PAVSpotLightClass::FindItemIndex -> COMPILE_FAIL (attempt 3)
+[ledger] 0x602490 IsValidActionDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x603870 GetDialogControlSHP -> COMPILE_FAIL (attempt 4)
+[ledger] 0x606740 SetDialogActiveFlag -> COMPILE_FAIL (attempt 5)
+[ledger] 0x609cf0 sub_609CF0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x609e20 FilterDialogButtonAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x60b1d0 UI_Get_60B1D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x60d380 Campaign::Screen -> COMPILE_FAIL (attempt 4)
+[ledger] 0x610950 TriggerClass::FindByEventType -> COMPILE_FAIL (attempt 5)
+[ledger] 0x612b70 TabControl::WndProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6153e0 BinkMovie::WndProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x616980 ButtonOwnerDraw::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x61d950 TabControl::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6211d0 DrawTextRendererTextAligned -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p14\batch_report.json

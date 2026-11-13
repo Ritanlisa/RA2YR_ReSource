@@ -1,0 +1,99 @@
+{
+ "symbol": "?DrawTextRendererTextAligned@@YIHHPAH0PAGHHHPAVDSurface@@H@Z",
+ "sym_key": "Unnamed::DrawTextRendererTextAligned",
+ "size": 440,
+ "link_base": 0,
+ "bytes_hex": "83ec208bc1538b0d440a00008954240485c98944240c8bda750933c05b83c420c21c008b4c243c85c9750a8b0d00000000894c243c8a0d0000000055568bf0578b7c243481e6ff0000008b570c8b2fd3ee8b0d000000008954241c33d28a54241ad3e68b0d00000000d3fa8b0d00000000d3e28b0d000000000bf233d28ad48b4704d3fa8b0d00000000894424188b470889442414d3e28b4c24100bf285c975068b1d000000008d4c2410508b44243c8d5424385152508bcbe8000000008b4c24408d41ff83f8037748ff2485000000008b4424148b4c24342bc140992bc2d1f803e8eb2d8b5424348d4201992bc2d1f8f7d803e8eb1b8b54243483c8ff2bc203e8eb0e8b4c24148b4424342bc88d6c29ff8b44244448742148740e48752f8b4c241083c8ff2bc1eb208b5424108d4201992bc2d1f8f7d8eb108b44241c8b4c24102bc140992bc2d1f8014424188b078b7f048b4c24148b54241c89442420897c242403c103fa6a018bcb8944242c897c2430e8000000008d4424208bcb50e8000000008bcb56e8000000008b4c244c8b54243c8b442418518b4c243c528b5424505055515253e8000000002bc55f5e5d5b83c420c21c00",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?Layout@Text@@QAEDPAX00H@Z",
+   "sym_key": "Text::Layout"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "$L2145",
+   "sym_key": "$L2145"
+  },
+  {
+   "off": 372,
+   "type": "REL32",
+   "sym": "?Swap@Char@@QAEDD@Z",
+   "sym_key": "Char::Swap"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "?SetRect@TextGroup@@QAEPAIPAX@Z",
+   "sym_key": "TextGroup::SetRect"
+  },
+  {
+   "off": 392,
+   "type": "REL32",
+   "sym": "?Set@Property@@QAEFF@Z",
+   "sym_key": "Property::Set"
+  },
+  {
+   "off": 424,
+   "type": "REL32",
+   "sym": "?FontRenderer__DrawText@@YGHPAX0PAGHHHH@Z",
+   "sym_key": "FontRenderer__DrawText"
+  }
+ ]
+}
