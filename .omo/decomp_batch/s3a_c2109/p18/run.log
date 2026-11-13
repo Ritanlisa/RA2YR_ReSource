@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x6d4b50 PrintTimerOnTactical::Start -> PrintTimerOnTactical
+[conv] 0x6d9a50 Render_Render_6D9A50 -> Render_Render
+[conv] 0x6da230 DisplayClass::GetCoordDelta -> DisplayClass
+[conv] 0x6da5c0 BuildingClass::ProcessOccupancy -> BuildingClass
+[conv] 0x6dbd20 Tactical::InitMap -> Tactical
+[conv] 0x6dd5b0 ScriptAction::ParseScriptActionParams -> ScriptAction
+[conv] 0x6e1530 ScenarioClass::PrepareTextDisplay -> ScenarioClass
+[conv] 0x6e2c40 TActionClass::SpawnMeteorShower -> TActionClass
+[conv] 0x6e5b60 TagTypeClass::Construct -> TagTypeClass
+[conv] 0x6e5ed0 CCINIClass::ProcessSection -> CCINIClass
+[conv] 0x6e5fe0 ObjectClass::SaveTriggerTagsToINI -> ObjectClass
+[conv] 0x6e6080 TagTypeClass::GetAction -> TagTypeClass
+[conv] 0x6e6160 TagTypeClass::GetParameter -> TagTypeClass
+[conv] 0x6e85b0 ObjectClass::sub_6E85B0 -> ObjectClass
+[conv] 0x6f4960 TechnoClass::SetHouseFlag -> TechnoClass
+[conv] 0x6fd210 TechnoClass::CreateFireEffect -> TechnoClass
+[conv] 0x70aa60 TechnoClass::DrawPowerIndicator -> TechnoClass
+[conv] 0x70f1d0 ObjectClass::DrawBuildingRangeIndicator -> ObjectClass
+[conv] 0x7162f0 TechnoTypeClass::SaveLoad_Prefix -> TechnoTypeClass
+[conv] 0x71ca70 CCINIClass::LoadTypeFromINI -> CCINIClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] PrintTimerOnTactical     rc=2
+[era] Render_Render            rc=0
+[era] DisplayClass             rc=2
+[era] BuildingClass            rc=2
+[era] Tactical                 rc=2
+[era] ScriptAction             rc=2
+[era] ScenarioClass            rc=2
+[era] TActionClass             rc=2
+[era] TagTypeClass             rc=2
+[era] CCINIClass               rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] TechnoTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x6d9a50   MISMATCH         Render_Render_6D9A50
+[ledger] 0x6d4b50 PrintTimerOnTactical::Start -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d9a50 Render_Render_6D9A50 -> NG (attempt 2)
+[ledger] 0x6da230 DisplayClass::GetCoordDelta -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6da5c0 BuildingClass::ProcessOccupancy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6dbd20 Tactical::InitMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6dd5b0 ScriptAction::ParseScriptActionParams -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e1530 ScenarioClass::PrepareTextDisplay -> COMPILE_FAIL (attempt 15)
+[ledger] 0x6e2c40 TActionClass::SpawnMeteorShower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e5b60 TagTypeClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e5ed0 CCINIClass::ProcessSection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e5fe0 ObjectClass::SaveTriggerTagsToINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e6080 TagTypeClass::GetAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e6160 TagTypeClass::GetParameter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e85b0 ObjectClass::sub_6E85B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f4960 TechnoClass::SetHouseFlag -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6fd210 TechnoClass::CreateFireEffect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70aa60 TechnoClass::DrawPowerIndicator -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70f1d0 ObjectClass::DrawBuildingRangeIndicator -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7162f0 TechnoTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71ca70 CCINIClass::LoadTypeFromINI -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p18\batch_report.json

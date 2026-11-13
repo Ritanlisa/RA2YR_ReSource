@@ -157739,7 +157739,7 @@
   "status": "PENDING"
  },
  "0x6d4b50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -158156,14 +158156,14 @@
   "this_as_id": false
  },
  "0x6d9a50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x28",
   "name": "Render_Render_6D9A50",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Render_Render_6D9A50",
-  "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d9b50": {
@@ -158265,7 +158265,7 @@
   "status": "NG"
  },
  "0x6da230": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158330,14 +158330,14 @@
   "this_as_id": false
  },
  "0x6da5c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProcessOccupancy",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::ProcessOccupancy",
-  "rule_violations": 4,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -158460,14 +158460,14 @@
   "this_as_id": false
  },
  "0x6dbd20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "Tactical::InitMap",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Tactical::InitMap",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -159048,14 +159048,14 @@
   "this_as_id": false
  },
  "0x6dd5b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ScriptAction::ParseScriptActionParams",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ScriptAction::ParseScriptActionParams",
-  "rule_violations": 3,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -159319,7 +159319,7 @@
   "this_as_id": false
  },
  "0x6e1530": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159603,7 +159603,7 @@
   "this_as_id": false
  },
  "0x6e2c40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -160904,7 +160904,7 @@
   "this_as_id": false
  },
  "0x6e5b60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -160947,7 +160947,7 @@
   "status": "NG"
  },
  "0x6e5ed0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -160959,7 +160959,7 @@
   "this_as_id": false
  },
  "0x6e5fe0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -160971,7 +160971,7 @@
   "this_as_id": false
  },
  "0x6e6080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -160983,7 +160983,7 @@
   "this_as_id": false
  },
  "0x6e6160": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -161793,14 +161793,14 @@
   "this_as_id": false
  },
  "0x6e85b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::sub_6E85B0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_6E85B0",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -163936,7 +163936,7 @@
   "this_as_id": false
  },
  "0x6f4960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164487,7 +164487,7 @@
   "this_as_id": false
  },
  "0x6fd210": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165528,7 +165528,7 @@
   "this_as_id": false
  },
  "0x70aa60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -166630,7 +166630,7 @@
   "this_as_id": false
  },
  "0x70f1d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -167380,14 +167380,14 @@
   "this_as_id": false
  },
  "0x7162f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TechnoTypeClass::SaveLoad_Prefix",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TechnoTypeClass::SaveLoad_Prefix",
-  "rule_violations": 21,
+  "rule_violations": 14,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -169192,7 +169192,7 @@
   "this_as_id": false
  },
  "0x71ca70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

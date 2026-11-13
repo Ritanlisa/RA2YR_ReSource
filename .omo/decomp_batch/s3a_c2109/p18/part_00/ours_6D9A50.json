@@ -1,0 +1,45 @@
+{
+ "symbol": "?Render_Render_6D9A50@@YGHHHHH@Z",
+ "sym_key": "Unnamed::Render_Render_6D9A50",
+ "size": 244,
+ "link_base": 0,
+ "bytes_hex": "83ec208b150000000033c933c03bd1894c24000f86d500000053555657c744241404000000a1000000008b3401568b0eff512c83f8060f85860000008a868000000084c0747c8b168d4424205056ff922c0100008b108b0d000000008b58088b68048d3c0a33c98a0d00000000895c241c03df03cd395c24347d478b400c8b5c24388944241803c13bd87d368b4424348b5c243c03c33bc77e288b4424388b7c244003c73bc17e1a8b4c24188b44241c6a0051505552e800000000c68680000000008b4c24108b7424148d41018bce83c6048bd0897424148b35000000003bd6895424100f823bffffff5f5e5d5b83c420c21000",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A03A0@@3IA",
+   "sym_key": "DataGlobal_8A03A0"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0394@@3IA",
+   "sym_key": "DataGlobal_8A0394"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?Cell__CreateCrater@@YGDHHHHD@Z",
+   "sym_key": "Cell__CreateCrater"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A03A0@@3IA",
+   "sym_key": "DataGlobal_8A03A0"
+  }
+ ]
+}
