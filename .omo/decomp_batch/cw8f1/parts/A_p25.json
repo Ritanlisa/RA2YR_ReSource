@@ -1,0 +1,142 @@
+[
+ {
+  "addr": "0x720260",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x720280",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x7202a0",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x7202c0",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x7202e0",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x720340",
+  "family": "cw8f1",
+  "size": 33,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x7203d0",
+  "family": "cw8f1",
+  "size": 15,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x7203e0",
+  "family": "cw8f1",
+  "size": 18,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x720400",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x720420",
+  "family": "cw8f1",
+  "size": 23,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x721430",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x721460",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x721480",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x7214a0",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x7214c0",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x7215d0",
+  "family": "cw8f1",
+  "size": 15,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x7215e0",
+  "family": "cw8f1",
+  "size": 18,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x721600",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x721620",
+  "family": "cw8f1",
+  "size": 23,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x723a90",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ }
+]
