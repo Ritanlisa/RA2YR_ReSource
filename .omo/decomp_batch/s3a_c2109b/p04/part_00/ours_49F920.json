@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_49F920@@YA_NXZ",
+ "sym_key": "Unnamed::sub_49F920",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "83ec108d44240033c98a0d000000005068190002006a00516800000080e80000000085c075608d54240456528d4424148d4c241033d28a1500000000508b44240c516a005250c744242004000000e8000000008b4c24048bf051e80000000085f65e7522837c240804751bb900000000e8000000008b4c240c33d23bc80f94c28ac283c410c332c083c410c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?SubKey@@3EA",
+   "sym_key": "SubKey"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?RegOpenKeyExA@@YGJPAXPBDKK0@Z",
+   "sym_key": "RegOpenKeyExA"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?ValueName@@3EA",
+   "sym_key": "ValueName"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?RegQueryValueExA@@YGJPAXPBDPAI000@Z",
+   "sym_key": "RegQueryValueExA"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?RegCloseKey@@YGJH@Z",
+   "sym_key": "RegCloseKey"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_CoordScatterManager@@3IA",
+   "sym_key": "g_CoordScatterManager"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?Read@VersionInfo@@QAEHXZ",
+   "sym_key": "VersionInfo::Read"
+  }
+ ]
+}

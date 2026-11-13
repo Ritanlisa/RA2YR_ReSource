@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x47ab10 Game::FindGameDirectoryCD -> Game
+[conv] 0x47ca80 CellClass::DetermineTileType -> CellClass
+[conv] 0x4839f0 CellClass::SaveLoad_Prefix -> CellClass
+[conv] 0x486a70 CellClass::CreateFoggedObjects -> CellClass
+[conv] 0x48b1f0 CommBufferClass::sub_48B1F0 -> CommBufferClass
+[conv] 0x48ccc0 ObjectClass::MainGame -> ObjectClass
+[conv] 0x49b930 TechnoClass::UpdateScoreScreenStatistics -> TechnoClass
+[conv] 0x49c5a0 CampaignClass::SaveProgress -> CampaignClass
+[conv] 0x49d390 ObjectClass::LoadCoopCampaignSave -> ObjectClass
+[conv] 0x49db00 CampaignClass::LoadFromINI -> CampaignClass
+[conv] 0x49f920 sub_49F920 -> _addr_49
+[conv] 0x4a3660 ObjectClass::RenderTactical3DScene -> ObjectClass
+[conv] 0x4a3dd0 DDraw::LogError -> DDraw
+[conv] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> ObjectClass
+[conv] 0x4a40c0 ObjectClass::sub_4A40C0 -> ObjectClass
+[conv] 0x4a42f0 InitializeDDraw -> _addr_4A
+[conv] 0x4a4620 DDraw::CheckCapabilities -> DDraw
+[conv] 0x4a4700 ObjectClass::sub_4A4700 -> ObjectClass
+[conv] 0x4a83d0 sub_4A83D0 -> _addr_4A
+[conv] 0x4ab9b0 DisplayClass::ExecuteCommand -> DisplayClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Game                     rc=0
+[era] CellClass                rc=2
+[era] CommBufferClass          rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] CampaignClass            rc=2
+[era] _addr_49                 rc=0
+[era] DDraw                    rc=2
+[era] _addr_4A                 rc=2
+[era] DisplayClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x47ab10   MISMATCH         Game::FindGameDirectoryCD
+[diff] 0x49d390   MISMATCH         ObjectClass::LoadCoopCampaignSave
+[diff] 0x49f920   MISMATCH         sub_49F920
+[diff] 0x4a83d0   MISMATCH         sub_4A83D0
+[ledger] 0x47ab10 Game::FindGameDirectoryCD -> NG (attempt 3)
+[ledger] 0x47ca80 CellClass::DetermineTileType -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4839f0 CellClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 4)
+[ledger] 0x486a70 CellClass::CreateFoggedObjects -> COMPILE_FAIL (attempt 4)
+[ledger] 0x48b1f0 CommBufferClass::sub_48B1F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48ccc0 ObjectClass::MainGame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49b930 TechnoClass::UpdateScoreScreenStatistics -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49c5a0 CampaignClass::SaveProgress -> COMPILE_FAIL (attempt 7)
+[ledger] 0x49d390 ObjectClass::LoadCoopCampaignSave -> NG (attempt 3)
+[ledger] 0x49db00 CampaignClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49f920 sub_49F920 -> NG (attempt 3)
+[ledger] 0x4a3660 ObjectClass::RenderTactical3DScene -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a3dd0 DDraw::LogError -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a40c0 ObjectClass::sub_4A40C0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a42f0 InitializeDDraw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a4620 DDraw::CheckCapabilities -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a4700 ObjectClass::sub_4A4700 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a83d0 sub_4A83D0 -> NG (attempt 3)
+[ledger] 0x4ab9b0 DisplayClass::ExecuteCommand -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 16
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p04\batch_report.json

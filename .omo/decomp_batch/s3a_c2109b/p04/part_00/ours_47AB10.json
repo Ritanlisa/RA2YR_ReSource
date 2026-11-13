@@ -1,0 +1,147 @@
+{
+ "symbol": "?FindGameDirectoryCD@Game@@QAEEPAD@Z",
+ "sym_key": "Game::FindGameDirectoryCD",
+ "size": 591,
+ "link_base": 0,
+ "bytes_hex": "8b44240481ec080100005332db85c0750c32c05b81c408010000c2040055565750e80000000033d28be88a150000000083c4043bea74648b3d0000000083c9ff33c0f2aef7d12bf98bc18bf7894424108bfa83c9ff33c0f2ae8b4424104f8bc833d2c1e902f3a58bc833c083e103f3a48bfd83c9fff2ae8a1500000000f7d12bf98bf78bfa8bd183c9fff2ae8bca4fc1e902f3a58bca83e103f3a4a1000000005055e8000000008bd083c40885d20f847e0100008bfa83c9ff33c0f2aef7d1490f84510100008bfa83c9fff2ae8d742414f7d12bf98bc68bd18bf78bf8c1e902f3a58bca33c083e103f3a48d7c241483c9fff2aef7d1498a4c0c1380f93a743280f95c742d8b3d0000000083c9fff2aef7d12bf98d5424148bf78bfa8bd183c9fff2ae8bca4fc1e902f3a58bca83e103f3a433c06a02a0000000008d4c24185051e80000000083c40c85c0756ba10000000085c00f84bd0000006a7850b301e80000000083c40883f8ff0f8ea70000008a15000000006a0880c24188542418e8000000008bf08d44241850e800000000894604c706000000008b0d0000000083c40885c9746b8b0185c074618bc88b0085c075f88931eb5f0fbe44241483c0bf85c07e536a7850e80000000083c40883f80275436a08b301e8000000008d4c24188bf051e800000000894604c706000000008b0d0000000083c40885c974128b0185c074088bc88b0085c075f88931eb068935000000008b1500000000526a00e8000000008bd083c40885d20f8582feffff55e80000000083c40433c084db5f5e5d5b0f94c081c408010000c20400",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?_strdup@@YAHPAXZZ",
+   "sym_key": "_strdup"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E41C@@3EA",
+   "sym_key": "DataGlobal_89E41C"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?asc_81C8FC@@3PAGA",
+   "sym_key": "asc_81C8FC"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E41C@@3EA",
+   "sym_key": "DataGlobal_89E41C"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?asc_81C8FC@@3PAGA",
+   "sym_key": "asc_81C8FC"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?asc_815E74@@3PAGA",
+   "sym_key": "asc_815E74"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?Str2@@3EA",
+   "sym_key": "Str2"
+  },
+  {
+   "off": 322,
+   "type": "REL32",
+   "sym": "_strncmp",
+   "sym_key": "strncmp"
+  },
+  {
+   "off": 334,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E414@@3IA",
+   "sym_key": "DataGlobal_89E414"
+  },
+  {
+   "off": 352,
+   "type": "REL32",
+   "sym": "?AlwaysFindYRCD@@YAHHH@Z",
+   "sym_key": "AlwaysFindYRCD"
+  },
+  {
+   "off": 370,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E414@@3IA",
+   "sym_key": "DataGlobal_89E414"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 396,
+   "type": "REL32",
+   "sym": "?_strdup@@YAHPAXZZ",
+   "sym_key": "_strdup"
+  },
+  {
+   "off": 411,
+   "type": "DIR32",
+   "sym": "?CmdLine_NoCD@@3HA",
+   "sym_key": "CmdLine_NoCD"
+  },
+  {
+   "off": 456,
+   "type": "REL32",
+   "sym": "?AlwaysFindYRCD@@YAHHH@Z",
+   "sym_key": "AlwaysFindYRCD"
+  },
+  {
+   "off": 473,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 485,
+   "type": "REL32",
+   "sym": "?_strdup@@YAHPAXZZ",
+   "sym_key": "_strdup"
+  },
+  {
+   "off": 500,
+   "type": "DIR32",
+   "sym": "?CmdLine_NoCD@@3HA",
+   "sym_key": "CmdLine_NoCD"
+  },
+  {
+   "off": 531,
+   "type": "DIR32",
+   "sym": "?CmdLine_NoCD@@3HA",
+   "sym_key": "CmdLine_NoCD"
+  },
+  {
+   "off": 537,
+   "type": "DIR32",
+   "sym": "?asc_81C8FC@@3PAGA",
+   "sym_key": "asc_81C8FC"
+  },
+  {
+   "off": 545,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 564,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  }
+ ]
+}
