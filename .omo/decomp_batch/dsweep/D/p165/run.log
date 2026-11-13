@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p165\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e2b50 TriColorGaugeClass::Draw -> TriColorGaugeClass
+[conv] 0x4f11b0 Options::DlgProc -> Options
+[conv] 0x4144b0 AircraftClass::Draw -> AircraftClass
+[conv] 0x7a1bb0 ObjectClass::MatchGameWOL -> ObjectClass
+[conv] 0x46bee0 BulletTypeClass::LoadFromINI -> BulletTypeClass
+[conv] 0x57e7a0 CreateCliffBridgeMap -> _addr_57
+[conv] 0x54bff0 MovementClass::CalcSpeed -> MovementClass
+[conv] 0x6812e0 GameOptions::SaveLoad -> GameOptions
+[conv] 0x64a0c0 ProcessNetworkFrameSync -> _addr_64
+[conv] 0x534450 Game::DestroyAllObjects -> Game
+[conv] 0x570ae0 CellClass::RecursiveTileUpdate -> CellClass
+[conv] 0x576200 CellClass::RecursiveCraterUpdate -> CellClass
+[conv] 0x5b8ce0 GameOptions::ReadSettings -> GameOptions
+[conv] 0x56cb90 Terrain::FloodFillConnectivity -> Terrain
+[conv] 0x6163a0 Checkbox::WndProc -> Checkbox
+[conv] 0x5596a0 LoadSaveDialog::FillList -> LoadSaveDialog
+[conv] 0x620050 DrawSurfaceLineAlpha -> _addr_62
+[conv] 0x50c340 HouseClass::FindBuildLocation -> HouseClass
+[conv] 0x50cbf0 HouseClass::FindSWBuilding -> HouseClass
+[conv] 0x41f580 AITriggerTypeClass::LoadFromINI -> AITriggerTypeClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TriColorGaugeClass       rc=2
+[era] Options                  rc=2
+[era] AircraftClass            rc=2
+[era] ObjectClass              rc=2
+[era] BulletTypeClass          rc=2
+[era] _addr_57                 rc=2
+[era] MovementClass            rc=0
+[era] GameOptions              rc=2
+[era] _addr_64                 rc=2
+[era] Game                     rc=2
+[era] CellClass                rc=2
+[era] Terrain                  rc=2
+[era] Checkbox                 rc=2
+[era] LoadSaveDialog           rc=2
+[era] _addr_62                 rc=0
+[era] HouseClass               rc=2
+[era] AITriggerTypeClass       rc=2
+=== diffasm byte-compare ===
+[diff] 0x54bff0   MISMATCH         MovementClass::CalcSpeed
+[diff] 0x6812e0   MISMATCH         GameOptions::SaveLoad
+[diff] 0x620050   MISMATCH         DrawSurfaceLineAlpha
+[ledger] 0x4e2b50 TriColorGaugeClass::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f11b0 Options::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4144b0 AircraftClass::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a1bb0 ObjectClass::MatchGameWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46bee0 BulletTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57e7a0 CreateCliffBridgeMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54bff0 MovementClass::CalcSpeed -> NG (attempt 1)
+[ledger] 0x6812e0 GameOptions::SaveLoad -> NG (attempt 1)
+[ledger] 0x64a0c0 ProcessNetworkFrameSync -> COMPILE_FAIL (attempt 1)
+[ledger] 0x534450 Game::DestroyAllObjects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x570ae0 CellClass::RecursiveTileUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x576200 CellClass::RecursiveCraterUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b8ce0 GameOptions::ReadSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56cb90 Terrain::FloodFillConnectivity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6163a0 Checkbox::WndProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5596a0 LoadSaveDialog::FillList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x620050 DrawSurfaceLineAlpha -> NG (attempt 1)
+[ledger] 0x50c340 HouseClass::FindBuildLocation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50cbf0 HouseClass::FindSWBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41f580 AITriggerTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p165\batch_report.json

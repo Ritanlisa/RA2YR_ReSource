@@ -1,0 +1,159 @@
+{
+ "symbol": "?DrawSurfaceLineAlpha@@YIDHPAH0FE@Z",
+ "sym_key": "Unnamed::DrawSurfaceLineAlpha",
+ "size": 1478,
+ "link_base": 0,
+ "bytes_hex": "83ec2c8b025355568b72048b54243c8bd9578b4a048b3a8be93bc7895c241c8974241489442410896c2424897c24207e16897c24108bee8bf8896c2424897c2420894c24148bf18b0353ff50708b0b8b54241056525389442438ff515c8bf085f60f8453050000396c24140f8583020000837c242c0175730fbf44244433c525ff00000033e88b4424102bf88bc5c1e0108bc84733cd897c244881e1ff000000c1ef0233c8575156e8000000000fbf4424508b4c24548ad08af283e1038bc28d3cbe8bf183c40cc1e010668bc253c1e902f3ab8bce83e103f3aa8b03ff5060b0015f5e5d5b83c42cc20c008b4424108bcf2bc80f88f40000008b4424488b6c244425ff000000bfff0000002bf84181e5ffff00008944243089442434897c243889742428894c2418896c24408b0d00000000668b1e8bd181e3ffff0000c1ea108bf28bc581e6ffff00008beb23c623ee0faf4424340fafef03c58b6c244081e1ffff000081ca00ffffffc1e8088bf123c28b54243023f523cb0faff20fafcf03f18b0d00000000c1ee0823f18b0d0000000081e1ffff00000bc68bf123cb23f50fafcf0faff203f1893d00000000c1ee080bf08b4424188bce8b74242889150000000066890e83c602488974242889442418740d8b7c243889542434e94bffffff8b6c24248b7c24208b5c241c397c24100f85fd0000008b0353ff50748bcd8b542414894424382bca51e80000000083c40485c00f8cda00000040894424348b1500000000668b068b7c24488b5c24448bca25ffff0000c1e910894c241881e1ffff0000894c242881e2ffff00008bc881e7ff000000bdff00000081e3ffff000023ca2bef23d30fafcd0fafd703ca8b542428895c24408b1d00000000c1e90823cb8bd823da892d000000000fafdd8b6c2440893d0000000023ea8b15000000000fafef03dd8b6c2418c1eb0823dd8b6c244081e2ffff00000bcb23c223d50faf05000000000fafd703c2c1e8080bc18b4c24386689068b44243403f148894424340f8537ffffff8b7c24208b6c24248b5c241c8b5424108b4c24142bfa8b132be953897c243c896c2444ff527485ed894424247d06f7d8894424248b4424408d2c3f50896c2418896c2438e80000000083c4048d0c003bf8894c24100f8f410100008bcd33ff2bc8897c243485c0894c24300f8e4d02000089442420837c242c01750c8a542444881437e9ce0000008b1500000000668b047e8b6c24488b5c24448bca25ffff0000c1e910894c241881e1ffff0000894c242881e2ffff00008bc881e5ff000000bfff00000081e3ffff000023ca2bfd23d30fafcf0fafd503ca8b542428895c24408b1d00000000c1e90823cb8bd823da893d000000000fafdf8b7c2440892d0000000023fa8b5424300faffd03df8b7c2418c1eb08895424388b150000000023df81e2ffff00000bcb8b5c244023c223d30faf05000000000fafd58b7c24348b6c24148b5c241c03c2c1e8080bc18b4c24386689047e85c97e0b8b44241047897c24342bc88b54242403cd03f28b54242083fa01894c24300f94c04a84c0895424200f84edfeffff8b1353ff526024015f5e5d0c015b83c42cc20c008bc133db2bc7895c242885ff894424300f8e08010000837c242c01750c8a542444881433e9d60000008b1500000000668b045e8b4c24448b7c24488bda81e1ffff0000c1eb1025ffff0000895c2418894c244081e7ff000000bdff00000081e3ffff00008bc82bef23cb896c2434892d000000000fafcd8b6c244081e2ffff000023eb8b5c24180fafef03cd8b6c2440c1e90881cb00ffffff893d0000000023cb8bd823da23d50faf5c24340fafd703da8b1500000000c1eb0823da8b542438895424408b150000000081e2ffff00000bcb23c223d50faf4424340fafd78b5c242803c28b6c24148b7c2440c1e8080bc18bcb6689044e8b4424308b4c241085c07e088b54242403f22bc503c1433bdf89442430895c24280f8cf8feffff8b5c241c8b1353ff526024015f5e5d0c015b83c42cc20c005f5e5d33c05b83c42cc20c00",
+ "relocs": [
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?memset32@@YAHPAXHHZZ",
+   "sym_key": "memset32"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 398,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenState@@3IA",
+   "sym_key": "g_CreditsScreenState"
+  },
+  {
+   "off": 426,
+   "type": "DIR32",
+   "sym": "?g_GameScreenConfig@@3IA",
+   "sym_key": "g_GameScreenConfig"
+  },
+  {
+   "off": 447,
+   "type": "DIR32",
+   "sym": "?g_GameScreenFlags@@3IA",
+   "sym_key": "g_GameScreenFlags"
+  },
+  {
+   "off": 523,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 545,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 633,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 648,
+   "type": "DIR32",
+   "sym": "?g_GameScreenConfig@@3IA",
+   "sym_key": "g_GameScreenConfig"
+  },
+  {
+   "off": 661,
+   "type": "DIR32",
+   "sym": "?g_GameScreenFlags@@3IA",
+   "sym_key": "g_GameScreenFlags"
+  },
+  {
+   "off": 669,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenState@@3IA",
+   "sym_key": "g_CreditsScreenState"
+  },
+  {
+   "off": 706,
+   "type": "DIR32",
+   "sym": "?g_GameScreenConfig@@3IA",
+   "sym_key": "g_GameScreenConfig"
+  },
+  {
+   "off": 813,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 882,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 971,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 986,
+   "type": "DIR32",
+   "sym": "?g_GameScreenConfig@@3IA",
+   "sym_key": "g_GameScreenConfig"
+  },
+  {
+   "off": 999,
+   "type": "DIR32",
+   "sym": "?g_GameScreenFlags@@3IA",
+   "sym_key": "g_GameScreenFlags"
+  },
+  {
+   "off": 1027,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenState@@3IA",
+   "sym_key": "g_CreditsScreenState"
+  },
+  {
+   "off": 1052,
+   "type": "DIR32",
+   "sym": "?g_GameScreenConfig@@3IA",
+   "sym_key": "g_GameScreenConfig"
+  },
+  {
+   "off": 1199,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 1268,
+   "type": "DIR32",
+   "sym": "?g_GameScreenConfig@@3IA",
+   "sym_key": "g_GameScreenConfig"
+  },
+  {
+   "off": 1311,
+   "type": "DIR32",
+   "sym": "?g_GameScreenFlags@@3IA",
+   "sym_key": "g_GameScreenFlags"
+  },
+  {
+   "off": 1335,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 1354,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenState@@3IA",
+   "sym_key": "g_CreditsScreenState"
+  }
+ ]
+}
