@@ -1,0 +1,33 @@
+{
+ "symbol": "?ReceivePacket@WinsockInterfaceClass@@QAGDPAD@Z",
+ "sym_key": "WinsockInterfaceClass::ReceivePacket",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b7424085056e80000000083f8ff7512e8000000008bcee80000000032c05ec208008bcee800000000b0015ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?gethostname@@YGHPAX0@Z",
+   "sym_key": "gethostname"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?WSAGetLastError@@YGHXZ",
+   "sym_key": "WSAGetLastError"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

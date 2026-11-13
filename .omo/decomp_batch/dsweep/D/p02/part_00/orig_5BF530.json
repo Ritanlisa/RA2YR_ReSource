@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BF530",
+ "name": "Game_Process",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BF530",
+ "bytes_hex": "a05cf3ab0084c0743be8f28ce4ffe8ad8de4ffe8888ee4ff8b0d58e78700ba00400000e8187ce4ff8b0d50e78700ba00400000e8087ce4ffe8b3401900c6055cf3ab0000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

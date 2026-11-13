@@ -1,0 +1,11 @@
+{
+ "addr": "0x632F90",
+ "name": "BlowPipe::QueryInterface",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x632F90",
+ "bytes_hex": "568bf1578b7e0cc706c8fd7e0085ff74108bcfe81850e0ff57e88f5b190083c4048bcec7460c00000000e8c1ecfffff644240c01740956e8715b190083c4048bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

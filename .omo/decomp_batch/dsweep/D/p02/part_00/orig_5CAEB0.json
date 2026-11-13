@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CAEB0",
+ "name": "MPCombatTeam::Constructor2",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CAEB0",
+ "bytes_hex": "51568bf16a1668f4ff820033d2b944008300e8999f1600508d4c2408e8ffb71e008d4424046a01508bcee871dd00008d4c2404e878b81e00c706f4e77e008bc65e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

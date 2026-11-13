@@ -1,0 +1,33 @@
+{
+ "symbol": "?ProcessTurn@MPCooperative@@QAEDXZ",
+ "sym_key": "MPCooperative::ProcessTurn",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e4085c9750432c05ec38d863c03000050e8000000008bcee80000000085c074198a8e4003000084c9740f508bcee800000000c68640030000008b4e4051e80000000083c4045ec3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?GetSectionID@Movie@@QAEDPAX@Z",
+   "sym_key": "Movie::GetSectionID"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?FindGameUI@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindGameUI"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?SetupMovie@Campaign@@QAEXH@Z",
+   "sym_key": "Campaign::SetupMovie"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?SerializeCampaignOptions@@YADPAX@Z",
+   "sym_key": "SerializeCampaignOptions"
+  }
+ ]
+}

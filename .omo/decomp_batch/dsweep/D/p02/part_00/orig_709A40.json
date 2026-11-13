@@ -1,0 +1,11 @@
+{
+ "addr": "0x709A40",
+ "name": "TechnoClass::CompleteFactoryProduction",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x709A40",
+ "bytes_hex": "568bf18b8e7402000085c9740c8b412885c07405e8671101008b068bceff90d004000084c075158b168bceff923004000084c074078bcee844ebf2ff32c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

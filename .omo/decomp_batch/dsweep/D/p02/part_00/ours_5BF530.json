@@ -1,0 +1,69 @@
+{
+ "symbol": "?Game_Process@@YIDPAX@Z",
+ "sym_key": "Unnamed::Game_Process",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "a0000000005684c08bf1743fe800000000e8000000008bcee8000000008b0d00000000ba00400000e8000000008b0d00000000ba00400000e8000000008bcee800000000c60500000000005ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF35C@@3EA",
+   "sym_key": "DataGlobal_ABF35C"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?DecrementAll@AudioTimer@@QAEPAHXZ",
+   "sym_key": "AudioTimer::DecrementAll"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?ProcessAudioTimer@@YAHXZ",
+   "sym_key": "ProcessAudioTimer"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?RequestAllBuffers@Mixer@@QAEHXZ",
+   "sym_key": "Mixer::RequestAllBuffers"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_MixerState@@3IA",
+   "sym_key": "g_MixerState"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Ambient@@3IA",
+   "sym_key": "g_MixerChannel_Ambient"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Pump@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Pump"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF35C@@3EA",
+   "sym_key": "DataGlobal_ABF35C"
+  }
+ ]
+}

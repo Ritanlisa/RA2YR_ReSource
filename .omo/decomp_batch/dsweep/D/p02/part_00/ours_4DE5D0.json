@@ -1,0 +1,33 @@
+{
+ "symbol": "?PreDestroy@FootClass@@QAEHXZ",
+ "sym_key": "FootClass::PreDestroy",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "568bf18b8ed002000085c97405e8000000008b86c002000085c074096a018bcee8000000008b8ed405000085c9740a6a006aff56e8000000008bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?FreeAll@CaptureManager@@QAEHXZ",
+   "sym_key": "CaptureManager::FreeAll"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?EjectPassengers@TechnoClass@@QAEDD@Z",
+   "sym_key": "TechnoClass::EjectPassengers"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?LiberateMember_Start@TeamClass@@QAEDHID@Z",
+   "sym_key": "TeamClass::LiberateMember_Start"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Destroy@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Destroy"
+  }
+ ]
+}

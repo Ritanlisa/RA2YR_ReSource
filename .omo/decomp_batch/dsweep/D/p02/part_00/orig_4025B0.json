@@ -1,0 +1,11 @@
+{
+ "addr": "0x4025B0",
+ "name": "Voice::Stop",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4025B0",
+ "bytes_hex": "568bf18b86d4000000ff5028f686a400000005740b8b96d40000008bceff52108b86d40000008bceff502c8b86bc00000085c074048bceffd0c78668010000000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

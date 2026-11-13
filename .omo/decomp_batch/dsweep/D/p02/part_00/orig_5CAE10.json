@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CAE10",
+ "name": "MPCombatTeam::MPTeam",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CAE10",
+ "bytes_hex": "51568bf16a0668f4ff820033d2b9e4ff8200e839a01600508d4c2408e89fb81e008d4424046a01508bcee811de00008d4c2404e818b91e00c706e4e77e008bc65e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

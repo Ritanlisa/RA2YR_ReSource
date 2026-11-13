@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x535d90 SetStructureTabCommandClass::performAction_6 -> SetStructureTabCommandClass
+[conv] 0x535e50 SetDefenseTabCommandClass::performAction_11 -> SetDefenseTabCommandClass
+[conv] 0x4de5d0 FootClass::PreDestroy -> FootClass
+[conv] 0x7b26d0 WinsockInterfaceClass::ReceivePacket -> WinsockInterfaceClass
+[conv] 0x709a40 TechnoClass::CompleteFactoryProduction -> TechnoClass
+[conv] 0x5c9470 MPCombatTeam::Constructor -> MPCombatTeam
+[conv] 0x5cae10 MPCombatTeam::MPTeam -> MPCombatTeam
+[conv] 0x5caeb0 MPCombatTeam::Constructor2 -> MPCombatTeam
+[conv] 0x774900 WinModemClass::Init -> WinModemClass
+[conv] 0x5e2620 String::ComputeHash -> String
+[conv] 0x76c030 CampaignProperties_WorldDominationTour::QueryInterface -> CampaignProperties_WorldDominationTour
+[conv] 0x4025b0 Voice::Stop -> Voice
+[conv] 0x7d107d __msize -> _addr_7D
+[conv] 0x5bf530 Game_Process -> Game
+[conv] 0x473a30 CCFileClass::Construct2 -> CCFileClass
+[conv] 0x488210 ObjectClass::sub_488210 -> ObjectClass
+[conv] 0x5b45c0 BlowStraw::QueryInterface -> BlowStraw
+[conv] 0x5c2680 MPCooperative::ProcessTurn -> MPCooperative
+[conv] 0x5e2670 GameSetup::CompareWideString -> GameSetup
+[conv] 0x632f90 BlowPipe::QueryInterface -> BlowPipe
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SetStructureTabCommandClass rc=2
+[era] SetDefenseTabCommandClass rc=2
+[era] FootClass                rc=0
+[era] WinsockInterfaceClass    rc=0
+[era] TechnoClass              rc=0
+[era] MPCombatTeam             rc=0
+[era] WinModemClass            rc=0
+[era] String                   rc=0
+[era] CampaignProperties_WorldDominationTour rc=2
+[era] Voice                    rc=0
+[era] _addr_7D                 rc=2
+[era] Game                     rc=0
+[era] CCFileClass              rc=0
+[era] ObjectClass              rc=0
+[era] BlowStraw                rc=0
+[era] MPCooperative            rc=0
+[era] GameSetup                rc=0
+[era] BlowPipe                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4de5d0   MISMATCH         FootClass::PreDestroy
+[diff] 0x7b26d0   MISMATCH         WinsockInterfaceClass::ReceivePacket
+[diff] 0x709a40   MISMATCH         TechnoClass::CompleteFactoryProduction
+[diff] 0x5c9470   MISMATCH         MPCombatTeam::Constructor
+[diff] 0x5cae10   MISMATCH         MPCombatTeam::MPTeam
+[diff] 0x5caeb0   MISMATCH         MPCombatTeam::Constructor2
+[diff] 0x774900   MISMATCH         WinModemClass::Init
+[diff] 0x5e2620   MISMATCH         String::ComputeHash
+[diff] 0x4025b0   MISMATCH         Voice::Stop
+[diff] 0x5bf530   MISMATCH         Game_Process
+[diff] 0x473a30   MISMATCH         CCFileClass::Construct2
+[diff] 0x488210   MISMATCH         ObjectClass::sub_488210
+[diff] 0x5b45c0   MISMATCH         BlowStraw::QueryInterface
+[diff] 0x5c2680   MISMATCH         MPCooperative::ProcessTurn
+[diff] 0x5e2670   MISMATCH         GameSetup::CompareWideString
+[diff] 0x632f90   MISMATCH         BlowPipe::QueryInterface
+[ledger] 0x535d90 SetStructureTabCommandClass::performAction_6 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x535e50 SetDefenseTabCommandClass::performAction_11 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4de5d0 FootClass::PreDestroy -> NG (attempt 1)
+[ledger] 0x7b26d0 WinsockInterfaceClass::ReceivePacket -> NG (attempt 1)
+[ledger] 0x709a40 TechnoClass::CompleteFactoryProduction -> NG (attempt 1)
+[ledger] 0x5c9470 MPCombatTeam::Constructor -> NG (attempt 1)
+[ledger] 0x5cae10 MPCombatTeam::MPTeam -> NG (attempt 1)
+[ledger] 0x5caeb0 MPCombatTeam::Constructor2 -> NG (attempt 1)
+[ledger] 0x774900 WinModemClass::Init -> NG (attempt 1)
+[ledger] 0x5e2620 String::ComputeHash -> NG (attempt 1)
+[ledger] 0x76c030 CampaignProperties_WorldDominationTour::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4025b0 Voice::Stop -> NG (attempt 1)
+[ledger] 0x7d107d __msize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bf530 Game_Process -> NG (attempt 1)
+[ledger] 0x473a30 CCFileClass::Construct2 -> NG (attempt 1)
+[ledger] 0x488210 ObjectClass::sub_488210 -> NG (attempt 1)
+[ledger] 0x5b45c0 BlowStraw::QueryInterface -> NG (attempt 1)
+[ledger] 0x5c2680 MPCooperative::ProcessTurn -> NG (attempt 1)
+[ledger] 0x5e2670 GameSetup::CompareWideString -> NG (attempt 1)
+[ledger] 0x632f90 BlowPipe::QueryInterface -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 4,
+  "MISMATCH": 16
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "branch_polarity": 1,
+  "codegen_shape": 4,
+  "extern_reloc": 3,
+  "regalloc": 7
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p02\batch_report.json

@@ -1,0 +1,51 @@
+{
+ "symbol": "?Constructor2@MPCombatTeam@@QAEPAPAGXZ",
+ "sym_key": "MPCombatTeam::Constructor2",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "51a100000000568bf16a168b0d000000005033d2e800000000508d4c2408e8000000008d4c24046a01518bcee8000000008d4c2404e800000000c706000000008bc65e59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?aDRa2mdpostMpsi_0@@3HA",
+   "sym_key": "aDRa2mdpostMpsi_0"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?aMpAttackerteam@@3HA",
+   "sym_key": "aMpAttackerteam"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Constructor@MultiplayerTeam@@QAEPAPAGPAX0@Z",
+   "sym_key": "MultiplayerTeam::Constructor"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?vt_MultiplayerSiegeAttackerTeam@@3PAXA",
+   "sym_key": "vt_MultiplayerSiegeAttackerTeam"
+  }
+ ]
+}

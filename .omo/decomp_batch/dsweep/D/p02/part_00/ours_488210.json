@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_488210@ObjectClass@@QAEHHPAIH@Z",
+ "sym_key": "ObjectClass::sub_488210",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf1f6c30474258a462d84c07419e8000000008b4424106a0050538bcee8000000005e5bc20c00e8000000008b4c24106a0051538bcee8000000005e5bc20c00",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Hide@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Hide"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?ProcessMouseOver@GadgetClass@@QAEHIPAXH@Z",
+   "sym_key": "GadgetClass::ProcessMouseOver"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Show@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Show"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?ProcessMouseOver@GadgetClass@@QAEHIPAXH@Z",
+   "sym_key": "GadgetClass::ProcessMouseOver"
+  }
+ ]
+}

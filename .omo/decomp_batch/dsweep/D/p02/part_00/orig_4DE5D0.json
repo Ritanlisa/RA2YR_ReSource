@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DE5D0",
+ "name": "FootClass::PreDestroy",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DE5D0",
+ "bytes_hex": "568bf18b8ebc02000085c97405e85e3bf9ff8b86ac02000085c074096a018bcee8eb1823008b8ed405000085c9740a6a006aff56e867c220008bcee8e07f11005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E2670",
+ "name": "GameSetup::CompareWideString",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E2670",
+ "bytes_hex": "5356578bd9e8364b1d008bcb8bf033ffe82b4b1d0085c076278bcbe8704a1d0033c9668b0c7803cf03f18bcb8bd6c1ea18c1e60833f247e8044b1d003bf872d98bc65f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

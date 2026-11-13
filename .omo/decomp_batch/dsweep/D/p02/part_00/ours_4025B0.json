@@ -1,0 +1,8 @@
+{
+ "symbol": "?Stop@Voice@@QAEPAXXZ",
+ "sym_key": "Voice::Stop",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "51568b7424048b86d4000000ff5028f686a400000005740a8b8ed400000056ff51108b96d400000056ff522c8b86bc00000085c0740356ffd0c78668010000000000005e59c3",
+ "relocs": []
+}

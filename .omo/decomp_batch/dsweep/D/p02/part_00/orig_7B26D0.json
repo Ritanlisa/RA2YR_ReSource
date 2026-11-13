@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B26D0",
+ "name": "IPXInterfaceClass::ReceivePacket",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B26D0",
+ "bytes_hex": "8b442408568b7424085056e8ee62010083f8ff7519e890620100506834e18400e8eb41c5ff83c40832c05ec20800566810e18400e8d741c5ff83c408b0015ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

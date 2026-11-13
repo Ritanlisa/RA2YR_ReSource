@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C2680",
+ "name": "MPCooperative::ProcessTurn",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C2680",
+ "bytes_hex": "568bf18b4e4085c9750432c05ec38d863c03000050e8e695edffe82100020085c074198a8e4003000084c9740f508bcee84bfeffffc68640030000008b4e40e8bcafedff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

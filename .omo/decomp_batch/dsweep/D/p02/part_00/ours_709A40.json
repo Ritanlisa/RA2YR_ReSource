@@ -1,0 +1,21 @@
+{
+ "symbol": "?CompleteFactoryProduction@TechnoClass@@QAEDHH@Z",
+ "sym_key": "TechnoClass::CompleteFactoryProduction",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "568bf18b8e7402000085c9740c8b412885c07405e8000000008b0656ff90d004000084c075148b0e56ff913004000084c074078bcee80000000032c05ec20800",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?CompleteItem@FactoryClass@@QAEPAIXZ",
+   "sym_key": "FactoryClass::CompleteItem"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?GetObjectData@BuildingClass@@QAEDXZ",
+   "sym_key": "BuildingClass::GetObjectData"
+  }
+ ]
+}

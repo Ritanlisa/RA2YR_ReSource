@@ -1,0 +1,33 @@
+{
+ "symbol": "?CompareWideString@GameSetup@@QAEPBGXZ",
+ "sym_key": "GameSetup::CompareWideString",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "5356578bf9e8000000008bcf8bd833f6e80000000085c074288bcfe80000000033c9668b0c708bc18bcf03c603c333db8adcc1e00833d846e8000000003bf072d85f8bc35e5bc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::GetOrEmpty"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  }
+ ]
+}

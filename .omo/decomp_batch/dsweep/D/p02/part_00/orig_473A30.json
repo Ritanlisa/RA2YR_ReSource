@@ -1,0 +1,11 @@
+{
+ "addr": "0x473A30",
+ "name": "CCFileClass::Construct2",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x473A30",
+ "bytes_hex": "568bf1e8f86f00006a006a008d4e58e8bc72fcff8b4c2408c7466400000000c706b0167e00c7466800000000e8df193400508bcec7466800000000e8a07300008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

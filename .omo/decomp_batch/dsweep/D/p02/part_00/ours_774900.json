@@ -1,0 +1,33 @@
+{
+ "symbol": "?Init@WinModemClass@@QAEXD@Z",
+ "sym_key": "WinModemClass::Init",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "8a4424045684c08bf1741e8b465c6a0550e80000000085c0751b8b4e5c6a0651e80000000085c0750ce8000000008bcee8000000005ec20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?EscapeCommFunction@@YGHPAXH@Z",
+   "sym_key": "EscapeCommFunction"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?EscapeCommFunction@@YGHPAXH@Z",
+   "sym_key": "EscapeCommFunction"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
