@@ -165007,7 +165007,7 @@
   "this_as_id": false
  },
  "0x703230": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165038,7 +165038,7 @@
   "status": "NG"
  },
  "0x703770": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165062,7 +165062,7 @@
   "this_as_id": false
  },
  "0x703860": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165187,7 +165187,7 @@
   "status": "NG"
  },
  "0x705ca0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165237,7 +165237,7 @@
   "status": "OK"
  },
  "0x705d70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165273,7 +165273,7 @@
   "this_as_id": false
  },
  "0x706ed0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "RenderTechnoClassVoxel",
@@ -165296,7 +165296,7 @@
   "this_as_id": false
  },
  "0x707480": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165380,7 +165380,7 @@
   "this_as_id": false
  },
  "0x708080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165689,7 +165689,7 @@
   "this_as_id": false
  },
  "0x70a990": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165821,7 +165821,7 @@
   "this_as_id": false
  },
  "0x70be80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165857,7 +165857,7 @@
   "this_as_id": false
  },
  "0x70c270": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -165936,7 +165936,7 @@
   "this_as_id": false
  },
  "0x70c620": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -166147,7 +166147,7 @@
   "this_as_id": false
  },
  "0x70d7e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -166183,7 +166183,7 @@
   "this_as_id": false
  },
  "0x70d990": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -166549,7 +166549,7 @@
   "this_as_id": false
  },
  "0x70e5a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -166572,7 +166572,7 @@
   "this_as_id": false
  },
  "0x70ece0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -166792,14 +166792,14 @@
   "status": "OK"
  },
  "0x70f120": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "RevealTechnoClassRadarEvent",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "RevealTechnoClassRadarEvent",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x70f1d0": {
@@ -166966,7 +166966,7 @@
   "this_as_id": false
  },
  "0x70fd70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -167021,7 +167021,7 @@
   "status": "OK"
  },
  "0x70fee0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -167033,7 +167033,7 @@
   "this_as_id": false
  },
  "0x710000": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

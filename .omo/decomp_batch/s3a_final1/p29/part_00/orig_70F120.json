@@ -1,0 +1,11 @@
+{
+ "addr": "0x70F120",
+ "name": "RevealTechnoClassRadarEvent",
+ "size": 173,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70F120",
+ "bytes_hex": "83ec0c568bf185f6746a85d27466a1e07188005789153cebb000893538ebb0008bb8001800008d4c240ce8f19afbff8b4c240c8b154c3da8006a016a016a006a00890d74eab0006a00528d4c2420a370eab000893d78eab0008b066a02518bceff5048b9e8f7870050e81282e5ff5f5e83c40cc38d4c2408c7053cebb00000000000c70538ebb00000000000e88f9afbff8b54240833c9a370eab000891574eab000890d78eab0005e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

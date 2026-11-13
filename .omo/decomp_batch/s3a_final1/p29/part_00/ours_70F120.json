@@ -1,0 +1,105 @@
+{
+ "symbol": "?RevealTechnoClassRadarEvent@@YIKHH@Z",
+ "sym_key": "Unnamed::RevealTechnoClassRadarEvent",
+ "size": 164,
+ "link_base": 0,
+ "bytes_hex": "51568bf185f6746785d27463a100000000891500000000893500000000538b8800180000578b39e8000000008b54240c8b1d000000008d4c240c891500000000a300000000893d000000008b065156ff5048b9000000006a016a016a006a006a00536a0250e8000000005f5b5e59c3c7050000000000000000c7050000000000000000e8000000008b542404a300000000891500000000c70500000000000000005e59c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EB3C@@3IA",
+   "sym_key": "DataGlobal_B0EB3C"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EB38@@3IA",
+   "sym_key": "DataGlobal_B0EB38"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA74@@3IA",
+   "sym_key": "DataGlobal_B0EA74"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA70@@3IA",
+   "sym_key": "DataGlobal_B0EA70"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA78@@3IA",
+   "sym_key": "DataGlobal_B0EA78"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?RevealArea0@MapClass@@QAEHPAXH0DDDDD@Z",
+   "sym_key": "MapClass::RevealArea0"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EB3C@@3IA",
+   "sym_key": "DataGlobal_B0EB3C"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EB38@@3IA",
+   "sym_key": "DataGlobal_B0EB38"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA70@@3IA",
+   "sym_key": "DataGlobal_B0EA70"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA74@@3IA",
+   "sym_key": "DataGlobal_B0EA74"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA78@@3IA",
+   "sym_key": "DataGlobal_B0EA78"
+  }
+ ]
+}
