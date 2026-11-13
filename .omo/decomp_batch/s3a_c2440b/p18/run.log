@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x69bd60 SessionClass::SetupNetwork -> SessionClass
+[conv] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> ShipLocomotionClass
+[conv] 0x6a4f20 RadarClass::UI_Init -> RadarClass
+[conv] 0x6a5840 SidebarClass::LoadAssets -> SidebarClass
+[conv] 0x6ac5f0 TActionClass::executeHarvestAction -> TActionClass
+[conv] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> SlaveManagerClass
+[conv] 0x6b7010 SpawnManagerClass::Constructor_SpawnManagerClass -> SpawnManagerClass
+[conv] 0x6b9530 HashTable::Clear -> HashTable
+[conv] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> ObjectClass
+[conv] 0x6ca4a0 sub_6CA4A0 -> _addr_6C
+[conv] 0x6ca6a0 sub_6CA6A0 -> _addr_6C
+[conv] 0x6caec0 SuperClass::Constructor -> SuperClass
+[conv] 0x6cfe20 TabClass::Constructor -> TabClass
+[conv] 0x6d0a20 TabClass::DrawTabs -> TabClass
+[conv] 0x6d1660 ObjectClass::House_Play_6D1660 -> ObjectClass
+[conv] 0x6da740 SuperWeaponClass::UpdateAll -> SuperWeaponClass
+[conv] 0x6e1440 ObjectClass::Render -> ObjectClass
+[conv] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> ObjectClass
+[conv] 0x6e21e0 TActionClass::executeFollowAction -> TActionClass
+[conv] 0x6e37f0 ObjectClass::sub_6E37F0 -> ObjectClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SessionClass             rc=2
+[era] ShipLocomotionClass      rc=2
+[era] RadarClass               rc=2
+[era] SidebarClass             rc=2
+[era] TActionClass             rc=2
+[era] SlaveManagerClass        rc=2
+[era] SpawnManagerClass        rc=2
+[era] HashTable                rc=2
+[era] ObjectClass              rc=2
+[era] _addr_6C                 rc=2
+[era] SuperClass               rc=2
+[era] TabClass                 rc=2
+[era] SuperWeaponClass         rc=2
+=== diffasm byte-compare ===
+[ledger] 0x69bd60 SessionClass::SetupNetwork -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a4f20 RadarClass::UI_Init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a5840 SidebarClass::LoadAssets -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ac5f0 TActionClass::executeHarvestAction -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b7010 SpawnManagerClass::Constructor_SpawnManagerClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b9530 HashTable::Clear -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ca4a0 sub_6CA4A0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ca6a0 sub_6CA6A0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6caec0 SuperClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6cfe20 TabClass::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d0a20 TabClass::DrawTabs -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d1660 ObjectClass::House_Play_6D1660 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6da740 SuperWeaponClass::UpdateAll -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e1440 ObjectClass::Render -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e21e0 TActionClass::executeFollowAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e37f0 ObjectClass::sub_6E37F0 -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p18\batch_report.json

@@ -141284,14 +141284,14 @@
   "this_as_id": false
  },
  "0x69bd60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "SessionClass::SetupNetwork",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SessionClass::SetupNetwork",
-  "rule_violations": 30,
+  "rule_violations": 27,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -142988,7 +142988,7 @@
   "this_as_id": false
  },
  "0x6a3f50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -143719,7 +143719,7 @@
   "this_as_id": false
  },
  "0x6a4f20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -143802,7 +143802,7 @@
   "this_as_id": false
  },
  "0x6a5840": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -144379,7 +144379,7 @@
   "this_as_id": false
  },
  "0x6ac5f0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -145004,7 +145004,7 @@
   "this_as_id": false
  },
  "0x6af6c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -147082,7 +147082,7 @@
   "this_as_id": false
  },
  "0x6b7010": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -147842,7 +147842,7 @@
   "status": "NG"
  },
  "0x6b9530": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -154238,7 +154238,7 @@
   "this_as_id": false
  },
  "0x6c6de0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -155086,7 +155086,7 @@
   "this_as_id": false
  },
  "0x6ca4a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_6CA4A0",
@@ -155142,7 +155142,7 @@
   "this_as_id": false
  },
  "0x6ca6a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_6CA6A0",
@@ -155507,7 +155507,7 @@
   "this_as_id": false
  },
  "0x6caec0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -156910,7 +156910,7 @@
   "this_as_id": false
  },
  "0x6cfe20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157018,7 +157018,7 @@
   "this_as_id": false
  },
  "0x6d0a20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157158,7 +157158,7 @@
   "this_as_id": false
  },
  "0x6d1660": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158342,7 +158342,7 @@
   "this_as_id": false
  },
  "0x6da740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -159295,7 +159295,7 @@
   "this_as_id": false
  },
  "0x6e1440": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -159307,7 +159307,7 @@
   "this_as_id": false
  },
  "0x6e14a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159473,7 +159473,7 @@
   "this_as_id": false
  },
  "0x6e21e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159765,7 +159765,7 @@
   "this_as_id": false
  },
  "0x6e37f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
