@@ -22303,15 +22303,15 @@
   "this_as_id": false
  },
  "0x45a420": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "VectorClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "FootClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x45a4d0": {
@@ -24251,7 +24251,7 @@
   "status": "PENDING"
  },
  "0x46b960": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -25084,7 +25084,7 @@
   "this_as_id": false
  },
  "0x46d8b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -25200,7 +25200,7 @@
   "this_as_id": false
  },
  "0x46f6d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -25601,7 +25601,7 @@
   "this_as_id": false
  },
  "0x471d40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -26469,7 +26469,7 @@
   "this_as_id": false
  },
  "0x473750": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -26587,7 +26587,7 @@
   "this_as_id": false
  },
  "0x473ae0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -26635,7 +26635,7 @@
   "this_as_id": false
  },
  "0x473c50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -26683,7 +26683,7 @@
   "this_as_id": false
  },
  "0x473e50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -26695,7 +26695,7 @@
   "this_as_id": false
  },
  "0x473f00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -26909,7 +26909,7 @@
   "this_as_id": false
  },
  "0x474540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -26921,7 +26921,7 @@
   "this_as_id": false
  },
  "0x474620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -27158,7 +27158,7 @@
   "this_as_id": false
  },
  "0x474ff0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27225,7 +27225,7 @@
   "this_as_id": false
  },
  "0x4753f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27376,7 +27376,7 @@
   "this_as_id": false
  },
  "0x4759f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27557,7 +27557,7 @@
   "this_as_id": false
  },
  "0x476eb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -28443,7 +28443,7 @@
   "this_as_id": false
  },
  "0x478e10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28704,7 +28704,7 @@
   "this_as_id": false
  },
  "0x47a560": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_47A560",
@@ -28738,7 +28738,7 @@
   "this_as_id": false
  },
  "0x47a920": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DriveControlCD",
@@ -28854,7 +28854,7 @@
   "this_as_id": false
  },
  "0x47ae10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

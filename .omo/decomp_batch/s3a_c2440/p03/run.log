@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x45a420 VectorClass::Release -> VectorClass
+[conv] 0x46b960 BulletClass::AddVector3 -> BulletClass
+[conv] 0x46d8b0 ObjectClass::sub_46D8B0 -> ObjectClass
+[conv] 0x46f6d0 Count::SetupAllCountriesLobby -> Count
+[conv] 0x471d40 CaptureManagerClass::CaptureUnit -> CaptureManagerClass
+[conv] 0x473750 CarryoverClass::sub_473750 -> CarryoverClass
+[conv] 0x473ae0 CCFileClass::Write -> CCFileClass
+[conv] 0x473c50 CCFileClass::Open -> CCFileClass
+[conv] 0x473e50 CCFileClass::Destru_vt14 -> CCFileClass
+[conv] 0x473f00 CCFileClass::Destru_vt15 -> CCFileClass
+[conv] 0x474540 ObjectClass::sub_474540 -> ObjectClass
+[conv] 0x474620 INIClass::ReadCoord -> INIClass
+[conv] 0x474ff0 ObjectTypeClass::ReadDouble2 -> ObjectTypeClass
+[conv] 0x4753f0 ArmorType::FindIndex -> ArmorType
+[conv] 0x4759f0 INIClass::ReadStringValue -> INIClass
+[conv] 0x476eb0 INIEntry::GetTechnoType -> INIEntry
+[conv] 0x478e10 CCToolTip::Draw1 -> CCToolTip
+[conv] 0x47a560 sub_47A560 -> _addr_47
+[conv] 0x47a920 DriveControlCD -> _addr_47
+[conv] 0x47ae10 CDFileClass::OpenWithCDSearch -> CDFileClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=0
+[era] BulletClass              rc=2
+[era] ObjectClass              rc=2
+[era] Count                    rc=2
+[era] CaptureManagerClass      rc=2
+[era] CarryoverClass           rc=2
+[era] CCFileClass              rc=2
+[era] INIClass                 rc=2
+[era] ObjectTypeClass          rc=2
+[era] ArmorType                rc=2
+[era] INIEntry                 rc=2
+[era] CCToolTip                rc=2
+[era] _addr_47                 rc=2
+[era] CDFileClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x45a420   MISMATCH         VectorClass::Release
+[ledger] 0x45a420 VectorClass::Release -> NG (attempt 2)
+[ledger] 0x46b960 BulletClass::AddVector3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46d8b0 ObjectClass::sub_46D8B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46f6d0 Count::SetupAllCountriesLobby -> COMPILE_FAIL (attempt 2)
+[ledger] 0x471d40 CaptureManagerClass::CaptureUnit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x473750 CarryoverClass::sub_473750 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x473ae0 CCFileClass::Write -> COMPILE_FAIL (attempt 2)
+[ledger] 0x473c50 CCFileClass::Open -> COMPILE_FAIL (attempt 2)
+[ledger] 0x473e50 CCFileClass::Destru_vt14 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x473f00 CCFileClass::Destru_vt15 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x474540 ObjectClass::sub_474540 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x474620 INIClass::ReadCoord -> COMPILE_FAIL (attempt 2)
+[ledger] 0x474ff0 ObjectTypeClass::ReadDouble2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4753f0 ArmorType::FindIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4759f0 INIClass::ReadStringValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x476eb0 INIEntry::GetTechnoType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x478e10 CCToolTip::Draw1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47a560 sub_47A560 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47a920 DriveControlCD -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47ae10 CDFileClass::OpenWithCDSearch -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 1,
+  "COMPILE_FAIL": 19
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p03\batch_report.json
