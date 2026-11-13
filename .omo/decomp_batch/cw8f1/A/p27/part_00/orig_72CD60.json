@@ -1,0 +1,11 @@
+{
+ "addr": "0x72CD60",
+ "name": "Network_Load_72CD60",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72CD60",
+ "bytes_hex": "a0e5fcb00084c0753d813da4008a002003000075158b0d744d8400bae4fcb000e84b6bd7ffa3acfab0008b0d784d840068ecfcb000bae8fcb000e841e0ffffc605e5fcb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x72CF40",
+ "name": "LoadingScreen::Init",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72CF40",
+ "bytes_hex": "a0d9fcb00084c0753d813da4008a002003000075158b0d6c4d8400bad8fcb000e86b69d7ffa318fab0008b0d704d840068e0fcb000badcfcb000e861deffffc605d9fcb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x747560",
+ "name": "UnitTypeClass::ConstructUnit",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x747560",
+ "bytes_hex": "568bf168e8080000e8aa18080083c40485c074118b4c240851568bc8e83fdefeff5ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

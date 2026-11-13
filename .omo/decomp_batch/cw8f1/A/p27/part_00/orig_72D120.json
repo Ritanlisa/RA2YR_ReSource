@@ -1,0 +1,11 @@
+{
+ "addr": "0x72D120",
+ "name": "UI_Show",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72D120",
+ "bytes_hex": "a0cefcb00084c0753d813da4008a002003000075158b0d644d8400bacdfcb000e88b67d7ffa3b8fab0008b0d684d840068d4fcb000bad0fcb000e881dcffffc605cefcb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?registerBuildingType@SidebarClass@@QAEHXZ",
+ "sym_key": "SidebarClass::registerBuildingType",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b812005000083b8080e0000057507890d20160000c3890d1c160000c3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

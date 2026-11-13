@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x72c420 CreateAccountWOL_Create_72C420 -> CreateAccountWOL_Create
+[conv] 0x72c600 LoginFlowWOL_Load_72C600 -> LoginFlowWOL_Load
+[conv] 0x72c7e0 RunWOLMainLoop_Read_Read -> RunWOLMainLoop_Read
+[conv] 0x72c9c0 System_Init_72C9C0 -> System_Init
+[conv] 0x72cd60 Network_Load_72CD60 -> Network_Load
+[conv] 0x72cf40 LoadingScreen::Init -> LoadingScreen
+[conv] 0x72d120 UI_Show -> UI
+[conv] 0x730780 sub_730780 -> _addr_73
+[conv] 0x730950 sub_730950 -> _addr_73
+[conv] 0x731be0 sub_731BE0 -> _addr_73
+[conv] 0x731cf0 TechnoClass::GetField -> TechnoClass
+[conv] 0x734250 SidebarClass::registerBuildingType -> SidebarClass
+[conv] 0x734430 sub_734430 -> _addr_73
+[conv] 0x7345e0 sub_7345E0 -> _addr_73
+[conv] 0x734600 sub_734600 -> _addr_73
+[conv] 0x735180 sub_735180 -> _addr_73
+[conv] 0x735350 sub_735350 -> _addr_73
+[conv] 0x746ee0 sub_746EE0 -> _addr_74
+[conv] 0x7470b0 sub_7470B0 -> _addr_74
+[conv] 0x747560 UnitTypeClass::ConstructUnit -> UnitTypeClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CreateAccountWOL_Create  rc=0
+[era] LoginFlowWOL_Load        rc=0
+[era] RunWOLMainLoop_Read      rc=0
+[era] System_Init              rc=0
+[era] Network_Load             rc=0
+[era] LoadingScreen            rc=0
+[era] UI                       rc=0
+[era] _addr_73                 rc=0
+[era] TechnoClass              rc=0
+[era] SidebarClass             rc=0
+[era] _addr_74                 rc=0
+[era] UnitTypeClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x72c420   MATCH            CreateAccountWOL_Create_72C420
+[diff] 0x72c600   MATCH            LoginFlowWOL_Load_72C600
+[diff] 0x72c7e0   MATCH            RunWOLMainLoop_Read_Read
+[diff] 0x72c9c0   MATCH            System_Init_72C9C0
+[diff] 0x72cd60   MATCH            Network_Load_72CD60
+[diff] 0x72cf40   MATCH            LoadingScreen::Init
+[diff] 0x72d120   MATCH            UI_Show
+[diff] 0x730780   MATCH            sub_730780
+[diff] 0x730950   MATCH            sub_730950
+[diff] 0x731be0   MATCH            sub_731BE0
+[diff] 0x734430   MATCH            sub_734430
+[diff] 0x7345e0   MATCH            sub_7345E0
+[diff] 0x734600   MATCH            sub_734600
+[diff] 0x735180   MATCH            sub_735180
+[diff] 0x735350   MATCH            sub_735350
+[diff] 0x731cf0   MATCH            TechnoClass::GetField
+[diff] 0x734250   MATCH            SidebarClass::registerBuildingType
+[diff] 0x746ee0   MATCH            sub_746EE0
+[diff] 0x7470b0   MATCH            sub_7470B0
+[diff] 0x747560   MATCH            UnitTypeClass::ConstructUnit
+[ledger] 0x72c420 CreateAccountWOL_Create_72C420 -> OK (attempt 2)
+[ledger] 0x72c600 LoginFlowWOL_Load_72C600 -> OK (attempt 2)
+[ledger] 0x72c7e0 RunWOLMainLoop_Read_Read -> OK (attempt 2)
+[ledger] 0x72c9c0 System_Init_72C9C0 -> OK (attempt 2)
+[ledger] 0x72cd60 Network_Load_72CD60 -> OK (attempt 2)
+[ledger] 0x72cf40 LoadingScreen::Init -> OK (attempt 2)
+[ledger] 0x72d120 UI_Show -> OK (attempt 6)
+[ledger] 0x730780 sub_730780 -> OK (attempt 2)
+[ledger] 0x730950 sub_730950 -> OK (attempt 3)
+[ledger] 0x731be0 sub_731BE0 -> OK (attempt 3)
+[ledger] 0x731cf0 TechnoClass::GetField -> OK (attempt 3)
+[ledger] 0x734250 SidebarClass::registerBuildingType -> OK (attempt 3)
+[ledger] 0x734430 sub_734430 -> OK (attempt 2)
+[ledger] 0x7345e0 sub_7345E0 -> OK (attempt 3)
+[ledger] 0x734600 sub_734600 -> OK (attempt 3)
+[ledger] 0x735180 sub_735180 -> OK (attempt 2)
+[ledger] 0x735350 sub_735350 -> OK (attempt 3)
+[ledger] 0x746ee0 sub_746EE0 -> OK (attempt 2)
+[ledger] 0x7470b0 sub_7470B0 -> OK (attempt 3)
+[ledger] 0x747560 UnitTypeClass::ConstructUnit -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p27\batch_report.json
