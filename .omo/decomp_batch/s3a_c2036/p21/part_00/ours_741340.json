@@ -1,0 +1,33 @@
+{
+ "symbol": "?FireWeaponBurst@TechnoClass@@QAEHHH@Z",
+ "sym_key": "TechnoClass::FireWeaponBurst",
+ "size": 311,
+ "link_base": 0,
+ "bytes_hex": "535556578b7c24188bf157568b06ff90f80300008b2885ed75095f5e5d33c05bc2080032db85ff75388b867c03000099f7bd9c00000083fa027c0583caffeb0d8b8ec40600008b9491400e000083bec0060000ff740983faff7404b301eb0232db8b4424148b166a01575056ff92c003000085c074095f5e5d33c05bc208008bcee8000000008bf885ff0f849e0000008b8ec40600008b818406000085c0894424187e22db442418d89efc020000dfe0f6c44175118a81240d000084c075078bcee80000000084db751d8b8ec40600008a815d0e000084c07e0d0fbed08d4412ff8986c00600008b8fac0000008a81ec02000084c074078bcfe8000000008b96c40600008a82320d000084c074208b15540a00008b8d3c01000033c08a86ec01000089108b5424188950048948088b075f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?FireWeapon@TechnoClass@@QAEPAVBulletClass@@XZ",
+   "sym_key": "TechnoClass::FireWeapon"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?CalcAnimDelay@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::CalcAnimDelay"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "?InitScalable@BulletClass@@QAEHXZ",
+   "sym_key": "BulletClass::InitScalable"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

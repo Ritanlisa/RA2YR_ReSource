@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x71fc40 _VectorClass_PAVTEventClass::Release -> _VectorClass_PAVTEventClass
+[conv] 0x71fd80 _DynamicVectorClass_PAVTEventClass::SetCapacity -> _DynamicVectorClass_PAVTEventClass
+[conv] 0x721300 _DynamicVectorClass_PAUThemeControl::SetCapacity -> _DynamicVectorClass_PAUThemeControl
+[conv] 0x7235a0 CellClass::RegisterForRedraw -> CellClass
+[conv] 0x7237d0 _VectorClass_PAVTiberiumClass::Release -> _VectorClass_PAVTiberiumClass
+[conv] 0x723910 _DynamicVectorClass_PAVTiberiumClass::SetCapacity -> _DynamicVectorClass_PAVTiberiumClass
+[conv] 0x724cd0 _VectorClass_PBVToolTip::readString -> _VectorClass_PBVToolTip
+[conv] 0x724e10 _DynamicVectorClass_PBVToolTip::release -> _DynamicVectorClass_PBVToolTip
+[conv] 0x725fa0 TriggerClass::Construct -> TriggerClass
+[conv] 0x7271d0 sub_7271D0 -> _addr_72
+[conv] 0x72d730 Game::LoadMultiplayerScoreAssets -> Game
+[conv] 0x72d9a0 InitializeGameLoading -> _addr_72
+[conv] 0x72f350 House_Load -> House
+[conv] 0x72fa10 LoadingScreen::LoadSHPs -> LoadingScreen
+[conv] 0x72fbc0 Sides::MixFileYuriFiles3 -> Sides
+[conv] 0x730f30 ObjectClass::UI_Create_730F30 -> ObjectClass
+[conv] 0x731840 SquadClass::ProcessMove -> SquadClass
+[conv] 0x7327d0 MoveFeedback::ProcessCommand -> MoveFeedback
+[conv] 0x7331b0 ObjectClass::sub_7331B0 -> ObjectClass
+[conv] 0x741340 TechnoClass::FireWeaponBurst -> TechnoClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVTEventClass rc=0
+[era] _DynamicVectorClass_PAVTEventClass rc=0
+[era] _DynamicVectorClass_PAUThemeControl rc=0
+[era] CellClass                rc=2
+[era] _VectorClass_PAVTiberiumClass rc=0
+[era] _DynamicVectorClass_PAVTiberiumClass rc=0
+[era] _VectorClass_PBVToolTip  rc=0
+[era] _DynamicVectorClass_PBVToolTip rc=0
+[era] TriggerClass             rc=2
+[era] _addr_72                 rc=2
+[era] Game                     rc=2
+[era] House                    rc=2
+[era] LoadingScreen            rc=2
+[era] Sides                    rc=2
+[era] ObjectClass              rc=2
+[era] SquadClass               rc=2
+[era] MoveFeedback             rc=2
+[era] TechnoClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x71fc40   MISMATCH         _VectorClass_PAVTEventClass::Release
+[diff] 0x71fd80   MISMATCH         _DynamicVectorClass_PAVTEventClass::SetCapacity
+[diff] 0x721300   MISMATCH         _DynamicVectorClass_PAUThemeControl::SetCapacity
+[diff] 0x7237d0   MISMATCH         _VectorClass_PAVTiberiumClass::Release
+[diff] 0x723910   MISMATCH         _DynamicVectorClass_PAVTiberiumClass::SetCapacity
+[diff] 0x724cd0   MISMATCH         _VectorClass_PBVToolTip::readString
+[diff] 0x724e10   MISMATCH         _DynamicVectorClass_PBVToolTip::release
+[diff] 0x741340   MISMATCH         TechnoClass::FireWeaponBurst
+[ledger] 0x71fc40 _VectorClass_PAVTEventClass::Release -> NG (attempt 2)
+[ledger] 0x71fd80 _DynamicVectorClass_PAVTEventClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x721300 _DynamicVectorClass_PAUThemeControl::SetCapacity -> NG (attempt 2)
+[ledger] 0x7235a0 CellClass::RegisterForRedraw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7237d0 _VectorClass_PAVTiberiumClass::Release -> NG (attempt 2)
+[ledger] 0x723910 _DynamicVectorClass_PAVTiberiumClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x724cd0 _VectorClass_PBVToolTip::readString -> NG (attempt 2)
+[ledger] 0x724e10 _DynamicVectorClass_PBVToolTip::release -> NG (attempt 2)
+[ledger] 0x725fa0 TriggerClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7271d0 sub_7271D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x72d730 Game::LoadMultiplayerScoreAssets -> COMPILE_FAIL (attempt 6)
+[ledger] 0x72d9a0 InitializeGameLoading -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72f350 House_Load -> COMPILE_FAIL (attempt 6)
+[ledger] 0x72fa10 LoadingScreen::LoadSHPs -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72fbc0 Sides::MixFileYuriFiles3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x730f30 ObjectClass::UI_Create_730F30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x731840 SquadClass::ProcessMove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7327d0 MoveFeedback::ProcessCommand -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7331b0 ObjectClass::sub_7331B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x741340 TechnoClass::FireWeaponBurst -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "codegen_shape": 8
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p21\batch_report.json
