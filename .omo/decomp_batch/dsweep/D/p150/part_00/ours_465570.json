@@ -1,0 +1,105 @@
+{
+ "symbol": "?CalculateBuildingFoundationBounds@ObjectClass@@QAEPAHPAH@Z",
+ "sym_key": "ObjectClass::CalculateBuildingFoundationBounds",
+ "size": 911,
+ "link_base": 0,
+ "bytes_hex": "83ec3ca1000000008d91381500003bd056894c24088954242c0f85480300008b813c1500008b35000000003bc60f85340300008b81401500008b35000000003bc60f85200300008b81441500008b35000000003bc60f850c0300008b1151ff929c00000085c00f84cd0200000fbf48020fbf50048b3500000000894c24240fbf4806538b1d00000000558b2d00000000578b3d0000000085c9894c242889542434c7442418000000000f8e9f0000008b4424188d4c242c5051e80000000085ed7e6a85db7e668b500885d2895424207e578b480c85c9894c241c7e4c8b083bf97e062bf903ef8bf98b40043bf0894424247e062bf003de8bf003d18d042f3bc27d0a8b5424202bcf8d6c11018b4424248b4c241c8d14088d0c333bca7d0a8b54241c2bc68d5c10018bc3eb0b8b388b70048b68088b400c8b4c24288bd88b442418403bc1894424180f8c61ffffff8b442414508b88000e000085c98b080f94442417ff91c000000085c00f84f50000000fbf400685c089442420c7442418000000000f8e9f0000008b5424188d44242c5250e80000000085ed7e6a85db7e668b500885d2895424287e578b480c85c9894c241c7e4c8b083bf97e062bf903ef8bf98b40043bf0894424247e062bf003de8bf003d18d042f3bc27d0a8b5424282bcf8d6c11018b4424248b4c241c8d14088d0c333bca7d0a8b54241c2bc68d5c10018bc3eb0b8b388b70048b68088b400c8b4c24208bd88b442418403bc1894424180f8c61ffffff8a44241384c074368b4424148a886217000084c974288b80000e000085c0741e50e8000000008b44241883c404c780000e000000000000c680040e0000008b4424148b881815000085c90f84840000008d4c243c6a0051e8000000008b48048b10894c24148b48088b400c8954242885ed8944242c7e0485db7f598b7424148bfa85c98be98bd87e4b85c07e473bfa7e062bfa03ef8bfa8b4424143bf07e062bf003de8bf003d18d042f3bc27d0a8b5424282bcf8d6c11018b44242c8b4c24148d14088d0c333bca7d0a8b5424142bc68d5c10018b442430992bc2d1f82bf88b442434992bc2d1f82bf08b442438893889700489680889580c8b44245089388968085f89580c5d8970045b5e83c43cc204008b4424448b0d000000005e89088b15000000008950048b0d000000008948088b150000000089500c83c43cc204008b4424445e89108b913c1500008950048b91401500008950088b894415000089480c83c43cc20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8A0@@3IA",
+   "sym_key": "DataGlobal_89C8A0"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8A4@@3IA",
+   "sym_key": "DataGlobal_89C8A4"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8A8@@3IA",
+   "sym_key": "DataGlobal_89C8A8"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8AC@@3IA",
+   "sym_key": "DataGlobal_89C8AC"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8A4@@3IA",
+   "sym_key": "DataGlobal_89C8A4"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8AC@@3IA",
+   "sym_key": "DataGlobal_89C8AC"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8A8@@3IA",
+   "sym_key": "DataGlobal_89C8A8"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8A0@@3IA",
+   "sym_key": "DataGlobal_89C8A0"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 403,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 585,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 639,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 831,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8A0@@3IA",
+   "sym_key": "DataGlobal_89C8A0"
+  },
+  {
+   "off": 840,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8A4@@3IA",
+   "sym_key": "DataGlobal_89C8A4"
+  },
+  {
+   "off": 849,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8A8@@3IA",
+   "sym_key": "DataGlobal_89C8A8"
+  },
+  {
+   "off": 858,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C8AC@@3IA",
+   "sym_key": "DataGlobal_89C8AC"
+  }
+ ]
+}

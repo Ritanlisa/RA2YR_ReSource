@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p150\part_00
+=== convert (20 addrs) ===
+[conv] 0x528660 INIClass::SetString -> INIClass
+[conv] 0x700d50 TechnoClass::CanAttack -> TechnoClass
+[conv] 0x49ccf0 ObjectClass::DecodeCampaignPlayerName -> ObjectClass
+[conv] 0x6d71e0 TacticalClass::CalcBuildingDrawPos -> TacticalClass
+[conv] 0x727240 TriggerTypeClass::LoadFromINI -> TriggerTypeClass
+[conv] 0x5f8ce0 Turret::LoadVoxelTurretAndBarrel -> Turret
+[conv] 0x42acf0 BuildingClass::UpdatePowerAnim -> BuildingClass
+[conv] 0x775110 WinModemClass::Dial -> WinModemClass
+[conv] 0x7c43a0 DecodeSHPFrame16bpp -> _addr_7C
+[conv] 0x749b70 VoxelAnimClass::ProcessAnim -> VoxelAnimClass
+[conv] 0x4496b0 BuildingClass::CheckState1 -> BuildingClass
+[conv] 0x5f2950 Dialog::RunModemDialing -> Dialog
+[conv] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> TechnoClass
+[conv] 0x55cfd0 ObjectClass::GameFrameCheck -> ObjectClass
+[conv] 0x430ba0 ObjectClass::PlacePlayerBeacon -> ObjectClass
+[conv] 0x6da9d0 ObjectClass::RenderSelectionBeacons -> ObjectClass
+[conv] 0x465570 ObjectClass::CalculateBuildingFoundationBounds -> ObjectClass
+[conv] 0x526470 INIClass::WriteToString -> INIClass
+[conv] 0x734990 File::ParseCSFString -> File
+[conv] 0x450630 BuildingClass::ProcessActiveAnimation -> BuildingClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] TacticalClass            rc=2
+[era] TriggerTypeClass         rc=2
+[era] Turret                   rc=2
+[era] BuildingClass            rc=2
+[era] WinModemClass            rc=2
+[era] _addr_7C                 rc=0
+[era] VoxelAnimClass           rc=2
+[era] Dialog                   rc=2
+[era] File                     rc=2
+=== diffasm byte-compare ===
+[diff] 0x526470   MISMATCH         INIClass::WriteToString
+[diff] 0x700d50   MISMATCH         TechnoClass::CanAttack
+[diff] 0x49ccf0   MISMATCH         ObjectClass::DecodeCampaignPlayerName
+[diff] 0x465570   MISMATCH         ObjectClass::CalculateBuildingFoundationBounds
+[diff] 0x42acf0   MISMATCH         BuildingClass::UpdatePowerAnim
+[diff] 0x7c43a0   MISMATCH         DecodeSHPFrame16bpp
+[ledger] 0x528660 INIClass::SetString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x700d50 TechnoClass::CanAttack -> NG (attempt 1)
+[ledger] 0x49ccf0 ObjectClass::DecodeCampaignPlayerName -> NG (attempt 1)
+[ledger] 0x6d71e0 TacticalClass::CalcBuildingDrawPos -> COMPILE_FAIL (attempt 1)
+[ledger] 0x727240 TriggerTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f8ce0 Turret::LoadVoxelTurretAndBarrel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42acf0 BuildingClass::UpdatePowerAnim -> NG (attempt 1)
+[ledger] 0x775110 WinModemClass::Dial -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c43a0 DecodeSHPFrame16bpp -> NG (attempt 1)
+[ledger] 0x749b70 VoxelAnimClass::ProcessAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4496b0 BuildingClass::CheckState1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f2950 Dialog::RunModemDialing -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55cfd0 ObjectClass::GameFrameCheck -> COMPILE_FAIL (attempt 1)
+[ledger] 0x430ba0 ObjectClass::PlacePlayerBeacon -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6da9d0 ObjectClass::RenderSelectionBeacons -> COMPILE_FAIL (attempt 1)
+[ledger] 0x465570 ObjectClass::CalculateBuildingFoundationBounds -> NG (attempt 1)
+[ledger] 0x526470 INIClass::WriteToString -> NG (attempt 1)
+[ledger] 0x734990 File::ParseCSFString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x450630 BuildingClass::ProcessActiveAnimation -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "regalloc": 1,
+  "ret_norm": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p150\batch_report.json

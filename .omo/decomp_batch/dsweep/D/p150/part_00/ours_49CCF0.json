@@ -1,0 +1,111 @@
+{
+ "symbol": "?DecodeCampaignPlayerName@ObjectClass@@QAEDHHPAXHFHHPAD1@Z",
+ "sym_key": "ObjectClass::DecodeCampaignPlayerName",
+ "size": 781,
+ "link_base": 0,
+ "bytes_hex": "a00000000053555684c0578be9750ab900000000e8000000008b44241433ff3bc70f8cbe0200003b05000000000f83b20200008b0d000000008d34c08b5c2428b2018d3470885538897d48897d4c8d0cb1897d50897d54894c2414c6455800c6455c00c6456000c6456400c64568000fbe49083bcb74258b44241c3bc7741433d28a5424256685d2740950e80000000083c4045f5e5d32c05bc224008945448a453c84c088556c742f33f625ff0000007e1a8b04b03bc7740950e80000000083c40433c0468a453c3bf07ce68b453c50e80000000083c4048d0c9d00000000c6453c005133f6e80000000083c4043bdf88453c7e4b6804010000e80000000033d268030100008a553c8904b28b4424248b54241c8b04b003c78bc8c1e10603c88b420c33d28a553c8d0c88518b04b250e80000000083c4104683c7033bf37cb58b4c2434885d3c85c9c64538000f84b90000008a0133d28a150000000084c08bf2745f8a013c3d754e8a410184c074523c397f083c307c042c30eb1a3c667f083c617c042c57eb0e3c467f083c417c042c37eb0232c04188068a510184d27419c0e0048ad088168a41013c397f3f3c307c3b412c300ac288068a4101414684c075a133c0c60600a00000000083c9ff8bf833c0f2aef7d12bf98bd18bf78bfdc1e902f3a58bca83e103f3a4eb233c667f093c617c05412c57ebbb3c467f093c417c05412c37ebae418816ebadc64500008b4c243085c90f84bc00000033c0a0000000008bf08a0184c0745f8a013c3d754e8a410184c074523c397f083c307c042c30eb1a3c667f083c617c042c57eb0e3c467f083c417c042c37eb0232c04188068a510184d27419c0e0048ad088168a41013c397f433c307c3f412c300ac288068a4101414684c075a133c9c606008a0d0000000033c08bf983c9fff2aef7d12bf98d551c8bc18bf78bfac1e902f3a58bc883e103f3a4eb233c667f093c617c05412c57ebb73c467f093c417c05412c37ebaa418816eba9c6451c008bcde80000000033ff8b44241c8a5d6c3bc7741433c98a4c24256685c9740950e80000000083c4045f5e8ac35d5bc22400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F578@@3EA",
+   "sym_key": "DataGlobal_89F578"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?LoadFromINI@CampaignClass@@QAEHXZ",
+   "sym_key": "CampaignClass::LoadFromINI"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F574@@3IA",
+   "sym_key": "DataGlobal_89F574"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F570@@3IA",
+   "sym_key": "DataGlobal_89F570"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 251,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 305,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 345,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F118@@3EA",
+   "sym_key": "DataGlobal_89F118"
+  },
+  {
+   "off": 456,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F118@@3EA",
+   "sym_key": "DataGlobal_89F118"
+  },
+  {
+   "off": 543,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F118@@3EA",
+   "sym_key": "DataGlobal_89F118"
+  },
+  {
+   "off": 657,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F118@@3EA",
+   "sym_key": "DataGlobal_89F118"
+  },
+  {
+   "off": 735,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 765,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

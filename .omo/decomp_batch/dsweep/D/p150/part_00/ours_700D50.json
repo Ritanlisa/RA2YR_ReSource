@@ -1,0 +1,63 @@
+{
+ "symbol": "?CanAttack@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::CanAttack",
+ "size": 252,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf18d4c24088b065156ff90b80100008b108d44240450b90000000089542408e80000000085c0740f8bc8e80000000084c00f85b90000008b0e56ff512c480f84a300000083c0fb85c0750ae8000000005e83c408c383f809742b8b1656ff927c03000084c00f85850000008b0656ff90840000008b88e005000085c97472b0015e83c408c38bcee80000000084c074148bcee80000000084c0755583bec40600001f744c8bcee80000000084c0742c8b86ec0200008b8ef402000083f8ff74308b15540a0000578bfa2bf83bf95f7d0b2bc25e03c832c083c408c38bcee8000000005e83c408c38b0e56ff917c03000032c05e83c408c3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?ValidateAttackPosition@InfantryClass@@QAE_NXZ",
+   "sym_key": "InfantryClass::ValidateAttackPosition"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?ReturnFalse_465D30@@YADXZ",
+   "sym_key": "ReturnFalse_465D30"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?updateTurretRotation@TechnoClass@@QAE_NXZ",
+   "sym_key": "TechnoClass::updateTurretRotation"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?IsMission27to30@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::IsMission27to30"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?updateTurretRotation@TechnoClass@@QAE_NXZ",
+   "sym_key": "TechnoClass::updateTurretRotation"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?GetTypeFlag@TechnoClass@@QAEDXZ",
+   "sym_key": "TechnoClass::GetTypeFlag"
+  }
+ ]
+}
