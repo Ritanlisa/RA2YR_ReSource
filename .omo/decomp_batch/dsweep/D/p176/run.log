@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p176\part_00
+=== convert (20 addrs) ===
+[conv] 0x59bbc0 RandomMap::PlaceTerrain -> RandomMap
+[conv] 0x6516f0 LogMultiplayToSync_MPDEBUG -> LogMultiplayToSync
+[conv] 0x43f180 BuildingClass::ProductionDisplayUpdate -> BuildingClass
+[conv] 0x5d9410 Network::ResolveAndConnect -> Network
+[conv] 0x64c380 Network::ProcessEventList -> Network
+[conv] 0x60f9a0 Dialog::InitializeControls -> Dialog
+[conv] 0x5a5b50 MapSeedClass::PlaceBuildingClusters -> MapSeedClass
+[conv] 0x525a60 INIClass::LoadFile -> INIClass
+[conv] 0x6137d0 Dialog::TabControlPaint -> Dialog
+[conv] 0x606800 Dialog::MapControlToAction -> Dialog
+[conv] 0x608cd0 IsDialogControlVisible -> _addr_60
+[conv] 0x429a90 BuildingClass::UpdatePowerAnimation -> BuildingClass
+[conv] 0x4da530 FootClass::MovementAI -> FootClass
+[conv] 0x442230 BuildingClass::ProcessAttack -> BuildingClass
+[conv] 0x5b82f0 ModemHost::InitDialog -> ModemHost
+[conv] 0x737c90 UnitClass::OnUnderAttack -> UnitClass
+[conv] 0x79f140 ObjectClass::GameOptionsScreenWOL -> ObjectClass
+[conv] 0x4c85e0 ExceptionHandler::GenerateReport -> ExceptionHandler
+[conv] 0x5ef4e0 Network::ModemConnectionDialog -> Network
+[conv] 0x787770 NetworkLobbyWOL -> _addr_78
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RandomMap                rc=2
+[era] LogMultiplayToSync       rc=2
+[era] BuildingClass            rc=2
+[era] Network                  rc=2
+[era] Dialog                   rc=2
+[era] MapSeedClass             rc=2
+[era] INIClass                 rc=2
+[era] _addr_60                 rc=2
+[era] FootClass                rc=2
+[era] ModemHost                rc=2
+[era] UnitClass                rc=2
+[era] ObjectClass              rc=2
+[era] ExceptionHandler         rc=2
+[era] _addr_78                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x59bbc0 RandomMap::PlaceTerrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6516f0 LogMultiplayToSync_MPDEBUG -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43f180 BuildingClass::ProductionDisplayUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d9410 Network::ResolveAndConnect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64c380 Network::ProcessEventList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60f9a0 Dialog::InitializeControls -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a5b50 MapSeedClass::PlaceBuildingClusters -> COMPILE_FAIL (attempt 1)
+[ledger] 0x525a60 INIClass::LoadFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6137d0 Dialog::TabControlPaint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x606800 Dialog::MapControlToAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x608cd0 IsDialogControlVisible -> COMPILE_FAIL (attempt 1)
+[ledger] 0x429a90 BuildingClass::UpdatePowerAnimation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4da530 FootClass::MovementAI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x442230 BuildingClass::ProcessAttack -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b82f0 ModemHost::InitDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x737c90 UnitClass::OnUnderAttack -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79f140 ObjectClass::GameOptionsScreenWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c85e0 ExceptionHandler::GenerateReport -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ef4e0 Network::ModemConnectionDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x787770 NetworkLobbyWOL -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p176\batch_report.json
