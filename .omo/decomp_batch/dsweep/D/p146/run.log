@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p146\part_00
+=== convert (20 addrs) ===
+[conv] 0x703230 TechnoClass::RegisterKill -> TechnoClass
+[conv] 0x7d038f ObjectClass::___sbh_heap_check -> ObjectClass
+[conv] 0x627590 MIXFile::Load -> MIXFile
+[conv] 0x575870 CellClass::ApplyTerrainMod2 -> CellClass
+[conv] 0x468d80 BulletClass::Fire -> BulletClass
+[conv] 0x663db0 ObjectClass::LaunchMultiplayerHost -> ObjectClass
+[conv] 0x76ac90 File::LoadWDT -> File
+[conv] 0x70c270 TechnoClass::PowerBeginUpdate -> TechnoClass
+[conv] 0x575ba0 CellClass::ApplyTerrainMod -> CellClass
+[conv] 0x63a5a0 HandlePlanningModeClick -> _addr_63
+[conv] 0x4fd9a0 TechnoClass::ValidateAIBuildAffordability -> TechnoClass
+[conv] 0x7a7b60 CChatEventSink::DispatchStub_23 -> CChatEventSink
+[conv] 0x7d0a20 _memcpy_0 -> _addr_7D
+[conv] 0x5fad10 ScenarioClass::SaveGameOptions -> ScenarioClass
+[conv] 0x5cd850 WrapWideStringText -> _addr_5C
+[conv] 0x447780 BuildingClass::StartProduction -> BuildingClass
+[conv] 0x6d0680 TabClass::Seek -> TabClass
+[conv] 0x7a5290 CChatEventSink::GetTypeInfo -> CChatEventSink
+[conv] 0x4197c0 TechnoClass::FindSpiralMoveTarget -> TechnoClass
+[conv] 0x51dbd0 InfantryClass::CalcFacingToTarget -> InfantryClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] MIXFile                  rc=2
+[era] CellClass                rc=2
+[era] BulletClass              rc=2
+[era] File                     rc=2
+[era] _addr_63                 rc=2
+[era] CChatEventSink           rc=2
+[era] _addr_7D                 rc=2
+[era] ScenarioClass            rc=2
+[era] _addr_5C                 rc=2
+[era] BuildingClass            rc=2
+[era] TabClass                 rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x703230 TechnoClass::RegisterKill -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d038f ObjectClass::___sbh_heap_check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x627590 MIXFile::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x575870 CellClass::ApplyTerrainMod2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x468d80 BulletClass::Fire -> COMPILE_FAIL (attempt 1)
+[ledger] 0x663db0 ObjectClass::LaunchMultiplayerHost -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76ac90 File::LoadWDT -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70c270 TechnoClass::PowerBeginUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x575ba0 CellClass::ApplyTerrainMod -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63a5a0 HandlePlanningModeClick -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fd9a0 TechnoClass::ValidateAIBuildAffordability -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a7b60 CChatEventSink::DispatchStub_23 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d0a20 _memcpy_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fad10 ScenarioClass::SaveGameOptions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cd850 WrapWideStringText -> COMPILE_FAIL (attempt 1)
+[ledger] 0x447780 BuildingClass::StartProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d0680 TabClass::Seek -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a5290 CChatEventSink::GetTypeInfo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4197c0 TechnoClass::FindSpiralMoveTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51dbd0 InfantryClass::CalcFacingToTarget -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p146\batch_report.json
