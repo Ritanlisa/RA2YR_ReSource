@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A2FC0",
+ "name": "CStreamClass::UnlockRegion",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A2FC0",
+ "bytes_hex": "568b7424088b460885c0750a6803400080e84a9733008b5424108b4608528b5424108b085250ff51305ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

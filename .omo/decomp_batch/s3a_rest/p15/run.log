@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a0ce0 EnumConnectionPointsClass::sub_4A0CE0 -> EnumConnectionPointsClass
+[conv] 0x4a1750 CellClass::Cleanup -> CellClass
+[conv] 0x4a17c0 BuildingClass::BeginCrumblingTimer -> BuildingClass
+[conv] 0x4a1de0 Checksummer::Add_Buffer -> Checksummer
+[conv] 0x4a2880 CStreamClass::sub_4A2880 -> CStreamClass
+[conv] 0x4a2950 CStreamClass::Release -> CStreamClass
+[conv] 0x4a2990 CStreamClass::QueryInterface -> CStreamClass
+[conv] 0x4a2a20 CStreamClass::StubReturnNullPointer -> CStreamClass
+[conv] 0x4a2e00 CStreamClass::Read -> CStreamClass
+[conv] 0x4a2e50 CStreamClass::Write -> CStreamClass
+[conv] 0x4a2ea0 CStreamClass::Seek -> CStreamClass
+[conv] 0x4a2ee0 CStreamClass::SetSize -> CStreamClass
+[conv] 0x4a2f40 CStreamClass::Revert -> CStreamClass
+[conv] 0x4a2f80 CStreamClass::LockRegion -> CStreamClass
+[conv] 0x4a2fc0 CStreamClass::UnlockRegion -> CStreamClass
+[conv] 0x4a2ff0 CStreamClass::Stat -> CStreamClass
+[conv] 0x4a33a0 AudioStream::ReadSamples -> AudioStream
+[conv] 0x4a3890 CCFileClass::ReadEntireFile -> CCFileClass
+[conv] 0x4a45c0 ObjectClass::sub_4A45C0 -> ObjectClass
+[conv] 0x4a4900 sub_4A4900 -> _addr_4A
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] EnumConnectionPointsClass rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] Checksummer              rc=2
+[era] CStreamClass             rc=2
+[era] AudioStream              rc=2
+[era] CCFileClass              rc=2
+[era] ObjectClass              rc=2
+[era] _addr_4A                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a2880   MISMATCH         CStreamClass::sub_4A2880
+[diff] 0x4a2e00   MISMATCH         CStreamClass::Read
+[diff] 0x4a2e50   MISMATCH         CStreamClass::Write
+[diff] 0x4a2ea0   MISMATCH         CStreamClass::Seek
+[diff] 0x4a2ee0   MISMATCH         CStreamClass::SetSize
+[diff] 0x4a2f40   MISMATCH         CStreamClass::Revert
+[diff] 0x4a2f80   MISMATCH         CStreamClass::LockRegion
+[diff] 0x4a2fc0   MISMATCH         CStreamClass::UnlockRegion
+[diff] 0x4a2ff0   MISMATCH         CStreamClass::Stat
+[ledger] 0x4a0ce0 EnumConnectionPointsClass::sub_4A0CE0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a1750 CellClass::Cleanup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a17c0 BuildingClass::BeginCrumblingTimer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a1de0 Checksummer::Add_Buffer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a2880 CStreamClass::sub_4A2880 -> NG (attempt 2)
+[ledger] 0x4a2950 CStreamClass::Release -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a2990 CStreamClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a2a20 CStreamClass::StubReturnNullPointer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a2e00 CStreamClass::Read -> NG (attempt 2)
+[ledger] 0x4a2e50 CStreamClass::Write -> NG (attempt 2)
+[ledger] 0x4a2ea0 CStreamClass::Seek -> NG (attempt 2)
+[ledger] 0x4a2ee0 CStreamClass::SetSize -> NG (attempt 2)
+[ledger] 0x4a2f40 CStreamClass::Revert -> NG (attempt 2)
+[ledger] 0x4a2f80 CStreamClass::LockRegion -> NG (attempt 2)
+[ledger] 0x4a2fc0 CStreamClass::UnlockRegion -> NG (attempt 2)
+[ledger] 0x4a2ff0 CStreamClass::Stat -> NG (attempt 2)
+[ledger] 0x4a33a0 AudioStream::ReadSamples -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a3890 CCFileClass::ReadEntireFile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a45c0 ObjectClass::sub_4A45C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a4900 sub_4A4900 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "ret_norm": 2,
+  "branch_polarity": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p15\batch_report.json

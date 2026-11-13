@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A2E50",
+ "name": "CStreamClass::Write",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A2E50",
+ "bytes_hex": "568b7424088a461084c0752f8a461184c075288b460885c0750a6803400080e8ac9833008b76088b4c24108b54240c518b065256ff50185ec20c00b8054000805ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

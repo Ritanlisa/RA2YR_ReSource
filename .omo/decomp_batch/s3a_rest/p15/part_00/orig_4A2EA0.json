@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A2EA0",
+ "name": "CStreamClass::Seek",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A2EA0",
+ "bytes_hex": "568b7424088b460885c0750a6803400080e86a9833008b54241c8b4608528b54241c528b54241c8b08528b54241c528b54241c5250ff511c5ec21800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

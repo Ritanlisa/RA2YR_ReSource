@@ -1,0 +1,15 @@
+{
+ "symbol": "?Read@CStreamClass@@QAGHHHHH@Z",
+ "sym_key": "CStreamClass::Read",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b461084c0753af6c4ff75358b460885c0750d6803400080e80000000083c4048b4c24188b5424148b7608518b4c2414528b5424148b06515256ff50145ec21400b8054000805ec21400",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A2EE0",
+ "name": "CStreamClass::SetSize",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A2EE0",
+ "bytes_hex": "568b7424088b460885c0750a6803400080e82a9833008b46088b54240c52508b08ff51205ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

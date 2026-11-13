@@ -1,0 +1,15 @@
+{
+ "symbol": "?Write@CStreamClass@@QAGHHH@Z",
+ "sym_key": "CStreamClass::Write",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b461084c07530f6c4ff752b8b460885c0750d6803400080e80000000083c4048b76088b4c24108b54240c518b065256ff50185ec20c00b8054000805ec20c00",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

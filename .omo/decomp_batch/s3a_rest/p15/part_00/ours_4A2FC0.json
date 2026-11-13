@@ -1,0 +1,15 @@
+{
+ "symbol": "?UnlockRegion@CStreamClass@@QAGHHH@Z",
+ "sym_key": "CStreamClass::UnlockRegion",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b460885c0750d6803400080e80000000083c4048b5424108b4608528b5424108b085250ff51305ec20c00",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Revert@CStreamClass@@QAGHHHHHH@Z",
+ "sym_key": "CStreamClass::Revert",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b460885c0750d6803400080e80000000083c4048b54241c8b4608528b54241c528b54241c8b08528b54241c528b54241c5250ff51285ec21800",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}
