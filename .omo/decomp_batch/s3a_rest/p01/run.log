@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x40afd0 Array::ForEachReverse -> Array
+[conv] 0x40b300 VectorClass::QueryInterface -> VectorClass
+[conv] 0x40bdd0 sub_40BDD0 -> _addr_40
+[conv] 0x40e3e0 GenericList::sub_40E3E0 -> GenericList
+[conv] 0x40e4c0 List::sub_40E4C0 -> List
+[conv] 0x410960 AbstractTypeClass::Init -> AbstractTypeClass
+[conv] 0x4109c0 AbstractTypeClass::Dtor -> AbstractTypeClass
+[conv] 0x410c30 AbstractTypeClass::ddtor -> AbstractTypeClass
+[conv] 0x410ce0 BSurface::Construct -> BSurface
+[conv] 0x410ed0 Buffer::FillCircularBufferScroll -> Buffer
+[conv] 0x4115a0 XSurface::ScalarDtor -> XSurface
+[conv] 0x4115d0 Surface::getObjectValue -> Surface
+[conv] 0x4115f0 BSurface::Lock -> BSurface
+[conv] 0x411640 BSurface::GetPitch -> BSurface
+[conv] 0x411650 BSurface::ScalarDtor -> BSurface
+[conv] 0x411b20 sub_411B20 -> _addr_41
+[conv] 0x4123a0 fptc -> _addr_41
+[conv] 0x412b40 AircraftTrackerClass::FillCurrentVector -> AircraftTrackerClass
+[conv] 0x4135d0 GadgetGrid::RemoveItem -> GadgetGrid
+[conv] 0x413d20 AircraftClass::Construct -> AircraftClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Array                    rc=2
+[era] VectorClass              rc=2
+[era] _addr_40                 rc=2
+[era] GenericList              rc=2
+[era] List                     rc=2
+[era] AbstractTypeClass        rc=2
+[era] BSurface                 rc=2
+[era] Buffer                   rc=0
+[era] XSurface                 rc=2
+[era] Surface                  rc=2
+[era] _addr_41                 rc=2
+[era] AircraftTrackerClass     rc=2
+[era] GadgetGrid               rc=2
+[era] AircraftClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x410ed0   MISMATCH         Buffer::FillCircularBufferScroll
+[ledger] 0x40afd0 Array::ForEachReverse -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40b300 VectorClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40bdd0 sub_40BDD0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40e3e0 GenericList::sub_40E3E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40e4c0 List::sub_40E4C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x410960 AbstractTypeClass::Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4109c0 AbstractTypeClass::Dtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x410c30 AbstractTypeClass::ddtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x410ce0 BSurface::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x410ed0 Buffer::FillCircularBufferScroll -> NG (attempt 2)
+[ledger] 0x4115a0 XSurface::ScalarDtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4115d0 Surface::getObjectValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4115f0 BSurface::Lock -> COMPILE_FAIL (attempt 2)
+[ledger] 0x411640 BSurface::GetPitch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x411650 BSurface::ScalarDtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x411b20 sub_411B20 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4123a0 fptc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x412b40 AircraftTrackerClass::FillCurrentVector -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4135d0 GadgetGrid::RemoveItem -> COMPILE_FAIL (attempt 2)
+[ledger] 0x413d20 AircraftClass::Construct -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p01\batch_report.json
