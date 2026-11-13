@@ -66442,14 +66442,14 @@
   "status": "NG"
  },
  "0x50a5c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::AIBuildBase",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::AIBuildBase",
-  "rule_violations": 59,
+  "rule_violations": 55,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -66659,7 +66659,7 @@
   "this_as_id": false
  },
  "0x50c160": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -67064,7 +67064,7 @@
   "this_as_id": false
  },
  "0x50e0e0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -67180,7 +67180,7 @@
   "this_as_id": false
  },
  "0x50e450": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -68181,7 +68181,7 @@
   "this_as_id": false
  },
  "0x50ff50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -68828,7 +68828,7 @@
   "this_as_id": false
  },
  "0x510f60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -69054,7 +69054,7 @@
   "this_as_id": false
  },
  "0x511850": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -69085,7 +69085,7 @@
   "status": "OK"
  },
  "0x512290": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -69121,7 +69121,7 @@
   "this_as_id": false
  },
  "0x5125a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70070,14 +70070,14 @@
   "this_as_id": false
  },
  "0x513d20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingLightClass::UpdateOscillation",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingLightClass::UpdateOscillation",
-  "rule_violations": 6,
+  "rule_violations": 9,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -70118,7 +70118,7 @@
   "this_as_id": false
  },
  "0x514c30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70142,7 +70142,7 @@
   "this_as_id": false
  },
  "0x514cb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70202,14 +70202,14 @@
   "this_as_id": false
  },
  "0x516320": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "HoverLocomotionClass::HasScoreDisplayChanged_516320",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "JumpjetLocomotionClass::HasScoreDisplayChanged_516320",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -70346,7 +70346,7 @@
   "this_as_id": false
  },
  "0x517110": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70686,11 +70686,16 @@
   "this_as_id": false
  },
  "0x517a50": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryClass::Construct",
-  "note": "backfill: results.jsonl COMPILE_FAIL/snapshotfix2_probe",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InfantryClass::Construct",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x517cc0": {
   "attempts": 4,
@@ -70748,14 +70753,14 @@
   "this_as_id": false
  },
  "0x519630": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryClass::RepairBridge",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryClass::RepairBridge",
-  "rule_violations": 0,
+  "rule_violations": 32,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -71072,7 +71077,7 @@
   "this_as_id": false
  },
  "0x51f660": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71796,7 +71801,7 @@
   "this_as_id": false
  },
  "0x522fe0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73340,14 +73345,14 @@
   "this_as_id": false
  },
  "0x52ace0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "GenericList::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "GenericList::Constructor",
-  "rule_violations": 5,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -73919,7 +73924,7 @@
   "this_as_id": false
  },
  "0x52d640": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
