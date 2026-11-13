@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x556c00 ObjectClass::Render_Render_556C00 -> ObjectClass
+[conv] 0x557eb0 ListClass::Draw -> ListClass
+[conv] 0x55fdb0 ScreenDlgProcOptions -> _addr_55
+[conv] 0x565800 MapClass::Destru_vt05 -> MapClass
+[conv] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> MapClass
+[conv] 0x5683c0 MapClass::FillRevealBuffer -> MapClass
+[conv] 0x5687f0 MapClass::ApplyOverlayReveal -> MapClass
+[conv] 0x571490 CellClass::PropagateTerrainVariant2 -> CellClass
+[conv] 0x573540 Terrain::RecursiveModify -> Terrain
+[conv] 0x574000 TerrainClass::ProcessSlope -> TerrainClass
+[conv] 0x574c20 MapClass::ApplyTerrainDamage -> MapClass
+[conv] 0x578880 MapClass::FastCellLookup -> MapClass
+[conv] 0x57a430 RecursiveCellClassNeighbourUpdate -> _addr_57
+[conv] 0x57f6a0 CellClass::ApplyTileModification6 -> CellClass
+[conv] 0x57fbc0 CellClass::ApplyTileModification7 -> CellClass
+[conv] 0x5800d0 CellClass::ApplyTileModification5 -> CellClass
+[conv] 0x580600 CellClass::ApplyTileModification8 -> CellClass
+[conv] 0x583ad0 ObjectClass::sub_583AD0 -> ObjectClass
+[conv] 0x588750 ScanBuildingPlacementCells -> _addr_58
+[conv] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> _VectorClass_USubzoneTrackingStruct
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] ListClass                rc=2
+[era] _addr_55                 rc=2
+[era] MapClass                 rc=2
+[era] CellClass                rc=2
+[era] Terrain                  rc=2
+[era] TerrainClass             rc=2
+[era] _addr_57                 rc=2
+[era] _addr_58                 rc=2
+[era] _VectorClass_USubzoneTrackingStruct rc=2
+=== diffasm byte-compare ===
+[ledger] 0x556c00 ObjectClass::Render_Render_556C00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x557eb0 ListClass::Draw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55fdb0 ScreenDlgProcOptions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x565800 MapClass::Destru_vt05 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5683c0 MapClass::FillRevealBuffer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5687f0 MapClass::ApplyOverlayReveal -> COMPILE_FAIL (attempt 2)
+[ledger] 0x571490 CellClass::PropagateTerrainVariant2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x573540 Terrain::RecursiveModify -> COMPILE_FAIL (attempt 2)
+[ledger] 0x574000 TerrainClass::ProcessSlope -> COMPILE_FAIL (attempt 2)
+[ledger] 0x574c20 MapClass::ApplyTerrainDamage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x578880 MapClass::FastCellLookup -> COMPILE_FAIL (attempt 5)
+[ledger] 0x57a430 RecursiveCellClassNeighbourUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57f6a0 CellClass::ApplyTileModification6 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57fbc0 CellClass::ApplyTileModification7 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5800d0 CellClass::ApplyTileModification5 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x580600 CellClass::ApplyTileModification8 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x583ad0 ObjectClass::sub_583AD0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x588750 ScanBuildingPlacementCells -> COMPILE_FAIL (attempt 2)
+[ledger] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p11\batch_report.json
