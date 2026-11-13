@@ -1,0 +1,11 @@
+{
+ "addr": "0x767300",
+ "name": "GameOption_WorldDominationTour::Constructor",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x767300",
+ "bytes_hex": "c70160707f00e95563efff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?System_Init_766910@rc_ptr@@QAEPAIXZ",
+ "sym_key": "rc_ptr::System_Init_766910",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c70100000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_MapSizeGameOption@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_MapSizeGameOption"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x764710 _DynamicVectorClass_PAVWaypointPathClass::Constructor_VectorClass_WaypointPathClass___ -> _DynamicVectorClass_PAVWaypointPathClass
+[conv] 0x765710 Campaign_WorldDominationTour::Constructor -> Campaign_WorldDominationTour
+[conv] 0x765740 Campaign_WorldDominationTour::Constructor_0 -> Campaign_WorldDominationTour
+[conv] 0x765770 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1 -> _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x765790 COMClass::invokeMethod -> COMClass
+[conv] 0x7657c0 COMClass::getTypeInfo -> COMClass
+[conv] 0x7667a0 Conflict_WorldDominationTour::QueryInterface -> Conflict_WorldDominationTour
+[conv] 0x7668f0 rc_ptr::System_Init_7668F0 -> rc_ptr
+[conv] 0x766900 rc_ptr::System_Init_766900 -> rc_ptr
+[conv] 0x766910 rc_ptr::System_Init_766910 -> rc_ptr
+[conv] 0x766960 Conflict_WorldDominationTour::Constructor -> Conflict_WorldDominationTour
+[conv] 0x766990 Conflict_WorldDominationTour::Constructor_0 -> Conflict_WorldDominationTour
+[conv] 0x7669c0 COMClass::connectPoint -> COMClass
+[conv] 0x7669f0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint -> _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x767300 GameOption_WorldDominationTour::Constructor -> GameOption_WorldDominationTour
+[conv] 0x7678c0 MapSizeGameOption_WorldDominationTour::QueryInterface -> MapSizeGameOption_WorldDominationTour
+[conv] 0x767c10 History_WorldDominationTour::QueryInterface -> History_WorldDominationTour
+[conv] 0x767c50 COMClass::marshalInterface -> COMClass
+[conv] 0x769d70 Map_Load_769D70 -> Map_Load
+[conv] 0x769d90 MSFrameAnim::resumeAnimation -> MSFrameAnim
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVWaypointPathClass rc=0
+[era] Campaign_WorldDominationTour rc=0
+[era] _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=2
+[era] COMClass                 rc=0
+[era] Conflict_WorldDominationTour rc=2
+[era] rc_ptr                   rc=0
+[era] _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] GameOption_WorldDominationTour rc=0
+[era] MapSizeGameOption_WorldDominationTour rc=0
+[era] History_WorldDominationTour rc=0
+[era] Map_Load                 rc=2
+[era] MSFrameAnim              rc=0
+=== diffasm byte-compare ===
+[diff] 0x764710   MISMATCH         _DynamicVectorClass_PAVWaypointPathClass::Constructor_VectorClass_WaypointPathClass___
+[diff] 0x765710   MISMATCH         Campaign_WorldDominationTour::Constructor
+[diff] 0x765740   MISMATCH         Campaign_WorldDominationTour::Constructor_0
+[diff] 0x765790   MISMATCH         COMClass::invokeMethod
+[diff] 0x7657c0   MISMATCH         COMClass::getTypeInfo
+[diff] 0x7669c0   MISMATCH         COMClass::connectPoint
+[diff] 0x767c50   MISMATCH         COMClass::marshalInterface
+[diff] 0x7667a0   MISMATCH         Conflict_WorldDominationTour::QueryInterface
+[diff] 0x766990   MISMATCH         Conflict_WorldDominationTour::Constructor_0
+[diff] 0x7668f0   MATCH            rc_ptr::System_Init_7668F0
+[diff] 0x766900   MATCH            rc_ptr::System_Init_766900
+[diff] 0x766910   MATCH            rc_ptr::System_Init_766910
+[diff] 0x767300   MATCH            GameOption_WorldDominationTour::Constructor
+[diff] 0x7678c0   MISMATCH         MapSizeGameOption_WorldDominationTour::QueryInterface
+[diff] 0x767c10   MISMATCH         History_WorldDominationTour::QueryInterface
+[diff] 0x769d90   MISMATCH         MSFrameAnim::resumeAnimation
+[ledger] 0x764710 _DynamicVectorClass_PAVWaypointPathClass::Constructor_VectorClass_WaypointPathClass___ -> NG (attempt 2)
+[ledger] 0x765710 Campaign_WorldDominationTour::Constructor -> NG (attempt 2)
+[ledger] 0x765740 Campaign_WorldDominationTour::Constructor_0 -> NG (attempt 2)
+[ledger] 0x765770 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x765790 COMClass::invokeMethod -> NG (attempt 4)
+[ledger] 0x7657c0 COMClass::getTypeInfo -> NG (attempt 2)
+[ledger] 0x7667a0 Conflict_WorldDominationTour::QueryInterface -> NG (attempt 2)
+[ledger] 0x7668f0 rc_ptr::System_Init_7668F0 -> OK (attempt 2)
+[ledger] 0x766900 rc_ptr::System_Init_766900 -> OK (attempt 4)
+[ledger] 0x766910 rc_ptr::System_Init_766910 -> OK (attempt 2)
+[ledger] 0x766960 Conflict_WorldDominationTour::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x766990 Conflict_WorldDominationTour::Constructor_0 -> NG (attempt 2)
+[ledger] 0x7669c0 COMClass::connectPoint -> NG (attempt 2)
+[ledger] 0x7669f0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint -> COMPILE_FAIL (attempt 2)
+[ledger] 0x767300 GameOption_WorldDominationTour::Constructor -> OK (attempt 2)
+[ledger] 0x7678c0 MapSizeGameOption_WorldDominationTour::QueryInterface -> NG (attempt 2)
+[ledger] 0x767c10 History_WorldDominationTour::QueryInterface -> NG (attempt 2)
+[ledger] 0x767c50 COMClass::marshalInterface -> NG (attempt 2)
+[ledger] 0x769d70 Map_Load_769D70 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x769d90 MSFrameAnim::resumeAnimation -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 4,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "const_fold": 5,
+  "regalloc": 6
+ },
+ "match_rate_of_decided_pct": 25.0,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p28\batch_report.json

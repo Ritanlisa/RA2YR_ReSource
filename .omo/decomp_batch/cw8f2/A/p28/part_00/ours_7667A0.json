@@ -1,0 +1,33 @@
+{
+ "symbol": "?QueryInterface@Conflict_WorldDominationTour@@QAEPAID@Z",
+ "sym_key": "Conflict_WorldDominationTour::QueryInterface",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "568bf18d4e08c706000000008b01c70000000000e8000000008bcee800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Constructor@ReferenceCounted@@QAEXXZ",
+   "sym_key": "ReferenceCounted::Constructor"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

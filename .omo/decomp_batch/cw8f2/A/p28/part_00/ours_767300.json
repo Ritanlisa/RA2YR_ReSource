@@ -1,0 +1,21 @@
+{
+ "symbol": "?Constructor@GameOption_WorldDominationTour@@QAEXXZ",
+ "sym_key": "GameOption_WorldDominationTour::Constructor",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c70100000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?vt_WorldDominationTour_GameOption@@3PAXA",
+   "sym_key": "vt_WorldDominationTour_GameOption"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Constructor@ReferenceCounted@@QAEXXZ",
+   "sym_key": "ReferenceCounted::Constructor"
+  }
+ ]
+}

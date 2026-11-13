@@ -1,0 +1,11 @@
+{
+ "addr": "0x7667A0",
+ "name": "Conflict_WorldDominationTour::QueryInterface",
+ "size": 52,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7667A0",
+ "bytes_hex": "568bf18d4e08c706c46f7f00c701a4bf7e00e8a96cefff8bcee8a26eeffff644240801740956e87223060083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

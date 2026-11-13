@@ -149912,12 +149912,12 @@
   "this_as_id": false
  },
  "0x764710": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7f6e24",
+  "first_diff": "+14 je 0x764737",
   "name": "_DynamicVectorClass_PAVWaypointPathClass::Constructor_VectorClass_WaypointPathClass___",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_WaypointPathClass___",
   "rule_violations": 0,
   "status": "NG",
@@ -150197,7 +150197,7 @@
   "this_as_id": false
  },
  "0x765710": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7f6f6c",
@@ -150209,7 +150209,7 @@
   "this_as_id": false
  },
  "0x765740": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7f6f74",
@@ -150221,36 +150221,36 @@
   "this_as_id": false
  },
  "0x765770": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7f6f9c",
   "name": "_VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Campaign_WorldDominationTour_16::Constructor_1",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x765790": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+3 mov dword ptr [esi], 0x7f6f24",
+  "first_diff": "+30 mov eax, esi",
   "name": "COMClass::invokeMethod",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "COMClass::invokeMethod",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x7657c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+3 mov dword ptr [esi], 0x7f6f2c",
+  "first_diff": "+30 mov eax, esi",
   "name": "COMClass::getTypeInfo",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "COMClass::getTypeInfo",
   "rule_violations": 0,
   "status": "NG",
@@ -150589,7 +150589,7 @@
   "this_as_id": false
  },
  "0x7667a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+6 mov dword ptr [esi], 0x7f6fc4",
@@ -150668,39 +150668,39 @@
   "this_as_id": false
  },
  "0x7668f0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": "+0 mov dword ptr [ecx], 0x7f7024",
   "name": "rc_ptr::System_Init_7668F0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "System_Init_7668F0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x766900": {
-  "attempts": 3,
-  "clean": false,
+  "attempts": 4,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": "+0 mov dword ptr [ecx], 0x7f7014",
   "name": "rc_ptr::System_Init_766900",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "System_Init_766900",
-  "rule_violations": 1,
-  "status": "NG",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x766910": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": "+0 mov dword ptr [ecx], 0x7f7040",
   "name": "rc_ptr::System_Init_766910",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "System_Init_766910",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x766920": {
@@ -150716,19 +150716,19 @@
   "this_as_id": false
  },
  "0x766960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7f701c",
   "name": "Conflict_WorldDominationTour::Constructor",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Conflict_WorldDominationTour_12::Constructor",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x766990": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7f7014",
@@ -150740,27 +150740,27 @@
   "this_as_id": false
  },
  "0x7669c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+3 mov dword ptr [esi], 0x7f7040",
+  "first_diff": "+30 mov eax, esi",
   "name": "COMClass::connectPoint",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "COMClass::connectPoint",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x7669f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7f702c",
   "name": "_VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "COMClass::disconnectPoint",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x766a10": {
@@ -151122,15 +151122,15 @@
   "this_as_id": false
  },
  "0x767300": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": "+0 mov dword ptr [ecx], 0x7f7060",
   "name": "GameOption_WorldDominationTour::Constructor",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "GameOption_WorldDominationTour::Constructor",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x767310": {
@@ -151192,12 +151192,12 @@
   "this_as_id": false
  },
  "0x7678c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": "+3 mov dword ptr [esi], 0x7f7060",
+  "first_diff": "+30 mov eax, esi",
   "name": "MapSizeGameOption_WorldDominationTour::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MapSizeGameOption_WorldDominationTour::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
@@ -151369,7 +151369,7 @@
   "this_as_id": false
  },
  "0x767c10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+6 mov dword ptr [esi], 0x7f70dc",
@@ -151381,12 +151381,12 @@
   "this_as_id": false
  },
  "0x767c50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+3 mov dword ptr [esi], 0x7f70ec",
+  "first_diff": "+30 mov eax, esi",
   "name": "COMClass::marshalInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "COMClass::marshalInterface",
   "rule_violations": 0,
   "status": "NG",
@@ -151871,23 +151871,23 @@
   "this_as_id": false
  },
  "0x769d70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": "+12 mov dword ptr [eax], 0x7f71cc",
   "name": "Map_Load_769D70",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Map_Load_769D70",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x769d90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+3 mov dword ptr [esi], 0x7f712c",
+  "first_diff": "+30 mov eax, esi",
   "name": "MSFrameAnim::resumeAnimation",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MSFrameAnim::resumeAnimation",
   "rule_violations": 0,
   "status": "NG",

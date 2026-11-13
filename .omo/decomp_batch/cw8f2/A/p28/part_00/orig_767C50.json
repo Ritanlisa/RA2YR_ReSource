@@ -1,0 +1,11 @@
+{
+ "addr": "0x767C50",
+ "name": "COMClass::marshalInterface",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x767C50",
+ "bytes_hex": "568bf1c706ec707f00e80258effff644240801740956e8d20e060083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
