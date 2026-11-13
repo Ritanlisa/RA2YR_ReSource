@@ -1,0 +1,729 @@
+{
+ "symbol": "?Init@CampaignScreen@@QAEHPAXIII@Z",
+ "sym_key": "CampaignScreen::Init",
+ "size": 1774,
+ "link_base": 0,
+ "bytes_hex": "81ec54010000538b9c24640100005556578bbc2468010000538bf1538bd7e80000000085c00f85b60600006a0856e80000000081ff97040000765081ffd8040000751785db75136a1d5368d5040000682b07000056e8000000008b44241050536a006a01e80000000083c4106a0056e8000000006a0156e8000000005f5e5d33c05b81c454010000c210007528682b07000056e800000000566a0068d704000050e8000000005f5e5d33c05b81c454010000c2100083ff0f751d8bcee8000000008bcee8000000005f5e5d33c05b81c454010000c2100081ff10010000742c81ff110100000f85f40500006681fbd1060f85e90500005f5ec700010000005d33c05b81c454010000c21000683307000056c644242c00e80000000068000000006a0068b204000050e8000000008b3d0000000033c98a0d000000006800070000518b0d0000000033d2e800000000578d5424285052e80000000083c40c683507000056e8000000008d4c2424516a0068b204000050e800000000a10000000085c00f84c700000083f8010f859c0000008b0d0000000033d28a150000000068060700005233d2e8000000008bf833c0a00000000033c9668b0d0000000068060700005033d2e800000000578d4c24285051e800000000a10000000083c40c83f80275498b0d0000000033d28a150000000068080700005233d2e8000000008bf833c0a00000000033c9668b0d0000000068080700005033d2e800000000578d4c24285051e80000000083c40c8b0d0000000033d28a1500000000680a0700005233d2e8000000008b4c241051eb3b8b0d0000000033c0a00000000068040700005033d2e80000000033c968040700008a0d0000000033d25133c9668b0d000000008bf8e800000000578d5424285052e80000000083c40c683207000056e8000000008d4c2424516a0068b204000050e800000000b889888888f725000000008bca8d542414c1e90583fad40f848b000000b8c5b3a291f7e903d1c1fa0b8bc2c1e81f03d083fa637e05b93f7e0500b8c5b3a29168ea060000f7e903d1c1fa0b8bc2c1e81f03d08bfa8d04bf8d04808d14c033c0a000000000c1e2042bca508bd933d2b960030000e8000000008bc88bc399bd3c000000f7fdb88988888852f7eb03d3c1fa058bc2c1e81f03d05257518d4c243451e80000000083c41468ea03000056e8000000008d542424526a0068b204000050e800000000a10000000033db85c00f8e570300008b0c9d000000008d442420500fbe05040000008b51288b0c9081c108030000e8000000008b54241833c98a480280e2008bc18b0c9d000000000bc28d2c5b8944241825ff0000008b7c2419894c241481e7ffff0000c1e503c1e7080bf88b8560020000505689442418e8000000008b542414526a0068b204000050e8000000008b4424105056e800000000576a00689804000050e8000000008b149d00000000c1ed028b42408d9424e40000008b0cad6402000050894c241433c9668b0d000000005152e8000000008b44241c83c40c5056e8000000008d8c24e4000000516a0068b204000050e8000000008b5424105256e800000000576a00689804000050e8000000008b0c9d000000008b04ad68020000894424108b51305233c08d4c246866a1000000005051e8000000008b54241c83c40c5256e8000000008d4c2464516a0068b204000050e8000000008b5424105256e800000000576a00689804000050e8000000008b04ad6c0200008b0c9d000000008944241033c08b515066a100000000528d8c24a80000005051e8000000008b54241c83c40c5256e8000000008d8c24a4000000516a0068b204000050e8000000008b5424105256e800000000576a00689804000050e8000000008b049d000000008b2cad7002000033d28b4860668b1500000000518d8424280100005250e80000000083c40c5556e8000000008d8c2424010000516a0068b204000050e8000000005556e800000000576a00689804000050e80000000085db0f848600000083fb010f850c0100008b2d00000000683907000056e800000000556a0068b204000050e800000000683907000056e800000000576a00689804000050e8000000008b150000000033c9668b0d000000008b42608d542424505152e80000000083c40c683807000056e8000000008d4c2424516a0068b204000050e8000000006838070000eb7b8b2d00000000683a07000056e800000000556a0068b204000050e800000000683a07000056e800000000576a00689804000050e8000000008b150000000033c9668b0d000000008b42608d542424505152e80000000083c40c683b07000056e8000000008d4c2424516a0068b204000050e800000000683b07000056e800000000576a00689804000050e800000000a100000000433bd80f8ca9fcffff33c05f5e5d5b81c454010000c21000",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHH0@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?Screen__Capture@@YADDHIH@Z",
+   "sym_key": "Screen__Capture"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?Dialog__InitWindow@@YGHPAXH@Z",
+   "sym_key": "Dialog__InitWindow"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?PostMessageA@@YGHHHHH@Z",
+   "sym_key": "PostMessageA"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?DrawBackground@Dialog@@QAEXXZ",
+   "sym_key": "Dialog::DrawBackground"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?StopBink@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::StopBink"
+  },
+  {
+   "off": 279,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 284,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E0A4@@3GA",
+   "sym_key": "DataGlobal_89E0A4"
+  },
+  {
+   "off": 297,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 303,
+   "type": "DIR32",
+   "sym": "?dword_89DFC0@@3IA",
+   "sym_key": "dword_89DFC0"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CampScor_cpp@@3EA",
+   "sym_key": "g_Str_File_CampScor_cpp"
+  },
+  {
+   "off": 323,
+   "type": "DIR32",
+   "sym": "?aGuiCampaignlab@@3HA",
+   "sym_key": "aGuiCampaignlab"
+  },
+  {
+   "off": 330,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 342,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 356,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 374,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 379,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E008@@3IA",
+   "sym_key": "DataGlobal_89E008"
+  },
+  {
+   "off": 402,
+   "type": "DIR32",
+   "sym": "?aTxtDifficultyM@@3HA",
+   "sym_key": "aTxtDifficultyM"
+  },
+  {
+   "off": 410,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CampScor_cpp@@3EA",
+   "sym_key": "g_Str_File_CampScor_cpp"
+  },
+  {
+   "off": 423,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 432,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CampScor_cpp@@3EA",
+   "sym_key": "g_Str_File_CampScor_cpp"
+  },
+  {
+   "off": 441,
+   "type": "DIR32",
+   "sym": "?g_Str_GUI_DifficultyString@@3GA",
+   "sym_key": "g_Str_GUI_DifficultyString"
+  },
+  {
+   "off": 454,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 466,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 471,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E008@@3IA",
+   "sym_key": "DataGlobal_89E008"
+  },
+  {
+   "off": 485,
+   "type": "DIR32",
+   "sym": "?aTxtDifficultyB@@3HA",
+   "sym_key": "aTxtDifficultyB"
+  },
+  {
+   "off": 493,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CampScor_cpp@@3EA",
+   "sym_key": "g_Str_File_CampScor_cpp"
+  },
+  {
+   "off": 506,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 515,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CampScor_cpp@@3EA",
+   "sym_key": "g_Str_File_CampScor_cpp"
+  },
+  {
+   "off": 524,
+   "type": "DIR32",
+   "sym": "?g_Str_GUI_DifficultyString@@3GA",
+   "sym_key": "g_Str_GUI_DifficultyString"
+  },
+  {
+   "off": 537,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 549,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 558,
+   "type": "DIR32",
+   "sym": "?aGuiBlank@@3HA",
+   "sym_key": "aGuiBlank"
+  },
+  {
+   "off": 566,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CampScor_cpp@@3EA",
+   "sym_key": "g_Str_File_CampScor_cpp"
+  },
+  {
+   "off": 579,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 592,
+   "type": "DIR32",
+   "sym": "?aTxtDifficultyE@@3HA",
+   "sym_key": "aTxtDifficultyE"
+  },
+  {
+   "off": 599,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CampScor_cpp@@3EA",
+   "sym_key": "g_Str_File_CampScor_cpp"
+  },
+  {
+   "off": 612,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 625,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CampScor_cpp@@3EA",
+   "sym_key": "g_Str_File_CampScor_cpp"
+  },
+  {
+   "off": 637,
+   "type": "DIR32",
+   "sym": "?g_Str_GUI_DifficultyString@@3GA",
+   "sym_key": "g_Str_GUI_DifficultyString"
+  },
+  {
+   "off": 644,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 656,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 670,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 688,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 699,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DFD4@@3IA",
+   "sym_key": "DataGlobal_89DFD4"
+  },
+  {
+   "off": 788,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CampScor_cpp@@3EA",
+   "sym_key": "g_Str_File_CampScor_cpp"
+  },
+  {
+   "off": 803,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  },
+  {
+   "off": 808,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 853,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 867,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 885,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 890,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E020@@3IA",
+   "sym_key": "DataGlobal_89E020"
+  },
+  {
+   "off": 907,
+   "type": "DIR32",
+   "sym": "?dword_89DFE0@@3IA",
+   "sym_key": "dword_89DFE0"
+  },
+  {
+   "off": 919,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 936,
+   "type": "REL32",
+   "sym": "?ConvertToRGB@Color@@QAEHH@Z",
+   "sym_key": "Color::ConvertToRGB"
+  },
+  {
+   "off": 957,
+   "type": "DIR32",
+   "sym": "?dword_89DFE0@@3IA",
+   "sym_key": "dword_89DFE0"
+  },
+  {
+   "off": 999,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  },
+  {
+   "off": 1010,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1028,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1039,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1053,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1060,
+   "type": "DIR32",
+   "sym": "?dword_89DFE0@@3IA",
+   "sym_key": "dword_89DFE0"
+  },
+  {
+   "off": 1080,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  },
+  {
+   "off": 1094,
+   "type": "DIR32",
+   "sym": "?g_Str_Fmt_PctD@@3GB",
+   "sym_key": "g_Str_Fmt_PctD"
+  },
+  {
+   "off": 1101,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 1115,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1136,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1147,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1161,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1168,
+   "type": "DIR32",
+   "sym": "?dword_89DFE0@@3IA",
+   "sym_key": "dword_89DFE0"
+  },
+  {
+   "off": 1175,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  },
+  {
+   "off": 1195,
+   "type": "DIR32",
+   "sym": "?g_Str_Fmt_PctD@@3GB",
+   "sym_key": "g_Str_Fmt_PctD"
+  },
+  {
+   "off": 1202,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 1216,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1234,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1245,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1259,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1266,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  },
+  {
+   "off": 1273,
+   "type": "DIR32",
+   "sym": "?dword_89DFE0@@3IA",
+   "sym_key": "dword_89DFE0"
+  },
+  {
+   "off": 1288,
+   "type": "DIR32",
+   "sym": "?g_Str_Fmt_PctD@@3GB",
+   "sym_key": "g_Str_Fmt_PctD"
+  },
+  {
+   "off": 1303,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 1317,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1338,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1349,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1363,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1370,
+   "type": "DIR32",
+   "sym": "?dword_89DFE0@@3IA",
+   "sym_key": "dword_89DFE0"
+  },
+  {
+   "off": 1377,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  },
+  {
+   "off": 1389,
+   "type": "DIR32",
+   "sym": "?g_Str_Fmt_PctD@@3GB",
+   "sym_key": "g_Str_Fmt_PctD"
+  },
+  {
+   "off": 1404,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 1414,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1435,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1442,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1456,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1479,
+   "type": "DIR32",
+   "sym": "?dword_89DFE4@@3IA",
+   "sym_key": "dword_89DFE4"
+  },
+  {
+   "off": 1490,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1504,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1515,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1529,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1535,
+   "type": "DIR32",
+   "sym": "?dword_89DFE4@@3IA",
+   "sym_key": "dword_89DFE4"
+  },
+  {
+   "off": 1544,
+   "type": "DIR32",
+   "sym": "?g_Str_Fmt_PctD@@3GB",
+   "sym_key": "g_Str_Fmt_PctD"
+  },
+  {
+   "off": 1559,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 1573,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1591,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1604,
+   "type": "DIR32",
+   "sym": "?dword_89DFE0@@3IA",
+   "sym_key": "dword_89DFE0"
+  },
+  {
+   "off": 1615,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1629,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1640,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1654,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1660,
+   "type": "DIR32",
+   "sym": "?dword_89DFE0@@3IA",
+   "sym_key": "dword_89DFE0"
+  },
+  {
+   "off": 1669,
+   "type": "DIR32",
+   "sym": "?g_Str_Fmt_PctD@@3GB",
+   "sym_key": "g_Str_Fmt_PctD"
+  },
+  {
+   "off": 1684,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 1698,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1716,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1727,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 1741,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 1746,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E020@@3IA",
+   "sym_key": "DataGlobal_89E020"
+  }
+ ]
+}

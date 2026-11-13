@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x44ebf0 BuildingClass::Disappear_PrismForward -> BuildingClass
+[conv] 0x44f5c0 BuildingClass::CanBeSoldCheck -> BuildingClass
+[conv] 0x44fec0 BuildingClass::ReadConstructionData -> BuildingClass
+[conv] 0x451750 BuildingClass::PlayUpgradeAnim -> BuildingClass
+[conv] 0x452480 BuildingClass::Deactivate -> BuildingClass
+[conv] 0x453840 BuildingClass::RenderExitPosition -> BuildingClass
+[conv] 0x4549b0 Animation::UpdateBuildingAnimations -> Animation
+[conv] 0x45e970 BuildingTypeClass::LoadRepairAnimations -> BuildingTypeClass
+[conv] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> BuildingTypeClass
+[conv] 0x45f040 AbstractClass::LoadTypeFile -> AbstractClass
+[conv] 0x45f230 BuildingTypeClass::LoadAnimations -> BuildingTypeClass
+[conv] 0x45fa90 BuildingTypeClass::LoadVoxel -> BuildingTypeClass
+[conv] 0x465450 BulletTypeClass::ReadArmor -> BulletTypeClass
+[conv] 0x465cc0 BulletTypeClass::ReadTrailerAnim -> BulletTypeClass
+[conv] 0x46b0c0 BulletClass::RenderVoxelBullet -> BulletClass
+[conv] 0x46ce10 CampaignClass::LoadFromINIList -> CampaignClass
+[conv] 0x46f810 GetLobbyPlayerColor -> _addr_46
+[conv] 0x46f880 GetHouseClassSideIndex -> _addr_46
+[conv] 0x470c40 sub_470C40 -> _addr_47
+[conv] 0x470d30 CampaignScreen::Init -> CampaignScreen
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] Animation                rc=2
+[era] BuildingTypeClass        rc=2
+[era] AbstractClass            rc=0
+[era] BulletTypeClass          rc=0
+[era] BulletClass              rc=2
+[era] CampaignClass            rc=2
+[era] _addr_46                 rc=2
+[era] _addr_47                 rc=0
+[era] CampaignScreen           rc=0
+=== diffasm byte-compare ===
+[diff] 0x45fa90   MISMATCH         BuildingTypeClass::LoadVoxel
+[diff] 0x45f040   MISMATCH         AbstractClass::LoadTypeFile
+[diff] 0x465450   MISMATCH         BulletTypeClass::ReadArmor
+[diff] 0x465cc0   MISMATCH         BulletTypeClass::ReadTrailerAnim
+[diff] 0x470c40   MISMATCH         sub_470C40
+[diff] 0x470d30   MISMATCH         CampaignScreen::Init
+[ledger] 0x44ebf0 BuildingClass::Disappear_PrismForward -> COMPILE_FAIL (attempt 3)
+[ledger] 0x44f5c0 BuildingClass::CanBeSoldCheck -> COMPILE_FAIL (attempt 3)
+[ledger] 0x44fec0 BuildingClass::ReadConstructionData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x451750 BuildingClass::PlayUpgradeAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x452480 BuildingClass::Deactivate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x453840 BuildingClass::RenderExitPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4549b0 Animation::UpdateBuildingAnimations -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45e970 BuildingTypeClass::LoadRepairAnimations -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> COMPILE_FAIL (attempt 5)
+[ledger] 0x45f040 AbstractClass::LoadTypeFile -> NG (attempt 3)
+[ledger] 0x45f230 BuildingTypeClass::LoadAnimations -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45fa90 BuildingTypeClass::LoadVoxel -> NG (attempt 3)
+[ledger] 0x465450 BulletTypeClass::ReadArmor -> NG (attempt 3)
+[ledger] 0x465cc0 BulletTypeClass::ReadTrailerAnim -> NG (attempt 3)
+[ledger] 0x46b0c0 BulletClass::RenderVoxelBullet -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46ce10 CampaignClass::LoadFromINIList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46f810 GetLobbyPlayerColor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46f880 GetHouseClassSideIndex -> COMPILE_FAIL (attempt 3)
+[ledger] 0x470c40 sub_470C40 -> NG (attempt 3)
+[ledger] 0x470d30 CampaignScreen::Init -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "extern_reloc": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p01\batch_report.json

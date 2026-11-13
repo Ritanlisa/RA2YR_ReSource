@@ -1,0 +1,11 @@
+{
+ "addr": "0x465CC0",
+ "name": "BulletTypeClass::ReadTrailerAnim",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x465CC0",
+ "bytes_hex": "a1783ca80083ec3c5733ff85c07e5a56a16c3ca8008d4c24086a3c518b34b88b0d487088006a0068f0ae81008d5624c64424180052e8162d0c008d4c2408e8ddef0d0085c07c173b0538eda8007d0f8b0d2ceda8008b14818996580e0000a1783ca800473bf87ca85e5f83c43cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -20281,7 +20281,7 @@
   "this_as_id": false
  },
  "0x44ebf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20305,7 +20305,7 @@
   "this_as_id": false
  },
  "0x44f5c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20365,7 +20365,7 @@
   "this_as_id": false
  },
  "0x44fec0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20491,7 +20491,7 @@
   "this_as_id": false
  },
  "0x451750": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20654,7 +20654,7 @@
   "this_as_id": false
  },
  "0x452480": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20853,7 +20853,7 @@
   "this_as_id": false
  },
  "0x453840": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21021,7 +21021,7 @@
   "this_as_id": false
  },
  "0x4549b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23042,7 +23042,7 @@
   "this_as_id": false
  },
  "0x45e970": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23089,7 +23089,7 @@
   "this_as_id": false
  },
  "0x45ec90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23161,15 +23161,15 @@
   "this_as_id": false
  },
  "0x45f040": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x1dc",
   "name": "AbstractClass::LoadTypeFile",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "AbstractClass::LoadTypeFile",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x45f160": {
@@ -23197,7 +23197,7 @@
   "this_as_id": false
  },
  "0x45f230": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23209,15 +23209,15 @@
   "this_as_id": false
  },
  "0x45fa90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x2c4",
   "name": "BuildingTypeClass::LoadVoxel",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "BuildingTypeClass::LoadVoxel",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x464a70": {
@@ -23317,15 +23317,15 @@
   "this_as_id": false
  },
  "0x465450": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [0xa83c78]",
   "name": "BulletTypeClass::ReadArmor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "BulletTypeClass::ReadArmor",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x465570": {
@@ -23401,15 +23401,15 @@
   "this_as_id": false
  },
  "0x465cc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+13 jle 0x465d29",
   "name": "BulletTypeClass::ReadTrailerAnim",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/signedness",
   "orig_name": "BulletTypeClass::ReadTrailerAnim",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x465d30": {
@@ -24007,7 +24007,7 @@
   "this_as_id": false
  },
  "0x46b0c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24766,7 +24766,7 @@
   "this_as_id": false
  },
  "0x46ce10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -25217,7 +25217,7 @@
   "this_as_id": false
  },
  "0x46f810": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GetLobbyPlayerColor",
@@ -25228,7 +25228,7 @@
   "this_as_id": false
  },
  "0x46f880": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GetHouseClassSideIndex",
@@ -25323,26 +25323,26 @@
   "this_as_id": false
  },
  "0x470c40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "sub_470C40",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "sub_470C40",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x470d30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 0x10]",
   "name": "CampaignScreen::Init",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "CampaignScreen::Init",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x471420": {

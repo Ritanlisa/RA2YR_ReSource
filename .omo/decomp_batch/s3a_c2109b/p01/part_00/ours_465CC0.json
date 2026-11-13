@@ -1,0 +1,63 @@
+{
+ "symbol": "?ReadTrailerAnim@BulletTypeClass@@QAEHXZ",
+ "sym_key": "BulletTypeClass::ReadTrailerAnim",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec3c5733ff85c0766456a1000000008b15000000008d4c24086a3c8b34b8518b0da80000006a008d46245250c644241c00e8000000008d4c240851e80000000083c40485c07c1b0fbe15540100003bc27d100fbe0d480100008b14818996580e0000a100000000473bf8729e5e5f83c43cc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_TriggerClassCount@@3IA",
+   "sym_key": "g_TriggerClassCount"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?aTotile@@3HA",
+   "sym_key": "aTotile"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Entity_Read@@YAHPAX@Z",
+   "sym_key": "Entity_Read"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_TriggerClassCount@@3IA",
+   "sym_key": "g_TriggerClassCount"
+  }
+ ]
+}
