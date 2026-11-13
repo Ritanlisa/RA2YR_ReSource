@@ -1,0 +1,51 @@
+{
+ "symbol": "?GetRadLevelAt@RadSiteClass@@QAENPAF@Z",
+ "sym_key": "RadSiteClass::GetRadLevelAt",
+ "size": 244,
+ "link_base": 0,
+ "bytes_hex": "83ec1053558be95657b9f80100000fbf454050e8000000008b4c24248bf051b9f8010000e8000000008b16894424248d4424105056ff52488b308b78048b58088b4424248d5424108b085250ff51488b088b50042bf18b48082bd92bfa895c2424897c2414db442424db4424148974241883ec08db44242089742418d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8000000008b4424248b4c24205051ddd8e8000000008bc88b44243433c883c41081e1ff00000033c18b4d483bc1894c24187f1b2bc85f894c24205edb44241cda742410da4d4c5d5b83c410c20400dd05000000005f5e5d5b83c410c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  }
+ ]
+}

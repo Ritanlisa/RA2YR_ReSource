@@ -1,0 +1,15 @@
+{
+ "symbol": "?QueueDrawVoiceResponse@TechnoClass@@QAEHPAPAEHHHHPAHHEHHH@Z",
+ "sym_key": "TechnoClass::QueueDrawVoiceResponse",
+ "size": 148,
+ "link_base": 0,
+ "bytes_hex": "83ec08538bd9568db3740600008bc685c074798b06568b08ff51203c01756d578b7c242c85f68b178954240c74178b068d54241052568b08ff51308b0f8b1003ca894c240c8b5424408b44243c8b4c2438528b542438508b44243881e2ff00000051528b5424388d4c241c508b442438518b4c2438528b542438508b44243851525053e80000000083c4305f5e5b83c408c22c00",
+ "relocs": [
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?QueueTechnoVoiceLine@@YAHPAX0HHHHHHHHHH@Z",
+   "sym_key": "QueueTechnoVoiceLine"
+  }
+ ]
+}

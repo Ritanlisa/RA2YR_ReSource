@@ -1,0 +1,147 @@
+{
+ "symbol": "?sub_6D1130@@YAHXZ",
+ "sym_key": "Unnamed::sub_6D1130",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "a10000000053a300000000a10000000033dbc70500000000f0000000881d00000000891d00000000c70500000000050000008b48048b10568b3500000000518b0d0000000052e8000000008b0d00000000535356e800000000a100000000c70500000000f1000000a300000000a100000000881d00000000891d00000000c70500000000050000008b48048b10518b0d0000000052e8000000008b0d00000000535356e8000000005e5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_SidebarConfig@@3IA",
+   "sym_key": "g_SidebarConfig"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD00@@3IA",
+   "sym_key": "DataGlobal_B0CD00"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC60@@3IA",
+   "sym_key": "DataGlobal_B0FC60"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCD4@@3IA",
+   "sym_key": "DataGlobal_B0CCD4"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCDD@@3EA",
+   "sym_key": "DataGlobal_B0CCDD"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCE0@@3IA",
+   "sym_key": "DataGlobal_B0CCE0"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCD0@@3IA",
+   "sym_key": "DataGlobal_B0CCD0"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA90@@3IA",
+   "sym_key": "DataGlobal_B0FA90"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCB0@@3IA",
+   "sym_key": "DataGlobal_B0CCB0"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Set@Rect_Point@@QAEHHH@Z",
+   "sym_key": "Rect_Point::Set"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCB0@@3IA",
+   "sym_key": "DataGlobal_B0CCB0"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?SetShape@ShapeButton@@QAEHHHH@Z",
+   "sym_key": "ShapeButton::SetShape"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_SidebarConfig@@3IA",
+   "sym_key": "g_SidebarConfig"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC64@@3IA",
+   "sym_key": "DataGlobal_B0CC64"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC90@@3IA",
+   "sym_key": "DataGlobal_B0CC90"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC64@@3IA",
+   "sym_key": "DataGlobal_B0FC64"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC6D@@3EA",
+   "sym_key": "DataGlobal_B0CC6D"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC70@@3IA",
+   "sym_key": "DataGlobal_B0CC70"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC60@@3IA",
+   "sym_key": "DataGlobal_B0CC60"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC40@@3IA",
+   "sym_key": "DataGlobal_B0CC40"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?Set@Rect_Point@@QAEHHH@Z",
+   "sym_key": "Rect_Point::Set"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC40@@3IA",
+   "sym_key": "DataGlobal_B0CC40"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?SetShape@ShapeButton@@QAEHHHH@Z",
+   "sym_key": "ShapeButton::SetShape"
+  }
+ ]
+}

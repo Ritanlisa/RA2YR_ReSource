@@ -1,0 +1,11 @@
+{
+ "addr": "0x65B8F0",
+ "name": "RadSiteClass::GetRadLevelAt",
+ "size": 205,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65B8F0",
+ "bytes_hex": "83ec1053558be95657b9e8f787008d454050e8999ef0ff8b4c24248bf051b9e8f78700e8889ef0ff8b16894424248d4424148bce50ff52488b308b4c24248b78048b118b58088d44241450ff52488bd083ec088b022bf08b4a042bf98b5208897c2420db4424202bda8974241c895c2424db442424db44241cd9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8b9f2e6ff83c408e871a516008b4d48dd0500287e003bc1894c24107f132bc8ddd8894c2424db442424da742410da4d4c5f5e5d5b83c410c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

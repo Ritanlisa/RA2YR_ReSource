@@ -1,0 +1,129 @@
+{
+ "symbol": "?InitVisceroidArt@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::InitVisceroidArt",
+ "size": 203,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c07558566a20e8000000008bf083c40485f67436b80001000068000001006a008d4e14894604894608c7460c00000000c70600000000c7461001000000e800000000c70600000000eb0233f68935000000008b066a0056ff50185ea10000000085c0753e6888010000e80000000083c40485c074238b0d000000006a006a0151680000000068000000008bc8e800000000a300000000eb0ac705000000000000000032d2b900000000e80000000032d2b900000000a300000000e800000000a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D13C@@3IA",
+   "sym_key": "DataGlobal_B1D13C"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D13C@@3IA",
+   "sym_key": "DataGlobal_B1D13C"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D140@@3IA",
+   "sym_key": "DataGlobal_B1D140"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D13C@@3IA",
+   "sym_key": "DataGlobal_B1D13C"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?FileSystem_TEMPERAT_PAL@@3EA",
+   "sym_key": "FileSystem_TEMPERAT_PAL"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?FileSystem_TEMPERAT_PAL@@3EA",
+   "sym_key": "FileSystem_TEMPERAT_PAL"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?Construct@ConvertClass@@QAEPAV1@HHHHD@Z",
+   "sym_key": "ConvertClass::Construct"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D140@@3IA",
+   "sym_key": "DataGlobal_B1D140"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D140@@3IA",
+   "sym_key": "DataGlobal_B1D140"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8459AC@@3PADA",
+   "sym_key": "DataGlobal_8459AC"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84599C@@3PADA",
+   "sym_key": "DataGlobal_84599C"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D144@@3IA",
+   "sym_key": "DataGlobal_B1D144"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D148@@3IA",
+   "sym_key": "DataGlobal_B1D148"
+  }
+ ]
+}

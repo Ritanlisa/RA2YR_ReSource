@@ -1,0 +1,51 @@
+{
+ "symbol": "?Capture@Screen@@QAEDDHHH@Z",
+ "sym_key": "Screen::Capture",
+ "size": 231,
+ "link_base": 0,
+ "bytes_hex": "83ec088a44240c56578b7c241833f6884424153bfe75068b3d000000008b54241c8b4424208b0f535552505657ff51188b0f57ff517c8b17578be8ff92800000006a208bd88974241489742418e8000000008bf083c40485f67432895e080fafddd1e3536a008d4e14896e04c7460c00000000c70600000000c7461002000000e800000000c70600000000eb0233f66a008d5424148bcee8000000008b075657ff50045d5b85f674078b0e6a0156ff118b442414f6c4ff74238b542414508b44241852506a00576a006a0157e80000000083c4205f5e83c408c210005f5ec1e80883c408c21000",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?Render_Draw@@YIXHPAXD@Z",
+   "sym_key": "Render_Draw"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?Frame__Present@@YAHHHHHHHHPAX@Z",
+   "sym_key": "Frame__Present"
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p50\part_00
+=== convert (20 addrs) ===
+[conv] 0x403ed0 sub_403ED0 -> _addr_40
+[conv] 0x7d57fe _asctime -> _addr_7D
+[conv] 0x52fec0 Screen::Capture -> Screen
+[conv] 0x427a80 AnimTypeClass::GetLoopCount -> AnimTypeClass
+[conv] 0x682570 PropertyReadScenarioCOM -> _addr_68
+[conv] 0x6e4200 TActionClass::executeForceShieldAction -> TActionClass
+[conv] 0x4a44f0 ObjectClass::sub_4A44F0 -> ObjectClass
+[conv] 0x760f50 WaveClass::Update -> WaveClass
+[conv] 0x557be0 ListClass::InitControls -> ListClass
+[conv] 0x6d1130 sub_6D1130 -> _addr_6D
+[conv] 0x7ce06e ___lc_strtolc -> _addr_7C
+[conv] 0x6e18b0 CellClass::Find -> CellClass
+[conv] 0x7473e0 ObjectClass::InitVisceroidArt -> ObjectClass
+[conv] 0x71ae50 TemporalClass::CanWarpTarget -> TemporalClass
+[conv] 0x631d40 BuildingDebris::Init -> BuildingDebris
+[conv] 0x63ce40 ScriptAction::DrawPlacementMarker -> ScriptAction
+[conv] 0x4db0d0 TechnoClass::QueueDrawVoiceResponse -> TechnoClass
+[conv] 0x65b8f0 RadSiteClass::GetRadLevelAt -> RadSiteClass
+[conv] 0x46f600 Skirmish::FillPlayerNames -> Skirmish
+[conv] 0x623cd0 CD::CreateDialog -> CD
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] _addr_7D                 rc=2
+[era] Screen                   rc=0
+[era] AnimTypeClass            rc=2
+[era] _addr_68                 rc=0
+[era] TActionClass             rc=0
+[era] ObjectClass              rc=2
+[era] WaveClass                rc=2
+[era] ListClass                rc=0
+[era] _addr_6D                 rc=0
+[era] _addr_7C                 rc=2
+[era] CellClass                rc=0
+[era] TemporalClass            rc=0
+[era] BuildingDebris           rc=0
+[era] ScriptAction             rc=0
+[era] TechnoClass              rc=0
+[era] RadSiteClass             rc=0
+[era] Skirmish                 rc=0
+[era] CD                       rc=2
+=== diffasm byte-compare ===
+[diff] 0x403ed0   MISMATCH         sub_403ED0
+[diff] 0x52fec0   MISMATCH         Screen::Capture
+[diff] 0x682570   MISMATCH         PropertyReadScenarioCOM
+[diff] 0x6e4200   MISMATCH         TActionClass::executeForceShieldAction
+[diff] 0x7473e0   MISMATCH         ObjectClass::InitVisceroidArt
+[diff] 0x557be0   MISMATCH         ListClass::InitControls
+[diff] 0x6d1130   MISMATCH         sub_6D1130
+[diff] 0x6e18b0   MISMATCH         CellClass::Find
+[diff] 0x71ae50   MISMATCH         TemporalClass::CanWarpTarget
+[diff] 0x631d40   MISMATCH         BuildingDebris::Init
+[diff] 0x63ce40   MISMATCH         ScriptAction::DrawPlacementMarker
+[diff] 0x4db0d0   MISMATCH         TechnoClass::QueueDrawVoiceResponse
+[diff] 0x65b8f0   MISMATCH         RadSiteClass::GetRadLevelAt
+[diff] 0x46f600   MISMATCH         Skirmish::FillPlayerNames
+[ledger] 0x403ed0 sub_403ED0 -> NG (attempt 1)
+[ledger] 0x7d57fe _asctime -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52fec0 Screen::Capture -> NG (attempt 1)
+[ledger] 0x427a80 AnimTypeClass::GetLoopCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x682570 PropertyReadScenarioCOM -> NG (attempt 1)
+[ledger] 0x6e4200 TActionClass::executeForceShieldAction -> NG (attempt 1)
+[ledger] 0x4a44f0 ObjectClass::sub_4A44F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x760f50 WaveClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557be0 ListClass::InitControls -> NG (attempt 1)
+[ledger] 0x6d1130 sub_6D1130 -> NG (attempt 1)
+[ledger] 0x7ce06e ___lc_strtolc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e18b0 CellClass::Find -> NG (attempt 1)
+[ledger] 0x7473e0 ObjectClass::InitVisceroidArt -> NG (attempt 1)
+[ledger] 0x71ae50 TemporalClass::CanWarpTarget -> NG (attempt 1)
+[ledger] 0x631d40 BuildingDebris::Init -> NG (attempt 1)
+[ledger] 0x63ce40 ScriptAction::DrawPlacementMarker -> NG (attempt 1)
+[ledger] 0x4db0d0 TechnoClass::QueueDrawVoiceResponse -> NG (attempt 1)
+[ledger] 0x65b8f0 RadSiteClass::GetRadLevelAt -> NG (attempt 1)
+[ledger] 0x46f600 Skirmish::FillPlayerNames -> NG (attempt 1)
+[ledger] 0x623cd0 CD::CreateDialog -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "extern_reloc": 2,
+  "frame_sched": 5,
+  "branch_order": 1,
+  "branch_polarity": 1,
+  "const_fold": 2,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p50\batch_report.json

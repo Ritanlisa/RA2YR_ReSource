@@ -1,0 +1,51 @@
+{
+ "symbol": "?executeForceShieldAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeForceShieldAction",
+ "size": 248,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec1c85c056578bf18bf8750a5f32c05e83c41cc210008b46448d4c240850518b0d00000000e8000000008b108d44242850b9f80100008954242ce8000000008b088d5424185250ff51488b08894c240c8b5004895424108b40088d4e5489442414e80000000085c07d0a5f32c05e83c41cc210003b0500000000760a5f32c05e83c41cc210008b0d000000008b048185c0750a5f32c05e83c41cc210008b105750ff928c0000008bf085f6750a5f32c05e83c41cc210008b068d4c240c6a005156ff909004000084c075138b1656ff92f80000005f32c05e83c41cc210008b066a0056ff90dc0400005fb0015e83c41cc21000",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?FindIndexByName@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindIndexByName"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?g_TriggerClassCount@@3IA",
+   "sym_key": "g_TriggerClassCount"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  }
+ ]
+}

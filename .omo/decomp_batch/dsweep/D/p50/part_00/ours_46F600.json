@@ -1,0 +1,69 @@
+{
+ "symbol": "?FillPlayerNames@Skirmish@@QAEHXZ",
+ "sym_key": "Skirmish::FillPlayerNames",
+ "size": 204,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355568bf133c0bb00000000578974241089442414895c2418eb048b74241085c0740c83f8017577bf12040000eb05bf110400005756e8000000008be86a0055e80000000085c074565756e8000000008b1b8bf085db74478b4424106a006a00684b0100005750e800000000536a0068c204000056e8000000008bf85357685101000056e8000000006a0057684e01000056e8000000006a0555e8000000008b4c24148b5c241883c3048d410181fb2000000089442414895c24180f8c5affffff5f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3PAHA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3PAHA",
+   "sym_key": "g_NetworkPlayerName"
+  }
+ ]
+}

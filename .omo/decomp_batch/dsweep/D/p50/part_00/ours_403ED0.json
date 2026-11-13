@@ -1,0 +1,147 @@
+{
+ "symbol": "?sub_403ED0@@YIHPAXHH@Z",
+ "sym_key": "Unnamed::sub_403ED0",
+ "size": 211,
+ "link_base": 0,
+ "bytes_hex": "56578bf98bf2b900000000e8000000008b0d00000000e8000000008b44240c8b0d00000000a300000000893500000000e8000000008b0d0000000033f63bce8bc1893500000000893500000000c7050000000001000000c70500000000010000007439680020000068c8000000ba00001000e800000000ba80020000b92c010000a300000000e8000000008bcfa300000000e800000000a10000000039350000000074283bc67424393500000000741c39350000000074145fc7050000000001000000b8010000005ec204005f33c05ec20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_AudioStreamObject@@3PAXA",
+   "sym_key": "g_AudioStreamObject"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Init@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::Init"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E250@@3IA",
+   "sym_key": "DataGlobal_87E250"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Init@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::Init"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E1B8@@3IA",
+   "sym_key": "DataGlobal_87E1B8"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E294@@3IA",
+   "sym_key": "DataGlobal_87E294"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E29C@@3IA",
+   "sym_key": "DataGlobal_87E29C"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E294@@3IA",
+   "sym_key": "DataGlobal_87E294"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E290@@3IA",
+   "sym_key": "DataGlobal_87E290"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E28C@@3IA",
+   "sym_key": "DataGlobal_87E28C"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_AudioConfigState@@3IA",
+   "sym_key": "g_AudioConfigState"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816108@@3IA",
+   "sym_key": "DataGlobal_816108"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?sub_4019E0@@YIPAHHHHH@Z",
+   "sym_key": "sub_4019E0"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E298@@3IA",
+   "sym_key": "DataGlobal_87E298"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?AllocLinkedListMemory@@YIPAIHH@Z",
+   "sym_key": "AllocLinkedListMemory"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E2A8@@3IA",
+   "sym_key": "DataGlobal_87E2A8"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E294@@3IA",
+   "sym_key": "DataGlobal_87E294"
+  },
+  {
+   "off": 158,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E298@@3IA",
+   "sym_key": "DataGlobal_87E298"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E29C@@3IA",
+   "sym_key": "DataGlobal_87E29C"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E2A8@@3IA",
+   "sym_key": "DataGlobal_87E2A8"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E2A4@@3IA",
+   "sym_key": "DataGlobal_87E2A4"
+  }
+ ]
+}

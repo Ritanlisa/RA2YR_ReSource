@@ -1,0 +1,33 @@
+{
+ "symbol": "?CanWarpTarget@TemporalClass@@QAGDPAH@Z",
+ "sym_key": "TemporalClass::CanWarpTarget",
+ "size": 206,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568b74241885f657750a5f32c05e83c40cc208008b0656ff90840000008a883a0d000084c9750a5f32c05e83c40cc208008b0e56ff916001000084c0740a5f32c05e83c40cc208008b1656ff522c83f801756e6a0056e8000000008bf883c40885ff745d8b0757ff502c83f80675528b8f200500008a81bd16000084c074428b969c0000008b8ea40000008b86a0000000895424088d542408894c241052b90000000089442410e8000000008bc8e8000000003bc7750a5f32c05e83c40cc208005fb0015e83c40cc20800",
+ "relocs": [
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?Team__GetMember@@YAHPAHH@Z",
+   "sym_key": "Team__GetMember"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  }
+ ]
+}
