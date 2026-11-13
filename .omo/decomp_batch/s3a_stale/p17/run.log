@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x67a4f0 TypeList::Construct -> TypeList
+[conv] 0x67a600 TypeList::ConstructSmudge -> TypeList
+[conv] 0x67a820 TypeList::InfantryConstructor -> TypeList
+[conv] 0x67bb10 ReadINIClassInfantryTypeList -> _addr_67
+[conv] 0x67ff70 SaveGame_Start_67FF70 -> SaveGame_Start
+[conv] 0x6802f0 SaveGame_Start_6802F0 -> SaveGame_Start
+[conv] 0x680670 SaveGame_Start_680670 -> SaveGame_Start
+[conv] 0x6809f0 SaveGame_Start_6809F0 -> SaveGame_Start
+[conv] 0x680df0 SaveGame_Start_680DF0 -> SaveGame_Start
+[conv] 0x682150 Map_Read -> Map
+[conv] 0x6824b0 Map_Read_6824B0 -> Map_Read
+[conv] 0x685dc0 Scenario::EndGame -> Scenario
+[conv] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> ScenarioClass
+[conv] 0x689a00 ScenarioClass::GetLocalStateByID -> ScenarioClass
+[conv] 0x68ad70 ScenarioClass::SaveToINI -> ScenarioClass
+[conv] 0x68bd80 ScenarioClass::Is_Waypoint_Valid -> ScenarioClass
+[conv] 0x68bf30 ScenarioClass::Set_Default_Waypoint -> ScenarioClass
+[conv] 0x68ca50 FindBuildingAnimByName -> _addr_68
+[conv] 0x68cab0 Network_Assign -> Network
+[conv] 0x68cd20 ScoreScreen::Display -> ScoreScreen
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TypeList                 rc=2
+[era] _addr_67                 rc=2
+[era] SaveGame_Start           rc=2
+[era] Map                      rc=2
+[era] Map_Read                 rc=2
+[era] Scenario                 rc=2
+[era] ScenarioClass            rc=2
+[era] _addr_68                 rc=2
+[era] Network                  rc=2
+[era] ScoreScreen              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x67a4f0 TypeList::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67a600 TypeList::ConstructSmudge -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67a820 TypeList::InfantryConstructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67bb10 ReadINIClassInfantryTypeList -> COMPILE_FAIL (attempt 7)
+[ledger] 0x67ff70 SaveGame_Start_67FF70 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6802f0 SaveGame_Start_6802F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x680670 SaveGame_Start_680670 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6809f0 SaveGame_Start_6809F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x680df0 SaveGame_Start_680DF0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x682150 Map_Read -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6824b0 Map_Read_6824B0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x685dc0 Scenario::EndGame -> COMPILE_FAIL (attempt 6)
+[ledger] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x689a00 ScenarioClass::GetLocalStateByID -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68ad70 ScenarioClass::SaveToINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x68bd80 ScenarioClass::Is_Waypoint_Valid -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68bf30 ScenarioClass::Set_Default_Waypoint -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68ca50 FindBuildingAnimByName -> COMPILE_FAIL (attempt 5)
+[ledger] 0x68cab0 Network_Assign -> COMPILE_FAIL (attempt 5)
+[ledger] 0x68cd20 ScoreScreen::Display -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p17\batch_report.json

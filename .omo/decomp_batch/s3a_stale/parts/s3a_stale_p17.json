@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x67a4f0",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x67a600",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x67a820",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x67bb10",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x67ff70",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6802f0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x680670",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6809f0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x680df0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x682150",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6824b0",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x685dc0",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x689470",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x689a00",
+  "family": "stale_stale_cw3|CW3-1 param proto merge"
+ },
+ {
+  "addr": "0x68ad70",
+  "family": "stale_B4"
+ },
+ {
+  "addr": "0x68bd80",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x68bf30",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x68ca50",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x68cab0",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x68cd20",
+  "family": "stale_snapshotfix2_probe"
+ }
+]
