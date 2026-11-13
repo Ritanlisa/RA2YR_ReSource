@@ -1,0 +1,93 @@
+{
+ "symbol": "?AssignTeamMemberMissions@Mission@@QAEDHH@Z",
+ "sym_key": "Mission::AssignTeamMemberMissions",
+ "size": 779,
+ "link_base": 0,
+ "bytes_hex": "83ec288b44242c535556578b7c243c8be98b58048bcf895c24108b755433c881e1ff00000033f985f6897c243c0f84ca02000033d281e700ffffff8a96900000000bfa897c243c8a44243c84c00f849c0200008b466c85c00f849f000000a10000000085c0750e8a868100000084c00f85880000008a868906000084c0757e8b4d288d44242050e8000000008b0083f836741383f835740e8b0d000000008b991c170000eb0c8b15000000008b9a201700008b45348bce50e8000000003bc37f388b86a4050000c686890600000185c075278b0e6a006a0256ff91e80100008b166a0056ff92c80300008b4d348b066a015156ff90800400008b5c241033d281e700ffffff8a96900000000bfa897c243c8a44243c84c00f84d20100008b7e6c85ff897c243c0f84c3010000a10000000085c075128a868100000084c08844243c0f85a40100008a868906000084c075158b0656ff502c8bf883ff02897c243c0f85890100008bbeb402000085ff897c243c0f85770100008b86a405000085c00f85e10000008d4c2424518b4d28e8000000008b0083f836741383f835740e8b15000000008bba1c170000eb0ba1000000008bb8201700008b4d34518bcee8000000008d143f3bc20f8e9900000083fb0b0f84900000008b066a006a0256ff90e80100008b55348b0e6a015256ff91800400008b066a006a0256ff90e80100008b45348d54242c52508b08ff51488b54241433c98a480580e2000bca8bc18d4c242889442414894424188d4424185051e8000000008b108b3e8d44241cb9000000005089542420e8000000006a015056ff97800400008bf881e7ff000000897c243ce9880000008bbeb402000085ff897c243c757a8bbea405000085ff897c243c756c8b0e56ff91840100008bf83bfb897c243c745983fb0575148b1656ff92840100008bf883ff10897c243c74406a008bcee8000000008b066a005356ff90e80100008b0e6a0056ff91c80300008b166a016a0056ff928004000033c725ff00000033f8897c243ceb048b7c243c8bb6d805000085f60f8536fdffff8a44243c5f5e5d5b83c428c20800",
+ "relocs": [
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?GetEntry@SessionClass@@QAEPAIPAX@Z",
+   "sym_key": "SessionClass::GetEntry"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?DistanceTo@ObjectClass@@QAEHPAX@Z",
+   "sym_key": "ObjectClass::DistanceTo"
+  },
+  {
+   "off": 301,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 399,
+   "type": "REL32",
+   "sym": "?GetEntry@SessionClass@@QAEPAIPAX@Z",
+   "sym_key": "SessionClass::GetEntry"
+  },
+  {
+   "off": 417,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 430,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 447,
+   "type": "REL32",
+   "sym": "?DistanceTo@ObjectClass@@QAEHPAX@Z",
+   "sym_key": "ObjectClass::DistanceTo"
+  },
+  {
+   "off": 561,
+   "type": "REL32",
+   "sym": "?globalHelper_0DA020@@YGPAIPAX0@Z",
+   "sym_key": "globalHelper_0DA020"
+  },
+  {
+   "off": 574,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 584,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 692,
+   "type": "REL32",
+   "sym": "?SetFocus@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::SetFocus"
+  }
+ ]
+}

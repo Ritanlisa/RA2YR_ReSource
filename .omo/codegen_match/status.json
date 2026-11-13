@@ -162405,7 +162405,7 @@
   "this_as_id": false
  },
  "0x6eb490": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162429,7 +162429,7 @@
   "this_as_id": false
  },
  "0x6ebad0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162500,7 +162500,7 @@
   "this_as_id": false
  },
  "0x6ec3a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162572,7 +162572,7 @@
   "this_as_id": false
  },
  "0x6ec7d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162632,7 +162632,7 @@
   "this_as_id": false
  },
  "0x6ecfb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162692,19 +162692,19 @@
   "this_as_id": false
  },
  "0x6ed7e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+8 push esi",
   "name": "Mission::AssignTeamMemberMissions",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Mission::AssignTeamMemberMissions",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6edb50": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162843,7 +162843,7 @@
   "this_as_id": false
  },
  "0x6ee5c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162855,7 +162855,7 @@
   "this_as_id": false
  },
  "0x6ee800": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162940,7 +162940,7 @@
   "status": "OK"
  },
  "0x6ef610": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162976,7 +162976,7 @@
   "this_as_id": false
  },
  "0x6efa10": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -163012,7 +163012,7 @@
   "this_as_id": false
  },
  "0x6f0130": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -163255,7 +163255,7 @@
   "this_as_id": false
  },
  "0x6f0ab0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "AISelectTeamHouseClass",
@@ -163352,7 +163352,7 @@
   "status": "NG"
  },
  "0x6f19b0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "SmallFunc_6F19B0",
@@ -163363,7 +163363,7 @@
   "this_as_id": false
  },
  "0x6f1ab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -163447,7 +163447,7 @@
   "this_as_id": false
  },
  "0x6f1f70": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -164188,7 +164188,7 @@
   "this_as_id": false
  },
  "0x6f5ef0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DrawTacticalLine3D",
@@ -164199,7 +164199,7 @@
   "this_as_id": false
  },
  "0x6f6030": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_0F6030",
@@ -164294,7 +164294,7 @@
   "this_as_id": false
  },
  "0x6f7220": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164767,7 +164767,7 @@
   "this_as_id": false
  },
  "0x6ff960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

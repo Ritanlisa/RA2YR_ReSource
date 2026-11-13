@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x6eb490 TeamClass::AttackCoordinator -> TeamClass
+[conv] 0x6ebad0 TeamClass::UpdateMembers -> TeamClass
+[conv] 0x6ec3a0 TeamClass::WakeUpAllMembers -> TeamClass
+[conv] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> TeamClass
+[conv] 0x6ecfb0 TeamClass::Create -> TeamClass
+[conv] 0x6ed7e0 Mission::AssignTeamMemberMissions -> Mission
+[conv] 0x6edb50 TeamClass::AssignAttackTarget -> TeamClass
+[conv] 0x6ee5c0 TeamClass::SelectBestMember -> TeamClass
+[conv] 0x6ee800 ObjectClass::SelectTeamMembers -> ObjectClass
+[conv] 0x6ef610 TeamClass::PlayMemberAnimation -> TeamClass
+[conv] 0x6efa10 TeamClass::SelectDeploymentTarget -> TeamClass
+[conv] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> TeamClass
+[conv] 0x6f0ab0 AISelectTeamHouseClass -> _addr_6F
+[conv] 0x6f19b0 SmallFunc_6F19B0 -> SmallFunc
+[conv] 0x6f1ab0 TeamTypeClass::ReadScriptData -> TeamTypeClass
+[conv] 0x6f1f70 TeamTypeClass::FindFirstInstance -> TeamTypeClass
+[conv] 0x6f5ef0 DrawTacticalLine3D -> _addr_6F
+[conv] 0x6f6030 globalHelper_0F6030 -> _addr_6F
+[conv] 0x6f7220 TechnoClass::CheckTargetLOS -> TechnoClass
+[conv] 0x6ff960 TechnoClass::DrawTargetLine -> TechnoClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamClass                rc=2
+[era] Mission                  rc=0
+[era] ObjectClass              rc=2
+[era] _addr_6F                 rc=2
+[era] SmallFunc                rc=2
+[era] TeamTypeClass            rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x6ed7e0   MISMATCH         Mission::AssignTeamMemberMissions
+[ledger] 0x6eb490 TeamClass::AttackCoordinator -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ebad0 TeamClass::UpdateMembers -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ec3a0 TeamClass::WakeUpAllMembers -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ecfb0 TeamClass::Create -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ed7e0 Mission::AssignTeamMemberMissions -> NG (attempt 2)
+[ledger] 0x6edb50 TeamClass::AssignAttackTarget -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6ee5c0 TeamClass::SelectBestMember -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ee800 ObjectClass::SelectTeamMembers -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ef610 TeamClass::PlayMemberAnimation -> COMPILE_FAIL (attempt 16)
+[ledger] 0x6efa10 TeamClass::SelectDeploymentTarget -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6f0ab0 AISelectTeamHouseClass -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6f19b0 SmallFunc_6F19B0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6f1ab0 TeamTypeClass::ReadScriptData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f1f70 TeamTypeClass::FindFirstInstance -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6f5ef0 DrawTacticalLine3D -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f6030 globalHelper_0F6030 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f7220 TechnoClass::CheckTargetLOS -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ff960 TechnoClass::DrawTargetLine -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p28\batch_report.json
