@@ -53366,7 +53366,7 @@
   "status": "NG"
  },
  "0x4e0270": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -53546,7 +53546,7 @@
   "this_as_id": false
  },
  "0x4e0700": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -54160,7 +54160,7 @@
   "this_as_id": false
  },
  "0x4e1640": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -54448,7 +54448,7 @@
   "this_as_id": false
  },
  "0x4e1d00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -54460,7 +54460,7 @@
   "this_as_id": false
  },
  "0x4e1de0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54568,7 +54568,7 @@
   "this_as_id": false
  },
  "0x4e2690": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54580,7 +54580,7 @@
   "this_as_id": false
  },
  "0x4e2830": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54592,7 +54592,7 @@
   "this_as_id": false
  },
  "0x4e29a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54640,14 +54640,14 @@
   "this_as_id": false
  },
  "0x4e2b50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TriColorGaugeClass::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingPlacementClass::Draw",
-  "rule_violations": 7,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -54880,7 +54880,7 @@
   "this_as_id": false
  },
  "0x4e3560": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -54927,7 +54927,7 @@
   "this_as_id": false
  },
  "0x4e38a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -55030,7 +55030,7 @@
   "this_as_id": false
  },
  "0x4e42a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -55065,7 +55065,7 @@
   "this_as_id": false
  },
  "0x4e45a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FillComboBoxFactions",
@@ -55110,7 +55110,7 @@
   "this_as_id": false
  },
  "0x4e49a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetupSkirmishSpawnLocations",
@@ -55121,7 +55121,7 @@
   "this_as_id": false
  },
  "0x4e4c20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FillColorComboBoxUI",
@@ -55211,7 +55211,7 @@
   "this_as_id": false
  },
  "0x4e50c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FillComboBoxAllianceSlots",
@@ -55256,7 +55256,7 @@
   "this_as_id": false
  },
  "0x4e5480": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetupLobbyFactionSlots",
@@ -55267,7 +55267,7 @@
   "this_as_id": false
  },
  "0x4e5700": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FillComboBoxSides",
@@ -55366,7 +55366,7 @@
   "this_as_id": false
  },
  "0x4e5ed0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetupLobbyPlayerSlots",
@@ -56882,7 +56882,7 @@
   "this_as_id": false
  },
  "0x4e8030": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_4E8030",
