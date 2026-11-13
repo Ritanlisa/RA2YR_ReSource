@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x777bb0 ObjectClass::sub_777BB0 -> ObjectClass
+[conv] 0x77d350 ObjectClass::sub_77D350 -> ObjectClass
+[conv] 0x77d3a0 ObjectClass::sub_77D3A0 -> ObjectClass
+[conv] 0x77ef90 RequestChannelList2WOL -> _addr_77
+[conv] 0x7835c0 sub_7835C0 -> _addr_78
+[conv] 0x785740 ObjectClass::LeaveChannelWOL -> ObjectClass
+[conv] 0x786390 LoginFlowWOL_Reset -> LoginFlowWOL
+[conv] 0x786ef0 ObjectClass::LoginFlowWOL_Open -> ObjectClass
+[conv] 0x788180 FindLobbyIDWOL -> _addr_78
+[conv] 0x78a470 ObjectClass::HandleOnlineWOL -> ObjectClass
+[conv] 0x78a6b0 ObjectClass::HandlePageWOL -> ObjectClass
+[conv] 0x78a8f0 ObjectClass::HandleReplyWOL -> ObjectClass
+[conv] 0x792f10 Network::SyncPlayerList -> Network
+[conv] 0x793490 ObjectClass::HandleWOLForwardingError -> ObjectClass
+[conv] 0x793a70 sub_793A70 -> _addr_79
+[conv] 0x793d20 NegotiateNetworkConnection -> _addr_79
+[conv] 0x7970d0 ObjectClass::InitNetworkGame -> ObjectClass
+[conv] 0x797640 LoginWOL -> _addr_79
+[conv] 0x7982d0 sub_7982D0 -> _addr_79
+[conv] 0x798360 sub_798360 -> _addr_79
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_77                 rc=2
+[era] _addr_78                 rc=2
+[era] LoginFlowWOL             rc=0
+[era] Network                  rc=2
+[era] _addr_79                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x77d350   MISMATCH         ObjectClass::sub_77D350
+[diff] 0x77d3a0   MISMATCH         ObjectClass::sub_77D3A0
+[diff] 0x78a470   MISMATCH         ObjectClass::HandleOnlineWOL
+[diff] 0x786390   MISMATCH         LoginFlowWOL_Reset
+[diff] 0x793a70   MISMATCH         sub_793A70
+[diff] 0x798360   MISMATCH         sub_798360
+[ledger] 0x777bb0 ObjectClass::sub_777BB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77d350 ObjectClass::sub_77D350 -> NG (attempt 3)
+[ledger] 0x77d3a0 ObjectClass::sub_77D3A0 -> NG (attempt 3)
+[ledger] 0x77ef90 RequestChannelList2WOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7835c0 sub_7835C0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x785740 ObjectClass::LeaveChannelWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x786390 LoginFlowWOL_Reset -> NG (attempt 3)
+[ledger] 0x786ef0 ObjectClass::LoginFlowWOL_Open -> COMPILE_FAIL (attempt 3)
+[ledger] 0x788180 FindLobbyIDWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x78a470 ObjectClass::HandleOnlineWOL -> NG (attempt 3)
+[ledger] 0x78a6b0 ObjectClass::HandlePageWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x78a8f0 ObjectClass::HandleReplyWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x792f10 Network::SyncPlayerList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x793490 ObjectClass::HandleWOLForwardingError -> COMPILE_FAIL (attempt 3)
+[ledger] 0x793a70 sub_793A70 -> NG (attempt 3)
+[ledger] 0x793d20 NegotiateNetworkConnection -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7970d0 ObjectClass::InitNetworkGame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x797640 LoginWOL -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7982d0 sub_7982D0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x798360 sub_798360 -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p19\batch_report.json

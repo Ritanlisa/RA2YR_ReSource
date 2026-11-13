@@ -193531,7 +193531,7 @@
   "this_as_id": false
  },
  "0x777bb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -195555,27 +195555,27 @@
   "this_as_id": false
  },
  "0x77d350": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x200",
   "name": "ObjectClass::sub_77D350",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "sub_77D350",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x77d3a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x200",
   "name": "ObjectClass::sub_77D3A0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "sub_77D3A0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x77d3f0": {
@@ -195940,7 +195940,7 @@
   "this_as_id": false
  },
  "0x77ef90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "RequestChannelList2WOL",
@@ -196264,7 +196264,7 @@
   "this_as_id": false
  },
  "0x7835c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_7835C0",
@@ -196357,7 +196357,7 @@
   "this_as_id": false
  },
  "0x785740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196405,14 +196405,14 @@
   "this_as_id": false
  },
  "0x786390": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+13 je 0x7863ab",
   "name": "LoginFlowWOL_Reset",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "LoginFlowWOL_Reset",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7864c0": {
@@ -196452,7 +196452,7 @@
   "this_as_id": false
  },
  "0x786ef0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196487,7 +196487,7 @@
   "this_as_id": false
  },
  "0x788180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "FindLobbyIDWOL",
@@ -196600,19 +196600,19 @@
   "this_as_id": false
  },
  "0x78a470": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x30c",
   "name": "ObjectClass::HandleOnlineWOL",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "HandleOnlineWOL",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x78a6b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196624,7 +196624,7 @@
   "this_as_id": false
  },
  "0x78a8f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196843,7 +196843,7 @@
   "this_as_id": false
  },
  "0x792f10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196901,7 +196901,7 @@
   "this_as_id": false
  },
  "0x793490": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196958,14 +196958,14 @@
   "this_as_id": false
  },
  "0x793a70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0xb77900]",
   "name": "sub_793A70",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_793A70",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x793b30": {
@@ -197004,7 +197004,7 @@
   "this_as_id": false
  },
  "0x793d20": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "NegotiateNetworkConnection",
@@ -197153,7 +197153,7 @@
   "this_as_id": false
  },
  "0x7970d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197165,7 +197165,7 @@
   "this_as_id": false
  },
  "0x797640": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "LoginWOL",
@@ -197222,7 +197222,7 @@
   "this_as_id": false
  },
  "0x7982d0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "sub_7982D0",
@@ -197244,14 +197244,14 @@
   "this_as_id": false
  },
  "0x798360": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+10 push eax",
   "name": "sub_798360",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_798360",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7983e0": {

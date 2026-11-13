@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_798360@@YADXZ",
+ "sym_key": "Unnamed::sub_798360",
+ "size": 151,
+ "link_base": 0,
+ "bytes_hex": "81ec0c0200008d44240033c98a0d00000000535068190002006a00516802000080e80000000085c075658d54240856528d4424188d4c241433d28a1500000000508b442410516a005250c744242400020000e8000000008b4c24088bf051e8000000008bd881e3ff00000085f65e751d33d28d4c2410e80000000025ff00000080e3000bc35b81c40c020000c38ac35b81c40c020000c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_Str_WOL_URL_RegKey@@3EA",
+   "sym_key": "g_Str_WOL_URL_RegKey"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?RegOpenKeyExA@@YGJPAXPBDKK0@Z",
+   "sym_key": "RegOpenKeyExA"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Community@@3EA",
+   "sym_key": "g_INI_Key_Community"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?RegQueryValueExA@@YGJPAXPBDPAI000@Z",
+   "sym_key": "RegQueryValueExA"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?RegCloseKey@@YGJH@Z",
+   "sym_key": "RegCloseKey"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?OpenURLWOL@@YIDPBXH@Z",
+   "sym_key": "OpenURLWOL"
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "symbol": "?LoginFlowWOL_Reset@@YIHPAXPAVObjectClass@@@Z",
+ "sym_key": "Unnamed::LoginFlowWOL_Reset",
+ "size": 324,
+ "link_base": 0,
+ "bytes_hex": "a00000000081ec1001000084c055568bea8bf1740e5eb8010000005d81c410010000c357c6050000000001e8000000008bcee8000000008bcee800000000a00000000033d284c08954240c0f848b00000033c98ac833c08bf183c9ff8bfef2aef7d14974778bfe83c9fff2aef7d12bf98d54241c8bc18bf78bfa8d54241cc1e902f3a58bc883e103f3a48d4c24105168190002006a00526802000080e80000000085c075338d4424148d4c240c50a1000000008d54241c518b4c2418526a005051c744242c04000000e8000000008b54241052e8000000008b54240c81e2ff000000558bc28944241025ff000000a3000000000500290000a300000000e80000000083c404c6054000000001be000000005f6a006a006a006a00e8000000008906a10000000083c6043bf07ce5a10000000050e80000000083c4045e5d81c410010000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77E75@@3EA",
+   "sym_key": "DataGlobal_B77E75"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77E75@@3EA",
+   "sym_key": "DataGlobal_B77E75"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?LoadNetworkShareStrings@@YAPAGXZ",
+   "sym_key": "LoadNetworkShareStrings"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?ResetFlags@Game@@QAEDXZ",
+   "sym_key": "Game::ResetFlags"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?InitPlayerSlots@Network@@QAEHXZ",
+   "sym_key": "Network::InitPlayerSlots"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_Str_SOFTWARE_Westwood_Yuri_s_Reven@@3EA",
+   "sym_key": "g_Str_SOFTWARE_Westwood_Yuri_s_Reven"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?RegOpenKeyExA@@YGJPAX0KK0@Z",
+   "sym_key": "RegOpenKeyExA"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84A940@@3PAXA",
+   "sym_key": "DataGlobal_84A940"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?RegQueryValueExA@@YGJPAX0PAI000@Z",
+   "sym_key": "RegQueryValueExA"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?RegCloseKey@@YGJH@Z",
+   "sym_key": "RegCloseKey"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77E50@@3IA",
+   "sym_key": "DataGlobal_B77E50"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?g_NetworkRematchState@@3IA",
+   "sym_key": "g_NetworkRematchState"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?ResetSystemWOL@@YAHPAX@Z",
+   "sym_key": "ResetSystemWOL"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77D80@@3IA",
+   "sym_key": "DataGlobal_B77D80"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?Handles@@3PAXA",
+   "sym_key": "Handles"
+  },
+  {
+   "off": 283,
+   "type": "REL32",
+   "sym": "?CreateEventA@@YGPAXHHHH@Z",
+   "sym_key": "CreateEventA"
+  },
+  {
+   "off": 290,
+   "type": "DIR32",
+   "sym": "?g_WOL_RequestObject@@3PAXA",
+   "sym_key": "g_WOL_RequestObject"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?g_hInstance@@3PAXA",
+   "sym_key": "g_hInstance"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?InitializeWestwoodOnline@@YAHPAX@Z",
+   "sym_key": "InitializeWestwoodOnline"
+  }
+ ]
+}
